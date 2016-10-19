@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {DF318B40-2A91-46F4-93A8-5F29A42C829E}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Articles/GlaxoSmithKline has posted doubledigit growth  test
+parent: {9191621D-2FE9-47A9-B1DA-DA89F17796C6}
+name: GlaxoSmithKline has posted doubledigit growth  test
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {9135200A-5626-4DD8-AB9D-D665B8C11748}
+name: __Never publish
+key: __never publish
+content-length: 0
+
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 87a1c0cd-80a6-474a-b4db-d7d1488cd693
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 245
+
+<p> GlaxoSmithKline has posted double-digit growth in both its first-quarter turnover and EPS as strong performances from its vaccines business and from emerging markets, Asia and Europe more than offset a slight decline in sales in the US. </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+ GlaxoSmithKline has posted double-digit growth - test  
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1647
+
+<p> GlaxoSmithKline has posted double-digit growth in both its first-quarter turnover and EPS as strong performances from its vaccines business and from emerging markets, Asia and Europe more than offset a slight decline in sales in the US. </p> <p> <p> The UK-headquartered company's total turnover grew by 13% to &pound;7.4 billion at constant exchange rates, mainly due to a 14% increase in sales of its pharmaceutical products to &pound;6.1 billion. As reported, group revenues were up by 9%. </p> <p> <p> The biggest contributor to growth in GSK's pharmaceuticals business was pandemic flu vaccines, which grew to &pound;698 million in sales. This dwarfed the pre-pandemic flu vaccine sales in the first quarter of 2009 of just &pound;6 million. </p> <p> <p> The strong flu vaccine performance sent total vaccine sales up to &pound;1.4 billion, more than double its first-quarter 2009 sales figure. The segment also benefited from a 38% rise in sales of its hepatitis vaccines to &pound;197 million but suffered from a 3% fall in sales of the combination vaccine Infanrix/Pediarix to &pound;166 million. </p> <p> <p> GSK's CEO Andrew Witty recently defended the company's strategy during the H1N1 swine flu pandemic in a BBC interview. The company has spent $2.5 billion over the past seven years preparing for such a situation, he claimed. He added that GSK charged the same price for pandemic flu products as it does for seasonal flu and that the medicines and vaccines produced during the pandemic could be stockpiled in the event of further outbreaks &ndash; the influenza therapy Relenza (zanamivir) has a shelf-life of seven years. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+GlaxoSmithKline has posted doubledigit growth  test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20160418T185228Z
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC040817
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+ GlaxoSmithKline has posted double-digit growth - test  
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+257623
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T162156Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+87a1c0cd-80a6-474a-b4db-d7d1488cd693
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161001T200119Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

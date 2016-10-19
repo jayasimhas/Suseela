@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1ADBBFCD-13B8-496C-8D9E-D336A069ED67}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/06/19/Congress finally receives legislation on FDA
+parent: {5DC6D9B5-68F8-4FF3-87CE-D517338C2D12}
+name: Congress finally receives legislation on FDA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 5bf3a968-fe67-4cf0-abcf-1f3ccb14d17c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 512
+
+<p>After months of hearings, conferences and reports, legislation on major changes in the FDA drug and device approval process has been introduced to Congress. Presenting the FDA Modernisation Act of 1995 (HR 1742) on June 6th, congressman Ron Wyden told colleagues: "It is crucial ... that the federal regulatory system so integral to the development and commercialisation of new [drugs and medical devices] changes, improves and advances in step with [the] technological revolution" which is now occurring.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Congress finally receives legislation on FDA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2661
+
+<p>After months of hearings, conferences and reports, legislation on major changes in the FDA drug and device approval process has been introduced to Congress. Presenting the FDA Modernisation Act of 1995 (HR 1742) on June 6th, congressman Ron Wyden told colleagues: "It is crucial ... that the federal regulatory system so integral to the development and commercialisation of new [drugs and medical devices] changes, improves and advances in step with [the] technological revolution" which is now occurring.</p><p>The bill contains many ideas proposed over the last few months. For example, it proposes that the FDA seek public comment on converting Class II devices to Class I. The latter and Class II devices designated as being more appropriately Class I would not require a report to the FDA prior to marketing.</p><p>no delay</p><p>The bill also codifies elimination of the "reference list". The FDA would not be allowed to delay approval of a device unless violations involving good manufacturing practice were directly related to the device, and not to earlier problems with other products.</p><p>The bill allows conditional approval of new devices designed to treat life-threatening or serious conditions. A single, well-designed, clinical trial would be sufficient, with agreed-upon data-gathering and reporting to be conducted after marketing. When this is completed, the conditional approval would become formal.</p><p>third parties</p><p>Many sections of the bill give outside organisations a large role in the approval process. Institutional review boards would be organised and certified (by the FDA) to review and approve - under agency supervision - early-phase clinical investigations. Independent testing organisations could conduct toxicology, chemistry and pre-approval manufacturing practice reviews, statistical analysis and "any other function deemed appropriate". An expert advisory panel would be established for expedited review of adverse determinations by the FDA and the manufacturer could appeal to this panel. The experts would review the decision and make a recommendation to the Secretary of the Department of Health & Human Services, who could accept or deny their recommendation.</p><p>Export rules would also be eased. The agency could allow shipment of non-FDA approved products if the exporter could document that the device meets the regulatory demands of the importing nation, which must be a member of the World Trade Organisation. The HHS could not determine or restrict labelling of these products, but could restrict export if the agency determines that there would be a possibility of reimportation into the US.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Congress finally receives legislation on FDA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950619T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950619T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950619T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053142
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Congress finally receives legislation on FDA
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254951
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184413Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5bf3a968-fe67-4cf0-abcf-1f3ccb14d17c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184413Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

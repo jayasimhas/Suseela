@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C8AA792D-0749-45EE-B31F-97256217FE4A}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/AMcharts page/AMcharts Dashboard
+parent: {D23D9EC4-741A-427B-8E24-B0FB7EBAFE29}
+name: AMcharts Dashboard
+master: {00000000-0000-0000-0000-000000000000}
+template: {F0160F93-A592-4F61-8E4E-F8F7E1C00246}
+templatekey: AMcharts Dashboard
+
+----version----
+language: en
+version: 1
+revision: dc21a703-6889-4564-9b3b-2323f948d2f8
+
+----field----
+field: {5808558D-AC15-4692-8726-991C350DE014}
+name: ChartType
+key: charttype
+content-length: 6
+
+serial
+----field----
+field: {918301A7-250B-46DE-AD50-EE91BE10CBD4}
+name: GraphType
+key: graphtype
+content-length: 6
+
+column
+----field----
+field: {F9722A63-D4A7-4B85-BC22-BB0FE5C6C444}
+name: CategoryField
+key: categoryfield
+content-length: 7
+
+country
+----field----
+field: {CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531}
+name: ValueField
+key: valuefield
+content-length: 6
+
+Visits
+----field----
+field: {7018F640-6C11-46E3-A563-843B36E100A5}
+name: Height
+key: height
+content-length: 5
+
+640px
+----field----
+field: {889A40F6-8A6B-44F0-A305-38DE22186F7A}
+name: Page Title
+key: page title
+content-length: 9
+
+AM Charts
+----field----
+field: {14A2AA8C-0456-4265-A11C-5DBF4946C555}
+name: Page Subheading
+key: page subheading
+content-length: 93
+
+ This is a subheading to the data tool. It will give context to what the tool below is about.
+----field----
+field: {FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5}
+name: Introductory Text
+key: introductory text
+content-length: 574
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+----field----
+field: {58EADA52-FE63-4FD3-8034-0BB6FBBCCD16}
+name: Tool Explanation
+key: tool explanation
+content-length: 763
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+----field----
+field: {9B17A58E-112B-4A71-81A2-70F5EA7D337E}
+name: Related Articles
+key: related articles
+content-length: 116
+
+{A859DC29-A12B-419C-A583-CDA803D2250A}|{9066038E-6FE8-43E6-8AB7-3E76541860EA}|{7292159E-F19C-441B-AC13-53FD3FDB08A0}
+----field----
+field: {7AF498FA-B21A-40DD-8E61-A369B4AA6691}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{9E643AB7-E934-4FFC-8D6C-06299A26ABB0}|{5FE070FA-F99A-4FC9-9374-671D37EE21D0}|{44E1FC56-78E3-4955-8E83-0065377F12C4}|{F043FBB7-13CF-4A00-B764-9F7837FBBCCD}
+----field----
+field: {5CAC4FEC-AB94-495F-ADA4-FE34B08EBF7B}
+name: Landing Page Link
+key: landing page link
+content-length: 72
+
+<link linktype="external" url="http://google.com" anchor="" target="" />
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160924T051436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dc21a703-6889-4564-9b3b-2323f948d2f8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161003T065135Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

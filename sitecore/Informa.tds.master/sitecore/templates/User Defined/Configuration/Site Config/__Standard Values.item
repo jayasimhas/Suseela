@@ -12,7 +12,7 @@ templatekey: Site Config
 ----version----
 language: en
 version: 1
-revision: df43824d-64c0-4bef-b65c-f6020935499b
+revision: 45c273ef-3225-427c-8356-98aec25e1ea4
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -28,13 +28,6 @@ key: copyright text
 content-length: 40
 
 © 2015 Informa plc. All Rights Reserved.
-----field----
-field: {57389B93-9681-4E67-8FB0-4E04E532716C}
-name: Workflow
-key: workflow
-content-length: 38
-
-{926E6200-EB76-4AD4-8614-691D002573AC}
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -62,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-df43824d-64c0-4bef-b65c-f6020935499b
+45c273ef-3225-427c-8356-98aec25e1ea4
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160816T083524Z
+20151230T191904Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

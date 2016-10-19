@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {847A519A-2C77-4C2F-8507-5F471FF431AD}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/13/MIS  a challenge to UK manufacturers
+parent: {DD133DA8-D39B-429A-976D-1571C2F017A8}
+name: MIS  a challenge to UK manufacturers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 66571fb1-04fa-48fb-b78d-a6985945abf2
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 495
+
+<p>The UK medical industry has failed to compete with foreign companies in the minimally invasive surgical instrumentation market, charges John Wickham, president of the UK Society for Minimally Invasive Therapy. Speaking at a symposium on MIS at the Institution of Mechanical Engineers, London, Mr Wickham blamed short-termism and lack of entrepreneurial drive, adding that engineers and industrialists should work more closely with clinicians in bringing innovative products to the market.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+MIS - a challenge to UK manufacturers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9170
+
+<p>The UK medical industry has failed to compete with foreign companies in the minimally invasive surgical instrumentation market, charges John Wickham, president of the UK Society for Minimally Invasive Therapy. Speaking at a symposium on MIS at the Institution of Mechanical Engineers, London, Mr Wickham blamed short-termism and lack of entrepreneurial drive, adding that engineers and industrialists should work more closely with clinicians in bringing innovative products to the market.</p><p>the future for MIS</p><p>MIS will bring fundamental changes in all areas of treatment and technological advances are allowing new procedures to be developed. The abundance of equipment in the MIS operating room means that the amount of cables, wires and other obstructions to the surgeon are increased. There is a need for engineers to address these problems, says Mr Wickham.</p><p>The main issues concerning MIS are the need to visualise clearly and be able to manipulate tissues accurately and delicately. Optics, tissue ablation techniques, robotic actuation of micro-manipulators and bipolar diathermy are likely to be the most significant practical applications of new technology, he adds. Advances in imaging will come with auto-focus zoom laparoscopy and high-definition television systems. Instrumentation, although still somewhat crude, is becoming more sophisticated - mechanical stapling and anastomotic devices combined with tissue welding and adhesives will replace suturing.</p><p>Radiology will play an important role in MIS, with interventional radiology replacing much of the work previously undertaken by the surgeon. Image-guided stenting and needle aspiration are rapidly developing areas, according to Mr Wickham.</p><p>microengineering</p><p>Microengineering, a technique which uses microelectronics technology to etch tiny gears and mechanisms, has applications in producing tools for soft tissue surgery. Researchers at Herriot Watt University and Edinburgh University, Scotland, are developing a minute fluid-driven turbine for cataract surgery, designed for removing the lens through a small incision and reducing the 5-10% complication rate of the traditional surgical procedure. Treatment of cataracts costs the US around $6,000 million a year, according to the researchers.</p><p>The team has produced a prototype less than 1mm thick, small enough to work within the anterior chamber, which can be connected to a conventional hypodermic needle which in turn is connected to a drive. They have achieved torques of around 10(-7) Nm, but believe that a torque of 10(-4) Nm, suitable for cutting tissue, can be achieved with higher drive pressures and improved fabrication techniques. Microengineering techniques allow high accuracy and reproducibility and batch manufacture will reduce component cost, say the researchers.</p><p>robots for MIS</p><p>"Robots promise a great deal for MIS but there remain a number of issues to be addressed," says Brian Davies from the Mechatronics in Medicine Laboratory at Imperial College, London. The benefits include the ability to reach previously imaged targets accurately; to perform repetitive actions tirelessly; and the ability to move in three dimensions in the body without getting lost - an important feature in MIS, says Mr Davies. Accurate targeting is one of the major issues to be addressed, particularly when the target is soft tissue which moves on contact and renders data from pre-operative imaging inaccurate. In these cases, intra-operative imaging is required.</p><p>Neurosurgery represents an important area for robots, believes Mr Davies, as deep-rooted tumours, inaccessible by conventional techniques can be reached using robotic systems. "This is also one area where the cost and complexity of the procedure may be justified," he says. A project using a robot to perform neurosurgery at the University of Lausanne, Switzerland, entered the clinical phase last year and two operations have now been performed. The project, headed by Prof Burckhardt, uses a robot in conjunction with a CT scanner - co-ordinates taken from the scan can be fed to the robot.</p><p>Research under way at Imperial College is targeting kidney biopsy as an application for robotics. In this project, a passive arm carries tools and acts as a pointer in conjunction with a C-arm X-ray system to give information on the location of the tool in relation to the kidney, according to Mr Davies. This provides a simple, low-cost solution to a difficult procedure in which a precise incision must be made to remove kidney stones.</p><p>giving the surgeon an extra hand</p><p>Armstrong Projects, a UK manufacturer of medical robotics, has developed a robotic assistant for endoscopy, allowing the surgeon, rather than an assistant, to control the camera. The EndoSista allows the surgeon to control the camera while keeping both hands free to operate the instruments. The surgeon wears a headband with a sensor which detects head movement - this is then translated into endoscope movements. The system can only be activated when the surgeon presses a foot pedal, preventing involuntary motion.</p><p>Armstrong will launch EndoSista in Europe in a few weeks, following a series of modifications on the prototype, Laparobot, which was tested in a number of clinical centres in 1992 and 1993. The company also has plans to enter the US market.</p><p>The new version features a number of refinements: a fourth degree of freedom allows the scope to rotate on its own axis, important with angled optic endoscopes; individual surgeons' gestures can be learned by the system; and the unit is free-standing with a floating head which allows the operating table to be tilted intra-operatively without adjusting the system.</p><p>Armstrong has also developed systems to aid neurosurgery and orthopaedic surgery. NeuroSista is a localiser for frameless stereotaxy which comes in passive or active versions. The passive version features an unpowered freely-jointed arm which holds the surgical instrument. The surgeon moves the arm by hand and sensors measure the position which is then downloaded to a computer where it is displayed on CT or MR images. This allows the surgeon to navigate to a selected feature, says Armstrong. The active version features a motorised arm which responds to directions pointed out on the CT or MR images by the surgeon. The NeuroSista is accurate to within 1 mm, claims Armstrong, and brakes prevent the arm from moving unintentionally.</p><p>An orthopaedic robot, OrthoSista, is used to guide a drill for fracture fixation of the femur. Using images from a C-arm X-ray system, the robot aligns a guide cannula to the patient's leg, allowing the surgeon to drill the pilot hole manually or performing the procedure itself.</p><p>sewing up stomach disorders</p><p>Dr Paul Swain from the Royal London Hospital presented findings from the first clinical use of a new MIS sewing machine to aid the management of stomach disorders. Dr Swain and colleagues at University College London have developed a single stitch machine, small enough to be swallowed (9 x 35 mm), which can be used with a flexible endoscope. The device fits on the distal end of the endoscope and leaves three-quarters of the field of view unobstructed.</p><p>The machine was used successfully in 20 patients to sew a radiotelemetry capsule inside the stomach for pH monitoring; to secure feeding tubes; to close an oesophageal perforation; and to treat reflux oesophagitis. The team has also developed attachments for securing, knotting and cutting suture thread for use with flexible endoscopes. They are also working on a multiple-stitch sewing machine which can deliver a chain of five stitches. Dr Swain and colleagues are collaborating with a unnamed commercial partner to market the device.</p><p>training</p><p>MIS training holds potential for new computer technology but its development is still at an early stage, according to Christopher Fowler, consultant urological surgeon and tutor at the Royal College of Surgeons. The techniques most widely used to teach surgeons are crude physical simulators which teach basic skills such as inserting access ports and manipulating objects and some more complex skills such as diathermy, suturing and knot tying. More complex simulators are under development, such as Limbs 'n Things' Body Form, which imitate the human abdomen but do not have the same handling properties as human tissue, he says.</p><p>"The future of MIS training lies with electronic simulation but there are a number of problems to overcome," believes Mr Fowler. Virtual reality training is still in very early stages and faces many problems before it will be marketable. Cost is a major inhibiting factor - a massive investment is required to develop software to model internal anatomy, create realistic feedback and provide an instant response to the surgeon's action. Mr Fowler suggests that a system that learns from observing operations could overcome the problem of modelling and that concentrating on part tasks, rather than trying to create the whole field of view, could simplify the computing.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+MIS  a challenge to UK manufacturers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950313T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950313T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950313T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051827
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+MIS - a challenge to UK manufacturers
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253596
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183958Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+66571fb1-04fa-48fb-b78d-a6985945abf2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183958Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

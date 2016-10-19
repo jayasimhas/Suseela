@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {3319EEEF-9F3E-474D-B243-207937AF1D71}
+database: master
+path: /sitecore/layout/Renderings/User Defined/DCD/Company Leaderboard Ad
+parent: {16ABC9F4-FFB9-48EB-959A-1474AD8E7190}
+name: Company Leaderboard Ad
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 52
+
+/Views/CompaniesAndDeals/CompanyLeaderboardAd.cshtml
+----version----
+language: en
+version: 1
+revision: 6357e95e-d3cd-40c0-89fd-dd676c4a64d6
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160701T124612Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6357e95e-d3cd-40c0-89fd-dd676c4a64d6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160714T143557Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {8C1E3CDA-19C2-4197-B960-4FEC662BE477}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/PageAssets/Newsletter Signup 1
+parent: {E3269743-E220-4B94-90BA-49D76CE59896}
+name: Newsletter Signup 1
+master: {00000000-0000-0000-0000-000000000000}
+template: {3D8EB2B7-1261-43DA-A426-E9E3FA40AD0E}
+templatekey: Newsletter Sign up
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+400
+----version----
+language: en
+version: 1
+revision: 34004d92-8a8b-4b4f-a828-8d891e104fa4
+
+----field----
+field: {AF314B14-759B-4163-ADD9-E9CFFC39A79F}
+name: Confirmation summary
+key: confirmation summary
+content-length: 12
+
+Some summary
+----field----
+field: {44F21651-8BCE-4BFE-99DF-E064E480DABC}
+name: Confirmation Text
+key: confirmation text
+content-length: 17
+
+You are confirmed
+----field----
+field: {E2020EA6-D28E-4296-A53D-4FDF76130E5A}
+name: Headline text
+key: headline text
+content-length: 12
+
+Big Headline
+----field----
+field: {5664F1DD-289E-4D3C-BAE5-6C098BAF34CB}
+name: Sign up button text
+key: sign up button text
+content-length: 7
+
+Sign Up
+----field----
+field: {EC162CA7-BA9A-42AB-B736-E2ABB9BD1E44}
+name: Sign up call to action
+key: sign up call to action
+content-length: 12
+
+Sign up here
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160331T031544Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+34004d92-8a8b-4b4f-a828-8d891e104fa4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160407T122529Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

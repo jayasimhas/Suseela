@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {D9A50BA5-EB1F-4516-ACDC-2ABD806735C0}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Globals/Navigation/Footer Menu 1/In Vivo
+parent: {7E26011C-F0D1-4F09-8775-51198C84C45A}
+name: In Vivo
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: 565d7257-8486-4f96-a52e-b005c1e1c44c
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 149
+
+<link id="{FAEE26BD-D8F9-4C62-931C-4C08869EB13C}" querystring="" text="" title="" class="" linktype="internal" url="/Pharma/InVivo/Home" target="" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 7
+
+In Vivo
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160421T155907Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+565d7257-8486-4f96-a52e-b005c1e1c44c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160912T134739Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

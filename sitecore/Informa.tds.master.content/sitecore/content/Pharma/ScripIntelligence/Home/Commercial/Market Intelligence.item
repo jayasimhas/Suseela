@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {28D30026-0FD4-4905-8E16-90E988E26FBA}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Commercial/Market Intelligence
+parent: {D28BD55A-015D-4B51-8CA7-5A60C6B7463E}
+name: Market Intelligence
+master: {00000000-0000-0000-0000-000000000000}
+template: {77604558-3056-497B-93D8-E53BC5619DDB}
+templatekey: Topic Page
+
+----version----
+language: en
+version: 1
+revision: 11f2c30a-9bca-4d6f-af0f-285991c40fb3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 19
+
+Market Intelligence
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 19
+
+Market Intelligence
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 19
+
+Market Intelligence
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 1978
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{08B72642-5B81-4CA4-A9E9-202E7625D096}" p:before="r[@uid='{B430D21B-D7BE-4D16-A6CD-72AC966D9AB4}']" s:id="{1AA9B776-B2D0-4B04-B118-CE22D1263656}" s:ph="main-content" /><r uid="{B430D21B-D7BE-4D16-A6CD-72AC966D9AB4}" p:before="r[@uid='{B3B39C0B-8122-4E80-B81F-355D206080D4}']" s:ds="{935330A4-64A3-4B3E-A75B-DB5AEA6AC77B}" s:id="{8C64BF41-EFAF-4867-A5A1-91EEB97F2985}" s:ph="/main-content/right-curated-content_525b64ef-c8f8-42e3-96ad-6bc67fee4cf0" /><r uid="{B3B39C0B-8122-4E80-B81F-355D206080D4}" p:before="r[@uid='{C14E8F71-BEF2-45F3-954A-040E68C90E0F}']" s:ds="{EEF9EBA9-FF8E-4F18-A901-CD655E36C9BD}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:par="Show Image=1" s:ph="/main-content/left-curated-content_525b64ef-c8f8-42e3-96ad-6bc67fee4cf0" /><r uid="{C14E8F71-BEF2-45F3-954A-040E68C90E0F}" p:before="r[@uid='{525B64EF-C8F8-42E3-96AD-6BC67FEE4CF0}']" s:ds="{48513770-FB82-4D11-B2EB-27721866C91F}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:par="Show Image=1" s:ph="/main-content/left-curated-content_525b64ef-c8f8-42e3-96ad-6bc67fee4cf0" /><r uid="{525B64EF-C8F8-42E3-96AD-6BC67FEE4CF0}" p:before="r[@uid='{F2E6CB01-17A9-4DE8-8C88-4B707DABF78E}']" s:id="{3EFF8328-17E2-41E9-BBCB-E4361A60D5C9}" s:ph="main-content" /><r uid="{F2E6CB01-17A9-4DE8-8C88-4B707DABF78E}" p:before="r[@uid='{0F6A6227-C265-4521-8F6D-FA78653AE581}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={D06B9710-07C6-4508-99C0-1B6B3A9ADE78}" s:ph="/main-content/two-column-curated_92c58cdb-b23a-4c94-b753-c99d332c102d" /><r uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" p:before="r[@uid='{92C58CDB-B23A-4C94-B753-C99D332C102D}']" /><r uid="{92C58CDB-B23A-4C94-B753-C99D332C102D}" s:ds="{A1D4B236-3141-420F-B6B9-846552965142}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160424T024153Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\deweyd
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+11f2c30a-9bca-4d6f-af0f-285991c40fb3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160517T132845Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

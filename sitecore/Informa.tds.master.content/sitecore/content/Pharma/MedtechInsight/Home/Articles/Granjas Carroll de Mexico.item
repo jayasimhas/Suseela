@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {B50A363C-729D-4B7E-8DAA-E8BDB751997E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Granjas Carroll de Mexico
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Granjas Carroll de Mexico
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 63d1acb9-7b53-4536-8e8f-de126b4146b2
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 35
+
+<p> <a>Back to Visualised </a> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+Granjas Carroll de Mexico
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2372
+
+<p> <a class="emailLink" href="http://www.clinica.co.uk/home/features/visualised">Back to Visualised </a> </p> <p> <table> <tbody> <tr> <td><div> <div> <div> <embed name="flashticker" src="http://widget-c4.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" flashvars="cy=lt&amp;il=1&amp;channel=2666130979428439492&amp;site=widget-c4.slide.com" wmode="transparent" salign="l" scale="noscale" quality="high"> </div> </div> </div></td> </tr> <tr> <td><span class="newsContent">The pig farm Granjas Carroll de Mexico found itself in the spotlight in March 2009 because of the swine flu crisis. However, reports suggested that this farm might not be the source of the pandemic. The state of the farm, however, depicted by a Mexican blog, raises a few questions</span><p> <br> <a href="http://enlace.vazquezchagoya.com/?p=812" target="_blank" class="optionsLink">ElanceVeracruz212</a><br> </p></td> </tr> </tbody> </table> <p> <table> <tbody> <tr> <td><iframe marginwidth="0" marginheight="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=la+gloria+perote+veracruz+mexico+91270&amp;sll=19.18992,-96.204529&amp;sspn=0.232484,0.307617&amp;ie=UTF8&amp;t=h&amp;ll=19.563834,-97.248402&amp;spn=0.028306,0.036478&amp;z=14&amp;output=embed" frameborder="0" width="700" scrolling="No" height="459"></iframe> <br> <span><a href="http://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=la+gloria+perote+veracruz+mexico+91270&amp;sll=19.18992,-96.204529&amp;sspn=0.232484,0.307617&amp;ie=UTF8&amp;t=h&amp;ll=19.563834,-97.248402&amp;spn=0.028306,0.036478&amp;z=14" target="_blank" class="optionsLink" text-align:="" left"="">View Larger Map</a></span></td> </tr> <tr> <td class="optionsLink"><span class="newsContent"><a href="http://www.granjascarroll.com/" target="_blank">Granjas Carroll de Mexico</a>, no longer thought to be &quot;ground zero&quot;, is shown in the map as 'B'. The farm, sandwiched between an area of field crop farming and a built-up industrial area, is minutes away from a network of roads. Commercial pressures from retailers for a 'just-in-time' delivery means that farms and warehouse distribution centres have to be near highways and other relevant facilities. Efficient logistics is crucial<br> <em>Google map: Salina Christmas </em></span> </td> </tr> </tbody> </table>  </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 25
+
+Granjas Carroll de Mexico
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T231300
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT005209
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+Granjas Carroll de Mexico
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+176657
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T160811Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+63d1acb9-7b53-4536-8e8f-de126b4146b2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T031300Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

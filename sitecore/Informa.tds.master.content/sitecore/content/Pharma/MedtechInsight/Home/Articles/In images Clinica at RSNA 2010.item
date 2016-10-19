@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {0D715D9C-C0CE-4D84-B8BB-C81C83609599}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/In images Clinica at RSNA 2010
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: In images Clinica at RSNA 2010
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: a9d6f3a0-9c3b-424e-94d1-71949f1e592e
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 5215
+
+<p> <p><em><strong>Photos: Madeleine Armstrong </strong><br> 2 December 2010</em></p> <p><em>Madeleine Armstrong</em>, Senior Science Reporter, is at the 96th annual meeting of the Radiological Society of North America (RSNA). Here is the latest update of Armstrong's reportage of the event. To follow <strong>Clinica</strong>'s live Twitter coverage of RSNA from 28 November-2 December, go to <a>www.twitter.com/clinica</a> and follow <a>#RSNA10</a></p> <p><strong>Quick links:</strong> <a>Sunday, 28.11.10</a> | <a>Monday, 29.11.10</a> | <a>Wednesday, 1.12.10</a> |<a> Thursday, 2.12.10</a> | <a>More on RSNA 2010</a></p> <p><strong><a></a>Update: 3.30 pm GMT, 2 December 2010. </strong></p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left and right:</strong> Traffic in the main exhibition hall was dwindling by Wednesday afternoon.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Naviscan, which reported positive data with its positron emission mammography (PEM) technology at this year's conference. <strong>Right</strong>: David Caumartin shows off GE's new contrast enhanced spectral imaging technology, which is awaiting FDA 510(k) clearance.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Finding your way at RSNA . <strong>Right</strong>: See you in 2011!</td> </tr>  <p><strong><a></a>Update: 1.10 am GMT, 1 December 2010. </strong></p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left:</strong> GE Healthcare's booth busy with visitors. <strong>Right</strong>: Mary Robinson from iCAD, which develops computer-aided detection technology for imaging.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Shai Levanon and Maayan Wenderow from Rcadia, which has just signed its first distribution deal for its COR Analzyer software, with Siemens (<a>www.clinica.co.uk, 1 December 2010</a>). <strong>Right</strong>: Everyone's talking about Hologic's 3D breast tomosynthesis system, Selenia Dimensions - here it is. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Patty Ayala from Hologic showed Clinica how the device works. <strong>Right</strong>: Laurent Rapon from Aloka with the company's new "premium" ultrasound system, ProSound F75. This is its first US outing - FDA approval is pending. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> GE Healthcare's Jan Dewitte talks to journalists about the firm's Performance Solutions business unit. <strong>Right</strong>: Some found the pace of RSNA too much to handle.</td> </tr>  <p><strong><a></a>Update: 22.42 am GMT, 29 November 2010. </strong></p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left:</strong> Hugh Bettesworth from Mirada Medical, which announced at RSNA that it has just made its latest XD3 image fusion technology (Oncology Fusion) available as a fully integrated option within the Vitrea Enterprise Suite (VES) from Vital Images. XD3 received FDA 510(k) clearance in June, and allows users to fuse images from different modalities including PET, CT and MRI. <strong>Right</strong>: Representatives from Siemens SIERRA expert panel, which aims to reduce radiation doses from imaging.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Prof Osman Ratib from the University Hospital of Geneva talks about his experience with Philips' combined PET-MRI device. The hospital installed its scanner in April (<a>www.clinica.co.uk, 10 May 2010</a>). <strong>Right</strong>: GE Healthcare's expert panel, which talked about the healthcare challenges faced in different regions of the world, including India, China, the US and Latin America.</td> </tr>  <p><strong><a></a>Update: 0.45 am GMT, 29 November 2010. </strong></p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left:</strong> Statue in Grant Park. <strong>Right</strong>: "The Bean", Anish Kapoor installation in Millennium Park. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Picking up programmes for RSNA. <strong>Right</strong>: The registration area was very busy this year.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Siemens's new PET/MR hybrid scanner. <strong>Right</strong>: Dominic Smith with Philips's competitor PET/MR device. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Ulf Andersson from RIS/PACS specialist Carestream Health. <strong>Right</strong>: Gail Malcom at Siemens shows the journalist the Syngo Via system in action. Syngo Via was launched at last year's RSNA but since then has received 510(k) clearance for several uses.</td> </tr>  <p><strong><a></a>MORE ON RSNA 2010 </strong></p> <p><a>RSNA 2010: Annual mammogram benefits women aged under 50</a> <br> <a>RSNA 2010: Has the danger of radiation from CT scans been overestimated?</a> <br> <a>RSNA 2010: women with previous breast cancer should be screened with MRI</a> <br> <a>RSNA 2010: Philips and Siemens battle it out over PET-MRI hybrid technology </a><br><a> RSNA 2010: US and EU approval for Philips' new CT scanner; hits market in Q1 2011</a></p>  </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+In images: Clinica at RSNA 2010
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9301
+
+<p> <p><em><strong>Photos: Madeleine Armstrong </strong><br> 2 December 2010</em></p> <p><em>Madeleine Armstrong</em>, Senior Science Reporter, is at the 96th annual meeting of the Radiological Society of North America (RSNA). Here is the latest update of Armstrong's reportage of the event. To follow <strong>Clinica</strong>'s live Twitter coverage of RSNA from 28 November-2 December, go to <a href="http://www.twitter.com/clinica" target="_blank" class="optionsLink">www.twitter.com/clinica</a> and follow <a href="http://search.twitter.com/search?q=%23rsna10" target="_blank" class="optionsLink">#RSNA10</a></p> <p><strong>Quick links:</strong> <a href="#1" class="optionsLink">Sunday, 28.11.10</a> | <a href="#2" class="optionsLink">Monday, 29.11.10</a> | <a href="#3" class="optionsLink">Wednesday, 1.12.10</a> |<a href="#4" class="optionsLink"> Thursday, 2.12.10</a> | <a href="#news" class="optionsLink">More on RSNA 2010</a></p> <p><strong><a name="4" id="4"></a>Update: 3.30 pm GMT, 2 December 2010. </strong></p> <table> <tr> <td><div><img src="-/media/7F6612189C8842A89FA031762C7C9B34.ashx" width="350" height="263" style="margin-right: 3px"></div></td> <td><div><img src="-/media/6E4076A83CB34808B19FF826777CD705.ashx" width="350" height="263"></div></td> </tr> <tr> <td colspan="2"><strong>Left and right:</strong> Traffic in the main exhibition hall was dwindling by Wednesday afternoon.</td> </tr> <tr> <td><img src="-/media/4EB00748F6E0478FB5244CA4F8D51115.ashx" width="350" height="263"></td> <td><img src="-/media/ACD2774F5A6C421FB0B4F95663A3FDA0.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Naviscan, which reported positive data with its positron emission mammography (PEM) technology at this year's conference. <strong>Right</strong>: David Caumartin shows off GE's new contrast enhanced spectral imaging technology, which is awaiting FDA 510(k) clearance.</td> </tr> <tr> <td><img src="-/media/C3546BAB1BC745F7A2BA0770DF0DC5AE.ashx" width="350" height="263"></td> <td><img src="-/media/4162447428274DEE923754E622BD8165.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Finding your way at RSNA . <strong>Right</strong>: See you in 2011!</td> </tr> </table> <p><strong><a name="3" id="3"></a>Update: 1.10 am GMT, 1 December 2010. </strong></p> <table> <tr> <td><div><img src="http://www.clinica.co.uk/multimedia/archive/00110/CIMG2570_2_110466a.jpg" width="350" height="263" style="margin-right: 3px"></div></td> <td><div><img src="-/media/401D89FDD25C4F1B819D386194E1ACE7.ashx" width="350" height="263"></div></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> GE Healthcare's booth busy with visitors. <strong>Right</strong>: Mary Robinson from iCAD, which develops computer-aided detection technology for imaging.</td> </tr> <tr> <td><img src="-/media/50148A1FA9844CBE93D95BF4796DC5DE.ashx" width="350" height="263"></td> <td><img src="-/media/17B2347E78A94E48B1B7A6EDB29F0DA2.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Shai Levanon and Maayan Wenderow from Rcadia, which has just signed its first distribution deal for its COR Analzyer software, with Siemens (<a href="http://www.clinica.co.uk/marketsector/cardiovascular/Siemens-is-first-distributor-of-Rcadias-cardiac-assessment-technology-306730" class="optionsLink">www.clinica.co.uk, 1 December 2010</a>). <strong>Right</strong>: Everyone's talking about Hologic's 3D breast tomosynthesis system, Selenia Dimensions - here it is. </td> </tr> <tr> <td><img src="-/media/94F4DC013B70448C8A2C15838F67ABF8.ashx" width="350" height="263"></td> <td><img src="-/media/F77F9845399D4F6EB285F9355A48E844.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Patty Ayala from Hologic showed Clinica how the device works. <strong>Right</strong>: Laurent Rapon from Aloka with the company's new "premium" ultrasound system, ProSound F75. This is its first US outing - FDA approval is pending. </td> </tr> <tr> <td><img src="-/media/904ADB70B8A0454CBA8D37D07CBA6B4B.ashx" width="350" height="263"></td> <td><img src="-/media/340CC196B6814127BD91664E935BBF3B.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> GE Healthcare's Jan Dewitte talks to journalists about the firm's Performance Solutions business unit. <strong>Right</strong>: Some found the pace of RSNA too much to handle.</td> </tr> </table> <p><strong><a name="2" id="2"></a>Update: 22.42 am GMT, 29 November 2010. </strong></p> <table> <tr> <td><div><img src="-/media/8C86112EE4064E92B6E9A8934BA004EF.ashx" width="350" height="263" style="margin-right: 3px"></div></td> <td><div><img src="-/media/EA801AFDE5C14497A6624F01A7CF16D2.ashx" width="350" height="263"></div></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Hugh Bettesworth from Mirada Medical, which announced at RSNA that it has just made its latest XD3 image fusion technology (Oncology Fusion) available as a fully integrated option within the Vitrea Enterprise Suite (VES) from Vital Images. XD3 received FDA 510(k) clearance in June, and allows users to fuse images from different modalities including PET, CT and MRI. <strong>Right</strong>: Representatives from Siemens SIERRA expert panel, which aims to reduce radiation doses from imaging.</td> </tr> <tr> <td><img src="-/media/9F4BBDC15F6F41BDBB83B514D10CBBEF.ashx" width="350" height="263"></td> <td><img src="-/media/FA4B587636FE489AA5D5CB2B8E389178.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Prof Osman Ratib from the University Hospital of Geneva talks about his experience with Philips' combined PET-MRI device. The hospital installed its scanner in April (<a href="http://www.clinica.co.uk/marketsector/imagingit/Combining-polar-opposites---PET-and-MRI-279343?autnID=/contentstore/clinica/codex/6cf80d04-5c32-11df-a344-4b68910a1c57.xml" class="optionsLink">www.clinica.co.uk, 10 May 2010</a>). <strong>Right</strong>: GE Healthcare's expert panel, which talked about the healthcare challenges faced in different regions of the world, including India, China, the US and Latin America.</td> </tr> </table> <p><strong><a name="1" id="1"></a>Update: 0.45 am GMT, 29 November 2010. </strong></p> <table> <tr> <td><div><img src="-/media/1CE2F675A97445C99C6E0D701CE40BAB.ashx" width="350" height="263" style="margin-right: 3px"></div></td> <td><div><img src="http://www.clinica.co.uk/multimedia/archive/00110/CIMG2512_350_110343a.jpg" width="350" height="263"></div></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Statue in Grant Park. <strong>Right</strong>: "The Bean", Anish Kapoor installation in Millennium Park. </td> </tr> <tr> <td><img src="-/media/8E9723F9B9A343A78E344082E49FF664.ashx" width="350" height="263"></td> <td><img src="-/media/017087EE05574E80965E37F977EA1C7C.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Picking up programmes for RSNA. <strong>Right</strong>: The registration area was very busy this year.</td> </tr> <tr> <td><img src="http://www.clinica.co.uk/multimedia/archive/00110/CIMG2539_350_110346a.jpg" width="350" height="263"></td> <td><img src="http://www.clinica.co.uk/multimedia/archive/00110/CIMG2548_350_110351a.jpg" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Siemens's new PET/MR hybrid scanner. <strong>Right</strong>: Dominic Smith with Philips's competitor PET/MR device. </td> </tr> <tr> <td><img src="-/media/F22AC9544E664803AE262E2D2E094C2E.ashx" width="350" height="263"></td> <td><img src="-/media/FDB37268C2894BBCADC9319DEE8C793D.ashx" width="350" height="263"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Ulf Andersson from RIS/PACS specialist Carestream Health. <strong>Right</strong>: Gail Malcom at Siemens shows the journalist the Syngo Via system in action. Syngo Via was launched at last year's RSNA but since then has received 510(k) clearance for several uses.</td> </tr> </table> <p><strong><a name="news" id="news"></a>MORE ON RSNA 2010 </strong></p> <p><a href="http://www.clinica.co.uk/marketsector/imagingit/RSNA-2010-Annual-mammogram-benefits-women-aged-under-50-306797" class="optionsLink">RSNA 2010: Annual mammogram benefits women aged under 50</a> <br> <a href="http://www.clinica.co.uk/marketsector/imagingit/RSNA-2010-Has-the-danger-of-radiation-from-CT-scans-been-overestimated-306790" class="optionsLink">RSNA 2010: Has the danger of radiation from CT scans been overestimated?</a> <br> <a href="http://www.clinica.co.uk/marketsector/imagingit/RSNA-2010-women-with-previous-breast-cancer-should-be-screened-with-MRI-306732" class="optionsLink">RSNA 2010: women with previous breast cancer should be screened with MRI</a> <br> <a href="http://www.clinica.co.uk/marketsector/imagingit/RSNA-2010-Philips-and-Siemens-battle-it-out-over-PET-MRI-hybrid-technology-306672" class="optionsLink">RSNA 2010: Philips and Siemens battle it out over PET-MRI hybrid technology </a><br><a href="http://www.clinica.co.uk/marketsector/imagingit/RSNA-2010-US-and-EU-approval-for-Philips-new-CT-scanner-hits-market-in-Q1-2011-306636" class="optionsLink"> RSNA 2010: US and EU approval for Philips' new CT scanner; hits market in Q1 2011</a></p>  </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 30
+
+In images Clinica at RSNA 2010
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185751
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057413
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+In images: Clinica at RSNA 2010
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+306666
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T190015Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a9d6f3a0-9c3b-424e-94d1-71949f1e592e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225751Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -1,0 +1,123 @@
+----item----
+version: 1
+id: {A5B51CF4-8209-4058-AD59-95743010A599}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/TestDataTools/CE_AMcharts_Lpage/Test AMcharts Dashboard
+parent: {D6732212-9773-473D-A03E-2CA8B1D28B97}
+name: Test AMcharts Dashboard
+master: {00000000-0000-0000-0000-000000000000}
+template: {F0160F93-A592-4F61-8E4E-F8F7E1C00246}
+templatekey: AMcharts Dashboard
+
+----version----
+language: en
+version: 1
+revision: fdf7fde6-f5b3-4513-b9d7-e0a2cebc257b
+
+----field----
+field: {5808558D-AC15-4692-8726-991C350DE014}
+name: ChartType
+key: charttype
+content-length: 6
+
+serial
+----field----
+field: {918301A7-250B-46DE-AD50-EE91BE10CBD4}
+name: GraphType
+key: graphtype
+content-length: 6
+
+column
+----field----
+field: {F9722A63-D4A7-4B85-BC22-BB0FE5C6C444}
+name: CategoryField
+key: categoryfield
+content-length: 7
+
+country
+----field----
+field: {CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531}
+name: ValueField
+key: valuefield
+content-length: 6
+
+visits
+----field----
+field: {889A40F6-8A6B-44F0-A305-38DE22186F7A}
+name: Page Title
+key: page title
+content-length: 77
+
+This is a Data Tool Landing page - Created for test - sourced from Page Title
+----field----
+field: {14A2AA8C-0456-4265-A11C-5DBF4946C555}
+name: Page Subheading
+key: page subheading
+content-length: 162
+
+This is the subheading to the article you see above -Created for test - sourced from Page Subheading. It will give the context on what the article below is about.
+----field----
+field: {FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5}
+name: Introductory Text
+key: introductory text
+content-length: 597
+
+Sourced from <strong>Introductory text</strong>. This is the description for data &nbsp;tool. <em>Should appear in the left column before video.</em>&nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to <a href="http://google.com">minimise</a> this panel if the user does not require it.&nbsp;The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.
+----field----
+field: {58EADA52-FE63-4FD3-8034-0BB6FBBCCD16}
+name: Tool Explanation
+key: tool explanation
+content-length: 1999
+
+<p><strong>Tool Explanation</strong> for&nbsp;Table/<em>Chart description</em> and explanation. &nbsp;Test copy&nbsp;The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.</p>
+<p><strong>Second para&nbsp;</strong>The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.</p>
+<p><strong><a href="http://tableau.com">&nbsp;Para 3&nbsp;</a></strong>The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.The following concepts show responsive versions of the previous Desktop designs. The same functionality will occur, apart from the Mobile video player. This would use the native OS or Android video player to view videos.</p>
+----field----
+field: {5CAC4FEC-AB94-495F-ADA4-FE34B08EBF7B}
+name: Landing Page Link
+key: landing page link
+content-length: 114
+
+<link text="" linktype="internal" class="" title=""  querystring="" id="{8293A17B-47FA-4FA5-909C-223CCB8C009B}" />
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161002T061426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fdf7fde6-f5b3-4513-b9d7-e0a2cebc257b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161002T063130Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

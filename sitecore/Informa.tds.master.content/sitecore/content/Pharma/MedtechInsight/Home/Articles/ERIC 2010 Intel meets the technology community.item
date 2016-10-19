@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {434CCCCF-C262-478E-8D83-9D34E3F7506E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/ERIC 2010 Intel meets the technology community
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: ERIC 2010 Intel meets the technology community
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 2158451b-f79e-4081-b3cb-4f3e837acd3e
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3150
+
+<p><p><em><strong>Words and photos: Salina Christmas </strong><br> 21 October 2010</em></p> <p>More than 400 delegates from across Europe and the Middle East representing enterprise, academica and policy makers gathered at the 3rd annual European Research and Innovation Conference (ERIC) which took place at the Intel Ireland campus, Leixlip, Co Kildare, Ireland. The conference was opened by Conor Lenihan, Minister of Science, Technology and Innovation who highlighted that industry-academic research and development partnerships are significant in Ireland's economic recovery efforts. </p>   <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Intel has invested US$3.9 billion in 36 countries in five years, says Gordon Graylish, VP, Sales and Marketing Group General Manager, Enterprise Solution Sales, Intel Corporation.<strong> Right</strong>: &quot;This is a vicious industry,&quot; says Malcolm Penn, CEO, Future Horizons, of the semiconductor industry. &quot;Failure is not an option.&quot; Research and development help a company get the competitive edge over its competitors.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Dan O'Brien, Economic Editor, Irish Times, talks about &quot;short term recovery and long run perspectives&quot; in the global economy. <strong>Right</strong>: The audience listen attentively to Mr O'Brien. </td> </tr> <tr> <td><div></div></td> <td> </td> </tr> <tr> <td><strong>Left:</strong> Leonard Hobbs, Silicon Nonetechnology Research Manager, Intel Ireland, introduces the next speaker. <strong>Right</strong>: Delegates come from top universities from all over Europe and the Middle East. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Graylish addresses the audience. Intel has more than 1000 R&D professionals in its research network Intel Labs Europe and is working to promote a world-class research and innovation eco-system. <strong>Right</strong>: Prof Brian MacCraith, President, Dublin City University (far left), checks his smartphone for messages. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> Tom Aldrige, Director, Energy Systems Research, Intel Labs, explains to the media about the &quot;smart office&quot; concept. It is a concept that could potentially benefit hospitals and health centres. <strong>Right</strong>: Prof Dr Martin Curley, Director, Intel Labs Europe, Principal Engineer, Intel Corporation, Professor of Technology and Business Innovation, National University of Ireland, Maynooth, says the collaborative R&amp;D model embraced by the universities, governments and start-ups is key in &quot;turning research into knowledge&quot;. Innovation, in turn, &quot;turns knowledge into value&quot;. </td> </tr>  <p><strong>ERIC 2010: NEWS </strong></p> <p><a>User experience critical in putting technology in context, say researchers </a></p> <p><strong>ERIC 2010: PHOTO ESSAYS </strong></p> <p><a>Academics and researchers, the R&amp;D talents </a><br> <a>Intel meets the technology community </a><br> <a>The delegates and their digital objects </a><br> <a>The gala evening </a></p> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+ERIC 2010: Intel meets the technology community
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4526
+
+<p><p><em><strong>Words and photos: Salina Christmas </strong><br> 21 October 2010</em></p> <p>More than 400 delegates from across Europe and the Middle East representing enterprise, academica and policy makers gathered at the 3rd annual European Research and Innovation Conference (ERIC) which took place at the Intel Ireland campus, Leixlip, Co Kildare, Ireland. The conference was opened by Conor Lenihan, Minister of Science, Technology and Innovation who highlighted that industry-academic research and development partnerships are significant in Ireland's economic recovery efforts. </p>  <table> <tr> <td><img src="-/media/A696E6BF6E2C4BE1B65CBD01EB77E8DE.ashx" width="350" height="232"></td> <td><img src="-/media/CF6E61F0135F4B55A9F968C6686C6EC9.ashx" width="350" height="232" style="margin-right: 3px"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Intel has invested US$3.9 billion in 36 countries in five years, says Gordon Graylish, VP, Sales and Marketing Group General Manager, Enterprise Solution Sales, Intel Corporation.<strong> Right</strong>: &quot;This is a vicious industry,&quot; says Malcolm Penn, CEO, Future Horizons, of the semiconductor industry. &quot;Failure is not an option.&quot; Research and development help a company get the competitive edge over its competitors.</td> </tr> <tr> <td><img src="-/media/BD188C4D04A74E299540D54F65289B86.ashx" width="350" height="232" style="margin-right: 3px"></td> <td><img src="-/media/5B664FC0025340F0A1C362ACB68D56B4.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Dan O'Brien, Economic Editor, Irish Times, talks about &quot;short term recovery and long run perspectives&quot; in the global economy. <strong>Right</strong>: The audience listen attentively to Mr O'Brien. </td> </tr> <tr> <td><div><img src="-/media/60AF7A5E345B4B948F7985EBDDCB2377.ashx" width="350" height="232"></div></td> <td> <img src="-/media/FE05892198A742A88F850A2468FE2BFC.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Leonard Hobbs, Silicon Nonetechnology Research Manager, Intel Ireland, introduces the next speaker. <strong>Right</strong>: Delegates come from top universities from all over Europe and the Middle East. </td> </tr> <tr> <td><img src="-/media/4A5B8449E9E14B1EB2C652524C20A2EA.ashx" width="350" height="232"></td> <td><img src="-/media/F88F7FE9D90941B1AC8C34BBF75B5B13.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Graylish addresses the audience. Intel has more than 1000 R&D professionals in its research network Intel Labs Europe and is working to promote a world-class research and innovation eco-system. <strong>Right</strong>: Prof Brian MacCraith, President, Dublin City University (far left), checks his smartphone for messages. </td> </tr> <tr> <td><img src="-/media/7EC72D44880F4E0C95492FD5F8BBFB20.ashx" width="350" height="232"></td> <td><img src="-/media/B3D098684D57478F9976E974FF4ABD2A.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Tom Aldrige, Director, Energy Systems Research, Intel Labs, explains to the media about the &quot;smart office&quot; concept. It is a concept that could potentially benefit hospitals and health centres. <strong>Right</strong>: Prof Dr Martin Curley, Director, Intel Labs Europe, Principal Engineer, Intel Corporation, Professor of Technology and Business Innovation, National University of Ireland, Maynooth, says the collaborative R&amp;D model embraced by the universities, governments and start-ups is key in &quot;turning research into knowledge&quot;. Innovation, in turn, &quot;turns knowledge into value&quot;. </td> </tr> </table> <p><strong>ERIC 2010: NEWS </strong></p> <p><a href="http://www.clinica.co.uk/marketsector/imagingit/User-experience-critical-in-putting-technology-in-context-say-researchers-304882" class="optionsLink">User experience critical in putting technology in context, say researchers </a></p> <p><strong>ERIC 2010: PHOTO ESSAYS </strong></p> <p><a href="http://www.clinica.co.uk/eric2010/talents" class="optionsLink">Academics and researchers, the R&amp;D talents </a><br> <a href="http://www.clinica.co.uk/eric2010/intel" class="optionsLink">Intel meets the technology community </a><br> <a href="http://www.clinica.co.uk/eric2010/devices2" class="optionsLink">The delegates and their digital objects </a><br> <a href="http://www.clinica.co.uk/eric2010/gala" class="optionsLink">The gala evening </a></p> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+ERIC 2010 Intel meets the technology community
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185745
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057097
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+ERIC 2010: Intel meets the technology community
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+304652
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185852Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2158451b-f79e-4081-b3cb-4f3e837acd3e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225745Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

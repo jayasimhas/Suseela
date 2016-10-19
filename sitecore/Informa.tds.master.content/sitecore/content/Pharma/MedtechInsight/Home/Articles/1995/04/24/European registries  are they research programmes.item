@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {D1E50189-D42E-4BD6-B74A-35C4F1994B45}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/24/European registries  are they research programmes
+parent: {3637D24F-1472-4E41-B5A6-816481061E2D}
+name: European registries  are they research programmes
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 92756665-4f31-43e9-89d0-cb7fbf090d3c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 357
+
+<p>The European implant registries described at the recent Amsterdam conference "far exceed" some people's notion of a registry. They are rather "research programmes with different aims" which require "enormous investment". This was the opinion of Professor Jonathan Black, professor emeritus of bioengineering at Clemson University, South Carolina, US.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+European registries - are they research programmes?
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8672
+
+<p>The European implant registries described at the recent Amsterdam conference "far exceed" some people's notion of a registry. They are rather "research programmes with different aims" which require "enormous investment". This was the opinion of Professor Jonathan Black, professor emeritus of bioengineering at Clemson University, South Carolina, US.</p><p>The fundamental issue that needs to be considered, he insisted, is how to ensure basic registration and information flow. This will help avoid problems such as those that occurred in Australia (where there is a population of 17 million), when it was impossible to track the 95 recipients of the Shiley heart valve during a device recall.</p><p>Hospitals should be responsible for tracking, he suggested, and should keep basic information on implants and explants just as they do for births and deaths, that would flow into a central database to enable patients to be tracked if necessary.</p><p>Moreover, Prof Black stated, given the level of international trading in implants, there is a need for truly international post-market surveillance and tracking systems. He recognised that there are a number of obstacles to an international database, including cultural barriers, but emphasised that with a minimum data set, an international nomenclature and bar-coding system for precise device designation, it should be possible to develop a group of national and transnational systems that can communicate.</p><p>Prof Black has been involved in preparing a design specification aimed at developing the US National Implant Data Retrieval and Analysis System (see Clinica No 589, p 8), part of which involves the routine recording of device implantation and removal. Interest has been shown in the NIDRA system overseas, and individuals from the US, Australia and nine European and Asian countries, attended the recent Melbourne conference on this subject in January.</p><p>databases aid purchasing decisions</p><p>The European registries offer more than just tracking. Speakers showed how they have become databases which enable comparisons to be made between products and techniques influencing purchasing decisions. Outcome studies can be used to develop tests which will predict device performance and influence product development.</p><p>Manufacturers, therefore, need to keep an eye on developments. Dane Miller, president of <strong>[C#198600122:Biomet]</strong>, remarked that his company had expanded product lines that had proved successful in a Swedish study and withdrawn commercial efforts where the results were not so good.</p><p>The Achilles heel of this system, according to Prof Black, is that although the databases present information regarding beneficial technological changes, by the time these reach the market, new requirements have been identified. Another delegate stated that if such registries influence development, they need to be large and mature.</p><p>what the registries offer</p><p>While a pan-European registry of all medical implants may still be some way off, there is a burgeoning number of medical device implant registries in Europe, some of the more significant of which were highlighted at the Amsterdam conference.</p><p>The Netherlands</p><p>The purpose of the Dutch registries is to improve quality of care, for post-marketing surveillance and for patient tracking, said Harm Jan Roelants, director general of SIG Health Care Information which runs the orthopaedic and breast implant (set up in January this year) registries. Participation (voluntary) in the implant registry is 65% for surgeons, 100% for industry, and in the plastic surgery implant registry 90% and 100% respectively. The registries' biggest problem is funds. Although these have been available for development of the registers, there are few available for upkeep. In Mr Roelants' view the patient will end up having to pay the bill through the cost of the implant.</p><p>UK</p><p>The UK's Department of Health is funding a three-year breast implant registry aimed at examining the problems and benefits associated with breast implants, in the light of recent studies suggesting a possible link with autoimmune diseases. The register, which is voluntary, encourages the medical profession to fill in records of implantation and explantation and accepts retrospective registrations. Some 195 national health units are collaborating in the public and private sector.</p><p>Sweden</p><p>The Swedish national total hip replacement (THR) register continues to yield interesting data that should help optimise product/patient match and weed out the less successful products or techniques. The Swedish THR is supported by the Swedish Orthopaedic Society and the National Board of Health and Welfare. It is aimed at determining the rate of revision and evaluating the importance of patient, surgical and implant-related factors in revision rates. Data show that in total, there were 126,607 primary THRs in Sweden between 1978 and 1993. (For more details on its findings see Clinica No 606/7, pp 7-9).</p><p>European Pacemaker Registration System</p><p>Another successful register, this time across national borders, is the European Pacemaker Registration System, which is operating in 18 countries. Its objectives, according to Giorgio Feruglio, professor of clinical cardiology at the Regional Hospital in Udine, Italy, include performing post-market surveillance and optimising allocation of healthcare resources. Some 800,000 pacemakers have been registered on the system - the data are compiled nationally and then transferred to a central database. (For further details see Clinica No 606/7, p 7-9).</p><p>Neurosurgery implant registry</p><p>There was also a call from Michiel Staal, a neurosurgeon at the Academic Hospital in Groningen, the Netherlands, for a neurosurgery implant registry. There is a lack of controlled prospective trials, Dr Staal complained, comparing different implants and a lack of information on quality and safety. Such a registry would serve clinical research and patient tracking.</p><p>practicalities</p><p>The registries will only work as research programmes if effective records are maintained. Patient monitoring, however, is made difficult because of today's increasingly mobile population. An ECRI study showed that 30-40% of patients are "lost" after two years. This has serious consequences for patient tracking when recalls are necessary.</p><p>One of the problems in developing registration and tracking systems is personal privacy laws in individual member states and the proposed EC Directive on privacy-protection, which will include a prohibition (subject to exceptions) on processing data concerning health.</p><p>The purpose of registration - for research or tracking - should dictate whether personal details need to be kept. If so they must be carefully coded, according to Dr Micky Adriaansens, lawyer at van Anken, Knuppe, Damstra in the Netherlands. That way the person responsible for the records has no way of knowing to whom the data relates; only the physician who supplied the data in the first place should have true access.</p><p>The need for patient records could be avoided by the use of transducers. According to Terry Knapp, managing director and CEO of LipoMatrix, Switzerland, there is often an urgent need to define devices non-invasively. His company is tagging its breast implants with transponders - electronic tags the size of a grain of rice with unique codes that can be read at any time using an inexpensive device. Although this system does not offer "fail-safe" patient tracking, it provides an insurance for patients whose records are unavailable. Prof Black, however, was concerned that these transponders could be "dangerous in a less-than-democratic state".</p><p>Another means of patient tracking was put forward by Lucas Schouten, of the European Health Industry Business Communication Council (HIBCC). Mr Schouten predicted that all patients will be registered with the barcode of their implant within five years. This barcode will be fed into a database and all subsequent patient records and details, such as prescriptions, will bear the barcode.</p><p>too many questions</p><p>Many questions still need to be answered in the area of patient registration and tracking, both in Europe and globally. It may well, therefore, be too early to start discussions aimed at developing a European or global implant registry. However, with no <strong>[C#200100809:consensus]</strong> on how implant registration and tracking should be tackled, a variety of different systems may be set up which may not be in industry's interest.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{B3CB389F-B9B7-4041-9E3D-C9810F548727}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+European registries  are they research programmes
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950424T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950424T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950424T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052363
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+European registries - are they research programmes?
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+200100809,198600122
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254132
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184142Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+92756665-4f31-43e9-89d0-cb7fbf090d3c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184142Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

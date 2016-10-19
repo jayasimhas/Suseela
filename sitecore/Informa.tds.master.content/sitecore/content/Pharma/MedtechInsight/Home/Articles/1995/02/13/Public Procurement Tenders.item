@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CE3CCE32-F0ED-44D7-BC8E-B0B2B0C577F4}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/02/13/Public Procurement Tenders
+parent: {D00C9D21-A785-4CE1-B91B-2699D9C8D822}
+name: Public Procurement Tenders
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 426c19e2-cd03-4bcb-8ff9-a0b8ca0598c9
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 78
+
+<p>* Diagnostic or exploratory electrical apparatus (value: Dr 52 million)</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3859
+
+<p>* Diagnostic or exploratory electrical apparatus (value: Dr 52 million)</p><p>Perifereiako Panepistimiako Geniko Nosokomeio Ioanninon, Grafeio Promitheion, Leof Panepistimiou, 45500 Ioannina, Greece.</p><p>Tel: +30 (651) 99 537. Fax: +30 (651) 46 618.</p><p>Deadline: March 15th, 1995.</p><p>* Artificial joints/limbs; orthopaedic appliances; dental fittings</p><p>Hospices civils de Lyon, direction des affaires economiques, centrale d'achats, 45 rue Villon, BP 8070, 69352 Lyon Cedex 08, France.</p><p>Tel: +33 72 11 71 02. Fax: +33 72 11 70 32.</p><p>Deadline: March 31st, 1995.</p><p>* Pacemakers (excluding parts & accessories)</p><p>Centre hospitalier de la Cote basque, direction des affaires medicales, 13 avenue de l'Interne Jacques Loeb, 64109 Bayonne Cedex, France.</p><p>Tel: +33 59 44 40 03. Fax: +33 59 63 35 88.</p><p>Deadline: March 13th, 1995.</p><p>* Radiology & radiography apparatus (value: Dr 74,500,000)</p><p>Geniko Nomarchiako Nosokomeio Karditsas, Terma Tavropou, 43100 Karditsa, Greece.</p><p>Tel: +30 (441) 40 8111 19.</p><p>Deadline: March 15th, 1995.</p><p>* Medical & surgical equipment</p><p>Assistance publique, hopitaux de Paris, direction de l'equipement et du systeme d'information, service des equipements mobiliers et medicaux, secretariat des commissions, bureau 345, 3 avenue Victoria, 75100 Paris, France.</p><p>Tel: +33 40 27 33 45.</p><p>Deadline: March 15th, 1995.</p><p>* Diagnostic cardiology catheters & accessories, including introducers & guidewires (ref MU 002901; overall estimated value: &pound;600,000, excluding VAT); cardiac pacemakers & pacemaker leads (ref MU 001201; overall estimated value: &pound;522,294, excluding VAT)</p><p>NHS Supplies, South East Division, Maidstone Distribution Centre, St Barnabas Close, Allington, Maidstone, Kent ME16 0LW, UK.</p><p>Tel: +44 (622) 690699. Fax: +44 (622) 688326.</p><p>Deadline: March 8th, 1995.</p><p>* Vascular prostheses</p><p>Ministerio da Saude, Hospital de Santa Cruz, Servico de Aprovisionamento, Rua Prof Reinaldo dos Santos, Carnaxide, 2795 Linda-a-Velha, Portugal.</p><p>Tel and Fax: +351 417 0256.</p><p>Deadline: March 13th, 1995.</p><p>* Medical & surgical equipment; anaesthetic apparatus & instruments</p><p>Centre hospitalier de Saintes, services economiques, place du 11 Novembre, BP 326, 17108 Saintes, France.</p><p>Tel: +33 46 92 76 10.Deadline: March 8th, 1995.</p><p>* X-ray, alpha, beta or gamma radiation apparatus</p><p>Centre hospitalier universitaire de Nice, hopital Saint-Roch, 5 rue Pierre Devoluy, BP 319 06006 Nice Cedex 1, France.</p><p>Deadline: March 13th, 1995.</p><p>* Surgical belts, trusses & other orthopaedic appliances (value: Dr 100 million)</p><p>Nomarchiako Panarkadiko Geniko Nosokomeio Tripolis i "Evangelistria", 22100 Tripoli, Greece.</p><p>Tel: +30 (71) 23 85 42. Fax: +30 (71) 23 81 75.</p><p>Deadline: March 14th, 1995.</p><p>* X-ray contrast media (ref T0606)</p><p>NHS Supplies Authority, North Thames Anglia Division, Olding Road, Bury St Edmunds, Suffolk IP33 3YE, UK.</p><p>Tel: +44 (284) 714000. Fax: +44 (284) 714002.</p><p>Deadline: March 10th, 1995.</p><p>* Orthopaedic implants: hips, knees, shoulders, accessories (ref M2/NS/87/95)</p><p>NHS Supplies Authority, North West Division, Fielden House, Nell Lane, West Didsbury, Manchester M20 2PL, UK.</p><p>Tel: +44 (61) 446 7204. Fax: +44 (61) 448 2341.</p><p>Deadline: March 10th, 1995.</p><p>* Spiral CT system</p><p>Mr Shiomi, Hokkaido Procurement & Supply Centre, Nippon Telegraph & Telephone Corp, Ohdori West 14, Chuo-ku, Sapporo City, Hokkaido 064, Japan.</p><p>Tel: +81 (11) 212 5164.</p><p>Deadline: March 13th, 1995.</p><p>These tenders have appeared in the Official Journal of the European Communities, Supplement S. For further information on individual tenders, Clinica readers should contact the awarding authorities directly.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{9FB3D40B-7068-4C1F-8DA7-9C61F575EA21}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{1EECD1FE-0C7B-4F62-A9EE-379A866DB144}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950213T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950213T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950213T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051361
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253130
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183829Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+426c19e2-cd03-4bcb-8ff9-a0b8ca0598c9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183829Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

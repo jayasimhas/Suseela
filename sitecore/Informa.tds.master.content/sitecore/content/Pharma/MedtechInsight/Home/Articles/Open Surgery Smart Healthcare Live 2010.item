@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {34B1C9CE-874C-47FE-96BE-0D2B4FCF0AAE}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Open Surgery Smart Healthcare Live 2010
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Open Surgery Smart Healthcare Live 2010
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 79838835-941f-4225-8204-bdac40e7bac9
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 98
+
+<p> <i>Story and reportage: Salina Christmas, Editor, Multimedia</i><br> <i>30 June 2010 </i> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+Open Surgery: Smart Healthcare Live 2010
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13455
+
+<p> <i>Story and reportage: Salina Christmas, Editor, Multimedia</i><br> <i>30 June 2010 </i> </p> <p> <a href="http://www.clinica.co.uk/freetrial/" class="emailLink">Want to know more about healthcare technology? Start your free 10-day trial</a> </p> <p> <table> <tr> <td><div><div> <embed src="http://widget-f3.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979439309299&site=widget-f3.slide.com" name="flashticker"> </div></div></td> </tr> <tr> <td><em>Reportage: <a href="http://www.clinica.co.uk/aboutus/salina_christmas" target="_blank" class="optionsLink">Salina Christmas</a></em></td> </tr> </table><p> <p>At the <a href="http://www.smarthealthcare.com/live" target="_self" class="emailLink">Smart Healthcare Live 2010</a>, organiser Guardian Media Group ran an exhibition based on the theme of &quot;Procuring Healthcare ICT&quot;. This year's event took place at ExCeL, London, from 15 to 16 June 2010.</p> <p><a href="http://en.wikipedia.org/wiki/E-procurement" target="_blank" class="emailLink">Electronic procurement</a> has long been the backbone of healthcare supply chain and logistics, but it wasn't until the rise of Web 2.0, and more recently, with the increasing calls for ways to reduce costs using information and communication technologies (ICT) that this area finally caught the healthcare media attention.</p> <p><em>Clinica's Open Surgery</em> visited the event and caught up with some of the key players in the healthcare e-procurement sector. </p> <h3>Back-end to the fore </h3> <p>The back-end technology, especially relating to the enterprise resource management and supply chain system, doesn't get as much coverage as the more 'glamorous' face of ICT: the <a href="http://en.wikipedia.org/wiki/Wireless_Wide_Area_Network" target="_blank" class="emailLink">wireless wide area network</a> (WWAN), which also includes the telecommunications-based mobile health applications.</p> <p>At the show, we saw a healthy mix of both wired and wireless applications, and also an array of <a href="http://en.wikipedia.org/wiki/Automatic_identification_and_data_capture" target="_blank" class="emailLink">automatic identification</a> (auto ID) applications. It is refreshing to see auto ID finally making it in a big way in healthcare, and not just in retail and warehousing. Auto ID applications such as barcode, RFID and magnetic stripes are key, not only because they could potentially minimise healthcare's reliance on a big workforce, but they also help the hospitals keep track of their inventory of goods, and reduce data input errors. </p> <table> <tr> <td><div><img src="-/media/F83A0A9DB1D4436F99E6628E3EAB1B70.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/DDDE6C2344234D53B72D60625017438D.ashx" width="350" height="233"></div></td> </tr> <tr> <td>Fifty-eight exhibitors, mainly the healthcare technology industry and health authorities, participated at the <a href="http://www.smarthealthcare.com/live" target="_self" class="optionsLink">Smart Healthcare Live 2010</a> </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Cupcake and coffee helped us get through the day </td> </tr> <tr> <td><div><img src="-/media/13A3DE4DAC264F8E92CFAF480ACB728E.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/3771A515603748B498CFB88B6A87ABA4.ashx" width="350" height="233"></div></td> </tr> <tr> <td><a href="http://www.o2.co.uk/" target="_blank" class="optionsLink">O2</a>, <a href="http://uk.blackberry.com/solutions/industry/healthcare/" target="_blank" class="optionsLink">Research In Motion</a> and <a href="http://www.orange.com/en_EN/group/activities_key/health/" target="_blank" class="optionsLink">Orange</a> are the telecommunication companies that made an appearance at the show </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Audience listening to one of the fifteeen talks held during the two-day event at the Supplier Solutions Theatre</td> </tr> </table> <h3>Going mobile? Consider compatibility <a name="mobile" id="mobile"></a></h3> <p>Ben Wilson, Country Manager, UK, Xirrus, described the WiFi technology accurately during a presentation at The Supplier Solutions Theatre: &quot;WiFi likes to talk&quot;. Wireless packet-switched data exchange is reciprocal in its 'conversation': data gets pinged back and forth, encoded and then decoded on either ends of the information traffic. </p> <p>Although Xirrus's most sophisticated antennas can run on 5 GHz bandwidth, Wilson reminded us to look beyond the server capability. In the deployment of a WiFi system, don't forget to look at the client as well as the server. For example, is the driver in your laptop capable of running on a sophisticated WiFi system? If not, it's your driver that needs upgrading. Compatibility with one's existing infrastructure is important in ensuring a successful mobile workflow. </p> <p>Xirus's WiFi systems have been rolled out at sites such as the Alder Hey Children's Hospital, Liverpool Women's Hospital and the Robert Jones and Agnes Hunt Orthopaedic and District Hospital.</p> <table> <tr> <td><div><img src="-/media/AA7650AE58534C118B6FA0F58D6062F6.ashx" width="350" height="233" style="margin-right: 5px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/F0C2B370389941B6B370F32F4E385547.ashx" width="350" height="233"></div></td> </tr> <tr> <td>WiFi is a verbose technology; it likes to 'talk', says Ben Wilson of <a href="http://www.xirrus.com/" target="_blank" class="optionsLink">Xirrus</a>. The Alder Hey and Liverpool Women's hospitals are two of the UK sites that run a wireless system based on this Xirrus wi-fi array antenna </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><a href="http://www.thelearningclinic.co.uk/" target="_blank" class="optionsLink">The Learning Clinic</a>'s Julia Sharman demonstrates how the Panasonic Toughbook is handled by the point-of-care worker. The body is robust, and is made of material that is easy to clean. The device runs on Intel processor </td> </tr> <tr> <td><div><img src="-/media/2016DFA0C19246C8ADFF53884A7EB4BA.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/7430B00CE73A4DADA26D23002921B079.ashx" width="350" height="233"></div></td> </tr> <tr> <td>Peter Keith of <a href="https://www.dictate.it/" target="_blank" class="optionsLink">Dictate IT</a> with a Philips recorder. Dictate's systems for medical transcription, digital dictation and speech recognition have been deployed at sites such as Newham NHS Trust, and Barnet and Chase Farm Hospitals </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Kevin Shah of <a href="http://www.ascom.co.uk/uk-en" target="_blank" class="optionsLink">Wireless Solutions</a> says the Ascom teleCARE IP system offers mobiles that can run on 2.45 GHz and 5 GHz. The system can be web-based or wireless </td> </tr> </table> <h3>Immersive experience<a name="ict" id="ict"></a></h3><p>Remote digital communication can be physically isolating, which explains why digital applications such as Second Life, video games and even the iPod tend to gravitate towards heightening one's sensory experience, while curiously blocking out the media consumer from the outside world at the same time.</p> <p>Blocking out the world is not the objective of telehealth in health and community informatics. The aim is to connect, not to isolate. But it is intriguing to see the kind of experience offered by Cisco via its &quot;telepresence video&quot;. Joan Brenton of Cisco tells us that the immersive experience is making its way into healthcare. We were shown a huge TV screen with a camera, on which our life-size image was projected in real time. Apart from teleconferencing, this technology is useful in transmitting information on, for example, surgical techniques, to medical practitioners and students in real time. We can't help but wonder if the immersive quality of the televisual will soon be an industry standard for televisions and PCs. </p> <table> <tr> <td><div><img src="-/media/83CA2E2A62C4496D93FFA1D4237B8187.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/25A3FEEDC8214BB289E3AA79B98DF36E.ashx" width="350" height="233"></div></td> </tr> <tr> <td>Document capture, imaging style. <a href="http://graphics.kodak.com/docimaging/us/en/industry_solutions/healthcare/index.htm" target="_blank" class="optionsLink">Kodak</a>'s Colin Labrum shows us the Kodak Capture Pro, which pools data in text and images, and writes barcodes </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Nicely framed. <a href="http://cisco.biz/web/strategy/healthcare/index.html" target="_blank" class="optionsLink">Cisco</a>'s Joan Brenton captured by a &quot;telepresence videocam&quot;, and our Nikon. Ms Brenton says the 'immersive' experience is makings its way into healthcare, via televisual </td> </tr> <tr> <td><div><img src="-/media/A6378BEE33EA4090B59F7E55C019E57E.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/10CC8DD6B3784E28BE7A243E67028823.ashx" width="350" height="232"></div></td> </tr> <tr> <td>This is how the clinicians place their feet. Billy Martin of <a href="http://www.humanscale.com/" target="_blank" class="optionsLink">Humanscale</a> shows us the way to get to grips with the T5 Point of Care Technology Cart</td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Alan McLaren (left) and Terry Durrette come all the way from Ontario, Canada, to showcase <a href="http://www.mdisolutions.com/" target="_blank" class="optionsLink">MDI Solutions</a>' MDL Connect system which allows clinical departments, labs and physician practices to talk to each other effectively </td> </tr> </table> <h3>Make healthcare 'local'<a name="talk" id="talk"></a></h3> <p>With a new type of technology comes a different level of literacy, and of course, different modes of sociotechnicality. In a talk called &quot;Innovation in Healthcare&quot;, Dr Michael Harris, director, public and social innovation, NESTA, asked the stakeholders in healthcare to consider a more frontline-led approach which focuses on the community.</p> <p>Referring to a case study in Finland in the 1970s, where the health authority devolved its power and handed over the control to local groups, Dr Harris maintained that group agency is more effective than state agency. A healthcare strategy that is focused on the community will be less stigmatising for the patient as well. The patient can - with the help of remote monitoring technology - be cared for by his circle of carers, and still be connected to the health authority and his community.</p> <table> <tr> <td><div><img src="-/media/398C59F6236146609F6DFA7260A28BCE.ashx" width="350" height="233" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><img src="-/media/E27A9ABE573D45989C4E3557C1AFB2D3.ashx" width="350" height="233"></td> </tr> <tr> <td>Dr Michael Harris of <a href="http://www.nesta.org.uk/" target="_blank" class="optionsLink">NESTA</a> says healthcare needs to have a more community-led approach. Group agency is more effective than state agency </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><a href="http://www.healthcare.philips.com/main/products/mri/" target="_blank" class="optionsLink">Philips Healthcare</a> was also at the event to showcase its magnetic resonance imaging technology</td> </tr> <tr> <td><div><img src="-/media/3E70102807F24DD1AE97266535D88E4B.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/97EE069B9F124E528992109D4AA4BC7F.ashx" width="350" height="233"></div></td> </tr> <tr> <td>In the deployment of a WiFi system, don't forget to look at the client as well as the server, says Xirrus' Ben Wilson. For example, is the driver in <em>your</em> laptop capable of running on a sophisticated wi-fi system? If not, it's your driver that needs upgrading </td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td>Healthcare should look at disruptive technologies. <a href="http://innovatorsprescription.com/" target="_blank" class="optionsLink">The Innovator's Prescription</a> highlights the ideas of Harvard business academic Prof Clayton M Christensen on the management of innovation within the healthcare system </td> </tr> </table> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> </p> <p> <i><a href="http://www.clinica.co.uk/home/blogopensurgery/" class="emailLink">More on Open Surgery</a> </i> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+Open Surgery Smart Healthcare Live 2010
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191345
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT056129
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+Open Surgery: Smart Healthcare Live 2010
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+298011
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185429Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+79838835-941f-4225-8204-bdac40e7bac9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

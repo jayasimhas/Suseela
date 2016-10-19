@@ -1,0 +1,121 @@
+----item----
+version: 1
+id: {185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Staff/Donna Young
+parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+name: Donna Young
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: d51711f1-d1ab-4c52-b770-60e5ea977120
+
+----field----
+field: {7F9C81EC-C74D-47E3-AA4C-3C519DE7FA77}
+name: Areas of Expertise
+key: areas of expertise
+content-length: 272
+
+{E437143D-CC40-4E41-B6A3-25C3EA51DBAC}|{ABF0DFD7-4B5E-4696-80BB-2337F261B3BE}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{DD548E28-6D47-4403-832E-A9D982190B89}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2C527B2C-25E8-47D0-9356-8F21757BA897}
+name: Writes for
+key: writes for
+content-length: 155
+
+{204199B0-C381-4B9B-92BE-63E5754F5E90}|{989CA96C-8A54-4CC0-BD51-A127930935A9}|{3818C47E-4B75-4305-8F01-AB994150A1B0}|{87B710BC-BACD-4D38-895F-90F42D762393}
+----field----
+field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
+name: First Name
+key: first name
+content-length: 7
+
+Donna P
+----field----
+field: {DA223987-CABD-4C88-98D7-40E3492220F5}
+name: Last Name
+key: last name
+content-length: 6
+
+Young 
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{0D093E91-790D-40C0-A1CB-AD8A86058368}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 12
+
+ScripDonnaDC
+----field----
+field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
+name: Email Address
+key: email address
+content-length: 23
+
+donna.young@informa.com
+----field----
+field: {C3CBCCDC-79E3-4D73-B6B5-A1A718EDCD20}
+name: Location
+key: location
+content-length: 21
+
+Boston, Massachusetts
+----field----
+field: {0E37C802-AC3E-4786-A2CE-61EAB8D747DB}
+name: LinkedIn
+key: linkedin
+content-length: 92
+
+<link text="LinkedIn" linktype="external" url="http://www.google.com" anchor="" target="" />
+----field----
+field: {FB30FB78-9430-4E81-83C8-6AE63ECFA3E3}
+name: Bio
+key: bio
+content-length: 685
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu rutrum nisi. Mauris eu urna quam. In auctor vehicula posuere. Quisque molestie eget felis quis hendrerit. Morbi vitae molestie quam. Sed sit amet arcu eget erat rutrum dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ipsum odio, pretium quis molestie at, condimentum sit amet felis. Aliquam dui nisl, porttitor nec molestie at, molestie eu quam. Vestibulum sodales, diam a congue consequat, nibh felis sollicitudin tortor, bibendum semper ex tortor nec felis. Praesent id tempus ligula. Nulla risus felis, rhoncus vel blandit sed, sollicitudin sit amet diam. </p>
+----field----
+field: {5C3EDF69-C784-4290-A3A9-613BE49CF2C3}
+name: Credentials
+key: credentials
+content-length: 15
+
+Phd, Specialist
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160114T214249Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d51711f1-d1ab-4c52-b770-60e5ea977120
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160714T145145Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

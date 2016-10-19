@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {488B56F2-D8D0-4158-B185-D907DD97740E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/11/Benefits of angiography questioned by US study
+parent: {625684A3-B1FB-479F-9D60-23FF68B06F2E}
+name: Benefits of angiography questioned by US study
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: dbaea01c-8ae1-447a-84b3-0dc0b6a4d273
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 445
+
+<p>Angiography provides no significant benefit to patients in terms of survival or health-related quality of life, concludes a study sponsored by the US Agency for Health Care Policy and Research. The results of an analysis of Medicare patients in New York and Texas, published in the New England Medical Journal (August 31st), show that the higher use of coronary angiography in Texas than in New York did not significantly affect outcomes.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+Benefits of angiography questioned by US study
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2996
+
+<p>Angiography provides no significant benefit to patients in terms of survival or health-related quality of life, concludes a study sponsored by the US Agency for Health Care Policy and Research. The results of an analysis of Medicare patients in New York and Texas, published in the New England Medical Journal (August 31st), show that the higher use of coronary angiography in Texas than in New York did not significantly affect outcomes.</p><p>Medicare data were analysed from 1,852 patients from New York and 1,837 patients from Texas aged 65-79 who were admitted to hospital with acute myocardial infarction in 1990. Treatment patterns, mortality rates and health-related quality of life were compared by a team led by Dr Edward Guadagnoli of Harvard Medical School.</p><p>The rate of cardiac catheterisation within 90 days of admission was 45% in Texas and 30% in New York. Coronary-artery bypass surgery was also higher in Texas than in New York (15% vs 13%) as was coronary angioplasty (15% vs 7%). Mortality rates at 90 days were comparable (23%) and at two years were 36% in the New York patients and 37% in Texas. While patients' perceptions of their own general health did not differ between states, New York patients scored higher in their ability to perform instrumental activities of daily living.</p><p>The study is part of a multidisciplinary Patient Outcomes Research Team (PORT) project on AMI treatment variations. Results of this study are due to be published this month.</p><p>A second study published in the same issue of the NEMJ found that regional variations in the use of cardiac procedures were closely related to their availability. Supported by a grant from the Heart and Stroke Foundation of Canada, Dr Louise Pilot of the Cleveland Clinic Foundation (US) and co-researchers in the US and Canada reviewed the management of AMI across the US using data from the first Global Utilisation of Streptokinase and t-PA for Occluded Coronary Arteries trial (GUSTO-1) and the American Hospital Association.</p><p>Of the 21,772 patients included in the study, 71% underwent angiography, 30% angioplasty and 13% CABG. Variations between regions ranged from 52% to 81% of patients undergoing angiography, 22% to 35% for angioplasty, and 9% to 17% for CABG. Despite variations in rates of angiography, the extent of coronary vessel disease and the median left ventricular ejection were similar across regions, note the authors.</p><p>Using angiography as a marker of regional variations, the authors observe a strong relation between the availability of procedures and their use. New England was atypical in demonstrating a more evidence-based approach to the use of intervention. The management of AMI in New England appears to be at a half-way point between the less invasive approach reported in Canada and the more invasive approach in the US as a whole, comment the authors.</p><p>Each year some 400,000 angioplasty and 400,000 CABG procedures are performed in the US.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{44E1FC56-78E3-4955-8E83-0065377F12C4}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Benefits of angiography questioned by US study
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950911T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950911T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950911T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054299
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+Benefits of angiography questioned by US study
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+256229
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184801Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dbaea01c-8ae1-447a-84b3-0dc0b6a4d273
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184801Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

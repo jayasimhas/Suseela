@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8F7EC8BF-B736-41B5-A8A1-FEF76C81EA49}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/06/Italian government must overturn leasing ban
+parent: {9649877C-55FC-4D13-B731-E8CE877A1D04}
+name: Italian government must overturn leasing ban
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 8adfb45e-901c-4cc3-95c4-8ce00dea087c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 274
+
+<p>The Italian government should overturn the ruling that prevents the national health service from leasing medical equipment, asserts Dr Roberto Bedani, head of the electromedical sector at the Italian National Association of Electrotechnical and Electronic Industries.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Italian government must overturn leasing ban
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3193
+
+<p>The Italian government should overturn the ruling that prevents the national health service from leasing medical equipment, asserts Dr Roberto Bedani, head of the electromedical sector at the Italian National Association of Electrotechnical and Electronic Industries.</p><p>Speaking at a February 22nd meeting at the Bocconi University, Dr Bedani said that with capital funding at its lowest level ever, leasing appears to be the only way for the health service to invest in high-tech medical equipment. It is also the key for the new healthcare businesses to reach their efficiency targets.</p><p>Medical equipment leasing was banned by the Treasury Ministry in 1991 since it involved financial commitments spanning several years and could have led to spiralling health service debts. There were also problems with leasing companies becoming involved in the tendering process. The Regions found a way round this. They took the equipment "on loan" from companies. This proved financially risky for industry. Although buyers agreed to hire equipment for three-to-five years, renewing their contracts annually to beat the Treasury ban, some decided after only a year that they were unable to meet the payments. They then demanded either that the companies offered discounts or took the equipment back.</p><p>Industry believes leasing (in its strictest sense) should be reintroduced but properly regulated so that loans and leasing payments can be met from Regional spending programmes.</p><p>false economies</p><p>New medical and information technology is essential if the Italian national health service is to run efficiently, Dr Bedani stressed. Italy's legacy of obsolete equipment is costly in terms of poor quality results, the need to repeat procedures, and long periods of inactivity caused by increasingly frequent maintenance, he warned.</p><p>The shrinking capital investment budget and consequent lack of investment in new equipment has resulted in an increasing percentage of current costs dedicated to maintenance and repairs. Investment is needed to turn the situation around, the speaker insisted.</p><p>National Health Service Funding - Capital Investment Budget</p><p>* Provisional forecast in 1995 Finance Law.</p><p>Dr Bedani chose one area of recent technological progress to illustrate his point - digital imaging. This technology introduces image management, archiving and transmission systems which can be integrated with computerised data from other types of tests allowing better opportunities for analysis, comparison, study and referral. This, he explained, means faster, more precise diagnoses, minimising the likelihood of error and the need to repeat tests.</p><pre>Italy's medical equipment needs Current quota per No of head of Ideal Current units Equipment pop quota total needed * Cost X-ray 1:9,000 1:9,000 13,500 - - Mammography 1:42,000 1:25,000 - 1,000 130 Ultrasound 1:6,500 1:5,000 8,861 2,600 208 CT 1:76,000 1:50,000 747 390 312 MRI 1:335,000 1:150,000 160 210 310 Angiography 1:132,000 1:100,000 429 140 140 * Total cost of units needed in Lit '000 millions. Source: ANIE, based on figures from the Italian Society of Medical Radiology (SIRM).</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{32C2DFCA-405E-43AB-88A5-3883EB932000}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Italian government must overturn leasing ban
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950306T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950306T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950306T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051778
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Italian government must overturn leasing ban
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253547
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183949Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8adfb45e-901c-4cc3-95c4-8ce00dea087c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183949Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}
