@@ -1014,27 +1014,7 @@ $(function () {
 			UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
 		}
 
-		$.ajax({
-			url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
-			data: { 'UserPreferences': JSON.stringify(UserPreferences) },
-			dataType: 'json',
-			type: 'POST',
-			success: function success(data) {
-				if (data && data.success) {
-					$('.alert-success p').html(data.reason);
-					$('.alert-success').show();
-				} else {
-					$('.alert-error p').html(data.reason);
-					$('.alert-error').show();
-				}
-			},
-			error: function error(err) {
-				if (err && !err.success) {
-					$('.alert-error p').html(err.reason);
-					$('.alert-error').show();
-				}
-			}
-		});
+		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
 	});
 
 	$('.gotoview').click(function (e) {
