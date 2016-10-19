@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {D6732212-9773-473D-A03E-2CA8B1D28B97}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/TestDataTools/CE_AMcharts_Lpage
+parent: {92175E6B-C90D-413F-B4D7-D03DF6CBB312}
+name: CE_AMcharts_Lpage
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----version----
+language: en
+version: 1
+revision: 8283f82d-1ebf-4658-adc4-e898b9cc89ba
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 17
+
+CE_AMcharts_Lpage
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 17
+
+CE_AMcharts_Lpage
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 17
+
+CE_AMcharts_Lpage
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 524
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{9632A9B9-40FE-4302-995A-1615A25D12CB}" p:before="r[@uid='{7A020CCA-B946-416C-8374-39B65864CB66}']" s:ds="{C8AA792D-0749-45EE-B31F-97256217FE4A}" s:id="{00A7F9E7-9564-41AE-B1C5-83DFD9BF7E92}" s:par="Show in Right Rail" s:ph="main-content" /><r uid="{7A020CCA-B946-416C-8374-39B65864CB66}" s:ds="{DB03A6C0-5F0E-4B8A-9353-14C55253B201}" s:id="{EC34644A-1369-4FA9-9749-63522EF279EF}" s:par="" s:ph="/main-content/VideoControl" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161002T060348Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8283f82d-1ebf-4658-adc4-e898b9cc89ba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161002T074658Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {442B7D7A-A641-4FFC-9D47-9B58050E38F7}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Staff/Ralf Gleixner
+parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+name: Ralf Gleixner
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: b8be5201-b7e8-4472-be9d-63f5d8c82764
+
+----field----
+field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
+name: First Name
+key: first name
+content-length: 4
+
+Ralf
+----field----
+field: {DA223987-CABD-4C88-98D7-40E3492220F5}
+name: Last Name
+key: last name
+content-length: 8
+
+Gleixner
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160525T010622Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b8be5201-b7e8-4472-be9d-63f5d8c82764
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160525T010622Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

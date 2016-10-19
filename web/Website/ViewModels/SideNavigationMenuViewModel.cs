@@ -57,6 +57,7 @@ namespace Informa.Web.ViewModels
         public string MyViewHelpText => TextTranslator.Translate("MainNavigation.MyViewHelpText");
         public string MyViewEditBtnText => TextTranslator.Translate("MainNavigation.MyViewEditButtonText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public Navigation Preferencelst { get; set; }
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion
@@ -67,7 +68,7 @@ namespace Informa.Web.ViewModels
         /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
         {
-            if (IsAuthenticated)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
                 if (UserPreferences.Preferences != null &&
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
@@ -97,7 +98,7 @@ namespace Informa.Web.ViewModels
             navigation.Children = new List<INavigation>();
             var preferredChannels = new List<Navigation>();
             IUserPreferences prefChannels = new UserPreferences();
-            if (IsAuthenticated)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
                 
                 var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
@@ -107,11 +108,15 @@ namespace Informa.Web.ViewModels
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
                 UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
+                    
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
-                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && !string.IsNullOrWhiteSpace(preference.ChannelName))
+                        
+                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode))
                         {
-                            preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                            var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
+                            if(!string.IsNullOrEmpty(channelName))
+                            preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
                         }
                     }
                     navigation.Children = preferredChannels;
@@ -124,7 +129,9 @@ namespace Informa.Web.ViewModels
                     {
                         if (!string.IsNullOrWhiteSpace(preference.TopicCode) && !string.IsNullOrWhiteSpace(preference.TopicName))
                         {
-                            preferredChannels.Add(new Navigation { Code = preference.TopicCode, Text = preference.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
+                            var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.TopicCode).Select(q => q.Text)).FirstOrDefault();
+                            if (!string.IsNullOrEmpty(topicName))
+                                preferredChannels.Add(new Navigation { Code = preference.TopicCode, Text = topicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
                         }
                     }
                     navigation.Children = preferredChannels;
@@ -149,7 +156,7 @@ namespace Informa.Web.ViewModels
             var subscriptions = new List<ISubscription>();
             var channelSubscriptions = new List<ChannelSubscription>();
             var topicSubscriptions = new List<TopicSubscription>();
-            if (IsAuthenticated)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
            
                 //channel based subscriptions

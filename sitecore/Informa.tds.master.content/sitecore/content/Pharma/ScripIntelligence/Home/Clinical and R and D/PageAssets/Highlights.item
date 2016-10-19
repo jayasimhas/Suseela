@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {AFC84E72-52DF-4F4C-83C7-F01CDB0B8F79}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Clinical and R and D/PageAssets/Highlights
+parent: {BC0CCA42-542B-4345-9ACF-A5697C51FFC9}
+name: Highlights
+master: {00000000-0000-0000-0000-000000000000}
+template: {36E651FD-5FE7-4A66-A6FF-8ABF11DFC944}
+templatekey: Highlights
+
+----version----
+language: en
+version: 1
+revision: 748b37a6-5c00-4b4e-84d6-ec346e51ab86
+
+----field----
+field: {6586A911-D420-46F2-A579-DB6854AF2771}
+name: Highlight
+key: highlight
+content-length: 111
+
+<strong>Highlights:</strong> <a href="~/link.aspx?_id=E8A5B5C035514CDE81BD37CFD6E3A4F5&_z=z">Pipeline Watch</a>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160408T025012Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+748b37a6-5c00-4b4e-84d6-ec346e51ab86
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160516T150053Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

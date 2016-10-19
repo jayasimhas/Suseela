@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E7F488EE-835F-4FA3-A7CC-AC4863A95860}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/24/Clinica market statistics
+parent: {B4F495B9-4F9B-4431-A2E1-D6E37812D302}
+name: Clinica market statistics
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: be34ba11-3fe6-4b85-9fc6-245a499a9f97
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+Clinica market statistics
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6730
+
+<p><pre>Clinica market statistics (comprising issues 648-661) MEDICAL CATEGORY/ GEOGRAPHIC MARKET TIMESCALE GROWTH RATE CLINICA REFERENCE MARKET VALUE (m million) Biomaterials Biomaterials World $12,000m per year 7-12% per year 650/8 Orthopaedic biomaterials US $40m per year 649/19 Synthetic vascular grafts World $500m per year 655/12 Blood products Blood components World SKr 2,000m per year 655/16 Colony-stimulating factor US $850m per year 659/20 Haemoconcentrators World $35m per year 660/11 Haemostasis World $320m in 1993 661/13 Control agents World $220m in 1993 661/13 Cancer Prostate cancer care Sweden SKr 600m per year 657/4 Cardiac/vascular Cardiac diagnostic & monitoring equipment World $509-647m 1995-2000 657/6 Cardiovascular surgery World SKr 7,000m per year 4% per year 655/16 Catheters US $1,300m in 1993 19% per year 652/19 Catheters World $2,600m in 1993 652/19 Heart valves Germany DM 95m per year 648/1 Implantable cardioverter defibrillators US $518-753m 1995-1997 658/9 Implantable cardioverter defibrillators World $500-1,000m 1994-2000 658/9 Pacemakers World $1,400m per year 653/20 Pharmacological stress agents US $200-250m per year 650/21 Dentistry Dental products Latin $500m per year 652/8 America Devices (general) Electromedical equipment Germany DM 6,030m in 1994 1% vs 1993 649/4 Medical electronics Germany DM 1,700m in 1994 4% vs 1993 649/4 Medical technology Austria $470m in 1994 3% per year 660/5 Medical technology Brazil $950m per year 652/8 Medical technology Chile $100m per year 10-15% in 653/9 1995 Medical technology China $850m per year 20% per year 648/9 Medical technology Czech $175m per year low 648/9 Republic Medical technology Germany DM 11,000m per year 660/supp Medical technology Hungary $160m per year low 648/9 Medical technology India $500m per year 15% per year 648/9 Medical technology Indonesia $130m in 1994 10% per year 659/10 Medical technology Israel $265m in 1994 656/9 Medical technology Japan $16,700m per year 6% per year 648/9 Medical technology Malaysia $125m per year 60% per 650/11 year Medical technology Poland $420m per year low 648/9 Medical technology Russia $800m per year low 648/9 Medical technology S Korea $750m per year 648/9 Medical technology Spain Pta 322,500m in 1993 659/12 Medical technology Spain $2,705m in 1994 4.8% in 660/3 1994 Medical technology Thailand Baht 6,000m per year 15% per 659/11 year Medical technology W Europe $20,414m per year low 648/9 Medical technology World $93,000m per year 648/9 Medtech imports Austria $629m in 1993 660/5 Medtech imports Indonesia $96.7m in 1993 659/10 Medtech imports Israel $195.1m in 1993 17% in 1993 656/9 Medtech imports S Korea $674m in 1994 55% in 1994 655/9 Medtech imports Spain $1,132m in 1994 660/3 Medtech imports US $4,900m in 1994 0% in 1994 658/8 Medtech exports Austria $292m in 1993 660/5 Medtech exports Indonesia $2.3m in 1993 659/10 Medtech exports Israel $234.8m in 1993 656/9 Medtech exports S Korea $14m in 1994 17% in 1994 655/9 Medtech exports Spain $212m in 1994 660/3 Medtech exports US $9,200m in 1994 11% in 1994 658/8 Diagnostics (general) In vitro diagnostics Europe $5,400m in 1995 650/5 In vitro diagnostics Japan $2,800m in 1995 650/5 In vitro diagnostics N America $6,700m in 1995 650/5 In vitro diagnostics Spain Pta 107,500m in 1993 659/12 In vitro diagnostics UK $250m in 1995 650/5 In vitro diagnostics World $15,000m per year 649/16 In vitro diagnostics World $16,800m in 1995 650/5 Diagnostics (by clinical category) Blood chemistry US $100m per year 15% per year 661/11 Clinical chemistry World $5,000m in 1993 650/5 Clinical chemistry World $5,300m in 1993 661/13 Haematology World $1,350m in 1993 650/5 HIV (home testing) US $600m per year 658/18 Immunoassays World $6,000m in 1993 650/5 Immunochemistry World $4,100m in 1993 661/3 Microbiology World $1,250m in 1993 650/5 Microbiology World $900m in 1993 661/13 Pathology services Australia Aus$792.7m in 1994/95 12.9% 656/8 Diagnostics (by disease) Anaemia World $170m in 1993 661/13 Cancer World $420m in 1993 661/13 Chlamydia Germany DM 14m per year 657/1 Cholesterol S Korea Won 1,100m in 1995 657/6 Drugs-of-abuse World $500m per year 10% per year 661/19 Drug treatment efficacy World $370m in 1993 661/13 Infectious diseases World $1,974-5,804m 1995-2000 661/16 Myocardial infarction World $220m in 1993 661/13 Ovulation S Korea Won 1,500m per year 100% in 1995 657/6 Pregnancy S Korea Won 10,000m in 1994 30% in 1995 657/6 Pregnancy World $140m in 1993 661/13 Thyroid dysfunction World $630m in 1993 661/13 Drug delivery Implantable pumps and ports US $140m in 1995 15% per year 652/16 Healthcare (general) Public spending Belgium BFr 371,700m in 1994 652/3 Public spending Chile $1,700m in 1993 653/9 Public spending Germany DM 232,900m in 1994 648/5 Public spending Italy Lit 91,619,000m in 1994 652/6 Total spending Croatia $170 per person in 1994 658/10 Imaging Contrast media World $3,300m in 1993 654/12 Imaging systems Germany DM 3,560m in 1994 2% vs 1993 649/4 Injectable iodinated contrast agents UK &pound;26m per year 6% per year 659/1 Iopamidol & iohexol World $2,000m per year 653/11 MRI contrast agents UK &pound;3.5m per year 20% per year 659/1 Ultrasound systems Europe $628.7m in 1994 7% per year 653/6 Ultrasound systems Germany DM 452m in 1994 -7% vs 1993 649/4 Orthopaedics Arthroscopy US $230m per year 654/sup/1 Arthroscopy World $380m per year 654/sup/1 Bone growth simulators World $400-500m per year (pot) 654/sup/2 Cultured cartilage cells US/Europe $1-2,000m (pot) per year 654/sup/4 Hip implants US $740m in 1994 1% vs 1993 654/sup/1 Knee implants US $875m in 1994 7.3% vs 1993 654/sup/1 Orthopaedic biomaterials US $40m per year 649/19 Orthopaedic products US $2,474m in 1994 5.2% vs 1993 654/sup/1 Orthopaedic products World $5,100m in 1994 8% vs 1993 654/sup/1 Osteoporosis fracture therapy World $18,000m per year 15% per year 654/sup/3 Spinal implants World $200m per year 12% per year 654/sup/1 Trauma/fixation US $500m per year 654/sup/1 Trauma/fixation World $1,000m per year 654/sup/1 Patient monitoring Neonatal monitoring World $100m per year 654/18 Radiology Nuclear medicine equipment Germany DM 175m in 1994 14% vs 1993 649/4 Rubber goods Condoms and gloves US $712-1,000m 1994-2000 656/7 Specialties Confocal microscop (research) World $55m per year 15% per year 658/16 Dialysis products World SKr 35,000m per year 655/16 Hormone replacement therapy World $1,700m per year 5% per year 649/25 Surgery Arthroscopic/ laparoscopic equipment Europe $707m in 1993 9.4% per year 661/19 Endoscopes China &yen;,000m per year 30-70% 649/14 Laparoscopic equipment Japan $25m per year 654/7 Woundcare Haemostasis (lower end) US $48m per year 649/13</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 25
+
+Clinica market statistics
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950724T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950724T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950724T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053590
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+Clinica market statistics
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255399
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184540Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+be34ba11-3fe6-4b85-9fc6-245a499a9f97
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184540Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

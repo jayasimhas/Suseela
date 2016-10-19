@@ -27,9 +27,9 @@ content-length: 0
 field: {22F731FF-8D35-44E1-B989-A3C6E62B3D32}
 name: ParagraphStyle
 key: paragraphstyle
-content-length: 4
+content-length: 13
 
-body
+StoryText 2.2
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -54,7 +54,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 6bdd9323-7594-4164-b871-566d8e775501
+revision: 922a065a-399d-434a-bee4-143f05b11c19
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -83,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6bdd9323-7594-4164-b871-566d8e775501
+922a065a-399d-434a-bee4-143f05b11c19
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160907T135931Z
+20160712T200038Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F7B3E75A-3B4E-43AF-A94E-7A46EB483F65}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/06/26/Reimbursement issues in Germany
+parent: {A35CD5C5-B983-47AE-88BD-959AA5E54E36}
+name: Reimbursement issues in Germany
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: b1f46904-7c60-412f-b37a-2f2ed24a06c3
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 141
+
+<p>The German reimbursement system is undergoing its most radical change ever. Fewer, not more, reimbursable products will be the result.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+Reimbursement issues in Germany
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12861
+
+<p>The German reimbursement system is undergoing its most radical change ever. Fewer, not more, reimbursable products will be the result.</p><p>Marketing approval in any country is useless if no one buys the product, and no one in Germany will buy the product if health insurers refuse to reimburse the cost. This has not traditionally been a major problem in Germany as insurers have covered a wide range of services and products - one reason why the market is so lucrative. However, this is also proving increasingly expensive and so, under the guiding hand of Health Minister Horst Seehofer, the healthcare sector is being forced to rethink.</p><p>The German health insurance system reimburses medical procedures rather than products - doctors may, within reason, use any equipment they see fit as long as it has marketing approval. All citizens are obliged to be insured via a public or private Krankenkassen (sickness fund). The Krankenkassen charge a premium to members, half of which is paid by the employer, and issue Krankenscheine (sickness certificates) to patients. The patients pass these to their doctors, who use it to reclaim the full cost of treatment (including an element for wages).</p><p>autonomy under threat</p><p>The system has traditionally been regulated by the payers - the Krankenkassen - and the providers - hospitals and non-hospital doctors. The two sides agree the services to be provided and the reimbursement rates payable, with the government taking only a supervisory role.</p><p>However, since the appointment of Horst Seehofer as Health Minister in 1992, the government has played a far stronger hand. On January 1st, 1993, it implemented the Healthcare Restructuring Act (GSG), introducing a limit on federal healthcare spending within which the autonomous payer-provider system had to operate. This effectively cut the average reimbursement for products, forcing hospitals and doctors to reduce use of high-cost items. Public health spending rose just 5.4% in west Germany over the following two years, compared with a 6.5% rise in insurance premiums. (Spending rose more rapidly in east Germany, by 28.4%, as the region re-equipped to bring itself up to western standards.)</p><p>Budget-capping expires at the end of 1995. However, the system will not revert to its original form: new laws are in place or are being designed to ensure, the government hopes, that healthcare spending remains firmly under control.</p><p>Hospital reimbursement</p><p>Hospitals account for a third of all healthcare spending in Germany with outgoings of some DM 100,000 million in 1994. Of this, DM 74,000 million was reimbursed by the state Krankenkassen with the rest paid by private insurers and patients. Above-average cost rises in hospitals have been the subject of much recent debate and have made the sector the main target of new reforms.</p><p>On January 1st, 1995, the government introduced a new law - the Bundespflegesatzverordnung (BPflV). Voluntary in 1995 and compulsory from 1996, the law changes the reimbursement procedure so that hospitals have to operate as profit centres. Importantly, it applies equally to contracts with the private and public Krankenkassen. Reimbursement rates are determined at three levels:</p><p>* Federal - the Health Ministry draws up a list of diagnosis-related groups (DRGs) and operations and allocates points to each one. This stipulates the relative values of procedures without determining monetary reimbursement rates.</p><p>For example: removal of a prostate adenoma via open surgery = 7,020 points; transurethral electroresection of a prostate adenoma = 4,310 points; so surgery will always be reimbursed at 1.63 times the rate of transurethral electroresection. Points are stipulated for personnel, equipment and non-medical costs (food, accommodation, etc).</p><p>The list currently covers some 40 DRGs and 160 operations. This should account for 25% of hospital costs and the Ministry intends to expand the list over time. The other 75% of costs will be reimbursed in full, leading to fears that spending will still largely be uncontrolled, although other forms of budget-capping, such as limits on healthcare insurance premiums, are being considered.</p><p>* Land - the value of a single point is negotiated by the public and private Krankenkassen and the hospital federation in each Land. Disputes can be referred to an arbitrator, as has happened in all the Lander this year. In general, the hospital federation is looking for a value of DM 1 per point (so transurethral resection would bring DM 4,310), while the Krankenkassen wish to undercut this. Care contracts stipulating which hospitals should offer which services are also agreed at this level.</p><p>* Local - hospitals and their local Krankenkassen may negotiate a few exceptions to the Land-level contract and can implement fixed reimbursement rates for extra DRGs or operations. In practice, however, very little negotiation is expected to be performed at this level.</p><p>The purpose of the BPflV is to force hospitals to treat cases cost-effectively. Reimbursement rates for the 200 DRGs and operations in the Health Ministry list are fixed - if the hospital spends more on treatment than is reimbursed, it loses money and will have to restructure or close. The impact on manufacturers could be great. Although two-thirds of hospital expenditure goes on wages, there is arguably greater scope and certainly a lower political cost in putting pressure on medical product prices. Purchasing responsibility is already starting to move from doctors to administrators who have the skill to push prices down. Although much of the effort will be directed towards pharmaceuticals, medical devices will not be given an easy ride.</p><p>Public outpatient reimbursement</p><p>Germany has some 105,000 non-hospital doctors and almost all of these rely heavily on publicly-insured patients for their income - the private sector is too thinly-spread to support many doctors full-time. The doctors are organised into 23 unions (KVs) which make up the federal doctors' association (KBV). This gets its income from the Krankenkassen and shares it among the KVs according to an agreed formula. In 1994, non-hospital doctors received a public sector budget of some DM 38,000 million - just 40% of that available to hospitals.</p><p>All KVs split their cash into four mini-budgets: prevention, outpatient operations, laboratory medicine and curative procedures. Many also split their funds between general practitioners (GPs) and specialists. Each time the doctor treats a case, he/she must fill in a form stating which procedures were carried out, how many points they were worth and into which budget category they fall. This is sent to the local KV.</p><p>Reimbursement values are calculated by a method similar to that in hospitals. A points-based catalogue defining relative values (the EBM) is developed at federal level by a valuation committee and the maximum monetary value of each point is negotiated at Land level by the KV and Krankenkassen. However, the monetary value is ultimately dependent upon the number of procedures performed by the doctors - each mini-budget is divided by the number of points "spent" on it to calculate the value of each point. This is then allocated to doctors according to the number of points they have used.</p><p>The EBM is currently under review by doctors and Krankenkassen and will probably be revised next year. The KBV voted at its annual conference in May for the new version to contain a range of elements: standard payments for recurring cases, differentiated for specialties; consultation and counselling funds; DRGs; higher reimbursement rates for outpatient operations; and lower reimbursement rates for high-volume procedures such as CT and MRI scans.</p><p>Negotiation with the Krankenkassen will be difficult. However, even before that, doctors have a great deal to sort out among themselves. Perhaps the major issue is the budget split between specialists and GPs. People tend to prefer visiting specialists, which has led to a boom in specialist practices. Some 60% of all non-hospital doctors are now specialists, who are expensive and so take a disproportionate share of KV funds.</p><p>Both GPs and governments wish to reverse this trend. The government has already allocated an extra DM 600 million to GPs to improve management of patient records. A longer-term solution proffered is to split the KV funds 50:50 between specialists and GPs, regardless of where patients go.</p><p>Private outpatient reimbursement</p><p>Private healthcare insurance is legally an option only for civil servants and people earning above a certain income. This could apply to some 26% of the population although in fact only 10% take it up. Premiums are tailored to the customer, so charges start low for young people and rise sharply as they get older. Patients pay their doctors directly and reclaim the amount from their Krankenkassen.</p><p>Private outpatient reimbursement rates are listed in the Gebuhrenordnung fur Arzte (GOA) - a catalogue prepared by the Health Ministry and not negotiable by the Krankenkassen and doctors. The GOA lists monetary values for procedures, but doctors are able to charge up to 1.8 times this amount for medtech or 2.3 times for other medical procedures. These multiples can rise to 2.5 and 3.5 respectively if the doctor has a valid reason. Doctors are not obliged to take on cases.</p><p>The last GOA was published in 1988 and although subsequent prints have added appendices covering new procedures, the catalogue is rather out-of-date. A new edition is being worked on and could come into effect next year. If so, it will contain a considerable number of new procedures.</p><p>Large devices</p><p>"Large devices" (Grossgerate) are a controversial subject in Germany. As healthcare standards and spending have risen, the country has been quick to take advantage of modern technology. In order to control the spread of such equipment, each Land has appointed a committee to approve the use of certain equipment: CT, MRI and PET scanners; cardiac cath labs; radiotherapy units; lithotripters; and biomagnetometry devices. Any device not approved by the committee is not eligible for reimbursement by the public Krankenkassen.</p><p>The problem is that the committees only have power over hospitals. Non-hospital doctors can buy as many hightech devices as they wish - their concern is to cover the cost by attracting sufficient patients, and patients are keen on modern equipment. Accordingly, the number of large devices at non-hospital practices has risen 40% since 1992. Hospitals are aggrieved that they cannot keep up.</p><p>It is now possible that the law regulating the installation of large devices will be revoked. Naturally, the German hospital federation (DKG) is in favour while the Lander are split. If it is revoked, there is likely to be a surge in purchases.</p><p>Further reimbursement issues</p><p>Two further changes are likely to have a major impact on reimbursement rates for medical procedures in Germany: freedom of Krankenkassen choice; and the opening up of the hospitals. Both introduce competition where it has traditionally been absent.</p><p>At present, people are tied to a particular state Krankenkasse because of their job or where they live. From January 1st, 1996, anyone will be able to choose to which Krankenkasse they belong. To attract "customers", the Kassen will have to offer low insurance premiums but good health cover, and to do this they will have to control costs tightly.</p><p>To help with this, Krankenkassen have been banding together, led by the AOK, which has the members with the lowest wages and therefore the worst expenditure-income ratio. All of the Lander now have just one AOK, except populous North Rhine Westphalia which has two. The trend is sometimes seen as one towards US-style healthcare maintenance organisations; certainly, the Krankenkassen will be bringing ever-greater pressure to bear on high-spending hospitals and KVs.</p><p>The second change is the opening up of hospitals to outpatient treatment. In contrast to most other European countries, Germany has always kept its hospital and non-hospital sectors completely separate. Visiting a hospital always meant an overnight stay and non-hospital doctors were not allowed to use hospital equipment.</p><p>The government sees this as inefficient and has already changed the regulations so that any doctor may perform outpatient operations on hospital premises. However, as well as strong resistance from both sides, there are as yet no structures determining which costs are reimbursed to hospitals and which to non-hospital doctors. So far, no one is prepared to move, but equipment-sharing will eventually become the norm.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+Reimbursement issues in Germany
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950626T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950626T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950626T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053436
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+Reimbursement issues in Germany
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255245
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184510Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b1f46904-7c60-412f-b37a-2f2ed24a06c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184510Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

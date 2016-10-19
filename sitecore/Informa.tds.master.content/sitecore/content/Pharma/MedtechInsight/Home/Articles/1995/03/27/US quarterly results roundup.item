@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {AF19627C-6869-4663-B2B5-2454C3882179}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/27/US quarterly results roundup
+parent: {2AE607D7-1EDE-4809-9399-FFC6E9445753}
+name: US quarterly results roundup
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 78a1ca9b-e057-401f-8efa-0d1680a3bf5b
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+US quarterly results round-up
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2372
+
+<p><pre>LifeCell Revenues Net loss ($ millions) ($ millions) 1994 1993 1994 1993 3 months 0.32 0.15 (1.04) (0.88) Year 0.98 0.62 (3.73) (3.43) (ended Dec 31st)</pre><p>The revenue increase in LifeCell's 1994 was due to higher sales of its AlloDerm dermal transplant and its alliance with <strong>[C#198600185:Medtronic]</strong> for the development of the LifeCell heart valve. "Although our primary focus has been the burn market, we are expanding our marketing to include periodontal and reconstructive surgery," says CEO Paul Frison. In November, the company raised $5.2 million in a private placement.</p><pre>Biopool International Revenues Net income ($ millions) ($ millions) 1994 1993 1994 1993 3 months 1.47 1.11 0.16 0.20 Year 5.53 4.31 0.71 0.36 (ended Dec 31st)</pre><p>Biopool manufactures medical test kits to diagnose bleeding disorders and assess cardiovascular risk factors, and specialty chemical controls for monitoring therapeutic drugs and drugs-of-abuse. CEO Michael Bick is confident for the company's future, "with over 50 products and three more awaiting approval".</p><pre>Thermo Cardiosystems Revenues Net income ($ millions) ($ millions) 1994 1993 1994 1993 3 months 3.51 1.16 0.79 0.17 Year 10.41 3.52 1.90 0.40 (ended Dec 31st, 1994; Jan 1st, 1994)</pre><p>Thermo Cardiosystems is 57%-owned by Thermo Electron and another of the latter's subsidiaries, Thermedics. Cardiosystem describes the HeartMate pneumatic left ventricular assist device, approved in the US last October, as the only implantable heart-assist device commercially approved by the FDA. The company says it is moving towards providing patients with a permanent alternative to transplantation that is readily available and cost-effective.</p><pre>Cytogen Revenues Net loss ($ millions) ($ millions) 1994 1993 1994 1993 3 months 1.48 1.22 (11.68) (8.45) Year 2.46 10.35 (32.81) (29.23) (ended Dec 31st, 1994; Jan 1st, 1994)</pre><p>In late February, Cytogen completed its purchase of CytoRad which had been agreed in August (see Clinica No 615, p 12). The merger plus the re-acquisition of the marketing rights for OncoScint CR/OV, Cytogen's imaging agent for colorectal and ovarian cancer, increased fourth-quarter losses by one-time charges of $4.1 million. Lower turnover in 1994 is due to the absence of contract revenue from CytoRad which totalled $7.9 million in 1993.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+US quarterly results roundup
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950327T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950327T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950327T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052023
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+US quarterly results round-up
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600185
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253792
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+78a1ca9b-e057-401f-8efa-0d1680a3bf5b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

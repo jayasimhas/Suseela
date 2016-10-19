@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {46E64807-A58F-46F6-AC58-D2943DA27F24}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Emails Folder/ChrisTestEmail
+parent: {FC257206-6D37-49CF-910E-D74DFC5D0B81}
+name: ChrisTestEmail
+master: {00000000-0000-0000-0000-000000000000}
+template: {5B1307C3-8126-491F-AB72-177516787E74}
+templatekey: ExactTarget Email
+
+----version----
+language: en
+version: 1
+revision: 96975602-bbdc-4460-b90a-85cf284b771f
+
+----field----
+field: {8409213E-9EFA-4019-93C2-432FBFA5C177}
+name: Subject
+key: subject
+content-length: 36
+
+Scrip | The Latest News and Analysis
+----field----
+field: {4181BF0A-ECD7-4992-9A3C-3DC7C7C6B380}
+name: Date Text
+key: date text
+content-length: 12
+
+May 30, 2016
+----field----
+field: {53A547CE-B0D1-45FE-9106-FF5FB37D2BC8}
+name: Top Header Title
+key: top header title
+content-length: 28
+
+The Latest News and Analysis
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 690
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{8F4748AA-BE4C-44AD-A4BF-0CF3329FC910}" p:before="r[@uid='{1F4027A7-444E-45CA-8BC2-2687D4A81012}']" s:ds="{51B9438B-8A6E-4DB5-A662-D95C136755F7}" s:id="{FC992785-E3D2-4F78-819F-68E2FABEA4D0}" s:ph="email-main" /><r uid="{1F4027A7-444E-45CA-8BC2-2687D4A81012}" p:before="r[@uid='{A3B1993E-26CD-4DC5-9D81-9C85AB046221}']" s:ds="{26168BAE-2169-4FE8-B8F6-D702468C45D5}" s:id="{74B99155-89EA-475C-A9A4-8801E1A18082}" s:ph="email-main" /><r uid="{A3B1993E-26CD-4DC5-9D81-9C85AB046221}" s:ds="{4CFA42C1-9CE2-4440-89E7-846FE9B65AE1}" s:id="{74B99155-89EA-475C-A9A4-8801E1A18082}" s:ph="email-main" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160530T145648Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+96975602-bbdc-4460-b90a-85cf284b771f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160530T153419Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

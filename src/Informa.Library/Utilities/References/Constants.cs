@@ -50,9 +50,9 @@ namespace Informa.Library.Utilities.References
 		public const string RoseSheetNodeIntials = "RS";
 
         public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
+        public const string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
 
-
-		public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
+        public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
 
 		public static string ScripWorkflow = ItemIdResolver.GetItemIdByKey("FreeWithEntitlement");
         public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
@@ -77,7 +77,7 @@ namespace Informa.Library.Utilities.References
                 };
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
-		public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
+		
 		public static string VWBSearchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
 
 		public static class QueryString

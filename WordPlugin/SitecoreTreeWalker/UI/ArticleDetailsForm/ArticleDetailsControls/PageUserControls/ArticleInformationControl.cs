@@ -28,6 +28,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public bool IsVerticalsLoaded { get; set; }
 
         private string ArticleNumber;
+		public Guid ArticleGuid;
+        public bool IsPublished;
+
 
         public bool _isLive;
 
@@ -384,6 +387,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             IsCheckedOutByMe = false;
 
             _parent.PreLinkEnable();
+			IndicatedUnfavoredLink();
+			_parent.EnablePreview();
+			_parent.HideCreationButtons();
+
 
             //_parent.articleStatusBar1.up
             _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
@@ -663,6 +670,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             uxVertical.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
             uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
             uxPublication.Enabled = false;
+			ArticleGuid = articleDetails.ArticleGuid;
+			IsPublished = articleDetails.IsPublished;
 
             ArticleNumber = articleDetails.ArticleNumber;
             uxEmbargoed.Checked = articleDetails.Embargoed;

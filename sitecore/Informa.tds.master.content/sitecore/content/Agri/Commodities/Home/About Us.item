@@ -1,0 +1,146 @@
+----item----
+version: 1
+id: {99AA33A5-D6A4-4FB7-B6C1-EFC5E546072E}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/About Us
+parent: {958213FB-0BD8-400D-BAD7-166AD9F4D3E5}
+name: About Us
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
+----version----
+language: en
+version: 1
+revision: 1883dcad-4b49-4144-ab0b-7a5fed5ad8b4
+
+----field----
+field: {32294AC3-A931-4FE6-ABC5-23B466F9B3B6}
+name: Restrict Access
+key: restrict access
+content-length: 38
+
+{AFDFD507-A124-4F37-86B9-6599C0E44F5D}
+----field----
+field: {17B77805-69A4-4E86-AE59-C495937B6752}
+name: Show Summary When Entitled
+key: show summary when entitled
+content-length: 0
+
+
+----field----
+field: {E3A3E51E-A8F0-4EE1-986F-2562F9D279DE}
+name: Section Title
+key: section title
+content-length: 8
+
+About Us
+----field----
+field: {A7387240-CA22-44C6-A7A4-75BDA76FBC70}
+name: Summary
+key: summary
+content-length: 3546
+
+commodities About us
+Welcome to the new Scrip website. Now, you’ll be able to access your content on a more user-friendly, responsive platform where you’ll spend less time having to look for the information you need. With simpler navigation and menus, an improved search capability and more video, audio and graphics, you’ll get closer to the leading source of news and strategic analysis for the global pharmaceutical industry. We filter the flood of information on the industry and apply the knowledge of our extensive network of analysts, journalists and key opinion leaders to provide our readers with timely business-critical market and competitor intelligence.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices sem quam, ac condimentum justo sodales vitae. Suspendisse rutrum est in ex fringilla, vitae tristique lacus eleifend. Cras sed nunc et orci ullamcorper laoreet a sit amet nulla. Sed varius ex non nunc maximus eleifend. Vivamus imperdiet et turpis ac tincidunt. Mauris velit magna, congue sit amet dui ac, efficitur dignissim leo. Aenean fringilla metus at ligula consequat rhoncus.
+
+Nam posuere, metus quis tincidunt euismod, justo mauris maximus libero, ac finibus libero augue a dolor. Maecenas elementum, quam quis volutpat fermentum, dui arcu ornare ipsum, ut pretium ex dolor eget nisl. Vivamus rutrum risus nulla, eu venenatis nibh iaculis id. Nunc gravida, ipsum finibus porta eleifend, ipsum lacus fringilla massa, ac maximus lacus ligula sed ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eleifend mi sit amet ligula posuere consectetur. Etiam convallis risus in aliquam faucibus. Nulla non nunc fermentum, pharetra orci a, tempus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec sodales purus, vitae commodo felis. Etiam pretium, tellus vitae imperdiet vehicula, lectus eros maximus ipsum, quis congue erat lacus ut massa.
+
+Phasellus ornare dapibus commodo. Fusce bibendum, mauris nec elementum tristique, quam ex varius tellus, a suscipit velit ante scelerisque elit. Vivamus bibendum aliquet pulvinar. Integer dapibus, tellus id tincidunt euismod, nibh justo suscipit velit, sit amet congue nisi nunc ut mauris. Proin id enim risus. Vestibulum magna felis, dapibus ac ligula non, porta pretium risus. Donec dictum ligula sem, nec mollis orci maximus eu. Sed finibus vitae dui vel tincidunt. Sed nisi tortor, egestas sed ex venenatis, gravida hendrerit nunc. Mauris ut aliquam felis. Maecenas a scelerisque tellus. Donec vulputate, lectus dapibus vulputate venenatis, quam odio egestas diam, nec mattis turpis ligula a massa. Cras mattis vehicula urna, in consequat ipsum imperdiet ac.
+
+Nam facilisis tellus vel rhoncus scelerisque. Aliquam purus erat, varius non lobortis vel, gravida vel nulla. Pellentesque condimentum, magna eu viverra commodo, lectus ipsum consequat arcu, aliquet luctus velit elit vel ex. Donec et massa bibendum, blandit mi elementum, venenatis mauris. Aenean nisi lacus, dapibus ac sem a, tristique consequat velit. Etiam eleifend quam facilisis eros accumsan, in dignissim lectus scelerisque. Praesent tempus feugiat urna. Nam tempor cursus enim, non congue mauris consequat ac. Sed et sapien vitae dolor blandit lacinia. Aenean nunc tellus, eleifend vitae est in, condimentum congue erat. Vestibulum ut fringilla nisl. Maecenas et turpis sit amet lacus volutpat placerat a nec dui. Fusce nec elementum neque. Sed aliquam nulla ut porta aliquam.
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 8
+
+About Us
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 8
+
+About Us
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3058
+
+<h2 style="color: #58595b; margin: 0px 0px 10px;">About us</h2>
+<p style="color: #58595b; margin: 0px 0px 1rem;">Welcome to the new Scrip website. Now, you&rsquo;ll be able to access your content on a more user-friendly, responsive platform where you&rsquo;ll spend less time having to look for the information you need. With simpler navigation and menus, an improved search capability and more video, audio and graphics, you&rsquo;ll get closer to the leading source of news and strategic analysis for the global pharmaceutical industry. We filter the flood of information on the industry and apply the knowledge of our extensive network of analysts, journalists and key opinion leaders to provide our readers with timely business-critical market and competitor intelligence.</p>
+<p style="color: #58595b; margin: 0px 0px 1rem;">Our experienced writers and analysts are based in key geographic markets and cover all aspects of the industry &ndash; from small biotech start-ups to multinational giants, research boutiques to generic manufacturers. We focus on the whole of the drug discovery and development value chain and report on regulatory news, product approvals and rejections, and key corporate events.</p>
+<p style="color: #58595b; margin: 0px 0px 1rem;">In addition to our internal resources, Scrip reaches out to expert colleagues in other Informa businesses including Datamonitor, Citeline, Scrip Business Insights, Scrip Regulatory Affairs, Clinica and the Informa Healthcare journals. Owing to our high standing within the industry and the credibility of our writers, Scrip also enjoys privileged access to the industry's key thinkers and opinion leaders.</p>
+<h2 style="color: #58595b; margin: 0px 0px 10px;">What's New?</h2>
+<p style="color: #58595b; margin: 0px 0px 1rem;">With Scrip, you&rsquo;ll discover a time saving resource dedicated to bringing you closer to the content you need, with new and improved navigation, menu and layout -&nbsp;all designed to get you to the information you need much more quickly and easily than before.</p>
+<p style="color: #58595b; margin: 0px 0px 1rem;">The new platform puts you in control through a brand new and improved multi-faceted search capability, allowing you to decide what content you want to see, whether it be a broad search on a general topic or pinpointing something very specific. You can also share your search results using a simple email form, or turn your searches into custom RSS feeds so new content of interest is pushed out to you on a regular basis. As we continually add more audio and video content, you can easily search by media type so you can "listen" and "watch" Scrip to really bring the pharma industry to life.</p>
+<p style="color: #58595b; margin-top: 0px; margin-right: 0px; margin-left: 0px;">With Scrip's new, fully-responsive design, you can stay on top of industry insights and developments on multiple devices anytime, anywhere. This means you are no longer restricted to your desk PC and you will always be kept informed and stay ahead of the competition.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 8
+
+About Us
+----field----
+field: {2F02FFDB-8082-44C9-B9C6-A034F3C1F9D9}
+name: CSS
+key: css
+content-length: 191
+
+h2{margin:0 0 10px 0; line-height:50px;}
+p {line-height:32px; font-size:16px;}
+h3{margin:10px 0 10px 0; line-height:30px;}
+.GeneralRTEComponent li {margin-bottom: 7.5pt; margin-left: 0.25in;}
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 573
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{275978FF-A009-43E3-9F33-86F99791863A}" p:before="r[@uid='{5AFA5D4A-2D18-447E-B322-AEAD6D678209}']" s:ds="{A3812F05-6EB2-4997-B397-D1BAC0C17F9B}" s:id="{3B91B663-7ECB-4964-9145-0F3DD02EA49B}" s:ph="main-content" /><r uid="{5AFA5D4A-2D18-447E-B322-AEAD6D678209}" p:before="r[@uid='{E0424AB5-4862-4363-8D9B-0E979C8710BF}']" s:ds="{33357ABE-34F1-4D0A-A176-E11326152A48}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:par="Related Search&amp;Search Name" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160420T005711Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 17
+
+sitecore\ctrudeau
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1883dcad-4b49-4144-ab0b-7a5fed5ad8b4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160930T130049Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
