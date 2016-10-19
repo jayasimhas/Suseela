@@ -5,7 +5,6 @@
 	font-size: 0.75em;
 	font-family: "Roboto";
 	font-weight: 700;
-	width: $w;
 	height: $h;
 	text-align: center;
 	display: inline-block;
@@ -42,7 +41,8 @@
 	}
 }
 @mixin unfollowBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
+	@include folow-btn(auto, 2rem);
+	padding: 0 20px;
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
@@ -52,7 +52,8 @@
 	}
 }
 @mixin followBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
+	@include folow-btn(auto, 2rem);
+	padding: 0 20px;
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
@@ -116,10 +117,14 @@
 		h2{
 			text-align: left;
 			float: left;
+			width: 30rem;
+			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
 				margin-bottom: 0.75rem;
 				float: none;
+				width: auto;
+				line-height: 1.625rem;
 			}
 		}
 		.subscribed{
@@ -127,9 +132,10 @@
 			float: left;
 			cursor: pointer;
 			padding-left: 1.25rem;
-			margin: 0.1875rem 1.25rem;
+			margin: 3px 20px;
+			vertical-align: top;
+			line-height: 30px;
 			position: relative;
-			top: -2px;
 			@include breakpoint('medium-small') {
 				font-size: 0.875em;
 				border-left: none;				
@@ -152,7 +158,7 @@
 				font-size: 0.875em;
 				border-left: none;				
 				padding-left: 0rem;
-				margin: 0rem;
+				margin: 0 !important;
 			}
 		}
 	}
@@ -166,6 +172,10 @@
 			max-width: 100%;
 			font-family: "Roboto Condensed";
 			font-style: normal;
+			@include breakpoint('small') {
+				display: block;
+				position: relative;
+			}
 			tbody{
 				 tr{
 					-webkit-transition: all 0.2s ease;
@@ -178,15 +188,17 @@
 					}
 					.followingBtn{
 						@include folow-btn(7.5rem, 2rem);
+						padding: 0 1.625rem;
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
 						}
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
 							height: 1.875rem;
 							width: 1.875rem;
 							border: none;
+							padding: 0 1rem;
 							display: inline-block;
 							margin-left: 0.625rem;
 							text-indent: -9999px;
@@ -194,15 +206,17 @@
 					}
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
+						padding: 0 2.25rem;
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
 							height: 1.875rem;
 							width: 1.875rem;
 							display: inline-block;
 							margin-left: 0.625rem;
 							border: none;
+							padding: 0 1rem;
 							text-indent: -9999px;
 						}
 					}
@@ -247,21 +261,37 @@
 				 }
 			}
 			thead{
+				tr{
+					@include breakpoint('small') {
+						&.expandHide{
+							display: none;
+							&.collapseshow{
+								display: block !important;
+							}
+						}
+					}
+				}
 				th{
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						padding: 0.5rem 0rem 0.625rem 0.625rem;
+						/*padding: 0.5rem 0rem 0.625rem 0.625rem;*/
 					}
 					p{
 						font-size: 1em; 
 						text-align: left;
 						padding: 0.75rem 0 0;
+						font-weight: normal;
 						@include breakpoint('medium-small') {
 							padding: 0;
 							font-size: 1em;
 							font-weight: normal;
 						}
+						
+						&.nosubscr{
+							margin: -40px 0 0;
+							font-weight: normal;
+						} 
 					} 
 					&.firstrow{
 						padding: 2.5rem 1.25rem 0.625rem;
@@ -319,13 +349,16 @@
 								width: 1.4375rem;
 								position: relative;
 								left: 0;
-								&.collapsed{
+								&.expanded{
 									position: relative;
 									left: 0;
 									background-position: 0 0; 
 								}
-							} 
-							&.collapsed{
+							}
+							@media screen and (min-width: 667px) and (max-width: 767px){
+								margin-right: 3.125rem;
+							}
+							&.expanded{
 								background-position: 0 0;
 							}
 							@media screen and (min-width: 801px) and (max-width: 1130px){
@@ -341,9 +374,13 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
+					@include breakpoint('small') {
+						float: none;
+					}
 				}
 				.followinglbl{
 					@include followBtnLbl();
+					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -351,9 +388,15 @@
 				}
 				.unfollowAllBtn{
 					@include unfollowBtnLbl();
+					padding: 0 1rem;
+					@media screen and (min-width: 667px) and (max-width: 767px){
+						padding: 0 1.25rem;
+					}
 				}
 				.followlbl{
 					@include unfollowBtnLbl();
+					padding: 0 2.25rem;
+					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -398,20 +441,50 @@
 	  display: none !important;
   }
   .saveoption{
-	  float: right;
+	  float: left;
+	  width: 100%;
 	  .gotoview{
-		 @include folow-btn(9.375rem, 2rem);
+		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
-		  &:hover{
+		  a{
+			color: $color-abbey-gray;
+			display: block;
+			padding: 0 25px;
+			&:hover{
 				background: $color-tree-poppy-orange;
 				color: $color-white;
+				text-decoration: none;
 			}
+			&:focus{
+				text-decoration: none;
+			}
+		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
+			float: left;
+			margin: 0px;
 		}
+		
 	  }
+	  .complete-settings{
+			display: inline-block;
+			float: right;
+		}
 	  .saveview{
-		 @include folow-btn(5.625rem, 2rem);
+		padding: 0 2rem;
+		 @include folow-btn(auto, 2rem);
+		  margin-left: 1.25rem;
+		  background: $color-tree-poppy-orange;
+		  color: $color-white;
+		  @include breakpoint('small') {
+			float: right;
+			margin: 0px;
+			padding: 0 2.5rem;
+		  }
+	  }
+	  .registrationBtn{
+		padding: 0 2rem;
+		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
@@ -439,9 +512,167 @@
 	visibility: hidden;
 	background: #f9f9f9;
   }
+    .modal-view {
+	    position: fixed;
+		width: 25rem;
+		height: 8.125rem;
+		top: 50%;
+		left: 50%;
+		z-index: 5000;
+		margin-left: -12.5rem;
+		margin-top: -4.0625rem;
+		background: $color-white;
+		padding: 2.1875rem 2.5rem 2.5rem;
+		border: 1px solid $color-tree-poppy-orange;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		display: none;
+		@include breakpoint('small') {
+			width: 18.75rem;
+			height: 6.25rem;
+			margin-left: -9.375rem;
+			margin-top: -9.375rem;
+			padding: 1.625rem 2.5rem 2.5rem;
+		}
+		h4{
+			font-size: 1.125rem;
+			text-align: center;
+			line-height: 1.875rem;
+			
+			@include breakpoint('small') {
+				font-size: 0.875rem;
+				text-align: center;
+				line-height: 1.5rem;
+			}
+		}
+		
+	  .modal-inner {
+			display: inline-block;
+			text-align: left;
+			background-color: #eee;
+			color: #000;
+			padding: 1.25rem;
+			
+			@include breakpoint('small') {
+				padding: 0.625rem;
+			}
+		}
+
+		.close-modal {
+			position: absolute;
+			right: 0.625rem;
+			top: 0.625rem;
+			color: #f7941e;
+			font-family: "Roboto";
+			font-weight: bold;
+			font-size: 1rem;
+			cursor: pointer;
+		}
+	}
+	.modal-overlay{
+		&.in{
+			background: #000;
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			top: 0rem;
+			left: 0rem;
+			z-index: 99;
+			opacity: 0.5;
+		}
+	}
+	.hidden-large{
+		display: none;
+	}
+	
+	.alert-success{
+		margin-bottom: 20px;
+	}
+	.alert-error{
+		margin-bottom: 20px;
+	}
+	.tbodyhidden{
+		display: none;
+	}	
 }
 
+@include breakpoint('medium-small') {
+	.myview-settings{ 
+		.hidden-large{
+			display: block !important;
+		}
+	}
+}
+
+@include breakpoint('medium') {
+	.myview-settings{
+		.desktopMode{
+			margin-left: -1.875rem;
+		}
+		.firstrow{
+			h2{
+				width: auto;
+			}
+		}
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.myview-settings{
+		.firstrow h2{
+			width: 15rem;
+		}
+	}
+}
+@media screen and (min-width: 800px) and (max-width: 900px){
+	.myview-settings{
+		.desktopMode{
+			margin-left: -2.5rem;
+		}
+	}
+}
+@media screen and (min-width: 640px) and (max-width: 900px){
+	.myview-settings{
+		.desktopMode{
+			margin-left: -3.4375rem;
+		}
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 640px){
+	.myview-settings{
+		.accordionStatus{
+			&.hideRow{
+				display: none;
+			}
+		}
+	}
+}
 @include breakpoint('small') {
+	.myview-settings{ 
+		.smfollowingBtn{
+			margin-top: -0.5rem;
+			
+			.unfollowAllBtn{
+				background-position: 0 0;
+				text-indent: -8.75rem;
+				color: $color-abbey-gray !important;
+			} 
+			.followAllBtn{
+				background-position: 0 -31px;
+				text-indent: -124px;
+				border: none !important;
+				&.fr{float: right !important;}
+			}
+		}
+		.accordionStatus{
+			&.hideRow{
+				display: none;
+			}
+		}
+	}
+}
+@include breakpoint('medium-small') {
 	.hidden-xs{
 		display: none !important;
 	}
@@ -454,31 +685,19 @@
 			width: 30px !important;
 			line-height: 1.75rem !important;
 			&.unfollowAllBtn{
-				background-position: 0 -31px;
-				border: none !important;
-				text-indent: -124px;
+				background-position: 0 0;
+				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
 			} 
 			&.followAllBtn{
-				background-position: 0 0;
-				text-indent: -140px;
+				background-position: 0 -31px;
+				text-indent: -124px;
+				border: none !important;
 			}
 		}		
-	}
-	.hidden-lg{
-		display: none !important;
-	}
+	} 
 }
-@media only screen and (min-width: 481px) {
-	.hidden-lg{
-		display: none !important;
-	}
-}
-
-.tbodyhidden{
-	display: none;
-}
-
+ 
 /************ drag and drop styles ***********/
 .drop {
 	-webkit-animation: drop 1s ease;
@@ -536,4 +755,10 @@
 	.desktophide{
 		display: block !important;
 	}
+}
+.pub-subscription-subtitle{
+	clear: both;
+	float: left;
+	margin: 15px 0 0 0;
+	padding: 0;
 }

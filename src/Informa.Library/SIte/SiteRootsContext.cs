@@ -16,19 +16,22 @@ namespace Informa.Library.Site
         private static readonly string cacheKey = nameof(SiteRootsContext);
         protected readonly ICrossSiteCacheProvider CacheProvider;
         protected readonly ISitecoreService SitecoreService;
+        protected readonly IVerticalRootContext VerticalRootContext;
 
         public SiteRootsContext(
             ISitecoreService sitecoreService,
-            ICrossSiteCacheProvider cacheProvider
-            )
+            ICrossSiteCacheProvider cacheProvider,
+            IVerticalRootContext verticalRootContext)
         {
             SitecoreService = sitecoreService;
-            CacheProvider = cacheProvider; 
+            CacheProvider = cacheProvider;
+            VerticalRootContext = verticalRootContext;
         }
 
         public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext); 
         private IList<ISite_Root> BuildSiteRootsContext()
         {
+            var item=VerticalRootContext.Item;
             //JIRA Ticket IPMP-269            
             IEnumerable<ISite_Root> siteRoots = null;
             ItemIdResolver verticalResolver = new ItemIdResolver();
