@@ -1,21 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using Jabberwocky.Autofac.Attributes;
-using Informa.Models.DCD;
-using System.Text.RegularExpressions;
-using System;
+using System.Collections.Generic;
 
-namespace Informa.Library.PXM.Helpers
-{
-	public interface IPxmHtmlHelper
+namespace Informa.Library.PXM.Helpers {
+    public interface IPxmHtmlHelper
 	{
 		string ProcessIframe(string content);
         string ProcessIframeTag(string content);
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
         string ProcessPullQuotes(string content);
-        string ProcessTokens(string content);
 
     }
 
@@ -286,24 +280,6 @@ namespace Informa.Library.PXM.Helpers
                     attribute.Value = SidebarPullQuote;
             }
             return doc.DocumentNode.OuterHtml;
-        }
-
-        public string ProcessTokens(string content) {
-            var result = ReplaceCompanies(content);
-            return result;
-        }
-
-        public string ReplaceCompanies(string content) {
-            //Find all matches with Company token
-            Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
-
-            var matchSet = new HashSet<string>();
-            var matches = regex.Matches(content);
-            foreach (Match match in matches) {
-                var replace = match.Groups[1].Value.Split(':')[1];
-                content = content.Replace(match.Value, $"<span class=\"indexentry\">{replace}</span>");
-            }
-            return content;
         }
     }
 }
