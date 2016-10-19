@@ -3023,8 +3023,8 @@ body.lightboxed {
   .main-menu__section {
     border-bottom: 1px solid #d1d3d4;
     margin: 0;
-    padding: 16px 0;
-    padding: 1rem 0;
+    padding: 25px 0;
+    padding: 1.5625rem 0;
     background-color: #f1f2f2; }
   .main-menu__section-title, .main-menu__section-link {
     padding: 10px 0;
@@ -3035,8 +3035,8 @@ body.lightboxed {
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 1.2px;
-    padding-left: 24px;
-    padding-left: 1.5rem;
+    padding-left: 33px;
+    padding-left: 2.0625rem;
     text-transform: uppercase;
     width: 100%; }
   .main-menu__arrow-icon, .facets__button--toggle-section {
@@ -3064,8 +3064,8 @@ body.lightboxed {
             transform-origin: top;
     max-height: 0; }
   .main-menu__footer-link {
-    padding: 0 0 0 24px;
-    padding: 0 0 0 1.5rem;
+    padding: 0 0 0 33px;
+    padding: 0 0 0 2.0625rem;
     line-height: 32px;
     line-height: 2rem;
     margin: 0;
@@ -4406,10 +4406,7 @@ header .header-account-access {
     display: block !important; } }
 
 .pub-subscription-subtitle {
-  clear: both;
-  float: left;
-  margin: 15px 0 0 0;
-  padding: 0; }
+  text-align: left; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
@@ -4816,18 +4813,20 @@ div.main-menu__section .titleMyView {
   font-weight: 600;
   letter-spacing: 1.2px;
   padding-left: 24px;
-  padding-left: 24px;
-  padding-left: 1.5rem;
+  padding-left: 33px;
+  padding-left: 2.0625rem;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
 
 div.main-menu__section .edit-link {
-  margin-left: 24px;
+  margin-left: 33px;
   font-size: 12px; }
 
 div.main-menu__section .navContent {
   font-size: 12px;
-  margin: 6px 0 0 25px;
+  margin: 6px 22px 0 33px;
   line-height: 20px;
   color: #979799; }
 
