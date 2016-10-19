@@ -53,7 +53,7 @@
 }
 @mixin followBtnLbl(){
 	@include folow-btn(auto, 2rem);
-	padding: 0 20px;
+	padding: 0 1.5625rem;
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
@@ -461,8 +461,7 @@
 		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
-			float: left;
-			margin: 0px;
+			margin: 0 0.625rem;
 		}
 		
 	  }
@@ -600,7 +599,7 @@
 @include breakpoint('medium-small') {
 	.myview-settings{ 
 		.hidden-large{
-			display: block !important;
+			display: table-row-group !important;
 		}
 	}
 }

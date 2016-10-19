@@ -3114,9 +3114,11 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function () {
+
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
+            _jscookie2['default'].set('dismiss_cookie', 'dismiss_cookie_created', '');
             $('.messaging_webUsers').remove();
             $('.messaging_webUsers_white').remove();
         });
@@ -5871,6 +5873,7 @@ exports.toggleIcons = toggleIcons;
                 $(this).siblings().removeAttr('draggable');
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
+                $('#validatePreference').val(1);
                 settings.dropComplete();
             }
             return false;
