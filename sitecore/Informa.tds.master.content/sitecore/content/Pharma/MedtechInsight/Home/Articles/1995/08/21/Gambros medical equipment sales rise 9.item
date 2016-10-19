@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D4A3DC0C-3EA9-4273-BFC8-C67F3FAFF8A6}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/08/21/Gambros medical equipment sales rise 9
+parent: {1070EFC8-DE03-49AD-9DF6-941A7663E237}
+name: Gambros medical equipment sales rise 9
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 8ab9ecf4-b82c-4b57-9c64-023c916d3e31
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 335
+
+<p>Swedish Gambro group's medical equipment sales rose 9% to SKr 4,493 million ($632 million) in the first six months of 1995 after adjustment for exchange rate effects and divestments. The strongest gains over corresponding 1994 figures were shown by blood component technology and renal care divisions - 17% and 9%, respectively.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+Gambro's medical equipment sales rise 9%
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3074
+
+<p>Swedish Gambro group's medical equipment sales rose 9% to SKr 4,493 million ($632 million) in the first six months of 1995 after adjustment for exchange rate effects and divestments. The strongest gains over corresponding 1994 figures were shown by blood component technology and renal care divisions - 17% and 9%, respectively.</p><pre>Gambro's results by business area (SKr million) 1st half 1st half % change 1995 1994 nominal adjusted* Renal care 3,483 3,202 8.8 9 Cardiovascular surgery 608 613 -0.8 4 Blood component technology 402 354 13.6 17 Intensive care & anaesthesia ** 206 - Total medical equipment sales 4,493 4,375 2.7 9 Health care services 687 540 27.2 36 Internal sales -45 -26 - Total group sales 5,135 4,889 5.0 12 Group net income 387 349 10.9 - (ended June 30th) *adjusted for exchange rate effects and divestments (where applicable); **divested in late 1994.</pre><p>In renal care - which accounts for nearly 80% of Gambro's medical equipment turnover - sales growth in western Europe and North America largely reflected market trends. "Very favourable" growth was registered in the UK and France, however, with good volume growth in sales of monitors and of dialysers equipped with Gambro-developed synthetic membranes.</p><p>Business in eastern Europe, Africa and the Middle East also performed well, says Gambro. Another business segment to exceed market growth in the larger markets was the cardiovascular surgery division's most important product group, oxygenators.</p><p>The particularly strong gains posted by the blood component technology business are attributed primarily to continued sales success with the Spectra blood separation system in the US and other markets (especially Japan).</p><p>REN's income nearly doubled</p><p>A 94% increase was recorded in the first-half net earnings of US dialysis clinic chain, REN - which is set to become a wholly-owned Gambro subsidiary (No 664, p 16). Acquisitions and increased internal efficiency are the reasons given for the improvement. Approximately 5,700 patients are treated in REN's US network of 67 clinics, and about 1,200 patients in its ten European clinics (No 655, p 16).</p><p>During the second quarter of 1995, Gambro injected a further $5 million into a strategic alliance formed in 1993 between its US Cobe BCT subsidiary and Aastrom Biosciences (US). The agreement gave Cobe exclusive worldwide marketing rights to stem cell therapy use of Aastrom's cell production system, which is currently undergoing clinical trials in Texas (see Clinica No 637, p 15). Cobe holds 28% of Aastrom's share capital.</p><p>The recent acquisitions of distributors in South Korea and Taiwan were consolidated in July.</p><p>major production investments</p><p>Production equipment and clinic installations accounted for the major part of a SKr 327 million investment made during first half 1995. The company has also decided to invest SKr 150 million in expanding production capacity at its plants in Germany and France. SKr 232 million was spent on R&D investment during the period (up 2%).</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Gambros medical equipment sales rise 9
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950821T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950821T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950821T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054017
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+Gambro's medical equipment sales rise 9%
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255826
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184704Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ab9ecf4-b82c-4b57-9c64-023c916d3e31
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184704Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

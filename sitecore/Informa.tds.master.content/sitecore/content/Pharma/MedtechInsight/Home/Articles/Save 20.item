@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {03B6767D-AAF5-432C-9831-70ECBD88B43D}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Save 20
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Save 20
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e3a32d4e-3946-4d32-999f-c64e6964cf8d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 1
+
+ 
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 8
+
+Save 20%
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7660
+
+<table> <tr> <td valign="top"> <p> <b>Request your Subscription today</b> </p> <table> <tr> <td bgcolor="#E9F2FC"> <p> <b>Currency</b> </p> </td> <td bgcolor="#E9F2FC"> <p> <b>GBP &pound;</b> </p> </td> <td bgcolor="#E9F2FC"> <p> <b>Euro &euro;</b> </p> </td> <td bgcolor="#E9F2FC"> <p> <b>USD $</b> </p> </td> </tr> <tr> <td bgcolor="#F4FCFF"> <p> PDF &amp; Online </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=GBP&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>&pound;1,320</s></a> <br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=GBP&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">&pound;1,080</a> </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=EUR&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>&euro;2,050</s></a><br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=EUR&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">&euro;1,677</a> </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=USD&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>$2,640</s></a><br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPDF&amp;src=18&amp;c=USD&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">$2,160</a> </p> </td> </tr> <tr> <td bgcolor="#F4FCFF"> <p> Print &amp; Online </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=GBP&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>&pound;1,320</s></a> <br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=GBP&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">&pound;1,080</a> </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=EUR&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>&euro;2,050</s></a> <br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=EUR&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">&euro;1,677</a> </p> </td> <td bgcolor="#F4FCFF"> <p> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=USD&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO"><s>$2,640</s></a> <br> <a href="http://catalogue.informahealthcare.com/pjbp/promo.htm?promo=DMOfferPrint&amp;src=18&amp;c=USD&amp;utm_source=Sep&amp;utm_medium=Email&amp;utm_campaign=CWO">$2,160</a> </p> </td> </tr> </table> <p> (Please note you will be redirected to the Informa Catalogue site when you click the relevant currency price above) </p> <p> Five easy ways to place your order: </p> <ol> <li>Order online by clicking on the relevant currency above </li> <li>Call +44 (0)20 7017 5540 </li> <li>Email <a href="mailto:clinica.enquiry@informa.com" class="emailLink">clinica.enquiry@informa.com</a> and we'll send you an invoice </li> <li><a href="http://www.clinica.co.uk/multimedia/archive/00072/November_09_EM_order_72348a.pdf">Download an order form</a> </li> <li>If you would like to pay by invoice, bank transfer or cheque, contact: </li> </ol> <p> <b>Alamgir Ahmed</b> <br> Clinica Account Manager <br> T:+44 (0)20 7017 5804 <br> <a href="mailto:alamgir.ahmed@informa.com" class="emailLink">alamgir.ahmed@informa.com</a> </p> <p> <b>Don't just take our word for it...</b><br> <br> Clinica is read by all the major companies in the medtech industry. Here&rsquo;s what just two of our readers had to say about Clinica. </p> <p> <table> <tr> <td valign="top"> <p> &quot;Clinica is a great source of news and well-informed comment in the med-tech sector. It's a must-read for us in keeping up with the global market and regulatory trends.&quot; <br> <br> <b>David Caumartin</b><br> <b> </b> <b>General Manager for Mammography</b><br> <b>GE Healthcare</b> </p> </td> <td valign="top"> <p> &quot;It's clear, concise and gives just the information I need. Clinica&rsquo;s one of my top news sources,providing up-to-date information on the industry straight into my inbox.&quot; </p> <p> <p> <b>Jerry French </b> <b>Senior Vice President and Global Strategic Business Unit Leader </b> <br> <b>Cook Medical&rsquo;s Urology division </b> </p> <p><p></td> </tr> </table> <p> <b>Money Back guarantee - your subscription is risk free! </b> </p> <p> Your subscription also comes with a money back guarantee - if you are not completely satisfied with the Clinica subscription package, we guarantee a full refund within 30 days of receiving your payment. </p> </td> <td> <table> <tr> <td> <p> <img height="72" src="-/media/2B182778534A4D16B064E955450514B6.ashx" align="left" alt="Clinica" width="51"> </p> <p> <b><img height="27" src="-/media/4DC0C3CF59FE4F139EEDDC52414046D0.ashx" alt="Clinica" width="196"> </b> <br> <br> <b>1.Clinica saves you time</b> <br> <br> Our editorial team and network of local correspondents based around the world <b><i>research</i></b>, <b><i>filter</i></b>, <b><i>analyse</i></b> and <b><i>report</i></b> the key global and regional med-tech developments that matter to you, while our online service gives you speedy access to the latest industry news, as it happens. So there&rsquo;s no need to search endless websites, or browse countless publications for news &ndash; maximise your day by letting <i>Clinica</i> do the work for you. <br> <br> <br> <b>2. Clinica gives you the tools to make informed decisions</b> <br> <br> With the latest industry news, exclusive features such as Medtech Ventures, New Stock Tracker and a fully searchable online archive, <i>Clinica</i> gives you the tools you need to put events into <b><i>context</i></b>, <b><i>understand the impact</i></b> they will have on your business and <b><i>identify</i> <i>opportunities</i></b> for <b><i>growth</i></b> and <b><i>gaining strategic advantage</i></b> over your competitors. <br> <br> <b>3. Clinica gives you an unparalleled global outlook</b> <br> <br> No other publication has <i>Clinica&rsquo;s</i> <b><i>international coverage</i></b> and <b><i>editorial scope</i></b>, ensuring you have all the information you need to have a <b><i>strong</i></b> and <b><i>informed</i></b> regional and international perspective on the industry. So whether you&rsquo;re interested in just one region or several, you can be sure <i>Clinica</i> will have it covered. <br> <br> <b>4. Clinica addresses your changing needs</b> <br> <br> Clinica has consistently evolved to keep up with the needs of our readers, which is why the <b><i>full content</i></b> of <i>Clinica</i> is available online, with a personally customizable daily e-alert news service and <b><i>fully-searchable archive</i></b> dating back to 1995, plus two feature-packed round-up editions a month, available in print or PDF. <br> <br> <b>5. Clinica provides business intelligence you can rely on</b> <br> <br> Unlike many publications, Clinica is <b><i>completely independent</i></b> &ndash; so our coverage is not influenced by the views of any 3rd parties. That means you get an all-important <b><i>impartial perspective</i></b>, ensuring you receive <b><i>authoritative</i></b>, <b><i>relevant</i></b> and above all <b><i>reliable</i></b> information. </p> </td> </tr> </table> <p> &nbsp; </p> </td> </tr> </table> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 7
+
+Save 20
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T231306
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT005641
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 8
+
+Save 20%
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+180079
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T161008Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e3a32d4e-3946-4d32-999f-c64e6964cf8d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T031306Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

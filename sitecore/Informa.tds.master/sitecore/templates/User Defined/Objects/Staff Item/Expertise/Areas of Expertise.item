@@ -20,9 +20,9 @@ Treelist
 field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
 name: Source
 key: source
-content-length: 119
+content-length: 87
 
-DataSource=/sitecore/content/Environment Globals/Taxonomy&ExcludeItemsForDisplay={D10B7B8F-588B-4209-A319-2BC3A19828B7}
+query:./ancestor-or-self::*[@@templatename = 'Vertical Root']/Vertical Globals/Taxonomy
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -33,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: d7aa2c76-024c-41d3-a005-6892428a2664
+revision: 61808972-0f8a-466c-a62b-dd339a5a41f3
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d7aa2c76-024c-41d3-a005-6892428a2664
+61808972-0f8a-466c-a62b-dd339a5a41f3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160706T175139Z
+20160927T123036Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

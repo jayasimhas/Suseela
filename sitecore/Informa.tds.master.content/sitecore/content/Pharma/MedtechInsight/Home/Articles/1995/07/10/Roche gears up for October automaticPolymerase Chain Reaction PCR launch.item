@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {D6D539BB-46C7-440F-A74E-F0851836EE79}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/10/Roche gears up for October automaticPolymerase Chain Reaction PCR launch
+parent: {98BAB990-6283-4E08-9540-D71A757446F0}
+name: Roche gears up for October automaticPolymerase Chain Reaction PCR launch
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: b571bfe7-8bd7-4802-87b9-9c7a308d28cf
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 117
+
+<p>In an exclusive interview, the Swiss healthcare giant tells David Firn of its plans for molecular diagnostics.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 75
+
+Roche gears up for October automatic-Polymerase Chain Reaction (PCR) launch
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6293
+
+<p>In an exclusive interview, the Swiss healthcare giant tells David Firn of its plans for molecular diagnostics.</p><p>Roche is gearing up for an October launch of Cobas Amplicor, its automated PCR system. New assembly space has been rented by Rotkreuz-based Tegimenta, its wholly-owned manufacturing subsidiary, and the assembly team is waiting for components. Full production is due to start at the end of July.</p><p>The system will be launched with a menu of four qualitative tests: HCV, MTB, Chlamydia trachomatis and Neisseria gonorrhoea and a software upgrade for quantitative kits will follow soon.</p><p>The Cobas system goes one step further than <strong>[C#198600101:Abbott]</strong>'s LCx by combining amplification and detection in one machine. Cobas Amplicor uses two independent thermocyclers, each capable of handling up to 12 samples. Specimen preparation and amplification reagents are the same as those used in the first generation of Amplicor tests and detection is by magnetic particles.</p><p>Roche's marketing strategy is based on medical value added. "There is no point using PCR if there is another technique that can do the job just as well," says head of Roche Diagnostics Jean-Luc Belingard. Hence Roche has focused on situations where a test can save more than its cost.</p><p>the menu game</p><p>There are ten Amplicor PCR assays on the market and more will follow. Roche plans to offer all except the HLA-DRbeta typing, which uses membrane strips, on the Cobas system.</p><p>Viral diseases are Roche's number one strategic target - tests for cytomegalovirus and enterovirus kits are under development. Roche Pharmaceuticals has antiviral compounds aimed at HIV and CMV and is combining trials with PCR quantification in both cases.</p><p>Roche sees fewer opportunities for bacterial testing and is only working on high medical importance or difficult-to-culture organisms. A mycobacteria typing-kit is in the pipeline. Two-step detection will allow negative tests to be terminated while the positives can be typed an hour later, by applying a second round of detections.</p><p>Future strategy is based around three activities: basic R&D, automation and menu expansion. PCR research is carried out at Alameda in California, reagent development at Branchburg, New Jersey and instrument development at Tegimenta. The three sites employ around 250 R&D staff, probably the largest nucleic acid programme in the world.</p><p>simple target</p><p>"Our target is to simplify PCR enough to make it an everyday tool - as simple, consistent and reliable as any immunodiagnostic," says Mr Belingard. "We are almost there with Amplicor kits and Cobas Amplicor opens the era of automation." Sample preparation is the last obstacle. Roche already has plans to launch a stand-alone preparation system but will eventually integrate entire tests into one machine.</p><p>genetic testing</p><p>Roche takes a conservative view of genetic-disease testing, but believes there are also serious ethical reasons for staying out some sections. "Roche will only develop genetic assays where there is a proven, direct, clinical usefulness." says Dr Dreismann. "We see tests in niches. Leukaemia recurrence and HLA testing fit into our strategy but predisposition testing does not."</p><p>Assay technology does not yet meet the needs of screening. It is possible to test for mutations, but even membrane strips can only handle a tiny percentage of the mutations that might lead to disease. Similarly, cancer is normally the result of several mutations in genes that are thousands of nucleotides long. Essentially the problem is one of informatics - Dr Dreismann. thinks it is solvable but needs more inventions like <strong>[C#199300152:Affymetrix]</strong>' DNA chip.</p><p>Roche's strategy is to make genetic testing as easy as infectious disease testing and is working on a gene-scanning technology that will track down unknown mutations. We can now amplify up to 40 kb reliably, says Dr Dreismann "A big step and enough to look for deletions and translocation."</p><p>KPCR</p><p>Roche also has a completely new detection technology up its sleeve. Officially unnamed, it is being referred to as kinetic or homogeneous PCR. KPCR could be a one-tube test. Just add the specimen, says Dr Dreismann. Fluorescence will develop as amplifications proceeds, and be read simultaneously. There will be no need for an instrument with pipettes and moving arms and it will eventually be rapid enough to beat immunodiagnostics, he promises.</p><p>"we are the market"</p><p>The DNA testing/PCR market is worth way over $100 million, according to Mr Belingard. "Amplicor kit sales are more than doubling every year and are a very significant portion of the total figure. We are the market. It is still early days but Roche is making inroads into the $7,000 million immunodiagnostics market," he says.</p><p>hottest market</p><p>Roche has gained Japanese approval and reimbursement for HCV, HIV and chlamydia tests and 1995 is the first full commercial year for PCR there. Mr Belingard believes it will be a very important market for HCV monitoring, because of the widespread use of interferon treatment. According to Dr Dreismann, sales are rocketing in Japan - the hottest molecular biology market.</p><p>Dr Dreismann says Roche probably has about four-fifths of the world market for amplified molecular diagnostics. He thinks Chiron's Christmas tree probes are the company's biggest competitor. "They have focused on the viral testing niche, but we will catch up because PCR is 100 to 1,000 times more sensitive," he says. Next in line, in Europe, by Roche's reckoning, is Organon Teknika, closely followed by Gen-Probe and Abbott. <strong>[C#198600118:Becton Dickinson]</strong> has recently announced a clinical system based on its Strand Displacement Amplification (SDA) technique, and has said it intends to focus on respiratory diseases.</p><p>Ultimately Abbott is probably Roche's most threatening competitor. It has only just entered the market and with its vast sales and service force is likely to overtake Chiron in the not to distant future. Roche will earn both royalties and downpayments from Abbott's LCR tests under a cross-licence signed in April last year (see Clinica No 599, p 1).</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+Roche gears up for October automaticPolymerase Chain Reaction PCR launch
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950710T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950710T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950710T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053951
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 75
+
+Roche gears up for October automatic-Polymerase Chain Reaction (PCR) launch
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 29
+
+198600118,199300152,198600101
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255760
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184651Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b571bfe7-8bd7-4802-87b9-9c7a308d28cf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184651Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

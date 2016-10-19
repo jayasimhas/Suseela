@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {11964029-5E06-48E6-98C9-2A183E6B3888}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/15/EZEM the inside story
+parent: {166B4D89-6B6A-4D16-8DA9-761C7F941ECD}
+name: EZEM the inside story
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 873ecfab-e5e4-4757-8df4-a1faacb742a8
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 145
+
+<p>E-Z-EM is upgrading its business with new uses for an old standby of abdominal contrast agents - barium sulphate. Brigitte Ascher reports.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 24
+
+E-Z-EM: the inside story
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5538
+
+<p>E-Z-EM is upgrading its business with new uses for an old standby of abdominal contrast agents - barium sulphate. Brigitte Ascher reports.</p><p>E-Z-EM, seemingly dependent on old-fashioned technology, has been invigorated by a new diagnostic test and the possible link between H pylori and cancer. The thirty-something company, based in Westbury, New York, is the leading worldwide producer of barium sulphate contrast systems for use in gastrointestinal tract X-ray examinations. It required a plunge into the H pylori testing market in the late 1980s to seek new uses for its traditional imaging business. The drive for cost containment in healthcare was an added bonus, as E-Z-EM's core business, barium enemas, are a "cost effective, safe and reliable" alternative to colonoscopy in colorectal cancer screening, CEO Daniel Martin explains.</p><p>"For many years barium procedures gradually declined 3-5% a year, replaced by colonoscopy not least because gastroenterologists were more eloquent about the technique than radiologists - lower GI procedures, enemas, are not very glamorous," Mr Martin told Clinica. "However, upper GI procedures have begun to increase in the last few years, and in general, it turns out that barium procedures for cancer screening are more cost effective at only a quarter to a third of the cost of colonoscopy and ten times safer as regards the perforation risk."</p><p>Mr Martin quotes a recent study by the US Office of Technology Assessment on colorectal cancer screening in average-risk adults which concludes that double-contrast barium enema or flexible sigmoidoscopy are more cost effective than other strategies. Another study supporting E-Z-EM's barium-procedures by David Eddy of the Center for Health Policy Research and Education, Duke University, North Carolina, concludes that faecal occult blood testing in combination with barium enemas is the most effective and least expensive method of diagnosis (see graph).</p><p>The technique is capable of much further development, Mr Martin believes. "One example is to develop barium meals for throat imaging in cases of painful swallowing. Another is to use it for small-bowel studies in following up the link between H pylori, gastritis, ulcer and even the possible link with gastric cancer. If it turns out that a link exists there is good reason to enhance upper GI procedures with barium in order to improve diagnosis."</p><p>E-Z-EM's name stems from "easy enema" with imaging its traditional business. However, the company now sees itself more broadly as a "specialist in gastrointestinal disease". Because the name E-Z-EM no longer reflects the full extent of the business it plans to change it, probably to International Medical Imaging. "We will, however, keep the well known brands unders the E-Z-EM name," said Mr Martin.</p><p>The company began branching out from imaging about six years ago. It now manufactures interventional catheters, a stent and a CO(2) angiographic injection system through its AngioDynamics subsidiary. These products, together with X-ray protection equipment, gastrointestinal cleansing laxatives and immunoassay tests, form part of E-Z-EM's diagnostic products. They contributed 91% to sales in fiscal 1994. Within this category the lion's share (70%) is accounted for by contrast agents (see graph).</p><p>"I would like to see the proportion of GI contrast agents down to 45%," said Mr Martin. In the US, E-Z-EM enjoys a dominant position in barium sulphate contrast agents with around 80% market share. The main competitor is Lafayette, a company E-Z-EM acquired in 1988 but was forced by the Federal Trade Commission to sell in 1991. Depending on the country, the company works with various major contrast agent manufacturers - <strong>[C#198900374:Bracco]</strong>, Hafslund Nycomed, <strong>[C#198700114:Guerbet]</strong> -, small distributors or sells through E-Z-EM subsidiaries such as in the UK and Japan.</p><p>E-Z-EM's 51%-owned Surgical Dynamics subsidiary contributed 9% of 1994 sales with products such as the Nucleotome device and other surgical devices used in spinal surgery. In total, 64% of E-Z-EM's turnover stem from the US, 36% from international sales. "Our target for international sales would be to reach 51% in about five years time," Mr Martin said.</p><p>The wholly-owned subsidiary Enteric Products (EPI) is central to the rejuvenation of barium procedures through new diagnostic tests. In conjunction with the Baylor College of Medicine in Houston, Texas, EPI has developed the HM-CAP patented antigen for testing for H pylori antibodies. Based on this antigen, a single-patient test for physicians' offices, FlexSure HP, and a multiple-patient test for laboratories for automated systems are currently available. The latter - the HM-CAP ELISA test - is marketed worldwide by EPI except in Japan where Kyowa Medex is the distributor. "We are signing up distributors in Europe and a private-label deal is pending which will make our product available nearly all over the world," said Robert Bloomfield, CEO of EPI.</p><p>The doctors' office serum test, FlexSure HP, was developed with SmithKline Diagnostics (a subsidiary of Beckman Instruments) and approved by the FDA in June 1994. As part of a strategic alliance with SmithKline Diagnostics, EPI supplies the antigen used in the test and receives royalties on sales as well as revenues from the sale of the antigen. Additionally, EPI has exclusive marketing rights except for North America and some European countries.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{8DB89EAD-00CC-48B4-BB5F-D1B24C35A621}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 21
+
+EZEM the inside story
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950515T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950515T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950515T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052582
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 24
+
+E-Z-EM: the inside story
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198700114,198900374
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254391
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184226Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+873ecfab-e5e4-4757-8df4-a1faacb742a8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184226Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

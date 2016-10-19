@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {83E67C00-F1CE-4B10-A460-A71F1A251CDD}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/03/The biomaterials crisis  more problems than solutions
+parent: {2F783E2E-0178-43AE-8466-15C21F54A536}
+name: The biomaterials crisis  more problems than solutions
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 1fc0f501-b678-4d83-aa75-371e11b10b66
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 575
+
+<p>Now that suppliers of commodity plastics have "firmly asserted their unwillingness to accommodate US medical device manufacturers", the search for alternative sources is on. Possible solutions to the current biomaterials crisis could include a national stockpile of commodity polymers, importing materials from Europe and even forming "middleman" companies outside the US to buy materials and sell them on to device manufacturers. A panel of industrialists and academics discussed the options at the Society for Biomaterials annual meeting in San Francisco last month.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+The biomaterials crisis - more problems than solutions
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5308
+
+<p>Now that suppliers of commodity plastics have "firmly asserted their unwillingness to accommodate US medical device manufacturers", the search for alternative sources is on. Possible solutions to the current biomaterials crisis could include a national stockpile of commodity polymers, importing materials from Europe and even forming "middleman" companies outside the US to buy materials and sell them on to device manufacturers. A panel of industrialists and academics discussed the options at the Society for Biomaterials annual meeting in San Francisco last month.</p><p>While most researchers and manufacturers welcome the biomaterials legislation being introduced to US Congress (see Clinica No 640, p 7), they believe it does not go far enough to solve the crisis. Besides, "if you take away biomaterials liability, it will shift to the medical profession," believes Donald Hill from Pacific Medical Center.</p><p>national stockpile</p><p>Not one of the 20 or so raw materials used in 200 FDA-approved implants has emerged from public investment by US health or standards agencies but all are at risk of being withdrawn from medical use, stated Robert Baier, director of biomaterials and biophysics at the State University at Buffalo, New York. "Devices made from these materials have a 30-year history of safe clinical use and 20 years of FDA acceptance - it is not ethical, without full regulatory approval, to employ new materials for medical devices."</p><p>Dr Baier believes US federal health and standards agencies should immediately acquire supplies of raw materials currently used in FDA-approved implantable devices and prepare material reference standards to which new materials should be compared when judging "substantial equivalency". In the meantime, "it is recommended that the National Institute of Standards and Technology purchase sufficient supplies (of raw materials used for FDA-approved implants) to provide these materials - at resale prices sufficient to reimburse their standards/development costs - to US medical device manufacturers for a ten-year period."</p><p>off-shore solutions?</p><p>Other speakers suggested off-shore solutions to the crisis such as approaching European suppliers. This would be unlikely though, "unless US manufacturers pay suppliers higher prices for materials to cover indemnity costs and FDA approvals", according to Hroar Skov of Hexagon Chemistry Consultants. "Many international companies have responded by saying 'if DuPont isn't supplying materials, then we're not either'," said Steven Weinberg of Texas-based Biomedical Device Consultants. He suggested that forming "middleman" companies outside the US to obtain raw materials, perform testing and certification and sell at a margin to manufacturers could be one potential solution to the problem. This would provide better liability protection for suppliers but would incur added costs, Dr Weinberg added.</p><p>Small, specialty suppliers are not likely to save the day, according to Robert Ward, CEO of The Polymer Technology Group. Although smaller suppliers have stepped in to provide replacements for some materials (such as NuSil Technology and Applied Silicone, which offer replacements for discontinued Dow Corning silicones), others "will not avoid the crisis without attention from the lawyers", he forecasts.</p><p>It is becoming apparent that the biomaterials crisis is more than just a US problem. A member of the audience from Acromed described how Japanese suppliers to its Netherlands facility, which manufactures a memory-metal scoliosis system, refused to continue supplying memory metals for fear that the implant would be sold in the US. "You can see where all this is heading," he added.</p><p>threat to research and medicine</p><p>The shortage of biomaterials threatens current and future research in many areas, warns Jim Anderson of Case Western Reserve University, Cleveland, Ohio. "Academic/industry collaborations and programmes are becoming fewer and a reduction in technology transfer is a major problem," he says. As a result, fewer materials will be developed for new areas such as bioengineering and surface modification or to replace existing materials. In some applications there is no alternative material - "If Dacron is not available in ten years' time, what will you use to treat an aortic aneurysm? I have no answer to that," he admitted.</p><p>The cost of medical care will also go up, believes Dr Hill. "The economics of medicine are driving many new technologies and small companies are performing much of this research. Now they will find they cannot afford the indemnity agreement with the healthcare provider."</p><p>The US National Institutes of Health has set out a number of objectives designed to encourage continued research into biomaterials in the future, says Paul Didisheim, head of the biomaterials programme at the National Heart, Lung and Blood Institute. These include: a trans-<strong>[C#198600351:NIH]</strong> conference on biomaterials and implant design, due to take place this year which will form a blueprint for future research; the formation of the Biomaterials and Tissue Engineering Group to develop a research agenda; and a report, "Support for Bioengineering Research", which is awaiting submission to Congress.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}|{44E1FC56-78E3-4955-8E83-0065377F12C4}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+The biomaterials crisis  more problems than solutions
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950403T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950403T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950403T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052078
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+The biomaterials crisis - more problems than solutions
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600351
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253847
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184045Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1fc0f501-b678-4d83-aa75-371e11b10b66
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184045Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

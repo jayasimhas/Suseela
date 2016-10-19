@@ -1,0 +1,117 @@
+----item----
+version: 1
+id: {54AF4F29-0E18-4D12-AF93-D2863B55FA6A}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/AMcharts Using Builder/New AMCharts Using Builder
+parent: {1A98F6B3-B22D-4DD2-8718-CC490F6BDFE2}
+name: New AMCharts Using Builder
+master: {00000000-0000-0000-0000-000000000000}
+template: {72A31ABC-2015-4569-8845-F2FEEF019EB5}
+templatekey: AMCharts Using Builder
+
+----version----
+language: en
+version: 1
+revision: 6e4bf212-92b5-4506-86d2-dff72ab4b392
+
+----field----
+field: {F0830893-14EC-41F0-B7A9-A80813095489}
+name: ChartType
+key: charttype
+content-length: 6
+
+serial
+----field----
+field: {98E1FB53-8679-48AA-9F2D-E5A02786B2F8}
+name: Presentation
+key: presentation
+content-length: 403
+
+@"type": "serial",
+"dataProvider": chartData,
+"categoryField": "category",
+"graphs": [ { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-1", "title": "graph 1", "type": "column", "valueField": "column-1" }, { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-2", "title": "graph 2", "type": "column", "valueField": "column-2" } ]
+----field----
+field: {8E6F48EE-8514-46C4-9C0B-668BE61CFB1C}
+name: ChartHeight
+key: chartheight
+content-length: 5
+
+400px
+----field----
+field: {889A40F6-8A6B-44F0-A305-38DE22186F7A}
+name: Page Title
+key: page title
+content-length: 29
+
+AMchart using AMchart builder
+----field----
+field: {14A2AA8C-0456-4265-A11C-5DBF4946C555}
+name: Page Subheading
+key: page subheading
+content-length: 93
+
+ This is a subheading to the data tool. It will give context to what the tool below is about.
+----field----
+field: {FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5}
+name: Introductory Text
+key: introductory text
+content-length: 574
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+----field----
+field: {58EADA52-FE63-4FD3-8034-0BB6FBBCCD16}
+name: Tool Explanation
+key: tool explanation
+content-length: 574
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+----field----
+field: {5CAC4FEC-AB94-495F-ADA4-FE34B08EBF7B}
+name: Landing Page Link
+key: landing page link
+content-length: 72
+
+<link linktype="external" url="http://google.com" anchor="" target="" />
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160930T074219Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6e4bf212-92b5-4506-86d2-dff72ab4b392
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161007T062814Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

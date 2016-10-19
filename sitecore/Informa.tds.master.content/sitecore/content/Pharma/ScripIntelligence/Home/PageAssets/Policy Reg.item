@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {809EFE26-62B2-4085-A6FB-C4D1A3699FD7}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/PageAssets/Policy Reg
+parent: {E3269743-E220-4B94-90BA-49D76CE59896}
+name: Policy Reg
+master: {00000000-0000-0000-0000-000000000000}
+template: {ABC8AABB-3E85-4F91-B7CB-AB2156DE7A74}
+templatekey: Topic
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+900
+----version----
+language: en
+version: 1
+revision: 52f6abd8-7b3d-423b-9316-50ca48f9ea87
+
+----field----
+field: {29B124F3-71E1-4C53-B442-D6FB6F2FE21F}
+name: Title
+key: title
+content-length: 14
+
+Clinical / R&D
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 155
+
+<link id="{2AFAA6A4-7F18-4898-B788-795180A78994}" querystring="" url="/Pharma/ScripIntelligence/Home/Clinical and R and D" linktype="internal" target="" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 14
+
+Clinical / R&D
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160407T232145Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+52f6abd8-7b3d-423b-9316-50ca48f9ea87
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160912T125553Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

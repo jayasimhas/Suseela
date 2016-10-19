@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {486B86D7-1D90-438D-A7E7-6FEAD04D6531}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Commercial/New Topic Page
+parent: {D28BD55A-015D-4B51-8CA7-5A60C6B7463E}
+name: New Topic Page
+master: {00000000-0000-0000-0000-000000000000}
+template: {77604558-3056-497B-93D8-E53BC5619DDB}
+templatekey: Topic Page
+
+----version----
+language: en
+version: 1
+revision: 69e46b3e-b67a-4c54-882f-f5892d6f8832
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 4
+
+Test
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 14
+
+New Topic Page
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 14
+
+New Topic Page
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 1221
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{1BBD9F48-D28C-4B43-949B-624BBC59F2BD}" p:before="r[@uid='{372F95F4-0FBE-4C0D-B42E-C31EA1AFBAF9}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Publications={3818C47E-4B75-4305-8F01-AB994150A1B0}&amp;Subjects={CD796374-A60A-4D81-8A05-7B92AD2013C1}&amp;Show See All=1" s:ph="/main-content/two-column-curated_4852b685-0e71-451a-8082-d9e3a62692d6" /><r uid="{372F95F4-0FBE-4C0D-B42E-C31EA1AFBAF9}" s:par="Related Search=page=1&amp;sortBy=date&amp;sortOrder=desc&amp;areas=Cardiovascular#searchTop&amp;Search Name=Cardiovascular" /><r uid="{AFB5AF2E-6AB8-4686-AB15-E148996C6E7F}" p:before="r[@uid='{4852B685-0E71-451A-8082-D9E3A62692D6}']" s:id="{877DF4EA-234D-4CEE-92E6-39F9857BA9CC}" s:ph="main-content" /><r uid="{4852B685-0E71-451A-8082-D9E3A62692D6}" s:ds="{5B14A25E-9E68-4404-AFA8-EE7EB061844D}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:par="Related Search=publication=Scrip&amp;areas=Cancer&amp;Search Name=Scrip Cancer&amp;sortBy=date&amp;sortOrder=desc&amp;areas=Cardiovascular%23searchTop" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160601T171607Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\ndecker
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+69e46b3e-b67a-4c54-882f-f5892d6f8832
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160601T195131Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\ndecker
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

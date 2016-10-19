@@ -1,0 +1,764 @@
+----item----
+version: 1
+id: {32624CC6-15C3-4D1D-B6A5-8CA0BEC54224}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Articles/2016/10/17/Preview Test
+parent: {66564112-CE27-46A0-96CF-05BC101038E5}
+name: Preview Test
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
+name: Planned Publish Date
+key: planned publish date
+content-length: 16
+
+20161016T183000Z
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 30cb877f-65ff-4bdc-a4f7-a1b8f713e6b2
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 12
+
+<p>Test</p> 
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 12
+
+Preview Test
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 12
+
+Preview Test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+00010101T000000Z
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 16
+
+20161017T083253Z
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 16
+
+00010101T000000Z
+----field----
+field: {457EAC4F-0113-491E-B931-6FE718B69F91}
+name: Is Sidebar Article
+key: is sidebar article
+content-length: 1
+
+0
+----field----
+field: {DF3BA324-C51E-430B-B396-7B0A24245605}
+name: Free With Registration
+key: free with registration
+content-length: 1
+
+0
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+CO000059
+----field----
+field: {3A074327-FEB9-47D7-A985-4F0F7C4A66AE}
+name: Embargoed
+key: embargoed
+content-length: 1
+
+0
+----field----
+field: {D1046D68-5D77-40E8-955A-6726049C7E6D}
+name: Media Type
+key: media type
+content-length: 38
+
+{34D2405C-601E-463B-91D0-0F0772F1C4E1}
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {09CAA578-881B-4252-B94F-59D68C19D7C7}
+name: Sort Order
+key: sort order
+content-length: 1
+
+0
+----field----
+field: {31B4E77D-2B16-4901-96E4-6128CBB64D01}
+name: Word Count
+key: word count
+content-length: 1
+
+0
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+Preview Test
+----field----
+field: {B8F42732-9CB8-478D-AE95-07E25345FB0F}
+name: __Hide version
+key: __hide version
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161017T083252Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+30cb877f-65ff-4bdc-a4f7-a1b8f713e6b2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161017T083257Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 52
+
+<r owner="sitecore\admin" date="20161017T083255Z" />
+----version----
+language: en
+version: 2
+revision: 8bde7db2-ca25-46fc-809c-f271678e67f9
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 12
+
+<p>Test</p> 
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 12
+
+Preview Test
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 141
+
+<div class="root">
+  <p class="article-paragraph">Test</p>
+  <p class="article-paragraph"></p>
+  <p class="article-paragraph"></p>
+</div>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 12
+
+Preview Test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20161017T140317
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 16
+
+20161017T083253Z
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 16
+
+00010101T000000Z
+----field----
+field: {457EAC4F-0113-491E-B931-6FE718B69F91}
+name: Is Sidebar Article
+key: is sidebar article
+content-length: 1
+
+0
+----field----
+field: {DF3BA324-C51E-430B-B396-7B0A24245605}
+name: Free With Registration
+key: free with registration
+content-length: 1
+
+0
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+CO000059
+----field----
+field: {DF9DBA82-206F-4442-826A-B766581336AE}
+name: Word Document
+key: word document
+content-length: 196
+
+<link linktype="internal" id="{8263C352-7676-448B-80D0-080B944D977E}" url="/sitecore/media-library/sitecore/media-library/documents/agri/commodities/2016/10/17/32624cc615c34d1db6a58ca0bec54224" />
+----field----
+field: {3A074327-FEB9-47D7-A985-4F0F7C4A66AE}
+name: Embargoed
+key: embargoed
+content-length: 1
+
+0
+----field----
+field: {D1046D68-5D77-40E8-955A-6726049C7E6D}
+name: Media Type
+key: media type
+content-length: 38
+
+{34D2405C-601E-463B-91D0-0F0772F1C4E1}
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {09CAA578-881B-4252-B94F-59D68C19D7C7}
+name: Sort Order
+key: sort order
+content-length: 1
+
+0
+----field----
+field: {31B4E77D-2B16-4901-96E4-6128CBB64D01}
+name: Word Count
+key: word count
+content-length: 1
+
+3
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+Preview Test
+----field----
+field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
+name: __Valid from
+key: __valid from
+content-length: 16
+
+20161017T083256Z
+----field----
+field: {B8F42732-9CB8-478D-AE95-07E25345FB0F}
+name: __Hide version
+key: __hide version
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161017T083256Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8bde7db2-ca25-46fc-809c-f271678e67f9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161017T083457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 52
+
+<r owner="sitecore\admin" date="20161017T083255Z" />
+----version----
+language: en
+version: 3
+revision: 321506b2-f5f4-4970-9f98-5ec705781809
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 12
+
+<p>Test</p> 
+----field----
+field: {7526A634-C0A2-4FFE-88F8-227C9274B610}
+name: Featured Image 16 9
+key: featured image 16 9
+content-length: 99
+
+<image height="550" width="990" mediaid="{037164A5-739E-4807-B832-1ED34FEFE70D}" alt="Thumbnail" />
+----field----
+field: {B9FC8DAA-7B05-4595-92F4-A9D10C045CA6}
+name: Featured Image Caption
+key: featured image caption
+content-length: 4
+
+Test
+----field----
+field: {9E1CC2EB-BAB6-45EA-840A-A40A85A748EA}
+name: Featured Image Source
+key: featured image source
+content-length: 4
+
+Test
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 12
+
+Preview Test
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 141
+
+<div class="root">
+  <p class="article-paragraph">Test</p>
+  <p class="article-paragraph"></p>
+  <p class="article-paragraph"></p>
+</div>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FB896EC-7C92-41D1-8F83-E6D335E57C6E}|{B076BFC5-7E4D-48DC-88DA-84A6B23C033F}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 12
+
+Preview Test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20161017T083317Z
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 16
+
+20161017T083253Z
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 16
+
+00010101T000000Z
+----field----
+field: {457EAC4F-0113-491E-B931-6FE718B69F91}
+name: Is Sidebar Article
+key: is sidebar article
+content-length: 1
+
+0
+----field----
+field: {DF3BA324-C51E-430B-B396-7B0A24245605}
+name: Free With Registration
+key: free with registration
+content-length: 1
+
+0
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+CO000059
+----field----
+field: {DF9DBA82-206F-4442-826A-B766581336AE}
+name: Word Document
+key: word document
+content-length: 236
+
+<link text="32624cc615c34d1db6a58ca0bec54224" linktype="internal" id="{8263C352-7676-448B-80D0-080B944D977E}" url="/sitecore/media-library/sitecore/media-library/documents/agri/commodities/2016/10/17/32624cc615c34d1db6a58ca0bec54224" />
+----field----
+field: {3A074327-FEB9-47D7-A985-4F0F7C4A66AE}
+name: Embargoed
+key: embargoed
+content-length: 1
+
+0
+----field----
+field: {D1046D68-5D77-40E8-955A-6726049C7E6D}
+name: Media Type
+key: media type
+content-length: 38
+
+{34D2405C-601E-463B-91D0-0F0772F1C4E1}
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {09CAA578-881B-4252-B94F-59D68C19D7C7}
+name: Sort Order
+key: sort order
+content-length: 1
+
+0
+----field----
+field: {31B4E77D-2B16-4901-96E4-6128CBB64D01}
+name: Word Count
+key: word count
+content-length: 1
+
+3
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+Preview Test
+----field----
+field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
+name: __Valid from
+key: __valid from
+content-length: 16
+
+20161017T083457Z
+----field----
+field: {B8F42732-9CB8-478D-AE95-07E25345FB0F}
+name: __Hide version
+key: __hide version
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161017T083457Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+321506b2-f5f4-4970-9f98-5ec705781809
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161017T083524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 52
+
+<r owner="sitecore\admin" date="20161017T083255Z" />
+----version----
+language: en
+version: 4
+revision: 8e957ed9-1b74-4791-913f-18d40c2a6eae
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 12
+
+<p>Test</p> 
+----field----
+field: {7526A634-C0A2-4FFE-88F8-227C9274B610}
+name: Featured Image 16 9
+key: featured image 16 9
+content-length: 99
+
+<image height="550" width="990" mediaid="{037164A5-739E-4807-B832-1ED34FEFE70D}" alt="Thumbnail" />
+----field----
+field: {B9FC8DAA-7B05-4595-92F4-A9D10C045CA6}
+name: Featured Image Caption
+key: featured image caption
+content-length: 4
+
+Test
+----field----
+field: {9E1CC2EB-BAB6-45EA-840A-A40A85A748EA}
+name: Featured Image Source
+key: featured image source
+content-length: 4
+
+Test
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 12
+
+Preview Test
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 141
+
+<div class="root">
+  <p class="article-paragraph">Test</p>
+  <p class="article-paragraph"></p>
+  <p class="article-paragraph"></p>
+</div>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FB896EC-7C92-41D1-8F83-E6D335E57C6E}|{B076BFC5-7E4D-48DC-88DA-84A6B23C033F}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 12
+
+Preview Test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20161017T083317Z
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 16
+
+20161017T083253Z
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 16
+
+00010101T000000Z
+----field----
+field: {457EAC4F-0113-491E-B931-6FE718B69F91}
+name: Is Sidebar Article
+key: is sidebar article
+content-length: 1
+
+0
+----field----
+field: {DF3BA324-C51E-430B-B396-7B0A24245605}
+name: Free With Registration
+key: free with registration
+content-length: 1
+
+0
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+CO000059
+----field----
+field: {DF9DBA82-206F-4442-826A-B766581336AE}
+name: Word Document
+key: word document
+content-length: 236
+
+<link text="32624cc615c34d1db6a58ca0bec54224" linktype="internal" id="{8263C352-7676-448B-80D0-080B944D977E}" url="/sitecore/media-library/sitecore/media-library/documents/agri/commodities/2016/10/17/32624cc615c34d1db6a58ca0bec54224" />
+----field----
+field: {3A074327-FEB9-47D7-A985-4F0F7C4A66AE}
+name: Embargoed
+key: embargoed
+content-length: 1
+
+0
+----field----
+field: {D1046D68-5D77-40E8-955A-6726049C7E6D}
+name: Media Type
+key: media type
+content-length: 38
+
+{34D2405C-601E-463B-91D0-0F0772F1C4E1}
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {09CAA578-881B-4252-B94F-59D68C19D7C7}
+name: Sort Order
+key: sort order
+content-length: 1
+
+0
+----field----
+field: {31B4E77D-2B16-4901-96E4-6128CBB64D01}
+name: Word Count
+key: word count
+content-length: 1
+
+3
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+Preview Test
+----field----
+field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
+name: __Valid from
+key: __valid from
+content-length: 16
+
+20161017T083514Z
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161017T083514Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8e957ed9-1b74-4791-913f-18d40c2a6eae
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161017T083529Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{A5CCF3CC-05E9-431A-A2FC-D21ED60A9F34}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

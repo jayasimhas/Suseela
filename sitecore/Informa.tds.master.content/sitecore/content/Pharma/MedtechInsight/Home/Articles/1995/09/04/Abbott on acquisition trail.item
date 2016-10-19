@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {F87575B3-A86D-433D-91A8-2712E8B375EA}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/04/Abbott on acquisition trail
+parent: {69932AD4-151E-4D77-8B8D-2AEAA437A621}
+name: Abbott on acquisition trail
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e29b8037-5066-4004-8c88-e7e59f9f3573
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 345
+
+<p>In recognition of the need to broaden its diagnostics product range, <strong>[C#198600101:Abbott]</strong> has indicated it is exploring acquisitions. While expanded use of the AxSYM immunoassay will provide momentum for the company's diagnostics business, its focus on immunodiagnostics is too narrow, says Morgan Stanley's Glenn Reicin.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 27
+
+Abbott on acquisition trail
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2592
+
+<p>In recognition of the need to broaden its diagnostics product range, <strong>[C#198600101:Abbott]</strong> has indicated it is exploring acquisitions. While expanded use of the AxSYM immunoassay will provide momentum for the company's diagnostics business, its focus on immunodiagnostics is too narrow, says Morgan Stanley's Glenn Reicin.</p><p>Sales of the AxSYM system are forecast to contribute $224 million to 1995 diagnostic product revenues - projected to reach $2,460 million compared with $2,250 million last year. Some 2,800 units, generating annual revenues of $80,000 per system, should be in place by the end of 1995. In Europe, 35 tests are performed on the AxSYM system, with HIV most recently added, and a further 40-50 tests are in development. In the US, 24 tests have been cleared for marketing and drugs-of-abuse and cancer tests are in the pipeline.</p><pre>Abbott's diagnostic revenues ($ millions) Sales 1994 1995E 1996E Total 2,250 2,460 2,680 US 990 1,020 1,100 International 1,260 1,440 1,580 By test Hepatitis 586 639 684 HIV 173 183 194 Cancer 270 302 332 Thyroid 248 273 300 Drug monitoring 250 243 248 Instrument systems 154 213 277 Drugs-of-abuse 85 88 97 Fertility 102 105 107 Clinical chemistry 65 55 50 Haematology 99 124 149 Other 222 231 241 By instrument IMX 750 740 675 TDX 463 450 425 AxSYM 28 224 360 Source: Morgan Stanley</pre><p>Other product developments which will contribute to growth include the DNA amplification LCx system, launched earlier this year (see Clinica No 657, p 1) and the PRISM automated blood screening system for high-volume blood-banks due for European introduction this year and the US in 1997. Abbott is also working on near-patient tests, glucose monitoring and osteoporosis, according to Morgan Stanley. The possibility of mandatory HIV antigen screening for US blood banks could add another $20-30 million to Abbott's annual diagnostic revenues, believes Mr Reicin.</p><p>The single digit growth rate of Abbott's diagnostic business is attributed to competition - from Beckman Instruments in the US therapeutic drug monitoring market and Chiron in the clinical laboratory sector - and market trends. Mr Reicin notes that demand for haematology in Japan, for example, is light and reimbursement has changed significantly in France.</p><p>Although new product developments will sustain growth, the AxSYM system is insufficient to "offset weakness in other products". Signs that Abbott plans to rectify this are noted by the analyst who found "management's traditional reluctance towards acquisitions to be decreasing".</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{05DE2CFA-EF60-455C-941D-84B3041F0A40}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 27
+
+Abbott on acquisition trail
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950904T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950904T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950904T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054034
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 27
+
+Abbott on acquisition trail
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600101
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255843
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184707Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e29b8037-5066-4004-8c88-e7e59f9f3573
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184707Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

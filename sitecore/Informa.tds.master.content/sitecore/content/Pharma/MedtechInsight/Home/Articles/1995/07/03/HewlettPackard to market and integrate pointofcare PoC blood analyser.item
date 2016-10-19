@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {31B382F2-68F0-49CA-B31E-364968BDE8F9}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/03/HewlettPackard to market and integrate pointofcare PoC blood analyser
+parent: {F0F2E7B2-9890-4F7A-8FB0-FBE26057A289}
+name: HewlettPackard to market and integrate pointofcare PoC blood analyser
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 9e381dc2-cde3-484b-95de-390bc4d2a4f9
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 289
+
+<p>Hewlett-Packard will market I-Stat's point-of-care blood analysis products worldwide and take a stake in the small New Jersey-based company. The 14% equity stake is worth $61 million. I-Stat's share price soared 40% to close at $38.50 after the agreement was announced on June 23rd.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 74
+
+Hewlett-Packard to market and integrate point-of-care (PoC) blood analyser
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2328
+
+<p>Hewlett-Packard will market I-Stat's point-of-care blood analysis products worldwide and take a stake in the small New Jersey-based company. The 14% equity stake is worth $61 million. I-Stat's share price soared 40% to close at $38.50 after the agreement was announced on June 23rd.</p><p>In the first phase of the alliance, HP will market the I-Stat systems across Europe, Africa and the Middle East. Later, the two companies plan to collaborate on integrated applications of biosensor technology for both US and worldwide customers. They expect to integrate the capabilities of the I-Stat system into HP's OmniCare patient monitoring systems, which are installed at more than 70,000 bedsides around the world.</p><p>Future applications could include an interface with HP's new PalmVue, a wireless communications system that sends bedside patient data directly to physicians carrying an HP 200LX palmtop computer.</p><p>I-Stat's blood analyser uses a matchbox-sized biosensor cartridge and a hand-held battery-operated analyser. Each microfabricated cartridge houses a suite of thin-film biosensors that uses two drops of blood to generate readings for a range of commonly ordered blood tests. In 1994, the company had sales of nearly $11 million (see Clinica No 643, p 13) but it estimates the market for blood chemistry diagnostics at about $7,000 million, adding that a subgroup, point-of-care testing, is growing at a rate of about 50% a year.</p><p>Hewlett-Packard is a major player in the medical device market with sales of $1,140 million in 1994, placing it number 20 in Clinica's list of the top 100 medtech companies. HP's total sales were $25,000 million in 1994 (see Clinica No 631, p 16). In the medtech sector, HP is active in patient monitoring, ultrasound imaging and healthcare information systems. The latest alliance with I-Stat comes just weeks after a deal with Israeli company Spegas Industries which added CO(2) monitoring technology to HP's arsenal (No 657, p 13). On a larger scale, HP has co-operated with the BOC Group's Ohmeda since the beginning of the year in anaesthesia delivery systems and patient monitoring. Similarly, in the ultrasound market, another of HP's sectors, the Palo Alto, California-based computer manufacturer has been co-operating with Philips since 1992 (No 625, p 14).</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+HewlettPackard to market and integrate pointofcare PoC blood analyser
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950703T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950703T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950703T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053322
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 74
+
+Hewlett-Packard to market and integrate point-of-care (PoC) blood analyser
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255131
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184448Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9e381dc2-cde3-484b-95de-390bc4d2a4f9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184448Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

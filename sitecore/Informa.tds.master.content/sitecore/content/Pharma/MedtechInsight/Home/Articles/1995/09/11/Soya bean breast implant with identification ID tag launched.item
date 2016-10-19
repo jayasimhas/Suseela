@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {4A0939B9-EECB-4540-B4EF-F2C99D3B2659}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/11/Soya bean breast implant with identification ID tag launched
+parent: {625684A3-B1FB-479F-9D60-23FF68B06F2E}
+name: Soya bean breast implant with identification ID tag launched
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: debfe2c7-21f2-420a-a780-5452bb1b856c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 427
+
+<p>The first radiolucent breast implant, Trilucent, was launched in London, UK, last week. The implant comes complete with an elaborate tracking system, which Swiss-based LipoMatrix hopes will convert other implant manufacturers to the benefits of tracking as a marketing tool and to allow long-term follow-up. Trilucent will be distributed by LipoMatrix' 90% parent company US-based Collagen (see Clinica No 669/70, p 19).</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Soya bean breast implant with identification (ID) tag launched
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5195
+
+<p>The first radiolucent breast implant, Trilucent, was launched in London, UK, last week. The implant comes complete with an elaborate tracking system, which Swiss-based LipoMatrix hopes will convert other implant manufacturers to the benefits of tracking as a marketing tool and to allow long-term follow-up. Trilucent will be distributed by LipoMatrix' 90% parent company US-based Collagen (see Clinica No 669/70, p 19).</p><p>Despite a shell made of solid, medical grade silicone elastomer, the implant can rupture. "But any failure must not have adverse long-term effects for patients," LipoMatrix president Dr Terry Knapp says. Trilucent's triglyceride vegetable oil filler would be metabolised and excreted from the body in case of rupture in the same way as vegetable oils in the diet or the body's own fat stores. Triglyceride vegetable oil has been used for the last 40 years as a nutrient in IV feeding and as a drug carrier in medical injections.</p><p>Further advantages of the oil filler are its improved lubricating, bactericidal and fungicidal characteristics compared with saline implants. The oil prevents abrasion of the internal surface of the implant shell. In tests, the shell remained intact after ten million cycles compared with saline implants which wore through after 350,000 test cycles, LipoMatrix says.</p><p>With silicone or saline implants, at least 22% and in some cases up to 85% of breast tissue is concealed from diagnosis by mammography. Trilucent, on the other hand, does not act as a block to X-rays as it is filled with medical grade soya oil which has the same degree of radiolucency as human fat. Glandular and fibrous structures, such as tumours, are more radiodense than human fat.</p><p>Two radiologists, Drs Judy Destouet and Barbara Monsees, from Washington University, St Louis, US, conceived the idea of a safe, radiolucent implant thereby avoiding the high false-negatives rates associated with silicone or saline-filled implants. The superior radiolucidity of Trilucent was demonstrated at the Royal Society of Medicine launch with X-ray pictures by Dr Gail Lebovic, a breast cancer surgeon at Stanford University, US.</p><p>The public debate on breast implant dangers led to a huge drop of patients interested in breast augmentation. Demand from the smaller group of women needing breast reconstruction has remained stable. Implant numbers have nearly halved since the early 1990s to around 225,000 worldwide. In the UK market where 6,000 implants are fitted each year, 80% of operations are augmentations, 20% reconstruction. Trilucent costs &pound;295 a piece, some 10% more than other breast implants.</p><p>Representing 60% of the worldwide market, the US is LipoMatrix' ultimate target. While stressing that Trilucent is the first new breast implant approved by the FDA for trial in the US last year (No 615, p 18), Dr Knapp would not be drawn on a likely approval date. He indicated 2000 to be a "reasonable" guess but granted that the implant's radiolucency could lead to earlier approval. LipoMatrix is in negotiations with the FDA about whether and to what extent the authority will accept European clinical trial data.</p><p>Trilucent is the first breast implant boasting a CE mark and trials are continuing in the UK, US, Germany, Italy and Spain with about 200 patients enrolled. Plastic surgeon and president of the British Association of Aesthetic Plastic Surgeons Freddy Nicolle treated 33 of these cases as part of the UK trials. Half of his cases were surgeries replacing a non-Trilucent implant. Mr Nicolle reports that patient satisfaction subsequently increased significantly.</p><p>Apart from promising to be a superior breast implant, Trilucent may yet be more important for its innovative tracking system. Called Vigilance, it potentially addresses a much larger market than the Trilucent implant itself.</p><p>The patented Vigilance system consists of a passive transponder the size of a grain of rice, measuring 11 x 2 mm and containing an implant-specific code number. This number can be retrieved from the outside by a hand-held reader which activates the transponder by low frequency, radio wave transmission. The number allows reference to a database kept by LipoMatrix which contains essential information supplied by patient, surgeon, manufacturer and distributor. The company stresses that the patient has complete control over the information on the database.</p><p>A passive transducer that is readable non-invasively could improve the tracking of other implants. "The manufacturers will have to be bludgeoned into accepting this," Collagen's CEO Howard Palefsky says. Even without government legislation, he believes that demand for Vigilance will grow strongly.</p><p>LipoMatrix is in talks with orthopaedic manufacturers with a view to using Vigilance in devices such as spinal implants, hips or knees and with cardiology companies for heart valves. <strong>[C#198600185:Medtronic]</strong> is regarded by Dr Knapp as the most responsible of all medical device manufacturers - "a sort of role model for us" - although its tracking system is only paper-based and not as globally integrated as Vigilance.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Soya bean breast implant with identification ID tag launched
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950911T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950911T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950911T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054193
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Soya bean breast implant with identification (ID) tag launched
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600185
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+256002
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184739Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+debfe2c7-21f2-420a-a780-5452bb1b856c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184739Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

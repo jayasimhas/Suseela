@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {E7EEB24F-C253-4D34-BC2A-56670B17C223}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Staff/Simon Rigby
+parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+name: Simon Rigby
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: e867c887-18aa-49a4-b89e-ac7381f8b4f6
+
+----field----
+field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
+name: First Name
+key: first name
+content-length: 5
+
+Simon
+----field----
+field: {DA223987-CABD-4C88-98D7-40E3492220F5}
+name: Last Name
+key: last name
+content-length: 5
+
+Rigby
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160114T214308Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e867c887-18aa-49a4-b89e-ac7381f8b4f6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160119T190930Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
