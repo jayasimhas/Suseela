@@ -282,6 +282,53 @@ $(function(){
 		
 		$('#validatePreference').val(0);
 	});
+	
+	$('.registrationBtn').click(function () {
+		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
+		    UserPreferences = {}, allpublications = $('.publicationPan', '#allPublicationsPan');
+			UserPreferences.PreferredChannels = [];
+	  
+		for(var k = 0; k < allpublications.length; k++){
+			var tbody = $(allpublications[k]).find('tbody'), newtrs = tbody.find('tr');
+			newtrs.removeAttr('data-row');
+			for(var v = 0; v < newtrs.length; v++){
+				$(newtrs[v]).attr('data-row', v+1);
+			}
+		}
+		
+		for (var i = 0; i < alltrs.length; i++) {
+			var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+				secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+				channelOrder = (secondtd.toLowerCase() == 'following') ? $(alltrs[i]).attr('data-row') : '0',
+				followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+				
+			UserPreferences.PreferredChannels.push({"ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics":[  ]});
+		} 
+		
+		$.ajax({
+			url: '/Account/api/PersonalizeUserPreferencesApi/Update/', 
+			data: {'UserPreferences': JSON.stringify(UserPreferences)}, 
+			dataType: 'json',
+			type: 'POST',
+			success: function(data){
+				if(data && data.success){
+					$('.alert-success p').html(data.reason);
+					$('.alert-success').show();
+				}
+				else{
+					$('.alert-error p').html(data.reason);
+					$('.alert-error').show();
+				}
+			},
+			error: function(err){
+				if(err && !err.success){
+					$('.alert-error p').html(err.reason);
+					$('.alert-error').show();
+				}
+			}
+		});
+		
+	});
 	 
 	$('.gotoview').click(function(e){
 		if(+$('#validatePreference').val()){
