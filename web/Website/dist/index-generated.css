@@ -3613,6 +3613,7 @@ header .header-account-access {
       float: left;
       width: 480px;
       width: 30rem;
+      margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
       @media (max-width: 640px) {
@@ -3620,6 +3621,7 @@ header .header-account-access {
           font-size: 1.25em;
           margin-bottom: 12px;
           margin-bottom: 0.75rem;
+          margin-top: 0px;
           float: none;
           width: auto;
           line-height: 26px;
@@ -3662,7 +3664,8 @@ header .header-account-access {
       font-size: 0.75rem;
       cursor: pointer;
       padding-left: 0px;
-      padding-left: 0rem; }
+      padding-left: 0rem;
+      font-family: "Roboto"; }
       @media (max-width: 480px) {
         .myview-settings .publicationPan .subscribe {
           font-size: 0.875em;
