@@ -29,7 +29,7 @@
                         <div class="site_div">
                             <h1 class="article-preview__headline">@item.Publication.Name</h1>
                             <div class="newsletter_checkbox label-check">
-                                <input name="offers" id="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                                <input name="offers" id="offers" type="checkbox" @(item.OptIn ? "disabled='disabled'" : string.Empty)  @(item.OptIn ? "checked='checked'" : string.Empty) data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
                                 <span class="chk_box"></span>
                                 <span>@Model.NewslettersLabelText</span>
                             </div>
