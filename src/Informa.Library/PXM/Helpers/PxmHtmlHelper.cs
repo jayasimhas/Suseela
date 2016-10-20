@@ -39,12 +39,12 @@ namespace Informa.Library.PXM.Helpers
 		public string ProcessIframe(string content)
 		{
 			var doc = CreateDocument(content);
-            var mobileFrames = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'iframe-component__mobile')]");
+            var mobileFrames = GetNodes(doc, @"//div[contains(@class, 'iframe-component__mobile')]");
             foreach(HtmlNode m in mobileFrames) {
                 m.ParentNode.RemoveChild(m);
             }
 
-            var iframes = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'ewf-desktop-iframe')]/iframe");
+            var iframes = GetNodes(doc, @"//div[contains(@class, 'ewf-desktop-iframe')]/iframe");
             foreach(HtmlNode i in iframes) {
                 if (i == null)
                     continue;
@@ -323,6 +323,12 @@ namespace Informa.Library.PXM.Helpers
             }
             return doc.DocumentNode.OuterHtml;
         }
-
+        
+        private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
+            IEnumerable<HtmlNode> nodes = doc.DocumentNode.SelectNodes(xPath).ToList();
+            return (nodes == null)
+                ? Enumerable.Empty<HtmlNode>()
+                : nodes.ToList();
+        }
     }
 }
