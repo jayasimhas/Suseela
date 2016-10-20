@@ -8448,7 +8448,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
     /// <para>ID: 65468DC7-3416-4517-8049-A1F0F89BC416</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICustom_TagConstants.TemplateIdString)]
-    public partial interface ICustom_Tag : IGlassBase
+    public partial interface IText_Node : IGlassBase
     {
         /// <summary>
         /// The Text field.
@@ -8459,8 +8459,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
-        [SitecoreField(ICustom_TagConstants.DisplayInHeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Display_In_Head { get; set; }
     }
 
 
@@ -8482,8 +8480,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
-        [SitecoreField(ICustom_TagConstants.DisplayInHeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Display_In_Head { get; set; }
     }
 
     public static partial class ICustom_TagConstants
@@ -8497,10 +8493,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         public static readonly ID CustomTagFieldId = new ID("EFBDB4CF-FD4B-478B-B2C4-987DAB9EC07B");
         public const string CustomTagFieldName = "CustomTag";
 
-        public static readonly ID DisplayInHeaderFieldId = new ID("E9951A53-12C9-438F-AF05-3436F19FD4BA");
-        public const string DisplayInHeaderFieldName = "Display In Head";
-
-    }
+   }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account

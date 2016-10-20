@@ -24,7 +24,6 @@
 
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
-    @Html.Raw(@Model.CustomTagsHeader)
 </head>
 <body @Model.BodyCssClass>
 
@@ -90,7 +89,5 @@
         @Html.Sitecore().Placeholder("site-debugger")
     }
     @MiniProfiler.RenderIncludes()
-    @Html.Raw(@Model.CustomTagsFooter)
-   
 </body>
 </html>

@@ -5,6 +5,7 @@
 	font-size: 0.75em;
 	font-family: "Roboto";
 	font-weight: 700;
+	width: $w;
 	height: $h;
 	text-align: center;
 	display: inline-block;
@@ -41,8 +42,7 @@
 	}
 }
 @mixin unfollowBtnLbl(){
-	@include folow-btn(auto, 2rem);
-	padding: 0 20px;
+	@include folow-btn(7.5rem, 2rem);
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
@@ -52,8 +52,7 @@
 	}
 }
 @mixin followBtnLbl(){
-	@include folow-btn(auto, 2rem);
-	padding: 0 1.5625rem;
+	@include folow-btn(7.5rem, 2rem);
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
@@ -97,7 +96,7 @@
 		font-size: 1.125em;
 		margin-bottom: 1.25rem;
 		p{
-			line-height: 1rem;
+			line-height: 2rem;
 			font-style: normal;
 			font-family: "PT Serif Caption";
 			font-weight: 400;
@@ -117,16 +116,10 @@
 		h2{
 			text-align: left;
 			float: left;
-			width: 30rem;
-			margin-top: -5px;
-			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
 				margin-bottom: 0.75rem;
-				margin-top: 0px;
 				float: none;
-				width: auto;
-				line-height: 1.625rem;
 			}
 		}
 		.subscribed{
@@ -134,22 +127,15 @@
 			float: left;
 			cursor: pointer;
 			padding-left: 1.25rem;
-			margin: 3px 20px;
-			vertical-align: top;
-			line-height: 30px;
+			margin: 0.1875rem 1.25rem;
 			position: relative;
+			top: -2px;
 			@include breakpoint('medium-small') {
 				font-size: 0.875em;
 				border-left: none;				
 				padding-left: 0rem;
 				margin: 0rem;
 			}
-			a{
-				color: #fff;
-				&:hover{
-					text-decoration: none;
-				}
-			} 
 		}
 		.subscribe{
 			float: left;
@@ -162,12 +148,11 @@
 			font-size: 0.75rem;
 			cursor: pointer;
 			padding-left: 0rem;
-			font-family: "Roboto";
 			@include breakpoint('small') {
 				font-size: 0.875em;
 				border-left: none;				
 				padding-left: 0rem;
-				margin: 0 !important;
+				margin: 0rem;
 			}
 		}
 	}
@@ -181,10 +166,6 @@
 			max-width: 100%;
 			font-family: "Roboto Condensed";
 			font-style: normal;
-			@include breakpoint('small') {
-				display: block;
-				position: relative;
-			}
 			tbody{
 				 tr{
 					-webkit-transition: all 0.2s ease;
@@ -197,7 +178,6 @@
 					}
 					.followingBtn{
 						@include folow-btn(7.5rem, 2rem);
-						padding: 0 1.625rem;
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
@@ -207,7 +187,6 @@
 							height: 1.875rem;
 							width: 1.875rem;
 							border: none;
-							padding: 0 1rem;
 							display: inline-block;
 							margin-left: 0.625rem;
 							text-indent: -9999px;
@@ -215,7 +194,6 @@
 					}
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
-						padding: 0 2.25rem;
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
@@ -225,7 +203,6 @@
 							display: inline-block;
 							margin-left: 0.625rem;
 							border: none;
-							padding: 0 1rem;
 							text-indent: -9999px;
 						}
 					}
@@ -284,23 +261,17 @@
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						/*padding: 0.5rem 0rem 0.625rem 0.625rem;*/
+						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
 					p{
 						font-size: 1em; 
 						text-align: left;
 						padding: 0.75rem 0 0;
-						font-weight: normal;
 						@include breakpoint('medium-small') {
 							padding: 0;
 							font-size: 1em;
 							font-weight: normal;
 						}
-						
-						&.nosubscr{
-							margin: -40px 0 0;
-							font-weight: normal;
-						} 
 					} 
 					&.firstrow{
 						padding: 2.5rem 1.25rem 0.625rem;
@@ -363,10 +334,7 @@
 									left: 0;
 									background-position: 0 0; 
 								}
-							}
-							@media screen and (min-width: 667px) and (max-width: 767px){
-								margin-right: 3.125rem;
-							}
+							} 
 							&.expanded{
 								background-position: 0 0;
 							}
@@ -389,7 +357,6 @@
 				}
 				.followinglbl{
 					@include followBtnLbl();
-					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -397,15 +364,9 @@
 				}
 				.unfollowAllBtn{
 					@include unfollowBtnLbl();
-					padding: 0 1rem;
-					@media screen and (min-width: 667px) and (max-width: 767px){
-						padding: 0 1.25rem;
-					}
 				}
 				.followlbl{
 					@include unfollowBtnLbl();
-					padding: 0 2.25rem;
-					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -448,18 +409,15 @@
   }
   .hideBtn{
 	  display: none !important;
-	  visibility: hidden;
   }
   .saveoption{
-	  float: left;
-	  width: 100%;
+	  float: right;
 	  .gotoview{
-		 @include folow-btn(auto, 2rem);
+		 @include folow-btn(9.375rem, 2rem);
 		  margin-left: 1.25rem;
 		  a{
 			color: $color-abbey-gray;
 			display: block;
-			padding: 0 25px;
 			&:hover{
 				background: $color-tree-poppy-orange;
 				color: $color-white;
@@ -471,29 +429,10 @@
 		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
-			margin: 0 0.625rem;
 		}
-		
 	  }
-	  .complete-settings{
-			display: inline-block;
-			float: right;
-		}
 	  .saveview{
-		padding: 0 2rem;
-		 @include folow-btn(auto, 2rem);
-		  margin-left: 1.25rem;
-		  background: $color-tree-poppy-orange;
-		  color: $color-white;
-		  @include breakpoint('small') {
-			float: right;
-			margin: 0px;
-			padding: 0 2.5rem;
-		  }
-	  }
-	  .registrationBtn{
-		padding: 0 2rem;
-		 @include folow-btn(auto, 2rem);
+		 @include folow-btn(5.625rem, 2rem);
 		  margin-left: 1.25rem;
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
@@ -594,85 +533,14 @@
 	.hidden-large{
 		display: none;
 	}
-	
-	.alert-success{
-		margin-bottom: 20px;
-	}
-	.alert-error{
-		margin-bottom: 20px;
-	}
-	.tbodyhidden{
-		display: none;
-	}	
-}
-
-@include breakpoint('medium-small') {
-	.myview-settings{ 
-		.hidden-large{
-			display: table-row-group !important;
-		}
-	}
-}
-
-@include breakpoint('medium') {
-	.myview-settings{
-		.desktopMode{
-			margin-left: -1.875rem;
-		}
-		.firstrow{
-			h2{
-				width: auto;
-			}
-		}
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 1024px){
-	.myview-settings{
-		.firstrow h2{
-			width: 15rem;
-		}
-	}
-}
-@media screen and (min-width: 800px) and (max-width: 900px){
-	.myview-settings{
-		.desktopMode{
-			margin-left: -2.5rem;
-		}
-	}
-}
-@media screen and (min-width: 640px) and (max-width: 900px){
-	.myview-settings{
-		.desktopMode{
-			margin-left: -3.4375rem;
-		}
-	}
-}
-
-@media screen and (min-width: 480px) and (max-width: 640px){
-	.myview-settings{
-		.accordionStatus{
-			&.hideRow{
-				display: none;
-			}
-		}
-	}
 }
 @include breakpoint('small') {
-	.myview-settings{ 
+	.myview-settings{
+		.hidden-large{
+			display: block !important;
+		}
 		.smfollowingBtn{
 			margin-top: -0.5rem;
-			
-			.unfollowAllBtn{
-				background-position: 0 0;
-				text-indent: -8.75rem;
-				color: $color-abbey-gray !important;
-			} 
-			.followAllBtn{
-				background-position: 0 -31px;
-				text-indent: -124px;
-				border: none !important;
-				&.fr{float: right !important;}
-			}
 		}
 		.accordionStatus{
 			&.hideRow{
@@ -704,9 +572,19 @@
 				border: none !important;
 			}
 		}		
-	} 
+	}
+	
 }
- 
+@media only screen and (min-width: 481px) {
+	/*.hidden-lg{
+		display: none !important;
+	}*/
+}
+
+.tbodyhidden{
+	display: none;
+}
+
 /************ drag and drop styles ***********/
 .drop {
 	-webkit-animation: drop 1s ease;
@@ -764,7 +642,4 @@
 	.desktophide{
 		display: block !important;
 	}
-}
-.pub-subscription-subtitle{
-	text-align: left;
 }

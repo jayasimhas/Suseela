@@ -1819,6 +1819,9 @@
     <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
+    <Content Include="App_Config\Prefetch\Core.config" />
+    <Content Include="App_Config\Prefetch\Master.config" />
+    <Content Include="App_Config\Prefetch\Webdb.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1991,7 +1994,9 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Informa.Products.Insights.Global.ItemIds.config">
       <SubType>Designer</SubType>
     </Content>

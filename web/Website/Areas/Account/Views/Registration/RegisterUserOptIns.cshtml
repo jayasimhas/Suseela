@@ -1,28 +1,22 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserOptInsViewModel
 
-<div class="register">
-    <div class="register_newsletter">
-        <div class="page-registration">
-            <h1 class="page-registration__header">@Model.Title</h1>
-            <div class="next_right">
-                <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
-            </div>
-        </div>
-        <hr />
-        <p class="page-registration__introduction">@Model.SubTitle</p>
-        @{var nextStepUrl = Model.IsGlobalToggleEnabled ? Model.NextStepUrl : Model.RegisterReturnUrl;}
-        <form class="form-registration-optins"
-              data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
-              data-on-success="@nextStepUrl">
+<div class="page-registration js-register-user-container">
+    <h1 class="page-registration__header">@Model.Title</h1>
+    <h2 class="page-registration__subheader">@Model.SubTitle</h2>
+    <hr />
+    <p class="page-registration__introduction">@Model.Body</p>
+    <form class="form-registration-optins"
+          data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
+          data-on-success="@Model.NextStepUrl">
 
-            <p class="page-registration__error
+        <p class="page-registration__error
 		   js-form-error
 		   js-form-error-general">
-                @Model.GeneralErrorText
-            </p>
+            @Model.GeneralErrorText
+        </p>
 
-            <div>
-                @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
+        <div>
+            @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
             {
                 var item = Model.PublicationNewsletterOptIns[i];
                     <div class="newsletter_box">

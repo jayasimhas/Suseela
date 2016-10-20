@@ -172,11 +172,12 @@ namespace Informa.Web.Controllers
         public JsonResult<List<TaxonomyStruct>> Get(string searchTerm)
         {
             var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")));
-            if (taxonomyItem == null)
+
+            var matches = PopulateTaxonomyStruct(searchTerm, taxonomyItem);
+            /*if (taxonomyItem == null)
             {
                 return null;
             }
-            var taxoGuid = taxonomyItem.ID;
             List<Item> children;
             if (!string.IsNullOrEmpty(searchTerm))
             {
@@ -186,10 +187,9 @@ namespace Informa.Web.Controllers
             {
                 children = taxonomyItem.Axes.GetDescendants().ToList();
             }
-            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName, Section = child.ParentID.Guid.Equals(taxoGuid) ? null : child.ParentID.Guid.ToString() }).ToList();
-
+            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
+            */
             return Json(matches);
-
         }
 
         public bool TaxonomyMatch(string itemName, string term)
@@ -200,31 +200,38 @@ namespace Informa.Web.Controllers
         }
 
         //modified,21Sep16
-        public JsonResult<List<TaxonomyStruct>> Get(string searchTerm, string verticalTaxonomyGuid)
+        public JsonResult<List<TaxonomyStruct>> Get(string searchTerm, Guid verticalTaxonomyGuid)
         {
             List<TaxonomyStruct> matches = null;
-
-            if (new Guid(verticalTaxonomyGuid) != default(Guid))
+            if (verticalTaxonomyGuid != default(Guid))
             {
-                Guid currentGuid = new Guid(verticalTaxonomyGuid); //new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+                Guid mainSectionGuid = new Guid(SitecoreSettingResolver.Instance.ContentRootGuid);
+                var globalTaxonomyFolderGuid = (Guid)_sitecoreService.GetItem<IMain_Section>(mainSectionGuid)
+                        ?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().FirstOrDefault()
+                        ?._ChildrenWithInferType.OfType<ITaxonomy_Folder>().FirstOrDefault()?._Id;
 
-                var taxonomyItem = _sitecoreService.GetItem<Item>(currentGuid);
-                if (taxonomyItem == null)
-                {
-                    return null;
-                }
-                List<Item> children;
-                if (!string.IsNullOrEmpty(searchTerm))
-                {
-                    children = taxonomyItem.Axes.GetDescendants().Where(i => TaxonomyMatch(i.Name, searchTerm)).ToList();
-                }
-                else
-                {
-                    children = taxonomyItem.Axes.GetDescendants().ToList();
-                }
-                matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
+                matches = PopulateTaxonomyStruct(searchTerm, _sitecoreService.GetItem<Item>(globalTaxonomyFolderGuid));
+                matches.AddRange(PopulateTaxonomyStruct(searchTerm, _sitecoreService.GetItem<Item>(verticalTaxonomyGuid)));
             }
             return Json(matches);
+        }
+
+        private List<TaxonomyStruct> PopulateTaxonomyStruct(string searchTerm, Item taxonomyItem)
+        {
+            if (taxonomyItem == null)
+            {
+                return null;
+            }
+            List<Item> children;
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                children = taxonomyItem.Axes.GetDescendants().Where(i => TaxonomyMatch(i.Name, searchTerm)).ToList();
+            }
+            else
+            {
+                children = taxonomyItem.Axes.GetDescendants().ToList();
+            }
+            return children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
         }
     }
 
@@ -335,10 +342,23 @@ namespace Informa.Web.Controllers
             _sitecoreService = sitecoreFactory(Constants.MasterDb);
         }
         // GET api/<controller>
-        public JsonResult<List<StaffStruct>> Get()
+        public JsonResult<List<StaffStruct>> Get(Guid veticalGuid = default(Guid))
         {
-            var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid(ItemIdResolver.GetItemIdByKey("StaffParentFolder")));
-            var members = staffFolder?._ChildrenWithInferType.OfType<I___Person>().Where(c => !c.Inactive).OrderBy(o => o.Last_Name)
+           IStaff_Root staffRootFolder = null;
+
+            if (veticalGuid != default(Guid))//WP Vertical Specific Change
+            {
+                staffRootFolder = _sitecoreService.GetItem<IVertical_Root>(veticalGuid)
+                    ._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().FirstOrDefault()?
+                    ._ChildrenWithInferType.OfType<IStaff_Root>().FirstOrDefault();
+            }
+            else
+            {
+                //Default, if some external system need this other than WP, so thats why name is hard coded
+                staffRootFolder = _sitecoreService.GetItem<IStaff_Root>(new Guid(SitecoreSettingResolver.Instance.ItemSetting["StaffParentFolder.pharma"]));
+            }
+
+            var members = staffRootFolder?._ChildrenWithInferType.OfType<IStaff_Item>().Where(c => !c.Inactive).OrderBy(o => o.Last_Name)
                 .Select(eachChild => new StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
             return Json(members);
         }
@@ -393,7 +413,6 @@ namespace Informa.Web.Controllers
             return Json(members);
         }
     }
-
 
     [Route]
     public class IsAvailableController : ApiController
@@ -829,16 +848,19 @@ namespace Informa.Web.Controllers
         public JsonResult<HDirectoryStruct> Get(string guid = null)
         {
             Item item = null;
-            
+            Item taxonomyFolderItem = null;
+
+            HDirectoryStruct globalNode = null;
             HDirectoryStruct childNode = null;
             List<HDirectoryStruct> children = null;
 
-            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
-            /*HDirectoryStruct childNodeRoot = null;
+            HDirectoryStruct childNodeRoot = null;
+            List<HDirectoryStruct> childNodeRootChildren = null;
             try
             {
                 Guid environmentGlobalGuid = (Guid)_sitecoreService.GetItem<IMain_Section>(
-                new Guid(Constants.ContentRootNode))?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>()?.FirstOrDefault()?._Id;
+                    new Guid(SitecoreSettingResolver.Instance.ContentRootGuid))
+                ?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>()?.FirstOrDefault()?._Id;
 
                 if (environmentGlobalGuid != default(Guid))
                 {
@@ -847,46 +869,39 @@ namespace Informa.Web.Controllers
 
                     if (taxonomyFolderGuid != default(Guid))
                     {
-                        var taxonomyFolderItem = _sitecoreService.GetItem<Item>(taxonomyFolderGuid);
-                        children = taxonomyFolderItem.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
-                        childNodeRoot = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+                        taxonomyFolderItem = _sitecoreService.GetItem<Item>(taxonomyFolderGuid);
+                        childNodeRootChildren = taxonomyFolderItem.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+                        childNodeRoot = new HDirectoryStruct() { ChildrenList = childNodeRootChildren, Name = taxonomyFolderItem.DisplayName, ID = taxonomyFolderItem.ID.ToGuid() };
                     }
                 }
             }catch(Exception exp)
             {
                 //skip to proceed vertical
             }
-            */
-            //Uncomment End
 
             //Specific Vertical
             if (new Guid(guid) != default(Guid))
             {
                 item = _sitecoreService.GetItem<Item>(guid);
                 children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
-
-                childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+                childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             }
 
-            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
-            /* if (childNode!=null && childNode.ChildrenList != null)
+            if (childNodeRoot != null && childNodeRoot.ChildrenList != null)
+            {
+                if (childNode.ChildrenList != null)
+                {
+                    childNodeRoot.ChildrenList.AddRange(childNode.ChildrenList);
+                }
+                childNode = childNodeRoot;
+                childNode.Children = childNodeRoot.ChildrenList.ToArray();
+            }
+            else if(childNode != null && childNode.ChildrenList != null)
              {
-                 if (childNodeRoot.ChildrenList != null)
-                 {
-                     childNode.ChildrenList.AddRange(childNodeRoot.ChildrenList);
-                 }
+                childNode.Children = childNode.ChildrenList.ToArray();
+            }
 
-                 childNode.Children = childNode.ChildrenList.ToArray();
-             }
-             else if (childNodeRoot!=null && childNodeRoot.ChildrenList != null)
-             {
-                 childNode = childNodeRoot;
-                 childNode.Children = childNode.ChildrenList.ToArray();
-             }
-             */
-            //Uncomment End
-
-            childNode.Children = childNode.ChildrenList.ToArray();//Comment this line if the above code (environment global/Taxonomy) is uncommented 
+            //childNode.Children = childNode.ChildrenList.ToArray();//Comment this line if the above code (environment global/Taxonomy) is uncommented 
             return Json(childNode);
         }
 

@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE348589
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{1E22B878-107D-452C-91B6-F02F8C7796E6}"
 	ProjectSection(SolutionItems) = preProject
+		config\env\BetaCD.properties = config\env\BetaCD.properties
+		config\env\BetaCM.properties = config\env\BetaCM.properties
 		config\env\default.properties = config\env\default.properties
 		config\env\dev.properties = config\env\dev.properties
 		config\env\intCD.properties = config\env\intCD.properties
