@@ -1130,6 +1130,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
+    <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />

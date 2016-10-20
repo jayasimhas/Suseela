@@ -516,7 +516,7 @@
 					ts.initSort( c, cell, e );
 				}
 			});
-			if ( c.cancelSelection ) {
+			/*if ( c.cancelSelection ) {
 				// cancel selection
 				$headers
 					.attr( 'unselectable', 'on' )
@@ -525,7 +525,7 @@
 						'user-select' : 'none',
 						'MozUserSelect' : 'none' // not needed for jQuery 1.8+
 					});
-			}
+			}*/
 		},
 
 		buildHeaders : function( c ) {
