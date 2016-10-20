@@ -414,7 +414,6 @@ namespace Informa.Web.Controllers
         }
     }
 
-
     [Route]
     public class IsAvailableController : ApiController
     {
