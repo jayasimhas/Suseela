@@ -190,7 +190,6 @@ namespace Informa.Web.Controllers
             var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
             */
             return Json(matches);
-
         }
 
         public bool TaxonomyMatch(string itemName, string term)

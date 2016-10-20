@@ -85,7 +85,6 @@ namespace InformaSitecoreWord
             ////new EditorEnvironment{Name="Stage" },
             ////new EditorEnvironment{Name="Production" },
         };
-
     }
     public class EditorEnvironment
     {

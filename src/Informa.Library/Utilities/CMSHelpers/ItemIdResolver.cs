@@ -79,6 +79,7 @@ namespace Informa.Library.Utilities.CMSHelpers
             {
                 if (XmlUtil.GetAttribute("name", node).StartsWith("Content.") && XmlUtil.GetAttribute("name", node).EndsWith(".Prefix"))
                     PublicationPrefix.Add(XmlUtil.GetAttribute("value", node), XmlUtil.GetAttribute("value", node));
+
             }
 
             ContentRootname = Sitecore.Configuration.Settings.GetSetting("Sitecore.ContentRoot.Name");

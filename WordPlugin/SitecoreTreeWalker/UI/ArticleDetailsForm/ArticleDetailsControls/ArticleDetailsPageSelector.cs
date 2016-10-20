@@ -15,7 +15,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 	{
 		public List<MenuSelectorItem> MenuItems = new List<MenuSelectorItem>();
 		public List<ArticleDetailsPageUserControl> Pages = new List<ArticleDetailsPageUserControl>();
-
 		private ArticleDetail _parent;
 
 		public ArticleDetailsPageSelector()
