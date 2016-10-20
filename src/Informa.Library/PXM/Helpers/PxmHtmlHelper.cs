@@ -362,7 +362,7 @@ namespace Informa.Library.PXM.Helpers {
         }
 
         private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
-            IEnumerable<HtmlNode> nodes = doc.DocumentNode.SelectNodes(xPath).ToList();
+            var nodes = doc.DocumentNode.SelectNodes(xPath);
             return (nodes == null)
                 ? Enumerable.Empty<HtmlNode>()
                 : nodes.ToList();
