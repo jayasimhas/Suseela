@@ -34,10 +34,6 @@
 
         public string GoToMyViewButtonText => TextTranslator.Translate("MyViewSettings.GoToMyViewButtonText");
 
-        public string SavePreferencesMessage => TextTranslator.Translate("MyViewSettings.SavePreferencesMessage");
-
-        public string SelectPreferencesMessage => TextTranslator.Translate("MyViewSettings.SelectPreferencesMessage");
-
         public string SectionDescription => GlassModel?.Body;
     }
 }

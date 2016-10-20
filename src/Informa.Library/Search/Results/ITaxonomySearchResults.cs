@@ -7,8 +7,7 @@ namespace Informa.Library.Search.Results
 {
 	public interface ITaxonomySearchResults
 	{
-		//[IndexField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
-        [IndexField("taxonomylist_sm")]
-        List<Guid> Taxonomies { get; set; }
-    }
+		[IndexField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
+		List<Guid> Taxonomies { get; set; }
+	}
 }

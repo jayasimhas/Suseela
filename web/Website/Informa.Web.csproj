@@ -1129,7 +1129,6 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
-    <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />
@@ -1811,12 +1810,25 @@
     <Content Include="amcharts\plugins\export\README.md" />
     <Content Include="amcharts\plugins\responsive\readme.md" />
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
+    <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
+    <Content Include="App_Config\Prefetch\Core.config" />
+    <Content Include="App_Config\Prefetch\Master.config" />
+    <Content Include="App_Config\Prefetch\Webdb.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1942,7 +1954,6 @@
     <Folder Include="js\search\services\" />
     <Folder Include="NWebsecConfig\" />
     <Folder Include="packages\" />
-    <Folder Include="Scripts\" />
     <Folder Include="Views\InformaBaseSearch\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
@@ -1982,7 +1993,9 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Informa.Products.Insights.Global.ItemIds.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2116,6 +2129,7 @@
     <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\TableauDashboard.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMChartDashboard.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Components\DataTools\DataToolTags.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolPrologue.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolPrologueEmail.cshtml" />
@@ -2125,6 +2139,7 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailCompany.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailDeal.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealShare.cshtml" />

@@ -57,8 +57,6 @@
 
         public string PickAndChooseLableMobileText => TextTranslator.Translate("MyViewSettings.PickAndChooseLableMobileText");
 
-        public string SubscribeUrl => SiterootContext.Item?.Subscribe_Link?.Url;
-
         public IList<Channel> Channels => GetChannels();
 
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
@@ -87,10 +85,13 @@
                             channel = new Channel();
                             channel.ChannelId = channelPage._Id.ToString();
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
-                            channel.ChannelCode = channelPage.Channel_Code;
+                            channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
                             channel.ChannelOrder = GetChannelOrder(channelPage);
-                            channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+
+                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
+                            channel.IsSubscribed = true;
+                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
                             GetTopics(channel, channelPage);
 
@@ -109,7 +110,7 @@
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
-                    Where(ch => ch.ChannelCode != null && ch.ChannelCode.Equals(channelPage.Channel_Code.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                    Where(ch => ch.ChannelCode.Equals(channelPage.Title.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (preferredChannel != null)
                 {
                     return preferredChannel.ChannelOrder;
@@ -135,8 +136,8 @@
                     {
                         topic = new Topic();
                         topic.TopicId = topicItem._Id.ToString();
-                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
-                        topic.TopicCode = topicItem.Navigation_Code;
+                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
+                        topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
                         topic.TopicOrder = GetTopicOrder(channel, topicItem);
                         topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                         channel.Topics.Add(topic);
@@ -154,7 +155,7 @@
                     Where(ch => ch.ChannelCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (preferredChannel != null)
                 {
-                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode !=null && t.TopicCode.Equals(topicPage.Navigation_Code.ToString(),
+                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode.Equals(topicPage.Title.ToString(),
                         StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                     if (preferredTopic != null)
                     {

@@ -81,10 +81,10 @@ namespace InformaSitecoreWord
         public static List<EditorEnvironment> EDITOR_ENVIRONMENT = new List<EditorEnvironment> {
             new EditorEnvironment{Name="Development" },
             new EditorEnvironment{Name="QA" },
+            new EditorEnvironment{Name="INT" },
             ////new EditorEnvironment{Name="Stage" },
             ////new EditorEnvironment{Name="Production" },
         };
-
     }
     public class EditorEnvironment
     {

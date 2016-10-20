@@ -30,7 +30,7 @@
             {
                 Nav.Children = navigation.Children;
             }
-            if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(navigation.Text, "My View", StringComparison.OrdinalIgnoreCase))
             {
                 Model.Preferencelst = Model.MyViewPreferences;
                 if (Model.Preferencelst != null)
@@ -55,7 +55,7 @@
 
                 </dl>
             }
-            else if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase) && Model.IsGlobalToggleEnabled)
+            else if (string.Equals(navigation.Text, "My View", StringComparison.OrdinalIgnoreCase))
             {
                 <div class="main-menu__section">
                     <div class="titleMyView">@navigation.Text</div>

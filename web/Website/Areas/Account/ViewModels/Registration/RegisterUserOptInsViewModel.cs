@@ -73,7 +73,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         public string OffersLabelText => TextTranslator.Translate("Registration.OptIn.OffersLabel");
         public string NewslettersLabelText => TextTranslator.Translate("Registration.OptIn.NewslettersLabel");
         public string NewslettersLabelTemplateText => TextTranslator.Translate("Registration.OptIns.NewslettersLabelTemplate");
-        public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
         public string RegisterReturnUrl
         {
             get

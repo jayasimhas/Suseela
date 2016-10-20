@@ -20,9 +20,9 @@ Multilist
 field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
 name: Source
 key: source
-content-length: 169
+content-length: 131
 
-query:./ancestor-or-self::*[@@templatename = 'Vertical Root']/*[@@templateid='{DD003F89-D57D-48CB-B428-FFB519AACA56}' and @@id!='{7C5E5226-6258-4D46-BBE9-D86831A1F731}']
+query:/sitecore/content/*[@@templateid='{DD003F89-D57D-48CB-B428-FFB519AACA56}' and @@id!='{7C5E5226-6258-4D46-BBE9-D86831A1F731}']
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -33,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 12f5c3f1-b4dc-4b04-8e4a-1ebbe4bc1f14
+revision: 4d804803-6e91-4bca-b35d-57a65c04eb2c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-12f5c3f1-b4dc-4b04-8e4a-1ebbe4bc1f14
+4d804803-6e91-4bca-b35d-57a65c04eb2c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160927T123036Z
+20160708T153654Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
