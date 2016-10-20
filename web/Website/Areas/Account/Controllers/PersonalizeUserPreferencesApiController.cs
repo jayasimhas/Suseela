@@ -26,7 +26,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new
                 {
                     success = false,
-                    reasons = new string[] { NoPreferencesSelectedKey }
+                    reason = NoPreferencesSelectedKey
                 });
             }
             var response = UserPreferenceContext.Set(request.UserPreferences);
@@ -34,11 +34,14 @@ namespace Informa.Web.Areas.Account.Controllers
             return Ok(new
             {
                 success = response,
-                reasons = new string[] { ErrorwhileSavingPreferencesKey }
+                reason = response ? SuccessMessage : ErrorMessage
             });
         }
 
         protected string NoPreferencesSelectedKey => TextTranslator.Translate("MyViewSettings.NoPreferencesSelected");
-        protected string ErrorwhileSavingPreferencesKey => TextTranslator.Translate("MyViewSettings.ErrorWhileSavingPreferences");
+
+        protected string ErrorMessage => TextTranslator.Translate("MyViewSettings.ErrorWhileSavingPreferences");
+
+        protected string SuccessMessage => TextTranslator.Translate("MyViewSettings.SuccessMessage");
     }
 }

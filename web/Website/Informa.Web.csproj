@@ -190,9 +190,8 @@
       <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -1129,6 +1128,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
+    <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />
@@ -1703,6 +1703,9 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1718,6 +1721,7 @@
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\components\article-sidebar-component.js" />
@@ -1820,7 +1824,15 @@
     <Content Include="App_Config\Prefetch\Core.config" />
     <Content Include="App_Config\Prefetch\Master.config" />
     <Content Include="App_Config\Prefetch\Webdb.config" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1828,6 +1840,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1945,7 +1958,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
