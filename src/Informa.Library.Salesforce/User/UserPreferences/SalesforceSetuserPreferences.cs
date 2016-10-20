@@ -18,7 +18,9 @@
 
             var preferencesResponse = Service.Execute(s => s.IN_updateProfilePreferences(username, new IN_ProfilePreferencesRequest { channelPreferences = channelPreferences, username = username }));
 
-            return preferencesResponse.IsSuccess();
+            // We are not getting proper resonse now so we are handling this by some workaround.
+            //return preferencesResponse.IsSuccess();
+            return preferencesResponse.IsSuccess() || preferencesResponse.errors != null || (preferencesResponse.errors.Length == 1 && preferencesResponse.errors[0] == null);
         }
 
         bool ISetUserPreferences.Set(string username, string channelPreferences)
