@@ -93,6 +93,40 @@ namespace Informa.Web.ViewModels.Articles
             return model;
         }
 
+        public IPersonalizedArticle CreatePersonalizedArticle(IArticle article)
+        {
+            if (article == null)
+                return null;
+
+            var image = article.Featured_Image_16_9?.Src;
+            var curPage = PageItemContext.Get<I___BasePage>();
+
+            var model = new PersonalizedArticleListItem();
+            model.ListableAuthorByLine = ByLineMaker.MakeByline(article.Authors);
+            model.ListableDate = article.Actual_Publish_Date;
+            model.ListableImage = image;
+            model.ListableSummary = ArticleService.GetArticleSummary(article);
+            model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
+            model.ListablePublication = ArticleService.GetArticlePublicationName(article);
+            model.ListableTopics = ArticleService.GetPersonalizedLinkableTaxonomies(article);
+            model.ListableType = ArticleService.GetMediaTypeIconData(article)?.MediaType;
+            model.LinkableText = article.Content_Type?.Item_Name;
+            model.LinkableUrl = article._Url;
+            model.ID = article._Id;
+            model.IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated;
+            model.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id);
+            model.BookmarkText = TextTranslator.Translate("Bookmark");
+            model.BookmarkedText = TextTranslator.Translate("Bookmarked");
+
+            if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
+            {
+                var recordNumber = HttpContext.Current.Request.Url.Segments.Last();
+                var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
+            }
+
+            return model;
+        }
+
         public IListableViewModel Create(Guid articleId)
         {
             return Create(SitecoreContext.GetItem<IArticle>(articleId));
