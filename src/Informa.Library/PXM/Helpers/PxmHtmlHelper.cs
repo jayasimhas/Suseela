@@ -324,6 +324,7 @@ namespace Informa.Library.PXM.Helpers {
 
 
 
+
         public string ProcessQandA(string content) {
             var doc = CreateDocument(content);
             var paras = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]//p");
@@ -366,8 +367,9 @@ namespace Informa.Library.PXM.Helpers {
 
 
         
+
         private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
-            IEnumerable<HtmlNode> nodes = doc.DocumentNode.SelectNodes(xPath).ToList();
+            var nodes = doc.DocumentNode.SelectNodes(xPath);
             return (nodes == null)
                 ? Enumerable.Empty<HtmlNode>()
                 : nodes.ToList();
