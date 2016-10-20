@@ -26,8 +26,7 @@ $(function(){
 	$('#mySubscriptionTab').tablesorter(); 
 	$('#mypurchases').tablesorter(); 
 	
-	table=$("table");
-	var idx = 1;
+	table=$("table")   
 	$('#publicationtd, #subjecttd, #expDatetd').each(function(){
 	  var th = $(this),
 		  thIndex = th.index(),
@@ -54,19 +53,10 @@ $(function(){
 					 $(this).after(child);
 					});
 				  inverse = !inverse;
-				  }, 2);				   
+				  }, 2);
 				}
 				else{
 					var tchild = $('.child');
-					th.attr('tabindex', 0).removeAttr('style').focus();
-					if(idx){
-						th.removeClass('tablesorter-headerDesc').addClass('tablesorter-headerAsc');
-						idx = 0;
-					}
-					else{
-						th.removeClass('tablesorter-headerAsc').addClass('tablesorter-headerDesc');
-						idx = 1;
-					}
 					for(var i=0; i<tchild.length; i++){
 						var cls = $(tchild[i]).attr('class').split(' ')[1]; 
 						$('.'+cls).find('td').filter(function(){
@@ -87,9 +77,7 @@ $(function(){
 						});
 					  inverse = !inverse;
 					  }, 2);
-				}
-				
-			  
+				} 
 		  });
 	  });
 

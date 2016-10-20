@@ -122,15 +122,10 @@
                     id: dragSrcEl.id
                 };
                 // swap all the data
-                var that = this;
-                // swap all the data
-				this.innerHTML = newEl.html;
-                this.id = newEl.id;
-				$(dragSrcEl).hide();
                 dragSrcEl.innerHTML = oldEl.html;
                 dragSrcEl.id = oldEl.id;
-				$(dragSrcEl).insertAfter(that);
-				$(dragSrcEl).show();
+                this.innerHTML = newEl.html;
+                this.id = newEl.id;
                 if (settings.dropAnimation) {
                     onAnimEnd(this);
                     onAnimEnd(dragSrcEl);

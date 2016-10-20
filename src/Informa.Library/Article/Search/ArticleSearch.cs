@@ -21,7 +21,6 @@ using Informa.Library.Site;
 using Velir.Search.Models;
 using Informa.Library.Search.SearchIndex;
 using Informa.Library.Utilities.CMSHelpers;
-using Sitecore.Data;
 
 namespace Informa.Library.Article.Search
 {
@@ -254,35 +253,6 @@ namespace Informa.Library.Article.Search
                 return new ArticleSearchResults
                 {
                     Articles = results.Hits.Select(i => GlobalService.GetItem<IArticle>(i.Document.ItemId.Guid))
-                };
-            }
-        }
-
-        public IArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter, ID topicOrChannelId)
-        {
-            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
-            {
-                var query = context.GetQueryable<ArticleSearchResultItem>()
-                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                        .FilterByPublications(filter)
-                        .FilterTaxonomies(filter)
-                    .ExcludeManuallyCurated(filter)
-                        .ApplyDefaultFilters();
-                //Write a filter for Editorial ranking sort
-
-                if (filter.PageSize > 0)
-                {
-                    query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
-                }
-
-                query = query.OrderByDescending(i => i.ActualPublishDate);
-
-                var results = query.GetResults();
-
-                return new ArticleSearchResults
-                {
-                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)),
-                    
                 };
             }
         }

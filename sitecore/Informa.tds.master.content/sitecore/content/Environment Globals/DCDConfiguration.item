@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {52461CA2-7C9F-483C-B5F2-433B9351FA6F}
+database: master
+path: /sitecore/content/Environment Globals/DCDConfiguration
+parent: {BD7B681C-5854-420B-877A-26366EA73EC7}
+name: DCDConfiguration
+master: {00000000-0000-0000-0000-000000000000}
+template: {4A364237-B3C3-43C9-88CB-41B8D11598BF}
+templatekey: DCDConfiguration
+
+----version----
+language: en
+version: 1
+revision: 208e3493-6870-4657-a715-cebff040fa75
+
+----field----
+field: {4147AEFF-915B-4F87-A4B9-3B26F4DA2CE1}
+name: Error Distribution List
+key: error distribution list
+content-length: 19
+
+tmehyar@tanasuk.com
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160306T163215Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+208e3493-6870-4657-a715-cebff040fa75
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160407T201701Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

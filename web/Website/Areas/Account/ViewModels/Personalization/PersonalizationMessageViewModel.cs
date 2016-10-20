@@ -30,8 +30,7 @@
         public string MyViewSettingsPageUrl => SiterootContext.Item?.MyView_Settings_Page?._Url;
         public string MyViewSettingsText => TextTranslator.Translate("Personalization.MyViewSettingsText");
 
-        public string MyViewLinkText => TextTranslator.Translate("Personalization.MyViewLinkText");
-        public string MyViewText => TextTranslator.Translate("MyViewToggle.MyViewLinkText");
+        public string MyViewText => TextTranslator.Translate("Personalization.MyViewLinkText");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
         public string FindOutMoreUrl => SiterootContext.Item?.Welcome_Message_FindOutMore_LinkUrl?._Url;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Sitecore.Data;
 
 namespace Informa.Library.Article.Search
 {
@@ -15,7 +14,5 @@ namespace Informa.Library.Article.Search
         string GetPublicationPrefix(string publicationGuid);
         string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
 		IArticleSearchResults GetLegacyArticleUrl(string path);
-        IArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter, ID topicOrChannelId);
-
-    }
+	}
 }

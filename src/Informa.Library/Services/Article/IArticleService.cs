@@ -18,6 +18,5 @@ namespace Informa.Library.Services.Article
 	    string GetArticlePublicationName(IArticle article);
         string GetDownloadUrl(IArticle article);
         string GetPreviewUrl(IArticle article);
-        IEnumerable<Informa.Library.Article.Search.ILinkable> GetPersonalizedLinkableTaxonomies(IArticle article);
     }
 }

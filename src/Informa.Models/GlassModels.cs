@@ -8358,7 +8358,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
     /// <para>ID: 65468DC7-3416-4517-8049-A1F0F89BC416</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICustom_TagConstants.TemplateIdString)]
-    public partial interface ICustom_Tag : IGlassBase
+    public partial interface IText_Node : IGlassBase
     {
         /// <summary>
         /// The Text field.
@@ -8369,8 +8369,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
-        [SitecoreField(ICustom_TagConstants.DisplayInHeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Display_In_Head { get; set; }
     }
 
 
@@ -8392,8 +8390,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
-        [SitecoreField(ICustom_TagConstants.DisplayInHeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Display_In_Head { get; set; }
     }
 
     public static partial class ICustom_TagConstants
@@ -8407,10 +8403,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         public static readonly ID CustomTagFieldId = new ID("EFBDB4CF-FD4B-478B-B2C4-987DAB9EC07B");
         public const string CustomTagFieldName = "CustomTag";
 
-        public static readonly ID DisplayInHeaderFieldId = new ID("E9951A53-12C9-438F-AF05-3436F19FD4BA");
-        public const string DisplayInHeaderFieldName = "Display In Head";
-
-    }
+   }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
@@ -8424,35 +8417,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     [SitecoreType(TemplateId = IMy_View_Settings_PageConstants.TemplateIdString)]
     public partial interface IMy_View_Settings_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
     {
-        /// <summary>
-        /// Is Flow from Registration page.
-        /// <para></para>
-        /// <para>Field Type: CheckBox</para>		
-        /// <para>Field ID: 9CCC3811-7453-458A-BAF6-064FF6114EA6</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.IsFromRegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsFromRegistration { get; set; }
-
-        /// <summary>
-        /// Not Followed Error Message.
-        /// <para></para>
-        /// <para>Field Type: Sign Line Text</para>		
-        /// <para>Field ID: 94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Not_Followed_Error { get; set; }
-
-        /// <summary>
-        /// Hlep Link Text Field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 6317B355-6FA2-4EFC-9DF9-994A9ACE5C58</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Help_Link { get; set; }
     }
 
 
@@ -8465,35 +8429,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     [SitecoreType]
     public partial interface IMy_View_Settings_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
     {
-        /// <summary>
-        /// Is Flow from Registration page.
-        /// <para></para>
-        /// <para>Field Type: CheckBox</para>		
-        /// <para>Field ID: 9CCC3811-7453-458A-BAF6-064FF6114EA6</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.IsFromRegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsFromRegistration { get; set; }
-
-        /// <summary>
-        /// Not Followed Error Message.
-        /// <para></para>
-        /// <para>Field Type: Sign Line Text</para>		
-        /// <para>Field ID: 94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Not_Followed_Error { get; set; }
-
-        /// <summary>
-        /// Hlep Link Text Field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 6317B355-6FA2-4EFC-9DF9-994A9ACE5C58</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Help_Link { get; set; }
     }
 
     public static partial class IMy_View_Settings_PageConstants
@@ -8503,14 +8438,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "My View Settings Page";
 
-        public static readonly ID IsFromRegistrationFieldId = new ID("9CCC3811-7453-458A-BAF6-064FF6114EA6");
-        public const string IsFromRegistrationFieldName = "IsFromRegistration";
-
-        public static readonly ID Not_Followed_ErrorFieldId = new ID("94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D");
-        public const string Not_Followed_ErrorFieldName = "Not Followed Error";
-
-        public static readonly ID Help_LinkFieldId = new ID("6317B355-6FA2-4EFC-9DF9-994A9ACE5C58");
-        public const string Help_LinkFieldName = "Help Link";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";

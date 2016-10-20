@@ -60,7 +60,6 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
             builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
             builder.RegisterType<SalesforceFindUserPreferences>().As<IFindUserPreferences>();
-            builder.RegisterType<SalesforceSetuserPreferences>().As<ISetUserPreferences>();
         }
 	}
 }
