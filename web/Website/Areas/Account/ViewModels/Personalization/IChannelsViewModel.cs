@@ -17,6 +17,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         string PickAndChooseLableText { get; }
         string PickAndChooseLableMobileText { get; }
         string SubscribeMessageText { get; }
-        string PublicationSubscriptionSubTitle { get; }
+        string SubscribeUrl { get; }
+        string SubscribedMessageText { get; }
+        bool isChannelBasedRegistration { get; set; }
     }
 }

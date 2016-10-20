@@ -106,9 +106,8 @@ namespace Informa.Web.ViewModels
 
                 //channel based navigation
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
+                UserPreferences.Preferences.PreferredChannels != null)
                 {
-                    
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
                         
