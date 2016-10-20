@@ -1,5 +1,6 @@
 ﻿using System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.Article.Search;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -10,5 +11,6 @@ namespace Informa.Web.ViewModels.Articles
         IListableViewModel Create(Guid articleId);
 
         IListableViewModel Create(string articleNumber);
+        IPersonalizedArticle CreatePersonalizedArticle(IArticle article);
     }
 }
