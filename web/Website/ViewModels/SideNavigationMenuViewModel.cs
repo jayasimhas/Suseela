@@ -58,6 +58,7 @@ namespace Informa.Web.ViewModels
         public string MyViewEditBtnText => TextTranslator.Translate("MainNavigation.MyViewEditButtonText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public Navigation Preferencelst { get; set; }
+        public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion
 
@@ -67,7 +68,7 @@ namespace Informa.Web.ViewModels
         /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
         {
-            if (IsAuthenticated)
+            if (IsAuthenticated&& IsGlobalToggleEnabled)
             {
                 if (UserPreferences.Preferences != null &&
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
@@ -89,7 +90,7 @@ namespace Informa.Web.ViewModels
         /// <summary>
         /// Method to get the logged in user preferences
         /// </summary>
-        /// <returns>list of user preferences</returns>
+        /// <returns>list of user preferences</returns>        
         public Navigation GetUserPreferences()
         {
             #region reading actual preferences
@@ -97,9 +98,9 @@ namespace Informa.Web.ViewModels
             navigation.Children = new List<INavigation>();
             var preferredChannels = new List<Navigation>();
             IUserPreferences prefChannels = new UserPreferences();
-            if (IsAuthenticated)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-                
+
                 var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
                 _ChildrenWithInferType.OfType<IChannel_Page>();
 
@@ -107,35 +108,50 @@ namespace Informa.Web.ViewModels
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
                 UserPreferences.Preferences.PreferredChannels != null)
                 {
-                    foreach (var preference in UserPreferences.Preferences.PreferredChannels)
+                    if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                     {
-                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && !string.IsNullOrWhiteSpace(preference.ChannelName))
+                        foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                         {
-                            preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                            bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
+                            if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || isTopicsFollowing))
+                            {
+                                var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
+                                if (!string.IsNullOrEmpty(channelName))
+                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                            }
+                        }
+                        navigation.Children = preferredChannels;
+                    }
+                    else
+                    {
+                        //topic based navigation
+                        if (UserPreferences.Preferences.PreferredChannels != null
+                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics) != null
+                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
+                        {
+                            foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
+                            {
+                                if (!string.IsNullOrWhiteSpace(topic.TopicCode)&& topic.IsFollowing)
+                                {
+                                    var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
+                                    if (!string.IsNullOrEmpty(topicName))
+                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == topic.TopicName).Select(n => n.LinkableUrl).ToString() } });
+                                }
+                            }
+                            navigation.Children = preferredChannels;
                         }
                     }
-                    navigation.Children = preferredChannels;
+                    return navigation;
                 }
-                //Topic based navigation
-                else if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredTopics != null && UserPreferences.Preferences.PreferredTopics.Count > 0)
+                else
                 {
-                    foreach (var preference in UserPreferences.Preferences.PreferredTopics)
-                    {
-                        if (!string.IsNullOrWhiteSpace(preference.TopicCode) && !string.IsNullOrWhiteSpace(preference.TopicName))
-                        {
-                            preferredChannels.Add(new Navigation { Code = preference.TopicCode, Text = preference.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
-                        }
-                    }
-                    navigation.Children = preferredChannels;
+                    return null;
                 }
-                return navigation;
             }
             else
             {
                 return null;
             }
-
             #endregion
         }
 
@@ -149,7 +165,7 @@ namespace Informa.Web.ViewModels
             var subscriptions = new List<ISubscription>();
             var channelSubscriptions = new List<ChannelSubscription>();
             var topicSubscriptions = new List<TopicSubscription>();
-            if (IsAuthenticated)
+            if (IsAuthenticated&& IsGlobalToggleEnabled)
             {
            
                 //channel based subscriptions

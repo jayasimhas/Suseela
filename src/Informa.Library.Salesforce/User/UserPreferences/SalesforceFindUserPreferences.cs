@@ -49,8 +49,8 @@
             if (xmlResponse != null && xmlResponse.UserSelectedPreferences!=null)
             {
                 return new UserPreferences {
-                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels.Select(ch=>new Channel { ChannelCode=ch.code, ChannelName=ch.name }).ToList(),
-                    PreferredTopics =xmlResponse.UserSelectedPreferences.topics.Select(tp=>new Topic {  TopicCode=tp.code, TopicName=tp.name  }).ToList()
+                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels.Select(ch=>new Channel { ChannelCode=ch.code, ChannelName=ch.name, IsFollowing=ch.isfollowing }).ToList(),
+                    PreferredTopics =xmlResponse.UserSelectedPreferences.topics.Select(tp=>new Topic {  TopicCode=tp.code, TopicName=tp.name, IsFollowing=tp.isfollowing }).ToList()
                 };
 
             }
@@ -97,7 +97,9 @@
         [XmlElement("code")]
         public string code { get; set; }
         [XmlElement("name")]
-        public string name { get; set; }        
+        public string name { get; set; }
+        [XmlElement("isfollowing")]
+        public bool isfollowing { get; set; }
     }
 
     [XmlType("topic")]
@@ -106,7 +108,9 @@
         [XmlElement("code")]
         public string code { get; set; }
         [XmlElement("name")]
-        public string name { get; set; }        
+        public string name { get; set; }
+        [XmlElement("isfollowing")]
+        public bool isfollowing { get; set; }
     }
 
     public class Preferences

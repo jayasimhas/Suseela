@@ -1105,7 +1105,6 @@
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewToggleViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\PersonalizationMessageViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Registration\RegisterContentCustomizeViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
@@ -1816,7 +1815,6 @@
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
-    <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
     <Content Include="App_Config\Prefetch\Core.config" />
