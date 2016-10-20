@@ -200,11 +200,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
+                            channel.Taxonomy = channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
                             channel.ChannelOrder = GetChannelOrder(channelPage);
-
-                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                            channel.IsSubscribed = true;
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+                            channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
                             GetTopics(channel, channelPage);
 
@@ -251,6 +249,7 @@
                         topic.TopicId = topicItem._Id.ToString();
                         topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
                         topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
+                        topic.Taxonomy = topicItem.Taxonomies?.FirstOrDefault()._Id.ToString();
                         topic.TopicOrder = GetTopicOrder(channel, topicItem);
                         topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                         channel.Topics.Add(topic);

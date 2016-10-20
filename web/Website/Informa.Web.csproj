@@ -1222,6 +1222,7 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -2159,6 +2160,7 @@
     <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
+    <Content Include="Views\MyView\MyViewPage.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
