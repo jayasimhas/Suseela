@@ -1,0 +1,110 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.MyViewSettingsViewModel
+@if (Model.IsFromRegistration)
+    {
+        <div class="main__content myview-settings">
+            <div class="tableau-landing clearfix">
+                <div class="mysettingsHead clearfix">
+                    <h1>@Model.Title</h1>
+                    <div class="saveoption mtop-10 hidden-xs">
+                        <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
+                        <span class="gotoview"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+                    </div>
+                </div>
+
+                <div class="sub-heading-text">
+                    @Html.Raw(Model.SectionDescription)
+                </div>
+                <div class="alert-error js-form-error js-form-error-Required">
+                    <svg class="alert__icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+                    <p class="page-account-contact__error">Your preferences are not saved. Please try again.</p>
+                </div>
+            </div>
+            <div id="allPublicationsPan">
+                @{
+                    Html.RenderPartial("/Areas/Account/Views/Personalization/Publications.cshtml", Model.ChannelsViewModel);
+                }
+            </div>
+            <div class="alert-error js-form-error js-form-error-Required">
+                <svg class="alert__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                </svg>
+                <p class="page-account-contact__error">Your preferences are not saved. Please try again.</p>
+            </div>
+            <div class="saveoption">
+                <span class="helplink">@Html.Raw(Model.HelpLinkDetail)</span>
+                <div class="complete-settings">
+                    <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
+                    <span class="gotoview"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+                </div>
+            </div>
+            <div class="modal-overlay"></div>
+            <div class="modal-view">
+                <p class="close-modal">X</p>
+                <h4>@Model.NotFollowedError</h4>
+            </div>
+
+        </div>
+                    }
+                    else if (Model != null && Model.IsAuthenticated)
+                {
+
+                    string goToMyViewButtonClass = Model.ChannelsViewModel.IsNewUser ? "" : "hideBtn";
+
+<div class="main__content myview-settings">
+    <div class="tableau-landing clearfix">
+        <div class="mysettingsHead clearfix">
+            <h1>@Model.Title</h1>
+            <div class="saveoption mtop-10 hidden-xs">
+                <span class="saveview">@Model.SaveButtonText</span>
+                <span class="gotoview @goToMyViewButtonClass"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+            </div>
+        </div>
+
+
+        <div class="sub-heading-text">
+            @Html.Raw(Model.SectionDescription)
+        </div>
+        <div class="alert-error js-form-error js-form-error-Required">
+            <svg class="alert__icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+            </svg>
+            <p class="page-account-contact__error"></p>
+        </div>
+
+        <div class="alert-success js-form-success js-form-success-Required">
+            <svg class="alert__icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+            </svg>
+            <p class="page-account-contact__error"></p>
+        </div>
+        <div class="saveoption mb-10 hidden-large">
+            <span class="saveview">@Model.SaveButtonText</span>
+            <span class="gotoview @goToMyViewButtonClass"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+        </div>
+
+        <div class="modal-overlay"></div>
+        <div class="modal-view">
+            <p class="close-modal">X</p>
+            <h4>@Model.SavePreferencesMessage</h4>
+        </div>
+        <input type="hidden" value="0" id="validatePreference" />
+
+    </div>
+    <div id="allPublicationsPan">
+        @{ Html.RenderPartial("/Areas/Account/Views/Personalization/Publications.cshtml", Model.ChannelsViewModel); }
+    </div>
+
+    <div class="saveoption">
+        <span class="saveview">@Model.SaveButtonText</span>
+        <span class="gotoview @goToMyViewButtonClass"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+    </div>
+</div>
+                                }
+                                else
+                                {
+<div class="page-account__sign-in-solo">
+    @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+</div>
+                                            }
