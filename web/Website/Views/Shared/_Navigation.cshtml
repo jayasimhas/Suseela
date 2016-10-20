@@ -12,19 +12,32 @@
     @if (Model.Navigation != null)
     {
         var Nav = new Navigation();
+        var subscriptions = Model.ValidSubscriptions;
         foreach (var navigation in Model.Navigation.Where(n => !(n.Link == null && !n.Children.Any())))
         {
             Nav.Children = new List<Navigation>();
-            var subscriptions = Model.ValidSubscriptions;
+            var subscribedChildren = new List<INavigation>();
             if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)).
-                    Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
+                foreach (var item in subscriptions.SelectMany(p => p.SubscribedChannels))
+                {
+                    if (navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault() != null)
+                    {
+                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault());
+                    }
+                    Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
+                }
             }
             else if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)).
-                    Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
+                foreach (var item in subscriptions.SelectMany(p => p.SubscribedTopics))
+                {
+                    if (navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault() != null)
+                    {
+                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault());
+                    }
+                }
+                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
             }
             else
             {
