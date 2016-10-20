@@ -106,12 +106,29 @@ namespace Informa.Library.Services.Article
             string cacheKey = CreateCacheKey($"LinkableTaxonomies-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildLinkableTaxonomies(article));
         }
+        public IEnumerable<Informa.Library.Article.Search.ILinkable> GetPersonalizedLinkableTaxonomies(IArticle article)
+        {
+            string cacheKey = CreateCacheKey($"PersonalizedLinkableTaxonomies-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildPersonalizedLinkableTaxonomies(article));
+        }
 
         private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article)
         {
 
             var taxItems = article.Taxonomies?
                 .Select(x => new LinkableModel
+                {
+                    LinkableText = x.Item_Name,
+                    LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
+                }).ToList();
+
+            return taxItems;
+        }
+        private IEnumerable<Informa.Library.Article.Search.ILinkable> BuildPersonalizedLinkableTaxonomies(IArticle article)
+        {
+
+            var taxItems = article.Taxonomies?
+                .Select(x => new Library.Article.Search.Linkable
                 {
                     LinkableText = x.Item_Name,
                     LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
