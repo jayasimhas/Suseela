@@ -286,7 +286,7 @@ namespace Informa.Library.PXM.Helpers
 
         public string ProcessQandA(string content) {
             var doc = CreateDocument(content);
-            var paras = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'article-interview__answer')]//p");
+            var paras = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]//p");
             foreach(var q in paras) {
                 var a = q.Attributes["class"];
                 if (a != null && !a.Value.Contains("article-interview__answer")) 
@@ -301,7 +301,7 @@ namespace Informa.Library.PXM.Helpers
                 oldWrapNode.RemoveChild(q);
             }
             
-            var divs = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'article-interview__answer')]");
+            var divs = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]");
             foreach(var d in divs) {
                 
                 var sib = GetNewAnswerNode(d);
@@ -322,6 +322,13 @@ namespace Informa.Library.PXM.Helpers
             }
 
             return sib;
+        }
+        
+        private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
+            IEnumerable<HtmlNode> nodes = doc.DocumentNode.SelectNodes(xPath).ToList();
+            return (nodes == null)
+                ? Enumerable.Empty<HtmlNode>()
+                : nodes.ToList();
         }
     }
 }
