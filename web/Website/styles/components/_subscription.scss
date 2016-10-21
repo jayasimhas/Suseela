@@ -136,6 +136,9 @@
 			background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px;
 		}
 	}
+	.hidden-lg{ 
+		display: none !important;
+	}
 }
 
 #purchases{
@@ -181,15 +184,18 @@
 	}
 }
 @include breakpoint('medium-small') {
-	.hidden-lg{
-		display: block !important;
-	}
-	.hidden-xs{
-		display: none !important;
+	.subscriptionPan{
+		.hidden-lg{
+			display: block !important;
+		}
+		.hidden-xs{
+			display: none !important;
+		}
 	}
 }
 
 @media only screen and (min-width: 481px) {
+.subscriptionPan{
 	.purchases{ 
 		.sortable-table__col{
 		position:relative;
@@ -204,5 +210,5 @@
 			}
 		} 
 	}
-
+}
 }

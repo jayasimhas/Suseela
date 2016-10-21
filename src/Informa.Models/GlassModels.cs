@@ -8460,7 +8460,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
         [SitecoreField(ICustom_TagConstants.DisplayInHeadFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Display_In_Head { get; set; }
+        bool Display_In_Head { get; set; }
     }
 
 
@@ -8483,7 +8483,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
         [SitecoreField(ICustom_TagConstants.DisplayInHeadFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Display_In_Head { get; set; }
+        bool Display_In_Head { get; set; }
     }
 
     public static partial class ICustom_TagConstants
