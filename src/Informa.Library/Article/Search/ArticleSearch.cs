@@ -256,5 +256,40 @@ namespace Informa.Library.Article.Search
                 };
             }
         }
+
+        /// <summary>
+        /// Gets articles based on user preferences
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="topicOrChannelId"></param>
+        /// <returns>Personalized articles</returns>
+        public IPersonalizedArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter)
+        {
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                        .FilterByPublications(filter)
+                        .FilterTaxonomies(filter)
+                    .ExcludeManuallyCurated(filter)
+                        .ApplyDefaultFilters();
+                //Write a filter for Editorial ranking sort
+
+                if (filter.PageSize > 0)
+                {
+                    query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
+                }
+
+                query = query.OrderByDescending(i => i.ActualPublishDate);
+
+                var results = query.GetResults();
+
+                return new PersonalizedArticleSearchResults
+                {
+                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)),
+                    TotalResults = results.TotalSearchResults
+                };
+            }
+        }
     }
 }

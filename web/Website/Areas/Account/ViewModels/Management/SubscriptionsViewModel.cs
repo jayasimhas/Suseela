@@ -13,6 +13,7 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using log4net;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -21,7 +22,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ITextTranslator TextTranslator;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
-
+        private readonly ILog _logger;
         protected readonly IFindSitePublicationByCode FindSitePublication;
 
         private readonly Dictionary<string, bool> RenewBtnSettings;
@@ -33,71 +34,118 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             IAuthenticatedUserContext userContext,
             IUserSubscriptionsContext userSubscriptionsContext,
             ISignInViewModel signInViewModel,
-            IFindSitePublicationByCode findSitePublication)
+            IFindSitePublicationByCode findSitePublication,
+            ILog logger)
         {
             TextTranslator = translator;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
             FindSitePublication = findSitePublication;
-
+            _logger = logger;
             RenewBtnSettings = new Dictionary<string, bool>();
             SubscriptionBtnSettings = new Dictionary<string, bool>();
 
             _subcriptions = userSubscriptionsContext.Subscriptions.Where(w => string.IsNullOrEmpty(w.Publication) == false && w.ExpirationDate >= DateTime.Now.AddMonths(-6)).OrderByDescending(o => o.ExpirationDate);
 
-            foreach (var sub in _subcriptions)
+        }
+
+        public IEnumerable<ISite_Root> Sitecorepublications
+        {
+            get
             {
-                //renew btns
-                if (!RenewBtnSettings.ContainsKey(sub.ProductCode))
-                    RenewBtnSettings.Add(sub.ProductCode, WithinRenewRange(sub.ExpirationDate));
-                else
-                    RenewBtnSettings[sub.ProductCode] &= WithinRenewRange(sub.ExpirationDate);
-                //subscribe btns
-                if (!SubscriptionBtnSettings.ContainsKey(sub.ProductCode))
-                    SubscriptionBtnSettings.Add(sub.ProductCode, IsValidSubscription(sub));
-                else
-                    SubscriptionBtnSettings[sub.ProductCode] |= IsValidSubscription(sub);
+                var verticalRootItem = GlassModel.GetAncestors<IVertical_Root>().FirstOrDefault();
+                return verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>();
             }
         }
+
         public IEnumerable<SubscriptionViewModel> SubscriptionViewModels
         {
             get
             {
-                return _subcriptions.Select(s => new SubscriptionViewModel
+                try
                 {
-                    Expiration = s.ExpirationDate,
-                    Publication = FindSitePublication.Find(s.Publication)?.Name ?? s.Publication,
-                    Renewable = ShowRenewButton(s),
-                    Subscribable = ShowSubscribeButton(s.ProductCode),
-                    Type = s.ProductType,
-                    TaxonomyItems = GeTaxonomyItemsByProductCode(s.ProductCode),
-                    IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s.ProductCode)
-                });
+                    return Sitecorepublications.Select(s => new SubscriptionViewModel
+                    {
+                        Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s.Publication_Code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s.Publication_Code)).ExpirationDate : DateTime.MinValue,
+                        Publication = s.Publication_Name,
+                        Renewable = IsRenewable(s.Publication_Code),
+                        Subscribable = IsSubScribed(s.Publication_Code),
+                        ChannelItems = GetChannelItemsByProductCode(s.Publication_Code),
+                        IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s.Publication_Code)
+                    });
+                }
+                catch(Exception ex)
+                {
+                    _logger.Error("Error in Subscription page", ex);
+                     return new List<SubscriptionViewModel>();
+                }
+
             }
         }
 
-        public IEnumerable<ITaxonomy_Item> GeTaxonomyItemsByProductCode(string productCode)
+        private bool IsRenewable(string pub_code)
         {
-            IEnumerable<ITaxonomy_Item> taxnomyItems = new List<ITaxonomy_Item>();
+            if(string.IsNullOrEmpty(pub_code))
+            {
+                _logger.Warn($"Publication code is empty on " + GlassModel._Path);
+                return false;
+            }
+            DateTime expirationDate = _subcriptions.Any(p => p.ProductCode.Equals(pub_code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(pub_code)).ExpirationDate : DateTime.MinValue;
+            return WithinRenewRange(expirationDate);
+        }
+
+        private bool IsSubScribed(string pub_code)
+        {
+            DateTime expirationDate = _subcriptions.Any(p => p.ProductCode.Equals(pub_code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(pub_code)).ExpirationDate : DateTime.MinValue;
+            return IsValidSubscription(expirationDate);
+        }
+
+        public IEnumerable<SubscriptionChannelViewModel> GetChannelItemsByProductCode(string productCode)
+        {
+            IEnumerable<SubscriptionChannelViewModel> mappedChannelItems = new List<SubscriptionChannelViewModel>();
             var verticalRootItem = GlassModel.GetAncestors<IVertical_Root>().FirstOrDefault();
             if (verticalRootItem != null)
             {
-                var siteRoot =
-                    verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>()
-                        .FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(productCode));
-                if (siteRoot != null)
+                try
                 {
-                    var pubItem = siteRoot._ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault()
-                        ._ChildrenWithInferType.OfType<IAccount_Landing_Page>().FirstOrDefault()
-                        ._ChildrenWithInferType.OfType<ISubscriptions_Page>().FirstOrDefault();
+                    var siteRoot =
+                        verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>()
+                            .FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(productCode));
+                    if (siteRoot != null)
+                    {
+                        var ChannelPage = siteRoot._ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault()
+                            ._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
 
-                    if (pubItem != null)
-                        return pubItem.Taxonomies;
+
+                        if (ChannelPage != null)
+                        {
+                            var channelItems = ChannelPage._ChildrenWithInferType.OfType<IChannel_Page>();
+                            if (channelItems.Any())
+                            {
+                                mappedChannelItems =
+                                (from ch in channelItems
+                                 let expirationdate = GetChannelExpirationDate(productCode, ch.Channel_Code, ch._Path)
+                                 select new SubscriptionChannelViewModel
+                                 {
+                                     ChannelName = ch.Display_Text,
+                                     ChannelExpirationdate = expirationdate,
+                                     Renewable = WithinRenewRange(expirationdate),
+                                     Subscribable = IsValidSubscription(expirationdate)
+                                 }
+                                );
+                                return mappedChannelItems;
+                            }
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    _logger.Error("Error in Subscription page", ex);
                 }
             }
-            return taxnomyItems;
+            return mappedChannelItems;
         }
-
+        
         public bool ShowRenewButton(ISubscription subscription)
         {
             //if all subscriptions of this type are within renew range and this subscription is not multi-user 
@@ -114,7 +162,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         }
 
        
-
         public bool IsMultiUser(string subscriptionType)
         {
             return subscriptionType.ToLower().Equals("multi-user");
@@ -122,9 +169,18 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
         public bool WithinRenewRange(DateTime dt)
         {
+            if (dt == DateTime.MinValue) return false;
             // (08/31/2013) - (08/01/2013) = 31
             int days = Convert.ToInt16((dt - DateTime.Now).TotalDays);
             return days < 119 && days >= 0;
+        }
+
+        public bool IsValidSubscription(DateTime dt)
+        {
+            if (dt == DateTime.MinValue) return false;
+            // (08/31/2013) - (08/01/2013) = 31
+            int days = Convert.ToInt16((dt - DateTime.Now).TotalDays);
+            return days > 0;
         }
 
         public bool IsValidSubscription(ISubscription s)
@@ -132,6 +188,22 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             // (08/31/2013) - (08/01/2013) = 31
             int days = Convert.ToInt16((s.ExpirationDate - DateTime.Now).TotalDays);
             return days > 0;
+        }
+
+        public DateTime GetChannelExpirationDate(string productcode, string channelCode, string path)
+        {
+            if (string.IsNullOrEmpty(channelCode))
+            {
+                _logger.Warn($"Channel code is empty for" + path);
+                return DateTime.MinValue;
+            }
+            if (!_subcriptions.Any(p => p.ProductCode.Equals(productcode)))
+                return DateTime.MinValue;
+            ISubscription currentPublication = _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(productcode));
+            if (!currentPublication.SubscribedChannels.Any(p => p.ChannelId.Equals(channelCode)))
+                return DateTime.MinValue;
+            return currentPublication.SubscribedChannels.FirstOrDefault(p => p.ChannelId.Equals(channelCode)).ExpirationDate;
+
         }
 
         public string OffSiteRenewLink => GlassModel.Off_Site_Renew_Link?.Url ?? "#";

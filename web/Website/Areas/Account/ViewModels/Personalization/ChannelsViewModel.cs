@@ -9,6 +9,7 @@
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Jabberwocky.Autofac.Attributes;
+    using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -57,12 +58,133 @@
 
         public string PickAndChooseLableMobileText => TextTranslator.Translate("MyViewSettings.PickAndChooseLableMobileText");
 
+        public string SubscribeUrl => SiterootContext.Item?.Subscribe_Link?.Url;
+
+        public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
+        public bool isChannelBasedRegistration { get; set; }
+        public bool isFromRegistration { get; set; }
         public IList<Channel> Channels => GetChannels();
 
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
                 || !UserPreferences.Preferences.PreferredChannels.Any();
 
         private IList<Channel> GetChannels()
+        {
+
+            Item CurrentItem = Sitecore.Context.Item;
+            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"])?false:true;
+            if (isFromRegistration)
+            {
+                return GetPublicationDetailsForRegistration();
+            }
+            else
+            {
+                return GetAllChannels();
+            }
+        }
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Publication details
+        /// </summary>
+        /// <returns>Publication and Channels details</returns>
+        private IList<Channel> GetPublicationDetailsForRegistration()
+        {
+            var channels = new List<Channel>();
+
+            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+                _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+
+            if (homeItem != null)
+            {
+                Channel channel = null;
+                channel = new Channel();
+                channel.ChannelId = homeItem._Id.ToString();
+                channel.ChannelName = homeItem._Parent._Name;
+                channel.ChannelCode = SiterootContext.Item.Publication_Code;
+                channel.ChannelLink = homeItem._Url;
+                channel.ChannelOrder = 1;
+
+                // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
+                channel.IsSubscribed = true;
+                //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+
+                GetTopicsForRegistration(channel);
+                channels.Add(channel);
+            }
+            return channels;
+        }
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Topic details
+        /// </summary>
+        /// <param name="channel">Channel object</param>
+        private void GetTopicsForRegistration(Channel channel)
+        {
+            channel.Topics = new List<Topic>();
+
+            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+                 _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+
+            if (homeItem != null)
+            {
+                var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+
+                if (channelsPageItem != null)
+                {
+                    var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                   
+                    //channel based content customization registration
+                    if (channelPages.Count()>1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase))
+                    {
+                        isChannelBasedRegistration = true;
+                        if (channelPages != null && channelPages.Any())
+                        {
+                            Topic topic = null;
+                            foreach (IChannel_Page channelPage in channelPages)
+                            {
+                                topic = new Topic();
+                                topic.TopicId = channelPage._Id.ToString();
+                                topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
+                                topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
+                               
+                                // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
+                                topic.IsSubscribed = true;
+                                //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+                                channel.Topics.Add(topic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //topic based content customization registration
+                        isChannelBasedRegistration = false;
+                        var channelPage = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>().FirstOrDefault();
+                        var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                        if (pageAssetsItem != null)
+                        {
+                            var topics = pageAssetsItem._ChildrenWithInferType.
+                                OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                            if (topics != null && topics.Any())
+                            {
+                                Topic topic = null;
+                                foreach (Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic
+                                    topicItem in topics)
+                                {
+                                    topic = new Topic();
+                                    topic.TopicId = topicItem._Id.ToString();
+                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
+                                    topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
+                                    //topic.TopicOrder = GetTopicOrder(channel, topicItem);
+                                    topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
+                                    channel.Topics.Add(topic);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        private IList<Channel> GetAllChannels()
         {
             var channels = new List<Channel>();
 
@@ -87,11 +209,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
+                            ////channel.Taxonomy =  channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
                             channel.ChannelOrder = GetChannelOrder(channelPage);
-
-                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                            channel.IsSubscribed = true;
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+                            channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
                             GetTopics(channel, channelPage);
 

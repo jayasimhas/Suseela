@@ -47,5 +47,8 @@ namespace Informa.Web.ViewModels
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
 	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
-	}
+        public string CustomTagsHeader => _dependencies.HeadMetaDataGenerator.GetCustomTags(0);
+        public string CustomTagsFooter => _dependencies.HeadMetaDataGenerator.GetCustomTags(1);
+
+    }
 }

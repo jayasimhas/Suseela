@@ -12,30 +12,47 @@
     @if (Model.Navigation != null)
     {
         var Nav = new Navigation();
+        var mainSubjectSectionClassName = "main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active";
+        var subscriptions = Model.ValidSubscriptions;
         foreach (var navigation in Model.Navigation.Where(n => !(n.Link == null && !n.Children.Any())))
         {
             Nav.Children = new List<Navigation>();
-            var subscriptions = Model.ValidSubscriptions;
+            //IPMP:283 subscriptions details
+            var subscribedChildren = new List<INavigation>();
             if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)).
-                    Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
+                foreach (var item in subscriptions.SelectMany(p => p.SubscribedChannels))
+                {
+                    if (navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault() != null)
+                    {
+                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault());
+                    }
+                }
+                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
             }
             else if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)).
-                    Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
+                foreach (var item in subscriptions.SelectMany(p => p.SubscribedTopics))
+                {
+                    if (navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault() != null)
+                    {
+                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault());
+                    }
+                }
+                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
             }
             else
             {
                 Nav.Children = navigation.Children;
             }
-            if (string.Equals(navigation.Text, "My View", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase))
             {
                 Model.Preferencelst = Model.MyViewPreferences;
                 if (Model.Preferencelst != null)
                 {
                     Nav.Children = Model.Preferencelst.Children;
+                    mainSubjectSectionClassName = Model.Preferencelst.Children.Any() ? "main-menu__section-title main-menu__hoverable js-toggle-menu-section" : "main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active";
+
                 }
             }
             if (navigation.Link == null && navigation.Text == null && Nav.Children.Any())
@@ -55,20 +72,22 @@
 
                 </dl>
             }
-            else if (string.Equals(navigation.Text, "My View", StringComparison.OrdinalIgnoreCase))
+            else if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase))
             {
                 <div class="main-menu__section">
                     <div class="titleMyView">@navigation.Text</div>
                     <ul>
+                        @{var myViewHelpText = Nav.Children.Any() ? string.Empty : @Model.MyViewHelpText; }
                         @if (Model.IsAuthenticated)
                         {
                             <li class="edit-link"><a href="@Model.MyViewLinkURL">@Model.MyViewEditBtnText</a></li>
-                            <li class="navContent">@Model.MyViewHelpText</li>
+                            <li class="navContent">@myViewHelpText</li>
                         }
                         else
                         {
+
                             <li class="edit-link"><a id="myBtn" href="javascript: void(0);">@Model.MyViewEditBtnText</a></li>
-                            <li class="navContent">@Model.MyViewHelpText</li>
+                            <li class="navContent">@myViewHelpText</li>
                         }
 
 
@@ -83,44 +102,46 @@
                         }
                     </ul>
                 </div>
-            }
-            else
-            {
-                <ul class="main-menu__section">
-                    <li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active">
-                        @if (Nav.Children.Any())
-                        {
-                            <svg class="main-menu__arrow-icon  js-hoist-menu-click">
-                                <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-                            </svg>
-                        }
-                        @if (navigation.Link == null)
-                        {
-                            @navigation.Text
-                        }
-                        else
-                        {
-                            <a href="@navigation.Link.Url" target="@navigation.Link.Target">@navigation.Text</a>
-                        }
-                    </li>
+                            }
+                            else
+                            {
+                                <ul class="main-menu__section">
 
-                    @if (Nav.Children.Any())
-                    {
-                        <li class="main-menu__section-wrapper">
-                            <ul>
-                                @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
-                                {
-                                    <li class="main-menu__hoverable">
-                                        <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
+
+                                    <li class="@mainSubjectSectionClassName">
+                                        @if (Nav.Children.Any())
+                        {
+                                            <svg class="main-menu__arrow-icon  js-hoist-menu-click">
+                                                <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                                            </svg>
+                                        }
+                                        @if (navigation.Link == null)
+                        {
+                                            @navigation.Text
+                                        }
+                                        else
+                                        {
+                                            <a href="@navigation.Link.Url" target="@navigation.Link.Target">@navigation.Text</a>
+                                        }
                                     </li>
+
+                                    @if (Nav.Children.Any())
+                                    {
+                                        <li class="main-menu__section-wrapper">
+                                            <ul>
+                                                @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
+                                                {
+                                                    <li class="main-menu__hoverable">
+                                                        <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                                    }
                                 }
-                            </ul>
-                        </li>
-                    }
-                </ul>
-            }
-        }
-    }
+                            }
 </div>
 <!-- The Personalised Modal -->
 <div id="myModal" class="personalise_nav">
