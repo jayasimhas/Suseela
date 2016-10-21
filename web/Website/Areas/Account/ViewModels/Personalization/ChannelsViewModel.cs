@@ -250,7 +250,6 @@
                         topic.TopicId = topicItem._Id.ToString();
                         topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
                         topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
-                        topic.Taxonomy = topicItem.Topic_Code;
                         topic.TopicOrder = GetTopicOrder(channel, topicItem);
                         topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                         channel.Topics.Add(topic);
