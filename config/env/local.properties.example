@@ -90,4 +90,11 @@ and running. There are additional default properties from dev.properties that yo
     	<!-- Folder where DCD XML importing files will be located -->    
     	<property name="DCD.EnableWatcher" value="true"/>
     	<!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
+
+  <!-- PXM -->
+  <property name="PrintStudio.RelativeProjectsPath" value="\web\Website\PrintStudio\projects\" />
+  <property name="PrintStudio.RelativeCachePath" value="\web\Website\PrintStudio\cache\" />
+  <property name="PrintStudio.ProjectsFolder" value="${project.folder}${PrintStudio.RelativeProjectsPath}" />
+  <property name="PrintStudio.PublishingCachePath" value="${project.folder}${PrintStudio.RelativeCachePath}" />
+  
 </project>
