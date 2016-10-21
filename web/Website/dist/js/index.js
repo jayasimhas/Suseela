@@ -690,7 +690,7 @@ function createJSONData(alltables, UserPreferences) {
 	sendHttpRequest(UserPreferences);
 }
 
-function sendHttpRequest(UserPreferences) {
+function sendHttpRequest(UserPreferences, setFlag) {
 	$.ajax({
 		url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
 		data: { 'UserPreferences': JSON.stringify(UserPreferences) },
@@ -700,15 +700,30 @@ function sendHttpRequest(UserPreferences) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
+				if (setFlag == 'register') {
+					window.location.href = '/';
+				}
 			} else {
-				$('.alert-error.myview-error p').html(data.reason);
-				$('.alert-error.myview-error').show();
+				if (setFlag == 'register') {
+					$('.alert-error.register-error p').html(data.reason);
+					$('.alert-error.register-error').show();
+					setRegisterFlag = false;
+				} else {
+					$('.alert-error.myview-error p').html(data.reason);
+					$('.alert-error.myview-error').show();
+				}
 			}
 		},
 		error: function error(err) {
 			if (err && !err.success) {
-				$('.alert-error.myview-error p').html(err.reason);
-				$('.alert-error.myview-error').show();
+				if (setFlag == 'register') {
+					$('.alert-error.register-error p').html(data.reason);
+					$('.alert-error.register-error').show();
+					setRegisterFlag = false;
+				} else {
+					$('.alert-error.myview-error p').html(data.reason);
+					$('.alert-error.myview-error').show();
+				}
 			}
 		}
 	});
@@ -1015,16 +1030,16 @@ $(function () {
 		$('#validatePreference').val(0);
 	});
 
-	$('.registrationBtn').click(function () {
-
+	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'),
 		    alltrs = table.find('tbody tr'),
 		    UserPreferences = {},
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
+		e.preventDefault();
 		if (! +$('#validatePreference').val()) {
-			$('.alert-error.register-error').show();
+			$('.alert-error.register-not-selected').show();
 			return false;
 		}
 		setDataRow(allpublications);
@@ -1038,8 +1053,7 @@ $(function () {
 
 				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
 			}
-			sendHttpRequest(UserPreferences);
-			window.location.href = '/';
+			sendHttpRequest(UserPreferences, 'register');
 		} else {
 			createJSONData(table, UserPreferences);
 		}
@@ -3186,6 +3200,7 @@ $(document).ready(function () {
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
+            _jscookie2['default'].set('dismiss_cookie', 'dismiss_cookie_created', '');
             $('.messaging_webUsers').remove();
             $('.messaging_webUsers_white').remove();
         });
