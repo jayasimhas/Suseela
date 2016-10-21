@@ -1039,6 +1039,7 @@ $(function () {
 				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
 			}
 			sendHttpRequest(UserPreferences);
+			window.location.href = '/';
 		} else {
 			createJSONData(table, UserPreferences);
 		}

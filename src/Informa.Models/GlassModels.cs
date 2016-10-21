@@ -8448,7 +8448,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
     /// <para>ID: 65468DC7-3416-4517-8049-A1F0F89BC416</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICustom_TagConstants.TemplateIdString)]
-    public partial interface IText_Node : IGlassBase
+    public partial interface ICustom_Tag : IGlassBase
     {
         /// <summary>
         /// The Text field.
@@ -8459,6 +8459,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
+        [SitecoreField(ICustom_TagConstants.DisplayInHeadFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_In_Head { get; set; }
     }
 
 
@@ -8480,20 +8482,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
         /// </summary>
         [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Custom_Tag { get; set; }
+        [SitecoreField(ICustom_TagConstants.DisplayInHeadFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_In_Head { get; set; }
     }
 
     public static partial class ICustom_TagConstants
     {
 
-        public const string TemplateIdString = "65468DC7-3416-4517-8049-A1F0F89BC416";
+        public const string TemplateIdString = "38B876B6-23A5-4F41-A84D-13DEF6C1CADE";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "GeneralTag";
 
 
-        public static readonly ID CustomTagFieldId = new ID("EFBDB4CF-FD4B-478B-B2C4-987DAB9EC07B");
+        public static readonly ID CustomTagFieldId = new ID("091161D3-3ECE-4D77-A984-14CB5C1572C7");
         public const string CustomTagFieldName = "CustomTag";
 
-   }
+        public static readonly ID DisplayInHeadFieldId = new ID("E9287AC3-7F7B-4305-979B-B2E8A9A611C6");
+        public const string DisplayInHeadFieldName = "Display In Head";
+
+    }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
