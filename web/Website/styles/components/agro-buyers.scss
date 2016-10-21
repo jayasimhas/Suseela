@@ -1,0 +1,27 @@
+.agroBuyers{
+	h1{
+		margin-bottom: 0.75rem;
+	}
+	.sub-heading-text{
+	    font-family: "PT Serif", Georgia, serif;
+		font-style: italic;
+		font-weight: 400;
+		color: #231f20;
+		margin-bottom: 12px;
+		margin-bottom: 0.75rem;
+		font-size: 1.5em;
+		line-height: 30px;
+	}
+	.buyers-guide-listing{
+		width: 100%;
+		float: left;
+			.buyers-guide-row{
+				width: 100%;
+				float: left;
+				.buyers-guide{
+					width: 30%;
+					float: left;
+				}
+			}
+	}
+}
