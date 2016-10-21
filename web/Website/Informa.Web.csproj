@@ -1820,7 +1820,6 @@
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
-    <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
     <Content Include="App_Config\Prefetch\Core.config" />
     <Content Include="App_Config\Prefetch\Master.config" />

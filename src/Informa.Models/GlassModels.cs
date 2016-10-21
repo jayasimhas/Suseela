@@ -17991,7 +17991,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     /// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITopicConstants.TemplateIdString)]
-    public partial interface ITopic : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link
+    public partial interface ITopic : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy
     {
         /// <summary>
         /// The Title field.
@@ -18003,26 +18003,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         [SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
-
-        /// <summary>
-        /// The Display Text field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 32BCC6AD-3737-498C-BDCF-B19BF18040CF</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITopicConstants.DisplayTextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Display_Text { get; set; }
-        /// <summary>
-        /// The Topic Code field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 59D3CE76-381A-43B9-9642-9516B36A500C</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITopicConstants.TopicCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Topic_Code { get; set; }
-
     }
 
 
@@ -18033,7 +18013,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     /// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ITopic__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw
+    public partial interface ITopic__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw
     {
         /// <summary>
         /// The Title field.
@@ -18073,6 +18053,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         public static readonly ID TopicCodeFieldId = new ID("59D3CE76-381A-43B9-9642-9516B36A500C");
         public const string TopicCodeFieldName = "Topic Code";
 
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
 
     }
 

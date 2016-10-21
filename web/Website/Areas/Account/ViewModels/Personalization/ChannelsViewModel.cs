@@ -162,9 +162,8 @@
                                 {
                                     topic = new Topic();
                                     topic.TopicId = topicItem._Id.ToString();
-                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
-                                    topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
-                                    //topic.TopicOrder = GetTopicOrder(channel, topicItem);
+                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                                    topic.TopicCode = topicItem.Navigation_Code;
                                     topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                                     channel.Topics.Add(topic);
                                 }
@@ -201,12 +200,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
-                            ////channel.Taxonomy =  channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
                             channel.ChannelOrder = GetChannelOrder(channelPage);
                             channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
-
                             GetTopics(channel, channelPage);
-
                             channels.Add(channel);
                         }
                     }
@@ -222,7 +218,7 @@
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
-                    Where(ch => ch.ChannelCode.Equals(channelPage.Title.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                    Where(ch => ch.ChannelCode.Equals(channelPage.Channel_Code.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (preferredChannel != null)
                 {
                     return preferredChannel.ChannelOrder;
@@ -248,8 +244,8 @@
                     {
                         topic = new Topic();
                         topic.TopicId = topicItem._Id.ToString();
-                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
-                        topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
+                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                        topic.TopicCode = topicItem.Navigation_Code;
                         topic.TopicOrder = GetTopicOrder(channel, topicItem);
                         topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                         channel.Topics.Add(topic);
