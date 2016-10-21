@@ -674,23 +674,26 @@ function createJSONData(alltables, UserPreferences) {
 		    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
 		    tableId = $(alltables[i]).attr('id'),
 		    publicationName = $(alltables[i]).find('h2').attr('data-publication'),
-		    subscribeStatus = $(alltables[i]).find('.subscribed').html();
+		    subscribeStatus = $(alltables[i]).find('.subscribed').html(),
+		    channelId = $(alltables[i]).find('h2').attr('data-item-id');
 		var alltdata = [];
 		for (var j = 0; j < currenttabtrs.length; j++) {
 			var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+			    topicId = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-item-id'),
 			    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
 			    datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0';
 
 			var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 			var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
-			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
+
+			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
 		}
-		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
+		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "ChannelId": channelId, Topics: alltdata });
 	}
 	sendHttpRequest(UserPreferences);
 }
 
-function sendHttpRequest(UserPreferences) {
+function sendHttpRequest(UserPreferences, setFlag) {
 	$.ajax({
 		url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
 		data: { 'UserPreferences': JSON.stringify(UserPreferences) },
@@ -700,15 +703,30 @@ function sendHttpRequest(UserPreferences) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
+				if (setFlag == 'register') {
+					window.location.href = '/';
+				}
 			} else {
-				$('.alert-error.myview-error p').html(data.reason);
-				$('.alert-error.myview-error').show();
+				if (setFlag == 'register') {
+					$('.alert-error.register-error p').html(data.reason);
+					$('.alert-error.register-error').show();
+					setRegisterFlag = false;
+				} else {
+					$('.alert-error.myview-error p').html(data.reason);
+					$('.alert-error.myview-error').show();
+				}
 			}
 		},
 		error: function error(err) {
 			if (err && !err.success) {
-				$('.alert-error.myview-error p').html(err.reason);
-				$('.alert-error.myview-error').show();
+				if (setFlag == 'register') {
+					$('.alert-error.register-error p').html(data.reason);
+					$('.alert-error.register-error').show();
+					setRegisterFlag = false;
+				} else {
+					$('.alert-error.myview-error p').html(data.reason);
+					$('.alert-error.myview-error').show();
+				}
 			}
 		}
 	});
@@ -1015,16 +1033,16 @@ $(function () {
 		$('#validatePreference').val(0);
 	});
 
-	$('.registrationBtn').click(function () {
-
+	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'),
 		    alltrs = table.find('tbody tr'),
 		    UserPreferences = {},
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
+		e.preventDefault();
 		if (! +$('#validatePreference').val()) {
-			$('.alert-error.register-error').show();
+			$('.alert-error.register-not-selected').show();
 			return false;
 		}
 		setDataRow(allpublications);
@@ -1032,14 +1050,14 @@ $(function () {
 		if (!!$('#isChannelBasedRegistration').val()) {
 			for (var i = 0; i < alltrs.length; i++) {
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 				    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
 				    channelOrder = secondtd.toLowerCase() == 'following' ? $(alltrs[i]).attr('data-row') : '0',
 				    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 
-				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
+				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
 			}
-			sendHttpRequest(UserPreferences);
-			window.location.href = '/';
+			sendHttpRequest(UserPreferences, 'register');
 		} else {
 			createJSONData(table, UserPreferences);
 		}
@@ -3186,6 +3204,7 @@ $(document).ready(function () {
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
+            _jscookie2['default'].set('dismiss_cookie', 'dismiss_cookie_created', '');
             $('.messaging_webUsers').remove();
             $('.messaging_webUsers_white').remove();
         });
