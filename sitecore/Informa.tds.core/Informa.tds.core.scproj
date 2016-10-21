@@ -471,6 +471,7 @@
     <SitecoreRole Include="Sitecore Roles\sitecore\Experience Explorer.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Full Publisher.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\List Manager Editors.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Managing Editor.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\No Publishing.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Operations Access.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Production.role" />

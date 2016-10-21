@@ -1,3 +1,6 @@
 ----role----
 name: sitecore\Editor
 
+----role-in-role----
+rolename: sitecore\Managing Editor
+
