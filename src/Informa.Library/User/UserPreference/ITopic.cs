@@ -7,5 +7,6 @@
         string TopicName { get; set; }
         int TopicOrder { get; set; }
         bool IsFollowing { get; set; }
+        string Taxonomy { get; set; }
     }
 }

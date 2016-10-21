@@ -8,5 +8,6 @@
         public int TopicOrder { get; set; }
         public bool IsSubscribed { get; set; }
         public bool IsFollowing { get; set; }
+        public string Taxonomy { get; set; }
     }
 }

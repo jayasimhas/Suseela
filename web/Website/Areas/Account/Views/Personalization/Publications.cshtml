@@ -49,7 +49,7 @@
                         <thead class="hidden-large">
                             <tr>
                                 <th class="wd-55 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode" data-taxonomy="@channel.Taxonomy">@channel.ChannelName</h2>
 
                                     @if (!channel.IsSubscribed)
                                     {
@@ -144,7 +144,7 @@
                         <thead class="hidden-xs">
                             <tr>
                                 <th class="wd-54 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode" data-taxonomy="@channel.Taxonomy">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
@@ -226,7 +226,8 @@
 
                                     <tr class="@topicTRClass" data-row="@topicOrder">
 
-                                        <td class="wd-55">@topic.TopicName <input type="hidden" data-row-topic="@topic.TopicCode" /></td>
+                                        <td class="wd-55">@topic.TopicName 
+                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-taxonomy="@topic.Taxonomy"/></td>
                                         <td class="wd-25">
                                             <span class="@topicSpanClass">@topicLableText</span>
                                         </td>
