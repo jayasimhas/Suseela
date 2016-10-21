@@ -63,7 +63,7 @@ namespace Informa.Web.ViewModels
         #endregion
 
         /// <summary>
-        /// Get NAvigation URL for My View Items
+        /// IPMP:283 Get NAvigation URL for My View Items
         /// </summary>
         /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
@@ -88,7 +88,7 @@ namespace Informa.Web.ViewModels
             }
         }
         /// <summary>
-        /// Method to get the logged in user preferences
+        /// IPMP:283 Method to get the logged in user preferences
         /// </summary>
         /// <returns>list of user preferences</returns>        
         public Navigation GetUserPreferences()
@@ -156,7 +156,7 @@ namespace Informa.Web.ViewModels
         }
 
         /// <summary>
-        /// Method to get the logged in user subscriptions
+        /// IPMP:283 Method to get the logged in user subscriptions
         /// </summary>
         /// <returns>list of subscriptions</returns>
         public IEnumerable<ISubscription> GetValidSubscriptions()
