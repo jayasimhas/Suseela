@@ -1,56 +1,35 @@
 ----item----
 version: 1
-id: {F7178B75-9AA6-48EA-A70B-97D59C54B033}
+id: {9B8B99F3-5AE8-4B29-A320-DFF191C4E3AB}
 database: core
-path: /sitecore/content/Applications/Content Editor/Menues/Publish/Publish Site
-parent: {D3154765-60FE-49DC-B917-35E83AEF348F}
-name: Publish Site
+path: /sitecore/content/Applications/Content Editor/Ribbons/Chunks/Publish
+parent: {66738F84-31A9-43C9-9FCF-1515A849D6C5}
+name: Publish
 master: {00000000-0000-0000-0000-000000000000}
-template: {998B965E-6AB8-4568-810F-8101D60D0CC3}
-templatekey: Menu item
+template: {8F3D8F9B-2D76-4ACE-803F-35415D2B230A}
+templatekey: Chunk
 
 ----field----
-field: {335C6760-6C0E-4C6C-814C-A53D203F553E}
-name: Icon
-key: icon
-content-length: 29
+field: {8BB9A5E3-CAE8-49C6-B830-258A51D970C9}
+name: ID
+key: id
+content-length: 12
 
-Office/24x24/window_earth.png
-----field----
-field: {CAB694FC-E37C-44EB-9012-488B775CF638}
-name: Message
-key: message
-content-length: 14
-
-system:publish
-----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 24
-
-Custom/16x16/publish.png
+PublishChunk
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
-content-length: 3
+content-length: 2
 
-100
-----field----
-field: {56776EDF-261C-4ABC-9FE7-70C618795239}
-name: __Help link
-key: __help link
-content-length: 0
-
-
+99
 ----field----
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 304
+content-length: 133
 
-ar|sitecore\No Publishing|pd|-item:read|pe|-item:read|ar|sitecore\Full Publisher|pd|+item:read|pe|+item:read|ar|sitecore\Sitecore Client Publishing|pd|+item:read|pe|+item:read|ar|sitecore\Single Publisher|pd|-item:read|pe|-item:read|ar|sitecore\Single Publisher with Subitems|pd|-item:read|pe|-item:read|
+ar|sitecore\Sitecore Client Publishing|pd|+item:read|pe|+item:read|ar|sitecore\Sitecore Client Authoring|pd|+item:read|pe|+item:read|
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -61,22 +40,22 @@ content-length: 0
 ----version----
 language: da
 version: 1
-revision: 69a9aff4-497b-4687-a068-0f04c83e9cb5
+revision: 7c11d191-3bdc-475f-9b8d-f70896d15f9a
 
 ----field----
-field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
-name: Display name
-key: display name
-content-length: 16
+field: {C95D21BD-66C3-444B-A37F-D346CBAF2B55}
+name: Header
+key: header
+content-length: 5
 
-Udgiv hjemmeside
+Udgiv
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 16
+content-length: 5
 
-Udgiv hjemmeside
+Udgiv
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -90,7 +69,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151207T115242Z
+20151207T115225Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -104,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-69a9aff4-497b-4687-a068-0f04c83e9cb5
+7c11d191-3bdc-475f-9b8d-f70896d15f9a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151207T115242Z
+20151207T115225Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -122,22 +101,22 @@ sitecore\admin
 ----version----
 language: de-DE
 version: 1
-revision: 488986e6-841e-49ee-81cb-b15e295dd859
+revision: d0abf0f2-fa41-4f57-a086-ae4d64bc009c
 
 ----field----
-field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
-name: Display name
-key: display name
-content-length: 20
+field: {C95D21BD-66C3-444B-A37F-D346CBAF2B55}
+name: Header
+key: header
+content-length: 15
 
-Site veröffentlichen
+Veröffentlichen
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 20
+content-length: 15
 
-Site veröffentlichen
+Veröffentlichen
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -151,7 +130,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151207T115410Z
+20151207T115353Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -165,14 +144,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-488986e6-841e-49ee-81cb-b15e295dd859
+d0abf0f2-fa41-4f57-a086-ae4d64bc009c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151207T115410Z
+20151207T115353Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -183,29 +162,22 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 2baa9596-98bb-41a9-81a0-0c453e1a326f
+revision: 919ee365-4c27-4c4f-8410-9dfdc09bf63f
 
 ----field----
-field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
-name: Display name
-key: display name
-content-length: 12
+field: {C95D21BD-66C3-444B-A37F-D346CBAF2B55}
+name: Header
+key: header
+content-length: 7
 
-Publish site
-----field----
-field: {3B825E23-4C26-4910-BF7B-1265D57048CB}
-name: Hotkey
-key: hotkey
-content-length: 0
-
-
+Publish
 ----field----
 field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
 name: __Valid from
 key: __valid from
-content-length: 16
+content-length: 15
 
-20050404T072308Z
+20060207T125737
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -217,9 +189,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 15
 
-20060412T054826Z
+20060207T125737
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -233,14 +205,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2baa9596-98bb-41a9-81a0-0c453e1a326f
+919ee365-4c27-4c4f-8410-9dfdc09bf63f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20161018T085340Z
+20080423T113636:633445473967819927
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -258,22 +230,22 @@ content-length: 0
 ----version----
 language: ja-JP
 version: 1
-revision: ace833b4-39c5-4216-ac7a-7fb041c0bf05
+revision: 8b0732cb-dc15-4f0b-b3d3-31276dd3d5b9
 
 ----field----
-field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
-name: Display name
-key: display name
-content-length: 10
+field: {C95D21BD-66C3-444B-A37F-D346CBAF2B55}
+name: Header
+key: header
+content-length: 6
 
-サイトをパブリッシュ
+パブリッシュ
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 12
+content-length: 6
 
-パブリッシュ ウィザード
+パブリッシュ
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -287,7 +259,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151207T115532Z
+20151207T115513Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -301,14 +273,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ace833b4-39c5-4216-ac7a-7fb041c0bf05
+8b0732cb-dc15-4f0b-b3d3-31276dd3d5b9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151207T115532Z
+20151207T115513Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

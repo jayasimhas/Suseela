@@ -27,9 +27,15 @@ content-length: 39
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
+<<<<<<< HEAD
 content-length: 85
 
 ar|sitecore\Sitecore Client Publishing|pe|+item:read|pd|+item:read|a?|Everyone|p*|!*|
+=======
+content-length: 304
+
+ar|sitecore\Sitecore Client Publishing|pd|+item:read|pe|+item:read|ar|sitecore\Full Publisher|pd|+item:read|pe|+item:read|ar|sitecore\No Publishing|pd|-item:read|pe|-item:read|ar|sitecore\Single Publisher|pd|+item:read|pe|+item:read|ar|sitecore\Single Publisher with Subitems|pd|+item:read|pe|+item:read|
+>>>>>>> origin/IIS-499
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -148,7 +154,11 @@ sitecore\admin
 ----version----
 language: en
 version: 1
+<<<<<<< HEAD
 revision: e723d3c3-28aa-49b9-b33f-c9010dc5f880
+=======
+revision: f5d376e6-9c41-4365-add2-274bcadc7eff
+>>>>>>> origin/IIS-499
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -177,14 +187,24 @@ name: __Revision
 key: __revision
 content-length: 36
 
+<<<<<<< HEAD
 e723d3c3-28aa-49b9-b33f-c9010dc5f880
+=======
+f5d376e6-9c41-4365-add2-274bcadc7eff
+>>>>>>> origin/IIS-499
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
+<<<<<<< HEAD
 content-length: 15
 
 20071008T132521
+=======
+content-length: 16
+
+20161018T083420Z
+>>>>>>> origin/IIS-499
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

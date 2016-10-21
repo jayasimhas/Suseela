@@ -1509,6 +1509,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\ExperienceEditor.js" />
+    <Content Include="sitecore\shell\Override\Application\Dialogs\Publish\Publish.xml" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
