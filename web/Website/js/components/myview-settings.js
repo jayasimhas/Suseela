@@ -311,6 +311,7 @@ $(function(){
 	});
 	
 	$('.registrationBtn').click(function () {
+	
 		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
 		    UserPreferences = {}, allpublications = $('.publicationPan', '#allPublicationsPan');
 			UserPreferences.PreferredChannels = [];
