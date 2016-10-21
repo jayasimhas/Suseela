@@ -305,7 +305,7 @@ namespace Informa.Library.PXM.Helpers
             foreach(var d in divs) {
                 
                 var sib = GetNewAnswerNode(d);
-                var newNode = HtmlNode.CreateNode($"<p class=\"article-interview__answer\">{d.InnerText}</p>");
+                var newNode = HtmlNode.CreateNode($"<div class=\"article-interview__answer\">{d.InnerText}</div>");
                 sib.PrependChild(newNode);
 
                 d.ParentNode.RemoveChild(d);
@@ -317,7 +317,7 @@ namespace Informa.Library.PXM.Helpers
         private HtmlNode GetNewAnswerNode(HtmlNode answerRoot) {
             var sib = answerRoot.NextSibling;
             if (sib.Attributes["class"] == null || !sib.Attributes["class"].Value.Equals("answer-wrap")) {
-                sib = HtmlNode.CreateNode($"<p class=\"answer-wrap\"></p>");
+                sib = HtmlNode.CreateNode($"<div class=\"answer-wrap\"></div>");
                 answerRoot.ParentNode.InsertAfter(sib, answerRoot);
             }
 
