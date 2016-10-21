@@ -23,6 +23,8 @@
     string publicationStatusText = string.Empty;
     int channelOrder = 0;
     int topicOrder = 0;
+    string mobileChannelSactionsStatus = string.Empty;
+    string pickAndChooseSectionClassMobile = string.Empty;
 
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
@@ -40,9 +42,10 @@
             publicationFollowButtonClass = IsFollowingAnyTopics || isFirst ? "hideBtn" : "";
             publicationFollowingButtonClass = IsFollowingAnyTopics && !isFirst ? "" : "hideBtn";
             publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
+            mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
+            pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
             isFirst = false;
 
-            //@Html.HiddenFor(m=>m.isChannelBasedRegistration.ToString().ToLower())
             <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
@@ -93,13 +96,13 @@
 
                                 }
                             </tr>
-                            <tr class="accordionStatus pickTxt">
+                            <tr class="accordionStatus pickTxt @pickAndChooseSectionClassMobile">
                                 <th colspan="3" class="nopad ">
                                     <hr />
                                 </th>
                             </tr>
 
-                            <tr class="accordionStatus">
+                            <tr class="accordionStatus @pickAndChooseSectionClassMobile">
                                 <th colspan="2">
                                     <p class="pickTxt">@Model.PickAndChooseLableMobileText</p>
                                 </th>
@@ -118,7 +121,7 @@
                             </tr>
 
 
-                            <tr class="accordionStatus hideRow flwLbl">
+                            <tr class="accordionStatus flwLbl @mobileChannelSactionsStatus">
                                 <th colspan="2">
                                     <div>
                                         <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
@@ -131,9 +134,8 @@
                                         <a class="mobileMode" href="javascript: void(0);"></a>
                                     </div>
                                 </th>
-
                             </tr>
-                            <tr class="accordionStatus flwBtn">
+                            <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
                                 <th colspan="3">
                                     <div class="smfollowingBtn">
                                         <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
