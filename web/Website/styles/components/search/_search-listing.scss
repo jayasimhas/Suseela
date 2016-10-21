@@ -91,9 +91,11 @@
 	display: inline-block;
 	width: 1px;
 	height: 20px;
-	margin: 0 15px;
 	vertical-align: sub;
 	background-color: $color-light-gray;
+    position:absolute;
+    top:0px;
+    right:0px;
   }
 
   &__bookmark {
@@ -135,6 +137,12 @@
 	  cursor: pointer;
 	  border-right: 0;
 	}
+  }
+
+  .result-container {
+      position:relative;
+      margin-right:15px;
+      padding-right:15px;
   }
 
   .highlighted-term {
