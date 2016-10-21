@@ -10,7 +10,7 @@ $(document).ready(function () {
     sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
 });
 $(window).on('scroll', function () {
-    if (articleSidebarAdParent.length && !sidebarIsTaller) {
+    if (articleSidebarAdParent && articleSidebarAdParent.length && !sidebarIsTaller) {
         // pageYOffset instead of scrollY for IE / pre-Edge compatibility
         stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
         if (articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
