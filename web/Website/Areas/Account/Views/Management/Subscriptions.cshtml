@@ -68,13 +68,15 @@
                             {
                                 string parentrow = "ptc" + i;
                                 string active = item.IsCurrentPublication ? "active" : string.Empty;
+                                string pubExpiryDate = item.Expiration.Equals(DateTime.MinValue) ? string.Empty : item.Expiration.ToString("d MMMM yyyy");
 
                                 @*Desktop section Starts*@
                                 <tr class="parent @parentrow @active hidden-xs" role="row">
                                     <td colspan="2" class="sortable-table__col"><span class="accordian"></span> @item.Publication</td>
-                                    <td class="sortable-table__col">@item.Expiration.ToString("d MMMM yyyy")</td>
+                                    <td class="sortable-table__col">@pubExpiryDate</td>
                                     <td class="sortable-table__col hidden-xs">
-                                        @if (item.Renewable)
+                                      @{ 
+                                        if (item.Renewable)
                                         {
                                             <a class="button button--outline click-utag"
                                                data-info='{"event_name": "subscription_renew"}'
@@ -82,43 +84,63 @@
                                                 @Model.Renew
                                             </a>
                                         }
-                                        @if (item.Subscribable)
+                                        else if (item.Subscribable)
+                                        {
+                                            <a class="button button--outline click-utag"
+                                               data-info='{"event_name": "subscription_subscribe"}'
+                                               href="#">
+                                                @Model.Subscribed
+                                            </a>
+                                        }
+                                        else
                                         {
                                             <a class="button button--outline click-utag"
                                                data-info='{"event_name": "subscription_subscribe"}'
                                                href="@Model.OffSiteSubscriptionLink">
                                                 @Model.Subscribe
                                             </a>
+
                                         }
                                         <span class="accordian"></span>
+                                      }
                                     </td>
                                 </tr>
-                                if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
-                                {
-                                    string childrow = "tc" + i;
-                                    foreach (var taxonomy in item.TaxonomyItems)
-                                        {
+                                          if (item.ChannelItems != null && item.ChannelItems.Any())
+                                          {
+                                              string childrow = "tc" + i;
+                                              foreach (var channel in item.ChannelItems)
+                                              {
                                         <tr class="child @childrow hidden-xs" role="row">
                                             <td></td>
-                                            <td class="hidden-lg" colspan="2">@taxonomy.Item_Name</td>
-                                            <td class="hidden-xs sortable-table__col" colspan="2">@taxonomy.Item_Name</td>
+                                            <td class="hidden-lg" colspan="2">@channel.ChannelName</td>
+                                            <td class="hidden-xs sortable-table__col" colspan="2">@channel.ChannelName</td>
                                             <td class="sortable-table__col hidden-xs">
-                                                @if (item.Renewable)
-                                                {
+                                                @{ 
+                                                    if (channel.Renewable)
+                                                    {
                                                     <a class="button button--outline click-utag"
                                                        data-info='{"event_name": "subscription_renew"}'
                                                        href="@Model.OffSiteRenewLink">
                                                         @Model.Renew
                                                     </a>
-                                                }
-                                                @if (item.Subscribable)
-                                                {
-                                                    <a class="button button--outline click-utag"
-                                                       data-info='{"event_name": "subscription_subscribe"}'
-                                                       href="@Model.OffSiteSubscriptionLink">
-                                                        @Model.Subscribe
-                                                    </a>
-                                                }
+                                                    }
+                                                    else if (channel.Subscribable)
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "subscription_subscribe"}'
+                                                           href="#">
+                                                            @Model.Subscribed
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "subscription_subscribe"}'
+                                                           href="@Model.OffSiteSubscriptionLink">
+                                                            @Model.Subscribe
+                                                        </a>
+                                                    }
+                                                   }
                                             </td>
                                         </tr>
                                     }
@@ -133,13 +155,14 @@
                     @*Mobile section Starts*@
                 foreach (var item in Model.SubscriptionViewModels)
                 {
-
+                    string pubExpiryDate = item.Expiration.Equals(DateTime.MinValue) ? string.Empty : item.Expiration.ToString("d MMMM yyyy");
                         <div class="hidden-lg">
                             <div class="tableMrow">
                                 <div class="title maintitle active">@Model.PublicationText</div>
                                 <div class="pubName">@item.Publication</div>
                                 <div class="pubSubscribe">
-                                    @if (item.Renewable)
+                                @{
+                                    if (item.Renewable)
                                     {
                                         <a class="button button--outline click-utag"
                                            data-info='{"event_name": "subscription_renew"}'
@@ -147,44 +170,65 @@
                                             @Model.Renew
                                         </a>
                                     }
-                                    @if (item.Subscribable)
+                                    else if (item.Subscribable)
+                                    {
+                                        <a class="button button--outline click-utag"
+                                           data-info='{"event_name": "subscription_subscribe"}'
+                                           href="#">
+                                            @Model.Subscribed
+                                        </a>
+                                    }
+                                    else
                                     {
                                         <a class="button button--outline click-utag"
                                            data-info='{"event_name": "subscription_subscribe"}'
                                            href="@Model.OffSiteSubscriptionLink">
                                             @Model.Subscribe
                                         </a>
+
                                     }
+                                   }
                                 </div>
                                 <div class="title">@Model.ExpirationDateText</div>
                                 <div class="sortable-table__col">
-                                    @item.Expiration.ToString("d MMMM yyyy")
+                                    @pubExpiryDate
                                 </div>
-                                @if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
+                                @if (item.ChannelItems != null && item.ChannelItems.Any())
                                 {
                                     <div class="subjects">
                                         <div class="hidden-lg title">Subjects</div>
-                                        @foreach (var taxonomy in item.TaxonomyItems)
+                                        @foreach (var channel in item.ChannelItems)
                                         {
                                             <div class="tablerow clearfix">
-                                                <div class="pubName">@taxonomy.Item_Name</div>
+                                                <div class="pubName">@channel.ChannelName</div>
                                                 <div class="pubSubscribe">
-                                                    @if (item.Renewable)
-                                                    {
-                                                        <a class="button button--outline click-utag"
-                                                           data-info='{"event_name": "subscription_renew"}'
-                                                           href="@Model.OffSiteRenewLink">
-                                                            @Model.Renew
-                                                        </a>
-                                                    }
-                                                    @if (item.Subscribable)
-                                                    {
-                                                        <a class="button button--outline click-utag"
-                                                           data-info='{"event_name": "subscription_subscribe"}'
-                                                           href="@Model.OffSiteSubscriptionLink">
-                                                            @Model.Subscribe
-                                                        </a>
-                                                    }
+                                                    @{ 
+                                                        if (channel.Renewable)
+                                                        {
+                                                            <a class="button button--outline click-utag"
+                                                               data-info='{"event_name": "subscription_renew"}'
+                                                               href="@Model.OffSiteRenewLink">
+                                                                @Model.Renew
+                                                            </a>
+                                                        }
+                                                        else if (channel.Subscribable && !channel.Renewable)
+                                                        {
+                                                            <a class="button button--outline click-utag"
+                                                               data-info='{"event_name": "subscription_subscribe"}'
+                                                               href="#">
+                                                                @Model.Subscribed
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a class="button button--outline click-utag"
+                                                               data-info='{"event_name": "subscription_subscribe"}'
+                                                               href="@Model.OffSiteSubscriptionLink">
+                                                                @Model.Subscribe
+                                                            </a>
+
+                                                            }
+                                                        }
                                                 </div>
                                             </div>
                                         }

@@ -1,0 +1,257 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.IChannelsViewModel
+@using Informa.Library.User.UserPreference;
+
+@if (Model.Channels != null && Model.Channels.Any())
+{
+    var Channels = Model.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
+    IList<Topic> Topics = null;
+    string topicTRClass = string.Empty;
+    string topicSpanClass = string.Empty;
+    string topicLableText = string.Empty;
+    string subscribeButtonClass = string.Empty;
+    string followAllButtonClass = string.Empty;
+    string unfollowAllButtonClass = string.Empty;
+    string tboadyClass = string.Empty;
+    bool isFirst = true;
+    string collapsedClss = string.Empty;
+    string pickAndChooseSectionClass = string.Empty;
+    bool IsFollowingAllTopics;
+    bool NotFollowingAnyTopic;
+    bool IsFollowingAnyTopics;
+    string publicationFollowButtonClass = string.Empty;
+    string publicationFollowingButtonClass = string.Empty;
+    string publicationStatusText = string.Empty;
+    int channelOrder = 0;
+    int topicOrder = 0;
+    string mobileChannelSactionsStatus = string.Empty;
+    string pickAndChooseSectionClassMobile = string.Empty;
+
+    <div id="allPublicationsPan">
+        @foreach (Channel channel in Channels)
+        {
+            channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
+            IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();
+            NotFollowingAnyTopic = !channel.Topics.Where(ch => ch.IsFollowing).Any();
+            IsFollowingAnyTopics = channel.Topics.Where(ch => ch.IsFollowing).Any();
+            subscribeButtonClass = channel.IsSubscribed ? "" : "subscribe";
+            followAllButtonClass = IsFollowingAllTopics ? "hideBtn" : NotFollowingAnyTopic ? "fr" : "";
+            unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
+            tboadyClass = isFirst ? "" : "tbodyhidden";
+            collapsedClss = isFirst ? "expanded" : "";
+            pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
+            publicationFollowButtonClass = IsFollowingAnyTopics || isFirst ? "hideBtn" : "";
+            publicationFollowingButtonClass = IsFollowingAnyTopics && !isFirst ? "" : "hideBtn";
+            publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
+            mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
+            pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
+            isFirst = false;
+
+            <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
+            <div class="publicationPan donesubscribe" data-row="@channelOrder">
+                <div class="table-responsive">
+                    <table class="table" id="@channel.ChannelCode">
+                        <thead class="hidden-large">
+                            <tr>
+                                <th class="wd-55 firstrow">
+                                    <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
+
+                                    @if (!channel.IsSubscribed)
+                                    {
+                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                            <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                            @Model.SubscribedButtonText
+                                        </div>
+                                    }
+                                </th>
+                                <th class="wd-25 firstrow"></th>
+                                <th class="wd-15 firstrow">
+                                    <div class="rowlines">
+                                        <div class="vline"></div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </th>
+                            </tr>
+                            @if (!Model.isFromRegistration)
+                            {
+                                <tr class="showinview">
+                                    <th colspan="3">
+                                        <p>@Model.SubscribeMessageText</p>
+                                    </th>
+                                </tr>
+                                }
+                            <tr>
+                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                {
+                                    <th class="pub-subscription-subtitle" colspan="3">
+                                        @Html.Raw(Model.SubscribedMessageText)
+                                    </th>
+
+                                }
+                            </tr>
+                            <tr class="accordionStatus pickTxt @pickAndChooseSectionClassMobile">
+                                <th colspan="3" class="nopad ">
+                                    <hr />
+                                </th>
+                            </tr>
+
+                            <tr class="accordionStatus @pickAndChooseSectionClassMobile">
+                                <th colspan="2">
+                                    <p class="pickTxt">@Model.PickAndChooseLableMobileText</p>
+                                </th>
+                                <th>
+                                    <div class="accordionImg">
+                                        <a class="mobileMode @collapsedClss" href="javascript: void(0);"></a>
+                                    </div>
+                                </th>
+                            </tr>
+
+
+                            <tr class="graybg">
+                                <th colspan="3" class="nopad">
+                                    <hr />
+                                </th>
+                            </tr>
+
+
+                            <tr class="accordionStatus flwLbl @mobileChannelSactionsStatus">
+                                <th colspan="2">
+                                    <div>
+                                        <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
+                                        <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
+                                        <input type="hidden" class="lableStatus" value="@publicationStatusText" />
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="accordionImg">
+                                        <a class="mobileMode" href="javascript: void(0);"></a>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
+                                <th colspan="3">
+                                    <div class="smfollowingBtn">
+                                        <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
+                                        <span class="unfollowAllBtn @unfollowAllButtonClass">@Model.UnfollowAllButtonText</span>
+                                    </div>
+                                </th>
+                            </tr>
+
+                        </thead>
+                        <thead class="hidden-xs">
+                            <tr>
+                                <th class="wd-54 firstrow">
+                                    <h2 data-publication="@channel.ChannelCode"  data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
+                                    @if (!channel.IsSubscribed)
+                                    {
+                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                            <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                            @Model.SubscribedButtonText
+                                        </div>
+                                    }
+                                </th>
+                                <th class="wd-26 firstrow">
+                                    <div>
+                                        <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
+                                        <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
+                                        <input type="hidden" class="lableStatus" value="@publicationStatusText" />
+                                    </div>
+                                </th>
+                                <th class="wd-15 firstrow">
+                                    <div class="accordionImg">
+                                        <a class="desktopMode @collapsedClss" href="javascript: void(0);"></a>
+                                    </div>
+                                    <div class="rowlines">
+                                        <div class="vline"></div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </th>
+                            </tr>
+                            @if(!Model.isFromRegistration)
+                            { 
+                            <tr class="showinview">
+                                <th colspan="3">
+                                    <p>@Model.SubscribeMessageText</p>
+                                </th>
+                            </tr>
+                            }
+                            <tr>
+                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                {
+                                    <th class="pub-subscription-subtitle" colspan="3">
+                                        @Html.Raw(Model.SubscribedMessageText)
+                                    </th>
+
+                                }
+                            </tr>
+                            <tr class="accCont @pickAndChooseSectionClass">
+                                <th colspan="3" class="nopad">
+                                    <hr />
+                                </th>
+                            </tr>
+                            <tr class="accCont @pickAndChooseSectionClass">
+                                <th class="wd-55 pbot"><p>@Model.PickAndChooseLableText</p></th>
+                                <th class="wd-25 pbot">
+                                    <div>
+                                        <span class="unfollowAllBtn @unfollowAllButtonClass">@Model.UnfollowAllButtonText</span>
+                                        <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
+                                    </div>
+                                </th>
+                                <th class="wd-15"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="@tboadyClass">
+                            @if (channel.Topics != null && channel.Topics.Any())
+                            {
+
+                                Topics = channel.Topics.OrderBy(x => x.TopicOrder == 0).ThenBy(x => x.TopicOrder).ToList();
+
+                                foreach (Topic topic in Topics)
+                                {
+                                    topicOrder = Model.IsNewUser ? ++topicOrder : topic.TopicOrder;
+                                    topicTRClass = topic.IsFollowing ? "followingrow" : "followrow disabled";
+                                    topicSpanClass = topic.IsFollowing ? "followingBtn" : "followBtn";
+                                    topicLableText = topic.IsFollowing ? Model.FollowingButtonText : Model.FollowButtonText;
+
+                                    <tr class="@topicTRClass" data-row="@topicOrder">
+
+                                        <td class="wd-55">@topic.TopicName 
+                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId"/></td>
+                                        <td class="wd-25">
+                                            <span class="@topicSpanClass">@topicLableText</span>
+                                        </td>
+                                        <td class="wd-15">
+                                            <div class="rowlines">
+                                                <div class="move">@Model.MoveLableText</div>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+
+    </div>
+}
