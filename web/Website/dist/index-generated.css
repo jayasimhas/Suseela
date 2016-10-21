@@ -1278,6 +1278,70 @@ section: Alerts
   100% {
     opacity: 0; } }
 
+.agroBuyers h1 {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+.agroBuyers .sub-heading-text {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #231f20;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  font-size: 1.5em;
+  line-height: 30px; }
+
+.agroBuyers .buyers-guide-listing {
+  width: 100%;
+  float: left;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+  .agroBuyers .buyers-guide-listing .buyers-guide-row {
+    width: 100%;
+    float: left; }
+    .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
+      width: 30%;
+      float: left;
+      margin-top: 12px;
+      margin-top: 0.75rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      margin-right: 3%; }
+      @media (max-width: 480px) {
+        .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
+          width: 100%; } }
+      .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
+        width: 100%; }
+        .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
+          width: 100%; }
+      .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-right__title {
+        font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        font-style: normal; }
+
+.agroBuyers hr {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+.agroBuyers .contact_terms {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  clear: both;
+  font-family: "PT Serif", Georgia, serif;
+  font-style: regular;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  .agroBuyers .contact_terms .orange {
+    color: #F5821F; }
+
 .banner {
   margin-bottom: 32px;
   margin-bottom: 2rem;

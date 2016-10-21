@@ -25,6 +25,11 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		public IFrameControl()
 		{
 			InitializeComponent();
+
+            if (!DesignMode)
+            {
+                uxThirdPartyToolType.SelectedIndex = 0;
+            }
 		}
 
 		public void SetSitecoreItemGetter(SitecoreItemGetter siteCoreItemGetter)
@@ -442,6 +447,24 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		{
 			sourceLabel.Text = this.uxIFrameSource.Text;
 		}
-	}
+
+        private void uxThirdPartyToolType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            uxTableauPanel.Hide();
+            uxIFramePanel.Hide();
+
+            if (uxThirdPartyToolType.SelectedIndex==1)
+            {
+                uxIFramePanel.Show(); 
+                uxIFramePanel.Dock = DockStyle.Fill;
+            }
+            else if(uxThirdPartyToolType.SelectedIndex == 2)
+            {
+                uxTableauPanel.Show();
+                uxTableauPanel.Dock = DockStyle.Fill;
+            }
+        }
+    }
 }
 
