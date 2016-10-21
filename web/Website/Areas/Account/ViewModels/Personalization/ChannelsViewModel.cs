@@ -201,7 +201,7 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
-                            channel.Taxonomy = channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
+                            ////channel.Taxonomy =  channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
                             channel.ChannelOrder = GetChannelOrder(channelPage);
                             channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
