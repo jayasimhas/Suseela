@@ -10,7 +10,7 @@
         </div>
         <hr />
         <p class="page-registration__introduction">@Model.SubTitle</p>
-        @{var nextStepUrl = Model.IsGlobalToggleEnabled ? Model.NextStepUrl : Model.RegisterReturnUrl;}
+        @{var nextStepUrl = (Model.IsGlobalToggleEnabled && !string.IsNullOrEmpty(Model.NextStepUrl)) ? Model.NextStepUrl : Model.RegisterReturnUrl;}
         <form class="form-registration-optins"
               data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
               data-on-success="@nextStepUrl">
@@ -22,12 +22,16 @@
             </p>
 
             <div>
-
+                @{var CurrentPublication = string.Empty; }
                 @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
-            {
+                {
 
-                var item = Model.PublicationNewsletterOptIns[i];
-                var checkBobClassname = item.OptIn ? "newsletter_checkbox label-check wcs-c-on" : "newsletter_checkbox label-check";
+                    var item = Model.PublicationNewsletterOptIns[i];
+                    var checkBobClassname = item.OptIn ? "newsletter_checkbox label-check wcs-c-on" : "newsletter_checkbox label-check";                    
+                    if (item.OptIn)
+                    {
+                        CurrentPublication = item.Publication.Name;
+                    }
                     <div class="newsletter_box">
                         <div class="site_div">
                             <h1 class="article-preview__headline">@item.Publication.Name</h1>                           
@@ -54,7 +58,7 @@
                     <div class="page-registration__labeled-checkbox label-check">
                         <input name="offers" id="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
                         <span class="chk_box"></span>
-                        <label class="checkbox-label">@Model.OffersLabelText</label>
+                        <label class="checkbox-label">@Model.OffersLabelText.Replace("#PubName#", CurrentPublication)</label>
                     </div>
                     <div class="page-account__submit-wrapper">
                         <button type="submit" class="button--filled registration-final js-register-final">@Model.SubmitText</button>
