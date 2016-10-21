@@ -42,7 +42,8 @@
             publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
             isFirst = false;
 
-            @Html.HiddenFor(m=>m.isChannelBasedRegistration)
+            //@Html.HiddenFor(m=>m.isChannelBasedRegistration.ToString().ToLower())
+            <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
