@@ -62,6 +62,7 @@
 
         public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
         public bool isChannelBasedRegistration { get; set; }
+        public bool isFromRegistration { get; set; }
         public IList<Channel> Channels => GetChannels();
 
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
@@ -71,8 +72,8 @@
         {
 
             Item CurrentItem = Sitecore.Context.Item;
-            string isFromRegistration = CurrentItem["IsFromRegistration"];
-            if (!string.IsNullOrEmpty(isFromRegistration) && isFromRegistration == "1")
+            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"])?false:true;
+            if (isFromRegistration)
             {
                 return GetPublicationAsChannel();
             }
@@ -200,11 +201,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
+                            ////channel.Taxonomy =  channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
                             channel.ChannelOrder = GetChannelOrder(channelPage);
-
-                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                            channel.IsSubscribed = true;
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+                            channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
                             GetTopics(channel, channelPage);
 

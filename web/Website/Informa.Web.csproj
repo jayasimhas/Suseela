@@ -1104,7 +1104,6 @@
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewToggleViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\PersonalizationMessageViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Registration\RegisterContentCustomizeViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
@@ -1222,6 +1221,7 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -1704,6 +1704,9 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1719,6 +1722,7 @@
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\components\article-sidebar-component.js" />
@@ -1816,13 +1820,20 @@
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
-    <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
     <Content Include="App_Config\Prefetch\Core.config" />
     <Content Include="App_Config\Prefetch\Master.config" />
     <Content Include="App_Config\Prefetch\Webdb.config" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1830,6 +1841,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1947,7 +1959,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
@@ -2011,7 +2022,6 @@
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
-    <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2149,6 +2159,7 @@
     <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
+    <Content Include="Views\MyView\MyViewPage.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
