@@ -326,6 +326,7 @@ namespace Informa.Library.PXM.Helpers {
             var doc = CreateDocument(content);
             var paras = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]//p");
             foreach(var q in paras) {
+                q.Name = "div";
                 var a = q.Attributes["class"];
                 if (a != null && !a.Value.Contains("article-interview__answer")) 
                     a.Value = $"{a.Value} article-interview__answer";
@@ -339,16 +340,6 @@ namespace Informa.Library.PXM.Helpers {
                 oldWrapNode.RemoveChild(q);
             }
             
-            var divs = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]");
-            foreach(var d in divs) {
-                
-                var sib = GetNewAnswerNode(d);
-                var newNode = HtmlNode.CreateNode($"<div class=\"article-interview__answer\">{d.InnerText}</div>");
-                sib.PrependChild(newNode);
-
-                d.ParentNode.RemoveChild(d);
-            }
-
             return doc.DocumentNode.OuterHtml;
         }
 
