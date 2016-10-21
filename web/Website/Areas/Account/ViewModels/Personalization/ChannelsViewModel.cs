@@ -75,15 +75,18 @@
             isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"])?false:true;
             if (isFromRegistration)
             {
-                return GetPublicationAsChannel();
+                return GetPublicationDetailsForRegistration();
             }
             else
             {
                 return GetAllChannels();
             }
         }
-
-        private IList<Channel> GetPublicationAsChannel()
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Publication details
+        /// </summary>
+        /// <returns>Publication and Channels details</returns>
+        private IList<Channel> GetPublicationDetailsForRegistration()
         {
             var channels = new List<Channel>();
 
@@ -104,12 +107,16 @@
                 channel.IsSubscribed = true;
                 //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
-                GetChannelsAsTopics(channel);
+                GetTopicsForRegistration(channel);
                 channels.Add(channel);
             }
             return channels;
         }
-        private void GetChannelsAsTopics(Channel channel)
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Topic details
+        /// </summary>
+        /// <param name="channel">Channel object</param>
+        private void GetTopicsForRegistration(Channel channel)
         {
             channel.Topics = new List<Topic>();
 
@@ -123,8 +130,9 @@
                 if (channelsPageItem != null)
                 {
                     var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                    //channel based registration
-                    if (channelPages.Count() > 1)
+                   
+                    //channel based content customization registration
+                    if (channelPages.Count()>1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase))
                     {
                         isChannelBasedRegistration = true;
                         if (channelPages != null && channelPages.Any())
@@ -136,8 +144,7 @@
                                 topic.TopicId = channelPage._Id.ToString();
                                 topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                                 topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                                // topic.TopicOrder = GetChannelOrder(channelPage);
-
+                               
                                 // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
                                 topic.IsSubscribed = true;
                                 //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
@@ -147,6 +154,7 @@
                     }
                     else
                     {
+                        //topic based content customization registration
                         isChannelBasedRegistration = false;
                         var channelPage = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>().FirstOrDefault();
                         var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
