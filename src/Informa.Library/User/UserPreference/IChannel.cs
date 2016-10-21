@@ -13,6 +13,5 @@ namespace Informa.Library.User.UserPreference
         bool IsSubscribed { get; set; }
         IList<Topic> Topics { get; set; }
         bool IsFollowing { get; set; }
-        string Taxonomy { get; set; }
     }
 }

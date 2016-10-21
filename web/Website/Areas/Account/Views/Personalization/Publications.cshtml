@@ -23,6 +23,8 @@
     string publicationStatusText = string.Empty;
     int channelOrder = 0;
     int topicOrder = 0;
+    string mobileChannelSactionsStatus = string.Empty;
+    string pickAndChooseSectionClassMobile = string.Empty;
 
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
@@ -40,9 +42,10 @@
             publicationFollowButtonClass = IsFollowingAnyTopics || isFirst ? "hideBtn" : "";
             publicationFollowingButtonClass = IsFollowingAnyTopics && !isFirst ? "" : "hideBtn";
             publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
+            mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
+            pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
             isFirst = false;
 
-            //@Html.HiddenFor(m=>m.isChannelBasedRegistration.ToString().ToLower())
             <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
@@ -50,7 +53,7 @@
                         <thead class="hidden-large">
                             <tr>
                                 <th class="wd-55 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode" data-taxonomy="@channel.Taxonomy">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
 
                                     @if (!channel.IsSubscribed)
                                     {
@@ -76,11 +79,6 @@
                                     </div>
                                 </th>
                             </tr>
-                            <tr class="accordionStatus">
-                                <th colspan="3" class="nopad">
-                                    <hr />
-                                </th>
-                            </tr>
                             @if (!Model.isFromRegistration)
                             {
                                 <tr class="showinview">
@@ -98,13 +96,13 @@
 
                                 }
                             </tr>
-                            <tr class="accordionStatus">
-                                <th colspan="3" class="nopad">
+                            <tr class="accordionStatus pickTxt @pickAndChooseSectionClassMobile">
+                                <th colspan="3" class="nopad ">
                                     <hr />
                                 </th>
                             </tr>
 
-                            <tr class="accordionStatus">
+                            <tr class="accordionStatus @pickAndChooseSectionClassMobile">
                                 <th colspan="2">
                                     <p class="pickTxt">@Model.PickAndChooseLableMobileText</p>
                                 </th>
@@ -123,16 +121,21 @@
                             </tr>
 
 
-                            <tr class="accordionStatus hideRow flwLbl">
-                                <th colspan="3">
+                            <tr class="accordionStatus flwLbl @mobileChannelSactionsStatus">
+                                <th colspan="2">
                                     <div>
                                         <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
                                         <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
                                         <input type="hidden" class="lableStatus" value="@publicationStatusText" />
                                     </div>
                                 </th>
+                                <th>
+                                    <div class="accordionImg">
+                                        <a class="mobileMode" href="javascript: void(0);"></a>
+                                    </div>
+                                </th>
                             </tr>
-                            <tr class="accordionStatus flwBtn">
+                            <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
                                 <th colspan="3">
                                     <div class="smfollowingBtn">
                                         <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
@@ -145,7 +148,7 @@
                         <thead class="hidden-xs">
                             <tr>
                                 <th class="wd-54 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode" data-taxonomy="@channel.Taxonomy">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode"  data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
@@ -228,7 +231,7 @@
                                     <tr class="@topicTRClass" data-row="@topicOrder">
 
                                         <td class="wd-55">@topic.TopicName 
-                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-taxonomy="@topic.Taxonomy"/></td>
+                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId"/></td>
                                         <td class="wd-25">
                                             <span class="@topicSpanClass">@topicLableText</span>
                                         </td>

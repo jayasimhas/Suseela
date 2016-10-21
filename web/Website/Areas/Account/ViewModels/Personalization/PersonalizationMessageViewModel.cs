@@ -57,7 +57,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.RightRailMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.RightRailMessage");
+                return TextTranslator.Translate("RegisteredUser.RightRailMessage");
 
             return TextTranslator.Translate("CorporateUser.RightRailMessage");
         }
@@ -68,7 +68,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.LandingPageMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.LandingPageMessage");
+                return TextTranslator.Translate("RegisteredUser.LandingPageMessage");
 
             return TextTranslator.Translate("CorporateUser.LandingPageMessage");
         }
@@ -78,7 +78,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.ArticlePageMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.ArticlePageMessage");
+                return TextTranslator.Translate("RegisteredUser.ArticlePageMessage");
 
             return TextTranslator.Translate("CorporateUser.ArticlePageMessage");
         }

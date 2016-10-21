@@ -1,4 +1,5 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.MyViewSettingsViewModel
+
 @if (Model.IsFromRegistration)
     {
         <div class="main__content myview-settings">
@@ -14,6 +15,12 @@
                 <div class="sub-heading-text">
                     @Html.Raw(Model.SectionDescription)
                 </div>
+                <div class="alert-error register-not-selected js-form-error js-form-error-Required">
+                    <svg class="alert__icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+                    <p class="page-account-contact__error">@Model.NotFollowedError</p>
+                </div>
                 <div class="alert-error register-error js-form-error js-form-error-Required">
                     <svg class="alert__icon">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
@@ -25,6 +32,12 @@
                 @{
                     Html.RenderPartial("/Areas/Account/Views/Personalization/Publications.cshtml", Model.ChannelsViewModel);
                 }
+            </div>
+            <div class="alert-error register-not-selected js-form-error js-form-error-Required">
+                <svg class="alert__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                </svg>
+                <p class="page-account-contact__error">@Model.NotFollowedError</p>
             </div>
             <div class="alert-error register-error js-form-error js-form-error-Required">
                 <svg class="alert__icon">
@@ -42,7 +55,7 @@
             <div class="modal-overlay"></div>
             <div class="modal-view">
                 <p class="close-modal">X</p>
-                <h4>@Model.NotFollowedError</h4>
+                <h4>@Model.SavePreferencesMessage</h4>
             </div>
             <input type="hidden" value="0" id="validatePreference" />
         </div>
