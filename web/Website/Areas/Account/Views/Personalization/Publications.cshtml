@@ -42,7 +42,7 @@
             publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
             isFirst = false;
 
-
+            @Html.HiddenFor(m=>m.isChannelBasedRegistration)
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
@@ -80,16 +80,16 @@
                                     <hr />
                                 </th>
                             </tr>
-                            @*@if (!channel.IsSubscribed)
-                            {*@
+                            @if (!Model.isFromRegistration)
+                            {
                                 <tr class="showinview">
                                     <th colspan="3">
                                         <p>@Model.SubscribeMessageText</p>
                                     </th>
                                 </tr>
-                                @*//}*@
+                                }
                             <tr>
-                                @if (channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
                                 {
                                     <th class="pub-subscription-subtitle" colspan="3">
                                         @Html.Raw(Model.SubscribedMessageText)
@@ -178,7 +178,7 @@
                                     </div>
                                 </th>
                             </tr>
-                            @if(!channel.IsSubscribed)
+                            @if(!Model.isFromRegistration)
                             { 
                             <tr class="showinview">
                                 <th colspan="3">
@@ -187,7 +187,7 @@
                             </tr>
                             }
                             <tr>
-                                @if (channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
                                 {
                                     <th class="pub-subscription-subtitle" colspan="3">
                                         @Html.Raw(Model.SubscribedMessageText)

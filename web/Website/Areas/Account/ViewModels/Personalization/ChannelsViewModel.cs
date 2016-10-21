@@ -62,6 +62,7 @@
 
         public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
         public bool isChannelBasedRegistration { get; set; }
+        public bool isFromRegistration { get; set; }
         public IList<Channel> Channels => GetChannels();
 
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
@@ -71,8 +72,8 @@
         {
 
             Item CurrentItem = Sitecore.Context.Item;
-            string isFromRegistration = CurrentItem["IsFromRegistration"];
-            if (!string.IsNullOrEmpty(isFromRegistration) && isFromRegistration == "1")
+            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"])?false:true;
+            if (isFromRegistration)
             {
                 return GetPublicationAsChannel();
             }
