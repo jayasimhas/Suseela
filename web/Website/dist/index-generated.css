@@ -6005,6 +6005,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
     .subscriptionPan .maintitle.active {
       background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+  .subscriptionPan .hidden-lg {
+    display: none !important; }
 
 @media (max-width: 640px) {
   #purchases .sortable-table__header {
@@ -6038,19 +6040,19 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     line-height: 32px; } }
 
 @media (max-width: 640px) {
-  .hidden-lg {
+  .subscriptionPan .hidden-lg {
     display: block !important; }
-  .hidden-xs {
+  .subscriptionPan .hidden-xs {
     display: none !important; } }
 
 @media only screen and (min-width: 481px) {
-  .purchases .sortable-table__col {
+  .subscriptionPan .purchases .sortable-table__col {
     position: relative; }
-    .purchases .sortable-table__col.fdata {
+    .subscriptionPan .purchases .sortable-table__col.fdata {
       width: 30%; }
-    .purchases .sortable-table__col.sdata {
+    .subscriptionPan .purchases .sortable-table__col.sdata {
       width: 50%; }
-    .purchases .sortable-table__col.tdata {
+    .subscriptionPan .purchases .sortable-table__col.tdata {
       width: 20%; } }
 
 .small_table .table-responsive .table {
