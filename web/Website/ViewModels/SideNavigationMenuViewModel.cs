@@ -165,7 +165,7 @@ namespace Informa.Web.ViewModels
             var subscriptions = new List<ISubscription>();
             var channelSubscriptions = new List<ChannelSubscription>();
             var topicSubscriptions = new List<TopicSubscription>();
-            if (IsAuthenticated && IsGlobalToggleEnabled)
+            if (IsAuthenticated && IsGlobalToggleEnabled && UserSubcriptions!=null && UserSubcriptions.Subscriptions != null)
             {
 
                 //channel based subscriptions
