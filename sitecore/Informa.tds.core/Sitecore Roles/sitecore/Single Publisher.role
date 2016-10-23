@@ -1,3 +1,6 @@
 ----role----
 name: sitecore\Single Publisher
 
+----role-in-role----
+rolename: sitecore\Editor
+

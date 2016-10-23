@@ -464,14 +464,17 @@
     <CodeGenReferencedProject Include="{0707d4fe-c860-4127-bae4-463e673d4d69}" />
   </ItemGroup>
   <ItemGroup>
+    <SitecoreRole Include="Sitecore Roles\sitecore\Author Write Access.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Author.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Designer.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Developer.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Editor.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Experience Explorer.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Full Publisher.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\General Content Access.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\List Manager Editors.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Managing Editor.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Media Library Access.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\No Publishing.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Operations Access.role" />
     <SitecoreRole Include="Sitecore Roles\sitecore\Production.role" />
