@@ -13,6 +13,7 @@ using Informa.Models.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
@@ -41,6 +42,7 @@ namespace Informa.Library.Utilities.TokenMatcher
             IArticleSearch ArticleSearch { get; }
 			ICacheProvider CacheProvider { get; }
 			IBylineMaker ByLineMaker { get; }
+            IGlobalSitecoreService GlobalService { get; }
         }
 
 		public TokenToHtml(IDependencies dependencies)
@@ -186,16 +188,18 @@ namespace Informa.Library.Utilities.TokenMatcher
 			filter.ArticleNumbers = articleNumber.SingleToList();
 			var results = _dependencies.ArticleSearch.Search(filter);
 
-			if (results.Articles.Any())
-			{
-				var article = results.Articles.FirstOrDefault();
-				if (article != null)
-				{
-					var articleText = $"(Also see \"<a href=\'{article._Url}\'>{WebUtility.HtmlDecode(article.Title)}</a>\".)";
-					replace = new HtmlString(articleText);
-				}
-			}
-
+            if (!results.Articles.Any())
+                return replace.ToHtmlString();
+			
+			var article = results.Articles.FirstOrDefault();
+            if (article == null)
+                return replace.ToHtmlString();
+			
+            string src = _dependencies.GlobalService.GetPublicationName(article._Id);
+            string date = (article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "");
+            var articleText = $" <em>(Also see \"{WebUtility.HtmlDecode(article.Title)}\" - {src}, {date}.)</em>";
+            replace = new HtmlString(articleText);
+			
 			return replace.ToHtmlString();
 		}
 
@@ -236,21 +240,8 @@ namespace Informa.Library.Utilities.TokenMatcher
 			var matches = regex.Matches(content);
 			foreach (Match match in matches)
 			{
-				var replace = string.Empty;
-				// Replace the first occurrence with hyperlink
-				if (!matchSet.Contains(match.Groups[1].Value))
-				{
-					replace = $"<aside type=\"\" height=\"10\" width=\"\"><a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\"><span class=\"indexentry\">{match.Groups[1].Value.Split(':')[1]}</span></a></aside>";
-					content = regex.Replace(content, replace, 1);
-					matchSet.Add(match.Groups[1].Value);
-				}
-				// Replace other occurrences with normal names
-				else
-				{
-					replace = match.Groups[1].Value.Split(':')[1];
-					content = content.Replace(match.Value, $"<span class=\"indexentry\">{replace}</span>");
-
-                }
+				var replace = match.Groups[1].Value.Split(':')[1];
+				content = content.Replace(match.Value, $"<span class=\"indexentry\">{replace}</span>");
 			}
 			return content;
 		}
