@@ -15,10 +15,10 @@
 
 			<h3 class="pop-out__register-header">@Model.RegisterText</h3>
 
-			<input name="username"
+			@*<input name="username"
 				   class="pop-out__register-input header__hover-input js-register-username"
 				   type="text"
-				   placeholder="@Model.UsernamePlaceholderText">
+				   placeholder="@Model.UsernamePlaceholderText">*@
 
 			<p class="js-form-error js-form-error-UsernameRequirements pop-out__form-error"
 			   style="display: none;">@Model.UsernameRequirementsErrorText</p>
@@ -31,9 +31,11 @@
 			<p class="js-form-error js-form-error-error-general pop-out__form-error"
 			   style="display: none;">@Model.GeneralErrorText</p>
 
-			<button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
+			@*<button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
 				@Model.RegisterButtonText
-			</button>
+			</button>*@
+
+            <button type="button" class="button--filled sign-in__submit" onclick="window.location.assign('https://idpoc-agrivertical.cs82.force.com/CommunitiesSelfReg?startURL=%2Fs%2F')">Register now</button>
 
 		</form>
 	</div>

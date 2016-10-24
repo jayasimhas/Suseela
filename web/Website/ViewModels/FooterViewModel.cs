@@ -43,7 +43,7 @@ namespace Informa.Web.ViewModels
             List<IPageLink> lstLocalLinks = new List<IPageLink>();
             foreach (var item in siteRootContext.Item.Local_Footer_Links)
             {
-                if (item._TemplateId == new System.Guid(Constants.NavigationItemTemplateID))
+                if (item._TemplateId == new System.Guid("{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}"))
                 {
                     var navItem = Sitecore.Context.Database.GetItem(new ID(item._Id));
                     if (navItem != null)

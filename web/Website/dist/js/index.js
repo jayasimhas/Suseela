@@ -1526,8 +1526,8 @@ function formController(opts) {
 					});
 
 					// add recaptcha if it exists in the form
-					var captchaResponse = grecaptcha.getResponse();
-					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
+					////var captchaResponse = grecaptcha.getResponse();
+					////if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');

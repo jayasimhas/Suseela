@@ -46,7 +46,7 @@ namespace Informa.Web.ViewModels
 				var user = AuthenticatedUserContext.IsAuthenticated
 						 ? ProfileContext.Profile
 						 : null;
-				var accountName = AuthenticatedUserContext.IsAuthenticated ? user?.FirstName : CompanyNameContext.Name;
+				var accountName = AuthenticatedUserContext.IsAuthenticated ? AuthenticatedUserContext.User?.Username : CompanyNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}

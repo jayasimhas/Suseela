@@ -1065,6 +1065,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
+    <Compile Include="Areas\Account\Controllers\EntitlementApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
@@ -2148,9 +2149,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
-      <Project>{69ff8121-1969-4032-90fa-b4b9148cd780}</Project>
-      <Name>Informa.Library.Salesforce</Name>
+    <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.v-2.csproj">
+      <Project>{c79102f1-8e7a-4c10-a7b3-08db4f6fa146}</Project>
+      <Name>Informa.Library.Salesforce.v-2</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
       <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
