@@ -14185,6 +14185,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Settings_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_FindOutMore_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         I___BasePage Welcome_Message_FindOutMore_LinkUrl { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Page { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -16377,14 +16379,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Search_Index_NameFieldId = new ID("56e146a6-cc34-4c23-9229-9d92a4cf4a51");
         public const string Search_Index_NameFieldName = "Search Index Name";
 
-        public static readonly ID Welcome_Message_FindOutMore_LinkUrlFieldId = new ID("4906d7ea75a743ee97f2eeebaac59450");
+        public static readonly ID Welcome_Message_FindOutMore_LinkUrlFieldId = new ID("4906d7ea-75a7-43ee-97f2-eeebaac59450");
         public const string Welcome_Message_FindOutMore_LinkUrlFieldName = "Welcome Message FindOutMore LinkUrl";
 
-        public static readonly ID Welcome_Message_MyView_LinkUrlFieldId = new ID("3c6989d29af546b28c219ad2bfce298c");
+        public static readonly ID Welcome_Message_MyView_LinkUrlFieldId = new ID("3c6989d2-9af5-46b2-8c21-9ad2bfce298c");
         public const string Welcome_Message_MyView_LinkUrlFieldName = "Welcome Message MyView LinkUrl";
 
-        public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993cc1f4afdbd50b9404b9059d0");
+        public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993-cc1f-4afd-bd50-b9404b9059d0");
         public const string Welcome_Message_Display_FrequencyFieldName = "Welcome Message Display Frequency";
+
+        public static readonly ID MyView_PageFieldId = new ID("a58c32cd-9345-4710-aa06-b4f6615047ec");
+        public const string MyView_PageFieldName = "MyView Page";
     }
 
 }
