@@ -15,5 +15,8 @@ namespace Informa.Library.User.Authentication
 		public string ContactId	{ get; set; }
 
 		public IList<string> AccountId { get; set; }
-	}
+
+        public string SalesForceSessionId { get; set; }
+        public string SalesForceURL { get; set; }
+    }
 }

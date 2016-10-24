@@ -8,16 +8,20 @@ namespace Informa.Library.User.Authentication.Web
 		protected readonly IAuthenticateUser AuthenticateUser;
 		protected readonly IWebLoginUser LoginWebUser;
 		protected readonly IUserSession UserSession;
-		private const string sessionKey = nameof(WebAuthenticateUser);
+        protected readonly IUserSalesForceContext UserSalesForceContext;
+        private const string sessionKey = nameof(WebAuthenticateUser);
 		public WebAuthenticateUser(
 			IAuthenticateUser authenticateUser,
 			IWebLoginUser loginWebUser,
-			IUserSession userSession)
+			IUserSession userSession,
+            IUserSalesForceContext userSalesForceContext)
 		{
 			AuthenticateUser = authenticateUser;
 			LoginWebUser = loginWebUser;
 			UserSession = userSession;
-		}
+            UserSalesForceContext = userSalesForceContext;
+
+        }
 
 		public IAuthenticatedUser AuthenticatedUser
 		{
@@ -43,20 +47,31 @@ namespace Informa.Library.User.Authentication.Web
 
 			var authenticatedUser = authenticateResult.User;
 			var success = state == AuthenticateUserResultState.Success;
+            string sessionID = authenticateResult.User?.SalesForceSessionId;
+            string sfurl = authenticateResult.User?.SalesForceURL;
+            authenticatedUser.SalesForceSessionId = sessionID;
+            authenticatedUser.SalesForceURL = sfurl;
 
-			if (success)
+            if (success)
 			{
 				var loginResult = LoginWebUser.Login(authenticatedUser, persist);
 				success = loginResult.Success;
 				AuthenticatedUser = authenticatedUser;
 			}
+            UserSalesForceContext.PreUserSalesforceDetails = new UserSalesforceDetails()
+            {
+                SalesForceURL = sfurl,
+                SalesForceSessionId = sessionID
+            };
 
-			return new WebAuthenticateUserResult
+            return new WebAuthenticateUserResult
 			{
 				State = state,
 				Success = success,
-				User = authenticatedUser
-			};
+				User = authenticatedUser,
+                SalesForceSessionId = sessionID,
+                SalesForceURL = sfurl
+            };
 		}
 	}
 }

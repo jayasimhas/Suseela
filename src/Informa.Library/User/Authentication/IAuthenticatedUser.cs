@@ -8,5 +8,7 @@ namespace Informa.Library.User.Authentication
 		string Email { get; }
 		string ContactId { get; }
 		IList<string> AccountId { get; }
-	}
+        string SalesForceSessionId { get; set; }
+        string SalesForceURL { get; set; }
+    }
 }

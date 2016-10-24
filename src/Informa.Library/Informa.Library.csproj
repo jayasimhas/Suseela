@@ -403,6 +403,10 @@
     <Compile Include="Subscription\IChannelSubscription.cs" />
     <Compile Include="Subscription\ITopicSubscription.cs" />
     <Compile Include="Subscription\TopicSubscription.cs" />
+    <Compile Include="User\Authentication\IUserSalesForceContext.cs" />
+    <Compile Include="User\Authentication\IUserSalesforceDetails.cs" />
+    <Compile Include="User\Authentication\UserSalesForceContext.cs" />
+    <Compile Include="User\Authentication\UserSalesforceDetails.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
     <Compile Include="User\UserPreference\IChannel.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />

@@ -8,5 +8,7 @@
 		public string Password { get; set; }
 		public string MasterId { get; set; }
 		public string MasterPassword { get; set; }
-	}
+        public string SalesForceSessionId { get; set; }
+        public string SalesForceURL { get; set; }
+    }
 }

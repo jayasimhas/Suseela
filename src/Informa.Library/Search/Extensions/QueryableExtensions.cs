@@ -52,7 +52,7 @@ namespace Informa.Library.Search.Extensions
 			// Filter first by author guid if that's provided, otherwise use the author name.
 			// EXPLANATION: Informa asked for the ability to facet on author names, but we still need the GUID lookups for the 
 			// word plugin, author lists, etc, since author names aren't guaranteed to be unique.
-			if (filter.AuthorGuids.Any())
+			if (filter.AuthorGuids!= null && filter.AuthorGuids.Any())
 			{
 				var predicate = PredicateBuilder.False<T>();
 				predicate = filter.AuthorGuids.Aggregate(predicate, (current, f) => current.Or(i => i.AuthorGuid.Contains(f)));

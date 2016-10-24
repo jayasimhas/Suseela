@@ -6,5 +6,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 	{
 		public AuthenticateUserResultState State { get; set; }
 		public IAuthenticatedUser User { get; set; }
+
+        
 	}
 }
