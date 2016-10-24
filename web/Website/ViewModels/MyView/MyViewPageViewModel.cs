@@ -56,7 +56,8 @@ namespace Informa.Web.ViewModels.MyView
                && UserPreferences.Preferences.PreferredChannels.Any())
             {
 
-                foreach (Channel channel in UserPreferences.Preferences.PreferredChannels)
+                var channels = UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList(); ;
+                foreach (Channel channel in channels)
                 {
                     CreateSections(channel, sections);
                 }
@@ -79,7 +80,7 @@ namespace Informa.Web.ViewModels.MyView
 
             if (channelStatus)
             {
-                topics = channel.Topics.Where(topic => topic.IsFollowing).ToList();
+                topics = channel.Topics.Where(topic => topic.IsFollowing).OrderBy(topic => topic.TopicOrder).ToList();
                 foreach (Topic topic in topics)
                 {
                     topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
