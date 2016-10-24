@@ -6,6 +6,7 @@
     using System;
     using System.Linq;
     using System.Web.Http;
+    using System.Web.Http.Results;
     public class ArticleSearchController : ApiController
     {
         protected readonly IArticleSearch ArticleSearch;
@@ -18,7 +19,7 @@
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
         }
-        public IPersonalizedArticleSearchResults GetArticles(string pid, int pno, int psize)
+        public object GetArticles(string pid, int pno, int psize)
         {
             var filter = ArticleSearch.CreateFilter();
             filter.Page = pno;
@@ -34,8 +35,10 @@
                 LoadMoreLinkText = TextTranslator.Translate("Article.LatestFrom"),
                 LoadMoreLinkUrl = $"/api/articlesearch/?pid={pid}&pno={pno+1}&psize={psize}"
             };
-            return new PersonalizedArticleSearchResults { PersonalizedArticles = articles, LoadMore = loadMore, TotalResults = results.TotalResults };
+            //return new PersonalizedArticleSearchResults { PersonalizedArticles = articles, LoadMore = loadMore, TotalResults = results.TotalResults };
             //return articles;
+            return new { Articles = articles, LoadMore = loadMore };
+
             
         }
     }

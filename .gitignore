@@ -359,3 +359,5 @@ target/
 /web/Website/Areas/Account
 /web/Website/App_Config_Old
 /web/Website
+/sitecore/Informa.tds.master/sitecore
+/sitecore/Informa.tds.master.content/sitecore/content
