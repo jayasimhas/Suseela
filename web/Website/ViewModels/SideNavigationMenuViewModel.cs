@@ -170,7 +170,7 @@ namespace Informa.Web.ViewModels
 
                 //channel based subscriptions
                 var currentPublication = SiterootContext.Item.Publication_Code;
-                var userSubscriptions = UserSubcriptions.Subscriptions.Where(n => n.ProductCode == currentPublication);
+                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication);
                 if (userSubscriptions != null)
                 {
                     if (userSubscriptions.SelectMany(n => n.SubscribedChannels) != null && userSubscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
