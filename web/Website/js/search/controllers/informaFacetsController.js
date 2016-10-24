@@ -383,19 +383,19 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         vm.update();
     };
 
-    vm.customDateRangeSearch = function (filterKey, startDate, endDate) {
-
+    vm.customDateRangeSearch = function (filterKey, startDate, endDate, sourceControl) {
+        
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');
 
         if(startDate > new Date()){
-            alert("you can't select date bigger than today");
+            alert("From date can not be greater than today");//  you can't select date bigger than today");
             $scope.dateValues.dtFrom="";
         }
 
         if(endDate > new Date()){
-            alert("you can't select date bigger than today");
+            alert("To date can not be greater than today");//
             $scope.dateValues.dtTo="";
         }
 
@@ -413,9 +413,15 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         else{
              if( (startDate!="" && startDate != undefined) && (endDate!="" && endDate!=undefined) ){
                 if(startDate > endDate){
-                    alert("You cant put 'from' date bigger than 'to' date");
-                    $scope.dateValues.dtFrom="";
-                    $scope.dateValues.dtTo="";
+                    alert("From date can not be greater than To date");//  You cant put 'from' date bigger than 'to' date");
+                    if(sourceControl == 'from')
+                    {
+                        $scope.dateValues.dtFrom="";
+                    }
+                    else
+                    {
+                        $scope.dateValues.dtTo="";
+                    }                    
                   }
               }
            }
