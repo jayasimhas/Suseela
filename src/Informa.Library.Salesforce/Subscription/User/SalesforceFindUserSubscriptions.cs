@@ -30,11 +30,11 @@ namespace Informa.Library.Salesforce.Subscription.User
             }
 
 
-            string cleanUesr = username;
-            cleanUesr = cleanUesr.Replace("@example.com", "");
+            string cleanUser = username.Split('@')[0];
+            //cleanUesr = cleanUesr.Replace("@example.com", "");
 
             Sitecore.Data.Items.Item SalesForceXmlItem =
-                Sitecore.Context.Database.GetItem("/sitecore/media library/SalesforceXML/" + cleanUesr.Trim());
+                Sitecore.Context.Database.GetItem("/sitecore/media library/SalesforceXML/" + cleanUser.Trim());
             QuerySubscriptionsAndPurchasesResponse xmlResponse = null;
 
             if (SalesForceXmlItem != null)
