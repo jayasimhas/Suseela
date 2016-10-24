@@ -1,8 +1,7 @@
-﻿using System.Xml;
-using Jabberwocky.Autofac.Attributes;
+﻿using Jabberwocky.Autofac.Attributes;
+using System.Xml;
 
-namespace Informa.Library.PXM.Helpers
-{
+namespace Informa.Library.PXM.Helpers {
     public interface IPxmXmlHelper
     {
         string FinalizeStyles(string content);
@@ -38,6 +37,7 @@ namespace Informa.Library.PXM.Helpers
             ApplyTableStyles(doc);
             ChangeDefaultParagraphStyle(doc);
             MatchCellStyleWithParagraphStyle(doc);
+            FillBlankTableCell(doc);
             return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
         }
 
@@ -179,6 +179,7 @@ namespace Informa.Library.PXM.Helpers
         }
 
 
+
         public void AddSidebarPrefix(XmlDocument doc) {
 
             var paragraphs = doc.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
@@ -191,6 +192,24 @@ namespace Informa.Library.PXM.Helpers
                     continue;
 
                 att.Value = $"sidebar_{att.Value}";
+            }
+        }
+
+
+        public void FillBlankTableCell(XmlDocument doc) {
+            var cells = doc.SelectNodes("//Cell");
+            if (cells == null)
+                return;
+
+            foreach (XmlNode cell in cells) {
+                if (cell.ChildNodes.Count != 0)
+                    continue;
+
+                XmlNode n = doc.CreateNode(XmlNodeType.Element, "ParagraphStyle", string.Empty);
+                XmlAttribute a = doc.CreateAttribute("Style");
+                a.Value = "table_body";
+                n.Attributes.Append(a);                    
+                cell.AppendChild(n);
             }
         }
 
