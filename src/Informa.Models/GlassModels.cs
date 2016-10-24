@@ -18057,26 +18057,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         [SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
-
-        /// <summary>
-        /// The Display Text field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 32BCC6AD-3737-498C-BDCF-B19BF18040CF</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITopicConstants.DisplayTextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Display_Text { get; set; }
-        /// <summary>
-        /// The Topic Code field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 59D3CE76-381A-43B9-9642-9516B36A500C</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITopicConstants.TopicCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Topic_Code { get; set; }
-
     }
 
 
@@ -18102,31 +18082,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 
     public static partial class ITopicConstants
     {
-
         public const string TemplateIdString = "abc8aabb-3e85-4f91-b7cb-ab2156de7a74";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Topic";
 
-
         public static readonly ID TitleFieldId = new ID("29b124f3-71e1-4c53-b442-d6fb6f2fe21f");
         public const string TitleFieldName = "Title";
-
-
 
         public static readonly ID Navigation_LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
         public const string Navigation_LinkFieldName = "Navigation Link";
 
-
-
         public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
         public const string Navigation_TextFieldName = "Navigation Text";
-
-        public static readonly ID DisplayTextFieldId = new ID("32BCC6AD-3737-498C-BDCF-B19BF18040CF");
-        public const string DisplayTextFieldName = "Display Text";
-
-        public static readonly ID TopicCodeFieldId = new ID("59D3CE76-381A-43B9-9642-9516B36A500C");
-        public const string TopicCodeFieldName = "Topic Code";
-
 
         public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
         public const string TaxonomiesFieldName = "Taxonomy";

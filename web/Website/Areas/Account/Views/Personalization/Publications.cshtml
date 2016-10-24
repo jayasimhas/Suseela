@@ -25,7 +25,7 @@
     int topicOrder = 0;
     string mobileChannelSactionsStatus = string.Empty;
     string pickAndChooseSectionClassMobile = string.Empty;
-
+    <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {
@@ -46,14 +46,14 @@
             pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
             isFirst = false;
 
-            <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
+           
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
                         <thead class="hidden-large">
                             <tr>
                                 <th class="wd-55 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
 
                                     @if (!channel.IsSubscribed)
                                     {
@@ -148,7 +148,7 @@
                         <thead class="hidden-xs">
                             <tr>
                                 <th class="wd-54 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode"  data-item-id="@channel.ChannelId">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode"  data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
