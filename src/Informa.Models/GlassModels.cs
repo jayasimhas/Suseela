@@ -15021,6 +15021,27 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage Welcome_Message_MyView_LinkUrl { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_Display_FrequencyFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Welcome_Message_Display_Frequency { get; set; }
+
+        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
+
+        /// <summary>
+        /// The Initial Laod Sections Count field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: 3FBB0102-3330-4CF4-81EA-EF0C8996E59E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Initial_Laod_Sections_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Initial_Laod_Sections_Count { get; set; }
+        /// <summary>
+        /// The Items Per Section field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: CE377240-5F03-4024-A18A-A2D24DF9B259</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Items_Per_Section { get; set; }
     }
 
 
@@ -15870,6 +15891,27 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
         string From_Email_Address { get; set; }
+
+        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
+
+        /// <summary>
+        /// The Initial Laod Sections Count field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: 3FBB0102-3330-4CF4-81EA-EF0C8996E59E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Initial_Laod_Sections_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Initial_Laod_Sections_Count { get; set; }
+        /// <summary>
+        /// The Items Per Section field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: CE377240-5F03-4024-A18A-A2D24DF9B259</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Items_Per_Section { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -16385,6 +16427,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993cc1f4afdbd50b9404b9059d0");
         public const string Welcome_Message_Display_FrequencyFieldName = "Welcome Message Display Frequency";
+
+        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
+
+        public static readonly ID Initial_Laod_Sections_CountFieldId = new ID("3FBB0102-3330-4CF4-81EA-EF0C8996E59E");
+        public const string Initial_Laod_Sections_CountFieldName = "Initial Laod Sections Count";
+
+        public static readonly ID Items_Per_SectionFieldId = new ID("CE377240-5F03-4024-A18A-A2D24DF9B259");
+        public const string Items_Per_SectionFieldName = "Items Per Section";
     }
 
 }
