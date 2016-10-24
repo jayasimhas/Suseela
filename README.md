@@ -12,3 +12,4 @@ The instructions for your local setup should be:
 5.	Run 'nant.bat init' from the root folder.
 
 
+Test
