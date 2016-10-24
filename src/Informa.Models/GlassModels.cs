@@ -13126,6 +13126,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Reset_Password_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Reset_Password_Page  {get; set;}
 								/// <summary>
+					/// The Right SubMenu Content field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: d8cb9229-b168-4767-93f1-746bcb53c4cc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Right_SubMenu_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Right_SubMenu_Content  {get; set;}
+								/// <summary>
 					/// The Search Tips Text field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -13993,6 +14002,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Reset_Password_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Reset_Password_Page  {get; set;}
 										/// <summary>
+						/// The Right SubMenu Content field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: d8cb9229-b168-4767-93f1-746bcb53c4cc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Right_SubMenu_ContentFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Right_SubMenu_Content  {get; set;}
+										/// <summary>
 						/// The Search Tips Text field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -14572,6 +14590,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
 			public const string Reset_Password_PageFieldName = "Reset Password Page";
 
+						
+					
+			public static readonly ID Right_SubMenu_ContentFieldId = new ID("d8cb9229-b168-4767-93f1-746bcb53c4cc");
+			public const string Right_SubMenu_ContentFieldName = "Right SubMenu Content";
+
+							public static readonly ID Right_SubMenu_Content__RawFieldId = new ID("d8cb9229-b168-4767-93f1-746bcb53c4cc");
+				public const string Right_SubMenu_Content__RawFieldName = "Right SubMenu Content";
 						
 					
 			public static readonly ID Search_Tips_TextFieldId = new ID("282eff16-dbcd-4adf-83bc-b1e6655cf354");
@@ -20575,6 +20600,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
 			public const string Reset_Password_PageFieldName = "Reset Password Page";
 
+						
+					
+			public static readonly ID Right_SubMenu_ContentFieldId = new ID("d8cb9229-b168-4767-93f1-746bcb53c4cc");
+			public const string Right_SubMenu_ContentFieldName = "Right SubMenu Content";
+
+							public static readonly ID Right_SubMenu_Content__RawFieldId = new ID("d8cb9229-b168-4767-93f1-746bcb53c4cc");
+				public const string Right_SubMenu_Content__RawFieldName = "Right SubMenu Content";
 						
 					
 			public static readonly ID Search_Tips_TextFieldId = new ID("282eff16-dbcd-4adf-83bc-b1e6655cf354");
