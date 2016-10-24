@@ -1,3 +1,6 @@
 ----role----
 name: sitecore\No Publishing
 
+----role-in-role----
+rolename: sitecore\Author
+
