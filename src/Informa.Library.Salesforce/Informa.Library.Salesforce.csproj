@@ -46,6 +46,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -95,6 +97,12 @@
     <Compile Include="SalesforceErrorLogger.cs" />
     <Compile Include="SalesforceServiceContextEnabled.cs" />
     <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="Service References\SFv2\Reference.cs" />
+    <Compile Include="Service References\SFv2\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="User\Entitlement\ISalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
@@ -211,6 +219,116 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SFv2\enterprise.wsdl" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.convertLeadResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.createResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DebuggingInfo.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.deleteResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DeleteResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeAllTabsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeAppMenuItem.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeAppMenuResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeApprovalLayout.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeApprovalLayoutResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeAvailableQuickActionResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeAvailableQuickActionsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeCompactLayout.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeCompactLayoutsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeCompactLayoutsResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeDataCategoryGroupResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeDataCategoryGroupsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeDataCategoryGroupStructureResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeDataCategoryGroupStructuresResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeFlexiPageResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeFlexiPagesResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeGlobalResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeGlobalResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeGlobalTheme.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeGlobalThemeResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeKnowledgeSettingsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeLayoutResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeLayoutResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeNounResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeNounsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribePathAssistant.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describePathAssistantsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describePrimaryCompactLayoutsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeQuickActionResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeQuickActionsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSearchableEntitiesResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSearchableEntityResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSearchLayoutResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSearchLayoutsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSearchScopeOrderResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSearchScopeOrderResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSObjectListViewsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSObjectResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSObjectResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSObjectsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSoftphoneLayoutResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSoftphoneLayoutResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeSoqlListView.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeSoqlListViewsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeTab.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeTabSetResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeTabsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeThemeItem.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeThemeResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.describeVisualForceResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.DescribeVisualForceResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.emptyRecycleBinResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.EmptyRecycleBinResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.executeListViewResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.ExecuteListViewResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.findDuplicatesResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.FindDuplicatesResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.getDeletedResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.GetDeletedResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.getServerTimestampResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.GetServerTimestampResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.getUpdatedResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.GetUpdatedResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.getUserInfoResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.GetUserInfoResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.invalidateSessionsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.InvalidateSessionsResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.KnowledgeSettings.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.LeadConvertResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.LimitInfo.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.loginResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.LoginResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.logoutResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.mergeResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.MergeResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.PerformQuickActionResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.performQuickActionsResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.processResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.ProcessResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.queryAllResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.queryMoreResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.queryResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.QueryResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.QuickActionTemplateResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.renderEmailTemplateResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.RenderEmailTemplateResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.resetPasswordResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.ResetPasswordResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.retrieveQuickActionTemplatesResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.retrieveResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.SaveResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.searchResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.SearchResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.sendEmailMessageResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.sendEmailResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.SendEmailResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.setPasswordResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.SetPasswordResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.sObject.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.undeleteResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.UndeleteResult.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.updateResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.upsertResponse.datasource" />
+    <None Include="Service References\SFv2\Informa.Library.Salesforce.SFv2.UpsertResult.datasource" />
     <None Include="Web References\EBIWebServices\Agri_WebServices.wsdl" />
     <None Include="Web References\EBIWebServices\EBI_CartItemResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
@@ -392,7 +510,14 @@
       <Name>Informa.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Service References\SFv2\configuration.svcinfo" />
+    <Content Include="Service References\SFv2\configuration91.svcinfo" />
+    <Content Include="Service References\SFv2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
