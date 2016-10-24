@@ -14185,6 +14185,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Settings_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_FindOutMore_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         I___BasePage Welcome_Message_FindOutMore_LinkUrl { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Page { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -15021,27 +15023,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage Welcome_Message_MyView_LinkUrl { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_Display_FrequencyFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Welcome_Message_Display_Frequency { get; set; }
-
-        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
-
-        /// <summary>
-        /// The Initial Laod Sections Count field.
-        /// <para></para>
-        /// <para>Field Type: Integer</para>		
-        /// <para>Field ID: 3FBB0102-3330-4CF4-81EA-EF0C8996E59E</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.Initial_Laod_Sections_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Initial_Laod_Sections_Count { get; set; }
-        /// <summary>
-        /// The Items Per Section field.
-        /// <para></para>
-        /// <para>Field Type: Integer</para>		
-        /// <para>Field ID: CE377240-5F03-4024-A18A-A2D24DF9B259</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Items_Per_Section { get; set; }
     }
 
 
@@ -15891,27 +15872,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
         string From_Email_Address { get; set; }
-
-        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
-
-        /// <summary>
-        /// The Initial Laod Sections Count field.
-        /// <para></para>
-        /// <para>Field Type: Integer</para>		
-        /// <para>Field ID: 3FBB0102-3330-4CF4-81EA-EF0C8996E59E</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.Initial_Laod_Sections_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Initial_Laod_Sections_Count { get; set; }
-        /// <summary>
-        /// The Items Per Section field.
-        /// <para></para>
-        /// <para>Field Type: Integer</para>		
-        /// <para>Field ID: CE377240-5F03-4024-A18A-A2D24DF9B259</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Items_Per_Section { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -16419,22 +16379,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Search_Index_NameFieldId = new ID("56e146a6-cc34-4c23-9229-9d92a4cf4a51");
         public const string Search_Index_NameFieldName = "Search Index Name";
 
-        public static readonly ID Welcome_Message_FindOutMore_LinkUrlFieldId = new ID("4906d7ea75a743ee97f2eeebaac59450");
+        public static readonly ID Welcome_Message_FindOutMore_LinkUrlFieldId = new ID("4906d7ea-75a7-43ee-97f2-eeebaac59450");
         public const string Welcome_Message_FindOutMore_LinkUrlFieldName = "Welcome Message FindOutMore LinkUrl";
 
-        public static readonly ID Welcome_Message_MyView_LinkUrlFieldId = new ID("3c6989d29af546b28c219ad2bfce298c");
+        public static readonly ID Welcome_Message_MyView_LinkUrlFieldId = new ID("3c6989d2-9af5-46b2-8c21-9ad2bfce298c");
         public const string Welcome_Message_MyView_LinkUrlFieldName = "Welcome Message MyView LinkUrl";
 
-        public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993cc1f4afdbd50b9404b9059d0");
+        public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993-cc1f-4afd-bd50-b9404b9059d0");
         public const string Welcome_Message_Display_FrequencyFieldName = "Welcome Message Display Frequency";
 
-        //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
-
-        public static readonly ID Initial_Laod_Sections_CountFieldId = new ID("3FBB0102-3330-4CF4-81EA-EF0C8996E59E");
-        public const string Initial_Laod_Sections_CountFieldName = "Initial Laod Sections Count";
-
-        public static readonly ID Items_Per_SectionFieldId = new ID("CE377240-5F03-4024-A18A-A2D24DF9B259");
-        public const string Items_Per_SectionFieldName = "Items Per Section";
+        public static readonly ID MyView_PageFieldId = new ID("a58c32cd-9345-4710-aa06-b4f6615047ec");
+        public const string MyView_PageFieldName = "MyView Page";
     }
 
 }
@@ -18041,7 +17996,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     /// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITopicConstants.TemplateIdString)]
-    public partial interface ITopic : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy
+    public partial interface ITopic : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link
     {
         /// <summary>
         /// The Title field.
@@ -18053,6 +18008,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         [SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
+
+        /// <summary>
+        /// The Display Text field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 32BCC6AD-3737-498C-BDCF-B19BF18040CF</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITopicConstants.DisplayTextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_Text { get; set; }
+        /// <summary>
+        /// The Topic Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 59D3CE76-381A-43B9-9642-9516B36A500C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITopicConstants.TopicCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Topic_Code { get; set; }
+
     }
 
 
@@ -18063,7 +18038,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     /// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ITopic__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw
+    public partial interface ITopic__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw
     {
         /// <summary>
         /// The Title field.
@@ -18103,8 +18078,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         public static readonly ID TopicCodeFieldId = new ID("59D3CE76-381A-43B9-9642-9516B36A500C");
         public const string TopicCodeFieldName = "Topic Code";
 
-        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
-        public const string TaxonomiesFieldName = "Taxonomy";
 
     }
 
