@@ -192,6 +192,9 @@ namespace Informa.Library.PXM.Helpers
                     continue;
 
                 att.Value = $"sidebar_{att.Value}";
+            }
+        }
+
         public void FillBlankTableCell(XmlDocument doc) {
             var cells = doc.SelectNodes("//Cell");
             if (cells == null)
