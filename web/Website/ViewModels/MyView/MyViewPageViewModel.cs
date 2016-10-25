@@ -93,7 +93,7 @@ namespace Informa.Web.ViewModels.MyView
                     }
                 }
             }
-            else
+            else if(channel.IsFollowing)
             {
                 channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
                 if (channelPageItem != null)
