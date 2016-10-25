@@ -30,7 +30,7 @@ namespace Informa.Library.Site
             VerticalrootContext = verticalrootContext;
         }
 
-        public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext); 
+        public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache($"cacheKey-{VerticalrootContext.Item?.Vertical_Name}", BuildSiteRootsContext);
         private IList<ISite_Root> BuildSiteRootsContext()
         {
             //JIRA Ticket IPMP-269            
