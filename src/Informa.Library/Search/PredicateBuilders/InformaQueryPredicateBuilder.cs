@@ -24,30 +24,42 @@ namespace Informa.Library.Search.PredicateBuilders
 			_formatter = queryFormatter;
 		}
 
-		public override Expression<Func<T, bool>> Build()
-		{
-			var predicate = base.Build();
+        public override Expression<Func<T, bool>> Build()
+        {
+            try
+            {
+                var predicate = base.Build();
 
-			// date relevancy
-			if (Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
-			{
-				//Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
-				predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
-			}
+            // date relevancy
+            if (Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
+            {
+                //Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
+                predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
+            }
 
-			if (_request.PageId == Constants.VWBSearchPageId)
-			{
-				//VWB:  Filter out non Article items
-				predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
-			}
-			else
-			{
-				//Include Search for authors
-				if (_request.QueryParameters.ContainsKey("q") && string.IsNullOrEmpty(_request.QueryParameters["q"]) == false)
-					predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
-			}
+                if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
+                {//VWB
 
-			return predicate;
+                }
+
+                //if (_request.PageId == Constants.VWBSearchPageId)
+                //{
+                //    //VWB:  Filter out non Article items
+                //    predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
+                //}
+                else
+                {
+                    //Include Search for authors
+                    if (_request.QueryParameters.ContainsKey("q") && string.IsNullOrEmpty(_request.QueryParameters["q"]) == false)
+                        predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+                }
+                return predicate;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+			
 		}
 
 		protected override Expression<Func<T, bool>> AddAllClause(string[] value)

@@ -1,3 +1,13 @@
 ﻿@model Informa.Web.ViewModels.MyView.IMyViewPageViewModel
 
 <input type="hidden" id="jsonData" value="@Model.JSONData" />
+<script type="text/javascript">
+    var loadPreferanceId = @Html.Raw(Model.JSONData)
+</script>
+
+<div class="personalisationhome">
+    <div class="spinnerIcon hidespin">
+        <img src="/dist/img/spinner.gif" width="40" />
+    </div>
+    <div class="personalisationPan"></div>
+</div>
