@@ -65,8 +65,7 @@
         public bool isFromRegistration { get; set; }
         public IList<Channel> Channels => GetChannels();
 
-        public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
-                || !UserPreferences.Preferences.PreferredChannels.Any();
+        public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.IsNewUser;
 
         private IList<Channel> GetChannels()
         {
@@ -170,9 +169,8 @@
                                 {
                                     topic = new Topic();
                                     topic.TopicId = topicItem._Id.ToString();
-                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
-                                    topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
-                                    //topic.TopicOrder = GetTopicOrder(channel, topicItem);
+                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                                    topic.TopicCode = topicItem.Navigation_Code;
                                     topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                                     channel.Topics.Add(topic);
                                 }
@@ -209,12 +207,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
-                            ////channel.Taxonomy =  channelPage.Taxonomies?.FirstOrDefault()._Id.ToString();
-                            channel.ChannelOrder = GetChannelOrder(channelPage);
+                            SetChannelOrderAndStus(channelPage, channel);
                             channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
-
                             GetTopics(channel, channelPage);
-
                             channels.Add(channel);
                         }
                     }
@@ -224,19 +219,19 @@
             return channels;
         }
 
-        private int GetChannelOrder(IChannel_Page channelPage)
+        private void SetChannelOrderAndStus(IChannel_Page channelPage, Channel channel)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
-                    Where(ch => ch.ChannelCode.Equals(channelPage.Title.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                    Where(ch => ch.ChannelCode.Equals(channelPage.Channel_Code.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (preferredChannel != null)
                 {
-                    return preferredChannel.ChannelOrder;
+                    channel.ChannelOrder = preferredChannel.ChannelOrder;
+                    channel.IsFollowing = preferredChannel.IsFollowing;
                 }
             }
-            return 0;
         }
 
         private void GetTopics(Channel channel, IChannel_Page channelPage)
@@ -256,35 +251,37 @@
                     {
                         topic = new Topic();
                         topic.TopicId = topicItem._Id.ToString();
-                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
-                        topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
-                        topic.TopicOrder = GetTopicOrder(channel, topicItem);
-                        topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
+                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                        topic.TopicCode = topicItem.Navigation_Code;
+                        GetTopicOrderAndStatus(channel, topicItem, topic);
                         channel.Topics.Add(topic);
                     }
                 }
             }
         }
 
-        private int GetTopicOrder(Channel channel, Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicPage)
+        private void GetTopicOrderAndStatus(Channel channel, Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicPage, Topic topic)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
                     Where(ch => ch.ChannelCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-                if (preferredChannel != null)
+                if (preferredChannel != null && preferredChannel.Topics != null && preferredChannel.Topics.Any())
                 {
-                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode.Equals(topicPage.Title.ToString(),
+                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode.Equals(topicPage.Navigation_Code.ToString(),
                         StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                     if (preferredTopic != null)
                     {
-                        return preferredTopic.TopicOrder;
+                        topic.TopicOrder = preferredTopic.TopicOrder;
+                        topic.IsFollowing = IsNewUser ? channel.IsFollowing : preferredTopic.IsFollowing;
                     }
                 }
+                if (channel.IsFollowing && UserPreferences.Preferences.IsNewUser)
+                {
+                    topic.IsFollowing = true;
+                }
             }
-
-            return 0;
         }
     }
 }

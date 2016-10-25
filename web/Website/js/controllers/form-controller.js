@@ -104,8 +104,10 @@ function formController(opts) {
 
 					// add recaptcha if it exists in the form
 					var captchaResponse = grecaptcha.getResponse();
-					if (captchaResponse !== undefined)
-						inputData['RecaptchaResponse'] = captchaResponse;
+
+				    // Commenting below line as team is not able to proceed becuase of captch error. This is workaround only; actual fix will be provided by Raju/Sonia.
+					////if (captchaResponse !== undefined)
+					////	inputData['RecaptchaResponse'] = captchaResponse;
 
 					if(!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');

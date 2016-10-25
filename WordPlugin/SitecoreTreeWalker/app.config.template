@@ -26,6 +26,7 @@
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
 	    <add key ="Development"  value="${Development}"/>
 	    <add key ="Stage"  value="${Stage}"/>
+		<add key ="beta"  value="${beta}"/>
     <add key ="Production"  value="${Production}"/>
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />

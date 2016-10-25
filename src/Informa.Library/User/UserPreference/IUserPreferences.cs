@@ -4,6 +4,6 @@
     public interface IUserPreferences
     {
         IList<Channel> PreferredChannels { get; set; }
-        IList<Topic> PreferredTopics { get; set; }
+        bool IsNewUser { get; set; }
     }
 }

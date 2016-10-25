@@ -1,220 +1,222 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserViewModel
 
 <div class="page-registration page-account js-register-user-container">
-	<h1 class="page-registration__header">@Model.Title</h1>
-	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
-	<div class="page-account__introduction">
-		@Model.Body
-	</div>
-	<hr />
-	<div>
-		<div class="page-registration__required-hint">
-			<span class="asterisk-required"></span> <em>@Model.RequiedFieldsText</em>
-		</div>
+    <h1 class="page-registration__header">@Model.Title</h1>
+    <h2 class="page-registration__subheader">@Model.SubTitle</h2>
+    <div class="page-account__introduction">
+        @Model.Body
+    </div>
+    <hr />
+    <div>
+        <div class="page-registration__required-hint">
+            <span class="asterisk-required"></span> <em>@Model.RequiedFieldsText</em>
+        </div>
 
-		<form	class="form-registration"
-				data-on-submit="/Account/api/RegistrationApi/Register/"
-				data-on-success="@( Model.NextStepUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
+        <form class="form-registration"
+              data-on-submit="/Account/api/RegistrationApi/Register/"
+              data-on-success="@( Model.NextStepUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
 
-		<p class="	page-registration__error
-					js-register-user-error
-					js-register-user-error-general">
-			@Model.GeneralErrorText
-		</p>
+            <p class=" page-registration__error
+               js-register-user-error
+               js-register-user-error-general">
+                @Model.GeneralErrorText
+            </p>
 
-		<div class="page-account__field-wrapper">
-			<label for="username" class="page-account__text-label">
-				@Model.UsernameLabelText <span class="asterisk-required"></span>
-			</label>
+            <div class="page-account__field-wrapper">
+                <label for="username" class="page-account__text-label">
+                    @Model.UsernameLabelText <span class="asterisk-required"></span>
+                </label>
 
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-UsernameRequirements">
-				@Model.UsernameRequirementsErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-UsernameRequirements">
+                    @Model.UsernameRequirementsErrorText
+                </p>
 
-			<p class=" page-registration__error
-			   js-form-error
-			   js-form-error-UsernameCompetitorRestriction">
-				@Model.UsernameCompetitorRestrictedDomainErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-UsernameCompetitorRestriction">
+                    @Model.UsernameCompetitorRestrictedDomainErrorText
+                </p>
 
-			<p class=" page-registration__error
-			   js-form-error
-			   js-form-error-UsernamePublicRestriction">
-				@Model.UsernamePublicRestrictedDomainErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-UsernamePublicRestriction">
+                    @Model.UsernamePublicRestrictedDomainErrorText
+                </p>
 
-			<p class=" page-registration__error
-			   js-form-error
-			   js-form-error-UsernameExists">
-				@Model.UsernameExistsErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-UsernameExists">
+                    @Model.UsernameExistsErrorText
+                </p>
 
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-Required">
-				@Model.RequiredErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-Required">
+                    @Model.RequiredErrorText
+                </p>
 
-			<input 	type="email"
-	               	class="inf-standard-form-field"
-	               	placeholder="@Model.UsernamePlaceholderText"
-				    tabindex="1"
-                    value="@Model.UsernameValue"
-				   	name="username">
-		</div>
+                <input type="email"
+                       class="inf-standard-form-field"
+                       placeholder="@Model.UsernamePlaceholderText"
+                       tabindex="1"
+                       value="@Model.UsernameValue"
+                       name="username">
+            </div>
 
-		<div class="page-registration__floats-wrapper">
+            <div class="page-registration__floats-wrapper">
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<label for="firstName" class="page-account__text-label">
-					@Model.FirstNameLabelText <span class="asterisk-required"></span>
-				</label>
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="firstName" class="page-account__text-label">
+                        @Model.FirstNameLabelText <span class="asterisk-required"></span>
+                    </label>
 
-				<input 	type="text"
-		               	class="inf-standard-form-field"
-		               	tabindex="2"
-					   	name="firstName"
-					   	placeholder="@Model.FirstNamePlaceholderText">
+                    <input type="text"
+                           class="inf-standard-form-field"
+                           tabindex="2"
+                           name="firstName"
+                           placeholder="@Model.FirstNamePlaceholderText">
 
-			</div>
+                </div>
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<label for="lastName" class="page-account__text-label">
-					@Model.LastNameLabelText <span class="asterisk-required"></span>
-				</label>
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="lastName" class="page-account__text-label">
+                        @Model.LastNameLabelText <span class="asterisk-required"></span>
+                    </label>
 
-				<input 	type="text"
-		               	class="inf-standard-form-field"
-		               	placeholder=""
-		               	tabindex="3"
-					   	name="lastName">
-			</div>
+                    <input type="text"
+                           class="inf-standard-form-field"
+                           placeholder=""
+                           tabindex="3"
+                           name="lastName">
+                </div>
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<label for="password" class="page-account__text-label">
-					@Model.PasswordLabelText <span class="asterisk-required"></span>
-				</label>
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="password" class="page-account__text-label">
+                        @Model.PasswordLabelText <span class="asterisk-required"></span>
+                    </label>
 
-				<p class="	page-registration__error
-							js-form-error
-							js-form-error-PasswordRequirements">
-					@Model.PasswordRequirementsErrorText
-				</p>
+                    <p class=" page-registration__error
+                       js-form-error
+                       js-form-error-PasswordRequirements">
+                        @Model.PasswordRequirementsErrorText
+                    </p>
 
-				<p class="	page-registration__error
-							js-form-error
-							js-form-error-PasswordMismatch">
-					@Model.PasswordMismatchErrorText
-				</p>
+                    <p class=" page-registration__error
+                       js-form-error
+                       js-form-error-PasswordMismatch">
+                        @Model.PasswordMismatchErrorText
+                    </p>
 
-				<input 	name="password"
-						class="inf-standard-form-field"
-						type="password"
-						placeholder="@Model.PasswordPlaceholderText"
-						tabindex="4">
-			</div>
+                    <input name="password"
+                           class="inf-standard-form-field"
+                           type="password"
+                           placeholder="@Model.PasswordPlaceholderText"
+                           tabindex="4">
+                </div>
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<label for="passwordRepeat" class="page-account__text-label">
-					@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
-				</label>
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="passwordRepeat" class="page-account__text-label">
+                        @Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
+                    </label>
 
-				<p class="	page-registration__error
-							js-form-error
-							js-form-error-PasswordMismatch">
-					@Model.PasswordMismatchErrorText
-				</p>
+                    <p class=" page-registration__error
+                       js-form-error
+                       js-form-error-PasswordMismatch">
+                        @Model.PasswordMismatchErrorText
+                    </p>
 
-				<input 	name="passwordRepeat"
-						class="inf-standard-form-field"
-						type="password"
-						placeholder=""
-						tabindex="5">
-			</div>
+                    <input name="passwordRepeat"
+                           class="inf-standard-form-field"
+                           type="password"
+                           placeholder=""
+                           tabindex="5">
+                </div>
 
-		</div>
+            </div>
 
-		@*<hr>
+            @*<hr>
 
-		<div class="page-registration__labeled-checkbox">
+                <div class="page-registration__labeled-checkbox">
 
-			<input
-				name="associateMaster"
-				class="js-corporate-master-toggle"
-				type="checkbox"
-				tabindex="6"
-				data-checkbox-type="boolean">
-			<label for="associateMaster">@Model.MasterToggleLabelText</label>
+                    <input
+                        name="associateMaster"
+                        class="js-corporate-master-toggle"
+                        type="checkbox"
+                        tabindex="6"
+                        data-checkbox-type="boolean">
+                    <label for="associateMaster">@Model.MasterToggleLabelText</label>
 
-		</div>*@
+                </div>*@
 
-		<div class="page-registration__floats-wrapper js-registration-corporate-wrapper is-hidden">
+            <div class="page-registration__floats-wrapper js-registration-corporate-wrapper is-hidden">
 
-			<p class=" page-registration__error
-			   js-form-error
-			   js-form-error-MasterIdInvalid">
-				@Model.MasterIdInvalidErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-MasterIdInvalid">
+                    @Model.MasterIdInvalidErrorText
+                </p>
 
-			<p class=" page-registration__error
-			   js-form-error
-			   js-form-error-MasterIdExpired">
-				@Model.MasterIdExpiredErrorText
-			</p>
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-MasterIdExpired">
+                    @Model.MasterIdExpiredErrorText
+                </p>
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
 
-				<label for="masterId" class="page-account__text-label">
-					@Model.MasterIdLabelText
-				</label>
+                    <label for="masterId" class="page-account__text-label">
+                        @Model.MasterIdLabelText
+                    </label>
 
-				<input name="masterId"
-					   class="inf-standard-form-field"
-					   type="text"
-					   tabindex="4" value="@Model.MasterId">
-			</div>
+                    <input name="masterId"
+                           class="inf-standard-form-field"
+                           type="text"
+                           tabindex="4" value="@Model.MasterId">
+                </div>
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<label for="masterPassword" class="page-account__text-label">
-					@Model.MasterPasswordLabelText
-				</label>
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="masterPassword" class="page-account__text-label">
+                        @Model.MasterPasswordLabelText
+                    </label>
 
-				<input name="masterPassword"
-					   class="inf-standard-form-field"
-					   type="password"
-					   tabindex="4" value="@Model.MasterPassword">
-			</div>
+                    <input name="masterPassword"
+                           class="inf-standard-form-field"
+                           type="password"
+                           tabindex="4" value="@Model.MasterPassword">
+                </div>
 
-			<div class="checkbox-label">
-				@Model.MasterAlternateVerficationText
-			</div>
+                <div class="checkbox-label">
+                    @Model.MasterAlternateVerficationText
+                </div>
 
-		</div>
+            </div>
 
-		<hr />
+            <hr />
 
-	    <div class="page-registration__labeled-checkbox page-registration__tos-confirm">
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-TermsNotAccepted">
-				@Model.TermsNotAcceptedErrorText
-			</p>
+            <div class="page-registration__labeled-checkbox page-registration__tos-confirm">
+                <p class=" page-registration__error
+                   js-form-error
+                   js-form-error-TermsNotAccepted">
+                    @Model.TermsNotAcceptedErrorText
+                </p>
 
-	        <input	name="termsAccepted"
-		            type="checkbox"
-                    tabindex="6"
-					data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
-	    </div>
+                <input name="termsAccepted"
+                       type="checkbox"
+                       tabindex="6"
+                       data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
+                </div>
 
-	    <div class="page-account__submit-wrapper">
-	        <button type="submit"
-                    tabindex="7"
-					class="button--filled js-register-user-submit">@Model.SubmitText</button>
-	        <p><em>@Model.NewsletterSignUpText</em></p>
-	    </div>
+                <div class="page-account__submit-wrapper">
+                    <button type="submit"
+                            tabindex="7"
+                            class="button--filled js-register-user-submit">
+                        @Model.SubmitText
+                        </button>
+                        <p><em>@Model.NewsletterSignUpText</em></p>
+                    </div>
 
-		</form>
-	</div>
-</div>
+                </form>
+            </div>
+        </div>

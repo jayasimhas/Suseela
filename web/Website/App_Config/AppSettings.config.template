@@ -10,4 +10,5 @@
 
   <add key="Recaptcha.SiteKey" value="${Recaptcha.SiteKey}" />
   <add key="Recaptcha.SecretKey" value="${Recaptcha.SecretKey}" />
+  <add key="LegacyPublications" value="Agra Europe"/>
 </appSettings>
