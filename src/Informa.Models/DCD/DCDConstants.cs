@@ -14,7 +14,10 @@ namespace Informa.Models.DCD
         public const string DealCompanyNameRegex = @"\[(.*?)\]";
         public const string DealProductNameRegext = @"\{(.*?)\}";
 
-		public static readonly string EmailNoReplySenderAddress = Sitecore.Configuration.Settings.GetSetting("Mail.MailServerFromAddress");
+        public const string TableauTokenFormat = "[T#{0}:{1}]";
+        public const string TableauTokenRegex = @"\[T#(.*?)\]";
+
+        public static readonly string EmailNoReplySenderAddress = Sitecore.Configuration.Settings.GetSetting("Mail.MailServerFromAddress");
 		public static readonly string BusinessAcronym = "IBI";
 
 		public static readonly ID DCDConfigurationItemID = new ID(Sitecore.Configuration.Settings.GetSetting("DCDConfiguration"));

@@ -296,7 +296,40 @@ Please make sure you have provided valid HTML with no script, style, or link tag
 	<data name="IFrameControl_uxInsertIFrame_Click_Multimedia_Error" xml:space="preserve">
     <value>Multimedia content is either missing, invalid or not secure. Please click 'OK' to see instructions on how to correct this in red.</value>
   </data>
-	<data name="SelectedRelatedArticles_CreateDateLabel_Date_not_Set" xml:space="preserve">
+  <data name="IFrameControl_Tableau_DashBoardName_Required" xml:space="preserve">
+    <value>Tableau dashboard name is empty or invalid. Please provide valid dashboard name</value>
+  </data>
+  <data name="IFrameControl_Tableau_DashBoardHeight_Required" xml:space="preserve">
+    <value>Tableau dashboard height is empty or not a number. Please provide valid dashboard height</value>
+  </data>
+  <data name="IFrameControl_Tableau_DashBoardWidth_Required" xml:space="preserve">
+    <value>Tableau dashboard width is empty or not a number. Please provide valid dashboard width</value>
+  </data>
+  <data name="IFrameControl_Tableau_Page_Title_Required" xml:space="preserve">
+    <value>Tableau dashboard page title is empty or invalid. Please provide valid dashboard title</value>
+  </data>
+  <data name="IFrameControl_Tableau_Page_Link_Required" xml:space="preserve">
+    <value>Tableau dashboard page link is empty or invalid. Please provide valid dashboard landing page link</value>
+  </data>
+  <data name="IFrameControl_Tableau_Page_Link_Label_Required" xml:space="preserve">
+    <value>Tableau dashboard page link label is empty or invalid. Please provide valid dashboard landing page link label</value>
+  </data>
+  <data name="IFrameControl_Tableau_Article_Required" xml:space="preserve">
+    <value>Article needs to be created before inserting tableau component</value>
+  </data>
+  <data name="IFrameControl_Tableau_Article_Not_Created" xml:space="preserve">
+    <value>Article not created</value>
+  </data>
+    <data name="IFrameControl_Tableau_Document_Readonly" xml:space="preserve">
+    <value>Word document is readonly</value>
+  </data>
+  <data name="IFrameControl_Tableau_User_Not_LoggedIn" xml:space="preserve">
+    <value>Please login before inserting tableau</value>
+  </data>
+    <data name="IFrameControl_Tableau_Document_Lock" xml:space="preserve">
+    <value>Looks the document is locked, doe you want to proceed data tool insertion</value>
+  </data>
+  <data name="SelectedRelatedArticles_CreateDateLabel_Date_not_Set" xml:space="preserve">
     <value>Date not Set</value>
   </data>
 	<data name="SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document" xml:space="preserve">

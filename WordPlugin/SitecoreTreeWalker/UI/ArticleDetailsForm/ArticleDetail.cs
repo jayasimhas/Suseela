@@ -243,6 +243,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             Globals.SitecoreAddin.Log("Setting article number to #" + articleNumber);
             ArticleDetails.ArticleNumber = articleNumber;
             _documentCustomProperties.ArticleNumber = articleNumber;
+            _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
         }
 
         /// <summary>
@@ -568,6 +569,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         private void SaveArticleToSitecoreUpdateUI(ArticleDocumentMetadataParser metadataParser, string body = null)
         {
             _documentCustomProperties.ArticleNumber = GetArticleNumber();
+            _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
+
             InvalidStylesHighlighter highlighter = InvalidStylesHighlighter.GetParser();
             bool hasInvalidStyles = highlighter.HighlightAllInvalidStyles(Globals.SitecoreAddin.Application.ActiveDocument);
             if (hasInvalidStyles && !AskContinueInvalidStyle())
@@ -726,6 +729,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     else
                     {
                         _documentCustomProperties.ArticleNumber = ArticleDetails.ArticleNumber;
+                        _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
                         articleDetailsPageSelector.CheckOut();
                         _documentCustomProperties.ArticleNumber = GetArticleNumber();
                         articleStatusBar1.DisplayStatusBar(true, _documentCustomProperties.ArticleNumber);

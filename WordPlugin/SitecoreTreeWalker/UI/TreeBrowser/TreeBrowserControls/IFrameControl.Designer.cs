@@ -31,28 +31,12 @@
             this.uxMobileError = new System.Windows.Forms.Label();
             this.uxDesktopError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uxInsertIFrame = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.uxThirdPartyToolType = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.uxTableauPanel = new System.Windows.Forms.Panel();
-            this.uxTableauAllowCustomViews = new System.Windows.Forms.CheckBox();
-            this.uxTableauDisplayToolBars = new System.Windows.Forms.CheckBox();
-            this.uxTableauDisplayTabs = new System.Windows.Forms.CheckBox();
-            this.uxTableauLandingPageLinkLable = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.uxTableauLandingPageLink = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.uxTableauFilter = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.uxTableauDashBoardName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.uxTableauDashboardHeight = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.uxTableauDashboardWidth = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.uxTableauPageTitle = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.uxIFramePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.headerLabel = new System.Windows.Forms.Label();
@@ -74,16 +58,32 @@
             this.uxIFrameTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.uxIFrameHeader = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uxInsertIFrame = new System.Windows.Forms.Button();
+            this.uxTableauPanel = new System.Windows.Forms.Panel();
+            this.uxTableauAllowCustomViews = new System.Windows.Forms.CheckBox();
+            this.uxTableauDisplayToolBars = new System.Windows.Forms.CheckBox();
+            this.uxTableauDisplayTabs = new System.Windows.Forms.CheckBox();
+            this.uxTableauLandingPageLinkLable = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.uxTableauLandingPageLink = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.uxTableauFilter = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.uxTableauDashBoardName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.uxTableauDashboardHeight = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.uxTableauDashboardWidth = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.uxTableauPageTitle = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.uxTableauPanel.SuspendLayout();
             this.uxIFramePanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.uxTableauPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // uxMobileError
@@ -122,6 +122,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(354, 874);
             this.tableLayoutPanel1.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.uxInsertIFrame);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 825);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(348, 46);
+            this.panel2.TabIndex = 3;
+            // 
+            // uxInsertIFrame
+            // 
+            this.uxInsertIFrame.Location = new System.Drawing.Point(91, 8);
+            this.uxInsertIFrame.Name = "uxInsertIFrame";
+            this.uxInsertIFrame.Size = new System.Drawing.Size(117, 23);
+            this.uxInsertIFrame.TabIndex = 47;
+            this.uxInsertIFrame.Text = "Insert";
+            this.uxInsertIFrame.UseVisualStyleBackColor = true;
+            this.uxInsertIFrame.Click += new System.EventHandler(this.uxInsertIFrame_Click);
             // 
             // panel1
             // 
@@ -166,6 +185,236 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(348, 758);
             this.panel3.TabIndex = 2;
+            // 
+            // uxIFramePanel
+            // 
+            this.uxIFramePanel.Controls.Add(this.groupBox1);
+            this.uxIFramePanel.Controls.Add(this.label6);
+            this.uxIFramePanel.Controls.Add(this.uxMobilehttpsPreview);
+            this.uxIFramePanel.Controls.Add(this.label1);
+            this.uxIFramePanel.Controls.Add(this.mobileEmbed);
+            this.uxIFramePanel.Controls.Add(this.uxDesktophttpsPreview);
+            this.uxIFramePanel.Controls.Add(this.label5);
+            this.uxIFramePanel.Controls.Add(this.desktopEmbed);
+            this.uxIFramePanel.Controls.Add(this.uxIFrameSource);
+            this.uxIFramePanel.Controls.Add(this.label4);
+            this.uxIFramePanel.Controls.Add(this.uxIFrameCaption);
+            this.uxIFramePanel.Controls.Add(this.label3);
+            this.uxIFramePanel.Controls.Add(this.uxIFrameTitle);
+            this.uxIFramePanel.Controls.Add(this.label2);
+            this.uxIFramePanel.Controls.Add(this.uxIFrameHeader);
+            this.uxIFramePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uxIFramePanel.Location = new System.Drawing.Point(0, 0);
+            this.uxIFramePanel.Name = "uxIFramePanel";
+            this.uxIFramePanel.Size = new System.Drawing.Size(348, 758);
+            this.uxIFramePanel.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.headerLabel);
+            this.groupBox1.Controls.Add(this.captionLabel);
+            this.groupBox1.Controls.Add(this.sourceLabel);
+            this.groupBox1.Controls.Add(this.titleLabel);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(10, 462);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 289);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Preview";
+            // 
+            // headerLabel
+            // 
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.headerLabel.Location = new System.Drawing.Point(10, 25);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(44, 13);
+            this.headerLabel.TabIndex = 52;
+            this.headerLabel.Text = "Header";
+            // 
+            // captionLabel
+            // 
+            this.captionLabel.AutoSize = true;
+            this.captionLabel.Location = new System.Drawing.Point(12, 247);
+            this.captionLabel.Name = "captionLabel";
+            this.captionLabel.Size = new System.Drawing.Size(48, 13);
+            this.captionLabel.TabIndex = 54;
+            this.captionLabel.Text = "Caption";
+            // 
+            // sourceLabel
+            // 
+            this.sourceLabel.AutoSize = true;
+            this.sourceLabel.Location = new System.Drawing.Point(12, 267);
+            this.sourceLabel.Name = "sourceLabel";
+            this.sourceLabel.Size = new System.Drawing.Size(42, 13);
+            this.sourceLabel.TabIndex = 55;
+            this.sourceLabel.Text = "Source";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Location = new System.Drawing.Point(10, 49);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(28, 13);
+            this.titleLabel.TabIndex = 53;
+            this.titleLabel.Text = "Title";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::InformaSitecoreWord.Properties.Resources.imformaVideoPlaceholder2;
+            this.pictureBox1.InitialImage = global::InformaSitecoreWord.Properties.Resources.ExampleEmbed;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Mobile Embed";
+            // 
+            // uxMobilehttpsPreview
+            // 
+            this.uxMobilehttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxMobilehttpsPreview.Location = new System.Drawing.Point(163, 234);
+            this.uxMobilehttpsPreview.Name = "uxMobilehttpsPreview";
+            this.uxMobilehttpsPreview.Size = new System.Drawing.Size(175, 23);
+            this.uxMobilehttpsPreview.TabIndex = 84;
+            this.uxMobilehttpsPreview.Text = "Suggest Secure URL";
+            this.uxMobilehttpsPreview.UseVisualStyleBackColor = true;
+            this.uxMobilehttpsPreview.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Desktop Embed";
+            // 
+            // mobileEmbed
+            // 
+            this.mobileEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mobileEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
+            this.mobileEmbed.Location = new System.Drawing.Point(23, 148);
+            this.mobileEmbed.Multiline = true;
+            this.mobileEmbed.Name = "mobileEmbed";
+            this.mobileEmbed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.mobileEmbed.Size = new System.Drawing.Size(315, 79);
+            this.mobileEmbed.TabIndex = 82;
+            // 
+            // uxDesktophttpsPreview
+            // 
+            this.uxDesktophttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxDesktophttpsPreview.Location = new System.Drawing.Point(167, 107);
+            this.uxDesktophttpsPreview.Name = "uxDesktophttpsPreview";
+            this.uxDesktophttpsPreview.Size = new System.Drawing.Size(168, 23);
+            this.uxDesktophttpsPreview.TabIndex = 83;
+            this.uxDesktophttpsPreview.Text = "Suggest Secure URL";
+            this.uxDesktophttpsPreview.UseVisualStyleBackColor = true;
+            this.uxDesktophttpsPreview.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 409);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 80;
+            this.label5.Text = "Source";
+            // 
+            // desktopEmbed
+            // 
+            this.desktopEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.desktopEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
+            this.desktopEmbed.Location = new System.Drawing.Point(23, 27);
+            this.desktopEmbed.Multiline = true;
+            this.desktopEmbed.Name = "desktopEmbed";
+            this.desktopEmbed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.desktopEmbed.Size = new System.Drawing.Size(312, 74);
+            this.desktopEmbed.TabIndex = 81;
+            // 
+            // uxIFrameSource
+            // 
+            this.uxIFrameSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxIFrameSource.Font = new System.Drawing.Font("Arial", 10.5F);
+            this.uxIFrameSource.Location = new System.Drawing.Point(23, 432);
+            this.uxIFrameSource.Name = "uxIFrameSource";
+            this.uxIFrameSource.Size = new System.Drawing.Size(312, 24);
+            this.uxIFrameSource.TabIndex = 79;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 356);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "Caption";
+            // 
+            // uxIFrameCaption
+            // 
+            this.uxIFrameCaption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxIFrameCaption.Font = new System.Drawing.Font("Arial", 10.5F);
+            this.uxIFrameCaption.Location = new System.Drawing.Point(23, 378);
+            this.uxIFrameCaption.Name = "uxIFrameCaption";
+            this.uxIFrameCaption.Size = new System.Drawing.Size(312, 24);
+            this.uxIFrameCaption.TabIndex = 77;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Title";
+            // 
+            // uxIFrameTitle
+            // 
+            this.uxIFrameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxIFrameTitle.Font = new System.Drawing.Font("Arial Black", 10F);
+            this.uxIFrameTitle.Location = new System.Drawing.Point(23, 325);
+            this.uxIFrameTitle.Name = "uxIFrameTitle";
+            this.uxIFrameTitle.Size = new System.Drawing.Size(312, 26);
+            this.uxIFrameTitle.TabIndex = 75;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Header";
+            // 
+            // uxIFrameHeader
+            // 
+            this.uxIFrameHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxIFrameHeader.Font = new System.Drawing.Font("Arial", 10.5F);
+            this.uxIFrameHeader.Location = new System.Drawing.Point(23, 275);
+            this.uxIFrameHeader.Name = "uxIFrameHeader";
+            this.uxIFrameHeader.Size = new System.Drawing.Size(315, 24);
+            this.uxIFrameHeader.TabIndex = 73;
             // 
             // uxTableauPanel
             // 
@@ -340,254 +589,6 @@
             this.label8.TabIndex = 86;
             this.label8.Text = "Page Title";
             // 
-            // uxIFramePanel
-            // 
-            this.uxIFramePanel.Controls.Add(this.groupBox1);
-            this.uxIFramePanel.Controls.Add(this.label6);
-            this.uxIFramePanel.Controls.Add(this.uxMobilehttpsPreview);
-            this.uxIFramePanel.Controls.Add(this.label1);
-            this.uxIFramePanel.Controls.Add(this.mobileEmbed);
-            this.uxIFramePanel.Controls.Add(this.uxDesktophttpsPreview);
-            this.uxIFramePanel.Controls.Add(this.label5);
-            this.uxIFramePanel.Controls.Add(this.desktopEmbed);
-            this.uxIFramePanel.Controls.Add(this.uxIFrameSource);
-            this.uxIFramePanel.Controls.Add(this.label4);
-            this.uxIFramePanel.Controls.Add(this.uxIFrameCaption);
-            this.uxIFramePanel.Controls.Add(this.label3);
-            this.uxIFramePanel.Controls.Add(this.uxIFrameTitle);
-            this.uxIFramePanel.Controls.Add(this.label2);
-            this.uxIFramePanel.Controls.Add(this.uxIFrameHeader);
-            this.uxIFramePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxIFramePanel.Location = new System.Drawing.Point(0, 0);
-            this.uxIFramePanel.Name = "uxIFramePanel";
-            this.uxIFramePanel.Size = new System.Drawing.Size(348, 758);
-            this.uxIFramePanel.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.headerLabel);
-            this.groupBox1.Controls.Add(this.captionLabel);
-            this.groupBox1.Controls.Add(this.sourceLabel);
-            this.groupBox1.Controls.Add(this.titleLabel);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 462);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 289);
-            this.groupBox1.TabIndex = 87;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Preview";
-            // 
-            // headerLabel
-            // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.headerLabel.Location = new System.Drawing.Point(10, 25);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(44, 13);
-            this.headerLabel.TabIndex = 52;
-            this.headerLabel.Text = "Header";
-            // 
-            // captionLabel
-            // 
-            this.captionLabel.AutoSize = true;
-            this.captionLabel.Location = new System.Drawing.Point(12, 247);
-            this.captionLabel.Name = "captionLabel";
-            this.captionLabel.Size = new System.Drawing.Size(48, 13);
-            this.captionLabel.TabIndex = 54;
-            this.captionLabel.Text = "Caption";
-            // 
-            // sourceLabel
-            // 
-            this.sourceLabel.AutoSize = true;
-            this.sourceLabel.Location = new System.Drawing.Point(12, 267);
-            this.sourceLabel.Name = "sourceLabel";
-            this.sourceLabel.Size = new System.Drawing.Size(42, 13);
-            this.sourceLabel.TabIndex = 55;
-            this.sourceLabel.Text = "Source";
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(10, 49);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(28, 13);
-            this.titleLabel.TabIndex = 53;
-            this.titleLabel.Text = "Title";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::InformaSitecoreWord.Properties.Resources.imformaVideoPlaceholder2;
-            this.pictureBox1.InitialImage = global::InformaSitecoreWord.Properties.Resources.ExampleEmbed;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 86;
-            this.label6.Text = "Mobile Embed";
-            // 
-            // uxMobilehttpsPreview
-            // 
-            this.uxMobilehttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxMobilehttpsPreview.Location = new System.Drawing.Point(163, 234);
-            this.uxMobilehttpsPreview.Name = "uxMobilehttpsPreview";
-            this.uxMobilehttpsPreview.Size = new System.Drawing.Size(175, 23);
-            this.uxMobilehttpsPreview.TabIndex = 84;
-            this.uxMobilehttpsPreview.Text = "Suggest Secure URL";
-            this.uxMobilehttpsPreview.UseVisualStyleBackColor = true;
-            this.uxMobilehttpsPreview.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 85;
-            this.label1.Text = "Desktop Embed";
-            // 
-            // mobileEmbed
-            // 
-            this.mobileEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mobileEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
-            this.mobileEmbed.Location = new System.Drawing.Point(23, 148);
-            this.mobileEmbed.Multiline = true;
-            this.mobileEmbed.Name = "mobileEmbed";
-            this.mobileEmbed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.mobileEmbed.Size = new System.Drawing.Size(315, 79);
-            this.mobileEmbed.TabIndex = 82;
-            // 
-            // uxDesktophttpsPreview
-            // 
-            this.uxDesktophttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxDesktophttpsPreview.Location = new System.Drawing.Point(167, 107);
-            this.uxDesktophttpsPreview.Name = "uxDesktophttpsPreview";
-            this.uxDesktophttpsPreview.Size = new System.Drawing.Size(168, 23);
-            this.uxDesktophttpsPreview.TabIndex = 83;
-            this.uxDesktophttpsPreview.Text = "Suggest Secure URL";
-            this.uxDesktophttpsPreview.UseVisualStyleBackColor = true;
-            this.uxDesktophttpsPreview.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 410);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 80;
-            this.label5.Text = "Source";
-            // 
-            // desktopEmbed
-            // 
-            this.desktopEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.desktopEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
-            this.desktopEmbed.Location = new System.Drawing.Point(23, 27);
-            this.desktopEmbed.Multiline = true;
-            this.desktopEmbed.Name = "desktopEmbed";
-            this.desktopEmbed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.desktopEmbed.Size = new System.Drawing.Size(312, 74);
-            this.desktopEmbed.TabIndex = 81;
-            // 
-            // uxIFrameSource
-            // 
-            this.uxIFrameSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxIFrameSource.Font = new System.Drawing.Font("Arial", 10.5F);
-            this.uxIFrameSource.Location = new System.Drawing.Point(23, 432);
-            this.uxIFrameSource.Name = "uxIFrameSource";
-            this.uxIFrameSource.Size = new System.Drawing.Size(312, 24);
-            this.uxIFrameSource.TabIndex = 79;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 358);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "Caption";
-            // 
-            // uxIFrameCaption
-            // 
-            this.uxIFrameCaption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxIFrameCaption.Font = new System.Drawing.Font("Arial", 10.5F);
-            this.uxIFrameCaption.Location = new System.Drawing.Point(23, 378);
-            this.uxIFrameCaption.Name = "uxIFrameCaption";
-            this.uxIFrameCaption.Size = new System.Drawing.Size(312, 24);
-            this.uxIFrameCaption.TabIndex = 77;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 306);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Title";
-            // 
-            // uxIFrameTitle
-            // 
-            this.uxIFrameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxIFrameTitle.Font = new System.Drawing.Font("Arial Black", 10F);
-            this.uxIFrameTitle.Location = new System.Drawing.Point(23, 325);
-            this.uxIFrameTitle.Name = "uxIFrameTitle";
-            this.uxIFrameTitle.Size = new System.Drawing.Size(312, 26);
-            this.uxIFrameTitle.TabIndex = 75;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Header";
-            // 
-            // uxIFrameHeader
-            // 
-            this.uxIFrameHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxIFrameHeader.Font = new System.Drawing.Font("Arial", 10.5F);
-            this.uxIFrameHeader.Location = new System.Drawing.Point(23, 275);
-            this.uxIFrameHeader.Name = "uxIFrameHeader";
-            this.uxIFrameHeader.Size = new System.Drawing.Size(315, 24);
-            this.uxIFrameHeader.TabIndex = 73;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.uxInsertIFrame);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 825);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 46);
-            this.panel2.TabIndex = 3;
-            // 
-            // uxInsertIFrame
-            // 
-            this.uxInsertIFrame.Location = new System.Drawing.Point(91, 8);
-            this.uxInsertIFrame.Name = "uxInsertIFrame";
-            this.uxInsertIFrame.Size = new System.Drawing.Size(117, 23);
-            this.uxInsertIFrame.TabIndex = 47;
-            this.uxInsertIFrame.Text = "Insert";
-            this.uxInsertIFrame.UseVisualStyleBackColor = true;
-            // 
             // IFrameControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -602,17 +603,17 @@
             this.Size = new System.Drawing.Size(354, 874);
             this.Load += new System.EventHandler(this.IFrameControl_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.uxTableauPanel.ResumeLayout(false);
-            this.uxTableauPanel.PerformLayout();
             this.uxIFramePanel.ResumeLayout(false);
             this.uxIFramePanel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.uxTableauPanel.ResumeLayout(false);
+            this.uxTableauPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
