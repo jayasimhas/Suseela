@@ -12,7 +12,7 @@ templatekey: AMCharts Using Builder
 ----version----
 language: en
 version: 1
-revision: 6e4bf212-92b5-4506-86d2-dff72ab4b392
+revision: 647feecb-0d3a-4d99-bdc7-eb2c24a2f20d
 
 ----field----
 field: {F0830893-14EC-41F0-B7A9-A80813095489}
@@ -25,9 +25,9 @@ serial
 field: {98E1FB53-8679-48AA-9F2D-E5A02786B2F8}
 name: Presentation
 key: presentation
-content-length: 403
+content-length: 402
 
-@"type": "serial",
+"type": "serial",
 "dataProvider": chartData,
 "categoryField": "category",
 "graphs": [ { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-1", "title": "graph 1", "type": "column", "valueField": "column-1" }, { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-2", "title": "graph 2", "type": "column", "valueField": "column-2" } ]
@@ -100,14 +100,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6e4bf212-92b5-4506-86d2-dff72ab4b392
+647feecb-0d3a-4d99-bdc7-eb2c24a2f20d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161007T062814Z
+20160930T162200Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

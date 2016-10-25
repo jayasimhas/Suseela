@@ -12,7 +12,7 @@ templatekey: Vertical Root
 ----version----
 language: en
 version: 1
-revision: 3df59352-33c5-42f0-a32f-9ca93ca940e9
+revision: 72dce496-005e-4c95-bc34-00bd274c0029
 
 ----field----
 field: {0E255F6B-02F6-409A-AB3B-EB536FD4D531}
@@ -21,6 +21,13 @@ key: vertical name
 content-length: 4
 
 Agri
+----field----
+field: {4A181BC9-7B01-4DD5-8AE7-952582D73665}
+name: Search Index Name
+key: search index name
+content-length: 30
+
+informa_content_agri_{0}_index
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3df59352-33c5-42f0-a32f-9ca93ca940e9
+72dce496-005e-4c95-bc34-00bd274c0029
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160916T121606Z
+20161004T094752Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

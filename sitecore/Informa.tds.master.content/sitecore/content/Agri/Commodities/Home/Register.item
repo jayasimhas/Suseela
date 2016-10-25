@@ -26,7 +26,7 @@ content-length: 206
 ----version----
 language: en
 version: 1
-revision: d909cfa7-433c-4318-887f-ecf1dd0227b5
+revision: 6e128c0a-b255-446e-8b2b-63beac8fa6db
 
 ----field----
 field: {761D17CF-74DB-4658-AD8B-3C3B119D5851}
@@ -79,13 +79,6 @@ content-length: 20
 
 Scheduled Publishing
 ----field----
-field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
-name: __Final Renderings
-key: __final renderings
-content-length: 149
-
-<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{CEA67009-C8D2-4835-AF91-11E2A920D7E4}"><p:d /></r></d></r>
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -98,14 +91,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d909cfa7-433c-4318-887f-ecf1dd0227b5
+6e128c0a-b255-446e-8b2b-63beac8fa6db
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161015T061321Z
+20161001T063554Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -113,10 +106,3 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
-----field----
-field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
-name: __Lock
-key: __lock
-content-length: 5
-
-<r />

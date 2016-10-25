@@ -1,0 +1,131 @@
+----item----
+version: 1
+id: {BA0F4E46-5214-4446-AEA4-A8E787B0B413}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/DataToolDemoPages/TableauDemoPage/New Tableau Dashboard
+parent: {A355AE9E-F9A5-419B-9A16-80199EB4EB58}
+name: New Tableau Dashboard
+master: {00000000-0000-0000-0000-000000000000}
+template: {580A652A-EB37-446A-A16B-B3409C902FE5}
+templatekey: Tableau Dashboard
+
+----version----
+language: en
+version: 1
+revision: 4365ff63-d169-421e-a51d-382593099cb9
+
+----field----
+field: {161FB372-121C-47E4-9704-E6CAF1490D43}
+name: Dashboard Name
+key: dashboard name
+content-length: 45
+
+ForSanjeev-TradeIntelligenceV_4-PL/YeartoDate
+----field----
+field: {CF2E5DBF-D588-4ABE-A0FA-C481D122625F}
+name: Mobile Dashboard Name
+key: mobile dashboard name
+content-length: 49
+
+For Sanjeev - Agri Data Graphs V3 - PL/YeartoDate
+----field----
+field: {AB873933-A60E-45BA-B16E-E906A9FD216B}
+name: Display Tabs
+key: display tabs
+content-length: 1
+
+1
+----field----
+field: {9FC83340-A27C-46E4-9835-7F83BBF2C9BA}
+name: Display Toolbars
+key: display toolbars
+content-length: 1
+
+1
+----field----
+field: {CB083E09-7ECE-458E-BFAB-3E8F87F2BF0B}
+name: Width
+key: width
+content-length: 0
+
+
+----field----
+field: {A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B}
+name: Height
+key: height
+content-length: 3
+
+600
+----field----
+field: {889A40F6-8A6B-44F0-A305-38DE22186F7A}
+name: Page Title
+key: page title
+content-length: 53
+
+Page Title - This is the DATA Tool page Tableau Page.
+----field----
+field: {14A2AA8C-0456-4265-A11C-5DBF4946C555}
+name: Page Subheading
+key: page subheading
+content-length: 164
+
+Page Subheading - Tableau page,  test page heading This is a subheading to the article name you see above.  It will give context to what the article below is about.
+----field----
+field: {FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5}
+name: Introductory Text
+key: introductory text
+content-length: 1199
+
+<p><strong>Introductory text.</strong> Tableau This is the description to the data tool. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it.</p>
+<p style="margin-top: 0in;"><em>This is description of tool cum solution </em><em>A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it.</em></p>
+<p style="margin-top: 0in;">This is description of tool cum solution A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it.</p>
+----field----
+field: {58EADA52-FE63-4FD3-8034-0BB6FBBCCD16}
+name: Tool Explanation
+key: tool explanation
+content-length: 1195
+
+<p><strong>Tableau Tool Description Text explanation </strong>of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to <em>minimise this panel if the user does not require it</em>. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it.</p>
+<p>&nbsp;<strong>Tableau Tool Description Text explanation&nbsp;</strong>of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to&nbsp;<em>minimise this panel if the user does not require it</em>. &nbsp;A &lsquo;How to...?&rsquo; introductory explanation of how to use the chart, with an accompanying video. There will be an option to minimise this panel if the user does not require it.</p>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161002T145539Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4365ff63-d169-421e-a51d-382593099cb9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161005T122047Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

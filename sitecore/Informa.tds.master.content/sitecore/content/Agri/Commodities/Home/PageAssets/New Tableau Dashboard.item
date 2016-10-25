@@ -12,7 +12,7 @@ templatekey: Tableau Dashboard
 ----version----
 language: en
 version: 1
-revision: ad426453-270d-41fa-8653-440ae18aecbe
+revision: ba2df29b-6eb1-446c-92ef-b6348b4a25f6
 
 ----field----
 field: {161FB372-121C-47E4-9704-E6CAF1490D43}
@@ -28,6 +28,13 @@ key: page title
 content-length: 4
 
 Demo
+----field----
+field: {5CAC4FEC-AB94-495F-ADA4-FE34B08EBF7B}
+name: Landing Page Link
+key: landing page link
+content-length: 105
+
+<link text="Tableau Landpage Link" linktype="external" url="http://www.google.com" anchor="" target="" />
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ad426453-270d-41fa-8653-440ae18aecbe
+ba2df29b-6eb1-446c-92ef-b6348b4a25f6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161001T103713Z
+20161003T093317Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

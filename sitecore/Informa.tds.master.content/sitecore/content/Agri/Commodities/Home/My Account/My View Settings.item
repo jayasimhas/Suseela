@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {6A5C9CD9-ABEF-4CAA-90E6-FAE85B8495B3}
+id: {AA97D956-8CD5-43B2-9E47-24D57092C405}
 database: master
 path: /sitecore/content/Agri/Commodities/Home/My Account/My View Settings
 parent: {7080A700-60DC-43DE-AC72-4AFB16343891}
@@ -12,7 +12,7 @@ templatekey: My View Settings Page
 ----version----
 language: en
 version: 1
-revision: 9e910051-a40a-4dfa-bc79-3a6f2d5539a7
+revision: a346e55b-ee24-4393-a719-a26f4313be21
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -32,11 +32,11 @@ My View Settings
 field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
 key: body
-content-length: 259
+content-length: 254
 
- <p>Choose what you see on 'My View'.</p>
-        <p>Consectetur adipiscing elit. Morbi virae sagittis tellus, quis dictum diam. Vestibulum imperdiet</p>
-        <p>tellus at nibh faucibus, retrum euismod lorem consequat. Pellentesque sit amet pretium mi.</p>
+<p>Choose what you see on 'My View'.</p>
+						<p>Consectetur adipiscing elit. Morbi virae sagittis tellus, quis dictum diam. Vestibulum imperdiet</p>
+						<p>tellus at nibh faucibus, retrum euismod lorem consequat. Pellentesque sit amet pretium mi.</p>
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -50,21 +50,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20161012T130510Z
+20161020T090834Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-9e910051-a40a-4dfa-bc79-3a6f2d5539a7
+a346e55b-ee24-4393-a719-a26f4313be21
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161012T130530Z
+20161020T090959Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

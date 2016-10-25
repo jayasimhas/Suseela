@@ -19,7 +19,7 @@ content-length: 206
 ----version----
 language: en
 version: 1
-revision: be6400b3-7a13-4965-8793-216952c87c77
+revision: a12ecc56-b42a-445f-9711-217cadba8c7a
 
 ----field----
 field: {DEB975E3-E165-4444-9146-B570B7AA5312}
@@ -29,33 +29,33 @@ content-length: 74
 
 You have successfully created your online account with #User_Company_Name#
 ----field----
-field: {7EC23124-5B13-4565-82B8-CDAB9F397B9B}
+field: {AEAB196A-B0B2-46E5-83DC-65AE8EB814F3}
 name: Next Step Page
 key: next step page
 content-length: 38
 
-{4720AF2B-DBEC-442D-96C0-0EFF73D9A452}
+{A93768A6-2497-49B6-B44D-B076267B8B52}
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
 key: title
-content-length: 10
+content-length: 18
 
-You're in!
+You're Almost Done
 ----field----
 field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
 name: Sub Title
 key: sub title
-content-length: 129
+content-length: 49
 
-You now have an account with Commodities. As part of your account you will have access to the follwoing products and newsletters:
+You have successfully created your online account
 ----field----
 field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
 key: body
-content-length: 180
+content-length: 33
 
-Tagline explaining this is about.Tagline explaining this is about.Tagline explaining this is about.Take a look at the <span class="latest_newsletter">latest site newsletter.</span>
+Testing here for additional items
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -76,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-be6400b3-7a13-4965-8793-216952c87c77
+a12ecc56-b42a-445f-9711-217cadba8c7a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161017T145521Z
+20161020T091851Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

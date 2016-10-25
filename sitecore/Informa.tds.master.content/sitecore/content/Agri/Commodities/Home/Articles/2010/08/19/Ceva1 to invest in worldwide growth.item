@@ -19,7 +19,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 6acd5701-bc46-401e-a4a1-1ff2bd4f28aa
+revision: 37c93877-3f0a-4c0d-a4b5-eb641727ba0e
 
 ----field----
 field: {99C8BE36-4215-4C67-88E7-EE066C605BEA}
@@ -105,9 +105,9 @@ content-length: 38
 field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
 name: Legacy Publication
 key: legacy publication
-content-length: 194
+content-length: 38
 
-{8DA84A88-38AA-4475-8D85-921C361F6CE2}|{B43E67C0-640C-4104-A7C4-882C9DEB673D}|{FD1B88FE-C5EF-4C13-8898-951AC21039F9}|{1090F1B0-57F5-425E-A6E8-CFE42BF5AEFC}|{54D8EFED-3440-4DB6-84C4-E071ABEE0A05}
+{8DA84A88-38AA-4475-8D85-921C361F6CE2}
 ----field----
 field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
 name: Escenic ID
@@ -115,13 +115,6 @@ key: escenic id
 content-length: 4
 
 1003
-----field----
-field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
-name: __Final Renderings
-key: __final renderings
-content-length: 383
-
-<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{45CCD425-6134-4DF4-998A-E34ADCC3F2A2}" p:before="r[@uid='{8874D88E-AE1F-4238-A4D7-7257535A5821}']" s:id="{EF072BA2-1C6F-4B6D-B7CC-ADE861A92637}" s:ph="main-content" /><r uid="{8874D88E-AE1F-4238-A4D7-7257535A5821}" s:id="{845BF5BC-84BD-4D0F-B44B-CF26824071F2}" s:ph="header-myview" /></d></r>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -142,14 +135,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6acd5701-bc46-401e-a4a1-1ff2bd4f28aa
+37c93877-3f0a-4c0d-a4b5-eb641727ba0e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161013T102949Z
+20160930T143831Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

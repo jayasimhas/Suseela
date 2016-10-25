@@ -54,7 +54,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: 16c3a61a-7582-413d-a2f4-91d652f99f97
+revision: 89868e6c-5591-4c50-b014-5b694c3ce748
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -484,7 +484,7 @@ name: MyView Settings Page
 key: myview settings page
 content-length: 38
 
-{6A5C9CD9-ABEF-4CAA-90E6-FAE85B8495B3}
+{AA97D956-8CD5-43B2-9E47-24D57092C405}
 ----field----
 field: {0F9D9311-BE37-47A3-BB47-0237BA3265D2}
 name: Enable MyView Toggle
@@ -492,13 +492,6 @@ key: enable myview toggle
 content-length: 1
 
 1
-----field----
-field: {A58C32CD-9345-4710-AA06-B4F6615047EC}
-name: MyView Page
-key: myview page
-content-length: 38
-
-{2794788E-FECB-4570-9242-F105155B16DB}
 ----field----
 field: {281273CB-8A6A-4637-B88E-1F278448CA11}
 name: Registration Email Subject
@@ -603,27 +596,6 @@ content-length: 19
 
 webpubs@informa.com
 ----field----
-field: {4906D7EA-75A7-43EE-97F2-EEEBAAC59450}
-name: Welcome Message FindOutMore LinkUrl
-key: welcome message findoutmore linkurl
-content-length: 38
-
-{4A099CD3-BD51-4AB0-B122-435734350C05}
-----field----
-field: {2BCE4993-CC1F-4AFD-BD50-B9404B9059D0}
-name: Welcome Message Display Frequency
-key: welcome message display frequency
-content-length: 2
-
-35
-----field----
-field: {3C6989D2-9AF5-46B2-8C21-9AD2BFCE298C}
-name: Welcome Message MyView LinkUrl
-key: welcome message myview linkurl
-content-length: 38
-
-{2794788E-FECB-4570-9242-F105155B16DB}
-----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
@@ -643,14 +615,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-16c3a61a-7582-413d-a2f4-91d652f99f97
+89868e6c-5591-4c50-b014-5b694c3ce748
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161019T081617Z
+20161020T091119Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

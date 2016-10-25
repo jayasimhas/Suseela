@@ -12,7 +12,7 @@ templatekey: Navigation Link
 ----version----
 language: en
 version: 1
-revision: d9e36cda-97a3-4bb2-967b-fc66a9f98b33
+revision: 684ff54c-5542-42ba-b44f-958f06ef7407
 
 ----field----
 field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
@@ -29,13 +29,6 @@ content-length: 6
 
 Coffee
 ----field----
-field: {BBFBB899-20C6-43BC-B6DE-021E84CD5BB6}
-name: Navigation Code
-key: navigation code
-content-length: 3
-
-COF
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -48,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d9e36cda-97a3-4bb2-967b-fc66a9f98b33
+684ff54c-5542-42ba-b44f-958f06ef7407
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161018T090204Z
+20160928T094436Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
