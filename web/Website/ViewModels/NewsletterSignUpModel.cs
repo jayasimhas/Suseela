@@ -1,5 +1,6 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
@@ -18,13 +19,15 @@ namespace Informa.Web.ViewModels
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
+		protected readonly IReturnUrlContext ReturnURLContext;
 
 		public NewsletterSignUpModel(
 			IAuthenticatedUserContext userContext,
 			ITextTranslator textTranslator,
 			ISiteRootContext siteRootContext,
 			IGlobalSitecoreService globalService,
-			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
+			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
+			IReturnUrlContext returnURLContext)
 		{
 
 			UserContext = userContext;
@@ -32,6 +35,7 @@ namespace Informa.Web.ViewModels
 			SiteRootContext = siteRootContext;
 			GlobalService = globalService;
 			NewsletterOptedInContext = newsletterOptedInContext;
+			ReturnURLContext = returnURLContext;
 		}
 
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -44,6 +48,6 @@ namespace Informa.Web.ViewModels
 
 		public string NeedsRegistrationMessage => TextTranslator.Translate("Newsletter.NeedsRegistrationMessage");
 		public string NeedsRegistrationButtonText => TextTranslator.Translate("Newsletter.NeedsRegistrationButtonText");
-		public string RegistrationURL => SiteRootContext.Item.Register_Link.Url ?? "#";
+		public string RegistrationURL => !string.IsNullOrEmpty(SiteRootContext.Item.Register_Link?.Url) ? SiteRootContext.Item.Register_Link?.Url + $"?returnURL={(string.IsNullOrEmpty(ReturnURLContext.Url) ? "/" : ReturnURLContext.Url)}&username=" : "#";
 	}
 }
