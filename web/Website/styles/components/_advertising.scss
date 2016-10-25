@@ -67,7 +67,6 @@ section: Advertising
         text-transform: uppercase;
         color: $color-light-gray;
 		margin-bottom: 0.25rem;
-        text-align: center;
 	}
 
 	@include breakpoint('wide') {
