@@ -13,33 +13,37 @@ namespace Informa.Web.ViewModels
 {
 	public class NewsletterSignUpModel : GlassViewModel<INewsletter_Sign_Up>
 	{
-	    protected readonly IAuthenticatedUserContext UserContext;
-	    protected readonly ITextTranslator TextTranslator;
-	    protected readonly ISiteRootContext SiteRootContext;
-	    protected readonly IGlobalSitecoreService GlobalService;
+		protected readonly IAuthenticatedUserContext UserContext;
+		protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
-        public NewsletterSignUpModel(
-	        IAuthenticatedUserContext userContext,
-            ITextTranslator textTranslator,
-            ISiteRootContext siteRootContext,
-            IGlobalSitecoreService globalService,
+		public NewsletterSignUpModel(
+			IAuthenticatedUserContext userContext,
+			ITextTranslator textTranslator,
+			ISiteRootContext siteRootContext,
+			IGlobalSitecoreService globalService,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
-	    {
+		{
 
-            UserContext = userContext;
-            TextTranslator = textTranslator;
-            SiteRootContext = siteRootContext;
-            GlobalService = globalService;
+			UserContext = userContext;
+			TextTranslator = textTranslator;
+			SiteRootContext = siteRootContext;
+			GlobalService = globalService;
 			NewsletterOptedInContext = newsletterOptedInContext;
-	    }
+		}
 
-        public bool IsAuthenticated => UserContext.IsAuthenticated;
+		public bool IsAuthenticated => UserContext.IsAuthenticated;
 
 		public bool HasSubscribed => NewsletterOptedInContext.OptedIn;
-        public string PreferencesURL => GlobalService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
-        public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
-        public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
-        public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
-    }
+		public string PreferencesURL => GlobalService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
+		public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
+		public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
+		public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
+
+		public string NeedsRegistrationMessage => TextTranslator.Translate("Newsletter.NeedsRegistrationMessage");
+		public string NeedsRegistrationButtonText => TextTranslator.Translate("Newsletter.NeedsRegistrationButtonText");
+		public string RegistrationURL => SiteRootContext.Item.Register_Link.Url ?? "#";
+	}
 }
