@@ -321,11 +321,18 @@ $(function () {
     setClsforFlw(tables);
 
     $('.saveview').click(function () {
-        var alltables = $('.table'),
+        var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
 		    UserPreferences = { "IsNewUser": false }, allpublications = $('.publicationPan', '#allPublicationsPan');
         UserPreferences.PreferredChannels = [];
 
         setDataRow(allpublications);
+
+        allpublicationsEles.removeAttr('data-row');
+        for (var i = 0; i < allpublicationsEles.length; i++) {
+            var j = i + 1;
+            $(allpublicationsEles[i]).attr('data-row', j);
+        }
+
         createJSONData(alltables, UserPreferences);
 
         $('#validatePreference').val(0);
