@@ -38,7 +38,7 @@
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
                     //Take user to Personalized home page.
-                    return "/personal-home";
+                    return SiterootContext.Item?.MyView_Page?._Url;
                 }
                 else
                 {

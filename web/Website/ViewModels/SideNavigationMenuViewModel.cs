@@ -68,7 +68,7 @@ namespace Informa.Web.ViewModels
         /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
         {
-            if (IsAuthenticated&& IsGlobalToggleEnabled)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
                 if (UserPreferences.Preferences != null &&
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
@@ -131,7 +131,7 @@ namespace Informa.Web.ViewModels
                         {
                             foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
                             {
-                                if (!string.IsNullOrWhiteSpace(topic.TopicCode)&& topic.IsFollowing)
+                                if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
                                 {
                                     var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
                                     if (!string.IsNullOrEmpty(topicName))
@@ -165,35 +165,45 @@ namespace Informa.Web.ViewModels
             var subscriptions = new List<ISubscription>();
             var channelSubscriptions = new List<ChannelSubscription>();
             var topicSubscriptions = new List<TopicSubscription>();
-            if (IsAuthenticated&& IsGlobalToggleEnabled)
+            if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-           
-                //channel based subscriptions
-                if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
-                {
-                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels))
-                    {
-                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-                        {
-                            channelSubscriptions.Add(subscription);
-                        }
-                    }
-                    subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
-                }
 
-                //Topic based subscriptions
-                else if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                //channel based subscriptions
+                var currentPublication = SiterootContext.Item.Publication_Code;
+                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication);
+                if (userSubscriptions != null)
                 {
-                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics))
+                    if (userSubscriptions.SelectMany(n => n.SubscribedChannels) != null && userSubscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
                     {
-                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedChannels))
                         {
-                            topicSubscriptions.Add(subscription);
+
+                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            {
+                                channelSubscriptions.Add(subscription);
+                            }
                         }
+                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
                     }
-                    subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+
+                    //Topic based subscriptions
+                    else if (userSubscriptions.SelectMany(n => n.SubscribedTopics) != null && userSubscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                    {
+                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedTopics))
+                        {
+                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            {
+                                topicSubscriptions.Add(subscription);
+                            }
+                        }
+                        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+                    }
+                    return subscriptions;
                 }
-                return subscriptions;
+                else
+                {
+                    return Enumerable.Empty<ISubscription>();
+                }
             }
             else
             {

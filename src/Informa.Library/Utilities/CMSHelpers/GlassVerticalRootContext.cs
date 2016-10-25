@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Autofac.Attributes;
 using System;
@@ -13,15 +14,14 @@ namespace Informa.Library.Utilities.CMSHelpers
     public class GlassVerticalRootContext : IVerticalRootContext
     {
         protected readonly ISitecoreContext SitecoreContext;
-        public GlassVerticalRootContext(ISitecoreContext sitecoreContext)
-
+        protected readonly IGlobalSitecoreService GlobalService;
+       
+        public GlassVerticalRootContext(ISitecoreContext sitecoreContext, IGlobalSitecoreService globalService)
         {
             SitecoreContext = sitecoreContext;
+            GlobalService = globalService;
         }
-
-
-        private IVertical_Root _item;
-        public IVertical_Root Item => _item ??
-            (_item = SitecoreContext?.GetRootItem<IVertical_Root>());
+        public Guid verticalGuid => new Guid(SitecoreContext?.GetRootItem<ISite_Root>()._Parent._Id.ToString());
+        public IVertical_Root Item => GlobalService.GetItem<IVertical_Root>(verticalGuid);
     }
 }

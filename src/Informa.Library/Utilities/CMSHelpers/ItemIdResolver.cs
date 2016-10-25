@@ -1,25 +1,22 @@
 ﻿using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Library.Services.Global;
+using Informa.Library.Site;
+using Informa.Library.Utilities.References;
+using Jabberwocky.Core.Caching;
+using Jabberwocky.Glass.Autofac.Util;
+using Jabberwocky.Glass.Services;
 using Sitecore.Configuration;
 using Sitecore.Xml;
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using System.Xml.Linq;
+using Autofac;
 
 namespace Informa.Library.Utilities.CMSHelpers
 {
 
     public class ItemIdResolver
-    {
-        protected readonly ISitecoreContext SitecoreContext;
-        protected readonly GlassVerticalRootContext VerticalRootContext;
-        static ItemIdResolver itemResolver;
-        public ItemIdResolver()
-        {
-            SitecoreContext = new SitecoreContext();
-            VerticalRootContext = new GlassVerticalRootContext(SitecoreContext);
-        }
+    {       
         /// <summary>
         /// Method for reading Guid value from config based on key
         /// </summary>
@@ -28,29 +25,23 @@ namespace Informa.Library.Utilities.CMSHelpers
         public static string GetItemIdByKey(string itemKey)
         {
             string itemId = string.Empty;
-            itemResolver = new ItemIdResolver();
-            var vertical = itemResolver.GetVerticalName();           
-            if (vertical!=null && !string.IsNullOrEmpty(vertical._Path))
+            string vertical = string.Empty;
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
-                string[] pathParts = vertical._Path.Split('/');
+                var reader = scope.Resolve<IVerticalRootContext>();
+                vertical = reader.Item.Vertical_Name;
+            }
+            if (!string.IsNullOrEmpty(vertical))
+            {
                 itemId = Sitecore.Configuration.Settings.GetSetting(itemKey + "." + "global");
-                if(string.IsNullOrEmpty(itemId))
-                    itemId = Sitecore.Configuration.Settings.GetSetting(itemKey + "." + pathParts[3].ToLower());
+                if (string.IsNullOrEmpty(itemId))
+                    itemId = Sitecore.Configuration.Settings.GetSetting(itemKey + "." + vertical.ToLower());
             }
             else
             {
                 itemId = Sitecore.Configuration.Settings.GetSetting(itemKey);
             }
             return itemId;
-        }
-
-        /// <summary>
-        /// Method for fetching Vertinal name based on current context
-        /// </summary>
-        /// <returns>Vertical Name</returns>
-        public IVertical_Root GetVerticalName()
-        {
-           return VerticalRootContext.Item;
         }
     }
 
@@ -71,7 +62,7 @@ namespace Informa.Library.Utilities.CMSHelpers
 
             foreach (XmlNode node in Factory.GetConfigNodes("settings/setting"))
             {
-                if(XmlUtil.GetAttribute("name", node).StartsWith("Content.") || XmlUtil.GetAttribute("name", node).EndsWith(".pharma"))
+                if (XmlUtil.GetAttribute("name", node).StartsWith("Content.") || XmlUtil.GetAttribute("name", node).EndsWith(".pharma"))
                     ItemSetting.Add(XmlUtil.GetAttribute("name", node), XmlUtil.GetAttribute("value", node));
             }
 
@@ -85,7 +76,7 @@ namespace Informa.Library.Utilities.CMSHelpers
             ContentRootname = Sitecore.Configuration.Settings.GetSetting("Sitecore.ContentRoot.Name");
             ContentRootGuid = ItemSetting["Content.Guid"];
         }
-        
+
         private SitecoreSettingResolver()
         {
             //SitecoreContext = new SitecoreContext();

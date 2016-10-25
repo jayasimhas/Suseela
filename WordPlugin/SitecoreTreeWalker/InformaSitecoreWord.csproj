@@ -593,6 +593,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="app.config.template" />
     <None Include="ClassDiagram1.cd" />
     <None Include="InformaSitecoreWord_2_TemporaryKey.pfx" />
     <None Include="InformaSitecoreWord_3_TemporaryKey.pfx" />
