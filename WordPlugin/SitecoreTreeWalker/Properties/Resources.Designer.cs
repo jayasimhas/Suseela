@@ -281,6 +281,105 @@ namespace InformaSitecoreWord.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article not created.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Article_Not_Created {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Article_Not_Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article needs to be created before inserting tableau component.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Article_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Article_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard height is empty or not a number. Please provide valid dashboard height.
+        /// </summary>
+        internal static string IFrameControl_Tableau_DashBoardHeight_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_DashBoardHeight_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard name is empty or invalid. Please provide valid dashboard name.
+        /// </summary>
+        internal static string IFrameControl_Tableau_DashBoardName_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_DashBoardName_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard width is empty or not a number. Please provide valid dashboard width.
+        /// </summary>
+        internal static string IFrameControl_Tableau_DashBoardWidth_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_DashBoardWidth_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Looks the document is locked, doe you want to proceed data tool insertion.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Document_Lock {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Document_Lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Word document is readonly.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Document_Readonly {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Document_Readonly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard page link label is empty or invalid. Please provide valid dashboard landing page link label.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Page_Link_Label_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Page_Link_Label_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard page link is empty or invalid. Please provide valid dashboard landing page link.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Page_Link_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Page_Link_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau dashboard page title is empty or invalid. Please provide valid dashboard title.
+        /// </summary>
+        internal static string IFrameControl_Tableau_Page_Title_Required {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_Page_Title_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please login before inserting tableau.
+        /// </summary>
+        internal static string IFrameControl_Tableau_User_Not_LoggedIn {
+            get {
+                return ResourceManager.GetString("IFrameControl_Tableau_User_Not_LoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input is invalid or not permitted.
         ///Please make sure you have provided valid HTML with no script, style, or link tags..
         /// </summary>

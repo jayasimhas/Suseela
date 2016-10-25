@@ -23,6 +23,8 @@ using Sitecore;
 using Sitecore.Mvc.Extensions;
 using Constants = Informa.Library.Utilities.References.Constants;
 using Informa.Library.Publication;
+using System.Xml.Linq;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Web.Controllers
 {
@@ -371,7 +373,9 @@ namespace Informa.Web.Controllers
 
 					string companyIdsCsv;
 					article.Body = CompanyTokenizer.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
-					article.Referenced_Companies = companyIdsCsv;
+                    this.RemoveTableauItemWhenNotExists(article,articleText);
+
+                    article.Referenced_Companies = companyIdsCsv;
 
 					_sitecoreMasterService.Save(article);
 				}
@@ -382,6 +386,92 @@ namespace Informa.Web.Controllers
 				throw;
 			}
 		}
+
+        public void RemoveTableauItemWhenNotExists(ArticleItem article, string html)
+        {
+            var xhtml = XElement.Parse(html);
+            var strongs = xhtml.Descendants("strong");
+            var guids = new List<string>();
+
+            foreach (var strong in strongs)
+            {
+                if (strong == null || strong.Parent == null) continue;
+
+                if(strong.Value.StartsWith(Constants.TableauPrefix))
+                {
+                    guids.Add(strong.Value.Replace(Constants.TableauPrefix, "").Replace("]",""));
+                }
+            }
+
+            IPage_Assets pageAssets = article?._ChildrenWithInferType.OfType<IPage_Assets>()?.FirstOrDefault();
+            List<ITableau_Dashboard> tableauItems = pageAssets?._ChildrenWithInferType.OfType<ITableau_Dashboard>()?.ToList();//change IArticle to Tableau
+
+            if (tableauItems != null)
+            {
+                foreach (ITableau_Dashboard tableau in tableauItems)
+                {
+                    if (guids.Contains(tableau._Id.ToString()))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        _sitecoreMasterService.Delete(tableau);
+                    }
+                }
+            }
+        }
+
+        public Guid SaveTableauItem(ArticleItem article, TableauInfo tableauInfo)//Change IArticle to tableau
+        {
+            IPage_Assets pageAssets;
+            Guid tableauGuid = default(Guid);
+
+            //If needed we will get this and assign or we will get these follwoing values while rendering
+            //get JSAPI Url and Other URL and assign to tableauInfo fields call similar to given below
+            //ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+            //Its good to get (JSAPIUrl and URL) at the time of rendering and not at the time of creating  an item
+
+            try
+            {
+                if(!article._ChildrenWithInferType.OfType<IPage_Assets>().Any())
+                {
+                    var _pageAssets = _sitecoreMasterService.Create<IPage_Assets, IGlassBase>(article, "PageAssets");
+                    _sitecoreMasterService.Save(_pageAssets);
+                    pageAssets = _pageAssets;
+                }
+                else
+                {
+                    pageAssets = article._ChildrenWithInferType.OfType<IPage_Assets>().First();
+                }
+
+                var _tableau = _sitecoreMasterService.Create<ITableau_Dashboard, IGlassBase>(pageAssets, tableauInfo.DashboardName);
+                _tableau.Dashboard_Name= tableauInfo.DashboardName;
+                _tableau.Page_Title = tableauInfo.PageTitle;
+                _tableau.Filter = tableauInfo.Filter;
+                _tableau.Display_Tabs = tableauInfo.DisplayTabs;
+                _tableau.Display_Toolbars = tableauInfo.DisplayToolbars;
+                _tableau.Allow_Custom_Views = tableauInfo.AllowCustomViews;
+                _tableau.Height = tableauInfo.DashboardHeight;
+                _tableau.Width = tableauInfo.DashboardWidth;
+                if (!tableauInfo.LandingPageLink.IsEmptyOrNull())
+                {
+                    _tableau.Landing_Page_Link = new Link();
+                    _tableau.Landing_Page_Link.Text = tableauInfo.LandingPageLinkLabel;
+                    _tableau.Landing_Page_Link.Url = tableauInfo.LandingPageLink;
+                }
+                _sitecoreMasterService.Save(_tableau);
+                tableauGuid = _tableau._Id;
+
+                return tableauGuid;
+
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("SaveTableauItem: " + ex.ToString(), this);
+                throw;
+            }
+        }
 
         public int SendDocumentToSitecore(ArticleItem article, byte[] data, string extension)
         {

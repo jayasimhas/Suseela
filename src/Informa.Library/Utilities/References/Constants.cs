@@ -11,7 +11,9 @@ namespace Informa.Library.Utilities.References
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
-		public const string AuthorsIndexName = "informa_authors";
+        public const string TableauPrefix = "[T#:";
+
+        public const string AuthorsIndexName = "informa_authors";
 
 
         public static string ContentRootNode = ItemIdResolver.GetItemIdByKey("ContentRootNode");
