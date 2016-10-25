@@ -38,6 +38,7 @@ namespace Informa.Library.Salesforce.User.Authentication
                 SFv2.SoapClient client = new SFv2.SoapClient("Soap");
                 loginResult = client.login(loginScopeHeader, username, password);
 
+                string userId = string.Empty;
                 string userNameFromSalesForce = string.Empty;
                 string sessionId = string.Empty;
                 string serverUrl = string.Empty;
@@ -47,11 +48,12 @@ namespace Informa.Library.Salesforce.User.Authentication
 
                 if (loginResult != null)
                 {
+                    userId = loginResult.userId;
                     userNameFromSalesForce = loginResult.userInfo.userName;
                     sessionId = loginResult.sessionId;
                     serverUrl = loginResult.serverUrl;
                     userFullName = loginResult.userInfo.userFullName;
-                    contactId = loginResult.userInfo.userEmail;
+                    contactId = loginResult.userInfo.userEmail; 
 
                     state = AuthenticateUserResultState.Success;
                 }
@@ -61,6 +63,7 @@ namespace Informa.Library.Salesforce.User.Authentication
                     State = state,
                     User = new SalesforceAuthenticatedUser
                     {
+                        UserId=userId,
                         Username = userNameFromSalesForce,
                         Email = username,
                         Name = userFullName,

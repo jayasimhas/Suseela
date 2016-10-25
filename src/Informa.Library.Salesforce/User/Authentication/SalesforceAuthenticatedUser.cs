@@ -4,6 +4,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 {
 	public class SalesforceAuthenticatedUser : SalesforceUser, ISalesforceAuthenticatedUser
 	{
+        public string UserId { get; set; }
 		public string Name { get; set; }
 		public string Email { get; set; }
 
