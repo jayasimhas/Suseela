@@ -23,7 +23,6 @@ function newsletterSignupController() {
 
                 // Hide any errors
                 $('.js-newsletter-signup-error').hide();
-                $('.newsletter-signup-needs-registration').hide();
 
                 var inputData = "";
                 var url = $(triggerElement).data('signup-url');
