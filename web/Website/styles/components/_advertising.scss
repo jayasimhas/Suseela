@@ -27,10 +27,7 @@ section: Advertising
 .advertising {
 	top: 0;
 
-    &--label{
-         text-align: center;
-    }
-   
+      
 	&--leaderboard {
 		width: 100%;
 		text-align: center;
@@ -70,6 +67,7 @@ section: Advertising
         text-transform: uppercase;
         color: $color-light-gray;
 		margin-bottom: 0.25rem;
+        text-align: center;
 	}
 
 	@include breakpoint('wide') {
