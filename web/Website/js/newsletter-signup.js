@@ -36,7 +36,7 @@ function newsletterSignupController() {
                 $.get(url, function(response) {
                     var newsletterAnalytics;
 
-                    if (response) {
+                    if (response == 'true') {
 
                         newsletterAnalytics = {
                             event_name: 'newsletter-signup',
@@ -49,7 +49,7 @@ function newsletterSignupController() {
                         $(".newsletter-signup-before-submit").hide();
                         $(".newsletter-signup-after-submit").show();
 
-                    } else {
+                    } else if (response == 'mustregister'){
 
                         newsletterAnalytics = {
                             event_name: 'newsletter-signup',
@@ -59,11 +59,21 @@ function newsletterSignupController() {
 
                         analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
 
-                        //$('.js-newsletter-signup-error').show();
                         $('.newsletter-signup-before-submit').hide();
                         $('.newsletter-signup-needs-registration').show();
                     }
+                    else
+                    {
+                        newsletterAnalytics = {
+                            event_name: 'newsletter-signup',
+                            newsletter_signup_state: 'unsuccessful',
+                            userName: '"' + inputData + '"'
+                        };
 
+                        analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
+
+                        $('.js-newsletter-signup-error').show();
+                    }
                 });
             });
         }
