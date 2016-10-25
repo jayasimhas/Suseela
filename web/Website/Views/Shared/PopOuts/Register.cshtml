@@ -4,8 +4,9 @@
 	<div class="pop-out__internal">
 
 		<form	class="pop-out__register form-pre-registration"
-				data-on-submit="/Account/api/RegistrationApi/PreRegister/"
-				data-forwarding-url="@( Model.RegisterUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
+				@*data-on-submit="/Account/api/RegistrationApi/PreRegister/"
+				data-forwarding-url="@( Model.RegisterUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )"*@
+        >
 
 			<div class="dismiss-button" data-target-element=".js-pop-out__register">
 				<svg class="dismiss-button__icon">
@@ -35,8 +36,7 @@
 				@Model.RegisterButtonText
 			</button>*@
 
-            <button type="button" class="button--filled sign-in__submit" onclick="window.location.assign('https://idpoc-agrivertical.cs82.force.com/CommunitiesSelfReg?startURL=%2Fs%2F')">Register now</button>
-
+            <button type="button" class="button--filled sign-in__submit" onclick="window.location.assign('@Sitecore.Configuration.Settings.GetSetting("SalesforceRegistration.Url")')">Register now</button>
 		</form>
 	</div>
 </div>
