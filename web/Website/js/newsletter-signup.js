@@ -59,6 +59,7 @@ function newsletterSignupController() {
 
                         analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
 
+                        $('.newsletter-signup-needs-registration a').attr('href', $('.newsletter-signup-needs-registration a').attr('href') + $('.newsletter-signup-before-submit input').val())
                         $('.newsletter-signup-before-submit').hide();
                         $('.newsletter-signup-needs-registration').show();
                     }
