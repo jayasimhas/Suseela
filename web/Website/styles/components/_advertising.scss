@@ -27,7 +27,6 @@ section: Advertising
 .advertising {
 	top: 0;
 
-      
 	&--leaderboard {
 		width: 100%;
 		text-align: center;
@@ -66,7 +65,6 @@ section: Advertising
         text-transform: uppercase;
         color: $color-light-gray;
 		margin-bottom: 0.25rem;
-        text-align: center;
 	}
 
 	@include breakpoint('wide') {
@@ -80,3 +78,7 @@ section: Advertising
 	}
 
 }
+ `&.manually-curated-content__right-rail .article-preview—small .advertising`
+    {
+     text-align:center;
+    }
