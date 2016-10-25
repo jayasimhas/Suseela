@@ -82,5 +82,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string MasterIdExpiredErrorText => TextTranslator.Translate("Registration.MasterIdExpiredError");
 		public string RegisterReturnUrl => RegisterReturnUrlContex.Url;
 		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
-	}
+
+        //Master ID/Password settings
+        public string MasterId => Sitecore.Configuration.Settings.GetSetting("MasterId");
+        public string MasterPassword => Sitecore.Configuration.Settings.GetSetting("MasterPassword");
+    }
 }
