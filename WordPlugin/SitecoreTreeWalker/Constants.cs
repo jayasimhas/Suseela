@@ -53,6 +53,9 @@ namespace InformaSitecoreWord
         public static string HYPERLINK_STYLE = "hyperlinkStyle";
         public static string Entities = "Entities";
         public static string Industries = "Industries";
+        public static string TableauPrefix = "[T#:";
+        public static string TableauTokenFormat = "[T#{0}:{1}]";
+        public static string TableauTokenRegex = @"\[C#(.*?)\]";
 
         public static string PublicationGuid = "PublicationGuid";
         public static string TAXONOMY_GUID = "{E8A37C2D-FFE3-42D4-B38E-164584743832}";

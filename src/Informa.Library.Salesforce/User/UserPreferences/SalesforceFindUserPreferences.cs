@@ -59,9 +59,21 @@
                     }).ToList()                   
                 };
             }
-          
 
-            var preferencesResponse = Service.Execute(s => s.IN_queryProfilePreferences(username));
+            IN_ProfilePreferencesQueryResponse preferencesResponse = null;
+            try
+            {
+                preferencesResponse = Service.Execute(s => s.IN_queryProfilePreferences(username));
+            }
+            catch(Exception exp)
+            {
+                return null;
+            }
+
+            if (preferencesResponse == null)
+            {
+                return null;
+            }
 
             if (!preferencesResponse.IsSuccess() || preferencesResponse.channelPreferences == null)
             {

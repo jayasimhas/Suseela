@@ -53,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 		config\env\stageCD.properties = config\env\stageCD.properties
 		config\env\stageCM.properties = config\env\stageCM.properties
 		config\env\uat.properties = config\env\uat.properties
+		config\env\UATCD.properties = config\env\UATCD.properties
+		config\env\UATCM.properties = config\env\UATCM.properties
 		config\env\vagrant.properties = config\env\vagrant.properties
 	EndProjectSection
 EndProject

@@ -8,7 +8,10 @@ using InformaSitecoreWord.Util.Document;
 using Microsoft.Office.Interop.Word;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 using UserControl = System.Windows.Forms.UserControl;
-
+using PluginModels;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.UI.ArticleDetailsForm;
 
 namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
@@ -22,7 +25,11 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		protected string InsecureMobileURL;
 		private string _desktopPHText = "Copy and paste the code for your IFrame on desktop here, (required)";
 		private string _mobilePHText = "Copy and paste the code for your IFrame on mobile here, (optional)";
-		public IFrameControl()
+        public bool IsArticleCreated { get; set; }
+        public string ArticleNumber { get; set; }
+        //public string PublicationGuid { get; set; }
+
+        public IFrameControl()
 		{
 			InitializeComponent();
 
@@ -54,62 +61,175 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxInsertIFrame_Click(object sender, System.EventArgs e)
 		{
-			HideErrors();
-			bool mobileErrors = false;
-			bool desktopErrors = false;
-			if (string.IsNullOrEmpty(desktopEmbed.Text) || desktopEmbed.Text.Trim().Equals(_desktopPHText))
-			{
-				uxDesktopError.Text = "Desktop code is required.";
-				uxDesktopError.Show();
-				desktopErrors = true;
-			}
+            if (uxThirdPartyToolType.SelectedIndex == 1)
+            {
+                InsertMultimedia();
+            }
+            else if(uxThirdPartyToolType.SelectedIndex == 2)
+            {
+                InsertTableauData();
+            }
+        }
+        private void InsertMultimedia()
+        {
+            HideErrors();
+            bool mobileErrors = false;
+            bool desktopErrors = false;
+            if (string.IsNullOrEmpty(desktopEmbed.Text) || desktopEmbed.Text.Trim().Equals(_desktopPHText))
+            {
+                uxDesktopError.Text = "Desktop code is required.";
+                uxDesktopError.Show();
+                desktopErrors = true;
+            }
 
-			if (!desktopErrors && !ValidDesktopInput(desktopEmbed.Text))
-			{
-				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
-				uxDesktopError.Show();
-				desktopErrors = true;
-			}
+            if (!desktopErrors && !ValidDesktopInput(desktopEmbed.Text))
+            {
+                uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
+                uxDesktopError.Show();
+                desktopErrors = true;
+            }
 
 
-			if (DesktopIFrame != null && !desktopErrors && !IFramesIsSecure(DesktopIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureDesktopURL))
-			{
-				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
-				uxDesktopError.Show();
-				uxDesktophttpsPreview.Visible = true;
-				desktopErrors = true;
-			}
+            if (DesktopIFrame != null && !desktopErrors && !IFramesIsSecure(DesktopIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureDesktopURL))
+            {
+                uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
+                uxDesktopError.Show();
+                uxDesktophttpsPreview.Visible = true;
+                desktopErrors = true;
+            }
 
 
-			if (!ValidMobileInput(mobileEmbed.Text))
-			{
-				uxMobileError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
-				uxMobileError.Show();
-				mobileErrors = true;
-			}
+            if (!ValidMobileInput(mobileEmbed.Text))
+            {
+                uxMobileError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
+                uxMobileError.Show();
+                mobileErrors = true;
+            }
 
-			if (MobileIFrame != null && !mobileErrors && !IFramesIsSecure(MobileIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureMobileURL))
-			{
-				uxMobileError.Text =
-					Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
-				uxMobileError.Show();
-				uxMobilehttpsPreview.Visible = true;
-				mobileErrors = true;
-			}
+            if (MobileIFrame != null && !mobileErrors && !IFramesIsSecure(MobileIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureMobileURL))
+            {
+                uxMobileError.Text =
+                    Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
+                uxMobileError.Show();
+                uxMobilehttpsPreview.Visible = true;
+                mobileErrors = true;
+            }
 
-			if (!mobileErrors && !desktopErrors)
-			{
-				mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
-				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
-							 SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
+            if (!mobileErrors && !desktopErrors)
+            {
+                mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
+                InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
+                             SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
 
-				InitializeValues();
-			}
-			else
-			{
-				MessageBox.Show(Resources.IFrameControl_uxInsertIFrame_Click_Multimedia_Error);
-			}
-		}
+                InitializeValues();
+            }
+            else
+            {
+                MessageBox.Show(Resources.IFrameControl_uxInsertIFrame_Click_Multimedia_Error);
+            }
+        }
+
+        private void InsertTableauData()
+        {
+            Guid tableauGuid = default(Guid);
+            if (IsTableauDataValid())
+            {
+                tableauGuid = SitecoreClient.SaveTableauData(MapTableauData());
+
+                if(tableauGuid.Equals(default(Guid)))
+                {
+                    MessageBox.Show(Resources.IFrameControl_Tableau_Article_Not_Created);
+                    return;
+                }
+                var app = Globals.SitecoreAddin.Application;
+                app.ActiveWindow.View.ReadingLayout = false;
+                Range selection = app.Selection.Range;
+                selection.Text = string.Concat(Constants.TableauPrefix, tableauGuid.ToString(),"]");
+                selection.Font.Bold = -1;
+                selection.Collapse(WdCollapseDirection.wdCollapseEnd);
+                selection.Select();
+            }
+        }
+        private TableauInfo MapTableauData()
+        {
+            TableauInfo tableauInfo = new TableauInfo();
+            tableauInfo.DashboardHeight = uxTableauDashboardHeight.Text;
+            tableauInfo.DashboardWidth = uxTableauDashboardWidth.Text;
+            tableauInfo.DashboardName = uxTableauDashBoardName.Text;
+            tableauInfo.Filter = uxTableauFilter.Text;
+            tableauInfo.HostUrl = "";//read data from site using controller or from config file
+            tableauInfo.JSAPIUrl = "";//read data from site using controller
+            tableauInfo.PageTitle = uxTableauPageTitle.Text;//read data from site using controller or config file
+            tableauInfo.DisplayTabs = uxTableauDisplayTabs.Checked;
+            tableauInfo.DisplayToolbars = uxTableauDisplayToolBars.Checked;
+            tableauInfo.AllowCustomViews = uxTableauAllowCustomViews.Checked;
+            tableauInfo.LandingPageLink = uxTableauLandingPageLink.Text;
+            tableauInfo.LandingPageLinkLabel = uxTableauLandingPageLinkLable.Text;
+            tableauInfo.ArticleNumber = this.ArticleNumber;
+
+            DocumentCustomProperties documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+            tableauInfo.PublicationGuid = documentCustomProperties.PublicationGuid;
+            return tableauInfo;
+        }
+        private bool IsTableauDataValid()
+        {
+            int validNumber;
+            bool IsValid = false;
+            if(uxTableauDashBoardName.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_DashBoardName_Required);
+                return IsValid;
+            }
+            if (!int.TryParse(uxTableauDashboardHeight.Text, out validNumber))
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_DashBoardHeight_Required);
+                return IsValid;
+            }
+            if (!int.TryParse(uxTableauDashboardWidth.Text, out validNumber))
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_DashBoardWidth_Required);
+                return IsValid;
+            }
+            if (uxTableauPageTitle.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_Page_Title_Required);
+                return IsValid;
+            }
+            /*if (Uri.IsWellFormedUriString(uxTableauLandingPageLink.Text, UriKind.Absolute))
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_Page_Link_Required);
+                return IsValid;
+            }
+            if (uxTableauLandingPageLinkLable.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_Page_Link_Label_Required);
+                return IsValid;
+            }*/
+            DocumentCustomProperties documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+            //if (!IsArticleCreated)
+            if (documentCustomProperties?.ArticleNumber != null && documentCustomProperties?.ArticleNumber.Length > 0)
+            { }
+            else { 
+                MessageBox.Show(Resources.IFrameControl_Tableau_Article_Required);
+                return IsValid;
+            }
+            if (!SitecoreUser.GetUser().IsLoggedIn)
+            {
+                MessageBox.Show(Resources.IFrameControl_Tableau_User_Not_LoggedIn);
+                return IsValid;
+            }
+
+            ESRibbon ribbon = Globals.Ribbons.GetRibbon<ESRibbon>();
+            if (!ribbon.SaveToSitecoreBtn.Enabled)
+            {
+                if(MessageBox.Show(Resources.IFrameControl_Tableau_Document_Lock,"",MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return IsValid;
+                }
+            }
+
+            return !IsValid;
+        }
 
 		private void HideErrors()
 		{
@@ -454,12 +574,12 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
             uxTableauPanel.Hide();
             uxIFramePanel.Hide();
 
-            if (uxThirdPartyToolType.SelectedIndex==1)
+            if (uxThirdPartyToolType.SelectedIndex==1)//IFrame
             {
                 uxIFramePanel.Show(); 
                 uxIFramePanel.Dock = DockStyle.Fill;
             }
-            else if(uxThirdPartyToolType.SelectedIndex == 2)
+            else if(uxThirdPartyToolType.SelectedIndex == 2)//Tableau
             {
                 uxTableauPanel.Show();
                 uxTableauPanel.Dock = DockStyle.Fill;
