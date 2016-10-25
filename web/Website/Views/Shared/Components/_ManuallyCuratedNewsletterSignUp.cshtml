@@ -20,6 +20,13 @@
                 @Model.GeneralError
             </div>
         </div>
+        <div class="newsletter-signup-needs-registration">
+            <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
+            @Model.NeedsRegistrationMessage
+            <div class="form--single-row">
+                <a href="@Model.RegistrationURL" class="button--filled">@Model.NeedsRegistrationButtonText</a>
+            </div>
+        </div>
         <div class="newsletter-signup-after-submit">
             <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
             @Editable(x => x.GlassModel.Confirmation_Summary)

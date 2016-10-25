@@ -23,6 +23,7 @@ function newsletterSignupController() {
 
                 // Hide any errors
                 $('.js-newsletter-signup-error').hide();
+                $('.newsletter-signup-needs-registration').hide();
 
                 var inputData = "";
                 var url = $(triggerElement).data('signup-url');
@@ -59,7 +60,9 @@ function newsletterSignupController() {
 
                         analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
 
-                        $('.js-newsletter-signup-error').show();
+                        //$('.js-newsletter-signup-error').show();
+                        $('.newsletter-signup-before-submit').hide();
+                        $('.newsletter-signup-needs-registration').show();
                     }
 
                 });
