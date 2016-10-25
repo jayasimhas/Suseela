@@ -22,7 +22,6 @@ namespace Informa.Library.Salesforce.User.Authentication
 
         }
 
-
         public IAuthenticateUserResult Authenticate(string username, string password)
         {
 
@@ -33,8 +32,6 @@ namespace Informa.Library.Salesforce.User.Authentication
 
             try
             {
-
-
                 SFv2.LoginScopeHeader loginScopeHeader = new SFv2.LoginScopeHeader();
                 loginScopeHeader.organizationId = "00D3E0000008rEm"; // TODO: read from config
 
@@ -46,6 +43,7 @@ namespace Informa.Library.Salesforce.User.Authentication
                 string serverUrl = string.Empty;
                 string email = string.Empty;
                 string userFullName = string.Empty;
+                string contactId = string.Empty;
 
                 if (loginResult != null)
                 {
@@ -53,12 +51,11 @@ namespace Informa.Library.Salesforce.User.Authentication
                     sessionId = loginResult.sessionId;
                     serverUrl = loginResult.serverUrl;
                     userFullName = loginResult.userInfo.userFullName;
+                    contactId = loginResult.userInfo.userEmail;
 
                     state = AuthenticateUserResultState.Success;
                 }
-
-
-
+                
                 return new SalesforceAuthenticateUserResult
                 {
                     State = state,
@@ -68,13 +65,12 @@ namespace Informa.Library.Salesforce.User.Authentication
                         Email = username,
                         Name = userFullName,
                         //AccountId = userAccount.accounts != null ? userAccount.accounts.Select(x => x.accountId).ToList() : null,
-                        //ContactId = loginResponse.contactId
+                        ContactId = contactId,
 
                         SalesForceSessionId = sessionId,
                         SalesForceURL = serverUrl
                     }
                 };
-
             }
             catch (System.Exception ex)
             {
@@ -86,8 +82,6 @@ namespace Informa.Library.Salesforce.User.Authentication
 
                 };
             }
-
-           
             
             //------------------------------
 
