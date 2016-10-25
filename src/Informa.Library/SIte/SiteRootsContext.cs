@@ -16,14 +16,18 @@ namespace Informa.Library.Site
         private static readonly string cacheKey = nameof(SiteRootsContext);
         protected readonly ICrossSiteCacheProvider CacheProvider;
         protected readonly ISitecoreService SitecoreService;
+        protected readonly IVerticalRootContext VerticalrootContext;
+        
 
         public SiteRootsContext(
             ISitecoreService sitecoreService,
-            ICrossSiteCacheProvider cacheProvider
+            ICrossSiteCacheProvider cacheProvider,
+            IVerticalRootContext verticalrootContext
             )
         {
             SitecoreService = sitecoreService;
-            CacheProvider = cacheProvider; 
+            CacheProvider = cacheProvider;
+            VerticalrootContext = verticalrootContext;
         }
 
         public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext); 
@@ -31,12 +35,11 @@ namespace Informa.Library.Site
         {
             //JIRA Ticket IPMP-269            
             IEnumerable<ISite_Root> siteRoots = null;
-            ItemIdResolver verticalResolver = new ItemIdResolver();
-            var Item=verticalResolver.GetVerticalName();
+            var vertical = VerticalrootContext.Item;           
             var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
             foreach (var verticalContentItems in contentItem._ChildrenWithInferType.OfType<IVertical_Root>())
             {
-                if (string.Equals(Item._Path.Split('/')[3], verticalContentItems.Vertical_Name,System.StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(vertical.Vertical_Name, verticalContentItems.Vertical_Name,System.StringComparison.OrdinalIgnoreCase))
                     siteRoots = verticalContentItems._ChildrenWithInferType.OfType<ISite_Root>();                
             }
             return siteRoots.ToList();

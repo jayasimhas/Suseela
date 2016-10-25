@@ -26051,6 +26051,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         string Vertical_Name { get; set; }
 
+        [SitecoreField(IVertical_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Search_Index_Name { get; set; }
+
     }
 
     public static partial class IVertical_ConfigConstants
@@ -26060,7 +26063,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Vertical Config";
 
-        public static readonly ID Vertical_NameFieldId = new ID("0E255F6B-02F6-409A-AB3B-EB536FD4D531");
+        public static readonly ID Vertical_NameFieldId = new ID("0e255f6b-02f6-409a-ab3b-eb536fd4d531");
         public const string Vertical_NameFieldName = "Vertical Name";
 
         public static readonly ID Search_Index_NameFieldId = new ID("4a181bc9-7b01-4dd5-8ae7-952582d73665");
@@ -26106,8 +26109,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public const string TemplateName = "Vertical Root";
 
 
-        public static readonly ID Vertical_NameFieldId = new ID("0E255F6B-02F6-409A-AB3B-EB536FD4D531");
+        public static readonly ID Vertical_NameFieldId = new ID("0e255f6b-02f6-409a-ab3b-eb536fd4d531");
         public const string Vertical_NameFieldName = "Vertical Name";
+
+        public static readonly ID Search_Index_NameFieldId = new ID("4a181bc9-7b01-4dd5-8ae7-952582d73665");
+        public const string Search_Index_NameFieldName = "Search Index Name";
 
     }
 }
