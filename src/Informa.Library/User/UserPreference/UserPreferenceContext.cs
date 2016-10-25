@@ -39,7 +39,7 @@
                     return proferencesSession.Value;
                 }
 
-                var preferences = FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
+                IUserPreferences preferences = FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
 
                 Preferences = preferences;
 

@@ -67,7 +67,16 @@ namespace InformaSitecoreWord.document
 			}
 		}
 
-		public string PluginName
+        public string PublicationGuid
+        {
+            get { return GetPropertyValue(Constants.PublicationGuid); }
+            set
+            {
+                SetCustomDocumentProperty(Constants.PublicationGuid, value);
+            }
+        }
+
+        public string PluginName
 		{
 			get { return GetPropertyValue(Constants.PluginName); }
 			set
