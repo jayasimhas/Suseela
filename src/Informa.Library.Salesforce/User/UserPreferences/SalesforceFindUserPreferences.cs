@@ -49,10 +49,15 @@
             if (xmlResponse != null && xmlResponse.UserSelectedPreferences!=null)
             {
                 return new UserPreferences {
-                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels.Select(ch=>new Channel { ChannelCode=ch.code, ChannelName=ch.name, IsFollowing=ch.isfollowing }).ToList(),
-                    ////PreferredTopics =xmlResponse.UserSelectedPreferences.topics.Select(tp=>new Topic {  TopicCode=tp.code, TopicName=tp.name, IsFollowing=tp.isfollowing }).ToList()
+                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels
+                    .Select(ch=>new Channel
+                    {
+                        ChannelCode = ch.code,
+                        ChannelName = ch.name,
+                        IsFollowing = ch.isfollowing,
+                        Topics = ch.topics.Select(tp => new Topic { TopicCode = tp.code, TopicName = tp.name, IsFollowing = tp.isfollowing }).ToList()
+                    }).ToList()                   
                 };
-
             }
           
 
@@ -100,8 +105,10 @@
         public string name { get; set; }
         [XmlElement("isfollowing")]
         public bool isfollowing { get; set; }
+        [XmlArray("topics")]
+        public List<topicxml> topics { get; set; }
     }
-
+    
     [XmlType("topic")]
     public class topicxml
     {
@@ -117,9 +124,6 @@
     {
         [XmlArray("preferredchannels")]
         public List<channelxml> channels { get; set; }
-        [XmlArray("preferredtopics")]
-        public List<topicxml> topics { get; set; }
-
     }
     [XmlRoot("QueryPreferenceResponse")]
     public class QueryPreferenceResponse
