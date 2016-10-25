@@ -106,7 +106,7 @@ namespace Informa.Web.ViewModels
 
                 //channel based navigation
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredChannels != null)
+                UserPreferences.Preferences.PreferredChannels != null&& UserPreferences.Preferences.PreferredChannels.Count()>0)
                 {
                     if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                     {
