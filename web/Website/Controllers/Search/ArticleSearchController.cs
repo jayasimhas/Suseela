@@ -33,8 +33,9 @@
                 var loadMore = new LoadMore
                 {
                     DisplayLoadMore = (results.TotalResults - (pno * psize)) >= psize,
-                    LoadMoreLinkText = TextTranslator.Translate("Article.LatestFrom"),
-                    LoadMoreLinkUrl = $"/api/articlesearch/?pid={pid}&pno={pno + 1}&psize={psize}"
+                    LoadMoreLinkText = TextTranslator.Translate("Article.LoadMoreFrom"),
+                    LoadMoreLinkUrl = $"/api/articlesearch/?pid={pid}&pno={pno + 1}&psize={psize}",
+                    LatestFromText = TextTranslator.Translate("Article.LatestFrom")
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }
