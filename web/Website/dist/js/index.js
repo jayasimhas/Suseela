@@ -675,20 +675,21 @@ function createJSONData(alltables, UserPreferences) {
 		    tableId = $(alltables[i]).attr('id'),
 		    publicationName = $(alltables[i]).find('h2').attr('data-publication'),
 		    subscribeStatus = $(alltables[i]).find('.subscribed').html(),
-		    channelId = $(alltables[i]).find('h2').attr('data-item-id');
+		    channelId = $(alltables[i]).find('h2').attr('data-item-id'),
+		    channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
 		var alltdata = [];
 		for (var j = 0; j < currenttabtrs.length; j++) {
 			var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
 			    topicId = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-item-id'),
 			    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
-			    datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0';
+			    datarowNo = $(currenttabtrs[j]).attr('data-row');
 
 			var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 			var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
 
 			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
 		}
-		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "ChannelId": channelId, Topics: alltdata });
+		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
 	}
 	sendHttpRequest(UserPreferences);
 }
@@ -1033,10 +1034,11 @@ $(function () {
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
-		allpublicationsEles.removeAttr('data-row');
 		setDataRow(allpublications);
+		allpublicationsEles.removeAttr('data-row');
 		for (var i = 0; i < allpublicationsEles.length; i++) {
-			$(allpublicationsEles[i]).attr('data-row', i + 1);
+			var j = i + 1;
+			$(allpublicationsEles[i]).attr('data-row', j);
 		}
 		createJSONData(alltables, UserPreferences);
 
@@ -1062,7 +1064,7 @@ $(function () {
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
 				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 				    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-				    channelOrder = secondtd.toLowerCase() == 'following' ? $(alltrs[i]).attr('data-row') : '0',
+				    channelOrder = $(alltrs[i]).attr('data-row'),
 				    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 
 				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
