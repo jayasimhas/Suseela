@@ -8,10 +8,11 @@ namespace Informa.Library.PXM.Helpers {
     public interface IPxmHtmlHelper
 	{
 		string ProcessIframe(string content);
+        string ProcessIframeTag(string content);
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
         string ProcessPullQuotes(string content);
-
+        string ProcessQandA(string content);
     }
 
 	[AutowireService]
@@ -322,6 +323,37 @@ namespace Informa.Library.PXM.Helpers {
                     attribute.Value = SidebarPullQuote;
             }
             return doc.DocumentNode.OuterHtml;
+        }
+
+        public string ProcessQandA(string content) {
+            var doc = CreateDocument(content);
+            var paras = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]//p");
+            foreach(var q in paras) {
+                q.Name = "div";
+                var a = q.Attributes["class"];
+                if (a != null && !a.Value.Contains("article-interview__answer")) 
+                    a.Value = $"{a.Value} article-interview__answer";
+                else
+                    q.Attributes.Add("class", "article-interview__answer");
+
+                var oldWrapNode = q.ParentNode;
+                var sib = GetNewAnswerNode(oldWrapNode);
+                
+                sib.AppendChild(q);
+                oldWrapNode.RemoveChild(q);
+            }
+            
+            return doc.DocumentNode.OuterHtml;
+        }
+
+        private HtmlNode GetNewAnswerNode(HtmlNode answerRoot) {
+            var sib = answerRoot.NextSibling;
+            if (sib.Attributes["class"] == null || !sib.Attributes["class"].Value.Equals("answer-wrap")) {
+                sib = HtmlNode.CreateNode($"<div class=\"answer-wrap\"></div>");
+                answerRoot.ParentNode.InsertAfter(sib, answerRoot);
+            }
+
+            return sib;
         }
 
         private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
