@@ -38,38 +38,51 @@ function newsletterSignupController() {
 
                 if(inputData!=='' && this.IsValidEmail(inputData)){
                     $('.js-newsletter-signup--error-invalidemailformat').hide();
-                    url = url + '?userName=' + inputData;
+                url = url + '?userName=' + inputData;
 
-                    $.get(url, function(response) {
-                        var newsletterAnalytics;
+                $.get(url, function(response) {
+                    var newsletterAnalytics;
 
-                        if (response) {
+                    if (response == 'true') {
 
-                            newsletterAnalytics = {
-                                event_name: 'newsletter-signup',
-                                newsletter_signup_state: 'successful',
-                                userName: '"' + inputData + '"'
-                            };
+                        newsletterAnalytics = {
+                            event_name: 'newsletter-signup',
+                            newsletter_signup_state: 'successful',
+                            userName: '"' + inputData + '"'
+                        };
 
-                            analyticsEvent( $.extend( analytics_data, newsletterAnalytics) );
+                        analyticsEvent( $.extend( analytics_data, newsletterAnalytics) );
 
-                            $(".newsletter-signup-before-submit").hide();
-                            $(".newsletter-signup-after-submit").show();
+                        $(".newsletter-signup-before-submit").hide();
+                        $(".newsletter-signup-after-submit").show();
 
-                        } else {
+                    } else if (response == 'mustregister'){
 
-                            newsletterAnalytics = {
-                                event_name: 'newsletter-signup',
-                                newsletter_signup_state: 'unsuccessful',
-                                userName: '"' + inputData + '"'
-                            };
+                        newsletterAnalytics = {
+                            event_name: 'newsletter-signup',
+                            newsletter_signup_state: 'unsuccessful',
+                            userName: '"' + inputData + '"'
+                        };
 
-                            analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
+                        analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
 
-                            $('.js-newsletter-signup-error').show();
-                        }
+                        $('.newsletter-signup-needs-registration a').attr('href', $('.newsletter-signup-needs-registration a').attr('href') + $('.newsletter-signup-before-submit input').val())
+                        $('.newsletter-signup-before-submit').hide();
+                        $('.newsletter-signup-needs-registration').show();
+                    }
+                    else
+                    {
+                        newsletterAnalytics = {
+                            event_name: 'newsletter-signup',
+                            newsletter_signup_state: 'unsuccessful',
+                            userName: '"' + inputData + '"'
+                        };
 
-                    });
+                        analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
+
+                        $('.js-newsletter-signup-error').show();
+                    }
+                });
                 }
                 else{
                     $('.js-newsletter-signup--error-invalidemailformat').show();
