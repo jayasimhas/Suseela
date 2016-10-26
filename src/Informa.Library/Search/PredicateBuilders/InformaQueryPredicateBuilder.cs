@@ -35,6 +35,18 @@ namespace Informa.Library.Search.PredicateBuilders
 				predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
 			}
 
+			if (_request.PageId == Constants.VWBSearchPageId)
+			{
+				//VWB:  Filter out non Article items
+				predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
+			}
+			else
+			{
+				//Include Search for authors
+				if (_request.QueryParameters.ContainsKey("q") && string.IsNullOrEmpty(_request.QueryParameters["q"]) == false)
+					predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+			}
+
 			return predicate;
 		}
 
@@ -46,8 +58,8 @@ namespace Informa.Library.Search.PredicateBuilders
 
 			var searchHeadlinesValue = string.Empty;
 			var searchHeadlines =
-				_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
-				!string.IsNullOrEmpty(searchHeadlinesValue);
+					_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
+					!string.IsNullOrEmpty(searchHeadlinesValue);
 
 			if (_formatter.NeedsFormatting(query))
 			{

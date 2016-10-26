@@ -1,0 +1,14 @@
+{# Randoms #}
+{{sidebarHeader}}
+{% if sidebarHeader == false %}
+	{% set sidebarHeader = random(randomTitles).text %}
+{% endif %}
+{% if sidebarBody == false %}
+	{% set sidebarBody = "<p>" ~ random(randomParas).text ~ "</p>" %}
+{% endif %}
+
+{# Pattern #}
+<aside class="article-sidebar article-sidebar--full-width article-sidebar--right-rail">
+	<h3>{{sidebarHeader}}</h3>
+	{{sidebarBody | raw}}
+</aside>

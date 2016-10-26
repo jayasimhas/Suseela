@@ -1,0 +1,123 @@
+@{
+    Layout = null;
+}
+
+@* General FE Note: Clearly this is only the bits of the Deals page mentioned in IITS2A-139, IITS2A-140, and IITS2A-141; it will need to be wrapped inside header/footer/etc and have related news and leaderboard ads (all extant code) tagged on, much as seen on the home page.  Exactly how that markup should look can be extrapolated from the patternlab files for the Company template or the Company example page *@
+
+
+
+@* Header goes up here! *@
+@* Main nav goes up here! *@
+@* Share bar goes here! (Reuse from Authors) *@
+
+<div class="company">
+	<div class="l-left-rail">
+		<div class="generic-content">
+			@* CompanyName: Exactly what it sounds like  *@
+			<h1>@(Model.CompanyName)</h1>
+			@* CompanyProfile: HTML paragraph or two of deal information from an RTE  *@
+			@(Model.CompanyProfile)
+
+			@* This doesn't seem to be defined in any ticket, though it's in the designs, but show this h5
+			  if the company has a website to display or division information *@
+			@if (CompanyIsADivisionOfSomething || CompanyHasAWebsite) {
+				<h5>
+					@if (CompanyIsADivisionOfSomething) {
+						@* CompanyDivisionInfo: Company of which this company is a division *@
+						A division of @(Model.CompanyDivisionInfo) <br />
+					}
+					@if (CompanyHasAWebsite) {
+						@* CompanyWebsite: Company's website, logic isn't shown here, but protocol should show in the href, but not the visible link text *@
+						<a href="@(Model.CompanyWebsite)">@(Model.CompanyWebsite)</a>
+					}
+				</h5>
+			}
+		</div>
+
+
+
+
+
+
+
+
+		@*
+			RELATED NEWS AND SET ALERT BUTTON GO HERE!
+			This code already exists and should be reused!
+		*@
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+	<div class="l-right-rail">
+		@* This sidebar is an odd sort of thing; it's a collection of lists of tags, with some plain text throw in for good measure.  Markup is ugly, and I suspect logic will be uglier. *@
+		<div class="article-topics">
+			@* I believe this header is the same on every page *@
+			<h2 class="article-topics__header">Company Information</h2>
+
+			@* CompanySidebarSections: List of sections in sidebar; each section should have a title and at least one item in it. Items can be linked tags or just open HTML (probably restricted to a certain extent?) *@
+			@foreach (var section in @(Model.CompanySidebarSections)) {
+				<ul>
+					@* SectionTitle: title of this particular sidebar section. *@
+					<li class="article-topics__section-header">@(section.SectionTitle)</li>
+					@* SectionItems: List of items to appear in this section.  Items can be mixed types. *@
+					@foreach (var item in @(section.SectionItems)) {
+						@* Check to see if the item's a link... *@
+						@if (item.itemIsALink) {
+							@* These items can be nested! eg:
+							 *	<li class="article-topics__li">
+							 *		<a href="@(item.itemUrl)">@(item.itemText)</a>
+							 *		<ul>
+							 *			<li class="article-topics__li">...</li>
+							 *		</ul>
+							 *	</li>
+							 *@
+							@* ItemUrl: Link for an item, typically like a tag *@
+							@* ItemText: Text to appear in the sidebar for this item, tag title *@
+							<li class="article-topics__li"><a href="@(item.ItemUrl)">@(item.ItemText)</a></li>
+						}
+						@* ...or just text *@
+						@else {
+							@* Item is raw text... possibly HTML from an RTE? *@
+							@* ItemText: Text or HTML to be displayed for this item.  If HTML, should probably be limited to inline styles (strong, em, line break) *@
+							<li class="article-topics__section-desc">@(item.ItemText)</li>
+						}
+					}
+				</ul>
+			}
+
+
+		</div>
+		@* This may be the incorrect sort of ad; confirm with someone who knows for sure.  Designs show tall square ad. *@
+	    @Html.Sitecore().Placeholder("article-med-ad")
+
+		<aside class="callout callout--full-width">
+			@* See IITS2A-90 for details on the sourcing for this one; most things below are just what they sound like unless otherwise noted. *@
+			<img src="@(Model.StrategicTransactionsImageUrl)" />
+			@* StrategicTransactionsHeader and StrategicTransactionsBody are considered the same RTE according to the ticket; this isn't realistic for styling this section and they should probably be separated; if that can't be done, come talk to Rebecca Mazur and we'll see how we can get around it *@
+			<h3 class="callout__header">@(Model.StrategicTransactionsHeader)</h3>
+			<div class="callout__body">@(Model.StrategicTransactionsBody)</div>
+			<div class="callout__footer">
+				<button href="@(Model.StrategicTransactionsButtonUrl)" class="button--filled">
+					@(Model.StrategicTransactionsButtonText)
+				</button>
+			</div>
+		</aside>
+
+	</div>
+</div>
+
+
+
+@* Footer goes down here! *@

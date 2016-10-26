@@ -9,45 +9,53 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
 using Informa.Library.Utilities.Extensions;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Core.Caching;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.Models
 {
-	public class TokenHtml<TK>
+    [AutowireService(true)]
+    public interface IDependencies {
+        IArticleSearch ArticleSearch { get; }
+        ICacheProvider CacheProvider { get; }
+        IArticleListItemModelFactory ArticleListableFactory { get; }
+        IGlobalSitecoreService GlobalService { get; }
+        IDCDTokenMatchers DCDTokenMatchers { get; }
+    }
+
+    public class TokenHtml<TK>
 	{
 		protected GlassHtmlMvc<TK> GlassHtml { get; }
 		protected HtmlHelper<TK> HtmlHelper { get; }
 		protected TextWriter Output { get; private set; }
 		protected TK Model { get; set; }
+        
+        private IDependencies _;
 
-		public IArticleSearch ArticleSearch { get; }
-	    private readonly ICacheProvider CacheProvider; 
-        private readonly IArticleListItemModelFactory _articleListableFactory;
-
-		public TokenHtml(HtmlHelper<TK> helper)
+        public TokenHtml(HtmlHelper<TK> helper, IDependencies dependencies)
 		{
-			HtmlHelper = helper;
-			GlassHtml = helper.Glass();
-			Model = HtmlHelper.ViewData.Model;
+            _ = dependencies;
 
-			ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-            CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
-            _articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+            HtmlHelper = helper;
+			GlassHtml = helper.Glass();
+            Model = HtmlHelper.ViewData.Model;
 		}
 
-		public string ReplaceCompany(string content)
+		public string ReplaceDeals(string content)
 		{
 			var dealRegex = new Regex(DCDConstants.DealTokenRegex);
 
 			foreach (Match match in dealRegex.Matches(content))
 			{
-				var replace = DCDTokenMatchers.DealMatchEval(match);
+				var replace = _.DCDTokenMatchers.DealMatchEval(match);
 
-				content = content.Replace(match.Value, replace.ToString());
+				content = content.Replace(match.Value, replace);
 			}
 
 			return content;
@@ -61,7 +69,7 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepRelated-{articleNumber}";
-                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber));
+                string replace = _.CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber));
 
 				content = content.Replace(match.Value, replace);
             }
@@ -72,14 +80,15 @@ namespace Informa.Web.Models
 	    {
             HtmlString replace = new HtmlString("");
 
-            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            IArticleSearchFilter filter = _.ArticleSearch.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
-            var results = ArticleSearch.Search(filter);
+            var results = _.ArticleSearch.Search(filter);
 
             if (results.Articles.Any()) {
                 var article = results.Articles.FirstOrDefault();
-                if (article != null) {
-                    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+                if (article != null)
+                {
+                    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {_.GlobalService.GetPublicationName(article._Id)}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     replace = new HtmlString(articleText);
                 }
             }
@@ -95,7 +104,7 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepSidebar-{articleNumber}";
-                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName));
+                string replace = _.CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName));
                 
 				content = content.Replace(match.Value, replace);
 			}
@@ -106,14 +115,14 @@ namespace Informa.Web.Models
 	    {
             HtmlString replace = new HtmlString("");
 
-            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            IArticleSearchFilter filter = _.ArticleSearch.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
-            var results = ArticleSearch.Search(filter);
+            var results = _.ArticleSearch.Search(filter);
             
             if (results.Articles.Any()) {
                 var article = results.Articles.FirstOrDefault();
                 if (article != null)
-                    replace = HtmlHelper.Partial(partialName, _articleListableFactory.Create(article));
+                    replace = HtmlHelper.Partial(partialName, _.ArticleListableFactory.Create(article));
             }
 
 	        return replace.ToHtmlString();
@@ -122,7 +131,7 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderCompanyLink(Expression<Func<TK, string>> expression)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			return HtmlHelper.Raw(ReplaceCompany(fieldValue));
+			return HtmlHelper.Raw(ReplaceDeals(fieldValue));
 		}
 
 		/// <summary>
@@ -134,7 +143,7 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			fieldValue = ReplaceCompany(fieldValue);
+			fieldValue = ReplaceDeals(fieldValue);
 
 			fieldValue = ReplaceSidebarArticles(fieldValue, partialName);
 
@@ -150,7 +159,7 @@ namespace Informa.Web.Models
 	{
 		public static TokenHtml<T> TokenTransform<T>(this HtmlHelper<T> htmlHelper)
 		{
-			return new TokenHtml<T>(htmlHelper);
+            return new TokenHtml<T>(htmlHelper, DependencyResolver.Current.GetService<IDependencies>());
 		}
 	}
 }

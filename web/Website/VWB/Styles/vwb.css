@@ -50,7 +50,7 @@ h3 {
 }
 
 table.box
-{	
+{
     padding: 15px;
 	height: 200px;
 	margin:5px auto;
@@ -68,7 +68,7 @@ table.box td {
 }
 
 
-div.top 
+div.top
 {
 	width: 500px;
 }
@@ -98,7 +98,7 @@ table.box td table {
 	margin:0;
 }
 
-.left 
+.left
 {
 	float:left;
 }
@@ -234,7 +234,11 @@ select.left
 }
 
 textarea, input {
-	font-family: arial,helvetica,sans-serif;    
+	font-family: arial,helvetica,sans-serif;
+}
+
+textarea {
+    font:1em arial,helvetica,sans-serif;
 }
 
 .block:active {
@@ -247,23 +251,39 @@ div.appbuttons
     padding-top: 5px;
 }
 
-#btnRunReport, #btnReset, #btnLogout, #tblResults > tbody > tr > td input
+#btnRunReport,
+#btnReset,
+#btnLogout,
+#tblResults > tbody > tr > td input,
+.orange-button,
+.ui-widget button
 {
-	margin: auto;
 	border-radius: 4px 4px 4px 4px;
+	cursor: pointer;
+	line-height: 1rem;
+	margin: auto;
+	max-width: 100%;
+    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
+    background-color: #D06D1A;
     background: -moz-linear-gradient(0% 10% 270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
-    border: medium none;
+	background: -webkit-linear-gradient(270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
+    border: 0;
     color: #FFFFFF;
     display: inline-block;
-    font: bold 91.7%/1.1 arial,helvetica,sans-serif;
+    font: 500 0.75rem/0.9375rem Helvetica Neue, Helvetica, arial, sans-serif;
     letter-spacing: 0.03em;
     padding: 3px 7px !important;
     text-decoration: none;
-    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
     text-transform: uppercase;
-    white-space: nowrap;
-	cursor:pointer;
-    background-color: #D06D1A;
+	white-space: normal;
+}
+
+.orange-button:disabled {
+	background: #ccc;
+}
+
+.hidden-button {
+	display: none;
 }
 
 #tblResults > tbody > tr > td input
@@ -276,38 +296,32 @@ div.appbuttons
     clear: both;
 }
 
-#tblResults
-{
-	border-collapse:collapse;
-	border:none;
+#tblResults {
+	border-collapse: collapse;
+	border: none;
 	border-spacing: 0;
     float: left;
+	max-width: calc(100% - 200px);
 }
 
 #tblResults > tbody > tr > td
 {
 	padding: 10px 8px;
-	border-left:1px solid #ffd6ad; 
-	border-right:1px solid #ffd6ad; 
-	border-bottom:2px solid #ffd6ad; 
-	border-top:1px solid #ffd6ad; 
+	border-left:1px solid #ffd6ad;
+	border-right:1px solid #ffd6ad;
+	border-bottom:2px solid #ffd6ad;
+	border-top:1px solid #ffd6ad;
 	text-align:left;
 }
 
 .report table tr.tableheader td {
-	padding:15px 9px 5px; 
+	padding:15px 9px 5px;
 	background:url("/VWB/images/vwb/back_right_tabbox.gif") repeat-x;
 	padding:10px;
 	font: 125%/1.2 Helvetica Neue,Helvetica,"HelveticaNeueW01-57Cn",arial,sans-serif;
     margin-bottom: 0.7em;
 	color: #C76700;
 	font-weight:bold;
-}
-
-#ddColumns
-{
-	position:absolute;
-	margin-left:15px;
 }
 
 .moveto
@@ -338,21 +352,207 @@ tr.doubletop > td
 }
 
 .radioButtonWrapper {
-    padding-top: 4px; 
+    padding-top: 4px;
     width: 100px;
 }
 
 .inputWrapper {
-    padding-top: 2px; 
-    padding-left: 5px; 
+    padding-top: 2px;
+    padding-left: 5px;
     width: 215px;
 }
 
 #dateRangeWrapper {
-    clear: both; 
+    clear: both;
 }
 
 .dateRangeLabel {
-    width: 40px; 
+    width: 40px;
     padding-top: 2px;
 }
+
+
+.vwb-report-options {
+	position: fixed;
+	right: 1rem;
+	width: calc(200px - 1rem);
+}
+.vwb-report-options hr {
+	border: 0;
+	height: 1px;
+	width: 100%;
+	background-color: #ebebeb;
+	margin: 1rem 0;
+}
+
+.ui-widget {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.new-issue-modal label {
+	display: block;
+}
+.new-issue-modal input {
+	margin-bottom: 1rem;
+	display: block;
+	width: 100%;
+}
+.new-issue-modal button {
+	float: right;
+	clear: both;
+	margin-bottom: 0.5rem;
+}
+
+
+
+/* *********** Add Issue form *********** */
+.archive-dialog__spinner {
+	height: 20px;
+	width: auto;
+}
+
+body.bigger {
+}
+
+body.bigger input {
+}
+
+.centered {
+	text-align: center;
+}
+
+.delete-article {
+	width: 130px;
+}
+
+.delete-button {
+	display: block;
+	font-size: 0;
+	height: 0px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 0px;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.delete-button:after {
+	color: red;
+	content: "+";
+	cursor: pointer;
+	display: block;
+	font-size: 60px;
+	position: absolute;
+		top: -6px; /* These numbers are fairly arbitrary */
+		left: -20px; /* These numbers are fairly arbitrary */
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	transition: color 0.2s, transform 0.2s;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.to-delete .delete-button:after {
+	color: green;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+		    transform: rotate(0deg);
+}
+
+.draggable,
+.draggable-header {
+	background-color: white;
+	cursor: move;
+	display: table-row;
+}
+
+.draggable a:hover,
+.draggable a {
+	text-decoration: none;
+}
+
+.draggable div {
+	background-color: white;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: table-cell;
+	padding: 10px;
+	margin: 0;
+	min-width: 200px;
+	width: 200px;
+}
+
+
+.draggable div:first-child {
+	/* Creative Commons icon by Valera Zvonko: https://www.iconfinder.com/happyiconstudio */
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB1UlEQVR4Xu2YURLDIAhE7f0P3U6myYxNoyxEllrpt5bdJyLkURb/PRb3XxJAZsDiBKKvwHPnH6YjLHAp5TB/5GCIlpCgF+bDIEQAOJ/8uQpRNVGDdU4+DAITgHTyIRBYALTmaTWBAcBqngLBG8Bd8+4QvAFIfebSjdAGJwGs3ApnBuQVyBqQRTBfgVlfge3kRjRRIzPApMliYrToLQksOs5dpkmXNnDd22v3XrXFJtGN/tqkTWPC4xueFwA4q1AAV1Mdurc3EHkCgCAgJlojLbKXOQ2adEomevO8tFcyP3oWMGntmZA+ZswEoHkdWiYk88jp/uKaL78JoHNMUhb89RU4uJgKiyL3vZ9B8aMqcoqm5wWEwADQ9YgAqJ+r2he6d/pGqHUdfh0ApA9aVB2haeAACq1WR2+wglpgsTiQRY8EoPov1eJTJlj31mxHF0G1JvUGsLqjy0YCQGN+rEsAJmzjNmUG7CzDMjEs8G48MyAz4E0gLBPDAucVeBP4+xogfVRBH1S3THX748YAhRoePXY34zIA1KmuBeCuzz3AjUygaKMEMUCg6aIFUkCgaqIGAyDQ9dADdiCEaAkJegEhTEdYYO176LU+AXiRneV/MwNmOSkvnS9+GlZBPfGNewAAAABJRU5ErkJggg==);
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	min-width: 40px;
+	width: 40px;
+}
+
+.draggable-header.draggable div:first-child {
+	background-image: none;
+}
+
+.draggable div:nth-child(3) {
+	min-width: 500px;
+	width: 500px;
+}
+
+.draggable div:last-child {
+	min-width: 110px;
+	width: 110px;
+}
+
+.draggable.to-delete div:not(.delete-article) {
+	color: grey;
+	text-decoration: line-through;
+}
+
+.draggable.to-delete a {
+	text-decoration: none !important;
+}
+
+
+.draggable-header {
+	cursor:auto;
+}
+
+.draggable-wrapper {
+	border-collapse: collapse;
+	display: table;
+	margin: 20px 0;
+}
+
+.issue-notes {
+	margin: 20px 0;
+}
+
+.issue-notes textarea {
+	max-width: 800px;
+	width: 100%;
+    font-size:12px;
+}
+
+.pad-it {
+	padding: 20px;
+}
+
+table.basic {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+table.basic td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+table.basic input {
+	min-width: 200px;
+    font-size:12px;
+}
+.js-form-error { display:none; color:#ff0000; }

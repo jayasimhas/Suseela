@@ -52,6 +52,9 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
@@ -92,11 +95,30 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\AutofacContrib.SolrNet.dll</HintPath>
     </Reference>
+    <Reference Include="ComponentArt.Web.UI">
+      <HintPath>..\..\lib\Sitecore\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
     <Reference Include="CustomItemGenerator">
       <HintPath>..\..\lib\Velir\CustomItemGenerator.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\..\lib\Sitecore\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownCheckBoxes, Version=1.1.0.27408, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Controls\DropDownCheckBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\..\lib\Sitecore\EcmaScript.NET.dll</HintPath>
+    </Reference>
     <Reference Include="Elsevier.Library">
       <HintPath>..\..\lib\Velir\Elsevier.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\..\lib\Sitecore\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookAPI">
+      <HintPath>..\..\lib\Sitecore\FacebookAPI.dll</HintPath>
     </Reference>
     <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
@@ -110,6 +132,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\..\lib\Sitecore\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2">
+      <HintPath>..\..\lib\Sitecore\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Plus.v1">
+      <HintPath>..\..\lib\Sitecore\Google.Apis.Plus.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\..\lib\Sitecore\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
     <Reference Include="Hi.UrlRewrite, Version=1.7.2.24693, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\URLRewrite\Hi.UrlRewrite.dll</HintPath>
@@ -117,6 +151,12 @@
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\lib\Sitecore\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="ITHit.WebDAV.Server">
+      <HintPath>..\..\lib\Sitecore\ITHit.WebDAV.Server.dll</HintPath>
     </Reference>
     <Reference Include="Jabberwocky.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.Autofac.1.1.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
@@ -150,34 +190,6 @@
       <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -207,6 +219,17 @@
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Netbiscuits.OnPremise">
+      <HintPath>..\..\lib\Sitecore\Netbiscuits.OnPremise.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -223,18 +246,34 @@
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="OAuthLinkedIn">
+      <HintPath>..\..\lib\Sitecore\OAuthLinkedIn.dll</HintPath>
+    </Reference>
+    <Reference Include="RadEditor.Net2">
+      <HintPath>..\..\lib\Sitecore\RadEditor.Net2.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Abstractions">
       <HintPath>..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Aggregation">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Aggregation.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Automation">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Automation.Aggregation">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.Aggregation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Automation.MongoDB, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -244,21 +283,122 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.OmniChannel">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.OmniChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Processing">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.RobotDetection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.RobotDetection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Sql">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Apps.Loader, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Apps.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Apps.TagInjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Apps.TagInjection.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES">
+      <HintPath>..\..\lib\Sitecore\Sitecore.CES.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.DeviceDetection">
+      <HintPath>..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.DeviceDetection.Rules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.Rules.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.GeoIp, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.CES.GeoIp.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.GeoIp.LegacyLocation, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.CES.GeoIp.LegacyLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cintel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cintel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cintel.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cintel.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client.LicenseOptions, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Client.LicenseOptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cloud.ContentSearch, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cloud.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cloud.Nexus, Version=2.2.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cloud.Nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cloud.RestClient, Version=6.2.0.23, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cloud.RestClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cloud.ServiceModel, Version=4.0.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cloud.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cloud.Xdb, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Cloud.Xdb.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Analytics.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Analytics.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Lucene, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.LuceneProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.SolrProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -270,6 +410,40 @@
     <Reference Include="Sitecore.ContentTesting, Version=8.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ControlPanel, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ControlPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceAnalytics">
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceAnalytics.Client">
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceAnalytics.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Business, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceExplorer.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceExplorer.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.FXM, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.FXM.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.FXM.Client, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.FXM.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.FXM.Service, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.FXM.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.FXM.Speak, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.FXM.Speak.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -299,17 +473,153 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ItemWebApi">
+      <HintPath>..\..\lib\Sitecore\Sitecore.ItemWebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.LaunchPad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.LaunchPad.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ListManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Analytics, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ListManagement.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Client, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ListManagement.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.ContentSearch, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ListManagement.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Services, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ListManagement.Services.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Logging.Client">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Logging.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Campaigns.Client, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Campaigns.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Campaigns.Services, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Campaigns.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Core">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Definitions.MarketingAssets.Repositories, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Taxonomy">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Taxonomy.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.Analytics">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.DeviceSimulator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.DeviceSimulator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus, Version=1.0.0.4404, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity">
+      <HintPath>..\..\lib\Sitecore\Sitecore.NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Oracle, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PathAnalyzer, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.PathAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PathAnalyzer.Client, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.PathAnalyzer.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PathAnalyzer.Services, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.PathAnalyzer.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.Configuration, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.DashBoardClient, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesign.Soap, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Publishing.WebDeploy, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Publishing.WebDeploy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Security.AntiCsrf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Security.AntiCsrf.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SegmentBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SegmentBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SequenceAnalyzer, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
+    </Reference>
+	<Reference Include="Sitecore.SessionSerialization">
+      <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -323,8 +633,28 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.SessionProvider, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SessionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.Memory, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SessionProvider.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.MongoDB, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SessionProvider.MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.Sql, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.SessionProvider.Sql.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.SharedSource.PageEditor">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Shell.MarketingAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Shell.MarketingAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Social, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -466,8 +796,44 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Speak.Applications">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Charting, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Client">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components.Guidance, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Components.Guidance.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Components.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.ItemWebApi">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.ItemWebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Mvc, Version=2.0.811.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Speak.Web">
       <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Support.88491">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Support.88491.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Update.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -476,9 +842,24 @@
     <Reference Include="Sitecore.Xdb.Configuration">
       <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Zip">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base">
+      <HintPath>..\..\lib\Sitecore\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report">
+      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web">
+      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.WebDesign">
+      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.WebDesign.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -550,6 +931,16 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\..\lib\Sitecore\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2015.1.401.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp">
+      <HintPath>..\..\lib\Sitecore\TweetSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Velir.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
@@ -588,6 +979,10 @@
     <Reference Include="WebGrease">
       <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing, Version=1.0.4391.16826, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\zxing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -669,7 +1064,6 @@
     <Compile Include="App_Start\Registrations\SalesforceRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
@@ -688,6 +1082,7 @@
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\RegisterFreeTrialRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -705,6 +1100,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -712,6 +1108,11 @@
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
+    <Compile Include="Areas\Authors\Controllers\EmailAuthorController.cs" />
+    <Compile Include="Areas\Authors\Models\EmailAuthorRequest.cs" />
+    <Compile Include="Areas\DCD\Controllers\EmailDCDController.cs" />
+    <Compile Include="Areas\DCD\Models\EmailCompanyRequest.cs" />
+    <Compile Include="Areas\DCD\Models\EmailDealRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
@@ -746,6 +1147,17 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.designer.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sitecore\admin\Tools\TestUtils.aspx.cs">
+      <DependentUpon>TestUtils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
@@ -763,25 +1175,38 @@
     <Compile Include="Util\DCD\ViewDCDXML.aspx.designer.cs">
       <DependentUpon>ViewDCDXML.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AdvertisementViewModel.cs" />
-    <Compile Include="ViewModels\ArticleAdViewModel.cs" />
-    <Compile Include="ViewModels\ArticleBodyContentModel.cs" />
-    <Compile Include="ViewModels\ArticleEntitledViewModel.cs" />
+    <Compile Include="ViewModels\AdViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleBodyContentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleEntitledViewModel.cs" />
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
-    <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
-    <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\DealsAndCompaniesSubscribeViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\StrategicTransactionViewModel.cs" />
+    <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
-    <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
-    <Compile Include="ViewModels\RelatedDealsModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\RelatedCompaniesModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\RelatedDealsModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
@@ -798,7 +1223,7 @@
     <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
-    <Compile Include="ViewModels\IArticleComponentFactory.cs" />
+    <Compile Include="ViewModels\Articles\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ICallToActionViewModel.cs" />
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
@@ -809,30 +1234,30 @@
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
-    <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
-    <Compile Include="ViewModels\ArticleListItemModel.cs" />
-    <Compile Include="ViewModels\ArticleListItemModelFactory.cs" />
-    <Compile Include="ViewModels\ArticlePrologueBookmarkViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueEmailViewModel.cs" />
-    <Compile Include="ViewModels\ArticleProloguePrintViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
-    <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleFeaturedImage.cs" />
+    <Compile Include="ViewModels\Articles\ArticleListItemModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleListItemModelFactory.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\PromotionalViewModel.cs" />
     <Compile Include="ViewModels\ContentListing\ContentListingViewModel.cs" />
     <Compile Include="ViewModels\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
-    <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
+    <Compile Include="ViewModels\Articles\IArticleListItemModelFactory.cs" />
     <Compile Include="ViewModels\IListableVIewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
-    <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
-    <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\IPersonModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
@@ -849,6 +1274,7 @@
     <Compile Include="ViewModels\TopicAlertButtonModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
+    <Compile Include="Areas\VWB\Controllers\AddIssueController.cs" />
     <Compile Include="VWB\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -864,6 +1290,8 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleCheckboxes.cs" />
+    <Compile Include="VWB\Report\Columns\ArticlePublicationNameColumn.cs" />
     <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
@@ -900,6 +1328,7 @@
       <DependentUpon>LoginRedirectToPreview.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Util\VWBUtil.cs" />
+    <Compile Include="ViewModels\VWB\AddIssueViewModel.cs" />
     <Compile Include="VWB\VwbQuery.cs" />
     <Compile Include="VWB\VwbSessionInfo.cs" />
   </ItemGroup>
@@ -990,6 +1419,8 @@
     <Content Include="default.js" />
     <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriendDCD.html" />
+    <Content Include="email\EmailFriendAuthor.html" />
     <Content Include="email\EmailFriendSearchAuthor.html" />
     <Content Include="email\EmailFriendSearchRow.html" />
     <Content Include="email\EmailFriendSearch.html" />
@@ -1000,6 +1431,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\save-search-component.js" />
     <Content Include="js\controllers\analytics-controller.js" />
     <Content Include="js\controllers\bookmark-controller.js" />
@@ -1015,6 +1447,9 @@
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search-page.js" />
+    <Content Include="js\search\angular-1.5.1.min.js" />
+    <Content Include="js\search\angular-animate-1.5.1.min.js" />
+    <Content Include="js\search\angular-sanitize-1.5.1.min.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\pageSizeController.js" />
     <Content Include="js\search\controllers\headlineSearchController.js" />
@@ -1028,7 +1463,6 @@
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\toggle-icons.js" />
-    <Content Include="js\tooltip-controller.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
@@ -1062,6 +1496,10 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
+    <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
+    <Content Include="PrintStudio\Data\special.xml" />
+    <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1084,6 +1522,7 @@
     <Content Include="Util\DCD\img\back_body_leftshadow.png" />
     <Content Include="Util\DCD\img\back_body_rightshadow.png" />
     <Content Include="Util\DCD\img\header_logo.gif" />
+    <Content Include="Util\DCD\img\header_logo.png" />
     <Content Include="Util\DCD\js\jquery-ui.js" />
     <Content Include="Util\DCD\js\jquery.js" />
     <Content Include="Util\DCD\js\jquery.multiSelect.js" />
@@ -1095,6 +1534,7 @@
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
+    <Content Include="VWB\Scripts\addissue.js" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
@@ -1109,11 +1549,13 @@
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.10.4.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\Scripts\selected-articles.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
@@ -1160,7 +1602,6 @@
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
     <Content Include="Views\Shared\_SignInForm.cshtml" />
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
-    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
@@ -1173,10 +1614,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Partials\" />
+    <Folder Include="Views\VWB\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1208,6 +1651,8 @@
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
@@ -1215,7 +1660,14 @@
     <None Include="App_Config\Prefetch\Core.config.template" />
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
+    <Content Include="Areas\VWB\Views\web.config" />
+    <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
+    <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
+    <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Project_Readme.html" />
@@ -1246,7 +1698,6 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -1276,12 +1727,11 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
-    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
+    <Content Include="Views\Advertisements\FilmstripAd.cshtml" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
-    <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
@@ -1308,6 +1758,39 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
+    <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
+    <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
+    <Content Include="Views\Authors\AuthorProfile.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Authors\AuthorShare.cshtml" />
+    <Content Include="Views\Authors\AuthorPrologueEmail.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailAuthor.cshtml" />
+    <Content Include="Views\Shared\Components\ExecutiveSummary.cshtml" />
+    <Content Include="Views\Authors\AuthorRectangularAd.cshtml" />
+    <Content Include="Views\Authors\AuthorLeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyProfile.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealProfile.cshtml" />
+    <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyDetails.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyInfo.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
+    <Content Include="Views\Structure\DetailPageSublayout.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailCompany.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailDeal.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealShare.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyShare.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyPrologueEmail.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
+    <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

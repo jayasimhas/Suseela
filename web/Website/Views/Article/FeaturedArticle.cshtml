@@ -1,4 +1,4 @@
-﻿@using Sitecore.Resources.Media
+﻿@using Informa.Library.Utilities.References
 @model FeaturedArticleViewModel
 <section class="article-preview">
 
@@ -42,18 +42,16 @@
 				<li>
 					<time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
 				</li>
-				@if (!string.IsNullOrEmpty(Model.Content_Type))
+				@if (!string.IsNullOrEmpty(Model.ContentType))
 				{
 					<li>
-						<h6>@Html.Raw(Model.Content_Type)</h6>
+                        <h6>@Html.Raw(Model.ContentType)</h6>
 					</li>
 				}
-				@if (!string.IsNullOrEmpty(Model.Media_Type))
+                @if (!string.IsNullOrEmpty(Model.MediaType))
 				{
 					<li>
-						<svg class="article-metadata__media-type">
-							<use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
-						</svg>
+                        @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
 					</li>
 				}
 			</ul>
@@ -65,7 +63,7 @@
 					href="@Model.GlassModel._Url"
 					class="click-utag"
 					data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.Title" }'>
-					@HttpUtility.HtmlDecode(Model.Title)
+					@Html.Raw(Model.Title)
 				</a>
 			</h1>
 

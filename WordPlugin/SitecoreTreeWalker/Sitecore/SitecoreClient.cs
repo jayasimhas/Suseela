@@ -36,7 +36,6 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
 
         public SitecoreClient()
@@ -59,7 +58,6 @@ namespace InformaSitecoreWord.Sitecore
                 return response.IsSuccessStatusCode;
             }
         }
-
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
         {
@@ -217,6 +215,8 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetails?articleNumber={articleNumber}").Result;
                 var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleStruct);
                 return articleStruct;
             }
             /*
@@ -232,6 +232,7 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
                 var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleStruct);
                 return articleStruct;
             }
             /*
@@ -432,6 +433,7 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
+                publicationDate = TimezoneUtil.ConvertDateToServerTimezone(publicationDate);
                 var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
 
@@ -442,6 +444,7 @@ namespace InformaSitecoreWord.Sitecore
                 else
                 {
                     var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
+                    TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleItem);
                     return articleItem;
                 }
             }
@@ -449,29 +452,35 @@ namespace InformaSitecoreWord.Sitecore
 
         public static bool DoesArticleNameAlreadyExistInIssue(ArticleStruct articleDetails)
         {
+            TimezoneUtil.ConvertArticleDatesToServerTimezone(articleDetails);
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleNameAlreadyExistInIssue").Result;
                 var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleDetails);
                 return flag;
             }
         }
 
         public static void SaveMetadataToSitecore(string articleID, ArticleStruct articleData)
         {
+            TimezoneUtil.ConvertArticleDatesToServerTimezone(articleData);
             using (var client = new HttpClient(_handler, false))
             {
                 var article = new SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetails", article).Result;
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleData);
             }
         }
 
         public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
         {
+            TimezoneUtil.ConvertArticleDatesToServerTimezone(articleData);
             using (var client = new HttpClient(_handler, false))
             {
                 var article = new SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetailsByGuid", article).Result;
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleData);
             }
         }
 
@@ -622,6 +631,7 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
                 var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(previewInfo);
                 return previewInfo;
             }
         }
@@ -632,25 +642,31 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfoByGuids", guids).Result;
                 var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
+                if (articlePreviewCollection != null)
+                    articlePreviewCollection.ForEach(f => TimezoneUtil.ConvertArticleDatesToLocalTimezone(f));
                 return articlePreviewCollection;
             }
         }
 
         public static void SaveArticleText(string articleNumber, string text, ArticleStruct articleStruct)
         {
+            TimezoneUtil.ConvertArticleDatesToServerTimezone(articleStruct);
             using (var client = new HttpClient(_handler, false))
             {
                 var article = new SaveArticleText() { ArticleNumber = articleNumber, ArticleData = articleStruct, WordText = text };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleText", article).Result;
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleStruct);
             }
         }
 
         public static void SaveArticleText(Guid articleGuid, string text, ArticleStruct articleStruct)
         {
+            TimezoneUtil.ConvertArticleDatesToServerTimezone(articleStruct);
             using (var client = new HttpClient(_handler, false))
             {
                 var article = new SaveArticleTextByGuid() { ArticleGuid = articleGuid, ArticleData = articleStruct, WordText = text };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleTextByGuid", article).Result;
+                TimezoneUtil.ConvertArticleDatesToLocalTimezone(articleStruct);
             }
         }
 
@@ -746,7 +762,6 @@ namespace InformaSitecoreWord.Sitecore
 
         public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, List<StaffStruct> notifications, string articleNumber, string body = null, string notificationText = null)
         {
-
             string text;
             try
             {
@@ -885,6 +900,33 @@ namespace InformaSitecoreWord.Sitecore
                 string result = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
                 return result;
             }
+        }
+
+        public static TimeZoneInfo GetServerTimezone()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetServerTimezone").Result;
+                return JsonConvert.DeserializeObject<TimeZoneInfo>(response.Content.ReadAsStringAsync().Result);
+            }
+        }
+
+        public static List<Tuple<DateTime, string, bool>> GetItemWorkflowHistory(Guid itemID)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleWorkflowHistory?itemID=" + itemID).Result;
+                return JsonConvert.DeserializeObject<List<Tuple<DateTime, string, bool>>>(response.Content.ReadAsStringAsync().Result);
+            }
+        }
+
+        public static DateTime GetArticleActualPublishedDate(Guid itemID)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleActualPublishedDate?itemID=" + itemID).Result;
+                return JsonConvert.DeserializeObject<DateTime>(response.Content.ReadAsStringAsync().Result);
+    }
         }
     }
 }

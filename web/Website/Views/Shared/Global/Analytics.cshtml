@@ -7,7 +7,7 @@
 	ANALYTICS DATA
 	* * */
 	var analytics_data = {
-		"actual_publish_date": "@Model.ArticlePublishDate",
+		//"actual_publish_date": "@Model.ArticlePublishDate",
 		"article_author": "@Html.Raw(Model.ArticleAuthors)",
 		"article_content_type": "@Model.ArticleContentType",
 		"article_embargo": "@Model.ArticleEmbargoed",
@@ -40,9 +40,15 @@
 		"User_IP_Address": "@Model.UserIp",
 		"content_entitlement_type": "@Model.ContentEntitlementType",
 		"entitlement_type": "@Model.EntitlementType",
-		"opportunity_id": "@Model.OpportunityIds",
-		"opportunity_line_item_id": "@Model.OpportunityLineItemIds"
+		"entitlement_type": "@Model.EntitlementType",
+        "opportunity_id": "@Model.OpportunityIds",
+	    "opportunity_line_item_id": "@Model.OpportunityLineItemIds",
+	    "deal": "@Model.DealName",
+        "company_name": "@Model.CompanyName"
 	};
+
+    if ('@Model.ArcticleNumber' != '')
+        analytics_data["actual_publish_date"] = "@Model.ArticlePublishDate";
 
 	var utag_data = analytics_data;
 
@@ -105,21 +111,8 @@
 		return sector;
 	}
 
-@if(Model.PublicationName == "SCRIP Intelligence") {
-    @Html.Raw("OAS_publication = 'www.scripnews.com/';");
-} else if(Model.PublicationName == "Medtech Insight") {
-	@Html.Raw("OAS_publication = 'medtech.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "In Vivo") {
-	@Html.Raw("OAS_publication = 'invivo.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Rose Sheet") {
-	@Html.Raw("OAS_publication = 'rosesheet.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Pink Sheet") {
-	@Html.Raw("OAS_publication = 'pinksheet.pharmamedtechbi.com/';");
-} else {
-	@Html.Raw("OAS_publication = '';");
-}
-
-//configuration
+    //configuration
+OAS_publication = '@Model.AdDomain' + '/';
 OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
 OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
 OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
@@ -161,3 +154,4 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
 }
 
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>

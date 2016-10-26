@@ -84,6 +84,8 @@
 
 				<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
 
+				<div class="g-recaptcha" data-sitekey="@Model.CaptchaSiteKey"></div>
+
 				<div class="pop-out__form-actions-wrapper">
 					<div class="dismiss-button" data-target-element=".js-pop-out__email-article">
                         <span class="highlight-link">@Model.CancelText</span>
@@ -92,6 +94,10 @@
 						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "toolbar_use", "toolbar_tool" : "email" }'>@Model.SendText</button>
 					</div>
 				</div>
+
+                @Html.AuthToken()
+
+
 			</form>
 
 			<p class="pop-out__details u-italic">

@@ -62,7 +62,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			{
 				p.Visible = false;
 			}
-		}
+
+           
+
+        }
 
 		private void LinkMenuItems()
 		{
@@ -75,7 +78,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 				(Pages[i]).LinkToMenuItem(MenuItems[i]);
 				MenuItems[i].SetIndicatorIcon(Properties.Resources.blankred);
 			}
-		}
+            FeaturedImagesMenuItem.SetIndicatorIcon(Properties.Resources.redx);
+            //FeaturedImagesMenuItem.UpdateBackground();
+        }
 
 		#endregion
 
@@ -99,8 +104,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			var articleDetails = new ArticleStruct();
 			try
 			{
-				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
-				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
+                articleDetails.ArticleGuid = pageArticleInformationControl.ArticleGuid;
+                articleDetails.IsPublished = pageArticleInformationControl.IsPublished;
+                articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+                articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
 				articleDetails.Title = metadataParser.Title.Trim();
 				articleDetails.Summary = ExecutiveSummary;
 				articleDetails.Subtitle = metadataParser.Subtitle;
@@ -136,7 +143,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			var articleDetails = new ArticleStruct();
 			try
 			{
-				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+                articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
 				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
 				articleDetails.Publication = pageArticleInformationControl.GetSelectedPublicationGuid();
 				articleDetails.Authors = pageArticleInformationControl.GetSelectedAuthors().ToList();
@@ -186,12 +193,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public DateTime GetDate()
 		{
-			return pageArticleInformationControl.GetWebPublishDate();
+            return pageArticleInformationControl.GetWebPublishDate();
 		}
 
-		public void SetDate(DateTime time)
+		public void SetDate(DateTime time, bool isLocalTimezone)
 		{
-			pageArticleInformationControl.SetPublicationTime(time, true);
+			pageArticleInformationControl.SetPublicationTime(time, isLocalTimezone);
 		}
 
 		#endregion

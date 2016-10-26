@@ -1,0 +1,50 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.DealViewModel
+
+<script type="text/javascript"> (function () { document.title = document.title.replace('*', '@(Model.Deal.Title)'); })(); </script>
+
+<div class="generic-content">
+    <h1>@Model.Deal.Title</h1>
+
+    <div class="generic-content__dateline">
+        @(Model.Content.DealInfo.PublishedDate.ToDate().ToString("MMM yyyy"))
+    </div>
+    <h3>@Model.DealsSummaryText</h3>
+    <div>
+        @Html.Raw(Model.DealSummary)
+    </div>
+</div>
+
+<div class="l-columns l-columns--with-divider l-columns--three-up">
+
+    <div class="l-columns__column">
+        <h6>@Model.DealIndustryHeader</h6>
+            <ul class="carrot-list">
+                @foreach (var rootNode in Model.Industries)
+                {
+                    @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
+                }
+            </ul>
+    </div>
+
+    <div class="l-columns__column">
+        <h6>@Model.DealStatusHeader</h6>
+        <ul class="carrot-list">
+                <li class="article-topics__li">@Model.Content.DealInfo.DealStatus</li>
+        </ul>
+    </div>
+
+    <div class="l-columns__column">
+        <h6>@Model.DealTypeHeader</h6>
+        <ul class="carrot-list">
+            <li class="article-topics__li">
+                @Model.Content.DealInfo.DealType
+                <ul>
+                    @foreach (var characteristic in Model.Content.DealInfo.Characteristics)
+                    {
+                        <li class="article-topics__li">@characteristic</li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

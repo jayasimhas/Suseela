@@ -1,9 +1,9 @@
 ﻿@inherits GlassView<LatestNewsViewModel>
 
-@if (Model.DisplayTitle && Model.Topics.Any())
+@if (Model.News!= null && Model.News.Any() && Model.DisplayTitle && !string.IsNullOrEmpty(Model.TitleText))
 {
 	<h4 class="latest-news__header">
-		<span>@Html.Raw(Model.TitleTextPrefix) @Html.Raw(Model.TitleText)</span>
+		<span>@Html.Raw(Model.TitleText)</span>
 	</h4>
 }
 
@@ -13,15 +13,10 @@
 		Html.RenderPartial("Components/ListableContentSmall", listable);
 	}
 </div>
-<!-- Unable to format data-info string, use hardcoded a tag instead.-->
-@*@{
-	var dataInfo = "{{ 'event_name': 'see_all', 'see_all_topic': '" + Model.TitleText + "' }}";
-}
-@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = dataInfo })*@
 
-@if (Model.SeeAllLink != null)
+@if (Model.News != null && Model.News.Any() &&  Model.SeeAllLink != null)
 {
     <a href="@Model.SeeAllLink.Url"
        class="full-diminished-button click-utag"
-       data-info='{"event_name": "see_all", "see_all_topic": "@Model.TitleText"}'>@Model.SeeAllLink.Text</a>
+       data-info='{"event_name": "see_all", "@Model.EventSource": "@Model.EventSourceValue"}'>@Model.SeeAllLink.Text</a>
 }

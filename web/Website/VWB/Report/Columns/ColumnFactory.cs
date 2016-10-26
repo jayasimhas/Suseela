@@ -11,52 +11,49 @@ namespace Elsevier.Web.VWB.Report.Columns
 	{
 		private ColumnFactory()
 		{
+
 			Columns = new List<IVwbColumn>
-			          	{
-			          		//new ArticleNumberColumn(), 
-							//this column is special because it is always included,
-							//thus can't be removed, thus can't be "added", etc
-			          		//new TitleColumn(),
-							//TitleColumn is now also "special"
-			          		new AuthorsColumn(),
-							new CreatedDateTimeColumn(),
-							new PlannedPublishDateTimeColumn(),
-							new ActualPublishDateTimeColumn(),
-                                new SidebarColumn(),
-                                new NotesToEditorialColumn(),
-                                        new PublishableAfterColumn(),
-                                                new WorkflowStateColumn(),
-                                                new TaxonomyColumn(),
+									{
+										new AuthorsColumn(),
+										new CreatedDateTimeColumn(),
+										new PlannedPublishDateTimeColumn(),
+										new ActualPublishDateTimeColumn(),
+										new SidebarColumn(),
+										new NotesToEditorialColumn(),
+										new PublishableAfterColumn(),
+										new WorkflowStateColumn(),
+										new TaxonomyColumn(),
+										new WordCountColumn(),
+										new ContentTypeColumn(),
+										new MediaTypeColumn(),
+										new EmailPriorityColumn(),
+										new ArticlePublicationNameColumn()
+									};
 
-                            new WordCountColumn(),
-
-                                   new ContentTypeColumn(),
-                            new MediaTypeColumn(),
-                            new EmailPriorityColumn()
-
-               
-					
-					
-                        
-                     
-
-                          };
+			_articleCheckboxes = new ArticleCheckboxes();
 			_articleNumberColumn = new ArticleNumberColumn();
 			_titleColumn = new TitleColumn();
 			ImmutableColumns = new List<IVwbColumn>
-								{
-									_articleNumberColumn,
-									_titleColumn
-								}; 
+													{
+														_articleCheckboxes,
+														_articleNumberColumn,
+														_titleColumn
+													};
 
 		}
 
 		public readonly List<IVwbColumn> Columns;
 		private static readonly ColumnFactory _columnFactory = new ColumnFactory();
+		private static ArticleCheckboxes _articleCheckboxes;
 		private static ArticleNumberColumn _articleNumberColumn;
 		private static TitleColumn _titleColumn;
 
-		public List<IVwbColumn> ImmutableColumns; 
+		public List<IVwbColumn> ImmutableColumns;
+
+		public static IVwbColumn GetArticleCheckboxes()
+		{
+			return _articleCheckboxes;
+		}
 
 		public static IVwbColumn GetArticleNumberColumn()
 		{
@@ -80,13 +77,13 @@ namespace Elsevier.Web.VWB.Report.Columns
 		/// <returns>Null if no column with specified key exists; else the column</returns>
 		public IVwbColumn GetColumn(string key)
 		{
-			return Columns.Where(c => c.Key().Equals(key)).FirstOrDefault();
+			return Columns.FirstOrDefault(c => c.Key().Equals(key));
 		}
 
 		public List<IVwbColumn> GetColumns(IEnumerable<string> keys)
 		{
 			var columns = new List<IVwbColumn>();
-			foreach(string key in keys)
+			foreach (string key in keys)
 			{
 				string curKey = key;
 				columns.AddRange(Columns.Where(c => c.Key().Equals(curKey)));
@@ -101,11 +98,12 @@ namespace Elsevier.Web.VWB.Report.Columns
 		/// <returns></returns>
 		public IEnumerable<IVwbColumn> GetColumnsNot(IEnumerable<string> keys)
 		{
-			if(keys == null || keys.Count() == 0)
+			var keyArr = keys as string[] ?? keys.ToArray();
+			if (keys == null || !keyArr.Any())
 			{
 				return Columns;
 			}
-			return Columns.Where(c => !keys.Contains(c.Key()));
+			return Columns.Where(c => !keyArr.Contains(c.Key()));
 		}
 	}
 }

@@ -1,0 +1,89 @@
+{# Defaults and Randoms #}
+{% if personName == false %}
+	{% set personName = random(randomNames).text %}
+{% endif %}
+{% if personTitle == false %}
+	{% set personTitle = random(randomJobs).text %}
+{% endif %}
+{% if location == false %}
+	{% set location = random(randomLocations).text %}
+{% endif %}
+{% if email == false and not email == " " %}
+	{% set email = random(randomEmails).text %}
+{% elseif email == " " %}
+	{% set email = false %}
+{% endif %}
+{% if twitter == false and not twitter == " " %}
+	{% set twitter = "@TwitterName" %}
+{% elseif twitter == " " %}
+	{% set twitter = false %}
+{% endif %}
+{% if twitterUrl == false %}
+	{% set twitterUrl = "#" %}
+{% endif %}
+{% if linkedin == false and not linkedin == " " %}
+	{% set linkedin = "Public LinkedIn Profile Link" %}
+{% elseif linkedin == " " %}
+	{% set linkedin = false %}
+{% endif %}
+{% if linkedinUrl == false %}
+	{% set linkedinUrl = "#" %}
+{% endif %}
+{% if personPhoto == false and not personPhoto == " " %}
+	{% set personPhoto = "https://unsplash.it/200/" ~ (random(300) + 100) ~ "/?random
+
+" %}
+{% endif %}
+{% if personProfile == false and not personProfile == " " %}
+	{% set personProfile = "Vestibulum ut justo metus. Quisque eu mauris turpis. Nam suscipit commodo sapien, vel porta arcu condimentum nec. Aliquam eget leo et nisl lacinia molestie. Morbi vel mi nec erat sodales imperdiet. Donec at mauris luctus, dictum metus sit amet, dignissim nisi. Vestibulum est nibh, molestie id sagittis pretium, viverra at erat. Morbi rhoncus nunc sed venenatis consequat. " %}
+{% endif %}
+{% if expertise == false and not expertise == " " %}
+	{% set expertise = [
+		{"labelText": "Areas of Expertise", "classes": "bar-separated-link-list--wrap"},
+		{"labelText": "Industry Expertise", "classes": "bar-separated-link-list--wrap"},
+		{"labelText": "Writes for", "classes": "bar-separated-link-list--wrap"}
+	] %}
+{% endif %}
+
+
+{# Pattern #}
+<div class="profile">
+	<h1 class="profile__name">{{personName}}</h1>
+	<div class="l-left-rail">
+		<h2 class="profile__title">{{personTitle}}</h2>
+		<div class="profile__location">{{location}}</div>
+		{% if hideProfilePhoto == false %}
+			<img class="profile__img" src="{{personPhoto}}" />
+		{% endif %}
+		<ul class="profile__links">
+			{% if email %}
+				<li>
+					{% include "molecules-icon-as-bullet" with {"icon": "email", "linkText": email} %}
+				</li>
+			{% endif %}
+			{% if twitter %}
+				<li>
+					{% include "molecules-icon-as-bullet" with {"icon": "twitter", "linkText": twitter} %}
+				</li>
+			{% endif %}
+			{% if linkedin %}
+				<li>
+					{% include "molecules-icon-as-bullet" with {"icon": "linkedin", "linkText": linkedin, "classes" : "icon--linked-in"} %}
+				</li>
+			{% endif %}
+		</ul>
+		<div class="profile__profile">
+			{{personProfile}}
+		</div>
+		<ul class="profile__expertise">
+			{% for ex in expertise %}
+				<li>
+					{% include "molecules-bar-separated-list" with ex %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="l-right-rail">
+		{% include "molecules-ad-rect" %}
+	</div>
+</div>

@@ -61,15 +61,31 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         private void uxVersionStateButton_Click(object sender, EventArgs e)
         {
-            var articleVersionStateInfo = new ArticleVersionStateInfo(_parent) { StartPosition = FormStartPosition.CenterParent };
-            articleVersionStateInfo.ShowDialog();
+            //var articleVersionStateInfo = new ArticleVersionStateInfo(_parent) { StartPosition = FormStartPosition.CenterParent };
+            var articleVersionState = new ArticleVersionStatePopup(_parent) { StartPosition = FormStartPosition.CenterParent };
+            articleVersionState.ShowDialog();
+            //articleVersionStateInfo.ShowDialog();
         }
 
         private void uxWorkflowButton_Click(object sender, EventArgs e)
         {
+            var history = SitecoreClient.GetItemWorkflowHistory(_parent.ArticleDetails.ArticleGuid);
+            if (_parent.ArticleDetails.IsPublished)
+            {
+                DateTime actualPublishDate = SitecoreClient.GetArticleActualPublishedDate(_parent.ArticleDetails.ArticleGuid);
+
+                if (actualPublishDate != DateTime.MinValue)
+                    MessageBox.Show(string.Format("Published on '{0}'", actualPublishDate.ToLocalTime().ToString("MM/dd/yyyy hh:mm:00 tt")));
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Workflow state: '{0}' since {1}", _parent.ArticleDetails.ArticleWorkflowState?.DisplayName, history.LastOrDefault().Item1.ToLocalTime().ToString("MM/dd/yyyy hh:mm:00 tt")));
+            }
+            return;
             var articleWorkFlowInfo = new ArticleWorkflowInfo(_parent) { StartPosition = FormStartPosition.CenterParent };
             articleWorkFlowInfo.ShowDialog();
         }
+
 
         public void LinkToParent(ArticleDetail parent)
         {
@@ -95,6 +111,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             uxLockStateButton.Visible = displayStatus;
             uxVersionStateButton.Visible = displayStatus;
             uxWorkflowButton.Visible = displayStatus;
+            RefreshWorkflowDetails();
             if (!string.IsNullOrEmpty(articleNumber))
             {
                 uxArticleNumber.Text = articleNumber;
@@ -115,8 +132,23 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 uxLinkUnlinkButton.Text = "Link";
                 uxLinkUnlinkButton.Image = new Bitmap(Resources.link_32);
             }
-            var articleLockInfo = new ArticleLockInfo();
-            articleLockInfo.SetCheckedOutStatus();
+
+			var articleLockInfo = new ArticleLockInfo();
+			articleLockInfo.SetCheckedOutStatus();
+		}
+
+        public void RefreshWorkflowDetails()
+        {
+            if (_parent.ArticleDetails.IsPublished)
+            {
+                uxWorkflowButton.Image = Properties.Resources.live;
+                uxWorkflowButton.Text = "Published";
+            }
+            else
+            {
+                if (_parent.ArticleDetails.ArticleWorkflowState != null)
+                    uxWorkflowButton.Text = string.Format("In '{0}'", _parent.ArticleDetails.ArticleWorkflowState.DisplayName);
+            }
         }
 
         public void ChangeLockButtonStatus(LockStatus lockStatus)
@@ -146,9 +178,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                     break;
             }
         }
-    }
+    
+	}
 
-    public enum LockStatus
+	public enum LockStatus
     {
         Locked,
         Unlocked

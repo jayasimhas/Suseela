@@ -261,9 +261,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         /// </summary>
         public void UpdateFields()
         {
-            Globals.SitecoreAddin.Log("Updating fields...");
-            articleDetailsPageSelector.UpdateFields(ArticleDetails);
-            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
+            if (ArticleDetailFieldsUpdateDisabler.DisableFieldsUpdate == false)
+            {
+                Globals.SitecoreAddin.Log("Updating fields...");
+                articleDetailsPageSelector.UpdateFields(ArticleDetails);
+                articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
+            articleStatusBar1.RefreshWorkflowDetails();
+            }
         }
 
         /// <summary>
@@ -673,12 +677,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 MessageBox.Show("The following multimedia content is not secure. Please correct and try to save again. " + message, "Non-secure Multimedia Content");
-                Cursor = Cursors.Arrow;
                 return;
             }
             catch (InvalidHtmlException)
             {
-                Cursor = Cursors.Arrow;
                 return;
             }
             catch (Exception ex)
@@ -687,11 +689,17 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.LogException("Error when parsing article on creation!", ex);
                 return;
             }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
             try
             {
-                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
-                                                                       _wordUtils.CharacterStyleTransformer);
-                if (PreSavePrompts(metadataParser)) return;
+                Cursor.Current = Cursors.WaitCursor;
+                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
+                if (PreSavePrompts(metadataParser))
+                    return;
+
                 ArticleDetails = CreateSitecoreArticleItem();
                 if (ArticleDetails != null)
                 {
@@ -750,6 +758,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         private void uxSaveMetadata_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
 
             // Checking for Taxonomy is the workflow state is final
@@ -767,9 +776,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
 
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
@@ -777,7 +786,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
@@ -787,7 +796,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 SuspendLayout();
-                Cursor = Cursors.WaitCursor;
 
                 var isPublished = ArticleDetails.IsPublished;
                 Guid guidCopy = ArticleDetails.ArticleGuid;
@@ -833,6 +841,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     EnablePreview();
                     uxCreateArticle.Visible = false;
                 }
+                articleStatusBar1.RefreshWorkflowDetails();
 
                 MessageBox.Show(@"Metadata saved!", @"Informa");
             }
@@ -874,20 +883,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                Cursor = Cursors.WaitCursor;
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
@@ -897,14 +907,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 Globals.SitecoreAddin.Log("Save and transferring");
-                Cursor = Cursors.WaitCursor;
+
                 SuspendLayout();
 
                 SitecoreAddin.ActiveDocument.Saved = false;
 
+
+
+
                 var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
+                articleStatusBar1.RefreshWorkflowDetails();
             }
             catch (WebException wex)
             {
@@ -990,6 +1004,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                         MessageBoxIcon.Exclamation);
             }
             return false;
+        }
+    }
+
+    public class ArticleDetailFieldsUpdateDisabler : IDisposable
+    {
+        public static bool DisableFieldsUpdate { get; private set; }
+
+        public ArticleDetailFieldsUpdateDisabler()
+        {
+            DisableFieldsUpdate = true;
+        }
+
+        public void Dispose()
+        {
+            DisableFieldsUpdate = false;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Web.Mvc;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.TokenMatcher;
 using Sitecore.ContentSearch;
@@ -53,7 +54,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string PublicationTitle { get; set; }
 
-		[IndexField("searchbyline_s")]
+        [IndexField("searchpublicationcode_s")]
+        [DataMember]
+        public string PublicationCode { get; set; }
+
+        [IndexField("searchbyline_t")]
 		[DataMember]
 		public string Byline { get; set; }
 
@@ -65,10 +70,21 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string MediaType { get; set; }
 
-		[DataMember]
-		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
+        [IndexField("searchmediatooltip_s")]
+        [DataMember]
+        public string MediaTooltip { get; set; }
 
-		[IndexField("searchsummary_s")]
+        [DataMember]
+        public string Summary {
+            get {
+                var d = DependencyResolver.Current.GetService<IDCDTokenMatchers>();
+                return (d != null)
+                    ? d.ProcessDCDTokens(RawSummary)
+                    : RawSummary;
+            }
+        }
+
+        [IndexField("searchsummary_s")]
 		public string RawSummary { get; set; }
 
 		[TypeConverter(typeof(HtmlLinkListTypeConverter))]
@@ -79,7 +95,15 @@ namespace Informa.Library.Search.Results
 		[IndexField("facetcompanies")]
 		public List<string> CompaniesFacet { get; set; }
 
-		[DataMember]
+		[IndexField("authors_sm")]
+		public List<string> Authors { get; set; }
+
+		[IndexField("facetauthornames_sm")]
+		public List<string> AuthorFullNames { get; set; }
+
+		[IndexField("referenced_companies_t")]
+        public string ReferencedCompany { get; set; }
+        [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
 		
 		[DataMember]

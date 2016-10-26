@@ -17,6 +17,7 @@ namespace Informa.Web.Areas.Article.Models.Article.EmailFriend
         [Required(ErrorMessage = EmailFriendValidationReason.Required)]
         [EmailAddress(ErrorMessage = EmailFriendValidationReason.EmailRequirements)]
         public string SenderEmail { get; set; }
+        [Required(ErrorMessage = EmailFriendValidationReason.Required)]
         public string Subject { get; set; }
         [Required(ErrorMessage = EmailFriendValidationReason.Required)]
         public string PersonalMessage { get; set; }
@@ -26,5 +27,6 @@ namespace Informa.Web.Areas.Article.Models.Article.EmailFriend
         public string QueryTerm { get; set; }
         [Required(ErrorMessage = EmailFriendValidationReason.Required)]
         public string QueryUrl { get; set; }
+				public string RecaptchaResponse { get; set; }
     }
 }

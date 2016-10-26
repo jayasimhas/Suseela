@@ -7,94 +7,232 @@ using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
+using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.Authors;
 using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.Utilities.References;
+using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Web.ViewModels.Articles;
+using Informa.Library.Search.ComputedFields.Facets;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 
 namespace Informa.Web.ViewModels
 {
-	public class LatestNewsViewModel : GlassViewModel<IGlassBase>
-	{
-		protected readonly IArticleSearch ArticleSearch;
-		protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
-		protected readonly IArticleListItemModelFactory ArticleListableFactory;
-		protected readonly ITextTranslator TextTranslator;
+    public class LatestNewsViewModel : GlassViewModel<IGlassBase>
+    {
+        protected readonly IArticleSearch ArticleSearch;
+        protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
+        protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        protected readonly ITextTranslator TextTranslator;
+        protected readonly ISitecoreService SitecoreService;
+        protected readonly IAuthorIndexClient AuthorIndexClient;
+        protected readonly IAuthorService AuthorService;
+        protected IDCDReader DcdReader;
+        protected IGlassBase Datasource;
 
-		public LatestNewsViewModel(IGlassBase datasource,
-			IRenderingContextService renderingParametersService,
-			IArticleSearch articleSearch,
-			IItemManuallyCuratedContent itemManuallyCuratedContent,
-			IArticleListItemModelFactory articleListableFactory,
-			ISiteRootContext rootContext,
-			ITextTranslator textTranslator)
-		{
-			ArticleSearch = articleSearch;
-			ItemManuallyCuratedContent = itemManuallyCuratedContent;
-			ArticleListableFactory = articleListableFactory;
-			TextTranslator = textTranslator;
+        public LatestNewsViewModel(IGlassBase datasource,
+            IRenderingContextService renderingParametersService,
+            IArticleSearch articleSearch,
+            IItemManuallyCuratedContent itemManuallyCuratedContent,
+            IArticleListItemModelFactory articleListableFactory,
+            ISiteRootContext rootContext,
+            ITextTranslator textTranslator, 
+            ISitecoreService sitecoreService, 
+            IAuthorIndexClient authorIndexClient, 
+            IAuthorService authorService,
+            IDCDReader dcdReader)
+        {
+            Datasource = datasource;
+            ArticleSearch = articleSearch;
+            ItemManuallyCuratedContent = itemManuallyCuratedContent;
+            ArticleListableFactory = articleListableFactory;
+            TextTranslator = textTranslator;
+            SitecoreService = sitecoreService;
+            AuthorIndexClient = authorIndexClient;
+            AuthorService = authorService;
+            DcdReader = dcdReader;
 
+            Authors = new List<string>();
+            Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
+            if (Parameters == null) return;
 
-			var parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
-			var subjects = parameters?.Subjects ?? Enumerable.Empty<ITaxonomy_Item>();
-			DisplayTitle = parameters?.Display_Title ?? false;
-			if (DisplayTitle)
-			{
-				Topics = subjects.Select(s => s.Item_Name).ToArray();
-				TitleTextPrefix = textTranslator.Translate("Article.LatestFrom");
-				TitleText = GetTitleText();
-			}
-			int itemsToDisplay = parameters?.Number_To_Display?.Value ?? 6;
+            DisplayTitle = Parameters.Display_Title;
+            ItemsToDisplay = Parameters.Number_To_Display?.Value ?? 6;
+            SeeAllLink = Parameters.Show_See_All ? new Link
+            {
+                Text = TextTranslator.Translate("Article.LatestFrom.SeeAllLink")
+            } : null;
+            var publicationNames = Parameters.Publications.Any()
+                ? Parameters.Publications.Select(p => p.Publication_Name)
+                : new[] { rootContext.Item.Publication_Name };
 
-			var publicationNames = parameters != null && parameters.Publications.Any()
-				? parameters.Publications.Select(p => p.Publication_Name)
-				: new[] { rootContext.Item.Publication_Name };
-			News = GetLatestNews(datasource._Id, subjects.Select(s => s._Id), publicationNames, itemsToDisplay);
-			SeeAllLink = parameters != null && parameters.Show_See_All ? new Link
-			{
-				Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-				Url = SearchTaxonomyUtil.GetSearchUrl(subjects.ToArray())
-			} : null;
-		}
+            Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
+            CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
+                ? (IList<string>)new List<string>()
+                : Parameters.CompanyID.Split(',');
+            
+            if (IsAuthorPage)
+            {
+                Author_Page();
+                if (!Parameters.Publications.Any()) // authors page shouldn't filter on the current publication
+                    publicationNames = Enumerable.Empty<string>();
+            }
+            else if (datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString)
+            {
+                Company_Page();
+                if (!Parameters.Publications.Any()) // authors page shouldn't filter on the current publication
+                    publicationNames = Enumerable.Empty<string>();
+            }
+            else
+            {
+                Other_Page();
+            }
 
-		public IList<string> Topics { get; set; }
-		public IEnumerable<IListableViewModel> News { get; set; }
-		public string TitleTextPrefix { get; set; }
-		public string TitleText { get; set; }
-		public bool DisplayTitle { get; set; }
-		public Link SeeAllLink { get; set; }
+            News = GetLatestNews(datasource._Id, Parameters.Subjects.Select(s => s._Id), publicationNames, Authors, CompanyRecordNumbers, ItemsToDisplay);
+        }
 
-		private string GetTitleText()
-		{
-			var take = Topics.Count - 1;
-			StringBuilder sb = new StringBuilder();
-			sb.Append(string.Join(", ", Topics.Take(take > 0 ? take : 1)));
-			if (take > 0)
-				sb.AppendFormat(" &amp; {0}", Topics.Last());
+        private bool IsAuthorPage => Datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString;
+        private bool IsCompanyPage => Datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString;
 
-			return sb.ToString();
-		}
-		private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
-			int itemsToDisplay)
-		{
-			var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
-			var filter = ArticleSearch.CreateFilter();
+        private IStaff_Item CurrentAuthor => AuthorService.GetCurrentAuthor();
+        
+        private string CurrentAuthorName => (CurrentAuthor != null) ? $"{CurrentAuthor.First_Name} {CurrentAuthor.Last_Name}" : string.Empty;
 
-			filter.Page = 1;
-			filter.PageSize = itemsToDisplay;
-			filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
-			filter.TaxonomyIds.AddRange(subjectIds);
-			filter.PublicationNames.AddRange(publicationNames);
+        public void Author_Page()
+        {
+            if (DisplayTitle)
+                TitleText = GetTitleText(CurrentAuthorName);
+            
+            Authors = new List<string> { RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()) };
 
-			var results = ArticleSearch.Search(filter);
-			var articles =
-				results.Articles.Where(a => a != null)
-					.Select(a => ArticleListableFactory.Create(a).Alter(l => l.DisplayImage = false));
+            if (SeeAllLink != null)
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.AuthorFullName, AuthorNamesField.ToAuthorName(CurrentAuthor));
+        }
+        public string AnalyticsName { get; private set; }
+        public void Company_Page()
+        {
+            ItemsToDisplay = 4;
+            var recordNumber = HttpContext.Current.Request.Url.Segments.Last();
+            RedirectIfRecordId(recordNumber);
 
-			return articles;
-		}
-	}
+            CompanyRecordNumbers = new List<string> { recordNumber };
+
+            var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
+            AnalyticsName = company.Title;
+
+            if (DisplayTitle)
+            {
+                TitleText = GetTitleText(company.Title);
+            }
+            if (SeeAllLink != null)
+            {
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Company, company.Title);
+            }
+        }
+
+        public void Other_Page()
+        {
+            if (DisplayTitle)
+            {
+                Topics = Parameters.Subjects.Select(s => s.Item_Name).ToArray();
+                TitleText = GetTitleText();
+            }
+
+            if (SeeAllLink != null)
+            {
+                string url = SearchTaxonomyUtil.GetSearchUrl(Parameters.Subjects.ToArray());
+                if (Authors.Count > 0) {
+                    var appender = (url.Contains("&")) ? "&" : string.Empty;
+                    url = $"{url}{appender}author={string.Join(",", Authors)}";
+                }
+                SeeAllLink.Url = url;
+            }
+        }
+
+        public IList<string> Topics { get; set; }
+        public IList<string> Authors { get; set; }
+        public IList<string> CompanyRecordNumbers { get; set; }
+        public IEnumerable<IListableViewModel> News { get; set; }
+        public string TitleText { get; set; }
+        public bool DisplayTitle { get; set; }
+        public Link SeeAllLink { get; set; }
+        public ILatest_News_Options Parameters { get; set; }
+        public int ItemsToDisplay { get; set; }
+
+        private string GetTitleText()
+        {
+            var take = Topics.Count - 1;
+            var title = GetTitleText(string.Join(", ", Topics.Take(take > 0 ? take : 1)));
+            if (take > 0)
+            {
+                title = title + " &amp;" + Topics.Last();
+            }
+            return title;            
+        }
+
+        public string EventSourceValue => 
+            IsAuthorPage ? CurrentAuthorName
+                : IsCompanyPage ? $"{AnalyticsName} articles"
+                    : TitleText;
+
+        public string EventSource 
+            => IsAuthorPage ? "see_all_articles"
+                : IsCompanyPage ? "see_all_deals"
+                    : "see_all_topic";
+
+        private string GetTitleText(string title)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0} {1}", TextTranslator.Translate("Article.LatestFrom"), title);
+            return sb.ToString();
+        }
+
+        private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
+            IEnumerable<string> authorGuids, IEnumerable<string> companyRecordNumbers, int itemsToDisplay)
+        {
+            var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
+            var filter = ArticleSearch.CreateFilter();
+
+            filter.Page = 1;
+            filter.PageSize = itemsToDisplay;
+            if(manuallyCuratedContent != null) filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
+            if(subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
+            if(publicationNames != null) filter.PublicationNames.AddRange(publicationNames);
+            if(authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
+            if(companyRecordNumbers != null) filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
+
+            var results = ArticleSearch.Search(filter);
+            var articles =
+                results.Articles.Where(a => a != null)
+                    .Select(a => ArticleListableFactory.Create(a).Alter(l => l.DisplayImage = false));
+            if (IsAuthorPage) // articles pages are wildcard and don't have a title
+                articles = articles.Select(a => a.Alter(b => b.PageTitle = CurrentAuthorName));
+
+            return articles;
+        }
+
+        public string RemoveSpecialCharactersFromGuid(string guid)
+        {
+            return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
+        }
+
+        private void RedirectIfRecordId(string segment)
+        {
+            if (!segment.StartsWith("_id")) { return; }  //Not a record id, yay!
+
+            int id;
+            if (!int.TryParse(segment.Substring(3), out id)) return;
+
+            var company = DcdReader.GetCompanyByRecordId(id);
+            if (!(company?.RecordNumber).HasContent()) return;
+            HttpContext.Current.Response.Redirect($"/companies/{company.RecordNumber}");
+        }
+    }
 }

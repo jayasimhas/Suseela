@@ -1,0 +1,271 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterFreeTrialUserViewModel
+
+<div class="page-registration page-account js-register-user-container">
+    <h1 class="page-registration__header">@Model.Title</h1>
+    <h2 class="page-registration__subheader">@Model.SubTitle</h2>
+    <div class="page-account__introduction">
+        @Model.Body
+    </div>
+    <hr/>
+    <div>
+        <div class="page-registration__required-hint">
+            <span class="asterisk-required"></span> <em>@Model.RequiedFieldsText</em>
+        </div>
+
+        <form class="form-registration"
+                data-on-submit="/Account/api/RegistrationApi/RegisterFreeTrial/"
+                data-on-success="@( Model.NextStepUrl + "?" + Model.RegisterReturnUrlKey + "=" + Model.RegisterReturnUrl )">
+
+            <p class="	page-registration__error
+					            js-register-user-error
+					            js-register-user-error-general">
+                @Model.GeneralErrorText
+            </p>
+
+            <div class="page-account__field-wrapper">
+                <label for="Username" class="page-account__text-label">
+                    @Model.UsernameLabelText <span class="asterisk-required"></span>
+                </label>
+
+                <p class="	page-registration__error
+						            js-form-error
+						            js-form-error-UsernameRequirements">
+                    @Model.UsernameRequirementsErrorText
+                </p>
+
+                <p class=" page-registration__error
+			                js-form-error
+			                js-form-error-UsernameCompetitorRestriction">
+                    @Model.UsernameCompetitorRestrictedDomainErrorText
+                </p>
+
+                <p class=" page-registration__error
+			                js-form-error
+			                js-form-error-UsernamePublicRestriction">
+                    @Model.UsernamePublicRestrictedDomainErrorText
+                </p>
+
+                <p class=" page-registration__error
+			                js-form-error
+			                js-form-error-UsernameExists">
+                    @Model.UsernameExistsErrorText
+                </p>
+
+                <p class="	page-registration__error
+						            js-form-error
+						            js-form-error-Required">
+                    @Model.RequiredErrorText
+                </p>
+
+                <input type="email"
+                        class="inf-standard-form-field"
+                        placeholder="@Model.UsernamePlaceholderText"
+                        tabindex="1"
+                        value="@Model.UsernameValue"
+                        name="Username">
+            </div>
+
+            <div class="page-registration__floats-wrapper">
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="FirstName" class="page-account__text-label">
+                        @Model.FirstNameLabelText <span class="asterisk-required"></span>
+                    </label>
+
+                    <input type="text"
+                            class="inf-standard-form-field"
+                            tabindex="2"
+                            name="FirstName"
+                            value="@Model.ProfileFirstName"
+                            placeholder="@Model.FirstNamePlaceholderText">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="LastName" class="page-account__text-label">
+                        @Model.LastNameLabelText <span class="asterisk-required"></span>
+                    </label>
+
+                    <input type="text"
+                            class="inf-standard-form-field"
+                            placeholder=""
+                            tabindex="3"
+                            value="@Model.ProfileLastName"
+                            name="LastName">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Password" class="page-account__text-label">
+                        @Model.PasswordLabelText <span class="asterisk-required"></span>
+                    </label>
+
+                    <p class="	page-registration__error
+							            js-form-error
+							            js-form-error-PasswordRequirements">
+                        @Model.PasswordRequirementsErrorText
+                    </p>
+
+                    <p class="	page-registration__error
+							            js-form-error
+							            js-form-error-PasswordMismatch">
+                        @Model.PasswordMismatchErrorText
+                    </p>
+
+                    <input name="Password"
+                            class="inf-standard-form-field"
+                            type="password"
+                            placeholder="@Model.PasswordPlaceholderText"
+                            tabindex="4">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="PasswordRepeat" class="page-account__text-label">
+                        @Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
+                    </label>
+
+                    <p class="	page-registration__error
+							            js-form-error
+							            js-form-error-PasswordMismatch">
+                        @Model.PasswordMismatchErrorText
+                    </p>
+
+                    <input name="PasswordRepeat"
+                            class="inf-standard-form-field"
+                            type="password"
+                            placeholder=""
+                            tabindex="5">
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="page-registration__floats-wrapper">
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Company" class="page-account__text-label">
+                        @Model.CompanyLabelText <span class="asterisk-required"></span>
+                    </label>
+                    <input type="text"
+                            name="Company"
+                            value="@Model.ProfileCompany"
+                            tabindex="6"
+                            placeholder="@Model.CompanyPlaceholderText">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="JobTitle" class="page-account__text-label">
+                        @Model.JobTitleLabelText <span class="asterisk-required"></span>
+                    </label>
+                    <input type="text"
+                            name="JobTitle"
+                            value="@Model.ProfileJobTitle"
+                            tabindex="7"
+                            placeholder="@Model.JobTitlePlaceholderText">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Address1" class="page-account__text-label">
+                        @Model.Address1LabelText <span class="asterisk-required"></span>
+                    </label>
+                    <input type="text"
+                            name="Address1"
+                            value="@Model.ProfileAddress1"
+                            tabindex="8"
+                            placeholder="@Model.Address1PlaceholderText" id="txtAddress1">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Address2" class="page-account__text-label">
+                        @Model.Address2LabelText
+                    </label>
+                    <input type="text"
+                            name="Address2"
+                            value="@Model.ProfileAddress2"
+                            tabindex="9"
+                            placeholder="@Model.Address2PlaceholderText" id="txtAddress2">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="City" class="page-account__text-label">
+                        @Model.CityLabelText <span class="asterisk-required"></span>
+                    </label>
+                    <input type="text"
+                            name="City"
+                            value="@Model.ProfileCity"
+                            tabindex="10"
+                            placeholder="@Model.CityPlaceholderText" id="txtCity">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="State" class="page-account__text-label">
+                        @Model.StateLabelText
+                    </label>
+                    <input type="text"
+                            name="State"
+                            value="@Model.ProfileState"
+                            tabindex="11"
+                            placeholder="@Model.StatePlaceholderText" id="txtState">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="PostalCode" class="page-account__text-label">
+                        @Model.PostalCodeLabelText
+                    </label>
+                    <input type="text"
+                            name="PostalCode"
+                            value="@Model.ProfilePostalCode"
+                            tabindex="12"
+                            placeholder="@Model.PostalCodePlaceholderText" id="txtPostalCode">
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Country" class="page-account__text-label">
+                        @Model.CountryLabelText <span class="asterisk-required"></span>
+                    </label>
+                    <select name="Country" id="ddlCountry" tabindex="13">
+                        @foreach (var o in Model.Countries)
+                        {
+                            <option @(@Model.ProfileCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <label for="Phone" class="page-account__text-label">
+                        @Model.PhoneLabelText <span class="asterisk-required"></span>
+                    </label>
+                    <input type="text"
+                            name="Phone"
+                            value="@Model.ProfilePhone"
+                            tabindex="14"
+                            placeholder="@Model.PhonePlaceholderText">
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="page-registration__labeled-checkbox page-registration__tos-confirm">
+                <p class="	page-registration__error
+						            js-form-error
+						            js-form-error-TermsNotAccepted">
+                    @Model.TermsNotAcceptedErrorText
+                </p>
+
+                <input name="termsAccepted"
+                        type="checkbox"
+                        tabindex="15"
+                        data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
+            </div>
+
+            <div class="page-account__submit-wrapper">
+                <button type="submit"
+                        tabindex="16"
+                        class="button--filled js-register-user-submit">@Model.SubmitText</button>
+                <p><em>@Model.NewsletterSignUpText</em>
+                </p>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -47,7 +47,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: a8957232-e82b-4c96-a2da-daef2c7bb173
+revision: a26cb270-188c-4e80-a165-0a231a5d9da9
 
 ----field----
 field: {9AEE6C51-8392-4461-B24C-BF22ACF5B07F}
@@ -63,6 +63,34 @@ key: publication theme
 content-length: 16
 
 theme-rose-sheet
+----field----
+field: {1E44223B-5A22-4FE5-AE46-1E814AC36CAB}
+name: Journal Title
+key: journal title
+content-length: 14
+
+The Rose Sheet
+----field----
+field: {8EEF4C5D-E765-4F76-AF30-A6168FDDDD08}
+name: Journal ID
+key: journal id
+content-length: 4
+
+rose
+----field----
+field: {64C48243-DFCE-4E94-985C-E0441FFF76AA}
+name: Free Trial Rate Plan Charge Id
+key: free trial rate plan charge id
+content-length: 32
+
+4028e696324aa56f01325069f78f2002
+----field----
+field: {79D023A1-B034-4228-8ADD-17802896CE53}
+name: Free Trial Rate Plan Id
+key: free trial rate plan id
+content-length: 32
+
+4028e696324aa56f01325069f3061ff2
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
@@ -83,14 +111,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a8957232-e82b-4c96-a2da-daef2c7bb173
+a26cb270-188c-4e80-a165-0a231a5d9da9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160527T100505Z
+20160707T181132Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

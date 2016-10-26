@@ -172,6 +172,7 @@ work and it shouldn't be changed.
         <add name="sitecore" type="Sitecore.Security.SitecoreMembershipProvider, Sitecore.Kernel" realProviderName="sql" providerWildcard="%" raiseEvents="true" />
         <add name="sql" type="Informa.Web.Controllers.CustomSqlMembershipProvider" connectionStringName="core" applicationName="sitecore" minRequiredPasswordLength="1" minRequiredNonalphanumericCharacters="0" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" />
         <add name="switcher" type="Sitecore.Security.SwitchingMembershipProvider, Sitecore.Kernel" applicationName="sitecore" mappings="switchingProviders/membership" />
+        <add name="sqlCustom" type="Informa.Library.Utilities.UserMembership.CustomSqlMembershipProvider" connectionStringName="core" applicationName="sitecore" minRequiredPasswordLength="1" minRequiredNonalphanumericCharacters="0" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" />
       </providers>
     </membership>
     <roleManager defaultProvider="sitecore" enabled="true">
@@ -235,7 +236,7 @@ work and it shouldn't be changed.
     -->
     <authentication mode="None">
       <!--<forms name=".ASPXAUTH" cookieless="UseCookies" timeout="87660" />-->
-	  <forms name=".ASPXAUTH" cookieless="UseCookies" timeout="180" domain="${Site.Domain}" />
+	  <forms name=".ASPXAUTH" cookieless="UseCookies" timeout="87660" domain="${Site.Domain}" />
     </authentication>
     <!--  IDENTITY
           If this setting is true, aspnet will run in the security context of the IIS authenticated
@@ -275,7 +276,6 @@ work and it shouldn't be changed.
     -->
     <sessionState mode="InProc" cookieless="false" timeout="180" sessionIDManagerType="Sitecore.SessionManagement.ConditionalSessionIdManager">
       <providers>
-        <!--<add name="mongo" type="Sitecore.SessionProvider.MongoDB.MongoSessionStateProvider, Sitecore.SessionProvider.MongoDB" sessionType="Standard" connectionStringName="session" pollingInterval="2" compression="true" />-->
         <add name="mssql" type="Sitecore.SessionProvider.Sql.SqlSessionStateProvider, Sitecore.SessionProvider.Sql" sessionType="Standard" connectionStringName="session" pollingInterval="2" compression="true" />
       </providers>
     </sessionState>

@@ -1,0 +1,34 @@
+{% if listItems == false  and not listItems == &quot; &quot; %}
+	{% set listItems =[
+		{
+			&quot;itemURL&quot;: &quot;#&quot;,
+			&quot;itemText&quot; : random(randomTags).text
+		},
+		{
+			&quot;itemURL&quot;: &quot;#&quot;,
+			&quot;itemText&quot; : random(randomTags).text
+		},
+		{
+			&quot;itemURL&quot;: &quot;#&quot;,
+			&quot;itemText&quot; : random(randomTags).text
+		}
+	] %}
+
+	{% set listItems = [] %}
+	{% if maxTags == false %}
+		{% set maxTags = (random(8) + 1) %}
+	{% endif %}
+	{% for i in 1..maxTags %}
+		{% set tempListItem = {&quot;itemURL&quot;: &quot;#&quot;, &quot;itemText&quot; : random(randomTags).text} %}
+	    {% set listItems = listItems|merge([tempListItem]) %}
+	{% endfor %}
+{% endif %}
+
+&lt;div class=&quot;bar-separated-link-list {{classes}}&quot;&gt;
+	{% if labelText %}
+		&lt;span class=&quot;bar-separated-link-list__label&quot;&gt;{{labelText}}: &lt;/span&gt;
+	{% endif %}
+	{% for item in listItems %}
+		&lt;a href=&quot;{{item.itemURL}}&quot;&gt;{{item.itemText}}&lt;/a&gt;
+	{% endfor %}
+&lt;/div&gt;

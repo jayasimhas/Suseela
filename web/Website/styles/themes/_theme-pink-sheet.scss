@@ -37,6 +37,9 @@
     .quickfactsbulleted li ul li:before,
 	.quick-facts__list--ul li ul li:before {
         color: $color-mystic-maroon;
+        background: none;
+        margin-left: -18px;
+        padding-right: 0.5rem;
     }
 
 	@include theme-quick-facts(

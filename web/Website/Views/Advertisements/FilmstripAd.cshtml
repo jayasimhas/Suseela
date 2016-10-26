@@ -1,0 +1,13 @@
+@model AdViewModel
+@{ Model.Init(); }
+
+@if (Model.IsValidFilmstripAd) {
+    <section class="article-preview article-preview--small">
+        <div class="article-preview__ad advertising">
+            <span class="advertising__label">@Model.AdvertisementText</span>
+            <script>
+                OAS_AD('@Model.FilmstripSlotId', '@Model.FilmstripAdZone');
+            </script>
+        </div>
+    </section>
+}

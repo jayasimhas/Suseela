@@ -1,0 +1,30 @@
+{% if threeColumnData == false %}
+	{% set threeColumnData = {
+			&quot;type&quot;: &quot;raw&quot;,
+			&quot;columns&quot;: [
+				{
+					&quot;text&quot;: &quot;Data&quot;
+				},
+				{
+					&quot;text&quot;: &quot;Data Data&quot;
+				},
+				{
+					&quot;text&quot;: &quot;Data&lt;br /&gt;Data&lt;br /&gt;Data&lt;br /&gt;Data&lt;br /&gt;Data&quot;
+				}
+			]
+		}
+	%}
+{% endif %}
+
+
+&lt;div class=&quot;l-columns l-columns--with-divider l-columns--three-up&quot;&gt;
+	{% for item in threeColumnData.columns %}
+		&lt;div class=&quot;l-columns__column&quot;&gt;
+			{% if threeColumnData.type == &quot;raw&quot; %}
+				{{item.text | raw}}
+			{% else %}
+				{% include threeColumnData.type %}
+			{% endif %}
+		&lt;/div&gt;
+	{% endfor %}
+&lt;/div&gt;

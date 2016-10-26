@@ -42,16 +42,16 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Simple
         //    }
         //    return text;
         //}
-        
+
         private static string ConvertSidebars(string text)
         {
-            return Regex.Replace(text, "\\[Sidebar#\\d*\\]", string.Empty);
+            return Regex.Replace(text, Informa.Models.DCD.DCDConstants.SidebarTokenRegex, string.Empty);
         }
 
         private static string ConvertLinks(string text)
         {
             // matches links in pattern [LETTER#NUMBERS]
-            string r = @"\[(\w)#(\d*):(.*)\]";
+            string r = @"\[(\w)#(\w*):?(.*?)\]";
             var matches = Regex.Matches(text, r);
 
             foreach (Match match in matches)

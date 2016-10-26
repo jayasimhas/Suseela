@@ -9,6 +9,7 @@ using Informa.Library.Globalization;
 using Informa.Library.Mail;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Article;
+using Informa.Library.Services.Captcha;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
@@ -37,20 +38,22 @@ namespace Informa.Web.Areas.Article.Controllers
 		private readonly ILog _logger;
 		protected readonly IGlobalSitecoreService GlobalService;
 		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
-	    protected readonly IArticleSearch ArticleSearch;
-	    protected readonly IArticleService ArticleService;
+		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IArticleService ArticleService;
+		protected readonly IRecaptchaService RecaptchaService;
 
 		public EmailFriendController(
-            ITextTranslator textTranslator, 
-            ISiteRootContext siteRootContext, 
-            IEmailFactory emailFactory,
-			IEmailSender emailSender, 
-            IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
-			ISiteSettings siteSettings, 
-            ILog logger,
-            IGlobalSitecoreService globalService, 
-            IArticleSearch articleSearch,
-            IArticleService articleService)
+						ITextTranslator textTranslator,
+						ISiteRootContext siteRootContext,
+						IEmailFactory emailFactory,
+						IEmailSender emailSender,
+						IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
+						ISiteSettings siteSettings,
+						ILog logger,
+						IGlobalSitecoreService globalService,
+						IArticleSearch articleSearch,
+						IArticleService articleService,
+						IRecaptchaService recaptchaService)
 		{
 			EmailSender = emailSender;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
@@ -59,21 +62,30 @@ namespace Informa.Web.Areas.Article.Controllers
 			EmailFactory = emailFactory;
 			SiteSettings = siteSettings;
 			_logger = logger;
-            GlobalService = globalService;
-		    ArticleSearch = articleSearch;
-		    ArticleService = articleService;
-
+			GlobalService = globalService;
+			ArticleSearch = articleSearch;
+			ArticleService = articleService;
+			RecaptchaService = recaptchaService;
 		}
-
-		[HttpPost]
+        
+        [HttpPost]
 		public IHttpActionResult Email(EmailFriendRequest request)
 		{
 			var siteRoot = SiteRootContext.Item;
 
+			// VERIFY CAPTCHA
+			if (!RecaptchaService.Verify(request.RecaptchaResponse))
+			{
+				return Ok(new
+				{
+					success = false
+				});
+			}
+
 			if (string.IsNullOrWhiteSpace(request.RecipientEmail)
-				|| string.IsNullOrWhiteSpace(request.SenderEmail)
-				|| string.IsNullOrWhiteSpace(request.SenderName)
-				|| string.IsNullOrWhiteSpace(request.ArticleNumber))
+					|| string.IsNullOrWhiteSpace(request.SenderEmail)
+					|| string.IsNullOrWhiteSpace(request.SenderName)
+					|| string.IsNullOrWhiteSpace(request.ArticleNumber))
 			{
 				_logger.Warn($"Field is null");
 				return Ok(new
@@ -82,17 +94,18 @@ namespace Informa.Web.Areas.Article.Controllers
 				});
 			}
 
-			var emailFrom = GetValue(siteRoot?.Email_From_Address);
+			//var emailFrom = GetValue(siteRoot?.Email_From_Address);
+			var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
 			var allEmails = request.RecipientEmail.Split(';');
 			var result = true;
 			var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
-					request.ArticleNumber, request.PersonalMessage);
+							request.ArticleNumber, request.PersonalMessage);
 
 			foreach (var eachEmail in allEmails)
 			{
 				string specificEmailBody = emailBody
-					.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
-					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
+						.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
+						.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
 
 				var friendEmail = new Email
 				{
@@ -141,45 +154,44 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#sender_name#"] = senderName,
 					["#sender_email#"] = senderEmail,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
-						? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+								: string.Empty,
 					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
-						? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+								: string.Empty,
 					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
-						? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+								: string.Empty,
 					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
-						? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+								: string.Empty,
 					["#personal_message#"] = (!string.IsNullOrEmpty(message))
-						? $"\"{message}\""
-						: string.Empty,
+								? $"\"{message}\""
+								: string.Empty,
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
-						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
-                    ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
-                        : string.Empty
+								.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
+					["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+								? TextTranslator.Translate("Search.Message").Replace("#SENDER_NAME#", senderName)
+								: string.Empty
+				};
 
-                };
-                
 				// Article Body
 				var article = GetArticle(articleNumber);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
 				replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
 				replacements["#article_title#"] = article?.Title ?? String.Empty;
 				replacements["#article_titleURL#"] = (article != null)
-					? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}"
-					: string.Empty;
+						? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}?utm_medium=email&utm_campaign=emailfriend"
+						: string.Empty;
 				replacements["#article_authorBy#"] = (article != null && article.Authors.Any())
-					? TextTranslator.Translate("Article.By")
-					: string.Empty;
+						? TextTranslator.Translate("Article.By")
+						: string.Empty;
 				replacements["#article_author#"] = (article != null && article.Authors.Any())
-					? string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}"))
-					: string.Empty;
+						? string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}"))
+						: string.Empty;
 				replacements["#article_summary#"] = (article != null && !string.IsNullOrEmpty(article.Summary))
-                    ? ArticleService.GetArticleSummary(article)
-                    : string.Empty;
+						? ArticleService.GetArticleSummary(article)
+						: string.Empty;
 
 				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
@@ -199,18 +211,12 @@ namespace Informa.Web.Areas.Article.Controllers
 
 
 		[HttpPost]
-        [ValidateReasons]
-        [ArgumentsRequired]
-        public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
+		[ValidateReasons]
+		[ArgumentsRequired]
+		public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
 		{
-			var siteRoot = SiteRootContext.Item;
-
-			if (string.IsNullOrWhiteSpace(request.RecipientEmail)
-				|| string.IsNullOrWhiteSpace(request.SenderEmail)
-				|| string.IsNullOrWhiteSpace(request.SenderName)
-				|| string.IsNullOrWhiteSpace(request.PersonalMessage)
-				|| string.IsNullOrEmpty(request.ResultIDs)
-				|| string.IsNullOrEmpty(request.QueryTerm))
+			// VERIFY CAPTCHA
+			if (!RecaptchaService.Verify(request.RecaptchaResponse))
 			{
 				return Ok(new
 				{
@@ -218,22 +224,37 @@ namespace Informa.Web.Areas.Article.Controllers
 				});
 			}
 
-			var emailFrom = GetValue(siteRoot?.Email_From_Address);
+			var siteRoot = SiteRootContext.Item;
+
+			if (string.IsNullOrWhiteSpace(request.RecipientEmail)
+					|| string.IsNullOrWhiteSpace(request.SenderEmail)
+					|| string.IsNullOrWhiteSpace(request.SenderName)
+					|| string.IsNullOrWhiteSpace(request.PersonalMessage)
+					|| string.IsNullOrEmpty(request.ResultIDs)
+					|| string.IsNullOrEmpty(request.QueryTerm))
+			{
+				return Ok(new
+				{
+					success = false
+				});
+			}
+
+			var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
 			var allEmails = request.RecipientEmail.Split(';');
 			var result = true;
 			var emailBody = GetEmailSearchBody(
-					request.SenderEmail,
-					request.SenderName,
-					request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries),
-					request.PersonalMessage,
-					request.QueryTerm,
-					request.QueryUrl);
+							request.SenderEmail,
+							request.SenderName,
+							request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries),
+							request.PersonalMessage,
+							request.QueryTerm,
+							request.QueryUrl);
 
 			foreach (var eachEmail in allEmails)
 			{
 				string specificEmailBody = emailBody
-					.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
-					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
+						.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
+						.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
 
 				var friendEmail = new Email
 				{
@@ -267,9 +288,9 @@ namespace Informa.Web.Areas.Article.Controllers
 				var searchAuthor = HtmlEmailTemplateFactory.Create("EmailFriendSearchAuthor");
 
 				if (htmlEmailTemplate == null
-					|| searchRow == null
-					|| searchTemplate == null
-					|| searchAuthor == null)
+						|| searchRow == null
+						|| searchTemplate == null
+						|| searchAuthor == null)
 				{
 					return null;
 				}
@@ -289,29 +310,29 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#sender_email#"] = senderEmail,
 					["#query_url#"] = queryUrl,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
-						? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+								: string.Empty,
 					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
-						? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+								: string.Empty,
 					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
-						? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+								: string.Empty,
 					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
-						? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
-						: string.Empty,
+								? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+								: string.Empty,
 					["#personal_message#"] = (!string.IsNullOrEmpty(message))
-						? $"\"{message}\""
-						: string.Empty,
+								? $"\"{message}\""
+								: string.Empty,
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
-						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
+								.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
 					["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice"),
 					["#search_query#"] = queryTerm,
 					["#see_more#"] = TextTranslator.Translate("Search.SeeMore"),
-                    ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
-                        : string.Empty
-                };
+					["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+								? TextTranslator.Translate("Search.Message").Replace("#SENDER_NAME#", senderName)
+								: string.Empty
+				};
 
 				//search results
 				StringBuilder resultBody = new StringBuilder();
@@ -331,16 +352,16 @@ namespace Informa.Web.Areas.Article.Controllers
 					bool hasAuthors = article != null && article.Authors.Any();
 					string byline = TextTranslator.Translate("Article.By");
 					string authorInsert = (hasAuthors)
-						? searchAuthor.Html
-							.ReplacePatternCaseInsensitive("#article_authorBy#", (!string.IsNullOrEmpty(byline)) ? byline : string.Empty)
-							.ReplacePatternCaseInsensitive("#article_author#", string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}")))
-						: string.Empty;
+							? searchAuthor.Html
+									.ReplacePatternCaseInsensitive("#article_authorBy#", (!string.IsNullOrEmpty(byline)) ? byline : string.Empty)
+									.ReplacePatternCaseInsensitive("#article_author#", string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}")))
+							: string.Empty;
 
 					var row = searchRow.Html.Replace("#result_publication#", SiteRootContext?.Item?.Publication_Name)
-						.ReplacePatternCaseInsensitive("#result_title#", result.Title)
-						.ReplacePatternCaseInsensitive("#result_summary#", SearchSummaryUtil.GetTruncatedSearchSummary(result.Body))
-						.ReplacePatternCaseInsensitive("#result_url#", $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{result._Url}")
-						.ReplacePatternCaseInsensitive("#author_insert#", authorInsert);
+							.ReplacePatternCaseInsensitive("#result_title#", result.Title)
+							.ReplacePatternCaseInsensitive("#result_summary#", SearchSummaryUtil.GetTruncatedSearchSummary(result.Body))
+							.ReplacePatternCaseInsensitive("#result_url#", $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{result._Url}")
+							.ReplacePatternCaseInsensitive("#author_insert#", authorInsert);
 
 					resultBody.Append(row);
 					j++;
@@ -359,20 +380,20 @@ namespace Informa.Web.Areas.Article.Controllers
 
 		#endregion Email Results
 
-	    protected IArticle GetArticle(string articleNumber)
-	    {
-            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            filter.ArticleNumbers = articleNumber.SingleToList();
-            return ArticleSearch.Search(filter).Articles.FirstOrDefault();            
-        }
+		protected IArticle GetArticle(string articleNumber)
+		{
+			IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+			filter.ArticleNumbers = articleNumber.SingleToList();
+			return ArticleSearch.Search(filter).Articles.FirstOrDefault();
+		}
 
-        public string GetMediaURL(string mediaId)
-        {
-            Item imageItem = GlobalService.GetItem<Item>(mediaId);
-            if (imageItem == null)
-                return string.Empty;
+		public string GetMediaURL(string mediaId)
+		{
+			Item imageItem = GlobalService.GetItem<Item>(mediaId);
+			if (imageItem == null)
+				return string.Empty;
 
-            return $"{HttpContext.Current.Request.Url.Scheme}://{WebUtil.GetHostName()}{MediaManager.GetMediaUrl(imageItem)}";
-        }
-    }
+			return $"{HttpContext.Current.Request.Url.Scheme}://{WebUtil.GetHostName()}{MediaManager.GetMediaUrl(imageItem)}";
+		}
+	}
 }

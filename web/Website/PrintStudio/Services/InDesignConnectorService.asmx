@@ -1,0 +1,1 @@
+<%@ WebService Language="C#" CodeBehind="CustomInDesignConnectorService.cs" Class="Informa.Library.PXM.InDesignConnectorService" %>

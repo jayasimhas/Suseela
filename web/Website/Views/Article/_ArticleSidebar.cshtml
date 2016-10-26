@@ -1,12 +1,12 @@
 ﻿@using Glass.Mapper.Sc.Mvc
 @using Informa.Library.Utilities.StringUtils
-@model ArticleListItemModel
+@model Informa.Web.ViewModels.Articles.ArticleListItemModel
 <aside class="article-sidebar">
 	
 	<h3>@HttpUtility.HtmlDecode(Model.ListableTitle)</h3>
 	@if(!string.IsNullOrEmpty(Model.ListableAuthorByLine))
     {
-	    <span class="article-sidebar__byline">@Model.ListableAuthorByLine</span>
+	    <span class="article-sidebar__byline">@Html.Raw(Model.ListableAuthorByLine)</span>
 	}
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 

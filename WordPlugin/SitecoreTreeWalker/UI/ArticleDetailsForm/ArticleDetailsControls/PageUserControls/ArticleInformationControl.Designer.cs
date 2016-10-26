@@ -121,7 +121,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(251, 13);
             this.label11.TabIndex = 40;
-            this.label11.Text = "Scheduled Article Publish Date and Time (EDT):";
+            this.label11.Text = "Scheduled Article Publish Date and Time:";
             // 
             // uxPublication
             // 

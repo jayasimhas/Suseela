@@ -1,18 +1,25 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Site;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.Globalization
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class SitecoreTextTranslator : ITextTranslator
 	{
-	    protected readonly ISiteRootContext SiteRoot;
+	    private readonly IDependencies _dependencies;
 
-        public SitecoreTextTranslator(ISiteRootContext siteRoot)
-        {
-            SiteRoot = siteRoot;
-        }
+        [AutowireService(true)]
+	    public interface IDependencies
+	    {
+            ISiteRootContext SiteRootContext { get; }
+            ISitecoreService SitecoreService { get; }
+	    }
+
+	    public SitecoreTextTranslator(IDependencies dependencies)
+	    {
+	        _dependencies = dependencies;
+	    }
 
 		public string Translate(string key)
 		{
@@ -23,7 +30,7 @@ namespace Informa.Library.Globalization
                 ?? string.Empty;
 
 		    return value
-                .Replace("$publicationname", SiteRoot.Item.Publication_Name);
+                .Replace("$publicationname", _dependencies.SiteRootContext.Item.Publication_Name);
 		}
 	}
 }

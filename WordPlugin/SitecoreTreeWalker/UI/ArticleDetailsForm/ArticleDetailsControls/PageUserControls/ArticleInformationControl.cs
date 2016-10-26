@@ -24,6 +24,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         protected DocumentCustomProperties _documentCustomProperties;
 
         private string ArticleNumber;
+        public Guid ArticleGuid;
+        public bool IsPublished;
 
         public bool _isLive;
 
@@ -377,9 +379,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             IsCheckedOutByMe = false;
 
             _parent.PreLinkEnable();
+			IndicatedUnfavoredLink();
+			_parent.EnablePreview();
+			_parent.HideCreationButtons();
 
-            //_parent.articleStatusBar1.up
-            _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
+			//_parent.articleStatusBar1.up
+			_parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
             //IndicatedUnfavoredLink();
             DocumentProtection.Protect(_documentCustomProperties);
         }
@@ -579,14 +584,24 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         {
             if (outOfDate)
             {
+                Color color = (Color)new ColorConverter().ConvertFromString("#F4CCCC");
+                _parent.articleStatusBar1.uxVersionStateButton.BackColor = color;
+                _parent.articleStatusBar1.uxVersionStateButton.ToolTipText = "More Recent Version Available. Download it from Sitecore. Click for more information.";
+                _parent.articleStatusBar1.uxVersionStateButton.Text = "Out of Date";
+
+
                 //uxVersionStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
-                _parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);
+                //_parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);
+
                 //uxVersionText.Text = @"More Recent Version Available";
                 //uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Italic | FontStyle.Bold);
-
             }
             else
             {
+                Color color = (Color)new ColorConverter().ConvertFromString("#d9ead3");
+                _parent.articleStatusBar1.uxVersionStateButton.BackColor = color;
+                _parent.articleStatusBar1.uxVersionStateButton.ToolTipText = "Document Content is Up To Date. Click for more information.";
+                _parent.articleStatusBar1.uxVersionStateButton.Text = "Up To Date";
                 //uxVersionStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
                 //uxVersionText.Text = @"Document Content is Up To Date";
                 //uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Bold);
@@ -615,10 +630,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             //uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
             if (articleDetails.WebPublicationDate > DateTime.MinValue)
             {
-                SetPublicationTime(articleDetails.WebPublicationDate, false);
+                SetPublicationTime(articleDetails.WebPublicationDate, true);
             }
 
             ArticleNumber = articleDetails.ArticleNumber;
+            ArticleGuid = articleDetails.ArticleGuid;
+            IsPublished = articleDetails.IsPublished;
             uxEmbargoed.Checked = articleDetails.Embargoed;
             uxMediaTypes.SelectedValue = articleDetails.MediaType;
             uxLabel.SelectedValue = articleDetails.Label;

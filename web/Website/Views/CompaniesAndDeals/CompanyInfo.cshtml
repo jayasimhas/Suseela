@@ -1,0 +1,84 @@
+@model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
+
+<div class="article-topics">
+    <h2 class="article-topics__header">@Model.CompanyInformationHeader</h2>
+    <ul>
+
+        <li class="article-topics__section-header">@Model.IndustryHeader</li>
+        @foreach (var rootNode in Model.Industries)
+        {
+            @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
+        }
+
+        <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
+
+        @foreach (var area in Model.TherapyAreas)
+        {
+            <li class="article-topics__li">@area.Name</li>
+        }
+
+        <li class="article-topics__section-header">@Model.AliasHeader</li>
+        @foreach(var syn in Model.Content.Synonyms) {
+            <li class="article-topics__li">@syn</li>
+        }
+
+        <li class="article-topics__section-header">@Model.OwnershipHeader</li>
+        <li class="article-topics__li">@Model.Content.CompanyInfo.Ownership</li>
+
+        <li class="article-topics__section-header">@Model.HeadquartersHeader</li>
+        @foreach (var loc in Model.LocationPath)
+        {
+            @:<li class="article-topics__li">
+            @loc
+            @:<ul>
+        }
+        @foreach (var i in Model.LocationPath)
+        {
+            @:</ul>
+            @:</li>
+        }
+
+        @if (@Model.ShowCompanyType)
+        {
+            <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
+            <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li>
+        }
+
+        <li class="article-topics__section-header">@Model.ParentSubHeader</li>
+        @foreach (var rootNode in Model.SubsidiariesTree)
+        {
+            @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
+        }
+
+        <li class="article-topics__section-header">@Model.SeniorManagementHeader</li>
+        <li class="article-topics__section-desc">
+            @Html.Raw(string.Join("<br/>", Model.Content.Employees))
+        </li>
+
+        <li class="article-topics__section-header">@Model.ContactHeader</li>
+        <li class="article-topics__section-desc">
+            <strong>@(Model.Content.Name)</strong><br/>
+            @if (Model.Content.ContactInfo.Phone.HasContent())
+            {
+                @:Phone: @(Model.Content.ContactInfo.Phone) <br/>
+            }
+            @if (Model.Content.ContactInfo.Street.HasContent())
+            {
+                @(Model.Content.ContactInfo.Street) <br/>
+            }
+            @if (Model.Content.ContactInfo.Street2.HasContent())
+            {
+                @(Model.Content.ContactInfo.Street2) <br/>
+            }
+            @if (Model.RegionAddressLine.HasContent())
+            {
+                @(Model.RegionAddressLine) <br/>
+            }
+            @if (Model.Content.ContactInfo.Country.HasContent())
+            {
+                @(Model.Content.ContactInfo.Country) <br/>
+            }
+        </li>
+    </ul>
+</div>
+

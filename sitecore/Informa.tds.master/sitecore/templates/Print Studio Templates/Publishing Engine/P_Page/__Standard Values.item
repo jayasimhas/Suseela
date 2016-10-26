@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {340FC98B-8FFD-4287-AB34-20BE377F6C7C}
+database: master
+path: /sitecore/templates/Print Studio Templates/Publishing Engine/P_Page/__Standard Values
+parent: {6BFA47BA-F73C-48DB-9170-C0CC94179EC7}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {6BFA47BA-F73C-48DB-9170-C0CC94179EC7}
+templatekey: P_Page
+
+----field----
+field: {09772857-332A-4E06-A337-787F87E6C89F}
+name: Xml Renderer
+key: xml renderer
+content-length: 38
+
+{D1C3D2F9-1AC2-454B-8E53-389886DE1A90}
+----field----
+field: {FB9FDF68-C894-47D7-91D3-3E87D9CD8DE7}
+name: Skip
+key: skip
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: eef96e31-e27a-4e78-9ff5-a9b6af708c36
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20121031T094648
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eef96e31-e27a-4e78-9ff5-a9b6af708c36
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20121031T094706:634872736261261066
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

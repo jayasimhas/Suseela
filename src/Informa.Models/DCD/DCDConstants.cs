@@ -11,6 +11,8 @@ namespace Informa.Models.DCD
 		public const string SidebarTokenRegex = @"\[Sidebar#(.*?)\]";
 		public const string ArticleTokenRegex = @"\(<a[^>]*?>\[A#(.*?)\]</a>\)";
 		public const string LegacyArticleTokenRegex = @"\[A#(.*?)\]";
+        public const string DealCompanyNameRegex = @"\[(.*?)\]";
+        public const string DealProductNameRegext = @"\{(.*?)\}";
 
 		public static readonly string EmailNoReplySenderAddress = Sitecore.Configuration.Settings.GetSetting("Mail.MailServerFromAddress");
 		public static readonly string BusinessAcronym = "IBI";

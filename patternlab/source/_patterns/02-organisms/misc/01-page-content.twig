@@ -1,0 +1,21 @@
+{# Defaults and Randoms #}
+{% if genericTitle == false %}
+	{% set genericTitle = random(randomTitles).text %}
+{% endif %}
+{% if genericPageContent == false %}
+	{% set genericPageContent = "<p>" ~ random(randomParas).text ~ "</p>" %}
+{% endif %}
+{% if genericPageDate == false %}
+	{% set genericPageDate = "now" | date("M Y") %}
+{% endif %}
+
+{# Pattern #}
+<div class="generic-content">
+	<h1>{{genericTitle}}</h1>
+	{% if showDateLine %}
+		<div class="generic-content__dateline">
+			{{genericPageDate}}
+		</div>
+	{% endif %}
+	{{genericPageContent | raw }}
+</div>
