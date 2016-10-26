@@ -1028,11 +1028,16 @@ $(function () {
 
 	$('.saveview').click(function () {
 		var alltables = $('.table'),
-		    UserPreferences = {},
+		    allpublicationsEles = $('.publicationPan'),
+		    UserPreferences = { "IsNewUser": false },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
+		allpublicationsEles.removeAttr('data-row');
 		setDataRow(allpublications);
+		for (var i = 0; i < allpublicationsEles.length; i++) {
+			$(allpublicationsEles[i]).attr('data-row', i + 1);
+		}
 		createJSONData(alltables, UserPreferences);
 
 		$('#validatePreference').val(0);
@@ -1041,12 +1046,12 @@ $(function () {
 	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'),
 		    alltrs = table.find('tbody tr'),
-		    UserPreferences = {},
+		    UserPreferences = { "IsNewUser": true },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
 		e.preventDefault();
-		if (! +$('#validatePreference').val()) {
+		if ($('#enableSavePreferencesCheck').val() === "true") {
 			$('.alert-error.register-not-selected').show();
 			return false;
 		}

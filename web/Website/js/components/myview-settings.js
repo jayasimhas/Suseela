@@ -326,11 +326,15 @@ $(function(){
 	setClsforFlw(tables);
 	
 	$('.saveview').click(function () {
-		var alltables = $('.table'),
-		    UserPreferences = {}, allpublications = $('.publicationPan', '#allPublicationsPan');
+		var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
+		UserPreferences = { "IsNewUser": false }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
 		UserPreferences.PreferredChannels = [];
 		
+		allpublicationsEles.removeAttr('data-row');
 		setDataRow(allpublications);
+		for (var i = 0; i < allpublicationsEles.length; i++) {
+			$(allpublicationsEles[i]).attr('data-row', i+1);
+        } 
 		createJSONData(alltables, UserPreferences);		
 		
 		$('#validatePreference').val(0);
@@ -338,11 +342,11 @@ $(function(){
 	
 	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
-		    UserPreferences = {}, allpublications = $('.publicationPan', '#allPublicationsPan');
+		    UserPreferences = { "IsNewUser": true }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
 			UserPreferences.PreferredChannels = [];
 		
 		e.preventDefault();
-		if(!+$('#validatePreference').val()){
+		if($('#enableSavePreferencesCheck').val() === "true"){
 			$('.alert-error.register-not-selected').show();
 			return false;
 		}
@@ -353,7 +357,7 @@ $(function(){
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
 					channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 					secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-					channelOrder = (secondtd.toLowerCase() == 'following') ? $(alltrs[i]).attr('data-row') : '0',
+					channelOrder = (secondtd.toLowerCase() == 'following') ? $(alltrs[i]).attr('data-row') : '0', 
 					followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
 				
 				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
