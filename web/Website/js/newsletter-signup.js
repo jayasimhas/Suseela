@@ -14,6 +14,11 @@ function newsletterSignupController() {
         });
     };
 
+    this.IsValidEmail = function(email){
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+        
+    };
     this.addControl = function(triggerElement, successCallback, failureCallback) {
         if (triggerElement) {
             $(triggerElement).on('click', (event) => {
@@ -24,13 +29,15 @@ function newsletterSignupController() {
                 // Hide any errors
                 $('.js-newsletter-signup-error').hide();
 
-                var inputData = "";
+                var inputData = $("#newsletterUserName").val();
                 var url = $(triggerElement).data('signup-url');
 
-                $(triggerElement).parents('.newsletter-signup').find('input').each(function() {
-                    inputData = $(this).val();
-                });
+                //$(triggerElement).parents('.newsletter-signup').find('input').each(function() {
+                //    inputData = $(this).val();
+                //});
 
+                if(inputData!=='' && this.IsValidEmail(inputData)){
+                    $('.js-newsletter-signup--error-invalidemailformat').hide();
                 url = url + '?userName=' + inputData;
 
                 $.get(url, function(response) {
@@ -76,6 +83,10 @@ function newsletterSignupController() {
                         $('.js-newsletter-signup-error').show();
                     }
                 });
+                }
+                else{
+                    $('.js-newsletter-signup--error-invalidemailformat').show();
+                }
             });
         }
     };
