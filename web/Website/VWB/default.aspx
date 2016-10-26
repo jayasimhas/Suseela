@@ -22,7 +22,6 @@
         <!-- pipe bar separated guids -->
         <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button" />
 
-
         <div class="wrapper">
             <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server" />
             <div class="top">
@@ -32,7 +31,8 @@
                 </asp:DropDownCheckBoxes>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
-                        <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
+                        <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" ToolTip="Displays articles that have been scheduled to be published 1 day back, 30 days ahead"/>
+                         <label style="color: red; font-size: 8pt">*</label>	
                     </div>
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />
@@ -49,7 +49,6 @@
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
                     </div>
 
-
                     <div class="appbuttons">
                         <asp:Label runat="server" ID="lblMsg"></asp:Label>
                         <br />
@@ -63,7 +62,8 @@
             <br />
             <br />
             <div class="report">
-
+                <label style="color: red; font-size: 8pt">* Displays articles that have been scheduled to be published 1 day back, 30 days ahead.</label>	
+               <br />
                 <asp:Table ID="tblResults" runat="server" border="1">
                 </asp:Table>
 
