@@ -5,5 +5,7 @@
         bool DisplayLoadMore { get; }
         string LoadMoreLinkText { get; }
         string LoadMoreLinkUrl { get; }
+
+        string LatestFromText { get; }
     }
 }
