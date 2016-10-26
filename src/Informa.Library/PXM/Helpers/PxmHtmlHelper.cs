@@ -1,4 +1,6 @@
-﻿using HtmlAgilityPack;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HtmlAgilityPack;
 using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 
@@ -6,7 +8,6 @@ namespace Informa.Library.PXM.Helpers {
     public interface IPxmHtmlHelper
 	{
 		string ProcessIframe(string content);
-        string ProcessIframeTag(string content);
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
         string ProcessPullQuotes(string content);
@@ -35,66 +36,107 @@ namespace Informa.Library.PXM.Helpers {
 			_dependencies = dependencies;
 		}
 
-		public string ProcessIframeTag(string content)
-		{
-			var doc = CreateDocument(content);
-			var wrapXPath = @"//div[contains(@class,'iframe-component')]";
-            var iframeXPath = @"//div[contains(@class, 'ewf-desktop-iframe')]/iframe";
-
-            var iframe = doc.DocumentNode.SelectSingleNode(iframeXPath);
-            var wrapper = doc.DocumentNode.SelectSingleNode(wrapXPath);
-			if (iframe == null || wrapper == null)
-			    return doc.DocumentNode.OuterHtml;
-			
-			var src = iframe.Attributes["src"];
-			if (src != null)
-				wrapper.InnerHtml = src.Value;
-
-            wrapper.Name = "p";
-			return doc.DocumentNode.OuterHtml;
-		}
-
 		public string ProcessIframe(string content)
 		{
-			var result = ProcessIframeTag(content);
-			var doc = CreateDocument(result);
-			
-			UpdateNode(doc, @"//p[contains(@class,'iframe-header')]", "exhibit_number");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-title')]", "exhibit_title");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-component')]", "exhibit_url");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-caption')]", "exhibit_caption");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-source')]", "exhibit_source");
+			var doc = CreateDocument(content);
+            var mobileFrames = GetNodes(doc, @"//div[contains(@class, 'iframe-component__mobile')]");
+            foreach(HtmlNode m in mobileFrames) {
+                m.ParentNode.RemoveChild(m);
+            }
+
+            var iframes = GetNodes(doc, @"//div[contains(@class, 'ewf-desktop-iframe')]/iframe");
+            foreach(HtmlNode i in iframes) {
+                if (i == null)
+                    continue;
+
+                var wrapperNode = i?.ParentNode?.ParentNode ?? null;
+                if (wrapperNode == null)
+                    continue;
+
+                var titleNode = GetPrevNode(wrapperNode, "iframe-title");
+                HandleNode(doc, wrapperNode, titleNode, "exhibit_title");
+                
+                var headerNode = GetPrevNode(wrapperNode, "iframe-header");
+                HandleNode(doc, wrapperNode, headerNode, "exhibit_number");
+                
+                var urlNode = doc.CreateElement("p");
+                urlNode.InnerHtml = (i.Attributes["src"] != null) ? i.Attributes["src"].Value : string.Empty;
+                wrapperNode.RemoveChild(i.ParentNode);
+                HandleNode(doc, wrapperNode, urlNode, "exhibit_url");
+                
+                var captionNode = GetNextNode(wrapperNode, "iframe-caption");
+                HandleNode(doc, wrapperNode, captionNode, "exhibit_caption");
+                
+                var sourceNode = GetNextNode(wrapperNode, "iframe-source");
+                HandleNode(doc, wrapperNode, sourceNode, "exhibit_source");
+                
+                wrapperNode.Name = "pre";
+            }
             
 			return doc.DocumentNode.OuterHtml;
 		}
+        
+        public HtmlNode GetPrevNode(HtmlNode n, string cssClass) {
 
-        public void UpdateNode(HtmlDocument doc, string xPath, string cssClass) {
-            
-            var node = doc.DocumentNode.SelectSingleNode(xPath);
-            if (node == null)
-                return;
+            string attrName = "class";
 
-            var attr = node.Attributes["class"];
-            if (attr == null)
-                return;
+            var p1 = n.PreviousSibling;
+            if (p1 == null)
+                return null;
 
-            attr.Value = cssClass;
+            HtmlAttribute a1 = p1.Attributes[attrName];
+            if (a1 != null && a1.Value.Contains(cssClass))
+                return p1;
 
-            var newParent = doc.DocumentNode.SelectSingleNode(@"//pre");
-            if(newParent == null) {
-                newParent = doc.CreateElement("pre");
-                doc.DocumentNode.FirstChild.ChildNodes.Insert(0, newParent);
-            }            
+            var p2 = p1.PreviousSibling;
+            if (p2 == null)
+                return null;
 
-            var oldParent = node.ParentNode;
-            newParent.AppendChild(node);
-            oldParent.RemoveChild(node);
+            HtmlAttribute a2 = p1.Attributes[attrName];
+            if (a2 != null && a2.Value.Contains(cssClass))
+                return p2;
+
+            return null;
         }
 
+        public HtmlNode GetNextNode(HtmlNode n, string cssClass) {
+
+            string attrName = "class";
+
+            var p1 = n.NextSibling;
+            if (p1 == null)
+                return null;
+
+            HtmlAttribute a1 = p1.Attributes[attrName];
+            if (a1 != null && a1.Value.Contains(cssClass))
+                return p1;
+
+            var p2 = p1.NextSibling;
+            if (p2 == null)
+                return null;
+
+            HtmlAttribute a2 = p1.Attributes[attrName];
+            if (a2 != null && a2.Value.Contains(cssClass))
+                return p2;
+
+            return null;
+        }
+        
+        public void HandleNode(HtmlDocument doc, HtmlNode parent, HtmlNode oldNode, string cssClass) {
+
+            var newNode = doc.CreateElement("p");
+            newNode.Attributes.Add("class", cssClass);
+            parent.ChildNodes.Append(newNode);
+            if (oldNode == null)
+                return;
+
+            newNode.InnerHtml = oldNode.InnerHtml;
+            if (oldNode.ParentNode == null)
+                return;
+
+            oldNode.ParentNode.RemoveChild(oldNode);
+        }
+        
 		public string ProcessQuickFacts(string content)
 		{
 			var result = AddCssClassToQuickFactsText(content);
@@ -280,6 +322,13 @@ namespace Informa.Library.PXM.Helpers {
                     attribute.Value = SidebarPullQuote;
             }
             return doc.DocumentNode.OuterHtml;
+        }
+
+        private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath) {
+            var nodes = doc.DocumentNode.SelectNodes(xPath);
+            return (nodes == null)
+                ? Enumerable.Empty<HtmlNode>()
+                : nodes.ToList();
         }
     }
 }
