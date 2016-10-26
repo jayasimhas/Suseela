@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fbef49cd-8f67-495a-9583-70aa25d80a26" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3a88831-d1a8-4210-a792-4e774e6a8b03" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="D:\KIRAN\Informa Docs\Proxy\By Paul\enterprise.wsdl.xml" Protocol="file" SourceId="1" />
+    <MetadataSource Address="d:/salesforceEnterprise_20161024.wsdl.xml" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="enterprise.wsdl" MetadataType="Wsdl" ID="a2620389-5db5-4d37-a5c0-40d374a98e0f" SourceId="1" SourceUrl="file:///D:/KIRAN/Informa Docs/Proxy/By Paul/enterprise.wsdl.xml" />
+    <MetadataFile FileName="salesforceEnterprise_20161024.wsdl" MetadataType="Wsdl" ID="2a20c5e7-f834-4dd5-bce2-70138c502650" SourceId="1" SourceUrl="file:///d:/salesforceEnterprise_20161024.wsdl.xml" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

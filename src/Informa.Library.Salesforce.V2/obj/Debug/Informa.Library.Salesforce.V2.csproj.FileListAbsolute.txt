@@ -1,0 +1,1 @@
+D:\SRC\TS3\src\Informa.Library.Salesforce.V2\obj\Debug\Informa.Library.Salesforce.V2.csprojResolveAssemblyReference.cache

@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D58EC640-F32E-4EC9-AC5F-6C73E94FCB5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Informa.Library.Salesforce</RootNamespace>
+    <AssemblyName>Informa.Library.Salesforce</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company\ISalesforceCompany.cs" />
+    <Compile Include="Company\ISalesforceCompanyTypeFromAccountType.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\ISalesforceCompanyTypeFromSiteType.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByUser.cs" />
+    <Compile Include="Company\ISalesforceSiteTypeFromCompanyType.cs" />
+    <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByMasterId.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByUser.cs" />
+    <Compile Include="Company\SalesforceMasterCompany.cs" />
+    <Compile Include="Company\SalesforceSiteTypeParser.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAccountByMasterIdResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAccountByUsernameResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedDocumentResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItems2Response.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItemsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySubscriptionsAndPurchasesResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
+    <Compile Include="EBIWebServices\IEbiResponse.cs" />
+    <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="EBIWebServices\IN_ProfilePreferencesQueryResponse.cs" />
+    <Compile Include="ISalesforceDebugLogger.cs" />
+    <Compile Include="ISalesforceErrorLogger.cs" />
+    <Compile Include="ISalesforceServiceContextEnabled.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="Purchase\SalesforceArticlePurchase.cs" />
+    <Compile Include="Purchase\User\SalesforceFindUserArticlePurchases.cs" />
+    <Compile Include="SalesforceErrorLogger.cs" />
+    <Compile Include="SalesforceServiceContextEnabled.cs" />
+    <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="Service References\SalesForceWebServicesV2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="User\Entitlement\ISalesforceEntitlmentFactory.cs" />
+    <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlement.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlmentFactory.cs" />
+    <Compile Include="User\Entitlement\SalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceGetUserEntitlements.cs" />
+    <Compile Include="ISalesforceServiceConfiguration.cs" />
+    <Compile Include="ISalesforceServiceContextExtensions.cs" />
+    <Compile Include="ISalesforceSessionFactoryConfiguration.cs" />
+    <Compile Include="SalesforceServiceConfiguration.cs" />
+    <Compile Include="SalesforceSessionFactoryConfiguration.cs" />
+    <Compile Include="User\Authentication\ISalesforceAuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticateUserResult.cs" />
+    <Compile Include="EBIWebServices\IEBI_WebServicesBinding.cs" />
+    <Compile Include="ISalesforceService.cs" />
+    <Compile Include="ISalesforceServiceContext.cs" />
+    <Compile Include="ISalesforceSession.cs" />
+    <Compile Include="ISalesforceSessionContext.cs" />
+    <Compile Include="ISalesforceSessionFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SalesforceService.cs" />
+    <Compile Include="SalesforceServiceContext.cs" />
+    <Compile Include="SalesforceSession.cs" />
+    <Compile Include="SalesforceSessionContext.cs" />
+    <Compile Include="SalesforceSessionFactory.cs" />
+    <Compile Include="User\ISalesforceFindUserByEmail.cs" />
+    <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
+    <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
+    <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\Orders\SalesforceCreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\SalesforceUserOrder.cs" />
+    <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
+    <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
+    <Compile Include="Subscription\User\SalesforceFindUserSubscriptions.cs" />
+    <Compile Include="User\Offer\SalesforceOfferUserOptedIn.cs" />
+    <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
+    <Compile Include="User\Newsletter\SalesforceFindNewsletterUserOptIns.cs" />
+    <Compile Include="User\Document\SalesforceSavedDocuments.cs" />
+    <Compile Include="User\Newsletter\SalesforceUpdateNewsletterUserOptIns.cs" />
+    <Compile Include="User\Offer\SalesforceUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Document\SalesforceSavedDocument.cs" />
+    <Compile Include="Subscription\SalesforceSubscription.cs" />
+    <Compile Include="User\Profile\SalesforceUserProfile.cs" />
+    <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
+    <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
+    <Compile Include="User\Registration\SalesforceRegisterUserResult.cs" />
+    <Compile Include="User\SalesforceFindUserByEmail.cs" />
+    <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
+    <Compile Include="User\SalesforceUpdateUserPassword.cs" />
+    <Compile Include="User\SalesforceUser.cs" />
+    <Compile Include="User\Search\SalesforceSavedSearchRepository.cs" />
+    <Compile Include="User\UserPreferences\ISalesforceFindUserPreferences.cs" />
+    <Compile Include="User\UserPreferences\ISalesforceSetuserPreferences.cs" />
+    <Compile Include="User\UserPreferences\ISalesforceUserPreferences.cs" />
+    <Compile Include="User\UserPreferences\SalesforceFindUserPreferences.cs" />
+    <Compile Include="User\UserPreferences\SalesforceSetuserPreferences.cs" />
+    <Compile Include="Web References\EBIWebServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SalesforceAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web\IUserAgentServiceContextEnabledCheckConfiguration.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheck.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheckConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\SoapUI-Projects\Agri_WebServices.xml">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EBIWebServices\</RelPath>
+      <UpdateFromURL>D:\SoapUI-Projects\Agri_WebServices.xml</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Informa_Library_Salesforce_EBIWebServices_EBI_WebServicesService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\enterprise.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SalesforceAPI\</RelPath>
+      <UpdateFromURL>C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\enterprise.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Informa_Library_Salesforce_SalesforceAPI_SforceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\enterprise.wsdl" />
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.convertLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DebuggingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeAllTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeAppMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeAppMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeApprovalLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeApprovalLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeAvailableQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeAvailableQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeCompactLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeCompactLayoutsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeDataCategoryGroupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeDataCategoryGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeDataCategoryGroupStructureResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeDataCategoryGroupStructuresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeFlexiPageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeFlexiPagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeGlobalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeGlobalResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeGlobalTheme.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeGlobalThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeKnowledgeSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeNounResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeNounsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribePathAssistant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describePathAssistantsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describePrimaryCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSearchableEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSearchableEntityResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSearchLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSearchLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSearchScopeOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSearchScopeOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSObjectListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSObjectResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSObjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSoftphoneLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSoftphoneLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeSoqlListView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeSoqlListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeTab.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeTabSetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeThemeItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.describeVisualForceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.DescribeVisualForceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.emptyRecycleBinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.EmptyRecycleBinResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.executeListViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.ExecuteListViewResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.findDuplicatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.FindDuplicatesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.getDeletedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.GetDeletedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.getServerTimestampResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.GetServerTimestampResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.getUpdatedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.GetUpdatedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.getUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.GetUserInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.invalidateSessionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.InvalidateSessionsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.KnowledgeSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.LeadConvertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.LimitInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.logoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.mergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.MergeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.PerformQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.performQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.processResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.ProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.queryAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.queryMoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.queryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.QuickActionTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.renderEmailTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.RenderEmailTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.resetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.ResetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.retrieveQuickActionTemplatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.retrieveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.SaveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.searchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.sendEmailMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.sendEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.SendEmailResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.setPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.SetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.sObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.undeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.UndeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.upsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesForceWebServicesV2\Informa.Library.Salesforce.SalesForceWebServicesV2.UpsertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\Agri_WebServices.wsdl" />
+    <None Include="Web References\EBIWebServices\EBI_CartItemResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_CartResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_CreateAccountResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_CreateProfileResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_LoginResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAccountByIPAddressResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAccountByMasterIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAccountBySubscriberIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAccountByUsernameResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAccountByVerificationCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryAllActiveIPRangesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryCartResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryEntitlementsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryFreeELetterOptInsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryOptInsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QueryProfileContactInformationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItems2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItemsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySubscriptionsAndPurchasesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\IN_ProfilePreferencesQueryResponse.datasource" />
+    <None Include="Web References\EBIWebServices\IN_ProfilePreferencesQueryResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\IN_QueryEntitlementsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SalesforceAPI\DeleteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeDataCategoryGroupResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeDataCategoryGroupStructureResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeGlobalResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeLayoutResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeSObjectResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeSoftphoneLayoutResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\DescribeTabSetResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\EmptyRecycleBinResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\enterprise.wsdl" />
+    <None Include="Web References\SalesforceAPI\GetDeletedResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\GetServerTimestampResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\GetUpdatedResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\GetUserInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\InvalidateSessionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\LeadConvertResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\LoginResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\MergeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\ProcessResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\QueryResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SalesforceAPI\ResetPasswordResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\SaveResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\SearchResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\SendEmailResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\SetPasswordResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\sObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\UndeleteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SalesforceAPI\UpsertResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Informa.Library\Informa.Library.csproj">
+      <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
+      <Name>Informa.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Informa.Models\Informa.Models.csproj">
+      <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
+      <Name>Informa.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SalesForceWebServicesV2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesForceWebServicesV2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesForceWebServicesV2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesForceWebServicesV2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
