@@ -5,5 +5,8 @@ name: sitecore\Experience Explorer
 rolename: sitecore\Editor
 
 ----role-in-role----
+rolename: sitecore\Managing Editor
+
+----role-in-role----
 rolename: sitecore\Operations Access
 

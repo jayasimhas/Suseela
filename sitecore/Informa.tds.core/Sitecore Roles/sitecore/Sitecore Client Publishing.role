@@ -2,5 +2,14 @@
 name: sitecore\Sitecore Client Publishing
 
 ----role-in-role----
+rolename: sitecore\Full Publisher
+
+----role-in-role----
+rolename: sitecore\Single Publisher
+
+----role-in-role----
+rolename: sitecore\Single Publisher with Subitems
+
+----role-in-role----
 rolename: sitecore\Sitecore Client Advanced Publishing
 
