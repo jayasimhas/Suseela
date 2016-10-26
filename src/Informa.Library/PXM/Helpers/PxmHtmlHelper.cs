@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using Jabberwocky.Autofac.Attributes;
+using System.Collections.Generic;
 
-namespace Informa.Library.PXM.Helpers
-{
-	public interface IPxmHtmlHelper
+namespace Informa.Library.PXM.Helpers {
+    public interface IPxmHtmlHelper
 	{
 		string ProcessIframe(string content);
         string ProcessIframeTag(string content);
@@ -283,6 +281,5 @@ namespace Informa.Library.PXM.Helpers
             }
             return doc.DocumentNode.OuterHtml;
         }
-
     }
 }
