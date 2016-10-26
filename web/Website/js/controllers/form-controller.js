@@ -161,7 +161,7 @@ function formController(opts) {
 							}), 250);							
 
 							// reset captcha if available
-							grecaptcha.reset();
+							//grecaptcha.reset();
 						}
 
 					});
