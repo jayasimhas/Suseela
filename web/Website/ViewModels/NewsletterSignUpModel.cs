@@ -46,6 +46,7 @@ namespace Informa.Web.ViewModels
 		public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
 		public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
 
+		public string InvalidEmailFormat => TextTranslator.Translate("Newsletter.InvalidEmailFormat");
 		public string NeedsRegistrationMessage => TextTranslator.Translate("Newsletter.NeedsRegistrationMessage");
 		public string NeedsRegistrationButtonText => TextTranslator.Translate("Newsletter.NeedsRegistrationButtonText");
 		public string RegistrationURL => !string.IsNullOrEmpty(SiteRootContext.Item.Register_Link?.Url) ? SiteRootContext.Item.Register_Link?.Url + $"?returnURL={(string.IsNullOrEmpty(ReturnURLContext.Url) ? "/" : ReturnURLContext.Url)}&username=" : "#";
