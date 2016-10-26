@@ -16404,68 +16404,68 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 					[SitecoreField(IDCDSubscribeConstants.Contact_InfoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Contact_Info  {get; set;}
 								/// <summary>
-					/// The Purchase Button Text field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 60dd1f28-cabc-49a7-ac32-d1c97ccd4690</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Purchase_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Purchase_Button_Text  {get; set;}
-								/// <summary>
-					/// The Purchase Headline field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 7bf369b7-db08-4279-aafd-2b0ceffbf595</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Purchase_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Purchase_Headline  {get; set;}
-								/// <summary>
-					/// The Purchase Subheading field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 07df7919-fea4-41dc-8dda-eab30c7fb298</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Purchase_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Purchase_Subheading  {get; set;}
-								/// <summary>
-					/// The Subscribe Button Link field.
+					/// The Promotional Button Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 8e25a685-d80c-4620-92ea-b73400c8eb34</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Subscribe_Button_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link Subscribe_Button_Link  {get; set;}
+					[SitecoreField(IDCDSubscribeConstants.Promotional_Button_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Promotional_Button_Link  {get; set;}
 								/// <summary>
-					/// The Subscribe Button Text field.
+					/// The Promotional Button Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: ff4ffbf3-e6eb-4d94-b7ff-b649b5f9d6ae</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Subscribe_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subscribe_Button_Text  {get; set;}
+					[SitecoreField(IDCDSubscribeConstants.Promotional_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Promotional_Button_Text  {get; set;}
 								/// <summary>
-					/// The Subscriber Headline field.
+					/// The Promotional Headline field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: 737d357d-5302-443f-9900-046cfd3e044d</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Subscriber_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subscriber_Headline  {get; set;}
+					[SitecoreField(IDCDSubscribeConstants.Promotional_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Promotional_Headline  {get; set;}
 								/// <summary>
-					/// The Subscriber SubHeadline field.
+					/// The Promotional Subheadline field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: 47df5975-6551-45ae-a2a0-2128ea20931a</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IDCDSubscribeConstants.Subscriber_SubHeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subscriber_SubHeadline  {get; set;}
+					[SitecoreField(IDCDSubscribeConstants.Promotional_SubheadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Promotional_Subheadline  {get; set;}
+								/// <summary>
+					/// The Subscriber Button Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 60dd1f28-cabc-49a7-ac32-d1c97ccd4690</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDCDSubscribeConstants.Subscriber_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Subscriber_Button_Text  {get; set;}
+								/// <summary>
+					/// The Subscriber Headline field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7bf369b7-db08-4279-aafd-2b0ceffbf595</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDCDSubscribeConstants.Subscriber_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Subscriber_Headline  {get; set;}
+								/// <summary>
+					/// The Subscriber Subheading field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 07df7919-fea4-41dc-8dda-eab30c7fb298</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDCDSubscribeConstants.Subscriber_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Subscriber_Subheading  {get; set;}
 				}
 
 	
@@ -16497,68 +16497,68 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 						[SitecoreField(IDCDSubscribeConstants.Contact_InfoFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string Contact_Info  {get; set;}
 										/// <summary>
-						/// The Purchase Button Text field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 60dd1f28-cabc-49a7-ac32-d1c97ccd4690</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Purchase_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Purchase_Button_Text  {get; set;}
-										/// <summary>
-						/// The Purchase Headline field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 7bf369b7-db08-4279-aafd-2b0ceffbf595</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Purchase_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Purchase_Headline  {get; set;}
-										/// <summary>
-						/// The Purchase Subheading field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 07df7919-fea4-41dc-8dda-eab30c7fb298</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Purchase_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Purchase_Subheading  {get; set;}
-										/// <summary>
-						/// The Subscribe Button Link field.
+						/// The Promotional Button Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 8e25a685-d80c-4620-92ea-b73400c8eb34</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Subscribe_Button_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link Subscribe_Button_Link  {get; set;}
+						[SitecoreField(IDCDSubscribeConstants.Promotional_Button_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Promotional_Button_Link  {get; set;}
 										/// <summary>
-						/// The Subscribe Button Text field.
+						/// The Promotional Button Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: ff4ffbf3-e6eb-4d94-b7ff-b649b5f9d6ae</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Subscribe_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subscribe_Button_Text  {get; set;}
+						[SitecoreField(IDCDSubscribeConstants.Promotional_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Promotional_Button_Text  {get; set;}
 										/// <summary>
-						/// The Subscriber Headline field.
+						/// The Promotional Headline field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: 737d357d-5302-443f-9900-046cfd3e044d</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Subscriber_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subscriber_Headline  {get; set;}
+						[SitecoreField(IDCDSubscribeConstants.Promotional_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Promotional_Headline  {get; set;}
 										/// <summary>
-						/// The Subscriber SubHeadline field.
+						/// The Promotional Subheadline field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: 47df5975-6551-45ae-a2a0-2128ea20931a</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IDCDSubscribeConstants.Subscriber_SubHeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subscriber_SubHeadline  {get; set;}
+						[SitecoreField(IDCDSubscribeConstants.Promotional_SubheadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Promotional_Subheadline  {get; set;}
+										/// <summary>
+						/// The Subscriber Button Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 60dd1f28-cabc-49a7-ac32-d1c97ccd4690</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDCDSubscribeConstants.Subscriber_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Subscriber_Button_Text  {get; set;}
+										/// <summary>
+						/// The Subscriber Headline field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 7bf369b7-db08-4279-aafd-2b0ceffbf595</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDCDSubscribeConstants.Subscriber_HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Subscriber_Headline  {get; set;}
+										/// <summary>
+						/// The Subscriber Subheading field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 07df7919-fea4-41dc-8dda-eab30c7fb298</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDCDSubscribeConstants.Subscriber_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Subscriber_Subheading  {get; set;}
 						}
 	
 	public static partial class IDCDSubscribeConstants{
@@ -16580,38 +16580,38 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 				public const string Contact_Info__RawFieldName = "Contact Info";
 						
 					
-			public static readonly ID Purchase_Button_TextFieldId = new ID("60dd1f28-cabc-49a7-ac32-d1c97ccd4690");
-			public const string Purchase_Button_TextFieldName = "Purchase Button Text";
+			public static readonly ID Promotional_Button_LinkFieldId = new ID("8e25a685-d80c-4620-92ea-b73400c8eb34");
+			public const string Promotional_Button_LinkFieldName = "Promotional Button Link";
 
 						
 					
-			public static readonly ID Purchase_HeadlineFieldId = new ID("7bf369b7-db08-4279-aafd-2b0ceffbf595");
-			public const string Purchase_HeadlineFieldName = "Purchase Headline";
+			public static readonly ID Promotional_Button_TextFieldId = new ID("ff4ffbf3-e6eb-4d94-b7ff-b649b5f9d6ae");
+			public const string Promotional_Button_TextFieldName = "Promotional Button Text";
 
 						
 					
-			public static readonly ID Purchase_SubheadingFieldId = new ID("07df7919-fea4-41dc-8dda-eab30c7fb298");
-			public const string Purchase_SubheadingFieldName = "Purchase Subheading";
+			public static readonly ID Promotional_HeadlineFieldId = new ID("737d357d-5302-443f-9900-046cfd3e044d");
+			public const string Promotional_HeadlineFieldName = "Promotional Headline";
 
 						
 					
-			public static readonly ID Subscribe_Button_LinkFieldId = new ID("8e25a685-d80c-4620-92ea-b73400c8eb34");
-			public const string Subscribe_Button_LinkFieldName = "Subscribe Button Link";
+			public static readonly ID Promotional_SubheadlineFieldId = new ID("47df5975-6551-45ae-a2a0-2128ea20931a");
+			public const string Promotional_SubheadlineFieldName = "Promotional Subheadline";
 
 						
 					
-			public static readonly ID Subscribe_Button_TextFieldId = new ID("ff4ffbf3-e6eb-4d94-b7ff-b649b5f9d6ae");
-			public const string Subscribe_Button_TextFieldName = "Subscribe Button Text";
+			public static readonly ID Subscriber_Button_TextFieldId = new ID("60dd1f28-cabc-49a7-ac32-d1c97ccd4690");
+			public const string Subscriber_Button_TextFieldName = "Subscriber Button Text";
 
 						
 					
-			public static readonly ID Subscriber_HeadlineFieldId = new ID("737d357d-5302-443f-9900-046cfd3e044d");
+			public static readonly ID Subscriber_HeadlineFieldId = new ID("7bf369b7-db08-4279-aafd-2b0ceffbf595");
 			public const string Subscriber_HeadlineFieldName = "Subscriber Headline";
 
 						
 					
-			public static readonly ID Subscriber_SubHeadlineFieldId = new ID("47df5975-6551-45ae-a2a0-2128ea20931a");
-			public const string Subscriber_SubHeadlineFieldName = "Subscriber SubHeadline";
+			public static readonly ID Subscriber_SubheadingFieldId = new ID("07df7919-fea4-41dc-8dda-eab30c7fb298");
+			public const string Subscriber_SubheadingFieldName = "Subscriber Subheading";
 
 						
 			
