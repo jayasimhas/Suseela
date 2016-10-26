@@ -1,8 +1,10 @@
 ﻿using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.Salesforce.SFv2;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User;
 using Informa.Library.User.Authentication;
 using System.Linq;
+using System.ServiceModel;
 
 namespace Informa.Library.Salesforce.User.Authentication
 {
@@ -73,6 +75,15 @@ namespace Informa.Library.Salesforce.User.Authentication
                         SalesForceSessionId = sessionId,
                         SalesForceURL = serverUrl
                     }
+                };
+            }
+            catch(FaultException<LoginFault> loginFault)
+            {
+                var msg = loginFault.ToString();
+                return new SalesforceAuthenticateUserResult
+                {
+                    State = AuthenticateUserResultState.Failure
+
                 };
             }
             catch (System.Exception ex)
