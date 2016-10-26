@@ -204,6 +204,11 @@ namespace Informa.Library.PXM.Helpers
                 if (cell.ChildNodes.Count != 0)
                     continue;
 
+                XmlAttribute cs = (cell.Attributes["CellStyle"] == null)
+                    ? doc.CreateAttribute("CellStyle")
+                    : cell.Attributes["CellStyle"];
+                cs.Value = "table_body";
+
                 XmlNode n = doc.CreateNode(XmlNodeType.Element, "ParagraphStyle", string.Empty);
                 XmlAttribute a = doc.CreateAttribute("Style");
                 a.Value = "table_body";
