@@ -3860,8 +3860,8 @@ header .header-account-access {
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines span {
             height: 2px;
@@ -3875,7 +3875,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -3899,8 +3899,8 @@ header .header-account-access {
               background: #ffffff; } }
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
             float: right;
-            margin-top: 3px;
-            margin-top: 0.1875rem;
+            margin-top: 7px;
+            margin-top: 0.4375rem;
             position: relative; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines span {
               height: 2px;
@@ -3914,7 +3914,7 @@ header .header-account-access {
               position: absolute;
               left: -43px;
               left: -2.6875rem;
-              top: 1px;
+              top: -3px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -3977,8 +3977,8 @@ header .header-account-access {
           padding: 0rem 1.25rem 0.9375rem; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative;
           margin-top: -24px;
           margin-top: -1.5rem; }
@@ -3994,7 +3994,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4128,7 +4128,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4156,7 +4155,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4181,6 +4179,9 @@ header .header-account-access {
             width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
+        .myview-settings .table-responsive .table .wd-25.pbot {
+          padding-left: 0px;
+          padding-left: 0rem; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-25 {
             width: 20%;
