@@ -427,11 +427,11 @@
     <Compile Include="Utilities\CMSHelpers\IVerticalRootContext.cs" />
     <Compile Include="User\Entitlement\IStrategicEntitlementContext.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
-    <Compile Include="Logging\IDebugLogger.cs" />
-    <Compile Include="Logging\IErrorLogger.cs" />
-    <Compile Include="Logging\LogWrapper.cs" />
-    <Compile Include="Logging\SitecoreDebugLogger.cs" />
-    <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Mail\Logging\IDebugLogger.cs" />
+    <Compile Include="Mail\Logging\IErrorLogger.cs" />
+    <Compile Include="Mail\Logging\LogWrapper.cs" />
+    <Compile Include="Mail\Logging\SitecoreDebugLogger.cs" />
+    <Compile Include="Mail\Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Mail\ExactTarget\CampaignQueryBuilder.cs" />
     <Compile Include="Mail\ExactTarget\PremailerWrapper.cs" />
     <Compile Include="Migrations\201605092039013_InitialCreate.cs" />

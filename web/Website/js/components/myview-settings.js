@@ -326,8 +326,9 @@ $(function(){
 	setClsforFlw(tables);
 	
 	$('.saveview').click(function () {
-		var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
-		UserPreferences = { "IsNewUser": false }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
+	    var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 		
 		allpublicationsEles.removeAttr('data-row');
@@ -341,8 +342,9 @@ $(function(){
 	});
 	
 	$('.registrationBtn').click(function (e) {
-		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
-		    UserPreferences = { "IsNewUser": true }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
+	    var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		    UserPreferences = { "IsNewUser": true, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 			UserPreferences.PreferredChannels = [];
 		
 		e.preventDefault();

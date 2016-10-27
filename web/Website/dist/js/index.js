@@ -1029,7 +1029,8 @@ $(function () {
 	$('.saveview').click(function () {
 		var alltables = $('.table'),
 		    allpublicationsEles = $('.publicationPan'),
-		    UserPreferences = { "IsNewUser": false },
+             isChannelLevel = $('#isChannelBasedRegistration').val(),
+		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
@@ -1046,7 +1047,8 @@ $(function () {
 	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'),
 		    alltrs = table.find('tbody tr'),
-		    UserPreferences = { "IsNewUser": true },
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		    UserPreferences = { "IsNewUser": true, "IsChannelLevel": isChannelLevel },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 

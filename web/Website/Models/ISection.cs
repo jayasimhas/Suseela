@@ -1,9 +1,12 @@
-﻿namespace Informa.Web.Models
+﻿using System.Collections.Generic;
+
+namespace Informa.Web.Models
 {
     public interface ISection
     {
 
-        string Id { get; set; }
-        string Name { get; set; }
+        string ChannelId { get; set; }
+        string ChannelName { get; set; }
+        IList<string> TaxonomyIds { get; set; }
     }
 }
