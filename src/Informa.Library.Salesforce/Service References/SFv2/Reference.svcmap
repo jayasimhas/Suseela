@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="d:/salesforceEnterprise_20161024.wsdl.xml" Protocol="file" SourceId="1" />
+    <MetadataSource Address="d:\salesforceEnterprise_20161027.wsdl.xml" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="salesforceEnterprise_20161024.wsdl" MetadataType="Wsdl" ID="2a20c5e7-f834-4dd5-bce2-70138c502650" SourceId="1" SourceUrl="file:///d:/salesforceEnterprise_20161024.wsdl.xml" />
+    <MetadataFile FileName="salesforceEnterprise_20161027.wsdl" MetadataType="Wsdl" ID="17feb060-c5df-4afa-a76d-0b5344553f1f" SourceId="1" SourceUrl="file:///d:/salesforceEnterprise_20161027.wsdl.xml" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

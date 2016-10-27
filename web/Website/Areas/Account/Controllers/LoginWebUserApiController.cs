@@ -10,54 +10,54 @@ namespace Informa.Web.Areas.Account.Controllers
 {
     public class LoginWebUserApiController : ApiController
     {
-		protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
-		protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
-		protected readonly IWebAuthenticateUser AuthenticateWebUser;
+        protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
+        protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
+        protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly IMyViewToggleRedirectUrlFactory MyViewRedirectUrlFactory;
 
         public LoginWebUserApiController(
-			IGenerateUserResetPassword generateUserResetPassword,
-			IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
-			IWebAuthenticateUser authenticateWebUser,
+            IGenerateUserResetPassword generateUserResetPassword,
+            IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
+            IWebAuthenticateUser authenticateWebUser,
             IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory)
-		{
-			GenerateUserResetPassword = generateUserResetPassword;
-			UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
-			AuthenticateWebUser = authenticateWebUser;
+        {
+            GenerateUserResetPassword = generateUserResetPassword;
+            UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
+            AuthenticateWebUser = authenticateWebUser;
             MyViewRedirectUrlFactory = myViewRedirectUrlFactory;
 
         }
 
-		[HttpPost]
-		public IHttpActionResult Login(AuthenticateRequest request)
-		{
-			var username = request?.Username;
-			var password = request?.Password;
+        [HttpPost]
+        public IHttpActionResult Login(AuthenticateRequest request)
+        {
+            var username = request?.Username;
+            var password = request?.Password;
 
-			if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
-			{
-				return Ok(new
-				{
-					success = false
-				});
-			}
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                return Ok(new
+                {
+                    success = false
+                });
+            }
 
-			var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist);
-			var redirectUrl = string.Empty;
+            var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist);
+            var redirectUrl = string.Empty;
 
-            if(request.IsSignInFromMyView)
+            if (request.IsSignInFromMyView)
             {
                 redirectUrl = MyViewRedirectUrlFactory.create();
             }
-			if (result.State == AuthenticateUserResultState.TemporaryPassword)
-			{
-				var userResetPassword = GenerateUserResetPassword.Generate(result.User);
+            if (result.State == AuthenticateUserResultState.TemporaryPassword)
+            {
+                var userResetPassword = GenerateUserResetPassword.Generate(result.User);
 
-				if (userResetPassword != null)
-				{
-					redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
-				}
-			}
+                if (userResetPassword != null)
+                {
+                    redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
+                }
+            }
 
             return Ok(new
             {
@@ -65,6 +65,24 @@ namespace Informa.Web.Areas.Account.Controllers
                 redirectUrl = redirectUrl,
                 RedirectRequired = (request.IsSignInFromMyView && !string.IsNullOrWhiteSpace(redirectUrl)) ? true : false
             });
-		}
-	}
+        }
+
+        [HttpPost]
+        public IHttpActionResult TransparentLogin()
+        {
+            string username = Sitecore.Configuration.Settings.GetSetting("SalesforcePseudoUser.Name");
+            string password = Sitecore.Configuration.Settings.GetSetting("SalesforcePseudoUser.Password");
+
+            AuthenticateRequest request = new AuthenticateRequest() { Username = username, Password = password, Persist = false, IsSignInFromMyView = true };
+            var result = Login(request);
+
+           // TODO: check status
+
+
+            return Ok(new
+            {
+                success = true
+            });
+        }
+    }
 }

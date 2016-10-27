@@ -1190,6 +1190,7 @@
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\TokenMatcher\TokenToHtml.cs" />
+    <Compile Include="Utilities\TransparentIp\TransparentIpUtil.cs" />
     <Compile Include="Utilities\UserMembership\CustomSqlMembershipProvider.cs" />
     <Compile Include="Utilities\UserMembership\CustomSqlUserUnlocker.cs" />
     <Compile Include="Utilities\UserMembership\UserAttemp.cs" />

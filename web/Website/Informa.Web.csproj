@@ -1074,6 +1074,7 @@
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SavedDocumentApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
+    <Compile Include="Areas\Account\Controllers\TransparentIpEntitlementController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\ContactInformationUpdateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\ManagementValidationReasons.cs" />
@@ -1705,6 +1706,9 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1720,6 +1724,7 @@
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\components\article-sidebar-component.js" />
@@ -1820,7 +1825,15 @@
     <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Account\Views\TransparentIpEntitlement\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1828,6 +1841,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1945,7 +1959,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
