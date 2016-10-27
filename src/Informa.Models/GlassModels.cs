@@ -26205,3 +26205,40 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public const string TemplateName = "Staff Root";
     }
 }
+
+
+
+namespace Informa.Models.Informa.Models.sitecore.templates.Common
+{
+    /// <summary>
+    /// IIndustries_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Industries Folder </para>	
+    /// <para>ID: c27f6f34-74dc-4a01-aa56-8e39fd4fd501</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IIndustries_FolderConstants.TemplateIdString)]
+    public partial interface IIndustries_Folder : IFolder
+    {
+    }
+
+
+    /// <summary>
+    /// IIndustries_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Industries Folder </para>	
+    /// <para>ID: c27f6f34-74dc-4a01-aa56-8e39fd4fd501</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IIndustries_Folder__Raw : IFolder
+    {
+    }
+
+    public static partial class IIndustries_FolderConstants
+    {
+
+        public const string TemplateIdString = "c27f6f34-74dc-4a01-aa56-8e39fd4fd501";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "IIndustries_Folder";
+    }
+
+}
