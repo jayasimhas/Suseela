@@ -43,7 +43,9 @@
         public string HelpLinkDetail => GlassModel?.Help_Link;
         public string CompleteYourRegistrationText => TextTranslator.Translate("Registration.OptIn.CompleteYourRegistration");
         public string PreferenceNotSavedError => TextTranslator.Translate("Registration.Optin.PreferenceNotSaved");
-        public string NotFollowedError => GlassModel?.Not_Followed_Error;        
+        public string NotFollowedError => GlassModel?.Not_Followed_Error;
+        public bool EnableSavePreferencesCheck => GlassModel?.EnableSavePreferencesCheck ?? false;
+        public string MyViewPageUrl => GlassModel?.MyView_Page_Url?.Url;
 
     }
 }
