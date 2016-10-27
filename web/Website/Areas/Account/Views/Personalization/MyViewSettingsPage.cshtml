@@ -8,7 +8,14 @@
                 <div class="mysettingsHead clearfix">
                     <h1>@Model.Title</h1>
                     <div class="saveoption mtop-10 hidden-xs">
-                        <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>                      
+                        @if (Model.EnableSavePreferencesCheck)
+                        {
+                            <span class="registrationBtn" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</span>
+                        }
+                        else
+                        {
+                            <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
+                        }                                             
                     </div>
                 </div>
 
@@ -48,7 +55,14 @@
             <div class="saveoption">
                 <span class="helplink">@Html.Raw(Model.HelpLinkDetail)</span>
                 <div class="complete-settings">
-                    <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>                    
+                    @if (Model.EnableSavePreferencesCheck)
+                    {
+                        <span class="registrationBtn" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</span>
+                    }
+                    else
+                    {
+                        <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
+                    }                       
                 </div>
             </div>
             <div class="modal-overlay"></div>
