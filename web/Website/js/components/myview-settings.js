@@ -42,7 +42,7 @@ function sendHttpRequest(UserPreferences, setFlag){
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
 				if(setFlag == 'register'){
-					window.location.href = '/';
+					window.location.href = $('.registrationBtn').attr('href');
 				}
 			}
 			else{
@@ -349,10 +349,11 @@ $(function(){
 			UserPreferences.PreferredChannels = [];
 		
 		e.preventDefault();
-		if($('#enableSavePreferencesCheck').val() === "true"){
+		if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0){
 			$('.alert-error.register-not-selected').show();
 			return false;
-		}
+		} 
+		
 		setDataRow(allpublications);
 		
 		if(!!$('#isChannelBasedRegistration').val()){
