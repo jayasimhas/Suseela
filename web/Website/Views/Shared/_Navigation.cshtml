@@ -96,7 +96,7 @@
                             foreach (var navigationChild in Nav.Children)
                             {
                                 <li class="main-menu__hoverable">
-                                    <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
+                                    <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link" name="@navigationChild.Link.TargetId.ToString()">@navigationChild.Text</a>
                                 </li>
                             }
                         }

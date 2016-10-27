@@ -121,8 +121,7 @@ namespace Informa.Web.ViewModels
                                 if (!string.IsNullOrEmpty(channelName))
                                 {
                                     linkId = isTopicsFollowing ? preference.Topics.FirstOrDefault(tp => tp.IsFollowing).TopicId : preference.ChannelId;
-                                    navigationLink = string.Format("{0}/name={1}", SiterootContext.Item?.MyView_Page?._Url, linkId);
-                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = navigationLink } });
+                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(linkId) } });
                                 }
                             }
                         }
@@ -143,8 +142,7 @@ namespace Informa.Web.ViewModels
                                     var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
                                     if (!string.IsNullOrEmpty(topicName))
                                     {
-                                        navigationLink = string.Format("{0}/name={1}", SiterootContext.Item?.MyView_Page?._Url, topic.TopicId);
-                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = navigationLink } });
+                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
                                     }
                                 }
                             }
