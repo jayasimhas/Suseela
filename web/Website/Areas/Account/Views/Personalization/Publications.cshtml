@@ -27,6 +27,7 @@
     string pickAndChooseSectionClassMobile = string.Empty;
     string publicationHiddenClass = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
+    <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {

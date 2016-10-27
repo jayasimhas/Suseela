@@ -63,6 +63,7 @@
         public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
         public bool isChannelBasedRegistration { get; set; }
         public bool isFromRegistration { get; set; }
+        public bool enableSavePreferencesCheck { get; set; }
         public IList<Channel> Channels => GetChannels();
 
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.IsNewUser;
@@ -71,7 +72,8 @@
         {
 
             Item CurrentItem = Sitecore.Context.Item;
-            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"])?false:true;
+            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"]) ? false : true;
+            enableSavePreferencesCheck = string.IsNullOrEmpty(CurrentItem["EnableSavePreferencesCheck"]) ? false : true;
             if (isFromRegistration)
             {
                 return GetPublicationDetailsForRegistration();
@@ -129,9 +131,9 @@
                 if (channelsPageItem != null)
                 {
                     var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                   
+
                     //channel based content customization registration
-                    if (channelPages.Count()>1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase))
+                    if (channelPages.Count() > 1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase))
                     {
                         isChannelBasedRegistration = true;
                         if (channelPages != null && channelPages.Any())
@@ -143,7 +145,7 @@
                                 topic.TopicId = channelPage._Id.ToString();
                                 topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                                 topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                               
+
                                 // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
                                 topic.IsSubscribed = true;
                                 //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();

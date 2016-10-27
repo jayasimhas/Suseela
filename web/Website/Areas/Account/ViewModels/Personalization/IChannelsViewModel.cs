@@ -21,5 +21,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         string SubscribedMessageText { get; }
         bool isChannelBasedRegistration { get; set; }
         bool isFromRegistration { get; set; }
+        bool enableSavePreferencesCheck { get; set; }
     }
 }

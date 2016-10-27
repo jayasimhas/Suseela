@@ -675,20 +675,21 @@ function createJSONData(alltables, UserPreferences) {
 		    tableId = $(alltables[i]).attr('id'),
 		    publicationName = $(alltables[i]).find('h2').attr('data-publication'),
 		    subscribeStatus = $(alltables[i]).find('.subscribed').html(),
-		    channelId = $(alltables[i]).find('h2').attr('data-item-id');
+		    channelId = $(alltables[i]).find('h2').attr('data-item-id'),
+		    channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
 		var alltdata = [];
 		for (var j = 0; j < currenttabtrs.length; j++) {
 			var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
 			    topicId = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-item-id'),
 			    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
-			    datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0';
+			    datarowNo = $(currenttabtrs[j]).attr('data-row');
 
 			var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 			var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
 
 			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
 		}
-		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "ChannelId": channelId, Topics: alltdata });
+		UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
 	}
 	sendHttpRequest(UserPreferences);
 }
@@ -1034,10 +1035,11 @@ $(function () {
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
-		allpublicationsEles.removeAttr('data-row');
 		setDataRow(allpublications);
+		allpublicationsEles.removeAttr('data-row');
 		for (var i = 0; i < allpublicationsEles.length; i++) {
-			$(allpublicationsEles[i]).attr('data-row', i + 1);
+			var j = i + 1;
+			$(allpublicationsEles[i]).attr('data-row', j);
 		}
 		createJSONData(alltables, UserPreferences);
 
@@ -1064,7 +1066,7 @@ $(function () {
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
 				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 				    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-				    channelOrder = secondtd.toLowerCase() == 'following' ? $(alltrs[i]).attr('data-row') : '0',
+				    channelOrder = $(alltrs[i]).attr('data-row'),
 				    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 
 				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
@@ -1103,94 +1105,710 @@ $(function () {
 'use strict';
 
 var defaults = {
-	totalCategories: 1,
-	categoryLimit: 10,
-	currentPage: 1
+				totalCategories: 30,
+				categoryLimit: 10,
+				currentPage: 1,
+				paginationEle: 'table'
 },
     toVal = 1,
     fromVal = 1;
 
 $.fn.setPagination = function (source) {
-	$.extend(defaults, source);
+				$.extend(defaults, source);
 };
 
 function paginationCur(fv, tv) {
-	$('tbody.hidden-xs tr', '.page-account__table').hide();
-	$('tbody.hidden-lg tr', '.page-account__table').hide();
-	for (var i = fv; i < tv; i++) {
-		$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
-		$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
-	}
+				if (defaults.paginationEle === 'table') {
+								$('tbody.hidden-xs tr', '.page-account__table').hide();
+								$('tbody.hidden-lg tr', '.page-account__table').hide();
+								for (var i = fv; i < tv; i++) {
+												$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
+												$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
+								}
+				} else {
+								$(defaults.paginationEle).hide();
+								for (var i = fv; i < tv; i++) {
+												$(defaults.paginationEle).eq(i).show();
+								}
+				}
 }
-$(function () {
-	var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
-	var linkStr = '';
-	for (var i = 1; i <= showPageLinks; i++) {
-		linkStr += '<a href="javascript:void(0);">' + i + '</a>';
-	}
-	if (showPageLinks > 1) {
-		$('.pagination span').html(linkStr);
-	} else {
-		$('.pagination').hide();
-	}
 
-	$('.pagination a').click(function () {
-		var $this = $(this),
-		    $val = $this.html();
-		if ($val.toLowerCase().indexOf('prev') >= 0) {
-			var idx = $('.pagination span a.active').index();
-			$('.pagination span a:eq(' + idx + ')').prev('a').click();
-			var curidx = $('.pagination span a.active').index();
-			$('.pagination a:last').attr('href', 'javascript:void(0);');
-			if (curidx == 0) {
+$(function () {
+				var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
+				var linkStr = '';
+				for (var i = 1; i <= showPageLinks; i++) {
+								linkStr += '<a href="javascript:void(0);">' + i + '</a>';
+				}
+				if (showPageLinks > 1) {
+								$('.pagination span').html(linkStr);
+				} else {
+								$('.pagination').hide();
+				}
+
+				$('.pagination a').click(function () {
+								var $this = $(this),
+								    $val = $this.html();
+								if ($val.toLowerCase().indexOf('prev') >= 0) {
+												var idx = +$('.pagination span a.active').html() - 1,
+												    toVal = idx * defaults.categoryLimit,
+												    fromVal = toVal - defaults.categoryLimit;
+
+												if ($('.pagination span a:first').hasClass('active')) return;
+												paginationCur(fromVal, toVal);
+
+												var curidx = $('.pagination span a.active').index(),
+												    pagesLen = $('.pagination li > span a').length - 1;
+												$('.pagination span a').eq(curidx).removeClass('active');
+												$('.pagination span a').eq(curidx).prev('a').addClass('active');
+												$('.pagination a:last').attr('href', 'javascript:void(0);');
+												if (curidx == 0) {
+																$('.pagination a:eq(0)').removeAttr('href');
+												}
+								} else if ($val.toLowerCase().indexOf('next') >= 0) {
+												var idx = +$('.pagination span a.active').html() + 1,
+												    toVal = idx * defaults.categoryLimit,
+												    fromVal = toVal - defaults.categoryLimit;
+
+												if ($('.pagination span a:last').hasClass('active')) return;
+												paginationCur(fromVal, toVal);
+
+												var curidx = $('.pagination span a.active').index(),
+												    pagesLen = $('.pagination li > span a').length - 1;
+												$('.pagination span a').eq(curidx).removeClass('active');
+												$('.pagination span a').eq(curidx).next('a').addClass('active');
+												$('.pagination a:first').attr('href', 'javascript:void(0);');
+												if (curidx == pagesLen) {
+																$('.pagination a:last').removeAttr('href');
+												}
+								} else {
+												if (!$this.hasClass('active')) {
+																$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
+																$this.addClass('active').removeAttr('href');
+																toVal = defaults.categoryLimit * $val;
+																fromVal = toVal - defaults.categoryLimit;
+																paginationCur(fromVal, toVal);
+																$('.pagination a:last').attr('href', 'javascript:void(0);');
+																$('.pagination a:first').attr('href', 'javascript:void(0);');
+																if ($('.pagination span a.active').next('a').length == 0) {
+																				$('.pagination a:last').removeAttr('href');
+																}
+																if ($('.pagination span a.active').prev('a').length == 0) {
+																				$('.pagination a:first').removeAttr('href');
+																}
+												}
+								}
+				});
+				$('.pagination span a:eq(0)').click();
 				$('.pagination a:eq(0)').removeAttr('href');
+
+				$('.sortable-table__header').on('click', '.sortable-table__col', function () {
+								var $this = $(this),
+								    table = $this.closest('.sortable-table'),
+								    tbodytrs = table.find('tbody tr');
+								setTimeout(function () {
+												tbodytrs.removeAttr('style');
+												if (!$('.pagination span a:eq(0)').hasClass('active')) {
+																$('.pagination span a:eq(0)').click();
+												} else {
+																paginationCur(0, defaults.categoryLimit);
+												}
+								}, 1);
+				});
+});
+
+},{}],7:[function(require,module,exports){
+"use strict";
+
+function loadLayoutOneData(data, idx) {
+	var loadData = loadPreferanceId["Sections"][idx]["Name"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</span><a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
+	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
+	loadData += '<div class="eachstoryMpan">';
+	loadData += loadPreferanceId["Sections"][idx].Id ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].Id + '">' : '';
+	loadData += createLayoutInner1(data);
+	loadData += '</div>';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><a href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</a></div>' : '';
+	loadData += '</div>';
+
+	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
+
+	return loadData;
+}
+
+function createLayoutInner1(data) {
+	var isArticleBookmarked = data.articles[0].isArticleBookmarked ? data.articles[0].bookmarkedText : data.articles[0].bookmarkText,
+	    bookmarkTxt = data.articles[0].bookmarkText || data.articles[0].bookmarkedText ? '<span class="action-flag__label js-bookmark-label">' + isArticleBookmarked + '</span>' : '',
+	    linkableUrl0 = data.articles[0].linkableUrl ? data.articles[0].linkableUrl : '#',
+	    linkableUrl1 = data.articles[1].linkableUrl ? data.articles[1].linkableUrl : '#',
+	    linkableUrl2 = data.articles[2].linkableUrl ? data.articles[2].linkableUrl : '#',
+	    linkableUrl3 = data.articles[3].linkableUrl ? data.articles[3].linkableUrl : '#',
+	    linkableUrl4 = data.articles[4].linkableUrl ? data.articles[4].linkableUrl : '#',
+	    linkableUrl5 = data.articles[5].linkableUrl ? data.articles[5].linkableUrl : '#',
+	    linkableUrl6 = data.articles[6].linkableUrl ? data.articles[6].linkableUrl : '#',
+	    linkableUrl7 = data.articles[7].linkableUrl ? data.articles[7].linkableUrl : '#',
+	    linkableUrl8 = data.articles[8].linkableUrl ? data.articles[8].linkableUrl : '#';
+
+	var articleData = '';
+	articleData = '<section class="article-preview topic-featured-article">';
+	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">' + bookmarkTxt + ' <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
+	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="topic-featured-article__inner-wrapper">';
+	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag">' + data.articles[0].listableTitle + '</a></h3>' : '';
+	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[0].listableTopics) {
+		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
+			var getLink8 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink8 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<div class="latest-news__articles">';
+	articleData += '<section class="article-preview article-preview--small mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+	articleData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+	articleData += '</div>';
+	articleData += '<ul>';
+	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
+	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper">';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">';
+	articleData += data.articles[1].listableSummary ? data.articles[1].listableSummary : '';
+	articleData += '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[1].listableTopics) {
+		for (var i = 0; i < data.articles[1].listableTopics.length; i++) {
+			var getLink1 = data.articles[1].listableTopics[i].linkableUrl ? data.articles[1].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink1 + '">' + data.articles[1].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-preview--small mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+	articleData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+	articleData += '</div>';
+	articleData += '<ul>';
+	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
+	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
+	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper">';
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl2 + '" class="click-utag">' + data.articles[2].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[2].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[2].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[2].listableTopics) {
+		for (var i = 0; i < data.articles[2].listableTopics.length; i++) {
+			var getLink2 = data.articles[2].listableTopics[i].linkableUrl ? data.articles[2].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink2 + '">' + data.articles[2].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-preview--small topics">';
+	articleData += data.articles[3].linkableText ? '<h6>' + data.articles[3].linkableText + '</h6>' : '';
+
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag">' + data.articles[3].listableTitle + '</a></h1>' : '';
+
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag">' + data.articles[4].listableTitle + '</a></h1>' : '';
+
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag">' + data.articles[5].listableTitle + '</a></h1>' : '';
+
+	articleData += '</section>';
+	articleData += '</div>';
+
+	articleData += '<div class="latest-news__articles">';
+	articleData += '<section class="article-preview article-small-preview mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+	articleData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+	articleData += '</div>';
+	articleData += '<ul>';
+	articleData += data.articles[6].listableDate ? '<li><time class="article-metadata__date">' + data.articles[6].listableDate + '</time></li>' : '';
+	articleData += data.articles[6].linkableText ? '<li><h6>' + data.articles[6].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[6].listableTopics) {
+		for (var i = 0; i < data.articles[6].listableTopics.length; i++) {
+			var getLink6 = data.articles[6].listableTopics[i].linkableUrl ? data.articles[6].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink6 + '">' + data.articles[6].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-small-preview mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+	articleData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+	articleData += '</div>';
+	articleData += '<ul>';
+	articleData += data.articles[7].listableDate ? '<li><time class="article-metadata__date">' + data.articles[7].listableDate + '</time></li>' : '';
+	articleData += data.articles[7].linkableText ? '<li><h6>' + data.articles[7].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[7].listableTopics) {
+		for (var i = 0; i < data.articles[7].listableTopics.length; i++) {
+			var getLink7 = data.articles[7].listableTopics[i].linkableUrl ? data.articles[7].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink7 + '">' + data.articles[7].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-small-preview mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+	articleData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+	articleData += '</div>';
+	articleData += '<ul>';
+	articleData += data.articles[8].listableDate ? '<li><time class="article-metadata__date">' + data.articles[8].listableDate + '</time></li>' : '';
+	articleData += data.articles[8].linkableText ? '<li><h6>' + data.articles[8].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[8].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[8].listableAuthorByLine + '</span>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[8].listableTopics) {
+		for (var i = 0; i < data.articles[8].listableTopics.length; i++) {
+			var getLink8 = data.articles[8].listableTopics[i].linkableUrl ? data.articles[8].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink8 + '">' + data.articles[8].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+	articleData += '</div>';
+
+	return articleData;
+}
+
+function loadLayoutTwoData(data, idx) {
+	var loadData = loadPreferanceId["Sections"][idx]["Name"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</span><a class="editView mobview"  href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
+	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
+	loadData += '<div class="eachstoryMpan">';
+	loadData += loadPreferanceId["Sections"][idx].Id ? '<div class="eachstory layout2" id="' + loadPreferanceId["Sections"][idx].Id + '">' : '';
+	loadData += createLayoutInner2(data);
+	loadData += '</div>';
+
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><a href="' + loadmoreLink + '"> ' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</a></div>' : '';
+	loadData += '</div>';
+
+	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
+
+	return loadData;
+}
+
+function createLayoutInner2(data) {
+	var linkableUrl0 = data.articles[0].linkableUrl ? data.articles[0].linkableUrl : '#',
+	    linkableUrl1 = data.articles[1].linkableUrl ? data.articles[1].linkableUrl : '#',
+	    linkableUrl2 = data.articles[2].linkableUrl ? data.articles[2].linkableUrl : '#',
+	    linkableUrl3 = data.articles[3].linkableUrl ? data.articles[3].linkableUrl : '#',
+	    linkableUrl4 = data.articles[4].linkableUrl ? data.articles[4].linkableUrl : '#',
+	    linkableUrl5 = data.articles[5].linkableUrl ? data.articles[5].linkableUrl : '#',
+	    linkableUrl6 = data.articles[6].linkableUrl ? data.articles[6].linkableUrl : '#',
+	    linkableUrl7 = data.articles[7].linkableUrl ? data.articles[7].linkableUrl : '#',
+	    linkableUrl8 = data.articles[8].linkableUrl ? data.articles[8].linkableUrl : '#';
+
+	var articleData = '<div class="latest-news__articles">';
+	articleData += '<section class="article-preview article-preview--small preview2">';
+	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
+	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '<img class="topic-featured-article__image2 hidden-xs" src="/dist/img/article-img2.jpg">';
+	articleData += '<div class="article-preview__inner-wrapper">';
+	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag">' + data.articles[0].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[0].listableTopics) {
+		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
+			var getLink0 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink0 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-preview--small mobview artheight">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
+	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper">';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[1].listableTopics) {
+		for (var i = 0; i < data.articles[1].listableTopics.length; i++) {
+			var getLink1 = data.articles[1].listableTopics[i].linkableUrl ? data.articles[1].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink1 + '">' + data.articles[1].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-preview--small artheight topics">';
+	articleData += data.articles[2].linkableText ? '<h6>' + data.articles[2].linkableText + '</h6>' : '';
+
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl2 + '" class="click-utag">' + data.articles[2].listableTitle + '</a></h1>' : '';
+
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag">' + data.articles[3].listableTitle + '</a></h1>' : '';
+
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag">' + data.articles[4].listableTitle + '</a></h1>' : '';
+	articleData += '</section>';
+	articleData += '</div>';
+
+	articleData += '<div class="latest-news__articles">';
+	articleData += '<section class="article-preview article-small-preview mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[5].listableDate ? '<li><time class="article-metadata__date">' + data.articles[5].listableDate + '</time></li>' : '';
+	articleData += data.articles[5].linkableText ? '<li><h6>' + data.articles[5].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl5 + '" class="click-utag">' + data.articles[5].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[5].listableTopics) {
+		for (var i = 0; i < data.articles[5].listableTopics.length; i++) {
+			var getLink5 = data.articles[5].listableTopics[i].linkableUrl ? data.articles[5].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink5 + '">' + data.articles[5].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-preview--small artheight mobview mtop">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[6].listableDate ? '<li><time class="article-metadata__date">' + data.articles[6].listableDate + '</time></li>' : '';
+	articleData += data.articles[6].linkableText ? '<li><h6>' + data.articles[6].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper">';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[6].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[6].listableAuthorByLine + '</span>' : '';
+	articleData += '<div class="article-summary">' + data.articles[6].listableSummary ? data.articles[6].listableSummary : '' + '</div>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[6].listableTopics) {
+		for (var i = 0; i < data.articles[6].listableTopics.length; i++) {
+			var getLink6 = data.articles[6].listableTopics[i].linkableUrl ? data.articles[6].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink6 + '">' + data.articles[6].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="article-preview article-small-preview sm-article sm-articles mtop">';
+	articleData += '<section class="sm-article mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><usexmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[7].listableDate ? '<li><time class="article-metadata__date">' + data.articles[7].listableDate + '</time></li>' : '';
+	articleData += data.articles[7].linkableText ? '<li><h6>' + data.articles[7].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[7].listableTopics) {
+		for (var i = 0; i < data.articles[7].listableTopics.length; i++) {
+			var getLink7 = data.articles[7].listableTopics[i].linkableUrl ? data.articles[7].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink7 + '">' + data.articles[7].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '<section class="sm-article mobview">';
+	articleData += '<div class="article-metadata">';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><usexmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<ul>';
+	articleData += data.articles[8].listableDate ? '<li><time class="article-metadata__date">' + data.articles[8].listableDate + '</time></li>' : '';
+	articleData += data.articles[8].linkableText ? '<li><h6>' + data.articles[8].linkableText + '</h6></li>' : '';
+	articleData += '</ul>';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__inner-wrapper showarticle">';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
+	articleData += '</div>';
+	articleData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[8].listableTopics) {
+		for (var i = 0; i < data.articles[8].listableTopics.length; i++) {
+			var getLink8 = data.articles[8].listableTopics[i].linkableUrl ? data.articles[8].listableTopics[i].linkableUrl : '#';
+			articleData += '<a href="' + getLink8 + '">' + data.articles[8].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	articleData += '</div>';
+	articleData += '</section>';
+
+	articleData += '</section>';
+	articleData += '</div>';
+
+	return articleData;
+}
+
+$(function () {
+	var getLayoutInfo = $('#getLayoutInfo').val(),
+	    layout1 = true,
+	    loadLayoutData = '';
+	if (typeof loadPreferanceId !== "undefined") {
+		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+		for (var i = 0; i < loadDynData; i++) {
+			var setId = loadPreferanceId["Sections"];
+			if (setId.length) {
+				(function (idx) {
+					if (idx < loadPreferanceId["DefaultSectionLoadCount"]) {
+						$.ajax({
+							//url: '/api/articlesearch?pId=980D26EA-7B85-482D-8D8C-E7F43D6955B2&pno=1&psize=9',
+							url: '/api/articlesearch?pId=' + setId[idx].Id + '&pno=1&psize=9',
+							dataType: 'json',
+							type: 'GET',
+							cache: false,
+							async: false,
+							beforeSend: function beforeSend() {
+								$('.spinnerIcon').removeClass('hidespin');
+							},
+							success: function success(data) {
+								if (data.articles && typeof data.articles === "object" && data.articles.length) {
+									if (layout1) {
+										layout1 = false;
+										loadLayoutData = loadLayoutOneData(data, idx);
+										$('.spinnerIcon').addClass('hidespin');
+										$('.personalisationPan').append(loadLayoutData);
+									} else {
+										layout1 = true;
+										loadLayoutData = loadLayoutTwoData(data, idx);
+										$('.spinnerIcon').addClass('hidespin');
+										$('.personalisationPan').append(loadLayoutData);
+									}
+								}
+							},
+							error: function error(xhr, errorType, _error) {
+								console.log('err ' + err);
+							}
+						});
+					}
+				})(i);
 			}
-		} else if ($val.toLowerCase().indexOf('next') >= 0) {
-			var idx = $('.pagination span a.active').index();
-			$('.pagination span a:eq(' + idx + ')').next('a').click();
-			var curidx = $('.pagination span a.active').index(),
-			    pagesLen = $('.pagination li > span a').length - 1;
-			$('.pagination a:first').attr('href', 'javascript:void(0);');
-			if (curidx == pagesLen) {
-				$('.pagination a:last').removeAttr('href');
+		}
+	}
+	$('.personalisationPan').on('click', '.loadmore', function () {
+		var $this = $(this),
+		    eachstoryMpan = $this.closest('.eachstoryMpan'),
+		    eachstory = eachstoryMpan.find('.eachstory'),
+		    eachstoryId = eachstory.attr('id'),
+		    layoutCls = eachstory.attr('class'),
+		    loadLayoutData;
+
+		var layout = layoutCls.indexOf('layout1') !== -1 ? 'layout1' : 'layout2';
+
+		/*$.ajax({
+  	url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize, 
+  	dataType: 'json',
+  	type: 'GET',
+  	success: function(data){
+  		if(layout == 'layout1'){
+  			loadLayoutData = createLayoutInner1(data);
+  			$(eachstory).append(loadLayoutData);
+  		}
+  		else{
+  			loadLayoutData = createLayoutInner2(data);
+  			$(eachstory).append(loadLayoutData);
+  		}
+  	},
+  	error: function(xhr, errorType, error){
+  		console.log('err ' + err);
+  	}
+  });*/
+
+		//Below code is for testing purpose.		
+		$.ajax({
+			url: '/loaddata.json',
+			dataType: 'json',
+			type: 'GET',
+			success: function success(data) {
+				if (layout == 'layout1') {
+					loadLayoutData = createLayoutInner1(data);
+					$(eachstory).append(loadLayoutData);
+				} else {
+					loadLayoutData = createLayoutInner2(data);
+					$(eachstory).append(loadLayoutData);
+				}
+			},
+			error: function error(xhr, errorType, _error2) {
+				console.log('err ' + err);
+			}
+		});
+		// Till here for testing
+	});
+
+	var layout1Flag = true;
+	$(window).scroll(function () {
+		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
+		    eachstoryMpanLast = eachstoryMpan.last(),
+		    layoutCls = eachstoryMpan.find('.eachstory').attr('class'),
+		    eachstoryLength = eachstoryMpan.length,
+		    contentHei = $('.personalisationPan').height();
+
+		if (typeof loadPreferanceId !== "undefined") {
+			if (eachstoryLength < loadPreferanceId["Sections"].length) {
+				var eachstoryId = loadPreferanceId["Sections"][eachstoryLength]["Id"];
+			} else {
+				return;
 			}
 		} else {
-			if (!$this.hasClass('active')) {
-				$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
-				$this.addClass('active').removeAttr('href');
-				toVal = defaults.categoryLimit * $val;
-				fromVal = toVal - defaults.categoryLimit;
-				paginationCur(fromVal, toVal);
-				$('.pagination a:last').attr('href', 'javascript:void(0);');
-				$('.pagination a:first').attr('href', 'javascript:void(0);');
-				if ($('.pagination span a.active').next('a').length == 0) {
-					$('.pagination a:last').removeAttr('href');
+			return;
+		}
+
+		if ($(window).scrollTop() > contentHei - 400) {
+			var getscrollData;
+			$.ajax({
+				url: '/loaddata.json',
+				//url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno=1&psize=9',
+				data: { 'id': eachstoryId },
+				type: 'GET',
+				cache: false,
+				async: false,
+				dataType: 'json',
+				beforeSend: function beforeSend() {
+					$('.spinnerIcon').removeClass('hidespin');
+				},
+				success: function success(data) {
+					if (eachstoryLength % 2 == 0 && layout1Flag) {
+						layout1Flag = false;
+						getscrollData = loadLayoutOneData(data, eachstoryLength);
+						$('.spinnerIcon').addClass('hidespin');
+						$('.personalisationPan').append(getscrollData);
+					} else {
+						layout1Flag = true;
+						getscrollData = loadLayoutTwoData(data, eachstoryLength);
+						$('.spinnerIcon').addClass('hidespin');
+						$('.personalisationPan').append(getscrollData);
+					}
+				},
+				error: function error(xhr, errorType, _error3) {
+					console.log('xhr ' + xhr + ' errorType ' + errorType + ' error ' + _error3);
 				}
-				if ($('.pagination span a.active').prev('a').length == 0) {
-					$('.pagination a:first').removeAttr('href');
+			});
+		}
+	});
+
+	$('.main-menu__hoverable a', '.main-menu__section-wrapper').click(function (e) {
+		e.preventDefault();
+		var $this = $(this),
+		    name = $this.attr('name'),
+		    getPos = $('#' + name).position(),
+		    latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
+		    subjectHei = latestSubject.height(),
+		    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
+		    liIdx = $this.closest('li').index();
+
+		if (liIdx < allstoriesLen) {
+			$(window).scrollTop(getPos.top - subjectHei * 3);
+		} else {
+			if (typeof loadPreferanceId !== "undefined") {
+				for (var i = allstoriesLen; i <= liIdx; i++) {
+					var setId = loadPreferanceId["Sections"];
+					(function (idx) {
+						$.ajax({
+							url: '/loaddata.json', //?preferenceId='+ setId[idx].Id + '&pno=1&psize=9',
+							dataType: 'json',
+							data: { 'id': setId[idx].Id },
+							type: 'GET',
+							cache: false,
+							async: false,
+							beforeSend: function beforeSend() {
+								$('.spinnerIcon').removeClass('hidespin');
+							},
+							success: function success(data) {
+								if (idx % 2 == 0) {
+									loadLayoutData = loadLayoutOneData(data, idx);
+									$('.personalisationPan').append(loadLayoutData);
+								} else {
+									loadLayoutData = loadLayoutTwoData(data, idx);
+									$('.personalisationPan').append(loadLayoutData);
+								}
+							},
+							error: function error(xhr, errorType, _error4) {
+								console.log('err ' + err);
+							},
+							complete: function complete(xhr, status) {
+								if (status == "success" && $('#' + name).length) {
+									setTimeout(function () {
+										var getlatestPos = $('#' + name).position();
+										if (getlatestPos) {
+											$('.spinnerIcon').addClass('hidespin');
+											$(window).scrollTop(getlatestPos.top - subjectHei);
+										}
+									}, 5);
+								}
+							}
+						});
+					})(i);
 				}
 			}
 		}
 	});
-	$('.pagination span a:eq(0)').click();
-	$('.pagination a:eq(0)').removeAttr('href');
-
-	$('.sortable-table__header').on('click', '.sortable-table__col', function () {
-		var $this = $(this),
-		    table = $this.closest('.sortable-table'),
-		    tbodytrs = table.find('tbody tr');
-		setTimeout(function () {
-			tbodytrs.removeAttr('style');
-			if (!$('.pagination span a:eq(0)').hasClass('active')) {
-				$('.pagination span a:eq(0)').click();
-			} else {
-				paginationCur(0, defaults.categoryLimit);
-			}
-		}, 1);
-	});
 });
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -1390,7 +2008,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],8:[function(require,module,exports){
+},{"../controllers/analytics-controller":10,"../controllers/form-controller":12,"../jscookie":20}],9:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -1459,7 +2077,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -1478,7 +2096,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -1566,7 +2184,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],11:[function(require,module,exports){
+},{"./analytics-controller":10}],12:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -1769,7 +2387,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1837,7 +2455,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2123,7 +2741,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2248,7 +2866,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],15:[function(require,module,exports){
+},{"./analytics-controller":10}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2466,7 +3084,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],16:[function(require,module,exports){
+},{"./analytics-controller":10}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2783,7 +3401,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2974,7 +3592,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],19:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -3056,6 +3674,8 @@ require('./components/save-search-component');
 require('./components/myview-settings');
 
 require('./components/pagination');
+
+require('./components/personalisation');
 
 // OTHER CODE
 
@@ -4151,7 +4771,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/save-search-component":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/personalisation":7,"./components/save-search-component":8,"./components/video-mini":9,"./controllers/analytics-controller":10,"./controllers/bookmark-controller":11,"./controllers/form-controller":12,"./controllers/lightbox-modal-controller":13,"./controllers/pop-out-controller":14,"./controllers/register-controller":15,"./controllers/reset-password-controller":16,"./controllers/sortable-table-controller":17,"./controllers/tooltip-controller":18,"./jscookie":20,"./modal":21,"./newsletter-signup":22,"./search-page.js":23,"./selectivity-full":24,"./svg4everybody":25,"./toggle-icons":26,"./zepto.dragswap":27,"./zepto.min":28}],20:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -4292,7 +4912,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -4600,7 +5220,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -4677,7 +5297,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
+},{"./controllers/analytics-controller":10}],23:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -4689,7 +5309,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -5714,7 +6334,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -5819,7 +6439,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5836,7 +6456,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -6072,7 +6692,7 @@ exports.toggleIcons = toggleIcons;
     };
 })(Zepto);
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -6811,7 +7431,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[18])
+},{}]},{},[19])
 
 
 //# sourceMappingURL=index.js.map

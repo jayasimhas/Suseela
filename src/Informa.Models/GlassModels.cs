@@ -8543,6 +8543,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// </summary>
         [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Help_Link { get; set; }
+
+        /// <summary>
+        /// Enable Save Preferences Check Field.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 9E4188CB-B144-494D-89E8-AB05BD92E2F6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.EnableSavePreferencesCheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool EnableSavePreferencesCheck { get; set; }
     }
 
 
@@ -8584,6 +8594,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// </summary>
         [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Help_Link { get; set; }
+
+        /// <summary>
+        /// Enable Save Preferences Check Field.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 9E4188CB-B144-494D-89E8-AB05BD92E2F6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.EnableSavePreferencesCheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool EnableSavePreferencesCheck { get; set; }
     }
 
     public static partial class IMy_View_Settings_PageConstants
@@ -8601,6 +8621,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 
         public static readonly ID Help_LinkFieldId = new ID("47CDC6B1-819C-4EB5-BCE5-DC20EB9E36E0");
         public const string Help_LinkFieldName = "Help Link";
+
+        public static readonly ID EnableSavePreferencesCheckFieldId = new ID("9E4188CB-B144-494D-89E8-AB05BD92E2F6");
+        public const string EnableSavePreferencesCheckFieldName = "Help Link";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
@@ -26181,4 +26204,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Staff Root";
     }
+}
+
+
+
+namespace Informa.Models.Informa.Models.sitecore.templates.Common
+{
+    /// <summary>
+    /// IIndustries_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Industries Folder </para>	
+    /// <para>ID: c27f6f34-74dc-4a01-aa56-8e39fd4fd501</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IIndustries_FolderConstants.TemplateIdString)]
+    public partial interface IIndustries_Folder : IFolder
+    {
+    }
+
+
+    /// <summary>
+    /// IIndustries_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Industries Folder </para>	
+    /// <para>ID: c27f6f34-74dc-4a01-aa56-8e39fd4fd501</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IIndustries_Folder__Raw : IFolder
+    {
+    }
+
+    public static partial class IIndustries_FolderConstants
+    {
+
+        public const string TemplateIdString = "c27f6f34-74dc-4a01-aa56-8e39fd4fd501";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "IIndustries_Folder";
+    }
+
 }
