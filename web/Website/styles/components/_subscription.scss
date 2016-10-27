@@ -61,13 +61,13 @@
 		position:relative;
 		padding: 1rem;
 		& .accordian{
-			background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+			background: url(/dist/img/sprite-image.png) no-repeat -18px -120px;
 			height: 17px;
 			min-width: 17px;
 			display: inline-block;
 			cursor: pointer;
 			&.active{
-				background: url(/dist/img/arrow2.jpg) no-repeat 0 6px;
+				background: url(/dist/img/sprite-image.png) no-repeat 0 -100px;
 			}
 			@include breakpoint('small') {
 				display: none;
@@ -131,9 +131,22 @@
 		}
 	}
 	.maintitle{
-			background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px;
+			background: #ececec;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
+				height: 0.75rem;
+				width: 1.4375rem;
+				top: 12px;
+				right: 20px;
+			}
 		&.active{
-			background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px;
+			background: #ececec;
+			&:after {
+				background: url(/dist/img/sprite-image.png) no-repeat 0 -48px
+			}
 		}
 	}
 	.hidden-lg{ 
