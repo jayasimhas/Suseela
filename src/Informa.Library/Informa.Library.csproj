@@ -354,7 +354,6 @@
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
     <Compile Include="Search\ComputedFields\TaxonomyField.cs" />
-    <Compile Include="Search\Results\IEditorialRanking.cs" />
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
