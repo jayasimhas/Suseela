@@ -373,6 +373,18 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
+        public static Guid SaveTableauData(TableauInfo tableauInfo)
+        {
+            Guid tableauGuid = default(Guid);
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveTableauData", tableauInfo).Result;
+                tableauGuid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
+            }
+            return tableauGuid;
+
+        }
+
         public static int[] GetWidthHeightOfMediaItem(string path)
         {
             using (var client = new HttpClient(_handler, false))

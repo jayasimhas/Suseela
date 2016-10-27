@@ -15,6 +15,7 @@
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IUserPreferenceContext UserPreferences;
+        private const string DISMISS_COOKIE_NAME = "dismiss_cookie";
         public PersonalizationMessageViewModel(ITextTranslator textTranslator, IUserCompanyContext userCompanyContext,
             ISiteRootContext siterootContext, IAuthenticatedUserContext authenticatedUserContext, IUserPreferenceContext userPreferences)
         {
@@ -43,10 +44,11 @@
         {
             if(IsAuthenticated)
             {
-                return (UserPreferences.Preferences != null &&
+                return ((UserPreferences.Preferences != null &&
                        UserPreferences.Preferences.PreferredChannels != null &&
                        UserPreferences.Preferences.PreferredChannels.Count > 0) &&
-                       Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > 30;//TODO replace 30 with the actual date coming from Salesforce
+                       Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > 30) ||
+                       System.Web.HttpContext.Current.Request.Cookies[DISMISS_COOKIE_NAME] != null;//TODO replace 30 with the actual date coming from Salesforce
             }
             return true;
         }
@@ -57,7 +59,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.RightRailMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.RightRailMessage");
+                return TextTranslator.Translate("RegisteredUser.RightRailMessage");
 
             return TextTranslator.Translate("CorporateUser.RightRailMessage");
         }
@@ -68,7 +70,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.LandingPageMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.LandingPageMessage");
+                return TextTranslator.Translate("RegisteredUser.LandingPageMessage");
 
             return TextTranslator.Translate("CorporateUser.LandingPageMessage");
         }
@@ -78,7 +80,7 @@
                 return TextTranslator.Translate("IPAuthenticatedUser.ArticlePageMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.ArticlePageMessage");
+                return TextTranslator.Translate("RegisteredUser.ArticlePageMessage");
 
             return TextTranslator.Translate("CorporateUser.ArticlePageMessage");
         }

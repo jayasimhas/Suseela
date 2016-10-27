@@ -77,6 +77,32 @@ namespace Informa.Web.Controllers
     }
 
     [Route]
+    public class SaveTableauDataController : ApiController
+    {
+        private readonly SitecoreSaverUtil _sitecoreSaver;
+        private readonly ArticleUtil _articleUtil;
+        public SaveTableauDataController(SitecoreSaverUtil sitecoreSaver, ArticleUtil articleUtil)
+        {
+            _sitecoreSaver = sitecoreSaver;
+            _articleUtil = articleUtil;
+        }
+
+        [HttpPost]
+        [Authorize]
+        public Guid Post([FromBody] TableauInfo tableauInfo)
+        {
+            Guid tableauGuid = default(Guid);
+            Guid publicationGuid = default(Guid);
+            publicationGuid = new Guid(tableauInfo.PublicationGuid);
+            ArticleItem articleItem = _articleUtil.GetArticleByNumber(tableauInfo.ArticleNumber, Constants.MasterDb, publicationGuid);
+            tableauGuid = _sitecoreSaver.SaveTableauItem(articleItem, tableauInfo);
+            
+            return tableauGuid;
+        }
+
+    }
+
+    [Route]
     public class SaveArticleTextByGuidController : ApiController
     {
         private readonly ISitecoreService _sitecoreMasterService;

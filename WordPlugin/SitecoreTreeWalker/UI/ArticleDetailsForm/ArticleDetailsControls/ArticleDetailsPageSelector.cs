@@ -15,7 +15,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 	{
 		public List<MenuSelectorItem> MenuItems = new List<MenuSelectorItem>();
 		public List<ArticleDetailsPageUserControl> Pages = new List<ArticleDetailsPageUserControl>();
-
 		private ArticleDetail _parent;
 
 		public ArticleDetailsPageSelector()
@@ -311,7 +310,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 MessageBox.Show("Vertical Information Not Available.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
-            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.Name == null)
+            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.ID == default(Guid))
             {
                 //MessageBox.Show("Taxonomy not exists fot vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;

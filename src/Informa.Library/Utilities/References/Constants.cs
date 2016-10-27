@@ -11,7 +11,9 @@ namespace Informa.Library.Utilities.References
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
-		public const string AuthorsIndexName = "informa_authors";
+        public const string TableauPrefix = "[T#:";
+
+        public const string AuthorsIndexName = "informa_authors";
 
 
         public static string ContentRootNode = ItemIdResolver.GetItemIdByKey("ContentRootNode");
@@ -50,6 +52,7 @@ namespace Informa.Library.Utilities.References
 		public const string RoseSheetNodeIntials = "RS";
 
         public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
+
         public const string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
 
         public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
@@ -77,7 +80,6 @@ namespace Informa.Library.Utilities.References
                 };
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
-		
 		public static string VWBSearchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
 
 		public static class QueryString

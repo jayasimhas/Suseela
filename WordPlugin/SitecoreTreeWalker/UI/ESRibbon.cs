@@ -106,7 +106,10 @@ namespace InformaSitecoreWord.UI
 			try
 			{
 				IFrameControl myUserControl = new IFrameControl();
-				CheckLoginAndPerformAction(myUserControl, "Multimedia");
+                myUserControl.IsArticleCreated = SaveToSitecoreBtn.Enabled;//Make sure article is created, Sape Start,Oct2016
+                myUserControl.ArticleNumber = this.GetArticleNumber();
+                //myUserControl.PublicationGuid = this.GetPublicationGuid();//, Sape End,Oct2016
+                CheckLoginAndPerformAction(myUserControl, "Multimedia");
 			}
 			catch
 			{
@@ -295,7 +298,14 @@ namespace InformaSitecoreWord.UI
 			return ArticleDetails.ArticleNumber;
 		}
 
-		private string GetPreviewUrl(bool isMobile)
+        public string GetPublicationGuid()
+        {
+            SitecoreAddin.TagActiveDocument();
+            _documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+            return _documentCustomProperties.PublicationGuid;
+        }
+
+        private string GetPreviewUrl(bool isMobile)
 		{
 			string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
 			string domain = Constants.EDITOR_ENVIRONMENT_SERVERURL;

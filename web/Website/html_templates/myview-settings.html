@@ -123,7 +123,14 @@
 						<p>tellus at nibh faucibus, retrum euismod lorem consequat. Pellentesque sit amet pretium mi.</p>
 					</div>
 					
-					<div class="alert-error js-form-error js-form-error-Required">
+					<div class="alert-error myview-error js-form-error js-form-error-Required">
+						<svg class="alert__icon">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+						</svg>
+						<p class="page-account-contact__error">Your preferences are not saved. Please try again.</p>
+					</div>
+					
+					<div class="alert-error register-error js-form-error js-form-error-Required">
 						<svg class="alert__icon">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
 						</svg>
@@ -148,6 +155,8 @@
 						<h4>You didn't save your preferences. <br /> Please save your preferences.</h4>
 					</div>
 					<input type="hidden" value="0" id="validatePreference" />
+					
+					<input type="hidden" value="false" id="isChannelBasedRegistration" />
 				</div> 
 				
 				<div id="allPublicationsPan"> 
@@ -176,13 +185,13 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus">
-									<th colspan="3" class="nopad">
+									<th colspan="3" class="nopad pickTxt">
 										<hr />
 									</th>
-								</tr> 
+								</tr>
 								<tr class="accordionStatus">
 									<th colspan="2">
-										<p class="pickTxt">Pick and choose.</p> 
+										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
@@ -196,11 +205,16 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus hideRow flwLbl">
-									<th colspan="3">
+									<th colspan="2">
 										<div>
-											<span class="followlbl mtp hideBtn">FOLLOW</span>
+											<span class="followlbl mtp">FOLLOW</span>
 											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
 											<input type="hidden" class="lableStatus" value="" />
+										</div>
+									</th>
+									<th>
+										<div class="accordionImg">
+											<a class="mobileMode" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -500,8 +514,8 @@
 							<thead class="hidden-large">
 								<tr>
 									<th class="wd-55 firstrow">
-										<h2 data-publication="name2">Publication 2 Publication 2 Publication 2 Publication 2 Publication 2 </h2>
-										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+										<h2 data-publication="name3">Publication 2</h2>
+										<div class="subscribe subscribed" data-subscribe-status="SUBSCRIBED"><a href="">SUBSCRIBED</a></div>
 									</th>
 									<th class="wd-25 firstrow"></th>
 									<th class="wd-15 firstrow">
@@ -518,14 +532,24 @@
 									<th colspan="3" class="nopad">
 										<hr />
 									</th>
-								</tr> 
-								<tr class="accordionStatus">
+								</tr>
+								<tr class="showinview">
+									<th colspan="3">
+										<p>You are not subscribed to the publication. You can still add this to 'My View' but note you will not able to view the full content article.</p>
+									</th>
+								</tr>
+								<tr class="accordionStatus hideRow">
+									<th colspan="3" class="nopad pickTxt">
+										<hr />
+									</th>
+								</tr>
+								<tr class="accordionStatus hideRow">
 									<th colspan="2">
 										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="mobileMode" href="javascript: void(0);"></a>
+											<a class="mobileMode expanded" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -535,18 +559,23 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus flwLbl">
-									<th colspan="3">
+									<th colspan="2">
 										<div>
 											<span class="followlbl mtp">FOLLOW</span>
 											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
 											<input type="hidden" class="lableStatus" value="followlbl" />
 										</div>
 									</th>
+									<th>
+										<div class="accordionImg">
+											<a class="mobileMode" href="javascript: void(0);"></a>
+										</div>
+									</th>
 								</tr>
 								<tr class="accordionStatus hideRow flwBtn">
 									<th colspan="3">
 										<div class="smfollowingBtn">
-											<span class="followAllBtn fr">Follow All</span>
+											<span class="followAllBtn">Follow All</span>
 											<span class="unfollowAllBtn hideBtn">Unfollow All</span>
 										</div>
 									</th>
@@ -704,21 +733,21 @@
 								</tr>
 								<tr class="showinview">
 									<th colspan="3">
-										<p class="nosubscr">You are not subscribed to the publication. You can still add this to 'My View' but note you will not able to view the full content article.</p>
+										<p>You are not subscribed to the publication. You can still add this to 'My View' but note you will not able to view the full content article.</p>
 									</th>
 								</tr>
-								<tr class="accordionStatus">
-									<th colspan="3" class="nopad">
+								<tr class="accordionStatus hideRow">
+									<th colspan="3" class="nopad pickTxt">
 										<hr />
 									</th>
 								</tr>
-								<tr class="accordionStatus">
+								<tr class="accordionStatus hideRow">
 									<th colspan="2">
 										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="mobileMode" href="javascript: void(0);"></a>
+											<a class="mobileMode expanded" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -728,11 +757,16 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus flwLbl">
-									<th colspan="3">
+									<th colspan="2">
 										<div>
 											<span class="followlbl mtp">FOLLOW</span>
 											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
 											<input type="hidden" class="lableStatus" value="followlbl" />
+										</div>
+									</th>
+									<th>
+										<div class="accordionImg">
+											<a class="mobileMode" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -876,7 +910,7 @@
 					
 				</div>
 				
-			<div class="alert-error js-form-error js-form-error-Required">
+			<div class="alert-error register-error js-form-error js-form-error-Required">
 				<svg class="alert__icon">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
 				</svg>
@@ -885,7 +919,7 @@
 			
 			<div class="saveoption"><span class="helplink">Any Questions? <a href="/contact-us">Get in touch</a></span> 
 				<div class="complete-settings">
-				 <span class="registrationBtn" href="javascript: void(0);">Complete your registration</span>
+				 <a class="registrationBtn" href="http://www.google.com/">Complete your registration</a>
 				<span class="gotoview"><a href="javascript: void(0);">GO TO MY VIEW</a></span></div>
 		        </div> 
 			</div>

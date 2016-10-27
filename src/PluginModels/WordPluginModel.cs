@@ -332,6 +332,25 @@ namespace PluginModels
         }
     }
 
+    public struct TableauInfo
+    {
+        public string PageTitle { get; set; }
+        public string JSAPIUrl { get; set; }
+        public string DashboardWidth { get; set; }
+        public string DashboardHeight { get; set; }
+        public string HostUrl { get; set; }
+        public string DashboardName { get; set; }
+        public string Filter { get; set; }
+        public string TableauTicket { get; set; }
+        public bool DisplayTabs { get; set; }
+        public bool DisplayToolbars { get; set; }
+        public bool AllowCustomViews { get; set; }
+        public string LandingPageLink { get; set; }
+        public string LandingPageLinkLabel { get; set; }
+        public string ArticleNumber { get; set; }
+        public string PublicationGuid { get; set; }
+    }
+
     public class WordStyleStruct
     {
         public string WordStyle { get; set; }

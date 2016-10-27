@@ -23,18 +23,25 @@ key: __icon
 content-length: 21
 
 Apps/32x32/Pencil.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 6187cbb0-4391-4374-a45c-91602ee36a15
+revision: 87b954df-3927-406c-991e-7edaeb6a6d5a
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 4
+content-length: 21
 
-Next
+Complete Registration
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6187cbb0-4391-4374-a45c-91602ee36a15
+87b954df-3927-406c-991e-7edaeb6a6d5a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161017T144336Z
+20160308T154135Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

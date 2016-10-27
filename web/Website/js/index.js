@@ -28,6 +28,7 @@ import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
+import './components/personalisation';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
@@ -178,10 +179,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-$(document).ready(function() {
+$(document).ready(function(){
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
+			Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
 			$('.messaging_webUsers').remove(); 
 			$('.messaging_webUsers_white').remove(); 
 		});

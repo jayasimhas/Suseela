@@ -49,14 +49,31 @@
             if (xmlResponse != null && xmlResponse.UserSelectedPreferences!=null)
             {
                 return new UserPreferences {
-                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels.Select(ch=>new Channel { ChannelCode=ch.code, ChannelName=ch.name }).ToList(),
-                    PreferredTopics =xmlResponse.UserSelectedPreferences.topics.Select(tp=>new Topic {  TopicCode=tp.code, TopicName=tp.name  }).ToList()
+                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels
+                    .Select(ch=>new Channel
+                    {
+                        ChannelCode = ch.code,
+                        ChannelName = ch.name,
+                        IsFollowing = ch.isfollowing,
+                        Topics = ch.topics.Select(tp => new Topic { TopicCode = tp.code, TopicName = tp.name, IsFollowing = tp.isfollowing }).ToList()
+                    }).ToList()                   
                 };
-
             }
-          
 
-            var preferencesResponse = Service.Execute(s => s.IN_queryProfilePreferences(username));
+            IN_ProfilePreferencesQueryResponse preferencesResponse = null;
+            try
+            {
+                preferencesResponse = Service.Execute(s => s.IN_queryProfilePreferences(username));
+            }
+            catch(Exception exp)
+            {
+                return null;
+            }
+
+            if (preferencesResponse == null)
+            {
+                return null;
+            }
 
             if (!preferencesResponse.IsSuccess() || preferencesResponse.channelPreferences == null)
             {
@@ -97,25 +114,28 @@
         [XmlElement("code")]
         public string code { get; set; }
         [XmlElement("name")]
-        public string name { get; set; }        
+        public string name { get; set; }
+        [XmlElement("isfollowing")]
+        public bool isfollowing { get; set; }
+        [XmlArray("topics")]
+        public List<topicxml> topics { get; set; }
     }
-
+    
     [XmlType("topic")]
     public class topicxml
     {
         [XmlElement("code")]
         public string code { get; set; }
         [XmlElement("name")]
-        public string name { get; set; }        
+        public string name { get; set; }
+        [XmlElement("isfollowing")]
+        public bool isfollowing { get; set; }
     }
 
     public class Preferences
     {
         [XmlArray("preferredchannels")]
         public List<channelxml> channels { get; set; }
-        [XmlArray("preferredtopics")]
-        public List<topicxml> topics { get; set; }
-
     }
     [XmlRoot("QueryPreferenceResponse")]
     public class QueryPreferenceResponse

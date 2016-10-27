@@ -327,6 +327,7 @@
     <Compile Include="Article\Publishing\Events\PublishMediaItemsArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\ArticleSearchRequest.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
     <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
@@ -334,7 +335,14 @@
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\IArticleSearchRequest.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Article\Search\ILoadMore.cs" />
+    <Compile Include="Article\Search\IPersonalizedArticle.cs" />
+    <Compile Include="Article\Search\IPersonalizedArticleSearchResults.cs" />
+    <Compile Include="Article\Search\LoadMore.cs" />
+    <Compile Include="Article\Search\PersonalizedArticleListItem.cs" />
+    <Compile Include="Article\Search\PersonalizedArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Authors\AuthorIndexClient.cs" />
@@ -345,6 +353,8 @@
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
+    <Compile Include="Search\ComputedFields\TaxonomyField.cs" />
+    <Compile Include="Search\Results\IEditorialRanking.cs" />
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />

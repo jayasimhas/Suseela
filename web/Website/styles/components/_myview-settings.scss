@@ -19,7 +19,7 @@
 }
 @mixin getMove(){
 	float: right;
-	margin-top: 0.1875rem;
+	margin-top: 0.4375rem; 
 	position: relative;
 	span{
 		height: 0.125rem;
@@ -31,7 +31,7 @@
 	.move{
 		position: absolute;
 		left: -2.6875rem;
-		top: 1px;
+		top: -3px;
 		text-transform: uppercase;
 		font-size: 0.75em;
 		display: none;
@@ -42,7 +42,6 @@
 }
 @mixin unfollowBtnLbl(){
 	@include folow-btn(auto, 2rem);
-	padding: 0 20px;
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
@@ -423,6 +422,9 @@
 			}
 			.wd-25{
 				width: 25%;
+				&.pbot{
+					padding-left: 0rem;
+				}
 				@include breakpoint('small') {
 					width: 20%;
 					padding: 0.5rem 0rem 0rem 0.625rem;

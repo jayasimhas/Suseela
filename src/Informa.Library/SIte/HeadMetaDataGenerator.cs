@@ -27,6 +27,7 @@ namespace Informa.Library.Site
     {
         string GetMetaHtml();
         string GetCustomTags(int i);
+
     }
 
     [AutowireService]
@@ -198,31 +199,31 @@ namespace Informa.Library.Site
             tags = Regex.Replace(temp, @"\r\n?|\n|\t", string.Empty);
         }
 
-        public string GetCustomTags(int i)
+       public string GetCustomTags(int i)
+       {
+        bool displayInHead = i == 0 ? true : false;
+        var siteRoot = _dependencies.SiteRootContext.Item;
+        var globalItemFolder = siteRoot._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("Globals"));
+        if (globalItemFolder != null)
         {
-            bool displayInHead = i == 0 ? true : false;
-            var siteRoot = _dependencies.SiteRootContext.Item;
-            var globalItemFolder = siteRoot._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("Globals"));
-            if (globalItemFolder != null)
+            var customtagsFolder = globalItemFolder._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("CustomTags"));
+            if (customtagsFolder != null && customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Any())
             {
-                var customtagsFolder = globalItemFolder._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("CustomTags"));
-                if (customtagsFolder != null && customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Any())
+                StringBuilder tagBuilder = new StringBuilder();
+                foreach (var ctag in customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Where(p => p.Display_In_Head.Equals(displayInHead)))
                 {
-                    StringBuilder tagBuilder = new StringBuilder();
-                    foreach (var ctag in customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Where(p=>p.Display_In_Head.Equals(displayInHead)))
-                    {
                         tagBuilder.Append(ctag.Custom_Tag);
-                    }
-                    return tagBuilder.ToString();
+                }
+                return tagBuilder.ToString();
 
-                }
-                else
-                {
-                    return string.Empty;
-                }
             }
-            return string.Empty;
-
+            else
+            {
+                return string.Empty;
+            }
         }
+        return string.Empty;
+       }
+
     }
 }

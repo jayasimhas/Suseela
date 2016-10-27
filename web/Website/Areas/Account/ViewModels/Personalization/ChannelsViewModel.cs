@@ -1,6 +1,5 @@
 ﻿namespace Informa.Web.Areas.Account.ViewModels.Personalization
 {
-    using Glass.Mapper.Sc;
     using Informa.Library.Globalization;
     using Informa.Library.Services.Global;
     using Informa.Library.Site;
@@ -10,7 +9,6 @@
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Jabberwocky.Autofac.Attributes;
-    using Jabberwocky.Glass.Models;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
@@ -30,8 +28,7 @@
         ISiteRootContext siterootContext,
         IGlobalSitecoreService globalService,
         IUserPreferenceContext userPreferences,
-        IUserSubscriptionsContext userSubscriptionsContext,
-        ISitecoreContext sitecoreContext)
+        IUserSubscriptionsContext userSubscriptionsContext)
         {
             TextTranslator = translator;
             SiterootContext = siterootContext;
@@ -61,27 +58,36 @@
 
         public string PickAndChooseLableMobileText => TextTranslator.Translate("MyViewSettings.PickAndChooseLableMobileText");
 
-        public string PublicationSubscriptionSubTitle => GetPublictionSubscriptionSubTitle();
+        public string SubscribeUrl => SiterootContext.Item?.Subscribe_Link?.Url;
+
+        public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
+        public bool isChannelBasedRegistration { get; set; }
+        public bool isFromRegistration { get; set; }
+        public bool enableSavePreferencesCheck { get; set; }
         public IList<Channel> Channels => GetChannels();
 
-        public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null
-                || !UserPreferences.Preferences.PreferredChannels.Any();
+        public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.IsNewUser;
 
         private IList<Channel> GetChannels()
         {
+
             Item CurrentItem = Sitecore.Context.Item;
-            string isFromRegistration = CurrentItem["IsFromRegistration"];
-            if (!string.IsNullOrEmpty(isFromRegistration)&& isFromRegistration=="1")
+            isFromRegistration = string.IsNullOrEmpty(CurrentItem["IsFromRegistration"]) ? false : true;
+            enableSavePreferencesCheck = string.IsNullOrEmpty(CurrentItem["EnableSavePreferencesCheck"]) ? false : true;
+            if (isFromRegistration)
             {
-                return GetPublicationAsChannel();
+                return GetPublicationDetailsForRegistration();
             }
             else
             {
                 return GetAllChannels();
             }
-
         }
-        private IList<Channel> GetPublicationAsChannel()
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Publication details
+        /// </summary>
+        /// <returns>Publication and Channels details</returns>
+        private IList<Channel> GetPublicationDetailsForRegistration()
         {
             var channels = new List<Channel>();
 
@@ -93,7 +99,7 @@
                 Channel channel = null;
                 channel = new Channel();
                 channel.ChannelId = homeItem._Id.ToString();
-                channel.ChannelName = homeItem._Parent._Name;               
+                channel.ChannelName = homeItem._Parent._Name;
                 channel.ChannelCode = SiterootContext.Item.Publication_Code;
                 channel.ChannelLink = homeItem._Url;
                 channel.ChannelOrder = 1;
@@ -102,12 +108,16 @@
                 channel.IsSubscribed = true;
                 //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
 
-                GetChannelsAsTopics(channel);
+                GetTopicsForRegistration(channel);
                 channels.Add(channel);
             }
             return channels;
         }
-        private void GetChannelsAsTopics(Channel channel)
+        /// <summary>
+        /// IPMP-752 :Content Customization during registration: Get Topic details
+        /// </summary>
+        /// <param name="channel">Channel object</param>
+        private void GetTopicsForRegistration(Channel channel)
         {
             channel.Topics = new List<Topic>();
 
@@ -122,26 +132,57 @@
                 {
                     var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
 
-                    if (channelPages != null && channelPages.Any())
+                    //channel based content customization registration
+                    if (channelPages.Count() > 1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase))
                     {
-                        Topic topic = null;
-                        foreach (IChannel_Page channelPage in channelPages)
+                        isChannelBasedRegistration = true;
+                        if (channelPages != null && channelPages.Any())
                         {
-                            topic = new Topic();
-                            topic.TopicId = channelPage._Id.ToString();
-                            topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
-                            topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                            topic.TopicOrder = GetChannelOrder(channelPage);
+                            Topic topic = null;
+                            foreach (IChannel_Page channelPage in channelPages)
+                            {
+                                topic = new Topic();
+                                topic.TopicId = channelPage._Id.ToString();
+                                topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
+                                topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
 
-                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                            topic.IsSubscribed = true;
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
-                            channel.Topics.Add(topic);
+                                // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
+                                topic.IsSubscribed = true;
+                                //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
+                                channel.Topics.Add(topic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //topic based content customization registration
+                        isChannelBasedRegistration = false;
+                        var channelPage = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>().FirstOrDefault();
+                        var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                        if (pageAssetsItem != null)
+                        {
+                            var topics = pageAssetsItem._ChildrenWithInferType.
+                                OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                            if (topics != null && topics.Any())
+                            {
+                                Topic topic = null;
+                                foreach (Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic
+                                    topicItem in topics)
+                                {
+                                    topic = new Topic();
+                                    topic.TopicId = topicItem._Id.ToString();
+                                    topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                                    topic.TopicCode = topicItem.Navigation_Code;
+                                    topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
+                                    channel.Topics.Add(topic);
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+
 
         private IList<Channel> GetAllChannels()
         {
@@ -168,14 +209,9 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
-                            channel.ChannelOrder = GetChannelOrder(channelPage);
-
-                            // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                            channel.IsSubscribed = true;
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
-
+                            SetChannelOrderAndStus(channelPage, channel);
+                            channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).Any();
                             GetTopics(channel, channelPage);
-
                             channels.Add(channel);
                         }
                     }
@@ -184,19 +220,20 @@
 
             return channels;
         }
-        private int GetChannelOrder(IChannel_Page channelPage)
+
+        private void SetChannelOrderAndStus(IChannel_Page channelPage, Channel channel)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
-                    Where(ch => ch.ChannelCode.Equals(channelPage.Title.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                    Where(ch => ch.ChannelCode.Equals(channelPage.Channel_Code.ToString(), StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (preferredChannel != null)
                 {
-                    return preferredChannel.ChannelOrder;
+                    channel.ChannelOrder = preferredChannel.ChannelOrder;
+                    channel.IsFollowing = preferredChannel.IsFollowing;
                 }
             }
-            return 0;
         }
 
         private void GetTopics(Channel channel, IChannel_Page channelPage)
@@ -216,45 +253,37 @@
                     {
                         topic = new Topic();
                         topic.TopicId = topicItem._Id.ToString();
-                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Display_Text) ? topicItem.Title : topicItem.Display_Text;
-                        topic.TopicCode = string.IsNullOrWhiteSpace(topicItem.Topic_Code) ? topicItem.Title : topicItem.Topic_Code;
-                        topic.TopicOrder = GetTopicOrder(channel, topicItem);
-                        topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
+                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
+                        topic.TopicCode = topicItem.Navigation_Code;
+                        GetTopicOrderAndStatus(channel, topicItem, topic);
                         channel.Topics.Add(topic);
                     }
                 }
             }
         }
 
-        private int GetTopicOrder(Channel channel, Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicPage)
+        private void GetTopicOrderAndStatus(Channel channel, Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicPage, Topic topic)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null
                 && UserPreferences.Preferences.PreferredChannels.Any())
             {
                 var preferredChannel = UserPreferences.Preferences.PreferredChannels.
                     Where(ch => ch.ChannelCode.Equals(channel.ChannelCode, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-                if (preferredChannel != null)
+                if (preferredChannel != null && preferredChannel.Topics != null && preferredChannel.Topics.Any())
                 {
-                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode.Equals(topicPage.Title.ToString(),
+                    var preferredTopic = preferredChannel.Topics.Where(t => t.TopicCode.Equals(topicPage.Navigation_Code.ToString(),
                         StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                     if (preferredTopic != null)
                     {
-                        return preferredTopic.TopicOrder;
+                        topic.TopicOrder = preferredTopic.TopicOrder;
+                        topic.IsFollowing = IsNewUser ? channel.IsFollowing : preferredTopic.IsFollowing;
                     }
                 }
+                if (channel.IsFollowing && UserPreferences.Preferences.IsNewUser)
+                {
+                    topic.IsFollowing = true;
+                }
             }
-
-            return 0;
-        }
-
-        private string GetPublictionSubscriptionSubTitle()
-        {
-            Item CurrentItem = Sitecore.Context.Item;
-            string isFromRegistration = CurrentItem["IsFromRegistration"];
-            if (!string.IsNullOrEmpty(isFromRegistration) && isFromRegistration == "1")            
-             return   Sitecore.Context.Item["PublicationSubscriptionSubTitle"].ToString() ?? string.Empty;         
-            else           
-               return string.Empty;            
         }
     }
 }

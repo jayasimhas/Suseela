@@ -21,21 +21,38 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 		private static readonly MemoryCache Cache = new MemoryCache("SourceItems");
 
-		/// <summary>
-		/// This is the list that you will compare the imported values against
-		/// </summary>
-		public string SourceList { get; set; }
-
-		public IEnumerable<Item> GetSourceItems(Database db)
+        public static List<string> TaxonomyList = new List<string>();
+        /// <summary>
+        /// This is the list that you will compare the imported values against
+        /// </summary>
+        public string SourceList { get; set; }
+        private static object _someDataCacheLock = new object();
+        public IEnumerable<Item> GetSourceItems(Database db)
 		{
-			if (db == null) return null;
+            
+
+            if (db == null) return null;
 
 			var item = db.GetItem(SourceList);
 
 			if (item == null) return null;
 
-			return Cache.AddOrGetExisting($"{db.Name}{SourceList}", item.Axes.GetDescendants(), DateTimeOffset.MaxValue) as IEnumerable<Item>;
-		} 
+            var _cacheResult = Cache.AddOrGetExisting($"{db.Name}{SourceList}", item.Axes.GetDescendants(), DateTimeOffset.MaxValue);
+            if (_cacheResult != null)
+            {
+                return _cacheResult as IEnumerable<Item>;
+            }
+            else
+            {
+              lock(_someDataCacheLock)
+                {
+                    _cacheResult = Cache.AddOrGetExisting($"{db.Name}{SourceList}", item.Axes.GetDescendants(), DateTimeOffset.MaxValue) ;
+                }
+               
+               
+            }
+            return _cacheResult as IEnumerable<Item>;
+        } 
 
 		public string OldSourceList { get; set; }
 		public string FieldName { get; set; }
@@ -83,19 +100,29 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			//if you find one then store the id
 			if (!t.Any())
 				return;
+           
 
-			Field f = newItem.Fields[NewItemField];
+              if(NewItemField == "Taxonomy") {
+
+                TaxonomyList.Add(t.First().ID.ToString());
+
+                                              }
+            else
+            { 
+            Field f = newItem.Fields[NewItemField];
 			if (f == null)
 				return;
 
 			f.Value = t.First().ID.ToString();
-		}
+            }
 
-		#endregion IBaseField
+        }
 
-		#region Methods
+        #endregion IBaseField
 
-		public void FillTaxonomyField(IDataMap map, ref Item newItem, string importValue, Dictionary<string, string> mappingDictionary)
+        #region Methods
+
+        public void FillTaxonomyField(IDataMap map, ref Item newItem, string importValue, Dictionary<string, string> mappingDictionary)
 		{
 			// Get target Taxonomy Field
 			var field = newItem.Fields[NewItemField];

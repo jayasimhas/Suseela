@@ -75,7 +75,7 @@ namespace Informa.Web.Areas.Article.Controllers
         {
             var siteRoot = SiteRootContext.Item;
 
-            // VERIFY CAPTCHA
+            // VERIFY CAPTCHA // Commenting to test Email functionality as we do not have domain specific captcha keys
             if (!RecaptchaService.Verify(request.RecaptchaResponse))
             {
                 return Ok(new

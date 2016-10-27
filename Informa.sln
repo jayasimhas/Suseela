@@ -37,6 +37,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE348589
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{1E22B878-107D-452C-91B6-F02F8C7796E6}"
 	ProjectSection(SolutionItems) = preProject
+		config\env\BetaAgraCD.properties = config\env\BetaAgraCD.properties
+		config\env\BetaCD.properties = config\env\BetaCD.properties
+		config\env\BetaCM.properties = config\env\BetaCM.properties
 		config\env\default.properties = config\env\default.properties
 		config\env\dev.properties = config\env\dev.properties
 		config\env\intCD.properties = config\env\intCD.properties
@@ -51,6 +54,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 		config\env\stageCD.properties = config\env\stageCD.properties
 		config\env\stageCM.properties = config\env\stageCM.properties
 		config\env\uat.properties = config\env\uat.properties
+		config\env\UATCD.properties = config\env\UATCD.properties
+		config\env\UATCM.properties = config\env\UATCM.properties
 		config\env\vagrant.properties = config\env\vagrant.properties
 	EndProjectSection
 EndProject
@@ -136,7 +141,6 @@ Global
 		{8D55795F-0311-4403-AC37-EB5F64BF57A4}.WordPlugin-Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D55795F-0311-4403-AC37-EB5F64BF57A4}.WordPlugin-Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8DB4F0-C109-4D7B-81BD-273A60645337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E8DB4F0-C109-4D7B-81BD-273A60645337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8DB4F0-C109-4D7B-81BD-273A60645337}.Debug-NoTds|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E8DB4F0-C109-4D7B-81BD-273A60645337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8DB4F0-C109-4D7B-81BD-273A60645337}.Release-NoTds|Any CPU.ActiveCfg = Release|Any CPU

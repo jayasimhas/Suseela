@@ -1278,6 +1278,112 @@ section: Alerts
   100% {
     opacity: 0; } }
 
+.agroBuyers h1 {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+.agroBuyers .sub-heading-text {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #231f20;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  font-size: 1.5em;
+  line-height: 30px; }
+
+.agroBuyers .buyers-guide-listing {
+  width: 100%;
+  float: left;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+  .agroBuyers .buyers-guide-listing .buyers-guide-row {
+    width: 100%;
+    float: left; }
+    .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
+      width: 30%;
+      float: left;
+      margin-top: 12px;
+      margin-top: 0.75rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      margin-right: 3%; }
+      @media (max-width: 480px) {
+        .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
+          width: 100%; } }
+      .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
+        width: 100%; }
+        .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
+          width: 100%; }
+      .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-right__title {
+        font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        font-style: normal; }
+
+.agroBuyers .buyers-guide-listing-link {
+  width: 100%;
+  float: left;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+  .agroBuyers .buyers-guide-listing-link .buyers-guide-row {
+    width: 100%;
+    float: left; }
+    .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
+      width: 45%;
+      float: left;
+      margin-top: 12px;
+      margin-top: 0.75rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      margin-right: 3%; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
+        width: 100%; }
+        .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image img {
+          width: 100%; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-right__title {
+        font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        font-style: normal;
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.mobile-table-exit {
+        margin-top: 16px;
+        margin-top: 1rem;
+        font-family: "PT Serif", Georgia, serif;
+        font-style: regular;
+        font-weight: 400;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 30px; }
+
+.agroBuyers hr {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+.agroBuyers .contact_terms {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  clear: both;
+  font-family: "PT Serif", Georgia, serif;
+  font-style: regular;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  .agroBuyers .contact_terms .orange {
+    color: #F5821F; }
+
 .banner {
   margin-bottom: 32px;
   margin-bottom: 2rem;
@@ -3023,8 +3129,8 @@ body.lightboxed {
   .main-menu__section {
     border-bottom: 1px solid #d1d3d4;
     margin: 0;
-    padding: 25px 0;
-    padding: 1.5625rem 0;
+    padding: 16px 0;
+    padding: 1rem 0;
     background-color: #f1f2f2; }
   .main-menu__section-title, .main-menu__section-link {
     padding: 10px 0;
@@ -3035,8 +3141,8 @@ body.lightboxed {
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 1.2px;
-    padding-left: 33px;
-    padding-left: 2.0625rem;
+    padding-left: 24px;
+    padding-left: 1.5rem;
     text-transform: uppercase;
     width: 100%; }
   .main-menu__arrow-icon, .facets__button--toggle-section {
@@ -3064,8 +3170,8 @@ body.lightboxed {
             transform-origin: top;
     max-height: 0; }
   .main-menu__footer-link {
-    padding: 0 0 0 33px;
-    padding: 0 0 0 2.0625rem;
+    padding: 0 0 0 24px;
+    padding: 0 0 0 1.5rem;
     line-height: 32px;
     line-height: 2rem;
     margin: 0;
@@ -3431,7 +3537,8 @@ header .header-account-access {
   background: #f1f2f2;
   clear: both;
   border-top: 4px solid #be1e2d;
-  padding: 0 15px 0 25px;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
   position: relative;
   float: left;
   line-height: 20px;
@@ -3464,16 +3571,13 @@ header .header-account-access {
     font-size: 0.9375em;
     font-weight: 400;
     position: relative;
-    float: left;
-    padding-bottom: 30px; }
+    float: left; }
     .messaging_webUsers .button-msg-webUser .msg_link {
       float: left;
       margin-top: 10px; }
     .messaging_webUsers .button-msg-webUser .find_more {
       float: right;
-      text-transform: uppercase;
-      padding-top: 6px;
-      padding-bottom: 6px; }
+      text-transform: uppercase; }
     @media (max-width: 480px) {
       .messaging_webUsers .button-msg-webUser .msg_link {
         display: block;
@@ -3490,9 +3594,7 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both;
-    padding-top: 4px;
-    padding-top: 0.3rem; }
+    clear: both; }
     .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
       background: url("/dist/img/dismiss.png") no-repeat right top;
       padding-right: 15px; }
@@ -3505,8 +3607,8 @@ header .header-account-access {
   clear: both;
   border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 0 32px;
-  padding: 0 2rem;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
@@ -3515,9 +3617,7 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both;
-    padding-top: 4px;
-    padding-top: 0.3rem; }
+    clear: both; }
     .messaging_webUsers_white .msg_dismiss a, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers_white .msg_dismiss .mobile-table-exit {
       background: url("/dist/img/dismiss.png") no-repeat right top;
       padding-right: 15px; }
@@ -3530,11 +3630,7 @@ header .header-account-access {
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    line-height: 30px;
-    padding-top: 19px;
-    padding-top: 1.1875rem;
-    padding-bottom: 22px;
-    padding-bottom: 1.4rem; }
+    line-height: 30px; }
     .messaging_webUsers_white .msg-text h3, .messaging_webUsers_white .msg-text .article-call-to-action__title {
       font-family: 'Roboto';
       font-style: normal;
@@ -3764,8 +3860,8 @@ header .header-account-access {
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines span {
             height: 2px;
@@ -3779,7 +3875,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -3803,8 +3899,8 @@ header .header-account-access {
               background: #ffffff; } }
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
             float: right;
-            margin-top: 3px;
-            margin-top: 0.1875rem;
+            margin-top: 7px;
+            margin-top: 0.4375rem;
             position: relative; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines span {
               height: 2px;
@@ -3818,7 +3914,7 @@ header .header-account-access {
               position: absolute;
               left: -43px;
               left: -2.6875rem;
-              top: 1px;
+              top: -3px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -3881,8 +3977,8 @@ header .header-account-access {
           padding: 0rem 1.25rem 0.9375rem; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative;
           margin-top: -24px;
           margin-top: -1.5rem; }
@@ -3898,7 +3994,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4032,7 +4128,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4060,7 +4155,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4085,6 +4179,9 @@ header .header-account-access {
             width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
+        .myview-settings .table-responsive .table .wd-25.pbot {
+          padding-left: 0px;
+          padding-left: 0rem; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-25 {
             width: 20%;
@@ -4814,20 +4911,18 @@ div.main-menu__section .titleMyView {
   font-weight: 600;
   letter-spacing: 1.2px;
   padding-left: 24px;
-  padding-left: 33px;
-  padding-left: 2.0625rem;
+  padding-left: 24px;
+  padding-left: 1.5rem;
   text-transform: uppercase;
-  width: 100%;
-  padding-bottom: 16px;
-  padding-bottom: 1rem; }
+  width: 100%; }
 
 div.main-menu__section .edit-link {
-  margin-left: 33px;
+  margin-left: 24px;
   font-size: 12px; }
 
 div.main-menu__section .navContent {
   font-size: 12px;
-  margin: 6px 22px 0 33px;
+  margin: 6px 0 0 25px;
   line-height: 20px;
   color: #979799; }
 

@@ -30,6 +30,9 @@ namespace Informa.Library.Article.Search
         [IndexField("free_with_registration_b")]
         public bool FreeWithRegistration { get; set; }
 
+        [IndexField("sort_order_tf")]
+        public float EditorialRanking { get; set; }
+
         #endregion
     }
 }

@@ -57,13 +57,13 @@ namespace Informa.Web.ViewModels
         public string MyViewHelpText => TextTranslator.Translate("MainNavigation.MyViewHelpText");
         public string MyViewEditBtnText => TextTranslator.Translate("MainNavigation.MyViewEditButtonText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public Navigation Preferencelst { get; set; }
+        public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion
 
         /// <summary>
-        /// Get NAvigation URL for My View Items
+        /// IPMP:283 Get NAvigation URL for My View Items
         /// </summary>
         /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
@@ -88,9 +88,9 @@ namespace Informa.Web.ViewModels
             }
         }
         /// <summary>
-        /// Method to get the logged in user preferences
+        /// IPMP:283 Method to get the logged in user preferences
         /// </summary>
-        /// <returns>list of user preferences</returns>
+        /// <returns>list of user preferences</returns>        
         public Navigation GetUserPreferences()
         {
             #region reading actual preferences
@@ -100,54 +100,71 @@ namespace Informa.Web.ViewModels
             IUserPreferences prefChannels = new UserPreferences();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-                
+
                 var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
                 _ChildrenWithInferType.OfType<IChannel_Page>();
 
                 //channel based navigation
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
+                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
                 {
-                    
-                    foreach (var preference in UserPreferences.Preferences.PreferredChannels)
+                    if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                     {
-                        
-                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode))
+                        foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                         {
-                            var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
-                            if(!string.IsNullOrEmpty(channelName))
-                            preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                            bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
+                            string linkId = string.Empty;
+                            string navigationLink = string.Empty;
+                            if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || isTopicsFollowing))
+                            {
+                                var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
+                                if (!string.IsNullOrEmpty(channelName))
+                                {
+                                    linkId = isTopicsFollowing ? preference.Topics.FirstOrDefault(tp => tp.IsFollowing).TopicId : preference.ChannelId;
+                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(linkId) } });
+                                }
+                            }
+                        }
+                        navigation.Children = preferredChannels;
+                    }
+                    else
+                    {
+                        //topic based navigation
+                        if (UserPreferences.Preferences.PreferredChannels != null
+                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics) != null
+                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
+                        {
+                            string navigationLink = string.Empty;
+                            foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
+                            {
+                                if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
+                                {
+                                    var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
+                                    if (!string.IsNullOrEmpty(topicName))
+                                    {
+                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
+                                    }
+                                }
+                            }
+                            navigation.Children = preferredChannels;
                         }
                     }
-                    navigation.Children = preferredChannels;
+                    return navigation;
                 }
-                //Topic based navigation
-                else if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredTopics != null && UserPreferences.Preferences.PreferredTopics.Count > 0)
+                else
                 {
-                    foreach (var preference in UserPreferences.Preferences.PreferredTopics)
-                    {
-                        if (!string.IsNullOrWhiteSpace(preference.TopicCode) && !string.IsNullOrWhiteSpace(preference.TopicName))
-                        {
-                            var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.TopicCode).Select(q => q.Text)).FirstOrDefault();
-                            if (!string.IsNullOrEmpty(topicName))
-                                preferredChannels.Add(new Navigation { Code = preference.TopicCode, Text = topicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
-                        }
-                    }
-                    navigation.Children = preferredChannels;
+                    return null;
                 }
-                return navigation;
             }
             else
             {
                 return null;
             }
-
             #endregion
         }
 
         /// <summary>
-        /// Method to get the logged in user subscriptions
+        /// IPMP:283 Method to get the logged in user subscriptions
         /// </summary>
         /// <returns>list of subscriptions</returns>
         public IEnumerable<ISubscription> GetValidSubscriptions()
@@ -158,33 +175,43 @@ namespace Informa.Web.ViewModels
             var topicSubscriptions = new List<TopicSubscription>();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-           
-                //channel based subscriptions
-                if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
-                {
-                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels))
-                    {
-                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-                        {
-                            channelSubscriptions.Add(subscription);
-                        }
-                    }
-                    subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
-                }
 
-                //Topic based subscriptions
-                else if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                //channel based subscriptions
+                var currentPublication = SiterootContext.Item.Publication_Code;
+                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication);
+                if (userSubscriptions != null)
                 {
-                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics))
+                    if (userSubscriptions.SelectMany(n => n.SubscribedChannels) != null && userSubscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
                     {
-                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedChannels))
                         {
-                            topicSubscriptions.Add(subscription);
+
+                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            {
+                                channelSubscriptions.Add(subscription);
+                            }
                         }
+                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
                     }
-                    subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+
+                    //Topic based subscriptions
+                    else if (userSubscriptions.SelectMany(n => n.SubscribedTopics) != null && userSubscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                    {
+                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedTopics))
+                        {
+                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            {
+                                topicSubscriptions.Add(subscription);
+                            }
+                        }
+                        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+                    }
+                    return subscriptions;
                 }
-                return subscriptions;
+                else
+                {
+                    return Enumerable.Empty<ISubscription>();
+                }
             }
             else
             {
