@@ -327,6 +327,7 @@
     <Compile Include="Article\Publishing\Events\PublishMediaItemsArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\ArticleSearchRequest.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
     <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
@@ -334,6 +335,7 @@
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\IArticleSearchRequest.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Search\ILoadMore.cs" />
     <Compile Include="Article\Search\IPersonalizedArticle.cs" />

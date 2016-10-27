@@ -14,6 +14,7 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
                         where T : ITaxonomySearchResults
         {
+
             if (source == null || filter == null || !filter.TaxonomyIds.Any())
             {
                 return source;
@@ -26,6 +27,19 @@ namespace Informa.Library.Search.Extensions
             return source.Filter(predicate);
         }
 
+        public static IQueryable<T> FilterPersonalizedTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter) where T : ITaxonomySearchResults
+        {
+            if (source == null || filter == null || !filter.TaxonomyIds.Any())
+            {
+                return source;
+            }
+
+            var predicate = PredicateBuilder.True<T>();
+
+            predicate = filter.TaxonomyIds.Aggregate(predicate, (current, f) => current.Or(i => i.Taxonomies.Contains(f)));
+
+            return source.Filter(predicate);
+        }
         public static IQueryable<T> FilterByPublications<T>(this IQueryable<T> source, IArticlePublicationFilter filter)
                         where T : IArticlePublicationResults
         {

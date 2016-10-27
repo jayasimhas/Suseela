@@ -269,9 +269,7 @@ namespace Informa.Library.Article.Search
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                        .FilterByPublications(filter)
-                        .FilterTaxonomies(filter)
-                    .ExcludeManuallyCurated(filter)
+                        .FilterPersonalizedTaxonomies(filter)
                         .ApplyDefaultFilters();
                 //Write a filter for Editorial ranking sort
 
