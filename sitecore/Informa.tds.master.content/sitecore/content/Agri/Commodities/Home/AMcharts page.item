@@ -12,7 +12,7 @@ templatekey: General Content Page
 ----version----
 language: en
 version: 1
-revision: 3819049f-82c7-45c5-8feb-e34a25c760de
+revision: c21f82ab-3822-468a-8474-fbb5cd99255d
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -36,6 +36,13 @@ content-length: 20
 
 General Content Page
 ----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 584
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{63E28A94-1C4A-4CD7-B555-1283FECE08B7}" p:before="r[@uid='{BC37CB71-3ABC-46E6-B3C7-BE04A2A5DCA5}']" s:ds="{DB03A6C0-5F0E-4B8A-9353-14C55253B201}" s:id="{EC34644A-1369-4FA9-9749-63522EF279EF}" s:par="" s:ph="/main-content/VideoControl" /><r uid="{BC37CB71-3ABC-46E6-B3C7-BE04A2A5DCA5}" p:before="r[@uid='{3ADAA0DF-EF47-4D4C-8C34-1EDBBC8095AB}']" s:ds="{C8AA792D-0749-45EE-B31F-97256217FE4A}" s:id="{00A7F9E7-9564-41AE-B1C5-83DFD9BF7E92}" s:par="Show in Right Rail" s:ph="main-content" /></d></r>
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3819049f-82c7-45c5-8feb-e34a25c760de
+c21f82ab-3822-468a-8474-fbb5cd99255d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161001T110818Z
+20161001T131221Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -63,3 +70,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

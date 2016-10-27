@@ -19,15 +19,8 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 12212788-8a2a-43cd-b59f-b261a38293b0
+revision: eee9d9a6-398e-49f4-9a90-ff36cbf2e01a
 
-----field----
-field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
-name: Navigation Link
-key: navigation link
-content-length: 114
-
-<link text="" linktype="internal" class="" title=""  querystring="" id="{57A1A91E-1C5C-4843-BB11-E957401DF1DA}" />
 ----field----
 field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
 name: Navigation Text
@@ -48,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-12212788-8a2a-43cd-b59f-b261a38293b0
+eee9d9a6-398e-49f4-9a90-ff36cbf2e01a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161005T084145Z
+20160928T084151Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
