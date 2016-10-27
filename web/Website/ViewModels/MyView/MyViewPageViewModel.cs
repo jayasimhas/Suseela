@@ -108,6 +108,8 @@ namespace Informa.Web.ViewModels.MyView
                     sec.ChannelId    = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
                     if (!string.IsNullOrWhiteSpace(sec.ChannelId))
                         sec.TaxonomyIds.Add(sec.ChannelId);
+                    if (!topics.Any() && channel.Topics != null)
+                        topics = channel.Topics;
                     foreach (Topic topic in topics)
                     {
                         topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
