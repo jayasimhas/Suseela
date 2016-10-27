@@ -8,8 +8,7 @@
                 <div class="mysettingsHead clearfix">
                     <h1>@Model.Title</h1>
                     <div class="saveoption mtop-10 hidden-xs">
-                        <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
-                        <span class="gotoview"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+                        <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>                      
                     </div>
                 </div>
 
@@ -49,8 +48,7 @@
             <div class="saveoption">
                 <span class="helplink">@Html.Raw(Model.HelpLinkDetail)</span>
                 <div class="complete-settings">
-                    <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>
-                    <span class="gotoview"><a href="http://www.google.com">@Model.GoToMyViewButtonText</a></span>
+                    <span class="registrationBtn" href="/">@Model.CompleteYourRegistrationText</span>                    
                 </div>
             </div>
             <div class="modal-overlay"></div>
@@ -58,7 +56,6 @@
                 <p class="close-modal">X</p>
                 <h4>@Model.SavePreferencesMessage</h4>
             </div>
-            <input type="hidden" value="0" id="validatePreference" />
         </div>
                     }
                     else if (Model != null && Model.IsAuthenticated)

@@ -43,6 +43,43 @@
 				}
 			}
 	}
+	.buyers-guide-listing-link{
+		width: 100%;
+		float: left;
+		margin-bottom: 1.5rem;
+			.buyers-guide-row{
+				width: 100%;
+				float: left;
+				.buyers-guide{
+					width: 45%;
+					float: left;
+					margin-top: 0.75rem;	
+					margin-bottom: 2rem;
+					margin-right: 3%;
+					.image{
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
+					h4{
+						font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+						font-size: 1.5em;
+						font-weight: 700;
+						font-style: normal;
+						margin-bottom: 1rem;					
+					}
+					a.link{
+						margin-top: 1rem;
+						font-family: "PT Serif", Georgia, serif;
+						font-style: regular;
+						font-weight: 400;
+						font-size: 1.125rem;
+						line-height: 30px;
+					}
+				}
+			}	
+	}
 	hr{
 		margin-bottom: 1.5rem;
 	}

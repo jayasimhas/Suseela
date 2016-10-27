@@ -25,7 +25,9 @@
     int topicOrder = 0;
     string mobileChannelSactionsStatus = string.Empty;
     string pickAndChooseSectionClassMobile = string.Empty;
+    string publicationHiddenClass = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
+    <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {
@@ -44,9 +46,10 @@
             publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
             mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
             pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
+            publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
             isFirst = false;
 
-           
+
             <div class="publicationPan donesubscribe" data-row="@channelOrder">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
@@ -126,7 +129,7 @@
                                     <div>
                                         <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
                                         <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
-                                        <input type="hidden" class="lableStatus" value="@publicationStatusText" />
+                                        <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
                                 <th>
@@ -166,7 +169,7 @@
                                     <div>
                                         <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
                                         <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
-                                        <input type="hidden" class="lableStatus" value="@publicationStatusText" />
+                                        <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
                                 <th class="wd-15 firstrow">

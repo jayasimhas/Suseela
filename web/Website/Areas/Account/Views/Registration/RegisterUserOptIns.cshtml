@@ -1,20 +1,20 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserOptInsViewModel
 
 <div class="register">
-    <div class="register_newsletter">
-        <div class="page-registration">
-            <h1 class="page-registration__header">@Model.Title</h1>
-            <div class="next_right">
-                <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
-            </div>
-        </div>
-        <hr />
-        <p class="page-registration__introduction">@Model.SubTitle</p>
-        @{var nextStepUrl = (Model.IsGlobalToggleEnabled && !string.IsNullOrEmpty(Model.NextStepUrl)) ? Model.NextStepUrl : Model.RegisterReturnUrl;}
-        <form class="form-registration-optins"
-              data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
-              data-on-success="@nextStepUrl">
+    @{var nextStepUrl = (Model.IsGlobalToggleEnabled && !string.IsNullOrEmpty(Model.NextStepUrl)) ? Model.NextStepUrl : Model.RegisterReturnUrl;}
+    <form class="form-registration-optins"
+          data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
+          data-on-success="@nextStepUrl">
 
+        <div class="register_newsletter">
+            <div class="page-registration">
+                <h1 class="page-registration__header">@Model.Title</h1>
+                <div class="next_right">
+                    <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
+                </div>
+            </div>
+            <hr />
+            <p class="page-registration__introduction">@Model.SubTitle</p>
             <p class="page-registration__error
 		   js-form-error
 		   js-form-error-general">
@@ -27,14 +27,14 @@
                 {
 
                     var item = Model.PublicationNewsletterOptIns[i];
-                    var checkBobClassname = item.OptIn ? "newsletter_checkbox label-check wcs-c-on" : "newsletter_checkbox label-check";                    
+                    var checkBobClassname = item.OptIn ? "newsletter_checkbox label-check wcs-c-on" : "newsletter_checkbox label-check";
                     if (item.OptIn)
                     {
                         CurrentPublication = item.Publication.Name;
                     }
                     <div class="newsletter_box">
                         <div class="site_div">
-                            <h1 class="article-preview__headline">@item.Publication.Name</h1>                           
+                            <h1 class="article-preview__headline">@item.Publication.Name</h1>
                             <div class="@checkBobClassname">
                                 <input name="offers" id="offers" type="checkbox" @(item.OptIn ? "checked='checked'" : string.Empty) data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
                                 <span class="chk_box"></span>
@@ -65,6 +65,7 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+
+    </form>
 </div>

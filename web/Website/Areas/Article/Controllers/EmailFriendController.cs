@@ -76,13 +76,13 @@ namespace Informa.Web.Areas.Article.Controllers
             var siteRoot = SiteRootContext.Item;
 
             // VERIFY CAPTCHA // Commenting to test Email functionality as we do not have domain specific captcha keys
-            //if (!RecaptchaService.Verify(request.RecaptchaResponse))
-            //{
-            //    return Ok(new
-            //    {
-            //        success = false
-            //    });
-            //}
+            if (!RecaptchaService.Verify(request.RecaptchaResponse))
+            {
+                return Ok(new
+                {
+                    success = false
+                });
+            }
 
             if (string.IsNullOrWhiteSpace(request.RecipientEmail)
                 || string.IsNullOrWhiteSpace(request.SenderEmail)

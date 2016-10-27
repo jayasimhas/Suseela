@@ -1326,6 +1326,48 @@ section: Alerts
         font-weight: 700;
         font-style: normal; }
 
+.agroBuyers .buyers-guide-listing-link {
+  width: 100%;
+  float: left;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+  .agroBuyers .buyers-guide-listing-link .buyers-guide-row {
+    width: 100%;
+    float: left; }
+    .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
+      width: 45%;
+      float: left;
+      margin-top: 12px;
+      margin-top: 0.75rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      margin-right: 3%; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
+        width: 100%; }
+        .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image img {
+          width: 100%; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-right__title {
+        font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        font-style: normal;
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.mobile-table-exit {
+        margin-top: 16px;
+        margin-top: 1rem;
+        font-family: "PT Serif", Georgia, serif;
+        font-style: regular;
+        font-weight: 400;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 30px; }
+
 .agroBuyers hr {
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
@@ -3818,8 +3860,8 @@ header .header-account-access {
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines span {
             height: 2px;
@@ -3833,7 +3875,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -3857,8 +3899,8 @@ header .header-account-access {
               background: #ffffff; } }
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
             float: right;
-            margin-top: 3px;
-            margin-top: 0.1875rem;
+            margin-top: 7px;
+            margin-top: 0.4375rem;
             position: relative; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines span {
               height: 2px;
@@ -3872,7 +3914,7 @@ header .header-account-access {
               position: absolute;
               left: -43px;
               left: -2.6875rem;
-              top: 1px;
+              top: -3px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -3935,8 +3977,8 @@ header .header-account-access {
           padding: 0rem 1.25rem 0.9375rem; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
-          margin-top: 3px;
-          margin-top: 0.1875rem;
+          margin-top: 7px;
+          margin-top: 0.4375rem;
           position: relative;
           margin-top: -24px;
           margin-top: -1.5rem; }
@@ -3952,7 +3994,7 @@ header .header-account-access {
             position: absolute;
             left: -43px;
             left: -2.6875rem;
-            top: 1px;
+            top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4086,7 +4128,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4114,7 +4155,6 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
@@ -4139,6 +4179,9 @@ header .header-account-access {
             width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
+        .myview-settings .table-responsive .table .wd-25.pbot {
+          padding-left: 0px;
+          padding-left: 0rem; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-25 {
             width: 20%;

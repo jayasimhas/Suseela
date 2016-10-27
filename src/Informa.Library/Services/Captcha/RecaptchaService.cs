@@ -27,9 +27,12 @@ namespace Informa.Library.Services.Captcha
 
 		public string SecretKey => ConfigurationManager.AppSettings["Recaptcha.SecretKey"] ?? "";		
 		public string SiteKey => ConfigurationManager.AppSettings["Recaptcha.SiteKey"] ?? "";
+        public string EnableCaptcha => ConfigurationManager.AppSettings["EnableCaptcha"] ?? "";
 
-		public bool Verify(string userInput)
+        public bool Verify(string userInput)
 		{
+            if (EnableCaptcha == "false")
+                return true;
 			var formContent = new FormUrlEncodedContent(new[]
 			{
 					new KeyValuePair<string, string>("secret", SecretKey),

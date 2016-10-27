@@ -26,7 +26,7 @@
             ChannelsViewModel = channelsViewModel;
         }
 
-        public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;    
+        public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;
 
         public string SaveButtonText => TextTranslator.Translate("MyViewSettings.SaveButtonText");
@@ -43,7 +43,7 @@
         public string HelpLinkDetail => GlassModel?.Help_Link;
         public string CompleteYourRegistrationText => TextTranslator.Translate("Registration.OptIn.CompleteYourRegistration");
         public string PreferenceNotSavedError => TextTranslator.Translate("Registration.Optin.PreferenceNotSaved");
-        public string NotFollowedError => GlassModel?.Not_Followed_Error;
+        public string NotFollowedError => GlassModel?.Not_Followed_Error;        
 
     }
 }

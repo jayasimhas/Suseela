@@ -106,18 +106,23 @@ namespace Informa.Web.ViewModels
 
                 //channel based navigation
                 if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredChannels != null)
+                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
                 {
                     if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                     {
                         foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                         {
                             bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
+                            string linkId = string.Empty;
+                            string navigationLink = string.Empty;
                             if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || isTopicsFollowing))
                             {
                                 var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
                                 if (!string.IsNullOrEmpty(channelName))
-                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                                {
+                                    linkId = isTopicsFollowing ? preference.Topics.FirstOrDefault(tp => tp.IsFollowing).TopicId : preference.ChannelId;
+                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(linkId) } });
+                                }
                             }
                         }
                         navigation.Children = preferredChannels;
@@ -129,13 +134,16 @@ namespace Informa.Web.ViewModels
                             && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics) != null
                             && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
                         {
+                            string navigationLink = string.Empty;
                             foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
                             {
                                 if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
                                 {
                                     var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
                                     if (!string.IsNullOrEmpty(topicName))
-                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == topic.TopicName).Select(n => n.LinkableUrl).ToString() } });
+                                    {
+                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
+                                    }
                                 }
                             }
                             navigation.Children = preferredChannels;
