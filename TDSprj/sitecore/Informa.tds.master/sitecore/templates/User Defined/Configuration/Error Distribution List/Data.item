@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {8AF92FE0-8E8B-4718-9E2C-33996DB66527}
+database: master
+path: /sitecore/templates/User Defined/Configuration/Error Distribution List/Data
+parent: {4F0325B5-BF43-4C1B-8ABC-7F183C3E4AB3}
+name: Data
+master: {00000000-0000-0000-0000-000000000000}
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
+
+----version----
+language: en
+version: 1
+revision: ffa3dd62-e6c2-4462-8cc9-66ce902e6137
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160312T163404Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\csmith
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ffa3dd62-e6c2-4462-8cc9-66ce902e6137
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160312T163405Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\csmith

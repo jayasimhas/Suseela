@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {77331F73-60F0-4272-9AF0-E87EE792EEE2}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Taxonomy/Subjects/Clinical Trial Regulation
+parent: {46D8B99F-4A19-4D67-A083-0EFE313154AC}
+name: Clinical Trial Regulation
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: a497a8f6-9b1d-49bf-8ebb-e02e9b133147
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 25
+
+Clinical Trial Regulation
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160412T191148Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a497a8f6-9b1d-49bf-8ebb-e02e9b133147
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160412T191148Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

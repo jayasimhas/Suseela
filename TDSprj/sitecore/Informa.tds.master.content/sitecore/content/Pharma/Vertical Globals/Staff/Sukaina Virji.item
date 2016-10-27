@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Staff/Sukaina Virji
+parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+name: Sukaina Virji
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: 79107e7e-511c-49e0-b81b-55a583ee760b
+
+----field----
+field: {2C527B2C-25E8-47D0-9356-8F21757BA897}
+name: Writes for
+key: writes for
+content-length: 77
+
+{3818C47E-4B75-4305-8F01-AB994150A1B0}|{87B710BC-BACD-4D38-895F-90F42D762393}
+----field----
+field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
+name: First Name
+key: first name
+content-length: 7
+
+Sukaina
+----field----
+field: {DA223987-CABD-4C88-98D7-40E3492220F5}
+name: Last Name
+key: last name
+content-length: 5
+
+Virji
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 117
+
+<image mediaid="{AACD960E-130B-4FC8-8C2C-CB53A09728E6}" alt="Sukaina Virji" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 9
+
+Scripsuki
+----field----
+field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
+name: Email Address
+key: email address
+content-length: 25
+
+sukaina.virji@informa.com
+----field----
+field: {C3CBCCDC-79E3-4D73-B6B5-A1A718EDCD20}
+name: Location
+key: location
+content-length: 6
+
+Europe
+----field----
+field: {0E37C802-AC3E-4786-A2CE-61EAB8D747DB}
+name: LinkedIn
+key: linkedin
+content-length: 101
+
+<link linktype="external" url="https://www.linkedin.com/in/sukaina-suki-virji-jeganathan-50958113" />
+----field----
+field: {FB30FB78-9430-4E81-83C8-6AE63ECFA3E3}
+name: Bio
+key: bio
+content-length: 651
+
+<span style="color: #58595b; text-align: start; letter-spacing: normal;">Sukaina has been reporting on all aspects of the pharmaceutical and biotechnology space since 2000. In her role as News Editor, she is tasked with ensuring Scrip continues to provide the business critical information that its subscribers rely on. Sukaina's prior positions include Editor of the newsletter BioVenture View and the magazine BioPeople. She has a PhD in biochemistry and molecular biology from University College London. Based in the UK, Sukaina is often asked to appear on TV and radio to commentate on business and R&amp;D strategy related to the industry.</span>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160114T214131Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+79107e7e-511c-49e0-b81b-55a583ee760b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160718T070521Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

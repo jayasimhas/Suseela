@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {3408EC96-4ED3-4A53-BFF1-3C475CA281AE}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/The Rose Sheet/InDesign Styles/Table Styles Folder
+parent: {DD555084-30E4-4B2F-8822-8D51337A7351}
+name: Table Styles Folder
+master: {00000000-0000-0000-0000-000000000000}
+template: {93E814A4-D606-4729-8AAA-656866E4F78D}
+templatekey: Table Styles Folder
+
+----version----
+language: en
+version: 1
+revision: 970584f3-afc6-4fb9-a85a-789bc7db01d6
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20111013T123007
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\cspellman
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+970584f3-afc6-4fb9-a85a-789bc7db01d6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111014T181224:634542127444608034
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\jalmeda

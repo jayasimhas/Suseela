@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {569AAE58-6AF8-44DC-98F4-57D658258C6C}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Clinica League Tables 2010  InVitro Diagnostics
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Clinica League Tables 2010  InVitro Diagnostics
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 7936b9c3-1070-4672-930c-ccf9de5e8353
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3864
+
+<p>  <tr> <td><b>FY 2009 Ranking</b></td> <td><b>Movement on previous year</b></td> <td><b>Company</b></td> <td><b>2009 IVD sales (US$ million)</b></td> <td><b>2008 IVD sales (US$ million)</b></td> <td><b>Notes</b></td> </tr> <tr> <td>1</td> <td>no change</td> <td><b>Roche Diagnostics</b></td> <td><b>9287.00</b></td> <td><b>8945.70</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>2</td> <td>no change</td> <td><b>Siemens Healthcare</b></td> <td><b>4867.26</b></td> <td><b>4686.22</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>3</td> <td>no change</td> <td><b>Abbott Laboratories</b></td> <td><b>3578.00</b></td> <td><b>3575.00</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>4</td> <td>no change</td> <td><b>Beckman Coulter</b></td> <td><b>3260.60</b></td> <td><b>3098.90</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>5</td> <td>up (+1)</td> <td><b>Becton Dickinson</b></td> <td><b>2226.00</b></td> <td><b>2160.00</b></td> <td><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr> <td>6</td> <td>down (-1)</td> <td><b>Thermo Fisher</b></td> <td><b>2224.00</b></td> <td><b>2310.00</b></td> <td>22% of total revenue estimated as IVD sales</td> </tr> <tr> <td>7</td> <td>no change</td> <td><b>Johnson & Johnson</b></td> <td><b>1963.00</b></td> <td><b>1841.00</b></td> <td>Ortho-Clinical division sales</td> </tr> <tr> <td>8</td> <td>no change</td> <td><b>bioMerieux</b></td> <td><b>1706.19</b></td> <td><b>1633.92</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>9</td> <td>no change</td> <td><b>Inverness Medical Innovations</b></td> <td><b>1371.87</b></td> <td><b>1164.33</b></td> <td>Professional and Consumer Diagnostics segment sales</td> </tr> <tr> <td>10</td> <td>up (+2)</td> <td><b>Sysmex</b></td> <td><b>1243.06</b></td> <td><b>1084.87</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>11</td> <td>no change</td> <td><b>Bio-Rad</b></td> <td><b>1139.90</b></td> <td><b>1106.40</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>12</td> <td>up (+1)</td> <td><b>Qiagen</b></td> <td><b>1009.83</b></td> <td><b>892.98</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>13</td> <td>down (-3)</td> <td><b>Olympus Medical</b></td> <td><b>857.07</b></td> <td><b>1152.54</b></td> <td>Life Science segment sales</td> </tr> <tr> <td>14</td> <td>no change</td> <td><b>Hologic Inc</b></td> <td><b>544.14</b></td> <td><b>474.63</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>15</td> <td>up (+1)</td> <td><b>Gen-Probe</b></td> <td><b>483.76</b></td> <td><b>429.22</b></td> <td><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr> <td>16</td> <td>up (+1)</td> <td><b>Phadia</b></td> <td><b>446.62</b></td> <td><b>419.13</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>17</td> <td>up (+1)</td> <td><b>Dako</b></td> <td><b>330.29</b></td> <td><b>323.62</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>18</td> <td>up (+3)</td> <td><b>Myriad Genetics</b></td> <td><b>326.53</b></td> <td><b>222.86</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>19</td> <td>no change</td> <td><b>Immucor</b></td> <td><b>300.55</b></td> <td><b>261.20</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>20</td> <td>no change</td> <td><b>Horiba Ltd</b></td> <td><b>239.01</b></td> <td><b>239.79</b></td> <td><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr>  </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+Clinica League Tables 2010 - In-Vitro Diagnostics
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6421
+
+<p> <table> <tr valign="top"> <td bgcolor="#FFFFFF"><b>FY 2009 Ranking</b></td> <td bgcolor="#FFFFFF"><b>Movement on previous year</b></td> <td bgcolor="#FFFFFF"><b>Company</b></td> <td bgcolor="#FFFFFF"><b>2009 IVD sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>2008 IVD sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>Notes</b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">1</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Roche Diagnostics</b></td> <td bgcolor="#FFFFFF"><b>9287.00</b></td> <td bgcolor="#FFFFFF"><b>8945.70</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">2</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Siemens Healthcare</b></td> <td bgcolor="#FFFFFF"><b>4867.26</b></td> <td bgcolor="#FFFFFF"><b>4686.22</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">3</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Abbott Laboratories</b></td> <td bgcolor="#FFFFFF"><b>3578.00</b></td> <td bgcolor="#FFFFFF"><b>3575.00</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">4</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Beckman Coulter</b></td> <td bgcolor="#FFFFFF"><b>3260.60</b></td> <td bgcolor="#FFFFFF"><b>3098.90</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">5</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Becton Dickinson</b></td> <td bgcolor="#FFFFFF"><b>2226.00</b></td> <td bgcolor="#FFFFFF"><b>2160.00</b></td> <td bgcolor="#FFFFFF"><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">6</td> <td bgcolor="#FFFFFF">down (-1)</td> <td bgcolor="#FFFFFF"><b>Thermo Fisher</b></td> <td bgcolor="#FFFFFF"><b>2224.00</b></td> <td bgcolor="#FFFFFF"><b>2310.00</b></td> <td bgcolor="#FFFFFF">22% of total revenue estimated as IVD sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">7</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Johnson & Johnson</b></td> <td bgcolor="#FFFFFF"><b>1963.00</b></td> <td bgcolor="#FFFFFF"><b>1841.00</b></td> <td bgcolor="#FFFFFF">Ortho-Clinical division sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">8</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>bioMerieux</b></td> <td bgcolor="#FFFFFF"><b>1706.19</b></td> <td bgcolor="#FFFFFF"><b>1633.92</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">9</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Inverness Medical Innovations</b></td> <td bgcolor="#FFFFFF"><b>1371.87</b></td> <td bgcolor="#FFFFFF"><b>1164.33</b></td> <td bgcolor="#FFFFFF">Professional and Consumer Diagnostics segment sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">10</td> <td bgcolor="#FFFFFF">up (+2)</td> <td bgcolor="#FFFFFF"><b>Sysmex</b></td> <td bgcolor="#FFFFFF"><b>1243.06</b></td> <td bgcolor="#FFFFFF"><b>1084.87</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">11</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Bio-Rad</b></td> <td bgcolor="#FFFFFF"><b>1139.90</b></td> <td bgcolor="#FFFFFF"><b>1106.40</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">12</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Qiagen</b></td> <td bgcolor="#FFFFFF"><b>1009.83</b></td> <td bgcolor="#FFFFFF"><b>892.98</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">13</td> <td bgcolor="#FFFFFF">down (-3)</td> <td bgcolor="#FFFFFF"><b>Olympus Medical</b></td> <td bgcolor="#FFFFFF"><b>857.07</b></td> <td bgcolor="#FFFFFF"><b>1152.54</b></td> <td bgcolor="#FFFFFF">Life Science segment sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">14</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Hologic Inc</b></td> <td bgcolor="#FFFFFF"><b>544.14</b></td> <td bgcolor="#FFFFFF"><b>474.63</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">15</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Gen-Probe</b></td> <td bgcolor="#FFFFFF"><b>483.76</b></td> <td bgcolor="#FFFFFF"><b>429.22</b></td> <td bgcolor="#FFFFFF"><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">16</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Phadia</b></td> <td bgcolor="#FFFFFF"><b>446.62</b></td> <td bgcolor="#FFFFFF"><b>419.13</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">17</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Dako</b></td> <td bgcolor="#FFFFFF"><b>330.29</b></td> <td bgcolor="#FFFFFF"><b>323.62</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">18</td> <td bgcolor="#FFFFFF">up (+3)</td> <td bgcolor="#FFFFFF"><b>Myriad Genetics</b></td> <td bgcolor="#FFFFFF"><b>326.53</b></td> <td bgcolor="#FFFFFF"><b>222.86</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">19</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Immucor</b></td> <td bgcolor="#FFFFFF"><b>300.55</b></td> <td bgcolor="#FFFFFF"><b>261.20</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">20</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Horiba Ltd</b></td> <td bgcolor="#FFFFFF"><b>239.01</b></td> <td bgcolor="#FFFFFF"><b>239.79</b></td> <td bgcolor="#FFFFFF"><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> </table> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Clinica League Tables 2010  InVitro Diagnostics
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185741
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057357
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+Clinica League Tables 2010 - In-Vitro Diagnostics
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+306443
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T190001Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7936b9c3-1070-4672-930c-ccf9de5e8353
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225741Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

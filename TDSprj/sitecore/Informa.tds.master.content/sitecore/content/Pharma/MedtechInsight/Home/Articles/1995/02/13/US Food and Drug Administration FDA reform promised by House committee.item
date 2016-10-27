@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {726652B1-8818-404E-B856-97A1BF7E04C3}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/02/13/US Food and Drug Administration FDA reform promised by House committee
+parent: {D00C9D21-A785-4CE1-B91B-2699D9C8D822}
+name: US Food and Drug Administration FDA reform promised by House committee
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 84efb5a4-49d0-4052-9ab2-22c765a7174b
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 371
+
+<p>Congressional hearings on the US Food & Drug Administration could begin late this month, reports Clinica's Washington correspondent, Duffy Miller. Tom Bliley (R-Va), chairman of the House Commerce Committee, said on February 1st that his panel will conduct "a full and thorough review" of the agency, beginning in the Commerce health subcommittee in late February.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 72
+
+US Food and Drug Administration (FDA) reform promised by House committee
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2431
+
+<p>Congressional hearings on the US Food & Drug Administration could begin late this month, reports Clinica's Washington correspondent, Duffy Miller. Tom Bliley (R-Va), chairman of the House Commerce Committee, said on February 1st that his panel will conduct "a full and thorough review" of the agency, beginning in the Commerce health subcommittee in late February.</p><p>"I promise you, in this session in the Commerce Committee, there will - repeat, there will - be reforms in the way the Food & Drug Administration does business," he told the National Committee for Quality Health Care. FDA reform, Mr Bliley predicted, is an issue "that will receive more and more attention in the months to come."</p><p>think-tank launches project</p><p>Meanwhile, the Progress and Freedom Foundation, the conservative Washington think-tank closely allied to House Speaker Newt Gingrich, has launched a Medical Innovation Project - headed by former Department of Health & Human Services Secretary Louis Sullivan. The group does not want to become involved in legislation; it intends to develop a framework of ideas from which policy-makers may work and design alternative institutional arrangements to the current approval system.</p><p>The project's purpose, according to a draft white paper released on February 3rd, "is to design a new process for bringing medical products to market - one compatible with legitimate concerns for safety and leaps in scientific knowledge." This process will provide for "review and certification of new pharmaceuticals and medical devices, as well as the dissemination of information about these products to the medical community." It will also include a tort liability framework that stimulates manufacturers to produce safer products, but does not discourage them from introducing products that save lives. Furthermore, it aims to protect intellectual property rights, "without which these products would not be on the market at all".</p><p>Dr Sullivan and a group of other nationally known scientists, researchers and lawyers are now trying to put in place a framework of questions that should be asked. They will present their drafts in late spring and hope to offer a plan for discussion in the autumn. Once their plan is on the table, the foundation leaders say, it will take another two to five years to implement it. "In the meantime, if the FDA can make constructive reforms, all the better."</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+US Food and Drug Administration FDA reform promised by House committee
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950213T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950213T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950213T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051495
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 72
+
+US Food and Drug Administration (FDA) reform promised by House committee
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253264
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183854Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+84efb5a4-49d0-4052-9ab2-22c765a7174b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183854Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

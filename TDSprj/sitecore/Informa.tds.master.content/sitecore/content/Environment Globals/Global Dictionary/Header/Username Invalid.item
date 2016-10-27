@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {8DDC279F-2525-46AB-8FD0-C11FDA7BC004}
+database: master
+path: /sitecore/content/Environment Globals/Global Dictionary/Header/Username Invalid
+parent: {7475A7B7-CB2B-45A5-8EF3-23618672B450}
+name: Username Invalid
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
+templatekey: Dictionary entry
+
+----field----
+field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
+name: Key
+key: key
+content-length: 22
+
+Header.UsernameInvalid
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 21
+
+apps/32x32/pencil.png
+----version----
+language: en
+version: 1
+revision: 94787093-c80d-4112-840b-bb9f3d80aaf5
+
+----field----
+field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
+name: Phrase
+key: phrase
+content-length: 33
+
+Invalid Email Address (User Name)
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160120T154313Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+94787093-c80d-4112-840b-bb9f3d80aaf5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160224T191130Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

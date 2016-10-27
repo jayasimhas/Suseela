@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D341B950-466A-440C-A29D-5422970714B1}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/09/Outcomes data key to survival
+parent: {A4F8C6E7-A9D7-4D86-9AA8-A644D3C4B8E3}
+name: Outcomes data key to survival
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e8ff0fbf-f9a2-4a39-9ff7-7f111813e4a3
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 226
+
+<p>Nuclear cardiology is a vibrant field, insists ICNC co-chairman Bill Zaret, despite the lack of hard economic data. David Firn reports on the 2nd International Conference of Nuclear Cardiology held in France last month.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+Outcomes data key to survival
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5664
+
+<p>Nuclear cardiology is a vibrant field, insists ICNC co-chairman Bill Zaret, despite the lack of hard economic data. David Firn reports on the 2nd International Conference of Nuclear Cardiology held in France last month.</p><p>"Cost is the key issue at the moment," he told Clinica. "We are having to focus not just on diagnosis but impact on outcome and decision-making," he said. And nuclear cardiology does seem to have powerful prognostic powers. A negative stress test gives a very low event rate - less than 1% pa. "So low that it almost doesn't matter that you have disease. Your outcome looks excellent - no need for aggressive intervention," said Dr Zaret. Not only that, it is non-invasive and, unlike angiography, hospitalisation is not needed.</p><p>"The growing theme is stratification - studies to identify patients who have extremely damaged hearts, but who can still benefit from intervention ... And here adopting SPECT to high-energy tracers opens up a whole new set of opportunities."</p><p>He was not wrong. The most lively and well attended sessions were those dealing with ways to reduce the cost of clinical decision-making. A mixture of cardiologists, nuclear cardiologists and medical physicists ensured a healthy and often witty debate.</p><p>The strength of nuclear cardiology is that it identifies reversibly damaged heart muscle - which means that the physician "can do something", said Dr T Bateman. "On the other hand a normal or even equivocal thallium scan in both men and women after PTCA is associated with a very low 36-month event rate - even for non-university centres."</p><p>Outcomes look good but hard data needed</p><p>According to Dr Dan Berman, nuclear medicine is most cost- effective in patients who have been assigned intermediate risk levels through history and ECG - or for the large number of patients with equivocal ECGs. Dr Ray Gibbons of the Mayo Clinic, Rochester, Minnesota, agrees: "In this group of patients it leads to fewer procedures and better outcomes ... Cost-effectiveness has refocused thinking on coronary artery disease: Who should be treated medically, who should get angiography and who should be sent for revascularisation?"</p><p>Patients with high Duke-protocol treadmill scores go to catheterisation. Those with intermediate results may get further testing, catheterisation or imaging. However, despite the strong beliefs of nuclear cardiologists themselves, there is little large-scale data on nuclear perfusion imaging. Dr Gibbons hopes to have secured funding for a 7,000 low-risk patient study by the end of the year.</p><p>Dr Marla Kiess, a Canadian nuclear cardiologist, is quite certain the reason Canada spends less on drugs, PTCA and angiography than the US, is the aggressive stratification policy. "Post-infarction risk stratification is much more common in Canada," she said. "In the US it is more common for patients to go straight to angiography." Nuclear cardiology is more cost-effective in Canada because it is more centralised. Units have a high, constant patient throughput.</p><p>Where a patient has a non-diagnostic ECG they are sent for exercise thallium or MIBI scans, said Dr Kiess. There is a general acceptance of non-invasive tests in Canada. Stress-echo, however, is virtually non-existent. Ironically this is also the result of centralisation. Stress-testing is more time-consuming than standard echo protocols but offers little reimbursement incentive to the doctor.</p><p>Prognosis and women</p><p>Nuclear cardiology is probably more cost-effective in women than it is in men. This is because sex-differences in left ventricular response make other functional indexes less useful in women.</p><p>According to Prof Robert Bonow, chief of cardiology at Northwestern University, the prognostic value of stress-induced perfusion defects may be even stronger in women than they are in men. The same is true for the excellent prognosis of women who have normal stress perfusion studies.</p><p>The major drawback of single photon imaging for women is attenuation due to breast tissue. But this, he said, should be resolved in the near future by the development of attenuation correction algorithms for routine clinical use (ADAC Laboratories gets 510(k) for attenuation correction: see this issue, p17).</p><p>Have the rules changed in the thrombolytic era?</p><p>Even before the advent of thrombolysis the perception that perfusion imaging and radionuclide angiography enhance ECG-based prognosis was never proven. Even now there is precious little data, according to Prof Mario Verani, of Baylor College of Medicine, Houston, Texas. Non-invasive testing is under increasing pressure to demonstrate cost-effectiveness.</p><p>Patients undergoing thrombolytic therapy tend to be younger, more likely to have single vessel disease and have a higher left ventricular fraction on admission to hospital. To a certain extent this impression is artificial, the result of patient selection in trials like GUSTO. However, not all MI patients are getting healthier. The Medicare population - which is older and less likely to be included in trials - has a 20% one-month mortality and 46% one-year mortality.</p><p>Recent adenosine-thallium SPECT data from Baylor College showed potent prognostic value for overall defect size and the extent of reversibly hypoperfused myocardium as well as increased thallium lung-uptake, he said. Combining LV ejection fraction and total extent of reversible hypoperfusion has additive value and allows patient stratification into high-, intermediate- and low-risk groups. The findings held, he said, regardless of the mode of treatment.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{44E1FC56-78E3-4955-8E83-0065377F12C4}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 29
+
+Outcomes data key to survival
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950509T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950509T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950509T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052523
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+Outcomes data key to survival
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254332
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184214Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e8ff0fbf-f9a2-4a39-9ff7-7f111813e4a3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184215Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

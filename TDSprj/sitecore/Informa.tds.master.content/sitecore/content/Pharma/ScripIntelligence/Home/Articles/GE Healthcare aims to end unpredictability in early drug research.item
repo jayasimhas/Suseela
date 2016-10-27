@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A562295B-C54D-4DC4-A42C-D2C6955599E0}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Articles/GE Healthcare aims to end unpredictability in early drug research
+parent: {9191621D-2FE9-47A9-B1DA-DA89F17796C6}
+name: GE Healthcare aims to end unpredictability in early drug research
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: af9586c0-b285-43a0-b860-2856d22d80a6
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 324
+
+<p><i>Better consistency of the cells used in early-stage drug research could save R&D departments millions of dollars and a lot of wasted time and effort. At GE Healthcare, the commercialisation of reliable stem cell lines is just around the corner, head of cell technologies R&D Dr Stephen Minger tells Ashley Yeo.</i></p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+GE Healthcare aims to end unpredictability in early drug research
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10739
+
+<p><i>Better consistency of the cells used in early-stage drug research could save R&D departments millions of dollars and a lot of wasted time and effort. At GE Healthcare, the commercialisation of reliable stem cell lines is just around the corner, head of cell technologies R&D Dr Stephen Minger tells Ashley Yeo.</i></p><p>Exactly how much Merck & Co had spent on the development of Vioxx (rofecoxib) by the time the drug had to be withdrawn is not known. Suffice to say that it was in the mid single-digit billions, a magnitude which, if it were drug sales, would have comfortably found this one product a place among the top 40 world leading pharma companies in its own right.</p><p>Unsuccessful drugs are usually weeded out fairly early, but, in the absence of 100% reliable methods of toxicity screening, an R&D department can never totally rule out the chance of a high-profile, late-stage and costly failure.</p><p>Screening has long relied on antiquated methods based on animal cells or human cell lines that may have been held for many years. Since 2002, GE Healthcare has been making efforts to change that. Its Cell Factory service, based in Cardiff, south Wales, is now able to grow and sell validated cell lines to the pharma industry in semi-industrial scale quantities of typically 10-50 billion cells.</p><p>The technology allows large numbers of cells, using reporter cell lines, to be grown, frozen and thawed and then used by pharma R&D departments in high-throughput screening to drive their drug discovery processes.</p><p>The success of GE's efforts encouraged it to develop the activity further and aim to become a major player in stem cells, both in tools for drug discovery and tools that enable therapies. Over the past two years, it has marketed technologies for the harvesting of stem cells for therapeutic use from a variety of sources, including umbilical cord blood and adipose tissue. </p><p>Embryonic stem cells, from which all the body's mature cells are made, are seen as powerful research tools that provide both better predictability and better cells, says Dr Stephen Minger, GE Healthcare's head of cell technologies R&D since September 2009.</p><p>Speaking to <i>Scrip</i> at BioWales 2010, the former director of King's College London's stem cell biology laboratory, said: "Our inception into this is the need for better predictability around screening of new drugs for potential liver and heart toxicity before these drugs make it into the clinic." He explained that the best cells for this purpose are derived from lines of human embryonic stem cells (hESCs), originally derived from six-day-old human embryos. </p><p>At that point, hESCs are unspecialised and can turn into any cell type. They can also be expanded "for ever". Dr Minger said: "We can expand the starting population of cells into billions of cells, and then differentiate them into single cell types."</p><p>They are totally unique in that they have many similarities to conventional cell lines, but are of human origin, are genetically normal and can, in principle, be differentiated into any cell type in the human body.</p><h2>working with Geron </h2><p>Under cell technologies general manager Konstantin Fiedler, Dr Minger will also lead R&D efforts in the multi-year alliance with hESC pioneer Geron, which was announced in June 2009. </p><p>This programme will use existing US NIH-approved hESCs provided by Menlo Park-based Geron to develop and commercialise hESC-based products for use by big pharma in drug discovery.</p><p>Geron has more expertise in this field than any other player; it started working with hESCs in 1998. "Our partnership with them is designed to push the development of two cell types: cardiomyocytes and hepatocytes." A third cell type will follow, but the decision as to which has not been taken yet.</p><p>Under the deal, GE has the worldwide rights for drug discovery uses, and Geron for clinical applications.</p><p>"We have shown our results to date to a number of big pharma companies. Everyone that we have talked to is very excited about the quality of the cells," said Dr Minger.</p><p>The work on cardiac cells is the most advanced. "They respond to pharmacological and physiological stimulation just as you would expect &ndash; like bona fide cardiomyocytes." The next stage will be to work on hepatocytes, the "work horses" of toxicity programmes.</p><p>To date, cell-enabled drug R&D has used established, mature cell lines derived from specific organs and tissues of animals and, to a much lesser extent, human donors. The problem for pharma right now is that the sets of human cells they have been able to use are very variable, and unpredictable in terms of the post-mortem interval and underlying morbidity.</p><p>"There is no consistency in terms of what you get. They may be of poor quality, not having been harvested for several hours. But now we can provide cells of reproducible nature and consistent subtype, and we know this because we are growing them day in, day out."</p><p>Rodent cells provide some consistency, but they are not human cells, which is what customers want. Animal cells are not fully reliable predictors of human responses, due to the basic physiological differences between species, explained Dr Minger. </p><p>"On the other hand, using human cells builds in a huge amount of reliability," he said. </p><p>"We are on the verge of commercialisation," he noted, but precisely when that will be is not yet certain. Other companies are working towards this goal, but they are small-scale and do not have GE's capacity to scale up: an ability that it has accelerated since it established the Cell Factory service. </p><h2>fast developments</h2><p>Since transferring the stem cell technology from Menlo Park to Cardiff, GE has been growing "buckets" of cells. The cells are being made by combining GE's Cell Factory proliferation and reproduction expertise with Geron's hESC technology. Ready-grown frozen cellular assays can thus be provided to R&D staff, and, eventually, the large-scale supply of hESC-derived cells which retain normal cellular functions will be possible.</p><p>Dr Minger credits the staff for the speed with which the operation has got into full swing. "The team in Cardiff has done an outstanding job. I thought it would take us a year to get this far: it has taken us just four months."</p><p>Even for someone who has been growing stem cells for eight years, Dr Minger professes to being astonished at the high degree of purity attained.</p><p>The first products developed from the GE/Geron alliance are expected to be available this year. </p><p>The early market reaction has been very positive. "People are saying they will buy the cells by the 'bucket-load' and store them in the freezer." In practice, this means companies buying millions of cells.</p><p>Scaling up has its challenges, and hESCs have been notoriously difficult in this regard. Once the cells are validated, the next stage is to use the group's engineering capabilities and move to truly industrial scale. "This is a leap we anticipated and are now engaged in," said Dr Minger. </p><p>For all that, the early adoption may be low. Dr Minger understands this. "People will need to be confident, and there is already a well-established drug approval process at the FDA. Using our cells may actually lengthen the process, until it becomes part of the FDA workplan."</p><p>GE now plans to diversify the screens. It will be "scaling up and scaling out at the same time", said Dr Minger, adding that the group would also look at a multitude of cell types to suit the different needs of its big pharma colleagues. </p><p>GE's digital microscopy system for rapid analysis of cellular assays, the INCell Analyzer 2000, helps researchers study cell processes speedily and in their true biological context.</p><p>It is one of the tools that has advanced GE's cell technology expertise and allowed it to become, in Dr Minger's words, "an enabler of drug discovery".</p><h2>issues ahead </h2><p>The main issues at present are: can GE expand the cells to the number required, and which is the best way? And as to differentiation, can Dr Minger's team successfully turn hESCs into a single cell type?</p><p>More minor issues relate to the genetic stability of the cells, scalability, and how long cells can be frozen and still remain viable.</p><p>The huge potential advantage is the ability to get rid of drugs doomed to failure more quickly. "We aim to catch these by Phase I."</p><h2>cell therapy facilitator</h2><p>Dr Minger's long-term aim is to help GE become a leading player in and facilitator of cell therapy on a major scale.</p><p>Hospitals treat only a few patients per week with current cell-based strategies, he says, but with hESCs just coming on board now, the pace should soon pick up. Last year, Geron received FDA approval to initiate a Phase I safety trial for acute spinal cord injuries, and other stem cell companies are also pursuing regulatory approval. Momentum is gathering and it all points to the treatment of larger numbers of patients with cell therapy.</p><p>One of GE's aims is to develop the whole translational pipeline and QA/QC around the cells. "We are not focused on a single clinical application or cell type &ndash; we are agnostic when it comes to cell types. What we are looking for is to develop a multitude of technologies that can enable real clinical benefits."</p><p>GE is focusing on developing the enabling technology. Few companies worldwide have the technological depth and breadth that GE has at its disposal, with four global research centres worldwide: in Bangalore, Munich, Shanghai and upstate New York. These are able to supply the expertise required in electronics, physics, software, engineering, microfluidics and cell biology, for instance, that can be applied to the development of infrastructure and technology needed to take cell-based therapies to clinical reality, treating thousands of patients per week across the world. </p><p>"This infrastructure gives us huge technological and problem-solving capabilities."</p><p>GE's goal is to put together a completely integrated streamlined solution.</p><p>The support goes right to the top, Dr Minger added, with GE Healthcare's Life Sciences CEO Peter Ehrenheim being 100% behind the stem cell effort as part of GE's participation in such cutting-edge technologies.</p><p>"In many ways, we are the start-up biotech of GE," joked Dr Minger. "We are the smallest business in GE, with an R&D team of 50 pure researchers. But we get a huge amount of enthusiastic support and commitment from the corporate level which we will need to really drive our R&D capability."</p><p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+GE Healthcare aims to end unpredictability in early drug research
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20160418T092228Z
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC040663
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+GE Healthcare aims to end unpredictability in early drug research
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 29
+
+198600351,199300040,198601368
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{8FB1C0F4-95A8-4D50-9C81-FBDA1BE7C2A9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 155
+
+{ED565D29-8D05-426A-992D-ED130340D3CB}|{2BDA6734-ACFE-44CF-876C-0979FFF6E2F8}|{AE91F3D0-FE83-4E2F-A030-ED69BA766EA3}|{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 0
+
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T162148Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+af9586c0-b285-43a0-b860-2856d22d80a6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161001T201732Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

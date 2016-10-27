@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {1A3DC6BF-1DCB-49CC-B5E7-918600FA6FBC}
+database: master
+path: /sitecore/system/Modules/Search/Sort Strategies/Subject Hierarchical Sort
+parent: {4A79DA78-93CD-41AE-9F08-48212F62211A}
+name: Subject Hierarchical Sort
+master: {00000000-0000-0000-0000-000000000000}
+template: {E147C7AB-C755-4E9C-B51C-6AC9B3443153}
+templatekey: Hierarchical Sort Strategy
+
+----version----
+language: en
+version: 1
+revision: 1a6c7747-0e14-4145-89b6-39275789d555
+
+----field----
+field: {C57349B0-EAD1-45A7-BE69-A1D53971C900}
+name: Include Selected
+key: include selected
+content-length: 1
+
+1
+----field----
+field: {8079311B-A258-4630-AFB1-9B449378C87C}
+name: Root Item
+key: root item
+content-length: 38
+
+{46D8B99F-4A19-4D67-A083-0EFE313154AC}
+----field----
+field: {32086477-70E7-45B1-A3FE-204B3A73E42D}
+name: Type
+key: type
+content-length: 77
+
+Informa.Library.Search.Sort.HierarchicalStrategyWithCountSort,Informa.Library
+----field----
+field: {3C02E5A7-BC18-4621-8AB6-2DAA34B1EA20}
+name: Valid Templates
+key: valid templates
+content-length: 38
+
+{6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+----field----
+field: {5FFBF7F4-42DC-4CFC-91C8-DA0F30824547}
+name: Field Name
+key: field name
+content-length: 9
+
+Item Name
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160304T154911Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a6c7747-0e14-4145-89b6-39275789d555
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160307T203344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

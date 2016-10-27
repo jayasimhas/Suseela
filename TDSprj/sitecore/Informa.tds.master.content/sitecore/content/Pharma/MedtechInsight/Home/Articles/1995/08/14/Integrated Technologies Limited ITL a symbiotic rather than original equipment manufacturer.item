@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {FB145353-8D58-47D9-BC6B-684FE73F2168}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/08/14/Integrated Technologies Limited ITL a symbiotic rather than original equipment manufacturer
+parent: {ACFE9AD7-B783-471B-A6C5-F5D7703FA937}
+name: Integrated Technologies Limited ITL a symbiotic rather than original equipment manufacturer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 75928f6a-b274-47d1-a3f3-0853b3b277f6
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 457
+
+<p>You have an urgent need for a new diagnostic instrument. You know exactly what you want it to do and you haven't a clue how to make it. What to do? One solution is to set up your own in-house engineering facility. This can cost an inordinate amount of money, not to mention an unconscionable amount of time. There is another solution - let someone else do it but still claim all the credit for yourself. That's where John Curtis and his team come in.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 94
+
+Integrated Technologies Limited (ITL): a symbiotic rather than original equipment manufacturer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3196
+
+<p>You have an urgent need for a new diagnostic instrument. You know exactly what you want it to do and you haven't a clue how to make it. What to do? One solution is to set up your own in-house engineering facility. This can cost an inordinate amount of money, not to mention an unconscionable amount of time. There is another solution - let someone else do it but still claim all the credit for yourself. That's where John Curtis and his team come in.</p><p>"We are an instruments division for hire. In the last 11 years we brought 11 devices to market." That's how managing director Mr Curtis sums up his company, Integrated Technologies Limited (ITL), based near London, UK.</p><p>Mr Curtis stresses the huge hurdles facing smaller companies that want to bring a system to market on their own. For this reason, his company decided 15 years ago to concentrate on the instrumentation end and co-operate with partners with reagent know-how. This strategy has pushed ITL's revenues to &pound;14 million ($22 million) by 1994.The ITL executive is critical of many managers in the diagnostics industry. "In the past, most of the emphasis has been on the reagent side with instrumentation often being the poor cousin." He insists that success is reserved for companies which sell whole systems, the best example being <strong>[C#198600101:Abbott]</strong>. Mr Curtis spells out how ITL fits into such a view of the industry: "We see ourselves as an SEM - a symbiotic equipment manufacturer - as opposed to an OEM."</p><p>As an example of mistaken attitudes, Mr Curtis tells of a senior executive who once asked him: "How can an instrument cost more than $300,000 to develop?" The short answer is that it always does. A complete instrument system can consume anything between $10 and $100 million.</p><p>ITL is working on four R&D projects in the areas of immunoassays, genetic probes, microbiology and electronics research. Unfortunately, the managing director is unable to mention any names, not least because his clients prefer to claim a new system as the result of their own efforts.</p><p>There is one notable exception to client coyness - AuraFlex, the new immunodiagnostics instrument which ITL manufactures for Organon Teknika. Anagen, also a UK company, is producing many of the reagents to run on AuraFlex. For another local company, Cerium, ITL produces dyslexia monitors. A historical exception to Mr Curtis' reluctance to name names is the Amerlite PC system which ITL developed for Kodak's clinical diagnostics division. Although the latter has since been sold to Johnson & Johnson, ITL is still shipping instruments but is not manufacturing any new systems.</p><p>ITL started life in 1971 producing radioactivity counting equipment and selling it under the Wilj name. In 1979, it switched to developing instrumentation on an OEM basis. Until last year, the company was called Wilj International and had become known for its mechanical and electronic engineering expertise in the diagnostics instrumentation sector (see Clinica No 643, p 11). ITL's skills comprise design, research and building. Of its 140 employees, 37% and 44% are employed in R&D and manufacturing respectively.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 91
+
+Integrated Technologies Limited ITL a symbiotic rather than original equipment manufacturer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950814T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950814T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950814T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053918
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 94
+
+Integrated Technologies Limited (ITL): a symbiotic rather than original equipment manufacturer
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600101
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255727
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184645Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+75928f6a-b274-47d1-a3f3-0853b3b277f6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184645Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {7255045A-126D-49E2-8B5C-C5C77F574E85}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/06/Manufacturers target implant wear at AAOS
+parent: {9649877C-55FC-4D13-B731-E8CE877A1D04}
+name: Manufacturers target implant wear at AAOS
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: dd37799b-0578-42a4-ba5f-3b46d8d7dc9d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 543
+
+<p>Many manufacturers are looking to reduce the amount of polyethylene and metal wear in joint replacements. Debris from this process is a cause of osteolysis, or dissolution of bone, which is a major cause of joint loosening and failure. Zimmer demonstrated its approach to this problem with redesigned articular surfaces in the new NexGen knee system (see Clinica No 643, p 14/15). Other companies launching products at the American Academy of Orthopaedic Surgeons meeting in Orlando last month addressed the problem in a number of ways.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Manufacturers target implant wear at AAOS
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6250
+
+<p>Many manufacturers are looking to reduce the amount of polyethylene and metal wear in joint replacements. Debris from this process is a cause of osteolysis, or dissolution of bone, which is a major cause of joint loosening and failure. Zimmer demonstrated its approach to this problem with redesigned articular surfaces in the new NexGen knee system (see Clinica No 643, p 14/15). Other companies launching products at the American Academy of Orthopaedic Surgeons meeting in Orlando last month addressed the problem in a number of ways.</p><p>Smith & Nephew Richards launched its newly-cleared Profix total knee system at the meeting. The knee, designed by Dr Leo Whiteside at Washington University School of Medicine, features reshaped polyethylene components designed to increase total contact area between moving surfaces while reducing the area with stress levels exceeding the yield strength of the polymer.</p><p>S&N Richards believes the toughness is a clinically relevant property of polyethylene and claims its material is more than twice as tough as the industry standard for this application. In addition, the components are ethylene oxide-sterilised (an approach Wright Medical Technology has also adopted), which does not degrade the material, the company says.</p><p>Intermedics Orthopaedics' approach to minimising wear while maximising load distribution is evident in the Apollo knee system. This features fully-rounded femoral condyles which roll within the polyethylene tibial component for increased contact area and allows ten degrees of rotation in extension. The centre of rotation is posterior to the centre of the tibial component which promotes flexion, according to Intermedics, and an elliptical patella compensates for minor misalignment. The knee is designed for cost-containment; it features the option of an all-polyethylene tibial component and, with the exception of aligning instruments, uses the same instrumentation as the company's lead product, the Natural Knee system.</p><p>Intermedics also plans to launch a new version of its Natural Knee system. The Natural Knee II, for which the company expects US clearance in March, is designed for lower stresses between articulating parts and has a narrower gap between condyles for a better fit for the patella. The system is designed for primary, posterior stabilising and revision procedures - the posterior stabilising design being a new addition to the Natural range.</p><p>new hips</p><p>Hip market leader DePuy's main launch at the meeting was the Replica total hip system, which features the Porocoat porous coating and is designed to address distal stem stiffness and rotational stability problems. A combination of neck/ shaft angles and sizes of the femoral component allows a range of offset capabilities, says DePuy.</p><p>Howmedica launched the Emerald total hip system, a line extension to the Precision Osteolock system. The modular system, which comes with porous coating for revisions, features a number of distal and proximal components.</p><p>external fixation</p><p>S & N Richards believes its new external fixation system represents the first innovation in acute trauma circular fixation for 40 years. Traditional systems, like the company's Ilizarov, which are used for post-trauma applications, are bulky and complicated and do not lend themselves to acute use. The new two-ring Ilizarov acute trauma system is designed to be less complicated and quicker to use. It comprises fewer parts which can be adjusted rapidly. The quick connect rod, which is adjusted telescopically, is combined with a pre-assembled adjustable pin clamp/hinge and an additional half-pin clamp with two axes of rotation. The system also makes post-operative adjustment easier, the company says.</p><p>spinal offerings</p><p>Among the new systems from Richards' spinal products subsidiary Smith & Nephew Spine were line additions to the Kambin arthroscopic microdiscectomy range, namely direct view scopes, deflecting forceps and an incisor blade; Quick Connect bone probe set; direct sacral screw and self-tapping screw; and reamer probe for its Rogozinski spinal rod system. The company is also distributing Spinetech's BAK interbody fusion system outside the US. The implant, which is investigational in the US, is a threaded, hollow, porous cylinder with polyethylene end caps containing bone graft material. The device is implanted from an anterior or posterior direction and is designed to give immediate stability to the spine while controlling bone fusion.</p><p><strong>[C#198600122:Biomet]</strong> subsidiary EBI Medical Systems displayed its SpF-XL spinal fusion stimulator which can treat fusions of up to five levels of the spine with one device. The system, which features longer leads and cathodes, reduces the cost per fusion by shortening treatment and recovery time, says EBI. The company also launched the Webb-Morley spinal fixation system, developed in the UK, and the newly-cleared EBI anterior cervical spine system.</p><p>MIS equipment</p><p>Zimmer's Florida-based Linvatec subsidiary introduced a fluid management system for arthroscopic irrigation, aspiration and distension. The Apex universal irrigation system is designed to be easy to operate and features one-connection disposable arthroscopy tubing set containing inflow and outflow lines in one cassette. The company also displayed its Apex shaver system which works up to 6,000 rpm with a choice of three handpieces.</p><p>Stryker's arthroscopy offerings included a new shaver system for ACL surgery. The SE5 system, which works up to 6,000 rpm and 40 in.oz. torque with all cutters and is controlled by an accelerator foot pedal, is designed for the managed-care market with a combination of speed, safety and basic components, according to the company. The system can also drive a bone plug cutter for patellar tendon harvesting.</p><p>Acufex' MIS product launches included the ReDux instrumentation system for ACL revision surgery; and the T-Fix implant and suture system for rotator cuff repair (which can also be used for open or mini-open procedures). The company is currently awaiting US clearance for its Suretac absorbable fixation devices for attaching tissue to bone.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Manufacturers target implant wear at AAOS
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950306T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950306T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950306T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051786
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Manufacturers target implant wear at AAOS
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600122
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253555
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183950Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dd37799b-0578-42a4-ba5f-3b46d8d7dc9d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183950Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

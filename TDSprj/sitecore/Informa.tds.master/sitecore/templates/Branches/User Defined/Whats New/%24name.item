@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {E61990CF-4CF4-4E57-A77F-7D3BACFB01C6}
+database: master
+path: /sitecore/templates/Branches/User Defined/Whats New/$name
+parent: {7803557B-B036-4EA0-88F4-EAEE6EDC798A}
+name: $name
+master: {00000000-0000-0000-0000-000000000000}
+template: {5B1307C3-8126-491F-AB72-177516787E74}
+templatekey: ExactTarget Email
+
+----version----
+language: en
+version: 1
+revision: 2608b66f-8dd4-447c-8522-8941849f59be
+
+----field----
+field: {8409213E-9EFA-4019-93C2-432FBFA5C177}
+name: Subject
+key: subject
+content-length: 30
+
+What's New - [title of e-mail]
+----field----
+field: {53A547CE-B0D1-45FE-9106-FF5FB37D2BC8}
+name: Top Header Title
+key: top header title
+content-length: 10
+
+What's New
+----field----
+field: {4FE46AA7-DEBF-4D97-B295-2ACEB40B8642}
+name: Top Header Text
+key: top header text
+content-length: 101
+
+Your $publicationname breaking news alert of ideas that matter to you, your business and your future.
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 910
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{5375B73C-75F2-4EEB-AA04-BCD8C11176B9}" p:before="r[@uid='{36C21175-AB4F-4694-92CC-3629472CAEE0}']" s:ds="{802CDC3B-DFC1-4005-811F-C7934704703E}" s:id="{84EF48E7-185F-4CE6-83B3-60877A8CBDA0}" s:ph="email-main" /><r uid="{36C21175-AB4F-4694-92CC-3629472CAEE0}" p:before="r[@uid='{F7D25FA0-0675-4A75-B54F-59309C33D5C0}']" s:ds="{1DD917DA-4C6A-4BFF-B612-6830CE55D98F}" s:id="{74B99155-89EA-475C-A9A4-8801E1A18082}" s:ph="email-main" /><r uid="{F7D25FA0-0675-4A75-B54F-59309C33D5C0}" p:before="r[@uid='{0A8C8288-5CBD-4194-905E-57220DADA91F}']" s:ds="{F4173132-9901-4330-A4CD-11854E4C1002}" s:id="{74B99155-89EA-475C-A9A4-8801E1A18082}" s:ph="email-main" /><r uid="{0A8C8288-5CBD-4194-905E-57220DADA91F}" s:ds="{3D7B8679-C3B3-4E49-B85D-B8F41AE53630}" s:id="{84EF48E7-185F-4CE6-83B3-60877A8CBDA0}" s:ph="email-main" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160606T140447Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2608b66f-8dd4-447c-8522-8941849f59be
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160610T184919Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

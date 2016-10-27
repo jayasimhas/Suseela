@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {AC48D1A7-6FC4-468C-8396-DDC49A445BB8}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/How To Manage Cookies
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: How To Manage Cookies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e69d42e3-882f-4cd6-9a71-09a09401dd74
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 4545
+
+<p>  <div> <p>As explained in our &lsquo;Cookie Policy&rsquo; , cookies help you to get the most out of our websites and enable you to benefit from specific features and to set preferences.</p> <p>However, there are various ways that you can control and manage your cookies which are discussed in more detail below. Please remember that disabling any of our cookies on our sites may mean some areas of the site are unable to function properly.</p> <h2>How to enable and disable cookies using your browser</h2> <p> <h3>Google Chrome</h3> <ul> <li>Click the wrench icon on the browser toolbar</li> <li>Select Settings</li> <li>Click &lsquo;Show advanced settings&rsquo;</li> <li>In the &ldquo;Privacy&rdquo; section, click the &lsquo;Content settings&rsquo; button</li> <li>To enable cookies in the &ldquo;Cookies&rdquo; section, pick &lsquo;Allow local data to be set&rsquo;, this will enable both first-party and third-party cookies. To allow only first-party cookies pick &lsquo;Block all third-party cookies without exception&rsquo;</li> <li>To disable cookies, in the &ldquo;Cookies&rdquo; section, pick &lsquo;Block sites from setting any data&rsquo; </li> <li>Note there are various levels of cookie enablement and disablement in Chrome. For more information on other cookie settings offered in Chrome, refer to the following page from Google: <a>http://support.google.com/chrome/bin/answer.py?hl=en&answer=95647</a></li> </ul> <p> <h3>Microsoft Internet Explorer 6.0, 7.0, 8.0</h3> <ul> <li>Click on &lsquo;Tools&rsquo; at the top of your browser window and select &lsquo;Internet Options'</li> <li>In the options window navigate to the &lsquo;Privacy&rsquo; tab</li> <li>To enable cookies: Set the slider to &lsquo;Medium&rsquo; or below</li> <li>To disable cookies: Move the slider to the top to block all cookies</li> <li>Note there are various levels of cookie enablement and disablement in Explorer. For more information on other cookie settings offered in Internet Explorer, refer to the following page from Microsoft: <a>http://windows.microsoft.com/en-GB/windows-vista/Block-or-allow-cookies</a></li> </ul> <p> <h3>Mozilla Firefox</h3> <ul> <li>Click on &lsquo;Tools&rsquo; at the browser menu and select &lsquo;Options&rsquo; </li> <li>Select the Privacy panel </li> <li>To enable cookies: Check &lsquo;Accept cookies for sites&rsquo;</li> <li>To disable cookies: Uncheck &lsquo;Accept cookies for sites&rsquo;</li> <li>Note there are various levels of cookie enablement and disablement in Firefox. For more information, refer to the following page from Mozilla: <a>http://support.mozilla.org/en-US/kb/Enabling%20and%20disabling%20cookies</a></li> </ul> <p> <h3>Opera</h3> <ul> <li>Click on &lsquo;Setting&rsquo; at the browser menu and select &lsquo;Settings'</li> <li>Select &lsquo;Quick Preferences&rsquo;</li> <li>To enable cookies: check &ldquo;Enable Cookies&rdquo;</li> <li>To disable cookies: uncheck &ldquo;Enable Cookies&rdquo;</li> <li>Note there are various levels of cookie enablement and disablement in Opera. For more information on other cookie settings offered in Opera, refer to the following page from Opera Software: <a>http://www.opera.com/browser/tutorials/security/privacy/</a></li> </ul> <p> <h3>Safari on OSX</h3> <ul> <li>Click on &lsquo;Safari&rsquo; at the menu bar and select the &lsquo;Preferences&rsquo; option </li> <li>Click on &lsquo;Security&rsquo; </li> <li>To enable cookies: In the &lsquo;Accept cookies&rsquo; section select &lsquo;Only from site you navigate to&rsquo;</li> <li>To disable cookies: In the &lsquo;Accept cookies&rsquo; section select &lsquo;Never&rsquo;</li> <li>Note there are various levels of cookie enablement and disablement in Safari. For more information on other cookie settings offered in Safari, refer to the following page from Apple: <a>http://docs.info.apple.com/article.html?path=Safari/3.0/en/9277.html</a></li> </ul> <h3>All other browsers</h3> <p>Please look for a &ldquo;help&rdquo; function in the browser or contact the browser provider.</p> <h2>Targeted Advertising</h2> <p>If you are concerned about targeted advertising cookies, users based in the European Union can visit <a>http://www.youronlinechoices.eu</a> and users based in the US can visit <a>http://www.aboutads.info/choices/</a> to opt out of these third party cookies. This will not reduce the number of adverts you will see but it means they will not targeted towards your preferences. </p> <p>Please note we are not responsible for the content of any third party websites.</p> </div>  </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 21
+
+How To Manage Cookies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4997
+
+<p>  <div> <p>As explained in our &lsquo;Cookie Policy&rsquo; , cookies help you to get the most out of our websites and enable you to benefit from specific features and to set preferences.</p> <p>However, there are various ways that you can control and manage your cookies which are discussed in more detail below. Please remember that disabling any of our cookies on our sites may mean some areas of the site are unable to function properly.</p> <h2>How to enable and disable cookies using your browser</h2> <p> <h3>Google Chrome</h3> <ul> <li>Click the wrench icon on the browser toolbar</li> <li>Select Settings</li> <li>Click &lsquo;Show advanced settings&rsquo;</li> <li>In the &ldquo;Privacy&rdquo; section, click the &lsquo;Content settings&rsquo; button</li> <li>To enable cookies in the &ldquo;Cookies&rdquo; section, pick &lsquo;Allow local data to be set&rsquo;, this will enable both first-party and third-party cookies. To allow only first-party cookies pick &lsquo;Block all third-party cookies without exception&rsquo;</li> <li>To disable cookies, in the &ldquo;Cookies&rdquo; section, pick &lsquo;Block sites from setting any data&rsquo; </li> <li>Note there are various levels of cookie enablement and disablement in Chrome. For more information on other cookie settings offered in Chrome, refer to the following page from Google: <a href="http://support.google.com/chrome/bin/answer.py?hl=en&answer=95647">http://support.google.com/chrome/bin/answer.py?hl=en&answer=95647</a></li> </ul> <p> <h3>Microsoft Internet Explorer 6.0, 7.0, 8.0</h3> <ul> <li>Click on &lsquo;Tools&rsquo; at the top of your browser window and select &lsquo;Internet Options'</li> <li>In the options window navigate to the &lsquo;Privacy&rsquo; tab</li> <li>To enable cookies: Set the slider to &lsquo;Medium&rsquo; or below</li> <li>To disable cookies: Move the slider to the top to block all cookies</li> <li>Note there are various levels of cookie enablement and disablement in Explorer. For more information on other cookie settings offered in Internet Explorer, refer to the following page from Microsoft: <a href="http://windows.microsoft.com/en-GB/windows-vista/Block-or-allow-cookies">http://windows.microsoft.com/en-GB/windows-vista/Block-or-allow-cookies</a></li> </ul> <p> <h3>Mozilla Firefox</h3> <ul> <li>Click on &lsquo;Tools&rsquo; at the browser menu and select &lsquo;Options&rsquo; </li> <li>Select the Privacy panel </li> <li>To enable cookies: Check &lsquo;Accept cookies for sites&rsquo;</li> <li>To disable cookies: Uncheck &lsquo;Accept cookies for sites&rsquo;</li> <li>Note there are various levels of cookie enablement and disablement in Firefox. For more information, refer to the following page from Mozilla: <a href="http://support.mozilla.org/en-US/kb/Enabling%20and%20disabling%20cookies">http://support.mozilla.org/en-US/kb/Enabling%20and%20disabling%20cookies</a></li> </ul> <p> <h3>Opera</h3> <ul> <li>Click on &lsquo;Setting&rsquo; at the browser menu and select &lsquo;Settings'</li> <li>Select &lsquo;Quick Preferences&rsquo;</li> <li>To enable cookies: check &ldquo;Enable Cookies&rdquo;</li> <li>To disable cookies: uncheck &ldquo;Enable Cookies&rdquo;</li> <li>Note there are various levels of cookie enablement and disablement in Opera. For more information on other cookie settings offered in Opera, refer to the following page from Opera Software: <a href="http://www.opera.com/browser/tutorials/security/privacy/">http://www.opera.com/browser/tutorials/security/privacy/</a></li> </ul> <p> <h3>Safari on OSX</h3> <ul> <li>Click on &lsquo;Safari&rsquo; at the menu bar and select the &lsquo;Preferences&rsquo; option </li> <li>Click on &lsquo;Security&rsquo; </li> <li>To enable cookies: In the &lsquo;Accept cookies&rsquo; section select &lsquo;Only from site you navigate to&rsquo;</li> <li>To disable cookies: In the &lsquo;Accept cookies&rsquo; section select &lsquo;Never&rsquo;</li> <li>Note there are various levels of cookie enablement and disablement in Safari. For more information on other cookie settings offered in Safari, refer to the following page from Apple: <a href="http://docs.info.apple.com/article.html?path=Safari/3.0/en/9277.html">http://docs.info.apple.com/article.html?path=Safari/3.0/en/9277.html</a></li> </ul> <h3>All other browsers</h3> <p>Please look for a &ldquo;help&rdquo; function in the browser or contact the browser provider.</p> <h2>Targeted Advertising</h2> <p>If you are concerned about targeted advertising cookies, users based in the European Union can visit <a href="http://www.youronlinechoices.eu">http://www.youronlinechoices.eu</a> and users based in the US can visit <a href="http://www.aboutads.info/choices/">http://www.aboutads.info/choices/</a> to opt out of these third party cookies. This will not reduce the number of adverts you will see but it means they will not targeted towards your preferences. </p> <p>Please note we are not responsible for the content of any third party websites.</p> </div>  </p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 21
+
+How To Manage Cookies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191351
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT062838
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 21
+
+How To Manage Cookies
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+349952
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T192252Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e69d42e3-882f-4cd6-9a71-09a09401dd74
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231351Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

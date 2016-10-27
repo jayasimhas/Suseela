@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {3E278F00-5A9B-4CC4-8C74-D66794110B7A}
+database: master
+path: /sitecore/content/Agri/Commodities/Globals/Navigation/Email Header
+parent: {E44A9EF8-F387-4050-AF31-4D231A0518A5}
+name: Email Header
+master: {00000000-0000-0000-0000-000000000000}
+template: {8C125392-64E5-4E29-85D9-6B1591AE8E5B}
+templatekey: Navigation Root
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: a34357b6-4b67-4352-b905-695d31096f72
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160518T132921Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a34357b6-4b67-4352-b905-695d31096f72
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160518T132944Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

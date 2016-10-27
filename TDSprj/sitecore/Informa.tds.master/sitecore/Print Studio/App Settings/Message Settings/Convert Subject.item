@@ -1,0 +1,187 @@
+----item----
+version: 1
+id: {A36060E9-1B7A-4D7C-9489-19387EF997A7}
+database: master
+path: /sitecore/Print Studio/App Settings/Message Settings/Convert Subject
+parent: {D277E72F-7D7A-4671-A0EE-FB4FABCC20FB}
+name: Convert Subject
+master: {00000000-0000-0000-0000-000000000000}
+template: {FDCA81AC-DEA6-4909-B5A0-3444CF95BD67}
+templatekey: Print Studio Text Message
+
+----version----
+language: de-DE
+version: 1
+revision: 17ae17f2-755f-4533-bf63-ab91ea705a14
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 28
+
+Ergebnisse Bildkonvertierung
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 18
+
+Thema konvertieren
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+17ae17f2-755f-4533-bf63-ab91ea705a14
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135334Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 6b8f8425-ea5a-4190-bb3d-4bc437699d1d
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 24
+
+Image Conversion Results
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20121211T144500
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6b8f8425-ea5a-4190-bb3d-4bc437699d1d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20121211T145320:634908344002242763
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
+----version----
+language: ja-JP
+version: 1
+revision: 1f7cec79-2e5b-4763-89a6-ccc1e3f7ee2a
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 12
+
+画像のコンバージョン結果
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 6
+
+テーマを変更
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142328Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1f7cec79-2e5b-4763-89a6-ccc1e3f7ee2a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

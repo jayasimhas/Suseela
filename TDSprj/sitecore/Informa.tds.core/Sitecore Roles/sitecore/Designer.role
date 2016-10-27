@@ -1,0 +1,9 @@
+----role----
+name: sitecore\Designer
+
+----role-in-role----
+rolename: sitecore\Developer
+
+----role-in-role----
+rolename: sitecore\Operations Access
+

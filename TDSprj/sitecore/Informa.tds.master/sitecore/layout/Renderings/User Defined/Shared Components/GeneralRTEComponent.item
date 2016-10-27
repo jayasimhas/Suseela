@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {3B91B663-7ECB-4964-9145-0F3DD02EA49B}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Shared Components/GeneralRTEComponent
+parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
+name: GeneralRTEComponent
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 51
+
+/Views/Shared/Components/GeneralRTEComponent.cshtml
+----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+----field----
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
+name: Open Properties after Add
+key: open properties after add
+content-length: 0
+
+
+----field----
+field: {3D08DB46-2267-41B0-BC52-BE69FD618633}
+name: Cacheable
+key: cacheable
+content-length: 1
+
+1
+----field----
+field: {8B6D532B-6128-4486-A044-CA06D90948BA}
+name: VaryByData
+key: varybydata
+content-length: 1
+
+1
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 30
+
+./PageAssets|/sitecore/content
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 61
+
+/sitecore/templates/User Defined/General Content/Content Text
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 38
+
+{3B91B663-7ECB-4964-9145-0F3DD02EA49B}
+----field----
+field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
+name: Page Editor Buttons
+key: page editor buttons
+content-length: 155
+
+{31A3A929-C599-4DD3-91A6-F4A9487CC8B7}|{028DFE18-F0FE-431B-B5D2-9D944FD8B3C6}|{E0C30162-EA09-4244-8261-81FD8456D4AF}|{28E37FE8-6561-4854-8B11-468E64DF5374}
+----version----
+language: en
+version: 1
+revision: c8c21e97-778f-488d-bacf-bb97698ee376
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160204T151514Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c8c21e97-778f-488d-bacf-bb97698ee376
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160526T204039Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
