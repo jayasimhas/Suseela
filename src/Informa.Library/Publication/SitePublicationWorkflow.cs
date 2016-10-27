@@ -154,6 +154,9 @@ namespace Informa.Library.Publication
 		{
 			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
 
+            if (workflowItem == null)
+                return null;
+
 			return _service.GetItem<IState>(workflowItem.Initial_State);
 		}
 	}

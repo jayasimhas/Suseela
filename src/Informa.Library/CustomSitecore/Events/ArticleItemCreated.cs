@@ -8,6 +8,7 @@ using Sitecore.Workflows;
 using System;
 using System.Web.Mvc;
 using Sitecore.Data.Events;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 
 namespace Informa.Library.CustomSitecore.Events
 {
@@ -28,7 +29,10 @@ namespace Informa.Library.CustomSitecore.Events
 					&& !itemPath.Contains("/issues/") // detect if this is an issue clone, since the fields arent set yet on item created
 					&& item.TemplateID.Guid == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateId.Guid)
 			{
-				changeWorkflowStateAndExecuteActions(item, new ID(publicationWorkflow.GetInitialState(item)._Id), new ID(publicationWorkflow.GetPublicationWorkflow(item)._Id));
+                IState initialState = publicationWorkflow.GetInitialState(item);
+
+                if (initialState != null)
+                    changeWorkflowStateAndExecuteActions(item, new ID(initialState._Id), new ID(publicationWorkflow.GetPublicationWorkflow(item)._Id));
 			}
 		}
 
