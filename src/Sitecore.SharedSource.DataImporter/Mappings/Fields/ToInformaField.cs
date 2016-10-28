@@ -2001,7 +2001,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach (var val in values)
             {
-                string upperValue = val.ToUpper();
+                string upperValue = val.ToString();
                 string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
                 if (string.IsNullOrEmpty(transformValue))
                 {
