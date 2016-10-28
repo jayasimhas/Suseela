@@ -22,9 +22,9 @@ namespace Informa.Web.Controllers.Search
 		{
 			if (string.IsNullOrEmpty(url)) return false;
 
-			return _savedSearchService.Exists(new SavedSearchInput
-			{
-				Url = url
+            return _savedSearchService.Exists(new SavedSearchInput {
+                Url = url,
+                AlertEnabled = true
 			});
 		}
 
