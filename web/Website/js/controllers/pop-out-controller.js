@@ -1,7 +1,8 @@
 function popOutController(triggerElm) {
 
 	// Toggle pop-out when trigger is clicked
-	if(triggerElm) {
+    if(triggerElm) {
+        $(triggerElm).off();
 		$(triggerElm).on('click', (event) => {
 			event.preventDefault();
 			this.togglePopOut($(event.target));
