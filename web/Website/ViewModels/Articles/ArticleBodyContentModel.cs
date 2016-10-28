@@ -109,8 +109,10 @@ namespace Informa.Web.ViewModels.Articles
             string userId = sfUser?.UserId;
             string url = sfUser?.SalesForceURL;
             string sessionid = sfUser?.SalesForceSessionId;
+            string email = sfUser?.Email;
+
             enterprise.QueryResult queryresult;
-            queryresult=GetEntitlementfromSalesForce(url, sessionid, userId);
+            queryresult=GetEntitlementfromSalesForce(url, sessionid, userId,email);
 
             if (queryresult.records != null)
             {
@@ -144,7 +146,7 @@ namespace Informa.Web.ViewModels.Articles
         }
 
 
-        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId)
+        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId,string email)
         {
 
             EndpointAddress EndpointAddr = new EndpointAddress(url);
@@ -159,8 +161,16 @@ namespace Informa.Web.ViewModels.Articles
             using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", EndpointAddr))
             {
                 string query = "Select e.ch_sugar_premium__c, e.ch_sugar__c, e.ch_spices__c, e.ch_oils_and_oilseeds__c, e.ch_molasses_and_fi__c, e.ch_meat__c, e.ch_juices_and_beverages__c, e.ch_grains__c, e.ch_frozen__c, e.ch_dfn__c, e.ch_dairy__c, e.ch_coffee_premium__c, e.ch_coffee__c, e.ch_cocoa__c, e.ch_canned_and_tomato_products__c, e.ch_biofuels__c, e.User__c, e.UsageLimit__c, e.UsageLimitReached__c, e.UsageCount__c, e.Sugar_Premium_Code__c, e.Sugar_Code__c, e.Subscription__c, e.Subscription_Access_Type__c, e.StartDate__c, e.Spices_Code__c, e.SourceIP__c, e.Service__c, e.ServiceUsageLimit__c, e.ServiceStartDate__c, e.ServiceEndDate__c, e.Product_Type__c, e.Opportunity__c, e.OpportunityAccount__c, e.Oils_and_Oilseeds_Code__c, e.Number_of_Licences__c, e.Name, e.Molasses_and_FI_Code__c, e.Meter_Limit__c, e.Meat_Code__c, e.ManualUsageLimit__c, e.ManualStartDate__c, e.ManualEndDate__c, e.Juices_and_Beverages_Code__c, e.Inherit_Transparent_Entitlements__c, e.Id, e.Grains_Code__c, e.Frozen_Code__c, e.EntitlementType__c, e.EndDate__c, e.Deactivated_Date__c, e.Dairy_Code__c, e.DFN_Code__c, e.Contact__c, e.ContactName__c, e.ContactLastName__c, e.ContactFirstName__c, e.Coffee_Premium_Code__c, e.Coffee_Code__c, e.Cocoa_Code__c, e.Canned_and_Tomato_Products_Code__c, e.Biofuels_Code__c, e.BillingAddress__c, e.AuthType__c, e.Active__c, e.ActivatedDate__c, e.Account__c, e.AccountName__c, e.Access_Control__c From Entitlement__c e";
-                query += " " + "where User__c = '" + userId + "'";
 
+                // query condition is added based on whether request is through transparent ip by checking email of pseudo user
+                if (email == Sitecore.Configuration.Settings.GetSetting("SalesforcePseudoUser.Name"))
+                {
+                    query += " " + " where IP_Address__c = '" + "192.168.123.123" + "'";
+                }
+                else
+                {
+                    query += " " + "where User__c = '" + userId + "'";
+                }
 
                 queryClient.query(
                               header, //sessionheader
