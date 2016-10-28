@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1D54598E-1A67-4D6B-BDBC-44FD3E88ABD5}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/03/Whither laparoscopy now
+parent: {F0F2E7B2-9890-4F7A-8FB0-FBE26057A289}
+name: Whither laparoscopy now
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: b53b6749-8ec2-48d4-ad72-3a6a304d32e0
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 241
+
+<p>Laparoscopy has grown rapidly in the last decade but patients' faith in the technique has been damaged by reports of complications. Moreover, many European healthcare systems fail to reimburse hospitals adequately. David Firn reports.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 23
+
+Whither laparoscopy now
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7790
+
+<p>Laparoscopy has grown rapidly in the last decade but patients' faith in the technique has been damaged by reports of complications. Moreover, many European healthcare systems fail to reimburse hospitals adequately. David Firn reports.</p><p>In the UK, some 60-90% of gall bladder procedures are now carried out laparoscopically. How did a revolutionary technique gain so much ground in a field as conservative as surgery? The answer is patient pressure, following newspaper and TV publicity for the reduced pain and scaring offered by MIS. But inevitably the same media picked up on cases which went wrong and one UK clinic now advertises its services under the banner: "We do not do key-hole surgery". In fact, according to a Royal College of Surgeons audit, mortality from open cholecystectomy was five times higher at the beginning of the decade than laparoscopy is now. MIS is now the gold standard surgical treatment for symptomatic gallstones - a market dominated by J&J subsidiary Ethicon Endo-Surgery.</p><pre>Laparoscopic Surgery in Europe 1995 Total procedures Ethicon share (%) Cholecystectomy 508,100 66 Appendectomy 688,500 13 Herniorrhaphy 692,000 14 Thoracic 143,900 27 Hysterectomy 508,000 9 Colon 397,100 5 Reflux (GORD) 37,350 23 Source: Ethicon Endo-Surgery Europe</pre><p>MIS has the potential to reduce post-operative morbidity, hasten return to work, reduce in-patient bed numbers and save money - but where reimbursement is based on bed-days, this will not happen. According to Dr Bengt Jonsson of the Stockholm School of Economics, one of the major hurdles is policy on indirect costs and cost shifting between budgets. MIS reduces the burden on employers and insurers covering the cost of lost work-time but offers no or negative benefits to hospitals paid on a fee-per-day basis.</p><p>UK experience with MIS has demonstrated a drastic reduction in time off work from three weeks to just one at the Whipps Cross Hospital in London. Consultant surgeon Jim Wellwood who is based at Whipps Cross believes the same can be achieved for the 80,000 inguinal hernia repairs carried out in the UK each year. Inguinal hernia accounts for 8% of general surgical operations and 5% of surgical beds in the UK. Around 3% of all men will suffer an inguinal hernia at some time in their lives.</p><pre>Inguinal hernia surgery 30-day post-operative mortality (%) Elective 0.3 Strangulated 6.0 Under 60 years 0.1 Over 80 years 3.3 Source: JM Wellwood</pre><p>General practitioners will often keep hernia patients off work for up to six months after surgery, especially if they are manual labourers. The mean return-to-work time for laparoscopic repair patients at Whipps Cross is nine days and pain scores were lower. Operating time is longer at 50 minutes for a unilateral repair and 92 for bilateral operations, compared with 35 and 60 respectively for standard open surgery.</p><pre>GP Convalescence Recommendations: Inguinal Hernia mean range Office job 4.2 1-13 Taxi driver 6.2 1-26 Labourer 10.2 2-26 Source: JM Wellwood</pre><pre>Early results from 252 laparoscopic hernia repairs (TAPP) Mean operating time (min) 49 (unilateral) 68 (bilateral) First 20 patients 54 Last 20 patients 33 Discharged in 24 hours 80% (203) Mean return to normal 5 days Mean return to work 9 days Recurrence 1.2% (0.7% in 400 cases) Conversion to open 0.5% Bladder injury 0.5% Groin haematoma/pain 4% Acute retention 2% Source: JM Wellwood</pre><pre>Complications Open Laparoscopic Atelectasis 0 1 Pus from wound 5 1 Persistent wound pain 6 3 Primary wound haemorrhage 1 0 Symptomatic haematoma 3 1 Acute retention of urine 1 0 Total 16 6</pre><p>The next step for surgeons, says Dr Wellwood, is to test laparoscopic repair against the Lichenstein technique, a much less traumatic open surgical procedure. But he emphasises that other issues urgently need to be resolved including: the capital cost and maintenance of equipment, cost of disposable equipment, training for surgeons and theatre staff and increased theatre time. HEALTH ECONOMIC ASPECTS</p><p>Dr Jonsson says his most recent study (in press) showed a cost increase of 10.8% - just over SKr 2,000 ($278) for laparoscopic cholecystectomy. Sick leave was halved from 24 to 12 days, which more than covers the extra treatment costs (see table on page 19).</p><pre>Costs: Open and laparoscopic cholecystectomy Study Total Hospital Costs ($) Hospital stay Sick Leave (days) open lap open lap open lap McIntyre 8,896 6,471 4.8 1.6 - - Stoker 4,436 5,541 4.9 2.3 42 13 Bass 5,525 5,354 - - - - Kelly 5,392 5,390 3.7 1.3 43 8 Kesteloot & 2,711 2,268 7.9 3.9 39 20 Penninckx (BFr80,521) (BFr67,384) Unger 6,956 4,693 8.0 2.4 21 7 Fullarton3,018 3,039 9.5 4.8/3.4(*)- - (&pound;2,012) (&pound;2,026) (*) early/late experience Source: Bengt Jonsson</pre><p>REIMBURSEMENT</p><p>Laparoscopic surgery has lots of benefits for patients and society but what about hospitals? According to Jurgen Huygh, assistant to the director of Virga Jese Hospital, Belgium, the answer is none, because it consumes scarce resources and cuts fee-per-day revenues, because patients leave so soon. MIS is a financial burden, but one that has to be borne, because of the open-access system, says Mr Huygh. Belgian patients can choose which hospital treats them - and they select the ones offering MIS.</p><p>Among the strategies under consideration at Virga Jese are direct patient charges (about BFr 5,000 - $175), reuse of disposables and an increase in reusable equipment, an increase in the hospitals' share of surgeons' fees and even keeping patients in bed for a few extra days to boost reimbursement. Hospital stays for open appendectomy average seven days, raising about BFr 49,000, whereas MIS with an average of two days generates only BFr 14,000.</p><p>Mr Wellwood is outraged by the idea of disposable reuse. "If he was my hospital manager I'd sack him," he says. "If the packaging says single use then the surgeon is liable for any problems caused by misuse. I don't mind doing it cheap, but I won't drop quality to save money," he adds.</p><p>a touch of Midas</p><p>The paradox is that the financial benefits lie outside the hospital, with employers, insurers and government, and it is with these bodies that the long-term solution lies. Otherwise, says Mr Huygh, the victims of advances in healthcare will be the hospitals and the patients.</p><p>The German government hopes its new DRG reimbursement regime will cut social security spending but there are worries that an MIS craze could quickly gobble up any savings made. "The German government does not, as a principle, encourage or discourage new surgical technology, but laparoscopy is too important to be ignored," says to Dr Manfred Zipperer, responsible for insurance at the Federal Ministry of Health.</p><p>Dr Zipperer claims that about 30% of patients referred to hospital in southern Germany do not really need in-patient treatment. He believes the new reimbursement regime, due to come into force next year, should persuade more physicians to choose day-surgery.</p><p>Demand for day-surgery is already high, says Dr Zipperer. From 1990-93, reimbursed outpatient procedures rose 47% and despite a 30% increase in doctors' fees the value of points paid by the Krankenkassen fell substantially (see Clinica No 660, Supplement). The worry is that a similar explosion will wipe out any saving that MIS might generate. Some regions of Germany are already virtually gallbladder-free as a result of overenthusiastic preventive cholecystectomy, he says.</p><p>After a decade of strong growth, the European market for arthroscopic and laparoscopic equipment dipped in 1993 and was worth about $707 million in 1994. The market is expected to grow at 9.4% per annum until the end of the decade.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{2E069F42-D0F0-4A2F-80B3-B8EEFC9D8071}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 23
+
+Whither laparoscopy now
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950703T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950703T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950703T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053289
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 23
+
+Whither laparoscopy now
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255098
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184442Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b53b6749-8ec2-48d4-ad72-3a6a304d32e0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184442Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

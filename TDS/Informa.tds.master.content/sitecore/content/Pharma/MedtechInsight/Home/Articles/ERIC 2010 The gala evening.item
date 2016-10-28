@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {ECF26E37-EFC1-4935-81AA-033FA928A766}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/ERIC 2010 The gala evening
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: ERIC 2010 The gala evening
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: a3e16798-0039-409e-96f2-66989ee28ed3
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 1238
+
+<p> <p><em><strong>Words and photos: Salina Christmas </strong><br> 21 October 2010</em></p> <p>What else was on the menu at the gala evening, which took place on the second night at the conference? Riverdance, of course. Over supper, the host and the guests exchanged ideas and information. </p>  <tr> <td><div></div></td> <td></td> </tr> <tr> <td><div></div></td> <td></td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td></td> <td></td> </tr> <tr> </tr>  <p><escenic_non_breaking_space></escenic_non_breaking_space></p>  <tr> <td><div></div></td> <td></td> </tr> <tr> <td><div></div></td> <td></td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td></td> <td></td> </tr> <tr> </tr>  <p><escenic_non_breaking_space></escenic_non_breaking_space></p>  <tr> <td><div></div></td> <td></td> </tr> <tr> <td><div></div></td> <td></td> </tr> <tr> <td></td> <td></td> </tr>  <p><strong>ERIC 2010: NEWS </strong></p> <p><a>User experience critical in putting technology in context, say researchers </a></p> <p><strong>ERIC 2010: PHOTO ESSAYS </strong></p> <p><a>Academics and researchers, the R&amp;D talents </a><br> <a>Intel meets the technology community </a><br> <a>The delegates and their digital objects </a><br> <a>The gala evening </a></p> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 27
+
+ERIC 2010: The gala evening
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3516
+
+<p> <p><em><strong>Words and photos: Salina Christmas </strong><br> 21 October 2010</em></p> <p>What else was on the menu at the gala evening, which took place on the second night at the conference? Riverdance, of course. Over supper, the host and the guests exchanged ideas and information. </p> <table> <tr> <td><div><img src="-/media/535D98F1A4444B9EB2D98BEA43D0F870.ashx" width="350" height="232"></div></td> <td><img src="-/media/49543BF1FEE24E27A9A553DC9A9AC7B8.ashx" width="350" height="232"></td> </tr> <tr> <td><div><img src="-/media/962E709FC5144D26A08440FB25F5F30A.ashx" width="350" height="232"></div></td> <td><img src="-/media/BE49F4DA88624464A982F904737D1D6B.ashx" width="350" height="232"></td> </tr> <tr> <td><img src="-/media/CF8E57FBBBE94DCCA6A92133CD52522B.ashx" width="350" height="232"></td> <td><img src="-/media/17EBC2FE7CE5482EB7B5906E003F90D5.ashx" width="350" height="232"></td> </tr> <tr> <td><img src="-/media/5757F47B8C574985AF6A8983B86710FA.ashx" width="350" height="232"></td> <td><img src="-/media/046EBA4B5419432991F56B5A75CBE667.ashx" width="350" height="232"></td> </tr> <tr> </tr> </table> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> <table> <tr> <td><div><img src="-/media/50AD481DF1AC4A1593F50C43DE3980F7.ashx" width="350" height="232"></div></td> <td><img src="-/media/D4FF8E9B0ED24F90843E11FA530D7A15.ashx" width="350" height="232"></td> </tr> <tr> <td><div><img src="-/media/B141EDE1E6E24839B183279825563F2F.ashx" width="350" height="232"></div></td> <td><img src="-/media/E73A1E2C5EBE4BE89956316FE1EF5827.ashx" width="350" height="232"></td> </tr> <tr> <td><img src="-/media/01D380FEF336403ABEF19C84C3644BF3.ashx" width="350" height="233"></td> <td><img src="-/media/2E1320C2891044BCAF9AD0E76F4B1485.ashx" width="350" height="232"></td> </tr> <tr> <td><img src="-/media/6A008829B19B4AE185C0FEFFA1060C52.ashx" width="350" height="232"></td> <td><img src="-/media/7901339D579F49488A17236D97936279.ashx" width="350" height="232"></td> </tr> <tr> </tr> </table> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> <table> <tr> <td><div><img src="-/media/AE1AE8DA5B264F008AAE67C7AC71CD6D.ashx" width="350" height="232"></div></td> <td><img src="-/media/926DEF8CA0824591889D1FB1158E223A.ashx" width="350" height="232"></td> </tr> <tr> <td><div><img src="-/media/AE22760A8E884FBC98203A13C00FFDD4.ashx" width="350" height="232"></div></td> <td><img src="-/media/33A0EAB70FD94E8BBAAA655FF90DEF30.ashx" width="350" height="232"></td> </tr> <tr> <td><img src="-/media/A03A73C1969841F29783C2038F2F2DDE.ashx" width="350" height="232"></td> <td><img src="-/media/923C43F6857344BCB3805C28CB07349C.ashx" width="350" height="232"></td> </tr> </table> <p><strong>ERIC 2010: NEWS </strong></p> <p><a href="http://www.clinica.co.uk/marketsector/imagingit/User-experience-critical-in-putting-technology-in-context-say-researchers-304882" class="optionsLink">User experience critical in putting technology in context, say researchers </a></p> <p><strong>ERIC 2010: PHOTO ESSAYS </strong></p> <p><a href="http://www.clinica.co.uk/eric2010/talents" class="optionsLink">Academics and researchers, the R&amp;D talents </a><br> <a href="http://www.clinica.co.uk/eric2010/intel" class="optionsLink">Intel meets the technology community </a><br> <a href="http://www.clinica.co.uk/eric2010/devices2" class="optionsLink">The delegates and their digital objects </a><br> <a href="http://www.clinica.co.uk/eric2010/gala" class="optionsLink">The gala evening </a></p> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+ERIC 2010 The gala evening
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185743
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057098
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 27
+
+ERIC 2010: The gala evening
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+304654
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185852Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a3e16798-0039-409e-96f2-66989ee28ed3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225743Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

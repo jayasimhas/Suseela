@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {A8CD59F7-D11B-4119-9A98-4F8673B9C4AC}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Clinica League Tables 2010  Cardiology
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Clinica League Tables 2010  Cardiology
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: c255ae38-0c59-4ab7-8d10-4ff34d5faed6
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3887
+
+<p>  <tr> <td><b>FY 2009 Ranking</b></td> <td><b>Movement on previous year</b></td> <td><b>Company</b></td> <td><b>2009 Cardiology sales (US$ million)</b></td> <td><b>2008 Cardiology sales (US$ million)</b></td> <td><b>Notes</b></td> </tr> <tr> <td>1</td> <td>no change</td> <td><b>Medtronic</b></td> <td><b>7451.00</b></td> <td><b>7094.00</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>2</td> <td>no change</td> <td><b>Boston Scientific</b></td> <td><b>6430.00</b></td> <td><b>6362.00</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>3</td> <td>no change</td> <td><b>St Jude Medical</b></td> <td><b>4350.51</b></td> <td><b>4109.11</b></td> <td>Cardiac rhythm management, Cardiovascular and Atrial fibrillation segment sales</td> </tr> <tr> <td>4</td> <td>no change</td> <td><b>Johnson & Johnson</b></td> <td><b>2679.00</b></td> <td><b>2988.00</b></td> <td>Cordis division sales</td> </tr> <tr> <td>5</td> <td>up (+1)</td> <td><b>Terumo</b></td> <td><b>1453.39</b></td> <td><b>1232.23</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>6</td> <td>down (-1)</td> <td><b>Edwards Lifesciences</b></td> <td><b>1321.40</b></td> <td><b>1237.70</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>7</td> <td>no change</td> <td><b>Sorin Group</b></td> <td><b>940.40</b></td> <td><b>921.94</b></td> <td><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr> <td>8</td> <td>no change</td> <td><b>CR Bard</b></td> <td><b>681.50</b></td> <td><b>643.10</b></td> <td>Vascular segment sales</td> </tr> <tr> <td>9</td> <td>no change</td> <td><b>Greatbatch</b></td> <td><b>305.35</b></td> <td><b>286.25</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>10</td> <td>up (+1)</td> <td><b>Thoratec</b></td> <td><b>279.97</b></td> <td><b>214.98</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>11</td> <td>down (-1)</td> <td><b>Merit Medical Systems</b></td> <td><b>257.46</b></td> <td><b>227.14</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>12</td> <td>no change</td> <td><b>AGA Medical Holdings</b></td> <td><b>198.71</b></td> <td><b>166.90</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>13</td> <td>up (+2)</td> <td><b>Abiomed</b></td> <td><b>84.77</b></td> <td><b>72.51</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>14</td> <td>up (+3)</td> <td><b>AngioDynamics</b></td> <td><b>83.46</b></td> <td><b>63.68</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>15</td> <td>up (+1)</td> <td><b>ATS Medical</b></td> <td><b>75.71</b></td> <td><b>65.82</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>16</td> <td>down (-3)</td> <td><b>CONMED</b></td> <td><b>70.98</b></td> <td><b>78.38</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>17</td> <td>down (-3)</td> <td><b>Teleflex Medical</b></td> <td><b>70.80</b></td> <td><b>72.90</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>18</td> <td>no change</td> <td><b>Vascular Solutions</b></td> <td><b>66.73</b></td> <td><b>59.76</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>19</td> <td>up (+4)</td> <td><b>Cardiovascular Systems</b></td> <td><b>56.46</b></td> <td><b>22.18</b></td> <td><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr> <td>20</td> <td>down (-1)</td> <td><b>AtriCure</b></td> <td><b>54.53</b></td> <td><b>55.26</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr>  </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Clinica League Tables 2010 - Cardiology
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6444
+
+<p> <table> <tr valign="top"> <td bgcolor="#FFFFFF"><b>FY 2009 Ranking</b></td> <td bgcolor="#FFFFFF"><b>Movement on previous year</b></td> <td bgcolor="#FFFFFF"><b>Company</b></td> <td bgcolor="#FFFFFF"><b>2009 Cardiology sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>2008 Cardiology sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>Notes</b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">1</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Medtronic</b></td> <td bgcolor="#FFFFFF"><b>7451.00</b></td> <td bgcolor="#FFFFFF"><b>7094.00</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">2</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Boston Scientific</b></td> <td bgcolor="#FFFFFF"><b>6430.00</b></td> <td bgcolor="#FFFFFF"><b>6362.00</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">3</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>St Jude Medical</b></td> <td bgcolor="#FFFFFF"><b>4350.51</b></td> <td bgcolor="#FFFFFF"><b>4109.11</b></td> <td bgcolor="#FFFFFF">Cardiac rhythm management, Cardiovascular and Atrial fibrillation segment sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">4</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Johnson & Johnson</b></td> <td bgcolor="#FFFFFF"><b>2679.00</b></td> <td bgcolor="#FFFFFF"><b>2988.00</b></td> <td bgcolor="#FFFFFF">Cordis division sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">5</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Terumo</b></td> <td bgcolor="#FFFFFF"><b>1453.39</b></td> <td bgcolor="#FFFFFF"><b>1232.23</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">6</td> <td bgcolor="#FFFFFF">down (-1)</td> <td bgcolor="#FFFFFF"><b>Edwards Lifesciences</b></td> <td bgcolor="#FFFFFF"><b>1321.40</b></td> <td bgcolor="#FFFFFF"><b>1237.70</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">7</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Sorin Group</b></td> <td bgcolor="#FFFFFF"><b>940.40</b></td> <td bgcolor="#FFFFFF"><b>921.94</b></td> <td bgcolor="#FFFFFF"><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">8</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>CR Bard</b></td> <td bgcolor="#FFFFFF"><b>681.50</b></td> <td bgcolor="#FFFFFF"><b>643.10</b></td> <td bgcolor="#FFFFFF">Vascular segment sales</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">9</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Greatbatch</b></td> <td bgcolor="#FFFFFF"><b>305.35</b></td> <td bgcolor="#FFFFFF"><b>286.25</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">10</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Thoratec</b></td> <td bgcolor="#FFFFFF"><b>279.97</b></td> <td bgcolor="#FFFFFF"><b>214.98</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">11</td> <td bgcolor="#FFFFFF">down (-1)</td> <td bgcolor="#FFFFFF"><b>Merit Medical Systems</b></td> <td bgcolor="#FFFFFF"><b>257.46</b></td> <td bgcolor="#FFFFFF"><b>227.14</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">12</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>AGA Medical Holdings</b></td> <td bgcolor="#FFFFFF"><b>198.71</b></td> <td bgcolor="#FFFFFF"><b>166.90</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">13</td> <td bgcolor="#FFFFFF">up (+2)</td> <td bgcolor="#FFFFFF"><b>Abiomed</b></td> <td bgcolor="#FFFFFF"><b>84.77</b></td> <td bgcolor="#FFFFFF"><b>72.51</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">14</td> <td bgcolor="#FFFFFF">up (+3)</td> <td bgcolor="#FFFFFF"><b>AngioDynamics</b></td> <td bgcolor="#FFFFFF"><b>83.46</b></td> <td bgcolor="#FFFFFF"><b>63.68</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">15</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>ATS Medical</b></td> <td bgcolor="#FFFFFF"><b>75.71</b></td> <td bgcolor="#FFFFFF"><b>65.82</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">16</td> <td bgcolor="#FFFFFF">down (-3)</td> <td bgcolor="#FFFFFF"><b>CONMED</b></td> <td bgcolor="#FFFFFF"><b>70.98</b></td> <td bgcolor="#FFFFFF"><b>78.38</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">17</td> <td bgcolor="#FFFFFF">down (-3)</td> <td bgcolor="#FFFFFF"><b>Teleflex Medical</b></td> <td bgcolor="#FFFFFF"><b>70.80</b></td> <td bgcolor="#FFFFFF"><b>72.90</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">18</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Vascular Solutions</b></td> <td bgcolor="#FFFFFF"><b>66.73</b></td> <td bgcolor="#FFFFFF"><b>59.76</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">19</td> <td bgcolor="#FFFFFF">up (+4)</td> <td bgcolor="#FFFFFF"><b>Cardiovascular Systems</b></td> <td bgcolor="#FFFFFF"><b>56.46</b></td> <td bgcolor="#FFFFFF"><b>22.18</b></td> <td bgcolor="#FFFFFF"><b><escenic_non_breaking_space></escenic_non_breaking_space></b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">20</td> <td bgcolor="#FFFFFF">down (-1)</td> <td bgcolor="#FFFFFF"><b>AtriCure</b></td> <td bgcolor="#FFFFFF"><b>54.53</b></td> <td bgcolor="#FFFFFF"><b>55.26</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> </table> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Clinica League Tables 2010  Cardiology
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185749
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057358
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Clinica League Tables 2010 - Cardiology
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+306444
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T190001Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c255ae38-0c59-4ab7-8d10-4ff34d5faed6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225749Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

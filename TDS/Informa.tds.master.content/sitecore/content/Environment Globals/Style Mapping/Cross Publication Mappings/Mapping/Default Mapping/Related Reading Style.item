@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {D87A81FB-3497-44C8-834B-A36B6303D649}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/Cross Publication Mappings/Mapping/Default Mapping/Related Reading Style
+parent: {A57DC0C0-5F5F-4D9B-AD33-3FBB67FF03ED}
+name: Related Reading Style
+master: {00000000-0000-0000-0000-000000000000}
+template: {96899F84-20EA-4D2B-9E5E-C1FDE2E69B3C}
+templatekey: Related Reading Style
+
+----version----
+language: en
+version: 1
+revision: fba953a9-4410-43cb-892f-c8475e4fa16d
+
+----field----
+field: {A0A7FC9E-6D2D-4296-A6FA-6928A3DDAE56}
+name: Heading Text
+key: heading text
+content-length: 61
+
+<ParagraphStyle Style="rrh1">RELATED READING</ParagraphStyle>
+----field----
+field: {4D69C248-0A55-49A3-A800-D2C59E73EC5D}
+name: Citation Style
+key: citation style
+content-length: 4
+
+rrt1
+----field----
+field: {6AA0CCC3-0489-4472-BAC1-7DFE2C39E913}
+name: Footer Text
+key: footer text
+content-length: 169
+
+<ParagraphStyle Style="rrt2">Access these articles at our online store <CharacterStyle Style="Hyperlink">www.pharmamedtechbi.com/search</CharacterStyle></ParagraphStyle>
+----field----
+field: {383F9E17-D40A-4756-9D59-CF2B1357DC89}
+name: Width
+key: width
+content-length: 2
+
+80
+----field----
+field: {351D4DB9-C539-45B4-BAD3-2B3696225320}
+name: Height
+key: height
+content-length: 2
+
+50
+----field----
+field: {01041903-9F91-44B1-B983-4183A1D74BAD}
+name: Object Style
+key: object style
+content-length: 8
+
+rr_frame
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20110719T140400
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fba953a9-4410-43cb-892f-c8475e4fa16d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140910T095010:635459394106251825
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\christ
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

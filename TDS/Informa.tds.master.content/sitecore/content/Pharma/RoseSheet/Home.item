@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {B1A867BE-9056-46BC-A60E-CF7FBEA8360C}
+database: master
+path: /sitecore/content/Pharma/RoseSheet/Home
+parent: {204199B0-C381-4B9B-92BE-63E5754F5E90}
+name: Home
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {88CACA5D-2AE1-4739-8145-399F3486C2DE}
+templatekey: Home Page
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 116
+
+{0933B8E2-67C4-4D83-A43D-A4C67B863F4D}|{77604558-3056-497B-93D8-E53BC5619DDB}|{BC324106-766F-4E09-A82C-328FA7BD55CA}
+----version----
+language: en
+version: 1
+revision: 5ce5738e-4ced-4a8d-872c-9d26e584d4c5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 4
+
+Home
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+Home
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+Home
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 2212
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{D03738A8-7E40-47FC-856C-DC71C9A94168}" p:before="r[@uid='{DB9A8C17-F03F-4206-A5BA-3D9B403E389E}']" s:ds="{4D67C7A7-C656-4BC0-B4F4-075DAFE7B8DB}" s:id="{B835C69E-153A-49E1-96C4-F073E1B6A8E3}" s:ph="/main-content/right-curated-content_7480f89d-6cae-4848-b5ef-81249e537435" /><r uid="{DB9A8C17-F03F-4206-A5BA-3D9B403E389E}" p:before="r[@uid='{3AF274C7-0227-4560-821A-7728BB8DF439}']" s:id="{00A7F9E7-9564-41AE-B1C5-83DFD9BF7E92}" s:ph="/main-content/right-curated-content_7480f89d-6cae-4848-b5ef-81249e537435" /><r uid="{3AF274C7-0227-4560-821A-7728BB8DF439}" p:before="r[@uid='{BBD51507-7D02-45E4-9BB5-F90ECBC17B68}']" s:id="{00A7F9E7-9564-41AE-B1C5-83DFD9BF7E92}" s:ph="/main-content/right-curated-content_7480f89d-6cae-4848-b5ef-81249e537435" /><r uid="{BBD51507-7D02-45E4-9BB5-F90ECBC17B68}" p:before="r[@uid='{9E3284E3-A934-4BA6-91FA-511E95AB5ED2}']" s:ds="{550CBB12-9964-4875-AF8A-0EEDF6875CEB}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:ph="/main-content/left-curated-content_7480f89d-6cae-4848-b5ef-81249e537435" /><r uid="{9E3284E3-A934-4BA6-91FA-511E95AB5ED2}" p:before="r[@uid='{F4A29B8B-48E0-4EA7-AC2C-2C7F60D6B15A}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={B345799F-3A2B-46A2-A159-5F150C319DC8}|{364E3B7A-23DA-4E96-9E86-1612551C8EA4}" s:ph="/main-content/two-column-curated_cafd3225-80c0-4825-b690-9938aa2e8ea6" /><r uid="{F4A29B8B-48E0-4EA7-AC2C-2C7F60D6B15A}" p:before="r[@uid='{3DBF2283-13A3-40AE-AAEE-4782929CF233}']" s:ds="{80996395-3BAA-439E-BADE-E7AAD7933B54}" s:id="{C7E595D3-9F0C-41E0-890F-6D8C54B8EF40}" s:ph="main-content" /><r uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" p:before="r[@uid='{7480F89D-6CAE-4848-B5EF-81249E537435}']" /><r uid="{7480F89D-6CAE-4848-B5EF-81249E537435}" p:before="r[@uid='{CAFD3225-80C0-4825-B690-9938AA2E8EA6}']" s:id="{3EFF8328-17E2-41E9-BBCB-E4361A60D5C9}" s:ph="main-content" /><r uid="{CAFD3225-80C0-4825-B690-9938AA2E8EA6}" s:ds="{963DA04C-C146-4AA8-B4B8-9EA2D59DBD26}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200838Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5ce5738e-4ced-4a8d-872c-9d26e584d4c5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161001T094818Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

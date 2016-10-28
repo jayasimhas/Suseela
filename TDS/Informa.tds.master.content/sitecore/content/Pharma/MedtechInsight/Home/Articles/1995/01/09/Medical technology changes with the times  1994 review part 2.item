@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {83AC3071-425C-4BE3-9CA0-EA55D6C80D62}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Medical technology changes with the times  1994 review part 2
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Medical technology changes with the times  1994 review part 2
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 1ba2b69c-6922-40c2-8716-8adf6d195339
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 703
+
+<p>One of the biggest developments during the year in orthopaedics was the formation of a joint venture between UK company Smith & Nephew and <strong>[C#198800088:Advanced Tissue Sciences]</strong> (US) to develop laboratory-grown cartilage tissue products for orthopaedic applications. S&N will supply the initial $10 million funding and market resulting products - these are expected to be launched in 1998/99. The technology uses waste tissue, and therefore does not require an autograft, grown in the laboratory to form a cartilage plug which is then implanted into the patient. Initial research will target knees, hips and shoulders but the most important market is expected to be spinal discs.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Medical technology changes with the times - 1994 review part 2
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5279
+
+<p>One of the biggest developments during the year in orthopaedics was the formation of a joint venture between UK company Smith & Nephew and <strong>[C#198800088:Advanced Tissue Sciences]</strong> (US) to develop laboratory-grown cartilage tissue products for orthopaedic applications. S&N will supply the initial $10 million funding and market resulting products - these are expected to be launched in 1998/99. The technology uses waste tissue, and therefore does not require an autograft, grown in the laboratory to form a cartilage plug which is then implanted into the patient. Initial research will target knees, hips and shoulders but the most important market is expected to be spinal discs.</p><p>A Swedish team has used laboratory-grown cartilage cells successfully to treat patients with knee cartilage injuries. Femoral condylar transplants, which were grown from samples taken from the patients' own cartilage, were given to 16 patients with good-to-excellent improvement in joint function in 14 patients over a mean follow-up of 39 months, says the team from the University of Gothenburg and Sahlgrenska Hospital. Patellar transplants did not fare so well; only two of the patients had good or excellent improvement in joint function. The researchers are collaborating with BioSurface Technology (US) and a controlled, multi-centre trial is due to begin in Europe in 1995. BioSurface is developing the Chondrograft family of products based on laboratory-grown cartilage which are in preclinical trials.</p><p>One of the most active companies in 1994 was Wright Medical Technology, which undertook a campaign to complete its orthopaedic product range with acquisitions, licensing agreements and product launches. The US company acquired Orthotechnique (France) to distribute Wright products in Europe; Questus (US), a manufacturer of arthroscopic products; implant company Orthomet (which failed in its attempt to acquire Kirschner Medical, losing to <strong>[C#198600122:Biomet]</strong>); and attempted to acquire Advanced Spine Fixation Systems (which later fell through).</p><p>Wright also agreed to distribute Roberts Medical's Pactan Repair Device for hand and foot surgery and Precision Bone Grafting System. The company formed a cross-licensing agreement with Zimmer under which Wright gets a worldwide licence to Zimmer's Modulock spinal fixation system; and licensed American BioMed's minimally invasive spinal discectomy system. Wright also received clearance from the US FDA for all components of its PCL substituting knee system.</p><p>UK company Corin formed Corifix, a subsidiary dedicated to traumatology products. Corifix launched its first products - a femoral nailing system and a suture attachment device. Sister company Corin Medical entered a &pound;300,000 ($450,000) three-year collaborative project with AEA Technology and the University of Keele to address graduated elasticity matching which causes some joint replacements to loosen. Corin also received US FDA clearance to market its Nuffield Total Knee System.</p><p>spinal systems</p><p>There was good news for manufacturers of pedicle screws when members of the US FDA's Orthopaedic and Rehabilitation Devices Advisory Panel unanimously recommended reclassification of pedicle screws from Class III to Class II devices. Results from an FDA-recommended retrospective study of 3,498 patients showed that patients with degenerative spondylolisthesis whose treatment included pedicle bone screw implantation achieved fusion at a 20% higher rate than those without the implants. Additionally, clinical outcomes for patients treated for spinal fractures with pedicle screws were comparable with those of patients treated with other Class II devices cleared by the FDA.</p><p>The Public Citizen Health Research Group (HRG), however, believes pedicle screws are being overused, particularly for indications other than those mentioned in the study, and that many patients are damaged by the implanted screws. The HRG is conducting a survey of patients who have had problems with the device and plans to pursue the issue.</p><p>American Medical Electronics received US FDA approval to market its TriFix spinal fixation device. A posterior implantable fixation device for use in the thoracolumbar and lumbar portions of the spine, it stabilises damaged or diseased vertebrae. Surgical Dynamics (US) introduced a minimally-invasive surgical system for treating the pain caused by herniated discs, avoiding the need for major surgery. The Endoflex Steerable Nucleotome uses a probe inserted through a 3 mm incision to remove disc material and relieve pressure and the technique can be performed on an outpatient basis under local anaesthetic, says the company.</p><p>longer lasting implants?</p><p>Researchers in Japan have developed a process for treating titanium implants claimed to have advantages over conventional hydroxyapatite coating techniques. A team from Kyoto University treated titanium with aqueous alkali to form a hydrated TiO(2) layer which is then heat- treated. The chemically-treated titanium formed a dense and uniform bone-like apatite layer when soaked in simulated body fluid. The results suggest that this apatite layer will form in the body and bind strongly to bone.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Medical technology changes with the times  1994 review part 2
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051002
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Medical technology changes with the times - 1994 review part 2
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198600122,198800088
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252771
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183722Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1ba2b69c-6922-40c2-8716-8adf6d195339
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183722Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

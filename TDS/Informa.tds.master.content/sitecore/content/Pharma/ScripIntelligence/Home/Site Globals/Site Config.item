@@ -1,0 +1,114 @@
+----item----
+version: 1
+id: {BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Site Globals/Site Config
+parent: {311894E7-D9AF-4C5E-9DBE-BB0DCFDF4F33}
+name: Site Config
+master: {00000000-0000-0000-0000-000000000000}
+template: {997A3064-65F5-45CD-B32F-9EC61E90A610}
+templatekey: Site Config
+
+----version----
+language: en
+version: 1
+revision: c33a916a-8959-4356-8496-322d2c032611
+
+----field----
+field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
+name: Site Logo
+key: site logo
+content-length: 58
+
+<image mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
+----field----
+field: {A9AEEF7B-7865-48A8-A024-D79EBC7C2C79}
+name: Copyright Text
+key: copyright text
+content-length: 43
+
+© 2015 Informa plc. All Rights Reserved. QA
+----field----
+field: {ACA9D1AD-7C13-40BB-ACB6-C584EB6623BD}
+name: Local Footer Links
+key: local footer links
+content-length: 77
+
+{45795F80-A7FF-40E5-84B4-AE30362B5978}|{D8165CF7-C852-4D78-BB1C-D1F835F82465}
+----field----
+field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
+name: Menu One Header
+key: menu one header
+content-length: 18
+
+Menu One header QA
+----field----
+field: {3D4E2020-4A15-4B8E-A581-440107E91144}
+name: Menu Two Header
+key: menu two header
+content-length: 16
+
+Menu 2 Header QA
+----field----
+field: {7704CDD8-3258-4A10-8D22-55998BF88976}
+name: Subscribe Link
+key: subscribe link
+content-length: 131
+
+<link text="Register" linktype="internal" class="" title="" target="" querystring="" id="{E60C1B8F-F8CD-4987-9D3F-64D778DB84EE}" />
+----field----
+field: {4352F61D-BAB4-4CE4-888E-562FFC1C643C}
+name: Purchase Link
+key: purchase link
+content-length: 133
+
+<link text="Staff Item" linktype="internal" class="" title="" target="" querystring="" id="{A6AF3C93-4A9A-4DDE-8267-14457AB2981F}" />
+----field----
+field: {905EB945-783A-4385-B95E-E1A6FF63BCBA}
+name: Register Link
+key: register link
+content-length: 131
+
+<link text="Register" linktype="internal" class="" title="" target="" querystring="" id="{E60C1B8F-F8CD-4987-9D3F-64D778DB84EE}" />
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151230T191616Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c33a916a-8959-4356-8496-322d2c032611
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160408T005759Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

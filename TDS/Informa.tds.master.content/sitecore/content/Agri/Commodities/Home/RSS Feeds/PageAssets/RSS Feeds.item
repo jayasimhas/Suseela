@@ -1,0 +1,96 @@
+----item----
+version: 1
+id: {4384C887-4ACF-46B7-A110-DC415585CF97}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/RSS Feeds/PageAssets/RSS Feeds
+parent: {43EF885D-C934-4CB6-95E1-0273C249AADA}
+name: RSS Feeds
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: e622585c-43b4-4e82-9fbb-27836ee7b23f
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 5670
+
+<p><strong>commodities&nbsp;</strong></p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices sem quam, ac condimentum justo sodales vitae. Suspendisse rutrum est in ex fringilla, vitae tristique lacus eleifend. Cras sed nunc et orci ullamcorper laoreet a sit amet nulla. Sed varius ex non nunc maximus eleifend. Vivamus imperdiet et turpis ac tincidunt. Mauris velit magna, congue sit amet dui ac, efficitur dignissim leo. Aenean fringilla metus at ligula consequat rhoncus.
+Nam posuere, metus quis tincidunt euismod, justo mauris maximus libero, ac finibus libero augue a dolor. Maecenas elementum, quam quis volutpat fermentum, dui arcu ornare ipsum, ut pretium ex dolor eget nisl. Vivamus rutrum risus nulla, eu venenatis nibh iaculis id. Nunc gravida, ipsum finibus porta eleifend, ipsum lacus fringilla massa, ac maximus lacus ligula sed ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eleifend mi sit amet ligula posuere consectetur. Etiam convallis risus in aliquam faucibus. Nulla non nunc fermentum, pharetra orci a, tempus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec sodales purus, vitae commodo felis. Etiam pretium, tellus vitae imperdiet vehicula, lectus eros maximus ipsum, quis congue erat lacus ut massa.
+Phasellus ornare dapibus commodo. Fusce bibendum, mauris nec elementum tristique, quam ex varius tellus, a suscipit velit ante scelerisque elit. Vivamus bibendum aliquet pulvinar. Integer dapibus, tellus id tincidunt euismod, nibh justo suscipit velit, sit amet congue nisi nunc ut mauris. Proin id enim risus. Vestibulum magna felis, dapibus ac ligula non, porta pretium risus. Donec dictum ligula sem, nec mollis orci maximus eu. Sed finibus vitae dui vel tincidunt. Sed nisi tortor, egestas sed ex venenatis, gravida hendrerit nunc. Mauris ut aliquam felis. Maecenas a scelerisque tellus. Donec vulputate, lectus dapibus vulputate venenatis, quam odio egestas diam, nec mattis turpis ligula a massa. Cras mattis vehicula urna, in consequat ipsum imperdiet ac.
+Nam facilisis tellus vel rhoncus scelerisque. Aliquam purus erat, varius non lobortis vel, gravida vel nulla. Pellentesque condimentum, magna eu viverra commodo, lectus ipsum consequat arcu, aliquet luctus velit elit vel ex. Donec et massa bibendum, blandit mi elementum, venenatis mauris. Aenean nisi lacus, dapibus ac sem a, tristique consequat velit. Etiam eleifend quam facilisis eros accumsan, in dignissim lectus scelerisque. Praesent tempus feugiat urna. Nam tempor cursus enim, non congue mauris consequat ac. Sed et sapien vitae dolor blandit lacinia. Aenean nunc tellus, eleifend vitae est in, condimentum congue erat. Vestibulum ut fringilla nisl. Maecenas et turpis sit amet lacus volutpat placerat a nec dui. Fusce nec elementum neque. Sed aliquam nulla ut porta aliquam.
+<p><strong>Important!</strong>&nbsp; As of 24 April 2016, Scrip RSS feeds have changed.&nbsp; If you use existing RSS feeds, please update your feeds.</p>
+<p>RSS Feeds are a simple and convenient way to receive global news, analysis and opinion for the pharma industry. It is a unique tool that allows you to receive the latest Scrip headlines all in one place without having to visit the website. The new Scrip website has a range of feeds you can chose from, simply make your selection below</p>
+<h2><img alt="RSS" src="-/media/23cdbc2815ac48d78542d073eadaa519.ashx?h=25&amp;w=25" style="height: 25px; width: 25px;" />&nbsp;Available Standard Feeds</h2>
+<h3>Latest content</h3>
+<ul>
+    <li><a href="https://feeds.feedblitz.com/scrip">All the latest Scrip content</a></li>
+</ul>
+<h3>Topics</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-approvals" target="_blank">Approvals</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-clinical-trials" target="_blank">Clinical Trials</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-companies" target="_blank">Companies</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-deals" target="_blank">Deals</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-regulation" target="_blank">Regulation</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-strategy" target="_blank">Strategy</a></li>
+</ul>
+<h3>Therapy Areas</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-cancer" target="_blank">Cancer</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-neurology" target="_blank">Neurology</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-orthopedics" target="_blank">Orthopedics</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-infectious-diseases">Infectious Diseases</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-cardiovascular" target="_blank">Cardiovascular</a></li>
+    <li><a href="http://feeds.feedblitz.com/metabolic-disorders" target="_blank">Metabolic Disorders</a>
+    </li>
+</ul>
+<h3>Regions</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-asia-pacific" target="_blank">Asia Pacific</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-europe" target="_blank">Europe</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-north-america" target="_blank">North America</a></li>
+</ul>
+<p>In addition to the standard feeds, you can create your own RSS feeds through our <a href="https://scrip.pharmamedtechbi.com/search">search</a> functions. This will allow you to always be in control of what information you need and the format you desire.</p>
+<p>Having difficulties? Contact <a href="https://scrip.pharmamedtechbi.com/customer-support">customer support</a> and we'll be happy to help.</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160422T140537Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 17
+
+sitecore\ctrudeau
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e622585c-43b4-4e82-9fbb-27836ee7b23f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160930T130451Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

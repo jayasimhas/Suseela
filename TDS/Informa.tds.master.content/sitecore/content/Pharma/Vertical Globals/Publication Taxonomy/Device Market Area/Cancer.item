@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {38C11B55-01DF-4896-A885-D21E1006BA54}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Publication Taxonomy/Device Market Area/Cancer
+parent: {F42752FC-B35C-43D9-B402-EF80CEBD41CF}
+name: Cancer
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: fe05e19b-016c-4f33-b8d8-fb45558e70e6
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 6
+
+Cancer
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160412T184822Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fe05e19b-016c-4f33-b8d8-fb45558e70e6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160412T184822Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

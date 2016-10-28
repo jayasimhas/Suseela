@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {ED6392FE-E32B-424B-BD38-61BFC6BEBF43}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/06/12/BioRad backs confocal imaging
+parent: {457BA35E-723F-4E2B-9A26-9BC7B4646E90}
+name: BioRad backs confocal imaging
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: a2f2e38c-442b-4651-9d73-b9d75024ec5c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 125
+
+<p>Brad Crutchfield tells Philip Greenfield about the advantages of combining 3-D microscopy with user-friendly software.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 30
+
+Bio-Rad backs confocal imaging
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5818
+
+<p>Brad Crutchfield tells Philip Greenfield about the advantages of combining 3-D microscopy with user-friendly software.</p><p>Microscopy, a standard tool for cell research, is finding increasing use in diagnostics. Advances in microscope technology mean that cells can be studied in three-dimensional sections, allowing the user to detect incursion by bacteria into the cell. The technology responsible for driving this change, confocal laser scanning microscopy, is one of the single most important research areas for Bio-Rad Laboratories.</p><p>"We are well aware of our confocal products being used for diagnostic procedures although we do not sell a specific product directly to this market," explained Brad Crutchfield, general manager of Bio-Rad's UK-based microscopy division. "For example, in pathology labs it is used as an alternative to flow cytometry in ploidy analysis."</p><p>The research market for confocal products is around $55 million worldwide - growth of 15% a year is three times that typically seen in the analytical instrument market, according to Mr Crutchfield. "I expect the diagnostic market will be as big as if not bigger than the research market over the next five years," he predicted. He draws a comparison with chromatography and electrophoresis-based techniques, the diagnostic market for which outgrew the research market over time. "Confocal imaging could potentially have the single biggest effect on our future revenues," he added.</p><p>the big picture</p><p>Mr Crutchfield describes confocal microscopy as the big picture - overcoming the inherent blur and lack of detail which prevents conventional microscopy from being used as a diagnostic tool. Confocal imaging uses a laser to excite fluorescent dyes which have been applied to a smear. It produces thin, three-dimensional "optical sections" of a sample, ignoring the effects of out-of-focus layers of cells, to provide images much the same as thin serial histological sections. Typical applications include cervical cytology, breast aspirate analysis and endometrium cytology.</p><p>Bio-Rad claims a lead in the confocal microscopy market with a 35% share. The microscopy division sells more than 90% of its systems outside the UK, earning it the Queen's Award for Export Achievement (see Clinica No 652, p 5). The technology is based on research by the Medical Research Council's Laboratory of Molecular Biology in Cambridge, with whom it won the Queen's Award for Technological Achievement in 1991. This partnership has allowed Bio-Rad to dominate the UK market, a territory which is showing growth for the company, albeit at a slower rate than other markets.</p><p>In order for the application of this technology in the diagnostic market to grow, the advantages must be proved. A typical confocal system for use in the hospital pathology laboratory costs &pound;80,000, twice the price of a conventional fluorescence microscope, although this is falling as components are made more cheaply. Another cost-effectiveness issue is the ability for confocal imaging to be applied to multiple diagnoses. "We see potential where a number of tests can be performed on one biopsy specimen. It is up to companies like Bio-Rad to convince the pathologist of this approach."</p><p>Mr Crutchfield believes there is also great potential for confocal imaging in fluorescence in situ hybridisation (FISH), a technique which is finding rapid acceptance in genetic testing. Standard fluorescence microscopy is useful in itself but confocal technology gives a three-dimensional view of the distribution of genetic probes, a crucial part of genetic testing, he says.</p><p>stiff competition</p><p>Competition in this and other areas for confocal imaging is strong. Bio-Rad is investing heavily in R&D - it spent around &pound;2 million last year on basic confocal technology alone. The German optical companies, Carl Zeiss and Leica, are Bio-Rad's closest rivals; smaller US companies Meridian and Noran also compete.</p><p>Bio-Rad acknowledges the threat posed by Japanese manufacturers which are beginning to embrace confocal techniques. "Nikon has made several attempts to get into this area but have encountered some problems. Like many Japanese companies they are taking a long-term approach and we expect to see them competing much more seriously in two to three years," Mr Crutchfield anticipates.</p><p>The Japanese market has by far outpaced the rest of the world due to huge government investment in biotechnology research. This market, which would typically account for around 12% of the worldwide research analytical instrument market, could potentially account for 25-30%, believes Mr Crutchfield.</p><p>Bio-Rad has seen rapid acceptance of confocal techniques in North America. "In the US, we find there is more pressure for software and connectivity between the systems." The company puts great emphasis on software which makes its instruments more accessible for non-specialists. "More and more people with a limited understanding of how the technology works are using the system."</p><p>Bio-Rad, although the largest player in the confocal microscopy market, is not a microscope company. Its competitors are, however, and have their own views of the market. Zeiss, for instance, believes the main opportunities in the more established markets of the UK and the US are in improving the optical performance of the system rather than the software. As far as Bio-Rad is concerned, Mr Crutchfield believes that software written by biologists, not engineers, is the key to success.</p><p>Bio-Rad Laboratories' UK group is the largest of its non-US manufacturing divisions. The microscopy division is part of the Molecular Bioscience Group formed last year, in part to produce products for DNA-based research and diagnosis.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 29
+
+BioRad backs confocal imaging
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950612T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950612T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950612T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052945
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 30
+
+Bio-Rad backs confocal imaging
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254754
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a2f2e38c-442b-4651-9d73-b9d75024ec5c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

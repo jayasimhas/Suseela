@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {48BF18AD-E100-41B8-8B38-43B515F33EF3}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Local Components/Promotional
+parent: {0B2BFEC2-8F9D-4DA1-9493-830E4334F2D8}
+name: Promotional
+master: {00000000-0000-0000-0000-000000000000}
+template: {6E30E4D3-68BE-489A-9233-1BA1CC703FD8}
+templatekey: Content
+
+----version----
+language: en
+version: 1
+revision: 9e6817dd-cbb9-4f3f-815c-7a46f8bd4cbd
+
+----field----
+field: {5C986BAF-5370-43D6-89C6-BE1E0595609B}
+name: Title
+key: title
+content-length: 8
+
+Headline
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 10
+
+Promo Text
+----field----
+field: {5DAF7D5C-9820-4308-B80F-3567FA68E833}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{BE1AC84D-6F7E-4880-B68B-CDF61BBCD654}" />
+----field----
+field: {2FA5B55E-183B-4BEA-817D-B758CB2BB2EE}
+name: Link
+key: link
+content-length: 114
+
+<link text="" linktype="internal" class="" title=""  querystring="" id="{958213FB-0BD8-400D-BAD7-166AD9F4D3E5}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160218T021745Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9e6817dd-cbb9-4f3f-815c-7a46f8bd4cbd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160928T093228Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

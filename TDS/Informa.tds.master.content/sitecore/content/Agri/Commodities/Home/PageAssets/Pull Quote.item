@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {08CFF7B8-989F-48B5-A6D0-35AF0B68A4D4}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/PageAssets/Pull Quote
+parent: {DAAF73D1-A104-4BBF-98DA-1EF6C019EE68}
+name: Pull Quote
+master: {00000000-0000-0000-0000-000000000000}
+template: {936976D6-533F-4DB1-BE06-1B840E33A346}
+templatekey: Content Quote
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+500
+----version----
+language: en
+version: 1
+revision: c36aa0fc-594b-43a1-9425-211903c3b336
+
+----field----
+field: {4DDAA80C-5033-42EC-A315-685F03C6918E}
+name: Quote
+key: quote
+content-length: 60
+
+The best preparation for tomorrow is doing your best today. 
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160331T031222Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c36aa0fc-594b-43a1-9425-211903c3b336
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160407T122529Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

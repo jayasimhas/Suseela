@@ -46,6 +46,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return Enumerable.Empty<object>();
             }
 
+            XMLDataLogger.WriteLog("_______________________________________________________________________________________");
+
             List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
             long artNumber = GetNextArticleNumber();
@@ -168,6 +170,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     errorLog += "||" + "PublishDate is missing";
                 }
 
+                
+                if (GetXMLData(d, "PUBLISHDATE") != "" && (DateTime.Parse(GetXMLData(d, "PUBLISHDATE")).AddYears(Int32.Parse(WebConfigurationManager.AppSettings["PublishedYear"])) <= DateTime.Now))
+                {
+                    importErrorCount = 2;
+                    errorLog += "||" + "Publish Date is more than 2 years old";
+                }
 
                 //reading taxonomy for comodities  adding to ao
                 Dictionary<string, string> Taxonomy = new Dictionary<string, string>();
@@ -205,51 +213,53 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 }
 
                 // Siddharth
-                if (GetXMLData(d, bodyNode) == "")
-                {
-                    importErrorCount = 1;
-                    errorLog += "||" + "Body is missing ";
+                if (importErrorCount != 2) {
+                    if (GetXMLData(d, bodyNode) == "")
+                    {
+                        importErrorCount = 1;
+                        errorLog += "||" + "Body is missing ";
 
+                    }
+
+                    //reading mediaType according to agr mapping  adding to ao
+                    if (Tableau.Count > 0)
+                    {
+                        ao.Add("MEDIA", "interactivedashboards");
+                    }
+                    else if (string.IsNullOrEmpty(imageTitleHtml))
+                    {
+                        ao.Add("MEDIA", "image");
+                    }
+                    else
+                    {
+                        ao.Add("MEDIA", "Data");
+                    }
+
+
+
+
+                    ao.Add("INDUSTRIES", "");
+                    // ao.Add("AGENCY", ""); 
+                    //ao.Add("COUNTRY", "ANGOLA");
+                    //ao.Add("COMMERCIAL", "Deals");
+                    //ao.Add("COMPANIES", "2 Sisters Food Group");
+                    //ao.Add("COMMODITYFACTOR", "");
+                    //  ao.Add("INDUSTRIES", "");
+
+                    // Siddharth
+                    if (ao["MEDIA"] == "")
+                    {
+
+                        successwithmissingLog += "||" + "Media is missing";
+                    }
+
+                    if (!(ao.ContainsKey("COMMODITY1")))
+                    {
+
+                        successwithmissingLog += "||" + "COMMODITY is missing";
+                    }
                 }
-
-                //reading mediaType according to agr mapping  adding to ao
-                if (Tableau.Count > 0)
-                {
-                    ao.Add("MEDIA", "interactivedashboards");
-                }
-                else if (string.IsNullOrEmpty(imageTitleHtml))
-                {
-                    ao.Add("MEDIA", "image");
-                }
-                else
-                {
-                    ao.Add("MEDIA", "Data");
-                }
-
-
-                
-               
-                ao.Add("INDUSTRIES", "");
-                // ao.Add("AGENCY", ""); 
-                //ao.Add("COUNTRY", "ANGOLA");
-                //ao.Add("COMMERCIAL", "Deals");
-                //ao.Add("COMPANIES", "2 Sisters Food Group");
-                //ao.Add("COMMODITYFACTOR", "");
-                //  ao.Add("INDUSTRIES", "");
-
-                // Siddharth
-                if (ao["MEDIA"] == "")
-                {
-
-                    successwithmissingLog += "||" + "Media is missing";
-                }
-
-                if (!(ao.ContainsKey("COMMODITY1")))
-                {
-
-                    successwithmissingLog += "||" + "COMMODITY is missing";
-                }
-                if (importErrorCount == 1)
+                if (importErrorCount == 1 || importErrorCount == 2)
                 {
                     XMLDataLogger.WriteLog(errorLog);
                 }
@@ -267,19 +277,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
                 //String[] text = { "Mexico", "India", "Pakistan", };
 
-                string country = GetRegion().FirstOrDefault(w => regionSearch.Contains(w));
+                string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                 ao.Add("COUNTRY", country);
 
 
-                string Companies = GetCompanies().FirstOrDefault(w => regionSearch.Contains(w));
+                string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                 ao.Add("COMPANIES", Companies);
 
-                string Agency = GetAgency().FirstOrDefault(w => regionSearch.Contains(w));
+                string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                 ao.Add("AGENCY", Agency);
 
 
-
-                l.Add(ao);
+                if(importErrorCount != 2) {
+                       l.Add(ao);
+                }
                 artNumber++;
 
 
@@ -288,7 +299,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "KEYWORD"  };
 
 
-
+                importErrorCount = 0;
                 if (!File.Exists(autFile))
                 {
                     Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
@@ -384,7 +395,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             if (articles == null || !articles.Any())
             return 1;
 
-            return 1;
+           // return 1;
 
             string num = articles.First().Replace(PublicationPrefix, "");
             int n = int.Parse(num);

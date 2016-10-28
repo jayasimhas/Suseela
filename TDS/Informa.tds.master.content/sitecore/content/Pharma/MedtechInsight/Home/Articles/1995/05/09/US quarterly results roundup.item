@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {7A7914F5-AEBC-4D12-A565-0B840843E693}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/09/US quarterly results roundup
+parent: {A4F8C6E7-A9D7-4D86-9AA8-A644D3C4B8E3}
+name: US quarterly results roundup
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: c5790f49-cc7c-4b09-a277-1ab23be9ac24
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+US quarterly results round-up
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4971
+
+<p><pre>Advanced Magnetics Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 6.23 2.62 3.25 0.37 6 months 6.96 4.11 2.55 2.32 (ended Mar 31st)</pre><p>Advanced Magnetics' second-quarter revenues include a $5 million payment from Berlex Laboratories, half the agreed price for a product licence and the exclusive marketing rights in the US and Canada for Advanced Magnetics' MRI contrast agent Feridex IV (see Clinica No 641, p 14). The company's product sales to <strong>[C#198700114:Guerbet]</strong>, the European licensee, rose to $0.80 million in the second quarter compared with $0.14 million a year earlier.</p><pre>Andros Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 12.47 15.50 1.34 2.41 6 months 24.31 30.09 2.52 4.79 (ended Jan 29th, 1995; Jan 23rd, 1994)</pre><p>Andros says that second-quarter medical sales declined 23% compared with the previous year to $2.71 million mainly due to variations in some customers' order patterns. Medical sales in the first six months of fiscal 1995 were up 21% to $7.87 million. The rise is attributed to shipments of Andros' Model 4610 anaesthesia monitor and the Model 4640 agent identification module.</p><pre>Bio-Rad Laboratories Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 97.86 89.66 8.05 4.71 (ended Mar 31st)</pre><p>First-quarter sales increased in all of Bio-Rad's operating segments, the company says. Favourable foreign exchange rates and a lower effective tax rate helped to improve profits.</p><pre>Diagnostic Products Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 39.20 27.77 5.81 3.47 (ended Mar 31st)</pre><p>Diagnostic Products attributes the 41% increase in first-quarter sales to rises in all its product lines. Exchange rate effects added 8% revenue growth.</p><pre>Enzo Biochem Revenues Net income (loss) ($ millions) ($ millions) 1995 1994 1995 1994 3 months 7.04 4.48 0.55 (0.36) 6 months 15.07 9.65 19.28 0.17 (ended Jan 31st)</pre><p>Enzo's second-quarter profits were boosted by a $21 million gain, net of legal fees, from a litigation settlement with Johnson & Johnson (see Clinica No 627, p 13). Enzo expects revenues from its proprietary DNA-probe products to increase substantially this year after recently signing a distribution agreement with UK-based Amersham International.</p><pre>Glyko Biomedical Revenues Net loss ($ millions) ($ millions) 1995 1994 1995 1994 3 months 0.37 0.21 (0.38) (0.85) Year 0.88 0.38 (2.48) (3.31) (ended Dec 31st)</pre><p>Glyko manufactures carbohydrate instrument and reagent systems based on its fluorophore-assisted carbohydrate electrophoresis (FACE) technology. In April, the company raised $2.33 million in a self-managed private placement.</p><pre><strong>[C#198600313:LecTec]</strong> Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 3.69 2.53 0.04 0.17 6 months 6.59 5.61 0.12 0.49 (ended Dec 31st)</pre><p>Start-up difficulties with a new medical tape production line reduced net income in the second quarter, LecTec says. Sales of medical tape increased 39% in the second quarter compared with a year earlier due to the receipt of a major international order in October.</p><pre>SpaceLabs Medical Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 63.14 61.24 4.47 2.81 (ended Apr 1st, 1995; Apr 2nd, 1994)</pre><p>SpaceLabs says that performance during the first quarter was strong in international markets, offsetting a continuing decline in US revenue. In February, SpaceLabs bought JRS Clinical Technologies (see Clinica No 643, p 10) and it plans to establish new subsidiary offices in Belgium and Sweden. This follows a recent agreement with Sweden-based Artema Medical to distribute its gas monitors in certain international markets. "To increase focus on our core business we have sold our line of non-hospital defibrillator products to Physio-Control," CEO Carl Lombardi says.</p><pre>Sofamor Danek Revenues Net income (loss) ($ millions) ($ millions) 1995 1994 1995 1994 3 months 43.94 39.09 (21.51) 8.04 (ended Mar 31st)</pre><p>Sofamor reports first-quarter US sales of $28.8 million, up 6% compared with the previous year, and international sales of $15.1 million, up 28%. A $45.3 million one-time charge related to the strategic alliance agreed with Genetics Institute plunged the company into the red (see Clinica No 643, p 10).</p><pre><strong>[C#200300100:Valley Forge]</strong> Revenues Net income ($ millions) ($ millions) 1995 1994 1995 1994 3 months 1.01 0.90 0.13 0.15 6 months 1.29 1.74 0.00 0.31 (ended Mar 31st)</pre><p>Chairman Jerry Malis says that the second quarter saw the first positive results from the introduction of the new applications for Valley Forge's bipolar electrosurgical systems. Earnings were, however, depressed by costs related to the integration of Diversified Electronics which was acquired in August 1994 (see Clinica No 620, p 16).</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{2E069F42-D0F0-4A2F-80B3-B8EEFC9D8071}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+US quarterly results roundup
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950509T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950509T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950509T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052493
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+US quarterly results round-up
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 29
+
+200300100,198600313,198700114
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254302
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184208Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5790f49-cc7c-4b09-a277-1ab23be9ac24
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184208Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {9AF2C045-6A48-4267-9CC6-6C5DF26F3668}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Globals/Navigation/Side Nav Menu/Business/Deals
+parent: {B84772C3-89B4-408A-91A1-A239AF94075C}
+name: Deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----version----
+language: en
+version: 1
+revision: 67b1d2f2-e44a-41ce-a639-e50e139473c6
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 128
+
+<link text="Deals" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160115T114128Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+67b1d2f2-e44a-41ce-a639-e50e139473c6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160115T114142Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

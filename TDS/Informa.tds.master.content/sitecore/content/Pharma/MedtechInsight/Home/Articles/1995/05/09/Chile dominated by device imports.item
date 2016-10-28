@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F0BF26F6-462E-4F5D-936E-B0250B9EA02E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/09/Chile dominated by device imports
+parent: {A4F8C6E7-A9D7-4D86-9AA8-A644D3C4B8E3}
+name: Chile dominated by device imports
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e3af7457-6909-4ded-a432-6eed57904609
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 433
+
+<p>Imports of medical equipment account for almost 90% of Chile's estimated $100 million medical device market. Domestic production is limited to a small number of manufacturers focusing on disposables, says a new report published by Medistat. Imports increased by over 50% in 1992, but were flat in 1993 at about $88 million. The earlier rise was due to large demand for X-ray apparatus and medical instruments, says the report.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 33
+
+Chile dominated by device imports
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3931
+
+<p>Imports of medical equipment account for almost 90% of Chile's estimated $100 million medical device market. Domestic production is limited to a small number of manufacturers focusing on disposables, says a new report published by Medistat. Imports increased by over 50% in 1992, but were flat in 1993 at about $88 million. The earlier rise was due to large demand for X-ray apparatus and medical instruments, says the report.</p><p>The medical devices market, as in other countries in Latin America, is dominated by US companies (see Clinica No 652, p 8). Germany and Japan held about 10% each of the overall market in 1993, while the EU held 22.5%. The US is dominant in all the major categories except orthopaedic implants - Switzerland is the main supplier with 39% - and hearing aids - Denmark has a 71% share. The UK supplied 62% of the blood grouping reagents market in 1993.</p><pre>Major medical device imports to Chile 1991-1993 Product Imports($'000) 1991 1992 1993 Syringes, needles & catheters 11,840 13,665 14,457 Other medical instruments 10,844 16,853 18,270 X-ray apparatus 6,898 10,248 11,350 Electro-diagnostic apparatus 5,611 16,679 9,137 (not ECGs) Bandages and dressings 4,555 5,747 5,223 Dental instruments 2,224 3,269 3,234 Ophthalmic instruments 731 1,732 2,151 X-ray tubes, parts & accessories 1,579 2,108 3,162 alpha/ss/gamma ray apparatus 1,469 499 1,016 Orthopaedic implants 1,285 2,186 2,171 Total medical device market 58,873 88,894 88,159 Source: Medistat</pre><p>The health sector has entered a period of rapid expansion and the medical device market is expected to grow 10-15% in 1995, according to the report. However, while the ageing population in Chile and the preponderance of chronic diseases are the hallmarks of a developed healthcare system, Chile still displays traditional problems of developing countries such as poverty in rural areas and extreme regional variations. Infant mortality is 6 per 1,000 live births in some affluent areas yet as high as 40 per 1,000 in poorer regions, compared with Spain (7.8 per 1,000) and the Philippines (47.8 per 1,000).</p><p>health expenditure</p><p>Total expenditure on health in Chile reached an estimated $1,700 million in 1993, representing 3.9% of GDP, according to Medistat. The government, keen to keep public expenditure growth below GDP growth, allocated a 5% increase in the public health budget for 1995. Employees contribute 7% of wages to either a private or public health insurance scheme. Private health insurance is made up of the Institutos Previsionales de Salud (ISAPRES) - 36 insurers which cater for some 20% of the population.</p><p>Public sector health services are provided by the national health services system (SNSS), which comprises 27 centres across the country and serves some 70% of the population. This is supported by the national health fund (FONASA), which provides supplementary low-cost healthcare to employees. In 1991, FONASA carried out around 4 million clinical diagnostic tests and over 100,000 surgical procedures.</p><p>Recent government attempts to alleviate poverty and decentralise buying procedures have received around $15 million in international support. France and Sweden have helped to install AIDS prevention programmes; Italy is supporting a cancer and high-risk healthcare programme. Germany has offered substantial loans for hospital rehabilitation, while the total value of healthcare loans from the World Bank, AIDB and Germany is $234 million in 1995.</p><pre>Chile in profile Population (1994) 14 million Health expenditure (1993) $1,700 million Health expenditure per capita $114 Hospital beds (1992) 42,879 Hospital beds (per 1,000 pop) 3.2 Doctors (per 1,000 pop) 1.1 Source: Medistat</pre><p>The 16-page country profile is included in Medistat, published by MDIS Publications Ltd. For further details, contact Clinica Reports. Tel: +44 (181) 948 3262. Fax: +44 (181) 948 6866</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 467
+
+{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{02F24459-B70F-4A65-8E50-F6FD55A6A840}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{51C76967-12F2-4AC5-BE15-E4861E5B0865}|{90B50EDD-05CC-43F5-8492-E3655D9B2E88}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Chile dominated by device imports
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950509T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950509T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950509T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052519
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 33
+
+Chile dominated by device imports
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254328
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184214Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e3af7457-6909-4ded-a432-6eed57904609
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184214Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

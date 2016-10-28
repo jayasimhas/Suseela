@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {52FCF1CB-9956-416C-8C86-F5FEA8D32CEC}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Emails Folder/SimonTestEmail/Article 2
+parent: {DBC444BE-B23E-4F75-A1F3-13903D1E99D2}
+name: Article 2
+master: {00000000-0000-0000-0000-000000000000}
+template: {CB4CA050-2626-4979-A53D-77613B218043}
+templatekey: Featured Article
+
+----version----
+language: en
+version: 1
+revision: 546498d8-3e09-4d94-8cc7-911d7eab65a2
+
+----field----
+field: {E4AF834D-E606-4424-8DDE-326953ED32B3}
+name: Article
+key: article
+content-length: 0
+
+
+----field----
+field: {0BFCB376-E720-4969-86EB-DA195D8470E1}
+name: Hide Image
+key: hide image
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160601T065033Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+546498d8-3e09-4d94-8cc7-911d7eab65a2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160613T104539Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

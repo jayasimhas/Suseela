@@ -42,7 +42,7 @@ function sendHttpRequest(UserPreferences, setFlag){
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
 				if(setFlag == 'register'){
-					window.location.href = '/';
+					window.location.href = $('.registrationBtn').attr('href');
 				}
 			}
 			else{
@@ -81,6 +81,11 @@ function setDataRow(allpublications){
 			$(newtrs[v]).attr('data-row', v+1);
 		}
 	}
+}
+
+function showModal(){
+	$('.modal-overlay').addClass('in');
+	$('.modal-view').show();
 }
 
 function sort_table(tbody, col, asc, sortstatus) {
@@ -136,6 +141,22 @@ function sort_table(tbody, col, asc, sortstatus) {
 }
 
 $(function(){
+	$('a').click(function(e){
+		if($('#validatePriority').val() == "true"){
+			if(!$(this).hasClass("registrationBtn")){
+				e.preventDefault();
+				showModal();
+			}
+		}
+	});
+	
+	$('form').submit(function(){
+		if($('#validatePriority').val() == "true"){
+			showModal();
+			return false;
+		}
+	});
+	
 	$('#allPublicationsPan').on('click', '.followAllBtn', function(){
 		var $this = $(this), curpublicPan = $this.closest('.publicationPan'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollow = curpublicPan.find('.followBtn'), table = $('.table');
 		$this.addClass('hideBtn');
@@ -144,14 +165,14 @@ $(function(){
 		curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
-		
+		$('#validatePriority').val(true);
 		for(var i=0; i<tbody.find('.followingBtn').length; i++){
-						$(tbody.find('.followrow')[i]).attr('draggable', true);
+			$(tbody.find('.followrow')[i]).attr('draggable', true);
 		}
 		
 		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
 		for(var i=0; i<$lgfollow.length; i++){
-						$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
+			$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
 		}
 		setClsforFlw(table);
 		sort_table(tbody, 0, 1, 'followingrow');
@@ -167,6 +188,7 @@ $(function(){
 		curpublicPan.find('.firstrow .lableStatus').val('followlbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
+		$('#validatePriority').val(false);
 		for(var i=0; i<$lgfollowing.length; i++){
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
 		}
@@ -183,8 +205,13 @@ $(function(){
 	  table.find('.firstrow .lableStatus').val('followinglbl');
 	  table.find('.accordionStatus .lableStatus').val('followinglbl');
 	  table.find('.followAllBtn').removeClass('fr');
+	  
+	  if(trs.hasClass('followingrow')){
+		$('#validatePriority').val(true);
+	  }
+	  
 	  if($('.followrow.disabled.frow', table).length){
-		  followrow.appendTo(followrow.clone().insertBefore(table.find('.followrow.disabled.frow')));
+		followrow.appendTo(followrow.clone().insertBefore(table.find('.followrow.disabled.frow')));
 	  }
 	  else{
 		followrow.clone().appendTo($this.closest('tbody'));
@@ -196,7 +223,7 @@ $(function(){
 	  }
 	  else{
 		followAllBtn.removeClass('hideBtn');
-		unfollowAllBtn.removeClass('hideBtn'); 
+		unfollowAllBtn.removeClass('hideBtn');
 	  }
 	});
 	
@@ -217,6 +244,7 @@ $(function(){
 	  if(trs.length === trsfollow.length+1){
 		unfollowAllBtn.addClass('hideBtn');
 		followAllBtn.removeClass('hideBtn');
+		$('#validatePriority').val(false);
 	  }
 	  else{
 		followAllBtn.removeClass('hideBtn');
@@ -328,9 +356,9 @@ $(function(){
 	
 	$('.saveview').click(function () {
 		var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
-		UserPreferences = { "IsNewUser": false }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
-		
 		
 		setDataRow(allpublications);
         allpublicationsEles.removeAttr('data-row');
@@ -345,42 +373,52 @@ $(function(){
 	
 	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
-		    UserPreferences = { "IsNewUser": true }, allpublications = $('.publicationPan', '#allPublicationsPan'); 
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		    UserPreferences = { "IsNewUser": true, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 			UserPreferences.PreferredChannels = [];
-		
+			
 		e.preventDefault();
-		if($('#enableSavePreferencesCheck').val() === "true"){
-			$('.alert-error.register-not-selected').show();
-			return false;
-		}
-		setDataRow(allpublications);
-		
-		if(!!$('#isChannelBasedRegistration').val()){
-			for (var i = 0; i < alltrs.length; i++) {
-				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-					channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-					secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-					channelOrder = $(alltrs[i]).attr('data-row'),
-					followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
-				
-				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+		if($('#validatePriority').val() == "false"){
+			if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0){
+				$('.alert-error.register-not-selected').show();
+				return false;
 			}
-			sendHttpRequest(UserPreferences, 'register');
+			setDataRow(allpublications);
+			
+			if(!!$('#isChannelBasedRegistration').val()){
+				for (var i = 0; i < alltrs.length; i++) {
+					var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+						channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+						secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+						channelOrder = $(alltrs[i]).attr('data-row'),
+						followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+					
+					UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+				}
+				sendHttpRequest(UserPreferences, 'register');
+			}
+			else{
+				createJSONData(table, UserPreferences);
+			}
 		}
 		else{
-			createJSONData(table, UserPreferences);
+			showModal();
 		}
 	});
 	 
 	$('.gotoview').click(function(e){
-		if(+$('#validatePreference').val()){
-			e.preventDefault();
-			$('.modal-overlay').addClass('in');
-			$('.modal-view').show();
+		if($('#validatePriority') && $('#validatePriority').val() == "true"){
+			showModal();
+		}
+		else{
+			if(+$('#validatePreference').val()){
+				e.preventDefault();
+				showModal();
+			}
 		}
 	});
 	
-	$('.close-modal').click(function(){
+	$('.close-modal, .cancel-modal').click(function(){
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
@@ -396,11 +434,3 @@ $(function(){
 	}); 
 
 });
-
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Web.Configuration;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -40,8 +41,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             FileStream fileStream = null;
             DirectoryInfo logDirInfo = null;
             FileInfo logFileInfo;
-
-            string logFilePath = "D:\\Logs\\";
+            string logFilePath = (WebConfigurationManager.AppSettings["ArticleLoggingFolder"]);
             logFilePath = logFilePath + "Log-" + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
             logFileInfo = new FileInfo(logFilePath);
             logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);

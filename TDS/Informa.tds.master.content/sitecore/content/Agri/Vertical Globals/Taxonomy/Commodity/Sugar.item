@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {5D0B4A92-CBEA-4F8A-BA16-3F14BDA0FD8E}
+database: master
+path: /sitecore/content/Agri/Vertical Globals/Taxonomy/Commodity/Sugar
+parent: {BF8FB5A3-7F05-4EF8-B238-C3C1F92AB0F2}
+name: Sugar
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 4
+
+1300
+----version----
+language: en
+version: 1
+revision: dca1289f-7a31-4a82-9f9c-483cdf17bd31
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 5
+
+Sugar
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160916T120809Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dca1289f-7a31-4a82-9f9c-483cdf17bd31
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161006T075951Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

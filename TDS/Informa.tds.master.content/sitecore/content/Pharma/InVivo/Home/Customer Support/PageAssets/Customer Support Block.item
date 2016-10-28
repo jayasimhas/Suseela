@@ -1,0 +1,115 @@
+----item----
+version: 1
+id: {C7856FD6-C3DB-4B64-86C0-2772397996DA}
+database: master
+path: /sitecore/content/Pharma/InVivo/Home/Customer Support/PageAssets/Customer Support Block
+parent: {338FED7A-EC15-4A43-AEFD-2C327D90A3F5}
+name: Customer Support Block
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: d5fe3638-50da-46c5-af28-60bb13e23818
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 5533
+
+<a name="demo"></a>
+<h2>Register for a Demo</h2>
+<p><a href="https://pharmaintelligence.informa.com/scrip-training-dates/" target="_blank">Register here</a> for your free demonstration where we will walk through the key benefits of your new platform.</p>
+<h2><a name="faq"></a>Frequently Asked Questions</h2>
+
+<h3>1.	How do I login to the new platform?</h3>
+<p>If you only subscribe to Scrip, then all you&rsquo;ll need to do is login using your current username and password.<br/>If you also subscribe to any of our other PharmaMedtechBI products, such as <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet" target="_blank">Pink Sheet</a> or <a href="https://www.pharmamedtechbi.com/publications/in-vivo" target="_blank">In Vivo</a>, then you&rsquo;ll need to use your PMBI username and password to access the new Scrip site.
+</p>
+<h3>Not sure which login to use?</h3>
+<p>If you&rsquo;re not sure which login to use, simply follow these steps:</p>
+<ul>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Click &ldquo;sign in&rdquo; on the top of the Scrip site</li>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Select &ldquo;Forgot your password&rdquo;</li>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Enter your email and click &ldquo;submit&rdquo;</li>
+</ul><p>
+We&rsquo;ll then send you a re-set link and you'll be ready to go!</p>
+<h3>2.	I&rsquo;m not getting my emails, what shall I do?</h3>
+<p>
+There are two types of email alerts you can receive. The first we call &lsquo;saved searches&rsquo; &ndash; these are emails that you set up from the previous search from the old website based upon specific content that you have specified yourself. You should still be receiving these, but if you are not, then please <a href="mailto:clientservices@scripintelligence.com">contact us</a> so we can resume the service for you immediately.</p>
+<p>
+The second type of emails you can receive are called daily/weekly &lsquo;digest&rsquo; emails. If you subscribe to both the daily and weekly digest emails these should have continued without a break. If you subscribe to one or the other, then these will stop. Please contact client services to continue your emails or you change your preferences <a href="https://scrip.pharmamedtechbi.com/my-account/email-preferences" target="_blank">here</a>.</p>
+<p>In any event, please contact us and will be happy to help.
+
+
+<h3>3. I subscribe to other products, will there be new website for them too?</h3>
+<p>
+The content for all other products will be delivered on this platform in the next few months to bring you a seamless online experience. We will write to you closer to the time with more details.
+</p>
+
+<h3>4. Is there a new URL?</h3>
+<p>Yes there is. It is: <a href="https://scrip.pharmamedtechbi.com">scrip.pharmamedtechbi.com</a> but you can still use the existing URL <a href="http://www.scripintelligence.com" target="_self">www.scripintelligence.com</a>.</p>
+
+<h3>5. I have RSS feeds &ndash; do I need to do anything?</h3>
+<p>Yes. If you are using RSS feeds you will need to update the feed addresses you are currently using. Our new RSS feed is: <a href="https://feeds.feedblitz.com/scrip" target="_blank">https://feeds.feedblitz.com/scrip</a></p>
+<h3>6. Can I still access the new content via IP authentication? </h3>
+
+<p>Yes you can. If you would like to add more users, please let us know by contacting us <a href="mailto:onlineaccess@informa.com">here</a>.
+</p>
+<h3>7.	Do I need to log in each time I access the new platform?</h3>
+<p>No.  After logging in for the first time, you can select "Remember me" so you won't need to login each time you want to access your subscriptions. However, for security reasons, you will be prompted to periodically login.  This may happen after a month from last logging in, or when attempting to make a purchase or change your profile information.</p>
+
+<h3>8.	I would like to use article &lsquo;X&rsquo; as a reference. Who do I contact?</h3>
+<p>If you would like to share and reference an article, please contact your account manager.</p>
+<h3>9.	I would like to  inquire about purchasing rights.</h3>
+<p>If you would like to purchase a single article, please contact your account manager or call client services.</p>
+<h3>10.	How do I access &lsquo;Scrip 100&rsquo; or &lsquo;Scrip Asia 100&rsquo;?</h3>
+<p>Scrip100 - <a href="http://www.scrip100.com/" target="_blank">http://www.scrip100.com/</a>.</p>
+<h2>Contact us</h2>
+<ul>
+    <li>Billing, hard copy and delivery enquiries: <a href="mailto:subscriptions@informa.com">subscriptions@informa.com</a> or phone us at: +44 (0) 207-0175540, toll free: +1 800-997-3892</li>
+    <li>Enquiries about your online access, including access issues and IP updates/changes: <a href="mailto:onlineaccess@informa.com">onlineaccess@informa.com</a> or phone us at: +44 (0) 207-0174161, toll free: +1 800-997-3892</li>
+    <li>Training, search questions and how to set up tailored alerts: <a href="mailto:clientservices@scripintelligence.com">clientservices@scripintelligence.com</a> or phone us at: (UK &amp; Europe):  +44 (20) 337 73737; (US Toll-Free):&nbsp;+1 888-670-8900 or the toll number is + 1 908-547-2200; Australia: +61 2 8705 6907</li>
+   
+    <li>Feedback: We welcome all feedback on our articles, as well as suggestions for future topics. Please feel free to reach us at <a href="mailto:clientservices@scripintelligence.com">clientservices@scripintelligence.com</a>. We look forward to hearing from you.
+    
+    </li>
+</ul>
+<p>&nbsp;</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160414T164640Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\DeweyD
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d5fe3638-50da-46c5-af28-60bb13e23818
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160423T080749Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby

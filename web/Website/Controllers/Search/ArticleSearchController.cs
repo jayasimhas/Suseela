@@ -20,7 +20,8 @@
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
         }
-        public object GetArticles([FromBody] IArticleSearchRequest articleRequest)
+        [HttpPost]
+        public object GetArticles([FromBody] ArticleSearchRequest articleRequest)
         {
             if(articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
                 return new { Articles = "No articles found" };
@@ -40,7 +41,8 @@
                     LoadMoreLinkUrl = "/api/articlesearch/",
                     LatestFromText = TextTranslator.Translate("Article.LatestFrom"),
                     PageNo = articleRequest.PageNo + 1,
-                    PageSize = articleRequest.PageSize
+                    PageSize = articleRequest.PageSize,
+                    TaxonomyIds = articleRequest.TaxonomyIds
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }

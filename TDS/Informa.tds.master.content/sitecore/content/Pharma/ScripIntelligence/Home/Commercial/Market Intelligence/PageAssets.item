@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {3886FE68-7645-4E38-A222-8ECADF3745DB}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Commercial/Market Intelligence/PageAssets
+parent: {28D30026-0FD4-4905-8E16-90E988E26FBA}
+name: PageAssets
+master: {00000000-0000-0000-0000-000000000000}
+template: {EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+templatekey: Page Assets
+
+----version----
+language: en
+version: 1
+revision: 2689ba4d-d9c5-44e6-9fbf-dc489953ac37
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160424T025908Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\deweyd
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2689ba4d-d9c5-44e6-9fbf-dc489953ac37
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160513T133654Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 19
+
+sitecore\Ghangurdea
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 57
+
+<r owner="sitecore\Ghangurdea" date="20160513T133654Z" />
