@@ -33,6 +33,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
+        $('.js-save-search-url').val(window.location.hash.substring(1));
         $scope.title = searchService.getFilter('q').getValue();
         $scope.currentLocation = $location.url();
         if ($scope.isAuthenticated) {
@@ -49,10 +50,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     vm.showLightbox = function(e) {
         if($scope.searchIsSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.angular-lightbox-modal-trigger'));
-        } else {
-			$(e.target).closest('.angular-pop-out-trigger').addClass('js-pop-out-trigger');
-			window.controlPopOuts.togglePopOut($(e.target).closest('.angular-pop-out-trigger'));
-		}
+        }
     };
 
 	vm.searchIsSaved = function() {
