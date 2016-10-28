@@ -588,51 +588,51 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 else
                                 {
-                                    errorLog += "||" + "Article Id is missing";
+                                    errorLog += "||" + "Article N/A";
                                 }
                             }
 
                             if (d.NewItemField == "Content Type" && importValue == "")
                             {
-                                errorLog += "||" + "ContentType is missing";
+                                errorLog += "||" + "ContentType N/A";
                             }
 
                             if (d.NewItemField == "Media Type" && importValue == "")
                             {
-                                errorLog += "||" + "MediaType is missing";
+                                errorLog += "||" + "MediaType N/A";
                             }
 
                             if (d.NewItemField == "Actual Publish Date" && importValue == "")
                             {
-                                errorLog += "||" + "PublishDate is missing";
+                                errorLog += "||" + "PublishDate N/A";
                             }
 
                             if (d.NewItemField == "Body" && importValue == "")
                             {
-                                errorLog += "||" + "Body is missing";
+                                errorLog += "||" + "Body N/A";
                             }
 
                             if (d.NewItemField == "Taxonomy")
                             {
-                                string commoditySearch = "COMMODITY1";
-                                if (commoditySearch.Any(w => (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains(w)) && importValue == "")
-                                {
-                                    errorLog += "||" + "Commodities is missing";
+       
+                              if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITY1") && importValue == "") 
+                              {
+                                    errorLog += "||" + "Commodities N/A";
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COUNTRY" && importValue == "")
                                 {
-                                    errorLog += "||" + "Region is missing";
+                                    errorLog += "||" + "Region N/A";
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMODITYFACTOR" && importValue == "")
                                 {
-                                    errorLog += "||" + "CommodityFactor is missing";
+                                    errorLog += "||" + "CommodityFactor N/A";
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMERCIAL" && importValue == "")
                                 {
-                                    errorLog += "||" + "Commercial is missing";
+                                    errorLog += "||" + "Commercial N/A";
                                 }
                             }
                             if (d.NewItemField == "Taxonomy")
@@ -655,11 +655,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
                                 ListToGuid.TaxonomyList.Clear();
-                            }
-
-
-                            
-
+                                   }
 
                               }
                         catch (Exception ex)
@@ -673,7 +669,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     ProcessCustomData(ref newItem, importRow);
                 }
 
-                Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
+                 Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
                 if (tableau.ContainsKey("dashboardname"))
                 {
                     TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");

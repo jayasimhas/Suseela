@@ -72,52 +72,84 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			SingleValue = GetItemField(i, "Singe GUID Value") == "1";
 		}
 
-		#endregion Constructor
+        #endregion Constructor
 
-		#region IBaseField
+        #region IBaseField
 
-		/// <summary>
-		/// uses the import value to search for a matching item in the SourceList and then stores the GUID
-		/// </summary>
-		/// <param name="map">provides settings for the import</param>
-		/// <param name="newItem">newly created item</param>
-		/// <param name="importValue">imported value to match</param>
-		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
-		{
+        /// <summary>
+        /// uses the import value to search for a matching item in the SourceList and then stores the GUID
+        /// </summary>
+        /// <param name="map">provides settings for the import</param>
+        /// <param name="newItem">newly created item</param>
+        /// <param name="importValue">imported value to match</param>
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        {
 
-			if (string.IsNullOrEmpty(importValue))
-				return;
+            if (string.IsNullOrEmpty(importValue))
+                return;
 
-			//get parent item of list to search
-			Item i = InnerItem.Database.GetItem(SourceList);
-			if (i == null)
-				return;
+            //get parent item of list to search
+            Item i = InnerItem.Database.GetItem(SourceList);
+            if (i == null)
+                return;
 
-			//loop through children and look for anything that matches by name
-			string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-			IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
 
-			//if you find one then store the id
-			if (!t.Any())
-				return;
-           
 
-              if(NewItemField == "Taxonomy") {
+
+            if (NewItemField == "Taxonomy")
+            {
+
+                //loop through children and look for anything that matches by name
+                string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
+                IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+
+                //if you find one then store the id
+                if (!t.Any())
+                    return;
 
                 TaxonomyList.Add(t.First().ID.ToString());
 
-                                              }
-            else
-            { 
-            Field f = newItem.Fields[NewItemField];
-			if (f == null)
-				return;
+            }
+            else if (NewItemField == "Authors")
+            {
+                string[] list = importValue.Split(new string[] { "and", "&amp;", "," }, StringSplitOptions.None);
 
-			f.Value = t.First().ID.ToString();
+
+                if (!list.Any())
+                    return;
+                Field f = newItem.Fields[NewItemField];
+
+                string result1 = importValue.Replace("By", "");
+                foreach (string auth in list)
+                {
+                    //loop through children and look for anything that matches by name
+                    string cleanName = StringUtility.GetValidItemName(auth, map.ItemNameMaxLength);
+                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+                    if (t.Any())
+                        f.Value = f.Value + "|" + t.First().ID.ToString();
+
+                }
+                //if you find one then store the id
+
+            }
+            else
+            {
+                //loop through children and look for anything that matches by name
+                string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
+                IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+
+                //if you find one then store the id
+                if (!t.Any())
+                    return;
+
+                Field f = newItem.Fields[NewItemField];
+                if (f == null)
+                    return;
+
+                f.Value = t.First().ID.ToString();
             }
 
         }
-
         #endregion IBaseField
 
         #region Methods
