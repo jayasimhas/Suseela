@@ -804,7 +804,7 @@ function sort_table(tbody, col, asc, sortstatus) {
 $(function () {
 	$('a').click(function (e) {
 		if ($('#validatePriority').val() == "true") {
-			if (!$(this).hasClass("registrationBtn")) {
+			if (!$(this).hasClass("validationChk")) {
 				e.preventDefault();
 				showModal();
 			}
@@ -1105,7 +1105,8 @@ $(function () {
 				createJSONData(table, UserPreferences);
 			}
 		} else {
-			showModal();
+			window.location.href = $(this).attr('href');
+			//showModal();
 		}
 	});
 
