@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F4C4BC36-FC30-42E3-AFA2-C2EBE41CA1BD}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Review of CEN activities during 1994
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Review of CEN activities during 1994
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 998c99c2-9c64-4ae2-9cbf-8169748035cc
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 221
+
+<p>In this article, Richard Moore, technical officer for Healthcare at CEN Central Secretariat and Secretary to BTS 3 Healthcare, highlights some of the main areas of activity in the CEN healthcare sector during 1994.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+Review of CEN activities during 1994
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9203
+
+<p>In this article, Richard Moore, technical officer for Healthcare at CEN Central Secretariat and Secretary to BTS 3 Healthcare, highlights some of the main areas of activity in the CEN healthcare sector during 1994.</p><p>1994 has been a year of continuing intense activity in the CEN healthcare sector. Standardisation work on some 425 active projects (including medical informatics) is progressing in 21 Technical Committees, subcommittees, and CEN/CENLEC and BTS 3 working Groups. Over 80 European standards in the healthcare sector have already been published. The following represent some of the major activities in these various groups.</p><p>CEN/TC 55 Dentistry Four mandated standards intended to support essential requirements of the Medical Device Directive (MDD) in the field of dentistry have been issued for enquiry as follows: prEN 1639 (dental instruments), prEN 1640 (dental equipment), prEN 1641 (dental materials) and prEN 1642 (dental implants).</p><p>CEN/TC 102 Sterilisers for medical purposes prEN 1422 (specifications for ethylene oxide sterilisers) has been circulated for CEN enquiry. Revised drafts for second enquiries for the prEN 866 series (biological indicators) and for formal vote for the prEN 867 series (non-biological indicators) are currently being processed within CEN CS for imminent issue. A revised draft for prEN 868-1 (general requirements for packaging materials for sterilisation) is in preparation and is expected to be approved for second enquiry early in 1995.</p><p>CEN/TC 140 In vitro diagnostic systems EN 591 and EN 592 (covering requirements for user manuals for IVD instruments for professional and home use respectively) have been ratified. prEN 928 (guidance on the application of quality systems for IVDs) has been circulated for formal vote. prEN 1658 (marking of IVDs) and prEN 1659 (culture media-terminology) have been issued for enquiry. Work has commenced in TC 140 in identifying those standards that will be necessary to support the essential requirements of the forthcoming IVD Directives.</p><p>CEN/TC 170 Ophthalmic optics Agreement has been reached that all work will be carried out in co-operation with ISO/TC 172/SC 7 and SC 8 under the terms of the Vienna Agreement. Work is proceeding on the preparation of mandated standards to support essential requirements of the MDD in the areas of spectacle lenses, spectacle frames, contact lenses and contact lens care products, low vision aids, ophthalmic instruments and intra-ocular lenses.</p><p>CEN/TC 204 Sterilisation of medical devices EN 550 (validation and routine control of ethylene oxide sterilisation), EN 552 (validation and routine control of sterilisation by irradiation), EN 554 (validation and routine control of sterilisation by moist heat) and EN 556 (requirements for medical devices to be labelled 'Sterile') have all been ratified during 1994. Further Parts of the prEN 1174 series dealing with bioburden estimation have been issued for enquiry. prEN ISO 14160 dealing with liquid chemical sterilisation is expected to be issued for parallel enquiry with ISO early in 1995.</p><p>CEN/TC 205 Non-active medical devices EN 724 (guidance on the application of quality systems for medical devices) and several further standards have been ratified during 1994. Several mandated draft standards intended to support essential requirements of the MDD have been issued for CEN enquiry including prEN 30555-1 (general requirements for single-use intravascular catheters), prEN 1618 (test methods for common properties of catheters), prEN 1060-3 (electro-mechanical blood pressure measuring systems) and prEN 1707 (Luer lock fittings). prEN 600 (natural rubber latex male condoms) has been redrafted and a revised text issued for second enquiry.</p><p>CEN/TC 206 Biocompatibility of medical and dental devices EN 30993-1 (guidance on selection of tests), EN 30993-5 (tests for cytotoxicity - in-vitro methods) and EN 30996-6 (local effects after implantation) have joined EN 30993-3;1993 (genotoxicity, carcinogenicity and reproductive toxicity) and EN 30993-4 (interactions with blood) as ratified standards during 1994. prEN 30993-12 (sample preparation and reference materials) and prEN 30993-7 (ethylene oxide sterilisation residuals) have been issued as first and second enquiries respectively. prEN 30993-11 (systemic toxicity) has been issued for formal vote. Work continues on preparation of other Parts of the EN 30993 series.</p><p>CEN/TC 215 Respiratory and anaesthetic equipment Further mandated draft standards have been issued for enquiry during 1994 including prEN 737-2 (anaesthetic gas scavenging disposal systems), prEN 737-3 (pipelines for compressed medical gases and vacuum) prEN 794-2 (lung ventilators for home use), prEN 1282-2 (paediatric tracheostomy tubes), prEN 1733 (suction catheters), prEN 1782 (tracheal tubes) and prEN ISO 8359 (oxygen concentrators). A number of drafts are currently in preparation for issue for enquiry and for formal vote early in 1995.</p><p>CEN/TC 216 Chemical disinfectants and antiseptics Several further draft standards have been issued during 1994 including prEN 1499 (hygienic handwash), prEN 1500 (hygienic handrub), prEN 1650 (fungicidal activity, general use), prEN 1656 (bactericidal activity, veterinary use) and prEN 1657 (fungicidal activity, veterinary use). A number of further draft standards are in preparation concerning efficacy test of chemical disinfectants and antiseptics intended for a variety of applications.</p><p>CEN/TC 239 Rescue systems prEN 1789 covering requirements for medical vehicles and their equipment has been issued for enquiry. A further draft standard concerning patient handling equipment is expected to be issued for enquiry early in 1995.</p><p>CEN/TC 257 Terminology, symbols and information provided with medical devices prEN 980 (graphical symbols) has been issued for second enquiry. prEN 1041 (information supplied by the manufacturer with medical devices) has been extensively revised and is expected to be issued for second enquiry early in 1995. Work is proceeding in TC 257/Subcommittee 1 on specifications related to the nomenclature, and identification and coding of medical devices for the purposes of regulatory data exchange.</p><p>CEN/TC 259 Medical alarms and signals EN 475 (electrically- generated alarm signals) is expected to be ratified at the beginning of 1995. Work is proceeding on the preparation of a draft standard concerning the implementation of electrically- generated alarms.</p><p>CEN/TC 285 Non-active surgical implants prEN ISO 14630 (general requirements for non-activity surgical implants) is expected to be circulated for parallel CEN/ISO enquiry in January 1995. Several further drafts have been approved for translation and subsequent issue of enquiry early in 1995 including those covering instrumentation to be used in association with non-activity surgical implants, joint replacement implants, implants for osteosynthesis, heart valve substitutes, vascular prostheses and cardiovascular patches and mammary implants.</p><p>CEN/TC 293 Technical aids for disabled persons EN 29999 (technical aids for disabled persons - classification) has been ratified. Parallel enquiries have been issued for prEN ISO 8669-2 (urine collection bags) and prEN ISO 8670-2 (ostomy collection bags). A number of draft mandated standards concerning general requirements for technical aids (level 1) and requirements for walking aids, wheelchairs and hoists (level 2) are approaching the stage of enquiry.</p><p>CEN/TC 316 Medical devices utilizing tissues A work programme has been approved comprising four work items concerned with animal tissues and their derivatives utilised in the manufacture of medical devices. These cover analysis and management of risk (Part 1), sourcing, controls collection and handling (Part 2), elimination and/or inactivation of viruses and other transmissible agents - Determination of non-viability (Part 3) and Terminology (Part 4). Work on each of these is now well under way.</p><p>CEN/CENELEC Co-ordinating Working Group on quality supplements A further work item has been approved to prepare a future EN 46003 to supplement the requirements of EN ISO 9003:1994 in addition to the already-ratified EN 46001:1993 and EN 46002:1993.</p><p>CEN/CENELEC Joint Working Group on active implantable medical devices Work is continuing to prepare a revised draft of prEN 45502-1 (general requirements for AIMDs) following enquiry and to prepare enquiry drafts for further work items covering implantable neurostimulators, implantable infusion pumps, cochlear implants and pacing leads.</p><p>BTS 3/WG 1 risk assessment of medical devices prEN 1441 (medical devices - risk analysis) has been issued for enquiry. The responsible CEN Technical Sector Board, BTS 3 Healthcare, continues closely to monitor programmes, priorities and progress in all sectors. Particular attention is drawn to the development of monitoring and co-ordination structures in relation to the new ISO/TC 210 Quality management and corresponding general aspects for medical devices, which held its first meeting in Arlington on October 24th-26th, 1994.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+Review of CEN activities during 1994
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT050997
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+Review of CEN activities during 1994
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252766
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+998c99c2-9c64-4ae2-9cbf-8169748035cc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

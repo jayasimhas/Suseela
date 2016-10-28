@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {B3E6A3D4-21FA-4BB1-8A56-C50AEEB4995A}
+database: master
+path: /sitecore/content/Pharma/Vertical Globals/Staff/Maha Elsayed
+parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+name: Maha Elsayed
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: 943bee65-34fa-49cf-8e06-9316202df677
+
+----field----
+field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
+name: First Name
+key: first name
+content-length: 4
+
+Maha
+----field----
+field: {DA223987-CABD-4C88-98D7-40E3492220F5}
+name: Last Name
+key: last name
+content-length: 7
+
+Elsayed
+----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160419T133354Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+943bee65-34fa-49cf-8e06-9316202df677
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160420T103834Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby

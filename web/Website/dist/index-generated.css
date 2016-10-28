@@ -2175,7 +2175,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       #foodNews .curSubscriber p a, #foodNews .curSubscriber p .pop-out__reset-password, #foodNews .curSubscriber p .sortable-table__list-toggler, #foodNews .curSubscriber p .mobile-table-exit {
         color: #f38220; }
   #foodNews .pagination li > a, #foodNews .pagination li > .pop-out__reset-password, #foodNews .pagination li > .sortable-table__list-toggler, #foodNews .pagination li > .mobile-table-exit {
-    background: url(/dist/img/pagination-arr.gif) no-repeat;
+    background: url(/dist/img/sprite-image.png) no-repeat;
     height: 40px;
     width: 40px;
     overflow: hidden;
@@ -2197,9 +2197,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     #foodNews .pagination span a.active, #foodNews .pagination span .active.pop-out__reset-password, #foodNews .pagination span .active.sortable-table__list-toggler, #foodNews .pagination span .active.mobile-table-exit {
       background: #c6c2c2; }
   #foodNews .pagination a.prev, #foodNews .pagination .prev.pop-out__reset-password, #foodNews .pagination .prev.sortable-table__list-toggler, #foodNews .pagination .prev.mobile-table-exit {
-    background-position: 0 0; }
+    background-position: -4px -400px; }
   #foodNews .pagination a.next, #foodNews .pagination .next.pop-out__reset-password, #foodNews .pagination .next.sortable-table__list-toggler, #foodNews .pagination .next.mobile-table-exit {
-    background-position: -41px 0; }
+    background-position: -45px -400px; }
   #foodNews .pagination .nums {
     text-align: center; }
     #foodNews .pagination .nums li {
@@ -3596,8 +3596,17 @@ header .header-account-access {
     font-size: 0.5625em;
     clear: both; }
     .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
-      background: url("/dist/img/dismiss.png") no-repeat right top;
-      padding-right: 15px; }
+      padding-right: 15px;
+      display: inline-block;
+      position: relative; }
+      .messaging_webUsers .msg_dismiss a:after, .messaging_webUsers .msg_dismiss .pop-out__reset-password:after, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler:after, .messaging_webUsers .msg_dismiss .mobile-table-exit:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 0;
+        background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+        width: 9px;
+        height: 9px; }
 
 .messaging_webUsers_white {
   margin: 0 auto;
@@ -3619,8 +3628,17 @@ header .header-account-access {
     font-size: 0.5625em;
     clear: both; }
     .messaging_webUsers_white .msg_dismiss a, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers_white .msg_dismiss .mobile-table-exit {
-      background: url("/dist/img/dismiss.png") no-repeat right top;
-      padding-right: 15px; }
+      padding-right: 15px;
+      display: inline-block;
+      position: relative; }
+      .messaging_webUsers_white .msg_dismiss a:after, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password:after, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler:after, .messaging_webUsers_white .msg_dismiss .mobile-table-exit:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 0;
+        background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+        width: 9px;
+        height: 9px; }
   .messaging_webUsers_white .msg-text {
     font-family: 'Roboto';
     font-style: normal;
@@ -3814,7 +3832,7 @@ header .header-account-access {
             color: #ffffff; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followingBtn {
-              background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+              background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
               height: 30px;
               height: 1.875rem;
               width: 30px;
@@ -3846,7 +3864,7 @@ header .header-account-access {
           color: #ffffff; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followBtn {
-              background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+              background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
               height: 30px;
               height: 1.875rem;
               width: 30px;
@@ -4023,7 +4041,7 @@ header .header-account-access {
               .myview-settings .table-responsive .table thead th .rowlines .vline {
                 right: 12px; } }
         .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
-          background: url(/dist/img/accordion.png) no-repeat 0 -21px;
+          background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
           height: 17px;
           height: 1.0625rem;
           width: 32px;
@@ -4032,7 +4050,7 @@ header .header-account-access {
           margin-right: 10%; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
-              background: url(/dist/img/mob-arrow.png) no-repeat 0 -33px;
+              background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
               height: 12px;
               height: 0.75rem;
               width: 23px;
@@ -4042,7 +4060,7 @@ header .header-account-access {
               .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
                 position: relative;
                 left: 0;
-                background-position: 0 0; } }
+                background-position: 0 -48px !important; } }
           @media screen and (min-width: 667px) and (max-width: 767px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
               margin-right: 50px;
@@ -4334,6 +4352,62 @@ header .header-account-access {
     border: 1px solid #f7941e;
     border-radius: 4px;
     display: none; }
+    .myview-settings .modal-view.preferences {
+      height: 160px;
+      height: 10rem; }
+      .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
+      .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
+      .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
+      .article-inline-image__title, .myview-settings .modal-view.preferences
+      .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
+      .article-inline-image--pull-right__title {
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .myview-settings .modal-view.preferences .saveview {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        background: #f7941e;
+        color: #ffffff;
+        padding: 0 32px;
+        padding: 0 2rem; }
+      .myview-settings .modal-view.preferences .cancel {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        padding: 0 25px;
+        padding: 0 1.5625rem;
+        margin-top: 8px;
+        margin-top: 0.5rem;
+        margin: 0px;
+        float: left;
+        color: #58595b; }
+        .myview-settings .modal-view.preferences .cancel:hover {
+          background-color: #f7941e;
+          color: #ffffff; }
+        .myview-settings .modal-view.preferences .cancel.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
     @media (max-width: 480px) {
       .myview-settings .modal-view {
         width: 300px;
@@ -4447,12 +4521,12 @@ header .header-account-access {
     margin-top: -8px;
     margin-top: -0.5rem; }
     .myview-settings .smfollowingBtn .unfollowAllBtn {
-      background-position: 0 0;
+      background-position: -3px -236px;
       text-indent: -140px;
       text-indent: -8.75rem;
       color: #58595b !important; }
     .myview-settings .smfollowingBtn .followAllBtn {
-      background-position: 0 -31px;
+      background-position: -3px -266px;
       text-indent: -124px;
       border: none !important; }
       .myview-settings .smfollowingBtn .followAllBtn.fr {
@@ -4467,19 +4541,18 @@ header .header-account-access {
     margin: 1px 0;
     margin: 0.1rem 0; }
     .smfollowingBtn span {
-      background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
       border: none;
       height: 30px !important;
       width: 30px !important;
       line-height: 28px !important;
       line-height: 1.75rem !important; }
       .smfollowingBtn span.unfollowAllBtn {
-        background-position: 0 0;
+        background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
         text-indent: -140px;
         text-indent: -8.75rem;
         color: #58595b !important; }
       .smfollowingBtn span.followAllBtn {
-        background-position: 0 -31px;
+        background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
         text-indent: -124px;
         border: none !important; } }
 
@@ -5410,9 +5483,18 @@ section: UI Elements
       font-style: normal;
       color: #231f20;
       text-transform: uppercase;
-      background: #F5821F url("/dist/img/chk-boxes.png");
+      background: #F5821F;
       background-position: 0 -51px;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      position: relative; }
+      .register .register_newsletter div.page-registration .next_right button:after {
+        content: '';
+        background: url("/dist/img/sprite-image.png") no-repeat -17px -563px;
+        width: 6px;
+        height: 11px;
+        position: absolute;
+        top: 13px;
+        right: 30px; }
     @media (max-width: 480px) {
       .register .register_newsletter div.page-registration .next_right {
         display: none; } }
@@ -5467,8 +5549,7 @@ section: UI Elements
     .register .register_newsletter .newsletter_box .newsletter_checkbox input[type="checkbox"] {
       margin-right: 5px; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox .chk_box {
-      background: url("/dist/img/chk-boxes.png");
-      background-repeat: no-repeat;
+      background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       width: 16px;
       height: 16px;
       position: absolute;
@@ -5478,7 +5559,7 @@ section: UI Elements
       background-color: #F5821F;
       color: #ffffff; }
       .register .register_newsletter .newsletter_box .newsletter_checkbox.wcs-c-on .chk_box {
-        background-position: 0 -17px;
+        background-position: -7px -529px;
         background-color: #F5821F; }
   .register .register_newsletter .newsletter_box .mobile {
     display: none;
@@ -5526,17 +5607,16 @@ section: UI Elements
         clear: both;
         display: block; } }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .chk_box {
-      background: url("/dist/img/chk-boxes.png");
+      background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       background-repeat: no-repeat;
       width: 16px;
       height: 16px;
       position: absolute;
       left: 0;
-      top: 3px;
-      cursor: pointer;
-      background-position: 0 -34px; }
+      top: 1px;
+      cursor: pointer; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox.wcs-c-on .chk_box {
-      background-position: 0 -17px;
+      background-position: -7px -529px;
       background-color: #F5821F; }
     @media (max-width: 480px) {
       .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
@@ -5580,9 +5660,18 @@ section: UI Elements
       font-style: normal;
       color: #231f20;
       text-transform: uppercase;
-      background: #F5821F url("/dist/img/chk-boxes.png");
+      background: #F5821F;
       background-position: 0 -51px;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      position: relative; }
+      .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper button:after {
+        content: '';
+        background: url("/dist/img/sprite-image.png") no-repeat -17px -563px;
+        width: 6px;
+        height: 11px;
+        position: absolute;
+        top: 13px;
+        right: 30px; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
@@ -6054,13 +6143,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     padding: 16px;
     padding: 1rem; }
     .subscriptionPan .sortable-table__col .accordian {
-      background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+      background: url(/dist/img/sprite-image.png) no-repeat -18px -120px;
       height: 17px;
       min-width: 17px;
       display: inline-block;
       cursor: pointer; }
       .subscriptionPan .sortable-table__col .accordian.active {
-        background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
+        background: url(/dist/img/sprite-image.png) no-repeat 0 -100px; }
       @media (max-width: 480px) {
         .subscriptionPan .sortable-table__col .accordian {
           display: none; } }
@@ -6109,9 +6198,22 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       .subscriptionPan .title {
         clear: both; } }
   .subscriptionPan .maintitle {
-    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
+    background: #ececec;
+    position: relative; }
+    .subscriptionPan .maintitle:after {
+      content: '';
+      position: absolute;
+      background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
+      height: 12px;
+      height: 0.75rem;
+      width: 23px;
+      width: 1.4375rem;
+      top: 12px;
+      right: 20px; }
     .subscriptionPan .maintitle.active {
-      background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+      background: #ececec; }
+      .subscriptionPan .maintitle.active:after {
+        background: url(/dist/img/sprite-image.png) no-repeat 0 -48px; }
   .subscriptionPan .hidden-lg {
     display: none !important; }
 
@@ -6338,15 +6440,25 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       cursor: pointer;
       padding-top: 5px; }
       .data-tool-landing .js-toggle-demo .show-demo li a, .data-tool-landing .js-toggle-demo .show-demo li .pop-out__reset-password, .data-tool-landing .js-toggle-demo .show-demo li .sortable-table__list-toggler, .data-tool-landing .js-toggle-demo .show-demo li .mobile-table-exit {
-        background: url("/dist/img/arrows.png") no-repeat;
         color: #979797;
         text-decoration: none;
-        padding-right: 25px; }
-      .data-tool-landing .js-toggle-demo .show-demo .sd {
-        background-position: 51px 4px; }
+        padding-right: 25px;
+        position: relative;
+        display: inline-block; }
+      .data-tool-landing .js-toggle-demo .show-demo li a:after, .data-tool-landing .js-toggle-demo .show-demo li .pop-out__reset-password:after, .data-tool-landing .js-toggle-demo .show-demo li .sortable-table__list-toggler:after, .data-tool-landing .js-toggle-demo .show-demo li .mobile-table-exit:after {
+        content: '';
+        background: url("/dist/img/sprite-image.png") no-repeat;
+        width: 12px;
+        height: 7px;
+        position: absolute;
+        top: 4px;
+        right: 0; }
+      .data-tool-landing .js-toggle-demo .show-demo .sd:after {
+        background-position: -15px -144px; }
       .data-tool-landing .js-toggle-demo .show-demo .hd {
-        background-position: 77px -15px;
         display: none; }
+        .data-tool-landing .js-toggle-demo .show-demo .hd:after {
+          background-position: -1px -160px; }
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
@@ -6384,9 +6496,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           position: relative; }
           .data-tool-landing .js-toggle-demo .toggle-demo .video-demo .visible-lg .play-icon {
             position: absolute;
-            width: 90px;
-            height: 90px;
-            background: url("/dist/img/video-icon.png") no-repeat;
+            width: 60px;
+            height: 60px;
+            background: url("/dist/img/sprite-image.png") no-repeat -6px -450px;
             top: 50%;
             left: 50%;
             margin-top: -27px;

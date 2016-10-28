@@ -1,0 +1,229 @@
+----item----
+version: 1
+id: {05D83A11-58C0-4709-9DAF-AC418A613E4F}
+database: master
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Default TransformationSet
+parent: {D3E1E6D5-9CAA-4708-8B3B-E8B1CDB3E4CE}
+name: Default TransformationSet
+master: {00000000-0000-0000-0000-000000000000}
+template: {06B09AB3-B602-4260-96EF-E3FFBBF7C10C}
+templatekey: TransformationSet
+
+----field----
+field: {4DC8E387-738F-4FD7-8BAD-237CADA15198}
+name: Elements
+key: elements
+content-length: 896
+
+{D42D9F25-C4C4-46CF-829A-7307B99E575D}|{0285CD4F-87E8-40CA-A5C7-73D53DFCBD12}|{58113987-7FF4-4C81-B53C-55A6E91566B2}|{614A1FEB-FB7A-4133-B054-20E0A55189FD}|{75654111-345B-454B-A3B9-ABB2FB9E2328}|{2D81F296-03A7-4FAE-ADCE-E374D67C3683}|{1DD2B3B5-D27D-4C5D-B693-A0F1D64E8D14}|{20B4BD06-B354-4888-ADDB-671D39F18D7C}|{89033EA2-FEF4-41B8-B538-EE852C66825D}|{54FB3145-FA9C-4583-9D0F-630AC81119EF}|{E8F4EEB0-6148-4A1F-A407-A3CC5B0D12BC}|{30482C0D-0453-4358-947B-C8E0E89F87E0}|{84806545-D9AE-497F-BD05-64EE855F7A69}|{F6525D6B-8FF9-4436-B87A-A6EAD27528A1}|{481A0E6D-F676-4E10-A4A2-B2D672F3E82C}|{3DDDFF68-662A-4766-83BE-0EECB5E0F59D}|{05069B2C-3C12-428B-92DE-A33C314C0031}|{C5664320-136D-48A9-B93C-006F5FDCA0A4}|{2D44C386-BFCA-458F-8D88-A8A2BA11FBC1}|{8EE1B094-E273-43BB-A4E3-DCAAB198A38C}|{27A5058D-A67D-4A34-8291-FC74F8671F68}|{C8389ECE-F401-4EBB-81F6-164F11EE20E0}|{F9D0EBCF-D3B4-412A-AC18-37F3B98459C8}
+----field----
+field: {531657BF-B6A5-433D-A9F1-A9B8848B0DD2}
+name: Escaped Nodes
+key: escaped nodes
+content-length: 26
+
+head|style|script|noscript
+----field----
+field: {389E1803-32D9-4893-A329-A003C782891E}
+name: InDesign Text Parser
+key: indesign text parser
+content-length: 112
+
+Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Xml.InDesignTextParser, Sitecore.PrintStudio.PublishingEngine
+----field----
+field: {4F4E0906-99D9-4756-87BD-88190DFC3E46}
+name: Use assembly
+key: use assembly
+content-length: 0
+
+
+----field----
+field: {C6137284-C661-4C78-83DB-543FAF71A63B}
+name: Characters
+key: characters
+content-length: 9
+
+’|‘|“|”| 
+----field----
+field: {100EFCB1-298E-46AF-B940-D28DC36B63F2}
+name: Assembly
+key: assembly
+content-length: 0
+
+
+----field----
+field: {6192B97B-B232-4445-B72F-EAD5ACF16210}
+name: Codes
+key: codes
+content-length: 33
+
+&rsquo;|&lsquo;|&ldquo;|&rdquo;| 
+----field----
+field: {A0C0AD85-8701-43BA-A47C-2CA4265DAF15}
+name: TypeName
+key: typename
+content-length: 0
+
+
+----field----
+field: {CBB6428D-E03C-40AC-BE66-06F0BCECC94B}
+name: MethodName
+key: methodname
+content-length: 0
+
+
+----field----
+field: {6FD695E7-7F6D-4CA5-8B49-A829E5950AE9}
+name: __Subitems Sorting
+key: __subitems sorting
+content-length: 0
+
+
+----version----
+language: de-DE
+version: 1
+revision: 6dcf133d-a003-4959-a17d-803cbda4a8ce
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 23
+
+Standard UmwandlungsSet
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142206Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6dcf133d-a003-4959-a17d-803cbda4a8ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135315Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 1054757e-ad85-40c7-a93f-05e60b563159
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20100709T003200Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1054757e-ad85-40c7-a93f-05e60b563159
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160727T210254Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: ja-JP
+version: 1
+revision: 4801b870-1bf7-4817-aec1-d821db00542d
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 10
+
+デフォルトの変換設定
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142257Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4801b870-1bf7-4817-aec1-d821db00542d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135352Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

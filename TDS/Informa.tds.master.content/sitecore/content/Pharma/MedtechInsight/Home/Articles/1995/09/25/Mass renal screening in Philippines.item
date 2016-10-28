@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1D1B0046-0ED0-4654-819C-F6F484854735}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/25/Mass renal screening in Philippines
+parent: {709AE3CF-AC39-4E03-AE57-83DC2A02516A}
+name: Mass renal screening in Philippines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 821f2ca4-29c1-4546-8f56-611fadf215c2
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 357
+
+<p>The Philippines' 10.7 million schoolchildren are undergoing urine screening in a bid to reduce the 6,500 deaths that are believed to be caused each year by renal disease. By May this year, 41% of the children had been tested and 28% showed abnormal dipstick reactions, says Dr Irmingarda Gueco, research co-ordinator at the National Kidney Institute.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Mass renal screening in Philippines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1949
+
+<p>The Philippines' 10.7 million schoolchildren are undergoing urine screening in a bid to reduce the 6,500 deaths that are believed to be caused each year by renal disease. By May this year, 41% of the children had been tested and 28% showed abnormal dipstick reactions, says Dr Irmingarda Gueco, research co-ordinator at the National Kidney Institute.</p><p>Dr Gueco explained the background to the country's Preventive Nephrology Programme at the annual convention of the Philippine College of Physicians. By detecting renal abnormalities as early as possible, it is hoped to reduce what recent epidemiological studies have shown to be the tenth leading cause of death in the Philippines, and to curb the rising costs of kidney transplants and maintenance therapy.</p><p>Having determined the extent of abnormal urinalysis in asymptomatic children, researchers will investigate the causes of the problem, and begin institute treatment before cases develop into irreversible kidney disease, reports Asian Medical News.</p><p>renal disease costs</p><p>Dr Gueco estimated the typical costs of end-stage renal disease as follows: haemodialysis $1,440 per month; continuous ambulatory peritoneal dialysis (CAPD) $960 a month; kidney transplant between $3,200 and $10,000; and post-transplant maintenance $600 for the first three months, falling to $320 a month thereafter.</p><p>Similar screening programmes carried out in schoolchildren in the US, Japan, Taiwan and Singapore have shown that a large percentage remain asymptomatic for a period of time, noted Dr Gueco. Japan's nephritis screening programme found the most common abnormality to be proteinuria and/or haematuria, 35.8% of these cases being due to IgA nephropathy and 12.8% to membrano-proliferative glomerulonephritis.</p><p>In contrast to results from the Philippines, a Taiwanese programme covering more than one million students revealed abnormalities in only 1% of urine tests.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}|{596C57D2-03CE-4CDE-A652-4F84D9CD4617}|{02F24459-B70F-4A65-8E50-F6FD55A6A840}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{023AF810-44A6-4788-BF12-09F49F37E94F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+Mass renal screening in Philippines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950925T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950925T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950925T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054462
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Mass renal screening in Philippines
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+256392
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184832Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+821f2ca4-29c1-4546-8f56-611fadf215c2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184833Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

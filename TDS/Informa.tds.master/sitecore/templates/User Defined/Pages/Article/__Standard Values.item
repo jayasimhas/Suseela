@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A74D95C2-0904-4C46-AE15-D29D7D1545B6}
+database: master
+path: /sitecore/templates/User Defined/Pages/Article/__Standard Values
+parent: {11380B5D-3531-4570-B213-EFC5312266E4}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {D8005A13-DCF5-431C-89A7-4247C18DACAA}
+name: Scheduled Publishing Enabled
+key: scheduled publishing enabled
+content-length: 1
+
+1
+----field----
+field: {0C894AAB-962B-4A84-B923-CB24B05E60D2}
+name: __Ribbon
+key: __ribbon
+content-length: 38
+
+{20E72566-94B3-4417-A482-28BC1C96FE8A}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+800
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 3842
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{EC30E9E5-37FF-4C76-9D8B-33A64DAEB035}" ph="primary-header" uid="{4D6897BC-5E3D-4488-8DE4-DC5507BDCF55}" /><r id="{83398B37-08CB-43A2-BC0A-7EB47E764AF4}" ph="primary-header" uid="{87559BDE-5CCE-40E1-A075-172F359EBEFB}" /><r id="{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}" ph="header-search" uid="{71CB65A4-5824-4E6A-898F-8631B03EB97D}" /><r id="{65EDEFC9-82C2-47EE-93CB-A4D9372A45C0}" ph="inner-main" uid="{1BD3BFA3-6BE6-45BB-A4B1-F83A3201AC14}" /><r id="{F07FF468-C261-4E12-991A-04F2A397F541}" ph="pre-content" uid="{5917D52E-C2B5-4773-A476-19C41E703B99}" /><r id="{13E90600-E3DF-498E-8E21-DEDD352C3562}" ph="pre-content" uid="{51181351-3D32-4121-A697-ABF661B22FC6}" /><r id="{E6E800CB-06CD-4AA0-90D8-454887FF9C8F}" ph="pre-content" uid="{C7500D15-A46A-4285-A130-561BAB51651B}" /><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /><r ds="" id="{D2B9A719-EA71-4E25-B110-4DDB91A3CDAA}" par="" ph="structure" uid="{934A65D7-4B39-4E1C-82C8-1A8747A3120E}" /><r id="{4882EA28-8D85-451A-904E-967504C9DBAC}" ph="structure" uid="{F5A686D1-F490-4FDF-8DD6-98ACC6CF2971}" /><r id="{9432C8DF-511A-437D-9691-0A781EF2CD44}" ph="article-left-content" uid="{14B911D8-8BDE-4A5F-8402-4D551227A69E}" /><r id="{68A1A8BC-429F-4FDC-9FE8-A6E218125440}" ph="article-right-content" uid="{E58B8D1C-B3BB-42AA-8AF2-D544199670DB}" /><r id="{5C303373-B4EA-4482-9D39-11261944F45A}" ph="article-right-content" uid="{F3545102-4286-4AFF-93E7-83E3991555A9}" /><r id="{FC737E21-9B03-4A8B-83AE-0920BC4AAA7C}" ph="article-right-content" uid="{6A9F84C7-F082-44AA-B095-935D762B4713}" /><r id="{5B303EF4-E9C2-4E45-9869-B7532BE463BE}" ph="article-right-content" uid="{A1C64A1C-5A12-4ECB-A841-519A1E4DDD5D}" /><r id="{690629B3-9E21-416B-A6FC-641B83601AAB}" ph="article-right-content" uid="{9817CCE4-4155-4BA1-8739-51D5B094AA8E}" /><r ds="" id="{D2B9A719-EA71-4E25-B110-4DDB91A3CDAA}" par="" ph="structure" uid="{E49AAEBD-1783-42E6-B31D-2A20A12E75BF}" /><r ds="" id="{4033E46D-5D17-495E-9401-C6A433CB6F21}" par="" ph="article-film-ad" uid="{83A94992-AFE3-4678-B5C3-03159C4C7A79}" /><r id="{4B2573E1-BD9A-4DD1-A75F-F49167A5E9E2}" ph="article-med-ad" uid="{485EA910-C355-46C5-AFA1-9973E4FEB3F6}" /><r id="{17BCF47C-A313-472D-81DB-A8D4ADA53B64}" ph="post-content" uid="{77D98A3A-1867-47EE-8C04-26FDAA207037}" /><r ds="" id="{1289400E-453E-49D8-8A80-ADC1B049D094}" par="" ph="signin-popout-form" uid="{716BE578-341E-4316-A6A6-1EAF6B82DA8E}" /><r ds="" id="{EB90A50A-835D-4291-A882-DA0C00E096BD}" par="" ph="post-content" uid="{7F43139B-6E37-43B8-8318-686846CF7996}" /><r id="{A60CC565-2F4F-4C65-A129-771D79CDBFC6}" ph="post-content" uid="{801351A8-98FB-408A-9A00-AB6D3E64CE96}" /><r id="{099DF785-B86D-45F2-B6FE-5272E8D6EE44}" ph="post-content" uid="{2EFB993F-813A-4D3C-A501-33880856E3CF}" /><r id="{2889497D-2921-4BE1-BBF4-F4B4D2131231}" ph="footer" uid="{2CDC3B06-BD33-4016-800D-8B8DF3F2E075}" /><r id="{B377E62F-FA4F-47DF-A141-64D79597F90E}" ph="site-debugger" uid="{4EE43489-718E-475C-A620-BFDD96E592DB}" /></d><d id="{B5F08BF7-70C0-4427-A43D-0BB3452819FE}" l="{DD7EC23B-47CA-4918-B45F-D1A528AD58BC}"><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /><r id="{4882EA28-8D85-451A-904E-967504C9DBAC}" ph="structure" uid="{F5A686D1-F490-4FDF-8DD6-98ACC6CF2971}" /><r id="{5DD98702-1E4C-4594-B79E-C6DF54A2C609}" ph="article-left-content" uid="{14B911D8-8BDE-4A5F-8402-4D551227A69E}" /></d><d id="{73966209-F1B6-43CA-853A-F1DB1C9A654B}" l="{A57C19C2-8EE3-4DEC-AA39-0B8D522D59EB}"><r id="{86F838F5-7E87-45BB-876F-C021324AC8B0}" par="TitleField=Title&amp;BodyField=Summary" uid="{4DF8536D-5B91-443F-A89E-CDA44D0B2E72}" /></d></r>
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 0
+
+
+----field----
+field: {CA9B9F52-4FB0-4F87-A79F-24DEA62CDA65}
+name: __Default workflow
+key: __default workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 0ec24b5e-d6fa-45cc-8051-c269d4a6e6c8
+
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 0
+
+
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 0
+
+
+----field----
+field: {A92E4BFB-3010-4332-A7A0-C788348993CE}
+name: FactoryListableTitle
+key: factorylistabletitle
+content-length: 38
+
+{2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+----field----
+field: {629BDDB3-5E8E-49BB-A323-6E1C46BC7CB5}
+name: FactoryListableTopics
+key: factorylistabletopics
+content-length: 38
+
+{0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+----field----
+field: {73F216E4-C244-4A3B-95EE-07D9FFD2D4F7}
+name: FactoryListableDate
+key: factorylistabledate
+content-length: 38
+
+{8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
+----field----
+field: {5F51FA66-5326-4AA6-9671-57A48AEDEAA4}
+name: FactoryListableAuthors
+key: factorylistableauthors
+content-length: 38
+
+{5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+----field----
+field: {6D481D3A-7C71-488F-88FF-9C53DE9B4AC3}
+name: FactoryListableImage
+key: factorylistableimage
+content-length: 38
+
+{7526A634-C0A2-4FFE-88F8-227C9274B610}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151224T181644Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0ec24b5e-d6fa-45cc-8051-c269d4a6e6c8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160719T201626Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 0
+
+

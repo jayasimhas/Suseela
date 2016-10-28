@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {C0EDFF97-3014-4696-83A9-56F02DE2C7D3}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Open Surgery Hospitals turn to New Zealand for ehealth partners
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Open Surgery Hospitals turn to New Zealand for ehealth partners
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: a4bb2f11-8c72-4fc8-9157-6bc1b607f81d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 186
+
+<p> <i>Video interview by Tina Tan, Editor, Clinica Medtech Intelligence<br> 30 June 2010</i> <br> <a>Want to know more about healthcare technology? Start your free 10-day trial</a> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Open Surgery: Hospitals turn to New Zealand for e-health partners
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7081
+
+<p> <i>Video interview by Tina Tan, Editor, Clinica Medtech Intelligence<br> 30 June 2010</i> <br> <a href="http://www.clinica.co.uk/freetrial/" class="emailLink">Want to know more about healthcare technology? Start your free 10-day trial</a> </p> <p><table> <tbody> <tr> </tr> <tr> </tr> <tr> <td scope="row" widtd="101"><a href="#1"><img src="-/media/1E2B1E24C8E947B6AA31D62CC83FE32A.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a><a href="http://www.clinica.co.uk/MnA#latest"></a></td> <td scope="row" widtd="101"><a href="#2"><img src="-/media/4B2967D44E8A4DC5AFE7BAC378686F06.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a><a href="http://www.clinica.co.uk/MnA#latest"></a></td> <td scope="row" widtd="101"><a href="#3"><img src="-/media/6CA49159DC4A4962A2A9B422F36A9737.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a></td> <td scope="row" widtd="101"><a href="#4"><img src="-/media/16684813C33A4205B459BCA9FE8EC1FC.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a></td> </tr> <tr> <td scope="row" widtd="101"><div>Advantages</div></td> <td widtd="901"><div>Future challenges </div></td> <td widtd="901"><div>Operations management software </div></td> <td widtd="901"><div>Anaesthetic workflow</div></td> </tr> </tbody> </table> <p> With the UK National Health Service under pressure from budget cuts, hospitals are increasingly looking at e-health solutions that will allow them to not only deliver healthcare more efficiently, but also save money. </p> <p> A number of hospitals have turned to New Zealand to find their e-health partners. </p> <p> Being geographically isolated has enabled New Zealand to nurture a pragmatic, &quot;fix-it&quot; culture. The country has a particular stronghold in information and communications technology (ICT) and one area which has benefited from New Zealand's IT strengths is healthcare. The country has a high adoption rate of electronic medical systems, with nearly all of New Zealand's GPs using updated computerised systems for clinical and administrative services. All the laboratories in New Zealand communicate via health data networks every day. </p> <p> On June 9, <i>Clinica</i> attended a New Zealand-UK health technology showcase at New Zealand House in London. The event featured New Zealand innovators and representatives from various UK hospitals that have adopted these IT innovations. </p> <p> <table> <br> <br> <tr> <td><strong>The advantage New Zealand companies offer in terms of healthcare <a name="1" id="1"></a></strong></td> </tr> <tr> <td><object> <param name="movie" value="http://www.youtube.com/v/ND24o_kFMrw&amp;hl=en_GB&amp;fs=1"> <param name="allowFullScreen" value="true"> <param name="allowscriptaccess" value="always"> <embed src="http://www.youtube.com/v/ND24o_kFMrw&amp;hl=en_GB&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=ND24o_kFMrw" target="_blank" class="optionsLink"> <em>Clinica</em> speaks to Dr Penny O' Hara, director of specialist health consulting company, &eacute;t&eacute; International Group, to find out what differentiates New Zealand healthcare technology companies from their competitors and her views on the importance of telemedicinein the future of healthcare. </a><br> <br> </p></td> </tr> </table> <table> <br> <br> <tr> <td><strong>Future challenges in in home-based respiratory and ventilation technologies<a name="2" id="2"></a></strong></td> </tr> <tr> <td><object> <param name="movie" value="http://www.youtube.com/v/RUnWzuCmV4U&amp;hl=en_GB&amp;fs=1">  <param name="allowFullScreen" value="true">  <param name="allowscriptaccess" value="always">  <embed src="http://www.youtube.com/v/RUnWzuCmV4U&amp;hl=en_GB&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=RUnWzuCmV4U" target="_blank" class="optionsLink">Dr Nicholas Hart is clinical research consultant in respiratory and critical care medicine at Guy's &amp; St Thomas' Hospital and King's College London. He talks to <em>Clinica</em> about the advances, as well as future challenges, in home-based respiratory and ventilation technologies. Dr Hart also discusses his experiences managing patients using products from Fisher &amp; Paykel, New Zealand's largest medical device company and a significant player in the respiratory and ventilation market.</a></p></td> </tr> </table> <table> <br> <br> <tr> <td><p><strong>Overseeing hospital routines using the operations management software</strong> <a name="3" id="3"></a></p></td> </tr> <tr> <td><div> <object> <param name="movie" value="http://www.youtube.com/v/ZBGThMcy6gA&amp;hl=en&amp;fs=1">  <param name="allowFullScreen" value="true">  <param name="allowscriptaccess" value="always">  <embed src="http://www.youtube.com/v/ZBGThMcy6gA&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object> </div></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=ZBGThMcy6gA" target="_blank" class="optionsLink"><em>Clinica</em> speaks to Lisa Hunt, chief operating officer of Bedford Hospital in the UK, to find out what are the key challenges in her job and how health IT solutions, such as the CapPLan operations management software from New Zealand's Emendo (www.emendo.co.nz ) have helped to address these issues</a><br> <br> </p></td> </tr> </table> <table> <br> <br> <tr> <td><strong>Improving the anaesthetic workflow with SAFERsleep<a name="4" id="4"></a></strong></td> </tr> <tr> <td><div> <object> <param name="movie" value="http://www.youtube.com/watch?v=mWyNJjN7aIE&amp;hl=en_GB&amp;fs=1&amp;start=5">  <param name="allowFullScreen" value="true">  <param name="allowscriptaccess" value="always">  <embed src="http://www.youtube.com/v/mWyNJjN7aIE&amp;hl=en_GB&amp;fs=1&amp;start=5" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object> </div></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=mWyNJjN7aIE" target="_blank" class="optionsLink">Safer Sleep, founded in 1997 in Auckland, New Zealand, specialises in developing solutions for safer anaesthesia practices in hospitals (www.safersleep.com). The company's SAFERsleep system is a set of procedures and devices for improving anaesthetic work flow, and the SAFERsleep OR software provides drug safety cross checks for better patient outcomes. The system has been used in private and public hospitals in New Zealand since 2000, and is now expanding into the UK. Mike Harrison, UK Business Development Manager for Safer Sleep, tells <em>Clinica</em> a bit more about the technology and its benefits</a></p></td> </tr> </table></p> <p> <a href="http://www.clinica.co.uk/home/blogopensurgery/" class="emailLink"><i>More on Open Surgery</i></a><i> </i> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Open Surgery Hospitals turn to New Zealand for ehealth partners
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191344
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT056179
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Open Surgery: Hospitals turn to New Zealand for e-health partners
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+298702
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185442Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a4bb2f11-8c72-4fc8-9157-6bc1b607f81d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

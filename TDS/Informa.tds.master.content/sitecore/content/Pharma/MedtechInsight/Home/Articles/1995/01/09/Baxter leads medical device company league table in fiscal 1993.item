@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {9F02BA8B-BFC1-4322-9084-E383F3DD09CB}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Baxter leads medical device company league table in fiscal 1993
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Baxter leads medical device company league table in fiscal 1993
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 8b233ef5-4816-457e-8419-216c8e67687b
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 432
+
+<p>For the first time, Clinica publishes its own league table for the medical device and diagnostics industry. It covers the top 25 companies during 1993 and depicts the progress made by Johnson & Johnson in the year, overtaking Siemens and narrowing the gap to the commanding player in the field, Baxter. Brigitte Ascher reviews the main trends at the top in a year characterised by frenetic activity in mergers & acquisitions.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Baxter leads medical device company league table in fiscal 1993
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4378
+
+<p>For the first time, Clinica publishes its own league table for the medical device and diagnostics industry. It covers the top 25 companies during 1993 and depicts the progress made by Johnson & Johnson in the year, overtaking Siemens and narrowing the gap to the commanding player in the field, Baxter. Brigitte Ascher reviews the main trends at the top in a year characterised by frenetic activity in mergers & acquisitions.</p><pre>League Table for Fiscal 1993 Rank Company Medtech revenues Country Fiscal year $ millions 1) to end of 1 Baxter International 8,879 US December 2 Johnson & Johnson 4,824 US December 3 Siemens 4,822 Germany September 4 <strong>[C#198600101:Abbott]</strong> Laboratories 4,019 US December 5 General Electric 2,922* US December 6 Becton Dickinson 2,465 US December 7 Corange (B Mannheim) 2,123 Germany December 8 Toshiba 2,024* Japan March 9 Bristol-Myers Squibb 1,693 US December 10 3M 1,600* US December 11 Philips 1,499* Neths December 12 B Braun Melsungen 1,340 Germany September 13 Medtronic 1,328 US March 14 Smith & Nephew 1,286 UK December 15 Eli Lilly 1,254 US December 16 Olympus Optical 1,226 Japan March 17 Roche 1,160 Switz December 18 Hewlett-Packard 1,149 US October 19 Ciba-Geigy 1,138 Switz December 20 Gambro 1,131 Sweden December 21 Hitachi 1,100* Japan March 22 Pfizer 1,082 US December 23 US Surgical 1,037 US December 24 Bayer 978 Germany December 25 CR Bard 971 US December - Total 53,050</pre><p>(1) Quarterly average exchange rates were used to convert the accounting currencies into US$. *) Clinica estimates are marked with asterisks. Other data are based on information provided by the companies themselves.</p><p>Johnson & Johnson progressed to number two in the overall ranking in 1993 (compared with the MDIS rankings used last year) with sales growth of about 4%. By the third quarter of 1994, its revenues were up 11% and with the $1,008 million purchase of Kodak's clinical diagnostics business - which propelled J&J to number three in diagnostics behind Abbott and Boehringer - the company is bound to close in on the leader of the pack in 1994 and 1995.</p><p>Baxter has enjoyed a quiet year, quite unlike 1993, fulfilling the promises it made at the time of its extensive November 1993 restructuring - from exiting diagnostics to achieving earnings growth in the high single digits. Restructuring costs had led to a small loss in 1993 despite revenue growth of 5%. In July 1994, Baxter signed a novel deal with Duke University Medical Centre which could be a pointer towards the fixed-fee healthcare system that observers expect will develop in the US.</p><p>Siemens, on the other hand, has yet to improve its sales and its profitability and to this end is aiming to cut its staff by about 8% to 370,000 by the end of fiscal 1995, compared with two years earlier. Medical engineering turnover was flat in 1993 and is expected to have fallen about 5% during fiscal 1994. Siemens left the pacemaker business in the summer of 1994, selling out to St Jude.</p><p>The company that has nose-dived most significantly in the rankings is US Surgical, with its 1993 turnover declining by 13% and earnings slipping into the red. The company was stung into implementing a restructuring package which included staff cuts, a reduction in overheads and debt.</p><p>Top 25 relative to total market</p><p>Revenues by the 25 companies in the league table account for 57% of the worldwide medtech market, valued at $92,900 million in 1993. The relative importance of the largest companies in the sector is illustrated by the fact that the top 10 companies contribute 38% of worldwide sales. The three largest companies enjoy a 20% share of the total market.</p><pre>Revenues of the top 25 companies by country in 1993 (in % of turnover of $53,050 million) US 63% Sweden 2% UK 2% Netherlands 3% Switzerland 4% Japan 8% Germany 17% Revenues of the top 10 companies by country in 1993 (in % of turnover of $35,371 million) US 75% Japan 5% Germany 20%</pre><p>The two pie charts illustrate the importance of US companies within the medtech business - they account for 75% of the top 10 companies' revenues. While less striking, the contribution of the largest US companies is still impressive when their revenues are compared with the world market - the US companies among the top 10 contribute 28% of worldwide medtech sales.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Baxter leads medical device company league table in fiscal 1993
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT050994
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Baxter leads medical device company league table in fiscal 1993
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600101
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252763
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183720Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8b233ef5-4816-457e-8419-216c8e67687b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183720Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

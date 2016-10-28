@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {06C5D6C3-DEC1-43C9-A377-AB55686773C3}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/20/Litigation settlement in Hillenbrands rough 1994
+parent: {1CFCC57C-483C-471E-949E-5DDD10332228}
+name: Litigation settlement in Hillenbrands rough 1994
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 3796127f-aa73-415c-810c-cdb9e24b2857
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 301
+
+<p>Hillenbrand Industries describes 1994 as a rough year after previously good earnings growth was hit by a hefty litigation settlement. On a positive note, the US healthcare and funeral group, merged its two largest healthcare subsidiaries and began to see a turnaround in another, Block Medical.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Litigation settlement in Hillenbrand's "rough" 1994
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2663
+
+<p>Hillenbrand Industries describes 1994 as a rough year after previously good earnings growth was hit by a hefty litigation settlement. On a positive note, the US healthcare and funeral group, merged its two largest healthcare subsidiaries and began to see a turnaround in another, Block Medical.</p><p>The acquisition of L & C Arnold in February 1994 - now Hillenbrand's German subsidiary - supported the Indiana-based company's sales in fiscal 1994, a period which saw 6% healthcare sales growth compared with the previous year. Another contribution to this growth came from increased therapy rental beds in use in the long-term care and homecare markets, Hillenbrand says in its annual report. Offsetting these gains was a drop in electric bed shipments, especially in the US acute care market.</p><pre>Hillenbrand's annual results ($ millions) 1994 1993 change Healthcare 924.09 875.70 6% Funeral services 652.94 572.22 14% Total revenues 1,577.03 1,447.91 9% Net income 89.46 145.82 (ended Dec 3rd, 1994; Nov 27th, 1993)</pre><p>Hillenbrand's net income was depressed by an $84.8 million cash payment in a September settlement of a patent infringement suit brought by Kinetic Concepts and a $14 million goodwill write-off related to the acquisition of Block Medical. Excluding the settlement costs, healthcare operating profit was down 2%; total operating profit excluding these costs was 4% higher than in 1993.</p><p>products</p><p>Healthcare subsidiary Block Medical, manufacturer of portable disposable and ambulatory electronic infusion pumps for homecare patients, fitted its Verifuse electronic ambulatory pump with the VoiceLink communication system. This allows a pharmacist to check the pump status or change its protocols via the telephone.</p><p>Among Hill-Rom's, the other healthcare subsidiary, newly introduced products, is a home-version of its Clinitron air fluidised therapy for the relief of pain through minimising shearing and friction. Clinitron At-Home is smaller, weighs about 40% less than the hospital version and can be set up in less than an hour. Rental of the unit is fully reimbursable in the US under Medicare Part B for patients with severe pressure sores, wounds and postsurgical flaps.</p><p>Hill-Rom also introduced the Efica CC Dynamic Air Therapy unit, designed to treat the complications of patients' immobility, including pneumonia and urinary tract infections. Hill-Rom's French subsidiary, Le Couviour, began manufacturing the Evolution bed which is now provided in both washable and non-washable models. At the German subsidiary, L & C Arnold, sales force and distribution system were restructured during 1994.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Litigation settlement in Hillenbrands rough 1994
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950320T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950320T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950320T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051887
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Litigation settlement in Hillenbrand's "rough" 1994
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253656
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184009Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3796127f-aa73-415c-810c-cdb9e24b2857
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184009Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

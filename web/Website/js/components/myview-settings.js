@@ -143,8 +143,10 @@ function sort_table(tbody, col, asc, sortstatus) {
 $(function(){
 	$('a').click(function(e){
 		if($('#validatePriority').val() == "true"){
-			e.preventDefault();
-			showModal();
+			if(!$(this).hasClass("registrationBtn")){
+				e.preventDefault();
+				showModal();
+			}
 		}
 	});
 	

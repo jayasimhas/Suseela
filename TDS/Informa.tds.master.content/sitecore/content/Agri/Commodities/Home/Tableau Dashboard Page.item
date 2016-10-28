@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {D6876E6A-E81E-48A8-AAD2-7B9DA31B2B94}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Tableau Dashboard Page
+parent: {958213FB-0BD8-400D-BAD7-166AD9F4D3E5}
+name: Tableau Dashboard Page
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----version----
+language: en
+version: 1
+revision: 044238c9-4c2d-4f0f-9356-631a49b9c81c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 22
+
+Tableau Dashboard Page
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 22
+
+Tableau Dashboard Page
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 22
+
+Tableau Dashboard Page
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 584
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{99F82091-30CB-459E-A0AB-41BBAE713633}" p:before="r[@uid='{6BE12D1F-3FDC-4F9C-8915-B359A8A0FB48}']" s:ds="{36542F1C-44E5-4291-A990-06DC2A3AF9D0}" s:id="{EC34644A-1369-4FA9-9749-63522EF279EF}" s:par="" s:ph="/main-content/VideoControl" /><r uid="{6BE12D1F-3FDC-4F9C-8915-B359A8A0FB48}" p:before="r[@uid='{3ADAA0DF-EF47-4D4C-8C34-1EDBBC8095AB}']" s:ds="{296CBC0D-EF2C-4C56-B31F-3341A847DAD2}" s:id="{0A7A78AA-6EFC-492F-9E3C-D9A0CB0CE437}" s:par="Show in Right Rail" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161001T124050Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+044238c9-4c2d-4f0f-9356-631a49b9c81c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161001T131734Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

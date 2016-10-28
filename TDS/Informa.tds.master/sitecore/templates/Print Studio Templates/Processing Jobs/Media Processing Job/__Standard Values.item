@@ -1,0 +1,114 @@
+----item----
+version: 1
+id: {5E72743B-E4BF-43AF-BE74-DEEE06A88790}
+database: master
+path: /sitecore/templates/Print Studio Templates/Processing Jobs/Media Processing Job/__Standard Values
+parent: {ED9C8CBB-928B-4690-B1AE-499B4B24FCA6}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {ED9C8CBB-928B-4690-B1AE-499B4B24FCA6}
+templatekey: Media Processing Job
+
+----field----
+field: {80C4C927-B073-49D7-A2F3-D33C742A9E3E}
+name: Mail Header
+key: mail header
+content-length: 38
+
+{D7433B78-4492-4C34-A1D3-3EFD2B074478}
+----field----
+field: {B7B74A01-5C05-4AF5-9217-9C72ED634BEB}
+name: Mail Footer
+key: mail footer
+content-length: 38
+
+{75A7F6AF-A0B6-4ECF-A475-B6DC25B1B77B}
+----field----
+field: {0F4A73EC-D878-4B19-A679-338EF8670C3F}
+name: Mail Subject
+key: mail subject
+content-length: 38
+
+{496578B1-7FF3-4AA9-AC39-9EE2DF4BA52D}
+----field----
+field: {2FF3B65C-0EBC-4AA4-AD32-7A5677324F4B}
+name: Ready Message
+key: ready message
+content-length: 38
+
+{EBF5AF8A-56E9-4AEE-B08F-3518D3DD874F}
+----field----
+field: {CB0E5082-7EAD-47A7-9208-DBBBCFD983F0}
+name: Rejected Message
+key: rejected message
+content-length: 38
+
+{13CC6367-3E60-4E4E-B0C8-E273DDF72F60}
+----field----
+field: {7233DD15-3A5F-4086-905D-ABB7C9578BFF}
+name: Process Ready
+key: process ready
+content-length: 38
+
+{3B21362D-DC2C-439A-AC01-23E8A9FE33DD}
+----field----
+field: {BDB8BC76-9202-4BEC-B2E6-58EF8EE64E52}
+name: Process Rejected
+key: process rejected
+content-length: 38
+
+{74172379-54F4-4067-A5C6-CB9969F4763A}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+400
+----version----
+language: en
+version: 1
+revision: 30783b15-6548-42b9-bc6e-eff7965c9058
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20121212T122900
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+30783b15-6548-42b9-bc6e-eff7965c9058
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20121212T123042:634909122425252352
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

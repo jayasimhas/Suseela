@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {3C62E82F-A0D1-4A23-81CC-DFDB2F67ACE3}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/27/FDA defends its corner
+parent: {2AE607D7-1EDE-4809-9399-FFC6E9445753}
+name: FDA defends its corner
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: dcb83a64-8cb9-4120-8f02-acf72f294d4f
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 494
+
+<p>At a time when the FDA is under attack from industry on several counts, officials from the Center for Devices and Radiological Health were on the defensive when they entered the lion's den and addressed HIMA delegates at the US industry association's annual meeting last week. Product approval and enforcement issues were prominent on the agenda. While companies received some encouragement that their grievances were being heard, to what extent they will be acted on remains to be seen.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 22
+
+FDA defends its corner
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4849
+
+<p>At a time when the FDA is under attack from industry on several counts, officials from the Center for Devices and Radiological Health were on the defensive when they entered the lion's den and addressed HIMA delegates at the US industry association's annual meeting last week. Product approval and enforcement issues were prominent on the agenda. While companies received some encouragement that their grievances were being heard, to what extent they will be acted on remains to be seen.</p><p>The existing backlog of pending 510(k) submissions will be cleared within six months, according to Dr Susan Alpert, director of the Office of Device Evaluation of the FDA's CDRH. The backlog dropped from 1,978 active and overdue submissions at the end of 1993 to 420 at the end of 1994. There are fewer than 300 now, Dr Alpert told delegates.</p><p>Data on submission review times provided by the agency differ from HIMA data. The latter relate to average times while the FDA refers to median times which present a more favourable picture. Thus, HIMA says that 510(k) review times have climbed from just under 90 days in 1989 to 216 days in 1994. FDA figures indicate that the median time taken to review 510(k)s has fallen from a peak of over 220 days in February 1994 to around 120 days in December. This is still high, acknowledged Dr Alpert: "It will take time to reduce review times to 90 days."</p><p>There has been some decrease in PMA submissions but the agency has maintained a stable workload: 26 PMAs were approved in 1994 versus 24 in 1993. One factor in the decline in submissions has been the down-classification of certain ophthalmic devices (contact lenses), Dr Alpert pointed out.</p><p>Differences in review times within the ODE continue to exist and the agency is assessing reallocation of resources to address this. Dr Alpert noted, for example, that fewer 510(k)s are submitted in the cardiovascular area than for genito- urinary devices and this has an impact on PMA and 510(k) review times.</p><p>more resources needed</p><p>The exemption of certain Class I devices from 510(k) submissions has not reduced the agency's workload significantly, she said, since these products had not involved many resources prior to the triage programme. Center director Bruce Burlington argued that in order to achieve better review times, additional resources - in the form of user fees - are needed.</p><p>performance not based on numbers</p><p>Measurement of the Office of Compliance's performance should not be based on the number of warning letters, seizures and injunctions, claimed Lillian Gill, acting director of the office. She noted a decline in violations by device companies. Guidance for agency field staff is being given high priority and $200,000 is being spent on a pilot certification programme for inspectors.</p><p>Ron Johnson, former director of the Office of Compliance and currently regional director of the FDA's Pacific Region, pointed out that the certification scheme would be used to develop expertise among inspectors for regulating devices - an industry recognised as more diverse than any other regulated by the FDA.</p><p>The basis of the Reference List is unlikely to disappear since Ms Gill made it clear that the agency will maintain a link between 510(k)s and GMPs. Clearly written procedures for integrating GMPs into the product review process are being drawn up. Mr Johnson recognised companies' concerns about lack of communication by the agency on Reference List status. He pledged to acknowledge responses to inspection follow-up letters and to make an evaluation in 15 days "within reason".</p><p>Warning letters are regarded as the main means to communicate agency concerns about GMP problems to senior management. If the response by companies is deemed sufficient to address the concern, the agency may decide not to reinspect, said Mr Johnson. The nature of inspections is changing, he noted, through a triage approach whereby five or six critical areas are assessed: if problems are found the inspection is terminated; a warning letter and comprehensive reinspection will follow.</p><p>regulations in pipeline</p><p>With respect to the revised GMPs, Ms Gill indicated that publication of the final rule could be expected in mid-1996. Pending development of a final rule on civil penalties, she indicated that the agency "will not rush to use them" - to date, civil penalties have been imposed in four instances.</p><p>HIMA files citizens petition</p><p>It appears that companies can expect to see little significant change on the regulatory front in the near future. Indicative of industry's frustration with the FDA, just days before its annual meeting HIMA filed an omnibus citizens petition on behalf of its 700 members calling on the FDA to correct the perceived problems of over-regulation.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 22
+
+FDA defends its corner
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950327T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950327T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950327T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052069
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 22
+
+FDA defends its corner
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253838
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184043Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dcb83a64-8cb9-4120-8f02-acf72f294d4f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184043Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

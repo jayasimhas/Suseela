@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FB0FEBB2-DE17-43CE-A5B2-116C10BD2750}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/15/European Commission publishes draft In Vitro Diagnostic IVD Directive
+parent: {166B4D89-6B6A-4D16-8DA9-761C7F941ECD}
+name: European Commission publishes draft In Vitro Diagnostic IVD Directive
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 10770152-6180-417a-b431-8ce1fc309d48
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 283
+
+<p>The European Commission has published the draft IVD-MD Directive, nearly 18 months later than first intended. The publication was announced by Norbert Anselmann, head of the medical devices section at DG III D 2, at the RAPS conference in Barcelona, Spain, on May 8th and 9th.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+European Commission publishes draft In Vitro Diagnostic (IVD) Directive
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6422
+
+<p>The European Commission has published the draft IVD-MD Directive, nearly 18 months later than first intended. The publication was announced by Norbert Anselmann, head of the medical devices section at DG III D 2, at the RAPS conference in Barcelona, Spain, on May 8th and 9th.</p><p>Discussions are scheduled to start in the Council and Parliament by early June and the text could be adopted by late 1996 if it passes smoothly through the new co-decision procedure. The draft envisages transposition into national law by April 1st, 1998, with the provisions taking effect from July 1st, 1998. The Directive would become mandatory four years after its adoption.</p><p>Maurizio Suppo, newly-appointed director of the European Diagnostics Manufacturers Association, said the organisation welcomes the draft and hopes that the Directive will be implemented as soon as possible, so the sector can be included in international discussions on mutual recognition and global harmonisation.</p><p>new quality system requirement</p><p>The text closely follows the content and structure of the previous two Medical Device Directives, and does not differ significantly from the working document for a draft proposal published in August 1992 (see Clinica No 516, pp 14/15).</p><p>One major innovation, however, is the requirement for all manufacturers to have a quality system, even if their products do not need third-party certification. The vast majority of IVD-MDs would be Class I and not subject to Notified Body approval. However, Class I products for self-testing would need design approval of a product-related file by a Notified Body. The company could also choose full quality system certification (EN 29001). Near-patient testing would not be treated in the same way as self-testing, as had been proposed.</p><p>Part of the reason for the quality system requirement, Mr Anselmann explained, is to bring the industry into line with many third countries and facilitate international trade.</p><p>Annex II</p><p>No changes have been made to provisions for products subject to more stringent control. The following are included in Annex II and subject to the same rigours as Class IIb of the Medical Devices Directive:</p><p>* Reagents and reagent products for blood grouping (A B O systems and Rho/D).</p><p>* Reagents and reagent products for the detection in human specimens of markers for HIV infection, hepatitis B and C.</p><p>In addition, there is a derogation clause allowing the inclusion of additional products in Annex II on Member State request and Commission approval. Companies would have to notify the relevant Competent Authorities of the launch of any totally new products. The authorities could require a post-market experience report which would then enable them to consider whether Annex II should apply.</p><p>Both the design and manufacture of Annex II products would need to be certified by a Notified Body. This means that a company could chose either: EC type examination plus either EN 29002 (production quality system) or statistical verification; or audit of the full quality system.</p><p>Other notable provisions include:</p><p>Language requirements</p><p>There is an attempt to persuade national authorities to take a more rational view of language requirements. Most Member States have taken advantage of the wording in the previous two Directives and insisted on the use of their own language(s) for at least some products, creating an enormous burden for industry. In the light of European Court of Justice opinion, the IVD draft suggests that "Member States shall take into account the principle of proportionality and in particular whether information can be provided by recognised symbols or codes and whether the device is intended for use by trained professionals [who are generally familiar with English-Ed]".</p><p>Receptacles and other accessories</p><p>Clarification is provided on which laboratory products are covered. Controls and calibrators which are part of a system supplied by the manufacturer to help control a test would be covered by the Directive as would receptacles for specimens used in IVD examinations. General laboratory products, however, would not be covered unless "in view of their characteristics" they are intended to be used in IVD examinations.</p><p>Directive overlaps</p><p>The draft contains a clause which would modify the Machinery Directive to exclude all medical devices, including laboratory instruments. (The EMC Directive applies to electromedical laboratory instruments from January 1st, 1996, Mr Anselmann explained, until the manufacturer applies the IVD-MD Directive. The Dangerous Substances Directive will also apply with some flexibility on labelling, while the Low-Voltage Directive does not apply).</p><p>Home-brew products</p><p>The Directive proposes that home-brew products, that is products which are manufactured and used at the same premises, should be excluded from the scope of the Directive, since this issue is a national matter.</p><p>Authorised representatives</p><p>The text states that manufacturers not based in the EEA need an authorised representative (there is no reference to importers or persons responsible for placing on the market as in the earlier Directives).</p><p>Labelling</p><p>There are 20 labelling requirements for self-testing products.</p><p>human tissue issue</p><p>Under mandate from the European Council, the draft IVD Directive contains an Article aimed at enlarging the scope of the Medical Devices Directive to cover devices incorporating non-viable human tissues. The draft does not make a distinction between viable and non-viable human tissue as regards IVD Medical devices. The proposals do not cover the ethics of collecting and using tissues of human origin - these are left to national law.</p><p>Dr Suppo expressed concern that the "emotional and social sensitiveness" of the issue could "delay significantly" the Directive's adoption. Mr Anselmann argued that it is appropriate to include this clause, which had to be excluded from the Medical Devices Directive, since many IVDs, or their control materials, contain materials of human origin, some of which can be viable.</p><p>EDMA is now developing a fuller response to the draft and was due to hold a working party meeting on the text as Clinica went to press. It intends to comment more thoroughly at its Members Day on June 15th.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+European Commission publishes draft In Vitro Diagnostic IVD Directive
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950515T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950515T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950515T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052615
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+European Commission publishes draft In Vitro Diagnostic (IVD) Directive
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254424
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184232Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+10770152-6180-417a-b431-8ce1fc309d48
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184233Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

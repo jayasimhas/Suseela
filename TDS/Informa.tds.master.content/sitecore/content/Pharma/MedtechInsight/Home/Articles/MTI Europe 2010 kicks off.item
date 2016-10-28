@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {C0187482-6CC6-41B3-9381-E94C103A2139}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/MTI Europe 2010 kicks off
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: MTI Europe 2010 kicks off
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: d726def5-3931-475a-a749-0dbdd5d7a98b
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 94
+
+<p> <i>Reportage by Salina Christmas, Editor, Multimedia</i><br> <i>14 September 2010</i> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+MTI Europe 2010 kicks off
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3761
+
+<p> <i>Reportage by Salina Christmas, Editor, Multimedia</i><br> <i>14 September 2010</i> </p> <p> <a href="#first" class="emailLink">First day</a> | <a href="#second" class="emailLink">Second day</a> </p> <p> Tina Tan, editor of <i>Clinica</i>, chaired the morning session on the first day the 11th Medtech Europe Investing conference. The event, held in London, ran from 13 September until 14 September 2010. It provided a networking environment where investors and innovators can meet to talk business. Delegates included representatives of the point-of-care devices, IVD, biotechnology, imaging and IT sectors. Below are photos from the event; news from the event will be published in the upcoming edition of <i>Clinica Medtech Intelligence</i>. </p> <p><a name="first" id="first"></a><table> <tr> <td><div><img src="-/media/334F0BF36D334C3F84A71157C3915322.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="http://www.clinica.co.uk/multimedia/archive/00105/mti2_350x232_105879a.jpg" width="350" height="232"></div></td> </tr> <tr> <td><img src="-/media/07B63AF8AC0840A6B4BD2B0D31D028F9.ashx" width="350" height="232"></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><img src="-/media/1BF0629735FA4D72851C33B5B1141286.ashx" width="350" height="232"></td> </tr> <tr> <td><div><img src="-/media/96C47A312CE0421E8C2F60701070E44C.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/6D9F2246ACD44078B1E23912FB2A0595.ashx" width="350" height="232"></div></td> </tr> <tr> <td><img src="-/media/F127FAD65B074EE59AE4723CB66596B9.ashx" width="350" height="232"></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><img src="-/media/D409E206A6D84E4D8CE5EC4D4622591A.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="3"><em>Reportage: Salina Christmas </em></td> </tr> </table> <p> <a name="second" id="second"></a>On the second day of the 11th Medtech Europe Investing conference, Tina Tan chaired the afternoon session, "Creative ways of financing in a new era - CV and CEO success stories from 2009". <p> On the panel of speakers were Tim Haines, Senior Managing Director, Abingworth; Antoine Papiernik, Managing Partner, Sofinnova Partners; John Pavlidis, President & CEO, Estech, and Anupendra Sharma, Investment Partner, Siemens Venture Capital. <p><table> <tr> <td><div><img src="-/media/CA865A3527644340981E03B07F4D66AF.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/C023D974DAA14401A18865B2601878C1.ashx" width="350" height="232"></div></td> </tr> <tr> <td><img src="-/media/E22030C7B2A34276977C24CA9B47DDDF.ashx" width="350" height="232"></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><img src="-/media/0647730257A14E069F1940E55FF66AD6.ashx" width="350" height="232"></td> </tr> <tr> <td><div><img src="-/media/B847B5D12FE54BD0A9D1FCB989C25096.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><div><img src="-/media/5120FDA34BBF4B3D8ED2425C544A4B1D.ashx" width="350" height="232"></div></td> </tr> <tr> <td><img src="-/media/07D79262ED5340B1A92707492196203B.ashx" width="350" height="232"></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td><img src="-/media/4827F52746B24389A26D7D58A15BB153.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="3"><em>Reportage: Salina Christmas </em></td> </tr> </table></p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 25
+
+MTI Europe 2010 kicks off
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191342
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT056753
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+MTI Europe 2010 kicks off
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+302671
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185719Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d726def5-3931-475a-a749-0dbdd5d7a98b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231342Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

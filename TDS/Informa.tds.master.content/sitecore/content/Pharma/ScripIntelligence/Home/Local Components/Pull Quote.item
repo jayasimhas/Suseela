@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {AA02FCB4-208E-4216-B9CE-5E24ABB119E0}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Local Components/Pull Quote
+parent: {33FD76FF-B386-4A65-B2B4-A10A147A588A}
+name: Pull Quote
+master: {00000000-0000-0000-0000-000000000000}
+template: {936976D6-533F-4DB1-BE06-1B840E33A346}
+templatekey: Content Quote
+
+----version----
+language: en
+version: 1
+revision: b8ca203b-4a20-40ad-995c-fd947fc444d0
+
+----field----
+field: {4DDAA80C-5033-42EC-A315-685F03C6918E}
+name: Quote
+key: quote
+content-length: 41
+
+Pull Quotes all Day - Test by CT IIPP-254
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160218T022516Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b8ca203b-4a20-40ad-995c-fd947fc444d0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160404T131748Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

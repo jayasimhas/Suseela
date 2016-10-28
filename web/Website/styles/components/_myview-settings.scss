@@ -539,6 +539,28 @@
 		-moz-border-radius: 4px;
 		border-radius: 4px;
 		display: none;
+
+		&.preferences{
+			height: 10rem;
+			h4{
+				margin-bottom: 1rem;
+			}
+			
+			.saveview{
+				@include folow-btn(auto, 2rem); 
+				background: $color-tree-poppy-orange;
+				color: $color-white;
+				padding: 0 2rem;
+			}
+			.cancel{
+				@include followBtnLbl();
+				margin: 0px;
+				float: left; 
+				color: $color-abbey-gray;
+			}
+		} 
+
+		
 		@include breakpoint('small') {
 			width: 18.75rem;
 			height: 6.25rem;

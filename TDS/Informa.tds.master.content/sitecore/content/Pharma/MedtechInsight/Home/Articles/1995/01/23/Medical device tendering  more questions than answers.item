@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {23CDC35C-E357-4E78-B34D-89EC6E8D4F08}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/23/Medical device tendering  more questions than answers
+parent: {D3DA6A9B-47A3-41E0-9A60-9F8C312B7F23}
+name: Medical device tendering  more questions than answers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: dc006867-3b50-4224-81a9-61ce15416cb4
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 539
+
+<p>An analysis of public sector tendering habits in the EEA shows wide discrepancies in the amount of information that each country publishes relating to prostheses tenders. This raises serious questions about transparency. John Chudleigh, a partner at Euro-Bid Watch, the UK consultancy with expertise on tenders and tender opportunities, showed delegates at the December IAPM conference that despite uniform technical regulations many issues need to be probed and addressed before there is equality of opportunity throughout the EEA.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Medical device tendering - more questions than answers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4204
+
+<p>An analysis of public sector tendering habits in the EEA shows wide discrepancies in the amount of information that each country publishes relating to prostheses tenders. This raises serious questions about transparency. John Chudleigh, a partner at Euro-Bid Watch, the UK consultancy with expertise on tenders and tender opportunities, showed delegates at the December IAPM conference that despite uniform technical regulations many issues need to be probed and addressed before there is equality of opportunity throughout the EEA.</p><p>A total of 336 EEA medical prosthesis (pacemaker/ defibrillator/heart valve and orthopaedic implant) tenders were published in the EU's Official Journal between January 1993 and November 1994. Italy, the UK and France accounted for 70% of the total number of tenders, Mr Chudleigh revealed, while Germany accounted for just 1% and the Benelux countries published none at all.</p><pre>Distribution of 336 EEA prosthesis tenders published between Jan '93 and Nov '94. Italy 108 France 86 UK 70 Spain 37 Greece 26 Portugal 16 Sweden 9 Denmark 6 Germany 3 Austria 2 Norway 1 Other 5</pre><p>During the 23-month period, 236 pacemaker tenders were published (64% of the medical prosthesis total), 19 defibrillator, 38 heart valve and 76 orthopaedic implant tenders. (The total of 369 is accounted for by the fact that some tenders cover more than one product group.) The vast majority of pacemaker tenders are published in southern Europe while the majority of orthopaedic implant tenders are published in the north.</p><p>Whether these data reflect actual purchasing habits is a question that is difficult to answer without analysis of the many diverse local publications and other time-consuming research. It is interesting to note, however, that while Germany and the Benelux countries account for 28.2% of the EEA population, they account for 0.8% of EEA prosthesis tenders published. Italy, France and the UK together account for 46.1% of the population and 72.1% of these tenders. The rest of the EEA represents 25.3% of the population and 27.1% of tenders issued.</p><p>By country, Italy accounts for the greatest number of accelerated restricted tenders (33% of all its tenders), while Norway, Austria, Sweden, Portugal, Greece and Spain only used open procedures in this product sector over 1993-1994. By product type, 37% of defibrillator tenders are accelerated restricted procedures, while 82% of orthopaedic implants tenders are open.</p><p>This suggests that orthopaedic implants represent the easiest market opportunity and that more work needs to be done to win defibrillator and heart valve contracts.</p><p>The number of prosthesis tenders being published has increased significantly in Portugal and the UK over the period studied, but this may be due more to the awareness of EU tendering regulations than to greater demand for medical prostheses. Other countries that have seen a notable increase are Greece (50%) and France (53%), while Italy has recorded an 8% drop.</p><p>There is a notable lack of transparency over who is awarded contracts in the EEA, Mr Chudleigh revealed. Only about 25% of all EEA medical prosthesis tenders published in the Official Journal between January 1993 and November 1994 were followed by notices of contracts awarded. This compares with 100% for the US and Japan under World Trade Organisation marketing rules and an average of 48% for all other EEA product and services sectors.</p><p>Germany published two-thirds of its contracts awarded, compared with about one-third in France and Italy, a quarter in the UK and none in Greece and Spain. This should, however, be considered in the context of the fact that Germany accounts for just 1% of all EEA medical prosthesis tenders published.</p><p>Euro-Bid Watch has just been awarded, in conjunction with Rhys Jones of Greenwich, one lot of a Commission contract, SIMAP (Information Systems for Public Sector Markets), aimed at improving the transparency of information between publishing authorities and suppliers. It will focus on the technical dissemination and input of data.</p><p>* IAPM is the International Association of Medical Prosthesis Manufacturers.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 428
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{9FB3D40B-7068-4C1F-8DA7-9C61F575EA21}|{6813DF9C-1DA9-44AE-9B9D-FB83827E8521}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{1EECD1FE-0C7B-4F62-A9EE-379A866DB144}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Medical device tendering  more questions than answers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950123T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950123T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950123T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051222
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Medical device tendering - more questions than answers
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252991
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183803Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dc006867-3b50-4224-81a9-61ce15416cb4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183803Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

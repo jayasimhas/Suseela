@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {45442D42-FCBF-45A0-A786-CC30B69BAA65}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/PageAssets/AMChart Video Control
+parent: {90D0AC08-B8B5-4D52-9D09-40E47F55A4FE}
+name: AMChart Video Control
+master: {00000000-0000-0000-0000-000000000000}
+template: {00DC502A-7FCF-4160-86BF-B8EB1C15CBA1}
+templatekey: Video Control
+
+----version----
+language: en
+version: 1
+revision: e19e7857-99c9-4264-9f47-950c4c609907
+
+----field----
+field: {2D73E75C-2A90-4AC5-8FAF-9023D34B64C1}
+name: Thumbnail
+key: thumbnail
+content-length: 58
+
+<image mediaid="{037164A5-739E-4807-B832-1ED34FEFE70D}" />
+----field----
+field: {3C01C81B-99DF-48F4-875B-60AD28FF53CC}
+name: VideoLink
+key: videolink
+content-length: 76
+
+<link linktype="external" url="https://www.youtube.com/embed/8aBA9vCZn7Y" />
+----field----
+field: {1FC1398F-3081-4190-997A-708FE0C0A73B}
+name: AlternativeText
+key: alternativetext
+content-length: 9
+
+thumbnail
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160929T045732Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e19e7857-99c9-4264-9f47-950c4c609907
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160929T050050Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
