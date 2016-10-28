@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B4BB4B4C-C1DE-4E92-BF3C-46E12D7C6EFB}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/10/Better health in Africa
+parent: {281041AA-CDF7-48B5-BA87-85309B35870B}
+name: Better health in Africa
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: ea547d79-7399-426d-89d4-450543413feb
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 466
+
+<p>Healthcare facilities and medical equipment have fallen into serious disrepair in many African countries in recent years. Almost one-third of the equipment in a range of healthcare institutions in Nigeria was out of use in 1991, according to a recent World Bank report, Better Health in Africa. In general, the more sophisticated the facility, the greater the amount of equipment which was not being used and the longer it was out of service, says the report.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 23
+
+Better health in Africa
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3531
+
+<p>Healthcare facilities and medical equipment have fallen into serious disrepair in many African countries in recent years. Almost one-third of the equipment in a range of healthcare institutions in Nigeria was out of use in 1991, according to a recent World Bank report, Better Health in Africa. In general, the more sophisticated the facility, the greater the amount of equipment which was not being used and the longer it was out of service, says the report.</p><p>Studies of secondary level hospitals in Nigeria carried out in 1992 suggest that equipment worth around $47 million (of a total of $150 million) required repairs and that another $35 million was needed for reinvestment in essential items. Research conducted in 13 Ministry of Health hospitals in Kenya found 40% of all equipment was not functioning and 40% of operating room apparatus was in need of repair. A survey of 17 hospitals in Uganda revealed that only 20% of inventoried equipment was in working order and only around one-third of the remainder was worth repairing.</p><p>standards needed</p><p>Problems have arisen in Africa partly because plans for the construction of new healthcare facilities have been made before determining whether funds are available to operate them. Improvements to infrastructure planning, as well as the selection of equipment and its maintenance, are vitally important, the World Bank believes. Specific standards on spending for equipment maintenance, repair and replacement should be established in all African countries, along with standardised lists of equipment used in each type of facility. Governments could make use of the norms drawn up by the WHO, such as the estimated annual cost of maintaining specific types of medical equipment as a percentage of their capital cost.</p><p>New medical technologies identified by the World Bank as of the greatest potential value to African countries include simple diagnostic tests, such as dipsticks or saliva-based tests for HIV or other sexually-transmitted diseases. These give community health workers diagnostic abilities previously restricted to specialised urban laboratories. Non-invasive diagnostic apparatus, such as ultrasound scanners, "may sharply improve diagnosis at the district level". Africa would do well to follow the Western trend towards day surgery, which helps contain the demand for hospital beds, says the World Bank.</p><p>technology acquisition</p><p>There is generally no established mechanism in African countries for planning the acquisition of new medical technologies. Physicians - usually trained abroad - tend to control technology acquisition and they are not the best people to perform this task, the World Bank claims. "Rather, a team is needed, including public and non-government healthcare providers, engineers, planners and social scientists to ensure that the broader cultural, social and economic dimensions are considered." African politicians should adopt a cautious attitude to the "uncontrolled diffusion of medical technology" in response to the pressure to invest. Responsibility for decisions on technology acquisition would be best assigned to a single senior Ministry of Health official.</p><p>The greatest obstacle to the improvement of medical technology in Africa may be "technology philanthropy" - the unco-ordinated donation of equipment by foreign agencies and charities, says the World Bank. A possible solution would be the establishment of "donation protocols", paralleling the use of essential drugs lists.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{2EB71C51-19F7-4326-ABC8-ECF5F59EC2AF}|{EB366CD7-116F-4A03-B090-7E4F6C0B195A}|{65E72707-89F6-4E8F-98A1-522A17A14C14}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 23
+
+Better health in Africa
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950410T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950410T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950410T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052182
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 23
+
+Better health in Africa
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253951
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184108Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ea547d79-7399-426d-89d4-450543413feb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184108Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

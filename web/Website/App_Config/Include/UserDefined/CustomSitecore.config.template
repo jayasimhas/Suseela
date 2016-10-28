@@ -248,10 +248,9 @@ But you can also use "patch:attribute" for clarity:
       <setting name="MailServerPort">
         <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
       </setting>
-      
       <!-- Master ID and Password Settings -->
-      <setting name="MasterId" value="agridev"/>
-      <setting name="MasterPassword" value="e=mc2" />
+      <setting name="MasterId" value="AGRIBETA"/>
+      <setting name="MasterPassword" value="A8R18ET4" />
       
       <!-- ExactTarget Settings -->
       <setting name="ExactTarget.UseSandbox" value="${ExactTarget.UseSandbox}" />

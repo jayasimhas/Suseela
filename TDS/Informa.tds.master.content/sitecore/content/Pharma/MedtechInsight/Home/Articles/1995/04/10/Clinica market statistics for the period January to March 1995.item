@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2C4FF447-2452-4E6E-B3B2-CE2C41CD5763}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/10/Clinica market statistics for the period January to March 1995
+parent: {281041AA-CDF7-48B5-BA87-85309B35870B}
+name: Clinica market statistics for the period January to March 1995
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 84630db2-38c2-400f-94f7-199cee2bf460
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Clinica market statistics for the period January to March 1995
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7269
+
+<p><pre>The following table gives a market data round-up for the period January to March 1995 taken from articles appearing in Clinica during this period. The Clinica issue and page number is given as a reference on the line under the medical category in each case. i.e. 640/22 - Clinica Issue 640 page 22. MEDICAL GEOGRAPHIC MARKET CATEGORY MARKET VALUE TIMESCALE Blood-related products Anticoagulants Europe $400 mill per year 640/22 Autologous blood transfusion US $35 mill per year 646/16 Leuko-depletion devices World $1,000 mill per year (pot) 636/Bull/4 Cardiac/vascular Angioplasty accessories World $1,100 mill per year 639/11 Bradycardia pacing World $1,984 mill per year 639/1 Cardiac bypass circuits World $150 mill per year 646/16 Carotid artery shunts World $15 mill per year 645/15 Implantable cardioverter/ defibrillators US $1,000 mill per year 646/1 by 2000 Implantable/interventional cardiac devices US $2,020-7,500 mill 1994-2000 642/7 Restenosis treatment US $1,000 mill per year 637/10 Contraceptives Condoms Europe $483.6 mill in 1993 644/3 Condoms Germany $95 mill in 1993 644/3 Condoms Italy $136 mill in 1993 644/3 Condoms Spain $100 mill in 1993 644/3 Spermicides Europe $15.6 mill in 1993 644/3 Dentistry Dental services US $62,300 mill by 2000 646/15 (est) Devices (general) Diagnostic electromed World $14,000 mill per year 647/4-5 Electromed equipment Italy Lit 760,000 mill in 1994 641/6 Electromed equipment World $20,000 mill per year 647/4-5 Med equipment Canada Can$2,600 mill in 1993 642/9 Med equipment China $700 mill in 1993 636/23 Med equipment China $1,100 mill in 1996 639/9 (est) Med equipment Hong Kong $105 mill in 1993 636/24 Med equipment Malaysia $95 mill in 1993 636/24 Med equipment Singapore $140 mill in 1993 636/24 Med equipment S Africa Rand 1,500 mill per year 644/2 Med equipment Thailand $185 mill in 1993 636/25 Med equipment/diag S Korea $695 mill in 1993 636/25 Med equipment/diag Taiwan $400 mill in 1993 636/25 Med euipment imports China $490 mill in 1993 636/23 Med equipment imports Indonesia $95 mill in 1993 636/23 Med equipment imports Japan Yen 456,700 mill in 1993 636/26 Med equipment imports Neth Various 1992-93 645/5 Diagnostics (general) IVDs Austria Fr 900 mill in 1993 639/3 IVDs Belgium Fr 900 mill in 1993 639/3 IVDs Czech Republic $2.5 mill per year 642/15 IVDs Europe Fr 30,000 mill in 1993 639/3 * IVDs France Fr 4,300 mill in 1993 639/3 IVDs Germany Fr 8,100 mill in 1993 639/3 IVDs Germany DM 2,000 mill per year 635/15 IVDs Italy Fr 6,000 mill in 1993 639/3 IVDs Netherlands Fr 900 mill in 1993 639/3 IVDs Spain Fr 3,300 mill in 1993 639/3 IVDs Switzerland Fr 900 mill in 1993 639/3 IVDs UK Fr 1,500 mill in 1993 639/3 IVDs World $15,000 mill in 1993 638/16 IVDs imported S Korea $36.8 mill in 1994 639/9 (9 mths) IVDs in hospitals Europe $3,300 mill per year 635/15 Lab equipment France Fr 1,400 mill in 1993 639/3 Diagnostics (by clinical category) Biochemistry France Fr 576 mill in 1993 639/3 DNA probes World $60 mill in 1992 635/20 DNA probes World $1,000 mill by 1997 644/12 DNA probes World $100-1,600 mill in 1994 644/sup Haematology France Fr 503 mill in 1993 639/3 Haematology, haemostasis, urinalysis & immunochemistry Instrumentation World $1,000 mill per year 641/1 Haemostasis instrumentation, reagents & control materials World $500 mill per year 641/1 Histology & cytology instrumentation World $240 mill per year 640/11 Immunology France Fr 1,686 mill in 1993 639/3 Microbiology France Fr 1,535 mill in 1993 639/3 Point-of-care diagnostics US $1,000 mill by 1997 647/15 Diagnostics (specific tests) Alcoholism Germany $6 mill per year 638/14 (pot) Alcoholism World $75 mill per year 638/14 (pot) Autoimmune diseases Italy $18 mill per year 643/11 Allergy tests (IVDs) World $150 mill per year 643/17 Blood World $3,000 mill per year 638/12 Blood screening World $700-950 mill 1991-1996 635/20 (est) Cancer (pancreatic) World $75 mill per year 635/19 Chlamydia US $50 mill per year 637/14 Electrophoresis Germany DM 25 mill per year 635/15 Hepatitis (as an STD) World $465 mill 1991 635/20 Hepatitis World $600 mill per year 635/20 Herpes simplex US $30 mill per year 635/20 Herpes simplex Europe $12.5 mill per year 635/20 HIV (as an STD) World $690 mill 1991 635/20 Ovulation (OTC) Europe $4 mill in 1993 644/3 Ovulation (OTC) US $24 mill per year 647/14 Pregnancy (OTC) Europe $104-161 mill 1993-1999 644/3 (est) Pregnancy (OTC) Germany $19 mill in 1993 644/3 Pregnancy (OTC) Italy $27 mill in 1993 644/3 Pregnancy (OTC) Spain $22 mill in 1993 644/3 Pregnancy (OTC) New Zealand NZ$500,000 per year 637/7 Pregnancy (OTC) US $240 mill per year 647/14 STDs World $1,500-3,000 mill 1991-2000 635/20 (est) Healthcare (general) Capital investment Italy Lit 300,000 mill in 1995 644/4 Hospitals spending (public) France Fr 191,000 mill in 1993 638/5 Hospitals spending (private) France Fr 28,000 mill in 1993 638/5 Public spending China Yuan 12,000 mill per year 635/11 Public spending France Fr 378,000 mill in 1993 638/5 Public spending France Fr 414,000 mill in 1994 641/5 Public spending Italy Lit 88,121,000 mill in 1995 646/3 Total spending China Yuan 90,800 mill per year 635/11 Total spending Switzerland SwFr 39,000 mill in 1994 646/4 Total spending World $1,000,000 mill in 1993 638/16 Healthcare (research) Health sciences Canada Can$1,000 mill per year 638/9 Hospital kits and trays Total US $558-961 mill 1993-2000 639/8 Anaesthesia US $61 mill in 1993 639/8 Biopsy US $28 mill in 1993 639/8 Blood gas US $39 mill in 1993 639/8 General use US $218-346 mill 1993-2000 639/8 Radiology US $61 mill in 1993 639/8 Urology US $145-317 mill 1993-2000 639/8 Imaging C-arm X-ray systems Japan $50 mill per year 641/16 Contrast media World $2,928-8,100 mill 1993-2000 636/34 (est) Film processing & storage US $1 mill pa per 500-bed 647/22 hospital Imaging systems US $4,200 mill in 1991 647/4-5 Radiology services UK &pound;600 mill per year 638/1 X-ray systems for diagnosis (exports) US $1,000 mill in 1994 646/14 Ophthalmology Ophthalmic viscoelastics World $300 mill per year 645/12 Orthopaedics Hip fracture treatment France Fr 2,629 mill 1987 641/20 Osteoporosis/rheumatoid arthritis testing N America $140 mill per year 642/14 Osteoporosis therapy UK &pound;750 mill per year 641/3 Osteoporosis therapy US $2,000 mill per year 640/10 Patient monitoring Cardiac telemedicine US $200 mill per year 643/11 Patient monitoring US $881-1,161 mill 1993-2000 641/8 (est) Portable multi-monitors US $500-680 mill 1993-2000 641/8 (est) Specialties Aids for the diasabled World $150 mill per year 640/14 Asthma complications US $3,000 mill per year 646/20 Automated peritoneal dialysis World $125-700 mill 1994-2000 641/20 (est) Defibrillators World $500-1,000 mill 1994-2000 641/18 (est) Pain management World $11,500 mill 1993 635/22 Spinal cord stimulation World $85-200 mill 1993-2000 647/11 (est) Stroke & complications World $18,000 mill per year 647/22 Surgery (general) Adhesion products US $1,000 mill per year 646/20 Back operations US $50 mill per year 646/5 Electrosurgery products US $130 mill per year 635/13 Sutures Canada Can$60 mill per year 639/17 Traumatology World $650 mill per year 641/18 Woundcare Burns therapy US $4,000 mill per year 641/14</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Clinica market statistics for the period January to March 1995
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950410T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950410T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950410T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052281
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Clinica market statistics for the period January to March 1995
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254050
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184127Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+84630db2-38c2-400f-94f7-199cee2bf460
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184127Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

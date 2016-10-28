@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {3E55AA3E-105F-46F8-A232-926F45E2FD8D}
+database: master
+path: /sitecore/templates/Velir/Search/Example/Example Search Page/__Standard Values
+parent: {DD15A131-7035-4180-A316-78D3F2B90C90}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {DD15A131-7035-4180-A316-78D3F2B90C90}
+templatekey: Example Search Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 1863
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{8D1B6F28-C5F3-4758-A1A2-B59C8E3A8036}"><p uid="{68CFE4D2-4C10-4DCD-A166-6675586E2A77}" key="search-header" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Header" /><p uid="{2EBCE3AE-BEF7-4509-B481-C79DEBF4CAB2}" key="search-main" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Main Column" /><p uid="{1E291E49-3C95-4FE7-BAB8-346AACE06893}" key="search-right" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Right Column" /><p uid="{548AA828-538D-4DF2-82C0-D24D4B54694A}" key="search-sort-area" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Sort Area" /><p uid="{D7C4CBD7-E475-4845-8CE4-80B07168A608}" key="search-sort-options" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Sort Options" /><p uid="{D48E96DF-59E4-427C-AEBB-F0A34FE08E29}" key="search-bottom" md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Bottom" /><r id="{955E6846-7192-4EDA-8EF6-B7276E1D0045}" ph="search-header" uid="{7831A4DD-173D-40EB-A23B-050928847BCD}" /><r id="{5538B9B3-F4DE-4F03-B2C7-7828E112646D}" ph="search-header" uid="{F06E7540-8847-47F7-83F5-BDE739287080}" /><r ds="" id="{A137511F-6473-49D8-AA51-EDEE929F315F}" par="" ph="search-sort-area" uid="{465579A7-5EA8-4BB5-9C30-55C5E5710940}" /><r id="{2B658736-0045-45FE-ADE4-34E696EBFDD4}" ph="search-main" uid="{8D351F46-6560-435B-9450-F4AF3B9BFA72}" /><r id="{D12DA1BC-613B-48A5-9CFE-95583548000A}" ph="search-main" uid="{76620C84-F4C3-4424-BB5D-02C24BEE0D0A}" /><r id="{D4AD67AC-AE56-4E34-AD69-A44A54EB3DA0}" ph="search-right" uid="{C582A4CA-AA29-4ED9-9539-E6C5211CAAAD}" /><r id="{934410A3-F2C2-4F55-B6AA-FF15C317A1C7}" ph="search-bottom" uid="{5FE78560-815E-4FAE-A79E-6483317A4C67}" /></d></r>
+----version----
+language: en
+version: 1
+revision: 0f735189-6ebd-4fe7-9685-dc12262d651a
+
+----field----
+field: {EBBB5CDB-A469-46AE-AB89-FE1F11D676F0}
+name: Base Endpoint Url
+key: base endpoint url
+content-length: 18
+
+/api/examplesearch
+----field----
+field: {8538E64B-69B6-44C0-829B-0826F26231DC}
+name: Index Name
+key: index name
+content-length: 18
+
+sitecore_{0}_index
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 478
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><p uid="{D48E96DF-59E4-427C-AEBB-F0A34FE08E29}" p:before="r[@uid='{7831A4DD-173D-40EB-A23B-050928847BCD}']" s:key="search-bottom" s:md="/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Bottom" /><r uid="{5FE78560-815E-4FAE-A79E-6483317A4C67}"><p:d /></r><r uid="{7B0FF5EE-FE94-4F46-84C5-3BC7F3058DCD}" s:id="{934410A3-F2C2-4F55-B6AA-FF15C317A1C7}" s:ph="search-bottom" /></d></r>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150918T141627Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0f735189-6ebd-4fe7-9685-dc12262d651a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20151016T141600:635806017607149086Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

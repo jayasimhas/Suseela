@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {D34BBCA6-BB46-47B0-9DDD-034675CA9151}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Evidence mounts on asbestos healthcare needs as UK hesitates over RampD drive
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Evidence mounts on asbestos healthcare needs as UK hesitates over RampD drive
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e15d946a-e9aa-4f8e-a297-f7fd8379f9dd
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 491
+
+<p> <b>After dragging their feet, ostensibly over liability and compensation policies, the UK government are at last in the throes of creating a National Centre for Asbestos-Related Diseases (NCARD). Here follows an exclusive report on why medtech, pharma and diagnostic innovations in this area, which only a concerted and well-funded R&amp;D programme can deliver with the urgency it demands, will become even more important over the coming decades.</b> <i>Bernard Murphy reports.</i> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 81
+
+Evidence mounts on asbestos healthcare needs, as UK hesitates over R&amp;D drive 
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11873
+
+<p> <b>After dragging their feet, ostensibly over liability and compensation policies, the UK government are at last in the throes of creating a National Centre for Asbestos-Related Diseases (NCARD). Here follows an exclusive report on why medtech, pharma and diagnostic innovations in this area, which only a concerted and well-funded R&amp;D programme can deliver with the urgency it demands, will become even more important over the coming decades.</b> <i>Bernard Murphy reports.</i> </p> <p> New evidence has emerged of the suspected widespread failure of UK schools to observe asbestos safety regulations, heightening concerns that children, teachers and other staff are being exposed to the carcinogen. </p> <p> But Clinica can also reveal, exclusively, that scientific calculations on exposure levels in schools and other specific environments were omitted from official guidance published 11 years ago. </p> <p> The possible extent of low-level exposure across the general population, and the degree of risk that this might be posing to health &ndash; as suggested by these reports &ndash; justifies a significant investment in healthcare technologies associated with asbestos-related diseases (ARDs). </p> <p> The prospective National Centre for Asbestos-Related Diseases aims to address these needs. NCARD (www.ncard.org.uk) is being established as a virtual network of world-class centres across the UK and Ireland, with a view to better co-ordinating trials and access to epidemiological data, and to better target R&amp;D funding, among other aims. The detection &ndash; screening and diagnostic &ndash; needs, as well as better insight into the impact of low-level exposure, are among its target areas. </p> <p> &quot;The impact of long-term, low-level exposure adds a further dimension to the mesothelioma epidemic that we must explore,&quot; John Edwards, consultant thoracic surgeon in Sheffield and chair of the NCARD development group, told Clinica. </p> <p> Regarding the diagnostic needs of ARDs, he said: &quot;There is great potential for developing screening and diagnostic tests, given that there are approximately 70,000 people exposed to asbestos who will die from mesothelioma in the UK alone.&quot; </p> <p> The theranostic potential is important too: &quot;Tests of early response to treatments will help drive more efficient use of healthcare resources,&quot; noted Mr Edwards. </p> <p> In an example of the latest developments in this area, Rosetta Genomics has just announced the discovery of a biomarker that may help predict treatment outcomes in malignant mesothelioma: US researchers have reported a predictive relationship between the increased expression of a particular microRNA and better prognosis (www.clinica.co.uk, February 23 2010). </p> <p> Last week, the Department of Justice, in a statement setting out mainly the government's latest thinking on ARD compensation, announced that the insurance industry intended to commit &pound;3m ($4.6m) towards ARD research. It also said that arrangements were in place to determine &quot;how best to create a world-leading network of medical research practitioners for asbestos-related disease&quot;, but fell short of committing state funding for the project (see www.clinica.co.uk, February 26 2010). </p> <p> &quot;The fact that the UK has one of the highest rates of death from mesothelioma in the world is a legacy of our industrial heritage and the part that asbestos played in it. Just as the UK was a global leader in the asbestos industry, we must now become a global leader in research into asbestos-related disease,&quot; the DoJ statement said. </p> <p> Of the slow progress in securing state backing for ARD research in the UK, Mr Edwards told Clinica: &quot;The government has a social and moral responsibility to drive forward research into ARDs, and the promised assistance in developing UK research must be realised.&quot; </p> <p> Schools scenario: new evidence </p> <p> The results, published last week, of a survey of 16 schools found none to be &quot;fully compliant with Health &amp; Safety Executive [HSE] guidance&quot;. In 10 of the schools, for example, the ceiling voids, commonly used to run cables and pipes, and a common source of asbestos contamination, had not been checked or not properly recorded as such. In one school, asbestos safety recommendations made 14 years ago had not been carried out. </p> <p> The survey's authors, the Asbestos Testing and Consultants Association (ATAC), said that their findings &quot;highlight a serious problem&quot; and that they &quot;reflect what asbestos consultants regularly find throughout the country: that the majority are not managing their asbestos effectively or safely&quot;. The aim of the report &quot;is to provide evidence to the government that [its] policy of management is not working&quot;, said ATAC. </p> <p> ATAC's findings have added weight to a growing chorus of calls for the government to order a nationwide survey of the asbestos present in all public buildings. An estimated five million tonnes of the mineral has been used in construction in the UK. </p> <p> But an unpublished &quot;final draft&quot; of a Department of the Environment (DETR) document, Asbestos and man-made mineral fibres in buildings, dated August 1998, obtained by Clinica, raises new concerns. </p> <p> The document, which went on to be published in August 1999 as a &quot;practical guidance&quot; on asbestos safety management, contains a table of &quot;lifetime&quot; exposure calculations. It also provides estimates of the impact of poorly maintained or deteriorating asbestos-containing materials on contamination levels. </p> <p> The exposures table, together with a passage explaining increased risk estimates, were omitted from the published version of the document. </p> <p> The table (part of a section on risks to health) calculates that school-children will breathe three million fibres during their 12.5-year schooling life. This estimate was based on a level of 0.0005 fibres per millilitre (f/ml) of air, as attributed to an interior environment with asbestos materials in &quot;good condition&quot;. </p> <p> By comparison, the estimated total 70-year &quot;lifetime exposure&quot; of the general population from a background level in the range 0.000001-0.0001 f/ml is in the range 295,000 to 29.5 million fibres, according to the table. </p> <p> However, &quot;normal ambient or indoor levels of exposure to asbestos may be exceeded if asbestos materials are in poor condition or are damaged and releasing fibres&quot;, notes the 1998 draft, in a section on &quot;additional exposure&quot; associated with activities that disturb asbestos. </p> <p> &quot;In this situation, airborne fibre levels are typically up to 0.3 f/ml,&quot; the omitted passage also asserts, before referring to &quot;higher exposures&quot; of up to 0.04 f/ml (sic) as being associated with certain common maintenance activities. </p> <p> Of the cited 0.0005 f/ml &quot;good condition&quot; estimate, Michael Lees, a schools asbestos safety campaigner, is scathing: &quot;That might be the case in some schools, but all the asbestos is now old and much is deteriorating,&quot; he told Clinica. &quot;It has been found that when you slam doors, hit the walls or sit on the window sills, the levels can be up to 0.33 f/ml and 0.44f/ml,&quot; he explained. This is 33-44 times higher than the 0.01 f/ml level at which a room can be legally reoccupied following work on asbestos. </p> <p> The added relevance of this week's ATAC report, in the light of the 1998 calculations, is that asbestos was found to have been damaged in more than half of the 16 schools surveyed. ATAC notes that most UK school buildings contain asbestos and that the material, because it is old, deteriorates if not managed properly. Moreover, some schools are known to have been built with &quot;large amounts of the more dangerous types [of the mineral]&quot;. </p> <p> There is no suggestion of any impropriety in the removal of the information from the published 1999 DETR report, but the omitted data provide an insight into what government officials suspected &ndash; or knew &ndash; at least 12 years ago. Namely, that schools pose a more than &quot;background level&quot; of risk of exposure to asbestos, even when the asbestos-containing construction materials are maintained in good condition. </p> <p> Even as far back as 1967, the government's advisory committee on asbestos had warned the Department of Education of the general health risks posed by low-level exposure, and that children are particularly at risk; it urged the government to ensure the tightest controls. </p> <p> But now, &quot;this is not a time for passing the buck&quot;, said National Union of Teachers (NUT) general secretary Christine Blower, of the &quot;decisive steps [that are] desperately needed&quot;. </p> <p> For Mr Lees, the government has failed comprehensively in this regard: &quot;It could never admit the fact that just being in a school is killing people,&quot; he told Clinica. &quot;But it's the awful truth&quot;, he added. </p> <p> The rising number of mesothelioma deaths among teachers &ndash; at least 178 to date &ndash; and more recently also among former pupils, in whom disease has been attributed to exposure at school, provides further evidence of what he sees as the &quot;appalling standards of asbestos management in many schools&quot;. </p> <p> The overall evidence of contamination in schools is all the more concerning given the possibility that children may be at greater pathogenic risk, because of the stage of their physiological development. </p> <p> The lifetime risk of developing malignant mesothelioma (measured at 80 years, taken as the maximum latency of the cancer) is estimated as being around five times greater if exposure was at 5 years of age, than if it was at 30 years, Clinica understands. </p> <p> &quot;This is something that the [prospective] NCARD centre could look into, so as to provide more definitive data,&quot; said Mr Lees. </p> <p> Schools minister Diana Johnson met with asbestos experts, campaigners and teaching union representatives on February 24 to discuss the ATAC report. The meeting, described as &quot;productive&quot;, has resulted in plans to establish a steering group to look specifically into the issue of asbestos in schools, Clinica has learnt. </p> <p> However, the meeting revealed persistent gaps in schools asbestos safety guarantees. A specific area of concern, for example, is the lack of central government or local authority regulation of 2,400 independent schools; and some 6,000 diocese and other schools are not regulated by local authorities. </p> <p> The evidence that controls are failing in some schools is irrefutable, but the concern is that they may actually be failing in many &ndash; if not most &ndash; of the UK's 27,000 schools. Around 75% are currently thought to contain asbestos, but only a national programme of surveys can properly determine the exact extent of any problems, as the basis for actions to ensure that all schools are safe. </p> <p> Ultimately, these reports add to concerns that current exposure to asbestos across the general population may still be significant, despite the progressive banning of certain uses of the material and the strict implementation of safety controls over the last 30 years or so. Experts fear that, as a result, the incidence of ARDs is nowhere near peaking within the next five years, as had been predicted. </p> <p> The possible extent of low-level exposure to asbestos internationally is central to another ongoing Clinica investigation. Early findings suggest widespread exposure to above-background levels of airborne asbestos; if confirmed, they will further underline the importance of supporting NCARD. </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 77
+
+Evidence mounts on asbestos healthcare needs as UK hesitates over RampD drive
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T215646
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT006656
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 81
+
+Evidence mounts on asbestos healthcare needs, as UK hesitates over R&amp;D drive 
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+188936
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T161426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e15d946a-e9aa-4f8e-a297-f7fd8379f9dd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T015646Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

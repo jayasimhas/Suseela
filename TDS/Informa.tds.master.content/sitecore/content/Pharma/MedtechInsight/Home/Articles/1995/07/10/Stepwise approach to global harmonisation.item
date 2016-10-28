@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {49A57282-0291-4A1A-8C10-E928CBB9BE35}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/10/Stepwise approach to global harmonisation
+parent: {98BAB990-6283-4E08-9540-D71A757446F0}
+name: Stepwise approach to global harmonisation
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 9a0a9ef5-f362-4c9e-8900-61ae365c9dff
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 461
+
+<p>Jeanette Marchant reports on progress to date in the regulatory arena. Global harmonisation of medical device regulations must be a step-by-step approach, believes Joseph Putzeys, head of the European Commission industrial affairs unit, DG III, and chairman of the Global Harmonisation Task Force. Considerable progress has been made since the Task Force first met in 1992, he told the Global Medical Device Conference in Vancouver, Canada, on June 26th.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Stepwise approach to global harmonisation
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6467
+
+<p>Jeanette Marchant reports on progress to date in the regulatory arena. Global harmonisation of medical device regulations must be a step-by-step approach, believes Joseph Putzeys, head of the European Commission industrial affairs unit, DG III, and chairman of the Global Harmonisation Task Force. Considerable progress has been made since the Task Force first met in 1992, he told the Global Medical Device Conference in Vancouver, Canada, on June 26th.</p><p>The final goal is to enable a product manufactured in one country to be accepted in any other country. To achieve this, regulations must be considered equivalent, said Mr Putzeys. Among issues which must be taken into account are:</p><p>* what are the requirements essential for health and safety, and what standards can be voluntary?</p><p>* the extent of involvement of public authorities in certification schemes; and</p><p>* the avoidance of costly inspections.</p><p>A global document on quality assurance has been developed by the Task Force working groups. This has been drawn up following a review of quality assurance systems based on ISO 9000 and guidance documents, with modifications at national levels. A guidance document for harmonised evaluation of quality systems will be available next year as a result of good progress in approaching different interpretations of audits, according to Mr Putzeys.</p><p>Review of regulatory systems is a more complicated and time- consuming exercise, he noted. The mandate of study group 1 has been increased to identify equivalent requirements with a view to investigating the possibility of joint approvals. Mr Putzeys suggested that some product categories might be candidates for harmonisation. Incident reporting mechanisms are also being studied with a view to harmonising activities in this area, possibly through electronic exchange of data. A new study group has been established to look at postmarket surveillance.</p><p>The European Commission intends to apply the guidance on audit harmonisation being developed by the Task Force working group 4. The group is studying different audit systems, including the European quality system, and has observed one audit so far. A number of questions have been raised on the subject of audits following experience to date with the European medical device Directives, said Norbert Anselmann of the Commission's DG III.</p><p>Audits of suppliers' premises as well as the manufacturer's may be necessary, he noted. A Notified Body would be justified in auditing a supplier if components are essential for the safety of the device. The periodicity of audits has been questioned. Reinspection every three-five years is considered appropriate, said Mr Anselmann, depending on a number of factors, including incident reporting and whether corrective actions have been involved. Unannounced audits are part of the service provided by a Notified Body, he pointed out, and as such should be paid for by the client. Conditions should be established in advance, he added.</p><p>Presenting a progress report on the Task Force study groups, Pierre Landry, planning director of the Canadian Medical Devices Bureau, noted that the guidance document on quality systems for design and manufacture drawn up by study group 3 (convened by Gordon Higson) has been submitted to the recently-formed ISO/TC 210 group (see Clinica No 593, p 9) to assist in its work on international standards. Additional guidelines for design control and process validation are on the Task Force study group's agenda for this year and are expected to be available next year.</p><p>TC 210 is trying to reduce the differences between quality standards, noted Mr Landry. The technical committee aims to identify horizontal standards in order to contribute to global harmonisation of regulations, explained Michael Miller, president of the Association for the Advancement of Medical Instrumentation. The committee, which held its second meeting just prior to the Global Conference, is working with ISO/TC 176, which deals with generic quality management standards, in order to co-ordinate their activities and avoid duplication of work.</p><p>Structure of ISO/TC 210</p><p>Chairman: Gordon Higson (UK) Secretary: Elizabeth Bridgman (AAMI, US)</p><p>Working group 1: Application of quality systems to medical devices (convenor - E Kimmelmann, US)</p><p>Working group 2: General aspects stemming from the application of quality principles to medical devices (convenor - P Verdonck, Belgium)</p><p>Working group 3: Symbols, definitions & nomenclature for medical devices (convenor - R Farb, US)</p><p>Working group 4: Application of risk management to medical devices (convenor - A Dolan, Canada)</p><p>Two draft documents on quality systems (ISO/CD 13485 - supplementary requirements for medical devices to ISO 9001; and ISO/CD 13488 - supplementary to ISO 9002) were discussed in June and have been put forward for consideration as international standards. A single guidance document on the application of these two standards has been drawn up and final guidance is expected to be ready by mid-1997, according to Mr Miller.</p><p>Working group 2 is involved in developing informative guidance and a reference of horizontal standards. Mr Miller pointed out that TC 210's goal is to identify, not write standards.</p><p>Project recommendations adopted by working group 3 include ISO standards for symbols based on prEN 980, a compendium of definitions and nomenclature for medical devices. An ISO standard for labelling has been dropped since it was considered by the Global Harmonisation Task Force to be premature because of the global differences in labelling. TC 210 accepted that a risk analysis standard (based on prEN 1441) drawn up by working group 4, be circulated as a draft.</p><p>Gordon Higson is optimistic that global harmonisation will become a reality. He identified trends in regulations which point to a growing reliance on international standards - be it formal or informal. Harmonisation of standards, he believes, will speed up the commercialisation of products and provide opportunities in emerging markets. Attendance at the Vancouver conference by representatives from countries such as China, Thailand, Taiwan and Cuba indicates a growing interest by emerging markets in regulatory developments.</p><p>The impact of healthcare reform and reimbursement issues on the medtech industry will be reviewed in Clinica next week.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{6EFD9948-FDD4-4012-851B-6AB7F203124F}|{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}|{2E7B4689-7E3E-49AF-83B8-17F9FA2940C4}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{2E069F42-D0F0-4A2F-80B3-B8EEFC9D8071}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Stepwise approach to global harmonisation
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950710T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950710T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950710T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053379
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Stepwise approach to global harmonisation
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255188
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184459Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9a0a9ef5-f362-4c9e-8900-61ae365c9dff
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184459Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

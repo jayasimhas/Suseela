@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9B46D8AF-1E5E-4805-8D46-B3CE0BBE6FFF}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/25/BioVascular raises $26 million
+parent: {709AE3CF-AC39-4E03-AE57-83DC2A02516A}
+name: BioVascular raises $26 million
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: b4a3efda-eb64-4c64-8754-53dff9a8e403
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 433
+
+<p>Bio-Vascular, a US surgery and imaging software company based in Minnesota, has raised around $26 million net in a share offer last week. The size of the offer was increased to 1.8 million from 1.5 million shares and the price achieved was some 10% above the assumed price in the prospectus. The shares were sold for $15.75. Bio-Vascular now intends to transfer its shares from the Nasdaq smallcap market to the Nasdaq proper.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+Bio-Vascular raises $26 million
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1575
+
+<p>Bio-Vascular, a US surgery and imaging software company based in Minnesota, has raised around $26 million net in a share offer last week. The size of the offer was increased to 1.8 million from 1.5 million shares and the price achieved was some 10% above the assumed price in the prospectus. The shares were sold for $15.75. Bio-Vascular now intends to transfer its shares from the Nasdaq smallcap market to the Nasdaq proper.</p><p>Bio-Vascular has enjoyed a 73% growth in revenues in the nine months to July due to higher sales of the Peri-Strips staple line reinforcement used mainly in lung reduction operations. Peri-Strips account for 43% of the company's sales. Biograft, the preserved umbilical cord vein graft, on the other hand, fell 20% compared with last year, continuing the past two years' downward spiral. Bio-Vascular believes the sales decline is due to a trend towards non-surgical intervention for peripheral vascular obstruction and the higher price of Biograft compared with synthetic grafts.</p><p>The company is also active in medical imaging software developing products for interactive visualisation and analysis of 3-D image data. Its VoxelView high-speed imaging software has been licensed to 70 medical and research institutions as a research tool.</p><pre>Bio-Vascular's nine-month results ($ thousands) 1995 1994 Peri-Strips 3,533 249 Tissue-Guard products 1,193 664 Biograft 943 1,171 Surgical Productivity tools 1,371 1,276 Medical imaging software 1,085 1,301 Total revenue 8,131 4,702 Net income (loss) 597 (1,374) (ended July 31st)</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 30
+
+BioVascular raises $26 million
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950925T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950925T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950925T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054441
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+Bio-Vascular raises $26 million
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+256371
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184828Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b4a3efda-eb64-4c64-8754-53dff9a8e403
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184828Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

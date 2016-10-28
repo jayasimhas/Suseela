@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {12FEB4EF-8DB0-484D-A64C-FB677F52FA25}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Emails Folder/New Scrip Weekly Digest/Featured Article Five
+parent: {05B46BEA-BCFB-430E-AC93-E14F3B51A8C3}
+name: Featured Article Five
+master: {F85807F9-6281-43E9-81F1-D0FCCC54FED0}
+template: {CB4CA050-2626-4979-A53D-77613B218043}
+templatekey: Featured Article
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: db5b07c2-5815-4958-bc47-14c5a77889e2
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160815T192136Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+db5b07c2-5815-4958-bc47-14c5a77889e2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160815T192136Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

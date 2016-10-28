@@ -1,11 +1,11 @@
 function loadLayoutOneData(data, idx){
-	var loadData = (loadPreferanceId["Sections"][idx]["Name"]) ? '<div class="latestSubject clearfix"><span class="sub">'+ data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"]+'</span><a class="editView mobview" href="'+loadPreferanceId.MyViewSettingsPageLink+'">EDIT MY VIEW</a></div>' : '',
+	var loadData = (loadPreferanceId["Sections"][idx]["ChannelName"]) ? '<div class="latestSubject clearfix"><span class="sub">'+ data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"]+'</span><a class="editView mobview" href="'+loadPreferanceId.MyViewSettingsPageLink+'">EDIT MY VIEW</a></div>' : '',
 	loadmoreLink = (data.loadMore && data.loadMore.displayLoadMore) ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += (loadPreferanceId["Sections"][idx].Id) ? '<div class="eachstory layout1" id="'+loadPreferanceId["Sections"][idx].Id+'">' : '';
+	loadData += (loadPreferanceId["Sections"][idx].ChannelId) ? '<div class="eachstory layout1" id="'+loadPreferanceId["Sections"][idx].ChannelId+'">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += (data.loadMore && data.loadMore.displayLoadMore) ? '<div class="loadmore"><a href="'+loadmoreLink+'">'+ data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] +'</a></div>' : '';
+	loadData += (data.loadMore && data.loadMore.displayLoadMore) ? '<div data-pageSize="'+data.loadMore.pageSize+'" data-pageNo="'+data.loadMore.pageNo+'" data-loadurl="'+data.loadMore.loadMoreLinkUrl+'" data-taxonomyIds="'+data.loadMore.taxonomyIds+'" class="loadmore"><span href="'+loadmoreLink+'">'+ data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] +'</span></div>' : '';
 	loadData += '</div>';
 	
 	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -28,14 +28,13 @@ function createLayoutInner1(data){
 	
 	var articleData = '';
 	articleData = '<section class="article-preview topic-featured-article">';
-	articleData += (data.articles[0].listableImage) ? data.articles[0].listableImage : '';
+	articleData += (data.articles[0].listableImage) ? '<img class="topic-featured-article__image" src="'+data.articles[0].listableImage+'">' : '';
 	articleData += '<div class="article-metadata">';
 	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">' + bookmarkTxt + ' <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
 	articleData += (data.articles[0].listableDate) ? '<li><time class="article-metadata__date">'+data.articles[0].listableDate+'</time></li>' : '';
 	articleData += (data.articles[0].linkableText) ? '<li><h6>'+data.articles[0].linkableText+'</h6></li>' : '';
 	articleData += (data.articles[0].listableType) ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
@@ -64,7 +63,6 @@ function createLayoutInner1(data){
 	articleData += (data.articles[1].listableDate) ? '<li><time class="article-metadata__date">'+data.articles[1].listableDate+'</time></li>' : '';
 	articleData += (data.articles[1].linkableText) ? '<li><h6>'+data.articles[1].linkableText+'</h6></li>' : '';
 	articleData += (data.articles[1].listableType) ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -94,7 +92,6 @@ function createLayoutInner1(data){
 	articleData += (data.articles[2].listableDate) ? '<li><time class="article-metadata__date">'+data.articles[2].listableDate+'</time></li>' : '';
 	articleData += (data.articles[2].linkableText) ? '<li><h6>'+data.articles[2].linkableText+'</h6></li>' : '';
 	articleData += (data.articles[2].listableType) ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -204,14 +201,15 @@ function createLayoutInner1(data){
 }
 
 function loadLayoutTwoData(data, idx){
-	var loadData = (loadPreferanceId["Sections"][idx]["Name"]) ? '<div class="latestSubject clearfix"><span class="sub">'+ data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"]+'</span><a class="editView mobview"  href="'+loadPreferanceId.MyViewSettingsPageLink+'">EDIT MY VIEW</a></div>' : '',
+	var loadData = (loadPreferanceId["Sections"][idx]["ChannelName"]) ? '<div class="latestSubject clearfix"><span class="sub">'+ data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"]+'</span><a class="editView mobview"  href="'+loadPreferanceId.MyViewSettingsPageLink+'">EDIT MY VIEW</a></div>' : '',
 	loadmoreLink = (data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl) ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += (loadPreferanceId["Sections"][idx].Id) ? '<div class="eachstory layout2" id="'+loadPreferanceId["Sections"][idx].Id+'">' : '';
+	loadData += (loadPreferanceId["Sections"][idx].ChannelId) ? '<div class="eachstory layout2" id="'+loadPreferanceId["Sections"][idx].ChannelId+'">' : '';
 	loadData += createLayoutInner2(data);
 	loadData += '</div>';
 	
-	loadData += (data.loadMore && data.loadMore.displayLoadMore) ? '<div class="loadmore"><a href="'+loadmoreLink+'"> '+ data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] +'</a></div>' : '';  
+	loadData += (data.loadMore && data.loadMore.displayLoadMore) ? '<div data-pageSize="'+data.loadMore.pageSize+'" data-pageNo="'+data.loadMore.pageNo+'" data-loadurl="'+data.loadMore.loadMoreLinkUrl+'" data-taxonomyIds="'+data.loadMore.taxonomyIds+'" class="loadmore"><span href="'+loadmoreLink+'">'+ data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] +'</span></div>' : '';
+ 
 	loadData += '</div>';
 	
 	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -232,7 +230,7 @@ function createLayoutInner2(data){
 	
 	var articleData = '<div class="latest-news__articles">';
 	articleData += '<section class="article-preview article-preview--small preview2">';
-	articleData += (data.articles[0].listableImage) ? data.articles[0].listableImage : '';
+	articleData += (data.articles[0].listableImage) ? '<img class="topic-featured-article__image2 hidden-xs" src="'+data.articles[0].listableImage+'">' : '';
 	articleData += '<div class="article-metadata">';
 	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
@@ -241,7 +239,7 @@ function createLayoutInner2(data){
 	articleData += (data.articles[0].listableType) ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
-	articleData += (data.articles[0].listableImage) ? data.articles[0].listableImage : '<img class="topic-featured-article__image2 hidden-xs" src="/dist/img/article-img2.jpg">';
+	articleData += (data.articles[0].listableImage) ? '<img class="topic-featured-article__image2 hidden-xs" src="'+data.articles[0].listableImage+'">'  : '';
 	articleData += '<div class="article-preview__inner-wrapper">';
 	articleData += (data.articles[0].listableTitle) ? '<h1 class="article-preview__headline"><a href="'+linkableUrl0+'" class="click-utag">'+data.articles[0].listableTitle+'</a></h1>' : '';
 	articleData += (data.articles[0].listableAuthorByLine) ? '<span class="article-preview__byline">'+data.articles[0].listableAuthorByLine+'</span>' : '';
@@ -406,9 +404,12 @@ $(function(){
 					if(idx < loadPreferanceId["DefaultSectionLoadCount"]){
 						$.ajax({
 							//url: '/api/articlesearch?pId=980D26EA-7B85-482D-8D8C-E7F43D6955B2&pno=1&psize=9',
-							url: '/api/articlesearch?pId='+ setId[idx].Id + '&pno=1&psize=9',
+							//url: '/api/articlesearch?pId='+ setId[idx]["TaxonomyIds"] + '&pno=1&psize=9',
+							url: '/api/articlesearch',
+							data: JSON.stringify({'TaxonomyIds': setId[idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
 							dataType: 'json',
-							type: 'GET',
+							contentType: "application/json",
+							type: 'POST',
 							cache: false,
 							async: false,
 							beforeSend: function(){
@@ -443,11 +444,15 @@ $(function(){
 		var $this = $(this), eachstoryMpan = $this.closest('.eachstoryMpan'), eachstory = eachstoryMpan.find('.eachstory'), eachstoryId = eachstory.attr('id'), layoutCls = eachstory.attr('class'), loadLayoutData;
 		
 		var layout = (layoutCls.indexOf('layout1') !== -1) ? 'layout1' : 'layout2';
-		
-		/*$.ajax({
-			url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize, 
+		var setId = loadPreferanceId["Sections"];
+
+		$.ajax({
+			//url: '/loaddata.json?pId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize,
+			url: $this.attr('data-loadurl'),
 			dataType: 'json',
-			type: 'GET',
+			type: 'POST',
+			data: JSON.stringify({'TaxonomyIds': [$this.attr('data-taxonomyIds')], 'PageNo': $this.attr('data-pageNo'), 'PageSize': $this.attr('data-pageSize') }),
+			contentType: "application/json",
 			success: function(data){
 				if(layout == 'layout1'){
 					loadLayoutData = createLayoutInner1(data);
@@ -461,37 +466,16 @@ $(function(){
 			error: function(xhr, errorType, error){
 				console.log('err ' + err);
 			}
-		});*/
-		
-		//Below code is for testing purpose.		
-		$.ajax({
-			url: '/loaddata.json', 
-			dataType: 'json',
-			type: 'GET',
-			success: function(data){
-				if(layout == 'layout1'){  
-					loadLayoutData = createLayoutInner1(data);
-					$(eachstory).append(loadLayoutData);
-				}
-				else{  
-					loadLayoutData = createLayoutInner2(data);
-					$(eachstory).append(loadLayoutData);
-				}
-			},
-			error: function(xhr, errorType, error){
-				console.log('err ' + err);
-			}
 		});
-		// Till here for testing
 	});
 	
 	var layout1Flag = true;
 	$(window).scroll(function(){
-		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'), eachstoryMpanLast = eachstoryMpan.last(), layoutCls = eachstoryMpan.find('.eachstory').attr('class'), eachstoryLength = eachstoryMpan.length, contentHei = $('.personalisationPan').height();
+		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'), eachstoryMpanLast = eachstoryMpan.last(), layoutCls = eachstoryMpan.find('.eachstory').attr('class'), eachstoryLength = eachstoryMpan.length, contentHei = $('.personalisationPan').height(), texonomyId;
 		
 		if(typeof loadPreferanceId !== "undefined"){
 			if(eachstoryLength < loadPreferanceId["Sections"].length){
-				var eachstoryId = loadPreferanceId["Sections"][eachstoryLength]["Id"];
+				texonomyId = loadPreferanceId["Sections"][eachstoryLength]["TaxonomyIds"];
 			}
 			else{
 				return;
@@ -504,10 +488,10 @@ $(function(){
 		if($(window).scrollTop() > contentHei - 400){
 			var getscrollData;
 			$.ajax({
-				url: '/loaddata.json',
-				//url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno=1&psize=9',
-				data: {'id': eachstoryId},
-				type: 'GET',
+				url: '/api/articlesearch', 
+				data: JSON.stringify({'TaxonomyIds': texonomyId, 'PageNo': 1, 'PageSize': 9 }),
+				type: 'POST',
+				contentType: "application/json",
 				cache: false,
 				async: false,
 				dataType: 'json',
@@ -515,17 +499,19 @@ $(function(){
 					$('.spinnerIcon').removeClass('hidespin');
 				},
 				success: function(data){
-					if(eachstoryLength % 2 == 0 && layout1Flag){
-						layout1Flag = false; 
-						getscrollData = loadLayoutOneData(data, eachstoryLength);
-						$('.spinnerIcon').addClass('hidespin');
-						$('.personalisationPan').append(getscrollData);
-					}
-					else{
-						layout1Flag = true;
-						getscrollData = loadLayoutTwoData(data, eachstoryLength);
-						$('.spinnerIcon').addClass('hidespin');
-						$('.personalisationPan').append(getscrollData);
+					if(data.articles && typeof data.articles === "object" && data.articles.length){
+						if(eachstoryLength % 2 == 0 && layout1Flag){
+							layout1Flag = false; 
+							getscrollData = loadLayoutOneData(data, eachstoryLength);
+							$('.spinnerIcon').addClass('hidespin');
+							$('.personalisationPan').append(getscrollData);
+						}
+						else{
+							layout1Flag = true;
+							getscrollData = loadLayoutTwoData(data, eachstoryLength);
+							$('.spinnerIcon').addClass('hidespin');
+							$('.personalisationPan').append(getscrollData);
+						}
 					}
 				},
 				error: function(xhr, errorType, error){

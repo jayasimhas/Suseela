@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {29C303C1-C4FF-4E09-817C-4C66DC5D39D3}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/2014/05/30
+parent: {DD870D3F-2561-4084-8A34-FA3734D7FB91}
+name: 30
+master: {00000000-0000-0000-0000-000000000000}
+template: {D0DFAF98-BB2A-4EB3-A931-13C335201D25}
+templatekey: Article Date Folder
+
+----field----
+field: {177CC3B0-D09C-408D-8948-78B13C1F615A}
+name: __Item Published
+key: __item published
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: 885ffec5-4851-4c23-a773-974f22567311
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T143606Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+885ffec5-4851-4c23-a773-974f22567311
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T000407Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

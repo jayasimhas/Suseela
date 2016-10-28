@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {26B86DEA-830E-49BC-B82F-090AAE60BC89}
+database: master
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/aside/ArticleSource
+parent: {D42D9F25-C4C4-46CF-829A-7307B99E575D}
+name: ArticleSource
+master: {00000000-0000-0000-0000-000000000000}
+template: {7CD0ED9C-975D-41ED-B106-E4C60E06D4F7}
+templatekey: TransformationAttribute
+
+----field----
+field: {A05E1D55-B7C5-4B57-AA0C-C1A7845CFC7C}
+name: XML Attribute
+key: xml attribute
+content-length: 13
+
+ArticleSource
+----field----
+field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
+name: XML Default value
+key: xml default value
+content-length: 7
+
+sidebar
+----field----
+field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
+name: XHTML Attribute
+key: xhtml attribute
+content-length: 13
+
+articlesource
+----version----
+language: en
+version: 1
+revision: 64d9e93b-1d18-4708-99a4-f2d2cf9c113f
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160719T154240Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+64d9e93b-1d18-4708-99a4-f2d2cf9c113f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160721T205142Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

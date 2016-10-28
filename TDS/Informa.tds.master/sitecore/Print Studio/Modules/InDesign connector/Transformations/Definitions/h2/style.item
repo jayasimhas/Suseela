@@ -1,0 +1,194 @@
+----item----
+version: 1
+id: {C043B8FA-4A4B-4416-9531-DF7037E3DFFE}
+database: master
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/h2/style
+parent: {2D81F296-03A7-4FAE-ADCE-E374D67C3683}
+name: style
+master: {00000000-0000-0000-0000-000000000000}
+template: {7CD0ED9C-975D-41ED-B106-E4C60E06D4F7}
+templatekey: TransformationAttribute
+
+----field----
+field: {A05E1D55-B7C5-4B57-AA0C-C1A7845CFC7C}
+name: XML Attribute
+key: xml attribute
+content-length: 5
+
+Style
+----field----
+field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
+name: XML Default value
+key: xml default value
+content-length: 9
+
+subhead 1
+----field----
+field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
+name: XHTML Attribute
+key: xhtml attribute
+content-length: 5
+
+class
+----field----
+field: {6BCB71D1-9FB5-4AF5-96D5-9FC1E4284E49}
+name: XHTML Default value
+key: xhtml default value
+content-length: 0
+
+
+----version----
+language: de-DE
+version: 1
+revision: 0aed0801-0422-47f0-bb4e-f8781b9cbf36
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 5
+
+Style
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142239Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0aed0801-0422-47f0-bb4e-f8781b9cbf36
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135338Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 7cb7af1f-2872-421e-b006-234bd3d6c467
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20100908T075600
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7cb7af1f-2872-421e-b006-234bd3d6c467
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160803T135608Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: ja-JP
+version: 1
+revision: 4f1c0435-aa95-482c-9165-a9336e601480
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 4
+
+スタイル
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142334Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4f1c0435-aa95-482c-9165-a9336e601480
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135418Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

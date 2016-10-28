@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Informa.Library.Article.Search
+﻿namespace Informa.Library.Article.Search
 {
+    using System.Collections.Generic;
+
     public class LoadMore : ILoadMore
     {
         public bool DisplayLoadMore { get; set; }
@@ -10,6 +10,6 @@ namespace Informa.Library.Article.Search
         public string LoadMoreLinkUrl { get; set; }
         public int PageNo { get; set; }
         public int PageSize { get; set; }
-        
+        public IList<string> TaxonomyIds { get; set; }
     }
 }

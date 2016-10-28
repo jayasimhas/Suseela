@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {5E951C88-C5D5-4330-8EED-8B2AE6DBB0FE}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Five Minutes with Steve Burrill
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Five Minutes with Steve Burrill
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 8ebd0a02-c2fd-4103-be48-9884d88f80de
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 123
+
+<p> <i>Interview: Joseph Harvey, Senior Business Reporter. Multimedia: Salina Christmas</i><br> <i>12 August 2010 </i> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+Five Minutes with Steve Burrill
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5693
+
+<p> <i>Interview: Joseph Harvey, Senior Business Reporter. Multimedia: Salina Christmas</i><br> <i>12 August 2010 </i> </p> <p> <a href="http://www.clinica.co.uk/freetrial/" class="emailLink">Want to know more about biotechnology in medtech? Start your free seven-day trial</a> </p> <p><table> <tbody> <tr> </tr> <tr> </tr> <tr> <td scope="row" widtd="101"><div><a href="#1"><img src="-/media/8A02D815CC974DED92EEE0B9D08B257B.ashx" width="195" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a><a href="http://www.clinica.co.uk/MnA#latest"></a></div></td> <td scope="row" widtd="101"><div><a href="#2"><img src="-/media/274278A53F414D3B8FE52D7724C51A67.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a><a href="http://www.clinica.co.uk/MnA#latest"></a></div></td> <td scope="row" widtd="101"><div><a href="#3"><img src="-/media/0B1A75FC8041419B8F682A6E60EEA0BF.ashx" width="200" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a></div></td> <td scope="row" widtd="101"><div><a href="#4"><img src="-/media/C85CD87E95AE4B6092CDF56D301E3BD3.ashx" width="192" height="120" border="0" style="margin-bottom: 5px ; margin-top: 5px"></a></div></td> </tr> <tr> <td scope="row" widtd="101"><div>'Algorithms are us' </div></td> <td widtd="901"><div>'Sickness' to 'wellness' </div></td> <td widtd="901"><div>History in the making  </div></td> <td widtd="901"><div>What makes good  business?  </div></td> </tr> </tbody> </table> <p> Steven Burrill has been involved in the biotechnology industry for more than 40 years. He is currently the CEO of Burrill &amp; Company, a life sciences merchant bank focused on supporting companies involved in biotechnology, pharmaceuticals, diagnostics and medical devices with over $950m invested in its portfolio. Mr Burrill also serves as chairman of a host of biotech firms. Prior to founding Burrill &amp; Company in 1994, he spent 28 years with Ernst &amp; Young, directing and coordinating the company&rsquo;s services to clients in the biotech and life sciences industries worldwide. </p> <table> <br> <br> <tr> <td><strong>We are in 'algorithms are us' era <a name="1" id="1"></a></strong></td> </tr> <tr> <td><object><param name="movie" value="http://www.youtube.com/v/Wrhl5PQ_sDA?fs=1&amp;hl=en_GB"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/Wrhl5PQ_sDA?fs=1&amp;hl=en_GB" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=Wrhl5PQ_sDA" target="_blank" class="optionsLink"> &quot;When you think about bringing personalised medicine to the masses, the ability to use cell phone, microfluidics and communications technology will move us from the era of genomics and proteomics where we are today to a world of consumer digital health that will really usher in the truly personalised medicine world.&quot; </a><br> <br> </p></td> </tr> </table> <table> <br> <br> <tr> <td><strong>Focus will shift from 'sickness' to 'wellness', thanks to digitality <a name="2" id="2"></a></strong></td> </tr> <tr> <td><object> <param name="movie" value="http://www.youtube.com/v/uzpfia4c-8s?fs=1&amp;hl=en_GB"> <param name="allowFullScreen" value="true"> <param name="allowscriptaccess" value="always"> <embed src="http://www.youtube.com/v/uzpfia4c-8s?fs=1&amp;hl=en_GB" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=uzpfia4c-8s" target="_blank" class="optionsLink">&quot;It's a confluence of technology. You&rsquo;ve got telecommunication technology, microfluidics, increased power supplies on cell phones; all of the dynamics of the electronics and information age meeting healthcare."</a></p></td> </tr> </table> <table> <br> <br> <tr> <td><p><strong>Technological history is being made now </strong> <a name="3" id="3"></a></p></td> </tr> <tr> <td><div> <object><param name="movie" value="http://www.youtube.com/v/kSZL4C7odDc?fs=1&amp;hl=en_GB"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/kSZL4C7odDc?fs=1&amp;hl=en_GB" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object> </div></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=kSZL4C7odDc" target="_blank" class="optionsLink">"All of that (transformation) will be a contribution essentially by the world of biology.&quot;</a><br> <br> </p></td> </tr> </table> <table> <br> <br> <tr> <td><strong>Not every piece of science deserves a company <a name="4" id="4"></a></strong></td> </tr> <tr> <td><div> <object> <param name="movie" value="http://www.youtube.com/v/-NSjDs-_WaY?fs=1&amp;hl=en_GB"> <param name="allowFullScreen" value="true"> <param name="allowscriptaccess" value="always"> <embed src="http://www.youtube.com/v/-NSjDs-_WaY?fs=1&amp;hl=en_GB" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object> </div></td> </tr> <tr> <td><p> <a href="http://www.youtube.com/watch?v=-NSjDs-_WaY" target="_blank" class="optionsLink"> &quot;Most people are pretty na&iuml;ve about the complexity of converting science into a successful company or product and so there&rsquo;s this implicit assumption that 'I&rsquo;ve just got the Nobel Prize from doing my science; the rest of it is easy'.&quot;</a></p></td> </tr> </table> <p class="emailLink"><em><a href="http://www.clinica.co.uk/home/blogopensurgery/">More on Open Surgery </a></em></p></p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+Five Minutes with Steve Burrill
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191346
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT056549
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+Five Minutes with Steve Burrill
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+301161
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185620Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ebd0a02-c2fd-4103-be48-9884d88f80de
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

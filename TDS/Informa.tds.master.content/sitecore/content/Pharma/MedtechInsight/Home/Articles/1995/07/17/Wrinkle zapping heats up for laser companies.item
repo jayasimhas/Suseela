@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6296AD6F-E48C-44AE-A695-64068B6935D6}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/17/Wrinkle zapping heats up for laser companies
+parent: {22C5F4C9-3E20-450E-A15B-315DB823AD7A}
+name: Wrinkle zapping heats up for laser companies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 09e38b45-9917-475d-b9d3-5bd838d1a830
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 582
+
+<p>The introduction of rapid-pulsing CO(2) lasers led to advances in dermatology where thin layers of skin can be vaporised so quickly that charring is avoided. One of the newest applications for this technology is cosmetic surgery. Skin resurfacing, namely wrinkle and scar treatment, is "very new and very hot" and has been dominated in the US by Coherent's UltraPulse system - but other manufacturers are fighting back and Europe in particular offers exciting opportunities, say manufacturers. Some of their products were displayed at last month's LaserMED meeting in Munich.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Wrinkle zapping heats up for laser companies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3091
+
+<p>The introduction of rapid-pulsing CO(2) lasers led to advances in dermatology where thin layers of skin can be vaporised so quickly that charring is avoided. One of the newest applications for this technology is cosmetic surgery. Skin resurfacing, namely wrinkle and scar treatment, is "very new and very hot" and has been dominated in the US by Coherent's UltraPulse system - but other manufacturers are fighting back and Europe in particular offers exciting opportunities, say manufacturers. Some of their products were displayed at last month's LaserMED meeting in Munich.</p><p>Sharplan has launched the SilkLaser range of systems to compete with UltraPulse. Sharplan offers a small, low-cost 30 W CO(2) system with the SilkTouch scanner for office use at 60-70% of the price of UltraPulse. SilkTouch uses flashscan technology which allows low-power lasers to be used. The system will be sold to dermatologists and plastic surgeons of whom there are more than 15,000 in the US - Sharplan expects to sell around 2,000 of its systems to private clinics there.</p><p>The scanner works by vaporising single layers of skin in a spiral motion using microprocessor-controlled mirrors to produce a highly-focused beam. Flashscan allows larger scan diameters to be used with a wide scan energy range and unlike high-energy pulse mode, spot size can be varied using the same handpiece. Coherent has now launched a device called the Computer Pattern Generator which, when used with UltraPulse, is designed to cover a larger ablation area.</p><p>SilkTouch can also be used on other Sharplan CO(2) lasers - in a study at the Midwest Center for Cosmetic Surgery in Indianapolis, 7 W of laser energy through SilkTouch achieved a vaporisation depth of 70 micro m with thermal damage of 75-150 micro m. Damage at depths greater than 150 micro m would result in scarring. In the high-power range, Sharplan has introduced a 150 W system through the acquisition of Surgilase. The system, which can also be used with SilkTouch, will be sold at half the price of UltraPulse, says Sharplan.</p><p>Dr Michael Slatkine, vice-president of new market development at Sharplan, believes the European market will be as receptive as the US in six to nine months following a number of workshops planned to increase awareness of dermatologists and plastic surgeons. Other "strong" markets for skin resurfacing are the Pacific Rim and South America, he says.</p><p>Heraeus LaserSonics displayed its challenge to Coherent at LaserMED. The Paragon CO(2) system, which is in clinical trials in Germany for skin resurfacing, operates at a range of powers from 1-100 W. The 50 W version is sold for cosmetic applications and will retail in Germany for around DM 95,000 ($69,000). The 100 W version, which will mainly address the US market, will be sold for around $40,000 less than UltraPulse, says Heraeus.</p><p>Optomedic, which introduced its low-cost 15 W PenduLaser to the German market at LaserMED (see Clinica No 661, p 21), plans to include a new scanning technique with its system for resurfacing applications.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Wrinkle zapping heats up for laser companies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950717T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950717T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950717T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053530
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Wrinkle zapping heats up for laser companies
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255339
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184528Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+09e38b45-9917-475d-b9d3-5bd838d1a830
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184528Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

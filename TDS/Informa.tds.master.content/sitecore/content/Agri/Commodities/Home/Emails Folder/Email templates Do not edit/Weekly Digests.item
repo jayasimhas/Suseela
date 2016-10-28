@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {649D48B0-B18B-42EC-84AC-05D2595D65E9}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Emails Folder/Email templates Do not edit/Weekly Digests
+parent: {8DE20D06-EE6B-4148-9FDB-4C8BA3D67605}
+name: Weekly Digests
+master: {00000000-0000-0000-0000-000000000000}
+template: {0736BD0B-F22F-4496-8881-3E2DA3A80680}
+templatekey: Emails Folder
+
+----version----
+language: en
+version: 1
+revision: eaabe8cf-8ae7-4811-a779-c4cefb69ed04
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160606T140920Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eaabe8cf-8ae7-4811-a779-c4cefb69ed04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160606T140920Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

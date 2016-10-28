@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {E5A6BC61-9CC4-4404-83CB-E6C4877493CF}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/US medical device regulation in 1994
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: US medical device regulation in 1994
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: a5d226c3-5cf1-4d10-a63e-fec3c9821067
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 157
+
+<p>This round-up of regulatory developments in the US has been written by Clinica's guest contributor Jonathan Kahan of the US law firm, Hogan & Hartson.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+US medical device regulation in 1994
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 23558
+
+<p>This round-up of regulatory developments in the US has been written by Clinica's guest contributor Jonathan Kahan of the US law firm, Hogan & Hartson.</p><p>Food and Drug Administration (FDA) medical device regulation in 1994 continued to be the subject of controversy and, at times, brutal criticism. While 1992 and 1993 may represent the nadir of FDA medical device regulation, past problems were certainly not entirely resolved in 1994. The backlog in medical device clearances and inconsistent enforcement policies has led to further derision of the FDA by members of Congress, the medical community, and the medical device industry.</p><p>Nevertheless, in spite of the significant regulatory hurdles, the US medical device industry continues to grow. In 1974, sales of medical devices by the US industry totalled approximately $5,000 million with about 150,000 workers employed. In 1994, that has grown to almost $40,000 million with 280,000 employees.</p><p>Notwithstanding the impressive growth of this industry, which includes approximately 11,000 companies, the regulatory morass at the FDA has had a deleterious effect on progress of the industry, adversely impacting the smaller medical device companies in particular. Around 72% of the companies in the medical device industry employ fewer than 50 people. Another 24% employ between 50 and 500 people.</p><p>While the larger companies may have the capital resources to wait more than a year to clear a newer version of an already marketed device through the 510(k) process, and can afford to wait the three or more years necessary to obtain the premarket approval for new technologies, small companies are being destroyed by the delays in the FDA medical device clearance process. Both large and small companies have reacted by moving facilities overseas and by focusing initial marketing efforts outside the US.</p><p>The Republican capture of the US Congress may have some positive impact on what some have termed the FDA "zero risk" philosophy. Congressman Newt Gingrich, the new Speaker of the House of Representatives, has termed the FDA a "Stalinist" bureaucracy which is the country's number one "job killer". He has also described Commissioner Kessler as a "bully" and a "thug".</p><p>Mr Gingrich has derided the FDA for its failure to clear the CardioPump, a plunger-like device which enables an emergency worker or other user to compress and decompress the chest during cardiopulmonary resuscitation (CPR). He characterised the CardioPump as the paradigm of unreasonable FDA delay. The device, manufactured by Danish company Ambu, is already approved in most countries, including Canada, the UK and France. In Austria, ambulances are required to carry the device.</p><p>The agency has also been heavily criticised by Thomas Bliley, the new Republican chairman of the House Energy and Commerce Committee which has FDA oversight responsibility. In a statement in July opposing the Medical Device User Fee Act (HR 4728), he provided his views of FDA medical device regulation using terms such as: "systemic defects", "organisational flaws", "inadequate science", "low morale and productivity", and "poor and non-existent communications".</p><p>Congressman Bliley stated: "This is the diagnosis of a management and organisation system that has dismally failed. The structural problems are not due to a lack of resources but from total management failure at the highest levels. Is it time to reward the agency and allow it to collect user fees that may have the unintended consequence of institutionalising failed organisational and management practices?" (Emphasis in original)</p><p>Obviously, the FDA may be the subject of a different kind of scrutiny under Congressman Bliley and Speaker Gingrich compared with that provided by Congressmen Henry Waxman and John Dingell. Whether the sea change in Congress will have an immediate impact on FDA regulation remains to be seen. Nevertheless, many in industry are anxiously awaiting the first hearings in a Republican-run Congress.</p><p>Against this background, some of the major medical device clearance issues and Center of Devices and Radiological Health enforcement initiatives in 1994 are highlighted, focusing on those which have had the most impact and may foreshadow changes at the agency.</p><p>THE PREMARKET CLEARANCE PROCESS</p><p>The major criticism of the CDRH in 1994 continued to relate to the backlog in medical device clearances. In a July 14th, 1994, statement, Congressman Bliley termed the backlog of pending applications as "intolerable". He emphasised that the review time for 510(k) filings had risen from 98 days in 1990 to 213 days in 1994. Review times for premarket approval applications (PMAs), he noted, had risen from 415 days in 1990 to 840 in fiscal 1994. In the same period, FDA staff had grown dramatically, and its budget had increased from $600 million to $760 million.</p><p>Commissioner Kessler recognises the problem. In an August 20th, 1994, speech to the Utah International Medical Devices Congress, he admitted "there's also some truth in your perception of our shortcomings. Our process for reviewing new medical devices has been too slow and unpredictable - more so than we want, and more so than you want. And, I might add, more so than the Congress wants." Whether Commissioner Kessler and CDRH Director Bruce Burlington can turn this around remains to be seen.</p><p>The 510(k) Premarket Notification Process</p><p>More recent figures indicate that while the FDA continues to make some progress in clearing the 510(k) backlog, there is still a substantial problem facing the agency. In October 1994, the FDA cleared 303 premarket notifications versus 488 clearances in June. Device clearance statistics show that the total number of days for review for 510(k) submissions has risen to 400 days in FY 1994. The FDA procedures, however, for calculating review times are not straightforward. What is clear is that the review times are still intolerable to industry.</p><p>Both Dr Burlington and Dr Susan Alpert, the Director of the Center's Office of Device Evaluation (ODE), recognise that this situation must not continue. On September 28th, 1994, Dr Burlington sent a letter to presidents and chief executive officers in the device industry describing CDRH efforts to increase productivity and speed up reviews.</p><p>On May 20th, the ODE officially issued its PMA/510(k) Triage Review Procedures (General Program #G94-1). The objective was to establish a three-tier system using risk assessment to manage the review workload more effectively and to allocate device review resources. The Triage Procedure has certainly had some impact with respect to hastening the review of Tier I devices - low risk devices where FDA essentially reviews the labelling and intended use of the device but does not undertake a detailed scientific analysis of the submission.</p><p>However, the vast majority of devices reviewed are in Tier II and Tier III, which have not benefited from the triage procedures. There have been recent discussions at the FDA of downclassifying approximately 140 Class II Tier I devices, and then exempting them from 510(k) filing requirements.</p><p>On May 20th, the ODE also officially issued its 510(k) Refuse to Accept Procedure (510(k) Memorandum #K94-1). The FDA established procedures under which 510(k) notices that do not meet a minimum threshold of acceptability will not be accepted for substantive review and clearance. Implementation of this policy has certainly had effects on the review process. Approximately one-third of all 510(k) notices are now rejected for review.</p><p>While, overall, the effect of this new policy may be to prime industry to understand FDA filing requirements and to be complete in all submissions, the Refuse to Accept Policy is presenting another hurdle and delay in the 510(k) premarket clearance process. It is to be hoped that as industry becomes more familiar with what the FDA expects, the refusal rate will drop. Industry and the ODE must work together so FDA's expectations are clarified.</p><p>One recent initiative by the ODE will clearly have a positive effect in hastening devices to market - the decision, after years of discussion, to exempt many low risk Class I devices from the 510(k) premarket notification process. On December 7th, 1994, the FDA published its final rule exempting 148 generic types of Class I devices from the premarket notification requirement. For these devices, the submission of premarket notifications is deemed unnecessary for the protection of public health.</p><p>Class I Tier I devices represent approximately 10% of the applications received by the FDA. By exempting these devices, the ODE has taken a small step towards reducing its workload. However, Dr Burlington estimated that because of the minimal review Tier I products typically receive, the CDRH will probably only save six full-time equivalent employees as a result of this new initiative.</p><p>Nevertheless, the expansion of the number of exempted devices is a positive recognition by CDRH management that there are reasonable ways to streamline the process. Expanding exemptions to many low risk Class II Tier I devices would help further.</p><p>Another major initiative taken in the premarket notification area in 1994 was the issuance of a draft guidance document on April 8th, 1994, entitled "Deciding When to Submit a 510(k) for Change to an Existing Device." This is intended to address one of the most significant concerns of the medical device industry - namely, when it is necessary to file a 510(k) notification for a change to an already cleared device.</p><p>The document has been the subject of much discussion and substantial criticism since it is perceived by industry as requiring 510(k) submissions for changes which are of minimal significance in terms of device safety and efficacy. The FDA regulations provide that 510(k) notices need only be submitted for modifications to an already cleared device where those modifications "could significantly affect the safety and efficacy of the device".</p><p>Industry criticism has focused primarily on the lack of ODE emphasis on the word "significantly". The FDA is well aware of this and has indicated that the draft will be substantially revised prior to finalisation. Industry anxiously awaits the issuance of the redrafted guidance in 1995.</p><p>The Premarket Approval Process</p><p>The PMA approval process through which the most novel - and often most significant - technologies are cleared to market has been in crisis for several years. In fiscal 1992, only 12 PMAs were approved; this increased to 24 in 1993.</p><p>The review times for PMA applications continues to be a major concern. Many resources were diverted from PMA review to reduce the 510(k) backlog and PMA review times rose dramatically to a total elapsed time of 799 days in fiscal 1993 (ended September 30th). The FDA received only 40 original PMAs in 1993, reflecting industry's hesitation to seek PMA approval because of the increased regulatory hurdles and lengthy review times. By contrast, in fiscal 1988, the ODE received approximately 100 PMAs.</p><p>One new initiative begun in 1994 that will have a major impact on the PMA process over the next several years relates to the reclassification of preamendments Class III products. The Safe Medical Devices Act of 1990 (SMDA) set December 1st, 1995, as the deadline for the FDA to establish a schedule for requiring PMAs for those preamendments Class III products which the agency will not downclassify to Class II or Class I. There are 117 preamendments Class III products which meet this description. Dr Burlington has indicated that the FDA does not have the resources to review safety and effectiveness data for all 117 devices simultaneously. On April 19th, 1994, the ODE issued the "Preamendments Class III Strategy" memorandum, essentially dividing the devices into three groups.</p><p>Group 3 includes 42 devices that are not presently considered candidates for reclassification. The FDA believes these devices are in commercial distribution and will require submission of PMAs in the "near future". Group 2 includes 31 devices that FDA believes have a high potential for downclassification into Class II. Group 1 includes 44 devices which have fallen into disuse or limited use, for which viable PMA applications or reclassification petitions are unlikely.</p><p>The FDA will require manufacturers of the preamendments Class III devices to submit a summary of all available safety and efficacy information to the agency. Based on this information, including all adverse data, the FDA will determine which devices should be the subject of a PMA application and which can be downclassified. If it determines that PMA applications are required for a significant number of these devices, it is clear there will be a resource shortfall in the processing and review of such a high number of PMA applications.</p><p>The IDE Process</p><p>With regard to the regulation of investigational devices under the investigational device exemption (IDE) regulations, no new major initiatives have been undertaken in 1994 other than the institution of a Refusal to Accept Policy for IDE applications similar to that instituted for PMAs and 510(k) notices. However, there has been an agency-wide initiative which will clearly impact the conduct of clinical studies.</p><p>On September 22nd, 1994, the FDA published a Federal Register notice which proposes new conflict of interest regulations that would require entities which submit clinical research data to the FDA to disclose certain interests of investigators. The proposal is the latest in a series of federal agency guidelines that address conflicts of interest in research.</p><p>The proposal would require certain financial interests of investigators to be reported with each submission of clinical research data to the agency. This would include disclosures of financial interests of investigators involved in IDE studies. Sponsors must either disclose financial interests that carry the potential for biasing a clinical study or certify the absence of such an interest. The agency would evaluate whether a disclosed financial interest could bias the study and whether further action would be necessary for it to accept the data. Inaccurate reporting could, in some circumstances, result in liability, including the potential for criminal prosecution of the sponsor, the investigator, and the investigator's institution.</p><p>While the new financial disclosure regulations do not completely prohibit an investigator's financial interest in a company (one of the options discussed in Congress), the FDA's proposal could slow the trend in industry/investigator financial involvement. Start-up companies and venture capital groups associated with major medical institutions may be much more reluctant to enter into financial arrangements with investigators. However, much depends upon how the FDA will define the scope and amount of financial interest that should be disclosed, and how the agency will implement the regulations.</p><p>MEDICAL DEVICE ENFORCEMENT INITIATIVES</p><p>The FDA's device enforcement initiatives in 1994 appear fairly consistent with past activities. There has been a new emphasis on promotion and advertising and a significantly heightened interest in bioresearch monitoring of sponsors, investigators, and institutional review boards (IRBs). Some 48 warning letters were issued by the Division of Bioresearch Monitoring (DBM) in fiscal 1994, up from 18 in 1993, and there were five suspensions of IRBs. In addition, the DBM made 15 recommendations to the ODE to reject or re-evaluate data as a result of DBM clinical audits.</p><p>The number of FDA criminal prosecutions of medical device manufacturers appears to be in line with past figures with two prosecutions in 1990, nine in 1991, three in 1992, one in 1993 and two as of the third quarter of fiscal 1994. Additionally, there were 411 warning letters, 548 recalls and 20 seizures in 1993. For the first nine months of fiscal 1994, there were 474 warning letters, 1,010 recalls, and 11 seizures.</p><p>While the number of recalls appears to have increased substantially, this may reflect FDA record keeping rather than a trend in the industry.</p><p>Although there have not been many policy changes this past year in the enforcement area, there have been several noteworthy developments. On June 30th, 1994, <strong>[C#198600199:Pfizer]</strong>'s Shiley subsidiary agreed to pay the government $10.75 million in settlement of government claims that Pfizer made false statements to obtain federal approval to market the Bjork-Shiley Convexo-Concave mechanical heart valve. In addition, the company is responsible for certain medical costs that federal agencies, such as the Department of Health and Human Services and the Department of Veterans Affairs, would otherwise incur in connection with a fracture or elective replacement of certain valves. Eventual costs to Shiley are estimated to total $20 million.</p><p>What is noteworthy about this settlement is that while the government is receiving millions of dollars from Pfizer in connection with false statements made to it, the company has never been criminally prosecuted by the agency. The government reportedly allowed the Statute of Limitations to pass on many of these claims thus foreclosing government prosecution. The FDA has been heavily criticised by the Health Research Group of Public Citizen for not criminally pursuing Shiley.</p><p>There were several corporate-wide medical device compliance initiatives finalised in 1994 by the CDRH. In January, PuritanBennett signed a consent decree of permanent injunction forcing it to close facilities where it manufactured portable home ventilators and blood monitoring systems. A similar consent decree was entered into by NMCI (a subsidiary of WR Grace) in the same month, whereby it agreed to correct alleged manufacturing problems at five of its US facilities. In February, Siemens Medical Systems (SMS) entered into a consent decree of permanent injunction forcing closure of certain manufacturing facilities, and barring imports from several SMS overseas medical device production plants.</p><p>These consent decrees, which focused primarily on alleged violations of good manufacturing practices (GMPs), were followed by a decision in May of the US District Court for the District of Oregon rejecting the FDA's request for an injunction against Laerdal Manufacturing (Tualatin, Oregon). The agency had sought a voluntary consent decree from Laerdal which would have at least temporarily closed the facility. The company, rather than settling as had NMCI, SMS and P-B, decided to fight the FDA in court on the issue of whether its manufacture of defibrillators violated GMP regulations, and whether its medical device reporting practices were improper.</p><p>The FDA was ultimately unsuccessful in its attempt to obtain an injunction against Laerdal. The court found that the company had made sufficient changes in its GMP procedures at the facility to obviate the need for an injunction.</p><p>The Laerdal case represents a major enforcement defeat for the CDRH, especially following its success in the three earlier 1994 consent decrees. The decision by Laerdal to take the issue to court may have been influenced by the experience of its competitor, Physio-Control (Redmond, Washington). The former <strong>[C#198600152:Eli Lilly]</strong> subsidiary had entered into a consent decree with the FDA in 1993 agreeing to stop shipments of its external defibrillators while it addressed the FDA's concerns regarding GMPs. Physio-Control's president, Richard Martin, stated that the production stoppage cost Physio-Control $70 million in "out of pocket dollars to stay in business" and more than $100 million more in lost sales.</p><p>In addition to these civil actions by the FDA, the agency prosecuted Leon Silverstone for violation of FDA regulations relating to the submission of false data in a 510(k) premarket notification. In his plea agreement, Dr Silverstone confessed that in obtaining 510(k) clearance for a new electronic dental anaesthesia device, he prepared and submitted two purported clinical studies demonstrating the safety and efficacy of the device and its substantial equivalence to other similar devices already on the market.</p><p>In fact, the studies were never actually performed as represented to the FDA. They stated that Dr Silverstone was the principal author with various coauthors who have all denied any knowledge of the studies. The University of Colorado, under whose auspices the studies were allegedly conducted, could find no evidence that they were actually performed.</p><p>In a separate case, on September 13th, 1993, Basil Earle Wainwright pleaded guilty to eight felony counts of distributing adulterated and misbranded ozone generators. Mr Wainwright was apparently the "mastermind" of a medical fraud which involved selling unapproved ozone generators as a cure for serious illnesses such as cancer and AIDS. He was sentenced to 37 months in federal prison. The FDA considers ozone to be an unapproved drug and Mr Wainwright's generators to be unapproved medical devices. The devices were promoted to individuals to self-administer ozone, or were used to treat the patient's drawn blood with the gas before reinfusion.</p><p>CONCLUSION</p><p>The medical device industry is anxious to see what effect Republican control of Congress will have on FDA medical device policies, especially those relating to product clearance. While there are many in Congress calling for Commissioner David Kessler to resign, there are no indications that he intends to do so. Unless there are major changes in management within the FDA or the CDRH, it appears that CDRH policies are unlikely to change to any significant degree in 1995.</p><p>Industry can probably expect to see continued delays in medical device clearances, especially since the user fees initiatives supported by FDA in 1994 will be dead on arrival in a 1995 Republican Congress. Without the additional resources promised by user fees, the ODE will have to rely upon shifting resources and new policies to speed medical device clearances.</p><p>Other than the new exemptions for Class I medical devices and the triage procedures instituted this year, there do not appear to be any major new ODE policies at this time which will lead to major reductions in the backlog period - except possibly the exemption of certain Class II Tier I devices from premarket notification requirements.</p><p>On the enforcement front, 1995 will almost certainly see the issuance of the revised GMP regulations. Industry can expect a period of uncertainty while these are implemented and as the FDA feels its way in enforcing them. Similarly, 1995 is likely to see the issuance of the corrections and removals regulation called for by the SMDA, and the finalisation of the medical device reporting regulation.</p><p>It is to be hoped that 1995 will be a year of co-operation between the FDA and industry as significant problems still facing the CDRH are addressed. Without new resources and the possibility of cutbacks, the CDRH will have to be creative and flexible. Without some changes, industry and public health will face continued delayed clearances and the unavailability of many life-saving technologies.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+US medical device regulation in 1994
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT050998
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+US medical device regulation in 1994
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198600199,198600152
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252767
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a5d226c3-5cf1-4d10-a63e-fec3c9821067
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

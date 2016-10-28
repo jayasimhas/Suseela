@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {2B658736-0045-45FE-ADE4-34E696EBFDD4}
+database: master
+path: /sitecore/layout/Renderings/Velir/Search/Search Results
+parent: {52F6A089-26B6-477C-B120-9A2F9F162BB1}
+name: Search Results
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 34
+
+/Views/Search/SearchListing.cshtml
+----field----
+field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
+name: Page Editor Buttons
+key: page editor buttons
+content-length: 38
+
+{5AF24CD2-6F30-4098-941F-DF7F80A3B592}
+----version----
+language: en
+version: 1
+revision: c373e4da-7049-48d0-b8e2-8eff83bfed43
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150918T141758Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c373e4da-7049-48d0-b8e2-8eff83bfed43
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T161614Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,83 @@
+----item----
+version: 1
+id: {34568B86-D130-4580-AEC8-3F004E654E86}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Get Started/PageAssets/Get Started
+parent: {0730B93F-1E32-4CC0-9A41-F74BF8054290}
+name: Get Started
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: e668a196-4a37-4096-a5cd-ddfa0b87bddb
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 2488
+
+<h2>Welcome to the new Scrip!&nbsp; Here&rsquo;s how to get started:</h2>
+<div style="float: right; margin: 0px 0px 10px 20px; text-align: right;">
+<iframe src="https://player.vimeo.com/video/164104522" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<br />
+<strong><a href="https://vimeo.com/datamonitorhealthcare/review/164104522/c6d1585fe9" target="_blank">Video overview of the new Scrip website.</a></strong>
+</div>
+<h3>How to login:</h3>
+<p>If you only subscribe to Scrip, then all you&rsquo;ll need to do is login using your current username and password.<br />
+If you also subscribe to any of our other PharmaMedtechBI products, such as <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet" target="_blank">Pink Sheet</a> or <a href="https://www.pharmamedtechbi.com/publications/in-vivo" target="_blank">In Vivo</a>, then you&rsquo;ll need to use your PMBI username and password to access the new Scrip site.
+</p>
+<h3>Not sure which login to use?</h3>
+<p>If you&rsquo;re not sure which login to use, simply follow these steps:</p>
+<ul>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Click &ldquo;sign in&rdquo; on the top of the Scrip site</li>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Select &ldquo;Forgot your password&rdquo;</li>
+    <li style="margin-bottom: 7.5pt; margin-left: 0.25in;">Enter your email and click &ldquo;submit&rdquo;</li>
+</ul>
+<p>We&rsquo;ll then send you a re-set link and you'll be ready to go!
+</p>
+<h3>How to ensure your email alerts continue:</h3>
+<p>If you receive both the daily and weekly email alerts from Scrip then you do not have to do anything &ndash; both emails will continue to arrive and there will be no break in service.<br />
+However, if you receive only the daily or weekly, then these will stop unless you take action.<br />
+To continue receiving your daily or weekly emails, please login by following the instructions above, and go to <a href="~/link.aspx?_id=BAF1D4FB75994EDA89260A4995E4DC2D&amp;_z=z">My Account</a> and you can update your preferences there.</p>
+<h3>And finally&hellip;</h3>
+<p>Want to get the most out of the new platform? Sign up to an <a href="https://pharmaintelligence.informa.com/scrip-training-dates/" target="_blank">exclusive demo</a>&nbsp;today!<br />
+If you have any questions, please contact <a href="mailto:clientservices@scripintelligence.com">clientservices@scripintelligence.com</a>&nbsp;</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160421T170238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 17
+
+sitecore\ctrudeau
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e668a196-4a37-4096-a5cd-ddfa0b87bddb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160426T113632Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 17
+
+sitecore\ctrudeau
