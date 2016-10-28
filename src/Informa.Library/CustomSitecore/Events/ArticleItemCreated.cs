@@ -24,21 +24,29 @@ namespace Informa.Library.CustomSitecore.Events
 
 		public void Process(object sender, EventArgs args)
 		{
-			if (publicationWorkflow == null)
-				return;
+			try {
+				if (publicationWorkflow == null)
+					return;
 
-			Assert.ArgumentNotNull(args, "args");
+				Assert.ArgumentNotNull(args, "args");
 
-			ItemCreatedEventArgs icArgs = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
-			var item = icArgs.Item;
+				ItemCreatedEventArgs icArgs = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
+				var item = icArgs.Item;
+				if (item == null)
+					return;
 
-			//If article save process
-			var itemPath = item.Paths.Path.ToLower();
-			if (itemPath.StartsWith("/sitecore/content")
-					&& !itemPath.Contains("/issues/") // detect if this is an issue clone, since the fields arent set yet on item created
-					&& item.TemplateID.Guid == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateId.Guid)
+				//If article save process
+				var itemPath = item.Paths.Path.ToLower();
+				if (itemPath.StartsWith("/sitecore/content")
+						&& !itemPath.Contains("/issues/") // detect if this is an issue clone, since the fields arent set yet on item created
+						&& item.TemplateID.Guid == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateId.Guid)
+				{
+					changeWorkflowStateAndExecuteActions(item, new ID(publicationWorkflow.GetInitialState(item)._Id), new ID(publicationWorkflow.GetPublicationWorkflow(item)._Id));
+				}
+			}
+			catch (Exception ex)
 			{
-				changeWorkflowStateAndExecuteActions(item, new ID(publicationWorkflow.GetInitialState(item)._Id), new ID(publicationWorkflow.GetPublicationWorkflow(item)._Id));
+				Sitecore.Diagnostics.Log.Fatal("ArticleItemCreated: " + ex.ToString(), this);
 			}
 		}
 
