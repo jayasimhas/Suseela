@@ -5,5 +5,6 @@
     {
         IList<Channel> PreferredChannels { get; set; }
         bool IsNewUser { get; set; }
+        bool IsChannelLevel { get; set; }
     }
 }

@@ -20,7 +20,8 @@
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
         }
-        public object GetArticles([FromBody] IArticleSearchRequest articleRequest)
+        [HttpPost]
+        public object GetArticles([FromBody] ArticleSearchRequest articleRequest)
         {
             if(articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
                 return new { Articles = "No articles found" };

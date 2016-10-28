@@ -8553,6 +8553,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// </summary>
         [SitecoreField(IMy_View_Settings_PageConstants.EnableSavePreferencesCheckFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool EnableSavePreferencesCheck { get; set; }
+        /// <summary>
+        /// MyView Page Url Field.
+        /// <para></para>
+        /// <para>Field Type: Link</para>		
+        /// <para>Field ID: 8BBFF4F5-6493-4BEC-BEBB-01817D0BCECA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.MyView_Page_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MyView_Page_Url { get; set; }
     }
 
 
@@ -8604,6 +8613,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// </summary>
         [SitecoreField(IMy_View_Settings_PageConstants.EnableSavePreferencesCheckFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool EnableSavePreferencesCheck { get; set; }
+
+        /// <summary>
+        /// MyView Page Url Field.
+        /// <para></para>
+        /// <para>Field Type: Link</para>		
+        /// <para>Field ID: 8BBFF4F5-6493-4BEC-BEBB-01817D0BCECA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.MyView_Page_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MyView_Page_Url { get; set; }
     }
 
     public static partial class IMy_View_Settings_PageConstants
@@ -8623,7 +8642,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public const string Help_LinkFieldName = "Help Link";
 
         public static readonly ID EnableSavePreferencesCheckFieldId = new ID("9E4188CB-B144-494D-89E8-AB05BD92E2F6");
-        public const string EnableSavePreferencesCheckFieldName = "Help Link";
+        public const string EnableSavePreferencesCheckFieldName = "EnableSavePreferencesCheck";
+
+        public static readonly ID MyView_Page_UrlFieldId = new ID("8BBFF4F5-6493-4BEC-BEBB-01817D0BCECA");
+        public const string MyView_Page_UrlFieldName = "MyView Page Url";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
