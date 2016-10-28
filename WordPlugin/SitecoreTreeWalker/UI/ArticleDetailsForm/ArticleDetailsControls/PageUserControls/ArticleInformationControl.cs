@@ -22,6 +22,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
     {
         public delegate void VerticalItemChanged();
         public event VerticalItemChanged OnVerticalItemChanged;
+        public ArticleDetailsPageSelector InfoParent { get; set; } 
 
         private ArticleDetail _parent;
         protected DocumentCustomProperties _documentCustomProperties;
@@ -37,7 +38,33 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public ArticleInformationControl()
         {
             InitializeComponent();
+
+            /*if(!this.DesignMode)
+            {
+                PopulateVerticalPublicationExistingDoc();
+            }*/
         }
+
+        public void PopulateVerticalPublicationExistingDoc()
+        {
+            DocumentCustomProperties documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+
+            Guid publicationGuid = new Guid(documentCustomProperties.PublicationGuid);
+            Guid verticalGuid = new Guid(documentCustomProperties.VerticalGuid);
+
+            if (publicationGuid == default(Guid) || verticalGuid == default(Guid))
+            {
+                return;
+            }
+
+            if (!IsVerticalsLoaded)//added, 21Sep
+            {
+                InitializeVerticals();
+            }
+            uxVertical.SelectedValue = verticalGuid;
+            uxPublication.SelectedValue = publicationGuid;
+        } 
+        
 
         public bool _isCheckedOut;
         public bool IsCheckedOut
@@ -486,6 +513,22 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             }
         }
 
+        public Guid GetSelectedVerticalGuid()
+        {
+            try
+            {
+                if (uxVertical.SelectedValue.GetType() == typeof(PluginModels.VerticalStruct))
+                {
+                    return ((PluginModels.VerticalStruct)uxVertical.SelectedValue).ID;
+                }
+                return (Guid)uxVertical.SelectedValue;
+            }
+            catch
+            {
+                return Guid.Empty;
+            }
+        }
+
 
         public string GetDisplayName(PluginModels.ArticleSize articleSize, int wordCount)
         {
@@ -667,8 +710,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 SetPublicationTime(articleDetails.WebPublicationDate, true);
             }
 
-            uxVertical.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
-            uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+            PopulateVerticalPublicationExistingDoc();
+            //uxVertical.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+            //uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             uxPublication.Enabled = false;
 			ArticleGuid = articleDetails.ArticleGuid;
 			IsPublished = articleDetails.IsPublished;
@@ -989,7 +1034,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
                 PluginSingletonVerticalRoot.Instance.CurrentVertical = verticalStruct;
 
+                if (InfoParent !=null)
+                {
+                    InfoParent.pageWorkflowControl.PopulateStaff(verticalStruct.ID);
+                }
+
                 UpdateAuthorsList();
+                
                 OnVerticalItemChanged?.Invoke();//Message the vertical changes to the subscriber
             }
             else

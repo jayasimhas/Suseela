@@ -348,10 +348,11 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public static List<StaffStruct> GetStaffAndGroups()
+        public static List<StaffStruct> GetStaffAndGroups(Guid veticalGuid = default(Guid))
         {
-            Guid veticalGuid = default(Guid);
-            veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+            //Guid veticalGuid = default(Guid);
+            if(veticalGuid == default(Guid))
+                veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
 
             using (var client = new HttpClient(_handler, false))
             {

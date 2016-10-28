@@ -305,6 +305,13 @@ namespace InformaSitecoreWord.UI
             return _documentCustomProperties.PublicationGuid;
         }
 
+        public string GetVerticalGuid()
+        {
+            SitecoreAddin.TagActiveDocument();
+            _documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+            return _documentCustomProperties.VerticalGuid;
+        }
+
         private string GetPreviewUrl(bool isMobile)
 		{
 			string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());

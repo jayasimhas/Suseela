@@ -25,7 +25,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 			ArticleInformationMenuItem.Selected = true;
 			pageArticleInformationControl.Visible = true;
-			ArticleInformationMenuItem.UpdateBackground();
+            pageArticleInformationControl.InfoParent = this;
+
+            ArticleInformationMenuItem.UpdateBackground();
 		}
 
 		#region Initialization and Linking

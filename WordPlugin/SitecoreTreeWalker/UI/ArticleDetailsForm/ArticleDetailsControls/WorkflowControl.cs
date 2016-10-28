@@ -23,17 +23,27 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			txtNotificationText.Enabled = false;
 		}
 
+        public void PopulateStaff(Guid verticalGuid = default(Guid))
+        {
+            if (_staff == null)
+            {
+                _staff = SitecoreClient.GetStaffAndGroups();
+            }
+
+            if(verticalGuid != default(Guid))
+            {
+                _staff = SitecoreClient.GetStaffAndGroups(verticalGuid);
+            }
+
+            uxNotifyPicker.DataSource = _staff;
+            uxNotifyPicker.DisplayMember = "Name";
+            uxNotifyPicker.ValueMember = "ID";
+        }
 		public void UpdateFields(ArticleWorkflowState state, ArticleStruct articleStruct)
 		{
-			if (_staff == null)
-			{
-				_staff = SitecoreClient.GetStaffAndGroups();
-			}
+            PopulateStaff();
 
-			uxNotifyPicker.DataSource = _staff;
-			uxNotifyPicker.DisplayMember = "Name";
-			uxNotifyPicker.ValueMember = "ID";
-			if (state == null)
+            if (state == null)
 			{
 				return;
 			}
