@@ -142,8 +142,8 @@ function sort_table(tbody, col, asc, sortstatus) {
 
 $(function(){
 	$('a').click(function(e){
-		if($('#validatePriority').val() == "true"){
-			if(!$(this).hasClass("registrationBtn")){
+		if($('#validatePriority').val() == "true"){ 
+			if(!$(this).hasClass("validationChk")){
 				e.preventDefault();
 				showModal();
 			}
@@ -402,7 +402,8 @@ $(function(){
 			}
 		}
 		else{
-			showModal();
+			window.location.href = $(this).attr('href');
+			//showModal();
 		}
 	});
 	 
