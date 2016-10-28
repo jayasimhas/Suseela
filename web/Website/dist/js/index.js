@@ -1718,27 +1718,32 @@ $(function () {
 		});
 	});
 
-	var layout1Flag = true;
+	var layout1Flag = true,
+	    indx = 0,
+	    eachstoryLength = loadPreferanceId && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
 	$(window).scroll(function () {
 		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
 		    eachstoryMpanLast = eachstoryMpan.last(),
 		    layoutCls = eachstoryMpan.find('.eachstory').attr('class'),
-		    eachstoryLength = eachstoryMpan.length,
 		    contentHei = $('.personalisationPan').height(),
+		    loadsection,
 		    texonomyId;
-
-		if (typeof loadPreferanceId !== "undefined") {
-			if (eachstoryLength < loadPreferanceId["Sections"].length) {
-				texonomyId = loadPreferanceId["Sections"][eachstoryLength]["TaxonomyIds"];
-			} else {
-				return;
-			}
-		} else {
-			return;
-		}
 
 		if ($(window).scrollTop() > contentHei - 400) {
 			var getscrollData;
+
+			if (typeof loadPreferanceId !== "undefined") {
+				if (eachstoryLength < loadPreferanceId["Sections"].length) {
+					eachstoryLength++;
+					loadsection = loadPreferanceId.DefaultSectionLoadCount + indx++;
+					texonomyId = loadPreferanceId["Sections"][loadsection]["TaxonomyIds"];
+				} else {
+					return;
+				}
+			} else {
+				return;
+			}
+
 			$.ajax({
 				url: '/api/articlesearch',
 				data: JSON.stringify({ 'TaxonomyIds': texonomyId, 'PageNo': 1, 'PageSize': 9 }),
