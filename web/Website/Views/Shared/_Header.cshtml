@@ -2,8 +2,7 @@
 @using Informa.Web.Areas.Account.Controllers
 
 <header>
-    <script src="~/Util/DCD/js/jquery.js"></script>
-
+     
     <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001" data-dismiss-all-subdomains="true">
         <div class="banner__wrapper">
             <div class="dismiss-button js-dismiss-banner">
@@ -105,32 +104,12 @@
                         <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
                     </div>}
                 @*----------for transparent ip--------------*@
-                else if(Informa.Library.Utilities.TransparentIp.TransparentIpUtil.IsInIpRange())
+                else if (Informa.Library.Utilities.TransparentIp.TransparentIpUtil.IsInIpRange())
                 {
-                    //Informa.Web.Areas.Account.Models.User.Authentication.AuthenticateRequest request = new Informa.Web.Areas.Account.Models.User.Authentication.AuthenticateRequest();
-                    //request.Username = "";
-                    //request.Password = "";
-                    //request.Persist = false;
-                    //request.IsSignInFromMyView = false;
-                    //   url: "@(Url.Action("Login", "/Account/api/LoginWebUserApi"))",
-
-                    @*<script type="text/javascript">
-                    $.ajax({
-                        type: "POST",
-                        url: "/Account/api/LoginWebUserApi/Login/",
-                        
-                        data: JSON.stringify({ Username: 'sitecore@apiaccess.com', Password: 'Autumn2016c2eriLttmPcYcF6pMfbQRqOIr', Persist: false, IsSignInFromMyView : false }),
-                         contentType: "application/json; charset=utf-8",
-                         cache: false,
-                         async: true,
-                         success: function(result) {
-                            //do something
-                        }
-                    });
-                    </script>*@
+                    <script src="~/Util/DCD/js/jquery.js"></script>
 
 
-                    <script type="text/javascript">
+                  <script type = "text/javascript" >
                     $.ajax({
                         type: "POST",
                         url: "/Account/api/LoginWebUserApi/TransparentLogin/",
@@ -143,20 +122,24 @@
                     });
                     </script>
 
-                    
 
                     <div class="header-account-access__my-account">
-                     
+
                         <svg class="header__icons icon-my-account">
                             <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
                         </svg>
-                        <span class="header-account-access__label">IP : @Informa.Library.Utilities.TransparentIp.TransparentIpUtil.GetCurrentRequestIp()</span>
+                        <span class="header-account-access__label">
+                            <a target="_blank" href="http://commodities.dev.products.com/Account/TransparentIpEntitlement">
+                                IP:
+                                @Informa.Library.Utilities.TransparentIp.TransparentIpUtil.GetCurrentRequestIp()
+                            </a>
+                        </span>
                     </div>
                     <div class="header-account-access__sign-in-out click-logout">
                         <svg class="header__icons icon-sign-out">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                         </svg>
-                    
+
                         <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
                     </div>
 
@@ -202,4 +185,5 @@
 
     </div>
 
+  
 </header>
