@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {D7874BB0-564D-4F4F-A8C7-498A56D791B7}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/27/Prognosis looks good for Quidels diagnostics innovations
+parent: {2AE607D7-1EDE-4809-9399-FFC6E9445753}
+name: Prognosis looks good for Quidels diagnostics innovations
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 9a3b81f9-a618-412d-b517-7edb822cbb53
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 456
+
+<p>Products that can be used with ease, speed and accuracy - that is the commercial philosophy of Quidel. The US diagnostic company aims its products not only at doctors but at people who want to diagnose themselves. Quidel focuses on conditions the patient can do something about, such as chlamydia or an allergy to the family dog. On a recent visit to London, Steven Frankel, Quidel's CEO, told Clinica's Brigitte Ascher where the company is heading.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Prognosis looks good for Quidel's diagnostics innovations
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9289
+
+<p>Products that can be used with ease, speed and accuracy - that is the commercial philosophy of Quidel. The US diagnostic company aims its products not only at doctors but at people who want to diagnose themselves. Quidel focuses on conditions the patient can do something about, such as chlamydia or an allergy to the family dog. On a recent visit to London, Steven Frankel, Quidel's CEO, told Clinica's Brigitte Ascher where the company is heading.</p><p>Quidel's current sales stem mainly from pregnancy and ovulation tests. The San Diego-based company is strong in the US market for doctors' office pregnancy tests where it held a significant share even before the recent decision to acquire Pacific Biotech from <strong>[C#198600152:Eli Lilly]</strong> (see Clinica No 637, p 1).</p><p>Pacific Biotech, also based in San Diego, had sales of $20 million in 1993, 200 employees and was worth $3.95 million to Quidel. Mr Frankel's comment on the price: "We negotiated very well." The commercial fit is threefold - a similar focus on rapid diagnostic testing; the San Diego location; and a strong distribution in US and European professional markets.</p><p>The purchase is expected to revise shares in some markets. In 1995, Quidel will be the number one supplier of pregnancy tests through distributors, with a market share of around 30%. The US OTC pregnancy testing market is estimated at around $240 million a year in total with $140 million sold in chain drugstores. Quidel's share will have improved to about 5% from 4% with the Pacific Biotech acquisition.</p><p>The market for ovulation OTC tests, currently worth only a tenth of the OTC pregnancy market, is expected to grow more than 20% annually in the next few years. Quidel estimates its own share at around 30% behind Whitehall and Carter Wallace.</p><p>In the strep A market, the addition of Pacific Biotech could nearly double Quidel's market share to about 30%. However, Quidel must first solve a problem with Pacific Biotech's strep test which is now on recall. Analyst John Girton of Van Kasper Research hopes Quidel will have found a solution by September. Problems with a second Pacific Biotech product - the mononucleosis assay - have been sorted out and Quidel says it is beginning to ship the test. Mr Girton estimates potential sales for the latter product at $2 million and strep revenue at $5 million a year.</p><p>product pipeline</p><p>Quidel's R&D investment approached 14% of its $28 million sales in fiscal 1994 (ended March) and the company has an extensive new product list. It has just filed an application with the US FDA for a chlamydia test for doctors and hopes to obtain approval within six months. According to Mr Frankel the test is faster and simpler to use than any other available chlamydia assay. Mr Girton believes this test can add $10 million in annual sales over the next few years.</p><p>In February, Quidel filed its one-step allergy test for five common allergens. "Quidel will be the first to offer a true rapid test for allergy detection in the doctors' office," Mr Frankel says.</p><p>The company's one-step strep A test was cleared by the FDA in August 1994 and, according to Mr Girton, Quidel has shipped $2.5 million worth of business since September.</p><p>The company is still collecting samples for its faecal haemoglobin test to detect illnesses such as colon cancer, which removes the need for dietary restrictions and repeat testing. A 510(k) was filed for this test a year ago. "We will have the supplemental data for the FDA in a few months," says Mr Frankel.</p><p>Quidel is also developing SafePlan, its birth control product, to identify the post-ovulation infertile period. The product is being test-marketed in Spain and France and Quidel is working on simplifying the technology for a PMA application in the US. Mr Frankel believes the product will be ready for submission in about two years.</p><p>R&D is directed towards developing a sustained pregnancy test, another to determine the onset of menopause and a male infertility indicator. Further projects include a 'traffic light' test for birth control, expanded allergy assays testing for whole batches of allergens and an osteoporosis test.</p><p>Longer term, Quidel is investigating other patient monitoring products such as autoimmune tests for lupus and rheumatoid arthritis to predict flare-ups and enable earlier treatment using lower doses of medication.</p><p>two central trends</p><p>The two central developments at Quidel - and probably the whole point-of-care diagnostics industry - are the transition from professional to ethical OTC products and the transition from OEM to branded sales.</p><p>An example of the first is development of the strep A test as an OTC product. This will require Quidel to prove that the sample - the throat swab - can be reliably obtained by the consumer at home; with the current doctors' office test a nurse takes the swab. "Our plan is to sell the test to doctors for a couple of years, build market share, acceptance, and then take it to the consumers. We believe what the FDA will ask us is: Can the layperson get the same results as the professional?" By then, Mr Frankel believes: "We will be able to say yes."</p><p>In general, Quidel intends to expand its menu of available tests to consumers with the results shown in the two leading read-out methodologies - the&plusmn;system and multicoloured lines.</p><p>An early contender for OTC status could be Quidel's one-step H pylori test using whole blood. "This test will be submitted to the FDA within three months for professional use in the US," says Mr Frankel. "We will talk outside the US to companies that think we could market it OTC. A large drug chain in the UK might be interested." Quidel's existing version of the H pylori test using plasma or serum has an 80% share of the doctors' office market in the US.</p><p>and own-brand</p><p>The other development changing the face of Quidel is the switch from OEM to own-brand sales. In 1992, when Mr Frankel joined Quidel from <strong>[C#198600118:Becton Dickinson]</strong> as COO, the company decided to switch its marketing strategy from working through Becton Dickinson to branded sales under its own name. This was brought about by a move within Becton Dickinson away from Quidel products. "They stopped supporting the OTC business and redirected their own strategies towards infectious disease and instrumentation," Mr Frankel explains.</p><p>Quidel's branded product sales, both international and domestic, have nearly trebled between fiscal 1991 and 1995 while total sales remained between $26 million and $32 million. However, Mr Frankel forecasts: "In fiscal 1995 we will finally break out of the old pattern when the OEM business is less than $2 million compared with $8 million the year before, and $13 million the year before that."</p><p>Quidel operates in a market that brokers at UBS Securities consider one of the most promising fields within the medical device and diagnostics market (see Clinica No 612, p 11). Another broker, Volpe, Welty & Co, estimates the value of the total point-of-care market at up to $1,000 million by 1997 (see Clinica No 610, p 18).</p><p>first nine months of fiscal 1995</p><p>After a year in the red (fiscal 1994 net loss was nearly $2 million), Quidel returned to the black in the third quarter of fiscal 1995, supported by strong sales growth and the switch to higher-margin, own-brand products. Quidel-branded products contributed $8.2 million in the third quarter, up 49%, compared with $5.5 million a year earlier. Among these, US sales were up 54%, largely driven by the QuickVue strep throat product introduced last September.</p><p>Record sales of QuickVue pregnancy detection products and good European sales also contributed to record quarterly performance, Quidel says. However, in the fourth quarter Quidel expects a net loss following one-time charges of up to $5 million associated with the Pacific Biotech acquisition.</p><p>Quidel's share price has responded to the news so far this year moving up to $4.56 at the close of March 22nd compared with the $2.44 at the end of 1994.</p><pre>Revenues Net income (loss) ($ millions) ($ millions) 1994 1993 1994 1993 3 months 9.20 6.90 0.67 (0.37) 9 months 21.26 19.92 (1.72) (0.98) (ended Dec 31st)</pre><p>Quidel is expanding its sales organisation in Europe, a continent which contributes only 23% to the company's turnover in fiscal 1995. Some 68% come from the US. Quidel is working with several distributors in Japan and has begun to set up distributional relationships in the rest of Asia.</p><p>Repackaging a bundle of joy ...</p><p>When Quidel applied consumer goods marketing strategies to the packaging of OTC pregnancy tests, it soon realised its mistake. Its Conceive pregnancy test used a baby on the package until the company perceived that half the targeted women feared being pregnant and would be put off by the packaging. Quidel therefore designed a second, more neutral package of the same test, calling the test RapidVue, and sold it for $3 less, in order to catch both "the hopeful and the fearful" as a Forbes article put it. "Our sales on some accounts have doubled just because of the packaging change," says Mr Frankel.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{023AF810-44A6-4788-BF12-09F49F37E94F}|{2E0CEEF8-031D-43E8-B6AA-07D1397D9E4F}|{05DE2CFA-EF60-455C-941D-84B3041F0A40}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Prognosis looks good for Quidels diagnostics innovations
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950327T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950327T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950327T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052025
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Prognosis looks good for Quidel's diagnostics innovations
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198600152,198600118
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253794
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9a3b81f9-a618-412d-b517-7edb822cbb53
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

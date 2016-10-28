@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8BE712FE-8FBC-4E05-B094-B32F677487E9}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/03/Hospitals the sinners as German reforms near their end
+parent: {2F783E2E-0178-43AE-8466-15C21F54A536}
+name: Hospitals the sinners as German reforms near their end
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 09af81b6-acc5-46cd-8a78-4d4f46a7ae34
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 502
+
+<p>Hospital costs in west Germany have risen more than twice as fast as total spending under the country's healthcare reforms, according to the German Health Ministry. Whereas west German healthcare costs were up over 5% in 1994 compared with 1992, the year before the reforms started, hospital expenditure has risen almost 12%. East German hospitals increased spending by 34%, compared with a 28% rise in general health expenditure, as they re-equipped to bring themselves up to western standards.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Hospitals the sinners as German reforms near their end
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3309
+
+<p>Hospital costs in west Germany have risen more than twice as fast as total spending under the country's healthcare reforms, according to the German Health Ministry. Whereas west German healthcare costs were up over 5% in 1994 compared with 1992, the year before the reforms started, hospital expenditure has risen almost 12%. East German hospitals increased spending by 34%, compared with a 28% rise in general health expenditure, as they re-equipped to bring themselves up to western standards.</p><pre>Growth in expenditure per insured GKV member % change vs 1993 % change vs 1992 west east west east Germany Germany Germany Germany Hospital treatment + 6.74 +15.67 +11.98 +34.19 Non-hospital treatment + 3.49 +14.39 + 6.54 +36.70 Dental treatment + 6.91 + 8.98 + 9.22 +14.86 Dental prostheses +13.45 + 8.77 -16.73 -45.62 Orthopaedic aids +13.59 +15.10 +17.62 +30.28 Visual aids + 5.99 +10.94 + 4.40 +24.78 Hearing aids +11.80 - 1.22 +21.30 + 8.25 Total expenditure + 6.82 +15.54 + 5.39 +28.42 Total income + 2.48 + 9.17 + 6.50 +27.55 Source: German Health Ministry</pre><p>Hospitals now account for 32% of healthcare spending in west Germany, up from 30% in 1992. This is twice as much as the non-hospital sector costs - one reason why the government is trying to encourage more outpatient treatment.</p><p>However, Health Minister Horst Seehofer excuses himself from responsibility for the cost rises, saying the hospital administration and the Lander are to blame. He stresses that hospital autonomy is on probation and that if the current system cannot restrain costs then the government will intervene.</p><pre>GKV expenditure breakdown 1994 west Germany east Germany Hospital treatment 32% 30% Non-hospital treatment 16% 14% Dental treatment 5% 6% Dental prostheses 3% 3% Orthopaedic/visual/ hearing aids 7% 6% Pharmaceuticals (from pharmacies) 12% 15% Sick pay/other 20% 20% Administration 5% 6% Total expenditure DM 190,600 million DM 42,300 million Source: German Health Ministry</pre><p>If the Krankenkassen break even in 1995, as Mr Seehofer forecasts (see Clinica No 646, p 4), the reforms will have achieved at least part of their aim. A deficit of DM 9,300 million ($6,650 million) in 1992 will have been turned into surpluses totalling DM 12,600 million in the reform years 1993-95.</p><p>However, those parties, for example the Krankenkassen, which fear that the elimination of fixed budgets next year will lead to steep cost rises have ammunition in the figures for orthopaedic and visual aids. Exempt from the budgets, spending on these items rose 18% and 21% respectively in west Germany from 1992-94.</p><p>Nevertheless, Mr Seehofer criticises support of the continuation of fixed budgets, saying this would eventually decrease the quality of healthcare services. He believes autonomy in the healthcare sector will work because it is the best way forward. The alternative, he says, would be for the government to introduce strict spending limits - and that is wished for by no one.</p><pre>Expenditure/income development 1992-94 1992 1993 1994 West Germany Income 167.8 184.4 192.8 Expenditure 176.9 175.3 190.6 Net surplus/(deficit) (9.1) 9.1 2.3 East Germany Income 33.4 37.8 42.1 Expenditure 33.6 36.4 42.3 Net surplus/(deficit) (0.2) 1.4 (0.2) Source: German Health Ministry</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Hospitals the sinners as German reforms near their end
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950403T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950403T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950403T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052024
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Hospitals the sinners as German reforms near their end
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253793
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+09af81b6-acc5-46cd-8a78-4d4f46a7ae34
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184035Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

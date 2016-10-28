@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {3D004790-EB69-4EE9-9E21-6D992B029AC4}
+database: master
+path: /sitecore/templates/User Defined/Authored Content/__Standard Values
+parent: {BC9061E8-27C6-4DD4-B342-50547E4A25CC}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {BC9061E8-27C6-4DD4-B342-50547E4A25CC}
+templatekey: Authored Content
+
+----version----
+language: en
+version: 1
+revision: ade448b5-d8b1-4951-97a7-f44cf1e18973
+
+----field----
+field: {A92E4BFB-3010-4332-A7A0-C788348993CE}
+name: FactoryListableTitle
+key: factorylistabletitle
+content-length: 38
+
+{B820F81E-734A-4EF5-B35E-210B406AEE13}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151229T175406Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ade448b5-d8b1-4951-97a7-f44cf1e18973
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20151229T204225Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

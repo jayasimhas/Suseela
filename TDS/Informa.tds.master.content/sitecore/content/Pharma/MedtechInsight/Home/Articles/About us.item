@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {C4C57089-89C7-4751-8E83-0CA31F1A22BC}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/About us
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: About us
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: cc528379-55e7-4a27-a469-e518755eb442
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 324
+
+<p> <b>Clinica Medtech Intelligence is the leading source of regulatory, market and competitor information for the medical devices and diagnostics industries. The main product sectors covered by Clinica include cardiovascular, IVDs, orthopaedics, surgical &amp; wound care, cellular &amp; genetic and neurological. </b> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 8
+
+About us
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7210
+
+<p> <b>Clinica Medtech Intelligence is the leading source of regulatory, market and competitor information for the medical devices and diagnostics industries. The main product sectors covered by Clinica include cardiovascular, IVDs, orthopaedics, surgical &amp; wound care, cellular &amp; genetic and neurological. </b> </p> <p> Clinica helps its readers stay one step <b>ahead of the competition</b> and highlights opportunities for growth. Avoid costly mistakes and use Clinica as an <b>indispensable guide</b> to the regulatory developments impacting the worldwide medtech industry. </p> <p> Experienced writers and analysts cover all aspects of the industry <b>from global hot topics to product sectors</b> such as cardiovascular, in-vitro diagnostics and drug delivery. </p> <p> Subscribers to Clinica Medtech Intelligence have full access to this industry&rsquo;s leading website and receive customized daily email alerts ensuring they get exactly the news and analysis they need. </p> <p> <a target="_blank" href="http://www.clinica.co.uk/complimentary-access/">Take a free trial subscription</a> - it's the perfect way for you to try our service. </p> <p> Clinica Medtech Intelligence <br> Informa UK Ltd<br> Christchurch Court<br> 10-15 Newgate Street<br> London<br> EC1A 7AZ </p> <p> Customer service team:<br> AP: +61 2 8705 6907<br> US: +1 212652 5353<br> UK: +44 207 551 9201<br> Email: <a href="mailto:clientservices@scripintelligence.com">clientservices@scripintelligence.com</a> </p> <p> <p>  <table> <tr bgcolor="#3399ff"> <td colspan="4" valign="top"><strong>Editorial</strong></td> </tr> <tr><td colspan="3"><hr color="#ffffff" size="1"></td></tr> <tr> <td valign="top"><img src="http://www.clinica.co.uk/multimedia/archive/00053/tina_100x150_53961a.jpg" width="100" border="1"></td> <td valign="top"><strong><span>Tina Tan</span> </strong> <br> Editor <br> <a href="mailto:tina.tan@informa.com">tina.tan@informa.com</a><br> <a href="https://twitter.com/MedtechTinaTan" class="twitter-follow-button" data-show-count="false">Follow @MedtechTinaTan</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </td> <td valign="top">It's been over 15 years since I penned my first news brief and since then, I've written for a wide range of publications - B2B healthcare newsletters, an alternative health magazine, national broadsheets and tabloids, market reports, and even an eyewear fashion magazine. I joined Clinica as Business Editor in 2005, where I covered the wheeling and dealing that went on in the medtech sector - the big mergers and the bolt-on acquisitions, who's suing who, whose top-line is soaring and whose bottom-line is sinking. While keeping one eye on the big players, I focus the other on the "little guys", the innovative start-ups working on tomorrow's technologies. Through Medtech Ventures, which I launched in 2006, I keep abreast of what the next best thing is in medical technologies and it never ceases to amaze me the depth of ingenuity that the human mind is capable of - who said there's no creativity in science? Since becoming Editor in 2009, my biggest priority is ensuring our readers get the most value from our product. It's quality over quantity in this age of information overload, and the Clinica team only cherry picks what matters to the our readers. We are constantly honing our content to make it as relevant as possible to you our readers, so feel free to contact us with your feedback. .</td> </tr> <tr><td colspan="3"><hr color="#CCCCCC" size="1"></td></tr> <tr> <td valign="top"></td> <td valign="top"><strong><span>Reed Miller</span></strong><br> Deputy Editor <br> <a href="mailto:reed.miller@informa.com">reed.miller@informa.com</a><br> <a href="https://twitter.com/ClinicaReed " class="twitter-follow-button" data-show-count="false">Follow @ClinicaReed </a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> <br></td> <td valign="top"><p>I got my first job in journalism with The Gray Sheet, then part of FDC Reports, in 2000 and have been covering medical technology ever since. I've covered every aspect of the medical device industry, but have primarily focused on clinical trials and new product development. I also spent three years working for theheart.org when it was the best news source for cardiologists and a year writing about pharmaceutical company compliance issues for HCPro, Inc. Now I'm tracking the bewildering and rapidly evolving universe of new medical technology, from IVDs to artificial hearts, from pre-clinical trials to commercialization. </p></td> </tr> <tr><td colspan="3"><hr color="#CCCCCC" size="1"></td></tr> <tr> <td valign="top"><img src="-/media/5B95862092244DBF918CAA5E72E149E7.ashx" width="100" height="150" border="1"></td> <td valign="top"><strong><span>Amanda Maxwell</span></strong><br> Medtech Regulatory Affairs Editor <br> <a href="mailto:amanda.maxwell@informa.com">amanda.maxwell@informa.com</a><br> <a href="https://twitter.com/ClinicaAmanda" class="twitter-follow-button" data-show-count="false">Follow @ClinicaAmanda</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> <br></td> <td valign="top"><p>Having covered European medtech regulatory affairs for Clinica for over a quarter of a century, I broadened my scope beyond the EU and became overall Medtech Regulatory Affairs Editor in 2012. Through the years, I have covered the European Directives, regulations and other documents that emerge from the European Commission, followed work on international regulatory convergence, and kept an eye on the national regulators, particularly France. I continue to witness and analyze the increasingly complex regulation of ever more technically sophisticated products, including regulation impacting drug/device combination products and companion diagnostics. I also monitor other regulations that impact the industry, <escenic_non_breaking_space></escenic_non_breaking_space>including environmental laws, standards, guidelines, and track funding and reimbursement issues. I particularly enjoy the close contact I have with key regulators at the European and international level and within EU member states, and industry leaders. At present, I am following closely developments related to the new Regulations on medical devices and IVDs and analyzing how they impact the sector.</p></td> </tr></table> <br> To explore the complete range of pharma news, data and analysis that our subscribers enjoy every day, click on the button below to start your free trial<br> <div><a href="http://www.clinica.co.uk/freetrial/"><img border="0" src="-/media/86FA42F76EB94E17AB910E54E2E95025.ashx"></a><br></div>  </p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 8
+
+About us
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20160622T134416Z
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT001649
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 8
+
+About us
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{BAE48ED6-17D6-4A90-AC6B-F1FBE84CDED6}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+145453
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T154408Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cc528379-55e7-4a27-a469-e518755eb442
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160921T134047Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {07217B75-B9FC-4A62-9F95-F281C7707A6B}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/02/27/Zimmer US gives surgeons the choice with new knee
+parent: {52387F80-B0CD-4D34-BCBA-94367C9A7458}
+name: Zimmer US gives surgeons the choice with new knee
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 1e1f8f58-097b-4be7-9b70-11ae46a25f1a
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 668
+
+<p>Zimmer (US) is looking to extend its leading share of the knee replacement market with a new system and instrumentation to cater for primary and revision patients with all levels of joint disease. The NexGen system, launched at the American Academy of Orthopaedic Surgeons meeting in Orlando last week, combines the features of the Insall-Burstein II and MG II knee systems into a single system. This gives surgeons the opportunity to choose from a variety of options during surgery depending on the degree of joint damage, according to Dr Kim Bertin, assistant clinical professor of orthopaedic surgery at the University of Utah, who helped develop the system.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Zimmer (US) gives surgeons the choice with new knee
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3159
+
+<p>Zimmer (US) is looking to extend its leading share of the knee replacement market with a new system and instrumentation to cater for primary and revision patients with all levels of joint disease. The NexGen system, launched at the American Academy of Orthopaedic Surgeons meeting in Orlando last week, combines the features of the Insall-Burstein II and MG II knee systems into a single system. This gives surgeons the opportunity to choose from a variety of options during surgery depending on the degree of joint damage, according to Dr Kim Bertin, assistant clinical professor of orthopaedic surgery at the University of Utah, who helped develop the system.</p><p>Four options are available with the new system: cruciate retaining, the most popular operation; cruciate retaining augmentable; posterior stabilised (cruciate substituting); and constrained condylar, for use in severely-diseased joints where stability of damaged ligaments is required. Constrained condylar knee replacements are used in nearly half of all revisions in the US, says Zimmer. In 1992, 13,000 knee revisions were performed in the US, according to National Center for Health Statistics figures. NexGen also features a range of size options for all components.</p><p>Zimmer says its new system has been designed to address the problems of polyethylene wear, one of the most pressing issues in implant design which was the focus for other exhibitors at the AAOS meeting. It has redesigned the articulating surfaces in NexGen: there is a larger contact area between the femoral and tibial (1.07:1) and the femoral and patellar surfaces. The patellar groove is deeper and shaped to fit more closely the patient's own patella. The system's polyethylene components are manufactured from high-grade material and packaged in a reduced oxygen environment to minimise oxidation during sterilisation.</p><p>instrument innovation</p><p>The NexGen instrumentation features three options: milling, five-in-one saw and a standard intramedullary system. One of the most innovative parts of the instrumentation is the new milling option, which is exclusive to Zimmer. The miller is designed to produce a flatter surface and generate less heat than sawing, reducing the risk of necrosis in surrounding bone. The five-in-one saw uses a single guide to make all five femoral box cuts from one reference point.</p><p>Zimmer says the price of the system will be maintained at the same position as the IB II and MG II systems in the total knee arthroplasty market. Pricing flexibility will be available through a number of optional features. Some sales of the existing knee systems will be lost to NexGen, but Zimmer's strategy is one of growth in the knee business, according to Dr Roy Crowninshield, senior vice-president and chief scientific officer at Zimmer. In the US market, this could increase Zimmer's share above the 30% mark, believes Dr Crowninshield. The system is already available in parts of Europe, it was launched in France late last year, and plans are under way to introduce NexGen to other markets worldwide through Zimmer's international sales subsidiaries in 13 countries.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Zimmer US gives surgeons the choice with new knee
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950227T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950227T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950227T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051674
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Zimmer (US) gives surgeons the choice with new knee
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253443
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183929Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1e1f8f58-097b-4be7-9b70-11ae46a25f1a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183929Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

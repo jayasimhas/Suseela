@@ -1,0 +1,193 @@
+----item----
+version: 1
+id: {EBF5AF8A-56E9-4AEE-B08F-3518D3DD874F}
+database: master
+path: /sitecore/Print Studio/App Settings/Message Settings/Upload Ready
+parent: {D277E72F-7D7A-4671-A0EE-FB4FABCC20FB}
+name: Upload Ready
+master: {00000000-0000-0000-0000-000000000000}
+template: {EEA84C1F-59B6-440E-8518-4BCB510F779E}
+templatekey: Print Studio RichText Message
+
+----version----
+language: de-DE
+version: 1
+revision: 4c17242b-2d36-4a18-8dc5-8c03866d5985
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 184
+
+<p>Verehrter/Verehrte {0},</p>
+<p>Das Hochladen der Bilder ist abgeschlossen. Nach den unten stehenden Ergebnissen, sind nun Bilder verfügbar.</p>
+<p>Print Studio Uploadingliste:</p>
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 13
+
+Upload Bereit
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142247Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4c17242b-2d36-4a18-8dc5-8c03866d5985
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135343Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: b7c1f2d6-7b99-42f0-8f69-837aefbdd151
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 156
+
+<p>Dear {0},</p>
+<p>The uploading of images is finished. According to the results below images are now available. </p>
+<p>Print Studio uploading list:</p>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20100617T112000
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b7c1f2d6-7b99-42f0-8f69-837aefbdd151
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20120208T105812:634642954929520777
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
+----version----
+language: ja-JP
+version: 1
+revision: b6fd42c1-c358-421a-a8bd-0453c147b452
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 93
+
+<p>{0} 様</p>
+<p>画像のアップロードが完了しました。結果は下記のとおりです。画像はすでに使用可能です。</p>
+<p>プリント スタジオ アップロード リスト:</p>
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 15
+
+アップロードの準備ができました
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142344Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6fd42c1-c358-421a-a8bd-0453c147b452
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

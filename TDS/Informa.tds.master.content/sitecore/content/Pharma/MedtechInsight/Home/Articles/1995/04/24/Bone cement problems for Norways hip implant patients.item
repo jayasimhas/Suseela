@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {7B763415-65AB-4DD0-BC6A-3DEE7FD01F2B}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/24/Bone cement problems for Norways hip implant patients
+parent: {3637D24F-1472-4E41-B5A6-816481061E2D}
+name: Bone cement problems for Norways hip implant patients
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: de2ae008-be41-435b-a2d5-347766bcace7
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 444
+
+<p>Some 1,300 hip implant patients in Norway are to undergo X-ray examination after the discovery that a bone cement used to secure the artificial joints has "crumbled" in an unusually high number of cases. Sales of Boneloc, produced in Denmark by Polymers Reconstructive, a subsidiary of <strong>[C#198600122:Biomet]</strong> (US), were halted when the first report of problems emerged from Haukeland Hospital, say Norwegian press reports.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Bone cement problems for Norway's hip implant patients
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1835
+
+<p>Some 1,300 hip implant patients in Norway are to undergo X-ray examination after the discovery that a bone cement used to secure the artificial joints has "crumbled" in an unusually high number of cases. Sales of Boneloc, produced in Denmark by Polymers Reconstructive, a subsidiary of <strong>[C#198600122:Biomet]</strong> (US), were halted when the first report of problems emerged from Haukeland Hospital, say Norwegian press reports.</p><p>Over a three-year period, Boneloc was used in around 1,300 out of a total of 18,000 hip implant procedures at 12 hospitals in Norway. The revision rate after three years with Boneloc was seven times higher than the typical rate of 1%, says Leif Havelin, head of orthopaedics at Haukeland Hospital. Independent orthopaedic surgeons are to examine the patients who were treated with Boneloc; those affected will need to be operated on again, according to Halden Hospital director, John Mjavatn. Asymptomatic patients will be monitored regularly over the coming years.</p><p>Boneloc is marketed in some 50 countries worldwide, and to date no similar problems have been reported outside Norway, the press reports say.</p><p>delivery system the culprit?</p><p>In a statement on Boneloc, Biomet notes that as a precautionary measure distribution and use of the cement were suspended this month following "isolated reports of high revision rates" in Norway. "We have never seen or heard of the cement crumbling before," Biomet says. Review and analysis of clinical and laboratory data will now take place.</p><p>As far as the company is aware, the higher revision rates have occurred in implants secured with a cartridge delivery system which has now been discontinued. "Biomet is not aware of abnormal revision rates with Boneloc using the new delivery system, introduced in November 1993."</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{6813DF9C-1DA9-44AE-9B9D-FB83827E8521}|{51C76967-12F2-4AC5-BE15-E4861E5B0865}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Bone cement problems for Norways hip implant patients
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950424T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950424T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950424T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052375
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Bone cement problems for Norway's hip implant patients
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600122
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254144
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184144Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+de2ae008-be41-435b-a2d5-347766bcace7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184144Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

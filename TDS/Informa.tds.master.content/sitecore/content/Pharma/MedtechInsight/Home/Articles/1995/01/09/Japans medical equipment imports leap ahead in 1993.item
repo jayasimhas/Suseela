@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {AB76A47E-3CD7-4B5E-85BA-32A627F49853}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Japans medical equipment imports leap ahead in 1993
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Japans medical equipment imports leap ahead in 1993
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: ef4ce772-6b2e-4ff0-ab6b-477ea327ac97
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 399
+
+<p>Foreign access to Japan's medical equipment market again became easier in 1993, with imports rising 15.8% to &yen;56,700 million to account for 25.4% of the overall market. Domestic production fell 2.2% to Yen1,340,800 million. The total market was valued at Yen1,797,500 million, up 25.8% on 1992. This report was compiled by Liz Hicks using data from Japan's Ministry of Health and Welfare.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Japan's medical equipment imports leap ahead in 1993
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3505
+
+<p>Foreign access to Japan's medical equipment market again became easier in 1993, with imports rising 15.8% to &yen;56,700 million to account for 25.4% of the overall market. Domestic production fell 2.2% to Yen1,340,800 million. The total market was valued at Yen1,797,500 million, up 25.8% on 1992. This report was compiled by Liz Hicks using data from Japan's Ministry of Health and Welfare.</p><pre>Japan's Medical Equipment Production (Yen '000 millions) % change Product Category 1993(*) vs 1992 Diagnostic imaging apparatus 274.5 -3.8 Surgical instruments 139.2 +4.7 Artificial organs & assist devices 136.4 +5.6 Diagnostic X-ray equipment 117.6 -5.8 Homecare equipment 111.0 +0.9 Ophthalmic products 102.0 +9.9 Dental materials 79.5 +2.9 Endoscopes & ophthalmic cameras 70.1 -1.8 In vitro testing apparatus 64.8 -11.0 Dental instruments & apparatus 38.8 -6.8 Surgical dressings & hygiene products 33.4 +1.4 Biophysical testing equipment 31.7 -20.2 Sterilisers & operating tables 26.4 +9.8 Physical therapy equipment 22.4 -2.7 Others 93.2 -17.5 TOTAL 1,340.8 -2.2</pre><p>(*) provisional figures</p><p>Source: Ministry of Health & Welfare</p><p>Japan's medical equipment import surplus totalled &yen;53,700 million in 1993, a significant increase on the 1992 figure of Yen62,700 million. This was predominantly due to the 8.6% fall in exports, compared with a 4.4% rise in 1992.</p><pre>Japan's Medical Equipment Trade (Yen '000 millions) % change 1993* vs 1992 Exports 303.0 -8.6 Imports 456.7 +15.8 * provisional figuresSource: Ministry of Health & Welfare</pre><p>Product areas expected to experience rapid import growth in Japan over the next few years include: computed radiography systems; digital fluorography systems; PET; PACS; artificial kidneys; PTCA catheters and related products; angiography and microcatheters; thermal dilution catheters; angio fibre and ultrasound imaging products; sheath introducers; guide wires; surgical gloves; and medical non-woven fabric products.</p><p>the year gone by</p><p>A significant move was made in October to open up Japan's market to US - and other foreign - medical technology with the signing of a US/Japan trade accord. After months of difficult negotiations, the Ministry of Health and Welfare (MHW) agreed to issue a directive to all government hospitals to purchase more US medical equipment and diagnostic products and to report annually on the preceding year's purchases from foreign versus domestic suppliers.</p><p>In response to pressure from the US, the MHW agreed to delay implementation of new reimbursement prices for STMs (special treatment materials) until June 1st, 1994. STM producers - virtually all US companies - complained that they had only been given two weeks' notice of the proposed price changes.</p><p>The final version of the bill to revise Japan's medical device legislation was being drawn up by the MHW during the summer and was due to be presented to the Diet before the end of the year. Bringing Japanese device regulation in line with the US and EU, the new system will classify devices on the basis of patient risk. Class I devices will not require approval as long as they comply with GMP criteria, while Class II devices will have to undergo a marketing approval procedure. Class III products, such as artificial valves and pacemakers, will additionally require patient registration and tracking systems. The bill will also introduce regulations covering equipment maintenance, repair and re-evaluation.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Japans medical equipment imports leap ahead in 1993
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT050995
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Japan's medical equipment imports leap ahead in 1993
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252764
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183720Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ef4ce772-6b2e-4ff0-ab6b-477ea327ac97
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183720Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

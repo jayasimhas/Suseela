@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EC63E85A-24A0-42E8-9B3B-EB12418D757A}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/10/Public Procurement Tenders
+parent: {281041AA-CDF7-48B5-BA87-85309B35870B}
+name: Public Procurement Tenders
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: d53e7582-4870-44cb-a405-9b8d2de56c5e
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 89
+
+<p>* Disposable, sterile syringes, with or without needles (value: Lit 1,300 million)</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3682
+
+<p>* Disposable, sterile syringes, with or without needles (value: Lit 1,300 million)</p><p>AO Spedali civili, 25123 Brescia, Italy.</p><p>Tel: +39 (30) 399 51. Fax: +39 (30) 39 35 16.</p><p>Deadline: May 10th, 1995.</p><p>* Joint/limb replacements; orthopaedic appliances; dental fittings (ref CP 5-E/95; total estimated value: Pta 64,000,000, excluding VAT)</p><p>Junta de Andalucia, Consejeria de Salud, Servicio Andaluz de Salud, Hospital Infanta Elena, Ctra de Sevilla-Huelva s/n, Seville, Spain.</p><p>Deadline: May 7th, 1995.</p><p>* Pacemakers & defibrillators (various models; ref pacemaker/defibrillator 9117)</p><p>Ulleval sykehus, Innkjopsavdelingen, 0407 Oslo, Norway.</p><p>Tel: +47 (22) 11 81 17. Fax: +47 (22) 11 82 30.</p><p>Deadline: May 5th, 1995.</p><p>* Specialised radiology & radiography apparatus</p><p>Helsingen yliopistollinen Keskussairaala, Hankintakeskus, 00290 Helsinki, Finland.</p><p>Tel: +358 (0) 471 2005. Fax: +358 (0) 471 5403.</p><p>Deadline: May 18th, 1995.</p><p>* Medical, surgical & orthopaedic equipment for haemodialysis</p><p>CHRU Dijon, direction des services economiques, 21034 Dijon Cedex, France. Tel: +33 80 29 33 80. Fax: + 33 80 29 35 00.</p><p>Deadline: May 4th, 1995.</p><p>* Anaesthetic apparatus & instruments</p><p>Unita sanitaria locale n 61, 90146 Palermo, Italy.</p><p>Tel: +39 (91) 780 83 15. Fax: +39 (91) 780 83 43.</p><p>Deadline: May 19th, 1995.</p><p>* Surgical implants (ref 19950-0-0005; total estimated value: Pta 55,654,205)</p><p>Hospital "San Agustin", 33400 Aviles, Spain.</p><p>Tel: +34 (8) 512 30 05. Fax: +34 (8) 512 30 09.</p><p>Deadline: May 3rd, 1995.</p><p>* Medical, surgical & orthopaedic equipment</p><p>Perifereiako Geniko Nosokomeio Thessalonikis AchEPA, 54636 Thessaloniki, Greece.</p><p>Tel: +30 (31) 21 13 00. Fax: +30 (31) 21 13 00.</p><p>Deadline: May 8th, 1995.</p><p>* Orthopaedic surgical implants; haemodialysis medical, surgical & orthopaedic equipment</p><p>Centre hospitalier de Cornouaille, Service pharmacie, 29107 Quimper Cedex, France.</p><p>Tel: +33 98 52 61 24. Fax: +33 98 52 61 46.</p><p>Deadline: May 3rd, 1995.</p><p>* Catheters & accessories (value: Dr 350,000,000); cannulae (value: Dr 200 million); anaesthetic equipment (value: Dr 100 million); medical, surgical & orthopaedic equipment (value: Dr 100 million); medical, surgical & orthopaedic equipment (value: Dr 200 million)</p><p>Ypourgeio Ygeias, Pronias kai Koinonikon Asfaliseon, 11527 Cholargos Attikis, Greece.</p><p>Tel: +30 (1) 770 12 11. Fax: +30 (1) 778 93 45.</p><p>Deadline: May 8th, 1995.</p><p>* Hearing aids; pacemakers; prostheses; orthopaedic items (total estimated value: Pta 44,860,000, excluding VAT)</p><p>Ministerio de Sanidad y Consumo, Hospital "Nuestra Senora de Sonsoles", 50071 Avila, Spain. Tel: +34 (20) 35 80 71. Fax: +34 (20) 35 80 72.</p><p>Deadline: May 4th, 1995.</p><p>* Neuro-angiography catheters & accessories (value: Lit 1,000 million)</p><p>Ospedale di Circolo e fondazione, Macchi-azienda ospedaliera, 21100 Varese, Italy.</p><p>Tel: +939 (332) 27 83 62. Fax: +39 (332) 26 36 52.</p><p>Deadline: May 8th, 1995.</p><p>* Single-use surgical supplies (ref Oe38-95; overall estimated value: SKr 10 million, excluding VAT)</p><p>Landstinget i Varmland, MATERIEL-service (Oe38-95),S-651 15 Karlstad, Sweden.</p><p>Tel: +46 (54) 10 71 02. Fax: +46 (54) 10 71 17.</p><p>Deadline: May 5th, 1995.</p><p>* Medical, surgical & orthopaedic equipment; particle accelerators; patient monitoring apparatus; other medical apparatus and associated products</p><p>Wiener Krankenanstaltenverbund, Kaiser-Franz-Josef Spital, Kundratstrasse 3, 1100 Vienna, Austria.</p><p>Deadline: May 2nd, 1995.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 350
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{6813DF9C-1DA9-44AE-9B9D-FB83827E8521}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{1EECD1FE-0C7B-4F62-A9EE-379A866DB144}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{66ABB4F9-4184-420B-A97E-96A3B7728F78}|{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950410T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950410T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950410T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052096
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 26
+
+Public Procurement Tenders
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253865
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184050Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d53e7582-4870-44cb-a405-9b8d2de56c5e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184050Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

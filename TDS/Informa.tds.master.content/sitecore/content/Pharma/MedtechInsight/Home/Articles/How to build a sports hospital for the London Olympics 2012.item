@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {CDE61EA2-FEDF-4D4F-BC80-111738E7EE75}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/How to build a sports hospital for the London Olympics 2012
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: How to build a sports hospital for the London Olympics 2012
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: c84481e2-5b81-4e80-85a0-3fa32732abfd
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 162
+
+<p> <i>Story and reportage: Salina Christmas, Editor, Multimedia</i> <br> <a>Want to know more about healthcare technology? Start your free 10-day trial </a> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+How to build a sports hospital for the London Olympics 2012
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7947
+
+<p> <i>Story and reportage: Salina Christmas, Editor, Multimedia</i> <br> <a href="http://www.clinica.co.uk/freetrial/" target="_blank" class="emailLink">Want to know more about healthcare technology? Start your free 10-day trial </a> </p> <p> At an evening workshop recently organised by the Harley Street Alliance at Canary Wharf, the alliance's CEO, Tam McDonald, asked the clinicians present: &quot;With the 2012 London Olympics around the corner, are we going to succumb to the usual reflexive twitches and use the event for corporate hospitality and a boost to favoured charities &ndash; or should we use it as an opportunity to observe the Olympian mindset of winning, and use that to redefine &lsquo;winning&rsquo; in the healthcare context, and expand on clinical research?&quot; </p> <p> With that in mind, an evening of brainstorming kicked off around the hypothetical question: How do we build a National Sports Hospital in time for 2012? </p> <table> <tr> <td> <p> <img src="-/media/7FEE9F6177034E4987BB4C7E6DC26071.ashx" width="700" height="465"> </p> </td> </tr> <tr> <td> <p> <b>Kevin Gavaghan, the inventor of telephone banking (pictured), oversees the workshop </b><br> <i>Photo: Salina Christmas </i> </p> </td> </tr> </table> <p> The workshop, &ldquo;Next Generation Healthcare and the Power of Collaborative Marketing&rdquo;, was overseen by Kevin Gavaghan, the inventor of telephone banking, and his team from The Spirit of Creation. The event saw up to 28 people participating, including clinicians and representatives from the event sponsors, Barclays Healthcare Team and <a href="http://www.mobilehealthcareindustrysummit.com/" class="emailLink">Informa Telecoms and Media</a>. </p> <p> The participants were divided into four groups, and each had to consider the issues faced in reaching this objective, mainly on what McDonald called &ldquo;the elephant in the room&rdquo;: the financial crisis. </p> <p> <table> <br> <br> <tr> <td colspan="3"><h3><escenic_non_breaking_space></escenic_non_breaking_space></h3></td> </tr> <tr> <td><div> <embed src="http://widget-94.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033620&site=widget-94.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-f9.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033721&site=widget-f9.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-16.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033750&site=widget-16.slide.com" name="flashticker"> </div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/reception/" class="optionsLink">The reception </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/tour/" class="optionsLink">The tour </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/talk/" class="optionsLink">The talks </a></p></td> </tr> <tr> <td><div> <embed src="http://widget-5e.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033822&site=widget-5e.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-c8.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033928&site=widget-c8.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-f4.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979437033972&site=widget-f4.slide.com" name="flashticker"> </div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/post_it/" class="optionsLink">Post-It notes </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/retrofit/" class="optionsLink">Retrofitting the ideas </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/harley_street/drinks/" class="optionsLink">Post-workshop drinks </a></p></td> </tr> </table></p> <p> Gavaghan identified five key drivers of change: economic, social, political/legislative, technological and speed of change. Even with limited financial resources, a highly accessible and easy-to-scale technology, with its ability to adapt to changing social activities, can facilitate the changes needed. </p> <p> The mobile phone comes to mind. The use of a smart phone or a personal digital assistant (PDA) still depends on the clinician&rsquo;s work processes &ndash; an ophthalmologist at the workshop told me he doesn&rsquo;t need to use one for his practice &ndash; but on the patient&rsquo;s end, it is already being used to communicate information between the patient and the health authority. </p> <table> <tr> <td> <p> <img src="-/media/67FBD5C4B16F43C5875F5E3CC25473FC.ashx" width="700" height="465"> </p> </td> </tr> <tr> <td> <p> <b>Post-It notes become the placeholder for ideas </b><br> <i>Photo: Salina Christmas </i> </p> </td> </tr> </table> <p> It was intriguing to discover that, despite the emphasis placed on pragmatism in determining the clinician&rsquo;s professional goals, the clinicians at the workshop put a lot of stock into sociality and &lsquo;social implications&rsquo;. It made me realise how much I overlooked the reason these individuals entered the healthcare profession initially: they&rsquo;re into people. </p> <p> One group which suggested the creation of a virtual hospital pointed out that &ldquo;a building should be an administrative centre, not just a clinic&rdquo;. Another group highlighted the need for &lsquo;academic rigour&rsquo; in approaching the aim, and suggested that &lsquo;kudos&rsquo; attached to the profession and the underlying social objectives could lend weight to the cause. Another one reminded us that we should aim for &ldquo;wellness not fitness&rdquo; and that we should focus on &ldquo;prehab&rdquo;, not &ldquo;rehab&rdquo;. </p> <table> <tr> <td> <p> <img src="-/media/303757D63B824F44B9DAC7788C355BCB.ashx" width="700" height="484"> </p> </td> </tr> <tr> <td> <p> <b>Herculean task? A clinician considers the challenges faced in realising the objective </b><br> <i>Photo: Salina Christmas </i> </p> </td> </tr> </table> <p> The concensus among the participants was that these suggested efforts need to be backed by lobbying and funding. As one participant mentioned, &ldquo;it is going to take politics, money and science to set up a hospital&rdquo;. </p> <p> Ubiquitous technology, such as the internet, social media and the mobile phone might help in some ways, but McDonald reminded us that collaboration is the way forward. &ldquo;Collaborations and proddings will awaken the [sleeping] giant&rdquo;, which, in this case, is the digital communication technologies. Technology guarantees efficiency, but it takes trust to make it work across groups and disciplines. </p> <table> <tr> <td> <p> <img src="-/media/A53DA5B382BA4FF587981950EEE9084F.ashx" width="700" height="465"> </p> </td> </tr> <tr> <td> <p> <b>Post-workshop drinks. Despite the emphasis placed on pragmatism in determining the clinician&rsquo;s professional goals, the clinicians at the workshop put a lot of stock into sociality and &lsquo;social implications&rsquo;</b> <br> <i>Photo: Salina Christmas </i> </p> </td> </tr> </table> <p> <a href="http://www.clinica.co.uk/home/blogopensurgery/" class="emailLink"><i>Visit Open Surgery for more multimedia features </i></a> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+How to build a sports hospital for the London Olympics 2012
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185753
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT055933
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+How to build a sports hospital for the London Olympics 2012
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+296505
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185337Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c84481e2-5b81-4e80-85a0-3fa32732abfd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225753Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

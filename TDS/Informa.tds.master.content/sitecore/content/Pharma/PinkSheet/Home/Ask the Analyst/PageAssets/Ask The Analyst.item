@@ -1,0 +1,134 @@
+----item----
+version: 1
+id: {FDB03AC9-CED5-4C35-B6E3-14D0479E0185}
+database: master
+path: /sitecore/content/Pharma/PinkSheet/Home/Ask the Analyst/PageAssets/Ask The Analyst
+parent: {A7675B4C-94DD-4152-A1CF-4DB400C37858}
+name: Ask The Analyst
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: b84f6945-6069-425c-8b7a-c929c1fd9f2a
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 6324
+
+<table width="100%" border="0" cellpadding="15" cellspacing="0" id="pdfLibrary">
+    <tbody>
+        <tr>
+            <th width="50%" align="left"></th>
+            <th width="50%" align="left"></th>
+        </tr>
+        <tr>
+            <td align="left" colspan="2">
+            <img alt="Got a question?  Ask us!" src="-/media/ff5530d051654418b49acbc67c5143e1.ashx" style="text-align: center;" /><br />
+            <p><strong>What is the service?</strong></p>
+            <p>If you have a question about any of our news stories, analysis or data, or indeed about any market or business issues that you face, ask us. Our expert <strong>Pink Sheet</strong> journalists and analysts will conduct research and reply to your question. We will respond within two working days, but often quicker. We will let you know if we are unable to answer a particular question and why. This service is free to our subscribers. The time we can offer is dependent on your subscription value.</p>
+            <p><strong>How do I ask a question?</strong></p>
+            <p>The service is accessible by clicking here: <a href="mailto:news.analysis@informa.com?Subject=Ask The Analyst">news.analysis@informa.com</a> or submitting the <a href="#form">form below</a></p>
+            <p>Submit your question via the &lsquo;Ask the Analyst&rsquo; link or form. Your message will be received by our Client Services team who will direct your question to the relevant respondent &ndash; an editor, journalist or analyst from one of our teams. We will acknowledge the question, clarify and agree the scope, and let you know when you can expect our response to your question.</p>
+            <p><strong>Who responds to the question?  What experience do they have?</strong></p>
+            <p>Our journalists and analysts will respond to you directly. We have spent many years researching and writing about all aspects of the pharmaceutical and medtech markets: R&amp;D, clinical trials, market access, policy and regulation, financing and licensing. Our team has a wealth of experience, knowledge and a formidable network of contacts across the globe in all sectors of the industry.</p>
+            <p><strong>Who can use the service?</strong></p>
+            <p>All our subscribers can use the service. We offer at least one hour per month, and up to 12 hours, depending on the number of subscribers your organization has and the cost of your subscription. We can spend up to three hours on each question where time permits. Unused time is not cumulative but we will be flexible from one month to next. Time is not cumulative across our different products.</p>
+            <p><strong>What the service is not</strong></p>
+            <p>It is not consultancy &ndash; it is based on having a subscription to our products, it gives you a monthly time allocation and can incur no additional costs. There are limits to what we can answer, but ask us and together we will agree on how we can help. We cannot offer free access to information from other Informa products to which you do not subscribe but we will refer to those and other sources as needed to answer a query and to give you the opportunity to find out more about those products.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="2">&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" id="pdfLibrary">
+            <a name="form"></a>
+            <a name="form2000722706" id="formAnchor2000722706"></a>
+            <script type="text/javascript" src="https://fs8.formsite.com/include/form/embedManager.js?2000722706"></script>
+            <script type="text/javascript">
+EmbedManager.embed({
+	key: "https://fs8.formsite.com/res/showFormEmbed?EParam=bJeI6E3QIKCKwe%2BL8pj2O%2Bsv77I8DAO%2B&amp;2000722706",
+	width: "100%",
+	mobileResponsive: true
+});
+</script>
+            </td>
+            <td align="left" valign="top">
+            <p><strong>What sort of questions can I ask?</strong></p>
+            <p>Here are some examples of questions received:</p>
+            <p>
+            <em>With all the recent deals on immune-oncology (Novartis, Merck KgaA, etc) who is currently in the lead (top 5) to be first to market?</em></p>
+            <em>
+            </em>
+            <p><em>
+            What is the landscape for pulmonary fibrosis drugs?</em></p>
+            <em>
+            </em>
+            <p><em>
+            What is the procedure and guidelines to have a new chemical entity identified as &ldquo;breakthrough therapy&rdquo; by the FDA?</em></p>
+            <em>
+            </em>
+            <p><em>
+            If a drug is approved mid-way through the year, and payers have an agreed formulary list from the start of the year that doesn&rsquo;t yet include the new drug, can this be added mid-year?</em></p>
+            <em>
+            </em>
+            <p><em>
+            Would you have a summary of the changes that are going to occur with the EU Clinical Trials Regulation?</em></p>
+            <em>
+            </em>
+            <p><em>
+            What are the details on the procedure to follow in order to enter the German market for Medical Devices?</em></p>
+            <em>
+            </em>
+            <p><em>
+            In Belarus, when conducting a clinical trial of an IMP against a marketed drug, does the marketed drug have to be relabelled with a study label?</em></p>
+            <em>
+            </em>
+            <p><em>
+            What is the route to market for innovative diagnostics and medical devices from discovery through regulation, cost effectiveness assessment and adoption in the UK?</em></p>
+            <em>
+            </em>
+            <p><em>
+            As a large medical device manufacturer with many legacy products will the new amendment to the Standard EN 62366:2008, amendment 1, published June 30th 2015 change the compliance status to the standard?</em></p>
+            <em>
+            </em>
+            <p><em>
+            Can you provide me with a list of expedited approval pathways globally, for example FDA (breakthrough therapy, fast track, accelerated approval, priority review), EMA (adaptive licensing pathway, etc), Japanese PMDA, Health Canada, Swissmedic, Australian TGA.</em></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160420T212455Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b84f6945-6069-425c-8b7a-c929c1fd9f2a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160603T002508Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

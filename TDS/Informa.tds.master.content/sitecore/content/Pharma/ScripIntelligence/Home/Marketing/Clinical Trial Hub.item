@@ -1,0 +1,137 @@
+----item----
+version: 1
+id: {B7EDF6A9-4B79-4817-9307-3A77079BBD69}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Marketing/Clinical Trial Hub
+parent: {1CAC13D9-4C09-4C16-B62C-5531DB8443A5}
+name: Clinical Trial Hub
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----version----
+language: en
+version: 1
+revision: 7da496d6-9c6e-4d36-acd6-19eb44bd1229
+
+----field----
+field: {E3A3E51E-A8F0-4EE1-986F-2562F9D279DE}
+name: Section Title
+key: section title
+content-length: 18
+
+Clinical Trial Hub
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 19
+
+Clinical Trials Hub
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 19
+
+Clinical Trials Hub
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 19
+
+Clinical Trials Hub
+----field----
+field: {89F93105-8D7E-42E3-A647-416C00AC24A0}
+name: Javascript
+key: javascript
+content-length: 875
+
+function tab(tab) {  document.getElementById('tab1').style.display = 'none';  document.getElementById('tab2').style.display = 'none';   document.getElementById('tab3').style.display = 'none';    document.getElementById('tab4').style.display = 'none';   document.getElementById('tab5').style.display = 'none';   document.getElementById('tab6').style.display = 'none';   document.getElementById('li_tab1').setAttribute("class", "");   document.getElementById('li_tab2').setAttribute("class", "");   document.getElementById('li_tab3').setAttribute("class", "");   document.getElementById('li_tab4').setAttribute("class", "");  document.getElementById('li_tab5').setAttribute("class", "");  document.getElementById('li_tab6').setAttribute("class", "");  document.getElementById(tab).style.display = 'block';   document.getElementById('li_'+tab).setAttribute("class", "active"); }
+----field----
+field: {2F02FFDB-8082-44C9-B9C6-A034F3C1F9D9}
+name: CSS
+key: css
+content-length: 1782
+
+.rightNav {display:none!important;}
+.leftCont {min-height:1000px; width: 1000px!important;}
+
+
+.active { border-bottom: 3px solid #b70815;
+height: 44px; }
+div {font-family:Arial, Helvetica, sans-serif;}
+table {font-size:13px;}
+#Tabs {font-family:Arial, Helvetica, sans-serif;}
+#Tabs ul { padding: 0px; margin: 0px; list-style-type: none;}
+#Tabs ul li { display: inline-block; clear: none; float: left; }
+#Tabs ul li a { position: relative; margin-top: 16px; display: block; line-height: 28px; width: 140px; color: #000000; font-weight: bold; text-transform:uppercase; text-align:center; cursor:pointer; -webkit-border-top-left-radius: 3px; -webkit-border-top-right-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-topright: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; font-size:12px; }
+#Tabs ul li a:hover {border-bottom:3px solid #b70815; }
+#Tabs #Content_Area { padding: 0 5px; clear:both; overflow:hidden; line-height:19px; position: relative; top: 20px; z-index: 5; overflow: hidden; border-top: 3px solid #EFEFEF; }
+p {font-size:15px; line-height:18px}
+#tab1{width:100%; text-align:left; padding-top: 55px; font-weight:normal; height:auto;}
+#tab2{width:100%; text-align:left; padding-top: 55px; font-weight:normal; height:auto;}
+#tab3{width:100%; text-align:left; padding-top: 55px; font-weight:normal;height:auto;}
+#tab4{width:100%; text-align:left; padding-top: 55px; font-weight:normal;height:auto;}
+
+#tab5{width:100%; text-align:left; padding-top: 55px; font-weight:normal;height:auto;}
+#tab6{width:100%; text-align:left; padding-top: 55px; font-weight:normal;height:auto;}
+h4 {color:#b70815; padding-top:15px;}
+.headline {color: #b70815; font-weight: bold; text-decoration: none; line-height:22px; font-size:20px;}
+----field----
+field: {82AF6295-2B81-4CE0-8674-F6F72F38BFF6}
+name: Leaderboard Slot ID
+key: leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 680
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{6D63340D-925B-4997-AEFC-88AA69F62D92}" p:before="r[@uid='{AF1BCDB9-F326-4541-A021-837557E8905B}']" s:ds="{E4078957-80A5-4F4E-837A-A01D817FCD41}" s:id="{3B91B663-7ECB-4964-9145-0F3DD02EA49B}" s:ph="main-content" /><r uid="{AF1BCDB9-F326-4541-A021-837557E8905B}" p:before="r[@uid='{FF1D8F84-9E17-468F-9486-D09D58063E4E}']" s:ds="" s:id="{9DCE5D27-9823-40F0-BBDE-28F8862318B5}" s:ph="main-content" /><r uid="{FF1D8F84-9E17-468F-9486-D09D58063E4E}" p:before="r[@uid='{3ADAA0DF-EF47-4D4C-8C34-1EDBBC8095AB}']" s:ds="" s:id="{3B91B663-7ECB-4964-9145-0F3DD02EA49B}" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160422T181129Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7da496d6-9c6e-4d36-acd6-19eb44bd1229
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160424T172444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

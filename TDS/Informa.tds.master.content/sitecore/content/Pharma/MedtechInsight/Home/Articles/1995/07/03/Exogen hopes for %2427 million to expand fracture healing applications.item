@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {97A8E315-D5B3-47D0-8A13-095993FED5B4}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/03/Exogen hopes for $27 million to expand fracture healing applications
+parent: {F0F2E7B2-9890-4F7A-8FB0-FBE26057A289}
+name: Exogen hopes for $27 million to expand fracture healing applications
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: f6a9973e-5876-4299-8067-4c4a8efb3050
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 287
+
+<p>Exogen is going public nine months after receiving US approval for its first product. In an initial public offering in July or August, the developer of fracture healing devices hopes to raise $27 million net from the sale of 2.5 million shares. The assumed flotation price is $12.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+Exogen hopes for $27 million to expand fracture healing applications
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3041
+
+<p>Exogen is going public nine months after receiving US approval for its first product. In an initial public offering in July or August, the developer of fracture healing devices hopes to raise $27 million net from the sale of 2.5 million shares. The assumed flotation price is $12.</p><p>The New Jersey-based company intends to use $6 million for expanding applications of its approved product, the Sonic Accelerated Fracture Healing System (SAFHS). Another $8 million will finance development and clinical trials of Exogen's mechanical stress device; and $4 million will expand sales and marketing.</p><p>As Exogen has been allowed to sell the SAFHS in the US since last year, the company recorded its first revenues of $0.6 million as well as a net loss of $3 million in the first half of fiscal 1995 (ended March 31st). Exogen plans to market the SAFHS device in several European countries in 1996.</p><p>fracture healing with ultrasound</p><p>Exogen purchased the SAFHS system from Interpore Orthopaedics in 1993, including clinical trials data and worldwide marketing rights (excluding Brazil). The device uses ultrasound to speed up fracture healing for certain closed, new fractures of the tibia and distal radius. US PMA approval for the SAFHS 2A was granted in October 1994 making it the only medical device approved by the FDA for the acceleration of new fracture healing, says Exogen. Clinical trials data showed that SAFHS treatment accelerated the average time for a fracture by to heal about 38%.</p><p>The portable device is used by patients for 20 minutes a day and in the US Exogen charges $2,950 for its use regardless of the length of treatment. The device is currently manufactured by a single contract manufacturer, but the company intends to develop manufacturing capabilities by early 1996.</p><p>Development work of the device is directed to expanding its applications. Exogen plans clinical trials under an IDE for indications including internally-fixed fractures, hip fractures and spine fusions. It plans to file a PMA supplement for a second-generation device, SAFHS 2000, which is smaller and lighter than the SAFHS 2A, in late 1995.</p><p>fracture numbers</p><p>More than six million fractures occur in the US every year. Of these more than 13% are tibia and distal radius fractures and Exogen believes that nearly half of those - 350,000 - are within the approved indications for the SAFHS device and would be considered by physicians to be "at risk" fractures. Government sources estimate that total medical costs related to all fractures exceed $20,000 million a year in the US.</p><p>mechanical stress against bone loss</p><p>Exogen's second string is mechanical stress technology for which it purchased an exclusive licence to the patent from Drs Kenneth McLeod and Clinton Rubin, both of the State University of New York at Sony Brook, in 1992. The company is still developing a device using this technology to prevent bone loss in osteoporosis but expects to begin US pilot clinical trials in 1996.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{02BF5E8E-46B6-457B-82C8-D013C26B8CF9}|{05DE2CFA-EF60-455C-941D-84B3041F0A40}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Exogen hopes for $27 million to expand fracture healing applications
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950703T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950703T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950703T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053276
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+Exogen hopes for $27 million to expand fracture healing applications
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255085
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184438Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f6a9973e-5876-4299-8067-4c4a8efb3050
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184438Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

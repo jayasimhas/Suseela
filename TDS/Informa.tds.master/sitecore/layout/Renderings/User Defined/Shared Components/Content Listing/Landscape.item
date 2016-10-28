@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {DB007E1F-F5C9-4A05-8249-7F359AFA68EF}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Shared Components/Content Listing/Landscape
+parent: {0B2244A6-EAE6-4D2C-8763-3C7187709B40}
+name: Landscape
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 56
+
+/Views/Shared/Components/ContentListing/Landscape.cshtml
+----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+----field----
+field: {7D24E54F-5C16-4314-90C9-6051AA1A7DA1}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{41955FAE-8E87-4F0D-B0F5-598440A59357}
+----field----
+field: {3D08DB46-2267-41B0-BC52-BE69FD618633}
+name: Cacheable
+key: cacheable
+content-length: 1
+
+1
+----field----
+field: {8B6D532B-6128-4486-A044-CA06D90948BA}
+name: VaryByData
+key: varybydata
+content-length: 1
+
+1
+----field----
+field: {3AD2506A-DC39-4B1E-959F-9D524ADDBF50}
+name: VaryByParm
+key: varybyparm
+content-length: 1
+
+1
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 30
+
+./PageAssets|/sitecore/content
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 56
+
+/sitecore/templates/User Defined/General Content/Content
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 38
+
+{E2DE9BC4-7B64-4F26-8F59-18C6770D89AC}
+----version----
+language: en
+version: 1
+revision: 7ec1efd3-19f6-4579-b473-bb3345479d29
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160215T123140Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7ec1efd3-19f6-4579-b473-bb3345479d29
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160526T203920Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

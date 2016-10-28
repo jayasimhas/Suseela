@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {EB903C07-7184-49B0-8BC2-B3347C4CD27B}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Globals/Navigation/Email Footer/Navigation Link
+parent: {265DC6DF-B30E-4ABA-B540-D1F9D29D4B99}
+name: Navigation Link
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----version----
+language: en
+version: 1
+revision: 30507b79-6840-4ae2-8ff7-75535f4b64f1
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 123
+
+<link text="" linktype="internal" class="" title="" target="" querystring="" id="{30091E7B-6F5C-4CE1-AF92-B1E8C5B393CB}" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 13
+
+Meet the Team
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160525T131243Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\ndecker
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+30507b79-6840-4ae2-8ff7-75535f4b64f1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160525T131336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\ndecker

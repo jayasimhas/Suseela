@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EF9AB719-8DA2-4E42-8ED1-DD5E246716F7}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/03/Europe keeps an eye on vigilance
+parent: {2F783E2E-0178-43AE-8466-15C21F54A536}
+name: Europe keeps an eye on vigilance
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 53f82bad-617b-4f0f-936a-099b002b9149
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 533
+
+<p>The first opportunity for round-table discussion of the medical device Directives' vigilance requirements came at the European Commission's vigilance working group meeting on March 16th. Industry and government experts met to review current post-market reporting systems under the Directives. They also discussed the vigilance position paper drawn up by the International Association of Medical Prostheses Manufacturers (IAPM), the only medical device industry body to have much practical knowledge of the new European system.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+Europe keeps an eye on vigilance
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4237
+
+<p>The first opportunity for round-table discussion of the medical device Directives' vigilance requirements came at the European Commission's vigilance working group meeting on March 16th. Industry and government experts met to review current post-market reporting systems under the Directives. They also discussed the vigilance position paper drawn up by the International Association of Medical Prostheses Manufacturers (IAPM), the only medical device industry body to have much practical knowledge of the new European system.</p><p>Experience is still limited. IAPM estimates that some 50-60 vigilance reports have been made since the AIMD entered into force, and that "no more than five" have been circulated among Member States and the Commission. The Association is convinced the quantity will increase as more CE-marked devices are placed on the market and user awareness grows.</p><p>Industry's prime concern is of premature or inappropriate circulation of reports. According to IAPM, some authorities have circulated initial incident reports to the Commission or other Member States before the manufacturer and/or the relevant Competent Authority have completed their investigation. This is contrary to clause 7.2.1 of the guidelines and may lead to "confusion, inappropriate actions and/or prejudice to a manufacturer's or product's reputation", the association asserts.</p><p>Manufacturers also feel there is sometimes a false impression of the frequency of adverse events due to "parallel reporting" to Competent Authorities by users, manufacturers and third- parties. Industry may be unaware of the scale of this since companies do not always receive copies of reports submitted by users to Competent Authorities, contrary to Article 10.2 of the Medical Devices Directive.</p><p>In addition, there seems to be confusion among Competent Authorities over when an event needs to be reported. Pre- existing user event reporting systems have led some to accuse manufacturers of under-reporting, when the reason for the different quantity of reports lies in different reporting criteria.</p><p>One Competent Authority has even criticised manufacturers for not reporting an event, when the event did not occur on its territory and was reported to another Competent Authority. Other companies have encountered unjustifiable requests from subdivisions in some Member States for manufacturers to submit reports directly to them.</p><p>Given the different approaches, it is not surprising to learn that manufacturers have experienced difficulty in obtaining agreement over corrective action plans when they involve devices in more than one Member State, leading to serious delays.</p><p>IAPM notes that there is no procedure for resolving differences between manufacturers and Competent Authorities (or Notified Bodies, during quality system assessments) over whether an event should be reported.</p><p>further obstacles</p><p>Some manufacturers have been unable to carry out their vigilance duties by being denied timely access to a device by users or third-party vigilance organisations, according to the position paper. The organisations have feared the device may be "destroyed or tampered with" by industry.</p><p>guidelines need updating</p><p>Although the reporting criteria in the Commission Guidelines on a Medical Devices Vigilance System are reasonably clear, IAPM wants greater clarification on these issues:</p><p>* Events that occur outside the EEA. Some authorities assert that these should be reported even if they do not lead to corrective action.</p><p>* Events involving devices that do not bear the CE marking. What happens with products in service or marketed before of during the transition period when later devices of the same type are CE-marked?</p><p>* Events involving user error. These may not be apparent at the time of an initial vigilance report.</p><p>key to success</p><p>Co-operation - with users, third-party vigilance organisations and Competent Authorities - is the key to the smooth running of the system, IAPM believes. It concludes that adherence to the guidelines is essential to the creation of a successful system and welcomes the opportunity to participate in its continued development.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+Europe keeps an eye on vigilance
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950403T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950403T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950403T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052131
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+Europe keeps an eye on vigilance
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253900
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184056Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+53f82bad-617b-4f0f-936a-099b002b9149
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184057Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

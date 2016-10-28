@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {355CE5EB-9922-4957-9681-06DC532B0FE7}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/MS Word Styles/MS Table Style/Large Table
+parent: {897A6912-DA22-48BD-B138-4DD5F0BFE06F}
+name: Large Table
+master: {00000000-0000-0000-0000-000000000000}
+template: {A988A306-6746-478C-B227-F7DFBF87B783}
+templatekey: Table Definition
+
+----version----
+language: en
+version: 1
+revision: 036ebd2d-bf1b-4473-a87a-19c81c4894f3
+
+----field----
+field: {47031F75-21CB-413D-B75D-AE40E0AB612E}
+name: Table Name
+key: table name
+content-length: 11
+
+Large Table
+----field----
+field: {9DE87C16-380F-42B6-8F45-EEAEA91D9071}
+name: No Of Rows
+key: no of rows
+content-length: 2
+
+25
+----field----
+field: {028A47F8-A41B-4678-A06A-C021F62741C4}
+name: No Of Columns
+key: no of columns
+content-length: 1
+
+4
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160922T114236Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+036ebd2d-bf1b-4473-a87a-19c81c4894f3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160922T124147Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
