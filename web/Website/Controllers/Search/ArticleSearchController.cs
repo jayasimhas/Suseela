@@ -41,7 +41,8 @@
                     LoadMoreLinkUrl = "/api/articlesearch/",
                     LatestFromText = TextTranslator.Translate("Article.LatestFrom"),
                     PageNo = articleRequest.PageNo + 1,
-                    PageSize = articleRequest.PageSize
+                    PageSize = articleRequest.PageSize,
+                    TaxonomyIds = articleRequest.TaxonomyIds
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }
