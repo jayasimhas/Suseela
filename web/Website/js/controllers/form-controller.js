@@ -110,6 +110,15 @@ function formController(opts) {
 					if(!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
 					}
+				    try{
+				        for(var index in inputData)
+				        {
+				            if(inputData[index] == "- Select One -")
+				            {
+				                inputData[index] = "";
+				            }
+				        }
+				    }catch(ex){console.log(ex);}
 
 					$.ajax({
 						url: $(currentForm).data('on-submit'),
