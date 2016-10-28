@@ -1,8 +1,11 @@
-﻿namespace Informa.Web.Models
+﻿using System.Collections.Generic;
+
+namespace Informa.Web.Models
 {
     public class Section : ISection
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string ChannelId { get; set; }
+        public string ChannelName { get; set; }
+        public IList<string> TaxonomyIds { get; set; }
     }
 }

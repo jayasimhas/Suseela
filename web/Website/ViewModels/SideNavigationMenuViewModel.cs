@@ -113,15 +113,12 @@ namespace Informa.Web.ViewModels
                         foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                         {
                             bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
-                            string linkId = string.Empty;
-                            string navigationLink = string.Empty;
                             if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || isTopicsFollowing))
                             {
                                 var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
                                 if (!string.IsNullOrEmpty(channelName))
                                 {
-                                    linkId = isTopicsFollowing ? preference.Topics.FirstOrDefault(tp => tp.IsFollowing).TopicId : preference.ChannelId;
-                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(linkId) } });
+                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId) } });
                                 }
                             }
                         }

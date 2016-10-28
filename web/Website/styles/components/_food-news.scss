@@ -76,7 +76,7 @@
 	.pagination{
 		li{
 			> a{
-				background: url(/dist/img/pagination-arr.gif) no-repeat;
+				background: url(/dist/img/sprite-image.png) no-repeat;
 				height: 40px;
 				width: 40px;
 				overflow: hidden;
@@ -103,10 +103,10 @@
 			}
 		}
 		a.prev{ 
-			background-position: 0 0;
+			background-position: -4px -400px;
 		}
 		a.next{
-			background-position: -41px 0;
+			background-position: -45px -400px;
 		}
 		 
 			

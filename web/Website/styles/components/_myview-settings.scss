@@ -202,7 +202,7 @@
 							color: $color-white;
 						}
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+							background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 							height: 1.875rem;
 							width: 1.875rem;
 							border: none;
@@ -218,7 +218,7 @@
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 							height: 1.875rem;
 							width: 1.875rem;
 							display: inline-block;
@@ -346,13 +346,13 @@
 					}
 					& .accordionImg{
 						a{
-							background: url(/dist/img/accordion.png) no-repeat 0 -21px;
+							background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
 							height: 1.0625rem;
 							width: 2rem;
 							display: inline-block;
 							margin-right: 10%;
 							@include breakpoint('medium-small') {
-								background: url(/dist/img/mob-arrow.png) no-repeat 0 -33px;
+								background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
 								height: 0.75rem;
 								width: 1.4375rem;
 								position: relative;
@@ -360,7 +360,7 @@
 								&.expanded{
 									position: relative;
 									left: 0;
-									background-position: 0 0; 
+									background-position: 0 -48px !important; 
 								}
 							}
 							@media screen and (min-width: 667px) and (max-width: 767px){
@@ -665,12 +665,12 @@
 			margin-top: -0.5rem;
 			
 			.unfollowAllBtn{
-				background-position: 0 0;
+				background-position: -3px -236px;
 				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
 			} 
 			.followAllBtn{
-				background-position: 0 -31px;
+				background-position: -3px -266px;
 				text-indent: -124px;
 				border: none !important;
 				&.fr{float: right !important;}
@@ -690,18 +690,17 @@
 	.smfollowingBtn{
 		margin: 0.1rem 0;
 		span{
-			background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
 			border: none;
 			height: 30px !important;
 			width: 30px !important;
 			line-height: 1.75rem !important;
 			&.unfollowAllBtn{
-				background-position: 0 0;
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
 			} 
 			&.followAllBtn{
-				background-position: 0 -31px;
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 				text-indent: -124px;
 				border: none !important;
 			}
