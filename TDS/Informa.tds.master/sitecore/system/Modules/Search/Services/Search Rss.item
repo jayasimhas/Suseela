@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {9E433810-8EAD-46FB-82DF-30CAD82BFC0E}
+database: master
+path: /sitecore/system/Modules/Search/Services/Search Rss
+parent: {A317D4C2-D4CC-44D2-9536-4255818FE42A}
+name: Search Rss
+master: {00000000-0000-0000-0000-000000000000}
+template: {0175C257-55F5-47D3-B34D-45022F16F1B0}
+templatekey: Search
+
+----version----
+language: en
+version: 1
+revision: b5a54b71-2238-4db4-a5cb-39425fdbcdbc
+
+----field----
+field: {9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}
+name: Items Per Page
+key: items per page
+content-length: 2
+
+20
+----field----
+field: {040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}
+name: Default Sort Order
+key: default sort order
+content-length: 38
+
+{D0C5A48B-EF28-458C-A852-09982B5CCA8A}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 6
+
+Search
+----field----
+field: {3DD8AA26-2B10-4305-831C-7FCC78A674BE}
+name: Refinements
+key: refinements
+content-length: 467
+
+{6D23375A-C440-42E3-A6BC-1F5EB1675A0F}|{AA02780C-8AE4-468E-AF15-92C5A8FB9201}|{07F3807B-89BD-4867-9342-9F9838189C58}|{1193A929-0071-4625-8015-D500AD4D7B6E}|{748ECD8F-3161-4449-8736-028D37BB4F63}|{F0379076-A880-47B3-B72A-D23930320046}|{F22AEF2E-12A2-4F54-A79C-F92D64675FB9}|{B09AEDF8-FAEA-43E1-BE86-67FF6DFE8FE9}|{61F315EF-8F5E-4CC2-8C2B-FA4EB9DF7A03}|{4AD31B17-9370-486E-95E3-EFA21362DAA0}|{00D42A79-03DE-4504-B2E0-6AFAF1ECFC33}|{3304B9BB-7884-41D0-AE56-91E9E041CCDD}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T180639Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b5a54b71-2238-4db4-a5cb-39425fdbcdbc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160613T164731Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

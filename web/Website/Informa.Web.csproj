@@ -1707,9 +1707,6 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1725,7 +1722,6 @@
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\components\article-sidebar-component.js" />
@@ -1830,20 +1826,6 @@
     <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1962,12 +1944,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="Content\" />
     <Folder Include="CustomMvc\Parsers\" />
+    <Folder Include="fonts\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\datatools\" />
     <Folder Include="js\search\services\" />
     <Folder Include="NWebsecConfig\" />
     <Folder Include="packages\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\InformaBaseSearch\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
@@ -2142,7 +2127,6 @@
     <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\TableauDashboard.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMChartDashboard.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Components\DataTools\DataToolTags.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolPrologue.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolPrologueEmail.cshtml" />
@@ -2152,7 +2136,6 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
-    <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailCompany.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailDeal.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealShare.cshtml" />

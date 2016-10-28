@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {60A4E045-5566-48C9-B2A2-A35E8235B7E5}
+database: master
+path: /sitecore/content/Agri/Commodities/Globals/Navigation/Side Nav Menu/Commodities/Sugar
+parent: {EF799369-D11A-47F7-B8A4-964A30AA977F}
+name: Sugar
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----version----
+language: en
+version: 1
+revision: b3e99a44-c558-4be8-8ff7-d45d8af4d67a
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 114
+
+<link text="" linktype="internal" class="" title=""  querystring="" id="{BC876A40-0B45-41B1-B268-1E1A7532E9EC}" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 5
+
+Sugar
+----field----
+field: {BBFBB899-20C6-43BC-B6DE-021E84CD5BB6}
+name: Navigation Code
+key: navigation code
+content-length: 3
+
+SUG
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160927T142031Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b3e99a44-c558-4be8-8ff7-d45d8af4d67a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161018T090326Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

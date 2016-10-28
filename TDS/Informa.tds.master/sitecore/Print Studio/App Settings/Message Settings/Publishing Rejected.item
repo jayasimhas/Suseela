@@ -1,0 +1,191 @@
+----item----
+version: 1
+id: {73629F18-2946-4CFA-BDE2-037CD121B8B7}
+database: master
+path: /sitecore/Print Studio/App Settings/Message Settings/Publishing Rejected
+parent: {D277E72F-7D7A-4671-A0EE-FB4FABCC20FB}
+name: Publishing Rejected
+master: {00000000-0000-0000-0000-000000000000}
+template: {EEA84C1F-59B6-440E-8518-4BCB510F779E}
+templatekey: Print Studio RichText Message
+
+----version----
+language: de-DE
+version: 1
+revision: 6d19e813-8495-4566-a11a-e5c2db00091b
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 180
+
+<p>Verehrter/Verehrte {0},</p>
+    <p>Ihr Dokument konnte nicht veröffentlicht werden. Es ist beschädigt oder die Verbindung wurde unterbrochen. Bitte versuchen Sie es erneut.</p>
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 26
+
+Veröffentlichung Abgelehnt
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142225Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6d19e813-8495-4566-a11a-e5c2db00091b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135328Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 35682adf-8e14-4afb-aabb-ec09d805ea9f
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 130
+
+
+		<p>Dear {0},</p>
+    <p>Your document could not be published. It is damaged or the connection was lost. Please try again.</p>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20100618T095000
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+35682adf-8e14-4afb-aabb-ec09d805ea9f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20100618T095129:634124514890927560
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
+----version----
+language: ja-JP
+version: 1
+revision: afdfe52f-706a-4e5a-ab22-e6784a5f9dc0
+
+----field----
+field: {2D1B5357-7774-4737-AD48-83E700F924C9}
+name: Message
+key: message
+content-length: 79
+
+<p>{0} 様</p>
+    <p>ドキュメントをパブリッシュできませんでした。画像が壊れているか、接続が失われました。もう一度お試しください。</p>
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 14
+
+パブリッシュは拒否されました
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142318Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+afdfe52f-706a-4e5a-ab22-e6784a5f9dc0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135407Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

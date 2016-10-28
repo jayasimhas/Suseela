@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {F1E31E55-B32B-4443-AACF-A4207DF508D7}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/06/Litigation problems fade against earnings growth at Murex
+parent: {9649877C-55FC-4D13-B731-E8CE877A1D04}
+name: Litigation problems fade against earnings growth at Murex
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 81934149-ad05-4317-b7c5-b173ee86ca0c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 277
+
+<p>The legal defeats and depressed share price which plagued International Murex Technologies (Canada) in 1994 appear to have masked a healthy growth in business. Revenues during the year rose 28% to $102 million while net income was up more than fivefold at $14.2 million.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Litigation problems fade against earnings growth at Murex
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3531
+
+<p>The legal defeats and depressed share price which plagued International Murex Technologies (Canada) in 1994 appear to have masked a healthy growth in business. Revenues during the year rose 28% to $102 million while net income was up more than fivefold at $14.2 million.</p><pre>International Murex Technologies results ($ millions) Three months Year Revenues 1994 1993 1994 1993 Product sales 26.88 18.70 93.19 79.69 Licence fees/other - - 9.25 0.04 Total 26.88 18.70 102.44 79.25 Net income 1.78 1.77 14.22 2.67</pre><p>The improvement largely reflects $13 million in cash and licence fees received from <strong>[C#198600101:Abbott]</strong> under a May 1994 agreement between the two companies (see Clinica No 602, p 1). Product sales also rose sharply though, driven by the launch of Murex' Sample Addition Monitor and HCV Serotyping test, and the hiring of more sales staff in Germany and eastern Europe, according to president and CEO David Tholen.</p><p>still weighed down</p><p>However, Murex still has its problems, the largest of which is the continuing patent battle with Chiron over hepatitis C tests. Legal expenses rose $2.6 million during the year but Murex was still eventually enjoined from manufacturing or selling HCV test kits, other than serotype tests, in both the UK and Germany (see Clinica Nos 632, p 13 and 635, p 14). The company has appealed - the UK case is scheduled for October - but it has also set aside an undisclosed sum for damages should it lose.</p><p>HCV kits accounted for just 10% of Murex' sales and a programme in the fourth quarter of 1994 enabling customers to purchase additional stocks of the kits prior to the court decisions boosted turnover by $3 million. However, Mr Tholen admits he is frustrated by the litigation. "I don't think we should face each other in the courtroom," he told an analysts meeting in London last week. "We should be able to meet - although things might get a little heated - and sort things out."</p><p>The court battles may be one reason why Murex' share price remains depressed. Stock currently trades at some $3.50, having failed to rise on disclosure of the company's results, and Mr Tholen says he cannot understand why this should be. However, he points out that most healthcare shares are depressed because of the cost climate in Western countries and he adds: "We believe if we continue our performance our stock will rise." Murex is currently considering moving from the Amex stock exchange to Nasdaq.</p><p>new products</p><p>The company plans to become more heavily involved in DNA probe diagnostics - a market it estimates will be worth $1,000 million worldwide by 1997. This will partly be via Digene, the US company in which Murex bought an 8% stake for $3 million last year. This investment is already worth some $7.5 million, says Mr Tholen. Further equity stakes may be taken, he adds, but Murex will not buy Digene outright. Other technologies being developed by Murex include ICE (immune capture enzyme immunoassay) and agglutination.</p><pre>Murex' forthcoming product/technology launches Core technology Disease/infection Target date DNA probe Chlamydia/gonorrhoea 1996 - 2Q Tuberculosis 1996 Immune capture enzyme HIV 1/2 & subtype O 1995 - 2Q immunoassay (including Hepatitis B core 1995 - 3Q sample addition monitor) HIV/HBc combination 1995 - 3Q HTLV 1/2 1995 - 4Q Syphilis 1996 - 2Q Serotyping HCV types 1-6 1995 - 3Q NB Murex estimates the microbiology/bacteriology/virology market at $3,000 million, growing at 5-8% pa.</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Litigation problems fade against earnings growth at Murex
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950306T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950306T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950306T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051785
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Litigation problems fade against earnings growth at Murex
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600101
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253554
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183950Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+81934149-ad05-4317-b7c5-b173ee86ca0c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183950Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

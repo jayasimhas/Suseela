@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {6BCC4ECA-2E47-4340-8E01-72D5D7311121}
+database: master
+path: /sitecore/templates/User Defined/Pages/Account/Contact Information Page/Contact Information Page/Update Email Help Text
+parent: {86652CD3-9DE0-4D1D-8FF5-77D9EF1937D6}
+name: Update Email Help Text
+master: {00000000-0000-0000-0000-000000000000}
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+
+----field----
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 9
+
+Rich Text
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+100
+----version----
+language: en
+version: 1
+revision: bdfd755f-bc4f-49f2-8fdc-90b1c9bf1e04
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160312T194351Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bdfd755f-bc4f-49f2-8fdc-90b1c9bf1e04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160312T194351Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

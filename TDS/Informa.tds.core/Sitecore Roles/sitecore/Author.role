@@ -1,0 +1,6 @@
+----role----
+name: sitecore\Author
+
+----role-in-role----
+rolename: sitecore\Developer
+

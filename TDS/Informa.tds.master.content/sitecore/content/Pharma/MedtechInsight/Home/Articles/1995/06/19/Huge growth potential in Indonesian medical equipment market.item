@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4BDE8CF1-9729-4BF0-BC16-6B717ED072F9}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/06/19/Huge growth potential in Indonesian medical equipment market
+parent: {5DC6D9B5-68F8-4FF3-87CE-D517338C2D12}
+name: Huge growth potential in Indonesian medical equipment market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 49f4bc5c-6509-44c0-933f-e110c82c1b9a
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 560
+
+<p>Substantial growth potential is identified in the Indonesian medical equipment and supplies market in a new country profile from MDIS. Despite dramatic expansion since the mid-1980s - and 10% average annual growth between 1991 and 1994 - today's $130 million market is still very small for a population which the WHO estimates at around 195 million, say the UK publishers. Family planning initiatives have curbed annual population growth to 1.8%, yet Indonesia's population - the fourth largest in the world - is poised to reach 200 million during 1996.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Huge growth potential in Indonesian medical equipment market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4543
+
+<p>Substantial growth potential is identified in the Indonesian medical equipment and supplies market in a new country profile from MDIS. Despite dramatic expansion since the mid-1980s - and 10% average annual growth between 1991 and 1994 - today's $130 million market is still very small for a population which the WHO estimates at around 195 million, say the UK publishers. Family planning initiatives have curbed annual population growth to 1.8%, yet Indonesia's population - the fourth largest in the world - is poised to reach 200 million during 1996.</p><p>The broader picture for healthcare is similarly promising, with the economic benefits of Indonesia's industrial transformation over the past 25 years expected to bring calls for improved welfare services in the medium term. The private healthcare sector is already experiencing rapid expansion, driven by a growing middle class (see Clinica No 637, pp 8-9). For the time being, however, the emphasis is still on improving the country's industrial, transport and communications infrastructure.</p><p>In keeping with the low priority still attached to social services, healthcare expenditure remains comparatively low, at around 2% of GDP. Public health expenditure accounts for about 35% of the total healthcare spend. Since fiscal 1992/93, central government's health budget has stood at around 1,076 billion rupiah ($483.9 million) per annum. Additional funding comes from the Presidential Instruction Funds (INPRES) for the development of primary healthcare, which in fiscal 1994/95 boosted funding by 497 billion rupiah.</p><p>The new national health system which is currently being established aims to organise healthcare provided by local, provincial and central government at three main levels: 1) community level - health centres; 2) district level - district general hospitals; and 3) provincial level - provincial and teaching hospitals.</p><pre>INDONESIAN MEDICAL STATISTICS Population (1993) 189.1 million* Population growth 1.8% Health expenditure (1992 est) $2,500 million Health expenditure as % of GDP 2.0% Medical device market (1994) $130 million *Official government estimate; some bodies such as the WHO estimate around 195m.</pre><p>imports still dominant</p><p>Imports still make up 90% of the medical equipment and supplies market. Domestic production is minimal, with the exception of syringes, bandages & dressings and surgical gloves, which represent Indonesia's only trade surplus in the medical field.</p><p>The leading syringe producer is Igar Jaya, which manufactures Mediject disposable syringes in addition to infusion/transfusion sets, needle collectors and urine bags. Medical products generated around $1.56 million of the Jakarta-based company's $12 million turnover in 1992.</p><p>As industrialisation gathers further momentum, it is expected that local manufacturers will increasingly turn to more technologically complex equipment, possibly assisted by Japanese investment.</p><p>In autumn 1992, French X-ray equipment manufacturer Trophy Radiologie unveiled plans for a joint venture in Indonesia, a project with estimated funding of Fr 15 million ($3.1 million). The proposed plant, the first of its kind in the country, has a projected annual capacity of 300 units. Other multinationals with local manufacturing operations include 3M, Bausch & Lomb and Ciba-Geigy (PT Candra Sari).</p><p>In November 1994, the Japanese non-wovens manufacturer, Hogy Medical, announced it was setting up a 100%-owned subsidiary at a cost of $1.5 million. Hogy Indonesia plans to export around 5 million surgical gowns to Japan, with production starting in January 1996.</p><p>Imports of medical equipment and supplies were set to top $100 million last year, having risen by 10% on 1993 levels. This level of imports is low in relation to the population, leading to predictions of substantial growth in the next five years.</p><pre>BALANCE OF TRADE IN MEDICAL DEVICES 1993 ($ MILLIONS) SELECTED PRODUCTS IMPORTS EXPORTS BALANCE ECGs & electrodiagnostic 17.2 0 (17.2) X-ray devices & related 20.1 0 (20.1) Dental devices 1.2 0.6 (0.6) Syringes, needles & catheters 12.5 0.7 (11.9) Ophthalmic instruments 0.3 0 (0.3) Other medical instruments 23.7 0 (23.7) Orthopaedic implants 0.1 0 (0.1) Bandages & dressings 0.7 0.9 0.2 TOTAL MEDICAL DEVICES 96.7 2.3 (94.4)</pre><p>* This 23-page profile of Indonesia is included in Medistat, published by MDIS Publications. For further details, contact Clinica Reports. Tel +44 (181) 948 3262. Fax: +44 (181) 948 6866.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{9C44D781-BA9D-40E0-AD1C-02E7C02607EE}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Huge growth potential in Indonesian medical equipment market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950619T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950619T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950619T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053147
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Huge growth potential in Indonesian medical equipment market
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254956
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184414Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+49f4bc5c-6509-44c0-933f-e110c82c1b9a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

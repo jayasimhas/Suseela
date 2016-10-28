@@ -1,0 +1,91 @@
+----item----
+version: 1
+id: {32DF4E55-BA5F-4B42-961A-A3221BFCBF78}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/RSS Feeds/PageAssets/RSS Feeds
+parent: {762F7275-215B-4F2B-A720-8FA6CF2B2167}
+name: RSS Feeds
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: d37266be-58f7-4715-8021-a8e4d714dce9
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 2759
+
+<p><strong>Important!</strong>&nbsp; As of 24 April 2016, Scrip RSS feeds have changed.&nbsp; If you use existing RSS feeds, please update your feeds.</p>
+<p>RSS Feeds are a simple and convenient way to receive global news, analysis and opinion for the pharma industry. It is a unique tool that allows you to receive the latest Scrip headlines all in one place without having to visit the website. The new Scrip website has a range of feeds you can chose from, simply make your selection below</p>
+<h2><img alt="RSS" src="-/media/23cdbc2815ac48d78542d073eadaa519.ashx?h=25&amp;w=25" style="height: 25px; width: 25px;" />&nbsp;Available Standard Feeds</h2>
+<h3>Latest content</h3>
+<ul>
+    <li><a href="https://feeds.feedblitz.com/scrip">All the latest Scrip content</a></li>
+</ul>
+<h3>Topics</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-approvals" target="_blank">Approvals</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-clinical-trials" target="_blank">Clinical Trials</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-companies" target="_blank">Companies</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-deals" target="_blank">Deals</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-regulation" target="_blank">Regulation</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-strategy" target="_blank">Strategy</a></li>
+</ul>
+<h3>Therapy Areas</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-cancer" target="_blank">Cancer</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-neurology" target="_blank">Neurology</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-orthopedics" target="_blank">Orthopedics</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-infectious-diseases">Infectious Diseases</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-cardiovascular" target="_blank">Cardiovascular</a></li>
+    <li><a href="http://feeds.feedblitz.com/metabolic-disorders" target="_blank">Metabolic Disorders</a>
+    </li>
+</ul>
+<h3>Regions</h3>
+<ul>
+    <li><a href="http://feeds.feedblitz.com/scrip-asia-pacific" target="_blank">Asia Pacific</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-europe" target="_blank">Europe</a></li>
+    <li><a href="http://feeds.feedblitz.com/scrip-north-america" target="_blank">North America</a></li>
+</ul>
+<p>In addition to the standard feeds, you can create your own RSS feeds through our <a href="https://scrip.pharmamedtechbi.com/search">search</a> functions. This will allow you to always be in control of what information you need and the format you desire.</p>
+<p>Having difficulties? Contact <a href="https://scrip.pharmamedtechbi.com/customer-support">customer support</a> and we'll be happy to help.</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160422T140537Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 17
+
+sitecore\ctrudeau
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d37266be-58f7-4715-8021-a8e4d714dce9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160424T183752Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby

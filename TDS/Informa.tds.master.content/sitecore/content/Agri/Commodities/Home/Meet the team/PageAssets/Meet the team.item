@@ -1,0 +1,447 @@
+----item----
+version: 1
+id: {27CD00D8-2A1E-454E-8DA0-139F72454307}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Meet the team/PageAssets/Meet the team
+parent: {3616ABAF-0106-4A95-A7F4-2469EAACC57F}
+name: Meet the team
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: 47ecf68f-40b5-4d9d-b29d-a73912241c68
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 32168
+
+<p>commodities</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices sem quam, ac condimentum justo sodales vitae. Suspendisse rutrum est in ex fringilla, vitae tristique lacus eleifend. Cras sed nunc et orci ullamcorper laoreet a sit amet nulla. Sed varius ex non nunc maximus eleifend. Vivamus imperdiet et turpis ac tincidunt. Mauris velit magna, congue sit amet dui ac, efficitur dignissim leo. Aenean fringilla metus at ligula consequat rhoncus.
+Nam posuere, metus quis tincidunt euismod, justo mauris maximus libero, ac finibus libero augue a dolor. Maecenas elementum, quam quis volutpat fermentum, dui arcu ornare ipsum, ut pretium ex dolor eget nisl. Vivamus rutrum risus nulla, eu venenatis nibh iaculis id. Nunc gravida, ipsum finibus porta eleifend, ipsum lacus fringilla massa, ac maximus lacus ligula sed ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eleifend mi sit amet ligula posuere consectetur. Etiam convallis risus in aliquam faucibus. Nulla non nunc fermentum, pharetra orci a, tempus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec sodales purus, vitae commodo felis. Etiam pretium, tellus vitae imperdiet vehicula, lectus eros maximus ipsum, quis congue erat lacus ut massa.
+Phasellus ornare dapibus commodo. Fusce bibendum, mauris nec elementum tristique, quam ex varius tellus, a suscipit velit ante scelerisque elit. Vivamus bibendum aliquet pulvinar. Integer dapibus, tellus id tincidunt euismod, nibh justo suscipit velit, sit amet congue nisi nunc ut mauris. Proin id enim risus. Vestibulum magna felis, dapibus ac ligula non, porta pretium risus. Donec dictum ligula sem, nec mollis orci maximus eu. Sed finibus vitae dui vel tincidunt. Sed nisi tortor, egestas sed ex venenatis, gravida hendrerit nunc. Mauris ut aliquam felis. Maecenas a scelerisque tellus. Donec vulputate, lectus dapibus vulputate venenatis, quam odio egestas diam, nec mattis turpis ligula a massa. Cras mattis vehicula urna, in consequat ipsum imperdiet ac.
+Nam facilisis tellus vel rhoncus scelerisque. Aliquam purus erat, varius non lobortis vel, gravida vel nulla. Pellentesque condimentum, magna eu viverra commodo, lectus ipsum consequat arcu, aliquet luctus velit elit vel ex. Donec et massa bibendum, blandit mi elementum, venenatis mauris. Aenean nisi lacus, dapibus ac sem a, tristique consequat velit. Etiam eleifend quam facilisis eros accumsan, in dignissim lectus scelerisque. Praesent tempus feugiat urna. Nam tempor cursus enim, non congue mauris consequat ac. Sed et sapien vitae dolor blandit lacinia. Aenean nunc tellus, eleifend vitae est in, condimentum congue erat. Vestibulum ut fringilla nisl. Maecenas et turpis sit amet lacus volutpat placerat a nec dui. Fusce nec elementum neque. Sed aliquam nulla ut porta aliquam.
+<p>&nbsp;</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="10">
+    <tbody>
+        <tr valign="top">
+            <td colspan="3">
+            &nbsp; <br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="width: 20%;"><img style="height: 200px; width: 200px;" alt="Eleanor Malone" src="-/media/544190107a614f658dabb2d85d07f57a.ashx?h=200&amp;w=200" /></td>
+            <td valign="top" style="width: 20%;">
+            <h4>Eleanor Malone</h4>
+            <p><a href="mailto:Eleanor.Malone@informa.com&lt;">Eleanor.Malone@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripEleanor">@ScripEleanor</a></p>
+            </td>
+            <td valign="top" style="width: 50%;">
+            <p>
+            Eleanor has been editor of Scrip since 2014. She has more than 15 years' experience writing specialist news and analysis for and about the biopharma industry. She holds an MA in modern languages from the University of Edinburgh. Based in London, she appears regularly on TV and radio and conference panels to discuss matters related to the industry.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            &nbsp; <br />
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            <h3>EUROPE</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            &nbsp; <br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="200" alt="Alex Shimmings" src="-/media/fc3d9bfe9b0246b1a3b1febeb4d3ec73.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Alexandra Shimmings</h4>
+            <p><a href="mailto:alex.shimmings@informa.com&lt;">Alex.Shimmings@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripAlexS">@ScripAlexS</a></p>
+            </td>
+            <td valign="top">
+            <p>Alexandra has more than 20 years' experience covering pharmaceutical and biotech R&amp;D. An early interest in medicine, and a dawning realization that being a doctor was not for her, led to a degree in Biochemistry and Microbiology at the University of Leeds, and a move to London to pursue a career in medical journalism. Now Scrip's Managing Editor, Alex has held a variety of roles on the publication since starting as a science reporter in 1998. She instigated some of Scrip's signature features, such as the Pipeline Watch and New Active Substance lists, and also casts an editorial eye over the annual Scrip Awards. Alex's main work interests lie in novel drugs and pharmaceutical and biotech R&amp;D, and she also enjoys medical history and current affairs.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="Francesca Bruce" src="-/media/20069cb1dd4c4789893fb63bf035fa4d.ashx?h=200&amp;w=200" style="height: 200px; width: 200px;" /></td>
+            <td valign="top">
+            <h4>Francesca Bruce</h4>
+            <p><a href="mailto:Francesca.Bruce@informa.com&lt;">Francesca.Bruce@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripFrancesca">@ScripFrancesca</a></p>
+            </td>
+            <td valign="top">
+            <p>Francesca Bruce has been writing news and analysis about all things affecting the pharmaceutical industry since 2008. She has paid special attention to policy and regulatory developments but particularly likes to write about market access and how medicines may  - or may not  -  make it to patients. She generally writes about Europe, but really enjoys uncovering news from further corners of the globe, especially Latin America and the Middle East.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/e4a4eb46627b4149aa175178b86d70cb.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Ian Schofield</h4>
+            <p><a href="mailto:ian.schofield@informa.com">Ian.Schofield@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripIanS">@ScripIanS</a></p>
+            </td>
+            <td valign="top">
+            <p>Ian Schofield writes on a range of issues affecting the pharmaceutical industry, with a focus on EU and global regulatory, political and scientific affairs. Having graduated in modern languages at the University of Bath in 1979, he worked in the European travel industry before joining Scrip World Pharmaceutical News as a reporter in 1985, covering the French and Italian markets. He later became Deputy Editor with responsibility for EU regulatory affairs, a post he held until 2005 when he took on the role of Consultant Editor to a number of Informa publications including Scrip and the Regulatory Affairs Journal. In July 2008 Ian became a Principal Analyst for Informa Business Information, covering global regulatory and legal issues in areas such as clinical trials, bioisimilars, orphan drugs, and pricing and reimbursement. As well as writing news, features and analysis for Scrip, Scrip Regulatory Affairs, the Pink Sheet and In Vivo, Ian is part of the Ask the Analyst team that produces on-demand tailored reports for subscribers.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img style="height: 200px; width: 200px;" alt="Jo Shorthouse" src="-/media/b69cc8648ad14b6eb2714b9e6c7463f6.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Jo Shorthouse </h4>
+            <p><a href="mailto:joanne.shorthouse@informa.com&lt;">Joanne.Shorthouse@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripJo">@ScripJo</a></p>
+            </td>
+            <td valign="top">
+            <p>Jo Shorthouse is features editor for Scrip and manages the Scrip 100 publication. Jo has covered the biopharmaceutical industry and related service industries since 2008 when she edited Good Clinical Practice journal followed by Scrip Clinical Research. Before this, she worked at various publications covering topics such as chemical logistics, the advertising industry and the property market.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="200" alt="John Davis" src="-/media/f1a18f68e35f411985626231a060e25f.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>John Davis</h4>
+            <a href="mailto:john.davis@informa.com">John.Davis@informa.com</a>
+            </td>
+            <td valign="top">
+            <p>A journalist and editor for more than 30 years, John has a  broad interest in pharmaceuticals-related health care policy and breakthroughs  in scientific and medical research.&nbsp; He  has degrees in biology and biochemical pharmacology.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="200" alt="John Hodgson" src="-/media/0a8f9c66a05445a58c90683f7d3da268.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>John Hodgson</h4>
+            <p><a href="mailto:john.hodgson@informa.com">John.Hodgson@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripJohn">@ScripJohn</a></p>
+            </td>
+            <td valign="top">
+            <p>John is Data Editor, Pharma within Informa's Pharma Intelligence division. He honed skills as a writer, analyst and consultant, commentating on science and business in biotechnology over three decades. He prefers evidence to received wisdom, and believes that new is interesting but improved is better.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="199" alt="Lubna Ahmed" src="-/media/09ce6a6810cd4eff94063e40ad5563ad.ashx?h=199&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Lubna Ahmed</h4>
+            <p><a href="mailto:lubna.ahmed@informa.com">Lubna.Ahmed@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripLubna">@ScripLubna</a></p>
+            </td>
+            <td valign="top">
+            <p>Lubna Ahmed joined the Scrip editorial team in 2015 as a  shiny new graduate in human biology and journalism, an interesting combination  and perfect prologue to a career with Scrip. She is particularly interested in  digital medicine and technology, social media, and who is moving where within  the pharma industry. Lubna has a surprisingly large Twitter following for a  non-celebrity, and when she isn't reading, writing or editing pharma-related  news and analysis, she can be found eating chocolate and composing tweets to  keep the Twittersphere entertained.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="200" alt="Lucie Ellis" src="-/media/9b03f187c49649a2a34f42ade64e88b9.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Lucie Ellis</h4>
+            <p><a href="mailto:lucie.ellis@informa.com">Lucie.Ellis@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripLucie">@ScripLucie</a></p>
+            </td>
+            <td valign="top">
+            <p>Lucie Ellis, based in the UK, joined the Scrip team in 2012.  In her current position as a Creative Content Reporter, she is focused on  introducing innovative and imaginative ways to display content on the web. As a  reporter covering the pharma and biotech world, Lucie understandably spends a  lot of her time writing about drugs and money or Googling abbreviations.  However she has a particular interest in employment trends, social and digital  media use by industry, patient-centricity, big data, and clinical research in  the metabolic and CNS fields. Lucie enjoys traveling and can often be seen out  and about at industry events across the globe as Scrip&rsquo;s roving reporter.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/06f683906ca24ffeade0a6392d7e79f0.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Peter Charlish</h4>
+            <p><a href="mailto:peter.charlish@informa.com">Peter.Charlish@informa.com</a></p>
+            <p><a href="http://www.twitter.com/petercharlish">@PeterCharlish</a></p>
+            </td>
+            <td valign="top">
+            <p>Peter originally trained as a pharmacologist and has been following the fortunes of the pharmaceutical and medtech industries for over 35 years. During that time he has interviewed many people, attended many conferences and trade shows, and has visited companies large and small. He has written items for newsletters, feature articles for magazines, as well as longer in-depth reports. He has also spoken on healthcare-related matters at a number of international conferences. Out of all that has come a passion to understand what drives individuals and organisations to push back the frontiers of knowledge for the overall benefit of mankind. In his spare time he likes to complain about falling standards (grammar, manners, road users who don't indicate), and he has little time for those who use management gobbledegook.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/795f6685b79c4abaa26dc3f7fd02d97f.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Sten Stovall</h4>
+            <p><a href="mailto:sten.stovall@informa.com">Sten.Stovall@informa.com</a></p>
+            <p><a href="http://www.twitter.com/StenStovall">@StenStovall</a></p>
+            </td>
+            <td valign="top">
+            <p>Sten Stovall is a London-based editor and writer with 40 years of experience in the field of journalism, including more than 20 years with Reuters and eight years with The Wall Street Journal/Dow Jones Newswires. He also has wide radio and television reporting experience and a solid network of contacts in the biopharma world. Sten is part of our team of specialist reporters, generating insightful features and analysis about R&amp;D, product development, regulatory issues and industry trends for publications such as "The Pink Sheet", Scrip and IN VIVO.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="200" alt="Sukaina Virji" src="-/media/aacd960e130b4fc88c2ccb53a09728e6.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Sukaina Virji</h4>
+            <p><a href="mailto:sukaina.virji@informa.com">Sukaina.Virji@informa.com</a></p>
+            <p><a href="http://www.twitter.com/StenStovall">@ScripSuki</a></p>
+            </td>
+            <td valign="top">
+            <p>Sukaina has been reporting on all aspects of the  pharmaceutical and biotechnology space since 2000. In her role as News Editor,  she is tasked with ensuring Scrip continues to provide the business critical  information that its subscribers rely on. Sukaina's prior positions include  Editor of the newsletter BioVenture View and the magazine BioPeople. She has a  PhD in biochemistry and molecular biology from University College London. Based  in the UK, Sukaina is often asked to appear on TV and radio to commentate on  business and R&amp;D strategy related to the industry.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            <h3>U.S.</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="198" alt="Donna Young" src="-/media/0d093e91790d40c0a1cbad8a86058368.ashx?h=198&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Donna Young</h4>
+            <p><a href="mailto:donna.young@informa.com">Donna.Young@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripDonnaDC">@ScripDonnaDC</a></p>
+            </td>
+            <td valign="top">Donna Young covers all Washington biopharma-related regulatory, legislative, legal and political news and writes the weekly US Capitol Capsule column. Donna has covered health care, science and legal news from Washington for more than 15 years. She has extensive knowledge of the FDA, the NIH and other federal agencies, including the US Patent &amp; Trademark Office, as well as the US federal court system - reporting from the Supreme Court and the Federal Circuit. Donna also frequently covers hearings on Capitol Hill and events at the White House. She is very active on Twitter at @ScripDonnaDC - tweeting press conferences, government meetings and other live events.</td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img style="height: 200px; width: 200px;" alt="Emily Hayes" src="-/media/5035e64ee118499086dc085a02714a9b.ashx?h=200&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Emily Hayes</h4>
+            <p><a href="mailto:emily.hayes@informa.com">Emily.Hayes@informa.com</a></p>
+            <p><a href="http://www.twitter.com/emilykatehayes">@EmilyKateHayes</a></p>
+            </td>
+            <td valign="top">
+            <p>Emily Hayes is a  writer/editor with over 20 years&rsquo; experience in medical journalism, including  magazines for specialist clinicians, government health publications, business  newswires and pharma trade press.&nbsp; Her  educational background lies in journalism and political science. Emily has dual  citizenship and has experience working in the UK and US. Since 2008, she has been  a senior writer on staff with &ldquo;The Pink Sheet,&rdquo; working out of her home base in  biopharma hub San Francisco. She enjoys covering drug development, with special  areas of focus in cancer, particularly immunotherapy, and  cardiology/metabolics. She covers major scientific meetings regularly, including  the American Society of Clinical Oncology, and appreciates interactions with  key opinion leaders while interpreting drug trial results. In her free time,  she is a professional jazz/blues/country vocalist.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/f16769b402a54d289e1c5733bc28e63e.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Jessica Merrill</h4>
+            <p><a href="mailto:jessica.merrill@informa.com">Jessica.Merrill@informa.com</a></p>
+            <p><a href="http://www.twitter.com/Jessicaemerrill">@Jessicaemerrill</a></p>
+            </td>
+            <td valign="top">
+            <p>Jessica Merrill is a Bureau Editor for US Commercial Content  for Informa&rsquo;s pharmaceutical news publications, including &ldquo;The Pink Sheet&rdquo; and  SCRIP. She has been covering the pharmaceutical industry as a journalist for  more than 10 years, spanning the spectrum from R&amp;D to regulatory to  commercial. She was previously a reporter and editor for &ldquo;The Pink Sheet&rdquo; and  &ldquo;Pink Sheet&rdquo; DAILY, specializing in business and commercial news, focusing  largely on big pharma, M&amp;A and business development, and the commercial landscape,  including drug launches and market access. Before embarking on a career in  healthcare journalism, she covered business news for the cosmetics industry and  worked as a newspaper reporter.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/2dfd7f29f0b74666aa324952e22f2cb0.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Joseph Haas</h4>
+            <p><a href="mailto:Joseph.Haas@informa.com">Joseph.Haas@informa.com</a></p>
+            </td>
+            <td valign="top">
+            <p>Joseph Haas is a senior writer for Informa&rsquo;s pharmaceutical  news publications, with more than eight years covering the biopharmaceutical  industry. He previously worked in public affairs for a real estate trade  association and wrote about housing and real estate before moving into  healthcare. Most recently, he was managing editor of a newsletter publisher,  leading its coverage of the implementation of the Medicare Part D prescription  drug benefit. Joe&rsquo;s areas of expertise include business development, mergers  and acquisitions, infectious diseases and liver diseases, including hepatitis  C, hepatitis B and non-alcoholic steatohepatitis (NASH). He edits the popular  Deal Watch column and enjoys profiling start-up companies.&nbsp; </p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/e34cc1335eda46739927ef9760dd75a3.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Lisa LaMotta</h4>
+            <p><a href="mailto:lisa.lamotta@informa.com">Lisa.Lamotta@informa.com</a></p>
+            <p><a href="http://www.twitter.com/BioWriterChik">@BioWriterChik</a></p>
+            </td>
+            <td valign="top">
+            <p>Lisa LaMotta is currently a senior writer with the pharma  commercial team at Informa. She has been covering the business of healthcare  for a decade for a range of prestigious publications, including Informa's own  "The Pink Sheet" and Scrip, as well as other major brands like  Forbes, Minyanville and PRWeek. Her experience ranges from the ins and outs of  pharmaceutical marketing to the diverse landscape of biopharma M&amp;A. While  Lisa has a particular interest in the areas of metabolic diseases, hemophilia  and specialty pharmaceuticals, her coverage has touched upon virtually every  therapeutic area. Lisa often engages with both the industry and readers, and  can be reached via her Twitter page @BioWriterChik.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/2df15f94da424db0ae2a6e495a6c4242.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Mandy Jackson</h4>
+            <p><a href="mailto:mandy.jackson@informa.com">Mandy.Jackson@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripMandy">@ScripMandy</a></p>
+            </td>
+            <td valign="top">
+            <p>Mandy Jackson is the US West Coast Editor for Scrip. Mandy  reports on daily biopharma news and regularly interviews everyone from big  pharma CEOs to biotech startup founders about the business strategy behind  their finance, dealmaking and drug development news. She also has an interest  in drug pricing and novel reimbursement strategies, new treatments in areas of  true unmet need, and business development trends. Mandy has been a business  news reporter for more than 15 years, covering biotech and pharma companies,  biotech law and commercial real estate. She is based in San Diego, California &ndash;  the venue for many medical and biopharma industry meetings.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/24451d12402340d780b78ababa8e29dd.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Mary Jo Laffler</h4>
+            <p><a href="mailto:maryjo.laffler@informa.com">Maryjo.Laffler@informa.com</a></p>
+            <p><a href="http://www.twitter.com/PinkSheetMaryJo">@PinkSheetMaryJo</a></p>
+            </td>
+            <td valign="top">
+            <p>Mary Jo Laffler is the US Head of Commercial Content for  Informa&rsquo;s pharmaceutical news publications, overseeing a group of talented  reporters and editors covering business, commercial and clinical news. She  brings 15 years of experience reporting on the pharmaceutical industry for &ldquo;The  Pink Sheet&rdquo; and affiliated publications, serving previously as Bureau Chief for  Clinical Development and Business News, Managing Editor of &ldquo;The Pink Sheet&rdquo; and  as one of the original Managing Editors for &ldquo;The Pink Sheet&rdquo; DAILY. While  wearing many hats has given Mary Jo a wide-ranging knowledge of the commercial  and regulatory challenges facing the pharmaceutical industry, her specialty is  in analyzing drug development news and R&amp;D strategy.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            <h3>ASIA</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="199" alt="Anju Ghanguarde" src="-/media/4bad91ac68d441cebb2a82b6254769cc.ashx?h=199&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Anju Ghangurde</h4>
+            <p><a href="mailto:anju.ghangurde@informa.com">Anju.Ghangurde@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripAnjuG">@ScripAnjuG</a></p>
+            </td>
+            <td valign="top">
+            <p>Anju Ghangurde is Scrip's South Asia Editor and has about  two decades of experience in journalism including stints at India's mainstream  financial dailies -The Economic Times, The Hindu Business Line and The  Financial Express.&nbsp; She covers a broad  range of issues including competition and collaboration between generics and  innovator firms, drug pricing and the evolving regulatory and legal framework  in the region. She is also a recipient of the British Chevening Scholarship for  Young Indian Journalists (2000-01) awarded by the Foreign &amp; Commonwealth  Office.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img width="200" height="199" alt="Ian Haydock" src="-/media/ca2bcc1ed1e24b31b20232fac99b25a5.ashx?h=199&amp;w=200" /></td>
+            <td valign="top">
+            <h4>Ian Haydock</h4>
+            <p><a href="mailto:ian.haydock@informa.com@">Ian.Haydock@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripIanHaydock">@ScripIanHaydock</a></p>
+            </td>
+            <td valign="top">
+            <p>Ian is head of pharma news content for the Asia-Pacific area and has been covering the region for more than 20 years as an editor for Scrip and more recently as managing editor of PharmAsia News. He has a long background in Asia, having grown up in Hong Kong, and a particular interest in regional regulatory harmonization and trade initiatives and the development of the Japanese pharma sector. Ian lives in Tokyo with his wife and two sons.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">
+            <h3>LEADERSHIP</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3">&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/1fdee75639b8491ebf047e2f8a1a3a24.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Mike Ward</h4>
+            <p><a href="mailto:Mike.Ward@informa.com">Mike.Ward@informa.com</a></p>
+            <p><a href="http://www.twitter.com/ScripMikeWard">@ScripMikeWard</a></p>
+            </td>
+            <td valign="top">
+            <p>Mike has been writing, analysing and commenting on the life  sciences industry for more than 30 years as a journalist and investment bank  analyst. He has focused on business models, R&amp;D strategies and how to  finance innovation, and is often called upon by the industry's key stakeholders  to provide thought leadership. In 2010 he was named European Mediscience  Commentator of the Year and has appeared on the shortlist for that award on  numerous occasions. When not commentating on all things pharma, Mike is engaged  actively in pub quizzes, either as a competitor or a compiler. He is also a  qualified FA soccer coach.</p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3"><hr />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"><img alt="" src="-/media/728bab97c8b645ddbcf95d02c45c4936.ashx?h=200&amp;w=200" style="width: 200px; height: 200px;" /></td>
+            <td valign="top">
+            <h4>Phil Jarvis</h4>
+            <p><a href="mailto:Phil.Jarvis@informa.com">Phil.Jarvis@informa.com</a></p>
+            </td>
+            <td valign="top">
+            <p>Phil graduated from The University of Bath in 1997 and  embarked on a brief career as a crop protection research scientist. In January  2000 Phil made a sideways jump into publishing, joining PJB Publications as a  report writer with the crop protection business. </p>
+            <p>    Since then Phil has built his knowledge of the publishing  business in a variety of content and commercial roles. In 2008 Phil moved to  Informa&rsquo;s Pharma business as publisher of Scrip. </p>
+            <p>  Phil now leads this business as &lsquo;Head of Insight&rsquo; for the  Pharma intelligence vertical within Informa&rsquo;s Business Intelligence division.  He works with colleagues across the vertical to deliver an integrated,  market-leading Pharma intelligence service encompassing insights, intelligence  and consulting.</p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160421T090142Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+47ecf68f-40b5-4d9d-b29d-a73912241c68
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160930T130423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

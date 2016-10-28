@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {392B6942-F16D-47EB-95A7-71EEC860374A}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/04/24/British In Vitro Diagnostics Association BIVDA hopes to raise UK industry profile
+parent: {3637D24F-1472-4E41-B5A6-816481061E2D}
+name: British In Vitro Diagnostics Association BIVDA hopes to raise UK industry profile
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 8dd5aad6-ad70-4e88-9279-bedcb9496742
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>The UK is strong on innovation but not on commercialising its R&D. Kit Madden, executive director of the British In Vitro Diagnostics Association, says virtually all the major in vitro diagnostic technologies introduced in the past 20 years have resulted from UK research. Yet few have have been commercialised by UK-owned companies.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 83
+
+British In Vitro Diagnostics Association (BIVDA) hopes to raise UK industry profile
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5200
+
+<p>The UK is strong on innovation but not on commercialising its R&D. Kit Madden, executive director of the British In Vitro Diagnostics Association, says virtually all the major in vitro diagnostic technologies introduced in the past 20 years have resulted from UK research. Yet few have have been commercialised by UK-owned companies.</p><p>Speaking at a press briefing in London this month, Mr Madden noted that the largest UK IVD company - Unipath - lags significantly behind the leading players in the sector worldwide, which is dominated by US and German companies (see table).</p><p>The UK market accounts for just 1.5%, or around $250 million, of the world market and is smaller than Germany, Italy, France and Spain.</p><pre>Global IVD market 1995 by region (estimated) $ millions % share N America 6,700 40% Europe 5,400 33% Japan 2,800 16% Rest of World 1,900 11% TOTAL 16,800 100% Source: BIVDA</pre><p>Expansion of the global market has slowed in the last 20 years from over 20% compound annual growth rates in the '70s to just 6-8%. Economic constraints and competitiveness in the industry have been limiting factors. The UK market has also seen a shift towards automation, thus requiring fewer skilled laboratory staff. NHS reforms have impacted the IVD market with greater emphasis being put on primary healthcare and more purchasing power being put in the hands of GPs.</p><p>Companies are adopting survival strategies to compete effectively in this changing market in which consolidation seems set to continue. Small companies, says Mr Madden, are focused on niche markets, are technology driven and provide development boutiques for the large concerns. The majority of their revenues are derived from licence agreements. Larger companies are multi- disciplined and operate on a global basis through strategic alliances.</p><pre>Top 10 IVD companies worldwide ($ millions) Company Country 1994 revenues Abbott US 2,500 Boehringer Mannheim Germany 1,633 J&J/Kodak US 1,350 Bayer Diagnostics Germany 1,050 Dade Diagnostics (formerly Baxter) US 745 Behring Diagnostics (Hoechst) Germany 700 Coulter Diagnostics US 615 Becton Dickinson US 600 Beckman US 500 bioMerieux France 460 Source: The Wilkerson Group</pre><p>The eventual implementation of the IVD Directive - due to be published in the Official Journal in the next six weeks - will be a key issue for the previously unregulated UK industry. Nevertheless, since most products (other than HIV and hepatitis tests) will be self-certifying, Mr Madden does not believe that compliance with the IVD Directive's requirements will be too onerous.</p><p>The IVD industry is attempting to improve its identity, both internally and externally. An independent audit of the European market is being undertaken in order to redress the current lack of accurate data. Public perceptions of the industry are being sought in a European-wide study. As more emphasis is placed on prevention than cure, the IVD industry will become an increasingly important sector of the healthcare industry, believes Mr Madden. Infectious diseases, oncology and genetic testing are viewed as growth areas.</p><p>Andy Anderson, Cellmark Diagnostics' sales and marketing manager, went as far as to suggest that genetics-based diagnostics will rival pharmaceuticals in market size. The Zeneca business unit aims at least to equal Unipath in turnover within the next few years. Cellmark entered the medical diagnostics field last year with the launch by Kodak Clinical Diagnostics (now part of Johnson & Johnson) of a cystic fibrosis test. Mr Anderson raised the issue of funding for genetic screening, noting that cost benefits must be demonstrated for all hospital departments involved.</p><p>Commercialisation of new technology has been slower than expected, noted George Zajicek, marketing director of Shield Diagnostics, citing DNA probes as an example. The OTC kit market has not grown as rapidly as predicted, largely as a result of reimbursement problems. Incstar's SalivaCard HIV test has OTC potential, believes Mervyn Nicholas, general manager of the Wokingham-based company. However, the test has yet to receive approval from the Central Virus Reference Laboratory before it can be marketed in the UK - sales and testing of HIV tests are limited by 1992 legislation.</p><p>academic innovation</p><p>One company which has benefited from innovation at British universities is IDS. Managing director Bill Cunningham, who is also BIVDA's chairman, highlighted the company's strong links with academic institutions which have led to commercial products. Most recently, IDS has signed a distribution agreement with <strong>[C#198601109:Hybritech]</strong> for a vitamin D test for which the essential chemistry was derived from research at the University of Manchester and polyclonal antibodies from London University.</p><p>Government initiatives, such as the DTI biotech programme, should help to stimulate further commercialisation of British academic research by UK companies. Industry has also been involved in other areas, with the creation of the Diagnostics Club four years ago to facilitate the transfer of technology from academia to manufacturers.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{05DE2CFA-EF60-455C-941D-84B3041F0A40}|{4A8776DE-66AB-4542-A464-96B948F54764}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 81
+
+British In Vitro Diagnostics Association BIVDA hopes to raise UK industry profile
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950424T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950424T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950424T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052337
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 83
+
+British In Vitro Diagnostics Association (BIVDA) hopes to raise UK industry profile
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198601109
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254106
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184137Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8dd5aad6-ad70-4e88-9279-bedcb9496742
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184137Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

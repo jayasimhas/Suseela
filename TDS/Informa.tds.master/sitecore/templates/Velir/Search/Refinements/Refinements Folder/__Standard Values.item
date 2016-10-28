@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {7A33A4A0-FFBC-4A5A-A7C2-ABB072D87EC7}
+database: master
+path: /sitecore/templates/Velir/Search/Refinements/Refinements Folder/__Standard Values
+parent: {0056B1AB-7661-4271-96C5-153CC73D3C6F}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {0056B1AB-7661-4271-96C5-153CC73D3C6F}
+templatekey: Refinements Folder
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 233
+
+{2463DE7D-4C6E-4E02-AB46-45833E0408C3}|{981413B1-9651-4B49-B356-D7B7FB9DD8F6}|{2CBB661F-2029-456E-9AE8-25194C3F425A}|{3E39F45D-DE43-410E-8E7E-F2F2B2BE07DB}|{EC9F61D5-4B55-4E71-8DFA-20A38D7499C2}|{89A08D1F-18DC-432A-9CE3-AFCBA7845E4D}
+----version----
+language: en
+version: 1
+revision: aa7c5f3f-d904-4429-97b6-c739e80bd1d2
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140814T140550
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+aa7c5f3f-d904-4429-97b6-c739e80bd1d2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140904T165801:635454466819135255
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

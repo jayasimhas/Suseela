@@ -1,0 +1,126 @@
+----item----
+version: 1
+id: {4F7C3AB5-4CD5-456F-AC04-DFCA5572DC44}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Terms and Conditions/PageAssets/Terms and Conditions
+parent: {6A37320B-6461-479B-8D2C-9CF81D7A5215}
+name: Terms and Conditions
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: 36b4d76b-4e2d-4e51-be81-bf4286e1ca81
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 11508
+
+<h2>Terms and Conditions of website use<!--2-->
+</h2>
+<h2 style="color: rgb(0, 0, 0); font-family: Arial, sans-serif;">commodities</h2><p style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255); margin-bottom: 15px; padding: 0px; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices sem quam, ac condimentum justo sodales vitae. Suspendisse rutrum est in ex fringilla, vitae tristique lacus eleifend. Cras sed nunc et orci ullamcorper laoreet a sit amet nulla. Sed varius ex non nunc maximus eleifend. Vivamus imperdiet et turpis ac tincidunt. Mauris velit magna, congue sit amet dui ac, efficitur dignissim leo. Aenean fringilla metus at ligula consequat rhoncus.</p><p style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255); margin-bottom: 15px; padding: 0px; text-align: justify;">Nam posuere, metus quis tincidunt euismod, justo mauris maximus libero, ac finibus libero augue a dolor. Maecenas elementum, quam quis volutpat fermentum, dui arcu ornare ipsum, ut pretium ex dolor eget nisl. Vivamus rutrum risus nulla, eu venenatis nibh iaculis id. Nunc gravida, ipsum finibus porta eleifend, ipsum lacus fringilla massa, ac maximus lacus ligula sed ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eleifend mi sit amet ligula posuere consectetur. Etiam convallis risus in aliquam faucibus. Nulla non nunc fermentum, pharetra orci a, tempus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec sodales purus, vitae commodo felis. Etiam pretium, tellus vitae imperdiet vehicula, lectus eros maximus ipsum, quis congue erat lacus ut massa.</p><p style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255); margin-bottom: 15px; padding: 0px; text-align: justify;">Phasellus ornare dapibus commodo. Fusce bibendum, mauris nec elementum tristique, quam ex varius tellus, a suscipit velit ante scelerisque elit. Vivamus bibendum aliquet pulvinar. Integer dapibus, tellus id tincidunt euismod, nibh justo suscipit velit, sit amet congue nisi nunc ut mauris. Proin id enim risus. Vestibulum magna felis, dapibus ac ligula non, porta pretium risus. Donec dictum ligula sem, nec mollis orci maximus eu. Sed finibus vitae dui vel tincidunt. Sed nisi tortor, egestas sed ex venenatis, gravida hendrerit nunc. Mauris ut aliquam felis. Maecenas a scelerisque tellus. Donec vulputate, lectus dapibus vulputate venenatis, quam odio egestas diam, nec mattis turpis ligula a massa. Cras mattis vehicula urna, in consequat ipsum imperdiet ac.</p><p style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255); margin-bottom: 15px; padding: 0px; text-align: justify;">Nam facilisis tellus vel rhoncus scelerisque. Aliquam purus erat, varius non lobortis vel, gravida vel nulla. Pellentesque condimentum, magna eu viverra commodo, lectus ipsum consequat arcu, aliquet luctus velit elit vel ex. Donec et massa bibendum, blandit mi elementum, venenatis mauris. Aenean nisi lacus, dapibus ac sem a, tristique consequat velit. Etiam eleifend quam facilisis eros accumsan, in dignissim lectus scelerisque. Praesent tempus feugiat urna. Nam tempor cursus enim, non congue mauris consequat ac. Sed et sapien vitae dolor blandit lacinia. Aenean nunc tellus, eleifend vitae est in, condimentum congue erat. Vestibulum ut fringilla nisl. Maecenas et turpis sit amet lacus volutpat placerat a nec dui. Fusce nec elementum neque. Sed aliquam nulla ut porta aliquam.</p>
+<h2>Information about us</h2>
+<p>
+Our site is operated by Informa UK Limited (“we”, “us” or “our”). We are registered in the United Kingdom under company number 1072954. Our registered office address is 5 Howick Place, London, SW1P 1WG.
+</p>
+<h2>Accessing our site</h2>
+<p>
+Access to our Site is provided on a temporary basis and we reserve the right to withdraw access to our Site or amend the service we provide on our Site without notice. We will not be liable if for any reason our Site is unavailable at any time or for any period.
+</p>
+<p>
+You are responsible for making all arrangements necessary for you to have access to our Site. You are also responsible for ensuring that all persons who access our Site through your internet connection are aware of these Terms, and that they comply with them. You agree not to damage, interfere with or disrupt access to the Site or do anything which may interrupt or impair its functionality.
+</p>
+<p>
+Anything on our Site may be out of date at any given time, and we are under no obligation to update it. We seek to ensure that information published on our Site is accurate when posted, but we cannot be held liable for its accuracy or timeliness and we may change the information at any time without notice. You must not rely on information on the Site and you acknowledge that you must take appropriate steps to verify this information before acting upon it.
+</p>
+<h2>Monitoring</h2>
+<p>
+We reserve the right to monitor and track your visits to the Site.
+</p>
+<h2>Intellectual property</h2>
+<p>
+We are the owner or the licensee of all copyright, trade marks, design rights, database rights, confidential information or any other intellectual property rights (together the Intellectual Property) in our Site. The Intellectual Property in our Site is protected by copyright and other intellectual property laws and treaties around the world. All such rights are reserved.
+</p>
+<h2>Licence</h2>
+<p>
+You are permitted to print and download extracts from the Site for your own use on the following basis:<br>
+(a) no documents or related graphics on the Site are modified in any way;<br>
+(b) no graphics on the Site are used separately from the corresponding text; and<br>
+(c) our copyright and trade mark notices and this permission notice appear in all copies.</p>
+<p>
+Unless otherwise stated, the copyright and other intellectual property rights in all material on the Site (including without limitation photographs and graphical images) are owned by us or our licensors. For the purposes of these Terms, any use of extracts from the Site other than in accordance with this licence for any purpose is prohibited. If you breach any of the terms in this legal notice, your permission to use the Site automatically terminates and you must immediately destroy any downloaded or printed extracts from the Site.
+</p>
+<p>
+Subject to this licence, no part of the Site may be reproduced or stored in any other website or included in any public or private electronic retrieval system or service without our prior written permission. Any rights not expressly granted in these terms are reserved. You agree not to adapt, alter or create a derivative work from any of the material contained in this Site or use it for any other purpose than for personal, non-commercial use.
+</p>
+<h2>Disclaimer</h2>
+<p>
+While we endeavour to ensure that the information on the Site is correct, we do not warrant the accuracy and completeness of the material on the Site. We may make changes to the material on the Site, at any time without notice. The material on the Site may be out of date, and we make no commitment to update such material.
+</p>
+<h2>Implied Terms</h2>
+<p>
+The material on the Site is provided "as is", without any conditions, warranties or other terms of any kind.
+</p>
+<p>
+We, any other party (whether or not involved in creating, producing, maintaining or delivering the Site), and any of our group companies and the officers, directors, employees, shareholders or agents of any of them, exclude all liability and responsibility for any amount or kind of loss or damage that may result to you or a third party (including without limitation, any direct, indirect, punitive or consequential loss or damages, or any loss of income, profits, goodwill, data, contracts, use of money, or loss or damages arising from or connected in any way to business interruption, and whether in tort (including without limitation negligence), contract or otherwise) in connection with the Site in any way or in connection with the use, inability to use or the results of use of the Site, any websites linked to the Site or the material on such websites, including but not limited to loss or damage due to viruses that may infect your computer equipment, software, data or other property on account of your access to, use of, or browsing the Site or your downloading of any material from the Site or any websites linked to the Site. Nothing in these Terms shall exclude or limit our liability for:<br>
+(a) death or personal injury caused by negligence (as such term is defined by the Unfair Contract Terms Act 1977); or<br>
+(b) fraud.</p>
+<h2>Investors</h2>
+<p>
+The information contained on our Site (including, without limitation, the financial information concerning us or our corporate group) is not an invitation to invest in shares or other securities, or any other products or services or otherwise deal in these or enter into a contract with us or any other company. The information provided should not be relied upon in connection with any investment decision. If you need advice, please consult with a professional financial adviser.
+</p>
+<p>
+The past performance of us or any other company referred to on the Site cannot be relied upon as a guide to its future performance. The price of shares and the income derived from them can go down as well as up and investors may not recoup the amount originally invested.
+</p>
+<p>
+Our Site contains certain forward-looking statements that are neither reported financial results nor other historical information. Because these forward-looking statements are subject to assumptions, risks and uncertainties, actual future results may differ materially from those expressed in or implied by such statements. Many of these assumptions, risks and uncertainties relate to factors that are beyond our ability to control or estimate precisely, such as delays in obtaining or adverse conditions contained in regulatory approvals, competition and industry restructuring, changes in economic conditions, currency fluctuations, changes in interest and tax rates, changes in laws, regulations or regulatory policies, developments in legal or public policy doctrines, technological developments, the availability of new acquisition opportunities or the timing and success of future acquisition opportunities. These forward-looking statements speak only as of the date of their publication on the Site. We do not undertake any obligation to publicly release any revisions to these forward-looking statements to reflect events or circumstances after the date of their publication on the Site.
+</p>
+<h2>Jurisdiction and applicable law</h2>
+<p>
+The English courts will have non-exclusive jurisdiction over any claim arising from, or related to, a visit to our Site, although we retain the right to bring proceedings against you for breach of these Terms in your country of residence or any other relevant country.
+</p>
+<p>
+These Terms and any dispute or claim arising out of or in connection with them or their subject matter or formation (including, without limitation, non-contractual disputes or claims) shall be governed by and construed in accordance with the laws of England and Wales.
+</p>
+<p>
+Thank you visiting our website.
+</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160408T012604Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+36b4d76b-4e2d-4e51-be81-bf4286e1ca81
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161001T063929Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

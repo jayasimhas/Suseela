@@ -1,0 +1,9 @@
+----role----
+name: sitecore\Sitecore Client Maintaining
+
+----role-in-role----
+rolename: sitecore\Developer
+
+----role-in-role----
+rolename: sitecore\Operations Access
+

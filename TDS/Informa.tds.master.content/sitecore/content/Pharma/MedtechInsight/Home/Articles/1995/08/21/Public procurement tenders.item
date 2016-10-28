@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {0D2EDAC5-124C-4422-A7C7-800C65349E6F}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/08/21/Public procurement tenders
+parent: {1070EFC8-DE03-49AD-9DF6-941A7663E237}
+name: Public procurement tenders
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: f5c5c3c3-7460-45ae-b219-bda99bc5c083
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 34
+
+<p>* Patient monitoring system</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 26
+
+Public procurement tenders
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5561
+
+<p>* Patient monitoring system</p><p>Takashi Watanabe, Director-General, Supplies Section, Administration Division, Medical Dept Hospital, Nagasaki University, 1-7-1 Sakamoto-cho, Nagasaki City, Nagasaki Prefecture 852, Japan.</p><p>Tel: +81 (958) 49 7219.</p><p>Deadline: September 29th, 1995.</p><p>* Digital endoscopy image filing system; critical care patient monitoring system</p><p>Minoru Sakamoto, Director-General, Supplies Section Administration Division, Medical Dept Hospital, Hirosaki University, 53 Hon-cho, Hirosaki City, Aomori Prefecture 036, Japan.</p><p>Tel: +81 (172) 336 5111.</p><p>Deadline: September 21st, 1995.</p><p>* Dental procedure monitoring system</p><p>Takao Kobayashi, Director-General, Administration Bureau, Hokkaido University, Nishi 5-chome, Kita 8-jo, Kita-ku, Sapporo City, Hokkaido 660, Japan.</p><p>Tel: +81 (11) 716 2111.</p><p>Deadline: September 21st, 1995.</p><p>* Medical, surgical & orthopaedic equipment; radiology & radiography apparatus</p><p>Hospital Central de la Cruz Roja de Madrid, Director Gerente, Avenida Reina Victoria 26, 28003 Madrid, Spain.</p><p>Tel: +34 (1) 533 39 00. Fax: +34 (1) 533 05 15.</p><p>Deadline: September 22nd, 1995.</p><p>* Medical, surgical & orthopaedic equipment (total estimated values: Pta 35,887,850, Pta 31,915,888, Pta 35,280,374, all excluding VAT); radiology & radiography apparatus (total estimated value: Pta 46,635,514, excluding VAT)</p><p>Insalud, Direccion Provincial de Baleares, c/ Reina Esclaramunda 9, 07003 Palma de Mallorca, Spain.</p><p>Tel: +34 (71) 17 56 03. Fax: +34 (71) 17 56 05.</p><p>Deadline: September 21st, 1995.* Specialised radiology & radiography apparatus (value: Lit 4,000 million)</p><p>Ospedale Maggiore, via F Sforza 28, 20122 Milan, Italy.</p><p>Tel: +39 (2) 550 31. Fax: +39 (2) 58 30 43 50.</p><p>Deadline: September 18th, 1995.</p><p>* Ultrasound imaging system</p><p>Yasumasa Ishibashi, Director, No 2 Materials & Supplies Section, Administration Division, Tokyo Communications Hospital, 2-14-23 Fujimi, Chiyoda-ku, Tokyo 102, Japan.</p><p>Tel: +81 (3) 3238 7170.</p><p>Deadline: September 29th, 1995.</p><p>* Cardiopulmonary monitoring system; EEG analysis system & polyography data</p><p>Kimihiro Itou, Director-General, Administration Bureau, Okayama University, 1-1-1 Naka, Tsushima, Okayama City, Okayama Prefecture 700, Japan.</p><p>Tel: +81 (862) 52 1111.</p><p>Deadline: September 18th, 1995.</p><p>* Repair & maintenance of medical & surgical equipment</p><p>Centre hospitalier regional d'Orleans, direction du plan et des travaux, 1 rue Porte Madeleine, BP 2439, 45032 Orleans Cedex 1, France.</p><p>Tel: +33 38 74 43 20. Fax: +33 38 74 45 85.</p><p>Deadline: September 15th, 1995.</p><p>* Pacemakers; pacemaker parts & accessories (total estimated value: FMk 2,500,000, excluding VAT)</p><p>Kuopion yliopistollinen sairaala, Hankintatoimisto, PL 1777, 70211 Kuopio, Finland.</p><p>Tel: +358 (71) 173 311. Fax: +358 (71) 172 017.</p><p>Deadline: September 22nd, 1995.</p><p>* Medical, surgical & orthopaedic equipment (value: Dr 360 million)</p><p>Ypourgeio Ygeias, Pronias kai Koinonikon Asfaliseon, Perfiereiako Geniko Nosokomeio Athinon, Tmima Oikonomikou, Ktirio Dioikisis, Grafeio Promitheion, Mesogeion 154, 11527 Cholargos Attikis, Greece.</p><p>Tel: +30 778 93 45.</p><p>Deadline: September 20th, 1995.</p><p>* Diagnostic radiology electrical apparatus & associated products (value: Lit 1,954,800,000); patient monitoring & other medical apparatus and associated installation services (value: Lit 2,992,500,000)</p><p>Provincia autonoma di Bolzano, Ripartizione 6, Amministrazione lavori pubblici e del patrimonio, via Crispi 3, 39100 Bolzano, Italy.</p><p>Tel: +39 (471) 99 22 82. Fax: +39 (471) 99 22 33.</p><p>Deadline: September 19th, 1995.</p><p>* Patient monitoring & other medical apparatus</p><p>Centre hospitalier universitaire de Toulouse direction des programmes d'equipement, Hotel-Dieu Saint-Jacques, 2 rue Viguerie, 31052 Toulouse Cedex, France.</p><p>Tel: +33 61 71 84 83. Fax: +33 61 77 84 75.</p><p>Deadline: September 18th, 1995.</p><p>* Medical drains & probes (ref 441/9511; overall estimated value: SKr 2,900,000, excluding VAT); unspecified medical products (ref 440/9511; overall estimated value: SKr 2,800,000, excluding VAT); catheters & accessories (ref 442/9511; overall estimated value: SKr 2,700,000, excluding VAT)</p><p>Akademiska Sjukhuset, Upphandlingsavdelningen, 75185 Uppsala, Sweden.</p><p>Tel: +46 (18) 66 30 00. Fax: +46 (18) 66 29 11.</p><p>Deadline: September 18th, 1995.</p><p>* X-ray therapy apparatus</p><p>LBK, Allgemeines Krankenhaus Atona, Einkauf Medizintechnik, Paul-Ehrlich-Strasse, 22763 Hamburg, Germany.</p><p>Tel: +49 (40) 88 20 70. Fax: +49 (40) 88 22 22 74.</p><p>Deadline: September 27th, 1995.</p><p>* Electro-diagnostic, UV & IR urology treatment apparatus (ref 17.S1.95)</p><p>Ministerio da Saude, Direccao Geral da Saude, Hospital de Pulido Valente, Servico de Aprovisionamento, Alameda das Linhas de Torres 117, Lisbon, Portugal.</p><p>Tel: +351 (1) 759 07 71. Fax: +351 (1) 759 07 71.</p><p>Deadline: September 16th, 1995.</p><p>* Radiology & radiography apparatus</p><p>Centre hospitalier de Coulommiers, rue Gabriel Peri, 77527 Coulommiers Cedex, France.</p><p>Tel: +33 64 65 37 00. Fax: +33 64 65 37 59. Deadline: September 22nd, 1995.</p><p>These tenders have appeared in the Official Journal of the European Communities, Supplement S. For further information on individual tenders, Clinica readers should contact the awarding authorities directly.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 389
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{9FB3D40B-7068-4C1F-8DA7-9C61F575EA21}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{1EECD1FE-0C7B-4F62-A9EE-379A866DB144}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{66ABB4F9-4184-420B-A97E-96A3B7728F78}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+Public procurement tenders
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950821T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950821T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950821T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054032
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 26
+
+Public procurement tenders
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255841
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184707Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f5c5c3c3-7460-45ae-b219-bda99bc5c083
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184707Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

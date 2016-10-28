@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {5A28C8A1-2FE7-4113-8146-B4FDD8157A70}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Clinica League Tables 2010  Imaging
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Clinica League Tables 2010  Imaging
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 4fe8720c-eae3-4578-af4d-187540107a26
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3814
+
+<p>  <tr> <td><b>FY 2009 Ranking</b></td> <td><b>Movement on previous year</b></td> <td><b>Company</b></td> <td><b>2009 Imaging sales (US$ million)</b></td> <td><b>2008 Imaging sales (US$ million)</b></td> <td><b>Notes</b></td> </tr> <tr> <td>1</td> <td>no change</td> <td><b>GE Healthcare</b></td> <td><b>10682.00</b></td> <td><b>11600.00</b></td> <td>Imaging equipment, imaging agents and service</td> </tr> <tr> <td>2</td> <td>no change</td> <td><b>Siemens Healthcare</b></td> <td><b>9974.39</b></td> <td><b>10021.30</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>3</td> <td>no change</td> <td><b>Philips</b></td> <td><b>4158.79</b></td> <td><b>4823.05</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>4</td> <td>no change</td> <td><b>Olympus Medical</b></td> <td><b>3752.66</b></td> <td><b>3723.13</b></td> <td>Medical Systems & Life Sciences segments</td> </tr> <tr> <td>5</td> <td>no change</td> <td><b>Fujifilm</b></td> <td><b>2823.73</b></td> <td><b>2617.06</b></td> <td>Medical Systems & Life Sciences segments</td> </tr> <tr> <td>6</td> <td>no change</td> <td><b>Carestream Health</b></td> <td><b>2318.68</b></td> <td><b>2501.87</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>7</td> <td>no change</td> <td><b>AGFA Healthcare</b></td> <td><b>1642.87</b></td> <td><b>1799.45</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>8</td> <td>up (+2)</td> <td><b>Hitachi Medical</b></td> <td><b>1169.92</b></td> <td><b>1013.50</b></td> <td>No breakdown available. Estimated as 12.59% of total electronic systems and equipment segment (as for FY2008)</td> </tr> <tr> <td>9</td> <td>no change</td> <td><b>Covidien</b></td> <td><b>1147.00</b></td> <td><b>1194.00</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>10</td> <td>down (-2)</td> <td><b>Konica Minolta</b></td> <td><b>1116.55</b></td> <td><b>1221.13</b></td> <td>Medical & Graphic segments</td> </tr> <tr> <td>11</td> <td>no change</td> <td><b>Carl Zeiss</b></td> <td><b>984.61</b></td> <td><b>972.56</b></td> <td>Medical Systems segment</td> </tr> <tr> <td>12</td> <td>no change</td> <td><b>Hologic Inc</b></td> <td><b>619.66</b></td> <td><b>808.51</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>13</td> <td>no change</td> <td><b>Shimadzu</b></td> <td><b>540.23</b></td> <td><b>495.29</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>14</td> <td>no change</td> <td><b>Guerbet</b></td> <td><b>467.87</b></td> <td><b>471.98</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>15</td> <td>up (+1)</td> <td><b>Aloka</b></td> <td><b>346.36</b></td> <td><b>339.15</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>16</td> <td>up (+1)</td> <td><b>Varian Medical Systems</b></td> <td><b>331.00</b></td> <td><b>305.00</b></td> <td>X-ray products segment</td> </tr> <tr> <td>17</td> <td>down (-2)</td> <td><b>Analogic Corp</b></td> <td><b>325.19</b></td> <td><b>344.55</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>18</td> <td>up (+1)</td> <td><b>SonoSite</b></td> <td><b>227.39</b></td> <td><b>243.52</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td>19</td> <td>down (-1)</td> <td><b>Sirona Dental Systems</b></td> <td><b>226.73</b></td> <td><b>254.01</b></td> <td>Previously Schick Technologies</td> </tr> <tr> <td>20</td> <td>new entry</td> <td><b>Mindray Medical</b></td> <td><b>162.47</b></td> <td><b>138.97</b></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr>  </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+Clinica League Tables 2010 - Imaging
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6371
+
+<p> <table> <tr valign="top"> <td bgcolor="#FFFFFF"><b>FY 2009 Ranking</b></td> <td bgcolor="#FFFFFF"><b>Movement on previous year</b></td> <td bgcolor="#FFFFFF"><b>Company</b></td> <td bgcolor="#FFFFFF"><b>2009 Imaging sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>2008 Imaging sales (US$ million)</b></td> <td bgcolor="#FFFFFF"><b>Notes</b></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">1</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>GE Healthcare</b></td> <td bgcolor="#FFFFFF"><b>10682.00</b></td> <td bgcolor="#FFFFFF"><b>11600.00</b></td> <td bgcolor="#FFFFFF">Imaging equipment, imaging agents and service</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">2</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Siemens Healthcare</b></td> <td bgcolor="#FFFFFF"><b>9974.39</b></td> <td bgcolor="#FFFFFF"><b>10021.30</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">3</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Philips</b></td> <td bgcolor="#FFFFFF"><b>4158.79</b></td> <td bgcolor="#FFFFFF"><b>4823.05</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">4</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Olympus Medical</b></td> <td bgcolor="#FFFFFF"><b>3752.66</b></td> <td bgcolor="#FFFFFF"><b>3723.13</b></td> <td bgcolor="#FFFFFF">Medical Systems & Life Sciences segments</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">5</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Fujifilm</b></td> <td bgcolor="#FFFFFF"><b>2823.73</b></td> <td bgcolor="#FFFFFF"><b>2617.06</b></td> <td bgcolor="#FFFFFF">Medical Systems & Life Sciences segments</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">6</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Carestream Health</b></td> <td bgcolor="#FFFFFF"><b>2318.68</b></td> <td bgcolor="#FFFFFF"><b>2501.87</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">7</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>AGFA Healthcare</b></td> <td bgcolor="#FFFFFF"><b>1642.87</b></td> <td bgcolor="#FFFFFF"><b>1799.45</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">8</td> <td bgcolor="#FFFFFF">up (+2)</td> <td bgcolor="#FFFFFF"><b>Hitachi Medical</b></td> <td bgcolor="#FFFFFF"><b>1169.92</b></td> <td bgcolor="#FFFFFF"><b>1013.50</b></td> <td bgcolor="#FFFFFF">No breakdown available. Estimated as 12.59% of total electronic systems and equipment segment (as for FY2008)</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">9</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Covidien</b></td> <td bgcolor="#FFFFFF"><b>1147.00</b></td> <td bgcolor="#FFFFFF"><b>1194.00</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">10</td> <td bgcolor="#FFFFFF">down (-2)</td> <td bgcolor="#FFFFFF"><b>Konica Minolta</b></td> <td bgcolor="#FFFFFF"><b>1116.55</b></td> <td bgcolor="#FFFFFF"><b>1221.13</b></td> <td bgcolor="#FFFFFF">Medical & Graphic segments</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">11</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Carl Zeiss</b></td> <td bgcolor="#FFFFFF"><b>984.61</b></td> <td bgcolor="#FFFFFF"><b>972.56</b></td> <td bgcolor="#FFFFFF">Medical Systems segment</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">12</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Hologic Inc</b></td> <td bgcolor="#FFFFFF"><b>619.66</b></td> <td bgcolor="#FFFFFF"><b>808.51</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">13</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Shimadzu</b></td> <td bgcolor="#FFFFFF"><b>540.23</b></td> <td bgcolor="#FFFFFF"><b>495.29</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">14</td> <td bgcolor="#FFFFFF">no change</td> <td bgcolor="#FFFFFF"><b>Guerbet</b></td> <td bgcolor="#FFFFFF"><b>467.87</b></td> <td bgcolor="#FFFFFF"><b>471.98</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">15</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Aloka</b></td> <td bgcolor="#FFFFFF"><b>346.36</b></td> <td bgcolor="#FFFFFF"><b>339.15</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">16</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>Varian Medical Systems</b></td> <td bgcolor="#FFFFFF"><b>331.00</b></td> <td bgcolor="#FFFFFF"><b>305.00</b></td> <td bgcolor="#FFFFFF">X-ray products segment</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">17</td> <td bgcolor="#FFFFFF">down (-2)</td> <td bgcolor="#FFFFFF"><b>Analogic Corp</b></td> <td bgcolor="#FFFFFF"><b>325.19</b></td> <td bgcolor="#FFFFFF"><b>344.55</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">18</td> <td bgcolor="#FFFFFF">up (+1)</td> <td bgcolor="#FFFFFF"><b>SonoSite</b></td> <td bgcolor="#FFFFFF"><b>227.39</b></td> <td bgcolor="#FFFFFF"><b>243.52</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">19</td> <td bgcolor="#FFFFFF">down (-1)</td> <td bgcolor="#FFFFFF"><b>Sirona Dental Systems</b></td> <td bgcolor="#FFFFFF"><b>226.73</b></td> <td bgcolor="#FFFFFF"><b>254.01</b></td> <td bgcolor="#FFFFFF">Previously Schick Technologies</td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">20</td> <td bgcolor="#FFFFFF">new entry</td> <td bgcolor="#FFFFFF"><b>Mindray Medical</b></td> <td bgcolor="#FFFFFF"><b>162.47</b></td> <td bgcolor="#FFFFFF"><b>138.97</b></td> <td bgcolor="#FFFFFF"><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> </table> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+Clinica League Tables 2010  Imaging
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T185749
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT057360
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+Clinica League Tables 2010 - Imaging
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+306446
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T190001Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4fe8720c-eae3-4578-af4d-187540107a26
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T225749Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {FAC90147-80FA-4D82-8297-6F487B3318EA}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Mobile Health Industry Summit 2009
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Mobile Health Industry Summit 2009
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 58af13bd-8cea-4826-a63d-984cea823fca
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 499
+
+<p> The Mobile Health Industry Summit 2009, held on December 1-2, featured over 60 leading innovator speakers from the wireless and healthcare sectors, with over 10 CEO keynote presentations from global wireless and healthcare companies. <i>Salina Christmas</i>, Clinica's Multimedia Editor, <a>tweeted</a> about event on the first day of the summit. She also captured the atmosphere using a Nikon D90, an iPhone (first generation) and a Flip HD camera. <i><a>Back to the main feature </a> </i> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 34
+
+Mobile Health Industry Summit 2009
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10740
+
+<p> The Mobile Health Industry Summit 2009, held on December 1-2, featured over 60 leading innovator speakers from the wireless and healthcare sectors, with over 10 CEO keynote presentations from global wireless and healthcare companies. <i>Salina Christmas</i>, Clinica's Multimedia Editor, <a href="http://twitter.com/clinica" target="_blank" class="emailLink">tweeted</a> about event on the first day of the summit. She also captured the atmosphere using a Nikon D90, an iPhone (first generation) and a Flip HD camera. <i><a href="http://www.clinica.co.uk/marketsector/imagingit/The-IT-crowd-making-mobile-healthcare-simpler-and-more-cost-effective-184942?autnID=/contentstore/clinica/codex/8c72bff4-e661-11de-b5c9-e5603eef12f4.xml" target="_blank" class="emailLink">Back to the main feature </a> </i> </p> <p><table> <br> <br> <tr> <td colspan="4"><h3>Reportage</h3></td> </tr> <tr> <td><div><embed src="http://widget-f1.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116017&site=widget-f1.slide.com" name="flashticker"> </div></td> <td><div><embed src="http://widget-09.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116041&site=widget-09.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-19.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116057&site=widget-19.slide.com" name="flashticker"> </div></td> <td><div> <embed src="http://widget-10.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116048&site=widget-10.slide.com" name="flashticker"> </div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/registration/" target="_blank" class="optionsLink">The registration </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/conference/" target="_blank" class="optionsLink">The conference</a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/workshop/" target="_blank" class="optionsLink">Stream Two workshop </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/coffee/" target="_blank" class="optionsLink">Coffee break</a></p></td> </tr> <tr> <td><div><embed src="http://widget-22.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116066&site=widget-22.slide.com" name="flashticker"></div></td> <td><div><embed src="http://widget-27.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431116071&site=widget-27.slide.com" name="flashticker"></div></td> <td><div><embed src="http://widget-42.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979431124034&site=widget-42.slide.com" name="flashticker"></div></td> <td></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/brands/" target="_blank" class="optionsLink">The brands</a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/drinks/" target="_blank" class="optionsLink">The Harley Street drinks reception</a></p></td> <td><p><a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/drinks/" target="_blank" class="optionsLink"></a><a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/awards/" target="_blank" class="optionsLink">The Lightning Awards </a></p></td> <td><p><escenic_non_breaking_space></escenic_non_breaking_space></p></td> </tr> </table> <table> <br> <br> <tr> <td colspan="4"><h3>Videos</h3></td> </tr> <tr> <td><object><param name="movie" value="http://www.youtube.com/v/_-jcjK7xrvs&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/_-jcjK7xrvs&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td><object><param name="movie" value="http://www.youtube.com/v/WC6wo5YWjTo&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/WC6wo5YWjTo&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td><object><param name="movie" value="http://www.youtube.com/v/5GBTyyNtoug&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/5GBTyyNtoug&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td><object> <param name="movie" value="http://www.youtube.com/v/b8nc91BY8Mk&hl=en_GB&fs=1&"> <param name="allowFullScreen" value="true"> <param name="allowscriptaccess" value="always"> <embed src="http://www.youtube.com/v/b8nc91BY8Mk&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"> </object> </td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184630" target="_blank" class="optionsLink">M-health for adherence of treatments </a></p></td> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184629" target="_blank" class="optionsLink">Mobile phone platform more reliable than power grids </a></p></td> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184628" target="_blank" class="optionsLink">End-user driven technology </a></p></td> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184627" target="_blank" class="optionsLink">Monetising mobile health </a></p></td> </tr> <tr> <td><object><param name="movie" value="http://www.youtube.com/v/jPjs8sIwjuY&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/jPjs8sIwjuY&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td><object><param name="movie" value="http://www.youtube.com/v/PdZoEtCoh4A&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/PdZoEtCoh4A&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td><object><param name="movie" value="http://www.youtube.com/v/TemdfBzvtj4&hl=en_GB&fs=1&"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/TemdfBzvtj4&hl=en_GB&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></object></td> <td></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184626" target="_blank" class="optionsLink">Digi's M2M wireless connectivity </a></p></td> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184623" target="_blank" class="optionsLink">The Mobiu Smart Key</a></p></td> <td><p> <a href="http://www.clinica.co.uk/multimedia.do?pageNumber=1&section=home/videospodcasts&videoType=clinicainaClick&articleid=184622" target="_blank" class="optionsLink">BIo-interactive platform </a></p></td> <td><p><escenic_non_breaking_space></escenic_non_breaking_space></p></td> </tr> </table></p> <h3> More on m-health </h3> <p> <img src="-/media/6180E2EE825348C9A99D3E9C87B9F537.ashx" align="left" style="margin-right: 5px" height="80" border="0" width="80"> <a href="http://www.clinica.co.uk/marketsector/imagingit/The-IT-crowd-making-mobile-healthcare-simpler-and-more-cost-effective-184942?autnID=/contentstore/clinica/codex/8c72bff4-e661-11de-b5c9-e5603eef12f4.xml" class="emailLink" target="_blank">The IT crowd: making mobile healthcare simpler and more cost-effective</a><br> <i>By Salina Christmas, 11 December 2009 </i><br> The healthcare IT system doesn&rsquo;t have to be expensive or complicated, as long as integrators know how it is appropriated. </p> <p> &nbsp; </p> <p> <img src="http://www.clinica.co.uk/multimedia/archive/00076/dr_dianne_sullivan_v_76274a.jpg" align="left" style="margin-right: 5px" height="80" border="0" width="80"> <a href="http://www.clinica.co.uk/business/Vodafone-moves-into-telehealth-with-dedicated-healthcare-unit-181960?autnID=/contentstore/clinica/codex/27fcf24d-e0e3-11de-969a-7d4ca4ba7dae.xml" class="emailLink" target="_blank">Vodafone moves into telehealth with dedicated healthcare unit </a><br> <i>By Salina Christmas, 4 December 2009 </i><br> Vodafone, one of the world&rsquo;s biggest telecommunications providers, is to launch a healthcare unit in a bid to capture a slice of the growing mobile healthcare market. </p> <p> &nbsp; </p> <p> <i><img src="http://www.clinica.co.uk/multimedia/archive/00079/salina_80x80_79637a.jpg" align="left" style="margin-right: 5px" height="80" border="0" width="80"> <a href="http://www.clinica.co.uk/home/blogopensurgery/p-In-this-bad-economy-altruism-can-go-a-long-way--p-172561?autnID=/contentstore/clinica/escenic/172561.xml" class="emailLink" target="_blank">Open Surgery:</a></i><a href="http://www.clinica.co.uk/home/blogopensurgery/p-In-this-bad-economy-altruism-can-go-a-long-way--p-172561?autnID=/contentstore/clinica/escenic/172561.xml" class="emailLink" target="_blank"> In this bad economy, altruism can go a long way </a><br> <i>By Salina Christmas, 29 July 2009 </i><br> The Cellscope won&rsquo;t make millionaires out of the scientists who invented it. But it proves that when all else get scrapped due to the lack of &lsquo;business justification&rsquo;, altruistic projects plough on. </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 34
+
+Mobile Health Industry Summit 2009
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T205811
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT006056
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 34
+
+Mobile Health Industry Summit 2009
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+184979
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T161151Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+58af13bd-8cea-4826-a63d-984cea823fca
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T005811Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

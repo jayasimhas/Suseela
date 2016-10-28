@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {A3A877A4-A8A0-491C-BAA6-7BAB980D196E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/New 2 Thank you
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: New 2 Thank you
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 52af11fa-c4e5-45b7-8252-cf7db3747356
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 70
+
+<p> To view your complimentary article - <b><a>Click here</a></b> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 15
+
+New 2 Thank you
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1976
+
+<p> To view your complimentary article - <b><a href="http://marketing.scripintelligence.com/wp-content/uploads/sites/11/2015/01/Clinica_Article-pack_no-social-media-icons_1501.pdf">Click here</a></b> </p> <p> <b>Clinica Medtech Intelligence </b>is the leading source of regulatory market and competitor information for the <b>medical devices and diagnostics industries</b>. The main product sectors covered by Clinica include cardiovascular, IVDs, orthopaedics, surgical &amp; wound care, cellular &amp; genetic and neurological. </p> <p> <br> <b>Clinica helps its readers</b> stay one step ahead of the competition and highlights opportunities for growth. Avoid costly mistakes and use Clinica as an indispensable guide to the regulatory developments impacting the worldwide medtech industry. </p> <p> <br> <b>Clinica covers:</b> ? Rules and regulations that impact medical devices ? Diagnostics and emerging combination products ? Market policy and analysis ? Reimbursement and pricing issues ? Trends in research &amp; development and innovations </p> <p> <br> <b>Included in your Clinica Medtech Intelligence subscription (Full access to <a href="http://www.clinica.co.uk/">Clinica.co.uk</a></b>)<b> </b> </p> <ul> <li> Global Medtech news and analysis updated 24/7 </li> <li> Daily email alerts </li> <li> Up to 25 customised email alerts </li> <li> Searchable online archive of all Clinica news, data and analysis </li> <li> Access to over 30 medtech reports from SCRIP Insights </li> <li> Ask the Analyst </li> <li> Regular features, Medtech Ventures, Market and IVD Insight </li> </ul> <p> <b>What our subscribers say</b> </p> <table> <tr> <td> <p> &quot;Clinica is a great source of news and well-informed comment in the med-tech sector. It's a must-read for us in keeping up with the global market and regulatory trends.&quot;&nbsp; </p> </td> </tr> </table> <p> <b>Subscribe today on</b> <a href="https://subscribe.clinica.co.uk/">subscribe.clinica.co.uk/</a> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 15
+
+New 2 Thank you
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191357
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT064440
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 15
+
+New 2 Thank you
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360565
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T192948Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+52af11fa-c4e5-45b7-8252-cf7db3747356
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

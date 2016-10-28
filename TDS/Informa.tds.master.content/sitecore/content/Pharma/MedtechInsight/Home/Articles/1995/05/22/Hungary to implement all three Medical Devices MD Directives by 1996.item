@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F3F5A0CF-A5F1-4A60-81DB-D1FA7FBF6314}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/22/Hungary to implement all three Medical Devices MD Directives by 1996
+parent: {CB727767-92C8-476E-A342-D78AA11E5EF5}
+name: Hungary to implement all three Medical Devices MD Directives by 1996
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 88bac42d-3688-4eb8-a7fc-dad60aa456e4
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 501
+
+<p>Although not a member of the European Economic Area, Hungary looks set to be the first country to introduce regulations based on the European Union's In Vitro Diagnostics-Medical Devices Directive. Since Hungary currently has only basic rules governing IVDs, it hopes to introduce IVD regulations, based on the just published IVD-MD draft Directive, in January 1996. Shortly thereafter a law transposing both the Medical Devices (MD) and Active Implantables (AIMD) Directives will be published.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Hungary to implement all three Medical Devices (MD) Directives by 1996
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2461
+
+<p>Although not a member of the European Economic Area, Hungary looks set to be the first country to introduce regulations based on the European Union's In Vitro Diagnostics-Medical Devices Directive. Since Hungary currently has only basic rules governing IVDs, it hopes to introduce IVD regulations, based on the just published IVD-MD draft Directive, in January 1996. Shortly thereafter a law transposing both the Medical Devices (MD) and Active Implantables (AIMD) Directives will be published.</p><p>The Welfare Ministry intends to send out its AIMD/MD working document to other ministries for comment within the next two months and to publish the law by the end of the year. This is part of Hungary's objective, as an associate member of the European Union, to transpose several Directives each year.</p><p>The regulations, which will follow closely the texts of the EU Directives, will apply to AIMDs immediately. Manufacturers of MDs will have the option to meet either Hungarian or EU medical device regulations until June 1998 when the MD Directive becomes mandatory throughout the EEA, or until mutual recognition has been completed, whichever is the sooner. Mutual recognition talks will begin with the European Union as soon as the AIMD/MD law has been published.</p><p>It seems likely that the National Institute for Biomedical Engineering, currently responsible for premarketing approval, will act in the same capacity as a Notified Body, although it is not yet certain for which products or modules. Since there are no AIMD manufacturers in Hungary this product area will not be covered. The medical devices section within the Welfare Ministry will be the Competent Authority.</p><p>Hungary already has stringent medical device laws, so the main benefits of transposing the medical device Directives will be in trade.</p><p>Czech Republic also moving</p><p>The Czech Republic is also preparing to transpose the EU's medical device regulations. Norbert Anselmann, head of the medical devices section at the European Commission's DG III D 2, informed delegates at the recent RAPS conference in Barcelona. Mr Anselmann said he has been impressed at the rate at which European standards are being implemented in different Czech industrial sectors.</p><p>The European Council has mandated the Commission to develop strategies to encourage links with eastern European countries. The Commission will publish a White Paper on pre-cohesion strategies.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{BAC17B05-F452-4A0B-836C-4DF7BF8FB390}|{9B75CD57-1CC7-4B0E-8C02-011AB5834AAB}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Hungary to implement all three Medical Devices MD Directives by 1996
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950522T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950522T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950522T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052736
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Hungary to implement all three Medical Devices (MD) Directives by 1996
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254545
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184255Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+88bac42d-3688-4eb8-a7fc-dad60aa456e4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184256Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

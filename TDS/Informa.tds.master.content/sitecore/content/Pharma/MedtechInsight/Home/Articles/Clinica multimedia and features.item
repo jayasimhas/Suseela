@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {C427016D-12D7-402F-8347-479E4E2F5AB7}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Clinica multimedia and features
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Clinica multimedia and features
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 0cf2ec83-93e6-4aa8-b64a-03103bfbd1dd
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 1409
+
+<p> <tbody> <tr> <td><div> <p><a>Mergers & Acquisitions </a></p> </div></td> <td><div><a>IVDs: ASCO 2011 </a></div></td> <td><div><a>Approvals</a></div></td> <td><div><a>Five Minutes With... </a></div></td> </tr> <tr> <td><div></div></td> <td><div></div></td> <td><div></div></td> <td><div><span></span></div></td> </tr> <tr> <td>Insulet's maiden buy expands diabetes offering; ConvaTec expands UK home delivery operations; Hologic gains direct foothold in China with TCT acquisition; LabCorp boosts global lab service offering with Clearstone purchase.<br></td> <td><span><strong>&raquo;</strong> PredictMDx for Brain proves itself in Phase III study. <a>Read</a><br> <strong>&raquo;</strong> Breast cancer therapy could be guided with Nuvera's taxane test. <a>Read</a><br> <strong>&raquo;</strong> Sirtex's radioembolisation microspheres safe when used with chemo. <a>Read</a> </span></td> <td><p>S&amp;N &quot;on the offensive&quot; in wound care with PICO negative pressure system; US nod for bioM&eacute;rieux's MRSA test; FDA approves fever diagnostic for the military; Elixir CE marks DESyne novolimus-eluting stent.</p></td> <td><p>"You have to go into each opportunity and strive to become the market leader. Our goal is not to bring a good product to market but to take the time to develop a great product." Al Altomari, Agile Therapeutics, speaks to <em>Tina Tan</em>.</p> </td> </tr> </tbody> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+Clinica multimedia and features
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3254
+
+<p><table> <tbody> <tr> <td scope="row"><div> <p><a href="http://www.clinica.co.uk/MnA/" class="StoryTitle">Mergers & Acquisitions </a></p> </div></td> <td><div><a href="http://www.clinica.co.uk/marketsector/ivds/" class="StoryTitle">IVDs: ASCO 2011 </a></div></td> <td scope="row"><div><a href="http://www.clinica.co.uk/approvals/" class="StoryTitle">Approvals</a></div></td> <td scope="row"><div><a href="http://www.clinica.co.uk/marketsector/other/Five-minutes-withAl-Altomari-of-Agile-Therapeutics-316766?autnID=/contentstore/clinica/codex/4ecfecc8-90e3-11e0-bf5b-890e4a5c74f1.xml&amp;REFID=DLYALT" class="StoryTitle">Five Minutes With... </a></div></td> </tr> <tr> <td scope="row"><div><img src="-/media/AC681D5738EA4358B189D2ABFEA23B4A.ashx" width="162" height="107" border="0" style="margin-right: 3px; margin-left: 3px; border:1px solid #000000;" "/=""></div></td> <td><div><img src="-/media/EDCEBA71860F4824845EC9ACB8A11DE6.ashx" width="162" height="107" border="0" style="margin-left: 3px"></div></td> <td scope="row"><div><img src="-/media/2C02CB59F0F54D7798CCF005364684AF.ashx" width="162" height="107" border="0" style="margin-left: 3px"></div></td> <td scope="row"><div><span class="bodytext"><img src="-/media/021BF4A8E3234D24BF5C15A209495EF6.ashx" width="162" height="107" border="0" style="margin-right: 3px; margin-left: 3px"></span></div></td> </tr> <tr> <td class="bodytext" scope="row">Insulet's maiden buy expands diabetes offering; ConvaTec expands UK home delivery operations; Hologic gains direct foothold in China with TCT acquisition; LabCorp boosts global lab service offering with Clearstone purchase.<br></td> <td><span class="bodytext"><strong>&raquo;</strong> PredictMDx for Brain proves itself in Phase III study. <a href="http://www.clinica.co.uk/marketsector/ivds/ASCO-2011-MDxHealths-brain-cancer-companion-diagnostic-proves-itself-in-Phase-III-study-316738?autnID=/contentstore/clinica/codex/3922c2e4-9044-11e0-85dc-6fef797fd775.xml" target="_blank">Read</a><br> <strong>&raquo;</strong> Breast cancer therapy could be guided with Nuvera's taxane test. <a href="http://www.clinica.co.uk/marketsector/ivds/ASCO-2011-Breast-cancer-therapy-could-be-guided-with-Nuveras-taxane-test-316733?autnID=/contentstore/clinica/codex/131afc7e-904a-11e0-85dc-6fef797fd775.xml" target="_blank">Read</a><br> <strong>&raquo;</strong> Sirtex's radioembolisation microspheres safe when used with chemo. <a href="http://www.clinica.co.uk/marketsector/other/ASCO-2011-Sirtexs-radioembolisation-microspheres-safe-when-used-with-chemo-316718?autnID=/contentstore/clinica/codex/1d3ba40a-9031-11e0-85dc-6fef797fd775.xml" target="_blank">Read</a> </span></td> <td scope="row"><p class="bodytext">S&amp;N &quot;on the offensive&quot; in wound care with PICO negative pressure system; US nod for bioM&eacute;rieux's MRSA test; FDA approves fever diagnostic for the military; Elixir CE marks DESyne novolimus-eluting stent.</p></td> <td scope="row"><p class="bodytext">"You have to go into each opportunity and strive to become the market leader. Our goal is not to bring a good product to market but to take the time to develop a great product." Al Altomari, Agile Therapeutics, speaks to <em>Tina Tan</em>.</p> </td> </tr> </tbody> </table></p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+Clinica multimedia and features
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191416
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT001647
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+Clinica multimedia and features
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+145451
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T154407Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0cf2ec83-93e6-4aa8-b64a-03103bfbd1dd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

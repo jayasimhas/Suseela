@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {30AEA09A-44B5-49FC-AD3E-AD628E96C417}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Articles/2010/12/15
+parent: {8AF600DE-582A-4396-9085-746F0B925D28}
+name: 15
+master: {00000000-0000-0000-0000-000000000000}
+template: {D0DFAF98-BB2A-4EB3-A931-13C335201D25}
+templatekey: Article Date Folder
+
+----field----
+field: {177CC3B0-D09C-408D-8948-78B13C1F615A}
+name: __Item Published
+key: __item published
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: 20c15b58-cf60-42ca-a502-92c2d1d87bd9
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160329T192751Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+20c15b58-cf60-42ca-a502-92c2d1d87bd9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T191157Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,9 +1,0 @@
-----role----
-name: sitecore\Experience Explorer
-
-----role-in-role----
-rolename: sitecore\Editor
-
-----role-in-role----
-rolename: sitecore\Operations Access
-

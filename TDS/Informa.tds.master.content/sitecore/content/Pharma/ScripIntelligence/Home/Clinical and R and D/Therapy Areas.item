@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {9BD2F62B-4256-46E3-A6AC-5FC9CB91003B}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Clinical and R and D/Therapy Areas
+parent: {2AFAA6A4-7F18-4898-B788-795180A78994}
+name: Therapy Areas
+master: {00000000-0000-0000-0000-000000000000}
+template: {77604558-3056-497B-93D8-E53BC5619DDB}
+templatekey: Topic Page
+
+----version----
+language: en
+version: 1
+revision: c97983a5-066f-46a8-a8bc-3fd5805a9bd5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 13
+
+Therapy Areas
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 13
+
+Therapy Areas
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{4971D7C8-1264-4A38-8998-EDCAFC37A24D}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 13
+
+Therapy Areas
+----field----
+field: {82AF6295-2B81-4CE0-8674-F6F72F38BFF6}
+name: Leaderboard Slot ID
+key: leaderboard slot id
+content-length: 3
+
+Top
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 4533
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{99CC0EDB-8627-4462-A502-5CB374DAB333}" p:before="r[@uid='{6A9A4A8A-0BF9-466D-88F7-A9E30C4ADE6F}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={CD796374-A60A-4D81-8A05-7B92AD2013C1}" s:ph="/main-content/two-column-curated_08eadc6d-09ec-4bef-a80e-356133ca54b7" /><r uid="{6A9A4A8A-0BF9-466D-88F7-A9E30C4ADE6F}" p:before="r[@uid='{2DE69C6C-430E-492C-9FAD-2F963F49AF09}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={1D288E18-BAFF-4498-B284-EF9BC8D32E30}" s:ph="/main-content/two-column-curated_3a87dcae-b5f4-4065-9415-fab3309c863d" /><r uid="{2DE69C6C-430E-492C-9FAD-2F963F49AF09}" p:before="r[@uid='{34838D13-8A99-4760-ABF5-8EB4B9FE9D4B}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={07CF1C44-428A-445B-98D8-5EA9905BD7C5}" s:ph="/main-content/two-column-curated_0348fdb1-56d3-4704-81d9-398b8b644273" /><r uid="{34838D13-8A99-4760-ABF5-8EB4B9FE9D4B}" p:before="r[@uid='{AFDF94D3-2DA9-4E78-8020-C450EFDEF7D6}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={8B2376D2-D914-41D6-9402-D3CD38CABF23}" s:ph="/main-content/two-column-curated_d20b071c-427d-4473-a28c-d50239389b07" /><r uid="{AFDF94D3-2DA9-4E78-8020-C450EFDEF7D6}" p:before="r[@uid='{9C6A9576-00D0-4F4E-BE9F-FCB19FF018E7}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={3FA7743D-5DAB-49A3-B30D-DF5079ADB082}" s:ph="/main-content/two-column-curated_d4929435-a671-4b76-a062-2b8570987db7" /><r uid="{9C6A9576-00D0-4F4E-BE9F-FCB19FF018E7}" p:before="r[@uid='{455C5E17-CD22-4857-9729-1C6485ACAD65}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={29C8E5B9-B01E-4DEE-A123-14D70756095B}" s:ph="/main-content/two-column-curated_98c44cd4-a430-42a1-b2d8-78257e87e925" /><r uid="{455C5E17-CD22-4857-9729-1C6485ACAD65}" p:before="r[@uid='{F5D44C3A-7E88-483A-854D-BB858201990C}']" s:ds="" s:id="{877DF4EA-234D-4CEE-92E6-39F9857BA9CC}" s:par="" s:ph="main-content" /><r uid="{F5D44C3A-7E88-483A-854D-BB858201990C}" p:before="r[@uid='{B752FF8C-DF2F-4B77-B383-F7E70F1FE976}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={3B33748A-17E9-4241-8447-989BB3484DFB}" s:ph="/main-content/two-column-curated_b752ff8c-df2f-4b77-b383-f7e70f1fe976" /><r uid="{B752FF8C-DF2F-4B77-B383-F7E70F1FE976}" p:before="r[@uid='{D4929435-A671-4B76-A062-2B8570987DB7}']" s:ds="{2B2CE25E-C350-4CB3-9D2C-23A419448CB9}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{D4929435-A671-4B76-A062-2B8570987DB7}" p:before="r[@uid='{D20B071C-427D-4473-A28C-D50239389B07}']" s:ds="{A725D693-9818-41DF-9D96-441F8C2453B3}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{D20B071C-427D-4473-A28C-D50239389B07}" p:before="r[@uid='{0348FDB1-56D3-4704-81D9-398B8B644273}']" s:ds="{36AED956-1114-4ED9-A8C8-5AC8C041A7B1}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{0348FDB1-56D3-4704-81D9-398B8B644273}" p:before="r[@uid='{3A87DCAE-B5F4-4065-9415-FAB3309C863D}']" s:ds="{7F6BA059-4106-40CA-9702-9CF140F6CC13}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{3A87DCAE-B5F4-4065-9415-FAB3309C863D}" p:before="r[@uid='{08EADC6D-09EC-4BEF-A80E-356133CA54B7}']" s:ds="{CAFE5410-4167-4CA9-8BEB-A48B7CA76CCA}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{08EADC6D-09EC-4BEF-A80E-356133CA54B7}" p:before="r[@uid='{0F6A6227-C265-4521-8F6D-FA78653AE581}']" s:ds="{9A757021-5D9F-4503-9190-65CCEB14A733}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" p:before="r[@uid='{98C44CD4-A430-42A1-B2D8-78257E87E925}']" /><r uid="{98C44CD4-A430-42A1-B2D8-78257E87E925}" s:ds="{03442AC4-E4DD-4C5A-9D25-44312B4A50D1}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160330T165734Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c97983a5-066f-46a8-a8bc-3fd5805a9bd5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160424T161952Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
