@@ -686,18 +686,25 @@ $(document).ready(function() {
 		renderIframeComponents();
 	});
 
-	// Topic links
+    // Topic links
 	var topicAnchors = $('.js-topic-anchor');
+    //Get the page title tag
+	var pageNameTag = $('.main__content').find("h1:first");
 
-	$('.sub-topic-links').forEach(function(e) {
-		var linkList = $(e).find('.bar-separated-link-list');
+	var pageName = "Unknown";
+    //Get the text content only of the page title tag
+	if (pageNameTag.length > 0)
+	    pageName = pageNameTag.contents().get(0).nodeValue.trim();
 
-		topicAnchors.forEach(function(tc) {
-			var id = tc.id;
-			var text = $(tc).data('topic-link-text');
-			var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
-			linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
-		});
+	$('.sub-topic-links').forEach(function (e) {
+	    var linkList = $(e).find('.bar-separated-link-list');
+
+	    topicAnchors.forEach(function (tc) {
+	        var id = tc.id;
+	        var text = $(tc).data('topic-link-text');
+	        var utagInfo = '{"event_name":"jump_link","click_through_source":"' + pageName.replace(/ /g, '').replace(/\'/g, '').replace(/\"/g, '') + '","click_through_destination":"' + text.replace(/ /g, '').replace(/\'/g, '').replace(/\"/g, '') + '"}';
+	        linkList.append('<a href="#' + id + '" class="click-utag" data-info=' + utagInfo + '>' + text + '</a>');
+	    });
 	});
 
 	// Display the Forgot Password block when "forgot your password" is clicked
