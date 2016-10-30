@@ -60,7 +60,7 @@ namespace Informa.Library.User.ResetPassword.Web
 			var emailTo = userResetPassword.Username;
 			var resetPasswordReplacements = new Dictionary<string, string>();
 
-			resetPasswordReplacements["#Reset_Link_URL#"] = UrlFactory.Create(userResetPassword);
+			resetPasswordReplacements["#Reset_Link_URL#"] = UrlFactory.Create(userResetPassword) + $"?utm_source={siteRoot.Publication_Name}&utm_medium=email&utm_campaign=resetpassword";
 			resetPasswordReplacements["#Reset_Link_Text#"] = GetValue(siteRoot?.Reset_Password_Email_Link_Text, TextTranslator.Translate("Authentication.ResetPassword.Email.ResetLink"));
 			resetPasswordReplacements["#Body_Content#"] = GetValue(siteRoot?.Reset_Password_Email_Body);
 		    resetPasswordReplacements["#Support_Text#"] = GetValue(siteRoot?.Customer_Support_Text);
