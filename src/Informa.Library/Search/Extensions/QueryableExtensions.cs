@@ -6,25 +6,76 @@ using Informa.Library.Search.Results;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Informa.Library.Search.Filter;
 using Sitecore.ContentSearch.SearchTypes;
+using Informa.Library.Utilities.References;
+using Informa.Library.Services.Global;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.Common;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Informa.Library.Search.Extensions
 {
 	public static class QueryableExtensions
 	{
-		public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
+		public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter, IItemReferences refs, IGlobalSitecoreService service)
 						where T : ITaxonomySearchResults
 		{
-			if (source == null || filter == null || !filter.TaxonomyIds.Any())
-			{
+			if (source == null || filter == null || !filter.TaxonomyIds.Any()) 
 				return source;
-			}
+            
+            var taxItems = filter.TaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
+            if (taxItems == null || !taxItems.Any())
+                return source;
 
-			var predicate = PredicateBuilder.True<T>();
+            //breaking up the taxonomies by their respective folder to 'or' any within a folder and 'and' the folders together
+            List<Expression<Func<T, bool>>> list = new List<Expression<Func<T, bool>>>();
+            var regPredicate = GetPredicate<T>(service, taxItems, refs.RegionsTaxonomyFolder);
+            if (regPredicate != null)
+                list.Add(regPredicate);
+            var subPredicate = GetPredicate<T>(service, taxItems, refs.SubjectsTaxonomyFolder);
+            if (subPredicate != null)
+                list.Add(subPredicate);
+            var therPredicate = GetPredicate<T>(service, taxItems, refs.TherapyAreasTaxonomyFolder);
+            if (therPredicate != null)
+                list.Add(therPredicate);
+            var devPredicate = GetPredicate<T>(service, taxItems, refs.DeviceAreasTaxonomyFolder);
+            if (devPredicate != null)
+                list.Add(devPredicate);
+            var indPredicate = GetPredicate<T>(service, taxItems, refs.IndustriesTaxonomyFolder);
+            if (indPredicate != null)
+                list.Add(indPredicate);
 
-			predicate = filter.TaxonomyIds.Aggregate(predicate, (current, f) => current.And(i => i.Taxonomies.Contains(f)));
-
+            var predicate = PredicateBuilder.True<T>();
+            foreach (var i in list)
+                predicate = predicate.And(i);
+            
 			return source.Filter(predicate);
 		}
+
+        private static Expression<Func<T, bool>> GetPredicate<T>(IGlobalSitecoreService service, IEnumerable<ITaxonomy_Item> allItems, Guid folder) where T : ITaxonomySearchResults {
+
+            var predicate = PredicateBuilder.False<T>();
+
+            var folderItem = service.GetItem<IFolder>(folder);
+            if (folderItem == null)
+                return null;
+
+            var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
+            if (list == null || !list.Any())
+                return null;
+            
+            foreach(ITaxonomy_Item t in list) {
+                var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+                if(children != null && children.Any())
+                    list = list.Concat(children);
+            }
+
+            foreach (var l in list) {
+                predicate = predicate.Or(p => p.Taxonomies.Contains(l._Id));
+            }
+
+            return predicate;
+        }
 
 		public static IQueryable<T> FilterByPublications<T>(this IQueryable<T> source, IArticlePublicationFilter filter)
 						where T : IArticlePublicationResults
