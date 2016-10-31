@@ -226,6 +226,9 @@
     <Reference Include="Sitecore.SharedSource.PageEditor">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Support.391039">
+      <HintPath>..\..\lib\Sitecore\SitecoreSupport\Sitecore.Support.391039.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>

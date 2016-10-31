@@ -614,7 +614,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
     </Reference>
-	<Reference Include="Sitecore.SessionSerialization">
+    <Reference Include="Sitecore.SessionSerialization">
       <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -827,6 +827,10 @@
     </Reference>
     <Reference Include="Sitecore.Speak.Web">
       <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Support.391039, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\SitecoreSupport\Sitecore.Support.391039.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Support.88491">
       <HintPath>..\..\lib\Sitecore\Sitecore.Support.88491.dll</HintPath>
@@ -1657,6 +1661,7 @@
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
     <Content Include="Areas\Account\Views\Management\SavedSearchOptOut.cshtml" />
+    <Content Include="App_Config\Include\zzzMustBeLast\Sitecore.Support.391039.config" />
     <None Include="App_Config\Prefetch\Core.config.template" />
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
