@@ -319,6 +319,7 @@ namespace Informa.Web.ViewModels.Articles
                             if (dt1.Date < dt2.Date)
                             {
                                 entitlementslist.Clear();
+                                return entitlementslist;
                             }
                         }
 
