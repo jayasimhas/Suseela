@@ -35,10 +35,11 @@ namespace Informa.Library.Utilities.References
 		public Guid RegionsTaxonomyFolder => new Guid("{5728D226-839C-44E3-B044-C88321A53421}");
 		public Guid TherapyAreasTaxonomyFolder => new Guid("{49A93890-E459-44F1-9453-A6F3FF0AF4C1}");
         public Guid DeviceAreasTaxonomyFolder => new Guid("{3DA2C962-4C2C-4B08-91F9-D64BA1C314F5}");
+        public Guid IndustriesTaxonomyFolder => new Guid("{D10B7B8F-588B-4209-A319-2BC3A19828B7}");
 
-		#endregion
+        #endregion
 
-		public Guid SearchPage => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
+        public Guid SearchPage => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
 		public Guid VwbSearchPage => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
     public Guid IssuesRootCurrent => new Guid("{B2F62FA2-91B1-424D-889A-CE8276984660}");
