@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
@@ -58,9 +57,8 @@ namespace Informa.Web.ViewModels.Articles
             UserSession = userSession;
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
+      
 
-
-       
         public string Title => GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
@@ -109,44 +107,50 @@ namespace Informa.Web.ViewModels.Articles
             string userId = sfUser?.UserId;
             string url = sfUser?.SalesForceURL;
             string sessionid = sfUser?.SalesForceSessionId;
-            string email = sfUser?.Email;
-
             enterprise.QueryResult queryresult;
-            queryresult=GetEntitlementfromSalesForce(url, sessionid, userId,email);
+            //if (userId != null)
+            //{
 
-            if (queryresult.records != null)
-            {
-               
-                foreach (var record in queryresult.records)
+
+                queryresult = GetEntitlementfromSalesForce(url, sessionid, userId);
+
+                if (queryresult.records != null)
                 {
-                    List<String> Userentitlement = ConvertObjectToXMLString(queryresult.records);
-                    //List<string> TaxonomiesList = (List<string>)GlassModel.Taxonomies;
-                    IEnumerable<object> TaxonomiesList = (IEnumerable<object>)GlassModel.Taxonomies;
 
-                    //List<int> Taxonomlist = new List<int>();
-                    List<string> Taxonomlist = new List<string>();
-                    for (int i= 0; i < GlassModel.Taxonomies.ToList<object>().Count; i++)
+                    foreach (var record in queryresult.records)
                     {
-                        Taxonomlist.Add((GlassModel.Taxonomies.ToArray())[i]._Id.ToString());
-                    }
+
+                       
+                        List<String> Userentitlement = ConvertObjectToXMLString(queryresult.records);
+                        //List<string> TaxonomiesList = (List<string>)GlassModel.Taxonomies;
+                        IEnumerable<object> TaxonomiesList = (IEnumerable<object>)GlassModel.Taxonomies;
+
+                        //List<int> Taxonomlist = new List<int>();
+                        List<string> Taxonomlist = new List<string>();
+                        for (int i = 0; i < GlassModel.Taxonomies.ToList<object>().Count; i++)
+                        {
+                            Taxonomlist.Add((GlassModel.Taxonomies.ToArray())[i]._Id.ToString());
+                        }
 
 
-                    var results = Taxonomlist.Intersect(Userentitlement, StringComparer.OrdinalIgnoreCase);
-                    if (results.Count() > 0)
-                    {
-                        return _lazyBody.Value;
+                        var results = Taxonomlist.Intersect(Userentitlement, StringComparer.OrdinalIgnoreCase);
+                        if (results.Count() > 0)
+                        {
+                            return "You are  viewing the entitled  content" + _lazyBody.Value;
+                        }
+                        else
+                            return "You are not entitle for viewing this content";
                     }
-                    else
-                        return "Unentitittled";
+                    return string.Empty;
                 }
-                return string.Empty;
+                else return string.Empty;
+
             }
-            else return string.Empty;
 
-        }
+            //return string.Empty;
+        //}
 
-
-        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId,string email)
+        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId)
         {
 
             EndpointAddress EndpointAddr = new EndpointAddress(url);
@@ -161,16 +165,8 @@ namespace Informa.Web.ViewModels.Articles
             using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", EndpointAddr))
             {
                 string query = "Select e.ch_sugar_premium__c, e.ch_sugar__c, e.ch_spices__c, e.ch_oils_and_oilseeds__c, e.ch_molasses_and_fi__c, e.ch_meat__c, e.ch_juices_and_beverages__c, e.ch_grains__c, e.ch_frozen__c, e.ch_dfn__c, e.ch_dairy__c, e.ch_coffee_premium__c, e.ch_coffee__c, e.ch_cocoa__c, e.ch_canned_and_tomato_products__c, e.ch_biofuels__c, e.User__c, e.UsageLimit__c, e.UsageLimitReached__c, e.UsageCount__c, e.Sugar_Premium_Code__c, e.Sugar_Code__c, e.Subscription__c, e.Subscription_Access_Type__c, e.StartDate__c, e.Spices_Code__c, e.SourceIP__c, e.Service__c, e.ServiceUsageLimit__c, e.ServiceStartDate__c, e.ServiceEndDate__c, e.Product_Type__c, e.Opportunity__c, e.OpportunityAccount__c, e.Oils_and_Oilseeds_Code__c, e.Number_of_Licences__c, e.Name, e.Molasses_and_FI_Code__c, e.Meter_Limit__c, e.Meat_Code__c, e.ManualUsageLimit__c, e.ManualStartDate__c, e.ManualEndDate__c, e.Juices_and_Beverages_Code__c, e.Inherit_Transparent_Entitlements__c, e.Id, e.Grains_Code__c, e.Frozen_Code__c, e.EntitlementType__c, e.EndDate__c, e.Deactivated_Date__c, e.Dairy_Code__c, e.DFN_Code__c, e.Contact__c, e.ContactName__c, e.ContactLastName__c, e.ContactFirstName__c, e.Coffee_Premium_Code__c, e.Coffee_Code__c, e.Cocoa_Code__c, e.Canned_and_Tomato_Products_Code__c, e.Biofuels_Code__c, e.BillingAddress__c, e.AuthType__c, e.Active__c, e.ActivatedDate__c, e.Account__c, e.AccountName__c, e.Access_Control__c From Entitlement__c e";
+                query += " " + "where User__c = '" + userId + "'";
 
-                // query condition is added based on whether request is through transparent ip by checking email of pseudo user
-                if (email == Sitecore.Configuration.Settings.GetSetting("SalesforcePseudoUser.Name"))
-                {
-                    query += " " + " where IP_Address__c = '" + "192.168.123.123" + "'";
-                }
-                else
-                {
-                    query += " " + "where User__c = '" + userId + "'";
-                }
 
                 queryClient.query(
                               header, //sessionheader
@@ -295,6 +291,37 @@ namespace Informa.Web.ViewModels.Articles
                     {
                         entitlementslist.Add((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower());
                     }
+
+                    else if ((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].Name == "q1:Juices_and_Beverages_Code__c")
+                    {
+                        entitlementslist.Add((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower());
+                    }
+
+                    else if ((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].Name == "q1:EndDate__c")
+                    {
+                        DateTime dt1;
+                        DateTime dt2;
+                        string strDate1;
+                        string strDate2;
+                        strDate1 = (((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower();
+                        strDate2 = DateTime.Today.ToString("dd-MM-yyyy");
+
+                       
+
+                        if (DateTime.TryParse(strDate1, out dt1) && DateTime.TryParse(strDate2, out dt2))
+                        {
+                            if (dt1.Date < dt2.Date)
+                            {
+                                entitlementslist.Clear();
+                            }
+                        }
+
+
+
+                    }
+
+
+
                 }
 
 
