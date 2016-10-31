@@ -148,7 +148,7 @@ namespace Informa.Web.ViewModels.Articles
             //return string.Empty;
         //}
 
-        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId)
+        public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId,string email)
         {
 
             EndpointAddress EndpointAddr = new EndpointAddress(url);
@@ -310,7 +310,7 @@ namespace Informa.Web.ViewModels.Articles
                         string strDate1;
                         string strDate2;
                         strDate1 = (((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower();
-                        strDate2 = DateTime.Today.ToString("dd-MM-yyyy");
+                        strDate2 = DateTime.Today.ToString("yyyy-MM-dd");
 
                        
 
