@@ -8,8 +8,8 @@ using Sitecore.ContentSearch.SolrProvider;
 
 namespace Informa.Library.Search.SearchIndex
 {
-    public class CustomSolrSearchIndex : SolrSearchIndex
-    {
+    public class CustomSolrSearchIndex : Sitecore.Support.ContentSearch.SolrProvider.SolrSearchIndex
+	{
         public CustomSolrSearchIndex(string name, string core, IIndexPropertyStore propertyStore, string @group) : base(name, core, propertyStore, @group)
         {
         }
