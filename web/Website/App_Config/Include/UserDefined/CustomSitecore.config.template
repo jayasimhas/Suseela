@@ -277,6 +277,10 @@ But you can also use "patch:attribute" for clarity:
         <patch:attribute name="value">/bundles/|/html_templates/|/GenerateSitemap/CreateSitemap.axd|/sitecore/default.aspx|/trace.axd|/webresource.axd|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.DialogHandler.aspx|/BotDetectCaptcha.ashx|/sitecore/shell/applications/content manager/telerik.web.ui.dialoghandler.aspx|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.SpellCheckHandler.axd|/Telerik.Web.UI.WebResource.axd|/sitecore/admin/upgrade/|/layouts/testing|/sitecore/service/</patch:attribute>
       </setting>
 
+      <setting name="ItemCloning.ForceUpdate">
+        <patch:attribute name="value">true</patch:attribute>
+      </setting>
+
       <setting name="MasterVariablesReplacer">
         <patch:attribute name="value">Informa.Library.CustomSitecore.Pipelines.ExpandNewTokensOnAllItems.InformaMasterVariablesReplacer,Informa.Library</patch:attribute>
       </setting>
