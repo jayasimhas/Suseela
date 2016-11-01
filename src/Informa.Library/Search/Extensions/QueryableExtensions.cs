@@ -28,26 +28,20 @@ namespace Informa.Library.Search.Extensions
                 return source;
 
             //breaking up the taxonomies by their respective folder to 'or' any within a folder and 'and' the folders together
-            List<Expression<Func<T, bool>>> list = new List<Expression<Func<T, bool>>>();
-            var regPredicate = GetPredicate<T>(service, taxItems, refs.RegionsTaxonomyFolder);
-            if (regPredicate != null)
-                list.Add(regPredicate);
-            var subPredicate = GetPredicate<T>(service, taxItems, refs.SubjectsTaxonomyFolder);
-            if (subPredicate != null)
-                list.Add(subPredicate);
-            var therPredicate = GetPredicate<T>(service, taxItems, refs.TherapyAreasTaxonomyFolder);
-            if (therPredicate != null)
-                list.Add(therPredicate);
-            var devPredicate = GetPredicate<T>(service, taxItems, refs.DeviceAreasTaxonomyFolder);
-            if (devPredicate != null)
-                list.Add(devPredicate);
-            var indPredicate = GetPredicate<T>(service, taxItems, refs.IndustriesTaxonomyFolder);
-            if (indPredicate != null)
-                list.Add(indPredicate);
+            List<Guid> taxGuids = new List<Guid>() {
+                refs.RegionsTaxonomyFolder,
+                refs.SubjectsTaxonomyFolder,
+                refs.TherapyAreasTaxonomyFolder,
+                refs.DeviceAreasTaxonomyFolder,
+                refs.IndustriesTaxonomyFolder
+            };
 
             var predicate = PredicateBuilder.True<T>();
-            foreach (var i in list)
-                predicate = predicate.And(i);
+            taxGuids
+                .Select(g => GetPredicate<T>(service, taxItems, g))
+                .Where(p => p != null)
+                .ToList()
+                .ForEach(i => predicate = predicate.And(i));
             
 			return source.Filter(predicate);
 		}
