@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Informa.Library.User.Authentication;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Library.User.Profile
 {
@@ -17,5 +18,15 @@ namespace Informa.Library.User.Profile
             string ShipAddress1, string ShipAddress2, string ShipCity, string ShipPostalCode, string ShipState, 
             string Fax, string CountryCode, string PhoneExtension, string Phone, string PhoneType, 
             string Company, string JobFunction, string JobIndustry, string JobTitle);
+
+        IAccountInfoWriteResult UpdateContactInfo(
+          IAuthenticatedUser user,  
+          string Id,
+          string company,
+          string jobTitle,
+          string phone,
+          string billAddress1,
+          string billCity,
+          string billPostalCode);
     }
 }

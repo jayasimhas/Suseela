@@ -7,6 +7,9 @@ using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using System.ServiceModel;
+using enterprise = Informa.Library.Salesforce.SFv2;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
@@ -144,14 +147,94 @@ namespace Informa.Library.Salesforce.User.Profile
             {
                 return WriteErrorResult(response.errors?.First()?.message ?? RequestFailedKey);
             }
-                
+
             return new AccountInfoWriteResult()
             {
                 Success = true,
                 Message = string.Empty
             };
         }
-        
+
+        public IAccountInfoWriteResult UpdateContactInfo(
+           IAuthenticatedUser user,
+           string Id,
+           string company,
+           string jobTitle,
+           string phone,
+           string billAddress1,
+           string billCity,
+           string billPostalCode)
+        {
+            string userId = user?.UserId;
+            string url = user?.SalesForceURL;
+            string sessionId = user?.SalesForceSessionId;
+
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(url) || string.IsNullOrEmpty(sessionId))
+            {
+                return WriteErrorResult(RequestFailedKey);
+            }
+
+            enterprise.User_Preference__c userPreference = new enterprise.User_Preference__c()
+            {
+                Id = "a2E3E00000010TGUAY", // Id recieved while fetching details-  "a2E3E00000010TGUAY",
+
+                Company__c = company,
+                Job_or_function__c = jobTitle,
+                Telephone__c = phone,
+                Primary_Address__c = billAddress1,
+                City_town__c = billCity,
+                Postcode__c = billPostalCode
+            };
+
+
+            SFv2.SaveResult[] result = Update(sessionId, userId, url, userPreference);
+
+            if (result.Length>0 &&  !result[0].success)
+            {
+                return WriteErrorResult(result[0].errors[0]?.message ?? RequestFailedKey);
+            }
+
+            return new AccountInfoWriteResult()
+            {
+                Success = true,
+                Message = string.Empty
+            };
+
+        }
+
+        private SFv2.SaveResult[] Update(string sessionId, string userId, string url, enterprise.User_Preference__c userPreference)
+        {
+            SFv2.SaveResult[] result = null;
+
+            try
+            {
+                EndpointAddress EndpointAddr = new EndpointAddress(url);
+                //instantiate session header object and set session id
+
+                enterprise.SessionHeader header = new enterprise.SessionHeader();
+                header.sessionId = sessionId;
+
+                SFv2.SoapClient client = new SFv2.SoapClient("Soap", EndpointAddr);
+
+                SFv2.sObject[] sobject = new enterprise.sObject[] { userPreference };
+                SFv2.LimitInfo[] limitInfo = new SFv2.LimitInfo[] { };
+
+                client.update(header, null, null, null, null, null, null, null, null, null, null, null, null, sobject, out limitInfo, out result);
+
+
+                return result;
+
+            }
+            catch (System.Exception ex)
+            {
+                string s = ex.ToString();
+
+
+            }
+
+            return result;
+        }
+
         public IAccountInfoWriteResult WriteErrorResult(string message)
         {
             return new AccountInfoWriteResult

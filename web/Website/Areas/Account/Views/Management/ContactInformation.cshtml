@@ -71,7 +71,10 @@
                                 <input type="text"
                                        name="Name"
                                        value="@Model.Profile.Name"
-                                       placeholder="Name" class="required">
+                                       placeholder="Name"  readonly="readonly">
+                              
+                                <input type="hidden"   name="Name"
+                                       value="@Model.Profile.Id" />
                             </p>
                         </div>
 
@@ -94,10 +97,18 @@
                                 <label for="JobTitle" class="page-account__text-label">
                                     @Model.JobTitleLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <input type="text"
+                                @*<input type="text"
                                        name="JobTitle"
                                        value="@Model.Profile.JobTitle"
-                                       placeholder="@Model.JobTitlePlaceholderText" class="required">
+                                       placeholder="@Model.JobTitlePlaceholderText" class="required">*@
+
+                                <select name="JobTitle" id="ddlJobTitle" class="">
+                                    @{ var jobs = new string[] { "Job 1", "Job 2" }; }
+                                    @foreach (var job in jobs)
+                                    {
+                                        <option class="" @(@Model.Profile.JobTitle.Equals(job) ? "selected" : "") value="@job">@job</option>
+                                    }
+                                </select>
                             </p>
 
 
@@ -152,15 +163,7 @@
                                        placeholder="@Model.BillCityPlaceholderText" id="txtBillingCity" class="required">
                             </p>
 
-                            <p>
-                                <label for="BillState" class="page-account__text-label">
-                                    @Model.BillStateLabelText
-                                </label>
-                                <input type="text"
-                                       name="BillState"
-                                       value="@Model.Profile.BillState"
-                                       placeholder="@Model.BillStatePlaceholderText" id="txtBillingState">
-                            </p>
+                          
 
                             <p>
                                 <label for="BillPostalCode" class="page-account__text-label">
@@ -192,13 +195,13 @@
 
             </form>
 
-            <div>
+            <div  >
                 <hr />
                 <br />
                 <h3>Confirmed Details</h3>
 
                 <br />
-                <div class="page-account-contact__column">
+                <div class="page-account-contact__column"  >
                     <p>
                         <label class="page-account__text-label">
                             Name

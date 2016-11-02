@@ -9,6 +9,7 @@ namespace Informa.Web.Areas.Account.Models.User.Management
 {
     public class ContactInformationUpdateRequest
     {
+        public string Id { get; set; }
         [Required(ErrorMessage = ManagementValidationReasons.Required)]
         public string FirstName { get; set; }
         [Required(ErrorMessage = ManagementValidationReasons.Required)]

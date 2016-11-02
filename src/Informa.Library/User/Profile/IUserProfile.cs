@@ -2,6 +2,7 @@
 {
     public interface IUserProfile
     {
+        string Id { get; }
         string Name { get; }
         string FirstName { get; }
         string LastName { get; }

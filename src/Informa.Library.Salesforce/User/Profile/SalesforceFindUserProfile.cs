@@ -41,10 +41,11 @@ namespace Informa.Library.Salesforce.User.Profile
                 var user = userPreference?.User__r;
                 // var contact = user?.Contact;
 
-                if (user != null)//  && contact != null)
+                if (userPreference != null && user != null)//  && contact != null)
                 {
-                   var salesforceUserProfile= new SalesforceUserProfile
+                    var salesforceUserProfile = new SalesforceUserProfile
                     {
+                        Id = userPreference.Id,
                         Name = user.Name ?? string.Empty,
                         Company = userPreference.Company__c ?? string.Empty,
                         JobTitle = userPreference.Job_or_function__c ?? string.Empty,
@@ -56,13 +57,13 @@ namespace Informa.Library.Salesforce.User.Profile
 
                         /*For SFDC confirmed contacts */
                         SFConfirmedName = user.Contact?.Name ?? string.Empty,
-                        SFConfirmedCompany = user.Contact?.Account?.Name ??string.Empty, 
-                       SFConfirmedJobTitle =  user.Contact?.Title ?? string.Empty,  
-                       SFConfirmedPhone = user.Contact?.MobilePhone ?? string.Empty,
-                       SFConfirmedBillAddress1 = user.Contact?.MailingAddress?.street ?? string.Empty,
-                       SFConfirmedBillCity = user.Contact?.MailingAddress?.city ?? string.Empty,
-                       SFConfirmedBillPostalCode = user.Contact?.MailingAddress?.postalCode ?? string.Empty,
-                   };
+                        SFConfirmedCompany = user.Contact?.Account?.Name ?? string.Empty,
+                        SFConfirmedJobTitle = user.Contact?.Title ?? string.Empty,
+                        SFConfirmedPhone = user.Contact?.MobilePhone ?? string.Empty,
+                        SFConfirmedBillAddress1 = user.Contact?.MailingAddress?.street ?? string.Empty,
+                        SFConfirmedBillCity = user.Contact?.MailingAddress?.city ?? string.Empty,
+                        SFConfirmedBillPostalCode = user.Contact?.MailingAddress?.postalCode ?? string.Empty,
+                    };
 
                     return salesforceUserProfile;
                 }
@@ -98,7 +99,7 @@ namespace Informa.Library.Salesforce.User.Profile
                 query.Append("  u.Other_Job__c,    u.Job_or_function__c, u.Id,  ");
                 query.Append("  u.Finance__c,  u.Country__c, u.Company__c, u.City_town__c, u.Agri__c, ");
                 query.Append("  u.Agra_email_news_updates_and_offers__c, ");
-                query.Append(" user__r.contact.accountid, user__r.contact.account.name ");
+                query.Append(" user__r.contact.accountid, user__r.contact.account.name, ");
                 query.Append(" user__r.contact.name, ");
                 query.Append(" user__r.contact.email, ");
                 query.Append(" user__r.contact.fax, ");
