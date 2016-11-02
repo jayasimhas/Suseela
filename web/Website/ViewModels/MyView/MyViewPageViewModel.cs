@@ -90,9 +90,10 @@ namespace Informa.Web.ViewModels.MyView
                         sec = new Section();
                         sec.TaxonomyIds = new List<string>();
                         sec.ChannelName = topicItem?.Navigation_Text;
-                        sec.ChannelId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(sec.ChannelId))
-                            sec.TaxonomyIds.Add(sec.ChannelId);
+                        sec.ChannelId = topicItem._Id.ToString();
+                        taxonomyId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                        if (!string.IsNullOrWhiteSpace(taxonomyId))
+                            sec.TaxonomyIds.Add(taxonomyId);
                         sections.Add(sec);
                     }
                 }
@@ -105,9 +106,10 @@ namespace Informa.Web.ViewModels.MyView
                     sec = new Section();
                     sec.TaxonomyIds = new List<string>();
                     sec.ChannelName = channelPageItem?.Display_Text;
-                    sec.ChannelId    = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                    if (!string.IsNullOrWhiteSpace(sec.ChannelId))
-                        sec.TaxonomyIds.Add(sec.ChannelId);
+                    sec.ChannelId = channelPageItem._Id.ToString();
+                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
                     if (!topics.Any() && channel.Topics != null)
                         topics = channel.Topics;
                     foreach (Topic topic in topics)
