@@ -528,20 +528,19 @@ $(function(){
 		e.preventDefault();
 		var $this = $(this), name = $this.attr('name'), getPos = $('#' + name).position(), latestSubject = $('#'+name).closest('.eachstoryMpan').prev('.latestSubject'), subjectHei = latestSubject.height(), allstoriesLen = $('.personalisationPan .eachstoryMpan').length, liIdx = $this.closest('li').index();
 		
-		
 		if(liIdx < allstoriesLen){
 			$(window).scrollTop(getPos.top - subjectHei * 3);
 		}
 		else{
 			if(typeof loadPreferanceId !== "undefined"){
-				for(var i=allstoriesLen; i<=liIdx; i++){
+				for(var i=eachstoryLength; i<=liIdx; i++){
 					var setId = loadPreferanceId["Sections"];
 					(function(idx){
 						$.ajax({
-							url: '/loaddata.json',//?preferenceId='+ setId[idx].Id + '&pno=1&psize=9',
+							url: '/api/articlesearch', 
 							dataType: 'json',
-							data: {'id': setId[idx].Id},
-							type: 'GET',
+							data: JSON.stringify({'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
+							type: 'POST',
 							cache: false,
 							async: false,
 							beforeSend: function(){
