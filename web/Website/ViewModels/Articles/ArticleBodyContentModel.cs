@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
@@ -58,9 +57,8 @@ namespace Informa.Web.ViewModels.Articles
             UserSession = userSession;
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
+      
 
-
-       
         public string Title => GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
@@ -114,37 +112,41 @@ namespace Informa.Web.ViewModels.Articles
             enterprise.QueryResult queryresult;
             queryresult=GetEntitlementfromSalesForce(url, sessionid, userId,email);
 
-            if (queryresult.records != null)
-            {
-               
-                foreach (var record in queryresult.records)
+                if (queryresult.records != null)
                 {
-                    List<String> Userentitlement = ConvertObjectToXMLString(queryresult.records);
-                    //List<string> TaxonomiesList = (List<string>)GlassModel.Taxonomies;
-                    IEnumerable<object> TaxonomiesList = (IEnumerable<object>)GlassModel.Taxonomies;
 
-                    //List<int> Taxonomlist = new List<int>();
-                    List<string> Taxonomlist = new List<string>();
-                    for (int i= 0; i < GlassModel.Taxonomies.ToList<object>().Count; i++)
+                    foreach (var record in queryresult.records)
                     {
-                        Taxonomlist.Add((GlassModel.Taxonomies.ToArray())[i]._Id.ToString());
-                    }
+
+                       
+                        List<String> Userentitlement = ConvertObjectToXMLString(queryresult.records);
+                        //List<string> TaxonomiesList = (List<string>)GlassModel.Taxonomies;
+                        IEnumerable<object> TaxonomiesList = (IEnumerable<object>)GlassModel.Taxonomies;
+
+                        //List<int> Taxonomlist = new List<int>();
+                        List<string> Taxonomlist = new List<string>();
+                        for (int i = 0; i < GlassModel.Taxonomies.ToList<object>().Count; i++)
+                        {
+                            Taxonomlist.Add((GlassModel.Taxonomies.ToArray())[i]._Id.ToString());
+                        }
 
 
-                    var results = Taxonomlist.Intersect(Userentitlement, StringComparer.OrdinalIgnoreCase);
-                    if (results.Count() > 0)
-                    {
-                        return _lazyBody.Value;
+                        var results = Taxonomlist.Intersect(Userentitlement, StringComparer.OrdinalIgnoreCase);
+                        if (results.Count() > 0)
+                        {
+                            return "You are  viewing the entitled  content" + _lazyBody.Value;
+                        }
+                        else
+                            return "You are not entitle for viewing this content";
                     }
-                    else
-                        return "Unentitittled";
+                    return string.Empty;
                 }
-                return string.Empty;
+                else return string.Empty;
+
             }
-            else return string.Empty;
 
-        }
-
+            //return string.Empty;
+        //}
 
         public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId,string email)
         {
@@ -295,6 +297,38 @@ namespace Informa.Web.ViewModels.Articles
                     {
                         entitlementslist.Add((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower());
                     }
+
+                    else if ((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].Name == "q1:Juices_and_Beverages_Code__c")
+                    {
+                        entitlementslist.Add((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower());
+                    }
+
+                    else if ((((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].Name == "q1:EndDate__c")
+                    {
+                        DateTime dt1;
+                        DateTime dt2;
+                        string strDate1;
+                        string strDate2;
+                        strDate1 = (((System.Xml.XmlElement)(xml.SelectSingleNode("ArrayOfSObject/sObject")))).ChildNodes[i].InnerText.ToLower();
+                        strDate2 = DateTime.Today.ToString("yyyy-MM-dd");
+
+                       
+
+                        if (DateTime.TryParse(strDate1, out dt1) && DateTime.TryParse(strDate2, out dt2))
+                        {
+                            if (dt1.Date < dt2.Date)
+                            {
+                                entitlementslist.Clear();
+                                return entitlementslist;
+                            }
+                        }
+
+
+
+                    }
+
+
+
                 }
 
 
