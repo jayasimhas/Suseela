@@ -4394,7 +4394,7 @@ header .header-account-access {
     height: 8.125rem;
     top: 50%;
     left: 50%;
-    z-index: 5000;
+    z-index: 9999;
     margin-left: -200px;
     margin-left: -12.5rem;
     margin-top: -65px;
@@ -4546,7 +4546,7 @@ header .header-account-access {
     top: 0rem;
     left: 0px;
     left: 0rem;
-    z-index: 99;
+    z-index: 9990;
     opacity: 0.5; }
   .myview-settings .hidden-large {
     display: none; }
