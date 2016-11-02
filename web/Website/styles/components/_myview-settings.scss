@@ -552,6 +552,13 @@
 				color: $color-white;
 				padding: 0 2rem;
 			}
+			.registrationBtn.validationChk{
+				@include folow-btn(auto, 2rem); 
+				background: $color-tree-poppy-orange;
+				color: $color-white;
+				padding: 0 2rem;
+			}
+			
 			.cancel{
 				@include followBtnLbl();
 				margin: 0px;
