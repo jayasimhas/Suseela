@@ -354,12 +354,13 @@ $(function(){
 	var tables = $('.publicationPan table');
 	setClsforFlw(tables);
 	
-	$('.saveview').click(function () {
+	$('.saveview').click(function (e) {
 		var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
             isChannelLevel = $('#isChannelBasedRegistration').val(),
 		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 		
+		e.preventDefault();
 		setDataRow(allpublications);
         allpublicationsEles.removeAttr('data-row');
 		for (var i = 0; i < allpublicationsEles.length; i++) {
@@ -369,6 +370,7 @@ $(function(){
 		createJSONData(alltables, UserPreferences);		
 		
 		$('#validatePreference').val(0);
+		window.location.href = $(this).attr('href');
 	});
 	
 	$('.registrationBtn').click(function (e) {
@@ -402,7 +404,16 @@ $(function(){
 			}
 		}
 		else{
-			window.location.href = $(this).attr('href');
+			for (var i = 0; i < alltrs.length; i++) {
+				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+					channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+					secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+					channelOrder = $(alltrs[i]).attr('data-row'),
+					followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+				
+				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+			}
+			sendHttpRequest(UserPreferences, 'register');
 			//showModal();
 		}
 	});
