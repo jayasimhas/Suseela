@@ -3862,6 +3862,18 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function () {
+    //AM Charts
+    var amchartVal = JSON.parse($('#amchartData').val()),
+        chartDataVal = JSON.parse($('#chartData').val()),
+        createNewObj = {};
+    for (prop in amchartVal) {
+        if (prop != 'dataProvider') {
+            createNewObj[prop] = amchartVal[prop];
+        } else {
+            createNewObj[prop] = chartDataVal;
+        }
+    }
+    var chart = AmCharts.makeChart("chartdiv", createNewObj);
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
