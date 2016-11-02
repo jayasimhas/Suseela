@@ -469,7 +469,7 @@ $(function(){
 		});
 	});
 	
-	var layout1Flag = true, indx = 0, eachstoryLength = (loadPreferanceId && loadPreferanceId.DefaultSectionLoadCount) ? loadPreferanceId.DefaultSectionLoadCount : 0;
+	var layout1Flag = true, indx = 0, eachstoryLength = (typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount) ? loadPreferanceId.DefaultSectionLoadCount : 0;  
 	$(window).scroll(function(){
 		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'), eachstoryMpanLast = eachstoryMpan.last(), layoutCls = eachstoryMpan.find('.eachstory').attr('class'), contentHei = $('.personalisationPan').height(), loadsection, texonomyId;
 		 
