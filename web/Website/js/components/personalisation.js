@@ -524,7 +524,7 @@ $(function(){
 		}
 	});
 	
-	$('.main-menu__hoverable a.myviewLink', '.main-menu__section-wrapper').click(function(e){
+	$('.main-menu__hoverable a.myviewLink').click(function(e){
 		e.preventDefault();
 		var $this = $(this), name = $this.attr('name'), getPos = $('#' + name).position(), latestSubject = $('#'+name).closest('.eachstoryMpan').prev('.latestSubject'), subjectHei = latestSubject.height(), allstoriesLen = $('.personalisationPan .eachstoryMpan').length, liIdx = $this.closest('li').index();
 		

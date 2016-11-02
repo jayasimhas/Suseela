@@ -1789,7 +1789,7 @@ $(function () {
 		}
 	});
 
-	$('.main-menu__hoverable a', '.main-menu__section-wrapper').click(function (e) {
+	$('.main-menu__hoverable a.myviewLink').click(function (e) {
 		e.preventDefault();
 		var $this = $(this),
 		    name = $this.attr('name'),
