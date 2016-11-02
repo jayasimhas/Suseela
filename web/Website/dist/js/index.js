@@ -6628,7 +6628,11 @@ exports.toggleIcons = toggleIcons;
                 $(dragSrcEl).hide();
                 dragSrcEl.innerHTML = oldEl.html;
                 dragSrcEl.id = oldEl.id;
-                $(dragSrcEl).insertAfter(that);
+                if ($(this).index() > $(dragSrcEl).index()) {
+                    $(dragSrcEl).insertBefore(that);
+                } else {
+                    $(dragSrcEl).insertAfter(that);
+                }
                 $(dragSrcEl).show();
                 if (settings.dropAnimation) {
                     onAnimEnd(this);
@@ -6724,10 +6728,6 @@ exports.toggleIcons = toggleIcons;
             $this.on('dragleave', settings.element, handleDragLeave);
             $this.on('drop', settings.element, handleDrop);
             $this.on('dragend', settings.element, handleDragEnd);
-
-            $this.on('touchmove', settings.element, handleDragStart);
-            $this.on('touchstart', settings.element, handleDragEnter);
-            $this.on('touchend', settings.element, handleDragEnd);
         });
     };
 })(Zepto);
