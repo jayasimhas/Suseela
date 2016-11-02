@@ -3529,6 +3529,15 @@ header .header-account-access {
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
+      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+        header .header-account-access .myView-placeholder .btn-my-view {
+          background: none;
+          color: #c22d3b;
+          padding: 0;
+          width: 60px;
+          font-family: 'Roboto', Arial Narrow, sans-serif;
+          font-style: normal;
+          font-weight: 400; } }
     @media (max-width: 800px) {
       header .header-account-access .myView-placeholder {
         float: right;

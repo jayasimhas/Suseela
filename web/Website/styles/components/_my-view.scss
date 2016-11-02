@@ -42,6 +42,15 @@ header{
 						font-style: normal;
 						font-weight: 400;
 					}
+					@media only screen and (min-device-width: 414px) and (max-device-width: 736px) { 
+						background: none; 
+						color: $color-my-view;
+						padding: 0;
+						width: 60px;
+						font-family: 'Roboto', Arial Narrow, sans-serif;
+						font-style: normal;
+						font-weight: 400;
+					}
 				}
 				@include breakpoint('medium') {
 					float: right;
