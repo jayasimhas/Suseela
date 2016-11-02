@@ -179,7 +179,7 @@ namespace Informa.Library.Article.Search
 
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
+            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{taxonomyParent}-{id}";
             return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
 				}
 
