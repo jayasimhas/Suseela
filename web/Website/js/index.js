@@ -181,9 +181,9 @@ function getParameterByName(name, url) {
 
 $(document).ready(function(){
 	//AM Charts
+	if($('#amchartData') && $('#amchartData').length){
 	var amchartVal = JSON.parse($('#amchartData').val()),
-		chartDataVal = JSON.parse($('#chartData').val()),
-		createNewObj = {};
+	createNewObj = {};
 	for(prop in amchartVal){
 		if(prop != 'dataProvider'){
 			createNewObj[prop] = amchartVal[prop];
@@ -191,7 +191,9 @@ $(document).ready(function(){
 			createNewObj[prop] = chartDataVal; 
 		}
 	}
+
 	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
+	}
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
