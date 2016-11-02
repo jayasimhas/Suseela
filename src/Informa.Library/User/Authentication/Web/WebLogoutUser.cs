@@ -8,17 +8,25 @@ namespace Informa.Library.User.Authentication.Web
     {
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IWebLogoutUserActions Actions;
+        IWebAuthenticateUser WebAuthenticateUser;
 
         public WebLogoutUser(
             IAuthenticatedUserContext authenticatedUserContext,
-            IWebLogoutUserActions actions)
+            IWebLogoutUserActions actions,
+            IWebAuthenticateUser webAuthenticateUser)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             Actions = actions;
+            WebAuthenticateUser = webAuthenticateUser;
         }
 
         public void Logout()
         {
+            if(WebAuthenticateUser !=null && WebAuthenticateUser.AuthenticatedUser != null )
+            {
+                WebAuthenticateUser.AuthenticatedUser = null;
+            }
+
             var user = AuthenticatedUserContext.User;
 
             if (user != null)

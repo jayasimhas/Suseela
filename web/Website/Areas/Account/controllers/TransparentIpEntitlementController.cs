@@ -52,36 +52,40 @@ namespace Informa.Web.Areas.Account.Controllers
 
         private string getEntitlements()
         {
-            var sfUser = WebAuthenticateUser.AuthenticatedUser;
-
-            string userId = sfUser?.UserId;
-            string url = sfUser?.SalesForceURL;
-            string sessionid = sfUser?.SalesForceSessionId;
-
             string result = string.Empty;
 
-            // check if the pseudo user is auto-logged in through transparent ip
-            if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(sessionid))
-            {
-                result = "Not auto-logged-in through transparent ip";
-                return result;
-            }
-            else
+            var sfUser = WebAuthenticateUser.AuthenticatedUser;
+
+            if (sfUser != null)
             {
 
-                try
+                string userId = sfUser?.UserId;
+                string url = sfUser?.SalesForceURL;
+                string sessionid = sfUser?.SalesForceSessionId;
+
+            
+                // check if the pseudo user is auto-logged in through transparent ip
+                if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(sessionid))
                 {
-                    result = this.getEntitlementfromSalesForce(url, sessionid, userId);
+                    result = "Not auto-logged-in through transparent ip";
+                    return result;
                 }
-                catch (System.Exception ex)
+                else
                 {
-                    string exception = ex.ToString();
-                    result = "Error pulling entitlement... Please try again \n" + exception;
+
+                    try
+                    {
+                        result = this.getEntitlementfromSalesForce(url, sessionid, userId);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        string exception = ex.ToString();
+                        result = "Error pulling entitlement... Please try again \n" + exception;
+                    }
                 }
             }
 
             return result;
-
         }
 
         private string getEntitlementfromSalesForce(string url, string sessionid, string userId)
