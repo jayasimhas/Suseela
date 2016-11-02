@@ -185,7 +185,7 @@ namespace Informa.Library.Services.Article
                 }
                 else
                 {
-                    legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                    legacyText = TextTranslator.Translate("Article.NewLegacyPublications");
                     legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
                     return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
                 }
