@@ -2,7 +2,8 @@
 {
 	public class SalesforceUserProfile : ISalesforceUserProfile
 	{
-		public string FirstName { get; set; }
+        public string Name { get; set; }
+        public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string Email { get; set; }
         public string MiddleInitial { get; set; }
@@ -29,5 +30,18 @@
         public string JobFunction { get; set; }
         public string JobIndustry { get; set; }
         public string JobTitle { get; set; }
+
+        /*For SFDC confirmed contacts */
+        public string SFConfirmedName { get; set; }
+        public string SFConfirmedCompany { get; set; }
+        public string SFConfirmedJobTitle { get; set; }
+        public string SFConfirmedPhone { get; set; }
+        public string SFConfirmedBillAddress1 { get; set; }
+        public string SFConfirmedBillCity { get; set; }
+        public string SFConfirmedBillPostalCode { get; set; }
+        
+            
+            
+
     }
 }

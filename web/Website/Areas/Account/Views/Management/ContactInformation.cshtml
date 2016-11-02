@@ -19,95 +19,7 @@
 
             </div>
 
-            <div class="page-account-contact__column">
-
-                <form class="form-update-account-pass"
-                      data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
-
-                <div class="alert-success page-account-contact__update-pass-success js-form-success">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-                    </svg>
-                    <p>@Model.PasswordUpdatedText</p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordUpdateFailed">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordUpdateFailed
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordRequirements">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordRequirements
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordMismatch">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordMismatch
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-InvalidPasswordValues">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.InvalidPasswordValues
-                    </p>
-                </div>
-
-                <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
-
-                    <p>
-                        <label for="CurrentPassword" class="page-account__text-label">
-                            @Model.CurrentPasswordLabelText
-                        </label>
-                        <input type="password"
-                               name="CurrentPassword"
-                               placeholder="@Model.CurrentPasswordPlaceholderText">
-                    </p>
-
-                    <p>
-                        <label for="NewPassword" class="page-account__text-label">
-                            @Model.NewPasswordLabelText
-							<span class="page-account__text-label-hint">@Model.NewPasswordRequirementsText</span>
-                        </label>
-                        <input type="password"
-                               name="NewPassword"
-                               placeholder="@Model.NewPasswordPlaceholderText">
-                    </p>
-
-                    <p>
-                        <label for="NewPasswordConfirm" class="page-account__text-label">
-                            @Model.NewPasswordConfirmLabelText
-                        </label>
-                        <input type="password"
-                               name="NewPasswordConfirm"
-                               placeholder="@Model.NewPasswordConfirmPlaceholderText">
-                    </p>
-
-                    <div class="page-preferences__submit-wrapper">
-                        <button type="submit" class="button--filled button--fly-right click-utag" data-info='{"event_name":"update-password"}'>@Model.UpdatePasswordText</button>
-                    </div>
-
-                </form>
-
-            </div>
+          
 
             <hr>
 
@@ -149,60 +61,17 @@
 
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                            <h2 class="page-account__subheader">@Model.NameTitleText</h2>
+                            @*<h2 class="page-account__subheader">@Model.NameTitleText</h2>*@
+
 
                             <p>
-                                <label for="Salutation" class="page-account__text-label">
-                                    @Model.SalutationLabelText
-                                </label>
-                                <select name="Salutation">
-                                    @foreach (var o in Model.Salutations)
-                                    {
-                                        <option @(@Model.Profile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
-                            </p>
-
-                            <p>
-                                <label for="FirstName" class="page-account__text-label">
-                                    @Model.FirstNameLabelText <span class="asterisk-required"></span>
+                                <label for="Name" class="page-account__text-label">
+                                    Name <span class="asterisk-required"></span>
                                 </label>
                                 <input type="text"
-                                       name="FirstName"
-                                       value="@Model.Profile.FirstName"
-                                       placeholder="@Model.FirstNamePlaceholderText" class="required">
-                            </p>
-
-                            <p>
-                                <label for="MiddleInitial" class="page-account__text-label">
-                                    @Model.MiddleInitialLabelText
-                                </label>
-                                <input type="text"
-                                       name="MiddleInitial"
-                                       value="@Model.Profile.MiddleInitial"
-                                       placeholder="@Model.MiddleInitialPlaceholderText">
-                            </p>
-
-                            <p>
-                                <label for="LastName" class="page-account__text-label">
-                                    @Model.LastNameLabelText <span class="asterisk-required"></span>
-                                </label>
-                                <input type="text"
-                                       name="LastName"
-                                       value="@Model.Profile.LastName"
-                                       placeholder="@Model.LastNamePlaceholderText" class="required">
-                            </p>
-
-                            <p>
-                                <label for="NameSuffix" class="page-account__text-label">
-                                    @Model.NameSuffixLabelText
-                                </label>
-                                <select name="NameSuffix">
-                                    @foreach (var o in Model.Suffixes)
-                                    {
-                                        <option @(@Model.Profile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
+                                       name="Name"
+                                       value="@Model.Profile.Name"
+                                       placeholder="Name" class="required">
                             </p>
                         </div>
 
@@ -220,16 +89,7 @@
                                        placeholder="@Model.CompanyPlaceholderText" class="required">
                             </p>
 
-                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) {
-                            <p>
-                                <label for="Company" class="page-account__text-label">
-                                    @Model.AssociatedCompanyLabelText
-                                </label>
 
-                                @Model.AssociatedCompany
-
-                            </p>
-                            }
                             <p>
                                 <label for="JobTitle" class="page-account__text-label">
                                     @Model.JobTitleLabelText <span class="asterisk-required"></span>
@@ -240,57 +100,13 @@
                                        placeholder="@Model.JobTitlePlaceholderText" class="required">
                             </p>
 
-                            <p>
-                                <label for="JobFunction" class="page-account__text-label">
-                                    @Model.JobFunctionLabelText
-                                </label>
-                                <select name="JobFunction">
-                                    @foreach (var o in Model.JobFunctions)
-                                    {
-                                        <option @(@Model.Profile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
-                            </p>
 
-                            <div>
-                                <label for="JobIndustry" class="page-account__text-label">
-                                    @Model.JobIndustryLabelText <span class="asterisk-required"></span>
-                                </label>
-                                <select name="JobIndustry" class="required">
-                                    @foreach (var o in Model.JobIndustries)
-                                    {
-                                        <option @(@Model.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
-                            </div>
+
                         </div>
 
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                            <h2 class="page-account__subheader">@Model.PhoneTitleText</h2>
-
-                            <p>
-                                <label for="PhoneType" class="page-account__text-label">
-                                    @Model.PhoneTypeLabelText <span class="asterisk-required"></span>
-                                </label>
-                                <select name="PhoneType" class="required">
-                                    @foreach (var o in Model.PhoneTypes)
-                                    {
-                                        <option @(@Model.Profile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
-                            </p>
-
-                            <p>
-                                <label for="CountryCode" class="page-account__text-label">
-                                    @Model.CountryCodeLabelText
-                                </label>
-                                <input type="text"
-                                       name="CountryCode"
-                                       value="@Model.Profile.CountryCode"
-                                       placeholder="@Model.CountryCodePlaceholderText"
-                                       class="contactInfoNumericField">
-                            </p>
+                            @*<h2 class="page-account__subheader">@Model.PhoneTitleText</h2>*@
 
                             <p>
                                 <label for="Phone" class="page-account__text-label">
@@ -301,45 +117,19 @@
                                        value="@Model.Profile.Phone"
                                        placeholder="@Model.PhonePlaceholderText" class="required">
                             </p>
-
-                            <p>
-                                <label for="PhoneExtension" class="page-account__text-label">
-                                    @Model.PhoneExtensionLabelText
-                                </label>
-                                <input type="text"
-                                       name="PhoneExtension"
-                                       value="@Model.Profile.PhoneExtension"
-                                       placeholder="@Model.PhoneExtensionPlaceholderText">
-                            </p>
-
-                            <p>
-                                <label for="Fax" class="page-account__text-label">
-                                    @Model.FaxLabelText
-                                </label>
-                                <input type="text"
-                                       name="Fax"
-                                       value="@Model.Profile.Fax"
-                                       placeholder="@Model.FaxPlaceholderText"
-                                       class="contactInfoNumericField">
-                            </p>
                         </div>
                     </div>
 
                     <div class="page-account-contact__column">
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                            <h2 class="page-account__subheader">@Model.BillingTitleText</h2>
+                            <h2 class="page-account__subheader">Address</h2>
 
                             <p>
                                 <label for="BillCountry" class="page-account__text-label">
                                     @Model.BillCountryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="BillCountry" id="ddlBillingCountry" class="required">
-                                    @foreach (var o in Model.Countries)
-                                    {
-                                        <option @(@Model.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
+
                             </p>
 
                             <p>
@@ -350,16 +140,6 @@
                                        name="BillAddress1"
                                        value="@Model.Profile.BillAddress1"
                                        placeholder="@Model.BillAddress1PlaceholderText" id="txtBillingAddress1" class="required">
-                            </p>
-
-                            <p>
-                                <label for="BillAddress2" class="page-account__text-label">
-                                    @Model.BillAddress2LabelText
-                                </label>
-                                <input type="text"
-                                       name="BillAddress2"
-                                       value="@Model.Profile.BillAddress2"
-                                       placeholder="@Model.BillAddress2PlaceholderText" id="txtBillingAddress2">
                             </p>
 
                             <p>
@@ -394,80 +174,7 @@
 
                         </div>
 
-                        <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                            <h2 class="page-account__subheader">@Model.ShippingTitleText</h2>
-
-                            <p>
-                                <input name="SameAsBilling"
-                                       type="checkbox"
-                                       data-checkbox-type="boolean"l id="chkASBilling">
-                                <label for="SameAsBilling" class="checkbox-label">@Model.SameAsBillingLabel</label>
-                            </p>
-
-                            <p>
-                                <label for="ShipCountry" class="page-account__text-label">
-                                    @Model.ShipCountryLabelText <span class="asterisk-required"></span>
-                                </label>
-                                <select name="ShipCountry" id="ddlShippingCountry" class="required">
-                                    @foreach (var o in Model.Countries)
-                                    {
-                                        <option @(@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
-                                    }
-                                </select>
-                            </p>
-
-                            <p>
-                                <label for="ShipAddress1" class="page-account__text-label">
-                                    @Model.ShipAddress1LabelText <span class="asterisk-required"></span>
-                                </label>
-                                <input type="text"
-                                       name="ShipAddress1"
-                                       value="@Model.Profile.ShipAddress1"
-                                       placeholder="@Model.ShipAddress1PlaceholderText" id="txtShippingAddress1" class="required">
-                            </p>
-
-                            <p>
-                                <label for="ShipAddress2" class="page-account__text-label">
-                                    @Model.ShipAddress2LabelText
-                                </label>
-                                <input type="text"
-                                       name="ShipAddress2"
-                                       value="@Model.Profile.ShipAddress2"
-                                       placeholder="@Model.ShipAddress2PlaceholderText" id="txtShippingAddress2">
-                            </p>
-
-                            <p>
-                                <label for="ShipCity" class="page-account__text-label">
-                                    @Model.ShipCityLabelText <span class="asterisk-required"></span>
-                                </label>
-                                <input type="text"
-                                       name="ShipCity"
-                                       value="@Model.Profile.ShipCity"
-                                       placeholder="@Model.ShipCityPlaceholderText" id="txtShippingCity" class="required">
-                            </p>
-
-                            <p>
-                                <label for="ShipState" class="page-account__text-label">
-                                    @Model.ShipStateLabelText
-                                </label>
-                                <input type="text"
-                                       name="ShipState"
-                                       value="@Model.Profile.ShipState"
-                                       placeholder="@Model.ShipStatePlaceholderText" id="txtShippingState">
-                            </p>
-
-                            <p>
-                                <label for="ShipPostalCode" class="page-account__text-label">
-                                    @Model.ShipPostalCodeLabelText
-                                </label>
-                                <input type="text"
-                                       name="ShipPostalCode"
-                                       value="@Model.Profile.ShipPostalCode"
-                                       placeholder="@Model.ShipPostalCodePlaceholderText" id="txtShippingPostalCode">
-                            </p>
-
-                        </div>
 
                         <div class="page-account__submit-wrapper">
                             <button type="submit" class="button--filled button--fly-right click-utag manage-preferences" data-info='{"event_name":"update-contact-info"}'>@Model.UpdateContactInfoText</button>
@@ -485,6 +192,78 @@
 
             </form>
 
+            <div>
+                <hr />
+                <br />
+                <h3>Confirmed Details</h3>
+
+                <br />
+                <div class="page-account-contact__column">
+                    <p>
+                        <label class="page-account__text-label">
+                            Name
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedName
+                        </label>
+                    </p>
+                    <p>
+                        <label class="page-account__text-label">
+                            Company
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedCompany
+                        </label>
+                    </p>
+                    <p>
+                        <label class="page-account__text-label">
+                            Job title
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedJobTitle
+                        </label>
+                    </p>
+
+
+                    <p>
+                        <label class="page-account__text-label">
+                            Phone
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedPhone
+                        </label>
+                    </p>
+                </div>
+                <div class="page-account-contact__column">
+                    <p>
+                        <label class="page-account__text-label">
+                            Address
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedBillAddress1
+                        </label>
+                    </p>
+
+                    <p>
+                        <label class="page-account__text-label">
+                            City
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedBillCity
+                        </label>
+                    </p>
+
+                    <p>
+                        <label class="page-account__text-label">
+                            Zip/Postal code
+                        </label>
+                        <label>
+                            @Model.Profile.SFConfirmedBillPostalCode
+                        </label>
+                    </p>
+                    </div>
+                </div>
+
         </div>
     </div>
 }
@@ -493,7 +272,7 @@ else
     <div class="page-account__sign-in-solo">
         @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
     </div>
-}
+            }
 
 
 <div id="errorMessage" style="display:none;">

@@ -1,11 +1,12 @@
 ﻿namespace Informa.Library.User.Profile
 {
-	public interface IUserProfile
-	{
-		string FirstName { get; }
-		string LastName { get; }
-		string Email { get; }
-		string MiddleInitial { get; set; }
+    public interface IUserProfile
+    {
+        string Name { get; }
+        string FirstName { get; }
+        string LastName { get; }
+        string Email { get; }
+        string MiddleInitial { get; set; }
         string NameSuffix { get; set; }
         string Salutation { get; set; }
         string BillCountry { get; set; }
@@ -29,5 +30,13 @@
         string JobFunction { get; set; }
         string JobIndustry { get; set; }
         string JobTitle { get; set; }
+
+        string SFConfirmedName { get; set; }
+        string SFConfirmedCompany { get; set; }
+        string SFConfirmedJobTitle { get; set; }
+        string SFConfirmedPhone { get; set; }
+        string SFConfirmedBillAddress1 { get; set; }
+        string SFConfirmedBillCity { get; set; }
+        string SFConfirmedBillPostalCode { get; set; }
     }
 }

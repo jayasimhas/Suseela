@@ -1,4 +1,5 @@
 ﻿using Informa.Library.User.Authentication;
+using Informa.Library.User.Authentication.Web;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Profile
@@ -11,16 +12,19 @@ namespace Informa.Library.User.Profile
 		protected readonly IFindUserProfileByUsername FindUserProfile;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
+        protected IWebAuthenticateUser WebAuthenticateUser;
 
-		public UserProfileContext(
+        public UserProfileContext(
 			IFindUserProfileByUsername findUserProfile,
 			IAuthenticatedUserContext userContext,
-			IAuthenticatedUserSession userSession)
+			IAuthenticatedUserSession userSession,
+            IWebAuthenticateUser webAuthenticateUser)
 		{
 			FindUserProfile = findUserProfile;
 			UserContext = userContext;
 			UserSession = userSession;
-		}
+            WebAuthenticateUser = webAuthenticateUser;
+        }
 
 		public IUserProfile Profile
 		{
@@ -31,16 +35,24 @@ namespace Informa.Library.User.Profile
 					return null;
 				}
 
-				var profileSession = UserSession.Get<IUserProfile>(sessionKey);
+				///var profileSession = UserSession.Get<IUserProfile>(sessionKey);
 
-				if (profileSession.HasValue)
-				{
-					return profileSession.Value;
-				}
+				//if (profileSession.HasValue)
+				//{
+				//	return profileSession.Value;
+				//}
 
-				var profile = FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);
+               ////	var profile = FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);
 
-				Profile = profile;
+                var sfUser = WebAuthenticateUser.AuthenticatedUser;
+
+                string userId = sfUser?.UserId;
+                string url = sfUser?.SalesForceURL;
+                string sessionId = sfUser?.SalesForceSessionId;
+
+                var profile = FindUserProfile.Find(userId,url,sessionId);
+
+                Profile = profile;
 
 				return profile;
 			}
