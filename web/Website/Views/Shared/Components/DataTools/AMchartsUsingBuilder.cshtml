@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.ViewModels.DataTools.AMChartsUsingBuilderViewModel
 
-@if (Model != null && !string.IsNullOrEmpty(Model.ChartType))
+@if (Model != null)
 {
     var chartType = Model.ChartType;
     var ChartTypeScript = "/amcharts/" + chartType + ".js";
