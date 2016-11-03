@@ -1151,8 +1151,10 @@
     <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
+    <Compile Include="Utilities\References\ITaxonomyFolders.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
+    <Compile Include="Utilities\References\TaxonomyFolders.cs" />
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
