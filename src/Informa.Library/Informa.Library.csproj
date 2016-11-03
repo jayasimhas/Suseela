@@ -438,6 +438,7 @@
     <Compile Include="Publication\SitePublicationWorkflow.cs" />
     <Compile Include="Publication\SitesPublicationNameContext.cs" />
     <Compile Include="Publication\SitePublicationNameContext.cs" />
+    <Compile Include="Publishing\Events\BeginPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
