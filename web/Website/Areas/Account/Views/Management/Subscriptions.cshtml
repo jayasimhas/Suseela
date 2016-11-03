@@ -5,7 +5,7 @@
 <div class="page-account subscriptionPan">
         @Html.Sitecore().Placeholder("page-account")
         <span class="page-account_text">
-            @Model.SubscriptionHeaderSubTitle;
+            @Html.Raw(Model.SubscriptionHeaderSubTitle)
         </span>
 
         <div class="page-preferences js-preferences-user-container">
