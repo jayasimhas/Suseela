@@ -704,8 +704,10 @@ function sendHttpRequest(UserPreferences, setFlag) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
-				if (setFlag == 'register') {
+				if (setFlag == 'register' && redirectUrl == 'href') {
 					window.location.href = $('.registrationBtn').attr('href');
+				} else {
+					window.location.href = $('.registrationBtn').attr('name');
 				}
 			} else {
 				if (setFlag == 'register') {
@@ -747,6 +749,19 @@ function setDataRow(allpublications) {
 function showModal() {
 	$('.modal-overlay').addClass('in');
 	$('.modal-view').show();
+}
+
+function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
+	for (var i = 0; i < alltrs.length; i++) {
+		var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+		    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+		    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+		    channelOrder = $(alltrs[i]).attr('data-row'),
+		    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+
+		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+	}
+	sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
 
 function sort_table(tbody, col, asc, sortstatus) {
@@ -1085,6 +1100,10 @@ $(function () {
 		UserPreferences.PreferredChannels = [];
 
 		e.preventDefault();
+		if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'name');
+		}
 		if ($('#validatePriority').val() == "false") {
 			if ($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
 				$('.alert-error.register-not-selected').show();
@@ -1093,32 +1112,13 @@ $(function () {
 			setDataRow(allpublications);
 
 			if (!!$('#isChannelBasedRegistration').val()) {
-				for (var i = 0; i < alltrs.length; i++) {
-					var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-					    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-					    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-					    channelOrder = $(alltrs[i]).attr('data-row'),
-					    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
-
-					UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
-				}
-				sendHttpRequest(UserPreferences, 'register');
+				sendRegisterData(alltrs, UserPreferences, 'href');
 			} else {
 				createJSONData(table, UserPreferences);
 			}
 		} else {
 			setDataRow(allpublications);
-			for (var i = 0; i < alltrs.length; i++) {
-				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-				    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-				    channelOrder = $(alltrs[i]).attr('data-row'),
-				    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
-
-				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
-			}
-			sendHttpRequest(UserPreferences, 'register');
-			//showModal();
+			sendRegisterData(alltrs, UserPreferences, 'href');
 		}
 	});
 
@@ -2366,6 +2366,9 @@ function formController(opts) {
 
 								if ($(form).data('on-success')) {
 									window.location.href = $(currentForm).data('on-success');
+								}
+								if (response.redirectRequired !== undefined && response.redirectRequired) {
+									window.location.href = response.redirectUrl;
 								}
 							} else {
 								if (response.reasons && response.reasons.length > 0) {
@@ -3880,6 +3883,7 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function () {
+
     //AM Charts
     if ($('#amchartData') && $('#amchartData').length) {
         var amchartVal = JSON.parse($('#amchartData').val()),
@@ -4432,16 +4436,33 @@ $(document).ready(function () {
         });
 
         $('.show-demo').click(function () {
-            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
 
+            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
+            //IPMP-616	
             if ($(this).parent().hasClass('collapsed')) {
+                sessionStorage.setItem("mykey", "false");
                 $('.hd').show();
                 $('.sd').hide();
+                $('.toggle-demo').show();
             } else {
+                sessionStorage.setItem("mykey", "true");
                 $('.sd').show();
                 $('.hd').hide();
+                $('.toggle-demo').hide();
+            }
+            var persistedval = sessionStorage.getItem("mykey");
+            if (persistedval == "false") {
+                $('.toggle-demo').show();
+            } else {
+                $('.toggle-demo').hide();
             }
         });
+        var persistedval = sessionStorage.getItem("mykey");
+        if (persistedval == "false") {
+            $('.toggle-demo').hide();
+        } else {
+            $('.toggle-demo').show();
+        }
     })();
 
     /* * *
