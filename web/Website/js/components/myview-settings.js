@@ -404,6 +404,7 @@ $(function(){
 			}
 		}
 		else{
+			setDataRow(allpublications);
 			for (var i = 0; i < alltrs.length; i++) {
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
 					channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
