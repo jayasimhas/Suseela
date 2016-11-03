@@ -9,9 +9,18 @@
         <div class="general-header__navigation">
             @foreach (I___BasePage n in @Model.NavigationItems)
             {
-                <a href="@n._Url" class="@Model.CssClass(n)">
-                    @n.Navigation_Title
-                </a>
+                if (@n.Navigation_Title.ToUpper() == "CONTACT INFORMATION")
+                {
+                    <a href="@n._Url" class="@Model.CssClass(n)">
+                        USER DETAILS
+                    </a>
+                }
+                else
+                {
+                   <a href = "@n._Url" class="@Model.CssClass(n)">
+                            @n.Navigation_Title
+                   </a>
+                }
             }
         </div>
         <div class="general-header__navigation-scroller--right">
