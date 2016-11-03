@@ -255,7 +255,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     if (!(ao.ContainsKey("COMMODITY1")))
                     {
-
+                         
                         successwithmissingLog += "||" + "COMMODITY is missing";
                     }
                 }
@@ -393,14 +393,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
             if (articles == null || !articles.Any())
-            return 1;
+                return 1;
 
-           // return 1;
+            try
+            {
 
-            string num = articles.First().Replace(PublicationPrefix, "");
-            int n = int.Parse(num);
-            return n + 1;
-        }
+                string num = articles.First().Replace(PublicationPrefix, "");
+                int n = int.Parse(num);
+                return n + 1;
+            }
+            catch
+            {
+                return 1;
+            }
+           }
 
 
         public string GetContentType(string contentName)
