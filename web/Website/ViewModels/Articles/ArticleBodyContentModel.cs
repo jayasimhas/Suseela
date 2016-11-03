@@ -24,75 +24,75 @@ using System.Xml;
 
 namespace Informa.Web.ViewModels.Articles
 {
-	public class ArticleBodyContentModel : ArticleEntitledViewModel
-	{
-		public readonly ICallToActionViewModel CallToActionViewModel;
-		protected readonly ITextTranslator TextTranslator;
-		protected readonly IArticleService ArticleService;
+    public class ArticleBodyContentModel : ArticleEntitledViewModel
+    {
+        public readonly ICallToActionViewModel CallToActionViewModel;
+        protected readonly ITextTranslator TextTranslator;
+        protected readonly IArticleService ArticleService;
         //JIRA IPMP-56
         protected readonly ISiteRootContext SiteRootContext;
         private readonly Lazy<string> _lazyBody;
         protected readonly IUserSession UserSession;
         IWebAuthenticateUser WebAuthenticateUser;
         public ArticleBodyContentModel(
-						IArticle model,
-						IIsEntitledProducItemContext entitledProductContext,
-						ITextTranslator textTranslator,
-						ICallToActionViewModel callToActionViewModel,
-						IArticleService articleService,
+                        IArticle model,
+                        IIsEntitledProducItemContext entitledProductContext,
+                        ITextTranslator textTranslator,
+                        ICallToActionViewModel callToActionViewModel,
+                        IArticleService articleService,
                         IAuthenticatedUserContext authenticatedUserContext,
                         ISiteRootContext siteRootContext,
                         ISitecoreUserContext sitecoreUserContext,
                         IUserSession userSession,
             IWebAuthenticateUser webAuthenticateUser)
-                        
-						: base(entitledProductContext, authenticatedUserContext, sitecoreUserContext)
-         {
-			TextTranslator = textTranslator;
-			CallToActionViewModel = callToActionViewModel;
-			ArticleService = articleService;
+
+                        : base(entitledProductContext, authenticatedUserContext, sitecoreUserContext)
+        {
+            TextTranslator = textTranslator;
+            CallToActionViewModel = callToActionViewModel;
+            ArticleService = articleService;
             // JIRA IPMP-56
             SiteRootContext = siteRootContext;
             WebAuthenticateUser = webAuthenticateUser;
             UserSession = userSession;
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
-		}
-      
+        }
+
 
         public string Title => GlassModel.Title;
-		public string Sub_Title => GlassModel.Sub_Title;
-		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
+        public string Sub_Title => GlassModel.Sub_Title;
+        public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
 
-		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);// JIRA IPMP-56
+        public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);// JIRA IPMP-56
 
-        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active,GlassModel.Escenic_ID,GlassModel.Legacy_Article_Number);  // JIRA IPMP-56      
+        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active, GlassModel.Escenic_ID, GlassModel.Legacy_Article_Number);  // JIRA IPMP-56      
 
         private string _summary;
-		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+        public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
 
-		private IEnumerable<IPersonModel> _authors;
-		public IEnumerable<IPersonModel> Authors
-				=> _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
+        private IEnumerable<IPersonModel> _authors;
+        public IEnumerable<IPersonModel> Authors
+                => _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
 
-		private DateTime? _date;
-		public DateTime Date
-		{
-			get
-			{
-				if (!_date.HasValue)
-				{
-					_date = GlassModel.GetDate();
-				}
-				return _date.Value;
-			}
-		}
-		public string Category => GlassModel.Article_Category;
+        private DateTime? _date;
+        public DateTime Date
+        {
+            get
+            {
+                if (!_date.HasValue)
+                {
+                    _date = GlassModel.GetDate();
+                }
+                return _date.Value;
+            }
+        }
+        public string Category => GlassModel.Article_Category;
         //public string Body => _lazyBody.Value;
         public string Body => GetArticleBody();
         public string ContentType => GlassModel.Content_Type?.Item_Name;
-		public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
-		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
-		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
+        public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
+        public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+        public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
         public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
 
         // JIRA IPMP-56
@@ -103,14 +103,19 @@ namespace Informa.Web.ViewModels.Articles
         public string GetArticleBody()
         {
             var sfUser = WebAuthenticateUser.AuthenticatedUser;
-
+            bool b = GlassModel.Free;
+            
             string userId = sfUser?.UserId;
             string url = sfUser?.SalesForceURL;
             string sessionid = sfUser?.SalesForceSessionId;
             string email = sfUser?.Email;
 
             enterprise.QueryResult queryresult;
-            queryresult=GetEntitlementfromSalesForce(url, sessionid, userId,email);
+            if (sessionid != null)
+            {
+
+                queryresult = GetEntitlementfromSalesForce(url, sessionid, userId, email);
+
 
                 if (queryresult.records != null)
                 {
@@ -118,7 +123,7 @@ namespace Informa.Web.ViewModels.Articles
                     foreach (var record in queryresult.records)
                     {
 
-                       
+
                         List<String> Userentitlement = ConvertObjectToXMLString(queryresult.records);
                         //List<string> TaxonomiesList = (List<string>)GlassModel.Taxonomies;
                         IEnumerable<object> TaxonomiesList = (IEnumerable<object>)GlassModel.Taxonomies;
@@ -130,24 +135,30 @@ namespace Informa.Web.ViewModels.Articles
                             Taxonomlist.Add((GlassModel.Taxonomies.ToArray())[i]._Id.ToString());
                         }
 
-
                         var results = Taxonomlist.Intersect(Userentitlement, StringComparer.OrdinalIgnoreCase);
                         if (results.Count() > 0)
                         {
-                            return "You are  viewing the entitled  content" + _lazyBody.Value;
+                            return "You are  viewing the entitled  content" +  GlassModel.Body;
+                            //_lazyBody.Value;
                         }
+                        else if (b==true && results.Count() == 0)
+                            return "You are  viewing the free   content" + _lazyBody.Value;
                         else
                             return "You are not entitle for viewing this content";
                     }
                     return string.Empty;
                 }
                 else return string.Empty;
-
             }
-
-            //return string.Empty;
-        //}
-
+            else
+            {
+                return "Please Login your session is expired ";
+            }
+            }
+        
+    
+        
+            
         public enterprise.QueryResult  GetEntitlementfromSalesForce(string url, string sessionid, string userId,string email)
         {
 
