@@ -61,6 +61,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             {
                 InitializeVerticals();
             }
+
+            this.OnVerticalItemChanged -= InfoParent.UpdateTaxonomyControl;
+            this.OnVerticalItemChanged += InfoParent.UpdateTaxonomyControl;
+
             uxVertical.SelectedValue = verticalGuid;
             uxPublication.SelectedValue = publicationGuid;
         } 
