@@ -1107,6 +1107,7 @@ $(function () {
 				createJSONData(table, UserPreferences);
 			}
 		} else {
+			setDataRow(allpublications);
 			for (var i = 0; i < alltrs.length; i++) {
 				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
 				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
@@ -1789,7 +1790,7 @@ $(function () {
 		}
 	});
 
-	$('.main-menu__hoverable a', '.main-menu__section-wrapper').click(function (e) {
+	$('.main-menu__hoverable a.myviewLink').click(function (e) {
 		e.preventDefault();
 		var $this = $(this),
 		    name = $this.attr('name'),
@@ -1803,14 +1804,14 @@ $(function () {
 			$(window).scrollTop(getPos.top - subjectHei * 3);
 		} else {
 			if (typeof loadPreferanceId !== "undefined") {
-				for (var i = allstoriesLen; i <= liIdx; i++) {
+				for (var i = eachstoryLength; i <= liIdx; i++) {
 					var setId = loadPreferanceId["Sections"];
 					(function (idx) {
 						$.ajax({
-							url: '/loaddata.json', //?preferenceId='+ setId[idx].Id + '&pno=1&psize=9',
+							url: '/api/articlesearch',
 							dataType: 'json',
-							data: { 'id': setId[idx].Id },
-							type: 'GET',
+							data: JSON.stringify({ 'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
+							type: 'POST',
 							cache: false,
 							async: false,
 							beforeSend: function beforeSend() {
@@ -2331,9 +2332,9 @@ function formController(opts) {
 					});
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					////var captchaResponse = grecaptcha.getResponse();
-					////if (captchaResponse !== undefined)
-					////	inputData['RecaptchaResponse'] = captchaResponse;
+					var captchaResponse = grecaptcha.getResponse();
+					if (captchaResponse !== undefined)
+						inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
@@ -2388,7 +2389,7 @@ function formController(opts) {
 							}, 250);
 
 							// reset captcha if available
-							//grecaptcha.reset();
+							grecaptcha.reset();
 						}
 
 					});
