@@ -13230,23 +13230,23 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Purchase Button Text.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Promotional Button Link.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Purchase Headline.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Promotional Button Text.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Purchase Subheading.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Promotional Headline.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Subscribe Button Link.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Promotional Subheadline.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Subscribe Button Text.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Subscriber Button Text.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -13254,7 +13254,7 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Subscriber SubHeadline.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Components\DCDSubscribe\Content\Subscriber Subheading.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>

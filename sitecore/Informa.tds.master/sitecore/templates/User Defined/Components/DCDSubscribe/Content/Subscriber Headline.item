@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {737D357D-5302-443F-9900-046CFD3E044D}
+id: {7BF369B7-DB08-4279-AAFD-2B0CEFFBF595}
 database: master
 path: /sitecore/templates/User Defined/Components/DCDSubscribe/Content/Subscriber Headline
 parent: {0DD32BAE-515E-42D5-8203-DA28B774F232}
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-400
+100
 ----version----
 language: en
 version: 1
-revision: adb0599c-50aa-4584-9dfe-f97458c811e4
+revision: d0559ab6-18f4-4fba-81fe-85305221dcf9
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160714T161603Z
+20160714T161602Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-adb0599c-50aa-4584-9dfe-f97458c811e4
+d0559ab6-18f4-4fba-81fe-85305221dcf9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160714T161603Z
+20161010T124527Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
