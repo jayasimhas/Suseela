@@ -348,10 +348,11 @@
 						}
 					}
 					& .accordionImg{
-						a{
+						span{
 							background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
 							height: 1.0625rem;
 							width: 2rem;
+							cursor: pointer;
 							display: inline-block;
 							margin-right: 10%;
 							@include breakpoint('medium-small') {
