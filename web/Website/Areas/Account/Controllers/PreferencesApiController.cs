@@ -4,6 +4,7 @@ using Informa.Library.User.Newsletter;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.Utilities.WebApi.Filters;
 using System.Linq;
+using Informa.Library.User.Profile;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -13,17 +14,20 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 		protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
+		protected readonly IFindUserProfileByUsername FindUserProfile;
 
 		public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
-			ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext)
+			ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
+			IFindUserProfileByUsername findUserProfile)
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
 			NewsletterOptedInContext = newsletterOptedInContext;
 			SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
+			FindUserProfile = findUserProfile;
 		}
 
 		[HttpPost]
@@ -40,11 +44,17 @@ namespace Informa.Web.Areas.Account.Controllers
 		}
 
 		[HttpGet]
-		public bool SignupUser(string userName)
+		public string SignupUser(string userName)
 		{
+			if (string.IsNullOrEmpty(userName))
+				return "false";
+
+			if (FindUserProfile.Find(userName) == null)
+				return "mustregister";
+			
 			var nResp = UpdateSiteNewsletterOptIn.Update(userName, true);
 
-			return nResp;
+			return nResp? "true" : "false";
 		}
 
 		[HttpGet]

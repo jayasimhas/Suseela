@@ -8,16 +8,27 @@
             <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
             @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
             <div class="form--single-row">
-                <input class="inf-standard-form-field" name="userName" placeholder="@Model.NewsletterSignupEmail">
+                <input id="newsletterUserName" class="inf-standard-form-field" name="userName" placeholder="@Model.NewsletterSignupEmail">
                 <div class="sign-in__submit-wrapper">
-                    @if(Sitecore.Context.PageMode.IsExperienceEditor) {
+                    @if (Sitecore.Context.PageMode.IsExperienceEditor)
+                    {
                         @Editable(x => x.GlassModel.Sign_Up_Button_Text)
                     }
                     <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/Account/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
                 </div>
             </div>
+            <div class="newsletter-signup__error js-newsletter-signup--error-invalidemailformat">
+                @Model.InvalidEmailFormat
+            </div>
             <div class="newsletter-signup__error js-newsletter-signup-error">
                 @Model.GeneralError
+            </div>
+        </div>
+        <div class="newsletter-signup-needs-registration newsletter-signup__error">
+            <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
+            @Model.NeedsRegistrationMessage
+            <div class="form--single-row">
+                <a href="@Model.RegistrationURL" class="button--filled">@Model.NeedsRegistrationButtonText</a>
             </div>
         </div>
         <div class="newsletter-signup-after-submit">
