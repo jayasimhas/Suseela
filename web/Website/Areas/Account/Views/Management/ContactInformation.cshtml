@@ -24,6 +24,7 @@
             <hr>
 
             <form class="form-update-account-contact"
+                  data-prevent-disabling="true"
                   data-on-submit="/Account/api/ContactInfoApi/UpdateContactInfo/" method="POST">
 
                 <div class="alert-error js-form-error js-form-error-Required">
@@ -137,7 +138,7 @@
                             <h2 class="page-account__subheader">Home Address</h2>
                             <p>
                                 <label for="BillAddress1" class="page-account__text-label">
-                                    @Model.BillAddress1LabelText <span class="asterisk-required"></span>
+                                    Street Address <span class="asterisk-required"></span>
                                 </label>
                                 <input type="text"
                                        name="BillAddress1"

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Informa.Library.Utilities.TransparentIp
 {
@@ -29,9 +31,27 @@ namespace Informa.Library.Utilities.TransparentIp
             // Need to use - Request.UserHostAddress
             // Using the IP from config for demo.
 
-           // string ip = Request.UserHostAddress;
+            // string ip = Request.UserHostAddress;
 
-            string ip = Sitecore.Configuration.Settings.GetSetting("SpoofedIp");
+           // string ip = Sitecore.Configuration.Settings.GetSetting("SpoofedIp");
+            string ip = getIpFromXmlFile();
+
+            return ip;
+        }
+
+        private static string getIpFromXmlFile()
+        {
+            string ip = string.Empty;
+
+            var doc = XDocument.Load("d:\\src\\ts3\\ip\\ip.xml");
+
+            ip = doc.Element("ip").Value;
+
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = "127.0.0.1";  // returning loopback ip
+            }
+
             return ip;
         }
     }
