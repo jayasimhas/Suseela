@@ -23,6 +23,9 @@ rolename: sitecore\Author
 rolename: sitecore\Editor
 
 ----role-in-role----
+rolename: sitecore\Managing Editor
+
+----role-in-role----
 rolename: sitecore\Sitecore Client Account Managing
 
 ----role-in-role----

@@ -1,0 +1,6 @@
+----role----
+name: sitecore\Single Publisher with Subitems
+
+----role-in-role----
+rolename: sitecore\Managing Editor
+

@@ -1,5 +1,5 @@
 ----role----
-name: sitecore\Sitecore Client Translating
+name: sitecore\General Content Access
 
 ----role-in-role----
 rolename: sitecore\Editor

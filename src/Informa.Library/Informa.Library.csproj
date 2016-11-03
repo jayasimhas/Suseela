@@ -175,6 +175,10 @@
     <Reference Include="Sitecore.Buckets">
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
@@ -343,6 +347,7 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
