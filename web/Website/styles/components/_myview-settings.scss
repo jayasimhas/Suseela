@@ -76,11 +76,13 @@
 	}
 	.mysettingsHead{
 		border-bottom: 1px solid #d1d3d4;
-		padding-bottom: 0.625rem;
+		padding-bottom: 15px;
 		margin-bottom: 1.25rem;
+		padding-top: 50px;
 		@include breakpoint('small') {
 			margin-bottom: 0rem;
 			border-bottom: none;
+			padding-top: 0;
 		}
 	}
 	.mtop-10{
@@ -94,7 +96,7 @@
 	}
 	.sub-heading-text{
 		font-size: 1.125em;
-		margin-bottom: 1.25rem;
+		margin-bottom: 50px;
 		p{
 			line-height: 1rem;
 			font-style: normal;
@@ -111,7 +113,7 @@
 		}
 	}
 	.publicationPan{
-		margin-bottom: 1.5625rem;
+		margin-bottom: 3.125rem;
 		border: 1px solid #d9dadb;
 		h2{
 			text-align: left;
@@ -193,6 +195,7 @@
 					transition: all 0.2s ease; 
 					td{
 						@include tableData(1px);
+						vertical-align: middle;
 					}
 					.followingBtn{
 						@include folow-btn(7.5rem, 2rem);
@@ -302,7 +305,7 @@
 						} 
 					} 
 					&.firstrow{
-						padding: 2.5rem 1.25rem 0.625rem;
+						padding: 2.5rem 1.25rem 0;
 						@include breakpoint('medium-small') {
 							padding: 1.25rem 0.625rem 0.625rem;
 						}
@@ -314,7 +317,7 @@
 						}
 					}
 					&.pbot{
-						padding: 0rem 1.25rem 0.9375rem;
+						padding: 0rem 1.25rem 27px;
 					}
 					& .rowlines{
 						@include getMove();
@@ -453,8 +456,8 @@
 	  visibility: hidden;
   }
   .saveoption{
-	  float: left;
-	  width: 100%;
+	  float: right;
+	  // width: 100%;
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;

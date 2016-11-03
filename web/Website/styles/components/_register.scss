@@ -1,8 +1,12 @@
 .register{
 	.register_newsletter{
+		.page-registration__introduction {
+			margin-bottom: 35px;
+		}
 		div.page-registration{
 			display: block;
 			position: relative;
+			padding: 60px 0 5px 0;
 			.page-registration__header{
 				display: inline-flex;
 			}
@@ -50,8 +54,8 @@
 			background-color:$color-concrete-gray;
 			border: 1px solid $color-light-gray;
 			clear: both;
-			margin-bottom: 1.25rem;
-			padding: 1rem;
+			margin-bottom: 40px;
+			padding: 40px 1rem 5px;
 			float:left;
 			position: relative;
 			width: 100%;
