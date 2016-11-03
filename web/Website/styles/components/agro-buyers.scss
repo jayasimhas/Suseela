@@ -52,15 +52,60 @@
 				float: left;
 				.buyers-guide{
 					width: 45%;
+					@include breakpoint('small'){
+					width: 100%;
+					}
 					float: left;
 					margin-top: 0.75rem;	
-					margin-bottom: 2rem;
 					margin-right: 3%;
 					.image{
 						width: 100%;
 						img{
 							width: 100%;
 						}
+					}
+					h4{
+						font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+						font-size: 1.5em;
+						font-weight: 700;
+						font-style: normal;
+						margin-bottom: 1rem;					
+					}
+					a.link{
+						margin-top: 1rem;
+						margin-bottom: 1rem;
+						font-family: "PT Serif", Georgia, serif;
+						font-style: regular;
+						font-weight: 400;
+						font-size: 1.125rem;
+						line-height: 30px;
+						display: block;
+						clear: both;
+					}
+				}
+			}	
+	}
+	.buyers-guide-listing-text{
+		width: 100%;
+		float: left;
+		margin-bottom: 1.5rem;
+			.buyers-guide-row{
+				width: 100%;
+				float: left;
+				.buyers-guide{
+					width: 45%;
+					@include breakpoint('small'){
+					width: 100%;
+					}
+					float: left;
+					margin-top: 0.75rem;	
+					margin-bottom: 2rem;
+					margin-right: 3%;
+					border: 1px solid $color-light-gray;
+					border-radius: 2px;
+					padding: 1.5rem;
+					.text{
+						margin-bottom: 1rem;
 					}
 					h4{
 						font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;

@@ -14,7 +14,7 @@
                     }
                     else
                     {
-                        <a class="registrationBtn validationChk" href="/">@Model.CompleteYourRegistrationText</a>
+                        <a class="registrationBtn validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                     }
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 }
                 else
                 {
-                    <a class="registrationBtn validationChk" href="/">@Model.CompleteYourRegistrationText</a>
+                    <a class="registrationBtn validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                 }
             </div>
             <input type="hidden" value="false" id="validatePriority" />
@@ -73,11 +73,11 @@
             <div class="saveviewModal">
                 @if (Model.EnableSavePreferencesCheck)
                 {
-                    <a href="@Model.MyViewPageUrl" class="saveview validationChk">Save</a>
+                    <a href="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupSaveButtonText</a>
                 }
                 else
                 {
-                    <a href="/" class="saveview validationChk">@Model.PopupSaveButtonText</a>
+                    <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupSaveButtonText</a>
                 }
                 <span class="cancel cancel-modal">@Model.PopupCancelButtonText</span>
             </div>

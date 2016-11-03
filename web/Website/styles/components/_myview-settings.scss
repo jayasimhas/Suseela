@@ -76,11 +76,13 @@
 	}
 	.mysettingsHead{
 		border-bottom: 1px solid #d1d3d4;
-		padding-bottom: 0.625rem;
+		padding-bottom: 15px;
 		margin-bottom: 1.25rem;
+		padding-top: 50px;
 		@include breakpoint('small') {
 			margin-bottom: 0rem;
 			border-bottom: none;
+			padding-top: 0;
 		}
 	}
 	.mtop-10{
@@ -94,7 +96,7 @@
 	}
 	.sub-heading-text{
 		font-size: 1.125em;
-		margin-bottom: 1.25rem;
+		margin-bottom: 50px;
 		p{
 			line-height: 1rem;
 			font-style: normal;
@@ -111,12 +113,12 @@
 		}
 	}
 	.publicationPan{
-		margin-bottom: 1.5625rem;
+		margin-bottom: 3.125rem;
 		border: 1px solid #d9dadb;
 		h2{
 			text-align: left;
 			float: left;
-			width: 30rem;
+			width: 75%;
 			margin-top: -5px;
 			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
@@ -193,6 +195,7 @@
 					transition: all 0.2s ease; 
 					td{
 						@include tableData(1px);
+						vertical-align: middle;
 					}
 					.followingBtn{
 						@include folow-btn(7.5rem, 2rem);
@@ -302,7 +305,7 @@
 						} 
 					} 
 					&.firstrow{
-						padding: 2.5rem 1.25rem 0.625rem;
+						padding: 2.5rem 1.25rem 0;
 						@include breakpoint('medium-small') {
 							padding: 1.25rem 0.625rem 0.625rem;
 						}
@@ -314,7 +317,7 @@
 						}
 					}
 					&.pbot{
-						padding: 0rem 1.25rem 0.9375rem;
+						padding: 0rem 1.25rem 27px;
 					}
 					& .rowlines{
 						@include getMove();
@@ -345,10 +348,11 @@
 						}
 					}
 					& .accordionImg{
-						a{
+						span{
 							background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
 							height: 1.0625rem;
 							width: 2rem;
+							cursor: pointer;
 							display: inline-block;
 							margin-right: 10%;
 							@include breakpoint('medium-small') {
@@ -453,8 +457,8 @@
 	  visibility: hidden;
   }
   .saveoption{
-	  float: left;
-	  width: 100%;
+	  float: right;
+	  // width: 100%;
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
@@ -529,7 +533,7 @@
 		height: 8.125rem;
 		top: 50%;
 		left: 50%;
-		z-index: 5000;
+		z-index: 9999;
 		margin-left: -12.5rem;
 		margin-top: -4.0625rem;
 		background: $color-white;
@@ -552,6 +556,13 @@
 				color: $color-white;
 				padding: 0 2rem;
 			}
+			.registrationBtn.validationChk{
+				@include folow-btn(auto, 2rem); 
+				background: $color-tree-poppy-orange;
+				color: $color-white;
+				padding: 0 2rem;
+			}
+			
 			.cancel{
 				@include followBtnLbl();
 				margin: 0px;
@@ -611,7 +622,7 @@
 			position: fixed;
 			top: 0rem;
 			left: 0rem;
-			z-index: 99;
+			z-index: 9990;
 			opacity: 0.5;
 		}
 	}

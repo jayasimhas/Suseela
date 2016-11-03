@@ -704,8 +704,10 @@ function sendHttpRequest(UserPreferences, setFlag) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
-				if (setFlag == 'register') {
+				if (setFlag == 'register' && redirectUrl == 'href') {
 					window.location.href = $('.registrationBtn').attr('href');
+				} else {
+					window.location.href = $('.registrationBtn').attr('name');
 				}
 			} else {
 				if (setFlag == 'register') {
@@ -747,6 +749,19 @@ function setDataRow(allpublications) {
 function showModal() {
 	$('.modal-overlay').addClass('in');
 	$('.modal-view').show();
+}
+
+function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
+	for (var i = 0; i < alltrs.length; i++) {
+		var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+		    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+		    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+		    channelOrder = $(alltrs[i]).attr('data-row'),
+		    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+
+		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+	}
+	sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
 
 function sort_table(tbody, col, asc, sortstatus) {
@@ -932,7 +947,7 @@ $(function () {
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.mobileMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .mobileMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -1000,7 +1015,7 @@ $(function () {
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.desktopMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .desktopMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -1031,7 +1046,7 @@ $(function () {
 			$(window).scrollTop(position.top);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
-			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
 			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 			allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 			thead.find('tr').removeClass('hidden');
@@ -1055,7 +1070,7 @@ $(function () {
 	var tables = $('.publicationPan table');
 	setClsforFlw(tables);
 
-	$('.saveview').click(function () {
+	$('.saveview').click(function (e) {
 		var alltables = $('.table'),
 		    allpublicationsEles = $('.publicationPan'),
 		    isChannelLevel = $('#isChannelBasedRegistration').val(),
@@ -1063,6 +1078,7 @@ $(function () {
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
+		e.preventDefault();
 		setDataRow(allpublications);
 		allpublicationsEles.removeAttr('data-row');
 		for (var i = 0; i < allpublicationsEles.length; i++) {
@@ -1072,6 +1088,7 @@ $(function () {
 		createJSONData(alltables, UserPreferences);
 
 		$('#validatePreference').val(0);
+		window.location.href = $(this).attr('href');
 	});
 
 	$('.registrationBtn').click(function (e) {
@@ -1083,6 +1100,10 @@ $(function () {
 		UserPreferences.PreferredChannels = [];
 
 		e.preventDefault();
+		if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'name');
+		}
 		if ($('#validatePriority').val() == "false") {
 			if ($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
 				$('.alert-error.register-not-selected').show();
@@ -1091,22 +1112,13 @@ $(function () {
 			setDataRow(allpublications);
 
 			if (!!$('#isChannelBasedRegistration').val()) {
-				for (var i = 0; i < alltrs.length; i++) {
-					var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-					    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-					    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-					    channelOrder = $(alltrs[i]).attr('data-row'),
-					    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
-
-					UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
-				}
-				sendHttpRequest(UserPreferences, 'register');
+				sendRegisterData(alltrs, UserPreferences, 'href');
 			} else {
 				createJSONData(table, UserPreferences);
 			}
 		} else {
-			window.location.href = $(this).attr('href');
-			//showModal();
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'href');
 		}
 	});
 
@@ -1641,9 +1653,11 @@ function createLayoutInner2(data) {
 $(function () {
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
-	    loadLayoutData = '';
+	    loadLayoutData = '',
+	    getLiIdx;
 	if (typeof loadPreferanceId !== "undefined") {
 		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+		getLiIdx = loadPreferanceId.DefaultSectionLoadCount;
 		for (var i = 0; i < loadDynData; i++) {
 			var setId = loadPreferanceId["Sections"];
 			if (setId.length) {
@@ -1678,7 +1692,7 @@ $(function () {
 								}
 							},
 							error: function error(xhr, errorType, _error) {
-								console.log('err ' + err);
+								console.log('err ' + _error);
 							}
 						});
 					}
@@ -1714,14 +1728,14 @@ $(function () {
 				}
 			},
 			error: function error(xhr, errorType, _error2) {
-				console.log('err ' + err);
+				console.log('err ' + _error2);
 			}
 		});
 	});
 
 	var layout1Flag = true,
 	    indx = 0,
-	    eachstoryLength = loadPreferanceId && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
+	    eachstoryLength = typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
 	$(window).scroll(function () {
 		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
 		    eachstoryMpanLast = eachstoryMpan.last(),
@@ -1736,6 +1750,7 @@ $(function () {
 			if (typeof loadPreferanceId !== "undefined") {
 				if (eachstoryLength < loadPreferanceId["Sections"].length) {
 					eachstoryLength++;
+					getLiIdx = eachstoryLength;
 					loadsection = loadPreferanceId.DefaultSectionLoadCount + indx++;
 					texonomyId = loadPreferanceId["Sections"][loadsection]["TaxonomyIds"];
 				} else {
@@ -1778,58 +1793,62 @@ $(function () {
 		}
 	});
 
-	$('.main-menu__hoverable a', '.main-menu__section-wrapper').click(function (e) {
-		e.preventDefault();
-		var $this = $(this),
-		    name = $this.attr('name'),
-		    getPos = $('#' + name).position(),
-		    latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
-		    subjectHei = latestSubject.height(),
-		    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
-		    liIdx = $this.closest('li').index();
+	$('.main-menu__hoverable a.myviewLink').click(function (e) {
+		if ($('#hdnMyViewPage') && $('#hdnMyViewPage').val() == "true") {
+			e.preventDefault();
+			var $this = $(this),
+			    name = $this.attr('name'),
+			    getPos = $('#' + name).position(),
+			    latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
+			    subjectHei = latestSubject.height(),
+			    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
+			    liIdx = $this.closest('li').index();
 
-		if (liIdx < allstoriesLen) {
-			$(window).scrollTop(getPos.top - subjectHei * 3);
-		} else {
-			if (typeof loadPreferanceId !== "undefined") {
-				for (var i = allstoriesLen; i <= liIdx; i++) {
-					var setId = loadPreferanceId["Sections"];
-					(function (idx) {
-						$.ajax({
-							url: '/loaddata.json', //?preferenceId='+ setId[idx].Id + '&pno=1&psize=9',
-							dataType: 'json',
-							data: { 'id': setId[idx].Id },
-							type: 'GET',
-							cache: false,
-							async: false,
-							beforeSend: function beforeSend() {
-								$('.spinnerIcon').removeClass('hidespin');
-							},
-							success: function success(data) {
-								if (idx % 2 == 0) {
-									loadLayoutData = loadLayoutOneData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								} else {
-									loadLayoutData = loadLayoutTwoData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								}
-							},
-							error: function error(xhr, errorType, _error4) {
-								console.log('err ' + err);
-							},
-							complete: function complete(xhr, status) {
-								if (status == "success" && $('#' + name).length) {
-									setTimeout(function () {
-										var getlatestPos = $('#' + name).position();
-										if (getlatestPos) {
-											$('.spinnerIcon').addClass('hidespin');
-											$(window).scrollTop(getlatestPos.top - subjectHei);
+			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length) {
+				$(window).scrollTop(getPos.top - subjectHei * 3);
+			} else {
+				if (typeof loadPreferanceId !== "undefined") {
+					for (var i = getLiIdx; i <= liIdx + 1; i++) {
+						var setId = loadPreferanceId["Sections"];
+						(function (idx) {
+							$.ajax({
+								url: '/api/articlesearch',
+								dataType: 'json',
+								data: JSON.stringify({ 'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
+								type: 'POST',
+								cache: false,
+								async: false,
+								beforeSend: function beforeSend() {
+									$('.spinnerIcon').removeClass('hidespin');
+								},
+								success: function success(data) {
+									if (data.articles && typeof data.articles === "object" && data.articles.length) {
+										if (idx % 2 == 0) {
+											loadLayoutData = loadLayoutOneData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
+										} else {
+											loadLayoutData = loadLayoutTwoData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
 										}
-									}, 5);
+									}
+								},
+								error: function error(xhr, errorType, _error4) {
+									console.log('err ' + _error4);
+								},
+								complete: function complete(xhr, status) {
+									if (status == "success" && $('#' + name).length) {
+										setTimeout(function () {
+											var getlatestPos = $('#' + name).position();
+											if (getlatestPos) {
+												$('.spinnerIcon').addClass('hidespin');
+												$(window).scrollTop(getlatestPos.top - subjectHei);
+											}
+										}, 5);
+									}
 								}
-							}
-						});
-					})(i);
+							});
+						})(i);
+					}
 				}
 			}
 		}
@@ -2320,9 +2339,8 @@ function formController(opts) {
 					});
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					////var captchaResponse = grecaptcha.getResponse();
-					////if (captchaResponse !== undefined)
-					////	inputData['RecaptchaResponse'] = captchaResponse;
+					var captchaResponse = grecaptcha.getResponse();
+					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
@@ -2348,6 +2366,9 @@ function formController(opts) {
 
 								if ($(form).data('on-success')) {
 									window.location.href = $(currentForm).data('on-success');
+								}
+								if (response.redirectRequired !== undefined && response.redirectRequired) {
+									window.location.href = response.redirectUrl;
 								}
 							} else {
 								if (response.reasons && response.reasons.length > 0) {
@@ -2377,7 +2398,7 @@ function formController(opts) {
 							}, 250);
 
 							// reset captcha if available
-							//grecaptcha.reset();
+							grecaptcha.reset();
 						}
 
 					});
@@ -3862,6 +3883,21 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function () {
+
+    //AM Charts
+    if ($('#amchartData') && $('#amchartData').length) {
+        var amchartVal = JSON.parse($('#amchartData').val()),
+            createNewObj = {};
+        for (prop in amchartVal) {
+            if (prop != 'dataProvider') {
+                createNewObj[prop] = amchartVal[prop];
+            } else {
+                createNewObj[prop] = chartDataVal;
+            }
+        }
+
+        var chart = AmCharts.makeChart("chartdiv", createNewObj);
+    }
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
@@ -4400,16 +4436,33 @@ $(document).ready(function () {
         });
 
         $('.show-demo').click(function () {
-            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
 
+            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
+            //IPMP-616	
             if ($(this).parent().hasClass('collapsed')) {
+                sessionStorage.setItem("mykey", "false");
                 $('.hd').show();
                 $('.sd').hide();
+                $('.toggle-demo').show();
             } else {
+                sessionStorage.setItem("mykey", "true");
                 $('.sd').show();
                 $('.hd').hide();
+                $('.toggle-demo').hide();
+            }
+            var persistedval = sessionStorage.getItem("mykey");
+            if (persistedval == "false") {
+                $('.toggle-demo').show();
+            } else {
+                $('.toggle-demo').hide();
             }
         });
+        var persistedval = sessionStorage.getItem("mykey");
+        if (persistedval == "false") {
+            $('.toggle-demo').hide();
+        } else {
+            $('.toggle-demo').show();
+        }
     })();
 
     /* * *
@@ -6616,7 +6669,11 @@ exports.toggleIcons = toggleIcons;
                 $(dragSrcEl).hide();
                 dragSrcEl.innerHTML = oldEl.html;
                 dragSrcEl.id = oldEl.id;
-                $(dragSrcEl).insertAfter(that);
+                if ($(this).index() > $(dragSrcEl).index()) {
+                    $(dragSrcEl).insertBefore(that);
+                } else {
+                    $(dragSrcEl).insertAfter(that);
+                }
                 $(dragSrcEl).show();
                 if (settings.dropAnimation) {
                     onAnimEnd(this);
@@ -6712,10 +6769,6 @@ exports.toggleIcons = toggleIcons;
             $this.on('dragleave', settings.element, handleDragLeave);
             $this.on('drop', settings.element, handleDrop);
             $this.on('dragend', settings.element, handleDragEnd);
-
-            $this.on('touchmove', settings.element, handleDragStart);
-            $this.on('touchstart', settings.element, handleDragEnter);
-            $this.on('touchend', settings.element, handleDragEnd);
         });
     };
 })(Zepto);

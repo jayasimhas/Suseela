@@ -1339,9 +1339,10 @@ section: Alerts
       float: left;
       margin-top: 12px;
       margin-top: 0.75rem;
-      margin-bottom: 32px;
-      margin-bottom: 2rem;
       margin-right: 3%; }
+      @media (max-width: 480px) {
+        .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
+          width: 100%; } }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
         width: 100%; }
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image img {
@@ -1359,6 +1360,58 @@ section: Alerts
         margin-bottom: 16px;
         margin-bottom: 1rem; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.mobile-table-exit {
+        margin-top: 16px;
+        margin-top: 1rem;
+        margin-bottom: 16px;
+        margin-bottom: 1rem;
+        font-family: "PT Serif", Georgia, serif;
+        font-style: regular;
+        font-weight: 400;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 30px;
+        display: block;
+        clear: both; }
+
+.agroBuyers .buyers-guide-listing-text {
+  width: 100%;
+  float: left;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+  .agroBuyers .buyers-guide-listing-text .buyers-guide-row {
+    width: 100%;
+    float: left; }
+    .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
+      width: 45%;
+      float: left;
+      margin-top: 12px;
+      margin-top: 0.75rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      margin-right: 3%;
+      border: 1px solid #d1d3d4;
+      border-radius: 2px;
+      padding: 24px;
+      padding: 1.5rem; }
+      @media (max-width: 480px) {
+        .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
+          width: 100%; } }
+      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .text {
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
+      .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
+      .article-inline-image__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-left__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
+      .article-inline-image--pull-right__title {
+        font-family: 'Roboto Condensed' Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        font-style: normal;
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.mobile-table-exit {
         margin-top: 16px;
         margin-top: 1rem;
         font-family: "PT Serif", Georgia, serif;
@@ -3193,6 +3246,9 @@ body.lightboxed {
   margin: 8px 0 6px;
   line-height: 20px; }
 
+.main-menu__section-title {
+  padding-left: 30px; }
+
 .main-menu__section-title.is-active {
   -webkit-perspective: 500px; }
   .main-menu__section-title.is-active .main-menu__arrow-icon, .main-menu__section-title.is-active .facets__button--toggle-section {
@@ -3202,6 +3258,15 @@ body.lightboxed {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
     max-height: 999px; }
+  .main-menu__section-title.is-active:before {
+    background-color: #f7941e;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 6px; }
 
 .main-menu__hoverable {
   position: relative; }
@@ -3476,6 +3541,15 @@ header .header-account-access {
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
+      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+        header .header-account-access .myView-placeholder .btn-my-view {
+          background: none;
+          color: #c22d3b;
+          padding: 0;
+          width: 60px;
+          font-family: 'Roboto', Arial Narrow, sans-serif;
+          font-style: normal;
+          font-weight: 400; } }
     @media (max-width: 800px) {
       header .header-account-access .myView-placeholder {
         float: right;
@@ -3501,6 +3575,9 @@ header .header-account-access {
         header .header-account-access .myView-placeholder .arrow {
           display: block; } }
       @media (max-width: 640px) {
+        header .header-account-access .myView-placeholder .arrow {
+          display: block; } }
+      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
         header .header-account-access .myView-placeholder .arrow {
           display: block; } }
   header .header-account-access .header-account-right-access {
@@ -3537,8 +3614,8 @@ header .header-account-access {
   background: #f1f2f2;
   clear: both;
   border-top: 4px solid #be1e2d;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 25px 32px;
+  padding: 1.5625rem 2rem;
   position: relative;
   float: left;
   line-height: 20px;
@@ -3577,7 +3654,11 @@ header .header-account-access {
       margin-top: 10px; }
     .messaging_webUsers .button-msg-webUser .find_more {
       float: right;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-top: 8px;
+      padding-top: 0.5rem;
+      padding-bottom: 8px;
+      padding-bottom: 0.5rem; }
     @media (max-width: 480px) {
       .messaging_webUsers .button-msg-webUser .msg_link {
         display: block;
@@ -3594,7 +3675,16 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both; }
+    clear: both;
+    position: absolute;
+    top: 10px;
+    top: 0.625rem;
+    right: 15px;
+    right: 0.9375rem; }
+    @media (max-width: 800px) {
+      .messaging_webUsers .msg_dismiss {
+        margin: 0 8px;
+        margin: 0 0.5rem; } }
     .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
       padding-right: 15px;
       display: inline-block;
@@ -3645,15 +3735,16 @@ header .header-account-access {
     font-weight: 700;
     font-size: 1.125em;
     color: #231f20;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
     line-height: 30px; }
     .messaging_webUsers_white .msg-text h3, .messaging_webUsers_white .msg-text .article-call-to-action__title {
       font-family: 'Roboto';
       font-style: normal;
-      font-weight: 700;
-      font-size: 1.25em;
+      font-weight: 500;
+      font-size: 20px;
+      font-size: 1.25rem;
       color: #be1e2d; }
     .messaging_webUsers_white .msg-text .red {
       color: #be1e2d; }
@@ -3680,15 +3771,16 @@ header .header-account-access {
         font-size: 2rem; } }
   .myview-settings .mysettingsHead {
     border-bottom: 1px solid #d1d3d4;
-    padding-bottom: 10px;
-    padding-bottom: 0.625rem;
+    padding-bottom: 15px;
     margin-bottom: 20px;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 1.25rem;
+    padding-top: 50px; }
     @media (max-width: 480px) {
       .myview-settings .mysettingsHead {
         margin-bottom: 0px;
         margin-bottom: 0rem;
-        border-bottom: none; } }
+        border-bottom: none;
+        padding-top: 0; } }
   .myview-settings .mtop-10 {
     margin-top: 10px;
     margin-top: 0.625rem; }
@@ -3699,8 +3791,7 @@ header .header-account-access {
     display: none !important; }
   .myview-settings .sub-heading-text {
     font-size: 1.125em;
-    margin-bottom: 20px;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 50px; }
     .myview-settings .sub-heading-text p {
       line-height: 16px;
       line-height: 1rem;
@@ -3719,14 +3810,13 @@ header .header-account-access {
           line-height: 22px;
           line-height: 1.375rem; } }
   .myview-settings .publicationPan {
-    margin-bottom: 25px;
-    margin-bottom: 1.5625rem;
+    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     border: 1px solid #d9dadb; }
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 480px;
-      width: 30rem;
+      width: 75%;
       margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
@@ -3810,7 +3900,8 @@ header .header-account-access {
           line-height: 24px;
           line-height: 1.5rem;
           vertical-align: top;
-          border-top: 1px solid #ddd; }
+          border-top: 1px solid #ddd;
+          vertical-align: middle; }
         .myview-settings .table-responsive .table tbody tr .followingBtn {
           border: 1px solid #f7941e;
           cursor: pointer;
@@ -3977,8 +4068,8 @@ header .header-account-access {
             margin: -40px 0 0;
             font-weight: normal; }
         .myview-settings .table-responsive .table thead th.firstrow {
-          padding: 40px 20px 10px;
-          padding: 2.5rem 1.25rem 0.625rem; }
+          padding: 40px 20px 0;
+          padding: 2.5rem 1.25rem 0; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th.firstrow {
               padding: 20px 10px 10px;
@@ -3991,8 +4082,8 @@ header .header-account-access {
               padding: 0px 10px;
               padding: 0rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th.pbot {
-          padding: 0px 20px 15px;
-          padding: 0rem 1.25rem 0.9375rem; }
+          padding: 0px 20px 27px;
+          padding: 0rem 1.25rem 27px; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
           margin-top: 7px;
@@ -4040,16 +4131,17 @@ header .header-account-access {
             @media (max-width: 800px) {
               .myview-settings .table-responsive .table thead th .rowlines .vline {
                 right: 12px; } }
-        .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+        .myview-settings .table-responsive .table thead th .accordionImg span {
           background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
           height: 17px;
           height: 1.0625rem;
           width: 32px;
           width: 2rem;
+          cursor: pointer;
           display: inline-block;
           margin-right: 10%; }
           @media (max-width: 640px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
               height: 12px;
               height: 0.75rem;
@@ -4057,18 +4149,18 @@ header .header-account-access {
               width: 1.4375rem;
               position: relative;
               left: 0; }
-              .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
+              .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 position: relative;
                 left: 0;
                 background-position: 0 -48px !important; } }
           @media screen and (min-width: 667px) and (max-width: 767px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               margin-right: 50px;
               margin-right: 3.125rem; } }
-          .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
+          .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
             background-position: 0 0; }
           @media screen and (min-width: 801px) and (max-width: 1130px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               margin-right: 50%; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;
@@ -4223,8 +4315,7 @@ header .header-account-access {
     display: none !important;
     visibility: hidden; }
   .myview-settings .saveoption {
-    float: left;
-    width: 100%; }
+    float: right; }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
@@ -4341,7 +4432,7 @@ header .header-account-access {
     height: 8.125rem;
     top: 50%;
     left: 50%;
-    z-index: 5000;
+    z-index: 9999;
     margin-left: -200px;
     margin-left: -12.5rem;
     margin-top: -65px;
@@ -4364,6 +4455,24 @@ header .header-account-access {
         margin-bottom: 16px;
         margin-bottom: 1rem; }
       .myview-settings .modal-view.preferences .saveview {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        background: #f7941e;
+        color: #ffffff;
+        padding: 0 32px;
+        padding: 0 2rem; }
+      .myview-settings .modal-view.preferences .registrationBtn.validationChk {
         border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
@@ -4475,7 +4584,7 @@ header .header-account-access {
     top: 0rem;
     left: 0px;
     left: 0rem;
-    z-index: 99;
+    z-index: 9990;
     opacity: 0.5; }
   .myview-settings .hidden-large {
     display: none; }
@@ -4983,19 +5092,19 @@ div.main-menu__section .titleMyView {
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 1.2px;
-  padding-left: 24px;
-  padding-left: 24px;
-  padding-left: 1.5rem;
+  padding-left: 30px;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 15px; }
 
 div.main-menu__section .edit-link {
-  margin-left: 24px;
+  margin-left: 30px;
   font-size: 12px; }
 
 div.main-menu__section .navContent {
   font-size: 12px;
-  margin: 6px 0 0 25px;
+  margin: 6px 0 0 30px;
   line-height: 20px;
   color: #979799; }
 
@@ -5451,9 +5560,13 @@ section: UI Elements
   line-height: 24px;
   line-height: 1.5rem; }
 
+.register .register_newsletter .page-registration__introduction {
+  margin-bottom: 35px; }
+
 .register .register_newsletter div.page-registration {
   display: block;
-  position: relative; }
+  position: relative;
+  padding: 60px 0 5px 0; }
   .register .register_newsletter div.page-registration .page-registration__header {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -5506,10 +5619,9 @@ section: UI Elements
   background-color: #f1f2f2;
   border: 1px solid #d1d3d4;
   clear: both;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  padding: 16px;
-  padding: 1rem;
+  margin-bottom: 40px;
+  padding: 40px 16px 5px;
+  padding: 40px 1rem 5px;
   float: left;
   position: relative;
   width: 100%; }
@@ -6653,19 +6765,19 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .video-mini-container .embed-responsive.embed-responsive-16by9 {
   padding-bottom: 0; }
 
-.article-related-content {
+.dataTool-related-content {
   float: left;
   clear: both; }
-  .article-related-content h1 {
+  .dataTool-related-content h1 {
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
     font-size: 1.875em; }
-  .article-related-content .section-article {
+  .dataTool-related-content .section-article {
     width: 29%;
     float: left;
     margin: 0 2em 0 0; }
-    .article-related-content .section-article span {
+    .dataTool-related-content .section-article span {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 500;
@@ -6673,13 +6785,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       color: #979797;
       letter-spacing: 1px;
       display: block; }
-    .article-related-content .section-article .article-related-content__date:last-child {
+    .dataTool-related-content .section-article .article-related-content__date:last-child {
       border-bottom: 1px solid #d1d3d4 !important; }
-    .article-related-content .section-article .article-related-content__category {
+    .dataTool-related-content .section-article .article-related-content__category {
       text-transform: uppercase;
       margin-top: 10px;
       margin-bottom: 5px; }
-    .article-related-content .section-article h5, .article-related-content .section-article .alert-success p, .alert-success .article-related-content .section-article p, .article-related-content .section-article .alert-error p, .alert-error .article-related-content .section-article p, .article-related-content .section-article .article-call-to-action__subtitle {
+    .dataTool-related-content .section-article h5, .dataTool-related-content .section-article .alert-success p, .alert-success .dataTool-related-content .section-article p, .dataTool-related-content .section-article .alert-error p, .alert-error .dataTool-related-content .section-article p, .dataTool-related-content .section-article .article-call-to-action__subtitle {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 500;
@@ -6688,17 +6800,20 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       margin: 2px 0;
       clear: both; }
     @media (max-width: 800px) {
-      .article-related-content .section-article {
+      .dataTool-related-content .section-article {
         width: 45%; } }
     @media (max-width: 640px) {
-      .article-related-content .section-article {
+      .dataTool-related-content .section-article {
         width: 100%; } }
     @media (max-width: 480px) {
-      .article-related-content .section-article {
+      .dataTool-related-content .section-article {
         width: 100%; } }
 
 #chartdiv {
   width: 100% !important; }
+
+div#feedbacklite.fbl_r {
+  top: 65px !important; }
 
 .toggleable-icon {
   display: none; }
@@ -12375,5 +12490,163 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y; }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    -webkit-transform-style: preserve-3d; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    display: none; }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  -webkit-transition: height 500ms ease-in-out;
+          transition: height 500ms ease-in-out; }
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent; }
+  .owl-theme .owl-nav [class*='owl-'] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px; }
+    .owl-theme .owl-nav [class*='owl-']:hover {
+      background: #869791;
+      color: #FFF;
+      text-decoration: none; }
+  .owl-theme .owl-nav .disabled {
+    opacity: 0.5;
+    cursor: default; }
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px; }
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent; }
+  .owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; }
+    .owl-theme .owl-dots .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 5px 7px;
+      background: #D6D6D6;
+      display: block;
+      -webkit-backface-visibility: visible;
+      -webkit-transition: opacity 200ms ease;
+              transition: opacity 200ms ease;
+      border-radius: 30px; }
+    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */
