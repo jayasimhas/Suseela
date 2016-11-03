@@ -3,8 +3,10 @@
 
 @if (IsInEditingMode && Model.IsEditable)
 {
-    @Editable(Model.AdComponentModel, x => x.Slot_ID)
-    @Editable(Model.AdComponentModel, x => x.Zone)
+	<div>
+		<span>Slot ID:</span> @Editable(Model.AdComponentModel, x => x.Slot_ID)<br />
+		<span>Zone ID:</span> @Editable(Model.AdComponentModel, x => x.Zone)<br />
+	</div>
 }
 <!-- I'm an edit -->
 @if (Model.IsValidRectangularAd)
