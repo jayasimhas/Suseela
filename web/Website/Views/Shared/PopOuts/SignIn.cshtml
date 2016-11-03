@@ -1,4 +1,5 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.ISignInPopOutViewModel
+    @*Sign in popup used all around the site except the top-right header sign in*@
 <div class="pop-out js-pop-out__sign-in">
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
@@ -9,10 +10,30 @@
 				</svg>
 			</div>
 
-			<h3 class="pop-out__register-header">@Model.HeaderText</h3>
+			<h3 class="pop-out__register-header">@Model.SignInHeaderText</h3>
 
             @Html.Sitecore().Placeholder("signin-popout-form")
 
 		</div>
 	</div>
 </div>
+
+@*Sign in popup used for the top-right header sign in*@
+<div class="pop-out js-pop-out__sign-in-header">
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__sign-in">
+            <div class="dismiss-button" data-target-element=".js-pop-out__sign-in-header">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+
+            <h3 class="pop-out__register-header">@Model.HeaderSignInHeaderText</h3>
+
+            @Html.Sitecore().Placeholder("signin-popout-form")
+
+        </div>
+    </div>
+</div>
+
