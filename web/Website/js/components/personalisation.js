@@ -394,9 +394,12 @@ function createLayoutInner2(data){
 }
 
 $(function(){
-	var getLayoutInfo = $('#getLayoutInfo').val(), layout1 = true, loadLayoutData = '';
+	var getLayoutInfo = $('#getLayoutInfo').val(),
+	    layout1 = true,
+	    loadLayoutData = '', getLiIdx;
 	if(typeof loadPreferanceId !== "undefined"){
-		var loadDynData = (loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount) ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+		getLiIdx = loadPreferanceId.DefaultSectionLoadCount;
 		for(var i=0; i<loadDynData; i++){
 			var setId = loadPreferanceId["Sections"];
 			if(setId.length){
@@ -441,9 +444,14 @@ $(function(){
 		}
 	}
 	$('.personalisationPan').on('click', '.loadmore', function(){
-		var $this = $(this), eachstoryMpan = $this.closest('.eachstoryMpan'), eachstory = eachstoryMpan.find('.eachstory'), eachstoryId = eachstory.attr('id'), layoutCls = eachstory.attr('class'), loadLayoutData;
-		
-		var layout = (layoutCls.indexOf('layout1') !== -1) ? 'layout1' : 'layout2';
+		var $this = $(this),
+		    eachstoryMpan = $this.closest('.eachstoryMpan'),
+		    eachstory = eachstoryMpan.find('.eachstory'),
+		    eachstoryId = eachstory.attr('id'),
+		    layoutCls = eachstory.attr('class'),
+		    loadLayoutData;
+
+		var layout = layoutCls.indexOf('layout1') !== -1 ? 'layout1' : 'layout2';
 		var setId = loadPreferanceId["Sections"];
 
 		$.ajax({
@@ -469,9 +477,16 @@ $(function(){
 		});
 	});
 	
-	var layout1Flag = true, indx = 0, eachstoryLength = (typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount) ? loadPreferanceId.DefaultSectionLoadCount : 0;  
+	var layout1Flag = true,
+	    indx = 0,
+	    eachstoryLength = typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
 	$(window).scroll(function(){
-		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'), eachstoryMpanLast = eachstoryMpan.last(), layoutCls = eachstoryMpan.find('.eachstory').attr('class'), contentHei = $('.personalisationPan').height(), loadsection, texonomyId;
+		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
+		    eachstoryMpanLast = eachstoryMpan.last(),
+		    layoutCls = eachstoryMpan.find('.eachstory').attr('class'),
+		    contentHei = $('.personalisationPan').height(),
+		    loadsection,
+		    texonomyId;
 		 
 		if($(window).scrollTop() > contentHei - 400){
 			var getscrollData;
@@ -479,6 +494,7 @@ $(function(){
 			if(typeof loadPreferanceId !== "undefined"){
 				if(eachstoryLength < loadPreferanceId["Sections"].length){
 					eachstoryLength++;
+					getLiIdx = eachstoryLength;
 					loadsection = loadPreferanceId.DefaultSectionLoadCount + indx++;
 					texonomyId = loadPreferanceId["Sections"][loadsection]["TaxonomyIds"];
 				}
@@ -524,54 +540,63 @@ $(function(){
 		}
 	});
 	
-	$('.main-menu__hoverable a.myviewLink').click(function(e){
-		e.preventDefault();
-		var $this = $(this), name = $this.attr('name'), getPos = $('#' + name).position(), latestSubject = $('#'+name).closest('.eachstoryMpan').prev('.latestSubject'), subjectHei = latestSubject.height(), allstoriesLen = $('.personalisationPan .eachstoryMpan').length, liIdx = $this.closest('li').index();
-		
-		if(liIdx < allstoriesLen){
-			$(window).scrollTop(getPos.top - subjectHei * 3);
-		}
-		else{
-			if(typeof loadPreferanceId !== "undefined"){
-				for(var i=eachstoryLength; i<=liIdx; i++){
-					var setId = loadPreferanceId["Sections"];
-					(function(idx){
-						$.ajax({
-							url: '/api/articlesearch', 
-							dataType: 'json',
-							data: JSON.stringify({'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
-							type: 'POST',
-							cache: false,
-							async: false,
-							beforeSend: function(){
-								$('.spinnerIcon').removeClass('hidespin');
-							},
-							success: function(data){
-								if(idx % 2 == 0){
-									loadLayoutData = loadLayoutOneData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								}
-								else{
-									loadLayoutData = loadLayoutTwoData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								}
-							},
-							error: function(xhr, errorType, error){
-								console.log('err ' + error);
-							},
-							complete: function(xhr, status){
-								if(status == "success" && $('#' + name).length){
-									setTimeout(function(){
-										var getlatestPos = $('#' + name).position();
-										if(getlatestPos){
-											$('.spinnerIcon').addClass('hidespin');
-											$(window).scrollTop(getlatestPos.top - subjectHei);
+	$('.main-menu__hoverable a.myviewLink').click(function (e) {
+		if($('#hdnMyViewPage') && $('#hdnMyViewPage').val() == "true"){
+			e.preventDefault();
+			var $this = $(this),
+				name = $this.attr('name'),
+				getPos = $('#' + name).position(),
+				latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
+				subjectHei = latestSubject.height(),
+				allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
+				liIdx = $this.closest('li').index();
+			
+			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length){
+				$(window).scrollTop(getPos.top - subjectHei * 3);
+			}
+			else {
+				if (typeof loadPreferanceId !== "undefined") {
+					for (var i = getLiIdx; i <= liIdx+1; i++) {
+						var setId = loadPreferanceId["Sections"];
+						(function (idx) {
+							$.ajax({
+								url: '/api/articlesearch',
+								dataType: 'json',
+								data: JSON.stringify({ 'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
+								type: 'POST',
+								cache: false,
+								async: false,
+								beforeSend: function beforeSend() {
+									$('.spinnerIcon').removeClass('hidespin');
+								},
+								success: function success(data) {
+									if(data.articles && typeof data.articles === "object" && data.articles.length){
+										if (idx % 2 == 0) {
+											loadLayoutData = loadLayoutOneData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
+										} else {
+											loadLayoutData = loadLayoutTwoData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
 										}
-									}, 5);
+									}
+								},
+								error: function error(xhr, errorType, _error4) {
+									console.log('err ' + _error4);
+								},
+								complete: function complete(xhr, status) {
+									if (status == "success" && $('#' + name).length) {
+										setTimeout(function () {
+											var getlatestPos = $('#' + name).position();
+											if (getlatestPos) {
+												$('.spinnerIcon').addClass('hidespin');
+												$(window).scrollTop(getlatestPos.top - subjectHei);
+											}
+										}, 5);
+									}
 								}
-							}
-						});
-					})(i);
+							});
+						})(i);
+					}
 				}
 			}
 		}
