@@ -1,6 +1,7 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.ResetPassword.Web
@@ -14,17 +15,17 @@ namespace Informa.Library.User.ResetPassword.Web
 
 		public WebUserResetPasswordUrlFactory(
 			ISitecoreContext sitecoreContext,
-			ISiteRootContext siteRootContext,
 			IWebUserResetPasswordUrlConfiguration configuration)
 		{
 			SitecoreContext = sitecoreContext;
-			SiteRootContext = siteRootContext;
 			Configuration = configuration;
 		}
 
 		public string Create(IUserResetPassword userResetPassword)
 		{
-			var item = SitecoreContext.GetItem<I___BasePage>(SiteRootContext.Item.Reset_Password_Page);
+			var siteRootContext = SitecoreContext?.GetRootItem<ISite_Root>();
+
+			var item = SitecoreContext.GetItem<I___BasePage>(siteRootContext.Reset_Password_Page);
 			var resetPasswordUrl = item?._AbsoluteUrl ?? string.Empty;
 
 			return string.Format("{0}?{1}={2}", resetPasswordUrl, Configuration.Parameter, userResetPassword.Token);
