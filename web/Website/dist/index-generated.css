@@ -3577,6 +3577,9 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .arrow {
           display: block; } }
+      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+        header .header-account-access .myView-placeholder .arrow {
+          display: block; } }
   header .header-account-access .header-account-right-access {
     float: right;
     padding: 16px 0;
