@@ -3611,8 +3611,8 @@ header .header-account-access {
   background: #f1f2f2;
   clear: both;
   border-top: 4px solid #be1e2d;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 25px 32px;
+  padding: 1.5625rem 2rem;
   position: relative;
   float: left;
   line-height: 20px;
@@ -3651,7 +3651,11 @@ header .header-account-access {
       margin-top: 10px; }
     .messaging_webUsers .button-msg-webUser .find_more {
       float: right;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-top: 8px;
+      padding-top: 0.5rem;
+      padding-bottom: 8px;
+      padding-bottom: 0.5rem; }
     @media (max-width: 480px) {
       .messaging_webUsers .button-msg-webUser .msg_link {
         display: block;
@@ -3668,7 +3672,16 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both; }
+    clear: both;
+    position: absolute;
+    top: 10px;
+    top: 0.625rem;
+    right: 15px;
+    right: 0.9375rem; }
+    @media (max-width: 800px) {
+      .messaging_webUsers .msg_dismiss {
+        margin: 0 8px;
+        margin: 0 0.5rem; } }
     .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
       padding-right: 15px;
       display: inline-block;
@@ -3726,8 +3739,9 @@ header .header-account-access {
     .messaging_webUsers_white .msg-text h3, .messaging_webUsers_white .msg-text .article-call-to-action__title {
       font-family: 'Roboto';
       font-style: normal;
-      font-weight: 700;
-      font-size: 1.25em;
+      font-weight: 500;
+      font-size: 20px;
+      font-size: 1.25rem;
       color: #be1e2d; }
     .messaging_webUsers_white .msg-text .red {
       color: #be1e2d; }
@@ -3799,8 +3813,7 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 480px;
-      width: 30rem;
+      width: 75%;
       margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
@@ -6795,6 +6808,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 #chartdiv {
   width: 100% !important; }
+
+div#feedbacklite.fbl_r {
+  top: 65px !important; }
 
 .toggleable-icon {
   display: none; }
