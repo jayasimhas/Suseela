@@ -4115,16 +4115,17 @@ header .header-account-access {
             @media (max-width: 800px) {
               .myview-settings .table-responsive .table thead th .rowlines .vline {
                 right: 12px; } }
-        .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+        .myview-settings .table-responsive .table thead th .accordionImg span {
           background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
           height: 17px;
           height: 1.0625rem;
           width: 32px;
           width: 2rem;
+          cursor: pointer;
           display: inline-block;
           margin-right: 10%; }
           @media (max-width: 640px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
               height: 12px;
               height: 0.75rem;
@@ -4132,18 +4133,18 @@ header .header-account-access {
               width: 1.4375rem;
               position: relative;
               left: 0; }
-              .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
+              .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 position: relative;
                 left: 0;
                 background-position: 0 -48px !important; } }
           @media screen and (min-width: 667px) and (max-width: 767px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               margin-right: 50px;
               margin-right: 3.125rem; } }
-          .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
+          .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
             background-position: 0 0; }
           @media screen and (min-width: 801px) and (max-width: 1130px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
               margin-right: 50%; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;

@@ -182,7 +182,7 @@ namespace Informa.Web.Areas.Article.Controllers
                 // Article Body
                 var article = GetArticle(articleNumber);
                 replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
-                replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
+                replacements["#article_mediatype#"] = article?.Content_Type?.Item_Name ?? string.Empty;
                 replacements["#article_title#"] = article?.Title ?? String.Empty;
                 replacements["#article_titleURL#"] = (article != null)
                     ? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}?utm_medium=email&utm_campaign=emailfriend"

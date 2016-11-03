@@ -932,7 +932,7 @@ $(function () {
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.mobileMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .mobileMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -1000,7 +1000,7 @@ $(function () {
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.desktopMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .desktopMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -1031,7 +1031,7 @@ $(function () {
 			$(window).scrollTop(position.top);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
-			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
 			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 			allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 			thead.find('tr').removeClass('hidden');
