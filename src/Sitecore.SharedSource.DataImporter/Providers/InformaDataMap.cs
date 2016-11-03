@@ -255,7 +255,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     if (!(ao.ContainsKey("COMMODITY1")))
                     {
-
+                         
                         successwithmissingLog += "||" + "COMMODITY is missing";
                     }
                 }
