@@ -239,7 +239,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                     ao.Add("INDUSTRIES", "");
-                   
+                    // ao.Add("AGENCY", ""); 
+                    //ao.Add("COUNTRY", "ANGOLA");
+                    //ao.Add("COMMERCIAL", "Deals");
+                    //ao.Add("COMPANIES", "2 Sisters Food Group");
+                    //ao.Add("COMMODITYFACTOR", "");
+                    //  ao.Add("INDUSTRIES", "");
 
                     // Siddharth
                     if (ao["MEDIA"] == "")
@@ -269,32 +274,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 ao.Add("STORYBODY", bodyTitleHtml);
 
 
+                string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
+                //String[] text = { "Mexico", "India", "Pakistan", };
 
-                if (bodyTitleHtml.Length > 200)
-                {
-
-                    string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
-                    //String[] text = { "Mexico", "India", "Pakistan", };
-
+                string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                ao.Add("COUNTRY", country);
 
 
-                    string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("COUNTRY", country);
+                string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                ao.Add("COMPANIES", Companies);
 
+                string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                ao.Add("AGENCY", Agency);
 
-                    string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("COMPANIES", Companies);
-
-                    string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("AGENCY", Agency);
-
-                }
-                else
-                {
-                    ao.Add("AGENCY", "");
-                    ao.Add("COMPANIES", "");
-                    ao.Add("COUNTRY", "");
-                }
 
                 if(importErrorCount != 2) {
                        l.Add(ao);
@@ -403,17 +395,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             if (articles == null || !articles.Any())
             return 1;
 
-            try
-            {
+           // return 1;
 
-                string num = articles.First().Replace(PublicationPrefix, "");
-                int n = int.Parse(num);
-                return n + 1;
-            }
-            catch
-            {
-                return 1;
-            }
+            string num = articles.First().Replace(PublicationPrefix, "");
+            int n = int.Parse(num);
+            return n + 1;
         }
 
 
