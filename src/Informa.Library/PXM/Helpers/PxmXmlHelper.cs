@@ -1,30 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HtmlAgilityPack;
+﻿using System.Xml;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.PXM.Helpers
 {
-    public interface IPxmHtmlHelper
+    public interface IPxmXmlHelper
     {
-        string ProcessIframe(string content);
-        string ProcessIframeTag(string content);
-        string ProcessQuickFacts(string content);
-        string ProcessTableStyles(string content);
-        string ProcessPullQuotes(string content);
-        string ProcessQandA(string content);
+        string FinalizeStyles(string content);
     }
 
     [AutowireService]
-    public class PxmHtmlHelper : IPxmHtmlHelper
+    public class PxmXmlHelper : IPxmXmlHelper
     {
         private readonly IDependencies _dependencies;
-        private const string ClassAttributeName = "childstyle";
-        private const string QuickFactsTextStyle = "quick-facts__text";
-        private const string ColumnHeadingStyle = "table_subhead 1";
-        private const string SubHeadingStyle = "table_subhead 2";
-        private const string SubHeadAltStyle = "table_subhead 3";
-        private const string StoryTextAltStyle = "table_body";
+        private const string BlockquoteStyle = "quote";
+        private const string SidebarBlockquoteStyle = "sidebar_quote";
+        private const string OrderedListsStyle = "body_numbered list";
+        private const string UnOrderedListsStyle = "body_bullet";
 
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
@@ -32,305 +23,202 @@ namespace Informa.Library.PXM.Helpers
 
         }
 
-        public PxmHtmlHelper(IDependencies dependencies)
+        public PxmXmlHelper(IDependencies dependencies)
         {
             _dependencies = dependencies;
         }
 
-        public string ProcessIframeTag(string content)
+        public string FinalizeStyles(string content)
         {
-            var doc = CreateDocument(content);
-            var wrapXPath = @"//div[contains(@class,'iframe-component')]";
-            var iframeXPath = @"//div[contains(@class, 'ewf-desktop-iframe')]/iframe";
-
-            var iframe = doc.DocumentNode.SelectSingleNode(iframeXPath);
-            var wrapper = doc.DocumentNode.SelectSingleNode(wrapXPath);
-            if (iframe == null || wrapper == null)
-                return doc.DocumentNode.OuterHtml;
-
-            var src = iframe.Attributes["src"];
-            if (src != null)
-                wrapper.InnerHtml = src.Value;
-
-            wrapper.Name = "p";
-            return doc.DocumentNode.OuterHtml;
+            var doc = new XmlDocument();
+            doc.LoadXml(content);
+            AddBlockquoteStyles(doc);
+            AddOrderedListStyles(doc);
+            AddUnOrderedListStyles(doc);
+            ApplyTableStyles(doc);
+            ChangeDefaultParagraphStyle(doc);
+            MatchCellStyleWithParagraphStyle(doc);
+            AddSidebarPrefix(doc);
+            FillBlankTableCell(doc);
+            return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
         }
 
-        public string ProcessIframe(string content)
+        public void AddBlockquoteStyles(XmlDocument doc)
         {
-            var result = ProcessIframeTag(content);
-            var doc = CreateDocument(result);
-
-            UpdateNode(doc, @"//p[contains(@class,'iframe-header')]", "exhibit_number");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-title')]", "exhibit_title");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-component')]", "exhibit_url");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-caption')]", "exhibit_caption");
-            doc = CreateDocument(doc.DocumentNode.OuterHtml);
-            UpdateNode(doc, @"//p[contains(@class,'iframe-source')]", "exhibit_source");
-
-            return doc.DocumentNode.OuterHtml;
-        }
-
-        public void UpdateNode(HtmlDocument doc, string xPath, string cssClass)
-        {
-
-            var node = doc.DocumentNode.SelectSingleNode(xPath);
-            if (node == null)
+            var inlines = doc.SelectNodes("//Inline");
+            if (inlines == null)
                 return;
 
-            var attr = node.Attributes["class"];
-            if (attr == null)
-                return;
-
-            attr.Value = cssClass;
-
-            var newParent = doc.DocumentNode.SelectSingleNode(@"//pre");
-            if (newParent == null)
+            foreach (XmlNode xmlNode in inlines)
             {
-                newParent = doc.CreateElement("pre");
-                doc.DocumentNode.FirstChild.ChildNodes.Insert(0, newParent);
-            }
+                var children = xmlNode.SelectNodes("//Inline[@ArticleSource='blockquote']/ParagraphStyle");
+                if (children == null) continue;
 
-            var oldParent = node.ParentNode;
-            newParent.AppendChild(node);
-            oldParent.RemoveChild(node);
-        }
-
-        public string ProcessQuickFacts(string content)
-        {
-            var result = AddCssClassToQuickFactsText(content);
-            var doc = CreateDocument(result);
-
-            var xpath = @"//div[@class='quick-facts']";
-            var nodes = doc.DocumentNode.SelectNodes(xpath);
-
-            if (nodes != null)
-            {
-                var aside = doc.CreateElement("pre");
-                doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
-                string qfBody = "qf_body";
-                foreach (var node in nodes)
+                foreach (XmlNode xn in children)
                 {
-                    foreach (var childNode in node.ChildNodes)
+                    var styleAttr = xn.Attributes["Style"];
+                    if (styleAttr == null)
                     {
-                        if (!childNode.Name.Equals("p"))
-                            continue;
-                        var cAttr = childNode.Attributes["class"];
-                        if (cAttr == null)
-                            childNode.Attributes.Add("class", qfBody);
+                        styleAttr = doc.CreateAttribute("Style");
+                        xn.Attributes?.Append(styleAttr);
+                    }
+                    if (styleAttr != null && (styleAttr.Value.Equals("sidebar") || styleAttr.Value.Equals(SidebarBlockquoteStyle)))
+                        styleAttr.Value = SidebarBlockquoteStyle;
+                    else
+                        styleAttr.Value = BlockquoteStyle;
+                }
+            }
+        }
+
+        public void AddOrderedListStyles(XmlDocument doc)
+        {
+            var textFrames = doc.SelectNodes("//TextFrame");
+            if (textFrames != null)
+            {
+                ApplyListStyles(ref doc, textFrames, "ParagraphStyle", "ordered_lists", OrderedListsStyle);
+            }
+        }
+
+        public void AddUnOrderedListStyles(XmlDocument doc)
+        {
+            var textFrames = doc.SelectNodes("//TextFrame");
+            if (textFrames != null)
+            {
+                ApplyListStyles(ref doc, textFrames, "ParagraphStyle", "unordered_lists", UnOrderedListsStyle);
+            }
+        }
+
+        public void ApplyStyles(ref XmlDocument doc, XmlNodeList xmlNodeList, string parentNodeType, string childNodeType, string style)
+        {
+            foreach (XmlNode xmlNode in xmlNodeList)
+            {
+                var children = xmlNode.SelectNodes("//" + parentNodeType + "[@ArticleSource='" + childNodeType + "']/ParagraphStyle");
+                if (children == null) continue;
+
+                AddStyles(doc, children, style);
+            }
+        }
+
+        public void ApplyListStyles(ref XmlDocument doc, XmlNodeList xmlNodeList, string parentNodeType, string childNodeType, string style)
+        {
+            foreach (XmlNode xmlNode in xmlNodeList)
+            {
+                var children = xmlNode.SelectNodes("//" + parentNodeType + "[@ArticleSource='" + childNodeType + "']");
+                if (children == null) continue;
+
+                AddStyles(doc, children, style);
+            }
+        }
+
+        public void AddStyles(XmlDocument doc, XmlNodeList children, string style)
+        {
+            foreach (XmlNode child in children)
+            {
+                if (child.Attributes?["Style"] != null)
+                {
+                    child.Attributes["Style"].Value = style;
+                }
+                else
+                {
+                    var attr = doc.CreateAttribute("Style");
+                    attr.Value = style;
+                    child.Attributes?.Append(attr);
+                }
+            }
+        }
+
+        public void ApplyTableStyles(XmlDocument doc)
+        {
+            var tds = doc.SelectNodes("//Cell[@ChildStyle != '']");
+            if (tds != null)
+            {
+                foreach (XmlNode td in tds)
+                {
+                    foreach (XmlNode childNode in td.ChildNodes)
+                    {
+                        if (childNode.Attributes?["Style"] != null)
+                        {
+                            childNode.Attributes["Style"].Value = td.Attributes?["ChildStyle"].Value;
+                        }
                     }
                 }
-                ModifyHtmlStructure(doc, aside, nodes);
-            }
-
-            return doc.DocumentNode.OuterHtml;
-        }
-
-        internal void ModifyHtmlStructure(HtmlDocument doc, HtmlNode root, IEnumerable<HtmlNode> nodes)
-        {
-            foreach (var node in nodes)
-            {
-                AppendAndDeleteOriginal(doc, root, node);
             }
         }
 
-        internal void AppendAndDeleteOriginal(HtmlDocument doc, HtmlNode root, HtmlNode element)
+        // Change default paragraph style in table from "body" to "table_body"
+        public void ChangeDefaultParagraphStyle(XmlDocument doc)
         {
-            if (element != null)
+            var pTags = doc.SelectNodes("//Cell/ParagraphStyle[@Style = 'body']");
+            if (pTags != null)
             {
-                var parent = element.ParentNode;
-                root.AppendChild(element);
-                parent.RemoveChild(element);
-            }
-        }
-
-        public string AddCssClassToQuickFactsText(string content)
-        {
-            var xpath = @"//div[@class='quick-facts']/p[not(@class)]";
-            var result = AddCssClassToElements(content, xpath, ClassAttributeName, QuickFactsTextStyle);
-            return result;
-        }
-
-        public string ProcessTableStyles(string content)
-        {
-            var result = ProcessColumnHeading(content);
-            result = ProcessSubHeading(result);
-            result = ProcessSubHeadAlt(result);
-            result = ProcessStoryTextAlt(result);
-            var xpath = @"//table/tbody/tr/td/p";
-            result = MoveTableContent(result, xpath);
-            result = ProcessPullQuotes(result);
-            return result;
-        }
-
-        internal string ProcessColumnHeading(string content)
-        {
-            var xpath = @"//table/tbody/tr/td[@class='header colored']/p";
-            var result = AddCssClassToElements(content, xpath, ClassAttributeName, ColumnHeadingStyle);
-            return result;
-        }
-
-        internal string ProcessSubHeading(string content)
-        {
-            var xpath = @"//table/tbody/tr/td[@class='cell']/p[contains(@class,'highlight')]";
-            var result = AddCssClassToElements(content, xpath, ClassAttributeName, SubHeadingStyle);
-            return result;
-        }
-
-        internal string ProcessSubHeadAlt(string content)
-        {
-            var xpath = @"//table/tbody/tr/td[@class='cell colored']/p[contains(@class,'highlight')]";
-            var result = AddCssClassToElements(content, xpath, ClassAttributeName, SubHeadAltStyle);
-            return result;
-        }
-
-        internal string ProcessStoryTextAlt(string content)
-        {
-            var xpath = @"//table/tbody/tr/td[@class='cell colored']/p[contains(@class,'small')]";
-            var result = AddCssClassToElements(content, xpath, ClassAttributeName, StoryTextAltStyle);
-            return result;
-        }
-
-        internal string AddCssClassToElements(string content, string xpath, string attributeName, string attributeValue)
-        {
-            var doc = CreateDocument(content);
-            var elements = doc.DocumentNode.SelectNodes(xpath);
-            if (elements == null)
-            {
-                return doc.DocumentNode.OuterHtml;
-            }
-            foreach (HtmlNode element in elements)
-            {
-                var attribute = element.ParentNode.Attributes[attributeName];
-                if (attribute == null)
+                foreach (XmlNode p in pTags)
                 {
-                    element.ParentNode.Attributes.Add(attributeName, attributeValue);
-                }
-                else
-                {
-                    attribute.Value = attributeValue;
+                    if (p.Attributes != null)
+                    {
+                        p.Attributes["Style"].Value = "table_body";
+                    }
                 }
             }
-            return doc.DocumentNode.OuterHtml;
         }
 
-        internal string MoveTableContent(string content, string xpath)
+        public void MatchCellStyleWithParagraphStyle(XmlDocument doc)
         {
-            var doc = CreateDocument(content);
-            var elements = doc.DocumentNode.SelectNodes(xpath);
-            if (elements == null)
+            var cells = doc.SelectNodes("//Cell");
+            if (cells != null)
             {
-                return doc.DocumentNode.OuterHtml;
+                foreach (XmlNode cell in cells)
+                {
+                    if (cell.Attributes?["CellStyle"] != null && cell.ChildNodes.Count != 0)
+                    {
+                        var pStyle = cell.FirstChild.Attributes?["Style"];
+                        if (pStyle != null)
+                        {
+                            cell.Attributes["CellStyle"].Value = pStyle.Value;
+                        }
+                    }
+                }
             }
-            foreach (HtmlNode element in elements)
+        }
+
+        public void AddSidebarPrefix(XmlDocument doc)
+        {
+
+            var paragraphs = doc.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
+
+            foreach (XmlNode p in paragraphs)
             {
-                var v = element.Attributes["class"];
-                if (v == null)
-                    element.Attributes.Append(doc.CreateAttribute("class", "table_paragraph"));
-                var contentText = element.InnerHtml;
-                if (element.ParentNode != null)
-                    element.ParentNode.InnerHtml += contentText;
+                if (p == null) continue;
+
+                var att = p.Attributes["Style"];
+                if (att == null || att.Value.StartsWith("sidebar_"))
+                    continue;
+
+                att.Value = $"sidebar_{att.Value}";
             }
-            return doc.DocumentNode.OuterHtml;
         }
 
-        internal HtmlDocument CreateDocument(string content)
+        public void FillBlankTableCell(XmlDocument doc)
         {
-            var doc = new HtmlDocument();
-            doc.LoadHtml(content);
-            return doc;
-        }
+            var cells = doc.SelectNodes("//Cell");
+            if (cells == null)
+                return;
 
-        public string ProcessPullQuotes(string content)
-        {
-            var result = ProcessPullQuotesStyle(content);
-            result = ProcessPullQuotesHtml(result);
-            return result;
-        }
-
-        private string ProcessPullQuotesHtml(string content)
-        {
-            var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]";
-            var doc = CreateDocument(content);
-            var elements = doc.DocumentNode.SelectNodes(xpath);
-            if (elements == null)
+            foreach (XmlNode cell in cells)
             {
-                return doc.DocumentNode.OuterHtml;
+                if (cell.ChildNodes.Count != 0)
+                    continue;
+
+                XmlAttribute cs = (cell.Attributes["CellStyle"] == null)
+                    ? doc.CreateAttribute("CellStyle")
+                    : cell.Attributes["CellStyle"];
+                cs.Value = "table_body";
+
+                XmlNode n = doc.CreateNode(XmlNodeType.Element, "ParagraphStyle", string.Empty);
+                XmlAttribute a = doc.CreateAttribute("Style");
+                a.Value = "table_body";
+                n.Attributes.Append(a);
+                cell.AppendChild(n);
             }
-            foreach (HtmlNode element in elements)
-            {
-                var nodeStr = element.OuterHtml.Replace("blockquote", "p");
-                var blockquote = HtmlNode.CreateNode(nodeStr);
-                element.ParentNode.ReplaceChild(blockquote, element);
-            }
-            return doc.DocumentNode.OuterHtml;
-        }
-
-        private string ProcessPullQuotesStyle(string content)
-        {
-            var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]/p";
-            var doc = CreateDocument(content);
-            var elements = doc.DocumentNode.SelectNodes(xpath);
-            if (elements == null)
-                return doc.DocumentNode.OuterHtml;
-
-            string classAttr = "class";
-            string SidebarPullQuote = "sidebar_quote";
-            foreach (HtmlNode element in elements)
-            {
-                var attribute = element.Attributes[classAttr];
-                if (attribute == null)
-                    element.Attributes.Add(classAttr, SidebarPullQuote);
-                else
-                    attribute.Value = SidebarPullQuote;
-            }
-            return doc.DocumentNode.OuterHtml;
-        }
-
-        public string ProcessQandA(string content)
-        {
-            var doc = CreateDocument(content);
-            var paras = GetNodes(doc, @"//div[contains(@class, 'article-interview__answer')]//p");
-            foreach (var q in paras)
-            {
-                q.Name = "div";
-                var a = q.Attributes["class"];
-                if (a != null && !a.Value.Contains("article-interview__answer"))
-                    a.Value = $"{a.Value} article-interview__answer";
-                else
-                    q.Attributes.Add("class", "article-interview__answer");
-
-                var oldWrapNode = q.ParentNode;
-                var sib = GetNewAnswerNode(oldWrapNode);
-
-                sib.AppendChild(q);
-                oldWrapNode.RemoveChild(q);
-            }
-
-            return doc.DocumentNode.OuterHtml;
-        }
-
-        private HtmlNode GetNewAnswerNode(HtmlNode answerRoot)
-        {
-            var sib = answerRoot.NextSibling;
-            if (sib.Attributes["class"] == null || !sib.Attributes["class"].Value.Equals("answer-wrap"))
-            {
-                sib = HtmlNode.CreateNode($"<div class=\"answer-wrap\"></div>");
-                answerRoot.ParentNode.InsertAfter(sib, answerRoot);
-            }
-
-            return sib;
-        }
-
-        private IEnumerable<HtmlNode> GetNodes(HtmlDocument doc, string xPath)
-        {
-            var nodes = doc.DocumentNode.SelectNodes(xPath);
-            return (nodes == null)
-                ? Enumerable.Empty<HtmlNode>()
-                : nodes.ToList();
         }
     }
 }
