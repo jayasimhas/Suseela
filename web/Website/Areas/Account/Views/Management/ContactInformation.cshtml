@@ -3,11 +3,11 @@
 @if (Model.IsAuthenticated || IsInEditingMode)
 {
     <div class="page-account page-account-contact">
-        <h1 class="page-account__header">@Model.Title</h1>
+        <h1 class="page-account__header">User Details</h1>
         <div class="page-preferences js-preferences-user-container">
 
             <div class="page-account-contact__column">
-                <h2 class="page-account__subheader">@Model.UserNameTitleText</h2>
+                @*<h2 class="page-account__subheader">@Model.UserNameTitleText</h2>*@
 
                 <p>
                     <label class="page-account__text-label">
@@ -66,14 +66,14 @@
 
                             <p>
                                 <label for="Name" class="page-account__text-label">
-                                    Name <span class="asterisk-required"></span>
+                                    Name 
                                 </label>
                                 <input type="text"
                                        name="Name"
                                        value="@Model.Profile.Name"
                                        placeholder="Name"  readonly="readonly">
                               
-                                <input type="hidden"   name="Name"
+                                <input type="hidden"  name="Id"
                                        value="@Model.Profile.Id" />
                             </p>
                         </div>
@@ -134,15 +134,7 @@
                     <div class="page-account-contact__column">
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                            <h2 class="page-account__subheader">Address</h2>
-
-                            <p>
-                                <label for="BillCountry" class="page-account__text-label">
-                                    @Model.BillCountryLabelText <span class="asterisk-required"></span>
-                                </label>
-
-                            </p>
-
+                            <h2 class="page-account__subheader">Home Address</h2>
                             <p>
                                 <label for="BillAddress1" class="page-account__text-label">
                                     @Model.BillAddress1LabelText <span class="asterisk-required"></span>
@@ -180,7 +172,7 @@
 
 
                         <div class="page-account__submit-wrapper">
-                            <button type="submit" class="button--filled button--fly-right click-utag manage-preferences" data-info='{"event_name":"update-contact-info"}'>@Model.UpdateContactInfoText</button>
+                            <button type="submit" class="button--filled button--fly-right click-utag manage-preferences" data-info='{"event_name":"update-contact-info"}'>Update User Details</button>
                         </div>
 
                         <div class="alert-success js-form-success">
@@ -195,32 +187,32 @@
 
             </form>
 
-            <div  >
+            <div  class="label-color">
                 <hr />
                 <br />
-                <h3>Confirmed Details</h3>
+                <h3 class="label-color">Confirmed Details</h3>
 
                 <br />
                 <div class="page-account-contact__column"  >
                     <p>
-                        <label class="page-account__text-label">
-                            Name
+                        <label class="page-account__text-label label-color">
+                            Contact Name
                         </label>
                         <label>
                             @Model.Profile.SFConfirmedName
                         </label>
                     </p>
                     <p>
-                        <label class="page-account__text-label">
-                            Company
+                        <label class="page-account__text-label label-color">
+                            Account Name
                         </label>
                         <label>
                             @Model.Profile.SFConfirmedCompany
                         </label>
                     </p>
                     <p>
-                        <label class="page-account__text-label">
-                            Job title
+                        <label class="page-account__text-label label-color">
+                            Job Title
                         </label>
                         <label>
                             @Model.Profile.SFConfirmedJobTitle
@@ -229,8 +221,8 @@
 
 
                     <p>
-                        <label class="page-account__text-label">
-                            Phone
+                        <label class="page-account__text-label label-color">
+                            Mobile
                         </label>
                         <label>
                             @Model.Profile.SFConfirmedPhone
@@ -238,8 +230,10 @@
                     </p>
                 </div>
                 <div class="page-account-contact__column">
+                    <h4 class="label-color">Contact Mailing Addresss</h4>
+                    <br/>
                     <p>
-                        <label class="page-account__text-label">
+                        <label class="page-account__text-label label-color">
                             Address
                         </label>
                         <label>
@@ -248,7 +242,7 @@
                     </p>
 
                     <p>
-                        <label class="page-account__text-label">
+                        <label class="page-account__text-label label-color">
                             City
                         </label>
                         <label>
@@ -257,7 +251,7 @@
                     </p>
 
                     <p>
-                        <label class="page-account__text-label">
+                        <label class="page-account__text-label label-color">
                             Zip/Postal code
                         </label>
                         <label>
@@ -302,5 +296,9 @@ else
         float: left;
         margin-right: 10px;
         margin-top: 3px;
+    }
+
+    .label-color{
+        color:#707070;
     }
 </style>
