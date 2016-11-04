@@ -358,6 +358,10 @@
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Search\ComputedFields\Facets\AgencyRegulatorField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\CommercialField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\CommoditiesField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\CommodityFactorsField.cs" />
     <Compile Include="Search\ComputedFields\TaxonomyField.cs" />
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
