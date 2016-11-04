@@ -783,9 +783,9 @@ $(document).ready(function(){
         });
 		var persistedval=sessionStorage.getItem("mykey");
 		 if(persistedval == "false"){
-				$('.toggle-demo').hide();
+				$('.toggle-demo').show();
 			 }else{
-			 $('.toggle-demo').show();
+			 $('.toggle-demo').hide();
 			 }
 
     })();
