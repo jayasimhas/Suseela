@@ -124,5 +124,8 @@ namespace Informa.Library.Search.Results
 
         [IndexField("wildcardcontent")]
         public string WildcardContent { get; set; }
+
+        [IndexField("exactmatchcontent")]
+        public string ExactMatchContent { get; set; }
     }
 }

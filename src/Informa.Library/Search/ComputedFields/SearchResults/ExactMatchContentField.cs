@@ -3,6 +3,7 @@ using Informa.Library.Services.Search.Fields.Base;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Autofac.Util;
+using Autofac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Autofac;
 
 namespace Informa.Library.Search.ComputedFields.SearchResults {
-    
-    public class WildcardContentField : BaseGlassComputedField<I___BasePage> {
+
+    public class ExactMatchContentField : BaseGlassComputedField<I___BasePage> {
+        
         public override object GetFieldValue(I___BasePage indexItem) {
 
             if (indexItem == null)
@@ -24,7 +25,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults {
             using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope()) {
                 dcd = scope.Resolve<IDCDTokenMatchers>();
             }
-
+            
             StringBuilder sb = new StringBuilder();
             if (indexItem.Body != null) {
                 string b = (dcd == null)

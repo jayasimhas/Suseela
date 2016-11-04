@@ -20,6 +20,7 @@
             <field fieldName="SearchMediaIcon" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchMediaIconField, Informa.Library</field>
             <field fieldName="SearchMediaTooltip" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchMediaTooltipField, Informa.Library</field>
             <field fieldName="WildcardContent" returnType="text_general_rev">Informa.Library.Search.ComputedFields.SearchResults.WildcardContentField, Informa.Library</field>
+            <field fieldName="ExactMatchContent" returnType="text_no_stem">Informa.Library.Search.ComputedFields.SearchResults.ExactMatchContentField, Informa.Library</field>
             
             <field fieldName="FacetContentType" returnType="string">Informa.Library.Search.ComputedFields.Facets.ContentTypeField, Informa.Library</field>
             <field fieldName="FacetMediaType" returnType="string">Informa.Library.Search.ComputedFields.Facets.MediaTypeField, Informa.Library</field>
