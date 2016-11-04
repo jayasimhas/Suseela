@@ -4194,7 +4194,10 @@ header .header-account-access {
           margin-bottom: 25px; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead .followAllBtn {
-            float: none; } }
+            float: none; }
+            .myview-settings .table-responsive .table thead .followAllBtn:hover {
+              background-color: transparent;
+              color: #58595b; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4635,7 +4638,7 @@ header .header-account-access {
       text-indent: -8.75rem;
       color: #58595b !important; }
     .myview-settings .smfollowingBtn .followAllBtn {
-      background-position: -3px -266px;
+      background-position: 17px -266px;
       text-indent: -124px;
       border: none !important; }
       .myview-settings .smfollowingBtn .followAllBtn.fr {
@@ -6285,15 +6288,18 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         float: left;
         padding: 12px; }
       .subscriptionPan .tableMrow .pubSubscribe {
-        width: 40%;
+        width: 32%;
         float: left;
         padding: 12px 0; }
         .subscriptionPan .tableMrow .pubSubscribe .button, .subscriptionPan .tableMrow .pubSubscribe .full-diminished-button {
           padding-top: 7px;
-          padding-bottom: 7px; } }
+          padding-bottom: 7px;
+          display: inline-block; } }
   .subscriptionPan .tableMrow .tablerow {
     clear: both;
     border: 1px solid #d2d4d3; }
+  .subscriptionPan .tableMrow a.button--outlined, .subscriptionPan .tableMrow .button--outlined.pop-out__reset-password, .subscriptionPan .tableMrow .button--outlined.sortable-table__list-toggler, .subscriptionPan .tableMrow .button--outlined.mobile-table-exit {
+    border: 1px solid #fbb040 !important; }
   .subscriptionPan .parent {
     border-top: 1px solid #d2d4d3; }
   .subscriptionPan .child {
