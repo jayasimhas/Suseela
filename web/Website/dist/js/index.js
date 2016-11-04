@@ -724,7 +724,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
@@ -1676,7 +1675,7 @@ $(function () {
 								$('.spinnerIcon').removeClass('hidespin');
 							},
 							success: function success(data) {
-								if (data.articles && typeof data.articles === "object" && data.articles.length) {
+								if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
@@ -1771,7 +1770,7 @@ $(function () {
 					$('.spinnerIcon').removeClass('hidespin');
 				},
 				success: function success(data) {
-					if (data.articles && typeof data.articles === "object" && data.articles.length) {
+					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 						if (eachstoryLength % 2 == 0 && layout1Flag) {
 							layout1Flag = false;
 							getscrollData = loadLayoutOneData(data, eachstoryLength);
@@ -1821,7 +1820,7 @@ $(function () {
 									$('.spinnerIcon').removeClass('hidespin');
 								},
 								success: function success(data) {
-									if (data.articles && typeof data.articles === "object" && data.articles.length) {
+									if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 										if (idx % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
