@@ -309,6 +309,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.Commercial" value="/sitecore/content/agri/vertical globals/taxonomy/commercial"></setting>
       <setting name="Taxonomy.Commodity" value="/sitecore/content/agri/vertical globals/taxonomy/commodity"></setting>
       <setting name="Taxonomy.CommodityFactors" value="/sitecore/content/agri/vertical globals/taxonomy/commodity factors"></setting>
+      <setting name="Taxonomy.AgencyRegulator" value="/sitecore/content/agri/vertical globals/taxonomy/agency regulator"></setting>
       <setting name="Taxonomy.Companies" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
