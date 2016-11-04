@@ -68,14 +68,15 @@ namespace Informa.Library.Salesforce.Subscription.User
                     {
                          ChannelId = ch.code,
                         ChannelName = ch.name,
-                         ExpirationDate = ch.expirydate
+                        ExpirationDate = ch.expirydate,
+                        SubscribedTopics = (ch.topics.Select(tp => new TopicSubscription
+                        {
+                            TopicId = tp.code,
+                            TopicName = tp.name,
+                            ExpirationDate = tp.expirydate
+                        })).ToList()
                     })).ToList(),
-                    SubscribedTopics = (sap.topics.Select(tp => new TopicSubscription
-                    {
-                         TopicId = tp.code,
-                         TopicName = tp.name,
-                         ExpirationDate = tp.expirydate
-                    })).ToList()
+                    
 
                 }).ToList();
 
@@ -152,6 +153,7 @@ namespace Informa.Library.Salesforce.Subscription.User
         public DateTime expirydate { get; set; }
         [XmlElement("subscribed")]
         public string subscribed { get; set; }
+        public List<topicxml> topics { get; set; }
     }
 
     [XmlType("topic")]
@@ -163,7 +165,8 @@ namespace Informa.Library.Salesforce.Subscription.User
         public string name { get; set; }
         [XmlElement("expirydate")]
         public DateTime expirydate { get; set; }
-    }
+        
+     }
 
     public class subscriptionsAndPurchases
     {
@@ -189,10 +192,7 @@ namespace Informa.Library.Salesforce.Subscription.User
         public string subscriptionType { get; set; }
         [XmlArray("channels")]
         public List<channelxml> channels { get; set; }
-        [XmlArray("topics")]
-        public List<topicxml> topics { get; set; }
-
-    }
+  }
     [XmlRoot("QuerySubscriptionsAndPurchasesResponse")]
     public class QuerySubscriptionsAndPurchasesResponse
     {

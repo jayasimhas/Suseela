@@ -31,7 +31,7 @@ function createJSONData(alltables, UserPreferences){
 	sendHttpRequest(UserPreferences);
 }
 
-function sendHttpRequest(UserPreferences, setFlag){
+function sendHttpRequest(UserPreferences, setFlag, redirectUrl){
 	$.ajax({
 		url: '/Account/api/PersonalizeUserPreferencesApi/Update/', 
 		data: {'UserPreferences': JSON.stringify(UserPreferences)}, 
@@ -41,8 +41,11 @@ function sendHttpRequest(UserPreferences, setFlag){
 			if(data && data.success){
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
-				if(setFlag == 'register'){
+				if(setFlag == 'register' && redirectUrl == 'href'){
 					window.location.href = $('.registrationBtn').attr('href');
+				}
+				else if(setFlag == 'register' && redirectUrl == 'name'){
+					window.location.href = $('.registrationBtn').attr('name');
 				}
 			}
 			else{
@@ -86,6 +89,19 @@ function setDataRow(allpublications){
 function showModal(){
 	$('.modal-overlay').addClass('in');
 	$('.modal-view').show();
+}
+
+function sendRegisterData(alltrs, UserPreferences, redirectUrl){
+	for (var i = 0; i < alltrs.length; i++) {
+		var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+			channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+			secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+			channelOrder = $(alltrs[i]).attr('data-row'),
+			followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+		
+		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+	}
+	sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
 
 function sort_table(tbody, col, asc, sortstatus) {
@@ -164,7 +180,7 @@ $(function(){
 		div.find('.unfollowAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
+		$lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 		$('#validatePriority').val(true);
 		for(var i=0; i<tbody.find('.followingBtn').length; i++){
 			$(tbody.find('.followrow')[i]).attr('draggable', true);
@@ -183,11 +199,11 @@ $(function(){
 		var $this = $(this), curpublicPan = $this.closest('.publicationPan'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollowing = curpublicPan.find('.followingBtn');
 		$this.addClass('hideBtn');
 		$this.closest('.smfollowingBtn').find('.followAllBtn').addClass('fr');
-		$('#validatePreference').val(1); 
+		$('#validatePreference').val(1);
 		div.find('.followAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followlbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
+		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 		$('#validatePriority').val(false);
 		for(var i=0; i<$lgfollowing.length; i++){
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
@@ -200,7 +216,7 @@ $(function(){
 	  followrow.attr('draggable', true);
 	  $('#validatePreference').val(1);
 	  followrow.addClass('followingrow').removeClass('followrow disabled frow');
-	  $this.addClass('followingBtn').removeClass('followBtn').html('Following');
+	  $this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 	  setClsforFlw(table);
 	  table.find('.firstrow .lableStatus').val('followinglbl');
 	  table.find('.accordionStatus .lableStatus').val('followinglbl');
@@ -230,7 +246,7 @@ $(function(){
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function(){
 	  var $this = $(this), table = $this.closest('table'), followingrow = $this.closest('.followingrow'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
-	  $this.addClass('followBtn').removeClass('followingBtn').html('Follow');
+	  $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 	  followingrow.clone().appendTo($this.closest('tbody'));
 	  followingrow.remove();
 	  $('#validatePreference').val(1);
@@ -252,7 +268,7 @@ $(function(){
 	  }
 	});
 	
-	$('.publicationPan').on('click', '.accordionImg a.mobileMode', function(){
+	$('.publicationPan').on('click', '.accordionImg .mobileMode', function(){
 		var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), accStatusflwLbl = thead.find('.accordionStatus.flwLbl'), accStatusflwBtn = thead.find('.accordionStatus.flwBtn'), allpubpans = allPublications.find('.publicationPan'), pickTxt = thead.find('.pickTxt'), setFlag = true;
 		 
 		if($this.hasClass('expanded')){
@@ -309,7 +325,7 @@ $(function(){
 		}
 	});
 	
-	$('.publicationPan').on('click', '.accordionImg a.desktopMode', function(){
+	$('.publicationPan').on('click', '.accordionImg .desktopMode', function(){
 		var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan');
 		 
 		if($this.hasClass('expanded')){
@@ -330,7 +346,7 @@ $(function(){
 		}
 		else{
 			allPublications.find('tbody').addClass('tbodyhidden');
-			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
 			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 			allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 			thead.find('tr').removeClass('hidden');
@@ -370,7 +386,6 @@ $(function(){
 		createJSONData(alltables, UserPreferences);		
 		
 		$('#validatePreference').val(0);
-		window.location.href = $(this).attr('href');
 	});
 	
 	$('.registrationBtn').click(function (e) {
@@ -380,6 +395,11 @@ $(function(){
 			UserPreferences.PreferredChannels = [];
 			
 		e.preventDefault();
+		if($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false"){
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'name');
+			return false;
+		}
 		if($('#validatePriority').val() == "false"){
 			if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0){
 				$('.alert-error.register-not-selected').show();
@@ -388,16 +408,7 @@ $(function(){
 			setDataRow(allpublications);
 			
 			if(!!$('#isChannelBasedRegistration').val()){
-				for (var i = 0; i < alltrs.length; i++) {
-					var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-						channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-						secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-						channelOrder = $(alltrs[i]).attr('data-row'),
-						followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
-					
-					UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
-				}
-				sendHttpRequest(UserPreferences, 'register');
+				sendRegisterData(alltrs, UserPreferences, 'href');
 			}
 			else{
 				createJSONData(table, UserPreferences);
@@ -405,17 +416,7 @@ $(function(){
 		}
 		else{
 			setDataRow(allpublications);
-			for (var i = 0; i < alltrs.length; i++) {
-				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-					channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-					secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-					channelOrder = $(alltrs[i]).attr('data-row'),
-					followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
-				
-				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
-			}
-			sendHttpRequest(UserPreferences, 'register');
-			//showModal();
+			sendRegisterData(alltrs, UserPreferences, 'href');
 		}
 	});
 	 

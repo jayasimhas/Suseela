@@ -30,17 +30,6 @@
                 }
                 Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
             }
-            else if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
-            {
-                foreach (var item in subscriptions.SelectMany(p => p.SubscribedTopics))
-                {
-                    if (navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault() != null)
-                    {
-                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.TopicId).FirstOrDefault());
-                    }
-                }
-                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
-            }
             else
             {
                 Nav.Children = navigation.Children;

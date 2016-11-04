@@ -634,6 +634,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     errorLog += "||" + "Commercial N/A";
                                 }
+                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "AGENCY" && importValue == "")
+                                {
+                                    errorLog += "||" + "AGENCY N/A";
+                                }
                             }
                             if (d.NewItemField == "Taxonomy")
                             {

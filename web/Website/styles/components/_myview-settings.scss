@@ -118,7 +118,7 @@
 		h2{
 			text-align: left;
 			float: left;
-			width: 30rem;
+			width: 75%;
 			margin-top: -5px;
 			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
@@ -348,10 +348,11 @@
 						}
 					}
 					& .accordionImg{
-						a{
+						span{
 							background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
 							height: 1.0625rem;
 							width: 2rem;
+							cursor: pointer;
 							display: inline-block;
 							margin-right: 10%;
 							@include breakpoint('medium-small') {
