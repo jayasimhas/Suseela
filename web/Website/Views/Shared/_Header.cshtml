@@ -76,33 +76,57 @@
              @*   @Html.Sitecore().Placeholder("header-myview")*@
 
             <div class="header-account-right-access">
-                @if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
-            {
-
-
-                if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            
+                @if (Model.IsAuthenticated)
                 {
-                        <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+
+                    if (Informa.Library.Utilities.TransparentIp.TransparentIpUtil.IsInIpRange())
+                    {
+                        <div class="header-account-access__my-account">
+
+                            <svg class="header__icons icon-my-account">
+                                <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                            </svg>
+                            <span class="header-account-access__label">
+                                <a target="_blank" href="http://commodities.dev.products.com/Account/TransparentIpEntitlement">
+                                    IP:
+                                    @Informa.Library.Utilities.TransparentIp.TransparentIpUtil.GetCurrentRequestIp()
+                                </a>
+                            </span>
+                        </div>
+                        <div class="header-account-access__sign-in-out click-logout">
+                            <svg class="header__icons icon-sign-out">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                            </svg>
+
+                            <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                        </div>
+                    }
+                    else
+                    {
+                        if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
+                        {
+                            if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+                            {
+                                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+                            }
+                        }
+
+                        @* TODO: UNTIL WE GET ENTITLED USERS *@
+                        <div class="header-account-access__my-account">
+                            <svg class="header__icons icon-my-account">
+                                <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                            </svg>
+                            <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
+                        </div>
+                        <div class="header-account-access__sign-in-out click-logout">
+                            <svg class="header__icons icon-sign-out">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                            </svg>
+                            <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                        </div>
                     }
                 }
-
-
-
-                @if (Model.IsAuthenticated)
-            {
-                    @* TODO: UNTIL WE GET ENTITLED USERS *@
-                    <div class="header-account-access__my-account">
-                        <svg class="header__icons icon-my-account">
-                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                        </svg>
-                        <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
-                    </div>
-                    <div class="header-account-access__sign-in-out click-logout">
-                        <svg class="header__icons icon-sign-out">
-                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                        </svg>
-                        <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
-                    </div>}
                 @*----------for transparent ip--------------*@
                 else if (Informa.Library.Utilities.TransparentIp.TransparentIpUtil.IsInIpRange())
                 {

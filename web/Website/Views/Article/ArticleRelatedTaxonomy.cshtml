@@ -23,14 +23,14 @@
 										@tag.Text
 						</a>
 					</li>
-					var nestedTaxonomy = $"{catagory.Text}: {tag.Text}";
-					foreach (var childTag in tag.Children)
-					{
-						childTag.Path = nestedTaxonomy;
-						Html.RenderPartial("ChildTaxonomy", childTag);
-					}
-				}
-			}
+                    var nestedTaxonomy = String.Format("{0}: {1}",  catagory.Text, tag.Text); 
+                        foreach (var childTag in tag.Children)
+                        {
+                            childTag.Path = nestedTaxonomy;
+                            Html.RenderPartial("ChildTaxonomy", childTag);
+                        }
+                    }
+                }
 		</ul>
 	</div>
 }
