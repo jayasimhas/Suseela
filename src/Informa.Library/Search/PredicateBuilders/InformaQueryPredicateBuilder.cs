@@ -69,8 +69,12 @@ namespace Informa.Library.Search.PredicateBuilders
 					return item => item.Title.MatchWildcard(formattedQuery);
 				}
 
-				return item => item.Content.MatchWildcard(formattedQuery);
-			}
+                if (query.Contains("*")) {
+                    return item => item.WildcardContent.MatchWildcard(formattedQuery);
+                } else { 
+                    return item => item.Content.MatchWildcard(formattedQuery);
+                }
+            }
 
 			var quotedQuery = $"\"{query}\"";
 			if (searchHeadlines)

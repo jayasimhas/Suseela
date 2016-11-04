@@ -121,5 +121,8 @@ namespace Informa.Library.Search.Results
 		}
 
 		protected IIsSavedDocumentContext DocumentContext => DependencyResolver.Current.GetService<IIsSavedDocumentContext>();
-	}
+
+        [IndexField("wildcardcontent")]
+        public string WildcardContent { get; set; }
+    }
 }
