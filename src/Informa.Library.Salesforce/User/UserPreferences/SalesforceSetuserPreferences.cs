@@ -18,7 +18,7 @@
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(channelPreferences))
                 return false;
 
-            var preferencesResponse = Service.Execute(s => s.IN_updateProfilePreferences(username, new IN_ProfilePreferencesRequest { channelPreferences = channelPreferences, username = username, additionalPreferences = DateTime.Now.ToShortTimeString() }));
+            var preferencesResponse = Service.Execute(s => s.IN_updateProfilePreferences(username, new IN_ProfilePreferencesRequest { channelPreferences = channelPreferences, username = username, additionalPreferences = DateTime.Now.ToString() }));
 
             // We are not getting proper resonse now so we are handling this by some workaround.
             //return preferencesResponse.IsSuccess();

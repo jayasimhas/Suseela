@@ -31,7 +31,7 @@ function createJSONData(alltables, UserPreferences){
 	sendHttpRequest(UserPreferences);
 }
 
-function sendHttpRequest(UserPreferences, setFlag){
+function sendHttpRequest(UserPreferences, setFlag, redirectUrl){
 	$.ajax({
 		url: '/Account/api/PersonalizeUserPreferencesApi/Update/', 
 		data: {'UserPreferences': JSON.stringify(UserPreferences)}, 
@@ -44,7 +44,7 @@ function sendHttpRequest(UserPreferences, setFlag){
 				if(setFlag == 'register' && redirectUrl == 'href'){
 					window.location.href = $('.registrationBtn').attr('href');
 				}
-				else{
+				else if(setFlag == 'register' && redirectUrl == 'name'){
 					window.location.href = $('.registrationBtn').attr('name');
 				}
 			}
@@ -180,7 +180,7 @@ $(function(){
 		div.find('.unfollowAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
+		$lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 		$('#validatePriority').val(true);
 		for(var i=0; i<tbody.find('.followingBtn').length; i++){
 			$(tbody.find('.followrow')[i]).attr('draggable', true);
@@ -199,11 +199,11 @@ $(function(){
 		var $this = $(this), curpublicPan = $this.closest('.publicationPan'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollowing = curpublicPan.find('.followingBtn');
 		$this.addClass('hideBtn');
 		$this.closest('.smfollowingBtn').find('.followAllBtn').addClass('fr');
-		$('#validatePreference').val(1); 
+		$('#validatePreference').val(1);
 		div.find('.followAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followlbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
+		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 		$('#validatePriority').val(false);
 		for(var i=0; i<$lgfollowing.length; i++){
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
@@ -216,7 +216,7 @@ $(function(){
 	  followrow.attr('draggable', true);
 	  $('#validatePreference').val(1);
 	  followrow.addClass('followingrow').removeClass('followrow disabled frow');
-	  $this.addClass('followingBtn').removeClass('followBtn').html('Following');
+	  $this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 	  setClsforFlw(table);
 	  table.find('.firstrow .lableStatus').val('followinglbl');
 	  table.find('.accordionStatus .lableStatus').val('followinglbl');
@@ -246,7 +246,7 @@ $(function(){
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function(){
 	  var $this = $(this), table = $this.closest('table'), followingrow = $this.closest('.followingrow'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
-	  $this.addClass('followBtn').removeClass('followingBtn').html('Follow');
+	  $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 	  followingrow.clone().appendTo($this.closest('tbody'));
 	  followingrow.remove();
 	  $('#validatePreference').val(1);
@@ -386,7 +386,6 @@ $(function(){
 		createJSONData(alltables, UserPreferences);		
 		
 		$('#validatePreference').val(0);
-		window.location.href = $(this).attr('href');
 	});
 	
 	$('.registrationBtn').click(function (e) {
@@ -399,6 +398,7 @@ $(function(){
 		if($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false"){
 			setDataRow(allpublications);
 			sendRegisterData(alltrs, UserPreferences, 'name');
+			return false;
 		}
 		if($('#validatePriority').val() == "false"){
 			if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0){
