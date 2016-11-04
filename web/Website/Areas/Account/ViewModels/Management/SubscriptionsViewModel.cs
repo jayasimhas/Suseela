@@ -64,7 +64,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             {
                 try
                 {
-                    return Sitecorepublications.Select(s => new SubscriptionViewModel
+                    var subscriptionsList =  Sitecorepublications.Select(s => new SubscriptionViewModel
                     {
                         Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s.Publication_Code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s.Publication_Code)).ExpirationDate : DateTime.MinValue,
                         Publication = s.Publication_Name,
@@ -73,6 +73,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                         ChannelItems = GetChannelItemsByProductCode(s.Publication_Code),
                         IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s.Publication_Code)
                     });
+                    var filteredsubscriptionsList = subscriptionsList.Where(p => p.Subscribable == true && p.Renewable == false).Concat(subscriptionsList.Where(q => q.Renewable == true)).Concat(subscriptionsList.Where(r => r.Subscribable == false));
+                    return filteredsubscriptionsList;
+
                 }
                 catch(Exception ex)
                 {
@@ -133,7 +136,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                                      Subscribable = IsValidSubscription(expirationdate)
                                  }
                                 );
-                                return mappedChannelItems;
+                                var filteredChannelItems = mappedChannelItems.Where(p => p.Subscribable == true && p.Renewable == false).Concat(mappedChannelItems.Where(q => q.Renewable == true)).Concat(mappedChannelItems.Where(r => r.Subscribable == false));
+                                return filteredChannelItems;
+
                             }
                         }
                     }

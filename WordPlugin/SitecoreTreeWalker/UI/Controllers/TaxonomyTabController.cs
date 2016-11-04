@@ -574,8 +574,15 @@ namespace InformaSitecoreWord.UI.Controllers
         {
             foreach (ListViewItem item in Results.Items)
             {
-                var guid = new Guid(item.SubItems[2].Text);
-                item.ImageIndex = IsSelected(guid) ? GrayPlusImageIndex : PlusImageIndex;
+                if (string.IsNullOrEmpty(item.SubItems[2].Text) != true)
+                {
+                    Guid guid;
+                    if (Guid.TryParse(item.SubItems[2].Text, out guid) == true)
+                    {
+                        //var guid = new Guid(item.SubItems[2].Text);
+                        item.ImageIndex = IsSelected(guid) ? GrayPlusImageIndex : PlusImageIndex;
+                    }
+                }
             }
         }
 

@@ -638,7 +638,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     errorLog += "||" + "AGENCY N/A";
                                 }
-                                
                             }
                             if (d.NewItemField == "Taxonomy")
                             {
