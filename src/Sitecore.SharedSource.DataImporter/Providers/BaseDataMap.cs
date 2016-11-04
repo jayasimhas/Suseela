@@ -519,7 +519,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             string CommodityLog = "CommodityMissingLog";
             string RegionLog = "RegionMissingLog";
             string CompanyLog = "CompanyMissingLog";
-
+            Dictionary<string, string> ArticleData = (Dictionary<string, string>)importRow;
 
             using (new LanguageSwitcher(ImportToLanguage))
             {
@@ -560,9 +560,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 using (new EditContext(newItem, true, false))
                 {
-                    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
-                        ArticleId =  newItem.Fields["Escenic ID"].Value;
-
+                //    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
+                //        ArticleId =  newItem.Fields["Escenic ID"].Value;
+                    
+                  
+                    ArticleId = ArticleData["ARTICLEID"];
+                       
                     //add in the field mappings
                     List<IBaseField> fieldDefs = GetFieldDefinitionsByRow(importRow);
                     SetFieldUpdateFlags(fieldDefs, dict);
@@ -701,8 +704,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     ProcessCustomData(ref newItem, importRow);
                 }
 
-                 Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
-                if (tableau.ContainsKey("dashboardname"))
+                // Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
+                if (ArticleData.ContainsKey("dashboardname"))
                 {
                     TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
                     Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
@@ -717,13 +720,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             // string xx= (Dictionary<string, string>())importRow[""].value;
                             tabloItem.Editing.BeginEdit();
-                            tabloItem.Fields["Authentication Required"].Value = tableau["authenticationrequired"] == "false" ? "0" : "1";
-                            tabloItem.Fields["Dashboard Name"].Value = tableau["dashboardname"];
-                            tabloItem.Fields["Mobile Dashboard Name"].Value = tableau["dashboardname"];
-                            tabloItem.Fields["Filter"].Value = tableau["filter"];
-                            tabloItem.Fields["Width"].Value = tableau["width"];
-                            tabloItem.Fields["Height"].Value = tableau["height"];
-                            tabloItem.Fields["Page Title"].Value = tableau["title"];
+                            tabloItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
+                            tabloItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
+                            tabloItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
+                            tabloItem.Fields["Filter"].Value = ArticleData["filter"];
+                            tabloItem.Fields["Width"].Value = ArticleData["width"];
+                            tabloItem.Fields["Height"].Value = ArticleData["height"];
+                            tabloItem.Fields["Page Title"].Value = ArticleData["title"];
                             tabloItem.Editing.EndEdit();
                         }
                     }
