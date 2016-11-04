@@ -4267,7 +4267,7 @@ $(document).ready(function () {
         observe: '.form-email-article',
         successCallback: function successCallback(form) {
             $('.js-email-article-form-wrapper').hide();
-            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
+            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val().split(';').join('; '));
             $('.js-email-article-success').show();
 
             // Reset the Email Article pop-out to its default state when closed
