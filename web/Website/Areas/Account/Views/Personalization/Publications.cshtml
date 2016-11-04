@@ -28,6 +28,8 @@
     string publicationHiddenClass = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
+    <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.FollowButtonText" />
+    <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.FollowingButtonText" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {
