@@ -4459,9 +4459,9 @@ $(document).ready(function () {
         });
         var persistedval = sessionStorage.getItem("mykey");
         if (persistedval == "false") {
-            $('.toggle-demo').hide();
-        } else {
             $('.toggle-demo').show();
+        } else {
+            $('.toggle-demo').hide();
         }
     })();
 
