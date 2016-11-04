@@ -30,7 +30,7 @@
         public string ArticlePageMessage => GetMessageForArticlePage();
         public string MyViewSettingsPageUrl => SiterootContext.Item?.MyView_Settings_Page?._Url;
         public string MyViewSettingsText => TextTranslator.Translate("Personalization.MyViewSettingsText");
-
+        public string WelcomeMessageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageLinkText");
         public string MyViewText => TextTranslator.Translate("Personalization.MyViewLinkText");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
