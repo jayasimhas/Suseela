@@ -35,14 +35,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
     {
 
-        public static void WriteLog(string strLog)
+        public static void WriteLog(string strLog,string fileName)
         {
             StreamWriter log;
             FileStream fileStream = null;
             DirectoryInfo logDirInfo = null;
             FileInfo logFileInfo;
             string logFilePath = (WebConfigurationManager.AppSettings["ArticleLoggingFolder"]);
-            logFilePath = logFilePath + "Log-" + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
+            logFilePath = logFilePath + "Log-" + System.DateTime.Today.ToString("MM-dd-yyyy")+ fileName + "." + "txt";
             logFileInfo = new FileInfo(logFilePath);
             logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
             if (!logDirInfo.Exists) logDirInfo.Create();

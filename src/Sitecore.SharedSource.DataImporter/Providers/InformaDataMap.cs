@@ -46,7 +46,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return Enumerable.Empty<object>();
             }
 
-            XMLDataLogger.WriteLog("_______________________________________________________________________________________");
+           //XMLDataLogger.WriteLog("_______________________________________________________________________________________","");
 
             List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
@@ -56,6 +56,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             foreach (string f in files)
             {
                 string errorLog = "Import with Error ArticleId: ";
+                string articleNumber = string.Empty;
                 string successLog = null;
                 string successwithmissingLog = null;
                 Dictionary<string, string> ao = new Dictionary<string, string>();
@@ -152,6 +153,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 // siddharth
                 errorLog += curFileName.Substring(0, curFileName.Length - 4);
+                articleNumber= curFileName.Substring(0, curFileName.Length - 4);
 
                 if (GetXMLData(d, "ID") != "")
                 {
@@ -162,12 +164,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 {
                     importErrorCount = 1;
                     errorLog += "||" + "ArticleId is missing";
-
+                    XMLDataLogger.WriteLog(articleNumber, "ArticleIdMissingLog");
                 }
                 if (GetXMLData(d, "PUBLISHDATE") == "")
                 {
                     importErrorCount = 1;
                     errorLog += "||" + "PublishDate is missing";
+                    XMLDataLogger.WriteLog(articleNumber, "PublishDateMissingLog");
                 }
 
                 
@@ -175,6 +178,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 {
                     importErrorCount = 2;
                     errorLog += "||" + "Publish Date is more than 2 years old";
+                    XMLDataLogger.WriteLog(articleNumber, "OldPublishDateLog");
                 }
 
                 //reading taxonomy for comodities  adding to ao
@@ -199,6 +203,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 {
                     ao.Add("SECTION", "");
                     successwithmissingLog += "||" + "ContentType is missing";
+                    XMLDataLogger.WriteLog(articleNumber, "ContentTypeMissingLog");
                 }
 
                 //readingTableau and adding to ao
@@ -218,6 +223,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         importErrorCount = 1;
                         errorLog += "||" + "Body is missing ";
+                        XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
 
                     }
 
@@ -251,23 +257,31 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
 
                         successwithmissingLog += "||" + "Media is missing";
+                        XMLDataLogger.WriteLog(articleNumber, "MediaMissingLog");
                     }
 
                     if (!(ao.ContainsKey("COMMODITY1")))
                     {
                          
                         successwithmissingLog += "||" + "COMMODITY is missing";
+                        XMLDataLogger.WriteLog(articleNumber, "COMMODITYMissingLog");
                     }
                 }
-                if (importErrorCount == 1 || importErrorCount == 2)
+                if (importErrorCount == 1 )
                 {
-                    XMLDataLogger.WriteLog(errorLog);
+                    XMLDataLogger.WriteLog(errorLog, "");
+                    XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
+                }
+                if (importErrorCount == 2)
+                {
+                    XMLDataLogger.WriteLog(errorLog, "");                    
+                  //  XMLDataLogger.WriteLog(articleNumber, "OldPublishDateLog");
                 }
                 else
                 {
                     successLog = "Import Successful" + " ArticleId: " + ao["ARTICLEID"] + successwithmissingLog;
-
-                    XMLDataLogger.WriteLog(successLog);
+                    XMLDataLogger.WriteLog(successLog,"");
+                    XMLDataLogger.WriteLog(successLog,"Success");
                 }
 
 
@@ -334,7 +348,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 foreach (string n in autNodes)
                     ao.Add(n, GetXMLData(d2, n));
             }
-            XMLDataLogger.WriteLog("");
+            //XMLDataLogger.WriteLog("");
             return l;
         }
 
@@ -885,11 +899,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return null;
         }
 
-
-
-
-
-
         public virtual Dictionary<string, string> GetMapping()
         {
             Dictionary<string, string> d = new Dictionary<string, string>();
@@ -918,9 +927,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             d.Add("dairy_markets_markets_other_dairy_frozen_products", "Dairy Products");
             d.Add("dairy_markets_analysis", "Dairy");
             d.Add("dairy_markets_analysis_company", "Dairy");
-
-
-
 
 
 
