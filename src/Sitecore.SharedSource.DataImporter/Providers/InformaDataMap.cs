@@ -274,21 +274,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 ao.Add("STORYBODY", bodyTitleHtml);
 
 
-                string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
-                //String[] text = { "Mexico", "India", "Pakistan", };
-
-                string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                ao.Add("COUNTRY", country);
 
 
-                string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                ao.Add("COMPANIES", Companies);
+                if (bodyTitleHtml.Length > 200)
+                {
 
-                string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                ao.Add("AGENCY", Agency);
+                    string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
+                    //String[] text = { "Mexico", "India", "Pakistan", };
+
+                    string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                    ao.Add("COUNTRY", country);
 
 
-                if(importErrorCount != 2) {
+                    string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                    ao.Add("COMPANIES", Companies);
+
+                    string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
+                    ao.Add("AGENCY", Agency);
+                }
+                else
+                {
+                    ao.Add("AGENCY", ""); ao.Add("COMPANIES", ""); ao.Add("COUNTRY", "");
+                }
+
+                if (importErrorCount != 2) {
                        l.Add(ao);
                 }
                 artNumber++;
