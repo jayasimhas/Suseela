@@ -151,7 +151,7 @@ namespace Informa.Web.Areas.Article.Controllers
                 var replacements = new Dictionary<string, string>
                 {
                     ["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
-                    ["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
+                    ["#Date#"] = DateTime.Now.ToString("dddd, d MMM yyyy"),
                     ["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
                     ["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
                     ["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
@@ -181,7 +181,7 @@ namespace Informa.Web.Areas.Article.Controllers
 
                 // Article Body
                 var article = GetArticle(articleNumber);
-                replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
+                replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMM yyyy") ?? string.Empty;
                 replacements["#article_mediatype#"] = article?.Content_Type?.Item_Name ?? string.Empty;
                 replacements["#article_title#"] = article?.Title ?? String.Empty;
                 replacements["#article_titleURL#"] = (article != null)
