@@ -388,6 +388,10 @@
 					@include followBtnLbl();
 					@include breakpoint('small') {
 						float: none;
+						&:hover {
+							background-color: transparent;
+							color: $color-abbey-gray;
+						}
 					}
 				}
 				.followinglbl{
@@ -703,7 +707,7 @@
 				color: $color-abbey-gray !important;
 			} 
 			.followAllBtn{
-				background-position: -3px -266px;
+				background-position: 17px -266px;
 				text-indent: -124px;
 				border: none !important;
 				&.fr{float: right !important;}
