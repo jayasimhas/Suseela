@@ -713,7 +713,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
