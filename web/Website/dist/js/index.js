@@ -684,7 +684,7 @@ function createJSONData(alltables, UserPreferences) {
 			    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
 			    datarowNo = $(currenttabtrs[j]).attr('data-row');
 
-			var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+			var followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 			var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
 
 			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
@@ -713,7 +713,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
@@ -757,7 +756,7 @@ function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
 		    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 		    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
 		    channelOrder = $(alltrs[i]).attr('data-row'),
-		    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+		    followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 
 		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
 	}
