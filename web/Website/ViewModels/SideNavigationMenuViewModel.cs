@@ -192,17 +192,17 @@ namespace Informa.Web.ViewModels
                     }
 
                     //Topic based subscriptions
-                    else if (userSubscriptions.SelectMany(n => n.SubscribedTopics) != null && userSubscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
-                    {
-                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedTopics))
-                        {
-                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-                            {
-                                topicSubscriptions.Add(subscription);
-                            }
-                        }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
-                    }
+                    //else if (userSubscriptions.SelectMany(n => n.SubscribedTopics) != null && userSubscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                    //{
+                    //    foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedTopics))
+                    //    {
+                    //        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                    //        {
+                    //            topicSubscriptions.Add(subscription);
+                    //        }
+                    //    }
+                    //    subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+                    //}
                     return subscriptions;
                 }
                 else
