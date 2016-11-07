@@ -103,12 +103,16 @@
 		-ms-text-size-adjust: 100%;
 		mso-table-lspace: 0pt;
 		mso-table-rspace: 0pt;
-		width: 600px;
+		/*width: 600px;*/
 		border: 1px solid #DDDDDD;
 		border-collapse: collapse !important;
 		margin-bottom: 32px;
-		max-width: 600px;
+		max-width: 900px;
 	}
+
+    .header__site-logo img {
+			width: 150px;
+		}
 
 	.preheaderContent {
 		padding-top: 16px;
@@ -304,7 +308,7 @@
 		}
 
 		.header__site-logo img {
-			max-width: 150px;
+			width: 150px;
 		}
 
 		.layout-padded-left,
@@ -374,7 +378,7 @@
 									 <!-- BEGIN HEADER // -->
 									 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
 										 <tr>
-											 <td width="150" valign="top" class="header__site-logo">
+											 <td valign="top" class="header__site-logo">
 												 <img src="@Model.EmailLogoUrl"/>
 											 </td>
 											 <td valign="bottom" align="right">
