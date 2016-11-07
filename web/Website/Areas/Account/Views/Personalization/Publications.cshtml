@@ -141,11 +141,14 @@
                                 </th>
                             </tr>
                             <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
-                                <th colspan="3">
+                                <th colspan="2">
                                     <div class="smfollowingBtn">
                                         <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
                                         <span class="unfollowAllBtn @unfollowAllButtonClass">@Model.UnfollowAllButtonText</span>
                                     </div>
+                                </th>
+                                <th>
+                                    &nbsp;
                                 </th>
                             </tr>
 
@@ -156,15 +159,15 @@
                                     <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
                                     {
-                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
-                                        </div>
+                                    <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                        <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                    </div>
                                     }
                                     else
                                     {
-                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            @Model.SubscribedButtonText
-                                        </div>
+                                    <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                        @Model.SubscribedButtonText
+                                    </div>
                                     }
                                 </th>
                                 <th class="wd-26 firstrow">
@@ -189,18 +192,18 @@
                             </tr>
                             @if (!Model.isFromRegistration)
                             {
-                                <tr class="showinview">
-                                    <th colspan="3">
-                                        <p>@Model.SubscribeMessageText</p>
-                                    </th>
-                                </tr>
+                            <tr class="showinview">
+                                <th colspan="3">
+                                    <p>@Model.SubscribeMessageText</p>
+                                </th>
+                            </tr>
                             }
                             <tr>
                                 @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
                                 {
-                                    <th class="pub-subscription-subtitle" colspan="3">
-                                        @Html.Raw(Model.SubscribedMessageText)
-                                    </th>
+                                <th class="pub-subscription-subtitle" colspan="3">
+                                    @Html.Raw(Model.SubscribedMessageText)
+                                </th>
 
                                 }
                             </tr>
@@ -233,25 +236,27 @@
                                     topicSpanClass = topic.IsFollowing ? "followingBtn" : "followBtn";
                                     topicLableText = topic.IsFollowing ? Model.FollowingButtonText : Model.FollowButtonText;
 
-                                    <tr class="@topicTRClass" data-row="@topicOrder">
+                            <tr class="@topicTRClass" data-row="@topicOrder">
 
-                                        <td class="wd-55">
-                                            @topic.TopicName
-                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
-                                    </td>
-                                    <td class="wd-25">
-                                        <span class="@topicSpanClass">@topicLableText</span>
-                                    </td>
-                                    <td class="wd-15">
-                                        <div class="rowlines">
-                                            <div class="move">@Model.MoveLableText</div>
+                                <td class="wd-55">
+                                    @topic.TopicName
+                                    <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
+                                </td>
+                                <td class="wd-25">
+                                    <span class="@topicSpanClass">@topicLableText</span>
+                                </td>
+                                <td class="wd-15">
+                                    <div class="rowlines">
+                                        <div class="move">@Model.MoveLableText</div>
+                                        <div class="pull-left">
                                             <span></span>
                                             <span></span>
                                             <span></span>
                                             <span></span>
                                         </div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                            </tr>
                                 }
                             }
                         </tbody>
