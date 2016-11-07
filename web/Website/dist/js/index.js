@@ -1304,7 +1304,7 @@ function loadLayoutOneData(data, idx) {
 	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div data-pageSize="' + data.loadMore.pageSize + '" data-pageNo="' + data.loadMore.pageNo + '" data-loadurl="' + data.loadMore.loadMoreLinkUrl + '" data-taxonomyIds="' + data.loadMore.taxonomyIds + '" class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 
-	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
+	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
 
 	return loadData;
 }
@@ -1502,7 +1502,7 @@ function loadLayoutTwoData(data, idx) {
 
 	loadData += '</div>';
 
-	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
+	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
 
 	return loadData;
 }
@@ -1736,22 +1736,28 @@ $(function () {
 		    loadLayoutData;
 
 		var layout = layoutCls.indexOf('layout1') !== -1 ? 'layout1' : 'layout2';
-		var setId = loadPreferanceId["Sections"];
+		var setId = loadPreferanceId["Sections"],
+		    sendtaxonomyIdsArr;
+		if (typeof $this.attr('data-taxonomyIds') === 'string') {
+			sendtaxonomyIdsArr = $this.attr('data-taxonomyIds').split(',');
+		}
 
 		$.ajax({
 			//url: '/loaddata.json?pId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize,
 			url: $this.attr('data-loadurl'),
 			dataType: 'json',
 			type: 'POST',
-			data: JSON.stringify({ 'TaxonomyIds': [$this.attr('data-taxonomyIds')], 'PageNo': $this.attr('data-pageNo'), 'PageSize': $this.attr('data-pageSize') }),
+			data: JSON.stringify({ 'TaxonomyIds': sendtaxonomyIdsArr, 'PageNo': $this.attr('data-pageNo'), 'PageSize': $this.attr('data-pageSize') }),
 			contentType: "application/json",
 			success: function success(data) {
-				if (layout == 'layout1') {
-					loadLayoutData = createLayoutInner1(data);
-					$(eachstory).append(loadLayoutData);
-				} else {
-					loadLayoutData = createLayoutInner2(data);
-					$(eachstory).append(loadLayoutData);
+				if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+					if (layout == 'layout1') {
+						loadLayoutData = createLayoutInner1(data);
+						$(eachstory).append(loadLayoutData);
+					} else {
+						loadLayoutData = createLayoutInner2(data);
+						$(eachstory).append(loadLayoutData);
+					}
 				}
 			},
 			error: function error(xhr, errorType, _error2) {
@@ -1800,7 +1806,7 @@ $(function () {
 				},
 				success: function success(data) {
 					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
-						if (eachstoryLength % 2 == 0 && layout1Flag) {
+						if (eachstoryLength % 2 !== 0 && layout1Flag) {
 							layout1Flag = false;
 							getscrollData = loadLayoutOneData(data, eachstoryLength);
 							$('.spinnerIcon').addClass('hidespin');
