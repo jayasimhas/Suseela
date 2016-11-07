@@ -2146,6 +2146,7 @@
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
     <Content Include="Views\MyView\MyViewPage.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\TableauInArticle.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
