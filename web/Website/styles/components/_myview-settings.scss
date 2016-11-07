@@ -394,13 +394,6 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
-					@include breakpoint('small') {
-						float: none;
-						&:hover {
-							background-color: transparent;
-							color: $color-abbey-gray;
-						}
-					}
 				}
 				.followinglbl{
 					@include followBtnLbl();

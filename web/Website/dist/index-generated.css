@@ -4222,12 +4222,6 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
-        @media (max-width: 480px) {
-          .myview-settings .table-responsive .table thead .followAllBtn {
-            float: none; }
-            .myview-settings .table-responsive .table thead .followAllBtn:hover {
-              background-color: transparent;
-              color: #58595b; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
