@@ -70,6 +70,7 @@ $main-menu-smartphone-width: 62px;
 		@include breakpoint('medium') {
 			height: 97px;
 			padding: 0;
+			position: relative;
 		}
 
 		@include breakpoint('small') {
