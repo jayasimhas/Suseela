@@ -13,7 +13,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr class="article-preview-header">
 
-                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null)
+                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null && Model.GlassModel.Article.Featured_Image_16_9 != null)
                         {
                             <td class="one-third layout-padded-right" valign="top">
 	                            @RenderImage(Model.GlassModel, m => m.Article.Featured_Image_16_9)
