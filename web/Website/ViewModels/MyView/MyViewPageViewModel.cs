@@ -59,14 +59,14 @@ namespace Informa.Web.ViewModels.MyView
                 var channels = UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList(); ;
                 foreach (Channel channel in channels)
                 {
-                    CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel);
+                    CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);
                 }
             }
 
             return sections;
         }
 
-        private void CreateSections(Channel channel, List<Section> sections,bool IsChannelLevel)
+        private void CreateSections(Channel channel, List<Section> sections,bool isChannelLevel, bool isNewUser)
         {
             bool channelStatus = channel.IsFollowing;
             Section sec;
@@ -76,11 +76,11 @@ namespace Informa.Web.ViewModels.MyView
             string taxonomyId = string.Empty;
             if (channel.Topics != null && channel.Topics.Any())
             {
-                channelStatus = channel.IsFollowing || channel.Topics.Any(topic => topic.IsFollowing);
+                channelStatus = (channel.IsFollowing && isNewUser) || channel.Topics.Any(topic => topic.IsFollowing);
                 topics = channel.Topics.Where(topic => topic.IsFollowing).OrderBy(topic => topic.TopicOrder).ToList();
             }
 
-            if (channelStatus && !IsChannelLevel)
+            if (channelStatus && !isChannelLevel)
             {
                 foreach (Topic topic in topics)
                 {
