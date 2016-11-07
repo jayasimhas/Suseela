@@ -419,7 +419,7 @@ $(function(){
 								$('.spinnerIcon').removeClass('hidespin');
 							},
 							success: function(data){
-								if(data.articles && typeof data.articles === "object" && data.articles.length){
+								if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
 									if(layout1){
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
@@ -518,7 +518,7 @@ $(function(){
 					$('.spinnerIcon').removeClass('hidespin');
 				},
 				success: function(data){
-					if(data.articles && typeof data.articles === "object" && data.articles.length){
+					if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
 						if(eachstoryLength % 2 == 0 && layout1Flag){
 							layout1Flag = false; 
 							getscrollData = loadLayoutOneData(data, eachstoryLength);
@@ -570,7 +570,7 @@ $(function(){
 									$('.spinnerIcon').removeClass('hidespin');
 								},
 								success: function success(data) {
-									if(data.articles && typeof data.articles === "object" && data.articles.length){
+									if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
 										if (idx % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);

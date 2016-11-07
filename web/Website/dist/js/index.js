@@ -1,7 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var DragDropTouch;
+var DragDropTouch,
+    checkTouchType = true;
 (function (DragDropTouch_1) {
     'use strict';
     /**
@@ -180,7 +181,14 @@ var DragDropTouch;
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-                        e.preventDefault();
+                        if (e.target.className == 'pull-left') {
+                            checkTouchType = true;
+                            e.preventDefault();
+                        } else {
+                            checkTouchType = false;
+                            return false;
+                        }
+
                         // show context menu if the user hasn't started dragging after a while
                         setTimeout(function () {
                             if (_this._dragSource == src && _this._img == null) {
@@ -194,58 +202,62 @@ var DragDropTouch;
             }
         };
         DragDropTouch.prototype._touchmove = function (e) {
-            if (this._shouldHandle(e)) {
-                // see if target wants to handle move
-                var target = this._getTarget(e);
-                if (this._dispatchEvent(e, 'mousemove', target)) {
-                    this._lastTouch = e;
-                    e.preventDefault();
-                    return;
-                }
-                // start dragging
-                if (this._dragSource && !this._img) {
-                    var delta = this._getDelta(e);
-                    if (delta > DragDropTouch._THRESHOLD) {
-                        this._dispatchEvent(e, 'dragstart', this._dragSource);
-                        this._createImage(e);
-                        this._dispatchEvent(e, 'dragenter', target);
+            if (checkTouchType) {
+                if (this._shouldHandle(e)) {
+                    // see if target wants to handle move
+                    var target = this._getTarget(e);
+                    if (this._dispatchEvent(e, 'mousemove', target)) {
+                        this._lastTouch = e;
+                        e.preventDefault();
+                        return;
                     }
-                }
-                // continue dragging
-                if (this._img) {
-                    this._lastTouch = e;
-                    e.preventDefault(); // prevent scrolling
-                    if (target != this._lastTarget) {
-                        this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
-                        this._dispatchEvent(e, 'dragenter', target);
-                        this._lastTarget = target;
+                    // start dragging
+                    if (this._dragSource && !this._img) {
+                        var delta = this._getDelta(e);
+                        if (delta > DragDropTouch._THRESHOLD) {
+                            this._dispatchEvent(e, 'dragstart', this._dragSource);
+                            this._createImage(e);
+                            this._dispatchEvent(e, 'dragenter', target);
+                        }
                     }
-                    this._moveImage(e);
-                    this._dispatchEvent(e, 'dragover', target);
+                    // continue dragging
+                    if (this._img) {
+                        this._lastTouch = e;
+                        e.preventDefault(); // prevent scrolling
+                        if (target != this._lastTarget) {
+                            this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
+                            this._dispatchEvent(e, 'dragenter', target);
+                            this._lastTarget = target;
+                        }
+                        this._moveImage(e);
+                        this._dispatchEvent(e, 'dragover', target);
+                    }
                 }
             }
         };
         DragDropTouch.prototype._touchend = function (e) {
-            if (this._shouldHandle(e)) {
-                // see if target wants to handle up
-                if (this._dispatchEvent(this._lastTouch, 'mouseup', e.target)) {
-                    e.preventDefault();
-                    return;
-                }
-                // user clicked the element but didn't drag, so clear the source and simulate a click
-                if (!this._img) {
-                    this._dragSource = null;
-                    this._dispatchEvent(this._lastTouch, 'click', e.target);
-                    this._lastClick = Date.now();
-                }
-                // finish dragging
-                this._destroyImage();
-                if (this._dragSource) {
-                    if (e.type.indexOf('cancel') < 0) {
-                        this._dispatchEvent(this._lastTouch, 'drop', this._lastTarget);
+            if (checkTouchType) {
+                if (this._shouldHandle(e)) {
+                    // see if target wants to handle up
+                    if (this._dispatchEvent(this._lastTouch, 'mouseup', e.target)) {
+                        e.preventDefault();
+                        return;
                     }
-                    this._dispatchEvent(this._lastTouch, 'dragend', this._dragSource);
-                    this._reset();
+                    // user clicked the element but didn't drag, so clear the source and simulate a click
+                    if (!this._img) {
+                        this._dragSource = null;
+                        this._dispatchEvent(this._lastTouch, 'click', e.target);
+                        this._lastClick = Date.now();
+                    }
+                    // finish dragging
+                    this._destroyImage();
+                    if (this._dragSource) {
+                        if (e.type.indexOf('cancel') < 0) {
+                            this._dispatchEvent(this._lastTouch, 'drop', this._lastTarget);
+                        }
+                        this._dispatchEvent(this._lastTouch, 'dragend', this._dragSource);
+                        this._reset();
+                    }
                 }
             }
         };
@@ -724,7 +736,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
@@ -882,8 +893,10 @@ $(function () {
 		var $this = $(this),
 		    followrow = $this.closest('.followrow'),
 		    table = $this.closest('.table'),
-		    followAllBtn = table.find('.followAllBtn'),
-		    unfollowAllBtn = table.find('.unfollowAllBtn'),
+		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
+		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
+		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
+		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
 		    trs = $this.closest('tbody').find('tr'),
 		    trsfollowing = $this.closest('tbody').find('tr.followingrow');
 		followrow.attr('draggable', true);
@@ -893,10 +906,11 @@ $(function () {
 		setClsforFlw(table);
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
-		table.find('.followAllBtn').removeClass('fr');
+		//table.find('.followAllBtn').removeClass('fr');
 
 		if (trs.hasClass('followingrow')) {
 			$('#validatePriority').val(true);
+			unfollowAllBtnHS.addClass('hideBtn');
 		}
 
 		if ($('.followrow.disabled.frow', table).length) {
@@ -906,20 +920,28 @@ $(function () {
 		}
 		followrow.remove();
 		if (trs.length === trsfollowing.length + 1) {
-			followAllBtn.addClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.addClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			followAllBtnHS.addClass('hideBtn');
+			unfollowAllBtnHS.removeClass('hideBtn');
 		} else {
-			followAllBtn.removeClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			followAllBtnHS.removeClass('hideBtn');
+			unfollowAllBtnHS.addClass('hideBtn');
 		}
 	});
 
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
 		var $this = $(this),
 		    table = $this.closest('table'),
+		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
+		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
+		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
+		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
 		    followingrow = $this.closest('.followingrow'),
-		    followAllBtn = $this.closest('table').find('.followAllBtn'),
-		    unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'),
 		    tbody = $this.closest('tbody'),
 		    trs = $this.closest('tbody').find('tr'),
 		    disabledtrs = $this.closest('tbody').find('.followrow.disabled'),
@@ -929,7 +951,7 @@ $(function () {
 		followingrow.clone().appendTo($this.closest('tbody'));
 		followingrow.remove();
 		$('#validatePreference').val(1);
-		table.find('.followAllBtn').removeClass('fr');
+		//table.find('.followAllBtn').removeClass('fr');
 		sort_table(tbody, 0, 1, 'followingBtn');
 
 		if (trs.length === disabledtrs.length + 1) {
@@ -937,12 +959,18 @@ $(function () {
 			table.find('.accordionStatus .lableStatus').val('followlbl');
 		}
 		if (trs.length === trsfollow.length + 1) {
-			unfollowAllBtn.addClass('hideBtn');
-			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtnHL.addClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+
+			unfollowAllBtnHS.removeClass('hideBtn');
+			followAllBtnHS.addClass('hideBtn');
 			$('#validatePriority').val(false);
 		} else {
-			followAllBtn.removeClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			unfollowAllBtnHS.addClass('hideBtn');
+			followAllBtnHS.removeClass('hideBtn');
 		}
 	});
 
@@ -1110,7 +1138,7 @@ $(function () {
 			}
 			setDataRow(allpublications);
 
-			if (!!$('#isChannelBasedRegistration').val()) {
+			if ($('#isChannelBasedRegistration').val() == "true") {
 				sendRegisterData(alltrs, UserPreferences, 'href');
 			} else {
 				createJSONData(table, UserPreferences);
@@ -1676,7 +1704,7 @@ $(function () {
 								$('.spinnerIcon').removeClass('hidespin');
 							},
 							success: function success(data) {
-								if (data.articles && typeof data.articles === "object" && data.articles.length) {
+								if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
@@ -1771,7 +1799,7 @@ $(function () {
 					$('.spinnerIcon').removeClass('hidespin');
 				},
 				success: function success(data) {
-					if (data.articles && typeof data.articles === "object" && data.articles.length) {
+					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 						if (eachstoryLength % 2 == 0 && layout1Flag) {
 							layout1Flag = false;
 							getscrollData = loadLayoutOneData(data, eachstoryLength);
@@ -1821,7 +1849,7 @@ $(function () {
 									$('.spinnerIcon').removeClass('hidespin');
 								},
 								success: function success(data) {
-									if (data.articles && typeof data.articles === "object" && data.articles.length) {
+									if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 										if (idx % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
