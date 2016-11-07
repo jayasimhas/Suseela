@@ -94,15 +94,20 @@
 				display: block;
 				height: 4px;
 				position: absolute;
-				top: calc(50% - 2px);
+				top: calc(60% - 2px);
 				width: 85%;
+				@include breakpoint('large') {
+					width: 80%;
+				}
 				z-index: 1;
 			}
-			.editView{
+			.editView{	
 				@include editView();
 				float: right;
 				margin: 0px;
 				padding: 0px;
+				position: relative;
+				top: 5px;
 			}
 		}
 	}
@@ -351,8 +356,7 @@
 				font-size: 2rem;
 				font-family: "Roboto condensed";
 				font-weight: bold;
-				height: 2.3125rem;
-				overflow: hidden;
+				min-height: 2.3125rem;
 				display: block;
 				padding-left: 0.625rem;
 				letter-spacing: -1px;

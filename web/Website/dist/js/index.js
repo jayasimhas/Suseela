@@ -881,8 +881,10 @@ $(function () {
 		var $this = $(this),
 		    followrow = $this.closest('.followrow'),
 		    table = $this.closest('.table'),
-		    followAllBtn = table.find('.followAllBtn'),
-		    unfollowAllBtn = table.find('.unfollowAllBtn'),
+		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
+		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
+		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
+		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
 		    trs = $this.closest('tbody').find('tr'),
 		    trsfollowing = $this.closest('tbody').find('tr.followingrow');
 		followrow.attr('draggable', true);
@@ -892,10 +894,11 @@ $(function () {
 		setClsforFlw(table);
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
-		table.find('.followAllBtn').removeClass('fr');
+		//table.find('.followAllBtn').removeClass('fr');
 
 		if (trs.hasClass('followingrow')) {
 			$('#validatePriority').val(true);
+			unfollowAllBtnHS.addClass('hideBtn');
 		}
 
 		if ($('.followrow.disabled.frow', table).length) {
@@ -905,20 +908,28 @@ $(function () {
 		}
 		followrow.remove();
 		if (trs.length === trsfollowing.length + 1) {
-			followAllBtn.addClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.addClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			followAllBtnHS.addClass('hideBtn');
+			unfollowAllBtnHS.removeClass('hideBtn');
 		} else {
-			followAllBtn.removeClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			followAllBtnHS.removeClass('hideBtn');
+			unfollowAllBtnHS.addClass('hideBtn');
 		}
 	});
 
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
 		var $this = $(this),
 		    table = $this.closest('table'),
+		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
+		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
+		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
+		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
 		    followingrow = $this.closest('.followingrow'),
-		    followAllBtn = $this.closest('table').find('.followAllBtn'),
-		    unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'),
 		    tbody = $this.closest('tbody'),
 		    trs = $this.closest('tbody').find('tr'),
 		    disabledtrs = $this.closest('tbody').find('.followrow.disabled'),
@@ -928,7 +939,7 @@ $(function () {
 		followingrow.clone().appendTo($this.closest('tbody'));
 		followingrow.remove();
 		$('#validatePreference').val(1);
-		table.find('.followAllBtn').removeClass('fr');
+		//table.find('.followAllBtn').removeClass('fr');
 		sort_table(tbody, 0, 1, 'followingBtn');
 
 		if (trs.length === disabledtrs.length + 1) {
@@ -936,12 +947,18 @@ $(function () {
 			table.find('.accordionStatus .lableStatus').val('followlbl');
 		}
 		if (trs.length === trsfollow.length + 1) {
-			unfollowAllBtn.addClass('hideBtn');
-			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtnHL.addClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+
+			unfollowAllBtnHS.removeClass('hideBtn');
+			followAllBtnHS.addClass('hideBtn');
 			$('#validatePriority').val(false);
 		} else {
-			followAllBtn.removeClass('hideBtn');
-			unfollowAllBtn.removeClass('hideBtn');
+			followAllBtnHL.removeClass('hideBtn');
+			unfollowAllBtnHL.removeClass('hideBtn');
+
+			unfollowAllBtnHS.addClass('hideBtn');
+			followAllBtnHS.removeClass('hideBtn');
 		}
 	});
 
@@ -1109,7 +1126,7 @@ $(function () {
 			}
 			setDataRow(allpublications);
 
-			if (!!$('#isChannelBasedRegistration').val()) {
+			if ($('#isChannelBasedRegistration').val() == "true") {
 				sendRegisterData(alltrs, UserPreferences, 'href');
 			} else {
 				createJSONData(table, UserPreferences);

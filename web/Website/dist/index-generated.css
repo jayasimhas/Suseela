@@ -3706,8 +3706,8 @@ header .header-account-access {
   clear: both;
   border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 20px 32px 30px;
+  padding: 1.25rem 2rem 1.875rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
@@ -3716,7 +3716,12 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both; }
+    clear: both;
+    position: absolute;
+    top: 5px;
+    top: 0.3125rem;
+    right: 10px;
+    right: 0.625rem; }
     .messaging_webUsers_white .msg_dismiss a, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers_white .msg_dismiss .mobile-table-exit {
       padding-right: 15px;
       display: inline-block;
@@ -3970,8 +3975,16 @@ header .header-account-access {
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
           margin-top: 7px;
-          margin-top: 0.4375rem;
-          position: relative; }
+          margin-top: 0.4375rem; }
+          .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .pull-left {
+            float: left; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .pull-left {
+                height: 24px;
+                height: 1.5rem;
+                width: 24px;
+                width: 1.5rem;
+                display: block; } }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines span {
             height: 2px;
             height: 0.125rem;
@@ -3981,10 +3994,10 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .move {
-            position: absolute;
-            left: -43px;
-            left: -2.6875rem;
+            float: left;
+            position: relative;
             top: -3px;
+            margin-right: 10px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4009,8 +4022,16 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
             float: right;
             margin-top: 7px;
-            margin-top: 0.4375rem;
-            position: relative; }
+            margin-top: 0.4375rem; }
+            .myview-settings .table-responsive .table tbody tr.followrow .rowlines .pull-left {
+              float: left; }
+              @media (max-width: 640px) {
+                .myview-settings .table-responsive .table tbody tr.followrow .rowlines .pull-left {
+                  height: 24px;
+                  height: 1.5rem;
+                  width: 24px;
+                  width: 1.5rem;
+                  display: block; } }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines span {
               height: 2px;
               height: 0.125rem;
@@ -4020,10 +4041,10 @@ header .header-account-access {
               display: block;
               margin-bottom: 3px; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines .move {
-              position: absolute;
-              left: -43px;
-              left: -2.6875rem;
+              float: left;
+              position: relative;
               top: -3px;
+              margin-right: 10px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -4052,7 +4073,8 @@ header .header-account-access {
         background: #f9f9f9; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
-            /*padding: 0.5rem 0rem 0.625rem 0.625rem;*/ } }
+            padding: 8px 0px 10px 10px;
+            padding: 0.5rem 0rem 0.625rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
@@ -4088,9 +4110,17 @@ header .header-account-access {
           float: right;
           margin-top: 7px;
           margin-top: 0.4375rem;
-          position: relative;
           margin-top: -24px;
           margin-top: -1.5rem; }
+          .myview-settings .table-responsive .table thead th .rowlines .pull-left {
+            float: left; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table thead th .rowlines .pull-left {
+                height: 24px;
+                height: 1.5rem;
+                width: 24px;
+                width: 1.5rem;
+                display: block; } }
           .myview-settings .table-responsive .table thead th .rowlines span {
             height: 2px;
             height: 0.125rem;
@@ -4100,10 +4130,10 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table thead th .rowlines .move {
-            position: absolute;
-            left: -43px;
-            left: -2.6875rem;
+            float: left;
+            position: relative;
             top: -3px;
+            margin-right: 10px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4636,13 +4666,15 @@ header .header-account-access {
       background-position: -3px -236px;
       text-indent: -140px;
       text-indent: -8.75rem;
-      color: #58595b !important; }
+      color: #58595b !important;
+      border: none !important;
+      background-color: inherit !important; }
     .myview-settings .smfollowingBtn .followAllBtn {
-      background-position: 17px -266px;
+      background-position: -3px -266px;
       text-indent: -124px;
-      border: none !important; }
-      .myview-settings .smfollowingBtn .followAllBtn.fr {
-        float: right !important; }
+      border: none !important;
+      padding: 0 0 !important;
+      float: right; }
   .myview-settings .accordionStatus.hideRow {
     display: none; } }
 
@@ -4659,14 +4691,18 @@ header .header-account-access {
       line-height: 28px !important;
       line-height: 1.75rem !important; }
       .smfollowingBtn span.unfollowAllBtn {
-        background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+        background: url(/dist/img/sprite-image.png) no-repeat -3px -236px;
         text-indent: -140px;
         text-indent: -8.75rem;
-        color: #58595b !important; }
+        color: #58595b !important;
+        border: none !important;
+        background-color: inherit !important; }
       .smfollowingBtn span.followAllBtn {
         background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
         text-indent: -124px;
-        border: none !important; } }
+        border: none !important;
+        background-color: inherit !important;
+        padding: 0 0 !important; } }
 
 /************ drag and drop styles ***********/
 .drop {
@@ -4781,9 +4817,14 @@ header .header-account-access {
       display: block;
       height: 4px;
       position: absolute;
-      top: calc(50% - 2px);
+      top: calc(60% - 2px);
       width: 85%;
-      z-index: 1; }
+      z-index: 1; } }
+    @media (min-width: 768px) and (max-width: 1080px) {
+      .personalisationhome .latestSubject:before {
+        width: 80%; } }
+
+@media (min-width: 768px) {
     .personalisationhome .latestSubject .editView {
       cursor: pointer;
       text-transform: uppercase;
@@ -4802,7 +4843,9 @@ header .header-account-access {
       color: #ffffff;
       float: right;
       margin: 0px;
-      padding: 0px; } }
+      padding: 0px;
+      position: relative;
+      top: 5px; } }
 
 .personalisationhome .latest-news__articles .article-small-preview {
   border: 1px solid #d1d3d4;
@@ -5063,9 +5106,8 @@ header .header-account-access {
       font-size: 2rem;
       font-family: "Roboto condensed";
       font-weight: bold;
-      height: 37px;
-      height: 2.3125rem;
-      overflow: hidden;
+      min-height: 37px;
+      min-height: 2.3125rem;
       display: block;
       padding-left: 10px;
       padding-left: 0.625rem;
@@ -6228,6 +6270,12 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
+    .subscriptionPan #mySubscriptionTab a.button.button--outline, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit {
+      border: 1px solid #fbb040; }
+      .subscriptionPan #mySubscriptionTab a.button.button--outline:hover, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit:hover {
+        border-color: #f7941e;
+        background-color: #f7941e;
+        color: #ffffff; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
