@@ -506,7 +506,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
             CustomItemBase nItemTemplate = GetNewItemTemplate(importRow);
             string mapLog = "Mapping ArticleId:";
+            string ArticleId = string.Empty;
             string errorLog = string.Empty;
+            string EscenicIDLog = "EscenicIDMissingLog";
+            string ContentTypeLog = "ContentTypeMissingLog";
+            string MediaTypeLog = "MediaTypeMissingLog";
+            string BodyTagLog = "BodyTagMissingLog";
+            string PublishDateLog = "PublishDateMissingLog";
+            string AgencyLog = "AgencyMissingLog";
+            string CommercialLog = "CommercialMissingLog";
+            string CommodityFactorLog = "CommodityFactorMissingLog";
+            string CommodityLog = "CommodityMissingLog";
+            string RegionLog = "RegionMissingLog";
+            string CompanyLog = "CompanyMissingLog";
+            Dictionary<string, string> ArticleData = (Dictionary<string, string>)importRow;
+
             using (new LanguageSwitcher(ImportToLanguage))
             {
                 //get the parent in the specific language
@@ -546,6 +560,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 using (new EditContext(newItem, true, false))
                 {
+                //    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
+                //        ArticleId =  newItem.Fields["Escenic ID"].Value;
+                    
+                  
+                    ArticleId = ArticleData["ARTICLEID"];
+                       
                     //add in the field mappings
                     List<IBaseField> fieldDefs = GetFieldDefinitionsByRow(importRow);
                     SetFieldUpdateFlags(fieldDefs, dict);
@@ -588,51 +608,66 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 else
                                 {
-                                    errorLog += "||" + "Article Id is missing";
+                                    errorLog += "||" + "Escenic ID N/A";                                  
+                                    XMLDataLogger.WriteLog(ArticleId, EscenicIDLog);
                                 }
                             }
 
                             if (d.NewItemField == "Content Type" && importValue == "")
                             {
-                                errorLog += "||" + "ContentType is missing";
+                                errorLog += "||" + "ContentType N/A";                                
+                                XMLDataLogger.WriteLog(ArticleId, ContentTypeLog);
                             }
 
                             if (d.NewItemField == "Media Type" && importValue == "")
                             {
-                                errorLog += "||" + "MediaType is missing";
+                                errorLog += "||" + "MediaType N/A";
+                                XMLDataLogger.WriteLog(ArticleId, MediaTypeLog);
                             }
 
                             if (d.NewItemField == "Actual Publish Date" && importValue == "")
                             {
-                                errorLog += "||" + "PublishDate is missing";
+                                errorLog += "||" + "PublishDate N/A";
+                                XMLDataLogger.WriteLog(ArticleId, PublishDateLog);
                             }
 
                             if (d.NewItemField == "Body" && importValue == "")
                             {
-                                errorLog += "||" + "Body is missing";
+                                errorLog += "||" + "Body N/A";
+                                //XMLDataLogger.WriteLog(ArticleId, BodyTagLog);
                             }
 
                             if (d.NewItemField == "Taxonomy")
                             {
-                                string commoditySearch = "COMMODITY1";
-                                if (commoditySearch.Any(w => (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains(w)) && importValue == "")
-                                {
-                                    errorLog += "||" + "Commodities is missing";
+       
+                              if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITY1") && importValue == "") 
+                              {
+                                    errorLog += "||" + "Commodities N/A";
+                                   // XMLDataLogger.WriteLog(ArticleId, CommodityLog);
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COUNTRY" && importValue == "")
                                 {
-                                    errorLog += "||" + "Region is missing";
+                                    errorLog += "||" + "Region N/A";
+                                    XMLDataLogger.WriteLog(ArticleId, RegionLog);
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMODITYFACTOR" && importValue == "")
                                 {
-                                    errorLog += "||" + "CommodityFactor is missing";
+                                    errorLog += "||" + "CommodityFactor N/A";
+                                    XMLDataLogger.WriteLog(ArticleId, CommodityFactorLog);
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMERCIAL" && importValue == "")
                                 {
-                                    errorLog += "||" + "Commercial is missing";
+                                    errorLog += "||" + "Commercial N/A";
+                                    XMLDataLogger.WriteLog(ArticleId, CommercialLog);
+                                }
+                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "AGENCY" && importValue == "")
+                                {
+                                    errorLog += "||" + "AGENCY N/A";
+                                    XMLDataLogger.WriteLog(ArticleId, AgencyLog);
+
                                 }
                             }
                             if (d.NewItemField == "Taxonomy")
@@ -655,11 +690,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
                                 ListToGuid.TaxonomyList.Clear();
-                            }
-
-
-                            
-
+                                   }
 
                               }
                         catch (Exception ex)
@@ -668,13 +699,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
                     }
 
-                    XMLDataLogger.WriteLog(mapLog + errorLog);
+                    XMLDataLogger.WriteLog(mapLog + errorLog,"");
                     //calls the subclass method to handle custom fields and fields
                     ProcessCustomData(ref newItem, importRow);
                 }
 
-                Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
-                if (tableau.ContainsKey("dashboardname"))
+                // Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
+                if (ArticleData.ContainsKey("dashboardname"))
                 {
                     TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
                     Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
@@ -688,18 +719,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         using (new SecurityDisabler())
                         {
                             // string xx= (Dictionary<string, string>())importRow[""].value;
-
-
-
-
                             tabloItem.Editing.BeginEdit();
-                            tabloItem.Fields["Authentication Required"].Value = tableau["authenticationrequired"] == "false" ? "0" : "1";
-                            tabloItem.Fields["Dashboard Name"].Value = tableau["dashboardname"];
-                            tabloItem.Fields["Mobile Dashboard Name"].Value = tableau["dashboardname"];
-                            tabloItem.Fields["Filter"].Value = tableau["filter"];
-                            tabloItem.Fields["Width"].Value = tableau["width"];
-                            tabloItem.Fields["Height"].Value = tableau["height"];
-                            tabloItem.Fields["Page Title"].Value = tableau["title"];
+                            tabloItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
+                            tabloItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
+                            tabloItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
+                            tabloItem.Fields["Filter"].Value = ArticleData["filter"];
+                            tabloItem.Fields["Width"].Value = ArticleData["width"];
+                            tabloItem.Fields["Height"].Value = ArticleData["height"];
+                            tabloItem.Fields["Page Title"].Value = ArticleData["title"];
                             tabloItem.Editing.EndEdit();
                         }
                     }

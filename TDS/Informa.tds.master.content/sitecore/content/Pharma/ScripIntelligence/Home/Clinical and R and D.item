@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {2AFAA6A4-7F18-4898-B788-795180A78994}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Clinical and R and D
+parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
+name: Clinical and R and D
+master: {00000000-0000-0000-0000-000000000000}
+template: {77604558-3056-497B-93D8-E53BC5619DDB}
+templatekey: Topic Page
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 4
+
+1800
+----version----
+language: en
+version: 1
+revision: 000b7c9a-dde8-44d6-89a3-04624b8c84f4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 14
+
+Clinical / R&D
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 20
+
+Clinical and R and D
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 20
+
+Clinical and R and D
+----field----
+field: {82AF6295-2B81-4CE0-8674-F6F72F38BFF6}
+name: Leaderboard Slot ID
+key: leaderboard slot id
+content-length: 3
+
+Top
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 5642
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{277FA067-DDCC-414B-9ED2-BDE71EB7D786}" p:before="r[@uid='{E4695FEB-A199-448C-9FE8-A78EBC15568C}']" s:ds="{8EEA9001-2B1C-4062-BADA-330F13F54899}" s:id="{B835C69E-153A-49E1-96C4-F073E1B6A8E3}" s:par="Show Image=1" s:ph="/main-content/right-curated-content_e87eaf0d-864e-4492-9872-200d0a0ab10f" /><r uid="{E4695FEB-A199-448C-9FE8-A78EBC15568C}" p:before="r[@uid='{50C879A8-B414-4AE4-B194-DD0DC5A4C0FA}']" s:ds="{75066354-E88E-466B-B15E-B13F4FFD53A0}" s:id="{8C64BF41-EFAF-4867-A5A1-91EEB97F2985}" s:ph="/main-content/right-curated-content_e87eaf0d-864e-4492-9872-200d0a0ab10f" /><r uid="{50C879A8-B414-4AE4-B194-DD0DC5A4C0FA}" p:before="r[@uid='{D081E498-6724-46F2-B4C3-8CA5DE5F4521}']" s:ds="{84FB1053-9043-481A-922C-5939970929D1}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:par="Show Image=1" s:ph="/main-content/left-curated-content_e87eaf0d-864e-4492-9872-200d0a0ab10f" /><r uid="{D081E498-6724-46F2-B4C3-8CA5DE5F4521}" p:before="r[@uid='{AECF6A32-2D22-4BD9-9F02-F569D0495A68}']" s:ds="{AABFE1E3-54C5-4E85-AD3F-F26CCA280F56}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:par="Show Image=1" s:ph="/main-content/left-curated-content_e87eaf0d-864e-4492-9872-200d0a0ab10f" /><r uid="{AECF6A32-2D22-4BD9-9F02-F569D0495A68}" p:before="r[@uid='{647D86B5-EB87-4852-80CE-5D61513454B3}']" s:ds="{E116C1C3-B320-4F53-8D3F-6830AA7D3EC7}" s:id="{B302F679-C10E-4D17-B387-C06D275E9F78}" s:ph="/main-content/right-curated-content_5b7c5217-ea4f-4be2-b761-6916e87bfe43" /><r uid="{647D86B5-EB87-4852-80CE-5D61513454B3}" p:before="r[@uid='{99ADE074-0175-42FE-805D-8AF3C50A851C}']" s:ds="{1E83B8D4-CFC7-4425-9022-C4B3AA807003}" s:id="{8C64BF41-EFAF-4867-A5A1-91EEB97F2985}" s:ph="/main-content/right-curated-content_5b7c5217-ea4f-4be2-b761-6916e87bfe43" /><r uid="{99ADE074-0175-42FE-805D-8AF3C50A851C}" p:before="r[@uid='{7E31A183-F816-4E11-987E-46B54D29BE52}']" s:ds="{8F46BCE8-2095-452A-BAA2-1622671D1011}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:ph="/main-content/left-curated-content_5b7c5217-ea4f-4be2-b761-6916e87bfe43" /><r uid="{7E31A183-F816-4E11-987E-46B54D29BE52}" p:before="r[@uid='{2A2A95E1-5F3C-4CC4-8462-975787F45768}']" s:ds="{81303B4D-A389-43A2-BB94-0A29E13155C9}" s:id="{A94F54D2-AD2B-4921-82B3-5093C020674C}" s:par="Show Image" s:ph="/main-content/left-curated-content_5b7c5217-ea4f-4be2-b761-6916e87bfe43" /><r uid="{2A2A95E1-5F3C-4CC4-8462-975787F45768}" p:before="r[@uid='{2CA66C3C-3A69-4BDB-9B9A-7A1B173F4949}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={9557EF58-727F-4007-9C73-6232F381DFF1}" s:ph="/main-content/two-column-curated_ac2f2d88-9e7f-4a78-ad74-03caae735b97" /><r uid="{2CA66C3C-3A69-4BDB-9B9A-7A1B173F4949}" p:before="r[@uid='{89F275C1-BC86-4CBD-9DFF-F4ABD32D3D6D}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={421FEE54-6D5D-4023-BFEE-2BA27E357F5F}" s:ph="/main-content/two-column-curated_87737b45-e56a-4ffb-aa97-d9ac750223a5" /><r uid="{89F275C1-BC86-4CBD-9DFF-F4ABD32D3D6D}" p:before="r[@uid='{0025A3F7-1127-430F-8B2B-879633E581B7}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={4971D7C8-1264-4A38-8998-EDCAFC37A24D}" s:ph="/main-content/two-column-curated_0bec57ac-a8d1-4c43-a031-5d54559fb706" /><r uid="{0025A3F7-1127-430F-8B2B-879633E581B7}" p:before="r[@uid='{EEA20C49-C025-4E63-AE86-A16ECFFF775E}']" s:ds="" s:id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" s:par="Display Title=1&amp;Number To Display={9AF30384-21C4-4341-A825-190E44F87A7E}&amp;Subjects={B3122C5E-FF3F-438A-9C93-1B54DC1286A5}" s:ph="/main-content/two-column-curated_3418284d-36a2-4e2a-80c3-1ce87d56f103" /><r uid="{EEA20C49-C025-4E63-AE86-A16ECFFF775E}" p:before="r[@uid='{70BAC689-CEA3-4C18-8CE3-7098669AF545}']" s:id="{1AA9B776-B2D0-4B04-B118-CE22D1263656}" s:ph="main-content" /><r uid="{70BAC689-CEA3-4C18-8CE3-7098669AF545}" p:before="r[@uid='{62A3E8AA-C623-4236-AF8C-6BA5473EF43D}']" s:id="{877DF4EA-234D-4CEE-92E6-39F9857BA9CC}" s:ph="main-content" /><r uid="{62A3E8AA-C623-4236-AF8C-6BA5473EF43D}" p:before="r[@uid='{E87EAF0D-864E-4492-9872-200D0A0AB10F}']" s:ds="{AFC84E72-52DF-4F4C-83C7-F01CDB0B8F79}" s:id="{C7E595D3-9F0C-41E0-890F-6D8C54B8EF40}" s:ph="main-content" /><r uid="{E87EAF0D-864E-4492-9872-200D0A0AB10F}" p:before="r[@uid='{3418284D-36A2-4E2A-80C3-1CE87D56F103}']" s:id="{3EFF8328-17E2-41E9-BBCB-E4361A60D5C9}" s:ph="main-content" /><r uid="{3418284D-36A2-4E2A-80C3-1CE87D56F103}" p:before="r[@uid='{AC2F2D88-9E7F-4A78-AD74-03CAAE735B97}']" s:ds="{698AFCF1-3DA0-46CF-B8CF-2639D2040AA3}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{AC2F2D88-9E7F-4A78-AD74-03CAAE735B97}" p:before="r[@uid='{87737B45-E56A-4FFB-AA97-D9AC750223A5}']" s:ds="{95B04084-E5D5-49EC-9DCF-C62649338A3B}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{87737B45-E56A-4FFB-AA97-D9AC750223A5}" p:before="r[@uid='{0BEC57AC-A8D1-4C43-A031-5D54559FB706}']" s:ds="{11EC89F2-DF2C-4FDE-996B-E5255C487CD8}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{0BEC57AC-A8D1-4C43-A031-5D54559FB706}" p:before="r[@uid='{0F6A6227-C265-4521-8F6D-FA78653AE581}']" s:ds="{E728FC98-604A-42E6-B433-39D49E777905}" s:id="{FEFB319E-28B6-4BE9-B2F2-655329858135}" s:ph="main-content" /><r uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" p:before="*[1=2]" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160330T165643Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+000b7c9a-dde8-44d6-89a3-04624b8c84f4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160726T171413Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

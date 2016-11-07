@@ -1,0 +1,187 @@
+----item----
+version: 1
+id: {AC8C7385-582D-4600-AFBD-3DA1FFDB753D}
+database: master
+path: /sitecore/Print Studio/App Settings/Message Settings/Publishing Subject
+parent: {D277E72F-7D7A-4671-A0EE-FB4FABCC20FB}
+name: Publishing Subject
+master: {00000000-0000-0000-0000-000000000000}
+template: {FDCA81AC-DEA6-4909-B5A0-3444CF95BD67}
+templatekey: Print Studio Text Message
+
+----version----
+language: de-DE
+version: 1
+revision: 1b98937c-8678-4eb3-90e4-20e3bd643079
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 41
+
+Print Studio  Veröffentlichungsergebnisse
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 24
+
+Veröffentlichung Subjekt
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142236Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1b98937c-8678-4eb3-90e4-20e3bd643079
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: b481f11c-9214-4f4b-b026-2f26bffc563d
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 31
+
+Print Studio publishing results
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20100617T154000
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b481f11c-9214-4f4b-b026-2f26bffc563d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20120220T141415:634653440553916125
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
+----version----
+language: ja-JP
+version: 1
+revision: 107601b9-a2f3-4d67-b274-ba127ffbc18e
+
+----field----
+field: {1BF1F7A9-4BDF-425A-B012-AA2D40012038}
+name: Message
+key: message
+content-length: 18
+
+プリント スタジオのパブリッシュ結果
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 13
+
+サブジェクトのパブリッシュ
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+107601b9-a2f3-4d67-b274-ba127ffbc18e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

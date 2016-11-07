@@ -198,7 +198,7 @@
                 if (channelsPageItem != null)
                 {
                     var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                    isChannelBasedRegistration = channelPages.Count() == 1 && string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase);
+                    isChannelBasedRegistration = channelPages.Count() > 1 && !string.Equals(channelPages.FirstOrDefault().Channel_Code, SiterootContext.Item.Publication_Code, StringComparison.OrdinalIgnoreCase);
                     if (channelPages != null && channelPages.Any())
                     {
                         Channel channel = null;

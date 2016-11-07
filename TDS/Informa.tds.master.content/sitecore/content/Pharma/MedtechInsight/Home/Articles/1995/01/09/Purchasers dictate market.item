@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {DE7AB003-D9BD-4ABA-9059-0159F3CD94D2}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Purchasers dictate market
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Purchasers dictate market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 98087002-29db-47a9-b490-2d323bbd9fa5
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 447
+
+<p>Forecast by US industry association HIMA to grow 7% in 1994 and in 1995, the world medical technology market should top $100 billion this year. The US' 41% share of the $92,900 million market in 1993 is expected to diminish in the rest of the decade as new markets take on growing importance. Jeanette Marchant reviews how industry is reacting to the dynamics in the leading market and what the repercussions are in the international arena.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+Purchasers dictate market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13079
+
+<p>Forecast by US industry association HIMA to grow 7% in 1994 and in 1995, the world medical technology market should top $100 billion this year. The US' 41% share of the $92,900 million market in 1993 is expected to diminish in the rest of the decade as new markets take on growing importance. Jeanette Marchant reviews how industry is reacting to the dynamics in the leading market and what the repercussions are in the international arena.</p><p>Managed care and managed competition were the buzz-words in the healthcare sector in 1994. Events in the marketplace showed no dramatic change in course from trends set the previous year; rather healthcare reforms dictated by market forces as much as by legislation are rapidly changing the environment in which medical device and diagnostic companies are operating.</p><p>President Clinton's health reform plans, based on managed competition, may have died before the November elections - notwithstanding considerable debate - but the US market is undergoing change at an unprecedented pace. By the end of the decade as much as 45% of the US market is expected to be accounted for by managed care.</p><p>The dominance of health maintenance organisations and preferred provider organisations is leading to constrained expansion of hospital services. Consolidation in the health provider sector has escalated with more hospitals joining forces in 1994 - not least at the top end of the market. The leading for-profit chain with 196 hospitals, Columbia/HCA Healthcare, acquired Medical Care America, the largest outpatient surgery centre operator. National Medical Enterprises agreed to purchase Amedican Medical Holdings for $2,000 million.</p><p>Evidence of measures to control hospital costs was abundant in 1994. Under a Health Care Financing Administration programme, seven hospitals are operating a pilot scheme whereby hospital and physician fees for heart surgery will be "bundled" into a single negotiated payment.</p><p>In order to get nearer to their customers, medical technology companies are having to adopt novel contract arrangements. <strong>[C#198600199:Pfizer]</strong> linked up with managed care provider Value Link in a 50:50 venture to develop healthcare delivery and management programmes. Baxter signed a unique five-year managed cost deal with Duke University Medical Centre, which treats over half a million patients each year. By establishing a targeted supply cost per surgical intervention, procedures will be standardised and supply protocols developed. A similar objective is the focus of an eight-year deal between Baxter and Columbia/HCA worth $800 million.</p><p>The first supply contract to introduce capitation for implants was awarded by Premier Health Alliance. If a participating hospital agrees to use a minimum number of the supplier's implants, the cost of implant hardware will be capped at $2,000-2,500 per patient. Capitation contracts in other modalities can be expected - Premier is already considering a fracture management programme along the same lines.</p><p>With hospitals seeking economies of scale, high technology stands to suffer as adoption of costly interventions is likely to be adversely affected. As one managed care provider said: "Why give an 80-year-old the best orthopaedic implant when a lesser one will do?"</p><p>Cost continues to be a major driver of the market. Once considered an optional extra, outcomes data have become a necessary component of product development protocols. Proof of cost-effectiveness is needed by purchasers of healthcare; and the emphasis is on cost-effective procedures, not just products. Companies such as <strong>[C#198600185:Medtronic]</strong> and Mallinckrodt Medical are already including outcomes analysis in their clinical studies.</p><p>Healthcare spending was forecast by the US Department of Commerce to reach $1,060 billion in 1994, accounting for 15% of GDP. As hospital expenditure slows, the homecare sector is expanding rapidly. The fastest growing market, home health was projected to increase 35% in 1994 to reach $22 billion.</p><p>companies look East</p><p>Although the US market is expected to remain strong, US companies are turning their attention to emerging markets which offer greater growth potential. Regulatory uncertainty and delays in marketing approvals/clearances have prompted many companies to move facilities out of the US. Medtronic, for one, is relocating its corporate ventures division to the Netherlands. A US survey of 150 company executives found that 34% planned to move product development overseas and 57% intended to license products to a strategic partner for marketing outside the US.</p><p>Markets in the Far East are attracting significant attention. HIMA is setting up an office in Bangkok: Thailand is regarded as the most attractive individual market for new medical technology opportunities. Investments were not in short supply in other eastern markets in 1994, with significant activity being reported in China.</p><p>Ciba is to invest $10 million in a contract lens and solution facility there with a view to gaining 25% of the projected $28 million contact lens Chinese market within four years. Laserscope's medical lasers are to be marketed by the China National Instruments Imports and Exports. Production of IV catheters, hypodermic needles and disposable anaesthesia syringes is the aim of a joint venture between <strong>[C#198600118:Becton Dickinson]</strong> and Suzhou Pharmaceutical General due to come on stream next year. <strong>[C#198601245:Bristol-Myers Squibb]</strong> sees China as the largest potential emerging market - its Zimmer subsidiary set up an office in Shanghai in September and a manufacturing facility is expected to start production next year, while its ConvacTec subsidiary has tied up with a state-owned concern to produce ostomy pouches.</p><p>US exporters to Japan won a major concession on October 1st when a trade accord was signed whereby Japanese government hospitals will be encouraged to buy more foreign medical technology. Meanwhile, Japan is in the process of introducing a new system in which devices will be classified according to risk. Canada is also developing a risk-based classification system: a draft document on the regulatory options for its implementation it is expected to be ready for consultation this February.</p><p>The US was partially successful in postponing the introduction of new import regulations in South Korea which were due to come into effect on July 1st, 1994. A six-month delay in implementation was secured but requests for further time were denied and the new regulations came into force on January 1st, 1995. They require extensive product data which must be translated into Korean. The cost of meeting the new requirements has been put at anywhere between $300 and $975 per shipment.</p><p>International trade stands to benefit from the creation of new trading blocs. On January 1st, the European Union expanded to 15 member states with the addition of Finland, Austria and Sweden. Also on January 1st, the Mercosur free trade agreement between Argentina, Brazil, Paraguay and Uruguay came into force - just one year after NAFTA was created. The Uruguay Round of the GATT was finally concluded and approval by the US to implement the GATT agreement will pave the way to eliminating tariff and other trade barriers for medical devices.</p><p>In the regulatory arena, initiatives were taken to develop an international biomaterials tracking and implant data system: a meeting co-hosted by the US and Australia will be held in February to discuss this further. Product liability concerns with biomaterials have led to supply problems in some sectors; Dow Chemical and DuPont are among those which are withdrawing or have withdrawn from the market. After the end of April, Dow will no longer supply polyurethane for pacemaker leads and pacing devices - it has already withdrawn silicone and medical grade resin for medical use.</p><p>Industry Consolidation Continues</p><p>Some $6,000 million was spent on mergers and acquisitions in the medical technology industry between January 1993 and July 1994, according to US analysts at Robertson Stephens. Certainly the pace of M&As has not abated during 1994 (see pages 32-33).</p><p>The largest acquisition in the healthcare sector which included medical technology was the $9.7 billion take-over of Cyanamid by American Home Products. The deal involves the merger of Cyanamid's $601 million medical device business with AHP's $851.5 million medical supplies and diagnostics products. Inevitably the merger has already resulted in staff reductions. Other major transactions during 1994 included Ciba-Geigy's $2.1 billion strategic alliance with Chiron and Tyco's $1.4 billion take-over of Kendall to strengthen its wound care and home health business.</p><p>Although the industry is not expected by the analysts to undergo a major slimming down, restructuring is likely to continue - particularly as companies react to market conditions.</p><p>Mallinckrodt was among those to announce staff cuts in 1994 in response to healthcare reform. Beginning with a reduction of the US sales force in early 1995, Mallinckrodt's restructuring programme will eventually entail a 10% decrease in staffing levels worldwide. In response to the market's focus on cost, US Surgical reduced its operating expenses by $150 million.</p><p>Other companies decided to move out of the medical devices and diagnostics field altogether. Prominent among these was Lilly, which should see its remaining vestiges in the sector sold off during 1995. It plans to distribute its 80% stake in Guidant - comprising five of its device business - to shareholders mid- year, while buyers for its diagnostics companies, <strong>[C#198601109:Hybritech]</strong> and Pacific Biotech, should be found this year.</p><p>The make-up of the diagnostics industry changed dramatically in 1994. Johnson & Johnson elevated itself to the number 3 position with the acquisition of Kodak's clinical diagnostics business for $1 billion. <strong>[C#198601005:Recordati]</strong> (Italy) sold its remaining interest in the sector - Technogenetics - to Carter-Wallace's Italian subsidiary, Bouty. Bristol-Myers Squibb also quit the industry with the sale of Squibb Diagnostics to <strong>[C#198900374:Bracco]</strong> (Italy). Ciba's strategic alliance with Chiron will see its $520 million diagnostics business transfer to the US biotech company.</p><p>European companies Schering, Bracco and Hafslund Nycomed emerged stronger in the diagnostic imaging sector in 1994 with Nycomed taking the lead in the US contrast media market following the acquisition of Sterling's imaging business from Sanofi.</p><p>Other diagnostic companies found the going tough in 1994. Murex and Organon Teknika suffered a setback with the UK High Court injunction at the end of the year against the manufacture and sale of their hepatitis C immunoassays, which have been ruled to infringe Chiron's HCV patent. Chiron has vigorously defended its patent in the courts in Europe, the US, Japan and Australia. Organon has virtually been removed from the HCV market in Europe.</p><p>planning for the future</p><p>Notwithstanding the unexpected, such as litigation - a prominent feature of the medtech industry - those companies which can keep pace with market changes stand to succeed. While not all product sectors offer the same opportunities for growth, technology which reduces the need for surgery or enables procedures to be performed on an outpatient basis is likely to be accepted most readily. As healthcare reforms shift the emphasis to primary care, more opportunities are becoming available for home health products and technology that can be used in the physician's office.</p><p>Reimbursement issues are likely to feature more prominently as purchasers juggle budgets and seek cost-effective technologies. Optional flat rate payments introduced in Germany this year for certain hospital operations pose a threat to endoscopy while Italy sees the start of a DRG system in national hospitals. The development of device formularies in the US is no longer a threat but a reality with health care centres and managed care organisations drawing up lists of medical supplies and preferred suppliers. Purchasers are already dictating standards and policies.</p><p>Product development programmes will need to take into account the growing need for outcomes data to support the economic benefits - not just the clinical benefits - of medical products. Expensive, high tech devices and equipment may represent a major advance in technology but unless it can be shown that they result in cost benefits as well as improved patient outcomes, the returns on investment may be realised slowly.</p><p>Demographic trends,- with all the major markets facing an increasing ageing population; changes in purchasing priorities; and growing economies which are prepared to invest in healthcare will dictate the future of medical technology.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 701
+
+{E210693C-D8A6-4B27-8E93-D1B5934F9062}|{6EFD9948-FDD4-4012-851B-6AB7F203124F}|{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{D28FB91A-86F7-4BD4-9802-D18EBB5051BB}|{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{66ABB4F9-4184-420B-A97E-96A3B7728F78}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{02BF5E8E-46B6-457B-82C8-D013C26B8CF9}|{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}|{B3CB389F-B9B7-4041-9E3D-C9810F548727}|{7D2882AF-BDBC-4EA1-94D4-EF54E645308A}|{8DB89EAD-00CC-48B4-BB5F-D1B24C35A621}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 25
+
+Purchasers dictate market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051004
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+Purchasers dictate market
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 69
+
+198601005,198600199,198600185,198601109,198601245,198900374,198600118
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252773
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183722Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+98087002-29db-47a9-b490-2d323bbd9fa5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183722Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

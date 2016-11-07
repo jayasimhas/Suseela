@@ -1,0 +1,6 @@
+----role----
+name: sitecore\Sitecore Limited Content Editor
+
+----role-in-role----
+rolename: sitecore\Production
+

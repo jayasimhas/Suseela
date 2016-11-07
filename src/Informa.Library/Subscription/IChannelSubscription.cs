@@ -11,5 +11,6 @@ namespace Informa.Library.Subscription
         string ChannelId { get; set; }
         string ChannelName { get; set; }
         DateTime ExpirationDate { get; set; }
+        List<TopicSubscription> SubscribedTopics { get; set; }
     }
 }

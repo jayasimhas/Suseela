@@ -1,4 +1,4 @@
-﻿var chartData = [{
+﻿var chartDataVal = [{
     "category": "category 1",
     "column-1": 8,
     "column-2": 5

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A0A633E9-9F75-414E-B18E-29F02C431D62}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Biomaterials bill makes last ditch attempt to pass Congress
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Biomaterials bill makes last ditch attempt to pass Congress
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: dd41e528-1ce2-4167-b19f-d92211b21344
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 221
+
+<p>A bipartisan group of US senators and congressmen made last- minute attempts to limit the liability of companies supplying raw materials to device manufacturers before the 104th Congress adjourned for the election.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Biomaterials bill makes last ditch attempt to pass Congress
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3618
+
+<p>A bipartisan group of US senators and congressmen made last- minute attempts to limit the liability of companies supplying raw materials to device manufacturers before the 104th Congress adjourned for the election.</p><p>Senator John McCain (R-Az) said of the effort: "Millions of American lives depend on critical devices that may no longer be produced because of the threat of devastating lawsuits. When a liability claim is filed against a product, raw materials suppliers - in addition to the manufacturers - are being forced to bear the brunt of these claims. In reality, only the implant manufacturers should be held culpable as it is their sole responsibility to certify the safety of the implant products, including their component materials."</p><p>legislation urgently needed</p><p>Representatives of the medical device manufacturers view the need to pass the legislation limiting the liability of raw material suppliers as urgent. "The three major suppliers to implantable device manufacturers, DuPont, Dow Corning and Dow Chemical, no longer sell or have significantly restricted sales to the medical device industry," said Jeffrey Kimbell, executive director of the Medical Device Manufacturers Association. A further nine have also stopped or limited sales to the industry.</p><p>Accepting the need for legislation, Senator McCain and Senator Joe Lieberman (D-Ct) attempted earlier this month to have legislation that had previously been rejected - the Biomaterials Access Assurance - passed before the end of the session. They wrote to the Senate leadership asking that the biomaterials bill be attached to the Continuing <strong>[C#199200264:Resolution]</strong> that Congress had to pass to pay the Federal government's bills after the close of fiscal 1996 on 30th September. Representative George Gekas (R-Pa) made similar approaches to the House leadership.</p><p>Uncertain future</p><p>As Clinica went to press, it was unclear whether their efforts would be successful. Jim Benson, senior vice-president for technology and regulatory affairs at the Health Industry Manufacturers Association (HIMA), said,"I think our chances are less than 50 per cent, not because of the bill's content, but because of the timing."</p><p>Several problems have pushed the proposed Biomaterials Access Assurance bill this close to the end of the 1996 congressional session. Earlier in the year, both houses passed the Bill, but it was attached to product liability legislation which President Clinton vetoed. Biomaterials fell by the wayside. The Administration, however, said that the biomaterials bill was not the problem.</p><p>Before the bill could be resubmitted, the Association of Trial Lawyers hired Ann Richards, former democratic governor of Texas, to lobby against its passage. The lawyers were concerned that the bill would limit settlements in on-going litigation concerning breast implants.</p><p>Given the wider implications for the medical device industry - from manufacturers of heart valves to artificial blood vessels - the proponents of the biomaterials bill excluded silicone breast implants from the legislation in an attempt to placate the trial lawyers. Unfortunately, the initial language of the change upset Dow Chemical, which argued that juries might be influenced by the exclusion.</p><p>As the 104th Congress was drawing to a close, the bill's proponents believed they had at last written legislation that satisfied the trial lawyers and Dow Chemical. Their only remaining task was to beat the clock, and to persuade Congress to adopt the legislation before electioneering begins.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Biomaterials bill makes last ditch attempt to pass Congress
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191340
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT050250
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Biomaterials bill makes last ditch attempt to pass Congress
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+251986
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dd41e528-1ce2-4167-b19f-d92211b21344
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231340Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

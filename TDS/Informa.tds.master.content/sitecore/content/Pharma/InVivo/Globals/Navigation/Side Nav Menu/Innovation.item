@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {A9CB5509-1529-4251-8CD4-14A486FD9247}
+database: master
+path: /sitecore/content/Pharma/InVivo/Globals/Navigation/Side Nav Menu/Innovation
+parent: {0C7A5A5B-1EFD-4C31-9FC0-9A69E577A54C}
+name: Innovation
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----version----
+language: en
+version: 1
+revision: 3052f423-25e5-4ed3-a8fe-9a48f8c258aa
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 160
+
+<link id="{3A240CA8-C50F-462E-BB03-E74B3039BC71}" querystring="" text="" title="" class="" linktype="internal" url="/Pharma/InVivo/Home/Innovation" target="" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160531T214928Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3052f423-25e5-4ed3-a8fe-9a48f8c258aa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160912T134739Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

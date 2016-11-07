@@ -1,8 +1,12 @@
 .register{
 	.register_newsletter{
+		.page-registration__introduction {
+			margin-bottom: 35px;
+		}
 		div.page-registration{
 			display: block;
 			position: relative;
+			padding: 60px 0 5px 0;
 			.page-registration__header{
 				display: inline-flex;
 			}
@@ -24,9 +28,19 @@
 				   font-style: normal;
 				   color: $color-zeus-black;
 				   text-transform: uppercase;
-				   background:  $color-pumpkin-orange url('/dist/img/chk-boxes.png');
+				   background:  $color-pumpkin-orange;
 				   background-position: 0 -51px;
 				   background-repeat: no-repeat;
+				   position: relative;
+				   &:after {
+				   	content: '';
+				   	background: url('/dist/img/sprite-image.png') no-repeat -17px -563px;
+					width: 6px;
+					height: 11px;
+					position: absolute;
+				    top: 13px;
+   					right: 30px;
+				   }
 				}
 				@include breakpoint('small'){
 					display: none;
@@ -40,8 +54,8 @@
 			background-color:$color-concrete-gray;
 			border: 1px solid $color-light-gray;
 			clear: both;
-			margin-bottom: 1.25rem;
-			padding: 1rem;
+			margin-bottom: 40px;
+			padding: 40px 1rem 5px;
 			float:left;
 			position: relative;
 			width: 100%;
@@ -78,8 +92,7 @@
 						margin-right: 5px;
 					}
 					.chk_box{
-						background: url('/dist/img/chk-boxes.png');
-						background-repeat: no-repeat;
+						background: url('/dist/img/sprite-image.png') no-repeat -7px -512px;
 						width:16px;
 						height:16px;
 						position: absolute;
@@ -90,7 +103,7 @@
 						background-color: $color-pumpkin-orange;
 						color: $color-white;
 					  .chk_box{
-						background-position: 0 -17px;
+						background-position: -7px -529px;
 						background-color: $color-pumpkin-orange;
 					  }
 					}
@@ -144,19 +157,18 @@
 					display: block;
 				}
 				.chk_box{
-					background: url('/dist/img/chk-boxes.png');
+					background: url('/dist/img/sprite-image.png') no-repeat -7px -512px;
 					background-repeat: no-repeat;
 					width:16px;
 					height:16px;
 					position: absolute;
 					left:0;
-					top:3px;
+					top:1px;
 					cursor: pointer;
-					background-position: 0 -34px;
 				}
 				&.wcs-c-on{
 					  .chk_box{
-						background-position: 0 -17px;
+						background-position: -7px -529px;;
 						background-color: $color-pumpkin-orange;
 					  }
 				}
@@ -197,9 +209,19 @@
 				   font-style: normal;
 				   color: $color-zeus-black;
 				   text-transform: uppercase;
-				   background:  $color-pumpkin-orange url('/dist/img/chk-boxes.png');
+				   background:  $color-pumpkin-orange;
 				   background-position: 0 -51px;
 				   background-repeat: no-repeat;
+				   position: relative;
+				   &:after {
+				   	content: '';
+				   	background: url('/dist/img/sprite-image.png') no-repeat -17px -563px;
+					width: 6px;
+					height: 11px;
+					position: absolute;
+				    top: 13px;
+   					right: 30px;
+				   }
 				}
 			}
 		}

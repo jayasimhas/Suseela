@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {716553FD-E560-470C-B259-1A05B1AB53E1}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/The Gold Sheet/Mapping/Default Mapping/Table
+parent: {1166EE13-F303-402A-B10C-6DD737382410}
+name: Table
+master: {00000000-0000-0000-0000-000000000000}
+template: {EE749883-C27E-4746-B8F9-C750B0C41A81}
+templatekey: Table and Cell Styles Reference
+
+----version----
+language: en
+version: 1
+revision: 019617cf-1a6e-4abf-bb3a-c1452f98854b
+
+----field----
+field: {FD38236E-1A79-40C7-882A-776ACFE4B563}
+name: InDesign Table Style
+key: indesign table style
+content-length: 38
+
+{962AD095-78D1-4C2B-A115-2360499B405E}
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20111019T094936
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+019617cf-1a6e-4abf-bb3a-c1452f98854b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111026T101828:634552211081682166
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

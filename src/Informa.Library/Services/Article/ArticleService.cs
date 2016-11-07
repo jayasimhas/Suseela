@@ -135,7 +135,7 @@ namespace Informa.Library.Services.Article
                     LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
                 }).ToList();
 
-            return taxItems;
+            return (taxItems != null && taxItems.Count > 3) ? taxItems.Take(3) : taxItems ;
         }
 
         public MediaTypeIconData GetMediaTypeIconData(IArticle article)
@@ -185,7 +185,7 @@ namespace Informa.Library.Services.Article
                 }
                 else
                 {
-                    legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                    legacyText = TextTranslator.Translate("Article.NewLegacyPublications");
                     legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
                     return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
                 }

@@ -4,12 +4,12 @@
   <add key="DictionaryFolder" value="/sitecore/shell/controls/rich text editor/Dictionaries/" />
   <add key="Lucene.Net.FSDirectory.class" value="Sitecore.Search.FSDirectory, Sitecore.Kernel" />
   <add key="PageInspector:ServerCodeMappingSupport" value="Disabled" />
-  
+  <add key="LegacyPublications" value="Agra Europe"/>
+  <add key="ArticleLoggingFolder" value="D:\\LogsFolder\\"/>
+  <add key="PublishedYear" value="2"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />
-
   <add key="Recaptcha.SiteKey" value="${Recaptcha.SiteKey}" />
   <add key="Recaptcha.SecretKey" value="${Recaptcha.SecretKey}" />
-  <add key="LegacyPublications" value="Agra Europe"/>
   <add key="EnableCaptcha" value="${Recaptcha.EnableCaptcha}"/>
 </appSettings>

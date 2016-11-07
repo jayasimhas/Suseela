@@ -3,7 +3,7 @@
 	background: $color-concrete-gray;
 	clear: both;
 	border-top: 4px solid $color-cardinal-red;
-	padding: 1.75rem 2rem;
+	padding: 1.5625rem 2rem;
 	position: relative;
 	float: left;
 	line-height: 20px;
@@ -44,6 +44,8 @@
 		.find_more{
 			float: right;
 			text-transform: uppercase;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
 		}
 		@include breakpoint('small'){
 			.msg_link{
@@ -66,9 +68,27 @@
 		font-weight: 400;
 		font-size: 0.5625em;
 		clear: both;
+		@include breakpoint('medium') {
+			margin: 0 0.5rem;
+		}
+		//@include breakpoint('large') {
+			position: absolute;
+			top: 0.625rem;
+			right: 0.9375rem;
+		//}
 		a{
-		background: url("/dist/img/dismiss.png") no-repeat right top;
 		padding-right: 15px;
+		display: inline-block;
+		position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 5px;
+				right: 0;
+				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+				width: 9px;
+				height: 9px;
+			}
 		}
 	}
 }
@@ -80,7 +100,7 @@
 	clear: both;
 	border-top: 4px solid $color-cardinal-red;
 	border-bottom: 1px solid $color-cardinal-red;
-	padding: 1.75rem 2rem;
+	padding: 1.25rem 2rem 1.875rem;
 	margin-bottom: 1em;
 	.msg_dismiss{
 		text-transform: uppercase;
@@ -90,17 +110,30 @@
 		font-weight: 400;
 		font-size: 0.5625em;
 		clear: both;
+		position: absolute;
+	    top: 0.3125rem;
+	    right: 0.625rem;
 		a{
-		background: url("/dist/img/dismiss.png") no-repeat right top;
 		padding-right: 15px;
+		display: inline-block;
+		position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 5px;
+				right: 0;
+				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+				width: 9px;
+				height: 9px;
+			}
 		}
 	}
 	.msg-text{
 		h3{
 		  font-family: 'Roboto';
 		  font-style: normal;
-		  font-weight: 700;
-		  font-size: 1.25em;
+		  font-weight: 500;
+		  font-size: 1.25rem;
 		  color: $color-cardinal-red;
 		}
 		  font-family: 'Roboto';
@@ -108,7 +141,7 @@
 		  font-weight: 700;
 		  font-size: 1.125em;
 		  color: $color-zeus-black;
-		  width: 50%;
+		  width: 70%;
 		  margin: 0 auto;
 		  text-align: center;
 		  line-height: 30px;

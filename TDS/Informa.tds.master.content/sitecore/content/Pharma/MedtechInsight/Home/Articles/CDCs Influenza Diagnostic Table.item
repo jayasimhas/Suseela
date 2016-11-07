@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {071DAF6F-192B-4A83-899F-5B4548BD0F29}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/CDCs Influenza Diagnostic Table
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: CDCs Influenza Diagnostic Table
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e3b29b3d-a5f7-4a1d-8775-8d0f135eeb29
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 35
+
+<p> <a>Back to Visualised </a> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 33
+
+CDC's Influenza Diagnostic Table 
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5469
+
+<p> <a class="emailLink" href="http://www.clinica.co.uk/home/features/visualised">Back to Visualised </a> </p> <p> <table> <caption class="blogTitle"> CDC's Influenza Diagnostic Table (2009) </caption> <tbody> <tr> <th>Procedure </th> <th>Influenza Types Detected </th> <th>Acceptable Specimens </th> <th>Time for Results </th> <th>Rapid result available </th> </tr> <tr valign="top"> <td><strong>Viral culture</strong> </td> <td>A and B </td> <td><p>NP swab<sup>2</sup>, throat swab, nasal wash, bronchial wash, nasal aspirate, sputum</p></td> <td>3-10<br> days<sup>3</sup></td> <td>No </td> </tr> <tr valign="top"> <td><p><strong>Immunofluorescence <br> DFA Antibody Staining</strong></p></td> <td>A and B </td> <td><p>NP swab<sup>2</sup>, nasal wash, bronchial wash, nasal aspirate, sputum </p></td> <td>2-4 hours </td> <td>No </td> </tr> <tr valign="top"> <td><strong>RT-PCR<sup>5</sup></strong></td> <td>A and B </td> <td><p>NP swab<sup>2</sup>, throat swab, nasal wash, bronchial wash, nasal aspirate, sputum</p></td> <td>2-4 hours </td> <td>No </td> </tr> <tr valign="top"> <td><strong>Serology</strong> </td> <td>A and B </td> <td><p>paired acute and convalescent serum samples<sup>6</sup> </p></td> <td>2 weeks or more </td> <td>No </td> </tr> <tr valign="top"> <td><p><strong>Enzyme Immuno Assay<br> (EIA)</strong></p></td> <td>A and B </td> <td><p>NP swab<sup>2 </sup>, throat swab, nasal wash, bronchial wash</p></td> <td>2 hours </td> <td>No </td> </tr> <tr valign="top"> <td bgcolor="#ebebeb" colspan="5"><strong>Rapid Diagnostic Tests</strong> </td> </tr> <tr valign="top"> <td><p><strong>3M<sup>&trade;</sup> Rapid Detection<br> Flu A+B Test (3M)</strong></p></td> <td>A and B</td> <td>NP<sup>2</sup> swab/aspirate; Nasal wash/aspirate</td> <td>15 minutes</td> <td>Yes </td> </tr> <tr> <td><p><strong>Directigen Flu A<sup>7</sup><br> (Becton-Dickinson)</strong></p></td> <td>A </td> <td>NP<sup>2</sup> wash/aspirate/swab; throat swab</td> <td>less than 15 minutes</td> <td>Yes </td> </tr> <tr valign="top"> <td><p><strong>Directigen Flu A+B<sup>7,9</sup><br> (Becton-Dickinson)</strong></p></td> <td>A and B </td> <td><p>NP<sup>2</sup> wash/aspirate/swab; lower nasal swab; throat swab; bronchioalveolar lavage</p></td> <td>less than 15 minutes</td> <td>Yes </td> </tr> <tr valign="top"> <td><p><strong>Directigen EZ Flu A+B<sup>7,9</sup><br> (Becton-Dickinson)</strong></p></td> <td>A and B </td> <td><p>NP<sup>2</sup> wash/aspirate/swab; lower nasal swab; throat swab; bronchioalveolar lavage</p></td> <td>less than 15 minutes</td> <td>Yes </td> </tr> <tr> <td><p><strong>BinaxNOW Influenza A&amp;B<sup>8,9</sup> <br> (Inverness)</strong></p></td> <td>A and B</td> <td>Nasal wash/aspirate, NP swab<sup>2</sup></td> <td>less than 15 minutes</td> <td>Yes</td> </tr> <tr valign="top"> <td><p><strong>OSOM<sup>&reg;</sup> Influenza A&amp;B<sup>9</sup><br> (Genzyme)</strong></p></td> <td>A and B</td> <td>Nasal swab</td> <td>less than 15 minutes</td> <td>Yes</td> </tr> <tr valign="top"> <td><p><strong>QuickVue Influenza Test<sup>4,8</sup><br> (Quidel)</strong></p></td> <td>A and B</td> <td><p>NP swab<sup>2</sup>, nasal wash,<br> nasal aspirate</p></td> <td>less than 15 minutes </td> <td>Yes </td> </tr> <tr valign="top"> <td><p><strong>QuickVue Influenza A+B Test<sup>8,9</sup><br> (Quidel)</strong></p></td> <td>A and B</td> <td><p>NP swab<sup>2</sup>, nasal wash,<br> nasal aspirate <escenic_non_breaking_space></escenic_non_breaking_space> </p></td> <td>less than 15 minutes </td> <td>Yes </td> </tr> <tr valign="top"> <td><p><strong>SAS FluAlert<sup>7,9</sup><br> (SA Scientific)</strong></p></td> <td>A and B </td> <td>Nasal wash/aspirate </td> <td>less than 15 minutes </td> <td>Yes</td> </tr> <tr valign="top"> <td><p><strong>TRU FLU<sup>7,9</sup><br> (Meridian Bioscience) </strong></p></td> <td>A and B</td> <td><p>Nasal wash/swab, NP aspirate/swab</p></td> <td>15 minutes</td> <td>Yes</td> </tr> <tr valign="top"> <td><p><strong>XPECT Flu A&amp;B<sup>7,9</sup><br> (Remel)</strong></p></td> <td>A and B </td> <td>Nasal wash, NP swab<sup>2</sup>, throat swab </td> <td>less than 15 minutes</td> <td>Yes </td> </tr> <tr valign="top"> <td class="footnote" colspan="5"><ol> <li>List may not include all test kits approved by the U.S. Food and Drug Administration.</li> <li>NP = nasopharyngeal.</li> <li>Shell vial culture, if available, may reduce time for results to 2 days.</li> <li>Does not distinguish between influenza A and B virus infections.</li> <li>RT-PCR = reverse transcriptase polymerase chain reaction.</li> <li>A fourfold or greater rise in antibody titer from the acute- (collected within the 1st week of illness) to the convalescent-phase (collected 2-4 weeks after the acute sample) sample is indicative of recent infection.</li> <li>Moderately complex test &ndash; requires specific laboratory certification.</li> <li>CLIA-waived test. Can be used in any office setting. Requires a certificate of waiver or higher laboratory certification.</li> <li>Distinguishes between influenza A and B virus infections.</li> </ol> <p><em><strong>Disclaimer: Use of trade names or commercial sources is for identification only and does not imply endorsement by the Centers for Disease Control and Prevention or the Department of Health and Human Services</strong><br> Source: <a href="http://www.cdc.gov/flu/professionals/diagnosis/labprocedures.htm" target="_blank" class="optionsLink">CDC </a></em></p></td> </tr> </tbody> </table> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+CDCs Influenza Diagnostic Table
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T231259
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT005208
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 33
+
+CDC's Influenza Diagnostic Table 
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+176655
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T160811Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e3b29b3d-a5f7-4a1d-8775-8d0f135eeb29
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T031259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

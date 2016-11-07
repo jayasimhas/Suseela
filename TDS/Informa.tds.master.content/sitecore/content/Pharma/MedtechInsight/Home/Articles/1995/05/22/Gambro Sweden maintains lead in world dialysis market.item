@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {300D3DAD-0BAA-4C62-BAAE-67EF399DE17F}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/22/Gambro Sweden maintains lead in world dialysis market
+parent: {CB727767-92C8-476E-A342-D78AA11E5EF5}
+name: Gambro Sweden maintains lead in world dialysis market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 981de644-135e-470a-a4bf-9959c9bf276d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 296
+
+<p>Gambro (Sweden) holds around 18% of the SKr 35,000 million ($5,000 million) world dialysis products market, according to the company's 1994 annual report. Renal care sales of SKr 6,389 million accounted for just over 65% of total 1994 sales of SKr 9,807 million (see Clinica No 646, p 11).</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Gambro (Sweden) maintains lead in world dialysis market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4948
+
+<p>Gambro (Sweden) holds around 18% of the SKr 35,000 million ($5,000 million) world dialysis products market, according to the company's 1994 annual report. Renal care sales of SKr 6,389 million accounted for just over 65% of total 1994 sales of SKr 9,807 million (see Clinica No 646, p 11).</p><p>The number of dialysis patients worldwide is growing at approximately 9% annually, Gambro estimates. It ranks as the world's leading haemodialysis company in competition with Baxter (US) and <strong>[C#198601363:Fresenius]</strong> (Germany), and is "the clear market leader" in the areas of dialysis machines, blood lines and dialysers. Baxter ranks first in peritoneal dialysis, followed by Fresenius, Gambro claims.</p><p>Renal care products introduced during the year included the Hemospal and Prisma systems for the treatment of acute kidney failure, while clinical trials with the PD 101 automated peritoneal dialysis machine continued. Gambro's peritoneal dialysis products were approved for sale in Japan during the year. Increased resources have been made available to the company's Chinese operations, with a plant for the production of blood lines under construction in Shanghai.</p><p>cardiovascular surgery</p><p>Gambro values the global cardiovascular surgery market at just over SKr 7,000 million with an annual growth rate of 4%. Growth in the US is only 2-3%, while in Asia the market is increasing around 4-5% per year, the company believes. Gambro claims a 20% share of the world market for oxygenators. Its competitors in the world cardiovascular surgery market are US companies <strong>[C#198600185:Medtronic]</strong>, Baxter and CR Bard as well as Italy's Sorin.</p><p>During 1994, Gambro launched the Optima hollow-fibre oxygenator, a compact device with capillary membranes which was "very well received by the market". Another compact oxygenator featuring a flat sheet membrane is in a start-up phase which is expected to end during the first half of 1995. One of Gambro's current cardiovascular research projects is focusing on the development of biocompatible surfaces using Surface Modified Additives (SMAs) for oxygenators, blood lines and other accessories. Currently Gambro's competitors only offer surfaces treated with heparin, which can cause adverse effects, the company says. SMA-treated plastics are due to enter clinical trials in Europe during 1995.</p><p>blood component technology</p><p>Gambro estimates the "rapidly expanding" blood component technology market to be worth over SKr 2,000 million. It names its principal competitors within this market as US companies Baxter and Haemonetics. Gambro has exclusive worldwide rights to market Aastrom Biosciences' stem cell production system, which received US FDA approval to enter clinical trials earlier this year (see Clinica No 637, p 15). The Swedish company will be responsible for clinical trials with the system outside the US and is collaborating with Aastrom on the development of additional techniques for the ex vivo cultivation of stem cells - an area with "major future potential".</p><p>health care services</p><p>Gambro is capitalising on the global trend towards privatisation of dialysis clinics through its 53% holding in REN, the US dialysis clinic chain. Nearly 140,000 of the 200,000 dialysis patients in the US are now treated at clinics which are part of a chain or are otherwise privately owned, Gambro says. The proportion of clinics in Europe which are privately owned has risen from 19% in 1988 to 26% today.</p><pre>Sales by Geographical Region 1994 (SKr million) Sales 1994 1993 Europe 6,123 5,774 N America 4,237 3,766 Asia incl Australia 798 642 Operating income 1994 1993 Europe 1,010 1,037 N America 454 351 Asia incl Australia 16 5</pre><p>first-quarter results</p><p>Adjusted for exchange rate effects and divestments, Gambro's first-quarter sales grew 11% to SKr 2,490 million (unadjusted growth was 4%). Pre-tax profits rose 14% to SKr 302 million.</p><pre>Sales By Business Area - 1995 1st Qtr (SKr million) 1995 1994 % change Renal care 1,692 1,565 +9 Cardiovascular surgery 293 308 +0 Blood component technology 199 166 +25 Health care services 329 263 +34 Internal sales -23 -10 TOTAL 2,490 2,392 +11</pre><p>Despite the lacklustre performance of the cardiovascular surgery division, volume sales of oxygenators in the US were up 9% during the quarter, albeit at slightly lower price levels. Gambro sold its patient monitoring business, which had sales of around SKr 105 million in 1994, to US company Maxxim Medical in February (see Clinica No 650/51, p 13).</p><p>During the quarter, REN established or acquired six new dialysis clinics and now treats a total of around 5,300 patients. A preliminary agreement was reached on the acquisition of France's largest private clinic, the Residence du Parc in Marseilles, which treats some 350 dialysis patients. The acquisition is expected to be completed in mid-1995.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Gambro Sweden maintains lead in world dialysis market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950522T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950522T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950522T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052718
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Gambro (Sweden) maintains lead in world dialysis market
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198600185,198601363
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254527
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184252Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+981de644-135e-470a-a4bf-9959c9bf276d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184252Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

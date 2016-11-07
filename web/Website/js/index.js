@@ -180,6 +180,22 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function(){
+	
+
+	//AM Charts
+	if($('#amchartData') && $('#amchartData').length){
+	var amchartVal = JSON.parse($('#amchartData').val()),
+	createNewObj = {};
+	for(prop in amchartVal){
+		if(prop != 'dataProvider'){
+			createNewObj[prop] = amchartVal[prop];
+		}else{
+			createNewObj[prop] = chartDataVal; 
+		}
+	}
+
+	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
+	}
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
@@ -568,7 +584,7 @@ $(document).ready(function(){
         observe: '.form-email-article',
         successCallback: function(form) {
             $('.js-email-article-form-wrapper').hide();
-            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
+            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val().split(';').join('; '));
             $('.js-email-article-success').show();
 
             // Reset the Email Article pop-out to its default state when closed
@@ -744,17 +760,33 @@ $(document).ready(function(){
         });
 		
         $('.show-demo').click(function(){
+			
             $(this).closest('.js-toggle-demo').toggleClass('collapsed');
-				
+			//IPMP-616	
             if($(this).parent().hasClass('collapsed')){
+			sessionStorage.setItem("mykey", "false"); 
                 $('.hd').show();
                 $('.sd').hide();
+				$('.toggle-demo').show();
             }else{
+			sessionStorage.setItem("mykey", "true"); 
                 $('.sd').show();
                 $('.hd').hide();
+				$('.toggle-demo').hide();
             }
+			var persistedval=sessionStorage.getItem("mykey");
+			 if(persistedval == "false"){
+				$('.toggle-demo').show();
+			 }else{
+			 $('.toggle-demo').hide();
+			 }
         });
-		 
+		var persistedval=sessionStorage.getItem("mykey");
+		 if(persistedval == "false"){
+				$('.toggle-demo').show();
+			 }else{
+			 $('.toggle-demo').hide();
+			 }
 
     })();
 

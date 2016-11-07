@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {282F5314-DDDA-406F-A82D-8F63798FA5EE}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Merger and Acquisition deals in 1994
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Merger and Acquisition deals in 1994
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: e31e7bd0-f77c-4864-b80f-e682570d5daa
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 491
+
+<p>M&A activity in the medtech sector accelerated at an unprecedented rate in 1994. About half of the top 25 companies were involved in major M&A deals. These disposals and purchases decided last year will begin to show up in the 1994 results, but their full impact will only be reflected in the 1995 figures. To give an indication of the extent and severity of these changes, some hypothetical adjustments to the 1993 league table have been made to take into account the 1994 M&A deals.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+Merger and Acquisition deals in 1994
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4792
+
+<p>M&A activity in the medtech sector accelerated at an unprecedented rate in 1994. About half of the top 25 companies were involved in major M&A deals. These disposals and purchases decided last year will begin to show up in the 1994 results, but their full impact will only be reflected in the 1995 figures. To give an indication of the extent and severity of these changes, some hypothetical adjustments to the 1993 league table have been made to take into account the 1994 M&A deals.</p><p>a hypothetical league table</p><p>The company to advance most in 1993, Johnson & Johnson, would have further narrowed the gap with Baxter in such a hypothetical setting. J&J would have added $535 million of Kodak's clinical diagnostics sales to its own. Baxter's turnover would have eliminated $700 million with the sale of its diagnostics division. The difference in sales between the two companies would have declined to about $2,800 million as opposed to the more than $4,000 million that occurred in 1993. Number three in the rankings, Siemens, would have slipped further because of the sale to St Jude of its pacemaker division.</p><p>Among the smaller companies - those with annual sales of between $1,000 million and $2,000 in the 1993 table - the hypothetical winners include Roche. However, its advance is likely to be short-lived since it has agreed to sell Syva in 1995. (Behringwerke being tipped as a likely purchaser). On the other hand, Roche could be aiming to become a larger player in the clinical laboratories field, possibly by becoming the majority owner of the company set up after a merger of Roche's clinical labs operations with National Health Labs. A more permanent advance in the rankings would come from B Braun Melsungen if the acquisition of Davis & Geck goes through. The deal is still being negotiated with Davis & Geck's new owner, American Home Products (AHP).</p><p>AHP was probably the main story in medtech M&A in 1994. On its 1993 results it ranks around 30 in the sales table. If its 1994 acquisitions were included - the purchase of American Cyanamid, even without Davis & Geck, more than offsetting the earlier sale of Corometrics - AHP would rank around 20th. <strong>[C#198600199:Pfizer]</strong> would have moved up into the top 20 through its purchase of Namic. Despite its purchase of 49.9% of Chiron, Ciba-Geigy's position would be unchanged since as the minority owner it does not consolidate any Chiron sales. However, Ciba has the option to increase its holding in five years' time. Meanwhile, with Ciba's transfer of its diagnostics operations to Chiron, Ciba will slip to around 40th position in the medtech ranking. Further down the league table, CR Bard has been a moderate purchaser (Vas-Cath and German company Angiomed).</p><p>future entrants into the top 25?</p><p>Italian company <strong>[C#198900374:Bracco]</strong>, on the other hand, could advance into the top 25 next year as its annual sales approach $1,000 million via the purchase of Squibb Diagnostics. So, indeed, might Boston Scientific which in 1994 acquired Scimed and the smaller companies CVIS and Antheor. With the Ciba Corning diagnostics business transferred to the Californian company, Chiron is expected to move into the top 25 table this year.</p><p>A major new entrant is US investment company Bain Capital which bought Lilly's Physio-Control and Baxter's diagnostics, probably getting close to a combined medtech turnover of $900 million, which would rank it around 30th.</p><p>slippage</p><p>Among the losers are those that have decided to leave the sector altogether or limit their activities. <strong>[C#198600152:Eli Lilly]</strong>, ranked 16th in 1993, broke up its medtech business last year, leaving Guidant ranked around 30th. <strong>[C#198601245:Bristol-Myers Squibb]</strong>, ranked number 11 in 1993, would have slipped in the table on the sale to Bracco of its diagnostics business. Smith & Nephew left the eye care market, selling its intra-ocular lens business to <strong>[C#198601285:Allergan]</strong>, but this was more of a damage limitation exercise in a diversification gone wrong. Smith & Nephew would have slipped only slightly in our hypothetical ranking.</p><p>On the following two pages a list of 1994 M&A activities has been compiled according to the deal announcement date. Not all have been completed. Still up for sale are Lilly's two diagnostics companies, <strong>[C#198601109:Hybritech]</strong> and Pacific Biotech; and Roche's Syva and its French subsidiary ABX. Rumours abound about other businesses that might be up for disposal, therefore a busy 1995 for mergers & acquisitions can be expected.</p><p>In the spring Clinica will update the ranking and publish the 1994 league table covering at least the top 100 companies.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+Merger and Acquisition deals in 1994
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051009
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+Merger and Acquisition deals in 1994
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 59
+
+198600199,198601109,198600152,198601245,198900374,198601285
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252778
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183723Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e31e7bd0-f77c-4864-b80f-e682570d5daa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183723Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

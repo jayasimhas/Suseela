@@ -684,7 +684,7 @@ function createJSONData(alltables, UserPreferences) {
 			    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
 			    datarowNo = $(currenttabtrs[j]).attr('data-row');
 
-			var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+			var followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 			var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
 
 			alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
@@ -694,7 +694,7 @@ function createJSONData(alltables, UserPreferences) {
 	sendHttpRequest(UserPreferences);
 }
 
-function sendHttpRequest(UserPreferences, setFlag) {
+function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 	$.ajax({
 		url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
 		data: { 'UserPreferences': JSON.stringify(UserPreferences) },
@@ -704,14 +704,15 @@ function sendHttpRequest(UserPreferences, setFlag) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
-				if (setFlag == 'register') {
+				if (setFlag == 'register' && redirectUrl == 'href') {
 					window.location.href = $('.registrationBtn').attr('href');
+				} else if (setFlag == 'register' && redirectUrl == 'name') {
+					window.location.href = $('.registrationBtn').attr('name');
 				}
 			} else {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
@@ -723,7 +724,6 @@ function sendHttpRequest(UserPreferences, setFlag) {
 				if (setFlag == 'register') {
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				} else {
 					$('.alert-error.myview-error p').html(data.reason);
 					$('.alert-error.myview-error').show();
@@ -742,6 +742,24 @@ function setDataRow(allpublications) {
 			$(newtrs[v]).attr('data-row', v + 1);
 		}
 	}
+}
+
+function showModal() {
+	$('.modal-overlay').addClass('in');
+	$('.modal-view').show();
+}
+
+function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
+	for (var i = 0; i < alltrs.length; i++) {
+		var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
+		    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
+		    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
+		    channelOrder = $(alltrs[i]).attr('data-row'),
+		    followStatus = secondtd == $('#followingButtonText').val() ? true : false;
+
+		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+	}
+	sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
 
 function sort_table(tbody, col, asc, sortstatus) {
@@ -797,6 +815,22 @@ function sort_table(tbody, col, asc, sortstatus) {
 }
 
 $(function () {
+	$('a').click(function (e) {
+		if ($('#validatePriority').val() == "true") {
+			if (!$(this).hasClass("validationChk")) {
+				e.preventDefault();
+				showModal();
+			}
+		}
+	});
+
+	$('form').submit(function () {
+		if ($('#validatePriority').val() == "true") {
+			showModal();
+			return false;
+		}
+	});
+
 	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
 		var $this = $(this),
 		    curpublicPan = $this.closest('.publicationPan'),
@@ -809,8 +843,8 @@ $(function () {
 		div.find('.unfollowAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
-
+		$lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
+		$('#validatePriority').val(true);
 		for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
 			$(tbody.find('.followrow')[i]).attr('draggable', true);
 		}
@@ -835,7 +869,8 @@ $(function () {
 		div.find('.followAllBtn').removeClass('hideBtn');
 		curpublicPan.find('.firstrow .lableStatus').val('followlbl');
 		curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
+		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
+		$('#validatePriority').val(false);
 		for (var i = 0; i < $lgfollowing.length; i++) {
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
 		}
@@ -853,11 +888,16 @@ $(function () {
 		followrow.attr('draggable', true);
 		$('#validatePreference').val(1);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
-		$this.addClass('followingBtn').removeClass('followBtn').html('Following');
+		$this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 		setClsforFlw(table);
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
 		table.find('.followAllBtn').removeClass('fr');
+
+		if (trs.hasClass('followingrow')) {
+			$('#validatePriority').val(true);
+		}
+
 		if ($('.followrow.disabled.frow', table).length) {
 			followrow.appendTo(followrow.clone().insertBefore(table.find('.followrow.disabled.frow')));
 		} else {
@@ -884,7 +924,7 @@ $(function () {
 		    disabledtrs = $this.closest('tbody').find('.followrow.disabled'),
 		    trsfollow = $this.closest('tbody').find('tr.followrow');
 		followingrow.addClass('followrow disabled').removeClass('followingrow');
-		$this.addClass('followBtn').removeClass('followingBtn').html('Follow');
+		$this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 		followingrow.clone().appendTo($this.closest('tbody'));
 		followingrow.remove();
 		$('#validatePreference').val(1);
@@ -898,13 +938,14 @@ $(function () {
 		if (trs.length === trsfollow.length + 1) {
 			unfollowAllBtn.addClass('hideBtn');
 			followAllBtn.removeClass('hideBtn');
+			$('#validatePriority').val(false);
 		} else {
 			followAllBtn.removeClass('hideBtn');
 			unfollowAllBtn.removeClass('hideBtn');
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.mobileMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .mobileMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -972,7 +1013,7 @@ $(function () {
 		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a.desktopMode', function () {
+	$('.publicationPan').on('click', '.accordionImg .desktopMode', function () {
 		var $this = $(this),
 		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
@@ -1003,7 +1044,7 @@ $(function () {
 			$(window).scrollTop(position.top);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
-			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
 			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 			allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 			thead.find('tr').removeClass('hidden');
@@ -1027,14 +1068,15 @@ $(function () {
 	var tables = $('.publicationPan table');
 	setClsforFlw(tables);
 
-	$('.saveview').click(function () {
+	$('.saveview').click(function (e) {
 		var alltables = $('.table'),
 		    allpublicationsEles = $('.publicationPan'),
-             isChannelLevel = $('#isChannelBasedRegistration').val(),
-		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel },
+		    isChannelLevel = $('#isChannelBasedRegistration').val(),
+		    UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
+		e.preventDefault();
 		setDataRow(allpublications);
 		allpublicationsEles.removeAttr('data-row');
 		for (var i = 0; i < allpublicationsEles.length; i++) {
@@ -1049,44 +1091,47 @@ $(function () {
 	$('.registrationBtn').click(function (e) {
 		var table = $('.table', '.publicationPan'),
 		    alltrs = table.find('tbody tr'),
-            isChannelLevel = $('#isChannelBasedRegistration').val(),
+		    isChannelLevel = $('#isChannelBasedRegistration').val(),
 		    UserPreferences = { "IsNewUser": true, "IsChannelLevel": isChannelLevel },
 		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 
 		e.preventDefault();
-		if ($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
-			$('.alert-error.register-not-selected').show();
+		if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'name');
 			return false;
 		}
-
-		setDataRow(allpublications);
-
-		if (!!$('#isChannelBasedRegistration').val()) {
-			for (var i = 0; i < alltrs.length; i++) {
-				var eachrowAttr = $(alltrs[i]).find('input[type=hidden]').attr('data-row-topic'),
-				    channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
-				    secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
-				    channelOrder = $(alltrs[i]).attr('data-row'),
-				    followStatus = secondtd.toLowerCase() == 'following' ? true : false;
-
-				UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+		if ($('#validatePriority').val() == "false") {
+			if ($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
+				$('.alert-error.register-not-selected').show();
+				return false;
 			}
-			sendHttpRequest(UserPreferences, 'register');
+			setDataRow(allpublications);
+
+			if (!!$('#isChannelBasedRegistration').val()) {
+				sendRegisterData(alltrs, UserPreferences, 'href');
+			} else {
+				createJSONData(table, UserPreferences);
+			}
 		} else {
-			createJSONData(table, UserPreferences);
+			setDataRow(allpublications);
+			sendRegisterData(alltrs, UserPreferences, 'href');
 		}
 	});
 
 	$('.gotoview').click(function (e) {
-		if (+$('#validatePreference').val()) {
-			e.preventDefault();
-			$('.modal-overlay').addClass('in');
-			$('.modal-view').show();
+		if ($('#validatePriority') && $('#validatePriority').val() == "true") {
+			showModal();
+		} else {
+			if (+$('#validatePreference').val()) {
+				e.preventDefault();
+				showModal();
+			}
 		}
 	});
 
-	$('.close-modal').click(function () {
+	$('.close-modal, .cancel-modal').click(function () {
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
@@ -1221,13 +1266,13 @@ $(function () {
 "use strict";
 
 function loadLayoutOneData(data, idx) {
-	var loadData = loadPreferanceId["Sections"][idx]["Name"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</span><a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += loadPreferanceId["Sections"][idx].Id ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].Id + '">' : '';
+	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><a href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</a></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div data-pageSize="' + data.loadMore.pageSize + '" data-pageNo="' + data.loadMore.pageNo + '" data-loadurl="' + data.loadMore.loadMoreLinkUrl + '" data-taxonomyIds="' + data.loadMore.taxonomyIds + '" class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 
 	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -1250,14 +1295,13 @@ function createLayoutInner1(data) {
 
 	var articleData = '';
 	articleData = '<section class="article-preview topic-featured-article">';
-	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '';
+	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-metadata">';
 	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">' + bookmarkTxt + ' <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
 	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
@@ -1285,7 +1329,6 @@ function createLayoutInner1(data) {
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
 	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -1314,7 +1357,6 @@ function createLayoutInner1(data) {
 	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
 	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
 	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -1420,14 +1462,15 @@ function createLayoutInner1(data) {
 }
 
 function loadLayoutTwoData(data, idx) {
-	var loadData = loadPreferanceId["Sections"][idx]["Name"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</span><a class="editView mobview"  href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview"  href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += loadPreferanceId["Sections"][idx].Id ? '<div class="eachstory layout2" id="' + loadPreferanceId["Sections"][idx].Id + '">' : '';
+	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout2" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner2(data);
 	loadData += '</div>';
 
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><a href="' + loadmoreLink + '"> ' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["Name"] + '</a></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div data-pageSize="' + data.loadMore.pageSize + '" data-pageNo="' + data.loadMore.pageNo + '" data-loadurl="' + data.loadMore.loadMoreLinkUrl + '" data-taxonomyIds="' + data.loadMore.taxonomyIds + '" class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+
 	loadData += '</div>';
 
 	loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -1448,7 +1491,7 @@ function createLayoutInner2(data) {
 
 	var articleData = '<div class="latest-news__articles">';
 	articleData += '<section class="article-preview article-preview--small preview2">';
-	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '';
+	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-metadata">';
 	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
@@ -1457,7 +1500,7 @@ function createLayoutInner2(data) {
 	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
-	articleData += data.articles[0].listableImage ? data.articles[0].listableImage : '<img class="topic-featured-article__image2 hidden-xs" src="/dist/img/article-img2.jpg">';
+	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-preview__inner-wrapper">';
 	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag">' + data.articles[0].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
@@ -1608,9 +1651,11 @@ function createLayoutInner2(data) {
 $(function () {
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
-	    loadLayoutData = '';
+	    loadLayoutData = '',
+	    getLiIdx;
 	if (typeof loadPreferanceId !== "undefined") {
 		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+		getLiIdx = loadPreferanceId.DefaultSectionLoadCount;
 		for (var i = 0; i < loadDynData; i++) {
 			var setId = loadPreferanceId["Sections"];
 			if (setId.length) {
@@ -1618,16 +1663,19 @@ $(function () {
 					if (idx < loadPreferanceId["DefaultSectionLoadCount"]) {
 						$.ajax({
 							//url: '/api/articlesearch?pId=980D26EA-7B85-482D-8D8C-E7F43D6955B2&pno=1&psize=9',
-							url: '/api/articlesearch?pId=' + setId[idx].Id + '&pno=1&psize=9',
+							//url: '/api/articlesearch?pId='+ setId[idx]["TaxonomyIds"] + '&pno=1&psize=9',
+							url: '/api/articlesearch',
+							data: JSON.stringify({ 'TaxonomyIds': setId[idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
 							dataType: 'json',
-							type: 'GET',
+							contentType: "application/json",
+							type: 'POST',
 							cache: false,
 							async: false,
 							beforeSend: function beforeSend() {
 								$('.spinnerIcon').removeClass('hidespin');
 							},
 							success: function success(data) {
-								if (data.articles && typeof data.articles === "object" && data.articles.length) {
+								if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
@@ -1642,7 +1690,7 @@ $(function () {
 								}
 							},
 							error: function error(xhr, errorType, _error) {
-								console.log('err ' + err);
+								console.log('err ' + _error);
 							}
 						});
 					}
@@ -1659,31 +1707,15 @@ $(function () {
 		    loadLayoutData;
 
 		var layout = layoutCls.indexOf('layout1') !== -1 ? 'layout1' : 'layout2';
+		var setId = loadPreferanceId["Sections"];
 
-		/*$.ajax({
-  	url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize, 
-  	dataType: 'json',
-  	type: 'GET',
-  	success: function(data){
-  		if(layout == 'layout1'){
-  			loadLayoutData = createLayoutInner1(data);
-  			$(eachstory).append(loadLayoutData);
-  		}
-  		else{
-  			loadLayoutData = createLayoutInner2(data);
-  			$(eachstory).append(loadLayoutData);
-  		}
-  	},
-  	error: function(xhr, errorType, error){
-  		console.log('err ' + err);
-  	}
-  });*/
-
-		//Below code is for testing purpose.		
 		$.ajax({
-			url: '/loaddata.json',
+			//url: '/loaddata.json?pId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize,
+			url: $this.attr('data-loadurl'),
 			dataType: 'json',
-			type: 'GET',
+			type: 'POST',
+			data: JSON.stringify({ 'TaxonomyIds': [$this.attr('data-taxonomyIds')], 'PageNo': $this.attr('data-pageNo'), 'PageSize': $this.attr('data-pageSize') }),
+			contentType: "application/json",
 			success: function success(data) {
 				if (layout == 'layout1') {
 					loadLayoutData = createLayoutInner1(data);
@@ -1694,37 +1726,43 @@ $(function () {
 				}
 			},
 			error: function error(xhr, errorType, _error2) {
-				console.log('err ' + err);
+				console.log('err ' + _error2);
 			}
 		});
-		// Till here for testing
 	});
 
-	var layout1Flag = true;
+	var layout1Flag = true,
+	    indx = 0,
+	    eachstoryLength = typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
 	$(window).scroll(function () {
 		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
 		    eachstoryMpanLast = eachstoryMpan.last(),
 		    layoutCls = eachstoryMpan.find('.eachstory').attr('class'),
-		    eachstoryLength = eachstoryMpan.length,
-		    contentHei = $('.personalisationPan').height();
-
-		if (typeof loadPreferanceId !== "undefined") {
-			if (eachstoryLength < loadPreferanceId["Sections"].length) {
-				var eachstoryId = loadPreferanceId["Sections"][eachstoryLength]["Id"];
-			} else {
-				return;
-			}
-		} else {
-			return;
-		}
+		    contentHei = $('.personalisationPan').height(),
+		    loadsection,
+		    texonomyId;
 
 		if ($(window).scrollTop() > contentHei - 400) {
 			var getscrollData;
+
+			if (typeof loadPreferanceId !== "undefined") {
+				if (eachstoryLength < loadPreferanceId["Sections"].length) {
+					eachstoryLength++;
+					getLiIdx = eachstoryLength;
+					loadsection = loadPreferanceId.DefaultSectionLoadCount + indx++;
+					texonomyId = loadPreferanceId["Sections"][loadsection]["TaxonomyIds"];
+				} else {
+					return;
+				}
+			} else {
+				return;
+			}
+
 			$.ajax({
-				url: '/loaddata.json',
-				//url: '/loaddata.json?preferenceId='+ eachstoryId + '&pno=1&psize=9',
-				data: { 'id': eachstoryId },
-				type: 'GET',
+				url: '/api/articlesearch',
+				data: JSON.stringify({ 'TaxonomyIds': texonomyId, 'PageNo': 1, 'PageSize': 9 }),
+				type: 'POST',
+				contentType: "application/json",
 				cache: false,
 				async: false,
 				dataType: 'json',
@@ -1732,16 +1770,18 @@ $(function () {
 					$('.spinnerIcon').removeClass('hidespin');
 				},
 				success: function success(data) {
-					if (eachstoryLength % 2 == 0 && layout1Flag) {
-						layout1Flag = false;
-						getscrollData = loadLayoutOneData(data, eachstoryLength);
-						$('.spinnerIcon').addClass('hidespin');
-						$('.personalisationPan').append(getscrollData);
-					} else {
-						layout1Flag = true;
-						getscrollData = loadLayoutTwoData(data, eachstoryLength);
-						$('.spinnerIcon').addClass('hidespin');
-						$('.personalisationPan').append(getscrollData);
+					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+						if (eachstoryLength % 2 == 0 && layout1Flag) {
+							layout1Flag = false;
+							getscrollData = loadLayoutOneData(data, eachstoryLength);
+							$('.spinnerIcon').addClass('hidespin');
+							$('.personalisationPan').append(getscrollData);
+						} else {
+							layout1Flag = true;
+							getscrollData = loadLayoutTwoData(data, eachstoryLength);
+							$('.spinnerIcon').addClass('hidespin');
+							$('.personalisationPan').append(getscrollData);
+						}
 					}
 				},
 				error: function error(xhr, errorType, _error3) {
@@ -1751,58 +1791,62 @@ $(function () {
 		}
 	});
 
-	$('.main-menu__hoverable a', '.main-menu__section-wrapper').click(function (e) {
-		e.preventDefault();
-		var $this = $(this),
-		    name = $this.attr('name'),
-		    getPos = $('#' + name).position(),
-		    latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
-		    subjectHei = latestSubject.height(),
-		    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
-		    liIdx = $this.closest('li').index();
+	$('.main-menu__hoverable a.myviewLink').click(function (e) {
+		if ($('#hdnMyViewPage') && $('#hdnMyViewPage').val() == "true") {
+			e.preventDefault();
+			var $this = $(this),
+			    name = $this.attr('name'),
+			    getPos = $('#' + name).position(),
+			    latestSubject = $('#' + name).closest('.eachstoryMpan').prev('.latestSubject'),
+			    subjectHei = latestSubject.height(),
+			    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
+			    liIdx = $this.closest('li').index();
 
-		if (liIdx < allstoriesLen) {
-			$(window).scrollTop(getPos.top - subjectHei * 3);
-		} else {
-			if (typeof loadPreferanceId !== "undefined") {
-				for (var i = allstoriesLen; i <= liIdx; i++) {
-					var setId = loadPreferanceId["Sections"];
-					(function (idx) {
-						$.ajax({
-							url: '/loaddata.json', //?preferenceId='+ setId[idx].Id + '&pno=1&psize=9',
-							dataType: 'json',
-							data: { 'id': setId[idx].Id },
-							type: 'GET',
-							cache: false,
-							async: false,
-							beforeSend: function beforeSend() {
-								$('.spinnerIcon').removeClass('hidespin');
-							},
-							success: function success(data) {
-								if (idx % 2 == 0) {
-									loadLayoutData = loadLayoutOneData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								} else {
-									loadLayoutData = loadLayoutTwoData(data, idx);
-									$('.personalisationPan').append(loadLayoutData);
-								}
-							},
-							error: function error(xhr, errorType, _error4) {
-								console.log('err ' + err);
-							},
-							complete: function complete(xhr, status) {
-								if (status == "success" && $('#' + name).length) {
-									setTimeout(function () {
-										var getlatestPos = $('#' + name).position();
-										if (getlatestPos) {
-											$('.spinnerIcon').addClass('hidespin');
-											$(window).scrollTop(getlatestPos.top - subjectHei);
+			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length) {
+				$(window).scrollTop(getPos.top - subjectHei * 3);
+			} else {
+				if (typeof loadPreferanceId !== "undefined") {
+					for (var i = getLiIdx; i <= liIdx + 1; i++) {
+						var setId = loadPreferanceId["Sections"];
+						(function (idx) {
+							$.ajax({
+								url: '/api/articlesearch',
+								dataType: 'json',
+								data: JSON.stringify({ 'TaxonomyIds': loadPreferanceId["Sections"][idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
+								type: 'POST',
+								cache: false,
+								async: false,
+								beforeSend: function beforeSend() {
+									$('.spinnerIcon').removeClass('hidespin');
+								},
+								success: function success(data) {
+									if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+										if (idx % 2 == 0) {
+											loadLayoutData = loadLayoutOneData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
+										} else {
+											loadLayoutData = loadLayoutTwoData(data, idx);
+											$('.personalisationPan').append(loadLayoutData);
 										}
-									}, 5);
+									}
+								},
+								error: function error(xhr, errorType, _error4) {
+									console.log('err ' + _error4);
+								},
+								complete: function complete(xhr, status) {
+									if (status == "success" && $('#' + name).length) {
+										setTimeout(function () {
+											var getlatestPos = $('#' + name).position();
+											if (getlatestPos) {
+												$('.spinnerIcon').addClass('hidespin');
+												$(window).scrollTop(getlatestPos.top - subjectHei);
+											}
+										}, 5);
+									}
 								}
-							}
-						});
-					})(i);
+							});
+						})(i);
+					}
 				}
 			}
 		}
@@ -2293,9 +2337,8 @@ function formController(opts) {
 					});
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					////var captchaResponse = grecaptcha.getResponse();
-					////if (captchaResponse !== undefined)
-					////	inputData['RecaptchaResponse'] = captchaResponse;
+					var captchaResponse = grecaptcha.getResponse();
+					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
@@ -2321,6 +2364,9 @@ function formController(opts) {
 
 								if ($(form).data('on-success')) {
 									window.location.href = $(currentForm).data('on-success');
+								}
+								if (response.redirectRequired !== undefined && response.redirectRequired) {
+									window.location.href = response.redirectUrl;
 								}
 							} else {
 								if (response.reasons && response.reasons.length > 0) {
@@ -2350,7 +2396,7 @@ function formController(opts) {
 							}, 250);
 
 							// reset captcha if available
-							//grecaptcha.reset();
+							grecaptcha.reset();
 						}
 
 					});
@@ -3835,6 +3881,21 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function () {
+
+    //AM Charts
+    if ($('#amchartData') && $('#amchartData').length) {
+        var amchartVal = JSON.parse($('#amchartData').val()),
+            createNewObj = {};
+        for (prop in amchartVal) {
+            if (prop != 'dataProvider') {
+                createNewObj[prop] = amchartVal[prop];
+            } else {
+                createNewObj[prop] = chartDataVal;
+            }
+        }
+
+        var chart = AmCharts.makeChart("chartdiv", createNewObj);
+    }
     //messaging web users
     window.dismiss = function () {
         $('.dismiss').on('click', function () {
@@ -4204,7 +4265,7 @@ $(document).ready(function () {
         observe: '.form-email-article',
         successCallback: function successCallback(form) {
             $('.js-email-article-form-wrapper').hide();
-            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
+            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val().split(';').join('; '));
             $('.js-email-article-success').show();
 
             // Reset the Email Article pop-out to its default state when closed
@@ -4373,16 +4434,33 @@ $(document).ready(function () {
         });
 
         $('.show-demo').click(function () {
-            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
 
+            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
+            //IPMP-616	
             if ($(this).parent().hasClass('collapsed')) {
+                sessionStorage.setItem("mykey", "false");
                 $('.hd').show();
                 $('.sd').hide();
+                $('.toggle-demo').show();
             } else {
+                sessionStorage.setItem("mykey", "true");
                 $('.sd').show();
                 $('.hd').hide();
+                $('.toggle-demo').hide();
+            }
+            var persistedval = sessionStorage.getItem("mykey");
+            if (persistedval == "false") {
+                $('.toggle-demo').show();
+            } else {
+                $('.toggle-demo').hide();
             }
         });
+        var persistedval = sessionStorage.getItem("mykey");
+        if (persistedval == "false") {
+            $('.toggle-demo').show();
+        } else {
+            $('.toggle-demo').hide();
+        }
     })();
 
     /* * *
@@ -6589,7 +6667,11 @@ exports.toggleIcons = toggleIcons;
                 $(dragSrcEl).hide();
                 dragSrcEl.innerHTML = oldEl.html;
                 dragSrcEl.id = oldEl.id;
-                $(dragSrcEl).insertAfter(that);
+                if ($(this).index() > $(dragSrcEl).index()) {
+                    $(dragSrcEl).insertBefore(that);
+                } else {
+                    $(dragSrcEl).insertAfter(that);
+                }
                 $(dragSrcEl).show();
                 if (settings.dropAnimation) {
                     onAnimEnd(this);
@@ -6685,10 +6767,6 @@ exports.toggleIcons = toggleIcons;
             $this.on('dragleave', settings.element, handleDragLeave);
             $this.on('drop', settings.element, handleDrop);
             $this.on('dragend', settings.element, handleDragEnd);
-
-            $this.on('touchmove', settings.element, handleDragStart);
-            $this.on('touchstart', settings.element, handleDragEnter);
-            $this.on('touchend', settings.element, handleDragEnd);
         });
     };
 })(Zepto);

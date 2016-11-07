@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {28737F28-FBC5-466D-9838-433529DBDA11}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/VC Funding 2015
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: VC Funding 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 9b2ea896-de50-4618-9f12-2c1c6a585e15
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 973
+
+<p>   <tbody> <tr> </tr> <tr> <td> <tbody> <tr> <td>Are you betting on medtech's hottest areas?<a></a><br> <em>By Tina Tan, Editor</em><br> Find out who's investing in what with Clinica's venture/growth financing table, updated regularly with the latest investment deals. </td> </tr> <tr> <td><b>VC Funding 2015</b></td> <td><a><b>VC Funding 2014</b></a></td> <td><b><a>VC Funding 2013</a></b></td> <td><b><a>FREE TRIAL</a></b></td> </tr> </tbody> </td> </tr> <tr> <td><a></a></td> <td><div><a></a></div></td> <td><a></a></td> <td><div><a></a></div></td> <td><a></a></td> <td><a></a></td> <td><a></a></td> <td><a></a></td> </tr> <tr> <td><div><a>Deals</a></div></td> <td><div><a>MandA </a></div></td> <td><div><a>Financials</a></div></td> <td><div><a>Funding </a></div></td> <td><div><a>Legal</a></div></td> <td><div><a>Start-ups and SMEs </a></div></td> <td><div><a>Market Monitor </a></div></td> <td><div><a>Google Map: MandA 2010 </a></div></td> </tr> </tbody>  <br></p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 15
+
+VC Funding 2015
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4174
+
+<p>  <table> <tbody> <tr> </tr> <tr> <td colspan="8" scope="row" widtd="101"><table> <tbody> <tr> <td colspan="4" scope="row" widtd="101">Are you betting on medtech's hottest areas?<a name="top" id="top"></a><br> <em>By Tina Tan, Editor</em><br> Find out who's investing in what with Clinica's venture/growth financing table, updated regularly with the latest investment deals. </td> </tr> <tr> <td bgcolor="#cccccc" scope="row" widtd="101"><b>VC Funding 2015</b></td> <td bgcolor="#666666" scope="row" widtd="101"><a href="http://www.clinica.co.uk/VC-Funding/VC2014/" class="optionsLink"><b>VC Funding 2014</b></a></td> <td bgcolor="#666666" scope="row" widtd="101"><b><a href="http://www.clinica.co.uk/VC-Funding/VC_2013/" class="optionsLink">VC Funding 2013</a></b></td> <td bgcolor="#666666" scope="row" widtd="101"><b><a href="http://www.clinica.co.uk/freetrial/" class="optionsLink">FREE TRIAL</a></b></td> </tr> </tbody> </table></td> </tr> <tr> <td><a href="http://www.clinica.co.uk/business/"><img src="-/media/A41DB0E6789340E3BBE2BB586EBE4293.ashx" alt="Deals" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> <td scope="row" widtd="101"><div><a href="http://www.clinica.co.uk/business/manda/"><img src="-/media/1594690D6C314ABFA668C2F281D90DEC.ashx" alt="MandA" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></div></td> <td><a href="http://www.clinica.co.uk/business/financials/"><img src="-/media/873669F6772642DC9C0C091A39B44486.ashx" alt="Financials" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> <td><div><a href="http://www.clinica.co.uk/business/funding/"><img src="-/media/B1AB1227A20C433897DB3C8B2F140E45.ashx" alt="Funding" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></div></td> <td><a href="http://www.clinica.co.uk/business/legal/"><img src="-/media/7D0516FC157A4E1F896F543962188904.ashx" alt="Legal" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> <td><a href="http://www.clinica.co.uk/business/start-upssmes/"><img src="-/media/66EE0878ED2E4CEC9D21449351C40077.ashx" alt="Start-ups and SMEs" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> <td><a href="http://www.clinica.co.uk/business/marketmonitor/"><img src="-/media/808B4B2204F542438455FA3DB83F4C28.ashx" alt="Market Monitor" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> <td><a href="http://www.clinica.co.uk/ma2/"><img src="-/media/7183F022AB364B8C8C43E7EC13518288.ashx" alt="Google Map" width="80" height="80" border="0" style="margin-left: 5px; margin-right: 5px; margin-bottom: 5px"></a></td> </tr> <tr> <td scope="row" widtd="101"><div><a href="http://www.clinica.co.uk/business/" class="optionsLink">Deals</a></div></td> <td scope="row" widtd="101"><div><a href="http://www.clinica.co.uk/business/manda/" class="optionsLink">MandA </a></div></td> <td><div><a href="http://www.clinica.co.uk/business/financials/" class="optionsLink">Financials</a></div></td> <td><div><a href="http://www.clinica.co.uk/business/funding/" class="optionsLink">Funding </a></div></td> <td><div><a href="http://www.clinica.co.uk/business/legal/" class="optionsLink">Legal</a></div></td> <td><div><a href="http://www.clinica.co.uk/business/start-upssmes/" class="optionsLink">Start-ups and SMEs </a></div></td> <td><div><a href="http://www.clinica.co.uk/business/marketmonitor/" class="optionsLink">Market Monitor </a></div></td> <td><div><a href="http://www.clinica.co.uk/ma2/" class="optionsLink">Google Map: MandA 2010 </a></div></td> </tr> </tbody> </table> <br><iframe src="//datawrapper.dwcdn.net/rAAsJ/4/" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="748" height="32849"></iframe></p> <br>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 15
+
+VC Funding 2015
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191400
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT063800
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 15
+
+VC Funding 2015
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356010
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T192703Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9b2ea896-de50-4618-9f12-2c1c6a585e15
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231400Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

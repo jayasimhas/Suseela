@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {AF0C8889-249F-46B8-9635-AB1C15D3D9E7}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/The Pink Sheet/Mapping/In Brief/In Brief paragraph style mapping/In Brief Subhead
+parent: {5C687AAC-95D0-4A88-ADB3-D583FD615B63}
+name: In Brief Subhead
+master: {00000000-0000-0000-0000-000000000000}
+template: {9F5BF3A8-74A5-464E-8A89-B14E881565D2}
+templatekey: Paragraph Style Mapping
+
+----version----
+language: en
+version: 1
+revision: fb658d36-9fc9-4bd5-a485-11e900d35bc5
+
+----field----
+field: {EC46F150-89B0-4469-950C-D8F9307D932F}
+name: MS Word Style
+key: ms word style
+content-length: 38
+
+{DE627D26-1BE3-4BF4-AE0D-B60F95AF567E}
+----field----
+field: {F87970DB-C5A1-44EB-BF03-AA5AC7BEC646}
+name: Paragraph Style
+key: paragraph style
+content-length: 38
+
+{FD685C3C-DC94-4D37-B95C-0123959316B1}
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20111014T190525
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fb658d36-9fc9-4bd5-a485-11e900d35bc5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111026T100354:634552202340986813
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

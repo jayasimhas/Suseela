@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {5B5DCF96-98F2-4CDC-9A5F-75F3E0CE6F52}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Search/vwb
+parent: {0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}
+name: vwb
+master: {00000000-0000-0000-0000-000000000000}
+template: {9C7E6D73-F5AB-4C81-8FEB-AE3377612AF2}
+templatekey: Search Listing
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 42c95bdd-2f13-48a5-9549-c29468945402
+
+----field----
+field: {9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}
+name: Items Per Page
+key: items per page
+content-length: 2
+
+60
+----field----
+field: {040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}
+name: Default Sort Order
+key: default sort order
+content-length: 38
+
+{521208F3-4B07-41C8-A07E-18EDF0E5CD7A}
+----field----
+field: {F66F3AAF-25FA-40AB-BBF7-2A3399CAF9ED}
+name: Available Sort Options
+key: available sort options
+content-length: 38
+
+{521208F3-4B07-41C8-A07E-18EDF0E5CD7A}
+----field----
+field: {EBBB5CDB-A469-46AE-AB89-FE1F11D676F0}
+name: Base Endpoint Url
+key: base endpoint url
+content-length: 18
+
+/api/informasearch
+----field----
+field: {8538E64B-69B6-44C0-829B-0826F26231DC}
+name: Index Name
+key: index name
+content-length: 25
+
+informa_content_{0}_index
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T180639Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+42c95bdd-2f13-48a5-9549-c29468945402
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160308T232158Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

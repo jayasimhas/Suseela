@@ -1,0 +1,97 @@
+----item----
+version: 1
+id: {3865D501-09CD-44A0-853D-425590B58166}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Emails Folder/New Scrip Weekly Digest/Download The Latest Script Issue
+parent: {7BCA479B-BEE6-4F10-BB91-C378502EE397}
+name: Download The Latest Script Issue
+master: {F85807F9-6281-43E9-81F1-D0FCCC54FED0}
+template: {8E5F9643-90F9-47D6-A90C-C6A3C9699801}
+templatekey: Featured Content
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 05eae16e-7fae-443c-8505-4d7d20b8a23c
+
+----field----
+field: {F089D880-B8DE-4F27-99C3-2B131620AC51}
+name: Summary
+key: summary
+content-length: 882
+
+<p class="p1">You can also visit <a href="http://click.pharmamedtechbi.net/?qs=f96451d0a94b8b67687ad56035529c5ca0480464768aed216899b560ca4c023f"><span class="s1">https://scrip.pharmamedtechbi.com/pdf-library</span></a> to access the latest issue and browse previous issues.<br />
+<br />
+You may print out this issue for your own personal use. Printing or distributing multiple copies around your company or to third parties would violate the Terms and Conditions of your subscription. For full details see: <a href="https://scrip.pharmamedtechbi.com/terms-and-conditions"><span class="s2">https://scrip.pharmamedtechbi.com/terms-and-conditions</span></a><br />
+<br />
+If you experience technical problems email us with your full name at the following address: <a href="mailto:clientservices@scripintelligence.com"><span class="s1">clientservices@scripintelligence.com</span></a></p>
+----field----
+field: {0EC4B370-65B6-4A87-A927-E3204FB4EE81}
+name: Read More Text
+key: read more text
+content-length: 0
+
+
+----field----
+field: {35A0DAA1-AC21-491A-923F-88F22EA4EF32}
+name: Read More Link
+key: read more link
+content-length: 0
+
+
+----field----
+field: {F743817C-808B-4CAD-B5B9-409A819DB7C9}
+name: Download Link Text
+key: download link text
+content-length: 12
+
+Download PDF
+----field----
+field: {7163AC7F-E9E2-408F-A6EC-8BDE5078D2D9}
+name: Download Link
+key: download link
+content-length: 166
+
+<link id="{63DABB4E-4485-45DA-B4EA-0B2D5A7C221B}" querystring="" target="" text="Download PDF" url="/Pharma/ScripIntelligence/Home/PDF Library" linktype="internal" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160815T192136Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+05eae16e-7fae-443c-8505-4d7d20b8a23c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160912T125551Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

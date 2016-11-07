@@ -74,7 +74,7 @@ namespace Informa.Web.ViewModels
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
                     //Take user to Personalized home page.
-                    return "/personal-home";
+                    return SiterootContext.Item?.MyView_Page?._Url;
                 }
                 else
                 {
@@ -168,22 +168,22 @@ namespace Informa.Web.ViewModels
         {
             #region reading actual subscriptions
             var subscriptions = new List<ISubscription>();
-            var channelSubscriptions = new List<ChannelSubscription>();
-            var topicSubscriptions = new List<TopicSubscription>();
+            var channelSubscriptions = new List<ChannelSubscription>();            
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
 
                 //channel based subscriptions
                 var currentPublication = SiterootContext.Item.Publication_Code;
-                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication);
-                if (userSubscriptions != null)
+                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication).FirstOrDefault();
+                if (userSubscriptions != null && userSubscriptions.SubscribedChannels != null && userSubscriptions.SubscribedChannels.Count() > 0)
                 {
-                    if (userSubscriptions.SelectMany(n => n.SubscribedChannels) != null && userSubscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
+                    
+                    if (userSubscriptions.SubscribedChannels.FirstOrDefault().ChannelId != SiterootContext.Item.Publication_Code)
                     {
-                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedChannels))
+                        foreach (var subscription in userSubscriptions.SubscribedChannels)
                         {
-
-                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            bool isTopicsSubscribed = subscription.SubscribedTopics != null ? subscription.SubscribedTopics.Any(tp => tp.ExpirationDate>DateTime.Now) : false;                            
+                            if (subscription != null && (subscription.ExpirationDate > DateTime.Now || isTopicsSubscribed))
                             {
                                 channelSubscriptions.Add(subscription);
                             }
@@ -192,16 +192,19 @@ namespace Informa.Web.ViewModels
                     }
 
                     //Topic based subscriptions
-                    else if (userSubscriptions.SelectMany(n => n.SubscribedTopics) != null && userSubscriptions.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                    else
                     {
-                        foreach (var subscription in userSubscriptions.SelectMany(n => n.SubscribedTopics))
+                        if(userSubscriptions.SubscribedChannels != null
+                            && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics) != null
+                            && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics).Count() > 0)
+                        foreach (var subscription in userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics))
                         {
-                            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                            if (!string.IsNullOrWhiteSpace(subscription.TopicId) && subscription.ExpirationDate>DateTime.Now)
                             {
-                                topicSubscriptions.Add(subscription);
+                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate});
                             }
                         }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
                     }
                     return subscriptions;
                 }

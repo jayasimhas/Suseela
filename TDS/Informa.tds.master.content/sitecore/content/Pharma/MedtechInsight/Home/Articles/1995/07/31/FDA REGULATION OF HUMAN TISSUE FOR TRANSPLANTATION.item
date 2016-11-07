@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7757E144-7F0B-4D5F-8D87-6BA6379B1221}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/31/FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANTATION
+parent: {66DED1B6-66CF-446C-8FC9-AC5734A4B3CF}
+name: FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANTATION
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 22bd736c-256e-46bd-a00b-8309f878c2b4
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 22
+
+<p>I. INTRODUCTION</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANTATION
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 19788
+
+<p>I. INTRODUCTION</p><p>US Food and Drug Administration regulation of human tissue for transplantation has been at best inconsistent and at times totally confusing. The agency's vacillation has been unfortunate since regulation of human tissue is a major public health issue. It is estimated that annually over 280,000 patients in the US receive bone, skin or other integumentary transplants and an additional 42,000 patients receive corneal transplants.</p><p>The economic impact of inconsistent regulation is also significant since annual revenues from tissue banking approach $100 million. Although there has been no comprehensive federal scheme of regulation until recently, there has been a serious attempt at self-regulation by the tissue bank industry for some time. The FDA estimates that more than 100 of the 150-200 US tissue banks are accredited by the American Association of Tissue Banks (AATB) or are undergoing accreditation. In addition, 95% of the members of the Eye Bank Association of America (EBAA) are accredited.</p><p>With the industry seeking to regulate itself, one must ask whether there is a need for the FDA to regulate this field in order to protect the public health. It is estimated by the Centers for Disease Control (CDC) that since 1985, doctors have performed well over 1 million tissue transplant operations. Only two tissue donors are known to have transmitted HIV to recipients, and the transmission of other diseases such as hepatitis or rabies has been extremely rare.</p><p>Nevertheless, FDA control has moved from almost none to significant regulation promulgated on an emergency basis. This article will discuss both the need for federal regulation and the nature of the regulation ultimately applied by the FDA.</p><p>II. FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANT AS MEDICAL DEVICES</p><p>On April 28th, 1987, the FDA issued a safety alert involving Lyodura, a human dura mater transplant material processed in Germany by B Braun Melsungen and distributed in the US. Human dura mater is the membrane that envelops the brain and spinal cord and is widely utilised for transplant in other parts of the body.</p><p>Dura mater, like most other human tissues in the 1980s, was not regulated by the FDA although the agency took the position it could regulate it as a medical device if it chose to do so. When companies actually submitted 510(k) notices for dura mater in the 1980s, they were advised to withdraw the submissions on the ground that premarket notification was not required by the agency at that time.</p><p>The Lyodura safety alert was the result of a report in the February 6th, 1987, issue of the CDC Morbidity and Mortality Weekly Report concerning the death of a 28-year-old woman from Creutzfeldt-Jakob disease (CJD) 21 months after she received a human dura mater graft during surgery. An investigation by the CDC and the FDA found that several lots of Lyodura were potentially contaminated with the prion causing CJD.</p><p>In response, the FDA requested that all processors of dura mater offered for transplant submit information on donor criteria, collection procedures, processing procedures, packing information, labelling, including lot numbering system and traceability, in-process and final testing and quality control procedures, and information on sales in the US. This was the first step in the FDA's serious evaluation of the need to regulate this area of transplantation.</p><p>Notwithstanding the Lyodura incident, it took the FDA several years to decide quite how to regulate dura mater. On November 14th, 1990, the CDRH sent a letter to all identified processors of human dura mater advising them that this product would now be regulated as a medical device. "Facilities that harvest and process human dura mater will be subject to all applicable device provisions of the Act. This includes among other things, registration, listing, compliance with the Good Manufacturing Practices (GMP) and premarket notification regulations."</p><p>The agency attached a draft guidance document advising that the premarket notification under the guidance must be submitted within 60 days of the receipt of the letter if companies intended to continue to make dura mater available to medical facilities. In response, several companies did submit 510(k) notices for processed human dura mater which has been regulated as a medical device since then.</p><p>The FDA letter also stated that heart valve allografts and human lenticules (corrective lenses derived from human corneal tissue) were also subject to regulation as devices. The agency thereafter required investigational device exemption applications (IDEs) and premarket approval applications (PMAs) for human heart valve allografts.</p><p>The regulation of human allograft heart valves raised serious legal and public health questions leading ultimately to a legal challenge. Some opponents of heart valve regulation maintained that allograft valves were made and designed by God and, from an engineering standpoint, were the most perfect implant known to mankind thus not requiring FDA regulation. Ultimately, under both political and legal pressure, the FDA rescinded its requirement for IDEs/PMAs for human heart valves while still maintaining its position that the valves were medical devices.</p><p>The agency stated in its rescission notice on October 14th, 1994, that while PMAs/IDEs were no longer necessary, the valves remained subject to all other requirements applicable to medical devices. Processors of heart valves which marketed the allografts for the first time after June 26th, 1991, are required under the rescission notice to file 510(k) notices before introduction of the valves into interstate commerce.</p><p>III. BANKED HUMAN TISSUE</p><p>The genesis of FDA regulation of banked human tissue resulted from an event not too dissimilar to the Lyodura incident. A Virginia tissue bank - LifeNet Transplant Services - had stored 61 organs and tissue grafts recovered from a man fatally shot in 1985. LifeNet twice analysed the man's blood for infectious disease before removing his organs and tissue. The blood tested negative both times but retrospective analysis in 1991 revealed HIV.</p><p>LifeNet was able to locate 34 of the more than 40 patients who received infected organs or tissue from the suspect donor. It appeared that seven of these contracted HIV and three died from AIDS-related disease. Importantly, HIV transmission only affected patients who received the man's organs; no tissue recipients were infected. The LifeNet incident caused the FDA to look once again at the need for human tissue regulation.</p><p>The event that finally led to the regulation of banked human tissue on an emergency basis did not, however, actually involve the transmission of any disease. In 1993, the FDA received information from the domestic industry that substandard tissues, including bones, ligaments, and tendons imported from foreign sources were being marketed in the US.</p><p>The FDA's Office of Special Investigations (OSI) and the Office of Criminal Investigations (OCI), acting undercover, examined blood samples from a prospective foreign source donor-cadaver. The agents reviewed the documentation of previous infectious disease testing applicable to the donor, including for hepatitis B. On retesting by the FDA, the blood was confirmed positive for hepatitis B surface antigen. The vendor, Dr Karsh from Los Angeles, told the FDA that approximately one-third of the donors from this foreign source who tested negative for hepatitis in Russia subsequently proved to be HBV-positive on retesting in the US.</p><p>Based primarily on what the FDA itself described as "isolated instances", the agency decided, on an emergency basis, to regulate the entire domestic tissue banking industry. On December 14th, 1993, the Interim Rule for Human Tissue Intended for Transplantation was published in the Federal Register, effective that day. No prior public notice was given or public comment sought. The Interim Rule is a very far-reaching regulation and came as a surprise to an industry which was unregulated one day and pervasively controlled the next.</p><p>In fairness to the FDA, one cannot say that some type of regulation of human tissue was not expected by the industry. In fact, the FDA had held public hearings on the potential for regulation of human tissue and legislation had been proposed in Congress the month before the agency issued the Interim Rule. Congressman Ron Wyden (D-Or) introduced HR 3547 on November 19th, 1993, and Senator Paul Simon (D-Il) introduced companion legislation in the Senate (S 1702) on the same day. The "Human Tissue for Transplantation Act of 1993", took quite a different tack from the regulatory requirements imposed in the Interim Rule.</p><p>The issuance of the Interim Rule without any public comment left many in the tissue banking community confused both as to the meaning of many of the provisions and the FDA's intentions in enforcing the requirements. The Interim Rule applies to any person engaged in the recovery, processing, storage or distribution of banked human tissue.</p><p>Banked human tissue intended for transplantation includes bone, ligaments, tendons, fascia, cartilage, corneas and skin. It does not apply to vascularised organs such as livers or hearts, nor tissues already subject to FDA regulation as a drug, biologic or medical device such as dura mater or demineralised bone. Under the Interim Rule, blood specimens from each tissue donor must be tested by a laboratory approved under the Clinical Laboratories Improvement Act (CLIA) using FDA-approved tests and found negative for antibodies to HIV-1 and -2 and hepatitis C; and hepatitis B surface antigen. In addition, a medical history must be obtained for each tissue donor to assure freedom from risk factors or clinical evidence of hepatitis B or C or HIV infection.</p><p>Written procedures must be followed for the testing and screening and FDA has the authority to inspect regulated facilities. Under the Interim Rule, the FDA may order the detention and recall of tissue not meeting the standards of the rule and, after an administrative hearing, the agency may order the destruction of violative tissue. The Interim Rule was so confusing on many points that on December 28th, 1993, the Center for Biologics Evaluation and Research (CBER), entity with jurisdiction under the Interim Rule, issued a "To Whom It May Concern" letter relating to "significant questions or concerns regarding the interpretation of certain provisions" of the rule.</p><p>The December 28th letter, signed by Michael Dubinsky, the Acting Director of the CBER Office of Compliance, provided the FDA's "preliminary position" on how it would interpret the specific provisions of the Interim Rule. Commissioner David Kessler has stated that following the issuance of the emergency Interim Rule, the agency would propose a second regulation addressing the tissue banking community. That, he indicated in a "Dear Health Professional" letter dated December 10th, 1993, "would require that all entities engaged in tissue banking register with FDA; that these entities have documentation of consent for donation from the donor or the next of kin; and that each of the entities have standard operating procedures governing tissue donor selection and testing as well as processing, storage, and distribution".</p><p>The FDA, in the subsequent rule, would also require that records of all "relevant activities" be kept and that tissue be labelled to assure identification to permit tracing. The second rule, Dr Kessler indicated, would be subject to a 30-day comment period. Needless to say, the imposition of such a wide-ranging scheme without any specific industry input led to what can charitably be called regulatory chaos. Subsequent inspections of regulated tissue banks have resulted in inconsistent interpretation of the Interim Rule by different FDA inspectors and district offices. Many tissue banks, totally unfamiliar with FDA regulation, voluntarily quarantined products and stopped distribution based simply upon FDA-483 Notices of Observation which are not formal findings of violative conduct. The very existence of one company, Biodynamics International of Tampa, Florida, was threatened by the FDA's inconsistent interpretations of the Interim Rule.</p><p>Biodynamics is in the business of procuring human tissue, primarily bone for transplantation, from US tissue banks and shipping the product to its facility in Germany for application of the company's proprietary viral inactivation process. The donor screening forms and other documentation utilised by Biodynamics to meet the Interim Rule were those provided by the various US tissue banks which procured the tissue for the company.</p><p>After allowing many shipments utilising this documentation, the FDA on March 9th, 1995, issued an Order for Detention, Recall and/or Destruction of the Biodynamics tissue. It stated that its review of the donor records and other documentation revealed violation of the Interim Rule, and that the tissues lacked adequate documentation of the donor's relevant medical history related to risk factors for or clinical evidence of hepatitis B, hepatitis C or HIV infection.</p><p>The primary thrust of the detention was that the donor screening forms used by the tissue banks procuring tissue for Biodynamics did not contain all the questions the FDA thought necessary. The agency based its detention order primarily on an internal agency document entitled "Guidance Concerning Application of Testing and High Risk Criteria for HIV and Hepatitis for Banked Human Tissue".</p><p>This Inspection Guidance was provided to FDA investigators in early 1994 and was subsequently revised twice. The Guidance set forth in detail what information the inspector should expect to see in a donor screening form and what testing was necessary. The Guidance was never formally made available to industry, but was applied as if it were a regulation. The decision to bar the entrance of Biodynamics tissue to the US based upon this "secret" guidance was a shock to the company.</p><p>Moreover, the FDA's decision that the Biodynamics donor screening forms were not adequate because certain questions were not asked was also a surprise since the Interim Rule directly stated: "FDA is not specifying in these regulations what specific questions should be asked of the donor or the next-of-kin but only that such procedures be in place and in use by the establishments which procured tissue." Biodynamics responded to the agency detention order by explaining that since it was now aware of the FDA's desire to have specific questions asked on the donor screening forms, those questions would prospectively be included in all new forms.</p><p>The company requested that the agency not retroactively apply a "secret" guidance to bar tissue meeting all other Interim Rule requirements from entering the US. The FDA refused. The company's existence was threatened by its inability to bring any product into the US and, therefore, on March 28th, 1995, Biodynamics filed a Complaint for Declaratory and Injunctive Relief in the US District Court for the District of Maryland. That suit sought to enjoin the FDA from applying the Inspection Guidance retroactively.</p><p>Biodynamics also questioned whether the Interim Rule, which was issued on an emergency basis without notice and comment, met the requirements of the Administrative Procedure Act (APA). At a hearing on April 14th, 1995, Chief Judge Motz issued a preliminary injunctive order against the FDA and ordered the immediate release of all the plaintiff's tissue. He found that Biodynamics would be severely harmed, possibly put out of business, if the FDA continued to bar entry of the company's product.</p><p>While Judge Motz did not overturn the entire Interim Rule, he said that he had "grave doubts as to whether or not any emergency existed". He went on to state that if an emergency did exist as a basis for issuing the rule without notice and comment, it applied to imported tissue, not tissue procured in the US. With respect to the retroactive application of the Inspection Guidance, Judge Motz said it "just isn't fair retroactively - through secret guides issued to inspectors - to say, 'well, now we're saying that these are the questions with which we say have to have been asked'.... It absolutely undermines the APA and in my view, is not to be tolerated."</p><p>The FDA later refused to release further shipments of Biodynamic's product and an additional preliminary injunction order requiring release of that product was issued by Judge Motz. The case is still in litigation.</p><p>IV. CONCLUSION</p><p>Over the last decade, the FDA's regulation of human tissue has not been well thought out. The concept that the Interim Rule had to be issued on an emergency basis without industry input is extremely questionable. Commissioner Kessler at the time issued several statements indicating that no emergency existed. For example, he said the agency was "acting to head off potential problems, not a known hazard"; that FDA investigators had undercovered "isolated instances of importation and distribution of muscular/skeletal tissue without adequate screening and testing procedures"; and "that FDA need[s] to emphasise at this time that we are not aware that any of these [screening and testing] practices have resulted in any instance of disease transmission".</p><p>Nevertheless, the tissue banking industry is now pervasively regulated by the FDA and will be even more so upon issuance of the next set of regulations. It is to be hoped that the industry will have greater input in these and the agency will live up to its promise to provide a public comment period. The FDA is under much pressure to change how it does business in this area. The AATB and the EBAA have complained vigorously about retroactive donor tissue screening requirements and the FDA's regulation of this industry generally. In an effort to meet this criticism, the FDA on June 12th, 1995, issued a draft document concerning the screening and testing of donors of human tissue intended for transplantation. The stated purpose of the draft guidance is to "provide additional opportunity for individuals to give comments to the Agency on donor screening and testing of human tissue for transplantation".</p><p>The draft document specifies in some detail donor screening and testing procedures, some of which differ from the Inspection Guidance which has been retroactively applied to the industry and to Biodynamics. The draft document indicates a more open and communicative FDA approach to the regulation of human tissue. The political climate, especially the call for FDA reform, has possibly had some effect on the FDA's sensitivity to inconsistent and confusing regulation and the enforcement of "secret" guidances. Only time will tell, however, whether more consistency and rationality can be brought to tissue regulation process. It behoves all interested companies and tissue banks to keep apprised of FDA's new initiatives in this area since the agency's direction and requirements tend to change quite rapidly.</p><p>Note:</p><p>Hogan & Hartson represented Biodynamics International in the litigation described in this article. The views expressed concerning that case and FDA tissue regulation generally are those of the author and should not be attributed to the company or the other Hogan & Hartson LLP attorneys representing Biodynamics.</p><p>Clinica's guest contributor Jonathan Kahan is a partner in the Washington, DC-based law firm of Hogan & Hartson, specialising in medical device law.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{182BFEFB-073D-44C9-9362-8746D3020389}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANTATION
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950731T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950731T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950731T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053640
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+FDA REGULATION OF HUMAN TISSUE FOR TRANSPLANTATION
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255449
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184549Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+22bd736c-256e-46bd-a00b-8309f878c2b4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184549Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

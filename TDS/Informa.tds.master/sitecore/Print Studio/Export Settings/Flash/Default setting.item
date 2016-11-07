@@ -1,0 +1,327 @@
+----item----
+version: 1
+id: {5132ADC5-54F7-4882-A479-8D763BF4CC47}
+database: master
+path: /sitecore/Print Studio/Export Settings/Flash/Default setting
+parent: {ED5760BD-C641-4CE9-9048-1E302D077AEB}
+name: Default setting
+master: {00000000-0000-0000-0000-000000000000}
+template: {6788A755-7586-4CFC-928A-0C93786A4B57}
+templatekey: FlashExport
+
+----field----
+field: {8A128861-FD1D-4368-A868-60A2C511669A}
+name: PageCurl
+key: pagecurl
+content-length: 1
+
+1
+----field----
+field: {5405ADFA-2888-4F50-AAE5-6C89FAB1AC12}
+name: SpineGradient
+key: spinegradient
+content-length: 0
+
+
+----field----
+field: {F1BB42A8-5C53-4579-B2DC-58F5314E1884}
+name: ShowCornerTease
+key: showcornertease
+content-length: 1
+
+1
+----field----
+field: {04290EC7-D657-48D4-B265-F8CB763A3E13}
+name: EdgePercentage
+key: edgepercentage
+content-length: 2
+
+20
+----field----
+field: {0E559BE6-0964-4D9D-BF4A-BAD47FDAED47}
+name: CurveQuality
+key: curvequality
+content-length: 2
+
+80
+----field----
+field: {26EE48BD-C5C2-4F36-A276-0E00D8880C83}
+name: MediaHandling
+key: mediahandling
+content-length: 10
+
+IncludeAll
+----field----
+field: {EAFB82F2-105B-40B5-BC13-662D9ED89372}
+name: FrameRate
+key: framerate
+content-length: 2
+
+24
+----field----
+field: {D784BA6C-6688-4A7F-B44E-AAE1CE199B79}
+name: GenerateHTML
+key: generatehtml
+content-length: 1
+
+1
+----field----
+field: {22ED51E2-2EFD-4F48-9745-86F3B71AF6BB}
+name: TranspBack
+key: transpback
+content-length: 0
+
+
+----field----
+field: {C1B5CE9F-381F-431D-8C0C-5EAB4F400D6D}
+name: JpegQuality
+key: jpegquality
+content-length: 6
+
+Medium
+----field----
+field: {CE88DD1A-74FD-4736-9643-7C57FDC8EF7E}
+name: Compression
+key: compression
+content-length: 9
+
+Automatic
+----field----
+field: {1142CD8F-6A10-444E-9C73-F1A2965D6F08}
+name: Resolution
+key: resolution
+content-length: 2
+
+72
+----field----
+field: {C6EE9A2E-D76C-42AE-857A-C2C05D2B7D8B}
+name: Threshold
+key: threshold
+content-length: 2
+
+72
+----field----
+field: {6CB10B23-150A-4364-B4AB-6F6C5505CCA9}
+name: ResamplingType
+key: resamplingtype
+content-length: 7
+
+Average
+----field----
+field: {E3997DB5-83E6-4C2B-A6AB-38D12D097421}
+name: Sizing
+key: sizing
+content-length: 5
+
+FitTo
+----field----
+field: {C0749AE5-B74E-4039-B59B-D17A54A4C1C5}
+name: FitToValue
+key: fittovalue
+content-length: 10
+
+1280 x 800
+----field----
+field: {6736FAFE-1751-4F69-8FE3-BA9F04C56A9D}
+name: Width
+key: width
+content-length: 3
+
+100
+----field----
+field: {6F97931A-BB29-4FC3-A30C-18F3423405EC}
+name: Height
+key: height
+content-length: 3
+
+100
+----field----
+field: {2C12798A-7A5C-4DFE-85A0-A07970208E35}
+name: ScaleValue
+key: scalevalue
+content-length: 3
+
+100
+----field----
+field: {5C220B66-C542-4ACB-B637-06E4F36E93C1}
+name: TextExport
+key: textexport
+content-length: 4
+
+Live
+----field----
+field: {48D10064-8D3B-4583-8B2B-510FC6A2FAFA}
+name: Transparency
+key: transparency
+content-length: 6
+
+Ignore
+----field----
+field: {7C0FB5E0-AD3F-411A-AE62-88F0FC12A119}
+name: UseNetwork
+key: usenetwork
+content-length: 1
+
+1
+----field----
+field: {C6EE21E7-922A-4B34-B865-19A1F9AAF920}
+name: ViewAfterExport
+key: viewafterexport
+content-length: 1
+
+1
+----version----
+language: de-DE
+version: 1
+revision: fef30e87-b2b6-41a1-a655-cb48e729d525
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 19
+
+Standardeinstellung
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142219Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fef30e87-b2b6-41a1-a655-cb48e729d525
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135324Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 01a0101a-7ea6-4854-a865-8c7cfaac0533
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20101129T164200
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+01a0101a-7ea6-4854-a865-8c7cfaac0533
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20101220T093153:634284343134880527
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
+----version----
+language: ja-JP
+version: 1
+revision: 7ef082a6-3b1c-4ba2-abd9-42768e706813
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 5
+
+既定の設定
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160623T142311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7ef082a6-3b1c-4ba2-abd9-42768e706813
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160712T135402Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {F64F3AF4-3340-4426-9C8F-B1E5E030D87D}
+database: master
+path: /sitecore/templates/User Defined/View Templates/Topic Alert Options/__Standard Values
+parent: {C22AE94D-B1D3-417A-88D1-4B152E22FC8F}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {C22AE94D-B1D3-417A-88D1-4B152E22FC8F}
+templatekey: Topic Alert Options
+
+----version----
+language: en
+version: 1
+revision: e36c773c-5bda-4e57-a07c-1165d20746cd
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160127T124926Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e36c773c-5bda-4e57-a07c-1165d20746cd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160526T152229Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

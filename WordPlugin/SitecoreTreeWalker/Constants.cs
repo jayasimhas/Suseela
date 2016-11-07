@@ -58,6 +58,7 @@ namespace InformaSitecoreWord
         public static string TableauTokenRegex = @"\[C#(.*?)\]";
 
         public static string PublicationGuid = "PublicationGuid";
+        public static string VerticalGuid = "VerticalGuid";
         public static string TAXONOMY_GUID = "{E8A37C2D-FFE3-42D4-B38E-164584743832}";
         public static string INDUSTRY_GUID = "{2DF7E486-3062-4CA7-8ED3-AC19FAE466AE}";
         public static string SUBJECT_GUID = "{A43ABF01-C3F5-4ECD-8590-81686F3130DB}";

@@ -34,9 +34,10 @@
 				padding-bottom: 5px;
 				cursor: pointer;
 				padding-top: 5px;
-				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
-				.sd{background-position: 51px 4px;}
-				.hd{background-position: 77px -15px; display: none;}
+				li a{color: #979797; text-decoration: none;  padding-right: 25px; position: relative; display: inline-block}
+				li a:after{content: ''; background: url("/dist/img/sprite-image.png") no-repeat; width: 12px; height: 7px; position: absolute; top: 4px; right: 0;}
+				.sd{&:after{background-position: -15px -144px;}}
+				.hd{&:after{background-position: -1px -160px;} display: none;}
 
 			}
 			.toggle-demo{
@@ -80,9 +81,9 @@
 							position: relative;
 							.play-icon{
 								position: absolute;
-								width: 90px;
-								height: 90px;
-								background: url("/dist/img/video-icon.png") no-repeat;
+								width: 60px;
+								height: 60px;
+								background: url("/dist/img/sprite-image.png") no-repeat -6px -450px;
 								top: 50%;
 								left: 50%;
 								margin-top: -27px;
@@ -266,7 +267,7 @@
 		}
 		.video-mini-container .embed-responsive.embed-responsive-16by9 {padding-bottom:0;}
 	
-		.article-related-content{
+		.dataTool-related-content{
 			float: left;
 			clear: both;
 			h1{
@@ -323,3 +324,6 @@
 		#chartdiv{
 			width:100% !important;
 		}
+div#feedbacklite.fbl_r{
+	top: 65px !important;
+}

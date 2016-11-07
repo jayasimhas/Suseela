@@ -1,0 +1,60 @@
+----item----
+version: 1
+id: {B04B78C8-DBAF-4F53-8E4D-760D67C32372}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Structure/Detail Page Sublayout
+parent: {D223AFD5-3382-4371-ADED-C924C825F95B}
+name: Detail Page Sublayout
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 43
+
+/Views/Structure/DetailPageSublayout.cshtml
+----version----
+language: en
+version: 1
+revision: ba54da85-8246-4724-8c2d-868b3949598b
+
+----field----
+field: {2F9EBA13-2283-4C8B-B060-5CE622DE0A9A}
+name: Description
+key: description
+content-length: 281
+
+Intended to be placed in the main-content placeholder on MainLayout.cshtml.
+Contains placeholders: full-content-top, content, right-rail, and full-content-bottom.
+The full content placeholders take up the full width of the main-content area. Content and right rail are two columns.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160713T134347Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba54da85-8246-4724-8c2d-868b3949598b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160713T134632Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

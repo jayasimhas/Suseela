@@ -121,7 +121,9 @@ $main-menu-handle-width: 70px;
 		line-height: 20px;
 	}
 }
-
+.main-menu__section-title {
+	padding-left: 30px;
+}
 .main-menu__section-title.is-active {
 
 	// For some reason, this is required for the transform to render properly
@@ -137,6 +139,16 @@ $main-menu-handle-width: 70px;
 		-webkit-transform: scaleY(1);
 		transform: scaleY(1);
 		max-height: 999px;
+	}
+	&:before {
+		background-color: $color-tree-poppy-orange;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 6px;
 	}
 }
 

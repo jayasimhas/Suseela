@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {9A8518B3-680B-4A77-8893-4FBD6B391726}
+database: master
+path: /sitecore/templates/Print Studio Templates/Publishing Engine/P_Document/__Standard Values
+parent: {B2C7D259-B0EE-4E9A-B344-30E789ADEFA6}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {B2C7D259-B0EE-4E9A-B344-30E789ADEFA6}
+templatekey: P_Document
+
+----field----
+field: {09772857-332A-4E06-A337-787F87E6C89F}
+name: Xml Renderer
+key: xml renderer
+content-length: 38
+
+{932A2542-1E0D-453E-A66A-BF9FAF5C7BC4}
+----field----
+field: {B7828D59-719C-47F2-B3DF-33A0E1A7AE42}
+name: Skip
+key: skip
+content-length: 0
+
+
+----field----
+field: {724DDDD4-E16F-4929-A615-243C90B364CE}
+name: Reference
+key: reference
+content-length: 38
+
+{D2566370-6C84-4027-8A71-CF2F14398EE1}
+----field----
+field: {88BE2787-A411-4F14-95B7-EC7E888B7F48}
+name: PageWidth
+key: pagewidth
+content-length: 17
+
+209.9999999999361
+----field----
+field: {054CEB43-B145-4B02-91A9-8F570F6AFAB4}
+name: PageHeight
+key: pageheight
+content-length: 18
+
+296.99999999946107
+----field----
+field: {D1724B01-A0E0-46CA-8D12-B5B119B6FF3B}
+name: Label1
+key: label1
+content-length: 0
+
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+150
+----version----
+language: en
+version: 1
+revision: e6e529eb-bb09-4357-9cad-9eec012e7492
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20100419T131900
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e6e529eb-bb09-4357-9cad-9eec012e7492
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160801T165435Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

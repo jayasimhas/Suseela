@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4B2C6D7F-B49C-4712-84FE-743FB4ADE585}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/17/Diagnostics league table for fiscal 1994
+parent: {22C5F4C9-3E20-450E-A15B-315DB823AD7A}
+name: Diagnostics league table for fiscal 1994
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: f029f297-ae9c-4976-8165-699d2d2f03d0
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+Diagnostics league table for fiscal 1994
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3153
+
+<p><pre>Diagnostics League Table for Fiscal 1994 Diagnostics Diagnostics revenues as % of total ($ millions) medtech & diagnostic sales Rank Company in 1994 1993 1994 1994 1 Abbott Laboratories 2,148 2,250 54% 2 Corange (B Mannheim) 1,848 1,959 77% 3 Johnson & Johnson/Kodak 1,245* 1,335* - 4 Becton Dickinson 1,104 1,138 44% 5 Bayer 981 1,001 59% 6 Coulter 750* 750* 100% 7 Behring/Syva 701 706 - 8 Dade International (1) 690 670 100% 9 Chiron/Ciba-Geigy 526 539 - 10 Beckman Instruments 482 489 100% 11 bioMerieux 388 436 100% 12 Roche 442* 434* 100% 13 DuPont 335* 335 39% 14 Instrumentation Laboratory 320* 320* 100% 15 Akzo Nobel (Organon Teknika) 277* 310* 100% 16 E Merck 243* 237* 100% 17 Sanofi 212 235 100% 18 Olympus Optical 220* 226* 18% 19 Pharmacia 212 213 40% 20 Unilever (Unipath) 176* 198* 100% 21 BioChem Pharma/Serono 150* 150* - 22 Sorin Biomedica 138 134 26% 23 Bio-Rad Laboratories 126 132 100% 24 Kyowa Medex 109* 128* 100% 25 Diagnostic Products 107 126 100% 26 Hybritech 149 124 100% 27 Eisai 96* 109* 36% 28 Murex International 80 102 100% 29 Carter-Wallace 86* 88* 40% 30 Chugai Pharmaceutical 66 77 100% 31 Altana (Byk Gulden) 52* 55* 30% 32 Warner-Lambert 47* 51* 100% 33 Incstar 43 43 100% 34 Wallac 38* 43* 70% 35 Orion 34 40 49% 36 Fujisawa Pharmaceutical 32 39 100% 37 Vickers 39* 36* 20% 38 Dantec 28 31 100% 39 Quidel 29 29 100% 40 Hycor Biomedical 24 26 100% 41 Otsuka 23* 24* 50% 42 Bracco 22 24 5% 43 Meridian Diagnostics 16 22 100% 44 Sclavo 25 21 100% 45 Diagnostic Grifols 18* 18* 100% 46 Schiapparelli 19 18 100% 47 Fresenius 15* 16* 2% 48 BioWhittaker 13 14 100% 49 CSL 10 12 100% 50 Nippon Kayaku 7 11 100% 51 I-Stat 5 11 100% Total 15,219 15,833 * Clinica estimates. Other data are based on information provided by the companies. Note: Quarterly average exchange rates were used to convert the accounting currencies into US$. 1) Dade International was bought by Bain Capital from Baxter in December 1994. All of the revenue is attributed to Dade.</pre><pre>Ranking by diagnostics revenue growth rate (companies with diagnostics sales of more than $50 million pa) Fiscal 1994 vs 1993 Country Murex International 28% Canada Diagnostic Products 18% US Chugai Pharmaceutical 17% Japan Kyowa Medex 17%* Japan Eisai 14%* Japan Unilever (Unipath) 13%* UK bioMerieux 12% France Akzo Nobel (Organon Teknika) 12%* Netherlands Sanofi 11% France Warner-Lambert 9%* US Radiometer 8% Johnson & Johnson/Kodak 7%* US Corange (Boehringer Mannheim) 6% Germany Altana (Byk Gulden) 6%* Germany AVL List 6% Abbott Laboratories 5% US Bio-Rad Laboratories 5% US Becton Dickinson 3% US Olympus Optical 3%* Japan Carter-Wallace 2%* US Chiron/Ciba-Geigy 2% US Bayer 2% Germany Beckman Instruments 1% US Behring/Syva 1% Germany Coulter 0%* US Pharmacia 0% Sweden Instrumentation Laboratory 0%* US DuPont 0%* US BioChem Pharma/Serono 0%* Canada Roche -2%* Switzerland E Merck -2%* Germany Dade International -3% US Sorin Biomedica -3% Italy Hybritech -17% US Total market 4% * Clinica estimates Note: Growth rates of non-US companies are influenced by currency changes and not identical with growth rates in accounting currencies.</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Diagnostics league table for fiscal 1994
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950717T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950717T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950717T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053373
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+Diagnostics league table for fiscal 1994
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255182
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184458Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f029f297-ae9c-4976-8165-699d2d2f03d0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184458Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

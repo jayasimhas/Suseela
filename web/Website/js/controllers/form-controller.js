@@ -103,9 +103,9 @@ function formController(opts) {
 					});
 				    //// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					////var captchaResponse = grecaptcha.getResponse();
-					////if (captchaResponse !== undefined)
-					////	inputData['RecaptchaResponse'] = captchaResponse;
+					var captchaResponse = grecaptcha.getResponse();
+					if (captchaResponse !== undefined)
+						inputData['RecaptchaResponse'] = captchaResponse;
 
 					if(!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
@@ -131,6 +131,9 @@ function formController(opts) {
 
 								if($(form).data('on-success')) {
 									window.location.href = $(currentForm).data('on-success');
+								}
+								if(response.redirectRequired !== undefined && response.redirectRequired){
+								    window.location.href = response.redirectUrl;
 								}
 							}
 							else {
@@ -161,7 +164,7 @@ function formController(opts) {
 							}), 250);							
 
 							// reset captcha if available
-							//grecaptcha.reset();
+							grecaptcha.reset();
 						}
 
 					});

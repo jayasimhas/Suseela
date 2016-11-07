@@ -30,7 +30,7 @@
         public string ArticlePageMessage => GetMessageForArticlePage();
         public string MyViewSettingsPageUrl => SiterootContext.Item?.MyView_Settings_Page?._Url;
         public string MyViewSettingsText => TextTranslator.Translate("Personalization.MyViewSettingsText");
-
+        public string WelcomeMessageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageLinkText");
         public string MyViewText => TextTranslator.Translate("Personalization.MyViewLinkText");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
@@ -47,8 +47,8 @@
                 return ((UserPreferences.Preferences != null &&
                        UserPreferences.Preferences.PreferredChannels != null &&
                        UserPreferences.Preferences.PreferredChannels.Count > 0) &&
-                       Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > 30) ||
-                       System.Web.HttpContext.Current.Request.Cookies[DISMISS_COOKIE_NAME] != null;//TODO replace 30 with the actual date coming from Salesforce
+                       Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > (DateTime.Now - Convert.ToDateTime(UserPreferences.Preferences.LastUpdateOn)).TotalDays) ||
+                       System.Web.HttpContext.Current.Request.Cookies[DISMISS_COOKIE_NAME] != null;
             }
             return true;
         }

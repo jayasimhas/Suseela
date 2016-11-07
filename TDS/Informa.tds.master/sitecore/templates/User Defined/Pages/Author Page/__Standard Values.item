@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {30BA84E8-2723-48A0-A983-C1A37D86FE53}
+database: master
+path: /sitecore/templates/User Defined/Pages/Author Page/__Standard Values
+parent: {E8FA6785-AEAD-473F-B24E-D80B8A89BE51}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {E8FA6785-AEAD-473F-B24E-D80B8A89BE51}
+templatekey: Author Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 2756
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{EC30E9E5-37FF-4C76-9D8B-33A64DAEB035}" ph="primary-header" uid="{547E9582-C89B-4F30-9614-5AEED9604A00}" /><r id="{83398B37-08CB-43A2-BC0A-7EB47E764AF4}" ph="primary-header" uid="{A7CAF092-4C6D-459A-A711-A45DAC38821C}" /><r id="{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}" ph="header-search" uid="{555B3C7F-4F9C-46C2-A94D-B8FE4E79B57D}" /><r id="{65EDEFC9-82C2-47EE-93CB-A4D9372A45C0}" ph="inner-main" uid="{0FA81593-94CD-40EF-986D-E39C18EB2A85}" /><r id="{F07FF468-C261-4E12-991A-04F2A397F541}" ph="pre-content" uid="{78BAF53F-AC3C-44AB-AB4F-44884F2CBF1A}" /><r id="{13E90600-E3DF-498E-8E21-DEDD352C3562}" ph="pre-content" uid="{03F9A1E3-EF88-4185-A579-B383AB9F4F5B}" /><r id="{E6E800CB-06CD-4AA0-90D8-454887FF9C8F}" ph="pre-content" uid="{B18144B4-EC3F-467A-A614-FD5B73BAD8A0}" /><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{6B2F664A-1468-4E34-A66B-D420DFC8CFB2}" /><r id="{CCAF8694-2292-4EC7-82FF-3179113DB767}" ph="structure" uid="{BC7CA60C-3A51-4A15-8B4C-0134BBE0C4BA}" /><r id="{94FD6003-46CB-401F-BCA8-02F73883149E}" ph="structure" uid="{B327C4BC-AC10-4459-AA92-78AE3BF2840C}" /><r ds="" id="{4B2573E1-BD9A-4DD1-A75F-F49167A5E9E2}" par="" ph="right-rail" uid="{870EA5F9-C5D3-40D8-9F9B-674209430B0D}" /><r ds="" id="{39C8CD59-AFEA-4B6C-8071-FF799AD45596}" par="Related Search&amp;Search Name" ph="profile-alert" uid="{CDD08CE3-1C8D-48A6-9CC2-660BF1BDF2CD}" /><r ds="" id="{17FDDCB4-4745-4113-9DF9-D003DD6231E9}" par="Authors&amp;Display Title=1&amp;Number To Display=%7B9AF30384-21C4-4341-A825-190E44F87A7E%7D&amp;Publications&amp;Subjects&amp;Show See All=1&amp;CompanyID" ph="profile-news" uid="{C6079856-FD42-41F2-9CED-C06DB3F0E294}" /><r ds="" id="{6E3D9252-B393-42BA-A999-9E0755CE35DE}" par="" ph="post-content" uid="{DCB1FEF0-01BA-464C-B81F-8DCE34E94323}" /><r ds="" id="{17BCF47C-A313-472D-81DB-A8D4ADA53B64}" par="" ph="post-content" uid="{7BC8E4CE-E63E-4B5E-9938-70211DDA04C4}" /><r id="{1289400E-453E-49D8-8A80-ADC1B049D094}" ph="signin-popout-form" uid="{81300AB5-EC44-4512-A960-C43AD841E2B0}" /><r id="{EB90A50A-835D-4291-A882-DA0C00E096BD}" ph="post-content" uid="{C67F3EF3-EFF1-48DB-B9F2-BE31720A48CF}" /><r ds="" id="{BF587156-9F52-4058-9729-038EA6ED8355}" par="" ph="post-content" uid="{BE1C7696-16CA-4BF4-863D-A9DDAEDE6201}" /><r id="{099DF785-B86D-45F2-B6FE-5272E8D6EE44}" ph="post-content" uid="{776BEE2E-7598-4ED2-8C09-26C992C6E1F6}" /><r id="{2889497D-2921-4BE1-BBF4-F4B4D2131231}" ph="footer" uid="{38A34358-DF82-45C9-A9ED-888EE2DB7A57}" /><r id="{B377E62F-FA4F-47DF-A141-64D79597F90E}" ph="site-debugger" uid="{0CFE0D93-33C1-4DC1-B002-59B584B04729}" /></d></r>
+----version----
+language: en
+version: 1
+revision: 5ba8fa2c-fed5-468b-bd95-77898c8685d2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 13
+
+Author Detail
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 0
+
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160701T131412Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5ba8fa2c-fed5-468b-bd95-77898c8685d2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160721T183731Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

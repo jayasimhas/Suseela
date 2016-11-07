@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {8713225F-A150-46E7-9714-4292D4161B1F}
+database: master
+path: /sitecore/content/Agri/Commodities/Globals/Navigation/Side Nav Menu/My View
+parent: {4E88BE3E-C861-428F-A6DA-A71C595DF36E}
+name: My View
+master: {00000000-0000-0000-0000-000000000000}
+template: {52109BE5-B9E6-4FEC-95EA-D257296E2F8D}
+templatekey: Navigation Header
+
+----version----
+language: en
+version: 1
+revision: 775343d2-2b3f-4773-996d-8cc92dc1dcdc
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 72
+
+<link linktype="external" url="http://google.com" anchor="" target="" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 7
+
+My View
+----field----
+field: {BBFBB899-20C6-43BC-B6DE-021E84CD5BB6}
+name: Navigation Code
+key: navigation code
+content-length: 6
+
+myview
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20161004T044126Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+775343d2-2b3f-4773-996d-8cc92dc1dcdc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20161018T101611Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

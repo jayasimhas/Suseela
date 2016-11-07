@@ -155,6 +155,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         {
             _documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
             SetArticleNumber(_documentCustomProperties.ArticleNumber);
+            SetPublicationVerticalGuid(_documentCustomProperties.PublicationGuid, _documentCustomProperties.VerticalGuid);
             string articleNumber = GetArticleNumber();
             if (!articleNumber.IsNullOrEmpty())
             {
@@ -243,9 +244,14 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             Globals.SitecoreAddin.Log("Setting article number to #" + articleNumber);
             ArticleDetails.ArticleNumber = articleNumber;
             _documentCustomProperties.ArticleNumber = articleNumber;
-            _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
+
         }
 
+        public void SetPublicationVerticalGuid(string publicationGuid, string verticalGuid)
+        {
+            _documentCustomProperties.PublicationGuid = publicationGuid;
+            _documentCustomProperties.VerticalGuid = verticalGuid;
+        }
         /// <summary>
         /// Removes local document association by removing the 
         /// document custom property for the article number
@@ -570,6 +576,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         {
             _documentCustomProperties.ArticleNumber = GetArticleNumber();
             _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
+            _documentCustomProperties.VerticalGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedVerticalGuid().ToString();
 
             InvalidStylesHighlighter highlighter = InvalidStylesHighlighter.GetParser();
             bool hasInvalidStyles = highlighter.HighlightAllInvalidStyles(Globals.SitecoreAddin.Application.ActiveDocument);
@@ -730,6 +737,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     {
                         _documentCustomProperties.ArticleNumber = ArticleDetails.ArticleNumber;
                         _documentCustomProperties.PublicationGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedPublicationGuid().ToString();
+                        _documentCustomProperties.VerticalGuid = articleDetailsPageSelector.pageArticleInformationControl.GetSelectedVerticalGuid().ToString();
                         articleDetailsPageSelector.CheckOut();
                         _documentCustomProperties.ArticleNumber = GetArticleNumber();
                         articleStatusBar1.DisplayStatusBar(true, _documentCustomProperties.ArticleNumber);

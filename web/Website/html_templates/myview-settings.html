@@ -101,6 +101,49 @@
                </button>
                Menu
             </div>
+			
+			<ul class="main-menu__section">
+				<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active">
+					<svg class="main-menu__arrow-icon  js-hoist-menu-click">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+					</svg>
+					<a href="/commercial" target="">Commercial</a>
+				</li>
+				<li class="main-menu__section-wrapper">
+					<ul>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/companies" target="" class="main-menu__section-link" name="123455-09A1-4452-9B78-0E7B64ED9632">Companies</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/companies" target="" class="main-menu__section-link" name="123456-09A1-4452-9B78-0E7B64ED9632">Pipeline Watch</a>
+						</li>
+						<li class="main-menu__hoverable">      
+							<a href="/commercial/deals" target="" class="main-menu__section-link" name="123457-09A1-4452-9B78-0E7B64ED9632">Deals</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/strategy" target="" class="main-menu__section-link" name="123458-09A1-4452-9B78-0E7B64ED9632">Strategy</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/market-access" target="" class="main-menu__section-link" name="123459-09A1-4452-9B78-0E7B64ED9632">Market Access</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/market-intelligence" target="" class="main-menu__section-link" name="123460-09A1-4452-9B78-0E7B64ED9632">Market Intelligence</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/appointments" target="" class="main-menu__section-link" name="123461-09A1-4452-9B78-0E7B64ED9632">Appointments</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/strategy" target="" class="main-menu__section-link" name="123462-09A1-4452-9B78-0E7B64ED9632">Clinical Trials</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/market-access" target="" class="main-menu__section-link" name="123463-09A1-4452-9B78-0E7B64ED9632">Approvals</a>
+						</li>
+						<li class="main-menu__hoverable">
+							<a href="/commercial/market-intelligence" target="" class="main-menu__section-link" name="123464-09A1-4452-9B78-0E7B64ED9632">Post Marketing</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
          </div>
          <div class="main__wrapper" data-request-verification-token="WeShyS9vDy3l5rBrFnq2K6Fu1jC0xiiFun6mBbE62mH4A_n1MawPiLTF9pXLMY-dEsmgC7GQCUwShq7rf6JJZN7xfWcEmOwt9ZCLev_S0K01:zhx2Rr_STiS7L78rvrOXurIcBxOQgTgU0uupB73ZMSRVMAxpwLxGeXHMAJ5Rme6JqWVGSNYK3SYGZVj1fODHLMZfGWTA91dYvw8wJihwA4Rv2QtJxcVZNgtaZ3WBN4ua0">
             <div class="general-header">
@@ -123,14 +166,7 @@
 						<p>tellus at nibh faucibus, retrum euismod lorem consequat. Pellentesque sit amet pretium mi.</p>
 					</div>
 					
-					<div class="alert-error myview-error js-form-error js-form-error-Required">
-						<svg class="alert__icon">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-						</svg>
-						<p class="page-account-contact__error">Your preferences are not saved. Please try again.</p>
-					</div>
-					
-					<div class="alert-error register-error js-form-error js-form-error-Required">
+					<div class="alert-error js-form-error js-form-error-Required">
 						<svg class="alert__icon">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
 						</svg>
@@ -150,17 +186,27 @@
 					</div>
 					
 					<div class="modal-overlay"></div>
-					<div class="modal-view">
+					<div class="modal-view preferences">
 						<p class="close-modal">X</p>
 						<h4>You didn't save your preferences. <br /> Please save your preferences.</h4>
+						
+						<div class="">
+							<span class="saveview validationChk">Save</span>
+							<span class="cancel cancel-modal">Cancel</span>
+						</div>
 					</div>
-					<input type="hidden" value="0" id="validatePreference" />
+					<!--<input type="hidden" value="0" id="validatePreference" />-->
+					<input type="hidden" value="0" id="validateRegister" />
 					
+					<input type="hidden" value="false" id="validatePriority" />
 					<input type="hidden" value="false" id="isChannelBasedRegistration" />
+					
+					<input type="hidden" name="followButtonText" id="followButtonText" value="FOLLOW" />
+					<input type="hidden" name="followingButtonText" id="followingButtonText" value="FOLLOWING" /> 
 				</div> 
 				
-				<div id="allPublicationsPan"> 
-				
+				<div id="allPublicationsPan">
+					
 					<div class="publicationPan donesubscribe" data-row="1">
 						<div class="table-responsive">
 						  <table class="table" id="publication1">
@@ -169,9 +215,6 @@
 									<th class="firstrow" style="width:100%;">
 										<h2 data-publication="name1">Publication 1</h2>
 										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
-										 <!--<div class="pub-subscription-subtitle">
-										You are subscribed to this publication. You can take a look at <a href="~/link.aspx?_id=6A5C9CD9ABEF4CAA90E6FAE85B8495B3&amp;_z=z">your subscriptions</a> at any time. 
-										</div>--> 
 									</th>
 									<th class="wd-25 firstrow"></th>
 									<th class="wd-15 firstrow">
@@ -188,14 +231,14 @@
 									<th colspan="3" class="nopad pickTxt">
 										<hr />
 									</th>
-								</tr>
+								</tr> 
 								<tr class="accordionStatus">
 									<th colspan="2">
-										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
+										<p class="pickTxt">Pick and choose.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="mobileMode expanded" href="javascript: void(0);"></a>
+											<span class="mobileMode expanded" href="javascript: void(0);"></span>
 										</div>
 									</th>
 								</tr>
@@ -215,6 +258,270 @@
 									<th>
 										<div class="accordionImg">
 											<a class="mobileMode" href="javascript: void(0);"></a>
+										</div>
+									</th>
+								</tr>
+								<tr class="accordionStatus flwBtn">
+									<th colspan="3">
+										<div class="smfollowingBtn">
+											<span class="followAllBtn">Follow All</span>
+											<span class="unfollowAllBtn">Unfollow All</span>
+										</div>
+									</th> 
+							  </tr>
+							</thead>
+							
+							<thead class="hidden-xs">
+								<tr>
+									<th class="wd-55 firstrow">
+										<h2 data-publication="name1">Publication 1</h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+										
+									</th>
+									<th class="wd-25 firstrow">
+										<div>
+											<span class="followlbl mtp hideBtn">FOLLOW</span>
+											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
+											<input type="hidden" class="lableStatus" value="followinglbl" />
+										</div>
+									</th>
+									<th class="wd-15 firstrow">
+										<div class="accordionImg">
+											<span class="desktopMode expanded" href="javascript: void(0);"></span>
+										</div>
+										<div class="rowlines">
+											<div class="vline"></div>
+											<span></span>
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+									</th>
+								</tr>
+								<tr>
+									<th colspan="3" class="pub-subscription-subtitle">
+										You are subscribed to this publication. You can take a look at <a href="~/link.aspx?_id=6A5C9CD9ABEF4CAA90E6FAE85B8495B3&amp;_z=z">your subscriptions</a> at any time. 
+									</th> 
+								</tr>
+								<tr class="accCont">
+									<th colspan="3" class="nopad">
+										<hr />
+									</th>
+								</tr>
+								<tr class="accCont">
+									<th class="wd-55 pbot"><p>Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p></th>
+									<th class="wd-25 pbot">
+										<div>
+											<span class="unfollowAllBtn">UNFOLLOW ALL</span>
+											<span class="followAllBtn">FOLLOW ALL</span>
+										</div>
+									</th>
+									<th class="wd-15"></th>
+								</tr>
+							</thead>
+							<tbody>
+							  <tr class="followrow disabled" data-row="1">
+								<td class="wd-55">ABC Animal Pharm <input type="hidden" data-row-topic="Topic 1" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="2">
+								<td class="wd-55">BCD Animal Pharm <input type="hidden" data-row-topic="Topic 2" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="3">
+								<td class="wd-55">CDE Animal Pharm <input type="hidden" data-row-topic="Topic 3" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="4">
+								<td class="wd-55">EFG Animal Pharm <input type="hidden" data-row-topic="Topic 4" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="5">
+								<td class="wd-55">FGH Animal Pharm <input type="hidden" data-row-topic="Topic 5" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="6">
+								<td class="wd-55">GHI Animal Pharm <input type="hidden" data-row-topic="Topic 6" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  
+							  <tr class="followrow disabled" data-row="7">
+								<td class="wd-55">HIJ Animal Pharm <input type="hidden" data-row-topic="Topic 7" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="8">
+								<td class="wd-55">IJK Animal Pharm <input type="hidden" data-row-topic="Topic 8" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="9">
+								<td class="wd-55">JKL Animal Pharm <input type="hidden" data-row-topic="Topic 9" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followrow disabled" data-row="10">
+								<td class="wd-55">KLM Animal Pharm <input type="hidden" data-row-topic="Topic 10" /></td>
+								<td class="wd-25">
+									<span class="followBtn">follow</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							</tbody>
+						  </table>
+						 </div>
+					</div>
+				
+					<!--<div class="publicationPan donesubscribe" data-row="1">
+						<div class="table-responsive">
+						  <table class="table" id="publication1">
+							<thead class="hidden-large">
+								<tr>
+									<th class="firstrow" style="width:100%;">
+										<h2 data-publication="name1">Publication 1</h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+									</th>
+									<th class="wd-25 firstrow"></th>
+									<th class="wd-15 firstrow">
+										<div class="rowlines">
+											<div class="vline"></div>
+											<span></span>
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+									</th>
+								</tr>
+								<tr class="accordionStatus">
+									<th colspan="3" class="nopad">
+										<hr />
+									</th>
+								</tr> 
+								<tr class="accordionStatus">
+									<th colspan="2">
+										<p class="pickTxt">Pick and choose.</p> 
+									</th>
+									<th>
+										<div class="accordionImg">
+											<a class="mobileMode expanded" href="javascript: void(0);"></a>
+										</div>
+									</th>
+								</tr>
+								<tr class="graybg">
+									<th colspan="3" class="nopad">
+										<hr />
+									</th>
+								</tr>
+								<tr class="accordionStatus hideRow flwLbl">
+									<th colspan="3">
+										<div>
+											<span class="followlbl mtp hideBtn">FOLLOW</span>
+											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
+											<input type="hidden" class="lableStatus" value="" />
 										</div>
 									</th>
 								</tr>
@@ -514,8 +821,8 @@
 							<thead class="hidden-large">
 								<tr>
 									<th class="wd-55 firstrow">
-										<h2 data-publication="name3">Publication 2</h2>
-										<div class="subscribe subscribed" data-subscribe-status="SUBSCRIBED"><a href="">SUBSCRIBED</a></div>
+										<h2 data-publication="name2">Publication 2 Publication 2 Publication 2 Publication 2 Publication 2 </h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
 									</th>
 									<th class="wd-25 firstrow"></th>
 									<th class="wd-15 firstrow">
@@ -532,24 +839,14 @@
 									<th colspan="3" class="nopad">
 										<hr />
 									</th>
-								</tr>
-								<tr class="showinview">
-									<th colspan="3">
-										<p>You are not subscribed to the publication. You can still add this to 'My View' but note you will not able to view the full content article.</p>
-									</th>
-								</tr>
-								<tr class="accordionStatus hideRow">
-									<th colspan="3" class="nopad pickTxt">
-										<hr />
-									</th>
-								</tr>
-								<tr class="accordionStatus hideRow">
+								</tr> 
+								<tr class="accordionStatus">
 									<th colspan="2">
 										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="mobileMode expanded" href="javascript: void(0);"></a>
+											<a class="mobileMode" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -559,23 +856,18 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus flwLbl">
-									<th colspan="2">
+									<th colspan="3">
 										<div>
 											<span class="followlbl mtp">FOLLOW</span>
 											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
 											<input type="hidden" class="lableStatus" value="followlbl" />
 										</div>
 									</th>
-									<th>
-										<div class="accordionImg">
-											<a class="mobileMode" href="javascript: void(0);"></a>
-										</div>
-									</th>
 								</tr>
 								<tr class="accordionStatus hideRow flwBtn">
 									<th colspan="3">
 										<div class="smfollowingBtn">
-											<span class="followAllBtn">Follow All</span>
+											<span class="followAllBtn fr">Follow All</span>
 											<span class="unfollowAllBtn hideBtn">Unfollow All</span>
 										</div>
 									</th>
@@ -706,7 +998,7 @@
 					</div>
 					
 					
-					<div class="publicationPan donesubscribe" data-row="3">
+					<div class="publicationPan dosubscribe" data-row="3">
 						<div class="table-responsive">
 						  <table class="table" id="publication3">
 							<thead class="hidden-large">
@@ -736,18 +1028,18 @@
 										<p>You are not subscribed to the publication. You can still add this to 'My View' but note you will not able to view the full content article.</p>
 									</th>
 								</tr>
-								<tr class="accordionStatus hideRow">
-									<th colspan="3" class="nopad pickTxt">
+								<tr class="accordionStatus">
+									<th colspan="3" class="nopad">
 										<hr />
 									</th>
 								</tr>
-								<tr class="accordionStatus hideRow">
+								<tr class="accordionStatus">
 									<th colspan="2">
 										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="mobileMode expanded" href="javascript: void(0);"></a>
+											<a class="mobileMode" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -757,16 +1049,11 @@
 									</th>
 								</tr>
 								<tr class="accordionStatus flwLbl">
-									<th colspan="2">
+									<th colspan="3">
 										<div>
 											<span class="followlbl mtp">FOLLOW</span>
 											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
 											<input type="hidden" class="lableStatus" value="followlbl" />
-										</div>
-									</th>
-									<th>
-										<div class="accordionImg">
-											<a class="mobileMode" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
@@ -906,11 +1193,11 @@
 							</tbody> 
 						  </table>
 						 </div>
-					</div>
+					</div>-->
 					
 				</div>
 				
-			<div class="alert-error register-error js-form-error js-form-error-Required">
+			<div class="alert-error js-form-error js-form-error-Required">
 				<svg class="alert__icon">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
 				</svg>
@@ -919,7 +1206,7 @@
 			
 			<div class="saveoption"><span class="helplink">Any Questions? <a href="/contact-us">Get in touch</a></span> 
 				<div class="complete-settings">
-				 <a class="registrationBtn" href="http://www.google.com/">Complete your registration</a>
+				 <span class="registrationBtn" href="javascript: void(0);">Complete your registration</span>
 				<span class="gotoview"><a href="javascript: void(0);">GO TO MY VIEW</a></span></div>
 		        </div> 
 			</div>

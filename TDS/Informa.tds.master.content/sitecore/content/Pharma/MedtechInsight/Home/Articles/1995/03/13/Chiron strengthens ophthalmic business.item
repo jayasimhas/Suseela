@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {73541346-F07E-4DDF-A0B0-28F34C376D58}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/13/Chiron strengthens ophthalmic business
+parent: {DD133DA8-D39B-429A-976D-1571C2F017A8}
+name: Chiron strengthens ophthalmic business
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 206056af-16b2-4489-925d-9874cb2fbac4
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 260
+
+<p>Chiron (US) is to buy the ophthalmic surgical division of Johnson & Johnson's Iolab for about $95 million. The deal has cleared all necessary US regulatory approvals. Once it is complete, Chiron will restructure the combined operations within two years.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+Chiron strengthens ophthalmic business
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3538
+
+<p>Chiron (US) is to buy the ophthalmic surgical division of Johnson & Johnson's Iolab for about $95 million. The deal has cleared all necessary US regulatory approvals. Once it is complete, Chiron will restructure the combined operations within two years.</p><p>Chiron Vision and Iolab are leading suppliers of intra-ocular lenses (IOLs) and products for cataract surgery with sales of about $100 million a year each. "The acquisition will strengthen Chiron Vision's product offering for cataract surgeries by adding a preferred viscoelastic, a diverse line of intra-ocular lenses, synergies in advanced phacoemulsification instruments and an established customer base," says Chiron.</p><p>Outlining the advantages of the deal for Chiron Vision, CEO William Link says: "Iolab's Amvisc is a highly regarded viscoelastic, a key cataract surgery product that Chiron Vision has lacked. We will enhance our phaco instrument line by combining technologies. Iolab is also a leader in selling bundled ophthalmic products. ... Chiron has been a leader in providing foldable IOLs, the fastest-growing market segment."</p><p>Another aspect is mentioned by Edward Penhoet, Chiron's CEO: "As a result of our new partnership with Ciba, we also foresee significant potential value in collaborating with Ciba Vision, which in 1994 acquired the pharmaceutical division of Iolab from Johnson & Johnson." Ciba-Geigy paid $80 million for the $300 million-turnover business last August.</p><p>ophthalmic restructuring</p><p>Chiron Vision will consolidate its IOL manufacturing in Lyons, France, at the facilities of Domilens, a subsidiary acquired in May 1994, and at Iolab's plant in Claremont, California. The latter will become the headquarters and David Morrison, currently president of Chiron Vision's international operations, will become president and CEO of the combined company.</p><p>heavy first quarter to come</p><p>The Iolab purchase will result in an unspecified charge to Chiron's first-quarter 1995 earnings but is expected to be dwarfed by the up to $300 million charge relating to the Chiron-Ciba partnership agreement which was announced in November but only completed on January 4th (see Clinica No 631, p 15). This one-time charge will also be taken in the first quarter. Already, Chiron's fourth quarter showed a net loss because of a $11.6 million charge to write down to market value its equity investments in <strong>[C#198800712:Cephalon]</strong> and in Viagene.</p><pre>Revenues Net income (loss) ($ millions) ($ millions) 1994 1993 1994 1993 3 months 134.28 93.33 (4.17) 5.54 Year 453.98 317.54 18.33 18.38 (ended Dec 31st)</pre><p>Chiron recorded an 87% increase in its 1994 product sales, with ophthalmic products rising 29%. Among the latter, sales of IOLs increased $17 million in 1994 compared with 1993, mainly due to the acquisition of Domilens. Sales of excimer lasers and corneal shapers, both introduced in 1993, increased $14.6 million. These increases were offset by lower sales of refractive surgery products says Chiron. Product sales of bDNA probe tests by Chiron Diagnostics benefited from research use sales in the US and Europe and shipments to Chiron's Japanese marketing partner Daiichi Pure Chemicals, which received approval to market the bDNA probe test for hepatitis C in Japan in late 1994.</p><pre>Chiron's product sales ($ millions) 1994 1993 Ophthalmic products 106.1 82.1 bDNA probe tests 9.9 2.3 Betaseron 100.1 11.8 Oncology products 43.3 38.4 Others 16.6 13.3 Total product sales 276.0 147.9</pre>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Chiron strengthens ophthalmic business
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950313T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950313T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950313T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051807
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+Chiron strengthens ophthalmic business
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800712
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253576
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183954Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+206056af-16b2-4489-925d-9874cb2fbac4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183954Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

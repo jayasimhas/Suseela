@@ -1,0 +1,90 @@
+----item----
+version: 1
+id: {29DD05C4-4BC6-4DCF-BB41-707FBF6CDC0F}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Emails Folder/SimonTestEmail/PDF Content
+parent: {4DC1495B-90EC-44F5-AC92-4CD6C994FB31}
+name: PDF Content
+master: {00000000-0000-0000-0000-000000000000}
+template: {8E5F9643-90F9-47D6-A90C-C6A3C9699801}
+templatekey: Featured Content
+
+----version----
+language: en
+version: 1
+revision: 9a96ce3c-0845-4cc8-8047-335b0641dfed
+
+----field----
+field: {F089D880-B8DE-4F27-99C3-2B131620AC51}
+name: Summary
+key: summary
+content-length: 853
+
+<span>You can also visit <a href="https://scrip.pharmamedtechbi.com/pdf-library" target="_blank"><span style="color: #b70815;">https://scrip.pharmamedtechbi.com/pdf-library</span></a> to access the latest issue and browse previous issues.<br>
+<br>
+You may print out this issue for your own personal use. Printing or distributing multiple copies around your company or to third parties would violate the Terms and Conditions of your subscription. For full details see: <a href="https://subscibe.scripintelligence.com" target="_blank"><span style="color: #b70815;">https://subscribe.scripintelligence.com</span></a><br>
+<br>
+If you experience technical problems email us with your full name at the following address: <a href="mailto:clientservices@scripintelligence.com"><span style="color: #b70815;">clientservices@scripintelligence.com</span></a></span>
+----field----
+field: {CCD7F4F2-1FA2-441E-865A-19A72FE91FD0}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{B3FAF630-9CD6-4519-B9CE-EA23056EF4F2}" />
+----field----
+field: {0EC4B370-65B6-4A87-A927-E3204FB4EE81}
+name: Read More Text
+key: read more text
+content-length: 0
+
+
+----field----
+field: {F743817C-808B-4CAD-B5B9-409A819DB7C9}
+name: Download Link Text
+key: download link text
+content-length: 12
+
+Download PDF
+----field----
+field: {7163AC7F-E9E2-408F-A6EC-8BDE5078D2D9}
+name: Download Link
+key: download link
+content-length: 105
+
+<link linktype="media" text="Edit Download Link" target="" id="{6045360B-10EB-45DE-A995-798BE4BC7A45}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160601T065653Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9a96ce3c-0845-4cc8-8047-335b0641dfed
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160613T130801Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

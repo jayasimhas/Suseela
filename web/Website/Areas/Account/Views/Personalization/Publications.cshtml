@@ -28,6 +28,8 @@
     string publicationHiddenClass = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
+    <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.FollowButtonText" />
+    <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.FollowingButtonText" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {
@@ -89,9 +91,9 @@
                                         <p>@Model.SubscribeMessageText</p>
                                     </th>
                                 </tr>
-                                }
+                            }
                             <tr>
-                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
                                 {
                                     <th class="pub-subscription-subtitle" colspan="3">
                                         @Html.Raw(Model.SubscribedMessageText)
@@ -111,7 +113,7 @@
                                 </th>
                                 <th>
                                     <div class="accordionImg">
-                                        <a class="mobileMode @collapsedClss" href="javascript: void(0);"></a>
+                                        <span class="mobileMode @collapsedClss" href="javascript: void(0);"></span>
                                     </div>
                                 </th>
                             </tr>
@@ -134,7 +136,7 @@
                                 </th>
                                 <th>
                                     <div class="accordionImg">
-                                        <a class="mobileMode" href="javascript: void(0);"></a>
+                                        <span class="mobileMode" href="javascript: void(0);"></span>
                                     </div>
                                 </th>
                             </tr>
@@ -151,7 +153,7 @@
                         <thead class="hidden-xs">
                             <tr>
                                 <th class="wd-54 firstrow">
-                                    <h2 data-publication="@channel.ChannelCode"  data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
+                                    <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
@@ -174,7 +176,7 @@
                                 </th>
                                 <th class="wd-15 firstrow">
                                     <div class="accordionImg">
-                                        <a class="desktopMode @collapsedClss" href="javascript: void(0);"></a>
+                                        <span class="desktopMode @collapsedClss" href="javascript: void(0);"></span>
                                     </div>
                                     <div class="rowlines">
                                         <div class="vline"></div>
@@ -185,16 +187,16 @@
                                     </div>
                                 </th>
                             </tr>
-                            @if(!Model.isFromRegistration)
-                            { 
-                            <tr class="showinview">
-                                <th colspan="3">
-                                    <p>@Model.SubscribeMessageText</p>
-                                </th>
-                            </tr>
+                            @if (!Model.isFromRegistration)
+                            {
+                                <tr class="showinview">
+                                    <th colspan="3">
+                                        <p>@Model.SubscribeMessageText</p>
+                                    </th>
+                                </tr>
                             }
                             <tr>
-                                @if (Model.isFromRegistration&&channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
                                 {
                                     <th class="pub-subscription-subtitle" colspan="3">
                                         @Html.Raw(Model.SubscribedMessageText)
@@ -223,7 +225,7 @@
                             {
 
                                 Topics = channel.Topics.OrderBy(x => x.TopicOrder == 0).ThenBy(x => x.TopicOrder).ToList();
-
+                                topicOrder = 0;
                                 foreach (Topic topic in Topics)
                                 {
                                     topicOrder = Model.IsNewUser ? ++topicOrder : topic.TopicOrder;
@@ -233,21 +235,23 @@
 
                                     <tr class="@topicTRClass" data-row="@topicOrder">
 
-                                        <td class="wd-55">@topic.TopicName 
-                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId"/></td>
-                                        <td class="wd-25">
-                                            <span class="@topicSpanClass">@topicLableText</span>
-                                        </td>
-                                        <td class="wd-15">
-                                            <div class="rowlines">
-                                                <div class="move">@Model.MoveLableText</div>
-                                                <span></span>
-                                                <span></span>
-                                                <span></span>
-                                                <span></span>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        <td class="wd-55">
+                                            @topic.TopicName
+                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
+                                    </td>
+                                    <td class="wd-25">
+                                        <span class="@topicSpanClass">@topicLableText</span>
+                                    </td>
+                                    <td class="wd-15">
+                                        <div class="rowlines">
+                                            <div class="move">@Model.MoveLableText</div>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </td>
+                                </tr>
                                 }
                             }
                         </tbody>

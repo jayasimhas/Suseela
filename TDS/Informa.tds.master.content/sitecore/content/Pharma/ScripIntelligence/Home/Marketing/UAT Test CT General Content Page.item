@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {54179F3D-BC2D-4B18-8A4E-C2FA8E33B49D}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Marketing/UAT Test CT General Content Page
+parent: {1CAC13D9-4C09-4C16-B62C-5531DB8443A5}
+name: UAT Test CT General Content Page
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----version----
+language: en
+version: 1
+revision: a834eed9-987f-48a4-8aa7-2869d1b4c93a
+
+----field----
+field: {7D43AD1F-9748-4438-9CB0-74C457376526}
+name: Subnavigation Items
+key: subnavigation items
+content-length: 116
+
+{831B1A50-092F-493F-B951-DEA2ED41587C}|{822171DC-B819-46D7-AB7A-433C464039E4}|{52D8476D-5513-466D-9226-BBAD3315D15A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+UAT Test CT General Content Page
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+UAT Test CT General Content Page
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+UAT Test CT General Content Page
+----field----
+field: {DE73B0AC-1DE7-4C74-8DC3-515A939F567B}
+name: Exclude From Google Search
+key: exclude from google search
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160406T020755Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a834eed9-987f-48a4-8aa7-2869d1b4c93a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160407T222208Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 17
+
+sitecore\ctrudeau

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2EE2A9DA-DF67-491A-B0EE-68874D01A0AD}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/09/Italian reagent rental plan law delayed
+parent: {A4F8C6E7-A9D7-4D86-9AA8-A644D3C4B8E3}
+name: Italian reagent rental plan law delayed
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 72886d9b-cdd5-4285-9085-be453fa03200
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 230
+
+<p>Italian legislation to regulate reagent rental plans is not likely to be approved before October, according to coalition party deputy, Vittorio Lodolo D'Oria of Forza Italia, who has been instrumental in developing the law.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Italian reagent rental plan law delayed
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2457
+
+<p>Italian legislation to regulate reagent rental plans is not likely to be approved before October, according to coalition party deputy, Vittorio Lodolo D'Oria of Forza Italia, who has been instrumental in developing the law.</p><p>Industry will be disappointed by news of the delay since it places it in a difficult position. Following the arrest last autumn of over 40 company executives linked to the use of reagent rental plans, industry has been in a legal void, unsure how to proceed with marketing. It is caught between the fear of repeating the "crimes" of those arrested and of the consequences of interrupting delivery of reagents to laboratories.</p><p>Discussions aimed at allowing companies to proceed with reagent rental plan marketing are under way. However, this may not be a popular option among magistrates given the weight of public opinion against the industry - especially in the light of the Poggiolini scandal.</p><p>shaping the new law</p><p>The bill is still under discussion within the select committee at the Social Affairs Commission of the Italian Parliament, where representatives of the various political groups are finding it difficult to reach agreement. The last meeting of this group on April 26th was not very productive, Clinica understands, and Mr Lodolo D'Oria confirmed that given the "many problem areas" and "difficult terrain", discussions are likely to continue for quite some time.</p><p>Once the select committee has agreed a text, it will be voted on by the parliamentary Social Affairs Commission. If an 80% majority is obtained, the text will just need to be approved by the Senate. If not, it will have to be agreed by both the Chamber of Deputies and the Senate. This is obviously a more lengthy process.</p><p>corruption investigations continue</p><p>While progress on the bill is slow, magistrates are continuing investigations into possible corruption in the marketing of diagnostics. More recently efforts have been focused on the abuse of reagent rental plans, rather than their use per se.</p><p>In Palermo, where the first investigations and arrests took place, it is reported that magistrates have referred their findings to the GIP, the preliminary investigations judge. The GIP is unlikely to decide whether cases need to be brought to trial until late summer or early autumn. Moreover, once the decision has been made, it will take a further six to nine months before the cases reach court.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+Italian reagent rental plan law delayed
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950509T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950509T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950509T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052526
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Italian reagent rental plan law delayed
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254335
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184215Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+72886d9b-cdd5-4285-9085-be453fa03200
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184215Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

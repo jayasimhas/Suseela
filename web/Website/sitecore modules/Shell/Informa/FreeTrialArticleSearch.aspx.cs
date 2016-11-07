@@ -12,12 +12,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Mvc;
+using log4net;
 
 namespace Informa.Web.sitecore_modules.Shell.Informa {
     public partial class FreeTrialArticleSearch : System.Web.UI.Page {
 
         protected Database currentDB;
         protected Item folderItem;
+        private readonly ILog _logger = LogManager.GetLogger("LogFileAppender");
 
         /* Querystring Params available
 		    id=%7b59A62A95-9E5D-4478-BDC9-1E793823C48F%7d
@@ -59,9 +61,17 @@ namespace Informa.Web.sitecore_modules.Shell.Informa {
             string resultsFormat = "There were {0} articles marked 'Free with Registration'";
             string resultFormat = "There was {0} article marked 'Free with Registration'";
             if (results.Articles.Any()) {
-                var filteredResults = results.Articles.Where(a => a._Path.StartsWith(rootItem.Paths.FullPath)).ToList();
-                ltlResultCount.Text = string.Format((filteredResults.Count > 1) ? resultsFormat : resultFormat, filteredResults.Count);
-                return filteredResults;
+                try
+                {
+                    var filteredResults = results.Articles.Where(a => (a._Path != null && a._Path.StartsWith(rootItem.Paths.FullPath))).ToList();
+                    ltlResultCount.Text = string.Format((filteredResults.Count > 1) ? resultsFormat : resultFormat, filteredResults.Count);
+                    return filteredResults;
+                }
+                catch(Exception ex)
+                {
+                    _logger.Error("Error in GetFreeTrialArticles tab", ex);
+                    return new List<IArticle>();
+                }
             } else {
                 ltlResultCount.Text = string.Format(resultsFormat, 0);
                 return new List<IArticle>();

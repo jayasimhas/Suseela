@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {B2853A20-3F3A-46D4-A7C3-5F404DC53D3D}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Ask The Analyst  a new service for Clinica subscribers
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Ask The Analyst  a new service for Clinica subscribers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 4158ae84-feb5-44a3-b7e1-c3e5fd06d78a
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3841
+
+<p> <style> <!-- .links { font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-decoration:none; color:#3399ff; } .style1 {text-decoration:none; color:#3399ff; font-family: Arial, Helvetica, sans-serif;} --> </style> <tr> <td> Introduction </td> <td><a>How does it work?</a></td> <td><a>Typical AtA questions</a></td> <td><a>Biographies </a></td> <td><a>Contact us</a></td> </tr>   <tr> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td> <p> <b>Ask The Analyst</b> is a new, premium service for subscribers of Clinica.co.uk that puts the news in context and can serve as a research tool to help you add to your knowledge and understanding of what is happening in the global medical technology sector.</p> <p> The service enables subscribers to address questions arising out Clinica&rsquo;s news coverage and analysis to our team of analysts.</p>  <tr> <td><strong>To submit your research question, email: <a>news.analysis@informa.com</a></strong></td> </tr>  <p><b>Ask The Analyst</b> enables you to:</p> <ul> <li>request background information on/explanation of articles that have been published at Clinica.co.uk; </li> <li>seek the analysts&rsquo; views on/interpretation of new industry developments; </li> <li>ask for an interpretation of market trends; </li> <li>source supplementary data relating to published articles; and </li> <li>request explanations of how regulatory developments might affect the industry. </li> </ul> <p> The service is provided on a non-exclusive basis. The results of any request for research may be used to add to the news and analysis content on Clinica.co.uk and its sister websites at Informa Healthcare.<br> <br> The analysts will access the entire Informa information universe (including Informa news archives, databases, journals, books, etc) and external sources to answer queries and will also be supported by Clinica's editorial team when necessary. They will contact medtech companies, if appropriate, to develop the response.<br> <br> If appropriate, analysts will provide links to relevant websites and information services and information sources that may be useful to the customer. <br> <br> Responses will be timely and will enhance your knowledge and understanding of the global medtech sector.</p> <p> <b>Meet the team</b><br> Clinica&rsquo;s analysts have expertise in all aspects of the healthcare industry and can alert you to new developments and trends that have a direct effect upon your business, and thereby enhance your understanding of new industry developments</p>  <tr> <td><a></a> <b>Dr Peter Charlish</b><br> Peter Charlish focuses on drug discovery and product development, including clinical trials, and regulatory affairs, with knowledge extending across pharma, medical devices and diagnostics. <a>Read more...</a></td> <td><b>Ian Schofield </b><br> Ian Schofield writes on a wide range of issues affecting the healthcare industry, with a focus on EU regulatory, political, legal and scientific affairs. He also covers specialist areas such as advanced therapies, paediatrics, generics, orphans, counterfeits and pandemic flu. <a>Read more...</a></td> <td><b><a></a>Phil Greenfield </b> <br> Phil has many years of experience in editorial, market research and publishing in the healthcare sector. His primary focus is science, technology and business across medtech and pharma. <a>Read more...</a></td> </tr> <tr> <td> <p> <a> </a><b>Ashley Yeo</b><br> Ashley has a wealth experience of the medical technology and healthcare sectors, focusing on healthcare and trade policy, business and financial performance and regulatory affairs. <a>Read more...</a></p></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> <td> <p><escenic_non_breaking_space></escenic_non_breaking_space> </p></td> </tr> </td> </tr>   </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Ask The Analyst - a new service for Clinica subscribers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6052
+
+<p> <style type="text/css"> <!-- .links { font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-decoration:none; color:#3399ff; } .style1 {text-decoration:none; color:#3399ff; font-family: Arial, Helvetica, sans-serif;} --> </style><table> <tr> <td> <img height="7" vspace="2" border="0" src="-/media/DDE9E5EC7502434DAE284CE3CC224165.ashx" width="5" hspace="5">Introduction </td> <td><img height="7" vspace="2" border="0" src="-/media/DDE9E5EC7502434DAE284CE3CC224165.ashx" width="5" hspace="5"><a href="/asktheanalyst/how_does_it_work/" class="links">How does it work?</a></td> <td><img height="7" vspace="2" border="0" src="-/media/DDE9E5EC7502434DAE284CE3CC224165.ashx" width="5" hspace="5"><a href="/asktheanalyst/questions" class="links">Typical AtA questions</a></td> <td><img height="7" vspace="2" border="0" src="-/media/DDE9E5EC7502434DAE284CE3CC224165.ashx" width="5" hspace="5"><a href="/asktheanalyst/bios/" class="links">Biographies </a></td> <td><img height="7" vspace="2" border="0" src="-/media/DDE9E5EC7502434DAE284CE3CC224165.ashx" width="5" hspace="5"><a href="mailto:news.analysis@informa.com?subject=Ask the Analyst - www.clinica.co.uk" class="links">Contact us</a></td> </tr> </table> <table> <tr> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> <tr> <td> <p> <b>Ask The Analyst</b> is a new, premium service for subscribers of Clinica.co.uk that puts the news in context and can serve as a research tool to help you add to your knowledge and understanding of what is happening in the global medical technology sector.</p> <p> The service enables subscribers to address questions arising out Clinica&rsquo;s news coverage and analysis to our team of analysts.</p> <table> <tr> <td bgcolor="#6699FF"><strong>To submit your research question, email: <a href="mailto:news.analysis@informa.com?subject=Ask the Analyst - www.clinica.co.uk" title="mailto:news.analysis@informa.com" class="style1">news.analysis@informa.com</a></strong></td> </tr> </table> <p><b>Ask The Analyst</b> enables you to:</p> <ul> <li>request background information on/explanation of articles that have been published at Clinica.co.uk; </li> <li>seek the analysts&rsquo; views on/interpretation of new industry developments; </li> <li>ask for an interpretation of market trends; </li> <li>source supplementary data relating to published articles; and </li> <li>request explanations of how regulatory developments might affect the industry. </li> </ul> <p> The service is provided on a non-exclusive basis. The results of any request for research may be used to add to the news and analysis content on Clinica.co.uk and its sister websites at Informa Healthcare.<br> <br> The analysts will access the entire Informa information universe (including Informa news archives, databases, journals, books, etc) and external sources to answer queries and will also be supported by Clinica's editorial team when necessary. They will contact medtech companies, if appropriate, to develop the response.<br> <br> If appropriate, analysts will provide links to relevant websites and information services and information sources that may be useful to the customer. <br> <br> Responses will be timely and will enhance your knowledge and understanding of the global medtech sector.</p> <p> <b>Meet the team</b><br> Clinica&rsquo;s analysts have expertise in all aspects of the healthcare industry and can alert you to new developments and trends that have a direct effect upon your business, and thereby enhance your understanding of new industry developments</p> <table> <tr> <td valign="top" bgcolor="#F5F5F5"><a href="/asktheanalyst/bios/#DrPeterCharlish"><img height="100" align="left" style="padding-right: 10px; padding-top: 0; padding-bottom: 0; padding-left: 0" border="0" src="-/media/97082FFD25234CAE8BF4B770E62BD082.ashx" width="82"></a> <b>Dr Peter Charlish</b><br> Peter Charlish focuses on drug discovery and product development, including clinical trials, and regulatory affairs, with knowledge extending across pharma, medical devices and diagnostics. <a href="/asktheanalyst/bios/#DrPeterCharlish">Read more...</a></td> <td valign="top" bgcolor="#F5F5F5"><img height="100" align="left" style="padding-right: 10px; padding-top: 0; padding-bottom: 0; padding-left: 0" border="0" src="-/media/DAAD8AB1BB0E4D7F831F7CDCEB73EC45.ashx" width="82"><b>Ian Schofield </b><br> Ian Schofield writes on a wide range of issues affecting the healthcare industry, with a focus on EU regulatory, political, legal and scientific affairs. He also covers specialist areas such as advanced therapies, paediatrics, generics, orphans, counterfeits and pandemic flu. <a href="/asktheanalyst/bios/#IanSchofield">Read more...</a></td> <td valign="top" bgcolor="#F5F5F5"><b><a href="/asktheanalyst/bios/#PhilGreenfield"><img height="100" align="left" style="padding-right: 10px; padding-top: 0; padding-bottom: 0; padding-left: 0" border="0" src="-/media/B9F4C3AEAF874D2D9CAAD62CD5CF760F.ashx" width="82"></a>Phil Greenfield </b> <br> Phil has many years of experience in editorial, market research and publishing in the healthcare sector. His primary focus is science, technology and business across medtech and pharma. <a href="/asktheanalyst/bios/#PhilGreenfield">Read more...</a></td> </tr> <tr> <td bgcolor="#F5F5F5" valign="top"> <p> <a href="/asktheanalyst/bios/#AshleyYeo"><img height="100" align="left" style="padding-right: 10px; padding-top: 0; padding-bottom: 0; padding-left: 0" border="0" src="-/media/DD675C550C5A4357889DBF7C30CA64BF.ashx" width="82"> </a><b>Ashley Yeo</b><br> Ashley has a wealth experience of the medical technology and healthcare sectors, focusing on healthcare and trade policy, business and financial performance and regulatory affairs. <a href="/asktheanalyst/bios/#AshleyYeo">Read more...</a></p></td> <td valign="top"><escenic_non_breaking_space></escenic_non_breaking_space></td> <td valign="top"> <p><escenic_non_breaking_space></escenic_non_breaking_space> </p></td> </tr> </table></td> </tr> </table>  </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Ask The Analyst  a new service for Clinica subscribers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T192626
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT003653
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Ask The Analyst - a new service for Clinica subscribers
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+148148
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T155450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4158ae84-feb5-44a3-b7e1-c3e5fd06d78a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T232626Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

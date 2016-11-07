@@ -20,7 +20,8 @@
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
         }
-        public object GetArticles([FromBody] IArticleSearchRequest articleRequest)
+        [HttpPost]
+        public object GetArticles([FromBody] ArticleSearchRequest articleRequest)
         {
             if(articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
                 return new { Articles = "No articles found" };
@@ -32,6 +33,8 @@
             if (results != null && results.Articles != null && results.Articles.Count() > articleRequest.PageSize - 1)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));
+                if(articles == null || articles.Count() < articleRequest.PageSize)
+                    return new { Articles = "No articles found" };
 
                 var loadMore = new LoadMore
                 {
@@ -40,7 +43,8 @@
                     LoadMoreLinkUrl = "/api/articlesearch/",
                     LatestFromText = TextTranslator.Translate("Article.LatestFrom"),
                     PageNo = articleRequest.PageNo + 1,
-                    PageSize = articleRequest.PageSize
+                    PageSize = articleRequest.PageSize,
+                    TaxonomyIds = articleRequest.TaxonomyIds
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }

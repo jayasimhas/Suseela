@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {6E3D9252-B393-42BA-A999-9E0755CE35DE}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Advertisements/Leaderboard Ad
+parent: {67A1ECD7-CC64-4682-87E7-60B068B28EB4}
+name: Leaderboard Ad
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 42
+
+/Views/Advertisements/LeaderboardAd.cshtml
+----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 30
+
+./PageAssets|/sitecore/content
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 57
+
+/sitecore/templates/User Defined/Components/Advertisement
+----version----
+language: en
+version: 1
+revision: 6d76fa76-1293-4468-9099-86e422bba23d
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160719T182530Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6d76fa76-1293-4468-9099-86e422bba23d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160720T145102Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
