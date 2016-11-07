@@ -643,7 +643,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                               if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITY1") && importValue == "") 
                               {
                                     errorLog += "||" + "Commodities N/A";
-                                   // XMLDataLogger.WriteLog(ArticleId, CommodityLog);
+                                    XMLDataLogger.WriteLog(ArticleId, CommodityLog);
                                 }
 
                                 if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COUNTRY" && importValue == "")
@@ -667,6 +667,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     errorLog += "||" + "AGENCY N/A";
                                     XMLDataLogger.WriteLog(ArticleId, AgencyLog);
+
+                                }
+                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMPANIES" && importValue == "")
+                                {
+                                    errorLog += "||" + "COMPANIES N/A";
+                                    XMLDataLogger.WriteLog(ArticleId, CompanyLog);
 
                                 }
                             }
