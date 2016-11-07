@@ -1,20 +1,14 @@
 ----role----
-name: sitecore\Sitecore Client Designing
+name: sitecore\Media Library Access
 
 ----role-in-role----
 rolename: sitecore\Author
-
-----role-in-role----
-rolename: sitecore\Designer
 
 ----role-in-role----
 rolename: sitecore\Editor
 
 ----role-in-role----
 rolename: sitecore\Managing Editor
-
-----role-in-role----
-rolename: sitecore\Operations Access
 
 ----role-in-role----
 rolename: sitecore\Production
