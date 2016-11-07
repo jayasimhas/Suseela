@@ -45,7 +45,8 @@ namespace Informa.Library.Utilities.References
     public Guid IssuesRootArchive => new Guid("{AAB11244-7D15-4A43-A709-DC8951893FD2}");
     public Guid IssueTemplate => new Guid("{90C7C95A-2D6F-49D8-B471-7626E3135201}");
     public Guid IssueArchivedTemplate => new Guid("{6467B31C-4196-44EB-A215-EEC8F733FFF8}");
-     
+
+		public Guid CustomPublishingConfig => new Guid("{E892C2E5-4091-43A7-AAF6-C3A2DFCE05CE}");
 
 		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
@@ -87,6 +88,6 @@ namespace Informa.Library.Utilities.References
         public Guid FreeWithEntitlement => new Guid("{AFDFD507-A124-4F37-86B9-6599C0E44F5D}");
         public Guid FreeWithRegistration => new Guid("{1A8FB076-2CBF-4CD7-9D9C-92E2B4296D12}");
 
-        #endregion Restriction Access
+		#endregion Restriction Access
 	}
 }
