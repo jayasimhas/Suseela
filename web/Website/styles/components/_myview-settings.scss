@@ -293,7 +293,7 @@
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						/*padding: 0.5rem 0rem 0.625rem 0.625rem;*/
+						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
 					p{
 						font-size: 1em; 
@@ -711,7 +711,7 @@
 				background-color: inherit !important;
 			} 
 			.followAllBtn{
-				background-position: 17px -266px;
+				background-position: -3px -266px;
 				text-indent: -124px;
 				border: none !important;
 				padding: 0 0 !important;
