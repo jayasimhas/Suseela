@@ -188,6 +188,9 @@
 			line-height: 2.125rem;
 			height: 7.5rem;
 			overflow: hidden;
+			&:last-child {
+				border-bottom: none;
+			}
 			&.nobord{
 				border-bottom: none;
 				@include breakpoint('small') {
