@@ -263,8 +263,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (!(ao.ContainsKey("COMMODITY1")))
                     {
                          
-                        successwithmissingLog += "||" + "COMMODITY is missing";
-                        XMLDataLogger.WriteLog(articleNumber, "COMMODITYMissingLog");
+                        //successwithmissingLog += "||" + "COMMODITY is missing";
+                       // XMLDataLogger.WriteLog(articleNumber, "COMMODITYMissingLog");
                     }
                 }
                 if (importErrorCount == 1 )
