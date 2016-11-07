@@ -524,7 +524,7 @@ $(function(){
 				},
 				success: function(data){
 					if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
-						if(eachstoryLength % 2 !== 0 && layout1Flag){
+						if($('.eachstoryMpan', '.personalisationPan').length % 2 == 0 && layout1Flag){
 							layout1Flag = false; 
 							getscrollData = loadLayoutOneData(data, eachstoryLength);
 							$('.spinnerIcon').addClass('hidespin');
