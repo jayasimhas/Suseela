@@ -94,7 +94,7 @@
                             <div class="mysettingsHead clearfix">
                                 <h1>@Model.Title</h1>
                                 <div class="saveoption mtop-10 hidden-xs">
-                                    <span class="saveview">@Model.SaveButtonText</span>
+                                    <span class="saveview" data-info="{ 'event_name': 'Save', 'page_name':'@Model.Title'}">@Model.SaveButtonText</span>
                                     <span class="gotoview @goToMyViewButtonClass"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                                 </div>
                             </div>
