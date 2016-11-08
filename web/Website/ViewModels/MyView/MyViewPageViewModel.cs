@@ -1,32 +1,43 @@
-﻿using Informa.Library.Services.Global;
+﻿using Informa.Library.Globalization;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.UserPreference;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Models;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Informa.Web.ViewModels.MyView
 {
-    [AutowireService]
-    public class MyViewPageViewModel : IMyViewPageViewModel
+    public class MyViewPageViewModel : GlassViewModel<IGeneral_Content_Page>
     {
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IUserPreferenceContext UserPreferences;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ITextTranslator TextTranslator;
 
         public MyViewPageViewModel(
                         ISiteRootContext siteRootContext,
             IUserPreferenceContext userPreferences,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            ITextTranslator textTranslator)
         {
             SiteRootContext = siteRootContext;
             UserPreferences = userPreferences;
             GlobalService = globalService;
+            TextTranslator = textTranslator;
         }
 
         public int InitialLaodSectionsCount => SiteRootContext.Item.Initial_Laod_Sections_Count;
+
+        public string PageHeading => GlassModel?.Title;
+
+        public string PageDescription => GlassModel?.Body;
+
+        public string EditMyViewButtonLableText => TextTranslator.Translate("MyView.EditMyViewButtonLableText");
 
         public int ItemsPerSection => SiteRootContext.Item.Items_Per_Section;
 
