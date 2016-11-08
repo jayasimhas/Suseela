@@ -300,7 +300,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                     if (country == null)
                     {
-                        ao.Add("COMPANIES", "");
+                        ao.Add("COUNTRY", "");
                     }
                     else
                     {
