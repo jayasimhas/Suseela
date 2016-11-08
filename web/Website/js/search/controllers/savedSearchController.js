@@ -47,7 +47,8 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     // might not be added before the lightbox event listners are bound. This
     // manually fires the Saved Search lightbox, in case the normal listener wasn't
     // bound in time.
-    vm.showLightbox = function(e) {
+    vm.showLightbox = function (e) {
+        $('.js-save-search-title').val('');
         if($scope.searchIsSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.angular-lightbox-modal-trigger'));
         }
