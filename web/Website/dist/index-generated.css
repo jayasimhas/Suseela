@@ -3510,7 +3510,7 @@ header .header-account-access {
       border: 1px solid transparent;
       color: #ffffff;
       padding: 12px;
-      background-color: #c22d3b;
+      background-color: #9E310D;
       width: 146px;
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
@@ -3526,7 +3526,7 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: auto;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3535,7 +3535,7 @@ header .header-account-access {
       @media (max-width: 480px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3544,7 +3544,7 @@ header .header-account-access {
       @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3766,6 +3766,8 @@ header .header-account-access {
   padding-bottom: 50px !important;
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
+  .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
+    width: auto; }
   .myview-settings h1 {
     margin-bottom: 0px;
     margin-bottom: 0rem;
@@ -4074,7 +4076,8 @@ header .header-account-access {
         background: #f9f9f9; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
-            /*padding: 0.5rem 0rem 0.625rem 0.625rem;*/ } }
+            padding: 8px 0px 10px 10px;
+            padding: 0.5rem 0rem 0.625rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
@@ -4667,7 +4670,7 @@ header .header-account-access {
       border: none !important;
       background-color: inherit !important; }
     .myview-settings .smfollowingBtn .followAllBtn {
-      background-position: 17px -266px;
+      background-position: -3px -266px;
       text-indent: -124px;
       border: none !important;
       padding: 0 0 !important;
@@ -4747,10 +4750,10 @@ header .header-account-access {
   margin-top: 0px; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
-      margin-right: 6px;
-      margin-right: 0.375rem;
-      padding-right: 6px;
-      padding-right: 0.375rem; } }
+      margin-right: 4px;
+      margin-right: 0.25rem;
+      padding-right: 4px;
+      padding-right: 0.25rem; } }
 
 .personalisationhome .personalHead {
   border-bottom: 1px solid #d1d3d4;
@@ -4945,6 +4948,8 @@ header .header-account-access {
   height: 120px;
   height: 7.5rem;
   overflow: hidden; }
+  .personalisationhome .article-preview--small .article-preview_rheadline:last-child {
+    border-bottom: none; }
   .personalisationhome .article-preview--small .article-preview_rheadline.nobord {
     border-bottom: none; }
     @media (max-width: 480px) {
@@ -4979,12 +4984,21 @@ header .header-account-access {
     font-family: "Roboto";
     font-size: 14px;
     font-size: 0.875rem;
-    padding: 20px 60px;
-    padding: 1.25rem 3.75rem;
+    padding: 20px 70px 20px 60px;
+    padding: 1.25rem 4.375rem 1.25rem 3.75rem;
     border: 1px solid #d1d3d4;
     display: inline-block;
     cursor: pointer;
-    font-weight: bold; }
+    font-weight: bold;
+    position: relative; }
+    .personalisationhome .loadmore span:after {
+      content: '';
+      background: url("/dist/img/sprite-image.png") no-repeat -17px -124px;
+      width: 18px;
+      height: 14px;
+      position: absolute;
+      right: 40px;
+      top: 20px; }
 
 .personalisationhome .topic-featured-article__image2 {
   margin-bottom: 16px;
@@ -5080,7 +5094,14 @@ header .header-account-access {
         font-size: 0.8125rem; }
       .personalisationhome .latest-news__articles .article-small-preview ul li h6, .personalisationhome .latest-news__articles .article-small-preview ul li .article-tags-bar__label, .personalisationhome .latest-news__articles .article-small-preview ul li .article-topics__section-header {
         font-size: 13px;
-        font-size: 0.8125rem; } }
+        font-size: 0.8125rem; }
+  .personalisationhome .article-metadata ul {
+    display: block;
+    padding-top: 30px;
+    padding-top: 1.875rem; }
+    .personalisationhome .article-metadata ul li {
+      display: inline-block;
+      vertical-align: middle; } }
 
 @media screen and (max-width: 767px) {
   .personalisationhome .article-preview--small {

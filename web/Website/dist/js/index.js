@@ -1808,12 +1808,12 @@ $(function () {
 					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0 && layout1Flag) {
 							layout1Flag = false;
-							getscrollData = loadLayoutOneData(data, eachstoryLength);
+							getscrollData = loadLayoutOneData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 						} else {
 							layout1Flag = true;
-							getscrollData = loadLayoutTwoData(data, eachstoryLength);
+							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 						}

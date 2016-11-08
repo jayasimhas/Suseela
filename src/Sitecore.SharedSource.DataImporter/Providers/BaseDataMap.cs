@@ -580,7 +580,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         try
                         {
                             IEnumerable<string> values = GetFieldValues(d.GetExistingFieldNames(), importRow);
-                            importValue = String.Join(d.GetFieldValueDelimiter(), values);
+                            if (values.Count(val => val != "") > 0)
+                            {
+                                importValue = String.Join(d.GetFieldValueDelimiter(), values);
+                            }
 
                             string id = string.Empty;
                             if (importRow is Item)
@@ -634,7 +637,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             if (d.NewItemField == "Body" && importValue == "")
                             {
                                 errorLog += "||" + "Body N/A";
-                                //XMLDataLogger.WriteLog(ArticleId, BodyTagLog);
+                                XMLDataLogger.WriteLog(ArticleId, BodyTagLog);
                             }
 
                             if (d.NewItemField == "Taxonomy")

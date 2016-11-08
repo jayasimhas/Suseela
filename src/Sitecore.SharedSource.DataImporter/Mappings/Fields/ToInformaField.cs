@@ -3515,13 +3515,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         public virtual Dictionary<string, string> GetMapping()
         {
             Dictionary<string, string> d = new Dictionary<string, string>();
-            d.Add("dairy_markets", "Dairy");
-            d.Add("dairy_markets_subscribe_free_demo", "Dairy");
-            d.Add("dairy_markets_features", "Dairy");
-            d.Add("dairy_markets_downloads", "Dairy");
-            d.Add("dairy_markets_filedownloads", "Dairy");
-            d.Add("dairy_markets_subscribe_free_demo_mobile", "Dairy");
-            d.Add("dairy_markets_resources_dairy_ezine_mobile", "Dairy");
+            //d.Add("dairy_markets", "Dairy");
+            //d.Add("dairy_markets_subscribe_free_demo", "Dairy");
+            //d.Add("dairy_markets_features", "Dairy");
+            //d.Add("dairy_markets_downloads", "Dairy");
+            //d.Add("dairy_markets_filedownloads", "Dairy");
+            //d.Add("dairy_markets_subscribe_free_demo_mobile", "Dairy");
+            //d.Add("dairy_markets_resources_dairy_ezine_mobile", "Dairy");
             d.Add("dairy_markets_markets", "Dairy");
             d.Add("dairy_markets_markets_butter", "Butter");
             d.Add("dairy_markets_markets_cheese", "Cheese");
