@@ -82,6 +82,7 @@
             </div>
         </div>
     </div>
+    <input type="hidden" value="false" id="validatePriority" />
                 }
                 else if (Model != null && Model.IsAuthenticated)
                 {
@@ -93,7 +94,7 @@
                             <div class="mysettingsHead clearfix">
                                 <h1>@Model.Title</h1>
                                 <div class="saveoption mtop-10 hidden-xs">
-                                    <span class="saveview" data-info="{ 'event_name': 'Save', 'page_name':'@Model.Title'}">@Model.SaveButtonText</span>
+                                    <span class="saveview validationChk" data-info="{ 'event_name': 'Save', 'page_name':'@Model.Title'}">@Model.SaveButtonText</span>
                                     <span class="gotoview @goToMyViewButtonClass"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                                 </div>
                             </div>
@@ -133,10 +134,11 @@
                         </div>
 
                         <div class="saveoption">
-                            <span class="saveview">@Model.SaveButtonText</span>
+                            <span class="saveview validationChk">@Model.SaveButtonText</span>
                             <span class="gotoview @goToMyViewButtonClass"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                         </div>
                     </div>
+                    <input type="hidden" value="false" id="validateMyViewPriority" />
                                 }
                                 else
                                 {
@@ -144,4 +146,3 @@
                                         @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
                                     </div>
                                             }
-<input type="hidden" value="false" id="validatePriority" />
