@@ -162,17 +162,7 @@ var AMchartUsingBuilder=function() {
     }
 };
 
-var JobsListingPagination=function(){
-    var TotalCategories=$("#JobTilesCount").val()
-    var CategoryLimit=$("#NoOfJobsPerPage").val() 
-    
-		$('.pagination').setPagination({
-		    totalCategories: parseInt(TotalCategories),
-		    categoryLimit: parseInt(CategoryLimit),
-		    currentPage: 1,
-		    paginationEle: '.job_list_individual'
-		});
-}
+
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -215,6 +205,23 @@ $(document).ready(function(){
 		});
 	}
 	window.dismiss();
+	
+	//Job Listing Pagination
+	var JobsListingPagination=function(){
+    var TotalCategories=$("#JobTilesCount").val()
+    var CategoryLimit=$("#NoOfJobsPerPage").val() 
+    
+		$('.pagination').setPagination({
+		    totalCategories: parseInt(TotalCategories),
+		    categoryLimit: parseInt(CategoryLimit),
+		    currentPage: 1,
+		    paginationEle: '.job_list_individual'
+		});
+		
+		$('.pagination span a:eq(0)').click();
+		$('.pagination a:eq(0)').removeAttr('href');
+	}
+   JobsListingPagination();
 	
 	window.custom_label = function() {
 		$("body").off().on("click", '.label-check', function(e) {
@@ -867,7 +874,7 @@ $(document).ready(function(){
     renderTableau();
     renderAMchart();
     AMchartUsingBuilder();
-    JobsListingPagination();
+ 
     $(window).on('resize', (event) => {
         renderIframeComponents();
         renderTableau();
