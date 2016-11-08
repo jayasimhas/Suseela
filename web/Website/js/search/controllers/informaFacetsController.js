@@ -382,19 +382,16 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         vm.update();
     };
 
+    vm.validateFormat = function (date, type) {
+        if(date == undefined) 
+            alert("The '"+type+"' date value isn't properly formatted");
+    };
+
     vm.customDateRangeSearch = function (filterKey, startDate, endDate) {
 
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');
-
-        if(startDate == undefined) {
-            alert("The 'from' date value isn't properly formatted");
-        }
-
-        if(endDate == undefined) {
-            alert("The 'to' date value isn't properly formatted");
-        }
 
         if(startDate > new Date()){
             alert("you can't select date bigger than today");
