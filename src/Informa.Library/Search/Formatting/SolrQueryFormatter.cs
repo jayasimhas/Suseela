@@ -6,7 +6,7 @@ namespace Informa.Library.Search.Formatting
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class SolrQueryFormatter : IQueryFormatter
 	{
-		private static readonly string[] _keywords = {" and ", " or ", " not "};
+		private static readonly string[] _keywords = {" and ", " or ", " not ", "*" };
 		private static readonly char[] _groupingCharacters = {'"', '(', ')'};
 
 		public bool NeedsFormatting(string rawQuery)
