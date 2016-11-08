@@ -70,11 +70,18 @@ namespace Informa.Web.ViewModels
         {
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-                if (UserPreferences.Preferences != null &&
-                    UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
+                if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
-                    //Take user to Personalized home page.
-                    return SiterootContext.Item?.MyView_Page?._Url;
+                    if ((UserPreferences.Preferences.PreferredChannels.Any(ch => ch.IsFollowing) && UserPreferences.Preferences.IsNewUser) || UserPreferences.Preferences.PreferredChannels.SelectMany(tp => tp.Topics).Any(tp => tp.IsFollowing))
+                    {
+                        //Take user to Personalized home page.
+                        return SiterootContext.Item?.MyView_Page?._Url;
+                    }
+                    else
+                    {
+                        //Take to MyView settings page
+                        return SiterootContext.Item?.MyView_Settings_Page?._Url;
+                    }
                 }
                 else
                 {
