@@ -100,6 +100,7 @@ namespace Informa.Web.Areas.Article.Controllers
             var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
             var allEmails = request.RecipientEmail.Split(';');
             var result = true;
+            var isMailSent = false;
             var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
                     request.ArticleNumber, request.PersonalMessage);
 
@@ -119,6 +120,7 @@ namespace Informa.Web.Areas.Article.Controllers
                 };
 
                 var isEmailSent = EmailSender.Send(friendEmail);
+                isMailSent = isEmailSent;
                 if (!isEmailSent)
                 {
                     _logger.Warn($"Email sender failed");
@@ -127,7 +129,8 @@ namespace Informa.Web.Areas.Article.Controllers
             }
             return Ok(new
             {
-                success = result
+                success = result,
+                mailsent = isMailSent
             });
         }
 
