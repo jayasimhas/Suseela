@@ -162,7 +162,17 @@ var AMchartUsingBuilder=function() {
     }
 };
 
-
+var JobsListingPagination=function(){
+    var TotalCategories=$("#JobTilesCount").val()
+    var CategoryLimit=$("#NoOfJobsPerPage").val() 
+    
+		$('.pagination').setPagination({
+		    totalCategories: parseInt(TotalCategories),
+		    categoryLimit: parseInt(CategoryLimit),
+		    currentPage: 1,
+		    paginationEle: '.job_list_individual'
+		});
+}
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -857,6 +867,7 @@ $(document).ready(function(){
     renderTableau();
     renderAMchart();
     AMchartUsingBuilder();
+    JobsListingPagination();
     $(window).on('resize', (event) => {
         renderIframeComponents();
         renderTableau();

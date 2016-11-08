@@ -49,9 +49,12 @@ namespace Informa.Library.Mail.ExactTarget
             FuelSDK.ET_Email etEmail;
             try
             {
+                _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model");
                 etEmail = PopulateEtModel(emailItem);
-                if(string.IsNullOrWhiteSpace(etEmail.HTMLBody)) { throw new Exception("HTML body was empty."); }
-            } catch (Exception ex)
+                _dependencies.LogWrapper.SitecoreInfo($"Populated ET Model");
+                if (string.IsNullOrWhiteSpace(etEmail.HTMLBody)) { throw new Exception("HTML body was empty."); }
+            }
+            catch (Exception ex)
             {
                 return Respond(false, $"Failed to populate email to send to ExactTarget.  Error: {ex.Message}");
             }
@@ -61,7 +64,7 @@ namespace Informa.Library.Mail.ExactTarget
                 : _dependencies.ExactTargetWrapper.UpdateEmail(etEmail);
 
             if (response.Success && IsEmailNewToExactTarget(emailItem)) { UpdateSitecoreWithEmailId(emailItem, response); }
-            
+
             if (response.Success)
             {
                 return Respond(true,
@@ -79,7 +82,7 @@ namespace Informa.Library.Mail.ExactTarget
 
         private PushEmailResponse Respond(bool success, string message)
         {
-            var response = new PushEmailResponse {Success = success, Message = message};
+            var response = new PushEmailResponse { Success = success, Message = message };
             if (success)
             {
                 _dependencies.LogWrapper.SitecoreInfo(message);
@@ -117,8 +120,11 @@ namespace Informa.Library.Mail.ExactTarget
         public string GetEmailHtml(IExactTarget_Email emailItem)
         {
             var url = _dependencies.SitecoreUrlWrapper.GetItemUrl(emailItem);
+            _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model. url : { url }");
             var htmlResponse = _dependencies.WebClientWrapper.DownloadString(url);
+            _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model. htmlResponse : { htmlResponse }");
             var inlineHtml = _dependencies.Premailer.InlineCss(htmlResponse);
+            _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model. inlineHtml : { inlineHtml }");
             return inlineHtml;
         }
 

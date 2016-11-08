@@ -43,7 +43,7 @@ namespace Informa.Library.Authors
             {
                 var query = context.GetQueryable<AuthorSearchResult>()
                     .Filter(i => i.IsValid)
-                    .Filter(i => i.AuthorUrlName.Equals(urlName, StringComparison.InvariantCultureIgnoreCase));
+                    .Filter(i => i.AuthorUrlName.Equals(urlName.ToLower(), StringComparison.InvariantCultureIgnoreCase));
                 var hit = query.GetResults()?.Hits?.FirstOrDefault();
                 return hit?.Document?.ItemId?.ToGuid();
             }
