@@ -60,6 +60,8 @@
 
         public string SubscribeUrl => SiterootContext.Item?.Subscribe_Link?.Url;
 
+        public string publicationname => SiterootContext.Item.Publication_Name;
+
         public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
         public bool isChannelBasedRegistration { get; set; }
         public bool isFromRegistration { get; set; }
