@@ -111,6 +111,16 @@ $(document).ready(function() {
 				'AlertEnabled': $('#AlertEnabled').prop('checked')
 			});
 
+			$.ajax({
+			    type: "POST",
+			    url: "/api/SavedSearches",
+			    data: {
+			        url: $('.js-save-search-url').val(),
+			        title: $('.js-save-search-title').val(),
+			        alertEnabled: $('#AlertEnabled').prop('checked')
+			    }
+			});
+            
 			var loginAnalytics =  {
 				event_name: 'login',
 				login_state: 'successful',

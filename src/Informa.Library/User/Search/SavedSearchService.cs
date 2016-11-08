@@ -107,8 +107,8 @@ namespace Informa.Library.User.Search
 			if (entity != null)
 			{
 				entity.HasAlert = input.AlertEnabled;
-
-				var updateResponse = _dependencies.Repository.Update(entity);
+                entity.SearchString = ExtractQueryString(input.Url);
+                var updateResponse = _dependencies.Repository.Update(entity);
 				Clear();
 
 				return updateResponse;
