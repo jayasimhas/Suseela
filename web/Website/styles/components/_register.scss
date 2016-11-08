@@ -72,6 +72,10 @@
 				.newsletter_checkbox{
 				    @include breakpoint('small'){
 						display: none;
+						input {
+							width: 1px;
+							height: 1px;
+						}
 					}
 					@include breakpoint('medium-small'){
 						display: none;
@@ -155,6 +159,10 @@
 					width: 100%;
 					clear: both;
 					display: block;
+					input {
+						width: 1px;
+						height: 1px;
+					}
 				}
 				.chk_box{
 					background: url('/dist/img/sprite-image.png') no-repeat -7px -512px;
@@ -187,10 +195,12 @@
 			   float: right;
 			   width: 40%;
 			   position: relative;
+			   margin-right: 1rem;
 			   @include breakpoint('small'){
 					width: 100%;
 					clear: both;
 					display: block;
+					margin-right: 0;
 				}
 				 @include breakpoint('medium-small'){
 					width: 100%;
