@@ -22,5 +22,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         bool isChannelBasedRegistration { get; set; }
         bool isFromRegistration { get; set; }
         bool enableSavePreferencesCheck { get; set; }
+        string publicationname { get; }
     }
 }
