@@ -112,11 +112,7 @@
                 channel.ChannelCode = SiterootContext.Item.Publication_Code;
                 channel.ChannelLink = homeItem._Url;
                 channel.ChannelOrder = 1;
-
-                // For beta user will be subscribed for all the channels. Bellow line will be replaced by commented line after Beta.
-                //channel.IsSubscribed = true;
                 channel.IsSubscribed = currentSubscriptions?.ProductCode == channel.ChannelCode && currentSubscriptions.ExpirationDate > DateTime.Now;
-
                 GetTopicsForRegistration(channel);
                 channels.Add(channel);
             }
@@ -154,8 +150,6 @@
                                 topic.TopicId = channelPage._Id.ToString();
                                 topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                                 topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                                
-                                //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(SiterootContext?.Item.Publication_Code, StringComparison.InvariantCultureIgnoreCase)).Any();
                                 topic.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(ch => ch.ChannelId == channelPage.Channel_Code && ch.ExpirationDate > DateTime.Now) ?? false;
                                 channel.Topics.Add(topic);
                             }
@@ -219,7 +213,6 @@
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
                             SetChannelOrderAndStus(channelPage, channel);
-                            //channel.IsSubscribed = _subcriptions.Where(sub => sub.ProductCode.Equals(SiterootContext?.Item.Publication_Code, StringComparison.InvariantCultureIgnoreCase)).Any();
                             channel.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(ch => ch.ChannelId == channelPage.Channel_Code && ch.ExpirationDate > DateTime.Now) ?? false;
                             GetTopics(channel, channelPage);
                             channels.Add(channel);
