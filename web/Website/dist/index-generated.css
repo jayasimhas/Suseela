@@ -3510,7 +3510,7 @@ header .header-account-access {
       border: 1px solid transparent;
       color: #ffffff;
       padding: 12px;
-      background-color: #c22d3b;
+      background-color: #9E310D;
       width: 146px;
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
@@ -3526,7 +3526,7 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: auto;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3535,7 +3535,7 @@ header .header-account-access {
       @media (max-width: 480px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3544,7 +3544,7 @@ header .header-account-access {
       @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -4997,7 +4997,8 @@ header .header-account-access {
       width: 18px;
       height: 14px;
       position: absolute;
-      right: 40px; }
+      right: 40px;
+      top: 20px; }
 
 .personalisationhome .topic-featured-article__image2 {
   margin-bottom: 16px;
