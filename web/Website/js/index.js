@@ -163,15 +163,18 @@ var AMchartUsingBuilder=function() {
 };
 
 var JobsListingPagination=function(){
-    var TotalCategories=$("#JobTilesCount").val()
-    var CategoryLimit=$("#NoOfJobsPerPage").val() 
+    if($("#jobsListingPage").hasClass("jobsAndClassifiedsListingPage"))
+    {
+        var TotalCategories=$("#JobTilesCount").val()
+        var CategoryLimit=$("#NoOfJobsPerPage").val() 
     
-		$('.pagination').setPagination({
-		    totalCategories: parseInt(TotalCategories),
-		    categoryLimit: parseInt(CategoryLimit),
-		    currentPage: 1,
-		    paginationEle: '.job_list_individual'
-		});
+        $('.pagination').setPagination({
+            totalCategories: parseInt(TotalCategories),
+            categoryLimit: parseInt(CategoryLimit),
+            currentPage: 1,
+            paginationEle: '.job_list_individual'
+        });
+    }
 }
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");
@@ -192,79 +195,79 @@ function getParameterByName(name, url) {
 $(document).ready(function(){
 	
 
-	//AM Charts
-	if($('#amchartData') && $('#amchartData').length){
-	var amchartVal = JSON.parse($('#amchartData').val()),
-	createNewObj = {};
-	for(prop in amchartVal){
-		if(prop != 'dataProvider'){
-			createNewObj[prop] = amchartVal[prop];
-		}else{
-			createNewObj[prop] = chartDataVal; 
-		}
-	}
+    //AM Charts
+    if($('#amchartData') && $('#amchartData').length){
+        var amchartVal = JSON.parse($('#amchartData').val()),
+        createNewObj = {};
+        for(prop in amchartVal){
+            if(prop != 'dataProvider'){
+                createNewObj[prop] = amchartVal[prop];
+            }else{
+                createNewObj[prop] = chartDataVal; 
+            }
+        }
 
-	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
-	}
-	//messaging web users
-	window.dismiss=function(){
-		$('.dismiss').on('click', function(){
-			Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
-			$('.messaging_webUsers').remove(); 
-			$('.messaging_webUsers_white').remove(); 
-		});
-	}
-	window.dismiss();
+        var chart = AmCharts.makeChart( "chartdiv", createNewObj );
+    }
+    //messaging web users
+    window.dismiss=function(){
+        $('.dismiss').on('click', function(){
+            Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
+            $('.messaging_webUsers').remove(); 
+            $('.messaging_webUsers_white').remove(); 
+        });
+    }
+    window.dismiss();
 	
-	window.custom_label = function() {
-		$("body").off().on("click", '.label-check', function(e) {
-			if($(this).hasClass("label-check")) {
+    window.custom_label = function() {
+        $("body").off().on("click", '.label-check', function(e) {
+            if($(this).hasClass("label-check")) {
 				
-				var ele = $(this).find('input');
-				if(ele.is(':checked')){
-				  ele.prop('checked', false);
-				  ele.parent('div').removeClass('wcs-c-on');
-				}else{
-				  ele.prop('checked', true);
-				  ele.parent('div').addClass('wcs-c-on');
-				}
-			}
-		});
+                var ele = $(this).find('input');
+                if(ele.is(':checked')){
+                    ele.prop('checked', false);
+                    ele.parent('div').removeClass('wcs-c-on');
+                }else{
+                    ele.prop('checked', true);
+                    ele.parent('div').addClass('wcs-c-on');
+                }
+            }
+        });
 		
-	}
-	window.custom_label();
+    }
+    window.custom_label();
 	
-	window.personalised_nav = function() {
-	//personalise pop up
-	var modal = document.getElementById('myModal');
+    window.personalised_nav = function() {
+        //personalise pop up
+        var modal = document.getElementById('myModal');
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("personalise_close")[0];
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("personalise_close")[0];
 
-	    // When the user clicks the button, open the modal
-	$(document).on('click','#myBtn',function() {
-			modal.style.display = "block";
-	});  
+        // When the user clicks the button, open the modal
+        $(document).on('click','#myBtn',function() {
+            modal.style.display = "block";
+        });  
 
-	// When the user clicks on <span> (x), close the modal
-	if(span !== undefined){
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-	}
+        // When the user clicks on <span> (x), close the modal
+        if(span !== undefined){
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 		
-	}
-	window.personalised_nav();
+    }
+    window.personalised_nav();
 	
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
@@ -289,23 +292,23 @@ $(document).ready(function(){
 
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-		window.controlPopOuts.customize({
-			id: 'header-register',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
+        window.controlPopOuts.customize({
+            id: 'header-register',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
 		
-		window.controlPopOuts.customize({
-			id: 'myView-header-register',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
+        window.controlPopOuts.customize({
+            id: 'myView-header-register',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
         window.controlPopOuts.customize({
             id: 'header-register',
             tabStyles: {
@@ -345,22 +348,22 @@ $(document).ready(function(){
 
     window.indexBookmarks();
 	
-	//Data tool Landing page
+    //Data tool Landing page
 	
-		window.addWidth = function() {
-		//landing page
-		if(($(".demoText").is(':visible')) && !($(".video-demo").is(':hidden')))  {
-			$('.demoText').addClass('add-width-100');
-		}
-		if(!($(".demoText").is(':hidden')) && ($(".video-demo").is(':visible')))  {
-			$('.video-demo').addClass('add-width-100');
-		}
-		if(($(".demoText").is(':visible')) && ($(".video-demo").is(':visible')))  {
-			$('.demoText').removeClass('add-width-100');
-			$('.video-demo').removeClass('add-width-100');
-		}
-	};
-	window.addWidth();
+    window.addWidth = function() {
+        //landing page
+        if(($(".demoText").is(':visible')) && !($(".video-demo").is(':hidden')))  {
+            $('.demoText').addClass('add-width-100');
+        }
+        if(!($(".demoText").is(':hidden')) && ($(".video-demo").is(':visible')))  {
+            $('.video-demo').addClass('add-width-100');
+        }
+        if(($(".demoText").is(':visible')) && ($(".video-demo").is(':visible')))  {
+            $('.demoText').removeClass('add-width-100');
+            $('.video-demo').removeClass('add-width-100');
+        }
+    };
+    window.addWidth();
 
 
     /* * *
@@ -772,31 +775,31 @@ $(document).ready(function(){
         $('.show-demo').click(function(){
 			
             $(this).closest('.js-toggle-demo').toggleClass('collapsed');
-			//IPMP-616	
+            //IPMP-616	
             if($(this).parent().hasClass('collapsed')){
-			sessionStorage.setItem("mykey", "false"); 
+                sessionStorage.setItem("mykey", "false"); 
                 $('.hd').show();
                 $('.sd').hide();
-				$('.toggle-demo').show();
+                $('.toggle-demo').show();
             }else{
-			sessionStorage.setItem("mykey", "true"); 
+                sessionStorage.setItem("mykey", "true"); 
                 $('.sd').show();
                 $('.hd').hide();
-				$('.toggle-demo').hide();
+                $('.toggle-demo').hide();
             }
-			var persistedval=sessionStorage.getItem("mykey");
-			 if(persistedval == "false"){
-				$('.toggle-demo').show();
-			 }else{
-			 $('.toggle-demo').hide();
-			 }
+            var persistedval=sessionStorage.getItem("mykey");
+            if(persistedval == "false"){
+                $('.toggle-demo').show();
+            }else{
+                $('.toggle-demo').hide();
+            }
         });
-		var persistedval=sessionStorage.getItem("mykey");
-		 if(persistedval == "false"){
-				$('.toggle-demo').show();
-			 }else{
-			 $('.toggle-demo').hide();
-			 }
+        var persistedval=sessionStorage.getItem("mykey");
+        if(persistedval == "false"){
+            $('.toggle-demo').show();
+        }else{
+            $('.toggle-demo').hide();
+        }
 
     })();
 
