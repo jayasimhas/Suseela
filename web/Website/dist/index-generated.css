@@ -3510,7 +3510,7 @@ header .header-account-access {
       border: 1px solid transparent;
       color: #ffffff;
       padding: 12px;
-      background-color: #c22d3b;
+      background-color: #9E310D;
       width: 146px;
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
@@ -3526,7 +3526,7 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: auto;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3535,7 +3535,7 @@ header .header-account-access {
       @media (max-width: 480px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3544,7 +3544,7 @@ header .header-account-access {
       @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3563,7 +3563,7 @@ header .header-account-access {
     @media (max-width: 480px) {
       header .header-account-access .myView-placeholder {
         position: absolute;
-        top: 130px;
+        top: 0;
         margin-right: 12px;
         right: 0; } }
     header .header-account-access .myView-placeholder .arrow {
@@ -3706,8 +3706,8 @@ header .header-account-access {
   clear: both;
   border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 20px 32px 30px;
+  padding: 1.25rem 2rem 1.875rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
@@ -3716,7 +3716,12 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both; }
+    clear: both;
+    position: absolute;
+    top: 5px;
+    top: 0.3125rem;
+    right: 10px;
+    right: 0.625rem; }
     .messaging_webUsers_white .msg_dismiss a, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers_white .msg_dismiss .mobile-table-exit {
       padding-right: 15px;
       display: inline-block;
@@ -3761,6 +3766,8 @@ header .header-account-access {
   padding-bottom: 50px !important;
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
+  .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
+    width: auto; }
   .myview-settings h1 {
     margin-bottom: 0px;
     margin-bottom: 0rem;
@@ -3816,7 +3823,8 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 75%;
+      width: 480px;
+      width: 30rem;
       margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
@@ -3970,8 +3978,16 @@ header .header-account-access {
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
           margin-top: 7px;
-          margin-top: 0.4375rem;
-          position: relative; }
+          margin-top: 0.4375rem; }
+          .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .pull-left {
+            float: left; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .pull-left {
+                height: 24px;
+                height: 1.5rem;
+                width: 24px;
+                width: 1.5rem;
+                display: block; } }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines span {
             height: 2px;
             height: 0.125rem;
@@ -3982,8 +3998,8 @@ header .header-account-access {
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .move {
             position: absolute;
-            left: -43px;
-            left: -2.6875rem;
+            left: -59px;
+            left: -3.6875rem;
             top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
@@ -4009,8 +4025,16 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
             float: right;
             margin-top: 7px;
-            margin-top: 0.4375rem;
-            position: relative; }
+            margin-top: 0.4375rem; }
+            .myview-settings .table-responsive .table tbody tr.followrow .rowlines .pull-left {
+              float: left; }
+              @media (max-width: 640px) {
+                .myview-settings .table-responsive .table tbody tr.followrow .rowlines .pull-left {
+                  height: 24px;
+                  height: 1.5rem;
+                  width: 24px;
+                  width: 1.5rem;
+                  display: block; } }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines span {
               height: 2px;
               height: 0.125rem;
@@ -4021,8 +4045,8 @@ header .header-account-access {
               margin-bottom: 3px; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines .move {
               position: absolute;
-              left: -43px;
-              left: -2.6875rem;
+              left: -59px;
+              left: -3.6875rem;
               top: -3px;
               text-transform: uppercase;
               font-size: 0.75em;
@@ -4052,7 +4076,8 @@ header .header-account-access {
         background: #f9f9f9; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
-            /*padding: 0.5rem 0rem 0.625rem 0.625rem;*/ } }
+            padding: 8px 0px 10px 10px;
+            padding: 0.5rem 0rem 0.625rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
@@ -4082,15 +4107,23 @@ header .header-account-access {
               padding: 0px 10px;
               padding: 0rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th.pbot {
-          padding: 0px 20px 27px;
-          padding: 0rem 1.25rem 27px; }
+          padding: 0px 16px 20px 27px;
+          padding: 0rem 1rem 1.25rem 27px; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
           margin-top: 7px;
           margin-top: 0.4375rem;
-          position: relative;
           margin-top: -24px;
           margin-top: -1.5rem; }
+          .myview-settings .table-responsive .table thead th .rowlines .pull-left {
+            float: left; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table thead th .rowlines .pull-left {
+                height: 24px;
+                height: 1.5rem;
+                width: 24px;
+                width: 1.5rem;
+                display: block; } }
           .myview-settings .table-responsive .table thead th .rowlines span {
             height: 2px;
             height: 0.125rem;
@@ -4101,8 +4134,8 @@ header .header-account-access {
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table thead th .rowlines .move {
             position: absolute;
-            left: -43px;
-            left: -2.6875rem;
+            left: -59px;
+            left: -3.6875rem;
             top: -3px;
             text-transform: uppercase;
             font-size: 0.75em;
@@ -4192,9 +4225,6 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
-        @media (max-width: 480px) {
-          .myview-settings .table-responsive .table thead .followAllBtn {
-            float: none; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4243,7 +4273,9 @@ header .header-account-access {
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 16px;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        margin-left: 8px;
+        margin-left: 0.5rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4589,9 +4621,10 @@ header .header-account-access {
   .myview-settings .hidden-large {
     display: none; }
   .myview-settings .alert-success {
-    margin-bottom: 20px; }
+    margin-bottom: 35px; }
   .myview-settings .alert-error {
-    margin-bottom: 20px; }
+    margin-bottom: 35px;
+    margin-top: -20px; }
   .myview-settings .tbodyhidden {
     display: none; }
 
@@ -4608,8 +4641,8 @@ header .header-account-access {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
-    width: 240px;
-    width: 15rem; } }
+    width: 208px;
+    width: 13rem; } }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
   .myview-settings .desktopMode {
@@ -4633,13 +4666,15 @@ header .header-account-access {
       background-position: -3px -236px;
       text-indent: -140px;
       text-indent: -8.75rem;
-      color: #58595b !important; }
+      color: #58595b !important;
+      border: none !important;
+      background-color: inherit !important; }
     .myview-settings .smfollowingBtn .followAllBtn {
       background-position: -3px -266px;
       text-indent: -124px;
-      border: none !important; }
-      .myview-settings .smfollowingBtn .followAllBtn.fr {
-        float: right !important; }
+      border: none !important;
+      padding: 0 0 !important;
+      float: right; }
   .myview-settings .accordionStatus.hideRow {
     display: none; } }
 
@@ -4656,14 +4691,18 @@ header .header-account-access {
       line-height: 28px !important;
       line-height: 1.75rem !important; }
       .smfollowingBtn span.unfollowAllBtn {
-        background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+        background: url(/dist/img/sprite-image.png) no-repeat -3px -236px;
         text-indent: -140px;
         text-indent: -8.75rem;
-        color: #58595b !important; }
+        color: #58595b !important;
+        border: none !important;
+        background-color: inherit !important; }
       .smfollowingBtn span.followAllBtn {
         background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
         text-indent: -124px;
-        border: none !important; } }
+        border: none !important;
+        background-color: inherit !important;
+        padding: 0 0 !important; } }
 
 /************ drag and drop styles ***********/
 .drop {
@@ -4711,10 +4750,10 @@ header .header-account-access {
   margin-top: 0px; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
-      margin-right: 6px;
-      margin-right: 0.375rem;
-      padding-right: 6px;
-      padding-right: 0.375rem; } }
+      margin-right: 4px;
+      margin-right: 0.25rem;
+      padding-right: 4px;
+      padding-right: 0.25rem; } }
 
 .personalisationhome .personalHead {
   border-bottom: 1px solid #d1d3d4;
@@ -4778,9 +4817,14 @@ header .header-account-access {
       display: block;
       height: 4px;
       position: absolute;
-      top: calc(50% - 2px);
+      top: calc(60% - 2px);
       width: 85%;
-      z-index: 1; }
+      z-index: 1; } }
+    @media (min-width: 768px) and (max-width: 1080px) {
+      .personalisationhome .latestSubject:before {
+        width: 80%; } }
+
+@media (min-width: 768px) {
     .personalisationhome .latestSubject .editView {
       cursor: pointer;
       text-transform: uppercase;
@@ -4799,7 +4843,9 @@ header .header-account-access {
       color: #ffffff;
       float: right;
       margin: 0px;
-      padding: 0px; } }
+      padding: 0px;
+      position: relative;
+      top: 5px; } }
 
 .personalisationhome .latest-news__articles .article-small-preview {
   border: 1px solid #d1d3d4;
@@ -4902,6 +4948,8 @@ header .header-account-access {
   height: 120px;
   height: 7.5rem;
   overflow: hidden; }
+  .personalisationhome .article-preview--small .article-preview_rheadline:last-child {
+    border-bottom: none; }
   .personalisationhome .article-preview--small .article-preview_rheadline.nobord {
     border-bottom: none; }
     @media (max-width: 480px) {
@@ -4936,12 +4984,21 @@ header .header-account-access {
     font-family: "Roboto";
     font-size: 14px;
     font-size: 0.875rem;
-    padding: 20px 60px;
-    padding: 1.25rem 3.75rem;
+    padding: 20px 70px 20px 60px;
+    padding: 1.25rem 4.375rem 1.25rem 3.75rem;
     border: 1px solid #d1d3d4;
     display: inline-block;
     cursor: pointer;
-    font-weight: bold; }
+    font-weight: bold;
+    position: relative; }
+    .personalisationhome .loadmore span:after {
+      content: '';
+      background: url("/dist/img/sprite-image.png") no-repeat -17px -124px;
+      width: 18px;
+      height: 14px;
+      position: absolute;
+      right: 40px;
+      top: 20px; }
 
 .personalisationhome .topic-featured-article__image2 {
   margin-bottom: 16px;
@@ -5037,7 +5094,14 @@ header .header-account-access {
         font-size: 0.8125rem; }
       .personalisationhome .latest-news__articles .article-small-preview ul li h6, .personalisationhome .latest-news__articles .article-small-preview ul li .article-tags-bar__label, .personalisationhome .latest-news__articles .article-small-preview ul li .article-topics__section-header {
         font-size: 13px;
-        font-size: 0.8125rem; } }
+        font-size: 0.8125rem; }
+  .personalisationhome .article-metadata ul {
+    display: block;
+    padding-top: 30px;
+    padding-top: 1.875rem; }
+    .personalisationhome .article-metadata ul li {
+      display: inline-block;
+      vertical-align: middle; } }
 
 @media screen and (max-width: 767px) {
   .personalisationhome .article-preview--small {
@@ -5060,9 +5124,8 @@ header .header-account-access {
       font-size: 2rem;
       font-family: "Roboto condensed";
       font-weight: bold;
-      height: 37px;
-      height: 2.3125rem;
-      overflow: hidden;
+      min-height: 37px;
+      min-height: 2.3125rem;
       display: block;
       padding-left: 10px;
       padding-left: 0.625rem;
@@ -5640,7 +5703,10 @@ section: UI Elements
     display: inline-flex; }
   @media (max-width: 480px) {
     .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
-      display: none; } }
+      display: none; }
+      .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox input {
+        width: 1px;
+        height: 1px; } }
   @media (max-width: 640px) {
     .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
       display: none; } }
@@ -5717,7 +5783,10 @@ section: UI Elements
       .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
         width: 100%;
         clear: both;
-        display: block; } }
+        display: block; }
+        .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox input {
+          width: 1px;
+          height: 1px; } }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .chk_box {
       background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       background-repeat: no-repeat;
@@ -5743,12 +5812,15 @@ section: UI Elements
   .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
     float: right;
     width: 40%;
-    position: relative; }
+    position: relative;
+    margin-right: 16px;
+    margin-right: 1rem; }
     @media (max-width: 480px) {
       .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
         width: 100%;
         clear: both;
-        display: block; } }
+        display: block;
+        margin-right: 0; } }
     @media (max-width: 640px) {
       .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
         width: 100%;
@@ -6225,6 +6297,12 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
+    .subscriptionPan #mySubscriptionTab a.button.button--outline, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit {
+      border: 1px solid #fbb040; }
+      .subscriptionPan #mySubscriptionTab a.button.button--outline:hover, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit:hover {
+        border-color: #f7941e;
+        background-color: #f7941e;
+        color: #ffffff; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
@@ -6285,15 +6363,18 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         float: left;
         padding: 12px; }
       .subscriptionPan .tableMrow .pubSubscribe {
-        width: 40%;
+        width: 32%;
         float: left;
         padding: 12px 0; }
         .subscriptionPan .tableMrow .pubSubscribe .button, .subscriptionPan .tableMrow .pubSubscribe .full-diminished-button {
           padding-top: 7px;
-          padding-bottom: 7px; } }
+          padding-bottom: 7px;
+          display: inline-block; } }
   .subscriptionPan .tableMrow .tablerow {
     clear: both;
     border: 1px solid #d2d4d3; }
+  .subscriptionPan .tableMrow a.button--outlined, .subscriptionPan .tableMrow .button--outlined.pop-out__reset-password, .subscriptionPan .tableMrow .button--outlined.sortable-table__list-toggler, .subscriptionPan .tableMrow .button--outlined.mobile-table-exit {
+    border: 1px solid #fbb040 !important; }
   .subscriptionPan .parent {
     border-top: 1px solid #d2d4d3; }
   .subscriptionPan .child {
@@ -6521,8 +6602,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
     font-weight: 700;
-    margin-bottom: 40px;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 30px;
+    margin-bottom: 1.875rem; }
   .data-tool-landing .sub-heading-text {
     font-family: "PT Serif", Georgia, serif;
     font-style: italic;
@@ -6574,7 +6655,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
-      padding: 23px 40px 30px 0;
+      padding: 23px 40px 40px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
         font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -6677,6 +6758,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   .data-tool-placeholder .data-tool-graph {
     width: 100%;
     clear: both; }
+  .data-tool-placeholder .articleText {
+    padding: 40px 40px 60px; }
+    @media (max-width: 480px) {
+      .data-tool-placeholder .articleText {
+        padding: 10px; } }
 
 .data-tool-placeholder-right-rail {
   width: 100%;
@@ -10278,7 +10364,8 @@ section: Global Components
   @media (max-width: 800px) {
     .header__wrapper {
       height: 97px;
-      padding: 0; } }
+      padding: 0;
+      position: relative; } }
   @media (max-width: 480px) {
     .header__wrapper {
       -ms-flex-wrap: wrap;
@@ -12490,163 +12577,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */

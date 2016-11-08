@@ -21,7 +21,7 @@ function createJSONData(alltables, UserPreferences){
 				secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
 				datarowNo = $(currenttabtrs[j]).attr('data-row');
 
-            var followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+            var followStatus = (secondtd == $('#followingButtonText').val()) ? true : false;
             var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 
             alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
@@ -52,7 +52,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl){
 				if(setFlag == 'register'){
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				}
 				else{
 					$('.alert-error.myview-error p').html(data.reason);
@@ -65,7 +64,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl){
 				if(setFlag == 'register'){
 					$('.alert-error.register-error p').html(data.reason);
 					$('.alert-error.register-error').show();
-					setRegisterFlag = false;
 				}
 				else{
 					$('.alert-error.myview-error p').html(data.reason);
@@ -97,7 +95,7 @@ function sendRegisterData(alltrs, UserPreferences, redirectUrl){
 			channelId = $(alltrs[i]).find('input[type=hidden]').attr('data-row-item-id'),
 			secondtd = $(alltrs[i]).find('td.wd-25 span').html(),
 			channelOrder = $(alltrs[i]).attr('data-row'),
-			followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
+			followStatus = (secondtd == $('#followingButtonText').val()) ? true : false;
 		
 		UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
 	}
@@ -212,7 +210,7 @@ $(function(){
 	});
 	
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function(){
-	  var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow');
+	  var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtnHS = table.find('.hidden-large .followAllBtn'), followAllBtnHL = table.find('.hidden-xs .followAllBtn'), unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'), unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow');
 	  followrow.attr('draggable', true);
 	  $('#validatePreference').val(1);
 	  followrow.addClass('followingrow').removeClass('followrow disabled frow');
@@ -220,10 +218,11 @@ $(function(){
 	  setClsforFlw(table);
 	  table.find('.firstrow .lableStatus').val('followinglbl');
 	  table.find('.accordionStatus .lableStatus').val('followinglbl');
-	  table.find('.followAllBtn').removeClass('fr');
+	  //table.find('.followAllBtn').removeClass('fr');
 	  
 	  if(trs.hasClass('followingrow')){
 		$('#validatePriority').val(true);
+		unfollowAllBtnHS.addClass('hideBtn');
 	  }
 	  
 	  if($('.followrow.disabled.frow', table).length){
@@ -234,23 +233,29 @@ $(function(){
 	  }
 	  followrow.remove();
 	  if(trs.length === trsfollowing.length+1){
-		followAllBtn.addClass('hideBtn');
-		unfollowAllBtn.removeClass('hideBtn');
+		followAllBtnHL.addClass('hideBtn');
+		unfollowAllBtnHL.removeClass('hideBtn');
+		
+		followAllBtnHS.addClass('hideBtn');
+		unfollowAllBtnHS.removeClass('hideBtn');
 	  }
 	  else{
-		followAllBtn.removeClass('hideBtn');
-		unfollowAllBtn.removeClass('hideBtn');
+		followAllBtnHL.removeClass('hideBtn');
+		unfollowAllBtnHL.removeClass('hideBtn');
+		
+		followAllBtnHS.removeClass('hideBtn');
+		unfollowAllBtnHS.addClass('hideBtn');
 	  }
 	});
 	
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function(){
-	  var $this = $(this), table = $this.closest('table'), followingrow = $this.closest('.followingrow'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
+	  var $this = $(this), table = $this.closest('table'), followAllBtnHS = table.find('.hidden-large .followAllBtn'), followAllBtnHL = table.find('.hidden-xs .followAllBtn'), unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'), unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
 	  $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 	  followingrow.clone().appendTo($this.closest('tbody'));
 	  followingrow.remove();
 	  $('#validatePreference').val(1);
-	  table.find('.followAllBtn').removeClass('fr');
+	  //table.find('.followAllBtn').removeClass('fr');
 	  sort_table(tbody, 0, 1, 'followingBtn');
 	  
 	  if(trs.length === disabledtrs.length+1){
@@ -258,13 +263,19 @@ $(function(){
 		table.find('.accordionStatus .lableStatus').val('followlbl');
 	  }
 	  if(trs.length === trsfollow.length+1){
-		unfollowAllBtn.addClass('hideBtn');
-		followAllBtn.removeClass('hideBtn');
+		unfollowAllBtnHL.addClass('hideBtn');
+		followAllBtnHL.removeClass('hideBtn');
+		
+		unfollowAllBtnHS.removeClass('hideBtn');
+	    followAllBtnHS.addClass('hideBtn');
 		$('#validatePriority').val(false);
 	  }
 	  else{
-		followAllBtn.removeClass('hideBtn');
-		unfollowAllBtn.removeClass('hideBtn'); 
+		followAllBtnHL.removeClass('hideBtn');
+		unfollowAllBtnHL.removeClass('hideBtn');
+		
+		unfollowAllBtnHS.addClass('hideBtn');
+	    followAllBtnHS.removeClass('hideBtn');
 	  }
 	});
 	
@@ -407,7 +418,7 @@ $(function(){
 			}
 			setDataRow(allpublications);
 			
-			if(!!$('#isChannelBasedRegistration').val()){
+			if($('#isChannelBasedRegistration').val() == "true"){
 				sendRegisterData(alltrs, UserPreferences, 'href');
 			}
 			else{

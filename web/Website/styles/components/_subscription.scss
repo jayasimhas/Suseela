@@ -27,7 +27,14 @@
 				display: block !important;
 		    }
 		}
-		
+		a.button.button--outline {
+			border: 1px solid $color-yellow-orange;
+			&:hover {
+				border-color: $color-tree-poppy-orange;
+				background-color: $color-tree-poppy-orange;
+				color: $color-white;
+			}
+		}
 	}
 	#mypurchases{
 		width: 100%;
@@ -96,12 +103,13 @@
 				padding: 12px;
 			}
 			.pubSubscribe{
-				width: 40%;
+				width: 32%;
 				float: left;
 				padding: 12px 0;
 				.button{
 					padding-top: 7px;
 					padding-bottom: 7px;
+					display: inline-block;
 				}
 			}
 		}
@@ -109,7 +117,9 @@
 			clear: both;
 			border: 1px solid #d2d4d3;
 		}
-		
+		a.button--outlined {
+			border: 1px solid $color-yellow-orange !important;
+		}
 	}
 	.parent{
 		border-top: 1px solid #d2d4d3;

@@ -19,8 +19,15 @@
 }
 @mixin getMove(){
 	float: right;
-	margin-top: 0.4375rem; 
-	position: relative;
+	margin-top: 0.4375rem;
+	.pull-left{
+		float: left;
+		@include breakpoint('medium-small') {
+			height: 1.5rem;
+			width: 1.5rem;
+			display: block;
+		}
+	}
 	span{
 		height: 0.125rem;
 		width: 1.3125rem;
@@ -30,7 +37,7 @@
 	}
 	.move{
 		position: absolute;
-		left: -2.6875rem;
+		left: -3.6875rem;
 		top: -3px;
 		text-transform: uppercase;
 		font-size: 0.75em;
@@ -67,6 +74,11 @@
 .myview-settings {
 	padding-bottom: 50px !important;
 	margin-bottom: 3.125rem;
+	&.myview-settings-registration {
+		.publicationPan h2 {
+			width: auto;
+		} 
+	} 
 	h1{
 		margin-bottom: 0rem;
 		float: left;
@@ -118,7 +130,7 @@
 		h2{
 			text-align: left;
 			float: left;
-			width: 75%;
+			width: 30rem;
 			margin-top: -5px;
 			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
@@ -286,7 +298,7 @@
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						/*padding: 0.5rem 0rem 0.625rem 0.625rem;*/
+						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
 					p{
 						font-size: 1em; 
@@ -317,7 +329,7 @@
 						}
 					}
 					&.pbot{
-						padding: 0rem 1.25rem 27px;
+						padding: 0rem 1rem 1.25rem 27px;
 					}
 					& .rowlines{
 						@include getMove();
@@ -386,9 +398,6 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
-					@include breakpoint('small') {
-						float: none;
-					}
 				}
 				.followinglbl{
 					@include followBtnLbl();
@@ -401,6 +410,7 @@
 				.unfollowAllBtn{
 					@include unfollowBtnLbl();
 					padding: 0 1rem;
+					margin-left: 0.5rem;
 					@media screen and (min-width: 667px) and (max-width: 767px){
 						padding: 0 1.25rem;
 					}
@@ -631,10 +641,11 @@
 	}
 	
 	.alert-success{
-		margin-bottom: 20px;
+		margin-bottom: 35px;
 	}
 	.alert-error{
-		margin-bottom: 20px;
+		margin-bottom: 35px;
+		margin-top: -20px;
 	}
 	.tbodyhidden{
 		display: none;
@@ -664,7 +675,7 @@
 @media screen and (min-width: 768px) and (max-width: 1024px){
 	.myview-settings{
 		.firstrow h2{
-			width: 15rem;
+			width: 13rem;
 		}
 	}
 }
@@ -701,12 +712,15 @@
 				background-position: -3px -236px;
 				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
+				border: none !important;
+				background-color: inherit !important;
 			} 
 			.followAllBtn{
 				background-position: -3px -266px;
 				text-indent: -124px;
 				border: none !important;
-				&.fr{float: right !important;}
+				padding: 0 0 !important;
+				float: right;
 			}
 		}
 		.accordionStatus{
@@ -728,14 +742,18 @@
 			width: 30px !important;
 			line-height: 1.75rem !important;
 			&.unfollowAllBtn{
-				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -236px;
 				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
+				border: none !important;
+				background-color: inherit !important; 
 			} 
 			&.followAllBtn{
 				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 				text-indent: -124px;
 				border: none !important;
+				background-color: inherit !important;
+				padding: 0 0 !important;
 			}
 		}		
 	} 

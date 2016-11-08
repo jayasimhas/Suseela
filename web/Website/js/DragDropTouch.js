@@ -1,4 +1,4 @@
-var DragDropTouch;
+var DragDropTouch, checkTouchType = true;
 (function (DragDropTouch_1) {
     'use strict';
     /**
@@ -176,7 +176,15 @@ var DragDropTouch;
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-                        e.preventDefault();
+						if(e.target.className == 'pull-left'){
+							checkTouchType = true;
+							e.preventDefault();
+						}
+						else{
+							checkTouchType = false;
+							return false;
+						}
+                        
                         // show context menu if the user hasn't started dragging after a while
                         setTimeout(function () {
                             if (_this._dragSource == src && _this._img == null) {
@@ -190,60 +198,64 @@ var DragDropTouch;
             }
         };
         DragDropTouch.prototype._touchmove = function (e) {
-            if (this._shouldHandle(e)) {
-                // see if target wants to handle move
-                var target = this._getTarget(e);
-                if (this._dispatchEvent(e, 'mousemove', target)) {
-                    this._lastTouch = e;
-                    e.preventDefault();
-                    return;
-                }
-                // start dragging
-                if (this._dragSource && !this._img) {
-                    var delta = this._getDelta(e);
-                    if (delta > DragDropTouch._THRESHOLD) {
-                        this._dispatchEvent(e, 'dragstart', this._dragSource);
-                        this._createImage(e);
-                        this._dispatchEvent(e, 'dragenter', target);
-                    }
-                }
-                // continue dragging
-                if (this._img) {
-                    this._lastTouch = e;
-                    e.preventDefault(); // prevent scrolling
-                    if (target != this._lastTarget) {
-                        this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
-                        this._dispatchEvent(e, 'dragenter', target);
-                        this._lastTarget = target;
-                    }
-                    this._moveImage(e);
-                    this._dispatchEvent(e, 'dragover', target);
-                }
-            }
+			if(checkTouchType){
+				if (this._shouldHandle(e)) {
+					// see if target wants to handle move
+					var target = this._getTarget(e);
+					if (this._dispatchEvent(e, 'mousemove', target)) {
+						this._lastTouch = e;
+						e.preventDefault();
+						return;
+					}
+					// start dragging
+					if (this._dragSource && !this._img) {
+						var delta = this._getDelta(e);
+						if (delta > DragDropTouch._THRESHOLD) {
+							this._dispatchEvent(e, 'dragstart', this._dragSource);
+							this._createImage(e);
+							this._dispatchEvent(e, 'dragenter', target);
+						}
+					}
+					// continue dragging
+					if (this._img) {
+						this._lastTouch = e;
+						e.preventDefault(); // prevent scrolling
+						if (target != this._lastTarget) {
+							this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
+							this._dispatchEvent(e, 'dragenter', target);
+							this._lastTarget = target;
+						}
+						this._moveImage(e);
+						this._dispatchEvent(e, 'dragover', target);
+					}
+				}
+			}
         };
         DragDropTouch.prototype._touchend = function (e) {
-            if (this._shouldHandle(e)) {
-                // see if target wants to handle up
-                if (this._dispatchEvent(this._lastTouch, 'mouseup', e.target)) {
-                    e.preventDefault();
-                    return;
-                }
-                // user clicked the element but didn't drag, so clear the source and simulate a click
-                if (!this._img) {
-                    this._dragSource = null;
-                    this._dispatchEvent(this._lastTouch, 'click', e.target);
-                    this._lastClick = Date.now();
-                }
-                // finish dragging
-                this._destroyImage();
-                if (this._dragSource) {
-                    if (e.type.indexOf('cancel') < 0) {
-                        this._dispatchEvent(this._lastTouch, 'drop', this._lastTarget);
-                    }
-                    this._dispatchEvent(this._lastTouch, 'dragend', this._dragSource);
-                    this._reset();
-                }
-            }
+			if(checkTouchType){
+				if (this._shouldHandle(e)) {
+					// see if target wants to handle up
+					if (this._dispatchEvent(this._lastTouch, 'mouseup', e.target)) {
+						e.preventDefault();
+						return;
+					}
+					// user clicked the element but didn't drag, so clear the source and simulate a click
+					if (!this._img) {
+						this._dragSource = null;
+						this._dispatchEvent(this._lastTouch, 'click', e.target);
+						this._lastClick = Date.now();
+					}
+					// finish dragging
+					this._destroyImage();
+					if (this._dragSource) {
+						if (e.type.indexOf('cancel') < 0) {
+							this._dispatchEvent(this._lastTouch, 'drop', this._lastTarget);
+						}
+						this._dispatchEvent(this._lastTouch, 'dragend', this._dragSource);
+						this._reset();
+					}
+				}
+			}
         };
         // ** utilities
         // ignore events that have been handled or that involve more than one touch

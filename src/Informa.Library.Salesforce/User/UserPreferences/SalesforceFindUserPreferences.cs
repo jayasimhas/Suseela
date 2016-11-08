@@ -29,7 +29,7 @@
             cleanUesr = cleanUesr.Replace("@example.com", "");
 
             Sitecore.Data.Items.Item SalesForceXmlItem =
-                Sitecore.Context.Database.GetItem("/sitecore/media library/SalesforceXML/" + cleanUesr.Trim()+"preferences");
+                Sitecore.Context.Database.GetItem("/sitecore/media library/SalesforceXML/" + cleanUesr.Trim() + "preferences");
             QueryPreferenceResponse xmlResponse = null;
 
             if (SalesForceXmlItem != null)
@@ -46,17 +46,18 @@
                         DeserializeXMLFileToObject<QueryPreferenceResponse>(innerXmdDoc.InnerXml);
                 }
             }
-            if (xmlResponse != null && xmlResponse.UserSelectedPreferences!=null)
+            if (xmlResponse != null && xmlResponse.UserSelectedPreferences != null)
             {
-                return new UserPreferences {
-                    PreferredChannels=xmlResponse.UserSelectedPreferences.channels
-                    .Select(ch=>new Channel
+                return new UserPreferences
+                {
+                    PreferredChannels = xmlResponse.UserSelectedPreferences.channels
+                    .Select(ch => new Channel
                     {
                         ChannelCode = ch.code,
                         ChannelName = ch.name,
                         IsFollowing = ch.isfollowing,
                         Topics = ch.topics.Select(tp => new Topic { TopicCode = tp.code, TopicName = tp.name, IsFollowing = tp.isfollowing }).ToList()
-                    }).ToList()                   
+                    }).ToList()
                 };
             }
 
@@ -65,7 +66,7 @@
             {
                 preferencesResponse = Service.Execute(s => s.IN_queryProfilePreferences(username));
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 return null;
             }
@@ -81,6 +82,8 @@
             }
 
             var result = JsonConvert.DeserializeObject<UserPreferences>(preferencesResponse.channelPreferences.Replace("[CDATA[", "").Replace("]]", ""));
+            if (result != null)
+                result.LastUpdateOn = preferencesResponse.additionalPreferences;
             return (result as IUserPreferences);
         }
         public static T DeserializeXMLFileToObject<T>(string XmlFile)
@@ -120,7 +123,7 @@
         [XmlArray("topics")]
         public List<topicxml> topics { get; set; }
     }
-    
+
     [XmlType("topic")]
     public class topicxml
     {

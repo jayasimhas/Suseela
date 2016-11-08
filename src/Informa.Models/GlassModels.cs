@@ -10974,7 +10974,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     /// <para>ID: 580A652A-EB37-446A-A16B-B3409C902FE5</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITableau_DashboardConstants.TemplateIdString)]
-    public partial interface ITableau_Dashboard : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base
+    public partial interface ITableau_Dashboard : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base, ITableauForArticle
     {
         /// <summary>
         /// The Dashboard Name field.
@@ -11056,6 +11056,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Height { get; set; }
+
+        
     }
 
 
@@ -11182,6 +11184,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID HeightFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
         public const string HeightFieldName = "Height";
+    }
+
+        public partial interface ITableauForArticle
+    {
+        string ArticleTableauTicket { get; set; }
+        string ArticleTableauHostUrl { get; set; }
+        string ArticleTableauJSAPIUrl { get; set; }
+        string ArticleTableuLandingPageLinkLable { get; set; }
     }
 
 }
@@ -11419,7 +11429,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     }
 
 }
-
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
 {
 
@@ -26445,5 +26454,4 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Common
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "IIndustries_Folder";
     }
-
 }

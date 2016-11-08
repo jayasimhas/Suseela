@@ -33,6 +33,8 @@
             if (results != null && results.Articles != null && results.Articles.Count() > articleRequest.PageSize - 1)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));
+                if(articles == null || articles.Count() < articleRequest.PageSize)
+                    return new { Articles = "No articles found" };
 
                 var loadMore = new LoadMore
                 {
