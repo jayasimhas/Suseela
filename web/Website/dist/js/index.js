@@ -4878,6 +4878,7 @@ $(document).ready(function () {
             $(item).on('mouseleave', function () {
                 $(item).data("ttVisible", false);
                 tooltip.hidePopup();
+                tooltip.remove();
             });
         });
     };

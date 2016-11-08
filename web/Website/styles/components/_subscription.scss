@@ -188,11 +188,11 @@
 	}
 }
 
-.tablesorter-headerAsc .sorting-arrows__arrow--up{
+.tablesorter-headerAsc .sorting-arrows__arrow--up, .tablesorter-headerAsc .sorting-arrows__arrow--up use > svg{
 	fill: #be1e2d;
 }
 
-.tablesorter-headerDesc .sorting-arrows__arrow--down{
+.tablesorter-headerDesc .sorting-arrows__arrow--down, .tablesorter-headerDesc .sorting-arrows__arrow--down use > svg {
 	fill: #be1e2d;
 }
 
