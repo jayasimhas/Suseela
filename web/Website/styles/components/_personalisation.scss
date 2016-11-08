@@ -343,6 +343,16 @@
 				}
 			}
 		}
+		.article-metadata {
+			ul {
+				display: block;
+				padding-top: 1.875rem;
+				li {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
 	}
 	@media screen and (max-width: 767px){
 		.article-preview--small{
