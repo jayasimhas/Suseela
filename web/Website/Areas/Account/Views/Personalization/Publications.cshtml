@@ -75,6 +75,8 @@
                                 </th>
                                 <th class="wd-25 firstrow"></th>
                                 <th class="wd-15 firstrow">
+                                    @if (!Model.isFromRegistration)
+                                    {
                                     <div class="rowlines">
                                         <div class="vline"></div>
                                         <span></span>
@@ -82,6 +84,7 @@
                                         <span></span>
                                         <span></span>
                                     </div>
+                                    }
                                 </th>
                             </tr>
                             @if (!Model.isFromRegistration)
@@ -112,9 +115,12 @@
                                     <p class="pickTxt">@Model.PickAndChooseLableMobileText</p>
                                 </th>
                                 <th>
-                                    <div class="accordionImg">
-                                        <span class="mobileMode @collapsedClss" href="javascript: void(0);"></span>
-                                    </div>
+                                    @if (!Model.isFromRegistration)
+                                    {
+                                        <div class="accordionImg">
+                                            <span class="mobileMode @collapsedClss" href="javascript: void(0);"></span>
+                                        </div>
+                                    }
                                 </th>
                             </tr>
 
@@ -135,9 +141,12 @@
                                     </div>
                                 </th>
                                 <th>
-                                    <div class="accordionImg">
-                                        <span class="mobileMode" href="javascript: void(0);"></span>
-                                    </div>
+                                    @if (!Model.isFromRegistration)
+                                    {
+                                        <div class="accordionImg">
+                                            <span class="mobileMode" href="javascript: void(0);"></span>
+                                        </div>
+                                    }
                                 </th>
                             </tr>
                             <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
@@ -175,16 +184,19 @@
                                     </div>
                                 </th>
                                 <th class="wd-15 firstrow">
-                                    <div class="accordionImg">
-                                        <span class="desktopMode @collapsedClss" href="javascript: void(0);"></span>
-                                    </div>
-                                    <div class="rowlines">
-                                        <div class="vline"></div>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
+                                    @if (!Model.isFromRegistration)
+                                    {
+                                        <div class="accordionImg">
+                                            <span class="desktopMode @collapsedClss" href="javascript: void(0);"></span>
+                                        </div>
+                                        <div class="rowlines">
+                                            <div class="vline"></div>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    }
                                 </th>
                             </tr>
                             @if (!Model.isFromRegistration)
@@ -237,21 +249,21 @@
 
                                         <td class="wd-55">
                                             @topic.TopicName
-                                        <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
-                                    </td>
-                                    <td class="wd-25">
-                                        <span class="@topicSpanClass">@topicLableText</span>
-                                    </td>
-                                    <td class="wd-15">
-                                        <div class="rowlines">
-                                            <div class="move">@Model.MoveLableText</div>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </td>
-                                </tr>
+                                            <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
+                                        </td>
+                                        <td class="wd-25">
+                                            <span class="@topicSpanClass">@topicLableText</span>
+                                        </td>
+                                        <td class="wd-15">
+                                            <div class="rowlines">
+                                                <div class="move">@Model.MoveLableText</div>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 }
                             }
                         </tbody>

@@ -1223,6 +1223,8 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
+    <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
     <Compile Include="ViewModels\MyView\IMyViewPageViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
@@ -2146,6 +2148,8 @@
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
     <Content Include="Views\MyView\MyViewPage.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
+    <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
+    <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
