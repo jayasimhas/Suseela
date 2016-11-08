@@ -1,0 +1,53 @@
+﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobsListingViewModel
+
+<div class="main__content">
+    <div>
+        <div class="action-flags-bar article-prologue"></div>
+        <div class="job_listing">
+            <h1>@Model.Title</h1>
+            <div class="sub-heading-text">
+                <span>@Model.SubTitle</span>
+            </div>
+            @if (Model.JobTiles != null && Model.JobTiles.Count() > 0)
+            {
+                <div class="stacked_job_view" id="content">
+                    @foreach (var job in Model.JobTiles)
+                {
+                        <div class="job_list_individual eachCategory">
+                            <div class="job_logo">
+                                <a href="@job.JobDetailUrl">
+                                    <img src="@job.JobLogo.Src" alt="logo" />
+                                </a>
+                            </div>
+                            <div class="job_description">
+                                <div class="job_heading">
+                                    <h3><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
+                                </div>
+                                <div class="job_description_detail">
+                                    <p>
+                                        @Html.Raw(job.JobShortDescription)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+           <input type="hidden" name="JobTilesCount" id="JobTilesCount" value="@Model.JobTiles.Count()" />
+            @Html.HiddenFor(m=>m.NoOfJobsPerPage)
+            <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
+
+            @if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.NoOfJobsPerPage) < Model.JobTiles.Count())
+                {
+                <div class="pagination clearfix">
+                    <ul class="nums">
+                        <li><a href="javascript:void(0);" class="prev">@Model.PrevPageText</a></li>
+                        <li><span></span></li>
+                        <li><a href="javascript:void(0);" class="next">@Model.NextPageText</a></li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

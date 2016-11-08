@@ -82,7 +82,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         /// <param name="map">provides settings for the import</param>
         /// <param name="newItem">newly created item</param>
         /// <param name="importValue">imported value to match</param>
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
         {
 
             if (string.IsNullOrEmpty(importValue))
@@ -120,6 +120,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 Field f = newItem.Fields[NewItemField];
 
                 string result1 = importValue.Replace("By", "");
+                if (result1.Contains('.'))
+                {
+                    result1 = result1.Substring(0, result1.IndexOf(".") + 1);
+                }
+
                 foreach (string auth in list)
                 {
                     //loop through children and look for anything that matches by name
@@ -130,6 +135,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 }
                 //if you find one then store the id
+
+                if (f.Value == "")
+                {
+                    XMLDataLogger.WriteLog(id, "AuthorMappingMissing");
+                }
 
             }
             else

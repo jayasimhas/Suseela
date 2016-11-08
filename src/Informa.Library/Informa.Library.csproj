@@ -353,6 +353,8 @@
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
+    <Compile Include="JobsAndClassifieds\IJobTile.cs" />
+    <Compile Include="JobsAndClassifieds\JobTile.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
