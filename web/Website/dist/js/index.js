@@ -716,9 +716,6 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
-                if($('.alert-success').length > 0) {
-                    $(window).scrollTop($('.alert-success').offset().top);   
-                }
 				if (setFlag == 'register' && redirectUrl == 'href') {
 					window.location.href = $('.registrationBtn').attr('href');
 				} else if (setFlag == 'register' && redirectUrl == 'name') {
@@ -3902,6 +3899,17 @@ var AMchartUsingBuilder = function AMchartUsingBuilder() {
     }
 };
 
+var JobsListingPagination = function JobsListingPagination() {
+    var TotalCategories = $("#JobTilesCount").val();
+    var CategoryLimit = $("#NoOfJobsPerPage").val();
+
+    $('.pagination').setPagination({
+        totalCategories: parseInt(TotalCategories),
+        categoryLimit: parseInt(CategoryLimit),
+        currentPage: 1,
+        paginationEle: '.job_list_individual'
+    });
+};
 var decodeHtml = function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -4563,6 +4571,7 @@ $(document).ready(function () {
     renderTableau();
     renderAMchart();
     AMchartUsingBuilder();
+    JobsListingPagination();
     $(window).on('resize', function (event) {
         renderIframeComponents();
         renderTableau();
