@@ -716,6 +716,9 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
 			if (data && data.success) {
 				$('.alert-success p').html(data.reason);
 				$('.alert-success').show();
+				if ($('.alert-success').length > 0) {
+					$(window).scrollTop($('.alert-success').offset().top);
+				}
 				if (setFlag == 'register' && redirectUrl == 'href') {
 					window.location.href = $('.registrationBtn').attr('href');
 				} else if (setFlag == 'register' && redirectUrl == 'name') {
@@ -1180,128 +1183,125 @@ $(function () {
 'use strict';
 
 var defaults = {
-				totalCategories: 30,
-				categoryLimit: 10,
-				currentPage: 1,
-				paginationEle: 'table'
+	totalCategories: 30,
+	categoryLimit: 10,
+	currentPage: 1,
+	paginationEle: 'table'
 },
     toVal = 1,
     fromVal = 1;
 
 $.fn.setPagination = function (source) {
-				$.extend(defaults, source);
+	$.extend(defaults, source);
 };
 
 function paginationCur(fv, tv) {
-				if (defaults.paginationEle === 'table') {
-								$('tbody.hidden-xs tr', '.page-account__table').hide();
-								$('tbody.hidden-lg tr', '.page-account__table').hide();
-								for (var i = fv; i < tv; i++) {
-												$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
-												$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
-								}
-				} else {
-								$(defaults.paginationEle).hide();
-								for (var i = fv; i < tv; i++) {
-												$(defaults.paginationEle).eq(i).show();
-								}
-				}
+	if (defaults.paginationEle === 'table') {
+		$('tbody.hidden-xs tr', '.page-account__table').hide();
+		$('tbody.hidden-lg tr', '.page-account__table').hide();
+		for (var i = fv; i < tv; i++) {
+			$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
+			$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
+		}
+	} else {
+		$(defaults.paginationEle).hide();
+		for (var i = fv; i < tv; i++) {
+			$(defaults.paginationEle).eq(i).show();
+		}
+	}
 }
 
 $(function () {
-				var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
-				var linkStr = '';
-				for (var i = 1; i <= showPageLinks; i++) {
-								linkStr += '<a href="javascript:void(0);">' + i + '</a>';
-				}
-				if (showPageLinks > 1) {
-								$('.pagination span').html(linkStr);
-				} else {
-								$('.pagination').hide();
-				}
+	var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
+	var linkStr = '';
+	for (var i = 1; i <= showPageLinks; i++) {
+		linkStr += '<a href="javascript:void(0);">' + i + '</a>';
+	}
+	if (showPageLinks > 1) {
+		$('.pagination span').html(linkStr);
+	} else {
+		$('.pagination').hide();
+	}
 
-				$('.pagination a').click(function () {
-								var $this = $(this),
-								    $val = $this.html();
-								if ($val.toLowerCase().indexOf('prev') >= 0) {
-												var idx = +$('.pagination span a.active').html() - 1,
-												    toVal = idx * defaults.categoryLimit,
-												    fromVal = toVal - defaults.categoryLimit;
+	$('.pagination a').click(function () {
+		var $this = $(this),
+		    $val = $this.html();
+		if ($val.toLowerCase().indexOf('prev') >= 0) {
+			var idx = +$('.pagination span a.active').html() - 1,
+			    toVal = idx * defaults.categoryLimit,
+			    fromVal = toVal - defaults.categoryLimit;
 
-												if ($('.pagination span a:first').hasClass('active')) return;
-												paginationCur(fromVal, toVal);
+			if ($('.pagination span a:first').hasClass('active')) return;
+			paginationCur(fromVal, toVal);
 
-												var curidx = $('.pagination span a.active').index(),
-												    pagesLen = $('.pagination li > span a').length - 1;
-												$('.pagination span a').eq(curidx).removeClass('active');
-												$('.pagination span a').eq(curidx).prev('a').addClass('active');
-												$('.pagination a:last').attr('href', 'javascript:void(0);');
-												if (curidx == 0) {
-																$('.pagination a:eq(0)').removeAttr('href');
-												}
-								} else if ($val.toLowerCase().indexOf('next') >= 0) {
-												var idx = +$('.pagination span a.active').html() + 1,
-												    toVal = idx * defaults.categoryLimit,
-												    fromVal = toVal - defaults.categoryLimit;
-
-												if ($('.pagination span a:last').hasClass('active')) return;
-												paginationCur(fromVal, toVal);
-
-												var curidx = $('.pagination span a.active').index(),
-												    pagesLen = $('.pagination li > span a').length - 1;
-												$('.pagination span a').eq(curidx).removeClass('active');
-												$('.pagination span a').eq(curidx).next('a').addClass('active');
-												$('.pagination a:first').attr('href', 'javascript:void(0);');
-												if (curidx == pagesLen) {
-																$('.pagination a:last').removeAttr('href');
-												}
-								} else {
-												if (!$this.hasClass('active')) {
-																$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
-																$this.addClass('active').removeAttr('href');
-																toVal = defaults.categoryLimit * $val;
-																fromVal = toVal - defaults.categoryLimit;
-																paginationCur(fromVal, toVal);
-																$('.pagination a:last').attr('href', 'javascript:void(0);');
-																$('.pagination a:first').attr('href', 'javascript:void(0);');
-																if ($('.pagination span a.active').next('a').length == 0) {
-																				$('.pagination a:last').removeAttr('href');
-																}
-																if ($('.pagination span a.active').prev('a').length == 0) {
-																				$('.pagination a:first').removeAttr('href');
-																}
-												}
-								}
-				});
-				$('.pagination span a:eq(0)').click();
+			var curidx = $('.pagination span a.active').index(),
+			    pagesLen = $('.pagination li > span a').length - 1;
+			$('.pagination span a').eq(curidx).removeClass('active');
+			$('.pagination span a').eq(curidx).prev('a').addClass('active');
+			$('.pagination a:last').attr('href', 'javascript:void(0);');
+			if (curidx == 0) {
 				$('.pagination a:eq(0)').removeAttr('href');
+			}
+		} else if ($val.toLowerCase().indexOf('next') >= 0) {
+			var idx = +$('.pagination span a.active').html() + 1,
+			    toVal = idx * defaults.categoryLimit,
+			    fromVal = toVal - defaults.categoryLimit;
 
-				$('.sortable-table__header').on('click', '.sortable-table__col', function () {
-								var $this = $(this),
-								    table = $this.closest('.sortable-table'),
-								    tbodytrs = table.find('tbody tr');
-								setTimeout(function () {
-												tbodytrs.removeAttr('style');
-												if (!$('.pagination span a:eq(0)').hasClass('active')) {
-																$('.pagination span a:eq(0)').click();
-												} else {
-																paginationCur(0, defaults.categoryLimit);
-												}
-								}, 1);
-				});
+			if ($('.pagination span a:last').hasClass('active')) return;
+			paginationCur(fromVal, toVal);
+
+			var curidx = $('.pagination span a.active').index(),
+			    pagesLen = $('.pagination li > span a').length - 1;
+			$('.pagination span a').eq(curidx).removeClass('active');
+			$('.pagination span a').eq(curidx).next('a').addClass('active');
+			$('.pagination a:first').attr('href', 'javascript:void(0);');
+			if (curidx == pagesLen) {
+				$('.pagination a:last').removeAttr('href');
+			}
+		} else {
+			if (!$this.hasClass('active')) {
+				$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
+				$this.addClass('active').removeAttr('href');
+				toVal = defaults.categoryLimit * $val;
+				fromVal = toVal - defaults.categoryLimit;
+				paginationCur(fromVal, toVal);
+				$('.pagination a:last').attr('href', 'javascript:void(0);');
+				$('.pagination a:first').attr('href', 'javascript:void(0);');
+				if ($('.pagination span a.active').next('a').length == 0) {
+					$('.pagination a:last').removeAttr('href');
+				}
+				if ($('.pagination span a.active').prev('a').length == 0) {
+					$('.pagination a:first').removeAttr('href');
+				}
+			}
+		}
+	});
+	$('.sortable-table__header').on('click', '.sortable-table__col', function () {
+		var $this = $(this),
+		    table = $this.closest('.sortable-table'),
+		    tbodytrs = table.find('tbody tr');
+		setTimeout(function () {
+			tbodytrs.removeAttr('style');
+			if (!$('.pagination span a:eq(0)').hasClass('active')) {
+				$('.pagination span a:eq(0)').click();
+			} else {
+				paginationCur(0, defaults.categoryLimit);
+			}
+		}, 1);
+	});
 });
 
 },{}],7:[function(require,module,exports){
 "use strict";
 
 function loadLayoutOneData(data, idx) {
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">EDIT MY VIEW</a></div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info="{ "event_name": "article_click_through"}">EDIT MY VIEW</a></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div data-pageSize="' + data.loadMore.pageSize + '" data-pageNo="' + data.loadMore.pageNo + '" data-loadurl="' + data.loadMore.loadMoreLinkUrl + '" data-taxonomyIds="' + data.loadMore.taxonomyIds + '" class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div data-pageSize="' + data.loadMore.pageSize + '" data-pageNo="' + data.loadMore.pageNo + '" data-loadurl="' + data.loadMore.loadMoreLinkUrl + '" data-taxonomyIds="' + data.loadMore.taxonomyIds + '" class="loadmore"><span href="' + loadmoreLink + '" data-info="{ "event_name": "Load more","publication_click":"' + analytics_data["publication"] + '"}">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 
 	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -1334,7 +1334,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag">' + data.articles[0].listableTitle + '</a></h3>' : '';
+	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl0 + '" }">' + data.articles[0].listableTitle + '</a></h3>' : '';
 	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -1361,7 +1361,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl1 + '" }">' + data.articles[1].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">';
 	articleData += data.articles[1].listableSummary ? data.articles[1].listableSummary : '';
@@ -1389,7 +1389,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl2 + '" class="click-utag">' + data.articles[2].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl2 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl2 + '" }">' + data.articles[2].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[2].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[2].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -1406,11 +1406,11 @@ function createLayoutInner1(data) {
 	articleData += '<section class="article-preview article-preview--small topics">';
 	articleData += data.articles[3].linkableText ? '<h6>' + data.articles[3].linkableText + '</h6>' : '';
 
-	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag">' + data.articles[3].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl3 + '" }">' + data.articles[3].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag">' + data.articles[4].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl4 + '" }">' + data.articles[4].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag">' + data.articles[5].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl5 + '" }">' + data.articles[5].listableTitle + '</a></h1>' : '';
 
 	articleData += '</section>';
 	articleData += '</div>';
@@ -1427,7 +1427,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl6 + '" }">' + data.articles[6].listableTitle + '</a></h1>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
 	if (data.articles[6].listableTopics) {
@@ -1450,7 +1450,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl7 + '" }">' + data.articles[7].listableTitle + '</a></h1>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
 	if (data.articles[7].listableTopics) {
@@ -1473,7 +1473,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl8 + '" }">' + data.articles[8].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[8].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[8].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -1531,7 +1531,7 @@ function createLayoutInner2(data) {
 	articleData += '</div>';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag">' + data.articles[0].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl0 + '" }">' + data.articles[0].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -1555,7 +1555,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl1 + '" }">' + data.articles[1].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -1572,11 +1572,11 @@ function createLayoutInner2(data) {
 	articleData += '<section class="article-preview article-preview--small artheight topics">';
 	articleData += data.articles[2].linkableText ? '<h6>' + data.articles[2].linkableText + '</h6>' : '';
 
-	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl2 + '" class="click-utag">' + data.articles[2].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl2 + '" class="click-utag"data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl2 + '" }">' + data.articles[2].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag">' + data.articles[3].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl3 + '" }">' + data.articles[3].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag">' + data.articles[4].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl4 + '" }">' + data.articles[4].listableTitle + '</a></h1>' : '';
 	articleData += '</section>';
 	articleData += '</div>';
 
@@ -1590,7 +1590,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl5 + '" class="click-utag">' + data.articles[5].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl5 + '" }">' + data.articles[5].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -1612,7 +1612,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl6 + '" }">' + data.articles[6].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[6].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[6].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[6].listableSummary ? data.articles[6].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -1636,7 +1636,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl7 + '" }">' + data.articles[7].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -1658,7 +1658,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{ "event_name": "article_click_through", "publication_click":"' + analytics_data["publication"] + '", "click_through_destination": "' + linkableUrl8 + '" }">' + data.articles[8].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -1836,6 +1836,10 @@ $(function () {
 			    subjectHei = latestSubject.height(),
 			    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
 			    liIdx = $this.closest('li').index();
+
+			if ($('.js-menu-toggle-button, .js-full-menu-toggle').hasClass('is-active')) {
+				$('.js-menu-toggle-button, .js-full-menu-toggle').removeClass('is-active');
+			}
 
 			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length) {
 				$(window).scrollTop(getPos.top - subjectHei * 3);
@@ -3899,17 +3903,6 @@ var AMchartUsingBuilder = function AMchartUsingBuilder() {
     }
 };
 
-var JobsListingPagination = function JobsListingPagination() {
-    var TotalCategories = $("#JobTilesCount").val();
-    var CategoryLimit = $("#NoOfJobsPerPage").val();
-
-    $('.pagination').setPagination({
-        totalCategories: parseInt(TotalCategories),
-        categoryLimit: parseInt(CategoryLimit),
-        currentPage: 1,
-        paginationEle: '.job_list_individual'
-    });
-};
 var decodeHtml = function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -3951,6 +3944,23 @@ $(document).ready(function () {
         });
     };
     window.dismiss();
+
+    //Job Listing Pagination
+    var JobsListingPagination = function JobsListingPagination() {
+        var TotalCategories = $("#JobTilesCount").val();
+        var CategoryLimit = $("#NoOfJobsPerPage").val();
+
+        $('.pagination').setPagination({
+            totalCategories: parseInt(TotalCategories),
+            categoryLimit: parseInt(CategoryLimit),
+            currentPage: 1,
+            paginationEle: '.job_list_individual'
+        });
+
+        $('.pagination span a:eq(0)').click();
+        $('.pagination a:eq(0)').removeAttr('href');
+    };
+    JobsListingPagination();
 
     window.custom_label = function () {
         $("body").off().on("click", '.label-check', function (e) {
@@ -4571,7 +4581,7 @@ $(document).ready(function () {
     renderTableau();
     renderAMchart();
     AMchartUsingBuilder();
-    JobsListingPagination();
+
     $(window).on('resize', function (event) {
         renderIframeComponents();
         renderTableau();

@@ -135,8 +135,8 @@
                             <tr class="accordionStatus flwLbl @mobileChannelSactionsStatus">
                                 <th colspan="2">
                                     <div>
-                                        <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
-                                        <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
+                                        <span class="followlbl mtp @publicationFollowButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowButtonText</span>
+                                        <span class="followinglbl mtp @publicationFollowingButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowingButtonText</span>
                                         <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
@@ -152,8 +152,8 @@
                             <tr class="accordionStatus flwBtn @pickAndChooseSectionClassMobile">
                                 <th colspan="2">
                                     <div class="smfollowingBtn">
-                                        <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
-                                        <span class="unfollowAllBtn @unfollowAllButtonClass">@Model.UnfollowAllButtonText</span>
+                                        <span class="followAllBtn @followAllButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowAllButtonText</span>
+                                        <span class="unfollowAllBtn @unfollowAllButtonClass" data-info="{ 'event_name': 'publication unfollow', 'follow_publication':'@Model.publicationname'}">@Model.UnfollowAllButtonText</span>
                                     </div>
                                 </th>
                                 <th>
@@ -181,8 +181,8 @@
                                 </th>
                                 <th class="wd-26 firstrow">
                                     <div>
-                                        <span class="followlbl mtp @publicationFollowButtonClass">@Model.FollowButtonText</span>
-                                        <span class="followinglbl mtp @publicationFollowingButtonClass">@Model.FollowingButtonText</span>
+                                        <span class="followlbl mtp @publicationFollowButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowButtonText</span>
+                                        <span class="followinglbl mtp @publicationFollowingButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowingButtonText</span>
                                         <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
@@ -228,8 +228,8 @@
                                 <th class="wd-55 pbot"><p>@Model.PickAndChooseLableText</p></th>
                                 <th class="wd-25 pbot">
                                     <div>
-                                        <span class="unfollowAllBtn @unfollowAllButtonClass">@Model.UnfollowAllButtonText</span>
-                                        <span class="followAllBtn @followAllButtonClass">@Model.FollowAllButtonText</span>
+                                        <span class="unfollowAllBtn @unfollowAllButtonClass" data-info="{ 'event_name': 'publication unfollow', 'follow_publication':'@Model.publicationname'}">@Model.UnfollowAllButtonText</span>
+                                        <span class="followAllBtn @followAllButtonClass" data-info="{ 'event_name': 'publication follow', 'follow_publication':'@Model.publicationname'}">@Model.FollowAllButtonText</span>
                                     </div>
                                 </th>
                                 <th class="wd-15"></th>
@@ -247,7 +247,8 @@
                                     topicTRClass = topic.IsFollowing ? "followingrow" : "followrow disabled";
                                     topicSpanClass = topic.IsFollowing ? "followingBtn" : "followBtn";
                                     topicLableText = topic.IsFollowing ? Model.FollowingButtonText : Model.FollowButtonText;
-
+                                    string dataInfo = topic.IsFollowing ? "data-info=\"{'event_name': 'topic unfollow', 'follow_topic' : '"+ @topic.TopicName + "',  'follow_publication':'" + @Model.publicationname+" '}\"" : "data - info =\"{'event_name': 'topic unfollow', 'follow_topic' : '" + @topic.TopicName + "', 'follow_publication':'" + @Model.publicationname + "'}\"";
+                                    
                             <tr class="@topicTRClass" data-row="@topicOrder">
 
                                 <td class="wd-55">
@@ -255,7 +256,7 @@
                                     <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
                                 </td>
                                 <td class="wd-25">
-                                    <span class="@topicSpanClass">@topicLableText</span>
+                                    <span class="@topicSpanClass" @dataInfo>@topicLableText</span>
                                 </td>
                                 <td class="wd-15">
                                     <div class="rowlines">
