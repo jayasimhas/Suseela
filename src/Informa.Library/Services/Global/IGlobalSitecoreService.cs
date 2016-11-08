@@ -22,6 +22,7 @@ namespace Informa.Library.Services.Global {
         T GetItem<T>(Guid g) where T : class;
         T GetItem<T>(string id) where T : class;
         Item GetItemByTemplateId(string templateId);
+        Item GetTableauItemByPath(string templateId);
         string GetPageTitle(I___BasePage page);
         ISite_Root GetSiteRootAncestor(Guid g);
         string GetPublicationName(Guid g);

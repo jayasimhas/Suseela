@@ -122,6 +122,11 @@ namespace Informa.Library.Services.Global
                 .FirstOrDefault();
         }
 
+        public Item GetTableauItemByPath(string templateId)
+        {         
+            return SitecoreService.GetItem<Item>(SiteRootContext.Item._Path + "/Globals/Tableau Configuration");
+        }
+
         private T BuildItem<T>(Guid g) where T : class
         {
             return SitecoreService.GetItem<T>(g);
