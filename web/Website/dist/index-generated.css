@@ -3510,7 +3510,7 @@ header .header-account-access {
       border: 1px solid transparent;
       color: #ffffff;
       padding: 12px;
-      background-color: #c22d3b;
+      background-color: #9E310D;
       width: 146px;
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
@@ -3526,7 +3526,7 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: auto;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3535,7 +3535,7 @@ header .header-account-access {
       @media (max-width: 480px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3544,7 +3544,7 @@ header .header-account-access {
       @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #c22d3b;
+          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -3563,7 +3563,7 @@ header .header-account-access {
     @media (max-width: 480px) {
       header .header-account-access .myView-placeholder {
         position: absolute;
-        top: 130px;
+        top: 0;
         margin-right: 12px;
         right: 0; } }
     header .header-account-access .myView-placeholder .arrow {
@@ -3766,6 +3766,8 @@ header .header-account-access {
   padding-bottom: 50px !important;
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
+  .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
+    width: auto; }
   .myview-settings h1 {
     margin-bottom: 0px;
     margin-bottom: 0rem;
@@ -3821,7 +3823,8 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 70%;
+      width: 480px;
+      width: 30rem;
       margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
@@ -3994,10 +3997,10 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .move {
-            float: left;
-            position: relative;
+            position: absolute;
+            left: -59px;
+            left: -3.6875rem;
             top: -3px;
-            margin-right: 10px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4041,10 +4044,10 @@ header .header-account-access {
               display: block;
               margin-bottom: 3px; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines .move {
-              float: left;
-              position: relative;
+              position: absolute;
+              left: -59px;
+              left: -3.6875rem;
               top: -3px;
-              margin-right: 10px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -4104,8 +4107,8 @@ header .header-account-access {
               padding: 0px 10px;
               padding: 0rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th.pbot {
-          padding: 0px 20px 27px;
-          padding: 0rem 1.25rem 27px; }
+          padding: 0px 16px 20px 27px;
+          padding: 0rem 1rem 1.25rem 27px; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
           margin-top: 7px;
@@ -4130,10 +4133,10 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table thead th .rowlines .move {
-            float: left;
-            position: relative;
+            position: absolute;
+            left: -59px;
+            left: -3.6875rem;
             top: -3px;
-            margin-right: 10px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4222,12 +4225,6 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
-        @media (max-width: 480px) {
-          .myview-settings .table-responsive .table thead .followAllBtn {
-            float: none; }
-            .myview-settings .table-responsive .table thead .followAllBtn:hover {
-              background-color: transparent;
-              color: #58595b; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4276,7 +4273,9 @@ header .header-account-access {
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 16px;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        margin-left: 8px;
+        margin-left: 0.5rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4622,9 +4621,10 @@ header .header-account-access {
   .myview-settings .hidden-large {
     display: none; }
   .myview-settings .alert-success {
-    margin-bottom: 20px; }
+    margin-bottom: 35px; }
   .myview-settings .alert-error {
-    margin-bottom: 20px; }
+    margin-bottom: 35px;
+    margin-top: -20px; }
   .myview-settings .tbodyhidden {
     display: none; }
 
@@ -4641,8 +4641,8 @@ header .header-account-access {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
-    width: 240px;
-    width: 15rem; } }
+    width: 208px;
+    width: 13rem; } }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
   .myview-settings .desktopMode {
@@ -4750,10 +4750,10 @@ header .header-account-access {
   margin-top: 0px; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
-      margin-right: 6px;
-      margin-right: 0.375rem;
-      padding-right: 6px;
-      padding-right: 0.375rem; } }
+      margin-right: 4px;
+      margin-right: 0.25rem;
+      padding-right: 4px;
+      padding-right: 0.25rem; } }
 
 .personalisationhome .personalHead {
   border-bottom: 1px solid #d1d3d4;
@@ -4948,6 +4948,8 @@ header .header-account-access {
   height: 120px;
   height: 7.5rem;
   overflow: hidden; }
+  .personalisationhome .article-preview--small .article-preview_rheadline:last-child {
+    border-bottom: none; }
   .personalisationhome .article-preview--small .article-preview_rheadline.nobord {
     border-bottom: none; }
     @media (max-width: 480px) {
@@ -4982,12 +4984,21 @@ header .header-account-access {
     font-family: "Roboto";
     font-size: 14px;
     font-size: 0.875rem;
-    padding: 20px 60px;
-    padding: 1.25rem 3.75rem;
+    padding: 20px 70px 20px 60px;
+    padding: 1.25rem 4.375rem 1.25rem 3.75rem;
     border: 1px solid #d1d3d4;
     display: inline-block;
     cursor: pointer;
-    font-weight: bold; }
+    font-weight: bold;
+    position: relative; }
+    .personalisationhome .loadmore span:after {
+      content: '';
+      background: url("/dist/img/sprite-image.png") no-repeat -17px -124px;
+      width: 18px;
+      height: 14px;
+      position: absolute;
+      right: 40px;
+      top: 20px; }
 
 .personalisationhome .topic-featured-article__image2 {
   margin-bottom: 16px;
@@ -5083,7 +5094,14 @@ header .header-account-access {
         font-size: 0.8125rem; }
       .personalisationhome .latest-news__articles .article-small-preview ul li h6, .personalisationhome .latest-news__articles .article-small-preview ul li .article-tags-bar__label, .personalisationhome .latest-news__articles .article-small-preview ul li .article-topics__section-header {
         font-size: 13px;
-        font-size: 0.8125rem; } }
+        font-size: 0.8125rem; }
+  .personalisationhome .article-metadata ul {
+    display: block;
+    padding-top: 30px;
+    padding-top: 1.875rem; }
+    .personalisationhome .article-metadata ul li {
+      display: inline-block;
+      vertical-align: middle; } }
 
 @media screen and (max-width: 767px) {
   .personalisationhome .article-preview--small {
@@ -5685,7 +5703,10 @@ section: UI Elements
     display: inline-flex; }
   @media (max-width: 480px) {
     .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
-      display: none; } }
+      display: none; }
+      .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox input {
+        width: 1px;
+        height: 1px; } }
   @media (max-width: 640px) {
     .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
       display: none; } }
@@ -5762,7 +5783,10 @@ section: UI Elements
       .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
         width: 100%;
         clear: both;
-        display: block; } }
+        display: block; }
+        .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox input {
+          width: 1px;
+          height: 1px; } }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .chk_box {
       background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       background-repeat: no-repeat;
@@ -5788,12 +5812,15 @@ section: UI Elements
   .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
     float: right;
     width: 40%;
-    position: relative; }
+    position: relative;
+    margin-right: 16px;
+    margin-right: 1rem; }
     @media (max-width: 480px) {
       .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
         width: 100%;
         clear: both;
-        display: block; } }
+        display: block;
+        margin-right: 0; } }
     @media (max-width: 640px) {
       .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
         width: 100%;
@@ -6575,8 +6602,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
     font-weight: 700;
-    margin-bottom: 40px;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 30px;
+    margin-bottom: 1.875rem; }
   .data-tool-landing .sub-heading-text {
     font-family: "PT Serif", Georgia, serif;
     font-style: italic;
@@ -6628,7 +6655,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
-      padding: 23px 40px 30px 0;
+      padding: 23px 40px 40px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
         font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -6731,6 +6758,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   .data-tool-placeholder .data-tool-graph {
     width: 100%;
     clear: both; }
+  .data-tool-placeholder .articleText {
+    padding: 40px 40px 60px; }
+    @media (max-width: 480px) {
+      .data-tool-placeholder .articleText {
+        padding: 10px; } }
 
 .data-tool-placeholder-right-rail {
   width: 100%;
@@ -10332,7 +10364,8 @@ section: Global Components
   @media (max-width: 800px) {
     .header__wrapper {
       height: 97px;
-      padding: 0; } }
+      padding: 0;
+      position: relative; } }
   @media (max-width: 480px) {
     .header__wrapper {
       -ms-flex-wrap: wrap;

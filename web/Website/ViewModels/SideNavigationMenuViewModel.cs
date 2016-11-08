@@ -70,11 +70,18 @@ namespace Informa.Web.ViewModels
         {
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-                if (UserPreferences.Preferences != null &&
-                    UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
+                if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
-                    //Take user to Personalized home page.
-                    return SiterootContext.Item?.MyView_Page?._Url;
+                    if ((UserPreferences.Preferences.PreferredChannels.Any(ch => ch.IsFollowing) && UserPreferences.Preferences.IsNewUser) || UserPreferences.Preferences.PreferredChannels.SelectMany(tp => tp.Topics).Any(tp => tp.IsFollowing))
+                    {
+                        //Take user to Personalized home page.
+                        return SiterootContext.Item?.MyView_Page?._Url;
+                    }
+                    else
+                    {
+                        //Take to MyView settings page
+                        return SiterootContext.Item?.MyView_Settings_Page?._Url;
+                    }
                 }
                 else
                 {
@@ -113,7 +120,8 @@ namespace Informa.Web.ViewModels
                         foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                         {
                             bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
-                            if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || isTopicsFollowing))
+                            
+                            if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && ((preference.IsFollowing && UserPreferences.Preferences.IsNewUser) || isTopicsFollowing))
                             {
                                 var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
                                 if (!string.IsNullOrEmpty(channelName))
@@ -168,7 +176,7 @@ namespace Informa.Web.ViewModels
         {
             #region reading actual subscriptions
             var subscriptions = new List<ISubscription>();
-            var channelSubscriptions = new List<ChannelSubscription>();            
+            var channelSubscriptions = new List<ChannelSubscription>();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
 
@@ -177,12 +185,12 @@ namespace Informa.Web.ViewModels
                 var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication).FirstOrDefault();
                 if (userSubscriptions != null && userSubscriptions.SubscribedChannels != null && userSubscriptions.SubscribedChannels.Count() > 0)
                 {
-                    
+
                     if (userSubscriptions.SubscribedChannels.FirstOrDefault().ChannelId != SiterootContext.Item.Publication_Code)
                     {
                         foreach (var subscription in userSubscriptions.SubscribedChannels)
                         {
-                            bool isTopicsSubscribed = subscription.SubscribedTopics != null ? subscription.SubscribedTopics.Any(tp => tp.ExpirationDate>DateTime.Now) : false;                            
+                            bool isTopicsSubscribed = subscription.SubscribedTopics != null ? subscription.SubscribedTopics.Any(tp => tp.ExpirationDate > DateTime.Now) : false;
                             if (subscription != null && (subscription.ExpirationDate > DateTime.Now || isTopicsSubscribed))
                             {
                                 channelSubscriptions.Add(subscription);
@@ -194,16 +202,16 @@ namespace Informa.Web.ViewModels
                     //Topic based subscriptions
                     else
                     {
-                        if(userSubscriptions.SubscribedChannels != null
+                        if (userSubscriptions.SubscribedChannels != null
                             && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics) != null
                             && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics).Count() > 0)
-                        foreach (var subscription in userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics))
-                        {
-                            if (!string.IsNullOrWhiteSpace(subscription.TopicId) && subscription.ExpirationDate>DateTime.Now)
+                            foreach (var subscription in userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics))
                             {
-                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate});
+                                if (!string.IsNullOrWhiteSpace(subscription.TopicId) && subscription.ExpirationDate > DateTime.Now)
+                                {
+                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate });
+                                }
                             }
-                        }
                         subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
                     }
                     return subscriptions;

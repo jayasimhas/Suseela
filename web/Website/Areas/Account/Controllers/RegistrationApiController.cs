@@ -15,6 +15,8 @@ using Informa.Library.User.Newsletter;
 using Informa.Library.User.Offer;
 using Informa.Library.User.Orders;
 using Informa.Library.User.Profile;
+using System;
+using log4net;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -29,6 +31,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IUserOrder UserOrder;
         protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
         protected readonly IUpdateOfferUserOptInContext OffersOptIn;
+        private readonly ILog Logger;
 
         public RegistrationApiController(
             IFindUserByEmail findUser,
@@ -39,7 +42,8 @@ namespace Informa.Web.Areas.Account.Controllers
             IUserOrder userOrder,
             IUserCompanyContext userCompanyContext,
             ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
-            IUpdateOfferUserOptInContext offersOptIn)
+            IUpdateOfferUserOptInContext offersOptIn,
+            ILog logger)
         {
             FindUser = findUser;
             NewUserFactory = newUserFactory;
@@ -50,6 +54,7 @@ namespace Informa.Web.Areas.Account.Controllers
             UserOrder = userOrder;
             SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
             OffersOptIn = offersOptIn;
+            Logger = logger;
 
         }
 
@@ -114,26 +119,28 @@ namespace Informa.Web.Areas.Account.Controllers
         [HttpPost]
         [ValidateReasons]
         [ArgumentsRequired]
-        public IHttpActionResult RegisterFreeTrial(RegisterFreeTrialRequest form) {
-            if (IsExistingUser(form.Username)) 
+        public IHttpActionResult RegisterFreeTrial(RegisterFreeTrialRequest form)
+        {
+            if (IsExistingUser(form.Username))
                 return CreateUserExistsResponse();
-            
+
             var newUser = NewUserFactory.Create();
 
             newUser.FirstName = form.FirstName;
             newUser.LastName = form.LastName;
             newUser.Password = form.Password;
             newUser.Username = form.Username;
-            
+
             var registerResult = RegisterUser.Register(newUser);
             if (!registerResult.Success)
-                return Ok(new {
+                return Ok(new
+                {
                     success = false,
                     reasons = registerResult.Errors.Select(GetRegisterValidationReason).ToList(),
                 });
 
             var userContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IAuthenticatedUserContext)) as IAuthenticatedUserContext;
-            if(!userContext.IsAuthenticated)
+            if (!userContext.IsAuthenticated)
                 return Ok(new
                 {
                     success = false,
@@ -150,17 +157,18 @@ namespace Informa.Web.Areas.Account.Controllers
                     success = false,
                     reasons = "AccountUpdatedFailed"
                 });
-            
+
             var userSubsContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IUserSubscriptionsContext)) as IUserSubscriptionsContext;
             var orderResult = UserOrder.CreateUserOrder(userContext.User, userSubsContext.Subscriptions);
-            if(!orderResult.Success)
-                return Ok(new 
+            if (!orderResult.Success)
+                return Ok(new
                 {
                     success = false,
                     reasons = "CreateOrderFailed"
                 });
-            
-            return Ok(new {
+
+            return Ok(new
+            {
                 success = true,
                 reasons = string.Empty,
                 registration_type = "Free Trial"
@@ -198,13 +206,27 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult SetOptIns(SetOptInsRequest request)
         {
-            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request?.Newsletters?.Where(w => w.NewsletterChecked).Select(s => s.PublicationCode).ToList() ?? Enumerable.Empty<string>());
-            var offersUpdated = OffersOptIn.Update(!request.Offers);
+            try
+            {
+                var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request?.Newsletters?.Where(w => w.NewsletterChecked).Select(s => s.PublicationCode).ToList() ?? Enumerable.Empty<string>());
+                Logger.Error("Var newsletterUpdated = " + newsletterUpdated.ToString());
+                var offersUpdated = OffersOptIn.Update(!request.Offers);
+                Logger.Error("Var offersUpdated = " + offersUpdated.ToString());
+                return Ok(new
+                {
+                    success = newsletterUpdated && offersUpdated
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Error in SetOptIns Call", ex);
+            }
 
             return Ok(new
             {
-                success = newsletterUpdated && offersUpdated
+                success = false
             });
+
         }
 
         public bool IsExistingUser(string username)
