@@ -37,10 +37,13 @@
             _subcriptions = userSubscriptionsContext.Subscriptions;
         }
 
+        public string ChannelFollowingButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowingButtonText");
 
-        public string FollowingButtonText => TextTranslator.Translate("MyViewSettings.FollowingButtonText");
+        public string ChannelFollowButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowButtonText");
 
-        public string FollowButtonText => TextTranslator.Translate("MyViewSettings.FollowButtonText");
+        public string TopicFollowingButtonText => TextTranslator.Translate("MyViewSettings.TopicFollowingButtonText");
+
+        public string TopicFollowButtonText => TextTranslator.Translate("MyViewSettings.TopicFollowButtonText");
 
         public string FollowAllButtonText => TextTranslator.Translate("MyViewSettings.FollowAllButtonText");
 
