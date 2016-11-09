@@ -550,11 +550,11 @@ $(function(){
 				subjectHei = latestSubject.height(),
 				allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
 				liIdx = $this.closest('li').index();
-			
-			if($('.js-menu-toggle-button, .js-full-menu-toggle').hasClass('is-active')){
-				$('.js-menu-toggle-button, .js-full-menu-toggle').removeClass('is-active');
-			} 
-
+			setTimeout(function(){
+				if($('.js-menu-toggle-button, .js-full-menu-toggle').hasClass('is-active')){
+					$('.js-menu-toggle-button, .js-full-menu-toggle').removeClass('is-active');
+				} 
+			}, 5); 
 			
 			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length){
 				$(window).scrollTop(getPos.top - subjectHei * 3);
