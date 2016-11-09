@@ -6,8 +6,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
     public interface IChannelsViewModel
     {
         IList<Channel> Channels { get; }
-        string FollowingButtonText { get; }
-        string FollowButtonText { get; }
+        string ChannelFollowingButtonText { get; }
+        string ChannelFollowButtonText { get; }
+        string TopicFollowingButtonText { get; }
+        string TopicFollowButtonText { get; }
         string FollowAllButtonText { get; }
         string UnfollowAllButtonText { get; }
         string SubscribeButtonText { get; }

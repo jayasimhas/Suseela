@@ -28,8 +28,8 @@
     string publicationHiddenClass = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
-    <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.FollowButtonText" />
-    <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.FollowingButtonText" />
+    <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.TopicFollowButtonText" />
+    <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.TopicFollowingButtonText" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in Channels)
         {
@@ -45,7 +45,7 @@
             pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
             publicationFollowButtonClass = IsFollowingAnyTopics || isFirst ? "hideBtn" : "";
             publicationFollowingButtonClass = IsFollowingAnyTopics && !isFirst ? "" : "hideBtn";
-            publicationStatusText = IsFollowingAnyTopics ? Model.FollowingButtonText : Model.FollowButtonText;
+            publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
             mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
             pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
             publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
@@ -135,8 +135,8 @@
                             <tr class="accordionStatus flwLbl @mobileChannelSactionsStatus">
                                 <th colspan="2">
                                     <div>
-                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info="{'event_name':'publication_follow','page_name':'My View Settings','ga_eventCategory':'Publication follow','ga_eventAction':'follow','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.FollowButtonText</span>
-                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info="{'event_name':'publication_following','page_name':'My View Settings','ga_eventCategory':'Publication following','ga_eventAction':'following','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.FollowingButtonText</span>
+                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info="{'event_name':'publication_follow','page_name':'My View Settings','ga_eventCategory':'Publication follow','ga_eventAction':'follow','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.ChannelFollowButtonText</span>
+                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info="{'event_name':'publication_following','page_name':'My View Settings','ga_eventCategory':'Publication following','ga_eventAction':'following','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.ChannelFollowingButtonText</span>
                                         <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
@@ -181,8 +181,8 @@
                                 </th>
                                 <th class="wd-26 firstrow">
                                     <div>
-                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info="{'event_name':'publication_follow','page_name':'My View Settings','ga_eventCategory':'Publication follow','ga_eventAction':'follow','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.FollowButtonText</span>
-                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info="{'event_name':'publication_following','page_name':'My View Settings','ga_eventCategory':'Publication following','ga_eventAction':'following','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.FollowingButtonText</span>
+                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info="{'event_name':'publication_follow','page_name':'My View Settings','ga_eventCategory':'Publication follow','ga_eventAction':'follow','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.ChannelFollowButtonText</span>
+                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info="{'event_name':'publication_following','page_name':'My View Settings','ga_eventCategory':'Publication following','ga_eventAction':'following','ga_eventLabel':'@Model.publicationname','follow_publication':'@Model.publicationname'}">@Model.ChannelFollowingButtonText</span>
                                         <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
@@ -246,7 +246,7 @@
                                     topicOrder = Model.IsNewUser ? ++topicOrder : topic.TopicOrder;
                                     topicTRClass = topic.IsFollowing ? "followingrow" : "followrow disabled";
                                     topicSpanClass = topic.IsFollowing ? "followingBtn" : "followBtn";
-                                    topicLableText = topic.IsFollowing ? Model.FollowingButtonText : Model.FollowButtonText;
+                                    topicLableText = topic.IsFollowing ? Model.TopicFollowingButtonText : Model.TopicFollowButtonText;
                                     string dataInfo = topic.IsFollowing ? "data-info=\"{'event_name': 'topic unfollow', 'page_name': 'My view settings','ga_eventCategory':'Topic Unfollow','ga_eventAction':'" + @Model.publicationname + " ','ga_eventLabel' : '" + @topic.TopicName + "', 'follow_topic' : '" + @topic.TopicName + "',  'follow_publication':'" + @Model.publicationname + " '}\"" : "data-info=\"{'event_name': 'topic follow', 'page_name': 'My view settings','ga_eventCategory':'Topic follow','ga_eventAction':'" + @Model.publicationname + " ','ga_eventLabel' : '" + @topic.TopicName + "', 'follow_topic' : '" + @topic.TopicName + "',  'follow_publication':'" + @Model.publicationname + " '}\"";
 
                             <tr class="@topicTRClass" data-row="@topicOrder">
