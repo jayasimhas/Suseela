@@ -3768,6 +3768,8 @@ header .header-account-access {
   margin-bottom: 3.125rem; }
   .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
     width: auto; }
+  .myview-settings.myview-settings-registration .saveoption {
+    width: 100%; }
   .myview-settings h1 {
     margin-bottom: 0px;
     margin-bottom: 0rem;
@@ -4273,10 +4275,19 @@ header .header-account-access {
         padding: 0 16px;
         padding: 0 1rem;
         margin-left: 8px;
-        margin-left: 0.5rem; }
+        margin-left: 0.5rem;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .unfollowAllBtn {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .unfollowAllBtn {
+            min-width: initial;
+            min-width: auto; } }
         @media screen and (min-width: 667px) and (max-width: 767px) {
           .myview-settings .table-responsive .table thead .unfollowAllBtn {
             padding: 0 20px;
@@ -4301,10 +4312,19 @@ header .header-account-access {
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 36px;
         padding: 0 2.25rem;
-        cursor: text; }
+        cursor: text;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followlbl {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .followlbl {
+            min-width: initial;
+            min-width: auto; } }
         @media (max-width: 640px) {
           .myview-settings .table-responsive .table thead .followlbl {
             margin: 0px !important;
@@ -4345,8 +4365,7 @@ header .header-account-access {
     display: none !important;
     visibility: hidden; }
   .myview-settings .saveoption {
-    float: right;
-    width: 100%; }
+    float: right; }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
