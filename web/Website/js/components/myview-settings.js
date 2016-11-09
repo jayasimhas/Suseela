@@ -159,7 +159,13 @@ function sort_table(tbody, col, asc, sortstatus) {
 
 $(function(){
 	$('a').click(function(e){
-		if($('#validatePriority').val() == "true"){ 
+		if($('#validatePriority') && $('#validatePriority').val() == "true"){ 
+			if(!$(this).hasClass("validationChk")){
+				e.preventDefault();
+				showModal();
+			}
+		}
+		if($('#validateMyViewPriority') && $('#validateMyViewPriority').val() == "true"){ 
 			if(!$(this).hasClass("validationChk")){
 				e.preventDefault();
 				showModal();
@@ -168,7 +174,11 @@ $(function(){
 	});
 	
 	$('form').submit(function(){
-		if($('#validatePriority').val() == "true"){
+		if($('#validatePriority') && $('#validatePriority').val() == "true"){
+			showModal();
+			return false;
+		}
+		if($('#validateMyViewPriority') && $('#validateMyViewPriority').val() == "true"){ 
 			showModal();
 			return false;
 		}
@@ -183,6 +193,7 @@ $(function(){
 		curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 		$('#validatePriority').val(true);
+		$('#validateMyViewPriority').val(true);
 		for(var i=0; i<tbody.find('.followingBtn').length; i++){
 			$(tbody.find('.followrow')[i]).attr('draggable', true);
 		}
@@ -206,6 +217,7 @@ $(function(){
 		curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 		$('#validatePriority').val(false);
+		$('#validateMyViewPriority').val(true);
 		for(var i=0; i<$lgfollowing.length; i++){
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
 		}
@@ -225,6 +237,7 @@ $(function(){
 	  
 	  if(trs.hasClass('followingrow')){
 		$('#validatePriority').val(true);
+		$('#validateMyViewPriority').val(true);
 		unfollowAllBtnHS.addClass('hideBtn');
 	  }
 	  
@@ -272,6 +285,7 @@ $(function(){
 		unfollowAllBtnHS.removeClass('hideBtn');
 	    followAllBtnHS.addClass('hideBtn');
 		$('#validatePriority').val(false);
+		$('#validateMyViewPriority').val(true);
 	  }
 	  else{
 		followAllBtnHL.removeClass('hideBtn');
@@ -389,7 +403,7 @@ $(function(){
             isChannelLevel = $('#isChannelBasedRegistration').val(),
 		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
-		
+		$('#validateMyViewPriority').val(false);
 		e.preventDefault();
 		setDataRow(allpublications);
         allpublicationsEles.removeAttr('data-row');
@@ -450,15 +464,17 @@ $(function(){
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
-
-	$('.publicationPan.donesubscribe').dragswap({
-		element : '.table tbody tr',
-		dropAnimation: true  
-	}); 
 	
-	$('#allPublicationsPan').dragswap({
-		element : '.publicationPan.donesubscribe',
-		dropAnimation: true  
-	}); 
+	if($('.publicationPan') && $('.publicationPan').length){
+		$('.publicationPan.donesubscribe').dragswap({
+			element : '.table tbody tr',
+			dropAnimation: true  
+		}); 
+		
+		$('#allPublicationsPan').dragswap({
+			element : '.publicationPan.donesubscribe',
+			dropAnimation: true  
+		}); 
+	}
 
 });
