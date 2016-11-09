@@ -6,6 +6,7 @@
     using Library.ViewModels.Account;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
     using Jabberwocky.Glass.Autofac.Mvc.Models;
+    using Library.Site;
 
     public class MyViewSettingsViewModel : GlassViewModel<IMy_View_Settings_Page>
     {
@@ -13,17 +14,20 @@
         public readonly ISignInViewModel SignInViewModel;
         public readonly IChannelsViewModel ChannelsViewModel;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly ISiteRootContext SiteRootContext;
 
         public MyViewSettingsViewModel(
                 ITextTranslator translator,
                 ISignInViewModel signInViewModel,
                 IAuthenticatedUserContext userContext,
-                IChannelsViewModel channelsViewModel)
+                IChannelsViewModel channelsViewModel,
+                ISiteRootContext siteRootContext)
         {
             TextTranslator = translator;
             SignInViewModel = signInViewModel;
             AuthenticatedUserContext = userContext;
             ChannelsViewModel = channelsViewModel;
+            SiteRootContext = siteRootContext;
         }
 
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
@@ -45,7 +49,7 @@
         public string PreferenceNotSavedError => TextTranslator.Translate("Registration.Optin.PreferenceNotSaved");
         public string NotFollowedError => GlassModel?.Not_Followed_Error;
         public bool EnableSavePreferencesCheck => GlassModel?.EnableSavePreferencesCheck ?? false;
-        public string MyViewPageUrl => GlassModel?.MyView_Page_Url?.Url;
+        public string MyViewPageUrl => SiteRootContext?.Item?.MyView_Page?._Url;
         public string PopupSaveButtonText => TextTranslator.Translate("MyViewSettings.Popup.Save.Button.Text");
         public string PopupCancelButtonText => TextTranslator.Translate("MyViewSettings.Popup.Cancel.Button.Text");
     }
