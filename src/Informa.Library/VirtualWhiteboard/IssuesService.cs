@@ -17,6 +17,7 @@ using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExte
 using Sitecore.Data.Items;
 using Sitecore.Data.Fields;
 using Sitecore.Data;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Library.VirtualWhiteboard
 {
@@ -226,7 +227,7 @@ namespace Informa.Library.VirtualWhiteboard
 		public IEnumerable<IIssue> GetActiveIssues()
 		{
 			return
-				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(Constants.VirtualWhiteboardIssuesFolder))
+				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder")))
 					._ChildrenWithInferType.Cast<IIssue>();
 		}
 
