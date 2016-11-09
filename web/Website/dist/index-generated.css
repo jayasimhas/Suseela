@@ -4149,6 +4149,10 @@ header .header-account-access {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px;
               margin-top: 0px; } }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table thead th .rowlines {
+              height: 30px;
+              width: 30px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines span {
               background: #808081; } }

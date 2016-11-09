@@ -181,7 +181,7 @@ var DragDropTouch,
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-                        if (e.target.className == 'pull-left' || e.target.className == 'wd-15') {
+                        if (e.target.className == 'pull-left' || e.target.className == 'wd-15' || e.target.className == 'accordionImg') {
                             checkTouchType = true;
                             e.preventDefault();
                         } else {
