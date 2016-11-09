@@ -350,6 +350,8 @@
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
+    <Compile Include="Search\Filter\ILegacyArticleNumberFilter.cs" />
+    <Compile Include="Search\Results\ILegacyArticleNumber.cs" />
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
