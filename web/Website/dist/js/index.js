@@ -4514,22 +4514,13 @@ $(document).ready(function () {
                 $('.sd').hide();
                 $('.toggle-demo').show();
             }
-            var persistedval = sessionStorage.getItem("mykey");
-            if (persistedval == "false") {
-                $('.sd').show();
-                $('.hd').hide();
-                $('.toggle-demo').hide();
-            } else {
-                $('.hd').show();
-                $('.sd').hide();
-                $('.toggle-demo').show();
-            }
         });
         var persistedval = sessionStorage.getItem("mykey");
-        if (persistedval == "false") {
+        if (persistedval == 'false') {
             $('.sd').show();
             $('.hd').hide();
             $('.toggle-demo').hide();
+            $('.js-toggle-demo').addClass('collapsed');
         } else {
             $('.hd').show();
             $('.sd').hide();
