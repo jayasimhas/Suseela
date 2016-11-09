@@ -776,35 +776,34 @@ $(document).ready(function(){
             e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
         });
 		
-        $('.show-demo').click(function(){
-			
+	$('.show-demo').click(function () {
+
             $(this).closest('.js-toggle-demo').toggleClass('collapsed');
-			//IPMP-616	
-            if($(this).parent().hasClass('collapsed')){
-			sessionStorage.setItem("mykey", "false"); 
-                $('.hd').show();
-                $('.sd').hide();
-				$('.toggle-demo').show();
-            }else{
-			sessionStorage.setItem("mykey", "true"); 
+            //IPMP-616	
+            if ($(this).parent().hasClass('collapsed')) {
+                sessionStorage.setItem("mykey", "false");
                 $('.sd').show();
                 $('.hd').hide();
-				$('.toggle-demo').hide();
+                $('.toggle-demo').hide();
+            } else {
+                sessionStorage.setItem("mykey", "true");
+                $('.hd').show();
+                $('.sd').hide();
+                $('.toggle-demo').show();
             }
-			var persistedval=sessionStorage.getItem("mykey");
-			 if(persistedval == "false"){
-				$('.toggle-demo').show();
-			 }else{
-			 $('.toggle-demo').hide();
-			 }
+           
         });
-		var persistedval=sessionStorage.getItem("mykey");
-		 if(persistedval == "false"){
-				$('.toggle-demo').show();
-			 }else{
-			 $('.toggle-demo').hide();
-			 }
-
+        var persistedval = sessionStorage.getItem("mykey");
+        if (persistedval=='false') {
+            $('.sd').show();
+            $('.hd').hide();
+            $('.toggle-demo').hide();
+			$('.js-toggle-demo').addClass('collapsed');
+        } else {
+            $('.hd').show();
+            $('.sd').hide();
+            $('.toggle-demo').show();
+        }
     })();
 
 
