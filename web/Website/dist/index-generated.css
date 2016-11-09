@@ -4220,8 +4220,7 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
-          background-color: #f7941e;
-          color: #ffffff; }
+          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4245,8 +4244,7 @@ header .header-account-access {
         margin-top: 0.5rem;
         cursor: text; }
         .myview-settings .table-responsive .table thead .followinglbl:hover {
-          background-color: #f7941e;
-          color: #ffffff; }
+          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followinglbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4347,7 +4345,8 @@ header .header-account-access {
     display: none !important;
     visibility: hidden; }
   .myview-settings .saveoption {
-    float: right; }
+    float: right;
+    width: 100%; }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
@@ -4544,8 +4543,7 @@ header .header-account-access {
         float: left;
         color: #58595b; }
         .myview-settings .modal-view.preferences .cancel:hover {
-          background-color: #f7941e;
-          color: #ffffff; }
+          background-color: #f7941e; }
         .myview-settings .modal-view.preferences .cancel.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -5097,8 +5095,7 @@ header .header-account-access {
         font-size: 0.8125rem; }
   .personalisationhome .article-metadata ul {
     display: block;
-    padding-top: 30px;
-    padding-top: 1.875rem; }
+    width: calc(100% - 20px); }
     .personalisationhome .article-metadata ul li {
       display: inline-block;
       vertical-align: middle; } }
@@ -6426,10 +6423,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 #purchases .purrow {
   border-top: 1px solid #d2d4d3; }
 
-.tablesorter-headerAsc .sorting-arrows__arrow--up {
+.tablesorter-headerAsc .sorting-arrows__arrow--up, .tablesorter-headerAsc .sorting-arrows__arrow--up use > svg {
   fill: #be1e2d; }
 
-.tablesorter-headerDesc .sorting-arrows__arrow--down {
+.tablesorter-headerDesc .sorting-arrows__arrow--down, .tablesorter-headerDesc .sorting-arrows__arrow--down use > svg {
   fill: #be1e2d; }
 
 @media (max-width: 480px) {

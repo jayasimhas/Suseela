@@ -270,7 +270,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 if (importErrorCount == 1 )
                 {
                     XMLDataLogger.WriteLog(errorLog, "");
-                    XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
+                   // XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
                 }
                 if (importErrorCount == 2)
                 {
@@ -290,21 +290,47 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
 
-                if (bodyTitleHtml.Length > 200)
+                if (!(bodyTitleHtml.Length == 0 && cleanTitleHtml.Length == 0))
+
                 {
 
                     string regionSearch = cleanTitleHtml + bodyTitleHtml.Substring(10, Math.Min(bodyTitleHtml.Length - 10, 200));
                     //String[] text = { "Mexico", "India", "Pakistan", };
 
                     string country = GetRegion().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("COUNTRY", country);
+                    if (country == null)
+                    {
+                        ao.Add("COUNTRY", "");
+                    }
+                    else
+                    {
+                        ao.Add("COUNTRY", country);
+                    }
+
 
 
                     string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("COMPANIES", Companies);
+                    if (Companies == null)
+                    {
+                        ao.Add("COMPANIES", "");
+                    }
+                    else
+                    {
+                        ao.Add("COMPANIES", Companies);
+                    }
+
+
 
                     string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    ao.Add("AGENCY", Agency);
+                    if (Agency == null)
+                    {
+                        ao.Add("AGENCY", "");
+                    }
+                    else
+                    {
+                        ao.Add("AGENCY", Agency);
+                    }
+
                 }
                 else
                 {

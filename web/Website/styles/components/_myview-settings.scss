@@ -63,7 +63,6 @@
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
-		color: $color-white;
 	}
 	&.mtp{
 		margin-top: -6px;
@@ -468,7 +467,7 @@
   }
   .saveoption{
 	  float: right;
-	  // width: 100%;
+	  width: 100%;
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;

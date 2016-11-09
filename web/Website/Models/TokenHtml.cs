@@ -115,9 +115,9 @@ namespace Informa.Web.Models
 
         private string BuildReplaceTableauArticles(string TableauId, string partialName)
         {
-            string TableauTicket = _.TableauUtil.GenerateSecureTicket(_.GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId], _.GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);
-            string HostUrl = _.GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId];
-            Sitecore.Data.Fields.LinkField JSAPILinkField = _.GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
+            string TableauTicket = _.TableauUtil.GenerateSecureTicket(_.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId], _.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);
+            string HostUrl = _.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId];
+            Sitecore.Data.Fields.LinkField JSAPILinkField = _.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
             string JSAPIUrl = JSAPILinkField.Url;
             string LandingPageLinkLable = _.TextTranslator.Translate("DataTools.LandingPageLink");
             HtmlString replace = new HtmlString("");

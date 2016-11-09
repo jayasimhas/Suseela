@@ -1,11 +1,17 @@
-﻿@model Informa.Web.ViewModels.MyView.IMyViewPageViewModel
-
-<input type="hidden" id="jsonData" value="@Model.JSONData" />
+﻿@model Informa.Web.ViewModels.MyView.MyViewPageViewModel
 <script type="text/javascript">
     var loadPreferanceId = @Html.Raw(Model.JSONData)
 </script>
-
 <div class="personalisationhome">
+    <div class="tableau-landing clearfix">
+        <div class="personalHead clearfix">
+            <h1>@Model.PageHeading</h1>
+            <a class="editView hidden-xs" href="@Model.MyViewSettingsPageUrl">@Model.EditMyViewButtonLableText</a>
+        </div>
+        <div class="sub-heading-text">
+            @Html.Raw(@Model.PageDescription)
+        </div>
+    </div>
     <div class="spinnerIcon hidespin">
         <img src="/dist/img/spinner.gif" width="40" />
     </div>

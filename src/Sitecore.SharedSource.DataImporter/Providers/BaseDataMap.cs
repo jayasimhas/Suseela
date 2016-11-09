@@ -21,6 +21,7 @@ using Sitecore.Data.Managers;
 using Sitecore.Configuration;
 using Sitecore.SharedSource.DataImporter.Logger;
 using Sitecore.SecurityModel;
+using System.Text.RegularExpressions;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -519,6 +520,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             string CommodityLog = "CommodityMissingLog";
             string RegionLog = "RegionMissingLog";
             string CompanyLog = "CompanyMissingLog";
+            string AuthorsMissingLog = "AuthorsMissingLog";
+
             Dictionary<string, string> ArticleData = (Dictionary<string, string>)importRow;
 
             using (new LanguageSwitcher(ImportToLanguage))
@@ -573,6 +576,54 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string taxanomyimportvalue = string.Empty;
                     int taxanomycount = 0;
                     string TaxonomyStr = "";
+
+                    if (ArticleData.ContainsKey("dashboardname"))
+                    {
+                        TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
+                        Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
+                        //get the parent in the specific language
+                        TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
+                        //search for the child by name
+
+                        Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
+                        try
+                        {
+                            using (new SecurityDisabler())
+                            {
+                                // string xx= (Dictionary<string, string>())importRow[""].value;
+                                tableauItem.Editing.BeginEdit();
+                                tableauItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
+                                tableauItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
+                                tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
+                                tableauItem.Fields["Filter"].Value = ArticleData["filter"];
+                                tableauItem.Fields["Width"].Value = ArticleData["width"];
+                                tableauItem.Fields["Height"].Value = ArticleData["height"];
+                                tableauItem.Fields["Page Title"].Value = ArticleData["title"];
+                                tableauItem.Editing.EndEdit();
+                                string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+
+
+                                if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                                {
+                                    string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
+                                    if (!string.IsNullOrEmpty(wordToFind))
+                                    {
+                                        ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
+                                    }
+                                    else
+                                    {
+                                        ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                                    }
+                                }
+
+
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                    }
                     foreach (IBaseField d in fieldDefs)
                     {
                         string importValue = string.Empty;
@@ -640,6 +691,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 XMLDataLogger.WriteLog(ArticleId, BodyTagLog);
                             }
 
+                            if (d.NewItemField == "Authors" && importValue == "")
+                            {
+                                errorLog += "||" + "Authors N/A";
+                                XMLDataLogger.WriteLog(ArticleId, AuthorsMissingLog);
+                            }
+
                             if (d.NewItemField == "Taxonomy")
                             {
        
@@ -683,11 +740,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             {
                                 taxanomycount++;
                             }
-                                
-                            d.FillField(this, ref newItem, importValue, id);
-                           
 
-                            if(taxanomycount == fieldDefs.Count(n => n.NewItemField == "Taxonomy"))
+                            if (d.NewItemField != "Authors")
+                            {
+                                d.FillField(this, ref newItem, importValue, id);
+                            }
+                            else
+                            {
+                                d.FillField(this, ref newItem, importValue, ArticleId);
+                            }
+
+
+
+                            if (taxanomycount == fieldDefs.Count(n => n.NewItemField == "Taxonomy"))
                                  {
 
                                 Field f = newItem.Fields["Taxonomy"];
@@ -714,37 +779,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 }
 
                 // Dictionary<string, string> tableau = (Dictionary<string, string>)importRow;
-                if (ArticleData.ContainsKey("dashboardname"))
-                {
-                    TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
-                    Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
-                    //get the parent in the specific language
-                    TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
-                    //search for the child by name
-
-                    Item tabloItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
-                    try
-                    {
-                        using (new SecurityDisabler())
-                        {
-                            // string xx= (Dictionary<string, string>())importRow[""].value;
-                            tabloItem.Editing.BeginEdit();
-                            tabloItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
-                            tabloItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
-                            tabloItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
-                            tabloItem.Fields["Filter"].Value = ArticleData["filter"];
-                            tabloItem.Fields["Width"].Value = ArticleData["width"];
-                            tabloItem.Fields["Height"].Value = ArticleData["height"];
-                            tabloItem.Fields["Page Title"].Value = ArticleData["title"];
-                            tabloItem.Editing.EndEdit();
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-                }
-
+              
+            
                 return newItem;
 
             }
@@ -800,6 +836,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 thisParent = GetNameParentNode(ImportToWhere, newItemName.Substring(0, 1), FolderTemplate);
             }
             return thisParent;
+        }
+
+
+        private string getTokenForTableau(string tableau)
+        {
+            tableau = tableau.Replace("{", String.Empty).Replace("}", String.Empty);
+            //< tr >< td >< strong >[T#:c6cc76d3-bc75-43a7-bd86-06d85ff49852]</strong></td></tr>
+            //<p xmlns="" class="article-paragraph"> 
+            //< strong >[T#:c6cc76d3-bc75-43a7-bd86-06d85ff49852]</strong>
+            //</ p >
+            //return "< tr >< td >< strong >[T#:" + tableau + "]</strong></td></tr>";
+
+            return "<p xmlns='' class='article-paragraph'><strong>[T#:" + tableau + "]</strong></p>";
+
         }
 
         #endregion IDataMap Methods

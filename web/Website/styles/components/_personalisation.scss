@@ -347,7 +347,7 @@
 		.article-metadata {
 			ul {
 				display: block;
-				padding-top: 1.875rem;
+				width: calc(100% - 20px);
 				li {
 					display: inline-block;
 					vertical-align: middle;
