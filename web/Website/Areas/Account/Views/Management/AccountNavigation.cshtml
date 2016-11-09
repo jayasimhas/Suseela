@@ -1,28 +1,31 @@
 ﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 @model Informa.Web.Areas.Account.ViewModels.Management.AccountNavViewModel
 
-<div class="general-header">
+@if (Model.isUserAuthenticated)
+{
+    <div class="general-header">
 
-    @if (Model.NavigationItems.Any())
-    {
-        @* Navigation Items *@
-        <div class="general-header__navigation">
-            @foreach (I___BasePage n in @Model.NavigationItems)
-            {
-                <a href="@n._Url" class="@Model.CssClass(n)">
-                    @n.Navigation_Title
-                </a>
-            }
-        </div>
-        <div class="general-header__navigation-scroller--right">
-            <svg>
-                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-            </svg>
-        </div>
-        <div class="general-header__navigation-scroller--left">
-            <svg>
-                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-            </svg>
-        </div>
-    }
-</div>
+        @if (Model.NavigationItems.Any())
+        {
+            @* Navigation Items *@
+            <div class="general-header__navigation">
+                @foreach (I___BasePage n in @Model.NavigationItems)
+                {
+                    <a href="@n._Url" class="@Model.CssClass(n)">
+                        @n.Navigation_Title
+                    </a>
+                }
+            </div>
+            <div class="general-header__navigation-scroller--right">
+                <svg>
+                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                </svg>
+            </div>
+            <div class="general-header__navigation-scroller--left">
+                <svg>
+                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                </svg>
+            </div>
+        }
+    </div>
+}

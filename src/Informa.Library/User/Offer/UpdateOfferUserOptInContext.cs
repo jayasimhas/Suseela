@@ -1,5 +1,6 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
+using log4net;
 
 namespace Informa.Library.User.Offer
 {
@@ -9,20 +10,24 @@ namespace Informa.Library.User.Offer
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IOfferUserOptedInContext OfferOptedInContext;
 		protected readonly IUpdateOfferUserOptIn UpdateOfferOptIn;
+        protected readonly ILog Logger;
 
-		public UpdateOfferUserOptInContext(
+                public UpdateOfferUserOptInContext(
 			IAuthenticatedUserContext userContext,
 			IOfferUserOptedInContext offerOptedInContext,
-			IUpdateOfferUserOptIn updateOfferOptIn)
+			IUpdateOfferUserOptIn updateOfferOptIn,
+            ILog logger)
 		{
 			UserContext = userContext;
 			OfferOptedInContext = offerOptedInContext;
 			UpdateOfferOptIn = updateOfferOptIn;
+            Logger = logger;
 		}
 
 		public bool Update(bool optIn)
 		{
-			if (!UserContext.IsAuthenticated)
+            Logger.Error("UserContext.IsAuthenticated : " + UserContext.IsAuthenticated);
+            if (!UserContext.IsAuthenticated)
 			{
 				return false;
 			}

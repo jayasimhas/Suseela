@@ -7,24 +7,25 @@
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     using Library.Site;
+    using Web.ViewModels;
 
     public class MyViewSettingsViewModel : GlassViewModel<IMy_View_Settings_Page>
     {
         protected readonly ITextTranslator TextTranslator;
-        public readonly ISignInViewModel SignInViewModel;
+        public readonly ICallToActionViewModel CallToActionViewModel;
         public readonly IChannelsViewModel ChannelsViewModel;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISiteRootContext SiteRootContext;
 
         public MyViewSettingsViewModel(
                 ITextTranslator translator,
-                ISignInViewModel signInViewModel,
+                ICallToActionViewModel callToActionViewModel,
                 IAuthenticatedUserContext userContext,
                 IChannelsViewModel channelsViewModel,
                 ISiteRootContext siteRootContext)
         {
             TextTranslator = translator;
-            SignInViewModel = signInViewModel;
+            CallToActionViewModel = callToActionViewModel;
             AuthenticatedUserContext = userContext;
             ChannelsViewModel = channelsViewModel;
             SiteRootContext = siteRootContext;
