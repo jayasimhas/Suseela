@@ -276,7 +276,7 @@ function createLayoutInner2(data){
 	
 	
 	articleData += '<section class="article-preview article-preview--small artheight topics">';
-	articleData += (data.articles[2].linkableText) ? '<h6>'+data.articles[2].linkableText+'</h6>' : '';
+	articleData += (data.articles[2].linkableText) ? '<h6>&nbsp;</h6>' : '';
 	
 	articleData += (data.articles[2].listableTitle) ? '<h1 class="article-preview_rheadline"><a href="'+linkableUrl2+'" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"'+analytics_data["page_name"]+'","click_through_destination":"'+linkableUrl2+'","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"'+data.articles[2].listableTitle+'","publication_click":"' + analytics_data["publication"] + '"}">'+data.articles[2].listableTitle+'</a></h1>' : '';
 	

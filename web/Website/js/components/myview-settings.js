@@ -233,11 +233,10 @@ $(function(){
 	  setClsforFlw(table);
 	  table.find('.firstrow .lableStatus').val('followinglbl');
 	  table.find('.accordionStatus .lableStatus').val('followinglbl');
-	  //table.find('.followAllBtn').removeClass('fr');
+	  $('#validateMyViewPriority').val(true);
 	  
 	  if(trs.hasClass('followingrow')){
 		$('#validatePriority').val(true);
-		$('#validateMyViewPriority').val(true);
 		unfollowAllBtnHS.addClass('hideBtn');
 	  }
 	  
@@ -271,8 +270,8 @@ $(function(){
 	  followingrow.clone().appendTo($this.closest('tbody'));
 	  followingrow.remove();
 	  $('#validatePreference').val(1);
-	  //table.find('.followAllBtn').removeClass('fr');
 	  sort_table(tbody, 0, 1, 'followingBtn');
+	  $('#validateMyViewPriority').val(true);
 	  
 	  if(trs.length === disabledtrs.length+1){
 		table.find('.firstrow .lableStatus').val('followlbl');
@@ -285,7 +284,6 @@ $(function(){
 		unfollowAllBtnHS.removeClass('hideBtn');
 	    followAllBtnHS.addClass('hideBtn');
 		$('#validatePriority').val(false);
-		$('#validateMyViewPriority').val(true);
 	  }
 	  else{
 		followAllBtnHL.removeClass('hideBtn');
