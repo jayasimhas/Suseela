@@ -192,6 +192,16 @@ $(document).ready(function() {
         successCallback: function(form, context, evt) {
             $(evt.target).closest('tr').remove();
 
+            window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
+            $('.js-saved-search-success-alert')
+				.addClass('is-active')
+				.on('animationend', function (e) {
+				    console.log("save search component:6");
+				    $(e.target).removeClass('is-active');
+				}).addClass('a-fade-alert');
+
+            window.lightboxController.closeLightboxModal();
+
 			var event_data = {
 				event_name: 'saved_search_alert_removal',
 				saved_search_alert_title: $(form).data('analytics-title'),
