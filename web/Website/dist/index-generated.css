@@ -10374,7 +10374,8 @@ section: Global Components
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   -ms-flex-item-align: center;
-      align-self: center; }
+      align-self: center;
+  width: 16.5%; }
   .header__logo img {
     display: block;
     height: 100%;
