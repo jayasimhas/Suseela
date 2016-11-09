@@ -144,6 +144,7 @@
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
 				$('#validatePreference').val(1);
+				$('#validateMyViewPriority').val(true);
                 settings.dropComplete();
             }
             return false;
