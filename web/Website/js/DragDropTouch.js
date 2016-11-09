@@ -176,7 +176,7 @@ var DragDropTouch, checkTouchType = true;
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-						if(e.target.className == 'pull-left'){
+						if(e.target.className == 'pull-left' || e.target.className == 'wd-15'){ 
 							checkTouchType = true;
 							e.preventDefault();
 						}

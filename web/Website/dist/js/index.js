@@ -181,7 +181,7 @@ var DragDropTouch,
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-                        if (e.target.className == 'pull-left') {
+                        if (e.target.className == 'pull-left' || e.target.className == 'wd-15') {
                             checkTouchType = true;
                             e.preventDefault();
                         } else {
@@ -1845,10 +1845,11 @@ $(function () {
 			    subjectHei = latestSubject.height(),
 			    allstoriesLen = $('.personalisationPan .eachstoryMpan').length,
 			    liIdx = $this.closest('li').index();
-
-			if ($('.js-menu-toggle-button, .js-full-menu-toggle').hasClass('is-active')) {
-				$('.js-menu-toggle-button, .js-full-menu-toggle').removeClass('is-active');
-			}
+			setTimeout(function () {
+				if ($('.js-menu-toggle-button, .js-full-menu-toggle').hasClass('is-active')) {
+					$('.js-menu-toggle-button, .js-full-menu-toggle').removeClass('is-active');
+				}
+			}, 5);
 
 			if (typeof loadPreferanceId !== 'undefined' && $('#' + name) && $('#' + name).length) {
 				$(window).scrollTop(getPos.top - subjectHei * 3);
@@ -4504,27 +4505,35 @@ $(document).ready(function () {
             //IPMP-616	
             if ($(this).parent().hasClass('collapsed')) {
                 sessionStorage.setItem("mykey", "false");
-                $('.hd').show();
-                $('.sd').hide();
-                $('.toggle-demo').show();
-            } else {
-                sessionStorage.setItem("mykey", "true");
                 $('.sd').show();
                 $('.hd').hide();
                 $('.toggle-demo').hide();
+            } else {
+                sessionStorage.setItem("mykey", "true");
+                $('.hd').show();
+                $('.sd').hide();
+                $('.toggle-demo').show();
             }
             var persistedval = sessionStorage.getItem("mykey");
             if (persistedval == "false") {
-                $('.toggle-demo').show();
-            } else {
+                $('.sd').show();
+                $('.hd').hide();
                 $('.toggle-demo').hide();
+            } else {
+                $('.hd').show();
+                $('.sd').hide();
+                $('.toggle-demo').show();
             }
         });
         var persistedval = sessionStorage.getItem("mykey");
         if (persistedval == "false") {
-            $('.toggle-demo').show();
-        } else {
+            $('.sd').show();
+            $('.hd').hide();
             $('.toggle-demo').hide();
+        } else {
+            $('.hd').show();
+            $('.sd').hide();
+            $('.toggle-demo').show();
         }
     })();
 
