@@ -36,9 +36,10 @@
 		margin-bottom: 3px;
 	}
 	.move{
-		position: absolute;
-		left: -3.6875rem;
-		top: -3px;
+		float: left;
+		margin-right: 0.625rem;
+		position: relative;
+		top: -4px;
 		text-transform: uppercase;
 		font-size: 0.75em;
 		display: none;
@@ -492,7 +493,6 @@
   }
   .saveoption{
 	  float: right;
-	  // width: 100%;
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;

@@ -3999,10 +3999,11 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .move {
-            position: absolute;
-            left: -59px;
-            left: -3.6875rem;
-            top: -3px;
+            float: left;
+            margin-right: 10px;
+            margin-right: 0.625rem;
+            position: relative;
+            top: -4px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4046,10 +4047,11 @@ header .header-account-access {
               display: block;
               margin-bottom: 3px; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines .move {
-              position: absolute;
-              left: -59px;
-              left: -3.6875rem;
-              top: -3px;
+              float: left;
+              margin-right: 10px;
+              margin-right: 0.625rem;
+              position: relative;
+              top: -4px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -4135,10 +4137,11 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table thead th .rowlines .move {
-            position: absolute;
-            left: -59px;
-            left: -3.6875rem;
-            top: -3px;
+            float: left;
+            margin-right: 10px;
+            margin-right: 0.625rem;
+            position: relative;
+            top: -4px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
