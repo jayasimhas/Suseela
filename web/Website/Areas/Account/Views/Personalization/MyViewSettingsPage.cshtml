@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.MyViewSettingsViewModel
 
 @*For registration flow*@
-@if (Model.IsFromRegistration)
+@if (Model.IsFromRegistration && Model.IsAuthenticated)
 {
     <div class="main__content myview-settings">
         <div class="tableau-landing clearfix">
