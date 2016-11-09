@@ -179,14 +179,14 @@ namespace Informa.Library.Article.Search
 
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
+            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{taxonomyParent}-{id}";
             return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
 				}
 
         public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
             var article = GlobalService.GetItem<ArticleItem>(id);
-            var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+            var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent) || x._Parent._Parent._Id.Equals(taxonomyParent));//Check the parent folder and the grandparent in case of countries under regions. TODO: recursively check for parents
 
             if (taxonomyItems != null)
             {
