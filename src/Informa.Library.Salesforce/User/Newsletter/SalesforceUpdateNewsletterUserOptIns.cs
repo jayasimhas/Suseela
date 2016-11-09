@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Salesforce.EBIWebServices;
+using log4net;
 
 namespace Informa.Library.Salesforce.User.Newsletter
 {
@@ -9,18 +10,22 @@ namespace Informa.Library.Salesforce.User.Newsletter
 	{
 		protected readonly ISalesforceServiceContext Service;
 	    protected readonly INewsletterUserOptInsContext NewsletterContext;
+        protected readonly ILog Logger;
 
         public SalesforceUpdateNewsletterUserOptIns(
 			ISalesforceServiceContext service,
-            INewsletterUserOptInsContext newsletterContext)
+            INewsletterUserOptInsContext newsletterContext,
+            ILog logger)
 		{
 			Service = service;
             NewsletterContext = newsletterContext;
+            Logger = logger;
 		}
 
 		public bool Update(IEnumerable<INewsletterUserOptIn> newsletterOptIns, string userName)
 		{
-			if (string.IsNullOrEmpty(userName))
+            Logger.Error("UserName : " + userName);
+            if (string.IsNullOrEmpty(userName))
 			{
 				return false;
 			}
