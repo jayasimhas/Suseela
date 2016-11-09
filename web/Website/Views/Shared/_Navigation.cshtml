@@ -101,7 +101,7 @@
                                 <ul class="main-menu__section">
 
                                     <li class="@mainSubjectSectionClassName">
-                                        @if (Nav.Children.Any())
+                                        @if (Model.Preferencelst!=null?Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)).Any(): Nav.Children.Any())
                                         {
                                             <svg class="main-menu__arrow-icon  js-hoist-menu-click">
                                                 <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
