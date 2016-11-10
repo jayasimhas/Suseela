@@ -1152,7 +1152,7 @@ $(document).ready(function(){
 
             $(item).on('mouseenter touchstart', function(e) {
                 e.preventDefault();
-
+                e.stopPropagation();
                 if (e.type === "touchstart") {
                     $(item).data("ttTouchTriggered", true);
                 }
@@ -1182,7 +1182,7 @@ $(document).ready(function(){
             $(item).on('mouseleave', function() {
                 $(item).data("ttVisible", false);
                 tooltip.hidePopup();
-                tooltip.remove();
+                $('.popup').remove();
             });
         });
     };
