@@ -44,7 +44,7 @@ namespace Informa.Web.ViewModels
 		public string CorporateName => _dependencies.UserCompanyContext?.Company?.Name;
 	    public string Title => _dependencies.GlobalSitecoreService.GetPageTitle(GlassModel);
 	    public string BodyCssClass => _dependencies.SiteRootContext.GetBodyCssClass();
-        public Image FavIcon => _dependencies.SiteRootContext?.Item.FavIcon;
+        public string FavIcon => _dependencies.SiteRootContext?.Item.FavIcon?.Src;
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
