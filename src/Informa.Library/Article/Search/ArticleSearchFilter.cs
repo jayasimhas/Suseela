@@ -13,6 +13,7 @@ namespace Informa.Library.Article.Search
 		public IList<Guid> TaxonomyIds { get; set; }
 		public IList<string> ArticleNumbers { get; set; }
 		public string EScenicID { get; set; }
+		public string LegacyArticleNumber { get; set; }
 		public Guid ReferencedArticle { get; set; }
 		public IList<string> PublicationNames { get; set; }
 		public IList<string> AuthorGuids { get; set; }

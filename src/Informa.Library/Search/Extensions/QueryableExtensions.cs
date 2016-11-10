@@ -172,6 +172,20 @@ namespace Informa.Library.Search.Extensions
 			return source.Filter(predicate);
 		}
 
+		public static IQueryable<T> FilteryByLegacyArticleNumber<T>(this IQueryable<T> source, ILegacyArticleNumberFilter filter)
+						where T : ILegacyArticleNumber
+		{
+			if (source == null || filter == null || string.IsNullOrEmpty(filter.LegacyArticleNumber))
+			{
+				return source;
+			}
+
+			var predicate = PredicateBuilder.True<T>();
+			predicate = predicate.Or(i => i.LegacyArticleNumber == filter.LegacyArticleNumber);
+
+			return source.Filter(predicate);
+		}
+
 		public static IQueryable<T> ApplyDefaultFilters<T>(this IQueryable<T> source)
 																		where T : ArticleSearchResultItem
 		{
