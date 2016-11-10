@@ -3768,6 +3768,8 @@ header .header-account-access {
   margin-bottom: 3.125rem; }
   .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
     width: auto; }
+  .myview-settings.myview-settings-registration .saveoption {
+    width: 100%; }
   .myview-settings h1 {
     margin-bottom: 0px;
     margin-bottom: 0rem;
@@ -3997,10 +3999,11 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table tbody tr.followingrow .rowlines .move {
-            position: absolute;
-            left: -59px;
-            left: -3.6875rem;
-            top: -3px;
+            float: left;
+            margin-right: 10px;
+            margin-right: 0.625rem;
+            position: relative;
+            top: -4px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4044,10 +4047,11 @@ header .header-account-access {
               display: block;
               margin-bottom: 3px; }
             .myview-settings .table-responsive .table tbody tr.followrow .rowlines .move {
-              position: absolute;
-              left: -59px;
-              left: -3.6875rem;
-              top: -3px;
+              float: left;
+              margin-right: 10px;
+              margin-right: 0.625rem;
+              position: relative;
+              top: -4px;
               text-transform: uppercase;
               font-size: 0.75em;
               display: none; }
@@ -4133,10 +4137,11 @@ header .header-account-access {
             display: block;
             margin-bottom: 3px; }
           .myview-settings .table-responsive .table thead th .rowlines .move {
-            position: absolute;
-            left: -59px;
-            left: -3.6875rem;
-            top: -3px;
+            float: left;
+            margin-right: 10px;
+            margin-right: 0.625rem;
+            position: relative;
+            top: -4px;
             text-transform: uppercase;
             font-size: 0.75em;
             display: none; }
@@ -4147,6 +4152,10 @@ header .header-account-access {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px;
               margin-top: 0px; } }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table thead th .rowlines {
+              height: 30px;
+              width: 30px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines span {
               background: #808081; } }
@@ -4273,10 +4282,19 @@ header .header-account-access {
         padding: 0 16px;
         padding: 0 1rem;
         margin-left: 8px;
-        margin-left: 0.5rem; }
+        margin-left: 0.5rem;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .unfollowAllBtn {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .unfollowAllBtn {
+            min-width: initial;
+            min-width: auto; } }
         @media screen and (min-width: 667px) and (max-width: 767px) {
           .myview-settings .table-responsive .table thead .unfollowAllBtn {
             padding: 0 20px;
@@ -4301,10 +4319,19 @@ header .header-account-access {
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 36px;
         padding: 0 2.25rem;
-        cursor: text; }
+        cursor: text;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followlbl {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .followlbl {
+            min-width: initial;
+            min-width: auto; } }
         @media (max-width: 640px) {
           .myview-settings .table-responsive .table thead .followlbl {
             margin: 0px !important;
@@ -4345,8 +4372,7 @@ header .header-account-access {
     display: none !important;
     visibility: hidden; }
   .myview-settings .saveoption {
-    float: right;
-    width: 100%; }
+    float: right; }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
@@ -5722,7 +5748,9 @@ section: UI Elements
     font-style: normal;
     position: relative; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox input[type="checkbox"] {
-      margin-right: 5px; }
+      margin-right: 5px;
+      position: relative;
+      left: -99999px; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox .chk_box {
       background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       width: 16px;
@@ -5764,6 +5792,9 @@ section: UI Elements
     width: 50%;
     display: inline;
     float: left; }
+    .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox input[type=checkbox] {
+      position: relative;
+      left: -99999999px; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .checkbox-label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .page-registration__tos-confirm label, .page-registration__tos-confirm .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label {
       margin-left: 27px;
       margin-left: 1.7rem;
