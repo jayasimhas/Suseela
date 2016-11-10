@@ -4774,6 +4774,11 @@ header .header-account-access {
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }
+  .personalisationhome .article-metadata ul {
+    display: block; }
+    .personalisationhome .article-metadata ul li {
+      display: inline-block;
+      vertical-align: middle; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
       margin-right: 4px;

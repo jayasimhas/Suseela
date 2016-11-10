@@ -39,6 +39,13 @@
 	}
 	.article-metadata{
 		margin-top: 0px;
+		ul {
+			display: block;
+			li {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
 		@include breakpoint('large') {
 			li{
 				margin-right: 0.25rem;
