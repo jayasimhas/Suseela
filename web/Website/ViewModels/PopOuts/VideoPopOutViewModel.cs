@@ -7,7 +7,7 @@ namespace Informa.Web.ViewModels.PopOuts
     public class VideoPopOutViewModel : GlassViewModel<IVideoControl>
     {
         #region VideoControl Parameters
-        public Image Thumbnail => GlassModel?.Thumbnail;
+        public string Thumbnail => GlassModel?.Thumbnail?.Src;
         public string VideoLink => GlassModel?.VideoLink?.Url;
         public string AlternativeText => GlassModel?.AlternativeText;
         #endregion
