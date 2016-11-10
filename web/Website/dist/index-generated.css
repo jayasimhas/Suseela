@@ -4761,7 +4761,9 @@ header .header-account-access {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 26px;
-    line-height: 1.625rem; } }
+    line-height: 1.625rem; }
+  .personalisationhome .hidespin {
+    display: none; } }
 
 .personalisationhome .hidden-lg {
   display: none !important; }
