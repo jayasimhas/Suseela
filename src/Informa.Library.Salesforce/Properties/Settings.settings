@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Informa_Library_Salesforce_EBIWebServices_EBI_WebServicesService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://cs52.salesforce.com/services/Soap/class/EBI_WebServices</Value>
+      <Value Profile="(Default)">https://cs60.salesforce.com/services/Soap/class/EBI_WebServices</Value>
     </Setting>
     <Setting Name="Informa_Library_Salesforce_SalesforceAPI_SforceService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://test.salesforce.com/services/Soap/c/22.0/0DFR0000000CeVX</Value>
