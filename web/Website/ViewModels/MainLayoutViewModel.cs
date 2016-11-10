@@ -9,13 +9,11 @@ using Informa.Library.Company;
 using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Services.AccountManagement;
-using Glass.Mapper.Sc.Fields;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
+    public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 
 	    private readonly IDependencies _dependencies;
