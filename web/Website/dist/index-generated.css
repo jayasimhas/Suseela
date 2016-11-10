@@ -5748,7 +5748,9 @@ section: UI Elements
     font-style: normal;
     position: relative; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox input[type="checkbox"] {
-      margin-right: 5px; }
+      margin-right: 5px;
+      position: relative;
+      left: -99999px; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox .chk_box {
       background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       width: 16px;
@@ -5790,6 +5792,9 @@ section: UI Elements
     width: 50%;
     display: inline;
     float: left; }
+    .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox input[type=checkbox] {
+      position: relative;
+      left: -99999999px; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .checkbox-label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .page-registration__tos-confirm label, .page-registration__tos-confirm .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label {
       margin-left: 27px;
       margin-left: 1.7rem;
