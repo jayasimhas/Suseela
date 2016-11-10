@@ -12,7 +12,7 @@
 
     <title>@Html.Raw(Model.Title)</title>
 
-    <link rel="icon" type="image/png" href="/dist/img/favicon.ico" />
+    <link rel="icon" type="image/png" href="@Model.FavIcon.Src" />
     @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
     {
         <link rel="canonical" href="@Model.CanonicalUrl" />

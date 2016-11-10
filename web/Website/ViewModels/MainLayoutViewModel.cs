@@ -11,6 +11,7 @@ using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Services.AccountManagement;
+using Glass.Mapper.Sc.Fields;
 
 namespace Informa.Web.ViewModels
 {
@@ -43,6 +44,7 @@ namespace Informa.Web.ViewModels
 		public string CorporateName => _dependencies.UserCompanyContext?.Company?.Name;
 	    public string Title => _dependencies.GlobalSitecoreService.GetPageTitle(GlassModel);
 	    public string BodyCssClass => _dependencies.SiteRootContext.GetBodyCssClass();
+        public Image FavIcon => _dependencies.SiteRootContext?.Item.FavIcon;
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();

@@ -15115,6 +15115,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Items_Per_Section { get; set; }
+        /// <summary>
+        /// The Fav Icon field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: A225B559-B031-460E-BDC2-199730396269</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image FavIcon { get; set; }
     }
 
 
@@ -15985,6 +15994,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Items_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Items_Per_Section { get; set; }
+        /// <summary>
+        /// The Fav Icon field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: A225B559-B031-460E-BDC2-199730396269</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image FavIcon { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -16511,6 +16529,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Items_Per_SectionFieldId = new ID("CE377240-5F03-4024-A18A-A2D24DF9B259");
         public const string Items_Per_SectionFieldName = "Items Per Section";
+
+        public static readonly ID FavIconFieldId = new ID("A225B559-B031-460E-BDC2-199730396269");
+        public const string FavIconFieldName = "Fav Icon";
     }
 
 }
