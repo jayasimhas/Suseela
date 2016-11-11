@@ -52,6 +52,7 @@ namespace Informa.Web.ViewModels.MyView
         {
             var jsonObject = new
             {
+                EditMyViewButtonLableText = EditMyViewButtonLableText,
                 MyViewSettingsPageLink = MyViewSettingsPageUrl,
                 DefaultSectionLoadCount = InitialLaodSectionsCount,
                 PerSectionItemCount = ItemsPerSection,
