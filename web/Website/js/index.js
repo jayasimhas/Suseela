@@ -186,7 +186,7 @@ $(document).ready(function(){
 	if($('#amchartData') && $('#amchartData').length){
 	var amchartVal = JSON.parse($('#amchartData').val()),
 	createNewObj = {};
-	for(prop in amchartVal){
+	for(var prop in amchartVal){
 		if(prop != 'dataProvider'){
 			createNewObj[prop] = amchartVal[prop];
 		}else{
