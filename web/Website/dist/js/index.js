@@ -1335,18 +1335,30 @@ function createLayoutInner1(data) {
 	    linkableUrl6 = data.articles[6].linkableUrl ? data.articles[6].linkableUrl : '#',
 	    linkableUrl7 = data.articles[7].linkableUrl ? data.articles[7].linkableUrl : '#',
 	    linkableUrl8 = data.articles[8].linkableUrl ? data.articles[8].linkableUrl : '#',
-	    bookmarkInfo0 = data.articles[0].isArticleBookmarked && data.articles[0].isArticleBookmarked ? data.articles[0].bookmarkedText : data.articles[0].bookmarkText,
-	    bookmarkInfo1 = data.articles[1].isArticleBookmarked && data.articles[1].isArticleBookmarked ? data.articles[1].bookmarkedText : data.articles[1].bookmarkText,
-	    bookmarkInfo2 = data.articles[2].isArticleBookmarked && data.articles[2].isArticleBookmarked ? data.articles[2].bookmarkedText : data.articles[2].bookmarkText,
-	    bookmarkInfo6 = data.articles[6].isArticleBookmarked && data.articles[6].isArticleBookmarked ? data.articles[6].bookmarkedText : data.articles[6].bookmarkText,
-	    bookmarkInfo7 = data.articles[7].isArticleBookmarked && data.articles[7].isArticleBookmarked ? data.articles[7].bookmarkedText : data.articles[7].bookmarkText,
-	    bookmarkInfo8 = data.articles[8].isArticleBookmarked && data.articles[8].isArticleBookmarked ? data.articles[8].bookmarkedText : data.articles[8].bookmarkText;
+	    bookmarkInfo0 = data.articles[0].isArticleBookmarked ? data.articles[0].bookmarkedText : data.articles[0].bookmarkText,
+	    bookmarkInfo1 = data.articles[1].isArticleBookmarked ? data.articles[1].bookmarkedText : data.articles[1].bookmarkText,
+	    bookmarkInfo2 = data.articles[2].isArticleBookmarked ? data.articles[2].bookmarkedText : data.articles[2].bookmarkText,
+	    bookmarkInfo6 = data.articles[6].isArticleBookmarked ? data.articles[6].bookmarkedText : data.articles[6].bookmarkText,
+	    bookmarkInfo7 = data.articles[7].isArticleBookmarked ? data.articles[7].bookmarkedText : data.articles[7].bookmarkText,
+	    bookmarkInfo8 = data.articles[8].isArticleBookmarked ? data.articles[8].bookmarkedText : data.articles[8].bookmarkText,
+	    fbookmarkIcon0 = data.articles[0].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon0 = data.articles[0].isArticleBookmarked ? '' : 'is-visible',
+	    fbookmarkIcon1 = data.articles[1].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon1 = data.articles[1].isArticleBookmarked ? '' : 'is-visible',
+	    fbookmarkIcon2 = data.articles[2].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon2 = data.articles[2].isArticleBookmarked ? '' : 'is-visible',
+	    fbookmarkIcon6 = data.articles[6].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon6 = data.articles[6].isArticleBookmarked ? '' : 'is-visible',
+	    fbookmarkIcon7 = data.articles[7].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon7 = data.articles[7].isArticleBookmarked ? '' : 'is-visible',
+	    fbookmarkIcon8 = data.articles[8].isArticleBookmarked ? 'is-visible' : '',
+	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible';
 
 	var articleData = '';
 	articleData = '<section class="article-preview topic-featured-article">';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-metadata">';
-	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[0].id + '" data-analytics="{"bookmark": "' + bookmarkInfo0 + '", "bookmark_title": "' + data.articles[0].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[0].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[0].bookmarkText + '" data-label-bookmarked="' + data.articles[0].bookmarkedText + '">' + bookmarkInfo0 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[0].id + '" data-analytics="{"bookmark": "' + bookmarkInfo0 + '", "bookmark_title": "' + data.articles[0].listableTitle + '", "bookmark_publication": "Scrip"}" data-is-bookmarked="' + data.articles[0].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[0].bookmarkText + '" data-label-bookmarked="' + data.articles[0].bookmarkedText + '">' + bookmarkInfo0 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
@@ -1371,7 +1383,7 @@ function createLayoutInner1(data) {
 	articleData += '<div class="latest-news__articles">';
 	articleData += '<section class="article-preview article-preview--small mobview">';
 	articleData += '<div class="article-metadata">';
-	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[1].id + '" data-analytics="{"bookmark": "' + bookmarkInfo1 + '", "bookmark_title": "' + data.articles[1].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[1].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[1].bookmarkText + '" data-label-bookmarked="' + data.articles[1].bookmarkedText + '">' + bookmarkInfo1 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[1].id + '" data-analytics="{"bookmark": "' + bookmarkInfo1 + '", "bookmark_title": "' + data.articles[1].listableTitle + '", "bookmark_publication": "Scrip"}" data-is-bookmarked="' + data.articles[1].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[1].bookmarkText + '" data-label-bookmarked="' + data.articles[1].bookmarkedText + '">' + bookmarkInfo1 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
@@ -1397,7 +1409,7 @@ function createLayoutInner1(data) {
 
 	articleData += '<section class="article-preview article-preview--small mobview">';
 	articleData += '<div class="article-metadata">';
-	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[2].id + '" data-analytics="{"bookmark": "' + bookmarkInfo2 + '", "bookmark_title": "' + data.articles[2].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[2].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[2].bookmarkText + '" data-label-bookmarked="' + data.articles[2].bookmarkedText + '">' + bookmarkInfo2 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
+	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[2].id + '" data-analytics="{"bookmark": "' + bookmarkInfo2 + '", "bookmark_title": "' + data.articles[2].listableTitle + '", "bookmark_publication": "Scrip"}" data-is-bookmarked="' + data.articles[2].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[2].bookmarkText + '" data-label-bookmarked="' + data.articles[2].bookmarkedText + '">' + bookmarkInfo2 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
 	articleData += '<ul>';
 	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
 	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
