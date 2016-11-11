@@ -37,6 +37,10 @@
 	.article-preview__headline{
 		font-size: 1.625rem; 
 	}
+	.article-preview__tags {
+		position: absolute;
+		bottom: 1.5rem;
+	}
 	.article-metadata{
 		margin-top: 0px;
 		ul {

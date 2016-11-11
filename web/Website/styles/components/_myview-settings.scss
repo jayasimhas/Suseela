@@ -405,6 +405,15 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
+					min-width: 130px;
+					@include breakpoint('medium-small') {
+						min-width: initial;
+						min-width: auto;
+					}
+					@include breakpoint('small') {
+						min-width: initial;
+						min-width: auto;
+					}
 				}
 				.followinglbl{
 					@include followBtnLbl();

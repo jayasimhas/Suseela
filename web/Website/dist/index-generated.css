@@ -4234,12 +4234,21 @@ header .header-account-access {
         padding: 0 25px;
         padding: 0 1.5625rem;
         margin-top: 8px;
-        margin-top: 0.5rem; }
+        margin-top: 0.5rem;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
           background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followAllBtn {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .followAllBtn {
+            min-width: initial;
+            min-width: auto; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4785,6 +4794,11 @@ header .header-account-access {
 .personalisationhome .article-preview__headline {
   font-size: 26px;
   font-size: 1.625rem; }
+
+.personalisationhome .article-preview__tags {
+  position: absolute;
+  bottom: 24px;
+  bottom: 1.5rem; }
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }
