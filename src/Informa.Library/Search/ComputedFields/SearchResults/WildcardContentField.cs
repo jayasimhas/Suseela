@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Autofac;
+using Informa.Library.Logging;
 
 namespace Informa.Library.Search.ComputedFields.SearchResults {
     
@@ -21,18 +22,25 @@ namespace Informa.Library.Search.ComputedFields.SearchResults {
                 return string.Empty;
 
             IDCDTokenMatchers dcd;
+            ILogWrapper log;
             using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope()) {
                 dcd = scope.Resolve<IDCDTokenMatchers>();
+                log = scope.Resolve<ILogWrapper>();
             }
 
             StringBuilder sb = new StringBuilder();
             if (indexItem.Body != null) {
-                string b = (dcd == null)
-                    ? indexItem.Body
-                    : dcd.ProcessDCDTokens(indexItem.Body);
-                var doc = new HtmlDocument();
-                doc.LoadHtml(b);
-                sb.AppendFormat("{0} ", doc.DocumentNode.InnerText);
+                try {
+                    string b = (dcd == null || string.IsNullOrEmpty(indexItem.Body))
+                        ? indexItem.Body
+                        : dcd.ProcessDCDTokens(indexItem.Body);
+                    var doc = new HtmlDocument();
+                    doc.LoadHtml(b);
+                    sb.AppendFormat("{0} ", doc.DocumentNode.InnerText);
+                } catch(Exception ex) {
+                    if(log != null)
+                        log.SitecoreError($"The indexer failed to resolve the body field of:{indexItem._Path}", ex);       
+                }
             }
 
             if (indexItem.Title != null)
