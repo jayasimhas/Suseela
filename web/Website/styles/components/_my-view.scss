@@ -2,6 +2,9 @@ header{
 	.header-account-access{
 		flex: 2 0 auto !important;
 		padding: 0 !important;
+		@media only screen and (min-width: 769px) and (max-width: 1024px) { 
+			margin-top: -25px;
+		}
 		.myView-placeholder{				
 				float: left;
 				padding: 0.3em 0;
@@ -21,7 +24,7 @@ header{
 					@include breakpoint('wide'){
 						text-transform: uppercase;
 					}
-					@include breakpoint('medium'){
+					@media (max-width: 1024px) {
 						text-transform: uppercase;
 					}
 					@include breakpoint('medium-small') {
@@ -52,7 +55,7 @@ header{
 						font-weight: 400;
 					}
 				}
-				@include breakpoint('medium') {
+				@media (max-width: 1024px) {
 					float: right;
 					margin-right: 20px;
 					clear: both;
@@ -90,7 +93,7 @@ header{
 		.header-account-right-access{
 			float: right;
 			padding: 1rem 0;
-			@include breakpoint('medium') {
+			@media (max-width: 1024px) {
 				float: right;
 				margin-right: 20px;
 				clear: both;
@@ -118,4 +121,10 @@ header{
 	}
 
 	
+}
+
+@media only screen and (max-width: 1024px) {
+	div.header__logo {
+		width:auto !important;
+	}
 }
