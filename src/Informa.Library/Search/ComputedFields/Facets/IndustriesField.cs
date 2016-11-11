@@ -5,6 +5,7 @@ using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Sitecore.Data.Items;
 using Sitecore.Data;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
@@ -14,10 +15,14 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (glassItem?.Taxonomies != null)
 			{
-                Item item = Sitecore.Context.ContentDatabase.GetItem(new ID(glassItem._Id));
-                var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
+                Item rootItem = null;
+                var dbContext = Factory.GetDatabase("master");
+                Item item = dbContext.GetItem(new ID(glassItem._Id));
 
-                var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsIndustryTaxonomy(x._Path, rootItem.Name));
+                if(item != null)
+                    rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
+
+                var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsIndustryTaxonomy(x._Path, (rootItem != null) ? rootItem.Name : string.Empty));
 
 				return taxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
 			}
