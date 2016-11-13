@@ -206,7 +206,7 @@
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
                             {
                             <tr class="showinview">
                                 <th colspan="3">
