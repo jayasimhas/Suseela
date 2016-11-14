@@ -43,6 +43,7 @@
             <asp:CheckBox runat="server" ID="chkPublishDestination" Text="Publish Destination Items" />
             <hr />
             <asp:Button runat="server" Text="Start" ID="bntStart" OnClick="bntStart_Click" />
+            <asp:Button runat="server" Text="Validate Input" ID="btnValidate" OnClick="btnValidate_Click" />
             <asp:Button runat="server" Text="Reset" ID="btnReset" OnClick="btnReset_Click" />
             <br />
             <asp:Label runat="server" ForeColor="Red" ID="lblError"></asp:Label>
