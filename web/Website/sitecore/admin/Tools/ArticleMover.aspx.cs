@@ -41,7 +41,7 @@ namespace Informa.Web.sitecore.admin.Tools
 				parameters.PublishDestinationItems = chkPublishDestination.Checked;
 
 				string resultStatus;
-				bool result = ArticleMoverUtility.MoveArticles(parameters, out resultStatus);
+				bool result = ArticleMoverUtility.Process(parameters, out resultStatus);
 
 				if (result)
 				{
@@ -263,12 +263,12 @@ namespace Informa.Web.sitecore.admin.Tools
 			_resultStatus += "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + (isError ? "Error: " : string.Empty) + message + "<br />";
 		}
 
-		public static bool MoveArticles(ArticleMovingParameters parameters, out string resultStatus)
+		public static bool Process(ArticleMovingParameters parameters, out string resultStatus)
 		{
 			_resultStatus = string.Empty;
 			try
 			{
-				log("Moving Articles");
+				log("Processing Articles started");
 				var masterDb = Sitecore.Data.Database.GetDatabase("master");
 				List<Item> items = null;
 
@@ -321,6 +321,7 @@ namespace Informa.Web.sitecore.admin.Tools
 					}
 				}
 
+				log("Processing Complete");
 				resultStatus = _resultStatus;
 				return result;
 			}
