@@ -1,11 +1,11 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.UserPreference;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Models;
-using Jabberwocky.Glass.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -19,19 +19,26 @@ namespace Informa.Web.ViewModels.MyView
         protected readonly IUserPreferenceContext UserPreferences;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ITextTranslator TextTranslator;
-        
+        public readonly ICallToActionViewModel CallToActionViewModel;
+        protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+
         public MyViewPageViewModel(
                         ISiteRootContext siteRootContext,
             IUserPreferenceContext userPreferences,
             IGlobalSitecoreService globalService,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+            ICallToActionViewModel callToActionViewModel,
+            IAuthenticatedUserContext authenticatedUserContext)
         {
             SiteRootContext = siteRootContext;
             UserPreferences = userPreferences;
             GlobalService = globalService;
             TextTranslator = textTranslator;
+            CallToActionViewModel = callToActionViewModel;
+            AuthenticatedUserContext = authenticatedUserContext;
         }
 
+        public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public int InitialLaodSectionsCount => SiteRootContext.Item.Initial_Laod_Sections_Count;
 
         public string PageHeading => GlassModel?.Title;
@@ -55,6 +62,16 @@ namespace Informa.Web.ViewModels.MyView
 
             }
         }
+        public bool IsFollowingAnyItem => UserPreferences.Preferences != null &&
+            UserPreferences.Preferences.PreferredChannels != null &&
+            UserPreferences.Preferences.PreferredChannels.Any() &&
+            ((UserPreferences.Preferences.IsNewUser &&
+            UserPreferences.Preferences.PreferredChannels.Any(ch => ch.IsFollowing)) ||
+            (!UserPreferences.Preferences.IsNewUser &&
+            UserPreferences.Preferences.PreferredChannels.Any(ch => ch.Topics != null
+            && ch.Topics.Any() && ch.Topics.Any(tp => tp.IsFollowing))));
+
+
         public IList<Section> Sections => GetSections();
 
         public string JSONData => GetJSONData();
@@ -63,6 +80,7 @@ namespace Informa.Web.ViewModels.MyView
         {
             var jsonObject = new
             {
+                EditMyViewButtonLableText = EditMyViewButtonLableText,
                 MyViewSettingsPageLink = MyViewSettingsPageUrl,
                 DefaultSectionLoadCount = InitialLaodSectionsCount,
                 PerSectionItemCount = ItemsPerSection,
@@ -120,9 +138,12 @@ namespace Informa.Web.ViewModels.MyView
                 sec.ChannelName = channelPageItem?.Display_Text;
                 sec.ChannelId = channelPageItem._Id.ToString();
                 string taxonomyId = string.Empty;
-                taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                if (!string.IsNullOrWhiteSpace(taxonomyId))
-                    sec.TaxonomyIds.Add(taxonomyId);
+                if (channel.IsFollowing && (topics == null || !topics.Any()))
+                {
+                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
+                }
                 if (!topics.Any() && channel.Topics != null && channel.Topics.Any())
                     topics = channel.Topics;
                 if (topics != null && topics.Any())

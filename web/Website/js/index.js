@@ -186,7 +186,7 @@ $(document).ready(function(){
 	if($('#amchartData') && $('#amchartData').length){
 	var amchartVal = JSON.parse($('#amchartData').val()),
 	createNewObj = {};
-	for(prop in amchartVal){
+	for(var prop in amchartVal){
 		if(prop != 'dataProvider'){
 			createNewObj[prop] = amchartVal[prop];
 		}else{
@@ -208,18 +208,20 @@ $(document).ready(function(){
 	
 	//Job Listing Pagination
 	var JobsListingPagination=function(){
-    var TotalCategories=$("#JobTilesCount").val()
-    var CategoryLimit=$("#NoOfJobsPerPage").val() 
-    
-		$('.pagination').setPagination({
-		    totalCategories: parseInt(TotalCategories),
-		    categoryLimit: parseInt(CategoryLimit),
-		    currentPage: 1,
-		    paginationEle: '.job_list_individual'
-		});
+		if($('#JobTilesCount') && $('#JobTilesCount').length && $('#NoOfJobsPerPage') && $('#NoOfJobsPerPage').length){ 
+			var TotalCategories=$("#JobTilesCount").val();
+			var CategoryLimit=$("#NoOfJobsPerPage").val(); 
 		
-		$('.pagination span a:eq(0)').click();
-		$('.pagination a:eq(0)').removeAttr('href');
+			$('.pagination').setPagination({
+				totalCategories: parseInt(TotalCategories),
+				categoryLimit: parseInt(CategoryLimit),
+				currentPage: 1,
+				paginationEle: '.job_list_individual'
+			});
+			
+			$('.pagination span a:eq(0)').click();
+			$('.pagination a:eq(0)').removeAttr('href');
+		}	
 	}
    JobsListingPagination();
 	
@@ -1051,15 +1053,28 @@ $(document).ready(function(){
     $('.js-register-final').on('click',function(e){
 
         var eventDetails = {
-            // event_name: "newsletter optins"
+            event_name:"newsletter-signup",
+            page_name:"Newsletter",
+            ga_eventCategory:"Newsletter",
+            ga_eventLabel:"Publication name",
+            publication_newsletter:"Publication of which newsletter is subscribed",
+            user_email:"Email ID of user"
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
             chkDetails.newsletter_optin = "true";
+
+            eventDetails.newsletter_signup_state = "success";
+            eventDetails.ga_eventAction = "Sign Up Success";
+
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         } else {
             chkDetails.newsletter_optin = "false";
+
+            eventDetails.newsletter_signup_state = "unsuccessful";
+            eventDetails.ga_eventAction = "Sign Up Failure";
+
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         }

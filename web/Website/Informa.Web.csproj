@@ -1225,7 +1225,6 @@
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
-    <Compile Include="ViewModels\MyView\IMyViewPageViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />

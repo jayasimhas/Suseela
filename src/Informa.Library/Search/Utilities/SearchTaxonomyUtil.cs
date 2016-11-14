@@ -28,15 +28,11 @@ namespace Informa.Library.Search.Utilities
             Item currentItem = null;
             if (taxonomyItems.Length > 0)
             {
-                if (Sitecore.Context.ContentDatabase != null)
-                {
-                    currentItem = Sitecore.Context.ContentDatabase.GetItem(new ID(taxonomyItems[0]._Id));
-                }
-                else if(Sitecore.Context.Database != null)
-                {
-                    currentItem = Sitecore.Context.Database.GetItem(new ID(taxonomyItems[0]._Id));
-                }
-                rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
+                var dbContext = Sitecore.Configuration.Factory.GetDatabase("master");
+                currentItem = dbContext.GetItem(new ID(taxonomyItems[0]._Id));
+               
+                if(currentItem != null)
+                    rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
             }
             var dict = new Dictionary<string,string>();
 			foreach (var item in taxonomyItems)

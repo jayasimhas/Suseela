@@ -86,7 +86,7 @@
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
                             {
                                 <tr class="showinview">
                                     <th colspan="3">
@@ -117,7 +117,7 @@
                                     @if (!Model.isFromRegistration)
                                     {
                                         <div class="accordionImg">
-                                            <span class="mobileMode @collapsedClss" href="javascript: void(0);"></span>
+                                            <span class="mobileMode expanded" href="javascript: void(0);"></span>
                                         </div>
                                     }
                                 </th>
@@ -203,7 +203,7 @@
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
                             {
                             <tr class="showinview">
                                 <th colspan="3">

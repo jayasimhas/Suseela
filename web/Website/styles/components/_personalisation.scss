@@ -37,6 +37,10 @@
 	.article-preview__headline{
 		font-size: 1.625rem; 
 	}
+	.article-preview__tags {
+		position: absolute;
+		bottom: 1.5rem;
+	}
 	.article-metadata{
 		margin-top: 0px;
 		ul {
@@ -165,6 +169,7 @@
 						border-top: 2px solid #d1d3d4;
 						padding: 1rem 0 0;
 						margin: 0 -1.25rem !important;
+						height: auto;
 					}
 				}
 			}
@@ -373,6 +378,9 @@
 		}
 		.latest-news__articles .article-small-preview{
 			width: 90%;
+		}
+		.latest-news__articles .article-preview--small .article-preview__tags {
+			left: 0;
 		}
 		.mtop{
 			margin-top: 0px !important;			 
