@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.User.UserPreference;
 using Informa.Web.Areas.Account.Models.User.Personalization;
+using Informa.Web.ViewModels.MyView;
 using System.Web.Http;
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -21,6 +22,7 @@ namespace Informa.Web.Areas.Account.Controllers
         [HttpPost]
         public IHttpActionResult Update(PersonalizeUserPreferencesRequest request)
         {
+            
             if (string.IsNullOrEmpty(request.UserPreferences))
             {
                 return Ok(new
@@ -37,7 +39,14 @@ namespace Informa.Web.Areas.Account.Controllers
                 reason = response ? SuccessMessage : ErrorMessage
             });
         }
-
+        [HttpPost]
+        public void UpdateArticleId(PersonalizeUserPreferencesRequest articleData)
+        {
+            if (!string.IsNullOrEmpty(articleData.UserPreferences))
+            {
+                MyViewPageViewModel.ArticleId = articleData.UserPreferences;
+            }
+        }
         protected string NoPreferencesSelectedKey => TextTranslator.Translate("MyViewSettings.NoPreferencesSelected");
 
         protected string ErrorMessage => TextTranslator.Translate("MyViewSettings.ErrorWhileSavingPreferences");

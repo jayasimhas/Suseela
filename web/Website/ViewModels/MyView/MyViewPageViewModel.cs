@@ -19,7 +19,7 @@ namespace Informa.Web.ViewModels.MyView
         protected readonly IUserPreferenceContext UserPreferences;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ITextTranslator TextTranslator;
-
+        
         public MyViewPageViewModel(
                         ISiteRootContext siteRootContext,
             IUserPreferenceContext userPreferences,
@@ -43,7 +43,18 @@ namespace Informa.Web.ViewModels.MyView
         public int ItemsPerSection => SiteRootContext.Item.Items_Per_Section;
 
         public string MyViewSettingsPageUrl => SiteRootContext.Item.MyView_Settings_Page?._Url;
+        public static string ArticleId { get; set; }
+        public string UpdatedArticleId
+        {
+            get
+            {
+                return ArticleId;
+            }
+            set
+            {
 
+            }
+        }
         public IList<Section> Sections => GetSections();
 
         public string JSONData => GetJSONData();
