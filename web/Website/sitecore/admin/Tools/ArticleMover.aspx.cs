@@ -342,6 +342,7 @@ namespace Informa.Web.sitecore.admin.Tools
 			if (parameters.SourceIDType == SourceIDType.ArticleID)
 			{
 				articlesByArticleNumber = ArticleMoverUtility.SearchArticlesByArticleNumbers(parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList());
+				log("Searched: " + string.Join(", ", articlesByArticleNumber?.Select(s => string.Format("{0} - {1}", s._Id, s.Article_Number))));
 			}
 
 			foreach (var id in parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
@@ -365,7 +366,7 @@ namespace Informa.Web.sitecore.admin.Tools
 					}
 					else
 					{
-						var article = articlesByArticleNumber.FirstOrDefault(w => w.Article_Number == id);
+						var article = articlesByArticleNumber?.FirstOrDefault(w => w?.Article_Number == id);
 						if (article == null)
 						{
 							log("**Article ID " + id + ": does not exist");
