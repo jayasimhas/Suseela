@@ -127,10 +127,10 @@ namespace Informa.Web.sitecore.admin.Tools
 				List<string> articleNumbers = txtIDs.Text.Split('|').Select(s => s.Trim()).ToList();
 
 				var articles = ArticleMoverUtility.SearchArticlesByArticleNumbers(articleNumbers);
-				var missingArticleNumbers = articleNumbers.Where(w => articles.Exists(e => e.Article_Number == w) == false);
+				var missingArticleNumbers = articleNumbers.Where(w => articles?.Exists(e => e.Article_Number == w) == false).ToList();
 
-				idStatus = "Following Article ID(s) do not exist: " + string.Join(", ", missingArticleNumbers);
-
+				if (missingArticleNumbers.Any())
+					idStatus = "Following Article ID(s) do not exist: " + string.Join(", ", missingArticleNumbers);
 
 				//foreach (var itemID in txtIDs.Text.Split('|'))
 				//{
@@ -375,7 +375,6 @@ namespace Informa.Web.sitecore.admin.Tools
 					}
 					else
 					{
-
 						var article = articlesByArticleNumber.FirstOrDefault(w => w.Article_Number == id);
 						if (article == null)
 						{
