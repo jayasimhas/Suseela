@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.sitecore.admin.Tools
 {
@@ -123,22 +124,30 @@ namespace Informa.Web.sitecore.admin.Tools
 			else
 			{
 				string idStatus = string.Empty;
-				foreach (var itemID in txtIDs.Text.Split('|'))
-				{
-					using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
-					{
-						using (new DatabaseSwitcher(masterDb))
-						{
-							IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
-							IArticleSearchFilter filter = articleSearch.CreateFilter();
-							filter.ArticleNumbers = new List<string> { itemID };
-							var results = articleSearch.Search(filter);
+				List<string> articleNumbers = txtIDs.Text.Split('|').Select(s => s.Trim()).ToList();
 
-							if (results.Articles?.Any() == false)
-								idStatus = "Article ID " + itemID + ": does not exist";
-						}
-					}
-				}
+				var articles = ArticleMoverUtility.SearchArticlesByArticleNumbers(articleNumbers);
+				var missingArticleNumbers = articleNumbers.Where(w => articles.Exists(e => e.Article_Number == w) == false);
+
+				idStatus = "Following Article ID(s) do not exist: " + string.Join(", ", missingArticleNumbers);
+
+
+				//foreach (var itemID in txtIDs.Text.Split('|'))
+				//{
+				//using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+				//{
+				//	using (new DatabaseSwitcher(masterDb))
+				//	{
+				//		IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
+				//		IArticleSearchFilter filter = articleSearch.CreateFilter();
+				//		filter.ArticleNumbers = new List<string> { itemID };
+				//		var results = articleSearch.Search(filter);
+
+				//		if (results.Articles?.Any() == false)
+				//			idStatus = "Article ID " + itemID + ": does not exist";
+				//	}
+				//}
+				//}
 
 				if (string.IsNullOrEmpty(idStatus) == false)
 				{
@@ -260,7 +269,7 @@ namespace Informa.Web.sitecore.admin.Tools
 		static string _resultStatus;
 		private static void log(string message, bool isError = false)
 		{
-			_resultStatus += "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + (isError ? "Error: " : string.Empty) + message + "<br />";
+			_resultStatus += "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + (isError ? "***Error: " : string.Empty) + message + "<br />";
 		}
 
 		public static bool Process(ArticleMovingParameters parameters, out string resultStatus)
@@ -339,20 +348,10 @@ namespace Informa.Web.sitecore.admin.Tools
 			var masterDb = Sitecore.Data.Database.GetDatabase("master");
 
 			List<Item> articlesToMove = new List<Item>();
-			List<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle> articlesByArticleNumber = null;
+			List<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle> articlesByArticleNumber = new List<IArticle>();
 			if (parameters.SourceIDType == SourceIDType.ArticleID)
 			{
-				using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
-				{
-					using (new DatabaseSwitcher(masterDb))
-					{
-						IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
-						IArticleSearchFilter filter = articleSearch.CreateFilter();
-						filter.ArticleNumbers = parameters.SourceIDs.Split('|').Select(s => s.Trim()).ToList();
-						var results = articleSearch.Search(filter);
-						articlesByArticleNumber = results.Articles.ToList();
-					}
-				}
+				articlesByArticleNumber = ArticleMoverUtility.SearchArticlesByArticleNumbers(parameters.SourceIDs.Split('|').Select(s => s.Trim()).ToList());
 			}
 
 			foreach (var id in parameters.SourceIDs.Split('|'))
@@ -399,7 +398,7 @@ namespace Informa.Web.sitecore.admin.Tools
 				}
 				catch (Exception ex)
 				{
-					log("failed to retrieve Item " + id, true);
+					log("failed to retrieve Item " + id + ". " + ex.ToString(), true);
 				}
 			}
 
@@ -602,6 +601,23 @@ namespace Informa.Web.sitecore.admin.Tools
 			}
 
 			return latestFolderItemFound;
+		}
+
+		public static List<IArticle> SearchArticlesByArticleNumbers(List<string> articleNumbers)
+		{
+			using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			{
+				using (new DatabaseSwitcher(Sitecore.Data.Database.GetDatabase("master")))
+				{
+					IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
+					IArticleSearchFilter filter = articleSearch.CreateFilter();
+					filter.ArticleNumbers = articleNumbers;
+					var results = articleSearch.Search(filter);
+					var articlesByArticleNumber = results.Articles.ToList();
+
+					return articlesByArticleNumber;
+				}
+			}
 		}
 	}
 }
