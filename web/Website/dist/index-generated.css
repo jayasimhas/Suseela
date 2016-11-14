@@ -3625,7 +3625,6 @@ header .header-account-access {
   padding: 25px 32px;
   padding: 1.5625rem 2rem;
   position: relative;
-  float: left;
   line-height: 20px;
   margin-bottom: 16px;
   margin-bottom: 1rem;
@@ -3927,8 +3926,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -3963,8 +3962,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4228,8 +4227,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4260,8 +4259,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4288,8 +4287,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4326,8 +4325,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4403,8 +4402,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4430,8 +4428,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4455,8 +4453,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4481,8 +4478,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4545,8 +4541,7 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: auto;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4563,8 +4558,7 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: auto;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4581,8 +4575,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -10448,7 +10442,7 @@ section: Global Components
           flex: 0 0 auto;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 16.5%; }
+  width: auto; }
   .header__logo img {
     display: block;
     height: 100%;
