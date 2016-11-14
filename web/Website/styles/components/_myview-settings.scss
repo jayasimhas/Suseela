@@ -5,7 +5,7 @@
 	font-size: 0.75em;
 	font-family: "Roboto";
 	font-weight: 700;
-	height: $h;
+	width: $w;
 	text-align: center;
 	display: inline-block;
     line-height: $h;
@@ -49,7 +49,7 @@
 	}
 }
 @mixin unfollowBtnLbl(){
-	@include folow-btn(auto, 2rem);
+	@include folow-btn(7.5rem, 2rem);
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
@@ -59,7 +59,7 @@
 	}
 }
 @mixin followBtnLbl(){
-	@include folow-btn(auto, 2rem);
+	@include folow-btn(7.5rem, 2rem);
 	padding: 0 1.5625rem;
 	margin-top: 0.5rem;
 	&:hover{

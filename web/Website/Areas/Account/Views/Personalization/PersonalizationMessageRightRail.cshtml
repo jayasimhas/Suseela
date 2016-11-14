@@ -2,7 +2,7 @@
 
 @if (Model != null && Model.IsAuthenticated && Model.IsGlobalToggleEnabled && !Model.HideWelcomeMessage)
 {
-    <div class="messaging_webUsers">
+    <div class="messaging_webUsers clearfix">
         <div class="msg_dismiss">
             <a href="javascript:void(0)" class="dismiss">@Model.DismissText</a>
         </div>
