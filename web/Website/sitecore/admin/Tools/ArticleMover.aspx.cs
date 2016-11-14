@@ -127,7 +127,14 @@ namespace Informa.Web.sitecore.admin.Tools
 				List<string> articleNumbers = txtIDs.Text.Split('|').Select(s => s.Trim()).ToList();
 
 				var articles = ArticleMoverUtility.SearchArticlesByArticleNumbers(articleNumbers);
-				var missingArticleNumbers = articleNumbers.Where(w => articles.Any(a => a.Article_Number == w) == false).ToList();
+				List<string> missingArticleNumbers = new List<string>();
+
+				foreach (var item in articleNumbers)
+				{
+					if (articles.Count(w => w.Article_Number.ToLower() == item.ToLower()) == 0)
+						missingArticleNumbers.Add(item);
+				}
+				//articleNumbers.Where(w => articles.Any(a => a.Article_Number == w) == false).ToList();
 
 				if (missingArticleNumbers.Any())
 					idStatus = "Following Article ID(s) do not exist: " + string.Join(", ", missingArticleNumbers);
