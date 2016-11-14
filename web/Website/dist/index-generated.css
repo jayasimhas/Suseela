@@ -3926,8 +3926,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -3962,8 +3962,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4227,8 +4227,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4259,8 +4259,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4287,8 +4287,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4325,8 +4325,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4402,8 +4402,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4429,8 +4428,8 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          height: 32px;
-          height: 2rem;
+          width: 120px;
+          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4454,8 +4453,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4480,8 +4478,7 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      height: 32px;
-      height: 2rem;
+      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4544,8 +4541,7 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: auto;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4562,8 +4558,7 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: auto;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4580,8 +4575,8 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        height: 32px;
-        height: 2rem;
+        width: 120px;
+        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
