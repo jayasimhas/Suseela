@@ -1053,15 +1053,28 @@ $(document).ready(function(){
     $('.js-register-final').on('click',function(e){
 
         var eventDetails = {
-            // event_name: "newsletter optins"
+            event_name:"newsletter-signup",
+            page_name:"Newsletter",
+            ga_eventCategory:"Newsletter",
+            ga_eventLabel:"Publication name",
+            publication_newsletter:"Publication of which newsletter is subscribed",
+            user_email:"Email ID of user"
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
             chkDetails.newsletter_optin = "true";
+
+            eventDetails.newsletter_signup_state = "success";
+            eventDetails.ga_eventAction = "Sign Up Success";
+
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         } else {
             chkDetails.newsletter_optin = "false";
+
+            eventDetails.newsletter_signup_state = "unsuccessful";
+            eventDetails.ga_eventAction = "Sign Up Failure";
+
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         }
