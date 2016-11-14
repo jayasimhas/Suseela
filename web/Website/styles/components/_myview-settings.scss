@@ -218,6 +218,9 @@
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
+							@include breakpoint('small') {
+								background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
+							}
 						}
 						@include breakpoint('medium-small'){
 							background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
@@ -405,6 +408,15 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
+					min-width: 130px;
+					@include breakpoint('medium-small') {
+						min-width: initial;
+						min-width: auto;
+					}
+					@include breakpoint('small') {
+						min-width: initial;
+						min-width: auto;
+					}
 				}
 				.followinglbl{
 					@include followBtnLbl();
@@ -493,6 +505,9 @@
   }
   .saveoption{
 	  float: right;
+	  @include breakpoint('small') {
+	  	width: 100%;
+	  }
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
@@ -511,9 +526,15 @@
 		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
-			margin: 0 0.625rem;
-		}
-		
+			// margin: 0 0.625rem;
+			width: 50%;
+		    height: auto;
+		    float: left;
+		    margin: 0;
+		    a {
+		    	padding: 0;
+		    }
+		}		
 	  }
 	  .complete-settings{
 			display: inline-block;

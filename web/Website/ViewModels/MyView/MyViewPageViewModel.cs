@@ -2,6 +2,7 @@
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.UserPreference;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Models;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -51,12 +52,13 @@ namespace Informa.Web.ViewModels.MyView
         {
             var jsonObject = new
             {
+                EditMyViewButtonLableText = EditMyViewButtonLableText,
                 MyViewSettingsPageLink = MyViewSettingsPageUrl,
                 DefaultSectionLoadCount = InitialLaodSectionsCount,
                 PerSectionItemCount = ItemsPerSection,
                 Sections = Sections
             };
-           return JsonConvert.SerializeObject(jsonObject);
+            return JsonConvert.SerializeObject(jsonObject);
         }
 
         private IList<Section> GetSections()
@@ -77,14 +79,11 @@ namespace Informa.Web.ViewModels.MyView
             return sections;
         }
 
-        private void CreateSections(Channel channel, List<Section> sections,bool isChannelLevel, bool isNewUser)
+        private void CreateSections(Channel channel, List<Section> sections, bool isChannelLevel, bool isNewUser)
         {
             bool channelStatus = channel.IsFollowing;
-            Section sec;
             IList<Topic> topics = new List<Topic>();
-            Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
-            Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page channelPageItem;
-            string taxonomyId = string.Empty;
+
             if (channel.Topics != null && channel.Topics.Any())
             {
                 channelStatus = (channel.IsFollowing && isNewUser) || channel.Topics.Any(topic => topic.IsFollowing);
@@ -93,36 +92,32 @@ namespace Informa.Web.ViewModels.MyView
 
             if (channelStatus && !isChannelLevel)
             {
-                foreach (Topic topic in topics)
-                {
-                    topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                    if (topicItem != null)
-                    {
-                        sec = new Section();
-                        sec.TaxonomyIds = new List<string>();
-                        sec.ChannelName = topicItem?.Navigation_Text;
-                        sec.ChannelId = topicItem._Id.ToString();
-                        taxonomyId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(taxonomyId))
-                            sec.TaxonomyIds.Add(taxonomyId);
-                        sections.Add(sec);
-                    }
-                }
+                CreateSectionsFromTopics(sections, topics);
             }
-            else if(channelStatus)
+            else if (channelStatus)
             {
-                channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
-                if (channelPageItem != null)
+                CreateSectionsFromChannels(channel, sections, isNewUser, ref topics);
+            }
+        }
+
+        private void CreateSectionsFromChannels(Channel channel, List<Section> sections, bool isNewUser, ref IList<Topic> topics)
+        {
+            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
+            if (channelPageItem != null)
+            {
+                Section sec = new Section();
+                sec.TaxonomyIds = new List<string>();
+                sec.ChannelName = channelPageItem?.Display_Text;
+                sec.ChannelId = channelPageItem._Id.ToString();
+                string taxonomyId = string.Empty;
+                taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                if (!string.IsNullOrWhiteSpace(taxonomyId))
+                    sec.TaxonomyIds.Add(taxonomyId);
+                if (!topics.Any() && channel.Topics != null && channel.Topics.Any())
+                    topics = channel.Topics;
+                if (topics != null && topics.Any())
                 {
-                    sec = new Section();
-                    sec.TaxonomyIds = new List<string>();
-                    sec.ChannelName = channelPageItem?.Display_Text;
-                    sec.ChannelId = channelPageItem._Id.ToString();
-                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                    if (!string.IsNullOrWhiteSpace(taxonomyId))
-                        sec.TaxonomyIds.Add(taxonomyId);
-                    if (!topics.Any() && channel.Topics != null)
-                        topics = channel.Topics;
+                    Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
                     foreach (Topic topic in topics)
                     {
                         topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
@@ -130,6 +125,42 @@ namespace Informa.Web.ViewModels.MyView
                         if (!string.IsNullOrWhiteSpace(taxonomyId))
                             sec.TaxonomyIds.Add(taxonomyId);
                     }
+                }
+                else if (isNewUser)
+                {
+                    var pageAssetsItem = channelPageItem._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                    if (pageAssetsItem != null)
+                    {
+                        var topicItems = pageAssetsItem._ChildrenWithInferType.
+                               OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                        foreach (Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topic in topicItems)
+                        {
+                            taxonomyId = topic.Taxonomies != null && topic.Taxonomies.Any() ? topic?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                            if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                sec.TaxonomyIds.Add(taxonomyId);
+                        }
+                    }
+                }
+                sections.Add(sec);
+            }
+        }
+
+        private void CreateSectionsFromTopics(List<Section> sections, IList<Topic> topics)
+        {
+            Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
+            string taxonomyId = string.Empty;
+            foreach (Topic topic in topics)
+            {
+                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                if (topicItem != null)
+                {
+                    Section sec = new Section();
+                    sec.TaxonomyIds = new List<string>();
+                    sec.ChannelName = topicItem?.Navigation_Text;
+                    sec.ChannelId = topicItem._Id.ToString();
+                    taxonomyId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
                     sections.Add(sec);
                 }
             }

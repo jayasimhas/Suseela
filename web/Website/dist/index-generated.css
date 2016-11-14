@@ -3501,6 +3501,9 @@ header .header-account-access {
       -ms-flex: 2 0 auto !important;
           flex: 2 0 auto !important;
   padding: 0 !important; }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    header .header-account-access {
+      margin-top: -25px; } }
   header .header-account-access .myView-placeholder {
     float: left;
     padding: 0.3em 0;
@@ -3520,7 +3523,7 @@ header .header-account-access {
       @media (min-width: 801px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           text-transform: uppercase; } }
-      @media (max-width: 800px) {
+      @media (max-width: 1024px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           text-transform: uppercase; } }
       @media (max-width: 640px) {
@@ -3550,7 +3553,7 @@ header .header-account-access {
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
-    @media (max-width: 800px) {
+    @media (max-width: 1024px) {
       header .header-account-access .myView-placeholder {
         float: right;
         margin-right: 20px;
@@ -3565,7 +3568,8 @@ header .header-account-access {
         position: absolute;
         top: 0;
         margin-right: 12px;
-        right: 0; } }
+        right: 0;
+        z-index: 99; } }
     header .header-account-access .myView-placeholder .arrow {
       display: none;
       float: left;
@@ -3584,7 +3588,7 @@ header .header-account-access {
     float: right;
     padding: 16px 0;
     padding: 1rem 0; }
-    @media (max-width: 800px) {
+    @media (max-width: 1024px) {
       header .header-account-access .header-account-right-access {
         float: right;
         margin-right: 20px;
@@ -3608,6 +3612,10 @@ header .header-account-access {
   header .header__icons--search, header .header__icons--dismiss-search {
     margin: 40px 0 16px 8px !important;
     margin: 2.5rem 0 1rem 0.5rem !important; } }
+
+@media only screen and (max-width: 1024px) {
+  div.header__logo {
+    width: auto !important; } }
 
 .messaging_webUsers {
   width: 100%;
@@ -3931,6 +3939,9 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
+            @media (max-width: 480px) {
+              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+                background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followingBtn {
               background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
@@ -4227,12 +4238,21 @@ header .header-account-access {
         padding: 0 25px;
         padding: 0 1.5625rem;
         margin-top: 8px;
-        margin-top: 0.5rem; }
+        margin-top: 0.5rem;
+        min-width: 130px; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
           background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followAllBtn {
+            min-width: initial;
+            min-width: auto; } }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .followAllBtn {
+            min-width: initial;
+            min-width: auto; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4373,6 +4393,9 @@ header .header-account-access {
     visibility: hidden; }
   .myview-settings .saveoption {
     float: right; }
+    @media (max-width: 480px) {
+      .myview-settings .saveoption {
+        width: 100%; } }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
@@ -4414,8 +4437,12 @@ header .header-account-access {
           line-height: 32px;
           line-height: 2rem;
           float: right;
-          margin: 0 10px;
-          margin: 0 0.625rem; } }
+          width: 50%;
+          height: auto;
+          float: left;
+          margin: 0; }
+          .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
+            padding: 0; } }
     .myview-settings .saveoption .complete-settings {
       display: inline-block;
       float: right; }
@@ -4761,7 +4788,9 @@ header .header-account-access {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 26px;
-    line-height: 1.625rem; } }
+    line-height: 1.625rem; }
+  .personalisationhome .hidespin {
+    display: none; } }
 
 .personalisationhome .hidden-lg {
   display: none !important; }
@@ -4770,8 +4799,18 @@ header .header-account-access {
   font-size: 26px;
   font-size: 1.625rem; }
 
+.personalisationhome .article-preview__tags {
+  position: absolute;
+  bottom: 24px;
+  bottom: 1.5rem; }
+
 .personalisationhome .article-metadata {
   margin-top: 0px; }
+  .personalisationhome .article-metadata ul {
+    display: block; }
+    .personalisationhome .article-metadata ul li {
+      display: inline-block;
+      vertical-align: middle; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
       margin-right: 4px;
@@ -4923,7 +4962,8 @@ header .header-account-access {
         padding: 16px 0 0;
         padding: 1rem 0 0;
         margin: 0 -20px !important;
-        margin: 0 -1.25rem !important; } }
+        margin: 0 -1.25rem !important;
+        height: auto; } }
 
 .personalisationhome .editView {
   cursor: pointer;
@@ -5131,6 +5171,8 @@ header .header-account-access {
     width: 90%; }
   .personalisationhome .latest-news__articles .article-small-preview {
     width: 90%; }
+  .personalisationhome .latest-news__articles .article-preview--small .article-preview__tags {
+    left: 0; }
   .personalisationhome .mtop {
     margin-top: 0px !important; }
   .personalisationhome .googleAdd img {
@@ -5748,7 +5790,9 @@ section: UI Elements
     font-style: normal;
     position: relative; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox input[type="checkbox"] {
-      margin-right: 5px; }
+      margin-right: 5px;
+      position: relative;
+      left: -99999px; }
     .register .register_newsletter .newsletter_box .newsletter_checkbox .chk_box {
       background: url("/dist/img/sprite-image.png") no-repeat -7px -512px;
       width: 16px;
@@ -5790,6 +5834,9 @@ section: UI Elements
     width: 50%;
     display: inline;
     float: left; }
+    .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox input[type=checkbox] {
+      position: relative;
+      left: -99999999px; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .checkbox-label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .page-registration__tos-confirm label, .page-registration__tos-confirm .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label {
       margin-left: 27px;
       margin-left: 1.7rem;

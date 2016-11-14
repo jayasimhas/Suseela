@@ -9,12 +9,11 @@ using Informa.Library.Company;
 using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Services.AccountManagement;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
+    public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 
 	    private readonly IDependencies _dependencies;
@@ -43,6 +42,7 @@ namespace Informa.Web.ViewModels
 		public string CorporateName => _dependencies.UserCompanyContext?.Company?.Name;
 	    public string Title => _dependencies.GlobalSitecoreService.GetPageTitle(GlassModel);
 	    public string BodyCssClass => _dependencies.SiteRootContext.GetBodyCssClass();
+        public string FavIcon => _dependencies.SiteRootContext?.Item.FavIcon?.Src;
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();

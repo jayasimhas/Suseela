@@ -79,11 +79,13 @@
                                     {
                                     <div class="rowlines">
                                         <div class="vline"></div>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
+                                        <div class="pull-left">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            </div>
+                                        </div>
                                     }
                                 </th>
                             </tr>
@@ -194,15 +196,17 @@
                                         </div>
                                         <div class="rowlines">
                                             <div class="vline"></div>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                            <div class="pull-left">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                </div>
+                                            </div>
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
                             {
                             <tr class="showinview">
                                 <th colspan="3">

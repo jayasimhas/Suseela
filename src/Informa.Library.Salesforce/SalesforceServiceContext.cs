@@ -56,9 +56,6 @@ namespace Informa.Library.Salesforce
             where TResult : IEbiResponse
         {
             DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
-            ErrorLogger.Log("Salesforced called by: " + CallerMemberName + ", File:  " + CallerFilePath + ", Line Number " + CallerLineNumber, new Exception());
-            ErrorLogger.Log("Salesforce Function: " + JsonConvert.SerializeObject(function), new Exception());
-            ErrorLogger.Log("Salesforce Service Session Value: " + Service.SessionHeaderValue.sessionId, new Exception());
             if (!ServiceContextEnabled.Enabled)
             {
                 return default(TResult);
@@ -66,9 +63,7 @@ namespace Informa.Library.Salesforce
 
             if (!HasSession)
             {
-                ErrorLogger.Log("Salesforce Refreshing Session", new Exception());
                 RefreshSession();
-                ErrorLogger.Log("Salesforce Service Session Value: " + Service.SessionHeaderValue.sessionId, new Exception());
             }
 
             var result = default(TResult);
@@ -77,7 +72,6 @@ namespace Informa.Library.Salesforce
             try
             {
                 result = function(Service);
-                ErrorLogger.Log("Salesforce call output - Is Successfull: " + result.IsSuccess() + " Result: " + JsonConvert.SerializeObject(result), new Exception());
                 invalidSession = result.errors != null && result.errors.Any(e => e != null && string.Equals(e.statusCode, InvalidSessionIdErrorKey, StringComparison.InvariantCultureIgnoreCase));
             }
             catch (Exception ex)
@@ -96,7 +90,6 @@ namespace Informa.Library.Salesforce
             {
                 RefreshSession();
                 DebugLogger.Log($"Invalid Session from caller: {function.Method.Name}");
-                ErrorLogger.Log("Invalid Session from caller: " + function.Method.Name, new Exception());
                 return Execute(function);
             }
 
@@ -105,7 +98,6 @@ namespace Informa.Library.Salesforce
                 foreach (var error in result.errors)
                 {
                     DebugLogger.Log($"Request Failed: {error?.message}");
-                    ErrorLogger.Log("Request Failed: " + error?.message, new Exception());
                 }
 
             }
