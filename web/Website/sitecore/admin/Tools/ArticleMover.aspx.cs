@@ -100,7 +100,7 @@ namespace Informa.Web.sitecore.admin.Tools
 			if (rdIsItemIDs.Checked)
 			{
 				string idStatus = string.Empty;
-				foreach (var itemID in txtIDs.Text.Split('|'))
+				foreach (var itemID in txtIDs.Text.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
 				{
 					Guid tempGuid;
 					if (Guid.TryParse(itemID, out tempGuid) == false)
@@ -124,14 +124,14 @@ namespace Informa.Web.sitecore.admin.Tools
 			else
 			{
 				string idStatus = string.Empty;
-				List<string> articleNumbers = txtIDs.Text.Split('|').Select(s => s.Trim()).ToList();
+				List<string> articleNumbers = txtIDs.Text.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
 
 				var articles = ArticleMoverUtility.SearchArticlesByArticleNumbers(articleNumbers);
 				List<string> missingArticleNumbers = new List<string>();
 
 				foreach (var item in articleNumbers)
 				{
-					if (articles.Count(w => w.Article_Number.ToLower() == item.ToLower()) == 0)
+					if (articles == null || articles.Count(w => w?.Article_Number?.ToLower() == item.ToLower()) == 0)
 						missingArticleNumbers.Add(item);
 				}
 				//articleNumbers.Where(w => articles.Any(a => a.Article_Number == w) == false).ToList();
@@ -197,7 +197,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 			if (chkNewTaxonomyFields.Checked)
 			{
-				foreach (var taxID in txtNewTaxonomyFields.Text.Split('|'))
+				foreach (var taxID in txtNewTaxonomyFields.Text.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
 				{
 					if (masterDb.GetItem(taxID)?.TemplateID.Guid.Equals(new Guid(Constants.TaxonomyTemplateID)) == false)
 					{
@@ -341,10 +341,11 @@ namespace Informa.Web.sitecore.admin.Tools
 			List<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle> articlesByArticleNumber = new List<IArticle>();
 			if (parameters.SourceIDType == SourceIDType.ArticleID)
 			{
-				articlesByArticleNumber = ArticleMoverUtility.SearchArticlesByArticleNumbers(parameters.SourceIDs.Split('|').Select(s => s.Trim()).ToList());
+				articlesByArticleNumber = ArticleMoverUtility.SearchArticlesByArticleNumbers(parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList());
+				log("Searched: " + string.Join(", ", articlesByArticleNumber?.Select(s => string.Format("{0} - {1}", s?._Id, s?.Article_Number))));
 			}
 
-			foreach (var id in parameters.SourceIDs.Split('|'))
+			foreach (var id in parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
 			{
 				try
 				{
@@ -365,7 +366,7 @@ namespace Informa.Web.sitecore.admin.Tools
 					}
 					else
 					{
-						var article = articlesByArticleNumber.FirstOrDefault(w => w.Article_Number == id);
+						var article = articlesByArticleNumber?.FirstOrDefault(w => w?.Article_Number == id);
 						if (article == null)
 						{
 							log("**Article ID " + id + ": does not exist");
