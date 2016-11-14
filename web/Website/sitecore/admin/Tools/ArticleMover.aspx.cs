@@ -342,7 +342,7 @@ namespace Informa.Web.sitecore.admin.Tools
 			if (parameters.SourceIDType == SourceIDType.ArticleID)
 			{
 				articlesByArticleNumber = ArticleMoverUtility.SearchArticlesByArticleNumbers(parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList());
-				log("Searched: " + string.Join(", ", articlesByArticleNumber?.Select(s => string.Format("{0} - {1}", s._Id, s.Article_Number))));
+				log("Searched: " + string.Join(", ", articlesByArticleNumber?.Select(s => string.Format("{0} - {1}", s?._Id, s?.Article_Number))));
 			}
 
 			foreach (var id in parameters.SourceIDs.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
