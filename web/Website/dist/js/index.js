@@ -1306,10 +1306,12 @@ $(function () {
 });
 
 },{}],7:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function loadLayoutOneData(data, idx) {
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info="{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}">EDIT MY VIEW</a></div>' : '',
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info="{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
@@ -1515,7 +1517,9 @@ function createLayoutInner1(data) {
 }
 
 function loadLayoutTwoData(data, idx) {
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span><a class="editView mobview click-utag"  href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info="{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}">EDIT MY VIEW</a></div>' : '',
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info="{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout2" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
