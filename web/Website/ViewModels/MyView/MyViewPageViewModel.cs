@@ -54,9 +54,9 @@ namespace Informa.Web.ViewModels.MyView
         public bool IsFollowingAnyItem => UserPreferences.Preferences != null &&
             UserPreferences.Preferences.PreferredChannels != null &&
             UserPreferences.Preferences.PreferredChannels.Any() &&
-            ((UserPreferences.Preferences.IsNewUser && 
+            ((UserPreferences.Preferences.IsNewUser &&
             UserPreferences.Preferences.PreferredChannels.Any(ch => ch.IsFollowing)) ||
-            (!UserPreferences.Preferences.IsNewUser && 
+            (!UserPreferences.Preferences.IsNewUser &&
             UserPreferences.Preferences.PreferredChannels.Any(ch => ch.Topics != null
             && ch.Topics.Any() && ch.Topics.Any(tp => tp.IsFollowing))));
 
@@ -127,9 +127,12 @@ namespace Informa.Web.ViewModels.MyView
                 sec.ChannelName = channelPageItem?.Display_Text;
                 sec.ChannelId = channelPageItem._Id.ToString();
                 string taxonomyId = string.Empty;
-                taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                if (!string.IsNullOrWhiteSpace(taxonomyId))
-                    sec.TaxonomyIds.Add(taxonomyId);
+                if (channel.IsFollowing && (topics == null || !topics.Any()))
+                {
+                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
+                }
                 if (!topics.Any() && channel.Topics != null && channel.Topics.Any())
                     topics = channel.Topics;
                 if (topics != null && topics.Any())
