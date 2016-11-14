@@ -127,27 +127,10 @@ namespace Informa.Web.sitecore.admin.Tools
 				List<string> articleNumbers = txtIDs.Text.Split('|').Select(s => s.Trim()).ToList();
 
 				var articles = ArticleMoverUtility.SearchArticlesByArticleNumbers(articleNumbers);
-				var missingArticleNumbers = articleNumbers.Where(w => articles?.Exists(e => e.Article_Number == w) == false).ToList();
+				var missingArticleNumbers = articleNumbers.Where(w => articles.Any(a => a.Article_Number == w) == false).ToList();
 
 				if (missingArticleNumbers.Any())
 					idStatus = "Following Article ID(s) do not exist: " + string.Join(", ", missingArticleNumbers);
-
-				//foreach (var itemID in txtIDs.Text.Split('|'))
-				//{
-				//using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
-				//{
-				//	using (new DatabaseSwitcher(masterDb))
-				//	{
-				//		IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
-				//		IArticleSearchFilter filter = articleSearch.CreateFilter();
-				//		filter.ArticleNumbers = new List<string> { itemID };
-				//		var results = articleSearch.Search(filter);
-
-				//		if (results.Articles?.Any() == false)
-				//			idStatus = "Article ID " + itemID + ": does not exist";
-				//	}
-				//}
-				//}
 
 				if (string.IsNullOrEmpty(idStatus) == false)
 				{
