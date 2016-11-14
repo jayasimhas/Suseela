@@ -210,6 +210,15 @@ namespace Informa.Web.sitecore.admin.Tools
 
 			return true;
 		}
+
+		protected void btnValidate_Click(object sender, EventArgs e)
+		{
+			if (IsValidInput())
+			{
+				lblError.Text = "Validated Successfully";
+				lblError.ForeColor = System.Drawing.Color.Green;
+			}
+		}
 	}
 
 	public static class Constants
