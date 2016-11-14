@@ -4,11 +4,12 @@
 
 <div class="header-search__wrapper">
 
-    <form id="srchfrm" action="/" method="post" data-force-confirm="false">
-        @*@Html.AntiForgeryToken()
-            @Html.Sitecore().FormHandler()*@
+    @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Sitecore().FormHandler()
 
-        <input id="srchInpt" class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
+        <input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
 
         <svg class="header__icons header__icons--search js-header-search-trigger">
             <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
@@ -18,5 +19,5 @@
             <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
         </svg>
 
-    </form>
+    }
 </div>
