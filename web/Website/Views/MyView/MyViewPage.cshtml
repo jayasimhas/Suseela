@@ -1,20 +1,34 @@
 ﻿@model Informa.Web.ViewModels.MyView.MyViewPageViewModel
-<script type="text/javascript">
-    var loadPreferanceId = @Html.Raw(Model.JSONData)
-</script>
-<div class="personalisationhome">
-    <div class="tableau-landing clearfix">
-        <div class="personalHead clearfix">
-            <h1>@Model.PageHeading</h1>
-            <a class="editView hidden-xs" href="@Model.MyViewSettingsPageUrl">@Model.EditMyViewButtonLableText</a>
+
+@if (Model.IsAuthenticated && Model.IsFollowingAnyItem)
+{
+    <script type="text/javascript">
+        var loadPreferanceId = @Html.Raw(Model.JSONData)
+    </script>
+    <div class="personalisationhome">
+        <div class="tableau-landing clearfix">
+            <div class="personalHead clearfix">
+                <h1>@Model.PageHeading</h1>
+                <a class="editView hidden-xs" href="@Model.MyViewSettingsPageUrl">@Model.EditMyViewButtonLableText</a>
+            </div>
+            <div class="sub-heading-text">
+                @Html.Raw(@Model.PageDescription)
+            </div>
         </div>
-        <div class="sub-heading-text">
-            @Html.Raw(@Model.PageDescription)
+        <div class="spinnerIcon hidespin">
+            <img src="/dist/img/spinner.gif" width="40" />
         </div>
+        <div class="personalisationPan"></div>
     </div>
-    <div class="spinnerIcon hidespin">
-        <img src="/dist/img/spinner.gif" width="40" />
+    <input type="hidden" name="hdnMyViewPage" id="hdnMyViewPage" value="true" />
+}
+else if (Model.IsAuthenticated && !Model.IsFollowingAnyItem)
+{
+    Response.Redirect(Model.MyViewSettingsPageUrl);
+}
+else
+{
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
     </div>
-    <div class="personalisationPan"></div>
-</div>
-<input type="hidden" name="hdnMyViewPage" id="hdnMyViewPage" value="true" />
+            }
