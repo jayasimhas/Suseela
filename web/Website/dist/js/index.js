@@ -165,7 +165,7 @@ var DragDropTouch,
                 // raise double-click and prevent zooming
                 if (Date.now() - this._lastClick < DragDropTouch._DBLCLICK) {
                     if (this._dispatchEvent(e, 'dblclick', e.target)) {
-                        e.preventDefault();
+                        //e.preventDefault();
                         this._reset();
                         return;
                     }
@@ -181,9 +181,77 @@ var DragDropTouch,
                         this._dragSource = src;
                         this._ptDown = this._getPoint(e);
                         this._lastTouch = e;
-                        if (e.target.className == 'pull-left' || e.target.className == 'wd-15' || e.target.className == 'accordionImg') {
+                        if (e.target.className == 'pull-left' || e.target.className == 'wd-15' || e.target.className == 'accordionImg' || e.target.className == 'accordionImg' || e.target.className == 'mobileMode' || e.target.className == 'mobileMode expanded' || e.target.className == 'mv') {
                             checkTouchType = true;
                             e.preventDefault();
+
+                            if (e.target.className == 'accordionImg' || e.target.className == 'mobileMode' || e.target.className == 'mobileMode expanded') {
+                                var $this = $(this),
+                                    allPublications = $('#allPublicationsPan'),
+                                    pPan = $this.closest('.publicationPan'),
+                                    thead = pPan.find('thead'),
+                                    tbody = pPan.find('tbody'),
+                                    trs = tbody.find('tr'),
+                                    disabledtrs = tbody.find('tr.disabled'),
+                                    followlbl = thead.find('.followlbl'),
+                                    followinglbl = thead.find('.followinglbl'),
+                                    accStatusflwLbl = thead.find('.accordionStatus.flwLbl'),
+                                    accStatusflwBtn = thead.find('.accordionStatus.flwBtn'),
+                                    allpubpans = allPublications.find('.publicationPan'),
+                                    pickTxt = thead.find('.pickTxt'),
+                                    setFlag = true;
+
+                                if ($this.hasClass('expanded')) {
+                                    setFlag = false;
+                                    tbody.addClass('tbodyhidden');
+                                    //pPan.find('.smfollowingBtn').hide(); 
+                                    accStatusflwLbl.removeClass('hideRow');
+                                    accStatusflwBtn.addClass('hideRow');
+                                    thead.find('.mtp').addClass('hideBtn');
+
+                                    for (var i = 0; i < pickTxt.length; i++) {
+                                        $(pickTxt[i]).closest('.accordionStatus').addClass('hideRow');
+                                    }
+                                    if (trs.length === disabledtrs.length) {
+                                        followlbl.removeClass('hideBtn');
+                                    } else {
+                                        followinglbl.removeClass('hideBtn');
+                                    }
+                                    var position = $this.closest('.publicationPan').position();
+                                    $(window).scrollTop(position.top - 40);
+                                } else {
+                                    allPublications.find('tbody').addClass('tbodyhidden');
+                                    for (var i = 0; i < allpubpans.length; i++) {
+                                        var eachPickTxt = $(allpubpans[i]).find('thead .pickTxt');
+                                        for (var j = 0; j < eachPickTxt.length; j++) {
+                                            $(eachPickTxt[j]).closest('.accordionStatus').addClass('hideRow');;
+                                        }
+                                    }
+                                    thead.find('tr').removeClass('hidden');
+                                    tbody.removeClass('tbodyhidden');
+                                    pPan.find('.smfollowingBtn').show();
+                                    for (var i = 0; i < pickTxt.length; i++) {
+                                        $(pickTxt[i]).closest('.accordionStatus').removeClass('hideRow');
+                                    }
+                                    if (setFlag) {
+                                        for (var i = 0; i < allpubpans.length; i++) {
+                                            $(allpubpans[i]).find('.accordionStatus.flwLbl').removeClass('hideRow');
+                                            $(allpubpans[i]).find('.accordionStatus.flwBtn').addClass('hideRow');
+                                        }
+                                    }
+                                    accStatusflwLbl.addClass('hideRow');
+                                    accStatusflwBtn.removeClass('hideRow');
+
+                                    var position = $this.closest('.publicationPan').position();
+                                    $(window).scrollTop(position.top - 40);
+
+                                    for (var i = 0; i < allpubpans.length; i++) {
+                                        var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
+                                        $('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
+                                    }
+                                    thead.find('.mtp').addClass('hideBtn');
+                                }
+                            }
                         } else {
                             checkTouchType = false;
                             return false;
@@ -1022,7 +1090,7 @@ $(function () {
 				followinglbl.removeClass('hideBtn');
 			}
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position.top - 20);
+			$(window).scrollTop(position.top - 40);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			for (var i = 0; i < allpubpans.length; i++) {
@@ -1047,7 +1115,7 @@ $(function () {
 			accStatusflwBtn.removeClass('hideRow');
 
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position.top - 20);
+			$(window).scrollTop(position.top - 40);
 
 			for (var i = 0; i < allpubpans.length; i++) {
 				var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
@@ -3937,20 +4005,6 @@ var renderAMchart = function renderAMchart() {
     }
 };
 
-var AMchartUsingBuilder = function AMchartUsingBuilder() {
-    if ($("#amchartDashboardBuilder").hasClass("amchart-dashboard-using-builder")) {
-
-        alert(chartPresentation);
-
-        AmCharts.makeChart("chartdiv", {
-            "type": "serial",
-            "dataProvider": chartData,
-            "categoryField": "category",
-            "graphs": [{ "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-1", "title": "graph 1", "type": "column", "valueField": "column-1" }, { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-2", "title": "graph 2", "type": "column", "valueField": "column-2" }]
-        });
-    }
-};
-
 var decodeHtml = function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -4629,7 +4683,6 @@ $(document).ready(function () {
     renderIframeComponents();
     renderTableau();
     renderAMchart();
-    AMchartUsingBuilder();
 
     $(window).on('resize', function (event) {
         renderIframeComponents();

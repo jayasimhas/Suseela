@@ -340,6 +340,21 @@
 					& .rowlines{
 						@include getMove();
 						margin-top: -1.5rem;
+						.mv{						
+							background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+							height: 17px;
+							width: 21px;
+							display: block;
+							
+							@include breakpoint('medium-small') {
+								background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
+								height: 40px;
+								width: 40px;
+								position: relative;
+								left: -15px;
+								display: block;
+							}
+						}
 						@include breakpoint('medium-small') {
 							top: 4px;
 							margin-top: 0px;
@@ -347,11 +362,6 @@
 						@include breakpoint('large') {
 							height: 30px;
 							width: 30px;
-						}
-						span{
-							@include breakpoint('medium-small') {
-								background: #808081;
-							}
 						}
 						& .vline{
 							border: 1px solid #dadada;
@@ -378,15 +388,16 @@
 							display: inline-block;
 							margin-right: 10%;
 							@include breakpoint('medium-small') {
-								background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
+								/*background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
 								height: 0.75rem;
-								width: 1.4375rem;
+								width: 1.4375rem;*/
 								position: relative;
-								left: 0;
+								left: -10px;
 								&.expanded{
 									position: relative;
 									left: 0;
-									background-position: 0 -48px !important; 
+									/*background-position: 0 -48px !important;*/
+									background-position: 0 0 !important;
 								}
 							}
 							@media screen and (min-width: 667px) and (max-width: 767px){

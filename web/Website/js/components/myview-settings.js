@@ -315,7 +315,7 @@ $(function(){
 				followinglbl.removeClass('hideBtn');
 			}
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position.top - 20);
+			$(window).scrollTop(position.top - 40);
 		}
 		else{
 			allPublications.find('tbody').addClass('tbodyhidden');
@@ -341,7 +341,7 @@ $(function(){
 			accStatusflwBtn.removeClass('hideRow');
 			
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position.top - 20);
+			$(window).scrollTop(position.top - 40);
 			
 			for(var i = 0; i < allpubpans.length; i++){
 				var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
