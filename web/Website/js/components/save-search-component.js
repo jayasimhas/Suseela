@@ -11,6 +11,18 @@ is the same - topic alerts are actually just saved searches for the topic,
 plus an email alert for new articles.
 * * */
 
+function getParameterByName(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 $(document).ready(function() {
 
 	// When the Save Search pop-out is toggled, need to update some form fields
@@ -48,6 +60,15 @@ $(document).ready(function() {
 		}
 
 	});
+
+	var savedSearch = getParameterByName("ss");
+	if (savedSearch != null && savedSearch == "true") {
+	    $('.js-saved-search-success-alert')
+				.addClass('is-active')
+				.on('animationend', function (e) {
+				    $(e.target).removeClass('is-active');
+				}).addClass('a-fade-alert');
+	}
 
 	var removeTopicAlert = new FormController({
 		observe: '.form-remove-topic-alert',
@@ -128,12 +149,18 @@ $(document).ready(function() {
 			};
 			analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
 
-			// If Angular, need location.reload to force page refresh
-			if(typeof angular !== 'undefined') {
-				angular.element($('.search-results')[0]).controller().forceRefresh();
-			} else {
-				window.location.reload(false);
-			}
+			var ssParam = getParameterByName("ss");
+			var searchVal = window.location.search;
+			if (ssParam == null) {
+			    searchVal = (searchVal.length < 1) 
+			        ? "?ss=true"
+                    : searchVal + "&ss=true";
+			}                   
+            
+			if (ssParam == window.location.search)
+			    window.location.reload(true);
+			else 
+			    window.location = window.location.pathname + searchVal + window.location.hash;	
 		}
 	});
 
