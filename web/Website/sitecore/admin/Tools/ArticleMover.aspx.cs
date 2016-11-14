@@ -260,7 +260,7 @@ namespace Informa.Web.sitecore.admin.Tools
 		static string _resultStatus;
 		private static void log(string message, bool isError = false)
 		{
-			_resultStatus += "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + (isError ? "Error: " : string.Empty) + message + "<br />";
+			_resultStatus += "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + (isError ? "***Error: " : string.Empty) + message + "<br />";
 		}
 
 		public static bool Process(ArticleMovingParameters parameters, out string resultStatus)
@@ -399,7 +399,7 @@ namespace Informa.Web.sitecore.admin.Tools
 				}
 				catch (Exception ex)
 				{
-					log("failed to retrieve Item " + id, true);
+					log("failed to retrieve Item " + id + ". " + ex.ToString() , true);
 				}
 			}
 
