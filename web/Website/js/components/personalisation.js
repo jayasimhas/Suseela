@@ -431,9 +431,23 @@ function createLayoutInner2(data) {
 $(function(){
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
-	    loadLayoutData = '', getLiIdx;
-	if(typeof loadPreferanceId !== "undefined"){
-		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount;
+	    loadLayoutData = '',
+	    getLiIdx;
+	if (typeof loadPreferanceId !== "undefined") {
+		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount,
+		getArticalIdx = 0, hdnsubmitArtId = $('#hdnsubmitArticleId');
+		
+		if(hdnsubmitArtId && hdnsubmitArtId.val() !== null && hdnsubmitArtId.val() !== ''){
+			var hdnsubmitArticleId = hdnsubmitArtId.val();
+			for(var i = 0; i < loadPreferanceId["Sections"].length; i++){
+				if(loadPreferanceId["Sections"][i]["ChannelId"] == hdnsubmitArticleId){
+					getArticalIdx = i;
+				}
+			}
+		}
+		if(getArticalIdx > loadDynData){
+			loadDynData = getArticalIdx;
+		}
 		getLiIdx = loadPreferanceId.DefaultSectionLoadCount;
 		for(var i=0; i<loadDynData; i++){
 			var setId = loadPreferanceId["Sections"];
@@ -460,17 +474,30 @@ $(function(){
 										loadLayoutData = loadLayoutOneData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
+										window.findTooltips();
 									}
 									else{
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
+										window.findTooltips();
 									}
 								}
 							},
-							error: function(xhr, errorType, error){
-								console.log('err ' + error);
+							error: function error(xhr, errorType, _error) {
+								console.log('err ' + _error);
+							},
+							complete: function complete(xhr, status) {
+								if (status == "success" && hdnsubmitArtId.val() !== null && hdnsubmitArtId.val() !== '') {
+									setTimeout(function () {
+										var getlatestPos = $('#' + hdnsubmitArtId.val()).position();
+										if (getlatestPos) {
+											$('.spinnerIcon').addClass('hidespin');
+											$(window).scrollTop(getlatestPos.top);
+										}
+									}, 5);
+								}
 							}
 						});
 					}
@@ -503,10 +530,12 @@ $(function(){
 					if(layout == 'layout1'){
 						loadLayoutData = createLayoutInner1(data);
 						$(eachstory).append(loadLayoutData);
+						window.findTooltips();
 					}
 					else{
 						loadLayoutData = createLayoutInner2(data);
 						$(eachstory).append(loadLayoutData);
+						window.findTooltips();
 					}
 				}
 			},
@@ -563,12 +592,14 @@ $(function(){
 							getscrollData = loadLayoutOneData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							window.findTooltips();
 						}
 						else{
 							layout1Flag = true;
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							window.findTooltips();
 						}
 					}
 				},
@@ -619,9 +650,11 @@ $(function(){
 										if (idx % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
+											window.findTooltips();
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
+											window.findTooltips();
 										}
 									}
 								},
@@ -644,6 +677,10 @@ $(function(){
 					}
 				}
 			}
+		}
+		else{
+			var $this = $(this), articleIdVal = $this.attr('name');
+			$.post('/Account/api/PersonalizeUserPreferencesApi/UpdateArticleId/', {"UserPreferences": articleIdVal});
 		}
 	});
 });
