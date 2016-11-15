@@ -64,11 +64,12 @@ namespace Informa.Library.Search.Utilities
 			}
 
 			StringBuilder url = new StringBuilder();
-            foreach (var pair in dict)
+			foreach (var pair in dict)
 			{
-				url.AppendFormat("{0}={1}", pair.Key, HttpUtility.UrlEncode(pair.Value));
+				url.AppendFormat("{0}={1}&", pair.Key, HttpUtility.UrlEncode(pair.Value));
 			}
-			
+			url.Remove(url.Length - 1, 1);
+
 			return $"/search#?{url.ToString()}";
 		}
 
