@@ -4806,6 +4806,9 @@ header .header-account-access {
   position: absolute;
   bottom: 24px;
   bottom: 1.5rem; }
+  @media (max-width: 480px) {
+    .personalisationhome .article-preview__tags {
+      position: static; } }
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }
