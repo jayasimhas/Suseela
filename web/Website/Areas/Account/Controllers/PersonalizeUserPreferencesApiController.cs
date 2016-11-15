@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.User.UserPreference;
 using Informa.Web.Areas.Account.Models.User.Personalization;
+using Informa.Web.ViewModels.MyView;
 using System.Web.Http;
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -41,6 +42,19 @@ namespace Informa.Web.Areas.Account.Controllers
                 success = response,
                 reason = response ? SuccessMessage : ErrorMessage
             });
+        }
+
+        /// <summary>
+        /// Updates the article identifier.
+        /// </summary>
+        /// <param name="articleData">The article data.</param>
+        [HttpPost]
+        public void UpdateArticleId(PersonalizeUserPreferencesRequest articleData)
+        {
+            if (!string.IsNullOrEmpty(articleData.UserPreferences))
+            {
+                MyViewPageViewModel.ArticleId = articleData.UserPreferences;
+            }
         }
 
         /// <summary>
