@@ -33,6 +33,7 @@
         public string WelcomeMessageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageLinkText");
         public string MyViewText => TextTranslator.Translate("Personalization.MyViewLinkText");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
+        public string PageName => SiterootContext.Item._Name;
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
         public string FindOutMoreUrl => SiterootContext.Item?.Welcome_Message_FindOutMore_LinkUrl?._Url;
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
