@@ -185,7 +185,17 @@ $(document).ready(function(){
 		$('.dismiss').on('click', function(){
 			Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
 			$('.messaging_webUsers').remove(); 
-			$('.messaging_webUsers_white').remove(); 
+			$('.messaging_webUsers_white').remove();
+
+            var dismiss_data = {
+                event_name:"message_dismissal",
+                ga_eventCategory:"Messaging Frame",
+                ga_eventAction:"Dismissal",
+                ga_eventLabel:"<Link Name>",
+                page_name:"<Page Name>"
+            }
+            
+            analyticsEvent( $.extend(analytics_data, dismiss_data) );
 		});
 	}
 	window.dismiss();

@@ -456,7 +456,7 @@
 				}
 				.followlbl{
 					@include unfollowBtnLbl();
-					padding: 0 2.25rem;
+					padding: 0;
 					cursor: text;
 					min-width: 130px;
 					@include breakpoint('medium-small') {
