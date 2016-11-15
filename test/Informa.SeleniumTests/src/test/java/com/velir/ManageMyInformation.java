@@ -27,13 +27,11 @@ public class ManageMyInformation extends SetupClass {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID"),configuration.getString("password"));
 
         helper.getURL(ENV+"my-account/contact-information");
 
-//        helper.click(By.linkText("My Account"));
-//
-//        helper.click(By.linkText("ACCOUNT SETTINGS"));
+        helper.waitForSeconds(2);
 
         Assert.assertEquals(helper.getElementText(title), "Account Settings");
 
@@ -48,7 +46,7 @@ public class ManageMyInformation extends SetupClass {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID"),configuration.getString("password"));
 
         helper.getURL(ENV+"my-account/contact-information");
 
@@ -67,8 +65,6 @@ public class ManageMyInformation extends SetupClass {
 
 
         HomePage homePage = new HomePage(driver);
-//
-//        homePage.loginProcess(configuration.getString("emailUpdate") + "@yopmail.com", configuration.getString("passwordOld"));
 
 
         String uuid = UUID.randomUUID().toString();
@@ -84,18 +80,16 @@ public class ManageMyInformation extends SetupClass {
 
         helper.getURL(ENV);
 
-        passwordUpdater(configuration.getString("password"), configuration.getString("passwordNew"));
+        passwordUpdater(configuration.getString("passwordOld"), configuration.getString("passwordNew"));
+
+        helper.waitForSeconds(2);
 
         Assert.assertEquals(helper.getElementText(By.xpath("//div[2]/form/div[1]/p")), "Password Updated");
 
-        // Find an element
-        WebElement elementToClick = driver.findElement(By.xpath("//div[3]/span/a"));
-        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + elementToClick.getLocation().y + ")");
-        elementToClick.click();
-        helper.log("clicked !");
 
 
-        //helper.getURL(ENV);
+        helper.clickLocation(By.xpath("//div[3]/span/a"),"y");
+
         homePage.loginProcess(uuid + "@yopmail.com", configuration.getString("passwordNew"));
 
        // passwordUpdater(configuration.getString("passwordNew"), configuration.getString("passwordOld"));
@@ -114,7 +108,13 @@ public class ManageMyInformation extends SetupClass {
 
         helper.waitForSeconds(2);
 
-        helper.click(By.cssSelector(".page-preferences__submit-wrapper>button"));
+        if (BROWSER.equalsIgnoreCase("Mobile"))
+            helper.clickLocation(By.xpath("//form/div[6]/button"),"x");
+        else
+            helper.click(By.cssSelector(".page-preferences__submit-wrapper>button"));
+
+
+        helper.waitForSeconds(2);
     }
 
 
@@ -126,16 +126,20 @@ public class ManageMyInformation extends SetupClass {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess("fullallpubs@example.com", configuration.getString("password"));
 
         helper.getURL(ENV + "my-account/contact-information");
 
 
         helper.sendKeys(By.id("txtShippingCity"), UUID.randomUUID().toString());
 
-        helper.click(By.cssSelector(".manage-preferences"));
 
-        helper.waitForSeconds(4);
+        By updateLocator= By.cssSelector(".manage-preferences");
+
+        helper.waitForSeconds(2);
+            helper.click(updateLocator);
+
+
         Assert.assertEquals(helper.getElementText(By.xpath("//div[2]/div[4]/p")), "Account Updated");
 
 
@@ -164,43 +168,44 @@ public class ManageMyInformation extends SetupClass {
 
         // helper.waitForSeconds(2);
 
-        driver.findElement(By.name("password")).sendKeys("!@#Velir321");
+        driver.findElement(By.name("password")).sendKeys(configuration.getString("passwordOld"));
 
         // helper.waitForSeconds(2);
 
-        driver.findElement(By.name("passwordRepeat")).sendKeys("!@#Velir321");
+        driver.findElement(By.name("passwordRepeat")).sendKeys(configuration.getString("passwordOld"));
 
         helper.waitForSeconds(4);
 
         WebElement clickReg = driver.findElement(By.name("termsAccepted"));
 
-        // helper.log(clickReg.getLocation());
-//        Actions builder = new Actions(driver);
-//        builder.moveToElement(clickReg, 90, 1070).click().build().perform();
+
+//        if (BROWSER.equalsIgnoreCase("Mobile")){
+//            helper.waitForSeconds(4);
+//            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x + ")");}
+//        else
+
+        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
 
 
-        if (BROWSER.equalsIgnoreCase("Mobile"))
-            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x+")");
-        else
-            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
-
-
+        helper.waitForSeconds(3);
         clickReg.click();
 
-        helper.waitForSeconds(4);
+
 
         helper.click(By.cssSelector(".button--filled.js-register-user-submit"));
 
-        helper.waitForSeconds(20);
+        helper.waitForSeconds(10);
     }
 
     private void clickRegisterNEnterEmail(String user) {
-        By username =By.xpath("//div[4]/div[2]/form/input"); ;
-        helper.click(By.xpath("//div[4]/div[5]/div[1]"));
+        By username =By.xpath("//div[5]/div[2]/form/input"); ;
+        // helper.click(By.xpath("//div[4]/div[5]/div[1]"));
+
+        helper.click(By.xpath("//header/div[4]/div[6]/div[1]"));
 
         helper.waitForSeconds(2);
         driver.findElement(username).sendKeys(user);
 
-        helper.click(By.xpath("//div[4]/div[2]/form/button"));
+        helper.click(By.cssSelector(".js-pre-register-user-submit"));
     }
 }
