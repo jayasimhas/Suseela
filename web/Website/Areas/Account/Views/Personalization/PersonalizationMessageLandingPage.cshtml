@@ -8,7 +8,8 @@
         </div>
         <div class="msg-text">
             <h3>@Model.MyViewText</h3>
-            <div>@Model.LandingPageMessage<span class="red"> <a href="@Model.MyViewLinkUrl"> '@Model.WelcomeMessageLinkText'</a></span></div>
+            <div>@Model.LandingPageMessage<span class="red"> <a href="@Model.MyViewLinkUrl" class="click-utag" data-info='{"event_name":"message_link_click","page_name":"@Model.PageName","ga_eventCategory":"Messaging Frame","ga_eventAction":"Link Click","ga_eventLabel":"@Model.WelcomeMessageLinkText",
+"click_through_destination":"@Model.WelcomeMessageLinkText"}'> '@Model.WelcomeMessageLinkText'</a></span></div>
         </div>
     </div>
 }
