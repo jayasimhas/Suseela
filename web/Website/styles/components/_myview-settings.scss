@@ -342,9 +342,10 @@
 						margin-top: -1.5rem;
 						.mv{						
 							background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
-							height: 17px;
+							height: 50px;
 							width: 21px;
 							display: block;
+							margin-top: -15px;
 							
 							@include breakpoint('medium-small') {
 								background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
