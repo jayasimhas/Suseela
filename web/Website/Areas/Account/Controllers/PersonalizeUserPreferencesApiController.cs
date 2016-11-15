@@ -18,6 +18,11 @@ namespace Informa.Web.Areas.Account.Controllers
             TextTranslator = textTranslator;
         }
 
+        /// <summary>
+        /// Updates the user preferences.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Update(PersonalizeUserPreferencesRequest request)
         {
@@ -38,10 +43,28 @@ namespace Informa.Web.Areas.Account.Controllers
             });
         }
 
+        /// <summary>
+        /// Gets the no preferences selected key.
+        /// </summary>
+        /// <value>
+        /// The no preferences selected key.
+        /// </value>
         protected string NoPreferencesSelectedKey => TextTranslator.Translate("MyViewSettings.NoPreferencesSelected");
 
+        /// <summary>
+        /// Gets the error message.
+        /// </summary>
+        /// <value>
+        /// The error message.
+        /// </value>
         protected string ErrorMessage => TextTranslator.Translate("MyViewSettings.ErrorWhileSavingPreferences");
 
+        /// <summary>
+        /// Gets the success message.
+        /// </summary>
+        /// <value>
+        /// The success message.
+        /// </value>
         protected string SuccessMessage => TextTranslator.Translate("MyViewSettings.SuccessMessage");
     }
 }
