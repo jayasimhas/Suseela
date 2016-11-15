@@ -54,6 +54,51 @@ var showForgotPassSuccess = function() {
 		.toggleClass('is-active');
 };
 
+window.findTooltips = function() {
+	$('.js-toggle-tooltip').each(function(index, item) {
+		var tooltip;
+		$(item).data("ttVisible", false);
+		$(item).data("ttTouchTriggered", false);
+
+		$(item).on('mouseenter touchstart', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (e.type === "touchstart") {
+				$(item).data("ttTouchTriggered", true);
+			}
+
+			// Actual mouse events thrown can be any number of things...
+			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
+				// Do nothing
+			}
+			else if ($(item).data("ttVisible") && e.type === "touchstart") {
+				$(item).data("ttVisible", false);
+				$(item).data("ttTouchTriggered", false);
+				tooltip.hidePopup();
+			}
+			else {
+				$(item).data("ttVisible", true);
+				const offsets = $(item).offset();
+				tooltip = tooltipController({
+					isHidden: false,
+					html: $(item).data('tooltip-text'),
+					top: offsets.top,
+					left: offsets.left + $(this).width()/2,
+					triangle: 'bottom'
+				});
+			}
+		});
+
+		$(item).on('mouseleave', function() {
+			$(item).data("ttVisible", false);
+			tooltip.hidePopup();
+			$('.popup').remove();
+		});
+	});
+};
+
+window.findTooltips();
+
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
         var desktopEmbed = $(elm).find('.iframe-component__desktop');
@@ -1151,54 +1196,7 @@ $(document).ready(function(){
     $('.js-account-email-checkbox').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
-
-    window.findTooltips = function() {
-        $('.js-toggle-tooltip').each(function(index, item) {
-            var tooltip;
-            $(item).data("ttVisible", false);
-            $(item).data("ttTouchTriggered", false);
-
-            $(item).on('mouseenter touchstart', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (e.type === "touchstart") {
-                    $(item).data("ttTouchTriggered", true);
-                }
-
-                // Actual mouse events thrown can be any number of things...
-                if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
-                    // Do nothing
-                }
-                else if ($(item).data("ttVisible") && e.type === "touchstart") {
-                    $(item).data("ttVisible", false);
-                    $(item).data("ttTouchTriggered", false);
-                    tooltip.hidePopup();
-                }
-                else {
-                    $(item).data("ttVisible", true);
-                    const offsets = $(item).offset();
-                    tooltip = tooltipController({
-                        isHidden: false,
-                        html: $(item).data('tooltip-text'),
-                        top: offsets.top,
-                        left: offsets.left + $(this).width()/2,
-                        triangle: 'bottom'
-                    });
-                }
-            });
-
-            $(item).on('mouseleave', function() {
-                $(item).data("ttVisible", false);
-                tooltip.hidePopup();
-                $('.popup').remove();
-            });
-        });
-    };
-
-    window.findTooltips();
-
-
-
+  
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
 		w=window.twttr||{};
