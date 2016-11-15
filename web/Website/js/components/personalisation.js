@@ -7,7 +7,7 @@ function loadLayoutOneData(data, idx) {
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info="{"event_name":"load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 	
 	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -59,7 +59,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl0 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[0].listableTitle + '</a></h3>' : '';
+	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[0].listableTitle + '</a></h3>' : '';
 	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -85,7 +85,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl1 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[1].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[1].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">';
 	articleData += data.articles[1].listableSummary ? data.articles[1].listableSummary : '';
@@ -112,7 +112,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl2 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl2 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[2].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl2 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[2].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[2].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[2].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[2].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[2].listableSummary ? data.articles[2].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -130,11 +130,11 @@ function createLayoutInner1(data) {
 	articleData += '<section class="article-preview article-preview--small topics">';
 	articleData += data.articles[3].linkableText ? '<h6>&nbsp;</h6>' : '';
 
-	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl3 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[3].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[3].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[3].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl4 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[4].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[4].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl5 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[5].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[5].listableTitle + '</a></h1>' : '';
 
 	articleData += '</section>';
 	articleData += '</div>';
@@ -150,7 +150,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl6 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[6].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[6].listableTitle + '</a></h1>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
 	if (data.articles[6].listableTopics) {
@@ -172,7 +172,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl7 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[7].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[7].listableTitle + '</a></h1>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
 	if (data.articles[7].listableTopics) {
@@ -194,7 +194,7 @@ function createLayoutInner1(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl8 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[8].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[8].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[8].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[8].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -274,7 +274,7 @@ function createLayoutInner2(data) {
 	articleData += '</div>';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl0 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[0].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[0].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[0].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[0].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[0].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -299,7 +299,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl1 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[1].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[1].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl1 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[1].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[1].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -317,11 +317,11 @@ function createLayoutInner2(data) {
 	articleData += '<section class="article-preview article-preview--small artheight topics">';
 	articleData += data.articles[2].linkableText ? '<h6>&nbsp;</h6>' : '';
 
-	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl2 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl2 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[2].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[2].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl2 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[2].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[2].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl3 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[3].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[3].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[3].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[3].listableTitle + '</a></h1>' : '';
 
-	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl4 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[4].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[4].listableTitle + '</a></h1>' : '';
 	articleData += '</section>';
 	articleData += '</div>';
 	
@@ -336,7 +336,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';	
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl5 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[5].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[5].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl5 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[5].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -359,7 +359,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
-	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl6 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[6].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[6].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl6 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[6].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[6].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[6].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[6].listableAuthorByLine + '</span>' : '';
 	articleData += '<div class="article-summary">' + data.articles[6].listableSummary ? data.articles[6].listableSummary : '' + '</div>';
 	articleData += '</div>';
@@ -384,7 +384,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl7 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[7].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[7].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl7 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[7].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[7].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
@@ -407,7 +407,7 @@ function createLayoutInner2(data) {
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper showarticle">';
-	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + linkableUrl8 + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[8].listableTitle + '</a></h1>' : '';
+	articleData += data.articles[8].listableTitle ? '<h1 class="article-preview__headline"><a href="' + linkableUrl8 + '" class="click-utag" data-info="{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[8].listableTitle + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle + '","publication_click":"' + analytics_data["publication"] + '"}">' + data.articles[8].listableTitle + '</a></h1>' : '';
 	articleData += data.articles[1].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[1].listableAuthorByLine + '</span>' : '';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__tags bar-separated-link-list">';
