@@ -1807,7 +1807,8 @@ $(function () {
 			var hdnsubmitArticleId = hdnsubmitArtId.val();
 			for (var i = 0; i < loadPreferanceId["Sections"].length; i++) {
 				if (loadPreferanceId["Sections"][i]["ChannelId"] == hdnsubmitArticleId) {
-					getArticalIdx = i;
+					getArticalIdx = i + 1;
+					break;
 				}
 			}
 		}
@@ -1819,7 +1820,7 @@ $(function () {
 			var setId = loadPreferanceId["Sections"];
 			if (setId.length) {
 				(function (idx) {
-					if (idx < loadPreferanceId["DefaultSectionLoadCount"]) {
+					if (idx < loadDynData) {
 						$.ajax({
 							//url: '/api/articlesearch?pId=980D26EA-7B85-482D-8D8C-E7F43D6955B2&pno=1&psize=9',
 							//url: '/api/articlesearch?pId='+ setId[idx]["TaxonomyIds"] + '&pno=1&psize=9',
@@ -1859,7 +1860,7 @@ $(function () {
 										var getlatestPos = $('#' + hdnsubmitArtId.val()).position();
 										if (getlatestPos) {
 											$('.spinnerIcon').addClass('hidespin');
-											$(window).scrollTop(getlatestPos.top);
+											$(window).scrollTop(getlatestPos.top - 120);
 										}
 									}, 5);
 								}
@@ -2027,7 +2028,7 @@ $(function () {
 											var getlatestPos = $('#' + name).position();
 											if (getlatestPos) {
 												$('.spinnerIcon').addClass('hidespin');
-												$(window).scrollTop(getlatestPos.top - subjectHei);
+												$(window).scrollTop(getlatestPos.top - 120);
 											}
 										}, 5);
 									}
