@@ -102,7 +102,11 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             DateTime expirationDate = _subcriptions.Any(p => p.ProductCode.Equals(pub_code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(pub_code)).ExpirationDate : DateTime.MinValue;
             return IsValidSubscription(expirationDate);
         }
-
+        /// <summary>
+        /// Gets Channel items for the give product code
+        /// </summary>
+        /// <param name="productCode"></param>
+        /// <returns></returns>
         public IEnumerable<SubscriptionChannelViewModel> GetChannelItemsByProductCode(string productCode)
         {
             IEnumerable<SubscriptionChannelViewModel> mappedChannelItems = new List<SubscriptionChannelViewModel>();
@@ -194,7 +198,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             int days = Convert.ToInt16((s.ExpirationDate - DateTime.Now).TotalDays);
             return days > 0;
         }
-
+        /// <summary>
+        /// Returns the channel expirydate for the given productcode, channelcode, and path
+        /// </summary>
+        /// <param name="productcode"></param>
+        /// <param name="channelCode"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public DateTime GetChannelExpirationDate(string productcode, string channelCode, string path)
         {
             if (string.IsNullOrEmpty(channelCode))
