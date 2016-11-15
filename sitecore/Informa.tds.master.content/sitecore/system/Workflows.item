@@ -34,9 +34,9 @@ content-length: 38
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 954
+content-length: 1272
 
-ar|sitecore\Operations Access|pe|+item:create|!*|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|!*|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|ar|sitecore\Production|pe|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|pd|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|ar|sitecore\Editor|pe|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|
+ar|sitecore\Operations Access|pe|+item:create|!*|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|!*|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|ar|sitecore\Managing Editor|pe|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|ar|sitecore\Production|pe|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|pd|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|ar|sitecore\Editor|pe|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|
 ----version----
 language: da
 version: 1
@@ -148,7 +148,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 81689c45-6a01-45b5-ba4c-cfc556360da9
+revision: ccf290c6-72c4-4436-9ba9-bc2d99246a5c
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -177,14 +177,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-81689c45-6a01-45b5-ba4c-cfc556360da9
+ccf290c6-72c4-4436-9ba9-bc2d99246a5c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160413T150409Z
+20161115T143119Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
