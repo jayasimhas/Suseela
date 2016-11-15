@@ -79,15 +79,15 @@
                                         if (item.Renewable)
                                         {
                                             <a class="button button--outline click-utag"
-                                               data-info='{"event_name": "renew","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@item.Publication+"}'
+                                               data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@item.Publication+"}'
                                                href="@Model.OffSiteRenewLink">
                                                 @Model.Renew
                                             </a>
                                         }
                                         else if (item.Subscribable)
                                         {
-                                            <a class="button button--outline click-utag"
-                                               data-info='{"event_name": "subscribed","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@item.Publication+"}'
+                                            <a class="button button--outline click-utag" onclick="return false;"
+                                               data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@item.Publication+"}'
                                                href="#">
                                                 @Model.Subscribed
                                             </a>
@@ -95,7 +95,7 @@
                                         else
                                         {
                                             <a class="button button--outline click-utag"
-                                               data-info='{"event_name": "subscribe","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@item.Publication+"}'
+                                               data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@item.Publication+"}'
                                                href="@Model.OffSiteSubscriptionLink">
                                                 @Model.Subscribe
                                             </a>
@@ -119,15 +119,15 @@
                                                     if (channel.Renewable)
                                                     {
                                                     <a class="button button--outline click-utag"
-                                                       data-info='{"event_name": "renew","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@channel.ChannelName+"}'
+                                                       data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@channel.ChannelName+"}'
                                                        href="@Model.OffSiteRenewLink">
                                                         @Model.Renew
                                                     </a>
                                                     }
                                                     else if (channel.Subscribable)
                                                     {
-                                                        <a class="button button--outline click-utag"
-                                                           data-info='{"event_name": "subscribed","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@channel.ChannelName+"}'
+                                                        <a class="button button--outline click-utag" onclick="return false;"
+                                                           data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@channel.ChannelName+"}'
                                                            href="#">
                                                             @Model.Subscribed
                                                         </a>
@@ -135,7 +135,7 @@
                                                     else
                                                     {
                                                         <a class="button button--outline click-utag"
-                                                           data-info='{"event_name": "subscribe","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@channel.ChannelName+"}'
+                                                           data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@channel.ChannelName+"}'
                                                            href="@Model.OffSiteSubscriptionLink">
                                                             @Model.Subscribe
                                                         </a>
@@ -165,15 +165,15 @@
                                     if (item.Renewable)
                                     {
                                         <a class="button button--outline click-utag"
-                                           data-info='{"event_name": "renew","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@item.Publication+"}'
+                                           data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@item.Publication+"}'
                                            href="@Model.OffSiteRenewLink">
                                             @Model.Renew
                                         </a>
                                     }
                                     else if (item.Subscribable)
                                     {
-                                        <a class="button button--outline click-utag"
-                                           data-info='{"event_name": "subscribed","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@item.Publication+"}'
+                                        <a class="button button--outline click-utag" onclick="return false;"
+                                           data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@item.Publication+"}'
                                            href="#">
                                             @Model.Subscribed
                                         </a>
@@ -181,7 +181,7 @@
                                     else
                                     {
                                         <a class="button button--outline click-utag"
-                                           data-info='{"event_name": "subscribe","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@item.Publication+"}'
+                                           data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@item.Publication+"}'
                                            href="@Model.OffSiteSubscriptionLink">
                                             @Model.Subscribe
                                         </a>
@@ -206,15 +206,15 @@
                                                         if (channel.Renewable)
                                                         {
                                                             <a class="button button--outline click-utag"
-                                                               data-info='{"event_name": "renew","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@channel.ChannelName+"}'
+                                                               data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"renew","subscribe_topic":"+@channel.ChannelName+"}'
                                                                href="@Model.OffSiteRenewLink">
                                                                 @Model.Renew
                                                             </a>
                                                         }
                                                         else if (channel.Subscribable && !channel.Renewable)
                                                         {
-                                                            <a class="button button--outline click-utag"
-                                                               data-info='{"event_name": "subscribed","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@channel.ChannelName+"}'
+                                                            <a class="button button--outline click-utag" onclick="return false;"
+                                                               data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribed","subscribe_topic":"+@channel.ChannelName+"}'
                                                                href="#">
                                                                 @Model.Subscribed
                                                             </a>
@@ -222,7 +222,7 @@
                                                         else
                                                         {
                                                             <a class="button button--outline click-utag"
-                                                               data-info='{"event_name": "subscribe","subscribe_publication":"+@item.Publication+","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@channel.ChannelName+"}'
+                                                               data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"+@item.Publication+","ga_eventLabel":"subscribe","subscribe_topic":"+@channel.ChannelName+"}'
                                                                href="@Model.OffSiteSubscriptionLink">
                                                                 @Model.Subscribe
                                                             </a>
