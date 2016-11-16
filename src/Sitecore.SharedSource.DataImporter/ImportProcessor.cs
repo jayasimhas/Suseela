@@ -63,50 +63,53 @@ namespace Sitecore.SharedSource.DataImporter
 
 			long line = 0;
 
-			using (new BulkUpdateContext())
-			{ // try to eliminate some of the extra pipeline work
-				foreach (object importRow in importItems)
-				{
-					var sw = new Stopwatch();
-					sw.Start();
-					//import each row of data
-					line++;
-					try
-					{
-						string newItemName = DataMap.BuildNewItemName(importRow);
-						if (string.IsNullOrEmpty(newItemName))
-						{
-							Logger.Log("N/A", string.Format("BuildNewItemName failed on import row {0} because the new item name was empty", line), ProcessStatus.NewItemError);
-							continue;
-						}
+            using (new Sitecore.SecurityModel.SecurityDisabler())
+            {
+                using (new BulkUpdateContext())
+                { // try to eliminate some of the extra pipeline work
+                    foreach (object importRow in importItems)
+                    {
+                        var sw = new Stopwatch();
+                        sw.Start();
+                        //import each row of data
+                        line++;
+                        try
+                        {
+                            string newItemName = DataMap.BuildNewItemName(importRow);
+                            if (string.IsNullOrEmpty(newItemName))
+                            {
+                                Logger.Log("N/A", string.Format("BuildNewItemName failed on import row {0} because the new item name was empty", line), ProcessStatus.NewItemError);
+                                continue;
+                            }
 
-						Item thisParent = DataMap.GetParentNode(importRow, newItemName);
-						if (thisParent.IsNull())
-						{
-							Logger.Log("N/A", string.Format("Get parent failed on import row {0} because the new item's parent is null", line), ProcessStatus.NewItemError);
-							continue;
-						}
+                            Item thisParent = DataMap.GetParentNode(importRow, newItemName);
+                            if (thisParent.IsNull())
+                            {
+                                Logger.Log("N/A", string.Format("Get parent failed on import row {0} because the new item's parent is null", line), ProcessStatus.NewItemError);
+                                continue;
+                            }
 
-						var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
+                            var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
 
-						// Add mapping to database
-						(DataMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
-					}
-					catch (Exception ex)
-					{
-						var rows = importRow as Dictionary<string, string>;
-						var values = rows == null ? string.Empty : string.Join("||", (rows).Select(a => $"{a.Key}-{a.Value}"));
-						Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", values);
-					}
-					sw.Stop();
-					Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to process this item.");
-					if (Sitecore.Context.Job != null)
-					{
-						Sitecore.Context.Job.Status.Processed = line;
-						Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
-					}
-				}
-			}
+                            // Add mapping to database
+                            (DataMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
+                        }
+                        catch (Exception ex)
+                        {
+                            var rows = importRow as Dictionary<string, string>;
+                            var values = rows == null ? string.Empty : string.Join("||", (rows).Select(a => $"{a.Key}-{a.Value}"));
+                            Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", values);
+                        }
+                        sw.Stop();
+                        Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to process this item.");
+                        if (Sitecore.Context.Job != null)
+                        {
+                            Sitecore.Context.Job.Status.Processed = line;
+                            Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
+                        }
+                    }
+                }
+            }
 
 			(DataMap as PmbiDataMap)?.SetArticleNumber();
 
