@@ -624,6 +624,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         }
                     }
+
                     foreach (IBaseField d in fieldDefs)
                     {
                         string importValue = string.Empty;
@@ -706,30 +707,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     XMLDataLogger.WriteLog(ArticleId, CommodityLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COUNTRY" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COUNTRY1") && importValue == "")
                                 {
                                     errorLog += "||" + "Region N/A";
                                     XMLDataLogger.WriteLog(ArticleId, RegionLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMODITYFACTOR" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITYFACTOR1") && importValue == "")
                                 {
                                     errorLog += "||" + "CommodityFactor N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CommodityFactorLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMERCIAL" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMERCIAL1") && importValue == "")
                                 {
                                     errorLog += "||" + "Commercial N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CommercialLog);
                                 }
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "AGENCY" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("AGENCY1") && importValue == "")
                                 {
                                     errorLog += "||" + "AGENCY N/A";
                                     XMLDataLogger.WriteLog(ArticleId, AgencyLog);
 
                                 }
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMPANIES" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMPANIES1") && importValue == "")
                                 {
                                     errorLog += "||" + "COMPANIES N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CompanyLog);
@@ -741,7 +742,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors")
+                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
@@ -791,8 +792,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return string.Empty;
 
         }
-
-
 
         /// <summary>
         /// gets the parent of the new item created. will create folders based on name or date if configured to
