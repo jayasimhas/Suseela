@@ -245,7 +245,7 @@
                                     topicTRClass = topic.IsFollowing ? "followingrow" : "followrow disabled";
                                     topicSpanClass = topic.IsFollowing ? "followingBtn" : "followBtn";
                                     topicLableText = topic.IsFollowing ? Model.TopicFollowingButtonText : Model.TopicFollowButtonText;
-                                    string dataInfo = topic.IsFollowing ? "data-info='{\"event_name\": \"topic unfollow\", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic Unfollow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}'" : "data-info='{\"event_name\": \"topic follow\", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic follow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}";
+                                    //string dataInfo = topic.IsFollowing ? "data-info='{"event_name": "topic unfollow", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic Unfollow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}'" : "data-info='{\"event_name\": \"topic follow\", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic follow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}";
 
                             <tr class="@topicTRClass" data-row="@topicOrder">
 
@@ -254,7 +254,14 @@
                                     <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
                                 </td>
                                 <td class="wd-25">
-                                    <span class="@topicSpanClass click-utag" @dataInfo>@topicLableText</span>
+                                    @if (topic.IsFollowing)
+                                    {
+                                        <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@topic.TopicName","follow_topic" :"@topic.TopicName","follow_publication":"@Model.publicationname"}'>@topicLableText</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic follow","page_name":"My view settings","ga_eventCategory":"Topic follow","ga_eventAction":"@Model.publicationname","ga_eventLabel" :"@topic.TopicName","follow_topic" :"@topic.TopicName", "follow_publication":"@Model.publicationname"}'>@topicLableText</span>
+                                    }
                                 </td>
                                 <td class="wd-15">
                                     <div class="rowlines">
