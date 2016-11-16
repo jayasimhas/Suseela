@@ -624,6 +624,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         }
                     }
+
                     foreach (IBaseField d in fieldDefs)
                     {
                         string importValue = string.Empty;
@@ -741,7 +742,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors")
+                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
@@ -791,8 +792,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return string.Empty;
 
         }
-
-
 
         /// <summary>
         /// gets the parent of the new item created. will create folders based on name or date if configured to

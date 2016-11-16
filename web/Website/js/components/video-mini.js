@@ -25,7 +25,7 @@ INFORMA.videoMini = (function(window, $, namespace) {
             }
             _videoMiniPlayerModal.find('.modal-body .video-mini-player').html(video)
             _videoMiniPlayerModal.modal('show');
-            $(this).parents('.video-mini-container').find('.play-icon').hide();
+            // $(this).parents('.video-mini-container').find('.play-icon').hide();
           //  imgContainer.find(_videoMiniPlayBtnWrapper).hide();
 
         });

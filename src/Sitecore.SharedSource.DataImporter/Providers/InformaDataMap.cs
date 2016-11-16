@@ -93,7 +93,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 string leadImageTitleHtml = GetXMLData(d, "LEADIMAGE");
                 if (!string.IsNullOrEmpty(leadImageTitleHtml))
                 {
-                    bodyTitleHtml = leadImageTitleHtml + bodyTitleHtml  ;
+                    //bodyTitleHtml = leadImageTitleHtml + bodyTitleHtml  ;
+                     ao.Add("LEADIMAGE", leadImageTitleHtml);
                 }
 
                 //reading VIDEO ,getting video type and adding on end of body

@@ -4,8 +4,10 @@
   <add key="DictionaryFolder" value="/sitecore/shell/controls/rich text editor/Dictionaries/" />
   <add key="Lucene.Net.FSDirectory.class" value="Sitecore.Search.FSDirectory, Sitecore.Kernel" />
   <add key="PageInspector:ServerCodeMappingSupport" value="Disabled" />
-  <add key="LegacyPublications" value="Agra Europe"/>
-  <add key="ArticleLoggingFolder" value="D:\\LogsFolder\\"/>
+    <add key="LegacyPublications_public_ledger" value="Public Ledger"/>
+  <add key="LegacyPublications_dairy" value="Dairy Markets"/>
+  <add key="LegacyPublications_foodnews" value="Foodnews"/>
+  <add key="ArticleLoggingFolder" value="E:\LogsFolder\"/>
   <add key="PublishedYear" value="2"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />

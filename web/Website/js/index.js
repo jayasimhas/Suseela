@@ -1094,9 +1094,9 @@ $(document).ready(function(){
             event_name:"newsletter-signup",
             page_name:"Newsletter",
             ga_eventCategory:"Newsletter",
-            ga_eventLabel:"Publication name",
-            publication_newsletter:"Publication of which newsletter is subscribed",
-            user_email:"Email ID of user"
+            ga_eventLabel:analytics_data["publication"],
+            publication_newsletter:analytics_data["publication"],
+            user_news_email:analytics_data["user_email"]
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
