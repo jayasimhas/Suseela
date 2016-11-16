@@ -4722,13 +4722,15 @@ header .header-account-access {
       text-indent: -8.75rem;
       color: #58595b !important;
       border: none !important;
-      background-color: inherit !important; }
+      background-color: inherit !important;
+      clear: both; }
     .myview-settings .smfollowingBtn .followAllBtn {
       background-position: -3px -266px;
       text-indent: -124px;
       border: none !important;
       padding: 0 0 !important;
-      float: right; }
+      float: right;
+      clear: both; }
   .myview-settings .accordionStatus.hideRow {
     display: none; } }
 
