@@ -3713,8 +3713,8 @@ header .header-account-access {
   clear: both;
   border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 20px 32px 30px;
-  padding: 1.25rem 2rem 1.875rem;
+  padding: 20px 32px 25px;
+  padding: 1.25rem 2rem 1.5625rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
@@ -4158,6 +4158,20 @@ header .header-account-access {
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table thead th .rowlines .move {
                 z-index: -1; } }
+          .myview-settings .table-responsive .table thead th .rowlines .mv {
+            background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+            height: 50px;
+            width: 21px;
+            display: block;
+            margin-top: -15px; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table thead th .rowlines .mv {
+                background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
+                height: 40px;
+                width: 40px;
+                position: relative;
+                left: -15px;
+                display: block; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px;
@@ -4166,9 +4180,6 @@ header .header-account-access {
             .myview-settings .table-responsive .table thead th .rowlines {
               height: 30px;
               width: 30px; } }
-          @media (max-width: 640px) {
-            .myview-settings .table-responsive .table thead th .rowlines span {
-              background: #808081; } }
           .myview-settings .table-responsive .table thead th .rowlines .vline {
             border: 1px solid #dadada;
             height: 40px;
@@ -4194,17 +4205,16 @@ header .header-account-access {
           margin-right: 10%; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .accordionImg span {
-              background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
-              height: 12px;
-              height: 0.75rem;
-              width: 23px;
-              width: 1.4375rem;
+              /*background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
+								height: 0.75rem;
+								width: 1.4375rem;*/
               position: relative;
-              left: 0; }
+              left: -10px; }
               .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 position: relative;
                 left: 0;
-                background-position: 0 -48px !important; } }
+                /*background-position: 0 -48px !important;*/
+                background-position: 0 0 !important; } }
           @media screen and (min-width: 667px) and (max-width: 767px) {
             .myview-settings .table-responsive .table thead th .accordionImg span {
               margin-right: 50px;
@@ -4336,8 +4346,7 @@ header .header-account-access {
         color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
-        padding: 0 36px;
-        padding: 0 2.25rem;
+        padding: 0;
         cursor: text;
         min-width: 130px; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
@@ -4782,9 +4791,10 @@ header .header-account-access {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 26px;
-    line-height: 1.625rem; }
-  .personalisationhome .hidespin {
-    display: none; } }
+    line-height: 1.625rem; } }
+
+.personalisationhome .hidespin {
+  display: none; }
 
 .personalisationhome .hidden-lg {
   display: none !important; }
@@ -4797,6 +4807,9 @@ header .header-account-access {
   position: absolute;
   bottom: 24px;
   bottom: 1.5rem; }
+  @media (max-width: 480px) {
+    .personalisationhome .article-preview__tags {
+      position: static; } }
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }

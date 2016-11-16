@@ -25,12 +25,11 @@
 				line-height: 1.625rem;
 			}
 		}
-	
-		.hidespin{
-			display: none;
-		} 
 
 	}
+	.hidespin{
+		display: none;
+	} 
 	.hidden-lg{
 		display: none !important;
 	}
@@ -40,6 +39,9 @@
 	.article-preview__tags {
 		position: absolute;
 		bottom: 1.5rem;
+		@include breakpoint('small') {
+			position: static;
+		}
 	}
 	.article-metadata{
 		margin-top: 0px;

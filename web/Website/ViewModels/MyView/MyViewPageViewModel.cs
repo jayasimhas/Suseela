@@ -38,33 +38,124 @@ namespace Informa.Web.ViewModels.MyView
             AuthenticatedUserContext = authenticatedUserContext;
         }
 
+        /// <summary>
+        /// Gets a value indicating whether user is authenticated.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if user is authenticated; otherwise, <c>false</c>.
+        /// </value>
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+
+        /// <summary>
+        /// Gets the initial laod sections count.
+        /// </summary>
+        /// <value>
+        /// The initial laod sections count.
+        /// </value>
         public int InitialLaodSectionsCount => SiteRootContext.Item.Initial_Laod_Sections_Count;
 
+        /// <summary>
+        /// Gets the page heading.
+        /// </summary>
+        /// <value>
+        /// The page heading.
+        /// </value>
         public string PageHeading => GlassModel?.Title;
 
+        /// <summary>
+        /// Gets the page description.
+        /// </summary>
+        /// <value>
+        /// The page description.
+        /// </value>
         public string PageDescription => GlassModel?.Body;
 
+        /// <summary>
+        /// Gets the edit my view button lable text.
+        /// </summary>
+        /// <value>
+        /// The edit my view button lable text.
+        /// </value>
         public string EditMyViewButtonLableText => TextTranslator.Translate("MyView.EditMyViewButtonLableText");
 
+        /// <summary>
+        /// Gets the items per section.
+        /// </summary>
+        /// <value>
+        /// The items per section.
+        /// </value>
         public int ItemsPerSection => SiteRootContext.Item.Items_Per_Section;
 
+        /// <summary>
+        /// Gets my view settings page URL.
+        /// </summary>
+        /// <value>
+        /// My view settings page URL.
+        /// </value>
         public string MyViewSettingsPageUrl => SiteRootContext.Item.MyView_Settings_Page?._Url;
 
+        /// <summary>
+        /// Gets a value indicating whether user is following any item.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if user is following any item; otherwise, <c>false</c>.
+        /// </value>
         public bool IsFollowingAnyItem => UserPreferences.Preferences != null &&
             UserPreferences.Preferences.PreferredChannels != null &&
             UserPreferences.Preferences.PreferredChannels.Any() &&
-            ((UserPreferences.Preferences.IsNewUser && 
+            ((UserPreferences.Preferences.IsNewUser &&
             UserPreferences.Preferences.PreferredChannels.Any(ch => ch.IsFollowing)) ||
-            (!UserPreferences.Preferences.IsNewUser && 
+            (!UserPreferences.Preferences.IsNewUser &&
             UserPreferences.Preferences.PreferredChannels.Any(ch => ch.Topics != null
             && ch.Topics.Any() && ch.Topics.Any(tp => tp.IsFollowing))));
 
 
+        /// <summary>
+        /// Gets the sections.
+        /// </summary>
+        /// <value>
+        /// The sections.
+        /// </value>
         public IList<Section> Sections => GetSections();
 
+        /// <summary>
+        /// Gets the json data.
+        /// </summary>
+        /// <value>
+        /// The json data.
+        /// </value>
         public string JSONData => GetJSONData();
 
+        /// <summary>
+        /// Gets or sets the article identifier.
+        /// </summary>
+        /// <value>
+        /// The article identifier.
+        /// </value>
+        public static string ArticleId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the updated article identifier.
+        /// </summary>
+        /// <value>
+        /// The updated article identifier.
+        /// </value>
+        public string UpdatedArticleId
+        {
+            get
+            {
+                return ArticleId;
+            }
+            set
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// Gets the json data.
+        /// </summary>
+        /// <returns>Json string of data</returns>
         private string GetJSONData()
         {
             var jsonObject = new
@@ -78,6 +169,10 @@ namespace Informa.Web.ViewModels.MyView
             return JsonConvert.SerializeObject(jsonObject);
         }
 
+        /// <summary>
+        /// Gets the sections.
+        /// </summary>
+        /// <returns>List of my view page scetions</returns>
         private IList<Section> GetSections()
         {
             var sections = new List<Section>();
@@ -96,6 +191,13 @@ namespace Informa.Web.ViewModels.MyView
             return sections;
         }
 
+        /// <summary>
+        /// Creates the sections.
+        /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <param name="sections">The sections.</param>
+        /// <param name="isChannelLevel">if set to <c>true</c> [is channel level].</param>
+        /// <param name="isNewUser">if set to <c>true</c> [is new user].</param>
         private void CreateSections(Channel channel, List<Section> sections, bool isChannelLevel, bool isNewUser)
         {
             bool channelStatus = channel.IsFollowing;
@@ -117,6 +219,13 @@ namespace Informa.Web.ViewModels.MyView
             }
         }
 
+        /// <summary>
+        /// Creates the sections from channels.
+        /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <param name="sections">The sections.</param>
+        /// <param name="isNewUser">if set to <c>true</c> [is new user].</param>
+        /// <param name="topics">The topics.</param>
         private void CreateSectionsFromChannels(Channel channel, List<Section> sections, bool isNewUser, ref IList<Topic> topics)
         {
             var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
@@ -127,9 +236,12 @@ namespace Informa.Web.ViewModels.MyView
                 sec.ChannelName = channelPageItem?.Display_Text;
                 sec.ChannelId = channelPageItem._Id.ToString();
                 string taxonomyId = string.Empty;
-                taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                if (!string.IsNullOrWhiteSpace(taxonomyId))
-                    sec.TaxonomyIds.Add(taxonomyId);
+                if (channel.IsFollowing && (topics == null || !topics.Any()))
+                {
+                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
+                }
                 if (!topics.Any() && channel.Topics != null && channel.Topics.Any())
                     topics = channel.Topics;
                 if (topics != null && topics.Any())
@@ -162,6 +274,11 @@ namespace Informa.Web.ViewModels.MyView
             }
         }
 
+        /// <summary>
+        /// Creates the sections from topics.
+        /// </summary>
+        /// <param name="sections">The sections.</param>
+        /// <param name="topics">The topics.</param>
         private void CreateSectionsFromTopics(List<Section> sections, IList<Topic> topics)
         {
             Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;

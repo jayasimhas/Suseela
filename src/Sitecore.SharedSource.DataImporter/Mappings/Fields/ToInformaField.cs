@@ -1241,7 +1241,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
-                f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                //   f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                f.Value = ctID;
         }
 
         protected virtual Dictionary<string, string> GetMapping()
@@ -1252,6 +1253,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("analysis", "Analysis");
             d.Add("interviews", "Interviews");
             d.Add("analyst", "Analysis");
+            d.Add("opinion", "Opinion");
             d.Add("asia", "News");
             d.Add("briefstory", "News");
             d.Add("business", "News");
@@ -2491,7 +2493,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("International", "International");
             d.Add("US States", "US States");
             d.Add("Blocs", "Blocs");
-            d.Add("EU", "EU");
+            d.Add("EU", "Europe");
             d.Add("EEA", "EEA");
             d.Add("EFTA", "EFTA");
             d.Add("NAFTA", "NAFTA");
@@ -4249,7 +4251,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
-                f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                f.Value = ctID;
         }
 
         protected virtual Dictionary<string, string> GetMapping()
