@@ -966,6 +966,8 @@ $(function () {
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
 		$('#validatePriority').val(false);
 		$('#validateMyViewPriority').val(true);
+
+		curpublicPan.find('tbody .frow').removeClass('frow');
 		for (var i = 0; i < $lgfollowing.length; i++) {
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
 		}
@@ -976,10 +978,8 @@ $(function () {
 		var $this = $(this),
 		    followrow = $this.closest('.followrow'),
 		    table = $this.closest('.table'),
-		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
-		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
-		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
-		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
+		    followAllBtn = table.find('.followAllBtn'),
+		    unfollowAllBtn = table.find('.unfollowAllBtn'),
 		    trs = $this.closest('tbody').find('tr'),
 		    trsfollowing = $this.closest('tbody').find('tr.followingrow');
 		followrow.attr('draggable', true);
@@ -993,7 +993,7 @@ $(function () {
 
 		if (trs.hasClass('followingrow')) {
 			$('#validatePriority').val(true);
-			unfollowAllBtnHS.addClass('hideBtn');
+			//unfollowAllBtn.addClass('hideBtn');
 		}
 
 		if ($('.followrow.disabled.frow', table).length) {
@@ -1003,27 +1003,19 @@ $(function () {
 		}
 		followrow.remove();
 		if (trs.length === trsfollowing.length + 1) {
-			followAllBtnHL.addClass('hideBtn');
-			unfollowAllBtnHL.removeClass('hideBtn');
-
-			followAllBtnHS.addClass('hideBtn');
-			unfollowAllBtnHS.removeClass('hideBtn');
+			followAllBtn.addClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
 		} else {
-			followAllBtnHL.removeClass('hideBtn');
-			unfollowAllBtnHL.removeClass('hideBtn');
-
-			followAllBtnHS.removeClass('hideBtn');
-			unfollowAllBtnHS.addClass('hideBtn');
+			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
 		}
 	});
 
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
 		var $this = $(this),
 		    table = $this.closest('table'),
-		    followAllBtnHS = table.find('.hidden-large .followAllBtn'),
-		    followAllBtnHL = table.find('.hidden-xs .followAllBtn'),
-		    unfollowAllBtnHS = table.find('.hidden-large .unfollowAllBtn'),
-		    unfollowAllBtnHL = table.find('.hidden-xs .unfollowAllBtn'),
+		    followAllBtn = $this.closest('table').find('.followAllBtn'),
+		    unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'),
 		    followingrow = $this.closest('.followingrow'),
 		    tbody = $this.closest('tbody'),
 		    trs = $this.closest('tbody').find('tr'),
@@ -1042,18 +1034,13 @@ $(function () {
 			table.find('.accordionStatus .lableStatus').val('followlbl');
 		}
 		if (trs.length === trsfollow.length + 1) {
-			unfollowAllBtnHL.addClass('hideBtn');
-			followAllBtnHL.removeClass('hideBtn');
+			unfollowAllBtn.addClass('hideBtn');
+			followAllBtn.removeClass('hideBtn');
 
-			unfollowAllBtnHS.removeClass('hideBtn');
-			followAllBtnHS.addClass('hideBtn');
 			$('#validatePriority').val(false);
 		} else {
-			followAllBtnHL.removeClass('hideBtn');
-			unfollowAllBtnHL.removeClass('hideBtn');
-
-			unfollowAllBtnHS.addClass('hideBtn');
-			followAllBtnHS.removeClass('hideBtn');
+			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
 		}
 	});
 
@@ -2277,7 +2264,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
             }
             _videoMiniPlayerModal.find('.modal-body .video-mini-player').html(video);
             _videoMiniPlayerModal.modal('show');
-            $(this).parents('.video-mini-container').find('.play-icon').hide();
+            // $(this).parents('.video-mini-container').find('.play-icon').hide();
             //  imgContainer.find(_videoMiniPlayBtnWrapper).hide();
         });
     };
@@ -2293,7 +2280,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
             }
             _videoMiniPlayerModal.find('.modal-body .video-mini-player').html(video);
             _videoMiniPlayerModal.modal('show');
-            //_videoMiniPlayBtnWrapper.hide();
+            _videoMiniPlayBtnWrapper.hide();
         });
     };
     _videoMiniShowPlayIcon = function () {
