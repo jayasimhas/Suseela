@@ -274,11 +274,19 @@ work and it shouldn't be changed.
             </providers>
           </sessionState>
     -->
-    <sessionState mode="InProc" cookieless="false" timeout="180" sessionIDManagerType="Sitecore.SessionManagement.ConditionalSessionIdManager">
+#if ($Session.State == "turnedOn")
+    <sessionState mode="Custom" cookieless="false" timeout="180" sessionIDManagerType="Sitecore.SessionManagement.ConditionalSessionIdManager">
       <providers>
         <add name="mssql" type="Sitecore.SessionProvider.Sql.SqlSessionStateProvider, Sitecore.SessionProvider.Sql" sessionType="Standard" connectionStringName="session" pollingInterval="2" compression="true" />
       </providers>
     </sessionState>
+#else
+	 <sessionState mode="InProc" cookieless="false" timeout="180" sessionIDManagerType="Sitecore.SessionManagement.ConditionalSessionIdManager">
+      <providers>
+        <add name="mssql" type="Sitecore.SessionProvider.Sql.SqlSessionStateProvider, Sitecore.SessionProvider.Sql" sessionType="Standard" connectionStringName="session" pollingInterval="2" compression="true" />
+      </providers>
+    </sessionState>
+#end
     <!--  GLOBALIZATION
           This section sets the globalization settings of the application.
     -->
