@@ -1096,7 +1096,7 @@ $(document).ready(function(){
             ga_eventCategory:"Newsletter",
             ga_eventLabel:analytics_data["publication"],
             publication_newsletter:analytics_data["publication"],
-            user_email:analytics_data["user_email"]
+            user_news_email:analytics_data["user_email"]
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
