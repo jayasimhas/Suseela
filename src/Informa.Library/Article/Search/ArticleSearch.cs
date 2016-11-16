@@ -32,7 +32,6 @@ namespace Informa.Library.Article.Search
         protected readonly Func<string, ISitecoreService> SitecoreFactory;
         protected readonly IItemReferences ItemReferences;
         protected readonly ICacheProvider CacheProvider;
-        protected readonly ISearchPageParser SearchPageParser;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ISearchIndexNameService IndexNameService;
@@ -43,7 +42,6 @@ namespace Informa.Library.Article.Search
                 Func<string, ISitecoreService> sitecoreFactory,
                 IItemReferences itemReferences,
                 ICacheProvider cacheProvider,
-                ISearchPageParser searchPageParser,
                 ISitecoreContext context,
                 ISiteRootContext siteRootContext,
                 ISearchIndexNameService indexNameService
@@ -54,7 +52,6 @@ namespace Informa.Library.Article.Search
             SitecoreFactory = sitecoreFactory;
             ItemReferences = itemReferences;
             CacheProvider = cacheProvider;
-            SearchPageParser = searchPageParser;
             SitecoreContext = context;
             SiteRootContext = siteRootContext;
             IndexNameService = indexNameService;
