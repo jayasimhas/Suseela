@@ -130,7 +130,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     //loop through children and look for anything that matches by name
                     string cleanName = StringUtility.GetValidItemName(auth, map.ItemNameMaxLength);
                     IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
-                    if (t.Any())
+                    if (t.Any() && !f.Value.Contains(t.First().ID.ToString()))
                         f.Value = f.Value + "|" + t.First().ID.ToString();
 
                 }

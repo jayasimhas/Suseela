@@ -4078,7 +4078,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("public_ledger_analysis_trading", "Commercial");
 
             d.Add("dairy_markets_analysis_policy", "Policy");
-            d.Add("dairy_markets_analysis_trade", "Imports");
+            d.Add("dairy_markets_analysis_trade_Import", "Imports");
+            d.Add("dairy_markets_analysis_trade_Export", "Exports");
+           // d.Add("dairy_markets_analysis_trade", "Imports,Exports");
             d.Add("dairy_markets_market_focus", "Price");
 
             d.Add("foodnews_market_focus", "Commodity Factors");
