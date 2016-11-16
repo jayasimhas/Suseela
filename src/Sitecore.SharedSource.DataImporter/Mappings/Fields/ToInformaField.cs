@@ -4023,9 +4023,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             d.Add("public_ledger_commodities_dried_fruit_vine_fruit", "Dried Vine Fruit");
 
-            d.Add("public_ledger_commodities_nuts", "Almonds");
+            d.Add("public_ledger_commodities_nuts", "Dried Fruit & Nuts");
 
-            d.Add("public_ledger_commodities_nuts_almonds", "Dried Fruit & Nuts");
+            d.Add("public_ledger_commodities_nuts_almonds", "Almonds");
+            
 
             d.Add("public_ledger_commodities_nuts_brazil_nuts", "Brazil Nuts");
 
