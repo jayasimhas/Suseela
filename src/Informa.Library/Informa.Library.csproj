@@ -353,7 +353,9 @@
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\ExactMatchTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ExactMatchContentField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\WildcardTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\WildcardContentField.cs" />
      <Compile Include="Search\Filter\ILegacyArticleNumberFilter.cs" />
     <Compile Include="Search\Results\ILegacyArticleNumber.cs" />
