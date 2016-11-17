@@ -722,34 +722,34 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
             Dictionary<string, string> d = new Dictionary<string, string>();
-            d.Add("dairy_markets", "news");
-            d.Add("dairy_markets_subscribe_free_demo", "news");
-            d.Add("dairy_markets_features", "analysis");
-            d.Add("dairy_markets_market_focus", "analysis");
-            d.Add("dairy_markets_downloads", "news");
+            d.Add("dairy_markets", "News");
+            d.Add("dairy_markets_subscribe_free_demo", "News");
+            d.Add("dairy_markets_features", "Analysis");
+            d.Add("dairy_markets_market_focus", "Analysis");
+            d.Add("dairy_markets_downloads", "News");
             d.Add("dairy_markets_filedownloads", "News");
-            d.Add("dairy_markets_subscribe_free_demo_mobile", "news");
-            d.Add("dairy_markets_resources_dairy_ezine_mobile", "news");
-            d.Add("dairy_markets_markets", "news");
-            d.Add("dairy_markets_markets_butter", "news");
-            d.Add("dairy_markets_markets_cheese", "news");
-            d.Add("dairy_markets_markets_milk", "news");
-            d.Add("dairy_markets_markets_milk_liquid", "news");
-            d.Add("dairy_markets_markets_milk_raw", "news");
-            d.Add("dairy_markets_markets_powders", "news");
-            d.Add("dairy_markets_markets_powders_casein", "news");
-            d.Add("dairy_markets_markets_powders_imf", "news");
-            d.Add("dairy_markets_markets_powders_lactose", "news");
-            d.Add("dairy_markets_markets_powders_smp", "news");
-            d.Add("dairy_markets_markets_powders_wmp", "news");
-            d.Add("dairy_markets_markets_powders_whey_powder", "news");
-            d.Add("dairy_markets_markets_other_dairy", "news");
-            d.Add("dairy_markets_markets_other_dairy_fresh_products", "news");
-            d.Add("dairy_markets_markets_other_dairy_frozen_products", "news");
-            d.Add("dairy_markets_analysis", "analysis");
-            d.Add("dairy_markets_analysis_company", "news");
-            d.Add("dairy_markets_analysis_policy", "news");
-            d.Add("dairy_markets_analysis_trade", "analysis");
+            d.Add("dairy_markets_subscribe_free_demo_mobile", "News");
+            d.Add("dairy_markets_resources_dairy_ezine_mobile", "News");
+            d.Add("dairy_markets_markets", "News");
+            d.Add("dairy_markets_markets_butter", "News");
+            d.Add("dairy_markets_markets_cheese", "News");
+            d.Add("dairy_markets_markets_milk", "News");
+            d.Add("dairy_markets_markets_milk_liquid", "News");
+            d.Add("dairy_markets_markets_milk_raw", "News");
+            d.Add("dairy_markets_markets_powders", "News");
+            d.Add("dairy_markets_markets_powders_casein", "News");
+            d.Add("dairy_markets_markets_powders_imf", "News");
+            d.Add("dairy_markets_markets_powders_lactose", "News");
+            d.Add("dairy_markets_markets_powders_smp", "News");
+            d.Add("dairy_markets_markets_powders_wmp", "News");
+            d.Add("dairy_markets_markets_powders_whey_powder", "News");
+            d.Add("dairy_markets_markets_other_dairy", "News");
+            d.Add("dairy_markets_markets_other_dairy_fresh_products", "News");
+            d.Add("dairy_markets_markets_other_dairy_frozen_products", "News");
+            d.Add("dairy_markets_analysis", "Analysis");
+            d.Add("dairy_markets_analysis_company", "News");
+            d.Add("dairy_markets_analysis_policy", "News");
+            d.Add("dairy_markets_analysis_trade", "Analysis");
 
 
 
@@ -1113,7 +1113,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                             else if (GetMappingCommodityFactor().ContainsKey(node.Attributes["unique-name"].Value))
                             {
-                                if (countCommodityFactor < 16)
+                                if((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
+                                        {
+                                    Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
+                                    countCommodityFactor++;
+                                    Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
+                                    countCommodityFactor++;
+                                       }
+                                if (countCommodityFactor < 16 && !((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
                                 {
                                     Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = node.Attributes["unique-name"].Value;
                                 }
@@ -1635,6 +1642,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             d.Add("dairy_markets_analysis_policy", "Policy");
             d.Add("dairy_markets_analysis_trade", "Imports");
+            d.Add("dairy_markets_analysis_trade_Import", "Imports");
+            d.Add("dairy_markets_analysis_trade_Export", "Exports");
             d.Add("dairy_markets_market_focus", "Price");
 
             d.Add("foodnews_market_focus", "Commodity Factors");
