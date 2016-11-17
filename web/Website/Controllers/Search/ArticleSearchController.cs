@@ -20,6 +20,12 @@
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
         }
+
+        /// <summary>
+        /// Gets articles based on user preferences
+        /// </summary>
+        /// <param name="articleRequest"></param>
+        /// <returns></returns>
         [HttpPost]
         public object GetArticles([FromBody] ArticleSearchRequest articleRequest)
         {

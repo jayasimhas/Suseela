@@ -227,7 +227,7 @@
                                 <th class="wd-25 pbot">
                                     <div>
                                         <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname","follow_channel":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"My View Settings","ga_eventCategory":"Publication follow","ga_eventAction":"follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel follow All","ga_eventAction":""@Model.publicationname","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
                                     </div>
                                 </th>
                                 <th class="wd-15"></th>
@@ -256,11 +256,11 @@
                                 <td class="wd-25">
                                     @if (topic.IsFollowing)
                                     {
-                                        <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @topic.TopicName","ga_eventLabel":"@topic.TopicName","follow_topic" :"@topic.TopicName","follow_publication":"@Model.publicationname,"follow_channel":"@topic.TopicName"}'>@topicLableText</span>
+                                        <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_topic" :"@topic.TopicName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                     }
                                     else
                                     {
-                                        <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic follow","page_name":"My view settings","ga_eventCategory":"Topic follow","ga_eventAction":"@Model.publicationname : @topic.TopicName","ga_eventLabel" :"@topic.TopicName","follow_topic" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@topic.TopicName"}'>@topicLableText</span>
+                                        <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic follow","page_name":"My view settings","ga_eventCategory":"Topic follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName","follow_topic" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                     }
                                 </td>
                                 <td class="wd-15">

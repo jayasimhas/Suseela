@@ -18,6 +18,11 @@ namespace Informa.Library.User.UserPreference
             AuthenticatedUserContext = authenticatedUserContext;
             UserPreferences = userPreferences;
         }
+
+        /// <summary>
+        /// Returns navigation url after login from My view toggle button
+        /// </summary>
+        /// <returns></returns>
         public string create()
         {
             if(AuthenticatedUserContext.IsAuthenticated)
