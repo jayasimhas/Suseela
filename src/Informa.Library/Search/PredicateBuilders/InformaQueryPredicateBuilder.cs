@@ -71,24 +71,29 @@ namespace Informa.Library.Search.PredicateBuilders
 			{
 				var formattedQuery = _formatter.FormatQuery(query);
 
-                if (searchHeadlines) {
-					return item => item.Title.MatchWildcard(formattedQuery);
-				} else if(query.Contains('"')) {
-                    return item => item.ExactMatchContent.MatchWildcard(formattedQuery);
+                if (query.Contains('"')) {
+                    if (searchHeadlines)
+                        return item => item.ExactMatchTitle.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.ExactMatchContent.MatchWildcard(formattedQuery);
                 } else if (query.Contains("*")) {
-                    return item => item.WildcardContent.MatchWildcard(formattedQuery);
-                } else { 
-                    return item => item.Content.MatchWildcard(formattedQuery);
+                    if (searchHeadlines)
+                        return item => item.WildcardTitle.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.WildcardContent.MatchWildcard(formattedQuery);
+                } else {
+                    if (searchHeadlines)
+                        return item => item.Title.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.Content.MatchWildcard(formattedQuery);
                 }
             }
 
 			var quotedQuery = $"\"{query}\"";
-			if (searchHeadlines)
-			{
-				return item => item.Title.Like(quotedQuery, bigSlopFactor);
-			}
-
-			return item => item.Content.Like(quotedQuery, bigSlopFactor);
+            if (searchHeadlines)
+                return item => item.Title.Like(quotedQuery, bigSlopFactor);
+            else 
+                return item => item.Content.Like(quotedQuery, bigSlopFactor);
 		}
 	}
 }
