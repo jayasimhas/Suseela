@@ -46,9 +46,19 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
-                        </td>
+                        
+                            @if (Model.GlassModel.Article?.Summary != null && Model.GlassModel.Article?.Summary.StartsWith("<p>") == true)
+                            {
+                                <td colspan="2">
+                                    @Html.Raw(Model.GlassModel.Article?.Summary)
+                                </td>
+                            }
+                            else
+                            {
+                                <td colspan="2">
+                                    <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
+                                </td>
+                            }
                     </tr>
 
                 </table>
