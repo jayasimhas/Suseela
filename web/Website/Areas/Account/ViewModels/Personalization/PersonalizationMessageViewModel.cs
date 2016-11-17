@@ -41,6 +41,10 @@
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public bool HideWelcomeMessage => GetWelcomeMessageDisplayStatus();
 
+        /// <summary>
+        /// Gets the display message status i.e whether to display personalization message or not.
+        /// </summary>
+        /// <returns>Personalization message display status</returns>
         private bool GetWelcomeMessageDisplayStatus()
         {
             if(IsAuthenticated)
@@ -54,6 +58,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Gets personalization message to right rail component
+        /// </summary>
+        /// <returns></returns>
         private string GetMessageForRightRail()
         {
             if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
@@ -65,6 +73,10 @@
             return TextTranslator.Translate("CorporateUser.RightRailMessage");
         }
 
+        /// <summary>
+        /// Gets personalization message for landing page component
+        /// </summary>
+        /// <returns></returns>
         private string GetMessageForLandingPage()
         {
             if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
@@ -75,6 +87,11 @@
 
             return TextTranslator.Translate("CorporateUser.LandingPageMessage");
         }
+
+        /// <summary>
+        /// Gets personalization message for article page component
+        /// </summary>
+        /// <returns></returns>
         private string GetMessageForArticlePage()
         {
             if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)

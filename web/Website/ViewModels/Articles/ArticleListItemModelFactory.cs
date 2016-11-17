@@ -93,6 +93,11 @@ namespace Informa.Web.ViewModels.Articles
             return model;
         }
 
+        /// <summary>
+        /// Returns personalized article item
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
         public IPersonalizedArticle CreatePersonalizedArticle(IArticle article)
         {
             if (article == null)
