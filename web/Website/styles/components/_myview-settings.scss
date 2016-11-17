@@ -596,32 +596,54 @@
   }
     .modal-view {
 	    position: fixed;
-		width: 25rem;
-		height: 8.125rem;
+		width: 18.75rem;
+		height: 12.5rem;
 		top: 50%;
 		left: 50%;
 		z-index: 9999;
-		margin-left: -12.5rem;
-		margin-top: -4.0625rem;
+		margin-left: -9.375rem;
+		margin-top: -6.25rem;
 		background: $color-white;
 		padding: 2.1875rem 2.5rem 2.5rem;
-		border: 1px solid $color-tree-poppy-orange;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
 		display: none;
+		font-family: "Roboto";
 
 		&.preferences{
-			height: 10rem;
-			h4{
-				margin-bottom: 1rem;
+			h3{
+				background-image: url(/dist/img/sprite-image.png);
+				background-position: left 46px top -574px;
+				font-size: 1rem;
+				font-weight: bold;
+				padding-left: 4.5rem;
+				margin: 10px 0 20px;
+				background-repeat: no-repeat;
 			}
-			
-			.saveview{
-				@include folow-btn(auto, 2rem); 
-				background: $color-tree-poppy-orange;
-				color: $color-white;
-				padding: 0 2rem;
+			h4{
+				margin-bottom: 2rem;
+				font-size: .75rem;
+				color: #626262;
+				font-weight: normal;
+				text-align: center;
+			}
+			.buttonsPan{
+				width: 10.125rem;
+				margin: 0px auto;
+			}
+			.saveview{ 
+				border: 1px solid $color-tree-poppy-orange;
+				color: $color-zeus-black;
+				text-align: center;
+				float: left;
+				height: 1.5rem;
+				width: 4.375rem;
+				text-transform: uppercase;
+				font-size: 0.6875rem;
+				cursor: pointer;
+				line-height: 1.4375rem;
+				font-weight: bold;
+				&:hover{
+					background: $color-tree-poppy-orange;
+				}
 			}
 			.registrationBtn.validationChk{
 				@include folow-btn(auto, 2rem); 
@@ -631,33 +653,19 @@
 			}
 			
 			.cancel{
-				@include followBtnLbl();
-				margin: 0px;
-				float: left; 
-				color: $color-abbey-gray;
-			}
-		} 
-
-		
-		@include breakpoint('small') {
-			width: 18.75rem;
-			height: 6.25rem;
-			margin-left: -9.375rem;
-			margin-top: -9.375rem;
-			padding: 1.625rem 2.5rem 2.5rem;
-		}
-		h4{
-			font-size: 1.125rem;
-			text-align: center;
-			line-height: 1.875rem;
-			
-			@include breakpoint('small') {
-				font-size: 0.875rem;
+				background: $color-tree-poppy-orange;
+				color: $color-zeus-black;
 				text-align: center;
-				line-height: 1.5rem;
+				float: right;
+				height: 1.5rem;
+				width: 4.375rem;
+				text-transform: uppercase;
+				font-size: 0.6875rem;
+				cursor: pointer;
+				line-height: 1.4375rem;
+				font-weight: bold;
 			}
 		}
-		
 	  .modal-inner {
 			display: inline-block;
 			text-align: left;
@@ -674,11 +682,14 @@
 			position: absolute;
 			right: 0.625rem;
 			top: 0.625rem;
-			color: #f7941e;
+			color: $color-zeus-black;
 			font-family: "Roboto";
-			font-weight: bold;
-			font-size: 1rem;
+			font-weight: bold; 
 			cursor: pointer;
+			text-transform: uppercase;
+			background: url(/dist/img/sprite-image.png) no-repeat right -72px top -592px;
+			font-size: 0.625rem;
+			padding-right: 1rem;
 		}
 	}
 	.modal-overlay{

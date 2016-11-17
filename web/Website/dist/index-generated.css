@@ -4515,129 +4515,100 @@ header .header-account-access {
     background: #f9f9f9; }
   .myview-settings .modal-view {
     position: fixed;
-    width: 400px;
-    width: 25rem;
-    height: 130px;
-    height: 8.125rem;
+    width: 300px;
+    width: 18.75rem;
+    height: 200px;
+    height: 12.5rem;
     top: 50%;
     left: 50%;
     z-index: 9999;
-    margin-left: -200px;
-    margin-left: -12.5rem;
-    margin-top: -65px;
-    margin-top: -4.0625rem;
+    margin-left: -150px;
+    margin-left: -9.375rem;
+    margin-top: -100px;
+    margin-top: -6.25rem;
     background: #ffffff;
     padding: 35px 40px 40px;
     padding: 2.1875rem 2.5rem 2.5rem;
-    border: 1px solid #f7941e;
-    border-radius: 4px;
-    display: none; }
-    .myview-settings .modal-view.preferences {
-      height: 160px;
-      height: 10rem; }
-      .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
-      .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
-      .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
-      .article-inline-image__title, .myview-settings .modal-view.preferences
-      .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
-      .article-inline-image--pull-right__title {
-        margin-bottom: 16px;
-        margin-bottom: 1rem; }
-      .myview-settings .modal-view.preferences .saveview {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: auto;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        background: #f7941e;
-        color: #ffffff;
-        padding: 0 32px;
-        padding: 0 2rem; }
-      .myview-settings .modal-view.preferences .registrationBtn.validationChk {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: auto;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        background: #f7941e;
-        color: #ffffff;
-        padding: 0 32px;
-        padding: 0 2rem; }
-      .myview-settings .modal-view.preferences .cancel {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        padding: 0 25px;
-        padding: 0 1.5625rem;
-        margin-top: 8px;
-        margin-top: 0.5rem;
-        margin: 0px;
-        float: left;
-        color: #58595b; }
-        .myview-settings .modal-view.preferences .cancel:hover {
-          background-color: #f7941e; }
-        .myview-settings .modal-view.preferences .cancel.mtp {
-          margin-top: -6px;
-          margin-bottom: 25px; }
-    @media (max-width: 480px) {
-      .myview-settings .modal-view {
-        width: 300px;
-        width: 18.75rem;
-        height: 100px;
-        height: 6.25rem;
-        margin-left: -150px;
-        margin-left: -9.375rem;
-        margin-top: -150px;
-        margin-top: -9.375rem;
-        padding: 26px 40px 40px;
-        padding: 1.625rem 2.5rem 2.5rem; } }
-    .myview-settings .modal-view h4, .myview-settings .modal-view .lightbox-modal__title, .myview-settings .modal-view .exhibit-title, .myview-settings .modal-view .article-exhibit__title, .myview-settings .modal-view
-    .article-exhibit--pull-left__title, .myview-settings .modal-view
-    .article-exhibit--pull-right__title, .myview-settings .modal-view
-    .article-inline-image__title, .myview-settings .modal-view
-    .article-inline-image--pull-left__title, .myview-settings .modal-view
+    display: none;
+    font-family: "Roboto"; }
+    .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
+      background-image: url(/dist/img/sprite-image.png);
+      background-position: left 46px top -574px;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: bold;
+      padding-left: 72px;
+      padding-left: 4.5rem;
+      margin: 10px 0 20px;
+      background-repeat: no-repeat; }
+    .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
+    .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
+    .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
+    .article-inline-image__title, .myview-settings .modal-view.preferences
+    .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-right__title {
-      font-size: 18px;
-      font-size: 1.125rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      font-size: 12px;
+      font-size: .75rem;
+      color: #626262;
+      font-weight: normal;
+      text-align: center; }
+    .myview-settings .modal-view.preferences .buttonsPan {
+      width: 162px;
+      width: 10.125rem;
+      margin: 0px auto; }
+    .myview-settings .modal-view.preferences .saveview {
+      border: 1px solid #f7941e;
+      color: #231f20;
       text-align: center;
-      line-height: 30px;
-      line-height: 1.875rem; }
-      @media (max-width: 480px) {
-        .myview-settings .modal-view h4, .myview-settings .modal-view .lightbox-modal__title, .myview-settings .modal-view .exhibit-title, .myview-settings .modal-view .article-exhibit__title, .myview-settings .modal-view
-        .article-exhibit--pull-left__title, .myview-settings .modal-view
-        .article-exhibit--pull-right__title, .myview-settings .modal-view
-        .article-inline-image__title, .myview-settings .modal-view
-        .article-inline-image--pull-left__title, .myview-settings .modal-view
-        .article-inline-image--pull-right__title {
-          font-size: 14px;
-          font-size: 0.875rem;
-          text-align: center;
-          line-height: 24px;
-          line-height: 1.5rem; } }
+      float: left;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
+      .myview-settings .modal-view.preferences .saveview:hover {
+        background: #f7941e; }
+    .myview-settings .modal-view.preferences .registrationBtn.validationChk {
+      border: 1px solid #f7941e;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      font-family: "Roboto";
+      font-weight: 700;
+      width: auto;
+      text-align: center;
+      display: inline-block;
+      line-height: 32px;
+      line-height: 2rem;
+      float: right;
+      background: #f7941e;
+      color: #ffffff;
+      padding: 0 32px;
+      padding: 0 2rem; }
+    .myview-settings .modal-view.preferences .cancel {
+      background: #f7941e;
+      color: #231f20;
+      text-align: center;
+      float: right;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
     .myview-settings .modal-view .modal-inner {
       display: inline-block;
       text-align: left;
@@ -4655,12 +4626,16 @@ header .header-account-access {
       right: 0.625rem;
       top: 10px;
       top: 0.625rem;
-      color: #f7941e;
+      color: #231f20;
       font-family: "Roboto";
       font-weight: bold;
-      font-size: 16px;
-      font-size: 1rem;
-      cursor: pointer; }
+      cursor: pointer;
+      text-transform: uppercase;
+      background: url(/dist/img/sprite-image.png) no-repeat right -72px top -592px;
+      font-size: 10px;
+      font-size: 0.625rem;
+      padding-right: 16px;
+      padding-right: 1rem; }
   .myview-settings .modal-overlay.in {
     background: #000;
     height: 100%;
