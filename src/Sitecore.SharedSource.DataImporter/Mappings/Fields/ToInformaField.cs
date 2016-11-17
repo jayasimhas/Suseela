@@ -462,6 +462,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             else if (url.Contains("scripnews.com"))
                 url = url.Replace("scripnews.com", "scripintelligence.com");
 
+            if (url.Contains(" "))
+            {
+                url = url.Replace(" ", "+");
+            }
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
