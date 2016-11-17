@@ -40,18 +40,6 @@
                 Html.RenderPartial("/Areas/Account/Views/Personalization/Publications.cshtml", Model.ChannelsViewModel);
             }
         </div>
-        <div class="alert-error register-not-selected js-form-error js-form-error-Required">
-            <svg class="alert__icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-            </svg>
-            <p class="page-account-contact__error">@Model.NotFollowedError</p>
-        </div>
-        <div class="alert-error register-error js-form-error js-form-error-Required">
-            <svg class="alert__icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-            </svg>
-            <p class="page-account-contact__error">@Model.PreferenceNotSavedError</p>
-        </div>
         <div class="saveoption">
             <span class="helplink">@Html.Raw(Model.HelpLinkDetail)</span>
             <div class="complete-settings">
@@ -65,7 +53,8 @@
                 }
             </div>
         </div>
-        <div class="modal-overlay"></div>
+
+        @*<div class="modal-overlay"></div>
         <div class="modal-view preferences">
             <p class="close-modal">X</p>
             <h4>@Model.SavePreferencesMessage</h4>
@@ -79,6 +68,23 @@
                     <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupSaveButtonText</a>
                 }
                 <span class="cancel cancel-modal">@Model.PopupCancelButtonText</span>
+            </div>
+        </div>*@
+        <div class="modal-overlay"></div>
+        <div class="modal-view preferences">
+            <p class="close-modal">@Model.PopupCancelButtonText</p>
+            <h3>@Model.SaveSettingsAlertHeaderText</h3>
+            <h4>@Model.SaveSettingsAlertMessageText</h4>
+            <div class="buttonsPan">
+                @if (Model.EnableSavePreferencesCheck)
+                {
+                    <a href="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupYesButtonText</a>
+                }
+                else
+                {
+                    <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupYesButtonText</a>
+                }
+                <span class="cancel cancel-modal">@Model.PopupNoButtonText</span>
             </div>
         </div>
     </div>
@@ -118,11 +124,16 @@
                                 <span class="saveview">@Model.SaveButtonText</span>
                                 <span class="gotoview"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                             </div>
-
                             <div class="modal-overlay"></div>
-                            <div class="modal-view">
-                                <p class="close-modal">X</p>
-                                <h4>@Model.SavePreferencesMessage</h4>
+                            <div class="modal-view preferences">
+                                <p class="close-modal">@Model.PopupCancelButtonText</p>
+                                <h3>@Model.SaveSettingsAlertHeaderText</h3>
+                                <h4>@Model.SaveSettingsAlertMessageText</h4>
+
+                                <div class="buttonsPan">
+                                    <span class="saveview validationChk">@Model.PopupYesButtonText</span>
+                                    <span class="cancel cancel-modal">@Model.PopupNoButtonText</span>
+                                </div>
                             </div>
                             <input type="hidden" value="0" id="validatePreference" />
 
@@ -144,3 +155,4 @@
                                         @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
                                     </div>
                                             }
+
