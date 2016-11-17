@@ -24,6 +24,11 @@
             VerticalRootContext = verticalRootContext;
             GlobalService = globalService;
         }
+
+        /// <summary>
+        /// Gets solr index name based on the current request context
+        /// </summary>
+        /// <returns></returns>
         public string GetIndexName()
         {
             if (SiteRootContext?.Item?.Search_Index_Name != null)
@@ -41,6 +46,11 @@
             return "sitecore_{0}_index";
         }
 
+        /// <summary>
+        /// Gets solr index name based on the current request context for the given publication id
+        /// </summary>
+        /// <param name="publicationGuid"></param>
+        /// <returns></returns>
         public string GetIndexName(Guid publicationGuid = default(Guid))
         {
             if (publicationGuid != default(Guid))

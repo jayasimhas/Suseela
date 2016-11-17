@@ -106,6 +106,12 @@
       <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
         <sites hint="list">
           <site>website</site>
+		      <site>InVivo</site>
+          <site>MedtechInsight</site>
+          <site>PinkSheet</site>
+          <site>RoseSheet</site>
+          <site>ScripIntelligence</site>
+          <site>Commodities</site> 
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
@@ -114,6 +120,12 @@
       <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
         <sites hint="list">
           <site>website</site>
+		      <site>InVivo</site>
+          <site>MedtechInsight</site>
+          <site>PinkSheet</site>
+          <site>RoseSheet</site>
+          <site>ScripIntelligence</site>
+          <site>Commodities</site> 
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />

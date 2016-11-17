@@ -1651,7 +1651,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             d.Add("foodnews_analysis_freight", "Freight");
             d.Add("foodnews_analysis_weather", "Weather");
 
-            d.Add("public_ledger_market_focus", "Market Fundamentals");
+            d.Add("public_ledger_market_focus", "Price");
 
 
             d.Add("public_ledger_analysis_energy", "Energy");

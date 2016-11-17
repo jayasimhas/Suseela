@@ -2211,7 +2211,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
 
                 //if you find one then store the id
                 if (!t.Any())
@@ -3688,9 +3688,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
-
+                if(transformValue.Contains("&"))
+                {
+                  transformValue =  transformValue.Replace("&", "and");
+                }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
 
                 //if you find one then store the id
                 if (!t.Any())
@@ -4088,7 +4091,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("foodnews_analysis_freight", "Freight");
             d.Add("foodnews_analysis_weather", "Weather");
 
-            d.Add("public_ledger_market_focus", "Market Fundamentals");
+            d.Add("public_ledger_market_focus", "Price");
 
 
             d.Add("public_ledger_analysis_energy", "Energy");
