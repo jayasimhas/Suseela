@@ -2298,7 +2298,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
             }
             _videoMiniPlayerModal.find('.modal-body .video-mini-player').html(video);
             _videoMiniPlayerModal.modal('show');
-            _videoMiniPlayBtnWrapper.hide();
+            // _videoMiniPlayBtnWrapper.hide();
         });
     };
     _videoMiniShowPlayIcon = function () {
