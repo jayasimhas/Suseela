@@ -4770,6 +4770,14 @@ header .header-account-access {
     line-height: 26px;
     line-height: 1.625rem; } }
 
+@media (max-width: 480px) {
+  .personalisationhome .article-preview {
+    position: inherit; }
+  .personalisationhome .article-summary {
+    height: 250px;
+    height: 15.625rem;
+    overflow: hidden; } }
+
 .personalisationhome .hidespin {
   display: none; }
 
@@ -5058,7 +5066,8 @@ header .header-account-access {
   @media (max-width: 480px) {
     .personalisationhome .topic-featured-article__image2 {
       margin-top: 20px;
-      margin-top: 1.25rem; } }
+      margin-top: 1.25rem;
+      width: 100%; } }
 
 .personalisationhome .googleAdd {
   margin-bottom: 80px;
@@ -5070,7 +5079,8 @@ header .header-account-access {
   height: 43.75rem; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small.preview2 {
-      padding: 0px;
+      padding: 0 15px;
+      background: #ececec;
       margin-bottom: 0px; } }
 
 .personalisationhome .mtop {
@@ -5156,7 +5166,8 @@ header .header-account-access {
   .personalisationhome .latest-news__articles .article-small-preview {
     width: 90%; }
   .personalisationhome .latest-news__articles .article-preview--small .article-preview__tags {
-    left: 0; }
+    left: 0;
+    position: inherit; }
   .personalisationhome .mtop {
     margin-top: 0px !important; }
   .personalisationhome .googleAdd img {
