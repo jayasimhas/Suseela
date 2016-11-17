@@ -42,13 +42,13 @@
 		text-align: right;
 	}
 	.two-thirds {
-		width: 60%;
+		
 	}
 	.one-third {
-		width: 30%;
+		width:180px;
 	}
 	.one-third img {
-		width: 100%;
+		max-width: 160px;
 		height: auto;
 	}
 
@@ -81,11 +81,12 @@
 	p,
 	.t-paragraph {
 		display: block;
-		font-family: Georgia, serif;
+		font-family: Georgia,"Times New Roman",Times,serif;
 		font-size: 14px;
 		line-height: 150%;
 		margin-top: 0;
 		padding-top: 0;
+        color:#58595b;
 	}
 
 	.standardPadding {
@@ -95,7 +96,9 @@
 
 	#topViewOnlineLink {
 		margin-top: 16px;
-		margin-bottom: 16px;
+		margin-bottom: 5px;
+        color:#58595b;
+        font-size:8pt;
 	}
 
 	#templateContainer {
@@ -103,11 +106,10 @@
 		-ms-text-size-adjust: 100%;
 		mso-table-lspace: 0pt;
 		mso-table-rspace: 0pt;
-		/*width: 600px;*/
+		width: 600px;
 		border: 1px solid #DDDDDD;
 		border-collapse: collapse !important;
 		margin-bottom: 32px;
-		max-width: 900px;
 	}
 
     .header__site-logo img {
@@ -126,7 +128,7 @@
 
 	.header__date {
 		font-size: 13px;
-		color: #888;
+		color: #444444;
 		font-weight: bold;
 	}
 
@@ -176,10 +178,12 @@
 
 	.caps-header {
 		text-transform: uppercase;
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: bold;
 		text-align: center;
 		margin-bottom: 8px;
+        color:#303030;
+        font-family:Helvetica,Arial,sans-serif;
 	}
 
 	.section-header {
@@ -202,7 +206,7 @@
 		margin-bottom: 8px;
 	}
 	.article-date {
-		color: #888;
+		color: #58595b;
 		font-size: 13px;
 		vertical-align: middle;
 	}
@@ -223,12 +227,13 @@
 	.featured__title {
 		margin: 0;
 		margin-bottom: 8px;
-		font-size: 22px;
+		font-size: 18px;
 		line-height: 28px;
 	}
 	.article-byline {
 		font-size: 13px;
 		font-weight: bold;
+        color:#58595b;
 	}
 
 	.featured__image {
@@ -308,8 +313,9 @@
 		}
 
 		.header__site-logo img {
-			width: 150px;
+			width: 100px;
 		}
+
 
 		.layout-padded-left,
 		.layout-padded-right {
@@ -323,6 +329,10 @@
 		}
 
         .one-third img {
+            display:none;
+        }
+
+        #topViewOnlineLink {
             display:none;
         }
 
