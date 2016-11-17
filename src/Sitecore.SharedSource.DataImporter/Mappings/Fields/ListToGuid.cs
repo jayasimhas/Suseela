@@ -98,17 +98,31 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (NewItemField == "Taxonomy")
             {
+                var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
-                //loop through children and look for anything that matches by name
-                string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+                foreach (var val in values)
+                {
+                    string upperValue = val.ToString();
 
-                //if you find one then store the id
-                if (!t.Any())
-                    return;
 
-                TaxonomyList.Add(t.First().ID.ToString());
+                    //loop through children and look for anything that matches by name
+                    string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
+                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
 
+                    //if you find one then store the id
+                    if (!t.Any())
+                        return;
+
+                    Field f = newItem.Fields[NewItemField];
+                    if (f == null)
+                        continue;
+
+                    if (NewItemField == "Taxonomy")
+                    {
+                        TaxonomyList.Add(t.First().ID.ToString());
+                    }
+
+                }
             }
             else if (NewItemField == "Authors")
             {
