@@ -32,6 +32,13 @@
                     return null;
                 }
 
+                var proferencesSession = UserSession.Get<IUserPreferences>(sessionKey);
+
+                if (proferencesSession.HasValue)
+                {
+                    return proferencesSession.Value;
+                }
+
                 IUserPreferences preferences = FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
 
                 Preferences = preferences;
