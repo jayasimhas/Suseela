@@ -6099,6 +6099,11 @@ input[type='text'].selectivity-multiple-input {
     height: 12px;
     width: 12px; }
 
+@media (max-width: 480px) {
+  .pop-out .pop-out__internal {
+    min-width: inherit;
+    width: 100%; } }
+
 .sortable-table {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
