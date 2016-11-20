@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Article.Search;
 using Jabberwocky.Glass.Autofac.Util;
+using Informa.Library.Utilities.Extensions;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Autofac;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Web.Controllers;
 
 namespace Informa.Web.sitecore.admin.Tools
 {
@@ -36,6 +38,7 @@ namespace Informa.Web.sitecore.admin.Tools
 				parameters.DestinationFolderID = rdMoveToFolderID.Checked ? txtToFolderID.Text.Trim() : string.Empty;
 				//parameters.MoveChildrenWithoutParentFolder = rdMoveToFolderID.Checked ? chkWithoutParentFolder.Checked : false;
 
+				parameters.GenerateNewArticleNumbers = chkGenerateNumber.Checked;
 				parameters.ClearTaxonomy = chkClearTaxonomy.Checked;
 				parameters.NewTaxonomyIDsToAdd = chkNewTaxonomyFields.Checked ? txtNewTaxonomyFields.Text.Trim() : string.Empty;
 
@@ -88,6 +91,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 		private bool IsValidInput()
 		{
+			string logText = "- Validating </br>";
 			lblError.ForeColor = System.Drawing.Color.Red;
 			var masterDb = Sitecore.Data.Database.GetDatabase("master");
 			if (txtIDs.Text.Trim() == string.Empty)
@@ -97,6 +101,7 @@ namespace Informa.Web.sitecore.admin.Tools
 				return false;
 			}
 
+			logText += "- Item ID(s): </br>";
 			if (rdIsItemIDs.Checked)
 			{
 				string idStatus = string.Empty;
@@ -112,6 +117,8 @@ namespace Informa.Web.sitecore.admin.Tools
 							idStatus = "Item ID " + itemID + ": does not exist <br/>";
 						else if (temp.TemplateID.Guid.Equals(new Guid(Constants.ArticlesTemplateID)) == false)
 							idStatus = "Item ID " + itemID + ": is not an article <br/>";
+
+						logText += "- Item: " + temp.Paths.FullPath + " - " + temp.Fields["Article Number"].Value + "|" + temp.ID + " </br>";
 					}
 				}
 
@@ -144,6 +151,11 @@ namespace Informa.Web.sitecore.admin.Tools
 					lblError.Text = idStatus;
 					return false;
 				}
+
+				foreach (var temp in articles)
+				{
+					logText += "- Item: " + temp._Path + " - " + temp.Article_Number + "|" + temp._Id + " </br>";
+				}
 			}
 
 			if (rdPreserveDateFoldersHier.Checked && txtDestinationArticlesFolder.Text.Trim() == string.Empty)
@@ -153,19 +165,22 @@ namespace Informa.Web.sitecore.admin.Tools
 				return false;
 			}
 
-			if (rdPreserveDateFoldersHier.Checked && masterDb.GetItem(txtDestinationArticlesFolder.Text) == null)
+			var tempF = masterDb.GetItem(txtDestinationArticlesFolder.Text);
+			if (rdPreserveDateFoldersHier.Checked && tempF == null)
 			{
 				lblError.Text = "Destintation main Articles folder specified does not exist";
 				txtDestinationArticlesFolder.Focus();
 				return false;
 			}
 
-			if (rdPreserveDateFoldersHier.Checked && !masterDb.GetItem(txtDestinationArticlesFolder.Text).TemplateID.Guid.Equals(new Guid(Constants.MainArticlesFolderTemplateID)))
+			if (rdPreserveDateFoldersHier.Checked && !tempF.TemplateID.Guid.Equals(new Guid(Constants.MainArticlesFolderTemplateID)))
 			{
 				lblError.Text = "Destintation Main Articles folder specified is not a main Articles folder";
 				txtDestinationArticlesFolder.Focus();
 				return false;
 			}
+			if (rdPreserveDateFoldersHier.Checked)
+				logText += "- Destination Folder: " + tempF.Paths.FullPath + " - " + tempF.ID + "</br>";
 
 			if (rdMoveToFolderID.Checked && txtToFolderID.Text.Trim() == string.Empty)
 			{
@@ -174,19 +189,23 @@ namespace Informa.Web.sitecore.admin.Tools
 				return false;
 			}
 
-			if (rdMoveToFolderID.Checked && masterDb.GetItem(txtToFolderID.Text) == null)
+			tempF = masterDb.GetItem(txtToFolderID.Text);
+			if (rdMoveToFolderID.Checked && tempF == null)
 			{
 				lblError.Text = "Destintation folder specified does not exist";
 				txtToFolderID.Focus();
 				return false;
 			}
 
-			if (rdMoveToFolderID.Checked && !masterDb.GetItem(txtToFolderID.Text).TemplateID.Guid.Equals(new Guid(Constants.MainArticlesFolderTemplateID)) && !masterDb.GetItem(txtToFolderID.Text).TemplateID.Guid.Equals(new Guid(Constants.SubArticlesFolderTemplateID)))
+			if (rdMoveToFolderID.Checked && !tempF.TemplateID.Guid.Equals(new Guid(Constants.MainArticlesFolderTemplateID)) && !tempF.TemplateID.Guid.Equals(new Guid(Constants.SubArticlesFolderTemplateID)))
 			{
 				lblError.Text = "Destintation folder specified is not a main Articles folder or a sub (by date) article folder";
 				txtToFolderID.Focus();
 				return false;
 			}
+
+			if (rdMoveToFolderID.Checked)
+				logText += "- Destination Folder: " + tempF.Paths.FullPath + " - " + tempF.ID + "</br>";
 
 			if (chkNewTaxonomyFields.Checked && txtNewTaxonomyFields.Text.Trim() == string.Empty)
 			{
@@ -199,15 +218,19 @@ namespace Informa.Web.sitecore.admin.Tools
 			{
 				foreach (var taxID in txtNewTaxonomyFields.Text.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
 				{
-					if (masterDb.GetItem(taxID)?.TemplateID.Guid.Equals(new Guid(Constants.TaxonomyTemplateID)) == false)
+					var tempT = masterDb.GetItem(taxID);
+					if (tempT == null || tempT?.TemplateID.Guid.Equals(new Guid(Constants.TaxonomyTemplateID)) == false)
 					{
 						lblError.Text = "Taxonomy ID (" + taxID + ") specified is not a Taxonomy Item";
 						txtNewTaxonomyFields.Focus();
 						return false;
 					}
+					logText += "- Taxonomy to be added: " + tempT.ID + " (" + tempT.Name + ")" + "</br>";
 				}
 			}
 
+			lblError.ForeColor = System.Drawing.Color.Green;
+			lblError.Text = logText;
 			return true;
 		}
 
@@ -215,8 +238,8 @@ namespace Informa.Web.sitecore.admin.Tools
 		{
 			if (IsValidInput())
 			{
-				lblError.Text = "Validated Successfully";
-				lblError.ForeColor = System.Drawing.Color.Green;
+				//lblError.Text = "Validated Successfully";
+				//lblError.ForeColor = System.Drawing.Color.Green;
 			}
 		}
 	}
@@ -227,6 +250,7 @@ namespace Informa.Web.sitecore.admin.Tools
 		public static string MainArticlesFolderTemplateID = "{24397E3A-81BF-4913-9B45-D2D97BDC93D6}";
 		public static string SubArticlesFolderTemplateID = "{D0DFAF98-BB2A-4EB3-A931-13C335201D25}";
 		public static string TaxonomyTemplateID = "{6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}";
+		public static string SiteRootTempalteID = Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.ISite_RootConstants.TemplateIdString;
 	}
 
 	public enum SourceType
@@ -258,6 +282,7 @@ namespace Informa.Web.sitecore.admin.Tools
 		public string DestinationFolderID { get; set; }
 		public bool MoveChildrenWithoutParentFolder { get; set; }
 
+		public bool GenerateNewArticleNumbers { get; set; }
 		public bool ClearTaxonomy { get; set; }
 		public string NewTaxonomyIDsToAdd { get; set; }
 		public bool PublishDestinationItems { get; set; }
@@ -280,17 +305,50 @@ namespace Informa.Web.sitecore.admin.Tools
 				var masterDb = Sitecore.Data.Database.GetDatabase("master");
 				List<Item> items = null;
 
-				bool result = false;
-				if (parameters.SourceType == SourceType.ArticleIDs)
+				bool result = true;
+
+				if (parameters.GenerateNewArticleNumbers)
 				{
-					result = MoveByArticleIDs(parameters, out items);
+					result = prepareLatestArticleNumberGeneratedInTargetPublication(parameters);
 					resultStatus = _resultStatus;
 				}
 
 				if (result)
 				{
+					if (parameters.SourceType == SourceType.ArticleIDs)
+					{
+						result = MoveByArticleIDs(parameters, out items);
+						resultStatus = _resultStatus;
+					}
+				}
+
+				if (result)
+				{
+					if (parameters.GenerateNewArticleNumbers)
+					{
+						log("-----------------------------------------------------------------------------");
+						foreach (var item in items)
+						{
+							try
+							{
+								var newNumber = getNewArticleNumber();
+								if (newNumber == string.Empty)
+									throw new Exception("New article number is empty");
+								log("Generating new article Numbers for item " + item.Fields["Article Number"].Value + "|" + item.ID + " (" + item.Name + ")  ---->   " + newNumber);
+								item.Editing.BeginEdit();
+								item.Fields["Article Number"].Value = newNumber;
+								item.Editing.EndEdit();
+							}
+							catch (Exception ex)
+							{
+								log("Could not generate new article number for item " + item.ID + " (" + item.Name + "). " + ex.ToString(), true);
+							}
+						}
+					}
+
 					if (parameters.ClearTaxonomy && items != null && items.Any())
 					{
+						log("-----------------------------------------------------------------------------");
 						foreach (var item in items)
 						{
 							try
@@ -309,6 +367,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 					if (parameters.NewTaxonomyIDsToAdd != string.Empty && items != null && items.Any())
 					{
+						log("-----------------------------------------------------------------------------");
 						foreach (var item in items)
 						{
 							try
@@ -324,6 +383,24 @@ namespace Informa.Web.sitecore.admin.Tools
 							catch (Exception ex)
 							{
 								log("Could not set Taxonomy to item " + item.ID + " (" + item.Name + ")" + ex.ToString(), true);
+							}
+						}
+					}
+
+					if (parameters.PublishDestinationItems)
+					{
+						log("-----------------------------------------------------------------------------");
+						foreach (var item in items)
+						{
+							try
+							{
+								log("Publishing item " + item.ID + " (" + item.Name + ")");
+								PublishItem(item, false);
+							}
+							catch (Exception ex)
+							{
+								log("Publishing item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
+								continue;
 							}
 						}
 					}
@@ -343,6 +420,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 		public static bool MoveByArticleIDs(ArticleMovingParameters parameters, out List<Item> items)
 		{
+			log("-----------------------------------------------------------------------------");
 			log("Moving By IDs started");
 			var masterDb = Sitecore.Data.Database.GetDatabase("master");
 
@@ -417,6 +495,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 		public static bool MoveArticlesAndPreserveHierarchy(List<Item> sourceItems, ArticleMovingParameters parameters)
 		{
+			log("-----------------------------------------------------------------------------");
 			foreach (var item in sourceItems)
 			{
 				Item folder = null;
@@ -444,19 +523,19 @@ namespace Informa.Web.sitecore.admin.Tools
 					continue;
 				}
 
-				if (parameters.PublishDestinationItems)
-				{
-					try
-					{
-						log("Publishing item " + item.ID + " (" + item.Name + ")");
-						PublishItem(item, false);
-					}
-					catch (Exception ex)
-					{
-						log("Publishing item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
-						continue;
-					}
-				}
+				//if (parameters.PublishDestinationItems)
+				//{
+				//	try
+				//	{
+				//		log("Publishing item " + item.ID + " (" + item.Name + ")");
+				//		PublishItem(item, false);
+				//	}
+				//	catch (Exception ex)
+				//	{
+				//		log("Publishing item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
+				//		continue;
+				//	}
+				//}
 			}
 
 			return true;
@@ -464,6 +543,7 @@ namespace Informa.Web.sitecore.admin.Tools
 
 		public static bool MoveArticlesToSpecificFolderID(List<Item> sourceItems, ArticleMovingParameters parameters)
 		{
+			log("-----------------------------------------------------------------------------");
 			var masterDb = Sitecore.Data.Database.GetDatabase("master");
 
 			var folderID = parameters.DestinationFolderID;
@@ -493,18 +573,18 @@ namespace Informa.Web.sitecore.admin.Tools
 					log("Moving item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
 				}
 
-				if (parameters.PublishDestinationItems)
-				{
-					try
-					{
-						log("Publishing item " + item.ID + " (" + item.Name + ")");
-						PublishItem(item, false);
-					}
-					catch (Exception ex)
-					{
-						log("Publishing item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
-					}
-				}
+				//if (parameters.PublishDestinationItems)
+				//{
+				//	try
+				//	{
+				//		log("Publishing item " + item.ID + " (" + item.Name + ")");
+				//		PublishItem(item, false);
+				//	}
+				//	catch (Exception ex)
+				//	{
+				//		log("Publishing item " + item.ID + " (" + item.Name + ") failed. " + ex.Message, true);
+				//	}
+				//}
 			}
 
 			return true;
@@ -600,6 +680,68 @@ namespace Informa.Web.sitecore.admin.Tools
 			}
 
 			return latestFolderItemFound;
+		}
+
+		private static long latestArticleNumber;
+		private static string publicationPrefix;
+		private static void prepareLatestArticleNumber(Guid publicationGuid)
+		{
+			long newNumber = 0;
+			publicationPrefix = SitecoreUtil.GetPublicationPrefix(publicationGuid);
+			log("Destination Site Root Prefix: " + publicationPrefix);
+			using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			{
+				using (new DatabaseSwitcher(Sitecore.Data.Database.GetDatabase("master")))
+				{
+					IArticleSearch articleSearch = scope.Resolve<IArticleSearch>();
+					newNumber = articleSearch.GetNextArticleNumber(publicationGuid);
+				}
+			}
+
+			log("New Article Number in destination publication: " + newNumber);
+			latestArticleNumber = newNumber - 1;
+		}
+
+		private static string getNewArticleNumber()
+		{
+			latestArticleNumber++;
+			var checkArticlesExist = SearchArticlesByArticleNumbers(new List<string> { publicationPrefix + latestArticleNumber.ToString(Informa.Library.Utilities.References.Constants.ArticleNumberLength) });
+
+			while (checkArticlesExist != null && checkArticlesExist.Any())
+			{
+				latestArticleNumber++;
+				checkArticlesExist = SearchArticlesByArticleNumbers(new List<string> { publicationPrefix + latestArticleNumber.ToString(Informa.Library.Utilities.References.Constants.ArticleNumberLength) });
+			}
+
+			return publicationPrefix + latestArticleNumber.ToString(Informa.Library.Utilities.References.Constants.ArticleNumberLength);
+		}
+
+		private static bool prepareLatestArticleNumberGeneratedInTargetPublication(ArticleMovingParameters parameters)
+		{
+			var masterDb = Sitecore.Data.Database.GetDatabase("master");
+			var folderInTargetPublication = masterDb.GetItem(new ID(new Guid(parameters.DestinationType == DestinationType.PreserveFolderHierarchy ? parameters.DestinationMainArticlesFolder : parameters.DestinationFolderID)));
+			if (folderInTargetPublication == null)
+			{
+				log("Could not get folderInTargetPublication for generating new Article Number", true);
+				return false;
+			}
+
+			Item tempItemInTargetPublication = folderInTargetPublication;
+			while (tempItemInTargetPublication != null && tempItemInTargetPublication.TemplateID.Guid.Equals(new Guid(Constants.SiteRootTempalteID)) == false)
+			{
+				tempItemInTargetPublication = tempItemInTargetPublication.Parent;
+			}
+
+			if (tempItemInTargetPublication == null)
+			{
+				log("Could not find publication root item for generating new Article Number", true);
+				return false;
+			}
+
+			log("Site Root found. ID: " + tempItemInTargetPublication.ID.Guid);
+			prepareLatestArticleNumber(tempItemInTargetPublication.ID.Guid);
+
+			return true;
 		}
 
 		public static List<IArticle> SearchArticlesByArticleNumbers(List<string> articleNumbers)

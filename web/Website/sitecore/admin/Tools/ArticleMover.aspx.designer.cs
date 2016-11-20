@@ -76,6 +76,15 @@ namespace Informa.Web.sitecore.admin.Tools {
         protected global::System.Web.UI.WebControls.TextBox txtToFolderID;
         
         /// <summary>
+        /// chkGenerateNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkGenerateNumber;
+        
+        /// <summary>
         /// chkClearTaxonomy control.
         /// </summary>
         /// <remarks>
