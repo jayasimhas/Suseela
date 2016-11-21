@@ -462,10 +462,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             else if (url.Contains("scripnews.com"))
                 url = url.Replace("scripnews.com", "scripintelligence.com");
 
-            if (url.Contains(" "))
-            {
-                url = url.Replace(" ", "+");
-            }
+            //if (url.Contains(" "))
+            //{
+            //    url = url.Replace(" ", "+");
+            //}
+
+            url = new Regex("/[^/]*$").Replace(url, "/" + UpperCaseUrlEncode(url.Split('/').Last()));
+           
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
@@ -503,6 +506,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, NewItemField, url);
 
             return m;
+        }
+
+        public static string UpperCaseUrlEncode(string s)
+        {
+            char[] temp = System.Web.HttpUtility.UrlEncode(s).ToCharArray();
+            for (int i = 0; i < temp.Length - 2; i++)
+            {
+                if (temp[i] == '%')
+                {
+                    temp[i + 1] = char.ToUpper(temp[i + 1]);
+                    temp[i + 2] = char.ToUpper(temp[i + 2]);
+                }
+            }
+            return new string(temp);
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map)
