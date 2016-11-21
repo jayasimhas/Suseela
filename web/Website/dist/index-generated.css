@@ -4578,21 +4578,22 @@ header .header-account-access {
         background: #f7941e; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-size: 0.75em;
-      font-family: "Roboto";
-      font-weight: 700;
-      width: auto;
+      color: #231f20;
       text-align: center;
-      display: inline-block;
-      line-height: 32px;
-      line-height: 2rem;
-      float: right;
-      background: #f7941e;
-      color: #ffffff;
-      padding: 0 32px;
-      padding: 0 2rem; }
+      float: left;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
+      .myview-settings .modal-view.preferences .registrationBtn.validationChk:hover {
+        background: #f7941e; }
     .myview-settings .modal-view.preferences .cancel {
       background: #f7941e;
       color: #231f20;
@@ -6373,6 +6374,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         border-color: #f7941e;
         background-color: #f7941e;
         color: #ffffff; }
+    .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
+      cursor: text; }
+      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
+        border-color: #f7941e;
+        background-color: inherit !important;
+        color: #231f20 !important;
+        text-decoration: none; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;

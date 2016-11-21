@@ -137,20 +137,54 @@
         /// My view page URL.
         /// </value>
         public string MyViewPageUrl => SiteRootContext?.Item?.MyView_Page?._Url;
-        /// <summary>
-        /// Gets the popup save button text.
-        /// </summary>
-        /// <value>
-        /// The popup save button text.
-        /// </value>
-        public string PopupSaveButtonText => TextTranslator.Translate("MyViewSettings.Popup.Save.Button.Text");
+
         /// <summary>
         /// Gets the popup cancel button text.
         /// </summary>
         /// <value>
         /// The popup cancel button text.
         /// </value>
-        public string PopupCancelButtonText => TextTranslator.Translate("MyViewSettings.Popup.Cancel.Button.Text");
+        public string PopupCancelButtonText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupCancelButtonText");
+
+        /// <summary>
+        /// Gets the popup yes button text.
+        /// </summary>
+        /// <value>
+        /// The popup yes button text.
+        /// </value>
+        public string PopupYesButtonText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupYesButtonText");
+
+        /// <summary>
+        /// Gets the popup no button text.
+        /// </summary>
+        /// <value>
+        /// The popup no button text.
+        /// </value>
+        public string PopupNoButtonText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupNoButtonText");
+
+        /// <summary>
+        /// Gets the save settings alert header text.
+        /// </summary>
+        /// <value>
+        /// The save settings alert header text.
+        /// </value>
+        public string SaveSettingsAlertHeaderText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupHeaderText");
+
+        /// <summary>
+        /// Gets the save settings alert message text.
+        /// </summary>
+        /// <value>
+        /// The save settings alert message text.
+        /// </value>
+        public string SaveSettingsAlertMessageText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupMessage");
+
+        /// <summary>
+        /// Gets the save settings alert message text in registration flow.
+        /// </summary>
+        /// <value>
+        /// The save settings alert message text in registration flow.
+        /// </value>
+        public string SaveSettingsAlertMessageTextInRegistrationFlow => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupMessageInRegistrationFlow");
     }
 }
 

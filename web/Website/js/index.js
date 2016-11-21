@@ -212,19 +212,24 @@ $(document).ready(function(){
 	
 
 	//AM Charts
-	if($('#amchartData') && $('#amchartData').length){
-	var amchartVal = JSON.parse($('#amchartData').val()),
-	createNewObj = {};
-	for(var prop in amchartVal){
-		if(prop != 'dataProvider'){
-			createNewObj[prop] = amchartVal[prop];
-		}else{
-			createNewObj[prop] = chartDataVal; 
-		}
-	}
+    if($('#amchartData') && $('#amchartData').length){
+    var amchartVal = JSON.parse($('#amchartData').val()),
+    createNewObj = {}, chart;
 
-	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
-	}
+    if(typeof amchartVal.dataProvider !== 'object'){
+        for(var prop in amchartVal){
+            if(prop != 'dataProvider'){
+                createNewObj[prop] = amchartVal[prop];
+            }else{
+                createNewObj[prop] = chartDataVal; 
+            }
+        }
+            chart = AmCharts.makeChart( "chartdiv", createNewObj );
+    }
+    else{
+            chart = AmCharts.makeChart( "chartdiv", amchartVal );
+       }
+    }
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
@@ -1089,13 +1094,22 @@ $(document).ready(function(){
     };
 
     $('.js-register-final').on('click',function(e){
-
+        var pub_newsletter = '';
+        if (window.matchMedia("(max-width: 600px)").matches) {
+            for(var i=0; i<$('.mobile .newsletter_checkbox.wcs-c-on').length; i++){
+                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            }
+        } else {
+            for(var i=0; i<$('.site_div .newsletter_checkbox.wcs-c-on').length; i++){
+                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            }
+        } 
         var eventDetails = {
             event_name:"newsletter-signup",
             page_name:"Newsletter",
             ga_eventCategory:"Newsletter",
             ga_eventLabel:analytics_data["publication"],
-            publication_newsletter:analytics_data["publication"],
+            publication_newsletter:pub_newsletter,
             user_news_email:analytics_data["user_email"]
         };
         var chkDetails = {};
