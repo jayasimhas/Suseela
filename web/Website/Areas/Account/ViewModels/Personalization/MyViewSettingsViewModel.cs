@@ -177,6 +177,14 @@
         /// The save settings alert message text.
         /// </value>
         public string SaveSettingsAlertMessageText => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupMessage");
+
+        /// <summary>
+        /// Gets the save settings alert message text in registration flow.
+        /// </summary>
+        /// <value>
+        /// The save settings alert message text in registration flow.
+        /// </value>
+        public string SaveSettingsAlertMessageTextInRegistrationFlow => TextTranslator.Translate("MyViewSettings.SaveSettingsAlertPopupMessageInRegistrationFlow");
     }
 }
 

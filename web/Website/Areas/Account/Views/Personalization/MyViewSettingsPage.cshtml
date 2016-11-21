@@ -53,28 +53,11 @@
                 }
             </div>
         </div>
-
-        @*<div class="modal-overlay"></div>
-        <div class="modal-view preferences">
-            <p class="close-modal">X</p>
-            <h4>@Model.SavePreferencesMessage</h4>
-            <div class="saveviewModal">
-                @if (Model.EnableSavePreferencesCheck)
-                {
-                    <a href="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupSaveButtonText</a>
-                }
-                else
-                {
-                    <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupSaveButtonText</a>
-                }
-                <span class="cancel cancel-modal">@Model.PopupCancelButtonText</span>
-            </div>
-        </div>*@
         <div class="modal-overlay"></div>
         <div class="modal-view preferences">
             <p class="close-modal">@Model.PopupCancelButtonText</p>
             <h3>@Model.SaveSettingsAlertHeaderText</h3>
-            <h4>@Model.SaveSettingsAlertMessageText</h4>
+            <h4>@Model.SaveSettingsAlertMessageTextInRegistrationFlow</h4>
             <div class="buttonsPan">
                 @if (Model.EnableSavePreferencesCheck)
                 {
