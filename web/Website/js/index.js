@@ -212,19 +212,24 @@ $(document).ready(function(){
 	
 
 	//AM Charts
-	if($('#amchartData') && $('#amchartData').length){
-	var amchartVal = JSON.parse($('#amchartData').val()),
-	createNewObj = {};
-	for(var prop in amchartVal){
-		if(prop != 'dataProvider'){
-			createNewObj[prop] = amchartVal[prop];
-		}else{
-			createNewObj[prop] = chartDataVal; 
-		}
-	}
+    if($('#amchartData') && $('#amchartData').length){
+    var amchartVal = JSON.parse($('#amchartData').val()),
+    createNewObj = {}, chart;
 
-	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
-	}
+    if(typeof amchartVal.dataProvider !== 'object'){
+        for(var prop in amchartVal){
+            if(prop != 'dataProvider'){
+                createNewObj[prop] = amchartVal[prop];
+            }else{
+                createNewObj[prop] = chartDataVal; 
+            }
+        }
+            chart = AmCharts.makeChart( "chartdiv", createNewObj );
+    }
+    else{
+            chart = AmCharts.makeChart( "chartdiv", amchartVal );
+       }
+    }
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
