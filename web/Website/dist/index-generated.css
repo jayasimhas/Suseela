@@ -6373,6 +6373,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         border-color: #f7941e;
         background-color: #f7941e;
         color: #ffffff; }
+    .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
+      cursor: text; }
+      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
+        border-color: #f7941e;
+        background-color: inherit !important;
+        color: #231f20 !important;
+        text-decoration: none; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;

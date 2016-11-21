@@ -432,7 +432,7 @@ $(function(){
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
 	    loadLayoutData = '',
-	    getLiIdx;
+	    getLiIdx, getArticleIdx;
 	if (typeof loadPreferanceId !== "undefined") {
 		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount,
 		getArticalIdx = 0, hdnsubmitArtId = $('#hdnsubmitArticleId');
@@ -449,15 +449,14 @@ $(function(){
 		if(getArticalIdx > loadDynData){
 			loadDynData = getArticalIdx;
 		}
-		getLiIdx = loadPreferanceId.DefaultSectionLoadCount;
+		getLiIdx = loadDynData;
+		getArticleIdx = loadDynData;
 		for(var i=0; i<loadDynData; i++){
 			var setId = loadPreferanceId["Sections"];
 			if (setId.length) {
 				(function (idx) {
 					if (idx < loadDynData) {
 						$.ajax({
-							//url: '/api/articlesearch?pId=980D26EA-7B85-482D-8D8C-E7F43D6955B2&pno=1&psize=9',
-							//url: '/api/articlesearch?pId='+ setId[idx]["TaxonomyIds"] + '&pno=1&psize=9',
 							url: '/api/articlesearch',
 							data: JSON.stringify({'TaxonomyIds': setId[idx]["TaxonomyIds"], 'PageNo': 1, 'PageSize': 9 }),
 							dataType: 'json',
@@ -519,7 +518,6 @@ $(function(){
 		sendtaxonomyIdsArr  = $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-taxonomyIds').split(',');
 
 		$.ajax({
-			//url: '/loaddata.json?pId='+ eachstoryId + '&pno='+pageNum+'&psize='+pageSize,
 			url: $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-loadurl'),
 			dataType: 'json',
 			type: 'POST',
@@ -546,9 +544,7 @@ $(function(){
 		});
 	});
 	
-	var layout1Flag = true,
-	    indx = 0,
-	    eachstoryLength = typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
+	var eachstoryLength = typeof loadPreferanceId !== 'undefined' && loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId.DefaultSectionLoadCount : 0;
 	$(window).scroll(function(){
 		var eachstoryMpan = $('.personalisationPan .eachstoryMpan'),
 		    eachstoryMpanLast = eachstoryMpan.last(),
@@ -561,11 +557,11 @@ $(function(){
 			var getscrollData;
 			
 			if(typeof loadPreferanceId !== "undefined"){
-				if(eachstoryLength < loadPreferanceId["Sections"].length){
-					eachstoryLength++;
-					getLiIdx = eachstoryLength;
-					loadsection = loadPreferanceId.DefaultSectionLoadCount + indx++;
+				if(getArticleIdx < loadPreferanceId["Sections"].length){
+					getLiIdx = getArticleIdx;
+					loadsection = getArticleIdx;
 					texonomyId = loadPreferanceId["Sections"][loadsection]["TaxonomyIds"];
+					getArticleIdx++;
 				}
 				else{
 					return;
@@ -588,15 +584,13 @@ $(function(){
 				},
 				success: function(data){
 					if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
-						if($('.eachstoryMpan', '.personalisationPan').length % 2 == 0 && layout1Flag){
-							layout1Flag = false; 
+						if($('.eachstoryMpan', '.personalisationPan').length % 2 == 0){
 							getscrollData = loadLayoutOneData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							window.findTooltips();
 						}
-						else{
-							layout1Flag = true;
+						else{ 
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
@@ -632,8 +626,10 @@ $(function(){
 			}
 			else {
 				if (typeof loadPreferanceId !== "undefined") {
-					for (var i = getLiIdx; i <= liIdx+1; i++) {
+					getLiIdx = getArticleIdx;
+					for (var i = getLiIdx; i <= liIdx; i++) {
 						var setId = loadPreferanceId["Sections"];
+						getArticleIdx++;
 						(function (idx) {
 							$.ajax({
 								url: '/api/articlesearch',
@@ -648,7 +644,7 @@ $(function(){
 								},
 								success: function success(data) {
 									if(data.articles && typeof data.articles === "object" && data.articles.length >= 9){
-										if (idx % 2 == 0) {
+										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
