@@ -102,14 +102,12 @@ function getParameterByName(name, url) {
 }
 $(document).ready(function() {
 
-
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
         $("table").each(function(){
             $(this).attr("style","display:block");
         });
     }
-
 
 	// Anti Forgery Token
 	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
@@ -997,7 +995,24 @@ window.findTooltips = function() {
 			tooltip.hidePopup();
 		});
 	});
+
+
 };
+
+    //////The following style updates are to fix quick-box and quote styling for migrated issues (IIS-366)
+$('.sidebox .quickfactstitle').parent().removeClass('sidebox').addClass('quick-facts');
+$('.quick-facts .quickfactstitle').removeClass('quickfactstitle').addClass('quick-facts__header');
+$('.quick-facts .quickfactstext').removeClass('quickfactstext').addClass('quick-facts__text');
+$('.quick-facts .quickfactsbulleted').removeClass('quickfactsbulleted').addClass('quick-facts__list--ul');
+$('.sidebox blockquote').parent().removeClass('sidebox').addClass('quote');
+
+$('.quote blockquote').each(function () {
+    $(this).replaceWith("<span>" + $(this).html() + "</span>");
+    // this function is executed for all 'code' elements, and
+    // 'this' refers to one element from the set of all 'code'
+    // elements each time it is called.
+});
+    //////////////////////////////////////////////////////
 
 window.findTooltips();
 
