@@ -248,3 +248,10 @@ input[type='text'].selectivity-multiple-input {
 		width: 12px;
 	}
 }
+
+@include breakpoint('small') {
+    .pop-out .pop-out__internal{
+        min-width: inherit;
+        width: 100%;
+    }
+} 
