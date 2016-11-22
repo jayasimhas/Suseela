@@ -161,13 +161,13 @@
                                     <div class="smfollowingBtn">
                                         @if (!Model.isFromRegistration)
                                         {
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.FollowAllButtonText</span>
-                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.UnfollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         }
                                         else
                                         {
-                                            <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.FollowAllButtonText</span>
-                                            <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow","page_name":"Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.UnfollowAllButtonText</span>
+                                            <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                            <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         }
                                     </div>
                                 </th>
@@ -252,13 +252,13 @@
                                     <div>
                                     @if (!Model.isFromRegistration)
                                     {
-                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.UnfollowAllButtonText</span>
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@channel.ChannelName"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
                                     }
                                     else
                                     {
-                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"publication_unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.UnfollowAllButtonText</span>
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"publication_follow","ga_eventAction":"Follow","ga_eventLabel":"@channel.ChannelName","follow_publication":"@channel.ChannelName"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
                                     }
                                     </div>
                                 </th>
@@ -290,22 +290,22 @@
                                     {
                                         if (topic.IsFollowing)
                                         {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic_unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_topic" :"@topic.TopicName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic_unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_publication":"@Model.publicationname, "follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                         }
                                         else
                                         {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"My view settings","ga_eventCategory":"Topic follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName","follow_topic" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"My view settings","ga_eventCategory":"Topic Follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                         }
                                     }
                                     else
                                     {
                                         if (topic.IsFollowing)
                                         {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "channel_unfollow", "page_name": "Registration","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@topic.TopicName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "channel_unfollow", "page_name": "Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                         }
                                         else
                                         {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"Registration","ga_eventCategory":"Topic follow","ga_eventAction":"@Model.publicationname","ga_eventLabel" :"@topic.TopicName","follow_topic" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel" :"@channel.ChannelName", "follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                         }
                                     }
                                 </td>
