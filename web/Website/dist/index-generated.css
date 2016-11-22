@@ -5117,7 +5117,8 @@ header .header-account-access {
     display: block !important; }
   .personalisationhome .article-preview--small {
     border: none;
-    border-top: 2px solid #d1d3d4; }
+    border-top: 2px solid #d1d3d4;
+    position: relative; }
     .personalisationhome .article-preview--small.mobview {
       padding: 16px 0 0;
       padding: 1rem 0 0;
@@ -5168,7 +5169,7 @@ header .header-account-access {
     width: 90%; }
   .personalisationhome .latest-news__articles .article-preview--small .article-preview__tags {
     left: 0;
-    position: inherit; }
+    position: absolute; }
   .personalisationhome .mtop {
     margin-top: 0px !important; }
   .personalisationhome .googleAdd img {

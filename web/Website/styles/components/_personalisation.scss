@@ -333,6 +333,7 @@
 		.article-preview--small{
 			border: none;
 		    border-top: 2px solid #d1d3d4;
+		    position: relative;
 			&.mobview{
 				padding: 1rem 0 0;
 				margin: 0 0.9rem;
@@ -394,7 +395,7 @@
 		}
 		.latest-news__articles .article-preview--small .article-preview__tags {
 			left: 0;
-			position: inherit;
+			position: absolute;
 		}
 		.mtop{
 			margin-top: 0px !important;			 
