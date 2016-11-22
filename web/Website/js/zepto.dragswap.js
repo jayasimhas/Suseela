@@ -4,7 +4,8 @@
  * Repository: https://github.com/james2doyle/zepto-dragswap
  * Licensed under the MIT license
  */
- import { analyticsEvent } from './controllers/analytics-controller';  
+import { analyticsEvent } from './controllers/analytics-controller'; 
+  
 ; (function ($) {
     $.fn.dragswap = function (options) {
         var dragSrcEl;

@@ -44,6 +44,9 @@
 						color: #231f20 !important;
 						text-decoration: none;
 				}
+				&:focus{
+					text-decoration: none !important;
+				}
 			}
 		} 
 

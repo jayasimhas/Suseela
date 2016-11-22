@@ -6381,6 +6381,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         background-color: inherit !important;
         color: #231f20 !important;
         text-decoration: none; }
+      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:focus {
+        text-decoration: none !important; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
