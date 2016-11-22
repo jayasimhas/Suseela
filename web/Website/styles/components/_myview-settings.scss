@@ -646,11 +646,22 @@
 				}
 			}
 			.registrationBtn.validationChk{
-				@include folow-btn(auto, 2rem); 
-				background: $color-tree-poppy-orange;
-				color: $color-white;
-				padding: 0 2rem;
-			}
+                border: 1px solid $color-tree-poppy-orange;
+                color: $color-zeus-black;
+                text-align: center;
+                float: left;
+                height: 1.5rem;
+                width: 4.375rem;
+                text-transform: uppercase;
+                font-size: 0.6875rem;
+                cursor: pointer;
+                line-height: 1.4375rem;
+                font-weight: bold;
+                &:hover{
+                                background: $color-tree-poppy-orange;
+                }
+			} 
+
 			
 			.cancel{
 				background: $color-tree-poppy-orange;
