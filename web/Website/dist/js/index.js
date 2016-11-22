@@ -2040,7 +2040,7 @@ $(function () {
 			$.post('/Account/api/PersonalizeUserPreferencesApi/UpdateArticleId/', { "UserPreferences": articleIdVal });
 		}
 	});
-});kk;
+});
 
 },{}],8:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */

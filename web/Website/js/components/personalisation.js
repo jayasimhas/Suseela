@@ -686,4 +686,4 @@ $(function(){
 			$.post('/Account/api/PersonalizeUserPreferencesApi/UpdateArticleId/', {"UserPreferences": articleIdVal});
 		}
 	});
-});kk
+});
