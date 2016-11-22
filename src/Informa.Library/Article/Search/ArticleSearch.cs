@@ -268,20 +268,19 @@ namespace Informa.Library.Article.Search
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                         .FilterPersonalizedTaxonomies(filter)
                         .ApplyDefaultFilters();
-                //Write a filter for Editorial ranking sort
 
                 if (filter.PageSize > 0)
                 {
                     query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
                 }
 
-                query = query.OrderByDescending(i => i.ActualPublishDate).ThenByDescending(x => x.EditorialRanking);
-
+                query = query.OrderByDescending(i => i.ActualPublishDate);
                 var results = query.GetResults();
 
+                var articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)).GroupBy(key => key.Actual_Publish_Date.Date).Select(group => group.OrderByDescending(x => x.Sort_Order)).SelectMany(item => item);
                 return new PersonalizedArticleSearchResults
                 {
-                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)),
+                    Articles = articles,
                     TotalResults = results.TotalSearchResults
                 };
             }
