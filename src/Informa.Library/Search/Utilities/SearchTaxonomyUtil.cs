@@ -18,7 +18,7 @@ namespace Informa.Library.Search.Utilities
 		private const string Industries = "industries";
 		private const string DeviceAreas = "deviceareas";
         private const string Commercial = "commercial";
-        private const string Commodity = "commodity";
+        private const string Commodities = "commodities";
         private const string CommodityFactors = "commodityfactors";
         private const string Companies = "companies";
 
@@ -78,7 +78,7 @@ namespace Informa.Library.Search.Utilities
 
                 if (IsCommodityTaxonomy(parentPath))
                 {
-                    key = Commodity;
+                    key = Commodities;
                 }
 
                 if (IsCommodityFactorsTaxonomy(parentPath))

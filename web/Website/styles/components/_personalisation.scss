@@ -333,6 +333,7 @@
 		.article-preview--small{
 			border: none;
 		    border-top: 2px solid #d1d3d4;
+		    position: relative;
 			&.mobview{
 				padding: 1rem 0 0;
 				margin: 0 0.9rem;
@@ -394,7 +395,7 @@
 		}
 		.latest-news__articles .article-preview--small .article-preview__tags {
 			left: 0;
-			position: inherit;
+			position: absolute;
 		}
 		.mtop{
 			margin-top: 0px !important;			 
@@ -427,4 +428,23 @@
 			}
 		}
 	}
+	
+	.article-preview__inner-wrapper{
+		&.showarticle{
+			height: 6.25rem;
+			overflow: hidden;
+			.article-preview__headline{
+				height: 4.375rem;
+				overflow: hidden;
+				@media screen and (min-width: 768px) and (max-width: 1024px){
+					height: 3.125rem;
+					margin-bottom: 1.25rem;
+				}
+			}
+			.article-preview__byline{
+				height: 1.5625rem;
+				overflow: hidden;
+			}
+		}
+	} 
 }
