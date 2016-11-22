@@ -64,22 +64,6 @@
         public string GoToMyViewButtonText => TextTranslator.Translate("MyViewSettings.GoToMyViewButtonText");
 
         /// <summary>
-        /// Gets the save preferences message.
-        /// </summary>
-        /// <value>
-        /// The save preferences message.
-        /// </value>
-        public string SavePreferencesMessage => TextTranslator.Translate("MyViewSettings.SavePreferencesMessage");
-
-        /// <summary>
-        /// Gets the select preferences message.
-        /// </summary>
-        /// <value>
-        /// The select preferences message.
-        /// </value>
-        public string SelectPreferencesMessage => TextTranslator.Translate("MyViewSettings.SelectPreferencesMessage");
-
-        /// <summary>
         /// Gets the section description.
         /// </summary>
         /// <value>
