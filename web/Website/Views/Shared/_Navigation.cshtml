@@ -69,7 +69,7 @@
                         @{var myViewHelpText = Nav.Children.Any() ? string.Empty : @Model.MyViewHelpText; }                       
                         @if (Model.IsAuthenticated)
                         {
-                            <li class="edit-link"><a href="@Model.MyViewLinkURL" class="click-utag" data-info='{ "event_name" : "secondary_navigation", "navigation_category": "Secondary Navigation", "click_through_destination": "Edit"}'>@Model.MyViewEditBtnText</a></li>
+                            <li class="edit-link"><a href="@Model.MyViewLinkURL" class="click-utag" data-info='{ "event_name" : "secondary_navigation", "ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text","ga_eventLabel":"Edit","navigation_category": "@navigation.Text", "click_through_destination": "Edit"}'>@Model.MyViewEditBtnText</a></li>
                             <li class="navContent">@myViewHelpText</li>
                         }
                         else
