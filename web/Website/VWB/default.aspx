@@ -19,6 +19,8 @@
         <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedVertical"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedPubs"></asp:HiddenField>
         <!-- pipe bar separated guids -->
         <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button" />
 
@@ -26,10 +28,11 @@
         <div class="wrapper">
             <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server" />
             <div class="top">
+                <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled"></asp:DropDownList>
                 <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true" AddJQueryReference="false">
                     <style selectboxwidth="195" dropdownboxboxwidth="160" dropdownboxboxheight="250" />
                     <texts selectboxcaption="Select Publication(s)" />
-                </asp:DropDownCheckBoxes>
+                 </asp:DropDownCheckBoxes>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
@@ -58,6 +61,7 @@
                         &nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout" />
                     </div>
                 </div>
+               
             </div>
             <br />
             <br />
@@ -167,6 +171,8 @@
         //		function onFail(data) {
         //			alert(data.Message + "\n" + data.StackTrace);
         //		}
+
+        
     </script>
 </body>
 </html>

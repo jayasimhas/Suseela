@@ -19,6 +19,7 @@ namespace Elsevier.Web.VWB
 		public string PublicationIdValue;
 		public const string PublicationIdParam = "pid";
 		public string IssueIdValue;
+        public string VerticalRoot;
 		public const string IssueIdParam = "iid";
 		/// <summary>
 		/// Delimited list of columns in order
@@ -107,7 +108,11 @@ namespace Elsevier.Web.VWB
 			{
 				PublicationCodes = string.Empty;
 			}
-		}
+            if (request["vertical"] != null)
+            {
+                VerticalRoot = request["vertical"];
+            }
+        }
 
 		/// <summary>
 		/// parses date from MMddyyyy
@@ -183,7 +188,11 @@ namespace Elsevier.Web.VWB
 			{
 				query += "pubCodes=" + PublicationCodes + "&";
 			}
-			query += "sc_mode=normal";
+            if (string.IsNullOrEmpty(VerticalRoot) == false)
+            {
+                query += "vertical=" + VerticalRoot + "&";
+            }
+            query += "sc_mode=normal";
 			return query;
 		}
 
@@ -231,6 +240,7 @@ namespace Elsevier.Web.VWB
 			clone.NumResultsValue = NumResultsValue;
 			clone.InProgressValue = InProgressValue;
 			clone.PublicationCodes = PublicationCodes;
+            clone.VerticalRoot = VerticalRoot;
 			return clone;
 		}
 	}
