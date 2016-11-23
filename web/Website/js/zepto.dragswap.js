@@ -78,14 +78,6 @@ import { analyticsEvent } from './controllers/analytics-controller';
               dt.effectAllowed = 'move';        
               dt.setData('text', this.innerHTML);
             }
-            var channelTxt = $.trim($(this).find('td:nth-child(1)').html().split('<input')[0]);
-            var eventDetails = {
-                event_name: "topic_position_change",
-                "page_name": analytics_data["page_name"],
-                "ga_eventCategory":"My View Settings Link",
-                "ga_eventAction":channelTxt
-            };
-            analyticsEvent( $.extend(analytics_data, eventDetails) );
         }
 
         function handleDragEnter(e) {
@@ -155,6 +147,16 @@ import { analyticsEvent } from './controllers/analytics-controller';
                 console.log('dropped');
 				$('#validatePreference').val(1);
 				$('#validateMyViewPriority').val(true);
+				
+				var channelTxt = $.trim($(this).find('td:nth-child(1)').html().split('<input')[0]);
+				var eventDetails = {
+					event_name: "topic_position_change",
+					"page_name": analytics_data["page_name"],
+					"ga_eventCategory":"My View Settings Link",
+					"ga_eventAction":channelTxt
+				};
+				analyticsEvent( $.extend(analytics_data, eventDetails) );
+				
                 settings.dropComplete();
             }
             return false;
