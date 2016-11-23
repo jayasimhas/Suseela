@@ -231,7 +231,7 @@ $(function () {
     });
 
     $('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function () {
-        var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow'), currenttr = $this.closest('tr'), currentTopic = currenttr.find('.wd-55').html().split('<input'), currentChannel = currenttr.closest('.table').find('thead h2').html();
+        var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow'), currenttr = $this.closest('tr'), currentTopic = currenttr.find('.wd-55').html().split('<input')[0], currentChannel = currenttr.closest('.table').find('thead h2').html(),eventDetails;
         followrow.attr('draggable', true);
         $('#validatePreference').val(1);
         followrow.addClass('followingrow').removeClass('followrow disabled frow');
@@ -262,12 +262,17 @@ $(function () {
             unfollowAllBtn.removeClass('hideBtn');
         }
 		
-		var eventDetails = { "event_name": "channel_follow", "page_name": "Registration", "ga_eventCategory": "Channel Follow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentChannel }
+		if($('.registrationBtn') && $('.registrationBtn').length){
+			eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
+		}
+		else{
+			eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+		}
 		analyticsEvent( $.extend(analytics_data, eventDetails) );
     });
 
     $('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
-        var $this = $(this), table = $this.closest('table'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow'), currenttr = $this.closest('tr'), currentTopic = currenttr.find('.wd-55').html().split('<input'), currentChannel = currenttr.closest('.table').find('thead h2').html();
+        var $this = $(this), table = $this.closest('table'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow'), currenttr = $this.closest('tr'), currentTopic = currenttr.find('.wd-55').html().split('<input')[0], currentChannel = currenttr.closest('.table').find('thead h2').html(), eventDetails;
         followingrow.addClass('followrow disabled').removeClass('followingrow');
         $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
         followingrow.clone().appendTo($this.closest('tbody'));
@@ -291,7 +296,12 @@ $(function () {
             unfollowAllBtn.removeClass('hideBtn');
         }
 		
-		var eventDetails = { "event_name": "channel_follow", "page_name": "Registration", "ga_eventCategory": "Channel Follow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentChannel }
+		if($('.registrationBtn') && $('.registrationBtn').length){
+			eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+		}
+		else{
+			eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic" : currentTopic, "follow_channel":currentChannel };
+		}
 		analyticsEvent( $.extend(analytics_data, eventDetails) );
     });
 
