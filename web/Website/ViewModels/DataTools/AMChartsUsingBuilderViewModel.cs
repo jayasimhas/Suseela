@@ -65,7 +65,7 @@ namespace Informa.Web.ViewModels.DataTools
 
         #region AMcharts Right rail component content
         public string LandingPageLink => GlassModel?.Landing_Page_Link?.Url;
-        public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
+        public string LandingPageLinkLable => string.IsNullOrWhiteSpace(GlassModel?.Landing_Page_Link?.Text) ? TextTranslator.Translate("DataTools.LandingPageLink") : GlassModel?.Landing_Page_Link?.Text; 
         public string RealatedContentLableText => TextTranslator.Translate("DataTools.RelatedContentLable");
         public IEnumerable<IListable> RelatedArticles => GlassModel?.Related_Articles.
             Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).
