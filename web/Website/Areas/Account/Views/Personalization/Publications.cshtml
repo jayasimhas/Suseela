@@ -288,14 +288,15 @@
                                 <td class="wd-25">
                                     @if (!Model.isFromRegistration)
                                     {
-                                        if (topic.IsFollowing)
+                                        <span class="@topicSpanClass click-utag">@topicLableText</span>
+                                        @*if (topic.IsFollowing)
                                         {
                                             <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic_unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_publication":"@Model.publicationname, "follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
                                         }
                                         else
                                         {
                                             <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"My view settings","ga_eventCategory":"Topic Follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
-                                        }
+                                        }*@
                                     }
                                     else
                                     {
