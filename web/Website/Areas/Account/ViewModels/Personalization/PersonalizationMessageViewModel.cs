@@ -1,6 +1,7 @@
 ﻿namespace Informa.Web.Areas.Account.ViewModels.Personalization
 {
     using System;
+    using System.Linq;
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     using Jabberwocky.Glass.Models;
     using Library.Company;
@@ -52,6 +53,9 @@
                 return ((UserPreferences.Preferences != null &&
                        UserPreferences.Preferences.PreferredChannels != null &&
                        UserPreferences.Preferences.PreferredChannels.Count > 0) &&
+                       (!UserPreferences.Preferences.IsNewUser || 
+                       (UserPreferences.Preferences.IsNewUser && 
+                       UserPreferences.Preferences.PreferredChannels.Any(channel => channel.IsFollowing))) &&
                        Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > (DateTime.Now - Convert.ToDateTime(UserPreferences.Preferences.LastUpdateOn)).TotalDays) ||
                        System.Web.HttpContext.Current.Request.Cookies[DISMISS_COOKIE_NAME] != null;
             }
