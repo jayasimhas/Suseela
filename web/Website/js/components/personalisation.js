@@ -1,5 +1,5 @@
 function loadLayoutOneData(data, idx) {
-	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"myview_edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
 	loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
@@ -7,7 +7,7 @@ function loadLayoutOneData(data, idx) {
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"myview_load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 	
 	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -214,7 +214,7 @@ function createLayoutInner1(data) {
 }
 
 function loadLayoutTwoData(data, idx) {
-	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"myview_edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
@@ -223,7 +223,7 @@ function loadLayoutTwoData(data, idx) {
 	loadData += createLayoutInner2(data);
 	loadData += '</div>';
 
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '\'}" class="click-utag">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"myview_load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '\'}" class="click-utag">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 
 	loadData += '</div>';
 	
