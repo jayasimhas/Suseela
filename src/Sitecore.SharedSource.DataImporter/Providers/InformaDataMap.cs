@@ -1020,19 +1020,31 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             if (xn != null)
             {
 
-                if (nodeName.Equals("TABLEAU"))
+            if (nodeName.Equals("TABLEAU"))
                 {
-                    foreach (XmlNode node in xn)
+                    XmlNodeList TABLEAUList = xd.SelectNodes($"//{nodeName}");
+
+                    int numberofTableau = 0;
+                    if (TABLEAUList.Count > 0)
                     {
-                        if (node.Attributes["name"] != null)
+                        foreach (XmlNode nodes in TABLEAUList)
                         {
-                            Taxonomy.Add(node.Attributes["name"].Value, node.InnerText);
+                            numberofTableau++;
+                            foreach (XmlNode node in nodes)
+                            {
+                                if (node.Attributes["name"] != null)
+                                {
+                                    Taxonomy.Add("tableau" + numberofTableau + node.Attributes["name"].Value, node.InnerText);
+                                }
+                                else if ((node.Name == "creator") && (node.Attributes["first-name"] != null))
+                                {
+                                    Taxonomy.Add("tableau" + numberofTableau + "first-name", node.InnerText);
+                                }
+                            }
                         }
-                        else if ((node.Name == "creator") && (node.Attributes["first-name"] != null))
-                        {
-                            Taxonomy.Add("first-name", node.InnerText);
-                        }
+                        Taxonomy.Add("Nooftableau", numberofTableau.ToString());
                     }
+                  
                 }
                 else if (nodeName.Equals("TAXONOMY"))
                 {
