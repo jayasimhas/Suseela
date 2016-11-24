@@ -15,6 +15,7 @@ import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -76,7 +77,7 @@ public class Helper {
     //get Driver URL
     public void getURL(String url){
         driver.get(url);
-        waitForSeconds(4);
+        waitForSeconds(3);
     }
 
     //get Elements Links
@@ -118,6 +119,12 @@ public class Helper {
     public boolean isElementPresent(By byObject){
         waitForSeconds(4);
         return driver.findElements(byObject).size()> 0;
+    }
+
+    //Check if Element is Displayed
+    public boolean isElementDisplayed(By byObject){
+        waitForSeconds(4);
+        return driver.findElement(byObject).isDisplayed();
     }
 
     //Converts to array of strings
@@ -176,6 +183,26 @@ public class Helper {
     public void click(By byObject){
         waitTillElementLocated(byObject);
         driver.findElement(byObject).click();
+        waitForSeconds(1);
+    }
+
+    //click on the co-ordinate of an element
+    public void clickLocation(By locator, String axis){
+
+
+        waitTillElementLocated(locator);
+
+        WebElement clickReg = driver.findElement(locator);
+
+
+        if (axis.equalsIgnoreCase("x")){
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x + ")");}
+        else if (axis.equalsIgnoreCase("y"))
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
+
+
+        waitForSeconds(4);
+        clickReg.click();
         waitForSeconds(2);
     }
 
@@ -190,16 +217,18 @@ public class Helper {
 
 
 
-
-//    //Custom Reporter for TestNG Report
-//    public static String customReporter(Object actual, Object expected){
-//
-//        Reporter.log("<b> Expected Result : </b>" + expected, true);
-//        Reporter.log("<b> Actual Result : </b>" + actual + "<br>", true);
-//
-//        return "Expected Result:\n"+expected+"\nActual Result:\n"+actual;
-//
-//    }
+    public String randomString(){
+    char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    StringBuilder sb = new StringBuilder();
+    Random random = new Random();
+    for (int i = 0; i < 6; i++) {
+        char c = chars[random.nextInt(chars.length)];
+        sb.append(c);
+    }
+    String output = sb.toString();
+    System.out.println(output);
+    return output;
+    }
 
     //Logs Console and TestNG Report
     public void log(Object description){

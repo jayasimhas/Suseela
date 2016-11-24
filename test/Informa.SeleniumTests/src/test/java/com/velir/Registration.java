@@ -23,11 +23,12 @@ public class Registration extends SetupClass {
         String uuid = UUID.randomUUID().toString();
         helper.log("uuid = " + uuid);
 
-        By username =By.xpath("//div[4]/div[2]/form/input");
+        By username =By.xpath("//div[5]/div[2]/form/input"); ;
+        //By username =By.xpath("//div[4]/div[2]/form/input");
         helper.getURL(ENV);
         clickRegisterNEnterEmail("qaTestInforma");
 
-        Assert.assertEquals(helper.getElementText(By.xpath("//div[4]/div[2]/form/p[1]")), "Your username does not meet the requirements.");
+        Assert.assertEquals(helper.getElementText(By.xpath("//div[5]/div[2]/form/p[1]")), "Your username does not meet the requirements.");
 
         driver.findElement(username).clear();
         driver.findElement(username).sendKeys(uuid + "@yopmail.com");
@@ -91,7 +92,7 @@ public class Registration extends SetupClass {
 
 
         String uuid = UUID.randomUUID().toString();
-        helper.log("uuid = " + uuid);
+        helper.log("uuid = " + uuid +"@yopmail.com");
 
 
         helper.getURL(ENV + "/search#?q=test");
@@ -107,6 +108,8 @@ public class Registration extends SetupClass {
 
         Assert.assertEquals(helper.getElementText(By.cssSelector(".search__header-title")), "Search Results");
 
+        helper.log("Registration successful");
+
     }
 
     private void registerPageTwo() {
@@ -115,6 +118,8 @@ public class Registration extends SetupClass {
 
 
         helper.waitTillElementLocated(By.cssSelector(".header-account-access__label>a"));
+
+        helper.waitForSeconds(2);
     }
 
     private void registerForAccount() {
@@ -146,29 +151,34 @@ public class Registration extends SetupClass {
 //        builder.moveToElement(clickReg, 90, 1070).click().build().perform();
 
 
-        if (BROWSER.equalsIgnoreCase("Mobile"))
-        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x+")");
+        if (BROWSER.equalsIgnoreCase("Mobile")){
+            helper.waitForSeconds(2);
+        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x + ")");}
         else
             ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
 
 
+        helper.waitForSeconds(3);
         clickReg.click();
 
-        helper.waitForSeconds(4);
+        //helper.waitForSeconds(2);
 
         helper.click(By.cssSelector(".button--filled.js-register-user-submit"));
 
-        helper.waitForSeconds(20);
+        helper.waitForSeconds(6);
     }
 
     private void clickRegisterNEnterEmail(String user) {
-        By username =By.xpath("//div[4]/div[2]/form/input"); ;
-        helper.click(By.xpath("//div[4]/div[5]/div[1]"));
+        By username =By.xpath("//div[5]/div[2]/form/input"); ;
+       // helper.click(By.xpath("//div[4]/div[5]/div[1]"));
 
+        helper.click(By.xpath("//header/div[4]/div[6]/div[1]"));
         helper.waitForSeconds(2);
-        helper.sendKeys(username,user);
+        helper.sendKeys(username, user);
 
-        helper.click(By.xpath("//div[4]/div[2]/form/button"));
+       // helper.click(By.xpath("//div[4]/div[2]/form/button"));
+
+        helper.click(By.cssSelector(".js-pre-register-user-submit"));
     }
 
 }

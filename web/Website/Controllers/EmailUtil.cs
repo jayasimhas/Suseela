@@ -262,52 +262,58 @@ namespace Informa.Web.Controllers
 
         public string CreateEditAfterPublishBody(ArticleStruct articleStruct, string emailTitle, string publication)
         {
-            var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("EditAfterPublishEmail");
-            if (htmlEmailTemplate == null)
-            {
-                return null;
-            }
+				var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("EditAfterPublishEmail");
+				if (htmlEmailTemplate == null)
+				{
+					return null;
+				}
 
-            var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
+				var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
 
-            var authorString = string.Empty;
-            foreach (var eachAuthor in articleStruct.Authors)
-            {
-                authorString = eachAuthor.Name + ",";
-            }
-            var emailHtml = htmlEmailTemplate.Html;
-            var replacements = new Dictionary<string, string>();
-            replacements["#Email_Title#"] = emailTitle;
-            replacements["#Article_Title#"] = articleStruct.Title;
-            replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
-            replacements["#word_url#"] = GetWordURL(articleStruct);
+				var authorString = string.Empty;
+				foreach (var eachAuthor in articleStruct.Authors)
+				{
+					authorString = eachAuthor.Name + ",";
+				}
+				var emailHtml = htmlEmailTemplate.Html;
+				var replacements = new Dictionary<string, string>();
+				replacements["#Email_Title#"] = emailTitle;
+				replacements["#Article_Title#"] = articleStruct.Title ?? (article?.Fields?["Title"]?.Value ?? string.Empty);
+				replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
+				replacements["#word_url#"] = GetWordURL(articleStruct);
 
-            ArticleItem articleItem = _service.GetItem<ArticleItem>(article.ID.ToString());
-            if (articleItem != null)
-            {
-                var preview = _articleUtil.GetPreviewInfo(articleItem);
-                if (preview != null)
-                {
-                    replacements["#preview_url#"] = preview.PreviewUrl;
-                }
-            }
+				ArticleItem articleItem = _service.GetItem<ArticleItem>(article.ID.ToString());
+				if (articleItem != null)
+				{
+					var preview = _articleUtil.GetPreviewInfo(articleItem);
+					if (preview != null)
+					{
+						replacements["#preview_url#"] = preview.PreviewUrl;
+					}
+				}
 
-            replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
-            replacements["#Publication#"] = publication;
-			replacements["#Body_Content#"] = articleStruct.NotificationText == null ? string.Empty : articleStruct.NotificationText;
-			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
-            replacements["#current_time#"] = DateTime.Now.ToString();
+				replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
+				replacements["#Publication#"] = publication;
+				replacements["#Body_Content#"] = articleStruct.NotificationText == null ? string.Empty : articleStruct.NotificationText;
+				replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
+				replacements["#current_time#"] = DateTime.Now.ToString();
 
-            List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
-            replacements["#history#"] = HistoryTableCreation(workflowHistory);
+				List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
+				replacements["#history#"] = HistoryTableCreation(workflowHistory);
 
-            return emailHtml.ReplacePatternCaseInsensitive(replacements);
+				return emailHtml.ReplacePatternCaseInsensitive(replacements);
         }
 
         public string GetWordURL(ArticleStruct articleStruct)
         {
-            string url = string.Empty;
-            var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
+			if (articleStruct == null || _articleUtil == null)
+				return string.Empty;
+
+			if (articleStruct.ArticleNumber == null)
+				return string.Empty;
+
+			string url = string.Empty;
+			var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
             //Item article = _service.GetItem<Item>(articleStruct.ArticleGuid);
             LinkField wordDocument = article.Fields[IArticleConstants.Word_DocumentFieldId];
             if (wordDocument == null) return url;
