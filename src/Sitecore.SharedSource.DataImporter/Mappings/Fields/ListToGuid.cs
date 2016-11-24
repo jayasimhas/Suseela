@@ -126,24 +126,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
             else if (NewItemField == "Authors")
             {
-                string[] list = importValue.Split(new string[] { "and", "&amp;", "," }, StringSplitOptions.None);
+                string[] list = importValue.Split(new string[] { " and ", "&amp;", "," }, StringSplitOptions.None);
 
 
                 if (!list.Any())
                     return;
                 Field f = newItem.Fields[NewItemField];
 
-                string result1 = importValue.Replace("By", "");
-                if (result1.Contains('.'))
-                {
-                    result1 = result1.Substring(0, result1.IndexOf(".") + 1);
-                }
+                
 
                 foreach (string auth in list)
                 {
+                    string result1 = auth.Replace("By", " ");
+                    string result2 = result1.Replace("-", " ");
+                    if (result2.Contains('.'))
+                    {
+                        result2 = result2.Substring(0, result2.IndexOf(".") + 1);
+                    }
                     //loop through children and look for anything that matches by name
-                    string cleanName = StringUtility.GetValidItemName(auth, map.ItemNameMaxLength);
-                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+                    string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
+                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
                     if (t.Any() && !f.Value.Contains(t.First().ID.ToString()))
                         f.Value = f.Value + "|" + t.First().ID.ToString();
 

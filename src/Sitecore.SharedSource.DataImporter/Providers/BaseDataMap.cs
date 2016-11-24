@@ -742,7 +742,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9")
+                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9" && d.NewItemField != "Body")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
