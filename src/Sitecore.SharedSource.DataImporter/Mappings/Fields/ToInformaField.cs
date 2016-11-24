@@ -152,7 +152,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             DateField df = newItem.Fields["Created Date"];
             if (df != null && !string.IsNullOrEmpty(df.Value))
                 dt = df.DateTime;
-            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs);
+            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs,id);
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
@@ -162,16 +162,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
         }
 
-        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs)
+        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs, string ArticleId)
         {
             if (String.IsNullOrEmpty(html))
                 return html;
 
             var document = new HtmlDocument();
             document.LoadHtml(html);
+            string imageId = string.Empty;
 
             HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
-
+            HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
             if (tryGetNodes == null || !tryGetNodes.Any())
                 return html;
 
@@ -185,15 +186,33 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 var parentNode = node.ParentNode;
                 var childNodes = node.SelectNodes("./*|./text()");
 
-                if (i == 0 && (nodeName.Equals("table") || nodeName.Equals("img"))) //log table or img as first paragraph
+                if (i == 0 && (nodeName.Equals("table") || nodeName.Equals("image"))) //log table or img as first paragraph
                     map.Logger.Log(articlePath, $"first element was a(n) '{nodeName}'", ProcessStatus.Warning, NewItemField, html);
 
                 if (childNodes != null)
                 {
                     foreach (var child in childNodes)
+                    {
+                        
                         nodes.Enqueue(child);
+                       
+                    }
                 }
+                if (imgNodes != null && node.Name.Equals("relation"))
+                {
+                    foreach (HtmlNode imgnode in imgNodes)
+                    {
+                        if (imgnode.Attributes["sourceid"].Value == node.Attributes["sourceid"].Value)
+                        {
+                            parentNode.InsertBefore(imgnode, node);
 
+                            parentNode.RemoveChild(node);
+
+                            parentNode.ParentNode.RemoveChild(imgnode);
+                            imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                        }
+                    }
+                }
                 if (unwantedTags.Any(tag => tag == nodeName))
                 { // if this node is one to remove
                     if (childNodes != null)
@@ -210,7 +229,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         node.Attributes.RemoveAll();
                     }
-                    else if (!nodeName.Equals("iframe") && !nodeName.Equals("img"))
+                    else if (!nodeName.Equals("iframe") && !nodeName.Equals("image"))
                     { //skip iframe and imgs
                         foreach (string s in unwantedAttrs)
                         {
@@ -223,13 +242,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         map.Logger.Log(articlePath, $"content contains a(n) {nodeName}'", ProcessStatus.Warning, NewItemField, html);
 
                     //replace images
-                    if (nodeName.Equals("img"))
+                    if (nodeName.Equals("image"))
                     {
 
                         // see if it exists
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
-                        MediaItem newImg = HandleImage(map, articlePath, articleDate, imgSrc);
+                        MediaHandlerInSitecore objSitecoreMediaHandler = new MediaHandlerInSitecore();
+                        MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc , ArticleId);
                         if (newImg != null)
                         {
                             string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
@@ -258,108 +278,39 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 i++;
             }
 
+           // HtmlNodeCollection tryGetallNodes = document.DocumentNode.ChildNodes;
+           //// HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
+           // if (tryGetNodes == null || !tryGetNodes.Any())
+           //     return html;
+
+           // var nodeslatest = new Queue<HtmlNode>(tryGetallNodes);
+
+           // while (nodeslatest.Count > 0)
+           // {
+           //     var imgnode = nodeslatest.Dequeue();
+           //     var parentNode = imgnode.ParentNode;
+           //     // var nodeName = node.Name;
+
+
+           //     //replace images
+           //     if (imgnode.Name.Equals("image"))
+           //     {
+           //        if((imageId.Contains(imgnode.Attributes["sourceid"].Value)))
+           //             {
+
+           //             parentNode.RemoveChild(imgnode);
+
+           //             }
+           //     }
+                
+
+           // }
+
+
             return document.DocumentNode.InnerHtml;
         }
 
-        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url)
-        {
-            url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
-                .Replace("62.73.128.229", "www.scripintelligence.com");
-            if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
-                url = $"http://www.scripintelligence.com{url}";
-            else if (url.Contains("scripnews.com"))
-                url = url.Replace("scripnews.com", "scripintelligence.com");
-
-            // see if the url is badly formed
-            if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
-            {
-                map.Logger.Log(articlePath, "malformed image URL", ProcessStatus.FieldError, NewItemField, url);
-                return null;
-            }
-
-            //get file info
-            List<string> uri = url.Split(new string[] { "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            List<string> parts = uri[0].Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            string filePath = parts[parts.Count - 1].Trim();
-            string[] fileParts = filePath.Split(new string[] { "." }, StringSplitOptions.RemoveEmptyEntries);
-            string fileName = (fileParts.Length > 0) ? StringUtility.GetValidItemName(fileParts[0], map.ItemNameMaxLength) : string.Empty;
-
-            //date info
-            string newFilePath = (dt.Year != 1800) ? $"{dt.ToString("yyyy/MMMM")}/{fileName}" : fileName;
-
-            // see if it exists in med lib
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
-            IEnumerable<Item> matches = GetMediaItems(map)
-                .Where(a => a.Paths.FullPath.EndsWith(fileName));
-
-            if (matches != null && matches.Any())
-            {
-                if (matches.Count()>0)
-                    return new MediaItem(matches.First());
-
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, NewItemField, filePath);
-                return null;
-            }
-
-            MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}");
-            if (m == null)
-                map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, NewItemField, url);
-
-            return m;
-        }
-
-        public IEnumerable<Item> GetMediaItems(IDataMap map)
-        {
-            string cacheKey = "Images";
-            IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
-            if (o != null)
-                return o;
-
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
-            IEnumerable<Item> images = rootItem.Axes.GetDescendants();
-            Context.Items.Add(cacheKey, images);
-
-            return images;
-        }
-
-        public MediaItem ImportImage(string url, string fileName, string newPath)
-        {
-
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            if (request == null)
-                return null;
-
-            try
-            {
-                // download data 
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                Stream stream1 = response.GetResponseStream();
-                MemoryStream stream2 = new MemoryStream();
-                stream1.CopyTo(stream2);
-
-                // Create the options
-                MediaCreatorOptions options = new MediaCreatorOptions();
-                options.FileBased = false;
-                options.IncludeExtensionInItemName = false;
-                options.KeepExisting = false;
-                options.Versioned = false;
-                options.Destination = newPath;
-                options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
-
-                // upload to sitecore
-                MediaCreator creator = new MediaCreator();
-                MediaItem mediaItem = creator.CreateFromStream(stream2, fileName, options);
-
-                response.Close();
-
-                return mediaItem;
-            }
-            catch (WebException ex)
-            {
-                return null;
-            }
-        }
-
+        
         #endregion Methods
     }
 
@@ -419,7 +370,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         // see if it exists
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
-                        MediaItem newImg = HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
+                        MediaHandlerInSitecore objSitecoreMediaHandler = new MediaHandlerInSitecore();
+                        MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
                         if (newImg != null)
                         {
                         // string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
@@ -453,7 +405,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return document.DocumentNode.InnerHtml;
         }
 
-        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url,string ArticleId)
+        
+    }
+
+    public class MediaHandlerInSitecore
+    {
+        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId)
         {
             url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
                 .Replace("62.73.128.229", "www.scripintelligence.com");
@@ -468,12 +425,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //}
 
             url = new Regex("/[^/]*$").Replace(url, "/" + UpperCaseUrlEncode(url.Split('/').Last()));
-           
+
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 XMLDataLogger.WriteLog(ArticleId, "InvalidImageLog");
-                map.Logger.Log("ArticleId: " + ArticleId + articlePath, "malformed image URL", ProcessStatus.FieldError, NewItemField, url);
+                map.Logger.Log("ArticleId: " + ArticleId + articlePath, "malformed image URL", ProcessStatus.FieldError, url);
                 return null;
             }
 
@@ -497,13 +454,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 if (matches.Count() > 0)
                     return new MediaItem(matches.First());
 
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, NewItemField, filePath);
+                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
                 return null;
             }
 
             MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}");
             if (m == null)
-                map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, NewItemField, url);
+                map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, url);
 
             return m;
         }
@@ -576,6 +533,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         }
 
         #endregion Methods
+
     }
 
     public class ToInformaCompanyField : ToText
@@ -1216,9 +1174,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #endregion Methods
     }
-
-
-
+        
     public class ToInformaContentType : ListToGuid
     {
         public ToInformaContentType(Item i) : base(i) { }

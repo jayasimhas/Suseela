@@ -6,6 +6,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Autofac.Attributes;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
+using Informa.Library.Search.SearchIndex;
 
 namespace Informa.Library.Authors
 {
@@ -19,15 +20,17 @@ namespace Informa.Library.Authors
     public class AuthorIndexClient : IAuthorIndexClient
     {
         private readonly IDependencies _dependencies;
+        protected readonly ISearchIndexNameService IndexNameService;
 
         [AutowireService(true)]
         public interface IDependencies
         {
             ISitecoreService SitecoreService { get; set; }
         }
-        public AuthorIndexClient(IDependencies dependencies)
+        public AuthorIndexClient(IDependencies dependencies, ISearchIndexNameService indexNameService)
         {
             _dependencies = dependencies;
+            IndexNameService = indexNameService;
         }
 
         public IStaff_Item GetAuthorByUrlName(string urlName)
@@ -39,7 +42,14 @@ namespace Informa.Library.Authors
         }
         public Guid? GetAuthorIdByUrlName(string urlName)
         {
-            using (var context = ContentSearchManager.GetIndex(Constants.AuthorsIndexName).CreateSearchContext())
+            string indexName = IndexNameService.GetAutherIndexName();
+           
+            if (urlName.Contains(" ")||urlName.Contains("%20"))
+            {
+                urlName = urlName.Replace(" ", "-");
+                urlName = urlName.Replace("%20", "-");
+            }
+            using (var context = ContentSearchManager.GetIndex(indexName).CreateSearchContext())
             {
                 var query = context.GetQueryable<AuthorSearchResult>()
                     .Filter(i => i.IsValid)

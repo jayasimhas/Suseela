@@ -14,6 +14,7 @@ using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SharedSource.DataImporter.Logger;
 using System.Web.Configuration;
 using System.Text.RegularExpressions;
+using Sitecore.Web.UI.HtmlControls;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -74,7 +75,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 string bodyNode = "BODY";
                 string bodyTitleHtml = GetXMLData(d, bodyNode);
-              
+               
                 string titleNode = "STORYTITLE";
                 string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
 
@@ -89,6 +90,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     summaryTitleHtml =  bodyTitleHtml;
                 }
 
+
                 //reading LEADIMAGE and adding on top of body
                 string leadImageTitleHtml = GetXMLData(d, "LEADIMAGE");
                 if (!string.IsNullOrEmpty(leadImageTitleHtml))
@@ -97,6 +99,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                      ao.Add("LEADIMAGE", leadImageTitleHtml);
                 }
 
+                XmlNodeList elemList = d.GetElementsByTagName("IMAGE");
+
+               // string bodyHtmlupdated = ReplaceRelationwithImage(bodyTitleHtml, elemList);
                 //reading VIDEO ,getting video type and adding on end of body
                 string videoTitleHtml = GetXMLData(d, "VIDEO");
                 if ((!string.IsNullOrEmpty(videoTitleHtml)))
@@ -344,8 +349,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 {
                     string BodyText = FindingTextFromHTML(bodyTitleHtml);
-                    string AgencyCompanyTextSearch = cleanTitleHtml + " " + BodyText;
-                    string RegionTextSearch = cleanTitleHtml + BodyText.Substring(0, Math.Min(BodyText.Length, 200));
+                    string AgencyCompanyTextSearch = cleanTitleHtml + " " + BodyText + " " + GetXMLData(d, "SUMMARY")!=null ? GetXMLData(d, "SUMMARY") : " ";
+                    string RegionTextSearch = cleanTitleHtml + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + GetXMLData(d, "SUMMARY") != null ? GetXMLData(d, "SUMMARY") : " ";
                    // string freeText = FindingTextFromHTML(regionSearch);
                     string[] RegionfreewordsList = RegionTextSearch.Split(' ');
                     string[] AgencyCompanyfreewordsList = AgencyCompanyTextSearch.Split(' ');
@@ -353,34 +358,55 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string Companies = "";
                     string Agency = "";
 
-                    foreach (var word in RegionfreewordsList)
-                    {
-                        string countrysearch = GetRegion().FirstOrDefault(w => w == word);
+                    List<string> regionSearchResults = GetRegion().FindAll(s => RegionTextSearch.Contains(" "+s+" "));
+                    List<string> agencySearchResults = GetRegion().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
+                    List<string> companySearchResults = GetRegion().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
 
-                        if (countrysearch != null && Country != null)
-                        {
-                            Country += countrysearch + ",";
-                        }
+                    foreach(string region in regionSearchResults)
+                    {
+                        Country += region + ",";
+                        
+                    }
+
+                    foreach (string company in companySearchResults)
+                    {
+                        Companies += company + ",";
 
                     }
 
-                    foreach (var word in AgencyCompanyfreewordsList)
+                    foreach (string agency in agencySearchResults)
                     {
-                        string companiesSearch = GetCompanies().FirstOrDefault(w => w == word);
-                        string agencySearch = GetAgency().FirstOrDefault(w => w == word);
-
-                        if (companiesSearch != null)
-                        {
-                            Companies += companiesSearch + ",";
-                        }
-
-                        if (agencySearch != null)
-                        {
-                            Agency += agencySearch + ",";
-                        }
-
+                        Agency += agency + ",";
 
                     }
+                    //foreach (string reg in GetRegion())
+                    //{
+                    //    //string search = "" + reg + "";
+                    //    //string countrysearch = RegionTextSearch.Where(s => s == search)
+                    //    //if (countrysearch != null && Country != null)
+                    //    //{
+                    //    //    Country += countrysearch + ",";
+                    //    //}
+
+                    //}
+
+                    //foreach (var word in AgencyCompanyfreewordsList)
+                    //{
+                    //   // string companiesSearch = GetCompanies().FirstOrDefault(w => w == AgencyCompanyfreewordsList.Contains(""w"");
+                    //    string agencySearch = GetAgency().FirstOrDefault(w => w == word);
+
+                    //    if (agencySearch != null)
+                    //    {
+                    //        Companies += agencySearch + ",";
+                    //    }
+
+                    //    if (agencySearch != null)
+                    //    {
+                    //        Agency += agencySearch + ",";
+                    //    }
+
+
+                    //}
 
 
                     //String[] text = { "Mexico", "India", "Pakistan", };
@@ -615,6 +641,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
           //  bool _isListAvailable = false;
             String result = string.Empty;
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+           
             doc.LoadHtml(RTEInput);
             var nodes = doc.DocumentNode.DescendantsAndSelf().ToList();
 
@@ -629,11 +656,67 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
                 }
             }
-            var charsToRemove = new string[] { "\n", ">", ".", ";", "'" ,",","<","/"};
+
+            var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
             foreach (var c in charsToRemove)
             {
                 result = result.Replace(c, string.Empty);
             }
+
+            return result;
+        }
+
+
+
+        public static string ReplaceRelationwithImage(string RTEInput, XmlNodeList imglist)
+        {
+            //  bool _isListAvailable = false;
+            String result = string.Empty;
+            var document = new HtmlDocument();
+            document.LoadHtml(RTEInput);
+            var tryGetNodes = document.DocumentNode.DescendantNodesAndSelf().ToList();
+
+           
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(RTEInput);
+            
+            var nodes = doc.DocumentNode.DescendantsAndSelf().ToList();
+            var testnodes = new Queue<HtmlNode>(tryGetNodes);
+          //  var testnodes = document.
+
+            foreach (HtmlNode node in tryGetNodes)
+            {
+                if ((node.Name.Equals("relation", StringComparison.OrdinalIgnoreCase)))
+                {
+                    foreach(XmlNode img in imglist)
+                    {
+                        // if(node.Attributes["sourceid"].Value == img.)
+                        if (node.Attributes["sourceid"].Value == img.Attributes["sourceid"].Value)
+
+                        {
+                            nodes.Remove(node);
+                            //HtmlNode imgnode = doc.CreateElement("Image");
+                            HtmlAgilityPack.HtmlNode imgnew = doc.CreateElement("Image");
+                            imgnew.Attributes["sourceid"].Value = img.Attributes["sourceid"].Value;
+                           // HtmlAgilityPack.HtmlControls.Image imgnode = new Web.UI.HtmlControls.Image();
+                            //imgnode.Attributes["sourceid"] = img.Attributes["sourceid"].Value;
+
+                            nodes.Add(imgnew);
+
+                        }
+
+                      
+
+
+                    }
+                    
+                }
+                else
+                {
+                    result += node.InnerHtml;
+                }
+            }
+            
             return result.Trim();
         }
 
@@ -1191,17 +1274,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             {
 
                 XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
+                
 
-
-                // adding image an video tag 
+                if(nodeName == "IMAGE")
+                {
+                    XmlNodeList imgList = xd.SelectNodes($"//{nodeName}");
+                    StringBuilder imgStrb = new StringBuilder();
+                    foreach (XmlNode node in imgList)
+                    {
+                        string nodeValue = "<image src='" + node["SRC"].InnerText + "' sourceid ='" + node.Attributes["sourceid"].Value + "'/> ";
+                        if (imgStrb.Length > 0)
+                            imgStrb.Append("");
+                        imgStrb.Append(nodeValue);
+                    }
+                    return imgStrb.ToString();
+                }
+                // adding image an video tag  
                 if (nodeName.Equals("LEADIMAGE"))
                 {
                     return (xn != null) ? "<img src='" + xn["SRC"].InnerText + "' >" : string.Empty;
                 }
-                else if (nodeName.Equals("IMAGE"))
-                {
-                    return (xn != null) ? "<img src='" + xn["SRC"].InnerText + "' >" : string.Empty;
-                }
+                //else if (nodeName.Equals("IMAGE"))
+                //{
+                //    return (xn != null) ? "<img src='" + xn["SRC"].InnerText + "' >" : string.Empty;
+                //}
                 else if (nodeName.Equals("VIDEO"))
                 {
                     return (xn != null) ?  xn["SRC"].InnerText : string.Empty;
@@ -1642,6 +1738,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             d.Add("public_ledger_analysis_company_results", "Financial Results");
             d.Add("public_ledger_analysis_personnel", "People");
             d.Add("public_ledger_analysis_trading", "Commercial");
+            d.Add("dairy_markets_analysis_company", "Commercial");
+            
+
 
             return d;
 
