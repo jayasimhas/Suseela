@@ -156,6 +156,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 					"ga_eventAction":channelTxt
 				};
 				analyticsEvent( $.extend(analytics_data, eventDetails) );
+				eventDetails = {};
 				
                 settings.dropComplete();
             }
