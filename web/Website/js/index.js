@@ -241,8 +241,8 @@ $(document).ready(function(){
                 event_name:"message_dismissal",
                 ga_eventCategory:"Messaging Frame",
                 ga_eventAction:"Dismissal",
-                ga_eventLabel:"<Link Name>",
-                page_name:"<Page Name>"
+                ga_eventLabel:"Dismiss",
+                page_name: analytics_data["page_name"]
             }
             
             analyticsEvent( $.extend(analytics_data, dismiss_data) );

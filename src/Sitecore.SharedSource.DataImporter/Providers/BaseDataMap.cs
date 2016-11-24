@@ -577,52 +577,113 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     int taxanomycount = 0;
                     string TaxonomyStr = "";
 
-                    if (ArticleData.ContainsKey("dashboardname"))
+                    //Nooftableau
+                    if (ArticleData.ContainsKey("Nooftableau"))
                     {
-                        TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
-                        Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
-                        //get the parent in the specific language
-                        TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
-                        //search for the child by name
-
-                        Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
-                        try
+                        if (ArticleData["Nooftableau"] != null)
                         {
-                            using (new SecurityDisabler())
+                            int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
+                            string tableauname = string.Empty;
+                            TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
+                            Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
+
+                            for (int numberofTableau = 1; numberofTableau <= numberofTableaus; numberofTableau++)
                             {
-                                // string xx= (Dictionary<string, string>())importRow[""].value;
-                                tableauItem.Editing.BeginEdit();
-                                tableauItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
-                                tableauItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
-                                tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
-                                tableauItem.Fields["Filter"].Value = ArticleData["filter"];
-                                tableauItem.Fields["Width"].Value = ArticleData["width"];
-                                tableauItem.Fields["Height"].Value = ArticleData["height"];
-                                tableauItem.Fields["Page Title"].Value = ArticleData["title"];
-                                tableauItem.Editing.EndEdit();
-                                string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+                                tableauname = "tableau" + numberofTableau.ToString();
+                              
+                                //get the parent in the specific language
+                                TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
+                                //search for the child by name
 
-
-                                if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                                Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
+                                try
                                 {
-                                    string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
-                                    if (!string.IsNullOrEmpty(wordToFind))
+                                    using (new SecurityDisabler())
                                     {
-                                        ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
-                                    }
-                                    else
-                                    {
-                                        ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                                        // string xx= (Dictionary<string, string>())importRow[""].value;
+                                        tableauItem.Editing.BeginEdit();
+                                        tableauItem.Fields["Authentication Required"].Value = ArticleData[tableauname+"authenticationrequired"] == "false" ? "0" : "1";
+                                        tableauItem.Fields["Dashboard Name"].Value = ArticleData[tableauname+"dashboardname"];
+                                        tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData[tableauname+"dashboardname"];
+                                        tableauItem.Fields["Filter"].Value = ArticleData[tableauname+"filter"];
+                                        tableauItem.Fields["Width"].Value = ArticleData[tableauname+"width"];
+                                        tableauItem.Fields["Height"].Value = ArticleData[tableauname+"height"];
+                                        tableauItem.Fields["Page Title"].Value = ArticleData[tableauname+"title"];
+                                        tableauItem.Editing.EndEdit();
+                                        string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+
+
+                                        if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                                        {
+                                            string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
+                                            if (!string.IsNullOrEmpty(wordToFind))
+                                            {
+                                                ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
+                                            }
+                                            else
+                                            {
+                                                ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                                            }
+                                        }
+
+
                                     }
                                 }
+                                catch
+                                {
 
-
+                                }
                             }
-                        }
-                        catch
-                        {
+
 
                         }
+                    }
+                    if (ArticleData.ContainsKey("dashboardname"))
+                    {
+                        //TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
+                        //Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
+                        ////get the parent in the specific language
+                        //TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
+                        ////search for the child by name
+
+                        //Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
+                        //try
+                        //{
+                        //    using (new SecurityDisabler())
+                        //    {
+                        //        // string xx= (Dictionary<string, string>())importRow[""].value;
+                        //        tableauItem.Editing.BeginEdit();
+                        //        tableauItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
+                        //        tableauItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
+                        //        tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
+                        //        tableauItem.Fields["Filter"].Value = ArticleData["filter"];
+                        //        tableauItem.Fields["Width"].Value = ArticleData["width"];
+                        //        tableauItem.Fields["Height"].Value = ArticleData["height"];
+                        //        tableauItem.Fields["Page Title"].Value = ArticleData["title"];
+                        //        tableauItem.Editing.EndEdit();
+                        //        string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+
+
+                        //        if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                        //        {
+                        //            string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
+                        //            if (!string.IsNullOrEmpty(wordToFind))
+                        //            {
+                        //                ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
+                        //            }
+                        //            else
+                        //            {
+                        //                ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                        //            }
+                        //        }
+
+
+                        //    }
+                        //}
+                        //catch
+                        //{
+
+                        //}
                     }
 
                     foreach (IBaseField d in fieldDefs)
