@@ -153,9 +153,10 @@
         </aside>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-
-</div>
+    <div class="root">
+        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+        </div>
+    </div>
 
 @*
     This element is a template for viewing tables on narrow screens
