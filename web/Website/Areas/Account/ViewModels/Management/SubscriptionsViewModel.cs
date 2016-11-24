@@ -234,7 +234,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
 		public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
 		public string ActionText => TextTranslator.Translate("Subscriptions.Action");
-        public string BottomNotation => GlassModel.Bottom_Notation;
+        //public string BottomNotation => GlassModel.Bottom_Notation;
     }
 }
 
