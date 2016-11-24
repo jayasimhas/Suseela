@@ -17407,8 +17407,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// <para>Field ID: ddd7deec-d65f-460e-8b7b-7d2c044259e3</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Bottom_Notation { get; set; }
+        //[SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string Bottom_Notation { get; set; }
         /// <summary>
         /// The Off Site Renew Link field.
         /// <para></para>
@@ -17446,8 +17446,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// <para>Field ID: ddd7deec-d65f-460e-8b7b-7d2c044259e3</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Bottom_Notation { get; set; }
+        //[SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string Bottom_Notation { get; set; }
         /// <summary>
         /// The Off Site Renew Link field.
         /// <para></para>
@@ -17476,8 +17476,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public const string TemplateName = "Subscriptions Page";
 
 
-        public static readonly ID Bottom_NotationFieldId = new ID("ddd7deec-d65f-460e-8b7b-7d2c044259e3");
-        public const string Bottom_NotationFieldName = "Bottom Notation";
+        //public static readonly ID Bottom_NotationFieldId = new ID("ddd7deec-d65f-460e-8b7b-7d2c044259e3");
+        //public const string Bottom_NotationFieldName = "Bottom Notation";
 
 
 
