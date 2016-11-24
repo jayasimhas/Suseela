@@ -4759,6 +4759,10 @@ header .header-account-access {
 .pub-subscription-subtitle {
   text-align: left; }
 
+@media print {
+  .messaging_webUsers_white {
+    display: none !important; } }
+
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
     font-size: 24px;

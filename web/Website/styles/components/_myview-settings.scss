@@ -901,3 +901,9 @@
 .pub-subscription-subtitle{
 	text-align: left;
 }
+
+@media print {
+	.messaging_webUsers_white {
+		display: none !important;
+	}
+}
