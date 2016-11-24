@@ -20,6 +20,7 @@ namespace Informa.Library.Search.Utilities
         private const string Commercial = "commercial";
         private const string Commodities = "commodities";
         private const string CommodityFactors = "commodityfactors";
+        private const string AgencyRegulator = "agencyRegulator";
         private const string Companies = "companies";
 
         public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
@@ -89,6 +90,12 @@ namespace Informa.Library.Search.Utilities
                 if (IsCompaniesTaxonomy(parentPath))
                 {
                     key = Companies;
+                }
+
+                //Agency regulator
+                if(IsAgencyRegulatorTaxonomy(parentPath))
+                {
+                    key = AgencyRegulator;
                 }
 
                 if (dict.ContainsKey(key))
