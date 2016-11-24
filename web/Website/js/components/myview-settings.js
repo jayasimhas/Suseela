@@ -501,5 +501,24 @@ $(function () {
             dropAnimation: true
         });
     }
-
+	
+	$(document).on('click', '.editView', function(){
+		var eventDetails = {"event_name":"myview_edit_my_view","page_name": analytics_data["page_name"], "ga_eventCategory":"My View Page Link", "ga_eventAction":"Link Click", "ga_eventLabel":"EDIT MY VIEW"};
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
+		eventDetails = {};
+	});
+	
+	$('.personalisationPan').on('click', '.loadmore', function(){
+		var id = $(this).closest('.eachstoryMpan').find('.eachstory').attr('id'), getIdx = 0;
+		for(var i=0; i<loadPreferanceId["Sections"].length; i++){
+			if(loadPreferanceId["Sections"][i]["ChannelId"] == id){
+				getIdx = i;
+				break;
+			}
+		}
+		var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
+		
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
+		eventDetails = {};
+	});
 });
