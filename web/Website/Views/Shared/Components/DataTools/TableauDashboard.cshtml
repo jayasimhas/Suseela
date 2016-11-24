@@ -23,6 +23,7 @@
     }
     else
     {
+        
         var dashboardWidth = string.IsNullOrWhiteSpace(Model.DashboardWidth) ? "100%" : Model.DashboardWidth;
         var dashboardHeight = string.IsNullOrWhiteSpace(Model.DashboardHeight) ? "100%" : Model.DashboardHeight;
         <div class="data-tool-landing">
@@ -32,8 +33,8 @@
             <div class="sub-heading-text">@Model.PageSubheading</div>
                 <div class="js-toggle-demo">
                     <ul class="show-demo">
-                        <li><a class="sd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_hide_demo","page_name":"@Model.PageTitle","ga_eventCategory":"Data Tool Page","ga_eventAction":"Hide Demo","ga_eventLabel":"@Model.PageTitle"}'>@Model.HideDemoLable</a></li>
-                        <li><a class="hd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_show_demo","page_name":"@Model.PageTitle","ga_eventCategory":"Data Tool Page","ga_eventAction":"Show Demo","ga_eventLabel":"@Model.PageTitle"}'>@Model.ShowDemoLable</a></li>
+                        <li><a class="sd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_hide_demo","page_name":"@Sitecore.Context.Item.Fields["Title"].Value","ga_eventCategory":"Data Tool Page","ga_eventAction":"Hide Demo","ga_eventLabel":"@Sitecore.Context.Item.Fields["Title"].Value"}'>@Model.HideDemoLable</a></li>
+                        <li><a class="hd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_show_demo","page_name":"@Sitecore.Context.Item.Fields["Title"].Value","ga_eventCategory":"Data Tool Page","ga_eventAction":"Show Demo","ga_eventLabel":"@Sitecore.Context.Item.Fields["Title"].Value"}'>@Model.ShowDemoLable</a></li>
                     </ul>
                     <div class="toggle-demo">
                         <div class="demoText">
