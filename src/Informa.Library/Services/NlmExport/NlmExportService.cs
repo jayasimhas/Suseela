@@ -96,6 +96,9 @@ namespace Informa.Library.Services.NlmExport
 
 		private string GetFilenamePrefix(ArticleItem article)
 		{
+			if (article == null || article.Article_Number == null)
+				return string.Empty;
+
 			using (var db = new SitecoreService(Constants.MasterDb))
 			{
 				var articleItem = db.GetItem<Item>(article._Id);

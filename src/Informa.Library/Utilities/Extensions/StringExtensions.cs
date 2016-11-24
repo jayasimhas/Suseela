@@ -19,6 +19,11 @@ namespace Informa.Library.Utilities.Extensions
 				return null;
 			}
 
+			if (oldValue == null || newValue == null)
+			{
+				Sitecore.Diagnostics.Log.Error($"OldValue or NewValue is NULL. Source: '{source}', OldValue: '{oldValue ?? string.Empty}', NewValue: '{newValue ?? string.Empty}'", typeof(StringExtensions));
+			}
+
 			return Regex.Replace(source, oldValue, newValue, RegexOptions.IgnoreCase);
 		}
 
