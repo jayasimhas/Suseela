@@ -250,7 +250,7 @@ namespace Informa.Web.ViewModels.MyView
                     foreach (Topic topic in topics)
                     {
                         topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                        taxonomyId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                        taxonomyId = topicItem != null &&topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
                         if (!string.IsNullOrWhiteSpace(taxonomyId))
                             sec.TaxonomyIds.Add(taxonomyId);
                     }
