@@ -4761,6 +4761,8 @@ header .header-account-access {
 
 @media print {
   .messaging_webUsers_white {
+    display: none !important; }
+  #feedbacklite {
     display: none !important; } }
 
 @media (max-width: 1080px) {
