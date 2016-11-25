@@ -452,7 +452,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (matches != null && matches.Any())
             {
                 if (matches.Count() > 0)
-                    return new MediaItem(matches.First());
+                {
+                    foreach (Item match in matches)
+                    {
+                        if (match.Paths.FullPath.Contains(newFilePath))
+                        {
+                            //return new MediaItem(matches.First());
+                            return match;
+                        }
+                    }
+
+                }               
 
                 map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
                 return null;
