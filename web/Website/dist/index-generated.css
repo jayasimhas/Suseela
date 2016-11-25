@@ -5074,6 +5074,10 @@ header .header-account-access {
   width: 21.0625rem;
   height: 190px;
   height: 11.875rem; }
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .personalisationhome .topic-featured-article__image2 {
+      width: 100%;
+      height: auto; } }
   @media (max-width: 480px) {
     .personalisationhome .topic-featured-article__image2 {
       margin-top: 20px;
@@ -7329,7 +7333,7 @@ div#feedbacklite.fbl_r {
         margin-left: 0; }
       .topic-featured-article__image {
         width: 272px;
-        height: 153px;
+        height: auto;
         margin-bottom: 80px;
         margin-bottom: 5rem; }
       .topic-featured-article__image, .topic-featured-article__headline {
