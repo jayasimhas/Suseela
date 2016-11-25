@@ -287,7 +287,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         ao.Add("MEDIA", "interactivedashboards");
                     }
-                    else if (string.IsNullOrEmpty(imageTitleHtml))
+                    else if (!string.IsNullOrEmpty(imageTitleHtml))
                     {
                         ao.Add("MEDIA", "image");
                     }
