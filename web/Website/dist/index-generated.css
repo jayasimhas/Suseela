@@ -4031,7 +4031,7 @@ header .header-account-access {
             background: #acacad; }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
-            @media (max-width: 480px) {
+            @media (max-width: 1080px) {
               .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
                 display: none; } }
         .myview-settings .table-responsive .table tbody tr.followrow {

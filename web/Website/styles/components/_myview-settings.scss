@@ -266,7 +266,7 @@
 								}
 							}
 							& .move{
-								@include breakpoint('small') {
+								@include breakpoint('large') {
 									display: none;
 								}
 								display: block;
