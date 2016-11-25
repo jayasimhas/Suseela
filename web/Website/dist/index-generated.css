@@ -3941,7 +3941,8 @@ header .header-account-access {
             @media (max-width: 1080px) {
               .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
                 background: inherit;
-                border: inherit; } }
+                border: 1px solid #f7941e;
+                color: inherit; } }
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
                 background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4027,8 +4028,14 @@ header .header-account-access {
         .myview-settings .table-responsive .table tbody tr.followingrow:hover {
           background: #f5f5f5;
           cursor: move; }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table tbody tr.followingrow:hover {
+              background: #fff; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
             background: #acacad; }
+            @media (max-width: 1080px) {
+              .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
+                background: #d1d3d5; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
             @media (max-width: 1080px) {
