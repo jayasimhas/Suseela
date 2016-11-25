@@ -351,12 +351,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 if (!(bodyTitleHtml.Length == 0 && cleanTitleHtml.Length == 0))
 
                 {
-                    string BodyText = FindingTextFromHTML(bodyTitleHtml);
-                    string AgencyCompanyTextSearch = cleanTitleHtml + " " + BodyText + " " + summarySearch;
-                    string RegionTextSearch = cleanTitleHtml + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summarySearch;
+                    
+                    string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
+                    string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
+                    string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
+                    string summSearch = RemovespecialcharactersfromString(summarySearch);
+                    string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
+                    string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
                    // string freeText = FindingTextFromHTML(regionSearch);
-                    string[] RegionfreewordsList = RegionTextSearch.Split(' ');
-                    string[] AgencyCompanyfreewordsList = AgencyCompanyTextSearch.Split(' ');
+                    //string[] RegionfreewordsList = RegionTextSearch.Split(' ');
+                   // string[] AgencyCompanyfreewordsList = AgencyCompanyTextSearch.Split(' ');
                     string Country = "";
                     string Companies = "";
                     string Agency = "";
@@ -660,68 +664,75 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 }
             }
 
+            
+            return result;
+        }
+
+        public static string RemovespecialcharactersfromString(string RTEInput)
+        {
+
             var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
             foreach (var c in charsToRemove)
             {
-                result = result.Replace(c, string.Empty);
+                RTEInput = RTEInput.Replace(c, string.Empty);
             }
 
-            return result;
+            return RTEInput;
         }
 
 
 
-        public static string ReplaceRelationwithImage(string RTEInput, XmlNodeList imglist)
-        {
-            //  bool _isListAvailable = false;
-            String result = string.Empty;
-            var document = new HtmlDocument();
-            document.LoadHtml(RTEInput);
-            var tryGetNodes = document.DocumentNode.DescendantNodesAndSelf().ToList();
+    //public static string ReplaceRelationwithImage(string RTEInput, XmlNodeList imglist)
+    //    {
+    //        //  bool _isListAvailable = false;
+    //        String result = string.Empty;
+    //        var document = new HtmlDocument();
+    //        document.LoadHtml(RTEInput);
+    //        var tryGetNodes = document.DocumentNode.DescendantNodesAndSelf().ToList();
 
            
-            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-            doc.LoadHtml(RTEInput);
+    //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+    //        doc.LoadHtml(RTEInput);
             
-            var nodes = doc.DocumentNode.DescendantsAndSelf().ToList();
-            var testnodes = new Queue<HtmlNode>(tryGetNodes);
-          //  var testnodes = document.
+    //        var nodes = doc.DocumentNode.DescendantsAndSelf().ToList();
+    //        var testnodes = new Queue<HtmlNode>(tryGetNodes);
+    //      //  var testnodes = document.
 
-            foreach (HtmlNode node in tryGetNodes)
-            {
-                if ((node.Name.Equals("relation", StringComparison.OrdinalIgnoreCase)))
-                {
-                    foreach(XmlNode img in imglist)
-                    {
-                        // if(node.Attributes["sourceid"].Value == img.)
-                        if (node.Attributes["sourceid"].Value == img.Attributes["sourceid"].Value)
+    //        foreach (HtmlNode node in tryGetNodes)
+    //        {
+    //            if ((node.Name.Equals("relation", StringComparison.OrdinalIgnoreCase)))
+    //            {
+    //                foreach(XmlNode img in imglist)
+    //                {
+    //                    // if(node.Attributes["sourceid"].Value == img.)
+    //                    if (node.Attributes["sourceid"].Value == img.Attributes["sourceid"].Value)
 
-                        {
-                            nodes.Remove(node);
-                            //HtmlNode imgnode = doc.CreateElement("Image");
-                            HtmlAgilityPack.HtmlNode imgnew = doc.CreateElement("Image");
-                            imgnew.Attributes["sourceid"].Value = img.Attributes["sourceid"].Value;
-                           // HtmlAgilityPack.HtmlControls.Image imgnode = new Web.UI.HtmlControls.Image();
-                            //imgnode.Attributes["sourceid"] = img.Attributes["sourceid"].Value;
+    //                    {
+    //                        nodes.Remove(node);
+    //                        //HtmlNode imgnode = doc.CreateElement("Image");
+    //                        HtmlAgilityPack.HtmlNode imgnew = doc.CreateElement("Image");
+    //                        imgnew.Attributes["sourceid"].Value = img.Attributes["sourceid"].Value;
+    //                       // HtmlAgilityPack.HtmlControls.Image imgnode = new Web.UI.HtmlControls.Image();
+    //                        //imgnode.Attributes["sourceid"] = img.Attributes["sourceid"].Value;
 
-                            nodes.Add(imgnew);
+    //                        nodes.Add(imgnew);
 
-                        }
+    //                    }
 
                       
 
 
-                    }
+    //                }
                     
-                }
-                else
-                {
-                    result += node.InnerHtml;
-                }
-            }
+    //            }
+    //            else
+    //            {
+    //                result += node.InnerHtml;
+    //            }
+    //        }
             
-            return result.Trim();
-        }
+    //        return result.Trim();
+    //    }
 
         public string CleanTitleHtml(string html)
         {
@@ -1115,7 +1126,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         foreach (XmlNode nodes in TABLEAUList)
                         {
+
                             numberofTableau++;
+                            Taxonomy.Add("tableau" + numberofTableau + "-sourceid" , nodes.Attributes["sourceid"].Value);
                             foreach (XmlNode node in nodes)
                             {
                                 if (node.Attributes["name"] != null)

@@ -610,7 +610,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                         tableauItem.Fields["Height"].Value = ArticleData[tableauname+"height"];
                                         tableauItem.Fields["Page Title"].Value = ArticleData[tableauname+"title"];
                                         tableauItem.Editing.EndEdit();
-                                        string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+                                        string tableauToken = getTokenForTableau(tableauItem.ID.ToString(), ArticleData[tableauname + "-sourceid"]);
 
 
                                         if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
@@ -899,7 +899,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         }
 
 
-        private string getTokenForTableau(string tableau)
+        private string getTokenForTableau(string tableau , string sourceid)
         {
             tableau = tableau.Replace("{", String.Empty).Replace("}", String.Empty);
             //< tr >< td >< strong >[T#:c6cc76d3-bc75-43a7-bd86-06d85ff49852]</strong></td></tr>
@@ -908,7 +908,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             //</ p >
             //return "< tr >< td >< strong >[T#:" + tableau + "]</strong></td></tr>";
 
-            return "<p xmlns='' class='article-paragraph'><strong>[T#:" + tableau + "]</strong></p>";
+            return "<strong id=" + sourceid + ">[T#:" + tableau + "]</strong>";
 
         }
 
