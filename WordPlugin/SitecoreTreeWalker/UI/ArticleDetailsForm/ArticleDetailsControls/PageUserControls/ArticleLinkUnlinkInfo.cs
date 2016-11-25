@@ -65,7 +65,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             _parent.UnlinkWordFileFromSitecoreItem();
             _parent.ResetFields();
             _parent.ResetChangedStatus(true);
-             this.Close();
+			_parent.articleDetailsPageSelector.pageArticleInformationControl.IsPublished = false;
+			 this.Close();
         }
 
         private void uxLinkDocument_Click(object sender, EventArgs e)
