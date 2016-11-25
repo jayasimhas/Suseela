@@ -3938,6 +3938,10 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
+            @media (max-width: 1080px) {
+              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+                background: inherit;
+                border: inherit; } }
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
                 background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }

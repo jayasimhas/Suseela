@@ -218,6 +218,10 @@
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
+							@include breakpoint('large') {
+								background: inherit;
+								border: inherit;
+							}
 							@include breakpoint('small') {
 								background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 							}
