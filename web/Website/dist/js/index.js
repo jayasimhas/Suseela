@@ -990,6 +990,8 @@ $(function () {
             eventDetails = { "event_name": "topic_follow", "page_name": "My view settings", "ga_eventCategory": "Topic Follow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
         }
         (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+
+        eventDetails = {};
     });
 
     $('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function (e) {
@@ -1004,6 +1006,8 @@ $(function () {
             eventDetails = { "event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
         }
         (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+
+        eventDetails = {};
     });
 
     $('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function (e) {
@@ -1282,6 +1286,27 @@ $(function () {
             dropAnimation: true
         });
     }
+
+    $(document).on('click', '.editView', function () {
+        var eventDetails = { "event_name": "myview_edit_my_view", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Link", "ga_eventAction": "Link Click", "ga_eventLabel": "EDIT MY VIEW" };
+        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+        eventDetails = {};
+    });
+
+    $('.personalisationPan').on('click', '.loadmore', function () {
+        var id = $(this).closest('.eachstoryMpan').find('.eachstory').attr('id'),
+            getIdx = 0;
+        for (var i = 0; i < loadPreferanceId["Sections"].length; i++) {
+            if (loadPreferanceId["Sections"][i]["ChannelId"] == id) {
+                getIdx = i;
+                break;
+            }
+        }
+        var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
+
+        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+        eventDetails = {};
+    });
 });
 
 },{"../controllers/analytics-controller":10}],6:[function(require,module,exports){
@@ -1400,7 +1425,7 @@ $(function () {
 'use strict';
 
 function loadLayoutOneData(data, idx) {
-	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"myview_edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
@@ -1408,7 +1433,7 @@ function loadLayoutOneData(data, idx) {
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"myview_load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 	loadData += '</div>';
 
 	//loadData += '<div class="googleAdd"><img src="/dist/img/google-add.gif"></div>';
@@ -1608,7 +1633,7 @@ function createLayoutInner1(data) {
 }
 
 function loadLayoutTwoData(data, idx) {
-	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview click-utag" href="' + loadPreferanceId.MyViewSettingsPageLink + '" data-info=\'{"event_name":"myview_edit_my_view","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Link","ga_eventAction":"Link Click","ga_eventLabel":"EDIT MY VIEW"}\'>' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
+	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
@@ -1617,7 +1642,7 @@ function loadLayoutTwoData(data, idx) {
 	loadData += createLayoutInner2(data);
 	loadData += '</div>';
 
-	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '" data-info=\'{"event_name":"myview_load_more","page_name":"' + analytics_data["page_name"] + '","ga_eventCategory":"My View Page Publications","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + [idx]["ChannelName"] + '","publication_click":"' + analytics_data["publication"] + '\'}" class="click-utag">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
+	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
 
 	loadData += '</div>';
 
@@ -4160,8 +4185,8 @@ $(document).ready(function () {
                 event_name: "message_dismissal",
                 ga_eventCategory: "Messaging Frame",
                 ga_eventAction: "Dismissal",
-                ga_eventLabel: "<Link Name>",
-                page_name: "<Page Name>"
+                ga_eventLabel: "Dismiss",
+                page_name: analytics_data["page_name"]
             };
 
             (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, dismiss_data));
@@ -6954,6 +6979,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
                     "ga_eventAction": channelTxt
                 };
                 (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+                eventDetails = {};
 
                 settings.dropComplete();
             }

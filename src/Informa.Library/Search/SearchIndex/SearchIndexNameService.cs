@@ -46,6 +46,16 @@
             return "sitecore_{0}_index";
         }
 
+        public string GetAutherIndexName()
+        {
+            if (VerticalRootContext?.Item?.Auther_Search_Index_Name != null)
+            {
+                //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
+                return VerticalRootContext.Item.Auther_Search_Index_Name;
+            }
+            return "sitecore_{0}_index";
+        }
+
         /// <summary>
         /// Gets solr index name based on the current request context for the given publication id
         /// </summary>

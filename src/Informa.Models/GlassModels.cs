@@ -26264,6 +26264,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         [SitecoreField(IVertical_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Search_Index_Name { get; set; }
+
+        [SitecoreField(IVertical_ConfigConstants.Auther_Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Auther_Search_Index_Name { get; set; }
+
     }
 
     /// <summary>
@@ -26306,6 +26310,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Search_Index_NameFieldId = new ID("4a181bc9-7b01-4dd5-8ae7-952582d73665");
         public const string Search_Index_NameFieldName = "Search Index Name";
 
+        public static readonly ID Auther_Search_Index_NameFieldId = new ID("a36845e9-4975-4328-8ad7-c5ce9e51353c");
+        public const string Auther_Search_Index_NameFieldName = "Auther Index Name";
     }
 
 
