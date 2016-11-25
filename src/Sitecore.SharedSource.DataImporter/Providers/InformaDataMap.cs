@@ -342,15 +342,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 ao.Add("STORYBODY", bodyTitleHtml);
 
-
-
+                string summarySearch = "";
+               if(GetXMLData(d, "SUMMARY") != null)
+                {
+                    summarySearch = GetXMLData(d, "SUMMARY");
+                }
 
                 if (!(bodyTitleHtml.Length == 0 && cleanTitleHtml.Length == 0))
 
                 {
                     string BodyText = FindingTextFromHTML(bodyTitleHtml);
-                    string AgencyCompanyTextSearch = cleanTitleHtml + " " + BodyText + " " + GetXMLData(d, "SUMMARY")!=null ? GetXMLData(d, "SUMMARY") : " ";
-                    string RegionTextSearch = cleanTitleHtml + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + GetXMLData(d, "SUMMARY") != null ? GetXMLData(d, "SUMMARY") : " ";
+                    string AgencyCompanyTextSearch = cleanTitleHtml + " " + BodyText + " " + summarySearch;
+                    string RegionTextSearch = cleanTitleHtml + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summarySearch;
                    // string freeText = FindingTextFromHTML(regionSearch);
                     string[] RegionfreewordsList = RegionTextSearch.Split(' ');
                     string[] AgencyCompanyfreewordsList = AgencyCompanyTextSearch.Split(' ');
@@ -359,8 +362,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string Agency = "";
 
                     List<string> regionSearchResults = GetRegion().FindAll(s => RegionTextSearch.Contains(" "+s+" "));
-                    List<string> agencySearchResults = GetRegion().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
-                    List<string> companySearchResults = GetRegion().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
+                    List<string> agencySearchResults = GetAgency().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
+                    List<string> companySearchResults = GetCompanies().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
 
                     foreach(string region in regionSearchResults)
                     {
