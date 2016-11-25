@@ -4803,6 +4803,9 @@ header .header-account-access {
   position: absolute;
   bottom: 24px;
   bottom: 1.5rem; }
+  @media (max-width: 800px) {
+    .personalisationhome .article-preview__tags {
+      width: calc(100% - 2.5rem); } }
   @media (max-width: 480px) {
     .personalisationhome .article-preview__tags {
       position: static; } }
@@ -10590,7 +10593,8 @@ section: Global Components
       margin-top: 0;
       padding: 0;
       position: absolute;
-      right: 0; } }
+      right: 0;
+      z-index: 99; } }
 
 .header-search__field {
   max-width: 310px;
