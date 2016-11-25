@@ -24,7 +24,7 @@
                     <param name="host_url" value="@Model.ArticleTableauHostUrl" />
                     <param name="name" value="@Model.Dashboard_Name" />
                     <param name="tabs" value="@(Model.Display_Tabs.Equals(false)?"no":"yes")" />
-                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":"top")" />
+                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":Model.Authentication_Required.Equals(true)?"top":"yes")" />
                     <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false)?"no":"yes")" />
                     <param name='filter' value='@Model.Filter' />
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
