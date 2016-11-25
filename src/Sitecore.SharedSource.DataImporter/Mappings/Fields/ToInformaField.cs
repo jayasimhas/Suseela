@@ -173,6 +173,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
             HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
+            HtmlNodeCollection tableauNodes = document.DocumentNode.SelectNodes("strong");
             if (tryGetNodes == null || !tryGetNodes.Any())
                 return html;
 
@@ -198,20 +199,42 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                        
                     }
                 }
-                if (imgNodes != null && node.Name.Equals("relation"))
+                if ((imgNodes != null || tableauNodes != null ) && node.Name.Equals("relation")  )
                 {
-                    foreach (HtmlNode imgnode in imgNodes)
+                    if (imgNodes != null)
                     {
-                        if (imgnode.Attributes["sourceid"].Value == node.Attributes["sourceid"].Value)
+                        foreach (HtmlNode imgnode in imgNodes)
                         {
-                            parentNode.InsertBefore(imgnode, node);
+                            if (imgnode.Attributes["sourceid"].Value == node.Attributes["sourceid"].Value)
+                            {
+                                parentNode.InsertBefore(imgnode, node);
 
-                            parentNode.RemoveChild(node);
+                                parentNode.RemoveChild(node);
 
-                            parentNode.ParentNode.RemoveChild(imgnode);
-                            imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                                document.DocumentNode.RemoveChild(imgnode);
+                               // imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                            }
                         }
                     }
+
+                    if(tableauNodes != null)
+                    {
+                        foreach (HtmlNode tableaunode in tableauNodes)
+                        {
+                            if (tableaunode.Attributes["id"].Value == node.Attributes["sourceid"].Value)
+                            {
+                                //tableaunode.Attributes["id"].Remove();
+                                parentNode.InsertBefore(tableaunode, node);
+
+                                parentNode.RemoveChild(node);
+
+                                document.DocumentNode.RemoveChild(tableaunode);
+                                //imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                            }
+                        }
+                    }
+
+
                 }
                 if (unwantedTags.Any(tag => tag == nodeName))
                 { // if this node is one to remove
@@ -450,19 +473,19 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
             if (matches != null && matches.Any())
-            {
-                if (matches.Count() > 0)
-                {
-                    foreach (Item match in matches)
+            {               
+                    if (matches.Count() > 0)
                     {
-                        if (match.Paths.FullPath.Contains(newFilePath))
+                        foreach (Item match in matches)
                         {
-                            //return new MediaItem(matches.First());
-                            return match;
+                            if (match.Paths.FullPath.Contains(newFilePath))
+                            {
+                                //return new MediaItem(matches.First());
+                                return match;
+                            }
                         }
-                    }
 
-                }               
+                    }
 
                 map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
                 return null;
