@@ -271,11 +271,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         // see if it exists
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
-                        MediaHandlerInSitecore objSitecoreMediaHandler = new MediaHandlerInSitecore();
+                        AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
                         MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc , ArticleId);
                         if (newImg != null)
                         {
                             string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
+                           
                             // replace the node with sitecore tag
                             node.SetAttributeValue("src", newSrc);
 
@@ -332,7 +333,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             return document.DocumentNode.InnerHtml;
         }
-
         
         #endregion Methods
     }
@@ -393,7 +393,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         // see if it exists
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
-                        MediaHandlerInSitecore objSitecoreMediaHandler = new MediaHandlerInSitecore();
+                    AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
                         MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
                         if (newImg != null)
                         {
@@ -402,7 +402,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         //node.SetAttributeValue("src", "");
                         string newMediaId = $"{newImg.ID.ToString()}";
                         node.SetAttributeValue("mediaid", newMediaId);
-
+                        XMLDataLogger.WriteLog("NewImageMediaId"+newMediaId, "ImageLog");
                         //If no width was found, use the sitecore width field on the med lib image 
                         if (string.IsNullOrEmpty(imgWidthStr))
                             {
@@ -423,16 +423,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 i++;
-            
 
+            XMLDataLogger.WriteLog("Inner HTML" + document.DocumentNode.InnerHtml , "ImageLog");
             return document.DocumentNode.InnerHtml;
         }
 
-        
+        #endregion
     }
 
-    public class MediaHandlerInSitecore
+    public class AricleImportImageHandler
     {
+        
         public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId)
         {
             url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
@@ -473,22 +474,22 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
             if (matches != null && matches.Any())
-            {               
-                    if (matches.Count() > 0)
+            {
+                if (matches.Count() > 0)
+                {
+                    foreach (Item match in matches)
                     {
-                        foreach (Item match in matches)
+                        if (match.Paths.FullPath.Contains(newFilePath))
                         {
-                            if (match.Paths.FullPath.Contains(newFilePath))
-                            {
-                                //return new MediaItem(matches.First());
-                                return match;
-                            }
+                            XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
+                            //return new MediaItem(matches.First());
+                            return match;
                         }
-
                     }
 
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
-                return null;
+                }
+
+                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);             
             }
 
             MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}");
@@ -498,7 +499,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return m;
         }
 
-        public static string UpperCaseUrlEncode(string s)
+        public string UpperCaseUrlEncode(string s)
         {
             char[] temp = System.Web.HttpUtility.UrlEncode(s).ToCharArray();
             for (int i = 0; i < temp.Length - 2; i++)
@@ -540,8 +541,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 Stream stream1 = response.GetResponseStream();
                 MemoryStream stream2 = new MemoryStream();
                 stream1.CopyTo(stream2);
-
-                // Create the options
+                 // Create the options
                 MediaCreatorOptions options = new MediaCreatorOptions();
                 options.FileBased = false;
                 options.IncludeExtensionInItemName = false;
@@ -556,6 +556,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 {
                     MediaItem mediaItem = creator.CreateFromStream(stream2, fileName, options);
                     response.Close();
+                    XMLDataLogger.WriteLog("Image create in media library:"+ mediaItem.Path, "ImageLog");
                     return mediaItem;
                 }
             }
@@ -564,8 +565,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return null;
             }
         }
-
-        #endregion Methods
 
     }
 
