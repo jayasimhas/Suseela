@@ -48,6 +48,7 @@
 	.article-preview__tags {
 		position: absolute;
 		bottom: 1.5rem;
+		width: calc(100% - 2.5rem);
 		@include breakpoint('medium') {
 			width: calc(100% - 2.5rem);
 		}

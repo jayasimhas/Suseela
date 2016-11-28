@@ -4809,7 +4809,8 @@ header .header-account-access {
 .personalisationhome .article-preview__tags {
   position: absolute;
   bottom: 24px;
-  bottom: 1.5rem; }
+  bottom: 1.5rem;
+  width: calc(100% - 2.5rem); }
   @media (max-width: 800px) {
     .personalisationhome .article-preview__tags {
       width: calc(100% - 2.5rem); } }
