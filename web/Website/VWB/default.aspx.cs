@@ -113,32 +113,36 @@ namespace Elsevier.Web.VWB
         /// </summary>
         private void FillPublicationsList(string selectedVal)
 		{
-			var pubItems = dbMaster.GetItem("/sitecore/content/"+ selectedVal).Children;
-            //string pubsList = string.Empty;
-			DataTable dt = new DataTable();
-			dt.Columns.Add("Code");
-			dt.Columns.Add("Name");
-			foreach (Sitecore.Data.Items.Item item in pubItems)
-			{
-				try
-				{
-					string pubName = item.Fields["Publication Name"].Value;
-					string pubCode = item.Fields["Publication Code"].Value;
+            Sitecore.Data.ID VerticalID;
+            if (Sitecore.Data.ID.TryParse(selectedVal, out VerticalID))
+            {
+                var pubItems = dbMaster.GetItem(VerticalID).Children;
+                //string pubsList = string.Empty;
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Code");
+                dt.Columns.Add("Name");
+                foreach (Sitecore.Data.Items.Item item in pubItems)
+                {
+                    try
+                    {
+                        string pubName = item.Fields["Publication Name"].Value;
+                        string pubCode = item.Fields["Publication Code"].Value;
 
-					dt.Rows.Add(pubCode, pubName);
-                    //pubsList += pubCode + ",";
+                        dt.Rows.Add(pubCode, pubName);
+                        //pubsList += pubCode + ",";
 
+                    }
+                    catch { }
                 }
-				catch { }
-			}
-            //if(pubsList.Contains(','))
-            //    pubsList.Remove(pubsList.LastIndexOf(',')-1);
+                //if(pubsList.Contains(','))
+                //    pubsList.Remove(pubsList.LastIndexOf(',')-1);
 
-            //hdnSelectedPubs.Value = pubsList;
-            ddlPublications.DataSource = dt;
-			ddlPublications.DataValueField = "Code";
-			ddlPublications.DataTextField = "Name";
-			ddlPublications.DataBind();
+                //hdnSelectedPubs.Value = pubsList;
+                ddlPublications.DataSource = dt;
+                ddlPublications.DataValueField = "Code";
+                ddlPublications.DataTextField = "Name";
+                ddlPublications.DataBind();
+            }
 		}
 
         /// <summary>
@@ -149,11 +153,11 @@ namespace Elsevier.Web.VWB
             var childItems = dbMaster.GetItem("/sitecore/content/").Children;
             if(childItems != null && childItems.Any())
             {
-                var verticalItems = childItems.Where(p => p.TemplateName.Equals("Vertical Root")).Select(s => new { Sitename = s.Name });
+                var verticalItems = childItems.Where(p => p.TemplateName.Equals("Vertical Root")).Select(s => new { Sitename = s.Name, SiteId = s.ID.ToString() });
                 if(verticalItems.Any())
                 {
                     ddlVerticals.DataSource = verticalItems;
-                    ddlVerticals.DataValueField = "Sitename";
+                    ddlVerticals.DataValueField = "SiteId";
                     ddlVerticals.DataTextField = "Sitename";
                     ddlVerticals.DataBind();
                     ddlVerticals.Items.Insert(0, new ListItem("Select Verticals", "NA"));
