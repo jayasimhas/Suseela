@@ -143,7 +143,7 @@ namespace Informa.Web.ViewModels
             {
                 string url = SearchTaxonomyUtil.GetSearchUrl(Parameters.Subjects.ToArray());
                 if (Authors.Count > 0) {
-                    var appender = (url.Contains("&")) ? "&" : string.Empty;
+                    var appender = (url.Contains("?")) ? "&" : string.Empty;
                     url = $"{url}{appender}author={string.Join(",", Authors)}";
                 }
                 SeeAllLink.Url = url;
