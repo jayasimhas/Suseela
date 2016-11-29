@@ -49,7 +49,13 @@ namespace Informa.Web.ViewModels
         }
 
         #region Side Navigation Menu Items  
+        /// <summary>
+        /// Read Side Navigation Items
+        /// </summary>
         public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
+        /// <summary>
+        /// Read valid subscriptions for the context user
+        /// </summary>
         public IEnumerable<ISubscription> ValidSubscriptions => GetValidSubscriptions();
         public string MyViewLinkURL => GetNavigationUrl();
         public string MenuText => TextTranslator.Translate("MainNavigation.Menu");

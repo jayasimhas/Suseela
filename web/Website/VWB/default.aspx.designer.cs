@@ -49,6 +49,24 @@ namespace Elsevier.Web.VWB {
         protected global::System.Web.UI.WebControls.HiddenField IssueArticleIdsInput;
         
         /// <summary>
+        /// hdnSelectedVertical control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedVertical;
+        
+        /// <summary>
+        /// hdnSelectedPubs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedPubs;
+        
+        /// <summary>
         /// NewIssueSubmitButton control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace Elsevier.Web.VWB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgLogo;
+        
+        /// <summary>
+        /// ddlVerticals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlVerticals;
         
         /// <summary>
         /// ddlPublications control.

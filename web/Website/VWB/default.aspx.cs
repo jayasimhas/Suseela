@@ -40,8 +40,9 @@ namespace Elsevier.Web.VWB
 		private ReportBuilder _reportBuilder;
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
 		private const string IssuePageUrl = "/vwb/AddIssue?id=";
+        private Sitecore.Data.Database dbMaster = Sitecore.Data.Database.GetDatabase("master");
 
-		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
 			imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
 			imgLogo.Attributes.Add("style", "width:317px;height:122px");
@@ -52,14 +53,16 @@ namespace Elsevier.Web.VWB
 			}
 			if (IsPostBack)
 			{
-				//let the event handlers for the control causing postback
-				//execute
-				return;
+                //let the event handlers for the control causing postback
+                //ddlVerticals.SelectedIndex = ddlVerticals.Items.IndexOf(ddlVerticals.Items.FindByValue(hdnSelectedVertical.Value));
+                return;
 			}
+            
+            //FillPublicationsList();
+            FillVerticals();
 
-			FillPublicationsList();
 
-			if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
+            if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
 			{
 				RunQuery(true);
 			}
@@ -104,13 +107,14 @@ namespace Elsevier.Web.VWB
 				return FindControl(buttons.First());
 
 			return null;
-		}		
-		private void FillPublicationsList()
+		}
+        /// <summary>
+        /// Poplates dropdown with available publications for the given vertical
+        /// </summary>
+        private void FillPublicationsList(string selectedVal)
 		{
-			var dbMaster = Sitecore.Data.Database.GetDatabase("master");
-
-			var pubItems = dbMaster.GetItem("/sitecore/content/").Children;
-
+			var pubItems = dbMaster.GetItem("/sitecore/content/"+ selectedVal).Children;
+            //string pubsList = string.Empty;
 			DataTable dt = new DataTable();
 			dt.Columns.Add("Code");
 			dt.Columns.Add("Name");
@@ -122,17 +126,44 @@ namespace Elsevier.Web.VWB
 					string pubCode = item.Fields["Publication Code"].Value;
 
 					dt.Rows.Add(pubCode, pubName);
-				}
+                    //pubsList += pubCode + ",";
+
+                }
 				catch { }
 			}
+            //if(pubsList.Contains(','))
+            //    pubsList.Remove(pubsList.LastIndexOf(',')-1);
 
-			ddlPublications.DataSource = dt;
+            //hdnSelectedPubs.Value = pubsList;
+            ddlPublications.DataSource = dt;
 			ddlPublications.DataValueField = "Code";
 			ddlPublications.DataTextField = "Name";
 			ddlPublications.DataBind();
-		}		
+		}
 
-		private static int? GetMaxNumResults()
+        /// <summary>
+        /// Poplates dropdown with available verticals
+        /// </summary>
+        private void FillVerticals()
+        {
+            var childItems = dbMaster.GetItem("/sitecore/content/").Children;
+            if(childItems != null && childItems.Any())
+            {
+                var verticalItems = childItems.Where(p => p.TemplateName.Equals("Vertical Root")).Select(s => new { Sitename = s.Name });
+                if(verticalItems.Any())
+                {
+                    ddlVerticals.DataSource = verticalItems;
+                    ddlVerticals.DataValueField = "Sitename";
+                    ddlVerticals.DataTextField = "Sitename";
+                    ddlVerticals.DataBind();
+                    ddlVerticals.Items.Insert(0, new ListItem("Select Verticals", "NA"));
+                }
+            }
+            
+
+        }
+
+        private static int? GetMaxNumResults()
 		{
 			int count = 250;
 			try
@@ -176,9 +207,11 @@ namespace Elsevier.Web.VWB
 				chkShowInProgressArticles.Checked = true;
 			}
 			
-			if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false)
+			if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false && _vwbQuery.VerticalRoot != null)
 			{
-				List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
+                FillPublicationsList(_vwbQuery.VerticalRoot);
+                ddlVerticals.Items.FindByValue(_vwbQuery.VerticalRoot).Selected = true;
+                List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
 				foreach (var item in codes)
 				{
 					ddlPublications.Items.FindByValue(item).Selected = true;
@@ -231,8 +264,10 @@ namespace Elsevier.Web.VWB
 
 			List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
 			q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
-
-			q.NumResultsValue = GetMaxNumResults();
+            hdnSelectedPubs.Value = string.Join(",", selected.Select(s => s.Value));
+            q.NumResultsValue = GetMaxNumResults();
+            if(ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA")
+                q.VerticalRoot = ddlVerticals.SelectedValue;
 			RedirectTo(q);
 		}
 
@@ -369,6 +404,24 @@ namespace Elsevier.Web.VWB
 			ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
 		}
 
-		#endregion
-	}
+        #endregion
+        /// <summary>
+        /// Event for vertical dropdown onchange
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ddlVerticals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlVerticals.SelectedItem.Value == "NA")
+            {
+                ddlPublications.Items.Clear();
+                hdnSelectedPubs.Value = string.Empty;
+                hdnSelectedVertical.Value = string.Empty;
+                return;
+            }
+               
+            FillPublicationsList(ddlVerticals.SelectedItem.Value);
+            hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
+        }
+    }
 }

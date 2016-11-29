@@ -40,10 +40,13 @@ namespace Informa.Web
 			mgr.StartIfStartable();
 			
 			AreaRegistration.RegisterAllAreas();
-			//GlobalConfiguration.Configure(WebApiConfig.Register);
-			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			//RouteConfig.RegisterRoutes(RouteTable.Routes);
-		}
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //Clear Dictionary cache
+            Sitecore.Globalization.Translate.ResetCache(true);
+
+        }
 
 #if DEBUG
 		protected void Application_BeginRequest()

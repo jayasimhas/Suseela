@@ -1100,7 +1100,6 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ArticlePurchasesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Management\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedSearchesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
@@ -2022,6 +2021,7 @@
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
+    <Content Include="App_Config\Sitecore.config.template" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -30,6 +30,11 @@
 
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public string MyViewLinkURL => GetNavigationUrl();
+
+        /// <summary>
+        /// Gets the Navigation url for MyView Toggle button
+        /// </summary>
+        /// <returns></returns>
         private string GetNavigationUrl()
         {
             if (IsAuthenticated)

@@ -17833,8 +17833,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// <para>Field ID: ddd7deec-d65f-460e-8b7b-7d2c044259e3</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Bottom_Notation { get; set; }
+        //[SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string Bottom_Notation { get; set; }
         /// <summary>
         /// The Off Site Renew Link field.
         /// <para></para>
@@ -17872,8 +17872,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         /// <para>Field ID: ddd7deec-d65f-460e-8b7b-7d2c044259e3</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Bottom_Notation { get; set; }
+        //[SitecoreField(ISubscriptions_PageConstants.Bottom_NotationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string Bottom_Notation { get; set; }
         /// <summary>
         /// The Off Site Renew Link field.
         /// <para></para>
@@ -17902,8 +17902,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public const string TemplateName = "Subscriptions Page";
 
 
-        public static readonly ID Bottom_NotationFieldId = new ID("ddd7deec-d65f-460e-8b7b-7d2c044259e3");
-        public const string Bottom_NotationFieldName = "Bottom Notation";
+        //public static readonly ID Bottom_NotationFieldId = new ID("ddd7deec-d65f-460e-8b7b-7d2c044259e3");
+        //public const string Bottom_NotationFieldName = "Bottom Notation";
 
 
 
@@ -26690,6 +26690,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         [SitecoreField(IVertical_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Search_Index_Name { get; set; }
+
+        [SitecoreField(IVertical_ConfigConstants.Auther_Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Auther_Search_Index_Name { get; set; }
+
     }
 
     /// <summary>
@@ -26732,6 +26736,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Search_Index_NameFieldId = new ID("4a181bc9-7b01-4dd5-8ae7-952582d73665");
         public const string Search_Index_NameFieldName = "Search Index Name";
 
+        public static readonly ID Auther_Search_Index_NameFieldId = new ID("a36845e9-4975-4328-8ad7-c5ce9e51353c");
+        public const string Auther_Search_Index_NameFieldName = "Auther Index Name";
     }
 
 

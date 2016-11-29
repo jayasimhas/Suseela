@@ -54,6 +54,51 @@ var showForgotPassSuccess = function() {
 		.toggleClass('is-active');
 };
 
+window.findTooltips = function() {
+	$('.js-toggle-tooltip').each(function(index, item) {
+		var tooltip;
+		$(item).data("ttVisible", false);
+		$(item).data("ttTouchTriggered", false);
+
+		$(item).on('mouseenter touchstart', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (e.type === "touchstart") {
+				$(item).data("ttTouchTriggered", true);
+			}
+
+			// Actual mouse events thrown can be any number of things...
+			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
+				// Do nothing
+			}
+			else if ($(item).data("ttVisible") && e.type === "touchstart") {
+				$(item).data("ttVisible", false);
+				$(item).data("ttTouchTriggered", false);
+				tooltip.hidePopup();
+			}
+			else {
+				$(item).data("ttVisible", true);
+				const offsets = $(item).offset();
+				tooltip = tooltipController({
+					isHidden: false,
+					html: $(item).data('tooltip-text'),
+					top: offsets.top,
+					left: offsets.left + $(this).width()/2,
+					triangle: 'bottom'
+				});
+			}
+		});
+
+		$(item).on('mouseleave', function() {
+			$(item).data("ttVisible", false);
+			tooltip.hidePopup();
+			$('.popup').remove();
+		});
+	});
+};
+
+window.findTooltips();
+
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
         var desktopEmbed = $(elm).find('.iframe-component__desktop');
@@ -167,25 +212,40 @@ $(document).ready(function(){
 	
 
 	//AM Charts
-	if($('#amchartData') && $('#amchartData').length){
-	var amchartVal = JSON.parse($('#amchartData').val()),
-	createNewObj = {};
-	for(var prop in amchartVal){
-		if(prop != 'dataProvider'){
-			createNewObj[prop] = amchartVal[prop];
-		}else{
-			createNewObj[prop] = chartDataVal; 
-		}
-	}
+    if($('#amchartData') && $('#amchartData').length){
+    var amchartVal = JSON.parse($('#amchartData').val()),
+    createNewObj = {}, chart;
 
-	var chart = AmCharts.makeChart( "chartdiv", createNewObj );
-	}
+    if(typeof amchartVal.dataProvider !== 'object'){
+        for(var prop in amchartVal){
+            if(prop != 'dataProvider'){
+                createNewObj[prop] = amchartVal[prop];
+            }else{
+                createNewObj[prop] = chartDataVal; 
+            }
+        }
+            chart = AmCharts.makeChart( "chartdiv", createNewObj );
+    }
+    else{
+            chart = AmCharts.makeChart( "chartdiv", amchartVal );
+       }
+    }
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
 			Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
 			$('.messaging_webUsers').remove(); 
-			$('.messaging_webUsers_white').remove(); 
+			$('.messaging_webUsers_white').remove();
+
+            var dismiss_data = {
+                event_name:"message_dismissal",
+                ga_eventCategory:"Messaging Frame",
+                ga_eventAction:"Dismissal",
+                ga_eventLabel:"Dismiss",
+                page_name: analytics_data["page_name"]
+            }
+            
+            analyticsEvent( $.extend(analytics_data, dismiss_data) );
 		});
 	}
 	window.dismiss();
@@ -328,7 +388,7 @@ $(document).ready(function(){
 		articles. Bound explicitly to `window` for easier access by Angular.
 	* * */
     window.indexBookmarks = function() { // Toggle bookmark icon
-        $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
+        $(document).on('click', '.js-bookmark-article', function bookmarkArticle(e) {
 
             e.preventDefault();
             window.bookmark.toggle(this);
@@ -1034,14 +1094,23 @@ $(document).ready(function(){
     };
 
     $('.js-register-final').on('click',function(e){
-
+        var pub_newsletter = '';
+        if (window.matchMedia("(max-width: 600px)").matches) {
+            for(var i=0; i<$('.mobile .newsletter_checkbox.wcs-c-on').length; i++){
+                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            }
+        } else {
+            for(var i=0; i<$('.site_div .newsletter_checkbox.wcs-c-on').length; i++){
+                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            }
+        } 
         var eventDetails = {
             event_name:"newsletter-signup",
             page_name:"Newsletter",
             ga_eventCategory:"Newsletter",
-            ga_eventLabel:"Publication name",
-            publication_newsletter:"Publication of which newsletter is subscribed",
-            user_email:"Email ID of user"
+            ga_eventLabel:analytics_data["publication"],
+            publication_newsletter:pub_newsletter,
+            user_news_email:analytics_data["user_email"]
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
@@ -1141,54 +1210,7 @@ $(document).ready(function(){
     $('.js-account-email-checkbox').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
-
-    window.findTooltips = function() {
-        $('.js-toggle-tooltip').each(function(index, item) {
-            var tooltip;
-            $(item).data("ttVisible", false);
-            $(item).data("ttTouchTriggered", false);
-
-            $(item).on('mouseenter touchstart', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (e.type === "touchstart") {
-                    $(item).data("ttTouchTriggered", true);
-                }
-
-                // Actual mouse events thrown can be any number of things...
-                if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
-                    // Do nothing
-                }
-                else if ($(item).data("ttVisible") && e.type === "touchstart") {
-                    $(item).data("ttVisible", false);
-                    $(item).data("ttTouchTriggered", false);
-                    tooltip.hidePopup();
-                }
-                else {
-                    $(item).data("ttVisible", true);
-                    const offsets = $(item).offset();
-                    tooltip = tooltipController({
-                        isHidden: false,
-                        html: $(item).data('tooltip-text'),
-                        top: offsets.top,
-                        left: offsets.left + $(this).width()/2,
-                        triangle: 'bottom'
-                    });
-                }
-            });
-
-            $(item).on('mouseleave', function() {
-                $(item).data("ttVisible", false);
-                tooltip.hidePopup();
-                $('.popup').remove();
-            });
-        });
-    };
-
-    window.findTooltips();
-
-
-
+  
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
 		w=window.twttr||{};

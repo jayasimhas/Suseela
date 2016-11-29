@@ -35,6 +35,21 @@
 				color: $color-white;
 			}
 		}
+		.button--outline{
+			&.subscribed{
+				cursor: text;
+				&:hover{
+					    border-color: $color-tree-poppy-orange;
+						background-color: inherit !important;
+						color: #58595b !important;
+						text-decoration: none;
+				}
+				&:focus{
+					text-decoration: none !important;
+				}
+			}
+		} 
+
 	}
 	#mypurchases{
 		width: 100%;

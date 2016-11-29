@@ -577,53 +577,115 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     int taxanomycount = 0;
                     string TaxonomyStr = "";
 
-                    if (ArticleData.ContainsKey("dashboardname"))
+                    //Nooftableau
+                    if (ArticleData.ContainsKey("Nooftableau"))
                     {
-                        TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
-                        Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
-                        //get the parent in the specific language
-                        TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
-                        //search for the child by name
-
-                        Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
-                        try
+                        if (ArticleData["Nooftableau"] != null)
                         {
-                            using (new SecurityDisabler())
+                            int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
+                            string tableauname = string.Empty;
+                            TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
+                            Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
+
+                            for (int numberofTableau = 1; numberofTableau <= numberofTableaus; numberofTableau++)
                             {
-                                // string xx= (Dictionary<string, string>())importRow[""].value;
-                                tableauItem.Editing.BeginEdit();
-                                tableauItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
-                                tableauItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
-                                tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
-                                tableauItem.Fields["Filter"].Value = ArticleData["filter"];
-                                tableauItem.Fields["Width"].Value = ArticleData["width"];
-                                tableauItem.Fields["Height"].Value = ArticleData["height"];
-                                tableauItem.Fields["Page Title"].Value = ArticleData["title"];
-                                tableauItem.Editing.EndEdit();
-                                string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+                                tableauname = "tableau" + numberofTableau.ToString();
+                              
+                                //get the parent in the specific language
+                                TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
+                                //search for the child by name
 
-
-                                if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                                Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
+                                try
                                 {
-                                    string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
-                                    if (!string.IsNullOrEmpty(wordToFind))
+                                    using (new SecurityDisabler())
                                     {
-                                        ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
-                                    }
-                                    else
-                                    {
-                                        ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                                        // string xx= (Dictionary<string, string>())importRow[""].value;
+                                        tableauItem.Editing.BeginEdit();
+                                        tableauItem.Fields["Authentication Required"].Value = ArticleData[tableauname+"authenticationrequired"] == "false" ? "0" : "1";
+                                        tableauItem.Fields["Dashboard Name"].Value = ArticleData[tableauname+"dashboardname"];
+                                        tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData[tableauname+"dashboardname"];
+                                        tableauItem.Fields["Filter"].Value = ArticleData[tableauname+"filter"];
+                                        tableauItem.Fields["Width"].Value = ArticleData[tableauname+"width"];
+                                        tableauItem.Fields["Height"].Value = ArticleData[tableauname+"height"];
+                                        tableauItem.Fields["Page Title"].Value = ArticleData[tableauname+"title"];
+                                        tableauItem.Editing.EndEdit();
+                                        string tableauToken = getTokenForTableau(tableauItem.ID.ToString(), ArticleData[tableauname + "-sourceid"]);
+
+
+                                        if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                                        {
+                                            string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
+                                            if (!string.IsNullOrEmpty(wordToFind))
+                                            {
+                                                ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
+                                            }
+                                            else
+                                            {
+                                                ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                                            }
+                                        }
+
+
                                     }
                                 }
+                                catch
+                                {
 
-
+                                }
                             }
-                        }
-                        catch
-                        {
+
 
                         }
                     }
+                    if (ArticleData.ContainsKey("dashboardname"))
+                    {
+                        //TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
+                        //Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);
+                        ////get the parent in the specific language
+                        //TemplateItem tebelu = ToDB.GetItem("{580A652A-EB37-446A-A16B-B3409C902FE5}");
+                        ////search for the child by name
+
+                        //Item tableauItem = PageAssetsItem.Add("tebleau", (TemplateItem)tebelu);
+                        //try
+                        //{
+                        //    using (new SecurityDisabler())
+                        //    {
+                        //        // string xx= (Dictionary<string, string>())importRow[""].value;
+                        //        tableauItem.Editing.BeginEdit();
+                        //        tableauItem.Fields["Authentication Required"].Value = ArticleData["authenticationrequired"] == "false" ? "0" : "1";
+                        //        tableauItem.Fields["Dashboard Name"].Value = ArticleData["dashboardname"];
+                        //        tableauItem.Fields["Mobile Dashboard Name"].Value = ArticleData["dashboardname"];
+                        //        tableauItem.Fields["Filter"].Value = ArticleData["filter"];
+                        //        tableauItem.Fields["Width"].Value = ArticleData["width"];
+                        //        tableauItem.Fields["Height"].Value = ArticleData["height"];
+                        //        tableauItem.Fields["Page Title"].Value = ArticleData["title"];
+                        //        tableauItem.Editing.EndEdit();
+                        //        string tableauToken = getTokenForTableau(tableauItem.ID.ToString());
+
+
+                        //        if (!string.IsNullOrEmpty(ArticleData["STORYBODY"]))
+                        //        {
+                        //            string wordToFind = Regex.Match(ArticleData["STORYBODY"], @"<NEDIAREL\s*(.+?)\s*</NEDIAREL>").ToString();
+                        //            if (!string.IsNullOrEmpty(wordToFind))
+                        //            {
+                        //                ArticleData["STORYBODY"] = Regex.Replace(ArticleData["STORYBODY"], wordToFind, tableauToken, RegexOptions.IgnoreCase);
+                        //            }
+                        //            else
+                        //            {
+                        //                ArticleData["STORYBODY"] = ArticleData["STORYBODY"] + tableauToken;
+                        //            }
+                        //        }
+
+
+                        //    }
+                        //}
+                        //catch
+                        //{
+
+                        //}
+                    }
+
                     foreach (IBaseField d in fieldDefs)
                     {
                         string importValue = string.Empty;
@@ -706,30 +768,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     XMLDataLogger.WriteLog(ArticleId, CommodityLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COUNTRY" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COUNTRY1") && importValue == "")
                                 {
                                     errorLog += "||" + "Region N/A";
                                     XMLDataLogger.WriteLog(ArticleId, RegionLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMODITYFACTOR" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITYFACTOR1") && importValue == "")
                                 {
                                     errorLog += "||" + "CommodityFactor N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CommodityFactorLog);
                                 }
 
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMMERCIAL" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMERCIAL1") && importValue == "")
                                 {
                                     errorLog += "||" + "Commercial N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CommercialLog);
                                 }
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "AGENCY" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("AGENCY1") && importValue == "")
                                 {
                                     errorLog += "||" + "AGENCY N/A";
                                     XMLDataLogger.WriteLog(ArticleId, AgencyLog);
 
                                 }
-                                if (((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName == "COMPANIES" && importValue == "")
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMPANIES1") && importValue == "")
                                 {
                                     errorLog += "||" + "COMPANIES N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CompanyLog);
@@ -741,7 +803,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors")
+                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9" && d.NewItemField != "Body")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
@@ -792,8 +854,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         }
 
-
-
         /// <summary>
         /// gets the parent of the new item created. will create folders based on name or date if configured to
         /// </summary>
@@ -839,7 +899,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         }
 
 
-        private string getTokenForTableau(string tableau)
+        private string getTokenForTableau(string tableau , string sourceid)
         {
             tableau = tableau.Replace("{", String.Empty).Replace("}", String.Empty);
             //< tr >< td >< strong >[T#:c6cc76d3-bc75-43a7-bd86-06d85ff49852]</strong></td></tr>
@@ -848,7 +908,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             //</ p >
             //return "< tr >< td >< strong >[T#:" + tableau + "]</strong></td></tr>";
 
-            return "<p xmlns='' class='article-paragraph'><strong>[T#:" + tableau + "]</strong></p>";
+            return "<strong id=" + sourceid + ">[T#:" + tableau + "]</strong>";
 
         }
 

@@ -377,7 +377,8 @@ namespace Informa.Web.Controllers
         {
             Guid mainSectionGuid = new Guid(SitecoreSettingResolver.Instance.ContentRootGuid);
             var contentFolder = _sitecoreService.GetItem<IMain_Section>(mainSectionGuid);
-            var verticalsPublications = contentFolder?._ChildrenWithInferType.OfType<IVertical_Root>().Select(c =>
+            var verticalsPublications = contentFolder?._ChildrenWithInferType.OfType<IVertical_Root>().Where(p=> p._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().Any()).
+                Select(c =>
                          new VerticalStruct
                          {
                              ID = c._Id,

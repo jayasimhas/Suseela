@@ -41,37 +41,156 @@
 
         public string ChannelFollowButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowButtonText");
 
+        /// <summary>
+        /// Gets the topic following button text.
+        /// </summary>
+        /// <value>
+        /// The topic following button text.
+        /// </value>
         public string TopicFollowingButtonText => TextTranslator.Translate("MyViewSettings.TopicFollowingButtonText");
 
+        /// <summary>
+        /// Gets the topic follow button text.
+        /// </summary>
+        /// <value>
+        /// The topic follow button text.
+        /// </value>
         public string TopicFollowButtonText => TextTranslator.Translate("MyViewSettings.TopicFollowButtonText");
 
+        /// <summary>
+        /// Gets the follow all button text.
+        /// </summary>
+        /// <value>
+        /// The follow all button text.
+        /// </value>
         public string FollowAllButtonText => TextTranslator.Translate("MyViewSettings.FollowAllButtonText");
 
+        /// <summary>
+        /// Gets the unfollow all button text.
+        /// </summary>
+        /// <value>
+        /// The unfollow all button text.
+        /// </value>
         public string UnfollowAllButtonText => TextTranslator.Translate("MyViewSettings.UnfollowAllButtonText");
 
+        /// <summary>
+        /// Gets the subscribe button text.
+        /// </summary>
+        /// <value>
+        /// The subscribe button text.
+        /// </value>
         public string SubscribeButtonText => TextTranslator.Translate("MyViewSettings.SubscribeButtonText");
 
+        /// <summary>
+        /// Gets the subscribed button text.
+        /// </summary>
+        /// <value>
+        /// The subscribed button text.
+        /// </value>
         public string SubscribedButtonText => TextTranslator.Translate("MyViewSettings.SubscribedButtonText");
 
+        /// <summary>
+        /// Gets the move lable text.
+        /// </summary>
+        /// <value>
+        /// The move lable text.
+        /// </value>
         public string MoveLableText => TextTranslator.Translate("MyViewSettings.MoveLableText");
 
+        /// <summary>
+        /// Gets the pick and choose lable text.
+        /// </summary>
+        /// <value>
+        /// The pick and choose lable text.
+        /// </value>
         public string PickAndChooseLableText => TextTranslator.Translate("MyViewSettings.PickAndChooseLableText");
 
+        /// <summary>
+        /// Gets the subscribe message text.
+        /// </summary>
+        /// <value>
+        /// The subscribe message text.
+        /// </value>
         public string SubscribeMessageText => TextTranslator.Translate("MyViewSettings.SubscribeMessageText");
 
+        /// <summary>
+        /// Gets the pick and choose lable mobile text.
+        /// </summary>
+        /// <value>
+        /// The pick and choose lable mobile text.
+        /// </value>
         public string PickAndChooseLableMobileText => TextTranslator.Translate("MyViewSettings.PickAndChooseLableMobileText");
 
+        /// <summary>
+        /// Gets the subscribe URL.
+        /// </summary>
+        /// <value>
+        /// The subscribe URL.
+        /// </value>
         public string SubscribeUrl => SiterootContext.Item?.Subscribe_Link?.Url;
 
+        /// <summary>
+        /// Gets the publicationname.
+        /// </summary>
+        /// <value>
+        /// The publicationname.
+        /// </value>
         public string publicationname => SiterootContext.Item.Publication_Name;
 
+        /// <summary>
+        /// Gets the subscribed message text.
+        /// </summary>
+        /// <value>
+        /// The subscribed message text.
+        /// </value>
         public string SubscribedMessageText => TextTranslator.Translate("Registration.SubscribedMessageText");
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is channel based registration.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is channel based registration; otherwise, <c>false</c>.
+        /// </value>
         public bool isChannelBasedRegistration { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is from registration.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is from registration; otherwise, <c>false</c>.
+        /// </value>
         public bool isFromRegistration { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [enable save preferences check].
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if [enable save preferences check]; otherwise, <c>false</c>.
+        /// </value>
         public bool enableSavePreferencesCheck { get; set; }
+
+        /// <summary>
+        /// Gets the channels.
+        /// </summary>
+        /// <value>
+        /// The channels.
+        /// </value>
         public IList<Channel> Channels => GetChannels();
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is new user.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is new user; otherwise, <c>false</c>.
+        /// </value>
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.IsNewUser;
+
+        /// <summary>
+        /// Gets the current subscriptions.
+        /// </summary>
+        /// <value>
+        /// The current subscriptions.
+        /// </value>
         public ISubscription currentSubscriptions
         {
             get
@@ -80,6 +199,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the channels.
+        /// </summary>
+        /// <returns>List of channels</returns>
         private IList<Channel> GetChannels()
         {
 
@@ -190,6 +313,10 @@
         }
 
 
+        /// <summary>
+        /// Gets all channels.
+        /// </summary>
+        /// <returns>List of channels</returns>
         private IList<Channel> GetAllChannels()
         {
             var channels = new List<Channel>();
@@ -215,7 +342,7 @@
                             channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
-                            SetChannelOrderAndStus(channelPage, channel);
+                            SetChannelOrderAndStatus(channelPage, channel);
                             channel.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(ch => ch.ChannelId == channelPage.Channel_Code && ch.ExpirationDate > DateTime.Now) ?? false;
                             GetTopics(channel, channelPage);
                             channels.Add(channel);
@@ -227,7 +354,12 @@
             return channels;
         }
 
-        private void SetChannelOrderAndStus(IChannel_Page channelPage, Channel channel)
+        /// <summary>
+        /// Sets the channel order and status.
+        /// </summary>
+        /// <param name="channelPage">The channel page.</param>
+        /// <param name="channel">The channel.</param>
+        private void SetChannelOrderAndStatus(IChannel_Page channelPage, Channel channel)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null
                 && UserPreferences.Preferences.PreferredChannels.Any())
@@ -242,6 +374,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets the topics.
+        /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <param name="channelPage">The channel page.</param>
         private void GetTopics(Channel channel, IChannel_Page channelPage)
         {
             channel.Topics = new List<Topic>();
@@ -268,6 +405,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets the topic order and status.
+        /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <param name="topicPage">The topic page.</param>
+        /// <param name="topic">The topic.</param>
         private void GetTopicOrderAndStatus(Channel channel, Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicPage, Topic topic)
         {
             if (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null

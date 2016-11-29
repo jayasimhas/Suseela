@@ -101,7 +101,7 @@
 
 
 @mixin theme-banners($background, $text) {
-    .banner--cookie-policy,
+    //.banner--cookie-policy,
     .banner--register,
 	.banner--alert {
         background-color: $background;

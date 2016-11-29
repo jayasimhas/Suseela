@@ -1,5 +1,6 @@
 ﻿@model Informa.Web.ViewModels.DataTools.AMChartsUsingBuilderViewModel
 
+@*AM Charts component for creating AMcharts using Builder*@
 @if (Model != null)
 {
     var chartType = Model.ChartType;
@@ -36,8 +37,8 @@
                 <div class="sub-heading-text">@Html.Raw(Model.PageSubheading)</div>
                 <div class="js-toggle-demo">
                     <ul class="show-demo">
-                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
-                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                        <li><a class="sd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_hide_demo","page_name":"@Sitecore.Context.Item.Fields["Title"].Value","ga_eventCategory":"Data Tool Page","ga_eventAction":"Hide Demo","ga_eventLabel":"@Sitecore.Context.Item.Fields["Title"].Value"}'>@Model.HideDemoLable</a></li>
+                        <li><a class="hd click-utag" href="javascript: void(0);" data-info='{"event_name":"data_tool_show_demo","page_name":"@Sitecore.Context.Item.Fields["Title"].Value","ga_eventCategory":"Data Tool Page","ga_eventAction":"Show Demo","ga_eventLabel":"@Sitecore.Context.Item.Fields["Title"].Value"}'>@Model.ShowDemoLable</a></li>
                     </ul>
                     <div class="toggle-demo">
                         <div class="demoText">

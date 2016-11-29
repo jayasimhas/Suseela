@@ -2452,7 +2452,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   line-height: 18px;
   line-height: 1.125rem; }
   .informa-ribbon a, .informa-ribbon .pop-out__reset-password, .informa-ribbon .sortable-table__list-toggler, .informa-ribbon .mobile-table-exit {
-    color: #fff; }
+    color: #fff !important; }
   .informa-ribbon__title {
     box-shadow: 0;
     border: 0;
@@ -3713,8 +3713,8 @@ header .header-account-access {
   clear: both;
   border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 20px 32px 30px;
-  padding: 1.25rem 2rem 1.875rem;
+  padding: 20px 32px 25px;
+  padding: 1.25rem 2rem 1.5625rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
@@ -3832,8 +3832,8 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 480px;
-      width: 30rem;
+      width: 464px;
+      width: 29rem;
       margin-top: -5px;
       line-height: 40px;
       line-height: 2.5rem; }
@@ -3938,6 +3938,11 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
+            @media (max-width: 1080px) {
+              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+                background: inherit;
+                border: 1px solid #f7941e;
+                color: inherit; } }
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
                 background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4023,11 +4028,17 @@ header .header-account-access {
         .myview-settings .table-responsive .table tbody tr.followingrow:hover {
           background: #f5f5f5;
           cursor: move; }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table tbody tr.followingrow:hover {
+              background: #fff; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
             background: #acacad; }
+            @media (max-width: 1080px) {
+              .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
+                background: #d1d3d5; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
-            @media (max-width: 480px) {
+            @media (max-width: 1080px) {
               .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
                 display: none; } }
         .myview-settings .table-responsive .table tbody tr.followrow {
@@ -4160,9 +4171,10 @@ header .header-account-access {
                 z-index: -1; } }
           .myview-settings .table-responsive .table thead th .rowlines .mv {
             background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
-            height: 17px;
+            height: 50px;
             width: 21px;
-            display: block; }
+            display: block;
+            margin-top: -15px; }
             @media (max-width: 640px) {
               .myview-settings .table-responsive .table thead th .rowlines .mv {
                 background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
@@ -4345,8 +4357,7 @@ header .header-account-access {
         color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
-        padding: 0 36px;
-        padding: 0 2.25rem;
+        padding: 0;
         cursor: text;
         min-width: 130px; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
@@ -4515,129 +4526,101 @@ header .header-account-access {
     background: #f9f9f9; }
   .myview-settings .modal-view {
     position: fixed;
-    width: 400px;
-    width: 25rem;
-    height: 130px;
-    height: 8.125rem;
+    width: 300px;
+    width: 18.75rem;
+    height: 200px;
+    height: 12.5rem;
     top: 50%;
     left: 50%;
     z-index: 9999;
-    margin-left: -200px;
-    margin-left: -12.5rem;
-    margin-top: -65px;
-    margin-top: -4.0625rem;
+    margin-left: -150px;
+    margin-left: -9.375rem;
+    margin-top: -100px;
+    margin-top: -6.25rem;
     background: #ffffff;
     padding: 35px 40px 40px;
     padding: 2.1875rem 2.5rem 2.5rem;
-    border: 1px solid #f7941e;
-    border-radius: 4px;
-    display: none; }
-    .myview-settings .modal-view.preferences {
-      height: 160px;
-      height: 10rem; }
-      .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
-      .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
-      .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
-      .article-inline-image__title, .myview-settings .modal-view.preferences
-      .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
-      .article-inline-image--pull-right__title {
-        margin-bottom: 16px;
-        margin-bottom: 1rem; }
-      .myview-settings .modal-view.preferences .saveview {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: auto;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        background: #f7941e;
-        color: #ffffff;
-        padding: 0 32px;
-        padding: 0 2rem; }
-      .myview-settings .modal-view.preferences .registrationBtn.validationChk {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: auto;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        background: #f7941e;
-        color: #ffffff;
-        padding: 0 32px;
-        padding: 0 2rem; }
-      .myview-settings .modal-view.preferences .cancel {
-        border: 1px solid #f7941e;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-family: "Roboto";
-        font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
-        text-align: center;
-        display: inline-block;
-        line-height: 32px;
-        line-height: 2rem;
-        float: right;
-        padding: 0 25px;
-        padding: 0 1.5625rem;
-        margin-top: 8px;
-        margin-top: 0.5rem;
-        margin: 0px;
-        float: left;
-        color: #58595b; }
-        .myview-settings .modal-view.preferences .cancel:hover {
-          background-color: #f7941e; }
-        .myview-settings .modal-view.preferences .cancel.mtp {
-          margin-top: -6px;
-          margin-bottom: 25px; }
-    @media (max-width: 480px) {
-      .myview-settings .modal-view {
-        width: 300px;
-        width: 18.75rem;
-        height: 100px;
-        height: 6.25rem;
-        margin-left: -150px;
-        margin-left: -9.375rem;
-        margin-top: -150px;
-        margin-top: -9.375rem;
-        padding: 26px 40px 40px;
-        padding: 1.625rem 2.5rem 2.5rem; } }
-    .myview-settings .modal-view h4, .myview-settings .modal-view .lightbox-modal__title, .myview-settings .modal-view .exhibit-title, .myview-settings .modal-view .article-exhibit__title, .myview-settings .modal-view
-    .article-exhibit--pull-left__title, .myview-settings .modal-view
-    .article-exhibit--pull-right__title, .myview-settings .modal-view
-    .article-inline-image__title, .myview-settings .modal-view
-    .article-inline-image--pull-left__title, .myview-settings .modal-view
+    display: none;
+    font-family: "Roboto"; }
+    .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
+      background-image: url(/dist/img/sprite-image.png);
+      background-position: left 46px top -574px;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: bold;
+      padding-left: 72px;
+      padding-left: 4.5rem;
+      margin: 10px 0 20px;
+      background-repeat: no-repeat; }
+    .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
+    .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
+    .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
+    .article-inline-image__title, .myview-settings .modal-view.preferences
+    .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-right__title {
-      font-size: 18px;
-      font-size: 1.125rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem;
+      font-size: 12px;
+      font-size: .75rem;
+      color: #626262;
+      font-weight: normal;
+      text-align: center; }
+    .myview-settings .modal-view.preferences .buttonsPan {
+      width: 162px;
+      width: 10.125rem;
+      margin: 0px auto; }
+    .myview-settings .modal-view.preferences .saveview {
+      border: 1px solid #f7941e;
+      color: #231f20;
       text-align: center;
-      line-height: 30px;
-      line-height: 1.875rem; }
-      @media (max-width: 480px) {
-        .myview-settings .modal-view h4, .myview-settings .modal-view .lightbox-modal__title, .myview-settings .modal-view .exhibit-title, .myview-settings .modal-view .article-exhibit__title, .myview-settings .modal-view
-        .article-exhibit--pull-left__title, .myview-settings .modal-view
-        .article-exhibit--pull-right__title, .myview-settings .modal-view
-        .article-inline-image__title, .myview-settings .modal-view
-        .article-inline-image--pull-left__title, .myview-settings .modal-view
-        .article-inline-image--pull-right__title {
-          font-size: 14px;
-          font-size: 0.875rem;
-          text-align: center;
-          line-height: 24px;
-          line-height: 1.5rem; } }
+      float: left;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
+      .myview-settings .modal-view.preferences .saveview:hover {
+        background: #f7941e; }
+    .myview-settings .modal-view.preferences .registrationBtn.validationChk {
+      border: 1px solid #f7941e;
+      color: #231f20;
+      text-align: center;
+      float: left;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
+      .myview-settings .modal-view.preferences .registrationBtn.validationChk:hover {
+        background: #f7941e; }
+    .myview-settings .modal-view.preferences .cancel {
+      background: #f7941e;
+      color: #231f20;
+      text-align: center;
+      float: right;
+      height: 24px;
+      height: 1.5rem;
+      width: 70px;
+      width: 4.375rem;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      cursor: pointer;
+      line-height: 23px;
+      line-height: 1.4375rem;
+      font-weight: bold; }
     .myview-settings .modal-view .modal-inner {
       display: inline-block;
       text-align: left;
@@ -4655,12 +4638,16 @@ header .header-account-access {
       right: 0.625rem;
       top: 10px;
       top: 0.625rem;
-      color: #f7941e;
+      color: #231f20;
       font-family: "Roboto";
       font-weight: bold;
-      font-size: 16px;
-      font-size: 1rem;
-      cursor: pointer; }
+      cursor: pointer;
+      text-transform: uppercase;
+      background: url(/dist/img/sprite-image.png) no-repeat right -72px top -592px;
+      font-size: 10px;
+      font-size: 0.625rem;
+      padding-right: 16px;
+      padding-right: 1rem; }
   .myview-settings .modal-overlay.in {
     background: #000;
     height: 100%;
@@ -4722,13 +4709,15 @@ header .header-account-access {
       text-indent: -8.75rem;
       color: #58595b !important;
       border: none !important;
-      background-color: inherit !important; }
+      background-color: inherit !important;
+      clear: both; }
     .myview-settings .smfollowingBtn .followAllBtn {
       background-position: -3px -266px;
       text-indent: -124px;
       border: none !important;
       padding: 0 0 !important;
-      float: right; }
+      float: right;
+      clear: both; }
   .myview-settings .accordionStatus.hideRow {
     display: none; } }
 
@@ -4781,6 +4770,12 @@ header .header-account-access {
 .pub-subscription-subtitle {
   text-align: left; }
 
+@media print {
+  .messaging_webUsers_white {
+    display: none !important; }
+  #feedbacklite {
+    display: none !important; } }
+
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
     font-size: 24px;
@@ -4791,9 +4786,18 @@ header .header-account-access {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 26px;
-    line-height: 1.625rem; }
-  .personalisationhome .hidespin {
-    display: none; } }
+    line-height: 1.625rem; } }
+
+@media (max-width: 480px) {
+  .personalisationhome .article-preview {
+    position: inherit; }
+  .personalisationhome .article-summary {
+    height: 250px;
+    height: 15.625rem;
+    overflow: hidden; } }
+
+.personalisationhome .hidespin {
+  display: none; }
 
 .personalisationhome .hidden-lg {
   display: none !important; }
@@ -4805,7 +4809,14 @@ header .header-account-access {
 .personalisationhome .article-preview__tags {
   position: absolute;
   bottom: 24px;
-  bottom: 1.5rem; }
+  bottom: 1.5rem;
+  width: calc(100% - 2.5rem); }
+  @media (max-width: 800px) {
+    .personalisationhome .article-preview__tags {
+      width: calc(100% - 2.5rem); } }
+  @media (max-width: 480px) {
+    .personalisationhome .article-preview__tags {
+      position: static; } }
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }
@@ -5074,10 +5085,15 @@ header .header-account-access {
   width: 21.0625rem;
   height: 190px;
   height: 11.875rem; }
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .personalisationhome .topic-featured-article__image2 {
+      width: 100%;
+      height: auto; } }
   @media (max-width: 480px) {
     .personalisationhome .topic-featured-article__image2 {
       margin-top: 20px;
-      margin-top: 1.25rem; } }
+      margin-top: 1.25rem;
+      width: 100%; } }
 
 .personalisationhome .googleAdd {
   margin-bottom: 80px;
@@ -5089,7 +5105,8 @@ header .header-account-access {
   height: 43.75rem; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small.preview2 {
-      padding: 0px;
+      padding: 0 15px;
+      background: #ececec;
       margin-bottom: 0px; } }
 
 .personalisationhome .mtop {
@@ -5125,7 +5142,8 @@ header .header-account-access {
     display: block !important; }
   .personalisationhome .article-preview--small {
     border: none;
-    border-top: 2px solid #d1d3d4; }
+    border-top: 2px solid #d1d3d4;
+    position: relative; }
     .personalisationhome .article-preview--small.mobview {
       padding: 16px 0 0;
       padding: 1rem 0 0;
@@ -5175,7 +5193,8 @@ header .header-account-access {
   .personalisationhome .latest-news__articles .article-small-preview {
     width: 90%; }
   .personalisationhome .latest-news__articles .article-preview--small .article-preview__tags {
-    left: 0; }
+    left: 0;
+    position: absolute; }
   .personalisationhome .mtop {
     margin-top: 0px !important; }
   .personalisationhome .googleAdd img {
@@ -5217,6 +5236,25 @@ header .header-account-access {
       .personalisationhome .latestSubject .editView.mobview {
         margin: 24px 20px 8px;
         margin: 1.5rem 1.25rem .5rem; } }
+
+.personalisationhome .article-preview__inner-wrapper.showarticle {
+  height: 100px;
+  height: 6.25rem;
+  overflow: hidden; }
+  .personalisationhome .article-preview__inner-wrapper.showarticle .article-preview__headline {
+    height: 70px;
+    height: 4.375rem;
+    overflow: hidden; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .personalisationhome .article-preview__inner-wrapper.showarticle .article-preview__headline {
+        height: 50px;
+        height: 3.125rem;
+        margin-bottom: 20px;
+        margin-bottom: 1.25rem; } }
+  .personalisationhome .article-preview__inner-wrapper.showarticle .article-preview__byline {
+    height: 25px;
+    height: 1.5625rem;
+    overflow: hidden; }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
@@ -6107,6 +6145,11 @@ input[type='text'].selectivity-multiple-input {
     height: 12px;
     width: 12px; }
 
+@media (max-width: 480px) {
+  .pop-out .pop-out__internal {
+    min-width: inherit;
+    width: 100%; } }
+
 .sortable-table {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -6376,6 +6419,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         border-color: #f7941e;
         background-color: #f7941e;
         color: #ffffff; }
+    .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
+      cursor: text; }
+      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
+        border-color: #f7941e;
+        background-color: inherit !important;
+        color: #58595b !important;
+        text-decoration: none; }
+      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:focus {
+        text-decoration: none !important; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
@@ -7292,7 +7344,7 @@ div#feedbacklite.fbl_r {
         margin-left: 0; }
       .topic-featured-article__image {
         width: 272px;
-        height: 153px;
+        height: auto;
         margin-bottom: 80px;
         margin-bottom: 5rem; }
       .topic-featured-article__image, .topic-featured-article__headline {
@@ -10549,7 +10601,8 @@ section: Global Components
       margin-top: 0;
       padding: 0;
       position: absolute;
-      right: 0; } }
+      right: 0;
+      z-index: 99; } }
 
 .header-search__field {
   max-width: 310px;
@@ -11050,13 +11103,9 @@ main {
 .theme-pink-sheet .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #BC608C; }
 
-.theme-pink-sheet .banner--cookie-policy,
 .theme-pink-sheet .banner--register,
 .theme-pink-sheet .banner--alert {
   background-color: #FEE2E7; }
-  .theme-pink-sheet .banner--cookie-policy,
-  .theme-pink-sheet .banner--cookie-policy span,
-  .theme-pink-sheet .banner--cookie-policy svg,
   .theme-pink-sheet .banner--register,
   .theme-pink-sheet .banner--register span,
   .theme-pink-sheet .banner--register svg,
@@ -11065,9 +11114,6 @@ main {
   .theme-pink-sheet .banner--alert svg {
     fill: inherit;
     color: inherit; }
-    .theme-pink-sheet .banner--cookie-policy use > svg,
-    .theme-pink-sheet .banner--cookie-policy span use > svg,
-    .theme-pink-sheet .banner--cookie-policy svg use > svg,
     .theme-pink-sheet .banner--register use > svg,
     .theme-pink-sheet .banner--register span use > svg,
     .theme-pink-sheet .banner--register svg use > svg,
@@ -11075,23 +11121,7 @@ main {
     .theme-pink-sheet .banner--alert span use > svg,
     .theme-pink-sheet .banner--alert svg use > svg {
       fill: inherit; }
-  .theme-pink-sheet .banner--cookie-policy a, .theme-pink-sheet .banner--cookie-policy .pop-out__reset-password, .theme-pink-sheet .banner--cookie-policy .sortable-table__list-toggler, .theme-pink-sheet .banner--cookie-policy .mobile-table-exit, .theme-pink-sheet .banner--cookie-policy a:hover, .theme-pink-sheet .banner--cookie-policy .pop-out__reset-password:hover, .theme-pink-sheet .banner--cookie-policy .sortable-table__list-toggler:hover, .theme-pink-sheet .banner--cookie-policy .mobile-table-exit:hover, .theme-pink-sheet .banner--cookie-policy a:active, .theme-pink-sheet .banner--cookie-policy .pop-out__reset-password:active, .theme-pink-sheet .banner--cookie-policy .sortable-table__list-toggler:active, .theme-pink-sheet .banner--cookie-policy .mobile-table-exit:active, .theme-pink-sheet .banner--cookie-policy a:focus, .theme-pink-sheet .banner--cookie-policy .pop-out__reset-password:focus, .theme-pink-sheet .banner--cookie-policy .sortable-table__list-toggler:focus, .theme-pink-sheet .banner--cookie-policy .mobile-table-exit:focus,
-  .theme-pink-sheet .banner--register a,
-  .theme-pink-sheet .banner--register .pop-out__reset-password,
-  .theme-pink-sheet .banner--register .sortable-table__list-toggler,
-  .theme-pink-sheet .banner--register .mobile-table-exit,
-  .theme-pink-sheet .banner--register a:hover,
-  .theme-pink-sheet .banner--register .pop-out__reset-password:hover,
-  .theme-pink-sheet .banner--register .sortable-table__list-toggler:hover,
-  .theme-pink-sheet .banner--register .mobile-table-exit:hover,
-  .theme-pink-sheet .banner--register a:active,
-  .theme-pink-sheet .banner--register .pop-out__reset-password:active,
-  .theme-pink-sheet .banner--register .sortable-table__list-toggler:active,
-  .theme-pink-sheet .banner--register .mobile-table-exit:active,
-  .theme-pink-sheet .banner--register a:focus,
-  .theme-pink-sheet .banner--register .pop-out__reset-password:focus,
-  .theme-pink-sheet .banner--register .sortable-table__list-toggler:focus,
-  .theme-pink-sheet .banner--register .mobile-table-exit:focus,
+  .theme-pink-sheet .banner--register a, .theme-pink-sheet .banner--register .pop-out__reset-password, .theme-pink-sheet .banner--register .sortable-table__list-toggler, .theme-pink-sheet .banner--register .mobile-table-exit, .theme-pink-sheet .banner--register a:hover, .theme-pink-sheet .banner--register .pop-out__reset-password:hover, .theme-pink-sheet .banner--register .sortable-table__list-toggler:hover, .theme-pink-sheet .banner--register .mobile-table-exit:hover, .theme-pink-sheet .banner--register a:active, .theme-pink-sheet .banner--register .pop-out__reset-password:active, .theme-pink-sheet .banner--register .sortable-table__list-toggler:active, .theme-pink-sheet .banner--register .mobile-table-exit:active, .theme-pink-sheet .banner--register a:focus, .theme-pink-sheet .banner--register .pop-out__reset-password:focus, .theme-pink-sheet .banner--register .sortable-table__list-toggler:focus, .theme-pink-sheet .banner--register .mobile-table-exit:focus,
   .theme-pink-sheet .banner--alert a,
   .theme-pink-sheet .banner--alert .pop-out__reset-password,
   .theme-pink-sheet .banner--alert .sortable-table__list-toggler,
@@ -11374,13 +11404,9 @@ main {
 .theme-rose-sheet .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #DD3580; }
 
-.theme-rose-sheet .banner--cookie-policy,
 .theme-rose-sheet .banner--register,
 .theme-rose-sheet .banner--alert {
   background-color: #f8d7e6; }
-  .theme-rose-sheet .banner--cookie-policy,
-  .theme-rose-sheet .banner--cookie-policy span,
-  .theme-rose-sheet .banner--cookie-policy svg,
   .theme-rose-sheet .banner--register,
   .theme-rose-sheet .banner--register span,
   .theme-rose-sheet .banner--register svg,
@@ -11389,9 +11415,6 @@ main {
   .theme-rose-sheet .banner--alert svg {
     fill: inherit;
     color: inherit; }
-    .theme-rose-sheet .banner--cookie-policy use > svg,
-    .theme-rose-sheet .banner--cookie-policy span use > svg,
-    .theme-rose-sheet .banner--cookie-policy svg use > svg,
     .theme-rose-sheet .banner--register use > svg,
     .theme-rose-sheet .banner--register span use > svg,
     .theme-rose-sheet .banner--register svg use > svg,
@@ -11399,23 +11422,7 @@ main {
     .theme-rose-sheet .banner--alert span use > svg,
     .theme-rose-sheet .banner--alert svg use > svg {
       fill: inherit; }
-  .theme-rose-sheet .banner--cookie-policy a, .theme-rose-sheet .banner--cookie-policy .pop-out__reset-password, .theme-rose-sheet .banner--cookie-policy .sortable-table__list-toggler, .theme-rose-sheet .banner--cookie-policy .mobile-table-exit, .theme-rose-sheet .banner--cookie-policy a:hover, .theme-rose-sheet .banner--cookie-policy .pop-out__reset-password:hover, .theme-rose-sheet .banner--cookie-policy .sortable-table__list-toggler:hover, .theme-rose-sheet .banner--cookie-policy .mobile-table-exit:hover, .theme-rose-sheet .banner--cookie-policy a:active, .theme-rose-sheet .banner--cookie-policy .pop-out__reset-password:active, .theme-rose-sheet .banner--cookie-policy .sortable-table__list-toggler:active, .theme-rose-sheet .banner--cookie-policy .mobile-table-exit:active, .theme-rose-sheet .banner--cookie-policy a:focus, .theme-rose-sheet .banner--cookie-policy .pop-out__reset-password:focus, .theme-rose-sheet .banner--cookie-policy .sortable-table__list-toggler:focus, .theme-rose-sheet .banner--cookie-policy .mobile-table-exit:focus,
-  .theme-rose-sheet .banner--register a,
-  .theme-rose-sheet .banner--register .pop-out__reset-password,
-  .theme-rose-sheet .banner--register .sortable-table__list-toggler,
-  .theme-rose-sheet .banner--register .mobile-table-exit,
-  .theme-rose-sheet .banner--register a:hover,
-  .theme-rose-sheet .banner--register .pop-out__reset-password:hover,
-  .theme-rose-sheet .banner--register .sortable-table__list-toggler:hover,
-  .theme-rose-sheet .banner--register .mobile-table-exit:hover,
-  .theme-rose-sheet .banner--register a:active,
-  .theme-rose-sheet .banner--register .pop-out__reset-password:active,
-  .theme-rose-sheet .banner--register .sortable-table__list-toggler:active,
-  .theme-rose-sheet .banner--register .mobile-table-exit:active,
-  .theme-rose-sheet .banner--register a:focus,
-  .theme-rose-sheet .banner--register .pop-out__reset-password:focus,
-  .theme-rose-sheet .banner--register .sortable-table__list-toggler:focus,
-  .theme-rose-sheet .banner--register .mobile-table-exit:focus,
+  .theme-rose-sheet .banner--register a, .theme-rose-sheet .banner--register .pop-out__reset-password, .theme-rose-sheet .banner--register .sortable-table__list-toggler, .theme-rose-sheet .banner--register .mobile-table-exit, .theme-rose-sheet .banner--register a:hover, .theme-rose-sheet .banner--register .pop-out__reset-password:hover, .theme-rose-sheet .banner--register .sortable-table__list-toggler:hover, .theme-rose-sheet .banner--register .mobile-table-exit:hover, .theme-rose-sheet .banner--register a:active, .theme-rose-sheet .banner--register .pop-out__reset-password:active, .theme-rose-sheet .banner--register .sortable-table__list-toggler:active, .theme-rose-sheet .banner--register .mobile-table-exit:active, .theme-rose-sheet .banner--register a:focus, .theme-rose-sheet .banner--register .pop-out__reset-password:focus, .theme-rose-sheet .banner--register .sortable-table__list-toggler:focus, .theme-rose-sheet .banner--register .mobile-table-exit:focus,
   .theme-rose-sheet .banner--alert a,
   .theme-rose-sheet .banner--alert .pop-out__reset-password,
   .theme-rose-sheet .banner--alert .sortable-table__list-toggler,
@@ -11698,13 +11705,9 @@ main {
 .theme-medtech .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #FDD95F; }
 
-.theme-medtech .banner--cookie-policy,
 .theme-medtech .banner--register,
 .theme-medtech .banner--alert {
   background-color: #FDD95F; }
-  .theme-medtech .banner--cookie-policy,
-  .theme-medtech .banner--cookie-policy span,
-  .theme-medtech .banner--cookie-policy svg,
   .theme-medtech .banner--register,
   .theme-medtech .banner--register span,
   .theme-medtech .banner--register svg,
@@ -11713,9 +11716,6 @@ main {
   .theme-medtech .banner--alert svg {
     fill: inherit;
     color: inherit; }
-    .theme-medtech .banner--cookie-policy use > svg,
-    .theme-medtech .banner--cookie-policy span use > svg,
-    .theme-medtech .banner--cookie-policy svg use > svg,
     .theme-medtech .banner--register use > svg,
     .theme-medtech .banner--register span use > svg,
     .theme-medtech .banner--register svg use > svg,
@@ -11723,23 +11723,7 @@ main {
     .theme-medtech .banner--alert span use > svg,
     .theme-medtech .banner--alert svg use > svg {
       fill: inherit; }
-  .theme-medtech .banner--cookie-policy a, .theme-medtech .banner--cookie-policy .pop-out__reset-password, .theme-medtech .banner--cookie-policy .sortable-table__list-toggler, .theme-medtech .banner--cookie-policy .mobile-table-exit, .theme-medtech .banner--cookie-policy a:hover, .theme-medtech .banner--cookie-policy .pop-out__reset-password:hover, .theme-medtech .banner--cookie-policy .sortable-table__list-toggler:hover, .theme-medtech .banner--cookie-policy .mobile-table-exit:hover, .theme-medtech .banner--cookie-policy a:active, .theme-medtech .banner--cookie-policy .pop-out__reset-password:active, .theme-medtech .banner--cookie-policy .sortable-table__list-toggler:active, .theme-medtech .banner--cookie-policy .mobile-table-exit:active, .theme-medtech .banner--cookie-policy a:focus, .theme-medtech .banner--cookie-policy .pop-out__reset-password:focus, .theme-medtech .banner--cookie-policy .sortable-table__list-toggler:focus, .theme-medtech .banner--cookie-policy .mobile-table-exit:focus,
-  .theme-medtech .banner--register a,
-  .theme-medtech .banner--register .pop-out__reset-password,
-  .theme-medtech .banner--register .sortable-table__list-toggler,
-  .theme-medtech .banner--register .mobile-table-exit,
-  .theme-medtech .banner--register a:hover,
-  .theme-medtech .banner--register .pop-out__reset-password:hover,
-  .theme-medtech .banner--register .sortable-table__list-toggler:hover,
-  .theme-medtech .banner--register .mobile-table-exit:hover,
-  .theme-medtech .banner--register a:active,
-  .theme-medtech .banner--register .pop-out__reset-password:active,
-  .theme-medtech .banner--register .sortable-table__list-toggler:active,
-  .theme-medtech .banner--register .mobile-table-exit:active,
-  .theme-medtech .banner--register a:focus,
-  .theme-medtech .banner--register .pop-out__reset-password:focus,
-  .theme-medtech .banner--register .sortable-table__list-toggler:focus,
-  .theme-medtech .banner--register .mobile-table-exit:focus,
+  .theme-medtech .banner--register a, .theme-medtech .banner--register .pop-out__reset-password, .theme-medtech .banner--register .sortable-table__list-toggler, .theme-medtech .banner--register .mobile-table-exit, .theme-medtech .banner--register a:hover, .theme-medtech .banner--register .pop-out__reset-password:hover, .theme-medtech .banner--register .sortable-table__list-toggler:hover, .theme-medtech .banner--register .mobile-table-exit:hover, .theme-medtech .banner--register a:active, .theme-medtech .banner--register .pop-out__reset-password:active, .theme-medtech .banner--register .sortable-table__list-toggler:active, .theme-medtech .banner--register .mobile-table-exit:active, .theme-medtech .banner--register a:focus, .theme-medtech .banner--register .pop-out__reset-password:focus, .theme-medtech .banner--register .sortable-table__list-toggler:focus, .theme-medtech .banner--register .mobile-table-exit:focus,
   .theme-medtech .banner--alert a,
   .theme-medtech .banner--alert .pop-out__reset-password,
   .theme-medtech .banner--alert .sortable-table__list-toggler,
@@ -12022,13 +12006,9 @@ main {
 .theme-invivo .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #7e2718; }
 
-.theme-invivo .banner--cookie-policy,
 .theme-invivo .banner--register,
 .theme-invivo .banner--alert {
   background-color: #ca4d2c; }
-  .theme-invivo .banner--cookie-policy,
-  .theme-invivo .banner--cookie-policy span,
-  .theme-invivo .banner--cookie-policy svg,
   .theme-invivo .banner--register,
   .theme-invivo .banner--register span,
   .theme-invivo .banner--register svg,
@@ -12037,9 +12017,6 @@ main {
   .theme-invivo .banner--alert svg {
     fill: #ffffff;
     color: #ffffff; }
-    .theme-invivo .banner--cookie-policy use > svg,
-    .theme-invivo .banner--cookie-policy span use > svg,
-    .theme-invivo .banner--cookie-policy svg use > svg,
     .theme-invivo .banner--register use > svg,
     .theme-invivo .banner--register span use > svg,
     .theme-invivo .banner--register svg use > svg,
@@ -12047,23 +12024,7 @@ main {
     .theme-invivo .banner--alert span use > svg,
     .theme-invivo .banner--alert svg use > svg {
       fill: #ffffff; }
-  .theme-invivo .banner--cookie-policy a, .theme-invivo .banner--cookie-policy .pop-out__reset-password, .theme-invivo .banner--cookie-policy .sortable-table__list-toggler, .theme-invivo .banner--cookie-policy .mobile-table-exit, .theme-invivo .banner--cookie-policy a:hover, .theme-invivo .banner--cookie-policy .pop-out__reset-password:hover, .theme-invivo .banner--cookie-policy .sortable-table__list-toggler:hover, .theme-invivo .banner--cookie-policy .mobile-table-exit:hover, .theme-invivo .banner--cookie-policy a:active, .theme-invivo .banner--cookie-policy .pop-out__reset-password:active, .theme-invivo .banner--cookie-policy .sortable-table__list-toggler:active, .theme-invivo .banner--cookie-policy .mobile-table-exit:active, .theme-invivo .banner--cookie-policy a:focus, .theme-invivo .banner--cookie-policy .pop-out__reset-password:focus, .theme-invivo .banner--cookie-policy .sortable-table__list-toggler:focus, .theme-invivo .banner--cookie-policy .mobile-table-exit:focus,
-  .theme-invivo .banner--register a,
-  .theme-invivo .banner--register .pop-out__reset-password,
-  .theme-invivo .banner--register .sortable-table__list-toggler,
-  .theme-invivo .banner--register .mobile-table-exit,
-  .theme-invivo .banner--register a:hover,
-  .theme-invivo .banner--register .pop-out__reset-password:hover,
-  .theme-invivo .banner--register .sortable-table__list-toggler:hover,
-  .theme-invivo .banner--register .mobile-table-exit:hover,
-  .theme-invivo .banner--register a:active,
-  .theme-invivo .banner--register .pop-out__reset-password:active,
-  .theme-invivo .banner--register .sortable-table__list-toggler:active,
-  .theme-invivo .banner--register .mobile-table-exit:active,
-  .theme-invivo .banner--register a:focus,
-  .theme-invivo .banner--register .pop-out__reset-password:focus,
-  .theme-invivo .banner--register .sortable-table__list-toggler:focus,
-  .theme-invivo .banner--register .mobile-table-exit:focus,
+  .theme-invivo .banner--register a, .theme-invivo .banner--register .pop-out__reset-password, .theme-invivo .banner--register .sortable-table__list-toggler, .theme-invivo .banner--register .mobile-table-exit, .theme-invivo .banner--register a:hover, .theme-invivo .banner--register .pop-out__reset-password:hover, .theme-invivo .banner--register .sortable-table__list-toggler:hover, .theme-invivo .banner--register .mobile-table-exit:hover, .theme-invivo .banner--register a:active, .theme-invivo .banner--register .pop-out__reset-password:active, .theme-invivo .banner--register .sortable-table__list-toggler:active, .theme-invivo .banner--register .mobile-table-exit:active, .theme-invivo .banner--register a:focus, .theme-invivo .banner--register .pop-out__reset-password:focus, .theme-invivo .banner--register .sortable-table__list-toggler:focus, .theme-invivo .banner--register .mobile-table-exit:focus,
   .theme-invivo .banner--alert a,
   .theme-invivo .banner--alert .pop-out__reset-password,
   .theme-invivo .banner--alert .sortable-table__list-toggler,
@@ -12346,13 +12307,9 @@ main {
 .theme-commodities .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #c12d3b; }
 
-.theme-commodities .banner--cookie-policy,
 .theme-commodities .banner--register,
 .theme-commodities .banner--alert {
   background-color: #9E310D; }
-  .theme-commodities .banner--cookie-policy,
-  .theme-commodities .banner--cookie-policy span,
-  .theme-commodities .banner--cookie-policy svg,
   .theme-commodities .banner--register,
   .theme-commodities .banner--register span,
   .theme-commodities .banner--register svg,
@@ -12361,9 +12318,6 @@ main {
   .theme-commodities .banner--alert svg {
     fill: #ffffff;
     color: #ffffff; }
-    .theme-commodities .banner--cookie-policy use > svg,
-    .theme-commodities .banner--cookie-policy span use > svg,
-    .theme-commodities .banner--cookie-policy svg use > svg,
     .theme-commodities .banner--register use > svg,
     .theme-commodities .banner--register span use > svg,
     .theme-commodities .banner--register svg use > svg,
@@ -12371,23 +12325,7 @@ main {
     .theme-commodities .banner--alert span use > svg,
     .theme-commodities .banner--alert svg use > svg {
       fill: #ffffff; }
-  .theme-commodities .banner--cookie-policy a, .theme-commodities .banner--cookie-policy .pop-out__reset-password, .theme-commodities .banner--cookie-policy .sortable-table__list-toggler, .theme-commodities .banner--cookie-policy .mobile-table-exit, .theme-commodities .banner--cookie-policy a:hover, .theme-commodities .banner--cookie-policy .pop-out__reset-password:hover, .theme-commodities .banner--cookie-policy .sortable-table__list-toggler:hover, .theme-commodities .banner--cookie-policy .mobile-table-exit:hover, .theme-commodities .banner--cookie-policy a:active, .theme-commodities .banner--cookie-policy .pop-out__reset-password:active, .theme-commodities .banner--cookie-policy .sortable-table__list-toggler:active, .theme-commodities .banner--cookie-policy .mobile-table-exit:active, .theme-commodities .banner--cookie-policy a:focus, .theme-commodities .banner--cookie-policy .pop-out__reset-password:focus, .theme-commodities .banner--cookie-policy .sortable-table__list-toggler:focus, .theme-commodities .banner--cookie-policy .mobile-table-exit:focus,
-  .theme-commodities .banner--register a,
-  .theme-commodities .banner--register .pop-out__reset-password,
-  .theme-commodities .banner--register .sortable-table__list-toggler,
-  .theme-commodities .banner--register .mobile-table-exit,
-  .theme-commodities .banner--register a:hover,
-  .theme-commodities .banner--register .pop-out__reset-password:hover,
-  .theme-commodities .banner--register .sortable-table__list-toggler:hover,
-  .theme-commodities .banner--register .mobile-table-exit:hover,
-  .theme-commodities .banner--register a:active,
-  .theme-commodities .banner--register .pop-out__reset-password:active,
-  .theme-commodities .banner--register .sortable-table__list-toggler:active,
-  .theme-commodities .banner--register .mobile-table-exit:active,
-  .theme-commodities .banner--register a:focus,
-  .theme-commodities .banner--register .pop-out__reset-password:focus,
-  .theme-commodities .banner--register .sortable-table__list-toggler:focus,
-  .theme-commodities .banner--register .mobile-table-exit:focus,
+  .theme-commodities .banner--register a, .theme-commodities .banner--register .pop-out__reset-password, .theme-commodities .banner--register .sortable-table__list-toggler, .theme-commodities .banner--register .mobile-table-exit, .theme-commodities .banner--register a:hover, .theme-commodities .banner--register .pop-out__reset-password:hover, .theme-commodities .banner--register .sortable-table__list-toggler:hover, .theme-commodities .banner--register .mobile-table-exit:hover, .theme-commodities .banner--register a:active, .theme-commodities .banner--register .pop-out__reset-password:active, .theme-commodities .banner--register .sortable-table__list-toggler:active, .theme-commodities .banner--register .mobile-table-exit:active, .theme-commodities .banner--register a:focus, .theme-commodities .banner--register .pop-out__reset-password:focus, .theme-commodities .banner--register .sortable-table__list-toggler:focus, .theme-commodities .banner--register .mobile-table-exit:focus,
   .theme-commodities .banner--alert a,
   .theme-commodities .banner--alert .pop-out__reset-password,
   .theme-commodities .banner--alert .sortable-table__list-toggler,
@@ -12651,163 +12589,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */

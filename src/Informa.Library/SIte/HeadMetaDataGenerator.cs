@@ -198,7 +198,12 @@ namespace Informa.Library.Site
             string temp = string.Join(",", taxonomy.Skip(1).Select(t => t.Item_Name));
             tags = Regex.Replace(temp, @"\r\n?|\n|\t", string.Empty);
         }
-
+        /// <summary>
+        /// Returns custom tags from sitecore {Siteroot}/globals/Customtags. 0 returns the tags that should be displayed in footer,
+        /// 1 returns the tags that should be displayed in header.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
        public string GetCustomTags(int i)
        {
         bool displayInHead = i == 0 ? true : false;

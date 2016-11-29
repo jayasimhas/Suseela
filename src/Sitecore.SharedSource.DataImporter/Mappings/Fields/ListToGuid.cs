@@ -98,39 +98,55 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (NewItemField == "Taxonomy")
             {
+                var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
-                //loop through children and look for anything that matches by name
-                string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+                foreach (var val in values)
+                {
+                    string upperValue = val.ToString();
 
-                //if you find one then store the id
-                if (!t.Any())
-                    return;
 
-                TaxonomyList.Add(t.First().ID.ToString());
+                    //loop through children and look for anything that matches by name
+                    string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
+                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
 
+                    //if you find one then store the id
+                    if (!t.Any())
+                        return;
+
+                    Field f = newItem.Fields[NewItemField];
+                    if (f == null)
+                        continue;
+
+                    if (NewItemField == "Taxonomy")
+                    {
+                        TaxonomyList.Add(t.First().ID.ToString());
+                    }
+
+                }
             }
             else if (NewItemField == "Authors")
             {
-                string[] list = importValue.Split(new string[] { "and", "&amp;", "," }, StringSplitOptions.None);
+                string[] list = importValue.Split(new string[] { " and ", "&amp;", "," }, StringSplitOptions.None);
 
 
                 if (!list.Any())
                     return;
                 Field f = newItem.Fields[NewItemField];
 
-                string result1 = importValue.Replace("By", "");
-                if (result1.Contains('.'))
-                {
-                    result1 = result1.Substring(0, result1.IndexOf(".") + 1);
-                }
+                
 
                 foreach (string auth in list)
                 {
+                    string result1 = auth.Replace("By", " ");
+                    string result2 = result1.Replace("-", " ");
+                    if (result2.Contains('.'))
+                    {
+                        result2 = result2.Substring(0, result2.IndexOf(".") + 1);
+                    }
                     //loop through children and look for anything that matches by name
-                    string cleanName = StringUtility.GetValidItemName(auth, map.ItemNameMaxLength);
-                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
-                    if (t.Any())
+                    string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
+                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+                    if (t.Any() && !f.Value.Contains(t.First().ID.ToString()))
                         f.Value = f.Value + "|" + t.First().ID.ToString();
 
                 }

@@ -17,6 +17,7 @@ using Sitecore.Resources.Media;
 using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
+using Sitecore.SecurityModel;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
@@ -151,24 +152,28 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             DateField df = newItem.Fields["Created Date"];
             if (df != null && !string.IsNullOrEmpty(df.Value))
                 dt = df.DateTime;
-            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs);
+            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs, id);
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
             if (f != null)
+            {
                 f.Value = newImportValue;
+            }
         }
 
-        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs)
+        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs, string ArticleId)
         {
             if (String.IsNullOrEmpty(html))
                 return html;
 
             var document = new HtmlDocument();
             document.LoadHtml(html);
+            string imageId = string.Empty;
 
             HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
-
+            HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
+            HtmlNodeCollection tableauNodes = document.DocumentNode.SelectNodes("strong");
             if (tryGetNodes == null || !tryGetNodes.Any())
                 return html;
 
@@ -182,15 +187,55 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 var parentNode = node.ParentNode;
                 var childNodes = node.SelectNodes("./*|./text()");
 
-                if (i == 0 && (nodeName.Equals("table") || nodeName.Equals("img"))) //log table or img as first paragraph
+                if (i == 0 && (nodeName.Equals("table") || nodeName.Equals("image"))) //log table or img as first paragraph
                     map.Logger.Log(articlePath, $"first element was a(n) '{nodeName}'", ProcessStatus.Warning, NewItemField, html);
 
                 if (childNodes != null)
                 {
                     foreach (var child in childNodes)
-                        nodes.Enqueue(child);
-                }
+                    {
 
+                        nodes.Enqueue(child);
+
+                    }
+                }
+                if ((imgNodes != null || tableauNodes != null) && node.Name.Equals("relation"))
+                {
+                    if (imgNodes != null)
+                    {
+                        foreach (HtmlNode imgnode in imgNodes)
+                        {
+                            if (imgnode.Attributes["sourceid"].Value == node.Attributes["sourceid"].Value)
+                            {
+                                parentNode.InsertBefore(imgnode, node);
+
+                                parentNode.RemoveChild(node);
+
+                                document.DocumentNode.RemoveChild(imgnode);
+                                // imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                            }
+                        }
+                    }
+
+                    if (tableauNodes != null)
+                    {
+                        foreach (HtmlNode tableaunode in tableauNodes)
+                        {
+                            if (tableaunode.Attributes["id"].Value == node.Attributes["sourceid"].Value)
+                            {
+                                //tableaunode.Attributes["id"].Remove();
+                                parentNode.InsertBefore(tableaunode, node);
+
+                                parentNode.RemoveChild(node);
+
+                                document.DocumentNode.RemoveChild(tableaunode);
+                                //imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                            }
+                        }
+                    }
+
+
+                }
                 if (unwantedTags.Any(tag => tag == nodeName))
                 { // if this node is one to remove
                     if (childNodes != null)
@@ -207,7 +252,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         node.Attributes.RemoveAll();
                     }
-                    else if (!nodeName.Equals("iframe") && !nodeName.Equals("img"))
+                    else if (!nodeName.Equals("iframe") && !nodeName.Equals("image"))
                     { //skip iframe and imgs
                         foreach (string s in unwantedAttrs)
                         {
@@ -220,16 +265,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         map.Logger.Log(articlePath, $"content contains a(n) {nodeName}'", ProcessStatus.Warning, NewItemField, html);
 
                     //replace images
-                    if (nodeName.Equals("img"))
+                    if (nodeName.Equals("image"))
                     {
 
                         // see if it exists
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
-                        MediaItem newImg = HandleImage(map, articlePath, articleDate, imgSrc);
+                        AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
+                        MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
                         if (newImg != null)
                         {
                             string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
+
                             // replace the node with sitecore tag
                             node.SetAttributeValue("src", newSrc);
 
@@ -255,10 +302,139 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 i++;
             }
 
+            // HtmlNodeCollection tryGetallNodes = document.DocumentNode.ChildNodes;
+            //// HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
+            // if (tryGetNodes == null || !tryGetNodes.Any())
+            //     return html;
+
+            // var nodeslatest = new Queue<HtmlNode>(tryGetallNodes);
+
+            // while (nodeslatest.Count > 0)
+            // {
+            //     var imgnode = nodeslatest.Dequeue();
+            //     var parentNode = imgnode.ParentNode;
+            //     // var nodeName = node.Name;
+
+
+            //     //replace images
+            //     if (imgnode.Name.Equals("image"))
+            //     {
+            //        if((imageId.Contains(imgnode.Attributes["sourceid"].Value)))
+            //             {
+
+            //             parentNode.RemoveChild(imgnode);
+
+            //             }
+            //     }
+
+
+            // }
+
+
             return document.DocumentNode.InnerHtml;
         }
 
-        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url)
+        #endregion Methods
+    }
+
+    public class ToInformaLeadImageField : ToText
+    {
+        #region Constructor
+
+        public ToInformaLeadImageField(Item i) : base(i) { }
+
+        #endregion Constructor
+
+        #region Methods
+
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        {
+
+            DateTime dt = new DateTime(1800, 1, 1);
+            DateField df = newItem.Fields["Created Date"];
+            if (df != null && !string.IsNullOrEmpty(df.Value))
+                dt = df.DateTime;
+            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, id);
+
+            //store the imported value as is
+            Field f = newItem.Fields[NewItemField];
+            if (f != null)
+            {
+                f.Value = newImportValue;
+                f.Value = f.Value.Replace("img", "image");
+                f.Value = f.Value.Replace(">", "/>");
+            }
+        }
+
+        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, string ArticleId)
+        {
+            if (String.IsNullOrEmpty(html))
+                return html;
+
+            var document = new HtmlDocument();
+            document.LoadHtml(html);
+
+            HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
+
+            if (tryGetNodes == null || !tryGetNodes.Any())
+                return html;
+
+            var nodes = new Queue<HtmlNode>(tryGetNodes);
+
+            int i = 0;
+            while (nodes.Count > 0)
+            {
+                var node = nodes.Dequeue();
+                var nodeName = node.Name.ToLower();
+
+                if (nodeName.Equals("img"))
+                {
+
+                    // see if it exists
+                    string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
+                    string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
+                    AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
+                    MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
+                    if (newImg != null)
+                    {
+                        // string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
+                        // replace the node with sitecore tag
+                        //node.SetAttributeValue("src", "");
+                        string newMediaId = $"{newImg.ID.ToString()}";
+                        node.SetAttributeValue("mediaid", newMediaId);
+                        XMLDataLogger.WriteLog("NewImageMediaId" + newMediaId, "ImageLog");
+                        //If no width was found, use the sitecore width field on the med lib image 
+                        if (string.IsNullOrEmpty(imgWidthStr))
+                        {
+                            Field f = newImg.InnerItem.Fields["Width"];
+                            imgWidthStr = (f != null) ? f.Value : string.Empty;
+                        }
+                    }
+
+                    //if a 'width' attribute is available, that attribute will be read.
+                    int imgWidth = 0;
+                    if (!int.TryParse(imgWidthStr, out imgWidth))
+                        imgWidth = 0;
+
+                    //If the width read in either case is greater than 787, a warning will be logged.
+                    if (imgWidth > 787)
+                        map.Logger.Log(articlePath, $"image too wide: '{imgWidth}'", ProcessStatus.Warning, NewItemField, node.OuterHtml);
+                }
+            }
+
+            i++;
+
+            XMLDataLogger.WriteLog("Inner HTML" + document.DocumentNode.InnerHtml, "ImageLog");
+            return document.DocumentNode.InnerHtml;
+        }
+
+        #endregion
+    }
+
+    public class AricleImportImageHandler
+    {
+
+        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId)
         {
             url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
                 .Replace("62.73.128.229", "www.scripintelligence.com");
@@ -267,10 +443,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             else if (url.Contains("scripnews.com"))
                 url = url.Replace("scripnews.com", "scripintelligence.com");
 
+            //if (url.Contains(" "))
+            //{
+            //    url = url.Replace(" ", "+");
+            //}
+
+            url = new Regex("/[^/]*$").Replace(url, "/" + UpperCaseUrlEncode(url.Split('/').Last()));
+
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
-                map.Logger.Log(articlePath, "malformed image URL", ProcessStatus.FieldError, NewItemField, url);
+                XMLDataLogger.WriteLog(ArticleId, "InvalidImageLog");
+                map.Logger.Log("ArticleId: " + ArticleId + articlePath, "malformed image URL", ProcessStatus.FieldError, url);
                 return null;
             }
 
@@ -291,18 +475,42 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (matches != null && matches.Any())
             {
-                if (matches.Count().Equals(1))
-                    return new MediaItem(matches.First());
+                if (matches.Count() > 0)
+                {
+                    foreach (Item match in matches)
+                    {
+                        if (match.Paths.FullPath.Contains(newFilePath))
+                        {
+                            XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
+                            //return new MediaItem(matches.First());
+                            return match;
+                        }
+                    }
 
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, NewItemField, filePath);
-                return null;
+                }
+
+                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
             }
 
             MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}");
             if (m == null)
-                map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, NewItemField, url);
+                map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, url);
 
             return m;
+        }
+
+        public string UpperCaseUrlEncode(string s)
+        {
+            char[] temp = System.Web.HttpUtility.UrlEncode(s).ToCharArray();
+            for (int i = 0; i < temp.Length - 2; i++)
+            {
+                if (temp[i] == '%')
+                {
+                    temp[i + 1] = char.ToUpper(temp[i + 1]);
+                    temp[i + 2] = char.ToUpper(temp[i + 2]);
+                }
+            }
+            return new string(temp);
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map)
@@ -333,7 +541,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 Stream stream1 = response.GetResponseStream();
                 MemoryStream stream2 = new MemoryStream();
                 stream1.CopyTo(stream2);
-
                 // Create the options
                 MediaCreatorOptions options = new MediaCreatorOptions();
                 options.FileBased = false;
@@ -345,11 +552,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 // upload to sitecore
                 MediaCreator creator = new MediaCreator();
-                MediaItem mediaItem = creator.CreateFromStream(stream2, fileName, options);
-
-                response.Close();
-
-                return mediaItem;
+                using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
+                {
+                    MediaItem mediaItem = creator.CreateFromStream(stream2, fileName, options);
+                    response.Close();
+                    XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
+                    return mediaItem;
+                }
             }
             catch (WebException ex)
             {
@@ -357,7 +566,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
         }
 
-        #endregion Methods
     }
 
     public class ToInformaCompanyField : ToText
@@ -1042,7 +1250,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
-                f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                //   f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                f.Value = ctID;
         }
 
         protected virtual Dictionary<string, string> GetMapping()
@@ -1053,6 +1262,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("analysis", "Analysis");
             d.Add("interviews", "Interviews");
             d.Add("analyst", "Analysis");
+            d.Add("opinion", "Opinion");
             d.Add("asia", "News");
             d.Add("briefstory", "News");
             d.Add("business", "News");
@@ -1994,7 +2204,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             var sourceItems = GetSourceItems(newItem.Database);
             if (sourceItems == null)
                 return;
-            
+
             Dictionary<string, string> d = GetMapping();
 
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
@@ -2010,7 +2220,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
 
                 //if you find one then store the id
                 if (!t.Any())
@@ -2292,7 +2502,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("International", "International");
             d.Add("US States", "US States");
             d.Add("Blocs", "Blocs");
-            d.Add("EU", "EU");
+            d.Add("EU", "Europe");
             d.Add("EEA", "EEA");
             d.Add("EFTA", "EFTA");
             d.Add("NAFTA", "NAFTA");
@@ -3487,9 +3697,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
-
+                if (transformValue.Contains("&"))
+                {
+                    transformValue = transformValue.Replace("&", "and");
+                }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
 
                 //if you find one then store the id
                 if (!t.Any())
@@ -3822,9 +4035,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             d.Add("public_ledger_commodities_dried_fruit_vine_fruit", "Dried Vine Fruit");
 
-            d.Add("public_ledger_commodities_nuts", "Almonds");
+            d.Add("public_ledger_commodities_nuts", "Dried Fruit & Nuts");
 
-            d.Add("public_ledger_commodities_nuts_almonds", "Dried Fruit & Nuts");
+            d.Add("public_ledger_commodities_nuts_almonds", "Almonds");
+
 
             d.Add("public_ledger_commodities_nuts_brazil_nuts", "Brazil Nuts");
 
@@ -3848,7 +4062,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            
+
             d.Add("foodnews_analysis_company", "Commercial");
             d.Add("foodnews_analysis_company_operations", "Operations");
             d.Add("foodnews_analysis_company_investment", "Investment");
@@ -3876,7 +4090,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("public_ledger_analysis_trading", "Commercial");
 
             d.Add("dairy_markets_analysis_policy", "Policy");
-            d.Add("dairy_markets_analysis_trade", "Imports");
+            d.Add("dairy_markets_analysis_trade_Import", "Imports");
+            d.Add("dairy_markets_analysis_trade_Export", "Exports");
+            // d.Add("dairy_markets_analysis_trade", "Imports,Exports");
             d.Add("dairy_markets_market_focus", "Price");
 
             d.Add("foodnews_market_focus", "Commodity Factors");
@@ -3884,7 +4100,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("foodnews_analysis_freight", "Freight");
             d.Add("foodnews_analysis_weather", "Weather");
 
-            d.Add("public_ledger_market_focus", "Market Fundamentals");
+            d.Add("public_ledger_market_focus", "Price");
 
 
             d.Add("public_ledger_analysis_energy", "Energy");
@@ -4050,7 +4266,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
-                f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+                f.Value = ctID;
         }
 
         protected virtual Dictionary<string, string> GetMapping()
