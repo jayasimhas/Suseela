@@ -1,0 +1,164 @@
+﻿@using Informa.Library.Utilities.References
+@using Informa.Web.Models
+@using Sitecore.Resources.Media
+@inherits CustomGlassView<Informa.Web.ViewModels.PDF.ArticleBodyForPDFViewModel>
+
+<div class="article-body-content">
+    <div class="article-metadata">
+        <table>
+            <tr>
+                <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #d1d3d4; padding:0 10px 0 0; font-weight: 700;">
+                    <span class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</span>
+                </td>
+                @if (!string.IsNullOrEmpty(Model.ContentType))
+            {
+                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #d1d3d4; padding:0 10px 0 10px; font-weight: 700;">
+                        <span class="article-content-type">@Model.ContentType</span>
+                    </td>
+                }
+
+                @foreach (var tag in Model.ArticleTagsViewModel.Tags)
+                {
+                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #d1d3d4; padding:0 10px 0 10px; font-weight: 700;">
+                        <a  style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                    </td>
+                }
+            </tr>
+        </table>
+            <h1><a  class="article-title"  style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
+        <h3>@Html.Raw(Model.Sub_Title)</h3>
+    </div>
+
+    @* MULTIPLE AUTHORS *@
+    @{
+        var authors = Model.Authors.Take(3).ToArray();
+    }
+    @if (authors.Length == 1)
+    {
+        var author = authors.FirstOrDefault();
+        @* SINGLE AUTHOR*@
+        <div class="article-author article-author--solo">
+            <table>
+                <tr class="article-author__list">
+                    @if (author.Image != null)
+                    {
+                        <td class="article-author__photo">
+                            @RenderImage(author, model => model.Image, new { width = 120 })
+                        </td>
+                    }
+                    <td class="article-author__solo-wrapper">
+
+                        <p class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 20px;">
+                            @if (author.InActive)
+                            {
+                                @author.Name
+                            }
+                            else
+                            {
+                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
+                            }
+                        </p>
+
+                        <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
+                            <table>
+                                <tr>
+                                    <td style="border-right:1px solid #d1d3d4;  padding:0 10px 0 20px;">
+                                        @if (!string.IsNullOrEmpty(author.Twitter))
+                                        {
+                                            <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                        }
+                                    </td>
+                                <td style="padding:0 10px 0 10px;">
+                                @if (!string.IsNullOrEmpty(author.Email_Address))
+                                {
+                                    <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                }
+                                </td>
+                </tr>
+            </table>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @* END SINGLE AUTHOR *@
+
+    }
+    else if (authors.Length > 1)
+    {
+        <div class="article-author">
+            <ul class="article-author__list">
+                @foreach (var author in authors)
+                {
+                    <li>
+                        <span class="article-author__name"><a href="@author.AuthorLink">@author.Name</a></span>
+                        <span class="article-author__contact">
+                            @if (!string.IsNullOrEmpty(author.Twitter))
+                            {
+                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                            }
+                            @if (!string.IsNullOrEmpty(author.Email_Address))
+                            {
+                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                            }
+                        </span>
+                    </li>
+                }
+            </ul>
+        </div>
+        @* END MULTIPLE AUTHORs *@
+    }
+
+    @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
+    @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
+    {
+        @* * * Executive Summary *@
+        <div class="article-executive-summary">
+            <h4>@Model.ExecutiveSummary</h4>
+            @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
+        </div>
+        @* End Executive Summary  *@
+    }
+
+    @if (!Model.IsEntitled() && Model.CallToActionViewModel != null)
+    {
+        //This will show context for subscribe, login, register
+        <div class="article-call-to-action">
+            @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
+        </div>
+                }
+
+    @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
+    {
+        @* * *  ARTICLE - FEATURED IMAGE
+            IIPP-117 *@
+        <aside class="article-inline-image">
+            <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
+            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+            {
+                <span class="article-inline-image__source">
+                    @Model.FeaturedImageSource @Model.Image.ImageSource
+                </span>}
+            <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
+        </aside>
+        @* * *  END ARTICLE - FEATURED IMAGE *@
+    }
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+
+</div>
+@if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+{
+    <div class="article-related-content">
+        <h2>Related Content</h2>
+
+        @foreach (var article in Model.RelatedArticles)
+        {
+            Html.RenderPartial("/Views/Shared/Components/PDF/PDFRelatedArticles.cshtml", article);
+        }
+    </div>
+}
+<div>
+    <br />
+    <br />
+</div>

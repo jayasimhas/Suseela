@@ -155,6 +155,15 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\..\lib\Sitecore\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\lib\PDF\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\lib\PDF\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\..\lib\PDF\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="ITHit.WebDAV.Server">
       <HintPath>..\..\lib\Sitecore\ITHit.WebDAV.Server.dll</HintPath>
     </Reference>
@@ -1066,6 +1075,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
+    <Compile Include="Areas\Account\Controllers\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
@@ -1217,6 +1227,7 @@
     <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
+    <Compile Include="ViewModels\Emails\FeaturedArticleMultiColumnViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
@@ -1228,9 +1239,13 @@
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
+    <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
+    <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
+    <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\PdfDownloadViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedDealsModel.cs" />
@@ -1365,6 +1380,7 @@
     <Content Include="amcharts\amcharts.js" />
     <Content Include="amcharts\data\AMChartData.js" />
     <Content Include="amcharts\data\JsonDataFile.js" />
+    <Content Include="amcharts\data\LatestChartData.js" />
     <Content Include="amcharts\funnel.js" />
     <Content Include="amcharts\gantt.js" />
     <Content Include="amcharts\gauge.js" />
@@ -2154,6 +2170,12 @@
     <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
     <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
+    <Content Include="Views\EmailComponents\FeaturedArticleMultiColumn.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

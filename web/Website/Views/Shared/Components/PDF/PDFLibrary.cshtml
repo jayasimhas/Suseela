@@ -1,0 +1,42 @@
+﻿@model Informa.Web.ViewModels.PDF.PDFLibraryViewModel
+@using Informa.Library.PDF
+
+<div class="pdfs-section">
+    @*commodities*@
+
+    <table width="100%" border="0" cellpadding="15" cellspacing="0" id="pdfLibrary">
+        <tbody>
+            <tr>
+                <th width="30%" align="left" id="pdfLibrary">@Model.IssueDateHeadlineText</th>
+                <th width="30%" align="left">@Model.IssueNumberHeadlineText</th>
+                <th width="30%" align="left"></th>
+            </tr>
+            @if (Model != null && Model.Pdfs != null && Model.Pdfs.Count() > 0)
+            {
+
+                foreach (var pdf in Model.Pdfs)
+                {
+                    if (pdf.TypeOfPdf == PdfType.Static)
+                    {
+                        <tr>
+                            <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd/MM/yyyy")</td>
+                            <td align="left"><a href="@pdf.PdfPageUrl" target="_blank" >@pdf.IssueNumber</a>&nbsp;</td>
+                            <td align="left"><a href="@pdf.PdfPageUrl" target="_blank">@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
+                        </tr>
+                    }
+                    if (pdf.TypeOfPdf == PdfType.Manual)
+                    {
+                        <tr>
+                            <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd/MM/yyyy")</td>
+                            <td align="left">@Html.ActionLink("00", "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle=pdf.PdfTitle }, null)&nbsp;</td>
+                            <td align="left">
+                                @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail=Model.userEmail, PdfTitle = pdf.PdfTitle }, null)
+                                &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -473,6 +473,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             IEnumerable<Item> matches = GetMediaItems(map)
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
+            MediaItem mediaitem = null;
             if (matches != null && matches.Any())
             {
                 if (matches.Count() > 0)
@@ -483,7 +484,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         {
                             XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
                             //return new MediaItem(matches.First());
-                            return match;
+                            //return match;
+                            mediaitem = match;
                         }
                     }
 
@@ -492,7 +494,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
             }
 
-            MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}");
+            MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
             if (m == null)
                 map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, url);
 
@@ -527,7 +529,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return images;
         }
 
-        public MediaItem ImportImage(string url, string fileName, string newPath)
+        public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem=null)
         {
 
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
@@ -554,7 +556,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 MediaCreator creator = new MediaCreator();
                 using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
                 {
-                    MediaItem mediaItem = creator.CreateFromStream(stream2, fileName, options);
+                    mediaItem = creator.CreateFromStream(stream2, fileName, options);
+                    
                     response.Close();
                     XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
                     return mediaItem;
