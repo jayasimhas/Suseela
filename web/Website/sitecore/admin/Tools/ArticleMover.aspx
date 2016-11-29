@@ -34,9 +34,11 @@
             <asp:RadioButton runat="server" Text="Move to the following folder ID" ID="rdMoveToFolderID" GroupName="DestinationLocation" />
             <asp:TextBox runat="server" Width="150px" ID="txtToFolderID"></asp:TextBox>
             <hr />
+            <asp:CheckBox runat="server" Text="Generate new Article Numbers" ID="chkGenerateNumber" />
+            <br />
             <asp:CheckBox runat="server" Text="Clear Taxonomy Fields" ID="chkClearTaxonomy" />
             <br />
-            <asp:CheckBox runat="server" Text="Add Taxonomy Fields" ID="chkNewTaxonomyFields" />
+            <asp:CheckBox runat="server" Text="Add Taxonomy Field(s) ID(s)" ID="chkNewTaxonomyFields" />
             <asp:TextBox runat="server" Width="60%" ID="txtNewTaxonomyFields"></asp:TextBox>
             <label style="color: red; font-size: 8pt">Use Vertical bar (|) for multiples</label>
             <br />
