@@ -194,9 +194,9 @@ namespace Elsevier.Web.VWB.Report
 				url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
 				url += ";" + endDate.ToString("MM/dd/yyyy");
 				if (string.IsNullOrEmpty(query.PublicationCodes) == false)
-					url += "&searchPublicationTitle=" + query.PublicationCodes;
-                if (string.IsNullOrEmpty(query.VerticalRoot) == false)
-                    url += "&SearchVertical=" + query.VerticalRoot;
+					url += "&SearchPublicationTitle=" + query.PublicationCodes;
+                //if (string.IsNullOrEmpty(query.VerticalRoot) == false)
+                //    url += "&SearchVertical=" + query.VerticalRoot;
 
                 var client = new WebClient();
 				var content = client.DownloadString(url);
