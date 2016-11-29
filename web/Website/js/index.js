@@ -251,23 +251,31 @@ $(document).ready(function(){
 	window.dismiss();
 
 	//Job Listing Pagination
-	var JobsListingPagination=function(){
-		if($('#JobTilesCount') && $('#JobTilesCount').length && $('#NoOfJobsPerPage') && $('#NoOfJobsPerPage').length){ 
-			var TotalCategories=$("#JobTilesCount").val();
-			var CategoryLimit=$("#NoOfJobsPerPage").val(); 
+	if($('#jobTilesCount') && $('#jobTilesCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
+		var totalCategories = $("#jobTilesCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
+	
+		window.setPagination({
+			totalCategories: parseInt(totalCategories),
+			categoryLimit: parseInt(categoryLimit),
+			currentPage: 1,
+			paginationEle: '.job_list_individual'
+		});
 		
-			$('.pagination').setPagination({
-				totalCategories: parseInt(TotalCategories),
-				categoryLimit: parseInt(CategoryLimit),
-				currentPage: 1,
-				paginationEle: '.job_list_individual'
-			});
-			
-			$('.pagination span a:eq(0)').click();
-			$('.pagination a:eq(0)').removeAttr('href');
-		}	
+		window.loadPaginationNums();
 	}
-   JobsListingPagination();
+	
+	//Food news Pagination
+	if($('#foodNewsCount') && $('#foodNewsCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
+		var totalCategories = $("#foodNewsCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
+	
+		window.setPagination({
+			totalCategories: parseInt(totalCategories),
+			categoryLimit: parseInt(categoryLimit),
+			currentPage: 1
+		});
+		
+		window.loadPaginationNums();
+	}
 	
 	window.custom_label = function() {
 		$("body").off().on("click", '.label-check', function(e) {

@@ -65,15 +65,15 @@ namespace Informa.Web.Areas.Account.Controllers
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
 
-                string url = pdfPageUrl;
-                var fullPageHtml = System.IO.File.ReadAllText(url);
+                //string url = pdfPageUrl;
+                //var fullPageHtml = System.IO.File.ReadAllText(url);
 
-                //pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
-                //HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
-                //webRequest.Method = "POST";
-                //System.Net.WebClient client = new WebClient();
-                //byte[] data = client.DownloadData(pdfPageUrl);
-                //string fullPageHtml = Encoding.UTF8.GetString(data);
+                pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
+                HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
+                webRequest.Method = "POST";
+                System.Net.WebClient client = new WebClient();
+                byte[] data = client.DownloadData(pdfPageUrl);
+                string fullPageHtml = Encoding.UTF8.GetString(data);
 
 
                 HtmlDocument doc = new HtmlDocument();
@@ -130,17 +130,17 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
-                //var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
-                //if (images != null && images.Any())
-                //{
-                //    foreach (HtmlNode img in images)
-                //    {
-                //        if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
-                //        {
-                //            img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
-                //        }
-                //    }
-                //}
+                var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
+                if (images != null && images.Any())
+                {
+                    foreach (HtmlNode img in images)
+                    {
+                        if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
+                        {
+                            img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
+                        }
+                    }
+                }
 
                 var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
                 if (links != null && links.Any())

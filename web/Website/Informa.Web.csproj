@@ -156,10 +156,13 @@
       <HintPath>..\..\lib\Sitecore\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\lib\PDF\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\lib\PDF\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.xmlworker">
-      <HintPath>..\..\..\..\itextsharp.xmlworker.dll</HintPath>
+      <HintPath>..\..\lib\PDF\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="ITHit.WebDAV.Server">
       <HintPath>..\..\lib\Sitecore\ITHit.WebDAV.Server.dll</HintPath>
@@ -1222,6 +1225,7 @@
     <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
+    <Compile Include="ViewModels\Emails\FeaturedArticleMultiColumnViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
@@ -2168,6 +2172,7 @@
     <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
+    <Content Include="Views\EmailComponents\FeaturedArticleMultiColumn.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
