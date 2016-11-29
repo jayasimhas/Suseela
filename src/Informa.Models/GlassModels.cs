@@ -26961,7 +26961,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
     /// INewsletter_Greeting_Content Interface
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/Emails/Components/Newsletter GreetingContent</para>	
-    /// <para>ID: 56d61b72-5252-447d-a6c6-c03fa776e503</para>	
+    /// <para>ID: 2811b650-881d-4644-a7bb-8e0936bc21e1</para>	
     /// </summary>
     [SitecoreType(TemplateId = INewsletter_Greeting_ContentConstants.TemplateIdString)]
     public partial interface INewsletter_Greeting_Content : IGlassBase
@@ -27011,24 +27011,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
     public static partial class INewsletter_Greeting_ContentConstants
     {
 
-        public const string TemplateIdString = "56d61b72-5252-447d-a6c6-c03fa776e503";
+        public const string TemplateIdString = "2811b650-881d-4644-a7bb-8e0936bc21e1";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Newsletter Greeting Content";
 
 
-        public static readonly ID ImageFieldId = new ID("0990f6df-9216-4ccf-a917-d0a4ae977423");
+        public static readonly ID ImageFieldId = new ID("f18cf51f-bf0f-49ad-b0fc-3e43ba179a0f");
         public const string ImageFieldName = "Image";
 
 
-        public static readonly ID SummaryFieldId = new ID("2c05d703-0ec8-4e1c-b09a-92c45325817c");
+        public static readonly ID SummaryFieldId = new ID("fcb9d7ac-6fee-4d6f-b3e4-ed1c71e1b61d");
         public const string SummaryFieldName = "Summary";
 
 
-        public static readonly ID TitleFieldId = new ID("56c670a5-f43d-4f8e-b0ec-05b6e23ce9b4");
+        public static readonly ID TitleFieldId = new ID("0b886cee-863c-40bf-887f-64aff7fdfc83");
         public const string TitleFieldName = "Title";
 
 
-        public static readonly ID Download_LinkFieldId = new ID("be525e34-afe0-4d91-a02c-4efc836a46a3");
+        public static readonly ID Download_LinkFieldId = new ID("e02dfe4c-fd17-4122-8c12-1fddb416f4d5");
         public const string Download_LinkFieldName = "Download Link";
 
     }
