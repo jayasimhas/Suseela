@@ -12314,7 +12314,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
     {
     }
 
-
     /// <summary>
     /// IManuallyCuratedPdfs_Root Interface
     /// <para></para>

@@ -13,5 +13,6 @@ namespace Informa.Web.ViewModels.PopOuts
         public string PdfDownloadButtonText => "Pdf Download";        
         public string MainContentHtml { get; set;}
         public string pdfPageUrl { get; set; }
+
     }
 }

@@ -5,8 +5,9 @@
         <h1>@Model.PDFTitle</h1>
     </div>
     <div class="pdf-subTitle">
-        <h4>@Model.PDFSubTitle</h4>
+        <p style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</p>
     </div>
+    <img src="../dist/border-line.gif" alt="border-line" />
     <div class="pdf-body">@Html.Sitecore().Placeholder("pdf-content")</div>
     <div class="pdf-footer"><h4>@Html.Raw(Model.PDFFooter)</h4></div>
 </div>

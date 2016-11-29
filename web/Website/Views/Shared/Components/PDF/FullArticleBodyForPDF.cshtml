@@ -7,32 +7,25 @@
     <div class="article-metadata">
         <table>
             <tr>
-                <td>
+                <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #d1d3d4; padding:0 10px 0 0; font-weight: 700;">
                     <span class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</span>
                 </td>
                 @if (!string.IsNullOrEmpty(Model.ContentType))
             {
-                    <td>
+                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #d1d3d4; padding:0 10px 0 10px; font-weight: 700;">
                         <span class="article-content-type">@Model.ContentType</span>
                     </td>
                 }
 
                 @foreach (var tag in Model.ArticleTagsViewModel.Tags)
                 {
-                    <td>
-                        <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #d1d3d4; padding:0 10px 0 10px; font-weight: 700;">
+                        <a  style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                     </td>
                 }
-
-                @if (!string.IsNullOrEmpty(Model.MediaTypeIconData?.MediaType))
-            {
-
-                    <td>
-                        @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.GlassModel._Id })
-                    </td>}
             </tr>
         </table>
-            <h1><a  class="article-title" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
+            <h1><a  class="article-title"  style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
         <h3>@Html.Raw(Model.Sub_Title)</h3>
     </div>
 
@@ -54,25 +47,26 @@
                         </td>
                     }
                     <td class="article-author__solo-wrapper">
-                        <span class="article-author__name">
+
+                        <p class="article-author__name" style="color:#58595b; text-decoration:none;">
                             @if (author.InActive)
                             {
                                 @author.Name
                             }
                             else
                             {
-                                <a href="@author.AuthorLink">@author.Name</a>
+                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                             }
-                        </span>
+                        </p>
 
-                        <span class="article-author__contact">
+                        <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
                             @if (!string.IsNullOrEmpty(author.Twitter))
                             {
-                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                             }
                             @if (!string.IsNullOrEmpty(author.Email_Address))
                             {
-                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
                             }
                         </span>
                     </td>
