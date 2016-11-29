@@ -1127,6 +1127,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
+    <Compile Include="Controllers\PersonalizedEmailController.cs" />
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
@@ -1147,6 +1148,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MvcHelpers.cs" />
     <Compile Include="Models\IPageLink.cs" />
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\ISection.cs" />
@@ -1217,6 +1219,7 @@
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
@@ -2150,6 +2153,7 @@
     <Content Include="Views\Shared\Components\DataTools\TableauInArticle.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
+    <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
