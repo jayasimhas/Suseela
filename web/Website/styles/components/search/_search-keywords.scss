@@ -40,7 +40,7 @@
     &__input-wrapper {
         display: inline-flex;
         position: relative;
-        width: 100%;
+        width: 75%;
         margin-right: 12px;
     }
 
@@ -91,6 +91,7 @@
 
         &.open {
             position: relative;
+            z-index:1;
         }
 
         &-button {
