@@ -3,6 +3,7 @@ using Informa.Library.Search.Results;
 using Informa.Library.Search.SearchIndex;
 using Informa.Library.Search.SearchManager;
 using Informa.Library.Site;
+using System;
 using System.Web.Http;
 using Velir.Search.Core.Managers;
 
