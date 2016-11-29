@@ -8795,6 +8795,278 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PDF
+{
+    /// <summary>
+    /// IManually_Curated_PDF_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Manually Curated PDF Page</para>	
+    /// <para>ID: 5EE85DE5-6B72-4C49-A93A-72BC97F38517</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IManually_Curated_PDF_PageConstants.TemplateIdString)]
+    public partial interface IManually_Curated_PDF_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        
+    }
+
+
+    /// <summary>
+    /// IManually_Curated_PDF_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Manually Curated PDF Page</para>	
+    /// <para>ID: 5EE85DE5-6B72-4C49-A93A-72BC97F38517</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IManually_Curated_PDF_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+        
+    }
+
+    public static partial class IManually_Curated_PDF_PageConstants
+    {
+
+        public const string TemplateIdString = "5EE85DE5-6B72-4C49-A93A-72BC97F38517";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Manually Curated PDF Page";
+
+        public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
+
+        public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+    }
+    
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PDF
+{
+    /// <summary>
+    /// IStatic_PDF_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Static PDF Page</para>	
+    /// <para>ID: 2CD86881-6DF1-413F-88DA-1D62AFAB363F</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IStatic_PDF_PageConstants.TemplateIdString)]
+    public partial interface IStatic_PDF_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        /// <summary>
+        /// Issue Date
+        /// <para></para>
+        /// <para>Field Type: DateTime</para>		
+        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E3FF2FFA-330E-419B-A8D0-DEBA78932F54</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Issue_Number { get; set; }
+        /// <summary>
+        /// PDF Url
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: B0629946-C9E6-443A-935B-48FA19165CC1</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.PDF_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PDF_Url { get; set; }
+    }
+
+
+    /// <summary>
+    /// IStatic_PDF_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Static PDF Page</para>	
+    /// <para>ID: 2CD86881-6DF1-413F-88DA-1D62AFAB363F</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IStatic_PDF_Pagee__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+        /// <summary>
+        /// Issue Date
+        /// <para></para>
+        /// <para>Field Type: DateTime</para>		
+        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E3FF2FFA-330E-419B-A8D0-DEBA78932F54</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Issue_Number { get; set; }
+        /// <summary>
+        /// PDF Url
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: B0629946-C9E6-443A-935B-48FA19165CC1</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.PDF_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PDF_Url { get; set; }
+    }
+
+    public static partial class IStatic_PDF_PageConstants
+    {
+
+        public const string TemplateIdString = "2CD86881-6DF1-413F-88DA-1D62AFAB363F";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Static PDF Page";
+
+        public static readonly ID Issue_DateFieldId = new ID("850BBBF5-B11D-4B49-88F1-F3B1C00D2702");
+        public const string Issue_DateFieldName = "Issue Date";
+
+        public static readonly ID Issue_NumberFieldId = new ID("E3FF2FFA-330E-419B-A8D0-DEBA78932F54");
+        public const string Issue_NumberFieldName = "Issue Number";
+
+        public static readonly ID PDF_UrlFieldId = new ID("B0629946-C9E6-443A-935B-48FA19165CC1");
+        public const string PDF_UrlFieldName = "PDF Url";
+
+        public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
+
+        public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+    }
+
+}
+
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
 {
 
@@ -11988,6 +12260,117 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
+{
+
+
+    /// <summary>
+    /// IPdfs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/Pdfs Root</para>	
+    /// <para>ID: 5A84541E-9EAA-4C88-9C41-3959333D3024</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IPdfs_RootConstants.TemplateIdString)]
+    public partial interface IPdfs_Root : IGlassBase
+    {
+    }
+
+
+    /// <summary>
+    /// IJobs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/Jobs Root</para>	
+    /// <para>ID: 99E5BE37-77B0-4FB6-AE5B-ABD459009B04</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IPdfs_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IPdfs_RootConstants
+    {
+
+        public const string TemplateIdString = "5A84541E-9EAA-4C88-9C41-3959333D3024";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Pdfs Root";
+
+
+
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
+{
+
+
+    /// <summary>
+    /// IManuallyCuratedPdfs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/ManuallyCuratedPdfs Root</para>	
+    /// <para>ID: 8E2927D6-B373-4333-B958-D4D1A7645853</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IManuallyCuratedPdfs_RootConstants.TemplateIdString)]
+    public partial interface IManuallyCuratedPdfs_Root : IGlassBase
+    {
+    }
+
+
+    /// <summary>
+    /// IManuallyCuratedPdfs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/ManuallyCuratedPdfs Root</para>	
+    /// <para>ID: 8E2927D6-B373-4333-B958-D4D1A7645853</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IManuallyCuratedPdfs_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IManuallyCuratedPdfs_RootConstants
+    {
+
+        public const string TemplateIdString = "8E2927D6-B373-4333-B958-D4D1A7645853";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "ManuallyCuratedPdfs Root";
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
+{
+
+
+    /// <summary>
+    /// IStaticPdfs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/StaticPdfs Root</para>	
+    /// <para>ID: 9631173E-696A-4903-88D5-ED44CB11A865</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IStaticPdfs_RootConstants.TemplateIdString)]
+    public partial interface IStaticPdfs_Root : IGlassBase
+    {
+    }
+
+
+    /// <summary>
+    /// IStaticPdfs_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/StaticPdfs Root</para>	
+    /// <para>ID: 9631173E-696A-4903-88D5-ED44CB11A865</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IStaticPdfs_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IStaticPdfs_RootConstants
+    {
+
+        public const string TemplateIdString = "9631173E-696A-4903-88D5-ED44CB11A865";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "ManuallyCuratedPdfs Root";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
@@ -15124,6 +15507,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image FavIcon { get; set; }
+        /// <summary>
+        /// The PDF Header field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 8AC16848-5C1A-47F6-A286-C8D40ADB8F86</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.PDF_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PDF_Header { get; set; }
+        /// <summary>
+        /// The PDF Footer field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 6BA73703-731A-4317-B779-A06D9377C8C9</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PDF_Footer { get; set; }
     }
 
 
@@ -16003,6 +16404,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image FavIcon { get; set; }
+        /// <summary>
+        /// The PDF Header field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 8AC16848-5C1A-47F6-A286-C8D40ADB8F86</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.PDF_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PDF_Header { get; set; }
+        /// <summary>
+        /// The PDF Footer field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 6BA73703-731A-4317-B779-A06D9377C8C9</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PDF_Footer { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -16532,6 +16951,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID FavIconFieldId = new ID("A225B559-B031-460E-BDC2-199730396269");
         public const string FavIconFieldName = "Fav Icon";
+
+        //IPMP-911 BIWEB-825,936 - CMS - Briefing PDF
+        public static readonly ID PDF_HeaderFieldId = new ID("8AC16848-5C1A-47F6-A286-C8D40ADB8F86");
+        public const string PDF_HeaderFieldName = "PDF Header";
+
+        public static readonly ID PDF_FooterFieldId = new ID("6BA73703-731A-4317-B779-A06D9377C8C9");
+        public const string PDF_FooterFieldName = "PDF Footer";
     }
 
 }
