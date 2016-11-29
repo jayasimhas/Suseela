@@ -142,17 +142,17 @@ namespace Sitecore.SharedSource.DataImporter.Editors
                 return;
             }
 
-            //var jobOptions = new Sitecore.Jobs.JobOptions(
-            //                        "DataImport",
-            //                        importItem.DisplayName,
-            //                        Sitecore.Context.Site.Name,
-            //                        this,
-            //                        "HandleImport",
-            //                        new object[] { map, l });
+            var jobOptions = new Sitecore.Jobs.JobOptions(
+                                    "DataImport",
+                                    importItem.DisplayName,
+                                    Sitecore.Context.Site.Name,
+                                    this,
+                                    "HandleImport",
+                                    new object[] { map, l });
 
-            //Sitecore.Jobs.JobManager.Start(jobOptions);
+            Sitecore.Jobs.JobManager.Start(jobOptions);
 
-            HandleImport(map, l);
+            //HandleImport(map, l);
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
