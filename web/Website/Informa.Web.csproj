@@ -156,10 +156,13 @@
       <HintPath>..\..\lib\Sitecore\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\lib\PDF\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\lib\PDF\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.xmlworker">
-      <HintPath>..\..\..\..\itextsharp.xmlworker.dll</HintPath>
+      <HintPath>..\..\lib\PDF\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="ITHit.WebDAV.Server">
       <HintPath>..\..\lib\Sitecore\ITHit.WebDAV.Server.dll</HintPath>
