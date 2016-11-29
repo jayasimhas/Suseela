@@ -57,9 +57,9 @@
             return "sitecore_{0}_index";
         }
 
-        public string GetVerticalRootItem()
+        public string GetVerticalRootFromQuerystring()
         {
-           return HttpContext.Current.Request.QueryString["verticalroot"];
+            return HttpContext.Current.Request.QueryString["verticalroot"];
         }
 
         /// <summary>
