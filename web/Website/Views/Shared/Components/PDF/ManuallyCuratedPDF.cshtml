@@ -1,13 +1,20 @@
 ﻿@model Informa.Web.ViewModels.PDF.ManuallyCuratedPDFViewModel
 <div class="main-content-pdf" id="mainContentPdf">
-    <div class="pdf-header"><h4>@Html.Raw(Model.PDFHeader)</h4></div>
-    <div class="pdf-title">
+    <div class="pdf-header">
+       @Html.Raw(Model.PDFHeader)
+    </div>
+    <div class="pdf-title" style="clear:both;">
         <h1>@Model.PDFTitle</h1>
     </div>
     <div class="pdf-subTitle">
         <p style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</p>
     </div>
-    <img src="../dist/border-line.gif" alt="border-line" />
+
+    <table>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+        <tr><td>&nbsp;</td></tr>
+    </table>
     <div class="pdf-body">@Html.Sitecore().Placeholder("pdf-content")</div>
     <div class="pdf-footer"><h4>@Html.Raw(Model.PDFFooter)</h4></div>
 </div>

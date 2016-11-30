@@ -26,11 +26,11 @@ namespace Informa.Web.Areas.Account.Controllers
             return PartialView("~/Views/Shared/PopOuts/DownloadPdf.cshtml", new PdfDownloadViewModel());
         }
         CommonFooter commonFooter = new CommonFooter();
-        public ActionResult GenerateAndDownloadPdf(string pdfPageUrl, string userEmail, string PdfTitle)
+        public ActionResult GenerateAndDownloadPdf(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText)
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                Document document = new Document(PageSize.A4, 40, 40, 50, 50);
+                Document document = new Document(PageSize.A4, 40, 40, 70, 70);
                 PdfWriter writer = PdfWriter.GetInstance(document, ms);
 
 
@@ -38,7 +38,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 writer.PageEvent = commonFooter;
                 document.Open();
 
-                GeneratePdfBody(writer, document, pdfPageUrl, userEmail);
+                GeneratePdfBody(writer, document, pdfPageUrl, userEmail, DataToolLinkDesc, DataToolLinkText);
                 writer.StrictImageSequence = true;
 
                 //Add meta information to the document
@@ -59,7 +59,7 @@ namespace Informa.Web.Areas.Account.Controllers
             return new EmptyResult();
         }
 
-        private void GeneratePdfBody(PdfWriter writer, Document document, string pdfPageUrl, string userEmail)
+        private void GeneratePdfBody(PdfWriter writer, Document document, string pdfPageUrl, string userEmail, string DataToolLinkDesc, string DataToolLinkText)
         {
 
             if (!string.IsNullOrEmpty(pdfPageUrl))
@@ -83,44 +83,14 @@ namespace Informa.Web.Areas.Account.Controllers
                 var replacements = new Dictionary<string, string>
                 {
                     ["#UserName#"] = userEmail,
-                    ["#TodayDate#"] = DateTime.Now.ToString("dd MMM yyyy")
+                    ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
+                    ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
                 };
                 html = html.ReplacePatternCaseInsensitive(replacements);
                 string decodedHtml = HtmlEntity.DeEntitize(html);
 
                 HtmlDocument ReqdDoc = new HtmlDocument();
                 ReqdDoc.LoadHtml(decodedHtml);
-
-                var articleTitleNode = ReqdDoc.DocumentNode.SelectSingleNode("//a[@class='article-title']");
-                var articleURL = HttpContext.Request.Url.Scheme + "://" + articleTitleNode?.Attributes["href"].Value;
-
-                var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
-                if (articleNodes != null && articleNodes.Any())
-                {
-                    foreach (var articleNode in articleNodes)
-                    {
-                        //AMcharts in Article
-                        var amchartNodes = articleNode.SelectNodes("//div[@class='amchart-section-pdf']")?.ToList();
-                        if (amchartNodes != null && amchartNodes.Any())
-                        {
-                            foreach (var amchartNode in amchartNodes)
-                            {
-                                amchartNode.InnerHtml = "<h3>This Page has data tool, please click on below link to see more details</h3> \n <a href=\"" + articleURL + "\">click here</a>";
-                            }
-                        }
-
-                        //Tableau in Article
-                        var tableauNodes = articleNode.SelectNodes("//div[@class='article-data-tool-placeholder']")?.ToList();
-                        if (tableauNodes != null && tableauNodes.Any())
-                        {
-                            foreach (var tableauNode in tableauNodes)
-                            {
-                                tableauNode.InnerHtml = "<h3>This Page has data tool, please click on below link to see more details</h3> \n <a href=\"" + articleURL + "\">click here</a>";
-                            }
-                        }
-                    }
-                }
-
 
                 HtmlNode CommonFooterNode = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-footer']");
                 if (CommonFooterNode != null)
@@ -150,6 +120,48 @@ namespace Informa.Web.Areas.Account.Controllers
                         if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www"))
                         {
                             link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
+                            link.SetAttributeValue("target", "_blank");
+
+                        }
+                        if (!link.Attributes.Contains(@"style"))
+                        {
+                            link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
+                        }
+                    }
+                }
+                
+                var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
+                if (articleNodes != null && articleNodes.Any())
+                {
+                    foreach (var articleNode in articleNodes)
+                    {
+                        var articleTitleNode = articleNode.SelectSingleNode(".//a[@class='article-title']");
+                        var articleURL = articleTitleNode?.Attributes["href"].Value;
+
+                        //AMcharts in Article
+                        var amchartNodes = articleNode.SelectNodes(".//div[@class='amchart-section-pdf']")?.ToList();
+                        if (amchartNodes != null && amchartNodes.Any())
+                        {
+                            foreach (var amchartNode in amchartNodes)
+                            {
+                                var newNodeHtml = "\n" + DataToolLinkDesc + "\n <a style=\"color:#be1e2d; text-decoration:none;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                HtmlNode newNode = HtmlNode.CreateNode("div");
+                                newNode.InnerHtml = newNodeHtml;
+                                amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
+                            }
+                        }
+
+                        //Tableau in Article
+                        var tableauNodes = articleNode.SelectNodes(".//div[@class='article-data-tool-placeholder']")?.ToList();
+                        if (tableauNodes != null && tableauNodes.Any())
+                        {
+                            foreach (var tableauNode in tableauNodes)
+                            {
+                                var newNodeHtml = "\n"+DataToolLinkDesc + "\n <a style=\"color:#be1e2d; text-decoration:none;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                HtmlNode newNode = HtmlNode.CreateNode("div");
+                                newNode.InnerHtml = newNodeHtml;
+                                tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
+                            }
                         }
                     }
                 }
@@ -237,7 +249,7 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 12);
-                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(45));
+                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(35));
                 cb.ShowText(!string.IsNullOrEmpty(HeadertText) ? HeadertText : string.Empty);
                 cb.EndText();
             }
@@ -246,14 +258,13 @@ namespace Informa.Web.Areas.Account.Controllers
             cb.SetFontAndSize(bf, 12);
             cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetBottom(30));
             cb.ShowText(!string.IsNullOrEmpty(FooterText) ? FooterText : string.Empty);
-            //cb.ShowText("Hi");
             cb.EndText();
 
             //Move the pointer and draw line to separate header section from rest of page
             if (writer.PageNumber == 1)
             {
-                cb.MoveTo(40, document.PageSize.Height - 100);
-                cb.LineTo(document.PageSize.Width - 25, document.PageSize.Height - 100);
+                cb.MoveTo(40, document.PageSize.Height - 110);
+                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 110);
                 cb.Stroke();
                 cb.SetColorStroke(BaseColor.GRAY);
             }
@@ -270,6 +281,7 @@ namespace Informa.Web.Areas.Account.Controllers
             cb.LineTo(document.PageSize.Width - 40, document.PageSize.GetBottom(50));
             cb.Stroke();
             cb.SetColorStroke(BaseColor.GRAY);
+            cb.NewlineText();
         }
     }
 }
