@@ -1231,6 +1231,7 @@
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
+    <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
@@ -2169,6 +2170,7 @@
     <Content Include="Views\Shared\Components\DataTools\TableauInArticle.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
+    <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
     <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
     <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
@@ -2176,6 +2178,7 @@
     <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedArticleMultiColumn.cshtml" />
+    <Content Include="Views\EmailComponents\NewsletterGreeting.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

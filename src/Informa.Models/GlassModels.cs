@@ -6688,6 +6688,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Source { get; set; }
+
+        /// <summary>
+        /// The Source field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsPersonalizedEMail { get; set; }
+
+        /// <summary>
+        /// The Source field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: 96d298c5-3081-4b91-a2cd-82bf98835f63</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.No_Of_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int NoOfArticlesToDisplay { get; set; }
     }
 
 
@@ -6790,6 +6810,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Source { get; set; }
+
+        /// <summary>
+        /// The Source field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsPersonalizedEMail { get; set; }
+
+        /// <summary>
+        /// The Source field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: 96d298c5-3081-4b91-a2cd-82bf98835f63</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.No_Of_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int NoOfArticlesToDisplay { get; set; }
     }
 
     public static partial class IExactTarget_EmailConstants
@@ -6852,6 +6892,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
+
+        public static readonly ID Is_Personalized_EmailFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
+        public const string Is_Personalized_EmailFieldName = "Is Personalized Email";
+
+        public static readonly ID No_Of_ArticlesFieldId = new ID("96d298c5-3081-4b91-a2cd-82bf98835f63");
+        public const string No_Of_ArticlesFieldName = "No Of Articles";
 
 
 
@@ -26930,6 +26976,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
         Pages.IArticle ArticleThree { get; set; }
 
+        /// <summary>
+        /// Background Color field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: fc20fbd0-dbd4-48f0-8c23-40f330d90d82</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowBackgroundColor { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -26948,6 +27003,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Article_ThreeFieldId = new ID("b0356daf-fe58-4ed9-a441-f87c8490cb72");
         public const string Article_ThreeFieldName = "Article Three";
+
+        public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
+        public const string Show_Background_ColorFieldName = "Show Background Color";
 
     }
 
