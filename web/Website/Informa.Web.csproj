@@ -1225,8 +1225,10 @@
     <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
+    <Compile Include="ViewModels\Emails\FeaturedArticleMultiColumnViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
@@ -2171,6 +2173,8 @@
     <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
+    <Content Include="Views\EmailComponents\FeaturedArticleMultiColumn.cshtml" />
+    <Content Include="Views\EmailComponents\NewsletterGreeting.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
