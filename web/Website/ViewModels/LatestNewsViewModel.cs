@@ -152,7 +152,12 @@ namespace Informa.Web.ViewModels
                     var appender = (url.Contains("?")) ? "&" : string.Empty;
                     url = $"{url}{appender}author={string.Join(",", Authors)}";
                 }
-                SeeAllLink.Url = url;
+				if (Parameters.Publications?.Count() > 0)
+				{
+					var appender = (url.Contains("?")) ? "&" : string.Empty;
+					url = $"{url}{appender}publication={string.Join(";", Parameters.Publications.Select(s => s.Publication_Name))}";
+				}
+				SeeAllLink.Url = url;
             }
         }
 
