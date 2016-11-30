@@ -565,6 +565,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
             catch (WebException ex)
             {
+                XMLDataLogger.WriteLog("Image create error in  media library:" + ex.Message, "ImageLog");
                 return null;
             }
         }
