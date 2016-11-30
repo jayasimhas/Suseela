@@ -285,7 +285,7 @@
                     </p>
                 }
 
-                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
+                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit | orderBy:'-count'" ng-if="!collapsefacet">
                     <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>
                         @* Hidden input field *@
@@ -326,7 +326,7 @@
                           ng-class="{'collapsedSubfacet': f.isCollapsedSubfacet}"
                           class="facets__section-list--sub">
 
-                          <li ng-repeat="subFacet in f.sublist">
+                          <li ng-repeat="subFacet in f.sublist | orderBy:'-count'">
                               <input id="{{ subFacet.id }}-{{ $index }}"
                                      type="checkbox"
                                      class="visuallyhidden"
