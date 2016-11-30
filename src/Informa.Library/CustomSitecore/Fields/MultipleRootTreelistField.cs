@@ -102,6 +102,11 @@ namespace Informa.Library.CustomSitecore.Fields
                 if (!string.IsNullOrEmpty(base.ItemID))
                 {
                     Item item = Sitecore.Context.ContentDatabase.GetItem(base.ItemID);
+                    //To detect the source item for the cloned item
+                    if (item != null && item.IsClone)
+                    {
+                        item = item.Source;
+                    }
                     if (item != null)
                     {
                         //Feching Ancestor of Selected Item and replaceing with Token
