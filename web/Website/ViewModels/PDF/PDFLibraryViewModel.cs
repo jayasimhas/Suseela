@@ -37,6 +37,8 @@ namespace Informa.Web.ViewModels.PDF
         public string DownloadLinkText => TextTranslator.Translate("Pdf.DownloadLinkText");
         public string IssueDateHeadlineText => TextTranslator.Translate("Pdf.IssueDateHeadlineText");
         public string IssueNumberHeadlineText => TextTranslator.Translate("Pdf.IssueNumberHeadlineText");
+        public string DataToolLinkDesc => TextTranslator.Translate("DataToolLandingPage.Link.Description");
+        public string DataToolLinkText => TextTranslator.Translate("DataToolLandingPage.Link.Text");
         public IList<Pdf> Pdfs => GetPdfs();
         //public IList<Pdf> ManuallyCuratedPdfs => GetManuallyCuratedPdfs();
         public string userEmail => _authenticatedUserContext.User?.Email;
@@ -89,30 +91,5 @@ namespace Informa.Web.ViewModels.PDF
             }
             return null;
         }
-        //public IList<Pdf> GetManuallyCuratedPdfs()
-        //{
-        //    var pdfs = new List<Pdf>();
-        //    var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
-        //        _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-        //    if (homeItem != null)
-        //    {
-        //        var PdfsRootItem = homeItem._ChildrenWithInferType.OfType<IPdfs_Root>().FirstOrDefault();
-        //        var CuratedPdfsRootItem = PdfsRootItem?._ChildrenWithInferType.OfType<IManuallyCuratedPdfs_Root>().FirstOrDefault();
-        //        if (PdfsRootItem != null && CuratedPdfsRootItem != null)
-        //        {
-        //            var curatedPdfs = CuratedPdfsRootItem._ChildrenWithInferType.OfType<IManually_Curated_PDF_Page>();
-        //            if (curatedPdfs != null && curatedPdfs.Count() > 0)
-        //            {
-        //                foreach (var pdf in curatedPdfs)
-        //                {
-        //                    pdfs.Add(new Pdf { IssueDate = DateTime.Now, IssueNumber = 0, PdfPageUrl = pdf._AbsoluteUrl });
-        //                }
-        //                return pdfs;
-        //            }
-        //        }
-        //    }
-        //    return null;
-        //}
-
     }
 }
