@@ -111,6 +111,6 @@ namespace Informa.Web.ViewModels.PDF
 
         public IEnumerable<IListable> RelatedArticles { get; set; }
 
-        public string ArticleLandingPageUrl=> Sitecore.Context.Site.HostName + Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
+        public string ArticleLandingPageUrl=> Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
     }
 }
