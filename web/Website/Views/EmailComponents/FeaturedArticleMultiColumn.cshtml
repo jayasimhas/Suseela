@@ -29,7 +29,7 @@
                                                                                                   padding-right: 0.75rem;">
                                 <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                             </li>
-                            @if (Model.Articles[0].Content_Type != null)
+                            @if (Model.Articles[0].Content_Type != null && !Model.GlassModel.DisableTagLine)
                             {
                             <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
                                                                                                       border-right: 1px solid #ccc;
@@ -129,7 +129,7 @@
                                                                                                   padding-right: 0.75rem;">
                                 <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                             </li>
-                            @if (Model.Articles[0].Content_Type != null)
+                            @if (Model.Articles[0].Content_Type != null && !Model.GlassModel.DisableTagLine)
                             {
                                 <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
                                                                                                       border-right: 1px solid #ccc;
@@ -235,7 +235,7 @@
 																			  padding-right: 0.75rem;">
                                 <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                             </li>
-                            @if (Model.Articles[0].Content_Type != null)
+                            @if (Model.Articles[0].Content_Type != null && !Model.GlassModel.DisableTagLine)
                             {
                             <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
 																			      border-right: 1px solid #ccc;
@@ -321,7 +321,7 @@
 																			  padding-right: 0.75rem;">
                                 <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                             </li>
-                            @if (Model.Articles[0].Content_Type != null)
+                            @if (Model.Articles[0].Content_Type != null && !Model.GlassModel.DisableTagLine)
                             {
                                 <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
 																			      border-right: 1px solid #ccc;
@@ -431,7 +431,7 @@
                                                                                     padding-right: 0.75rem;">
                                         <time class="article-metadata__date">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                                     </li>
-                                    @if (article.Content_Type != null)
+                                    @if (article.Content_Type != null && !Model.GlassModel.DisableTagLine)
                                     {
                                         <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;border:none;list-style: none;
                                                                                         border-right: 1px solid #ccc;
@@ -560,7 +560,7 @@
                                                                                 margin-left: 0;
                                                                                 padding-right: 12px;
                                                                                 padding-right: 0.75rem;">
-                                    @if (article.Content_Type != null)
+                                    @if (article.Content_Type != null && !Model.GlassModel.DisableTagLine)
                                     {
                                             <h6 style="color:#231f20;text-transform:uppercase;font-size:15px;margin:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">@article.Content_Type.Item_Name</h6>
                                     }

@@ -43,14 +43,6 @@
             }
         }
 
-        private string _mediaTypeIconSrc;
-        public string MediaTypeIconSrc
-            => _mediaTypeIconSrc ?? (_mediaTypeIconSrc = GlassModel.ArticleOne?.Media_Type?.Media_Type_Icon?.Src);
-
-        private string _targetArticleUrl;
-        public string TargetArticleUrl
-            => _targetArticleUrl ?? (_targetArticleUrl = _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel.ArticleOne));
-
         public IList<IArticle> Articles => new List<IArticle> { GlassModel?.ArticleOne, GlassModel?.ArticleTwo, GlassModel?.ArticleThree };
 
         public IList<string> MediaTypeIconSrcs => new List<string>

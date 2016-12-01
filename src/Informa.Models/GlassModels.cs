@@ -26921,6 +26921,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowBackgroundColor { get; set; }
 
+        /// <summary>
+        /// Disable Tagline field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 972f333b-0547-4d8b-964a-33ebf5abb4f8</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_TaglineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool DisableTagLine { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -26942,6 +26951,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
         public const string Show_Background_ColorFieldName = "Show Background Color";
+
+        public static readonly ID Disable_TaglineFieldId = new ID("972f333b-0547-4d8b-964a-33ebf5abb4f8");
+        public const string Disable_TaglineFieldName = "Disable Tag Line";
 
     }
 
