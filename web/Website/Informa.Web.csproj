@@ -2177,6 +2177,8 @@
     <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
     <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

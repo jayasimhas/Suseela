@@ -1,0 +1,26 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.FactoryInterface.IListable
+
+    <tr>
+        <td>
+            <span style="float: left; margin-right:10px; margin-top:5px; margin-bottom:20px;">
+                <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" />
+                <span  style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; margin-top:5px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                    <a style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" class="click-utag"
+                       href="@Model.LinkableUrl"
+                       data-info='{
+			"event_name": "related_content_click_through",
+			"main-article": "@Sitecore.Context.Item.DisplayName",
+			"related-article": "@Model.ListableTitle",
+			"click_through_source": "@Sitecore.Context.Item.DisplayName",
+			"click_through_destination": "@Model.ListableTitle"
+		}'>
+                        @Html.Raw(Model.ListableTitle)
+                    </a>
+                </span>
+            </span>
+        </td>
+      
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+
