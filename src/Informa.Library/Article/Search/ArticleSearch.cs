@@ -68,6 +68,7 @@ namespace Informa.Library.Article.Search
                     .FilterTaxonomies(filter, ItemReferences, GlobalService)
 					.ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
+					.FilteryByLegacyArticleNumber(filter)
 					.FilteryByEScenicID(filter)
 					.FilteryByRelatedId(filter)
                     .ApplyDefaultFilters();
