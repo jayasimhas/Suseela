@@ -332,6 +332,7 @@
                                      class="visuallyhidden"
                                      ng-checked="subFacet.selected"
                                      ng-model="subFacet.selected"
+                                     ng-disabled="facetController.areFacetsDisabled"
                                      ng-change="facetController.update()" data-info='{"event_name":"search-facet"," click-sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
                               <label class="facets__label" ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
                                   {{ subFacet.name }}
