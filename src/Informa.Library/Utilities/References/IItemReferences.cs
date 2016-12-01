@@ -28,6 +28,7 @@ namespace Informa.Library.Utilities.References
         Guid RegionsTaxonomyFolder { get; }
         Guid TherapyAreasTaxonomyFolder { get; }
         Guid DeviceAreasTaxonomyFolder { get; }
+        Guid IndustriesTaxonomyFolder { get; }
 
 		//Account Drop Down
 		Guid AccountCountries { get; }

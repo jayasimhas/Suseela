@@ -31,8 +31,6 @@ namespace Informa.Web.ViewModels
         protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
-        protected readonly ISitecoreService SitecoreService;
-        protected readonly IAuthorIndexClient AuthorIndexClient;
         protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
         protected IGlassBase Datasource;
@@ -44,8 +42,6 @@ namespace Informa.Web.ViewModels
             IArticleListItemModelFactory articleListableFactory,
             ISiteRootContext rootContext,
             ITextTranslator textTranslator, 
-            ISitecoreService sitecoreService, 
-            IAuthorIndexClient authorIndexClient, 
             IAuthorService authorService,
             IDCDReader dcdReader)
         {
@@ -54,8 +50,6 @@ namespace Informa.Web.ViewModels
             ItemManuallyCuratedContent = itemManuallyCuratedContent;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
-            SitecoreService = sitecoreService;
-            AuthorIndexClient = authorIndexClient;
             AuthorService = authorService;
             DcdReader = dcdReader;
 
