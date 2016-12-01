@@ -28,12 +28,13 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
                 dependencies.SitecoreService.GetItem<IDCDSubscribe>(Constants.DCDSubscribeComponent);
             if (dcdSubscribeComponent == null) return;
 
-			PurchaseHeadline = dcdSubscribeComponent.Subscriber_Headline;
+            PurchaseHeadline = dcdSubscribeComponent.Subscriber_Headline;
             PurchaseSubHeading = dcdSubscribeComponent.Subscriber_Subheading;
             PurchaseButtonText = dcdSubscribeComponent.Subscriber_Button_Text;
 
             var recordNumber = UrlUtils.GetLastUrlSement(dependencies.HttpContextProvider.Current);
 
+            PurchaseButtonLink = string.Format(dependencies.SiteSettingsContext.OldDealsUrl, recordNumber);
             SubscriberHeadline = dcdSubscribeComponent.Promotional_Headline;
             SubscriberSubHeading = dcdSubscribeComponent.Promotional_Subheadline;
             SubscriberButtonText = dcdSubscribeComponent.Promotional_Button_Text;

@@ -12613,6 +12613,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Leaderboard_Slot_ID  {get; set;}
 								/// <summary>
+					/// The Register SubTitle for Free Articles field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: e85272a3-70ae-4ffc-9609-5eac81bf5d30</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Register_SubTitle_For_Free_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Register_SubTitle_For_Free_Articles  {get; set;}
+								/// <summary>
 					/// The Register SubTitle field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -13489,6 +13498,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Leaderboard_Slot_ID  {get; set;}
 										/// <summary>
+						/// The Register SubTitle for Free Articles field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: e85272a3-70ae-4ffc-9609-5eac81bf5d30</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Register_SubTitle_For_Free_ArticlesFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Register_SubTitle_For_Free_Articles  {get; set;}
+										/// <summary>
 						/// The Register SubTitle field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -14283,6 +14301,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
 			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
+						
+					
+			public static readonly ID Register_SubTitle_For_Free_ArticlesFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
+			public const string Register_SubTitle_For_Free_ArticlesFieldName = "Register SubTitle for Free Articles";
+
+							public static readonly ID Register_SubTitle_For_Free_Articles__RawFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
+				public const string Register_SubTitle_For_Free_Articles__RawFieldName = "Register SubTitle for Free Articles";
 						
 					
 			public static readonly ID Register_SubTitleFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
@@ -20293,6 +20318,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
 			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
+						
+					
+			public static readonly ID Register_SubTitle_For_Free_ArticlesFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
+			public const string Register_SubTitle_For_Free_ArticlesFieldName = "Register SubTitle for Free Articles";
+
+							public static readonly ID Register_SubTitle_For_Free_Articles__RawFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
+				public const string Register_SubTitle_For_Free_Articles__RawFieldName = "Register SubTitle for Free Articles";
 						
 					
 			public static readonly ID Register_SubTitleFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
