@@ -1,9 +1,10 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleMultiColumnViewModel>
 @using Informa.Library.Search.Utilities
+@using Informa.Library.Utilities.References
 
 @if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.Display_Option != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.Display_Option.Value))
 {
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleFullRow")
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleFullRow)
     {
         <div class="article-wrapper" style="margin-bottom: 20px; clear: both;">
             @if (Model.GlassModel.ShowBackgroundColor && Model.Articles != null && Model.Articles.Any())
@@ -49,12 +50,10 @@
                                                                                                     margin-left: 0;
                                                                                                     padding-right: 12px;
                                                                                                     padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                             @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                             {
@@ -146,12 +145,10 @@
                                                                                                   margin-left: 0;
                                                                                                   padding-right: 12px;
                                                                                                   padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                         </ul>
                     </div>
@@ -239,12 +236,10 @@
 																			  margin-left: 0;
 																			  padding-right: 12px;
 																			  padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                             @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.ToList().Count > 2)
                             {
@@ -327,12 +322,10 @@
 																			  margin-left: 0;
 																			  padding-right: 12px;
 																			  padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                         </ul>
                     </div>
@@ -392,7 +385,7 @@
         </div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleHalfRow" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow && Model.Articles != null && Model.Articles.Any())
     {
         <div class="wd-desk-50" style="width:50%;float:left;height: 410px; margin-bottom: 20px; clear: both;">
             @foreach (var article in Model.Articles)
@@ -492,7 +485,7 @@
         </div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleThreeRows" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows && Model.Articles != null && Model.Articles.Any())
     {
         <div class="wd-desk-50" style="width:50%;float:left;height: 410px ;">
             <div style="background-color: #f1f2f2; padding: 10px; height: 100%;">
@@ -513,7 +506,7 @@
         <div style="clear: both;"></div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleTwoColumn" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleTwoColumn && Model.Articles != null && Model.Articles.Any())
     {
         <div class="article-wrapper" style="margin-bottom: 20px; clear: both; height: 410px;">
             @foreach (var article in Model.Articles)
