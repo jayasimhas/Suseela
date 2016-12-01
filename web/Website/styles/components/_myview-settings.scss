@@ -218,11 +218,6 @@
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
-							@include breakpoint('large') {
-								background: inherit;
-								border: 1px solid #f7941e;
-								color: inherit;
-							}
 							@include breakpoint('small') {
 								background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 							}
@@ -260,20 +255,14 @@
 						}
 						&:hover{
 							background: #f5f5f5;
-							@include breakpoint('large') {
-								background: #fff;
-							}
 							cursor: move;
 							& .rowlines{
 								span{
 									background: #acacad;
-									@include breakpoint('large'){
-										background: #d1d3d5;
-									}
 								}
 							}
 							& .move{
-								@include breakpoint('large') {
+								@include breakpoint('small') {
 									display: none;
 								}
 								display: block;

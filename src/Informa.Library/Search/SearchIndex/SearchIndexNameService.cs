@@ -7,7 +7,6 @@
     using Services.Global;
     using Site;
     using System;
-    using System.Web;
 
     [AutowireService]
     public class SearchIndexNameService : ISearchIndexNameService
@@ -55,11 +54,6 @@
                 return VerticalRootContext.Item.Auther_Search_Index_Name;
             }
             return "sitecore_{0}_index";
-        }
-
-        public string GetVerticalRootFromQuerystring()
-        {
-           return HttpContext.Current.Request.QueryString["verticalroot"];
         }
 
         /// <summary>

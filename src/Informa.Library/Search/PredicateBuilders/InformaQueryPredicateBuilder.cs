@@ -38,14 +38,13 @@ namespace Informa.Library.Search.PredicateBuilders
 
             if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
             {//VWB
-                if (!string.IsNullOrWhiteSpace(Constants.VWBSearchPageId) && _request.PageId == Constants.VWBSearchPageId)
-                {
-                    //VWB:  Filter out non Article items
-                    predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
-                }
 
             }
-            
+            //if (!string.IsNullOrWhiteSpace(Constants.VWBSearchPageId) && _request.PageId == Constants.VWBSearchPageId)
+            //{
+            //    //VWB:  Filter out non Article items
+            //    predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
+            //}
             else
             {
                 //Include Search for authors

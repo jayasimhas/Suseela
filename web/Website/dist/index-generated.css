@@ -3938,11 +3938,6 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
-            @media (max-width: 1080px) {
-              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-                background: inherit;
-                border: 1px solid #f7941e;
-                color: inherit; } }
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
                 background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4028,17 +4023,11 @@ header .header-account-access {
         .myview-settings .table-responsive .table tbody tr.followingrow:hover {
           background: #f5f5f5;
           cursor: move; }
-          @media (max-width: 1080px) {
-            .myview-settings .table-responsive .table tbody tr.followingrow:hover {
-              background: #fff; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
             background: #acacad; }
-            @media (max-width: 1080px) {
-              .myview-settings .table-responsive .table tbody tr.followingrow:hover .rowlines span {
-                background: #d1d3d5; } }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
-            @media (max-width: 1080px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
                 display: none; } }
         .myview-settings .table-responsive .table tbody tr.followrow {
@@ -4810,9 +4799,6 @@ header .header-account-access {
   position: absolute;
   bottom: 24px;
   bottom: 1.5rem; }
-  @media (max-width: 800px) {
-    .personalisationhome .article-preview__tags {
-      width: calc(100% - 2.5rem); } }
   @media (max-width: 480px) {
     .personalisationhome .article-preview__tags {
       position: static; } }
@@ -5084,10 +5070,6 @@ header .header-account-access {
   width: 21.0625rem;
   height: 190px;
   height: 11.875rem; }
-  @media (max-width: 1024px) and (min-width: 768px) {
-    .personalisationhome .topic-featured-article__image2 {
-      width: 100%;
-      height: auto; } }
   @media (max-width: 480px) {
     .personalisationhome .topic-featured-article__image2 {
       margin-top: 20px;
@@ -7343,7 +7325,7 @@ div#feedbacklite.fbl_r {
         margin-left: 0; }
       .topic-featured-article__image {
         width: 272px;
-        height: auto;
+        height: 153px;
         margin-bottom: 80px;
         margin-bottom: 5rem; }
       .topic-featured-article__image, .topic-featured-article__headline {
@@ -10600,8 +10582,7 @@ section: Global Components
       margin-top: 0;
       padding: 0;
       position: absolute;
-      right: 0;
-      z-index: 99; } }
+      right: 0; } }
 
 .header-search__field {
   max-width: 310px;

@@ -18,7 +18,6 @@ using Informa.Web.Controllers.Search;
 using Jabberwocky.Autofac.Extras.MiniProfiler;
 using Jabberwocky.Core.Caching;
 using Velir.Search.Autofac.Modules;
-using Informa.Web.ViewModels.Emails;
 
 namespace Informa.Web.App_Start
 {
@@ -51,11 +50,9 @@ namespace Informa.Web.App_Start
 			builder.RegisterType<ArticleUtil>().AsSelf();
 			builder.RegisterType<SitecoreSaverUtil>().AsSelf();
 			builder.RegisterType<EmailUtil>().AsSelf();
-            //IPMP-906
-            builder.RegisterType<PersonalizedEmailViewModel>().AsSelf();
 
-            //Velir Search Library
-            builder.RegisterModule<SearchModule>();
+			//Velir Search Library
+			builder.RegisterModule<SearchModule>();
 			builder.RegisterModule<SolrSearchModule>();
 			//SearchRegistrar.RegisterDependencies(builder);
 

@@ -238,7 +238,7 @@ $(function () {
 		else{
 			eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
 		}
-		analyticsEvent( eventDetails );
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
 		
 		eventDetails = {};
 	});
@@ -251,7 +251,7 @@ $(function () {
 		else{
 			eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
 		}
-		analyticsEvent( eventDetails );
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
 		
 		eventDetails = {};
 	});
