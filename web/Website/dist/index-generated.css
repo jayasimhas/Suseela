@@ -1,4 +1,4 @@
-/* This file is generated.  DO NOT EDIT. */ 
+﻿/* This file is generated.  DO NOT EDIT. */ 
 @charset "UTF-8";
 /* * * * UTILITIES / HELPERS * * * */
 .u-centered {
@@ -10,10 +10,10 @@
 /* * * * VENDORS * * * */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
- */
+* 1. Set default font family to sans-serif.
+* 2. Prevent iOS and IE text size adjust after device orientation change,
+*    without disabling user zoom.
+*/
 html {
   font-family: sans-serif;
   /* 1 */
@@ -23,19 +23,19 @@ html {
   /* 2 */ }
 
 /**
- * Remove default margin.
- */
+* Remove default margin.
+*/
 body {
   margin: 0; }
 
 /* HTML5 display definitions
    ========================================================================== */
 /**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
+* Correct `block` display not defined for any HTML5 element in IE 8/9.
+* Correct `block` display not defined for `details` or `summary` in IE 10/11
+* and Firefox.
+* Correct `block` display not defined for `main` in IE 11.
+*/
 article,
 aside,
 details,
@@ -52,9 +52,9 @@ summary {
   display: block; }
 
 /**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
+* 1. Correct `inline-block` display not defined in IE 8/9.
+* 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+*/
 audio,
 canvas,
 progress,
@@ -65,17 +65,17 @@ video {
   /* 2 */ }
 
 /**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
+* Prevent modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices.
+*/
 audio:not([controls]) {
   display: none;
   height: 0; }
 
 /**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
+* Address `[hidden]` styling not present in IE 8/9/10.
+* Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+*/
 [hidden],
 template {
   display: none; }
@@ -83,15 +83,15 @@ template {
 /* Links
    ========================================================================== */
 /**
- * Remove the gray background color from active links in IE 10.
- */
+* Remove the gray background color from active links in IE 10.
+*/
 a, .pop-out__reset-password, .sortable-table__list-toggler, .mobile-table-exit {
   background-color: transparent; }
 
 /**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
- */
+* Improve readability of focused elements when they are also in an
+* active/hover state.
+*/
 a:active, .pop-out__reset-password:active, .sortable-table__list-toggler:active, .mobile-table-exit:active,
 a:hover,
 .pop-out__reset-password:hover,
@@ -102,48 +102,48 @@ a:hover,
 /* Text-level semantics
    ========================================================================== */
 /**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
+* Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+*/
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
+* Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+*/
 b,
 strong {
   font-weight: bold; }
 
 /**
- * Address styling not present in Safari and Chrome.
- */
+* Address styling not present in Safari and Chrome.
+*/
 dfn {
   font-style: italic; }
 
 /**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
+* Address variable `h1` font-size and margin within `section` and `article`
+* contexts in Firefox 4+, Safari, and Chrome.
+*/
 h1, .generic-content h1, .profile h1, .article-body-content > h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
 /**
- * Address styling not present in IE 8/9.
- */
+* Address styling not present in IE 8/9.
+*/
 mark {
   background: #ff0;
   color: #000; }
 
 /**
- * Address inconsistent and variable font size in all browsers.
- */
+* Address inconsistent and variable font size in all browsers.
+*/
 small {
   font-size: 80%; }
 
 /**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
+* Prevent `sub` and `sup` affecting `line-height` in all browsers.
+*/
 sub,
 sup {
   font-size: 75%;
@@ -160,41 +160,41 @@ sub {
 /* Embedded content
    ========================================================================== */
 /**
- * Remove border when inside `a` element in IE 8/9/10.
- */
+* Remove border when inside `a` element in IE 8/9/10.
+*/
 img {
   border: 0; }
 
 /**
- * Correct overflow not hidden in IE 9/10/11.
- */
+* Correct overflow not hidden in IE 9/10/11.
+*/
 svg:not(:root) {
   overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
 /**
- * Address margin not present in IE 8/9 and Safari.
- */
+* Address margin not present in IE 8/9 and Safari.
+*/
 figure {
   margin: 1em 40px; }
 
 /**
- * Address differences between Firefox and other browsers.
- */
+* Address differences between Firefox and other browsers.
+*/
 hr {
   box-sizing: content-box;
   height: 0; }
 
 /**
- * Contain overflow in all browsers.
- */
+* Contain overflow in all browsers.
+*/
 pre {
   overflow: auto; }
 
 /**
- * Address odd `em`-unit font size rendering in all browsers.
- */
+* Address odd `em`-unit font size rendering in all browsers.
+*/
 code,
 kbd,
 pre,
@@ -205,15 +205,15 @@ samp {
 /* Forms
    ========================================================================== */
 /**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
+* Known limitation: by default, Chrome and Safari on OS X allow very limited
+* styling of `select`, unless a `border` property is set.
+*/
 /**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
+* 1. Correct color not being inherited.
+*    Known issue: affects color of disabled elements.
+* 2. Correct font properties not being inherited.
+* 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+*/
 button,
 input,
 optgroup,
@@ -227,28 +227,28 @@ textarea {
   /* 3 */ }
 
 /**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
+* Address `overflow` set to `hidden` in IE 8/9/10/11.
+*/
 button {
   overflow: visible; }
 
 /**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
+* Address inconsistent `text-transform` inheritance for `button` and `select`.
+* All other form control elements do not inherit `text-transform` values.
+* Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+* Correct `select` style inheritance in Firefox.
+*/
 button,
 select {
   text-transform: none; }
 
 /**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
+* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+*    and `video` controls.
+* 2. Correct inability to style clickable `input` types in iOS.
+* 3. Improve usability and consistency of cursor style between image-type
+*    `input` and others.
+*/
 button,
 html input[type="button"],
 input[type="reset"],
@@ -259,34 +259,34 @@ input[type="submit"] {
   /* 3 */ }
 
 /**
- * Re-set default cursor for disabled elements.
- */
+* Re-set default cursor for disabled elements.
+*/
 button[disabled],
 html input[disabled] {
   cursor: default; }
 
 /**
- * Remove inner padding and border in Firefox 4+.
- */
+* Remove inner padding and border in Firefox 4+.
+*/
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
 /**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
+* Address Firefox 4+ setting `line-height` on `input` using `!important` in
+* the UA stylesheet.
+*/
 input {
   line-height: normal; }
 
 /**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
+* It's recommended that you don't attempt to style these elements.
+* Firefox's implementation doesn't respect box-sizing, padding, or width.
+*
+* 1. Address box sizing set to `content-box` in IE 8/9/10.
+* 2. Remove excess padding in IE 8/9/10.
+*/
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -295,18 +295,18 @@ input[type="radio"] {
   /* 2 */ }
 
 /**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
+* Fix the cursor style for Chrome's increment/decrement buttons. For certain
+* `font-size` values of the `input`, it causes the cursor style of the
+* decrement button to change from `default` to `text`.
+*/
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
- */
+* 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+* 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+*/
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -314,26 +314,26 @@ input[type="search"] {
   /* 2 */ }
 
 /**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
+* Remove inner padding and search cancel button in Safari and Chrome on OS X.
+* Safari (but not Chrome) clips the cancel button when the search input has
+* padding (and `textfield` appearance).
+*/
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
- * Define consistent border, margin, and padding.
- */
+* Define consistent border, margin, and padding.
+*/
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
 /**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
+* 1. Correct `color` not being inherited in IE 8/9/10/11.
+* 2. Remove padding so people aren't caught out if they zero out fieldsets.
+*/
 legend {
   border: 0;
   /* 1 */
@@ -341,23 +341,23 @@ legend {
   /* 2 */ }
 
 /**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
+* Remove default vertical scrollbar in IE 8/9/10/11.
+*/
 textarea {
   overflow: auto; }
 
 /**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
+* Don't inherit the `font-weight` (applied by a rule above).
+* NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+*/
 optgroup {
   font-weight: bold; }
 
 /* Tables
    ========================================================================== */
 /**
- * Remove most spacing between table cells.
- */
+* Remove most spacing between table cells.
+*/
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -367,8 +367,8 @@ th {
   padding: 0; }
 
 /*
- *  Owl Carousel - Core
- */
+*  Owl Carousel - Core
+*/
 .owl-carousel {
   display: none;
   width: 100%;
@@ -442,8 +442,8 @@ th {
   display: block; }
 
 /*
- *  Owl Carousel - Animate Plugin
- */
+*  Owl Carousel - Animate Plugin
+*/
 .owl-carousel .animated {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
@@ -473,15 +473,15 @@ th {
     opacity: 0; } }
 
 /*
- * 	Owl Carousel - Auto Height Plugin
- */
+*            Owl Carousel - Auto Height Plugin
+*/
 .owl-height {
   -webkit-transition: height 500ms ease-in-out;
           transition: height 500ms ease-in-out; }
 
 /*
- * 	Default theme - Owl Carousel CSS File
- */
+*            Default theme - Owl Carousel CSS File
+*/
 .owl-theme .owl-nav {
   margin-top: 10px;
   text-align: center;
@@ -622,28 +622,28 @@ section: Colors
 ```
 */
 /**
- * Set up a decent box model on the root element
- */
+* Set up a decent box model on the root element
+*/
 html {
   box-sizing: border-box; }
 
 /**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
+* Make all elements from the DOM inherit from the parent box-sizing
+* Since `*` has a specificity of 0, it does not override the `html` value
+* making all elements inheriting from the root box-sizing value
+* See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
 *, *::before, *::after {
   box-sizing: inherit; }
 
 /**
- * Basic styles for links
- */
+* Basic styles for links
+*/
 a, .pop-out__reset-password, .sortable-table__list-toggler, .mobile-table-exit {
   color: #be1e2d;
   text-decoration: none; }
   a:hover, .pop-out__reset-password:hover, .sortable-table__list-toggler:hover, .mobile-table-exit:hover, a:active, .pop-out__reset-password:active, .sortable-table__list-toggler:active, .mobile-table-exit:active, a:focus, .pop-out__reset-password:focus, .sortable-table__list-toggler:focus, .mobile-table-exit:focus {
-    color: #be1e2d;
+   color: #be1e2d;
     text-decoration: underline; }
   a.link__no-hover:hover, .link__no-hover.pop-out__reset-password:hover, .link__no-hover.sortable-table__list-toggler:hover, .link__no-hover.mobile-table-exit:hover, a.link__no-hover:active, .link__no-hover.pop-out__reset-password:active, .link__no-hover.sortable-table__list-toggler:active, .link__no-hover.mobile-table-exit:active, a.link__no-hover:focus, .link__no-hover.pop-out__reset-password:focus, .link__no-hover.sortable-table__list-toggler:focus, .link__no-hover.mobile-table-exit:focus {
     color: inherit;
@@ -850,7 +850,7 @@ p {
 
 .default-style-list, .image-cutline-block ul, .image-cutline-block ol, .article-list--ul, .article-list--ol, .quick-facts__list--ul, .quick-facts__list--ol {
   margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+ margin-bottom: 1.5rem; }
   .default-style-list li, .image-cutline-block ul li, .image-cutline-block ol li, .article-list--ul li, .article-list--ol li, .quick-facts__list--ul li, .quick-facts__list--ol li {
     margin-left: 20px;
     margin-left: 1.25rem;
@@ -1138,7 +1138,7 @@ section: Advertising
 Leaderboard-style ads are replaced with smaller images at smartphone width (480px)
 ```example:html
 <div class="advertising advertising--leaderboard">
-	<span class="advertising__label">Advertisement</span>
+                <span class="advertising__label">Advertisement</span>
     <img src="http://placebear.com/728/90" width="728" height="90" alt=""></a>
 </div>
 ```
@@ -1151,7 +1151,7 @@ section: Advertising
 ```example:html
 <div class="article-preview__ad advertising">
     <span class="advertising__label">Advertisement</span>
-	<img src="http://placebear.com/300/250" width="300" height="250" alt="">
+                <img src="http://placebear.com/300/250" width="300" height="250" alt="">
 </div>
 ```
 */
@@ -1246,7 +1246,7 @@ section: Alerts
   .alert-error p {
     font-weight: 400;
     line-height: 28px;
-    line-height: 1.75rem;
+   line-height: 1.75rem;
     margin-left: calc(24px + 0.75rem); }
   .alert-error .alert__icon {
     height: 24px;
@@ -1447,43 +1447,43 @@ section: Alerts
   height: auto;
   max-height: 0px;
   /*---
-	title: Maintenance Banner
-	section: Banners
-	---
+                title: Maintenance Banner
+                section: Banners
+                ---
 
-	```example:html
-	<div class="banner banner--maintenance is-visible">
-		<div class="banner__wrapper">
-			<div class="dismiss-button js-dismiss-banner">
-				<span>Dismiss</span>
-				<svg class="dismiss-button__icon">
-					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
-				</svg>
-			</div>
-			<svg class="banner__lead-icon">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#tool-maintenance"></use>
-			</svg>
-			<span>Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.</span>
-		</div>
-	</div>
-	```
-	*/
+                ```example:html
+                <div class="banner banner--maintenance is-visible">
+                                <div class="banner__wrapper">
+                                                <div class="dismiss-button js-dismiss-banner">
+                                                                <span>Dismiss</span>
+                                                                <svg class="dismiss-button__icon">
+                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+                                                                </svg>
+                                                </div>
+                                                <svg class="banner__lead-icon">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#tool-maintenance"></use>
+                                                </svg>
+                                                <span>Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.</span>
+                                </div>
+                </div>
+                ```
+                */
   /*---
-	title: Alert Banner
-	section: Banners
-	---
+                title: Alert Banner
+                section: Banners
+                ---
 
-	```example:html
-	<div class="banner banner--alert is-visible">
-		<div class="banner__wrapper">
-			<svg class="banner__lead-icon">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
-			</svg>
-			<span>Name, we could not send the verification email to the address provided.</span>
-		</div>
-	</div>
-	```
-	*/ }
+                ```example:html
+                <div class="banner banner--alert is-visible">
+                                <div class="banner__wrapper">
+                                                <svg class="banner__lead-icon">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
+                                                </svg>
+                                                <span>Name, we could not send the verification email to the address provided.</span>
+                                </div>
+                </div>
+                ```
+                */ }
   .banner .banner__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1595,7 +1595,7 @@ section: Alerts
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
               order: 2; }
-  .banner--register {
+ .banner--register {
     background-color: #fbb040; }
     .banner--register .button--outline:enabled {
       background: transparent;
@@ -1852,7 +1852,7 @@ section: UI Elements
 This isn't a "real" button; rather, a link styled like many other buttons on the site.
 ```example:html
 <a class="full-diminished-button" href="#">
-	See All
+                See All
 </a>
 ```
 */
@@ -1950,7 +1950,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-top: 2rem; }
   .callout h3, .callout .article-call-to-action__title {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
-    font-size: 24px;
+   font-size: 24px;
     font-weight: 600;
     color: #231f20;
     line-height: 32px;
@@ -2174,7 +2174,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #foodNews .subtitle {
     font-size: 1.6875em;
     margin-bottom: 25px;
-    font-weight: normal;
+   font-weight: normal;
     font-style: italic;
     font-family: "PTSerif Italic"; }
     #foodNews .subtitle span {
@@ -2272,7 +2272,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         font-size: 1.1em;
         color: #000;
         float: none;
-        display: block;
+       display: block;
         margin-bottom: 10px; }
       #foodNews .searchpan #searchNews {
         width: 205px;
@@ -2612,7 +2612,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         clear: both; }
         .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
           font-family: 'Roboto Condensed';
-          font-style: normal;
+         font-style: normal;
           font-weight: 700;
           font-size: 1.875em;
           margin-bottom: 0.3em; }
@@ -2900,7 +2900,7 @@ section: Global Components
 
     <h4 class="lightbox-modal__title">
         <svg class="lightbox-modal__title-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
         </svg>
         Remove Article
     </h4>
@@ -3004,14 +3004,14 @@ body.lightboxed {
     .large_table .large-table-responsive .table td:first-child, .large_table .large-table-responsive .table th:first-child {
       border-left: 0 !important; }
     .large_table .large-table-responsive .table .R16 {
-      font-family: "Roboto", Helvetica, Arial, sans-serif;
+     font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: 400;
       font-style: normal; }
   .large_table .large-table-responsive .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
-    font-weight: 400;
+   font-weight: 400;
     font-style: normal; }
   .large_table .large-table-responsive h1.primary_heading {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -3022,7 +3022,7 @@ body.lightboxed {
     margin-top: 45px; }
   .large_table .large-table-responsive h5.secondary_heading, .large_table .large-table-responsive .alert-success p.secondary_heading, .alert-success .large_table .large-table-responsive p.secondary_heading, .large_table .large-table-responsive .alert-error p.secondary_heading, .alert-error .large_table .large-table-responsive p.secondary_heading, .large_table .large-table-responsive .secondary_heading.article-call-to-action__subtitle {
     font-family: "PT Serif", Georgia, serif;
-    font-size: 1.68em;
+   font-size: 1.68em;
     font-weight: 400;
     font-style: italic;
     color: #231f20;
@@ -3366,8 +3366,8 @@ body.lightboxed {
   text-align: center;
   text-transform: uppercase;
   width: 70px;
-  /* 	Taken from:
-		http://callmenick.com/post/animating-css-only-hamburger-menu-icons */ }
+  /*         Taken from:
+                                http://callmenick.com/post/animating-css-only-hamburger-menu-icons */ }
   @media (max-width: 800px) {
     .menu-toggler {
       display: none;
@@ -3590,7 +3590,7 @@ header .header-account-access {
     padding: 1rem 0; }
     @media (max-width: 1024px) {
       header .header-account-access .header-account-right-access {
-        float: right;
+       float: right;
         margin-right: 20px;
         clear: both;
         display: block; } }
@@ -3630,7 +3630,7 @@ header .header-account-access {
   margin-bottom: 1rem;
   color: #58595b; }
   .messaging_webUsers h3, .messaging_webUsers .article-call-to-action__title {
-    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-family: "Roboto",Arial Narrow,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1.375em;
@@ -3642,7 +3642,7 @@ header .header-account-access {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
     .messaging_webUsers .msg-text p {
-      font-family: "PT Serif",​Georgia,​serif;
+      font-family: "PT Serif",Georgia,serif;
       font-style: normal;
       font-weight: 400;
       font-size: 0.9375em;
@@ -3650,7 +3650,7 @@ header .header-account-access {
   .messaging_webUsers .button-msg-webUser {
     width: 100%;
     clear: both;
-    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-family: "Roboto",Arial Narrow,sans-serif;
     font-style: normal;
     font-size: 0.9375em;
     font-weight: 400;
@@ -3678,7 +3678,7 @@ header .header-account-access {
   .messaging_webUsers .msg_dismiss {
     text-transform: uppercase;
     float: right;
-    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-family: "Roboto",Arial Narrow,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
@@ -3719,7 +3719,7 @@ header .header-account-access {
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
     float: right;
-    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-family: "Roboto",Arial Narrow,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
@@ -3915,7 +3915,7 @@ header .header-account-access {
           padding: 12px 20px;
           padding: 0.75rem 1.25rem;
           line-height: 24px;
-          line-height: 1.5rem;
+         line-height: 1.5rem;
           vertical-align: top;
           border-top: 1px solid #ddd;
           vertical-align: middle; }
@@ -4169,7 +4169,7 @@ header .header-account-access {
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table thead th .rowlines .move {
                 z-index: -1; } }
-          .myview-settings .table-responsive .table thead th .rowlines .mv {
+         .myview-settings .table-responsive .table thead th .rowlines .mv {
             background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
             height: 50px;
             width: 21px;
@@ -4217,8 +4217,8 @@ header .header-account-access {
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .accordionImg span {
               /*background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
-								height: 0.75rem;
-								width: 1.4375rem;*/
+                                                                                                                                height: 0.75rem;
+                                                                                                                                width: 1.4375rem;*/
               position: relative;
               left: -10px; }
               .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
@@ -4809,8 +4809,7 @@ header .header-account-access {
 .personalisationhome .article-preview__tags {
   position: absolute;
   bottom: 24px;
-  bottom: 1.5rem;
-  width: calc(100% - 2.5rem); }
+  bottom: 1.5rem; }
   @media (max-width: 800px) {
     .personalisationhome .article-preview__tags {
       width: calc(100% - 2.5rem); } }
@@ -4907,7 +4906,7 @@ header .header-account-access {
       text-transform: uppercase;
       font-size: 0.8125em;
       font-family: "Roboto";
-      font-weight: 500;
+     font-weight: 500;
       width: 140px;
       width: 8.75rem;
       height: 34px;
@@ -4939,7 +4938,7 @@ header .header-account-access {
   padding: 1rem 1.25rem 3rem;
   line-height: 24px;
   line-height: 1.5rem;
-  line-height: 24px;
+ line-height: 24px;
   line-height: 1.5rem;
   overflow: hidden; }
   @media (max-width: 480px) {
@@ -4965,7 +4964,7 @@ header .header-account-access {
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     height: 220px;
-    height: 13.75rem;
+   height: 13.75rem;
     line-height: 24px;
     line-height: 1.5rem;
     overflow: hidden; }
@@ -5079,7 +5078,7 @@ header .header-account-access {
       top: 20px; }
 
 .personalisationhome .topic-featured-article__image2 {
-  margin-bottom: 16px;
+ margin-bottom: 16px;
   margin-bottom: 1rem;
   width: 337px;
   width: 21.0625rem;
@@ -5426,12 +5425,12 @@ section: Home/Topic Page Components
 This component is almost always displayed in a sidebar.
 ```example:html
 <div class="newsletter-signup">
-	<h3>Be informed first</h3>
-	Receive the SCRIP Intelligence newsletters.
-	<div class="form--single-row">
-		<input class="inf-standard-form-field">
-		<button class="button--filled">Sign Up</button>
-	</div>
+                <h3>Be informed first</h3>
+                Receive the SCRIP Intelligence newsletters.
+                <div class="form--single-row">
+                                <input class="inf-standard-form-field">
+                                <button class="button--filled">Sign Up</button>
+                </div>
 </div>
 ```
 */
@@ -5576,7 +5575,7 @@ section: UI Elements
     line-height: 1.25rem;
     margin: 0 0 18px;
     margin: 0 0 1.125rem; }
-    .pop-out__details--inset {
+   .pop-out__details--inset {
       padding: 0 18px;
       padding: 0 1.125rem; }
   .pop-out__error {
@@ -5603,7 +5602,7 @@ section: UI Elements
       margin-bottom: 2rem;
       margin-top: -10px;
       margin-top: -0.625rem; }
-    .pop-out__form-actions--remember-me {
+   .pop-out__form-actions--remember-me {
       color: #58595b;
       font-size: 15px;
       font-size: 0.9375rem; }
@@ -5969,10 +5968,10 @@ section: UI Elements
         right: 30px; }
 
 /*
- * This borrows and modifies the base selectivity styles, so don't just drop in
- * selectivity-full.css and expect it to work if you're upgrading selectivity,
- * you may need to do some line-by-line work
- */
+* This borrows and modifies the base selectivity styles, so don't just drop in
+* selectivity-full.css and expect it to work if you're upgrading selectivity,
+* you may need to do some line-by-line work
+*/
 .selectivity-clearfix {
   clear: both; }
 
@@ -5984,8 +5983,8 @@ section: UI Elements
   display: none; }
 
 /**
- * Backdrop
- */
+* Backdrop
+*/
 .selectivity-backdrop {
   position: fixed;
   z-index: 1045;
@@ -5995,8 +5994,8 @@ section: UI Elements
   left: 0; }
 
 /**
- * Dropdown
- */
+* Dropdown
+*/
 .selectivity-dropdown {
   background-color: #ffffff;
   border-top-width: 0;
@@ -6035,8 +6034,8 @@ section: UI Elements
   padding: 7px; }
 
 /**
- * Multi-selection input
- */
+* Multi-selection input
+*/
 .selectivity-multiple-input-container {
   cursor: text;
   max-height: 10em;
@@ -6082,14 +6081,14 @@ input[type='text'].selectivity-multiple-input {
   padding: 5px; }
 
 /**
- * Single-selection input
- */
+* Single-selection input
+*/
 .selectivity-single-select {
   cursor: pointer;
   /*
-		specificity being a pain to track down; this should be
-		reworked when there's time to ditch the important
-	*/
+                                specificity being a pain to track down; this should be
+                                reworked when there's time to ditch the important
+                */
   padding: 0 !important;
   position: relative;
   box-sizing: content-box; }
@@ -6097,9 +6096,9 @@ input[type='text'].selectivity-multiple-input {
 .selectivity-single-select-input {
   border-color: transparent;
   /*
-		specificity being a pain to track down; this should be
-		reworked when there's time to ditch the important
-	*/
+                                specificity being a pain to track down; this should be
+                                reworked when there's time to ditch the important
+                */
   padding: 7px 8px 7px 8px !important; }
 
 .page-account input.selectivity-single-select-input {
@@ -6130,8 +6129,8 @@ input[type='text'].selectivity-multiple-input {
     display: none; } }
 
 /**
- * Submenu
- */
+* Submenu
+*/
 .selectivity-submenu-icon {
   position: absolute;
   right: 4px; }
@@ -6607,7 +6606,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     vertical-align: top; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+   font-size: 1em;
     color: #bb1528;
     font-style: normal;
     font-weight: 700;
@@ -7025,108 +7024,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 div#feedbacklite.fbl_r {
   top: 65px !important; }
-
-.contentRecomm-article {
-  border-bottom: 1px solid #d1d3d4 !important;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
-  clear: both; }
-
-.contentRecommendations {
-  clear: both; }
-  .contentRecommendations .article-related-content {
-    margin-bottom: 0; }
-
-.ContentRecomm-ReadNext {
-  clear: both; }
-  .ContentRecomm-ReadNext h2, .ContentRecomm-ReadNext .article-topics__header {
-    margin-bottom: 24px;
-    margin-bottom: 1.5rem; }
-  .ContentRecomm-ReadNext .section-article {
-    width: 28%;
-    float: left;
-    margin: 0 2em 0 0; }
-  @media (max-width: 480px) {
-    .ContentRecomm-ReadNext .section-article {
-      width: 100%;
-      float: left;
-      margin: 0 0 0 0; } }
-  @media (max-width: 640px) {
-    .ContentRecomm-ReadNext .section-article {
-      width: 100%;
-      float: left;
-      margin: 0 0 0 0; } }
-
-.ContentRecomm-RelatedContent {
-  clear: both; }
-  .ContentRecomm-RelatedContent h2, .ContentRecomm-RelatedContent .article-topics__header {
-    margin-bottom: 24px;
-    margin-bottom: 1.5rem; }
-  .ContentRecomm-RelatedContent .section-article {
-    width: 32.3%;
-    float: left;
-    padding: 0 2em 0 0;
-    border-right: #d1d3d4 1px solid; }
-    .ContentRecomm-RelatedContent .section-article:nth-child(2n+1) {
-      margin-left: 32px;
-      margin-left: 2rem; }
-    .ContentRecomm-RelatedContent .section-article:last-child {
-      padding-left: 2em !important;
-      padding-right: 0 !important;
-      border-right: 0 !important; }
-  @media (max-width: 800px) {
-    .ContentRecomm-RelatedContent .section-article {
-      width: 31%; } }
-  @media (max-width: 480px) {
-    .ContentRecomm-RelatedContent .section-article {
-      width: 100%;
-      float: left;
-      padding: 0 0 0 0;
-      border-right: 0;
-      margin: 0; }
-      .ContentRecomm-RelatedContent .section-article:nth-child(2n+1) {
-        margin-left: 0; }
-      .ContentRecomm-RelatedContent .section-article:last-child {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        border-right: 0 !important; } }
-  @media (max-width: 640px) {
-    .ContentRecomm-RelatedContent .section-article {
-      width: 100%;
-      float: left;
-      padding: 0 0 0 0;
-      border-right: 0;
-      margin: 0; }
-      .ContentRecomm-RelatedContent .section-article:nth-child(2n+1) {
-        margin-left: 0; }
-      .ContentRecomm-RelatedContent .section-article:last-child {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        border-right: 0 !important; } }
-
-.ContentRecomm-RelatedContent-vertical {
-  clear: both; }
-  .ContentRecomm-RelatedContent-vertical h2, .ContentRecomm-RelatedContent-vertical .article-topics__header {
-    margin-bottom: 24px;
-    margin-bottom: 1.5rem; }
-  .ContentRecomm-RelatedContent-vertical .section-article {
-    width: 100%;
-    float: left;
-    margin: 0 2em 0 0;
-    border-bottom: #d1d3d4 1px solid;
-    padding-bottom: 5px;
-    padding-top: 15px; }
-    .ContentRecomm-RelatedContent-vertical .section-article .section-article-img {
-      float: left;
-      width: 29%; }
-      .ContentRecomm-RelatedContent-vertical .section-article .section-article-img img {
-        width: 100%; }
-    .ContentRecomm-RelatedContent-vertical .section-article .section-article-text {
-      float: left;
-      margin-left: 2em;
-      width: 60%; }
-    .ContentRecomm-RelatedContent-vertical .section-article:last-child {
-      border-bottom: 0 !important; }
 
 .toggleable-icon {
   display: none; }
@@ -7900,7 +7797,7 @@ Contains information about an article's author or authors.
   .generic-content .article-body-content > h1, .profile .article-body-content > h1, .article-body-content > h1 {
     margin-bottom: 12px;
     margin-bottom: 0.75rem;
-    color: #231f20; }
+   color: #231f20; }
   .article-body-content > h3, .article-body-content > .article-call-to-action__title {
     font-family: "PT Serif", Georgia, serif;
     font-size: 24px;
@@ -8448,7 +8345,7 @@ section: Home/Topic Page Components
     <div class="article-metadata">
         <div class="article-preview__bookmarker pop-out__trigger">
             <span class="action-flag__label">Bookmark</span>
-            <svg class="action-flag__icon action-flag__icon--bookmark">
+           <svg class="action-flag__icon action-flag__icon--bookmark">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#bookmark"></use>
             </svg>
         </div>
@@ -8756,7 +8653,7 @@ section: Article Components
     .article-related-content .article-call-to-action__subtitle .sortable-table__list-toggler:visited,
     .article-related-content h5 .mobile-table-exit:visited,
     .article-related-content .alert-success p .mobile-table-exit:visited, .alert-success
-    .article-related-content p .mobile-table-exit:visited,
+   .article-related-content p .mobile-table-exit:visited,
     .article-related-content .alert-error p .mobile-table-exit:visited, .alert-error
     .article-related-content p .mobile-table-exit:visited,
     .article-related-content .article-call-to-action__subtitle .mobile-table-exit:visited {
@@ -8799,11 +8696,11 @@ Styles for a floated sidebar within an article body.
 */
 .article-sidebar {
   /*
-	 * Moved primary code for this to a mixin to allow for reuse without
-	 *  significant changes on the backend.
-	 * For future callouts of all sorts, please use the callout and
-	 *   callout--full-width classes instead of article-sidebar
-	 */
+                * Moved primary code for this to a mixin to allow for reuse without
+                *  significant changes on the backend.
+                * For future callouts of all sorts, please use the callout and
+                *   callout--full-width classes instead of article-sidebar
+                */
   background-color: #f1f2f2;
   border-top: 4px solid #be1e2d;
   float: right;
@@ -9174,7 +9071,7 @@ section: Article Components
       margin-left: 0; } }
 
 .saved-search-success-alert {
-  margin-top: 8px;
+ margin-top: 8px;
   margin-top: 0.5rem;
   right: 0px;
   float: right; }
@@ -9529,7 +9426,7 @@ input[type="radio"]:checked + .facets__label:after {
     position: relative;
     width: 100%;
     margin-right: 12px; }
-  .search-bar__field {
+ .search-bar__field {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -9594,7 +9491,7 @@ input[type="radio"]:checked + .facets__label:after {
       display: block;
       position: absolute;
       top: 65px;
-      right: -20px;
+     right: -20px;
       width: 470px;
       height: auto;
       background-color: #ffffff;
@@ -9829,7 +9726,7 @@ input[type="radio"]:checked + .facets__label:after {
   .search-result__description {
     font-size: 15px;
     font-weight: 400;
-    line-height: 25px;
+   line-height: 25px;
     color: #58595b; }
   .search-result__media-type {
     display: inline-block; }
@@ -9881,7 +9778,7 @@ input[type="radio"]:checked + .facets__label:after {
   @media (max-width: 800px) {
     .search-pagination__wrapper {
       -webkit-box-ordinal-group: 6;
-          -ms-flex-order: 5;
+         -ms-flex-order: 5;
               order: 5; } }
 
 .search-pagination__pagination-list {
@@ -10218,7 +10115,7 @@ footer li {
       flex-wrap: wrap;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 38px 24px; }
+ padding: 38px 24px; }
 
 .footer__section {
   color: #6d6e71;
@@ -10468,7 +10365,7 @@ section: Home/Topic Page Components
     background: -webkit-linear-gradient(right, rgba(241, 242, 242, 0) 0%, #f1f2f2 66%, #f1f2f2 100%);
     background: linear-gradient(to left, rgba(241, 242, 242, 0) 0%, #f1f2f2 66%, #f1f2f2 100%);
     left: 70px;
-    right: auto;
+   right: auto;
     text-align: left;
     padding-left: 8px;
     padding-left: 0.5rem; }
@@ -10544,7 +10441,7 @@ section: Global Components
         </div>
 
         <div class="header-search__wrapper">
-            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
+           <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
             <svg class="header__icons header__icons--search js-header-search-trigger">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#search"></use>
             </svg>
@@ -10559,13 +10456,13 @@ section: Global Components
                     <svg class="header__icons icon-register">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#register"></use>
                     </svg>
-					<span class="header-account-access__label">Register</span>
+                                                                                <span class="header-account-access__label">Register</span>
                 </div>
                 <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger" data-pop-out-id="header-signin" data-pop-out-align="right" data-pop-out-type="sign-in" data-pop-out-tab-height="87">
                     <svg class="header__icons icon-sign-in">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#sign-in"></use>
                     </svg>
-					<span class="header-account-access__label">Sign In</span>
+                                                                                <span class="header-account-access__label">Sign In</span>
                 </div>
         </div>
     </div>
@@ -10928,7 +10825,7 @@ main {
   .page-account-contact .page-account__field-wrapper {
     margin-bottom: 48px;
     margin-bottom: 3rem; }
-  .page-account-contact__update-pass-success {
+ .page-account-contact__update-pass-success {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
   .page-account-contact .alert-error {
@@ -11527,7 +11424,7 @@ main {
   .theme-rose-sheet .banner--register a, .theme-rose-sheet .banner--register .pop-out__reset-password, .theme-rose-sheet .banner--register .sortable-table__list-toggler, .theme-rose-sheet .banner--register .mobile-table-exit, .theme-rose-sheet .banner--register a:hover, .theme-rose-sheet .banner--register .pop-out__reset-password:hover, .theme-rose-sheet .banner--register .sortable-table__list-toggler:hover, .theme-rose-sheet .banner--register .mobile-table-exit:hover, .theme-rose-sheet .banner--register a:active, .theme-rose-sheet .banner--register .pop-out__reset-password:active, .theme-rose-sheet .banner--register .sortable-table__list-toggler:active, .theme-rose-sheet .banner--register .mobile-table-exit:active, .theme-rose-sheet .banner--register a:focus, .theme-rose-sheet .banner--register .pop-out__reset-password:focus, .theme-rose-sheet .banner--register .sortable-table__list-toggler:focus, .theme-rose-sheet .banner--register .mobile-table-exit:focus,
   .theme-rose-sheet .banner--alert a,
   .theme-rose-sheet .banner--alert .pop-out__reset-password,
-  .theme-rose-sheet .banner--alert .sortable-table__list-toggler,
+ .theme-rose-sheet .banner--alert .sortable-table__list-toggler,
   .theme-rose-sheet .banner--alert .mobile-table-exit,
   .theme-rose-sheet .banner--alert a:hover,
   .theme-rose-sheet .banner--alert .pop-out__reset-password:hover,
@@ -11824,7 +11721,7 @@ main {
     .theme-medtech .banner--alert use > svg,
     .theme-medtech .banner--alert span use > svg,
     .theme-medtech .banner--alert svg use > svg {
-      fill: inherit; }
+     fill: inherit; }
   .theme-medtech .banner--register a, .theme-medtech .banner--register .pop-out__reset-password, .theme-medtech .banner--register .sortable-table__list-toggler, .theme-medtech .banner--register .mobile-table-exit, .theme-medtech .banner--register a:hover, .theme-medtech .banner--register .pop-out__reset-password:hover, .theme-medtech .banner--register .sortable-table__list-toggler:hover, .theme-medtech .banner--register .mobile-table-exit:hover, .theme-medtech .banner--register a:active, .theme-medtech .banner--register .pop-out__reset-password:active, .theme-medtech .banner--register .sortable-table__list-toggler:active, .theme-medtech .banner--register .mobile-table-exit:active, .theme-medtech .banner--register a:focus, .theme-medtech .banner--register .pop-out__reset-password:focus, .theme-medtech .banner--register .sortable-table__list-toggler:focus, .theme-medtech .banner--register .mobile-table-exit:focus,
   .theme-medtech .banner--alert a,
   .theme-medtech .banner--alert .pop-out__reset-password,
@@ -12121,7 +12018,7 @@ main {
     color: #ffffff; }
     .theme-invivo .banner--register use > svg,
     .theme-invivo .banner--register span use > svg,
-    .theme-invivo .banner--register svg use > svg,
+   .theme-invivo .banner--register svg use > svg,
     .theme-invivo .banner--alert use > svg,
     .theme-invivo .banner--alert span use > svg,
     .theme-invivo .banner--alert svg use > svg {
@@ -12649,11 +12546,11 @@ main {
 /* * * * SHAME 🔔 SHAME 🔔 SHAME 🔔 * * * */
 /*
 
-	SHAME
-	http://csswizardry.com/2013/04/shame-css-full-net-interview/
+                SHAME
+                http://csswizardry.com/2013/04/shame-css-full-net-interview/
 
-	Hacks. Ugly fixes. Browser duct-tape. !important.
-	Hopefully, this is empty.
+                Hacks. Ugly fixes. Browser duct-tape. !important.
+                Hopefully, this is empty.
 
 */
 .article-topics__li:before,
