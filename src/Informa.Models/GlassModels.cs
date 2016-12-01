@@ -8852,7 +8852,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
     [SitecoreType(TemplateId = IManually_Curated_PDF_PageConstants.TemplateIdString)]
     public partial interface IManually_Curated_PDF_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
     {
-        
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Issue_Number { get; set; }
     }
 
 
@@ -8865,7 +8873,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
     [SitecoreType]
     public partial interface IManually_Curated_PDF_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
     {
-        
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Issue_Number { get; set; }
     }
 
     public static partial class IManually_Curated_PDF_PageConstants
@@ -8874,6 +8890,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         public const string TemplateIdString = "5EE85DE5-6B72-4C49-A93A-72BC97F38517";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Manually Curated PDF Page";
+
+        public static readonly ID Issue_NumberFieldId = new ID("0129F15A-33EA-4E15-906E-C7845199F81A");
+        public const string Issue_NumberFieldName = "Issue Number";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
@@ -12342,77 +12361,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 
 
-    }
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
-    /// <summary>
-    /// IManuallyCuratedPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/ManuallyCuratedPdfs Root</para>	
-    /// <para>ID: 8E2927D6-B373-4333-B958-D4D1A7645853</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IManuallyCuratedPdfs_RootConstants.TemplateIdString)]
-    public partial interface IManuallyCuratedPdfs_Root : IGlassBase
-    {
-    }
-
-    /// <summary>
-    /// IManuallyCuratedPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/ManuallyCuratedPdfs Root</para>	
-    /// <para>ID: 8E2927D6-B373-4333-B958-D4D1A7645853</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IManuallyCuratedPdfs_Root__Raw : IGlassBase
-    {
-    }
-
-    public static partial class IManuallyCuratedPdfs_RootConstants
-    {
-
-        public const string TemplateIdString = "8E2927D6-B373-4333-B958-D4D1A7645853";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "ManuallyCuratedPdfs Root";
-    }
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
-    /// <summary>
-    /// IStaticPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/StaticPdfs Root</para>	
-    /// <para>ID: 9631173E-696A-4903-88D5-ED44CB11A865</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IStaticPdfs_RootConstants.TemplateIdString)]
-    public partial interface IStaticPdfs_Root : IGlassBase
-    {
-    }
-
-
-    /// <summary>
-    /// IStaticPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/StaticPdfs Root</para>	
-    /// <para>ID: 9631173E-696A-4903-88D5-ED44CB11A865</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IStaticPdfs_Root__Raw : IGlassBase
-    {
-    }
-
-    public static partial class IStaticPdfs_RootConstants
-    {
-
-        public const string TemplateIdString = "9631173E-696A-4903-88D5-ED44CB11A865";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "ManuallyCuratedPdfs Root";
     }
 
 }

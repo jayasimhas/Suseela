@@ -57,9 +57,8 @@
                             @RenderImage(author, model => model.Image, new { width = 120 })
                         </td>
                     }
-                    <td class="article-author__solo-wrapper">
-                      
-                        <p class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 20px; ">
+                    <td class="article-author__solo-wrapper"  style="color:#58595b; text-decoration:none; padding: 0 0 20px 20px; white-space: nowrap;">
+                        <span>
                             by
                             @if (author.InActive)
                             {
@@ -69,19 +68,18 @@
                             {
                                 <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                             }
-                        </p>
-
+                        </span> 
                         <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
-                            <table>
-                               
+                            <table cellpadding="0" cellspacing="0">
+                                <tr><td height="10">&nbsp;</td></tr>
                                 <tr>
-                                    
-                                    <td style="border-right:1px solid #5a5758;  padding:0 10px 0 20px;">
+                                    <td style="border-right:1px solid #5a5758;  padding:0 10px 0 0;">
                                         @if (!string.IsNullOrEmpty(author.Twitter))
                                         {
                                             <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                                         }
                                     </td>
+                                    <td style="width: 10px;"></td>
                                     <td style="padding:0 10px 0 10px;">
                                         @if (!string.IsNullOrEmpty(author.Email_Address))
                                         {
@@ -165,12 +163,23 @@
             IIPP-117 *@
         <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
             <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
-            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
-            {
-                <span class="article-inline-image__source">
-                    @Model.FeaturedImageSource @Model.Image.ImageSource
-                </span>}
-            <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
+            <table width="100%">
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td align="left">
+                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.Image.ImageCaption</span>
+                    </td>
+                    <td align="right">
+                        @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                {
+
+                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
+                                @Model.FeaturedImageSource @Model.Image.ImageSource
+                            </span>}
+                    </td>
+                </tr>
+            </table>
+           
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }

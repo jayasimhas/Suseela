@@ -70,8 +70,8 @@ namespace Informa.Web.ViewModels.PDF
                                 TypeOfPdf = PdfType.Static,
                                 IssueDate = pdf.Statistics.Updated.Date,
                                 IssueNumber = pdf["Issue Number"],
-                                 PdfTitle=pdf["Title"],
-                                PdfPageUrl = !string.IsNullOrEmpty(pdf["PDF Url"]) ? Sitecore.Resources.Media.MediaManager.GetMediaUrl(targetPdf.TargetItem) : string.Empty
+                                PdfTitle = pdf["Title"],
+                                PdfPageUrl = targetPdf.TargetItem == null?targetPdf.Url:Sitecore.Resources.Media.MediaManager.GetMediaUrl(targetPdf.TargetItem)
                             });
                         }
                         if (pdf.TemplateName == "Manually Curated PDF Page")
@@ -80,7 +80,7 @@ namespace Informa.Web.ViewModels.PDF
                             {
                                 TypeOfPdf = PdfType.Manual,
                                 IssueDate = pdf.Statistics.Updated.Date,
-                                IssueNumber = string.Empty,
+                                IssueNumber = pdf["Issue Number"],
                                 PdfTitle = pdf["Title"],
                                 PdfPageUrl = Sitecore.Context.Site.HostName + Sitecore.Links.LinkManager.GetItemUrl(pdf)
                             });
