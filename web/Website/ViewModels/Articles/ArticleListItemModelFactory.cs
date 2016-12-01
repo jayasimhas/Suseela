@@ -59,7 +59,7 @@ namespace Informa.Web.ViewModels.Articles
         {
             if (article == null)
                 return null;
-            
+
             var image = article.Featured_Image_16_9?.Src;
             var curPage = PageItemContext.Get<I___BasePage>();
 
@@ -82,7 +82,7 @@ namespace Informa.Web.ViewModels.Articles
             model.BookmarkText = TextTranslator.Translate("Bookmark");
             model.BookmarkedText = TextTranslator.Translate("Bookmarked");
             model.PageTitle = curPage?.Title;
-            
+
             if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
             {
                 var recordNumber = HttpContext.Current.Request.Url.Segments.Last();
@@ -114,7 +114,7 @@ namespace Informa.Web.ViewModels.Articles
             model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
             model.ListablePublication = ArticleService.GetArticlePublicationName(article);
             model.ListableTopics = ArticleService.GetPersonalizedLinkableTaxonomies(article);
-            model.ListableType = ArticleService.GetMediaTypeIconData(article)?.MediaType;
+            model.ListableType = article.Media_Type?.Media_Type_Icon?.Src;//ArticleService.GetMediaTypeIconData(article)?.MediaType;
             model.LinkableText = article.Content_Type?.Item_Name;
             model.LinkableUrl = article._Url;
             model.ID = article._Id;
