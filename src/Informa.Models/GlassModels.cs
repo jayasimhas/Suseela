@@ -6688,16 +6688,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Source { get; set; }
-
-        /// <summary>
-        /// The Source field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsPersonalizedEMail { get; set; }
     }
 
 
@@ -6800,16 +6790,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Source { get; set; }
-
-        /// <summary>
-        /// The Source field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsPersonalizedEMail { get; set; }
     }
 
     public static partial class IExactTarget_EmailConstants
@@ -6873,8 +6853,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
 
-        public static readonly ID Is_Personalized_EmailFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
-        public const string Is_Personalized_EmailFieldName = "Is Personalized Email";
+
+
+
     }
 
 }
@@ -8814,297 +8795,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     }
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PDF
-{
-    /// <summary>
-    /// IManually_Curated_PDF_Page
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Manually Curated PDF Page</para>	
-    /// <para>ID: 5EE85DE5-6B72-4C49-A93A-72BC97F38517</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IManually_Curated_PDF_PageConstants.TemplateIdString)]
-    public partial interface IManually_Curated_PDF_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
-    {
-        /// <summary>
-        /// Issue Number
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
-    }
-
-
-    /// <summary>
-    /// IManually_Curated_PDF_Page
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Manually Curated PDF Page</para>	
-    /// <para>ID: 5EE85DE5-6B72-4C49-A93A-72BC97F38517</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IManually_Curated_PDF_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
-    {
-        /// <summary>
-        /// Issue Number
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
-    }
-
-    public static partial class IManually_Curated_PDF_PageConstants
-    {
-
-        public const string TemplateIdString = "5EE85DE5-6B72-4C49-A93A-72BC97F38517";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Manually Curated PDF Page";
-
-        public static readonly ID Issue_NumberFieldId = new ID("0129F15A-33EA-4E15-906E-C7845199F81A");
-        public const string Issue_NumberFieldName = "Issue Number";
-
-        public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
-        public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
-
-        public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
-        public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
-
-
-        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-
-
-        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
-        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
-
-
-
-        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
-        public const string Meta_DescriptionFieldName = "Meta Description";
-
-
-
-        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
-        public const string Meta_KeywordsFieldName = "Meta Keywords";
-
-
-
-        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
-        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
-
-
-
-        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
-        public const string Navigation_TitleFieldName = "Navigation Title";
-
-
-
-        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
-        public const string BodyFieldName = "Body";
-
-        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
-        public const string Body__RawFieldName = "Body";
-
-
-        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
-        public const string Sub_TitleFieldName = "Sub Title";
-
-
-
-        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
-        public const string TitleFieldName = "Title";
-
-
-
-        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
-        public const string Include_In_SearchFieldName = "Include In Search";
-
-
-
-        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
-        public const string TaxonomiesFieldName = "Taxonomy";
-
-
-
-        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
-        public const string Canonical_LinkFieldName = "Canonical Link";
-
-    }
-    
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PDF
-{
-    /// <summary>
-    /// IStatic_PDF_Page
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Static PDF Page</para>	
-    /// <para>ID: 2CD86881-6DF1-413F-88DA-1D62AFAB363F</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IStatic_PDF_PageConstants.TemplateIdString)]
-    public partial interface IStatic_PDF_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
-    {
-        /// <summary>
-        /// Issue Date
-        /// <para></para>
-        /// <para>Field Type: DateTime</para>		
-        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-        DateTime Issue_Date { get; set; }
-
-        /// <summary>
-        /// Issue Number
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: E3FF2FFA-330E-419B-A8D0-DEBA78932F54</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
-        /// <summary>
-        /// PDF Url
-        /// <para></para>
-        /// <para>Field Type: General Link</para>		
-        /// <para>Field ID: B0629946-C9E6-443A-935B-48FA19165CC1</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.PDF_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link PDF_Url { get; set; }
-    }
-
-
-    /// <summary>
-    /// IStatic_PDF_Page
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Pages/PDF/Static PDF Page</para>	
-    /// <para>ID: 2CD86881-6DF1-413F-88DA-1D62AFAB363F</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IStatic_PDF_Pagee__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
-    {
-        /// <summary>
-        /// Issue Date
-        /// <para></para>
-        /// <para>Field Type: DateTime</para>		
-        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-        DateTime Issue_Date { get; set; }
-
-        /// <summary>
-        /// Issue Number
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: E3FF2FFA-330E-419B-A8D0-DEBA78932F54</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
-        /// <summary>
-        /// PDF Url
-        /// <para></para>
-        /// <para>Field Type: General Link</para>		
-        /// <para>Field ID: B0629946-C9E6-443A-935B-48FA19165CC1</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.PDF_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link PDF_Url { get; set; }
-    }
-
-    public static partial class IStatic_PDF_PageConstants
-    {
-
-        public const string TemplateIdString = "2CD86881-6DF1-413F-88DA-1D62AFAB363F";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Static PDF Page";
-
-        public static readonly ID Issue_DateFieldId = new ID("850BBBF5-B11D-4B49-88F1-F3B1C00D2702");
-        public const string Issue_DateFieldName = "Issue Date";
-
-        public static readonly ID Issue_NumberFieldId = new ID("E3FF2FFA-330E-419B-A8D0-DEBA78932F54");
-        public const string Issue_NumberFieldName = "Issue Number";
-
-        public static readonly ID PDF_UrlFieldId = new ID("B0629946-C9E6-443A-935B-48FA19165CC1");
-        public const string PDF_UrlFieldName = "PDF Url";
-
-        public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
-        public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
-
-        public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
-        public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
-
-
-        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-
-
-        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
-        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
-
-
-
-        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
-        public const string Meta_DescriptionFieldName = "Meta Description";
-
-
-
-        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
-        public const string Meta_KeywordsFieldName = "Meta Keywords";
-
-
-
-        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
-        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
-
-
-
-        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
-        public const string Navigation_TitleFieldName = "Navigation Title";
-
-
-
-        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
-        public const string BodyFieldName = "Body";
-
-        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
-        public const string Body__RawFieldName = "Body";
-
-
-        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
-        public const string Sub_TitleFieldName = "Sub Title";
-
-
-
-        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
-        public const string TitleFieldName = "Title";
-
-
-
-        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
-        public const string Include_In_SearchFieldName = "Include In Search";
-
-
-
-        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
-        public const string TaxonomiesFieldName = "Taxonomy";
-
-
-
-        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
-        public const string Canonical_LinkFieldName = "Canonical Link";
-
-    }
-
-}
-
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
 {
 
@@ -12298,45 +11988,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     }
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
-    /// <summary>
-    /// IPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Pdfs Root</para>	
-    /// <para>ID: 5A84541E-9EAA-4C88-9C41-3959333D3024</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IPdfs_RootConstants.TemplateIdString)]
-    public partial interface IPdfs_Root : IGlassBase
-    {
-    }
-
-
-    /// <summary>
-    /// IJobs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Jobs Root</para>	
-    /// <para>ID: 99E5BE37-77B0-4FB6-AE5B-ABD459009B04</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IPdfs_Root__Raw : IGlassBase
-    {
-    }
-
-    public static partial class IPdfs_RootConstants
-    {
-
-        public const string TemplateIdString = "5A84541E-9EAA-4C88-9C41-3959333D3024";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Pdfs Root";
-
-
-
-    }
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
@@ -14807,15 +14458,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Email_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image Email_Logo { get; set; }
         /// <summary>
-        /// Max Number Of Articles Per Section
-        /// <para></para>
-        /// <para>Field Type: Number</para>		
-        /// <para>Field ID: 80C17DEE-12EF-44DD-A789-8B4D40481A0E</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.Max_Number_Of_Articles_Per_SectionFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Max_Number_Of_Articles_Per_Section { get; set; }
-        /// <summary>
         /// The RSS Link field.
         /// <para></para>
         /// <para>Field Type: General Link</para>		
@@ -15482,24 +15124,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image FavIcon { get; set; }
-        /// <summary>
-        /// The PDF Header field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 8AC16848-5C1A-47F6-A286-C8D40ADB8F86</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.PDF_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string PDF_Header { get; set; }
-        /// <summary>
-        /// The PDF Footer field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 6BA73703-731A-4317-B779-A06D9377C8C9</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string PDF_Footer { get; set; }
     }
 
 
@@ -16379,24 +16003,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.FavIconFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image FavIcon { get; set; }
-        /// <summary>
-        /// The PDF Header field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 8AC16848-5C1A-47F6-A286-C8D40ADB8F86</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.PDF_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string PDF_Header { get; set; }
-        /// <summary>
-        /// The PDF Footer field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 6BA73703-731A-4317-B779-A06D9377C8C9</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string PDF_Footer { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -16527,9 +16133,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
         public const string Email_LogoFieldName = "Email Logo";
-
-        public static readonly ID Max_Number_Of_Articles_Per_SectionFieldId = new ID("80C17DEE-12EF-44DD-A789-8B4D40481A0E");
-        public const string Max_Number_Of_Articles_Per_SectionFieldName = "Max Number Of Articles Per Section";
 
 
 
@@ -16929,13 +16532,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID FavIconFieldId = new ID("A225B559-B031-460E-BDC2-199730396269");
         public const string FavIconFieldName = "Fav Icon";
-
-        //IPMP-911 BIWEB-825,936 - CMS - Briefing PDF
-        public static readonly ID PDF_HeaderFieldId = new ID("8AC16848-5C1A-47F6-A286-C8D40ADB8F86");
-        public const string PDF_HeaderFieldName = "PDF Header";
-
-        public static readonly ID PDF_FooterFieldId = new ID("6BA73703-731A-4317-B779-A06D9377C8C9");
-        public const string PDF_FooterFieldName = "PDF Footer";
     }
 
 }
@@ -22859,9 +22455,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
         public const string Email_LogoFieldName = "Email Logo";
 
-        public static readonly ID Max_Number_Of_Articles_Per_SectionFieldId = new ID("80C17DEE-12EF-44DD-A789-8B4D40481A0E");
-        public const string Max_Number_Of_Articles_Per_SectionFieldName = "Max Number Of Articles Per Section";
-
 
 
         public static readonly ID RSS_LinkFieldId = new ID("e7da68a3-d817-487f-99d9-8a27aba050ed");
@@ -26867,238 +26460,4 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Common
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "IIndustries_Folder";
     }
-}
-
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components
-{
-
-
-    /// <summary>
-    /// IFeatured_Article_Agri Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Article Agri</para>	
-    /// <para>ID: 0486af14-6347-4ea8-9c09-ffe2d35e89d9</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IFeatured_Article_Agri_Constants.TemplateIdString)]
-    public partial interface IFeatured_Article_Agri : IGlassBase
-    {
-        /// <summary>
-        /// The Article field.
-        /// <para></para>
-        /// <para>Field Type: Droptree</para>		
-        /// <para>Field ID: 2d2501f3-b05c-4705-8b7c-07429df21922</para>
-        /// <para>Custom Data: type=Pages.IArticle</para>
-        /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Pages.IArticle ArticleOne { get; set; }
-
-        /// <summary>
-        /// The Article field.
-        /// <para></para>
-        /// <para>Field Type: Droptree</para>		
-        /// <para>Field ID: 538edd96-ba32-41b4-bd23-894e479ef6cc</para>
-        /// <para>Custom Data: type=Pages.IArticle</para>
-        /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Pages.IArticle ArticleTwo { get; set; }
-
-        /// <summary>
-        /// The Article field.
-        /// <para></para>
-        /// <para>Field Type: Droptree</para>		
-        /// <para>Field ID: b0356daf-fe58-4ed9-a441-f87c8490cb72</para>
-        /// <para>Custom Data: type=Pages.IArticle</para>
-        /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Pages.IArticle ArticleThree { get; set; }
-
-        /// <summary>
-        /// Background Color field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: fc20fbd0-dbd4-48f0-8c23-40f330d90d82</para>
-        /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool ShowBackgroundColor { get; set; }
-
-    }
-
-    public static partial class IFeatured_Article_Agri_Constants
-    {
-
-        public const string TemplateIdString = "0486af14-6347-4ea8-9c09-ffe2d35e89d9";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Featured Article Agri";
-
-
-        public static readonly ID Article_OneFieldId = new ID("2d2501f3-b05c-4705-8b7c-07429df21922");
-        public const string Article_OneFieldName = "Article One";
-
-        public static readonly ID Article_TwoFieldId = new ID("538edd96-ba32-41b4-bd23-894e479ef6cc");
-        public const string Article_TwoFieldName = "Article Two";
-
-        public static readonly ID Article_ThreeFieldId = new ID("b0356daf-fe58-4ed9-a441-f87c8490cb72");
-        public const string Article_ThreeFieldName = "Article Three";
-
-        public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
-        public const string Show_Background_ColorFieldName = "Show Background Color";
-
-    }
-
-}
-
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components
-{
-
-
-    /// <summary>
-    /// INewsletter_Greeting_Content Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Emails/Components/Newsletter GreetingContent</para>	
-    /// <para>ID: 2811b650-881d-4644-a7bb-8e0936bc21e1</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = INewsletter_Greeting_ContentConstants.TemplateIdString)]
-    public partial interface INewsletter_Greeting_Content : IGlassBase
-    {
-        /// <summary>
-        /// The Image field.
-        /// <para></para>
-        /// <para>Field Type: Image</para>		
-        /// <para>Field ID: 0990f6df-9216-4ccf-a917-d0a4ae977423</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(INewsletter_Greeting_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Image Image { get; set; }
-        /// <summary>
-        /// The Summary field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID: 2c05d703-0ec8-4e1c-b09a-92c45325817c</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(INewsletter_Greeting_ContentConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Summary { get; set; }
-
-        /// <summary>
-        /// The Title field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 56c670a5-f43d-4f8e-b0ec-05b6e23ce9b4</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(INewsletter_Greeting_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Title { get; set; }
-
-        /// <summary>
-        /// The Download Link field.
-        /// <para></para>
-        /// <para>Field Type: General Link with Search</para>		
-        /// <para>Field ID: be525e34-afe0-4d91-a02c-4efc836a46a3</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(INewsletter_Greeting_ContentConstants.Download_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Download_Link { get; set; }
-
-    }
-
-
-    public static partial class INewsletter_Greeting_ContentConstants
-    {
-
-        public const string TemplateIdString = "2811b650-881d-4644-a7bb-8e0936bc21e1";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Newsletter Greeting Content";
-
-
-        public static readonly ID ImageFieldId = new ID("f18cf51f-bf0f-49ad-b0fc-3e43ba179a0f");
-        public const string ImageFieldName = "Image";
-
-
-        public static readonly ID SummaryFieldId = new ID("fcb9d7ac-6fee-4d6f-b3e4-ed1c71e1b61d");
-        public const string SummaryFieldName = "Summary";
-
-
-        public static readonly ID TitleFieldId = new ID("0b886cee-863c-40bf-887f-64aff7fdfc83");
-        public const string TitleFieldName = "Title";
-
-
-        public static readonly ID Download_LinkFieldId = new ID("e02dfe4c-fd17-4122-8c12-1fddb416f4d5");
-        public const string Download_LinkFieldName = "Download Link";
-
-    }
-
-}
-
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
-{
-    /// <summary>
-    /// ILatest_News_Options Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/View Templates/Featured Article Display Options</para>	
-    /// <para>ID: a615a71f-4608-4648-bd06-0fb63a410c1c</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IFeatured_Article_Display_OptionsConstants.TemplateIdString)]
-    public partial interface IFeatured_Article_Display_Options : IGlassBase
-    {
-        /// <summary>
-        /// The Number To Display field.
-        /// <para></para>
-        /// <para>Field Type: Droplink</para>		
-        /// <para>Field ID: 2a2d2353-f2e2-46cc-9c10-8900db007122</para>
-        /// <para>Custom Data: type=INumber_Option</para>
-        /// </summary>
-        [SitecoreField(IFeatured_Article_Display_OptionsConstants.Display_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IArticle_Display_Option Display_Option { get; set; }
-    }
-
-    public static partial class IFeatured_Article_Display_OptionsConstants
-    {
-
-        public const string TemplateIdString = "a615a71f-4608-4648-bd06-0fb63a410c1c    ";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Featured Article Display Options";
-
-
-        public static readonly ID Display_TypeFieldId = new ID("9dfabf3d-ff09-462c-8bcd-803a08dccbea");
-        public const string Display_TypeFieldName = "Display Type";
-
-
-    }
-}
-
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
-{
-    /// <summary>
-    /// IArticle_Display_Option Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Configuration/Article Display Option</para>	
-    /// <para>ID: e273463e-8f3e-4a4b-be1e-4d850491ca40</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IArticle_Display_OptionConstants.TemplateIdString)]
-    public partial interface IArticle_Display_Option : IGlassBase
-    {
-        /// <summary>
-        /// The Value field.
-        /// <para></para>
-        /// <para>Field Type: Integer</para>		
-        /// <para>Field ID: 701f3013-9e04-427a-b841-db4f62e8d7e3</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IArticle_Display_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Value { get; set; }
-    }
-    public static partial class IArticle_Display_OptionConstants
-    {
-
-        public const string TemplateIdString = "e273463e-8f3e-4a4b-be1e-4d850491ca40";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Article Display Option";
-
-
-        public static readonly ID ValueFieldId = new ID("f224c150-3977-4eea-9691-4677c2e55862");
-        public const string ValueFieldName = "Value";
-
-
-    }
-
 }

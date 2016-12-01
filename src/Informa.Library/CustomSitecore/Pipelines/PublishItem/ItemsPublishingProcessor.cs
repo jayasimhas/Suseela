@@ -109,18 +109,4 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
 			}
 		}
 	}
-
-    public class DictionaryCacheClearer
-    {
-        /// <summary>
-        /// Clears the whole dictionary domain cache.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="args">The <see cref="EventArgs"/> instance containing the event data.</param>
-        public void ClearCache(object sender, EventArgs args)
-        {
-            Sitecore.Globalization.Translate.ResetCache();
-            Sitecore.Diagnostics.Log.Info("Global Dictionary cleared", "DicionaryCache Clearer");
-        }
-    }
 }

@@ -106,13 +106,5 @@ namespace Informa.Library.Utilities.References
 			public const string ExactTargetClientId = "ExactTarget.ClientId";
 			public const string ExactTargetSecretKey = "ExactTarget.SecretKey";
 		}
-
-        public static class ArticleDisplayModeTypes
-        {
-            public const string FeaturedArticleFullRow = "FeaturedArticleFullRow";
-            public const string FeaturedArticleHalfRow = "FeaturedArticleHalfRow";
-            public const string FeaturedArticleThreeRows = "FeaturedArticleThreeRows";
-            public const string FeaturedArticleTwoColumn = "FeaturedArticleTwoColumn";
-        }
 	}
 }

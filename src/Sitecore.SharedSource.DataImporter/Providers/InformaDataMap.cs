@@ -1512,8 +1512,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             d.Add("foodnews_frozen_frozen_foods", "Frozen Foods");
             d.Add("foodnews_frozen_frozen_foods_ice_cream", "Ice Cream");
             d.Add("foodnews_frozen_frozen_foods_prepared_foods", "Prepared Frozen Foods");
-            d.Add("foodnews_dfn", "Frozen Foods");
-            d.Add("foodnews_dfn_nuts", "Frozen Foods");
+            d.Add("foodnews_dfn", "Dried Fruit & Nuts");
+            d.Add("foodnews_dfn_nuts", "Dried Fruit & Nuts");
             d.Add("foodnews_dfn_nuts_nut_milks", "Nut Milks");
             d.Add("foodnews_dfn_nuts_almonds", "Almonds");
             d.Add("foodnews_dfn_nuts_brazil_nuts", "Brazil Nuts");

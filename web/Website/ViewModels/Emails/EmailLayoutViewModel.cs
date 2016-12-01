@@ -37,7 +37,7 @@ namespace Informa.Web.ViewModels.Emails
         }
 
         private string _viewOnlineVersionPreLink;
-        public string ViewOnlineVersionPreLink => _viewOnlineVersionPreLink ??
+        public string ViewOnlineVersionPreLink => _viewOnlineVersionPreLink ?? 
                                                 (_viewOnlineVersionPreLink = _dependencies.TextTranslator?.Translate(DictionaryKeys.ViewOurOnlineVersionBeforeLink));
 
         private string _viewOnlineVersionLinkText;
@@ -51,13 +51,12 @@ namespace Informa.Web.ViewModels.Emails
                                               _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel)));
 
         private ISite_Root _siteRoot;
-        public ISite_Root SiteRoot
-        {
+        public ISite_Root SiteRoot  {
             get
             {
                 if (_siteRoot == null)
                     _siteRoot = _dependencies.SitecoreService.GetSiteRootAncestor(GlassModel._Id);
-
+                
                 return _siteRoot;
             }
         }
@@ -112,7 +111,7 @@ namespace Informa.Web.ViewModels.Emails
         public string TwitterLinkUrl => _twitterLinkUrl ??
                                     (_twitterLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.Twitter_Link?.Url));
 
-        public bool IsPersonalizedEmail => GlassModel.IsPersonalizedEMail;
+
 
 
         private static void SetLastItemIsLast(NavItemViewModel[] arr)

@@ -1,7 +1,0 @@
-﻿@model Informa.Web.ViewModels.PopOuts.PdfDownloadViewModel
-
-@using (Ajax.BeginForm("GenerateAndDownloadPdf", "PdfDownload",new { pdfPageUrl = @"D:\html\new7.html", userEmail="admin", PdfTitle="This PDF Generated Using Static Html Page", DataToolLinkDesc="This is a data tool page", DataToolLinkText="click here" }, new AjaxOptions { HttpMethod = "POST" }))
-{
-    <input type="submit" name="download-pdf" id="download-pdf" value="@Model.PdfDownloadButtonText" />       
-}
-

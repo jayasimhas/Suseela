@@ -10,6 +10,7 @@ using System.Linq;
 using System;
 using Informa.Library.Utilities.Extensions;
 using Informa.Web.ViewModels.Articles;
+using Informa.Library.Search.Utilities;
 
 namespace Informa.Web.ViewModels.Emails
 {
@@ -172,11 +173,11 @@ namespace Informa.Web.ViewModels.Emails
             if (results != null && results.Articles != null)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));
-
+                var taxonomy = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(sec.ChannelId)?.Taxonomies.FirstOrDefault();
                 var loadMore = new LoadMore
                 {
                     LoadMoreLinkText = string.Format("{0} {1}", TextTranslator.Translate("Email.SeeMoreFrom"), sec.ChannelName),
-                    LoadMoreLinkUrl = "/api/articlesearch/",
+                    LoadMoreLinkUrl = taxonomy != null ? SearchTaxonomyUtil.GetSearchUrl(taxonomy) : string.Empty
                 };
                 sec.Articles = articles;
                 sec.LoadMore = loadMore;

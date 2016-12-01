@@ -44,22 +44,10 @@ namespace Informa.Web.ViewModels.DataTools
         }
 
         #region AMcharts dashboard parameters
-        /// <summary>
-        /// AMchart Input Parameter: Chart Type
-        /// </summary>
-        public string ChartType => GlassModel?.ChartType;
-        /// <summary>
-        /// AMchart Input Parameter: Chart Height
-        /// </summary>
-        public string ChartHeight => GlassModel?.ChartHeight;
-        /// <summary>
-        /// AMchart Input Parameter: JSON Data Path
-        /// </summary>
-        public string JsonDataPath => GlassModel?.JsonDataUrl?.Url;
 
-        /// <summary>
-        /// AMchart Input Parameter: Chart Presentation part
-        /// </summary>
+        public string ChartType => GlassModel?.ChartType;
+        public string ChartHeight => GlassModel?.ChartHeight;
+        public string JsonDataPath => GlassModel?.JsonDataUrl?.Url;
         public string Presentation => GlassModel?.Presentation;
         #endregion
 
@@ -79,9 +67,6 @@ namespace Informa.Web.ViewModels.DataTools
         public string LandingPageLink => GlassModel?.Landing_Page_Link?.Url;
         public string LandingPageLinkLable => string.IsNullOrWhiteSpace(GlassModel?.Landing_Page_Link?.Text) ? TextTranslator.Translate("DataTools.LandingPageLink") : GlassModel?.Landing_Page_Link?.Text; 
         public string RealatedContentLableText => TextTranslator.Translate("DataTools.RelatedContentLable");
-        /// <summary>
-        /// Related Articles for AMchart
-        /// </summary>
         public IEnumerable<IListable> RelatedArticles => GlassModel?.Related_Articles.
             Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).
             Cast<IListable>().OrderByDescending(x => x.ListableDate);

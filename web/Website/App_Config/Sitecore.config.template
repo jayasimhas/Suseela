@@ -115,7 +115,6 @@
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
-      <handler type="Informa.Library.CustomSitecore.Pipelines.PublishItem.DictionaryCacheClearer, Informa.Library" method="ClearCache" />
     </event>
     <event name="publish:end:remote">
       <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
@@ -130,7 +129,6 @@
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
-      <handler type="Informa.Library.CustomSitecore.Pipelines.PublishItem.DictionaryCacheClearer, Informa.Library" method="ClearCache" />
     </event>
     <event name="publish:fail" />
     <event name="publish:itemProcessing" help="Receives an argument of type ItemProcessingEventArgs (namespace: Sitecore.Publishing.Pipelines.PublishItem)" />
