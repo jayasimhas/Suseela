@@ -1,0 +1,410 @@
+﻿@using Informa.Library.Article.Search
+@model Informa.Web.ViewModels.Emails.PersonalizedEmailViewModel
+
+@{
+    int count = 0;
+    ILinkable last;
+    string topicClass = string.Empty;
+}
+@foreach (var sec in Model.Sections)
+{
+    count = 0;
+    <table class="section-header" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;border-bottom:2px solid #ddd;font-size:16px;font-weight:bold;margin-bottom:16px;width:100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-bottom: 2px solid #ddd;font-size: 16px;font-weight: bold;margin-bottom: 16px;width: 100%;">
+        <tbody>
+            <tr>
+                <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:8px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 8px; font-size: 26px; font-family: Roboto Condensed;">
+                    <span class="border" style="width: 8px;height: 20px;background: #be1e2d;float: left;margin-right: 10px;margin-top: 5px;"></span>
+                    @sec.SectionTitle
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;margin-bottom:32px;border-bottom:1px solid #ccc;padding-bottom:8px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom: 32px;border-bottom: 1px solid #ccc;padding-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:12px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 12px;">
+
+                    @if (sec.Articles != null && sec.Articles.Any())
+                    {
+                        foreach (var article in sec.Articles)
+                        {
+                            count++;
+                            if (count == 1)
+                            {
+                                <div class="article-wrapper" style="margin-bottom: 20px; clear: both;">
+                                    <div class="featured__article_wrapper gray-wrapper visible-desk" style="background-color:#f1f1f2;padding:20px;">
+                                        <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                            <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                    <time class="article-metadata__date">@article.ListableDate</time>
+                                                </li>
+                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                    <h6 style="color:#231f20;text-transform:uppercase;font-size:15px;margin:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">@article.LinkableText</h6>
+                                                </li>
+                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                    <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                        <img src="dist/bar-icon.png" alt="icon" />
+                                                    </span>
+                                                </li>
+
+                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                {
+                                                    last = article.ListableTopics.Last();
+                                                    foreach (var topic in article.ListableTopics)
+                                                    {
+                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                        <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                 @topicClass
+                                                                                  margin-right: 12px;
+                                                                                                                margin-right: 0.75rem;
+                                                                                                                margin-left: 0;
+                                                                                                                padding-right: 12px;
+                                                                                                                padding-right: 0.75rem;">
+                                                            <a href="@topic.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@topic.LinkableText</a>
+                                                        </li>
+                                                    }
+                                                }
+
+                                            </ul>
+                                        </div>
+                                        <h3 style="font-size: 22px;font-family: Roboto Condensed Bold; color: #231f20;"><a href="@article.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #231f20; font-weight: bold;">@article.ListableTitle</a></h3>
+                                        <div class="article-content">
+                                            @if (!string.IsNullOrWhiteSpace(article.ListableImage))
+                                            {
+                                                <img src="@article.ListableImage" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;" />
+                                            }
+                                            <div class="article-text" style="float:left;width:55%;">
+                                                <p class="author-by" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-family: 'Roboto Condensed Medium'; color: #58595b; font-size: 14px; font-weight: bold; margin-bottom: 0;">@Html.Raw(article.ListableAuthorByLine)</p>
+                                                <p style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;">@Html.Raw(article.ListableSummary)</p>
+                                            </div>
+                                            <div style="clear: both;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="featured__article_wrapper gray-wrapper visible-mob" style="background-color:#f9e5e6;padding:20px;display:none;">
+                                        @if (!string.IsNullOrWhiteSpace(article.ListableImage))
+                                        {
+                                            <img src="@article.ListableImage" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;" />
+                                        }
+                                        <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                            <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;"><time class="article-metadata__date">@article.ListableDate</time></li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <h6 style="color:#231f20;text-transform:uppercase;font-size:15px;margin:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">@article.LinkableText</h6>
+                                                                                </li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;border:none;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                                        <img src="dist/bar-icon.png" alt="icon" />
+                                                                                    </span>
+                                                                                </li>
+
+
+                                                                            </ul>
+                                                                        </div>
+                                                                        <h3 style="font-size: 22px;font-family: Roboto Condensed Bold; color: #231f20;"><a href="@article.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #231f20; font-weight: bold;">@Html.Raw(article.ListableTitle)</a></h3>
+                                                                        <div class="article-content">
+                                                                            <div class="article-text" style="float:left;width:55%;width: 100%;">
+                                                                                <p class="author-by" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-family: 'Roboto Condensed Medium'; color: #58595b; font-size: 14px; font-weight: bold; margin-bottom: 0;">@Html.Raw(article.ListableAuthorByLine)</p>
+                                                                                <p style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;">@Html.Raw(article.ListableSummary)</p>
+                                                                            </div>
+                                                                            <div style="clear: both;"></div>
+                                                                        </div>
+                                                                        <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                                                            <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                                                {
+                                                                                    last = article.ListableTopics.Last();
+                                                                                    foreach (var topic in article.ListableTopics)
+                                                                                    {
+                                                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                                                        <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  @topicClass
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                            <a href="@topic.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@topic.LinkableText</a>
+                                                                                        </li>
+
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                            }
+                            else if (count > 1 && count < 5)
+                            {
+
+                                <div class="article-wrapper" style="margin-bottom: 20px; clear: both;">
+                                    <div class="wd-desk-50" style="width:100%;">
+                                        <div style="padding: 0 10px;">
+                                            <div style="border-bottom: 1px solid #d1d3d4">
+                                                <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                                    <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                        <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;"><time class="article-metadata__date">@article.ListableDate</time></li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <h6 style="color:#231f20;text-transform:uppercase;font-size:15px;margin:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">@article.LinkableText</h6>
+                                                                                </li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;border:none;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                                        <img src="dist/bar-icon.png" alt="icon" />
+                                                                                    </span>
+                                                                                </li>
+                                                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                                                {
+                                                                                    last = article.ListableTopics.Last();
+                                                                                    foreach (var topic in article.ListableTopics)
+                                                                                    {
+                                                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                                                        <li class="visible-desk" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                      @topicClass
+                                                                                      margin-right: 12px;
+                                                                                      margin-right: 0.75rem;
+                                                                                      margin-left: 0;
+                                                                                      padding-right: 12px;
+                                                                                      padding-right: 0.75rem;">
+                                                                                            <a href="@topic.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@topic.LinkableText</a>
+                                                                                        </li>
+
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                        <h3 style="font-size: 22px;font-family: Roboto Condensed Bold; margin: 10px 0;"><a href="@article.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #231f20; font-weight: bold;">@Html.Raw(article.ListableTitle)</a></h3>
+                                                                        <p style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;">@Html.Raw(article.ListableSummary)</p>
+                                                                        <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                                                            <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                                                {
+                                                                                    last = article.ListableTopics.Last();
+                                                                                    foreach (var topic in article.ListableTopics)
+                                                                                    {
+                                                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                                                        <li class="visible-mob" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  @topicClass
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;
+                                                                                  display:none;"><a style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;" href="@topic.LinkableUrl">@topic.LinkableText</a></li>
+
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            }
+                            else
+                            {
+                                <div class="article-wrapper" style="margin-bottom: 20px; clear: both;">
+                                    <div class="wd-desk-50" style="width:100%;">
+                                        <div style="padding: 0 10px;">
+                                            <div style="border-bottom: 1px solid #d1d3d4">
+                                                <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                                    <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                        <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;"><time class="article-metadata__date">@article.ListableDate</time></li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <h6 style="color:#231f20;text-transform:uppercase;font-size:15px;margin:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">@article.LinkableText</h6>
+                                                                                </li>
+                                                                                <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;border:none;list-style: none;
+                                                                                  border-right: 1px solid #ccc;
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;">
+                                                                                    <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                                        <img src="dist/bar-icon.png" alt="icon" />
+                                                                                    </span>
+                                                                                </li>
+                                                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                                                {
+                                                                                    last = article.ListableTopics.Last();
+                                                                                    foreach (var topic in article.ListableTopics)
+                                                                                    {
+                                                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                                                        <li class="visible-desk" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                      @topicClass
+                                                                                      margin-right: 12px;
+                                                                                      margin-right: 0.75rem;
+                                                                                      margin-left: 0;
+                                                                                      padding-right: 12px;
+                                                                                      padding-right: 0.75rem;">
+                                                                                            <a href="@topic.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@topic.LinkableText</a>
+                                                                                        </li>
+
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                        <h3 style="font-size: 22px;font-family: Roboto Condensed Bold; margin: 10px 0;"><a href="@article.LinkableUrl" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #231f20; font-weight: bold;">@Html.Raw(article.ListableTitle)</a></h3>
+                                                                        <div class="article-metadata" style="margin-bottom:8px;margin-bottom: 8px;">
+                                                                            <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
+                                                                               display: -ms-inline-flexbox;
+                                                                               display: inline-flex;
+                                                                               -webkit-box-orient: horizontal;
+                                                                               -webkit-box-direction: normal;
+                                                                                   -ms-flex-direction: row;
+                                                                                       flex-direction: row;
+                                                                                  margin-bottom: 0;
+                                                                                  padding-left: 0;">
+                                                                                @if (article.ListableTopics != null && article.ListableTopics.Any())
+                                                                                {
+                                                                                    last = article.ListableTopics.Last();
+                                                                                    foreach (var topic in article.ListableTopics)
+                                                                                    {
+                                                                                        topicClass = last.Equals(topic) ? "" : "border-right: 1px solid #ccc;";
+                                                                                        <li class="visible-mob" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                  @topicClass
+                                                                                  margin-right: 12px;
+                                                                                  margin-right: 0.75rem;
+                                                                                  margin-left: 0;
+                                                                                  padding-right: 12px;
+                                                                                  padding-right: 0.75rem;
+                    display:none;"><a style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;" href="@topic.LinkableUrl">@topic.LinkableText</a></li>
+
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            }
+                        }
+                    }
+                </td>
+            </tr>
+            @if (sec.LoadMore != null)
+            {
+                <tr>
+                    <td style="text-align: center;">
+                        <a href="@sec.LoadMore.LoadMoreLinkUrl" style="padding: 20px 65px; display: inline-block; border: 1px solid #d1d3d4; margin-bottom: 40px; font-weight: bold;color: #000;">@sec.LoadMore.LoadMoreLinkText</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}

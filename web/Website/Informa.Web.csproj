@@ -1137,6 +1137,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
+    <Compile Include="Controllers\PersonalizedEmailController.cs" />
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
@@ -1157,6 +1158,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MvcHelpers.cs" />
     <Compile Include="Models\IPageLink.cs" />
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\ISection.cs" />
@@ -1228,6 +1230,7 @@
     <Compile Include="ViewModels\Emails\FeaturedArticleMultiColumnViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
@@ -2168,6 +2171,7 @@
     <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
     <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
+    <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
     <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
     <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
