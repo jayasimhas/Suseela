@@ -34,7 +34,6 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
     vm.originalGroup = [];
 
-    /* Real talk: the Javascript Date() method is a trash fire. */
     var dToday = function () {
         return new Date().clearTime();
     };
@@ -383,8 +382,13 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         vm.update();
     };
 
-    vm.customDateRangeSearch = function (filterKey, startDate, endDate, sourceControl) {
-        
+    vm.validateFormat = function (date, type) {
+        if(date == undefined) 
+            alert("The '"+type+"' date value isn't properly formatted");
+    };
+
+    vm.customDateRangeSearch = function (filterKey, startDate, endDate) {
+
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');

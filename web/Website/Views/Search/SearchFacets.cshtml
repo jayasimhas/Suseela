@@ -186,10 +186,11 @@
                                            ng-click="facetController.updateSelectedDate(dateFilter.key)"
                                            ng-model="dateValues.dtFrom"
                                            ng-required="false"
+                                           ng-blur="facetController.validateFormat(dateValues.dtFrom, 'from')"
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="d/M/yyyy">
+                                           uib-datepicker-popup="d!/M!/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
@@ -215,10 +216,11 @@
                                            ng-click="facetController.updateSelectedDate(dateFilter.key)"
                                            ng-model="dateValues.dtTo"
                                            ng-required="false"
+                                           ng-blur="facetController.validateFormat(dateValues.dtTo, 'to')"
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="d/M/yyyy">
+                                           uib-datepicker-popup="d!/M!/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
