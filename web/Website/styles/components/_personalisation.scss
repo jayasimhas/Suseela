@@ -48,6 +48,10 @@
 	.article-preview__tags {
 		position: absolute;
 		bottom: 1.5rem;
+		width: calc(100% - 2.5rem);
+		@include breakpoint('medium') {
+			width: calc(100% - 2.5rem);
+		}
 		@include breakpoint('small') {
 			position: static;
 		}
@@ -277,6 +281,10 @@
 		margin-bottom: 1rem; 
 		width: 21.0625rem;
 		height: 11.875rem;
+		@media (max-width: 1024px) and (min-width: 768px)  {
+			width: 100%;
+			height: auto;
+		}
 		@include breakpoint('small') {
 			margin-top: 1.25rem;
 			width: 100%;
