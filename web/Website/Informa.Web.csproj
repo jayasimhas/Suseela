@@ -614,7 +614,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
     </Reference>
-	<Reference Include="Sitecore.SessionSerialization">
+    <Reference Include="Sitecore.SessionSerialization">
       <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -1154,6 +1154,13 @@
     <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.designer.cs">
       <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sitecore\admin\Tools\ArticleMover.aspx.cs">
+      <DependentUpon>ArticleMover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore\admin\Tools\ArticleMover.aspx.designer.cs">
+      <DependentUpon>ArticleMover.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore\admin\Tools\TestUtils.aspx.cs">
       <DependentUpon>TestUtils.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1498,6 +1505,7 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
+    <Content Include="sitecore\admin\Tools\ArticleMover.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
