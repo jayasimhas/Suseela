@@ -1,9 +1,10 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleMultiColumnViewModel>
 @using Informa.Library.Search.Utilities
+@using Informa.Library.Utilities.References
 
 @if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.Display_Option != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.Display_Option.Value))
 {
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleFullRow")
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleFullRow)
     {
         <div class="article-wrapper" style="margin-bottom: 20px; clear: both;">
             @if (Model.GlassModel.ShowBackgroundColor && Model.Articles != null && Model.Articles.Any())
@@ -49,12 +50,10 @@
                                                                                                     margin-left: 0;
                                                                                                     padding-right: 12px;
                                                                                                     padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                             @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                             {
@@ -69,7 +68,7 @@
                                                                                                                       margin-left: 0;
                                                                                                                       padding-right: 12px;
                                                                                                                       padding-right: 0.75rem;">
-                                            <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
+                                            <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
                                         </li>
                                     }
                                 }
@@ -84,7 +83,7 @@
                                                                                                                       margin-left: 0;
                                                                                                                       padding-right: 12px;
                                                                                                                       padding-right: 0.75rem;">
-                                            <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
+                                            <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
                                         </li>
                                     }
                                 }
@@ -97,7 +96,7 @@
                     <div class="article-content">
                         @if (Model.Articles[0].Featured_Image_16_9 != null)
                         {
-                        <img src="@Model.Articles[0].Featured_Image_16_9.Src" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;">
+                            <a href="@Model.Articles[0]._Url"><img src="@Model.Articles[0].Featured_Image_16_9.Src" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;"></a>
                         }
                         <div class="article-text" style="float:left;width:55%;">
                             <p class="author-by" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-family: 'Roboto Condensed Medium'; color: #58595b; font-size: 14px; font-weight: bold; margin-bottom: 0;">@Html.Raw(Model.Byline)</p>
@@ -107,7 +106,10 @@
                     </div>
                 </div>
                 <div class="featured__article_wrapper gray-wrapper visible-mob" style="background-color:#f1f2f2;padding: 20px;display:none;">
-                    <img src="/dist/img/email-template/insight-article.jpg" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;">
+                    @if (Model.Articles[0].Featured_Image_16_9 != null)
+                    {
+                        <a href="@Model.Articles[0]._Url"><img src="/dist/img/email-template/insight-article.jpg" alt="" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 10px;"></a>
+                    }
                     <div class="article-metadata" style="margin-bottom: 20px;">
                         <ul style="display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:0;padding-left:0;display: -webkit-inline-box;
                                                                                                display: -ms-inline-flexbox;
@@ -146,12 +148,10 @@
                                                                                                   margin-left: 0;
                                                                                                   padding-right: 12px;
                                                                                                   padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                         </ul>
                     </div>
@@ -175,24 +175,39 @@
                                                                                                        flex-direction: row;
                                                                                                   margin-bottom: 0;
                                                                                                   padding-left: 0;">
-                            <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
-                                                                                                  border-right: 1px solid #ccc;
-                                                                                                  margin-right: 12px;
-                                                                                                  margin-right: 0.75rem;
-                                                                                                  margin-left: 0;
-                                                                                                  padding-right: 12px;
-                                                                                                  padding-right: 0.75rem;">
-                                <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">Deals</a>
-                            </li>
-                            <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;border:none;list-style: none;
-                                                                                                  border-right: 1px solid #ccc;
-                                                                                                  margin-right: 12px;
-                                                                                                  margin-right: 0.75rem;
-                                                                                                  margin-left: 0;
-                                                                                                  padding-right: 12px;
-                                                                                                  padding-right: 0.75rem;">
-                                <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">Biosimilar</a>
-                            </li>
+                        @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
+                        {
+                            if (Model.Articles[0].Taxonomies.ToList().Count > 2)
+                            {
+                                foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
+                                {
+                                    <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                                            border-right: 1px solid #ccc;
+                                                                                                            margin-right: 12px;
+                                                                                                            margin-right: 0.75rem;
+                                                                                                            margin-left: 0;
+                                                                                                            padding-right: 12px;
+                                                                                                            padding-right: 0.75rem;">
+                                        <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">Deals</a>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
+                                {
+                                    <li style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;border-right:1px solid #ccc;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;
+                                                                                                                              border-right: 1px solid #ccc;
+                                                                                                                              margin-right: 12px;
+                                                                                                                              margin-right: 0.75rem;
+                                                                                                                              margin-left: 0;
+                                                                                                                              padding-right: 12px;
+                                                                                                                              padding-right: 0.75rem;">
+                                        <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
+                                    </li>
+                                }
+                            }
+                        }
                         </ul>
                     </div>
                 </div>
@@ -239,12 +254,10 @@
 																			  margin-left: 0;
 																			  padding-right: 12px;
 																			  padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                             @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.ToList().Count > 2)
                             {
@@ -327,12 +340,10 @@
 																			  margin-left: 0;
 																			  padding-right: 12px;
 																			  padding-right: 0.75rem;">
-                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                    <svg class="article-metadata__media-type" style="fill:#979797;height:24px;width:24px;vertical-align:middle;">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart">
-                                        </use>
-                                    </svg>
-                                </span>
+                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                {
+                                    <img class="" src="@Model.MediaTypeIconSrcs[0]" />
+                                }
                             </li>
                         </ul>
                     </div>
@@ -392,7 +403,7 @@
         </div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleHalfRow" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow && Model.Articles != null && Model.Articles.Any())
     {
         <div class="wd-desk-50" style="width:50%;float:left;height: 410px; margin-bottom: 20px; clear: both;">
             @foreach (var article in Model.Articles)
@@ -492,7 +503,7 @@
         </div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleThreeRows" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows && Model.Articles != null && Model.Articles.Any())
     {
         <div class="wd-desk-50" style="width:50%;float:left;height: 410px ;">
             <div style="background-color: #f1f2f2; padding: 10px; height: 100%;">
@@ -513,7 +524,7 @@
         <div style="clear: both;"></div>
     }
 
-    if (Model.RenderingParameters.Display_Option.Value == "FeaturedArticleTwoColumn" && Model.Articles != null && Model.Articles.Any())
+    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleTwoColumn && Model.Articles != null && Model.Articles.Any())
     {
         <div class="article-wrapper" style="margin-bottom: 20px; clear: both; height: 410px;">
             @foreach (var article in Model.Articles)

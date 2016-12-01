@@ -1,0 +1,19 @@
+﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobDetailsViewModel
+<div class="main__content">
+    <div>
+        <div class="action-flags-bar article-prologue"></div>
+        <h3 style="text-align:center">Classified</h3>
+        <div class="job_logo">
+            <a href="#">
+                <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">
+            </a>
+        </div>
+        <div class="job_detail">
+            <h1>@Model.JobTitle</h1>
+            <div class="job_description">
+                <p>@Html.Raw(Model.JobDescription)</p>
+
+            </div>
+        </div>
+    </div>
+</div>

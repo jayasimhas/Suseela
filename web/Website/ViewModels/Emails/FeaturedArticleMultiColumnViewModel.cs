@@ -52,5 +52,14 @@
             => _targetArticleUrl ?? (_targetArticleUrl = _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel.ArticleOne));
 
         public IList<IArticle> Articles => new List<IArticle> { GlassModel?.ArticleOne, GlassModel?.ArticleTwo, GlassModel?.ArticleThree };
+
+        public IList<string> MediaTypeIconSrcs => new List<string>
+                                                    {
+                                                        GlassModel.ArticleOne?.Media_Type?.Media_Type_Icon?.Src,
+                                                        GlassModel.ArticleTwo?.Media_Type?.Media_Type_Icon?.Src,
+                                                        GlassModel.ArticleThree?.Media_Type?.Media_Type_Icon?.Src
+                                                    };
+
+
     }
 }

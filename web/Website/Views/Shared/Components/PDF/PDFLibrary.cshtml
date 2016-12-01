@@ -28,10 +28,14 @@
                     {
                         <tr>
                             <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd/MM/yyyy")</td>
-                            <td align="left">@Html.ActionLink("00", "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)&nbsp;</td>
+                            <td align="left">@Html.ActionLink(pdf.IssueNumber, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)&nbsp;</td>
                             <td align="left">
                                 @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)
-                                &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
+                                &nbsp;
+                                <a href="@Url.Action("GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })">
+                                    <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
+                                </a>
+                                
                             </td>
                         </tr>
                     }
