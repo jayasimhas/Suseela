@@ -141,7 +141,7 @@ namespace Sitecore.SharedSource.DataImporter.Editors
                 txtMessage.Text = log.ToString();
                 return;
             }
-        
+
             var jobOptions = new Sitecore.Jobs.JobOptions(
                                     "DataImport",
                                     importItem.DisplayName,
@@ -152,6 +152,7 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 
             Sitecore.Jobs.JobManager.Start(jobOptions);
 
+            //HandleImport(map, l);
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
@@ -247,16 +248,21 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 									"HandleMediaImport",
 									new object[] { map, l });
 
-			Sitecore.Jobs.JobManager.Start(jobOptions);
+			//Sitecore.Jobs.JobManager.Start(jobOptions);
 
-			repJobs.DataSource = Jobs;
+            HandleMediaImport(map, l);
+
+
+            repJobs.DataSource = Jobs;
 			repJobs.DataBind();
 		}
 
 	    protected void HandleMediaImport(IDataMap map, DefaultLogger l)
 	    {
 		    var handler = map as PmbiDataMap;
-			handler?.TransferMediaLibrary();
+            //ImportProcessor p = new ImportProcessor(map, l);
+            //PmbiDataMap ip=new PmbiDataMap()
+            handler?.TransferMediaLibrary();
 	    }
 
         #endregion Media Import
