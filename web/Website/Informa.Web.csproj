@@ -1240,6 +1240,7 @@
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
+    <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
@@ -1745,6 +1746,7 @@
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\myview-settings.js" />
     <Content Include="js\components\pagination.js" />
+    <Content Include="js\components\personalisation.js" />
     <Content Include="js\components\save-search-component.js" />
     <Content Include="js\components\video-mini.js" />
     <Content Include="js\controllers\analytics-controller.js" />
