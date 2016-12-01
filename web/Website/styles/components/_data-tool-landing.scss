@@ -375,7 +375,7 @@ div#feedbacklite.fbl_r{
 		margin-bottom: 1.5rem;
 	}
 	.section-article{
-		width: 31%;
+		width: 32.3%;
 		float: left;
 		padding: 0 2em 0 0;	
 		border-right: #d1d3d4 1px solid;
@@ -386,6 +386,11 @@ div#feedbacklite.fbl_r{
 			padding-left:2em !important;
 			padding-right: 0 !important;
 			border-right: 0 !important;
+		}
+	}
+	@include breakpoint('medium') {
+		.section-article{
+			width: 31%
 		}
 	}
 	@include breakpoint('small') {
