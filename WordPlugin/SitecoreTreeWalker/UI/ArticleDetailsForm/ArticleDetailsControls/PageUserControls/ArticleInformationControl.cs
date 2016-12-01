@@ -767,10 +767,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         {
             uxPublication.SelectedIndex = 0;
             SetPublicationTime(DateTime.Today, true);
-            uxMediaTypes.SelectedIndex = 0;
-            uxLabel.SelectedIndex = 0;
-            uxSelectedAuthors.Reset();
-            uxNotes.Text = string.Empty;
+            //uxMediaTypes.SelectedIndex = 0;
+            //uxLabel.SelectedIndex = 0;
+            //uxSelectedAuthors.Reset();
+            //uxNotes.Text = string.Empty;
             MenuItem.SetIndicatorIcon(Properties.Resources.redx);
         }
 

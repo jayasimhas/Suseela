@@ -146,8 +146,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             }
             else
             {
-                if (_parent.ArticleDetails.ArticleWorkflowState != null)
-                    uxWorkflowButton.Text = string.Format("In '{0}'", _parent.ArticleDetails.ArticleWorkflowState.DisplayName);
+				if (_parent.ArticleDetails.ArticleWorkflowState != null)
+				{
+					uxWorkflowButton.Text = string.Format("In '{0}'", _parent.ArticleDetails.ArticleWorkflowState.DisplayName);
+					uxWorkflowButton.Image = ((System.Drawing.Image)(new System.ComponentModel.ComponentResourceManager(typeof(ArticleStatusBar)).GetObject("uxWorkflowButton.Image")));
+				}
             }
         }
 
