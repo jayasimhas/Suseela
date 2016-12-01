@@ -87,7 +87,7 @@
   <fields>
 	<field name="_val_" type="string" />
     <field name="_content" type="text_en_splitting" indexed="true" stored="false" />
-    <field name="_database" type="string" indexed="true" stored="true" />
+	<field name="_database" type="string" indexed="true" stored="true" />
     <field name="_path" type="string" indexed="true" stored="false" multiValued="true" />
     <field name="_uniqueid" type="string" indexed="true" stored="true" required="true" />
     <field name="_datasource" type="string" indexed="true" stored="true" required="true" />
@@ -125,6 +125,10 @@
     <field name="alphaNameSort" type="alphaOnlySort" indexed="true" stored="false" />
     <field name="__hidden" type="boolean" indexed="true" stored="false" />
     <field name="_version_" type="long" indexed="true" stored="true" />
+    <field name="wildcardcontent" type="text_general_spec_chars" indexed="true" stored="true" />
+    <field name="exactmatchcontent" type="text_no_stem" indexed="true" stored="true" />
+	<field name="wildcardtitle" type="text_general_spec_chars" indexed="true" stored="true" />
+    <field name="exactmatchtitle" type="text_no_stem" indexed="true" stored="true" />
     <dynamicField name="*_t" type="text_en_splitting" indexed="true" stored="true" />
     <dynamicField name="*_t_en" type="text_general" indexed="true" stored="true" />
     <dynamicField name="*_t_ar" type="text_general" indexed="true" stored="true" />
@@ -519,5 +523,26 @@
                              refreshInterval: Number of minutes between each rates fetch (default: 1440, min: 60)
    -->
     <fieldType name="currency" class="solr.CurrencyField" precisionStep="8" defaultCurrency="USD" currencyConfig="currency.xml" />
+	<fieldType name="text_no_stem" class="solr.TextField" omitNorms="false">
+      <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+          <filter class="solr.StandardFilterFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+   </fieldType>
+   <fieldType name="text_general_spec_chars" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.ReversedWildcardFilterFactory" withOriginal="true" maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true" />
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.LowerCaseFilterFactory" />
+      </analyzer>
+    </fieldType>
   </types>
 </schema>

@@ -42,10 +42,16 @@ namespace Informa.Library.Search.PredicateBuilders
 			}
 			else
 			{
-				//Include Search for authors
-				if (_request.QueryParameters.ContainsKey("q") && string.IsNullOrEmpty(_request.QueryParameters["q"]) == false)
-					predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
-			}
+                //Include Search for authors
+                var q = Velir.Search.Core.Reference.SiteSettings.QueryString.QueryKey;
+				if (_request.QueryParameters.ContainsKey(q) && string.IsNullOrEmpty(_request.QueryParameters[q]) == false) {
+                    var val = _request.QueryParameters[q];
+                    if (_formatter.NeedsFormatting(val))
+                        predicate = predicate.Or(x => x.Byline.MatchWildcard(val));
+                    else 
+                        predicate = predicate.Or(x => x.Byline.Contains(val));
+                }
+            }
 
 			return predicate;
 		}
@@ -64,21 +70,30 @@ namespace Informa.Library.Search.PredicateBuilders
 			if (_formatter.NeedsFormatting(query))
 			{
 				var formattedQuery = _formatter.FormatQuery(query);
-				if (searchHeadlines)
-				{
-					return item => item.Title.MatchWildcard(formattedQuery);
-				}
 
-				return item => item.Content.MatchWildcard(formattedQuery);
-			}
+                if (query.Contains('"')) {
+                    if (searchHeadlines)
+                        return item => item.ExactMatchTitle.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.ExactMatchContent.MatchWildcard(formattedQuery);
+                } else if (query.Contains("*")) {
+                    if (searchHeadlines)
+                        return item => item.WildcardTitle.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.WildcardContent.MatchWildcard(formattedQuery);
+                } else {
+                    if (searchHeadlines)
+                        return item => item.Title.MatchWildcard(formattedQuery);
+                    else
+                        return item => item.Content.MatchWildcard(formattedQuery);
+                }
+            }
 
 			var quotedQuery = $"\"{query}\"";
-			if (searchHeadlines)
-			{
-				return item => item.Title.Like(quotedQuery, bigSlopFactor);
-			}
-
-			return item => item.Content.Like(quotedQuery, bigSlopFactor);
+            if (searchHeadlines)
+                return item => item.Title.Like(quotedQuery, bigSlopFactor);
+            else 
+                return item => item.Content.Like(quotedQuery, bigSlopFactor);
 		}
 	}
 }
