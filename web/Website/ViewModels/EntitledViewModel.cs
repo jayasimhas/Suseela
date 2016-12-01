@@ -27,9 +27,10 @@ namespace Informa.Web.ViewModels
 
         public bool IsEntitled()
         {
-            return SitecoreUserContext.User.Domain.Name == "sitecore" 
-              || IsFree 
-              || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) 
+            return SitecoreUserContext.User.Domain.Name == "sitecore"
+|| SitecoreUserContext.User.Domain.Name == "extranet"
+              || IsFree
+              || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated)
               || IsEntitledProductItemContext.IsEntitled(GlassModel);
         }
     }

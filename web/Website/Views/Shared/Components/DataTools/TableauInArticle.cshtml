@@ -2,9 +2,9 @@
 
 <!--Tableau In Article  -->
 
-@if (Model != null) 
-{ 
-    <div class="article-data-tool-placeholder"> 
+@if (Model != null)
+{
+    <div class="article-data-tool-placeholder">
         <div class="data-tool-placeholder">
             <h3 class="data-tool-heading">@Model.Page_Title</h3>
             <script type="text/javascript" src="@Model.ArticleTableauJSAPIUrl"></script>
@@ -12,9 +12,9 @@
                 <object class="tableauViz" width='@Model.Width' height='@Model.Height'>
                     <param name="host_url" value="@Model.ArticleTableauHostUrl" />
                     <param name="name" value="@Model.Dashboard_Name" />
-                    <param name="tabs" value="@Model.Display_Tabs" />
-                    <param name="toolbar" value="@Model.Display_Toolbars" />
-                    <param name='customViews' value='@Model.Allow_Custom_Views' />
+                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false)?"no":"yes")" />
+                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":Model.Authentication_Required.Equals(true)?"top":"yes")" />
+                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false)?"no":"yes")" />
                     <param name='filter' value='@Model.Filter' />
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
                 </object>
@@ -23,14 +23,14 @@
                 <object class="tableauViz" width='@Model.Width' height='@Model.Height'>
                     <param name="host_url" value="@Model.ArticleTableauHostUrl" />
                     <param name="name" value="@Model.Dashboard_Name" />
-                    <param name="tabs" value="@Model.Display_Tabs" />
-                    <param name="toolbar" value="@Model.Display_Toolbars" />
-                    <param name='customViews' value='@Model.Allow_Custom_Views' />
+                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false)?"no":"yes")" />
+                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":Model.Authentication_Required.Equals(true)?"top":"yes")" />
+                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false)?"no":"yes")" />
                     <param name='filter' value='@Model.Filter' />
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
                 </object>
             </div>
-            
+
         </div>
     </div>
 }

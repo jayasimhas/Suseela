@@ -115,6 +115,7 @@
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
+      <handler type="Informa.Library.CustomSitecore.Pipelines.PublishItem.DictionaryCacheClearer, Informa.Library" method="ClearCache" />
     </event>
     <event name="publish:end:remote">
       <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">

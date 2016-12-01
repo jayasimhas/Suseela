@@ -7,5 +7,7 @@ namespace Informa.Library.Search.SearchIndex
         string GetIndexName(Guid publicationGuid = default(Guid));
 
         string GetAutherIndexName();
+
+        string GetVerticalRootFromQuerystring();
     }
 }

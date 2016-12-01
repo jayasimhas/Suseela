@@ -7,6 +7,7 @@
     using Services.Global;
     using Site;
     using System;
+    using System.Web;
 
     [AutowireService]
     public class SearchIndexNameService : ISearchIndexNameService
@@ -17,7 +18,7 @@
         protected readonly IGlobalSitecoreService GlobalService;
 
         public SearchIndexNameService(ISitecoreContext sitecoreContext, ISiteRootContext siterootContext, IVerticalRootContext verticalRootContext
-            ,IGlobalSitecoreService globalService)
+            , IGlobalSitecoreService globalService)
         {
             SitecoreContext = sitecoreContext;
             SiteRootContext = siterootContext;
@@ -36,7 +37,7 @@
                 //return string.Format(SiteRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
                 return SiteRootContext.Item.Search_Index_Name;
             }
-            else if(VerticalRootContext?.Item?.Search_Index_Name != null)
+            else if (VerticalRootContext?.Item?.Search_Index_Name != null)
             {
                 //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
                 return VerticalRootContext.Item.Search_Index_Name;
@@ -54,6 +55,11 @@
                 return VerticalRootContext.Item.Auther_Search_Index_Name;
             }
             return "sitecore_{0}_index";
+        }
+
+        public string GetVerticalRootFromQuerystring()
+        {
+            return HttpContext.Current.Request.QueryString["verticalroot"];
         }
 
         /// <summary>

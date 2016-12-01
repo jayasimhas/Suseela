@@ -360,6 +360,7 @@
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="PDF\Pdf.cs" />
     <Compile Include="Search\ComputedFields\Facets\AgencyRegulatorField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommercialField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommoditiesField.cs" />

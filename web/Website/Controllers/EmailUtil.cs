@@ -1,29 +1,28 @@
-﻿using System;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Logging;
+using Informa.Library.Mail;
+using Informa.Library.Publication;
+using Informa.Library.User.Authentication.Web;
+using Informa.Library.User.Registration;
+using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Web.Helpers;
+using Informa.Web.ViewModels.Emails;
+using PluginModels;
+using Sitecore;
+using Sitecore.Data.Fields;
+using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
+using Sitecore.Workflows;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Glass.Mapper.Sc;
-using Informa.Library.Logging;
-using Informa.Library.Article.Search;
-using Informa.Library.Mail;
-using Informa.Library.User.ResetPassword;
-using Informa.Library.Utilities.Extensions;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Models;
-using PluginModels;
-using Sitecore;
-using Sitecore.Configuration;
-using Sitecore.Data.Fields;
-using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
-using Sitecore.Workflows;
 using Constants = Informa.Library.Utilities.References.Constants;
-using Informa.Library.Site;
-using Informa.Library.Publication;
 
 namespace Informa.Web.Controllers
 {
@@ -35,6 +34,10 @@ namespace Informa.Web.Controllers
         protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
         protected readonly ILogWrapper Logger;
         protected readonly ISitePublicationWorkflow _siteWorkflow;
+        public readonly PersonalizedEmailViewModel PersonalizedEmailViewModel;
+        protected readonly IWebLoginUser LoginUser;
+        protected readonly IWebLogoutUser LogoutWebUser;
+        protected readonly INewUserFactory UserFactory;
         //protected readonly ISiteRootContext _siteRootContext;
 
         public EmailUtil(
@@ -44,7 +47,11 @@ namespace Informa.Web.Controllers
             IEmailSender emailSender,
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
             ILogWrapper logger,
-            ISitePublicationWorkflow siteWorkflow)
+            ISitePublicationWorkflow siteWorkflow,
+            PersonalizedEmailViewModel personalizedEmailViewModel,
+            IWebLoginUser loginUser,
+            IWebLogoutUser logoutWebUser,
+            INewUserFactory userFactory)
         {
             EmailSender = emailSender;
             _articleUtil = articleUtil;
@@ -52,7 +59,11 @@ namespace Informa.Web.Controllers
             HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
             Logger = logger;
             _siteWorkflow = siteWorkflow;
-           // _siteRootContext = siteRootContext;
+            PersonalizedEmailViewModel = personalizedEmailViewModel;
+            LoginUser = loginUser;
+            LogoutWebUser = logoutWebUser;
+            UserFactory = userFactory;
+            // _siteRootContext = siteRootContext;
         }
 
         private string GetStaffEmail(Guid g)
@@ -166,7 +177,7 @@ namespace Informa.Web.Controllers
             if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 
             var workflowItem = _siteWorkflow.GetPublicationWorkflow(_service.GetItem<Item>(articleStruct.ArticleGuid));
-                //_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(_siteWorkflow.get _siteRootContext.Item.Workflow);
+            //_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(_siteWorkflow.get _siteRootContext.Item.Workflow);
             if (workflowItem == null) return;
             var notificationList = workflowItem.Notified_After_Publishes;
             var staffItems = notificationList as IStaff_Item[] ?? notificationList.ToArray();
@@ -229,7 +240,7 @@ namespace Informa.Web.Controllers
             {
                 replacements["#show_notes#"] = "";
                 replacements["#Body_Content#"] = "";
-            } 
+            }
 
             replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
             replacements["#current_time#"] = DateTime.Now.ToString();
@@ -250,7 +261,7 @@ namespace Informa.Web.Controllers
 
             List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
             replacements["#history#"] = HistoryTableCreation(workflowHistory);
-            var eHtml= emailHtml.ReplacePatternCaseInsensitive(replacements);
+            var eHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
             return eHtml;
 
         }
@@ -289,8 +300,8 @@ namespace Informa.Web.Controllers
 
             replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
             replacements["#Publication#"] = publication;
-			replacements["#Body_Content#"] = articleStruct.NotificationText == null ? string.Empty : articleStruct.NotificationText;
-			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
+            replacements["#Body_Content#"] = articleStruct.NotificationText == null ? string.Empty : articleStruct.NotificationText;
+            replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
             replacements["#current_time#"] = DateTime.Now.ToString();
 
             List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
@@ -371,5 +382,31 @@ namespace Informa.Web.Controllers
 
             return outputString.ToString();
         }
+
+        /// <summary>
+        /// Creates the personalized email body.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns>Personalized email body</returns>
+        public string CreatePersonalizedEmailBody(string userName)
+        {
+            var emailContent = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(userName))
+            {
+                var user = UserFactory.Create();
+                user.Username = userName;
+                var loginUserResponse = LoginUser.Login(user, false);
+
+                if (loginUserResponse.Success)
+                {
+                    emailContent = MvcHelpers.GetRazorViewAsString(PersonalizedEmailViewModel, "~/Views/EmailComponents/PersonalizedEmailContent.cshtml");
+                    LogoutWebUser.Logout();
+                }
+
+            }
+            return emailContent;
+        }
     }
 }
+

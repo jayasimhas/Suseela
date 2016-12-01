@@ -1,0 +1,24 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.NewsletterGreetingViewModel>
+
+<table class="daily-alert" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background-color:#eee;margin-bottom:24px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #eee;margin-bottom: 24px;">
+    <tbody>
+        <tr>
+            <td class="daily-alert__cell" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:16px;padding-top:16px;padding-left:24px;padding-right:24px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 16px;padding-top: 16px;padding-left: 24px;padding-right: 24px;">
+                <div class="caps-header" style="text-transform:uppercase;font-size:20px;font-weight:bold;text-align:center;margin-bottom:8px;text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px; font-family: Roboto Condensed;">
+                    @Model.GreetingTitle
+                </div>
+                <div class="caps-body">
+                    <img src="/dist/img/email-template/newletter-img.jpg" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 15px;" />
+
+                    <p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">
+                        <strong style="color: #000;">Hi #FirstName#,</strong>
+                        @Editable(Model, m => m.GreetingSummary)
+                    </p>
+                </div>
+                <div class="download-link" style="text-align: center;">
+                    <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background:#fff;display:inline-block;padding:10px 20px;margin-top:20px;color:#000;font-weight:bold;border:1px solid #fbb040;">DOWNLOAD [BRIEFING TITLE]</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -3,10 +3,9 @@
     <contentSearch>
       <configuration>
         <indexes hint="list:AddIndex">
-
-          <index id="informa_authors" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+          <index id="informa_authors_agri" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
             <param desc="name">$(id)</param>
-            <param desc="core">${Solr.CustomIndex.CoreName}_authors</param>
+            <param desc="core">informa_authors_agri</param>
             <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
             <configuration ref="contentSearch/indexConfigurations/authorsSolrIndexConfiguration" />
             <strategies hint="list:AddStrategy">
@@ -15,10 +14,26 @@
             <locations hint="list:AddCrawler">
               <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
                 <Database>web</Database>
-                <Root>/sitecore/content/Environment Globals/Staff</Root>
+                <Root>/sitecore/content/Agri/Vertical Globals/Staff</Root>
               </crawler>
             </locations>
           </index>
+          <index id="informa_authors_pharma" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="name">$(id)</param>
+            <param desc="core">informa_authors_pharma</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/authorsSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+                <Database>web</Database>
+                <Root>/sitecore/content/Pharma/Vertical Globals/Staff</Root>
+              </crawler>
+            </locations>
+          </index>
+
 
         </indexes>
       </configuration>
