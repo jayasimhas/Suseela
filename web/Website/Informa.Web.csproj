@@ -2179,6 +2179,9 @@
     <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardFooterAd.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd2.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd3.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

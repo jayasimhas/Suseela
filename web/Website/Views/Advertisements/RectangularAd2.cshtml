@@ -1,0 +1,20 @@
+﻿@inherits CustomGlassView<AdViewModel>
+@{ Model.Init(); }
+
+@if (IsInEditingMode && Model.IsEditable)
+{
+    @Editable(Model.AdComponentModel, x => x.Slot_ID)
+    @Editable(Model.AdComponentModel, x => x.Zone)
+}
+<!-- I'm an edit -->
+@if (Model.IsValidRectangularAd3)
+{
+    <section class="article-preview article-preview--small">
+        <div class="advertising advertising">
+            <span class="advertising__label">@Model.AdvertisementText</span>
+            <script>
+                OAS_AD('@Model.RectangularSlotId3', '@Model.RectangularAdZone');
+            </script>
+        </div>
+    </section>
+}
