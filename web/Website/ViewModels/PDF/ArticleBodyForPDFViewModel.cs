@@ -57,18 +57,25 @@ namespace Informa.Web.ViewModels.PDF
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
         }
         
+        /// <summary>
+        /// Article Title
+        /// </summary>
         public string Title => GlassModel.Title;
+        /// <summary>
+        /// Article SubTitle
+        /// </summary>
         public string Sub_Title => GlassModel.Sub_Title;
-        public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
-
-        public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);// JIRA IPMP-56
-
-        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active, GlassModel.Escenic_ID, GlassModel.Legacy_Article_Number);  // JIRA IPMP-56      
 
         private string _summary;
+        /// <summary>
+        /// Article Summary
+        /// </summary>
         public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
 
         private IEnumerable<IPersonModel> _authors;
+        /// <summary>
+        /// List of Authors
+        /// </summary>
         public IEnumerable<IPersonModel> Authors
                 => _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
 
@@ -84,7 +91,13 @@ namespace Informa.Web.ViewModels.PDF
                 return _date.Value;
             }
         }
+        /// <summary>
+        /// Article Category
+        /// </summary>
         public string Category => GlassModel.Article_Category;
+        /// <summary>
+        /// Article Body Content
+        /// </summary>
         public string Body => _lazyBody.Value;
         public string ContentType => GlassModel.Content_Type?.Item_Name;
         public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
@@ -93,6 +106,11 @@ namespace Informa.Web.ViewModels.PDF
         public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
         public bool IsActiveLegacyBrand => SiteRootContext.Item.Legacy_Brand_Active;
         public List<string> LagacyBrandUrl => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active).ToList<string>();
+        /// <summary>
+        /// Method to Related Articles
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private IEnumerable<IListable> GetRelatedArticles(IArticle article)
         {
             var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
@@ -111,6 +129,9 @@ namespace Informa.Web.ViewModels.PDF
 
         public IEnumerable<IListable> RelatedArticles { get; set; }
 
+        /// <summary>
+        /// Article Landing Page URL
+        /// </summary>
         public string ArticleLandingPageUrl=> Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
     }
 }

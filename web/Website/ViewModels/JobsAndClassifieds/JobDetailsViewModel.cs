@@ -16,11 +16,29 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         {
             TextTranslator = textTranslator;
         }
+        /// <summary>
+        /// Job Title
+        /// </summary>
         public string JobTitle => GlassModel?.Title;
+        /// <summary>
+        /// Job SubTitle
+        /// </summary>
         public string JobSubTitle => GlassModel?.Sub_Title;
+        /// <summary>
+        /// Job Description
+        /// </summary>
         public string JobDescription => GlassModel?.Body;
+        /// <summary>
+        /// Job Logo
+        /// </summary>
         public Image JobLogo => GlassModel?.JobLogo;
+        /// <summary>
+        /// Published Date
+        /// </summary>
         public DateTime PublishedDate => GlassModel?.PublishedDate??Convert.ToDateTime("01/01/1990");
+        /// <summary>
+        /// Published Text
+        /// </summary>
         public string PublishedText => TextTranslator.Translate("JobsAndClassifieds.PublishedText");
 
     }

@@ -8832,8 +8832,19 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
+
+        /// <summary>
+        /// Issue Date
+        /// <para></para>
+        /// <para>Field Type: Date</para>		
+        /// <para>Field ID: 90885ECC-6AE8-434A-9308-E148AD0A055A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        DateTime Issue_Date { get; set; }
+
     }
 
 
@@ -8853,8 +8864,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// <para>Field ID: 0129F15A-33EA-4E15-906E-C7845199F81A</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
+
+        /// <summary>
+        /// Issue Date
+        /// <para></para>
+        /// <para>Field Type: Date</para>		
+        /// <para>Field ID: 90885ECC-6AE8-434A-9308-E148AD0A055A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        DateTime Issue_Date { get; set; }
     }
 
     public static partial class IManually_Curated_PDF_PageConstants
@@ -8866,6 +8887,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
 
         public static readonly ID Issue_NumberFieldId = new ID("0129F15A-33EA-4E15-906E-C7845199F81A");
         public const string Issue_NumberFieldName = "Issue Number";
+
+        public static readonly ID Issue_DateFieldId = new ID("90885ECC-6AE8-434A-9308-E148AD0A055A");
+        public const string Issue_DateFieldName = "Issue Date";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
@@ -8952,7 +8976,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// Issue Date
         /// <para></para>
         /// <para>Field Type: DateTime</para>		
-        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
+        /// <para>Field ID: 36684D84-7DA1-429D-934D-8A01B4B1C3C4</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -8966,7 +8990,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
+        string Issue_Number { get; set; }
         /// <summary>
         /// PDF Url
         /// <para></para>
@@ -8992,7 +9016,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// Issue Date
         /// <para></para>
         /// <para>Field Type: DateTime</para>		
-        /// <para>Field ID: 850BBBF5-B11D-4B49-88F1-F3B1C00D2702</para>
+        /// <para>Field ID: 36684D84-7DA1-429D-934D-8A01B4B1C3C4</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IStatic_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -9006,7 +9030,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IStatic_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Issue_Number { get; set; }
+        string Issue_Number { get; set; }
         /// <summary>
         /// PDF Url
         /// <para></para>
@@ -9025,7 +9049,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Static PDF Page";
 
-        public static readonly ID Issue_DateFieldId = new ID("850BBBF5-B11D-4B49-88F1-F3B1C00D2702");
+        public static readonly ID Issue_DateFieldId = new ID("36684D84-7DA1-429D-934D-8A01B4B1C3C4");
         public const string Issue_DateFieldName = "Issue Date";
 
         public static readonly ID Issue_NumberFieldId = new ID("E3FF2FFA-330E-419B-A8D0-DEBA78932F54");

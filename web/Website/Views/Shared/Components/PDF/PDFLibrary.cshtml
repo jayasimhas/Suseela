@@ -13,9 +13,9 @@
             </tr>
             @if (Model != null && Model.Pdfs != null && Model.Pdfs.Count() > 0)
             {
-
                 foreach (var pdf in Model.Pdfs)
                 {
+                    //Listing Static PDFs
                     if (pdf.TypeOfPdf == PdfType.Static)
                     {
                         <tr>
@@ -24,6 +24,7 @@
                             <td align="left"><a href="@pdf.PdfPageUrl" target="_blank">@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
                         </tr>
                     }
+                    //Listing Manually Curated PDFs
                     if (pdf.TypeOfPdf == PdfType.Manual)
                     {
                         <tr>
@@ -35,7 +36,7 @@
                                 <a href="@Url.Action("GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })">
                                     <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
                                 </a>
-                                
+
                             </td>
                         </tr>
                     }

@@ -1,5 +1,6 @@
 ﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobsListingViewModel
 
+@*Jobs Listing Page*@
 <div class="main__content">
     <div>
         <div class="action-flags-bar article-prologue"></div>
@@ -33,19 +34,28 @@
                     }
                 </div>
             }
-           <input type="hidden" name="JobTilesCount" id="JobTilesCount" value="@Model.JobTiles.Count()" />
-            @Html.HiddenFor(m=>m.NoOfJobsPerPage)
-            <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
 
-            @if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.NoOfJobsPerPage) < Model.JobTiles.Count())
+            <input type="hidden" id="jobTilesCount" value="@Model.JobTiles.Count()" />
+            <input type="hidden" id="noofJobsPerPage" value="@Model.NoOfJobsPerPage" />
+            <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
+            @{  
+                int totalJobsCount;
+                bool IsJobsCountValidNo = int.TryParse(Model.NoOfJobsPerPage, out totalJobsCount);
+            }
+            @*Pagination for Jobs*@
+
+            @if (IsJobsCountValidNo)
+            {
+                if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.NoOfJobsPerPage) < Model.JobTiles.Count())
                 {
-                <div class="pagination clearfix">
-                    <ul class="nums">
-                        <li><a href="javascript:void(0);" class="prev">@Model.PrevPageText</a></li>
-                        <li><span></span></li>
-                        <li><a href="javascript:void(0);" class="next">@Model.NextPageText</a></li>
-                    </ul>
-                </div>
+                    <div class="pagination clearfix">
+                        <ul class="nums">
+                            <li><a href="javascript:void(0);" class="prev">@Model.PrevPageText</a></li>
+                            <li><span></span></li>
+                            <li><a href="javascript:void(0);" class="next">@Model.NextPageText</a></li>
+                        </ul>
+                    </div>
+                }
             }
         </div>
     </div>

@@ -16,13 +16,17 @@ namespace Informa.Web.Areas.Account.Controllers
 {
     public class PdfDownloadController : Controller
     {
-        // GET: Account/PdfDownload
-        [ValidateInput(false)]
-        public ActionResult DownloadPdf()
-        {
-            return PartialView("~/Views/Shared/PopOuts/DownloadPdf.cshtml", new PdfDownloadViewModel());
-        }
         GlobalElements globalElement = new GlobalElements();
+
+        /// <summary>
+        /// Controller method for downloading pdf
+        /// </summary>
+        /// <param name="pdfPageUrl">Page URL</param>
+        /// <param name="userEmail">User email who is downloading PDF</param>
+        /// <param name="PdfTitle">PDF Title</param>
+        /// <param name="DataToolLinkDesc">Data tool description</param>
+        /// <param name="DataToolLinkText">Data Tool Link Text</param>
+        /// <returns></returns>
         public ActionResult GenerateAndDownloadPdf(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -63,17 +67,30 @@ namespace Informa.Web.Areas.Account.Controllers
             }
             return new EmptyResult();
         }
-
+        /// <summary>
+        /// Generating PDF Body
+        /// </summary>
+        /// <param name="writer">PDF writer</param>
+        /// <param name="document">PDF Document</param>
+        /// <param name="pdfPageUrl">Page URL</param>
+        /// <param name="userEmail">User email who is downloading PDF</param>
+        /// <param name="PdfTitle">PDF Title</param>
+        /// <param name="DataToolLinkDesc">Data tool description</param>
+        /// <param name="DataToolLinkText">Data Tool Link Text</param>
         private void GeneratePdfBody(PdfWriter writer, Document document, string pdfPageUrl, string userEmail, string DataToolLinkDesc, string DataToolLinkText)
         {
 
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
-
+                #region For Static HTML
                 //string url = pdfPageUrl;
                 //var fullPageHtml = System.IO.File.ReadAllText(url);
+                #endregion
 
-                pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
+                if (!pdfPageUrl.StartsWith("http"))
+                {
+                    pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
+                }
                 HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
                 webRequest.Method = "POST";
                 System.Net.WebClient client = new WebClient();
@@ -84,7 +101,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 HtmlDocument doc = new HtmlDocument();
                 doc.LoadHtml(fullPageHtml);
                 string html = doc.GetElementbyId("mainContentPdf").InnerHtml;
-
+               
                 var replacements = new Dictionary<string, string>
                 {
                     ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
@@ -184,7 +201,11 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
             }
         }
-
+        /// <summary>
+        /// Converting Chart to Flat Image
+        /// </summary>
+        /// <param name="chartNode"></param>
+        /// <returns></returns>
         private string RelpaceChartWithImage(HtmlNode chartNode)
         {
             //Chart1.SaveImage(memoryStream, ChartImageFormat.Png);
@@ -209,11 +230,14 @@ namespace Informa.Web.Areas.Account.Controllers
 
         // This keeps track of the creation time
         DateTime PrintTime = DateTime.Now;
-        public string FirstPageHeader { get; set; }
         public string CommonHeader { get; set; }
         public string CommonFooter { get; set; }
 
-
+        /// <summary>
+        /// Overriding PDF OnOpenDocument for reading PDF writer content on document open 
+        /// </summary>
+        /// <param name="writer">PDF writer</param>
+        /// <param name="document">PDF document</param>
         public override void OnOpenDocument(PdfWriter writer, Document document)
         {
             try
@@ -231,7 +255,11 @@ namespace Informa.Web.Areas.Account.Controllers
 
             }
         }
-
+        /// <summary>
+        /// Adding Common Header and Footer
+        /// </summary>
+        /// <param name="writer">PDF writer</param>
+        /// <param name="document">PDF document</param>
         public override void OnEndPage(PdfWriter writer, Document document)
         {
             base.OnEndPage(writer, document);

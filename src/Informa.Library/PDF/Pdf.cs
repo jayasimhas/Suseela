@@ -15,6 +15,9 @@ namespace Informa.Library.PDF
         public string PdfTitle { get; set; }
 
     }
+    /// <summary>
+    /// Enum for PDF Type
+    /// </summary>
     public enum PdfType
     {
         Static = 1,

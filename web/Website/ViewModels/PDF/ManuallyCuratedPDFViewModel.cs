@@ -16,10 +16,21 @@ namespace Informa.Web.ViewModels.PDF
         {
             SiteRootContext = siteRootContext;
         }
-        public string PDFHeader => SiteRootContext.Item?.PDF_Header;       
+        /// <summary>
+        /// PDF Header
+        /// </summary>
+        public string PDFHeader => SiteRootContext.Item?.PDF_Header;
+        /// <summary>
+        /// PDF Footer
+        /// </summary>
         public string PDFFooter => SiteRootContext.Item?.PDF_Footer;
-
+        /// <summary>
+        /// PDF Title
+        /// </summary>
         public string PDFTitle => GlassModel?.Title;
+        /// <summary>
+        /// PDF SubTitle
+        /// </summary>
         public string PDFSubTitle => GlassModel?.Body;
 
     }

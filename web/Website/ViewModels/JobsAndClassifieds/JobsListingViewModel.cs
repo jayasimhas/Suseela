@@ -26,15 +26,38 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
         }
-
+        /// <summary>
+        /// Job Tiles For Listing
+        /// </summary>
         public List<IJobTile> JobTiles => GetJobTiles();
+        /// <summary>
+        /// Listing page Title
+        /// </summary>
         public string Title => GlassModel?.Title;
+        /// <summary>
+        /// Listing Page SubTitle
+        /// </summary>
         public string SubTitle => GlassModel?.Sub_Title;
+        /// <summary>
+        /// Published Text
+        /// </summary>
         public string PublishedText => TextTranslator.Translate("JobsAndClassifieds.PublishedText");
+        /// <summary>
+        /// Next Page Link Text
+        /// </summary>
         public string NextPageText => TextTranslator.Translate("JobsAndClassifieds.NextPageText");
+        /// <summary>
+        /// Prev Page Link Text
+        /// </summary>
         public string PrevPageText => TextTranslator.Translate("JobsAndClassifieds.PrevPageText");
+        /// <summary>
+        /// No of Jobs to be displayed Per Page
+        /// </summary>
         public string NoOfJobsPerPage => !string.IsNullOrEmpty(TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage"))? TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage"):"20";
-
+        /// <summary>
+        /// Method to get All published Job Tiles
+        /// </summary>
+        /// <returns>List of Jobs</returns>
         public List<IJobTile> GetJobTiles()
         {
             List<IJobTile> jobTiles = new List<IJobTile>();
