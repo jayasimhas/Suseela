@@ -79,7 +79,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkText">Data Tool Link Text</param>
         private void GeneratePdfBody(PdfWriter writer, Document document, string pdfPageUrl, string userEmail, string DataToolLinkDesc, string DataToolLinkText)
         {
-
+           
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
                 #region For Static HTML
@@ -92,6 +92,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
                 }
                 HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
+                ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => { return true; };
                 webRequest.Method = "POST";
                 System.Net.WebClient client = new WebClient();
                 byte[] data = client.DownloadData(pdfPageUrl);
