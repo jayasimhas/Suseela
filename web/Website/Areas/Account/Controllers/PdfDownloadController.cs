@@ -95,6 +95,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => { return true; };
                 webRequest.Method = "POST";
                 System.Net.WebClient client = new WebClient();
+                client.UseDefaultCredentials = true;
                 byte[] data = client.DownloadData(pdfPageUrl);
                 string fullPageHtml = Encoding.UTF8.GetString(data);
 
