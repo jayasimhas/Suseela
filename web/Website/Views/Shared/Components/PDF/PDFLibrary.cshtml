@@ -29,7 +29,7 @@
                     {
                         <tr>
                             <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd/MM/yyyy")</td>
-                            <td align="left">@Html.ActionLink("00", "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)&nbsp;</td>
+                            <td align="left">@Html.ActionLink(pdf.IssueNumber, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)&nbsp;</td>
                             <td align="left">
                                 @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)
                                 &nbsp;
