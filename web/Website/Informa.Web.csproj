@@ -1245,8 +1245,7 @@
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
-    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
-    <Compile Include="ViewModels\PopOuts\PdfDownloadViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />   
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedDealsModel.cs" />
