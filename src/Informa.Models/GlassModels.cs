@@ -1827,6 +1827,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Article_Medium_Slot_ID { get; set; }
         /// <summary>
+        /// The Article Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Article_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Article_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The  Article Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Article_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Article_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
         /// The Sort Order field.
         /// <para></para>
         /// <para>Field Type: Number</para>		
@@ -2126,6 +2144,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// </summary>
         [SitecoreField(IArticleConstants.Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Article_Filmstrip_Slot_ID { get; set; }
+
         /// <summary>
         /// The Article Medium Slot ID field.
         /// <para></para>
@@ -2135,6 +2154,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// </summary>
         [SitecoreField(IArticleConstants.Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Article_Medium_Slot_ID { get; set; }
+
+        /// <summary>
+        /// The Article Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Article_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Article_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The  Article Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Article_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Article_Rectangular_Slot_ID3 { get; set; }
         /// <summary>
         /// The Sort Order field.
         /// <para></para>
@@ -2431,6 +2469,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Article_Medium_Slot_IDFieldId = new ID("8af013ce-64a8-449b-83b3-ad35f2c9ee01");
         public const string Article_Medium_Slot_IDFieldName = "Article Medium Slot ID";
+
+        public static readonly ID Article_Rectangular_Slot_ID2FieldId = new ID("BD1ABC79-F4C7-4AED-83FA-2363BF2DF2B0");
+        public const string Article_Rectangular_Slot_ID2FieldName = "Article Rectangular Slot ID2";
+
+        public static readonly ID Article_Rectangular_Slot_ID3FieldId = new ID("98823F86-FC2A-49D6-B121-0ECAAD86F02E");
+        public const string Article_Rectangular_Slot_ID3FieldName = "Article Rectangular Slot ID3";
 
 
 
@@ -12406,6 +12450,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         /// </summary>
         [SitecoreField(I___BasePageConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Leaderboard_Slot_ID { get; set; }
+
+        /// <summary>
+        /// The Leaderboard Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 82af6295-2b81-4ce0-8674-f6f72f38bff6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BasePageConstants.Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Leaderboard_Slot_ID2 { get; set; }
         /// <summary>
         /// The Custom Meta Tags field.
         /// <para></para>
@@ -12508,6 +12562,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         /// </summary>
         [SitecoreField(I___BasePageConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Leaderboard_Slot_ID { get; set; }
+
+        /// <summary>
+        /// The Leaderboard Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: E52011EE-7E25-4822-871C-FD3EDFB90FFC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BasePageConstants.Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Leaderboard_Slot_ID2 { get; set; }
         /// <summary>
         /// The Custom Meta Tags field.
         /// <para></para>
@@ -12602,7 +12666,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
-
+        public static readonly ID Leaderboard_Slot_ID2FieldId = new ID("E52011EE-7E25-4822-871C-FD3EDFB90FFC");
+        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID";
 
         public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
         public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -14700,6 +14765,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Author_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Author_Rectangular_Slot_ID { get; set; }
+
         /// <summary>
         /// The Company Leaderboard Ad Zone field.
         /// <para></para>
@@ -15547,6 +15613,151 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
         string PDF_Footer { get; set; }
+        /// <summary>
+        /// The Author Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Author Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Author Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Leaderboard_Slot_ID2 { get; set; }
+
+
+
+        /// <summary>
+        /// The Company Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Company Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Company Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Leaderboard_Slot_ID2 { get; set; }
+
+
+
+        /// <summary>
+        /// The Deal Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Deal Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Deal Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Leaderboard_Slot_ID2 { get; set; }
+
+
+        /// <summary>
+        /// The Global article Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Global article Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Global article Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Leaderboard_Slot_ID2 { get; set; }
+
+
+        /// <summary>
+        /// The Global Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Global Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Global Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Leaderboard_Slot_ID2 { get; set; }
     }
 
 
@@ -15623,6 +15834,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Author_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Author_Rectangular_Slot_ID { get; set; }
         /// <summary>
+        /// The Author Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Author Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Author Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Author_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Author_Global_Leaderboard_Slot_ID2 { get; set; }
+        /// <summary>
         /// The Company Leaderboard Ad Zone field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -15658,6 +15896,34 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Company_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Company_Rectangular_Slot_ID { get; set; }
+
+        /// <summary>
+        /// The Company Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Company Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Company Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Company_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Global_Leaderboard_Slot_ID2 { get; set; }
         /// <summary>
         /// The Deal Rectangular Ad Zone field.
         /// <para></para>
@@ -15667,6 +15933,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Deal_Rectangular_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Deal_Rectangular_Ad_Zone { get; set; }
+       
         /// <summary>
         /// The Deal Rectangular Slot ID field.
         /// <para></para>
@@ -15676,6 +15943,34 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Deal_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Deal_Rectangular_Slot_ID { get; set; }
+
+        /// <summary>
+        /// The Deal Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Deal Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Deal Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Deal_Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Deal_Global_Leaderboard_Slot_ID2 { get; set; }
         /// <summary>
         /// The Email Ad Domain field.
         /// <para></para>
@@ -15730,6 +16025,60 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Global_Leaderboard_Slot_ID { get; set; }
+        /// <summary>
+        /// The Global article Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Global article Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Global article Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Article_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Article_Leaderboard_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Global Rectangular Slot ID2 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Rectangular_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Rectangular_Slot_ID2 { get; set; }
+        /// <summary>
+        /// The Global Rectangular Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Rectangular_Slot_ID3FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Rectangular_Slot_ID3 { get; set; }
+        /// <summary>
+        /// The Global Leaderboard Slot ID3 field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Global_Leaderboard_Slot_ID2 { get; set; }
         /// <summary>
         /// The Email Footer Navigation field.
         /// <para></para>
@@ -16488,6 +16837,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Author_Rectangular_Slot_IDFieldId = new ID("ed6e6c2d-925b-49e7-98f9-db3177c0b29b");
         public const string Author_Rectangular_Slot_IDFieldName = "Author Rectangular Slot ID";
 
+        public static readonly ID Author_Global_Rectangular_Slot_ID2FieldId = new ID("090DF199-EC12-4CCE-8C6E-87BD4AEF225C");
+        public const string Author_Global_Rectangular_Slot_ID2FieldName = "Author Global Rectangular Slot ID2";
+
+        public static readonly ID Author_Global_Rectangular_Slot_ID3FieldId = new ID("BA593ED4-2F77-48C0-8236-229C6F476798");
+        public const string Author_Global_Rectangular_Slot_ID3FieldName = "Author Global Rectangular Slot ID3";
+
+        public static readonly ID Author_Global_Leaderboard_Slot_ID2FieldId = new ID("6DC5AA66-4FFE-49E7-BDB9-3D97ED4A6E4F");
+        public const string Author_Global_Leaderboard_Slot_ID2FieldName = "Author Global Leaderboard Slot ID2";
 
 
         public static readonly ID Company_Leaderboard_Ad_ZoneFieldId = new ID("b0b01376-d608-4a95-a402-7e6a5b6f31ba");
@@ -16508,7 +16865,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Company_Rectangular_Slot_IDFieldId = new ID("9cabd426-9102-406f-82a8-592cf1d42362");
         public const string Company_Rectangular_Slot_IDFieldName = "Company Rectangular Slot ID";
 
+        public static readonly ID Company_Global_Rectangular_Slot_ID2FieldId = new ID("5610544E-A8AD-4527-A391-AD6989D4ED8D");
+        public const string Company_Global_Rectangular_Slot_ID2FieldName = "Company Global Rectangular Slot ID2";
 
+        public static readonly ID Company_Global_Rectangular_Slot_ID3FieldId = new ID("0349288B-6DC3-4198-9583-325FA0CC46A5");
+        public const string Company_Global_Rectangular_Slot_ID3FieldName = "Company Global Rectangular Slot ID3";
+
+        public static readonly ID Company_Global_Leaderboard_Slot_ID2FieldId = new ID("562C66DC-B559-4C84-8618-A3E807535DEF");
+        public const string Company_Global_Leaderboard_Slot_ID2FieldName = "Company Global Leaderboard Slot ID2";
 
         public static readonly ID Deal_Rectangular_Ad_ZoneFieldId = new ID("bc8e7904-1db8-4dd4-b353-e42648818854");
         public const string Deal_Rectangular_Ad_ZoneFieldName = "Deal Rectangular Ad Zone";
@@ -16518,7 +16882,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Deal_Rectangular_Slot_IDFieldId = new ID("9d353af5-ab32-4b9f-8ebb-c499395270a1");
         public const string Deal_Rectangular_Slot_IDFieldName = "Deal Rectangular Slot ID";
 
+        public static readonly ID Deal_Global_Rectangular_Slot_ID2FieldId = new ID("059D2D5E-D678-4F90-9315-2286DA416C18");
+        public const string Deal_Global_Rectangular_Slot_ID2FieldName = "Deal Global Rectangular Slot ID2";
 
+        public static readonly ID Deal_Global_Rectangular_Slot_ID3FieldId = new ID("77826ED8-D342-4CF0-B84C-46E6095A78B1");
+        public const string Deal_Global_Rectangular_Slot_ID3FieldName = "Deal Global Rectangular Slot ID3";
+
+        public static readonly ID Deal_Global_Leaderboard_Slot_ID2FieldId = new ID("5749CFA8-BB71-4A58-BB5B-9A56EFD6FD08");
+        public const string Deal_Global_Leaderboard_Slot_ID2FieldName = "Deal Global Leaderboard Slot ID2";
 
         public static readonly ID Email_Ad_DomainFieldId = new ID("a53fa92e-913b-46d2-ba54-be48e04156fc");
         public const string Email_Ad_DomainFieldName = "Email Ad Domain";
@@ -16538,6 +16909,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
         public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
 
+        public static readonly ID Global_Article_Rectangular_Slot_ID2FieldId = new ID("B1261BC8-2661-473E-A253-075AB64F1017");
+        public const string Global_Article_Rectangular_Slot_ID2FieldName = "Global Article Rectangular Slot ID2";
+
+        public static readonly ID Global_Article_Rectangular_Slot_ID3FieldId = new ID("EB00E7BC-E1BF-41C3-AAAD-013E11EDC66E");
+        public const string Global_Article_Rectangular_Slot_ID3FieldName = "Global Article Rectangular Slot ID3";
+
+        public static readonly ID Global_Article_Leaderboard_Slot_ID2FieldId = new ID("DF49166C-5138-4366-A121-4E6D2BF36DEF");
+        public const string Global_Article_Leaderboard_Slot_ID2FieldName = "Global Article Leaderboard Slot ID2";
+
 
 
         public static readonly ID Global_Leaderboard_Ad_ZoneFieldId = new ID("016b3e1c-33ef-4029-9cbd-9cf36657f5fe");
@@ -16547,6 +16927,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
         public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
+
+        public static readonly ID Global_Rectangular_Slot_ID2FieldId = new ID("751091D8-25FB-4A9E-B668-CF7E74FD4589");
+        public const string Global_Rectangular_Slot_ID2FieldName = "Global Rectangular Slot ID2";
+
+        public static readonly ID Global_Rectangular_Slot_ID3FieldId = new ID("0FA8FAD0-2266-40CC-A1A6-1C7926C1F069");
+        public const string Global_Rectangular_Slot_ID3FieldName = "Global Rectangular Slot ID3";
+
+        public static readonly ID Global_Leaderboard_Slot_ID2FieldId = new ID("DC9F6DDF-32E9-4D93-86F1-C03CCAB7EA71");
+        public const string Global_Leaderboard_Slot_ID2FieldName = "Global Leaderboard Slot ID2";
 
 
 

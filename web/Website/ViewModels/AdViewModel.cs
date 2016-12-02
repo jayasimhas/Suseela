@@ -33,8 +33,14 @@ namespace Informa.Web.ViewModels
 
                 RectangularSlotId = articleModel.Article_Medium_Slot_ID.NullIfNoContent() ??
                                     SiteRootContext.Item?.Company_Rectangular_Slot_ID;
+                RectangularSlotId2 = articleModel.Article_Rectangular_Slot_ID2.NullIfNoContent() ??
+                                   SiteRootContext.Item?.Global_Article_Rectangular_Slot_ID2;
+                RectangularSlotId3 = articleModel.Article_Rectangular_Slot_ID3.NullIfNoContent() ??
+                                   SiteRootContext.Item?.Global_Article_Rectangular_Slot_ID3;
                 LeaderboardSlotId = articleModel.Leaderboard_Slot_ID.NullIfNoContent() ??
                                     SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = articleModel.Leaderboard_Slot_ID2.NullIfNoContent() ??
+                                    SiteRootContext.Item?.Global_Leaderboard_Slot_ID2;
                 FilmstripSlotId = articleModel.Article_Filmstrip_Slot_ID.NullIfNoContent() ??
                                   SiteRootContext.Item?.Global_Article_Filmstrip_Slot_ID;
             } else if (AdComponentModel != null)
@@ -47,27 +53,40 @@ namespace Informa.Web.ViewModels
             {
                 RectangularAdZone = SiteRootContext.Item?.Company_Rectangular_Ad_Zone;
                 RectangularSlotId = SiteRootContext.Item?.Company_Rectangular_Slot_ID;
+                RectangularSlotId2 = SiteRootContext.Item?.Company_Global_Rectangular_Slot_ID2;
+                RectangularSlotId3 = SiteRootContext.Item?.Company_Global_Rectangular_Slot_ID3;
                 LeaderboardAdZone = SiteRootContext.Item?.Company_Leaderboard_Ad_Zone;
                 LeaderboardSlotId = SiteRootContext.Item?.Company_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = SiteRootContext.Item?.Company_Global_Leaderboard_Slot_ID2;
             }
             else if (GlassModel is IDeal_Page)
             {
                 RectangularAdZone = SiteRootContext.Item?.Deal_Rectangular_Ad_Zone;
                 RectangularSlotId = SiteRootContext.Item?.Deal_Rectangular_Slot_ID;
+                RectangularSlotId2 = SiteRootContext.Item?.Deal_Global_Rectangular_Slot_ID2;
+                RectangularSlotId3 = SiteRootContext.Item?.Deal_Global_Rectangular_Slot_ID3;
+                LeaderboardSlotId = SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = SiteRootContext.Item?.Deal_Global_Leaderboard_Slot_ID2;
             }
             else if (GlassModel is IAuthor_Page)
             {
                 RectangularAdZone = SiteRootContext.Item?.Author_Rectangular_Ad_Zone;
                 RectangularSlotId = SiteRootContext.Item?.Author_Rectangular_Slot_ID;
+                RectangularSlotId2 = SiteRootContext.Item?.Author_Global_Rectangular_Slot_ID2;
+                RectangularSlotId3 = SiteRootContext.Item?.Author_Global_Rectangular_Slot_ID3;
                 LeaderboardAdZone = SiteRootContext.Item?.Author_Leaderboard_Ad_Zone;
                 LeaderboardSlotId = SiteRootContext.Item?.Author_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = SiteRootContext.Item?.Author_Global_Leaderboard_Slot_ID2;
             }
             else //Default to Global Article and Global Leaderboard
             {
                 RectangularAdZone = SiteRootContext.Item?.Global_Article_Ad_Zone;
                 RectangularSlotId = SiteRootContext.Item?.Global_Article_Medium_Slot_ID;
+                RectangularSlotId2 = SiteRootContext.Item?.Global_Rectangular_Slot_ID2;
+                RectangularSlotId3 = SiteRootContext.Item?.Global_Rectangular_Slot_ID3;
                 LeaderboardAdZone = SiteRootContext.Item?.Global_Leaderboard_Ad_Zone;
                 LeaderboardSlotId = SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = SiteRootContext.Item?.Global_Leaderboard_Slot_ID2;
             }
         }
 
@@ -101,8 +120,11 @@ namespace Informa.Web.ViewModels
 
         public string RectangularAdZone { get; private set; }
         public string RectangularSlotId { get; private set; }
+        public string RectangularSlotId2 { get; private set; }
+        public string RectangularSlotId3 { get; private set; }
         public string LeaderboardAdZone { get; private set; }
         public string LeaderboardSlotId { get; private set; }
+        public string LeaderboardSlotId2 { get; private set; }
         public string FilmstripAdZone { get; private set; }
         public string FilmstripSlotId { get; private set; }
 
@@ -112,7 +134,11 @@ namespace Informa.Web.ViewModels
         public string AdvertisementText => TextTranslator.Translate("Ads.Advertisement");
         
         public bool IsValidRectangularAd => !string.IsNullOrEmpty(RectangularAdZone) && !string.IsNullOrEmpty(RectangularSlotId);
+
+        public bool IsValidRectangularAd2 => !string.IsNullOrEmpty(RectangularAdZone) && !string.IsNullOrEmpty(RectangularSlotId2);
+        public bool IsValidRectangularAd3 => !string.IsNullOrEmpty(RectangularAdZone) && !string.IsNullOrEmpty(RectangularSlotId3);
         public bool IsValidLeaderboardAd => !string.IsNullOrEmpty(LeaderboardAdZone) && !string.IsNullOrEmpty(LeaderboardSlotId);
+        public bool IsValidLeaderboardAd2 => !string.IsNullOrEmpty(LeaderboardAdZone) && !string.IsNullOrEmpty(LeaderboardSlotId);
         public bool IsValidFilmstripAd => !string.IsNullOrEmpty(FilmstripAdZone) && !string.IsNullOrEmpty(FilmstripSlotId);
         
     }
