@@ -109,7 +109,7 @@ namespace Informa.Library.CustomSitecore.Fields
                     }
                     if (item != null)
                     {
-                       //Feching Ancestor of Selected Item and replaceing with Token
+                        //Feching Ancestor of Selected Item and replaceing with Token
                         //var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == ItemIdResolver.GetItemIdByKey("VerticalTemplate"));
                         var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
                         

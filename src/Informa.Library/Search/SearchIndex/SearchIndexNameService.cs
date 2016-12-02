@@ -18,7 +18,7 @@
         protected readonly IGlobalSitecoreService GlobalService;
 
         public SearchIndexNameService(ISitecoreContext sitecoreContext, ISiteRootContext siterootContext, IVerticalRootContext verticalRootContext
-            ,IGlobalSitecoreService globalService)
+            , IGlobalSitecoreService globalService)
         {
             SitecoreContext = sitecoreContext;
             SiteRootContext = siterootContext;
@@ -37,7 +37,7 @@
                 //return string.Format(SiteRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
                 return SiteRootContext.Item.Search_Index_Name;
             }
-            else if(VerticalRootContext?.Item?.Search_Index_Name != null)
+            else if (VerticalRootContext?.Item?.Search_Index_Name != null)
             {
                 //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
                 return VerticalRootContext.Item.Search_Index_Name;
@@ -59,7 +59,7 @@
 
         public string GetVerticalRootFromQuerystring()
         {
-           return HttpContext.Current.Request.QueryString["verticalroot"];
+            return HttpContext.Current.Request.QueryString["verticalroot"];
         }
 
         /// <summary>

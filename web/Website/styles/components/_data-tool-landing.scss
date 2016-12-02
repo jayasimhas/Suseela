@@ -333,3 +333,129 @@
 div#feedbacklite.fbl_r{
 	top: 65px !important;
 }
+.contentRecomm-article{
+	border-bottom: 1px solid #d1d3d4 !important;
+	margin-bottom: 1.5rem;
+	clear: both;
+}
+.contentRecommendations {
+	clear: both;
+	.article-related-content{
+		margin-bottom:0;
+	}	
+}
+.ContentRecomm-ReadNext {
+	clear: both;
+	h2{
+		margin-bottom: 1.5rem;
+	}
+	.section-article{
+		width: 28%;
+		float: left;
+		margin: 0 2em 0 0;
+	}
+	@include breakpoint('small') {
+		.section-article{
+		width: 100%;
+		float: left;
+		margin: 0 0 0 0;
+		}
+	}
+	@include breakpoint('medium-small') {
+		.section-article{
+		width: 100%;
+		float: left;
+		margin: 0 0 0 0;
+		}
+	}
+}
+.ContentRecomm-RelatedContent {
+	clear: both;
+	h2{
+		margin-bottom: 1.5rem;
+	}
+	.section-article{
+		width: 32.3%;
+		float: left;
+		padding: 0 2em 0 0;	
+		border-right: #d1d3d4 1px solid;
+		&:nth-child(2n+1) {
+			margin-left: 2rem;
+		}
+		&:last-child{
+			padding-left:2em !important;
+			padding-right: 0 !important;
+			border-right: 0 !important;
+		}
+	}
+	@include breakpoint('medium') {
+		.section-article{
+			width: 31%
+		}
+	}
+	@include breakpoint('small') {
+		.section-article{
+		width: 100%;
+		float: left;
+		padding: 0 0 0 0;	
+		border-right: 0;
+		margin: 0;
+			&:nth-child(2n+1) {
+			margin-left: 0;
+			}
+			&:last-child{
+			padding-left:0 !important;
+			padding-right: 0 !important;
+			border-right: 0 !important;
+			}
+		}
+	}
+	
+	@include breakpoint('medium-small') {
+		.section-article{
+		width: 100%;
+		float: left;
+		padding: 0 0 0 0;	
+		border-right: 0;
+		margin: 0;
+			&:nth-child(2n+1) {
+			margin-left: 0;
+			}
+			&:last-child{
+			padding-left:0 !important;
+			padding-right: 0 !important;
+			border-right: 0 !important;
+			}
+		}
+	}
+}
+
+.ContentRecomm-RelatedContent-vertical {
+	clear: both;
+	h2{
+		margin-bottom: 1.5rem;
+	}
+	.section-article{
+		.section-article-img{
+			float: left;
+			width: 29%;
+			img{
+				width: 100%;
+			}
+		}
+		.section-article-text{
+			float: left;
+			margin-left: 2em;
+			width: 60%;
+		}
+		width: 100%;
+		float: left;
+		margin: 0 2em 0 0;	
+		border-bottom: #d1d3d4 1px solid;
+		padding-bottom: 5px;
+		padding-top:15px;
+		&:last-child{
+			border-bottom: 0 !important;
+		}
+	}
+}

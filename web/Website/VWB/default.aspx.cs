@@ -23,96 +23,96 @@ using System.Linq;
 
 namespace Elsevier.Web.VWB
 {
-	public struct ItemStruct
-	{
-		public string Name { get; set; }
-		public Guid ID { get; set; }
-	}
+    public struct ItemStruct
+    {
+        public string Name { get; set; }
+        public Guid ID { get; set; }
+    }
 
-	/// <summary>
-	/// If a non-button control on this page should cause the report to be built, 
-	/// it should redirect on PostBack. If a button should not build the report, 
-	/// add it to the blacklist.
-	/// </summary>
-	public partial class _default : Page
-	{
-		private VwbQuery _vwbQuery;
-		private ReportBuilder _reportBuilder;
-		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
-		private const string IssuePageUrl = "/vwb/AddIssue?id=";
+    /// <summary>
+    /// If a non-button control on this page should cause the report to be built, 
+    /// it should redirect on PostBack. If a button should not build the report, 
+    /// add it to the blacklist.
+    /// </summary>
+    public partial class _default : Page
+    {
+        private VwbQuery _vwbQuery;
+        private ReportBuilder _reportBuilder;
+        private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
+        private const string IssuePageUrl = "/vwb/AddIssue?id=";
         private Sitecore.Data.Database dbMaster = Sitecore.Data.Database.GetDatabase("master");
 
         protected void Page_Load(object sender, EventArgs e)
-		{
-			imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
-			imgLogo.Attributes.Add("style", "width:317px;height:122px");
+        {
+            imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+            imgLogo.Attributes.Add("style", "width:317px;height:122px");
 
-			if (!Sitecore.Context.User.IsAuthenticated)
-			{
-				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
-			}
-			if (IsPostBack)
-			{
+            if (!Sitecore.Context.User.IsAuthenticated)
+            {
+                Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
+            }
+            if (IsPostBack)
+            {
                 //let the event handlers for the control causing postback
                 //ddlVerticals.SelectedIndex = ddlVerticals.Items.IndexOf(ddlVerticals.Items.FindByValue(hdnSelectedVertical.Value));
                 return;
-			}
-            
+            }
+
             //FillPublicationsList();
             FillVerticals();
 
 
             if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
-			{
-				RunQuery(true);
-			}
+            {
+                RunQuery(true);
+            }
 
-			const string defaultTime = "12:00 AM";
-			txtStartTime.Text = defaultTime;
-			txtEndTime.Text = defaultTime;
+            const string defaultTime = "12:00 AM";
+            txtStartTime.Text = defaultTime;
+            txtEndTime.Text = defaultTime;
 
-			UpdateFields();
-			BuildOptionalColumnDropdown();
-			BuildExistingIssuesList();
-		}
+            UpdateFields();
+            BuildOptionalColumnDropdown();
+            BuildExistingIssuesList();
+        }
 
-		protected void Page_Init(object sender, EventArgs e)
-		{
-			_vwbQuery = new VwbQuery(Request);
-			if (!IsPostBack)
-			{
-				if (_vwbQuery.ShouldRun)
-				{
-					BuildReport();
-				}
-			}
-		}
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            _vwbQuery = new VwbQuery(Request);
+            if (!IsPostBack)
+            {
+                if (_vwbQuery.ShouldRun)
+                {
+                    BuildReport();
+                }
+            }
+        }
 
-		public Control GetPostBackControl()
-		{
-			Control control = null;
+        public Control GetPostBackControl()
+        {
+            Control control = null;
 
-			string ctrlname = Request.Params.Get("__EVENTTARGET");
-			if (!string.IsNullOrEmpty(ctrlname))
-				return FindControl(ctrlname);
+            string ctrlname = Request.Params.Get("__EVENTTARGET");
+            if (!string.IsNullOrEmpty(ctrlname))
+                return FindControl(ctrlname);
 
-			List<string> names = new List<string>();
-			foreach (string s in Request.Form)
-				names.Add(s);
+            List<string> names = new List<string>();
+            foreach (string s in Request.Form)
+                names.Add(s);
 
-			var buttons = names
-					.Where(a => a.Contains("btn"));
+            var buttons = names
+                                            .Where(a => a.Contains("btn"));
 
-			if (buttons.Any())
-				return FindControl(buttons.First());
+            if (buttons.Any())
+                return FindControl(buttons.First());
 
-			return null;
-		}
+            return null;
+        }
         /// <summary>
         /// Poplates dropdown with available publications for the given vertical
         /// </summary>
         private void FillPublicationsList(string selectedVal)
-		{
+        {
             Sitecore.Data.ID VerticalID;
             if (Sitecore.Data.ID.TryParse(selectedVal, out VerticalID))
             {
@@ -143,7 +143,7 @@ namespace Elsevier.Web.VWB
                 ddlPublications.DataTextField = "Name";
                 ddlPublications.DataBind();
             }
-		}
+        }
 
         /// <summary>
         /// Poplates dropdown with available verticals
@@ -151,7 +151,7 @@ namespace Elsevier.Web.VWB
         private void FillVerticals()
         {
             var childItems = dbMaster.GetItem("/sitecore/content/").Children;
-            if(childItems != null && childItems.Any())
+            if (childItems != null && childItems.Any())
             {
                 var verticalItems = childItems.Where(p => p.TemplateName.Equals("Vertical Root")).Select(s => new { Sitename = s.Name, SiteId = s.ID.ToString() });
                 if (verticalItems.Any())
@@ -163,250 +163,250 @@ namespace Elsevier.Web.VWB
                     ddlVerticals.Items.Insert(0, new ListItem("Select Verticals", "NA"));
                 }
             }
-            
+
 
         }
 
         private static int? GetMaxNumResults()
-		{
-			int count = 250;
-			try
-			{
-				count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
-			}
-			catch { }
-			return count;
-		}
+        {
+            int count = 250;
+            try
+            {
+                count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
+            }
+            catch { }
+            return count;
+        }
 
-		private void UpdateFields()
-		{
-			bool startDate = false;
-			if (_vwbQuery.StartDate != null && _vwbQuery.StartDate != DateTime.MinValue)
-			{
-				startDate = true;
+        private void UpdateFields()
+        {
+            bool startDate = false;
+            if (_vwbQuery.StartDate != null && _vwbQuery.StartDate != DateTime.MinValue)
+            {
+                startDate = true;
 
-				txtStart.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.StartDate);
-				txtStartTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.StartDate);
-				EnableDate();
-			}
+                txtStart.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.StartDate);
+                txtStartTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.StartDate);
+                EnableDate();
+            }
 
-			bool endDate = false;
-			if (_vwbQuery.EndDate != null && _vwbQuery.EndDate.Value.Year != 9999)
-			{
-				endDate = true;
+            bool endDate = false;
+            if (_vwbQuery.EndDate != null && _vwbQuery.EndDate.Value.Year != 9999)
+            {
+                endDate = true;
 
-				txtEnd.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.EndDate);
-				txtEndTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.EndDate);
-				EnableDate();
-			}
+                txtEnd.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.EndDate);
+                txtEndTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.EndDate);
+                EnableDate();
+            }
 
-			if (!startDate && !endDate)
-			{
-				rbNoDate.Checked = true;
+            if (!startDate && !endDate)
+            {
+                rbNoDate.Checked = true;
 
-			}
+            }
 
-			if (_vwbQuery.InProgressValue)
-			{
-				chkShowInProgressArticles.Checked = true;
-			}
-			
-			if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false && _vwbQuery.VerticalRoot != null)
-			{
+            if (_vwbQuery.InProgressValue)
+            {
+                chkShowInProgressArticles.Checked = true;
+            }
+
+            if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false && _vwbQuery.VerticalRoot != null)
+            {
                 FillPublicationsList(_vwbQuery.VerticalRoot);
                 ddlVerticals.Items.FindByValue(_vwbQuery.VerticalRoot).Selected = true;
                 List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
-				foreach (var item in codes)
-				{
-					ddlPublications.Items.FindByValue(item).Selected = true;
-				}
-			}
-		}
+                foreach (var item in codes)
+                {
+                    ddlPublications.Items.FindByValue(item).Selected = true;
+                }
+            }
+        }
 
-		protected void EnableDate()
-		{
-			rbDateRange.Checked = true;
-			txtStart.Enabled = true;
-			txtEnd.Enabled = true;
-			txtEndTime.Enabled = true;
-			txtStartTime.Enabled = true;
-		}
+        protected void EnableDate()
+        {
+            rbDateRange.Checked = true;
+            txtStart.Enabled = true;
+            txtEnd.Enabled = true;
+            txtEndTime.Enabled = true;
+            txtStartTime.Enabled = true;
+        }
 
-		public void BuildReport()
-		{
-			_reportBuilder = new ReportBuilder(this, _vwbQuery);
-			tblResults.EnableViewState = false;
-			_reportBuilder.BuildTable(tblResults);
-		}
+        public void BuildReport()
+        {
+            _reportBuilder = new ReportBuilder(this, _vwbQuery);
+            tblResults.EnableViewState = false;
+            _reportBuilder.BuildTable(tblResults);
+        }
 
-		protected void RunReport(object sender, EventArgs e)
-		{
-			var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
-			if (pubCount == 0)
-			{
-				lblMsg.Text = "You must select at least one publication";
-				lblMsg.ForeColor = System.Drawing.Color.Red;
-				return;
-			}
-			else if (pubCount > 1 && rbNoDate.Checked)
-			{
-				lblMsg.Text = "You must specify a date range when selecting more than one publication";
-				lblMsg.ForeColor = System.Drawing.Color.Red;
-				return;
-			}
-			RunQuery(true);
-		}
+        protected void RunReport(object sender, EventArgs e)
+        {
+            var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+            if (pubCount == 0)
+            {
+                lblMsg.Text = "You must select at least one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else if (pubCount > 1 && rbNoDate.Checked)
+            {
+                lblMsg.Text = "You must specify a date range when selecting more than one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            RunQuery(true);
+        }
 
-		private void RunQuery(bool execute)
-		{
-			var q = _vwbQuery.Clone();
-			q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
-			q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
-			q.InProgressValue = chkShowInProgressArticles.Checked;
+        private void RunQuery(bool execute)
+        {
+            var q = _vwbQuery.Clone();
+            q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
+            q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
+            q.InProgressValue = chkShowInProgressArticles.Checked;
 
-			q.ShouldRun = execute;
+            q.ShouldRun = execute;
 
-			List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-			q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
+            List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
             hdnSelectedPubs.Value = string.Join(",", selected.Select(s => s.Value));
             q.NumResultsValue = GetMaxNumResults();
-            if(ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA")
+            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA")
                 q.VerticalRoot = ddlVerticals.SelectedValue;
-			RedirectTo(q);
-		}
+            RedirectTo(q);
+        }
 
-		protected DateTime? GetDateValue(string date, string time)
-		{
-			if (string.IsNullOrEmpty(date))
-				return null;
+        protected DateTime? GetDateValue(string date, string time)
+        {
+            if (string.IsNullOrEmpty(date))
+                return null;
 
-			DateTime dt;
-			string formattedDate = (string.IsNullOrEmpty(time)) ? date : string.Format("{0} {1}", date, time);
-			bool validStart = DateTime.TryParse(formattedDate, out dt);
-			if (validStart)
-				return dt;
-			else
-				return null;
-		}
+            DateTime dt;
+            string formattedDate = (string.IsNullOrEmpty(time)) ? date : string.Format("{0} {1}", date, time);
+            bool validStart = DateTime.TryParse(formattedDate, out dt);
+            if (validStart)
+                return dt;
+            else
+                return null;
+        }
 
-		/// <summary>
-		/// Populates ddColumns with all columns not already spoken for in generated report
-		/// </summary>
-		protected void BuildOptionalColumnDropdown()
-		{
-			ddColumns.Items.Add("Add New Field...");
-			foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
-			{
-				ddColumns.Items.Add(new ListItem(column.GetHeader(), column.Key()));
-			}
-		}
+        /// <summary>
+        /// Populates ddColumns with all columns not already spoken for in generated report
+        /// </summary>
+        protected void BuildOptionalColumnDropdown()
+        {
+            ddColumns.Items.Add("Add New Field...");
+            foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
+            {
+                ddColumns.Items.Add(new ListItem(column.GetHeader(), column.Key()));
+            }
+        }
 
-		protected string GetCurrentPageUrl()
-		{
-			bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
-			string http = httpsOn ? "https://" : "http://";
-			return http + Request.ServerVariables["SERVER_NAME"] + Request.ServerVariables["URL"];
-		}
+        protected string GetCurrentPageUrl()
+        {
+            bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
+            string http = httpsOn ? "https://" : "http://";
+            return http + Request.ServerVariables["SERVER_NAME"] + Request.ServerVariables["URL"];
+        }
 
-		public void RedirectTo(VwbQuery query)
-		{
-			Response.Redirect(GetCurrentPageUrl() + "?" +
-								query.GetQueryString());
-		}
+        public void RedirectTo(VwbQuery query)
+        {
+            Response.Redirect(GetCurrentPageUrl() + "?" +
+                                                                                            query.GetQueryString());
+        }
 
-		protected void PublicationSelected(object sender, EventArgs e)
-		{
-			RunQuery(false);
-		}
+        protected void PublicationSelected(object sender, EventArgs e)
+        {
+            RunQuery(false);
+        }
 
-		protected void AddColumn(object sender, EventArgs e)
-		{
-			if (ColumnFactory.GetColumnFactory().GetColumn(ddColumns.SelectedValue) == null) return;
-			_vwbQuery.ColumnKeysInOrder.Add(ddColumns.SelectedValue);
-			RedirectTo(_vwbQuery);
-		}
+        protected void AddColumn(object sender, EventArgs e)
+        {
+            if (ColumnFactory.GetColumnFactory().GetColumn(ddColumns.SelectedValue) == null) return;
+            _vwbQuery.ColumnKeysInOrder.Add(ddColumns.SelectedValue);
+            RedirectTo(_vwbQuery);
+        }
 
-		protected void ResetReport(object sender, EventArgs e)
-		{
-			Response.Redirect(GetCurrentPageUrl());
-		}
+        protected void ResetReport(object sender, EventArgs e)
+        {
+            Response.Redirect(GetCurrentPageUrl());
+        }
 
-		protected void Logout(object sender, EventArgs e)
-		{
-			CacheManager.ClearSecurityCache(Sitecore.Context.User.Name);
-			RecentDocuments.Remove(Sitecore.Context.User.Name);
-			Sitecore.Shell.Framework.Security.Abandon();
-			string currentTicketId = TicketManager.GetCurrentTicketId();
-			if (string.IsNullOrEmpty(currentTicketId))
-				return; TicketManager.RemoveTicket(currentTicketId);
+        protected void Logout(object sender, EventArgs e)
+        {
+            CacheManager.ClearSecurityCache(Sitecore.Context.User.Name);
+            RecentDocuments.Remove(Sitecore.Context.User.Name);
+            Sitecore.Shell.Framework.Security.Abandon();
+            string currentTicketId = TicketManager.GetCurrentTicketId();
+            if (string.IsNullOrEmpty(currentTicketId))
+                return; TicketManager.RemoveTicket(currentTicketId);
 
 
-			Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
-		}
+            Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
+        }
 
-		#region issue management
+        #region issue management
 
-		protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
-		{
-			DateTime date;
+        protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
+        {
+            DateTime date;
 
-			var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
-			{
-				PublishedDate = DateTime.TryParse(IssuePublishedDateInput.Value, out date) ? date : DateTime.Now,
-				Title = IssueTitleInput.Value,
-				ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
-			};
+            var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
+            {
+                PublishedDate = DateTime.TryParse(IssuePublishedDateInput.Value, out date) ? date : DateTime.Now,
+                Title = IssueTitleInput.Value,
+                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
+            };
 
-			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
-			{
-				var issueBuilder = scope.Resolve<IIssuesService>();
-				var result = issueBuilder.CreateIssueFromModel(model);
+            using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var issueBuilder = scope.Resolve<IIssuesService>();
+                var result = issueBuilder.CreateIssueFromModel(model);
 
-				if (result.IsSuccess)
-				{
-					BuildReport();
-					string url = $"{IssuePageUrl}{result.IssueId}";
+                if (result.IsSuccess)
+                {
+                    BuildReport();
+                    string url = $"{IssuePageUrl}{result.IssueId}";
                     ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
                 }
-				else
-				{
-					throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
-				}
-			}
-		}
+                else
+                {
+                    throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
+                }
+            }
+        }
 
-		protected void BuildExistingIssuesList()
-		{
-			ExistingIssueSelector.CssClass = "js-existing-issue";
-			ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+        protected void BuildExistingIssuesList()
+        {
+            ExistingIssueSelector.CssClass = "js-existing-issue";
+            ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
-			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
-			{
-				var issuesService = scope.Resolve<IIssuesService>();
-				var issues = issuesService.GetActiveIssues();
-				issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
-			}
-		}
+            using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var issuesService = scope.Resolve<IIssuesService>();
+                var issues = issuesService.GetActiveIssues();
+                issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
+            }
+        }
 
-		protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
-		{
-			Guid issueId;
-			if (!Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
-				Response.Redirect(Request.Url.PathAndQuery);
+        protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
+        {
+            Guid issueId;
+            if (!Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
+                Response.Redirect(Request.Url.PathAndQuery);
 
-			var sitecoreService = DependencyResolver.Current.GetService<ISitecoreServiceMaster>();
-			var issuesService = DependencyResolver.Current.GetService<IIssuesService>();
-			var issue = sitecoreService.GetItem<IIssue>(issueId);
-			if (issue == null)
-				Response.Redirect(Request.Url.PathAndQuery);
+            var sitecoreService = DependencyResolver.Current.GetService<ISitecoreServiceMaster>();
+            var issuesService = DependencyResolver.Current.GetService<IIssuesService>();
+            var issue = sitecoreService.GetItem<IIssue>(issueId);
+            if (issue == null)
+                Response.Redirect(Request.Url.PathAndQuery);
 
-			var articleIds = IssueArticleIdsInput.Value.Split('|');
-			var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
-			issuesService.AddArticlesToIssue(issueId, articlesToAdd);
-			BuildReport();
-			string url = $"{IssuePageUrl}{issueId}";
-			ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
-		}
+            var articleIds = IssueArticleIdsInput.Value.Split('|');
+            var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
+            issuesService.AddArticlesToIssue(issueId, articlesToAdd);
+            BuildReport();
+            string url = $"{IssuePageUrl}{issueId}";
+            ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
+        }
 
         #endregion
         /// <summary>
@@ -423,7 +423,7 @@ namespace Elsevier.Web.VWB
                 hdnSelectedVertical.Value = string.Empty;
                 return;
             }
-               
+
             FillPublicationsList(ddlVerticals.SelectedItem.Value);
             hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
         }

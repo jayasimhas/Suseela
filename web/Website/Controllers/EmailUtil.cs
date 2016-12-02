@@ -9,7 +9,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Helpers;
-using Informa.Web.ViewModels;
 using Informa.Web.ViewModels.Emails;
 using PluginModels;
 using Sitecore;
@@ -20,12 +19,9 @@ using Sitecore.Workflows;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.UI;
 using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
@@ -413,3 +409,4 @@ namespace Informa.Web.Controllers
         }
     }
 }
+

@@ -3,7 +3,6 @@
     <contentSearch>
       <configuration>
         <indexes hint="list:AddIndex">
-
           <index id="informa_authors_agri" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
             <param desc="name">$(id)</param>
             <param desc="core">informa_authors_agri</param>
@@ -34,6 +33,7 @@
               </crawler>
             </locations>
           </index>
+
 
         </indexes>
       </configuration>

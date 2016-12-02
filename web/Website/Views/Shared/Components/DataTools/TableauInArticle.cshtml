@@ -2,9 +2,9 @@
 
 <!--Tableau In Article  -->
 
-@if (Model != null) 
-{ 
-    <div class="article-data-tool-placeholder"> 
+@if (Model != null)
+{
+    <div class="article-data-tool-placeholder">
         <div class="data-tool-placeholder">
             <h3 class="data-tool-heading">@Model.Page_Title</h3>
             <script type="text/javascript" src="@Model.ArticleTableauJSAPIUrl"></script>
@@ -30,7 +30,7 @@
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
                 </object>
             </div>
-            
+
         </div>
     </div>
 }

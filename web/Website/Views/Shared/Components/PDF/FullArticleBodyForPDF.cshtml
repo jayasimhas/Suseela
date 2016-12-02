@@ -63,10 +63,11 @@
                             {
                                 <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                             }
-                        </span> 
+                        </p>
+
                         <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
-                            <table cellpadding="0" cellspacing="0">
-                                <tr><td height="10">&nbsp;</td></tr>
+                            <table>
+                               
                                 <tr>
                                     <td style="padding:0 10px 0 0;">
                                         @if (!string.IsNullOrEmpty(author.Twitter))
@@ -165,23 +166,12 @@
             IIPP-117 *@
         <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
             <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
-            <table width="100%">
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td align="left">
-                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.Image.ImageCaption</span>
-                    </td>
-                    <td align="right">
-                        @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
-                {
-
-                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
-                                @Model.FeaturedImageSource @Model.Image.ImageSource
-                            </span>}
-                    </td>
-                </tr>
-            </table>
-           
+            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+            {
+                <span class="article-inline-image__source">
+                    @Model.FeaturedImageSource @Model.Image.ImageSource
+                </span>}
+            <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }

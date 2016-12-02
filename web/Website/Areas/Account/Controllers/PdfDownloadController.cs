@@ -31,20 +31,12 @@ namespace Informa.Web.Areas.Account.Controllers
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                Document document = new Document();
-                if (document.PageNumber == 1)
-                {
-                    document.SetMargins(40, 40, 10, 30);
-                }
-                else
-                {
-                    document.SetMargins(40, 40, 50, 70);
-                }
+                Document document = new Document(PageSize.A4, 40, 40, 70, 70);
                 PdfWriter writer = PdfWriter.GetInstance(document, ms);
 
 
-                globalElement.CommonHeader = PdfTitle;
-                writer.PageEvent = globalElement;
+                commonFooter.HeadertText = PdfTitle;
+                writer.PageEvent = commonFooter;
                 document.Open();
 
                 GeneratePdfBody(writer, document, pdfPageUrl, userEmail, DataToolLinkDesc, DataToolLinkText);
@@ -104,8 +96,6 @@ namespace Informa.Web.Areas.Account.Controllers
                
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
-                    ["</p>"] = "</p><br /><br />",
                     ["#UserName#"] = userEmail,
                     ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
@@ -116,11 +106,10 @@ namespace Informa.Web.Areas.Account.Controllers
                 HtmlDocument ReqdDoc = new HtmlDocument();
                 ReqdDoc.LoadHtml(decodedHtml);
 
-
                 HtmlNode CommonFooterNode = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-footer']");
                 if (CommonFooterNode != null)
                 {
-                    globalElement.CommonFooter = CommonFooterNode.InnerText;
+                    commonFooter.FooterText = CommonFooterNode.InnerText;
                     CommonFooterNode.ParentNode.RemoveChild(CommonFooterNode);
                 }
                 var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
@@ -136,6 +125,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
+
                 var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
                 if (links != null && links.Any())
                 {
@@ -153,7 +143,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
-
+                
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
                 {
@@ -168,7 +158,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         {
                             foreach (var amchartNode in amchartNodes)
                             {
-                                var newNodeHtml = "<p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "\n" + DataToolLinkDesc + "\n <a style=\"color:#be1e2d; text-decoration:none;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
@@ -181,7 +171,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         {
                             foreach (var tableauNode in tableauNodes)
                             {
-                                var newNodeHtml = "<p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "\n"+DataToolLinkDesc + "\n <a style=\"color:#be1e2d; text-decoration:none;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
@@ -216,14 +206,16 @@ namespace Informa.Web.Areas.Account.Controllers
 
             return string.Empty;
         }
-
     }
 
-    public class GlobalElements : PdfPageEventHelper
+    public class CommonFooter : PdfPageEventHelper
     {
 
         // This is the contentbyte object of the writer
         PdfContentByte cb;
+
+        // we will put the final number of pages in a template
+        PdfTemplate headerTemplate, footerTemplate;
 
         // this is the BaseFont we are going to use for the header / footer
         BaseFont bf = null;
@@ -245,6 +237,8 @@ namespace Informa.Web.Areas.Account.Controllers
                 PrintTime = DateTime.Now;
                 bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 cb = writer.DirectContent;
+                headerTemplate = cb.CreateTemplate(100, 100);
+                footerTemplate = cb.CreateTemplate(50, 50);
             }
             catch (DocumentException de)
             {
@@ -272,51 +266,49 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 12);
-                cb.SetColorFill(BaseColor.DARK_GRAY);
                 cb.SetTextMatrix(document.PageSize.GetRight(40), document.PageSize.GetBottom(30));
                 cb.ShowText(PageNumber);
                 cb.EndText();
             }
-            
+
             //Adding common header from page number-2
             if (writer.PageNumber > 1)
             {
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 12);
-                cb.SetColorFill(BaseColor.DARK_GRAY);
-                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(30));
-                cb.ShowText(!string.IsNullOrEmpty(CommonHeader) ? CommonHeader : string.Empty);
+                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(35));
+                cb.ShowText(!string.IsNullOrEmpty(HeadertText) ? HeadertText : string.Empty);
                 cb.EndText();
             }
             //Adding common footer
             cb.BeginText();
             cb.SetFontAndSize(bf, 12);
-            cb.SetColorFill(BaseColor.DARK_GRAY);
             cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetBottom(30));
-            cb.ShowText(!string.IsNullOrEmpty(CommonFooter) ? CommonFooter : string.Empty);
+            cb.ShowText(!string.IsNullOrEmpty(FooterText) ? FooterText : string.Empty);
             cb.EndText();
 
             //Move the pointer and draw line to separate header section from rest of page
             if (writer.PageNumber == 1)
             {
-                cb.MoveTo(40, document.PageSize.Height - 100);
-                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 100);
+                cb.MoveTo(40, document.PageSize.Height - 110);
+                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 110);
                 cb.Stroke();
-                cb.SetColorStroke(BaseColor.DARK_GRAY);
+                cb.SetColorStroke(BaseColor.GRAY);
             }
             else
             {
                 cb.MoveTo(40, document.PageSize.Height - 50);
                 cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 50);
                 cb.Stroke();
-                cb.SetColorStroke(BaseColor.DARK_GRAY);
+                cb.SetColorStroke(BaseColor.GRAY);
             }
 
             //Move the pointer and draw line to separate footer section from rest of page
             cb.MoveTo(40, document.PageSize.GetBottom(50));
             cb.LineTo(document.PageSize.Width - 40, document.PageSize.GetBottom(50));
             cb.Stroke();
-            cb.SetColorStroke(BaseColor.DARK_GRAY);
+            cb.SetColorStroke(BaseColor.GRAY);
+            cb.NewlineText();
         }
     }
 }

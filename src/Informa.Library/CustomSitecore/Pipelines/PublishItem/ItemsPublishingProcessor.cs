@@ -109,7 +109,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
 			}
 		}
 	}
-
     public class DictionaryCacheClearer
     {
         /// <summary>

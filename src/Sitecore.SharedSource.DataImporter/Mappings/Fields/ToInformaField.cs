@@ -565,6 +565,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
             catch (WebException ex)
             {
+                XMLDataLogger.WriteLog("Image create error in  media library:" + ex.Message, "ImageLog");
                 return null;
             }
         }
@@ -3763,6 +3764,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
+            // Found
+             d.Add("foodnews_beverages", "Beverages");
             d.Add("foodnews_beverages_fruit_juices", "Beverages");
             d.Add("foodnews_beverages_fruit_juices_passion_fruit", "Passion Fruit Juice");
             d.Add("foodnews_beverages_fruit_juices_cranberry", "Cranberry Juice");

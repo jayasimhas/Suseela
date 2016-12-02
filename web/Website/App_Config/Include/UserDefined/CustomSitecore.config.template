@@ -252,7 +252,8 @@ But you can also use "patch:attribute" for clarity:
       <!-- Master ID and Password Settings -->
       <setting name="MasterId" value="${MasterId}"/>
       <setting name="MasterPassword" value="${MasterPassword}" />
-      
+
+
       <!-- ExactTarget Settings -->
       <setting name="ExactTarget.UseSandbox" value="${ExactTarget.UseSandbox}" />
       <setting name="ExactTarget.ClientId" value="${ExactTarget.ClientId}" />

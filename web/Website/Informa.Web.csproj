@@ -239,8 +239,8 @@
       <HintPath>..\..\lib\Sitecore\Netbiscuits.OnPremise.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="NWebsec, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NWebsec.4.2.0\lib\45\NWebsec.dll</HintPath>
@@ -1230,8 +1230,8 @@
     <Compile Include="ViewModels\Emails\FeaturedArticleMultiColumnViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
-    <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
+    <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
@@ -1381,7 +1381,6 @@
     <Content Include="amcharts\amcharts.js" />
     <Content Include="amcharts\data\AMChartData.js" />
     <Content Include="amcharts\data\JsonDataFile.js" />
-    <Content Include="amcharts\data\LatestChartData.js" />
     <Content Include="amcharts\funnel.js" />
     <Content Include="amcharts\gantt.js" />
     <Content Include="amcharts\gauge.js" />
@@ -1747,6 +1746,7 @@
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\myview-settings.js" />
     <Content Include="js\components\pagination.js" />
+    <Content Include="js\components\personalisation.js" />
     <Content Include="js\components\save-search-component.js" />
     <Content Include="js\components\video-mini.js" />
     <Content Include="js\controllers\analytics-controller.js" />
@@ -2170,15 +2170,18 @@
     <Content Include="Views\Shared\Components\DataTools\TableauInArticle.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobDetails.cshtml" />
     <Content Include="Views\JobsAndClassifieds\JobsListing.cshtml" />
-    <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
-    <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
-    <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
-    <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
-    <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
-    <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
-    <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedArticleMultiColumn.cshtml" />
     <Content Include="Views\EmailComponents\NewsletterGreeting.cshtml" />
+    <Content Include="Views\EmailComponents\PersonalizedEmailContent.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\FullArticleBodyForPDF.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\ManuallyCuratedPDF.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFLibrary.cshtml" />
+    <Content Include="Views\Shared\PopOuts\DownloadPdf.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFClassifieds.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PDFRelatedArticles.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardFooterAd.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd2.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd3.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
