@@ -46,6 +46,9 @@
             @include breakpoint('large') {
                 width: 70%;
             }
+            @include breakpoint('medium') {
+                width: 100%;
+            }
         }
         margin-right: 12px;
     }
@@ -94,6 +97,9 @@
             /* Supposedly for iPad */
             @include breakpoint('large') {
                 padding-right:20px;
+            }
+             @include breakpoint('medium') {
+                padding-right:0px;
             }
         }
 
