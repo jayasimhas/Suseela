@@ -16,16 +16,19 @@
             </tr>
         </table>
         <table style="background-color:#@GetBackgroundColor(Model); border-collapse: separate;border-spacing: 10px;">
-            @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
+            @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine && Model.Articles.ToList().Count > 0)
 {
 <tr>
 <td>
     <table>
         <tr>
-            <td align="left" style="width: 93px;">
-                <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
-                <span class="vertical-separator">|</span>
-            </td>
+            @if (Model.Articles[0].Actual_Publish_Date != null)
+            {
+                <td align="left" style="width: 93px;">
+                    <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
+                    <span class="vertical-separator">|</span>
+                </td>
+            }
             @if (Model.Articles[0].Content_Type != null)
                 {
                 <td>
@@ -123,10 +126,13 @@
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    @article.Actual_Publish_Date.ToString("dd MMM yyyy")
-                                                    <span class="vertical-separator">|</span>
-                                                </td>
+                                                @if (article.Actual_Publish_Date != null)
+                                                {
+                                                    <td>
+                                                        @article.Actual_Publish_Date.ToString("dd MMM yyyy")
+                                                        <span class="vertical-separator">|</span>
+                                                    </td>
+                                                }
                                                 @if (Model.Articles[0].Content_Type != null)
                                                     {
                                                     <td style="font-weight: bold;  padding-right: 10px;">
@@ -250,10 +256,13 @@
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                @article.Actual_Publish_Date.ToString("dd MMM yyyy")
-                                                <span class="vertical-separator">|</span>
-                                            </td>
+                                            @if (article.Actual_Publish_Date != null)
+                                            {
+                                                <td>
+                                                    @article.Actual_Publish_Date.ToString("dd MMM yyyy")
+                                                    <span class="vertical-separator">|</span>
+                                                </td>
+                                            }
                                             @if (Model.Articles[0].Content_Type != null)
                                                 {
                                                 <td style="font-weight: bold;">
@@ -284,7 +293,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <p style="font-family: Roboto Condensed Bold;">@article.Summary</p>
+                        <p style="font-family: Roboto Condensed Bold;">@Editable(article, m => m.Summary)</p>
                     </td>
                 </tr>
 
