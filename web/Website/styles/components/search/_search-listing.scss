@@ -93,9 +93,8 @@
 	height: 20px;
 	vertical-align: sub;
 	background-color: $color-light-gray;
-    position:absolute;
-    top:0px;
-    right:0px;
+    margin: 0 15px;
+  
   }
 
   &__bookmark {
@@ -139,11 +138,14 @@
 	}
   }
 
-  .result-container {
-      position:relative;
-      margin-right:15px;
-      padding-right:15px;
+  &__taxonomy {
+    border-right: 1px solid $color-light-gray;
+    display: inline-block;
+    padding: 0 15px;
   }
+
+  &_taxonomy:last-child { border-right-width: 0}
+
 
   .highlighted-term {
 	font-weight: 700;
