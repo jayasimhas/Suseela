@@ -19108,9 +19108,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
     public static partial class IIssue_FolderConstants
     {
 
-        public const string TemplateIdString = "abeda53b-d419-4e96-a19f-f4b456d8cf0b";
+        public const string TemplateIdString = "85EE4099-B533-4A0D-9A63-DD1AA86673CB";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Issue Folder";
+        public const string TemplateName = "Vwb Vertical Folder";
 
 
 

@@ -5,6 +5,7 @@ namespace Informa.Library.VirtualWhiteboard.Models
 {
     public class IssueModel
     {
+        public string Vertical { get; set; }
         public string Title { get; set; }
         public DateTime PublishedDate { get; set; }
         public string Notes { get; set; }

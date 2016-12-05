@@ -29,7 +29,7 @@ namespace Informa.Library.VirtualWhiteboard
 		void ReorderArticles(string ids);
 		void DeleteArticles(string ids);
 	    void UpdateIssueItem(IssueModel model, Guid issueId);
-        IEnumerable<IIssue> GetActiveIssues();
+        IEnumerable<IIssue> GetActiveIssues(string vertical);
 		bool DoesIssueContains(Guid issueId, string articleId);
 		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
 	    void UpdateEditorialNotes(string notesJson);
@@ -60,7 +60,8 @@ namespace Informa.Library.VirtualWhiteboard
 			Guid issueId;
 			try
 			{
-				issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
+                var issueFolderID = GetVerticalIssueFolder(model.Vertical);
+                issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, issueFolderID);
 				UpdateIssueItem(model, issueId);
 			}
 			catch (Exception ex)
@@ -77,6 +78,16 @@ namespace Informa.Library.VirtualWhiteboard
 
 			return new VwbResponseModel { IsSuccess = true, IssueId = issueId };
 		}
+
+        private string GetVerticalIssueFolder(string Vertical)
+        {
+            var issueFolderItem = _dependencies.SitecoreServiceMaster.GetItem<Item>(Constants.VirtualWhiteboardIssuesFolder);
+            if (issueFolderItem == null) return string.Empty;
+            var verticalIssueItemPath = issueFolderItem.Paths.Path + "/" + Vertical;
+            var verticalIssueItem = _dependencies.SitecoreServiceMaster.GetItem<Item>(verticalIssueItemPath);
+            if (verticalIssueItem == null) return string.Empty;
+            return verticalIssueItem.ID.ToString();
+        }
 
 		public Guid CreateIssueItem<I, F>(string newIssueName, string folderId) where I : class, IGlassBase
 			where F : class, IGlassBase
@@ -224,10 +235,11 @@ namespace Informa.Library.VirtualWhiteboard
 				: issue._ChildrenWithInferType.Cast<IArticle>();
 		}
 
-		public IEnumerable<IIssue> GetActiveIssues()
+		public IEnumerable<IIssue> GetActiveIssues(string vertical)
 		{
+            
 			return
-				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder")))
+				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(GetVerticalIssueFolder(vertical)))
 					._ChildrenWithInferType.Cast<IIssue>();
 		}
 
