@@ -96,6 +96,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 webRequest.Method = "POST";
                 System.Net.WebClient client = new WebClient();
                 client.UseDefaultCredentials = true;
+                client.Headers.Add("User-Agent: Other");
                 byte[] data = client.DownloadData(pdfPageUrl);
                 string fullPageHtml = Encoding.UTF8.GetString(data);
 
@@ -143,7 +144,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     foreach (var link in links)
                     {
-                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www"))
+                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www")&& !link.Attributes["href"].Value.StartsWith("mailto"))
                         {
                             link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
                             link.SetAttributeValue("target", "_blank");

@@ -31,7 +31,6 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// PDF SubTitle
         /// </summary>
-        public string PDFSubTitle => GlassModel?.Body;
-
+        public string PDFSubTitle => !string.IsNullOrEmpty(GlassModel?.Sub_Title) ? GlassModel?.Sub_Title : GlassModel?.Body;
     }
 }
