@@ -27400,6 +27400,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowBackgroundColor { get; set; }
 
+        /// <summary>
+        /// Disable tag line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 972f333b-0547-4d8b-964a-33ebf5abb4f8</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Tag_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool DisableTagLine { get; set; }
+
+        /// <summary>
+        /// Disable meta tags line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 01bad319-d297-407b-94d3-7f4b4e40962d</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Meta_TagsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool DisableMetaTags { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -27421,6 +27439,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
         public const string Show_Background_ColorFieldName = "Show Background Color";
+
+        public static readonly ID Disable_Tag_LineFieldId = new ID("972f333b-0547-4d8b-964a-33ebf5abb4f8");
+        public const string Disable_Tag_LineFieldName = "Disable Tag Line";
+
+        public static readonly ID Disable_Meta_TagsFieldId = new ID("01bad319-d297-407b-94d3-7f4b4e40962d");
+        public const string Disable_Meta_TagsFieldName = "Disable Meta Tags";
 
     }
 
