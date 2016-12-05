@@ -386,7 +386,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
             alert("The '"+type+"' date value isn't properly formatted");
     };
 
-    vm.customDateRangeSearch = function (filterKey, startDate, endDate) {
+    vm.customDateRangeSearch = function (filterKey, startDate, endDate, sourceControl) {
 
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
