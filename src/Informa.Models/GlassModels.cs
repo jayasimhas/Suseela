@@ -6737,6 +6737,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool IsPersonalizedEMail { get; set; }
+
+        /// <summary>
+        /// Agri email field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 8c8d4aa5-8023-4c9e-848e-e246885650ea</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsAgriEMail { get; set; }
     }
 
 
@@ -6914,6 +6924,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
         public static readonly ID Is_Personalized_EmailFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
         public const string Is_Personalized_EmailFieldName = "Is Personalized Email";
+
+        public static readonly ID Is_Agri_EmailFieldId = new ID("8c8d4aa5-8023-4c9e-848e-e246885650ea");
+        public const string Is_Agri_EmailFieldName = "Is Agri Email";
     }
 
 }
@@ -27418,6 +27431,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Meta_TagsFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool DisableMetaTags { get; set; }
 
+        /// <summary>
+        /// Hide author by line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: c91be9a6-1244-4c10-bdeb-e0d09346347c</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Hide_Author_By_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool HideAuthorByLine { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -27445,6 +27467,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Disable_Meta_TagsFieldId = new ID("01bad319-d297-407b-94d3-7f4b4e40962d");
         public const string Disable_Meta_TagsFieldName = "Disable Meta Tags";
+
+        public static readonly ID Hide_Author_By_LineFieldId = new ID("c91be9a6-1244-4c10-bdeb-e0d09346347c");
+        public const string Hide_Author_By_LineFieldName = "Hide Author By Line";
 
     }
 
