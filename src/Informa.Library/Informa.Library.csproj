@@ -351,6 +351,7 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
     <Compile Include="JobsAndClassifieds\IJobTile.cs" />
