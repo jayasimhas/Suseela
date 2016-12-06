@@ -35,7 +35,7 @@
                     <h6 style="margin: 0; font-size: 16px;">@Model.Articles[0].Content_Type.Item_Name<span class="vertical-separator">|</span></h6>
                 </td>
                 }
-            @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+            @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any() && !string.IsNullOrWhiteSpace(Model.MediaTypeIconSrcs[0]))
                 {
                 <td style="width: 50px;">
                     <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
@@ -167,7 +167,7 @@
                                                             foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                             {
                                                     <td>
-                                                        <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                        <a style="color:#be1e2d; text-decoration:none;" href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                         <span class="vertical-separator">|</span>
                                                     </td>
                                                             }
@@ -177,7 +177,7 @@
                                                             foreach (var taxonomyItem in article.Taxonomies)
                                                             {
                                                     <td>
-                                                        <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                        <a style="color:#be1e2d; text-decoration:none;" href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                         <span class="vertical-separator">|</span>
                                                     </td>
                                                             }
@@ -311,7 +311,7 @@
                                                         foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                         {
                                                 <td>
-                                                    <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                    <a style="color:#be1e2d; text-decoration:none;" href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                     <span class="vertical-separator">|</span>
                                                 </td>
                                                         }
@@ -321,7 +321,7 @@
                                                         foreach (var taxonomyItem in article.Taxonomies)
                                                         {
                                                 <td>
-                                                    <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                    <a style="color:#be1e2d; text-decoration:none;" href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                 </td>
                                                         }
                                                     }
