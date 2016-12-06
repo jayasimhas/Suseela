@@ -35,7 +35,7 @@
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
       <add name="QAForgotPasswordLink" value="${QAForgotPasswordLink}" />
       <add name="BetaForgotPasswordLink" value="${BetaForgotPasswordLink}" />
-      <add name="uatForgotPasswordLink" value="${uatForgotPasswordLink}" />
+      <add name="UatForgotPasswordLink" value="${UatForgotPasswordLink}" />
     <add key="RemoteTimezoneToConvertTo" value="Eastern Standard Time"/>
 	</appSettings>
 	<applicationSettings>
