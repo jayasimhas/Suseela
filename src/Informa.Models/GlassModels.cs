@@ -27440,6 +27440,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Hide_Author_By_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool HideAuthorByLine { get; set; }
 
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 0765ef0f-8d37-4025-8346-407dfb827fb0</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleOne { get; set; }
+
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 44a949fe-7019-4bac-9877-036864492718</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleTwo { get; set; }
+
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: db23bbde-ec33-42e5-b2e0-ba85f6841e80</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleThree { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -27470,6 +27497,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Hide_Author_By_LineFieldId = new ID("c91be9a6-1244-4c10-bdeb-e0d09346347c");
         public const string Hide_Author_By_LineFieldName = "Hide Author By Line";
+
+        public static readonly ID Short_Description_Article_OneFieldId = new ID("0765ef0f-8d37-4025-8346-407dfb827fb0");
+        public const string Short_Description_Article_OneFieldName = "Short Description Article One";
+
+        public static readonly ID Short_Description_Article_TwoFieldId = new ID("44a949fe-7019-4bac-9877-036864492718");
+        public const string Short_Description_Article_TwoFieldName = "Short Description Article Two";
+
+        public static readonly ID Short_Description_Article_ThreeFieldId = new ID("db23bbde-ec33-42e5-b2e0-ba85f6841e80");
+        public const string Short_Description_Article_ThreeFieldName = "Short Description Article Three";
 
     }
 

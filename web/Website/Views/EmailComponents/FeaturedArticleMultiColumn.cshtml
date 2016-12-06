@@ -35,11 +35,12 @@
                                         <h6 style="margin: 0; font-size: 16px;">@Model.Articles[0].Content_Type.Item_Name<span class="vertical-separator">|</span></h6>
                                     </td>
                                 }
-                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any() && !string.IsNullOrWhiteSpace(Model.MediaTypeIconSrcs[0]))
+                                @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Media_Type != null &&
+                                    Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(Model.Articles[0].Media_Type.Media_Type_Icon.Src))
                                 {
                                     <td style="width: 50px;">
                                         <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                            <img class="" src="@Model.MediaTypeIconSrcs[0]" style="width: 25px;" />
+                                            <img class="" src="@Model.Articles[0].Media_Type.Media_Type_Icon.Src" style="width: 25px;" />
                                         </span>
                                         <span class="vertical-separator">|</span>
                                     </td>
@@ -93,7 +94,7 @@
                             }
                         </tr>
                         <tr>
-                            <td style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;">@Editable(Model, m => m.Articles[0].Summary)</td>
+                            <td style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? Editable(Model, m => m.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
                         </tr>
                     </table>
                 </td>
@@ -247,12 +248,13 @@
     }
     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleTwoColumn && Model.Articles != null && Model.Articles.Any())
     {
+        int index = 0;
         <table width="100%" style="border-bottom: 1px solid #ccc;">
             <tbody>
                 <tr>
                     @foreach (var article in Model.Articles)
                     {
-                        if (article != null)
+                        if (article != null && index <= 2)
                         {
                             <td valign="top" style="width: 50%;">
                                 <table style="border-collapse: separate; border-spacing: 10px;">
@@ -271,18 +273,19 @@
                                                                         <span class="vertical-separator">|</span>
                                                                     </td>
                                                                 }
-                                                                @if (Model.Articles[0].Content_Type != null)
+                                                                @if (article.Content_Type != null)
                                                                 {
                                                                     <td style="font-weight: bold;">
-                                                                        @Model.Articles[0].Content_Type.Item_Name
+                                                                        @article.Content_Type.Item_Name
                                                                         <span class="vertical-separator">|</span>
                                                                     </td>
                                                                 }
-                                                                @if (Model.MediaTypeIconSrcs != null && Model.MediaTypeIconSrcs.Any())
+                                                                @if (article.Media_Type != null && article.Media_Type.Media_Type_Icon != null &&
+                                                                    !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
                                                                 {
                                                                     <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;">
                                                                         <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                                                            <img class="" src="@Model.MediaTypeIconSrcs[0]" style="width: 25px;" />
+                                                                            <img class="" src="@article.Media_Type.Media_Type_Icon.Src" style="width: 25px;" />
                                                                         </span>
                                                                     </td>
                                                                 }
@@ -301,7 +304,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p style="font-family: Roboto Condensed Bold;">@Editable(article, m => m.Summary)</p>
+                                                <p style="font-family: Roboto Condensed Bold;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
                                             </td>
                                         </tr>
 
@@ -344,6 +347,7 @@
                                     </tbody>
                                 </table>
                             </td>
+                            index++;
                         }
                     }
                 </tr>
