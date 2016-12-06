@@ -349,8 +349,8 @@
             }
     </style>
 
-    <style type="text/css" id="ignore">
-        @@media (max-width: 480px) {
+    <style type="text/css">
+        @@media screen and (max-device-width: 480px) {
 
             body {
                 font-size: 100%;
@@ -358,6 +358,10 @@
 
             #templateContainer {
                 width: 100%;
+            }
+            body td[width="50%"] {
+                width: 100% !important;
+                display: block !important;
             }
 
             .header__site-logo img {
@@ -474,6 +478,10 @@
             }
 
             .visible-mob {
+                display: block !important;
+            }
+            td.full-mob {
+                width: 100% !important;
                 display: block !important;
             }
         }
