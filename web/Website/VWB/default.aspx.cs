@@ -379,6 +379,7 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
+            ExistingIssueSelector.Items.Clear();
             ExistingIssueSelector.CssClass = "js-existing-issue";
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
