@@ -53,11 +53,11 @@
 
         public IList<IArticle> Articles => new List<IArticle> { GlassModel?.ArticleOne, GlassModel?.ArticleTwo, GlassModel?.ArticleThree };
 
-        public IList<string> MediaTypeIconSrcs => new List<string>
+        public IList<string> ShortDescrpitons => new List<string>
                                                     {
-                                                        GlassModel.ArticleOne?.Media_Type?.Media_Type_Icon?.Src,
-                                                        GlassModel.ArticleTwo?.Media_Type?.Media_Type_Icon?.Src,
-                                                        GlassModel.ArticleThree?.Media_Type?.Media_Type_Icon?.Src
+                                                        GlassModel.DescriptionArticleOne,
+                                                        GlassModel.DescriptionArticleTwo,
+                                                        GlassModel.DescriptionArticleThree
                                                     };
 
 
