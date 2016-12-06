@@ -4,7 +4,7 @@
   <add verb="*" path="sitecore_webDAV.ashx" type="Sitecore.Resources.Media.WebDAVMediaRequestHandler, Sitecore.Kernel" name="Sitecore.WebDAVMediaRequestHandler" />
   <add verb="*" path="sitecore_media.ashx" type="Sitecore.Resources.Media.MediaRequestHandler, Sitecore.Kernel" name="Sitecore.MediaRequestHandler" />
   <add verb="*" path="sitecore_xaml.ashx" type="Sitecore.Web.UI.XamlSharp.Xaml.XamlPageHandlerFactory, Sitecore.Kernel" name="Sitecore.XamlPageRequestHandler" />
-  <add verb="*" path="sitecore_icon.ashx" type="Sitecore.Resources.IconRequestHandler, Sitecore.Kernel" name="Sitecore.IconRequestHandler" />
+  <add verb="*" path="sitecore_icon.ashx" type="Sitecore.Support.Resources.IconRequestHandler, Sitecore.Support.136135" name="Sitecore.Support.IconRequestHandler" />
   <add verb="*" path="sitecore_feed.ashx" type="Sitecore.Shell.Feeds.FeedRequestHandler, Sitecore.Kernel" name="Sitecore.FeedRequestHandler" />
   <add verb="*" path="sitecore_handlers.ashx" type="Sitecore.Web.CustomHandlerFactory, Sitecore.Kernel" name="Sitecore.GenericHandler" />
   <add verb="*" path="sitecore_device_simulation.ashx" type="Sitecore.Shell.DeviceSimulation.SimulationRequestHandler, Sitecore.Kernel" name="Sitecore.SimulationRequestHandler" />
