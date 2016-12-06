@@ -254,7 +254,7 @@
                 <tr>
                     @foreach (var article in Model.Articles)
                     {
-                        if (article != null && index <= 2)
+                        if (article != null && index < 2)
                         {
                             <td valign="top" style="width: 50%;">
                                 <table style="border-collapse: separate; border-spacing: 10px;">
@@ -304,7 +304,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p style="font-family: Roboto Condensed Bold;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
+                                                <p style="font-family: Roboto Condensed Bold;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[0]) : Editable(article, m => m.Summary))</p>
                                             </td>
                                         </tr>
 
