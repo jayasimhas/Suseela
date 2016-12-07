@@ -27405,13 +27405,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         Pages.IArticle ArticleThree { get; set; }
 
         /// <summary>
-        /// Background Color field.
+        /// Grey background Color field.
         /// <para></para>
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: fc20fbd0-dbd4-48f0-8c23-40f330d90d82</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool ShowBackgroundColor { get; set; }
+        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Grey_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowGreyBackground { get; set; }
 
         /// <summary>
         /// Disable tag line field.
@@ -27467,6 +27467,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
         string DescriptionArticleThree { get; set; }
 
+        /// <summary>
+        /// Pink background Color field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: b5b10e37-01f8-47ed-9626-9059641a2042</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowPinkBackground { get; set; }
+
     }
 
     public static partial class IFeatured_Article_Agri_Constants
@@ -27486,8 +27495,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         public static readonly ID Article_ThreeFieldId = new ID("b0356daf-fe58-4ed9-a441-f87c8490cb72");
         public const string Article_ThreeFieldName = "Article Three";
 
-        public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
-        public const string Show_Background_ColorFieldName = "Show Background Color";
+        public static readonly ID Show_Grey_BackgroundFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
+        public const string Show_Grey_BackgroundFieldName = "Show Grey Background";
 
         public static readonly ID Disable_Tag_LineFieldId = new ID("972f333b-0547-4d8b-964a-33ebf5abb4f8");
         public const string Disable_Tag_LineFieldName = "Disable Tag Line";
@@ -27506,6 +27515,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Short_Description_Article_ThreeFieldId = new ID("db23bbde-ec33-42e5-b2e0-ba85f6841e80");
         public const string Short_Description_Article_ThreeFieldName = "Short Description Article Three";
+
+        public static readonly ID Show_Pink_BackgroundFieldId = new ID("b5b10e37-01f8-47ed-9626-9059641a2042");
+        public const string Show_Pink_BackgroundFieldName = "Show Pink Background";
 
     }
 
