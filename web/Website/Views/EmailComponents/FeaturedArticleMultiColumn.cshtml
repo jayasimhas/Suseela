@@ -15,7 +15,7 @@
                 &nbsp;
             </tr>
         </table>
-        <table style="background-color:#@GetBackgroundColor(Model); border-collapse: separate;border-spacing: 10px;">
+        <table width="100%" style="background-color:#@GetBackgroundColor(Model); border-collapse: separate;border-spacing: 10px;">
             @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine && Model.Articles.ToList().Count > 0)
             {
                 <tr>
@@ -24,7 +24,7 @@
                             <tr>
                                 @if (Model.Articles[0].Actual_Publish_Date != null)
                                 {
-                                    <td align="left" style="width: 93px;">
+                                    <td align="left" style="width: 100px; font-size: 13px;">
                                         <time class="article-metadata__date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</time>
                                         <span class="vertical-separator">|</span>
                                     </td>
@@ -51,7 +51,7 @@
                                     {
                                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
                                         {
-                                            <td align="center">
+                                            <td align="center" class="visible-desk">
                                                 <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name<span class="vertical-separator">|</span></a>
                                             </td>
                                         }
@@ -60,7 +60,7 @@
                                     {
                                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
                                         {
-                                            <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;">
+                                            <td align="center" class="visible-desk" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;">
                                                 <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
                                                 <span class="vertical-separator">|</span>
                                             </td>
@@ -99,7 +99,31 @@
                     </table>
                 </td>
             </tr>
-        </table>
+            <tr class="visible-mob" style="display: none;">
+                @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
+                {
+                    if (Model.Articles[0].Taxonomies.ToList().Count > 2)
+                    {
+                        foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
+                        {
+                            <td align="center">
+                                <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name<span class="vertical-separator">|</span></a>
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
+                        {
+                            <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-left:0;position:relative;list-style: none;">
+                                <a href="@SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name</a>
+                                <span class="vertical-separator">|</span>
+                            </td>
+                        }
+                    }
+                }
+            </tr>
+</table>
         <table>
             <tr>
                 &nbsp;
@@ -113,7 +137,7 @@
                     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow)
                     {
                      @Html.Raw(GetStartTag())
-                <td width="50%" align="top">
+                <td width="50%" align="top" class="full-mob">
                     <table style="width: 100%; float: left; height: 280px;">
                         <tbody>
                             <tr>
@@ -209,7 +233,7 @@
                     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows)
                     {
                        
-                <td width="50%" align="top">
+                <td width="50%" align="top" class="full-mob">
                     <table style="width: 100%; float: left; height: 280px; background: #f1f2f2;">
                         <tbody>
                             <tr>
@@ -256,7 +280,7 @@
                     {
                         if (article != null && index < 2)
                         {
-                            <td valign="top" style="width: 50%;">
+                            <td valign="top" class="full-mob" width="50%">
                                 <table style="border-collapse: separate; border-spacing: 10px;">
                                     <tbody>
                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
