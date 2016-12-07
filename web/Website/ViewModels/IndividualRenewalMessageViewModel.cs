@@ -47,10 +47,12 @@ namespace Informa.Web.ViewModels
 
 		private ISubscription GetLatestExpiringRecord()
 		{
-			return UserSubscriptionsContext.Subscriptions?.Where(subscription => subscription.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()
-						&& (subscription.ExpirationDate - DateTime.Now).TotalDays <= SiteRootContext.Item.Days_To_Expiration
+			var latestCurrentPublicationSubscriptionRecord = UserSubscriptionsContext.Subscriptions?.Where(subscription => subscription.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()
+						//&& (subscription.ExpirationDate - DateTime.Now).TotalDays <= SiteRootContext.Item.Days_To_Expiration
 						&& SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower())
-						&& subscription.ProductType.ToLower() == PRODUCT_TYPE).OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+						&& subscription.ProductType.ToLower() == PRODUCT_TYPE).OrderByDescending(o => o.ExpirationDate).FirstOrDefault();
+
+			return ((latestCurrentPublicationSubscriptionRecord?.ExpirationDate - DateTime.Now)?.TotalDays <= SiteRootContext.Item.Days_To_Expiration) ? latestCurrentPublicationSubscriptionRecord : null;
 		}
 
 		private bool DisplayMessage(ISubscription subscription)
