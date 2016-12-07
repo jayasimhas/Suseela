@@ -6,8 +6,8 @@
 
     @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
     {
-         @Html.AntiForgeryToken()
-         @Html.Sitecore().FormHandler()
+        @Html.AntiForgeryToken()
+        @Html.Sitecore().FormHandler()
 
         <input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
 
@@ -20,4 +20,4 @@
         </svg>
 
     }
-</div>
+</div
