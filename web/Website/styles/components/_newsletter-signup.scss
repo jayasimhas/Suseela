@@ -37,7 +37,10 @@ This component is almost always displayed in a sidebar.
         display: none;
     }
 
-    &-needs-registration {
+     &-needs-registration {
+        @extend .error-text;
         display: none;
+        margin-top: 0.5rem;
+        font-style: normal;
     }
 }
