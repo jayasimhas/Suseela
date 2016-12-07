@@ -55,20 +55,21 @@ namespace Informa.Library.Search.Utilities
 
 				if (dict.ContainsKey(key))
 				{
-					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
+					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{HttpUtility.UrlEncode(item.Item_Name)}";
 				}
 				else
 				{
-					dict[key] = item.Item_Name;
+					dict[key] = HttpUtility.UrlEncode(item.Item_Name);
 				}
 			}
 
 			StringBuilder url = new StringBuilder();
-            foreach (var pair in dict)
+			foreach (var pair in dict)
 			{
-				url.AppendFormat("{0}={1}", pair.Key, HttpUtility.UrlEncode(pair.Value));
+				url.AppendFormat("{0}={1}&", pair.Key, pair.Value);
 			}
-			
+			url.Remove(url.Length - 1, 1);
+
 			return $"/search#?{url.ToString()}";
 		}
 
