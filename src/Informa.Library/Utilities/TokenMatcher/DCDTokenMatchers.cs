@@ -198,8 +198,11 @@ namespace Informa.Library.Utilities.TokenMatcher
             try {
 
                 IArticleSearchFilter filter = _.ArticleSearch.CreateFilter();
-                filter.ArticleNumbers = articleNumber.SingleToList();
-                filter.PageSize = 1;
+				if (articleNumber.Length <= 8)
+					filter.ArticleNumbers = articleNumber.SingleToList();
+				else
+					filter.LegacyArticleNumber = articleNumber.Trim();
+				filter.PageSize = 1;
                 var results = _.ArticleSearch.Search(filter);
 
                 if (results.Articles.Any()) {
