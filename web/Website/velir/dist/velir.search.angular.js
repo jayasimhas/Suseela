@@ -507,10 +507,17 @@
                         key: "createFacet",
                         value: function createFacet(key, value) {
                             var group = new _Core.FacetGroup({ id: key });
-                            _lodash2["default"].each(value.split(";"), function (facetValue) {
-                                var facet = new _Core.Facet({ id: facetValue, selected: true });
-                                group.addFacet(facet);
-                            });
+                            var items = [];
+                            try {
+                                items = value.split(";");
+                                _lodash2["default"].each(items, function (facetValue) {
+                                    var facet = new _Core.Facet({ id: facetValue, selected: true });
+                                    group.addFacet(facet);
+                                });
+                            } catch (ex) {
+                                console.log(ex);
+                            }
+                            
                             this.searchService.addFacetGroup(group);
                         }
                     }]);
