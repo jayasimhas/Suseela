@@ -24,7 +24,7 @@ namespace Informa.Web.Areas.Search.Controllers
         [SitecoreValidateAntiForgeryToken]
         public ActionResult Search(HeaderSearchModel viewModel)
         {
-           viewModel.SearchTerm = string.IsNullOrEmpty(viewModel.SearchTerm) ? string.Empty : viewModel.SearchTerm;
+           viewModel.SearchTerm = string.IsNullOrEmpty(viewModel.SearchTerm) ? string.Empty : viewModel.SearchTerm.Trim();
 
             //TODO put in non hardcoded values
             return Redirect(string.Format("{0}#?{1}={2}", "/search", SiteSettings.QueryString.QueryKey, HttpUtility.UrlEncode(viewModel.SearchTerm)));
