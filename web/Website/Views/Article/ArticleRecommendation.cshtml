@@ -1,0 +1,63 @@
+﻿@model Informa.Web.ViewModels.Articles.ArticleRecommendationViewModel
+
+<div class="contentRecommendations">
+@*Editor Picks@
+    <div class="article-related-content">
+        <h2>@Model.EditorPicksText</h2>  
+        
+            @foreach (var article in Model.EditorsPicks)
+            {
+                <div class="contentRecomm-article">
+                    <img class="article-related-content__img" src="@article.Featured_Image_16_9.Src" />
+                    <span class="article-related-content__category">publication name</span>
+                    <h5><a class="click-utag" href="@article.LinkableUrl">@article.Title</a></h5>
+                    <time class="article-related-content__date">@article.Actual_Publish_Date.ToString()</time>
+                </div>
+            }
+               
+
+        @*What to read next*@
+        <div>@Model.WhatToReadNextText</div>
+
+
+        @*Suggested For you*@
+        @if (Model.IsAuthenticated && Model.IsGlobalToggleEnabled)
+        {
+            if (Model.IsFollowingAnyItem)
+            {
+                <script type="text/javascript">
+                    var PreferanceIds = @Html.Raw(Model.JSONData);
+                </script>
+            }
+            else if (!string.IsNullOrWhiteSpace(Model.EntitlenetIDs))
+            {
+                <script type="text/javascript">
+                    var EntitlenetIds = @Html.Raw(Model.JSONData);
+                </script>
+            }
+            <div>@Model.SuggestedForYouText</div>
+
+        }
+    </div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: '/api/articlesearch',
+        data: JSON.stringify({ 'TaxonomyIds': [@Html.Raw(Model.TaxonomyItems)] , 'PageNo': 1, 'PageSize': 4 }),
+        dataType: 'json',
+        contentType: "application/json",
+        type: 'POST',
+        cache: false,
+        async: false,
+        success: function (data) {
+            if (data.articles && typeof data.articles === "object" && data.articles.length >= 3) {
+                alert(data.articles);
+            }
+        },
+        error: function error(xhr, errorType, _error) {
+            console.log('err ' + _error);
+        }
+    });
+
+</script>

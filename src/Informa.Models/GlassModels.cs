@@ -2106,6 +2106,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Related_Articles { get; set; }
         /// <summary>
+        /// The Related Articles field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Editors_Picks { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -2435,6 +2444,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Related_Articles { get; set; }
         /// <summary>
+        /// The Editors_picks field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Editors_Picks { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -2624,6 +2642,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Related_ArticlesFieldId = new ID("dc4c3a27-a361-4fa3-a534-5ccacc374377");
         public const string Related_ArticlesFieldName = "Related Articles";
+
+        public static readonly ID Editors_picksFieldId = new ID("7B4B31ED-BCE5-41AD-AC69-0B15977B0E16");
+        public const string Editors_picksFieldName = "Editors Picks";
 
 
 
