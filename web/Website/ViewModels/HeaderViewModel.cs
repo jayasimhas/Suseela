@@ -46,7 +46,9 @@ namespace Informa.Web.ViewModels
                 var user = AuthenticatedUserContext.IsAuthenticated
                          ? ProfileContext.Profile
                          : null;
-                var accountName = AuthenticatedUserContext.IsAuthenticated ? user?.FirstName : CompanyNameContext.Name;
+                //User could be null even if AuthenticatedUserContext.IsAuthenticated is true
+                //In this case we want to show company name
+                var accountName = AuthenticatedUserContext.IsAuthenticated && !string.IsNullOrEmpty(user?.FirstName) ? user.FirstName : CompanyNameContext.Name;
 
                 return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
             }
