@@ -2,7 +2,13 @@
 name: sitecore\Sitecore Client Publishing
 
 ----role-in-role----
+rolename: sitecore\Editor
+
+----role-in-role----
 rolename: sitecore\Full Publisher
+
+----role-in-role----
+rolename: sitecore\Managing Editor
 
 ----role-in-role----
 rolename: sitecore\Single Publisher
