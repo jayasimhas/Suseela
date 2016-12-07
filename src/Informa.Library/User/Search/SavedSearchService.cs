@@ -62,9 +62,9 @@ namespace Informa.Library.User.Search
 
 			var results = GetContentFromSessionOrRepo();
 
-			var result = results.FirstOrDefault(s => SavedSearchComparer.Equals(s, entity));
+			var entities = results.Where(s => SavedSearchComparer.Equals(s, entity));
 
-			return result != null && entity.HasAlert ? result.HasAlert : result != null;
+			return entities != null && entities.Any() && entity.HasAlert ? entities.Any(a => a.HasAlert) : entities != null && entities.Any();
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
@@ -107,8 +107,8 @@ namespace Informa.Library.User.Search
 			if (entity != null)
 			{
 				entity.HasAlert = input.AlertEnabled;
-
-				var updateResponse = _dependencies.Repository.Update(entity);
+                entity.SearchString = ExtractQueryString(input.Url);
+                var updateResponse = _dependencies.Repository.Update(entity);
 				Clear();
 
 				return updateResponse;
@@ -144,13 +144,18 @@ namespace Informa.Library.User.Search
 				SearchString = ExtractQueryString(input.Url)
 			};
 
+            IContentResponse response = null;
 			if (string.IsNullOrWhiteSpace(entity.Name))
 			{
 				var results = GetContentFromSessionOrRepo();
-				entity = results.FirstOrDefault(e => SavedSearchComparer.Equals(e, entity));
-			}
-
-			var response = _dependencies.Repository.Delete(entity);
+				var entities = results.Where(e => SavedSearchComparer.Equals(e, entity));
+                foreach(ISavedSearchEntity en in entities) { 
+                    response = _dependencies.Repository.Delete(en);
+                }
+            } else {
+                response = _dependencies.Repository.Delete(entity);
+            }
+			
 			Clear();
 
 			return response;

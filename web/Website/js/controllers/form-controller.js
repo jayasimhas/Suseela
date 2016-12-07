@@ -103,7 +103,7 @@ function formController(opts) {
 					});
 
 					// add recaptcha if it exists in the form
-					var captchaResponse = grecaptcha.getResponse();
+					var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse();
 					if (captchaResponse !== undefined)
 						inputData['RecaptchaResponse'] = captchaResponse;
 
