@@ -73,7 +73,8 @@ namespace Elsevier.Web.VWB
 
             UpdateFields();
             BuildOptionalColumnDropdown();
-            BuildExistingIssuesList();
+            if(ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
+                BuildExistingIssuesList();
         }
 
         protected void Page_Init(object sender, EventArgs e)
@@ -354,7 +355,8 @@ namespace Elsevier.Web.VWB
             {
                 PublishedDate = DateTime.TryParse(IssuePublishedDateInput.Value, out date) ? date : DateTime.Now,
                 Title = IssueTitleInput.Value,
-                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
+                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse),
+                Vertical = ddlVerticals.SelectedItem.Text
             };
 
             using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
@@ -377,13 +379,22 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
+            ExistingIssueSelector.Items.Clear();
             ExistingIssueSelector.CssClass = "js-existing-issue";
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+
+            string selectedVertical = ddlVerticals.SelectedItem.Text;
+            if(selectedVertical == "" && selectedVertical == "Select Verticals")
+            {
+                lblMsg.Text = "You must select a vertical";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
 
             using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
                 var issuesService = scope.Resolve<IIssuesService>();
-                var issues = issuesService.GetActiveIssues();
+                var issues = issuesService.GetActiveIssues(selectedVertical);
                 issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
             }
         }
@@ -423,9 +434,9 @@ namespace Elsevier.Web.VWB
                 hdnSelectedVertical.Value = string.Empty;
                 return;
             }
-
             FillPublicationsList(ddlVerticals.SelectedItem.Value);
             hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
+            BuildExistingIssuesList();
         }
     }
 }

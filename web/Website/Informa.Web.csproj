@@ -1202,6 +1202,7 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleRecommendationViewModel.cs" />
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
@@ -2180,6 +2181,7 @@
     <Content Include="Views\Advertisements\LeaderboardFooterAd.cshtml" />
     <Content Include="Views\Advertisements\RectangularAd2.cshtml" />
     <Content Include="Views\Advertisements\RectangularAd3.cshtml" />
+    <Content Include="Views\Article\ArticleRecommendation.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

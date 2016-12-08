@@ -67,6 +67,10 @@ But you can also use "patch:attribute" for clarity:
         </processor>
       </httpRequestBegin>
 
+      <getLookupSourceItems>
+        <processor patch:before="*[@type='Sitecore.Pipelines.GetLookupSourceItems.ProcessQuerySource, Sitecore.Kernel']" type="Informa.Library.CustomSitecore.Pipelines.DataSourceMutiSitePathResolver, Informa.Library" />
+      </getLookupSourceItems>
+      
       <publishItem>
         <processor patch:after="*[@type='Sitecore.Publishing.Pipelines.PublishItem.DetermineAction, Sitecore.Kernel']" type="Informa.Library.CustomSitecore.Pipelines.PublishItem.ItemsPublishingProcessor, Informa.Library" 
                    factory="Autofac" 

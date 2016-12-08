@@ -2106,6 +2106,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Related_Articles { get; set; }
         /// <summary>
+        /// The Related Articles field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Editors_Picks { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -2435,6 +2444,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Related_Articles { get; set; }
         /// <summary>
+        /// The Editors_picks field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Editors_Picks { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -2624,6 +2642,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Related_ArticlesFieldId = new ID("dc4c3a27-a361-4fa3-a534-5ccacc374377");
         public const string Related_ArticlesFieldName = "Related Articles";
+
+        public static readonly ID Editors_picksFieldId = new ID("7B4B31ED-BCE5-41AD-AC69-0B15977B0E16");
+        public const string Editors_picksFieldName = "Editors Picks";
 
 
 
@@ -6737,6 +6758,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// </summary>
         [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool IsPersonalizedEMail { get; set; }
+
+        /// <summary>
+        /// Agri email field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 8c8d4aa5-8023-4c9e-848e-e246885650ea</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsAgriEMail { get; set; }
     }
 
 
@@ -6914,6 +6945,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
         public static readonly ID Is_Personalized_EmailFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
         public const string Is_Personalized_EmailFieldName = "Is Personalized Email";
+
+        public static readonly ID Is_Agri_EmailFieldId = new ID("8c8d4aa5-8023-4c9e-848e-e246885650ea");
+        public const string Is_Agri_EmailFieldName = "Is Agri Email";
     }
 
 }
@@ -19108,9 +19142,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
     public static partial class IIssue_FolderConstants
     {
 
-        public const string TemplateIdString = "abeda53b-d419-4e96-a19f-f4b456d8cf0b";
+        public const string TemplateIdString = "85EE4099-B533-4A0D-9A63-DD1AA86673CB";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Issue Folder";
+        public const string TemplateName = "Vwb Vertical Folder";
 
 
 
@@ -27392,13 +27426,76 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         Pages.IArticle ArticleThree { get; set; }
 
         /// <summary>
-        /// Background Color field.
+        /// Grey background Color field.
         /// <para></para>
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: fc20fbd0-dbd4-48f0-8c23-40f330d90d82</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Background_ColorFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool ShowBackgroundColor { get; set; }
+        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Grey_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowGreyBackground { get; set; }
+
+        /// <summary>
+        /// Disable tag line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 972f333b-0547-4d8b-964a-33ebf5abb4f8</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Tag_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool DisableTagLine { get; set; }
+
+        /// <summary>
+        /// Disable meta tags line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 01bad319-d297-407b-94d3-7f4b4e40962d</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Meta_TagsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool DisableMetaTags { get; set; }
+
+        /// <summary>
+        /// Hide author by line field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: c91be9a6-1244-4c10-bdeb-e0d09346347c</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Hide_Author_By_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool HideAuthorByLine { get; set; }
+
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 0765ef0f-8d37-4025-8346-407dfb827fb0</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleOne { get; set; }
+
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 44a949fe-7019-4bac-9877-036864492718</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleTwo { get; set; }
+
+        /// <summary>
+        /// Short description article one field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: db23bbde-ec33-42e5-b2e0-ba85f6841e80</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string DescriptionArticleThree { get; set; }
+
+        /// <summary>
+        /// Pink background Color field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: b5b10e37-01f8-47ed-9626-9059641a2042</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowPinkBackground { get; set; }
 
     }
 
@@ -27419,8 +27516,29 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         public static readonly ID Article_ThreeFieldId = new ID("b0356daf-fe58-4ed9-a441-f87c8490cb72");
         public const string Article_ThreeFieldName = "Article Three";
 
-        public static readonly ID Show_Background_ColorFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
-        public const string Show_Background_ColorFieldName = "Show Background Color";
+        public static readonly ID Show_Grey_BackgroundFieldId = new ID("fc20fbd0-dbd4-48f0-8c23-40f330d90d82");
+        public const string Show_Grey_BackgroundFieldName = "Show Grey Background";
+
+        public static readonly ID Disable_Tag_LineFieldId = new ID("972f333b-0547-4d8b-964a-33ebf5abb4f8");
+        public const string Disable_Tag_LineFieldName = "Disable Tag Line";
+
+        public static readonly ID Disable_Meta_TagsFieldId = new ID("01bad319-d297-407b-94d3-7f4b4e40962d");
+        public const string Disable_Meta_TagsFieldName = "Disable Meta Tags";
+
+        public static readonly ID Hide_Author_By_LineFieldId = new ID("c91be9a6-1244-4c10-bdeb-e0d09346347c");
+        public const string Hide_Author_By_LineFieldName = "Hide Author By Line";
+
+        public static readonly ID Short_Description_Article_OneFieldId = new ID("0765ef0f-8d37-4025-8346-407dfb827fb0");
+        public const string Short_Description_Article_OneFieldName = "Short Description Article One";
+
+        public static readonly ID Short_Description_Article_TwoFieldId = new ID("44a949fe-7019-4bac-9877-036864492718");
+        public const string Short_Description_Article_TwoFieldName = "Short Description Article Two";
+
+        public static readonly ID Short_Description_Article_ThreeFieldId = new ID("db23bbde-ec33-42e5-b2e0-ba85f6841e80");
+        public const string Short_Description_Article_ThreeFieldName = "Short Description Article Three";
+
+        public static readonly ID Show_Pink_BackgroundFieldId = new ID("b5b10e37-01f8-47ed-9626-9059641a2042");
+        public const string Show_Pink_BackgroundFieldName = "Show Pink Background";
 
     }
 

@@ -582,7 +582,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         if (ArticleData["Nooftableau"] != null)
                         {
-                            int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
+                            using (new SecurityDisabler())
+                            {
+                                if (newItem.GetChildren() != null)
+                                {
+                                    newItem.DeleteChildren();
+                                }
+                            }
+                                int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
                             string tableauname = string.Empty;
                             TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
                             Item PageAssetsItem = newItem.Add("PageAssets", (TemplateItem)PageAssets);

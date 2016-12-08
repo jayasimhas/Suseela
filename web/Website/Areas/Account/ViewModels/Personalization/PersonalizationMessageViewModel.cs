@@ -31,8 +31,11 @@
         public string ArticlePageMessage => GetMessageForArticlePage();
         public string MyViewSettingsPageUrl => SiterootContext.Item?.MyView_Settings_Page?._Url;
         public string MyViewSettingsText => TextTranslator.Translate("Personalization.MyViewSettingsText");
-        public string WelcomeMessageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageLinkText");
-        public string MyViewText => TextTranslator.Translate("Personalization.MyViewLinkText");
+        public string WelcomeMessageHomePageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageHomePageLinkText");
+        public string WelcomeMessageArticlePageLinkText => TextTranslator.Translate("Personalization.WelcomeMessageArticlePageLinkText");
+        public string ArticlePageMyViewText => TextTranslator.Translate("Personalization.ArticlePageMyViewLinkText");
+        public string HomePageMyViewText => TextTranslator.Translate("Personalization.HomePageMyViewLinkText");
+        public string RightRailMyViewText => TextTranslator.Translate("Personalization.RightRailMyViewLinkText");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
         public string PageName => SiterootContext.Item._Name;
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");

@@ -256,8 +256,6 @@
 
         .vertical-separator {
             display: inline-block;
-            margin-left: 8px;
-            margin-right: 8px;
             color: #ddd;
             font-size: 16px;
         }
@@ -349,8 +347,8 @@
             }
     </style>
 
-    <style type="text/css" id="ignore">
-        @@media (max-width: 480px) {
+    <style type="text/css">
+        @@media screen and (max-device-width: 480px) {
 
             body {
                 font-size: 100%;
@@ -358,6 +356,10 @@
 
             #templateContainer {
                 width: 100%;
+            }
+            body td[width="50%"] {
+                width: 100% !important;
+                display: block !important;
             }
 
             .header__site-logo img {
@@ -476,6 +478,10 @@
             .visible-mob {
                 display: block !important;
             }
+            td.full-mob {
+                width: 100% !important;
+                display: block !important;
+            }
         }
     </style>
 </head>
@@ -572,7 +578,21 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    @Html.Sitecore().Placeholder("email-main")
+                                                    @if (Model.GlassModel.IsAgriEMail)
+                                                    {
+                                                        <table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;margin-bottom:32px;border-bottom:1px solid #ccc;padding-bottom:8px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom: 32px;border-bottom: 1px solid #ccc;padding-bottom: 8px; ">
+                                                            <tr>
+                                                                <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:12px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 12px;">
+                                                                    @Html.Sitecore().Placeholder("email-main")
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Sitecore().Placeholder("email-main")
+                                                    }
+                                                    
                                                     @if (Model.IsPersonalizedEmail)
                                                     {
                                                         @personalizeContentToken

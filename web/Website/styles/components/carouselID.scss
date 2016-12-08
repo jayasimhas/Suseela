@@ -1,0 +1,90 @@
+#main-carousel {
+		.owl-carousel .item{
+			background: #e7e7e7;
+			height: 140px;
+		}
+		.owl-theme .owl-nav [class*='owl-']{
+			background: none;
+		}
+		.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+			background: #9E310D;
+		}
+		.li-content-company {
+		  border: none;
+		  background-color: #e7e7e7;
+		  height: 100%;
+		  padding: 8px;
+		}
+		.li-content-company img {
+		  float: left;
+		  margin: 0 10px 10px 0;
+		  width:100px;
+		}
+		.li-content-company p {
+		  padding: 0 0 8px 0;
+		  font-size: smaller;
+		}
+		.li-content-company a {
+		 
+		}
+		.li-content-company a:hover {
+		  
+		}
+		.li-content-graph {
+		  border: none;
+		  background-color: #E7E7E7;
+		  height: 100%;
+		  padding: 8px;
+		  border-left: 1px solid #ccc;
+		}
+		.li-content-graph p {
+		  font-size: smaller;
+		  padding: 0 0 0 0;
+		  margin: 0;
+		}
+		.li-content-graph p a {
+		}
+		.li-content-graph p a:hover {
+		}
+		.owl-dots{
+			position: absolute;
+			top: 0;
+			margin-top: -20px;
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+		.owl-prev{
+			position: absolute;
+			top: 50px;
+			left: 0;
+			margin-left: -18px;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.owl-next{
+			position: absolute;
+			top: 50px;
+			right: 0;
+			margin-right: -18px;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.companies_heading {
+			display: block;
+			width: 100%;
+			position: relative;
+			span{
+				width: 100%;
+				display: inline-block;
+				padding-left: 10px;
+				padding-top: 5px;
+				text-transform: uppercase;
+				color: #000;
+				background-color: #cccccc;
+			}
+		}
+}
+		
+
+		
