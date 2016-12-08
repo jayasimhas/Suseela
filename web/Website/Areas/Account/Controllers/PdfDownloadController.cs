@@ -60,7 +60,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 document.Close();
                 writer.Close();
 
-                System.Web.HttpContext.Current.Response.ContentType = "pdf/application";
+                System.Web.HttpContext.Current.Response.ContentType = "application/pdf";
                 //System.Web.HttpContext.Current.Response.AddHeader("content-disposition","attachment;filename=First PDF document.pdf");
                 System.Web.HttpContext.Current.Response.AddHeader("content-disposition", "inline;filename=First PDF document.pdf");
                 System.Web.HttpContext.Current.Response.OutputStream.Write(ms.GetBuffer(), 0, ms.GetBuffer().Length);
@@ -79,7 +79,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkText">Data Tool Link Text</param>
         private void GeneratePdfBody(PdfWriter writer, Document document, string pdfPageUrl, string userEmail, string DataToolLinkDesc, string DataToolLinkText)
         {
-           
+
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
                 #region For Static HTML
@@ -108,6 +108,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 var replacements = new Dictionary<string, string>
                 {
                     ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                    ["<p xmlns=\"\">"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
                     ["</p>"] = "</p><br /><br />",
                     ["#UserName#"] = userEmail,
                     ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
@@ -144,7 +145,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     foreach (var link in links)
                     {
-                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www")&& !link.Attributes["href"].Value.StartsWith("mailto"))
+                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www") && !link.Attributes["href"].Value.StartsWith("mailto"))
                         {
                             link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
                             link.SetAttributeValue("target", "_blank");
@@ -171,7 +172,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         {
                             foreach (var amchartNode in amchartNodes)
                             {
-                                var newNodeHtml = "<p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
@@ -184,7 +185,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         {
                             foreach (var tableauNode in tableauNodes)
                             {
-                                var newNodeHtml = "<p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
@@ -274,7 +275,7 @@ namespace Informa.Web.Areas.Account.Controllers
             //Add paging to footer
             {
                 cb.BeginText();
-                cb.SetFontAndSize(bf, 12);
+                cb.SetFontAndSize(bf, 10);
                 cb.SetColorFill(BaseColor.DARK_GRAY);
                 cb.SetTextMatrix(document.PageSize.GetRight(40), document.PageSize.GetBottom(30));
                 cb.ShowText(PageNumber);
@@ -285,7 +286,7 @@ namespace Informa.Web.Areas.Account.Controllers
             if (writer.PageNumber > 1)
             {
                 cb.BeginText();
-                cb.SetFontAndSize(bf, 12);
+                cb.SetFontAndSize(bf, 10);
                 cb.SetColorFill(BaseColor.DARK_GRAY);
                 cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(30));
                 cb.ShowText(!string.IsNullOrEmpty(CommonHeader) ? CommonHeader : string.Empty);
@@ -293,7 +294,7 @@ namespace Informa.Web.Areas.Account.Controllers
             }
             //Adding common footer
             cb.BeginText();
-            cb.SetFontAndSize(bf, 12);
+            cb.SetFontAndSize(bf, 10);
             cb.SetColorFill(BaseColor.DARK_GRAY);
             cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetBottom(30));
             cb.ShowText(!string.IsNullOrEmpty(CommonFooter) ? CommonFooter : string.Empty);
