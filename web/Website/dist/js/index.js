@@ -741,6 +741,64 @@ $(window).on('scroll', function () {
 },{}],5:[function(require,module,exports){
 'use strict';
 
+(function () {
+	var RecomendedContent = {
+		AjaxData: function AjaxData(url, type, data, SuccessCallback) {
+			$.ajax({
+				url: url,
+				data: JSON.stringify(data),
+				dataType: 'json',
+				contentType: "application/json",
+				type: type,
+				cache: false,
+				success: function success(data) {
+					//if (data.articles && typeof data.articles === "object" && data.articles.length >= 3) {
+					SuccessCallback(data);
+					//}
+				}
+			});
+		},
+		RecomendedTemplate: function RecomendedTemplate(data) {
+			var Template = '';
+			if (data.articles.length > 0) {
+				for (var i = 0; i < 2; i++) {
+					Template += '<div class="section-article">' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].linkableText + ' </span>' + '<h5><a class="click-utag" href="' + data.articles[i].linkableUrl + '">' + data.articles[i].linkableText + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+				}
+			}
+
+			Template += '</div>';
+
+			$('.ContentRecomm-ReadNext').append(Template);
+		},
+		SuggestedTemplate: function SuggestedTemplate(data) {
+			var Template = '';
+			if (data.articles.length > 0) {
+				for (var i = 0; i < 2; i++) {
+					Template += '<div class="contentRecomm-article">' + '<img class="article-related-content__img" src="https://beta.agra-net.com/-/media/legacy-images/2016/july/orange_juice_167615144.jpg">' + '<span class="article-related-content__category">scrip Intelligence</span>' + '<h5>' + '<a class="click-utag" href="/articles/2016/07/04/probe-into-alleged-orange-juice-cartel-will-continue">' + '</a>' + '</h5>' + '<time class="article-related-content__date">22 Aug 2016</time>' + '</div>';
+				}
+			}
+
+			Template += '</div>';
+
+			$('.suggested-article').append(Template);
+		},
+		init: function init() {
+			var self = this;
+			if ($('.ContentRecomm-ReadNext').length > 0) {
+				self.AjaxData('/api/articlesearch', 'POST', null, self.RecomendedTemplate);
+			}
+			if (typeof window.PreferanceIds == "undefined") {
+				self.AjaxData('/api/articlesearch', 'POST', window.PreferanceIds, self.SuggestedTemplate);
+			}
+		}
+	};
+
+	RecomendedContent.init();
+})();
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
 var _controllersAnalyticsController = require('../controllers/analytics-controller');
 
 function setClsforFlw(t) {
@@ -1309,7 +1367,7 @@ $(function () {
     });
 });
 
-},{"../controllers/analytics-controller":10}],6:[function(require,module,exports){
+},{"../controllers/analytics-controller":11}],7:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -1425,7 +1483,7 @@ $(function () {
 	});
 });
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 function loadLayoutOneData(data, idx) {
@@ -2101,7 +2159,7 @@ $(function () {
 	});
 });
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -2301,7 +2359,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":10,"../controllers/form-controller":12,"../jscookie":20}],9:[function(require,module,exports){
+},{"../controllers/analytics-controller":11,"../controllers/form-controller":13,"../jscookie":21}],10:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -2370,7 +2428,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -2389,7 +2447,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -2477,7 +2535,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],12:[function(require,module,exports){
+},{"./analytics-controller":11}],13:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -2682,7 +2740,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -2750,7 +2808,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3036,7 +3094,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3161,7 +3219,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],16:[function(require,module,exports){
+},{"./analytics-controller":11}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3379,7 +3437,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],17:[function(require,module,exports){
+},{"./analytics-controller":11}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3696,7 +3754,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -3887,7 +3945,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],19:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],20:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -3971,6 +4029,8 @@ require('./components/myview-settings');
 require('./components/pagination');
 
 require('./components/personalisation');
+
+require('./components/dynamic-content-recomendation');
 
 // OTHER CODE
 
@@ -5150,7 +5210,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/personalisation":7,"./components/save-search-component":8,"./components/video-mini":9,"./controllers/analytics-controller":10,"./controllers/bookmark-controller":11,"./controllers/form-controller":12,"./controllers/lightbox-modal-controller":13,"./controllers/pop-out-controller":14,"./controllers/register-controller":15,"./controllers/reset-password-controller":16,"./controllers/sortable-table-controller":17,"./controllers/tooltip-controller":18,"./jscookie":20,"./modal":21,"./newsletter-signup":22,"./search-page.js":23,"./selectivity-full":24,"./svg4everybody":25,"./toggle-icons":26,"./zepto.dragswap":27,"./zepto.min":28}],20:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/dynamic-content-recomendation":5,"./components/myview-settings":6,"./components/pagination":7,"./components/personalisation":8,"./components/save-search-component":9,"./components/video-mini":10,"./controllers/analytics-controller":11,"./controllers/bookmark-controller":12,"./controllers/form-controller":13,"./controllers/lightbox-modal-controller":14,"./controllers/pop-out-controller":15,"./controllers/register-controller":16,"./controllers/reset-password-controller":17,"./controllers/sortable-table-controller":18,"./controllers/tooltip-controller":19,"./jscookie":21,"./modal":22,"./newsletter-signup":23,"./search-page.js":24,"./selectivity-full":25,"./svg4everybody":26,"./toggle-icons":27,"./zepto.dragswap":28,"./zepto.min":29}],21:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -5291,7 +5351,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -5599,7 +5659,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -5676,7 +5736,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":10}],23:[function(require,module,exports){
+},{"./controllers/analytics-controller":11}],24:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -5688,7 +5748,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -6713,7 +6773,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -6818,7 +6878,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6835,7 +6895,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -7085,7 +7145,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
     };
 })(Zepto);
 
-},{"./controllers/analytics-controller":10}],28:[function(require,module,exports){
+},{"./controllers/analytics-controller":11}],29:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -7824,7 +7884,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[19])
+},{}]},{},[20])
 
 
 //# sourceMappingURL=index.js.map
