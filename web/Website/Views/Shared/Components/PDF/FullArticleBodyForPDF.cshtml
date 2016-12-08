@@ -74,10 +74,12 @@
                                             <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                                         }
                                     </td>
+
                                     <td style="width: 10px;"></td>
                                     <td style="border-left:1px solid #5a5758;"></td>
                                     <td style="width: 10px;"></td>
                                     <td style="padding:0 10px 0 10px;">
+
                                         @if (!string.IsNullOrEmpty(author.Email_Address))
                                         {
                                             <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
@@ -103,12 +105,22 @@
     {
         <div class="article-author">
             <table>
-                <tr class="article-author__list">
-                    by
-                    @foreach (var author in authors)
+
+                @foreach (var author in authors)
                 {
+                    <tr class="article-author__list">
+                        <span>by</span>
                         <td>
-                            <span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>
+                            @if (author.InActive)
+                            {
+                                @author.Name
+                            }
+                            else
+                            {
+                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
+                                @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
+                            }
+
                             <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
                                 <table cellpadding="0" cellspacing="0">
                                     <tr>
@@ -122,8 +134,8 @@
                                         <td style="width: 10px;"></td>
                                         <td style="border-left:1px solid #5a5758;"></td>
                                         <td style="width: 10px;"></td>
-
                                         <td style="padding:0 10px 0 10px;">
+
                                             @if (!string.IsNullOrEmpty(author.Email_Address))
                                             {
                                                 <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
@@ -133,8 +145,9 @@
                                 </table>
                             </span>
                         </td>
-                    }
-                </tr>
+                    </tr>
+                }
+
             </table>
         </div>
         @* END MULTIPLE AUTHORs *@
