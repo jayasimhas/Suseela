@@ -13,14 +13,15 @@
 	
         <!--100% Width full tile with grey background-->
         
-        <table border="0" width="100%" cellpadding="0" cellspacing="20" style="background-color:#@GetBackgroundColor(Model); border-collapse: separate;" >
+        <table class="manual-curated-email-section manual-featured-article" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color:#@GetBackgroundColor(Model);" >
             @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine && Model.Articles.ToList().Count > 0)
             {
                 <tr>
                     <td>
                         <table border="0"  cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-							<td>
+							<td style="padding: 15px 15px 0 15px;">
+								<div class="article-metadata" style="width:100%;">
                                 @if (Model.Articles[0].Actual_Publish_Date != null)
                                 {
 									
@@ -78,6 +79,7 @@
                                         }
                                     }
                                 }
+								</div>
 								</td>
                             </tr>
                         </table>
@@ -86,30 +88,30 @@
             }
 
             <tr>
-                <td colspan="6">
+                <td colspan="6" style="padding-left: 15px; padded-right:15px; padding-top: 0;">
                     
                         <a href="@Model.Articles[0]._Url" > <h3 class="featured__title">@Model.Articles[0].Title </h3></a>
                     
                 </td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="6" style="padding-left:15px; padding-right:15px;">
                     <table  width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             @if (Model.Articles[0].Featured_Image_16_9 != null)
                             {
-                                <td rowspan="2"class="one-third layout-padded-right"><a href="@Model.Articles[0]._Url"><img  src="@Model.Articles[0].Featured_Image_16_9.Src" /></a></td>
+                                <td rowspan="2"class="one-third layout-padded-right" ><a href="@Model.Articles[0]._Url"><img  src="@Model.Articles[0].Featured_Image_16_9.Src" /></a></td>
                             }
 							
                             @if ((Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
                             {
-                                <td> 
+                                <td > 
 									<span class="article-byline">@Html.Raw(Model.Byline)</span>
 								</td>
                             }
                         </tr>
                         <tr>
-                            <td>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? Editable(Model, m => m.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
+                            <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? Editable(Model, m => m.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
                         </tr>
                     </table>
                 </td>
@@ -146,14 +148,22 @@
         </table>
 
     }
-    if (Model.Articles != null && Model.Articles.Any())
+    if (Model.Articles != null && Model.Articles.Any() &&
+       (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow ||
+       Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows))
     {
-       
-                    if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow)
-                    {
-                     @Html.Raw(GetStartTag())
-                <td width="47%" align="top" class="full-mob">
-                    <table border="0" height="320" cellpadding="0" cellspacing="0">
+        if (Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
+        {
+            @Html.Raw(GetStartTag())
+        }
+        if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow)
+        {
+            if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
+            {
+                @Html.Raw(GetStartTag())
+            }
+                <td width="47%" align="top" class="full-mob" style="vertical-align: top;">
+                    <table width="100%" border="0" height="320" cellpadding="0" cellspacing="0">
                         <tbody>
                             <tr>
                                 <td>
@@ -161,28 +171,31 @@
                                     {
                                         if (article != null)
                                         {
-                                    <table border="0" cellpadding="0" cellspacing="10"  height="160" style="border-bottom: 1px solid #ccc; border-collapse: separate;" >
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0"  height="160"  >
                                         <tbody>
                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                             {
                                     <tr>
-                                        <td valign="middle">
-                                            <table border="0" cellpadding="0" cellspacing="0">
+                                        <td valign="middle" style="vertical-align: top;">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr>
+														<td valign="top" style="padding-left:15px;">
+														<div class="article-metadata">
                                                         @if (article.Actual_Publish_Date != null)
                                                         {
-                                                        <td valign="middle">
-                                                           <span class="article-date"> @article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
+                                                            <span class="article-date"> @article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
                                                             <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
-                                                        </td>
+                                                       
                                                         }
                                                         @if (Model.Articles[0].Content_Type != null)
                                                         {
-                                                        <td style="font-weight: bold;  padding-right: 10px; text-transform: uppercase;" valign="middle">
+                                                        <span class="article-category" valign="middle">
                                                             @Model.Articles[0].Content_Type.Item_Name
-                                                        </td>
+                                                        </span>
                                                         }
+														</div>
+														</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -190,7 +203,7 @@
                                     </tr>
                                             }
                                             <tr>
-                                                <td valign="middle">
+                                                <td valign="top" style="padding-left:15px;">
                                                     
                                                         <a href="@article._Url"><h3 class="featured__title"> @article.Title</h3></a>
                                                     
@@ -200,8 +213,8 @@
                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
                                             {
                                     <tr>
-                                        <td valign="middle">
-                                            <table border="0" cellpadding="0" cellspacing="0">
+                                        <td valign="top" style="padding-left:15px;">
+                                            <table  border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr>
                                                         @if (article.Taxonomies != null)
@@ -241,6 +254,12 @@
                                             </table>
                                         </td>
                                     </tr>
+									<tr> 
+										<td style=" padding-left: 15px;"> 
+												<div style="border-bottom: 1px solid #ccc; border-collapse: separate;"></div>
+										</td>
+									</tr>
+									
                                             }
 
                                         </tbody>
@@ -258,11 +277,11 @@
                     {
                    <td width="5%">&nbsp;</td>      
                 <td width="47%" align="top" class="full-mob">
-                    <table height="320" border="0" cellpadding="0" cellspacing="0">
+                    <table class="manual-featured-article" width="100%" height="320" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
                             <tr>
                                 <td valign="top">
-                                    <table style=" border-collapse: separate;" cellpadding="10" border="0" cellspacing="0">
+                                    <table width="100%" style=" border-collapse: separate;" cellpadding="10" border="0" cellspacing="0">
                                         <tbody>
                                             <tr>
                                                 <td style="border-bottom:2px solid #ccc; border-top:2px solid #ccc; background: #f1f2f2;">
@@ -270,7 +289,7 @@
                                                     {
                                                         if (article != null)
                                                         {
-                                                            <table cellpadding="10" height="100" width="100%" style="border-bottom:1px solid #ccc;">
+                                                            <table border="0" width="100%"  cellpadding="0" height="100" style="border-bottom:1px solid #ccc;">
                                                                 <tr>
                                                                     <td>
 																		 <a href="@article._Url" > 
@@ -292,10 +311,18 @@
                         </tbody>
                     </table>
                 </td>
+
+               if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
+            {
                 @Html.Raw(GetEndTag())
+            }
+        }
+        if (Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
+        {
+            @Html.Raw(GetEndTag())
+        }
         }
 
-    }
     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleTwoColumn && Model.Articles != null && Model.Articles.Any())
     {
         int index = 0;
@@ -312,38 +339,41 @@
                         if (article != null && index < 2)
                         {
                             <td valign="top" class="full-mob" width="47%">
-                                <table border="0"  style="border-collapse: separate;" cellpadding="0" cellspacing="10">
+                                <table  border="0"  style="border-collapse: separate;" cellpadding="0" cellspacing="0">
                                     <tbody>
                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                         {
                                             <tr>
                                                 <td valign="top">
-                                                    <table cellpadding="0" cellspacing="0">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                             <tr>
+																<td valign="top">
+																<div class="article-metadata" style="padding-left:15px;">
                                                                 @if (article.Actual_Publish_Date != null)
                                                                 {
-                                                                    <td>
+                                                                    
                                                                         <span class="article-date">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
                                                                         <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
-                                                                    </td>
+                                                                   
                                                                 }
                                                                 @if (article.Content_Type != null)
                                                                 {
-                                                                    <td style="font-weight: bold; text-transform: uppercase">
-                                                                        @article.Content_Type.Item_Name
+                                                                   <span class="article-category">
+                                                                        @article.Content_Type.Item_Name</span>
                                                                         <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
-                                                                    </td>
+                                                                    
                                                                 }
                                                                 @if (article.Media_Type != null && article.Media_Type.Media_Type_Icon != null &&
                                                                     !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
                                                                 {
-                                                                    <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;">
-                                                                        <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                    <span class="article-content-type">
                                                                             <img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" />
                                                                         </span>
-                                                                    </td>
+                                                                    
                                                                 }
+																</div>
+																</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -352,7 +382,7 @@
                                         }
 										
                                         <tr>
-                                            <td valign="middle">
+                                            <td valign="top" style="padding-left:15px;">
                                                 <a href="@article._Url" ><h3 style="height: 50px;" class="featured__title">
                                                     @article.Title
                                                 </h3>
@@ -361,15 +391,15 @@
                                         </tr>
 										
                                         <tr>
-                                            <td valign="top" height="120px">
-                                                <p style="font-family: Roboto Condensed Bold;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
+                                            <td valign="top" height="120px" style="padding-left:15px;">
+                                                <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
                                             </td>
                                         </tr>
 
                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
                                         {
                                             <tr>
-                                                <td valign="middle">
+                                                <td valign="middle" style="padding-left:15px;">
                                                     <table border="0"  cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                             <tr>

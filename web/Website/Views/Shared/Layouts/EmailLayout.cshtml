@@ -174,12 +174,23 @@
         .manually-curated-section {
             margin-bottom: 32px;
         }
-
+		.manual-curated-email-section{
+			padding: 15px;
+		}
+		.manual-layout-margin-left{
+			margin-left:5%;
+		}
+		.manual-layout-padded-left{
+			padding-left:5%;
+		}
+		.manual-featured-article td{
+			padding-bottom:12px;
+		}
         .daily-alert {
             background-color: #eee;
             margin-bottom: 24px;
         }
-
+	
         .daily-alert__cell {
             padding-bottom: 16px;
             padding-top: 16px;
@@ -580,7 +591,7 @@
                                                     </table>
                                                      @Html.Sitecore().Placeholder("email-main")
                                                     
-                                                    @if (Model.IsPersonalizedEmail)
+                                                    @if (Model.AddPersonalizedContent)
                                                     {
                                                         @personalizeContentToken
 

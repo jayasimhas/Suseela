@@ -6756,18 +6756,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsPersonalizedEMail { get; set; }
+        [SitecoreField(IExactTarget_EmailConstants.Add_Personalized_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool AddPersonalizedContent { get; set; }
 
-        /// <summary>
-        /// Agri email field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: 8c8d4aa5-8023-4c9e-848e-e246885650ea</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsAgriEMail { get; set; }
     }
 
 
@@ -6878,8 +6869,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         /// <para>Field ID: f61ba7f5-038c-4def-b7de-03f9e0d2bdf4</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IExactTarget_EmailConstants.Is_Personalized_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool IsPersonalizedEMail { get; set; }
+        [SitecoreField(IExactTarget_EmailConstants.Add_Personalized_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool AddPersonalizedContent { get; set; }
     }
 
     public static partial class IExactTarget_EmailConstants
@@ -6943,11 +6934,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
 
-        public static readonly ID Is_Personalized_EmailFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
-        public const string Is_Personalized_EmailFieldName = "Is Personalized Email";
+        public static readonly ID Add_Personalized_ContentFieldId = new ID("f61ba7f5-038c-4def-b7de-03f9e0d2bdf4");
+        public const string Add_Personalized_ContentFieldName = "Add Personalized Content";
 
-        public static readonly ID Is_Agri_EmailFieldId = new ID("8c8d4aa5-8023-4c9e-848e-e246885650ea");
-        public const string Is_Agri_EmailFieldName = "Is Agri Email";
     }
 
 }
@@ -27387,13 +27376,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
 
     /// <summary>
-    /// IFeatured_Article_Agri Interface
+    /// IFeatured_Article_MultiColumn Interface
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Article Agri</para>	
     /// <para>ID: 0486af14-6347-4ea8-9c09-ffe2d35e89d9</para>	
     /// </summary>
-    [SitecoreType(TemplateId = IFeatured_Article_Agri_Constants.TemplateIdString)]
-    public partial interface IFeatured_Article_Agri : IGlassBase
+    [SitecoreType(TemplateId = IFeatured_Article_MultiColumn_Constants.TemplateIdString)]
+    public partial interface IFeatured_Article_MultiColumn : IGlassBase
     {
         /// <summary>
         /// The Article field.
@@ -27402,7 +27391,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field ID: 2d2501f3-b05c-4705-8b7c-07429df21922</para>
         /// <para>Custom Data: type=Pages.IArticle</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
         Pages.IArticle ArticleOne { get; set; }
 
         /// <summary>
@@ -27412,7 +27401,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field ID: 538edd96-ba32-41b4-bd23-894e479ef6cc</para>
         /// <para>Custom Data: type=Pages.IArticle</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
         Pages.IArticle ArticleTwo { get; set; }
 
         /// <summary>
@@ -27422,7 +27411,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field ID: b0356daf-fe58-4ed9-a441-f87c8490cb72</para>
         /// <para>Custom Data: type=Pages.IArticle</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
         Pages.IArticle ArticleThree { get; set; }
 
         /// <summary>
@@ -27431,7 +27420,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: fc20fbd0-dbd4-48f0-8c23-40f330d90d82</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Grey_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Show_Grey_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowGreyBackground { get; set; }
 
         /// <summary>
@@ -27440,7 +27429,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: 972f333b-0547-4d8b-964a-33ebf5abb4f8</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Tag_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Disable_Tag_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool DisableTagLine { get; set; }
 
         /// <summary>
@@ -27449,7 +27438,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: 01bad319-d297-407b-94d3-7f4b4e40962d</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Disable_Meta_TagsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Disable_Meta_TagsFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool DisableMetaTags { get; set; }
 
         /// <summary>
@@ -27458,7 +27447,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: c91be9a6-1244-4c10-bdeb-e0d09346347c</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Hide_Author_By_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Hide_Author_By_LineFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool HideAuthorByLine { get; set; }
 
         /// <summary>
@@ -27467,7 +27456,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Rich Text</para>		
         /// <para>Field ID: 0765ef0f-8d37-4025-8346-407dfb827fb0</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Short_Description_Article_OneFieldName, Setting = SitecoreFieldSettings.InferType)]
         string DescriptionArticleOne { get; set; }
 
         /// <summary>
@@ -27476,7 +27465,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Rich Text</para>		
         /// <para>Field ID: 44a949fe-7019-4bac-9877-036864492718</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Short_Description_Article_TwoFieldName, Setting = SitecoreFieldSettings.InferType)]
         string DescriptionArticleTwo { get; set; }
 
         /// <summary>
@@ -27485,7 +27474,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Rich Text</para>		
         /// <para>Field ID: db23bbde-ec33-42e5-b2e0-ba85f6841e80</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Short_Description_Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Short_Description_Article_ThreeFieldName, Setting = SitecoreFieldSettings.InferType)]
         string DescriptionArticleThree { get; set; }
 
         /// <summary>
@@ -27494,17 +27483,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: b5b10e37-01f8-47ed-9626-9059641a2042</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_Agri_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowPinkBackground { get; set; }
 
     }
 
-    public static partial class IFeatured_Article_Agri_Constants
+    public static partial class IFeatured_Article_MultiColumn_Constants
     {
 
         public const string TemplateIdString = "0486af14-6347-4ea8-9c09-ffe2d35e89d9";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Featured Article Agri";
+        public const string TemplateName = "Featured Article MultiColumn";
 
 
         public static readonly ID Article_OneFieldId = new ID("2d2501f3-b05c-4705-8b7c-07429df21922");
