@@ -1,63 +1,46 @@
 ﻿@model Informa.Web.ViewModels.Articles.ArticleRecommendationViewModel
 
 <div class="contentRecommendations">
-@*Editor Picks@
+@*Editor Picks*@
     <div class="article-related-content">
         <h2>@Model.EditorPicksText</h2>  
         
-            @foreach (var article in Model.EditorsPicks)
-            {
+         @foreach (var article in Model.EditorsPicks)
+         {
+             string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
                 <div class="contentRecomm-article">
-                    <img class="article-related-content__img" src="@article.Featured_Image_16_9.Src" />
-                    <span class="article-related-content__category">publication name</span>
+                    <img class="article-related-content__img" src="@img" />
+                    <span class="article-related-content__category">@Model.PublicationName</span>
                     <h5><a class="click-utag" href="@article.LinkableUrl">@article.Title</a></h5>
-                    <time class="article-related-content__date">@article.Actual_Publish_Date.ToString()</time>
+                    <time class="article-related-content__date">@article.Actual_Publish_Date.ToString("d MMM yyyy")</time>
                 </div>
-            }
+          }
                
 
         @*What to read next*@
-        <div>@Model.WhatToReadNextText</div>
+        
+           <input type="hidden" id="hdnTaxonomyIds" value="@Html.Raw(Model.TaxonomyItems)" />
+            <div class="ContentRecomm-ReadNext">
+                <h2>@Model.WhatToReadNextText</h2>
+            </div>
 
 
-        @*Suggested For you*@
-        @if (Model.IsAuthenticated && Model.IsGlobalToggleEnabled)
-        {
-            if (Model.IsFollowingAnyItem)
+            @*Suggested For you*@
+            @if (Model.IsAuthenticated && Model.IsGlobalToggleEnabled)
             {
-                <script type="text/javascript">
-                    var PreferanceIds = @Html.Raw(Model.JSONData);
-                </script>
-            }
-            else if (!string.IsNullOrWhiteSpace(Model.EntitlenetIDs))
-            {
-                <script type="text/javascript">
-                    var EntitlenetIds = @Html.Raw(Model.JSONData);
-                </script>
-            }
-            <div>@Model.SuggestedForYouText</div>
+                if (Model.IsFollowingAnyItem)
+                {
+                    <input type="hidden" id="hdnPreferanceIds" value="@Html.Raw(Model.PreferedTaxonomies)" />
+                }
+                else if (!string.IsNullOrWhiteSpace(Model.EntitlementIDs))
+                {
+                    <input type="hidden" id="hdnPreferanceIds" value="@Html.Raw(Model.EntitlementIDs)" />
+                }
+                <div class="suggested-article">
+                    <h2>@Model.SuggestedForYouText</h2>
+                 </div>
 
-        }
+                    }
+               </div>
     </div>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $.ajax({
-        url: '/api/articlesearch',
-        data: JSON.stringify({ 'TaxonomyIds': [@Html.Raw(Model.TaxonomyItems)] , 'PageNo': 1, 'PageSize': 4 }),
-        dataType: 'json',
-        contentType: "application/json",
-        type: 'POST',
-        cache: false,
-        async: false,
-        success: function (data) {
-            if (data.articles && typeof data.articles === "object" && data.articles.length >= 3) {
-                alert(data.articles);
-            }
-        },
-        error: function error(xhr, errorType, _error) {
-            console.log('err ' + _error);
-        }
-    });
-
-</script>
