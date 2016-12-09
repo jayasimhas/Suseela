@@ -56,10 +56,10 @@
 		init: function() {
 			var self = this;
 			if($('.ContentRecomm-ReadNext').length > 0) {
-				self.AjaxData('/api/articlesearch', 'POST', null, self.RecomendedTemplate);
+				self.AjaxData('/api/articlesearch', 'POST', { 'TaxonomyIds': [window.TaxonomyIds] , 'PageNo': 1, 'PageSize': 4 } , self.RecomendedTemplate);
 			}
 			if(typeof window.PreferanceIds == "undefined") {
-				self.AjaxData('/api/articlesearch', 'POST', window.PreferanceIds, self.SuggestedTemplate);
+				self.AjaxData('/api/articlesearch', 'POST', { 'TaxonomyIds': [window.PreferanceIds] , 'PageNo': 1, 'PageSize': 4 } , self.SuggestedTemplate);
 			}
 		}
 	}
