@@ -8,8 +8,10 @@
 
         public string GreetingSummary => GlassModel.Summary;
 
-        public string DownloadLinkUrl => GlassModel.Download_Link.Url;
+        public string DownloadLinkUrl => GlassModel.Download_Link?.Url;
 
-        public string ImagePath => GlassModel.Image.Src;
+        public string DownloadLinkText => GlassModel.Download_Link?.Text;
+
+        public string ImagePath => GlassModel.Image?.Src;
     }
 }
