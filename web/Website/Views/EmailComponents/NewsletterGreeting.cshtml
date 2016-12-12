@@ -8,12 +8,20 @@
                     @Model.GreetingTitle
                 </div>
                 <div class="caps-body">
-                    <img src="/dist/img/email-template/newletter-img.jpg" style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;float: left; margin-right: 15px;" />
-
-                    <p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">
-                        <strong style="color: #000;">Hi #FirstName#,</strong>
-                        @Editable(Model, m => m.GreetingSummary)
-                    </p>
+					
+							<div class="one-third layout-padded-right" valign="top" style="float: left;">
+								   <img src="https://commodities.int.informa.products.com/-/media/tableau_thumbnail3.png"  />
+							</div>
+							
+							<div >
+								<p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">
+									<strong style="color: #000;">Hi #FirstName#,</strong>
+								
+								</p>
+								<p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">	@Editable(Model, m => m.GreetingSummary)</p>
+							</div>
+							
+						
                 </div>
                 <div class="download-link" style="text-align: center;">
                     <a href="#" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background:#fff;display:inline-block;padding:10px 20px;margin-top:20px;color:#000;font-weight:bold;border:1px solid #fbb040;">DOWNLOAD [BRIEFING TITLE]</a>

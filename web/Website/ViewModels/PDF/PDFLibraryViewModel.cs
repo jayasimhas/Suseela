@@ -75,11 +75,11 @@ namespace Informa.Web.ViewModels.PDF
             var pdfs = new List<Pdf>();
 
 
-            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
-               _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();           
-            if (homeItem != null)
+            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString()); 
+
+            if (currentItem != null)
             {
-                var PdfsRootItem = homeItem._ChildrenWithInferType.OfType<IPdfs_Root>().FirstOrDefault();
+                var PdfsRootItem = currentItem._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
 
                 if (PdfsRootItem != null)
                 {

@@ -1,5 +1,5 @@
 ﻿@inherits CustomGlassView<AdViewModel>
-
+@{ Model.Init(); }
 <!-- DEPRECATED -->
 <!-- Work should be done in Views/Advertisements, this is only here for backward compatability. -->
 
@@ -13,9 +13,12 @@
     <section class="article-preview article-preview--small">
         <div class="article-preview__ad advertising">
             <span class="advertising__label">@Model.AdvertisementText</span>
+        @*This check is to avoid page redirection to advertisement module in page editor mode*@
+        @if (!IsInEditingMode) {
             <script>
                 OAS_AD('@Model.RectangularSlotId', '@Model.RectangularAdZone');
             </script>
+            }
         </div>
     </section>
 }
