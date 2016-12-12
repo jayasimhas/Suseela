@@ -13,7 +13,7 @@
 	
         <!--100% Width full tile with grey background-->
         
-        <table class="manual-curated-email-section manual-featured-article" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color:#@GetBackgroundColor(Model);" >
+        <table class="mobView manual-curated-email-section manual-featured-article" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color:#@GetBackgroundColor(Model);" >
             @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine && Model.Articles.ToList().Count > 0)
             {
                 <tr>
@@ -117,28 +117,32 @@
                 </td>
             </tr>
             <tr class="visible-mob" style="display: none;">
+			<td align="left" style="padding-left:15px;">
                 @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                 {
                     if (Model.Articles[0].Taxonomies.ToList().Count > 2)
                     {
                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
                         {
-                            <td align="center">
-                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name<span class="vertical-separator">|</span></a>
-                            </td>
+                            
+                                <span ><a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name<span>&nbsp;</span><span class="vertical-separator">|</span></a></span>
+                          
                         }
                     }
                     else
                     {
                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
                         {
-                            <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-left:0;position:relative;list-style: none;">
-                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name</a>
+                            
+                               <span> <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name</a>
+							   <span>&nbsp;</span>
                                 <span class="vertical-separator">|</span>
-                            </td>
+								</span>
+                            
                         }
                     }
                 }
+				</td>
             </tr>
 </table>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -162,7 +166,7 @@
             {
                 @Html.Raw(GetStartTag())
             }
-                <td width="47%" align="top" class="full-mob" style="vertical-align: top;">
+                <td align="top" class="full-mob" style="vertical-align: top; width: 47%;">
                     <table width="100%" border="0" height="320" cellpadding="10" cellspacing="0">
                         <tbody>
                             <tr>
@@ -176,11 +180,11 @@
                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                             {
                                     <tr>
-                                        <td valign="middle" style="vertical-align: top;">
+                                        <td valign="middle" style="vertical-align: top; padding-bottom:0;">
                                             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr>
-														<td valign="top" >
+														<td valign="top" style="padding-bottom:0;" >
 														<div class="article-metadata">
                                                         @if (article.Actual_Publish_Date != null)
                                                         {
@@ -216,7 +220,7 @@
                                         <td valign="top" style="padding-bottom:15px;">
                                             <table  border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
-                                                    <tr>
+                                                    <tr><td>
                                                         @if (article.Taxonomies != null)
                                                         {
                                                             int count = 0;
@@ -224,28 +228,28 @@
                                                             {
                                                                 foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                                 {
-                                                                    <td>
+                                                                    <span>
                                                                         <a style="color:#be1e2d;text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                         @if (count == 0)
                                                                         {
                                                                             count++;
                                                                             <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
                                                                         }
-                                                                    </td>
+                                                                    </span>
                                                                 }
                                                             }
                                                             else
                                                             {
                                                                 foreach (var taxonomyItem in article.Taxonomies)
                                                                 {
-                                                                    <td>
+                                                                    <span>
                                                                         <a style="color:#be1e2d;text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                         @if (count == 0)
                                                                         {
                                                                             count++;
                                                                             <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
                                                                         }
-                                                                    </td>
+                                                                    </span>
                                                                 }
                                                             }
                                                         }
@@ -273,7 +277,7 @@
         {
             int index = 0;
                    <td width="5%">&nbsp;</td>      
-                <td width="47%" align="top" class="full-mob">
+                <td style="width: 47%" align="top" class="full-mob">
                     <table class="manual-featured-article" width="100%" height="320" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
                             <tr>
@@ -329,7 +333,7 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
-        <table border="0" width="100%" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #ccc;" >
+        <table class="mobView" border="0" width="100%" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #ccc;" >
             <tbody>
                 <tr>
                     @foreach (var article in Model.Articles)
@@ -389,10 +393,8 @@
                                         </tr>
 										
                                         <tr>
-                                            <td valign="top" height="120px" style="padding-left:15px;">
-                                                <div style="height:120px;">
-                                                    <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
-                                                </div>
+                                            <td valign="top" height="120" style="padding-left:15px;">
+                                                <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
                                             </td>
                                         </tr>
 
@@ -402,7 +404,7 @@
                                                 <td valign="middle" style="padding-left:15px;">
                                                     <table border="0"  cellpadding="0" cellspacing="0">
                                                         <tbody>
-                                                            <tr>
+                                                            <tr><td>
                                                                 @if (article.Taxonomies != null)
                                                                 {
                                                                     int count = 0;
@@ -410,32 +412,32 @@
                                                                     {
                                                                         foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                                         {
-                                                                            <td>
+                                                                            <span>
                                                                                 <a style="color:#be1e2d; text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                                 @if (count == 0)
                                                                                 {
                                                                                     count++;
                                                                                     <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
                                                                                 }
-                                                                            </td>
+                                                                            </span>
                                                                         }
                                                                     }
                                                                     else
                                                                     {
                                                                         foreach (var taxonomyItem in article.Taxonomies)
                                                                         {
-                                                                            <td>
+                                                                            <span>
                                                                                 <a style="color:#be1e2d; text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                                 @if (count == 0)
                                                                                 {
                                                                                     count++;
                                                                                     <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
                                                                                 }
-                                                                            </td>
+                                                                            </span>
                                                                         }
                                                                     }
                                                                 }
-                                                                
+                                                                </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -447,7 +449,7 @@
                                     </tbody>
                                 </table>
                             </td>
-							<td width="5%">&nbsp;</td>
+							<td width="5%" class="mobBorder">&nbsp;</td>
                             index++;
                         }
                     }
@@ -461,7 +463,6 @@
             </tr>
         </table>
     }
-
 }
 
 @functions
@@ -478,7 +479,7 @@
 
     public string GetStartTag()
     {
-        return @"<table border='0' cellpadding='0' cellspacing='0' width='100%'><tr>";
+        return @"<table class='mobView' border='0' cellpadding='0' cellspacing='0' width='100%'><tr>";
     }
 
     public string GetEndTag()

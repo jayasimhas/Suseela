@@ -5,17 +5,15 @@
         <tr>
             <td class="daily-alert__cell" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:16px;padding-top:16px;padding-left:24px;padding-right:24px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 16px;padding-top: 16px;padding-left: 24px;padding-right: 24px;">
                 <div class="caps-header" style="text-transform:uppercase;font-size:20px;font-weight:bold;text-align:center;margin-bottom:8px;text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px; font-family: Roboto Condensed;">
-                    @Model.GreetingTitle
+                    @Editable(Model, m =>m.GreetingTitle)
                 </div>
                 <div class="caps-body">
                     <table width="100%" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td class="one-third layout-padded-right" rowspan="3">
-                                    <img src="@Model.ImagePath" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
+                            <td> 
+                                <div class="one-third layout-padded-right" style="float: left;" >  								
+								<img src="@Model.ImagePath" /></div>
+                         
                                 <div>
                                     <p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">
                                         <strong style="color: #000;">Hi #FirstName#,</strong>
