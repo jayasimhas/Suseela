@@ -57,8 +57,31 @@
                             </td>
                         </tr>
                     }
+
                 }
             }
+
+            @if (Model != null && Model.PersonalizedPdfs != null && Model.PersonalizedPdfs.Count() > 0)
+               {
+
+                            foreach(var perPdf in Model.PersonalizedPdfs)
+                            {
+                                if (perPdf.TypeOfPdf == PdfType.Personalized)
+                                {
+                            <tr>
+                                <td align = "left" id = "pdfLibrary" > @perPdf.IssueDate.ToString("dd/MM/yyyy") </td>
+                                <td align="left">@Html.ActionLink("001", "", "",null)&nbsp;</td>
+                                    <td align="left">
+                                        @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)
+                                        &nbsp;
+                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })">
+                                            <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
+                                        </a>
+                                    </td>
+                            </tr>
+                                }
+                            }
+                }
         </tbody>
     </table>
     @*<input type="hidden" id="jobTilesCount" value="2" />

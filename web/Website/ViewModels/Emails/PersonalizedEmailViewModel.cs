@@ -169,7 +169,7 @@ namespace Informa.Web.ViewModels.Emails
             filter.Page = 1;
             filter.PageSize = SiteRootContext.Item.Max_Number_Of_Articles_Per_Section;
             filter.TaxonomyIds.AddRange(sec.TaxonomyIds.Select(taxonomy => new Guid(taxonomy)));
-            var results = ArticleSearch.PersonalizedSearch(filter);
+            var results = ArticleSearch.PersonalizedSearch(filter, null, null);
             if (results != null && results.Articles != null)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));

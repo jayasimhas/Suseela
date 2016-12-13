@@ -35,7 +35,7 @@
             filter.Page = articleRequest.PageNo;
             filter.PageSize = articleRequest.PageSize;
             filter.TaxonomyIds.AddRange(articleRequest.TaxonomyIds.Select(x => new Guid(x)));
-            var results = ArticleSearch.PersonalizedSearch(filter);
+            var results = ArticleSearch.PersonalizedSearch(filter, null, null);
             if (results != null && results.Articles != null && results.Articles.Count() > articleRequest.PageSize - 1)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));

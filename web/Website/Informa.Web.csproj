@@ -1244,6 +1244,7 @@
     <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
+    <Compile Include="ViewModels\PDF\PersonalizedPdfViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -2182,6 +2183,7 @@
     <Content Include="Views\Advertisements\RectangularAd2.cshtml" />
     <Content Include="Views\Advertisements\RectangularAd3.cshtml" />
     <Content Include="Views\Article\ArticleRecommendation.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\FullArticlePersonalizedPdf.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
