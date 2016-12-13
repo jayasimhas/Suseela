@@ -111,7 +111,7 @@
                             }
                         </tr>
                         <tr>
-                            <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? Editable(Model, m => m.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
+                            <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
                         </tr>
                     </table>
                 </td>
@@ -394,7 +394,7 @@
 										
                                         <tr>
                                             <td valign="top" height="120" style="padding-left:15px;">
-                                                <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? Editable(Model, m => m.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
+                                                <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
                                             </td>
                                         </tr>
 
