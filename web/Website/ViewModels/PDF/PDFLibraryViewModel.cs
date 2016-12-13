@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Informa.Web.ViewModels.MyView;
+using Informa.Web.Models;
 
 namespace Informa.Web.ViewModels.PDF
 {
@@ -58,10 +60,15 @@ namespace Informa.Web.ViewModels.PDF
         /// Data tool link Text
         /// </summary>
         public string DataToolLinkText => TextTranslator.Translate("DataToolLandingPage.Link.Text");
+
         /// <summary>
         /// Method call to Get PDFs
         /// </summary>
         public IList<Pdf> Pdfs => GetPdfs();
+        /// <summary>
+        /// Method call to Get Personalized PDFs
+        /// </summary>
+        public IList<Pdf> PersonalizedPdfs => GetPersonalizedPdfs();
         /// <summary>
         /// User email Id
         /// </summary>
@@ -73,7 +80,6 @@ namespace Informa.Web.ViewModels.PDF
         public IList<Pdf> GetPdfs()
         {
             var pdfs = new List<Pdf>();
-
 
             var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString()); 
 
@@ -129,6 +135,52 @@ namespace Informa.Web.ViewModels.PDF
                         }
                     }
                     return pdfs.OrderByDescending(n=>n.IssueDate).ToList();
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Method to get all personalized PDFs
+        /// </summary>
+        /// <returns>Personalized PDFs</returns>
+        public IList<Pdf> GetPersonalizedPdfs()
+        {
+            var pdfs = new List<Pdf>();
+
+            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
+
+            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+               _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+
+            bool enablePersonlize = SiterootContext.Item.Enable_MyView_Toggle;
+
+            if (currentItem != null && enablePersonlize)
+            {
+                //var PdfsRootItem = homeItem._ChildrenWithInferType.OfType<IPdfs_Root>().FirstOrDefault();
+                var PdfsRootItem = currentItem._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+
+                if (PdfsRootItem != null)
+                {
+                    //Personalized PDFs 
+                    var personalizedPdfs = PdfsRootItem._ChildrenWithInferType.OfType<IPersonalized_PDF_Page>();
+                    if (personalizedPdfs != null && personalizedPdfs.Any())
+                    {
+                        foreach (var personalizePdfs in personalizedPdfs)
+                        {
+                            pdfs.Add(new Pdf
+                            {
+                                TypeOfPdf = PdfType.Personalized,
+                                IssueDate = personalizePdfs.Issue_Date,
+                                PubStartDate = personalizePdfs.Publish_StartDate,
+                                PubEndDate = personalizePdfs.Publish_EndDate,
+                                ArticleSize = personalizePdfs.Article_Size,
+                                PdfPageUrl = personalizePdfs._AbsoluteUrl,
+                                PdfTitle = personalizePdfs.Title,
+                            });
+                        }
+                    }
+                    return pdfs;
                 }
             }
             return null;
