@@ -55,11 +55,11 @@ namespace Informa.Library.Search.Utilities
 
 				if (dict.ContainsKey(key))
 				{
-					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{HttpUtility.UrlEncode(item.Item_Name)}";
+					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{HttpUtility.UrlEncode(item.Item_Name.Replace("\r", ""))}";
 				}
 				else
 				{
-					dict[key] = HttpUtility.UrlEncode(item.Item_Name);
+					dict[key] = HttpUtility.UrlEncode(item.Item_Name.Replace("\r", "");
 				}
 			}
 
