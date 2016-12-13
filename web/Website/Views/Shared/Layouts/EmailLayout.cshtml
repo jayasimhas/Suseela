@@ -494,6 +494,24 @@
                 display: block !important;
             }
         }
+		
+		@@media (max-width: 767px){
+			table.mobView tr  td {
+				
+                display: block !important; 
+			}
+			.visible-desk {
+                display: none !important;
+            }
+			.mobBorder{
+				 border-top: 1px solid #ccc;
+				 width:98%;
+			}
+			table.mobView{
+				border-bottom: none !important;
+			}
+			
+		}
     </style>
 </head>
 @using (new LinkProviderSwitcher(Sitecore.Context.PageMode.IsNormal ? "informaEmailLinkProvider" : "sitecore"))

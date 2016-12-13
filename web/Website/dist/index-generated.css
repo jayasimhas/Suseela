@@ -6043,14 +6043,16 @@ section: UI Elements
         right: 30px; }
 
 .Insurance_ResponsiveTable .idi-table-heading {
-  background-color: #eb6d09;
-  padding: 5px 10px; }
+  background-color: #414042;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400; }
 
 .Insurance_ResponsiveTable .idi-table-heading p {
-  font-size: 8pt;
-  font-weight: bold;
-  display: inline;
-  color: white; }
+  display: inline; }
 
 .Insurance_ResponsiveTable .idi-table-heading .heading-parenthetical {
   font-weight: normal;
@@ -6114,28 +6116,27 @@ section: UI Elements
 
 .Insurance_ResponsiveTable .idi-table-category-hover {
   float: left;
-  width: 109px;
+  width: 9%;
   height: 6em;
-  background-color: #666666;
-  border-right: 1px solid #666666; }
+  background-color: #c12d3b;
+  border-right: 1px solid #FFF; }
 
 .Insurance_ResponsiveTable .idi-table-category-hover p {
   font-size: 8pt;
-  font-weight: bold;
+  font-weight: 400;
   margin: 0 10px 0 10px;
   padding: 5px 0 0 0;
-  color: white;
-  font-weight: bold; }
+  color: white; }
 
 .Insurance_ResponsiveTable .idi-table-category-hover p img {
   cursor: pointer;
   margin: 0 1px; }
 
 .Insurance_ResponsiveTable .idi-table-category-hover:hover {
-  background-color: #767676; }
+  background-color: #c12d3b; }
 
 .Insurance_ResponsiveTable .category-sorted {
-  background-color: #767676; }
+  background-color: #c12d3b; }
 
 .Insurance_ResponsiveTable #idi-table-frozen-table {
   float: left;
@@ -6159,12 +6160,15 @@ section: UI Elements
   /* fixes wrapping issue in Chrome and Safari */ }
 
 .Insurance_ResponsiveTable .idi-table-cell {
-  width: 109px;
+  width: 9%;
+  min-height: 85px !important;
   float: left;
   color: #333333;
-  font-size: 8pt;
+  font-size: 1em;
   font-weight: bold;
-  padding: 0; }
+  padding: 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
 
 .Insurance_ResponsiveTable .idi-table-cell p {
   padding: 3px 0;
@@ -6181,41 +6185,30 @@ section: UI Elements
   color: #333333; }
 
 .Insurance_ResponsiveTable .idi-table-cell-frozen p a:hover, .Insurance_ResponsiveTable .idi-table-cell-frozen p .pop-out__reset-password:hover, .Insurance_ResponsiveTable .idi-table-cell-frozen p .sortable-table__list-toggler:hover, .Insurance_ResponsiveTable .idi-table-cell-frozen p .mobile-table-exit:hover {
-  color: #fe6f10;
-  text-decoration: underline; }
+  color: #c12d3b; }
 
 .Insurance_ResponsiveTable .idi-table-cell-nonfrozen {
   width: 109px; }
 
 .Insurance_ResponsiveTable .row-alternating-0 {
-  background-color: #eeeeee;
-  border-left: 1px solid #d3d3d3; }
+  background-color: #ffffff;
+  border-left: 1px solid #FFF; }
 
 .Insurance_ResponsiveTable .row-alternating-1 {
-  background-color: #cccccc;
-  border-left: 1px solid #b8b8b8; }
+  background-color: #f1f1f1;
+  border-left: 1px solid #FFF; }
 
 .Insurance_ResponsiveTable .row-alternating-cell-frozen-0 {
-  background-color: #eeeeee;
-  border-left: 1px solid #eeeeee; }
+  background-color: #ffffff; }
 
 .Insurance_ResponsiveTable .row-alternating-cell-frozen-1 {
-  background-color: #cccccc;
-  border-left: 1px solid #cccccc; }
+  background-color: #f1f1f1; }
 
 .Insurance_ResponsiveTable .row-last {
   border-right: 0; }
 
 .Insurance_ResponsiveTable .row-first {
   border-left: 0; }
-
-.Insurance_ResponsiveTable .idi-table-row-hover {
-  background-color: #edd4c0;
-  border-left: 1px solid #d1bead; }
-
-.Insurance_ResponsiveTable .idi-table-row-hover-cell-frozen {
-  background-color: #edd4c0;
-  border-right: 1px solid #d1bead; }
 
 .Insurance_ResponsiveTable .idi-table-footer {
   clear: both;
@@ -6362,11 +6355,13 @@ section: UI Elements
 
 .Insurance_ResponsiveTable #top-50-companies-frozen-table {
   float: left;
-  width: 20%; }
+  width: 20%;
+  border-left: 1px solid #d1d3d4; }
 
 .Insurance_ResponsiveTable #top-50-companies-nonfrozen-table {
   float: left;
-  width: 80%; }
+  width: 80%;
+  border-right: 1px solid #d1d3d4; }
 
 .Insurance_ResponsiveTable #top-50-companies-scroll-pane-table {
   width: 100%;

@@ -1276,6 +1276,285 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
+{
+    /// <summary>
+    /// ICompany_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/CompanyDetailPage</para>	
+    /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ICompany_Detail_PageConstants.TemplateIdString)]
+    public partial interface ICompany_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        /// <summary>
+        /// Companyname Field
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanynameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Companyname { get; set; }
+        /// <summary>
+        ///  CompanyID
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyIDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyID { get; set; }
+        /// <summary>
+        /// Graphs
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.GraphsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Graphs { get; set; }
+        /// <summary>
+        /// Company_Address
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Address { get; set; }
+        /// <summary>
+        /// Company Logo
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Logo { get; set; }
+        /// <summary>
+        /// Company Url
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Url { get; set; }
+        /// <summary>
+        /// Introduction Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Introduction_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Introduction_Text { get; set; }
+        /// <summary>
+        /// PeerGroup Title
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerGroup_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PeerGroup_Title { get; set; }
+        /// <summary>
+        /// PeerGroup Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerGroup_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PeerGroup_Text { get; set; }
+        /// <summary>
+        /// Company PeerGroupList
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Profile Title
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Profile_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Profile_Title { get; set; }
+        /// <summary>
+        /// Profile Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Profile_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Profile_Text { get; set; }
+    }
+
+
+    /// <summary>
+    /// ICompany_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/CompanyDetailPage</para>	
+    /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ICompany_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+        /// <summary>
+        /// Companyname Field
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanynameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Companyname { get; set; }
+        /// <summary>
+        ///  CompanyID
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyIDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyID { get; set; }
+        /// <summary>
+        /// Graphs
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.GraphsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Graphs { get; set; }
+        /// <summary>
+        /// Company_Address
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Address { get; set; }
+        /// <summary>
+        /// Company Logo
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Logo { get; set; }
+        /// <summary>
+        /// Company Url
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_Url { get; set; }
+        /// <summary>
+        /// Introduction Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Introduction_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Introduction_Text { get; set; }
+        /// <summary>
+        /// PeerGroup Title
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerGroup_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PeerGroup_Title { get; set; }
+        /// <summary>
+        /// PeerGroup Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerGroup_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PeerGroup_Text { get; set; }
+        /// <summary>
+        /// Company PeerGroupList
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Profile Title
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Profile_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Profile_Title { get; set; }
+        /// <summary>
+        /// Profile Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Profile_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Profile_Text { get; set; }
+    }
+
+    public static partial class ICompany_Detail_PageConstants
+    {
+
+        public const string TemplateIdString = "381E673C-94B4-4ACC-AEA4-00EC79B08F40";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "CompanyDetailPage";
+
+
+        public static readonly ID CompanynameFieldId = new ID("C525DE9F-1B20-4B6A-BA70-32412F9CAD73");
+        public const string CompanynameFieldName = "Company Name";
+
+
+
+        public static readonly ID CompanyIDFieldId = new ID("9B8650AC-7A49-4317-94F6-1CFF4FDE7C34");
+        public const string CompanyIDFieldName = "	Company ID";
+
+
+
+        public static readonly ID GraphsFieldId = new ID("1AB06FBC-519A-4724-98D3-BB9FEEC51994");
+        public const string GraphsFieldName = "Graphs";
+
+
+
+        public static readonly ID Company_AddressFieldId = new ID("C27D6C97-B2E1-41E1-A09E-1D879597E70B");
+        public const string Company_AddressFieldName = "Company Address";
+
+
+
+        public static readonly ID Company_LogoFieldId = new ID("265A199F-527A-467B-A0F1-94F6AE6A483F");
+        public const string Company_LogoFieldName = "Company Logo";
+
+
+
+        public static readonly ID Company_UrlFieldId = new ID("872160CF-43F0-41DF-9732-C5DF6F582534");
+        public const string Company_UrlFieldName = "Company Url";
+
+
+
+        public static readonly ID Introduction_TextFieldId = new ID("90AFA294-EB4F-4360-B099-97C3BC4573E5");
+        public const string Introduction_TextFieldName = "Introduction Text";
+
+
+
+        public static readonly ID PeerGroup_TitleFieldId = new ID("94CA8EA0-1762-4EE6-9F7A-CE5659679E40");
+        public const string PeerGroup_TitleFieldName = "PeerGroup Title";
+
+
+
+        public static readonly ID PeerGroup_TextFieldId = new ID("A1CA8E8B-C320-4EFA-89FD-D3D6B1E6F94C");
+        public const string PeerGroup_TextFieldName = "PeerGroup Text";
+
+
+
+        public static readonly ID Company_PeerGroupListFieldId = new ID("A4637287-30BE-45F5-9F0B-216ED409C93A");
+        public const string Company_PeerGroupListFieldName = "Company PeerGroupList";
+
+
+
+        public static readonly ID Profile_TitleFieldId = new ID("7B7BFDC0-8BEA-4DE6-B200-19AFDFB48EE1");
+        public const string Profile_TitleFieldName = "Profile Title";
+
+
+
+        public static readonly ID Profile_TextFieldId = new ID("AB7C2391-DC37-40FE-82E5-FCA6C54F3D5F");
+        public const string Profile_TextFieldName = "Profile Text";
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+
+
+
+    }
+
+}
+
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.Publication_Specific
 {
 
