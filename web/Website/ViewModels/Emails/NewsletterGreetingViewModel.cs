@@ -4,14 +4,6 @@
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     public class NewsletterGreetingViewModel : GlassViewModel<INewsletter_Greeting_Content>
     {
-        public string GreetingTitle => GlassModel.Title;
-
-        public string GreetingSummary => GlassModel.Summary;
-
-        public string DownloadLinkUrl => GlassModel.Download_Link?.Url;
-
-        public string DownloadLinkText => GlassModel.Download_Link?.Text;
-
-        public string ImagePath => GlassModel.Image?.Src;
+       
     }
 }
