@@ -1,0 +1,198 @@
+﻿@model Informa.Web.ViewModels.PDF.PersonalizedPdfViewModel
+@{
+    Layout = null;
+}
+
+<div class="article-body-content" id="article-body-content">
+    <div class="article-metadata">
+        <table>
+            <tr>
+                <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
+                    <span class="article-metadata__date">@Model.PublishDate.ToString("dd MMM yyyy")</span>
+                </td>
+                @if (!string.IsNullOrEmpty(Model.ContentType))
+                {
+                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                        <span class="article-content-type">@Model.ContentType</span>
+                    </td>
+                }
+
+                @foreach (var tag in Model.Texonomies)
+                {
+                    @*if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
+                    {
+                        <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                        </td>
+                    }
+                    else
+                    {*@
+
+                        <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                            <a style="color:#be1e2d; text-decoration:none;" href="">@tag</a>
+                        </td>
+                }
+            </tr>
+        </table>
+        <h1><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.abslouteUrl">@Html.Raw(Model.Title)</a></h1>
+        <h3>@Html.Raw(Model.Sub_Title)</h3>
+    </div>
+
+
+  @* MULTIPLE AUTHORS *@
+    @{
+        var authors = Model.Author.Take(3).ToArray();
+    }
+    @if (authors.Length == 1)
+    {
+        var author = authors.FirstOrDefault();
+        @* SINGLE AUTHOR*@
+        <div class="article-author article-author--solo">
+            <table>
+                <tr class="article-author__list">
+
+                    <td class="article-author__solo-wrapper" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0; white-space: nowrap;">
+                        <span>
+                            by
+                            @if (author.Inactive)
+                            {
+                                @author._Name
+                            }
+                            else
+                            {
+                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
+                            }
+                        </span>
+                        <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
+                            <table cellpadding="0" cellspacing="0">
+                                <tr><td height="10">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="padding:0 10px 0 0;">
+                                        @if (!string.IsNullOrEmpty(author.Twitter))
+                                        {
+                                            <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                        }
+                                    </td>
+
+                                    <td style="width: 10px;"></td>
+                                    <td style="border-left:1px solid #5a5758;"></td>
+                                    <td style="width: 10px;"></td>
+                                    <td style="padding:0 10px 0 10px;">
+
+                                        @if (!string.IsNullOrEmpty(author.Email_Address))
+                                        {
+                                            <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </span>
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+            </table>
+        </div>
+            <table>
+                <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+                <tr><td>&nbsp;</td></tr>
+            </table>
+
+            @* END SINGLE AUTHOR *@
+
+    }
+    else if (authors.Length > 1)
+    {
+        <div class="article-author">
+            <table>
+
+                @foreach (var author in authors)
+                    {
+                    <tr class="article-author__list">
+                        <span>by</span>
+                        <td>
+                            @if (author.Inactive)
+                            {
+                                @author._Name
+                            }
+                            else
+                            {
+                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
+                                    @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
+                            }
+
+                            <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="border-right:1px solid #5a5758;  padding:0 10px 0 0;">
+                                            @if (!string.IsNullOrEmpty(author.Twitter))
+                                            {
+                                                <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                            }
+                                        </td>
+
+                                        <td style="width: 10px;"></td>
+                                        <td style="border-left:1px solid #5a5758;"></td>
+                                        <td style="width: 10px;"></td>
+                                        <td style="padding:0 10px 0 10px;">
+
+                                            @if (!string.IsNullOrEmpty(author.Email_Address))
+                                            {
+                                                <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                            }
+                                        </td>
+                                    </tr>
+                                </table>
+                            </span>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+            @* END MULTIPLE AUTHORs *@
+    }
+
+    @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
+    @if (!string.IsNullOrEmpty(Model.Summary))
+    {
+        @* * * Executive Summary *@
+        <div class="article-executive-summary">
+            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.Summary</h4>
+            <p style="font-size:18px; line-height:30px; color:#58595b;">@Model.Body</p>
+        </div>
+        @* End Executive Summary  *@
+    }
+
+@if (!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    @* * *  ARTICLE - FEATURED IMAGE
+        IIPP-117 *@
+    <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
+        <img src="" alt="@Model.ImageAltText">
+        <table width="100%">
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="left">
+                    <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.ImageCaption</span>
+                </td>
+                <td align="right">
+                    @if (!string.IsNullOrEmpty(Model.ImageSource))
+                {
+
+                        <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
+                             @Model.ImageSource
+                        </span>}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+}
+        @* * *  END ARTICLE - FEATURED IMAGE *@
+</div>
+<table>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+    <tr><td>&nbsp;</td></tr>
+</table>
+
