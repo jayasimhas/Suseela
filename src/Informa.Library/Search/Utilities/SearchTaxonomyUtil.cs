@@ -59,7 +59,7 @@ namespace Informa.Library.Search.Utilities
 				}
 				else
 				{
-					dict[key] = HttpUtility.UrlEncode(item.Item_Name.Replace("\r", "");
+					dict[key] = HttpUtility.UrlEncode(item.Item_Name.Replace("\r", ""));
 				}
 			}
 
