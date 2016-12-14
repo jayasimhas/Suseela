@@ -1235,6 +1235,8 @@
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
@@ -1648,7 +1650,9 @@
     <Content Include="amcharts\themes\light.js" />
     <Content Include="amcharts\themes\patterns.js" />
     <Content Include="amcharts\xy.js" />
-    <Content Include="App_Config\AppSettings.config" />
+    <Content Include="App_Config\AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Commands.config" />
     <Content Include="App_Config\ConnectionStrings.config">
       <SubType>Designer</SubType>
@@ -1739,6 +1743,7 @@
     <Content Include="email\EmailFriendSearchRow.html" />
     <Content Include="email\EmailFriendSearch.html" />
     <Content Include="email\EmailFriend.html" />
+    <Content Include="email\Emailtemplatepersonalization.html" />
     <Content Include="email\_BaseEmail.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
@@ -2186,6 +2191,8 @@
     <Content Include="Views\Article\ArticleRecommendation.cshtml" />
     <Content Include="Views\Shared\Components\PDF\FullArticlePersonalizedPdf.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsControl.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompanyProfile.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompanyAddress.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
