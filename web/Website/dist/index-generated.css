@@ -6085,6 +6085,37 @@ section: UI Elements
   left: 5px;
   top: -2px; }
 
+.compareChart .eachChartData {
+  margin-bottom: 10px; }
+  .compareChart .eachChartData .dataTitle {
+    background: #f9f9f9;
+    padding: 12px;
+    border: 1px solid #d9dadb; }
+    .compareChart .eachChartData .dataTitle .title {
+      float: left; }
+    .compareChart .eachChartData .dataTitle .chartexpand {
+      float: right;
+      background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
+      height: 20px;
+      width: 28px;
+      display: inline-block;
+      cursor: pointer; }
+      .compareChart .eachChartData .dataTitle .chartexpand.active {
+        background-position: 0 -77px; }
+    .compareChart .eachChartData .dataTitle:after {
+      clear: both;
+      content: '';
+      display: table; }
+  .compareChart .eachChartData .chartData {
+    padding: 12px;
+    border: 1px solid #d9dadb;
+    border-top: none; }
+    .compareChart .eachChartData .chartData.hide {
+      display: none; }
+
+.compareChart .showAll {
+  margin-bottom: 12px; }
+
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
  * selectivity-full.css and expect it to work if you're upgrading selectivity,
