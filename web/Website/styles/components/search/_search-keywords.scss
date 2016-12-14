@@ -40,7 +40,16 @@
     &__input-wrapper {
         display: inline-flex;
         position: relative;
-        width: 100%;
+        width:100%;
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : landscape){
+            /* Supposedly for iPad */
+            @include breakpoint('large') {
+                width: 70%;
+            }
+            @include breakpoint('medium') {
+                width: 100%;
+            }
+        }
         margin-right: 12px;
     }
 
@@ -84,6 +93,15 @@
         order: 3;
         position: relative;
         white-space: nowrap;
+         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : landscape){
+            /* Supposedly for iPad */
+            @include breakpoint('large') {
+                padding-right:20px;
+            }
+             @include breakpoint('medium') {
+                padding-right:0px;
+            }
+        }
 
         @include breakpoint('medium') {
             display: none;
@@ -91,6 +109,7 @@
 
         &.open {
             position: relative;
+            z-index:1;
         }
 
         &-button {
