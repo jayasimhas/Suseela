@@ -1,9 +1,11 @@
 <div class="manually-curated-content">
     <div class="manually-curated-content__main-well">
         @Html.Sitecore().DynamicPlaceholder("left-curated-content")
+        @Html.Sitecore().Placeholder("left-curated-content_static")
     </div>
 
     <div class="manually-curated-content__right-rail">
         @Html.Sitecore().DynamicPlaceholder("right-curated-content")
+        @Html.Sitecore().Placeholder("right-curated-content_static")
     </div>
 </div>
