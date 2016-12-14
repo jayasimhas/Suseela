@@ -6,8 +6,8 @@ namespace Informa.Library.Advertisement
 {
     public interface IAdUrlBuilder
     {
-        string GetLink(IAdvertisement adItem);
-        string GetImageSrc(IAdvertisement adItem);
+        string GetLink(IAdvertisement adItem, bool isEmailLayout);
+        string GetImageSrc(IAdvertisement adItem, bool isEmailLayout);
     }
 
     [AutowireService]
@@ -30,15 +30,15 @@ namespace Informa.Library.Advertisement
             _dependencies = dependencies;
         }
 
-        public string GetLink(IAdvertisement adItem) => MakeUrl(adItem, true);
-        public string GetImageSrc(IAdvertisement adItem) => MakeUrl(adItem, false);
+        public string GetLink(IAdvertisement adItem, bool isEmailLayout = false) => MakeUrl(adItem, true, isEmailLayout);
+        public string GetImageSrc(IAdvertisement adItem, bool isEmailLayout = false) => MakeUrl(adItem, false, isEmailLayout);
 
-        private string MakeUrl(IAdvertisement adItem, bool isLink)
+        private string MakeUrl(IAdvertisement adItem, bool isLink, bool isEmailLayout)
         {
             if (string.IsNullOrEmpty(adItem?.Slot_ID) || string.IsNullOrEmpty(adItem.Zone))
             { return string.Empty; }
 
-            var adDomain = _dependencies.SiteRootContext.Item?.Ad_Domain;
+			var adDomain = isEmailLayout ? _dependencies.SiteRootContext.Item?.Email_Ad_Domain : _dependencies.SiteRootContext.Item?.Ad_Domain;
             if (string.IsNullOrEmpty(adDomain))
             { return string.Empty; }
 
