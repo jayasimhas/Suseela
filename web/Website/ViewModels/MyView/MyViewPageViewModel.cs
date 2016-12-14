@@ -181,7 +181,7 @@ namespace Informa.Web.ViewModels.MyView
                && UserPreferences.Preferences.PreferredChannels.Any())
             {
 
-                var channels = UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList(); ;
+                var channels = UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList(); 
                 foreach (Channel channel in channels)
                 {
                     CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);

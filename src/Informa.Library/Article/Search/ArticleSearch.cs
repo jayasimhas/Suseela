@@ -261,7 +261,7 @@ namespace Informa.Library.Article.Search
         /// <param name="filter"></param>
         /// <param name="topicOrChannelId"></param>
         /// <returns>Personalized articles</returns>
-        public IPersonalizedArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter)
+        public IPersonalizedArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter, DateTime? PubStartDate, DateTime? PubEndDate)
         {
             using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
@@ -269,6 +269,11 @@ namespace Informa.Library.Article.Search
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                         .FilterPersonalizedTaxonomies(filter)
                         .ApplyDefaultFilters();
+
+                if (PubStartDate != null && PubEndDate != null)
+                {
+                    query = query.Where(i => i.ActualPublishDate >= PubStartDate && i.ActualPublishDate <= PubEndDate);
+                }
 
                 if (filter.PageSize > 0)
                 {

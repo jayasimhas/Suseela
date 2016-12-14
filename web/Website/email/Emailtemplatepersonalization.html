@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled</title> 
+    <style type="text/css">
+        /* GENERAL STYLE RESETS */
+        body, #bodyTable {
+            height: 100% !important;
+            width: 100% !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        img, a img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .imageFix {
+            display: block;
+        }
+
+        table, td {
+            border-collapse: collapse;
+        }
+
+        /* CLIENT-SPECIFIC RESETS */
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        body, table, td, p, a, li, blockquote {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+
+        /* LAYOUT HELPERS */
+
+        .layout-padded-right {
+            padding-right: 3%;
+        }
+
+        .layout-padded-left {
+            padding-left: 3%;
+        }
+
+        .layout-text-centered {
+            text-align: center;
+        }
+
+        .layout-text-right {
+            text-align: right;
+        }
+
+        .two-thirds {
+            width: 60%;
+        }
+
+        .one-third {
+            width: 30%;
+        }
+
+            .one-third img {
+                width: 100%;
+                height: auto;
+            }
+
+
+        a:link {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+
+
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+            font-size: 12px;
+            border-collapse: collapse !important;
+        }
+
+        p,
+        .t-paragraph {
+            display: block;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            line-height: 150%;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .standardPadding {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        #topViewOnlineLink {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        #templateContainer {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 600px;
+            border: 1px solid #DDDDDD;
+            border-collapse: collapse !important;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .preheaderContent {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            font-size: 13px;
+        }
+
+        #templateHeader {
+            margin-bottom: 24px;
+        }
+
+        .header__date {
+            font-size: 13px;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .manually-curated-section {
+            margin-bottom: 32px;
+        }
+
+        .daily-alert {
+            background-color: #eee;
+            margin-bottom: 24px;
+        }
+
+        .daily-alert__cell {
+            padding-bottom: 16px;
+            padding-top: 16px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .daily-alert-body {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 0;
+            text-align: center;
+            line-height: 26px;
+        }
+
+        .mobile-ad {
+            margin-bottom: 16px;
+        }
+
+        .mobile-ad__cell {
+            text-align: center;
+        }
+
+        .mobile-ad__title {
+            text-align: left;
+            width: 320px;
+            margin: 0px auto;
+            padding-bottom: 4px;
+            letter-spacing: 1px;
+            font-size: 10px;
+            color: #bbb;
+            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+            text-transform: uppercase;
+        }
+
+        .mobile-ad__image {
+            margin-top: 0;
+        }
+
+        .caps-header {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-header {
+            border-bottom: 2px solid #ddd;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+            .section-header td {
+                padding-bottom: 8px;
+            }
+
+        .article-preview-header td {
+            padding-bottom: 16px;
+        }
+
+        .article-metadata {
+            margin-bottom: 8px;
+        }
+
+        .article-date {
+            color: #888;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        .vertical-separator {
+            display: inline-block;
+            margin-left: 8px;
+            margin-right: 8px;
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        .article-category {
+            font-weight: bold;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .featured__title {
+            margin: 0;
+            margin-bottom: 8px;
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        .article-byline {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .featured__image {
+            width: 100%;
+            height: auto;
+        }
+
+        .featured__read-more {
+            margin-top: 16px;
+            font-size: 15px;
+            text-align: right;
+            display: block;
+        }
+
+        .featured__read-more--button {
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            border: 1px solid orange;
+            padding: 12px 16px;
+            display: inline-block;
+        }
+
+            .featured__read-more--button a {
+                font-weight: bold;
+                color: #000;
+            }
+
+        .one-third .featured-content__image {
+            width: 14px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .featured__download-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .featured__article {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 8px;
+        }
+
+            .featured__article td {
+                padding-bottom: 12px;
+            }
+
+        .featured__article-image {
+            height: 22px;
+            width: auto;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        #templateFooter {
+            background-color: #eee;
+        }
+
+            #templateFooter,
+            #templateFooter p {
+                font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+                font-size: 12px;
+                color: #888;
+                text-align: center;
+                font-weight: normal;
+            }
+    </style>
+
+    <style type="text/css" id="ignore">
+        @media (max-width: 480px) {
+
+            body {
+                font-size: 100%;
+            }
+
+            #templateContainer {
+                width: 100%;
+            }
+
+            .header__site-logo img {
+                max-width: 150px;
+            }
+
+            .layout-padded-left,
+            .layout-padded-right {
+                padding: 0;
+            }
+
+            .one-third,
+            .two-thirds {
+                display: block;
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            .wd-desk-50 {
+                width: 100%;
+                float: none;
+            }
+
+            .visible-desk {
+                display: none;
+            }
+
+            .visible-mob {
+                display: block;
+            }
+
+            .caps-body img {
+                float: none !important;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic" rel="stylesheet" type="text/css">
+    <style>
+        a:link {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
+    </style>
+    <style type="text/css">
+        /* GENERAL STYLE RESETS */
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+        /* LAYOUT HELPERS */
+        @media (max-width: 480px) {
+            body {
+                font-size: 100%;
+            }
+
+            .wd-desk-50 {
+                width: 100%;
+                float: none;
+            }
+
+            .visible-desk {
+                display: none;
+            }
+
+            .visible-mob {
+                display: block;
+            }
+
+            .caps-body img {
+                float: none !important;
+            }
+
+            #templateContainer {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .header__site-logo img {
+                max-width: 150px;
+            }
+
+            .layout-padded-left,
+            .layout-padded-right {
+                padding: 0;
+            }
+
+            .one-third,
+            .two-thirds {
+                display: block;
+                width: 100%;
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+    <style type="text/css">
+        @media only screen and (max-width: 500px) {
+            .wd-desk-50 {
+                width: 100% !important;
+                float: none !important;
+            }
+
+            .visible-desk {
+                display: none !important;
+            }
+
+            .visible-mob {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+                <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="height: 100% !important;width: 100% !important;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;border-collapse: collapse !important">
+                <center>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100% !important;width: 100% !important;margin: 0;padding: 0">
+                <tbody><tr>
+                <td align="center" valign="top" id="bodyCell" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+
+                <table border="0" cellpadding="0" cellspacing="0" id="topViewOnlineLink" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top: 16px;margin-bottom: 16px">
+                <tbody><tr>
+                <td style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                View our <a href="http://commodities.ts3master/emails-folder/personalized-agritest?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">online version</a>
+                </td>
+                </tr>
+                </tbody></table>
+
+                <table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border-collapse: collapse !important;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;width: 600px;border: 1px solid #DDDDDD;margin-bottom: 32px;max-width: 600px">
+                <tbody><tr>
+                <td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <tbody><tr>
+                <td valign="top" class="preheaderContent standardPadding" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-left: 24px;padding-right: 24px;padding-top: 16px;padding-bottom: 16px;font-size: 13px">
+                <span class="header__date" style="font-size: 13px;color: #888;font-weight: bold">
+                30 dec 2016
+                </span>
+                </td>
+                <td valign="top" class="preheaderContent standardPadding layout-text-right" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-align: right;padding-left: 24px;padding-right: 24px;padding-top: 16px;padding-bottom: 16px;font-size: 13px">
+                                                            <a href="http://subscribe.scripintelligence.com?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">Subscribe</a>                                                                <span class="vertical-separator" style="display: inline-block;margin-left: 8px;margin-right: 8px;color: #ddd;font-size: 16px">|</span>
+                                                            <a href="mailto:clientservices@scripintelligence.com?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">Contact Us</a>                </td>
+                </tr>
+                </tbody></table>
+                
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" class="standardPadding" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-left: 24px;padding-right: 24px">
+
+                
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom: 24px">
+                <tbody><tr>
+                <td width="150" valign="top" class="header__site-logo" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <img src="http://commodities.ts3master/-/media/images/web_agranet-beta_4a.png" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic">
+                </td>
+                <td valign="bottom" align="right" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+
+                <a href="https://feeds.feedblitz.com/scrip?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <img src="http://commodities.ts3master/-/media/icons/emailiconrss.png" width="20" height="20" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic">
+                </a>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/company/scrip-intelligence?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <img src="http://commodities.ts3master/-/media/icons/emailiconlinkedin.png" width="20" height="20" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic">
+                </a>&nbsp;&nbsp;&nbsp;
+                <a href="https://twitter.com/scripnews?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <img src="http://commodities.ts3master/-/media/icons/emailicontwitter.png" width="20" height="20" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic">
+                </a>
+
+                </td>
+                </tr>
+                </tbody></table>
+                
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" class="standardPadding" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-left: 24px;padding-right: 24px">
+
+                
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <tbody><tr>
+                <td valign="top" class="bodyContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+
+                <table class="daily-alert" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #eee;margin-bottom: 24px">
+                <tbody><tr>
+                <td class="daily-alert__cell" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 16px;padding-top: 16px;padding-left: 24px;padding-right: 24px">
+                <div class="caps-header" style="text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: center;margin-bottom: 8px">
+                Weekly Round Up
+                </div>
+                <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Georgia, serif;font-size: 16px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: center">
+                30 dec 2016
+                </p>
+                </td>
+                </tr>
+                </tbody></table>
+                <table class="daily-alert" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #eee;margin-bottom: 24px">
+    <tbody>
+        <tr>
+            <td class="daily-alert__cell" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 16px;padding-top: 16px;padding-left: 24px;padding-right: 24px">
+                <div class="caps-header" style="text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Roboto Condensed">
+                    NEWSLETTER TITLE
+                </div>
+                <div class="caps-body">
+                    <img src="/dist/img/email-template/newletter-img.jpg" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;float: left;margin-right: 15px">
+
+                    <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left">
+                        <strong style="color: #000;">Hi #FirstName#,</strong>
+                        <span style="color: #777777; background-color: #eeeeee; text-align: left; letter-spacing: normal;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem,<span class="Apple-converted-space">&nbsp;</span></span><a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d;background-color: #eeeeee;text-align: left;text-decoration: none;letter-spacing: normal" href="EditorPage.aspx?da=core&amp;id=%7B6176D689-304D-4B2A-ABB7-F3A9067A1AE9%7D&amp;ed=FIELD115020601&amp;vs&amp;la=en&amp;fld=%7BFCB9D7AC-6FEE-4D6F-B3E4-ED1C71E1B61D%7D&amp;so&amp;di=0&amp;hdl=H115020691&amp;mo&amp;pe=0&amp;fbd=1#">pretium malesuada</a><span style="color: #777777; background-color: #eeeeee; text-align: left; letter-spacing: normal;"><span class="Apple-converted-space">&nbsp;</span>ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi. Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem,<span class="Apple-converted-space">&nbsp;</span></span><a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d;background-color: #eeeeee;text-align: left;text-decoration: none;letter-spacing: normal" href="EditorPage.aspx?da=core&amp;id=%7B6176D689-304D-4B2A-ABB7-F3A9067A1AE9%7D&amp;ed=FIELD115020601&amp;vs&amp;la=en&amp;fld=%7BFCB9D7AC-6FEE-4D6F-B3E4-ED1C71E1B61D%7D&amp;so&amp;di=0&amp;hdl=H115020691&amp;mo&amp;pe=0&amp;fbd=1#">pretium malesuada</a><span style="color: #777777; background-color: #eeeeee; text-align: left; letter-spacing: normal;"><span class="Apple-converted-space">&nbsp;</span>ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi.Lorem ipsum dolor sit</span>
+                    </p>
+                </div>
+                <div class="download-link" style="text-align: center;">
+                    <a href="#" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background: #fff;display: inline-block;padding: 10px 20px;margin-top: 20px;color: #000;font-weight: bold;border: 1px solid #fbb040">DOWNLOAD [BRIEFING TITLE]</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#Personalized_Content#                </td>
+                </tr>
+                </tbody></table>
+                
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #eee;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;color: #888;text-align: center;font-weight: normal">
+                <tbody><tr>
+                <td valign="top" class="footerContent" align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">
+                </p><p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Sent to <a href="mailto:#email#" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">#email#</a>.  If you have questions about this email or Scrip, please email <a href="mailto:clientservices@scripintelligence.com" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">clientservices@scripintelligence.com</a>Â&nbsp;or call UK support at +44 20 337 73737 / US support at +1 908 547-2200 / APAC support at +61 2 8705 6907 and addÂ&nbsp;<a href="mailto:pmbi-notifications@informa.com" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">pmbi-notifications@informa.com</a> to your address book.</p>
+<p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">
+</p>
+<p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Â© 2016 Informa plc. All rights reserved.</p>
+<p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Scrip is owned and operated by Informa plc ("informa") whose registered office is 5 Howick Place, London, SW1P 1WG. Registered in England and Wales. Number 3099067. UK VAT Group GB 365 4626 36 </p>
+                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal"></p>
+                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">
+                                                                <a href="http://scrip.ts3master/meet-the-team?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">Meet the Team</a>                </p>
+                </td>
+                </tr>
+                </tbody></table>
+                
+                </td>
+                </tr>
+                </tbody></table>
+                
+                </td>
+                </tr>
+                </tbody></table>
+                </center>
+                
+    
+</body></html>

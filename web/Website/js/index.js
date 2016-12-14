@@ -29,7 +29,8 @@ import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
-import './components/dynamic-content-recomendation';
+
+
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

@@ -672,9 +672,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
 
             var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
-            foreach (var c in charsToRemove)
+            foreach (var character in charsToRemove)
             {
-                RTEInput = RTEInput.Replace(c, string.Empty);
+                if (character == "\n")
+                {
+                    RTEInput = RTEInput.Replace(character, " ");
+                }
+                else
+                {
+                    RTEInput = RTEInput.Replace(character, string.Empty);
+                }
+
             }
 
             return RTEInput;

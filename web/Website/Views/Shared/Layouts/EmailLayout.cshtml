@@ -174,12 +174,23 @@
         .manually-curated-section {
             margin-bottom: 32px;
         }
-
+		.manual-curated-email-section{
+			padding: 15px;
+		}
+		.manual-layout-margin-left{
+			margin-left:5%;
+		}
+		.manual-layout-padded-left{
+			padding-left:5%;
+		}
+		.manual-featured-article td{
+			padding-bottom:12px;
+		}
         .daily-alert {
             background-color: #eee;
             margin-bottom: 24px;
         }
-
+	
         .daily-alert__cell {
             padding-bottom: 16px;
             padding-top: 16px;
@@ -483,6 +494,24 @@
                 display: block !important;
             }
         }
+		
+		@@media (max-width: 767px){
+			table.mobView tr  td {
+				
+                display: block !important; 
+			}
+			.visible-desk {
+                display: none !important;
+            }
+			.mobBorder{
+				 border-top: 1px solid #ccc;
+				 width:98%;
+			}
+			table.mobView{
+				border-bottom: none !important;
+			}
+			
+		}
     </style>
 </head>
 @using (new LinkProviderSwitcher(Sitecore.Context.PageMode.IsNormal ? "informaEmailLinkProvider" : "sitecore"))
@@ -580,7 +609,7 @@
                                                     </table>
                                                      @Html.Sitecore().Placeholder("email-main")
                                                     
-                                                    @if (Model.IsPersonalizedEmail)
+                                                    @if (Model.AddPersonalizedContent)
                                                     {
                                                         @personalizeContentToken
 

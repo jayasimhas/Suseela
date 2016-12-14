@@ -1,0 +1,50 @@
+.relatedlinks{
+	.related-left-rail{
+		float: left;
+		@include breakpoint('large') {
+			width: 66%;
+		}
+		@include breakpoint('medium') {
+			width: 100%;
+		}
+	}
+	.allrelatedlinks{
+		float: left;
+		width: 45%;
+		&.mrig{
+			margin-right: 10%;
+		}
+		@include breakpoint('medium') {
+			width: 98%;
+		}
+		ul{
+			margin-bottom: 1.25rem;
+			padding-bottom: 0.625rem;
+			border-bottom: 1px solid #d1d3d4;
+			&:last-child{
+				border-bottom: none;
+				@include breakpoint('medium') {
+					border-bottom: 1px solid #d1d3d4;
+				}
+			}
+		}
+	}
+}
+
+.companyList{
+	ul{
+		height: 464px;
+		overflow: auto;
+		margin-bottom: 1.5rem;
+	}
+	.article-topics__li{
+		&:before{
+			position: relative;
+		}
+		a{
+			position: relative;
+			left: 5px;
+			top: -2px;
+		}
+	}
+}
