@@ -33,7 +33,7 @@ namespace Sitecore.SharedSource.DataImporter
 		/// <summary>
 		/// processes each field against the data provided by subclasses
 		/// </summary>
-		public void Process()
+		public void Process(string site, string channel)
 		{
 
 			Logger.Log("N/A", string.Format("Import Started at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
@@ -44,7 +44,7 @@ namespace Sitecore.SharedSource.DataImporter
 			IEnumerable<object> importItems;
 			try
 			{
-				importItems = DataMap.GetImportData();
+				importItems = DataMap.GetImportData(site,channel);
 			}
 			catch (Exception ex)
 			{

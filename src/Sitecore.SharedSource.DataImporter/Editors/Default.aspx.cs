@@ -148,7 +148,7 @@ namespace Sitecore.SharedSource.DataImporter.Editors
                                     Sitecore.Context.Site.Name,
                                     this,
                                     "HandleImport",
-                                    new object[] { map, l });
+                                    new object[] { map, l,importItem });
 
             Sitecore.Jobs.JobManager.Start(jobOptions);
 
@@ -156,10 +156,13 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
-        protected void HandleImport(IDataMap map, DefaultLogger l) {
+        protected void HandleImport(IDataMap map, DefaultLogger l, Item importItem) {
 
+
+            string site = importItem.Parent.Parent.Parent.Name;
+            string channel = importItem.Parent.Parent.Name;
             ImportProcessor p = new ImportProcessor(map, l);
-            p.Process();
+            p.Process(site, channel);
             txtMessage.Text = l.GetLog();
             
             WriteLogs(l);

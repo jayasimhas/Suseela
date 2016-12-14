@@ -44,7 +44,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 		/// uses the query field to retrieve file data
 		/// </summary>
 		/// <returns></returns>
-        public override IEnumerable<object> GetImportData() {
+        public override IEnumerable<object> GetImportData(string site, string channel) {
 
 			if (!File.Exists(this.Query)) {
 				Logger.Log("N/A", string.Format("the file: '{0}' could not be found. Try moving the file under the webroot.", this.Query), ProcessStatus.Error);

@@ -109,7 +109,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
         /// uses the sitecore database and xpath query to retrieve data
         /// </summary>
         /// <returns></returns>
-        public override IEnumerable<object> GetImportData() {
+        public override IEnumerable<object> GetImportData(string site, string channel) {
             return FromDB.SelectItems(StringUtility.CleanXPath(Query));
         }
 

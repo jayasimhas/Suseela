@@ -18,7 +18,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		{
 		}
 
-		public override IEnumerable<object> GetImportData()
+		public override IEnumerable<object> GetImportData(string site, string channel)
 		{
 			if (!Directory.Exists(this.Query))
 			{

@@ -54,7 +54,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
         /// gets the data to be imported
         /// </summary>
         /// <returns></returns>
-        IEnumerable<object> GetImportData();
+        IEnumerable<object> GetImportData(string site, string channel);
 
         /// <summary>
         /// this is used to process custom fields or properties

@@ -454,7 +454,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         /// gets the data to be imported
         /// </summary>
         /// <returns></returns>
-        public abstract IEnumerable<object> GetImportData();
+        public abstract IEnumerable<object> GetImportData(string site, string channel);
 
         /// <summary>
         /// this is used to process custom fields or fields
@@ -692,10 +692,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         try
                         {
+                           // fieldDefs.Add("");
                             IEnumerable<string> values = GetFieldValues(d.GetExistingFieldNames(), importRow);
                             if (values.Count(val => val != "") > 0)
                             {
                                 importValue = String.Join(d.GetFieldValueDelimiter(), values);
+                            }
+
+                            if(d.NewItemField == "Country")
+                            {
+
                             }
 
                             string id = string.Empty;

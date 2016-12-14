@@ -38,7 +38,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         #region Override Methods
 
-        public override IEnumerable<object> GetImportData()
+        public override IEnumerable<object> GetImportData(string site, string channel)
         {
             int importErrorCount = 0;
             if (!Directory.Exists(this.Query))
@@ -421,88 +421,90 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     // country = GetRegion().FirstOrDefault(w => regionSearch.Split(' ').Contains(w.ToLower()));
                     if (Country == "")
                     {
-                        ao.Add("COUNTRY1", "");
-                        ao.Add("COUNTRY2", "");
-                        ao.Add("COUNTRY3", "");
-                        ao.Add("COUNTRY4", "");
-                        ao.Add("COUNTRY5", "");
-                        ao.Add("COUNTRY6", "");
-                        ao.Add("COUNTRY7", "");
-                        ao.Add("COUNTRY8", "");
-                        ao.Add("COUNTRY9", "");
-                        ao.Add("COUNTRY10", "");
-                        ao.Add("COUNTRY11", "");
-                        ao.Add("COUNTRY12", "");
-                        ao.Add("COUNTRY13", "");
-                        ao.Add("COUNTRY14", "");
-                        ao.Add("COUNTRY15", "");
+                        ao.Add("COUNTRY", "");
+                        //ao.Add("COUNTRY2", "");
+                        //ao.Add("COUNTRY3", "");
+                        //ao.Add("COUNTRY4", "");
+                        //ao.Add("COUNTRY5", "");
+                        //ao.Add("COUNTRY6", "");
+                        //ao.Add("COUNTRY7", "");
+                        //ao.Add("COUNTRY8", "");
+                        //ao.Add("COUNTRY9", "");
+                        //ao.Add("COUNTRY10", "");
+                        //ao.Add("COUNTRY11", "");
+                        //ao.Add("COUNTRY12", "");
+                        //ao.Add("COUNTRY13", "");
+                        //ao.Add("COUNTRY14", "");
+                        //ao.Add("COUNTRY15", "");
                     }
                     else
 
                     {
-                        
-                        string[] values = Country.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        int count = 1;
-                        foreach (string elem in values)
-                        {
-                            if (count <= values.Count())
-                            {
-                                // Taxonomy["Country" + count] = elem;
-                                ao.Add("COUNTRY" + count.ToString(), elem);
-                            }
-                            count++;
-                        }
-                            if (values.Count() != 15)
-                            {
-                                for (int i = values.Count() + 1; i <= 15; i++)
-                                {
-                                    ao.Add("COUNTRY" + i, "");
-                                }
-                            }
+                        ao.Add("COUNTRY",Country);
 
-                        }
+                        //string[] values = Country.Split(',').Select(sValue => sValue.Trim()).ToArray();
+                        //int count = 1;
+                        //foreach (string elem in values)
+                        //{
+                        //    if (count <= values.Count())
+                        //    {
+                        //        // Taxonomy["Country" + count] = elem;
+                        //        ao.Add("COUNTRY" + count.ToString(), elem);
+                        //    }
+                        //    count++;
+                        //}
+                        //    if (values.Count() != 15)
+                        //    {
+                        //        for (int i = values.Count() + 1; i <= 15; i++)
+                        //        {
+                        //            ao.Add("COUNTRY" + i, "");
+                        //        }
+                        //    }
+
+                    }
 
 
 
                     //string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                     if (Companies == "")
                     {
-                        ao.Add("COMPANIES1", "");
-                        ao.Add("COMPANIES2", "");
-                        ao.Add("COMPANIES3", "");
-                        ao.Add("COMPANIES4", "");
-                        ao.Add("COMPANIES5", "");
-                        ao.Add("COMPANIES6", "");
-                        ao.Add("COMPANIES7", "");
-                        ao.Add("COMPANIES8", "");
-                        ao.Add("COMPANIES9", "");
-                        ao.Add("COMPANIES10", "");
-                        ao.Add("COMPANIES11", "");
-                        ao.Add("COMPANIES12", "");
-                        ao.Add("COMPANIES13", "");
-                        ao.Add("COMPANIES14", "");
-                        ao.Add("COMPANIES15", "");
+                        ao.Add("COMPANIES", "");
+                        //ao.Add("COMPANIES2", "");
+                        //ao.Add("COMPANIES3", "");
+                        //ao.Add("COMPANIES4", "");
+                        //ao.Add("COMPANIES5", "");
+                        //ao.Add("COMPANIES6", "");
+                        //ao.Add("COMPANIES7", "");
+                        //ao.Add("COMPANIES8", "");
+                        //ao.Add("COMPANIES9", "");
+                        //ao.Add("COMPANIES10", "");
+                        //ao.Add("COMPANIES11", "");
+                        //ao.Add("COMPANIES12", "");
+                        //ao.Add("COMPANIES13", "");
+                        //ao.Add("COMPANIES14", "");
+                        //ao.Add("COMPANIES15", "");
                     }
                     else
                     {
-                        
-                        string[] values = Companies.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        int count = 1;
-                        foreach (string elem in values)
-                        {
-                            if (count <= values.Count())
-                            {
-                                ao.Add("COMPANIES" + count, elem);
-                            }
+                        ao.Add("COMPANIES", Companies);
 
-                            count++;
-                        }
-                        if(values.Count() != 15) {
-                            for(int i=values.Count() + 1; i<=15; i++)
-                            {
-                                ao.Add("COMPANIES" + i, "");
-                            }
-                        }
+                        //string[] values = Companies.Split(',').Select(sValue => sValue.Trim()).ToArray();
+                        //int count = 1;
+                        //foreach (string elem in values)
+                        //{
+                        //    if (count <= values.Count())
+                        //    {
+                        //        ao.Add("COMPANIES" + count, elem);
+                        //    }
+
+                        //    count++;
+                        //}
+                        //if(values.Count() != 15) {
+                        //    for(int i=values.Count() + 1; i<=15; i++)
+                        //    {
+                        //        ao.Add("COMPANIES" + i, "");
+                        //    }
+                        //}
 
                     }
 
@@ -511,95 +513,96 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     //string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
                     if (Agency == "")
                     {
-                        ao.Add("AGENCY1", "");
-                        ao.Add("AGENCY2", "");
-                        ao.Add("AGENCY3", "");
-                        ao.Add("AGENCY4", "");
-                        ao.Add("AGENCY5", "");
-                        ao.Add("AGENCY6", "");
-                        ao.Add("AGENCY7", "");
-                        ao.Add("AGENCY8", "");
-                        ao.Add("AGENCY9", "");
-                        ao.Add("AGENCY10", "");
-                        ao.Add("AGENCY11", "");
-                        ao.Add("AGENCY12", "");
-                        ao.Add("AGENCY13", "");
-                        ao.Add("AGENCY14", "");
-                        ao.Add("AGENCY15", "");
+                        ao.Add("AGENCY", "");
+                        //ao.Add("AGENCY2", "");
+                        //ao.Add("AGENCY3", "");
+                        //ao.Add("AGENCY4", "");
+                        //ao.Add("AGENCY5", "");
+                        //ao.Add("AGENCY6", "");
+                        //ao.Add("AGENCY7", "");
+                        //ao.Add("AGENCY8", "");
+                        //ao.Add("AGENCY9", "");
+                        //ao.Add("AGENCY10", "");
+                        //ao.Add("AGENCY11", "");
+                        //ao.Add("AGENCY12", "");
+                        //ao.Add("AGENCY13", "");
+                        //ao.Add("AGENCY14", "");
+                        //ao.Add("AGENCY15", "");
                     }
                     else
                     {
 
-                        string[] values = Agency.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        int count = 1;
-                        foreach (string elem in values)
-                        {
-                            if (count <= values.Count())
-                            {
-                                //  Taxonomy["" + count] = elem;
-                                ao.Add("AGENCY" + count, elem);
-                            }
-                            count++;
-                        }
+                        ao.Add("AGENCY", Agency);
+                        //string[] values = Agency.Split(',').Select(sValue => sValue.Trim()).ToArray();
+                        //int count = 1;
+                        //foreach (string elem in values)
+                        //{
+                        //    if (count <= values.Count())
+                        //    {
+                        //        //  Taxonomy["" + count] = elem;
+                        //        ao.Add("AGENCY" + count, elem);
+                        //    }
+                        //    count++;
+                        //}
 
-                        if (values.Count() != 15)
-                        {
-                            for (int i = values.Count() + 1; i <= 15; i++)
-                            {
-                                ao.Add("AGENCY" + i, "");
-                            }
-                        }
+                        //if (values.Count() != 15)
+                        //{
+                        //    for (int i = values.Count() + 1; i <= 15; i++)
+                        //    {
+                        //        ao.Add("AGENCY" + i, "");
+                        //    }
+                        //}
                         // ao.Add("AGENCY", Agency);
                     }
 
                 }
                 else
                 {
-                    ao.Add("COUNTRY1", "");
-                    ao.Add("COUNTRY2", "");
-                    ao.Add("COUNTRY3", "");
-                    ao.Add("COUNTRY4", "");
-                    ao.Add("COUNTRY5", "");
-                    ao.Add("COUNTRY6", "");
-                    ao.Add("COUNTRY7", "");
-                    ao.Add("COUNTRY8", "");
-                    ao.Add("COUNTRY9", "");
-                    ao.Add("COUNTRY10", "");
-                    ao.Add("COUNTRY11", "");
-                    ao.Add("COUNTRY12", "");
-                    ao.Add("COUNTRY13", "");
-                    ao.Add("COUNTRY14", "");
-                    ao.Add("COUNTRY15", "");
-                    ao.Add("COMPANIES1", "");
-                    ao.Add("COMPANIES2", "");
-                    ao.Add("COMPANIES3", "");
-                    ao.Add("COMPANIES4", "");
-                    ao.Add("COMPANIES5", "");
-                    ao.Add("COMPANIES6", "");
-                    ao.Add("COMPANIES7", "");
-                    ao.Add("COMPANIES8", "");
-                    ao.Add("COMPANIES9", "");
-                    ao.Add("COMPANIES10", "");
-                    ao.Add("COMPANIES11", "");
-                    ao.Add("COMPANIES12", "");
-                    ao.Add("COMPANIES13", "");
-                    ao.Add("COMPANIES14", "");
-                    ao.Add("COMPANIES15", "");
-                    ao.Add("AGENCY1", "");
-                    ao.Add("AGENCY2", "");
-                    ao.Add("AGENCY3", "");
-                    ao.Add("AGENCY4", "");
-                    ao.Add("AGENCY5", "");
-                    ao.Add("AGENCY6", "");
-                    ao.Add("AGENCY7", "");
-                    ao.Add("AGENCY8", "");
-                    ao.Add("AGENCY9", "");
-                    ao.Add("AGENCY10", "");
-                    ao.Add("AGENCY11", "");
-                    ao.Add("AGENCY12", "");
-                    ao.Add("AGENCY13", "");
-                    ao.Add("AGENCY14", "");
-                    ao.Add("AGENCY15", "");
+                    ao.Add("COUNTRY", "");
+                    //ao.Add("COUNTRY2", "");
+                    //ao.Add("COUNTRY3", "");
+                    //ao.Add("COUNTRY4", "");
+                    //ao.Add("COUNTRY5", "");
+                    //ao.Add("COUNTRY6", "");
+                    //ao.Add("COUNTRY7", "");
+                    //ao.Add("COUNTRY8", "");
+                    //ao.Add("COUNTRY9", "");
+                    //ao.Add("COUNTRY10", "");
+                    //ao.Add("COUNTRY11", "");
+                    //ao.Add("COUNTRY12", "");
+                    //ao.Add("COUNTRY13", "");
+                    //ao.Add("COUNTRY14", "");
+                    //ao.Add("COUNTRY15", "");
+                    ao.Add("COMPANIES", "");
+                    //ao.Add("COMPANIES2", "");
+                    //ao.Add("COMPANIES3", "");
+                    //ao.Add("COMPANIES4", "");
+                    //ao.Add("COMPANIES5", "");
+                    //ao.Add("COMPANIES6", "");
+                    //ao.Add("COMPANIES7", "");
+                    //ao.Add("COMPANIES8", "");
+                    //ao.Add("COMPANIES9", "");
+                    //ao.Add("COMPANIES10", "");
+                    //ao.Add("COMPANIES11", "");
+                    //ao.Add("COMPANIES12", "");
+                    //ao.Add("COMPANIES13", "");
+                    //ao.Add("COMPANIES14", "");
+                    //ao.Add("COMPANIES15", "");
+                    ao.Add("AGENCY", "");
+                    //ao.Add("AGENCY2", "");
+                    //ao.Add("AGENCY3", "");
+                    //ao.Add("AGENCY4", "");
+                    //ao.Add("AGENCY5", "");
+                    //ao.Add("AGENCY6", "");
+                    //ao.Add("AGENCY7", "");
+                    //ao.Add("AGENCY8", "");
+                    //ao.Add("AGENCY9", "");
+                    //ao.Add("AGENCY10", "");
+                    //ao.Add("AGENCY11", "");
+                    //ao.Add("AGENCY12", "");
+                    //ao.Add("AGENCY13", "");
+                    //ao.Add("AGENCY14", "");
+                    //ao.Add("AGENCY15", "");
                 }
 
                 if (importErrorCount != 2) {
@@ -672,9 +675,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
 
             var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
-            foreach (var c in charsToRemove)
+            foreach (var cha in charsToRemove)
             {
-                RTEInput = RTEInput.Replace(c, string.Empty);
+                if(cha == "\n")
+                {
+                    RTEInput = RTEInput.Replace(cha, " ");
+                }
+                else
+                { 
+                RTEInput = RTEInput.Replace(cha, string.Empty);
+                }
+
             }
 
             return RTEInput;
@@ -1148,56 +1159,58 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 else if (nodeName.Equals("TAXONOMY"))
                 {
                    
-                    Taxonomy.Add("COMMODITY1", "");
-                    Taxonomy.Add("COMMODITY2", "");
-                    Taxonomy.Add("COMMODITY3", "");
-                    Taxonomy.Add("COMMODITY4", "");
-                    Taxonomy.Add("COMMODITY5", "");
-                    Taxonomy.Add("COMMODITY6", "");
-                    Taxonomy.Add("COMMODITY7", "");
-                    Taxonomy.Add("COMMODITY8", "");
-                    Taxonomy.Add("COMMODITY9", "");
-                    Taxonomy.Add("COMMODITY10", "");
-                    Taxonomy.Add("COMMODITY11", "");
-                    Taxonomy.Add("COMMODITY12", "");
-                    Taxonomy.Add("COMMODITY13", "");
-                    Taxonomy.Add("COMMODITY14", "");
-                    Taxonomy.Add("COMMODITY15", "");
-                    Taxonomy.Add("COMMODITYFACTOR1", "");
-                    Taxonomy.Add("COMMODITYFACTOR2", "");
-                    Taxonomy.Add("COMMODITYFACTOR3", "");
-                    Taxonomy.Add("COMMODITYFACTOR4", "");
-                    Taxonomy.Add("COMMODITYFACTOR5", "");
-                    Taxonomy.Add("COMMODITYFACTOR6", "");
-                    Taxonomy.Add("COMMODITYFACTOR7", "");
-                    Taxonomy.Add("COMMODITYFACTOR8", "");
-                    Taxonomy.Add("COMMODITYFACTOR9", "");
-                    Taxonomy.Add("COMMODITYFACTOR10", "");
-                    Taxonomy.Add("COMMODITYFACTOR11", "");
-                    Taxonomy.Add("COMMODITYFACTOR12", "");
-                    Taxonomy.Add("COMMODITYFACTOR13", "");
-                    Taxonomy.Add("COMMODITYFACTOR14", "");
-                    Taxonomy.Add("COMMODITYFACTOR15", "");
-                    Taxonomy.Add("COMMERCIAL1", "");
-                    Taxonomy.Add("COMMERCIAL2", "");
-                    Taxonomy.Add("COMMERCIAL3", "");
-                    Taxonomy.Add("COMMERCIAL4", "");
-                    Taxonomy.Add("COMMERCIAL5", "");
-                    Taxonomy.Add("COMMERCIAL6", "");
-                    Taxonomy.Add("COMMERCIAL7", "");
-                    Taxonomy.Add("COMMERCIAL8", "");
-                    Taxonomy.Add("COMMERCIAL9", "");
-                    Taxonomy.Add("COMMERCIAL10", "");
-                    Taxonomy.Add("COMMERCIAL11", "");
-                    Taxonomy.Add("COMMERCIAL12", "");
-                    Taxonomy.Add("COMMERCIAL13", "");
-                    Taxonomy.Add("COMMERCIAL14", "");
-                    Taxonomy.Add("COMMERCIAL15", "");
+                    Taxonomy.Add("COMMODITY", "");
+                    //Taxonomy.Add("COMMODITY2", "");
+                    //Taxonomy.Add("COMMODITY3", "");
+                    //Taxonomy.Add("COMMODITY4", "");
+                    //Taxonomy.Add("COMMODITY5", "");
+                    //Taxonomy.Add("COMMODITY6", "");
+                    //Taxonomy.Add("COMMODITY7", "");
+                    //Taxonomy.Add("COMMODITY8", "");
+                    //Taxonomy.Add("COMMODITY9", "");
+                    //Taxonomy.Add("COMMODITY10", "");
+                    //Taxonomy.Add("COMMODITY11", "");
+                    //Taxonomy.Add("COMMODITY12", "");
+                    //Taxonomy.Add("COMMODITY13", "");
+                    //Taxonomy.Add("COMMODITY14", "");
+                    //Taxonomy.Add("COMMODITY15", "");
+                    Taxonomy.Add("COMMODITYFACTOR", "");
+                    //Taxonomy.Add("COMMODITYFACTOR2", "");
+                    //Taxonomy.Add("COMMODITYFACTOR3", "");
+                    //Taxonomy.Add("COMMODITYFACTOR4", "");
+                    //Taxonomy.Add("COMMODITYFACTOR5", "");
+                    //Taxonomy.Add("COMMODITYFACTOR6", "");
+                    //Taxonomy.Add("COMMODITYFACTOR7", "");
+                    //Taxonomy.Add("COMMODITYFACTOR8", "");
+                    //Taxonomy.Add("COMMODITYFACTOR9", "");
+                    //Taxonomy.Add("COMMODITYFACTOR10", "");
+                    //Taxonomy.Add("COMMODITYFACTOR11", "");
+                    //Taxonomy.Add("COMMODITYFACTOR12", "");
+                    //Taxonomy.Add("COMMODITYFACTOR13", "");
+                    //Taxonomy.Add("COMMODITYFACTOR14", "");
+                    //Taxonomy.Add("COMMODITYFACTOR15", "");
+                    Taxonomy.Add("COMMERCIAL", "");
+                    //Taxonomy.Add("COMMERCIAL2", "");
+                    //Taxonomy.Add("COMMERCIAL3", "");
+                    //Taxonomy.Add("COMMERCIAL4", "");
+                    //Taxonomy.Add("COMMERCIAL5", "");
+                    //Taxonomy.Add("COMMERCIAL6", "");
+                    //Taxonomy.Add("COMMERCIAL7", "");
+                    //Taxonomy.Add("COMMERCIAL8", "");
+                    //Taxonomy.Add("COMMERCIAL9", "");
+                    //Taxonomy.Add("COMMERCIAL10", "");
+                    //Taxonomy.Add("COMMERCIAL11", "");
+                    //Taxonomy.Add("COMMERCIAL12", "");
+                    //Taxonomy.Add("COMMERCIAL13", "");
+                    //Taxonomy.Add("COMMERCIAL14", "");
+                    //Taxonomy.Add("COMMERCIAL15", "");
 
                     int countCommodity = 1;
                     int countCommodityFactor = 1;
                     int countCommercial = 1;
-
+                    string Commodity = string.Empty;
+                    string CommodityFactor = string.Empty;
+                    string Commercial = string.Empty;
                     foreach (XmlNode node in xn)
                     {
                         if (node.Attributes["unique-name"] != null)
@@ -1206,36 +1219,40 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             if (GetMapping().ContainsKey(node.Attributes["unique-name"].Value))
                             {
                                 
-                                if (countCommodity < 16)
-                                {
-                                    Taxonomy["COMMODITY" + countCommodity] = node.Attributes["unique-name"].Value;
-                                }
-                                countCommodity++;
+                                Commodity += node.Attributes["unique-name"].Value + "," ;
+                                //if (countCommodity < 16)
+                                //{
+                                    Taxonomy["COMMODITY"] = Commodity;
+                                //}
+                                //countCommodity++;
 
                             }
                             else if (GetMappingCommercial().ContainsKey(node.Attributes["unique-name"].Value))
                             {
-                                if (countCommercial < 16)
-                                {
-                                    Taxonomy["COMMERCIAL" + countCommercial] = node.Attributes["unique-name"].Value;
-                                }
-                                countCommercial++;
+                                //if (countCommercial < 16)
+                                //{
+                                Commercial += node.Attributes["unique-name"].Value + ",";
+                                Taxonomy["COMMERCIAL"] = Commercial;
+                                //}
+                                //countCommercial++;
 
                             }
                             else if (GetMappingCommodityFactor().ContainsKey(node.Attributes["unique-name"].Value))
                             {
                                 if((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
                                         {
-                                    Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
-                                    countCommodityFactor++;
-                                    Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
-                                    countCommodityFactor++;
+                                    CommodityFactor += "dairy_markets_analysis_trade_Import" + "," + "dairy_markets_analysis_trade_Export";
+                                    //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
+                                    //countCommodityFactor++;
+                                    //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
+                                    //countCommodityFactor++;
                                        }
-                                if (countCommodityFactor < 16 && !((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
+                                if (!((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
                                 {
-                                    Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = node.Attributes["unique-name"].Value;
+                                    CommodityFactor += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMODITYFACTOR"] = CommodityFactor;
                                 }
-                                countCommodityFactor++;
+                              //  countCommodityFactor++;
 
                             }
 
@@ -2642,7 +2659,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         #region Override Methods
 
-        public override IEnumerable<object> GetImportData()
+        public override IEnumerable<object> GetImportData(string site, string channel)
         {
             if (!Directory.Exists(this.Query))
             {

@@ -32,7 +32,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
         /// uses a SqlConnection to get data
         /// </summary>
         /// <returns></returns>
-        public override IEnumerable<object> GetImportData() {
+        public override IEnumerable<object> GetImportData(string site, string channel) {
             DataSet ds = new DataSet();
             SqlConnection dbCon = new SqlConnection(this.DatabaseConnectionString);
             dbCon.Open();
