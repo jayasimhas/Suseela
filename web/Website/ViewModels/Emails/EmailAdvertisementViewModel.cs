@@ -32,9 +32,9 @@ namespace Informa.Web.ViewModels.Emails
         public string AdClickLinkUrl
             => _adClickLinkUrl ??
                 (_adClickLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(
-                    _dependencies.AdUrlBuilder.GetLink(GlassModel)));
+                    _dependencies.AdUrlBuilder.GetLink(GlassModel, true)));
 
-        public string AdImageUrl => _dependencies.AdUrlBuilder.GetImageSrc(GlassModel);
+        public string AdImageUrl => _dependencies.AdUrlBuilder.GetImageSrc(GlassModel, true);
 
         public string CampaignQuery => _dependencies.CampaignQueryBuilder.GetCampaignQuery();
     }
