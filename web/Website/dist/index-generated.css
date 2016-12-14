@@ -6042,7 +6042,6 @@ section: UI Elements
         top: 13px;
         right: 30px; }
 
-/*@import 'components/responsive-TableID';*/
 .relatedlinks .related-left-rail {
   float: left; }
   @media (max-width: 1080px) {
@@ -6072,36 +6071,19 @@ section: UI Elements
         .relatedlinks .allrelatedlinks ul:last-child {
           border-bottom: 1px solid #d1d3d4; } }
 
-.compareChart .eachChartData {
-  margin-bottom: 10px; }
-  .compareChart .eachChartData .dataTitle {
-    background: #f9f9f9;
-    padding: 12px;
-    border: 1px solid #d9dadb; }
-    .compareChart .eachChartData .dataTitle .title {
-      float: left; }
-    .compareChart .eachChartData .dataTitle .chartexpand {
-      float: right;
-      background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
-      height: 20px;
-      width: 28px;
-      display: inline-block;
-      cursor: pointer; }
-      .compareChart .eachChartData .dataTitle .chartexpand.active {
-        background-position: 0 -77px; }
-    .compareChart .eachChartData .dataTitle:after {
-      clear: both;
-      content: '';
-      display: table; }
-  .compareChart .eachChartData .chartData {
-    padding: 12px;
-    border: 1px solid #d9dadb;
-    border-top: none; }
-    .compareChart .eachChartData .chartData.hide {
-      display: none; }
+.companyList ul {
+  height: 464px;
+  overflow: auto;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
 
-.compareChart .showAll {
-  margin-bottom: 12px; }
+.companyList .article-topics__li:before {
+  position: relative; }
+
+.companyList .article-topics__li a, .companyList .article-topics__li .pop-out__reset-password, .companyList .article-topics__li .sortable-table__list-toggler, .companyList .article-topics__li .mobile-table-exit {
+  position: relative;
+  left: 5px;
+  top: -2px; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
@@ -7259,12 +7241,12 @@ div#feedbacklite.fbl_r {
     padding-top: 15px; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-img {
       float: left;
+      margin-right: 2em;
       width: 29%; }
       .ContentRecomm-RelatedContent-vertical .section-article .section-article-img img {
         width: 100%; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-text {
       float: left;
-      margin-left: 2em;
       width: 60%; }
     .ContentRecomm-RelatedContent-vertical .section-article:last-child {
       border-bottom: 0 !important; }
