@@ -111,7 +111,7 @@ namespace Informa.Web.ViewModels.Emails
         public string TwitterLinkUrl => _twitterLinkUrl ??
                                     (_twitterLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.Twitter_Link?.Url));
 
-        public bool IsPersonalizedEmail => GlassModel.IsPersonalizedEMail;
+        public bool AddPersonalizedContent => GlassModel.AddPersonalizedContent;
 
 
         private static void SetLastItemIsLast(NavItemViewModel[] arr)

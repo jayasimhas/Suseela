@@ -174,12 +174,23 @@
         .manually-curated-section {
             margin-bottom: 32px;
         }
-
+		.manual-curated-email-section{
+			padding: 15px;
+		}
+		.manual-layout-margin-left{
+			margin-left:5%;
+		}
+		.manual-layout-padded-left{
+			padding-left:5%;
+		}
+		.manual-featured-article td{
+			padding-bottom:12px;
+		}
         .daily-alert {
             background-color: #eee;
             margin-bottom: 24px;
         }
-
+	
         .daily-alert__cell {
             padding-bottom: 16px;
             padding-top: 16px;
@@ -483,6 +494,24 @@
                 display: block !important;
             }
         }
+		
+		@@media (max-width: 767px){
+			table.mobView tr  td {
+				
+                display: block !important; 
+			}
+			.visible-desk {
+                display: none !important;
+            }
+			.mobBorder{
+				 border-top: 1px solid #ccc;
+				 width:98%;
+			}
+			table.mobView{
+				border-bottom: none !important;
+			}
+			
+		}
     </style>
 </head>
 @using (new LinkProviderSwitcher(Sitecore.Context.PageMode.IsNormal ? "informaEmailLinkProvider" : "sitecore"))
@@ -578,22 +607,9 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    @if (Model.GlassModel.IsAgriEMail)
-                                                    {
-                                                        <table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;margin-bottom:32px;border-bottom:1px solid #ccc;padding-bottom:8px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom: 32px;border-bottom: 1px solid #ccc;padding-bottom: 8px; ">
-                                                            <tr>
-                                                                <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:12px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 12px;">
-                                                                    @Html.Sitecore().Placeholder("email-main")
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    }
-                                                    else
-                                                    {
-                                                        @Html.Sitecore().Placeholder("email-main")
-                                                    }
+                                                     @Html.Sitecore().Placeholder("email-main")
                                                     
-                                                    @if (Model.IsPersonalizedEmail)
+                                                    @if (Model.AddPersonalizedContent)
                                                     {
                                                         @personalizeContentToken
 

@@ -61,6 +61,56 @@
          enablePreview="true" enableWebEdit="true"
          enableDebugger="true" disableClientData="false">
       </site>
+            <site patch:before="site[@name='website']" name="Agrow"
+         database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+         dictionaryDomain="AgrowDictionary"
+         hostName="${Site.Domain.Agrow}" targetHostName="${Site.Domain.AgrowTargetHostName}"
+         rootPath="/sitecore/content/Agri/Agrow" startItem="/home"
+         cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+         enableTracking="true" allowDebug="true"
+         enablePreview="true" enableWebEdit="true"
+         enableDebugger="true" disableClientData="false">
+      </site>
+      <site patch:before="site[@name='website']" name="AnimalPharm"
+   database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+   dictionaryDomain="AnimalPharmDictionary"
+   hostName="${Site.Domain.AnimalPharm}" targetHostName="${Site.Domain.AnimalPharmTargetHostName}"
+   rootPath="/sitecore/content/Agri/AnimalPharm" startItem="/home"
+   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   enableTracking="true" allowDebug="true"
+   enablePreview="true" enableWebEdit="true"
+   enableDebugger="true" disableClientData="false">
+      </site>
+      <site patch:before="site[@name='website']" name="PolicyandLeg"
+   database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+   dictionaryDomain="PolicyandLegDictionary"
+   hostName="${Site.Domain.PolicyandLeg}" targetHostName="${Site.Domain.PolicyandLegTargetHostName}"
+   rootPath="/sitecore/content/Agri/PolicyandLeg" startItem="/home"
+   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   enableTracking="true" allowDebug="true"
+   enablePreview="true" enableWebEdit="true"
+   enableDebugger="true" disableClientData="false">
+      </site>
+      <site patch:before="site[@name='website']" name="InsuranceDay"
+   database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+   dictionaryDomain="InsuranceDayDictionary"
+   hostName="${Site.Domain.InsuranceDay}" targetHostName="${Site.Domain.InsuranceDayTargetHostName}"
+   rootPath="/sitecore/content/Maritime/InsuranceDay" startItem="/home"
+   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   enableTracking="true" allowDebug="true"
+   enablePreview="true" enableWebEdit="true"
+   enableDebugger="true" disableClientData="false">
+      </site>
+      <site patch:before="site[@name='website']" name="Lloydslist"
+   database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+   dictionaryDomain="LloydslistDictionary"
+   hostName="${Site.Domain.Lloydslist}" targetHostName="${Site.Domain.LloydslistTargetHostName}"
+   rootPath="/sitecore/content/Maritime/Lloydslist" startItem="/home"
+   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   enableTracking="true" allowDebug="true"
+   enablePreview="true" enableWebEdit="true"
+   enableDebugger="true" disableClientData="false">
+      </site>
       <site patch:before="site[@name='website']" name="LegacyRedirect"
             database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
             hostName="${Site.Domain.LegacyRedirect}"

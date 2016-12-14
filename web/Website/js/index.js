@@ -30,6 +30,7 @@ import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
 
+
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

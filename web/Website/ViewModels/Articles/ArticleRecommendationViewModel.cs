@@ -69,7 +69,7 @@ namespace Informa.Web.ViewModels.Articles
     
         public IEnumerable<IEntitlement> Entitlements => UserEntitlementsContext.Entitlements;
 
-        public string EntitlenetIDs => GetOpportunityIds();
+        public string EntitlementIDs => GetOpportunityIds();
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public bool UserPreferencesExists => (UserPreferencesContext.Preferences != null && UserPreferencesContext.Preferences.PreferredChannels != null && UserPreferencesContext.Preferences.PreferredChannels.Any());
 
@@ -82,19 +82,17 @@ namespace Informa.Web.ViewModels.Articles
             UserPreferencesContext.Preferences.PreferredChannels.Any(ch => ch.Topics != null
             && ch.Topics.Any() && ch.Topics.Any(tp => tp.IsFollowing))));
 
-        public IList<Section> Sections => GetSections();
-        public string JSONData => GetJSONData();
+        
+        public string PreferedTaxonomies => GetPreferedTaxonomyIds();
         /// <summary>
         /// Gets the json data.
         /// </summary>
         /// <returns>Json string of data</returns>
-        private string GetJSONData()
+        private string GetPreferedTaxonomyIds()
         {
-            var jsonObject = new
-            {
-                Sections = Sections
-            };
-            return JsonConvert.SerializeObject(jsonObject);
+            IList<Section> Sections = GetSections();
+            var taxnomyids = string.Join(",", Sections.Select(i => $"'{i.TaxonomyIds.ElementAt(0)}'"));
+            return taxnomyids;
         }
 
         /// <summary>
@@ -104,6 +102,28 @@ namespace Informa.Web.ViewModels.Articles
         private IList<Section> GetSections()
         {
             var sections = new List<Section>();
+
+            Section sec = new Section();
+            sec.TaxonomyIds = new List<string>() { "{1D9DF21A-6D1C-4313-8BAE-DE880FDC9C3B}" };
+            sec.ChannelName = "channel1";
+            sec.ChannelId = "ch1";
+            sections.Add(sec);
+            Section sec2 = new Section();
+            sec2.TaxonomyIds = new List<string>() { "{9CA4BFEE-8798-4D39-A2E8-5BEF5F3DEBAB}" };
+            sec2.ChannelName = "channel2";
+            sec2.ChannelId = "ch2";
+            sections.Add(sec2);
+            Section sec3 = new Section();
+            sec3.TaxonomyIds = new List<string>() { "{8115E430-0419-4B6B-B6E6-5CCEA59705FB}" };
+            sec3.ChannelName = "channel3";
+            sec3.ChannelId = "ch3";
+            sections.Add(sec3);
+            Section sec4 = new Section();
+            sec4.TaxonomyIds = new List<string>() { "{59163F1F-D047-46D2-9F51-BAA597DC0BB9}" };
+            sec4.ChannelName = "channel4";
+            sec4.ChannelId = "ch4";
+            sections.Add(sec4);
+            return sections;
 
             if (UserPreferencesContext.Preferences != null && UserPreferencesContext.Preferences.PreferredChannels != null
                && UserPreferencesContext.Preferences.PreferredChannels.Any())
@@ -230,6 +250,7 @@ namespace Informa.Web.ViewModels.Articles
 
         private string GetOpportunityIds()
         {
+            return "'1d9df21a-6d1c-4313-8bae-de880fdc9c3b','9ca4bfee-8798-4d39-a2e8-5bef5f3debab','8115e430-0419-4b6b-b6e6-5ccea59705fb','59163f1f-d047-46d2-9f51-baa597dc0bb9'";
             var UserEntitlements = UserEntitlementsContext.Entitlements;
             UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
             var ids = string.Join(",", UserEntitlements.Select(i => $"'{i.OpportunityId}'"));

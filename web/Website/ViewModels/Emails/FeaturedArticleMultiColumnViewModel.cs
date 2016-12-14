@@ -10,7 +10,7 @@
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using System.Collections;
     using System.Collections.Generic;
-    public class FeaturedArticleMultiColumnViewModel : GlassViewModel<IFeatured_Article_Agri>
+    public class FeaturedArticleMultiColumnViewModel : GlassViewModel<IFeatured_Article_MultiColumn>
     {
         private readonly IDependencies _dependencies;
 

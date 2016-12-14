@@ -13,6 +13,9 @@ namespace Informa.Library.PDF
         public string PdfPageUrl { get; set; }
         public PdfType TypeOfPdf { get; set; }
         public string PdfTitle { get; set; }
+        public DateTime PubStartDate { get; set; }
+        public DateTime PubEndDate { get; set; }
+        public int ArticleSize { get; set; }
 
     }
     /// <summary>
@@ -21,6 +24,7 @@ namespace Informa.Library.PDF
     public enum PdfType
     {
         Static = 1,
-        Manual = 2
+        Manual = 2,
+        Personalized = 3
     }
 }

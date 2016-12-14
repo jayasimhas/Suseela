@@ -1,48 +1,47 @@
-﻿@using Informa.Library.Utilities.References
-@using Informa.Web.Models
-@using Sitecore.Resources.Media
-@inherits CustomGlassView<Informa.Web.ViewModels.PDF.ArticleBodyForPDFViewModel>
+﻿@model Informa.Web.ViewModels.PDF.PersonalizedPdfViewModel
+@{
+    Layout = null;
+}
 
-<div class="article-body-content">
+<div class="article-body-content" id="article-body-content">
     <div class="article-metadata">
         <table>
             <tr>
                 <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
-                    <span class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</span>
+                    <span class="article-metadata__date">@Model.PublishDate.ToString("dd MMM yyyy")</span>
                 </td>
                 @if (!string.IsNullOrEmpty(Model.ContentType))
-            {
+                {
                     <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
                         <span class="article-content-type">@Model.ContentType</span>
                     </td>
                 }
 
-                @foreach (var tag in Model.ArticleTagsViewModel.Tags)
+                @foreach (var tag in Model.Texonomies)
                 {
-                    if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
+                    @*if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
                     {
                         <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
                             <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                         </td>
                     }
                     else
-                    {
+                    {*@
 
-                        <td style="float: left; font-size: 16px; line-height: 25px; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                        <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                            <a style="color:#be1e2d; text-decoration:none;" href="">@tag</a>
                         </td>
-                    }
-
                 }
             </tr>
         </table>
-        <h1><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
+        <h1><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.abslouteUrl">@Html.Raw(Model.Title)</a></h1>
         <h3>@Html.Raw(Model.Sub_Title)</h3>
     </div>
 
-    @* MULTIPLE AUTHORS *@
+
+  @* MULTIPLE AUTHORS *@
     @{
-        var authors = Model.Authors.Take(3).ToArray();
+        var authors = Model.Author.Take(3).ToArray();
     }
     @if (authors.Length == 1)
     {
@@ -55,13 +54,13 @@
                     <td class="article-author__solo-wrapper" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0; white-space: nowrap;">
                         <span>
                             by
-                            @if (author.InActive)
+                            @if (author.Inactive)
                             {
-                                @author.Name
+                                @author._Name
                             }
                             else
                             {
-                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
+                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
                             }
                         </span>
                         <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
@@ -93,12 +92,12 @@
                 <tr><td>&nbsp;</td></tr>
             </table>
         </div>
-        <table>
-            <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
-            <tr><td>&nbsp;</td></tr>
-        </table>
+            <table>
+                <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+                <tr><td>&nbsp;</td></tr>
+            </table>
 
-        @* END SINGLE AUTHOR *@
+            @* END SINGLE AUTHOR *@
 
     }
     else if (authors.Length > 1)
@@ -107,18 +106,18 @@
             <table>
 
                 @foreach (var author in authors)
-                {
+                    {
                     <tr class="article-author__list">
                         <span>by</span>
                         <td>
-                            @if (author.InActive)
+                            @if (author.Inactive)
                             {
-                                @author.Name
+                                @author._Name
                             }
                             else
                             {
-                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
-                                @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
+                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
+                                    @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
                             }
 
                             <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
@@ -150,78 +149,50 @@
 
             </table>
         </div>
-        @* END MULTIPLE AUTHORs *@
+            @* END MULTIPLE AUTHORs *@
     }
 
     @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
-    @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
+    @if (!string.IsNullOrEmpty(Model.Summary))
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
-            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-            <p style="font-size:18px; line-height:30px; color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</p>
+            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.Summary</h4>
+            <p style="font-size:18px; line-height:30px; color:#58595b;">@Model.Body</p>
         </div>
         @* End Executive Summary  *@
     }
 
-    @if (!Model.IsEntitled() && Model.CallToActionViewModel != null)
-    {
-        //This will show context for subscribe, login, register
-        <div class="article-call-to-action">
-            @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
-        </div>
-                }
-
-    @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
-    {
-        @* * *  ARTICLE - FEATURED IMAGE
-            IIPP-117 *@
-        <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
-            <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
-            <table width="100%">
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td align="left">
-                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.Image.ImageCaption</span>
-                    </td>
-                    <td align="right">
-                        @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+@if (!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    @* * *  ARTICLE - FEATURED IMAGE
+        IIPP-117 *@
+    <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
+        <img src="" alt="@Model.ImageAltText">
+        <table width="100%">
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="left">
+                    <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.ImageCaption</span>
+                </td>
+                <td align="right">
+                    @if (!string.IsNullOrEmpty(Model.ImageSource))
                 {
 
-                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
-                                @Model.FeaturedImageSource @Model.Image.ImageSource
-                            </span>}
-                    </td>
-                </tr>
-            </table>
-
-        </div>
-        @* * *  END ARTICLE - FEATURED IMAGE *@
-    }
-    <span>
-        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-    </span>
-
-</div>
-@if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
-{
-    <table>
-        <tr><td>&nbsp;</td></tr>
-        <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
-        <tr><td>&nbsp;</td></tr>
-    </table>
-    <div class="article-related-content">
-        <h2>Related Content</h2>
-        <table width="100%">
-            @foreach (var article in Model.RelatedArticles)
-            {
-                Html.RenderPartial("/Views/Shared/Components/PDF/PDFRelatedArticles.cshtml", article);
-            }
+                        <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
+                             @Model.ImageSource
+                        </span>}
+                </td>
+            </tr>
         </table>
     </div>
+
 }
+        @* * *  END ARTICLE - FEATURED IMAGE *@
+</div>
 <table>
     <tr><td>&nbsp;</td></tr>
     <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
     <tr><td>&nbsp;</td></tr>
 </table>
+
