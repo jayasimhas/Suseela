@@ -7,11 +7,12 @@
         <h1>@Model.PDFTitle</h1>
     </div>
     <div class="pdf-subTitle">
-        <p style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</p>
+        <div style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</div>
     </div>
 
     <table>
-        <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
         <tr><td>&nbsp;</td></tr>
     </table>
     <div class="pdf-body">@Html.Sitecore().Placeholder("pdf-content")</div>
