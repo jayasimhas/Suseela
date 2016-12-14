@@ -36,7 +36,7 @@
                 }
             </tr>
         </table>
-        <h1><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
+        <h1 style="margin: 10px 0; padding: 0px;"><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
         <h3>@Html.Raw(Model.Sub_Title)</h3>
     </div>
 
@@ -64,38 +64,43 @@
                                 <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                             }
                         </span>
-                        <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
-                            <table cellpadding="0" cellspacing="0">
-                                <tr><td height="10">&nbsp;</td></tr>
-                                <tr>
-                                    <td style="padding:0 10px 0 0;">
-                                        @if (!string.IsNullOrEmpty(author.Twitter))
+                        @if (!string.IsNullOrEmpty(author.Twitter) && !string.IsNullOrEmpty(author.Email_Address))
+                        {
+                            <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr><td height="10">&nbsp;</td></tr>
+                                    <tr>
+                                        <td style="padding:0 10px 0 0;">
+                                            @if (!string.IsNullOrEmpty(author.Twitter))
+                                            {
+                                                <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                            }
+                                        </td>
+                                        @if (!string.IsNullOrEmpty(author.Twitter) && !string.IsNullOrEmpty(author.Email_Address))
                                         {
-                                            <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                            <td style="width: 10px;"></td>
+                                            <td style="border-left:1px solid #5a5758;"></td>
+                                            <td style="width: 10px;"></td>
                                         }
-                                    </td>
+                                        <td style="padding:0 10px 0 10px;">
 
-                                    <td style="width: 10px;"></td>
-                                    <td style="border-left:1px solid #5a5758;"></td>
-                                    <td style="width: 10px;"></td>
-                                    <td style="padding:0 10px 0 10px;">
-
-                                        @if (!string.IsNullOrEmpty(author.Email_Address))
-                                        {
-                                            <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
-                                        }
-                                    </td>
-                                </tr>
-                            </table>
-                        </span>
+                                            @if (!string.IsNullOrEmpty(author.Email_Address))
+                                            {
+                                                <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                            }
+                                        </td>
+                                    </tr>
+                                </table>
+                            </span>
+                        }
+                        
                     </td>
                 </tr>
-                <tr><td>&nbsp;</td></tr>
             </table>
         </div>
         <table>
-            <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
-            <tr><td>&nbsp;</td></tr>
+            <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+            <tr><td height="10"></td></tr>
         </table>
 
         @* END SINGLE AUTHOR *@
@@ -108,46 +113,60 @@
 
                 @foreach (var author in authors)
                 {
-                    <tr class="article-author__list">
-                        <span>by</span>
+                    <tr>
                         <td>
-                            @if (author.InActive)
-                            {
-                                @author.Name
-                            }
-                            else
-                            {
-                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
-                                @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
-                            }
-
-                            <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
-                                <table cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td style="border-right:1px solid #5a5758;  padding:0 10px 0 0;">
-                                            @if (!string.IsNullOrEmpty(author.Twitter))
-                                            {
-                                                <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
-                                            }
-                                        </td>
-
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                       <td align="left">by
+                                           @if (author.InActive)
+                                           {
+                                               @author.Name
+                                           }
+                                           else
+                                           {
+                                               <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
+                                               @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
+                                           }
+                                       </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td height="5"></td></tr>
+                    <tr>
+                        <td class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="padding:0 10px 0 0;">
+                                        @if (!string.IsNullOrEmpty(author.Twitter))
+                                        {
+                                            <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                        }
+                                    </td>
+                                    @if (!string.IsNullOrEmpty(author.Twitter) && !string.IsNullOrEmpty(author.Email_Address))
+                                    {
                                         <td style="width: 10px;"></td>
                                         <td style="border-left:1px solid #5a5758;"></td>
                                         <td style="width: 10px;"></td>
-                                        <td style="padding:0 10px 0 10px;">
+                                    }
+                                    <td style="padding:0 10px 0 10px;">
 
-                                            @if (!string.IsNullOrEmpty(author.Email_Address))
-                                            {
-                                                <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
-                                            }
-                                        </td>
-                                    </tr>
-                                </table>
-                            </span>
+                                        @if (!string.IsNullOrEmpty(author.Email_Address))
+                                        {
+                                            <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                        }
+                                    </td>
+                                </tr>
+                            </table> 
                         </td>
                     </tr>
+                    <tr><td height="20"></td></tr>
                 }
 
+            </table>
+            <table>
+                <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+                <tr><td height="10"></td></tr>
             </table>
         </div>
         @* END MULTIPLE AUTHORs *@
@@ -158,8 +177,8 @@
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
-            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-            <p style="font-size:18px; line-height:30px; color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</p>
+            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>           
+            <div class="article-executive-summary-body" style="font-size:18px; line-height:30px; color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</div>
         </div>
         @* End Executive Summary  *@
     }
@@ -198,7 +217,7 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    <span>
+    <span style="max-width: 668px; display: block;">
         @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
     </span>
 
@@ -207,7 +226,7 @@
 {
     <table>
         <tr><td>&nbsp;</td></tr>
-        <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+        <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
         <tr><td>&nbsp;</td></tr>
     </table>
     <div class="article-related-content">
@@ -222,6 +241,6 @@
 }
 <table>
     <tr><td>&nbsp;</td></tr>
-    <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>
+    <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
     <tr><td>&nbsp;</td></tr>
 </table>
