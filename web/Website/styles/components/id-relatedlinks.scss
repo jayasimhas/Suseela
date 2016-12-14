@@ -30,3 +30,21 @@
 		}
 	}
 }
+
+.companyList{
+	ul{
+		height: 464px;
+		overflow: auto;
+		margin-bottom: 1.5rem;
+	}
+	.article-topics__li{
+		&:before{
+			position: relative;
+		}
+		a{
+			position: relative;
+			left: 5px;
+			top: -2px;
+		}
+	}
+}
