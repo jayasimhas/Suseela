@@ -60,7 +60,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 writer.PageEvent = globalElement;
                 document.Open();
 
-                GeneratePdfBody(writer, document, pdfPageUrl, userEmail, DataToolLinkDesc, DataToolLinkText);
+                GeneratePdfBody(writer, document, userEmail, DataToolLinkDesc, DataToolLinkText, pdfPageUrl);
                 writer.StrictImageSequence = true;
 
                 //Add meta information to the document
@@ -198,13 +198,9 @@ namespace Informa.Web.Areas.Account.Controllers
         {
             string fullPageHtml = string.Empty;
             string html = string.Empty;
+            HtmlDocument doc = new HtmlDocument();
             if (!string.IsNullOrEmpty(pdfPageUrl) && personalizedPdf == null)
             {
-                #region For Static HTML
-                //string url = pdfPageUrl;
-                //var fullPageHtml = System.IO.File.ReadAllText(url);
-                #endregion
-
                 if (!pdfPageUrl.StartsWith("http"))
                 {
                     pdfPageUrl = HttpContext.Request.Url.Scheme + "://" + pdfPageUrl;
@@ -216,11 +212,9 @@ namespace Informa.Web.Areas.Account.Controllers
                 client.UseDefaultCredentials = true;
                 client.Headers.Add("User-Agent: Other");
                 byte[] data = client.DownloadData(pdfPageUrl);
-                fullPageHtml = Encoding.UTF8.GetString(data);
-                HtmlDocument doc = new HtmlDocument();
+                fullPageHtml = Encoding.UTF8.GetString(data);               
                 doc.LoadHtml(fullPageHtml);
-                html = doc.GetElementbyId("mainContentPdf").InnerHtml;
-                html = html.Replace("PersonalizedContent", "");
+                html = doc.GetElementbyId("mainContentPdf").InnerHtml;              
             }
             else
             {
@@ -229,9 +223,6 @@ namespace Informa.Web.Areas.Account.Controllers
                     html = personalizedPdf;
                 }
             }
-
-            
-
                 HtmlNode executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//div[@class='article-executive-summary-body']");
                 if (executiveSummaryNode != null)
                 {
@@ -255,13 +246,14 @@ namespace Informa.Web.Areas.Account.Controllers
             HtmlDocument ReqdDoc = new HtmlDocument();
             ReqdDoc.LoadHtml(decodedHtml);
 
-                var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='pipelinewatch']")?.ToList();
+                var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
                 if (tableNodes != null && tableNodes.Any())
                 {
                     foreach (var tableNode in tableNodes)
                     {
                         tableNode.SetAttributeValue("width", "688px");
-                    }
+                    tableNode.SetAttributeValue("style", "color:#58595b");
+                }
                 }
 
             HtmlNode CommonFooterNode = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-footer']");
@@ -354,22 +346,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
                 }
             }
-        }
-        /// <summary>
-        /// Converting Chart to Flat Image
-        /// </summary>
-        /// <param name="chartNode"></param>
-        /// <returns></returns>
-        private string RelpaceChartWithImage(HtmlNode chartNode)
-        {
-            //Chart1.SaveImage(memoryStream, ChartImageFormat.Png);
-            //Image img = Image.GetInstance(memoryStream.GetBuffer();
-            //img.ScalePercent(75f);
-            //Doc.Add(img);
-            //Doc.Close();
-
-            return string.Empty;
-        }
+      
         /// <summary>
         /// Generate Personalize Pdf Body
         /// </summary>
