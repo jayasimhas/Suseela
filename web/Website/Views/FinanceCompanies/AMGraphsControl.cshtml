@@ -1,5 +1,156 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.AMGraphsViewModel
 
 <div>
-    @Model.CompanyName
+   <h4 style="margin: 10px 10px 10px 0px; font-size: 25px;">@Model.CompanyName</h4> 
 </div>
+<div style="background-color: #eeeeee;overflow: hidden;">
+    <h5>5 YEAR TRENDS</h5>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"><a href="/" style="color: #333333;margin-left: 6px;"> Gross Written Premium (&#36;M)</a></h5>
+        <a href="/"><div id="chartdiv1" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_GWP = [{ "colour": "217bb7", "value": 36607.0, "year": 2011 }, { "colour": "217bb7", "value": 39401.0, "year": 2012 }, { "colour": "217bb7", "value": 41243.0, "year": 2013 }, { "colour": "217bb7", "value": 41592.0, "year": 2014 }, { "colour": "217bb7", "value": 39246.0, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"><a href="/" style="color: #333333;margin-left: 6px;"> Net Written Premium (&#36;M)</a></h5>
+        <a href="/"><div id="chartdiv2" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_NWP = [{ "colour": "a6d64f", "value": 31195.0, "year": 2011 }, { "colour": "a6d64f", "value": 33555.0, "year": 2012 }, { "colour": "a6d64f", "value": 35224.0, "year": 2013 }, { "colour": "a6d64f", "value": 36275.0, "year": 2014 }, { "colour": "a6d64f", "value": 34533.0, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;"> Underwriting Result (&#36;M)</a></h5>
+        <a href="/"><div id="chartdiv3" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_UR = [{ "colour": "c6c6c6", "value": -3474.0, "year": 2011 }, { "colour": "c6c6c6", "value": -2874.0, "year": 2012 }, { "colour": "c6c6c6", "value": -1222.0, "year": 2013 }, { "colour": "c6c6c6", "value": -876.0, "year": 2014 }, { "colour": "c6c6c6", "value": -1062.0, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body last" style="float:left;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">Net Result (&#36;M)</a></h5>
+        <a href="/"><div id="chartdiv4" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_NP = [{ "colour": "f08000", "value": 358.0, "year": 2011 }, { "colour": "f08000", "value": 829.0, "year": 2012 }, { "colour": "f08000", "value": 1743.0, "year": 2013 }, { "colour": "f08000", "value": 1833.0, "year": 2014 }, { "colour": "f08000", "value": 514.0, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;"> Shareholders' Funds (&#36;M)</a></h5>
+        <a href="/"><div id="chartdiv5" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_SF = [{ "colour": "de8100", "value": 17461.0, "year": 2011 }, { "colour": "de8100", "value": 18317.0, "year": 2012 }, { "colour": "de8100", "value": 18968.0, "year": 2013 }, { "colour": "de8100", "value": 20218.0, "year": 2014 }, { "colour": "de8100", "value": 19143.0, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">Net Result / NWP %</a></h5>
+        <a href="/"><div id="chartdiv6" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_NWPNR = [{ "colour": "919191", "value": 1.15, "year": 2011 }, { "colour": "919191", "value": 2.47, "year": 2012 }, { "colour": "919191", "value": 4.95, "year": 2013 }, { "colour": "919191", "value": 5.05, "year": 2014 }, { "colour": "919191", "value": 1.49, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body" style="float:left;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">NWP / Shareholders' Funds %</a></h5>
+        <a href="/"><div id="chartdiv7" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_SFNR = [{ "colour": "92d551", "value": 178.66, "year": 2011 }, { "colour": "92d551", "value": 183.19, "year": 2012 }, { "colour": "92d551", "value": 185.7, "year": 2013 }, { "colour": "92d551", "value": 179.42, "year": 2014 }, { "colour": "92d551", "value": 180.39, "year": 2015 }];</script>
+    </div>
+    <div class="graph-container lightgray-body last" style="float:left;margin-left: 6px;">
+        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;">Net Result / Shareholders' Funds %</a></h5>
+        <a href="/"><div id="chartdiv8" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+        <script>var chartData_NPSFR = [{ "colour": "689500", "value": 2.05, "year": 2011 }, { "colour": "689500", "value": 4.53, "year": 2012 }, { "colour": "689500", "value": 9.19, "year": 2013 }, { "colour": "689500", "value": 9.07, "year": 2014 }, { "colour": "689500", "value": 2.69, "year": 2015 }];</script>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript">
+
+//function PrintCompanyGraph(chartData, divId, graphType){
+//	var chart1 = new AmCharts.AmSerialChart();
+//	alert(chart1);
+//	chart1.dataProvider = chartData;
+//	chart1.categoryField = "year";
+
+//	chart1.marginTop = 20;
+//	chart1.marginBottom = 25;
+//	chart1.marginLeft = 55;
+//	//chart1.marginLeft = 45;
+//	chart1.marginRight = 25;
+//	chart1.height = '100%';
+//	chart1.width = '100%';
+//	//chart1.fontSize = 8;
+
+//    chart1.startDuration = 0;
+//    chart1.startRadius = "100%";
+
+//	var graph1 = new AmCharts.AmGraph();
+//	graph1.valueField = "value";
+
+//	graph1.lineColor = "#" + chartData[0].colour;
+//	graph1.fillColor = "#" + chartData[0].colour;
+//	graph1.balloonText = "[[category]]: [[value]]";
+//	graph1.type = graphType;
+//	graph1.lineAlpha = 0;
+//	graph1.fillAlphas = 0.8;
+//    graph1.startDuration = 0;
+//    graph1.startRadius = "100%";
+//	//graph1.lineThickness = 2;
+//	chart1.addGraph(graph1);
+
+//	var catAxis = chart1.categoryAxis;
+
+//	catAxis.gridPosition = "start";
+//	catAxis.autoGridCount = true;
+
+//	chart1.makeChart(divId);
+//}
+
+setTimeout(function ()
+{
+    
+    PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
+    PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
+    PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
+    PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
+    PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
+    PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
+    PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
+    PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
+   
+}, 3000);
+
+function PrintCompanyGraph(chartData, divId, graphType) {
+    AmCharts.makeChart(divId,
+                    {
+                        "type": "serial",
+                        "categoryField": "year",
+                        "dataDateFormat": "YYYY",
+                        "handDrawScatter": 4,
+                        "theme": "default",
+                        "categoryAxis": {
+                            "minPeriod": "YYYY",
+                            "parseDates": true,
+                            "gridPosition": "start",
+                            "autoGridCount" : true
+                        },
+                        "chartCursor": {
+                            "enabled": true,
+                            "animationDuration": 0,
+                            "categoryBalloonDateFormat": "YYYY"
+                        },
+                        "trendLines": [],
+                        "graphs": [
+                            {
+                                "fillAlphas": 0.7,
+                                "id": "AmGraph-1",
+                                "lineAlpha": 0,
+                                "title": "graph 1",
+                                "valueField": "value",
+                                "type": graphType,
+                                "lineColor": "#" + chartData[0].colour,
+                                "fillColor": "#" + chartData[0].colour,
+                                "startDuration": 0,
+                                "startRadius": "100%",
+                                "balloonText" : "[[category]]: [[value]]"
+                            }
+                        ],
+                        "guides": [],
+                        "valueAxes": [
+                            {
+                                "id": "ValueAxis-1",
+                                "title": ""
+                            }
+                        ],
+                        "allLabels": [],
+                        "balloon": {},
+                        "dataProvider": chartData
+                    }
+                );
+}
+</script>
