@@ -17,21 +17,24 @@
                     </td>
                 }
 
-                @foreach (var tag in Model.Texonomies.Take(3))
+                @{ int counter = 0;}
+                @foreach (var tag in Model.Texonomies)
                 {
-                    @*if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
+                    counter = counter + 1;
+                    if (counter < Model.Texonomies.Count())
                     {
                         <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
                             <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                         </td>
                     }
                     else
-                    {*@
-
-                        <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="/@tag">@tag</a>
+                    {
+                        <td style="float: left; font-size: 16px; line-height: 25px; padding:0 10px 0 10px; font-weight: 700;">
+                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                         </td>
+                    }
                 }
+
             </tr>
         </table>
         <h1><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.abslouteUrl">@Html.Raw(Model.Title)</a></h1>
@@ -54,13 +57,13 @@
                     <td class="article-author__solo-wrapper" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0; white-space: nowrap;">
                         <span>
                             by
-                            @if (author.Inactive)
+                            @if (author.InActive)
                             {
-                                @author._Name
+                                @author.Name
                             }
                             else
                             {
-                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
+                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                             }
                         </span>
                         <span class="article-author__contact" style="color:#be1e2d; text-decoration:none;">
@@ -110,13 +113,13 @@
                     <tr class="article-author__list">
                         <span>by</span>
                         <td>
-                            @if (author.Inactive)
+                            @if (author.InActive)
                             {
-                                @author._Name
+                                @author.Name
                             }
                             else
                             {
-                                <a style="color:#58595b; text-decoration:none;" href="">@author._Name</a>
+                                <a style="color:#58595b; text-decoration:none;" href="@author.AuthorLink">@author.Name</a>
                                     @*<span class="article-author__name" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0;"><a href="@author.AuthorLink">@author.Name</a></span>*@
                             }
 
