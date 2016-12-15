@@ -222,6 +222,12 @@ namespace Informa.Web.Areas.Account.Controllers
                         link.SetAttributeValue("target", "_blank");
 
                     }
+
+                    if (link.Name != "img")
+                    {
+                        link.InnerHtml = link.InnerText;
+                    }
+
                     if (!link.Attributes.Contains(@"style"))
                     {
                         link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
@@ -508,6 +514,23 @@ namespace Informa.Web.Areas.Account.Controllers
             }
         }
         /// <summary>
+        /// Set Document margins on startPage method
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="document"></param>
+        public override void OnStartPage(PdfWriter writer, Document document)
+        {
+            if (writer.PageNumber == 1)
+            {
+                document.SetMargins(40, 40, 30, 60);
+            }
+            else
+            {
+                document.SetMargins(40, 40, 60, 60);
+            }
+            document.NewPage();
+        }
+        /// <summary>
         /// Adding Common Header and Footer
         /// </summary>
         /// <param name="writer">PDF writer</param>
@@ -525,7 +548,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 10);
                 cb.SetColorFill(BaseColor.DARK_GRAY);
-                cb.SetTextMatrix(document.PageSize.GetRight(40), document.PageSize.GetBottom(30));
+                cb.SetTextMatrix(document.PageSize.GetRight(40), document.PageSize.GetBottom(20));
                 cb.ShowText(PageNumber);
                 cb.EndText();
             }
@@ -536,7 +559,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 10);
                 cb.SetColorFill(BaseColor.DARK_GRAY);
-                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(30));
+                cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetTop(25));
                 cb.ShowText(!string.IsNullOrEmpty(CommonHeader) ? CommonHeader : string.Empty);
                 cb.EndText();
             }
@@ -544,29 +567,35 @@ namespace Informa.Web.Areas.Account.Controllers
             cb.BeginText();
             cb.SetFontAndSize(bf, 10);
             cb.SetColorFill(BaseColor.DARK_GRAY);
-            cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetBottom(30));
+            cb.SetTextMatrix(document.PageSize.GetLeft(40), document.PageSize.GetBottom(20));
             cb.ShowText(!string.IsNullOrEmpty(CommonFooter) ? CommonFooter : string.Empty);
             cb.EndText();
+
+
+            //ColumnText ct = new ColumnText(cb);
+            //ct.SetSimpleColumn(document.PageSize.GetLeft(40), document.PageSize.GetBottom(20), 70, 70, 20, Element.ALIGN_CENTER);
+            //ct.Go();
+
 
             //Move the pointer and draw line to separate header section from rest of page
             if (writer.PageNumber == 1)
             {
-                cb.MoveTo(40, document.PageSize.Height - 100);
-                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 100);
+                cb.MoveTo(40, document.PageSize.Height - 80);
+                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 80);
                 cb.Stroke();
                 cb.SetColorStroke(BaseColor.DARK_GRAY);
             }
             else
             {
-                cb.MoveTo(40, document.PageSize.Height - 50);
-                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 50);
+                cb.MoveTo(40, document.PageSize.Height - 40);
+                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 40);
                 cb.Stroke();
                 cb.SetColorStroke(BaseColor.DARK_GRAY);
             }
 
             //Move the pointer and draw line to separate footer section from rest of page
-            cb.MoveTo(40, document.PageSize.GetBottom(50));
-            cb.LineTo(document.PageSize.Width - 40, document.PageSize.GetBottom(50));
+            cb.MoveTo(40, document.PageSize.GetBottom(40));
+            cb.LineTo(document.PageSize.Width - 40, document.PageSize.GetBottom(40));
             cb.Stroke();
             cb.SetColorStroke(BaseColor.DARK_GRAY);
         }
