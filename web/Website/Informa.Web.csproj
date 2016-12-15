@@ -1235,8 +1235,6 @@
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
-    <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
-    <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
@@ -1247,6 +1245,7 @@
     <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
+    <Compile Include="ViewModels\PDF\PersonalizedContentPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PersonalizedPdfViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
@@ -2193,6 +2192,7 @@
     <Content Include="Views\FinanceCompanies\AMGraphsControl.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyProfile.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyAddress.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PersonalizedContentPDF.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
