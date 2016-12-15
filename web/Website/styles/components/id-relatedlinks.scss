@@ -48,3 +48,31 @@
 		}
 	}
 }
+
+.companyPeerGrp{
+	.button-msg-webUser{
+		float: none;
+	}
+	.goBtn{
+		float: right;
+		margin-bottom: 1rem;
+	}
+	.button-msg-webUser{
+		.msg_link{
+			float: none;
+			a{
+				display: block;
+				float: none;
+				margin-bottom: 10px;
+				&:last-child{
+					margin-bottom: 0px;
+				}
+			}
+			&:after{
+				clear: both;
+				content: '';
+				display: table;
+			}
+		}
+	}
+}
