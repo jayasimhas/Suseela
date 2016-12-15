@@ -33,7 +33,7 @@ namespace Informa.Web.Controllers
         public HttpResponseMessage Get(string userId)
         {
             
-           // ILog _logger = new  
+           
 
             var isMailSent = false;
 
@@ -51,7 +51,7 @@ namespace Informa.Web.Controllers
                 {
                     To = userId,
                     Subject = "Personalized Test",
-                    From = "test@sapient.com",
+                    From = "ebodkhe@sapient.com",
                     Body = emailBody,
                     IsBodyHtml = true
                 };
@@ -63,7 +63,6 @@ namespace Informa.Web.Controllers
                 if (!isEmailSent)
                 {
                     _logger.Warn($"Email sender failed");
-                   // result = false;
                 }
             }
 
