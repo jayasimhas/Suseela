@@ -4898,7 +4898,14 @@ header .header-account-access {
     display: block; }
     .personalisationhome .article-metadata ul li {
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-right: 0.375rem;
+      padding-right: 6px;
+      padding-right: 0.375rem; }
+      .personalisationhome .article-metadata ul li:nth-child(2) {
+        max-width: 85px;
+        text-overflow: ellipsis; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
       margin-right: 4px;
@@ -6085,6 +6092,58 @@ section: UI Elements
   left: 5px;
   top: -2px; }
 
+.companyPeerGrp .button-msg-webUser {
+  float: none; }
+
+.companyPeerGrp .goBtn {
+  float: right;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.companyPeerGrp .button-msg-webUser .msg_link {
+  float: none; }
+  .companyPeerGrp .button-msg-webUser .msg_link a, .companyPeerGrp .button-msg-webUser .msg_link .pop-out__reset-password, .companyPeerGrp .button-msg-webUser .msg_link .sortable-table__list-toggler, .companyPeerGrp .button-msg-webUser .msg_link .mobile-table-exit {
+    display: block;
+    float: none;
+    margin-bottom: 10px; }
+    .companyPeerGrp .button-msg-webUser .msg_link a:last-child, .companyPeerGrp .button-msg-webUser .msg_link .pop-out__reset-password:last-child, .companyPeerGrp .button-msg-webUser .msg_link .sortable-table__list-toggler:last-child, .companyPeerGrp .button-msg-webUser .msg_link .mobile-table-exit:last-child {
+      margin-bottom: 0px; }
+  .companyPeerGrp .button-msg-webUser .msg_link:after {
+    clear: both;
+    content: '';
+    display: table; }
+
+.compareChart .eachChartData {
+  margin-bottom: 10px; }
+  .compareChart .eachChartData .dataTitle {
+    background: #f9f9f9;
+    padding: 12px;
+    border: 1px solid #d9dadb; }
+    .compareChart .eachChartData .dataTitle .title {
+      float: left; }
+    .compareChart .eachChartData .dataTitle .chartexpand {
+      float: right;
+      background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
+      height: 20px;
+      width: 28px;
+      display: inline-block;
+      cursor: pointer; }
+      .compareChart .eachChartData .dataTitle .chartexpand.active {
+        background-position: 0 -77px; }
+    .compareChart .eachChartData .dataTitle:after {
+      clear: both;
+      content: '';
+      display: table; }
+  .compareChart .eachChartData .chartData {
+    padding: 12px;
+    border: 1px solid #d9dadb;
+    border-top: none; }
+    .compareChart .eachChartData .chartData.hide {
+      display: none; }
+
+.compareChart .showAll {
+  margin-bottom: 12px; }
+
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
  * selectivity-full.css and expect it to work if you're upgrading selectivity,
@@ -7241,12 +7300,12 @@ div#feedbacklite.fbl_r {
     padding-top: 15px; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-img {
       float: left;
+      margin-right: 2em;
       width: 29%; }
       .ContentRecomm-RelatedContent-vertical .section-article .section-article-img img {
         width: 100%; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-text {
       float: left;
-      margin-left: 2em;
       width: 60%; }
     .ContentRecomm-RelatedContent-vertical .section-article:last-child {
       border-bottom: 0 !important; }

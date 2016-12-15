@@ -44,7 +44,7 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 $('.alert-success p').html(data.reason);
                 $('.alert-success').show();
                 if ($('.alert-success').length > 0) {
-                    $(window).scrollTop($('.alert-success').offset({ top: -20, left: 0 }));
+                    $(window).scrollTop($('.informa-ribbon').offset().top + $('.informa-ribbon').height());
                 }
                 if (setFlag == 'register' && redirectUrl == 'href') {
                     window.location.href = $('.registrationBtn').attr('href');

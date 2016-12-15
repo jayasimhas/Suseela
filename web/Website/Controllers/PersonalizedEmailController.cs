@@ -41,7 +41,7 @@ namespace Informa.Web.Controllers
                 {
                     To = userId,
                     Subject = "Personalized Test",
-                    From = "pmbi-notifications@informa.com",
+                    From = "test@sapient.com",
                     Body = emailBody,
                     IsBodyHtml = true
                 };
