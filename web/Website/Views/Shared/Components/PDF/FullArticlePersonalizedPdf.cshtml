@@ -17,7 +17,7 @@
                     </td>
                 }
 
-                @foreach (var tag in Model.Texonomies)
+                @foreach (var tag in Model.Texonomies.Take(3))
                 {
                     @*if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
                     {
@@ -29,7 +29,7 @@
                     {*@
 
                         <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="">@tag</a>
+                            <a style="color:#be1e2d; text-decoration:none;" href="/@tag">@tag</a>
                         </td>
                 }
             </tr>
