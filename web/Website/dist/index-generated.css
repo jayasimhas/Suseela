@@ -6092,6 +6092,27 @@ section: UI Elements
   left: 5px;
   top: -2px; }
 
+.companyPeerGrp .button-msg-webUser {
+  float: none; }
+
+.companyPeerGrp .goBtn {
+  float: right;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.companyPeerGrp .button-msg-webUser .msg_link {
+  float: none; }
+  .companyPeerGrp .button-msg-webUser .msg_link a, .companyPeerGrp .button-msg-webUser .msg_link .pop-out__reset-password, .companyPeerGrp .button-msg-webUser .msg_link .sortable-table__list-toggler, .companyPeerGrp .button-msg-webUser .msg_link .mobile-table-exit {
+    display: block;
+    float: none;
+    margin-bottom: 10px; }
+    .companyPeerGrp .button-msg-webUser .msg_link a:last-child, .companyPeerGrp .button-msg-webUser .msg_link .pop-out__reset-password:last-child, .companyPeerGrp .button-msg-webUser .msg_link .sortable-table__list-toggler:last-child, .companyPeerGrp .button-msg-webUser .msg_link .mobile-table-exit:last-child {
+      margin-bottom: 0px; }
+  .companyPeerGrp .button-msg-webUser .msg_link:after {
+    clear: both;
+    content: '';
+    display: table; }
+
 .compareChart .eachChartData {
   margin-bottom: 10px; }
   .compareChart .eachChartData .dataTitle {
