@@ -4898,7 +4898,14 @@ header .header-account-access {
     display: block; }
     .personalisationhome .article-metadata ul li {
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-right: 0.375rem;
+      padding-right: 6px;
+      padding-right: 0.375rem; }
+      .personalisationhome .article-metadata ul li:nth-child(2) {
+        max-width: 85px;
+        text-overflow: ellipsis; }
   @media (max-width: 1080px) {
     .personalisationhome .article-metadata li {
       margin-right: 4px;
