@@ -30,7 +30,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
-        
+
         public PdfDownloadController(IUserPreferenceContext userPreferences, ISiteRootContext siterootContext, IGlobalSitecoreService globalService, IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory)
         {
             UserPreferences = userPreferences;
@@ -116,7 +116,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 var articles = GetArticles(artSearch, PubStartDate, PubEndDate);
 
 
-                
+
 
                 foreach (var selectArticle in articles.Articles.Where(a => a != null))
                 {
@@ -140,16 +140,16 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 artSearch.TaxonomyIds.Clear();
             }
-            
+
             foreach (var slctArticle in pdfArticle)
             {
                 var perHtml = MvcHelpers.GetRazorViewAsString(slctArticle, "~/Views/Shared/Components/PDF/FullArticlePersonalizedPDF.cshtml");
-                if(perHtml != null )
-                strngHtml += perHtml;
+                if (perHtml != null)
+                    strngHtml += perHtml;
             }
             string fullPersonalizedHtml = GenerateFullPDFBody(pdfPageUrl, strngHtml);
 
-            GeneratePersonalizePdfBody( pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc,  DataToolLinkText, fullPersonalizedHtml);
+            GeneratePersonalizePdfBody(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, fullPersonalizedHtml);
 
             return new EmptyResult();
         }
@@ -212,9 +212,9 @@ namespace Informa.Web.Areas.Account.Controllers
                 client.UseDefaultCredentials = true;
                 client.Headers.Add("User-Agent: Other");
                 byte[] data = client.DownloadData(pdfPageUrl);
-                fullPageHtml = Encoding.UTF8.GetString(data);               
+                fullPageHtml = Encoding.UTF8.GetString(data);
                 doc.LoadHtml(fullPageHtml);
-                html = doc.GetElementbyId("mainContentPdf").InnerHtml;              
+                html = doc.GetElementbyId("mainContentPdf").InnerHtml;
             }
             else
             {
@@ -223,38 +223,43 @@ namespace Informa.Web.Areas.Account.Controllers
                     html = personalizedPdf;
                 }
             }
-                HtmlNode executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//div[@class='article-executive-summary-body']");
-                if (executiveSummaryNode != null)
-                {
-                    HtmlNode newNode = HtmlNode.CreateNode("span");
-                    newNode.InnerHtml = executiveSummaryNode.InnerText;
-                    executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
-                }
+            HtmlNode executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//div[@class='article-executive-summary-body']");
+            if (executiveSummaryNode != null)
+            {
+                HtmlNode newNode = HtmlNode.CreateNode("span");
+                newNode.InnerHtml = executiveSummaryNode.InnerText;
+                executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
+            }
 
-                var replacements = new Dictionary<string, string>
+            var tableNodes = doc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
+            if (tableNodes != null && tableNodes.Any())
+            {
+                foreach (var tableNode in tableNodes)
                 {
-                    ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
-                    ["<p xmlns=\"\">"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
-                    ["</p>"] = "</p><br /><br />",
-                    ["#UserName#"] = userEmail,
-                    ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
-                    ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
-                };
-                html = html.ReplacePatternCaseInsensitive(replacements);
-                string decodedHtml = HtmlEntity.DeEntitize(html);
+                    tableNode.SetAttributeValue("width", "688px");
+                    tableNode.SetAttributeValue("style", "color:#58595b");
+                    var tdNodes = tableNode.SelectNodes(".//tr/td/p")?.ToList();
+                    foreach (var tdNode in tdNodes)
+                    {
+                        tdNode.ParentNode.ReplaceChild(HtmlNode.CreateNode(tdNode.InnerText), tdNode);
+                    }
+                }
+            }
+
+            var replacements = new Dictionary<string, string>
+            {
+                ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                ["<p xmlns=\"\">"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                ["</p>"] = "</p><br /><br />",
+                ["#UserName#"] = userEmail,
+                ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
+                ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
+            };
+            html = html.ReplacePatternCaseInsensitive(replacements);
+            string decodedHtml = HtmlEntity.DeEntitize(html);
 
             HtmlDocument ReqdDoc = new HtmlDocument();
             ReqdDoc.LoadHtml(decodedHtml);
-
-                var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
-                if (tableNodes != null && tableNodes.Any())
-                {
-                    foreach (var tableNode in tableNodes)
-                    {
-                        tableNode.SetAttributeValue("width", "688px");
-                    tableNode.SetAttributeValue("style", "color:#58595b");
-                }
-                }
 
             HtmlNode CommonFooterNode = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-footer']");
             if (CommonFooterNode != null)
@@ -264,41 +269,41 @@ namespace Informa.Web.Areas.Account.Controllers
             }
             var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
-                var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
-                if (images != null && images.Any())
+            var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
+            if (images != null && images.Any())
+            {
+                foreach (HtmlNode img in images)
                 {
-                    foreach (HtmlNode img in images)
+                    if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
                     {
-                        if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
-                        {
-                            img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
-                        }
+                        img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
                     }
                 }
-                var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
-                if (links != null && links.Any())
+            }
+            var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
+            if (links != null && links.Any())
+            {
+                foreach (var link in links)
                 {
-                    foreach (var link in links)
+
+                    if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www") && !link.Attributes["href"].Value.StartsWith("mailto"))
                     {
+                        link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
+                        link.SetAttributeValue("target", "_blank");
 
-                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www") && !link.Attributes["href"].Value.StartsWith("mailto"))
-                        {
-                            link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
-                            link.SetAttributeValue("target", "_blank");
+                    }
 
-                        }
+                    if (link.Name != "img")
+                    {
+                        link.InnerHtml = link.InnerText;
+                    }
 
-                        if (link.Name != "img")
-                        {
-                            link.InnerHtml = link.InnerText;
-                        }
-
-                        if (!link.Attributes.Contains(@"style"))
-                        {
-                            link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
-                        }
+                    if (!link.Attributes.Contains(@"style"))
+                    {
+                        link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
                     }
                 }
+            }
 
             var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
             if (articleNodes != null && articleNodes.Any())
@@ -340,13 +345,13 @@ namespace Informa.Web.Areas.Account.Controllers
             ReqdDoc.OptionCheckSyntax = true;
             ReqdDoc.OptionFixNestedTags = true;
 
-                using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
-                {
-                    //Parse the HTML
-                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
-                }
+            using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
+            {
+                //Parse the HTML
+                XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
             }
-      
+        }
+
         /// <summary>
         /// Generate Personalize Pdf Body
         /// </summary>

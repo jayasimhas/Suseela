@@ -1336,7 +1336,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company PeerGroupList
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_PeerGroupList { get; set; }
+        IEnumerable<IGlassBase> Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Peer Company Detail Page Link
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerComanyDetailPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PeerComanyDetailPage { get; set; }
         /// <summary>
         /// Profile Title
         /// </summary>
@@ -1408,7 +1413,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company PeerGroupList
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_PeerGroupList { get; set; }
+        IEnumerable<IGlassBase> Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Peer Company Detail Page Link
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerComanyDetailPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PeerComanyDetailPage { get; set; }
         /// <summary>
         /// Profile Title
         /// </summary>
@@ -1477,8 +1487,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public static readonly ID Company_PeerGroupListFieldId = new ID("A4637287-30BE-45F5-9F0B-216ED409C93A");
         public const string Company_PeerGroupListFieldName = "Company PeerGroupList";
 
-
-
+        public static readonly ID PeerComanyDetailPageFieldId = new ID("827E40C4-3410-4D5D-AE0D-B6AC2E56DC25");
+        public const string PeerComanyDetailPageFieldName = "PeerComanyDetailPage";
+        
         public static readonly ID Profile_TitleFieldId = new ID("7B7BFDC0-8BEA-4DE6-B200-19AFDFB48EE1");
         public const string Profile_TitleFieldName = "Profile Title";
 
