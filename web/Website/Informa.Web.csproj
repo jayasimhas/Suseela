@@ -1234,8 +1234,10 @@
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
-    <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />   
-    <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />   
+    <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
