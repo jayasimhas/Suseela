@@ -77,7 +77,7 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
                         {
                             HtmlDocument doc = new HtmlDocument();
                             doc.LoadHtml(job.Body);
-                            string JobShortdesc = doc.DocumentNode.InnerText;
+                            string JobShortdesc = doc.DocumentNode.InnerText.Trim();
                             jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(JobShortdesc.Take(150).ToArray()), JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
                         }
                     }

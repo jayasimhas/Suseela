@@ -171,23 +171,26 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 html = doc.GetElementbyId("mainContentPdf").InnerHtml;
 
-            
+                var executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//span[@class='article-executive-summary-body']");
+                if (executiveSummaryNode != null)
+                {
+                    executiveSummaryNode.InnerHtml = executiveSummaryNode.FirstChild.InnerHtml;
+                }
 
-            var replacements = new Dictionary<string, string>
-            {
-                ["<p>"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
-                ["<p xmlns=\"\">"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">",
-                ["</p>"] = "</p><br /><br />",
-                ["#UserName#"] = userEmail,
-                ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
-                ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
-            };
-            html = html.ReplacePatternCaseInsensitive(replacements);
-            string decodedHtml = HtmlEntity.DeEntitize(html);
+                var replacements = new Dictionary<string, string>
+                {
+                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\"",
+                    ["</p>"] = "</p><br /><br />",
+                    ["#UserName#"] = userEmail,
+                    ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
+                    ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
+                };
+                html = html.ReplacePatternCaseInsensitive(replacements);
+                string decodedHtml = HtmlEntity.DeEntitize(html);
 
                 HtmlDocument ReqdDoc = new HtmlDocument();
                 ReqdDoc.LoadHtml(decodedHtml);
-
+               
                 var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
                 if (tableNodes != null && tableNodes.Any())
                 {
@@ -206,40 +209,40 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
-            var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
-            if (images != null && images.Any())
-            {
-                foreach (HtmlNode img in images)
+                var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
+                if (images != null && images.Any())
                 {
-                    if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
+                    foreach (HtmlNode img in images)
                     {
-                        img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
+                        if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
+                        {
+                            img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
+                        }
                     }
                 }
-            }
-            var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
-            if (links != null && links.Any())
-            {
-                foreach (var link in links)
+                var links = ReqdDoc.DocumentNode.SelectNodes("//a/@href")?.ToList();
+                if (links != null && links.Any())
                 {
-                    if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www") && !link.Attributes["href"].Value.StartsWith("mailto"))
+                    foreach (var link in links)
                     {
-                        link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
-                        link.SetAttributeValue("target", "_blank");
+                        if (!link.Attributes["href"].Value.StartsWith("http") && !link.Attributes["href"].Value.StartsWith("https") && !link.Attributes["href"].Value.StartsWith("www") && !link.Attributes["href"].Value.StartsWith("mailto"))
+                        {
+                            link.SetAttributeValue("href", domain + link.Attributes["href"].Value);
+                            link.SetAttributeValue("target", "_blank");
 
-                    }
+                        }
 
-                    if (link.Name != "img")
-                    {
-                        link.InnerHtml = link.InnerText;
-                    }
+                        if (link.Name != "img" && !link.ChildNodes.Select(n => n.Name).Contains("img"))
+                        {
+                            link.InnerHtml = link.InnerText;
+                        }
 
-                    if (!link.Attributes.Contains(@"style"))
-                    {
-                        link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
+                        if (!link.Attributes.Contains(@"style"))
+                        {
+                            link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
+                        }
                     }
                 }
-            }
 
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
