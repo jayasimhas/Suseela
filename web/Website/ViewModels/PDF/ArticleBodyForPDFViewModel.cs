@@ -16,14 +16,15 @@ using System.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Services.Global;
 using Sitecore.Mvc.Presentation;
+using System.Text.RegularExpressions;
 
 namespace Informa.Web.ViewModels.PDF
 {
-    public class ArticleBodyForPDFViewModel: ArticleEntitledViewModel
+    public class ArticleBodyForPDFViewModel : ArticleEntitledViewModel
     {
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly ITextTranslator TextTranslator;
-        protected readonly IArticleService ArticleService;       
+        protected readonly IArticleService ArticleService;
         protected readonly ISiteRootContext SiteRootContext;
         private readonly Lazy<string> _lazyBody;
         public IArticleTagsViewModel ArticleTagsViewModel;
@@ -56,7 +57,7 @@ namespace Informa.Web.ViewModels.PDF
             RelatedArticles = GetRelatedArticles(model);
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
         }
-        
+
         /// <summary>
         /// Article Title
         /// </summary>
@@ -70,7 +71,9 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Article Summary
         /// </summary>
-        public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+        public string Summary=>
+        _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+           
 
         private IEnumerable<IPersonModel> _authors;
         /// <summary>
@@ -98,7 +101,7 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Article Body Content
         /// </summary>
-        public string Body => _lazyBody.Value;
+        public string Body => _lazyBody.Value.Contains("<table") ? _lazyBody.Value.Replace("<table", "<table id=\"tableFromArticle\"") : _lazyBody.Value;
         public string ContentType => GlassModel.Content_Type?.Item_Name;
         public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
@@ -132,6 +135,6 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Article Landing Page URL
         /// </summary>
-        public string ArticleLandingPageUrl=> Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
+        public string ArticleLandingPageUrl => Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
     }
 }
