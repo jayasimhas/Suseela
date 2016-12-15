@@ -69,12 +69,12 @@
                                 if (perPdf.TypeOfPdf == PdfType.Personalized)
                                 {
                             <tr>
-                                <td align = "left" id = "pdfLibrary" > @perPdf.IssueDate.ToString("dd/MM/yyyy") </td>
-                                <td align="left">@Html.ActionLink("001", "", "",null)&nbsp;</td>
+                                <td align = "left" id = "pdfLibrary" > @perPdf.IssueDate.ToString("dd MMM yyyy") </td>
+                                <td align="left">@Html.ActionLink("P01", "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })&nbsp;</td>
                                     <td align="left">
-                                        @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, null)
+                                        @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })
                                         &nbsp;
-                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })">
+                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank">
                                             <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
                                         </a>
                                     </td>

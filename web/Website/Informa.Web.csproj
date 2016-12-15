@@ -1248,6 +1248,7 @@
     <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
+    <Compile Include="ViewModels\PDF\PersonalizedContentPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PersonalizedPdfViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
@@ -2195,6 +2196,7 @@
     <Content Include="Views\FinanceCompanies\CompanyProfile.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyAddress.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyPeerGroup.cshtml" />
+    <Content Include="Views\Shared\Components\PDF\PersonalizedContentPDF.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

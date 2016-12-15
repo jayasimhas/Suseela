@@ -98,7 +98,7 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Article Body Content
         /// </summary>
-        public string Body => _lazyBody.Value.Contains("<table")? _lazyBody.Value.Replace("<table", "<table id=\"tableFromArticle\""): _lazyBody.Value;
+        public string Body => _lazyBody.Value;
         public string ContentType => GlassModel.Content_Type?.Item_Name;
         public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);

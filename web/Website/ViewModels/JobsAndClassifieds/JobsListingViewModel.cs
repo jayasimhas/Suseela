@@ -1,18 +1,14 @@
-﻿using HtmlAgilityPack;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Informa.Library.JobsAndClassifieds;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Jobs;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text.RegularExpressions;
 using System.Web;
 
 namespace Informa.Web.ViewModels.JobsAndClassifieds
@@ -22,8 +18,8 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ITextTranslator TextTranslator;
-        public JobsListingViewModel(IGlobalSitecoreService globalService,
-            ISiteRootContext siterootContext,
+        public JobsListingViewModel(IGlobalSitecoreService globalService, 
+            ISiteRootContext siterootContext, 
             ITextTranslator textTranslator)
         {
             GlobalService = globalService;
@@ -57,7 +53,7 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         /// <summary>
         /// No of Jobs to be displayed Per Page
         /// </summary>
-        public string NoOfJobsPerPage => !string.IsNullOrEmpty(TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage")) ? TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage") : "20";
+        public string NoOfJobsPerPage => !string.IsNullOrEmpty(TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage"))? TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage"):"20";
         /// <summary>
         /// Method to get All published Job Tiles
         /// </summary>
@@ -65,31 +61,21 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         public List<IJobTile> GetJobTiles()
         {
             List<IJobTile> jobTiles = new List<IJobTile>();
-            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
-
-            if (currentItem != null)
+            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+                _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+            var jobsRootItem = homeItem._ChildrenWithInferType.OfType<IJobs_Root>().FirstOrDefault();
+            if (jobsRootItem != null)
             {
-                var jobsRootItem = currentItem._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
-
-                if (jobsRootItem != null)
+                var jobsItem = jobsRootItem._ChildrenWithInferType.OfType<IJob_Detail_Page>();
+                if (jobsItem != null && jobsItem.Count() > 0)
                 {
-                    var jobDetailPages = jobsRootItem._ChildrenWithInferType.OfType<IJob_Detail_Page>();
-                    if (jobDetailPages != null && jobDetailPages.Any())
+                    foreach (var job in jobsItem)
                     {
-                        foreach (var job in jobDetailPages)
-                        {
-                            HtmlDocument ReqdDoc = new HtmlDocument();
-                            if (!string.IsNullOrEmpty(job.Body))
-                            {
-                                ReqdDoc.LoadHtml(job.Body);
-                            }
-                            var JobDesc = ReqdDoc.DocumentNode.InnerText.Trim();                           
-                            jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(JobDesc.Take(150).ToArray()), JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
-                        }
+                        jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(job.Body.Take(150).ToArray()), JobPublishedDate=job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
                     }
                 }
             }
-            return jobTiles.OrderByDescending(n => n.JobPublishedDate).ToList();
+            return jobTiles.OrderByDescending(n=>n.JobPublishedDate).ToList();
         }
     }
 }

@@ -29,6 +29,7 @@ import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
+import './components/id-comparechart';
 
 
 // OTHER CODE
