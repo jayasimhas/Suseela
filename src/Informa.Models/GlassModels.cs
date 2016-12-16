@@ -1301,7 +1301,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Graphs
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.GraphsFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IEnumerable<IGlassBase> Graphs { get; set; }
+        IEnumerable<ICompany_Graph> Graphs { get; set; }
         /// <summary>
         /// Company_Address
         /// </summary>
@@ -1336,7 +1336,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company PeerGroupList
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_PeerGroupList { get; set; }
+        IEnumerable<IGlassBase> Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Peer Company Detail Page Link
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerComanyDetailPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PeerComanyDetailPage { get; set; }
         /// <summary>
         /// Profile Title
         /// </summary>
@@ -1373,7 +1378,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Graphs
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.GraphsFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IEnumerable<IGlassBase> Graphs { get; set; }
+        IEnumerable<ICompany_Graph> Graphs { get; set; }
         /// <summary>
         /// Company_Address
         /// </summary>
@@ -1408,7 +1413,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company PeerGroupList
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_PeerGroupList { get; set; }
+        IEnumerable<IGlassBase> Company_PeerGroupList { get; set; }
+        /// <summary>
+        /// Peer Company Detail Page Link
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.PeerComanyDetailPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link PeerComanyDetailPage { get; set; }
         /// <summary>
         /// Profile Title
         /// </summary>
@@ -1426,7 +1436,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
         public const string TemplateIdString = "381E673C-94B4-4ACC-AEA4-00EC79B08F40";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "CompanyDetailPage";
+        public const string TemplateName = "Company Detail Page";
 
 
         public static readonly ID CompanynameFieldId = new ID("C525DE9F-1B20-4B6A-BA70-32412F9CAD73");
@@ -1435,7 +1445,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
 
         public static readonly ID CompanyIDFieldId = new ID("9B8650AC-7A49-4317-94F6-1CFF4FDE7C34");
-        public const string CompanyIDFieldName = "	Company ID";
+        public const string CompanyIDFieldName = "Company ID";
 
 
 
@@ -1477,8 +1487,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public static readonly ID Company_PeerGroupListFieldId = new ID("A4637287-30BE-45F5-9F0B-216ED409C93A");
         public const string Company_PeerGroupListFieldName = "Company PeerGroupList";
 
-
-
+        public static readonly ID PeerComanyDetailPageFieldId = new ID("827E40C4-3410-4D5D-AE0D-B6AC2E56DC25");
+        public const string PeerComanyDetailPageFieldName = "PeerComanyDetailPage";
+        
         public static readonly ID Profile_TitleFieldId = new ID("7B7BFDC0-8BEA-4DE6-B200-19AFDFB48EE1");
         public const string Profile_TitleFieldName = "Profile Title";
 
@@ -1553,6 +1564,84 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
     }
 
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
+{
+    [SitecoreType(TemplateId = ICompany_Graph_Constants.TemplateIdString)]
+    public partial interface ICompany_Graph 
+    {
+        /// <summary>
+        /// Graph_ID Field
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_ID_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphID { get; set; }
+        /// <summary>
+        ///  Graph_Title
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_Title_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphTitle { get; set; }
+        /// <summary>
+        /// Graph_Type
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_Type_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphType { get; set; }
+        /// <summary>
+        /// Graph_Color
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_Color_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        Guid GraphColor { get; set; }
+        /// <summary>
+        /// Feed_Url
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Feed_Url_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphFeedUrl { get; set; }
+    }
+    [SitecoreType]
+    public partial interface ICompany_Graph__Raw
+    {
+        /// <summary>
+        /// Companyname Field
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_ID_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphID { get; set; }
+        /// <summary>
+        ///  CompanyID
+        /// </summary>
+        [SitecoreField(ICompany_Graph_Constants.Graph_Title_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphTitle { get; set; }
+
+        [SitecoreField(ICompany_Graph_Constants.Graph_Title_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphType { get; set; }
+
+        [SitecoreField(ICompany_Graph_Constants.Graph_Color_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        Guid GraphColor { get; set; }
+        [SitecoreField(ICompany_Graph_Constants.Feed_Url_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphFeedUrl { get; set; }
+    }
+    public static partial class ICompany_Graph_Constants
+    {
+
+        public const string TemplateIdString = "9E3D81F3-8997-4A36-8E0E-B2D85303A094";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company Graph";
+
+
+        public static readonly ID Graph_ID_FieldId = new ID("ED6449FB-0D1F-41F8-B24A-5F5BB15CB4DB");
+        public const string Graph_ID_FieldName = "Graph ID";
+
+        public static readonly ID Graph_Title_FieldId = new ID("7B09AAFB-1E7B-4374-B559-F07BB83CA890");
+        public const string Graph_Title_FieldName = "Graph Title";
+
+        public static readonly ID Graph_Type_FieldId = new ID("7B3E62E8-0A7F-41D3-84C9-4A88E13E9AEE");
+        public const string Graph_Type_FieldName = "Graph Type";
+
+        public static readonly ID Graph_Color_FieldId = new ID("4866C3D1-F2E0-4AA9-B07E-93A2D9992E26");
+        public const string Graph_Color_FieldName = "Graph Color";
+
+        public static readonly ID Feed_Url_FieldId = new ID("6366B37D-50FA-4605-8301-0E4692B7BFBF");
+        public const string Feed_Url_FieldName = "Feed Url";
+
+    }
 }
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.Publication_Specific

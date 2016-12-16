@@ -17,7 +17,10 @@
                         <div class="job_list_individual eachCategory">
                             <div class="job_logo">
                                 <a href="@job.JobDetailUrl">
-                                    <img src="@job.JobLogo.Src" alt="logo" />
+                                    @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
+                                    {
+                                        <img src="@job.JobLogo.Src" alt="logo" />
+                                    }
                                 </a>
                             </div>
                             <div class="job_description">
@@ -38,7 +41,7 @@
             <input type="hidden" id="jobTilesCount" value="@Model.JobTiles.Count()" />
             <input type="hidden" id="noofJobsPerPage" value="@Model.NoOfJobsPerPage" />
             <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
-            @{  
+            @{
                 int totalJobsCount;
                 bool IsJobsCountValidNo = int.TryParse(Model.NoOfJobsPerPage, out totalJobsCount);
             }
@@ -60,4 +63,3 @@
         </div>
     </div>
 </div>
-

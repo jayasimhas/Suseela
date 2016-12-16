@@ -11,6 +11,8 @@ using Sitecore.Configuration;
 using System.Collections.Generic;
 using Informa.Library.Utilities.Extensions;
 using System;
+using System.Web.Configuration;
+using log4net;
 
 namespace Informa.Web.Controllers
 {
@@ -18,22 +20,30 @@ namespace Informa.Web.Controllers
     public class PersonalizedEmailController : ApiController
     {
         private readonly EmailUtil _emailUtil;
-        
-        public PersonalizedEmailController(EmailUtil emailUtil)
+        private readonly ILog _logger;
+
+        public PersonalizedEmailController(EmailUtil emailUtil, ILog logger)
         {
            
             _emailUtil = emailUtil;
+            _logger = logger;
         }
 
         [HttpGet]
         public HttpResponseMessage Get(string userId)
         {
+            
+           
 
             var isMailSent = false;
 
             var response = new HttpResponseMessage();
             response.StatusCode = string.IsNullOrWhiteSpace(userId) ? HttpStatusCode.BadRequest : HttpStatusCode.OK;
-            if (!string.IsNullOrWhiteSpace(userId))
+
+
+            bool UnitTest = WebConfigurationManager.AppSettings["UnitTest"]=="1"?true:false;
+
+            if (!string.IsNullOrWhiteSpace(userId) && UnitTest)
             {
              
                 var emailBody = GetEmailBody(userId);
@@ -41,7 +51,7 @@ namespace Informa.Web.Controllers
                 {
                     To = userId,
                     Subject = "Personalized Test",
-                    From = "test@sapient.com",
+                    From = "ebodkhe@sapient.com",
                     Body = emailBody,
                     IsBodyHtml = true
                 };
@@ -52,16 +62,12 @@ namespace Informa.Web.Controllers
                  isMailSent = isEmailSent;
                 if (!isEmailSent)
                 {
-                   // _logger.Warn($"Email sender failed");
-                   // result = false;
+                    _logger.Warn($"Email sender failed");
                 }
-
-
             }
 
             return response;
         }
-
 
 
 
@@ -93,7 +99,7 @@ namespace Informa.Web.Controllers
             }
             catch (Exception ex)
             {
-                
+                _logger.Warn($"Not able to replace Content inside body");
             }
             return emailHtml;
         }
