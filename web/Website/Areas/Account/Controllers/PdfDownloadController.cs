@@ -20,7 +20,10 @@ using Informa.Web.ViewModels.Articles;
 using Informa.Web.Helpers;
 using iTextSharp.tool.xml;
 using Informa.Library.PDF;
-#endregion 
+using Informa.Web.ViewModels;
+using Informa.Library.Search.Utilities;
+using Informa.Models.FactoryInterface;
+#endregion
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -89,7 +92,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     artSearch.TaxonomyIds.Add(texn);
                 }
-
                 var articles = GetArticles(artSearch, PubStartDate, PubEndDate);
                 foreach (var selectArticle in articles.Articles.Where(a => a != null))
                 {
@@ -98,7 +100,11 @@ namespace Informa.Web.Areas.Account.Controllers
                         Body = selectArticle.Body,
                         PublishDate = selectArticle.Actual_Publish_Date,
                         Summary = selectArticle.Summary,
-                        Texonomies = selectArticle.Taxonomies.Select(a => a.Item_Name).ToList(),
+                        Texonomies = selectArticle.Taxonomies.Take(3).Select(x => new LinkableModel
+                        {
+                            LinkableText = x.Item_Name,
+                            LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
+                        }),
                         Title = selectArticle.Title,
                         ImageUrl = selectArticle.Featured_Image_16_9?.Src ?? string.Empty,
                         ImageAltText = selectArticle.Featured_Image_16_9?.Alt ?? string.Empty,
@@ -107,7 +113,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         abslouteUrl = selectArticle._AbsoluteUrl,
                         ContentType = selectArticle.Content_Type.Item_Name,
                         Sub_Title = selectArticle.Sub_Title,
-                        Author = selectArticle.Authors
+                        Author = selectArticle.Authors.Select(x => new PersonModel(x))
                     });
                 }
                 artSearch.TaxonomyIds.Clear();
