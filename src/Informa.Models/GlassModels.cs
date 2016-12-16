@@ -28035,6 +28035,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_MultiColumn_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowPinkBackground { get; set; }
 
+        /// <summary>
+        /// Hide Summary Text field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 6c1eca87-8aaf-4ed1-81d1-40d8becffb68</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Hide_Summary_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool HideSummaryText { get; set; }
+
     }
 
     public static partial class IFeatured_Article_MultiColumn_Constants
@@ -28077,6 +28086,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Show_Pink_BackgroundFieldId = new ID("b5b10e37-01f8-47ed-9626-9059641a2042");
         public const string Show_Pink_BackgroundFieldName = "Show Pink Background";
+
+        public static readonly ID Hide_Summary_TextFieldId = new ID("6c1eca87-8aaf-4ed1-81d1-40d8becffb68");
+        public const string Hide_Summary_TextFieldName = "Hide Summary Text";
 
     }
 
@@ -28233,6 +28245,133 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID ValueFieldId = new ID("f224c150-3977-4eea-9691-4677c2e55862");
         public const string ValueFieldName = "Value";
 
+
+    }
+
+    namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
+    {
+        /// <summary>
+        /// ICompany_Table_Component Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/Components/Company/Table Component</para>	
+        /// <para>ID: 3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Table_ComponentConstants.TemplateIdString)]
+        public partial interface ICompany_Table_Component : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+        {
+            /// <summary>
+            /// The Title field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 41bd0144-5f2a-4397-b074-07f17cd3b391</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string TableTitle { get; set; }
+
+            /// <summary>
+            /// The No Of Rows field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 32f648cb-2a89-4441-9821-9f2968b9ce92</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_RowsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfRows { get; set; }
+
+            /// <summary>
+            /// The No Of Columns field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 932a9f91-8cb2-43c9-882c-7433ac147219</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_ColumnsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfColumns { get; set; }
+
+            /// <summary>
+            /// The External Feed Url field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 1649579a-1b99-4c6f-b6ef-046cc912492b</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string ExternalFeedUrl { get; set; }
+        }
+
+
+        ///<summary>
+        ///ICompany_Table_Component Interface
+        ///<para></para>
+        ///<para>Path: /sitecore/templates/User Defined/Components/Company/Table Component</para>
+        ///<para>ID: 3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3</para>
+        ///</summary>
+        [SitecoreType]
+        public partial interface ICompany_Table_Component__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+        {
+            /// <summary>
+            /// The Title field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 41bd0144-5f2a-4397-b074-07f17cd3b391</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string TableTitle { get; set; }
+
+            /// <summary>
+            /// The No Of Rows field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 32f648cb-2a89-4441-9821-9f2968b9ce92</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_RowsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfRows { get; set; }
+
+            /// <summary>
+            /// The No Of Columns field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 932a9f91-8cb2-43c9-882c-7433ac147219</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_ColumnsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfColumns { get; set; }
+
+            /// <summary>
+            /// The External Feed Url field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 1649579a-1b99-4c6f-b6ef-046cc912492b</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string ExternalFeedUrl { get; set; }
+        }
+
+        public static partial class ICompany_Table_ComponentConstants
+        {
+
+            public const string TemplateIdString = "3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Table Component";
+
+
+            public static readonly ID Table_TitleFieldId = new ID("41bd0144-5f2a-4397-b074-07f17cd3b391");
+            public const string Table_TitleFieldName = "Table Title";
+
+            public static readonly ID No_Of_RowsFieldId = new ID("32f648cb-2a89-4441-9821-9f2968b9ce92");
+            public const string No_Of_RowsFieldName = "No Of Rows";
+
+            public static readonly ID No_Of_ColumnsFieldId = new ID("932a9f91-8cb2-43c9-882c-7433ac147219");
+            public const string No_Of_ColumnsFieldName = "No Of Columns";
+
+            public static readonly ID External_Feed_UrlFieldId = new ID("1649579a-1b99-4c6f-b6ef-046cc912492b");
+            public const string External_Feed_UrlFieldName = "External Feed Url";
+
+        }
 
     }
 
