@@ -50,7 +50,7 @@
                     @foreach (var navigationChild in Nav.Children)
                     {
                         <dd class="main-menu__footer-link">
-                            <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"Side heading", "navigation_category": "Side heading","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
+                            <a href="@navigationChild.Link.Url" class="click-utag" target="@navigationChild.Link.Target" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"Side heading", "navigation_category": "Side heading","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
                         </dd>
                     }
                     <dd class="bottomSpace"></dd>
