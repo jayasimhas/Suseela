@@ -165,16 +165,11 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 html = doc.GetElementbyId("mainContentPdf").InnerHtml;
 
-                var executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//span[@class='article-executive-summary-body']");
-                if (executiveSummaryNode != null)
-                {
-                    executiveSummaryNode.InnerHtml = executiveSummaryNode.FirstChild.InnerHtml;
-                }
-
                 var replacements = new Dictionary<string, string>
                 {
                     ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\"",
-                    ["</p>"] = "</p><br /><br />",
+                    ["<li>"] = "<li style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                    ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail,
                     ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
@@ -184,7 +179,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 HtmlDocument ReqdDoc = new HtmlDocument();
                 ReqdDoc.LoadHtml(decodedHtml);
-               
+
                 var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
                 if (tableNodes != null && tableNodes.Any())
                 {
@@ -270,6 +265,20 @@ namespace Informa.Web.Areas.Account.Controllers
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
                             }
+                        }
+                    }
+                }
+
+                var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//span[@class='article-executive-summary-body']")?.ToList();
+                if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
+                {
+                    foreach (var executiveSummaryNode in executiveSummaryNodes)
+                    {
+                        if (executiveSummaryNode.FirstChild.Name != "p")
+                        {
+                            var newNode = HtmlNode.CreateNode("<span class=\"article-executive-summary-body\" style=\"font-size:18px; color:#58595b;\">");
+                            newNode.InnerHtml = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">" + executiveSummaryNode.InnerHtml + "</p>";
+                            executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
                     }
                 }
