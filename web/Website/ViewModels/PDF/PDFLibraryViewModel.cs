@@ -172,6 +172,7 @@ namespace Informa.Web.ViewModels.PDF
                             {
                                 TypeOfPdf = PdfType.Personalized,
                                 IssueDate = personalizePdfs.Issue_Date,
+                                IssueNumber = personalizePdfs.Issue_Number,
                                 PubStartDate = personalizePdfs.Publish_StartDate,
                                 PubEndDate = personalizePdfs.Publish_EndDate,
                                 ArticleSize = personalizePdfs.Article_Size,

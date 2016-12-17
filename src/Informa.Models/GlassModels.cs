@@ -9608,6 +9608,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// </summary>
         [SitecoreField(IPersonalized_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
     }
 
     [SitecoreType]
@@ -9652,6 +9662,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// </summary>
         [SitecoreField(IPersonalized_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
     }
     public static partial class IPersonalized_PDF_PageConstants
     {
@@ -9670,6 +9690,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
 
         public static readonly ID Article_SizeFieldId = new ID("C137899B-7C24-4246-8F54-0C0F21A3FD2D");
         public const string Article_SizeFieldName = "Article Size";
+
+        public static readonly ID Issue_NumberFieldId = new ID("E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009");
+        public const string Issue_NumberFieldName = "Issue Number";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
