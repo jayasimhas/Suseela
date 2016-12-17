@@ -86,7 +86,8 @@
                     </td>
                 </tr>
             }
-
+            @if (Model != null && Model.Articles != null && Model.Articles.Any())
+            {
             <tr>
                 <td colspan="6" style="padding-left:15px; padding-bottom:0; padding-top:0;">
                     
@@ -94,31 +95,35 @@
                     
                 </td>
             </tr>
+            }
             <tr>
                 <td colspan="6" style="padding-left:15px; padding-right:15px;">
                     <table  width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            @if (Model.Articles[0].Featured_Image_16_9 != null)
+                            @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Featured_Image_16_9 != null)
                             {
                                 <td rowspan="2"class="one-third layout-padded-right" ><a href="@Model.Articles[0]._Url"><img  src="@Model.Articles[0].Featured_Image_16_9.Src" /></a></td>
                             }
 							
-                            @if ((Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
+                            @if ((Model.GlassModel != null && Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
                             {
                                 <td > 
 									<span class="article-byline">@Html.Raw(Model.Byline)</span>
 								</td>
                             }
                         </tr>
-                        <tr>
-                            <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
-                        </tr>
+                        @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
+                        {
+                            <tr>
+                                <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
+                            </tr>
+                        }
                     </table>
                 </td>
             </tr>
             <tr class="visible-mob" style="display: none;">
 			<td align="left" style="padding-left:15px;">
-                @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
+                @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                 {
                     if (Model.Articles[0].Taxonomies.ToList().Count > 2)
                     {
@@ -391,12 +396,14 @@
 												</a>
                                             </td>
                                         </tr>
-										
-                                        <tr>
-                                            <td valign="top" height="120" style="padding-left:15px;">
-                                                <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
-                                            </td>
-                                        </tr>
+										@if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
+                                        {
+                                            <tr>
+                                                <td valign="top" height="120" style="padding-left:15px;">
+                                                    <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
+                                                </td>
+                                            </tr>
+                                        }
 
                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
                                         {

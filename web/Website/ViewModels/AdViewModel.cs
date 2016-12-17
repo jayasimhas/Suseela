@@ -32,7 +32,7 @@ namespace Informa.Web.ViewModels
                     SiteRootContext.Item?.Global_Article_Ad_Zone;
 
                 RectangularSlotId = articleModel.Article_Medium_Slot_ID.NullIfNoContent() ??
-                                    SiteRootContext.Item?.Company_Rectangular_Slot_ID;
+                                    SiteRootContext.Item?.Global_Article_Medium_Slot_ID;
                 RectangularSlotId2 = articleModel.Article_Rectangular_Slot_ID2.NullIfNoContent() ??
                                    SiteRootContext.Item?.Global_Article_Rectangular_Slot_ID2;
                 RectangularSlotId3 = articleModel.Article_Rectangular_Slot_ID3.NullIfNoContent() ??
