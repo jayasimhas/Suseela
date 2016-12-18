@@ -23,6 +23,9 @@ using Informa.Library.PDF;
 using Informa.Web.ViewModels;
 using Informa.Library.Search.Utilities;
 using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.Globalization;
+//using Elsevier.Library.Interfaces.Factory;
 #endregion
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -36,15 +39,24 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
-
-        public PdfDownloadController(IUserPreferenceContext userPreferences, ISiteRootContext siterootContext, IGlobalSitecoreService globalService, IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory)
-        {
-            UserPreferences = userPreferences;
-            SiterootContext = siterootContext;
-            GlobalService = globalService;
-            ArticleSearch = articleSearch;
-            ArticleListableFactory = articleListableFactory;
-        }
+        protected readonly IArticleSearch Searcher;
+        protected readonly ITextTranslator TextTranslator;
+        public PdfDownloadController(IUserPreferenceContext userPreferences,
+                                        ISiteRootContext siterootContext,
+                                        IGlobalSitecoreService globalService, 
+                                        IArticleSearch articleSearch, 
+                                        IArticleListItemModelFactory articleListableFactory,
+                                        IArticleSearch searcher,
+                                        ITextTranslator textTranslator)
+                                    {
+                                        UserPreferences = userPreferences;
+                                        SiterootContext = siterootContext;
+                                        GlobalService = globalService;
+                                        ArticleSearch = articleSearch;
+                                        ArticleListableFactory = articleListableFactory;
+                                        Searcher = searcher;
+                                        TextTranslator = textTranslator;
+                                    }
 
         /// <summary>
         /// Controller method for downloading pdf
@@ -113,7 +125,9 @@ namespace Informa.Web.Areas.Account.Controllers
                         abslouteUrl = selectArticle._AbsoluteUrl,
                         ContentType = selectArticle.Content_Type.Item_Name,
                         Sub_Title = selectArticle.Sub_Title,
-                        Author = selectArticle.Authors.Select(x => new PersonModel(x))
+                        Author = selectArticle.Authors.Select(x => new PersonModel(x)),
+                        RelatedArticles = GetRelatedArticles(selectArticle),
+                        ExecutiveSummary = TextTranslator.Translate("SharedContent.ExecutiveSummary")
                     });
                 }
                 artSearch.TaxonomyIds.Clear();
@@ -171,16 +185,11 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 html = doc.GetElementbyId("mainContentPdf").InnerHtml;
 
-                var executiveSummaryNode = doc.DocumentNode.SelectSingleNode("//span[@class='article-executive-summary-body']");
-                if (executiveSummaryNode != null)
-                {
-                    executiveSummaryNode.InnerHtml = executiveSummaryNode.FirstChild.InnerHtml;
-                }
-
                 var replacements = new Dictionary<string, string>
                 {
                     ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\"",
-                    ["</p>"] = "</p><br /><br />",
+                    ["<li>"] = "<li style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                    ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail,
                     ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
@@ -190,7 +199,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 HtmlDocument ReqdDoc = new HtmlDocument();
                 ReqdDoc.LoadHtml(decodedHtml);
-               
+
                 var tableNodes = ReqdDoc.DocumentNode.SelectNodes("//table[@id='tableFromArticle']")?.ToList();
                 if (tableNodes != null && tableNodes.Any())
                 {
@@ -276,6 +285,20 @@ namespace Informa.Web.Areas.Account.Controllers
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
                             }
+                        }
+                    }
+                }
+
+                var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//span[@class='article-executive-summary-body']")?.ToList();
+                if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
+                {
+                    foreach (var executiveSummaryNode in executiveSummaryNodes)
+                    {
+                        if (executiveSummaryNode.FirstChild.Name != "p")
+                        {
+                            var newNode = HtmlNode.CreateNode("<span class=\"article-executive-summary-body\" style=\"font-size:18px; color:#58595b;\">");
+                            newNode.InnerHtml = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">" + executiveSummaryNode.InnerHtml + "</p>";
+                            executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
                     }
                 }
@@ -482,8 +505,29 @@ namespace Informa.Web.Areas.Account.Controllers
             return new PersonalizedArticleSearchResults
             {
                 Articles = results.Articles,
-                //TotalResults = results.
+                TotalResults = results.TotalResults
             };
+        }
+
+        /// <summary>
+        /// Get Related Articles
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
+        private IEnumerable<IListable> GetRelatedArticles(IArticle article)
+        {
+            var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
+
+            if (relatedArticles.Count < 10)
+            {
+                var filter = Searcher.CreateFilter();
+                filter.ReferencedArticle = article._Id;
+                filter.PageSize = 10 - relatedArticles.Count;
+
+                var results = Searcher.Search(filter);
+                relatedArticles.AddRange(results.Articles);
+            }
+            return relatedArticles.Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
         }
     }
     public class GlobalElements : PdfPageEventHelper

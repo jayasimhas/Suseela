@@ -7,7 +7,14 @@
         <h1>@Model.PDFTitle</h1>
     </div>
     <div class="pdf-subTitle">
-        <p style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <p style="color:#58595b;">@Html.Raw(Model.PDFSubTitle)</p>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+        </table>
     </div>
 
     <table>
