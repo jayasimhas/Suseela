@@ -9,6 +9,7 @@ using System.Web;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.SalesforceVersion;
 
 namespace Informa.Web.ViewModels
 {
@@ -20,14 +21,16 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserProfileContext ProfileContext;
 		protected readonly ISiteRootContext SiteRootContext;
 	    protected readonly IGlobalSitecoreService GlobalService;
-		
-		public HeaderViewModel(
+        protected readonly ISalesforceVersionContext SalesforceVersionContext;
+
+        public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
 			IUserCompanyNameContext companyNameContext,
 			ITextTranslator textTranslator,
 			ISiteRootContext siteRootContext,
 		    IUserProfileContext profileContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            ISalesforceVersionContext salesforceVersionContext)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;
@@ -35,6 +38,7 @@ namespace Informa.Web.ViewModels
 			ProfileContext = profileContext;
 		    GlobalService = globalService;
             SiteRootContext = siteRootContext;
+            SalesforceVersionContext = salesforceVersionContext;
 		}
 
 		public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
@@ -74,6 +78,7 @@ namespace Informa.Web.ViewModels
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => CompanyNameContext.Name;
+        public bool UseNewSalesForce => SalesforceVersionContext.IsNewSalesforceEnabled;
 
 		private string BuildLink(Link l)
 		{

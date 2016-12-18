@@ -15295,6 +15295,161 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
     }
 
 }
+
+//IPMP-1438 Salesforce ID&E - Facade layer implementation.
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+    /// <summary>
+    /// ISalesforce_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Salesforce Configuration</para>	
+    /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ISalesforce_ConfigurationConstants.TemplateIdString)]
+    public partial interface ISalesforce_Configuration : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the salesforce session factory URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Session_Factory_Url { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory username.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory username.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UsernameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Username { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory password.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory password.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_PasswordFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Password { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory token.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory token.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TokenFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Token { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory timeout.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory timeout.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TimeoutFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Timeout { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce service URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Service_Url { get; set; }
+    }
+
+
+    /// <summary>
+    /// ISalesforce_Configuration_Raw Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Salesforce Configuration</para>	
+    /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ISalesforce_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the salesforce session factory URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Session_Factory_Url { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory username.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory username.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UsernameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Username { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory password.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory password.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_PasswordFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Password { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory token.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory token.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TokenFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Token { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory timeout.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory timeout.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TimeoutFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Timeout { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce service URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Service_Url { get; set; }
+    }
+
+    public static partial class ISalesforce_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Salesforce Configuration";
+
+
+        public static readonly ID Salesforce_Session_Factory_UrlFieldId = new ID("DECE064D-0ED3-4621-A0D5-1642FD727A6E");
+        public const string Salesforce_Session_Factory_UrlFieldName = "Salesforce Session Factory Url";
+
+        public static readonly ID Salesforce_Session_Factory_UsernameFieldId = new ID("3CC5B3E4-2AA1-4F40-82BD-4CC6A1975E4E");
+        public const string Salesforce_Session_Factory_UsernameFieldName = "Salesforce Session Factory Username";
+
+        public static readonly ID Salesforce_Session_Factory_PasswordFieldId = new ID("645579EF-F340-4F21-8E49-D9748F44B13F");
+        public const string Salesforce_Session_Factory_PasswordFieldName = "Salesforce Session Factory Password";
+
+        public static readonly ID Salesforce_Session_Factory_TokenFieldId = new ID("5DCADBC1-3093-4D87-893E-01E7538D6647");
+        public const string Salesforce_Session_Factory_TokenFieldName = "Salesforce Session Factory Token";
+
+        public static readonly ID Salesforce_Session_Factory_TimeoutFieldId = new ID("8EF9897A-4062-4F36-8A90-1A966D053382");
+        public const string Salesforce_Session_Factory_TimeoutFieldName = "Salesforce Session Factory Timeout";
+
+        public static readonly ID Salesforce_Service_UrlFieldId = new ID("E88C8AE2-E7E1-4114-AC3C-E2FDC25BD46B");
+        public const string Salesforce_Service_UrlFieldName = "Salesforce Service Url";
+    }
+
+}
+
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -16373,6 +16528,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
         string Global_Leaderboard_Slot_ID2 { get; set; }
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        /// <summary>
+        /// Gets or sets the salesforce version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ISalesforce_Configuration Salesforce_Version { get; set; }
     }
 
 
@@ -17408,6 +17573,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
         string PDF_Footer { get; set; }
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        /// <summary>
+        /// Gets or sets the salesforce version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ISalesforce_Configuration Salesforce_Version { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -17987,6 +18162,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID PDF_FooterFieldId = new ID("6BA73703-731A-4317-B779-A06D9377C8C9");
         public const string PDF_FooterFieldName = "PDF Footer";
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
+        public const string Salesforce_VersionFieldName = "Salesforce Version";
     }
 
 }
@@ -24287,6 +24466,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Items_Per_SectionFieldId = new ID("CE377240-5F03-4024-A18A-A2D24DF9B259");
         public const string Items_Per_SectionFieldName = "Items Per Section";
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
+        public const string Salesforce_VersionFieldName = "Salesforce Version";
     }
 
 
