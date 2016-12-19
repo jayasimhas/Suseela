@@ -57,7 +57,7 @@
 				}
 			    width: calc(100% - 220px);
     			float: right;
-    			position: relative;	
+    			position: relative;
 				.job_heading{
 					h3{
 					  font-family: 'Roboto Condensed';
@@ -163,6 +163,11 @@
 		font-weight: 400;
 		line-height: 30px;
 		font-size: 1.125em;
-		
+		ul {
+			padding-left: 20px;
+			li {
+				list-style: disc;
+			}
+		}
 	}
 }
