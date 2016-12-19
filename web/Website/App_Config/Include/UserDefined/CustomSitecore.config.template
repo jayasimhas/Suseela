@@ -257,6 +257,9 @@ But you can also use "patch:attribute" for clarity:
       <setting name="MasterId" value="${MasterId}"/>
       <setting name="MasterPassword" value="${MasterPassword}" />
 
+      <!-- Multiple Salesforce Support Settings -->
+      <setting name="MultipleSalesforceSupportEnabled" value="${CRMManager.MultipleSalesforceSupportEnabled}" />
+
 
       <!-- ExactTarget Settings -->
       <setting name="ExactTarget.UseSandbox" value="${ExactTarget.UseSandbox}" />

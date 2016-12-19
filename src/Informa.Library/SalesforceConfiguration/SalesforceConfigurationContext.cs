@@ -2,16 +2,20 @@
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
+using Sitecore.Configuration;
 
-namespace Informa.Library.SalesforceVersion
+namespace Informa.Library.SalesforceConfiguration
+
 {
     [AutowireService(LifetimeScope.PerScope)]
-    public class SalesforceVersionContext : ISalesforceVersionContext
+    public class SalesforceConfigurationContext : ISalesforceConfigurationContext
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ISiteRootContext SiteRootContext;
+        private const string MultipleSalesforceSupportConfigKey = "MultipleSalesforceSupportEnabled";
+        private string _isMultipleSalesforceSupportEnabled = Settings.GetSetting(MultipleSalesforceSupportConfigKey);
 
-        public SalesforceVersionContext(
+        public SalesforceConfigurationContext(
                         ISiteRootContext siteRootContext,
                         ICacheProvider cacheProvider)
         {
@@ -29,11 +33,13 @@ namespace Informa.Library.SalesforceVersion
             }
         }
 
-        public bool IsNewSalesforceEnabled => string.IsNullOrWhiteSpace(SalesForceConfiguration?.Salesforce_Session_Factory_Token);
+        public bool IsNewSalesforceEnabled => (!string.IsNullOrWhiteSpace(_isMultipleSalesforceSupportEnabled) &&
+            _isMultipleSalesforceSupportEnabled.Equals("true", System.StringComparison.OrdinalIgnoreCase)) &&
+            string.IsNullOrWhiteSpace(SalesForceConfiguration?.Salesforce_Session_Factory_Token);
 
         private string CreateCacheKey(string suffix)
         {
-            return $"{nameof(SalesforceVersionContext)}-{suffix}";
+            return $"{nameof(SalesforceConfigurationContext)}-{suffix}";
         }
 
         public ISalesforce_Configuration GetSalesforceConfiguration()

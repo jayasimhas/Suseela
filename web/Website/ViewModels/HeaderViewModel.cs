@@ -9,7 +9,7 @@ using System.Web;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Informa.Library.SalesforceVersion;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.ViewModels
 {
@@ -21,7 +21,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserProfileContext ProfileContext;
 		protected readonly ISiteRootContext SiteRootContext;
 	    protected readonly IGlobalSitecoreService GlobalService;
-        protected readonly ISalesforceVersionContext SalesforceVersionContext;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
 		    IUserProfileContext profileContext,
             IGlobalSitecoreService globalService,
-            ISalesforceVersionContext salesforceVersionContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;
@@ -38,7 +38,7 @@ namespace Informa.Web.ViewModels
 			ProfileContext = profileContext;
 		    GlobalService = globalService;
             SiteRootContext = siteRootContext;
-            SalesforceVersionContext = salesforceVersionContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
 		}
 
 		public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
@@ -78,7 +78,7 @@ namespace Informa.Web.ViewModels
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => CompanyNameContext.Name;
-        public bool UseNewSalesForce => SalesforceVersionContext.IsNewSalesforceEnabled;
+        public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
 		private string BuildLink(Link l)
 		{
