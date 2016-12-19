@@ -1240,6 +1240,7 @@
     <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\PeerGroupDetailViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
@@ -2200,6 +2201,7 @@
     <Content Include="Views\FinanceCompanies\CompanyPeerGroup.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PersonalizedContentPDF.cshtml" />
     <Content Include="Views\FinanceCompanies\CompaniesResult.cshtml" />
+    <Content Include="Views\FinanceCompanies\PeerGroupDetail.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
