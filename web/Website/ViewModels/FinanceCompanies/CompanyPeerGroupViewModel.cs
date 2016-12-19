@@ -1,4 +1,5 @@
 ﻿using Elsevier.Library.Interfaces;
+using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company;
@@ -16,9 +17,12 @@ namespace Informa.Web.ViewModels.FinanceCompanies
     {
 
         protected readonly ITextTranslator TextTranslator;
-        public CompanyPeerGroupViewModel(ITextTranslator textTranslator)
+        public ISitecoreContext SitecoreContext;
+
+        public CompanyPeerGroupViewModel(ITextTranslator textTranslator, ISitecoreContext sitecoreContext)
         {
             TextTranslator = textTranslator;
+            SitecoreContext = sitecoreContext;
         }
         /// <summary>
         /// Peer Group Title
@@ -58,9 +62,13 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                 foreach (var peer in peerComanies)
                 {
                     LinkableModel link = new LinkableModel();
-                    link.LinkableText = peer._Name;
-                    link.LinkableUrl = peer._Url;
-                    peerCompanies.Add(link);
+                    if(!string.Equals(peer._Name, SitecoreContext.GetCurrentItem<ICompany_Detail_Page>()._Name,StringComparison.OrdinalIgnoreCase))
+                    {
+                        link.LinkableText = peer._Name;
+                        link.LinkableUrl = peer._Url;
+                        peerCompanies.Add(link);
+                    }
+                    
                 }
             }
             return peerCompanies;

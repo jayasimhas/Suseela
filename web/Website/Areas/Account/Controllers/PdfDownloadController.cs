@@ -288,7 +288,6 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
-
                 ReqdDoc.OptionOutputAsXml = true;
                 ReqdDoc.OptionCheckSyntax = true;
                 ReqdDoc.OptionFixNestedTags = true;
