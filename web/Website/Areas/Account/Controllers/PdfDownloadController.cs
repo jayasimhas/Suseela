@@ -23,6 +23,9 @@ using Informa.Library.PDF;
 using Informa.Web.ViewModels;
 using Informa.Library.Search.Utilities;
 using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.Globalization;
+//using Elsevier.Library.Interfaces.Factory;
 #endregion
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -36,15 +39,24 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
-
-        public PdfDownloadController(IUserPreferenceContext userPreferences, ISiteRootContext siterootContext, IGlobalSitecoreService globalService, IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory)
-        {
-            UserPreferences = userPreferences;
-            SiterootContext = siterootContext;
-            GlobalService = globalService;
-            ArticleSearch = articleSearch;
-            ArticleListableFactory = articleListableFactory;
-        }
+        protected readonly IArticleSearch Searcher;
+        protected readonly ITextTranslator TextTranslator;
+        public PdfDownloadController(IUserPreferenceContext userPreferences,
+                                        ISiteRootContext siterootContext,
+                                        IGlobalSitecoreService globalService, 
+                                        IArticleSearch articleSearch, 
+                                        IArticleListItemModelFactory articleListableFactory,
+                                        IArticleSearch searcher,
+                                        ITextTranslator textTranslator)
+                                    {
+                                        UserPreferences = userPreferences;
+                                        SiterootContext = siterootContext;
+                                        GlobalService = globalService;
+                                        ArticleSearch = articleSearch;
+                                        ArticleListableFactory = articleListableFactory;
+                                        Searcher = searcher;
+                                        TextTranslator = textTranslator;
+                                    }
 
         /// <summary>
         /// Controller method for downloading pdf
@@ -113,7 +125,9 @@ namespace Informa.Web.Areas.Account.Controllers
                         abslouteUrl = selectArticle._AbsoluteUrl,
                         ContentType = selectArticle.Content_Type.Item_Name,
                         Sub_Title = selectArticle.Sub_Title,
-                        Author = selectArticle.Authors.Select(x => new PersonModel(x))
+                        Author = selectArticle.Authors.Select(x => new PersonModel(x)),
+                        RelatedArticles = GetRelatedArticles(selectArticle),
+                        ExecutiveSummary = TextTranslator.Translate("SharedContent.ExecutiveSummary")
                     });
                 }
                 artSearch.TaxonomyIds.Clear();
@@ -490,8 +504,29 @@ namespace Informa.Web.Areas.Account.Controllers
             return new PersonalizedArticleSearchResults
             {
                 Articles = results.Articles,
-                //TotalResults = results.
+                TotalResults = results.TotalResults
             };
+        }
+
+        /// <summary>
+        /// Get Related Articles
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
+        private IEnumerable<IListable> GetRelatedArticles(IArticle article)
+        {
+            var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
+
+            if (relatedArticles.Count < 10)
+            {
+                var filter = Searcher.CreateFilter();
+                filter.ReferencedArticle = article._Id;
+                filter.PageSize = 10 - relatedArticles.Count;
+
+                var results = Searcher.Search(filter);
+                relatedArticles.AddRange(results.Articles);
+            }
+            return relatedArticles.Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
         }
     }
     public class GlobalElements : PdfPageEventHelper
