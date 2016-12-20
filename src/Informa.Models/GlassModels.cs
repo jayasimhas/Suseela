@@ -1311,12 +1311,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company Logo
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Image Company_Logo { get; set; }
+        string Company_Logo { get; set; }
         /// <summary>
         /// Company Url
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Company_Url { get; set; }
+        string Company_Url { get; set; }
         /// <summary>
         /// Introduction Text
         /// </summary>

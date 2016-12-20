@@ -2203,7 +2203,6 @@
     <Content Include="Views\Shared\Components\PDF\PersonalizedContentPDF.cshtml" />
     <Content Include="Views\FinanceCompanies\CompaniesResult.cshtml" />
     <Content Include="Views\FinanceCompanies\PeerGroupDetail.cshtml" />
-    <Content Include="Views\FinanceCompanies\CompanyList.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
