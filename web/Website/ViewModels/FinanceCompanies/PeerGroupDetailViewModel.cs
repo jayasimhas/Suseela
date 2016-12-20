@@ -20,8 +20,26 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             SitecoreContext = sitecoreContext;
         }
 
+        public string PeerGroupPageTitle => GetPageTitle();
         public string InstructionTitle => GlassModel?.Title;
         public string InstructionText => GlassModel?.Body;
+        public string PeerGroupPageTitleTemplate => TextTranslator.Translate("PeerGroup.DetailPage.Title");
+        public string DontShowMessageText => TextTranslator.Translate("Dont.Show.This.Message.Again.Text");
+        public string CloseButtonText => TextTranslator.Translate("PeerGroup.DetailClose.ButtonText");
+        private string GetPageTitle()
+        {
+            string id = HttpContext.Current.Request.QueryString["Id"];
+            if (!string.IsNullOrEmpty(id))
+            {
+                var compnayPage = SitecoreContext.GetItem<ICompany_Detail_Page>(id);
+                return compnayPage.Companyname;
+            }
+            else
+            {
+                return string.Empty;
+            }
+            
+        }
 
     }
 }
