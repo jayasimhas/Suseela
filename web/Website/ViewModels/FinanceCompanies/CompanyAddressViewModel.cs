@@ -25,9 +25,9 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         public string CompanyID => GlassModel.CompanyID;
         public string CompanyName => GlassModel.Companyname;
         public string CompanyAddress => GlassModel.Company_Address;
-        public string CompanyLogo => GlassModel.Company_Logo?.Src;
-        public string CompanyUrl => GlassModel.Company_Url?.Url;
-        public string CompanyIntroductionText => GlassModel.Introduction_Text;
+        public string CompanyLogo => GlassModel.Company_Logo;
+        public string CompanyUrl => GlassModel.Company_Url;
+        public string CompanyTitle => GlassModel.Title;
 
        
     }
