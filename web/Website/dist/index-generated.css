@@ -2662,14 +2662,25 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       position: absolute;
       top: 0;
       left: -220px;
-      width: 200px; }
+      width: 200px;
+      height: 100%; }
       @media (max-width: 480px) {
         .job_listing .stacked_job_view .job_list_individual .job_logo {
           width: 100%;
           display: block;
           position: static; } }
       .job_listing .stacked_job_view .job_list_individual .job_logo img {
-        width: 100%; }
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%); }
+        @media (max-width: 480px) {
+          .job_listing .stacked_job_view .job_list_individual .job_logo img {
+            position: static;
+            -webkit-transform: translateX(0);
+                    transform: translateX(0); } }
     .job_listing .stacked_job_view .job_list_individual .job_description {
       width: calc(100% - 220px);
       float: right;
@@ -2747,11 +2758,13 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   clear: both;
   padding: 20px 0;
   margin-bottom: 2em;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
   .job_detail .job_logo img {
     display: block;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    max-height: 100%; }
 
 .job_detail .job_description {
   font-family: "PT Serif", Georgia, serif;
@@ -3209,6 +3222,71 @@ body.lightboxed {
     top: -51px;
     right: 0px; }
   .large_table .visible-sm .owl-theme .owl-controls .owl-nav div {
+    background: none;
+    padding: 0;
+    margin: 0 3px; }
+
+.ID-Responsive-Table {
+  position: relative;
+  width: 100%;
+  float: left; }
+  .ID-Responsive-Table .table_head {
+    background-color: #414042;
+    color: #ffffff; }
+    .ID-Responsive-Table .table_head .RB16 {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.0625em;
+      font-weight: 700;
+      font-style: normal; }
+    .ID-Responsive-Table .table_head .R16 {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.0625em;
+      font-weight: 400;
+      font-style: normal; }
+  .ID-Responsive-Table .states_heading {
+    position: relative;
+    float: left;
+    width: 30%;
+    border-right: 1px solid #d1d3d4; }
+    .ID-Responsive-Table .states_heading .redbg {
+      background-color: #bb1528 !important; }
+    .ID-Responsive-Table .states_heading div {
+      margin-bottom: 10px;
+      padding: 10px; }
+    .ID-Responsive-Table .states_heading div:nth-child(odd) {
+      background-color: #f1f1f1; }
+  .ID-Responsive-Table .RB16 {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: normal; }
+  .ID-Responsive-Table .article {
+    width: 100%;
+    text-align: center; }
+    .ID-Responsive-Table .article div:nth-child(odd) {
+      background-color: #f1f1f1; }
+    .ID-Responsive-Table .article .R16 {
+      height: 58px;
+      padding-top: 14px;
+      margin-top: 10px; }
+  .ID-Responsive-Table .year_heading {
+    background-color: #bb1528 !important;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .ID-Responsive-Table .owl-dots {
+    float: left;
+    margin-top: 20px; }
+  .ID-Responsive-Table .owl-nav {
+    float: right; }
+  .ID-Responsive-Table .owl-item.active {
+    width: 5% !important;
+    margin-right: 1px !important; }
+  .ID-Responsive-Table .owl-controls {
+    position: absolute;
+    top: -51px;
+    right: 0px; }
+  .ID-Responsive-Table .owl-theme .owl-controls .owl-nav div {
     background: none;
     padding: 0;
     margin: 0 3px; }
@@ -6109,6 +6187,10 @@ section: UI Elements
     clear: both;
     content: '';
     display: table; }
+
+.swissgroup .swissImg {
+  float: right;
+  margin-left: 10px; }
 
 .compareChart .eachChartData {
   margin-bottom: 10px; }
