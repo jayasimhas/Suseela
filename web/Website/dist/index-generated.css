@@ -6123,6 +6123,10 @@ section: UI Elements
     content: '';
     display: table; }
 
+.swissgroup .swissImg {
+  float: right;
+  margin-left: 10px; }
+
 .compareChart .eachChartData {
   margin-bottom: 10px; }
   .compareChart .eachChartData .dataTitle {
