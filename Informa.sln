@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Web", "web\Website\Informa.Web.csproj", "{EFE15F11-B900-4515-A45E-5B817C483A36}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4} = {E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6D47716A-512E-4F34-BDCD-75596FA6D8D8}"
 	ProjectSection(SolutionItems) = preProject
@@ -67,6 +70,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginModels", "src\PluginModels\PluginModels.csproj", "{BE0591FC-DABC-44B0-B267-0E3AB0FD02D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Library.Salesforce", "src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj", "{69FF8121-1969-4032-90FA-B4B9148CD780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Library.Salesforce.V2", "src\Informa.Library.Salesforce.V2\Informa.Library.Salesforce.V2.csproj", "{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -208,6 +213,18 @@ Global
 		{69FF8121-1969-4032-90FA-B4B9148CD780}.Release-NoTds|Any CPU.Build.0 = Release|Any CPU
 		{69FF8121-1969-4032-90FA-B4B9148CD780}.WordPlugin-Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69FF8121-1969-4032-90FA-B4B9148CD780}.WordPlugin-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Debug-NoTds|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Debug-NoTds|Any CPU.Build.0 = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Release-NoTds|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.Release-NoTds|Any CPU.Build.0 = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.WordPlugin-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.WordPlugin-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.WordPlugin-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B138B6-FDC6-4E61-AE3C-23F909B85EE4}.WordPlugin-Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,12 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.PeerGroupDetailViewModel
-<div class="peer-grop-info-modal">
-    <span class="peer-group-info-title">@Model.InstructionTitle</span>
+<div class="peer-grop-info-modal">  
+    <div class="peer-group-page-title"><h1>@Model.PeerGroupPageTitleTemplate.Replace("#CompanyName#", Model.PeerGroupPageTitle)</h1></div>
+    <hr />
+    <div class="peer-group-info-title">
+        <h4>@Model.InstructionTitle</h4>
+        <span>@Model.CloseButtonText</span>
+    </div>
     <div class="peer-group-info-text">@Html.Raw(Model.InstructionText)</div>
+    <input type="checkbox" id="chkMessageBox" name="chkMessageBox"/>@Model.DontShowMessageText
 </div>
 
