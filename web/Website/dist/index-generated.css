@@ -3226,6 +3226,71 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
+.ID-Responsive-Table {
+  position: relative;
+  width: 100%;
+  float: left; }
+  .ID-Responsive-Table .table_head {
+    background-color: #414042;
+    color: #ffffff; }
+    .ID-Responsive-Table .table_head .RB16 {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.0625em;
+      font-weight: 700;
+      font-style: normal; }
+    .ID-Responsive-Table .table_head .R16 {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.0625em;
+      font-weight: 400;
+      font-style: normal; }
+  .ID-Responsive-Table .states_heading {
+    position: relative;
+    float: left;
+    width: 30%;
+    border-right: 1px solid #d1d3d4; }
+    .ID-Responsive-Table .states_heading .redbg {
+      background-color: #bb1528 !important; }
+    .ID-Responsive-Table .states_heading div {
+      margin-bottom: 10px;
+      padding: 10px; }
+    .ID-Responsive-Table .states_heading div:nth-child(odd) {
+      background-color: #f1f1f1; }
+  .ID-Responsive-Table .RB16 {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: normal; }
+  .ID-Responsive-Table .article {
+    width: 100%;
+    text-align: center; }
+    .ID-Responsive-Table .article div:nth-child(odd) {
+      background-color: #f1f1f1; }
+    .ID-Responsive-Table .article .R16 {
+      height: 58px;
+      padding-top: 14px;
+      margin-top: 10px; }
+  .ID-Responsive-Table .year_heading {
+    background-color: #bb1528 !important;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .ID-Responsive-Table .owl-dots {
+    float: left;
+    margin-top: 20px; }
+  .ID-Responsive-Table .owl-nav {
+    float: right; }
+  .ID-Responsive-Table .owl-item.active {
+    width: 5% !important;
+    margin-right: 1px !important; }
+  .ID-Responsive-Table .owl-controls {
+    position: absolute;
+    top: -51px;
+    right: 0px; }
+  .ID-Responsive-Table .owl-theme .owl-controls .owl-nav div {
+    background: none;
+    padding: 0;
+    margin: 0 3px; }
+
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
