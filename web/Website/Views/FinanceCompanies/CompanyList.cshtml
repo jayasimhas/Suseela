@@ -1,0 +1,10 @@
+﻿@model  Informa.Web.ViewModels.FinanceCompanies.CompanyProfileViewModel
+
+
+<div style="border: 1px solid grey;">
+@foreach (var Company in Model.FinanceCompanies)
+{
+
+    <div><a href="/financecompanies/@Company._Name">@Company._Name</a></div>
+}
+</div>

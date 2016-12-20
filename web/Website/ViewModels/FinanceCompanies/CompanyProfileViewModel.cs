@@ -25,5 +25,15 @@ namespace Informa.Web.ViewModels.FinanceCompanies
 
         public string ProfileText => GlassModel.Profile_Text;
 
+
+        public IEnumerable<ICompany_Detail_Page> FinanceCompanies
+        {
+            get
+            {
+                var financeCompaniesFolder = GlassModel._Parent;
+                return financeCompaniesFolder._ChildrenWithInferType.OfType<ICompany_Detail_Page>();
+            }
+        }
+
     }
 }

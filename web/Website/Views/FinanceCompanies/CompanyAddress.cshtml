@@ -3,23 +3,22 @@
 
 
 
-<div>
-    @Model.CompanyID
-</div> 
 
+<div style="border: 1px solid grey;">
+    <h5>
+        @Model.CompanyName
+    </h5>
+    <div>
+        <img src="@Model.CompanyLogo" style="height:50px" />
+    </div>
+    <div>
+        @Model.CompanyAddress
+    </div>
+    
+    <div>
+        <a href="@Model.CompanyUrl">@Model.CompanyUrl</a>
+    </div>
 <div>
-    @Model.CompanyName 
+    @Model.CompanyIntroductionText
 </div>
-
-<div>
-    @Model.CompanyAddress
-</div>
-<div>
-  @Html.Raw(Model.CompanyLogo)
-</div>
-<div>
-    @Html.Raw(Model.CompanyUrl)
-</div>
-<div>
-    @Model.CompanyTitle
 </div>
