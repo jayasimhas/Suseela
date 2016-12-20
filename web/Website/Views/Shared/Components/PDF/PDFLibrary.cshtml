@@ -70,7 +70,14 @@
                                 {
                             <tr>
                                 <td align = "left" id = "pdfLibrary" > @perPdf.IssueDate.ToString("dd MMM yyyy") </td>
-                                <td align="left">@Html.ActionLink(perPdf.IssueNumber, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })&nbsp;</td>
+                                @if (!string.IsNullOrEmpty(perPdf.IssueNumber))
+                                {
+                                    <td align="left">@Html.ActionLink(perPdf.IssueNumber, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })&nbsp;</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
                                     <td align="left">
                                         @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })
                                         &nbsp;
