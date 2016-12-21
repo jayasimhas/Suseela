@@ -120,7 +120,14 @@
         	});
         	$(document).on('click', '#modal-table .table_close', function(e) {
         		e.preventDefault();
-        		$(this).parents('.responsive-table-modal').hide();
+        		$(this).parents('.ID-responsive-table-modal').hide();
+        	});
+        	$(document).on('click', '.ID-responsive-table-modal', function(e) {
+        			if($(e.target).parents('.container').length > 0 || $(e.target).hasClass('.container')) {
+        				return false;
+        			} else {
+        				$(this).hide();
+        			}
         	});
         },
 		init: function(url, id) {
