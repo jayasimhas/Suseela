@@ -16,6 +16,7 @@ using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
 
 using InformaConstants = Informa.Library.Utilities.References.Constants;
+using System.Web;
 
 namespace Informa.Library.CustomSitecore.Ribbon
 {
@@ -35,6 +36,8 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
             if (!args.IsPostBack)
             {
+                 var id = HttpUtility.UrlEncode(publicationNodeItem.ID.ToString());
+                HttpContext.Current.Items["nlmArticle"] = id;
                 SheerResponse.ShowModalDialog(new ModalDialogOptions(ExportDialogPath)
                 {
                     Response = true
@@ -43,6 +46,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
             }
             else if (args.Result != null)
             {
+                HttpContext.Current.Items["nlmArticle"] = publicationNodeItem.ID.ToString();
                 var dialogResult = JsonConvert.DeserializeObject<ExportDialogResult>(args.Result, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver()});
                 if (dialogResult == null)
                 {
