@@ -14,5 +14,6 @@ namespace Informa.Library.Salesforce.Subscription
 		public string ProductGuid { get; set; }
 		public string ProductType { get; set; }
         public List<ChannelSubscription> SubscribedChannels { get; set; }
+        public bool IsTopicSubscription { get; set; }
     }
 }
