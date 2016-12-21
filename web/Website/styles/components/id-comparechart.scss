@@ -1,0 +1,41 @@
+.compareChart {
+	.eachChartData {
+		margin-bottom: 10px;
+		.dataTitle{
+			background: #f9f9f9;
+			padding: 12px;
+			border: 1px solid #d9dadb;
+			.title{
+				float: left;
+			}
+			.chartexpand{
+				float: right;
+				background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
+				height: 20px;
+				width: 28px;
+				display: inline-block;
+				cursor: pointer;
+				&.active{
+					background-position: 0 -77px;
+				}
+			}
+			&:after{
+				clear: both;
+				content: '';
+				display: table;
+			}
+		}
+		.chartData{
+			padding: 12px; 
+			border: 1px solid #d9dadb;
+			border-top: none;
+			&.hide{
+				display: none;
+			}
+		}	
+	}
+	.showAll{
+		margin-bottom: 12px;
+	}
+}
+ 

@@ -179,8 +179,21 @@
         @* * * Executive Summary *@
 
         @*<div class="article-executive-summary">*@
-        <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-        <span class="article-executive-summary-body" style="font-size:18px;color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr><td></td></tr>
+            <tr>
+                <td>
+                    <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
+                
+                </td>
+                </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>
+                    <span class="article-executive-summary-body" style="font-size:18px;color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
+                </td>
+            </tr>
+        </table>
         @*</div>*@
         @* End Executive Summary  *@
     }
@@ -198,8 +211,12 @@
         @* * *  ARTICLE - FEATURED IMAGE
             IIPP-117 *@
         <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
-            <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
-            <table width="100%">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td colspan="2"><img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText"></td>
+                </tr>
                 <tr><td>&nbsp;</td></tr>
                 <tr>
                     <td align="left">
@@ -219,8 +236,8 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-
-    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+   
 
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())

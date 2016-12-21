@@ -26,10 +26,10 @@
 		width: 100%;
 		.job_list_individual{
 			@include breakpoint('small'){
-				padding: 0;
+				padding: 1em 0;
 			}
 			width: 100%;
-			padding: 1em;
+			padding: 1.5em 1em;
 			border-bottom: 1px solid $color-light-gray;
 			float: left;
 			position: relative;
@@ -38,15 +38,23 @@
 				@include breakpoint('small'){
 					width: 100%;
 					display: block;
-					float: none;
-					clear:both;
-					margin-top:55px;
-					margin-bottom:10px;
+					position: static;
 				}
-				width: 20%;
-				float: left;
+				position: absolute;
+				top: 0;
+				left: -220px;
+				width: 200px;
+				height: 100%;
 				img{
-					width: 100%;
+					max-width: 100%;
+					max-height: 100%;
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					@include breakpoint('small'){
+						position: static;
+						transform: translateX(0);
+					}
 				}
 			}
 			.job_description{
@@ -56,10 +64,9 @@
 					float: none;
 					margin-left:0;
 				}
-				float: left;
-				width: 70%;
-				margin-left: 2rem;
-				
+			    width: calc(100% - 220px);
+    			float: right;
+    			position: relative;
 				.job_heading{
 					h3{
 					  font-family: 'Roboto Condensed';
@@ -71,11 +78,6 @@
 						color: $color-zeus-black;
 					  }
 					 }
-					@include breakpoint('small'){
-						position: absolute;
-						top: -20px;
-						margin-top: 30px;
-					}
 					clear: both;
 					
 				}
@@ -157,11 +159,12 @@
 		padding: 20px 0;
 		margin-bottom: 2em;
 		width:100%;
+		height: 100%;
 		img{
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			
+			max-height: 100%;
 		}
 	}
 	.job_description{
@@ -170,6 +173,11 @@
 		font-weight: 400;
 		line-height: 30px;
 		font-size: 1.125em;
-		
+		ul {
+			padding-left: 20px;
+			li {
+				list-style: disc;
+			}
+		}
 	}
 }

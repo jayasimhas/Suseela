@@ -203,6 +203,9 @@
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -1138,6 +1141,7 @@
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
     <Compile Include="Controllers\PersonalizedEmailController.cs" />
+    <Compile Include="Controllers\ProcessUserRequestController.cs" />
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
@@ -1236,9 +1240,11 @@
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraph.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompaniesResultViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\PeerGroupDetailViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
@@ -2198,6 +2204,9 @@
     <Content Include="Views\FinanceCompanies\CompanyAddress.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyPeerGroup.cshtml" />
     <Content Include="Views\Shared\Components\PDF\PersonalizedContentPDF.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompaniesResult.cshtml" />
+    <Content Include="Views\FinanceCompanies\PeerGroupDetail.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompanyList.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

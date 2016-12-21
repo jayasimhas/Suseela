@@ -1311,12 +1311,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company Logo
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_Logo { get; set; }
+        Image Company_Logo { get; set; }
         /// <summary>
         /// Company Url
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_Url { get; set; }
+        Link Company_Url { get; set; }
         /// <summary>
         /// Introduction Text
         /// </summary>
@@ -1642,6 +1642,103 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public const string Feed_Url_FieldName = "Feed Url";
 
     }
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
+{
+    /// <summary>
+    /// ICompany_Peer_Group_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/CompanyPeerGroupDetailPage</para>	
+    /// <para>ID: 0E29056B-8151-446C-AF95-ABF579BF3C40</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ICompany_Peer_Group_Detail_PageConstants.TemplateIdString)]
+    public partial interface ICompany_Peer_Group_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        
+    }
+    /// <summary>
+    /// ICompany_Peer_Group_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/CompanyPeerGroupDetailPage</para>	
+    /// <para>ID: 0E29056B-8151-446C-AF95-ABF579BF3C40</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ICompany_Peer_Group_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+       
+    }
+
+    public static partial class ICompany_Peer_Group_Detail_PageConstants
+    {
+
+        public const string TemplateIdString = "0E29056B-8151-446C-AF95-ABF579BF3C40";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company Peer Group Detail Page";
+        
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+    }
+
 }
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.Publication_Specific
@@ -9608,6 +9705,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// </summary>
         [SitecoreField(IPersonalized_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
     }
 
     [SitecoreType]
@@ -9652,6 +9759,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
         /// </summary>
         [SitecoreField(IPersonalized_PDF_PageConstants.Issue_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         DateTime Issue_Date { get; set; }
+
+        /// <summary>
+        /// Issue Number
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IManually_Curated_PDF_PageConstants.Issue_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Issue_Number { get; set; }
     }
     public static partial class IPersonalized_PDF_PageConstants
     {
@@ -9670,6 +9787,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.PD
 
         public static readonly ID Article_SizeFieldId = new ID("C137899B-7C24-4246-8F54-0C0F21A3FD2D");
         public const string Article_SizeFieldName = "Article Size";
+
+        public static readonly ID Issue_NumberFieldId = new ID("E7CF499C-BF4D-4A4D-AFD6-B27D3A32B009");
+        public const string Issue_NumberFieldName = "Issue Number";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
@@ -12895,81 +13015,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
     }
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Jobs
-{
-
-
-    /// <summary>
-    /// IJobs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Jobs Root</para>	
-    /// <para>ID: 99E5BE37-77B0-4FB6-AE5B-ABD459009B04</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IJobs_RootConstants.TemplateIdString)]
-    public partial interface IJobs_Root : IGlassBase
-    {
-    }
-
-
-    /// <summary>
-    /// IJobs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Jobs Root</para>	
-    /// <para>ID: 99E5BE37-77B0-4FB6-AE5B-ABD459009B04</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IJobs_Root__Raw : IGlassBase
-    {
-    }
-
-    public static partial class IJobs_RootConstants
-    {
-
-        public const string TemplateIdString = "99E5BE37-77B0-4FB6-AE5B-ABD459009B04";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Jobs Root";
-
-
-
-    }
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
-    /// <summary>
-    /// IPdfs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Pdfs Root</para>	
-    /// <para>ID: 5A84541E-9EAA-4C88-9C41-3959333D3024</para>	
-    /// </summary>
-    [SitecoreType(TemplateId = IPdfs_RootConstants.TemplateIdString)]
-    public partial interface IPdfs_Root : IGlassBase
-    {
-    }
-
-
-    /// <summary>
-    /// IJobs_Root Interface
-    /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Objects/Jobs Root</para>	
-    /// <para>ID: 99E5BE37-77B0-4FB6-AE5B-ABD459009B04</para>	
-    /// </summary>
-    [SitecoreType]
-    public partial interface IPdfs_Root__Raw : IGlassBase
-    {
-    }
-
-    public static partial class IPdfs_RootConstants
-    {
-
-        public const string TemplateIdString = "5A84541E-9EAA-4C88-9C41-3959333D3024";
-        public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Pdfs Root";
-    }
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -15295,6 +15340,161 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
     }
 
 }
+
+//IPMP-1438 Salesforce ID&E - Facade layer implementation.
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+    /// <summary>
+    /// ISalesforce_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Salesforce Configuration</para>	
+    /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ISalesforce_ConfigurationConstants.TemplateIdString)]
+    public partial interface ISalesforce_Configuration : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the salesforce session factory URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Session_Factory_Url { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory username.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory username.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UsernameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Username { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory password.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory password.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_PasswordFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Password { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory token.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory token.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TokenFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Token { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory timeout.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory timeout.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TimeoutFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Timeout { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce service URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Service_Url { get; set; }
+    }
+
+
+    /// <summary>
+    /// ISalesforce_Configuration_Raw Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Salesforce Configuration</para>	
+    /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ISalesforce_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the salesforce session factory URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Session_Factory_Url { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory username.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory username.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_UsernameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Username { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory password.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory password.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_PasswordFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Password { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory token.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory token.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TokenFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Token { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce session factory timeout.
+        /// </summary>
+        /// <value>
+        /// The salesforce session factory timeout.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Session_Factory_TimeoutFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Salesforce_Session_Factory_Timeout { get; set; }
+        /// <summary>
+        /// Gets or sets the salesforce service URL.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Service_Url { get; set; }
+    }
+
+    public static partial class ISalesforce_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Salesforce Configuration";
+
+
+        public static readonly ID Salesforce_Session_Factory_UrlFieldId = new ID("DECE064D-0ED3-4621-A0D5-1642FD727A6E");
+        public const string Salesforce_Session_Factory_UrlFieldName = "Salesforce Session Factory Url";
+
+        public static readonly ID Salesforce_Session_Factory_UsernameFieldId = new ID("3CC5B3E4-2AA1-4F40-82BD-4CC6A1975E4E");
+        public const string Salesforce_Session_Factory_UsernameFieldName = "Salesforce Session Factory Username";
+
+        public static readonly ID Salesforce_Session_Factory_PasswordFieldId = new ID("645579EF-F340-4F21-8E49-D9748F44B13F");
+        public const string Salesforce_Session_Factory_PasswordFieldName = "Salesforce Session Factory Password";
+
+        public static readonly ID Salesforce_Session_Factory_TokenFieldId = new ID("5DCADBC1-3093-4D87-893E-01E7538D6647");
+        public const string Salesforce_Session_Factory_TokenFieldName = "Salesforce Session Factory Token";
+
+        public static readonly ID Salesforce_Session_Factory_TimeoutFieldId = new ID("8EF9897A-4062-4F36-8A90-1A966D053382");
+        public const string Salesforce_Session_Factory_TimeoutFieldName = "Salesforce Session Factory Timeout";
+
+        public static readonly ID Salesforce_Service_UrlFieldId = new ID("E88C8AE2-E7E1-4114-AC3C-E2FDC25BD46B");
+        public const string Salesforce_Service_UrlFieldName = "Salesforce Service Url";
+    }
+
+}
+
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -16373,6 +16573,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_ID2FieldName, Setting = SitecoreFieldSettings.InferType)]
         string Global_Leaderboard_Slot_ID2 { get; set; }
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        /// <summary>
+        /// Gets or sets the salesforce version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ISalesforce_Configuration Salesforce_Version { get; set; }
     }
 
 
@@ -17408,6 +17618,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.PDF_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
         string PDF_Footer { get; set; }
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        /// <summary>
+        /// Gets or sets the salesforce version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ISalesforce_Configuration Salesforce_Version { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -17987,6 +18207,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID PDF_FooterFieldId = new ID("6BA73703-731A-4317-B779-A06D9377C8C9");
         public const string PDF_FooterFieldName = "PDF Footer";
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
+        public const string Salesforce_VersionFieldName = "Salesforce Version";
     }
 
 }
@@ -24287,6 +24511,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Items_Per_SectionFieldId = new ID("CE377240-5F03-4024-A18A-A2D24DF9B259");
         public const string Items_Per_SectionFieldName = "Items Per Section";
+
+        //IPMP-1438 Salesforce ID&E - Facade layer implementation.
+        public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
+        public const string Salesforce_VersionFieldName = "Salesforce Version";
     }
 
 
@@ -28035,6 +28263,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         [SitecoreField(IFeatured_Article_MultiColumn_Constants.Show_Pink_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool ShowPinkBackground { get; set; }
 
+        /// <summary>
+        /// Hide Summary Text field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 6c1eca87-8aaf-4ed1-81d1-40d8becffb68</para>
+        /// </summary>
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Hide_Summary_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool HideSummaryText { get; set; }
+
     }
 
     public static partial class IFeatured_Article_MultiColumn_Constants
@@ -28077,6 +28314,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 
         public static readonly ID Show_Pink_BackgroundFieldId = new ID("b5b10e37-01f8-47ed-9626-9059641a2042");
         public const string Show_Pink_BackgroundFieldName = "Show Pink Background";
+
+        public static readonly ID Hide_Summary_TextFieldId = new ID("6c1eca87-8aaf-4ed1-81d1-40d8becffb68");
+        public const string Hide_Summary_TextFieldName = "Hide Summary Text";
 
     }
 
@@ -28233,6 +28473,199 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID ValueFieldId = new ID("f224c150-3977-4eea-9691-4677c2e55862");
         public const string ValueFieldName = "Value";
 
+
+    }
+
+    namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
+    {
+        /// <summary>
+        /// ICompany_Table_Component Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/Components/Company/Table Component</para>	
+        /// <para>ID: 3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Table_ComponentConstants.TemplateIdString)]
+        public partial interface ICompany_Table_Component : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+        {
+            /// <summary>
+            /// The Title field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 41bd0144-5f2a-4397-b074-07f17cd3b391</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string TableTitle { get; set; }
+
+            /// <summary>
+            /// The No Of Rows field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 32f648cb-2a89-4441-9821-9f2968b9ce92</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_RowsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfRows { get; set; }
+
+            /// <summary>
+            /// The No Of Columns field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 932a9f91-8cb2-43c9-882c-7433ac147219</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_ColumnsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfColumns { get; set; }
+
+            /// <summary>
+            /// The External Feed Url field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 1649579a-1b99-4c6f-b6ef-046cc912492b</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string ExternalFeedUrl { get; set; }
+        }
+
+
+        ///<summary>
+        ///ICompany_Table_Component Interface
+        ///<para></para>
+        ///<para>Path: /sitecore/templates/User Defined/Components/Company/Table Component</para>
+        ///<para>ID: 3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3</para>
+        ///</summary>
+        [SitecoreType]
+        public partial interface ICompany_Table_Component__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+        {
+            /// <summary>
+            /// The Title field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 41bd0144-5f2a-4397-b074-07f17cd3b391</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string TableTitle { get; set; }
+
+            /// <summary>
+            /// The No Of Rows field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 32f648cb-2a89-4441-9821-9f2968b9ce92</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_RowsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfRows { get; set; }
+
+            /// <summary>
+            /// The No Of Columns field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: 932a9f91-8cb2-43c9-882c-7433ac147219</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.No_Of_ColumnsFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string NoOfColumns { get; set; }
+
+            /// <summary>
+            /// The External Feed Url field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 1649579a-1b99-4c6f-b6ef-046cc912492b</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string ExternalFeedUrl { get; set; }
+        }
+
+        public static partial class ICompany_Table_ComponentConstants
+        {
+
+            public const string TemplateIdString = "3c9fbec6-baa8-4de8-9a0b-28b6bf9a1ae3";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Table Component";
+
+
+            public static readonly ID Table_TitleFieldId = new ID("41bd0144-5f2a-4397-b074-07f17cd3b391");
+            public const string Table_TitleFieldName = "Table Title";
+
+            public static readonly ID No_Of_RowsFieldId = new ID("32f648cb-2a89-4441-9821-9f2968b9ce92");
+            public const string No_Of_RowsFieldName = "No Of Rows";
+
+            public static readonly ID No_Of_ColumnsFieldId = new ID("932a9f91-8cb2-43c9-882c-7433ac147219");
+            public const string No_Of_ColumnsFieldName = "No Of Columns";
+
+            public static readonly ID External_Feed_UrlFieldId = new ID("1649579a-1b99-4c6f-b6ef-046cc912492b");
+            public const string External_Feed_UrlFieldName = "External Feed Url";
+
+        }
+
+        /// <summary>
+        /// ICompany_Results_Table_Type_Options Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/View Templates/Company Results Table Type</para>	
+        /// <para>ID: 591df9ca-470f-46c3-9b50-74c8ff1baab9</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Results_Table_TypeConstants.TemplateIdString)]
+        public partial interface ICompany_Results_Table_Type_Options : IGlassBase
+        {
+            /// <summary>
+            /// The Table Type field.
+            /// <para></para>
+            /// <para>Field Type: Droplink</para>		
+            /// <para>Field ID: f211373c-b268-4347-aa2b-30421878fbd3</para>
+            /// </summary>
+            [SitecoreField(ICompany_Results_Table_TypeConstants.Table_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+            ICompany_Results_Table_Type_Option TableType { get; set; }
+        }
+
+        public static partial class ICompany_Results_Table_TypeConstants
+        {
+
+            public const string TemplateIdString = "591df9ca-470f-46c3-9b50-74c8ff1baab9";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Company Results Table Type";
+
+
+            public static readonly ID Table_TypeFieldId = new ID("f211373c-b268-4347-aa2b-30421878fbd3");
+            public const string Table_TypeFieldName = "Table Type";
+
+
+        }
+
+        /// <summary>
+        /// ICompany_Results_Table_Type_Option Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/Configuration/Company Results Table Type Option</para>	
+        /// <para>ID: 2f0348bd-e79d-4372-9aa4-13a9df43ffc2</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Results_Table_Type_OptionConstants.TemplateIdString)]
+        public partial interface ICompany_Results_Table_Type_Option : IGlassBase
+        {
+            /// <summary>
+            /// The Value field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: b58e3a4f-60c4-4a8c-880d-b80dccfcd126</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Results_Table_Type_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string Value { get; set; }
+        }
+        public static partial class ICompany_Results_Table_Type_OptionConstants
+        {
+
+            public const string TemplateIdString = "2f0348bd-e79d-4372-9aa4-13a9df43ffc2";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Company Results Table Type Option";
+
+
+            public static readonly ID ValueFieldId = new ID("b58e3a4f-60c4-4a8c-880d-b80dccfcd126");
+            public const string ValueFieldName = "Value";
+
+
+        }
 
     }
 

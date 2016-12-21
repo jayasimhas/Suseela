@@ -3,7 +3,7 @@
 @*Jobs Listing Page*@
 <div class="main__content">
     <div>
-        <div class="action-flags-bar article-prologue"></div>
+        @*<div class="action-flags-bar article-prologue"></div>*@
         <div class="job_listing">
             <h1>@Model.Title</h1>
             <div class="sub-heading-text">
@@ -14,18 +14,18 @@
                 <div class="stacked_job_view" id="content">
                     @foreach (var job in Model.JobTiles)
                 {
-                        <div class="job_list_individual eachCategory">
-                            <div class="job_logo">
-                                <a href="@job.JobDetailUrl">
-                                    @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
-                                    {
-                                        <img src="@job.JobLogo.Src" alt="logo" />
-                                    }
-                                </a>
-                            </div>
+                        <div class="job_list_individual eachCategory">                            
                             <div class="job_description">
                                 <div class="job_heading">
                                     <h3><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
+                                </div>
+                                <div class="job_logo">
+                                    <a href="@job.JobDetailUrl">
+                                        @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
+                                        {
+                                            <img src="@job.JobLogo.Src" alt="logo" />
+                                        }
+                                    </a>
                                 </div>
                                 <div class="job_description_detail">
                                     <p>

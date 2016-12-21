@@ -156,12 +156,13 @@
     }
 
     @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
-    @if (!string.IsNullOrEmpty(Model.Summary))
+    @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
     {
         @* * * Executive Summary *@
+
         <div class="article-executive-summary">
-            <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.Summary</h4>
-            <p style="font-size:18px; line-height:30px; color:#58595b;">@Model.Body</p>
+        <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
+        <span class="article-executive-summary-body" style="font-size:18px;color:#58595b;">@Model.Summary</span>
         </div>
         @* End Executive Summary  *@
     }
@@ -171,7 +172,7 @@
     @* * *  ARTICLE - FEATURED IMAGE
         IIPP-117 *@
     <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
-        <img src="" alt="@Model.ImageAltText">
+        <img src="@Model.GetScaledImage(790)" alt="@Model.ImageAltText">
         <table width="100%">
             <tr><td>&nbsp;</td></tr>
             <tr>
@@ -180,19 +181,59 @@
                 </td>
                 <td align="right">
                     @if (!string.IsNullOrEmpty(Model.ImageSource))
-                {
+                    {
 
                         <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
                              @Model.ImageSource
-                        </span>}
+                        </span>
+                    }
                 </td>
             </tr>
         </table>
     </div>
-
 }
         @* * *  END ARTICLE - FEATURED IMAGE *@
+    @*@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))*@
+    <p style="font-size:18px; line-height:30px; color:#58595b;">@Model.Body</p>
+
 </div>
+@if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+{
+    <table>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+        <tr><td>&nbsp;</td></tr>
+    </table>
+    <div class="article-related-content">
+        <h2>Related Content</h2>
+        <table width="100%">
+            @foreach (var article in Model.RelatedArticles)
+            {
+                //Html.RenderPartial("/Views/Shared/Components/PDF/PDFRelatedArticles.cshtml", article);
+                <tr>
+                    <td>
+                        <span style="float: left; margin-right:10px; margin-top:5px; margin-bottom:20px;">
+                            <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" />
+                            <span style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; margin-top:5px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                                <a style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" class="click-utag"
+                                   href="@article.LinkableUrl"
+                                   data-info='{
+			"event_name": "related_content_click_through",
+			@*"main-article": "@Sitecore.Context.Item.DisplayName",*@
+			"related-article": "@article.ListableTitle",
+			@*"click_through_source": "@Sitecore.Context.Item.DisplayName",*@
+			"click_through_destination": "@article.ListableTitle"
+		}'>
+                                    @Html.Raw(article.ListableTitle)
+                                </a>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
 <table>
     <tr><td>&nbsp;</td></tr>
     <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" /> </td></tr>

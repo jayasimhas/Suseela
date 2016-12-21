@@ -1,0 +1,9 @@
+﻿@model Informa.Web.ViewModels.FinanceCompanies.CompaniesResultViewModel
+
+@if (Model != null)
+{
+    <script type="text/javascript">
+        var jsonData = @Html.Raw(Model.JsonData);
+    </script>
+    @Html.Raw(Model.ResultsData)
+}

@@ -362,6 +362,8 @@
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
+    <Compile Include="SalesforceConfiguration\ISalesforceConfigurationContext.cs" />
+    <Compile Include="SalesforceConfiguration\SalesforceConfigurationContext.cs" />
     <Compile Include="Search\ComputedFields\Facets\AgencyRegulatorField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommercialField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommoditiesField.cs" />
@@ -421,6 +423,8 @@
     <Compile Include="Search\SearchManager\AgriSearchManager.cs" />
     <Compile Include="Search\SearchManager\PharmaSearchManager.cs" />
     <Compile Include="Search\SearchManager\SearchManagerFactory.cs" />
+    <Compile Include="Services\ExternalFeeds\CompaniesResultService.cs" />
+    <Compile Include="Services\ExternalFeeds\ICompaniesResultService.cs" />
     <Compile Include="Subscription\ChannelSubscription.cs" />
     <Compile Include="Subscription\IChannelSubscription.cs" />
     <Compile Include="Subscription\ITopicSubscription.cs" />

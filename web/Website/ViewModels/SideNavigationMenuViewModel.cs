@@ -181,7 +181,7 @@ namespace Informa.Web.ViewModels
                                 channelSubscriptions.Add(subscription);
                             }
                         }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
+                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = false });
                     }
 
                     //Topic based subscriptions
@@ -194,10 +194,10 @@ namespace Informa.Web.ViewModels
                             {
                                 if (!string.IsNullOrWhiteSpace(subscription.TopicId) && subscription.ExpirationDate > DateTime.Now)
                                 {
-                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate });
+                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate, _ChannelId = subscription.TopicId });
                                 }
                             }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
+                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = true });
                     }
                     return subscriptions;
                 }
