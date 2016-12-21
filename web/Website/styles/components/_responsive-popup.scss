@@ -1,8 +1,9 @@
-.responsive-table-modal {
+.ID-responsive-table-modal {
     display: none;
     position: fixed;
     z-index: 90899;
     padding-top: 100px;
+    padding-bottom: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -11,11 +12,17 @@
     background-color: black;
     background-color: rgba(0, 0, 0, 0.4);
     .container {
-        background-color: #f1f2f2;
+        background-color: #fff;
         margin: auto;
         padding: 20px;
         border: 1px solid #d1d3d4;
         width: 80%;
+        .table-wrapper {
+            width: 100%;
+            @include breakpoint('medium') {
+                overflow-x: scroll;
+            }
+        }
         .table_close {
             color: #231f20;
             float: right;
@@ -32,6 +39,7 @@
         }
         .tableRow { 
             display: table-row;
+            &:nth-child(odd) {background-color: $color-concrete-table-gray;}
         }
         .tableHeading { 
             display: table-header-group;
@@ -50,7 +58,7 @@
         .tableFoot { display: table-footer-group; }
         .tableCell, .tableHead { 
             display: table-cell;
-            padding: 5px 0;
+            padding: 5px;
             border-left: 1px solid $color-white;
         }
     }
@@ -61,6 +69,7 @@
     font-style: normal;
     @include textMix('Roboto', 1.125em, 400);
     margin-top: 45px;
+    padding: 5px;
     span{
         @include textMix('Roboto', 1.125em, 700);
         padding-left:10px;
