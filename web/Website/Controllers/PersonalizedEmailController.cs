@@ -24,7 +24,7 @@ namespace Informa.Web.Controllers
 
         public PersonalizedEmailController(EmailUtil emailUtil, ILog logger)
         {
-           
+
             _emailUtil = emailUtil;
             _logger = logger;
         }
@@ -32,8 +32,6 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public HttpResponseMessage Get(string userId)
         {
-            
-           
 
             var isMailSent = false;
 
@@ -41,45 +39,49 @@ namespace Informa.Web.Controllers
             response.StatusCode = string.IsNullOrWhiteSpace(userId) ? HttpStatusCode.BadRequest : HttpStatusCode.OK;
 
 
-            bool UnitTest = WebConfigurationManager.AppSettings["UnitTest"]=="1"?true:false;
-
-            if (!string.IsNullOrWhiteSpace(userId) && UnitTest)
+            if (WebConfigurationManager.AppSettings["UnitTest"] != null)
             {
-             
-                var emailBody = GetEmailBody(userId);
-                var personalizedEmail = new Email
-                {
-                    To = userId,
-                    Subject = "Personalized Test",
-                    From = "ebodkhe@sapient.com",
-                    Body = emailBody,
-                    IsBodyHtml = true
-                };
 
-                EmailSender EmailSender = new EmailSender();
-
-                var isEmailSent = EmailSender.Send(personalizedEmail);
-                 isMailSent = isEmailSent;
-                if (!isEmailSent)
+                if (!string.IsNullOrWhiteSpace(userId))
                 {
-                    _logger.Warn($"Email sender failed");
+
+                    var emailContent = _emailUtil.CreatePersonalizedEmailBody(userId);
+                    response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
+
+                    var emailBody = GetEmailBody(userId, emailContent.ToString());
+                    var personalizedEmail = new Email
+                    {
+                        To = userId,
+                        Subject = "Personalized Test",
+                        From = "ebodkhe@sapient.com",
+                        Body = emailBody,
+                        IsBodyHtml = true
+                    };
+
+                    EmailSender EmailSender = new EmailSender();
+
+                    var isEmailSent = EmailSender.Send(personalizedEmail);
+                    isMailSent = isEmailSent;
+                    if (!isEmailSent)
+                    {
+                        _logger.Warn($"Email sender failed");
+                    }
                 }
             }
-
             return response;
+
         }
 
 
-
-        public string GetEmailBody(string senderEmail)
+        public string GetEmailBody(string senderEmail, string PersonalizedContent)
         {
             string emailHtml = string.Empty;
             try
             {
-                   
- 
-                 IHtmlEmailTemplateFactory HtmlEmailTemplateFactory = new HtmlEmailTemplateFactory();
-                 var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("Emailtemplatepersonalization");
+
+
+                IHtmlEmailTemplateFactory HtmlEmailTemplateFactory = new HtmlEmailTemplateFactory();
+                var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("Emailtemplatepersonalization");
 
 
                 if (htmlEmailTemplate == null)
@@ -91,7 +93,7 @@ namespace Informa.Web.Controllers
                 var replacements = new Dictionary<string, string>
                 {
                     ["#FirstName#"] = senderEmail,
-                    ["#Personalized_Content#"] = senderEmail,
+                    ["#Personalized_Content#"] = PersonalizedContent.ToString(),
                     ["#email#"] = senderEmail,
                 };
 
