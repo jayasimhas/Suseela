@@ -37,7 +37,8 @@ namespace Informa.Web.Controllers
 
             var response = new HttpResponseMessage();
             response.StatusCode = string.IsNullOrWhiteSpace(userId) ? HttpStatusCode.BadRequest : HttpStatusCode.OK;
-
+            var emailContent = _emailUtil.CreatePersonalizedEmailBody(userId);
+            response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
 
             if (WebConfigurationManager.AppSettings["UnitTest"] != null)
             {
@@ -45,8 +46,6 @@ namespace Informa.Web.Controllers
                 if (!string.IsNullOrWhiteSpace(userId))
                 {
 
-                    var emailContent = _emailUtil.CreatePersonalizedEmailBody(userId);
-                    response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
 
                     var emailBody = GetEmailBody(userId, emailContent.ToString());
                     var personalizedEmail = new Email
