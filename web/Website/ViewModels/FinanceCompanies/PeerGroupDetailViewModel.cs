@@ -25,25 +25,9 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         /// </summary>
         public string PeerGroupPageTitle => GetPageTitle();
         /// <summary>
-        /// Instruction Copy Title
-        /// </summary>
-        public string InstructionTitle => GlassModel?.Title;
-        /// <summary>
-        /// Instruction Text
-        /// </summary>
-        public string InstructionText => GlassModel?.Body;
-        /// <summary>
         /// Dictionary Item for Page Title
         /// </summary>
         public string PeerGroupPageTitleTemplate => TextTranslator.Translate("PeerGroup.DetailPage.Title");
-        /// <summary>
-        /// Dictionary Item for Dont show message text
-        /// </summary>
-        public string DontShowMessageText => TextTranslator.Translate("Dont.Show.This.Message.Again.Text");
-        /// <summary>
-        /// Dictionary Item for Close Button Text
-        /// </summary>
-        public string CloseButtonText => TextTranslator.Translate("PeerGroup.DetailClose.ButtonText");
         /// <summary>
         /// Method for fetching Peer Page Title
         /// </summary>
