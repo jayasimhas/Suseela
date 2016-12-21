@@ -1,0 +1,79 @@
+.ID-Responsive-Table{
+			position:relative;
+			width: 100%;
+			float: left;
+			.table_head{
+				background-color: $color-ship-gray;
+				color: $color-white;
+				.RB16{
+				   @include textMix('Roboto', 1.0625em, 700);
+				   font-style: normal;
+				}
+				.R16{
+				   @include textMix('Roboto', 1.0625em, 400);
+				   font-style: normal;
+				}
+			}
+			.states_heading{
+				position:relative;
+				float:left;
+				width:30%;
+				border-right:1px solid $color-light-gray; 
+				.redbg{
+					background-color: $color-red !important;
+				}	
+				div{
+					margin-bottom:10px;
+					padding:10px;
+				}
+				div:nth-child(odd){
+					background-color: $color-concrete-table-gray;
+				}
+			}
+			.RB16{
+				   @include textMix('Roboto', 1em, 700);
+				   font-style: normal;
+				}
+			.article{
+				width:100%;
+				text-align: center;
+				div:nth-child(odd){
+				 background-color: #f1f1f1;
+
+				}
+				.R16{
+				    height: 58px;
+					padding-top: 14px;
+					margin-top: 10px;
+				}
+				
+			}
+			.year_heading{
+			  background-color: #bb1528 !important;
+				color: white;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.owl-dots{
+			  float: left;
+			  margin-top: 20px;
+			}
+			.owl-nav {
+				float:right;
+			}
+			.owl-item.active{
+				width:5% !important;
+				margin-right: 1px !important;
+			}
+			.owl-controls{
+				position:absolute;
+				top:-51px;
+				right: 0px;
+			}	
+			.owl-theme .owl-controls .owl-nav div{
+				background: none;
+				padding:0;
+				margin:0 3px;
+			}
+			
+}
