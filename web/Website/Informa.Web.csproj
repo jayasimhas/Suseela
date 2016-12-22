@@ -1130,6 +1130,7 @@
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -1138,7 +1139,7 @@
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
     <Compile Include="Controllers\PersonalizedEmailController.cs" />
-    <Compile Include="Controllers\ProcessUserRequestController.cs" />
+    <Compile Include="Areas\User\Controllers\ProcessUserRequestController.cs" />
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
@@ -1977,6 +1978,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Content\" />
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="fonts\" />
@@ -2043,6 +2046,7 @@
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <Content Include="App_Config\Sitecore.config.template" />
+    <Content Include="Areas\User\Views\web.config" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2208,6 +2212,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Informa.Library.Salesforce.V2\Informa.Library.Salesforce.V2.csproj">
+      <Project>{e0b138b6-fdc6-4e61-ae3c-23f909b85ee4}</Project>
+      <Name>Informa.Library.Salesforce.V2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
       <Project>{69ff8121-1969-4032-90fa-b4b9148cd780}</Project>
       <Name>Informa.Library.Salesforce</Name>
