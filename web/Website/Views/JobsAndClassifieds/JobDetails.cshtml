@@ -11,7 +11,10 @@
             </div>
             <div class="job_logo">
                 <a href="#">
-                    <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">
+                    @if (!string.IsNullOrEmpty(Model.JobLogo?.Src))
+                    {
+                        <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">
+                    }
                 </a>
             </div>
             <div class="job_description">
