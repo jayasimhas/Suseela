@@ -9,13 +9,11 @@
                 <p>@Model.JobSubTitle</p>
                 <p>@Model.PublishedText @Model.PublishedDate.ToString("d MMMM yyyy") @Model.PublishedDate.ToShortTimeString()</p>
             </div>
-            <div class="job_logo">
-                <a href="#">
+            <div class="job_logo">                
                     @if (!string.IsNullOrEmpty(Model.JobLogo?.Src))
                     {
                         <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">
                     }
-                </a>
             </div>
             <div class="job_description">
                 <p>@Html.Raw(Model.JobDescription)</p>

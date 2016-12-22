@@ -205,8 +205,8 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px; text-align:justify;\"",
-                    ["<li>"] = "<li style=\"color:#58595b; font-size:18px; line-height:30px;\">",
+                    ["<p"] = "<p style=\"color:#58595b; font-size:15px; line-height:20px; text-align:justify;\"",
+                    ["<li>"] = "<li style=\"color:#58595b; font-size:15px; line-height:20px;\">",
                     ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail,
                     ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
@@ -279,7 +279,6 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
-
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
                 {
@@ -294,20 +293,19 @@ namespace Informa.Web.Areas.Account.Controllers
                         {
                             foreach (var amchartNode in amchartNodes)
                             {
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
                             }
                         }
-
                         //Tableau in Article
                         var tableauNodes = articleNode.SelectNodes(".//div[@class='article-data-tool-placeholder']")?.ToList();
                         if (tableauNodes != null && tableauNodes.Any())
                         {
                             foreach (var tableauNode in tableauNodes)
                             {
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:18px; line-height:30px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:30px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
@@ -315,16 +313,15 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
-
-                var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//span[@class='article-executive-summary-body']")?.ToList();
+                var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-executive-summary-body']")?.ToList();
                 if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
                 {
                     foreach (var executiveSummaryNode in executiveSummaryNodes)
                     {
                         if (executiveSummaryNode.FirstChild.Name != "p")
                         {
-                            var newNode = HtmlNode.CreateNode("<span class=\"article-executive-summary-body\" style=\"font-size:18px; color:#58595b;\">");
-                            newNode.InnerHtml = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\">" + executiveSummaryNode.InnerHtml + "</p>";
+                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; line-height:1px; color:#58595b; text-align:justify;\">");
+                            newNode.InnerHtml = "<p style=\"color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + executiveSummaryNode.InnerHtml + "</p>";
                             executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
                     }
@@ -498,7 +495,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 sections.Add(sec);
             }
         }
-
         /// <summary>
         /// Create sections from Channels for entitlement
         /// </summary>
@@ -534,7 +530,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 sections.Add(sec);
             }
         }
-
         /// <summary>
         /// Creates the sections from topics.
         /// </summary>
@@ -560,7 +555,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
             }
         }
-
         /// <summary>
         /// Get article based on date.
         /// </summary>
@@ -583,7 +577,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 TotalResults = results.TotalResults
             };
         }
-
         /// <summary>
         /// Get Related Articles
         /// </summary>
@@ -699,17 +692,11 @@ namespace Informa.Web.Areas.Account.Controllers
             cb.ShowText(!string.IsNullOrEmpty(CommonFooter) ? CommonFooter : string.Empty);
             cb.EndText();
 
-
-            //ColumnText ct = new ColumnText(cb);
-            //ct.SetSimpleColumn(document.PageSize.GetLeft(40), document.PageSize.GetBottom(20), 70, 70, 20, Element.ALIGN_CENTER);
-            //ct.Go();
-
-
             //Move the pointer and draw line to separate header section from rest of page
             if (writer.PageNumber == 1)
             {
-                cb.MoveTo(40, document.PageSize.Height - 80);
-                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 80);
+                cb.MoveTo(40, document.PageSize.Height - 85);
+                cb.LineTo(document.PageSize.Width - 40, document.PageSize.Height - 85);
                 cb.Stroke();
                 cb.SetColorStroke(BaseColor.DARK_GRAY);
             }
