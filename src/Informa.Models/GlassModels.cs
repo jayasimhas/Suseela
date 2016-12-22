@@ -1311,12 +1311,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company Logo
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_Logo { get; set; }
+        Image Company_Logo { get; set; }
         /// <summary>
         /// Company Url
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Company_Url { get; set; }
+        Link Company_Url { get; set; }
         /// <summary>
         /// Introduction Text
         /// </summary>
@@ -13327,7 +13327,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
         public static readonly ID Leaderboard_Slot_ID2FieldId = new ID("E52011EE-7E25-4822-871C-FD3EDFB90FFC");
-        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID";
+        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID2";
 
         public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
         public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -28598,6 +28598,72 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
             public static readonly ID External_Feed_UrlFieldId = new ID("1649579a-1b99-4c6f-b6ef-046cc912492b");
             public const string External_Feed_UrlFieldName = "External Feed Url";
+
+        }
+
+        /// <summary>
+        /// ICompany_Results_Table_Type_Options Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/View Templates/Company Results Table Type</para>	
+        /// <para>ID: 591df9ca-470f-46c3-9b50-74c8ff1baab9</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Results_Table_TypeConstants.TemplateIdString)]
+        public partial interface ICompany_Results_Table_Type_Options : IGlassBase
+        {
+            /// <summary>
+            /// The Table Type field.
+            /// <para></para>
+            /// <para>Field Type: Droplink</para>		
+            /// <para>Field ID: f211373c-b268-4347-aa2b-30421878fbd3</para>
+            /// </summary>
+            [SitecoreField(ICompany_Results_Table_TypeConstants.Table_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+            ICompany_Results_Table_Type_Option TableType { get; set; }
+        }
+
+        public static partial class ICompany_Results_Table_TypeConstants
+        {
+
+            public const string TemplateIdString = "591df9ca-470f-46c3-9b50-74c8ff1baab9";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Company Results Table Type";
+
+
+            public static readonly ID Table_TypeFieldId = new ID("f211373c-b268-4347-aa2b-30421878fbd3");
+            public const string Table_TypeFieldName = "Table Type";
+
+
+        }
+
+        /// <summary>
+        /// ICompany_Results_Table_Type_Option Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/Configuration/Company Results Table Type Option</para>	
+        /// <para>ID: 2f0348bd-e79d-4372-9aa4-13a9df43ffc2</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ICompany_Results_Table_Type_OptionConstants.TemplateIdString)]
+        public partial interface ICompany_Results_Table_Type_Option : IGlassBase
+        {
+            /// <summary>
+            /// The Value field.
+            /// <para></para>
+            /// <para>Field Type: Integer</para>		
+            /// <para>Field ID: b58e3a4f-60c4-4a8c-880d-b80dccfcd126</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Results_Table_Type_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string Value { get; set; }
+        }
+        public static partial class ICompany_Results_Table_Type_OptionConstants
+        {
+
+            public const string TemplateIdString = "2f0348bd-e79d-4372-9aa4-13a9df43ffc2";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "Company Results Table Type Option";
+
+
+            public static readonly ID ValueFieldId = new ID("b58e3a4f-60c4-4a8c-880d-b80dccfcd126");
+            public const string ValueFieldName = "Value";
+
 
         }
 

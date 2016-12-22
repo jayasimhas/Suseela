@@ -30,7 +30,7 @@ import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
 import './components/id-comparechart';
-
+import './components/financial-responsive-table';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';

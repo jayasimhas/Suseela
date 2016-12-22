@@ -5,6 +5,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 
 namespace Informa.Web.ViewModels
 {
@@ -80,13 +81,14 @@ namespace Informa.Web.ViewModels
             }
             else //Default to Global Article and Global Leaderboard
             {
+                var basePageModel = GlassModel as I___BasePage;
                 RectangularAdZone = SiteRootContext.Item?.Global_Article_Ad_Zone;
                 RectangularSlotId = SiteRootContext.Item?.Global_Article_Medium_Slot_ID;
                 RectangularSlotId2 = SiteRootContext.Item?.Global_Rectangular_Slot_ID2;
                 RectangularSlotId3 = SiteRootContext.Item?.Global_Rectangular_Slot_ID3;
                 LeaderboardAdZone = SiteRootContext.Item?.Global_Leaderboard_Ad_Zone;
-                LeaderboardSlotId = SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
-                LeaderboardSlotId2 = SiteRootContext.Item?.Global_Leaderboard_Slot_ID2;
+                LeaderboardSlotId = (basePageModel != null && !string.IsNullOrWhiteSpace(basePageModel.Leaderboard_Slot_ID)) ? basePageModel.Leaderboard_Slot_ID : SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
+                LeaderboardSlotId2 = (basePageModel != null && !string.IsNullOrWhiteSpace(basePageModel.Leaderboard_Slot_ID2)) ? basePageModel.Leaderboard_Slot_ID2 : SiteRootContext.Item?.Global_Leaderboard_Slot_ID2;
             }
         }
 

@@ -13,8 +13,8 @@ namespace Informa.Library.PDF
         public string PdfPageUrl { get; set; }
         public PdfType TypeOfPdf { get; set; }
         public string PdfTitle { get; set; }
-        public DateTime PubStartDate { get; set; }
-        public DateTime PubEndDate { get; set; }
+        public DateTime? PubStartDate { get; set; }
+        public DateTime? PubEndDate { get; set; }
         public int ArticleSize { get; set; }
 
     }

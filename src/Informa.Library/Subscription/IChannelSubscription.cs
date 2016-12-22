@@ -8,9 +8,10 @@ namespace Informa.Library.Subscription
 {
     public interface IChannelSubscription
     {
+        string _ChannelId { get; set; }
         string ChannelId { get; set; }
         string ChannelName { get; set; }
         DateTime ExpirationDate { get; set; }
         List<TopicSubscription> SubscribedTopics { get; set; }
-    }
+        }
 }

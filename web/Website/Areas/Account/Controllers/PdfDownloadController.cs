@@ -25,7 +25,7 @@ using Informa.Library.Search.Utilities;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Globalization;
-//using Elsevier.Library.Interfaces.Factory;
+using Informa.Library.Subscription;
 #endregion
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -41,22 +41,25 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly IArticleSearch Searcher;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly SideNavigationMenuViewModel UserSubcriptions;
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
-                                        IGlobalSitecoreService globalService, 
-                                        IArticleSearch articleSearch, 
+                                        IGlobalSitecoreService globalService,
+                                        IArticleSearch articleSearch,
                                         IArticleListItemModelFactory articleListableFactory,
                                         IArticleSearch searcher,
-                                        ITextTranslator textTranslator)
-                                    {
-                                        UserPreferences = userPreferences;
-                                        SiterootContext = siterootContext;
-                                        GlobalService = globalService;
-                                        ArticleSearch = articleSearch;
-                                        ArticleListableFactory = articleListableFactory;
-                                        Searcher = searcher;
-                                        TextTranslator = textTranslator;
-                                    }
+                                        ITextTranslator textTranslator,
+                                        SideNavigationMenuViewModel userSubscriptionsContext)
+        {
+            UserPreferences = userPreferences;
+            SiterootContext = siterootContext;
+            GlobalService = globalService;
+            ArticleSearch = articleSearch;
+            ArticleListableFactory = articleListableFactory;
+            Searcher = searcher;
+            TextTranslator = textTranslator;
+            UserSubcriptions = userSubscriptionsContext;
+        }
 
         /// <summary>
         /// Controller method for downloading pdf
@@ -85,9 +88,23 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkDesc"></param>
         /// <param name="DataToolLinkText"></param>
         /// <returns></returns>
-        public ActionResult GenerateAndDownloadPersonalizePdf(string pdfPageUrl, string userEmail, string PdfTitle, DateTime PubStartDate, DateTime PubEndDate, int ArticleSize, string DataToolLinkDesc, string DataToolLinkText)
+        public ActionResult GenerateAndDownloadPersonalizePdf(string pdfPageUrl, string userEmail, string PdfTitle, DateTime? PubStartDate, DateTime? PubEndDate, int ArticleSize, string DataToolLinkDesc, string DataToolLinkText)
         {
-            //PubStartDate = new DateTime(11/01/2016);
+            if (PubStartDate == default(DateTime) && PubEndDate == default(DateTime))
+            {
+                PubEndDate = DateTime.Now;
+            }
+            else if (PubStartDate > PubEndDate)
+            {
+                PubEndDate = DateTime.Now;
+                PubStartDate = default(DateTime);
+            }
+            else if (PubStartDate == default(DateTime) || PubEndDate == default(DateTime))
+            {
+                PubEndDate = DateTime.Now;
+                PubStartDate = default(DateTime);
+            }
+
             string strngHtml = string.Empty;
             List<PersonalizedPdfViewModel> pdfArticle = new List<PersonalizedPdfViewModel>();
             ArticleSearchRequest artSearch = new ArticleSearchRequest();
@@ -139,6 +156,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 if (perHtml != null)
                     strngHtml += perHtml;
             }
+
             GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfType.Personalized, strngHtml);
             return new EmptyResult();
         }
@@ -187,7 +205,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\"",
+                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px; text-align:justify;\"",
                     ["<li>"] = "<li style=\"color:#58595b; font-size:18px; line-height:30px;\">",
                     ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail,
@@ -226,6 +244,15 @@ namespace Informa.Web.Areas.Account.Controllers
                         if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
                         {
                             img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
+                            string imgWidthInPx = img.Attributes["width"]?.Value;
+                            if (!string.IsNullOrEmpty(imgWidthInPx))
+                            {
+                                int imgWidth = Convert.ToInt32(imgWidthInPx.Contains("px") ? imgWidthInPx.Replace("px", "") : imgWidthInPx);
+                                if (imgWidth > 688)
+                                {
+                                    img.SetAttributeValue("width", "688px");
+                                }
+                            }
                         }
                     }
                 }
@@ -372,7 +399,20 @@ namespace Informa.Web.Areas.Account.Controllers
                     CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);
                 }
             }
-
+            if (sections.Count == 0)
+            {
+                bool IsTopicSubscription = false;
+                IEnumerable<ISubscription> subscriptions = UserSubcriptions.GetValidSubscriptions();
+                //IsTopicSubscription = subscriptions.Select(a => a.IsTopicSubscription);
+                foreach (var sub in subscriptions)
+                {
+                    IsTopicSubscription = sub.IsTopicSubscription;
+                    for (int i = 0; i < sub.SubscribedChannels.Count; i++)
+                    {
+                        CreateSectionsFromChannels(sub.SubscribedChannels[i], sections, IsTopicSubscription);
+                    }
+                }
+            }
             return sections;
         }
 
@@ -460,6 +500,42 @@ namespace Informa.Web.Areas.Account.Controllers
         }
 
         /// <summary>
+        /// Create sections from Channels for entitlement
+        /// </summary>
+        /// <param name="Channel"></param>
+        /// <param name="sections"></param>
+        /// <param name="IsTopicSubscription"></param>
+        private void CreateSectionsFromChannels(ChannelSubscription Channel, List<Web.Models.Section> sections, bool IsTopicSubscription)
+        {
+            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(Channel._ChannelId);
+            if (channelPageItem != null)
+            {
+                Web.Models.Section sec = new Web.Models.Section();
+                sec.TaxonomyIds = new List<string>();
+                sec.ChannelName = channelPageItem?.Display_Text;
+                sec.ChannelId = channelPageItem._Id.ToString();
+                string taxonomyId = string.Empty;
+                if (!IsTopicSubscription)
+                {
+                    taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
+                }
+
+                if (IsTopicSubscription)
+                {
+                    Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
+                    topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(Channel._ChannelId);
+                    taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+
+                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                        sec.TaxonomyIds.Add(taxonomyId);
+                }
+                sections.Add(sec);
+            }
+        }
+
+        /// <summary>
         /// Creates the sections from topics.
         /// </summary>
         /// <param name="sections">The sections.</param>
@@ -492,7 +568,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="PubStartDate"></param>
         /// <param name="PubEndDate"></param>
         /// <returns></returns>
-        public IPersonalizedArticleSearchResults GetArticles(ArticleSearchRequest articleRequest, DateTime PubStartDate, DateTime PubEndDate)
+        public IPersonalizedArticleSearchResults GetArticles(ArticleSearchRequest articleRequest, DateTime? PubStartDate, DateTime? PubEndDate)
         {
             //if (articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
             //    return new { Articles = "No articles found" };

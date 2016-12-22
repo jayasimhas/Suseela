@@ -8,6 +8,7 @@ namespace Informa.Library.Subscription
 {
    public class ChannelSubscription:IChannelSubscription
     {
+        public string _ChannelId { get; set; }
         public string ChannelId { get; set; }
         public string ChannelName { get; set; }
         public DateTime ExpirationDate { get; set; }

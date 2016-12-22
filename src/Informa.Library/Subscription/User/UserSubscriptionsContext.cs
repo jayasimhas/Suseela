@@ -67,7 +67,10 @@ namespace Informa.Library.Subscription.User
                         {
                             foreach (var channel in channelPages)
                             {
-                                channelSubscription.Add(new ChannelSubscription { ChannelId = channel.Channel_Code, ExpirationDate = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).Select(p => p.ExpirationDate).FirstOrDefault() });
+                                channelSubscription.Add(new ChannelSubscription { ChannelId = channel.Channel_Code,
+                                    ExpirationDate = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).Select(p => p.ExpirationDate).FirstOrDefault(),
+                                    _ChannelId = channel._Id.ToString()
+                                });
 
                             }
                         }

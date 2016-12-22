@@ -219,9 +219,9 @@
                                    href="@article.LinkableUrl"
                                    data-info='{
 			"event_name": "related_content_click_through",
-			"main-article": "@Sitecore.Context.Item.DisplayName",
+			@*"main-article": "@Sitecore.Context.Item.DisplayName",*@
 			"related-article": "@article.ListableTitle",
-			"click_through_source": "@Sitecore.Context.Item.DisplayName",
+			@*"click_through_source": "@Sitecore.Context.Item.DisplayName",*@
 			"click_through_destination": "@article.ListableTitle"
 		}'>
                                     @Html.Raw(article.ListableTitle)
