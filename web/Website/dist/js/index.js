@@ -753,6 +753,7 @@ $(window).on('scroll', function () {
 				type: type,
 				success: function success(data) {
 					//if (data.articles && typeof data.articles === "object" && data.articles.length >= 3) {
+					window.ResponsiveJSON = data;
 					self.RenderCarousel(data, id);
 					self.RenderModal(data, id);
 					//}
@@ -789,25 +790,32 @@ $(window).on('scroll', function () {
 			}
 		},
 		RenderCarousel: function RenderCarousel(data, Parent) {
+
+			Parent.find('.owl-carousel').remove();
+			Parent.find('.states_heading').find('.RB16').remove();
+			Parent.find('.states_heading').after('<div class="owl-carousel"></div>');
 			var CreateList = data[0];
+
 			for (var key in CreateList) {
 				if (Array.isArray(CreateList[key])) {
-					Parent.find('.owl-carousel').append('<div class="article" data-head="' + key + '"><div class="year_heading">' + key + '</div></div>');
+					Parent.find('.owl-carousel').append('<div class="article" data-head="' + key + '"><div class="year_heading">' + key + '<a href="#" class="sort" type="ascending"></a><a href="#" class="sort" type="descending"></a></div></div>');
 				}
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
 			for (var i = 0; i < data.length; i++) {
-				var Item = data[i];
+				var Item = data[i],
+				    index = i;
 				Parent.find('.states_heading').append('<div class="RB16">' + data[i].Company + '</div>');
 				for (var key in Item) {
 					if (Array.isArray(Item[key])) {
-						Parent.find('.article[data-head="' + key + '"]').append('<div  class="R16">' + Item[key][0].value + '</div>');
+						Parent.find('.article[data-head="' + key + '"]').append('<div  class="R16 TableRow' + index + '">' + Item[key][0].value + '</div>');
 					}
 				}
 			}
 			this.InitiateCarousel(Parent);
 			this.HeightManagement(Parent);
+			this.SortingFunctionality(Parent);
 		},
 		HeightManagement: function HeightManagement(Parent) {
 			Parent.find('.states_heading .RB16').each(function (key) {
@@ -825,6 +833,7 @@ $(window).on('scroll', function () {
 			});
 		},
 		InitiateCarousel: function InitiateCarousel(Parent) {
+
 			Parent.find('.owl-carousel').owlCarousel({
 				loop: true,
 				margin: 10,
@@ -858,8 +867,59 @@ $(window).on('scroll', function () {
 			});
 			$(document).on('click', '#modal-table .table_close', function (e) {
 				e.preventDefault();
-				$(this).parents('.responsive-table-modal').hide();
+				$(this).parents('.ID-responsive-table-modal').hide();
 			});
+			$(document).on('click', '.ID-responsive-table-modal', function (e) {
+				if ($(e.target).parents('.container').length > 0 || $(e.target).hasClass('.container')) {
+					return false;
+				} else {
+					$(this).hide();
+				}
+			});
+		},
+		SortingFunctionality: function SortingFunctionality(id) {
+			//Sorting Functionality
+			var self = this;
+			$(document).on('click', '.year_heading .sort', function (e) {
+				e.preventDefault();
+				var Parent = $(this).parents('.article'),
+				    Values = Parent.find('.R16'),
+				    Content = Parent.attr('data-head'),
+				    type = $(this).attr('type'),
+				    Items = [];
+
+				Values.each(function () {
+					Items.push(parseFloat($(this).text()));
+				});
+				if (type == "descending") {
+					Items.sort(function (a, b) {
+						return b - a;
+					});
+				} else {
+					Items.sort(function (a, b) {
+						return a - b;
+					});
+				}
+
+				self.RecreateObject(Content, Items, window.ResponsiveJSON, id);
+			});
+		},
+		RecreateObject: function RecreateObject(Content, SortedItem, MainArray, id) {
+			var self = this,
+			    RecreatedArray = [];
+			// id.find('.RB16').remove();
+
+			for (var i = 0; i < SortedItem.length; i++) {
+				for (var key in MainArray) {
+					var _Object = MainArray[key];
+					if (_Object[Content][0].value == SortedItem[i]) {
+						RecreatedArray.push(_Object);
+					}
+				}
+			}
+			// $owl.trigger('destroy.owl.carousel');
+			window.ResponsiveJSON = RecreatedArray;
+			self.RenderCarousel(window.ResponsiveJSON, id);
 		},
 		init: function init(url, id) {
 			var self = this;
