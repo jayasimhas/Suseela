@@ -320,7 +320,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         if (executiveSummaryNode.FirstChild.Name != "p")
                         {
-                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; line-height:1px; color:#58595b; text-align:justify;\">");
+                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; line-height:20px; color:#58595b; text-align:justify;\">");
                             newNode.InnerHtml = "<p style=\"color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + executiveSummaryNode.InnerHtml + "</p>";
                             executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
