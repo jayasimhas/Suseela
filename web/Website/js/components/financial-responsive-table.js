@@ -3,19 +3,14 @@
 	'use strict';
 
 	var ResponsiveTable = {
-		GetAjaxData: function(url, type, id) {
+		GetAjaxData: function(data, id) {
 			var self = this;
-			$.ajax({ 
-				url: url,
-				type: type,
-				success: function (data) { 
-					//if (data.articles && typeof data.articles === "object" && data.articles.length >= 3) {
-						window.ResponsiveJSON = data;
-					 	self.RenderCarousel(data, id);
-					 	self.RenderModal(data, id);
-					//} 
-				}
-			});
+			if(data) {
+				window.ResponsiveJSON = data;
+			 	self.RenderCarousel(data, id);
+			 	self.RenderModal(data, id);
+				//} 
+			}
 		},
 		RenderModal: function(data, id) {
 			var ModalId = $(id).attr('data-modal'),
@@ -185,17 +180,16 @@
         	window.ResponsiveJSON = RecreatedArray;
         	self.RenderCarousel(window.ResponsiveJSON, id);
         },
-		init: function(url, id) {
+		init: function(data, id) {
 			var self = this;
-			self.GetAjaxData(url, 'GET', id);
+			self.GetAjaxData(data, id);
 			self.ModalEvents();
 			self.SortingFunctionality(id);
 		}
 	}
 
 	$('.ID-Responsive-Table').each(function() {
-		var Url = $(this).data('url');
-		ResponsiveTable.init(Url, $(this));	
+		ResponsiveTable.init(window.jsonResult123, $(this));	
 	})
 	
 
