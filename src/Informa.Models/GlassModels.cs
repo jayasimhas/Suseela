@@ -13327,7 +13327,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
         public static readonly ID Leaderboard_Slot_ID2FieldId = new ID("E52011EE-7E25-4822-871C-FD3EDFB90FFC");
-        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID";
+        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID2";
 
         public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
         public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";

@@ -49,70 +49,30 @@
                                 "dataProvider": chartData
                             }
                         );
-        }
+    }
+   
 </script>
 <div>
    <h4 style="margin: 10px 10px 10px 0px; font-size: 25px;">@Model.CompanyName</h4> 
 </div>
 <div style="background-color: #eeeeee;overflow: hidden;">
     <h5>@Model.FiveYearTrends</h5>
-    @*<div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"><a href="/" style="color: #333333;margin-left: 6px;"> Gross Written Premium (&#36;M)</a></h5>
-        <a href="/"><div id="chartdiv1" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_GWP = [{ "colour": "217bb7", "value": 36607.0, "year": 2011 }, { "colour": "217bb7", "value": 39401.0, "year": 2012 }, { "colour": "217bb7", "value": 41243.0, "year": 2013 }, { "colour": "217bb7", "value": 41592.0, "year": 2014 }, { "colour": "217bb7", "value": 39246.0, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"><a href="/" style="color: #333333;margin-left: 6px;"> Net Written Premium (&#36;M)</a></h5>
-        <a href="/"><div id="chartdiv2" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_NWP = [{ "colour": "a6d64f", "value": 31195.0, "year": 2011 }, { "colour": "a6d64f", "value": 33555.0, "year": 2012 }, { "colour": "a6d64f", "value": 35224.0, "year": 2013 }, { "colour": "a6d64f", "value": 36275.0, "year": 2014 }, { "colour": "a6d64f", "value": 34533.0, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;"> Underwriting Result (&#36;M)</a></h5>
-        <a href="/"><div id="chartdiv3" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_UR = [{ "colour": "c6c6c6", "value": -3474.0, "year": 2011 }, { "colour": "c6c6c6", "value": -2874.0, "year": 2012 }, { "colour": "c6c6c6", "value": -1222.0, "year": 2013 }, { "colour": "c6c6c6", "value": -876.0, "year": 2014 }, { "colour": "c6c6c6", "value": -1062.0, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body last" style="float:left;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">Net Result (&#36;M)</a></h5>
-        <a href="/"><div id="chartdiv4" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_NP = [{ "colour": "f08000", "value": 358.0, "year": 2011 }, { "colour": "f08000", "value": 829.0, "year": 2012 }, { "colour": "f08000", "value": 1743.0, "year": 2013 }, { "colour": "f08000", "value": 1833.0, "year": 2014 }, { "colour": "f08000", "value": 514.0, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;"> Shareholders' Funds (&#36;M)</a></h5>
-        <a href="/"><div id="chartdiv5" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_SF = [{ "colour": "de8100", "value": 17461.0, "year": 2011 }, { "colour": "de8100", "value": 18317.0, "year": 2012 }, { "colour": "de8100", "value": 18968.0, "year": 2013 }, { "colour": "de8100", "value": 20218.0, "year": 2014 }, { "colour": "de8100", "value": 19143.0, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">Net Result / NWP %</a></h5>
-        <a href="/"><div id="chartdiv6" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_NWPNR = [{ "colour": "919191", "value": 1.15, "year": 2011 }, { "colour": "919191", "value": 2.47, "year": 2012 }, { "colour": "919191", "value": 4.95, "year": 2013 }, { "colour": "919191", "value": 5.05, "year": 2014 }, { "colour": "919191", "value": 1.49, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body" style="float:left;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;margin-left: 6px;">NWP / Shareholders' Funds %</a></h5>
-        <a href="/"><div id="chartdiv7" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_SFNR = [{ "colour": "92d551", "value": 178.66, "year": 2011 }, { "colour": "92d551", "value": 183.19, "year": 2012 }, { "colour": "92d551", "value": 185.7, "year": 2013 }, { "colour": "92d551", "value": 179.42, "year": 2014 }, { "colour": "92d551", "value": 180.39, "year": 2015 }];</script>
-    </div>
-    <div class="graph-container lightgray-body last" style="float:left;margin-left: 6px;">
-        <h5 style="font-size: 14px;"> <a href="/" style="color: #333333;">Net Result / Shareholders' Funds %</a></h5>
-        <a href="/"><div id="chartdiv8" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-        <script>var chartData_NPSFR = [{ "colour": "689500", "value": 2.05, "year": 2011 }, { "colour": "689500", "value": 4.53, "year": 2012 }, { "colour": "689500", "value": 9.19, "year": 2013 }, { "colour": "689500", "value": 9.07, "year": 2014 }, { "colour": "689500", "value": 2.69, "year": 2015 }];</script>
-    </div>*@
     @foreach (var Graph in Model.AMGraphModels)
     {
         <div class="graph-container lightgray-body" style="float:left;">
             <h5 style="font-size: 14px;"><a href="/financecompanies/company-graphs/?companyid=@Model.CompanyID&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
             <a href="/"><div id="chartdiv_@Graph.GraphID" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
             <script>
-            var chartData_GWP = [{ "colour": "217bb7", "value": "36607.0", "year": "2011" }, { "colour": "217bb7", "value": "39401.0", "year": "2012" }, { "colour": "217bb7", "value": "41243.0", "year": "2013" }, { "colour": "217bb7", "value": "41592.0", "year": "2014" }, { "colour": "217bb7", "value": "39246.0", "year": "2015" }];
             var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
                 var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
                 var chartData = data[0]["@Graph.GraphID"];
-                console.log(chartData_GWP);
-                console.log('tets');
-                console.log(chartData);
                 PrintCompanyGraph(chartData, "chartdiv_@Graph.GraphID", "@Graph.GraphType", "@Graph.GraphColor")
             </script>
         </div>
     }
+    <script type="text/javascript">
+        setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
+    </script>
 </div>
 
 
