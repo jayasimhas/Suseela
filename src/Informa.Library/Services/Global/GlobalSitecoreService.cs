@@ -167,6 +167,12 @@ namespace Informa.Library.Services.Global
             return CacheProvider.GetFromCache(cacheKey, () => BuildSiteRootAncestor(g));
         }
 
+        public IVertical_Root GetVerticalRootAncestor(Guid g)
+        {
+            string cacheKey = CreateCacheKey($"BuildSiteRootAncestor-{g}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildVerticalRootAncestor(g));
+        }
+
         private ISite_Root BuildSiteRootAncestor(Guid g)
         {
             var curItem = SitecoreService.GetItem<Item>(g);
@@ -184,6 +190,25 @@ namespace Informa.Library.Services.Global
                 return null;
 
             return SitecoreService.GetItem<ISite_Root>(rootItem.ID.Guid);
+        }
+
+        private IVertical_Root BuildVerticalRootAncestor(Guid g)
+        {
+            var curItem = SitecoreService.GetItem<Item>(g);
+            if (curItem == null)
+                return null;
+
+            if (curItem.TemplateID == IVertical_RootConstants.TemplateId)
+                return SitecoreService.GetItem<IVertical_Root>(curItem.ID.Guid);
+
+            var rootItem = curItem.Axes
+                  .GetAncestors()
+                  .FirstOrDefault(a => a.Template.ID.Guid.Equals(IVertical_RootConstants.TemplateId.Guid));
+
+            if (rootItem == null)
+                return null;
+
+            return SitecoreService.GetItem<IVertical_Root>(rootItem.ID.Guid);
         }
 
         public string GetPublicationName(Guid g)

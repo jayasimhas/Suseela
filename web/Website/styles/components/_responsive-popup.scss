@@ -75,3 +75,30 @@
         padding-left:10px;
     }
 }
+.sort {
+    float: right;
+    position: relative;
+    width: 15px !important;
+    &::after {
+        content: '';
+        background: url(/dist/img/sprite-image.png) no-repeat 0 -158px;
+        width: 18px;
+        height: 14px;
+        position: absolute;
+        right: 40px;
+        top: 20px;
+    }
+    &[type="ascending"] {
+        position: absolute;
+        top: -4px;
+        right: 0;
+    }
+    &[type="descending"] {
+        position: absolute;
+        top: -7px;
+        right: -15px;
+        &:after {
+            transform: rotateX(-180deg);
+        }
+    }
+}
