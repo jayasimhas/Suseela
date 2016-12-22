@@ -11,7 +11,7 @@ import DropBox from './DragDropTouch';
 //import highlight from './carousel/highlight.pack';
 import zeptoData from './carousel/zepto.data';
 //import app from './carousel/app';
-
+import './carousel/owl.carousel';
 // CONTROLLERS
 import FormController from './controllers/form-controller';
 import PopOutController from './controllers/pop-out-controller';

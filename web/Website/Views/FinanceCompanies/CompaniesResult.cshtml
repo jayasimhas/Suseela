@@ -3,7 +3,27 @@
 @if (Model != null)
 {
     <script type="text/javascript">
-        var jsonData = @Html.Raw(Model.JsonData);
+        var jsonMappingData = @Html.Raw(Model.JsonData);
+        var jsonResult =  @Html.Raw(Model.ResultsData);
     </script>
-    @Html.Raw(Model.ResultsData)
+
+    <div class="table ID-Responsive-Table" data-modal="modal-table" data-url="/dist/js/financial-responsive-table.json" id="ID-Responsive-Table">
+
+        <div class="table_head pad-10">
+            <span class="RB16">TOP COMPANIES, LATEST ANNUAL RESULTS ($M)expand table into lightbox</span>
+            <a href="#" data-toggle="modal-table" class="hidden-xs">
+                <img align="right" src="dist/img/breakout-arrows-transparent.png" />
+            </a>
+        </div>
+        <div class="graybg pad-10">&nbsp;</div>
+        <div>
+            <div class="states_heading">
+                <div class="year_heading">COMPANY</div>
+               
+            </div>
+
+            <div class="owl-carousel">
+            </div>
+        </div>
+    </div>
 }

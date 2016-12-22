@@ -93,17 +93,16 @@ namespace Informa.Web.Areas.Account.Controllers
             if (PubStartDate == default(DateTime) && PubEndDate == default(DateTime))
             {
                 PubEndDate = DateTime.Now;
-                PubStartDate = DateTime.Now.AddHours(-24);
             }
             else if (PubStartDate > PubEndDate)
             {
-                PubStartDate = null;
-                PubEndDate = null;
+                PubEndDate = DateTime.Now;
+                PubStartDate = default(DateTime);
             }
             else if (PubStartDate == default(DateTime) || PubEndDate == default(DateTime))
             {
                 PubEndDate = DateTime.Now;
-                PubStartDate = DateTime.Now.AddHours(-24);
+                PubStartDate = default(DateTime);
             }
 
             string strngHtml = string.Empty;
@@ -157,6 +156,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 if (perHtml != null)
                     strngHtml += perHtml;
             }
+
             GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfType.Personalized, strngHtml);
             return new EmptyResult();
         }

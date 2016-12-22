@@ -1564,6 +1564,39 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
     }
 
+
+    [SitecoreType(TemplateId = ICompany_Landing_PageConstants.TemplateIdString)]
+    public partial interface ICompany_Landing_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+       
+    }
+
+
+    /// <summary>
+    /// ICompany_Landing_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/Company Landing Page</para>	
+    /// <para>ID: 1976D801-8BBE-40C1-93F8-B48F4122D61A</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ICompany_Landing_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+       
+    }
+
+    public static partial class ICompany_Landing_PageConstants
+    {
+
+        public const string TemplateIdString = "1976D801-8BBE-40C1-93F8-B48F4122D61A";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company Landing Page";
+
+
+    }
+
+
+
+
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company
 {
@@ -13327,7 +13360,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
         public static readonly ID Leaderboard_Slot_ID2FieldId = new ID("E52011EE-7E25-4822-871C-FD3EDFB90FFC");
-        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID";
+        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID2";
 
         public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
         public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
