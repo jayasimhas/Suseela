@@ -10,7 +10,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using mshtml;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Text.RegularExpressions;
 
 namespace Informa.Web.ViewModels.JobsAndClassifieds
 {
@@ -80,7 +80,7 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
                             IHTMLDocument2 htmldoc2 = (IHTMLDocument2)htmldoc;
                             htmldoc2.write(new object[] { job.Body });
                             JobShortdesc = htmldoc2.body?.outerText;
-
+                            JobShortdesc = Regex.Replace(JobShortdesc, "\r\n", string.Empty);
                             if (JobShortdesc != null && JobShortdesc.Length > 150)
                             {
                                 jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(JobShortdesc.Take(150).ToArray()) + "...", JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });

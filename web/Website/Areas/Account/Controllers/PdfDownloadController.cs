@@ -44,22 +44,22 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
-                                        IGlobalSitecoreService globalService, 
-                                        IArticleSearch articleSearch, 
+                                        IGlobalSitecoreService globalService,
+                                        IArticleSearch articleSearch,
                                         IArticleListItemModelFactory articleListableFactory,
                                         IArticleSearch searcher,
                                         ITextTranslator textTranslator,
                                         SideNavigationMenuViewModel userSubscriptionsContext)
-                                    {
-                                        UserPreferences = userPreferences;
-                                        SiterootContext = siterootContext;
-                                        GlobalService = globalService;
-                                        ArticleSearch = articleSearch;
-                                        ArticleListableFactory = articleListableFactory;
-                                        Searcher = searcher;
-                                        TextTranslator = textTranslator;
-                                        UserSubcriptions = userSubscriptionsContext;
-                                    }
+        {
+            UserPreferences = userPreferences;
+            SiterootContext = siterootContext;
+            GlobalService = globalService;
+            ArticleSearch = articleSearch;
+            ArticleListableFactory = articleListableFactory;
+            Searcher = searcher;
+            TextTranslator = textTranslator;
+            UserSubcriptions = userSubscriptionsContext;
+        }
 
         /// <summary>
         /// Controller method for downloading pdf
@@ -93,17 +93,16 @@ namespace Informa.Web.Areas.Account.Controllers
             if (PubStartDate == default(DateTime) && PubEndDate == default(DateTime))
             {
                 PubEndDate = DateTime.Now;
-                PubStartDate = DateTime.Now.AddHours(-24);
             }
             else if (PubStartDate > PubEndDate)
             {
-                PubStartDate = null;
-                PubEndDate = null;
+                PubEndDate = DateTime.Now;
+                PubStartDate = default(DateTime);
             }
             else if (PubStartDate == default(DateTime) || PubEndDate == default(DateTime))
             {
                 PubEndDate = DateTime.Now;
-                PubStartDate = DateTime.Now.AddHours(-24);
+                PubStartDate = default(DateTime);
             }
 
             string strngHtml = string.Empty;
@@ -157,6 +156,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 if (perHtml != null)
                     strngHtml += perHtml;
             }
+
             GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfType.Personalized, strngHtml);
             return new EmptyResult();
         }
@@ -205,7 +205,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px;\"",
+                    ["<p"] = "<p style=\"color:#58595b; font-size:18px; line-height:30px; text-align:justify;\"",
                     ["<li>"] = "<li style=\"color:#58595b; font-size:18px; line-height:30px;\">",
                     ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail,
@@ -244,6 +244,15 @@ namespace Informa.Web.Areas.Account.Controllers
                         if (!img.Attributes["src"].Value.StartsWith("http") && !img.Attributes["src"].Value.StartsWith("https") && !img.Attributes["src"].Value.StartsWith("www"))
                         {
                             img.SetAttributeValue("src", domain + img.Attributes["src"].Value);
+                            string imgWidthInPx = img.Attributes["width"]?.Value;
+                            if (!string.IsNullOrEmpty(imgWidthInPx))
+                            {
+                                int imgWidth = Convert.ToInt32(imgWidthInPx.Contains("px") ? imgWidthInPx.Replace("px", "") : imgWidthInPx);
+                                if (imgWidth > 688)
+                                {
+                                    img.SetAttributeValue("width", "688px");
+                                }
+                            }
                         }
                     }
                 }
@@ -390,10 +399,10 @@ namespace Informa.Web.Areas.Account.Controllers
                     CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);
                 }
             }
-            if(sections.Count == 0)
+            if (sections.Count == 0)
             {
                 bool IsTopicSubscription = false;
-                IEnumerable<ISubscription>  subscriptions = UserSubcriptions.GetValidSubscriptions();
+                IEnumerable<ISubscription> subscriptions = UserSubcriptions.GetValidSubscriptions();
                 //IsTopicSubscription = subscriptions.Select(a => a.IsTopicSubscription);
                 foreach (var sub in subscriptions)
                 {

@@ -16,12 +16,14 @@ namespace Informa.Library.Utilities.CMSHelpers
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IGlobalSitecoreService GlobalService;
-        protected string ArticleId = !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["id"])? HttpContext.Current.Request.QueryString["id"]: (string)(HttpContext.Current.Items["nlmArticle"]);
+        protected string ArticleId = (HttpContext.Current != null && !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["id"]))? HttpContext.Current.Request.QueryString["id"]:(HttpContext.Current != null? (string)(HttpContext.Current.Items["nlmArticle"]): null);
+        
         public GlassVerticalRootContext(ISitecoreContext sitecoreContext, IGlobalSitecoreService globalService)
         {
             SitecoreContext = sitecoreContext;
             GlobalService = globalService;
         }
+        
         public Guid verticalGuid => new Guid(SitecoreContext?.GetRootItem<ISite_Root>()._Parent._Id.ToString());
         public IVertical_Root Item => GetVerticalRootItem();
 

@@ -72,7 +72,7 @@
 			}
 			this.InitiateCarousel(Parent);
 			this.HeightManagement(Parent);
-			this.SortingFunctionality(Parent);
+			
 		},
 		HeightManagement: function(Parent) {
 			Parent.find('.states_heading .RB16').each(function(key){
@@ -148,7 +148,9 @@
 					Values = Parent.find('.R16'),
 					Content = Parent.attr('data-head'),
 					type = $(this).attr('type'),
-					Items = [];
+					Items = [],
+					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
+					ControlIndex = CarouselControl.find('.active').index();
 
 				Values.each(function() {
 					Items.push(parseFloat($(this).text()));
@@ -164,6 +166,7 @@
 				}
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id);
+				$('.ID-Responsive-Table').find('.owl-carousel').trigger('jumpTo', ControlIndex);
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id) {
@@ -186,6 +189,7 @@
 			var self = this;
 			self.GetAjaxData(url, 'GET', id);
 			self.ModalEvents();
+			self.SortingFunctionality(id);
 		}
 	}
 
