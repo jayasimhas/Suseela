@@ -189,7 +189,7 @@
 	}
 
 	$('.ID-Responsive-Table').each(function() {
-		ResponsiveTable.init(window.jsonResult123, $(this));	
+		ResponsiveTable.init(window.jsonResult, $(this));	
 	})
 	
 
