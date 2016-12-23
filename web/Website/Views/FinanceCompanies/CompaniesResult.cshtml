@@ -1,16 +1,32 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompaniesResultViewModel
+@using Informa.Library.Utilities.References
 
-@if (Model != null)
+@if (Model != null && Model.RenderingParameters != null)
 {
-    <script type="text/javascript">
-        var jsonMappingData = @Html.Raw(Model.JsonData);
-        var jsonResult =  @Html.Raw(Model.ResultsData);
-    </script>
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.FinancialResults)
+    {
+        <script type="text/javascript">
+            var jsonMappingData = @Html.Raw(Model.JsonMappingData);
+            var jsonResultFinancial =  @Html.Raw(Model.ResultsData);
+        </script>
+    }
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.AnnualResults)
+    {
+        <script type="text/javascript">
+            var jsonResultAnnual =  @Html.Raw(Model.ResultsData);
+        </script>
+    }
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.QuarterlyResults)
+    {
+        <script type="text/javascript">
+            var jsonResultQuarterly =  @Html.Raw(Model.ResultsData);
+        </script>
+    }
 
     <div class="table ID-Responsive-Table" data-modal="modal-table" data-url="/dist/js/financial-responsive-table.json" id="ID-Responsive-Table">
 
         <div class="table_head pad-10">
-            <span class="RB16">TOP COMPANIES, LATEST ANNUAL RESULTS ($M)expand table into lightbox</span>
+            <span class="RB16">@Model.GlassModel.TableTitle</span>
             <a href="#" data-toggle="modal-table" class="hidden-xs">
                 <img align="right" src="dist/img/breakout-arrows-transparent.png" />
             </a>
@@ -23,6 +39,24 @@
             </div>
 
             <div class="owl-carousel">
+            </div>
+        </div>
+    </div>
+
+    <div class="ID-responsive-table-modal" id="modal-table">
+        <div class="container">
+            <span class="table_close">
+                <svg class="dismiss-button__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    UsernamePublicRestriction
+                </svg>
+            </span>
+            <div class="idi-table-heading">
+                <p>@Model.GlassModel.TableTitle</p>
+            </div>
+            <div class="table-wrapper">
+                <div class="table">
+                </div>
             </div>
         </div>
     </div>
