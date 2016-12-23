@@ -43,20 +43,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 reason = response ? SuccessMessage : ErrorMessage
             });
         }
-
-        /// <summary>
-        /// Updates the article identifier.
-        /// </summary>
-        /// <param name="articleData">The article data.</param>
-        [HttpPost]
-        public void UpdateArticleId(PersonalizeUserPreferencesRequest articleData)
-        {
-            if (!string.IsNullOrEmpty(articleData.UserPreferences))
-            {
-                MyViewPageViewModel.ArticleId = articleData.UserPreferences;
-            }
-        }
-
         /// <summary>
         /// Gets the no preferences selected key.
         /// </summary>

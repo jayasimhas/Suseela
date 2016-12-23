@@ -324,12 +324,50 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         if (executiveSummaryNode.FirstChild.Name != "p")
                         {
-                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; line-height:20px; color:#58595b; text-align:justify;\">");
+                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; color:#58595b; text-align:justify;\">");
                             newNode.InnerHtml = "<p style=\"color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + executiveSummaryNode.InnerHtml + "</p>";
                             executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
                     }
                 }
+
+                var jobsAndArticlesNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content' or @class='pdf-classified']")?.ToList();
+                if (jobsAndArticlesNodes != null && jobsAndArticlesNodes.Any())
+                {
+                    var jobNodes = jobsAndArticlesNodes.Where(n => n.Attributes[0].Value == "pdf-classified");
+                    if (jobNodes != null && jobNodes.Any())
+                    {
+                        foreach (var jobNode in jobNodes)
+                        {
+                            if (jobNode != null)
+                            {
+                                var newPageNode = HtmlNode.CreateNode("<div style=\"page-break-before:always\">");
+                                newPageNode.InnerHtml = "<newpage />";
+
+                                if (jobsAndArticlesNodes.First() == jobNode && (jobsAndArticlesNodes.Last() == jobNode))
+                                {
+
+                                }
+                                else if (jobsAndArticlesNodes.First() == jobNode && (jobsAndArticlesNodes.Last() != jobNode))
+                                {
+                                    jobNode.AppendChild(newPageNode);
+                                }
+                                else if (jobsAndArticlesNodes.Last() == jobNode)
+                                {
+                                    jobNode.PrependChild(newPageNode);
+                                }
+                                else
+                                {
+                                    jobNode.PrependChild(newPageNode);
+                                    jobNode.AppendChild(newPageNode);
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
                 ReqdDoc.OptionOutputAsXml = true;
                 ReqdDoc.OptionCheckSyntax = true;
                 ReqdDoc.OptionFixNestedTags = true;
