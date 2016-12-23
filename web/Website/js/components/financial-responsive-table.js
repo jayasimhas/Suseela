@@ -47,12 +47,10 @@
 			Parent.find('.owl-carousel').remove();
 			Parent.find('.states_heading').find('.RB16').remove();
 			Parent.find('.states_heading').after('<div class="owl-carousel"></div>');
-			var CreateList = data[0];
+			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				if(Array.isArray(CreateList[key])) {
-					Parent.find('.owl-carousel').append('<div class="article" data-head="' +key+ '"><div class="year_heading">' + key + '<a href="#" class="sort" type="ascending"></a><a href="#" class="sort" type="descending"></a></div></div>');
-				}
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading">' + CreateList[key].Value + '<a href="#" class="sort" type="ascending"></a><a href="#" class="sort" type="descending"></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 

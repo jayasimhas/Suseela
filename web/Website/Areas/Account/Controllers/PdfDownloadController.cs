@@ -152,6 +152,9 @@ namespace Informa.Web.Areas.Account.Controllers
 
             foreach (var slctArticle in pdfArticle)
             {
+                slctArticle.Body = slctArticle.Body.Contains("<table") ? slctArticle.Body.Replace("<table", "<table id=\"tableFromArticle\"") : slctArticle.Body;
+                slctArticle.Body = slctArticle.Body.StartsWith("<div") ? slctArticle.Body.Replace("<div", "<p") : slctArticle.Body;
+                slctArticle.Body = slctArticle.Body.EndsWith("</div>") ? slctArticle.Body.Replace("</div>", "<p>") : slctArticle.Body;
                 var perHtml = MvcHelpers.GetRazorViewAsString(slctArticle, "~/Views/Shared/Components/PDF/FullArticlePersonalizedPDF.cshtml");
                 if (perHtml != null)
                     strngHtml += perHtml;
@@ -225,6 +228,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         tableNode.SetAttributeValue("width", "688px");
                         tableNode.SetAttributeValue("style", "color:#58595b");
+                        //tableNode.SetAttributeValue("border", "0.5px grey");
                     }
                 }
 

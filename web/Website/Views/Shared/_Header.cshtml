@@ -71,8 +71,8 @@
         @Html.Sitecore().Placeholder("header-search")
 
         <div class="header-account-access">
-          
-                @Html.Sitecore().Placeholder("header-myview")
+
+            @Html.Sitecore().Placeholder("header-myview")
 
             <div class="header-account-right-access">
                 @if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
@@ -114,22 +114,44 @@
                         </svg>
                         <span class="header-account-access__label">@Model.RegisterLinkText</span>
                     </div>
+                    if (Model.UseNewSalesForce)
+                    {
+                        @*<div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"*@
+                        <div class="" style="position:relative; display:inline-block;"
+                             data-pop-out-id="header-signin"
+                             data-pop-out-align="right"
+                             data-pop-out-type="sign-in"
+                             data-pop-out-tab-height="87">
+                            <svg class="header__icons icon-sign-in">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
+                            </svg>
+                            <span class="header-account-access__label">
 
-                    <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
-                         data-pop-out-id="header-signin"
-                         data-pop-out-align="right"
-                         data-pop-out-type="sign-in"
-                         data-pop-out-tab-height="87">
-                        <svg class="header__icons icon-sign-in">
-                            <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
-                        </svg>
-                        <span class="header-account-access__label">@Model.SignInLinkText</span>
-                    </div>
+                                <a href="@Model.AuthorizationRequestUrl">@Model.SignInLinkText</a>
+
+                            </span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
+                             data-pop-out-id="header-signin"
+                             data-pop-out-align="right"
+                             data-pop-out-type="sign-in"
+                             data-pop-out-tab-height="87">
+                            <svg class="header__icons icon-sign-in">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
+                            </svg>
+                            <span class="header-account-access__label">
+                                @Model.SignInLinkText
+                            </span>
+                        </div>
+                    }
 
                 }
             </div>
 
-                </div>
+        </div>
 
 
 

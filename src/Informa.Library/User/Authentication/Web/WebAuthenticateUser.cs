@@ -1,4 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Informa.Library.SalesforceConfiguration;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication.Web
 {
@@ -6,18 +7,24 @@ namespace Informa.Library.User.Authentication.Web
 	public class WebAuthenticateUser : IWebAuthenticateUser
 	{
 		protected readonly IAuthenticateUser AuthenticateUser;
-		protected readonly IWebLoginUser LoginWebUser;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IAuthenticateUserV2 AuthenticateUserV2;
+        protected readonly IWebLoginUser LoginWebUser;
 		protected readonly IUserSession UserSession;
 		private const string sessionKey = nameof(WebAuthenticateUser);
 		public WebAuthenticateUser(
 			IAuthenticateUser authenticateUser,
 			IWebLoginUser loginWebUser,
-			IUserSession userSession)
+			IUserSession userSession,
+            IAuthenticateUserV2 authenticateUserV2,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
 		{
 			AuthenticateUser = authenticateUser;
 			LoginWebUser = loginWebUser;
 			UserSession = userSession;
-		}
+            AuthenticateUserV2 = authenticateUserV2;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+        }
 
 		public IAuthenticatedUser AuthenticatedUser
 		{
@@ -58,5 +65,31 @@ namespace Informa.Library.User.Authentication.Web
 				User = authenticatedUser
 			};
 		}
-	}
+
+        public IWebAuthenticateUserResult Authenticate(string code, string redirectUrl)
+        {
+            var authenticateResult = AuthenticateUserV2.Authenticate(code, "authorization_code", 
+                SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username, 
+                SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Password,
+                redirectUrl);
+            var state = authenticateResult.State;
+
+            var authenticatedUser = authenticateResult.User;
+            var success = state == AuthenticateUserResultState.Success;
+
+            if (success)
+            {
+                var loginResult = LoginWebUser.Login(authenticatedUser, false);
+                success = loginResult.Success;
+                AuthenticatedUser = authenticatedUser;
+            }
+
+            return new WebAuthenticateUserResult
+            {
+                State = state,
+                Success = success,
+                User = authenticatedUser
+            };
+        }
+    }
 }
