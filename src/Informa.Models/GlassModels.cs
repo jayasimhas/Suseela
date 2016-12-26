@@ -28462,7 +28462,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
     public static partial class IFeatured_Article_Display_OptionsConstants
     {
 
-        public const string TemplateIdString = "a615a71f-4608-4648-bd06-0fb63a410c1c    ";
+        public const string TemplateIdString = "a615a71f-4608-4648-bd06-0fb63a410c1c";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Featured Article Display Options";
 

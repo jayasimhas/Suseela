@@ -11,24 +11,27 @@
     using System.Linq;
     using Newtonsoft.Json;
     using Sitecore.Configuration;
+    using Jabberwocky.Glass.Autofac.Mvc.Services;
     public class CompaniesResultViewModel : GlassViewModel<ICompany_Table_Component>
     {
         protected readonly ICompaniesResultService companyResultService;
         protected readonly ISitecoreContext sitecoreContext;
 
-        public CompaniesResultViewModel(ICompaniesResultService CompaniesResultService, ISitecoreContext context)
+        public CompaniesResultViewModel(ICompaniesResultService CompaniesResultService, ISitecoreContext context, IRenderingContextService renderingParametersService)
         {
             companyResultService = CompaniesResultService;
             sitecoreContext = context;
+            RenderingParameters = renderingParametersService.GetCurrentRenderingParameters<ICompany_Results_Table_Type_Options>();
         }
 
+        public ICompany_Results_Table_Type_Options RenderingParameters { get; set; }
         public string ResultsData => !string.IsNullOrWhiteSpace(GlassModel.ExternalFeedUrl) ? 
                                      companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result :
                                      "External feed url is empty";
 
-        public string JsonData => GetJsonData();
+        public string JsonMappingData => GetJsonMappingData();
 
-        private string GetJsonData()
+        private string GetJsonMappingData()
         {
             string result = string.Empty;
             var graphTypeNode = sitecoreContext.GetItem<Item>(Settings.GetSetting("Company.Graph.Type"));
@@ -39,7 +42,7 @@
                 companyGraphItems.AddRange(graphTypeNode.Children.Select(item => sitecoreContext.GetItem<ICompany_Graph>(item.ID.Guid)));
 
                 if(companyGraphItems != null && companyGraphItems.Any())
-                    result = JsonConvert.SerializeObject(companyGraphItems.Select(x => $"{ x.GraphID}:{x.GraphTitle}"));
+                    result = JsonConvert.SerializeObject(companyGraphItems.Select(x => new { Key = x.GraphID, Value = x.GraphTitle } ));
             }
 
             return result;
