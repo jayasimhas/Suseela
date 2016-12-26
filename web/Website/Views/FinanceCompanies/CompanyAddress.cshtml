@@ -2,27 +2,17 @@
 @model  Informa.Web.ViewModels.FinanceCompanies.CompanyAddressViewModel
 
 
-<div style="border:2px solid Grey;">
-    <div>
-        @Model.CompanyID
-    </div>
 
-    <div>
-        @Model.CompanyName
-    </div>
 
-    <div>
-        @Model.CompanyAddress
-    </div>
-    <div>
-        <img src="@Model.CompanyLogo" style="height:50px;" />
-    </div>
+<div class="messaging_webUsers swissgroup">
+    <h3>@Model.CompanyName</h3>
+    <div class="msg-text">
+        <img class="swissImg" width="100" height="62" src="@Model.CompanyLogo" />
+        <p>@Model.CompanyAddress</p>
+        <p>Web: <a href="@Model.CompanyUrl">@Model.CompanyUrl</a></p>
 
-    <div>
-        <a href="@Model.CompanyUrl">@Model.CompanyUrl</a>
-    </div>
+        <hr />
+        <p>@Model.CompanyIntroductionText</p>
 
-    <div>
-        @Model.CompanyIntroductionText
     </div>
 </div>
