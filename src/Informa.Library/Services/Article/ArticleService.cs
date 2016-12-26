@@ -241,7 +241,7 @@ namespace Informa.Library.Services.Article
 
             return (siteRoot != null)
                 ? siteRoot.Publication_Name
-                : string.Empty;
+                : GlobalService.GetPublicationName(article._Id);
         }
 
         public string GetDownloadUrl(IArticle article)
