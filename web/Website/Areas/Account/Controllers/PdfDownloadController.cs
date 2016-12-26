@@ -324,7 +324,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         if (executiveSummaryNode.FirstChild.Name != "p")
                         {
-                            var newNode = HtmlNode.CreateNode("<div class=\"article-executive-summary-body\" style=\"font-size:15px; color:#58595b; text-align:justify;\">");
+                            var newNode = HtmlNode.CreateNode("<span class=\"article-executive-summary-body\" style=\"font-size:15px; color:#58595b; text-align:justify;\">");
                             newNode.InnerHtml = "<p style=\"color:#58595b; font-size:15px; line-height:20px; text-align:justify;\">" + executiveSummaryNode.InnerHtml + "</p>";
                             executiveSummaryNode.ParentNode.ReplaceChild(newNode, executiveSummaryNode);
                         }
@@ -334,39 +334,48 @@ namespace Informa.Web.Areas.Account.Controllers
                 var jobsAndArticlesNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content' or @class='pdf-classified']")?.ToList();
                 if (jobsAndArticlesNodes != null && jobsAndArticlesNodes.Any())
                 {
-                    var jobNodes = jobsAndArticlesNodes.Where(n => n.Attributes[0].Value == "pdf-classified");
-                    if (jobNodes != null && jobNodes.Any())
+                    var newPageNode = HtmlNode.CreateNode("<div style=\"page-break-before:always\">");
+                    newPageNode.InnerHtml = "<newpage />";
+
+                    for (int i = 0; i < jobsAndArticlesNodes.Count(); i++)
                     {
-                        foreach (var jobNode in jobNodes)
+                        if (jobsAndArticlesNodes.ElementAt(i) != null && jobsAndArticlesNodes.ElementAt(i).Attributes[0].Value == "pdf-classified")
                         {
-                            if (jobNode != null)
+                            if (jobsAndArticlesNodes.First() == jobsAndArticlesNodes.ElementAt(i) && jobsAndArticlesNodes.Last() == jobsAndArticlesNodes.ElementAt(i))
                             {
-                                var newPageNode = HtmlNode.CreateNode("<div style=\"page-break-before:always\">");
-                                newPageNode.InnerHtml = "<newpage />";
-
-                                if (jobsAndArticlesNodes.First() == jobNode && (jobsAndArticlesNodes.Last() == jobNode))
+                            }
+                            else if (jobsAndArticlesNodes.First() == jobsAndArticlesNodes.ElementAt(i) && (jobsAndArticlesNodes.Last() != jobsAndArticlesNodes.ElementAt(i)))
+                            {
+                                jobsAndArticlesNodes.ElementAt(i).AppendChild(newPageNode);
+                            }
+                            else if (jobsAndArticlesNodes.Last() == jobsAndArticlesNodes.ElementAt(i))
+                            {
+                                jobsAndArticlesNodes.ElementAt(i).PrependChild(newPageNode);
+                            }
+                            else
+                            {
+                                if ((i + 1) != jobsAndArticlesNodes.Count())
                                 {
-
-                                }
-                                else if (jobsAndArticlesNodes.First() == jobNode && (jobsAndArticlesNodes.Last() != jobNode))
-                                {
-                                    jobNode.AppendChild(newPageNode);
-                                }
-                                else if (jobsAndArticlesNodes.Last() == jobNode)
-                                {
-                                    jobNode.PrependChild(newPageNode);
+                                    if (jobsAndArticlesNodes.ElementAt(i).Attributes[0].Value == jobsAndArticlesNodes.ElementAt(i + 1).Attributes[0].Value)
+                                    {
+                                        jobsAndArticlesNodes.ElementAt(i).PrependChild(newPageNode);
+                                    }
+                                    else
+                                    {
+                                        jobsAndArticlesNodes.ElementAt(i).PrependChild(newPageNode);
+                                        jobsAndArticlesNodes.ElementAt(i).AppendChild(newPageNode);
+                                    }
                                 }
                                 else
                                 {
-                                    jobNode.PrependChild(newPageNode);
-                                    jobNode.AppendChild(newPageNode);
+                                    jobsAndArticlesNodes.ElementAt(i).PrependChild(newPageNode);
+                                    jobsAndArticlesNodes.ElementAt(i).AppendChild(newPageNode);
                                 }
+
                             }
                         }
                     }
                 }
-
-
 
                 ReqdDoc.OptionOutputAsXml = true;
                 ReqdDoc.OptionCheckSyntax = true;

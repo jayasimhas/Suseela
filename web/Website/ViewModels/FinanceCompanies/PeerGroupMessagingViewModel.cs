@@ -27,10 +27,10 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         /// <summary>
         /// Dictionary Item for Dont show message text
         /// </summary>
-        public string DontShowMessageText => TextTranslator.Translate("Dont.Show.This.Message.Again.Text");
+        public string MessageBoxHideText => TextTranslator.Translate("CompanyMessage.HideText");
         /// <summary>
-        /// Dictionary Item for Close Button Text
+        /// Dictionary Item for show message text
         /// </summary>
-        public string CloseButtonText => TextTranslator.Translate("PeerGroup.DetailClose.ButtonText");
+        public string MessageBoxShowText => TextTranslator.Translate("CompanyMessage.ShowText");
     }
 }

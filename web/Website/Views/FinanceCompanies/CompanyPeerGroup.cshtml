@@ -1,20 +1,21 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompanyPeerGroupViewModel
-<div class="company-peer-group">
-    <span class="peer-group-title">@Model.PeerGroupTitle</span>
-    <div class="peer-group-description">
-        @Model.PeerGroupDescription
-        <span class="peer-group-go-btn"><a href="@Model.PeerGroupGoBtnLink">@Model.PeerGroupGoBtnText</a></span>
-    </div>
-    <hr />
-    <div class="companies-inculded">
+<div class="messaging_webUsers companyPeerGrp">
+    <h3>@Model.PeerGroupTitle</h3>
+    <div class="msg-text">
+        <p>@Model.PeerGroupDescription</p>
+        <a class="button--filled goBtn" href="@Model.PeerGroupGoBtnLink">@Model.PeerGroupGoBtnText</a>
+        <hr />
         <p>@Model.PeerGroupHelpText</p>
-        @if (Model.PeerCompanies != null && Model.PeerCompanies.Any())
-        {
-            foreach (var peer in Model.PeerCompanies)
-            {
-                <a href="@peer.LinkableUrl">@peer.LinkableText</a><br/>
-            }
-        }
+        <div class="button-msg-webUser">
+            <div class="msg_link">
+                @if (Model.PeerCompanies != null && Model.PeerCompanies.Any())
+                {
+                    foreach (var peer in Model.PeerCompanies)
+                    {
+                        <a href="@peer.LinkableUrl">@peer.LinkableText</a>
+                    }
+                }
+            </div>
+        </div>
     </div>
 </div>
-

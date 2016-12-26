@@ -3,7 +3,7 @@
 @using Sitecore.Resources.Media
 @inherits CustomGlassView<Informa.Web.ViewModels.PDF.ArticleBodyForPDFViewModel>
 
-<div class="article-body-content">
+<div class="article-body-content" style="text-align:justify">
     <div class="article-metadata">
         <table>
             <tr>
@@ -190,7 +190,7 @@
             <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>
-                    <div class="article-executive-summary-body" style="font-size:15px; line-height:20px; color:#58595b; text-align:justify;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</div>
+                    <span class="article-executive-summary-body" style="font-size:15px; line-height:20px; color:#58595b; text-align:justify;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
                 </td>
             </tr>
         </table>
