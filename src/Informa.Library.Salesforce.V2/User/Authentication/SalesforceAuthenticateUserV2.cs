@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Json;
 using Informa.Library.User.Authentication;
 using System.Web;
 using Informa.Library.Salesforce.User.Authentication;
