@@ -54,7 +54,7 @@
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading">' + CreateList[key].Value + '<a href="#" class="sort" type="ascending"></a><a href="#" class="sort" type="descending"></a></div></div>');
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
@@ -72,7 +72,7 @@
 			
 		},
 		HeightManagement: function(Parent) {
-			var HeadingItems = Parent.find('.year_heading'),
+			var HeadingItems = Parent.find('.year_heading').find('span'),
 				MaxHeadingHeight = 0;
 
 			Parent.find('.states_heading .RB16').each(function(key){
@@ -89,7 +89,7 @@
 					$(Item[i]).height(Height);
 				}
 			});
-
+			// HeadingItems.height(0);
 			HeadingItems.each(function() {
 				var thisHeight = $(this).height();
 				if(thisHeight > MaxHeadingHeight) {
@@ -224,6 +224,8 @@
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
 					ControlIndex = CarouselControl.find('.active').index();
+				$('.year_heading .sort').removeClass('active');
+				$(this).addClass('active');
 
 				if(category == 'companies') {
 					var CompanyNames = $(this).parents('.states_heading').find('.RB16');
@@ -252,7 +254,7 @@
 				}
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
-				Parent.find('.owl-carousel').trigger('jumpTo', ControlIndex);
+				
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {

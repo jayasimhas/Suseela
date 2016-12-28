@@ -19,6 +19,7 @@
 				float:left;
 				width:30%;
 				border-right:1px solid $color-light-gray; 
+				z-index: 9;
 				.redbg{
 					background-color: $color-red !important;
 				}	
@@ -28,6 +29,9 @@
 				}
 				div:nth-child(odd){
 					background-color: $color-concrete-table-gray;
+				}
+				@include breakpoint('small') {
+					width: 40%;
 				}
 			}
 			.RB16{
@@ -53,6 +57,9 @@
 				color: white;
 				padding-top: 10px;
 				padding-bottom: 10px;
+				height: 6em;
+				position:relative;
+				margin-right: 0;
 			}
 			.owl-dots{
 			  float: left;
