@@ -37,14 +37,14 @@
     width: 15px !important;
     &[type="ascending"] {
         position: absolute;
-        bottom: 5px;
-        right: 20px;
-    }
-    &[type="descending"] {
-        position: absolute;
         bottom: 15px;
         right: 21px;
         transform: rotate(-180deg);
+    }
+    &[type="descending"] {
+        position: absolute;
+        bottom: 5px;
+        right: 20px;
     }
     &.active {
         svg {

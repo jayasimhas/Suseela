@@ -57,9 +57,9 @@
 				color: white;
 				padding-top: 10px;
 				padding-bottom: 10px;
-				height: 6em;
 				position:relative;
 				margin-right: 0;
+				height: 6em;
 			}
 			.owl-dots{
 			  float: left;
@@ -68,10 +68,16 @@
 			.owl-nav {
 				float:right;
 			}
-			.owl-item.active{
-				width:5% !important;
-				margin-right: 1px !important;
-			}
+			.owl-item{
+				&.active{
+					width:5% !important;
+					margin-right: 1px !important;
+				}
+				.year_heading span{ 
+					width:100% !important;
+					display: block;
+				}
+			} 
 			.owl-controls{
 				position:absolute;
 				top:-51px;

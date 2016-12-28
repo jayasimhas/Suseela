@@ -72,7 +72,7 @@
 			
 		},
 		HeightManagement: function(Parent) {
-			var HeadingItems = Parent.find('.year_heading').find('span'),
+			var HeadingItems = Parent.find('.year_heading'),
 				MaxHeadingHeight = 0;
 
 			Parent.find('.states_heading .RB16').each(function(key){
@@ -96,7 +96,7 @@
 					MaxHeadingHeight = thisHeight;
 				}
 			});
-			HeadingItems.height(MaxHeadingHeight);
+			$(HeadingItems).find('span').height(MaxHeadingHeight);
 		},
 		InitiateCarousel: function(Parent) {
 
@@ -223,7 +223,20 @@
 					category = $(this).attr('category'),
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
-					ControlIndex = CarouselControl.find('.active').index();
+					ControlIndex = CarouselControl.find('.active').index(),
+					CarouselStyles = $('#ID-Responsive-Table .owl-stage').attr('style'),
+					OwlItems = $('#ID-Responsive-Table .owl-stage').find('.owl-item'),
+					ClonedItems = [],
+					ActiveItems = [];
+
+				OwlItems.each(function() {
+					if($(this).hasClass('cloned')) {
+						ClonedItems.push($(this).index());
+					}
+					if($(this).hasClass('active')) {
+						ActiveItems.push($(this).index());
+					}
+				});
 				$('.year_heading .sort').removeClass('active');
 				$(this).addClass('active');
 
@@ -255,6 +268,20 @@
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
 				
+				$('#ID-Responsive-Table .owl-stage').attr('style', CarouselStyles);
+				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('cloned');
+				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('active');
+				for(var key in ClonedItems) {
+					$($('#ID-Responsive-Table .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
+				}
+
+				for(var key in ActiveItems) {
+					$($('#ID-Responsive-Table .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
+				}
+
+				$('#ID-Responsive-Table .owl-dot').removeClass('active');
+				$($('#ID-Responsive-Table .owl-dot')[ControlIndex]).addClass('active');
+				$('#ID-Responsive-Table .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
