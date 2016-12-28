@@ -7,6 +7,7 @@
 			var self = this;
 			if(data) {
 				window.ResponsiveJSON = data;
+				window.ResponsiveModalJSON = data;
 			 	self.RenderCarousel(data, id);
 			 	self.RenderModal(data, id);
 				//} 
@@ -16,11 +17,14 @@
 			var ModalId = $(id).attr('data-modal'),
 				Parent = $('#' + ModalId),
 				HeaderData = data[0],
-				Header = "";
+				Header = "",
+				category = "";
 
+			
+			Parent.find('.table').empty();
 			for(var key in HeaderData) {
 				if(key !== "ID") {
-					Header+="<div class='tableHead'><strong>" + key + "</strong></div>";
+					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort' category='" +category +"' type='ascending'></a><a href='#' class='sort' category='" +category +"' type='descending'></a></div>";
 				}
 			}
 			Parent.find('.table').append('<div class="tableRow">' + Header + '</div>');
@@ -68,6 +72,9 @@
 			
 		},
 		HeightManagement: function(Parent) {
+			var HeadingItems = Parent.find('.year_heading'),
+				MaxHeadingHeight = 0;
+
 			Parent.find('.states_heading .RB16').each(function(key){
 				var Height = $(this).height(),
 					Item = [];
@@ -81,7 +88,15 @@
 				for(var i = 0; i < Item.length; i++) {
 					$(Item[i]).height(Height);
 				}
-			})
+			});
+
+			HeadingItems.each(function() {
+				var thisHeight = $(this).height();
+				if(thisHeight > MaxHeadingHeight) {
+					MaxHeadingHeight = thisHeight;
+				}
+			});
+			HeadingItems.height(MaxHeadingHeight);
 		},
 		InitiateCarousel: function(Parent) {
 
@@ -132,6 +147,70 @@
     			}
         	});
         },
+        SortingModal: function(id) {
+        	var self = this;
+
+        	$(document).on('click','#modal-table .sort', function(e) {
+        		e.preventDefault();
+        		var MainData = window.ResponsiveJSON,
+        			Index = $(this).parents('.tableHead').index(),
+        			Items = [],
+        			type = $(this).attr('type'),
+        			Category = $(this).attr('category'),
+        			ModalData = window.ResponsiveModalJSON,
+        			UpdatedJson = [],
+        			HeadingText = $(this).parents('.tableHead').find('strong').text();
+
+        		$('#modal-table .tableRow').each(function() {
+        			if($(this).find('.tableCell').length > 0) {
+	        			var Text = $($(this).find('.tableCell')[Index]).text();
+	        			if(HeadingText == 'Company') {
+		        			Items.push(Text);
+		        		} else {
+		        			Items.push(parseFloat(Text));
+		        		}
+	        			
+	        		}
+        		});
+
+        		if(HeadingText == 'Company') {
+					if(type == "descending") {
+						Items.sort().reverse();
+					} else {
+						Items.sort();
+					}
+
+					for(var key in Items) {
+						for(var json in ModalData) {
+							if(Items[key] == ModalData[json].Company) {
+								UpdatedJson.push(ModalData[json]);
+							}
+						}
+					}
+				} else {
+					if(type == "descending") {
+						Items.sort(function(a, b){
+						  return b - a;
+						});
+					} else {
+						Items.sort(function(a, b){
+						  return a - b;
+						});
+					}
+
+					for(var key in Items) {
+						for(var json in ModalData) {
+							if(Items[key] == ModalData[json][HeadingText][0].value) {
+								UpdatedJson.push(ModalData[json]);
+							}
+						}
+					}
+				}
+				window.ResponsiveModalJSON = UpdatedJson;
+
+				self.RenderModal(window.ResponsiveModalJSON, id);
+        	});
+        },
         SortingFunctionality: function(id) {
         	//Sorting Functionality
         	var self = this;
@@ -141,54 +220,85 @@
 					Values = Parent.find('.R16'),
 					Content = Parent.attr('data-head'),
 					type = $(this).attr('type'),
+					category = $(this).attr('category'),
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
 					ControlIndex = CarouselControl.find('.active').index();
 
-				Values.each(function() {
-					Items.push(parseFloat($(this).text()));
-				});
-				if(type == "descending") {
-					Items.sort(function(a, b){
-					  return b - a;
+				if(category == 'companies') {
+					var CompanyNames = $(this).parents('.states_heading').find('.RB16');
+
+					CompanyNames.each(function() {
+						Items.push($(this).text());
 					});
+					if(type == "descending") {
+						Items.sort().reverse();
+					} else {
+						Items.sort();
+					}
 				} else {
-					Items.sort(function(a, b){
-					  return a - b;
+					Values.each(function() {
+						Items.push(parseFloat($(this).text()));
 					});
+					if(type == "descending") {
+						Items.sort(function(a, b){
+						  return b - a;
+						});
+					} else {
+						Items.sort(function(a, b){
+						  return a - b;
+						});
+					}
 				}
 				
-				self.RecreateObject(Content, Items, window.ResponsiveJSON, id);
-				$('.ID-Responsive-Table').find('.owl-carousel').trigger('jumpTo', ControlIndex);
+				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
+				Parent.find('.owl-carousel').trigger('jumpTo', ControlIndex);
 			});
         },
-        RecreateObject: function(Content, SortedItem, MainArray, id) {
+        RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
         	var self = this, RecreatedArray = [];
         	// id.find('.RB16').remove();
-        	
-        	for(var i = 0; i < SortedItem.length; i++) {
-        		for(var key in MainArray) {
-        			var _Object = MainArray[key];
-        			if(_Object[Content][0].value == SortedItem[i]) {
-        				RecreatedArray.push(_Object);
-        			}
-        		}
-        	}
+        	if(category === 'companies') {
+        		for(var i = 0; i < SortedItem.length; i++) {
+	        		for(var key in MainArray) {
+	        			var Name = MainArray[key].Company;
+	        			if(Name == SortedItem[i]) {
+	        				RecreatedArray.push(MainArray[key]);
+	        			}
+	        		}
+	        	}
+        	} else {
+	        	for(var i = 0; i < SortedItem.length; i++) {
+	        		for(var key in MainArray) {
+	        			var _Object = MainArray[key];
+	        			if(_Object[Content][0].value == SortedItem[i]) {
+	        				RecreatedArray.push(_Object);
+	        			}
+	        		}
+	        	}
+	        }
         	// $owl.trigger('destroy.owl.carousel');
-        	window.ResponsiveJSON = RecreatedArray;
-        	self.RenderCarousel(window.ResponsiveJSON, id);
+        	
+        	if(modal) {
+        		window.ResponsiveModalJSON = RecreatedArray;
+        		self.RenderModal(window.ResponsiveModalJSON, id);
+        	} else {
+        		window.ResponsiveJSON = RecreatedArray;
+	        	self.RenderCarousel(window.ResponsiveJSON, id);
+	        }
         },
 		init: function(data, id) {
 			var self = this;
 			self.GetAjaxData(data, id);
 			self.ModalEvents();
 			self.SortingFunctionality(id);
+			self.SortingModal(id);
 		}
 	}
 
-	$('.ID-Responsive-Table').each(function() {
-		ResponsiveTable.init(window.jsonResult, $(this));	
-	})
+	if($('#ID-Responsive-Table').length > 0) {
+		ResponsiveTable.init(window.jsonResult, $('#ID-Responsive-Table'));	
+	}
 	
 
 	

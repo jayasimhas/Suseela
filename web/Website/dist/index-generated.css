@@ -3078,7 +3078,7 @@ body.lightboxed {
       text-align: center;
       background-color: #bb1528;
       color: #ffffff; }
-    .large_table .large-table-responsive .table .graybg  {
+    .large_table .large-table-responsive .table .graybg {
       background-color: #f1f1f1; }
       .large_table .large-table-responsive .table .graybg td {
         padding-left: 10px; }
@@ -3245,45 +3245,6 @@ body.lightboxed {
     padding: 20px;
     border: 1px solid #d1d3d4;
     width: 80%; }
-    .ID-responsive-table-modal .container .table-wrapper {
-      width: 100%; }
-      @media (max-width: 800px) {
-        .ID-responsive-table-modal .container .table-wrapper {
-          overflow-x: scroll; } }
-    .ID-responsive-table-modal .container .table_close {
-      color: #231f20;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer; }
-    .ID-responsive-table-modal .container .table {
-      display: table;
-      width: 100%;
-      border-collapse: inherit;
-      border: 1px solid #d1d3d4;
-      width: 100%; }
-    .ID-responsive-table-modal .container .tableRow {
-      display: table-row; }
-      .ID-responsive-table-modal .container .tableRow:nth-child(odd) {
-        background-color: #f1f1f1; }
-    .ID-responsive-table-modal .container .tableHeading {
-      display: table-header-group; }
-    .ID-responsive-table-modal .container .tableHead {
-      font-family: "Roboto", Helvetica, Arial, sans-serif;
-      font-size: 1.125em;
-      font-weight: 400;
-      font-style: normal;
-      text-align: center;
-      background-color: #bb1528;
-      color: #ffffff; }
-    .ID-responsive-table-modal .container .tableBody {
-      display: table-row-group; }
-    .ID-responsive-table-modal .container .tableFoot {
-      display: table-footer-group; }
-    .ID-responsive-table-modal .container .tableCell, .ID-responsive-table-modal .container .tableHead {
-      display: table-cell;
-      padding: 5px;
-      border-left: 1px solid #ffffff; }
 
 .idi-table-heading {
   background-color: #414042;
@@ -3323,6 +3284,48 @@ body.lightboxed {
     .sort[type="descending"]:after {
       -webkit-transform: rotateX(-180deg);
               transform: rotateX(-180deg); }
+
+.table_close {
+  color: #231f20;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer; }
+
+.table-wrapper {
+  width: 100%; }
+  @media (max-width: 800px) {
+    .table-wrapper {
+      overflow-x: scroll; } }
+  .table-wrapper .table {
+    display: table;
+    width: 100%;
+    border-collapse: inherit;
+    border: 1px solid #d1d3d4;
+    width: 100%; }
+  .table-wrapper .tableRow {
+    display: table-row; }
+    .table-wrapper .tableRow:nth-child(odd) {
+      background-color: #f1f1f1; }
+  .table-wrapper .tableHeading {
+    display: table-header-group; }
+  .table-wrapper .tableHead {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    background-color: #bb1528;
+    color: #ffffff;
+    position: relative; }
+  .table-wrapper .tableBody {
+    display: table-row-group; }
+  .table-wrapper .tableFoot {
+    display: table-footer-group; }
+  .table-wrapper .tableCell, .table-wrapper .tableHead {
+    display: table-cell;
+    padding: 5px;
+    border-left: 1px solid #ffffff; }
 
 .ID-Responsive-Table {
   position: relative;
