@@ -42,7 +42,7 @@
         ModalEvents: function() {
         	$(document).on('click', 'a[data-toggle="modal-quarterlyresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-table-quaterly').show();
+        		$('#modal-quarterlyresults').show();
         	});
         	$(document).on('click', '#modal-quarterlyresults .table_close', function(e) {
         		e.preventDefault();

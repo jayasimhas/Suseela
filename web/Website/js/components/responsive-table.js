@@ -133,7 +133,7 @@
         ModalEvents: function() {
         	$(document).on('click', 'a[data-toggle="modal-financialresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-table').show();
+        		$('#modal-financialresults').show();
         	});
         	$(document).on('click', '#modal-financialresults .table_close', function(e) {
         		e.preventDefault();

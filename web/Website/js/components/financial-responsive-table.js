@@ -100,7 +100,7 @@
         ModalEvents: function() {
         	$(document).on('click', 'a[data-toggle="modal-annualresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-table-finance').show();
+        		$('#modal-annualresults').show();
         	});
         	$(document).on('click', '#modal-annualresults .table_close', function(e) {
         		e.preventDefault();
