@@ -624,24 +624,33 @@
                                 <tr>
                                     <td align="center" valign="top">
                                         <!-- BEGIN FOOTER // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="94%" class="footerContent">
+											<tr>
+												<td height="20">&nbsp;</td>
+											</tr>
                                             <tr>
-                                                <td valign="top" class="footerContent" align="center">
-                                                    <p>
-                                                        @Html.Raw(Model.SiteRoot.Email_Footer)
-                                                    </p>
-                                                    <p>
-                                                        @if (Model.FooterNavigation != null)
-                                                        {
-                                                            foreach (var nav in Model.FooterNavigation)
-                                                            {
-                                                                <a href="@nav.LinkUrl">@nav.Text</a>if (!nav.IsLast)
-                                                                {
-                                                                    <span class="vertical-separator">|</span>
-                                                                }
-                                                            }
-                                                        }
-                                                    </p>
+                                                <td valign="top" align="center">
+													<table border="0" cellpadding="10" cellspacing="0"width="100%" id="templateFooter">
+														<tr>
+															<td>
+																<p style="color: #040400; !important;">
+																	@Html.Raw(Model.SiteRoot.Email_Footer)
+																</p>
+																<p  style="color: #040400; !important;">
+																	@if (Model.FooterNavigation != null)
+																	{
+																		foreach (var nav in Model.FooterNavigation)
+																		{
+																			<a href="@nav.LinkUrl" style="color: #be1e2d; text-decoration: none;">@nav.Text</a>if (!nav.IsLast)
+																			{
+																				<span class="vertical-separator">|</span>
+																			}
+																		}
+																	}
+																</p>
+															</td>
+														</tr>
+													</table> 
                                                 </td>
                                             </tr>
                                         </table>
