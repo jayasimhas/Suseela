@@ -6302,18 +6302,6 @@ section: UI Elements
 
 .compareChart .eachChartData {
   margin-bottom: 10px; }
-  .compareChart .eachChartData #GWP-CHART, .compareChart .eachChartData #NWP-CHART, .compareChart .eachChartData #UR-CHART, .compareChart .eachChartData #NP-CHART, .compareChart .eachChartData #SF-CHART, .compareChart .eachChartData #NWPNR-CHART, .compareChart .eachChartData #SFNR-CHART, .compareChart .eachChartData #NPSFR-CHART {
-    display: block;
-    min-height: 300px; }
-    @media (max-width: 480px) {
-      .compareChart .eachChartData #GWP-CHART > div, .compareChart .eachChartData #NWP-CHART > div, .compareChart .eachChartData #UR-CHART > div, .compareChart .eachChartData #NP-CHART > div, .compareChart .eachChartData #SF-CHART > div, .compareChart .eachChartData #NWPNR-CHART > div, .compareChart .eachChartData #SFNR-CHART > div, .compareChart .eachChartData #NPSFR-CHART > div {
-        float: none !important;
-        width: 100%; } }
-  .compareChart .eachChartData .amChartsCompareList {
-    border: 1px solid #ccc; }
-    .compareChart .eachChartData .amChartsCompareList > div {
-      margin-bottom: 5px;
-      font-size: 12px; }
   .compareChart .eachChartData .dataTitle {
     background: #f9f9f9;
     padding: 12px;
