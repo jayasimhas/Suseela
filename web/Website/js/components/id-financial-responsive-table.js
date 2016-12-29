@@ -21,8 +21,9 @@
 			for(var key in Values) {
 				var CurrentValue = Values[key];
 				for(var item in CurrentValue) {
+					var Link = CurrentValue[item].toLowerCase().split(" ").join("-") + ".htm";
 					if(item == 0) {
-						StatesHeading.append('<div class="RB16">' +CurrentValue[item]+ '</div>');
+						StatesHeading.append('<div class="RB16"><a href="' + Link + '">' +CurrentValue[item]+ '</a></div>');
 					} else {
 						$(Parent.find('.article')[item-1]).append('<div class="R16">' +CurrentValue[item]+ '</div>');
 					}
