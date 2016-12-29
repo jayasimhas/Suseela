@@ -12,7 +12,7 @@
 
 			 	$('#quarterlyresults').find('.states_heading').parent().remove();
 			 	$('#quarterlyresults').append('<div class="table-wrapper"><div class="table"></div></div>');
-			 	var Wrapper = $('#quarterlyresults .table, #modal-table-quaterly .table');
+			 	var Wrapper = $('#quarterlyresults .table, #modal-quarterlyresults .table');
 
 			 	Wrapper.append('<div class="tableRow"></div>');
 				for(var key in QuaterlyDataHeader) {
