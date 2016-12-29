@@ -7,6 +7,7 @@
 			var self = this;
 			if(data) {
 				window.ResponsiveJSON = data;
+				window.ResponsiveModalJSON = data;
 			 	self.RenderCarousel(data, id);
 			 	self.RenderModal(data, id);
 				//} 
@@ -16,11 +17,14 @@
 			var ModalId = $(id).attr('data-modal'),
 				Parent = $('#' + ModalId),
 				HeaderData = data[0],
-				Header = "";
+				Header = "",
+				category = "";
 
+			
+			Parent.find('.table').empty();
 			for(var key in HeaderData) {
 				if(key !== "ID") {
-					Header+="<div class='tableHead'><strong>" + key + "</strong></div>";
+					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort' category='" +category +"' type='ascending'></a><a href='#' class='sort' category='" +category +"' type='descending'></a></div>";
 				}
 			}
 			Parent.find('.table').append('<div class="tableRow">' + Header + '</div>');
@@ -50,7 +54,7 @@
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading">' + CreateList[key].Value + '<a href="#" class="sort" type="ascending"></a><a href="#" class="sort" type="descending"></a></div></div>');
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
@@ -68,6 +72,9 @@
 			
 		},
 		HeightManagement: function(Parent) {
+			var HeadingItems = Parent.find('.year_heading'),
+				MaxHeadingHeight = 0;
+
 			Parent.find('.states_heading .RB16').each(function(key){
 				var Height = $(this).height(),
 					Item = [];
@@ -81,7 +88,15 @@
 				for(var i = 0; i < Item.length; i++) {
 					$(Item[i]).height(Height);
 				}
-			})
+			});
+			// HeadingItems.height(0);
+			HeadingItems.each(function() {
+				var thisHeight = $(this).height();
+				if(thisHeight > MaxHeadingHeight) {
+					MaxHeadingHeight = thisHeight;
+				}
+			});
+			$(HeadingItems).find('span').height(MaxHeadingHeight);
 		},
 		InitiateCarousel: function(Parent) {
 
@@ -132,6 +147,70 @@
     			}
         	});
         },
+        SortingModal: function(id) {
+        	var self = this;
+
+        	$(document).on('click','#modal-table .sort', function(e) {
+        		e.preventDefault();
+        		var MainData = window.ResponsiveJSON,
+        			Index = $(this).parents('.tableHead').index(),
+        			Items = [],
+        			type = $(this).attr('type'),
+        			Category = $(this).attr('category'),
+        			ModalData = window.ResponsiveModalJSON,
+        			UpdatedJson = [],
+        			HeadingText = $(this).parents('.tableHead').find('strong').text();
+
+        		$('#modal-table .tableRow').each(function() {
+        			if($(this).find('.tableCell').length > 0) {
+	        			var Text = $($(this).find('.tableCell')[Index]).text();
+	        			if(HeadingText == 'Company') {
+		        			Items.push(Text);
+		        		} else {
+		        			Items.push(parseFloat(Text));
+		        		}
+	        			
+	        		}
+        		});
+
+        		if(HeadingText == 'Company') {
+					if(type == "descending") {
+						Items.sort().reverse();
+					} else {
+						Items.sort();
+					}
+
+					for(var key in Items) {
+						for(var json in ModalData) {
+							if(Items[key] == ModalData[json].Company) {
+								UpdatedJson.push(ModalData[json]);
+							}
+						}
+					}
+				} else {
+					if(type == "descending") {
+						Items.sort(function(a, b){
+						  return b - a;
+						});
+					} else {
+						Items.sort(function(a, b){
+						  return a - b;
+						});
+					}
+
+					for(var key in Items) {
+						for(var json in ModalData) {
+							if(Items[key] == ModalData[json][HeadingText][0].value) {
+								UpdatedJson.push(ModalData[json]);
+							}
+						}
+					}
+				}
+				window.ResponsiveModalJSON = UpdatedJson;
+
+				self.RenderModal(window.ResponsiveModalJSON, id);
+        	});
+        },
         SortingFunctionality: function(id) {
         	//Sorting Functionality
         	var self = this;
@@ -141,54 +220,114 @@
 					Values = Parent.find('.R16'),
 					Content = Parent.attr('data-head'),
 					type = $(this).attr('type'),
+					category = $(this).attr('category'),
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
-					ControlIndex = CarouselControl.find('.active').index();
+					ControlIndex = CarouselControl.find('.active').index(),
+					CarouselStyles = $('#ID-Responsive-Table .owl-stage').attr('style'),
+					OwlItems = $('#ID-Responsive-Table .owl-stage').find('.owl-item'),
+					ClonedItems = [],
+					ActiveItems = [];
 
-				Values.each(function() {
-					Items.push(parseFloat($(this).text()));
+				OwlItems.each(function() {
+					if($(this).hasClass('cloned')) {
+						ClonedItems.push($(this).index());
+					}
+					if($(this).hasClass('active')) {
+						ActiveItems.push($(this).index());
+					}
 				});
-				if(type == "descending") {
-					Items.sort(function(a, b){
-					  return b - a;
+				$('.year_heading .sort').removeClass('active');
+				$(this).addClass('active');
+
+				if(category == 'companies') {
+					var CompanyNames = $(this).parents('.states_heading').find('.RB16');
+
+					CompanyNames.each(function() {
+						Items.push($(this).text());
 					});
+					if(type == "descending") {
+						Items.sort().reverse();
+					} else {
+						Items.sort();
+					}
 				} else {
-					Items.sort(function(a, b){
-					  return a - b;
+					Values.each(function() {
+						Items.push(parseFloat($(this).text()));
 					});
+					if(type == "descending") {
+						Items.sort(function(a, b){
+						  return b - a;
+						});
+					} else {
+						Items.sort(function(a, b){
+						  return a - b;
+						});
+					}
 				}
 				
-				self.RecreateObject(Content, Items, window.ResponsiveJSON, id);
-				$('.ID-Responsive-Table').find('.owl-carousel').trigger('jumpTo', ControlIndex);
+				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
+				
+				$('#ID-Responsive-Table .owl-stage').attr('style', CarouselStyles);
+				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('cloned');
+				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('active');
+				for(var key in ClonedItems) {
+					$($('#ID-Responsive-Table .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
+				}
+
+				for(var key in ActiveItems) {
+					$($('#ID-Responsive-Table .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
+				}
+
+				$('#ID-Responsive-Table .owl-dot').removeClass('active');
+				$($('#ID-Responsive-Table .owl-dot')[ControlIndex]).addClass('active');
+				$('#ID-Responsive-Table .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
 			});
         },
-        RecreateObject: function(Content, SortedItem, MainArray, id) {
+        RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
         	var self = this, RecreatedArray = [];
         	// id.find('.RB16').remove();
-        	
-        	for(var i = 0; i < SortedItem.length; i++) {
-        		for(var key in MainArray) {
-        			var _Object = MainArray[key];
-        			if(_Object[Content][0].value == SortedItem[i]) {
-        				RecreatedArray.push(_Object);
-        			}
-        		}
-        	}
+        	if(category === 'companies') {
+        		for(var i = 0; i < SortedItem.length; i++) {
+	        		for(var key in MainArray) {
+	        			var Name = MainArray[key].Company;
+	        			if(Name == SortedItem[i]) {
+	        				RecreatedArray.push(MainArray[key]);
+	        			}
+	        		}
+	        	}
+        	} else {
+	        	for(var i = 0; i < SortedItem.length; i++) {
+	        		for(var key in MainArray) {
+	        			var _Object = MainArray[key];
+	        			if(_Object[Content][0].value == SortedItem[i]) {
+	        				RecreatedArray.push(_Object);
+	        			}
+	        		}
+	        	}
+	        }
         	// $owl.trigger('destroy.owl.carousel');
-        	window.ResponsiveJSON = RecreatedArray;
-        	self.RenderCarousel(window.ResponsiveJSON, id);
+        	
+        	if(modal) {
+        		window.ResponsiveModalJSON = RecreatedArray;
+        		self.RenderModal(window.ResponsiveModalJSON, id);
+        	} else {
+        		window.ResponsiveJSON = RecreatedArray;
+	        	self.RenderCarousel(window.ResponsiveJSON, id);
+	        }
         },
 		init: function(data, id) {
 			var self = this;
 			self.GetAjaxData(data, id);
 			self.ModalEvents();
 			self.SortingFunctionality(id);
+			self.SortingModal(id);
 		}
 	}
 
-	$('.ID-Responsive-Table').each(function() {
-		ResponsiveTable.init(window.jsonResult, $(this));	
-	})
+	if($('#ID-Responsive-Table').length > 0) {
+		ResponsiveTable.init(window.jsonResult, $('#ID-Responsive-Table'));	
+	}
 	
 
 	

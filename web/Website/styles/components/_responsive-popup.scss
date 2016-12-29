@@ -17,50 +17,6 @@
         padding: 20px;
         border: 1px solid #d1d3d4;
         width: 80%;
-        .table-wrapper {
-            width: 100%;
-            @include breakpoint('medium') {
-                overflow-x: scroll;
-            }
-        }
-        .table_close {
-            color: #231f20;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .table { 
-            display: table;
-            width: 100%;
-            border-collapse: inherit;
-            border: 1px solid $color-light-gray;
-            width:100%;
-        }
-        .tableRow { 
-            display: table-row;
-            &:nth-child(odd) {background-color: $color-concrete-table-gray;}
-        }
-        .tableHeading { 
-            display: table-header-group;
-        }
-        .tableHead {
-             @include textMix('Roboto', 1.125em, 400);
-            font-style: normal;
-            text-align: center;
-            background-color: $color-red;
-            color:$color-white;
-        }
-        .tableBody { 
-            display: table-row-group;
-            
-        }
-        .tableFoot { display: table-footer-group; }
-        .tableCell, .tableHead { 
-            display: table-cell;
-            padding: 5px;
-            border-left: 1px solid $color-white;
-        }
     }
 }
 .idi-table-heading {
@@ -79,26 +35,65 @@
     float: right;
     position: relative;
     width: 15px !important;
-    &::after {
-        content: '';
-        background: url(/dist/img/sprite-image.png) no-repeat 0 -158px;
-        width: 18px;
-        height: 14px;
-        position: absolute;
-        right: 40px;
-        top: 20px;
-    }
     &[type="ascending"] {
         position: absolute;
-        top: -4px;
-        right: 0;
+        bottom: 15px;
+        right: 21px;
+        transform: rotate(-180deg);
     }
     &[type="descending"] {
         position: absolute;
-        top: -7px;
-        right: -15px;
-        &:after {
-            transform: rotateX(-180deg);
+        bottom: 5px;
+        right: 20px;
+    }
+    &.active {
+        svg {
+            fill: red;
         }
+    }
+}
+.table_close {
+    color: #231f20;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.table-wrapper {
+    width: 100%;
+    @include breakpoint('medium') {
+        overflow-x: scroll;
+    }
+    .table { 
+        display: table;
+        width: 100%;
+        border-collapse: inherit;
+        border: 1px solid $color-light-gray;
+        width:100%;
+    }
+    .tableRow { 
+        display: table-row;
+        &:nth-child(odd) {background-color: $color-concrete-table-gray;}
+    }
+    .tableHeading { 
+        display: table-header-group;
+    }
+    .tableHead {
+         @include textMix('Roboto', 1.125em, 400);
+        font-style: normal;
+        text-align: center;
+        background-color: $color-red;
+        color:$color-white;
+        position: relative;
+    }
+    .tableBody { 
+        display: table-row-group;
+        
+    }
+    .tableFoot { display: table-footer-group; }
+    .tableCell, .tableHead { 
+        display: table-cell;
+        padding: 5px;
+        border-left: 1px solid $color-white;
     }
 }

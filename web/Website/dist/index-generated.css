@@ -3078,8 +3078,9 @@ body.lightboxed {
       text-align: center;
       background-color: #bb1528;
       color: #ffffff; }
-    .large_table .large-table-responsive .table .graybg  {
-      background-color: #f1f1f1; }
+    .large_table .large-table-responsive .table .graybg {
+      background-color: #f1f1f1;
+      padding: 12px; }
       .large_table .large-table-responsive .table .graybg td {
         padding-left: 10px; }
     .large_table .large-table-responsive .table td, .large_table .large-table-responsive .table th {
@@ -3245,45 +3246,6 @@ body.lightboxed {
     padding: 20px;
     border: 1px solid #d1d3d4;
     width: 80%; }
-    .ID-responsive-table-modal .container .table-wrapper {
-      width: 100%; }
-      @media (max-width: 800px) {
-        .ID-responsive-table-modal .container .table-wrapper {
-          overflow-x: scroll; } }
-    .ID-responsive-table-modal .container .table_close {
-      color: #231f20;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer; }
-    .ID-responsive-table-modal .container .table {
-      display: table;
-      width: 100%;
-      border-collapse: inherit;
-      border: 1px solid #d1d3d4;
-      width: 100%; }
-    .ID-responsive-table-modal .container .tableRow {
-      display: table-row; }
-      .ID-responsive-table-modal .container .tableRow:nth-child(odd) {
-        background-color: #f1f1f1; }
-    .ID-responsive-table-modal .container .tableHeading {
-      display: table-header-group; }
-    .ID-responsive-table-modal .container .tableHead {
-      font-family: "Roboto", Helvetica, Arial, sans-serif;
-      font-size: 1.125em;
-      font-weight: 400;
-      font-style: normal;
-      text-align: center;
-      background-color: #bb1528;
-      color: #ffffff; }
-    .ID-responsive-table-modal .container .tableBody {
-      display: table-row-group; }
-    .ID-responsive-table-modal .container .tableFoot {
-      display: table-footer-group; }
-    .ID-responsive-table-modal .container .tableCell, .ID-responsive-table-modal .container .tableHead {
-      display: table-cell;
-      padding: 5px;
-      border-left: 1px solid #ffffff; }
 
 .idi-table-heading {
   background-color: #414042;
@@ -3304,25 +3266,60 @@ body.lightboxed {
   float: right;
   position: relative;
   width: 15px !important; }
-  .sort::after {
-    content: '';
-    background: url(/dist/img/sprite-image.png) no-repeat 0 -158px;
-    width: 18px;
-    height: 14px;
-    position: absolute;
-    right: 40px;
-    top: 20px; }
   .sort[type="ascending"] {
     position: absolute;
-    top: -4px;
-    right: 0; }
+    bottom: 15px;
+    right: 21px;
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
   .sort[type="descending"] {
     position: absolute;
-    top: -7px;
-    right: -15px; }
-    .sort[type="descending"]:after {
-      -webkit-transform: rotateX(-180deg);
-              transform: rotateX(-180deg); }
+    bottom: 5px;
+    right: 20px; }
+  .sort.active svg {
+    fill: red; }
+
+.table_close {
+  color: #231f20;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer; }
+
+.table-wrapper {
+  width: 100%; }
+  @media (max-width: 800px) {
+    .table-wrapper {
+      overflow-x: scroll; } }
+  .table-wrapper .table {
+    display: table;
+    width: 100%;
+    border-collapse: inherit;
+    border: 1px solid #d1d3d4;
+    width: 100%; }
+  .table-wrapper .tableRow {
+    display: table-row; }
+    .table-wrapper .tableRow:nth-child(odd) {
+      background-color: #f1f1f1; }
+  .table-wrapper .tableHeading {
+    display: table-header-group; }
+  .table-wrapper .tableHead {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    background-color: #bb1528;
+    color: #ffffff;
+    position: relative; }
+  .table-wrapper .tableBody {
+    display: table-row-group; }
+  .table-wrapper .tableFoot {
+    display: table-footer-group; }
+  .table-wrapper .tableCell, .table-wrapper .tableHead {
+    display: table-cell;
+    padding: 5px;
+    border-left: 1px solid #ffffff; }
 
 .ID-Responsive-Table {
   position: relative;
@@ -3345,7 +3342,8 @@ body.lightboxed {
     position: relative;
     float: left;
     width: 30%;
-    border-right: 1px solid #d1d3d4; }
+    border-right: 1px solid #d1d3d4;
+    z-index: 9; }
     .ID-Responsive-Table .states_heading .redbg {
       background-color: #bb1528 !important; }
     .ID-Responsive-Table .states_heading div {
@@ -3353,6 +3351,9 @@ body.lightboxed {
       padding: 10px; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
+    @media (max-width: 480px) {
+      .ID-Responsive-Table .states_heading {
+        width: 40%; } }
   .ID-Responsive-Table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -3371,7 +3372,10 @@ body.lightboxed {
     background-color: #bb1528 !important;
     color: white;
     padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    position: relative;
+    margin-right: 0;
+    height: 6em; }
   .ID-Responsive-Table .owl-dots {
     float: left;
     margin-top: 20px; }
@@ -3380,6 +3384,9 @@ body.lightboxed {
   .ID-Responsive-Table .owl-item.active {
     width: 5% !important;
     margin-right: 1px !important; }
+  .ID-Responsive-Table .owl-item .year_heading span {
+    width: 100% !important;
+    display: block; }
   .ID-Responsive-Table .owl-controls {
     position: absolute;
     top: -51px;
