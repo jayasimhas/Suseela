@@ -21,7 +21,7 @@
 			for(var key in Values) {
 				var CurrentValue = Values[key];
 				for(var item in CurrentValue) {
-					var Link = CurrentValue[item].toLowerCase().split(" ").join("-") + ".htm";
+					var Link = CurrentValue[item].toLowerCase().split(" ").join("-").substring(1);
 					if(item == 0) {
 						StatesHeading.append('<div class="RB16"><a href="' + Link + '">' +CurrentValue[item]+ '</a></div>');
 					} else {
