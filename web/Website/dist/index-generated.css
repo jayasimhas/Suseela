@@ -3344,6 +3344,9 @@ body.lightboxed {
     width: 30%;
     border-right: 1px solid #d1d3d4;
     z-index: 9; }
+    @media (max-width: 480px) {
+      .ID-Responsive-Table .states_heading {
+        width: 40%; } }
     .ID-Responsive-Table .states_heading .redbg {
       background-color: #bb1528 !important; }
     .ID-Responsive-Table .states_heading div {
