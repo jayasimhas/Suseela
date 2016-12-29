@@ -50,7 +50,7 @@
 		RenderModal: function(data, Parent) {
 			var Header = data[0].Header,
 				Values = data[0].Values,
-				FinanceModal = $('#modal-table-finance'),
+				FinanceModal = $('#modal-annualresults'),
 				ModalTable = FinanceModal.find('.table');
 
 			ModalTable.append('<div class="tableRow"></div>');
