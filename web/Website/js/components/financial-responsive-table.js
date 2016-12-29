@@ -98,11 +98,11 @@
             });
         },
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-table-finance"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-annualresults"]', function(e) {
         		e.preventDefault();
         		$('#modal-table-finance').show();
         	});
-        	$(document).on('click', '#modal-table-finance .table_close', function(e) {
+        	$(document).on('click', '#modal-annualresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -123,7 +123,7 @@
 
 	}
 
-	if($('#ID-Financial-Responsive-Table').length > 0) {
-		ResponsiveFinancialTable.init(window.jsonResultAnnual, $('#ID-Financial-Responsive-Table'));	
+	if($('#annualresults').length > 0) {
+		ResponsiveFinancialTable.init(window.jsonResultAnnual, $('#annualresults'));	
 	}
 })();

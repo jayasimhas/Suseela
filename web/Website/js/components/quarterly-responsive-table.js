@@ -4,15 +4,15 @@
 
 	var ResponsiveFinancialTable = {
 		RenderTable:function(data, Parent) {
-			 var Tables = $('#ID-Quaterly-Responsive-Table, #modal-table'),
+			 var Tables = $('#quarterlyresults, #modal-quarterlyresults'),
 			 	QuaterlyDataHeader = data[0].QuaterlyDataHeader,
 			 	QuaterlyData = data[0].QuaterlyData,
 			 	QuaterlyResultHeader = data[0].QuaterlyResultHeader[0],
 			 	QuaterlyResult= data[0].QuaterlyResult[0];
 
-			 	$('#ID-Quaterly-Responsive-Table').find('.states_heading').parent().remove();
-			 	$('#ID-Quaterly-Responsive-Table').append('<div class="table-wrapper"><div class="table"></div></div>');
-			 	var Wrapper = $('#ID-Quaterly-Responsive-Table .table, #modal-table-quaterly .table');
+			 	$('#quarterlyresults').find('.states_heading').parent().remove();
+			 	$('#quarterlyresults').append('<div class="table-wrapper"><div class="table"></div></div>');
+			 	var Wrapper = $('#quarterlyresults .table, #modal-table-quaterly .table');
 
 			 	Wrapper.append('<div class="tableRow"></div>');
 				for(var key in QuaterlyDataHeader) {
@@ -40,11 +40,11 @@
 			 
 		},
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-table-quaterly"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-quarterlyresults"]', function(e) {
         		e.preventDefault();
         		$('#modal-table-quaterly').show();
         	});
-        	$(document).on('click', '#modal-table-quaterly .table_close', function(e) {
+        	$(document).on('click', '#modal-quarterlyresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -64,7 +64,7 @@
 
 	}
 
-	if($('#ID-Quaterly-Responsive-Table').length > 0) {
-		ResponsiveFinancialTable.init(window.jsonResultQuarterly, $('#ID-Quaterly-Responsive-Table'));	
+	if($('#quarterlyresults').length > 0) {
+		ResponsiveFinancialTable.init(window.jsonResultQuarterly, $('#quarterlyresults'));	
 	}
 })();

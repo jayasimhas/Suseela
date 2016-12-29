@@ -131,11 +131,11 @@
             });
         },
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-table"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-financialresults"]', function(e) {
         		e.preventDefault();
         		$('#modal-table').show();
         	});
-        	$(document).on('click', '#modal-table .table_close', function(e) {
+        	$(document).on('click', '#modal-financialresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -224,8 +224,8 @@
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
 					ControlIndex = CarouselControl.find('.active').index(),
-					CarouselStyles = $('#ID-Responsive-Table .owl-stage').attr('style'),
-					OwlItems = $('#ID-Responsive-Table .owl-stage').find('.owl-item'),
+					CarouselStyles = $('#financialresults .owl-stage').attr('style'),
+					OwlItems = $('#financialresults .owl-stage').find('.owl-item'),
 					ClonedItems = [],
 					ActiveItems = [];
 
@@ -268,20 +268,20 @@
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
 				
-				$('#ID-Responsive-Table .owl-stage').attr('style', CarouselStyles);
-				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('cloned');
-				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('active');
+				$('#financialresults .owl-stage').attr('style', CarouselStyles);
+				$('#financialresults .owl-stage .owl-item').removeClass('cloned');
+				$('#financialresults .owl-stage .owl-item').removeClass('active');
 				for(var key in ClonedItems) {
-					$($('#ID-Responsive-Table .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
+					$($('#financialresults .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
 				}
 
 				for(var key in ActiveItems) {
-					$($('#ID-Responsive-Table .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
+					$($('#financialresults .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
 				}
 
-				$('#ID-Responsive-Table .owl-dot').removeClass('active');
-				$($('#ID-Responsive-Table .owl-dot')[ControlIndex]).addClass('active');
-				$('#ID-Responsive-Table .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
+				$('#financialresults .owl-dot').removeClass('active');
+				$($('#financialresults .owl-dot')[ControlIndex]).addClass('active');
+				$('#financialresults .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
@@ -325,8 +325,8 @@
 		}
 	}
 
-	if($('#ID-Responsive-Table').length > 0) {
-		ResponsiveTable.init(window.jsonResultFinancial, $('#ID-Responsive-Table'));	
+	if($('#financialresults').length > 0) {
+		ResponsiveTable.init(window.jsonResultFinancial, $('#financialresults'));	
 	}
 	
 
