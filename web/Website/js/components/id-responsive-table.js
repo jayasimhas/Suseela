@@ -59,8 +59,9 @@
 			var Items = Parent.find('.owl-carousel').find('.article');
 
 			for(var i = 0; i < data.length; i++) {
-				var Item = data[i], index = i;
-				Parent.find('.states_heading').append('<div class="RB16">' +data[i].Company+ '</div>');
+				var Item = data[i], index = i,
+					CompanyLink = data[i].Company.toLowerCase().split(" ").join("-");
+				Parent.find('.states_heading').append('<div class="RB16"><a href="' + CompanyLink + '">' +data[i].Company+ '</a></div>');
 				for(var key in Item) {
 					if(Array.isArray(Item[key])) {
 						Parent.find('.article[data-head="' +key+ '"]').append('<div  class="R16 TableRow'+index+'">' +Item[key][0].value+ '</div>');
@@ -253,7 +254,9 @@
 					}
 				} else {
 					Values.each(function() {
-						Items.push(parseFloat($(this).text()));
+						if($(this).length > 0) {
+							Items.push(parseFloat($(this).text()));
+						}
 					});
 					if(type == "descending") {
 						Items.sort(function(a, b){
@@ -305,6 +308,12 @@
 	        			}
 	        		}
 	        	}
+	        	for(var key in MainArray) {
+        			var _Object = MainArray[key];
+        			if(_Object[Content][0].value.length === 0) {
+        				RecreatedArray.push(_Object);
+        			}
+        		}
 	        }
         	// $owl.trigger('destroy.owl.carousel');
         	
