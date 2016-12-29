@@ -118,7 +118,7 @@
                      <h1 class="primary_heading">Lorem Ipsum</h1>
                      <h5 class="secondary_heading">Lorem Ipsum</h5>
                      <hr/>
-					 <div class="table ID-Responsive-Table" data-modal="modal-table" data-url="/dist/js/financial-responsive-table.json" id="ID-Responsive-Table">
+					 <div class="table ID-Responsive-Table" data-modal="modal-table-quaterly" data-url="/dist/js/financial-responsive-table.json" id="ID-Quaterly-Responsive-Table">
 								
 						<div class="table_head pad-10">
 							<span class="RB16">TOP COMPANIES, LATEST ANNUAL RESULTS ($M)expand table into lightbox</span>
@@ -220,7 +220,7 @@
                   </div>
                </div>-->
 
-               <div class="table ID-Responsive-Table" data-modal="modal-table-quaterly" id="ID-Quaterly-Responsive-Table">
+               <!-- <div class="table ID-Responsive-Table" data-modal="modal-table-quaterly" id="ID-Quaterly-Responsive-Table">
                   <div class="table_head pad-10">
                      <span class="RB16">FINANCIAL RESULTS FOR THE MOST RECENT FIVE YEARS (€M)</span>
                      <a href="#" data-toggle="modal-table-quaterly" class="hidden-xs">
@@ -232,7 +232,7 @@
 
                      </div>
                   </div>
-               </div>
+               </div> -->
 
                   </div>
                   <!-- END article-left-rail-->
@@ -695,7 +695,7 @@
          var jsonMappingData  = [{"Key":"GWP","Value":"Gross Written Premium"},{"Key":"NWP","Value":"Net Written Premium"},{"Key":"UR","Value":"Underwriting Result"},{"Key":"NP","Value":"Net Result"},{"Key":"SF","Value":"Shareholders' Funds"},{"Key":"NWPNR","Value":"Net Result / NWP %"},{"Key":"SFNR","Value":"NWP / Shareholders' Funds %"},{"Key":"NPSFR","Value":"Net Result / Shareholders' Funds %"}] 
       </script>
       <script type="text/javascript">
-         var jsonResult = [{
+         var jsonResultFinancial = [{
    "ID": "15",
    "Company": "ACE Ltd",
    "GWP": [{
@@ -2973,7 +2973,7 @@
 }]
       </script>
       <script type="text/javascript">
-      var CompanyFinancialDetails =[{
+      var jsonResultAnnual =[{
                                 "Header": [
                                                 "CATEGORY",
                                                 " 2011",
@@ -3022,7 +3022,7 @@
 
       </script>
       <script type="text/javascript">
-         var CompanyQuarterlyFinancials =[{
+         var jsonResultQuarterly =[{
                 "QuaterlyDataHeader": [
                                 "CATEGORY",
                                 " 2015",

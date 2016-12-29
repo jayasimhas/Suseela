@@ -9,6 +9,7 @@
 				Values = data[0].Values,
 				StatesHeading = Parent.find('.states_heading'),
 				Carousel = Parent.find('.owl-carousel');
+			Parent.find('.states_heading').empty();
 			for(var key in Header) {
 				if(key == 0) {
 					StatesHeading.append('<div class="year_heading">' + Header[key] + '</div>');
@@ -123,6 +124,6 @@
 	}
 
 	if($('#ID-Financial-Responsive-Table').length > 0) {
-		ResponsiveFinancialTable.init(window.CompanyFinancialDetails, $('#ID-Financial-Responsive-Table'));	
+		ResponsiveFinancialTable.init(window.jsonResultAnnual, $('#ID-Financial-Responsive-Table'));	
 	}
 })();

@@ -326,7 +326,7 @@
 	}
 
 	if($('#ID-Responsive-Table').length > 0) {
-		ResponsiveTable.init(window.jsonResult, $('#ID-Responsive-Table'));	
+		ResponsiveTable.init(window.jsonResultFinancial, $('#ID-Responsive-Table'));	
 	}
 	
 

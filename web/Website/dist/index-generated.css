@@ -3277,7 +3277,7 @@ body.lightboxed {
     bottom: 5px;
     right: 20px; }
   .sort.active svg {
-    fill: red; }
+    fill: #ffffff; }
 
 .table_close {
   color: #231f20;
