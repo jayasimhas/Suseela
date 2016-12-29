@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompaniesResultViewModel
 @using Informa.Library.Utilities.References
 
-@if (Model != null && Model.RenderingParameters != null)
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
 {
     if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.FinancialResults)
     {
@@ -13,21 +13,86 @@
     if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.AnnualResults)
     {
         <script type="text/javascript">
-            var jsonResultAnnual =  @Html.Raw(Model.ResultsData);
+            var jsonResultAnnual =  [{
+                "Header": [
+                    "CATEGORY",
+                    " 2011",
+                    " 2012",
+                    " 2013",
+                    " 2014",
+                    " 2015"
+                ],
+
+                "Values": [
+                    [" Non-Life Gross Written Premium", "2207.8", "2583.3", "2646.7", "2902.7", "2997.3"],
+                    [" Non-Life Net Written Premium", "1929.1", "2246.9", "2299.7", "2515.2", "2646.2"],
+                    [" Change NWP %", "2.0", "16.5", "2.3", "9.4", "5.2"],
+                    [" Retention %", "87.4", "87.0", "86.9", "86.7", "88.3"],
+                    [" Net Earned Premium", "1888.5", "2083.5", "2171.8", "2405.3", "2473.3"],
+                    [" Claims Incurred", "1556.0", "1238.5", "1223.7", "1307.5", "1366.2"],
+                    [" Claims Incurred % NEP", "82.4", "59.4", "56.3", "54.4", "55.2"],
+                    [" Operating Expenses", "586.8", "673.3", "738.9", "803.1", "843.7"],
+                    [" Operating Expenses % NWP", "30.4", "30.0", "32.1", "31.9", "31.9"],
+                    [" Underwriting Result", "(254.3)", "171.7", "209.2", "294.7", "263.4"],
+                    [" Underwriting Result % NWP", "(13.2)", "7.6", "9.1", "11.7", "10.0"],
+                    [" Combined Ratio %", "115.9", "94.3", "92.6", "91.7", "91.9"],
+                    [" Life GWP", "-", "-", "-", "-", "-"],
+                    [" Life NWP", "-", "-", "-", "-", "-"],
+                    [" Life Result", "-", "-", "-", "-", "-"],
+                    [" Total GWP", "2207.8", "2583.3", "2646.7", "2902.7", "2997.3"],
+                    [" Total NWP", "1929.1", "2246.9", "2299.7", "2515.2", "2646.2"],
+                    [" Net Investment Income", "225.6", "204.9", "186.4", "190.3", "185.5"],
+                    [" Net Realised Gains (losses)", "30.3", "26.8", "36.4", "31.6", "17.0"],
+                    [" Pre Tax Result", "(147.3)", "295.4", "342.7", "367.9", "337.5"],
+                    [" Pre Tax Result % NWP", "(7.6)", "13.1", "14.9", "14.6", "12.8"],
+                    [" Net Result", "(110.0)", "280.6", "329.8", "355.0", "322.3"],
+                    [" Shareholders' Funds", "3155.6", "3488.2", "3299.9", "3418.8", "3418.6"],
+                    [" Solvency Margin %", "163.6", "155.2", "143.5", "135.9", "129.2"],
+                    [" Unearned Premium Reserve", "828.3", "998.2", "1128.7", "1235.0", "1418.3"],
+                    [" Outstanding Claims Reserve", "4098.6", "4280.7", "4346.2", "4400.8", "4583.4"],
+                    [" Total Technical Provisions", "4926.9", "5278.9", "5474.9", "5635.8", "6001.7"],
+                    [" Technical Reserves as % NWP", "255.4", "234.9", "238.1", "224.1", "226.8"],
+                    [" Overall Coverage as % NWP", "419.0", "390.2", "381.6", "360.0", "356.0"]
+
+                ]
+            }
+
+            ]//
         </script>
     }
     if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.QuarterlyResults)
     {
         <script type="text/javascript">
-            var jsonResultQuarterly =  @Html.Raw(Model.ResultsData);
+            var jsonResultQuarterly =  [{
+	"QuaterlyDataHeader": [
+		"CATEGORY",
+		" 2015",
+		" 2016"
+	],
+	"QuaterlyData": [
+		[" Total GWP", "2362.5", "2540.9"],
+		[" Total NWP", "2059.4", "2162.9"],
+		[" Underwriting Result", "147.9", "93.4"],
+		[" Combined Ratio %", "92.0", "95.4"],
+		[" Realised Gains (losses)", "47.9", "* 100.2"],
+		[" Net Investment Income", "139.1", "143.9"],
+		[" Pre-Tax Result", "214.3", "283.6"],
+		[" Net Result", "205.2", "274.9"]
+	],
+	"QuaterlyResultHeader": [
+		["CATEGORY", "Dec 31, 2015", "Sep 29, 2016"]
+	],
+	"QuaterlyResult": [
+		[" Shareholders' funds", "3418.6", "3904.1"]
+	]
+}]
         </script>
     }
 
-    <div class="table ID-Responsive-Table" data-modal="modal-table" data-url="/dist/js/financial-responsive-table.json" id="ID-Responsive-Table">
-
+    <div class="table ID-Responsive-Table" data-modal="modal-@Model.RenderingParameters.TableType.Value" id="@Model.RenderingParameters.TableType.Value">
         <div class="table_head pad-10">
             <span class="RB16">@Model.GlassModel.TableTitle</span>
-            <a href="#" data-toggle="modal-table" class="hidden-xs">
+            <a href="#" data-toggle="modal-@Model.RenderingParameters.TableType.Value" class="hidden-xs">
                 <img align="right" src="dist/img/breakout-arrows-transparent.png" />
             </a>
         </div>
@@ -43,7 +108,7 @@
         </div>
     </div>
 
-    <div class="ID-responsive-table-modal" id="modal-table">
+    <div class="ID-responsive-table-modal" id="modal-@Model.RenderingParameters.TableType.Value">
         <div class="container">
             <span class="table_close">
                 <svg class="dismiss-button__icon">
