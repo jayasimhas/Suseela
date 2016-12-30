@@ -30,9 +30,9 @@ import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
 import './components/id-comparechart';
-import './components/responsive-table';
-import './components/financial-responsive-table';
-import './components/quarterly-responsive-table';
+import './components/id-responsive-table';
+import './components/id-financial-responsive-table';
+import './components/id-quarterly-responsive-table';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

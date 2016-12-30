@@ -59,8 +59,9 @@
 			var Items = Parent.find('.owl-carousel').find('.article');
 
 			for(var i = 0; i < data.length; i++) {
-				var Item = data[i], index = i;
-				Parent.find('.states_heading').append('<div class="RB16">' +data[i].Company+ '</div>');
+				var Item = data[i], index = i,
+					CompanyLink = data[i].Company.toLowerCase().split(" ").join("-");
+				Parent.find('.states_heading').append('<div class="RB16"><a href="' + CompanyLink + '">' +data[i].Company+ '</a></div>');
 				for(var key in Item) {
 					if(Array.isArray(Item[key])) {
 						Parent.find('.article[data-head="' +key+ '"]').append('<div  class="R16 TableRow'+index+'">' +Item[key][0].value+ '</div>');
@@ -119,10 +120,10 @@
                items:3
                },
                320:{
-                items:3
+                items:2
                },
                480:{
-                items:3
+                items:2
                },
                1000:{
                items:3
@@ -131,11 +132,11 @@
             });
         },
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-table"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-financialresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-table').show();
+        		$('#modal-financialresults').show();
         	});
-        	$(document).on('click', '#modal-table .table_close', function(e) {
+        	$(document).on('click', '#modal-financialresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -224,8 +225,8 @@
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
 					ControlIndex = CarouselControl.find('.active').index(),
-					CarouselStyles = $('#ID-Responsive-Table .owl-stage').attr('style'),
-					OwlItems = $('#ID-Responsive-Table .owl-stage').find('.owl-item'),
+					CarouselStyles = $('#financialresults .owl-stage').attr('style'),
+					OwlItems = $('#financialresults .owl-stage').find('.owl-item'),
 					ClonedItems = [],
 					ActiveItems = [];
 
@@ -253,7 +254,9 @@
 					}
 				} else {
 					Values.each(function() {
-						Items.push(parseFloat($(this).text()));
+						if($(this).length > 0) {
+							Items.push(parseFloat($(this).text()));
+						}
 					});
 					if(type == "descending") {
 						Items.sort(function(a, b){
@@ -268,20 +271,20 @@
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
 				
-				$('#ID-Responsive-Table .owl-stage').attr('style', CarouselStyles);
-				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('cloned');
-				$('#ID-Responsive-Table .owl-stage .owl-item').removeClass('active');
+				$('#financialresults .owl-stage').attr('style', CarouselStyles);
+				$('#financialresults .owl-stage .owl-item').removeClass('cloned');
+				$('#financialresults .owl-stage .owl-item').removeClass('active');
 				for(var key in ClonedItems) {
-					$($('#ID-Responsive-Table .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
+					$($('#financialresults .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
 				}
 
 				for(var key in ActiveItems) {
-					$($('#ID-Responsive-Table .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
+					$($('#financialresults .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
 				}
 
-				$('#ID-Responsive-Table .owl-dot').removeClass('active');
-				$($('#ID-Responsive-Table .owl-dot')[ControlIndex]).addClass('active');
-				$('#ID-Responsive-Table .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
+				$('#financialresults .owl-dot').removeClass('active');
+				$($('#financialresults .owl-dot')[ControlIndex]).addClass('active');
+				$('#financialresults .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
@@ -305,6 +308,12 @@
 	        			}
 	        		}
 	        	}
+	        	for(var key in MainArray) {
+        			var _Object = MainArray[key];
+        			if(_Object[Content][0].value.length === 0) {
+        				RecreatedArray.push(_Object);
+        			}
+        		}
 	        }
         	// $owl.trigger('destroy.owl.carousel');
         	
@@ -325,8 +334,8 @@
 		}
 	}
 
-	if($('#ID-Responsive-Table').length > 0) {
-		ResponsiveTable.init(window.jsonResult, $('#ID-Responsive-Table'));	
+	if($('#financialresults').length > 0) {
+		ResponsiveTable.init(window.jsonResultFinancial, $('#financialresults'));	
 	}
 	
 

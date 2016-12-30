@@ -118,11 +118,11 @@
                      <h1 class="primary_heading">Lorem Ipsum</h1>
                      <h5 class="secondary_heading">Lorem Ipsum</h5>
                      <hr/>
-					 <div class="table ID-Responsive-Table" data-modal="modal-table" data-url="/dist/js/financial-responsive-table.json" id="ID-Responsive-Table">
+					 <div class="table ID-Responsive-Table" data-modal="modal-annualresults" data-url="/dist/js/financial-responsive-table.json" id="annualresults">
 								
 						<div class="table_head pad-10">
 							<span class="RB16">TOP COMPANIES, LATEST ANNUAL RESULTS ($M)expand table into lightbox</span>
-                     <a href="#" data-toggle="modal-table" class="hidden-xs">
+                     <a href="#" data-toggle="modal-annualresults" class="hidden-xs">
                         <img align="right" src="dist/img/breakout-arrows-transparent.png"/>
                      </a>
 						</div>
@@ -201,7 +201,7 @@
 						</div>
 					</div>
 					
-               <div class="table ID-Responsive-Table" data-modal="modal-table" id="ID-Financial-Responsive-Table">
+               <!--<div class="table ID-Responsive-Table" data-modal="modal-table" id="ID-Financial-Responsive-Table">
                         
                   <div class="table_head pad-10">
                      <span class="RB16">FINANCIAL RESULTS FOR THE MOST RECENT FIVE YEARS (€M)</span>
@@ -212,70 +212,15 @@
                   <div class="graybg pad-10">&nbsp;</div>
                   <div>
                      <div class="states_heading">
-                        <!-- <div class="RB16" >ACE Ltd </div>
-                        <div class="RB16">Achmea </div>
-                        <div class="RB16">American International Assurance</div>
-                        <div class="RB16">Allianz Group</div> -->
                      </div>
                   
                      <div class="owl-carousel">
-                        <!-- <div class="article">
-                           <div class="year_heading">Gross Written Premium</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">Net Written Premium</div>
-                           <div  class="R16">23390.0</div>
-                           <div  class="R16">3068.9</div>
-                           <div  class="R16">1441.3</div>
-                           <div  class="R16">83495.5</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">Underwriting Results</div>
-                           <div  class="R16">23390.0</div>
-                           <div  class="R16">3068.9</div>
-                           <div  class="R16">1441.3</div>
-                           <div  class="R16">83495.5</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">Net Result</div>
-                           <div  class="R16">17799.0</div>
-                           <div  class="R16">1395.6</div>
-                           <div  class="R16">77360.0</div>
-                           <div  class="R16">15707.0</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">Shareholders' Funds</div>
-                           <div  class="R16">17799.0</div>
-                           <div  class="R16">1395.6</div>
-                           <div  class="R16">77360.0</div>
-                           <div  class="R16">15707.0</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">Net Result / NWP %</div>
-                           <div  class="R16">23390.0</div>
-                           <div  class="R16">3068.9</div>
-                           <div  class="R16">1441.3</div>
-                           <div  class="R16">83495.5</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">10/11</div>
-                           <div  class="R16">17799.0</div>
-                           <div  class="R16">1395.6</div>
-                           <div  class="R16">77360.0</div>
-                           <div  class="R16">15707.0</div>
-                        </div>
-                        <div class="article">
-                           <div  class="year_heading">09/10</div>
-                           <div  class="R16">17799.0</div>
-                           <div  class="R16">1395.6</div>
-                           <div  class="R16">77360.0</div>
-                           <div  class="R16">15707.0</div>
-                        </div> -->
+                       
                      </div>
                   </div>
-               </div>
+               </div>-->
 
-               <div class="table ID-Responsive-Table" data-modal="modal-table-quaterly" id="ID-Quaterly-Responsive-Table">
+               <!-- <div class="table ID-Responsive-Table" data-modal="modal-table-quaterly" id="ID-Quaterly-Responsive-Table">
                   <div class="table_head pad-10">
                      <span class="RB16">FINANCIAL RESULTS FOR THE MOST RECENT FIVE YEARS (€M)</span>
                      <a href="#" data-toggle="modal-table-quaterly" class="hidden-xs">
@@ -287,7 +232,7 @@
 
                      </div>
                   </div>
-               </div>
+               </div> -->
 
                   </div>
                   <!-- END article-left-rail-->
@@ -650,7 +595,7 @@
          <p></p>
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
-      <div class="ID-responsive-table-modal" id="modal-table">
+      <div class="ID-responsive-table-modal" id="modal-annualresults">
          <div class="container">
             <span class="table_close">
                <svg class="dismiss-button__icon">
@@ -682,7 +627,7 @@
             </div>
          </div>
       </div>
-      <div class="ID-responsive-table-modal" id="modal-table-finance">
+      <div class="ID-responsive-table-modal" id="modal-annualresults">
          <div class="container">
             <span class="table_close">
                <svg class="dismiss-button__icon">
@@ -714,7 +659,7 @@
             </div>
          </div>
       </div>
-      <div class="ID-responsive-table-modal" id="modal-table-quaterly">
+      <div class="ID-responsive-table-modal" id="modal-quarterlyresults">
          <div class="container">
             <span class="table_close">
                <svg class="dismiss-button__icon">
@@ -750,7 +695,7 @@
          var jsonMappingData  = [{"Key":"GWP","Value":"Gross Written Premium"},{"Key":"NWP","Value":"Net Written Premium"},{"Key":"UR","Value":"Underwriting Result"},{"Key":"NP","Value":"Net Result"},{"Key":"SF","Value":"Shareholders' Funds"},{"Key":"NWPNR","Value":"Net Result / NWP %"},{"Key":"SFNR","Value":"NWP / Shareholders' Funds %"},{"Key":"NPSFR","Value":"Net Result / Shareholders' Funds %"}] 
       </script>
       <script type="text/javascript">
-         var jsonResult = [{
+         var jsonResultFinancial = [{
    "ID": "15",
    "Company": "ACE Ltd",
    "GWP": [{
@@ -3028,7 +2973,7 @@
 }]
       </script>
       <script type="text/javascript">
-      var CompanyFinancialDetails =[{
+      var jsonResultAnnual =[{
                                 "Header": [
                                                 "CATEGORY",
                                                 " 2011",
@@ -3077,7 +3022,7 @@
 
       </script>
       <script type="text/javascript">
-         var CompanyQuarterlyFinancials =[{
+         var jsonResultQuarterly =[{
                 "QuaterlyDataHeader": [
                                 "CATEGORY",
                                 " 2015",

@@ -20,6 +20,9 @@
 				width:30%;
 				border-right:1px solid $color-light-gray; 
 				z-index: 9;
+				@include breakpoint('small') {
+					width: 40%;
+				}
 				.redbg{
 					background-color: $color-red !important;
 				}	
