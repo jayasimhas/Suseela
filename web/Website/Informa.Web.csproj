@@ -1245,6 +1245,7 @@
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompaniesResultViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyAddressViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\CompanyGraphViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\PeerGroupDetailViewModel.cs" />
@@ -2215,6 +2216,7 @@
     <Content Include="Views\FinanceCompanies\PeerGroupDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyList.cshtml" />
     <Content Include="Views\FinanceCompanies\PeerGroupMessagingComponent.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompanyGraphDetail.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

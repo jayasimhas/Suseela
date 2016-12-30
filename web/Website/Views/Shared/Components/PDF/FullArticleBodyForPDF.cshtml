@@ -13,23 +13,50 @@
                 @if (!string.IsNullOrEmpty(Model.ContentType))
             {
                     <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                        <span class="article-content-type">@Model.ContentType</span>
+                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 15)
+                        {
+                            var trimmedContentType = new string(Model.ContentType.Take(15).ToArray()) + " ...";
+                            <span class="article-content-type">@trimmedContentType</span>
+                        }
+                        else
+                        {
+                            <span class="article-content-type">@Model.ContentType</span>
+                        }
+
                     </td>
-                }
+                            }
 
                 @foreach (var tag in Model.ArticleTagsViewModel.Tags)
                 {
                     if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
                     {
                         <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
+                            
                         </td>
                     }
                     else
                     {
 
                         <td style="float: left; font-size: 15px; line-height: 20px; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
+                          
                         </td>
                     }
 
@@ -184,9 +211,9 @@
             <tr>
                 <td>
                     <h4 style="font-size:21px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-                
+
                 </td>
-                </tr>
+            </tr>
             <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>
@@ -236,8 +263,8 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-   
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+
 
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
