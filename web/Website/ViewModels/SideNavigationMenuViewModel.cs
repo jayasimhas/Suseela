@@ -25,5 +25,7 @@ namespace Informa.Web.ViewModels
 		public string MenuText => TextTranslator.Translate("MainNavigation.Menu");
 
 		public string MenuButtonText => TextTranslator.Translate("MainNavigation.ToggleMenu");
+
+        public string CurrentItemId => GlassModel?._Id.ToString();
 	}
 }

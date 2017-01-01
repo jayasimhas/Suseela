@@ -1,4 +1,4 @@
-﻿/* This file is generated.  DO NOT EDIT. */ 
+/* This file is generated.  DO NOT EDIT. */ 
 @charset "UTF-8";
 /* * * * UTILITIES / HELPERS * * * */
 .u-centered {
@@ -2460,7 +2460,7 @@ body.lightboxed {
   .main-menu__hoverable .main-menu__section-link {
     padding-left: 40px;
     padding-left: 2.5rem; }
-  .main-menu__hoverable:hover:before {
+  .main-menu__hoverable:hover:before, .main-menu__hoverable.activate:before {
     background-color: #f7941e;
     content: "";
     display: block;
