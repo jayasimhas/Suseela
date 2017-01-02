@@ -1,9 +1,10 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model ExecutiveSummaryViewModel
 
-@if (Model.ShowSummary) { 
-<div class="article-executive-summary">
-    <h4>@Model.ExecutiveSummary</h4>
-    @Html.Glass().Editable(Model.GlassModel, model => model.Summary)
-</div>
+@if (Model.ShowSummary)
+{
+    <div class="article-executive-summary">
+        <h4>@(Model.IsArticlePage ? Model.ExecutiveSummary : string.Empty)</h4>
+        @Html.Glass().Editable(Model.GlassModel, model => model.Summary)
+    </div>
 }
