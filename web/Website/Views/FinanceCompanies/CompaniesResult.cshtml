@@ -10,6 +10,15 @@
             var jsonResultFinancial =  @Html.Raw(Model.ResultsData);
         </script>
     }
+
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.CompareFinancialResults)
+    {
+        <script type="text/javascript">    
+            var jsonMappingData = @Html.Raw(Model.JsonMappingData);       
+            var jsonFinancialResultForCompare =  @Html.Raw(Model.CompareFinancialResults);
+        </script>
+    }
+
     if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.AnnualResults)
     {
         <script type="text/javascript">

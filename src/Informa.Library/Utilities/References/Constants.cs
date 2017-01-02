@@ -121,6 +121,7 @@ namespace Informa.Library.Utilities.References
             public const string FinancialResults = "financialresults";
             public const string AnnualResults = "annualresults";
             public const string QuarterlyResults = "quarterlyresults";
+            public const string CompareFinancialResults = "comparefinancialresults";
         }
 
     }
