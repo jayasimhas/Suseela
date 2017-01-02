@@ -1,0 +1,86 @@
+﻿@model Informa.Web.ViewModels.FinanceCompanies.CompaniesCarouselViewModel
+
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript">
+    function PrintCompanyGraph(chartData, divId, graphType, color) {
+        AmCharts.makeChart(divId,
+                        {
+                            "type": "serial",
+                            "categoryField": "year",
+                            "dataDateFormat": "YYYY",
+                            "handDrawScatter": 4,
+                            "theme": "default",
+                            "categoryAxis": {
+                                "minPeriod": "YYYY",
+                                "parseDates": true,
+                                "gridPosition": "start",
+                                "autoGridCount": true
+                            },
+                            "chartCursor": {
+                                "enabled": true,
+                                "animationDuration": 0,
+                                "categoryBalloonDateFormat": "YYYY"
+                            },
+                            "trendLines": [],
+                            "graphs": [
+                                {
+                                    "fillAlphas": 0.7,
+                                    "id": "AmGraph-1",
+                                    "lineAlpha": 0,
+                                    "title": "graph 1",
+                                    "valueField": "value",
+                                    "type": graphType,
+                                    "lineColor": "#" + color,
+                                    "fillColor": "#" + color,
+                                    "startDuration": 0,
+                                    "startRadius": "100%",
+                                    "balloonText": "[[category]]: [[value]]"
+                                }
+                            ],
+                            "guides": [],
+                            "valueAxes": [
+                                {
+                                    "id": "ValueAxis-1",
+                                    "title": ""
+                                }
+                            ],
+                            "allLabels": [],
+                            "balloon": {},
+                            "dataProvider": chartData
+                        }
+                    );
+    }
+
+</script>
+
+<div style="background-color: #eeeeee;overflow: hidden;">
+    <div class="carousel-heading">@Model.CarouselHeading</div>
+
+    @foreach (var company in Model.CompanyCarouselPanels)
+    {
+        <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" height="140px" width="235px" style="float:left" /></a><br />
+        <a href="@company.CompanyLandingPageUrl" style="float:left">@company.CompanyName</a><br />
+        <a href="@company.CompanyLandingPageUrl" style="float:left; width:100px">@Model.ViewMoreInfoText</a>
+        foreach (var Graph in company.Graphs)
+        {
+
+            <div class="graph-container lightgray-body" style="float:left;">
+                @{
+                    var chartDivId = company.CompanyId + "_" + Graph.GraphID;
+                }
+                <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
+                <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                <script>
+                    var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
+                    var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                    var chartData = data[0]["@Graph.GraphID"];
+                    PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                </script>
+            </div>
+                        }
+                    }
+    <script type="text/javascript">
+        setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
+    </script>
+</div>

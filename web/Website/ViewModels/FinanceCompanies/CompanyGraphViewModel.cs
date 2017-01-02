@@ -19,22 +19,29 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             TextTranslator = textTranslator;
             SitecoreContext = sitecoreContext;
         }
-
+        /// <summary>
+        /// Page Title
+        /// </summary>
         public string PageTitle => GetPageTitle();
-
+        /// <summary>
+        /// Method for fetching Page Title
+        /// </summary>
+        /// <returns>Page Title</returns>
         private string GetPageTitle()
         {
             string id = HttpContext.Current.Request.QueryString["Id"];
             if (!string.IsNullOrEmpty(id))
             {
                 var compnayPage = SitecoreContext.GetItem<ICompany_Detail_Page>(id);
-                return compnayPage.Companyname;
+                if (compnayPage != null)
+                    return compnayPage.Companyname;
+                else
+                    return string.Empty;
             }
             else
             {
                 return string.Empty;
             }
-
         }
     }
 }
