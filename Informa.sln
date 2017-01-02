@@ -64,6 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 
 
 		config\env\qaCD.properties = config\env\qaCD.properties
+		config\env\qaCD2.properties = config\env\qaCD2.properties
 		config\env\qaCM.properties = config\env\qaCM.properties
 
 
