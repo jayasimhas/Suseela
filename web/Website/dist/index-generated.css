@@ -7071,18 +7071,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .small_table .table-responsive hr {
       display: none; } }
 
-@media (max-width: 480px) {
-  .small_table .article-right-rail {
-    display: none; } }
-
-@media (max-width: 800px) {
-  .small_table .article-right-rail {
-    display: none; } }
-
-@media (max-width: 1080px) {
-  .small_table .article-right-rail {
-    display: none; } }
-
 .small_table .visible-sm {
   display: none; }
   @media (max-width: 480px) {
