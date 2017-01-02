@@ -114,17 +114,6 @@
 			}	
 				
 		}
-		.article-right-rail{
-			@include breakpoint('small') {
-						display: none;
-			}
-			@include breakpoint('medium') {
-						display: none;
-			}
-			@include breakpoint('large') {
-						display: none;
-			}
-		}
 		
 		.visible-sm{
 			display: none;
