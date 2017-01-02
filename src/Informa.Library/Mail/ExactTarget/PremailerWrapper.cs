@@ -28,7 +28,7 @@ namespace Informa.Library.Mail.ExactTarget
         public string InlineCss(string html)
         {
             var inliner = new PreMailer.Net.PreMailer(html);
-            var result = inliner.MoveCssInline(ignoreElements: "#ignore", removeComments: true);
+            var result = inliner.MoveCssInline(ignoreElements: "#ignore", removeComments: false);
 
             if (result.Warnings.Any())
             {
