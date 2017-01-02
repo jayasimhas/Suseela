@@ -107,7 +107,7 @@
                         @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
                         {
                             <tr>
-                                <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0].Substring(0, 220)) : Editable(Model, m => m.Articles[0].Summary.Substring(0, 220))</td>
+                                <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0].Length > 220 ? Model.ShortDescrpitons[0].Substring(0, 220) : Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary.Length > 220 ? m.Articles[0].Summary.Substring(0, 220) : m.Articles[0].Summary))</td>
                             </tr>
                         }
                     </table>
@@ -379,7 +379,7 @@
                                         {
                                             <tr>
                                                 <td valign="top" height="120">
-                                                    <p style="color: #040400; !important;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index].Substring(0, 220)) : Editable(article, m => m.Summary.Substring(0, 220))</p>
+                                                    <p style="color:#040400 !important;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index].Length > 220 ? Model.ShortDescrpitons[index].Substring(0, 220) : Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary.Length > 220 ? m.Summary.Substring(0, 220) : m.Summary))</p>
                                                 </td>
                                             </tr>
                                         }
