@@ -627,18 +627,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
     </Reference>
-
-	<Reference Include="Sitecore.SessionSerialization">
+    <Reference Include="Sitecore.SessionSerialization">
       <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
     </Reference>
-
     <Reference Include="Sitecore.SessionSerialization">
       <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Support.136135">
       <HintPath>..\..\lib\sitecore\Sitecore.Support.136135.dll</HintPath>
     </Reference>
-
     <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Client.dll</HintPath>
@@ -1275,7 +1272,6 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
-
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
@@ -1284,9 +1280,7 @@
     <Compile Include="ViewModels\PDF\PDFLibraryViewModel.cs" />
     <Compile Include="ViewModels\PDF\PersonalizedContentPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\PersonalizedPdfViewModel.cs" />
-
     <Compile Include="ViewModels\LegacyAdvertisementViewModel.cs" />
-
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -1789,6 +1783,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\AMchartsGroup.js" />
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\myview-settings.js" />
     <Content Include="js\components\pagination.js" />
