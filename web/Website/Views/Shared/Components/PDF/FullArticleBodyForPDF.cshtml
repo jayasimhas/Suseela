@@ -3,33 +3,60 @@
 @using Sitecore.Resources.Media
 @inherits CustomGlassView<Informa.Web.ViewModels.PDF.ArticleBodyForPDFViewModel>
 
-<div class="article-body-content">
+<div class="article-body-content" style="text-align:justify">
     <div class="article-metadata">
         <table>
             <tr>
-                <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
+                <td style="float: left; font-size: 15px; line-height: 20px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
                     <span class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</span>
                 </td>
                 @if (!string.IsNullOrEmpty(Model.ContentType))
             {
-                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                        <span class="article-content-type">@Model.ContentType</span>
+                    <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 15)
+                        {
+                            var trimmedContentType = new string(Model.ContentType.Take(15).ToArray()) + " ...";
+                            <span class="article-content-type">@trimmedContentType</span>
+                        }
+                        else
+                        {
+                            <span class="article-content-type">@Model.ContentType</span>
+                        }
+
                     </td>
-                }
+                            }
 
                 @foreach (var tag in Model.ArticleTagsViewModel.Tags)
                 {
                     if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
                     {
-                        <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                        <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
+                            
                         </td>
                     }
                     else
                     {
 
-                        <td style="float: left; font-size: 16px; line-height: 25px; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                        <td style="float: left; font-size: 15px; line-height: 20px; padding:0 10px 0 10px; font-weight: 700;">
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
+                          
                         </td>
                     }
 
@@ -117,7 +144,7 @@
                         <td>
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
-                                    <td align="left" style="color:#58595b; font-size:18px;">
+                                    <td align="left" style="color:#58595b; font-size:15px;">
                                         by
                                         @if (author.InActive)
                                         {
@@ -183,14 +210,14 @@
             <tr><td></td></tr>
             <tr>
                 <td>
-                    <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-                
+                    <h4 style="font-size:21px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
+
                 </td>
-                </tr>
+            </tr>
             <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>
-                    <span class="article-executive-summary-body" style="font-size:18px;color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
+                    <span class="article-executive-summary-body" style="font-size:15px; line-height:20px; color:#58595b; text-align:justify;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
                 </td>
             </tr>
         </table>
@@ -220,13 +247,13 @@
                 <tr><td>&nbsp;</td></tr>
                 <tr>
                     <td align="left">
-                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:30px;">@Model.Image.ImageCaption</span>
+                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:20px;">@Model.Image.ImageCaption</span>
                     </td>
                     <td align="right">
                         @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
                 {
 
-                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
+                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:20px;">
                                 @Model.FeaturedImageSource @Model.Image.ImageSource
                             </span>}
                     </td>
@@ -236,8 +263,8 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-   
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+
 
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())

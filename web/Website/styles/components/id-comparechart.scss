@@ -1,6 +1,29 @@
+@mixin chartHeight($h){
+	display: block; 
+	min-height: $h;
+}
+
 .compareChart {
 	.eachChartData {
 		margin-bottom: 10px;
+		
+		#GWP-CHART, #NWP-CHART, #UR-CHART, #NP-CHART, #SF-CHART, #NWPNR-CHART, #SFNR-CHART, #NPSFR-CHART {
+			@include chartHeight(300px);
+			@include breakpoint('small') {
+				> div{
+					float: none !important;
+					width: 100%;
+				}
+			}
+		}
+		.amChartsCompareList {
+			border: 1px solid #ccc;
+			
+			> div{
+				margin-bottom: 5px;
+				font-size: 12px;
+			}
+		}
 		.dataTitle{
 			background: #f9f9f9;
 			padding: 12px;
@@ -32,7 +55,8 @@
 			&.hide{
 				display: none;
 			}
-		}	
+		}
+	 
 	}
 	.showAll{
 		margin-bottom: 12px;

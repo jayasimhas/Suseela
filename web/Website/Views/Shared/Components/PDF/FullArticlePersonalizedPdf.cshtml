@@ -7,12 +7,12 @@
     <div class="article-metadata">
         <table>
             <tr>
-                <td style="float: left; font-size: 16px; line-height: 25px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
+                <td style="float: left; font-size: 15px; line-height: 20px; border-right:1px solid #5a5758; padding:0 10px 0 0; font-weight: 700;">
                     <span class="article-metadata__date">@Model.PublishDate.ToString("dd MMM yyyy")</span>
                 </td>
                 @if (!string.IsNullOrEmpty(Model.ContentType))
                 {
-                    <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
+                    <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
                         <span class="article-content-type">@Model.ContentType</span>
                     </td>
                 }
@@ -162,7 +162,7 @@
 
         <div class="article-executive-summary">
         <h4 style="font-size:24px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
-        <span class="article-executive-summary-body" style="font-size:18px;color:#58595b;">@Model.Summary</span>
+        <div class="article-executive-summary-body" style="font-size:15px;color:#58595b; text-align:justify">@Model.Summary</div>
         </div>
         @* End Executive Summary  *@
     }
@@ -194,7 +194,7 @@
 }
         @* * *  END ARTICLE - FEATURED IMAGE *@
     @*@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))*@
-    <p style="font-size:18px; line-height:30px; color:#58595b;">@Model.Body</p>
+    <p>@Model.Body</p>
 
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
@@ -214,14 +214,12 @@
                     <td>
                         <span style="float: left; margin-right:10px; margin-top:5px; margin-bottom:20px;">
                             <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" />
-                            <span style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; margin-top:5px; font-family: Roboto, Helvetica, Arial, sans-serif;">
-                                <a style="font-size: 20px; line-height: 30px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" class="click-utag"
+                            <span style="font-size: 17px; line-height: 20px; color:#be1e2d; font-weight: 700; margin-top:5px; font-family: Roboto, Helvetica, Arial, sans-serif;">
+                                <a style="font-size: 17px; line-height: 20px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" class="click-utag"
                                    href="@article.LinkableUrl"
                                    data-info='{
 			"event_name": "related_content_click_through",
-			@*"main-article": "@Sitecore.Context.Item.DisplayName",*@
 			"related-article": "@article.ListableTitle",
-			@*"click_through_source": "@Sitecore.Context.Item.DisplayName",*@
 			"click_through_destination": "@article.ListableTitle"
 		}'>
                                     @Html.Raw(article.ListableTitle)

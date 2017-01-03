@@ -124,33 +124,7 @@ namespace Informa.Web.ViewModels.MyView
         /// <value>
         /// The json data.
         /// </value>
-        public string JSONData => GetJSONData();
-
-        /// <summary>
-        /// Gets or sets the article identifier.
-        /// </summary>
-        /// <value>
-        /// The article identifier.
-        /// </value>
-        public static string ArticleId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the updated article identifier.
-        /// </summary>
-        /// <value>
-        /// The updated article identifier.
-        /// </value>
-        public string UpdatedArticleId
-        {
-            get
-            {
-                return ArticleId;
-            }
-            set
-            {
-
-            }
-        }
+        public string JSONData => GetJSONData();       
 
         /// <summary>
         /// Gets the json data.

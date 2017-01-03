@@ -435,18 +435,15 @@ $(function(){
 	    getLiIdx, getArticleIdx;
 	if (typeof loadPreferanceId !== "undefined") {
 		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount,
-		getArticalIdx = 0, hdnsubmitArtId = $('#hdnsubmitArticleId');
+		getArticalIdx = 0, postedId = window.location.href.split('?id=')[1];
 		
-		if(hdnsubmitArtId && hdnsubmitArtId.val() !== null && hdnsubmitArtId.val() !== ''){
-			var hdnsubmitArticleId = hdnsubmitArtId.val();
+		if(postedId != '' && postedId != undefined){
 			for (var i = 0; i < loadPreferanceId["Sections"].length; i++) {
-				if (loadPreferanceId["Sections"][i]["ChannelId"] == hdnsubmitArticleId) {
+				if (loadPreferanceId["Sections"][i]["ChannelId"] == postedId) {
 					getArticalIdx = i + 1;
 					break;
 				}
 			}
-		}
-		if(getArticalIdx > loadDynData){
 			loadDynData = getArticalIdx;
 		}
 		getLiIdx = loadDynData;
@@ -493,7 +490,6 @@ $(function(){
 									setTimeout(function () {
 										var getlatestPos = $('#' + hdnsubmitArtId.val()).position();
 										if (getlatestPos) {
-											$('.spinnerIcon').addClass('hidespin');
 											$(window).scrollTop(getlatestPos.top - 120);
 										}
 									}, 5);
@@ -682,8 +678,9 @@ $(function(){
 			}
 		}
 		else{
-			var $this = $(this), articleIdVal = $this.attr('name');
-			$.post('/Account/api/PersonalizeUserPreferencesApi/UpdateArticleId/', {"UserPreferences": articleIdVal});
+			e.preventDefault();
+			var $this = $(this), href = $this.attr('href'), id = $this.attr('name');
+			window.location.href = href + '?id=' + id;
 		}
 	});
 });

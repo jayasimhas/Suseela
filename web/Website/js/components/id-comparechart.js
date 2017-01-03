@@ -18,8 +18,13 @@ $(function(){
 		$('#' + getFocusId).find('.chartexpand').addClass('active');
 	});
 	
+	var chartAccordionIDs = ["GWP", "NWP", "UR", "NP", "SF", "NWPNR", "SFNR", "NPSFR"];
 	$('.expandAll', '.compareChart').click(function(){
-		$('.chartData', '.compareChart').removeClass('hide');
+		var eachChartData  = $('.eachChartData');
+		for(var i = 0; i < chartAccordionIDs.length; i++){
+			$(eachChartData[i]).find('.chartexpand').click();
+			$("#"+chartAccordionIDs[i]+"-DATA").removeClass('hide');
+		}
 		$('.chartexpand', '.compareChart').addClass('active');
 	});
 	

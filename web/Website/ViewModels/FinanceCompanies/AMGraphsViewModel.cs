@@ -35,7 +35,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         public string FiveYearTrends => TextTranslator.Translate("Company.FiveYearTrends");
 
         public string CompanyID => GlassModel.CompanyID;
-
+        public string CompanyGraphPageUrl => GlassModel?.CompanyGraphDetailPage?.Url;        
         public IEnumerable<ICompany_Graph> AMGraphs => GlassModel.Graphs;
 
         public IEnumerable<AMGraph> AMGraphModels

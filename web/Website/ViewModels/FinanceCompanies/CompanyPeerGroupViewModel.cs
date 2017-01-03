@@ -43,7 +43,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         /// <summary>
         /// Peer group go button link
         /// </summary>
-        public string PeerGroupGoBtnLink => GlassModel?.PeerComanyDetailPage?.Url + "?Id=" + GlassModel?._Id;
+        public string PeerGroupGoBtnLink => GlassModel?.PeerCompanyDetailPage?.Url + "?Id=" + GlassModel?._Id;
         /// <summary>
         /// List of Peer Companlies
         /// </summary>

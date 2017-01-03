@@ -1,9 +1,16 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.PeerGroupMessagingViewModel
-<div class="peer-group-messaging-component">
-    <div class="peer-group-info-title">
-        <h4>@Model.InstructionTitle</h4>
-        <span>@Model.CloseButtonText</span>
+<div class="data-tool-landing">    
+    <div class="js-toggle-demo">
+        <ul class="show-demo">
+            <li><a class="sd" href="javascript: void(0);">@Model.MessageBoxShowText</a></li>
+            <li><a class="hd" href="javascript: void(0);">@Model.MessageBoxHideText</a></li>
+        </ul>
+        <div class="toggle-demo">
+            <div class="demoText">
+                <h5>@Model.InstructionTitle</h5>
+                @Html.Raw(Model.InstructionText)
+            </div>
+        </div>
     </div>
-    <div class="peer-group-info-text">@Html.Raw(Model.InstructionText)</div>
-    <input type="checkbox" id="chkMessageBox" name="chkMessageBox" />@Model.DontShowMessageText
+
 </div>

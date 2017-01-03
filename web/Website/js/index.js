@@ -11,7 +11,7 @@ import DropBox from './DragDropTouch';
 //import highlight from './carousel/highlight.pack';
 import zeptoData from './carousel/zepto.data';
 //import app from './carousel/app';
-
+import './carousel/owl.carousel';
 // CONTROLLERS
 import FormController from './controllers/form-controller';
 import PopOutController from './controllers/pop-out-controller';
@@ -30,8 +30,10 @@ import './components/myview-settings';
 import './components/pagination';
 import './components/personalisation';
 import './components/id-comparechart';
-import './components/financial-responsive-table';
-
+import './components/id-responsive-table';
+import './components/id-financial-responsive-table';
+import './components/id-quarterly-responsive-table';
+import './components/id-comparefinancialresults';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

@@ -13,28 +13,24 @@
 	
         <!--100% Width full tile with grey background-->
         
-        <table class="mobView manual-curated-email-section manual-featured-article" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color:#@GetBackgroundColor(Model);" >
+        <table class="mobView manual-curated-email-section manual-featured-article" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color:#@GetBackgroundColor(Model); width: 100%;" >
             @if (Model != null && Model.GlassModel != null && !Model.GlassModel.DisableTagLine && Model.Articles.ToList().Count > 0)
             {
                 <tr>
-                    <td style="padding-bottom:0;">
-                        <table border="0"  cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-							<td style="padding-top:15px; padding-bottom:0;">
-								<div class="article-metadata" style="width:100%;">
+                    <td style="padding-bottom:10px; padding-top:15px; padding-left: 18px; margin: 0px; width:100%; margin-bottom:0 !important;" class="article-metadata">
                                 @if (Model.Articles[0].Actual_Publish_Date != null)
                                 {
 									
                                    
                                         <span class="article-date">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</span>
-                                        <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                        <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                     
                                 }
                                 @if (Model.Articles[0].Content_Type != null)
                                 {
 									
                                     
-                                        <span class="article-category">@Model.Articles[0].Content_Type.Item_Name<span>&nbsp;</span><span class="vertical-separator">|</span><span>&nbsp;</span></span>
+                                        <span class="article-category">@Model.Articles[0].Content_Type.Item_Name</span><span>&nbsp;&nbsp;</span><span class="vertical-separator">|</span><span>&nbsp;&nbsp;</span>
                                     
                                 }
                                 @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Media_Type != null &&
@@ -44,22 +40,22 @@
                                         <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
                                             <img class="" src="@Model.Articles[0].Media_Type.Media_Type_Icon.Src" width="25" />
                                         </span>
-                                        <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                        <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                     </span>
                                 }
                                 @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                                 {
                                     int count = 0;
-                                    if (Model.Articles[0].Taxonomies.ToList().Count > 2)
+                                    if (Model.Articles[0].Taxonomies.ToList().Count >= 2)
                                     {
                                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
                                         {
                                             <span align="center" class="visible-desk">
-                                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name<span class="vertical-separator">|</span></a>
+                                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; color: #be1e2d !important; text-decoration: none !important;">@taxonomyItem.Item_Name</a>
                                                 @if (count == 0)
                                                 {
                                                     count++;
-                                                    <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                    <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                 }
                                             </span>
                                         }
@@ -69,20 +65,16 @@
                                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
                                         {
                                             <span align="center" class="visible-desk" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;list-style:none;-ms-flex-item-align:center;align-self:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:12px;margin-right:0.75rem;margin-left:0;padding-right:12px;padding-right:0.75rem;position:relative;list-style: none;">
-                                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none;">@taxonomyItem.Item_Name</a>
+                                                <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d !important; text-decoration: none !important;">@taxonomyItem.Item_Name</a>
                                                 @if (count == 0)
                                                 {
                                                     count++;
-                                                    <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                    <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                 }
                                             </span>
                                         }
                                     }
-                                }
-								</div>
-								</td>
-                            </tr>
-                        </table>
+                                } 
                     </td>
                 </tr>
             }
@@ -90,9 +82,7 @@
             {
             <tr>
                 <td colspan="6" style="padding-left:15px; padding-bottom:0; padding-top:0;">
-                    
-                        <a href="@Model.Articles[0]._Url" > <h3 class="featured__title">@Model.Articles[0].Title </h3></a>
-                    
+						<a style="color: #be1e2d !important; text-decoration: none !important; font-size:22px; line-height:28px; font-weight: bold; padding:0; margin:0;" href="@Model.Articles[0]._Url" ><span style="margin: 0px; padding: 0px; color: #be1e2d !important;" class="featured__title"> @Model.Articles[0].Title </span></a>
                 </td>
             </tr>
             }
@@ -102,26 +92,28 @@
                         <tr>
                             @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Featured_Image_16_9 != null)
                             {
-                                <td rowspan="2"class="one-third layout-padded-right" ><a href="@Model.Articles[0]._Url"><img  src="@Model.Articles[0].Featured_Image_16_9.Src" /></a></td>
+                                <td rowspan="2"class="one-third layout-padded-right" ><a style="text-decoration: none;" href="@Model.Articles[0]._Url">
+                                    @RenderImage(Model, m => m.Articles[0].Featured_Image_16_9)
+                                    </a></td>
                             }
 							
                             @if ((Model.GlassModel != null && Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
                             {
-                                <td > 
-									<span class="article-byline">@Html.Raw(Model.Byline)</span>
+                                <td> 
+									<span style="color: #be1e2d !important;" class="article-byline">@Html.Raw(Model.Byline)</span>
 								</td>
                             }
                         </tr>
                         @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
                         {
                             <tr>
-                                <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary))</td>
+                                <td >@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0].Length > 220 ? Model.ShortDescrpitons[0].Substring(0, 220) : Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary.Length > 220 ? m.Articles[0].Summary.Substring(0, 220) : m.Articles[0].Summary))</td>
                             </tr>
                         }
                     </table>
                 </td>
             </tr>
-            <tr class="visible-mob" style="display: none;">
+            <tr class="visible-mob" style="display: none !important;">
 			<td align="left" style="padding-left:15px;">
                 @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
                 {
@@ -139,17 +131,17 @@
                         foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
                         {
                             
-                               <span> <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d; text-decoration: none; font-size: 13px;">@taxonomyItem.Item_Name</a>
-							   <span>&nbsp;</span>
+                               <span> <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color: #be1e2d !important; text-decoration: none !important; font-size: 13px;">@taxonomyItem.Item_Name</a></span>
+							   <span>&nbsp;&nbsp;</span>
                                 <span class="vertical-separator">|</span>
-								</span>
+								
                             
                         }
                     }
                 }
 				</td>
             </tr>
-</table>
+		</table>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
                <td> &nbsp;</td>
@@ -172,29 +164,23 @@
                 @Html.Raw(GetStartTag())
             }
                 <td align="top" class="full-mob" style="vertical-align: top; width: 47%;">
-                    <table width="100%" border="0" height="320" cellpadding="10" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td style="padding-left:15px;">
+                    
                                     @foreach (var article in Model.Articles)
                                     {
                                         if (article != null)
                                         {
-                                    <table width="100%" border="0" cellpadding="0" cellspacing="0"  height="160" style="border-bottom:1px solid #CCC; margin-bottom:15px; padding-bottom:15px;">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px solid #CCC;  padding-bottom:15px;">
                                         <tbody>
                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                             {
                                     <tr>
-                                        <td valign="middle" style="vertical-align: top; padding-bottom:0;">
-                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                                <tbody>
-                                                    <tr>
-														<td valign="top" style="padding-bottom:0;" >
+                                        <td valign="middle" style="vertical-align: bottom; padding-bottom:0; padding-top:15px;">
+                                            
 														<div class="article-metadata">
                                                         @if (article.Actual_Publish_Date != null)
                                                         {
                                                             <span class="article-date"> @article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
-                                                            <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                            <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                        
                                                         }
                                                         @if (Model.Articles[0].Content_Type != null)
@@ -204,17 +190,14 @@
                                                         </span>
                                                         }
 														</div>
-														</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+														
                                         </td>
                                     </tr>
                                             }
                                             <tr>
-                                                <td valign="top" >
+                                                <td valign="top" style="height: 76px; min-height: 76px; display: table-cell; vertical-align: middle;">
                                                     
-                                                        <a href="@article._Url"><h3 class="featured__title"> @article.Title</h3></a>
+                                                        <a style="color: #be1e2d !important; text-decoration: none !important; font-size:22px;  font-weight: bold; line-height:28px; padding:0; margin:0;" href="@article._Url"><span style="color: #be1e2d !important; text-decoration: none; margin: 0px; padding: 0px;" class="featured__title"> @article.Title</span></a>
                                                     
                                                 </td>
                                             </tr>
@@ -223,18 +206,16 @@
                                             {
                                     <tr>
                                         <td valign="top" style="padding-bottom:15px;">
-                                            <table  border="0" cellpadding="0" cellspacing="0">
-                                                <tbody>
-                                                    <tr><td>
+                                            
                                                         @if (article.Taxonomies != null)
                                                         {
                                                             int count = 0;
-                                                            if (article.Taxonomies.ToList().Count > 2)
+                                                            if (article.Taxonomies.ToList().Count >= 2)
                                                             {
                                                                 foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                                 {
                                                                     <span>
-                                                                        <a style="color:#be1e2d;text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                        <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                         @if (count == 0)
                                                                         {
                                                                             count++;
@@ -248,19 +229,17 @@
                                                                 foreach (var taxonomyItem in article.Taxonomies)
                                                                 {
                                                                     <span>
-                                                                        <a style="color:#be1e2d;text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                        <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                         @if (count == 0)
                                                                         {
                                                                             count++;
-                                                                            <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                                            <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                         }
                                                                     </span>
                                                                 }
                                                             }
                                                         }
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                  
                                         </td>
                                     </tr>
 									
@@ -271,17 +250,14 @@
                                     </table>
                                         }
                                     }
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                             
                 </td>
         }
 
         if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows)
         {
             int index = 0;
-                   <td width="5%">&nbsp;</td>      
+                <td width="5%">&nbsp;</td>      
                 <td style="width: 47%" align="top" class="full-mob">
                     <table class="manual-featured-article" width="100%" height="320" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
@@ -297,11 +273,11 @@
                                                         {
                                                             <table border="0" width="100%" cellpadding="0" height="100" style="@(index != 2 ? "border-bottom:1px solid #ccc;" : string.Empty)">
                                                                 <tr>
-                                                                    <td>
-                                                                        <a href="@article._Url">
-                                                                            <h3 style="margin: 0;" class="featured__title">
+                                                                    <td height="90">
+                                                                        <a href="@article._Url" style="color: #be1e2d !important; text-decoration: none !important;">
+                                                                            <span style="color: #be1e2d !important; text-decoration: none !important; font-size:22px; font-weight: bold;  line-height:28px; padding:0; margin:0;" class="featured__title">
                                                                                 @article.Title
-                                                                            </h3>
+                                                                            </span>
                                                                         </a>
                                                                     </td>
                                                                 </tr>
@@ -318,8 +294,8 @@
                         </tbody>
                     </table>
                 </td>
-
-               if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
+                
+            if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
             {
                 @Html.Raw(GetEndTag())
             }
@@ -355,20 +331,20 @@
                                                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                             <tr>
-																<td valign="top" style="padding-left:15px;">
+																<td valign="top">
 																<div class="article-metadata" >
                                                                 @if (article.Actual_Publish_Date != null)
                                                                 {
                                                                     
                                                                         <span class="article-date">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
-                                                                        <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                                        <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                    
                                                                 }
                                                                 @if (article.Content_Type != null)
                                                                 {
                                                                    <span class="article-category">
                                                                         @article.Content_Type.Item_Name</span>
-                                                                        <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                                        <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                     
                                                                 }
                                                                 @if (article.Media_Type != null && article.Media_Type.Media_Type_Icon != null &&
@@ -389,18 +365,21 @@
                                         }
 										
                                         <tr>
-                                            <td valign="top" style="padding-left:15px;">
-                                                <a href="@article._Url" ><h3 style="height: 50px;" class="featured__title">
+                                            <td valign="top" height="55">
+                                                <a href="@article._Url" style="color: #be1e2d !important; text-decoration: none !important; font-size:22px;  font-weight: bold; line-height:28px; padding:0; margin:0;"><span style="height: 50px; min-height: height: 50px; color: #be1e2d !important; text-decoration:none; margin: 0px; padding: 0px;" class="featured__title">
                                                     @article.Title
-                                                </h3>
+                                                </span>
 												</a>
                                             </td>
                                         </tr>
+										<tr>
+											<td height="10">&nbsp;</td>
+										</tr>
 										@if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
                                         {
                                             <tr>
-                                                <td valign="top" height="120" style="padding-left:15px;">
-                                                    <p>@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary))</p>
+                                                <td valign="top" height="120">
+                                                    <p style="color:#040400 !important;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index].Length > 220 ? Model.ShortDescrpitons[index].Substring(0, 220) : Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary.Length > 220 ? m.Summary.Substring(0, 220) : m.Summary))</p>
                                                 </td>
                                             </tr>
                                         }
@@ -408,23 +387,23 @@
                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
                                         {
                                             <tr>
-                                                <td valign="middle" style="padding-left:15px;">
+                                                <td valign="middle">
                                                     <table border="0"  cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                             <tr><td>
                                                                 @if (article.Taxonomies != null)
                                                                 {
                                                                     int count = 0;
-                                                                    if (article.Taxonomies.ToList().Count > 2)
+                                                                    if (article.Taxonomies.ToList().Count >= 2)
                                                                     {
                                                                         foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                                         {
                                                                             <span>
-                                                                                <a style="color:#be1e2d; text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                                <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                                 @if (count == 0)
                                                                                 {
                                                                                     count++;
-                                                                                    <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                                                    <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                                 }
                                                                             </span>
                                                                         }
@@ -434,11 +413,11 @@
                                                                         foreach (var taxonomyItem in article.Taxonomies)
                                                                         {
                                                                             <span>
-                                                                                <a style="color:#be1e2d; text-decoration:none;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                                <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                                 @if (count == 0)
                                                                                 {
                                                                                     count++;
-                                                                                    <span>&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;</span>
+                                                                                    <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#ddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                                 }
                                                                             </span>
                                                                         }
@@ -466,7 +445,7 @@
         </table>
         <table border="0"  cellpadding="0" cellspacing="0">
             <tr>
-                <td>&nbsp;</td>
+                <td height="24">&nbsp;</td>
             </tr>
         </table>
     }

@@ -1,19 +1,15 @@
 ﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobDetailsViewModel
-<div class="main__content">
-    <div style="page-break-before:always">&nbsp;</div>
-    <newpage />
+<div class="pdf-classified" style="text-align:justify">    
     <div>
         <h3 style="text-align:center">Classified</h3>
-        <div class="job_logo">
-            <a href="#">
-                <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">
-            </a>
+        <div class="job_logo">            
+                <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">            
         </div>
         <div class="job_detail">
             <h1>@Model.JobTitle</h1>
             <div class="sub-heading-text">
                 <h3>@Model.JobSubTitle</h3>
-                <div class="job_description">
+                <div class="job_description" style="color:#58595b; font-size:15px; line-height:20px; text-align:justify">
                     @Html.Raw(Model.JobDescription)
                 </div>
             </div>
