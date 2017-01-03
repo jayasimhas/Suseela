@@ -33,7 +33,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 			string url = GetDownloadLink(articleItemWrapper.InnerItem);
 			if (url != "")
 			{
-				url += "?sc_mode=preview";
+				url += "?sc_mode=preview" + string.Format("&ts={0}", System.DateTime.Now.ToString("yyyyMMddHHmmss"));
 				var hlink = new HyperLink();
                 //if (HttpContext.Current.Request.IsSecureConnection)
                 //{
@@ -63,8 +63,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 			else
 			{
 				tc.Text = articleItemWrapper.ArticleNumber;
-			}
-			
+			}			
 	
 			return tc;
 		}

@@ -35,7 +35,7 @@ namespace Informa.Library.Company
 			{
 				var companySession = UserSession.Get<ICompany>(sessionKey);
 
-				if (companySession.HasValue)
+				if (companySession.HasValue && companySession.Value != null)
 				{
 					return companySession.Value;
 				}

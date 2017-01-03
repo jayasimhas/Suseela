@@ -274,10 +274,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.ResetFields();
 			pageWorkflowControl.ResetNotificationList();
 			//pageSubjectsControl.TabController.ResetFields();
-			pageTaxonomyControl.TabController.ResetFields();
-			pageFeaturedImageControl.ResetFields();
+			//pageTaxonomyControl.TabController.ResetFields();
+			//pageFeaturedImageControl.ResetFields();
 			//pageArticleInformationControl.PageNotesControl.ResetFields();
-			pageRelatedArticlesControl.ResetFields();
+			//pageRelatedArticlesControl.ResetFields();
 		}
 
 		/// <summary>

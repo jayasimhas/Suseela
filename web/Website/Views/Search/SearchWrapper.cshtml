@@ -1,6 +1,6 @@
 ﻿@inherits CustomGlassView<SearchViewModel>
 
-<div class="search" ng-app="informaSearchApp" ng-cloak>
+<div class="search" ng-app="informaSearchApp" ng-cloak id="searchTop">
     <header class="search__header action-flags-bar">
         <div class="action-flags" ng-controller="EmailRssController as emailRss">
             <ul>
@@ -41,7 +41,7 @@
 
                         <input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
 
-                        <span class="pop-out__trigger js-save-search"
+                        <span class="pop-out__trigger js-save-search js-pop-out-trigger"
                             ng-class="{ 'angular-lightbox-modal-trigger' : searchIsSaved, 'angular-pop-out-trigger' : !searchIsSaved }"
                             ng-click="savedSearch.showLightbox($event)"
                             data-pop-out-type="save-search"

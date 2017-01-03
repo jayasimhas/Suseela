@@ -76,16 +76,19 @@ namespace Informa.Library.Article.Search
             using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
-                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                        .FilterByPublications(filter)
-                        .FilterByAuthor(filter)
-                        .FilterByCompany(filter)
-                        .FilterTaxonomies(filter)
-                    .ExcludeManuallyCurated(filter)
-                        .FilteryByArticleNumbers(filter)
-                    .FilteryByEScenicID(filter)
-                    .FilteryByRelatedId(filter)
-                        .ApplyDefaultFilters();
+
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .FilterByPublications(filter)
+                    .FilterByAuthor(filter)
+                    .FilterByCompany(filter)
+                    .FilterTaxonomies(filter, ItemReferences, GlobalService)
+					.ExcludeManuallyCurated(filter)
+                    .FilteryByArticleNumbers(filter)
+					.FilteryByLegacyArticleNumber(filter)
+					.FilteryByEScenicID(filter)
+					.FilteryByRelatedId(filter)
+                    .ApplyDefaultFilters();
+
 
                 if (filter.PageSize > 0)
                 {
@@ -115,7 +118,7 @@ namespace Informa.Library.Article.Search
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                    .FilterTaxonomies(filter)
+                    .FilterTaxonomies(filter, ItemReferences, GlobalService)
                     .ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
@@ -152,32 +155,29 @@ namespace Informa.Library.Article.Search
             }
         }
 
-        public long GetNextArticleNumber(Guid publicationGuid)
-        {
-            var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
 
-            using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.Search_Index_Name))
-            {
-                if (publicationItem != null)
-                {
-                    var filter = CreateFilter();
-                    var query = context.GetQueryable<ArticleSearchResultItem>()
-                        .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                                .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
-                        .FilterTaxonomies(filter)
-                        //.Max(x => x.ArticleIntegerNumber);
-                        .OrderByDescending(i => i.ArticleIntegerNumber)
-                        .Take(1);
+        public long GetNextArticleNumber(Guid publicationGuid) {
+            using (var context = SearchContextFactory.Create(Constants.MasterDb)) {
+                var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+                if (publicationItem == null)
+                    return 0;
+
+				var filter = CreateFilter();
+
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
+					.FilterTaxonomies(filter, ItemReferences, GlobalService)
+					.OrderByDescending(i => i.ArticleIntegerNumber)
+					.Take(1);
+
 
                     var results = query.GetResults();
 
-                    return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
-                    //var results = articleSearchResultItem.GetResults();
-                    //var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
-                    //return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
-                }
-                return 0;
-            }
+
+                return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
+		    }
+
         }
 
         /// <summary>
@@ -214,14 +214,14 @@ namespace Informa.Library.Article.Search
 
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
+            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{taxonomyParent}-{id}";
             return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
         }
 
         public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
             var article = GlobalService.GetItem<ArticleItem>(id);
-            var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+            var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent) || x._Parent._Parent._Id.Equals(taxonomyParent));//Check the parent folder and the grandparent in case of countries under regions. TODO: recursively check for parents
 
             if (taxonomyItems != null)
             {

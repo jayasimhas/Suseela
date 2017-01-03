@@ -13,7 +13,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr class="article-preview-header">
 
-                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null)
+                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null && Model.GlassModel.Article.Featured_Image_16_9 != null)
                         {
                             <td class="one-third layout-padded-right" valign="top">
 	                            @RenderImage(Model.GlassModel, m => m.Article.Featured_Image_16_9)
@@ -46,9 +46,19 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
-                        </td>
+                            @*<p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>*@
+                            @if (Model.GlassModel.Article?.Summary != null && Model.GlassModel.Article?.Summary.StartsWith("<p>") == true)
+                            {
+                                <td colspan="2">
+                                    @Html.Raw(Model.GlassModel.Article?.Summary)
+                                </td>
+                            }
+                            else
+                            {
+                                <td colspan="2">
+                                    <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
+                                </td>
+                            }
                     </tr>
 
                 </table>

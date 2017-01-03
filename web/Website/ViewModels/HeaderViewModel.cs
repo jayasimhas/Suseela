@@ -25,6 +25,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         private string _authorizationRequestUrlFormat = "{0}/services/oauth2/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}";
 
+
         public HeaderViewModel(
             IAuthenticatedUserContext authenticatedUserContext,
             IUserCompanyNameContext companyNameContext,
@@ -82,7 +83,7 @@ namespace Informa.Web.ViewModels
         public string CorporateName => CompanyNameContext.Name;
         public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
-        public string AuthorizationRequestUrl => String.Format(_authorizationRequestUrlFormat, 
+        public string AuthorizationRequestUrl => String.Format(_authorizationRequestUrlFormat,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username,
             GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url);

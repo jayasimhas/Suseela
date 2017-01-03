@@ -7,7 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Article.Search
 {
-    public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles, IArticlePublicationResults, IArticleAuthorResults, IArticleCompanyResults
+    public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, ILegacyArticleNumber, IArticleEScenicID, IReferencedArticles, IArticlePublicationResults, IArticleAuthorResults, IArticleCompanyResults
     {
         [IndexField("_latestversion")]
         public bool IsLatestVersion { get; set; }
@@ -30,11 +30,14 @@ namespace Informa.Library.Article.Search
         [IndexField("free_with_registration_b")]
         public bool FreeWithRegistration { get; set; }
 
+
         [IndexField("sort_order_tf")]
         public float EditorialRanking { get; set; }
 
-        #endregion
-    }
+		public string LegacyArticleNumber { get; set; }
+
+		#endregion
+	}
 }
 
 

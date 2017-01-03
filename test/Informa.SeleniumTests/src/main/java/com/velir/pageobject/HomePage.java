@@ -31,30 +31,25 @@ public class HomePage extends GeneralPage  {
         helper.click(By.xpath("//div[2]/span"));
 
 
+
+        helper.waitTillElementLocated(By.name("username"));
+
+       // helper.sendKeys(By.name("username"),username);
+
+       // helper.sendKeys(By.name("password"), password);
+
+        helper.sendKeys(By.xpath("//div[2]/div[4]/div[2]/div/div[2]/form/input[1]"),username);
+
+        helper.sendKeys(By.xpath("//div[2]/div[4]/div[2]/div/div[2]/form/input[2]"), password);
+
         helper.waitForSeconds(2);
 
-        //helper.waitTillElementLocated(By.name("username"));
-
-        helper.sendKeys(By.name("username"),username);
-
-        helper.sendKeys(By.name("password"), password);
+        helper.click(By.xpath("//div[4]/div[2]/div/div[2]/form/div[2]/div[2]/button"));
 
 
-        helper.waitForSeconds(2);
-
-        helper.click(By.xpath("//form/div[2]/div[2]/button"));
-
-
-       // helper.click(By.cssSelector(".button--filled.sign-in__submit"));
-
-       // helper.click(By.cssSelector("div.js - login - container > form > div.pop-out__form-actions-wrapper > div.sign-in__submit-wrapper"));
-       // helper.click(By.cssSelector("button.button--filled.sign-in__submit"));
-
-       // helper.click(By.linkText("SIGN IN"));
         helper.waitForSeconds(2);
 
 
-        // driver.findElement(By.cssSelector("div.header-account-access__friendly-greeting.firepath-matching-node")).click();
     }
 
 

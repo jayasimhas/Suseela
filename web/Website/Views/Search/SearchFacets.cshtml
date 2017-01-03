@@ -186,10 +186,11 @@
                                            ng-click="facetController.updateSelectedDate(dateFilter.key)"
                                            ng-model="dateValues.dtFrom"
                                            ng-required="false"
+                                           ng-blur="facetController.validateFormat(dateValues.dtFrom, 'from')"
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="d/M/yyyy">
+                                           uib-datepicker-popup="d!/M!/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
@@ -215,10 +216,11 @@
                                            ng-click="facetController.updateSelectedDate(dateFilter.key)"
                                            ng-model="dateValues.dtTo"
                                            ng-required="false"
+                                           ng-blur="facetController.validateFormat(dateValues.dtTo, 'to')"
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="d/M/yyyy">
+                                           uib-datepicker-popup="d!/M!/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
@@ -285,7 +287,7 @@
                     </p>
                 }
 
-                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
+                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit | orderBy:['-selected','-count']" ng-if="!collapsefacet">
                     <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>
                         @* Hidden input field *@
@@ -326,12 +328,13 @@
                           ng-class="{'collapsedSubfacet': f.isCollapsedSubfacet}"
                           class="facets__section-list--sub">
 
-                          <li ng-repeat="subFacet in f.sublist">
+                          <li ng-repeat="subFacet in f.sublist | orderBy:['-selected','-count']">
                               <input id="{{ subFacet.id }}-{{ $index }}"
                                      type="checkbox"
                                      class="visuallyhidden"
                                      ng-checked="subFacet.selected"
                                      ng-model="subFacet.selected"
+                                     ng-disabled="facetController.areFacetsDisabled"
                                      ng-change="facetController.update()" data-info='{"event_name":"search-facet"," click-sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
                               <label class="facets__label" ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
                                   {{ subFacet.name }}

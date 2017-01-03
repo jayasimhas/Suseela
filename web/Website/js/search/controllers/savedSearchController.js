@@ -33,6 +33,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
+        $('.js-save-search-url').val(window.location.hash.substring(1));
         $scope.title = searchService.getFilter('q').getValue();
         $scope.currentLocation = $location.url();
         if ($scope.isAuthenticated) {
@@ -46,13 +47,11 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     // might not be added before the lightbox event listners are bound. This
     // manually fires the Saved Search lightbox, in case the normal listener wasn't
     // bound in time.
-    vm.showLightbox = function(e) {
+    vm.showLightbox = function (e) {
+        $('.js-save-search-title').val('');
         if($scope.searchIsSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.angular-lightbox-modal-trigger'));
-        } else {
-			$(e.target).closest('.angular-pop-out-trigger').addClass('js-pop-out-trigger');
-			window.controlPopOuts.togglePopOut($(e.target).closest('.angular-pop-out-trigger'));
-		}
+        }
     };
 
 	vm.searchIsSaved = function() {

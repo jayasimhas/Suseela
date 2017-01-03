@@ -41,8 +41,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{1E22B878-107D-452C-91B6-F02F8C7796E6}"
 	ProjectSection(SolutionItems) = preProject
 
+
 		config\env\BetaCD.properties = config\env\BetaCD.properties
 		config\env\BetaCM.properties = config\env\BetaCM.properties
+
+		config\env\aws.properties = config\env\aws.properties
+		config\env\contentMigration.properties = config\env\contentMigration.properties
+
 
 		config\env\aws.properties = config\env\aws.properties
 		config\env\contentMigration.properties = config\env\contentMigration.properties
@@ -57,8 +62,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 		config\env\prodCD2.properties = config\env\prodCD2.properties
 		config\env\prodCM.properties = config\env\prodCM.properties
 
+
 		config\env\qaCD.properties = config\env\qaCD.properties
 		config\env\qaCM.properties = config\env\qaCM.properties
+
 
 		config\env\prodCM2.properties = config\env\prodCM2.properties
 		config\env\stageCD.properties = config\env\stageCD.properties

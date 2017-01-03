@@ -90,9 +90,9 @@ content-length: 0
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 1031
+content-length: 1219
 
-ar|sitecore\Sitecore Client Authoring|pe|+item:create|pd|+item:rename|+item:delete|+item:write|+item:create|ar|sitecore\Production|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|^*|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|^*|ar|sitecore\Media Library Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Operations Access|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|ar|sitecore\Author|pe|+item:create|+item:read|+item:rename|+item:delete|+item:write|+item:admin|pd|+item:create|+item:read|+item:rename|+item:delete|+item:write|+item:admin|au|sitecore\ServicesAPI|p*|+item:read|^*|ar|sitecore\Editor|pe|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|pd|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|
+ar|sitecore\Sitecore Client Authoring|pe|+item:create|pd|+item:rename|+item:delete|+item:write|+item:create|ar|sitecore\Production|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|^*|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|^*|ar|sitecore\Media Library Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Managing Editor|pe|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|pd|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|ar|sitecore\Operations Access|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|ar|sitecore\Author|pe|+item:create|+item:read|+item:rename|+item:delete|+item:write|+item:admin|pd|+item:create|+item:read|+item:rename|+item:delete|+item:write|+item:admin|au|sitecore\ServicesAPI|p*|+item:read|^*|ar|sitecore\Editor|pe|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|pd|+item:create|+item:read|+item:rename|+item:delete|+item:write|!*|+item:admin|
 ----version----
 language: da
 version: 1
@@ -232,7 +232,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: b3f43c7a-decd-437c-8980-3b30c5745ea3
+revision: 132fd4c1-00cc-4a5f-8903-256fea7ce60d
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -282,14 +282,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b3f43c7a-decd-437c-8980-3b30c5745ea3
+132fd4c1-00cc-4a5f-8903-256fea7ce60d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160401T194701Z
+20161115T142753Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

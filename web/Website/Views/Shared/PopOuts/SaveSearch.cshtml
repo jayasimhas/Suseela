@@ -24,7 +24,8 @@
                 data-on-submit="@(Model.IsAuthenticated
                     ? "/api/SavedSearches"
                     : "/Account/api/LoginWebUserApi/Login/")"
-				data-is-search="@(Model.IsSearch ? "true" : "false")">
+				data-is-search="@(Model.IsSearch ? "true" : "false")"
+                data-prevent-disabling="true">
 
 
                 @* * *

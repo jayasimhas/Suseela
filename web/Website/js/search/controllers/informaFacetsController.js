@@ -34,7 +34,6 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
     vm.originalGroup = [];
 
-    /* Real talk: the Javascript Date() method is a trash fire. */
     var dToday = function () {
         return new Date().clearTime();
     };
@@ -325,13 +324,12 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
     /* This deselects any selected facet checkboxes, clears all facet parameters
         from the search query, and runs the clearDateRange function */
     vm.clearAllFacets = function () {
-       
-        _.each(vm.facetGroups, function (group) {
-            // vm.clearGroup(group.id)
-            var facets = group.facets;
+        var facetClear = this;
+        var facetGroups = facetClear.facetGroups;
+        _.each(facetGroups, function (group) {
+            var facets = vm.searchService.getFacetGroup(group.id).getSelectedFacets();
             _.each(facets, function (facet) {
                 facet.selected = false;
-               
             });
         });
         vm.clearDateRange();
@@ -382,6 +380,13 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
         vm.update();
     };
+
+
+    vm.validateFormat = function (date, type) {
+        if(date == undefined) 
+            alert("The '"+type+"' date value isn't properly formatted");
+    };
+
 
     vm.customDateRangeSearch = function (filterKey, startDate, endDate, sourceControl) {
         

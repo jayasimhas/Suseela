@@ -9,7 +9,7 @@
                 @Model.SigninTitle
             </span>
             <span class="article-call-to-action__subtitle">
-                @Model.SigninSubtitle
+                @Html.Raw(Model.SigninSubtitle)
             </span>
             @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
         </div>
@@ -19,7 +19,7 @@
                 @Model.RegisterTitle
             </span>
             <span class="article-call-to-action__subtitle">
-                @Model.RegisterSubtitle
+                @Html.Raw(Model.RegisterSubtitle)
             </span>
             <form class="pop-out__register form-pre-registration user-calltoaction"
                   data-on-submit="/Account/api/RegistrationApi/PreRegister/"
@@ -45,9 +45,9 @@
             </form>
         </div>
     </div>
-}
-else
-{
+                }
+                else
+                {
                     if (Model != null)
                     {
                         @* * * SIGNED IN - NOT ENTITLED * * *@
@@ -58,4 +58,4 @@ else
                             <a href="@Model.SubscribeLinkUrl">@Model.SubscribeLinkText</a>
                         </div>
                     }
-}
+                }

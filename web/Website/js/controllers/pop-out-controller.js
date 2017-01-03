@@ -1,7 +1,8 @@
 function popOutController(triggerElm) {
 
 	// Toggle pop-out when trigger is clicked
-	if(triggerElm) {
+    if(triggerElm) {
+        $(triggerElm).off();
 		$(triggerElm).on('click', (event) => {
 			event.preventDefault();
 			this.togglePopOut($(event.target));
@@ -103,6 +104,10 @@ function popOutController(triggerElm) {
 			case 'sign-in':
 				popOut = $('.js-pop-out__sign-in');
 				break;
+			// Main Sign In button on top right
+		    case 'sign-in-header':
+		        popOut = $('.js-pop-out__sign-in-header');
+		        break;
 			// EMAIL ARTICLE
 			case 'email-article':
 				popOut = $('.js-pop-out__email-article');

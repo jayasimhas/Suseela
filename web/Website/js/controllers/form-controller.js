@@ -103,13 +103,22 @@ function formController(opts) {
 					});
 				    //// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					var captchaResponse = grecaptcha.getResponse();
+					var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse();
 					if (captchaResponse !== undefined)
 						inputData['RecaptchaResponse'] = captchaResponse;
 
 					if(!$(currentForm).data('on-submit')) {
 						console.warn('No submit link for form');
 					}
+				    try{
+				        for(var index in inputData)
+				        {
+				            if(inputData[index] == "- Select One -")
+				            {
+				                inputData[index] = "";
+				            }
+				        }
+				    }catch(ex){console.log(ex);}
 
 					$.ajax({
 						url: $(currentForm).data('on-submit'),

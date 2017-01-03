@@ -20,37 +20,39 @@ import java.util.Map;
 
 public class SetupClass {
     protected WebDriver driver;
-    public static final String USERNAME = "ishankumar2";
-    public static final String AUTOMATE_KEY = "RrUSaV31kAQd3gXxq6Wy";
-    public static final String URLBrowserStack = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
     public Helper helper;
     public String ENV;
     public String BROWSER;
     public String ENV_BE;
+    public String PUBLICATION_NAME;
     public PropertiesConfiguration configuration ;
     protected PropertiesConfiguration expectedData;
 
     @BeforeMethod
     @Parameters({"browser","environment"})
-    public void launchBrowser(@Optional("IE")String browser,@Optional("Stage.Scrip") String environment){  //to launch browser, open url and click on our consultants
+    public void launchBrowser(@Optional("FF")String browser,@Optional("Stage.Scrip") String environment){  //to launch browser, open url and click on our consultants
 
             switch (browser){
                 case "Chrome":
                     System.setProperty("webdriver.chrome.driver",
                             "C:\\Browser Drivers\\chromedriver.exe");
                     driver = new ChromeDriver();
+                    driver.manage().window().setSize(new Dimension(1400, 1540));
                     break;
 
                 case "FF":
+                    System.setProperty("webdriver.gecko.driver","C:\\Browser Drivers\\geckodriver.exe");
                     driver = new FirefoxDriver();
-                    //driver.manage().window().setSize(new Dimension(1200, 1000));
+                    //driver.manage().window().setSize(new Dimension(1600, 1200));
+                    driver.manage().window().setSize(new Dimension(1400, 1540));
                     break;
 
                 case "IE":
                     System.setProperty("webdriver.ie.driver",
                             "C:\\Browser Drivers\\IEDriverServer.exe");
                     driver = new InternetExplorerDriver();
-                    driver.manage().window().maximize();
+                    //driver.manage().window().maximize();
+                    driver.manage().window().setSize(new Dimension(1400, 1540));
                     break;
 
 
@@ -58,32 +60,20 @@ public class SetupClass {
                     System.setProperty("webdriver.chrome.driver",
                             "C:\\Browser Drivers\\chromedriver.exe");
                     Map<String, String> mobileEmulation = new HashMap<String, String>();
-                   // mobileEmulation.put("deviceName", "Apple iPhone 6");
-
+                   //mobileEmulation.put("deviceName", "Apple iPhone 6");
                     mobileEmulation.put("deviceName", "Google Nexus 6");
+
                     Map<String, Object> chromeOptions = new HashMap<String, Object>();
                     chromeOptions.put("mobileEmulation", mobileEmulation);
                     DesiredCapabilities capabilities = DesiredCapabilities.chrome();
                     capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new ChromeDriver(capabilities);
-                  //  driver.manage().window().maximize();
                     break;
 
-                case "iPad":
-                    System.setProperty("webdriver.chrome.driver",
-                            "C:\\Browser Drivers\\chromedriver.exe");
-                    mobileEmulation = new HashMap<String, String>();
-                    mobileEmulation.put("deviceName", "Apple iPad");
-
-                    chromeOptions = new HashMap<String, Object>();
-                    chromeOptions.put("mobileEmulation", mobileEmulation);
-                    capabilities = DesiredCapabilities.safari();
-                    capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-                    driver = new ChromeDriver(capabilities);
-                    break;
 
                 default:
                     driver = new FirefoxDriver();
+                    driver.manage().window().setSize(new Dimension(1400, 1540));
                     break;
             }
         helper =new Helper(driver);
@@ -91,6 +81,7 @@ public class SetupClass {
             configuration = new PropertiesConfiguration("testdata/config.properties");
             expectedData = new PropertiesConfiguration("testdata/expecteddata.properties");
             ENV = configuration.getString(environment);
+            PUBLICATION_NAME =environment;
             BROWSER=browser;
             ENV_BE = configuration.getString("Stage.Auth");
         }catch (Exception E){

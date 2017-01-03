@@ -66,8 +66,8 @@ namespace Informa.Web.ViewModels
 		public string MediaType => _dependencies.ArticleService.GetMediaTypeIconData(GlassModel)?.MediaType;
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public bool IsUserAuthenticated => _dependencies.AuthenticatedUserContext.IsAuthenticated;
-		public string BookmarkText => _dependencies.TextTranslator.Translate("Bookmarked");
-		public string BookmarkedText => _dependencies.TextTranslator.Translate("Bookmark");
+		public string BookmarkText => _dependencies.TextTranslator.Translate("Bookmark");
+		public string BookmarkedText => _dependencies.TextTranslator.Translate("Bookmarked");
 
 		private bool? _isArticleBookmarked;
 		public bool IsArticleBookmarked

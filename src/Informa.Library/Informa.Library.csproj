@@ -355,6 +355,7 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+
 	<Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
 	<Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
 	<Compile Include="DCD\CompanyService.cs" />
@@ -374,6 +375,15 @@
     <Compile Include="Search\ComputedFields\Facets\CommoditiesField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommodityFactorsField.cs" />
     <Compile Include="Search\ComputedFields\TaxonomyField.cs" />
+
+   
+    <Compile Include="Search\ComputedFields\SearchResults\ExactMatchTitleField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\ExactMatchContentField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\WildcardTitleField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\WildcardContentField.cs" />
+    <Compile Include="Search\Filter\ILegacyArticleNumberFilter.cs" />
+    <Compile Include="Search\Results\ILegacyArticleNumber.cs" />
+
     <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
@@ -1206,8 +1216,10 @@
     <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
+    <Compile Include="Utilities\References\ITaxonomyFolders.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
+    <Compile Include="Utilities\References\TaxonomyFolders.cs" />
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />

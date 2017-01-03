@@ -20,6 +20,7 @@ using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem
 
 namespace Elsevier.Web.VWB.Report
 {
+
     public class ReportBuilder
     {
         public List<IVwbColumn> Columns;
@@ -397,4 +398,5 @@ namespace Elsevier.Web.VWB.Report
             return tableCell;
         }
     }
+
 }

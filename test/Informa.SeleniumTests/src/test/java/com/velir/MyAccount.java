@@ -30,20 +30,15 @@ public class MyAccount extends SetupClass {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.loginProcess(configuration.getString("emailID") + "@yopmail.com", configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID"), configuration.getString("password"));
 
 
-        if(BROWSER.equalsIgnoreCase("Mobile")){
 
-            helper.getURL(ENV+"/my-account/contact-information");
-            helper.waitForSeconds(4);
-        }
-        else {
             helper.click(By.linkText("My Account"));
 
-            helper.click(By.linkText("ACCOUNT SETTINGS"));
-        }
-        Assert.assertEquals(helper.getElementText(title),"Account Settings");
+
+            Assert.assertTrue(helper.getElementText(title).contains("Account Settings") || helper.getElementText(title).contains("Subscriptions"));
+
 
     }
 
@@ -54,7 +49,7 @@ public class MyAccount extends SetupClass {
         helper.getURL(ENV);
 
         HomePage homePage = new HomePage(driver);
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID"),configuration.getString("password"));
 
         helper.getURL(ENV + "my-account/subscriptions");
 
@@ -80,28 +75,22 @@ public class MyAccount extends SetupClass {
         helper.getURL(ENV);
 
         HomePage homePage = new HomePage(driver);
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID"), configuration.getString("password"));
 
         helper.getURL(ENV + "my-account/email-preferences");
 
-//        By header = By.xpath("//div[2]/div/table/thead[1]/tr/td");
-//
-//        //div[2]/form/div[1]/label
-//
-//        List<String> expected = Arrays.asList("Publication","Subscription Type","Expiration Date","Action");
-//
-//        if (BROWSER.equalsIgnoreCase("Mobile")){
-//            header =By.xpath("//div[2]/div/table/thead[2]/tr/td");
-//            expected = Arrays.asList("SORT BY:","Publication","Subscription Type","Expiration Date");
-//        }
 
-        Assert.assertEquals(helper.getElementText(title),"Email Preferences");
+        helper.waitForSeconds(2);
+
+        Assert.assertEquals(helper.getElementText(title), "Email Preferences");
         Assert.assertEquals(helper.getElementText(subTitle), "Newsletter Emails");
 
         By emailPreferenceButton = By.cssSelector(".button--filled.button--fly-right");
 
 
-        helper.click(emailPreferenceButton);
+        //helper.log(driver.findElement(emailPreferenceButton).getAttribute("disabled"));
+        Assert.assertEquals(driver.findElement(emailPreferenceButton).getAttribute("disabled"),"true");
+
 
         Assert.assertFalse(driver.findElement(By.cssSelector(".alert-success.js-form-success>p")).isDisplayed());
 
@@ -115,19 +104,59 @@ public class MyAccount extends SetupClass {
         helper.getURL(ENV);
 
         HomePage homePage = new HomePage(driver);
-        homePage.loginProcess(configuration.getString("emailID")+"@yopmail.com",configuration.getString("password"));
+        homePage.loginProcess(configuration.getString("emailID") , configuration.getString("password"));
 
         helper.getURL(ENV + "my-account/email-preferences");
 
         By emailPreferenceButton = By.cssSelector(".button--filled.button--fly-right");
 
+        helper.click(By.cssSelector("#INV"));
+
+        helper.click(emailPreferenceButton);
+
+        helper.waitForSeconds(4);
+
+        Assert.assertEquals(helper.getElementText(By.cssSelector(".alert-success.js-form-success>p")), "Your preferences have been updated.");
+
+        helper.waitForSeconds(4);
+
         helper.click(By.id("INV"));
 
         helper.click(emailPreferenceButton);
 
-        Assert.assertEquals(helper.getElementText(By.cssSelector(".alert-success.js-form-success>p")),"Your preferences have been updated.");
+        helper.waitForSeconds(4);
+
+        Assert.assertEquals(helper.getElementText(By.cssSelector(".alert-success.js-form-success>p")), "Your preferences have been updated.");
 
 
+
+    }
+
+
+    //only on scrip and not mobile
+    @Test
+    public void actionColumn(){
+
+        helper.getURL(ENV);
+
+        HomePage homePage = new HomePage(driver);
+        homePage.loginProcess("exipresoon@example.com", "password");
+
+        By renew= By.xpath("//div/span/span/a");
+        Assert.assertEquals(helper.getElementText(renew),"Click here to renew");
+
+        helper.click(renew);
+
+        helper.waitForSeconds(4);
+       ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        if(tabs2.size()==2){
+        driver.switchTo().window(tabs2.get(1));
+        Assert.assertEquals(driver.getCurrentUrl(), "https://scrip.pharmamedtechbi.com/subscribe");
+            driver.close();
+            driver.switchTo().window(tabs2.get(0)); }
+        else {
+            Assert.assertEquals(driver.getCurrentUrl(), ENV + "subscribe");
+        }
 
     }
 

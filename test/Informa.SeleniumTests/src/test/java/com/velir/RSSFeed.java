@@ -19,13 +19,15 @@ public class RSSFeed extends SetupClass {
     public void rssSearchPage() {
 
 //       Execute a search and view the search results page
-        helper.getURL(ENV + "search#?q=Informa");
+        helper.getURL(ENV + "search#?q=InformaTestQA");
 
 
         helper.waitForSeconds(2);
 
-      String expectedTitle = helper.getElementText(By.xpath("//section[3]/div[2]/div/a"));
-        String expectedHref = driver.findElement(By.xpath("//section[3]/div[2]/div/a")).getAttribute("href");
+      String expectedTitle = helper.getElementText(By.xpath("//section[3]/div[1]/div/a"));
+        String expectedHref = driver.findElement(By.xpath("//section[3]/div[1]/div/a")).getAttribute("href");
+
+        helper.log(expectedTitle +"space"+expectedHref);
 
         By rssLocator = By.cssSelector(".search__header-buttons--rss");
         helper.click(rssLocator);
@@ -35,6 +37,7 @@ public class RSSFeed extends SetupClass {
 
         helper.getURL(urlSource);
 
+        helper.waitForSeconds(4);
        // List<String> expectedTags = Arrays.asList("<title>", "<link>","<description>", "<language>", "<copyright>", "<webMaster>", "<image>","</image>","<pubDate>","<guid>");
        Assert.assertTrue(driver.getPageSource().contains(expectedTitle));
 
@@ -50,7 +53,7 @@ public class RSSFeed extends SetupClass {
         helper.getURL(ENV + "rss/Publications-Feed.aspx");
 
 
-        helper.waitForSeconds(2);
+        helper.waitForSeconds(6);
 
 
         List<String> expectedTags = Arrays.asList("<title>", "<link>","<description>", "<language", "<copyright>", "<webMaster","<pubDate","<guid");
@@ -58,7 +61,9 @@ public class RSSFeed extends SetupClass {
         String actualPageSource= driver.getPageSource();
         for (String str:expectedTags) {
             helper.log(str);
+            helper.waitForSeconds(2);
             Assert.assertTrue(actualPageSource.contains(str));
+            helper.waitForSeconds(2);
         }
 
 

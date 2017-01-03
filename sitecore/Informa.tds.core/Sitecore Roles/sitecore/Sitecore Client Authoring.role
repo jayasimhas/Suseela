@@ -11,6 +11,9 @@ rolename: sitecore\Editor
 rolename: sitecore\List Manager Editors
 
 ----role-in-role----
+rolename: sitecore\Managing Editor
+
+----role-in-role----
 rolename: sitecore\Operations Access
 
 ----role-in-role----

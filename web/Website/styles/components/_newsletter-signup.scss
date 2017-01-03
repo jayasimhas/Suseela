@@ -36,4 +36,11 @@ This component is almost always displayed in a sidebar.
     &-after-submit {
         display: none;
     }
+
+     &-needs-registration {
+        @extend .error-text;
+        display: none;
+        margin-top: 0.5rem;
+        font-style: normal;
+    }
 }

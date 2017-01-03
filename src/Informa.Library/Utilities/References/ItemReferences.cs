@@ -14,6 +14,7 @@ namespace Informa.Library.Utilities.References
 		public static IItemReferences Instance => AutofacConfig.ServiceLocator.Resolve<Owned<IItemReferences>>().Value;
 
 
+
 		public Guid HomePage => new Guid(ItemIdResolver.GetItemIdByKey("ScripHomePage"));
         
 		public Guid NlmConfiguration => new Guid(ItemIdResolver.GetItemIdByKey("NlmConfiguration"));
@@ -25,6 +26,7 @@ namespace Informa.Library.Utilities.References
 
         public Guid UserLockoutedEmails => new Guid("{8A553CE0-6AD6-4CC8-964C-BEAA9714F74B}");
 
+
         public Guid GeneratedDictionary => new Guid(ItemIdResolver.GetItemIdByKey("GeneratedDictionary"));
 
         public Guid DownloadTypes => new Guid(ItemIdResolver.GetItemIdByKey("DownloadTypes"));
@@ -32,16 +34,24 @@ namespace Informa.Library.Utilities.References
 
         #region Taxonomy Folders
 
+
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"); //This Guid not found in CMS
         public Guid SubjectsTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"));
 		public Guid RegionsTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"));
 		public Guid TherapyAreasTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder"));
         public Guid DeviceAreasTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder"));
 
-		#endregion
+		public Guid GlobalTaxonomyFolder => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+        
+        public Guid IndustriesTaxonomyFolder => new Guid("{D10B7B8F-588B-4209-A319-2BC3A19828B7}");
+
+
+        #endregion
+
 
 		public Guid SearchPage => new Guid(ItemIdResolver.GetItemIdByKey("ScripSearchPage"));
 		public Guid VwbSearchPage => new Guid(ItemIdResolver.GetItemIdByKey("VwbSearchPage"));
+
 
     public Guid IssuesRootCurrent => new Guid(ItemIdResolver.GetItemIdByKey("IssuesRootCurrent"));
     public Guid IssuesRootArchive => new Guid(ItemIdResolver.GetItemIdByKey("IssuesRootArchive"));
@@ -49,7 +59,9 @@ namespace Informa.Library.Utilities.References
     public Guid IssueArchivedTemplate => new Guid(ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate"));
      
 
+
     public Guid SubscriptionPage => new Guid(ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage"));
+
 
 		public Guid EmailPreferences => new Guid(ItemIdResolver.GetItemIdByKey("ScripEmailPreferences"));
 
@@ -73,7 +85,7 @@ namespace Informa.Library.Utilities.References
 		public Guid AccountPhoneTypes => new Guid(ItemIdResolver.GetItemIdByKey("AccountPhoneTypes"));
 		public Guid AccountSalutations => new Guid(ItemIdResolver.GetItemIdByKey("AccountSalutations"));
 
-	  #endregion Account Contact Info Drop Downs
+		#endregion Account Contact Info Drop Downs
 
 		#region Templates
 
@@ -82,7 +94,7 @@ namespace Informa.Library.Utilities.References
 
 
 
-        #endregion
+		#endregion
 
         #region Restriction Access
 
@@ -90,5 +102,5 @@ namespace Informa.Library.Utilities.References
         public Guid FreeWithRegistration => new Guid(ItemIdResolver.GetItemIdByKey("FreeWithRegistration"));
 
         #endregion Restriction Access
-    }
+	}
 }

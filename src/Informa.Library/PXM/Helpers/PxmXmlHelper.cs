@@ -37,6 +37,9 @@ namespace Informa.Library.PXM.Helpers {
             ApplyTableStyles(doc);
             ChangeDefaultParagraphStyle(doc);
             MatchCellStyleWithParagraphStyle(doc);
+
+            AddSidebarPrefix(doc);
+
             FillBlankTableCell(doc);
             return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
         }
@@ -179,12 +182,14 @@ namespace Informa.Library.PXM.Helpers {
         }
 
 
-
-        public void AddSidebarPrefix(XmlDocument doc) {
+        public void AddSidebarPrefix(XmlDocument doc)
+        {
 
             var paragraphs = doc.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
 
-            foreach (XmlNode p in paragraphs) {
+            foreach (XmlNode p in paragraphs)
+            {
+
                 if (p == null) continue;
 
                 var att = p.Attributes["Style"];
@@ -196,19 +201,28 @@ namespace Informa.Library.PXM.Helpers {
         }
 
 
-        public void FillBlankTableCell(XmlDocument doc) {
+        public void FillBlankTableCell(XmlDocument doc)
+        {
+
             var cells = doc.SelectNodes("//Cell");
             if (cells == null)
                 return;
 
-            foreach (XmlNode cell in cells) {
+
+            foreach (XmlNode cell in cells)
+            {
                 if (cell.ChildNodes.Count != 0)
                     continue;
+
+                XmlAttribute cs = (cell.Attributes["CellStyle"] == null)
+                    ? doc.CreateAttribute("CellStyle")
+                    : cell.Attributes["CellStyle"];
+                cs.Value = "table_body";
 
                 XmlNode n = doc.CreateNode(XmlNodeType.Element, "ParagraphStyle", string.Empty);
                 XmlAttribute a = doc.CreateAttribute("Style");
                 a.Value = "table_body";
-                n.Attributes.Append(a);                    
+                n.Attributes.Append(a);
                 cell.AppendChild(n);
             }
         }

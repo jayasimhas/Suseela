@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {07DF7919-FEA4-41DC-8DDA-EAB30C7FB298}
+id: {47DF5975-6551-45AE-A2A0-2128EA20931A}
 database: master
-path: /sitecore/templates/User Defined/Components/DCDSubscribe/Content/Purchase Subheading
+path: /sitecore/templates/User Defined/Components/DCDSubscribe/Content/Promotional Subheadline
 parent: {0DD32BAE-515E-42D5-8203-DA28B774F232}
-name: Purchase Subheading
+name: Promotional Subheadline
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+500
 ----version----
 language: en
 version: 1
-revision: 9d1d3809-b3ac-4b1a-857a-040b9152627e
+revision: e53db65e-dc4d-4bc9-8624-8e18e35d3064
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160714T161602Z
+20160714T161603Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-9d1d3809-b3ac-4b1a-857a-040b9152627e
+e53db65e-dc4d-4bc9-8624-8e18e35d3064
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160714T161602Z
+20161010T124416Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

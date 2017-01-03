@@ -73,12 +73,14 @@
             <p class="search-result__description" ng-bind-html="doc.summary"></p>
 
             <div class="search-result__tags" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
-                <span class="result-container" ng-repeat="tax in doc.searchDisplayTaxonomy.links">
+
+                <span class="search-result__taxonomy" ng-repeat="tax in doc.searchDisplayTaxonomy.links">
+
                     <a ng-click="filterResult(tax.url)" href="{{::tax.url}}">
                         {{::tax.title}}
                     </a>
                     <!-- don't render separator after last tag -->
-                    <span ng-if="!$last" class="search-result__line-separator"></span>
+                    @*<span ng-if="!$last" class="search-result__line-separator"></span>*@
                 </span>
             </div>
 

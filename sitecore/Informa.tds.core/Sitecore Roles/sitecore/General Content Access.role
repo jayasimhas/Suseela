@@ -1,0 +1,9 @@
+----role----
+name: sitecore\General Content Access
+
+----role-in-role----
+rolename: sitecore\Editor
+
+----role-in-role----
+rolename: sitecore\Managing Editor
+

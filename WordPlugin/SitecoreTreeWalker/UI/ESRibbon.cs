@@ -257,6 +257,11 @@ namespace InformaSitecoreWord.UI
 						SaveToSitecoreBtn.Enabled = true;
 						ArticlePreviewMenu.Enabled = true;
 					}
+					else
+					{
+						SaveToSitecoreBtn.Enabled = false;
+						ArticlePreviewMenu.Enabled = false;
+					}
 				}
 			}
 			catch (UnauthorizedAccessException uax)

@@ -15,6 +15,8 @@ using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using System.Text.RegularExpressions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Custom_Tags;
+using System.Web;
+
 
 namespace Informa.Library.Site
 {
@@ -141,9 +143,9 @@ namespace Informa.Library.Site
         {
             props["og:type"] = "article";
             props["og:title"] = props["twitter:title"] = article.Title;
-            props["og:description"] = article.Summary;
-            props["twitter:description"] = article.Summary;
-
+            props["og:description"] = HttpUtility.HtmlEncode(article.Summary);
+            props["twitter:description"] = HttpUtility.HtmlEncode(article.Summary);
+            
             var imageUrl = GetImageFullUrl(article.Featured_Image_16_9?.Src);
             props["og:image"] = imageUrl;
             props["twitter:image"] = imageUrl;
