@@ -3331,7 +3331,8 @@ body.lightboxed {
   float: left; }
   .ID-Responsive-Table .table_head {
     background-color: #414042;
-    color: #ffffff; }
+    color: #ffffff;
+    padding: 10px; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3342,6 +3343,10 @@ body.lightboxed {
       font-size: 1.0625em;
       font-weight: 400;
       font-style: normal; }
+  .ID-Responsive-Table .graybg {
+    background-color: #f1f1f1;
+    padding: 12px;
+    min-height: 45px; }
   .ID-Responsive-Table .states_heading {
     position: relative;
     float: left;
