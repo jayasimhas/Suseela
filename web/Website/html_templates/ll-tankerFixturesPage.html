@@ -24,6 +24,12 @@
             margin-bottom: 20px;
             position: relative;
          }
+         .tanker-fixture .R16{
+            margin-top: 0 !important;
+         }
+         /*.large_table .visible-sm .owl-item.active {
+            width: auto !important;
+         }*/
       </style>
    </head>
    <body >
@@ -133,559 +139,219 @@
             <div class="main__content">
                <div class="small_table">
                   <div class="article-left-rail">
-                     <div class="table-responsive">
-                        <h5 class="secondary_heading">Casualties</h5>
-                        <hr/>
-                        <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
-                           <label for="relDate" style="float: left;">View casualty reports for:</label>
-                           <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
-                              <option value="13-12-2016">Tue, 13 December 2016</option>
-                              <option value="12-12-2016">Mon, 12 December 2016</option>
-                              <option value="11-12-2016">Sun, 11 December 2016</option>
-                              <option value="10-12-2016">Sat, 10 December 2016</option>
-                              <option value="09-12-2016">Fri, 09 December 2016</option>
-                              <option value="08-12-2016">Thu, 08 December 2016</option>
-                              <option value="07-12-2016">Wed, 07 December 2016</option>
-                           </select>
-                        </form>
-                        <table class="table">
-                           <thead class="table_head">
-                              <tr class="visible-lg">
-                                 <th class="pad-10">Voyage From</th>
-                                 <th class="pad-10">Voyage To</th>
-                                 <th class="pad-10">Vessel Name</th>
-                                 <th class="pad-10">Tonnes</th>
-                                 <th class="pad-10">Rate Amount</th>
-                                 <th class="pad-10">Rate Unit</th>
-                                 <th class="pad-10">Lay Date</th>
-                                 <th class="pad-10">Charterer Name</th>
-                              </tr>
-                              <tr class="visible-sm" >
-                                 <th colspan="6" class="pad-full-10">Table Header</th>
-                              </tr>
-                           </thead>
-                           <tbody class="visible-lg">
-                              <tr>
-                                 <td class="R16 pad-10">Persian Gulf</td>
-                                 <td class="R16 pad-10">Japan</td>
-                                 <td class="R16 pad-10">Mei Lin Wan</td>
-                                 <td class="R16 pad-10">75000</td>
-                                 <td class="R16 pad-10">W113</td>
-                                 <td class="R16 pad-10"></td>
-                                 <td class="R16 pad-10">Jan 10</td>
-                                 <td class="R16 pad-10">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Sikka</td>
-                                 <td class="R16 pad-10">Chennai</td>
-                                 <td class="R16 pad-10">Jag Amisha</td>
-                                 <td class="R16 pad-10">60000</td>
-                                 <td class="R16 pad-10">600000</td>
-                                 <td class="R16 pad-10">lumpsum</td>
-                                 <td class="R16 pad-10">Jan 09</td>
-                                 <td class="R16 pad-10">Ioc</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Persian Gulf</td>
-                                 <td class="R16 pad-10">Japan</td>
-                                 <td class="R16 pad-10">Mei Lin Wan</td>
-                                 <td class="R16 pad-10">75000</td>
-                                 <td class="R16 pad-10">W113</td>
-                                 <td class="R16 pad-10"></td>
-                                 <td class="R16 pad-10">Jan 10</td>
-                                 <td class="R16 pad-10">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Sikka</td>
-                                 <td class="R16 pad-10">Chennai</td>
-                                 <td class="R16 pad-10">Jag Amisha</td>
-                                 <td class="R16 pad-10">60000</td>
-                                 <td class="R16 pad-10">600000</td>
-                                 <td class="R16 pad-10">lumpsum</td>
-                                 <td class="R16 pad-10">Jan 09</td>
-                                 <td class="R16 pad-10">Ioc</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Persian Gulf</td>
-                                 <td class="R16 pad-10">Japan</td>
-                                 <td class="R16 pad-10">Mei Lin Wan</td>
-                                 <td class="R16 pad-10">75000</td>
-                                 <td class="R16 pad-10">W113</td>
-                                 <td class="R16 pad-10"></td>
-                                 <td class="R16 pad-10">Jan 10</td>
-                                 <td class="R16 pad-10">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Sikka</td>
-                                 <td class="R16 pad-10">Chennai</td>
-                                 <td class="R16 pad-10">Jag Amisha</td>
-                                 <td class="R16 pad-10">60000</td>
-                                 <td class="R16 pad-10">600000</td>
-                                 <td class="R16 pad-10">lumpsum</td>
-                                 <td class="R16 pad-10">Jan 09</td>
-                                 <td class="R16 pad-10">Ioc</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Persian Gulf</td>
-                                 <td class="R16 pad-10">Japan</td>
-                                 <td class="R16 pad-10">Mei Lin Wan</td>
-                                 <td class="R16 pad-10">75000</td>
-                                 <td class="R16 pad-10">W113</td>
-                                 <td class="R16 pad-10"></td>
-                                 <td class="R16 pad-10">Jan 10</td>
-                                 <td class="R16 pad-10">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Sikka</td>
-                                 <td class="R16 pad-10">Chennai</td>
-                                 <td class="R16 pad-10">Jag Amisha</td>
-                                 <td class="R16 pad-10">60000</td>
-                                 <td class="R16 pad-10">600000</td>
-                                 <td class="R16 pad-10">lumpsum</td>
-                                 <td class="R16 pad-10">Jan 09</td>
-                                 <td class="R16 pad-10">Ioc</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Persian Gulf</td>
-                                 <td class="R16 pad-10">Japan</td>
-                                 <td class="R16 pad-10">Mei Lin Wan</td>
-                                 <td class="R16 pad-10">75000</td>
-                                 <td class="R16 pad-10">W113</td>
-                                 <td class="R16 pad-10"></td>
-                                 <td class="R16 pad-10">Jan 10</td>
-                                 <td class="R16 pad-10">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="R16 pad-10">Sikka</td>
-                                 <td class="R16 pad-10">Chennai</td>
-                                 <td class="R16 pad-10">Jag Amisha</td>
-                                 <td class="R16 pad-10">60000</td>
-                                 <td class="R16 pad-10">600000</td>
-                                 <td class="R16 pad-10">lumpsum</td>
-                                 <td class="R16 pad-10">Jan 09</td>
-                                 <td class="R16 pad-10">Ioc</td>
-                              </tr>
-                           </tbody>
-                           <tbody class="visible-sm">
-                              <tr>
-                                 <td colspan="2" class="graybg RB18 pad-full-10"> table heading</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Persian Gulf</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Japan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Mei Lin Wan</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">75000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">W113</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor"></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 10</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Maruben</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage From</td>
-                                 <td class="pad-10 R21_RedColor">Sikka</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Voyage To</td>
-                                 <td class="pad-10 R21_RedColor">Chennai</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Jag Amisha</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Tonnes</td>
-                                 <td class="pad-10 R21_RedColor">60000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Amount</td>
-                                 <td class="pad-10 R21_RedColor">600000</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Rate Unit</td>
-                                 <td class="pad-10 R21_RedColor">lpsum</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Lay Date</td>
-                                 <td class="pad-10 R21_RedColor">Jan 09</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Charterer Name</td>
-                                 <td class="pad-10 R21_RedColor">Ioc</td>
-                              </tr>
-                           </tbody>
-                        </table>
+                     <div class="large_table tanker-fixture">
+                        <div class="large-table-responsive">
+                           <h5 class="secondary_heading">Casualties</h5>
+                           <hr/>
+                           <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
+                              <label for="relDate" style="float: left;">View casualty reports for:</label>
+                              <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
+                                 <option value="13-12-2016">Tue, 13 December 2016</option>
+                                 <option value="12-12-2016">Mon, 12 December 2016</option>
+                                 <option value="11-12-2016">Sun, 11 December 2016</option>
+                                 <option value="10-12-2016">Sat, 10 December 2016</option>
+                                 <option value="09-12-2016">Fri, 09 December 2016</option>
+                                 <option value="08-12-2016">Thu, 08 December 2016</option>
+                                 <option value="07-12-2016">Wed, 07 December 2016</option>
+                              </select>
+                           </form>
+                           <table class="table visible-lg" >
+                              <tbody>
+                                 <tr>
+                                    <th align="center">Voyage From</th>
+                                    <th align="center">Voyage To</th>
+                                    <th align="center">Vessel Name</th>
+                                    <th align="center">Tonnes</th>
+                                    <th align="center">Rate Amount</th>
+                                    <th align="center">Rate Unit</th>
+                                    <th align="center">Lay Date</th>
+                                    <th align="center">Charterer Name</th>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Persian Gulf</td>
+                                    <td align="center" class="R16">Japan</td>
+                                    <td align="center" class="R16">Mei Lin Wan</td>
+                                    <td align="center" class="R16">75000</td>
+                                    <td align="center" class="R16">W113</td>
+                                    <td align="center" class="R16"></td>
+                                    <td align="center" class="R16">Jan 10</td>
+                                    <td align="center" class="R16">Marubeni</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Sikka</td>
+                                    <td align="center" class="R16">Chennai</td>
+                                    <td align="center" class="R16">  Jag Amisha</td>
+                                    <td align="center" class="R16">60000</td>
+                                    <td align="center" class="R16">600000</td>
+                                    <td align="center" class="R16">lumpsum</td>
+                                    <td align="center" class="R16">Jan 09</td>
+                                    <td align="center" class="R16">Ioc</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Persian Gulf</td>
+                                    <td align="center" class="R16">Japan</td>
+                                    <td align="center" class="R16">Mei Lin Wan</td>
+                                    <td align="center" class="R16">75000</td>
+                                    <td align="center" class="R16">W113</td>
+                                    <td align="center" class="R16"></td>
+                                    <td align="center" class="R16">Jan 10</td>
+                                    <td align="center" class="R16">Marubeni</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Sikka</td>
+                                    <td align="center" class="R16">Chennai</td>
+                                    <td align="center" class="R16">  Jag Amisha</td>
+                                    <td align="center" class="R16">60000</td>
+                                    <td align="center" class="R16">600000</td>
+                                    <td align="center" class="R16">lumpsum</td>
+                                    <td align="center" class="R16">Jan 09</td>
+                                    <td align="center" class="R16">Ioc</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Persian Gulf</td>
+                                    <td align="center" class="R16">Japan</td>
+                                    <td align="center" class="R16">Mei Lin Wan</td>
+                                    <td align="center" class="R16">75000</td>
+                                    <td align="center" class="R16">W113</td>
+                                    <td align="center" class="R16"></td>
+                                    <td align="center" class="R16">Jan 10</td>
+                                    <td align="center" class="R16">Marubeni</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Sikka</td>
+                                    <td align="center" class="R16">Chennai</td>
+                                    <td align="center" class="R16">  Jag Amisha</td>
+                                    <td align="center" class="R16">60000</td>
+                                    <td align="center" class="R16">600000</td>
+                                    <td align="center" class="R16">lumpsum</td>
+                                    <td align="center" class="R16">Jan 09</td>
+                                    <td align="center" class="R16">Ioc</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Persian Gulf</td>
+                                    <td align="center" class="R16">Japan</td>
+                                    <td align="center" class="R16">Mei Lin Wan</td>
+                                    <td align="center" class="R16">75000</td>
+                                    <td align="center" class="R16">W113</td>
+                                    <td align="center" class="R16"></td>
+                                    <td align="center" class="R16">Jan 10</td>
+                                    <td align="center" class="R16">Marubeni</td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" class="R16">Sikka</td>
+                                    <td align="center" class="R16">Chennai</td>
+                                    <td align="center" class="R16">  Jag Amisha</td>
+                                    <td align="center" class="R16">60000</td>
+                                    <td align="center" class="R16">600000</td>
+                                    <td align="center" class="R16">lumpsum</td>
+                                    <td align="center" class="R16">Jan 09</td>
+                                    <td align="center" class="R16">Ioc</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <div class="table visible-sm" >
+                              <div class="table_head pad-10">
+                                 <span class="RB16">Sugar:</span> <span class="R16">World Production, by Country</span>
+                              </div>
+                              <div class="graybg pad-10">
+                                 &nbsp;
+                              </div>
+                              <div>
+                                 <div class="states_heading">
+                                    <div class="RB16">Voyage From</div>
+                                    <div class="RB16" >Voyage To</div>
+                                    <div class="RB16">Vessel Name</div>
+                                    <div class="RB16">Tonnes</div>
+                                    <div class="RB16">Rate Amount</div>
+                                    <div class="RB16">Rate Unit</div>
+                                    <div class="RB16">Lay Date</div>
+                                    <div class="RB16">Charterer Name</div>
+                                 </div>
+                                 <div class="owl-carousel">
+                                    <div class="article">
+                                       <div  class="R16">Persian Gulf</div>
+                                       <div  class="R16">Sikka</div>
+                                       <div  class="R16">Persian Gulf</div>
+                                       <div  class="R16">Sikka</div>
+                                       <div  class="R16">Persian Gulf</div>
+                                       <div  class="R16">Sikka</div>
+                                       <div  class="R16">Persian Gulf</div>
+                                       <div  class="R16">Sikka</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">Japan</div>
+                                       <div  class="R16">Chennai</div>
+                                       <div  class="R16">Japan</div>
+                                       <div  class="R16">Chennai</div>
+                                       <div  class="R16">Japan</div>
+                                       <div  class="R16">Chennai</div>
+                                       <div  class="R16">Japan</div>
+                                       <div  class="R16">Chennai</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">Mei Lin Wan</div>
+                                       <div  class="R16">Jag Amisha</div>
+                                       <div  class="R16">Mei Lin Wan</div>
+                                       <div  class="R16">Jag Amisha</div>
+                                       <div  class="R16">Mei Lin Wan</div>
+                                       <div  class="R16">Jag Amisha</div>
+                                       <div  class="R16">Mei Lin Wan</div>
+                                       <div  class="R16">Jag Amisha</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">75000</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">75000</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">75000</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">75000</div>
+                                       <div  class="R16">60000</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">W113</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">W113</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">W113</div>
+                                       <div  class="R16">60000</div>
+                                       <div  class="R16">W113</div>
+                                       <div  class="R16">60000</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16"></div>
+                                       <div  class="R16">lpsum</div>
+                                       <div  class="R16"></div>
+                                       <div  class="R16">lpsum</div>
+                                       <div  class="R16"></div>
+                                       <div  class="R16">lpsum</div>
+                                       <div  class="R16"></div>
+                                       <div  class="R16">lpsum</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">Jan 10</div>
+                                       <div  class="R16">Jan 09</div>
+                                       <div  class="R16">Jan 10</div>
+                                       <div  class="R16">Jan 09</div>
+                                       <div  class="R16">Jan 10</div>
+                                       <div  class="R16">Jan 09</div>
+                                       <div  class="R16">Jan 10</div>
+                                       <div  class="R16">Jan 09</div>
+                                    </div>
+                                    <div class="article">
+                                       <div  class="R16">Marubeni</div>
+                                       <div  class="R16">Ioc</div>
+                                       <div  class="R16">Marubeni</div>
+                                       <div  class="R16">Ioc</div>
+                                       <div  class="R16">Marubeni</div>
+                                       <div  class="R16">Ioc</div>
+                                       <div  class="R16">Marubeni</div>
+                                       <div  class="R16">Ioc</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                   <div class="article-right-rail">
@@ -1046,5 +712,36 @@
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
       <script src="/dist/js/index.js"></script> 
+      <script>
+         $(document).ready(function($) {
+         $('.owl-carousel').owlCarousel({
+         loop:true,
+         margin:10,
+         merge:true,
+         nav:true,
+          navText: [
+              "<img src='/dist/img/lessthan.png'/>",
+              "<img src='/dist/img/greaterthan.png'/>"
+              ],
+         responsive:{
+         0:{
+         items:2
+         },
+         678:{
+         items:3
+         },
+         320:{
+          items:2
+         },
+         480:{
+          items:2
+         },
+         1000:{
+         items:3
+         }
+         }
+         });
+         });
+         </script>
    </body>
 </html>

@@ -10,21 +10,6 @@
       <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
       <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="/dist/index-generated.css">
-      <style type="text/css">
-         #reported-date {
-            float: left;
-            margin-bottom: 20px;
-            position: relative;
-         }
-         #reported-date .selectivity-dropdown, #jump-to .selectivity-dropdown {
-            right: 0;
-         }
-         #jump-to {
-            float: right;
-            margin-bottom: 20px;
-            position: relative;
-         }
-      </style>
    </head>
    <body >
       <header>
@@ -136,27 +121,29 @@
                      <div class="table-responsive">
                         <h5 class="secondary_heading">Casualties</h5>
                         <hr/>
-                        <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
-                           <label for="relDate" style="float: left;">View casualty reports for:</label>
-                           <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
-                              <option value="13-12-2016">Tue, 13 December 2016</option>
-                              <option value="12-12-2016">Mon, 12 December 2016</option>
-                              <option value="11-12-2016">Sun, 11 December 2016</option>
-                              <option value="10-12-2016">Sat, 10 December 2016</option>
-                              <option value="09-12-2016">Fri, 09 December 2016</option>
-                              <option value="08-12-2016">Thu, 08 December 2016</option>
-                              <option value="07-12-2016">Wed, 07 December 2016</option>
-                           </select>
-                        </form>
-                        <form action="" id="jump-to" style="display: block;">
-                           <label for="jumpTo">Jump to:</label>
-                           <select name="jumpTo" id="jumpTo" class="common-field inline">
-                              <option value="Marine">Marine</option>
-                              <option value="Weather &amp; Navigation">Weather &amp; Navigation</option>
-                              <option value="Labour Disputes">Labour Disputes</option>
-                              <option value="Natural Disasters">Natural Disasters</option>
-                           </select>
-                        </form>
+                        <div class="ll-casualty-form">
+                           <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
+                              <label for="relDate" style="float: left;">View casualty reports for:</label>
+                              <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
+                                 <option value="13-12-2016">Tue, 13 December 2016</option>
+                                 <option value="12-12-2016">Mon, 12 December 2016</option>
+                                 <option value="11-12-2016">Sun, 11 December 2016</option>
+                                 <option value="10-12-2016">Sat, 10 December 2016</option>
+                                 <option value="09-12-2016">Fri, 09 December 2016</option>
+                                 <option value="08-12-2016">Thu, 08 December 2016</option>
+                                 <option value="07-12-2016">Wed, 07 December 2016</option>
+                              </select>
+                           </form>
+                           <form action="" id="jump-to" style="display: block;">
+                              <label for="jumpTo">Jump to:</label>
+                              <select name="jumpTo" id="jumpTo" class="common-field inline">
+                                 <option value="Marine">Marine</option>
+                                 <option value="Weather &amp; Navigation">Weather &amp; Navigation</option>
+                                 <option value="Labour Disputes">Labour Disputes</option>
+                                 <option value="Natural Disasters">Natural Disasters</option>
+                              </select>
+                           </form>
+                        </div>
                         <table class="table">
                            <thead class="table_head">
                               <tr class="visible-lg">

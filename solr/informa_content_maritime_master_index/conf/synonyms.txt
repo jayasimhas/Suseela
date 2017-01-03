@@ -1,0 +1,14 @@
+﻿#Custom Informa Synonyms
+
+biogeneric,biosimilar,biosimilars
+Biotech,biotechnology
+dx,diagnostic
+pharma,pharmaceutical,biopharma,biopharmaceutical
+gsk,glaxosmithline,glaxo
+hemophilia,haemophilia
+haemoglobin,hemoglobin
+haematology,hematology
+anaesthesia,anesthesia
+anaesthetic,anesthetic
+anaemia,anemia
+gynaecology,gynecology
