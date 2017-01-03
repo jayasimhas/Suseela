@@ -12,7 +12,11 @@ namespace Informa.Library.Search.SearchManager
             {
                 return AgriSearchManager.CreateInstance(indexName, context);
             }
-            else
+            else if(indexName.Contains("maritime"))//TDDO hard coded agri will be replaced with publication name
+                {
+                    return MaritimeSearchManager.CreateInstance(indexName, context);
+                }
+                else
             {
                 return PharmaSearchManager.CreateInstance(indexName, context);
             }
