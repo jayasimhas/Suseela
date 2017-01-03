@@ -27,11 +27,7 @@
 					background-color: $color-red;
 					color:$color-white;
 				  }
-				.graybg{
-				  background-color: $color-concrete-table-gray;
-				  padding: 12px;
-				  td{ padding-left:10px;}
-				}
+				
 				td, th{
 					padding: 5px 0;
 					border-left: 1px solid $color-white;
@@ -44,6 +40,11 @@
 				   @include textMix('Roboto', 1em, 400);
 				   font-style: normal;
 				}
+			}
+			.graybg{
+				  background-color: $color-concrete-table-gray;
+				  padding: 12px;
+				  td{ padding-left:10px;}
 			}
 			.R16{
 				   @include textMix('Roboto', 1em, 400);

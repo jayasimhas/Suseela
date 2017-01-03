@@ -67,6 +67,7 @@
 	    font-size: 0.75em;
 	    float: left;
 	    margin-left: 205px;
+	    text-transform: uppercase;
 	    @include breakpoint('small') {
 	    	margin-left: 0;
 	    }

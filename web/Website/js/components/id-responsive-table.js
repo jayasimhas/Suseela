@@ -61,7 +61,7 @@
 			for(var i = 0; i < data.length; i++) {
 				var Item = data[i], index = i,
 					CompanyLink = data[i].Company.toLowerCase().split(" ").join("-");
-				Parent.find('.states_heading').append('<div class="RB16"><a href="' + CompanyLink + '">' +data[i].Company+ '</a></div>');
+				Parent.find('.states_heading').append('<div class="RB16"><a href="' + data[i].CompanyPageUrl + '">' +data[i].Company+ '</a></div>');
 				for(var key in Item) {
 					if(Array.isArray(Item[key])) {
 						Parent.find('.article[data-head="' +key+ '"]').append('<div  class="R16 TableRow'+index+'">' +Item[key][0].value+ '</div>');
