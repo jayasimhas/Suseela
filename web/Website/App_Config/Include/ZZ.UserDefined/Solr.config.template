@@ -66,11 +66,10 @@
       <configuration>
         <indexes hint="list:AddIndex">
           <!-- Custom Indexes -->
-
-          <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
+          <index id="informa_content_pharma_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
-            <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
-            <param desc="rebuildcore">${Solr.CustomIndex.CoreName}_content_web_rebuild</param>
+            <param desc="core">${Solr.CustomIndex.CoreName}_content_pharma_web</param>
+            <param desc="rebuildcore">${Solr.CustomIndex.CoreName}_content_pharma_web_rebuild</param>
             <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
             <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
             <strategies hint="list:AddStrategy">
@@ -90,7 +89,7 @@
                 </ExcludeItemsList>
               </crawler>
             </locations>
-          </index>
+          </index>		
           <index id="informa_content_agri_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
             <param desc="core">informa_content_agri_web_index</param>
@@ -122,6 +121,43 @@
               <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
                 <Database>master</Database>
                 <Root>/sitecore/Content/Agri</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
+              </crawler>
+            </locations>
+          </index>
+		    <index id="informa_content_maritime_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">informa_content_maritime_web_index</param>
+            <param desc="rebuildcore">informa_content_maritime_web_index_rebuild</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
+                <Database>web</Database>
+                <Root>/sitecore/Content/Maritime</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
+              </crawler>
+            </locations>
+          </index>
+          <index id="informa_content_maritime_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">informa_content_maritime_master_index</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
+                <Database>master</Database>
+                <Root>/sitecore/Content/Maritime</Root>
                 <ExcludeItemsList hint="list">
                   <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
                 </ExcludeItemsList>
