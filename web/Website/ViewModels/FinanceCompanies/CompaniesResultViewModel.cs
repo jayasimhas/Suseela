@@ -34,7 +34,7 @@
                                     GetFinancialResultsForCompare(companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result) :
                                     "External feed url is empty";
         /// <summary>
-        /// Method tp get the 
+        /// Method to get the companies financial results for compare 
         /// </summary>
         /// <param name="financialResults"></param>
         /// <returns></returns>
