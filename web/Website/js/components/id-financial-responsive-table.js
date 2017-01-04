@@ -70,7 +70,6 @@
 		InitateCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
                loop:true,
-               margin:10,
                merge:true,
                nav:true,
                navText: [
@@ -92,7 +91,7 @@
                 items:2
                },
                1000:{
-               items:4
+               items:5
                }
                }
             });
@@ -114,9 +113,36 @@
     			}
         	});
         },
+        RenderTable: function(data, Parent) {
+    	 	Parent.find('.states_heading').parent().remove();
+		 	Parent.append('<div class="table-wrapper"><div class="table"></div></div>');
+		 	var Wrapper = $('#annualresults .table'),
+		 		Header = data[0].Header,
+		 		Values = data[0].Values;
+
+		 	Wrapper.append('<div class="tableRow"></div>');
+			
+			for(var key in Header) {
+				Wrapper.find('.tableRow:last-child').append('<div class="tableHead">' +Header[key]+ '</div>');
+			}
+
+			for(var keyItem in Values) {
+				var Items = Values[keyItem];
+				Wrapper.append('<div class="tableRow"></div>');
+				for(var item in Items) {
+					Wrapper.find('.tableRow:last-child').append('<div class="tableCell">' +Items[item]+ '</div>');
+				}
+			}
+        },
 		init: function(data, Parent) {
-			var self = this;
-			self.RenderCarousel(data, Parent);
+			var self = this,
+				windowSize = $( document ).width();
+
+			if(windowSize > 736) {
+				self.RenderTable(data, Parent);
+			} else {
+				self.RenderCarousel(data, Parent);
+			}
 			self.RenderModal(data, Parent);
 			self.ModalEvents();
 		}

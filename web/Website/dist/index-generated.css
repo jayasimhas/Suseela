@@ -3424,10 +3424,10 @@ body.lightboxed {
 #financialresults.ID-Responsive-Table .owl-item.active {
   width: 5% !important; }
 
-#quarterlyresults .tableRow > .tableCell {
+#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
   text-align: center; }
 
-#quarterlyresults .tableRow > .tableCell:first-child {
+#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 700;
@@ -3436,6 +3436,15 @@ body.lightboxed {
 
 #annualresults .year_heading {
   height: auto; }
+
+#annualresults .owl-item.active {
+  width: 7% !important; }
+
+#annualresults .graybg, #quarterlyresults .graybg {
+  display: none; }
+  @media (max-width: 480px) {
+    #annualresults .graybg, #quarterlyresults .graybg {
+      display: block; } }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
