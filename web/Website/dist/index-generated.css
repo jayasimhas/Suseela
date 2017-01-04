@@ -3322,10 +3322,14 @@ body.lightboxed {
     font-size: 1.125em;
     font-weight: 400;
     font-style: normal;
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 16px;
     text-align: center;
     background-color: #bb1528;
     color: #ffffff;
     position: relative; }
+    .table-wrapper .tableHead:first-child {
+      text-align: left; }
   .table-wrapper .tableBody {
     display: table-row-group; }
   .table-wrapper .tableFoot {
@@ -3404,7 +3408,6 @@ body.lightboxed {
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item.active {
-    width: 5% !important;
     margin-right: 1px !important; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
@@ -3417,6 +3420,22 @@ body.lightboxed {
     background: none;
     padding: 0;
     margin: 0 3px; }
+
+#financialresults.ID-Responsive-Table .owl-item.active {
+  width: 5% !important; }
+
+#quarterlyresults .tableRow > .tableCell {
+  text-align: center; }
+
+#quarterlyresults .tableRow > .tableCell:first-child {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  text-align: left; }
+
+#annualresults .year_heading {
+  height: auto; }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
