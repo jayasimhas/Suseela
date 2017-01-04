@@ -118,7 +118,7 @@
 
         private JToken GetCompanyPageUrl(JObject item, List<ICompany_Detail_Page> companyDetailPages)
         {
-            return JToken.Parse(JsonConvert.SerializeObject(companyDetailPages.First(companyPage => companyPage.CompanyID.Equals(item["ID"].Value<string>()))._Url));
+            return JToken.Parse(JsonConvert.SerializeObject(companyDetailPages.First(companyPage => (!string.IsNullOrWhiteSpace(companyPage.CompanyID) && companyPage.CompanyID.Equals(item["ID"].Value<string>())))._Url));
         }
 
     }
