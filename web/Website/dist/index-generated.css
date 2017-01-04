@@ -627,8 +627,8 @@ section: Colors
 ---
 ```example:color
 @color: #002A4D @name: primary
-@color: #0A5A8A @name: dodger
-@color: #0A5A8A @name: Steel
+@color: #0A5A8A @name: steel
+@color: #0A5A8A @name: steel
 ```
 */
 /**
