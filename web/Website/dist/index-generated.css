@@ -627,7 +627,7 @@ section: Colors
 ---
 ```example:color
 @color: #002A4D @name: primary
-@color: #0992D1 @name: dodger
+@color: #0A5A8A @name: dodger
 @color: #0A5A8A @name: Steel
 ```
 */
@@ -13182,18 +13182,18 @@ main {
   .theme-maritime .button--filled:not([disabled]):hover, .theme-maritime .pop-out__register-submit:not([disabled]):hover, .theme-maritime .pop-out__sign-in-submit:not([disabled]):hover,
   .theme-maritime .search-bar__submit:hover,
   .theme-maritime .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
-    background: #F5821F;
-    background-color: #F5821F; }
+    background: #0A5A8A;
+    background-color: #0A5A8A; }
 
 .theme-maritime .button--outline:not([disabled]) {
   border-color: #002A4D; }
   .theme-maritime .button--outline:not([disabled]):hover {
-    background-color: #F5821F;
-    border-color: #F5821F;
+    background-color: #0A5A8A;
+    border-color: #0A5A8A;
     color: #ffffff; }
 
 .theme-maritime .main-menu__hoverable:hover:before {
-  background-color: #F5821F; }
+  background-color: #0A5A8A; }
 
 .theme-maritime .main-menu__section-title a, .theme-maritime .main-menu__section-title .pop-out__reset-password, .theme-maritime .main-menu__section-title .sortable-table__list-toggler, .theme-maritime .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -13201,7 +13201,7 @@ main {
 .theme-maritime .main-menu__footer-link a, .theme-maritime .main-menu__footer-link .pop-out__reset-password, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler, .theme-maritime .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-maritime .main-menu__footer-link a:hover, .theme-maritime .main-menu__footer-link .pop-out__reset-password:hover, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-maritime .main-menu__footer-link .mobile-table-exit:hover, .theme-maritime .main-menu__footer-link a:active, .theme-maritime .main-menu__footer-link .pop-out__reset-password:active, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:active, .theme-maritime .main-menu__footer-link .mobile-table-exit:active, .theme-maritime .main-menu__footer-link a:focus, .theme-maritime .main-menu__footer-link .pop-out__reset-password:focus, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-maritime .main-menu__footer-link .mobile-table-exit:focus {
-    color: #F5821F; }
+    color: #0A5A8A; }
 
 .theme-maritime .main-menu__section-link, .theme-maritime .main-menu__section-link:hover, .theme-maritime .main-menu__section-link:active, .theme-maritime .main-menu__section-link:focus {
   color: #58595b; }

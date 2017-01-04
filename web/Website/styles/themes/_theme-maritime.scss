@@ -6,11 +6,11 @@
         $color-primary-blue,
         $color-primary-blue,
         $color-white,
-        $color-dodger-blue,
-        $color-dodger-blue,
+        $color-steel-blue,
+        $color-steel-blue,
         $color-white);
 
-    @include theme-main-menu($color-dodger-blue, $color-dodger-blue);
+    @include theme-main-menu($color-steel-blue, $color-steel-blue);
 
     @include theme-subnav($color-persian-red);
 
