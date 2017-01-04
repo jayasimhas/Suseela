@@ -3342,7 +3342,9 @@ body.lightboxed {
 .ID-Responsive-Table {
   position: relative;
   width: 100%;
-  float: left; }
+  float: left;
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
   .ID-Responsive-Table .table_head {
     background-color: #414042;
     color: #ffffff;
