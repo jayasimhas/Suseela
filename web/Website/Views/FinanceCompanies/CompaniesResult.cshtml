@@ -3,7 +3,7 @@
 
 @if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
 {
-    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.AnnualResults)
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.FinancialResults)
     {
         <script type="text/javascript">
             var jsonMappingData = @Html.Raw(Model.JsonMappingData);
@@ -19,7 +19,7 @@
         </script>
     }
 
-    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.FinancialResults)
+    if (Model.RenderingParameters.TableType.Value == Constants.CompaniesResultTableTypes.AnnualResults)
     {
         <script type="text/javascript">
             var jsonResultAnnual =  [{
