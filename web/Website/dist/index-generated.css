@@ -621,6 +621,16 @@ section: Colors
 @color: #c12d3b @name: Persian Red
 ```
 */
+/*---
+title: Maritime
+section: Colors
+---
+```example:color
+@color: #002A4D @name: primary
+@color: #0992D1 @name: dodger
+@color: #0A5A8A @name: Steel
+```
+*/
 /**
  * Set up a decent box model on the root element
  */
@@ -12989,6 +12999,303 @@ main {
 .theme-commodities .quick-facts {
   background-color: rgba(158, 49, 13, 0.1); }
   .theme-commodities .quick-facts hr {
+    background-color: rgba(193, 45, 59, 0.5); }
+
+.theme-maritime a, .theme-maritime .pop-out__reset-password, .theme-maritime .sortable-table__list-toggler, .theme-maritime .mobile-table-exit, .theme-maritime a:hover, .theme-maritime .pop-out__reset-password:hover, .theme-maritime .sortable-table__list-toggler:hover, .theme-maritime .mobile-table-exit:hover, .theme-maritime a:active, .theme-maritime .pop-out__reset-password:active, .theme-maritime .sortable-table__list-toggler:active, .theme-maritime .mobile-table-exit:active, .theme-maritime a:focus, .theme-maritime .pop-out__reset-password:focus, .theme-maritime .sortable-table__list-toggler:focus, .theme-maritime .mobile-table-exit:focus,
+.theme-maritime .facets__button,
+.theme-maritime .facets__button:hover,
+.theme-maritime .facets__button:active,
+.theme-maritime .facets__button:focus,
+.theme-maritime .facets__button svg,
+.theme-maritime .facets__button svg:hover,
+.theme-maritime .facets__button svg:active,
+.theme-maritime .facets__button svg:focus,
+.theme-maritime .sorting-arrows__arrow.is-active,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up,
+.theme-maritime .sorting-arrows__arrow.is-active:hover,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:hover,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:hover,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:hover,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:hover,
+.theme-maritime .sorting-arrows__arrow.is-active:active,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:active,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:active,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:active,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:active,
+.theme-maritime .sorting-arrows__arrow.is-active:focus,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:focus,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:focus,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:focus,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:focus,
+.theme-maritime .article-key-document__icon,
+.theme-maritime .article-key-document__icon:hover,
+.theme-maritime .article-key-document__icon:active,
+.theme-maritime .article-key-document__icon:focus {
+  color: #002A4D;
+  fill: #002A4D; }
+  .theme-maritime a use > svg, .theme-maritime .pop-out__reset-password use > svg, .theme-maritime .sortable-table__list-toggler use > svg, .theme-maritime .mobile-table-exit use > svg, .theme-maritime a:hover use > svg, .theme-maritime .pop-out__reset-password:hover use > svg, .theme-maritime .sortable-table__list-toggler:hover use > svg, .theme-maritime .mobile-table-exit:hover use > svg, .theme-maritime a:active use > svg, .theme-maritime .pop-out__reset-password:active use > svg, .theme-maritime .sortable-table__list-toggler:active use > svg, .theme-maritime .mobile-table-exit:active use > svg, .theme-maritime a:focus use > svg, .theme-maritime .pop-out__reset-password:focus use > svg, .theme-maritime .sortable-table__list-toggler:focus use > svg, .theme-maritime .mobile-table-exit:focus use > svg,
+  .theme-maritime .facets__button use > svg,
+  .theme-maritime .facets__button:hover use > svg,
+  .theme-maritime .facets__button:active use > svg,
+  .theme-maritime .facets__button:focus use > svg,
+  .theme-maritime .facets__button svg use > svg,
+  .theme-maritime .facets__button svg:hover use > svg,
+  .theme-maritime .facets__button svg:active use > svg,
+  .theme-maritime .facets__button svg:focus use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active use > svg,
+  .theme-maritime .sorting-arrows__arrow.pop-out__forgot-password.is-active use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:hover use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:hover use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:hover use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:hover use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:hover use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:active use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:active use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:active use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:active use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:active use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:focus use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:focus use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:focus use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:focus use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:focus use > svg,
+  .theme-maritime .article-key-document__icon use > svg,
+  .theme-maritime .article-key-document__icon:hover use > svg,
+  .theme-maritime .article-key-document__icon:active use > svg,
+  .theme-maritime .article-key-document__icon:focus use > svg {
+    fill: #002A4D; }
+
+.theme-maritime footer a, .theme-maritime footer .pop-out__reset-password, .theme-maritime footer .sortable-table__list-toggler, .theme-maritime footer .mobile-table-exit,
+.theme-maritime .general-header__navigation a,
+.theme-maritime .general-header__navigation .pop-out__reset-password,
+.theme-maritime .general-header__navigation .sortable-table__list-toggler,
+.theme-maritime .general-header__navigation .mobile-table-exit,
+.theme-maritime .sortable-table__col a,
+.theme-maritime .sortable-table__col .pop-out__reset-password,
+.theme-maritime .sortable-table__col .sortable-table__list-toggler,
+.theme-maritime .sortable-table__col .mobile-table-exit {
+  color: inherit; }
+
+.theme-maritime .header-account-access__my-account, .theme-maritime .header-account-access__sign-in-out {
+  color: #002A4D; }
+
+.theme-maritime .article-preview__headline,
+.theme-maritime .article-preview__headline a,
+.theme-maritime .article-preview__headline .pop-out__reset-password,
+.theme-maritime .article-preview__headline .sortable-table__list-toggler,
+.theme-maritime .article-preview__headline .mobile-table-exit,
+.theme-maritime .topic-featured-article__headline,
+.theme-maritime .topic-featured-article__headline a,
+.theme-maritime .topic-featured-article__headline .pop-out__reset-password,
+.theme-maritime .topic-featured-article__headline .sortable-table__list-toggler,
+.theme-maritime .topic-featured-article__headline .mobile-table-exit {
+  color: #231f20; }
+  .theme-maritime .article-preview__headline:hover,
+  .theme-maritime .article-preview__headline a:hover,
+  .theme-maritime .article-preview__headline .pop-out__reset-password:hover,
+  .theme-maritime .article-preview__headline .sortable-table__list-toggler:hover,
+  .theme-maritime .article-preview__headline .mobile-table-exit:hover,
+  .theme-maritime .topic-featured-article__headline:hover,
+  .theme-maritime .topic-featured-article__headline a:hover,
+  .theme-maritime .topic-featured-article__headline .pop-out__reset-password:hover,
+  .theme-maritime .topic-featured-article__headline .sortable-table__list-toggler:hover,
+  .theme-maritime .topic-featured-article__headline .mobile-table-exit:hover {
+    color: #002A4D; }
+
+.theme-maritime .button--filled:not([disabled]), .theme-maritime .pop-out__register-submit:not([disabled]), .theme-maritime .pop-out__sign-in-submit:not([disabled]),
+.theme-maritime .search-bar__submit,
+.theme-maritime .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  background: #002A4D;
+  background-color: #002A4D;
+  color: #ffffff; }
+  .theme-maritime .button--filled:not([disabled]):hover, .theme-maritime .pop-out__register-submit:not([disabled]):hover, .theme-maritime .pop-out__sign-in-submit:not([disabled]):hover,
+  .theme-maritime .search-bar__submit:hover,
+  .theme-maritime .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
+    background: #F5821F;
+    background-color: #F5821F; }
+
+.theme-maritime .button--outline:not([disabled]) {
+  border-color: #002A4D; }
+  .theme-maritime .button--outline:not([disabled]):hover {
+    background-color: #F5821F;
+    border-color: #F5821F;
+    color: #ffffff; }
+
+.theme-maritime .main-menu__hoverable:hover:before {
+  background-color: #F5821F; }
+
+.theme-maritime .main-menu__section-title a, .theme-maritime .main-menu__section-title .pop-out__reset-password, .theme-maritime .main-menu__section-title .sortable-table__list-toggler, .theme-maritime .main-menu__section-title .mobile-table-exit {
+  color: inherit; }
+
+.theme-maritime .main-menu__footer-link a, .theme-maritime .main-menu__footer-link .pop-out__reset-password, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler, .theme-maritime .main-menu__footer-link .mobile-table-exit {
+  color: #58595b; }
+  .theme-maritime .main-menu__footer-link a:hover, .theme-maritime .main-menu__footer-link .pop-out__reset-password:hover, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-maritime .main-menu__footer-link .mobile-table-exit:hover, .theme-maritime .main-menu__footer-link a:active, .theme-maritime .main-menu__footer-link .pop-out__reset-password:active, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:active, .theme-maritime .main-menu__footer-link .mobile-table-exit:active, .theme-maritime .main-menu__footer-link a:focus, .theme-maritime .main-menu__footer-link .pop-out__reset-password:focus, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-maritime .main-menu__footer-link .mobile-table-exit:focus {
+    color: #F5821F; }
+
+.theme-maritime .main-menu__section-link, .theme-maritime .main-menu__section-link:hover, .theme-maritime .main-menu__section-link:active, .theme-maritime .main-menu__section-link:focus {
+  color: #58595b; }
+
+.theme-maritime .general-header__navigation a.is-active, .theme-maritime .general-header__navigation .is-active.pop-out__reset-password, .theme-maritime .general-header__navigation .is-active.sortable-table__list-toggler, .theme-maritime .general-header__navigation .is-active.mobile-table-exit,
+.theme-maritime .general-header__navigation a:hover,
+.theme-maritime .general-header__navigation .pop-out__reset-password:hover,
+.theme-maritime .general-header__navigation .sortable-table__list-toggler:hover,
+.theme-maritime .general-header__navigation .mobile-table-exit:hover {
+  border-bottom-color: #c12d3b; }
+
+.theme-maritime .banner--register,
+.theme-maritime .banner--alert {
+  background-color: #002A4D; }
+  .theme-maritime .banner--register,
+  .theme-maritime .banner--register span,
+  .theme-maritime .banner--register svg,
+  .theme-maritime .banner--alert,
+  .theme-maritime .banner--alert span,
+  .theme-maritime .banner--alert svg {
+    fill: #ffffff;
+    color: #ffffff; }
+    .theme-maritime .banner--register use > svg,
+    .theme-maritime .banner--register span use > svg,
+    .theme-maritime .banner--register svg use > svg,
+    .theme-maritime .banner--alert use > svg,
+    .theme-maritime .banner--alert span use > svg,
+    .theme-maritime .banner--alert svg use > svg {
+      fill: #ffffff; }
+  .theme-maritime .banner--register a, .theme-maritime .banner--register .pop-out__reset-password, .theme-maritime .banner--register .sortable-table__list-toggler, .theme-maritime .banner--register .mobile-table-exit, .theme-maritime .banner--register a:hover, .theme-maritime .banner--register .pop-out__reset-password:hover, .theme-maritime .banner--register .sortable-table__list-toggler:hover, .theme-maritime .banner--register .mobile-table-exit:hover, .theme-maritime .banner--register a:active, .theme-maritime .banner--register .pop-out__reset-password:active, .theme-maritime .banner--register .sortable-table__list-toggler:active, .theme-maritime .banner--register .mobile-table-exit:active, .theme-maritime .banner--register a:focus, .theme-maritime .banner--register .pop-out__reset-password:focus, .theme-maritime .banner--register .sortable-table__list-toggler:focus, .theme-maritime .banner--register .mobile-table-exit:focus,
+  .theme-maritime .banner--alert a,
+  .theme-maritime .banner--alert .pop-out__reset-password,
+  .theme-maritime .banner--alert .sortable-table__list-toggler,
+  .theme-maritime .banner--alert .mobile-table-exit,
+  .theme-maritime .banner--alert a:hover,
+  .theme-maritime .banner--alert .pop-out__reset-password:hover,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:hover,
+  .theme-maritime .banner--alert .mobile-table-exit:hover,
+  .theme-maritime .banner--alert a:active,
+  .theme-maritime .banner--alert .pop-out__reset-password:active,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:active,
+  .theme-maritime .banner--alert .mobile-table-exit:active,
+  .theme-maritime .banner--alert a:focus,
+  .theme-maritime .banner--alert .pop-out__reset-password:focus,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:focus,
+  .theme-maritime .banner--alert .mobile-table-exit:focus {
+    color: #ffffff; }
+
+.theme-maritime .newsletter-signup,
+.theme-maritime .quick-facts {
+  background-color: #f1f2f2; }
+
+.theme-maritime .newsletter-signup {
+  border-top: 4px solid #c12d3b; }
+
+.theme-maritime .article-pullquote,
+.theme-maritime .quote,
+.theme-maritime .article-sidebar,
+.theme-maritime .topic-subtopic__header {
+  border-top-color: #c12d3b;
+  border-bottom-color: #c12d3b;
+  border-color: #c12d3b; }
+
+.theme-maritime .latest-news__header:before {
+  background-color: #c12d3b; }
+
+.theme-maritime .article-interview__question:before {
+  background-color: rgba(193, 45, 59, 0.3);
+  border-color: rgba(193, 45, 59, 0.5); }
+
+.theme-maritime .article-interview__answer, .theme-maritime .article-interview__answer:before {
+  border-color: rgba(0, 42, 77, 0.5); }
+
+.theme-maritime .article-interview__answer:before {
+  background-color: rgba(0, 42, 77, 0.15); }
+
+.theme-maritime .article-topics__li:before,
+.theme-maritime .quickfactsbulleted li:before,
+.theme-maritime .quick-facts__list--ul li:before {
+  fill: #c12d3b;
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
+  .theme-maritime .article-topics__li:before use > svg,
+  .theme-maritime .quickfactsbulleted li:before use > svg,
+  .theme-maritime .quick-facts__list--ul li:before use > svg {
+    fill: #c12d3b; }
+
+.theme-maritime .article-topics__li ul li:before,
+.theme-maritime .quickfactsbulleted li ul li:before,
+.theme-maritime .quick-facts__list--ul li ul li:before {
+  color: #c12d3b; }
+
+.theme-maritime .quick-facts {
+  background-color: rgba(0, 42, 77, 0.1); }
+  .theme-maritime .quick-facts hr {
     background-color: rgba(193, 45, 59, 0.5); }
 
 /* * * * PRINT STYLES * * * */
