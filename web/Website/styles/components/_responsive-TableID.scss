@@ -2,6 +2,10 @@
 			position:relative;
 			width: 100%;
 			float: left;
+			margin-bottom: 2rem;
+			&#financialresults {
+				border: 1px solid #d1d3d4;
+			}
 			.table_head{
 				background-color: $color-ship-gray;
 				color: $color-white;
@@ -79,7 +83,7 @@
 			}
 			.owl-item{
 				&.active{
-					width:5% !important;
+					// width:5% !important;
 					margin-right: 1px !important;
 				}
 				.year_heading span{ 
@@ -98,4 +102,29 @@
 				margin:0 3px;
 			}
 			
+}
+#financialresults.ID-Responsive-Table .owl-item.active {
+	width: 5% !important;
+}
+#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
+	text-align: center;
+}
+#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+}
+#annualresults .year_heading {
+	height: auto;
+}
+#annualresults .owl-item.active {
+	    width: 7% !important;
+}
+#annualresults .graybg, #quarterlyresults .graybg {
+	display: none;
+	@include breakpoint('small') {
+		display: block;
+	}
 }

@@ -102,13 +102,20 @@
         <div class="table_head pad-10">
             <span class="RB16">@Model.GlassModel.TableTitle</span>
             <a href="#" data-toggle="modal-@Model.RenderingParameters.TableType.Value" class="hidden-xs">
-                <img align="right" src="dist/img/breakout-arrows-transparent.png" />
+                <img align="right" src="/dist/img/breakout-arrows-transparent.png" />
             </a>
         </div>
         <div class="graybg pad-10">&nbsp;</div>
         <div>
             <div class="states_heading">
-                <div class="year_heading">COMPANY</div>
+                <div class="year_heading">COMPANY
+                    <a href="#" class="sort" category="companies" type="ascending">
+                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                    </a>
+                    <a href="#" class="sort" category="companies" type="descending">
+                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                    </a>
+                </div>
                
             </div>
 

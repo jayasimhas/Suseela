@@ -105,7 +105,7 @@
                     {
                         var jData = jsonData.Children<JObject>();
 
-                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).ToList();
+                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
                         result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
 
                         return JsonConvert.SerializeObject(result);
@@ -118,7 +118,7 @@
 
         private JToken GetCompanyPageUrl(JObject item, List<ICompany_Detail_Page> companyDetailPages)
         {
-            return JToken.Parse(JsonConvert.SerializeObject(companyDetailPages.First(companyPage => companyPage.CompanyID.Equals(item["ID"].Value<string>()))._Url));
+            return JToken.Parse(JsonConvert.SerializeObject(companyDetailPages.First(companyPage => (!string.IsNullOrWhiteSpace(companyPage.CompanyID) && companyPage.CompanyID.Equals(item["ID"].Value<string>())))._Url));
         }
 
     }

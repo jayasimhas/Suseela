@@ -2,9 +2,12 @@
 	form {
         float: left;
         margin-bottom: 20px;
-        position: relative;
         @include breakpoint('small') {
     		width: 100%;
+    		float: none;
+    	}
+    	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    		width: 50%;
     	}
         label {
         	float: left;
@@ -12,11 +15,19 @@
         	margin-right: 5px;
         	@include breakpoint('small') {
         		width: 100%;
+        		margin-bottom: 1em;
         	}
+        	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	    		width: 100%;
+	    		margin-bottom: 1em;
+	    	}
         }
         &#jump-to {
         	float: right;
         }
+     }
+     .selectivity-input {
+     	position: relative;
      }
      .selectivity-dropdown {
         right: 0;
@@ -34,16 +45,19 @@
 	    padding: 10px;
 	    background: #f7f7f7;
 	 }
-	 form {
-	 	position: relative;
-	 }
 	 form fieldset {
 	    border: 0;
+	 }
+	 .selectivity-single-select {
+	 	background: $color-white;
 	 }
 	 .select-field {
 	 	position: relative;
 	 	display: inline-block;
 	 }
+	 .selectivity-input {
+     	position: relative;
+     }
 	 .selectivity-dropdown {
         right: 0;
         top: 100%;
@@ -54,6 +68,9 @@
 	.form-control label{
 	    width: 200px;
 	    display: inline-block;
+	     @include breakpoint('small') {
+	     	margin-bottom: 0.5em;
+	     }
 	}
 	.submit {
 	    border: 1px solid transparent;
@@ -72,4 +89,7 @@
 	    	margin-left: 0;
 	    }
 	}
+}
+.graybg {
+	border-bottom: 1px solid #d1d3d4;
 }
