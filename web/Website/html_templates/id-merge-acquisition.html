@@ -20,23 +20,32 @@
             color: #000;
          }
          .range-wrapper {
-            float: left;
+            float: none;
+            width: 100%;
          }
-         .merge-acquistion input.range-field {
-            width: 30px;
+         input.range-field {
+            width: 30px !important;
          }
+
          .merge-acquistion th span, .sorting-buttons {
             float: left;
             margin-right: 5px;
          }
-         .merge-acquistion .selectivity-single-select {
+         .selectivity-single-select {
             box-sizing: border-box;
          }
-         .merge-acquistion .selectivity-single-select-input {
+         .selectivity-single-select-input {
                padding: 2px !important;
+               width: 100% !important;
          }
-         .merge-acquistion .selectivity-single-result-container {
+         .selectivity-single-result-container {
             top: 4px;
+         }
+         .form-control {
+            margin-bottom: 20px;
+         }
+         .form-control input {
+            width: 100%;
          }
       </style>
    </head>
@@ -150,7 +159,51 @@
                      <div class="table-responsive">
                         <h5 class="secondary_heading">Market Data</h5>
                         <hr/>
+                        <div class="idi-table-heading clearfix" style="background-color: #be1e2d;">
+                              <p style="float: left">Largest insurance industry acquisitions and flotations</p>
+                              <select style="float: right; width: 10%;">
+                                       <option>Abc</option>
+                                    </select>
+                        </div>
                         <table class="table merge-acquistion">
+                           <div class="visible-sm">
+                              <div style="width: 50%; float: left; padding-right: 10px;">
+                                 <div class="form-control">
+                                    <label>Month</label>
+                                    <input type="text" name="">
+                                 </div>
+                                 <div class="form-control">
+                                    <label>Acquirer</label>
+                                    <input type="text" name="">
+                                 </div>
+                                 <div class="form-control">
+                                    <label>Target</label>
+                                    <input type="text" name="">
+                                 </div>
+                                 <div class="form-control">
+                                    <label>$m Price</label>
+                                    <div class="range-wrapper">
+                                          <input type="text" class="range-field" name=""/> To <input type="text" class="range-field" name=""/>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div style="width: 50%; float: left; padding-left: 10px;">
+                                 <div class="form-control">
+                                    <label>Target Sector</label>
+                                    <select>
+                                       <option>Abc</option>
+                                    </select>
+                                 </div>
+                                 <div class="form-control">
+                                    <label>Taget Location</label>
+                                    <input type="text" name="">
+                                 </div>
+                                 <div class="form-control">
+                                    <label>Detail</label>
+                                    <input type="text" name="">
+                                 </div>
+                              </div>
+                           </div>
                            <thead class="table_head">
                               <tr class="visible-lg">
                                  <th class="pad-10" style="width: 10%;">
@@ -339,169 +392,202 @@
                            </tbody>
                            <tbody class="visible-sm">
                               <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Aberdeen(GBR)</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
                               </tr>
                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
+                                 </a>
+                              </tr>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
                               </tr>
-                              <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Ardrossan(GBR)</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
                               </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Aughinish Is.</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
                               </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
+                                 </a>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
+                              </tr>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
+                                 </a>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">
+                                    Month
+                                 </td>
+                                 <td class="pad-10 R21_RedColor">Jan</td>
+                                 </a>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Acquirer</td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual</td>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Target </td>
+                                 <td class="pad-10 R21_RedColor">HealthSpan Partners</td>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Target sector</td>
+                                 <td class="pad-10 R21_RedColor">life</td>
+                                 </a>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Target location</td>
+                                 <td class="pad-10 R21_RedColor">North America</td>
+                              </tr>
+                              <tr>
+                                 <td class="pad-10 R21_GrayColor">Detail </td>
+                                 <td class="pad-10 R21_RedColor">Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan</td>
+                              </tr>
+                             <tr>
+                                 <td class="pad-10 R21_GrayColor">$m Price</td>
+                                 <td class="pad-10 R21_RedColor">-</td>
+                                 </a>
                               </tr>
                            </tbody>
                         </table>
