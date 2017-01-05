@@ -2240,6 +2240,8 @@
     <Content Include="Views\FinanceCompanies\PeerGroupMessagingComponent.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyGraphDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompaniesCarousel.cshtml" />
+    <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
+    <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
