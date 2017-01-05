@@ -103,30 +103,5 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             }
         }
 
-        //private List<ICompany_Detail_Page> GetCompanyPeerGroupList()
-        //{
-        //    string id = HttpContext.Current.Request.QueryString["Id"];
-        //    List<ICompany_Detail_Page> peerGroupList = new List<ICompany_Detail_Page>();
-        //    if (!string.IsNullOrEmpty(id))
-        //    {
-        //        var companyPage = SitecoreContext.GetItem<ICompany_Detail_Page>(id);
-        //        if (companyPage != null)
-        //        {
-        //            peerGroupList.Add(companyPage);
-        //            var peerCompanies = companyPage.Company_PeerGroupList;
-        //            if (peerCompanies != null)
-        //            {
-
-        //            }
-        //            peerGroupList.AddRange(peerCompanies.ToList<ICompany_Detail_Page>());
-        //        }
-        //        else
-        //            return string.Empty;
-        //    }
-        //    else
-        //    {
-        //        return string.Empty;
-        //    }
-        //}
     }
 }

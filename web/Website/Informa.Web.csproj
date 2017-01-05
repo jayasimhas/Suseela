@@ -2242,6 +2242,7 @@
     <Content Include="Views\FinanceCompanies\CompaniesCarousel.cshtml" />
     <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
