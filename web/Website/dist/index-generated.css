@@ -3345,6 +3345,8 @@ body.lightboxed {
   float: left;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  .ID-Responsive-Table#financialresults {
+    border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
     background-color: #414042;
     color: #ffffff;
