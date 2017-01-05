@@ -66,7 +66,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                         CompanyName = company.Companyname,
                         CompanyLogo = company.Company_Logo?.Src,
                         CompanyLandingPageUrl = company._AbsoluteUrl,
-                        CompanyGraphPageUrl = company.CompanyGraphDetailPage?.Url,
+                        CompanyGraphPageUrl = company.CompanyGraphDetailPage?.Url +"?Id="+ company._Id,
                         Graphs = AMGraphModels(company)
                     });
                 }
