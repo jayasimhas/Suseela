@@ -87,15 +87,17 @@
                <a href="/"><img src=""></a>
             </div>
             <div class="header-search__wrapper">
-               <form action="/SC065123/Merck-Is-Finding-PDL1-Testing-Is-Helping-Keytruda" method="post">
-                  <input name="__RequestVerificationToken" type="hidden" value="lJuPfs_F5TDytd9kcY2Jp2WxYI0TPOTkhNBq5L0UzC8qKCvIIa9TFeX3x479JIombiG-6Oqp_4D91XoCD5HsT7Wqrz8x5-Wa2MZWRwNZr615vpNiSoxYwgrgkR-hLQV60" /><input id="fhController" name="fhController" type="hidden" value="HeaderSearch" /><input id="fhAction" name="fhAction" type="hidden" value="Search" />        <input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
-                  <svg class="header__icons header__icons--search js-header-search-trigger">
-                     <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
-                  </svg>
-                  <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
-                     <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                  </svg>
-               </form>
+               <div class="ll-casualty-form">
+                  <form action="/SC065123/Merck-Is-Finding-PDL1-Testing-Is-Helping-Keytruda" method="post">
+                     <input name="__RequestVerificationToken" type="hidden" value="lJuPfs_F5TDytd9kcY2Jp2WxYI0TPOTkhNBq5L0UzC8qKCvIIa9TFeX3x479JIombiG-6Oqp_4D91XoCD5HsT7Wqrz8x5-Wa2MZWRwNZr615vpNiSoxYwgrgkR-hLQV60" /><input id="fhController" name="fhController" type="hidden" value="HeaderSearch" /><input id="fhAction" name="fhAction" type="hidden" value="Search" />        <input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
+                     <svg class="header__icons header__icons--search js-header-search-trigger">
+                        <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
+                     </svg>
+                     <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                     </svg>
+                  </form>
+               </div>
             </div>
             <div class="header-account-access">
                <div class="header-account-access__friendly-greeting">Hi, Open License</div>
@@ -143,18 +145,20 @@
                         <div class="large-table-responsive">
                            <h5 class="secondary_heading">Casualties</h5>
                            <hr/>
-                           <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
-                              <label for="relDate" style="float: left;">View casualty reports for:</label>
-                              <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
-                                 <option value="13-12-2016">Tue, 13 December 2016</option>
-                                 <option value="12-12-2016">Mon, 12 December 2016</option>
-                                 <option value="11-12-2016">Sun, 11 December 2016</option>
-                                 <option value="10-12-2016">Sat, 10 December 2016</option>
-                                 <option value="09-12-2016">Fri, 09 December 2016</option>
-                                 <option value="08-12-2016">Thu, 08 December 2016</option>
-                                 <option value="07-12-2016">Wed, 07 December 2016</option>
-                              </select>
-                           </form>
+                           <div class="ll-casualty-form">
+                              <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
+                                 <label for="relDate" style="float: left;">View casualty reports for:</label>
+                                 <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
+                                    <option value="13-12-2016">Tue, 13 December 2016</option>
+                                    <option value="12-12-2016">Mon, 12 December 2016</option>
+                                    <option value="11-12-2016">Sun, 11 December 2016</option>
+                                    <option value="10-12-2016">Sat, 10 December 2016</option>
+                                    <option value="09-12-2016">Fri, 09 December 2016</option>
+                                    <option value="08-12-2016">Thu, 08 December 2016</option>
+                                    <option value="07-12-2016">Wed, 07 December 2016</option>
+                                 </select>
+                              </form>
+                           </div>
                            <table class="table visible-lg" >
                               <tbody>
                                  <tr>
