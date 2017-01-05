@@ -105,7 +105,7 @@
                     {
                         var jData = jsonData.Children<JObject>();
 
-                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).ToList();
+                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
                         result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
 
                         return JsonConvert.SerializeObject(result);

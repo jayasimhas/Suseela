@@ -2,6 +2,10 @@
 			position:relative;
 			width: 100%;
 			float: left;
+			margin-bottom: 2rem;
+			&#financialresults {
+				border: 1px solid #d1d3d4;
+			}
 			.table_head{
 				background-color: $color-ship-gray;
 				color: $color-white;
