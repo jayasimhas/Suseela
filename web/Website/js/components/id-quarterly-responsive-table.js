@@ -7,8 +7,8 @@
 			 var Tables = $('#quarterlyresults, #modal-quarterlyresults'),
 			 	QuaterlyDataHeader = data[0].QuaterlyDataHeader,
 			 	QuaterlyData = data[0].QuaterlyData,
-			 	QuaterlyResultHeader = data[0].QuaterlyResultHeader[0],
-			 	QuaterlyResult= data[0].QuaterlyResult[0];
+			 	QuaterlyResultHeader = data[0].QuaterlyResultHeader,
+			 	QuaterlyResult= data[0].QuaterlyResult;
 
 			 	$('#quarterlyresults').find('.states_heading').parent().remove();
 			 	$('#quarterlyresults').append('<div class="table-wrapper"><div class="table"></div></div>');
