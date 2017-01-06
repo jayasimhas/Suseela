@@ -79,9 +79,10 @@ namespace InformaSitecoreWord
         public static string SESSIONTIMEOUTERRORMESSAGE = "Your session has timed out, please login again in order to continue";
 
         public static List<EditorEnvironment> EDITOR_ENVIRONMENT = new List<EditorEnvironment> {
-            new EditorEnvironment{Name="Development" }, 
+            new EditorEnvironment{Name="Development" },
+            new EditorEnvironment{Name="QA" },
             new EditorEnvironment{Name="Stage" },
-            new EditorEnvironment{Name="Production" },
+            new EditorEnvironment{Name="Production"}
         };
 
     }
