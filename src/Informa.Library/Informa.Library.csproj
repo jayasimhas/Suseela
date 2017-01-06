@@ -321,6 +321,8 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Advertisement\AdUrlBuilder.cs" />
+    <Compile Include="AgrowBuyers\AgrowTile.cs" />
+    <Compile Include="AgrowBuyers\IAgrowTile.cs" />
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
     <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
@@ -355,10 +357,9 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
-
-	<Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
-	<Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
-	<Compile Include="DCD\CompanyService.cs" />
+    <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
+    <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
+    <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
     <Compile Include="JobsAndClassifieds\IJobTile.cs" />
     <Compile Include="JobsAndClassifieds\JobTile.cs" />
@@ -375,17 +376,14 @@
     <Compile Include="Search\ComputedFields\Facets\CommoditiesField.cs" />
     <Compile Include="Search\ComputedFields\Facets\CommodityFactorsField.cs" />
     <Compile Include="Search\ComputedFields\TaxonomyField.cs" />
-
-
-   
     <Compile Include="Search\ComputedFields\SearchResults\ExactMatchTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ExactMatchContentField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\WildcardTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\WildcardContentField.cs" />
     <Compile Include="Search\Filter\ILegacyArticleNumberFilter.cs" />
     <Compile Include="Search\Results\ILegacyArticleNumber.cs" />
-	<Compile Include="Search\SearchManager\MaritimeSearchManager.cs" />
-	<Compile Include="Services\Captcha\RecaptchaService.cs" />
+    <Compile Include="Search\SearchManager\MaritimeSearchManager.cs" />
+    <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />

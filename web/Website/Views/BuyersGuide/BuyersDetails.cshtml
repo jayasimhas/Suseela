@@ -1,0 +1,25 @@
+﻿@model Informa.Web.ViewModels.BuyersGuide.BuyersDetailsViewModel
+
+@*Job details View*@
+<div class="main__content">
+    <div>
+        <div class="job_detail">
+            <h1>@Model.AgrowTitle</h1>
+            <div class="sub-heading-text">
+                <p>@Model.AgrowSubTitle</p>
+                @*<p>@Model.PublishedText @Model.PublishedDate.ToString("d MMMM yyyy") @Model.PublishedDate.ToShortTimeString()</p>*@
+            </div>
+            @*add class for banner*@
+            <div class="job_logo">
+                @if (!string.IsNullOrEmpty(Model.Banner?.Src))
+                {
+                    <img src="@Model.Banner.Src" alt="@Model.Banner.Alt" align="center">
+                }
+            </div>
+            <div class="job_description">
+                <p>@Html.Raw(Model.AgrowDescription)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
