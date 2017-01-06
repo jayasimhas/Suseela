@@ -13,8 +13,8 @@
             {
                 <div class="stacked_job_view" id="content">
                     @foreach (var job in Model.JobTiles)
-                {
-                        <div class="job_list_individual eachCategory">                            
+                    {
+                        <div class="job_list_individual eachCategory">
                             <div class="job_description">
                                 <div class="job_heading">
                                     <h3><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
@@ -39,17 +39,15 @@
             }
 
             <input type="hidden" id="jobTilesCount" value="@Model.JobTiles.Count()" />
-            <input type="hidden" id="noofJobsPerPage" value="@Model.NoOfJobsPerPage" />
+            <input type="hidden" id="noofJobsPerPage" value="@Model.JobsListingSettings.No_of_Jobs_Per_Page" />
             <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
-            @{
-                int totalJobsCount;
-                bool IsJobsCountValidNo = int.TryParse(Model.NoOfJobsPerPage, out totalJobsCount);
-            }
-            @*Pagination for Jobs*@
 
-            @if (IsJobsCountValidNo)
+            @*Pagination for Jobs*@
+            @if (Model != null && Model.JobsListingSettings != null && Model.JobsListingSettings.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.JobsListingSettings.No_of_Jobs_Per_Page))
             {
-                if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.NoOfJobsPerPage) < Model.JobTiles.Count())
+               //int totalJobsCount;
+                //bool IsJobsCountValidNo = int.TryParse(Model.JobsListingSettings.No_of_Jobs_Per_Page, out totalJobsCount);
+                if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.JobsListingSettings.No_of_Jobs_Per_Page) < Model.JobTiles.Count())
                 {
                     <div class="pagination clearfix">
                         <ul class="nums">
@@ -60,6 +58,7 @@
                     </div>
                 }
             }
+           
         </div>
     </div>
 </div>

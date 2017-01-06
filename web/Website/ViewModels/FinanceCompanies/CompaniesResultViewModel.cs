@@ -14,6 +14,7 @@
     using Jabberwocky.Glass.Autofac.Mvc.Services;
     using System.Web;
     using Newtonsoft.Json.Linq;
+    using Informa.Library.Utilities.References;
 
     public class CompaniesResultViewModel : GlassViewModel<ICompany_Table_Component>
     {
@@ -27,14 +28,12 @@
         }
 
         public ICompany_Results_Table_Type_Options RenderingParameters { get; set; }
-        public string ResultsData => !string.IsNullOrWhiteSpace(GlassModel.ExternalFeedUrl) ?
-                                     companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result :
-                                     "External feed url is empty";
+        public string ResultsData => GetResultsData();
         public string CompareFinancialResults => !string.IsNullOrWhiteSpace(GlassModel.ExternalFeedUrl) ?
                                     GetFinancialResultsForCompare(companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result) :
                                     "External feed url is empty";
         /// <summary>
-        /// Method tp get the 
+        /// Method to get the companies financial results for compare 
         /// </summary>
         /// <param name="financialResults"></param>
         /// <returns></returns>
@@ -87,6 +86,48 @@
             }
 
             return result;
+        }
+
+        public string GetResultsData()
+        {
+            string jsonString = "External feed url is empty";
+
+            if(RenderingParameters != null && RenderingParameters.TableType != null && Sitecore.Context.Item.Fields["Company ID"] != null &&
+                (string.Equals(RenderingParameters.TableType.Value,Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return companyResultService.GetCompanyFeeds(string.Format(GlassModel.ExternalFeedUrl, Sitecore.Context.Item.Fields["Company ID"].Value)).Result;
+            }
+            jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
+
+            if (!string.IsNullOrWhiteSpace(jsonString))
+            {
+                var companyLandingPage = sitecoreContext.GetItem<Item>(Settings.GetSetting("Company.Landing.Page"));
+                List<ICompany_Detail_Page> companyDetailPages = new List<ICompany_Detail_Page>();
+
+                if (companyLandingPage != null && companyLandingPage.Children != null && companyLandingPage.Children.Any())
+                {
+                    companyDetailPages.AddRange(companyLandingPage.Children.Select(item => sitecoreContext.GetItem<ICompany_Detail_Page>(item.ID.Guid)));
+                    var jsonData = JsonConvert.DeserializeObject<JToken>(jsonString);
+
+                    if (jsonData != null && companyDetailPages != null && companyDetailPages.Count > 0 && companyDetailPages.Any())
+                    {
+                        var jData = jsonData.Children<JObject>();
+
+                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
+                        result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
+
+                        return JsonConvert.SerializeObject(result);
+                    }
+                }
+            }
+
+            return jsonString;
+        }
+
+        private JToken GetCompanyPageUrl(JObject item, List<ICompany_Detail_Page> companyDetailPages)
+        {
+            return JToken.Parse(JsonConvert.SerializeObject(companyDetailPages.First(companyPage => (!string.IsNullOrWhiteSpace(companyPage.CompanyID) && companyPage.CompanyID.Equals(item["ID"].Value<string>())))._Url));
         }
 
     }

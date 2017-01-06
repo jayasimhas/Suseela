@@ -20777,8 +20777,38 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
+        
+
+    }
+    /// <summary>
+    /// IJobs_Listing_No_of_Jobs_Per_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Jobs Count Per Page/Jobs Count/No of Jobs Per Page</para>	
+    /// <para>ID: 4A0CBA8B-6D96-4D14-8C7A-E32FECA125CB</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IJobs_Listing_No_of_Jobs_Per_PageConstants.TemplateIdString)]
+    public partial interface IJobs_Listing_No_of_Jobs_Per_Page : IGlassBase
+    {
+        /// <summary>
+        /// The Table Type field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 02EF7567-2FFB-4AC9-B586-AB9C2359562B</para>
+        /// </summary>
+        [SitecoreField(IJobs_Listing_No_of_Jobs_Per_PageConstants.No_of_Jobs_Per_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string No_of_Jobs_Per_Page { get; set; }
+    }
+
+    public static partial class IJobs_Listing_No_of_Jobs_Per_PageConstants
+    {
+
+        public const string TemplateIdString = "4A0CBA8B-6D96-4D14-8C7A-E32FECA125CB";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Jobs Count Per Page";
 
 
+        public static readonly ID No_of_Jobs_Per_PageFieldId = new ID("02EF7567-2FFB-4AC9-B586-AB9C2359562B");
+        public const string No_of_Jobs_Per_PageFieldName = "No of Jobs Per Page";
 
 
     }

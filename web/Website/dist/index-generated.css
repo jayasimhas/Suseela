@@ -621,6 +621,16 @@ section: Colors
 @color: #c12d3b @name: Persian Red
 ```
 */
+/*---
+title: Maritime
+section: Colors
+---
+```example:color
+@color: #002A4D @name: primary
+@color: #0A5A8A @name: steel
+@color: #0A5A8A @name: steel
+```
+*/
 /**
  * Set up a decent box model on the root element
  */
@@ -859,7 +869,7 @@ p {
     margin-bottom: 8px;
     margin-bottom: 0.5rem; }
 
-.error-text, .newsletter-signup__error, .pop-out__error, .page-account__error, .page-registration__error {
+.error-text, .newsletter-signup__error, .newsletter-signup-needs-registration, .pop-out__error, .page-account__error, .page-registration__error {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1173,7 +1183,8 @@ section: Advertising
       margin: 0 auto 4px;
       margin: 0 auto 0.25rem;
       text-align: left;
-      width: 728px; }
+      width: 728px;
+      text-align: center; }
   .advertising__label {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 11px;
@@ -1189,6 +1200,9 @@ section: Advertising
       position: fixed;
       top: 4px;
       max-width: 290px; } }
+
+.manually-curated-content__right-rail .article-preview-small .advertising {
+  text-align: center; }
 
 /*---
 title: Success Alert
@@ -3078,11 +3092,6 @@ body.lightboxed {
       text-align: center;
       background-color: #bb1528;
       color: #ffffff; }
-    .large_table .large-table-responsive .table .graybg {
-      background-color: #f1f1f1;
-      padding: 12px; }
-      .large_table .large-table-responsive .table .graybg td {
-        padding-left: 10px; }
     .large_table .large-table-responsive .table td, .large_table .large-table-responsive .table th {
       padding: 5px 0;
       border-left: 1px solid #ffffff; }
@@ -3093,6 +3102,11 @@ body.lightboxed {
       font-size: 1em;
       font-weight: 400;
       font-style: normal; }
+  .large_table .large-table-responsive .graybg {
+    background-color: #f1f1f1;
+    padding: 12px; }
+    .large_table .large-table-responsive .graybg td {
+      padding-left: 10px; }
   .large_table .large-table-responsive .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -3308,10 +3322,14 @@ body.lightboxed {
     font-size: 1.125em;
     font-weight: 400;
     font-style: normal;
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 16px;
     text-align: center;
     background-color: #bb1528;
     color: #ffffff;
     position: relative; }
+    .table-wrapper .tableHead:first-child {
+      text-align: left; }
   .table-wrapper .tableBody {
     display: table-row-group; }
   .table-wrapper .tableFoot {
@@ -3324,10 +3342,15 @@ body.lightboxed {
 .ID-Responsive-Table {
   position: relative;
   width: 100%;
-  float: left; }
+  float: left;
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
+  .ID-Responsive-Table#financialresults {
+    border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
     background-color: #414042;
-    color: #ffffff; }
+    color: #ffffff;
+    padding: 10px; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3338,6 +3361,10 @@ body.lightboxed {
       font-size: 1.0625em;
       font-weight: 400;
       font-style: normal; }
+  .ID-Responsive-Table .graybg {
+    background-color: #f1f1f1;
+    padding: 12px;
+    min-height: 45px; }
   .ID-Responsive-Table .states_heading {
     position: relative;
     float: left;
@@ -3385,7 +3412,6 @@ body.lightboxed {
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item.active {
-    width: 5% !important;
     margin-right: 1px !important; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
@@ -3398,6 +3424,31 @@ body.lightboxed {
     background: none;
     padding: 0;
     margin: 0 3px; }
+
+#financialresults.ID-Responsive-Table .owl-item.active {
+  width: 5% !important; }
+
+#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
+  text-align: center; }
+
+#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  text-align: left; }
+
+#annualresults .year_heading {
+  height: auto; }
+
+#annualresults .owl-item.active {
+  width: 7% !important; }
+
+#annualresults .graybg, #quarterlyresults .graybg {
+  display: none; }
+  @media (max-width: 480px) {
+    #annualresults .graybg, #quarterlyresults .graybg {
+      display: block; } }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -5719,6 +5770,11 @@ This component is almost always displayed in a sidebar.
     margin-top: 0.5rem; }
   .newsletter-signup-after-submit {
     display: none; }
+  .newsletter-signup-needs-registration {
+    display: none;
+    margin-top: 8px;
+    margin-top: 0.5rem;
+    font-style: normal; }
 
 /*---
 title: Pop-outs
@@ -7950,7 +8006,107 @@ div#feedbacklite.fbl_r {
     clear: both;
     display: block; }
 
+.ll-casualty-form form {
+  float: left;
+  margin-bottom: 20px; }
+  @media (max-width: 480px) {
+    .ll-casualty-form form {
+      width: 100%;
+      float: none; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .ll-casualty-form form {
+      width: 50%; } }
+  .ll-casualty-form form label {
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px; }
+    @media (max-width: 480px) {
+      .ll-casualty-form form label {
+        width: 100%;
+        margin-bottom: 1em; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .ll-casualty-form form label {
+        width: 100%;
+        margin-bottom: 1em; } }
+  .ll-casualty-form form#jump-to {
+    float: right; }
+
+.ll-casualty-form .selectivity-input {
+  position: relative; }
+
+.ll-casualty-form .selectivity-dropdown {
+  right: 0;
+  top: 100%; }
+
+.lli-brand-container {
+  margin-bottom: 20px; }
+  .lli-brand-container h3, .lli-brand-container .article-call-to-action__title {
+    background-color: #414042;
+    padding: 10px;
+    color: #fff; }
+  .lli-brand-container .lli-brand-box {
+    padding: 10px;
+    background: #f7f7f7; }
+  .lli-brand-container form fieldset {
+    border: 0; }
+  .lli-brand-container .selectivity-single-select {
+    background: #ffffff; }
+  .lli-brand-container .select-field {
+    position: relative;
+    display: inline-block; }
+  .lli-brand-container .selectivity-input {
+    position: relative; }
+  .lli-brand-container .selectivity-dropdown {
+    right: 0;
+    top: 100%; }
+  .lli-brand-container .form-control {
+    margin-bottom: 20px; }
+  .lli-brand-container .form-control label {
+    width: 200px;
+    display: inline-block; }
+    @media (max-width: 480px) {
+      .lli-brand-container .form-control label {
+        margin-bottom: 0.5em; } }
+  .lli-brand-container .submit {
+    border: 1px solid transparent;
+    color: #ffffff;
+    padding: 12px;
+    background-color: #9E310D;
+    width: 146px;
+    font-family: 'Roboto', Arial Narrow, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75em;
+    float: left;
+    margin-left: 205px;
+    text-transform: uppercase; }
+    @media (max-width: 480px) {
+      .lli-brand-container .submit {
+        margin-left: 0; } }
+
+.graybg {
+  border-bottom: 1px solid #d1d3d4; }
+
 /* * * * COMPONENTS — HEADER * * * */
+.header-publication-links {
+  float: right;
+  font-size: 14px;
+  height: 25px;
+  top: 10px;
+  position: absolute;
+  text-align: right;
+  right: 0px;
+  padding-right: 32px;
+  padding-right: 2rem; }
+  @media (max-width: 800px) {
+    .header-publication-links {
+      font-size: 11px;
+      padding-right: 16px;
+      padding-right: 1rem; } }
+  @media (max-width: 480px) {
+    .header-publication-links {
+      display: none; } }
+
 .header-account-access {
   float: right;
   font-size: 16px;
@@ -9516,12 +9672,13 @@ section: Article Components
       display: flex; } }
 
 .search__left-sidebar {
-  -ms-flex-preferred-size: 300px;
-      flex-basis: 300px;
   min-width: 300px;
   max-width: 300px;
   margin-right: 15px;
   float: left; }
+  @media (max-width: 800px) {
+    .search__left-sidebar {
+      max-width: 100%; } }
 
 .search__body {
   -webkit-box-flex: 3;
@@ -9898,6 +10055,15 @@ input[type="radio"]:checked + .facets__label:after {
     position: relative;
     width: 100%;
     margin-right: 12px; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .search-bar__input-wrapper {
+        /* Supposedly for iPad */ } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (max-width: 1080px) {
+    .search-bar__input-wrapper {
+      width: 70%; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (max-width: 800px) {
+    .search-bar__input-wrapper {
+      width: 100%; } }
   .search-bar__field {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -9937,11 +10103,21 @@ input[type="radio"]:checked + .facets__label:after {
             order: 3;
     position: relative;
     white-space: nowrap; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .search-bar__tips {
+        /* Supposedly for iPad */ } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (max-width: 1080px) {
+    .search-bar__tips {
+      padding-right: 20px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (max-width: 800px) {
+    .search-bar__tips {
+      padding-right: 0px; } }
     @media (max-width: 800px) {
       .search-bar__tips {
         display: none; } }
     .search-bar__tips.open {
-      position: relative; }
+      position: relative;
+      z-index: 1; }
     .search-bar__tips-button {
       cursor: pointer; }
     .search-bar__tips.open .search-bar__tips-button {
@@ -10213,9 +10389,12 @@ input[type="radio"]:checked + .facets__label:after {
     display: inline-block;
     width: 1px;
     height: 20px;
-    margin: 0 15px;
     vertical-align: sub;
-    background-color: #d1d3d4; }
+    background-color: #d1d3d4;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 0 15px; }
   .search-result__bookmark {
     float: right;
     padding-top: 0; }
@@ -10235,6 +10414,16 @@ input[type="radio"]:checked + .facets__label:after {
     margin: 0;
     cursor: pointer;
     border-right: 0; }
+  .search-result .result-container {
+    position: relative;
+    margin-right: 15px;
+    padding-right: 15px; }
+  .search-result__taxonomy {
+    border-right: 1px solid #d1d3d4;
+    display: inline-block;
+    padding: 0 15px; }
+  .search-result__taxonomy:last-child {
+    border-right-width: 0; }
   .search-result .highlighted-term {
     font-weight: 700;
     background-color: rgba(251, 176, 64, 0.3); }
@@ -12861,6 +13050,303 @@ main {
 .theme-commodities .quick-facts {
   background-color: rgba(158, 49, 13, 0.1); }
   .theme-commodities .quick-facts hr {
+    background-color: rgba(193, 45, 59, 0.5); }
+
+.theme-maritime a, .theme-maritime .pop-out__reset-password, .theme-maritime .sortable-table__list-toggler, .theme-maritime .mobile-table-exit, .theme-maritime a:hover, .theme-maritime .pop-out__reset-password:hover, .theme-maritime .sortable-table__list-toggler:hover, .theme-maritime .mobile-table-exit:hover, .theme-maritime a:active, .theme-maritime .pop-out__reset-password:active, .theme-maritime .sortable-table__list-toggler:active, .theme-maritime .mobile-table-exit:active, .theme-maritime a:focus, .theme-maritime .pop-out__reset-password:focus, .theme-maritime .sortable-table__list-toggler:focus, .theme-maritime .mobile-table-exit:focus,
+.theme-maritime .facets__button,
+.theme-maritime .facets__button:hover,
+.theme-maritime .facets__button:active,
+.theme-maritime .facets__button:focus,
+.theme-maritime .facets__button svg,
+.theme-maritime .facets__button svg:hover,
+.theme-maritime .facets__button svg:active,
+.theme-maritime .facets__button svg:focus,
+.theme-maritime .sorting-arrows__arrow.is-active,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up,
+.theme-maritime .sorting-arrows__arrow.is-active:hover,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:hover,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:hover,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:hover,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:hover,
+.theme-maritime .sorting-arrows__arrow.is-active:active,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:active,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:active,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:active,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:active,
+.theme-maritime .sorting-arrows__arrow.is-active:focus,
+.theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus, .sortable-table .sorttable_sorted
+.theme-maritime .sorting-arrows__arrow--up:focus,
+.theme-maritime
+.sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus,
+.sortable-table .sorttable_sorted_reverse
+.theme-maritime .sorting-arrows__arrow--down:focus,
+.theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus, .search-sort__control-type.is-sorted-up
+.theme-maritime .sorting-arrows__arrow--down:focus,
+.theme-maritime
+.search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus,
+.search-sort__control-type.is-sorted-down
+.theme-maritime .sorting-arrows__arrow--up:focus,
+.theme-maritime .article-key-document__icon,
+.theme-maritime .article-key-document__icon:hover,
+.theme-maritime .article-key-document__icon:active,
+.theme-maritime .article-key-document__icon:focus {
+  color: #002A4D;
+  fill: #002A4D; }
+  .theme-maritime a use > svg, .theme-maritime .pop-out__reset-password use > svg, .theme-maritime .sortable-table__list-toggler use > svg, .theme-maritime .mobile-table-exit use > svg, .theme-maritime a:hover use > svg, .theme-maritime .pop-out__reset-password:hover use > svg, .theme-maritime .sortable-table__list-toggler:hover use > svg, .theme-maritime .mobile-table-exit:hover use > svg, .theme-maritime a:active use > svg, .theme-maritime .pop-out__reset-password:active use > svg, .theme-maritime .sortable-table__list-toggler:active use > svg, .theme-maritime .mobile-table-exit:active use > svg, .theme-maritime a:focus use > svg, .theme-maritime .pop-out__reset-password:focus use > svg, .theme-maritime .sortable-table__list-toggler:focus use > svg, .theme-maritime .mobile-table-exit:focus use > svg,
+  .theme-maritime .facets__button use > svg,
+  .theme-maritime .facets__button:hover use > svg,
+  .theme-maritime .facets__button:active use > svg,
+  .theme-maritime .facets__button:focus use > svg,
+  .theme-maritime .facets__button svg use > svg,
+  .theme-maritime .facets__button svg:hover use > svg,
+  .theme-maritime .facets__button svg:active use > svg,
+  .theme-maritime .facets__button svg:focus use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active use > svg,
+  .theme-maritime .sorting-arrows__arrow.pop-out__forgot-password.is-active use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:hover use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:hover use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:hover use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:hover use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:hover use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:active use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:active use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:active use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:active use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:active use > svg,
+  .theme-maritime .sorting-arrows__arrow.is-active:focus use > svg,
+  .theme-maritime .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus use > svg, .sortable-table .sorttable_sorted
+  .theme-maritime .sorting-arrows__arrow--up:focus use > svg,
+  .theme-maritime
+  .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus use > svg,
+  .sortable-table .sorttable_sorted_reverse
+  .theme-maritime .sorting-arrows__arrow--down:focus use > svg,
+  .theme-maritime .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus use > svg, .search-sort__control-type.is-sorted-up
+  .theme-maritime .sorting-arrows__arrow--down:focus use > svg,
+  .theme-maritime
+  .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus use > svg,
+  .search-sort__control-type.is-sorted-down
+  .theme-maritime .sorting-arrows__arrow--up:focus use > svg,
+  .theme-maritime .article-key-document__icon use > svg,
+  .theme-maritime .article-key-document__icon:hover use > svg,
+  .theme-maritime .article-key-document__icon:active use > svg,
+  .theme-maritime .article-key-document__icon:focus use > svg {
+    fill: #002A4D; }
+
+.theme-maritime footer a, .theme-maritime footer .pop-out__reset-password, .theme-maritime footer .sortable-table__list-toggler, .theme-maritime footer .mobile-table-exit,
+.theme-maritime .general-header__navigation a,
+.theme-maritime .general-header__navigation .pop-out__reset-password,
+.theme-maritime .general-header__navigation .sortable-table__list-toggler,
+.theme-maritime .general-header__navigation .mobile-table-exit,
+.theme-maritime .sortable-table__col a,
+.theme-maritime .sortable-table__col .pop-out__reset-password,
+.theme-maritime .sortable-table__col .sortable-table__list-toggler,
+.theme-maritime .sortable-table__col .mobile-table-exit {
+  color: inherit; }
+
+.theme-maritime .header-account-access__my-account, .theme-maritime .header-account-access__sign-in-out {
+  color: #002A4D; }
+
+.theme-maritime .article-preview__headline,
+.theme-maritime .article-preview__headline a,
+.theme-maritime .article-preview__headline .pop-out__reset-password,
+.theme-maritime .article-preview__headline .sortable-table__list-toggler,
+.theme-maritime .article-preview__headline .mobile-table-exit,
+.theme-maritime .topic-featured-article__headline,
+.theme-maritime .topic-featured-article__headline a,
+.theme-maritime .topic-featured-article__headline .pop-out__reset-password,
+.theme-maritime .topic-featured-article__headline .sortable-table__list-toggler,
+.theme-maritime .topic-featured-article__headline .mobile-table-exit {
+  color: #231f20; }
+  .theme-maritime .article-preview__headline:hover,
+  .theme-maritime .article-preview__headline a:hover,
+  .theme-maritime .article-preview__headline .pop-out__reset-password:hover,
+  .theme-maritime .article-preview__headline .sortable-table__list-toggler:hover,
+  .theme-maritime .article-preview__headline .mobile-table-exit:hover,
+  .theme-maritime .topic-featured-article__headline:hover,
+  .theme-maritime .topic-featured-article__headline a:hover,
+  .theme-maritime .topic-featured-article__headline .pop-out__reset-password:hover,
+  .theme-maritime .topic-featured-article__headline .sortable-table__list-toggler:hover,
+  .theme-maritime .topic-featured-article__headline .mobile-table-exit:hover {
+    color: #002A4D; }
+
+.theme-maritime .button--filled:not([disabled]), .theme-maritime .pop-out__register-submit:not([disabled]), .theme-maritime .pop-out__sign-in-submit:not([disabled]),
+.theme-maritime .search-bar__submit,
+.theme-maritime .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  background: #002A4D;
+  background-color: #002A4D;
+  color: #ffffff; }
+  .theme-maritime .button--filled:not([disabled]):hover, .theme-maritime .pop-out__register-submit:not([disabled]):hover, .theme-maritime .pop-out__sign-in-submit:not([disabled]):hover,
+  .theme-maritime .search-bar__submit:hover,
+  .theme-maritime .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
+    background: #0A5A8A;
+    background-color: #0A5A8A; }
+
+.theme-maritime .button--outline:not([disabled]) {
+  border-color: #002A4D; }
+  .theme-maritime .button--outline:not([disabled]):hover {
+    background-color: #0A5A8A;
+    border-color: #0A5A8A;
+    color: #ffffff; }
+
+.theme-maritime .main-menu__hoverable:hover:before {
+  background-color: #0A5A8A; }
+
+.theme-maritime .main-menu__section-title a, .theme-maritime .main-menu__section-title .pop-out__reset-password, .theme-maritime .main-menu__section-title .sortable-table__list-toggler, .theme-maritime .main-menu__section-title .mobile-table-exit {
+  color: inherit; }
+
+.theme-maritime .main-menu__footer-link a, .theme-maritime .main-menu__footer-link .pop-out__reset-password, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler, .theme-maritime .main-menu__footer-link .mobile-table-exit {
+  color: #58595b; }
+  .theme-maritime .main-menu__footer-link a:hover, .theme-maritime .main-menu__footer-link .pop-out__reset-password:hover, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-maritime .main-menu__footer-link .mobile-table-exit:hover, .theme-maritime .main-menu__footer-link a:active, .theme-maritime .main-menu__footer-link .pop-out__reset-password:active, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:active, .theme-maritime .main-menu__footer-link .mobile-table-exit:active, .theme-maritime .main-menu__footer-link a:focus, .theme-maritime .main-menu__footer-link .pop-out__reset-password:focus, .theme-maritime .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-maritime .main-menu__footer-link .mobile-table-exit:focus {
+    color: #0A5A8A; }
+
+.theme-maritime .main-menu__section-link, .theme-maritime .main-menu__section-link:hover, .theme-maritime .main-menu__section-link:active, .theme-maritime .main-menu__section-link:focus {
+  color: #58595b; }
+
+.theme-maritime .general-header__navigation a.is-active, .theme-maritime .general-header__navigation .is-active.pop-out__reset-password, .theme-maritime .general-header__navigation .is-active.sortable-table__list-toggler, .theme-maritime .general-header__navigation .is-active.mobile-table-exit,
+.theme-maritime .general-header__navigation a:hover,
+.theme-maritime .general-header__navigation .pop-out__reset-password:hover,
+.theme-maritime .general-header__navigation .sortable-table__list-toggler:hover,
+.theme-maritime .general-header__navigation .mobile-table-exit:hover {
+  border-bottom-color: #c12d3b; }
+
+.theme-maritime .banner--register,
+.theme-maritime .banner--alert {
+  background-color: #002A4D; }
+  .theme-maritime .banner--register,
+  .theme-maritime .banner--register span,
+  .theme-maritime .banner--register svg,
+  .theme-maritime .banner--alert,
+  .theme-maritime .banner--alert span,
+  .theme-maritime .banner--alert svg {
+    fill: #ffffff;
+    color: #ffffff; }
+    .theme-maritime .banner--register use > svg,
+    .theme-maritime .banner--register span use > svg,
+    .theme-maritime .banner--register svg use > svg,
+    .theme-maritime .banner--alert use > svg,
+    .theme-maritime .banner--alert span use > svg,
+    .theme-maritime .banner--alert svg use > svg {
+      fill: #ffffff; }
+  .theme-maritime .banner--register a, .theme-maritime .banner--register .pop-out__reset-password, .theme-maritime .banner--register .sortable-table__list-toggler, .theme-maritime .banner--register .mobile-table-exit, .theme-maritime .banner--register a:hover, .theme-maritime .banner--register .pop-out__reset-password:hover, .theme-maritime .banner--register .sortable-table__list-toggler:hover, .theme-maritime .banner--register .mobile-table-exit:hover, .theme-maritime .banner--register a:active, .theme-maritime .banner--register .pop-out__reset-password:active, .theme-maritime .banner--register .sortable-table__list-toggler:active, .theme-maritime .banner--register .mobile-table-exit:active, .theme-maritime .banner--register a:focus, .theme-maritime .banner--register .pop-out__reset-password:focus, .theme-maritime .banner--register .sortable-table__list-toggler:focus, .theme-maritime .banner--register .mobile-table-exit:focus,
+  .theme-maritime .banner--alert a,
+  .theme-maritime .banner--alert .pop-out__reset-password,
+  .theme-maritime .banner--alert .sortable-table__list-toggler,
+  .theme-maritime .banner--alert .mobile-table-exit,
+  .theme-maritime .banner--alert a:hover,
+  .theme-maritime .banner--alert .pop-out__reset-password:hover,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:hover,
+  .theme-maritime .banner--alert .mobile-table-exit:hover,
+  .theme-maritime .banner--alert a:active,
+  .theme-maritime .banner--alert .pop-out__reset-password:active,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:active,
+  .theme-maritime .banner--alert .mobile-table-exit:active,
+  .theme-maritime .banner--alert a:focus,
+  .theme-maritime .banner--alert .pop-out__reset-password:focus,
+  .theme-maritime .banner--alert .sortable-table__list-toggler:focus,
+  .theme-maritime .banner--alert .mobile-table-exit:focus {
+    color: #ffffff; }
+
+.theme-maritime .newsletter-signup,
+.theme-maritime .quick-facts {
+  background-color: #f1f2f2; }
+
+.theme-maritime .newsletter-signup {
+  border-top: 4px solid #c12d3b; }
+
+.theme-maritime .article-pullquote,
+.theme-maritime .quote,
+.theme-maritime .article-sidebar,
+.theme-maritime .topic-subtopic__header {
+  border-top-color: #c12d3b;
+  border-bottom-color: #c12d3b;
+  border-color: #c12d3b; }
+
+.theme-maritime .latest-news__header:before {
+  background-color: #c12d3b; }
+
+.theme-maritime .article-interview__question:before {
+  background-color: rgba(193, 45, 59, 0.3);
+  border-color: rgba(193, 45, 59, 0.5); }
+
+.theme-maritime .article-interview__answer, .theme-maritime .article-interview__answer:before {
+  border-color: rgba(0, 42, 77, 0.5); }
+
+.theme-maritime .article-interview__answer:before {
+  background-color: rgba(0, 42, 77, 0.15); }
+
+.theme-maritime .article-topics__li:before,
+.theme-maritime .quickfactsbulleted li:before,
+.theme-maritime .quick-facts__list--ul li:before {
+  fill: #c12d3b;
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
+  .theme-maritime .article-topics__li:before use > svg,
+  .theme-maritime .quickfactsbulleted li:before use > svg,
+  .theme-maritime .quick-facts__list--ul li:before use > svg {
+    fill: #c12d3b; }
+
+.theme-maritime .article-topics__li ul li:before,
+.theme-maritime .quickfactsbulleted li ul li:before,
+.theme-maritime .quick-facts__list--ul li ul li:before {
+  color: #c12d3b; }
+
+.theme-maritime .quick-facts {
+  background-color: rgba(0, 42, 77, 0.1); }
+  .theme-maritime .quick-facts hr {
     background-color: rgba(193, 45, 59, 0.5); }
 
 /* * * * PRINT STYLES * * * */

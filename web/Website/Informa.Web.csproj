@@ -1785,6 +1785,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\AMchartsGroup.js" />
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\myview-settings.js" />
     <Content Include="js\components\pagination.js" />
@@ -2241,6 +2242,9 @@
     <Content Include="Views\FinanceCompanies\PeerGroupMessagingComponent.cshtml" />
     <Content Include="Views\FinanceCompanies\CompanyGraphDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompaniesCarousel.cshtml" />
+    <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
+    <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
+    <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
     <None Include="Web.config.template">

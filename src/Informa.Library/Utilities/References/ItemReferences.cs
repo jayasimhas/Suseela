@@ -36,10 +36,10 @@ namespace Informa.Library.Utilities.References
 
 
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"); //This Guid not found in CMS
-        public Guid SubjectsTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"));
-		public Guid RegionsTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"));
-		public Guid TherapyAreasTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder"));
-        public Guid DeviceAreasTaxonomyFolder => new Guid(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder"));
+        public Guid SubjectsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"))? ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"):Guid.Empty.ToString());
+		public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"))? ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"): Guid.Empty.ToString());
+		public Guid TherapyAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid DeviceAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder") : Guid.Empty.ToString());
 
 		public Guid GlobalTaxonomyFolder => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
         
@@ -49,21 +49,21 @@ namespace Informa.Library.Utilities.References
         #endregion
 
 
-		public Guid SearchPage => new Guid(ItemIdResolver.GetItemIdByKey("ScripSearchPage"));
-		public Guid VwbSearchPage => new Guid(ItemIdResolver.GetItemIdByKey("VwbSearchPage"));
+		public Guid SearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSearchPage")) ? ItemIdResolver.GetItemIdByKey("ScripSearchPage") : Guid.Empty.ToString());
+		public Guid VwbSearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("VwbSearchPage")) ? ItemIdResolver.GetItemIdByKey("VwbSearchPage") : Guid.Empty.ToString());
 
 
-    public Guid IssuesRootCurrent => new Guid(ItemIdResolver.GetItemIdByKey("IssuesRootCurrent"));
-    public Guid IssuesRootArchive => new Guid(ItemIdResolver.GetItemIdByKey("IssuesRootArchive"));
-    public Guid IssueTemplate => new Guid(ItemIdResolver.GetItemIdByKey("IssueTemplate"));
-    public Guid IssueArchivedTemplate => new Guid(ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate"));
+    public Guid IssuesRootCurrent => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssuesRootCurrent")) ? ItemIdResolver.GetItemIdByKey("IssuesRootCurrent") : Guid.Empty.ToString());
+    public Guid IssuesRootArchive => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssuesRootArchive")) ? ItemIdResolver.GetItemIdByKey("IssuesRootArchive") : Guid.Empty.ToString());
+    public Guid IssueTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssueTemplate")) ? ItemIdResolver.GetItemIdByKey("IssueTemplate") : Guid.Empty.ToString());
+    public Guid IssueArchivedTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate")) ? ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate") : Guid.Empty.ToString());
      
 
 
-    public Guid SubscriptionPage => new Guid(ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage"));
+    public Guid SubscriptionPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage")) ? ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage") : Guid.Empty.ToString());
 
 
-		public Guid EmailPreferences => new Guid(ItemIdResolver.GetItemIdByKey("ScripEmailPreferences"));
+		public Guid EmailPreferences => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripEmailPreferences")) ? ItemIdResolver.GetItemIdByKey("ScripEmailPreferences") : Guid.Empty.ToString());
 
         public Guid PasswordRecoveryEmail => new Guid("{0645BE3C-B851-427D-B91D-FC566FB813FA}");
 
@@ -78,19 +78,19 @@ namespace Informa.Library.Utilities.References
 
 		#region Account Contact Info Drop Downs
 
-		public Guid AccountCountries => new Guid(ItemIdResolver.GetItemIdByKey("AccountCountries"));
-		public Guid AccountJobFunctions => new Guid(ItemIdResolver.GetItemIdByKey("AccountJobFunctions"));
-		public Guid AccountJobIndustries => new Guid(ItemIdResolver.GetItemIdByKey("AccountJobIndustries"));
-		public Guid AccountNameSuffixes => new Guid(ItemIdResolver.GetItemIdByKey("AccountNameSuffixes"));
-		public Guid AccountPhoneTypes => new Guid(ItemIdResolver.GetItemIdByKey("AccountPhoneTypes"));
-		public Guid AccountSalutations => new Guid(ItemIdResolver.GetItemIdByKey("AccountSalutations"));
+		public Guid AccountCountries => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountCountries")) ? ItemIdResolver.GetItemIdByKey("AccountCountries") : Guid.Empty.ToString());
+		public Guid AccountJobFunctions => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountJobFunctions")) ? ItemIdResolver.GetItemIdByKey("AccountJobFunctions"): Guid.Empty.ToString());
+		public Guid AccountJobIndustries => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountJobIndustries")) ? ItemIdResolver.GetItemIdByKey("AccountJobIndustries") : Guid.Empty.ToString());
+		public Guid AccountNameSuffixes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountNameSuffixes")) ? ItemIdResolver.GetItemIdByKey("AccountNameSuffixes") : Guid.Empty.ToString());
+		public Guid AccountPhoneTypes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountPhoneTypes")) ? ItemIdResolver.GetItemIdByKey("AccountPhoneTypes") : Guid.Empty.ToString());
+		public Guid AccountSalutations => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountSalutations")) ? ItemIdResolver.GetItemIdByKey("AccountSalutations") : Guid.Empty.ToString());
 
 		#endregion Account Contact Info Drop Downs
 
 		#region Templates
 
-		public Guid FolderTemplate => new Guid(ItemIdResolver.GetItemIdByKey("FolderTemplate"));
-		public Guid TaxonomyRoot => new Guid(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")); //Need confirmation as it points to taxonomy root
+		public Guid FolderTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FolderTemplate")) ? ItemIdResolver.GetItemIdByKey("FolderTemplate") : Guid.Empty.ToString());
+		public Guid TaxonomyRoot => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRoot") : Guid.Empty.ToString()); //Need confirmation as it points to taxonomy root
 
 
 
@@ -98,8 +98,8 @@ namespace Informa.Library.Utilities.References
 
         #region Restriction Access
 
-        public Guid FreeWithEntitlement => new Guid(ItemIdResolver.GetItemIdByKey("FreeWithEntitlement"));
-        public Guid FreeWithRegistration => new Guid(ItemIdResolver.GetItemIdByKey("FreeWithRegistration"));
+        public Guid FreeWithEntitlement => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FreeWithEntitlement")) ? ItemIdResolver.GetItemIdByKey("FreeWithEntitlement") : Guid.Empty.ToString());
+        public Guid FreeWithRegistration => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FreeWithRegistration")) ? ItemIdResolver.GetItemIdByKey("FreeWithRegistration") : Guid.Empty.ToString());
 
         #endregion Restriction Access
 	}

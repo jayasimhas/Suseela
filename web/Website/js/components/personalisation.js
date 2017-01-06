@@ -1,10 +1,10 @@
 function loadLayoutOneData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
 	loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
+	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1">' : '';
 	loadData += createLayoutInner1(data);
 	loadData += '</div>';
 	loadData += data.loadMore && data.loadMore.displayLoadMore ? '<div class="loadmore"><span href="' + loadmoreLink + '">' + data.loadMore.loadMoreLinkText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div>' : '';
@@ -216,10 +216,10 @@ function createLayoutInner1(data) {
 function loadLayoutTwoData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>'+editMyView+'</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
-	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout2" id="' + loadPreferanceId["Sections"][idx].ChannelId + '">' : '';
+	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout2">' : '';
 	loadData += createLayoutInner2(data);
 	loadData += '</div>';
 
@@ -435,7 +435,7 @@ $(function(){
 	    getLiIdx, getArticleIdx;
 	if (typeof loadPreferanceId !== "undefined") {
 		var loadDynData = loadPreferanceId["Sections"].length < loadPreferanceId.DefaultSectionLoadCount ? loadPreferanceId["Sections"].length : loadPreferanceId.DefaultSectionLoadCount,
-		getArticalIdx = 0, postedId = window.location.href.split('?id=')[1];
+		getArticalIdx = 0, postedId = window.location.href.split('#')[1];
 		
 		if(postedId != '' && postedId != undefined){
 			for (var i = 0; i < loadPreferanceId["Sections"].length; i++) {
@@ -484,16 +484,6 @@ $(function(){
 							},
 							error: function error(xhr, errorType, _error) {
 								console.log('err ' + _error);
-							},
-							complete: function complete(xhr, status) {
-								if (status == "success" && hdnsubmitArtId.val() !== null && hdnsubmitArtId.val() !== '') {
-									setTimeout(function () {
-										var getlatestPos = $('#' + hdnsubmitArtId.val()).position();
-										if (getlatestPos) {
-											$(window).scrollTop(getlatestPos.top - 120);
-										}
-									}, 5);
-								}
 							}
 						});
 					}
@@ -680,7 +670,7 @@ $(function(){
 		else{
 			e.preventDefault();
 			var $this = $(this), href = $this.attr('href'), id = $this.attr('name');
-			window.location.href = href + '?id=' + id;
+			window.location.href = href + '#' + id;
 		}
 	});
 });

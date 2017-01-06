@@ -59,9 +59,8 @@
 			var Items = Parent.find('.owl-carousel').find('.article');
 
 			for(var i = 0; i < data.length; i++) {
-				var Item = data[i], index = i,
-					CompanyLink = data[i].Company.toLowerCase().split(" ").join("-");
-				Parent.find('.states_heading').append('<div class="RB16"><a href="' + CompanyLink + '">' +data[i].Company+ '</a></div>');
+				var Item = data[i], index = i;
+				Parent.find('.states_heading').append('<div class="RB16"><a href="' + data[i].CompanyPageUrl + '">' +data[i].Company+ '</a></div>');
 				for(var key in Item) {
 					if(Array.isArray(Item[key])) {
 						Parent.find('.article[data-head="' +key+ '"]').append('<div  class="R16 TableRow'+index+'">' +Item[key][0].value+ '</div>');
@@ -132,11 +131,11 @@
             });
         },
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-financialresults"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-annualresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-financialresults').show();
+        		$('#modal-annualresults').show();
         	});
-        	$(document).on('click', '#modal-financialresults .table_close', function(e) {
+        	$(document).on('click', '#modal-annualresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -225,8 +224,8 @@
 					Items = [],
 					CarouselControl = $(this).parents('.ID-Responsive-Table').find('.owl-controls').find('.owl-dots'),
 					ControlIndex = CarouselControl.find('.active').index(),
-					CarouselStyles = $('#financialresults .owl-stage').attr('style'),
-					OwlItems = $('#financialresults .owl-stage').find('.owl-item'),
+					CarouselStyles = $('#annualresults .owl-stage').attr('style'),
+					OwlItems = $('#annualresults .owl-stage').find('.owl-item'),
 					ClonedItems = [],
 					ActiveItems = [];
 
@@ -271,20 +270,20 @@
 				
 				self.RecreateObject(Content, Items, window.ResponsiveJSON, id, category);
 				
-				$('#financialresults .owl-stage').attr('style', CarouselStyles);
-				$('#financialresults .owl-stage .owl-item').removeClass('cloned');
-				$('#financialresults .owl-stage .owl-item').removeClass('active');
+				$('#annualresults .owl-stage').attr('style', CarouselStyles);
+				$('#annualresults .owl-stage .owl-item').removeClass('cloned');
+				$('#annualresults .owl-stage .owl-item').removeClass('active');
 				for(var key in ClonedItems) {
-					$($('#financialresults .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
+					$($('#annualresults .owl-stage .owl-item')[ClonedItems[key]]).addClass('cloned');
 				}
 
 				for(var key in ActiveItems) {
-					$($('#financialresults .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
+					$($('#annualresults .owl-stage .owl-item')[ActiveItems[key]]).addClass('active');
 				}
 
-				$('#financialresults .owl-dot').removeClass('active');
-				$($('#financialresults .owl-dot')[ControlIndex]).addClass('active');
-				$('#financialresults .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
+				$('#annualresults .owl-dot').removeClass('active');
+				$($('#annualresults .owl-dot')[ControlIndex]).addClass('active');
+				$('#annualresults .article[data-head="' + Content + '"] .sort[type="' + type + '"]').addClass('active');
 			});
         },
         RecreateObject: function(Content, SortedItem, MainArray, id, category, modal) {
@@ -334,8 +333,8 @@
 		}
 	}
 
-	if($('#financialresults').length > 0) {
-		ResponsiveTable.init(window.jsonResultFinancial, $('#financialresults'));	
+	if($('#annualresults').length > 0) {
+		ResponsiveTable.init(window.jsonResultAnnual, $('#annualresults'));	
 	}
 	
 

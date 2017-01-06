@@ -81,10 +81,15 @@
     .tableHead {
          @include textMix('Roboto', 1.125em, 400);
         font-style: normal;
+        font-family: "PT Serif", Georgia, serif;
+        font-size: 16px;
         text-align: center;
         background-color: $color-red;
         color:$color-white;
         position: relative;
+        &:first-child {
+            text-align: left;
+        }
     }
     .tableBody { 
         display: table-row-group;

@@ -32,7 +32,6 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         /// Selected Companies for Carousel 
         /// </summary>
         public IEnumerable<ICompany_Detail_Page> Companies => GlassModel?.Companies;
-        //public IEnumerable<ICompany_Graph> AMGraphs => GlassModel?.Graphs.Take(3);     
 
         /// <summary>
         /// Carousel panels
@@ -67,7 +66,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                         CompanyName = company.Companyname,
                         CompanyLogo = company.Company_Logo?.Src,
                         CompanyLandingPageUrl = company._AbsoluteUrl,
-                        CompanyGraphPageUrl = company.CompanyGraphDetailPage?.Url,
+                        CompanyGraphPageUrl = company.CompanyGraphDetailPage?.Url +"?Id="+ company._Id,
                         Graphs = AMGraphModels(company)
                     });
                 }
@@ -145,7 +144,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             }
             catch (Exception ex)
             {
-                _logger.Error("Error in downloading the finance results", ex);
+                _logger.Error("Error in downloading the finance results from: " + feedUrl, ex);
                 return string.Empty;
             }
         }
