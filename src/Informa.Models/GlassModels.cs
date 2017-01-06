@@ -1332,7 +1332,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// Company PeerGroupList
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IEnumerable<IGlassBase> Company_PeerGroupList { get; set; }
+        IEnumerable<ICompany_Detail_Page> Company_PeerGroupList { get; set; }
         /// <summary>
         /// Peer Company Detail Page Link
         /// </summary>
