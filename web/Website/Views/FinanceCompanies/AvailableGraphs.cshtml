@@ -1,0 +1,13 @@
+﻿@model Informa.Web.ViewModels.FinanceCompanies.CompanyGraphViewModel
+<div class="article-related-content">
+
+    <h2>@Model.AvailableGraphsText</h2>
+    <div class="availableGraphs">
+        <ul>
+            @foreach (var Graph in Model.AMGraphs)
+            {
+                <li class="article-topics__li"><a id="AG-@Graph.GraphID" href="javascript: void(0);">@Graph.GraphTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
