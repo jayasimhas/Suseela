@@ -8,657 +8,575 @@
     string personalizeContentToken = "#Personalized_Content#";
 }
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Untitled</title>
+    <!-- NAME: 1:3:2 COLUMN - BANDED -->
+    <!--[if gte mso 15]>
+    <xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email</title>
+
     <style type="text/css">
-        /* GENERAL STYLE RESETS */
-        body, #bodyTable {
-            height: 100% !important;
-            width: 100% !important;
-            margin: 0;
-            padding: 0;
-        }
-
-        img, a img {
-            border: 0;
-            outline: none;
-            text-decoration: none;
-        }
-
-        .imageFix {
-            display: block;
-        }
-
-        table, td {
-            border-collapse: collapse;
-        }
-
-        /* CLIENT-SPECIFIC RESETS */
-        .ReadMsgBody {
-            width: 100%;
-        }
-
-        .ExternalClass {
-            width: 100%;
-        }
-
-            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-                line-height: 100%;
+            p{
+                margin:10px 0;
+                padding:0;
             }
-
-        table, td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
-
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-
-        body, table, td, p, a, li, blockquote {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-
-
-        /* LAYOUT HELPERS */
-
-        .layout-padded-right {
-            padding-right: 3%;
-        }
-
-        .layout-padded-left {
-            padding-left: 3%;
-        }
-
-        .layout-text-centered {
-            text-align: center;
-        }
-
-        .layout-text-right {
-            text-align: right;
-        }
-
-        .two-thirds {
-            width: 60%;
-        }
-
-        .one-third {
-            width: 30%;
-        }
-
-            .one-third img {
-                width: 100%;
-                height: auto;
+            table{
+                border-collapse:collapse;
             }
-
-
-        a:link {
-            color: #be1e2d;
-            font-weight: normal;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: #be1e2d;
-            font-weight: normal;
-            text-decoration: none;
-        }
-
-
-
-
-        body {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
-            font-size: 12px;
-            border-collapse: collapse !important;
-        }
-
-        p,
-        .t-paragraph {
-            display: block;
-            font-family: Georgia, serif;
-            font-size: 14px;
-            line-height: 150%;
-            margin-top: 0;
-            padding-top: 0;
-        }
-
-        .standardPadding {
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-
-        #topViewOnlineLink {
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-
-        #templateContainer {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-            width: 600px;
-            border: 1px solid #DDDDDD;
-            border-collapse: collapse !important;
-            margin-bottom: 32px;
-            max-width: 600px;
-        }
-
-        .preheaderContent {
-            padding-top: 16px;
-            padding-bottom: 16px;
-            font-size: 13px;
-        }
-
-        #templateHeader {
-            margin-bottom: 24px;
-        }
-
-        .header__date {
-            font-size: 13px;
-            color: #888;
-            font-weight: bold;
-        }
-
-        .manually-curated-section {
-            margin-bottom: 32px;
-        }
-		.manual-curated-email-section{
-			padding: 15px;
-		}
-		.manual-layout-margin-left{
-			margin-left:5%;
-		}
-		.manual-layout-padded-left{
-			padding-left:5%;
-		}
-		.manual-featured-article td{
-			padding-bottom:12px;
-		}
-        .daily-alert {
-            background-color: #eee;
-            margin-bottom: 24px;
-        }
-	
-        .daily-alert__cell {
-            padding-bottom: 16px;
-            padding-top: 16px;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-
-        .daily-alert-body {
-            font-size: 16px;
-            color: #777;
-            margin-bottom: 0;
-            text-align: center;
-            line-height: 26px;
-        }
-
-        .mobile-ad {
-            margin-bottom: 16px;
-        }
-
-        .mobile-ad__cell {
-            text-align: center;
-        }
-
-        .mobile-ad__title {
-            text-align: left;
-            width: 320px;
-            margin: 0px auto;
-            padding-bottom: 4px;
-            letter-spacing: 1px;
-            font-size: 10px;
-            color: #bbb;
-            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
-            text-transform: uppercase;
-        }
-
-        .mobile-ad__image {
-            margin-top: 0;
-        }
-
-        .caps-header {
-            text-transform: uppercase;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .section-header {
-            border-bottom: 2px solid #ddd;
-            font-size: 16px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 16px;
-            width: 100%;
-        }
-
-            .section-header td {
-                padding-bottom: 8px;
+            h1,h2,h3,h4,h5,h6{
+                display:block;
+                margin:0;
+                padding:0;
             }
-
-        .article-preview-header td {
-            padding-bottom: 16px;
-        }
-
-        .article-metadata {
-            margin-bottom: 8px;
-        }
-
-        .article-date {
-            color: #888;
-            font-size: 13px;
-            vertical-align: middle;
-        }
-
-        .vertical-separator {
-            display: inline-block;
-            color: #ddd;
-            font-size: 16px;
-        }
-
-        .article-category {
-            font-weight: bold;
-            text-transform: uppercase;
-            vertical-align: middle;
-        }
-
-        .featured__title {
-            margin: 0;
-            margin-bottom: 8px;
-            font-size: 22px;
-            line-height: 28px;
-        }
-
-        .article-byline {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .featured__image {
-            width: 100%;
-            height: auto;
-        }
-
-        .featured__read-more {
-            margin-top: 16px;
-            font-size: 15px;
-            text-align: right;
-            display: block;
-        }
-
-        .featured__read-more--button {
-            text-align: left;
-            font-size: 11px;
-            text-transform: uppercase;
-            border: 1px solid orange;
-            padding: 12px 16px;
-            display: inline-block;
-        }
-
-            .featured__read-more--button a {
-                font-weight: bold;
-                color: #000;
+            img,a img{
+                border:0;
+                height:auto;
+                outline:none;
+                text-decoration:none;
             }
-
-        .one-third .featured-content__image {
-            width: 14px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 4px;
-        }
-
-        .featured__download-link {
-            display: inline-block;
-            margin-top: 16px;
-            font-size: 14px;
-        }
-
-        .featured__article {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 8px;
-        }
-
-            .featured__article td {
-                padding-bottom: 12px;
-            }
-
-        .featured__article-image {
-            height: 22px;
-            width: auto;
-            vertical-align: middle;
-            display: inline-block;
-        }
-
-        #templateFooter {
-            background-color: #eee;
-        }
-
-            #templateFooter,
-            #templateFooter p {
+            body,#bodyTable,#bodyCell{
+                height:100%;
+                margin:0;
+                padding:0;
+                width:100%;
                 font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
                 font-size: 12px;
-                color: #888;
+            }
+            #outlook a{
+                padding:0;
+            }
+            img{
+                -ms-interpolation-mode:bicubic;
+            }
+            table{
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            }
+            .ReadMsgBody{
+                width:100%;
+            }
+            .ExternalClass{
+                width:100%;
+            }
+            p,a,li,td,blockquote{
+                mso-line-height-rule:exactly;
+            }
+            a[href^=tel],a[href^=sms]{
+                color:inherit;
+                cursor:default;
+                text-decoration:none;
+            }
+            p,a,li,td,body,table,blockquote{
+                -ms-text-size-adjust:100%;
+                -webkit-text-size-adjust:100%;
+            }
+            .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+                line-height:100%;
+            }
+
+            .templateContainer{
+                max-width:600px !important;
+            }
+            a{
+                color: #be1e2d !important;
+                text-decoration: none !important;
+            }
+            .download-link a{
+                color: #000 !important;
+            }
+            a.mcnButton{
+                display:block;
+            }
+            .mcnImage{
+                vertical-align:bottom;
+            }
+            .mcnTextContent{
+                word-break:break-word;
+            }
+            .mcnTextContent img{
+                height:auto !important;
+            }
+            .mcnDividerBlock{
+                table-layout:fixed !important;
+            }
+            #bodyCell{
+                border-top:0;
+            }
+            h1{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:26px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            h2{
+                color:#202020;
+                letter-spacing:normal;
+                text-align:left;
+                text-transform: uppercase;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #be1e2d;
+            }
+            h3{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:20px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            .daily-alert {
+                background-color: #eee;
+                margin-bottom: 15px;
+            }
+            .redbgPan{
+                background-color: #f9e5e6;
+                margin-bottom: 15px;
+            }
+            .daily-alert__cell {
+                padding-bottom: 16px;
+                padding-top: 16px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .daily-alert-body {
+                font-size: 16px;
+                color: #777;
+                margin-bottom: 0;
                 text-align: center;
-                font-weight: normal;
+                line-height: 26px;
             }
-    </style>
-
-    <style type="text/css">
-        @@media screen and (max-device-width: 480px) {
-
-            body {
-                font-size: 100%;
+            .templateHeader{
+                background-color:#FFFFFF;
+                background-image:none;
+                background-repeat:no-repeat;
+                background-position:center;
+                background-size:cover;
+                border-top:0;
+                border-bottom:0;
+                padding-top:9px;
+                padding-bottom:0;
+            }
+            .threecolum{
+                border-bottom: 1px solid #ccc;
+                border-top: 2px solid #ccc;
+                background: #f1f2f2;
+            }
+            .threecolum td.pad{
+                padding-left: 12px;
+                padding-right: 12px;
+                border-bottom: 1px solid #ccc;
+                display: table-cell;
+                height: 110px;
+                vertical-align: middle;
             }
 
-            #templateContainer {
-                width: 100%;
+        @@media only screen and (min-width:768px){
+            .templateContainer{
+                width:600px !important;
             }
-            body td[width="50%"] {
+        }
+
+        @@media only screen and (max-width: 480px){
+            body,table,td,p,a,li,blockquote{
+                -webkit-text-size-adjust:none !important;
+            }
+            body{
+                width:100% !important;
+                min-width:100% !important;
+            }
+            #bodyCell{
+                padding-top:10px !important;
+            }
+            .columnWrapper{
+                max-width:100% !important;
+                width:100% !important;
+            }
+            .mcnImage{
+                width:100% !important;
+            }
+            h1{
+                font-size:22px !important;
+                line-height:125% !important;
+            }
+            h2{
+                font-size:20px !important;
+                line-height:125% !important;
+            }
+            h3{
+                font-size:18px !important;
+                line-height:125% !important;
+            }
+            h4{
+                font-size:16px !important;
+                line-height:150% !important;
+            }
+            .newsLetImg{
                 width: 100% !important;
-                display: block !important;
-            }
-
-            .header__site-logo img {
-                max-width: 150px;
-            }
-
-            .layout-padded-left,
-            .layout-padded-right {
-                padding: 0;
-            }
-
-            .one-third,
-            .two-thirds {
-                display: block;
-                width: 100%;
-                margin-bottom: 16px;
-            }
-
-            .wd-desk-50 {
-                width: 100%;
-                float: none;
-            }
-
-            .visible-desk {
-                display: none;
-            }
-
-            .visible-mob {
-                display: block;
-            }
-
-            .caps-body img {
-                float: none !important;
+                height: 150px !important;
+                padding-bottom: 10px;
             }
         }
+
     </style>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic" rel="stylesheet" type="text/css" />
-    <style>
-        a:link {
-            color: #be1e2d;
-            font-weight: normal;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: #be1e2d;
-            font-weight: normal;
-            text-decoration: none;
-        }
-    </style>
-    <style type="text/css">
-        /* GENERAL STYLE RESETS */
-        .ExternalClass {
-            width: 100%;
-        }
-
-            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-                line-height: 100%;
-            }
-        /* LAYOUT HELPERS */
-        @@media (max-width: 480px) {
-            body {
-                font-size: 100%;
-            }
-
-            .wd-desk-50 {
-                width: 100%;
-                float: none;
-            }
-
-            .visible-desk {
-                display: none;
-            }
-
-            .visible-mob {
-                display: block;
-            }
-
-            .caps-body img {
-                float: none !important;
-            }
-
-            #templateContainer {
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-
-            .header__site-logo img {
-                max-width: 150px;
-            }
-
-            .layout-padded-left,
-            .layout-padded-right {
-                padding: 0;
-            }
-
-            .one-third,
-            .two-thirds {
-                display: block;
-                width: 100%;
-                margin-bottom: 16px;
-            }
-			
-        }
-    </style>
-    <style type="text/css">
-        @@media screen and (max-width: 500px) {
-            .wd-desk-50 {
-                width: 100% !important;
-                float: none !important;
-            }
-
-            .visible-desk {
-                display: none !important;
-            }
-
-            .visible-mob {
-                display: block !important;
-            }
-            td[class= "full-mob"] {
-                width: 100% !important;
-                display: block !important;
-            }
-        }
-		
-		@@media (max-width: 767px){
-			table.mobView tr  td {
-				
-                display: block !important; 
-			}
-			.visible-desk {
-                display: none !important;
-            }
-			.mobBorder{
-				 border-top: 1px solid #ccc;
-				 width:98%;
-			}
-			table.mobView{
-				border-bottom: none !important;
-			}
-			
-		}
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic" rel="stylesheet" type="text/css">
 </head>
 @using (new LinkProviderSwitcher(Sitecore.Context.PageMode.IsNormal ? "informaEmailLinkProvider" : "sitecore"))
 {
     using (new MediaProviderSwitcher(Sitecore.Context.PageMode.IsNormal ? new FxmMediaProvider() : new MediaProvider()))
     {
-        <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+        <body style="height: 100%; margin: 0; padding: 0; width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
             <center>
-                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; height: 100%; margin: 0; padding: 0; width: 100%;">
                     <tr>
-                        <td align="center" valign="top" id="bodyCell">
+                        <td align="center" valign="top" id="bodyCell" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-top: 0; padding-top: 15px;">
+                            <!-- // Begin Template -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <tr>
+                                    <td align="center" valign="top" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                        <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 12px;">
+                                                    @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                                    </td>
+                                </tr>
 
-                            <table border="0" cellpadding="0" cellspacing="0" id="topViewOnlineLink">
                                 <tr>
                                     <td>
-                                        @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
-                                <tr>
-                                    <td align="center" valign="top">
-
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                                        <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="640" style="width:640px;">
+                <tr>
+                <td align="center" valign="top" width="640" style="width:640px;">
+                <![endif]-->
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 640px !important; padding: 0 20px; border: 1px solid #ccc;">
                                             <tr>
-                                                <td valign="top" class="preheaderContent standardPadding">
-                                                    <span class="header__date">
-                                                        @Editable(Model.GlassModel, m => m.Date_Text)
-                                                    </span>
-                                                </td>
-                                                <td valign="top" class="preheaderContent standardPadding layout-text-right">
-                                                    @if (Model.HeaderNavigation != null)
-                                                    {
-                                                        foreach (var nav in Model.HeaderNavigation)
-                                                        {
-                                                            <a href="@nav.LinkUrl">@nav.Text</a>if (!nav.IsLast)
-                                                            {
-                                                                <span class="vertical-separator">|</span>
-                                                            }
-                                                        }
-                                                    }
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // END PREHEADER -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" valign="top" class="standardPadding">
-
-                                        <!-- BEGIN HEADER // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
-                                            <tr>
-                                                <td width="150" valign="top" class="header__site-logo">
-                                                    <img src="@Model.EmailLogoUrl" />
-                                                </td>
-                                                <td valign="bottom" align="right">
-
-                                                    <a href="@Model.RssLinkUrl">
-                                                        <img src="@Model.RssLogoUrl" width="20" height="20" />
-                                                    </a>&nbsp;&nbsp;&nbsp;
-                                                    <a href="@Model.LinkedInLinkUrl">
-                                                        <img src="@Model.LinkedInLogoUrl" width="20" height="20" />
-                                                    </a>&nbsp;&nbsp;&nbsp;
-                                                    <a href="@Model.TwitterLinkUrl">
-                                                        <img src="@Model.TwitterLogoUrl" width="20" height="20" />
-                                                    </a>
-
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // END HEADER -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" valign="top" class="standardPadding">
-
-                                        <!-- BEGIN BODY // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
-                                            <tr>
-                                                <td valign="top" class="bodyContent">
-
-                                                    <table class="daily-alert" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <td>
+                                                    <!--[if gte mso 9]>
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="640" style="width:640px;">
+                            <tr>
+                            <td align="center" valign="top" width="640" style="width:640px;">
+                            <![endif]-->
+                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 640px !important; padding: 0 20px;">
                                                         <tr>
-                                                            <td class="daily-alert__cell">
-                                                                <div class="caps-header">
-                                                                    @Editable(Model.GlassModel, m => m.Top_Header_Title)
-                                                                </div>
-                                                                <p class="daily-alert-body">
-                                                                    @Editable(Model.GlassModel, m => m.Top_Header_Text)
-                                                                </p>
+                                                            <td align="center" valign="top" class="templateHeader">
+                                                                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                                                                    <tr>
+                                                                        <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td valign="top" style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                                                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td valign="top" class="preheaderContent standardPadding" style="padding-top: 12px;padding-bottom: 12px;font-size: 13px; padding-right: 24px">
+                                                                                                            <span class="header__date" style="font-size: 13px; color: #888; font-weight: bold">
+                                                                                                                @Editable(Model.GlassModel, m => m.Date_Text)
+                                                                                                            </span>
+                                                                                                        </td>
+                                                                                                        <td valign="top" class="preheaderContent standardPadding layout-text-right" style="padding-top: 12px;padding-bottom: 12px;font-size: 13px;padding-left: 24px; text-align: right">
+                                                                                                            @if (Model.HeaderNavigation != null)
+                                                                                {
+                                                                                    foreach (var nav in Model.HeaderNavigation)
+                                                                                    {
+                                                                                                                    <a href="@nav.LinkUrl">@nav.Text</a>
+                                                                                        if (!nav.IsLast)
+                                                                                        {
+                                                                                                                        <span>&nbsp;</span>
+                                                                                                                        <span class="vertical-separator">|</span>
+                                                                                                                        <span>&nbsp;</span>
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
                                                             </td>
                                                         </tr>
-                                                    </table>
-                                                     @Html.Sitecore().Placeholder("email-main")
-                                                    
-                                                    @if (Model.AddPersonalizedContent)
-                                                    {
-                                                        @personalizeContentToken
 
-                                                    }
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // END BODY -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" valign="top">
-                                        <!-- BEGIN FOOTER // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="94%" class="footerContent">
-											<tr>
-												<td height="20">&nbsp;</td>
-											</tr>
+                                                        <tr>
+                                                            <td align="center" valign="top" class="templateHeader" style="padding-bottom: 15px;">
+                                                                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                                                                    <tr>
+                                                                        <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td valign="top" style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                                                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td width="150" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                                                                            <a href="#"><img src=@Model.EmailLogoUrl" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic"></a>
+                                                                                                        </td>
+                                                                                                        <td valign="top" align="right" class="preheaderContent standardPadding layout-text-right" style="text-align: right;">
+                                                                                                            <a href="@Model.RssLinkUrl"><img src="@Model.RssLogoUrl" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic; padding-right: 10px;"></a>
+                                                                                                            <a style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic; padding-right: 10px;" href="@Model.LinkedInLinkUrl"><img src="@Model.LinkedInLogoUrl" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic"></a>
+                                                                                                            <a href="@Model.TwitterLinkUrl"><img src="@Model.TwitterLogoUrl" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic"></a>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-top: 0;padding-bottom: 0;">
+                                                                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
+                                                                    <tr>
+                                                                        <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                <tbody class="mcnTextBlockOuter">
+                                                                                    <tr>
+                                                                                        <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                                             <tr>
-                                                <td valign="top" align="center">
-													<table border="0" cellpadding="10" cellspacing="0"width="100%" id="templateFooter">
-														<tr>
-															<td>
-																<p style="color: #040400; !important;">
-																	@Html.Raw(Model.SiteRoot.Email_Footer)
-																</p>
-																<p  style="color: #040400; !important;">
-																	@if (Model.FooterNavigation != null)
-																	{
-																		foreach (var nav in Model.FooterNavigation)
-																		{
-																			<a href="@nav.LinkUrl" style="color: #be1e2d; text-decoration: none;">@nav.Text</a>if (!nav.IsLast)
-																			{
-																				<span class="vertical-separator">|</span>
-																			}
-																		}
-																	}
-																</p>
-															</td>
-														</tr>
-													</table> 
+                                            <![endif]-->
+                                                                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:600px;">
+                                            <![endif]-->
+                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                                                                <tbody>
+                                                                                                    <tr>
+
+                                                                                                        <td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; font-size: 16px; line-height: 150%; text-align: center;">
+                                                                                                            <h1 style="display: block; margin: 0; padding: 0; font-family: Helvetica; font-size: 26px; font-style: normal; font-weight: bold; line-height: 125%; letter-spacing: normal; text-align: center; padding-top: 16px;">@Editable(Model.GlassModel, m => m.Top_Header_Title)</h1>
+                                                                                                            <p style="margin: 10px 0; padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: center;">@Editable(Model.GlassModel, m => m.Top_Header_Text)</p>
+
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                                                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                                                            </td>
+                                                        </tr>
+                                                        <!--Main body starts -->
+                                                       @Html.Sitecore().Placeholder("email-main")
+
+                                                        @if (Model.AddPersonalizedContent)
+                                                        {
+                                                            @personalizeContentToken
+
+                                                        }
+                                                        <!--Main body ends -->
+                                                        <!-- Adv. starts -->
+                                                        <tr>
+                                                            <td align="center" valign="top" class="templateHeader" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 15px;">
+                                                                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                                                                    <tr>
+                                                                        <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                <tbody class="mcnImageBlockOuter">
+                                                                                    <tr>
+                                                                                        <td valign="top" style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                                                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td class="mcnImageContent" valign="top" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                                                                                            <a href="http://woodofa.com/Outdoor-Garden-furniture/Swings/woodofa-cosy-seating-outdoor-swing" title="Shop Now" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                                <img align="center" alt="Woodofa Cosy Seating Outdoor Swing,Outdoor Garden Furniture" src="google-add.jpg" style="max-width: 600px; padding-bottom: 0;display: inline !important; vertical-align: bottom; border: 0; height: auto; outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+                                                                                                            </a>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Adv. ends -->
+
+                                                       
+                                                        <!-- Footer starts -->
+                                                        <tr>
+                                                            <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-bottom: 0;">
+                                                                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
+                                                                    <tr>
+                                                                        <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                <tbody class="mcnTextBlockOuter">
+                                                                                    <tr>
+                                                                                        <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                            <tr>
+                                            <![endif]-->
+                                                                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:600px;">
+                                            <![endif]-->
+                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                                                                <tbody>
+                                                                                                    <tr>
+
+                                                                                                        <td style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #040400;text-align: center;font-weight: normal">
+                                                                                                            </p><p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Sent to <a href="mailto:#email#" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">#email#</a>.  If you have questions about this email or Scrip, please email <a href="mailto:clientservices@scripintelligence.com" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">clientservices@scripintelligence.com</a>Â&nbsp;or call UK support at +44 20 337 73737 / US support at +1 908 547-2200 / APAC support at +61 2 8705 6907 and addÂ&nbsp;<a href="mailto:pmbi-notifications@informa.com" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">pmbi-notifications@informa.com</a> to your address book.</p>
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">
+                                                                                                            </p>
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Â© 2016 Informa plc. All rights reserved.</p>
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal">Scrip is owned and operated by Informa plc ("informa") whose registered office is 5 Howick Place, London, SW1P 1WG. Registered in England and Wales. Number 3099067. UK VAT Group GB 365 4626 36 </p>
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888;text-align: center;font-weight: normal"></p>
+                                                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #040400;text-align: center;font-weight: normal">
+                                                                                                                <a href="http://scrip.cms.int.informa.products.com/meet-the-team?utm_campaign=COMMODITIES&amp;utm_source=emdigest&amp;utm_medium=email" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d;text-decoration: none">Meet the Team</a>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                                                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Footer ends -->
+                                                    </table>
+                                                    <!--[if gte mso 9]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
                                                 </td>
                                             </tr>
+
                                         </table>
-                                        <!-- // END FOOTER -->
+                                        <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
                                     </td>
                                 </tr>
+
                             </table>
-                            <!-- // END TEMPLATE -->
+                            <!-- // End Template -->
                         </td>
                     </tr>
                 </table>
