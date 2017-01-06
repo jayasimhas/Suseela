@@ -8,7 +8,7 @@
 			 	QuaterlyDataHeader = data[0].QuaterlyDataHeader,
 			 	QuaterlyData = data[0].QuaterlyData,
 			 	QuaterlyResultHeader = data[0].QuaterlyResultHeader,
-			 	QuaterlyResult= data[0].QuaterlyResult;
+			 	QuaterlyResult= data[0].QuaterlyResultData[0];
 
 			 	$('#quarterlyresults').find('.states_heading').parent().remove();
 			 	$('#quarterlyresults').append('<div class="table-wrapper"><div class="table"></div></div>');
