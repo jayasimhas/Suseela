@@ -19,11 +19,14 @@ namespace Informa.Library.Search.Utilities
             {
                 var client = new WebClient();
 
+                ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                 if (AuthenticateWebClientApiCall())
                 {
                     client.Credentials = new NetworkCredential(Settings.GetSetting(WebClientAuthUsernameSetting), 
                         Settings.GetSetting(WebClientAuthPasswordSetting), Settings.GetSetting(WebClientAuthDomainSetting));
-                }
+                  
+                }             
 
                 var content = client.DownloadString(url);
 
