@@ -50,7 +50,7 @@
 		RenderModal: function(data, Parent) {
 			var Header = data[0].Header,
 				Values = data[0].Values,
-				FinanceModal = $('#modal-annualresults'),
+				FinanceModal = $('#modal-financialresults'),
 				ModalTable = FinanceModal.find('.table');
 
 			ModalTable.append('<div class="tableRow"></div>');
@@ -97,11 +97,11 @@
             });
         },
         ModalEvents: function() {
-        	$(document).on('click', 'a[data-toggle="modal-annualresults"]', function(e) {
+        	$(document).on('click', 'a[data-toggle="modal-financialresults"]', function(e) {
         		e.preventDefault();
-        		$('#modal-annualresults').show();
+        		$('#modal-financialresults').show();
         	});
-        	$(document).on('click', '#modal-annualresults .table_close', function(e) {
+        	$(document).on('click', '#modal-financialresults .table_close', function(e) {
         		e.preventDefault();
         		$(this).parents('.ID-responsive-table-modal').hide();
         	});
@@ -116,7 +116,7 @@
         RenderTable: function(data, Parent) {
     	 	Parent.find('.states_heading').parent().remove();
 		 	Parent.append('<div class="table-wrapper"><div class="table"></div></div>');
-		 	var Wrapper = $('#annualresults .table'),
+		 	var Wrapper = $('#financialresults .table'),
 		 		Header = data[0].Header,
 		 		Values = data[0].Values;
 
@@ -149,7 +149,7 @@
 
 	}
 
-	if($('#annualresults').length > 0) {
-		ResponsiveFinancialTable.init(window.jsonResultAnnual, $('#annualresults'));	
+	if($('#financialresults').length > 0) {
+		ResponsiveFinancialTable.init(window.jsonResultFinancial, $('#financialresults'));	
 	}
 })();

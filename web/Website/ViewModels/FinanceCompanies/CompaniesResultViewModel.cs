@@ -14,6 +14,7 @@
     using Jabberwocky.Glass.Autofac.Mvc.Services;
     using System.Web;
     using Newtonsoft.Json.Linq;
+    using Informa.Library.Utilities.References;
 
     public class CompaniesResultViewModel : GlassViewModel<ICompany_Table_Component>
     {
@@ -89,7 +90,15 @@
 
         public string GetResultsData()
         {
-            string jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
+            string jsonString = "External feed url is empty";
+
+            if(RenderingParameters != null && RenderingParameters.TableType != null && Sitecore.Context.Item.Fields["Company ID"] != null &&
+                (string.Equals(RenderingParameters.TableType.Value,Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return companyResultService.GetCompanyFeeds(string.Format(GlassModel.ExternalFeedUrl, Sitecore.Context.Item.Fields["Company ID"].Value)).Result;
+            }
+            jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
 
             if (!string.IsNullOrWhiteSpace(jsonString))
             {
@@ -105,7 +114,7 @@
                     {
                         var jData = jsonData.Children<JObject>();
 
-                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).ToList();
+                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
                         result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
 
                         return JsonConvert.SerializeObject(result);
@@ -113,7 +122,7 @@
                 }
             }
 
-            return "External feed url is empty";
+            return jsonString;
         }
 
         private JToken GetCompanyPageUrl(JObject item, List<ICompany_Detail_Page> companyDetailPages)

@@ -3345,6 +3345,8 @@ body.lightboxed {
   float: left;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  .ID-Responsive-Table#financialresults {
+    border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
     background-color: #414042;
     color: #ffffff;
@@ -8006,20 +8008,31 @@ div#feedbacklite.fbl_r {
 
 .ll-casualty-form form {
   float: left;
-  margin-bottom: 20px;
-  position: relative; }
+  margin-bottom: 20px; }
   @media (max-width: 480px) {
     .ll-casualty-form form {
-      width: 100%; } }
+      width: 100%;
+      float: none; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .ll-casualty-form form {
+      width: 50%; } }
   .ll-casualty-form form label {
     float: left;
     margin-top: 8px;
     margin-right: 5px; }
     @media (max-width: 480px) {
       .ll-casualty-form form label {
-        width: 100%; } }
+        width: 100%;
+        margin-bottom: 1em; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .ll-casualty-form form label {
+        width: 100%;
+        margin-bottom: 1em; } }
   .ll-casualty-form form#jump-to {
     float: right; }
+
+.ll-casualty-form .selectivity-input {
+  position: relative; }
 
 .ll-casualty-form .selectivity-dropdown {
   right: 0;
@@ -8034,13 +8047,15 @@ div#feedbacklite.fbl_r {
   .lli-brand-container .lli-brand-box {
     padding: 10px;
     background: #f7f7f7; }
-  .lli-brand-container form {
-    position: relative; }
   .lli-brand-container form fieldset {
     border: 0; }
+  .lli-brand-container .selectivity-single-select {
+    background: #ffffff; }
   .lli-brand-container .select-field {
     position: relative;
     display: inline-block; }
+  .lli-brand-container .selectivity-input {
+    position: relative; }
   .lli-brand-container .selectivity-dropdown {
     right: 0;
     top: 100%; }
@@ -8049,6 +8064,9 @@ div#feedbacklite.fbl_r {
   .lli-brand-container .form-control label {
     width: 200px;
     display: inline-block; }
+    @media (max-width: 480px) {
+      .lli-brand-container .form-control label {
+        margin-bottom: 0.5em; } }
   .lli-brand-container .submit {
     border: 1px solid transparent;
     color: #ffffff;
@@ -8065,6 +8083,9 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .lli-brand-container .submit {
         margin-left: 0; } }
+
+.graybg {
+  border-bottom: 1px solid #d1d3d4; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

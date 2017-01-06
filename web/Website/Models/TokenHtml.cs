@@ -103,17 +103,18 @@ namespace Informa.Web.Models
         public string ReplaceTableauForArticles(string content, string partialName)
         {
             var sidebarRegex = new Regex(@"\[T#(.*?)\]");
-
+            int i = 0;
             foreach (Match match in sidebarRegex.Matches(content))
-            {             
-                string replace = BuildReplaceTableauArticles(Regex.Replace(Regex.Replace(match.Value, "[[T#:]", ""), "[]]", ""), partialName);
+            {
+                i++;
+                string replace = BuildReplaceTableauArticles(Regex.Replace(Regex.Replace(match.Value, "[[T#:]", ""), "[]]", ""), partialName, i);
                 content = content.Replace(match.Value, replace);
             }
 
             return content;
         }
 
-        private string BuildReplaceTableauArticles(string TableauId, string partialName)
+        private string BuildReplaceTableauArticles(string TableauId, string partialName, int i)
         {
             string TableauTicket = _.TableauUtil.GenerateSecureTicket(_.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId], _.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);
             string HostUrl = _.GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId];
@@ -128,7 +129,7 @@ namespace Informa.Web.Models
             tableauItem.ArticleTableauJSAPIUrl = JSAPIUrl;
             tableauItem.ArticleTableauHostUrl = HostUrl;
             tableauItem.ArticleTableuLandingPageLinkLable = LandingPageLinkLable;
-            replace = HtmlHelper.Partial(partialName, tableauItem);
+            replace = HtmlHelper.Partial(partialName, tableauItem, new ViewDataDictionary { { "Index", i } });
             return replace.ToHtmlString();
         }
 

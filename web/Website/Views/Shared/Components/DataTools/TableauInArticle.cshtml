@@ -3,8 +3,9 @@
 <!--Tableau In Article  -->
 
 @if (Model != null)
-{
-    <div class="article-data-tool-placeholder">
+{     
+    <div class="article-data-tool-placeholder" id="tableau-@ViewData["Index"].ToString()">
+        <input type="hidden" id="hdnDataToolId" name="hdnDataToolId" class="hdnDataToolId" value="tableau-@ViewData["Index"].ToString()" />   
         <div class="data-tool-placeholder">
             <h3 class="data-tool-heading">@Model.Page_Title</h3>
             <script type="text/javascript" src="@Model.ArticleTableauJSAPIUrl"></script>

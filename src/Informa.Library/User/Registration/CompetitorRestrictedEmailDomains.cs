@@ -25,7 +25,7 @@ namespace Informa.Library.User.Registration
 		{
 			get
 			{
-				var folder = SitecoreContext.GetItem<IRestricted_Email_Domain_Folder>(new Guid(ItemIdResolver.GetItemIdByKey("RestrictedEmailDomainsCompetitor")));
+				var folder = SitecoreContext.GetItem<IRestricted_Email_Domain_Folder>(new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RestrictedEmailDomainsCompetitor")) ? ItemIdResolver.GetItemIdByKey("RestrictedEmailDomainsCompetitor") : Guid.Empty.ToString()));
 
 				return EmailDomainsFactory.Create(folder);
 			}

@@ -19,7 +19,7 @@
                 @{
                     var chartDivId = company.CompanyId + "_" + Graph.GraphID;
                 }
-                <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
+                <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
                 <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>                
                 <script>
                     var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
