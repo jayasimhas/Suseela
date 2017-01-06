@@ -7,6 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Autofac.Mvc.Services;
 using mshtml;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         protected readonly ITextTranslator TextTranslator;
         public JobsListingViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+            IRenderingContextService renderingParametersService)
         {
             GlobalService = globalService;
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
+            JobsListingSettings = renderingParametersService.GetCurrentRenderingParameters<IJobs_Listing_No_of_Jobs_Per_Page>();
         }
         /// <summary>
         /// Job Tiles For Listing
@@ -54,7 +57,7 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         /// <summary>
         /// No of Jobs to be displayed Per Page
         /// </summary>
-        public string NoOfJobsPerPage => !string.IsNullOrEmpty(TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage")) ? TextTranslator.Translate("JobsAndClassifieds.NoOfJobsPerPage") : "20";
+        public IJobs_Listing_No_of_Jobs_Per_Page JobsListingSettings { get; set; }
         /// <summary>
         /// Method to get All published Job Tiles
         /// </summary>
