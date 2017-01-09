@@ -1,0 +1,35 @@
+﻿@model Informa.Web.ViewModels.Casualty.LatestCasualtiesViewModel
+
+<script type="text/javascript">
+    var jsonLatestCasualties = [{
+        "latestcasualties": [
+          {
+              "title": "Frem Nordica",
+              "date": "06.01.2017",
+              "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+          },
+          {
+              "title": "Frem Nordica",
+              "date": "06.01.2017",
+              "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+          },
+          {
+              "title": "Frem Nordica",
+              "date": "06.01.2017",
+              "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+          }
+        ]
+    }]
+
+</script>
+<div>
+    @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
+    {
+        <a href="@Model.homePageUrl"><img src="@Model.Logo.Src" alt="Logo" /></a>
+    }
+    <hr />
+    @Model.Title
+    <hr />
+
+    @Html.Raw(Model.AdditionalInformation)
+</div>
