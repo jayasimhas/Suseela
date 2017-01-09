@@ -34,6 +34,7 @@ import './components/id-responsive-table';
 import './components/id-financial-responsive-table';
 import './components/id-quarterly-responsive-table';
 import './components/id-comparefinancialresults';
+import './components/latest-casuality';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

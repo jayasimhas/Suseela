@@ -1,178 +1,55 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.PeerGroupDetailViewModel
 
-<script src="~/js/components/AMchartsGroup.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
 
 <div class="article-left-rail">
     <div class="compareChart">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
         <div class="showAll">
-            <a class="expandAll" href="javascript: void(0);">expand all<a /> / <a class="collapseAll" href="javascript: void(0);">collapse all</a>
+            <a class="expandAll" href="javascript: void(0);">@Model.ExpandAll</a> / <a class="collapseAll" href="javascript: void(0);">@Model.CollapseAll</a>
         </div>
+        <script type="text/javascript">
+            var dataVars = {}
+            var Peercompanies = [];
+        </script>
         @foreach (var graph in Model.PeerCompaniesGraphList)
         {
+            int i = 1;
             <div class="eachChartData company-graphs-accordion-stockchart">
                 <div class="dataTitle" id="@graph.GraphID">
                     <div class="title">@graph.GraphName.ToUpperInvariant()</div>
                     <div class="chartexpand"></div>
                 </div>
-                <div class="chartData hide" id="@graph.GraphID-DATA">
+                <div class="chartData" id="@graph.GraphID-DATA" style="width: 760px;">
                     <div id="@graph.GraphID-CHART"></div>
                     @foreach(var peerComapny in graph.CompanyGraphs)
                     {
-                        int i = 1;
+                        
                         <script>
+                            Peercompanies.push('@peerComapny.CompanyName');
                             var data = JSON.parse(JSON.stringify(@Html.Raw(peerComapny.FinanceResult)));
                             var chartData = JSON.stringify(data[0]["@graph.GraphID"]);
                             var chartData = data[0]["@graph.GraphID"];
-                            var chartData'@i'_'@graph.GraphID' = chartData;
+                            dataVars["chartData" +@i +"_" + '@graph.GraphID'] = chartData;
                         </script>
+                        i++;
                     }
                     
-                    @*<script>var chartDataSet = ["Munich Re Group", "Swiss Re Group", "Berkshire Hathaway", "Hannover Re Group", "Scor SE"];</script>*@
+                    <script>
+                        var chartDataSet = JSON.parse(JSON.stringify(Peercompanies));
+                        while (Peercompanies.length > 0) {
+                            Peercompanies.pop();
+                        }
+                    </script>
                 </div>
             </div>
         }
     </div>
 </div>
+<script>
+    @*var compareColors = '@Model.CompanyCompareColors';
+    GraphcompareColors = compareColors.split(",");*@   
+</script>
 
-    <div class="article-left-rail">
+<script src="/dist/js/index.js"></script>
+<script src="/dist/js/amstock.js" type="text/javascript"></script>
+<script src="/dist/js/accordionStockChart.js" type="text/javascript"></script>
 
-       
-
-        <div class="compareChart">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-            <div class="showAll">
-                <a class="expandAll" href="javascript: void(0);">expand all<a /> / <a class="collapseAll" href="javascript: void(0);">collapse all</a>
-            </div>
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="GWP">
-                    <div class="title">GROSS WRITTEN PREMIUM ($M)</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="GWP-DATA">
-                    <div id="GWP-CHART"></div>
-                    <script>var chartData1_GWP = [{ "colour": "217bb7", "value": 49452.0, "year": 2011 }, { "colour": "217bb7", "value": 51969.0, "year": 2012 }, { "colour": "217bb7", "value": 51060.0, "year": 2013 }, { "colour": "217bb7", "value": 48848.0, "year": 2014 }, { "colour": "217bb7", "value": 50374.0, "year": 2015 }];</script>
-                    <script>var chartData2_GWP = [{ "colour": "217bb7", "value": 28664.0, "year": 2011 }, { "colour": "217bb7", "value": 31723.0, "year": 2012 }, { "colour": "217bb7", "value": 32934.0, "year": 2013 }, { "colour": "217bb7", "value": 33276.0, "year": 2014 }, { "colour": "217bb7", "value": 32249.0, "year": 2015 }];</script>
-                    <script>var chartData3_GWP = [{ "colour": "217bb7", "value": 31505.0, "year": 2010 }, { "colour": "217bb7", "value": 33579.0, "year": 2011 }, { "colour": "217bb7", "value": 36409.0, "year": 2012 }, { "colour": "217bb7", "value": 37999.0, "year": 2013 }, { "colour": "217bb7", "value": 0.0, "year": 2014 }];</script>
-                    <script>var chartData4_GWP = [{ "colour": "217bb7", "value": 11429.41, "year": 2010 }, { "colour": "217bb7", "value": 12095.66, "year": 2011 }, { "colour": "217bb7", "value": 13775.37, "year": 2012 }, { "colour": "217bb7", "value": 14362.04, "year": 2014 }, { "colour": "217bb7", "value": 17068.86, "year": 2015 }];</script>
-                    <script>var chartData5_GWP = [{ "colour": "217bb7", "value": 7602.0, "year": 2011 }, { "colour": "217bb7", "value": 9514.0, "year": 2012 }, { "colour": "217bb7", "value": 10253.0, "year": 2013 }, { "colour": "217bb7", "value": 11316.0, "year": 2014 }, { "colour": "217bb7", "value": 13421.0, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Munich Re Group", "Swiss Re Group", "Berkshire Hathaway", "Hannover Re Group", "Scor SE"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="NWP">
-                    <div class="title">NET WRITTEN PREMIUM ($M)</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="NWP-DATA">
-                    <div id="NWP-CHART"></div>
-                    <script>var chartData1_NWP = [{ "colour": "a6d64f", "value": 18801.0, "year": 2011 }, { "colour": "a6d64f", "value": 19595.0, "year": 2012 }, { "colour": "a6d64f", "value": 19499.0, "year": 2013 }, { "colour": "a6d64f", "value": 19014.0, "year": 2014 }, { "colour": "a6d64f", "value": 19626.0, "year": 2015 }];</script>
-                    <script>var chartData2_NWP = [{ "colour": "a6d64f", "value": 77200.0, "year": 2011 }, { "colour": "a6d64f", "value": 80522.0, "year": 2012 }, { "colour": "a6d64f", "value": 80423.0, "year": 2013 }, { "colour": "a6d64f", "value": 81929.0, "year": 2014 }, { "colour": "a6d64f", "value": 86898.0, "year": 2015 }];</script>
-                    <script>var chartData3_NWP = [{ "colour": "a6d64f", "value": 63013.2, "year": 2011 }, { "colour": "a6d64f", "value": 63096.0, "year": 2012 }, { "colour": "a6d64f", "value": 60731.0, "year": 2013 }, { "colour": "a6d64f", "value": 64295.0, "year": 2014 }, { "colour": "a6d64f", "value": 68451.0, "year": 2015 }];</script>
-                    <script>var chartData4_NWP = [{ "colour": "a6d64f", "value": 28336.0, "year": 2009 }, { "colour": "a6d64f", "value": 25713.0, "year": 2010 }, { "colour": "a6d64f", "value": 25267.0, "year": 2011 }, { "colour": "a6d64f", "value": 18595.0, "year": 2012 }, { "colour": "a6d64f", "value": 9387.0, "year": 2013 }];</script>
-                    <script>var chartData5_NWP = [{ "colour": "a6d64f", "value": 9505.5, "year": 2010 }, { "colour": "a6d64f", "value": 9130.9, "year": 2011 }, { "colour": "a6d64f", "value": 9623.5, "year": 2012 }, { "colour": "a6d64f", "value": 8897.3, "year": 2014 }, { "colour": "a6d64f", "value": 9062.5, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="UR">
-                    <div class="title">UNDERWRITING RESULT ($M)</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="UR-DATA">
-                    <div id="UR-CHART"></div>
-                    <script>var chartData1_UR = [{ "colour": "c6c6c6", "value": 39.0, "year": 2011 }, { "colour": "c6c6c6", "value": -379.0, "year": 2012 }, { "colour": "c6c6c6", "value": -111.0, "year": 2013 }, { "colour": "c6c6c6", "value": -417.0, "year": 2014 }, { "colour": "c6c6c6", "value": -255.0, "year": 2015 }];</script>
-                    <script>var chartData2_UR = [{ "colour": "c6c6c6", "value": 114.0, "year": 2011 }, { "colour": "c6c6c6", "value": 263.0, "year": 2012 }, { "colour": "c6c6c6", "value": 693.0, "year": 2013 }, { "colour": "c6c6c6", "value": 460.0, "year": 2014 }, { "colour": "c6c6c6", "value": 1134.0, "year": 2015 }];</script>
-                    <script>var chartData3_UR = [{ "colour": "c6c6c6", "value": 656.0, "year": 2011 }, { "colour": "c6c6c6", "value": 842.0, "year": 2012 }, { "colour": "c6c6c6", "value": 806.0, "year": 2013 }, { "colour": "c6c6c6", "value": 1186.0, "year": 2014 }, { "colour": "c6c6c6", "value": 1324.0, "year": 2015 }];</script>
-                    <script>var chartData4_UR = [{ "colour": "c6c6c6", "value": 435.0, "year": 2009 }, { "colour": "c6c6c6", "value": 354.0, "year": 2010 }, { "colour": "c6c6c6", "value": 349.0, "year": 2011 }, { "colour": "c6c6c6", "value": 225.0, "year": 2012 }, { "colour": "c6c6c6", "value": 250.0, "year": 2013 }];</script>
-                    <script>var chartData5_UR = [{ "colour": "c6c6c6", "value": -55.7, "year": 2010 }, { "colour": "c6c6c6", "value": 130.9, "year": 2011 }, { "colour": "c6c6c6", "value": 229.7, "year": 2012 }, { "colour": "c6c6c6", "value": 228.8, "year": 2014 }, { "colour": "c6c6c6", "value": 355.7, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="NP">
-                    <div class="title">NET RESULT ($M)</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="NP-DATA">
-                    <div id="NP-CHART"></div>
-                    <script>var chartData1_NP = [{ "colour": "f08000", "value": -209.0, "year": 2011 }, { "colour": "f08000", "value": 468.0, "year": 2012 }, { "colour": "f08000", "value": 352.0, "year": 2013 }, { "colour": "f08000", "value": 14.0, "year": 2014 }, { "colour": "f08000", "value": 383.0, "year": 2015 }];</script>
-                    <script>var chartData2_NP = [{ "colour": "f08000", "value": 4190.0, "year": 2011 }, { "colour": "f08000", "value": 4057.0, "year": 2012 }, { "colour": "f08000", "value": 4482.0, "year": 2013 }, { "colour": "f08000", "value": 5024.0, "year": 2014 }, { "colour": "f08000", "value": 5617.0, "year": 2015 }];</script>
-                    <script>var chartData3_NP = [{ "colour": "f08000", "value": 856.1, "year": 2011 }, { "colour": "f08000", "value": 94.0, "year": 2012 }, { "colour": "f08000", "value": 1915.0, "year": 2013 }, { "colour": "f08000", "value": 1670.0, "year": 2014 }, { "colour": "f08000", "value": 2030.0, "year": 2015 }];</script>
-                    <script>var chartData4_NP = [{ "colour": "f08000", "value": -1006.0, "year": 2009 }, { "colour": "f08000", "value": 2810.0, "year": 2010 }, { "colour": "f08000", "value": 5766.0, "year": 2011 }, { "colour": "f08000", "value": 4161.0, "year": 2012 }, { "colour": "f08000", "value": 3232.0, "year": 2013 }];</script>
-                    <script>var chartData5_NP = [{ "colour": "f08000", "value": 223.1, "year": 2010 }, { "colour": "f08000", "value": -578.2, "year": 2011 }, { "colour": "f08000", "value": 743.0, "year": 2012 }, { "colour": "f08000", "value": 475.6, "year": 2014 }, { "colour": "f08000", "value": 770.2, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="SF">
-                    <div class="title">SHAREHOLDERS' FUNDS ($M)</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="SF-DATA">
-                    <div id="SF-CHART"></div>
-                    <script>var chartData1_SF = [{ "colour": "de8100", "value": 9769.0, "year": 2011 }, { "colour": "de8100", "value": 10463.0, "year": 2012 }, { "colour": "de8100", "value": 9687.0, "year": 2013 }, { "colour": "de8100", "value": 9804.0, "year": 2014 }, { "colour": "de8100", "value": 10263.0, "year": 2015 }];</script>
-                    <script>var chartData2_SF = [{ "colour": "de8100", "value": 46417.0, "year": 2011 }, { "colour": "de8100", "value": 53606.0, "year": 2012 }, { "colour": "de8100", "value": 52923.0, "year": 2013 }, { "colour": "de8100", "value": 65219.0, "year": 2014 }, { "colour": "de8100", "value": 68475.0, "year": 2015 }];</script>
-                    <script>var chartData3_SF = [{ "colour": "de8100", "value": 15485.6, "year": 2011 }, { "colour": "de8100", "value": 19013.0, "year": 2012 }, { "colour": "de8100", "value": 19778.0, "year": 2013 }, { "colour": "de8100", "value": 23204.0, "year": 2014 }, { "colour": "de8100", "value": 23565.0, "year": 2015 }];</script>
-                    <script>var chartData4_SF = [{ "colour": "de8100", "value": 15887.0, "year": 2009 }, { "colour": "de8100", "value": 20159.0, "year": 2010 }, { "colour": "de8100", "value": 23475.0, "year": 2011 }, { "colour": "de8100", "value": 26423.0, "year": 2012 }, { "colour": "de8100", "value": 19691.0, "year": 2013 }];</script>
-                    <script>var chartData5_SF = [{ "colour": "de8100", "value": 8247.1, "year": 2010 }, { "colour": "de8100", "value": 7760.3, "year": 2011 }, { "colour": "de8100", "value": 9799.4, "year": 2012 }, { "colour": "de8100", "value": 10223.3, "year": 2014 }, { "colour": "de8100", "value": 11376.1, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="NWPNR">
-                    <div class="title">NET RESULT / NWP %</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="NWPNR-DATA">
-                    <div id="NWPNR-CHART"></div>
-                    <script>var chartData1_NWPNR = [{ "colour": "919191", "value": -1.11, "year": 2011 }, { "colour": "919191", "value": 2.39, "year": 2012 }, { "colour": "919191", "value": 1.81, "year": 2013 }, { "colour": "919191", "value": 0.07, "year": 2014 }, { "colour": "919191", "value": 1.95, "year": 2015 }];</script>
-                    <script>var chartData2_NWPNR = [{ "colour": "919191", "value": 5.43, "year": 2011 }, { "colour": "919191", "value": 5.04, "year": 2012 }, { "colour": "919191", "value": 5.57, "year": 2013 }, { "colour": "919191", "value": 6.13, "year": 2014 }, { "colour": "919191", "value": 6.46, "year": 2015 }];</script>
-                    <script>var chartData3_NWPNR = [{ "colour": "919191", "value": 1.36, "year": 2011 }, { "colour": "919191", "value": 0.15, "year": 2012 }, { "colour": "919191", "value": 3.15, "year": 2013 }, { "colour": "919191", "value": 2.6, "year": 2014 }, { "colour": "919191", "value": 2.97, "year": 2015 }];</script>
-                    <script>var chartData4_NWPNR = [{ "colour": "919191", "value": -3.55, "year": 2009 }, { "colour": "919191", "value": 10.93, "year": 2010 }, { "colour": "919191", "value": 22.82, "year": 2011 }, { "colour": "919191", "value": 22.38, "year": 2012 }, { "colour": "919191", "value": 34.43, "year": 2013 }];</script>
-                    <script>var chartData5_NWPNR = [{ "colour": "919191", "value": 2.35, "year": 2010 }, { "colour": "919191", "value": -6.33, "year": 2011 }, { "colour": "919191", "value": 7.72, "year": 2012 }, { "colour": "919191", "value": 5.35, "year": 2014 }, { "colour": "919191", "value": 8.5, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="SFNR">
-                    <div class="title">NWP / SHAREHOLDERS' FUNDS %</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="SFNR-DATA">
-                    <div id="SFNR-CHART"></div>
-                    <script>var chartData1_SFNR = [{ "colour": "92d551", "value": 192.46, "year": 2011 }, { "colour": "92d551", "value": 187.28, "year": 2012 }, { "colour": "92d551", "value": 201.29, "year": 2013 }, { "colour": "92d551", "value": 193.94, "year": 2014 }, { "colour": "92d551", "value": 191.23, "year": 2015 }];</script>
-                    <script>var chartData2_SFNR = [{ "colour": "92d551", "value": 166.32, "year": 2011 }, { "colour": "92d551", "value": 150.21, "year": 2012 }, { "colour": "92d551", "value": 151.96, "year": 2013 }, { "colour": "92d551", "value": 125.62, "year": 2014 }, { "colour": "92d551", "value": 126.9, "year": 2015 }];</script>
-                    <script>var chartData3_SFNR = [{ "colour": "92d551", "value": 406.91, "year": 2011 }, { "colour": "92d551", "value": 331.86, "year": 2012 }, { "colour": "92d551", "value": 307.06, "year": 2013 }, { "colour": "92d551", "value": 277.09, "year": 2014 }, { "colour": "92d551", "value": 290.48, "year": 2015 }];</script>
-                    <script>var chartData4_SFNR = [{ "colour": "92d551", "value": 178.36, "year": 2009 }, { "colour": "92d551", "value": 127.55, "year": 2010 }, { "colour": "92d551", "value": 107.63, "year": 2011 }, { "colour": "92d551", "value": 70.37, "year": 2012 }, { "colour": "92d551", "value": 47.67, "year": 2013 }];</script>
-                    <script>var chartData5_SFNR = [{ "colour": "92d551", "value": 115.26, "year": 2010 }, { "colour": "92d551", "value": 117.66, "year": 2011 }, { "colour": "92d551", "value": 98.2, "year": 2012 }, { "colour": "92d551", "value": 87.03, "year": 2014 }, { "colour": "92d551", "value": 79.66, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-
-            <div class="eachChartData company-graphs-accordion-stockchart">
-                <div class="dataTitle" id="NPSFR">
-                    <div class="title">NET RESULT / SHAREHOLDERS' FUNDS %</div>
-                    <div class="chartexpand"></div>
-                </div>
-                <div class="chartData hide" id="NPSFR-DATA">
-                    <div id="NPSFR-CHART"></div>
-                    <script>var chartData1_NPSFR = [{ "colour": "689500", "value": -2.14, "year": 2011 }, { "colour": "689500", "value": 4.47, "year": 2012 }, { "colour": "689500", "value": 3.63, "year": 2013 }, { "colour": "689500", "value": 0.14, "year": 2014 }, { "colour": "689500", "value": 3.73, "year": 2015 }];</script>
-                    <script>var chartData2_NPSFR = [{ "colour": "689500", "value": 9.03, "year": 2011 }, { "colour": "689500", "value": 7.57, "year": 2012 }, { "colour": "689500", "value": 8.47, "year": 2013 }, { "colour": "689500", "value": 7.7, "year": 2014 }, { "colour": "689500", "value": 8.2, "year": 2015 }];</script>
-                    <script>var chartData3_NPSFR = [{ "colour": "689500", "value": 5.53, "year": 2011 }, { "colour": "689500", "value": 0.49, "year": 2012 }, { "colour": "689500", "value": 9.68, "year": 2013 }, { "colour": "689500", "value": 7.2, "year": 2014 }, { "colour": "689500", "value": 8.61, "year": 2015 }];</script>
-                    <script>var chartData4_NPSFR = [{ "colour": "689500", "value": -6.33, "year": 2009 }, { "colour": "689500", "value": 13.94, "year": 2010 }, { "colour": "689500", "value": 24.56, "year": 2011 }, { "colour": "689500", "value": 15.75, "year": 2012 }, { "colour": "689500", "value": 16.41, "year": 2013 }];</script>
-                    <script>var chartData5_NPSFR = [{ "colour": "689500", "value": 2.71, "year": 2010 }, { "colour": "689500", "value": -7.45, "year": 2011 }, { "colour": "689500", "value": 7.58, "year": 2012 }, { "colour": "689500", "value": 4.65, "year": 2014 }, { "colour": "689500", "value": 6.77, "year": 2015 }];</script>
-                    <script>var chartDataSet = ["Achmea", "Axa SA", "Assicurazioni Generali", "ING", "Ageas"];</script>
-                </div>
-            </div>
-        </div>
-
-    </div>

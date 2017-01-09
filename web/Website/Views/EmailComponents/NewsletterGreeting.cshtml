@@ -1,35 +1,73 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.NewsletterGreetingViewModel>
 
-<table class="daily-alert" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background-color:#eee;margin-bottom:24px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #eee;margin-bottom: 24px;">
-    <tbody>
+<tr>
+    <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+        <!--[if gte mso 9]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
         <tr>
-            <td class="daily-alert__cell" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding-bottom:16px;padding-top:16px;padding-left:24px;padding-right:24px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 16px;padding-top: 16px;padding-left: 24px;padding-right: 24px;">
-                <div class="caps-header" style="text-transform:uppercase;font-size:20px;font-weight:bold;text-align:center;margin-bottom:8px;text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px; font-family: Roboto Condensed;">
-                    @Editable(Model, m =>m.GlassModel.Title)
-                </div>
-                <div class="caps-body">
-                    <table width="100%" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td> 
-                                <div class="one-third layout-padded-right" style="float: left;" >  								
-								<img src="@(Model.GlassModel.Image?.Src)"/></div>
-                         
-                                <div>
-                                    <p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">
-                                        <strong style="color: #000;">Hi #FirstName#,</strong>
+        <td align="center" valign="top" width="600" style="width:600px;">
+        <![endif]-->
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
+            <tr>
+                <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
 
-                                    </p>
-                                    <p class="daily-alert-body" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;display:block;font-family:Myriad Pro Regular;font-size:14px;line-height:150%;margin-top:0;padding-top:0;font-size:16px;color:#777;margin-bottom:0;text-align:center;line-height:26px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left;">@Editable(Model, m => m.GlassModel.Summary)</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>	
-						
-                </div>
-                <div class="download-link" style="text-align: center;">
-                    <a href="@(Model.GlassModel.Download_Link?.Url)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background:#fff;display:inline-block;padding:10px 20px;margin-top:20px;color:#000;font-weight:bold;border:1px solid #fbb040;">@(Model.GlassModel.Download_Link?.Text)</a>
-                </div>
-            </td>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                        <tbody class="mcnTextBlockOuter">
+                            <tr>
+                                <td valign="top" class="daily-alert__cell" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                    <tr>
+                                    <![endif]-->
+                                    <!--[if mso]>
+                                    <td valign="top" width="600" style="width:600px;">
+                                    <![endif]-->
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                        <tbody>
+                                            <tr>
+
+                                                <td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; font-size: 16px; line-height: 150%; text-align: center;">
+                                                    <h2 class="caps-header" style="text-transform: uppercase;font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Georgia, serif; color: #000;">@Editable(Model, m => m.GlassModel.Title)</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="@(Model.GlassModel.Image?.Src)" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
+                                                    <div>
+                                                        <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777;margin-bottom: 0;text-align: left">
+                                                            <strong style="color: #000;">Hi #FirstName#,</strong>
+                                                        </p>
+                                                        <p style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Roboto, Georgia, serif; font-size: 14px; line-height: 150%; color: #777777;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem, pretium malesuada ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi. Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem, pretium malesuada ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi.Lorem ipsum dolor sitLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem, pretium malesuada ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi. Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum orci lorem, pretium malesuada ligula scelerisque eget. Sed vel magna eget eros commodo viverra nec a mi.Lorem ipsum dolor sit</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="download-link" style="text-align: center;">
+                                                        <a href="@(Model.GlassModel.Download_Link?.Url)" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background: #fff;display: inline-block;padding: 10px 20px;margin-top: 20px;color: #000;font-weight: bold;border: 1px solid #fbb040; text-decoration: none;">@(Model.GlassModel.Download_Link?.Text)</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--[if mso]>
+                                    </td>
+                                    <![endif]-->
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--[if gte mso 9]>
+        </td>
         </tr>
-    </tbody>
-</table>
+        </table>
+        <![endif]-->
+    </td>
+</tr>
