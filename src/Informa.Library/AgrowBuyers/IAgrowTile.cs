@@ -1,9 +1,4 @@
 ﻿using Glass.Mapper.Sc.Fields;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Informa.Library.AgrowBuyers
 {
@@ -13,6 +8,6 @@ namespace Informa.Library.AgrowBuyers
         string AgrowTitle { get; set; }
         string AgrowShortDescription { get; set; }
         string AgrowDetailUrl { get; set; }
-        string AgrowPageUrl { get; set; }
+        Image AgrowBanner { get; set; }
     }
 }
