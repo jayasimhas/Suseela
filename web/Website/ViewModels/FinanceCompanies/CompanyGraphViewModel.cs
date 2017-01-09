@@ -10,6 +10,7 @@ using System.Net;
 using System.Web;
 using Informa.Library.Services.Global;
 using Sitecore.Data.Items;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Web.ViewModels.FinanceCompanies
 {
@@ -58,7 +59,10 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                 return string.Empty;
             }
         }
-
+        /// <summary>
+        /// Gets available graphs for the given company_ID.
+        /// </summary>
+        /// <returns></returns>
         private IEnumerable<ICompany_Graph> GetAvailableGraphs()
         {
             string id = HttpContext.Current.Request.QueryString["Id"];
@@ -71,7 +75,23 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                     return compnayPage.Graphs;
                 }
                 else
+                {
+                    var environmentGlobalItem = GlobalService.GetVerticalRootAncestor(GlassModel._Id)?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().FirstOrDefault();
+                    CompanyID = HttpContext.Current.Request.QueryString["companyid"];
+                    if (environmentGlobalItem != null)
+                    {
+                        var Graphsfolder = SitecoreContext.GetItem<Item>(environmentGlobalItem._Id)?.Children.FirstOrDefault(p => p.Name.Equals("Company Graph Types"));
+                        if(Graphsfolder != null)
+                        {
+                            var Graphs = (from graph in Graphsfolder.Children
+                                          select SitecoreContext.GetItem<ICompany_Graph>(graph.ID.Guid));
+                            return Graphs;
+                        }
+                        return Enumerable.Empty<ICompany_Graph>();
+                    }
                     return Enumerable.Empty<ICompany_Graph>();
+                }
+                    
             }
             else
             {
