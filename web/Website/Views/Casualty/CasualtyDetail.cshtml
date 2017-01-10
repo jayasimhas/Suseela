@@ -1,7 +1,6 @@
 ﻿@model Informa.Web.ViewModels.Casualty.CasualtyDetailViewModel
 @if (Model.IsUserAuthenticated)
 {
-    <div class="casualty-detail-title"><h1>@Model.Title</h1></div>
     if (!string.IsNullOrEmpty(Model.jsonCasualtyDetailData))
     {
         <script type="text/javascript">
@@ -37,7 +36,16 @@
             }]
         </script>
     }
-    <table class="table" id="casualty-detail-table"></table>
+    <div class="small_table">
+        <div class="article-left-rail">
+            <div class="table-responsive casualtyPan">
+                <h5 class="secondary_heading">@Model.Title</h5>
+                <hr />
+                <table class="table" id="casualty-detail-table"></table>
+            </div>
+        </div>
+    </div>
+    
 }
 else
 {
