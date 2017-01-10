@@ -20,6 +20,18 @@ $(function(){
 		$('.chartexpand', '.compareChart').removeClass('active');
 	});
 	
+	$('.chartexpand', '.eachChartData').click(function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartexpand = eachChartData.find('.chartexpand'), graphCont = eachChartData.find('.graph-container');
+		if(chartexpand.hasClass('active')){
+			graphCont.addClass('hide');
+			$this.removeClass('active');
+		}
+		else{
+			graphCont.removeClass('hide');
+			$this.addClass('active');
+		}
+	});
+	
 	var geturl = window.location.href;
 	if(geturl.indexOf('graphid=') !== -1){
 		var getId = geturl.split('graphid=')[1];
