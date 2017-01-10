@@ -4,7 +4,7 @@
 @*Agrow Listing Page*@
 <div class="main__content">
     <div>
-        <div class="job_listing">
+        <div class="agroBuyers">
             <h1>@Model.Title</h1>
             <div class="sub-heading-text">
                 <span>@Model.SubTitle</span>
@@ -15,16 +15,13 @@
                 {
                     if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
                     {
-                        <div class="stacked_job_view" id="content">
-                            @foreach (var agrow in Model.AgrowTiles)
-                            {
-                                <div class="job_list_individual eachCategory">
-                                    <div class="job_description">
-                                        <div class="job_heading">
-                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
-                                        </div>
-                                        <div class="job_logo">
-                                            <a href="@agrow.AgrowDetailUrl">
+                        <section class="buyers-guide-listing" >
+                            <div class="buyers-guide-row">
+                                @foreach (var agrow in Model.AgrowTiles)
+                                {
+                                    <div class="buyers-guide">
+                                        <div class="image">
+                                            <a class="link" href="@agrow.AgrowDetailUrl">
                                                 @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
                                                 {
                                                     <img src="@agrow.AgrowBanner.Src" alt="banner" />
@@ -35,50 +32,47 @@
                                                 }
                                             </a>
                                         </div>
+                                       <a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a>
                                     </div>
-                                </div>
-                            }
-                        </div>
+                                }
+                            </div>
+                        </section>
                     }
                 }
                 else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleDescriptionAndLink)
                 {
                     if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
                     {
-                        <div class="stacked_job_view" id="content">
-                            @foreach (var agrow in Model.AgrowTiles)
-                            {
-                                <div class="job_list_individual eachCategory">
-                                    <div class="job_description">
-                                        <div class="job_heading">
-                                            <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h3>
-                                        </div>
+                        <section class="buyers-guide-listing-text" id="buyers-guide-listing-text">
+                            <div class="buyers-guide-row">
+                                @foreach (var agrow in Model.AgrowTiles)
+                                {
+                                    <div class="buyers-guide">
+                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
 
-                                        <div class="job_description_detail">
+                                        <div class="text">
                                             <p>
                                                 @Html.Raw(agrow.AgrowShortDescription)
                                             </p>
                                         </div>
-                                        <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a></h3>
+                                        <a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a>
                                     </div>
-                                </div>
-                            }
-                        </div>
+                                }
+                            </div>
+                        </section>
                     }
                 }
                 else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleImageAndLink)
                 {
                     if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
                     {
-                        <div class="stacked_job_view" id="content">
-                            @foreach (var agrow in Model.AgrowTiles)
-                            {
-                                <div class="job_list_individual eachCategory">
-                                    <div class="job_description">
-                                        <div class="job_heading">
-                                            <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h3>
-                                        </div>
-                                        <div class="job_logo">
+                        <section class="buyers-guide-listing-link" id="buyers-guide-listing-link">
+                            <div class="buyers-guide-row">
+                                @foreach (var agrow in Model.AgrowTiles)
+                                {
+                                    <div class="buyers-guide">
+                                        <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                        <div class="image">
                                             <a href="@agrow.AgrowDetailUrl">
                                                 @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
                                                 {
@@ -94,9 +88,9 @@
                                             <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a></h4>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                        </div>
+                                }
+                            </div>
+                        </section>
                     }
                 }
                 <input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />

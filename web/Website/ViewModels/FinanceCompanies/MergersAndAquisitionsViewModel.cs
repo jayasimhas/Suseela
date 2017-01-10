@@ -12,10 +12,11 @@ using Sitecore.Data.Items;
 using System.Net;
 using Newtonsoft.Json;
 using Glass.Mapper.Sc;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels.FinanceCompanies
 {
-    public class MergersAndAquisitionsViewModel : GlassViewModel<IGlassBase>
+    public class MergersAndAquisitionsViewModel : GlassViewModel<IGeneral_Content_Page>
     {
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ITextTranslator TextTranslator;
