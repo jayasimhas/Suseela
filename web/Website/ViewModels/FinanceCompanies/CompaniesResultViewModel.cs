@@ -88,6 +88,10 @@
             return result;
         }
 
+        /// <summary>
+        /// Gets Json data from the feed
+        /// </summary>
+        /// <returns>Json string</returns>
         public string GetResultsData()
         {
             string jsonString = "External feed url is empty";

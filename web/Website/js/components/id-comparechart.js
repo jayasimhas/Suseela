@@ -1,17 +1,5 @@
 $(function(){
-	$('.chartexpand', '.eachChartData').on('click', function(){
-		var $this = $(this), chartData = $this.closest('.eachChartData').find('.chartData');
-		if(chartData.is(':visible')){
-			chartData.addClass('hide');
-			$this.removeClass('active');
-		}
-		else{
-			chartData.removeClass('hide');
-			$this.addClass('active');
-		}
-	});
-	
-	$('.availableGraphs').on('click', 'li a', function(){
+	$(document).on('click', '.availableGraphs li a', function(){
 		var $this = $(this), id = $this.attr('id'), getFocusId = id.split('-')[1];
 		$(window).scrollTop($('#' + getFocusId).position().top);
 		$('#' + getFocusId +'-DATA').removeClass('hide'); 

@@ -1,6 +1,14 @@
 $(function() {
 	var GWPGraph = false;
 	$("#GWP").on('click', function() {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (GWPGraph == false) {
 			GWPcreateStockChart();
 			GWPGraph = true;
@@ -9,6 +17,14 @@ $(function() {
 
 	var NWPGraph = false;
 	$("#NWP").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (NWPGraph == false) {
 			NWPcreateStockChart();
 			NWPGraph = true;
@@ -17,6 +33,14 @@ $(function() {
 
 	var URGraph = false;
 	$("#UR").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (URGraph == false) {
 			URcreateStockChart();
 			URGraph = true;
@@ -25,6 +49,14 @@ $(function() {
 
 	var NPGraph = false;
 	$("#NP").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (NPGraph == false) {
 			NPcreateStockChart();
 			NPGraph = true;
@@ -33,6 +65,14 @@ $(function() {
 
 	var SFGraph = false;
 	$("#SF").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (SFGraph == false) {
 			SFcreateStockChart();
 			SFGraph = true;
@@ -41,6 +81,14 @@ $(function() {
 
 	var NWPNRGraph = false;
 	$("#NWPNR").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (NWPNRGraph == false) {
 			NWPNRcreateStockChart();
 			NWPNRGraph = true;
@@ -49,6 +97,14 @@ $(function() {
 
 	var SFNRGraph = false;
 	$("#SFNR").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (SFNRGraph == false) {
 			SFNRcreateStockChart();
 			SFNRGraph = true;
@@ -57,6 +113,14 @@ $(function() {
 
 	var NPSFRGraph = false;
 	$("#NPSFR").on('click', function () {
+		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+		if (chartData.is(':visible')) {
+			chartData.addClass('hide');
+			arrow.removeClass('active');
+		} else {
+			chartData.removeClass('hide');
+			arrow.addClass('active');
+		}
 		if (NPSFRGraph == false) {
 			NPSFRcreateStockChart();
 			NPSFRGraph = true;
