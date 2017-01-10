@@ -13,7 +13,15 @@
                 @if (!string.IsNullOrEmpty(Model.ContentType))
                 {
                     <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                        <span class="article-content-type">@Model.ContentType</span>
+                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 15)
+                        {
+                            var trimmedContentType = new string(Model.ContentType.Take(15).ToArray()) + " ...";
+                            <span class="article-content-type">@trimmedContentType</span>
+                        }
+                        else
+                        {
+                            <span class="article-content-type">@Model.ContentType</span>
+                        }
                     </td>
                 }
 
@@ -172,8 +180,12 @@
     @* * *  ARTICLE - FEATURED IMAGE
         IIPP-117 *@
     <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
-        <img src="@Model.GetScaledImage(790)" alt="@Model.ImageAltText">
-        <table width="100%">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td colspan="2"><img src="@Model.GetScaledImage(790)" alt="@Model.ImageAltText"></td>
+            </tr>
             <tr><td>&nbsp;</td></tr>
             <tr>
                 <td align="left">
@@ -184,7 +196,7 @@
                     {
 
                         <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:30px;">
-                             @Model.ImageSource
+                            @Model.ImageSource
                         </span>
                     }
                 </td>

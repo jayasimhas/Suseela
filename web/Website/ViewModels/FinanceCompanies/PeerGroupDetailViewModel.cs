@@ -109,6 +109,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                     var peerCompanies = companyPage.Company_PeerGroupList as IEnumerable<ICompany_Detail_Page>;
                     if (peerCompanies != null)
                     {
+                        peerCompanies = peerCompanies.Where(p => p._Id != companyPage._Id);
                         peerGroupList.AddRange(peerCompanies);
                     }
                     return peerGroupList;

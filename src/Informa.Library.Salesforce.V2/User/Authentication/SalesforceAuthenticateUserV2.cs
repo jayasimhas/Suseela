@@ -5,23 +5,29 @@ using System.Net.Http.Headers;
 using Informa.Library.User.Authentication;
 using System.Web;
 using Informa.Library.Salesforce.User.Authentication;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Library.Salesforce.V2.User.Authentication
 {
     public class SalesforceAuthenticateUserV2 : ISalesforceAuthenticateUserV2
     {
         protected readonly IHttpClientHelper HttpClientHelper;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        private string tokenUrl = "/services/oauth2/token";
+        private string userInforUrlFormat = "{0}/services/oauth2/userinfo";
+
         public SalesforceAuthenticateUserV2(
-            IHttpClientHelper httpClientHelper)
+            IHttpClientHelper httpClientHelper, ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             HttpClientHelper = httpClientHelper;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
             string client_id, string client_secret, string redirect_uri)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://idpoc-agrivertical.cs82.force.com");
+            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
             var pairs = new Dictionary<string, string>
@@ -32,7 +38,7 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
-            HttpResponseMessage response = client.PostAsync("/services/oauth2/token",
+            HttpResponseMessage response = client.PostAsync(tokenUrl,
                                           new FormUrlEncodedContent(pairs)).Result;
             var responseString = response.Content.ReadAsStringAsync().Result;
             var values = HttpUtility.ParseQueryString(responseString);
@@ -44,7 +50,10 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                 return ErrorResult;
             }
 
-            var authenticatedUser = HttpClientHelper.GetDataResponse<UserInfoResult>(new Uri("https://idpoc-agrivertical.cs82.force.com/services/oauth2/userinfo"), new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken), new Dictionary<string, string>());
+            var authenticatedUser = HttpClientHelper.GetDataResponse<UserInfoResult>( new Uri(string.Format(userInforUrlFormat,
+                SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url))
+                , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken), 
+                new Dictionary<string, string>());
 
             if (authenticatedUser == null)
             {

@@ -1,1 +1,123 @@
-﻿
+﻿@model Informa.Web.ViewModels.BuyersGuide.BuyersListingViewModel
+@using Informa.Library.Utilities.References
+
+@*Agrow Listing Page*@
+<div class="main__content">
+    <div>
+        <div class="job_listing">
+            <h1>@Model.Title</h1>
+            <div class="sub-heading-text">
+                <span>@Model.SubTitle</span>
+            </div>
+            @if (Model.RenderingParameters != null && Model.RenderingParameters.DisplayStyle != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.DisplayStyle.Value))
+            {
+                if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.ImageAndTitle)
+                {
+                    if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
+                    {
+                        <div class="stacked_job_view" id="content">
+                            @foreach (var agrow in Model.AgrowTiles)
+                            {
+                                <div class="job_list_individual eachCategory">
+                                    <div class="job_description">
+                                        <div class="job_heading">
+                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                        </div>
+                                        <div class="job_logo">
+                                            <a href="@agrow.AgrowDetailUrl">
+                                                @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
+                                                {
+                                                    <img src="@agrow.AgrowBanner.Src" alt="banner" />
+                                                }
+                                                else if (!string.IsNullOrEmpty(agrow.AgrowLogo?.Src))
+                                                {
+                                                    <img src="@agrow.AgrowLogo.Src" alt="logo" />
+                                                }
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleDescriptionAndLink)
+                {
+                    if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
+                    {
+                        <div class="stacked_job_view" id="content">
+                            @foreach (var agrow in Model.AgrowTiles)
+                            {
+                                <div class="job_list_individual eachCategory">
+                                    <div class="job_description">
+                                        <div class="job_heading">
+                                            <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h3>
+                                        </div>
+
+                                        <div class="job_description_detail">
+                                            <p>
+                                                @Html.Raw(agrow.AgrowShortDescription)
+                                            </p>
+                                        </div>
+                                        <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a></h3>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleImageAndLink)
+                {
+                    if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
+                    {
+                        <div class="stacked_job_view" id="content">
+                            @foreach (var agrow in Model.AgrowTiles)
+                            {
+                                <div class="job_list_individual eachCategory">
+                                    <div class="job_description">
+                                        <div class="job_heading">
+                                            <h3><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h3>
+                                        </div>
+                                        <div class="job_logo">
+                                            <a href="@agrow.AgrowDetailUrl">
+                                                @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
+                                                {
+                                                    <img src="@agrow.AgrowBanner.Src" alt="banner" />
+                                                }
+                                                else if (!string.IsNullOrEmpty(agrow.AgrowLogo?.Src))
+                                                {
+                                                    <img src="@agrow.AgrowLogo.Src" alt="logo" />
+                                                }
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                <input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />
+                <input type="hidden" id="noofJobsPerPage" value="@Model.RenderingParameters.No_of_Jobs_Per_Page" />
+                <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
+
+                @*Pagination for Jobs*@
+                if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.RenderingParameters.No_of_Jobs_Per_Page))
+                {
+                    if (Model.AgrowTiles.Count() > 0 && Convert.ToInt32(Model.RenderingParameters.No_of_Jobs_Per_Page) < Model.AgrowTiles.Count())
+                    {
+                        <div class="pagination clearfix">
+                            <ul class="nums">
+                                <li><a href="javascript:void(0);" class="prev"/></li>
+                                <li><span></span></li>
+                                <li><a href="javascript:void(0);" class="next"/></li>
+                            </ul>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

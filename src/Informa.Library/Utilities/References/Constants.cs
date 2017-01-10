@@ -124,5 +124,15 @@ namespace Informa.Library.Utilities.References
             public const string CompareFinancialResults = "comparefinancialresults";
         }
 
+        /// <summary>
+        /// Dropdown list for agrow buyers constant
+        /// </summary>
+        public static class AgrowResultDisplayTypes
+        {
+            public const string ImageAndTitle = "imageandtitle";
+            public const string TitleDescriptionAndLink = "titledescriptionandlink";
+            public const string TitleImageAndLink= "titleimageandlink";
+        }
+
     }
 }

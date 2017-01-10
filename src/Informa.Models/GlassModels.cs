@@ -13166,6 +13166,135 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+    /// <summary>
+    /// ILatest_Casualties_Component Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Latest Casualties Parameters</para>	
+    /// <para>ID: BD204DDB-8B17-426C-B2D3-60D767B59C06</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ILatest_Casualties_ComponentConstants.TemplateIdString)]
+    public partial interface ILatest_Casualties_Component : IGlassBase
+    {
+        /// <summary>
+        /// Logo field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 82513782-F37C-46A1-A9C6-46F6E3C3B3D4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Logo { get; set; }
+
+        /// <summary>
+        /// Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 6BB21A26-131F-470E-A2E1-94EBC7481D2C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title { get; set; }
+
+        /// <summary>
+        /// Additional_Information Text.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: D5D91B04-7A95-4653-839B-A6EF7F2E4B99</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Additional_InformationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Additional_Information { get; set; }
+
+        /// <summary>
+        /// External Feed Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: EE55D306-C9C3-4E1C-89F5-69B41BA273A8</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_Url { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// ILatest_Casualties_Component Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Latest Casualties Parameters</para>	
+    /// <para>ID: BD204DDB-8B17-426C-B2D3-60D767B59C06</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ILatest_Casualties_Component__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Logo field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 82513782-F37C-46A1-A9C6-46F6E3C3B3D4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Logo { get; set; }
+
+        /// <summary>
+        /// Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 6BB21A26-131F-470E-A2E1-94EBC7481D2C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title { get; set; }
+
+        /// <summary>
+        /// Additional_Information Text.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: D5D91B04-7A95-4653-839B-A6EF7F2E4B99</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Additional_InformationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Additional_Information { get; set; }
+
+        /// <summary>
+        /// External Feed Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: EE55D306-C9C3-4E1C-89F5-69B41BA273A8</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_Url { get; set; }
+
+    }
+
+    public static partial class ILatest_Casualties_ComponentConstants
+    {
+
+        public const string TemplateIdString = "BD204DDB-8B17-426C-B2D3-60D767B59C06";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Latest Casualties Component";
+
+
+        public static readonly ID LogoFieldId = new ID("82513782-F37C-46A1-A9C6-46F6E3C3B3D4");
+        public const string LogoFieldName = "Logo";
+
+        public static readonly ID TitleFieldId = new ID("6BB21A26-131F-470E-A2E1-94EBC7481D2C");
+        public const string TitleFieldName = "Title";
+
+        public static readonly ID Additional_InformationFieldId = new ID("D5D91B04-7A95-4653-839B-A6EF7F2E4B99");
+        public const string Additional_InformationFieldName = "Additional Information";
+
+        public static readonly ID External_Feed_UrlFieldId = new ID("EE55D306-C9C3-4E1C-89F5-69B41BA273A8");
+        public const string External_Feed_UrlFieldName = "External Feed Url";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -20949,6 +21078,75 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [SitecoreType(TemplateId = IAgrow_Buyers_Listing_Display_StylesConstants.TemplateIdString)]
+    public partial interface IAgrow_Buyers_Listing_Display_StylesOptions : IGlassBase
+    {
+        /// <summary>
+        /// The Table Type field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>
+        /// <para>Field ID: f211373c-b268-4347-aa2b-30421878fbd3</para>
+        /// </summary>
+        [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.DisplayStyle_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IAgrow_Results_Table_Type_Option DisplayStyle { get; set; }
+
+        /// <summary>
+        /// The Table Type field.
+        /// <para></para>
+        /// <para>Field Type: Single Line Text</para>		
+        /// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
+        /// </summary>
+        [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string No_of_Jobs_Per_Page { get; set; }
+    }
+
+    public static partial class IAgrow_Buyers_Listing_Display_StylesConstants
+    {
+
+        public const string TemplateIdString = "F2F7F961-E95A-4888-8E73-3ECBB7EA67A7";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Agrow Buyers Listing Display Styles";
+
+
+        public static readonly ID DisplayStyle_TypeFieldId = new ID("D30E27F2-B231-4AEF-B005-21C6BBB5A007");
+        public const string DisplayStyle_TypeFieldName = "Display Style";
+
+        public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
+        public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
+    }
+
+    /// <summary>
+    /// IAgrow_Results_Table_Type_OptionConstants
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Company Results Table Type Option</para>	
+    /// <para>ID: 2f0348bd-e79d-4372-9aa4-13a9df43ffc2</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IAgrow_Results_Table_Type_OptionConstants.TemplateIdString)]
+    public partial interface IAgrow_Results_Table_Type_Option : IGlassBase
+    {
+        /// <summary>
+        /// The Value field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: b58e3a4f-60c4-4a8c-880d-b80dccfcd126</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAgrow_Results_Table_Type_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Value { get; set; }
+    }
+    public static partial class IAgrow_Results_Table_Type_OptionConstants
+    {
+        public const string TemplateIdString = "2f0348bd-e79d-4372-9aa4-13a9df43ffc2";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company Results Table Type Option";
+
+        public static readonly ID ValueFieldId = new ID("b58e3a4f-60c4-4a8c-880d-b80dccfcd126");
+        public const string ValueFieldName = "Value";
     }
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
@@ -29082,10 +29280,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
             public static readonly ID ValueFieldId = new ID("b58e3a4f-60c4-4a8c-880d-b80dccfcd126");
             public const string ValueFieldName = "Value";
-
-
         }
-
     }
-
 }
