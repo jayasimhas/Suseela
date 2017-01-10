@@ -19,5 +19,12 @@ $(function(){
 		$('.chartData', '.compareChart').addClass('hide');
 		$('.chartexpand', '.compareChart').removeClass('active');
 	});
+	
+	var geturl = window.location.href;
+	if(geturl.indexOf('graphid=') !== -1){
+		var getId = geturl.split('graphid=')[1];
+		$(window).scrollTop($('#' + getId).offset().top);
+		$('#'+getId).trigger('click');
+	}
 });
 
