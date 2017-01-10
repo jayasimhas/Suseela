@@ -1408,8 +1408,8 @@ section: Alerts
       margin-right: 3%;
       border: 1px solid #d1d3d4;
       border-radius: 2px;
-      padding: 24px;
-      padding: 1.5rem; }
+      padding: 24px 24px 16px;
+      padding: 1.5rem 1.5rem 1rem; }
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
           width: 100%; } }
@@ -1443,14 +1443,15 @@ section: Alerts
         margin-bottom: 16px;
         margin-bottom: 1rem; }
       .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.mobile-table-exit {
-        margin-top: 16px;
-        margin-top: 1rem;
         font-family: "PT Serif", Georgia, serif;
         font-style: regular;
         font-weight: 400;
         font-size: 18px;
         font-size: 1.125rem;
-        line-height: 30px; }
+        line-height: 25px;
+        height: 50px;
+        overflow: hidden;
+        display: block; }
 
 .agroBuyers hr {
   margin-bottom: 24px;
