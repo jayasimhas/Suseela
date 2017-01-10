@@ -2330,7 +2330,8 @@ $.extend(SelectivityDropdown.prototype, EventDelegator.prototype, {
         while (($next = $anchor.next('.selectivity-dropdown')).length) {
             $anchor = $next;
         }
-        this.$el.insertAfter($anchor);
+        //this.$el.insertAfter($anchor);
+        $anchor.append(this.$el);
     },
 
     /**

@@ -35,6 +35,8 @@ import './components/id-financial-responsive-table';
 import './components/id-quarterly-responsive-table';
 import './components/id-comparefinancialresults';
 import './components/latest-casuality';
+import './components/id-merge-acquistion';
+import './components/ll-casuality-listing';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
