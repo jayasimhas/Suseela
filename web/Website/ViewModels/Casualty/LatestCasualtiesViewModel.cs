@@ -1,6 +1,7 @@
 ﻿using Glass.Mapper.Sc.Fields;
 using Informa.Library.Services.ExternalFeeds;
 using Informa.Library.Site;
+using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
@@ -14,11 +15,16 @@ namespace Informa.Web.ViewModels.Casualty
     {
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ICompaniesResultService CompanyResultService;
-        public LatestCasualtiesViewModel(ISiteRootContext siterootContext, ICompaniesResultService companyResultService)
+        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public LatestCasualtiesViewModel(ISiteRootContext siterootContext, 
+            ICompaniesResultService companyResultService,
+            IAuthenticatedUserContext authenticatedUserContext)
         {
             SiterootContext = siterootContext;
             CompanyResultService = companyResultService;
+            AuthenticatedUserContext = authenticatedUserContext;
         }
+        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public string homePageUrl => SiterootContext?.Item._Url;
         public Image Logo => GlassModel?.Logo;
         public string Title => GlassModel?.Title;

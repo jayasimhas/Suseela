@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Services.ExternalFeeds;
+using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
@@ -12,11 +13,19 @@ namespace Informa.Web.ViewModels.Casualty
     public class CasualtyDetailViewModel : GlassViewModel<I___BasePage>
     {
         protected readonly ICompaniesResultService CompanyResultService;
-        public CasualtyDetailViewModel(ICompaniesResultService companyResultService, IRenderingContextService renderingParametersService)
+        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public readonly ICallToActionViewModel CallToActionViewModel;
+        public CasualtyDetailViewModel(ICompaniesResultService companyResultService, 
+            IRenderingContextService renderingParametersService,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ICallToActionViewModel callToActionViewModel)
         {
             CompanyResultService = companyResultService;
             feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
+            AuthenticatedUserContext = authenticatedUserContext;
+            CallToActionViewModel = callToActionViewModel;
         }
+        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public string feedUrl { get; set; }
         public string Title => GlassModel?.Title;
         public string jsonCasualtyDetailData => GetCasualtyDetailData(feedUrl);

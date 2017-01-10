@@ -10,9 +10,8 @@ using Jabberwocky.Glass.Autofac.Mvc.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Sitecore.Mvc.Presentation;
+using Informa.Library.User.Authentication;
 
 namespace Informa.Web.ViewModels.Casualty
 {
@@ -22,19 +21,26 @@ namespace Informa.Web.ViewModels.Casualty
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ICompaniesResultService CompanyResultService;
-       
+        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public readonly ICallToActionViewModel CallToActionViewModel;
+
         public CasualtyReportViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
             ITextTranslator textTranslator,
             ICompaniesResultService companyResultService,
-            IRenderingContextService renderingParametersService)
+            IRenderingContextService renderingParametersService,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ICallToActionViewModel callToActionViewModel)
         {
             GlobalService = globalService;
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
             CompanyResultService = companyResultService;
+            AuthenticatedUserContext = authenticatedUserContext;
+            CallToActionViewModel = callToActionViewModel;
             feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
         }
+        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public string feedUrl { get; set; }
         public string Title => GlassModel?.Title;
         public string FilterByDateDropdownTitle => TextTranslator.Translate("Casualty.Report.ByDate.DropdownTitle");

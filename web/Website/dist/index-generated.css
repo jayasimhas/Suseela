@@ -8027,30 +8027,33 @@ div#feedbacklite.fbl_r {
     clear: both;
     display: block; }
 
-.ll-casualty-form form {
+.ll-casualty-form .form-control {
   float: left;
   margin-bottom: 20px; }
   @media (max-width: 480px) {
-    .ll-casualty-form form {
+    .ll-casualty-form .form-control {
       width: 100%;
       float: none; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .ll-casualty-form form {
+    .ll-casualty-form .form-control {
       width: 50%; } }
-  .ll-casualty-form form label {
+  .ll-casualty-form .form-control label {
     float: left;
     margin-top: 8px;
     margin-right: 5px; }
     @media (max-width: 480px) {
-      .ll-casualty-form form label {
+      .ll-casualty-form .form-control label {
         width: 100%;
         margin-bottom: 1em; } }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-      .ll-casualty-form form label {
+      .ll-casualty-form .form-control label {
         width: 100%;
         margin-bottom: 1em; } }
-  .ll-casualty-form form#jump-to {
+  .ll-casualty-form .form-control:last-child {
     float: right; }
+
+.ll-casualty-form .selectivity-single-select-input {
+  visibility: hidden; }
 
 .ll-casualty-form .selectivity-input {
   position: relative; }
