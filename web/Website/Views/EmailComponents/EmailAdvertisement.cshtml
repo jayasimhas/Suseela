@@ -1,24 +1,49 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.EmailAdvertisementViewModel>
-
-<table class="mobile-ad" border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-		<td class="mobile-ad__cell">
-			<p class="mobile-ad__title">@Model.AdHeader</p>
-			<p class="mobile-ad__image">
-
-				@if (IsInEditingMode)
-				{
-				    <!-- this is just for easy experience editing, doesn't need to be email-html safe -->
-				    <div>Slot Id: @Editable(Model.GlassModel, m => m.Slot_ID) </div>
-				    <div>Zone: @Editable(Model.GlassModel, m => m.Zone) </div>
-				}
-				else
-				{
-				    <A HREF="@Model.AdClickLinkUrl" TARGET="_blank">
-				         <IMG SRC="@(Model.AdImageUrl)" Border="0">
-				    </a>
-				}
-			</p>
-		</td>
-	</tr>
-</table>
+<tr>
+    <td align="center" valign="top" class="templateHeader" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 15px;">
+        <!--[if gte mso 9]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+        <tr>
+        <td align="center" valign="top" width="600" style="width:600px;">
+        <![endif]-->
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+            <tr>
+                <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <tbody class="mcnImageBlockOuter">
+                            <tr>
+                                <td valign="top" style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="mcnImageContent" valign="top" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                    @if (IsInEditingMode)
+                                                    {
+				                                        <!-- this is just for easy experience editing, doesn't need to be email-html safe -->
+                                                        <div>Slot Id: @Editable(Model.GlassModel, m => m.Slot_ID) </div>
+                                                        <div>Zone: @Editable(Model.GlassModel, m => m.Zone) </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="@Model.AdClickLinkUrl" title="Shop Now" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                            <img align="center" alt="Woodofa Cosy Seating Outdoor Swing,Outdoor Garden Furniture" src="@(Model.AdImageUrl)" style="max-width: 600px; padding-bottom: 0;display: inline !important; vertical-align: bottom; border: 0; height: auto; outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+                                                        </a>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--[if gte mso 9]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </td>
+</tr>
