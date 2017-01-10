@@ -26,7 +26,7 @@
 				//Appending Body
                 var CasualityData = data[key].casualtyData;
                 for(var item in CasualityData) {
-                	Wrapper.append('<tr><td class="RB16 pad-10">'+CasualityData[item].Title+'</td><td class="R16 pad-10">'+CasualityData[item]["Date of Incident"]+'</td><td class="R16 pad-10">'+CasualityData[item]["Area"]+'</td></tr>');
+                	Wrapper.append('<tr><td class="RB16 pad-10"><a href="'+ $('#casualtyDetailUrl').val()+ '?incidentId='+ CasualityData[item].incidentId +'">'+CasualityData[item].Title+'</a></td><td class="R16 pad-10">'+CasualityData[item]["Date of Incident"]+'</td><td class="R16 pad-10">'+CasualityData[item]["Area"]+'</td></tr>');
                 }
 			}
 
