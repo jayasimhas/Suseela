@@ -1,52 +1,106 @@
 ﻿@model Informa.Web.ViewModels.Casualty.CasualtyReportViewModel
+@using Newtonsoft.Json
 
-<script type="text/javascript">
-    var jsonCasualtyListing = [{
-        "casualtymarine": {
-            "casualtytitle": "MARINE",
-            "casualtyData": [
-              {
-                  "Title": "APL DENVER (Gibraltar)",
-                  "incidentId": "22",
-                  "Date of Incident": "03.01.2017",
-                  "Area": "South China, Indo China, Indonesia and Philippines"
-              },
-              {
-                  "Title": "APL DENVER (Gibraltar)",
-                  "incidentId": "23",
-                  "Date of Incident": "03.01.2017",
-                  "Area": "South China, Indo China, Indonesia and Philippines"
-              }
-            ]
-        },
-        "casualtyseizures": {
-            "casualtytitle": "SEIZURES",
-            "casualtyData": [
-              {
-                  "Title": "APL DENVER (Gibraltar)",
-                  "incidentId": "24",
-                  "Date of Incident": "03.01.2017",
-                  "Area": "South China, Indo China, Indonesia and Philippines"
-              },
-              {
-                  "Title": "APL DENVER (Gibraltar)",
-                  "incidentId": "25",
-                  "Date of Incident": "03.01.2017",
-                  "Area": "South China, Indo China, Indonesia and Philippines"
-              }
-            ]
-        }
-    }]
-
-</script>
-
+@if (!string.IsNullOrEmpty(Model.jsonCasualtyData))
+{
+    <script type="text/javascript">
+        var jsonCasualtyListing = Model.jsonCasualtyData;
+    </script>
+}
+else
+{
+    <script type="text/javascript">
+        var jsonCasualtyListing = [{
+            "12-02-2016": {
+                "casualtymarine": {
+                    "casualtytitle": "MARINE",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "22",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "23",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                },
+                "casualtyseizures": {
+                    "casualtytitle": "SEIZURES",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "24",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "25",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                }
+            },
+            "12-12-2016": {
+                "casualtymarine": {
+                    "casualtytitle": "MARINE",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "22",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "23",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                },
+                "casualtyseizures": {
+                    "casualtytitle": "SEIZURES",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "24",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "25",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                }
+            }
+        }]
+    </script>
+}
 <div class="casualty-listing-title">
     <h1>@Model.Title</h1>
-    <div class="casualty-report-dropdowns">
-        @Model.FilterByDateDropdownTitle@Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues)
-        @Model.FilterBySectionDropdownTitle@Html.DropDownList("FilterBySectionDropDown", Model.FilterBySectionDropdownValues)
-        <div>
-            <a href="@Model.CasualtyDetailPageUrl">Go To Detail Page</a>
-        </div>
+    <div class="ll-casualty-form">
+        <label for="relDate" style="float: left;">@Model.FilterByDateDropdownTitle</label>
+        @Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues, new { Id = "relDate", @class = "common-field inline" })
+
+        <label for="jumpTo">@Model.FilterBySectionDropdownTitle</label>
+        @Html.DropDownList("FilterBySectionDropDown", Model.FilterBySectionDropdownValues, new { Id = "jumpTo", @class = "common-field inline" })
+        @*<div>
+                @{
+                    var detailPageUrl = Model.CasualtyDetailPageUrl + "?incidentId=449922";
+                }
+                <a href="@detailPageUrl">Go To Detail Page</a>
+            </div>*@
+
+        <table class="table" id="casualty-listing-table"></table>
     </div>
 </div>

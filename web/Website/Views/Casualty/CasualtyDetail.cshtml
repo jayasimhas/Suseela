@@ -1,0 +1,41 @@
+﻿@model Informa.Web.ViewModels.Casualty.CasualtyDetailViewModel
+<div class="casualty-detail-title"><h1>@Model.Title</h1></div>
+@if (!string.IsNullOrEmpty(Model.jsonCasualtyDetailData))
+{
+    <script type="text/javascript">
+        var jsonCasualtyDetailData = Model.jsonCasualtyDetailData;
+    </script>
+}
+else
+{
+    <script type="text/javascript">
+        var jsonCasualtyDetailData =[{
+      "casualtyDetail": {
+          "Heading": "APL DENVER (Gibraltar)",
+          "Title": "APL DENVER (Gibraltar) / WAN HAI 301 (Singapore)",
+          "Date": "03 Jan 2017",
+          "Type": "MARINE",
+          "Precis": "Contacted by c.c. Wan Hai 301 while anch off Pasir Gudang 03 Jan 2016. Bunker tank damaged, resulting in spillage of 300 tonnes of oil. Boom deployed. Under way at slow speed off Pasir Gudang 04 Jan.",
+          "Location": "South China, Indo China, Indonesia and Philippines",
+          "Vessels Involved": [
+            "APL Denver",
+            "Wan Hai 301"
+          ],
+          "Messages": [
+            {
+                "date": "Fri, 6 Jan 2017",
+                "message": "Manila, Jan 6 -- According to Johor Health and Environment committee chairman, Datuk Ayub, fully cellular containership Wan Hai 301 and fully cellular containership APL Denver have been reportedly detained under Section 38 of the Environmental Quality Act 1974. The owners of the vessels must come up with the RM1 million bond as insurance that they will not leave port. They can be charged in court should they fail to raise the bonds. -- Correspondent."
+            },
+            {
+                "date": "Fri, 6 Jan 2017",
+                "message": "Manila, Jan 6 -- According to Johor Health and Environment committee chairman, Datuk Ayub, fully cellular containership Wan Hai 301 and fully cellular containership APL Denver have been reportedly detained under Section 38 of the Environmental Quality Act 1974. The owners of the vessels must come up with the RM1 million bond as insurance that they will not leave port. They can be charged in court should they fail to raise the bonds. -- Correspondent."
+            }
+          ]
+      }
+  }]
+    </script>
+}
+
+<table class="table" id="casualty-detail-table">
+
+</table>

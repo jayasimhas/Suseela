@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc.Fields;
+using Informa.Library.Services.ExternalFeeds;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -12,14 +13,22 @@ namespace Informa.Web.ViewModels.Casualty
     public class LatestCasualtiesViewModel : GlassViewModel<ILatest_Casualties_Component>
     {
         protected readonly ISiteRootContext SiterootContext;
-        public LatestCasualtiesViewModel(ISiteRootContext siterootContext)
+        protected readonly ICompaniesResultService CompanyResultService;
+        public LatestCasualtiesViewModel(ISiteRootContext siterootContext, ICompaniesResultService companyResultService)
         {
             SiterootContext = siterootContext;
+            CompanyResultService = companyResultService;
         }
         public string homePageUrl => SiterootContext?.Item._Url;
         public Image Logo => GlassModel?.Logo;
         public string Title => GlassModel?.Title;
         public string AdditionalInformation => GlassModel?.Additional_Information;
         public string FeedUrl => GlassModel?.External_Feed_Url;
+        public string jsonLatestCasualties => GetLatestCasualties();
+
+        private string GetLatestCasualties()
+        {
+            return !string.IsNullOrEmpty(FeedUrl) ? CompanyResultService.GetCompanyFeeds(FeedUrl).Result : string.Empty;
+        }
     }
 }

@@ -1229,6 +1229,7 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
@@ -2251,6 +2252,7 @@
     <Content Include="Views\Casualty\LatestCasualties.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
+    <Content Include="Views\Casualty\CasualtyDetail.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

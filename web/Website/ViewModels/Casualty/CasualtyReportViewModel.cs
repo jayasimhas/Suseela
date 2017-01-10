@@ -6,11 +6,13 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Autofac.Mvc.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Sitecore.Mvc.Presentation;
 
 namespace Informa.Web.ViewModels.Casualty
 {
@@ -20,22 +22,25 @@ namespace Informa.Web.ViewModels.Casualty
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ICompaniesResultService CompanyResultService;
+       
         public CasualtyReportViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
             ITextTranslator textTranslator,
-            ICompaniesResultService companyResultService)
+            ICompaniesResultService companyResultService,
+            IRenderingContextService renderingParametersService)
         {
             GlobalService = globalService;
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
             CompanyResultService = companyResultService;
+            feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
         }
-
+        public string feedUrl { get; set; }
         public string Title => GlassModel?.Title;
         public string FilterByDateDropdownTitle => TextTranslator.Translate("Casualty.Report.ByDate.DropdownTitle");
         public string FilterBySectionDropdownTitle => TextTranslator.Translate("Casualty.Report.BySection.DropdownTitle");
         public string CasualtyDetailPageUrl => GetCasualtyDetailPageUrl();
-
+        public string jsonCasualtyData => GetCasualtyData(feedUrl);
         private string GetCasualtyDetailPageUrl()
         {
             var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
@@ -86,9 +91,17 @@ namespace Informa.Web.ViewModels.Casualty
             }
         }
 
-        public string GetJsonData(string feedURL)
+        public string GetCasualtyData(string feedURL)
         {
-            return CompanyResultService.GetCompanyFeeds(feedURL).Result;
+            if (!string.IsNullOrEmpty(feedURL))
+            {
+                return CompanyResultService.GetCompanyFeeds(feedURL).Result;
+            }
+            else
+            {
+                return string.Empty;
+            }
+            
         }
     }
 }
