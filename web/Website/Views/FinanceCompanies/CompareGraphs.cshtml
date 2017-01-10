@@ -18,7 +18,7 @@
                     <div class="title">@graph.GraphName.ToUpperInvariant()</div>
                     <div class="chartexpand"></div>
                 </div>
-                <div class="chartData" id="@graph.GraphID-DATA" style="width: 760px;">
+                <div class="chartData hide" id="@graph.GraphID-DATA">
                     <div id="@graph.GraphID-CHART"></div>
                     @foreach(var peerComapny in graph.CompanyGraphs)
                     {

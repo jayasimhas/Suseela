@@ -53,18 +53,20 @@
    
 </script>
 <div class="article-left-rail">
+    <div class="compareChart">
     <div class="showAll">
         <a class="expandAll" href="javascript: void(0);">@Model.ExpandAll</a><a> / </a><a class="collapseAll" href="javascript: void(0);">@Model.CollapseAll</a>
     </div>
     @foreach (var Graph in Model.AMGraphModels)
     {
+
         <div class="eachChartData company-graphs-accordion-stockchart">
-            <div class="dataTitle" id="UR">
+            <div class="dataTitle" id="@Graph.GraphID">
                 <div class="title">@Graph.GraphTitle.ToUpperInvariant()</div>
                 <div class="chartexpand"></div>
             </div>
             <div class="graph-container lightgray-body">
-                <div id="chartdiv_@Graph.GraphID" style="width:730px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div>
+                <div id="chartdiv_@Graph.GraphID" style="height:220px;"></div>
                 <script>
                     var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
                     var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
@@ -77,6 +79,7 @@
             setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 3000);
         </script>
     }
+        </div>
     </div>
 
 
