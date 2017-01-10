@@ -1,6 +1,4 @@
 ﻿@model Informa.Web.ViewModels.Casualty.CasualtyReportViewModel
-@using Newtonsoft.Json
-
 @if (Model.IsUserAuthenticated)
 {
     if (!string.IsNullOrEmpty(Model.jsonCasualtyData))
@@ -13,9 +11,9 @@
     {
         <script type="text/javascript">
             var jsonCasualtyListing = [{
-                "12-02-2016": {
+                "09-01-2017": {
                     "casualtymarine": {
-                        "casualtytitle": "MARINE",
+                        "casualtytitle": "MARINE-1",
                         "casualtyData": [
                           {
                               "Title": "APL DENVER (Gibraltar)",
@@ -32,7 +30,7 @@
                         ]
                     },
                     "casualtyseizures": {
-                        "casualtytitle": "SEIZURES",
+                        "casualtytitle": "SEIZURES-1",
                         "casualtyData": [
                           {
                               "Title": "APL DENVER (Gibraltar)",
@@ -49,9 +47,9 @@
                         ]
                     }
                 },
-                "12-12-2016": {
+                "08-01-2017": {
                     "casualtymarine": {
-                        "casualtytitle": "MARINE",
+                        "casualtytitle": "MARINE-2",
                         "casualtyData": [
                           {
                               "Title": "APL DENVER (Gibraltar)",
@@ -68,7 +66,7 @@
                         ]
                     },
                     "casualtyseizures": {
-                        "casualtytitle": "SEIZURES",
+                        "casualtytitle": "SEIZURES-2",
                         "casualtyData": [
                           {
                               "Title": "APL DENVER (Gibraltar)",
@@ -88,22 +86,21 @@
             }]
         </script>
     }
-    <div class="casualty-listing-title">
-        <h1>@Model.Title</h1>
-        <div class="ll-casualty-form">
-            <label for="relDate" style="float: left;">@Model.FilterByDateDropdownTitle</label>
-            @Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues, new { Id = "relDate", @class = "common-field inline" })
-
-            <label for="jumpTo">@Model.FilterBySectionDropdownTitle</label>
-            @Html.DropDownList("FilterBySectionDropDown", Model.FilterBySectionDropdownValues, new { Id = "jumpTo", @class = "common-field inline" })
-            @*<div>
-                    @{
-                        var detailPageUrl = Model.CasualtyDetailPageUrl + "?incidentId=449922";
-                    }
-                    <a href="@detailPageUrl">Go To Detail Page</a>
-                </div>*@
-
-            <table class="table" id="casualty-listing-table"></table>
+    <input type="hidden" id="casualtyDetailUrl" name="casualtyDetailUrl" value="@Model.CasualtyDetailPageUrl" />
+    <div class="small_table">
+        <div class="table-responsive">
+            <h5 class="secondary_heading">@Model.Title</h5>
+            <hr />
+            <div class="ll-casualty-form">
+                <div class="form-control">
+                    <label for="relDate" style="float: left;">@Model.FilterByDateDropdownTitle</label>
+                    @Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues, new { Id = "relDate", @class = "common-field inline" })
+                </div>
+                <div class="form-control jumpToSection">
+                    <label for="jumpTo">@Model.FilterBySectionDropdownTitle</label>
+                </div>
+                <table class="table" id="casualty-listing-table"></table>
+            </div>
         </div>
     </div>
 }
@@ -115,4 +112,3 @@ else
         }
     </div>
             }
-
