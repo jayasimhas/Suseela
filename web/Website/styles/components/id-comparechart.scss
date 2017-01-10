@@ -6,6 +6,10 @@
 .compareChart {
 	.eachChartData {
 		margin-bottom: 10px;
+		width: 790px;
+		@include breakpoint('small') {
+			width: 100%;
+		}
 		
 		#GWP-CHART, #NWP-CHART, #UR-CHART, #NP-CHART, #SF-CHART, #NWPNR-CHART, #SFNR-CHART, #NPSFR-CHART {
 			@include chartHeight(300px);
