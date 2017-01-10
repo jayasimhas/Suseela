@@ -1,9 +1,8 @@
 $(function(){
-	$(document).on('click', '.availableGraphs li a', function(){
+	$('.availableGraphs').off('click').on('click', 'li a', function () {
 		var $this = $(this), id = $this.attr('id'), getFocusId = id.split('-')[1];
-		$(window).scrollTop($('#' + getFocusId).position().top);
-		$('#' + getFocusId +'-DATA').removeClass('hide'); 
-		$('#' + getFocusId).find('.chartexpand').addClass('active');
+		$(window).scrollTop($('#' + getFocusId).offset().top);
+		$('#'+getFocusId).trigger('click');
 	});
 	
 	var chartAccordionIDs = ["GWP", "NWP", "UR", "NP", "SF", "NWPNR", "SFNR", "NPSFR"];
