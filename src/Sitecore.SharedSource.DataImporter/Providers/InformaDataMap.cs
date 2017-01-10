@@ -15,6 +15,10 @@ using Sitecore.SharedSource.DataImporter.Logger;
 using System.Web.Configuration;
 using System.Text.RegularExpressions;
 using Sitecore.Web.UI.HtmlControls;
+using Sitecore.Resources.Media;
+using System.Net;
+using Sitecore.SecurityModel;
+using System.Xml.Linq;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -23,6 +27,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         #region Properties
 
         public string PublicationPrefix { get; set; }
+
+         protected StringBuilder log;
 
         #endregion Properties
 
@@ -38,7 +44,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         #region Override Methods
 
-        public override IEnumerable<object> GetImportData(string site, string channel)
+
+        public override IEnumerable<object> GetImportData(string site, string publication)
         {
             int importErrorCount = 0;
             if (!Directory.Exists(this.Query))
@@ -47,7 +54,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return Enumerable.Empty<object>();
             }
 
-           //XMLDataLogger.WriteLog("_______________________________________________________________________________________","");
+            //XMLDataLogger.WriteLog("_______________________________________________________________________________________","");
 
             List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
@@ -75,7 +82,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 string bodyNode = "BODY";
                 string bodyTitleHtml = GetXMLData(d, bodyNode);
-               
+
                 string titleNode = "STORYTITLE";
                 string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
 
@@ -87,7 +94,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 string summaryTitleHtml = GetXMLData(d, "SUMMARY");
                 if (string.IsNullOrEmpty(summaryTitleHtml))
                 {
-                    summaryTitleHtml =  bodyTitleHtml;
+                    summaryTitleHtml = bodyTitleHtml;
                 }
 
 
@@ -96,12 +103,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 if (!string.IsNullOrEmpty(leadImageTitleHtml))
                 {
                     //bodyTitleHtml = leadImageTitleHtml + bodyTitleHtml  ;
-                     ao.Add("LEADIMAGE", leadImageTitleHtml);
+                    ao.Add("LEADIMAGE", leadImageTitleHtml);
                 }
 
                 XmlNodeList elemList = d.GetElementsByTagName("IMAGE");
 
-               // string bodyHtmlupdated = ReplaceRelationwithImage(bodyTitleHtml, elemList);
+                // string bodyHtmlupdated = ReplaceRelationwithImage(bodyTitleHtml, elemList);
                 //reading VIDEO ,getting video type and adding on end of body
                 string videoTitleHtml = GetXMLData(d, "VIDEO");
                 if ((!string.IsNullOrEmpty(videoTitleHtml)))
@@ -124,11 +131,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string wordToFind = Regex.Match(bodyTitleHtml, @"<VIDEOREL\s*(.+?)\s*</VIDEOREL>").ToString();
                     if (!string.IsNullOrEmpty(wordToFind))
                     {
-                        bodyTitleHtml = Regex.Replace(bodyTitleHtml, wordToFind, videoTitleHtml , RegexOptions.IgnoreCase);
+                        bodyTitleHtml = Regex.Replace(bodyTitleHtml, wordToFind, videoTitleHtml, RegexOptions.IgnoreCase);
                     }
                     else
                     {
-                          bodyTitleHtml = bodyTitleHtml + videoTitleHtml;
+                        bodyTitleHtml = bodyTitleHtml + videoTitleHtml;
                     }
                 }
 
@@ -149,7 +156,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         bodyTitleHtml = bodyTitleHtml + imageTitleHtml;
                     }
 
-                  
+
                 }
 
                 ao.Add("SUMMARY", summaryTitleHtml);
@@ -159,7 +166,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 // siddharth
                 errorLog += curFileName.Substring(0, curFileName.Length - 4);
-                articleNumber= curFileName.Substring(0, curFileName.Length - 4);
+                articleNumber = curFileName.Substring(0, curFileName.Length - 4);
 
                 if (GetXMLData(d, "ID") != "")
                 {
@@ -179,7 +186,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     XMLDataLogger.WriteLog(articleNumber, "PublishDateMissingLog");
                 }
 
-                
+
                 if (GetXMLData(d, "PUBLISHDATE") != "" && (DateTime.Parse(GetXMLData(d, "PUBLISHDATE")).AddYears(Int32.Parse(WebConfigurationManager.AppSettings["PublishedYear"])) <= DateTime.Now))
                 {
                     importErrorCount = 2;
@@ -187,463 +194,417 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     XMLDataLogger.WriteLog(articleNumber, "OldPublishDateLog");
                 }
                 //reading for ContentType
-
+                
                 Dictionary<string, string> TaxonomyList = new Dictionary<string, string>();
                 TaxonomyList = GetXMLDataTaxonomyList(d, "TAXONOMY");
 
                 //reading taxonomy for comodities  adding to ao
                 Dictionary<string, string> Taxonomy = new Dictionary<string, string>();
-                Taxonomy = GetXMLDataTaxonomy(d, "TAXONOMY");
+                Taxonomy = GetXMLDataTaxonomy(d, "TAXONOMY", site, publication);
                 if (Taxonomy.Count > 0)
                 {
-                   // GetRegion().FirstOrDefault(w => w == word);
-                    if(Taxonomy.Values.Any(k => k.Contains("dairy")))
-                    { 
-                    string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_dairy"];
-                     ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
-                    }
-                    else if(Taxonomy.Values.Any(k => k.Contains("public")))
-                      {
-                        string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_public_ledger"];
-                        ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
-                      }
+                    // GetRegion().FirstOrDefault(w => w == word);
+                    if (publication == "commodities")
+                    {
+                        if (Taxonomy.Values.Any(k => k.Contains("dairy")))
+                        {
+                            string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_dairy"];
+                            ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+                        }
+                        else if (Taxonomy.Values.Any(k => k.Contains("public")))
+                        {
+                            string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_public_ledger"];
+                            ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+                        }
 
-                    else if(Taxonomy.Values.Any(k => k.Contains("foodnews")))
-                       {
-                        string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_foodnews"];
-                        ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
-                       }
-                   // ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+                        else if (Taxonomy.Values.Any(k => k.Contains("foodnews")))
+                        {
+                            string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_foodnews"];
+                            ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+                        }
+                        // ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+
+                    }
+
                     foreach (KeyValuePair<string, string> pair in Taxonomy)
                     {
                         ao.Add(pair.Key, pair.Value);
                     }
-                }
-
-                // Siddharth
-                //reading ContentType according to agr mapping  adding to ao
-                if (TaxonomyList.Values.Count != 0)
-                {
-                    string contentTypeHtml = string.Empty;
-                    string contentTypeSetHtml = string.Empty;
-                    foreach (KeyValuePair<string, string> pair in TaxonomyList)
+                
+                    // Siddharth
+                    //reading ContentType according to agr mapping  adding to ao
+                    if (TaxonomyList.Values.Count != 0)
                     {
-                        contentTypeHtml = GetContentType(pair.Value.ToString());
-                        if (contentTypeHtml != " " && contentTypeHtml == "News")
+                        string contentTypeHtml = string.Empty;
+                        string contentTypeSetHtml = string.Empty;
+                        foreach (KeyValuePair<string, string> pair in TaxonomyList)
                         {
-                            contentTypeSetHtml = contentTypeHtml;
-                            //ao.Add("SECTION", contentTypeHtml);
-                           // break;
+                            // contentTypeHtml = GetContentType(pair.Value.ToString());
+                            contentTypeHtml = GetusingXML(pair.Value.ToString(), publication, "contenttype", site);
+                            if (contentTypeHtml != " " && contentTypeHtml == "News")
+                            {
+                                contentTypeSetHtml = contentTypeHtml;
+                                //ao.Add("SECTION", contentTypeHtml);
+                                // break;
+                            }
+                            else if (contentTypeHtml == "Analysis" || contentTypeHtml == "Opinion" || contentTypeHtml == "Interviews")
+                            {
+                                contentTypeSetHtml = contentTypeHtml;
+                                // ao.Add("SECTION", contentTypeHtml);
+                                break;
+                            }
                         }
-                        else if(contentTypeHtml == "Analysis" || contentTypeHtml == "Opinion" || contentTypeHtml == "Interviews")
-                        {
-                            contentTypeSetHtml = contentTypeHtml;
-                           // ao.Add("SECTION", contentTypeHtml);
-                            break;
-                        }
-                    }
 
-                    if(contentTypeSetHtml != string.Empty)
+
+                        if (contentTypeSetHtml != string.Empty)
+                        {
+
+                            ao.Add("SECTION", contentTypeSetHtml);
+                        }
+                        else
+                        {
+                            ao.Add("SECTION", "");
+                        }
+
+
+                    }
+                    else
                     {
-
-                        ao.Add("SECTION", contentTypeSetHtml);
-                    }
-                    else {
                         ao.Add("SECTION", "");
+                        successwithmissingLog += "||" + "ContentType is missing";
+                        XMLDataLogger.WriteLog(articleNumber, "ContentTypeMissingLog");
                     }
 
-
-                }
-                else
-                {
-                    ao.Add("SECTION", "");
-                    successwithmissingLog += "||" + "ContentType is missing";
-                    XMLDataLogger.WriteLog(articleNumber, "ContentTypeMissingLog");
-                }
-
-                //readingTableau and adding to ao
-                Dictionary<string, string> Tableau = new Dictionary<string, string>();
-                Tableau = GetXMLDataTaxonomy(d, "TABLEAU");
-                if (Tableau.Count>0)
-                {
-                    foreach (KeyValuePair<string, string> pair in Tableau)
-                    {
-                        ao.Add(pair.Key, pair.Value);
-                    }
-                }
-
-                // Siddharth
-                if (importErrorCount != 2) {
-                    if (GetXMLData(d, bodyNode) == "")
-                    {
-                        importErrorCount = 1;
-                        errorLog += "||" + "Body is missing ";
-                        XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
-
-                    }
-
-                    //reading mediaType according to agr mapping  adding to ao
+                    //readingTableau and adding to ao
+                    Dictionary<string, string> Tableau = new Dictionary<string, string>();
+                    Tableau = GetXMLDataTaxonomy(d, "TABLEAU", site, publication);
                     if (Tableau.Count > 0)
                     {
-                        ao.Add("MEDIA", "interactivedashboards");
+                        foreach (KeyValuePair<string, string> pair in Tableau)
+                        {
+                            ao.Add(pair.Key, pair.Value);
+                        }
                     }
-                    else if (!string.IsNullOrEmpty(imageTitleHtml))
-                    {
-                        ao.Add("MEDIA", "image");
-                    }
-                    else
-                    {
-                        ao.Add("MEDIA", "Data");
-                    }
-
-
-
-
-                    ao.Add("INDUSTRIES", "");
-                    // ao.Add("AGENCY", ""); 
-                    //ao.Add("COUNTRY", "ANGOLA");
-                    //ao.Add("COMMERCIAL", "Deals");
-                    //ao.Add("COMPANIES", "2 Sisters Food Group");
-                    //ao.Add("COMMODITYFACTOR", "");
-                    //  ao.Add("INDUSTRIES", "");
 
                     // Siddharth
-                    if (ao["MEDIA"] == "")
+                    if (importErrorCount != 2)
                     {
+                        if (GetXMLData(d, bodyNode) == "")
+                        {
+                            importErrorCount = 1;
+                            errorLog += "||" + "Body is missing ";
+                            XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
 
-                        successwithmissingLog += "||" + "Media is missing";
-                        XMLDataLogger.WriteLog(articleNumber, "MediaMissingLog");
+                        }
+
+                        //reading mediaType according to agr mapping  adding to ao
+                        if (Tableau.Count > 0)
+                        {
+                            ao.Add("MEDIA", "interactivedashboards");
+                        }
+                        else if (!string.IsNullOrEmpty(imageTitleHtml))
+                        {
+                            ao.Add("MEDIA", "image");
+                        }
+                        else
+                        {
+                            ao.Add("MEDIA", "Data");
+                        }
+
+
+
+
+                        ao.Add("INDUSTRIES", "");
+
+
+                        // Siddharth
+                        if (ao["MEDIA"] == "")
+                        {
+
+                            successwithmissingLog += "||" + "Media is missing";
+                            XMLDataLogger.WriteLog(articleNumber, "MediaMissingLog");
+                        }
+
+                        if (!(ao.ContainsKey("COMMODITY")))
+                        {
+
+                            successwithmissingLog += "||" + "COMMODITY is missing";
+                            // XMLDataLogger.WriteLog(articleNumber, "COMMODITYMissingLog");
+                        }
+                    }
+                    if (importErrorCount == 1)
+                    {
+                        XMLDataLogger.WriteLog(errorLog, "");
+                        // XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
+                    }
+                    if (importErrorCount == 2)
+                    {
+                        XMLDataLogger.WriteLog(errorLog, "");
+                        //  XMLDataLogger.WriteLog(articleNumber, "OldPublishDateLog");
+                    }
+                    else
+                    {
+                        successLog = "XML read successfully for" + " ArticleId: " + ao["ARTICLEID"] + successwithmissingLog;
+                        XMLDataLogger.WriteLog(successLog, "");
+                        XMLDataLogger.WriteLog(successLog, "Success");
                     }
 
-                    if (!(ao.ContainsKey("COMMODITY1")))
+
+                    ao.Add("STORYBODY", bodyTitleHtml);
+
+                    string summarySearch = "";
+                    if (GetXMLData(d, "SUMMARY") != null)
                     {
-                         
-                        successwithmissingLog += "||" + "COMMODITY is missing";
-                       // XMLDataLogger.WriteLog(articleNumber, "COMMODITYMissingLog");
-                    }
-                }
-                if (importErrorCount == 1 )
-                {
-                    XMLDataLogger.WriteLog(errorLog, "");
-                   // XMLDataLogger.WriteLog(articleNumber, "BodyMissingLog");
-                }
-                if (importErrorCount == 2)
-                {
-                    XMLDataLogger.WriteLog(errorLog, "");                    
-                  //  XMLDataLogger.WriteLog(articleNumber, "OldPublishDateLog");
-                }
-                else
-                {
-                    successLog = "XML read successfully for" + " ArticleId: " + ao["ARTICLEID"] + successwithmissingLog;
-                    XMLDataLogger.WriteLog(successLog,"");
-                    XMLDataLogger.WriteLog(successLog,"Success");
-                }
-
-
-                ao.Add("STORYBODY", bodyTitleHtml);
-
-                string summarySearch = "";
-               if(GetXMLData(d, "SUMMARY") != null)
-                {
-                    summarySearch = GetXMLData(d, "SUMMARY");
-                }
-
-                if (!(bodyTitleHtml.Length == 0 && cleanTitleHtml.Length == 0))
-
-                {
-                    
-                    string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
-                    string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
-                    string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
-                    string summSearch = RemovespecialcharactersfromString(summarySearch);
-                    string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
-                    string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
-                   // string freeText = FindingTextFromHTML(regionSearch);
-                    //string[] RegionfreewordsList = RegionTextSearch.Split(' ');
-                   // string[] AgencyCompanyfreewordsList = AgencyCompanyTextSearch.Split(' ');
-                    string Country = "";
-                    string Companies = "";
-                    string Agency = "";
-
-                    List<string> regionSearchResults = GetRegion().FindAll(s => RegionTextSearch.Contains(" "+s+" "));
-                    List<string> agencySearchResults = GetAgency().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
-                    List<string> companySearchResults = GetCompanies().FindAll(s => AgencyCompanyTextSearch.Contains(" "+s+" "));
-
-                    foreach(string region in regionSearchResults)
-                    {
-                        Country += region + ",";
-                        
+                        summarySearch = GetXMLData(d, "SUMMARY");
                     }
 
-                    foreach (string company in companySearchResults)
+                    if (!(bodyTitleHtml.Length == 0 && cleanTitleHtml.Length == 0))
+
                     {
-                        Companies += company + ",";
+
+                        string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
+                        string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
+                        string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
+                        string summSearch = RemovespecialcharactersfromString(summarySearch);
+                        string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
+                        string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
+                        string Country = "";
+                        string Companies = "";
+                        string Agency = "";
+                        string Commodity = "";
+                        string CommodityFactor = "";
+
+                        List<string> regionSearchResults = GetRegion().FindAll(s => RegionTextSearch.Contains(" " + s + " "));
+                        List<string> agencySearchResults = GetAgency().FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                        List<string> companySearchResults = GetCompanies().FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                        List<string> commoditySearchResults = null;
+                        List<string> commodityfactorSearchResults = null;
+                        if (publication=="Agrow")
+                        {
+                             commoditySearchResults = GetListFromXml(publication,"commodity",site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+
+                        }
+
+                        if(site=="commodities")
+                        {
+                            
+                             commodityfactorSearchResults = GetListFromXml(publication, "product", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                        }
+                        foreach (string region in regionSearchResults)
+                        {
+                            Country += region + ",";
+
+                        }
+
+                        foreach (string company in companySearchResults)
+                        {
+                            Companies += company + ",";
+
+                        }
+
+                        foreach (string agency in agencySearchResults)
+                        {
+                            Agency += agency + ",";
+
+                        }
+                        if (commoditySearchResults != null)
+                        {
+                            foreach (string commodity in commoditySearchResults)
+                            {
+                                Commodity += commodity + ",";
+
+                            }
+                        }
+                        if (commodityfactorSearchResults != null)
+                        {
+                            foreach (string commodityfactor in commodityfactorSearchResults)
+                            {
+                                CommodityFactor += commodityfactor + ",";
+
+                            }
+                        }
+                        if (Country == "")
+                        {
+                            ao.Add("COUNTRY", "");
+                        }
+                        else
+
+                        {
+                            if(ao["COUNTRY"] != string.Empty)
+                            {
+
+                                Country = ao["COUNTRY"].ToString() + Country;
+                                ao.Remove("COUNTRY");
+                                ao.Add("COUNTRY", Country);
+
+                            }
+
+
+                            else {
+                            ao.Add("COUNTRY", Country);
+                            }
+                        }
+
+                        if (Companies == "")
+                        {
+                            ao.Add("COMPANIES", "");
+                        }
+                        else
+                        {
+                            ao.Add("COMPANIES", Companies);
+
+                        }
+                        if (Agency == "")
+                        {
+                            ao.Add("AGENCY", "");
+                        }
+                        else
+                        {
+
+                            ao.Add("AGENCY", Agency);
+                        }
+                        if(Commodity == "")
+                        {
+                            ao.Add("COMMODITY", "");
+                           
+
+                        }
+
+                        else
+                        {
+                            ao.Add("COMMODITY", Commodity);
+                        }
+
+                        if (CommodityFactor == "")
+                        {
+                            ao.Add("COMMODITYFACTOR", "");
+                        }
+                        else
+
+                        {
+                            if (ao["COMMODITYFACTOR"] != string.Empty)
+                            {
+
+                                CommodityFactor = ao["COMMODITYFACTOR"].ToString() + CommodityFactor;
+                                ao.Remove("COMMODITYFACTOR");
+                                ao.Add("COMMODITYFACTOR", CommodityFactor);
+
+                            }
+
+
+                            else
+                            {
+                                ao.Add("COMMODITYFACTOR", CommodityFactor);
+                            }
+                        }
 
                     }
-
-                    foreach (string agency in agencySearchResults)
-                    {
-                        Agency += agency + ",";
-
-                    }
-                    //foreach (string reg in GetRegion())
-                    //{
-                    //    //string search = "" + reg + "";
-                    //    //string countrysearch = RegionTextSearch.Where(s => s == search)
-                    //    //if (countrysearch != null && Country != null)
-                    //    //{
-                    //    //    Country += countrysearch + ",";
-                    //    //}
-
-                    //}
-
-                    //foreach (var word in AgencyCompanyfreewordsList)
-                    //{
-                    //   // string companiesSearch = GetCompanies().FirstOrDefault(w => w == AgencyCompanyfreewordsList.Contains(""w"");
-                    //    string agencySearch = GetAgency().FirstOrDefault(w => w == word);
-
-                    //    if (agencySearch != null)
-                    //    {
-                    //        Companies += agencySearch + ",";
-                    //    }
-
-                    //    if (agencySearch != null)
-                    //    {
-                    //        Agency += agencySearch + ",";
-                    //    }
-
-
-                    //}
-
-
-                    //String[] text = { "Mexico", "India", "Pakistan", };
-                    // var result = items.Where(i => i.Split(' ').Any(word => word.ToLower() == "car")).ToList();
-                    // country = GetRegion().FirstOrDefault(w => regionSearch.Split(' ').Contains(w.ToLower()));
-                    if (Country == "")
+                    else
                     {
                         ao.Add("COUNTRY", "");
-                        //ao.Add("COUNTRY2", "");
-                        //ao.Add("COUNTRY3", "");
-                        //ao.Add("COUNTRY4", "");
-                        //ao.Add("COUNTRY5", "");
-                        //ao.Add("COUNTRY6", "");
-                        //ao.Add("COUNTRY7", "");
-                        //ao.Add("COUNTRY8", "");
-                        //ao.Add("COUNTRY9", "");
-                        //ao.Add("COUNTRY10", "");
-                        //ao.Add("COUNTRY11", "");
-                        //ao.Add("COUNTRY12", "");
-                        //ao.Add("COUNTRY13", "");
-                        //ao.Add("COUNTRY14", "");
-                        //ao.Add("COUNTRY15", "");
-                    }
-                    else
-
-                    {
-                        ao.Add("COUNTRY",Country);
-
-                        //string[] values = Country.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        //int count = 1;
-                        //foreach (string elem in values)
-                        //{
-                        //    if (count <= values.Count())
-                        //    {
-                        //        // Taxonomy["Country" + count] = elem;
-                        //        ao.Add("COUNTRY" + count.ToString(), elem);
-                        //    }
-                        //    count++;
-                        //}
-                        //    if (values.Count() != 15)
-                        //    {
-                        //        for (int i = values.Count() + 1; i <= 15; i++)
-                        //        {
-                        //            ao.Add("COUNTRY" + i, "");
-                        //        }
-                        //    }
-
-                    }
-
-
-
-                    //string Companies = GetCompanies().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    if (Companies == "")
-                    {
                         ao.Add("COMPANIES", "");
-                        //ao.Add("COMPANIES2", "");
-                        //ao.Add("COMPANIES3", "");
-                        //ao.Add("COMPANIES4", "");
-                        //ao.Add("COMPANIES5", "");
-                        //ao.Add("COMPANIES6", "");
-                        //ao.Add("COMPANIES7", "");
-                        //ao.Add("COMPANIES8", "");
-                        //ao.Add("COMPANIES9", "");
-                        //ao.Add("COMPANIES10", "");
-                        //ao.Add("COMPANIES11", "");
-                        //ao.Add("COMPANIES12", "");
-                        //ao.Add("COMPANIES13", "");
-                        //ao.Add("COMPANIES14", "");
-                        //ao.Add("COMPANIES15", "");
-                    }
-                    else
-                    {
-                        ao.Add("COMPANIES", Companies);
-
-                        //string[] values = Companies.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        //int count = 1;
-                        //foreach (string elem in values)
-                        //{
-                        //    if (count <= values.Count())
-                        //    {
-                        //        ao.Add("COMPANIES" + count, elem);
-                        //    }
-
-                        //    count++;
-                        //}
-                        //if(values.Count() != 15) {
-                        //    for(int i=values.Count() + 1; i<=15; i++)
-                        //    {
-                        //        ao.Add("COMPANIES" + i, "");
-                        //    }
-                        //}
-
-                    }
-
-
-
-                    //string Agency = GetAgency().FirstOrDefault(w => regionSearch.ToLower().Contains(w.ToLower()));
-                    if (Agency == "")
-                    {
                         ao.Add("AGENCY", "");
-                        //ao.Add("AGENCY2", "");
-                        //ao.Add("AGENCY3", "");
-                        //ao.Add("AGENCY4", "");
-                        //ao.Add("AGENCY5", "");
-                        //ao.Add("AGENCY6", "");
-                        //ao.Add("AGENCY7", "");
-                        //ao.Add("AGENCY8", "");
-                        //ao.Add("AGENCY9", "");
-                        //ao.Add("AGENCY10", "");
-                        //ao.Add("AGENCY11", "");
-                        //ao.Add("AGENCY12", "");
-                        //ao.Add("AGENCY13", "");
-                        //ao.Add("AGENCY14", "");
-                        //ao.Add("AGENCY15", "");
+                        ao.Add("Commodity", "");
                     }
-                    else
+
+                    if (importErrorCount != 2)
                     {
+                        l.Add(ao);
+                    }
+                    artNumber++;
 
-                        ao.Add("AGENCY", Agency);
-                        //string[] values = Agency.Split(',').Select(sValue => sValue.Trim()).ToArray();
-                        //int count = 1;
-                        //foreach (string elem in values)
-                        //{
-                        //    if (count <= values.Count())
-                        //    {
-                        //        //  Taxonomy["" + count] = elem;
-                        //        ao.Add("AGENCY" + count, elem);
-                        //    }
-                        //    count++;
-                        //}
 
-                        //if (values.Count() != 15)
-                        //{
-                        //    for (int i = values.Count() + 1; i <= 15; i++)
-                        //    {
-                        //        ao.Add("AGENCY" + i, "");
-                        //    }
-                        //}
-                        // ao.Add("AGENCY", Agency);
+                    //autonomy fields
+                    string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
+                    List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "KEYWORD" };
+
+
+                    importErrorCount = 0;
+                    if (!File.Exists(autFile))
+                    {
+                        Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
+                        foreach (string n in autNodes)
+                            ao.Add(n, string.Empty);
+
+                        //default back to the date from escenic
+                        string dateVal = GetXMLData(d, "PUBLISHDATE");
+
+                        DateTime date;
+                        if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
+                            Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
+                        else
+                            ao["STORYUPDATE"] = dateVal;
+
+                        continue;
                     }
 
-                }
-                else
-                {
-                    ao.Add("COUNTRY", "");
-                    //ao.Add("COUNTRY2", "");
-                    //ao.Add("COUNTRY3", "");
-                    //ao.Add("COUNTRY4", "");
-                    //ao.Add("COUNTRY5", "");
-                    //ao.Add("COUNTRY6", "");
-                    //ao.Add("COUNTRY7", "");
-                    //ao.Add("COUNTRY8", "");
-                    //ao.Add("COUNTRY9", "");
-                    //ao.Add("COUNTRY10", "");
-                    //ao.Add("COUNTRY11", "");
-                    //ao.Add("COUNTRY12", "");
-                    //ao.Add("COUNTRY13", "");
-                    //ao.Add("COUNTRY14", "");
-                    //ao.Add("COUNTRY15", "");
-                    ao.Add("COMPANIES", "");
-                    //ao.Add("COMPANIES2", "");
-                    //ao.Add("COMPANIES3", "");
-                    //ao.Add("COMPANIES4", "");
-                    //ao.Add("COMPANIES5", "");
-                    //ao.Add("COMPANIES6", "");
-                    //ao.Add("COMPANIES7", "");
-                    //ao.Add("COMPANIES8", "");
-                    //ao.Add("COMPANIES9", "");
-                    //ao.Add("COMPANIES10", "");
-                    //ao.Add("COMPANIES11", "");
-                    //ao.Add("COMPANIES12", "");
-                    //ao.Add("COMPANIES13", "");
-                    //ao.Add("COMPANIES14", "");
-                    //ao.Add("COMPANIES15", "");
-                    ao.Add("AGENCY", "");
-                    //ao.Add("AGENCY2", "");
-                    //ao.Add("AGENCY3", "");
-                    //ao.Add("AGENCY4", "");
-                    //ao.Add("AGENCY5", "");
-                    //ao.Add("AGENCY6", "");
-                    //ao.Add("AGENCY7", "");
-                    //ao.Add("AGENCY8", "");
-                    //ao.Add("AGENCY9", "");
-                    //ao.Add("AGENCY10", "");
-                    //ao.Add("AGENCY11", "");
-                    //ao.Add("AGENCY12", "");
-                    //ao.Add("AGENCY13", "");
-                    //ao.Add("AGENCY14", "");
-                    //ao.Add("AGENCY15", "");
-                }
+                    XmlDocument d2 = GetXmlDocument(autFile);
+                    if (d2 == null)
+                        continue;
 
-                if (importErrorCount != 2) {
-                       l.Add(ao);
-                }
-                artNumber++;
-
-
-                //autonomy fields
-                string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
-                List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "KEYWORD"  };
-
-
-                importErrorCount = 0;
-                if (!File.Exists(autFile))
-                {
-                    Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
                     foreach (string n in autNodes)
-                        ao.Add(n, string.Empty);
+                        ao.Add(n, GetXMLData(d2, n));
+                }
+            }
+                //XMLDataLogger.WriteLog("");
+                return l;
+            
+        }
 
-                    //default back to the date from escenic
+        public override IEnumerable<object> ImportImages(IDataMap map)
+        {
+           // int importErrorCount = 0;
+            if (!Directory.Exists(this.Query))
+            {
+                Logger.Log("N/A", string.Format("the folder '{0}' could not be found. Try moving the folder under the webroot.", this.Query), ProcessStatus.ImportDefinitionError);
+                return Enumerable.Empty<object>();
+            }
+
+            //XMLDataLogger.WriteLog("_______________________________________________________________________________________","");
+
+            //List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
+            List<string> totalimglist = new List<string>();
+           
+            string[] files = Directory.GetFiles(this.Query);
+            string images = "";
+            string leadimgs = "";
+            foreach (string f in files)
+            {
+                try
+                {
+                    Dictionary<string, string> ao = new Dictionary<string, string>();
+                    XmlDocument d = GetXmlDocument(f);
+                    if (d == null)
+                        continue;
+                    string Articleid = GetXMLData(d, "ID");
                     string dateVal = GetXMLData(d, "PUBLISHDATE");
+                    string fileimages = "";
+                    string fileleadimage = "";
+                    fileimages = GetImgData(d, "IMAGE", dateVal, Articleid);
+                    fileleadimage = GetImgData(d, "LEADIMAGE", dateVal,Articleid);
+                    if (fileimages != "")
+                    {
+                        images += fileimages + ",";
+                    }
 
-                    DateTime date;
-                    if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
-                     Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
-                    else
-                        ao["STORYUPDATE"] = dateVal;
-
-                    continue;
+                    if (fileleadimage != "")
+                    {
+                        leadimgs += fileleadimage + ",";
+                    }
                 }
 
-                XmlDocument d2 = GetXmlDocument(autFile);
-                if (d2 == null)
-                    continue;
+                catch(Exception ex)
+                {
 
-                foreach (string n in autNodes)
-                    ao.Add(n, GetXMLData(d2, n));
+                }
+                
             }
-            //XMLDataLogger.WriteLog("");
-            return l;
+            totalimglist = (images + leadimgs).Split(',').ToList<string>();
+
+            return DownloadImages(totalimglist ,map);
+
+           // return totalimglist;
+            //return Enumerable.Empty<object>();
         }
 
         public static string FindingTextFromHTML(string RTEInput)
@@ -823,8 +784,52 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return 1;
             }
            }
+        //Siddharth
+        public string GetusingXML(string contentName,string publication,string type, string site)
+        {
 
 
+           
+            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+
+            if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName))
+            {
+                var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
+                                select c.Value;
+
+
+
+                if (elemValue.ElementAt(0) != null)
+                {
+                    return elemValue.ElementAt(0).ToString();
+
+                }
+
+                else
+                {
+                    return "";
+                }
+            }
+
+            else
+            {
+
+                return "";
+            }
+        }
+
+        public bool CheckifExistsusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+
+            var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName);
+                            
+                return elemValue;
+           
+        }
         public string GetContentType(string contentName)
         {
 
@@ -1120,7 +1125,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
              return d.ContainsKey(contentName) ? d[contentName] : " ";
         }
 
-        public Dictionary<string, string> GetXMLDataTaxonomy(XmlDocument xd, string nodeName)
+        public Dictionary<string, string> GetXMLDataTaxonomy(XmlDocument xd, string nodeName, string site, string publication)
         {
             Dictionary<string, string> Taxonomy = new Dictionary<string, string>();
             XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
@@ -1128,7 +1133,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             if (xn != null)
             {
 
-            if (nodeName.Equals("TABLEAU"))
+                if (nodeName.Equals("TABLEAU"))
                 {
                     XmlNodeList TABLEAUList = xd.SelectNodes($"//{nodeName}");
 
@@ -1139,7 +1144,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
 
                             numberofTableau++;
-                            Taxonomy.Add("tableau" + numberofTableau + "-sourceid" , nodes.Attributes["sourceid"].Value);
+                            Taxonomy.Add("tableau" + numberofTableau + "-sourceid", nodes.Attributes["sourceid"].Value);
                             foreach (XmlNode node in nodes)
                             {
                                 if (node.Attributes["name"] != null)
@@ -1154,110 +1159,155 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
                         Taxonomy.Add("Nooftableau", numberofTableau.ToString());
                     }
-                  
+
                 }
                 else if (nodeName.Equals("TAXONOMY"))
                 {
-                   
-                    Taxonomy.Add("COMMODITY", "");
-                    //Taxonomy.Add("COMMODITY2", "");
-                    //Taxonomy.Add("COMMODITY3", "");
-                    //Taxonomy.Add("COMMODITY4", "");
-                    //Taxonomy.Add("COMMODITY5", "");
-                    //Taxonomy.Add("COMMODITY6", "");
-                    //Taxonomy.Add("COMMODITY7", "");
-                    //Taxonomy.Add("COMMODITY8", "");
-                    //Taxonomy.Add("COMMODITY9", "");
-                    //Taxonomy.Add("COMMODITY10", "");
-                    //Taxonomy.Add("COMMODITY11", "");
-                    //Taxonomy.Add("COMMODITY12", "");
-                    //Taxonomy.Add("COMMODITY13", "");
-                    //Taxonomy.Add("COMMODITY14", "");
-                    //Taxonomy.Add("COMMODITY15", "");
-                    Taxonomy.Add("COMMODITYFACTOR", "");
-                    //Taxonomy.Add("COMMODITYFACTOR2", "");
-                    //Taxonomy.Add("COMMODITYFACTOR3", "");
-                    //Taxonomy.Add("COMMODITYFACTOR4", "");
-                    //Taxonomy.Add("COMMODITYFACTOR5", "");
-                    //Taxonomy.Add("COMMODITYFACTOR6", "");
-                    //Taxonomy.Add("COMMODITYFACTOR7", "");
-                    //Taxonomy.Add("COMMODITYFACTOR8", "");
-                    //Taxonomy.Add("COMMODITYFACTOR9", "");
-                    //Taxonomy.Add("COMMODITYFACTOR10", "");
-                    //Taxonomy.Add("COMMODITYFACTOR11", "");
-                    //Taxonomy.Add("COMMODITYFACTOR12", "");
-                    //Taxonomy.Add("COMMODITYFACTOR13", "");
-                    //Taxonomy.Add("COMMODITYFACTOR14", "");
-                    //Taxonomy.Add("COMMODITYFACTOR15", "");
-                    Taxonomy.Add("COMMERCIAL", "");
-                    //Taxonomy.Add("COMMERCIAL2", "");
-                    //Taxonomy.Add("COMMERCIAL3", "");
-                    //Taxonomy.Add("COMMERCIAL4", "");
-                    //Taxonomy.Add("COMMERCIAL5", "");
-                    //Taxonomy.Add("COMMERCIAL6", "");
-                    //Taxonomy.Add("COMMERCIAL7", "");
-                    //Taxonomy.Add("COMMERCIAL8", "");
-                    //Taxonomy.Add("COMMERCIAL9", "");
-                    //Taxonomy.Add("COMMERCIAL10", "");
-                    //Taxonomy.Add("COMMERCIAL11", "");
-                    //Taxonomy.Add("COMMERCIAL12", "");
-                    //Taxonomy.Add("COMMERCIAL13", "");
-                    //Taxonomy.Add("COMMERCIAL14", "");
-                    //Taxonomy.Add("COMMERCIAL15", "");
-
-                    int countCommodity = 1;
-                    int countCommodityFactor = 1;
-                    int countCommercial = 1;
-                    string Commodity = string.Empty;
-                    string CommodityFactor = string.Empty;
-                    string Commercial = string.Empty;
-                    foreach (XmlNode node in xn)
+                    if (publication == "Agrow")
                     {
-                        if (node.Attributes["unique-name"] != null)
+                        Taxonomy.Add("CROPPROTECTION", "");
+                        Taxonomy.Add("PRODUCT", "");
+                        Taxonomy.Add("COMMERCIAL", "");
+                        Taxonomy.Add("COUNTRY", "");
+                        string CropProtection = string.Empty;
+                        string Product = string.Empty;
+                        string Commercial = string.Empty;
+                        string Country = string.Empty;
+                        foreach (XmlNode node in xn)
                         {
-
-                            if (GetMapping().ContainsKey(node.Attributes["unique-name"].Value))
+                            if (node.Attributes["unique-name"] != null)
                             {
-                                
-                                Commodity += node.Attributes["unique-name"].Value + "," ;
-                                //if (countCommodity < 16)
-                                //{
-                                    Taxonomy["COMMODITY"] = Commodity;
-                                //}
-                                //countCommodity++;
 
-                            }
-                            else if (GetMappingCommercial().ContainsKey(node.Attributes["unique-name"].Value))
-                            {
-                                //if (countCommercial < 16)
-                                //{
-                                Commercial += node.Attributes["unique-name"].Value + ",";
-                                Taxonomy["COMMERCIAL"] = Commercial;
-                                //}
-                                //countCommercial++;
-
-                            }
-                            else if (GetMappingCommodityFactor().ContainsKey(node.Attributes["unique-name"].Value))
-                            {
-                                if((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
-                                        {
-                                    CommodityFactor += "dairy_markets_analysis_trade_Import" + "," + "dairy_markets_analysis_trade_Export";
-                                    //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
-                                    //countCommodityFactor++;
-                                    //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
-                                    //countCommodityFactor++;
-                                       }
-                                if (!((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "cropprotection", site))
                                 {
-                                    CommodityFactor += node.Attributes["unique-name"].Value + ",";
-                                    Taxonomy["COMMODITYFACTOR"] = CommodityFactor;
+
+                                    CropProtection += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["CROPPROTECTION"] = CropProtection;
+
                                 }
-                              //  countCommodityFactor++;
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
+                                {
+
+                                    Commercial += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMERCIAL"] = Commercial;
+
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "product", site))
+                                {
+
+                                    Product += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["PRODUCT"] = Commercial;
+
+                                }     //countCommodityFactor++;
+                                    
+                               else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                    {
+                                        Country += node.Attributes["unique-name"].Value + ",";
+                                        Taxonomy["COUNTRY"] = Country;
+                                    }
+                                    //  countCommodityFactor++;
+
+                                }
 
                             }
 
                         }
-                      
+                    
+                    if(publication == "commodities")
+                    {
+                        Taxonomy.Add("COMMODITY", "");
+                        Taxonomy.Add("COMMODITYFACTOR", "");
+                        Taxonomy.Add("COMMERCIAL", "");
+                        string Commodity = string.Empty;
+                        string CommodityFactor = string.Empty;
+                        string Commercial = string.Empty;
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null)
+                            {
+
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
+                                {
+
+                                    Commodity += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMODITY"] = Commodity;
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
+                                {
+
+                                    Commercial += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMERCIAL"] = Commercial;
+
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodityfactor", site))
+                                {
+                                    if ((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
+                                    {
+                                        CommodityFactor += "dairy_markets_analysis_trade_Import" + "," + "dairy_markets_analysis_trade_Export";
+                                        //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
+                                        //countCommodityFactor++;
+                                        //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
+                                        //countCommodityFactor++;
+                                    }
+                                    if (!((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
+                                    {
+                                        CommodityFactor += node.Attributes["unique-name"].Value + ",";
+                                        Taxonomy["COMMODITYFACTOR"] = CommodityFactor;
+                                    }
+                                    //  countCommodityFactor++;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    if(publication == "AnimalPharma")
+                    {
+                        Taxonomy.Add("ANIMALPHARMA", "");
+                        Taxonomy.Add("COMMERCIAL", "");
+                        Taxonomy.Add("COUNTRY", "");
+                        string AnimalPharma = string.Empty;
+                        string Commercial = string.Empty;
+                        string Country = string.Empty;
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null)
+                            {
+
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "animalhealth", site))
+                                {
+
+                                    AnimalPharma += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["ANIMALHEALTH"] = AnimalPharma;
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
+                                {
+
+                                    Commercial += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMERCIAL"] = Commercial;
+
+
+                                }
+                                    
+
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
+                                }
+                                //  countCommodityFactor++;
+
+                            }
+
+                        }
+
                     }
                 }
             }
@@ -1356,6 +1406,216 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return sb.ToString();
         }
 
+        public string GetImgData(XmlDocument xd, string nodeName,string publisheddate,string articleid)
+        {
+            
+
+                XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
+
+            StringBuilder imgStrb = new StringBuilder();
+            if (nodeName == "IMAGE")
+                {
+                    XmlNodeList imgList = xd.SelectNodes($"//{nodeName}");
+                 
+               
+                    foreach (XmlNode node in imgList)
+                    {
+                        string nodeValue = node["SRC"].InnerText ;
+                        if (imgStrb.Length > 0)
+                            imgStrb.Append(",");
+                        imgStrb.Append(nodeValue+"date"+publisheddate+"articleid"+articleid);
+                    }
+                   
+                }
+            // adding image an video tag  
+            if (nodeName.Equals("LEADIMAGE"))
+            {
+                string strLeadimg = xn["SRC"].InnerText ;
+                if (xn != null)
+                {
+                    imgStrb.Append(strLeadimg + "date" + publisheddate+"articleid" + articleid);
+                }
+            }
+
+            
+
+            return imgStrb.ToString();
+        }
+        public static string UpperCaseUrlEncode(string s)
+        {
+
+            char[] temp = System.Web.HttpUtility.UrlEncode(s).ToCharArray();
+            for (int i = 0; i < temp.Length - 2; i++)
+            {
+                if (temp[i] == '%')
+                {
+                    temp[i + 1] = char.ToUpper(temp[i + 1]);
+                    temp[i + 2] = char.ToUpper(temp[i + 2]);
+                }
+            }
+
+            string test = new string(temp);
+            test = test.Replace("(", "%28").Replace(")", "%29");
+            return test;
+        }
+
+        public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem = null)
+        {
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            if (request == null)
+                return null;
+
+            try
+            {
+                // download data 
+                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                Stream stream1 = response.GetResponseStream();
+                MemoryStream stream2 = new MemoryStream();
+                stream1.CopyTo(stream2);
+                // Create the options
+                MediaCreatorOptions options = new MediaCreatorOptions();
+                options.FileBased = false;
+                options.IncludeExtensionInItemName = false;
+                options.KeepExisting = false;
+                options.Versioned = false;
+                options.Destination = newPath;
+                options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
+
+                // upload to sitecore
+                MediaCreator creator = new MediaCreator();
+                using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
+                {
+                    mediaItem = creator.CreateFromStream(stream2, fileName, options);
+
+                    response.Close();
+                    XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
+                    return mediaItem;
+                }
+            }
+            catch (WebException ex)
+            {
+                XMLDataLogger.WriteLog("Image create error in  media library:" + ex.Message, "ImageLog");
+                return null;
+            }
+        }
+        public IEnumerable<Item> GetMediaItems(IDataMap map)
+        {
+            string cacheKey = "Images";
+            IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
+            if (o != null)
+                return o;
+
+            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse(WebConfigurationManager.AppSettings["Image_path"]));
+            IEnumerable<Item> images = rootItem.Axes.GetDescendants();
+            Context.Items.Add(cacheKey, images);
+
+            return images;
+        }
+        public List<MediaItem> DownloadImages(List<string> urls,IDataMap map)
+            {
+            using (new Sitecore.SecurityModel.SecurityDisabler())
+            {
+                List<MediaItem> mediaitemlst = new List<MediaItem>();
+                string url = string.Empty;
+                string articleid = string.Empty;
+                string date = string.Empty;
+                foreach (string item in urls)
+                {
+                    try
+                    {
+                        if (item != "")
+                    {
+                        url = item.Substring(0, item.IndexOf("date"));
+                        date = item.Substring(item.IndexOf("date"), item.Length - item.IndexOf("date")-15).Remove(0, 4);
+                            articleid = item.Substring(item.IndexOf("articleid"), item.Length - item.IndexOf("articleid")).Remove(0, 9);
+
+                IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+                        DateTime dt = DateTime.Parse(date, culture, System.Globalization.DateTimeStyles.AssumeLocal);
+
+                        url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
+                    .Replace("62.73.128.229", "www.scripintelligence.com");
+                        if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
+                            url = $"http://www.scripintelligence.com{url}";
+                        else if (url.Contains("scripnews.com"))
+                            url = url.Replace("scripnews.com", "scripintelligence.com");
+
+                        //if (url.Contains(" "))
+                        //{
+                        //    url = url.Replace(" ", "+");
+                        //}
+
+                        url = new Regex("/[^/]*$").Replace(url, "/" + UpperCaseUrlEncode(url.Split('/').Last()));
+
+                        // see if the url is badly formed
+                        //if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                        //{
+                        //    XMLDataLogger.WriteLog(ArticleId, "InvalidImageLog");
+                        //    map.Logger.Log("ArticleId: " + ArticleId + articlePath, "malformed image URL", ProcessStatus.FieldError, url);
+                        //    return null;
+                        //}
+
+                        //get file info
+                        List<string> uri = url.Split(new string[] { "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                        List<string> parts = uri[0].Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                        string filePath = parts[parts.Count - 1].Trim();
+                        string[] fileParts = filePath.Split(new string[] { "." }, StringSplitOptions.RemoveEmptyEntries);
+                        string fileName = (fileParts.Length > 0) ? StringUtility.GetValidItemName(fileParts[0], map.ItemNameMaxLength) : string.Empty;
+
+                        //date info
+                        string newFilePath = (dt.Year != 1800) ? $"{dt.ToString("yyyy/MMMM")}/{fileName}" : fileName;
+
+                        // see if it exists in med lib
+
+                        Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse(WebConfigurationManager.AppSettings["Image_path"]));
+                        IEnumerable<Item> matches = GetMediaItems(map)
+                            .Where(a => a.Paths.FullPath.EndsWith(fileName));
+
+                        MediaItem mediaitem = null;
+                        if (matches != null && matches.Any())
+                        {
+                            if (matches.Count() > 0)
+                            {
+                                foreach (Item match in matches)
+                                {
+                                    if (match.Paths.FullPath.Contains(newFilePath))
+                                    {
+                                        XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
+                                        //return new MediaItem(matches.First());
+                                        //return match;
+                                        mediaitem = match;
+                                    }
+                                }
+
+                            }
+
+                            //   map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
+                        }
+
+                        MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
+
+                        mediaitemlst.Add(m);
+                    }
+
+                }
+
+                    catch(Exception ex){
+                        XMLDataLogger.WriteLog(articleid, "ImageFormatIncorrect");
+                        continue;
+                    }
+
+                    
+                }
+                return mediaitemlst;
+            }
+
+            }
+
+        protected void Log(string errorType, string message)
+        {
+            log.AppendFormat("{0} : {1}", errorType, message).AppendLine().AppendLine();
+        }
+
         /// There is no custom data for this type
         public override void ProcessCustomData(ref Item newItem, object importRow)
         {
@@ -1373,7 +1633,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         #endregion Override Methods
 
         #region Methods
-
+        
         protected List<string> SplitString(string str, string splitter)
         {
             // string split options set to none so that empty columns are allowed
@@ -1805,6 +2065,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         }
 
+       
 
         public List<string> GetRegion()
         {
@@ -2098,6 +2359,26 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
         }
+
+        public List<string> GetListFromXml(string publication, string type, string site)
+        
+        {
+
+            List<string> keyList = new List<string>();
+
+            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+
+            var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants();
+
+            foreach(XElement elem in elemValue)
+            {
+                keyList.Add(elem.Name.ToString());
+            }
+
+            return keyList;
+
+        }
+    
 
         public List<string> GetCompanies()
         {

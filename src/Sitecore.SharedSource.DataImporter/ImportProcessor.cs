@@ -30,10 +30,10 @@ namespace Sitecore.SharedSource.DataImporter
 			Logger = l;
 		}
 
-		/// <summary>
-		/// processes each field against the data provided by subclasses
-		/// </summary>
-		public void Process(string site, string channel)
+      /// <summary>
+        /// processes each field against the data provided by subclasses
+        /// </summary>
+        public void Process(string site, string channel)
 		{
 
 			Logger.Log("N/A", string.Format("Import Started at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
@@ -89,7 +89,7 @@ namespace Sitecore.SharedSource.DataImporter
                                 continue;
                             }
 
-                            var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
+                            var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName,site,channel);
 
                             // Add mapping to database
                             (DataMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
@@ -133,5 +133,166 @@ namespace Sitecore.SharedSource.DataImporter
 			if (Sitecore.Context.Job != null)
 				Sitecore.Context.Job.Status.State = JobState.Finished;
 		}
-	}
+
+        public void ImagedownloadProcess(IDataMap map)
+        {
+           
+
+          //  Logger.Log("N/A", string.Format("Import Started at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+
+            if (Sitecore.Context.Job != null)
+                Sitecore.Context.Job.Options.Priority = ThreadPriority.Highest;
+
+            IEnumerable<object> importimageItems;
+            try
+            {
+                Logger.Log("N/A", string.Format("Image Import Started at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+                importimageItems = DataMap.ImportImages(map);
+                Logger.Log("N/A", string.Format("Image Import Finished at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("N/A", string.Format("GetImportData Failed: {0}", ex.Message), ProcessStatus.Error);
+                Logger.Log("N/A", string.Format("Import Finished at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+
+                if (Sitecore.Context.Job != null)
+                    Sitecore.Context.Job.Status.State = JobState.Finished;
+
+                return;
+            }
+            int totalLines = importimageItems.Count();
+            Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} and completiontime {1}", totalLines, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+           
+            //if (Sitecore.Context.Job != null)
+            //    Sitecore.Context.Job.Status.Total = totalLines;
+            //Sitecore.Context.Job.Status.Processed = totalLines;
+
+
+
+
+        }
+    }
+
+    //public class ImportImageProcessor
+    //{
+
+    //    protected ILogger Logger { get; set; }
+
+    //    protected IImageMap ImageMap { get; set; }
+
+    //    public ImportImageProcessor(IImageMap dm, ILogger l)
+    //    {
+    //        if (dm == null)
+    //            throw new ArgumentNullException("The provided Data Map was null");
+    //        if (l == null)
+    //            throw new ArgumentNullException("The provided Logger was null");
+
+    //        ImageMap = dm;
+    //        Logger = l;
+    //    }
+
+    //    /// <summary>
+    //    /// processes each field against the data provided by subclasses
+    //    /// </summary>
+    //    public void Process(string site, string channel)
+    //    {
+
+    //        Logger.Log("N/A", string.Format("Import Started at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+
+    //        if (Sitecore.Context.Job != null)
+    //            Sitecore.Context.Job.Options.Priority = ThreadPriority.Highest;
+
+    //        IEnumerable<object> importItems;
+    //        try
+    //        {
+    //            importItems = ImageMap.GetImportData(site, channel);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Logger.Log("N/A", string.Format("GetImportData Failed: {0}", ex.Message), ProcessStatus.Error);
+    //            Logger.Log("N/A", string.Format("Import Finished at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+
+    //            if (Sitecore.Context.Job != null)
+    //                Sitecore.Context.Job.Status.State = JobState.Finished;
+
+    //            return;
+    //        }
+
+    //        int totalLines = importItems.Count();
+    //        if (Sitecore.Context.Job != null)
+    //            Sitecore.Context.Job.Status.Total = totalLines;
+
+    //        long line = 0;
+
+    //        using (new Sitecore.SecurityModel.SecurityDisabler())
+    //        {
+    //            using (new BulkUpdateContext())
+    //            { // try to eliminate some of the extra pipeline work
+    //                foreach (object importRow in importItems)
+    //                {
+    //                    var sw = new Stopwatch();
+    //                    sw.Start();
+    //                    //import each row of data
+    //                    line++;
+    //                    try
+    //                    {
+    //                        string newItemName = ImageMap.BuildNewItemName(importRow);
+    //                        if (string.IsNullOrEmpty(newItemName))
+    //                        {
+    //                            Logger.Log("N/A", string.Format("BuildNewItemName failed on import row {0} because the new item name was empty", line), ProcessStatus.NewItemError);
+    //                            continue;
+    //                        }
+
+    //                        Item thisParent = ImageMap.GetParentNode(importRow, newItemName);
+    //                        if (thisParent.IsNull())
+    //                        {
+    //                            Logger.Log("N/A", string.Format("Get parent failed on import row {0} because the new item's parent is null", line), ProcessStatus.NewItemError);
+    //                            continue;
+    //                        }
+
+    //                        var newItem = ImageMap.CreateNewItem(thisParent, importRow, newItemName);
+
+    //                        // Add mapping to database
+    //                        (ImageMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
+    //                    }
+    //                    catch (Exception ex)
+    //                    {
+    //                        var rows = importRow as Dictionary<string, string>;
+    //                        var values = rows == null ? string.Empty : string.Join("||", (rows).Select(a => $"{a.Key}-{a.Value}"));
+    //                        Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", values);
+    //                    }
+    //                    sw.Stop();
+    //                    Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to process this item.");
+    //                    if (Sitecore.Context.Job != null)
+    //                    {
+    //                        Sitecore.Context.Job.Status.Processed = line;
+    //                        Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
+    //                    }
+    //                }
+    //            }
+    //        }
+
+    //        (ImageMap as PmbiDataMap)?.SetArticleNumber();
+
+    //        // Move Media Library
+    //        //var stopWatch = new Stopwatch();
+    //        //stopWatch.Start();
+    //        //(DataMap as PmbiDataMap)?.TransferMediaLibrary();
+    //        //stopWatch.Stop();
+    //        //Logger.Log("Performance Statistic", $"Used {stopWatch.Elapsed.TotalSeconds} to move media items.");
+
+    //        // Set Related Articles
+    //        (ImageMap as PmbiDataMap)?.SetRelatedArticles();
+
+    //        //if no messages then you're good
+    //        if (!Logger.LoggedError)
+    //            Logger.Log("Success", "the import completed successfully");
+
+    //        Logger.Log("N/A", string.Format("Total Items Processed: {0}", totalLines));
+    //        Logger.Log("N/A", string.Format("Import Finished at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+
+    //        if (Sitecore.Context.Job != null)
+    //            Sitecore.Context.Job.Status.State = JobState.Finished;
+    //    }
+    //}
 }

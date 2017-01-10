@@ -249,11 +249,11 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 									Sitecore.Context.Site.Name,
 									this,
 									"HandleMediaImport",
-									new object[] { map, l });
+									new object[] {map,l});
 
-			//Sitecore.Jobs.JobManager.Start(jobOptions);
+			Sitecore.Jobs.JobManager.Start(jobOptions);
 
-            HandleMediaImport(map, l);
+            //HandleMediaImport(map, l);
 
 
             repJobs.DataSource = Jobs;
@@ -263,6 +263,12 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 	    protected void HandleMediaImport(IDataMap map, DefaultLogger l)
 	    {
 		    var handler = map as PmbiDataMap;
+
+            ImportProcessor p = new ImportProcessor(map, l);
+            p.ImagedownloadProcess(map);
+            txtMessage.Text = l.GetLog();
+
+            WriteLogs(l);
             //ImportProcessor p = new ImportProcessor(map, l);
             //PmbiDataMap ip=new PmbiDataMap()
             handler?.TransferMediaLibrary();

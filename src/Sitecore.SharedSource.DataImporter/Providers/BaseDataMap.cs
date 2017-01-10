@@ -32,6 +32,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
     public abstract class BaseDataMap : IDataMap
     {
 
+   
+
         #region Static IDs
 
         public static readonly string FieldsFolderTemplateID = "{98EF4356-8BFE-4F6A-A697-ADFD0AAD0B65}";
@@ -456,6 +458,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         /// <returns></returns>
         public abstract IEnumerable<object> GetImportData(string site, string channel);
 
+        public abstract IEnumerable<object> ImportImages(IDataMap map);
+
         /// <summary>
         /// this is used to process custom fields or fields
         /// </summary>
@@ -503,7 +507,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return StringUtility.GetValidItemName(strItemName.ToString().Trim(), this.ItemNameMaxLength).Trim();
         }
 
-        public Item CreateNewItem(Item parent, object importRow, string newItemName)
+        public Item CreateNewItem(Item parent, object importRow, string newItemName, string site, string publication)
         {
             CustomItemBase nItemTemplate = GetNewItemTemplate(importRow);
             string mapLog = "Mapping ArticleId:";
@@ -809,14 +813,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9" && d.NewItemField != "Body")
+                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9" && d.NewItemField != "Body" && d.NewItemField != "Taxonomy")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
-                            else
+                            else if(d.NewItemField=="Taxonomy")
                             {
-                                d.FillField(this, ref newItem, importValue, ArticleId);
+                                d.FillField(this, ref newItem, importValue, site + "," + publication+","+ ((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName);
                             }
+
+                            else{
+                                d.FillField(this, ref newItem, importValue, ArticleId);
+                                }
 
 
 

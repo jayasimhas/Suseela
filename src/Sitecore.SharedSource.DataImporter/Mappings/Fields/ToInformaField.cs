@@ -18,6 +18,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SecurityModel;
+using System.Xml.Linq;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
@@ -3677,7 +3678,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -3688,22 +3689,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             Dictionary<string, string> d = GetMapping();
-
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 //string upperValue = val.ToUpper();
                 // string upperValue = val.ToUpper();
-                string transformValue = (d.ContainsKey(val)) ? d[val] : string.Empty;
+                string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 if (string.IsNullOrEmpty(transformValue))
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
-                if (transformValue.Contains("&"))
+                if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("-") || transformValue.Contains("'"))
                 {
                     transformValue = transformValue.Replace("&", "and");
+                    transformValue = transformValue.Replace("/", "or");
+                    transformValue = transformValue.Replace("-", "");
+                    transformValue = transformValue.Replace("'", "");
+                    
                 }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
                 IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
@@ -4115,6 +4120,46 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return d;
         }
 
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
+                                    select c.Value;
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString();
+                    }
+
+                    else
+                    {
+
+                        return " ";
+                    }
+                }
+
+                else
+                {
+                    return " ";
+                }
+            }
+
+            else
+            {
+                return " ";
+            }
+
+        }
+
+
         #endregion Methods
 
     }
@@ -4140,19 +4185,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             Dictionary<string, string> d = GetMapping();
-
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 string upperValue = val.ToUpper();
-                string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+                string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 if (string.IsNullOrEmpty(transformValue))
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
+                if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("-") || transformValue.Contains("'"))
+                {
+                    transformValue = transformValue.Replace("&", "and");
+                    transformValue = transformValue.Replace("/", "or");
+                    transformValue = transformValue.Replace("-", "");
+                    transformValue = transformValue.Replace("'", "");
 
+                }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
                 IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
 
@@ -4209,6 +4261,47 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             return d;
         }
+
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
+                                    select c.Value;
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString();
+                    }
+
+                    else
+                    {
+
+                        return " ";
+                    }
+                }
+
+                else
+                {
+                    return " ";
+                }
+            }
+
+            else
+            {
+                return " ";
+            }
+
+        }
+
+
 
         #endregion Methods
 

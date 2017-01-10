@@ -40,6 +40,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 
         #region IDataMap Methods
 
+        public override IEnumerable<object> ImportImages(IDataMap map) { return null; }
         /// <summary>
 		/// uses the query field to retrieve file data
 		/// </summary>

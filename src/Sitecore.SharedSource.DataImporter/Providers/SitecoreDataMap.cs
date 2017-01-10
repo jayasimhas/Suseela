@@ -189,6 +189,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 
         #region Methods
 
+        public override IEnumerable<object> ImportImages(IDataMap map) { return null; }
         protected virtual void ProcessChildren(ref Item newParent, ref Item oldParent) {
             if (!oldParent.HasChildren)
                 return;
@@ -199,7 +200,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                 if (string.IsNullOrEmpty(newItemName))
                     continue;
 
-                CreateNewItem(newParent, importRow, newItemName);
+                CreateNewItem(newParent, importRow, newItemName,null,null);
             }
         }
 
