@@ -2,7 +2,9 @@ $(function(){
 	$('.availableGraphs').off('click').on('click', 'li a', function () {
 		var $this = $(this), id = $this.attr('id'), getFocusId = id.split('-')[1];
 		$(window).scrollTop($('#' + getFocusId).offset().top);
-		$('#'+getFocusId).find('.chartexpand').trigger('click');
+		if(!$('#'+getFocusId).find('.chartexpand').hasClass('active')){
+			$('#'+getFocusId).find('.chartexpand').trigger('click');
+		}
 	});
 	
 	var chartAccordionIDs = ["GWP", "NWP", "UR", "NP", "SF", "NWPNR", "SFNR", "NPSFR"];
@@ -11,7 +13,6 @@ $(function(){
 		for(var i = 0; i < chartAccordionIDs.length; i++){
 			if(!$(eachChartData[i]).find('.chartexpand').hasClass('active')){
 				$(eachChartData[i]).find('.chartexpand').click();
-				//$("#"+chartAccordionIDs[i]+"-DATA").removeClass('hide');
 			}
 		}
 		$('.chartexpand', '.compareChart').addClass('active');
