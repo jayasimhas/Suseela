@@ -66,7 +66,7 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         public string jsonCasualtyData => GetCasualtyData(feedUrl);
         /// <summary>
-        /// Method to get Json Data from external URL
+        /// Method to get Casualty detail page URL
         /// </summary>
         /// <returns></returns>
         private string GetCasualtyDetailPageUrl()
@@ -87,6 +87,9 @@ namespace Informa.Web.ViewModels.Casualty
             }
             return string.Empty;
         }
+        /// <summary>
+        /// Filter by date dropdown values
+        /// </summary>
         public SelectList FilterByDateDropdownValues
         {
             get
@@ -100,6 +103,11 @@ namespace Informa.Web.ViewModels.Casualty
                 return new SelectList(datesList, "Value", "Text");
             }
         }
+        /// <summary>
+        /// Method to get Json Data from external URL
+        /// </summary>
+        /// <param name="feedURL">feed URL</param>
+        /// <returns>JSON Data</returns>
         public string GetCasualtyData(string feedURL)
         {
             if (!string.IsNullOrEmpty(feedURL))
