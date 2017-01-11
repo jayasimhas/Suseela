@@ -1,13 +1,13 @@
 (function () {
 	var CasualityListing = {
 		HeaderLinks: [],
+		JumpToArray: [],
 		DesktopVersion: function(data, Parent) {
 			//Header
 			Parent.append('<thead class="table_head"></thead>');
-
+			this.JumpToArray = [];
 			var Header = Parent.find('thead.table_head'),
-				HeaderItems = this.HeaderLinks,
-				JumpToArray = [];
+				HeaderItems = this.HeaderLinks;
 			Header.append('<tr class="visible-lg"></tr>');
 
 			for(var headItem in HeaderItems) {
@@ -15,13 +15,13 @@
 			}
 			//Body
 			Parent.append('<tbody class="visible-lg"></tbody>');
-			$('.jumpToSection').find('select').remove();
-			$('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
+			
 			var Wrapper = Parent.find('tbody.visible-lg');
+			// $('#jumpTo').empty();
 			for(var key in data) {
 				//Appending Heading
-				$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
-				JumpToArray.push(data[key].casualtytitle);
+				$('#jumpTo').append('<option value="'+ data[key].casualtytitle +'">'+ data[key].casualtytitle +'</option>')
+				this.JumpToArray.push(data[key].casualtytitle);
 				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td></tr>');
 
 				//Appending Body
@@ -31,10 +31,10 @@
                 }
 			}
 
-			if(JumpToArray.length > 0) {
-				$('.jumpToSection #jumpTo').remove();
-			}
-			$('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
+			// if(this.JumpToArray.length > 0) {
+			// 	$('.jumpToSection #jumpTo').remove();
+			// }
+			// $('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
 
 			
 		},
@@ -90,13 +90,20 @@
 					$('#casualty-listing-table').hide();
 					$('.jumpToSection').hide();
 				}
-
+				$('#jumpTo').remove();
+				$('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
+				for(var i = 0; i < self.JumpToArray.length ; i++) {
+					$('#jumpTo').append('<option value="' +self.JumpToArray[i]+ '">' +self.JumpToArray[i]+ '</option>');
+				}
 				$('#jumpTo').selectivity({
-					items: JumpToArray
-				})
+	          		showSearchInputInDropdown: false,
+    			});
+    			$(".selectivity-input .selectivity-single-select").each(function() {
+ 		       		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+	     		});
 			});
 			$(document).on('change','#jumpTo', function(){
-				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
+				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id') || $(this).val();
 				var Top = $('#casualty-listing-table tr[data-jump='+Value+']').offset().top;
 
 				window.scrollTo(0, Top);
