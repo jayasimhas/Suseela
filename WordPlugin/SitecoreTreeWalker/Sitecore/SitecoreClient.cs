@@ -482,12 +482,13 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
+        public ArticleStruct SaveStubToSitecore(string articleName, DateTime publicationDate, Guid publicationID)
         {
             using (var client = new HttpClient(_handler, false))
             {
                 publicationDate = TimezoneUtil.ConvertDateToServerTimezone(publicationDate);
-                var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
+                var publicationDateString = publicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+                var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDateString };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
 
                 if (response?.StatusCode != HttpStatusCode.OK)
