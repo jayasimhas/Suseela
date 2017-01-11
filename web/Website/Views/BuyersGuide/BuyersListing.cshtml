@@ -93,12 +93,12 @@
                         </section>
                     }
                 }
-                <input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />
+                @*<input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />
                 <input type="hidden" id="noofJobsPerPage" value="@Model.RenderingParameters.No_of_Jobs_Per_Page" />
-                <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
+                <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>*@
 
                 @*Pagination for Jobs*@
-                if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.RenderingParameters.No_of_Jobs_Per_Page))
+                @*if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.RenderingParameters.No_of_Jobs_Per_Page))
                 {
                     if (Model.AgrowTiles.Count() > 0 && Convert.ToInt32(Model.RenderingParameters.No_of_Jobs_Per_Page) < Model.AgrowTiles.Count())
                     {
@@ -110,7 +110,7 @@
                             </ul>
                         </div>
                     }
-                }
+                }*@
             }
         </div>
     </div>
