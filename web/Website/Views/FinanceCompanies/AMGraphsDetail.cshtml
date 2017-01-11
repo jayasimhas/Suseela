@@ -65,7 +65,7 @@
                 <div class="title">@Graph.GraphTitle.ToUpperInvariant()</div>
                 <div class="chartexpand"></div>
             </div>
-            <div class="graph-container lightgray-body">
+            <div class="graph-container hide lightgray-body">
                 <div id="chartdiv_@Graph.GraphID" style="height:220px;"></div>
                 <script>
                     var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
