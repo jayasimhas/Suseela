@@ -3461,8 +3461,9 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
-#financialresults.ID-Responsive-Table .owl-item.active {
-  width: 5% !important; }
+#financialresults .owl-carousel {
+  width: 60%;
+  float: right; }
 
 #quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
   text-align: center; }

@@ -69,14 +69,15 @@
 		},
 		InitateCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:true,
+               loop:false,
                merge:true,
                nav:true,
+               rewindNav: false,
                navText: [
                	  "<img src='/dist/img/lessthan.png'/>",
                	  "<img src='/dist/img/greaterthan.png'/>"
                	  ],
-			   slideBy: 2,  
+			   slideBy: 1,  
                responsive:{
                0:{
                items:3
