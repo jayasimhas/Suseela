@@ -1331,9 +1331,17 @@ section: Alerts
         text-align: center;
         vertical-align: middle;
         display: table-cell; }
+        @media (max-width: 480px) {
+          .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
+            width: 100%;
+            height: auto; } }
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
           max-width: 360px;
           max-height: 200px; }
+          @media (max-width: 480px) {
+            .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
+              width: 100%;
+              height: 100%; } }
       .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
       .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
       .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
@@ -1347,12 +1355,10 @@ section: Alerts
 
 .agroBuyers .buyers-guide-listing-link {
   width: 100%;
-  float: left;
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
   .agroBuyers .buyers-guide-listing-link .buyers-guide-row {
-    width: 100%;
-    float: left; }
+    width: 100%; }
     .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
       width: 45%;
       float: left;
@@ -1363,8 +1369,17 @@ section: Alerts
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
           width: 100%; } }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
-        width: 100%; }
+        width: 540px;
+        height: 300px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell; }
+        @media (max-width: 480px) {
+          .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
+            width: 100%;
+            height: auto; } }
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image img {
+          max-width: 100%;
           width: 100%; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
       .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
@@ -1377,7 +1392,10 @@ section: Alerts
         font-weight: 700;
         font-style: normal;
         margin-bottom: 16px;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.mobile-table-exit {
         margin-top: 16px;
         margin-top: 1rem;
@@ -1408,8 +1426,8 @@ section: Alerts
       margin-right: 3%;
       border: 1px solid #d1d3d4;
       border-radius: 2px;
-      padding: 24px;
-      padding: 1.5rem; }
+      padding: 24px 24px 16px;
+      padding: 1.5rem 1.5rem 1rem; }
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
           width: 100%; } }
@@ -1443,14 +1461,15 @@ section: Alerts
         margin-bottom: 16px;
         margin-bottom: 1rem; }
       .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.mobile-table-exit {
-        margin-top: 16px;
-        margin-top: 1rem;
         font-family: "PT Serif", Georgia, serif;
         font-style: regular;
         font-weight: 400;
         font-size: 18px;
         font-size: 1.125rem;
-        line-height: 30px; }
+        line-height: 25px;
+        height: 50px;
+        overflow: hidden;
+        display: block; }
 
 .agroBuyers hr {
   margin-bottom: 24px;
@@ -6415,6 +6434,12 @@ section: UI Elements
     border: 1px solid #d9dadb;
     border-top: none; }
     .compareChart .eachChartData .chartData.hide {
+      display: none; }
+  .compareChart .eachChartData .graph-container {
+    padding: 12px;
+    border: 1px solid #d9dadb;
+    border-top: none; }
+    .compareChart .eachChartData .graph-container.hide {
       display: none; }
 
 .compareChart .showAll {

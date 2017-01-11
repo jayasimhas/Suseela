@@ -15,11 +15,12 @@
 			}
 			//Body
 			Parent.append('<tbody class="visible-lg"></tbody>');
-			
+			$('.jumpToSection').find('select').remove();
+			$('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
 			var Wrapper = Parent.find('tbody.visible-lg');
 			for(var key in data) {
 				//Appending Heading
-				//$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
+				$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
 				JumpToArray.push(data[key].casualtytitle);
 				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td></tr>');
 
@@ -30,7 +31,7 @@
                 }
 			}
 
-			if($('.jumpToSection #jumpTo')) {
+			if(JumpToArray.length > 0) {
 				$('.jumpToSection #jumpTo').remove();
 			}
 			$('.jumpToSection').append('<select name="jumpTo" id="jumpTo" class="common-field inline"></select>');
@@ -77,15 +78,17 @@
                 break;
 			}
 		},
-		ChangeReport: function() {
+		ChangeReport: function(data) {
 			var self = this;
 			$(document).on('change','#relDate', function(){
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
-				if(window.jsonCasualityListing[0][Value] != undefined) {
-					self.RenderTable(window.jsonCasualityListing[0][Value], $('#casualty-listing-table'));
+				if(window.jsonCasualtyListing[0][Value] != undefined) {
+					self.RenderTable(window.jsonCasualtyListing[0][Value], $('#casualty-listing-table'));
 					$('#casualty-listing-table').show();
+					$('.jumpToSection').show();
 				} else {
 					$('#casualty-listing-table').hide();
+					$('.jumpToSection').hide();
 				}
 
 				$('#jumpTo').selectivity({
@@ -105,7 +108,7 @@
 
 			this.FindHeaderLinks(CurrentObj);
 			this.RenderTable(CurrentObj, Parent);
-			this.ChangeReport();
+			this.ChangeReport(data);
 		}
 	}
 	

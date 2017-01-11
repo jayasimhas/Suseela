@@ -60,7 +60,14 @@
 				display: none;
 			}
 		}
-	 
+		.graph-container{
+			padding: 12px;
+			border: 1px solid #d9dadb;
+			border-top: none;
+			&.hide{
+				display: none;
+			}
+		}
 	}
 	.showAll{
 		margin-bottom: 12px;
