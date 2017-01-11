@@ -18,6 +18,9 @@ $(function(){
 	});
 	
 	$('.collapseAll', '.compareChart').click(function(){
+		if($('.graph-container') && $('.graph-container').length){
+			$('.graph-container', '.compareChart').addClass('hide');
+		}
 		$('.chartData', '.compareChart').addClass('hide');
 		$('.chartexpand', '.compareChart').removeClass('active');
 	});
