@@ -1271,6 +1271,7 @@
     <Compile Include="ViewModels\FinanceCompanies\CompanyModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\MergersAndAquisitionsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\PeerGroupDetailViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\PeerGroupMessagingViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
@@ -2253,6 +2254,7 @@
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
     <Content Include="Views\Casualty\CasualtyDetail.cshtml" />
+    <Content Include="Views\FinanceCompanies\MergersAndAquisitions.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
