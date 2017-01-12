@@ -60,6 +60,8 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         public string Target => TextTranslator.Translate("MA.Target");
         public string TargetLocation => TextTranslator.Translate("MA.TargetLocation");
         public string TargetSector => TextTranslator.Translate("MA.TargetSector");
+        public string DealsOmitted => TextTranslator.Translate("MA.DealsOmitted");
+        
 
         private IEnumerable<AMGraph> GetGraphs()
         {
@@ -71,7 +73,8 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                 {
                     GraphColor = FetchColorCode(Graph),
                     GraphTitle = Graph.GraphTitle,
-                    GraphType = !string.IsNullOrEmpty(Graph.GraphType) ? Graph.GraphType : "line"
+                    GraphType = !string.IsNullOrEmpty(Graph.GraphType) ? Graph.GraphType : "line",
+                    GraphID = Graph.GraphID
                 });
                 return graphItems;
             }

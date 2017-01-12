@@ -1,18 +1,27 @@
 ﻿﻿@model Informa.Web.ViewModels.FinanceCompanies.MergersAndAquisitionsViewModel
 
 <div>
-     
-   @foreach (var Graph in Model.AMGraphs)
-    {
-         <div>@Graph.GraphTitle</div>
-         <div>@Graph.GraphColor</div>
-         <div>@Graph.GraphType</div>
-        
-    }
+    <div class="graphs-container">
+        <h4>@Model.Dashboard</h4>
+        @{
+           foreach (var Graph in Model.AMGraphs)
+            {
+                <div class="graph-container first">
+                    <h5>@Graph.GraphTitle</h5>
+                    <div id="chartdiv-@Graph.GraphID" style="width: 220px; height: 140px; background-color: rgb(255, 255, 255); overflow: hidden;border:2px solid gray;">
+                        <div style="overflow: hidden; position: relative; text-align: left; width: 220px; height: 140px;">
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+            var color =  '@Graph.GraphColor';
+            var type =  '@Graph.GraphType';
+                </script>
+            }
+        }
+        <p class="dealsOmitted">@Model.DealsOmitted</p>
+    </div>
     <script type="text/javascript">
         var mergersAndAquisitionsData = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
     </script>
 </div>
-
-
-
