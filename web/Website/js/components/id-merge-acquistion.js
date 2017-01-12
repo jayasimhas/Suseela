@@ -10,18 +10,18 @@
 
 			for(var key in data) {
 				Wrapper.append('<tr></tr>');				
-				Wrapper.find('tr:last-child').append('<td align="left" deal="deal_month" type="date" month="'  +data[key].deal_month+ '" class="R16 pad-10">' +this.MonthNames[data[key].deal_month - 1]+ '</td>');
-				Wrapper.find('tr:last-child').append('<td align="left" deal="acquirer_company_name" type="text" class="R16 pad-10">'+data[key].acquirer_company_name+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="left" deal="target_company_name" type="text" class="R16 pad-10">'+data[key].target_company_name+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="left" deal="target_sector" type="text" class="R16 pad-10">'+data[key].target_sector+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="left" deal="target_location" type="text" class="R16 pad-10">'+data[key].target_location+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="right" deal="details" type="number" class="R16 pad-10">'+data[key].details+'</td>');
-				if(data[key].price) {
-					var Price = data[key].price;
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Month" type="date" month="'  +data[key].Month+ '" class="R16 pad-10">' +this.MonthNames[data[key].deal_month - 1]+ '</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Acquirer" type="text" class="R16 pad-10">'+data[key].Acquirer+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Target" type="text" class="R16 pad-10">'+data[key].Target+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetSector" type="text" class="R16 pad-10">'+data[key].TargetSector+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetLocation" type="text" class="R16 pad-10">'+data[key].TargetLocation+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="right" deal="Detail" type="number" class="R16 pad-10">'+data[key].Detail+'</td>');
+				if(data[key].Price) {
+					var Price = data[key].Price;
 				} else {
 					Price = '--';
 				}
-				Wrapper.find('tr:last-child').append('<td align="right" deal="price" type="number" class="R16 pad-10">'+Price+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="right" deal="Price" type="number" class="R16 pad-10">'+Price+'</td>');
 			}
 
 		},
