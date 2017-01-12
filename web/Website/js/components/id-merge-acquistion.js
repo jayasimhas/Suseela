@@ -10,7 +10,7 @@
 
 			for(var key in data) {
 				Wrapper.append('<tr></tr>');				
-				Wrapper.find('tr:last-child').append('<td align="left" deal="Month" type="date" month="'  +data[key].Month+ '" class="R16 pad-10">' +this.MonthNames[data[key].deal_month - 1]+ '</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Month" type="date" month="'  +data[key].Month+ '" class="R16 pad-10">' +this.MonthNames[data[key].Month - 1]+ '</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="Acquirer" type="text" class="R16 pad-10">'+data[key].Acquirer+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="Target" type="text" class="R16 pad-10">'+data[key].Target+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetSector" type="text" class="R16 pad-10">'+data[key].TargetSector+'</td>');
