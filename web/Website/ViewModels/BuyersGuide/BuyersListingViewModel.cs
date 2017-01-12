@@ -47,6 +47,11 @@ namespace Informa.Web.ViewModels.BuyersGuide
         public string SubTitle => GlassModel?.Sub_Title;
 
         /// <summary>
+        /// Listing Page body
+        /// </summary>
+        public string Body => GlassModel?.Body;
+
+        /// <summary>
         /// Get agrow buyer's details
         /// </summary>
         /// <returns>AgrowTile</returns>
