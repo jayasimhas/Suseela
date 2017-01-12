@@ -668,9 +668,11 @@ $(function(){
 			}
 		}
 		else{
-			e.preventDefault();
-			var $this = $(this), href = $this.attr('href'), id = $this.attr('name');
-			window.location.href = href + '#' + id;
+			if($('#validatePreference').val() != 1){
+				e.preventDefault();
+				var $this = $(this), href = $this.attr('href'), id = $this.attr('name');
+				window.location.href = href + '#' + id;
+			}
 		}
 	});
 });

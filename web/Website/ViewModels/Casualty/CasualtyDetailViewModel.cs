@@ -15,7 +15,7 @@ namespace Informa.Web.ViewModels.Casualty
         protected readonly ICompaniesResultService CompanyResultService;
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
-        public CasualtyDetailViewModel(ICompaniesResultService companyResultService,
+        public CasualtyDetailViewModel(ICompaniesResultService companyResultService, 
             IRenderingContextService renderingParametersService,
             IAuthenticatedUserContext authenticatedUserContext,
             ICallToActionViewModel callToActionViewModel)
@@ -26,30 +26,16 @@ namespace Informa.Web.ViewModels.Casualty
             CallToActionViewModel = callToActionViewModel;
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        /// <summary>
-        /// External Feed URL
-        /// </summary>
         public string feedUrl { get; set; }
-        /// <summary>
-        /// Title
-        /// </summary>
         public string Title => GlassModel?.Title;
-        /// <summary>
-        /// Json Data
-        /// </summary>
         public string jsonCasualtyDetailData => GetCasualtyDetailData(feedUrl);
 
-        /// <summary>
-        /// Method to get Json Data from external feed
-        /// </summary>
-        /// <param name="feedUrl"></param>
-        /// <returns></returns>
         private string GetCasualtyDetailData(string feedUrl)
         {
-            string incidentId = HttpContext.Current.Request.QueryString["incidentId"];
+            string incidentId = HttpContext.Current.Request.QueryString["incidentId"];           
             if (!string.IsNullOrEmpty(feedUrl) && !string.IsNullOrEmpty(incidentId))
             {
-                return CompanyResultService.GetCompanyFeeds(feedUrl + "?incidentId=" + incidentId).Result;
+                return CompanyResultService.GetCompanyFeeds(feedUrl).Result;
             }
             else
             {
