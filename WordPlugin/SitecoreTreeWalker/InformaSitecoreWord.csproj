@@ -32,7 +32,7 @@
     <TargetFrameworkProfile />
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>D:\INFORMA\TS3\web\Website\wordinstaller\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <InstallUrl>http://products/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>16.09.21.1048</ApplicationVersion>

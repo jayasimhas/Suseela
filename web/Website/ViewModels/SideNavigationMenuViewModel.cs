@@ -14,6 +14,7 @@ using System;
 using Informa.Library.Salesforce.Subscription;
 using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Web.ViewModels
 {
@@ -92,64 +93,78 @@ namespace Informa.Web.ViewModels
             IUserPreferences prefChannels = new UserPreferences();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
+                var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+                 _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
 
-                var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
-                _ChildrenWithInferType.OfType<IChannel_Page>();
-
-                //channel based navigation
-                if (UserPreferences != null && UserPreferences.Preferences != null &&
-                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
+                if (homeItem != null)
                 {
-                    if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
+                    var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+
+                    if (channelsPageItem != null)
                     {
-                        foreach (var preference in UserPreferences.Preferences.PreferredChannels)
+                        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                        if (channelPages != null && channelPages.Any())
                         {
-                            bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
-                            
-                            if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && ((preference.IsFollowing && UserPreferences.Preferences.IsNewUser) || isTopicsFollowing))
+                            //channel based navigation
+                            if (UserPreferences != null && UserPreferences.Preferences != null &&
+                            UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
                             {
-                                var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
-                                if (!string.IsNullOrEmpty(channelName))
+                                if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                                 {
-                                    preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channelName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId) } });
-                                }
-                            }
-                        }
-                        navigation.Children = preferredChannels;
-                    }
-                    else
-                    {
-                        //topic based navigation
-                        if (UserPreferences.Preferences.PreferredChannels != null
-                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics) != null
-                            && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
-                        {
-                            string navigationLink = string.Empty;
-                            foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
-                            {
-                                if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
-                                {
-                                    var topicName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == topic.TopicCode).Select(q => q.Text)).FirstOrDefault();
-                                    if (!string.IsNullOrEmpty(topicName))
+                                    foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                                     {
-                                        preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicName, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
+                                        bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
+
+                                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && ((preference.IsFollowing && UserPreferences.Preferences.IsNewUser) || isTopicsFollowing))
+                                        {
+                                            var channel = channelPages.Where(p => p.Channel_Code == preference.ChannelCode).FirstOrDefault();
+                                            if (!string.IsNullOrEmpty(channel.Display_Text))
+                                            {
+                                                preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channel.Display_Text, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId) } });
+                                            }
+                                        }
+                                    }
+                                    navigation.Children = preferredChannels;
+                                }
+                                else
+                                {
+                                    //topic based navigation
+                                    var channelPage = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>().FirstOrDefault();
+                                    var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                                    if (pageAssetsItem != null)
+                                    {
+                                        var topics = pageAssetsItem._ChildrenWithInferType.
+                                            OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                                        if (topics != null && topics.Any())
+                                        {
+                                            if (UserPreferences.Preferences.PreferredChannels != null
+                                        && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics) != null
+                                        && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
+                                            {
+                                                string navigationLink = string.Empty;
+                                                foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
+                                                {
+                                                    if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
+                                                    {
+                                                        var topicObj = topics.Where(p => p.Navigation_Code == topic.TopicCode).FirstOrDefault();
+                                                        if (!string.IsNullOrEmpty(topicObj.Title))
+                                                        {
+                                                            preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicObj.Title, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
+                                                        }
+                                                    }
+                                                }
+                                                navigation.Children = preferredChannels;
+                                            }
+                                        }
                                     }
                                 }
+                                return navigation;
                             }
-                            navigation.Children = preferredChannels;
                         }
                     }
-                    return navigation;
-                }
-                else
-                {
-                    return null;
                 }
             }
-            else
-            {
-                return null;
-            }
+            return null;
             #endregion
         }
 

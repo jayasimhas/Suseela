@@ -172,7 +172,12 @@ $(function () {
             if (!$(this).hasClass("validationChk")) {
                 e.preventDefault();
                 showModal();
-                clickedUrl = $(this).attr('href');
+                if(!$(this).hasClass('myviewLink')){
+					clickedUrl = $(this).attr('href');
+				}
+				else{
+					clickedUrl = $(this).attr('href') + '#' + $(this).attr('name');
+				}
             }
         }
     });
