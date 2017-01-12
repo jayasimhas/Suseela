@@ -1,28 +1,18 @@
-﻿@model Informa.Web.ViewModels.FinanceCompanies.AMGraphsViewModel
-
-<script src="~/js/components/AMchartsGroup.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+﻿﻿@model Informa.Web.ViewModels.FinanceCompanies.MergersAndAquisitionsViewModel
 
 <div>
-   <h4 style="margin: 10px 10px 10px 0px; font-size: 25px;">@Model.CompanyName</h4> 
-</div>
-<div style="background-color: #eeeeee;overflow:hidden;margin-bottom: 2rem;">
-    <h5>@Model.FiveYearTrends</h5>
-    @foreach (var Graph in Model.AMGraphModels)
+     
+   @foreach (var Graph in Model.AMGraphs)
     {
-        <div class="graph-container lightgray-body" style="float:left;">
-            <h5 style="font-size: 14px;"><a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
-            <a href="/"><div id="chartdiv_@Graph.GraphID" style="width:287px; height:220px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-            <script>
-            var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                var chartData = data[0]["@Graph.GraphID"];
-                PrintCompanyGraph(chartData, "chartdiv_@Graph.GraphID", "@Graph.GraphType", "@Graph.GraphColor")
-            </script>
-        </div>
+         <div>@Graph.GraphTitle</div>
+         <div>@Graph.GraphColor</div>
+         <div>@Graph.GraphType</div>
+        
     }
     <script type="text/javascript">
-        setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
+        var mergersAndAquisitionsData = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
     </script>
 </div>
+
+
+
