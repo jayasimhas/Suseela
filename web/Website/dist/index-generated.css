@@ -8140,6 +8140,41 @@ div#feedbacklite.fbl_r {
   margin-top: 20px;
   margin-top: 1.25rem; }
 
+.merge-acquistion input[type="text"] {
+  width: 100%;
+  color: #000; }
+
+.merge-acquistion .selectivity-input {
+  width: 100%;
+  color: #000; }
+
+.merge-acquistion .range-wrapper {
+  float: none;
+  width: 100%; }
+
+.merge-acquistion input.range-field {
+  width: 30px !important; }
+
+.merge-acquistion th span, .merge-acquistion .sorting-buttons {
+  float: left;
+  margin-right: 5px; }
+
+.merge-acquistion .selectivity-single-select {
+  box-sizing: border-box; }
+
+.merge-acquistion .selectivity-single-select-input {
+  padding: 2px !important;
+  width: 100% !important; }
+
+.merge-acquistion .selectivity-single-result-container {
+  top: 4px; }
+
+.merge-acquistion .form-control {
+  margin-bottom: 20px; }
+
+.merge-acquistion .form-control input {
+  width: 100%; }
+
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
   float: right;
