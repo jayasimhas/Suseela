@@ -13168,8 +13168,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
 {
-
-
     /// <summary>
     /// ILatest_Casualties_Component Interface
     /// <para></para>
@@ -13292,6 +13290,173 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID External_Feed_UrlFieldId = new ID("EE55D306-C9C3-4E1C-89F5-69B41BA273A8");
         public const string External_Feed_UrlFieldName = "External Feed Url";
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+    /// <summary>
+    /// IShipping_Result_Component_Parameters Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Shipping Result Component Parameters</para>	
+    /// <para>ID: 1A2E7663-9004-41DE-894C-706557DC6942</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IShipping_Result_Component_ParametersConstants.TemplateIdString)]
+    public partial interface IShipping_Result_Component_Parameters : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        /// <summary>
+        /// Table Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 6DF9CD15-E4A5-4076-863E-87429828E0E2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_Title { get; set; }
+
+        /// <summary>
+        /// Table SubTitle field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 608308BF-1B05-4AAD-BE5F-47B21EE300CD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_SubTitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_SubTitle { get; set; }
+
+        /// <summary>
+        /// Dropdowns Feed URL.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: EE8D4CD4-35F7-4159-A8C1-B6C6FE87671F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Dropdowns_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Dropdowns_Feed_URL { get; set; }
+
+        /// <summary>
+        /// Table Result Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: B52080CA-99D7-4082-8A9E-8E0761FDE9D7</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_Result_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_Result_Feed_URL { get; set; }
+
+    }
+    /// <summary>
+    /// IShipping_Result_Component_Parameters Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Shipping Result Component Parameters</para>	
+    /// <para>ID: 1A2E7663-9004-41DE-894C-706557DC6942</para>	
+    /// </summary>
+    /// </summary>
+    [SitecoreType]
+    public partial interface IShipping_Result_Component_Parameters__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+        /// <summary>
+        /// Table Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 6DF9CD15-E4A5-4076-863E-87429828E0E2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_Title { get; set; }
+
+        /// <summary>
+        /// Table SubTitle field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 608308BF-1B05-4AAD-BE5F-47B21EE300CD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_SubTitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_SubTitle { get; set; }
+
+        /// <summary>
+        /// Dropdowns Feed URL.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: EE8D4CD4-35F7-4159-A8C1-B6C6FE87671F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Dropdowns_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Dropdowns_Feed_URL { get; set; }
+
+        /// <summary>
+        /// Table Result Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: B52080CA-99D7-4082-8A9E-8E0761FDE9D7</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Table_Result_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Table_Result_Feed_URL { get; set; }
+
+    }
+
+    public static partial class IShipping_Result_Component_ParametersConstants
+    {
+
+        public const string TemplateIdString = "1A2E7663-9004-41DE-894C-706557DC6942";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Shipping Result Component Parameters";
+
+        public static readonly ID Table_TitleFieldId = new ID("6DF9CD15-E4A5-4076-863E-87429828E0E2");
+        public const string Table_TitleFieldName = "Table Title";
+
+        public static readonly ID Table_SubTitleFieldId = new ID("608308BF-1B05-4AAD-BE5F-47B21EE300CD");
+        public const string Table_SubTitleFieldName = "Table SubTitle";
+
+        public static readonly ID Dropdowns_Feed_URLFieldId = new ID("EE8D4CD4-35F7-4159-A8C1-B6C6FE87671F");
+        public const string Dropdowns_Feed_URLFieldName = "Dropdowns Feed URL";
+
+        public static readonly ID Table_Result_Feed_URLFieldId = new ID("B52080CA-99D7-4082-8A9E-8E0761FDE9D7");
+        public const string Table_Result_Feed_URLFieldName = "Table Result Feed URL";
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+        public static readonly ID Leaderboard_Slot_ID2FieldId = new ID("E52011EE-7E25-4822-871C-FD3EDFB90FFC");
+        public const string Leaderboard_Slot_ID2FieldName = "Leaderboard Slot ID2";
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
     }
 
 }
@@ -20906,7 +21071,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
-        
+
 
     }
     /// <summary>
@@ -20971,7 +21136,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// <para>Field ID: 1C48E285-A8B3-4BD5-8105-9DD8257F37A5</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IBuyers_Detail_PageConstants.Agrow_BannerFieldName, Setting =SitecoreFieldSettings.InferType)]
+        [SitecoreField(IBuyers_Detail_PageConstants.Agrow_BannerFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image Banner { get; set; }
 
         /// <summary>

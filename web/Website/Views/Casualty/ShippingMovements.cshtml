@@ -1,0 +1,10 @@
+﻿@model Informa.Web.ViewModels.Casualty.ShippingMovementsViewModel
+<div style="float:left">@Model.PageTitle</div>
+<hr />
+<div>@Model.TableTitle</div>
+<div style="float:left">@Model.TableSubTitle</div>
+<div style="float:left">
+    @Model.FilterByAreaDropdownTitle@Html.DropDownList("areadropdown", Model.PopulateByAreaDropdown)<br />
+    @Model.FilterByMovemetTypesDropdownTitle@Html.DropDownList("movementTypesdropdown", Model.PopulateByMovementTypesDropdown)<br />
+   <input type="button" id="btnSearch" value="@Model.SearchButtonText" />
+</div>

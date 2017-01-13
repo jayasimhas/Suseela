@@ -41,12 +41,34 @@ namespace Informa.Web.ViewModels.Casualty
             feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        /// <summary>
+        /// feed URL
+        /// </summary>
         public string feedUrl { get; set; }
+        /// <summary>
+        /// Title
+        /// </summary>
         public string Title => GlassModel?.Title;
+        /// <summary>
+        /// Filter by date dropdown Title
+        /// </summary>
         public string FilterByDateDropdownTitle => TextTranslator.Translate("Casualty.Report.ByDate.DropdownTitle");
+        /// <summary>
+        /// Filter by Section dropdown Title
+        /// </summary>
         public string FilterBySectionDropdownTitle => TextTranslator.Translate("Casualty.Report.BySection.DropdownTitle");
+        /// <summary>
+        /// Casualty detail page URL
+        /// </summary>
         public string CasualtyDetailPageUrl => GetCasualtyDetailPageUrl();
+        /// <summary>
+        /// Casualty data
+        /// </summary>
         public string jsonCasualtyData => GetCasualtyData(feedUrl);
+        /// <summary>
+        /// Method to get Casualty detail page URL
+        /// </summary>
+        /// <returns></returns>
         private string GetCasualtyDetailPageUrl()
         {
             var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
@@ -65,6 +87,9 @@ namespace Informa.Web.ViewModels.Casualty
             }
             return string.Empty;
         }
+        /// <summary>
+        /// Date filter dropdown values
+        /// </summary>
         public SelectList FilterByDateDropdownValues
         {
             get
@@ -78,25 +103,11 @@ namespace Informa.Web.ViewModels.Casualty
                 return new SelectList(datesList, "Value", "Text");
             }
         }
-
-        public SelectList FilterBySectionDropdownValues
-        {
-            get
-            {
-                List<SelectListItem> datesList = new List<SelectListItem>();
-                //for (int i = 1; i <= 7; i++)
-                //{
-                SelectListItem section1 = new SelectListItem { Text = "MARINE", Value = "#marine" };
-                SelectListItem section2 = new SelectListItem { Text = "SEIZURES & ARRESTS", Value = "#seizures&arrests" };
-                SelectListItem section3 = new SelectListItem { Text = "PIPELINE INCIDENTS", Value = "#pipelineincidents" };
-                datesList.Add(section1);
-                datesList.Add(section2);
-                datesList.Add(section3);
-                //}
-                return new SelectList(datesList, "Value", "Text");
-            }
-        }
-
+        /// <summary>
+        /// Method to get casualty data from external feed url
+        /// </summary>
+        /// <param name="feedURL"></param>
+        /// <returns></returns>
         public string GetCasualtyData(string feedURL)
         {
             if (!string.IsNullOrEmpty(feedURL))

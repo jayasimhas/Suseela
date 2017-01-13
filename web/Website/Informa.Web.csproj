@@ -1234,6 +1234,7 @@
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
@@ -2255,6 +2256,8 @@
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
     <Content Include="Views\Casualty\CasualtyDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\MergersAndAquisitions.cshtml" />
+    <Content Include="Views\Casualty\ShippingMovements.cshtml" />
+    <Content Include="Views\Casualty\dropdownValues.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
