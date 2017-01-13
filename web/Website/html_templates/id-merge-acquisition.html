@@ -11,42 +11,7 @@
       <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="/dist/index-generated.css">
       <style type="text/css">
-         .merge-acquistion input[type="text"] {
-            width: 100%;
-            color: #000;
-         }
-         .selectivity-input {
-            width: 100%;
-            color: #000;
-         }
-         .range-wrapper {
-            float: none;
-            width: 100%;
-         }
-         input.range-field {
-            width: 30px !important;
-         }
-
-         .merge-acquistion th span, .sorting-buttons {
-            float: left;
-            margin-right: 5px;
-         }
-         .selectivity-single-select {
-            box-sizing: border-box;
-         }
-         .selectivity-single-select-input {
-               padding: 2px !important;
-               width: 100% !important;
-         }
-         .selectivity-single-result-container {
-            top: 4px;
-         }
-         .form-control {
-            margin-bottom: 20px;
-         }
-         .form-control input {
-            width: 100%;
-         }
+         
       </style>
       <!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> -->
    </head>
@@ -211,48 +176,48 @@
                               <tr class="visible-lg">
                                  <th class="pad-10" style="width: 10%;">
                                     <span>Month</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="Month">
+                                       <a href="#" category="month" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="month" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <input type="text" name=""/>
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>Acquirer</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="acquirer_company_name">
+                                       <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <input type="text" name=""/>
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>Target</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="target_company_name">
+                                       <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <input type="text" name=""/>
                                  </th>
                                  <th class="pad-10" style="width: 15%;">
                                     <span>Target sector</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="target_sector">
+                                       <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <select>
@@ -263,36 +228,36 @@
                                  </th>
                                  <th class="pad-10" style="width: 15%;">
                                     <span>Target location</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="target_location">
+                                       <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <input type="text" name=""/>
                                  </th>
                                  <th class="pad-10">
                                     <span>Detail</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
-                                       </a>
-                                       <a href="#" category="companies" type="descending">
+                                    <div class="sorting-buttons" deal="details">
+                                       <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                       </a>
+                                       <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <input type="text" class="detail-text-field" name=""/>
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>$m Price</span>
-                                    <div class="sorting-buttons">
-                                       <a href="#" category="companies" type="ascending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                    <div class="sorting-buttons" deal="price">
+                                       <a href="#" category="number" type="ascending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
                                        <a href="#" category="companies" type="descending">
-                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
                                     <div class="range-wrapper">
@@ -941,33 +906,8 @@
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
       <script type="text/javascript">
-         var jsonMergeAcquistion = [{
-   "id": "1056",
-   "deal_date": "2016-04-04",
-   "deal_month": "4",
-   "target_sector": "composite",
-   "target_location": "Europe",
-   "read_more_link": "",
-   "price": "212.00",
-   "details": "Ageas has entered acquired Axa's Portuguese insurance operations for ?190.8m. Book includes life and non-life",
-   "acquirer_company_id": "156",
-   "acquirer_company_name": "Ageas",
-   "target_company_id": "19",
-   "target_company_name": "AXA SA"
-}, {
-   "id": "1207",
-   "deal_date": "2016-04-04",
-   "deal_month": "4",
-   "target_sector": "life",
-   "target_location": "North America",
-   "read_more_link": "",
-   "price": "127.00",
-   "details": "Unum is to buy H&J Capital, owner of Starmount Life and AlwaysCare Benefits",
-   "acquirer_company_id": "1256",
-   "acquirer_company_name": "Unum",
-   "target_company_id": "1367",
-   "target_company_name": "H and J Capital"
-}, {
+         var jsonMergeAcquistion = [{"Month":"April","Acquirer":"<a href='/FinanceCompanies/Ageas/'>Ageas</a>","Target":"AXA SA","TargetSector":"composite","TargetLocation":"Europe","Detail":"Ageas has entered acquired Axa's Portuguese insurance operations for ?190.8m. Book includes life and non-life","Price":"212.00"},{"Month":"April","Acquirer":"Unum","Target":"H and J Capital","TargetSector":"life","TargetLocation":"North America","Detail":"Unum is to buy H&J Capital, owner of Starmount Life and AlwaysCare Benefits","Price":"127.00"},{"Month":"April","Acquirer":"Anbang","Target":"<a href='/FinanceCompanies/AllianzGroup/'>Allianz Group</a>","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Anbang has agreed to buy Allianz's life insurance and global investor units in South Korea","Price":""},{"Month":"April","Acquirer":"Zurich Financial Services","Target":"RCIS","TargetSector":"non-life","TargetLocation":"North America","Detail":"Zurich has completed the takeover of US agriculture insurer for about $700m","Price":"700.00"},{"Month":"April","Acquirer":"Suramericana","Target":"RSA","TargetSector":"non-life","TargetLocation":"Latin America","Detail":"Suramerican has completed the takeover of RSA's operations in Colombia. Related acquisitions in other LatAm countries impending","Price":""},{"Month":"March","Acquirer":"Nippon Life","Target":"Reliance Life Insurance","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Nippon Life has increased its stake from 26% to 49% and the Indian company will be renamed Reliance Nippon Life","Price":"342.00"},{"Month":"March","Acquirer":"Catalina","Target":"<a href='/FinanceCompanies/AllianzGroup/'>Allianz Group</a>","TargetSector":"non-life","TargetLocation":"Europe","Detail":"Catalina has agreed to acquire AGF Insurance, in run-off, ultimately a subsidiary of Allianz.","Price":""},{"Month":"March","Acquirer":"Institutional investors","Target":"American International Group","TargetSector":"non-life","TargetLocation":"North America","Detail":"AIG's mortgage insurance operation United Guaranty has filed for an IPO of up to $100m. AIG intends to sell up to 29.9% in all","Price":"100.00"},{"Month":"March","Acquirer":"Compre","Target":"QBE","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Compre has agreed to acquire QBE's share of the Ridgwell Fox & Partners pool legacy reinsurance","Price":""},{"Month":"March","Acquirer":"Beazley plc","Target":"Marketform","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Beazley has bought the open market medical malpractice and UK/international delegated authority account of Marketform","Price":""},{"Month":"March","Acquirer":"Sun Life Financial","Target":"PT CIMB Sun Life","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Sun Life has agreed to acquire the 51% of Indonesian joint venture PT CIMB Sun Life it does not already won","Price":""},{"Month":"March","Acquirer":"Heritage Insurance Holdings","Target":"Zephyr Insurance","TargetSector":"non-life","TargetLocation":"North America","Detail":"Florida's Heritage has bought Hawaiian wind-only company Zephyr, writing annual premium of more than $60m","Price":"134.00"},{"Month":"March","Acquirer":"Exor","Target":"PartnerRe","TargetSector":"non-life","TargetLocation":"Bermuda","Detail":"Exor has closed its takeover of Bermudian reinsurance group PartnerRe","Price":"6900.00"},{"Month":"March","Acquirer":"Hartford Financial","Target":"Maxum Specialty","TargetSector":"non-life","TargetLocation":"North America","Detail":"Hartford has agreed to buy Northern Homelands, the parent of Maxum, a small commercial E&S insurer in the US","Price":"170.00"},{"Month":"March","Acquirer":"Dale Underwriting Partners","Target":"Marketform","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Dale Underwriting has taken over Marketform's international medical malpractice account","Price":""},{"Month":"March","Acquirer":"Well Link Group","Target":"Hiscox Ltd","TargetSector":"non-life","TargetLocation":"Asia-Pacific","Detail":"Hiscox has agreed to sell the Hong Kong division of its DirectAsia business to Well Link Group of Hong Kong","Price":""},{"Month":"March","Acquirer":"American Financial","Target":"National Interstate","TargetSector":"non-life","TargetLocation":"North America","Detail":"American Financial's Great American Insurance intends to buy the 49% of National Interstate it does not already own","Price":"293.00"},{"Month":"March","Acquirer":"Zurich Financial Services","Target":"Macquarie Life","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Zurich has agreed to buy Macquarie Life from Australia'sMacquarie Group","Price":""},{"Month":"March","Acquirer":"Sun Life Assurance of Canada","Target":"Assurant","TargetSector":"life","TargetLocation":"North America","Detail":"Sun Life says the takeover of employee benefits business will create the sixth-largest group of its kind in US","Price":"975.00"},{"Month":"March","Acquirer":"Prudential Financial","Target":"AFP Habitat","TargetSector":"life","TargetLocation":"Latin America","Detail":"Prudential Financial has taken about 40% of Chilean retirement company AFP Habitat","Price":"529.00"},{"Month":"March","Acquirer":"Medical Mutual","Target":"HealthSpan Partners","TargetSector":"life","TargetLocation":"North America","Detail":"Medical Mutual is acquiring the 105,000 members in the group and individual health operation of HealthSpan","Price":""},{"Month":"February","Acquirer":"Plum Underwriting","Target":"Randall and Quilter","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Plum has acquired the business of Synergy Insurance Services, a managing general agent, from Randall & Quilter","Price":""},{"Month":"February","Acquirer":"Berkshire Hathaway","Target":"Charles Taylor","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Charles Taylor has sold Beech Hill Insurance, a company in run-off, to Tenecom, a Berkshire Hathaway subsidiary","Price":""},{"Month":"February","Acquirer":"Massachusetts Mutual Life","Target":"MetLife","TargetSector":"life","TargetLocation":"North America","Detail":"MassMutual has agreed to buy MetLife's US retail adviser business, called MetLife Premier Client Group","Price":"300.00"},{"Month":"February","Acquirer":"Britannia Club","Target":"UK P and I Club","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"P&I clubs Britannia and UK are in talks about a potential merger.","Price":""},{"Month":"February","Acquirer":"Ashbrooke Financial","Target":"Charles Taylor","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Charles Taylor has sold its interest in Bestpark International, in run-off, to Ashbrooke","Price":""},{"Month":"February","Acquirer":"KKR","Target":"Max Life","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"US investor KKR has taken a 9.95% stake in Max Financial Services, owner of Indian life company Max Life","Price":""},{"Month":"February","Acquirer":"Compre","Target":"Gjensidige","TargetSector":"non-life","TargetLocation":"Europe","Detail":"Run-off specialist Compre has acquired the marine and energy legacy portfolio of Norwegian insurer Gjensidige","Price":""},{"Month":"February","Acquirer":"African Capital Alliance","Target":"Saham","TargetSector":"non-life","TargetLocation":"Africa","Detail":"Investment group African Capital Alliance has bought a 49% stake in Continental Re from Saham, which retains 51% of the reinsurer","Price":""},{"Month":"February","Acquirer":"AXA SA","Target":"MicroEnsure","TargetSector":"non-life","TargetLocation":"Africa","Detail":"Axa has increased its stake in MicroEnsure to 46% as part of a wider drive to develop business from emerging markets","Price":""},{"Month":"February","Acquirer":"Meiji Yasuda Life","Target":"StanCorp","TargetSector":"life","TargetLocation":"North America","Detail":"Part of Japanese insurer's plan to diversify operations and take on more foreign exposure. Deal now completed","Price":"4997.00"},{"Month":"February","Acquirer":"AXA SA","Target":"Africa Internet Group","TargetSector":"non-life","TargetLocation":"North America","Detail":"Axa is to be the exclusive provider of insurance for African Internet Group companies including Jumia and has taken an 8% stake","Price":"84.00"},{"Month":"February","Acquirer":"Celesio","Target":"Bupa","TargetSector":"non-life","TargetLocation":"London/UK","Detail":"Bupa has agreed to sell its Bupa Home Healthcare unit to UK healthcare provider Celesio.","Price":""},{"Month":"February","Acquirer":"Sumitomo Life Insurance Co","Target":"Symetra","TargetSector":"life","TargetLocation":"North America","Detail":"Japanese insurer has acquired US life and financial services provider Symetra","Price":"3800.00"},{"Month":"February","Acquirer":"MS and AD Insurance Group","Target":"Amlin plc","TargetSector":"international/reinsurance","TargetLocation":"London/UK","Detail":"Deal completed, accelerating Mitsui Sumitomo's international expansion and putting it in second place in Lloyd's market","Price":"5332.00"},{"Month":"January","Acquirer":"Blagosostoyanie","Target":"RSA","TargetSector":"non-life","TargetLocation":"Europe","Detail":"RSA has completed the sale of its Russian operations, writing annual premium of £27m","Price":"8.00"},{"Month":"January","Acquirer":"Tokio Marine Holdings","Target":"Edelweiss Tokio Life","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Tokio Marine has regulatory approval to increase its stake in Indian company Edelweiss Life to 49% from 26%","Price":"80.00"},{"Month":"January","Acquirer":"Institutional investors","Target":"American International Group","TargetSector":"non-life","TargetLocation":"North America","Detail":"AIG is considering sale of up to 19.9% in mortgage guarantee unit United Guaranty via flotation","Price":"1390.00"},{"Month":"January","Acquirer":"Medical Mutual","Target":"HPIX","TargetSector":"life","TargetLocation":"North America","Detail":"Medical Mutual has acquired the policies of HPIX, a reciprocal insurance exchange in pennsylvania","Price":""},{"Month":"January","Acquirer":"Munich Re Group","Target":"Apollo Hospitals","TargetSector":"life","TargetLocation":"Asia-Pacific","Detail":"Munich Re has agreed to increase its shareholding to 48.75% in Apollo Munich Health in India, buying shares from its partner","Price":"24.00"},{"Month":"January","Acquirer":"National General","Target":"Century-National","TargetSector":"non-life","TargetLocation":"North America","Detail":"National General has agreed to buy California non-life personal lines insurer Century-National","Price":"315.00"},{"Month":"January","Acquirer":"AmTrust","Target":"ARI Mutual","TargetSector":"non-life","TargetLocation":"North America","Detail":"AmTrust Financial has acquired ARI Mutual Insurance Co following that company?s conversion  into a stock company","Price":""},{"Month":"January","Acquirer":"Helios","Target":"Devon Underwriting","TargetSector":"non-life","TargetLocation":"London/UK","Detail":"Helios to pay £1.1m for Devon, a limited liability member of Lloyd's","Price":"2.00"},{"Month":"January","Acquirer":"Aviva plc","Target":"RBC General","TargetSector":"non-life","TargetLocation":"North America","Detail":"Aviva Canada has agreed to buy RBC General, a Canadian non-life insurer, from bank RBC","Price":"414.00"},{"Month":"January","Acquirer":"Aspen","Target":"AgriLogic","TargetSector":"non-life","TargetLocation":"North America","Detail":"Aspen has acquired AgriLogic, a US crop business","Price":""},{"Month":"January","Acquirer":"<a href='/FinanceCompanies/AllianzGroup/'>Allianz Group</a>","Target":"Aegon","TargetSector":"non-life","TargetLocation":"Europe","Detail":"Allianz has agreed to buy the commercial non-life portfolio of Aegon, with annual premium of ?90m","Price":""},{"Month":"January","Acquirer":"Protective Life","Target":"Genworth","TargetSector":"life","TargetLocation":"North America","Detail":"Protective has completed the purchase of a block of term life insurance via a reinsurance deal","Price":"661.00"},{"Month":"January","Acquirer":"Curtis Banks","Target":"Legal and General","TargetSector":"life","TargetLocation":"London/UK","Detail":"Legal & General is selling Suffolk Life to Crtis Banks for £45m","Price":"64.00"},{"Month":"January","Acquirer":"Institutional investors","Target":"China United Insurance","TargetSector":"composite","TargetLocation":"Asia-Pacific","Detail":"China United Insurance is planning an IPO in Hong Kong","Price":"1000.00"},{"Month":"January","Acquirer":"ACE Ltd","Target":"Chubb Corp","TargetSector":"non-life","TargetLocation":"North America","Detail":"Largest non-life acquisition ever, creating one of the world's biggest commercial and special lines insurers, known as Chubb","Price":"29500.00"},{"Month":"January","Acquirer":"Liberty Mutual","Target":"Penta Security","TargetSector":"non-life","TargetLocation":"Latin America","Detail":"Liberty Mutual has taken control of Chilean non-life insurer Penta Security, becoming the country's largest insurer","Price":"160.00"},{"Month":"January","Acquirer":"CNP","Target":"BTG Pactual","TargetSector":"non-life","TargetLocation":"Latin America","Detail":"France CNP's has entered into exclusive negotiations to take 51% of BTG's PAN Seguros and broker Pan Corretora in Brazil","Price":""},{"Month":"January","Acquirer":"Fubon Financial Holdings","Target":"China United Insurance","TargetSector":"composite","TargetLocation":"Asia-Pacific","Detail":"Fubon Life has agreed to take a stake of 6.5% in China United Insurance","Price":"265.00"},{"Month":"January","Acquirer":"Bupa","Target":"Cruz Blanca","TargetSector":"non-life","TargetLocation":"Latin America","Detail":"Bupa now holds juster under 100% of this Chilean insurer, now known as Bupa Chile.","Price":"131.00"},{"Month":"January","Acquirer":"Norcal Mutual","Target":"FD Insurance","TargetSector":"non-life","TargetLocation":"North America","Detail":"Norcal has completed the acquisition of FD Insurance, a med-mal provider in Florida","Price":""},{"Month":"January","Acquirer":"CRRC Corp","Target":"China United Insurance","TargetSector":"composite","TargetLocation":"Asia-Pacific","Detail":"Investor CRRC plans to take a 13.1% stake","Price":"675.00"},{"Month":"January","Acquirer":"Institutional investors","Target":"ING","TargetSector":"non-life","TargetLocation":"Europe","Detail":"ING has cut its stake in insurer NN group to 16.2% through a further disposal of shares","Price":"844.00"},{"Month":"January","Acquirer":"NN Group","Target":"ING","TargetSector":"non-life","TargetLocation":"Europe","Detail":"NN has bought an additional tranche of shares in the company from former owner ING","Price":"270.00"},{"Month":"January","Acquirer":"Vienna Insurance Group","Target":"UBB-AIG","TargetSector":"non-life","TargetLocation":"Europe","Detail":"VIG has closed the acquisition of this Bulgarian bancassurer through its Bulstrad subsidiary","Price":""},{"Month":"January","Acquirer":"Swiss Re Group","Target":"IHC Risk Solutions","TargetSector":"life","TargetLocation":"North America","Detail":"Swiss Re Corporate Solutions is to acquire US group IHC and its employer stop loss business. Account is mostly life and health","Price":"152.00"},{"Month":"January","Acquirer":"ITAS Mutua","Target":"RSA","TargetSector":"non-life","TargetLocation":"Europe","Detail":"ITAS Mutua has bought the business of the Italian  branches of RSA. Includes assumption of £434m of liabilities","Price":"730.00"},{"Month":"January","Acquirer":"Apicil","Target":"Legal and General","TargetSector":"life","TargetLocation":"Europe","Detail":"Apicil has completed the takeover of Legal & General's French agency unit-linked business","Price":""},{"Month":"January","Acquirer":"Beechwood Bermuda","Target":"Old Mutual","TargetSector":"life","TargetLocation":"North America","Detail":"Old Mutual has completed the sale of its Bermudian variable annuity business to Beechwood","Price":""}]
+/*, {
    "id": "1208",
    "deal_date": "2016-04-04",
    "deal_month": "4",
@@ -1760,709 +1700,10 @@
    "acquirer_company_name": "Beechwood Bermuda",
    "target_company_id": "260",
    "target_company_name": "Old Mutual"
-}]
+}*/
       </script>
       <script src="/dist/js/index.js"></script> 
-      <script type="text/javascript">
-         function filterColumn(inputId){
-
-    var data = $(inputId).attr("value");
-
-    var selectedColumn = $(inputId).parent().parent().attr('column');
-    //hide all the rows
-    //find rows that match the text.
-    var r1 = $("#mergersAndAcquisitions-static-table").find("[column='"+selectedColumn+"'][table-datacell]");
-    var r2 = $("#mergersAndAcquisitions-sub-content-table").find("[column='"+selectedColumn+"'][table-datacell]");
-
-    var jo = $(r1).add($(r2));
-
-    //find fields that do match
-    var matched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (text.toLowerCase().indexOf(data.toLowerCase()) >= 0){
-            return true;
-        }
-
-        return false;
-    });
-
-    //find fields that do no match
-    var notMatched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (text.toLowerCase().indexOf(data.toLowerCase()) >= 0){
-            return false;
-        }
-
-        return true;
-    });
-
-    //hide non-matched rows
-    notMatched.each(function( index ) {
-        var row = $(this).attr("row");
-        $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]").hide();
-        $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").hide();
-    });
-
-}
-
-function filterColumnByRange() {
-
-    var fromData = $("#range-input-from").attr("value");
-    var toData = $("#range-input-to").attr("value");
-
-    var selectedColumnFrom = $("#range-input-from").parent().parent().attr('column');
-    var selectedColumnTo = $("#range-input-to").parent().parent().attr('column');
-
-    //hide all the rows
-    //find rows that match the text.
-    var r1 = $("#mergersAndAcquisitions-static-table").find("[column='"+selectedColumnFrom+"'][table-datacell]");
-    var r2 = $("#mergersAndAcquisitions-sub-content-table").find("[column='"+selectedColumnFrom+"'][table-datacell]");
-    var r3 = $("#mergersAndAcquisitions-static-table").find("[column='"+selectedColumnTo+"'][table-datacell]");
-    var r4 = $("#mergersAndAcquisitions-sub-content-table").find("[column='"+selectedColumnTo+"'][table-datacell]");
-
-    var jo = $(r1).add($(r2));
-    var jo_ = jo.add($(r3)).add($(r4));
-
-    //find fields that do match
-    var matched = jo_.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (toData == null || toData == "") {
-            if (parseInt(text, 10) >= parseInt(fromData,10)) {
-                return true;
-            } else {
-                return false;
-            }
-        } else if (fromData ==null || fromData == "") {
-            if (parseInt(text, 10) <= parseInt(toData,10)) {
-                return true;
-            } else {
-                return false;
-            }
-        } else if ((parseInt(text, 10) >= parseInt(fromData,10)) && (parseInt(text, 10) <= parseInt(toData,10))) {
-            return true;
-        }
-
-        return false;
-    });
-
-    //find fields that do no match
-    var notMatched = jo_.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (toData == null || toData == "") {
-            if (parseInt(text, 10) >= parseInt(fromData,10)) {
-                return false;
-            } else {
-                return true;
-            }
-        } else if (fromData ==null || fromData == "") {
-            if (parseInt(text, 10) <= parseInt(toData,10)) {
-                return false;
-            } else {
-                return true;
-            }
-        } else if ((parseInt(text, 10) >= parseInt(fromData,10)) && (parseInt(text, 10) <= parseInt(toData,10))) {
-            return false;
-        }
-
-        return true;
-    });
-
-    //hide non-matched rows
-    notMatched.each(function( index ) {
-        var row = $(this).attr("row");
-        $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]").hide();
-        $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").hide();
-    });
-
-}
-
-function filterColumnByDropDown(selectTagID){
-
-    var data = $(selectTagID).find(":selected").text();
-
-    var selectedColumn = 3;
-    //hide all the rows
-    //find rows that match the text.
-    var r1 = $("#mergersAndAcquisitions-static-table").find("[column='"+selectedColumn+"'][table-datacell]");
-    var r2 = $("#mergersAndAcquisitions-sub-content-table").find("[column='"+selectedColumn+"'][table-datacell]");
-
-    var jo = $(r1).add($(r2));
-
-    //find fields that do match
-    var matched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (text.toLowerCase() == data.toLowerCase()){
-            return true;
-        }
-
-        return false;
-    });
-
-    //find fields that do no match
-    var notMatched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (text.toLowerCase() == data.toLowerCase()){
-            return false;
-        }
-
-        return true;
-    });
-
-    //hide non-matched rows
-    notMatched.each(function( index ) {
-        var row = $(this).attr("row");
-        $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]").hide();
-        $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").hide();
-    });
-
-}
-
-function filterColumnByLargestDeals(fromData) {
-
-    var selectedColumnFrom = $("#range-input-from").parent().parent().attr('column');
-
-    //hide all the rows
-    //find rows that match the text.
-    var r1 = $("#mergersAndAcquisitions-static-table").find("[column='"+selectedColumnFrom+"'][table-datacell]");
-    var r2 = $("#mergersAndAcquisitions-sub-content-table").find("[column='"+selectedColumnFrom+"'][table-datacell]");
-
-    var jo = $(r1).add($(r2));
-
-    //find fields that do match
-    var matched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-
-        if (parseInt(text, 10) >= parseInt(fromData,10)) {
-            return true;
-        }
-
-        return false;
-    });
-
-    //find fields that do no match
-    var notMatched = jo.filter(function(){
-        var text = null;
-        if($(this).children().children().html() != null)
-            text = $(this).children().children().html();
-        else
-            text = $(this).children().html();
-
-        if (parseInt(text, 10) >= parseInt(fromData,10)) {
-            return false;
-        }
-
-        return true;
-    });
-
-    var sortedRows = matched.get();
-
-    sortedRows.sort(function(a,b){
-        var an = parseInt($(a).text(),10),
-            bn = parseInt($(b).text(),10);
-
-        if(an < bn) {
-            return 1;
-        }
-        if(an > bn) {
-            return -1;
-        }
-        return 0;
-    });
-
-    //show only matched rows
-    sortedRows.forEach(function( item ) {
-        var row = $(item).attr("row");
-
-        //Find row, store it, detach, add stored row element to parent.
-        var staticTableRowElement = $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]");
-        $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]").detach();
-        staticTableRowElement.appendTo("#mergersAndAcquisitions-static-table");
-
-        //As above but we are storing, detaching and appending .idi-table-row and all it's content
-        var idiTableRow = $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").closest(".idi-table-row");
-        $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").closest(".idi-table-row").detach();
-        idiTableRow.appendTo("#mergersAndAcquisitions-sub-content-table");
-
-    });
-
-    //hide non-matched rows
-    notMatched.each(function( index ) {
-        var row = $(this).attr("row");
-        $("#mergersAndAcquisitions-static-table").find("[row='"+row+"'][table-datacell]").hide();
-        $("#mergersAndAcquisitions-sub-content-table").find("[row='"+row+"'][table-datacell]").hide();
-    });
-
-}
-// Populate cells
-
-
-
-// This function builds a data table
-// Arguments:
-//    columnNames:   an array containing column names to be displayed in the order you wish them displayed
-//    tableData:     an array of arrays containing data to be displayed, each array is a row
-//    columnNames2:  an optional second array of column names (used in the quarterly results table)
-//    tableData2:    an optional second array of data
-//    htmlIdPrefix:  all IDs in the markup for the table should use this prefix, e.g. idi-table-frozen-categories
-//    flagSlider:    flag indicating if slider is being used. If not, width of columns will be set so they fit in table.
-//    sortedColumn:  -2: sorting disabled
-//                   -1: no columns selected for sorting
-//                    0 to array.length: index of columnNames array to sort on
-//    flagLinkInFirstColumn: flag indicating whether first column should contain links or not.
-//    percentageWidthFirstColumn: percentage width of first column (not sure if this is working though, need to test further).
-//    resourceUrl:   url pointing to directory containing sort icons.
-//    sortByKeyAsc:  array of sort functions
-//    sortByKeyDesc: array of sort functions
-//    categoriesAlign: alignment of non-frozen categories within cells. "left" for left, "" [sic] for right, "center" for center.
-// TODO: I should change it to sort when the function is called, instead of sorting inside the click function and then calling this function.
-function buildCompaniesDataTable(columnNames, tableData, columnNames2, tableData2, htmlIdPrefix, flagSlider, sortedColumn, flagLinkInFirstColumn, percentageWidthFirstColumn, resourceUrl, sortByKeyAsc, sortByKeyDesc, categoriesAlign) {
-
-    // Clear cells out before populating them.
-    $("#" + htmlIdPrefix + "frozen-categories").empty();
-    $("#" + htmlIdPrefix + "scroll-content-categories").empty();
-    $("#" + htmlIdPrefix + "frozen-table").empty();
-    $("#" + htmlIdPrefix + "scroll-content-table").empty();
-    $("#" + htmlIdPrefix + "static-categories").empty();
-    $("#" + htmlIdPrefix + "static-table").empty();
-    $("#" + htmlIdPrefix + "sub-content-table").empty();
-
-    $("#" + htmlIdPrefix + "frozen-categories2").empty();
-    $("#" + htmlIdPrefix + "scroll-content-categories2").empty();
-    $("#" + htmlIdPrefix + "frozen-table2").empty();
-    $("#" + htmlIdPrefix + "scroll-content-table2").empty();
-
-    $('#' + htmlIdPrefix + 'frozen-categories').css('width', percentageWidthFirstColumn + '%');
-    $('#' + htmlIdPrefix + 'frozen-table').css('width', percentageWidthFirstColumn + '%');
-    $('#' + htmlIdPrefix + 'frozen-table-nolink').css('width', percentageWidthFirstColumn + '%');
-    $('#' + htmlIdPrefix + 'static-categories').css('width', '960px');
-
-    // Populate column headings
-    for (var column = 0; column < columnNames.length; column++) {
-        var sortKeyClass = "";
-        idiTableCategory = sortedColumn === -2 ? 'idi-table-category' : 'idi-table-category-hover';
-        if (sortedColumn != -2 && sortedColumn == column) {
-            sortKeyClass = "category-sorted";
-        }
-        if (column == 0) {
-            $("#" + htmlIdPrefix + "frozen-categories").append('<div '+'column="0" row="0" ' +' id="' + htmlIdPrefix + 'upper-left" class="idi-table-cell-frozen ' + idiTableCategory + ' idi-table-upper-left ' + sortKeyClass + '"><p class="align-left">' + columnNames[0] + '</p>');
-            $("#" + htmlIdPrefix + "static-categories").append('<div '+'column="0" row="0" '+'id="' + htmlIdPrefix + 'sort-top-left" class="'+ idiTableCategory + ' idi-table-upper-left ' + sortKeyClass + '">' + columnNames[0] + ' ');
-
-            if (sortedColumn != -2) {
-                $("#" + htmlIdPrefix + "upper-left").append('<p><img id="' + htmlIdPrefix + 'sortAsc0" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img id="' + htmlIdPrefix + 'sortDesc0" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/></p>');
-                $("#" + htmlIdPrefix + "sort-top-left").append('<img class="pointer" id="' + htmlIdPrefix + 'sortAsc0" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img class="pointer" id="' + htmlIdPrefix + 'sortDesc0" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/>'+'<div class="filterRows"><input id="acquirerFilterInput'+column+'" value="" /></div>');
-            }
-        }
-        else {
-            $("#" + htmlIdPrefix + "scroll-content-categories").append('<div id="' + htmlIdPrefix + 'category-column' + column + '" class="' + idiTableCategory + ' ' + sortKeyClass + '"><p>' + columnNames[column] + '</p> ' );
-            $("#" + htmlIdPrefix + "static-categories").append('<div '+'row="0" column="'+column+'"'+' id="' + htmlIdPrefix + 'sort-top-left' + column + '" class="' + idiTableCategory + ' ' + sortKeyClass + '">' + columnNames[column] + ' ');
-
-
-            // add sort icons
-            if (sortedColumn != -2) {
-                $("#" + htmlIdPrefix + "category-column" + column).append('<p><img id="' + htmlIdPrefix + 'sortAsc' + column + '" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img id="' + htmlIdPrefix + 'sortDesc' + column + '" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/></p>');
-                if (column == 3) {
-                    $("#" + htmlIdPrefix + "sort-top-left" + column).append('<img class="pointer" id="' + htmlIdPrefix + 'sortAsc' + column + '" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img class="pointer" id="' + htmlIdPrefix + 'sortDesc' + column + '" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/>' +'<div class="filterRows"><select class="filter-input" id="filterDropDown"><option value=""></option><option value="non-life">non-life</option><option value="life">life</option><option value="international/reinsurance">international/reinsurance</option><option value="composite">composite</option></select></div>');
-                } else if (column == 6) {
-                    $("#" + htmlIdPrefix + "sort-top-left" + column).append('<img class="pointer" id="' + htmlIdPrefix + 'sortAsc' + column + '" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img class="pointer" id="' + htmlIdPrefix + 'sortDesc' + column + '" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/>' +'<div class="filterRows"><input class="filter-input" id="range-input-from" value="" /> to <input id="range-input-to" value="" /></div>');
-                } else {
-                    $("#" + htmlIdPrefix + "sort-top-left" + column).append('<img class="pointer" id="' + htmlIdPrefix + 'sortAsc' + column + '" src="' + resourceUrl + 'images/sort-ascending.png" alt="sort column in ascending order"/><img class="pointer" id="' + htmlIdPrefix + 'sortDesc' + column + '" src="' + resourceUrl + 'images/sort-descending.png" alt="sort column in descending order"/>' +'<div class="filterRows"><input class="filter-input" id="acquirerFilterInput'+column+'" value="" /></div>');
-                }
-            }
-
-            // add class to align categories as desired.
-            if (categoriesAlign == 'left') {
-                $('#' + htmlIdPrefix + 'category-column' + column).find('p').addClass('text-align-left');
-            }
-            else if (categoriesAlign == 'center') {
-                $('#' + htmlIdPrefix + 'category-column' + column).find('p').addClass('text-align-center');
-            }
-            else if (categoriesAlign == '') {
-                $('#' + htmlIdPrefix + 'category-column' + column).find('p').addClass('text-align-right');
-            }
-
-            // set width of nonfrozen categories to take up the rest of the space in nonfrozen part and scroll-pane-table,
-            // only if scrolling is off
-            if (!flagSlider) {
-                $('#' + htmlIdPrefix + 'category-column' + column).width($("#" + htmlIdPrefix + "nonfrozen-table").width() / (columnNames.length - 1) - 1);
-            }
-
-        }
-
-        // Bind click events to sort icons only if sorting is enabled
-        if (sortedColumn != -2) {
-            $("#" + htmlIdPrefix + "sortAsc" + column).click(function () {
-                var currentColumn = $(this).attr('id').match(/\D+(\d+)$/)[1];
-                //console.log("sort asc by column " + currentColumn);
-                tableData.sort(sortByKeyAsc[currentColumn]);
-                //console.log(tableData[0][0] + ' ' + tableData[1][0] + ' ' + tableData[2][0] + ' ' + tableData[3][0] );
-                buildCompaniesDataTable(columnNames, tableData, columnNames2, tableData2, htmlIdPrefix, flagSlider, currentColumn, flagLinkInFirstColumn, percentageWidthFirstColumn, resourceUrl, sortByKeyAsc, sortByKeyDesc, categoriesAlign);
-            });
-            $("#" + htmlIdPrefix + "sortDesc" + column).click(function () {
-                var currentColumn = $(this).attr('id').match(/\D+(\d+)$/)[1];
-                //console.log("sort desc by column " + currentColumn);
-                tableData.sort(sortByKeyDesc[currentColumn]);
-                //console.log(tableData[0][0] + ' ' + tableData[1][0] + ' ' + tableData[2][0] + ' ' + tableData[3][0] );
-                buildCompaniesDataTable(columnNames, tableData, columnNames2, tableData2, htmlIdPrefix, flagSlider, currentColumn, flagLinkInFirstColumn, percentageWidthFirstColumn, resourceUrl, sortByKeyAsc, sortByKeyDesc, categoriesAlign);
-            });
-        }
-        else {
-            // TODO: this is a kludge?
-            $("#" + htmlIdPrefix + "frozen-categories .idi-table-category").height("2em");
-            $("#" + htmlIdPrefix + "scroll-content-categories .idi-table-category").height("2em");
-        }
-    }
-
-    // Populate cells
-    var cell_val = "";
-    for (var row = 0; row < tableData.length; row++) {
-        for (var column = 0; column < columnNames.length; column++) {
-            if (column == 0) {
-                var linkedCellString = '';
-                var noLink = '';
-                if (flagLinkInFirstColumn) {
-                    linkedCellString = '<a href="' + friendlyUrl(tableData[row][0])+ '">' + tableData[row][0] + '</a>';
-                    noLink = tableData[row][0];
-                }
-                else {
-                    linkedCellString = tableData[row][0];
-                }
-
-                $("#" + htmlIdPrefix + "frozen-table-nolink").append('<div id="' + htmlIdPrefix + 'data-column0-row' + row + '" class="idi-table-cell idi-table-cell-frozen row-alternating-cell-frozen-' + row % 2 + '"><p>' + noLink + '</p></div>');
-                $("#" + htmlIdPrefix + "frozen-table").append('<div id="' + htmlIdPrefix + 'data-column0-row' + row + '" class="idi-table-cell idi-table-cell-frozen row-alternating-cell-frozen-' + row % 2 + '"><p>' + linkedCellString + '</p></div>');
-                $("#" + htmlIdPrefix + "static-table").append('<div '+'table-datacell="" '+' column="'+column+'"'+' row="'+row+'"'+' id="' + htmlIdPrefix + 'data-column0-row' + row + '" class="idi-table-cell idi-table-cell-frozen row-alternating-cell-frozen-' + row % 2 + '"><p>' + noLink + '</p></div>');
-                $("#" + htmlIdPrefix + "scroll-content-table").append('<div class="idi-table-row">');
-                $("#" + htmlIdPrefix + "sub-content-table").append('<div class="idi-table-row">');
-                $('#' + htmlIdPrefix + 'data-column0-row' + row).height(parseInt($('#' + htmlIdPrefix + 'data-column0-row' + row).height()));
-            }
-            else {
-                // If numerical value, display it as it is, if string preceeded by * or **,
-                // extract the number and attach the appropriate tooltip text
-                var tooltipString = "";
-                if (typeof(tableData[row][column]) == 'string') {
-                    var matchResult;
-                    if (matchResult = tableData[row][column].match(/^\*([^\*]+)$/)) {
-                        tooltipString = 'title="Estimated figures"';
-                    }
-                    else if (matchResult = tableData[row][column].match(/^\*\*([^\*]+)$/)) {
-                        tooltipString = 'title="From quarter 3 2010 annual report"';
-                    }
-                }
-
-                // should add this to idi-table-row? Or maybe we just don't need that div at all?
-                cell_val =  tableData[row][column]; // "";
-                /*
-                 if ( tableData[row][column] ){
-                 cell_val = tableData[row][column];
-                 }
-                 */
-
-                $("#" + htmlIdPrefix + "scroll-content-table .idi-table-row").last().append('<div id="' + htmlIdPrefix + 'data-column' + column + '-row' + row + '" class="idi-table-cell ' + htmlIdPrefix + 'cell-nonfrozen row-alternating-' + row % 2 + ' align-right" ' + tooltipString + '><p class="'+((!isNaN(cell_val) && cell_val <0) ?'minus ':'')+" "+((!isNaN(cell_val) && cell_val >(-0.05) && cell_val <0) ? 'zero':'')+' ">' +  (cell_val!="" && (!isNaN(cell_val)) ? (cell_val*1).toFixed(1) : cell_val) + '</p></div>');
-                $("#" + htmlIdPrefix + "sub-content-table .idi-table-row").last().append('<div '+'table-datacell="" '+' column="'+column+'"'+' row="'+row+'"'+' id="' + htmlIdPrefix + 'data-column' + column + '-row' + row + '" class="idi-table-cell ' + htmlIdPrefix + 'cell-nonfrozen row-alternating-' + row % 2 + ' align-left" ' + tooltipString + '><p class="'+((!isNaN(cell_val) && cell_val <0) ?'minus ':'')+" "+((!isNaN(cell_val) && cell_val >(-0.05) && cell_val <0) ? 'zero':'')+' ">' +  (cell_val!="" && (!isNaN(cell_val)) ? (cell_val*1).toFixed(1) : cell_val) + '</p></div>');
-                $('#' + htmlIdPrefix + 'data-column' + column + '-row' + row).height(parseInt($('#' + htmlIdPrefix + 'data-column0-row' + row).height()));
-                // set width of nonfrozen cells to take up the rest of the space in nonfrozen part and scroll-pane-table,
-                // only if scrolling is off
-                if (!flagSlider) {
-                    if (row == 2) {
-
-                    }
-
-                    $('#' + htmlIdPrefix + 'data-column' + column + '-row' + row).width($("#" + htmlIdPrefix + "nonfrozen-table").width() / (columnNames.length - 1) - 1);
-                }
-            }
-            $('#' + htmlIdPrefix + 'data-column' + column + '-row' + row).hover(function() {
-                    var currentRow = $(this).attr('id').match(/data-column(\d+)-row(\d+)/)[2];
-                    $('#' + htmlIdPrefix + 'data-column0-row' + currentRow).addClass("idi-table-row-hover-cell-frozen");
-                    for (var c = 1; c < columnNames.length; c++) {
-                        $('#' + htmlIdPrefix + 'data-column' + c + '-row' + currentRow).addClass("idi-table-row-hover");
-                    }
-                },
-                function () {
-                    var currentRow = $(this).attr('id').match(/data-column(\d+)-row(\d+)/)[2];
-                    $('#' + htmlIdPrefix + 'data-column0-row' + currentRow).removeClass("idi-table-row-hover-cell-frozen");
-                    for (var c = 1; c < columnNames.length; c++) {
-                        $('#' + htmlIdPrefix + 'data-column' + c + '-row' + currentRow).removeClass("idi-table-row-hover");
-                    }
-                });
-        }
-    }
-
-    //////////////////////////////////////////////////////////
-    //
-    // If second table data was provided, build it.
-    //
-    //////////////////////////////////////////////////////////
-    if (columnNames2.length > 0) {
-        // Populate column headings
-        for (var column = 0; column < columnNames2.length; column++) {
-            var sortKeyClass = "";
-            if (column == 0) {
-                $("#" + htmlIdPrefix + "frozen-categories2").append('<div id="' + htmlIdPrefix + 'upper-left2" class="idi-table-cell-frozen idi-table-category idi-table-upper-left ' + sortKeyClass + '"><p class="align-left">' + columnNames2[0] + '</p>');
-            }
-            else {
-                $("#" + htmlIdPrefix + "scroll-content-categories2").append('<div'+' row="0" column="'+column+'"'+' id="' + htmlIdPrefix + 'category-column-secondary' + column + '" class="idi-table-category ' + sortKeyClass + '"><p class="float-right">' + columnNames2[column] + '</p>');
-
-                // set width of nonfrozen categories to take up the rest of the space in nonfrozen part and scroll-pane-table,
-                // only if scrolling is off
-                if (!flagSlider) {
-                    $('#' + htmlIdPrefix + 'category-column-secondary' + column).width($("#" + htmlIdPrefix + "nonfrozen-table2").width() / (columnNames.length - 1) - 1);
-                }
-            }
-
-            // TODO: this is a kludge?
-            $("#" + htmlIdPrefix + "frozen-categories2 .idi-table-category").height("2em");
-            $("#" + htmlIdPrefix + "scroll-content-categories2 .idi-table-category").height("2em");
-        }
-
-        // Populate cells
-        for (var row = 0; row < tableData2.length; row++) {
-            for (var column = 0; column < columnNames2.length; column++) {
-                if (column == 0) {
-                    var linkedCellString = '';
-                    if (flagLinkInFirstColumn) {
-                        linkedCellString = '<a href="' + friendlyUrl(tableData2[row][0])+ '">' + tableData2[row][0] + '</a>';
-                    }
-                    else {
-                        linkedCellString = tableData2[row][0];
-                    }
-
-                    $("#" + htmlIdPrefix + "frozen-table2").append('<div id="' + htmlIdPrefix + 'data2-column0-row' + row + '" class="idi-table-cell idi-table-cell-frozen row-alternating-cell-frozen-' + row % 2 + '"><p>' + linkedCellString + '</p></div>');
-                    $("#" + htmlIdPrefix + "scroll-content-table2").append('<div class="idi-table-row">');
-                    $('#' + htmlIdPrefix + 'data2-column0-row' + row).height(parseInt($('#' + htmlIdPrefix + 'data-column0-row' + row).height()));
-                }
-                else {
-                    // If numerical value, display it as it is, if string preceeded by * or **,
-                    // extract the number and attach the appropriate tooltip text
-                    var tooltipString = "";
-                    if (typeof(tableData2[row][column]) == 'string') {
-                        var matchResult;
-                        if (matchResult = tableData2[row][column].match(/^\*([^\*]+)$/)) {
-                            tooltipString = 'title="Estimated figures"';
-                        }
-                        else if (matchResult = tableData2[row][column].match(/^\*\*([^\*]+)$/)) {
-                            tooltipString = 'title="From quarter 3 2010 annual report"';
-                        }
-                    }
-
-                    // should add this to idi-table-row? Or maybe we just don't need that div at all?
-                    var cellValue = tableData2[row][column];
-                    if(cellValue == 0){
-                        cellValue = "-";
-                    }
-                    $("#" + htmlIdPrefix + "scroll-content-table2 .idi-table-row").last().append('<div id="' + htmlIdPrefix + 'data2-column' + column + '-row' + row + '" class="idi-table-cell ' + htmlIdPrefix + 'cell-nonfrozen row-alternating-' + row % 2 + ' align-right" ' + tooltipString + '><p>' + cellValue + '</p></div>');
-                    $('#' + htmlIdPrefix + 'data2-column' + column + '-row' + row).height(parseInt($('#' + htmlIdPrefix + 'data2-column0-row' + row).height()));
-                    // set width of nonfrozen cells to take up the rest of the space in nonfrozen part and scroll-pane-table,
-                    // only if scrolling is off
-                    if (!flagSlider) {
-                        if (row == 2) {
-//                   console.log($("#" + htmlIdPrefix + "nonfrozen-table").attr('id'));
-//                   console.log('width of nonfrozen-table: ' + $("#" + htmlIdPrefix + "nonfrozen-table").width());
-//                   console.log('width of frozen-table: ' + $("#" + htmlIdPrefix + "frozen-table").width());
-//                   console.log('width of table: ' + $("#" + htmlIdPrefix + "table").width());
-//                   console.log('width of nonfrozen-categories: ' + $("#" + htmlIdPrefix + "nonfrozen-categories").width());
-//                   console.log('width of frozen-categories: ' + $("#" + htmlIdPrefix + "frozen-categories").width());
-//                   console.log('width of categories: ' + $("#" + htmlIdPrefix + "categories").width());
-//                   console.log('setting width of ' + '#' + htmlIdPrefix + ' category-column to:' + $('#' + htmlIdPrefix + 'category-column' + column).width());
-//                   $('#' + htmlIdPrefix + 'category-column' + column).width($("#" + htmlIdPrefix + "nonfrozen-table").width() / (columnNames.length - 1) - 1.5);
-                        }
-
-                        $('#' + htmlIdPrefix + 'data2-column' + column + '-row' + row).width($("#" + htmlIdPrefix + "nonfrozen-table2").width() / (columnNames.length - 1) - 1);
-                    }
-                }
-                $('#' + htmlIdPrefix + 'data2-column' + column + '-row' + row).hover(function() {
-                        var currentRow = $(this).attr('id').match(/data2-column(\d+)-row(\d+)/)[2];
-                        $('#' + htmlIdPrefix + 'data2-column0-row' + currentRow).addClass("idi-table-row-hover-cell-frozen");
-                        for (var c = 1; c < columnNames.length; c++) {
-                            $('#' + htmlIdPrefix + 'data2-column' + c + '-row' + currentRow).addClass("idi-table-row-hover");
-                        }
-                    },
-                    function () {
-                        var currentRow = $(this).attr('id').match(/data2-column(\d+)-row(\d+)/)[2];
-                        $('#' + htmlIdPrefix + 'data2-column0-row' + currentRow).removeClass("idi-table-row-hover-cell-frozen");
-                        for (var c = 1; c < columnNames2.length; c++) {
-                            $('#' + htmlIdPrefix + 'data2-column' + c + '-row' + currentRow).removeClass("idi-table-row-hover");
-                        }
-                    });
-            }
-        }
-
-    } // end of if statement for building second table (within a table)
-
-    // If slider then set width of scroll-content divs based on number and width of cells
-    if (flagSlider) {
-//    console.log("setting width to " + (columnNames.length - 1) * (1 + parseInt($(".idi-table-cell-nonfrozen").width())));
-//    console.log("width of idi-table-cell-nonfrozen: " + $(".idi-table-cell-nonfrozen").width());
-//    console.log("setting width of " + htmlIdPrefix + "scroll-content-categories to " + (columnNames.length - 1) * (1 + parseInt($(".idi-table-cell-nonfrozen").width())));
-
-//    $("#" + htmlIdPrefix + "scroll-content-categories").width((columnNames.length - 1) * (1 + parseInt($(".idi-table-cell-nonfrozen").width())));
-//    $("#" + htmlIdPrefix + "scroll-content-table").width((columnNames.length - 1) * (1 + parseInt($(".idi-table-cell-nonfrozen").width())));
-
-//    console.log("width of idi-table-cell: " + $(".idi-table-cell").width());
-//    console.log("setting width of " + htmlIdPrefix + "scroll-content-categories to " + (columnNames.length - 1) * (1 + parseInt($(".idi-table-cell").width())));
-
-        $("#" + htmlIdPrefix + "scroll-content-categories").width((columnNames.length - 1) * (1 + parseInt($("#company-analysis-data-column1-row0").width())));
-        $("#" + htmlIdPrefix + "scroll-content-table").width((columnNames.length - 1) * (1 + parseInt($("#company-analysis-data-column1-row0").width())));
-        $("#" + htmlIdPrefix + "sub-content-table").width((columnNames.length - 1) * (1 + parseInt($("#company-analysis-data-column1-row0").width())));
-    }
-
-    // prevent user from resizing table.
-    $("#" + htmlIdPrefix + "table").width($("#" + htmlIdPrefix + "table").width());
-
-// console.log('=========================ENDING VALUES========================');
-// console.log('width of nonfrozen-table: ' + $("#" + htmlIdPrefix + "nonfrozen-table").width());
-// console.log('width of frozen-table: ' + $("#" + htmlIdPrefix + "frozen-table").width());
-// console.log('width of table: ' + $("#" + htmlIdPrefix + "table").width());
-// console.log('width of nonfrozen-categories: ' + $("#" + htmlIdPrefix + "nonfrozen-categories").width());
-// console.log('width of frozen-categories: ' + $("#" + htmlIdPrefix + "frozen-categories").width());
-// console.log('width of categories: ' + $("#" + htmlIdPrefix + "categories").width());
-// console.log('=========================ENDING VALUES========================');
-
-    $(".minus").each(function(){
-        if($(this).hasClass('zero')){
-            var text = $(this).text();
-            text = text.replace("-","") ;
-            $(this).text(text);
-
-        }  else {
-            var text = $(this).text();
-            text = text.replace("-","(")+")" ;
-            $(this).text(text);
-        }
-        $(this).removeClass("minus");
-
-    });
-
-    //find all the input used for filters
-    var inputSet = $("#mergersAndAcquisitions-static-categories input").filter(function(){
-        var r = $(this).attr('id').match(/acquirerFilterInput[0-9]+/);
-        if(r != null)
-            return true;
-        return false;
-    });
-
-    inputSet.each(function(){
-        $(this).keyup(function(){
-            applyFilters();
-        });
-    });
-
-    // filter by Select Options for Target Sector
-    $("#filterDropDown").change(function(){
-        applyFilters();
-    });
-
-    //filter by range
-    $("#range-input-from, #range-input-to").keyup(function(){
-        applyFilters();
-    });
-
-    //Filter by largest deals
-    $("#largest-deals").toggle(function() {
-        $("#largest-deals").css("border-bottom", "3px solid #00A653");
-        $(this).addClass("active");
-        applyFilters();
-    }, function() {
-        $("#largest-deals").css("border-bottom", "3px solid #666666");
-        $(this).removeClass("active");
-        applyFilters();
-    });
-
-    function applyFilters() {
-
-        //Show everything
-        $("#mergersAndAcquisitions-static-table").find("[table-datacell]").show();
-        $("#mergersAndAcquisitions-sub-content-table").find("[table-datacell]").show();
-
-        //find all the input used for filters
-        inputSet.each(function() {
-            if (!('#'+$(this).attr('value') =="" || '#'+$(this).attr('value') == null)) {
-                filterColumn('#'+$(this).attr('id'));
-            }
-        });
-
-        //filter by Select Options for Target Sector
-        if (!($("#filterDropDown").find(":selected").text() =="" || $("#filterDropDown").find(":selected").text() == null)) {
-            filterColumnByDropDown("#filterDropDown");
-        }
-
-        //filter by range
-        if (!($("#range-input-from").attr('value') =="" || $("#range-input-from").attr('value') == null )) {
-            filterColumnByRange();
-        }
-
-        //filter by range
-        if (!($("#range-input-to").attr('value') =="" || $("#range-input-to").attr('value') == null )) {
-            filterColumnByRange();
-        }
-
-        //filter by largest deals ( >1000 )
-        if ($("#largest-deals").hasClass("active")) {
-            filterColumnByLargestDeals(1000);
-        }
-    }
-
-}
-
-
-      </script>
-      <script type="text/javascript">
-         $(document).ready(function() {
-          // // Setup - add a text input to each footer cell
-          // $('#example tfoot th').each( function () {
-          //     var title = $(this).text();
-          //     $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-          // } );
-       
-          // DataTable
-          var table = $('#example').DataTable();
-       
-          // Apply the search
-          table.columns().every( function () {
-              var that = this;
-       
-              $( 'input', this.footer() ).on( 'keyup change', function () {
-                  if ( that.search() !== this.value ) {
-                      that
-                          .search( this.value )
-                          .draw();
-                  }
-              } );
-          } );
-      } );
-      </script>
+      
+      
    </body>
 </html>
