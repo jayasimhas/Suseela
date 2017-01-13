@@ -61,7 +61,8 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         public string TargetLocation => TextTranslator.Translate("MA.TargetLocation");
         public string TargetSector => TextTranslator.Translate("MA.TargetSector");
         public string DealsOmitted => TextTranslator.Translate("MA.DealsOmitted");
-        
+        public string Detail => TextTranslator.Translate("MA.Detail");
+
 
         private IEnumerable<AMGraph> GetGraphs()
         {
@@ -137,7 +138,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
                 {
                     var mergersAquirerList = jsonData.Children<JObject>().Select(jsonResult => new MergersAquisitionsResult
                     {
-                        Month = GetMonthName(jsonResult["deal_month"].Value<string>()),
+                        Month = jsonResult["deal_month"].Value<string>(),
                         Acquirer = ReturnCompanyPathIfExists(jsonResult["acquirer_company_id"].Value<string>(), jsonResult["acquirer_company_name"].Value<string>()),
                         Target = ReturnCompanyPathIfExists(jsonResult["target_company_id"].Value<string>(), jsonResult["target_company_name"].Value<string>()),
                         TargetSector = jsonResult["target_sector"].Value<string>(),
