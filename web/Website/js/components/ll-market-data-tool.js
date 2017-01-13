@@ -22,8 +22,8 @@
 			return optionStr;
 		},
 		renderTable: function(){
+			var self = this;
 			$('.submit').click(function(){
-				var self = this;
 				$.ajax({
 					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
 					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
