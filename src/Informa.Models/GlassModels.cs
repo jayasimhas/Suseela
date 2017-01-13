@@ -13296,6 +13296,133 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
 {
     /// <summary>
+    /// IGo_To_Port_Component Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Go To Port Component</para>	
+    /// <para>ID: 9C694213-FC81-410B-9537-C1D82E73702B</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IGo_To_Port_ComponentConstants.TemplateIdString)]
+    public partial interface IGo_To_Port_Component : IGlassBase
+    {
+        /// <summary>
+        /// Logo field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 16A9F3D1-9058-4E67-91C4-929A31871779</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Logo { get; set; }
+
+        /// <summary>
+        /// Title with Result field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5831FA5B-38FE-49C4-BA8F-78349AEE7F8A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.Title_With_ResultFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title_With_Result { get; set; }
+
+        /// <summary>
+        /// Title Without Result Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5042FBFD-5219-443F-AA68-D44610EBC489</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.Title_Without_ResulFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title_Without_Result { get; set; }
+
+        /// <summary>
+        /// Description field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 7B94C0C4-3697-4E20-9D8A-CC2BFDF9500D</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Description { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// IGo_To_Port_Component Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Go To Port Component</para>	
+    /// <para>ID: 9C694213-FC81-410B-9537-C1D82E73702B</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IGo_To_Port_Component__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Logo field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 16A9F3D1-9058-4E67-91C4-929A31871779</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Logo { get; set; }
+
+        /// <summary>
+        /// Title with Result field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5831FA5B-38FE-49C4-BA8F-78349AEE7F8A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.Title_With_ResultFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title_With_Result { get; set; }
+
+        /// <summary>
+        /// Title Without Result Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5042FBFD-5219-443F-AA68-D44610EBC489</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.Title_Without_ResulFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title_Without_Result { get; set; }
+
+        /// <summary>
+        /// Description field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 7B94C0C4-3697-4E20-9D8A-CC2BFDF9500D</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IGo_To_Port_ComponentConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Description { get; set; }
+
+    }
+
+    public static partial class IGo_To_Port_ComponentConstants
+    {
+
+        public const string TemplateIdString = "9C694213-FC81-410B-9537-C1D82E73702B";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Go To Port Component";
+
+
+        public static readonly ID LogoFieldId = new ID("16A9F3D1-9058-4E67-91C4-929A31871779");
+        public const string LogoFieldName = "Logo";
+
+        public static readonly ID Title_With_ResultFieldId = new ID("5831FA5B-38FE-49C4-BA8F-78349AEE7F8A");
+        public const string Title_With_ResultFieldName = "Title With Result";
+
+        public static readonly ID Title_Without_ResultFieldId = new ID("5042FBFD-5219-443F-AA68-D44610EBC489");
+        public const string Title_Without_ResulFieldName = "Title Without Result";
+
+        public static readonly ID DescriptionFieldId = new ID("7B94C0C4-3697-4E20-9D8A-CC2BFDF9500D");
+        public const string DescriptionFieldName = "Description";
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+    /// <summary>
     /// IShipping_Result_Component_Parameters Interface
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/Components/Shipping Result Component Parameters</para>	

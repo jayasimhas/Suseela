@@ -77,20 +77,7 @@ namespace Informa.Web.ViewModels.Casualty
         /// Populate MovementTypes dropdown
         /// </summary>
         public List<SelectListItem> PopulateByMovementTypesDropdown => PopulateDropdown("MovementTypesDropdown");
-        /// <summary>
-        /// Json Shipping Movement Data
-        /// </summary>
-        public string jsonShippingMovementsData => GetShippingMovementsData(ResultTableFeedUrl);
-
-        /// <summary>
-        /// Method to get Json Shipping data
-        /// </summary>
-        /// <param name="ResultTableFeedUrl">External feed url</param>
-        /// <returns></returns>
-        private string GetShippingMovementsData(string ResultTableFeedUrl)
-        {
-            return !string.IsNullOrEmpty(ResultTableFeedUrl) ? CompanyResultService.GetCompanyFeeds(ResultTableFeedUrl).Result : string.Empty;
-        }
+       
         /// <summary>
         /// Method to populate dropdowns
         /// </summary>
