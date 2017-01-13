@@ -23,13 +23,14 @@
 		},
 		renderTable: function(){
 			$('.submit').click(function(){
+				var self = this;
 				$.ajax({
 					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
-					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': ('#movementType option').val()},
+					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
 					dataType: 'json',
 					type: 'GET',
 					success: function (searchData) {
-						this.sendHTTPRequest(searchData);
+						self.sendHTTPRequest(searchData);
 					},
 					error: function (err) {
 						console.log(err)  
