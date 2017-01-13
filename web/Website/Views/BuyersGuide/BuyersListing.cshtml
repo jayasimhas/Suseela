@@ -49,13 +49,13 @@
                                 {
                                     <div class="buyers-guide">
                                             <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
-
+                                       
                                         <div class="text">
                                             <p>
                                                 @Html.Raw(agrow.AgrowShortDescription)
                                             </p>
                                         </div>
-                                        <a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a>
+                                        <a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailUrl</a>
                                     </div>
                                 }
                             </div>
@@ -85,7 +85,7 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowDetailUrl</a></h4>
+                                            <h4><a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailUrl</a></h4>
                                         </div>
                                     </div>
                                 }
@@ -112,6 +112,7 @@
                     }
                 }
             }
+            <div class="contact_terms"><p>@Html.Raw(Model.Body)</p></div>
         </div>
     </div>
 </div>

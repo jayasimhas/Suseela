@@ -81,8 +81,8 @@
 			var self = this;
 			$(document).on('change','#relDate', function(){
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
-				if(window.jsonCasualityListing[0][Value] != undefined) {
-					self.RenderTable(window.jsonCasualityListing[0][Value], $('#casualty-listing-table'));
+				if(window.jsonCasualtyListing[0][Value] != undefined) {
+					self.RenderTable(window.jsonCasualtyListing[0][Value], $('#casualty-listing-table'));
 					$('#casualty-listing-table').show();
 				} else {
 					$('#casualty-listing-table').hide();

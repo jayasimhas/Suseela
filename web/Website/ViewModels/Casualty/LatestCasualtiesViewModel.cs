@@ -25,13 +25,35 @@ namespace Informa.Web.ViewModels.Casualty
             AuthenticatedUserContext = authenticatedUserContext;
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        /// <summary>
+        /// HomePage URL
+        /// </summary>
         public string homePageUrl => SiterootContext?.Item._Url;
+        /// <summary>
+        /// Logo
+        /// </summary>
         public Image Logo => GlassModel?.Logo;
+        /// <summary>
+        /// Title
+        /// </summary>
         public string Title => GlassModel?.Title;
+        /// <summary>
+        /// Additional information
+        /// </summary>
         public string AdditionalInformation => GlassModel?.Additional_Information;
+        /// <summary>
+        /// Feed URL
+        /// </summary>
         public string FeedUrl => GlassModel?.External_Feed_Url;
+        /// <summary>
+        /// Json Latest casualties data
+        /// </summary>
         public string jsonLatestCasualties => GetLatestCasualties();
 
+        /// <summary>
+        /// Method to get latest casualties data
+        /// </summary>
+        /// <returns></returns>
         private string GetLatestCasualties()
         {
             return !string.IsNullOrEmpty(FeedUrl) ? CompanyResultService.GetCompanyFeeds(FeedUrl).Result : string.Empty;
