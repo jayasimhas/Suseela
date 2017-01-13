@@ -30,10 +30,10 @@
 					type: 'GET',
 					success: function (searchData) {
 						var searchData = tableObj;
-						var tableStr = '<thead class="table_head">';
+						var tableStr = '<thead class="table_head">', dataIdx = 0;
 							tableStr += '<tr><th colspan="7" class="pad-full-10">'+searchData[0].areaname+'</th></tr>';
 						$.each(searchData[0], function(key, val){
-							if(typeof key === 'object'){
+							if(typeof val === 'object'){
 								tableStr += '<tr class="visible-lg">';
 								$.each(val[0], function(k, v){
 									//tableStr += '<td class="pad-10">'+k+'</td>';
@@ -46,9 +46,10 @@
 						tableStr += '<tbody class="visible-lg">';
 						$.each(searchData[0], function(key, val){
 							if(typeof val === 'object'){
-								tableStr += '<tr>';
+								dataIdx++;
+								tableStr += '<tr data-name="focusData_'+dataIdx+'">';
 								tableStr += '<td colspan="6" class="graybg RB18 pad-10">'+key+'</td>';
-								tableStr += '<td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>';
+								tableStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);">top</a></td>';
 								tableStr += '</tr>';
 								
 								$.each(val, function(i, v){
@@ -85,11 +86,34 @@
 						tableStr += '</tbody>';
 						
 						$('#marketDataTable').html(tableStr);
+						
+						var marketLinks = '<ul>', linkIdx = 0;
+						$.each(searchData[0], function(key, val){
+							if(typeof val === 'object'){
+								linkIdx++;
+								marketLinks += '<li class="article-topics__li"><a href="javascript: void(0);" data-link=focusData_'+linkIdx+'>'+key+'</a></li>';
+							}
+						});
+						marketLinks += '</ul>';
+						
+						$('.gotolinks').html(marketLinks);
 					},
 					error: function (err) {
-						  
+						console.log(err)  
 					}
 				});
+				
+				$('.shippingData').addClass('hide');
+				$('.hideMarketData').removeClass('hide');
+			});
+			
+			$(document).on('click', '.moveTop', function(){
+				$(window).scrollTop(0);
+			});
+			
+			$('.gotolinks').on('click', 'li a', function(){
+				var $this = $(this), redirectLink = $this.attr('data-link');
+				$(window).scrollTop($('#marketDataTable tr[data-name=focusData_1]').offset().top);
 			});
 		},
 		init: function(data) {
