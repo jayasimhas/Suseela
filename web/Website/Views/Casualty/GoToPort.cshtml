@@ -1,0 +1,19 @@
+﻿@model Informa.Web.ViewModels.Casualty.GoToPortViewModel
+
+<div class="lloyd-related-links">
+    <div class="ll-logo-img">
+        @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
+            {
+            <a href="@Model.homePageUrl">
+                <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
+            </a>
+        }
+    </div>
+    <div class="allrelatedlinks">
+        <ul>
+            <li class="article-topics__section-header">@Model.TitleWithResult</li>
+            <li class="article-topics__section-header">@Model.TitleWithoutResult</li>
+        </ul>
+        @Html.Raw(Model.Description)
+    </div>
+</div>
