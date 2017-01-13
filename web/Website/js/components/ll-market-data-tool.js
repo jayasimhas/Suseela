@@ -29,7 +29,7 @@
 					dataType: 'json',
 					type: 'GET',
 					success: function (searchData) {
-						var searchData = tableObj;
+						//var searchData = tableObj;
 						var tableStr = '<thead class="table_head">', dataIdx = 0;
 							tableStr += '<tr><th colspan="7" class="pad-full-10">'+searchData[0].areaname+'</th></tr>';
 						$.each(searchData[0], function(key, val){
@@ -113,7 +113,7 @@
 			
 			$('.gotolinks').on('click', 'li a', function(){
 				var $this = $(this), redirectLink = $this.attr('data-link');
-				$(window).scrollTop($('#marketDataTable tr[data-name=focusData_1]').offset().top);
+				$(window).scrollTop($('#marketDataTable tr[data-name='+redirectLink+']').offset().top);
 			});
 		},
 		init: function(data) {
