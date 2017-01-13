@@ -1,4 +1,4 @@
-﻿@using Sitecore.FXM.Providers
+@using Sitecore.FXM.Providers
 @using Sitecore.FXM.Switchers
 @using Sitecore.Links
 @using Sitecore.Resources.Media
@@ -92,7 +92,7 @@
                 text-decoration: none !important;
             }
             .download-link a{
-                color: #000 !important;
+                color: #000000 !important;
             }
             a.mcnButton{
                 display:block;
@@ -126,11 +126,9 @@
                 color:#202020;
                 letter-spacing:normal;
                 text-align:left;
-                text-transform: uppercase;
                 font-size: 20px;
                 font-weight: bold;
                 margin-bottom: 8px;
-                color: #be1e2d;
             }
             h3{
                 color:#202020;
@@ -142,14 +140,29 @@
                 letter-spacing:normal;
                 text-align:left;
             }
-            .daily-alert {
-                background-color: #eee;
-                margin-bottom: 15px;
-            }
+			.grayBg{
+				background: #eeeeee;
+			}
+			.grayBg p{
+				font-family: Georgia, serif;
+			}
+			.caps-header{
+				text-transform: uppercase;
+			}
             .redbgPan{
                 background-color: #f9e5e6;
                 margin-bottom: 15px;
             }
+			.redbgPan p{
+				font-family: Georgia, serif;
+			}
+			.redbgPan h2{
+				text-transform: inherit !important;
+				color: #be1e2d !important;
+				font-family: Helvetica !important;
+				margin: 0px; 
+				padding: 0px;
+			}
             .daily-alert__cell {
                 padding-bottom: 16px;
                 padding-top: 16px;
@@ -158,7 +171,7 @@
             }
             .daily-alert-body {
                 font-size: 16px;
-                color: #777;
+                color: #777777;
                 margin-bottom: 0;
                 text-align: center;
                 line-height: 26px;
@@ -175,19 +188,38 @@
                 padding-bottom:0;
             }
             .threecolum{
-                border-bottom: 1px solid #ccc;
-                border-top: 2px solid #ccc;
+                border-bottom: 1px solid #cccccc;
+                border-top: 2px solid #cccccc;
                 background: #f1f2f2;
             }
             .threecolum td.pad{
                 padding-left: 12px;
                 padding-right: 12px;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px solid #cccccc;
                 display: table-cell;
                 height: 110px;
                 vertical-align: middle;
             }
-
+			.fr{
+				margin-left: 15px;
+			}
+			.footerTxt p{
+				font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif !important;
+				color: #888888;
+				font-size: 12px;
+				line-height: 150%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.twoColCont{
+				width: 600px;
+			}
+			.mobHeight{
+				height: 0px;
+				margin: 0px;
+				padding: 0px;
+				font-size: 0px;
+			}
         @@media only screen and (min-width:768px){
             .templateContainer{
                 width:600px !important;
@@ -213,7 +245,7 @@
                 width:100% !important;
             }
             h1{
-                font-size:22px !important;
+                font-size:20px !important;
                 line-height:125% !important;
             }
             h2{
@@ -229,10 +261,34 @@
                 line-height:150% !important;
             }
             .newsLetImg{
-                width: 100% !important;
-                height: 150px !important;
-                padding-bottom: 10px;
-            }
+				width: 100% !important;
+				height: 150px !important;
+				padding-bottom: 10px;
+				float: inherit !important;
+			}
+			.fr{
+				margin-left: 0px !important;
+			}
+			.mobPad{
+				padding: 0 10px;
+			}
+			.mcnTextBlockInner{
+				padding-right: 10px;
+			}
+			.twoColCont{
+				width: 100% !important;
+			}
+			.mobHeight{
+				height: 15px;
+				margin: 0px;
+				padding: 0px;
+			}
+			.layout-text-right{
+				padding-right: 10px;
+			}
+			.layout-text-left{
+				padding-left: 10px;
+			}
         }
 
     </style>
@@ -272,21 +328,21 @@
                                 </tr>
 
                                 <tr>
-                                    <td>
+                                    <td class="mobPad">
                                         <!--[if gte mso 9]>
-                <table align="center" border="0" cellspacing="0" cellpadding="0" width="640" style="width:640px;">
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                 <tr>
-                <td align="center" valign="top" width="640" style="width:640px;">
+                <td align="center" valign="top" width="600" style="width:600px;">
                 <![endif]-->
-                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 640px !important; padding: 0 20px; border: 1px solid #ccc;">
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important; padding: 0; border: 1px solid #cccccc;">
                                             <tr>
                                                 <td>
                                                     <!--[if gte mso 9]>
-                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="640" style="width:640px;">
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                             <tr>
-                            <td align="center" valign="top" width="640" style="width:640px;">
+                            <td align="center" valign="top" width="600" style="width:600px;">
                             <![endif]-->
-                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 640px !important; padding: 0 20px;">
+                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important; padding: 0 20px;">
                                                         <tr>
                                                             <td align="center" valign="top" class="templateHeader">
                                                                 <!--[if gte mso 9]>
@@ -304,12 +360,12 @@
                                                                                             <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <td valign="top" class="preheaderContent standardPadding" style="padding-top: 12px;padding-bottom: 12px;font-size: 13px; padding-right: 24px">
-                                                                                                            <span class="header__date" style="font-size: 13px; color: #888; font-weight: bold">
+                                                                                                        <td valign="top" class="preheaderContent standardPadding layout-text-left" style="padding-top: 6px;padding-bottom: 6px;font-size: 13px; padding-right: 24px">
+                                                                                                            <span class="header__date" style="font-size: 13px; color: #888888; font-weight: bold">
                                                                                                                 @Editable(Model.GlassModel, m => m.Date_Text)
                                                                                                             </span>
                                                                                                         </td>
-                                                                                                        <td valign="top" class="preheaderContent standardPadding layout-text-right" style="padding-top: 12px;padding-bottom: 12px;font-size: 13px;padding-left: 24px; text-align: right">
+                                                                                                        <td valign="top" class="preheaderContent standardPadding layout-text-right" style="padding-top: 6px;padding-bottom: 6px;font-size: 13px;padding-left: 24px; text-align: right">
                                                                                                             @if (Model.HeaderNavigation != null)
                                                                                 {
                                                                                     foreach (var nav in Model.HeaderNavigation)
@@ -359,7 +415,7 @@
                                                                                             <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <td width="150" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                                                                        <td width="150" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%" class="layout-text-left">
                                                                                                             <a href="#"><img width="200" src=@Model.EmailLogoUrl" style="border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic"></a>
                                                                                                         </td>
                                                                                                         <td valign="bottom" align="right" class="preheaderContent standardPadding layout-text-right" style="text-align: right;">
@@ -394,7 +450,7 @@
                 <![endif]-->
                                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
                                                                     <tr>
-                                                                        <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <td valign="top" class="bodyContainer grayBg" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
 
                                                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                                                 <tbody class="mcnTextBlockOuter">
@@ -409,10 +465,11 @@
                                             <![endif]-->
                                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
                                                                                                 <tbody>
+																									<tr><td height="15"></td></tr>
                                                                                                     <tr>
 
                                                                                                         <td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; font-size: 16px; line-height: 150%; text-align: center;">
-                                                                                                            <h1 style="display: block; margin: 0; padding: 0; font-family: Helvetica; font-size: 26px; font-style: normal; font-weight: bold; line-height: 125%; letter-spacing: normal; text-align: center; padding-top: 16px;">@Editable(Model.GlassModel, m => m.Top_Header_Title)</h1>
+                                                                                                            <h2 style="display: block; margin: 0; padding: 0; font-family: Helvetica; font-size: 20px; font-style: normal; font-weight: bold; line-height: 125%; letter-spacing: normal; text-align: center; text-transform: uppercase;">@Editable(Model.GlassModel, m => m.Top_Header_Title)</h2>
                                                                                                             <p style="margin: 10px 0; padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: center;">@Editable(Model.GlassModel, m => m.Top_Header_Text)</p>
 
                                                                                                         </td>
@@ -440,6 +497,9 @@
                 <![endif]-->
                                                             </td>
                                                         </tr>
+														
+														<tr><td height="15"></td></tr>
+														
                                                         <!--Main body starts -->
                                                        @Html.Sitecore().Placeholder("email-main")
 
@@ -491,11 +551,10 @@
                                                             </td>
                                                         </tr>
                                                         <!-- Adv. ends -->
-
-                                                       
+														
                                                         <!-- Footer starts -->
                                                         <tr>
-                                                            <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-bottom: 0;">
+                                                            <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-bottom: 0; text-align: center;">
                                                                 <!--[if gte mso 9]>
                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                 <tr>
@@ -503,30 +562,30 @@
                 <![endif]-->
                                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
                                                                     <tr>
-                                                                        <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <td valign="top" class="bodyContainer grayBg" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
 
                                                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                                                 <tbody class="mcnTextBlockOuter">
                                                                                     <tr>
                                                                                         <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                                                             <!--[if mso]>
-                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                                             <tr>
                                             <![endif]-->
                                                                                             <!--[if mso]>
                                             <td valign="top" width="600" style="width:600px;">
                                             <![endif]-->
-                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                                                            <table align="center" border="0" class="footerTxt" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
                                                                                                 <tbody>
                                                                                                     <tr>
 
-                                                                                                        <td style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                                                                            <span style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #040400;text-align: center;font-weight: normal">
+                                                                                                        <td align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                                                                            <span style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
                                                                                                                 @Html.Raw(Model.SiteRoot.Email_Footer)
                                                                                                             </span>
                                                                                                             @if (Model.FooterNavigation != null)
                                                                                                             {
-                                                                                                                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #040400;text-align: center;font-weight: normal">
+                                                                                                                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
                                                                                                                     @foreach (var nav in Model.FooterNavigation)
                                                                                                                     {
                                                                                                                         <a href="@nav.LinkUrl" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d;text-decoration: none">@nav.Text</a>
