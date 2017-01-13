@@ -1144,7 +1144,8 @@
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
-    <Compile Include="Areas\Download\JsonDataFromFeedController.cs" />
+    <Compile Include="Areas\Download\Controllers\JsonDataFromFeedController.cs" />
+    <Compile Include="Areas\Download\DownloadAreaRegistration.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
