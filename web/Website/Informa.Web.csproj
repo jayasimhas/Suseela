@@ -1148,6 +1148,7 @@
     <Compile Include="Areas\Download\DownloadAreaRegistration.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
+    <Compile Include="CompanyLatestNewsViewModel.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\DCDController.cs" />
@@ -2087,6 +2088,7 @@
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="Areas\User\Views\web.config" />
+    <Content Include="CompanyLatestNews.cshtml" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>
