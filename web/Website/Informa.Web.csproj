@@ -1276,6 +1276,7 @@
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
+    <Compile Include="ViewModels\CompanyLatestNewsViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
@@ -2247,6 +2248,7 @@
     <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
+    <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
