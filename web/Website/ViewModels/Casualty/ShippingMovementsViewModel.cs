@@ -85,10 +85,10 @@ namespace Informa.Web.ViewModels.Casualty
         /// <returns></returns>
         public List<SelectListItem> PopulateDropdown(string dropdownType)
         {
-            if (!string.IsNullOrEmpty(ResultTableFeedUrl))
+            if (!string.IsNullOrEmpty(DropdownsFeedUrl))
             {
                 List<SelectListItem> selectItemList = new List<SelectListItem>();
-                var jsonAreaDropdown = CompanyResultService.GetCompanyFeeds(ResultTableFeedUrl).Result;
+                var jsonAreaDropdown = CompanyResultService.GetCompanyFeeds(DropdownsFeedUrl).Result;
 
                 if (!string.IsNullOrEmpty(jsonAreaDropdown) && string.Equals(dropdownType, "AreaDropdown", StringComparison.OrdinalIgnoreCase))
                 {

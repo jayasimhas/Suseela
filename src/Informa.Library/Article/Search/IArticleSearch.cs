@@ -15,5 +15,6 @@ namespace Informa.Library.Article.Search
         string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
 		IArticleSearchResults GetLegacyArticleUrl(string path);
         IPersonalizedArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter, DateTime? PubStartDate, DateTime? PubEndDate);
+        IArticleForCompanySearchResults ArticlesRelatedToCompany(IArticleSearchFilter filter);
     }
 }
