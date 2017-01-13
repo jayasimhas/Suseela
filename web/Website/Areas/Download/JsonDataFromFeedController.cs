@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using Informa.Web.Areas.Account.Models.User.Management;
 
 namespace Informa.Web.Areas.Download
 {
@@ -16,17 +17,18 @@ namespace Informa.Web.Areas.Download
             CompanyResultService = companyResultService;
         }
         // GET: Account/JsonDataFromFeed
-        public string ReadJsonShippingMovements(string feed, string area, string movementType)
+        public string ReadJsonShippingMovements(PreferencesRequest request)
         {
-            if (!string.IsNullOrEmpty(feed) && !string.IsNullOrEmpty(area) && !string.IsNullOrEmpty(movementType))
-            {
-                string feedUrl = string.Format(feed, area, movementType);
-                return CompanyResultService.GetCompanyFeeds(feed).Result;
-            }
-            else
-            {
-                return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/ShippingMovements.json"));
-            }
+            //if (!string.IsNullOrEmpty(feed) && !string.IsNullOrEmpty(areaCode) && !string.IsNullOrEmpty(movementType))
+            //{
+            //    string feedUrl = string.Format(feed, areaCode, movementType);
+            //    return CompanyResultService.GetCompanyFeeds(feed).Result;
+            //}
+            //else
+            //{
+            //    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/ShippingMovements.json"));
+            //}
+            return "";
         }
     }
 }
