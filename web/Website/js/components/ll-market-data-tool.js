@@ -29,74 +29,7 @@
 					dataType: 'json',
 					type: 'GET',
 					success: function (searchData) {
-						//var searchData = tableObj;
-						var tableStr = '<thead class="table_head">', dataIdx = 0;
-							tableStr += '<tr><th colspan="7" class="pad-full-10">'+searchData[0].areaname+'</th></tr>';
-						$.each(searchData[0], function(key, val){
-							if(typeof val === 'object'){
-								tableStr += '<tr class="visible-lg">';
-								$.each(val[0], function(k, v){
-									//tableStr += '<td class="pad-10">'+k+'</td>';
-								});
-								tableStr += '</tr>';
-							}
-						});
-						tableStr += '</thead>';
-						
-						tableStr += '<tbody class="visible-lg">';
-						$.each(searchData[0], function(key, val){
-							if(typeof val === 'object'){
-								dataIdx++;
-								tableStr += '<tr data-name="focusData_'+dataIdx+'">';
-								tableStr += '<td colspan="6" class="graybg RB18 pad-10">'+key+'</td>';
-								tableStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);">top</a></td>';
-								tableStr += '</tr>';
-								
-								$.each(val, function(i, v){
-									tableStr += '<tr>';
-									tableStr += '<td class="RB16 pad-10">'+v["Move Date"]+'</td>';
-									tableStr += '<td class="R16 pad-10">'+v["Vessel Name"]+'</td>';
-									tableStr += '<td class="R16 pad-10">'+v["Flag"]+'</td>';
-									tableStr += '<td class="R16 pad-10">'+v["Gross"]+'</td>';
-									tableStr += '<td class="R16 pad-10">'+v["Origin"]+'</td>';
-									tableStr += '<td class="R16 pad-10">'+v["Destination"]+'</td>';
-									tableStr += '</tr>';
-								});
-							}
-						});
-						tableStr += '</tbody>';
-						
-						tableStr += '<tbody class="visible-sm">';
-						$.each(searchData[0], function(key, val){
-							if(typeof val === 'object'){
-								tableStr += '<tr>';
-								tableStr += '<td colspan="2" class="graybg RB18 pad-full-10">'+key+'</td>';
-								tableStr += '</tr>';
-								
-								$.each(val, function(i, v){
-									$.each(v, function(idx, vl){
-										tableStr += '<tr>';
-										tableStr += '<td class="pad-10 R21_GrayColor">'+idx+'</td>';
-										tableStr += '<td class="pad-10 R21_RedColor">'+vl+'</td>';
-										tableStr += '</tr>';
-									});
-								});
-							}
-						});
-						tableStr += '</tbody>';
-						
-						$('#marketDataTable').html(tableStr);
-						
-						var marketLinks = '<ul>', linkIdx = 0;
-						$.each(searchData[0], function(key, val){
-							if(typeof val === 'object'){
-								linkIdx++;
-								marketLinks += '<li class="article-topics__li"><a href="javascript: void(0);" data-link=focusData_'+linkIdx+'>'+key+'</a></li>';
-							}
-						});
-						marketLinks += '</ul>';
-						
-						$('.gotolinks').html(marketLinks);
+						this.sendHTTPRequest(searchData);
 					},
 					error: function (err) {
 						console.log(err)  
@@ -115,6 +48,78 @@
 				var $this = $(this), redirectLink = $this.attr('data-link');
 				$(window).scrollTop($('#marketDataTable tr[data-name='+redirectLink+']').offset().top);
 			});
+		},
+		sendHTTPRequest: function(searchData){
+			//var searchData = tableObj;
+			var tableStr = '<thead class="table_head">', dataIdx = 0, loadHead = 0;
+				tableStr += '<tr><th colspan="7" class="pad-full-10">'+searchData[0].areaname+'</th></tr>';
+			$.each(searchData[0], function(key, val){
+				if(typeof val === 'object' && loadHead == 0){
+					loadHead++;
+					tableStr += '<tr class="visible-lg">';
+					$.each(val[0], function(k, v){
+						tableStr += '<td class="pad-10">'+k+'</td>';
+					});
+					tableStr += '</tr>';
+				}
+			});
+			tableStr += '</thead>';
+			
+			tableStr += '<tbody class="visible-lg">';
+			$.each(searchData[0], function(key, val){
+				if(typeof val === 'object'){
+					dataIdx++;
+					tableStr += '<tr data-name="focusData_'+dataIdx+'">';
+					tableStr += '<td colspan="6" class="graybg RB18 pad-10">'+key+'</td>';
+					tableStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);">top</a></td>';
+					tableStr += '</tr>';
+					
+					$.each(val, function(i, v){
+						tableStr += '<tr>';
+						tableStr += '<td class="RB16 pad-10">'+v["Move Date"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Vessel Name"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Flag"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Gross"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Origin"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Destination"]+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v["Vessel Type"]+'</td>';
+						tableStr += '</tr>';
+					});
+				}
+			});
+			tableStr += '</tbody>';
+			
+			tableStr += '<tbody class="visible-sm">';
+			$.each(searchData[0], function(key, val){
+				if(typeof val === 'object'){
+					tableStr += '<tr>';
+					tableStr += '<td colspan="2" class="graybg RB18 pad-full-10">'+key+'</td>';
+					tableStr += '</tr>';
+					
+					$.each(val, function(i, v){
+						$.each(v, function(idx, vl){
+							tableStr += '<tr>';
+							tableStr += '<td class="pad-10 R21_GrayColor">'+idx+'</td>';
+							tableStr += '<td class="pad-10 R21_RedColor">'+vl+'</td>';
+							tableStr += '</tr>';
+						});
+					});
+				}
+			});
+			tableStr += '</tbody>';
+			
+			$('#marketDataTable').html(tableStr);
+			
+			var marketLinks = '<ul>', linkIdx = 0;
+			$.each(searchData[0], function(key, val){
+				if(typeof val === 'object'){
+					linkIdx++;
+					marketLinks += '<li class="article-topics__li"><a href="javascript: void(0);" data-link=focusData_'+linkIdx+'>'+key+'</a></li>';
+				}
+			});
+			marketLinks += '</ul>';
+			
+			$('.gotolinks').html(marketLinks);
 		},
 		init: function(data) {
 			//this.renderShippingData(data);

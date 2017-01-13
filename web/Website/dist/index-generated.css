@@ -8096,7 +8096,7 @@ div#feedbacklite.fbl_r {
   .lli-brand-container .lli-brand-box {
     padding: 10px;
     background: #f7f7f7; }
-  .lli-brand-container form fieldset {
+  .lli-brand-container fieldset {
     border: 0; }
   .lli-brand-container .selectivity-single-select {
     background: #ffffff; }
