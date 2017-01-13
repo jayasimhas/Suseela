@@ -122,30 +122,21 @@
                         <h5 class="secondary_heading">Casualties</h5>
                         <hr/>
                         <div class="ll-casualty-form">
-                           <form action="/ll/sector/markets/casualty-listing.htm" method="post" id="reported-date">
-                              <label for="relDate" style="float: left;">View casualty reports for:</label>
-                              <select name="relDate"  style="float: left;" id="relDate" class="common-field inline">
-                                 <option value="13-12-2016">Tue, 13 December 2016</option>
+                           <div class="form-control">
+                              <label for="relDate">View casualty reports for:</label>
+                              <select name="relDate" id="relDate" class="common-field inline">
+                                 <option value="12-02-2016">Tue, 12 January 2016</option>
                                  <option value="12-12-2016">Mon, 12 December 2016</option>
-                                 <option value="11-12-2016">Sun, 11 December 2016</option>
-                                 <option value="10-12-2016">Sat, 10 December 2016</option>
-                                 <option value="09-12-2016">Fri, 09 December 2016</option>
-                                 <option value="08-12-2016">Thu, 08 December 2016</option>
-                                 <option value="07-12-2016">Wed, 07 December 2016</option>
                               </select>
-                           </form>
-                           <form action="" id="jump-to" style="display: block;">
+                           </div>
+                           <div class="form-control jumpToSection">
                               <label for="jumpTo">Jump to:</label>
-                              <select name="jumpTo" id="jumpTo" class="common-field inline">
-                                 <option value="Marine">Marine</option>
-                                 <option value="Weather &amp; Navigation">Weather &amp; Navigation</option>
-                                 <option value="Labour Disputes">Labour Disputes</option>
-                                 <option value="Natural Disasters">Natural Disasters</option>
-                              </select>
-                           </form>
+                              <!-- <select name="jumpTo" id="jumpTo" class="common-field inline">
+                              </select> -->
+                           </div>
                         </div>
-                        <table class="table">
-                           <thead class="table_head">
+                        <table class="table" id="casualty-listing-table">
+                           <!-- <thead class="table_head">
                               <tr class="visible-lg">
                                  <th class="pad-10">Title</th>
                                  <th class="pad-10">Date of Incident</th>
@@ -154,8 +145,8 @@
                               <tr class="visible-sm" >
                                  <th colspan="6" class="pad-full-10">Table Header</th>
                               </tr>
-                           </thead>
-                           <tbody class="visible-lg">
+                           </thead> -->
+                           <!-- <tbody class="visible-lg">
                               <tr>
                                  <td colspan="2" class="graybg RB18 pad-10"> MARINE</td>
                                  <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
@@ -212,8 +203,8 @@
                               <tr>
                                  <td class="RB16 pad-10"><a href="#">RONJA VIKING (Norway)</a></td>
                               </tr>
-                           </tbody>
-                           <tbody class="visible-sm">
+                           </tbody> -->
+                           <!-- <tbody class="visible-sm">
                               <tr>
                                  <td class="graybg RB18 pad-full-10"> MARINE</td>
                                  <td align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
@@ -294,7 +285,7 @@
                                  <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
                                  </a>
                               </tr>
-                           </tbody>
+                           </tbody> -->
                         </table>
                      </div>
                   </div>
@@ -655,6 +646,85 @@
          <p></p>
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
+      <script type="text/javascript">
+         var jsonCasualtyListing = [
+              {
+                "12-02-2016": {
+                  "casualtymarine": {
+                    "casualtytitle": "MARINE",
+                    "casualtyData": [
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "22",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "23",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                  },
+                  "casualtyseizures": {
+                    "casualtytitle": "SEIZURES",
+                    "casualtyData": [
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "24",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "25",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                  }
+                },
+                "12-12-2016": {
+                  "casualtymarine": {
+                    "casualtytitle": "MARINE2",
+                    "casualtyData": [
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "22",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "23",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                  },
+                  "casualtyseizures": {
+                    "casualtytitle": "SEIZURES2",
+                    "casualtyData": [
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "24",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                        "Title": "APL DENVER (Gibraltar)",
+                        "incidentId": "25",
+                        "Date of Incident": "03.01.2017",
+                        "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+
+      </script>
       <script src="/dist/js/index.js"></script> 
    </body>
 </html>

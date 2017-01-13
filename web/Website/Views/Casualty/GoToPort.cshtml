@@ -1,0 +1,32 @@
+﻿@model Informa.Web.ViewModels.Casualty.GoToPortViewModel
+
+
+    <div class="ll-logo-img">
+        @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
+            {
+            <a href="@Model.homePageUrl">
+                <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
+            </a>
+        }
+    </div>
+<div class="marketdata-links">
+    <div class="hideMarketData hide">
+        <h2>@Model.TitleWithResult</h2>
+        <div class="gotolinks">
+        </div>
+    </div>
+</div> 
+    <div class="shipping">
+        <ul>
+            <li class="article-topics__section-header">@Model.TitleWithResult</li>
+            <li class="article-topics__section-header">@Model.TitleWithoutResult</li>
+        </ul>
+        @Html.Raw(Model.Description)
+    </div>
+<div class="marketdata-links">
+    <div class="hideMarketData hide">
+        <h2>Go To Port</h2>
+        <div class="gotolinks">
+        </div>
+    </div>
+</div> 

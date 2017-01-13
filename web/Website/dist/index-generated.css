@@ -1326,9 +1326,22 @@ section: Alerts
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
           width: 100%; } }
       .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
-        width: 100%; }
+        width: 360px;
+        height: 200px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell; }
+        @media (max-width: 480px) {
+          .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
+            width: 100%;
+            height: auto; } }
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
-          width: 100%; }
+          max-width: 360px;
+          max-height: 200px; }
+          @media (max-width: 480px) {
+            .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
+              width: 100%;
+              height: 100%; } }
       .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
       .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
       .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide
@@ -1342,12 +1355,10 @@ section: Alerts
 
 .agroBuyers .buyers-guide-listing-link {
   width: 100%;
-  float: left;
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
   .agroBuyers .buyers-guide-listing-link .buyers-guide-row {
-    width: 100%;
-    float: left; }
+    width: 100%; }
     .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
       width: 45%;
       float: left;
@@ -1358,8 +1369,17 @@ section: Alerts
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
           width: 100%; } }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
-        width: 100%; }
+        width: 540px;
+        height: 300px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell; }
+        @media (max-width: 480px) {
+          .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
+            width: 100%;
+            height: auto; } }
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image img {
+          max-width: 100%;
           width: 100%; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
       .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide
@@ -1372,7 +1392,10 @@ section: Alerts
         font-weight: 700;
         font-style: normal;
         margin-bottom: 16px;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .link.mobile-table-exit {
         margin-top: 16px;
         margin-top: 1rem;
@@ -1389,12 +1412,10 @@ section: Alerts
 
 .agroBuyers .buyers-guide-listing-text {
   width: 100%;
-  float: left;
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
   .agroBuyers .buyers-guide-listing-text .buyers-guide-row {
-    width: 100%;
-    float: left; }
+    width: 100%; }
     .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
       width: 45%;
       float: left;
@@ -1405,14 +1426,28 @@ section: Alerts
       margin-right: 3%;
       border: 1px solid #d1d3d4;
       border-radius: 2px;
-      padding: 24px;
-      padding: 1.5rem; }
+      padding: 24px 24px 16px;
+      padding: 1.5rem 1.5rem 1rem; }
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
           width: 100%; } }
-      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .text {
-        margin-bottom: 16px;
-        margin-bottom: 1rem; }
+      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .text p {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        height: 200px;
+        position: relative;
+        overflow: hidden; }
+        .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .text p:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 50px;
+          bottom: 0;
+          left: 0;
+          background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 45%, white 100%);
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 45%, white 100%);
+          z-index: 227; }
       .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide h4, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .lightbox-modal__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .exhibit-title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .article-exhibit__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
       .article-exhibit--pull-left__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
       .article-exhibit--pull-right__title, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide
@@ -1426,14 +1461,15 @@ section: Alerts
         margin-bottom: 16px;
         margin-bottom: 1rem; }
       .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide a.link, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.pop-out__reset-password, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.sortable-table__list-toggler, .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .link.mobile-table-exit {
-        margin-top: 16px;
-        margin-top: 1rem;
         font-family: "PT Serif", Georgia, serif;
         font-style: regular;
         font-weight: 400;
         font-size: 18px;
         font-size: 1.125rem;
-        line-height: 30px; }
+        line-height: 25px;
+        height: 50px;
+        overflow: hidden;
+        display: block; }
 
 .agroBuyers hr {
   margin-bottom: 24px;
@@ -6357,7 +6393,11 @@ section: UI Elements
   margin-left: 10px; }
 
 .compareChart .eachChartData {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  width: 790px; }
+  @media (max-width: 480px) {
+    .compareChart .eachChartData {
+      width: 100%; } }
   .compareChart .eachChartData #GWP-CHART, .compareChart .eachChartData #NWP-CHART, .compareChart .eachChartData #UR-CHART, .compareChart .eachChartData #NP-CHART, .compareChart .eachChartData #SF-CHART, .compareChart .eachChartData #NWPNR-CHART, .compareChart .eachChartData #SFNR-CHART, .compareChart .eachChartData #NPSFR-CHART {
     display: block;
     min-height: 300px; }
@@ -6394,6 +6434,12 @@ section: UI Elements
     border: 1px solid #d9dadb;
     border-top: none; }
     .compareChart .eachChartData .chartData.hide {
+      display: none; }
+  .compareChart .eachChartData .graph-container {
+    padding: 12px;
+    border: 1px solid #d9dadb;
+    border-top: none; }
+    .compareChart .eachChartData .graph-container.hide {
       display: none; }
 
 .compareChart .showAll {
@@ -8006,30 +8052,33 @@ div#feedbacklite.fbl_r {
     clear: both;
     display: block; }
 
-.ll-casualty-form form {
+.ll-casualty-form .form-control {
   float: left;
   margin-bottom: 20px; }
   @media (max-width: 480px) {
-    .ll-casualty-form form {
+    .ll-casualty-form .form-control {
       width: 100%;
       float: none; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .ll-casualty-form form {
+    .ll-casualty-form .form-control {
       width: 50%; } }
-  .ll-casualty-form form label {
+  .ll-casualty-form .form-control label {
     float: left;
     margin-top: 8px;
     margin-right: 5px; }
     @media (max-width: 480px) {
-      .ll-casualty-form form label {
+      .ll-casualty-form .form-control label {
         width: 100%;
         margin-bottom: 1em; } }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-      .ll-casualty-form form label {
+      .ll-casualty-form .form-control label {
         width: 100%;
         margin-bottom: 1em; } }
-  .ll-casualty-form form#jump-to {
+  .ll-casualty-form .form-control:last-child {
     float: right; }
+
+.ll-casualty-form .selectivity-single-select-input {
+  visibility: hidden; }
 
 .ll-casualty-form .selectivity-input {
   position: relative; }
@@ -8086,6 +8135,51 @@ div#feedbacklite.fbl_r {
 
 .graybg {
   border-bottom: 1px solid #d1d3d4; }
+
+.lloyd-related-links {
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+
+.merge-acquistion input[type="text"] {
+  width: 100%;
+  color: #000; }
+
+.merge-acquistion .selectivity-input {
+  width: 100%;
+  color: #000; }
+
+.merge-acquistion .range-wrapper {
+  float: none;
+  width: 100%; }
+
+.merge-acquistion input.range-field {
+  width: 30px !important; }
+
+.merge-acquistion th span, .merge-acquistion .sorting-buttons {
+  float: left;
+  margin-right: 5px; }
+
+.merge-acquistion .selectivity-single-select {
+  box-sizing: border-box; }
+
+.merge-acquistion .selectivity-single-select-input {
+  padding: 2px !important;
+  width: 100% !important; }
+
+.merge-acquistion .selectivity-single-result-container {
+  top: 4px; }
+
+.merge-acquistion .form-control {
+  margin-bottom: 20px; }
+
+.merge-acquistion .form-control input {
+  width: 100%; }
+
+.marketdata-links .hideMarketData.hide {
+  display: none; }
+
+.marketdata-links .shippingData.hide {
+  display: none; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

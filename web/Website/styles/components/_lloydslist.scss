@@ -1,5 +1,5 @@
 .ll-casualty-form {
-	form {
+	.form-control {
         float: left;
         margin-bottom: 20px;
         @include breakpoint('small') {
@@ -22,9 +22,12 @@
 	    		margin-bottom: 1em;
 	    	}
         }
-        &#jump-to {
+        &:last-child {
         	float: right;
         }
+     }
+     .selectivity-single-select-input {
+     	visibility: hidden;
      }
      .selectivity-input {
      	position: relative;
@@ -92,4 +95,58 @@
 }
 .graybg {
 	border-bottom: 1px solid #d1d3d4;
+}
+.lloyd-related-links {
+    margin-top: 1.25rem;
+}
+.merge-acquistion {
+	input[type="text"] {
+	    width: 100%;
+	    color: #000;
+	}
+	.selectivity-input {
+	    width: 100%;
+	    color: #000;
+	 }
+	.range-wrapper {
+	    float: none;
+	    width: 100%;
+	 }
+	 input.range-field {
+	    width: 30px !important;
+	 }
+
+	 th span, .sorting-buttons {
+	    float: left;
+	    margin-right: 5px;
+	 }
+	 .selectivity-single-select {
+	    box-sizing: border-box;
+	 }
+	 .selectivity-single-select-input {
+	       padding: 2px !important;
+	       width: 100% !important;
+	 }
+	 .selectivity-single-result-container {
+	    top: 4px;
+	 }
+	 .form-control {
+	    margin-bottom: 20px;
+	 }
+	 .form-control input {
+	    width: 100%;
+	 }
+ }
+
+.marketdata-links{
+	.hideMarketData{
+		&.hide{
+			display: none;
+		}
+	}
+	.shippingData{
+		&.hide{
+			display: none;
+		}
+	}
 }

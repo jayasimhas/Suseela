@@ -83,14 +83,21 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
                             IHTMLDocument2 htmldoc2 = (IHTMLDocument2)htmldoc;
                             htmldoc2.write(new object[] { job.Body });
                             JobShortdesc = htmldoc2.body?.outerText;
-                            JobShortdesc = Regex.Replace(JobShortdesc, "\r\n", string.Empty);
-                            if (JobShortdesc != null && JobShortdesc.Length > 150)
+                            if(!string.IsNullOrEmpty(JobShortdesc))
                             {
-                                jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(JobShortdesc.Take(150).ToArray()) + "...", JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
+                                JobShortdesc = Regex.Replace(JobShortdesc, "\r\n", string.Empty);
+                                if (JobShortdesc != null && JobShortdesc.Length > 150)
+                                {
+                                    jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = new string(JobShortdesc.Take(150).ToArray()) + "...", JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
+                                }
+                                else if (JobShortdesc != null && JobShortdesc.Length <= 150)
+                                {
+                                    jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = JobShortdesc, JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
+                                }
                             }
-                            else if (JobShortdesc != null && JobShortdesc.Length <= 150)
+                            else
                             {
-                                jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = JobShortdesc, JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
+                                jobTiles.Add(new JobTile { JobTitle = job.Title, JobLogo = job.JobLogo, JobShortDescription = string.Empty, JobPublishedDate = job.PublishedDate, JobDetailUrl = job._AbsoluteUrl });
                             }
                             htmldoc2.close();
                             htmldoc.close();

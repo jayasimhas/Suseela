@@ -62,7 +62,7 @@ namespace Informa.Web.ViewModels.Articles
         {
             get
             {
-                var taxonomyIds = string.Join(",", GlassModel.Taxonomies.Select(i => $"'{i._Id.ToString()}'"));
+                var taxonomyIds = string.Join(",", GlassModel.Taxonomies.Select(i => $"{i._Id.ToString()}"));
                 return taxonomyIds;
             }
         }
@@ -91,7 +91,7 @@ namespace Informa.Web.ViewModels.Articles
         private string GetPreferedTaxonomyIds()
         {
             IList<Section> Sections = GetSections();
-            var taxnomyids = string.Join(",", Sections.Select(i => $"'{i.TaxonomyIds.ElementAt(0)}'"));
+            var taxnomyids = string.Join(",", Sections.Select(i => $"{i.TaxonomyIds.ElementAt(0)}"));
             return taxnomyids;
         }
 

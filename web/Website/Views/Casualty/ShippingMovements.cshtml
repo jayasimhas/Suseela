@@ -1,0 +1,36 @@
+﻿@model Informa.Web.ViewModels.Casualty.ShippingMovementsViewModel
+<div class="small_table">
+    <div class="article-left-rail">
+        <div class="table-responsive" id="market-data-tool">
+            <h5 class="secondary_heading">@Model.PageTitle</h5>
+            <hr />
+            <div class="lli-brand-container shallow-bottom">
+                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                <div class="lli-brand-box">
+                    @Model.TableSubTitle
+                    <fieldset>
+                        <div class="form-control">
+                            <label for="areaCode">@Model.FilterByAreaDropdownTitle</label>
+                            <div class="select-field">
+                                @*<select id="areaCode" name="areaCode"></select>*@
+                                @Html.DropDownList("areaCode", Model.PopulateByAreaDropdown)
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label for="movementType">@Model.FilterByMovemetTypesDropdownTitle</label>
+                            <div class="select-field">
+                                @*<select id="movementType" name="movementType"></select>*@
+                                @Html.DropDownList("movementType", Model.PopulateByMovementTypesDropdown)
+                            </div>
+                        </div>
+                        <input type="button" id="btnSearch" value="@Model.SearchButtonText" class="submit">
+                        @Html.HiddenFor(m => m.ResultTableFeedUrl)
+                    </fieldset>
+                    <!-- .lli-brand-box -->
+                </div>
+                <!-- .lli-brand-container -->
+            </div>
+            <table class="table" id="marketDataTable"></table>
+        </div>
+    </div>
+</div>

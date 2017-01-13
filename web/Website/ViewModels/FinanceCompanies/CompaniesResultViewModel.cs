@@ -88,15 +88,20 @@
             return result;
         }
 
+        /// <summary>
+        /// Gets Json data from the feed
+        /// </summary>
+        /// <returns>Json string</returns>
         public string GetResultsData()
         {
             string jsonString = "External feed url is empty";
-
-            if(RenderingParameters != null && RenderingParameters.TableType != null && Sitecore.Context.Item.Fields["Company ID"] != null &&
+            string companyQueryId = Convert.ToString(HttpContext.Current.Request.QueryString["companyid"]);
+            if(RenderingParameters != null && RenderingParameters.TableType != null && (Sitecore.Context.Item.Fields["Company ID"] != null || !string.IsNullOrWhiteSpace(companyQueryId)) &&
                 (string.Equals(RenderingParameters.TableType.Value,Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
                 string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
             {
-                return companyResultService.GetCompanyFeeds(string.Format(GlassModel.ExternalFeedUrl, Sitecore.Context.Item.Fields["Company ID"].Value)).Result;
+                string feedUrl = string.Format(GlassModel.ExternalFeedUrl, !string.IsNullOrWhiteSpace(companyQueryId) ? companyQueryId : Sitecore.Context.Item.Fields["Company ID"].Value);
+                return companyResultService.GetCompanyFeeds(feedUrl).Result;
             }
             jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
 

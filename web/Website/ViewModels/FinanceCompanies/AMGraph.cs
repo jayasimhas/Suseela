@@ -28,4 +28,19 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         public string FinanceResult { get; set; }
     }
 
+    public class MergersAquisitionsResult
+    {
+        public string Month { get; set; }
+        public string Acquirer { get; set; }
+        public string Target { get; set; }
+        public string TargetSector { get; set; }
+        public string TargetLocation { get; set; }
+        public string Detail { get; set; }
+        public string Price { get; set; }
+    }
+    public class FinanceCompany
+    {
+        public string CompanyID { get; set; }
+        public string Path { get; set; }
+    }
 }

@@ -1144,6 +1144,8 @@
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
+    <Compile Include="Areas\Download\Controllers\JsonDataFromFeedController.cs" />
+    <Compile Include="Areas\Download\DownloadAreaRegistration.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
@@ -1229,8 +1231,13 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
@@ -1259,6 +1266,7 @@
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\AllCompanyListModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraph.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompaniesCarouselViewModel.cs" />
@@ -1268,6 +1276,7 @@
     <Compile Include="ViewModels\FinanceCompanies\CompanyModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyPeerGroupViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompanyProfileViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\MergersAndAquisitionsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\PeerGroupDetailViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\PeerGroupMessagingViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
@@ -1276,7 +1285,6 @@
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobDetailsViewModel.cs" />
     <Compile Include="ViewModels\JobsAndClassifieds\JobsListingViewModel.cs" />
-    <Compile Include="ViewModels\CompanyLatestNewsViewModel.cs" />
     <Compile Include="ViewModels\MyView\MyViewPageViewModel.cs" />
     <Compile Include="ViewModels\PDF\ArticleBodyForPDFViewModel.cs" />
     <Compile Include="ViewModels\PDF\ManuallyCuratedPDFViewModel.cs" />
@@ -2246,9 +2254,16 @@
     <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
+    <Content Include="Views\Casualty\CasualtyReport.cshtml" />
+    <Content Include="Views\Casualty\LatestCasualties.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
-    <Content Include="Views\Article\CompanyLatestNews.cshtml" />
+    <Content Include="Views\Casualty\CasualtyDetail.cshtml" />
+    <Content Include="Views\FinanceCompanies\MergersAndAquisitions.cshtml" />
+    <Content Include="Views\Casualty\ShippingMovements.cshtml" />
+    <Content Include="Views\Casualty\dropdownValues.json" />
+    <Content Include="Views\Casualty\GoToPort.cshtml" />
+    <Content Include="Views\Casualty\ShippingMovements.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
