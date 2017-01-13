@@ -137,3 +137,16 @@
 	    width: 100%;
 	 }
  }
+
+.marketdata-links{
+	.hideMarketData{
+		&.hide{
+			display: none;
+		}
+	}
+	.shippingData{
+		&.hide{
+			display: none;
+		}
+	}
+}

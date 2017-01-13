@@ -8175,6 +8175,12 @@ div#feedbacklite.fbl_r {
 .merge-acquistion .form-control input {
   width: 100%; }
 
+.marketdata-links .hideMarketData.hide {
+  display: none; }
+
+.marketdata-links .shippingData.hide {
+  display: none; }
+
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
   float: right;
