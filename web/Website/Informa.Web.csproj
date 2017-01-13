@@ -1263,6 +1263,7 @@
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\AllCompanyListModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraph.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompaniesCarouselViewModel.cs" />
