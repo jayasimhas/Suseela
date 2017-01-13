@@ -24,7 +24,7 @@
 		renderTable: function(){
 			$('.submit').click(function(){
 				$.ajax({
-					url: '/Download/api/JsonDataFromFeed/ReadJsonShippingMovements/',
+					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
 					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': ('#movementType option').val()},
 					dataType: 'json',
 					type: 'GET',
@@ -117,7 +117,7 @@
 			});
 		},
 		init: function(data) {
-			this.renderShippingData(data);
+			//this.renderShippingData(data);
 			this.renderTable();
 		}
 	}
