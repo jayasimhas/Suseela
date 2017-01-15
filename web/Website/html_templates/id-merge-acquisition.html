@@ -150,16 +150,14 @@
                                  <div class="form-control">
                                     <label>$m Price</label>
                                     <div class="range-wrapper">
-                                          <input type="text" class="range-field" name=""/> To <input type="text" class="range-field" name=""/>
+                                          <input type="text" class="range-field start" name=""/> To <input type="text" class="range-field end" name=""/>
                                     </div>
                                  </div>
                               </div>
                               <div style="width: 50%; float: left; padding-left: 10px;">
                                  <div class="form-control">
                                     <label>Target Sector</label>
-                                    <select>
-                                       <option>Abc</option>
-                                    </select>
+                                    <input type="text" name="">
                                  </div>
                                  <div class="form-control">
                                     <label>Taget Location</label>
@@ -167,7 +165,7 @@
                                  </div>
                                  <div class="form-control">
                                     <label>Detail</label>
-                                    <input type="text" name="">
+                                    
                                  </div>
                               </div>
                            </div>
@@ -188,7 +186,7 @@
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>Acquirer</span>
-                                    <div class="sorting-buttons" deal="acquirer_company_name">
+                                    <div class="sorting-buttons" deal="Acquirer">
                                        <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
@@ -200,7 +198,7 @@
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>Target</span>
-                                    <div class="sorting-buttons" deal="target_company_name">
+                                    <div class="sorting-buttons" deal="Target">
                                        <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
@@ -212,7 +210,7 @@
                                  </th>
                                  <th class="pad-10" style="width: 15%;">
                                     <span>Target sector</span>
-                                    <div class="sorting-buttons" deal="target_sector">
+                                    <div class="sorting-buttons" deal="TargetSector">
                                        <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
@@ -220,15 +218,11 @@
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
                                        </a>
                                     </div>
-                                    <select>
-                                       <option>abc</option>
-                                       <option>pqr</option>
-                                       <option>abc</option>
-                                    </select>
+                                    <input type="text" name=""/>
                                  </th>
                                  <th class="pad-10" style="width: 15%;">
                                     <span>Target location</span>
-                                    <div class="sorting-buttons" deal="target_location">
+                                    <div class="sorting-buttons" deal="TargetLocation">
                                        <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
@@ -240,7 +234,7 @@
                                  </th>
                                  <th class="pad-10">
                                     <span>Detail</span>
-                                    <div class="sorting-buttons" deal="details">
+                                    <div class="sorting-buttons" deal="Detail">
                                        <a href="#" category="text" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
@@ -252,7 +246,7 @@
                                  </th>
                                  <th class="pad-10" style="width: 10%;">
                                     <span>$m Price</span>
-                                    <div class="sorting-buttons" deal="price">
+                                    <div class="sorting-buttons" deal="Price">
                                        <a href="#" category="number" type="ascending">
                                           <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
                                        </a>
