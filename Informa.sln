@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Web", "web\Website\Informa.Web.csproj", "{EFE15F11-B900-4515-A45E-5B817C483A36}"
 EndProject
@@ -49,8 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 		config\env\prodCM2.properties = config\env\prodCM2.properties
 		config\env\stageCD.properties = config\env\stageCD.properties
 		config\env\stageCM.properties = config\env\stageCM.properties
-		config\env\support.properties = config\env\support.properties
+		config\env\support-QACD.properties = config\env\support-QACD.properties
+		config\env\support-QACM.properties = config\env\support-QACM.properties
 		config\env\support-uat.properties = config\env\support-uat.properties
+		config\env\support.properties = config\env\support.properties
 		config\env\TS2-SalesforceTest.properties = config\env\TS2-SalesforceTest.properties
 		config\env\uat.properties = config\env\uat.properties
 		config\env\vagrant.properties = config\env\vagrant.properties
