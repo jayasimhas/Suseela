@@ -90,87 +90,11 @@
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
 		},
-		FilterEvent: function(data, Parent) {
-			var InputValues = Parent.find('th').find('input'),
-				self = this;
-
-			InputValues.on('keyup', function() {
-				var textFieldValue = $(this).val(),
-					DealType = $(this).parents('th').find('.sorting-buttons').attr('deal'),
-					Index = $(this).parents('th').index(),
-					Body = Parent.find('tbody.visible-lg'),
-					regExp = new RegExp(textFieldValue, "i"),
-					ItemArray = [],
-					FilteredArray = [],
-					Obj = {},
-					StartField = Parent.find('.range-field')[0].value,
-					EndField = Parent.find('.range-field')[1].value;
-
-				Parent.find('th').each(function(key) {
-					var DealType = $(this).find('.sorting-buttons').attr('deal');
-					if($(this).find('input').val().length > 0) {
-						Obj[DealType] = $(this).find('input').val();
-					}
-				});
-
-				// Body.find('tr').each(function(key) {
-				// 	ItemArray.push($($(this).find('td')[Index]).text());
-				// });
-
-				//for(var i in ItemArray) {
-					// if(regExp.test(ItemArray[i])) {
-					// 	for(var j = 0; j < window.jsonMergeAcquistion.length; j++) {
-					// 		if(ItemArray[i] == window.jsonMergeAcquistion[j][DealType]) {
-					// 			FilteredArray.push(window.jsonMergeAcquistion[j]);
-					// 		}
-					// 	}
-					// }
-				//}
-				if(Object.keys(Obj).length > 0) {
-					for(var i in window.jsonMergeAcquistion) {
-						for(var j in Obj) {
-							var text = ""
-							if(Obj[j].length > 0) {
-								if(j != 'Price') {
-									if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
-										text = $(window.jsonMergeAcquistion[i][j]).text();
-									} else {
-										text = window.jsonMergeAcquistion[i][j];
-									}
-									if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
-										FilteredArray.push(window.jsonMergeAcquistion[i]);
-									}
-								} else {
-									var Price = parseFloat(window.jsonMergeAcquistion[i][j])
-									if(StartField.length > 0 && EndField.length > 0) {
-										if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									} else if(StartField.length > 0 && EndField.length == 0) {
-										if((Price > parseFloat(StartField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									} else {
-										if((Price < parseFloat(EndField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									}
-								}
-							}
-						}
-					}
-				} else {
-					FilteredArray = window.jsonMergeAcquistion;
-				}
-				self.RenderDesktopVersion(FilteredArray, $('.merge-acquistion'));
-
-			});
-		},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
 			this.SortingEvent(data, Parent);
-			this.FilterEvent(data, Parent);
+			
 			//this.RenderMobileVersion(data, Parent);
 		}
 	}
