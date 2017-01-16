@@ -1,25 +1,27 @@
 ﻿@model Informa.Web.ViewModels.Casualty.GoToPortViewModel
 
+@if (Model.IsUserAuthenticated)
+{
+    <div class="ll-logo-img">
+        @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
+        {
+            <a href="@Model.homePageUrl">
+                <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
+            </a>
+        }
+    </div>
+    <div class="marketdata-links">
+        <div class="shippingData">
+            <h2>@Model.TitleWithoutResult</h2>
+            <div class="shippingDesc">
+                @Html.Raw(Model.Description)
+            </div>
+        </div>
 
-<div class="ll-logo-img">
-    @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
-            {
-        <a href="@Model.homePageUrl">
-            <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
-        </a>
-    }
-</div>
-<div class="marketdata-links">
-    <div class="shippingData">
-        <h2>@Model.TitleWithoutResult</h2>
-        <div class="shippingDesc">
-            @Html.Raw(Model.Description)
+        <div class="hideMarketData hide">
+            <h2>@Model.TitleWithResult</h2>
+            <div class="gotolinks">
+            </div>
         </div>
     </div>
-
-    <div class="hideMarketData hide">
-        <h2>@Model.TitleWithResult</h2>
-        <div class="gotolinks">
-        </div>
-    </div>
-</div>
+}
