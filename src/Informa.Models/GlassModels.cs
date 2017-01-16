@@ -21494,14 +21494,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.DisplayStyle_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IAgrow_Results_Table_Type_Option DisplayStyle { get; set; }
 
-        /// <summary>
-        /// The Table Type field.
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
-        /// </summary>
-        [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string No_of_Jobs_Per_Page { get; set; }
+        ///// <summary>
+        ///// The Table Type field.
+        ///// <para></para>
+        ///// <para>Field Type: Single Line Text</para>		
+        ///// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
+        ///// </summary>
+        //[SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string No_of_Jobs_Per_Page { get; set; }
     }
 
     public static partial class IAgrow_Buyers_Listing_Display_StylesConstants
@@ -21515,8 +21515,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID DisplayStyle_TypeFieldId = new ID("D30E27F2-B231-4AEF-B005-21C6BBB5A007");
         public const string DisplayStyle_TypeFieldName = "Display Style";
 
-        public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
-        public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
+        //public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
+        //public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
     }
 
     /// <summary>
