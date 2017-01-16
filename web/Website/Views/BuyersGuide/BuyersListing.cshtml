@@ -93,24 +93,6 @@
                         </section>
                     }
                 }
-                <input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />
-                <input type="hidden" id="noofJobsPerPage" value="@Model.RenderingParameters.No_of_Jobs_Per_Page" />
-                <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
-
-                @*Pagination for Jobs*@
-                if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.RenderingParameters.No_of_Jobs_Per_Page))
-                {
-                    if (Model.AgrowTiles.Count() > 0 && Convert.ToInt32(Model.RenderingParameters.No_of_Jobs_Per_Page) < Model.AgrowTiles.Count())
-                    {
-                        <div class="pagination clearfix">
-                            <ul class="nums">
-                                <li><a href="javascript:void(0);" class="prev"/></li>
-                                <li><span></span></li>
-                                <li><a href="javascript:void(0);" class="next"/></li>
-                            </ul>
-                        </div>
-                    }
-                }
             }
             <div class="contact_terms"><p>@Html.Raw(Model.Body)</p></div>
         </div>
