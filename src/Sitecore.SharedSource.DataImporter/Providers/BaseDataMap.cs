@@ -563,12 +563,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 using (new EditContext(newItem, true, false))
                 {
-                //    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
-                //        ArticleId =  newItem.Fields["Escenic ID"].Value;
-                    
-                  
-                    ArticleId = ArticleData["ARTICLEID"];
-                       
+                    //    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
+                    //        ArticleId =  newItem.Fields["Escenic ID"].Value;
+
+                    try
+                    {
+                        ArticleId = ArticleData["ARTICLEID"];
+                    }
+                    catch { }
                     //add in the field mappings
                     List<IBaseField> fieldDefs = GetFieldDefinitionsByRow(importRow);
                     SetFieldUpdateFlags(fieldDefs, dict);
@@ -715,13 +717,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             //    taxanomycount++;
                             //    taxanomyimportvalue = taxanomyimportvalue + "," + importValue;
                             //}
-                            
-                             /*
-                              * Modified by: Siddharth Bajaj
-                              * Modified On: 21-Oct-2016
-                              * Related Story / Task ID:  
-                              * Reason: <Code changes to implement logging of missing data while mapping Xml file data with Itemtemplate fields>
-                             * */
+
+                            /*
+                             * Modified by: Siddharth Bajaj
+                             * Modified On: 21-Oct-2016
+                             * Related Story / Task ID:  
+                             * Reason: <Code changes to implement logging of missing data while mapping Xml file data with Itemtemplate fields>
+                            * */
                             if (d.NewItemField == "Escenic ID")
                             {
                                 if (values.First() != null)
@@ -731,14 +733,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 else
                                 {
-                                    errorLog += "||" + "Escenic ID N/A";                                  
+                                    errorLog += "||" + "Escenic ID N/A";
                                     XMLDataLogger.WriteLog(ArticleId, EscenicIDLog);
                                 }
                             }
 
                             if (d.NewItemField == "Content Type" && importValue == "")
                             {
-                                errorLog += "||" + "ContentType N/A";                                
+                                errorLog += "||" + "ContentType N/A";
                                 XMLDataLogger.WriteLog(ArticleId, ContentTypeLog);
                             }
 
@@ -768,9 +770,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             if (d.NewItemField == "Taxonomy")
                             {
-       
-                              if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITY1") && importValue == "") 
-                              {
+
+                                if ((((Sitecore.SharedSource.DataImporter.Mappings.Fields.ListToGuid)d).FieldName).Contains("COMMODITY1") && importValue == "")
+                                {
                                     errorLog += "||" + "Commodities N/A";
                                     XMLDataLogger.WriteLog(ArticleId, CommodityLog);
                                 }
@@ -810,7 +812,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 taxanomycount++;
                             }
 
-                            if (d.NewItemField != "Authors" && d.NewItemField!= "Featured Image 16 9" && d.NewItemField != "Body")
+                            if (d.NewItemField != "Authors" && d.NewItemField != "Featured Image 16 9" && d.NewItemField != "Body")
                             {
                                 d.FillField(this, ref newItem, importValue, id);
                             }
@@ -820,22 +822,26 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
 
 
-
-                            if (taxanomycount == fieldDefs.Count(n => n.NewItemField == "Taxonomy"))
-                                 {
-
-                                Field f = newItem.Fields["Taxonomy"];
-                                foreach (string taxonomy in ListToGuid.TaxonomyList.Distinct())
+                            try {
+                                if (taxanomycount == fieldDefs.Count(n => n.NewItemField == "Taxonomy"))
                                 {
 
-                                    TaxonomyStr = TaxonomyStr + taxonomy + "|" ;
+                                    Field f = newItem.Fields["Taxonomy"];
+                                    foreach (string taxonomy in ListToGuid.TaxonomyList.Distinct())
+                                    {
+
+                                        TaxonomyStr = TaxonomyStr + taxonomy + "|";
+                                    }
+
+                                    f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
+                                    ListToGuid.TaxonomyList.Clear();
                                 }
 
-                                f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
-                                ListToGuid.TaxonomyList.Clear();
-                                   }
+                            }
+                            catch { }
+                        }
+                       
 
-                              }
                         catch (Exception ex)
                         {
                             Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);

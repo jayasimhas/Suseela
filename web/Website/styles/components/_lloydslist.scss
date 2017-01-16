@@ -48,7 +48,7 @@
 	    padding: 10px;
 	    background: #f7f7f7;
 	 }
-	 form fieldset {
+	 fieldset {
 	    border: 0;
 	 }
 	 .selectivity-single-select {
@@ -137,3 +137,36 @@
 	    width: 100%;
 	 }
  }
+
+.marketdata-links{
+	.hideMarketData{
+		&.hide{
+			display: none;
+		}
+	}
+	.shippingData{
+		&.hide{
+			display: none;
+		}
+	}
+}
+
+
+#market-data{
+	#marketDataTable{
+		width: 760px;
+		@include breakpoint('small') {
+    		width: 100%;
+    	}
+		span.rise {
+			color: #56c405;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+		span.fall {
+			color: #f40600;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+	}
+}

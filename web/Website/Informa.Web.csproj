@@ -1144,7 +1144,8 @@
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
-    <Compile Include="Areas\Download\JsonDataFromFeedController.cs" />
+    <Compile Include="Areas\Download\Controllers\JsonDataFromFeedController.cs" />
+    <Compile Include="Areas\Download\DownloadAreaRegistration.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
@@ -1230,12 +1231,14 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
     <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
@@ -1243,6 +1246,7 @@
     <Compile Include="ViewModels\CompaniesAndDeals\DealsAndCompaniesSubscribeViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\StrategicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
+    <Compile Include="ViewModels\CompanyLatestNewsViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\DataTools\AMChartsUsingBuilderViewModel.cs" />
     <Compile Include="ViewModels\DataTools\AMChartViewModel.cs" />
@@ -1265,6 +1269,7 @@
     <Compile Include="ViewModels\Emails\NewsletterGreetingViewModel.cs" />
     <Compile Include="ViewModels\Emails\PersonalizedEmailViewModel.cs" />
     <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
+    <Compile Include="ViewModels\FinanceCompanies\AllCompanyListModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraph.cs" />
     <Compile Include="ViewModels\FinanceCompanies\AMGraphsViewModel.cs" />
     <Compile Include="ViewModels\FinanceCompanies\CompaniesCarouselViewModel.cs" />
@@ -2262,6 +2267,9 @@
     <Content Include="Views\Casualty\dropdownValues.json" />
     <Content Include="Views\Casualty\GoToPort.cshtml" />
     <Content Include="Views\Casualty\ShippingMovements.json" />
+    <Content Include="Views\Article\CompanyLatestNews.cshtml" />
+    <Content Include="Views\Casualty\BalticIndices.cshtml" />
+    <Content Include="Views\Casualty\MarketNews.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
