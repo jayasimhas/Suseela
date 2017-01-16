@@ -150,3 +150,23 @@
 		}
 	}
 }
+
+
+#market-data{
+	#marketDataTable{
+		width: 760px;
+		@include breakpoint('small') {
+    		width: 100%;
+    	}
+		span.rise {
+			color: #56c405;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+		span.fall {
+			color: #f40600;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+	}
+}
