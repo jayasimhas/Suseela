@@ -38,8 +38,8 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
-            HttpResponseMessage response = client.PostAsync(tokenUrl,
-                                          new FormUrlEncodedContent(pairs)).Result;
+            HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
+                tokenUrl), new FormUrlEncodedContent(pairs)).Result;
             var responseString = response.Content.ReadAsStringAsync().Result;
             var values = HttpUtility.ParseQueryString(responseString);
             var accessToken = values["access_token"];
@@ -50,9 +50,9 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                 return ErrorResult;
             }
 
-            var authenticatedUser = HttpClientHelper.GetDataResponse<UserInfoResult>( new Uri(string.Format(userInforUrlFormat,
+            var authenticatedUser = HttpClientHelper.GetDataResponse<UserInfoResult>(new Uri(string.Format(userInforUrlFormat,
                 SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url))
-                , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken), 
+                , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
                 new Dictionary<string, string>());
 
             if (authenticatedUser == null)
@@ -77,5 +77,14 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         {
             State = AuthenticateUserResultState.Failure
         };
+
+        private string CreateRequestUri(string serviceAbsoluteUri, string urlFormat)
+        {
+            string requestUri = string.Empty;
+            requestUri = string.IsNullOrWhiteSpace(serviceAbsoluteUri) ||
+                string.IsNullOrWhiteSpace(serviceAbsoluteUri.Replace("/", string.Empty)) ?
+                urlFormat : string.Format("{0}{1}", serviceAbsoluteUri, tokenUrl);
+            return requestUri;
+        }
     }
 }
