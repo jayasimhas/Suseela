@@ -28,8 +28,14 @@ namespace Informa.Web.ViewModels.Casualty
         /// External Fee URL
         /// </summary>
         public IExternal_Feed_Url_Configuration feedUrlConfigurationItem { get; set; }
-
+        /// <summary>
+        /// Baltic indices data in json format
+        /// </summary>
         public string jsonBalticIndices => GetBalticIndicesData();
+        /// <summary>
+        /// Method to get Baltic Indices data from external url
+        /// </summary>
+        /// <returns></returns>
         private string GetBalticIndicesData()
         {
             return feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL) ? CompanyResultService.GetCompanyFeeds(feedUrlConfigurationItem.External_Feed_URL).Result : string.Empty;

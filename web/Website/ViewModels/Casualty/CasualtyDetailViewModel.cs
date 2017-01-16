@@ -40,6 +40,10 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         public string jsonCasualtyDetailData => GetCasualtyDetailData();
 
+        /// <summary>
+        /// Method to fetch casualty data from external feed
+        /// </summary>
+        /// <returns></returns>
         private string GetCasualtyDetailData()
         {
             string incidentId = HttpContext.Current.Request.QueryString["incidentId"];
