@@ -166,11 +166,23 @@
 
 			});
 		},
+		YearChange: function() {
+			$(document).on('change', '#idYearSelect', function() {
+				var Href = $(this).attr('data-href'),
+					value= $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
+					newUrl = window.location.href.split('?')[0].concat("?year="+value);
+
+
+				window.location =newUrl;			
+
+			});
+		},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
 			this.SortingEvent(data, Parent);
 			this.FilterEvent(data, Parent);
+			this.YearChange();
 			//this.RenderMobileVersion(data, Parent);
 		}
 	}

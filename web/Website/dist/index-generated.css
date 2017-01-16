@@ -8145,12 +8145,15 @@ div#feedbacklite.fbl_r {
   width: 100%;
   color: #000; }
 
+.merge-acquistion tr:nth-child(even) {
+  background: #eee; }
+
 .merge-acquistion .selectivity-input {
   width: 100%;
   color: #000; }
 
 .merge-acquistion .range-wrapper {
-  float: none;
+  float: left;
   width: 100%; }
 
 .merge-acquistion input.range-field {

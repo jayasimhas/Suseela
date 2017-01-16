@@ -2,12 +2,12 @@
 $(document).ready(function() {
 	var FirstChartType = $('#chartdiv-deals').attr('data-type'),
 		FirstChartColor = $('#chartdiv-deals').attr('data-color'),
-		SecondChartType = $('#chartdiv-deals').attr('data-type'),
-		SecondChartColor = $('#chartdiv-deals').attr('data-color'),
-		ThirdChartType = $('#chartdiv-deals').attr('data-type'),
-		ThirdChartColor = $('#chartdiv-deals').attr('data-color'),
-		FourthChartType = $('#chartdiv-deals').attr('data-type'),
-		FourthChartColor = $('#chartdiv-deals').attr('data-color');
+		SecondChartType = $('#chartdiv-region').attr('data-type'),
+		SecondChartColor = $('#chartdiv-region').attr('data-color'),
+		ThirdChartType = $('#chartdiv-region2').attr('data-type'),
+		ThirdChartColor = $('#chartdiv-region2').attr('data-color'),
+		FourthChartType = $('#chartdiv-type').attr('data-type'),
+		FourthChartColor = $('#chartdiv-type').attr('data-color');
     AmCharts.ready(function() {
     var chart = new AmCharts.AmSerialChart();
     chart.dataProvider = generateChartDataSizeRange();
@@ -21,9 +21,9 @@ $(document).ready(function() {
     graph.fillAlphas = 0.7;FourthChartType
     graph.lineAlpha = 0.5;
     graph.balloonText = "[[title]]: [[count]]";
-    graph.balloonColor = FirstChartColor;
-    graph.fillColors = FirstChartColor;
-    graph.lineColor = FirstChartColor;
+    graph.balloonColor = '#'+FirstChartColor;
+    graph.fillColors = '#'+FirstChartColor;
+    graph.lineColor = '#'+FirstChartColor;
     chart.addGraph(graph);
     chart.write('chartdiv-deals');
     var chart2 = new AmCharts.AmSerialChart();
@@ -38,9 +38,9 @@ $(document).ready(function() {
     graph2.fillAlphas = 0.7;
     graph2.lineAlpha = 0.5;
     graph2.balloonText = "[[title]]: [[value]]";
-    graph2.balloonColor = SecondChartColor;
-    graph2.fillColors = SecondChartColor;
-    graph2.lineColor = SecondChartColor;
+    graph2.balloonColor = '#'+SecondChartColor;
+    graph2.fillColors = '#'+SecondChartColor;
+    graph2.lineColor = '#'+SecondChartColor;
     chart2.categoryAxis.labelRotation = 40;
     chart2.categoryAxis.autoGridCount = false;
     chart2.addGraph(graph2);
@@ -57,9 +57,9 @@ $(document).ready(function() {
     graph3.fillAlphas = 0.7;
     graph3.lineAlpha = 0.5;
     graph3.balloonText = "[[title]]: [[value]]";
-    graph3.balloonColor = ThirdChartColor;
-    graph3.fillColors = ThirdChartColor;
-    graph3.lineColor = ThirdChartColor;
+    graph3.balloonColor = '#'+ThirdChartColor;
+    graph3.fillColors = '#'+ThirdChartColor;
+    graph3.lineColor = '#'+ThirdChartColor;
     chart3.categoryAxis.labelRotation = 40;
     chart3.categoryAxis.autoGridCount = false;
     chart3.addGraph(graph3);
@@ -77,9 +77,9 @@ $(document).ready(function() {
     graph4.fillAlphas = 0.7;
     graph4.lineAlpha = 0.5;
     graph4.balloonText = "[[title]]: [[value]]";
-    graph4.balloonColor = FourthChartColor;
-    graph4.fillColors = FourthChartColor;
-    graph4.lineColor = FourthChartColor;
+    graph4.balloonColor = '#'+FourthChartColor;
+    graph4.fillColors = '#'+FourthChartColor;
+    graph4.lineColor = '#'+FourthChartColor;
     chart4.addGraph(graph4);
     chart4.write('chartdiv-type');
     var inputSet = $(".merge-acquistion th input");

@@ -105,12 +105,15 @@
 	    width: 100%;
 	    color: #000;
 	}
+	tr:nth-child(even) {
+	    background: #eee;
+	}
 	.selectivity-input {
 	    width: 100%;
 	    color: #000;
 	 }
 	.range-wrapper {
-	    float: none;
+	    float: left;
 	    width: 100%;
 	 }
 	 input.range-field {
