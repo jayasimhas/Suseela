@@ -8187,7 +8187,7 @@ div#feedbacklite.fbl_r {
 
 .graphs-container {
   background-color: #EEEEEE;
-  margin: 20px 6px 20px;
+  margin: 0 6px 20px;
   overflow: auto; }
 
 .graphs-container h4, .graphs-container .lightbox-modal__title, .graphs-container .exhibit-title, .graphs-container .article-exhibit__title, .graphs-container
@@ -8201,7 +8201,7 @@ div#feedbacklite.fbl_r {
 
 .graph-container h5, .graph-container .alert-success p, .alert-success .graph-container p, .graph-container .alert-error p, .alert-error .graph-container p, .graph-container .article-call-to-action__subtitle {
   font-weight: bold;
-  font-size: 11px;
+  font-size: 15px;
   color: #333333;
   padding: 5px; }
 
@@ -8220,6 +8220,13 @@ div#feedbacklite.fbl_r {
       width: 100%; } }
   .graphs-container .graph-container:first-child {
     border-left: none; }
+
+.graphs-container .dealsOmitted {
+  text-align: right;
+  background: #fff;
+  padding-top: 14px;
+  float: right;
+  width: 100%; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
