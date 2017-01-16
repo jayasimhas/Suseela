@@ -131,17 +131,8 @@
 						for(var j in Obj) {
 							var text = ""
 							if(Obj[j].length > 0) {
-								if(j != 'Price') {
-									if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
-										text = $(window.jsonMergeAcquistion[i][j]).text();
-									} else {
-										text = window.jsonMergeAcquistion[i][j];
-									}
-									if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
-										FilteredArray.push(window.jsonMergeAcquistion[i]);
-									}
-								} else {
-									var Price = parseFloat(window.jsonMergeAcquistion[i][j])
+								if(j == 'Price') {
+									var Price = parseFloat(window.jsonMergeAcquistion[i][j]);
 									if(StartField.length > 0 && EndField.length > 0) {
 										if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
 											FilteredArray.push(window.jsonMergeAcquistion[i]);
@@ -154,6 +145,20 @@
 										if((Price < parseFloat(EndField))) {
 											FilteredArray.push(window.jsonMergeAcquistion[i]);
 										}
+									}
+								} else if (j == 'Month') {
+									var MonthValue = window.jsonMergeAcquistion[i][j] - 1;
+									if(self.MonthNames[MonthValue].toLowerCase().includes(Obj[j].toLowerCase())) {
+										FilteredArray.push(window.jsonMergeAcquistion[i]);
+									}
+								} else {
+									if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
+										text = $(window.jsonMergeAcquistion[i][j]).text();
+									} else {
+										text = window.jsonMergeAcquistion[i][j];
+									}
+									if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
+										FilteredArray.push(window.jsonMergeAcquistion[i]);
 									}
 								}
 							}
