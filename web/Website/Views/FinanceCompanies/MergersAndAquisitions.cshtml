@@ -1,5 +1,5 @@
 ﻿﻿@model Informa.Web.ViewModels.FinanceCompanies.MergersAndAquisitionsViewModel
-
+<script src="/dist/js/amstock.js" type="text/javascript"></script>
 <div>
     <div class="graphs-container">
         <h4>@Model.Dashboard</h4>
@@ -8,15 +8,8 @@
             {
                 <div class="graph-container first">
                     <h5>@Graph.GraphTitle</h5>
-                    <div id="chartdiv-@Graph.GraphID" style="width: 220px; height: 140px; background-color: rgb(255, 255, 255); overflow: hidden;border:2px solid gray;">
-                        <div style="overflow: hidden; position: relative; text-align: left; width: 220px; height: 140px;">
-                        </div>
-                    </div>
+                    <div id="chartdiv-@Graph.GraphID" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="@Graph.GraphType" data-color="@Graph.GraphColor"></div>
                 </div>
-                <script type="text/javascript">
-            var color =  '@Graph.GraphColor';
-            var type =  '@Graph.GraphType';
-                </script>
             }
         }
         <p class="dealsOmitted">@Model.DealsOmitted</p>
@@ -25,15 +18,17 @@
             <div class="table-responsive">
                 <div class="idi-table-heading clearfix" style="background-color: #be1e2d;">
                     <p style="float: left">@Model.TableTitle</p>
-                    <div style="float: right; width: 100px;">
-                        <select>
+                    <div style="float: right; background: #fff; color: #000000;">
+                        <select id="idYearSelect">
                             @{
                                 int curYear = DateTime.Now.Year;
-                                <option value="@curYear">Latest</option>
+                                string curUrl = @HttpContext.Current.Request.RawUrl.Split('?')[0] + "?year=";
+
+                                <option value="@curYear" data-href="@curUrl@curYear">Latest</option>
                                 for (int i = 0; i <= 6; i++)
                                 {
                                    curYear--;
-                                  <option value="@curYear" test="123">@curYear</option>
+                                  <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
                                 }
                             }
                            
@@ -115,7 +110,7 @@
                                 </div>
                                 <input type="text" class="detail-text-field" name="" />
                             </th>
-                            <th class="pad-10" style="width: 10%;">
+                            <th class="pad-10" style="width: 11%;">
                                 <span>@Model.Price</span>
                                 <div class="sorting-buttons" deal="Price">
                                     <a href="#" category="number" type="ascending">

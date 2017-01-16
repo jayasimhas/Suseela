@@ -43,7 +43,7 @@
                     }
                </div>
     </div>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="/dist/js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     (function () {
         var RecomendedContent = {
@@ -66,11 +66,11 @@
             RecomendedTemplate: function (data) {
                 var Template = '';
                 if (data.articles.length > 0) {
-                    for (var i = 0; i < 2; i++) {
+                    for (var i = 0; i < 3; i++) {
                         Template += '<div class="section-article">' +
 										'<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' +
-										'<span class="article-related-content__category"> ' + data.articles[i].linkableText + ' </span>' +
-										'<h5><a class="click-utag" href="' + data.articles[i].linkableUrl + '">' + data.articles[i].linkableText + '</a></h5>' +
+										'<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
+										'<h5><a class="click-utag" href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
 										'<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
 									'</div>';
                     }
@@ -84,15 +84,12 @@
             SuggestedTemplate: function (data) {
                 var Template = '';
                 if (data.articles.length > 0) {
-                    for (var i = 0; i < 2; i++) {
+                    for (var i = 0; i < 3; i++) {
                         Template += '<div class="contentRecomm-article">' +
-										'<img class="article-related-content__img" src="https://beta.agra-net.com/-/media/legacy-images/2016/july/orange_juice_167615144.jpg">' +
-										'<span class="article-related-content__category">scrip Intelligence</span>' +
-										'<h5>' +
-											'<a class="click-utag" href="/articles/2016/07/04/probe-into-alleged-orange-juice-cartel-will-continue">' +
-											'</a>' +
-										'</h5>' +
-										'<time class="article-related-content__date">22 Aug 2016</time>' +
+										'<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' +
+										'<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
+										'<h5><a class="click-utag" href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
+										'<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
 									'</div>';
                     }
                 }
