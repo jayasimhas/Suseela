@@ -8181,20 +8181,6 @@ div#feedbacklite.fbl_r {
 .marketdata-links .shippingData.hide {
   display: none; }
 
-#market-data #marketDataTable {
-  width: 760px; }
-  @media (max-width: 480px) {
-    #market-data #marketDataTable {
-      width: 100%; } }
-  #market-data #marketDataTable span.rise {
-    color: #56c405;
-    font-weight: bold;
-    margin-left: 10px; }
-  #market-data #marketDataTable span.fall {
-    color: #f40600;
-    font-weight: bold;
-    margin-left: 10px; }
-
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
   float: right;
