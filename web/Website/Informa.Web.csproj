@@ -1144,6 +1144,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ItemLockBasedOnUser.aspx.cs">
+      <DependentUpon>ItemLockBasedOnUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemLockBasedOnUser.aspx.designer.cs">
+      <DependentUpon>ItemLockBasedOnUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IPageLink.cs" />
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\PageLink.cs" />
@@ -1442,6 +1449,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="ItemLockBasedOnUser.aspx" />
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\save-search-component.js" />
     <Content Include="js\controllers\analytics-controller.js" />
