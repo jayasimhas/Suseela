@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Services.ExternalFeeds;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using System;
@@ -21,15 +22,15 @@ namespace Informa.Web.ViewModels.Casualty
             ICallToActionViewModel callToActionViewModel)
         {
             CompanyResultService = companyResultService;
-            feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
             AuthenticatedUserContext = authenticatedUserContext;
             CallToActionViewModel = callToActionViewModel;
+            feedUrlConfigurationItem = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         /// <summary>
         /// External Fee URL
         /// </summary>
-        public string feedUrl { get; set; }
+        public IExternal_Feed_Url_Configuration feedUrlConfigurationItem { get; set; }
         /// <summary>
         /// Title
         /// </summary>
@@ -37,14 +38,14 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Get Casualty data from external feed url
         /// </summary>
-        public string jsonCasualtyDetailData => GetCasualtyDetailData(feedUrl);
+        public string jsonCasualtyDetailData => GetCasualtyDetailData();
 
-        private string GetCasualtyDetailData(string feedUrl)
+        private string GetCasualtyDetailData()
         {
             string incidentId = HttpContext.Current.Request.QueryString["incidentId"];
-            if (!string.IsNullOrEmpty(feedUrl) && !string.IsNullOrEmpty(incidentId))
+            if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL) && !string.IsNullOrEmpty(incidentId))
             {
-                return CompanyResultService.GetCompanyFeeds(feedUrl + "?incidentId=" + incidentId).Result;
+                return CompanyResultService.GetCompanyFeeds(feedUrlConfigurationItem.External_Feed_URL + "?incidentId=" + incidentId).Result;
             }
             else
             {

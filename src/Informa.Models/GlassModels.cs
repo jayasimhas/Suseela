@@ -5049,6 +5049,63 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IExternal_Feed_Url_ConfigurationConstants.TemplateIdString)]
+    public partial interface IExternal_Feed_Url_Configuration : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IExternal_Feed_Url_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+    public static partial class IExternal_Feed_Url_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "A3294A33-851E-47A5-99B1-A6122D8AD7E6";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "External Feed Url Configuration";
+
+
+        public static readonly ID External_Feed_URLFieldId = new ID("CBBA3299-32AD-4F99-BE89-79AEFD57C662");
+        public const string External_Feed_URLFieldName = "External Feed URL";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
 {
 

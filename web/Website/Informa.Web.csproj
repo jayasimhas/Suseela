@@ -1231,12 +1231,14 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
     <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
@@ -2266,6 +2268,8 @@
     <Content Include="Views\Casualty\GoToPort.cshtml" />
     <Content Include="Views\Casualty\ShippingMovements.json" />
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
+    <Content Include="Views\Casualty\BalticIndices.cshtml" />
+    <Content Include="Views\Casualty\MarketNews.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
