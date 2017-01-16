@@ -99,6 +99,9 @@
 				$('#jumpTo').selectivity({
 					showSearchInputInDropdown: false
 				})
+				$(".selectivity-input .selectivity-single-select").each(function() {
+			        $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+				});
 			});
 			$(document).on('change','#jumpTo', function(){
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');

@@ -151,3 +151,23 @@
 		}
 	}
 }
+.graphs-container { background-color: #EEEEEE; margin: 20px 6px 20px; overflow: auto; }
+.graphs-container h4 { text-transform: uppercase; padding: 10px; }
+.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
+.graphs-container .graph-container {
+    display: inline-block;
+    text-align: left;
+    padding: 0 8px;
+    padding-bottom: 10px;
+    background-color: #EEEEEE;
+    float: left;
+    border-left: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    width: 25%;
+    @include breakpoint('small') {
+    	width: 100%;
+    }
+    &:first-child {
+    	border-left: none;
+    }
+}

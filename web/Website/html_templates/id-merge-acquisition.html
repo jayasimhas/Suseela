@@ -120,6 +120,26 @@
             <div class="general-header">
             </div>
             <div class="main__content">
+               <div class="graphs-container">
+                  <h4>Dashboard</h4>
+                  <div class="graph-container first">
+                     <h5>Deals by Size Range ($m)</h5>
+                     <div id="chartdiv-deals" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="column" data-color="#92d551"></div>
+                  </div>
+                  <div class="graph-container">
+                     <h5>Deal Size ($m) by Region</h5>
+                     <div id="chartdiv-region" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="column" data-color="#6898d8"></div>
+                  </div>
+                  <div class="graph-container">
+                     <h5>Deals by Region</h5>
+                     <div id="chartdiv-region2" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="column" data-color="#d45151"></div>
+                  </div>
+                  <div class="graph-container">
+                     <h5>Deals by Type</h5>
+                     <div id="chartdiv-type" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="column" data-color="#ea8432"></div>
+                  </div>
+                  <p class="dealsOmitted">Deals under $100m are omitted from the above graphs</p>
+               </div>
                <div class="small_table">
                   
                      <div class="table-responsive">
@@ -127,7 +147,7 @@
                         <hr/>
                         <div class="idi-table-heading clearfix" style="background-color: #be1e2d;">
                               <p style="float: left">Largest insurance industry acquisitions and flotations</p>
-                              <div style="float: right; width: 100px;">
+                              <div style="float: right; background-color: #fff">
                                  <select>
                                     <option>Abc</option>
                                  </select>
@@ -1696,8 +1716,12 @@
    "target_company_name": "Old Mutual"
 }*/
       </script>
+
+      <script src="https://www.insuranceday.com/skins/insurance-day/amcharts_2.7.6/amstock.js" type="text/javascript"></script>
+      <script src="https://www.insuranceday.com/skins/insurance-day/amcharts_2.7.6/raphael-min.js" type="text/javascript"></script>
       <script src="/dist/js/index.js"></script> 
+
       
-      
+
    </body>
 </html>
