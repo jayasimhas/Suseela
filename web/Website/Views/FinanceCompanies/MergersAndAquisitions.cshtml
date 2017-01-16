@@ -23,12 +23,20 @@
                             @{
                                 int curYear = DateTime.Now.Year;
                                 string curUrl = @HttpContext.Current.Request.RawUrl.Split('?')[0] + "?year=";
-
+                                string selectedYear = @HttpContext.Current.Request.QueryString["year"];
                                 <option value="@curYear" data-href="@curUrl@curYear">Latest</option>
                                 for (int i = 0; i <= 6; i++)
                                 {
-                                   curYear--;
-                                  <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
+                                    curYear--;
+                                    if (curYear.ToString() == selectedYear)
+                                    {
+                                        <option value="@curYear" data-href="@curUrl@curYear" selected>@curYear</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
+                                    }
+
                                 }
                             }
                            
