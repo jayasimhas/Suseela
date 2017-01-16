@@ -56,6 +56,30 @@ namespace Informa.Library.Article.Search
             };
         }
 
+        public IArticleSearchResults SearchArticleByAuthorName(IArticleSearchFilter filter)
+        {
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)                    
+                    .FilterByAuthor(filter)                   
+                    .ApplyDefaultFilters();
+                if (filter.PageSize > 0)
+                {
+                    query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
+                }
+
+                query = query.OrderByDescending(i => i.ActualPublishDate);
+
+                var results = query.GetResults();
+
+                return new ArticleSearchResults
+                {
+                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
+                };
+            }
+        }
+
         public IArticleSearchResults Search(IArticleSearchFilter filter)
         {
             using (var context = SearchContextFactory.Create())

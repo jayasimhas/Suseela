@@ -1164,6 +1164,13 @@
     <Compile Include="sitecore\admin\Tools\ArticleMover.aspx.designer.cs">
       <DependentUpon>ArticleMover.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sitecore\admin\Tools\LockArtcilesBasedUser.aspx.cs">
+      <DependentUpon>LockArtcilesBasedUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore\admin\Tools\LockArtcilesBasedUser.aspx.designer.cs">
+      <DependentUpon>LockArtcilesBasedUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore\admin\Tools\TestUtils.aspx.cs">
       <DependentUpon>TestUtils.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1509,6 +1516,7 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\ArticleMover.aspx" />
+    <Content Include="sitecore\admin\Tools\LockArtcilesBasedUser.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
@@ -1675,6 +1683,7 @@
     <None Include="App_Config\Prefetch\Webdb.config.template" />
     <Content Include="Areas\VWB\Views\web.config" />
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
+    <Content Include="App_Config\Sitecore.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
