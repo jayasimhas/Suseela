@@ -354,8 +354,3 @@ target/
 *.iws
 *.ipr
  
-WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_1_TemporaryKey.pfx
-WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_2_TemporaryKey.pfx
-WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_3_TemporaryKey.pfx
-config/env/support-QACD.properties
-config/env/support-QACM.properties
