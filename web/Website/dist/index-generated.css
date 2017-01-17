@@ -7529,6 +7529,9 @@ div#feedbacklite.fbl_r {
   clear: both;
   height: auto; }
 
+.article-right-rail .article-preview {
+  float: left; }
+
 .contentRecommendations {
   clear: both; }
   .contentRecommendations .article-related-content {
