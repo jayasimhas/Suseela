@@ -34,7 +34,8 @@
      }
      .selectivity-dropdown {
         right: 0;
-        top: 100%;
+    	top: 100% !important;
+    	left: auto !important;
      }
 }
 .lli-brand-container {
