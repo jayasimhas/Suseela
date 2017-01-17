@@ -1333,6 +1333,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.Company_PeerGroupListFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<ICompany_Detail_Page> Company_PeerGroupList { get; set; }
+
+        /// <summary>
+        /// Company Taxonomy List
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.Company_TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<ITaxonomy_Item> LongIds { get; }
+
+
         /// <summary>
         /// Peer Company Detail Page Link
         /// </summary>
@@ -1353,6 +1361,32 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.CompanyGraphDetailPageFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link CompanyGraphDetailPage { get; set; }
+        /// <summary>
+        /// Company News Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsTextPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyNewsText { get; set; }
+        /// <summary>
+        ///Company Name Text
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNameTextPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyNameText { get; set; }
+        /// <summary>
+        ///Company News Date Time
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsDateTimePageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyNewsDateTime { get; set; }
+    /// <summary>
+    /// Company News Summary
+    /// </summary>
+    [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsSummaryPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyNewsSummary { get; set; }
+
+        /// <summary>
+        /// Company News Article
+        /// /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsArticleUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IArticle Company_News_Article { get; set; }
     }
 
 
@@ -1479,20 +1513,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public static readonly ID Introduction_TextFieldId = new ID("90AFA294-EB4F-4360-B099-97C3BC4573E5");
         public const string Introduction_TextFieldName = "Introduction Text";
 
-
-
         public static readonly ID PeerGroup_TitleFieldId = new ID("94CA8EA0-1762-4EE6-9F7A-CE5659679E40");
         public const string PeerGroup_TitleFieldName = "PeerGroup Title";
-
-
 
         public static readonly ID PeerGroup_TextFieldId = new ID("A1CA8E8B-C320-4EFA-89FD-D3D6B1E6F94C");
         public const string PeerGroup_TextFieldName = "PeerGroup Text";
 
-
-
         public static readonly ID Company_PeerGroupListFieldId = new ID("A4637287-30BE-45F5-9F0B-216ED409C93A");
         public const string Company_PeerGroupListFieldName = "Company PeerGroupList";
+
+        public static readonly ID Company_TaxonomyFieldId = new ID("0212FC0F-953B-461C-B4D9-B7483A4D4F1B");
+        public const string Company_TaxonomyFieldName = "Taxonomy";
 
         public static readonly ID PeerComanyDetailPageFieldId = new ID("827E40C4-3410-4D5D-AE0D-B6AC2E56DC25");
         public const string PeerComanyDetailPageFieldName = "PeerComanyDetailPage";
@@ -1506,6 +1537,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
         public static readonly ID CompanyGraphDetailPageFieldId = new ID("6E5B3059-6358-459C-8204-14891C18A25D");
         public const string CompanyGraphDetailPageFieldName = "CompanyGraphDetailPage";
+
+        public static readonly ID CompanyNewsArticlePageFieldId = new ID("EC397B5A-45D7-4E45-9A35-0B400E333457");
+        public const string CompanyNewsArticlePageFieldName = "Company News Article";
+
+        public static readonly ID CompanyNewsTextPageFieldId = new ID("AEA04781-43AE-4486-9DED-81849839D287");
+        public const string CompanyNewsTextPageFieldName = "Company News Text";
+
+        public static readonly ID CompanyNameTextPageFieldId = new ID("0D2BC7A3-28F3-42AF-8FAF-53934FFB6428");
+        public const string CompanyNameTextPageFieldName = "Company Name Text";
+
+        public static readonly ID CompanyNewsDateTimePageFieldId = new ID("114C08C7-9ED0-4387-B21D-AA8791A3BED4");
+        public const string CompanyNewsDateTimePageFieldName = "Company News Date Time";
+
+        public static readonly ID CompanyNewsSummaryPageFieldId = new ID("3B8F8BC3-326E-4275-9B60-A879EFC015F5");
+        public const string CompanyNewsSummaryPageFieldName = "Company News Summary";
+
+        public static readonly ID CompanyNewsArticleUrlFieldNamePageFieldId = new ID("EC397B5A-45D7-4E45-9A35-0B400E333457");
+        public const string CompanyNewsArticleUrlFieldName = "Company News Article";
+        
 
         public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
@@ -4996,6 +5046,63 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 
 
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IExternal_Feed_Url_ConfigurationConstants.TemplateIdString)]
+    public partial interface IExternal_Feed_Url_Configuration : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IExternal_Feed_Url_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+    public static partial class IExternal_Feed_Url_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "A3294A33-851E-47A5-99B1-A6122D8AD7E6";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "External Feed Url Configuration";
+
+
+        public static readonly ID External_Feed_URLFieldId = new ID("CBBA3299-32AD-4F99-BE89-79AEFD57C662");
+        public const string External_Feed_URLFieldName = "External Feed URL";
     }
 
 }
@@ -21387,14 +21494,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.DisplayStyle_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IAgrow_Results_Table_Type_Option DisplayStyle { get; set; }
 
-        /// <summary>
-        /// The Table Type field.
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
-        /// </summary>
-        [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string No_of_Jobs_Per_Page { get; set; }
+        ///// <summary>
+        ///// The Table Type field.
+        ///// <para></para>
+        ///// <para>Field Type: Single Line Text</para>		
+        ///// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
+        ///// </summary>
+        //[SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string No_of_Jobs_Per_Page { get; set; }
     }
 
     public static partial class IAgrow_Buyers_Listing_Display_StylesConstants
@@ -21408,8 +21515,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID DisplayStyle_TypeFieldId = new ID("D30E27F2-B231-4AEF-B005-21C6BBB5A007");
         public const string DisplayStyle_TypeFieldName = "Display Style";
 
-        public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
-        public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
+        //public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
+        //public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
     }
 
     /// <summary>

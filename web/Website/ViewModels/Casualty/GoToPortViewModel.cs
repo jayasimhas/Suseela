@@ -26,9 +26,21 @@ namespace Informa.Web.ViewModels.Casualty
         /// HomePage URL
         /// </summary>
         public string homePageUrl => SiterootContext?.Item._Url;
+        /// <summary>
+        /// Logo
+        /// </summary>
         public Image Logo => GlassModel?.Logo;
+        /// <summary>
+        /// Title when results available for the selected area
+        /// </summary>
         public string TitleWithResult => GlassModel?.Title_With_Result;
+        /// <summary>
+        /// Title on initial page load
+        /// </summary>
         public string TitleWithoutResult => GlassModel?.Title_Without_Result;
+        /// <summary>
+        /// Description
+        /// </summary>
         public string Description => GlassModel?.Description;
     }
 }

@@ -1,0 +1,56 @@
+﻿@inherits GlassView<CompanyLatestNewsViewModel>
+
+@{
+    <div class="ContentRecomm-RelatedContent-vertical">
+        <div class="article-related-content">
+            @if (Model.CompanyManualArticlePage != null)
+            {
+                <h2>@Model.CompanyNewsSectionName</h2>
+                <div class="section-article">
+                    <div class="section-article-text">
+                        <h5>
+                            <a class="click-utag" href="@(Model.CompanyManualArticlePage._Url)">
+                                @(Model.CompanyManualArticlePage.Title)
+                            </a>
+                        </h5>
+                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
+                        <p>@(Html.Raw(Model.CompanyNewsSummary))</p>
+                    </div>
+                </div>
+            }
+
+            @if (Model.CompanyNews != null && Model.CompanyNews.Any())
+            {
+            foreach (var listable in Model.CompanyNews)
+            {
+                <div class="section-article">
+
+                    <div class="section-article-img">
+                        @if (listable.Featured_Image_16_9 != null)
+                        {
+                            <div class="article-related-content__img">
+                                @RenderImage(listable, model => model.Featured_Image_16_9)
+                            </div>
+                        }
+                    </div>
+
+                    <div class="section-article-text" >
+
+                        <h5>
+                            <a class="click-utag" href="@listable._Url">
+                                @listable.Title
+                            </a>
+                        </h5>
+                        <p>@Html.Raw(listable.Summary)</p>
+                        <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMM yyyy}", listable.Actual_Publish_Date) </time>
+                    </div>
+
+                </div>
+            }
+            }
+
+    </div>
+  </div>
+}
+
+

@@ -345,9 +345,11 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Search\ILoadMore.cs" />
     <Compile Include="Article\Search\IPersonalizedArticle.cs" />
+    <Compile Include="Article\Search\IArticleForCompanySearchResults.cs" />
     <Compile Include="Article\Search\IPersonalizedArticleSearchResults.cs" />
     <Compile Include="Article\Search\LoadMore.cs" />
     <Compile Include="Article\Search\PersonalizedArticleListItem.cs" />
+    <Compile Include="Article\Search\ArticleForCompanySearchResults.cs" />
     <Compile Include="Article\Search\PersonalizedArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />

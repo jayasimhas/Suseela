@@ -5,130 +5,38 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script type='text/javascript'>if(console){console.error('Failed to load page metadata.')}</script>
       <title>Merck Is Finding PD-L1 Testing Is Helping Keytruda</title>
       <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
       <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="/dist/index-generated.css">
 	  
 	  <script type="text/javascript">
-		var shippingMovements = [  
-			  {
-				"Areas": [{      
-					  "Value": "UKE",
-					  "Text": "United Kingdom inc Eire"
-					},
-					{
-					  "Value": "SCN",
-					  "Text": "North European Atlantic coast"
-					},
-				  {
-					  "Value": "IBE",
-					  "Text": "Spain / Portugal inc Atlantic Islands"
-					},
-				  {
-					  "Value": "SEU",
-					  "Text": "European Mediterranean coast"
-					}],
-				"MovementTypes":[{ 
-					  "Value": "ALL",
-					  "Text": "All"
-					},
-					{
-					  "Value": "A",
-					  "Text": "Arrivals"
-					},
-				   {
-					  "Value": "S",
-					  "Text": "Sailings"
-					},
-				   {
-					  "Value": "P",
-					  "Text": "Passings"
-					}]
+		var jsonBalticIndices = [  
+				{
+					"Baltic Indices": "Baltic Dry Index",
+					"Jan 13": "910 +18",
+					"Jan 12": "892 -2",
+					"Jan 11": "894 -32",
+					"Jan 10": "926 -23",
+					"Jan 09": "949 -14"
+				},
+				{
+					"Baltic Indices": "Baltic Dry Index",
+					"Jan 13": "1383 +89",
+					"Jan 12": "1294 -32",
+					"Jan 11": "1326 -144",
+					"Jan 10": "1470 -128",
+					"Jan 09": "1598 -60"
+				},
+				{
+					"Baltic Indices": "Baltic Dry Index",
+					"Jan 13": "910 +18",
+					"Jan 12": "892 -2",
+					"Jan 11": "894 -32",
+					"Jan 10": "926 -23",
+					"Jan 09": "949 -14"
 				}
 			]
-		
-			var tableObj = [  
-				  {
-				  "areaname":"United Kingdom inc Eire",
-					"Aberdeen(GBR)": [{   
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "Bibby Topaz",
-						  "Flag": "Panama",
-						  "Gross": "8009",
-						  "Origin": "--",
-						  "Destination": "Aberdeen(GBR",
-						  "Vessel Type": "Support"
-						},
-						{
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "Viking Princess",
-						  "Flag": "Bahamas",
-						  "Gross": "5381",
-						  "Origin": "--",
-						 "Destination": "Aberdeen(GBR",
-						"Vessel Type": "Supply"
-						}],
-					"Avonmouth":[{                                                                                                                                      
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "F. Arslan V",
-						  "Flag": "Antigua & Barbuda",
-						  "Gross": "3854",
-						  "Origin": "",
-						  "Destination": "--",
-						   "Vessel Type": "General Cargo With Container Capacity"
-						},
-						{
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "Kurkse",
-						  "Flag": "St. Vincent & Grenadines",
-						  "Gross": "2658",
-						  "Origin": "",
-						   "Destination": "Portugal",
-						 "Vessel Type": "General Cargo With Container Capacity"
-						}
-					  ],
-					"Avonmouth2":[{                                                                                                                                      
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "F. Arslan V",
-						  "Flag": "Antigua & Barbuda",
-						  "Gross": "3854",
-						  "Origin": "",
-						  "Destination": "--",
-						   "Vessel Type": "General Cargo With Container Capacity"
-						},
-						{
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "Kurkse",
-						  "Flag": "St. Vincent & Grenadines",
-						  "Gross": "2658",
-						  "Origin": "",
-						   "Destination": "Portugal",
-						 "Vessel Type": "General Cargo With Container Capacity"
-						}
-					  ],
-					"Avonmouth3":[{                                                                                                                                      
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "F. Arslan V",
-						  "Flag": "Antigua & Barbuda",
-						  "Gross": "3854",
-						  "Origin": "",
-						  "Destination": "--",
-						   "Vessel Type": "General Cargo With Container Capacity"
-						},
-						{
-						  "Move Date": "11.01.2017",
-						  "Vessel Name": "Kurkse",
-						  "Flag": "St. Vincent & Grenadines",
-						  "Gross": "2658",
-						  "Origin": "",
-						   "Destination": "Portugal",
-						 "Vessel Type": "General Cargo With Container Capacity"
-						}
-					  ]
-					}
-				]
 	  </script>
    </head>
    <body >
@@ -238,378 +146,108 @@
             <div class="main__content">
                <div class="small_table">
                   <div class="article-left-rail">
-                     <div class="table-responsive" id="market-data-tool">
+                     <div class="table-responsive" id="market-data">
                         <h5 class="secondary_heading">Market Data</h5>
                         <hr/>
-                        <div class="lli-brand-container shallow-bottom">
-                           <h3 class="lli-brand-head-wide-trans">Shipping Movements</h3>
-                           <div class="lli-brand-box">
-                              <p>Select the area and movement type you wish to view and the database will
-                                 return the latest vessel records including flag, tonnage, type, origin and destination.
-                              </p>
-                               
-                                 <fieldset>
-                                    <div class="form-control">
-									  <label for="areaCode">Area</label>
-									  <div class="select-field">
-										 <select id="areaCode" name="areaCode">
-											
-										 </select>
-									  </div>
-                                    </div>
-                                    <div class="form-control">
-									  <label for="movementType">Movement type</label>
-									  <div class="select-field">
-										 <select id="movementType" name="movementType">
-										 
-										 </select>
-									  </div>
-                                    </div>
-                                    <input type="button" value="Search" class="submit">
-                                    <input type="hidden" value="true" name="isSubmit">
-                                 </fieldset>
-                              <!-- .lli-brand-box -->
-                           </div>
-                           <!-- .lli-brand-container -->
-                        </div>
+						
                         <table class="table" id="marketDataTable">
                            <!--<thead class="table_head">
-                              <tr>
-                                 <th colspan="7" class="pad-full-10">United Kingdom inc Eire</th>
-                              </tr>
                               <tr class="visible-lg">
-                                 <th class="pad-10">Move Date</th>
-                                 <th class="pad-10">Vessel Name</th>
-                                 <th class="pad-10">Flag</th>
-                                 <th class="pad-10">Gross</th>
-                                 <th class="pad-10">Origin</th>
-                                 <th class="pad-10">Destination</th>
-                                 <th class="pad-10">Vessel Type</th>
+                                 <th class="pad-10">Baltic Indices</th>
+                                 <th class="pad-10">Jan 13</th>
+                                 <th class="pad-10">Jan 12</th>
+                                 <th class="pad-10">Jan 11</th>
+                                 <th class="pad-10">Jan 10</th>
+                                 <th class="pad-10">Jan 09</th>
                               </tr>
                            </thead>
                            <tbody class="visible-lg">
                               <tr>
-                                 <td colspan="5" class="graybg RB18 pad-10">Aberdeen(GBR)</td>
-                                 <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
+                                 <td class="R16 pad-10">Baltic Dry Index</td>
+                                 <td class="R16 pad-10">910 <span class="rise">+18</span></td>
+                                 <td class="R16 pad-10">892	<span class="fall">-2</span></td>
+                                 <td class="R16 pad-10">894 <span class="fall">-32</span></td>
+                                 <td class="R16 pad-10">926 <span class="fall">-23</span></td>
+                                 <td class="R16 pad-10">949 <span class="fall">-14</span></td>
                               </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
+							  <tr>
+                                 <td class="R16 pad-10">Baltic Dry Index</td>
+                                 <td class="R16 pad-10">910 <span class="rise">+18</span></td>
+                                 <td class="R16 pad-10">892	<span class="fall">-2</span></td>
+                                 <td class="R16 pad-10">894 <span class="fall">-32</span></td>
+                                 <td class="R16 pad-10">926 <span class="fall">-23</span></td>
+                                 <td class="R16 pad-10">949 <span class="fall">-14</span></td>
                               </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
+							  <tr>
+                                 <td class="R16 pad-10">Baltic Dry Index</td>
+                                 <td class="R16 pad-10">910 <span class="rise">+18</span></td>
+                                 <td class="R16 pad-10">892	<span class="fall">-2</span></td>
+                                 <td class="R16 pad-10">894 <span class="fall">-32</span></td>
+                                 <td class="R16 pad-10">926 <span class="fall">-23</span></td>
+                                 <td class="R16 pad-10">949 <span class="fall">-14</span></td>
                               </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="5" class="graybg RB18 pad-10">Ardrossan(GBR)</td>
-                                 <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="5" class="graybg RB18 pad-10">Aughinish Is.</td>
-                                 <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10">29.12.2016</td>
-                                 <td class="R16 pad-10">Hildasay</td>
-                                 <td class="R16 pad-10">Isle of Man</td>
-                                 <td class="R16 pad-10">7606</td>
-                                 <td class="R16 pad-10">--</td>
-                                 <td class="R16 pad-10">Aberdeen(GBR)  Roll On Roll Off</td>
+							  <tr>
+                                 <td class="R16 pad-10">Baltic Dry Index</td>
+                                 <td class="R16 pad-10">910 <span class="rise">+18</span></td>
+                                 <td class="R16 pad-10">892	<span class="fall">-2</span></td>
+                                 <td class="R16 pad-10">894 <span class="fall">-32</span></td>
+                                 <td class="R16 pad-10">926 <span class="fall">-23</span></td>
+                                 <td class="R16 pad-10">949 <span class="fall">-14</span></td>
                               </tr>
                            </tbody>
 						   <tbody class="visible-sm">
                               <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Aberdeen(GBR)</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Baltic Indices</td>
+                                 <td class="pad-10 R21_GrayColor">Baltic Dry Index</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 13</td>
+                                 <td class="pad-10 R21_GrayColor">910 <span class="rise">+18</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 12</td>
+                                 <td class="pad-10 R21_GrayColor">54 <span class="fall">-28</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 11</td>
+                                 <td class="pad-10 R21_GrayColor">656 <span class="fall">-18</span></td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 10</td>
+                                 <td class="pad-10 R21_GrayColor">767 <span class="fall">-8</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 09</td>
+                                 <td class="pad-10 R21_GrayColor">894 <span class="fall">-38</span></td>
                               </tr>
-                             <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
+							  
+							  <tr>
+                                 <td class="pad-10 R21_GrayColor">Baltic Indices</td>
+                                 <td class="pad-10 R21_GrayColor">Baltic Dry Index</td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 13</td>
+                                 <td class="pad-10 R21_GrayColor">910 <span class="rise">+18</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 12</td>
+                                 <td class="pad-10 R21_GrayColor">54 <span class="fall">-28</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 11</td>
+                                 <td class="pad-10 R21_GrayColor">656 <span class="fall">-18</span></td>
                                  </a>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 10</td>
+                                 <td class="pad-10 R21_GrayColor">767 <span class="fall">-8</span></td>
                               </tr>
                               <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Ardrossan(GBR)</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="6" class="graybg RB18 pad-full-10">Aughinish Is.</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Move Date</td>
-                                 <td class="pad-10 R21_RedColor">29.12.2016</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Vessel Name</td>
-                                 <td class="pad-10 R21_RedColor">Hildasay</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Flag</td>
-                                 <td class="pad-10 R21_RedColor">Isle of Man</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Origin</td>
-                                 <td class="pad-10 R21_RedColor">7606</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Destination Vessel</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Type</td>
-                                 <td class="pad-10 R21_RedColor">Aberdeen(GBR) Roll On Roll Off</td>
+                                 <td class="pad-10 R21_GrayColor">Jan 09</td>
+                                 <td class="pad-10 R21_GrayColor">894 <span class="fall">-38</span></td>
                               </tr>
                            </tbody>-->
                         </table>

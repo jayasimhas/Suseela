@@ -1,27 +1,144 @@
 ﻿﻿@model Informa.Web.ViewModels.FinanceCompanies.MergersAndAquisitionsViewModel
-
+<script src="/dist/js/amstock.js" type="text/javascript"></script>
 <div>
     <div class="graphs-container">
         <h4>@Model.Dashboard</h4>
         @{
-           foreach (var Graph in Model.AMGraphs)
+            foreach (var Graph in Model.AMGraphs)
             {
                 <div class="graph-container first">
                     <h5>@Graph.GraphTitle</h5>
-                    <div id="chartdiv-@Graph.GraphID" style="width: 220px; height: 140px; background-color: rgb(255, 255, 255); overflow: hidden;border:2px solid gray;">
-                        <div style="overflow: hidden; position: relative; text-align: left; width: 220px; height: 140px;">
-                        </div>
-                    </div>
+                    <div id="chartdiv-@Graph.GraphID" style="width: 100%; height: 140px; background-color: #FFFFFF;" data-type="@Graph.GraphType" data-color="@Graph.GraphColor"></div>
                 </div>
-                <script type="text/javascript">
-            var color =  '@Graph.GraphColor';
-            var type =  '@Graph.GraphType';
-                </script>
             }
         }
         <p class="dealsOmitted">@Model.DealsOmitted</p>
     </div>
+    <div class="small_table">
+        <div class="table-responsive">
+            <div class="idi-table-heading clearfix" style="background-color: #be1e2d;">
+                <p style="float: left">@Model.TableTitle</p>
+                <div style="float: right; background: #fff; color: #000000;">
+                    <select id="idYearSelect">
+                        @{
+                            int curYear = DateTime.Now.Year;
+                            string curUrl = @HttpContext.Current.Request.RawUrl.Split('?')[0] + "?year=";
+                            string selectedYear = @HttpContext.Current.Request.QueryString["year"];
+                            <option value="@curYear" data-href="@curUrl@curYear">Latest</option>
+                            for (int i = 0; i <= 6; i++)
+                            {
+                                curYear--;
+                                if (curYear.ToString() == selectedYear)
+                                {
+                                    <option value="@curYear" data-href="@curUrl@curYear" selected>@curYear</option>
+                                }
+                                else
+                                {
+                                    <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
+                                }
+
+                            }
+                        }
+
+                    </select>
+                </div>
+            </div>
+            <table class="table merge-acquistion">
+                <thead class="table_head">
+                    <tr class="visible-lg">
+                        <th class="pad-10" style="width: 10%;">
+                            <span>@Model.Month</span>
+                            <div class="sorting-buttons" deal="Month">
+                                <a href="#" category="month" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="month" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" name="" />
+                        </th>
+                        <th class="pad-10" style="width: 10%;">
+                            <span>@Model.Aquirer</span>
+                            <div class="sorting-buttons" deal="Acquirer">
+                                <a href="#" category="text" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="text" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" name="" />
+                        </th>
+                        <th class="pad-10" style="width: 10%;">
+                            <span>@Model.Target</span>
+                            <div class="sorting-buttons" deal="Target">
+                                <a href="#" category="text" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="text" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" name="" />
+                        </th>
+                        <th class="pad-10" style="width: 15%;">
+                            <span>@Model.TargetSector</span>
+                            <div class="sorting-buttons" deal="TargetSector">
+                                <a href="#" category="text" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="text" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" name="" />
+                        </th>
+                        <th class="pad-10" style="width: 15%;">
+                            <span>@Model.TargetLocation</span>
+                            <div class="sorting-buttons" deal="TargetLocation">
+                                <a href="#" category="text" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="text" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" name="" />
+                        </th>
+                        <th class="pad-10">
+                            <span>@Model.Detail</span>
+                            <div class="sorting-buttons" deal="details">
+                                <a href="#" category="text" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="text" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <input type="text" class="detail-text-field" name="" />
+                        </th>
+                        <th class="pad-10" style="width: 11%;">
+                            <span>@Model.Price</span>
+                            <div class="sorting-buttons" deal="Price">
+                                <a href="#" category="number" type="ascending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+                                </a>
+                                <a href="#" category="companies" type="descending">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+                                </a>
+                            </div>
+                            <div class="range-wrapper">
+                                <input type="text" class="range-field" name="" /> To <input type="text" class="range-field" name="" />
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
     <script type="text/javascript">
-        var mergersAndAquisitionsData = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
+            //mergersAndAquisitionsData
+            var jsonMergeAcquistion = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
     </script>
 </div>

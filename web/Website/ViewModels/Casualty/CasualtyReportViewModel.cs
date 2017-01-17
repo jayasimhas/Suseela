@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Informa.Library.User.Authentication;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Web.ViewModels.Casualty
 {
@@ -38,13 +39,13 @@ namespace Informa.Web.ViewModels.Casualty
             CompanyResultService = companyResultService;
             AuthenticatedUserContext = authenticatedUserContext;
             CallToActionViewModel = callToActionViewModel;
-            feedUrl = renderingParametersService.GetCurrentRendering().Parameters["feedurl"];
+            feedUrlConfigurationItem = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         /// <summary>
         /// feed URL
         /// </summary>
-        public string feedUrl { get; set; }
+        public IExternal_Feed_Url_Configuration feedUrlConfigurationItem { get; set; }
         /// <summary>
         /// Title
         /// </summary>
@@ -64,7 +65,7 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Casualty data
         /// </summary>
-        public string jsonCasualtyData => GetCasualtyData(feedUrl);
+        public string jsonCasualtyData => GetCasualtyData();
         /// <summary>
         /// Method to get Casualty detail page URL
         /// </summary>
@@ -79,7 +80,7 @@ namespace Informa.Web.ViewModels.Casualty
                 if (casualtyDetailPageRoot != null)
                 {
                     var casualtyDetailPage = casualtyDetailPageRoot._ChildrenWithInferType.OfType<IGeneral_Content_Page>().FirstOrDefault();
-                    if(casualtyDetailPage!=null)
+                    if (casualtyDetailPage != null)
                     {
                         return casualtyDetailPage._AbsoluteUrl;
                     }
@@ -108,17 +109,17 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         /// <param name="feedURL"></param>
         /// <returns></returns>
-        public string GetCasualtyData(string feedURL)
+        public string GetCasualtyData()
         {
-            if (!string.IsNullOrEmpty(feedURL))
+            if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL))
             {
-                return CompanyResultService.GetCompanyFeeds(feedURL).Result;
+                return CompanyResultService.GetCompanyFeeds(feedUrlConfigurationItem.External_Feed_URL).Result;
             }
             else
             {
                 return string.Empty;
             }
-            
+
         }
     }
 }

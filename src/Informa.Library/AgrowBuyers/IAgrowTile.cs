@@ -8,6 +8,7 @@ namespace Informa.Library.AgrowBuyers
         string AgrowTitle { get; set; }
         string AgrowShortDescription { get; set; }
         string AgrowDetailUrl { get; set; }
+        string AgrowDetailText { get; set; }
         Image AgrowBanner { get; set; }
     }
 }

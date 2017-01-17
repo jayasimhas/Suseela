@@ -5,8 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using Informa.Web.Areas.Account.Models.User.Management;
 
-namespace Informa.Web.Areas.Download
+namespace Informa.Web.Areas.Download.Controllers
 {
     public class JsonDataFromFeedController : Controller
     {
@@ -15,12 +16,12 @@ namespace Informa.Web.Areas.Download
         {
             CompanyResultService = companyResultService;
         }
-        // GET: Account/JsonDataFromFeed
-        public string ReadJsonShippingMovements(string feed, string area, string movementType)
+        // GET: Account/JsonDataFromFeed               
+        public string ReadJsonShippingMovements(string feed, string areaCode, string movementType)
         {
-            if (!string.IsNullOrEmpty(feed) && !string.IsNullOrEmpty(area) && !string.IsNullOrEmpty(movementType))
+            if (!string.IsNullOrEmpty(feed) && !string.IsNullOrEmpty(areaCode) && !string.IsNullOrEmpty(movementType))
             {
-                string feedUrl = string.Format(feed, area, movementType);
+                string feedUrl = string.Format(feed, areaCode, movementType);
                 return CompanyResultService.GetCompanyFeeds(feed).Result;
             }
             else
