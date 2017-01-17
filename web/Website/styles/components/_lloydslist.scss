@@ -104,12 +104,15 @@
 	    width: 100%;
 	    color: #000;
 	}
+	tr:nth-child(even) {
+		background-color: #eee;
+	}
 	.selectivity-input {
 	    width: 100%;
 	    color: #000;
 	 }
 	.range-wrapper {
-	    float: none;
+	    float: left;
 	    width: 100%;
 	 }
 	 input.range-field {
@@ -151,7 +154,33 @@
 	}
 }
 
-
+.graphs-container { background-color: #EEEEEE; margin: 0 6px 20px; overflow: auto; }
+.graphs-container h4 { text-transform: uppercase; padding: 10px; }
+.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
+.graphs-container .graph-container {
+    display: inline-block;
+    text-align: left;
+    padding: 0 8px;
+    padding-bottom: 10px;
+    background-color: #EEEEEE;
+    float: left;
+    border-left: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    width: 25%;
+    @include breakpoint('small') {
+    	width: 100%;
+    }
+    &:first-child {
+    	border-left: none;
+    }
+}
+.graphs-container .dealsOmitted {
+	float: right;
+    width: 100%;
+    padding: 10px 0;
+    text-align: right;
+    background-color: #fff;
+}
 #market-data{
 	#marketDataTable{
 		width: 760px;
