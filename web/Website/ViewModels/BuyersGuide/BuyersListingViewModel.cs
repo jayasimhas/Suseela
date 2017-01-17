@@ -83,13 +83,15 @@ namespace Informa.Web.ViewModels.BuyersGuide
                             {
                                 agrowTiles.Add(new AgrowTile { AgrowTitle = buyersList.Title, AgrowBanner = buyersList.Banner,
                                     AgrowLogo = buyersList.AgrowLogo, AgrowShortDescription = new string(JobShortdesc.Take(150).ToArray()) + "...",
-                                    AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl
+                                    AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl,
+                                    AgrowDetailText = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Text : buyersList?.Title
                                 });
                             }
                             else if (JobShortdesc != null && JobShortdesc.Length <= 150)
                             {
                                 agrowTiles.Add(new AgrowTile { AgrowTitle = buyersList.Title, AgrowBanner = buyersList.Banner,AgrowLogo = buyersList.AgrowLogo,
-                                    AgrowShortDescription = JobShortdesc,AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl
+                                    AgrowShortDescription = JobShortdesc,AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl,
+                                    AgrowDetailText = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Text : buyersList?.Title
                                 });
                             }
                             htmldoc2.close();

@@ -164,16 +164,30 @@ $color-persian-red: #c12d3b;
 
 
 /*---
-title: Maritime
+title: Insurance Day
 section: Colors
 ---
 ```example:color
-@color: #002A4D @name: primary
-@color: #0A5A8A @name: steel
-@color: #0A5A8A @name: steel
+@color: #DE4361 @name: primary Default State
+@color: #b0173d @name: secondary color 
+@color: #91211E @name: primary Hover State
 ```
 */
-$color-primary-blue: #002A4D;
-$color-steel-blue: #0A5A8A; 
-$color-persian-red: #c12d3b;
+$color-primary-default: #DE4361;
+$color-secondary-color: #b0173d; 
+$color-primary-hover: #91211E;
+
+/*---
+title: Lloyds
+section: Colors
+---
+```example:color
+@color: #1191D1 @name: primary Default State
+@color: #0f5487 @name: secondary color 
+@color: #002d4f @name: primary Hover State
+```
+*/
+$color-primary-default: #1191D1;
+$color-secondary-color: #0f5487; 
+$color-primary-hover: #002d4f;
 

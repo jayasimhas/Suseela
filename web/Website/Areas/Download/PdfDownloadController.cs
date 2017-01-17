@@ -77,7 +77,7 @@ namespace Informa.Web.Areas.Account.Controllers
         }
 
         /// <summary>
-        /// Controller method for downloading Personalize pdf
+        /// Controller method for downloading Personalize Pdf
         /// </summary>
         /// <param name="pdfPageUrl"></param>
         /// <param name="userEmail"></param>

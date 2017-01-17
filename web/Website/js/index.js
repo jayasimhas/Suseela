@@ -36,9 +36,13 @@ import './components/id-quarterly-responsive-table';
 import './components/id-comparefinancialresults';
 import './components/latest-casuality';
 import './components/id-merge-acquistion';
+import './components/AMCharts-merges-acquisition';
+import './components/dynamic-content-recomendation';
 import './components/ll-casuality-listing';
 import './components/ll-casuality-detail';
 import './components/ll-market-data-tool';
+import './components/ll-market-data';
+
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

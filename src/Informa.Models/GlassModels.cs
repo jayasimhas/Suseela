@@ -5060,6 +5060,63 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IExternal_Feed_Url_ConfigurationConstants.TemplateIdString)]
+    public partial interface IExternal_Feed_Url_Configuration : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+
+    /// <summary>
+    /// IExternal_Feed_Url_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/External Feed Url Configuration</para>	
+    /// <para>ID: A3294A33-851E-47A5-99B1-A6122D8AD7E6</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IExternal_Feed_Url_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The External Feed URL field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CBBA3299-32AD-4F99-BE89-79AEFD57C662</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IExternal_Feed_Url_ConfigurationConstants.External_Feed_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string External_Feed_URL { get; set; }
+    }
+
+    public static partial class IExternal_Feed_Url_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "A3294A33-851E-47A5-99B1-A6122D8AD7E6";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "External Feed Url Configuration";
+
+
+        public static readonly ID External_Feed_URLFieldId = new ID("CBBA3299-32AD-4F99-BE89-79AEFD57C662");
+        public const string External_Feed_URLFieldName = "External Feed URL";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
 {
 
@@ -21448,14 +21505,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.DisplayStyle_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IAgrow_Results_Table_Type_Option DisplayStyle { get; set; }
 
-        /// <summary>
-        /// The Table Type field.
-        /// <para></para>
-        /// <para>Field Type: Single Line Text</para>		
-        /// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
-        /// </summary>
-        [SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string No_of_Jobs_Per_Page { get; set; }
+        ///// <summary>
+        ///// The Table Type field.
+        ///// <para></para>
+        ///// <para>Field Type: Single Line Text</para>		
+        ///// <para>Field ID: A1D47803-9E2E-48B9-AA3A-1A356DDC074C</para>
+        ///// </summary>
+        //[SitecoreField(IAgrow_Buyers_Listing_Display_StylesConstants.No_Per_Page_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //string No_of_Jobs_Per_Page { get; set; }
     }
 
     public static partial class IAgrow_Buyers_Listing_Display_StylesConstants
@@ -21469,8 +21526,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID DisplayStyle_TypeFieldId = new ID("D30E27F2-B231-4AEF-B005-21C6BBB5A007");
         public const string DisplayStyle_TypeFieldName = "Display Style";
 
-        public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
-        public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
+        //public static readonly ID No_Per_Page_TypeFieldId = new ID("A1D47803-9E2E-48B9-AA3A-1A356DDC074C");
+        //public const string No_Per_Page_TypeFieldName = "Number of Guides Per Page";
     }
 
     /// <summary>
