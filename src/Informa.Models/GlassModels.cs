@@ -1387,6 +1387,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsArticleUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         IArticle Company_News_Article { get; set; }
+
+        /// <summary>
+        /// No of Company News Article
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsNumberOfArticle, Setting = SitecoreFieldSettings.InferType)]
+        int TotalNumberOfCompanyNews { get; set; }
+
+
     }
 
 
@@ -1547,11 +1555,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public static readonly ID CompanyNameTextPageFieldId = new ID("0D2BC7A3-28F3-42AF-8FAF-53934FFB6428");
         public const string CompanyNameTextPageFieldName = "Company Name Text";
 
-        public static readonly ID CompanyNewsDateTimePageFieldId = new ID("114C08C7-9ED0-4387-B21D-AA8791A3BED4");
+        public static readonly ID CompanyNewsDateTimePageFieldId = new ID("114C08C7-9ED0-4387-B21D-coAA8791A3BED4");
         public const string CompanyNewsDateTimePageFieldName = "Company News Date Time";
 
         public static readonly ID CompanyNewsSummaryPageFieldId = new ID("3B8F8BC3-326E-4275-9B60-A879EFC015F5");
         public const string CompanyNewsSummaryPageFieldName = "Company News Summary";
+
+        public static readonly ID CompanyNewsNumberOfArticlePageFieldId = new ID("535FFD88-7747-47D3-BED3-4BA622C9244D");
+        public const string CompanyNewsNumberOfArticle = "Number of Article to Show";
 
         public static readonly ID CompanyNewsArticleUrlFieldNamePageFieldId = new ID("EC397B5A-45D7-4E45-9A35-0B400E333457");
         public const string CompanyNewsArticleUrlFieldName = "Company News Article";

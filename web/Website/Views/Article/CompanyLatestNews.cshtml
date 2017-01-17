@@ -3,9 +3,13 @@
 @{
     <div class="ContentRecomm-RelatedContent-vertical">
         <div class="article-related-content">
-            @if (Model.CompanyManualArticlePage != null)
+            
+            @if (@Model.CompanyNewsSectionName != null)
             {
                 <h2>@Model.CompanyNewsSectionName</h2>
+            }
+            @if (Model.CompanyManualArticlePage != null)
+            {
                 <div class="section-article">
                     <div class="section-article-text">
                         <h5>
