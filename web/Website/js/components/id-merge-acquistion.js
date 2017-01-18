@@ -41,10 +41,16 @@
 				
 				//Fetching Elements
 				Body.find('tr').each(function(key) {
+					var Text = "";
 					if(Category === 'month') {
 						SortingArray.push(parseInt($($(this).find('td')[Index]).attr('month')));
 					} else {
-						SortingArray.push($($(this).find('td')[Index]).text());
+						if($($(this).find('td')[Index]).text().includes('<a href=')) {
+							Text = $($(this).find('td')[Index]).find('a').text();
+						} else {
+							Text = $($(this).find('td')[Index]).text();
+						}
+						SortingArray.push(Text);
 					}
 				});
 				console.log(SortingArray);
@@ -72,7 +78,6 @@
 					for(var j in CurrentItem) {
 						if(SortingArray[i] == CurrentItem[j][SortingType]) {
 							SortedElements.push(CurrentItem[j]);
-							j++;
 						}
 					}
 				}
