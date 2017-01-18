@@ -1,0 +1,46 @@
+.theme-lloyds-day {
+
+    @include theme-links($color-primary-default);
+
+    @include theme-buttons(
+        $color-primary-default,
+        $color-primary-default,
+        $color-white,
+        $color-secondary-color,
+        $color-secondary-color,
+        $color-white);
+
+    @include theme-main-menu($color-secondary-color, $color-secondary-color);
+
+    @include theme-subnav($color-persian-red);
+
+    @include theme-banners($color-primary-default, $color-white);
+
+    @include theme-call-out-boxes($color-concrete-gray, $color-persian-red);
+
+    @include theme-bordered-elements($color-persian-red);
+
+    @include theme-interviews(
+        transparentize($color-persian-red, 0.7),
+        transparentize($color-persian-red, 0.5),
+        transparentize($color-primary-default, 0.85),
+        transparentize($color-primary-default, 0.5));
+
+    .article-topics__li:before,
+    .quickfactsbulleted li:before,
+	.quick-facts__list--ul li:before {
+        @include svg-fill($color-persian-red);
+	    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A);
+    }
+
+    .article-topics__li ul li:before,
+    .quickfactsbulleted li ul li:before,
+	.quick-facts__list--ul li ul li:before {
+        color: $color-persian-red;
+    }
+
+	@include theme-quick-facts(
+		transparentize($color-primary-default, 0.9),
+		transparentize($color-persian-red, 0.5));
+
+}

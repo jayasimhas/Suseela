@@ -41,10 +41,16 @@
 				
 				//Fetching Elements
 				Body.find('tr').each(function(key) {
+					var Text = "";
 					if(Category === 'month') {
 						SortingArray.push(parseInt($($(this).find('td')[Index]).attr('month')));
 					} else {
-						SortingArray.push($($(this).find('td')[Index]).text());
+						if($($(this).find('td')[Index]).text().includes('<a href=')) {
+							Text = $($(this).find('td')[Index]).find('a').text();
+						} else {
+							Text = $($(this).find('td')[Index]).text();
+						}
+						SortingArray.push(Text);
 					}
 				});
 				console.log(SortingArray);
@@ -72,7 +78,6 @@
 					for(var j in CurrentItem) {
 						if(SortingArray[i] == CurrentItem[j][SortingType]) {
 							SortedElements.push(CurrentItem[j]);
-							j++;
 						}
 					}
 				}
@@ -90,11 +95,135 @@
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
 		},
+		FilterEvent: function(data, Parent) {
+			var InputValues = Parent.find('th').find('input'),
+				self = this;
+
+			InputValues.on('keyup', function() {
+				var textFieldValue = $(this).val(),
+					DealType = $(this).parents('th').find('.sorting-buttons').attr('deal'),
+					Index = $(this).parents('th').index(),
+					Body = Parent.find('tbody.visible-lg'),
+					regExp = new RegExp(textFieldValue, "i"),
+					ItemArray = [],
+					FilteredArray = [],
+					Obj = {},
+					StartField = Parent.find('.range-field')[0].value,
+					EndField = Parent.find('.range-field')[1].value;
+
+				Parent.find('th').each(function(key) {
+					var DealType = $(this).find('.sorting-buttons').attr('deal');
+					if(DealType != 'Price') {
+						if($(this).find('input').val().length > 0) {
+							Obj[DealType] = $(this).find('input').val();
+						}
+					} else {
+						var Start, End;
+						if($(this).find('input.start').val()) {
+							Start = parseFloat($(this).find('input.start').val());
+						} else {
+							Start = 0;
+						}
+						if($(this).find('input.end').val()) {
+							End = parseFloat($(this).find('input.end').val());
+						} else {
+							End = 0;
+						}
+						Obj[DealType] = {
+							Start : Start,
+							End : End
+						}
+						// Obj[DealType]['End'] = 
+					}
+				});
+
+				// Body.find('tr').each(function(key) {
+				// 	ItemArray.push($($(this).find('td')[Index]).text());
+				// });
+
+				//for(var i in ItemArray) {
+					// if(regExp.test(ItemArray[i])) {
+					// 	for(var j = 0; j < window.jsonMergeAcquistion.length; j++) {
+					// 		if(ItemArray[i] == window.jsonMergeAcquistion[j][DealType]) {
+					// 			FilteredArray.push(window.jsonMergeAcquistion[j]);
+					// 		}
+					// 	}
+					// }
+				//}
+				if(Object.keys(Obj).length > 0) {
+					for(var i in window.jsonMergeAcquistion) {
+						var count = 0;
+						for(var j in Obj) {
+							var text = "";
+							if(j == 'Price') {
+								var Price = parseFloat(window.jsonMergeAcquistion[i][j]);
+								// if(StartField.length > 0 && EndField.length > 0) {
+								// 	if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
+								// 		count++;
+								// 	}
+								// } else if(StartField.length > 0 && EndField.length == 0) {
+								// 	if((Price > parseFloat(StartField))) {
+								// 		count++;
+								// 	}
+								// } else {
+								// 	if((Price < parseFloat(EndField))) {
+								// 		count++;
+								// 	}
+								// }
+								if(Obj[j]['End'] != 0) {
+									if((Price > Obj[j]['Start']) && (Price < Obj[j]['End'])) {
+										count++;
+									}
+								} else {
+									if(Price > Obj[j]['Start']) {
+										count++;
+									}
+								}
+							} else if (j == 'Month') {
+								var MonthValue = window.jsonMergeAcquistion[i][j] - 1;
+								if(self.MonthNames[MonthValue].toLowerCase().includes(Obj[j].toLowerCase())) {
+									count++;
+								}
+							} else {
+								if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
+									text = $(window.jsonMergeAcquistion[i][j]).text();
+								} else {
+									text = window.jsonMergeAcquistion[i][j];
+								}
+								if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
+									count++;
+								}
+							}
+						}
+
+						if(count === Object.keys(Obj).length) {
+							FilteredArray.push(window.jsonMergeAcquistion[i]);
+						}
+					}
+				} else {
+					FilteredArray = window.jsonMergeAcquistion;
+				}
+				self.RenderDesktopVersion(FilteredArray, $('.merge-acquistion'));
+
+			});
+		},
+		YearChange: function() {
+			$(document).on('change', '#idYearSelect', function() {
+				var Href = $(this).attr('data-href'),
+					value= $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
+					newUrl = window.location.href.split('?')[0].concat("?year="+value);
+
+
+				window.location =newUrl;			
+
+			});
+		},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
 			this.SortingEvent(data, Parent);
-			
+			this.FilterEvent(data, Parent);
+			this.YearChange();
 			//this.RenderMobileVersion(data, Parent);
 		}
 	}

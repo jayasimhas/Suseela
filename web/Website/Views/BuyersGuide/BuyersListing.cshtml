@@ -55,7 +55,7 @@
                                                 @Html.Raw(agrow.AgrowShortDescription)
                                             </p>
                                         </div>
-                                        <a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailUrl</a>
+                                        <a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailText</a>
                                     </div>
                                 }
                             </div>
@@ -85,30 +85,12 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <h4><a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailUrl</a></h4>
+                                            <h4><a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailText</a></h4>
                                         </div>
                                     </div>
                                 }
                             </div>
                         </section>
-                    }
-                }
-                <input type="hidden" id="jobTilesCount" value="@Model.AgrowTiles.Count()" />
-                <input type="hidden" id="noofJobsPerPage" value="@Model.RenderingParameters.No_of_Jobs_Per_Page" />
-                <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
-
-                @*Pagination for Jobs*@
-                if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.RenderingParameters.No_of_Jobs_Per_Page))
-                {
-                    if (Model.AgrowTiles.Count() > 0 && Convert.ToInt32(Model.RenderingParameters.No_of_Jobs_Per_Page) < Model.AgrowTiles.Count())
-                    {
-                        <div class="pagination clearfix">
-                            <ul class="nums">
-                                <li><a href="javascript:void(0);" class="prev"/></li>
-                                <li><span></span></li>
-                                <li><a href="javascript:void(0);" class="next"/></li>
-                            </ul>
-                        </div>
                     }
                 }
             }

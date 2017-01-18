@@ -1089,7 +1089,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Account\Controllers\PdfDownloadController.cs" />
+    <Compile Include="Areas\Download\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
@@ -1231,6 +1231,8 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\AdobeChartViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyListViewModel.cs" />
@@ -2270,6 +2272,8 @@
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <Content Include="Views\Casualty\BalticIndices.cshtml" />
     <Content Include="Views\Casualty\MarketNews.cshtml" />
+    <Content Include="Views\Casualty\RelatedLinks.cshtml" />
+    <Content Include="Views\Casualty\AdobeChart.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
