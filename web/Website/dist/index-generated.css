@@ -7518,7 +7518,17 @@ div#feedbacklite.fbl_r {
   margin: 0 2em 0 0;
   clear: initial;
   height: 250px;
-  height: 15.625rem; }
+  height: 15.625rem;
+  margin-bottom: 2em; }
+
+.article-left-rail .article-related-content h5, .article-left-rail .article-related-content .alert-success p, .alert-success .article-left-rail .article-related-content p, .article-left-rail .article-related-content .alert-error p, .alert-error .article-left-rail .article-related-content p, .article-left-rail .article-related-content .article-call-to-action__subtitle {
+  height: 70px;
+  overflow: hidden; }
+
+.article-left-rail .ContentRecomm-ReadNext .section-article {
+  height: 245px;
+  height: 15.3125rem;
+  margin-bottom: 2em; }
 
 .article-right-rail .contentRecomm-article {
   width: 100%;
