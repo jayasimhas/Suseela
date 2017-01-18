@@ -34,22 +34,40 @@ namespace Informa.Library.Utilities.References
 
         #region Taxonomy Folders
 
+        //Global Taxonomy Folder
+        public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder") : Guid.Empty.ToString());
 
+        // Pharma Taxonomy Folders
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"); //This Guid not found in CMS
-        public Guid SubjectsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"))? ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"):Guid.Empty.ToString());
-		public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"))? ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder"): Guid.Empty.ToString());
-		public Guid TherapyAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid DeviceAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid PharmaTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
+        public Guid PharmaSubjectsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"))? ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder"):Guid.Empty.ToString());		
+		public Guid PharmaTherapyAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid PharmaDeviceAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder") : Guid.Empty.ToString());           
+        public Guid PharmaIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IndustryTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("IndustryTaxonomyFolder") : Guid.Empty.ToString());
 
-		public Guid GlobalTaxonomyFolder => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+        // Agri Taxonomy Folders
+        public Guid AgriTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
+        public Guid AgriAgencyRegulatorTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AgencyRegulatorTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("AgencyRegulatorTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriAnimalHealthTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AnimalHealthTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("AnimalHealthTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriCommercialTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommercialTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommercialTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriCommodityTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriCropProtectionaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder") : Guid.Empty.ToString());
+
+        // Maritime Taxonomy Folders
+        public Guid MaritimeTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
+        public Guid MaritimeCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeHotTopicsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("HotTopicsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("HotTopicsTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeMarketsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("MarketsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("MarketsTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeRegularsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegularsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("RegularsTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeSectorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SectorsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("SectorsTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeTopicTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TopicTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TopicTaxonomyFolder") : Guid.Empty.ToString());
         
-        public Guid IndustriesTaxonomyFolder => new Guid("{D10B7B8F-588B-4209-A319-2BC3A19828B7}");
-
-
         #endregion
 
 
-		public Guid SearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSearchPage")) ? ItemIdResolver.GetItemIdByKey("ScripSearchPage") : Guid.Empty.ToString());
+        public Guid SearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSearchPage")) ? ItemIdResolver.GetItemIdByKey("ScripSearchPage") : Guid.Empty.ToString());
 		public Guid VwbSearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("VwbSearchPage")) ? ItemIdResolver.GetItemIdByKey("VwbSearchPage") : Guid.Empty.ToString());
 
 

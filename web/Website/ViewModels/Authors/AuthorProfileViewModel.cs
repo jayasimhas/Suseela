@@ -134,11 +134,11 @@ namespace Informa.Web.ViewModels.Authors
                 parent = parent._Parent;
             }
 
-            if (parent._Id.Equals(_dependencies.ItemReferences.DeviceAreasTaxonomyFolder))
+            if (parent._Id.Equals(_dependencies.ItemReferences.PharmaDeviceAreasTaxonomyFolder))
                 return "deviceareas";
-            else if (parent._Id.Equals(_dependencies.ItemReferences.TherapyAreasTaxonomyFolder))
+            else if (parent._Id.Equals(_dependencies.ItemReferences.PharmaTherapyAreasTaxonomyFolder))
                 return "areas";
-            else if (parent._Id.Equals(_dependencies.ItemReferences.SubjectsTaxonomyFolder))
+            else if (parent._Id.Equals(_dependencies.ItemReferences.PharmaSubjectsTaxonomyFolder))
                 return "subjects";
             else if (parent._Id.Equals(_dependencies.ItemReferences.RegionsTaxonomyFolder))
                 return "regions";

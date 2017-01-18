@@ -1233,7 +1233,7 @@
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
-    <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyListViewModel.cs" />
     <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
@@ -2257,7 +2257,7 @@
     <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
-    <Content Include="Views\Casualty\CasualtyReport.cshtml" />
+    <Content Include="Views\Casualty\CasualtyList.cshtml" />
     <Content Include="Views\Casualty\LatestCasualties.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
