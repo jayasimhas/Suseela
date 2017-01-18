@@ -1231,6 +1231,7 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
@@ -2270,6 +2271,7 @@
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <Content Include="Views\Casualty\BalticIndices.cshtml" />
     <Content Include="Views\Casualty\MarketNews.cshtml" />
+    <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

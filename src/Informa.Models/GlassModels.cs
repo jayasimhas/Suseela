@@ -2091,8 +2091,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ma
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData
 {
     
-    [SitecoreType(TemplateId = IMarketData_Detail_PageConstants.TemplateIdString)]
-    public partial interface IMarketData_Folder
+    [SitecoreType(TemplateId = IMarketData_FolderConstants.TemplateIdString)]
+    public partial interface IMarketData_Folder: IGlassBase
     {
         /// <summary>
         /// Section Name
