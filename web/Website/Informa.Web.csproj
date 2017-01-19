@@ -1089,7 +1089,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Download\PdfDownloadController.cs" />
+    <Compile Include="Areas\Download\Controllers\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
@@ -1240,7 +1240,6 @@
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
-    <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
