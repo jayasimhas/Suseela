@@ -91,6 +91,9 @@
 					display: block;
 				}
 			} 
+			.owl-next.disabled, .owl-prev.disabled {
+				pointer-events: none;
+			}
 			.owl-controls{
 				position:absolute;
 				top:-51px;

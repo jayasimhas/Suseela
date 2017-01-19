@@ -3012,6 +3012,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Editors_Picks { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_WhatToReadNextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_WhatToReadNext { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_SuggestedForYouFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_SuggestedForYou { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -3350,6 +3360,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Editors_Picks { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_WhatToReadNextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_WhatToReadNext { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_SuggestedForYouFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_SuggestedForYou { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -3543,7 +3563,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID Editors_picksFieldId = new ID("7B4B31ED-BCE5-41AD-AC69-0B15977B0E16");
         public const string Editors_picksFieldName = "Editors Picks";
 
+        public static readonly ID Hide_WhatToReadNextFieldId = new ID("8ACA5EE0-BD48-49A5-8D35-127FED270449");
+        public const string Hide_WhatToReadNextFieldName = "Hide What To Read Next";
 
+        public static readonly ID Hide_SuggestedForYouFieldId = new ID("22D51B1E-F368-46B8-A417-2D3ACA2F7D0C");
+        public const string Hide_SuggestedForYouFieldName = "Hide Suggested For You";
 
         public static readonly ID Supporting_DocumentsFieldId = new ID("14e38723-efb4-40b3-a47e-1f5d6e6a56b4");
         public const string Supporting_DocumentsFieldName = "Supporting Documents";

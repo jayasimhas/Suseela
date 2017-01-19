@@ -50,13 +50,15 @@ namespace Informa.Web.ViewModels.Articles
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
-        public IEnumerable<IArticle> EditorsPicks
+        public bool HideWhatToReadNext => GlassModel.Hide_WhatToReadNext;
+        public bool HideSuggestedForYou => GlassModel.Hide_SuggestedForYou;
+        public List<IArticle> EditorsPicks => GetEditorsPicks();
+        private List<IArticle> GetEditorsPicks()
         {
-            get
-            {
-                var editorsPickList = GlassModel?.Editors_Picks.Select(x => (IArticle)x);
-                return editorsPickList;
-            }
+            List<IArticle> editorsPickList = new List<IArticle>();
+            if (GlassModel.Editors_Picks != null && GlassModel.Editors_Picks.Any())
+                editorsPickList = GlassModel.Editors_Picks.Select(x => (IArticle)x).ToList();
+           return editorsPickList;
         }
         public string TaxonomyItems
         {

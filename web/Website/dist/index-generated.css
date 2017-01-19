@@ -3462,6 +3462,8 @@ body.lightboxed {
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
     display: block; }
+  .ID-Responsive-Table .owl-next.disabled, .ID-Responsive-Table .owl-prev.disabled {
+    pointer-events: none; }
   .ID-Responsive-Table .owl-controls {
     position: absolute;
     top: -51px;
