@@ -1238,6 +1238,7 @@
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketDataviewModel.cs" />
     <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
@@ -2270,6 +2271,8 @@
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <Content Include="Views\Casualty\BalticIndices.cshtml" />
     <Content Include="Views\Casualty\MarketNews.cshtml" />
+    <Content Include="Views\Casualty\MarketDataList.cshtml" />
+    <Content Include="Views\Casualty\MarketDate.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
