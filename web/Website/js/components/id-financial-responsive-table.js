@@ -6,6 +6,8 @@
 		LastItem: null,
 		FirstItem: null,
 		RenderCarousel: function(data, Parent) {
+			Parent.find('.owl-carousel').remove();
+			Parent.find('.states_heading').parent().append('<div class="owl-wrapper"><div class="owl-carousel"></div></div>');
 			var self = this,
 				Header = data[0].Header,
 				Values = data[0].Values,
@@ -35,35 +37,6 @@
 			}
 			self.InitateCarousel(Parent);
 			self.HeightManagement(Parent);
-			self.ChangeStateEvents(Parent);
-		},
-		ChangeStateEvents: function(Parent) {
-			var OwlNext = Parent.find('.owl-next'),
-				OwlPrevious = Parent.find('.owl-previous'),
-				self = this;
-
-			$('.owl-prev').addClass('disabled');
-			$(document).on('click','.owl-prev, .owl-next', function() {
-				setTimeout(function() {
-					var ActiveElements = Parent.find('.owl-item.active .year_heading'),
-						ActiveElementsTexts = [];
-
-					ActiveElements.each(function() {
-						ActiveElementsTexts.push($(this).text().trim());
-					});
-					$('.owl-prev, .owl-next').removeClass('disabled');
-					if(self.FirstItem.trim() == ActiveElementsTexts[0]) {
-						$('.owl-prev').addClass('disabled');
-					} else {
-						$('.owl-prev').removeClass('disabled');
-					}
-					if(self.LastItem.trim() == ActiveElementsTexts[ActiveElementsTexts.length - 1]) {
-						$('.owl-next').addClass('disabled');
-					} else {
-						$('.owl-next').removeClass('disabled');
-					}
-				}, 400);
-			});
 		},
 		HeightManagement: function(Parent) {
 			Parent.find('.states_heading .RB16').each(function(key){
@@ -103,8 +76,9 @@
 		},
 		InitateCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:true,
+               loop:false,
                merge:true,
+               margin:1,
                nav:true,
                navText: [
                	  "<img src='/dist/img/lessthan.png'/>",

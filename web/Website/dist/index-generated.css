@@ -3427,9 +3427,12 @@ body.lightboxed {
       padding: 10px; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
+  .ID-Responsive-Table .owl-wrapper {
+    width: 70%;
+    float: right; }
     @media (max-width: 480px) {
-      .ID-Responsive-Table .states_heading {
-        width: 40%; } }
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
   .ID-Responsive-Table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -3457,8 +3460,6 @@ body.lightboxed {
     margin-top: 20px; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
-  .ID-Responsive-Table .owl-item.active {
-    margin-right: 1px !important; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
     display: block; }
@@ -3473,9 +3474,6 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
-#annualresults.ID-Responsive-Table .owl-item.active {
-  width: 5% !important; }
-
 #quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
   text-align: center; }
 
@@ -3489,8 +3487,9 @@ body.lightboxed {
 #financialresults .year_heading {
   height: auto; }
 
-#financialresults .owl-item.active {
-  width: 7% !important; }
+#financialresults .owl-wrapper {
+  width: 60%;
+  float: right; }
 
 #financialresults .graybg, #quarterlyresults .graybg {
   display: none; }
