@@ -5,7 +5,7 @@
 
 			Parent.append('<thead class="table_head">'+
 									'<tr>'+
-									  '<th colspan="2" class="pad-10">'+Data.Heading+'</th>'+
+									  '<th colspan="2" class="pad-20">'+Data.Heading+'</th>'+
 									'</tr>'+
 								'</thead>');
 			Parent.append('<tbody></tbody>');
@@ -21,14 +21,14 @@
 								
 							}
 							Body.append('<tr>'+
-									  '<td class="R16 pad-10">'+key+'</td>'+
-									  '<td class="R16 pad-10">'+StrMsg+'</td>'+
+									  '<td class="R16">'+key+'</td>'+
+									  '<td class="R16">'+StrMsg+'</td>'+
 									'</tr>');
 						}
 					} else {
 						Body.append('<tr>'+
-									  '<td class="R16 pad-10">'+key+'</td>'+
-									  '<td class="R16 pad-10">'+Data[key]+'</td>'+
+									  '<td class="R16">'+key+'</td>'+
+									  '<td class="R16">'+Data[key]+'</td>'+
 									'</tr>');
 					}
 				}
