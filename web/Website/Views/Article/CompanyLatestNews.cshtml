@@ -16,9 +16,9 @@
                             <a class="click-utag" href="@(Model.CompanyManualArticlePage._Url)">
                                 @(Model.CompanyManualArticlePage.Title)
                             </a>
-                        </h5>
-                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
+                        </h5>                        
                         <p>@(Html.Raw(Model.CompanyNewsSummary))</p>
+                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
                     </div>
                 </div>
             }
