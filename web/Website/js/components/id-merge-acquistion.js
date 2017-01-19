@@ -41,10 +41,16 @@
 				
 				//Fetching Elements
 				Body.find('tr').each(function(key) {
+					var Text = "";
 					if(Category === 'month') {
 						SortingArray.push(parseInt($($(this).find('td')[Index]).attr('month')));
 					} else {
-						SortingArray.push($($(this).find('td')[Index]).text());
+						if($($(this).find('td')[Index]).text().includes('<a href=')) {
+							Text = $($(this).find('td')[Index]).find('a').text();
+						} else {
+							Text = $($(this).find('td')[Index]).text();
+						}
+						SortingArray.push(Text);
 					}
 				});
 				console.log(SortingArray);
@@ -72,7 +78,6 @@
 					for(var j in CurrentItem) {
 						if(SortingArray[i] == CurrentItem[j][SortingType]) {
 							SortedElements.push(CurrentItem[j]);
-							j++;
 						}
 					}
 				}
@@ -108,8 +113,27 @@
 
 				Parent.find('th').each(function(key) {
 					var DealType = $(this).find('.sorting-buttons').attr('deal');
-					if($(this).find('input').val().length > 0) {
-						Obj[DealType] = $(this).find('input').val();
+					if(DealType != 'Price') {
+						if($(this).find('input').val().length > 0) {
+							Obj[DealType] = $(this).find('input').val();
+						}
+					} else {
+						var Start, End;
+						if($(this).find('input.start').val()) {
+							Start = parseFloat($(this).find('input.start').val());
+						} else {
+							Start = 0;
+						}
+						if($(this).find('input.end').val()) {
+							End = parseFloat($(this).find('input.end').val());
+						} else {
+							End = 0;
+						}
+						Obj[DealType] = {
+							Start : Start,
+							End : End
+						}
+						// Obj[DealType]['End'] = 
 					}
 				});
 
@@ -128,40 +152,52 @@
 				//}
 				if(Object.keys(Obj).length > 0) {
 					for(var i in window.jsonMergeAcquistion) {
+						var count = 0;
 						for(var j in Obj) {
-							var text = ""
-							if(Obj[j].length > 0) {
-								if(j == 'Price') {
-									var Price = parseFloat(window.jsonMergeAcquistion[i][j]);
-									if(StartField.length > 0 && EndField.length > 0) {
-										if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									} else if(StartField.length > 0 && EndField.length == 0) {
-										if((Price > parseFloat(StartField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									} else {
-										if((Price < parseFloat(EndField))) {
-											FilteredArray.push(window.jsonMergeAcquistion[i]);
-										}
-									}
-								} else if (j == 'Month') {
-									var MonthValue = window.jsonMergeAcquistion[i][j] - 1;
-									if(self.MonthNames[MonthValue].toLowerCase().includes(Obj[j].toLowerCase())) {
-										FilteredArray.push(window.jsonMergeAcquistion[i]);
+							var text = "";
+							if(j == 'Price') {
+								var Price = parseFloat(window.jsonMergeAcquistion[i][j]);
+								// if(StartField.length > 0 && EndField.length > 0) {
+								// 	if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
+								// 		count++;
+								// 	}
+								// } else if(StartField.length > 0 && EndField.length == 0) {
+								// 	if((Price > parseFloat(StartField))) {
+								// 		count++;
+								// 	}
+								// } else {
+								// 	if((Price < parseFloat(EndField))) {
+								// 		count++;
+								// 	}
+								// }
+								if(Obj[j]['End'] != 0) {
+									if((Price > Obj[j]['Start']) && (Price < Obj[j]['End'])) {
+										count++;
 									}
 								} else {
-									if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
-										text = $(window.jsonMergeAcquistion[i][j]).text();
-									} else {
-										text = window.jsonMergeAcquistion[i][j];
-									}
-									if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
-										FilteredArray.push(window.jsonMergeAcquistion[i]);
+									if(Price > Obj[j]['Start']) {
+										count++;
 									}
 								}
+							} else if (j == 'Month') {
+								var MonthValue = window.jsonMergeAcquistion[i][j] - 1;
+								if(self.MonthNames[MonthValue].toLowerCase().includes(Obj[j].toLowerCase())) {
+									count++;
+								}
+							} else {
+								if(window.jsonMergeAcquistion[i][j].includes('<a href=')) {
+									text = $(window.jsonMergeAcquistion[i][j]).text();
+								} else {
+									text = window.jsonMergeAcquistion[i][j];
+								}
+								if(text.toLowerCase().includes(Obj[j].toLowerCase())) {
+									count++;
+								}
 							}
+						}
+
+						if(count === Object.keys(Obj).length) {
+							FilteredArray.push(window.jsonMergeAcquistion[i]);
 						}
 					}
 				} else {

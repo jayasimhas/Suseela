@@ -16,7 +16,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 
 namespace Informa.Web.ViewModels.Casualty
 {
-    public class CasualtyReportViewModel : GlassViewModel<I___BasePage>
+    public class CasualtyListViewModel : GlassViewModel<I___BasePage>
     {
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiterootContext;
@@ -25,7 +25,7 @@ namespace Informa.Web.ViewModels.Casualty
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
 
-        public CasualtyReportViewModel(IGlobalSitecoreService globalService,
+        public CasualtyListViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
             ITextTranslator textTranslator,
             ICompaniesResultService companyResultService,
