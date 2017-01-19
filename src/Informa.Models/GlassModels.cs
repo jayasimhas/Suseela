@@ -1387,6 +1387,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsArticleUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         IArticle Company_News_Article { get; set; }
+
+        /// <summary>
+        /// No of Company News Article
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsNumberOfArticle, Setting = SitecoreFieldSettings.InferType)]
+        int TotalNumberOfCompanyNews { get; set; }
+
+
     }
 
 
@@ -1547,11 +1555,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         public static readonly ID CompanyNameTextPageFieldId = new ID("0D2BC7A3-28F3-42AF-8FAF-53934FFB6428");
         public const string CompanyNameTextPageFieldName = "Company Name Text";
 
-        public static readonly ID CompanyNewsDateTimePageFieldId = new ID("114C08C7-9ED0-4387-B21D-AA8791A3BED4");
+        public static readonly ID CompanyNewsDateTimePageFieldId = new ID("114C08C7-9ED0-4387-B21D-coAA8791A3BED4");
         public const string CompanyNewsDateTimePageFieldName = "Company News Date Time";
 
         public static readonly ID CompanyNewsSummaryPageFieldId = new ID("3B8F8BC3-326E-4275-9B60-A879EFC015F5");
         public const string CompanyNewsSummaryPageFieldName = "Company News Summary";
+
+        public static readonly ID CompanyNewsNumberOfArticlePageFieldId = new ID("535FFD88-7747-47D3-BED3-4BA622C9244D");
+        public const string CompanyNewsNumberOfArticle = "Number of Article to Show";
 
         public static readonly ID CompanyNewsArticleUrlFieldNamePageFieldId = new ID("EC397B5A-45D7-4E45-9A35-0B400E333457");
         public const string CompanyNewsArticleUrlFieldName = "Company News Article";
@@ -1981,6 +1992,125 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
+    }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData
+{
+    
+    [SitecoreType(TemplateId = IMarketData_Detail_PageConstants.TemplateIdString)]
+    public partial interface IMarketData_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+
+    }
+    /// <summary>
+    /// ICompany_Graph_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/Company Graph Detail Page</para>	
+    /// <para>ID: 4364D7B9-2AC6-49E3-9123-C2AAE7CC3E0C</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IMarketData_Detail_PageConstants__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+
+    }
+
+    public static partial class IMarketData_Detail_PageConstants
+    {
+
+        public const string TemplateIdString = "024013C4-857F-48C3-AAB6-81E201E93A3B";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Detail Page";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+    }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData
+{
+    
+    [SitecoreType(TemplateId = IMarketData_FolderConstants.TemplateIdString)]
+    public partial interface IMarketData_Folder: IGlassBase
+    {
+        /// <summary>
+        /// Section Name
+        /// </summary>
+        [SitecoreField(IMarketData_FolderConstants.SectionName_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string SectionName { get; set; }
+    }
+   
+
+    public static partial class IMarketData_FolderConstants
+    {
+
+        public const string TemplateIdString = "6F2ED659-97D5-4DBB-BF58-0AA95E91F740";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Folder";
+
+        public static readonly ID SectionName_LinkFieldId = new ID("455A3E98-A627-4B40-8035-E683A0331AC7");
+        public const string SectionName_LinkFieldName = "Section Name";
     }
 
 }
@@ -2882,6 +3012,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Editors_Picks { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_WhatToReadNextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_WhatToReadNext { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_SuggestedForYouFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_SuggestedForYou { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -3220,6 +3360,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Editors_Picks { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_WhatToReadNextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_WhatToReadNext { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [SitecoreField(IArticleConstants.Hide_SuggestedForYouFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_SuggestedForYou { get; set; }
+        /// <summary>
         /// The Supporting Documents field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
@@ -3413,7 +3563,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID Editors_picksFieldId = new ID("7B4B31ED-BCE5-41AD-AC69-0B15977B0E16");
         public const string Editors_picksFieldName = "Editors Picks";
 
+        public static readonly ID Hide_WhatToReadNextFieldId = new ID("8ACA5EE0-BD48-49A5-8D35-127FED270449");
+        public const string Hide_WhatToReadNextFieldName = "Hide What To Read Next";
 
+        public static readonly ID Hide_SuggestedForYouFieldId = new ID("22D51B1E-F368-46B8-A417-2D3ACA2F7D0C");
+        public const string Hide_SuggestedForYouFieldName = "Hide Suggested For You";
 
         public static readonly ID Supporting_DocumentsFieldId = new ID("14e38723-efb4-40b3-a47e-1f5d6e6a56b4");
         public const string Supporting_DocumentsFieldName = "Supporting Documents";

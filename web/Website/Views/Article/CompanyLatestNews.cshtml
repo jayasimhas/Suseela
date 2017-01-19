@@ -3,18 +3,22 @@
 @{
     <div class="ContentRecomm-RelatedContent-vertical">
         <div class="article-related-content">
-            @if (Model.CompanyManualArticlePage != null)
+            
+            @if (@Model.CompanyNewsSectionName != null)
             {
                 <h2>@Model.CompanyNewsSectionName</h2>
+            }
+            @if (Model.CompanyManualArticlePage != null)
+            {
                 <div class="section-article">
                     <div class="section-article-text">
                         <h5>
                             <a class="click-utag" href="@(Model.CompanyManualArticlePage._Url)">
                                 @(Model.CompanyManualArticlePage.Title)
                             </a>
-                        </h5>
-                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
+                        </h5>                        
                         <p>@(Html.Raw(Model.CompanyNewsSummary))</p>
+                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
                     </div>
                 </div>
             }
@@ -42,7 +46,7 @@
                             </a>
                         </h5>
                         <p>@Html.Raw(listable.Summary)</p>
-                        <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMM yyyy}", listable.Actual_Publish_Date) </time>
+                        <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMMM yyyy}", listable.Actual_Publish_Date) </time>
                     </div>
 
                 </div>

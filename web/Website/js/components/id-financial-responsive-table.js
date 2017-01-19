@@ -3,12 +3,19 @@
 	'use strict';
 
 	var ResponsiveFinancialTable = {
+		LastItem: null,
+		FirstItem: null,
 		RenderCarousel: function(data, Parent) {
+			Parent.find('.owl-carousel').remove();
+			Parent.find('.states_heading').parent().append('<div class="owl-wrapper"><div class="owl-carousel"></div></div>');
 			var self = this,
 				Header = data[0].Header,
 				Values = data[0].Values,
 				StatesHeading = Parent.find('.states_heading'),
 				Carousel = Parent.find('.owl-carousel');
+
+			self.FirstItem = data[0].Header[1];
+			self.LastItem = data[0].Header[data[0].Header.length - 1];
 			Parent.find('.states_heading').empty();
 			for(var key in Header) {
 				if(key == 0) {
@@ -69,14 +76,15 @@
 		},
 		InitateCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:true,
+               loop:false,
                merge:true,
+               margin:1,
                nav:true,
                navText: [
                	  "<img src='/dist/img/lessthan.png'/>",
                	  "<img src='/dist/img/greaterthan.png'/>"
                	  ],
-			   slideBy: 2,  
+			   slideBy: 1,  
                responsive:{
                0:{
                items:3

@@ -344,6 +344,15 @@ div#feedbacklite.fbl_r{
     	margin: 0 2em 0 0;
     	clear: initial;
     	height: 15.625rem;
+    	margin-bottom: 2em;
+	}
+	.article-related-content h5 {
+		height: 70px;
+		overflow: hidden;
+	}
+	.ContentRecomm-ReadNext .section-article {
+		height: 15.3125rem;
+		margin-bottom: 2em;
 	}
 }
 .article-right-rail {
@@ -357,6 +366,9 @@ div#feedbacklite.fbl_r{
 			clear: both;
 			height: auto;
 		}
+	}
+	.article-preview {
+		float: left;
 	}
 }
 .contentRecommendations {

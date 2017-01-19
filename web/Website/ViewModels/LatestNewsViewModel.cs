@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
-        protected readonly ITextTranslator TextTranslator;
+        public readonly ITextTranslator TextTranslator;
         protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
         protected IGlassBase Datasource;
