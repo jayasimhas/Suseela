@@ -19,6 +19,8 @@ using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SecurityModel;
 using System.Xml.Linq;
+using System.Web.Configuration;
+using Sitecore.SharedSource.DataImporter.Logger;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
@@ -75,6 +77,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
             if (f != null)
+             // LogIntoExcel.CMCReport()
                 f.Value = newImportValue;
         }
 
@@ -1253,6 +1256,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (f == null)
                 return;
 
+            DataLogger.Add(NewItemField, t.First().Name);
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
                 //   f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
@@ -2200,7 +2204,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2210,14 +2214,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
+            string regionLog = string.Empty;
             Dictionary<string, string> d = GetMapping();
-
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 string upperValue = val.ToString();
-                string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+                IEnumerable<Item> tDName;
+                IEnumerable<Item> tName;
+                IEnumerable<Item> t;
+                string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 if (string.IsNullOrEmpty(transformValue))
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
@@ -2225,14 +2233,33 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
+                tName = sourceItems.Where(c => c.Name.Equals(transformValue));
+
+                if(!tName.Any())
+                {
+                     tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                    if(!tDName.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    else
+                    {
+                        t = tDName;
+                    }
+                }
+
+                else
+                {
+                   t = tName;
+                }
 
                 //if you find one then store the id
-                if (!t.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
-                }
+                //if (!t.Any())
+                //{
+                //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                //    continue;
+                //}
 
                 Field f = newItem.Fields[NewItemField];
                 if (f == null)
@@ -2242,7 +2269,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 {
                     TaxonomyList.Add(t.First().ID.ToString());
                 }
+
+                if (!(regionLog.Contains(t.First().Name)))
+                    regionLog += t.First().Name + ",";
             }
+            DataLogger.Add(siteandpublication[2], regionLog);
         }
 
 
@@ -2529,6 +2560,46 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             return d;
         }
+
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
+                                    select c.Value;
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString();
+                    }
+
+                    else
+                    {
+
+                        return " ";
+                    }
+                }
+
+                else
+                {
+                    return " ";
+                }
+            }
+
+            else
+            {
+                return " ";
+            }
+
+        }
+
 
         #endregion Methods
 
@@ -3685,10 +3756,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //get parent item of list to search
             var sourceItems = GetSourceItems(newItem.Database);
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> tName;
+            IEnumerable<Item> t;
             if (sourceItems == null)
                 return;
 
             Dictionary<string, string> d = GetMapping();
+            string Taxonomylog = string.Empty;
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
@@ -3711,13 +3786,25 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     
                 }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
+                tName = sourceItems.Where(c => c.Name.Equals(transformValue));
 
-                //if you find one then store the id
-                if (!t.Any())
+                if (!tName.Any())
                 {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
+                    tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                    if (!tDName.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    else
+                    {
+                        t = tDName;
+                    }
+                }
+
+                else
+                {
+                    t = tName;
                 }
 
                 Field f = newItem.Fields[NewItemField];
@@ -3731,7 +3818,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     TaxonomyList.Add(t.First().ID.ToString());
                 }
 
+                if (!(Taxonomylog.Contains(t.First().Name)))
+                    Taxonomylog += t.First().Name + ",";
+
             }
+
+            DataLogger.Add(siteandpublication[2], Taxonomylog);
         }
 
         public virtual Dictionary<string, string> GetMapping()
@@ -3742,7 +3834,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //d.Add("dairy_markets_features", "Dairy");
             //d.Add("dairy_markets_downloads", "Dairy");
             //d.Add("dairy_markets_filedownloads", "Dairy");
-            //d.Add("dairy_markets_subscribe_free_demo_mobile", "Dairy");
+            //d.Add("dairy_markets_subscribe_free_demo_mobile", "DairyToInformaMediatType
             //d.Add("dairy_markets_resources_dairy_ezine_mobile", "Dairy");
             d.Add("dairy_markets_markets", "Dairy");
             d.Add("dairy_markets_markets_butter", "Butter");
@@ -4125,13 +4217,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName))
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
                 {
-                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
                                     select c.Value;
 
                     if (elemValue.ElementAt(0) != null)
@@ -4142,19 +4234,19 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     else
                     {
 
-                        return " ";
+                        return "";
                     }
                 }
 
                 else
                 {
-                    return " ";
+                    return "";
                 }
             }
 
             else
             {
-                return " ";
+                return "";
             }
 
         }
@@ -4181,6 +4273,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //get parent item of list to search
             var sourceItems = GetSourceItems(newItem.Database);
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> tName;
+            IEnumerable<Item> t;
             if (sourceItems == null)
                 return;
 
@@ -4206,14 +4301,33 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                tName = sourceItems.Where(c => c.Name.Equals(transformValue));
+
+                if (!tName.Any())
+                {
+                    tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                    if (!tDName.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    else
+                    {
+                        t = tDName;
+                    }
+                }
+
+                else
+                {
+                    t = tName;
+                }
 
                 //if you find one then store the id
-                if (!t.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
-                }
+                //if (!t.Any())
+                //{
+                //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                //    continue;
+                //}
 
                 Field f = newItem.Fields[NewItemField];
                 if (f == null)
@@ -4267,11 +4381,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load("D:\\Article last 2years\\PublicLedger\\mappingxmls\\testxml.xml");
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Name == contentName))
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
                 {
                     var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
                                     select c.Value;
@@ -4284,19 +4398,19 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     else
                     {
 
-                        return " ";
+                        return "";
                     }
                 }
 
                 else
                 {
-                    return " ";
+                    return "";
                 }
             }
 
             else
             {
-                return " ";
+                return "";
             }
 
         }
@@ -4337,7 +4451,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             var sourceItems = GetSourceItems(newItem.Database);
             if (sourceItems == null)
                 return;
-
+            string mediaLog = String.Empty;
             Dictionary<string, string> d = GetMapping();
 
             string lowerValue = importValue.ToLower();
@@ -4364,6 +4478,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             string ctID = t.First().ID.ToString();
+            DataLogger.Add(NewItemField, t.First().Name);
+             
             if (!f.Value.Contains(ctID))
                 f.Value = ctID;
         }

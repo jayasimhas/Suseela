@@ -586,6 +586,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         if (ArticleData["Nooftableau"] != null)
                         {
+                            ListToGuid.DataLogger.Add("Tableau (Y/N)", "Y");
                             int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
                             string tableauname = string.Empty;
                             TemplateItem PageAssets = ToDB.GetItem("{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}");
@@ -641,6 +642,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                         }
+
+                        else
+                        {
+                            ListToGuid.DataLogger.Add("Tableau (Y/N)", "N");
+                        }
+                    }
+                    if(!ArticleData.ContainsKey("Nooftableau"))
+                    {
+                        ListToGuid.DataLogger.Clear();
+                        ListToGuid.DataLogger.Add("Tableau (Y/N)", "N");
                     }
                     if (ArticleData.ContainsKey("dashboardname"))
                     {
@@ -690,6 +701,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         //}
                     }
 
+                    
                     foreach (IBaseField d in fieldDefs)
                     {
                         string importValue = string.Empty;
@@ -703,8 +715,37 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 importValue = String.Join(d.GetFieldValueDelimiter(), values);
                             }
 
-                            if(d.NewItemField == "Country")
+                            if(d.NewItemField == "Title" && values.Count(val => val != "") > 0)
                             {
+                                ListToGuid.DataLogger.Add("Article Headline", importValue);
+
+                            }
+
+                            if (d.NewItemField == "Article Number" && values.Count(val => val != "") > 0)
+                            {
+                                ListToGuid.DataLogger.Add("Article Number", importValue);
+
+                            }
+
+                            if (d.NewItemField == "Featured Image 16 9")
+                            {
+                                if(values.Count(val => val != "") > 0)
+                                ListToGuid.DataLogger.Add("Featured Image (Y/N)", "Y");
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("Featured Image (Y/N)", "N");
+                                }
+
+                            }
+
+                            if (d.NewItemField == "Body")
+                            {
+                                if (values.Count(val => val == "Y") > 0)
+                                    ListToGuid.DataLogger.Add("Body Image (Y/N)", "Y");
+                                else if (values.Count(val => val == "N") > 0)
+                                {
+                                    ListToGuid.DataLogger.Add("Body Image (Y/N)", "N");
+                                }
 
                             }
 
@@ -845,10 +886,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                               }
                         catch (Exception ex)
                         {
+                            if (d.NewItemField == "Featured Image 16 9")
+                            {
+                                
+                                    ListToGuid.DataLogger.Add("Featured Image (Y/N)", "N");
+                                
+                            }
                             Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);
                         }
                     }
 
+
+                    LogIntoExcel.CMCReport(ArticleId, ListToGuid.DataLogger, publication);
+                    ListToGuid.DataLogger.Clear();
                     XMLDataLogger.WriteLog(mapLog + errorLog,"");
                     //calls the subclass method to handle custom fields and fields
                     ProcessCustomData(ref newItem, importRow);

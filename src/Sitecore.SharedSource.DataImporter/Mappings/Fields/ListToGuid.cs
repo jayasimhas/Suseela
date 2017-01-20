@@ -7,6 +7,9 @@ using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
+using System.Xml.Linq;
+using System.Web.Configuration;
+
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
 
@@ -22,6 +25,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		private static readonly MemoryCache Cache = new MemoryCache("SourceItems");
 
         public static List<string> TaxonomyList = new List<string>();
+
+       public static Dictionary<string, string> DataLogger = new Dictionary<string, string>();
         /// <summary>
         /// This is the list that you will compare the imported values against
         /// </summary>
@@ -89,6 +94,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             //get parent item of list to search
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> tName;
+            IEnumerable<Item> t;
+            string Log = string.Empty;
             Item i = InnerItem.Database.GetItem(SourceList);
             if (i == null)
                 return;
@@ -98,20 +107,43 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (NewItemField == "Taxonomy")
             {
+                var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
                 var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
                 foreach (var val in values)
                 {
                     string upperValue = val.ToString();
+                    string transformValue = GetusingXML(upperValue, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
 
 
                     //loop through children and look for anything that matches by name
-                    string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
-                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+                   // string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
+                    tName = i.Axes.GetDescendants().Where(c => c.Name.Equals(transformValue));
+
+                    if (!tName.Any())
+                    {
+                        tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(transformValue));
+                        if (!tDName.Any())
+                        {
+                            map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                            continue;
+                        }
+                        else
+                        {
+                            t = tDName;
+                        }
+                    }
+
+                    else
+                    {
+                        t = tName;
+                    }
+
+                   // IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
 
                     //if you find one then store the id
-                    if (!t.Any())
-                        return;
+                    //if (!t.Any())
+                    //    return;
 
                     Field f = newItem.Fields[NewItemField];
                     if (f == null)
@@ -121,11 +153,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         TaxonomyList.Add(t.First().ID.ToString());
                     }
-
+                    if(!(Log.Contains(t.First().Name)))
+                    Log += t.First().Name + ",";
                 }
+                DataLogger.Add(siteandpublication[2], Log);
             }
             else if (NewItemField == "Authors")
             {
+                string autlog = string.Empty;
                 string[] list = importValue.Split(new string[] { " and ", "&amp;", "," }, StringSplitOptions.None);
 
 
@@ -145,9 +180,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     }
                     //loop through children and look for anything that matches by name
                     string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
-                    IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
-                    if (t.Any() && !f.Value.Contains(t.First().ID.ToString()))
-                        f.Value = f.Value + "|" + t.First().ID.ToString();
+                    IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+                    if (tauthor.Any() && !f.Value.Contains(tauthor.First().ID.ToString()))
+                    {
+                        f.Value = f.Value + "|" + tauthor.First().ID.ToString();
+                        autlog += tauthor.First().Name + ",";
+                    }
+                        
 
                 }
                 //if you find one then store the id
@@ -156,27 +195,66 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 {
                     XMLDataLogger.WriteLog(id, "AuthorMappingMissing");
                 }
-
+                DataLogger.Add(NewItemField, autlog);
             }
             else
             {
                 //loop through children and look for anything that matches by name
                 string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+                IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(importValue));
 
                 //if you find one then store the id
-                if (!t.Any())
+                if (!tauthor.Any())
                     return;
 
                 Field f = newItem.Fields[NewItemField];
                 if (f == null)
                     return;
 
-                f.Value = t.First().ID.ToString();
+                f.Value = tauthor.First().ID.ToString();
             }
 
         }
         #endregion IBaseField
+
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
+                                    select c.Value;
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString();
+                    }
+
+                    else
+                    {
+
+                        return "";
+                    }
+                }
+
+                else
+                {
+                    return "";
+                }
+            }
+
+            else
+            {
+                return "";
+            }
+
+        }
 
         #region Methods
 
