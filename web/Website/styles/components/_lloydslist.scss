@@ -76,6 +76,20 @@
 #market-data-tool, #tanker-fixtures{
 	&.table-responsive .table {
 		font-family: "Roboto", Helvetica, Arial, sans-serif;
+		&.mobView{
+			display: none;
+		}
+		&.descView{
+			display: block;
+		}
+		@include breakpoint('small') {
+			&.mobView{
+				display: table;
+			}
+			&.descView{
+				display: none;
+			}
+		}
 		.table_head{
 			background-color: #0f5487;
 			color: #ffffff;
@@ -118,12 +132,11 @@
 		}
 		.R16{
 			font-size: 15px;
-		}
-		
+		} 
 		@include breakpoint('small') {
 			.visible-sm {
-				display: none;
-			}
+				display: block;
+			} 
 		}
 	}
 
