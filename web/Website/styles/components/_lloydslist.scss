@@ -163,6 +163,9 @@
 			margin-bottom: 20px;
 			float: left;
 			width: 50%;
+			@include breakpoint('small') {
+				width: 100%;
+			}
 			&:nth-child(2){
 				float: right;
 				text-align: right;
@@ -174,6 +177,10 @@
 		 .dataProImg{
 			float: right;
 			text-align: right;
+			@include breakpoint('small') {
+				float: inherit;
+				text-align: left;
+			}
 			span{
 				position: relative;
 				top: -26px;
