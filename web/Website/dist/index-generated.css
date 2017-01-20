@@ -8244,6 +8244,13 @@ div#feedbacklite.fbl_r {
       text-align: right; }
       #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
         text-align: left; }
+  #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+    float: right;
+    text-align: right; }
+    #market-data-tool .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
+      position: relative;
+      top: -26px;
+      margin-right: 10px; }
   #market-data-tool .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select {
     background: #ffffff; }
   #market-data-tool .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field {
