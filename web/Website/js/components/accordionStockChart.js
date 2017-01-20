@@ -226,7 +226,7 @@ function GWPcreateStockChart() {
 function NWPcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -315,7 +315,7 @@ function NWPcreateStockChart() {
 function URcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -324,7 +324,7 @@ function URcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 	    for (i = 0; i < dataVars['chartData' + (dataSetCtr + 1) + '_UR'].length; i++) {
@@ -404,7 +404,7 @@ function URcreateStockChart() {
 function NPcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -413,7 +413,7 @@ function NPcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 	    for (i = 0; i < dataVars['chartData' + (dataSetCtr + 1) + '_NP'].length; i++) {
@@ -493,7 +493,7 @@ function NPcreateStockChart() {
 function SFcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -502,7 +502,7 @@ function SFcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 	    for (i = 0; i < dataVars['chartData' + (dataSetCtr + 1) + '_SF'].length; i++) {
@@ -582,7 +582,7 @@ function SFcreateStockChart() {
 function NWPNRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -591,7 +591,7 @@ function NWPNRcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 		for (i = 0; i<dataVars['chartData' + (dataSetCtr+1) + '_NWPNR'].length; i++) {
@@ -671,7 +671,7 @@ function NWPNRcreateStockChart() {
 function SFNRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -680,7 +680,7 @@ function SFNRcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 		for (i = 0; i<dataVars['chartData' + (dataSetCtr+1) + '_SFNR'].length; i++) {
@@ -760,7 +760,7 @@ function SFNRcreateStockChart() {
 function NPSFRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart(), matches;
+	var chart = new AmCharts.AmStockChart(), matches, d;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -769,7 +769,7 @@ function NPSFRcreateStockChart() {
 	// DATASETS //////////////////////////////////////////
 	// create data sets first
 
-	for (dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
+	for (var dataSetCtr=0; dataSetCtr<chartDataSet.length; dataSetCtr++) {
 
 		// KLUGE: translate given string e.g. 2006 - Q1 to date object
 		for (i = 0; i<dataVars['chartData' + (dataSetCtr+1) + '_NPSFR'].length; i++) {
