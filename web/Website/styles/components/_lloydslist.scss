@@ -31,71 +31,217 @@
      }
      .selectivity-input {
      	position: relative;
-     }
+     } 
      .selectivity-dropdown {
         right: 0;
     	top: 100% !important;
     	left: auto !important;
      }
 }
-.lli-brand-container {
-    margin-bottom: 20px;
-    h3 {
-	    background-color: #414042;
-	    padding: 10px;
-	    color: #fff;
+
+.casualtyPan{
+	h2{
+		font-size: 46px;
+		font-weight: bold; 
 	}
-	.lli-brand-box {
-	    padding: 10px;
-	    background: #f7f7f7;
-	 }
-	 fieldset {
-	    border: 0;
-	 }
-	 .selectivity-single-select {
-	 	background: $color-white;
-	 }
-	 .select-field {
-	 	position: relative;
-	 	display: inline-block;
-	 }
-	 .selectivity-input {
-     	position: relative;
-     }
-	 .selectivity-dropdown {
-        right: 0;
-        top: 100%;
-     }
-    .form-control {
-	    margin-bottom: 20px;
-	}
-	.form-control label{
-	    width: 200px;
-	    display: inline-block;
-	     @include breakpoint('small') {
-	     	margin-bottom: 0.5em;
-	     }
-	}
-	.submit {
-	    border: 1px solid transparent;
-	    color: #ffffff;
-	    padding: 12px;
-	    background-color: #9E310D;
-	    width: 146px;
-	    font-family: 'Roboto', Arial Narrow, sans-serif;
-	    font-style: normal;
-	    font-weight: 700;
-	    font-size: 0.75em;
-	    float: left;
-	    margin-left: 205px;
-	    text-transform: uppercase;
-	    @include breakpoint('small') {
-	    	margin-left: 0;
-	    }
+	&.table-responsive {
+		.table {
+			.table_head {
+				background-color: #0f5487;
+				color: #ffffff;
+				th{
+					font-size: 14px;
+					&.pad-20{
+						padding: 20px;
+					}
+				}
+			}
+			tbody{
+				.R16{
+					border-bottom: 1px solid #e0e0e0;
+					padding: 20px;
+				}
+				.R16:nth-child(1){
+					border-right: 1px solid #e0e0e0;
+					font-weight: bold;
+				}
+			}
+		}
+		hr{
+			margin: 20px 0;
+		}
 	}
 }
+
+#market-data-tool, #tanker-fixtures{
+	&.table-responsive .table {
+		font-family: "Roboto", Helvetica, Arial, sans-serif;
+		&.mobView{
+			display: none;
+		}
+		&.descView{
+			display: block;
+		}
+		@include breakpoint('small') {
+			&.mobView{
+				display: table;
+			}
+			&.descView{
+				display: none;
+			}
+		}
+		.table_head{
+			background-color: #0f5487;
+			color: #ffffff;
+			th{
+				font-size: 16px;
+				font-weight: normal;
+			}
+			.visible-lg{
+				background: #1191d1;
+				color: #fff;
+				font-weight: normal;
+			}
+		}
+		tbody.visible-lg td{
+			border-bottom: 1px solid #d1d3d4;
+		}
+		.pad-10 {
+			padding: 16px 10px;
+		}
+		.R21_GrayColor{
+			font-size: 18px;
+		}
+		.R21_GrayColorVal{
+			font-size: 16px;
+			a{
+				color: #1191d1;
+				text-decoration: none;
+			}
+		}
+		.RB18{
+			color: #000;
+			a{
+				color: #58595b;
+				border-left: 1px solid #979797;
+				padding: 8px 0px 8px 20px;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		.R16{
+			font-size: 15px;
+		} 
+		@include breakpoint('small') {
+			.visible-sm {
+				display: block;
+			} 
+		}
+	}
+
+	.lli-brand-container {
+		margin-bottom: 20px;
+		h3 {
+			background-color: #414042;
+			padding: 10px;
+			color: #fff;
+		}
+		.lli-brand-box {
+			padding: 10px 0;
+			/*background: #f7f7f7;*/
+		 }
+		 p{
+			margin-bottom: 35px;
+		 }
+		 fieldset {
+			border: 0;
+			margin: 0px;
+			padding: 0px;
+		 }
+		 .form-control {
+			margin-bottom: 20px;
+			float: left;
+			width: 50%;
+			&:nth-child(2){
+				float: right;
+				text-align: right;
+				.selectivity-single-result-container{
+					text-align: left;
+				}
+			}
+		 }
+		 .dataProImg{
+			float: right;
+			text-align: right;
+			span{
+				position: relative;
+				top: -26px;
+				margin-right: 10px;
+			}
+		  }
+		 .selectivity-single-select {
+			background: $color-white;
+		 }
+		 .select-field {
+			position: relative;
+			display: inline-block;
+		 }
+		 .selectivity-input {
+			position: relative;
+		 }
+		 #areaCode{
+			&.selectivity-input {
+				width: 300px;
+			}
+		 }
+		 #movementType.selectivity-input, #selectDay.selectivity-input {
+			width: 200px;
+		 }
+		 .selectivity-dropdown {
+			right: 0;
+			top: 100%;
+		 } 
+		.form-control label{
+			/*width: 200px;*/
+			margin-right: 20px;
+			display: inline-block;
+			 @include breakpoint('small') {
+				margin-bottom: 0.5em;
+			 }
+		}
+		.submit {
+			border: 1px solid transparent;
+			color: #ffffff;
+			padding: 12px 80px;
+			background-color: #1191d1;
+			font-family: 'Roboto', Arial Narrow, sans-serif;
+			font-style: normal;
+			font-size: 1rem;
+			float: right;
+			@include breakpoint('small') {
+				margin-left: 0;
+			}
+		}  
+	}
+	h2{
+		font-size: 46px;
+		font-weight: bold;
+		margin-bottom: 40px;
+	}
+	h3{
+		font-size: 26px;
+		font-weight: normal;
+		font-style: italic;
+	}
+	hr{
+		margin: 25px 0 35px;
+	}
+}
+ 
 .graybg {
 	border-bottom: 1px solid #d1d3d4;
+	border-top: 1px solid #d1d3d4;
 }
 .lloyd-related-links {
     margin-top: 1.25rem;
@@ -182,6 +328,7 @@
     text-align: right;
     background-color: #fff;
 }
+ 
 #market-data{
 	#marketDataTable{
 		width: 760px;

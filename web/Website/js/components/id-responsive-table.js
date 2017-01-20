@@ -50,7 +50,7 @@
 			
 			Parent.find('.owl-carousel').remove();
 			Parent.find('.states_heading').find('.RB16').remove();
-			Parent.find('.states_heading').after('<div class="owl-carousel"></div>');
+			Parent.find('.states_heading').after('<div class="owl-wrapper"><div class="owl-carousel"></div></div>');
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {

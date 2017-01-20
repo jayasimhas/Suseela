@@ -42,6 +42,8 @@ import './components/ll-casuality-listing';
 import './components/ll-casuality-detail';
 import './components/ll-market-data-tool';
 import './components/ll-market-data';
+import './components/ll-tanker-fixtures';
+import './components/accordionStockChart';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
