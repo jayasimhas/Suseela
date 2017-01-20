@@ -43,9 +43,13 @@
 				div:nth-child(odd){
 					background-color: $color-concrete-table-gray;
 				}
-				@include breakpoint('small') {
-					width: 40%;
-				}
+			}
+			.owl-wrapper {
+				width: 70%;
+			    float: right;
+			    @include breakpoint('small') {
+			    	width: 60%;
+			    }
 			}
 			.RB16{
 				   @include textMix('Roboto', 1em, 700);
@@ -84,13 +88,16 @@
 			.owl-item{
 				&.active{
 					// width:5% !important;
-					margin-right: 1px !important;
+					// margin-right: 1px !important;
 				}
 				.year_heading span{ 
 					width:100% !important;
 					display: block;
 				}
 			} 
+			.owl-next.disabled, .owl-prev.disabled {
+				pointer-events: none;
+			}
 			.owl-controls{
 				position:absolute;
 				top:-51px;
@@ -103,26 +110,28 @@
 			}
 			
 }
-#financialresults.ID-Responsive-Table .owl-item.active {
-	width: 5% !important;
-}
-#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
+// #annualresults.ID-Responsive-Table .owl-item.active {
+// 	width: 5% !important;
+// }
+#quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
 	text-align: center;
 }
-#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
+#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 700;
     font-style: normal;
     text-align: left;
 }
-#annualresults .year_heading {
+#financialresults .year_heading {
 	height: auto;
 }
-#annualresults .owl-item.active {
-	    width: 7% !important;
+#financialresults .owl-wrapper {
+	width: 60%;
+    float: right;
+
 }
-#annualresults .graybg, #quarterlyresults .graybg {
+#financialresults .graybg, #quarterlyresults .graybg {
 	display: none;
 	@include breakpoint('small') {
 		display: block;

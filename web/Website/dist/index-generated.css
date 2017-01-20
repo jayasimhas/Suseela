@@ -3427,9 +3427,12 @@ body.lightboxed {
       padding: 10px; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
+  .ID-Responsive-Table .owl-wrapper {
+    width: 70%;
+    float: right; }
     @media (max-width: 480px) {
-      .ID-Responsive-Table .states_heading {
-        width: 40%; } }
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
   .ID-Responsive-Table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -3457,11 +3460,11 @@ body.lightboxed {
     margin-top: 20px; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
-  .ID-Responsive-Table .owl-item.active {
-    margin-right: 1px !important; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
     display: block; }
+  .ID-Responsive-Table .owl-next.disabled, .ID-Responsive-Table .owl-prev.disabled {
+    pointer-events: none; }
   .ID-Responsive-Table .owl-controls {
     position: absolute;
     top: -51px;
@@ -3471,29 +3474,27 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
-#financialresults.ID-Responsive-Table .owl-item.active {
-  width: 5% !important; }
-
-#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
+#quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
   text-align: center; }
 
-#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
+#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 700;
   font-style: normal;
   text-align: left; }
 
-#annualresults .year_heading {
+#financialresults .year_heading {
   height: auto; }
 
-#annualresults .owl-item.active {
-  width: 7% !important; }
+#financialresults .owl-wrapper {
+  width: 60%;
+  float: right; }
 
-#annualresults .graybg, #quarterlyresults .graybg {
+#financialresults .graybg, #quarterlyresults .graybg {
   display: none; }
   @media (max-width: 480px) {
-    #annualresults .graybg, #quarterlyresults .graybg {
+    #financialresults .graybg, #quarterlyresults .graybg {
       display: block; } }
 
 .main-menu {
@@ -7528,7 +7529,17 @@ div#feedbacklite.fbl_r {
   margin: 0 2em 0 0;
   clear: initial;
   height: 250px;
-  height: 15.625rem; }
+  height: 15.625rem;
+  margin-bottom: 2em; }
+
+.article-left-rail .article-related-content h5, .article-left-rail .article-related-content .alert-success p, .alert-success .article-left-rail .article-related-content p, .article-left-rail .article-related-content .alert-error p, .alert-error .article-left-rail .article-related-content p, .article-left-rail .article-related-content .article-call-to-action__subtitle {
+  height: 70px;
+  overflow: hidden; }
+
+.article-left-rail .ContentRecomm-ReadNext .section-article {
+  height: 245px;
+  height: 15.3125rem;
+  margin-bottom: 2em; }
 
 .article-right-rail .contentRecomm-article {
   width: 100%;

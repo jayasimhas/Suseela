@@ -1089,7 +1089,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Download\PdfDownloadController.cs" />
+    <Compile Include="Areas\Download\Controllers\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
@@ -1231,13 +1231,16 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\AdobeChartViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
-    <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyListViewModel.cs" />
     <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketDataviewModel.cs" />
     <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
@@ -2257,7 +2260,7 @@
     <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
-    <Content Include="Views\Casualty\CasualtyReport.cshtml" />
+    <Content Include="Views\Casualty\CasualtyList.cshtml" />
     <Content Include="Views\Casualty\LatestCasualties.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
@@ -2270,6 +2273,10 @@
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <Content Include="Views\Casualty\BalticIndices.cshtml" />
     <Content Include="Views\Casualty\MarketNews.cshtml" />
+    <Content Include="Views\Casualty\MarketDataList.cshtml" />
+    <Content Include="Views\Casualty\MarketDate.json" />
+    <Content Include="Views\Casualty\RelatedLinks.cshtml" />
+    <Content Include="Views\Casualty\AdobeChart.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
