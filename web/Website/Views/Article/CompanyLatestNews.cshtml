@@ -31,10 +31,8 @@
 
                     <div class="section-article-img">
                         @if (listable.Featured_Image_16_9 != null)
-                        {
-                            <div class="article-related-content__img">
-                                @RenderImage(listable, model => model.Featured_Image_16_9)
-                            </div>
+                        {                            
+                           @RenderImage(listable, model => model.Featured_Image_16_9)                          
                         }
                     </div>
 
@@ -45,7 +43,7 @@
                                 @listable.Title
                             </a>
                         </h5>
-                        <p>@Html.Raw(listable.Summary)</p>
+                        <div>@Html.Raw(listable.Summary)</div>
                         <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMMM yyyy}", listable.Actual_Publish_Date) </time>
                     </div>
 
