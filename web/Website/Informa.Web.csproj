@@ -1150,6 +1150,7 @@
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Controllers\ChartDataController.cs" />
     <Compile Include="Controllers\DCDController.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
