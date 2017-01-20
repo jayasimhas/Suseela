@@ -83,3 +83,19 @@
 		margin-left: 10px;
 	}
 }
+
+
+.article-related-content{
+	.article-related-content__date{
+		margin-bottom: 0px;
+		border-bottom: none !important;
+	}
+	h2{
+		&.title{
+			margin-bottom: 24px;
+		}
+	}
+	h5{
+		margin-bottom: 20px !important;
+	}
+} 

@@ -466,8 +466,10 @@ div#feedbacklite.fbl_r{
 		margin-bottom: 1.5rem;
 	}
 	.section-article{
+		display: table;
 		.section-article-img{
-			float: left;			
+			display: table;		
+			float: left;
 			margin-right: 2em;
 			width: 29%;
 			img{
@@ -475,8 +477,7 @@ div#feedbacklite.fbl_r{
 			}
 		}
 		.section-article-text{
-			float: left;
-			width: 60%;
+			display: table;
 		}
 		
 		width: 100%;
