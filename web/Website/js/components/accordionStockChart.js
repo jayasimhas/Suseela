@@ -226,7 +226,7 @@ function GWPcreateStockChart() {
 function NWPcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -315,7 +315,7 @@ function NWPcreateStockChart() {
 function URcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -404,7 +404,7 @@ function URcreateStockChart() {
 function NPcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -493,7 +493,7 @@ function NPcreateStockChart() {
 function SFcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -582,7 +582,7 @@ function SFcreateStockChart() {
 function NWPNRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -671,7 +671,7 @@ function NWPNRcreateStockChart() {
 function SFNRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
@@ -760,7 +760,7 @@ function SFNRcreateStockChart() {
 function NPSFRcreateStockChart() {
 	var dataSet = new Array();
 	var dataSetList = new Array();
-	var chart = new AmCharts.AmStockChart();
+	var chart = new AmCharts.AmStockChart(), matches;
     chart.startDuration = 0;
     chart.startRadius = "100%";
 
