@@ -171,6 +171,15 @@
 				}
 			}
 		 }
+		 .dataProImg{
+			float: right;
+			text-align: right;
+			span{
+				position: relative;
+				top: -26px;
+				margin-right: 10px;
+			}
+		  }
 		 .selectivity-single-select {
 			background: $color-white;
 		 }
