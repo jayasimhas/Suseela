@@ -3,39 +3,42 @@
 
 <div class="small_table">
     <div class="article-left-rail">
-        <div class="table-responsive" id="market-data-tool">
-            <h5 class="secondary_heading">@Model.PageTitle</h5>
+        <div class="table-responsive" id="tanker-fixtures">
+            <h2>@Model.PageTitle</h2>
+            <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
             <hr />
+
             <div class="lli-brand-container shallow-bottom">
-                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
                 <div class="lli-brand-box">
                     @Model.TableSubTitle
                     <fieldset>
                         <div class="form-control">
-                            <label for="areaCode">"Select a day: "</label>
+                            <label for="selectDay">Select a day: </label>
                             <div class="select-field">
-                                @*<select id="areaCode" name="areaCode"></select>*@
-                                @Html.DropDownList("areaCode", Model.PopulateByAreaDropdown)
+                               
+                                @Html.DropDownList("selectDay", Model.PopulateByAreaDropdown)
                             </div>
                         </div>
-                        <div>
-                            <label for="areaCode">@Model.DataProvider</label>
-                            @if  (Model != null || Model.ProviderLogo != null)
+                        <div class="dataProImg">
+                            <span>@Model.DataProvider</span>
+                            @if (!string.IsNullOrEmpty(Model.ProviderLogo?.Src))
                             {
-                                <div>@Model?.ProviderLogo?.Src</div>
+                                <img src="dist/img/clarksons_logo.gif" />
+                                @*<img src="@Model.ProviderLogo.Src" alt="marketLogo" />*@
                             }
-                           
+                            
                         </div>
-                       
+                        
                          @Html.HiddenFor(m => m.ResultTableFeedUrl)
                     </fieldset>
-                    <!-- .lli-brand-box -->
+                    
                 </div>
-                <!-- .lli-brand-container -->
+                
             </div>
-            <table class="table" id="marketDataTable"></table>
+            <div id="tankerFixtures">
+
+            </div>
         </div>
     </div>
 </div>
-
 
