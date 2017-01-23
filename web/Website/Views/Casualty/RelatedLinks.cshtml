@@ -1,27 +1,35 @@
 ﻿@model Informa.Web.ViewModels.Casualty.RelatedLinksViewModel
 @if (Model.IsUserAuthenticated)
 {
-    if(Model.marketDataFolders != null && Model.marketDataFolders.Any())
+    if (Model.marketDataFolders != null && Model.marketDataFolders.Any())
     {
-        foreach(var marketfolder in Model.marketDataFolders)
-        {
-            <div>
-            <h2 style="padding-bottom: 5px;border-bottom: 1px solid #ccc;">@marketfolder.SectionName</h2>
-                @{
-                    var marketDetailPageList = marketfolder._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData.IMarketData_Detail_Page>();
-                    if (marketDetailPageList != null && marketDetailPageList.Any())
-                    {
-                        <ul>
-                            @foreach (var marketdetail in marketDetailPageList)
-                            {
-                                <li><a href="@marketdetail._Url">@marketdetail.Title</a></li>
-                            }
-                        </ul>
-                    }
-                }
-           
-            </div>
-        }
-    }
+        <div class="related-left-rail">
+            <div class="relatedlinks">
+                <div class="allrelatedlinks mrig">
+                    
+                        @foreach (var marketfolder in Model.marketDataFolders)
+                        {
+                            <ul>
+                                <li class="article-topics__section-header">@marketfolder.SectionName</li>
 
-}
+                                @{
+                                    var marketDetailPageList = marketfolder._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData.IMarketData_Detail_Page>();
+                                    if (marketDetailPageList != null && marketDetailPageList.Any())
+                                    {
+
+                                        foreach (var marketdetail in marketDetailPageList)
+                                        {
+                                            <li><a href="@marketdetail._Url">@marketdetail.Title</a></li>
+                                        }
+
+                                    }
+                           }
+                            </ul>
+                                    }
+                    </div>
+                </div>
+            </div>
+      }
+   }
+
+                                    
