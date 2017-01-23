@@ -15,12 +15,17 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         private string tokenUrl = "/services/oauth2/token";
         private string userInforUrlFormat = "{0}/services/oauth2/userinfo";
+        protected readonly ISalesforceErrorLogger ErrorLogger;
 
         public SalesforceAuthenticateUserV2(
-            IHttpClientHelper httpClientHelper, ISalesforceConfigurationContext salesforceConfigurationContext)
+            IHttpClientHelper httpClientHelper,
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            ISalesforceErrorLogger errorLogger
+            )
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            ErrorLogger = errorLogger;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
@@ -38,13 +43,17 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
+            ErrorLogger.Log(string.Format("Token call. code: {0}, client_id: {1}, client_secret: {2}, redirect_uri: {3}", 
+                code, client_id, client_secret, redirect_uri), new Exception());
             HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
                 tokenUrl), new FormUrlEncodedContent(pairs)).Result;
+            ErrorLogger.Log(string.Format("Token call IsSuccessStatusCode: {0}, StatusCode: {1}", 
+                response.IsSuccessStatusCode, response.StatusCode), new Exception());
             var responseString = response.Content.ReadAsStringAsync().Result;
             var values = HttpUtility.ParseQueryString(responseString);
             var accessToken = values["access_token"];
             var idToken = values["id_token"];
-
+            ErrorLogger.Log(string.Format("Token call completed.User access token is {0} and id toke is {1}", accessToken, idToken), new Exception());
             if (string.IsNullOrWhiteSpace(accessToken))
             {
                 return ErrorResult;
@@ -54,7 +63,7 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                 SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url))
                 , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
                 new Dictionary<string, string>());
-
+            ErrorLogger.Log(string.Format("User Info call completed.User name is {0} and email id is {1}", authenticatedUser.preferred_username, authenticatedUser.email), new Exception());
             if (authenticatedUser == null)
             {
                 return ErrorResult;
