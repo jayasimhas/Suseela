@@ -13,6 +13,11 @@ using Informa.Library.Utilities.Extensions;
 using System;
 using System.Web.Configuration;
 using log4net;
+using Sitecore.Data.Items;
+using System.Web;
+using Sitecore.Web;
+using Sitecore.Resources.Media;
+using Informa.Library.Utilities.Settings;
 
 namespace Informa.Web.Controllers
 {
@@ -21,12 +26,18 @@ namespace Informa.Web.Controllers
     {
         private readonly EmailUtil _emailUtil;
         private readonly ILog _logger;
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ISiteSettings SiteSettings;
 
-        public PersonalizedEmailController(EmailUtil emailUtil, ILog logger)
+        public PersonalizedEmailController(EmailUtil emailUtil, ILog logger, ISiteRootContext siteRootContext, IGlobalSitecoreService globalService, ISiteSettings siteSettings)
         {
 
             _emailUtil = emailUtil;
             _logger = logger;
+            SiteRootContext = siteRootContext;
+            GlobalService = globalService;
+            SiteSettings = siteSettings;
         }
 
         [HttpGet]
@@ -55,6 +66,8 @@ namespace Informa.Web.Controllers
                         From = "ebodkhe@sapient.com",
                         Body = emailBody,
                         IsBodyHtml = true
+
+
                     };
 
                     EmailSender EmailSender = new EmailSender();
@@ -78,6 +91,10 @@ namespace Informa.Web.Controllers
             try
             {
 
+                var siteRoot = SiteRootContext.Item;
+                var verticalName = siteRoot._Path.Split('/')[3].ToLower();
+
+                //  var footerContent = GlobalService.GetItem<IEmail_Config>(Settings.GetSetting("EmailConfig." + verticalName));
 
                 IHtmlEmailTemplateFactory HtmlEmailTemplateFactory = new HtmlEmailTemplateFactory();
                 var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("Emailtemplatepersonalization");
@@ -94,6 +111,45 @@ namespace Informa.Web.Controllers
                     ["#FirstName#"] = senderEmail,
                     ["#Personalized_Content#"] = PersonalizedContent.ToString(),
                     ["#email#"] = senderEmail,
+                    ["#Date#"] = DateTime.Now.ToString("dddd, d MMM yyyy"),
+
+                    ["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
+                    ["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
+                    ["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
+
+
+                    ["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)? 
+                    GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+                        : string.Empty,
+
+                    ["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
+                        ? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+                        : string.Empty,
+                    ["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
+                        ? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+                        : string.Empty,
+                    ["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
+                        ? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+                        : string.Empty,
+
+
+
+
+                   ["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
                 };
 
                 emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
@@ -103,6 +159,14 @@ namespace Informa.Web.Controllers
                 _logger.Warn($"Not able to replace Content inside body");
             }
             return emailHtml;
+        }
+        public string GetMediaURL(string mediaId)
+        {
+            Item imageItem = GlobalService.GetItem<Item>(mediaId);
+            if (imageItem == null)
+                return string.Empty;
+
+            return $"{HttpContext.Current.Request.Url.Scheme}://{WebUtil.GetHostName()}{MediaManager.GetMediaUrl(imageItem)}";
         }
 
 
