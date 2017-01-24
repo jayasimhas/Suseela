@@ -111,7 +111,7 @@
 			return mobileStr;
 		},
 		init: function(dateObj, tableDataObj) {
-			this.renderDateData(dateObj);
+			//this.renderDateData(dateObj);
 			this.renderTable(tableDataObj);
 		}
 	}
