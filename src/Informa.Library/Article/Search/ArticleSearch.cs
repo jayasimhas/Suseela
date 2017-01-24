@@ -35,8 +35,6 @@ namespace Informa.Library.Article.Search
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ISearchIndexNameService IndexNameService;
-        protected readonly IVerticalRootContext VerticalRootContext;
-
 
         public ArticleSearch(
             IProviderSearchContextFactory searchContextFactory,
@@ -46,8 +44,7 @@ namespace Informa.Library.Article.Search
                 ICacheProvider cacheProvider,
                 ISitecoreContext context,
                 ISiteRootContext siteRootContext,
-                ISearchIndexNameService indexNameService,
-                IVerticalRootContext verticalRootContext
+                ISearchIndexNameService indexNameService
             )
         {
             SearchContextFactory = searchContextFactory;
@@ -58,7 +55,6 @@ namespace Informa.Library.Article.Search
             SitecoreContext = context;
             SiteRootContext = siteRootContext;
             IndexNameService = indexNameService;
-            VerticalRootContext = verticalRootContext;
         }
 
         public IArticleSearchFilter CreateFilter()
@@ -69,7 +65,7 @@ namespace Informa.Library.Article.Search
                 TaxonomyIds = new List<Guid>(),
                 ArticleNumbers = new List<string>(),
                 PublicationNames = new List<string>(),
-                AuthorGuids = new List<string>(),
+                AuthorGuids=new List<string>(),
                 AuthorFullNames = new List<string>(),
                 CompanyRecordNumbers = new List<string>(),
             };
@@ -81,16 +77,16 @@ namespace Informa.Library.Article.Search
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
 
-                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                     .FilterByPublications(filter)
                     .FilterByAuthor(filter)
                     .FilterByCompany(filter)
-                    .FilterTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
-                    .ExcludeManuallyCurated(filter)
+                    .FilterTaxonomies(filter, ItemReferences, GlobalService)
+					.ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
-                    .FilteryByLegacyArticleNumber(filter)
-                    .FilteryByEScenicID(filter)
-                    .FilteryByRelatedId(filter)
+					.FilteryByLegacyArticleNumber(filter)
+					.FilteryByEScenicID(filter)
+					.FilteryByRelatedId(filter)
                     .ApplyDefaultFilters();
 
 
@@ -122,7 +118,7 @@ namespace Informa.Library.Article.Search
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                    .FilterTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
+                    .FilterTaxonomies(filter, ItemReferences, GlobalService)
                     .ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
@@ -160,29 +156,27 @@ namespace Informa.Library.Article.Search
         }
 
 
-        public long GetNextArticleNumber(Guid publicationGuid)
-        {
-            using (var context = SearchContextFactory.Create(Constants.MasterDb))
-            {
+        public long GetNextArticleNumber(Guid publicationGuid) {
+            using (var context = SearchContextFactory.Create(Constants.MasterDb)) {
                 var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
                 if (publicationItem == null)
                     return 0;
 
-                var filter = CreateFilter();
+				var filter = CreateFilter();
 
-                var query = context.GetQueryable<ArticleSearchResultItem>()
-                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                     .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
-                    .FilterTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
-                    .OrderByDescending(i => i.ArticleIntegerNumber)
-                    .Take(1);
+					.FilterTaxonomies(filter, ItemReferences, GlobalService)
+					.OrderByDescending(i => i.ArticleIntegerNumber)
+					.Take(1);
 
 
-                var results = query.GetResults();
+                    var results = query.GetResults();
 
 
                 return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
-            }
+		    }
 
         }
 

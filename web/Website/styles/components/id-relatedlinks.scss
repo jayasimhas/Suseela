@@ -10,10 +10,8 @@
 	}
 	.allrelatedlinks{
 		float: left;
-		width: 45%;
-		&.mrig{
-			margin-right: 10%;
-		}
+		width: 100%;
+		
 		@include breakpoint('medium') {
 			width: 98%;
 		}
@@ -21,7 +19,12 @@
 			margin-bottom: 1.25rem;
 			padding-bottom: 0.625rem;
 			border-bottom: 1px solid #d1d3d4;
-			&:last-child{
+			float: left;
+			width: 50%;
+			padding: 0 1%;
+		}
+		&:last-child{
+			ul{
 				border-bottom: none;
 				@include breakpoint('medium') {
 					border-bottom: 1px solid #d1d3d4;

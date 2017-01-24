@@ -17,7 +17,7 @@ namespace Informa.Library.Utilities.References
 		{
 			_sitecoreService = sitecoreService;
 
-			var mainTaxonomyFolder = _sitecoreService.GetItem<Item>(ItemReferences.Instance.PharmaTaxonomyRootFolder);
+			var mainTaxonomyFolder = _sitecoreService.GetItem<Item>(ItemReferences.Instance.GlobalTaxonomyFolder);
 			_taxonomyFolders = mainTaxonomyFolder.Children;
 		}
 

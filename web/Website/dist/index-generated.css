@@ -2138,79 +2138,104 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         padding: 16px;
         padding: 1rem; } }
 
-#main-carousel .owl-carousel .item {
-  background: #e7e7e7;
-  height: 140px; }
-
-#main-carousel .owl-theme .owl-nav [class*='owl-'] {
-  background: none; }
-
-#main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
-  background: #9E310D; }
-
-#main-carousel .li-content-company {
-  border: none;
-  background-color: #e7e7e7;
-  height: 100%;
-  padding: 8px; }
-
-#main-carousel .li-content-company img {
-  float: left;
-  margin: 0 10px 10px 0;
-  width: 100px; }
-
-#main-carousel .li-content-company p {
-  padding: 0 0 8px 0;
-  font-size: smaller; }
-
-#main-carousel .li-content-graph {
-  border: none;
-  background-color: #E7E7E7;
-  height: 100%;
-  padding: 8px;
-  border-left: 1px solid #ccc; }
-
-#main-carousel .li-content-graph p {
-  font-size: smaller;
-  padding: 0 0 0 0;
-  margin: 0; }
-
-#main-carousel .owl-dots {
-  position: absolute;
-  top: 0;
-  margin-top: -20px;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%; }
-
-#main-carousel .owl-prev {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  margin-left: -18px;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-#main-carousel .owl-next {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  margin-right: -18px;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-#main-carousel .companies_heading {
-  display: block;
-  width: 100%;
-  position: relative; }
-  #main-carousel .companies_heading span {
+#main-carousel {
+  font-family: "verdana";
+  /*.owl-item{
+			float: left;
+		}
+		.owl-item.active{
+			@include breakpoint('small') {
+				/*width: auto !important;
+				display: block;
+				float: none;
+			}
+		}*/ }
+  #main-carousel .owl-carousel .item {
+    height: 290px; }
+    @media (max-width: 480px) {
+      #main-carousel .owl-carousel .item {
+        height: auto; } }
+  #main-carousel .owl-theme .owl-nav [class*='owl-'] {
+    background: none; }
+  #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
+    background: #9E310D; }
+  #main-carousel .li-content-company {
+    border: none;
+    background-color: #fff;
+    height: 100%;
+    padding: 15px 18px;
+    margin-top: 10px; }
+  #main-carousel .li-content-company img {
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 100px; }
+  #main-carousel .li-content-company p {
+    padding: 0 0 8px 0;
+    font-size: smaller;
+    margin-bottom: 20px; }
+  #main-carousel .li-content-company a, #main-carousel .li-content-company .pop-out__reset-password, #main-carousel .li-content-company .sortable-table__list-toggler, #main-carousel .li-content-company .mobile-table-exit {
+    color: #000; }
+  #main-carousel .li-content-graph {
+    border: none;
+    background-color: #eeeeee;
+    height: 100%;
+    padding: 15px 18px;
+    margin: 10px 0 0 10px; }
+    #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
+      height: 224px;
+      display: block;
+      background: #fff; }
+      #main-carousel .li-content-graph > a div div, #main-carousel .li-content-graph > .pop-out__reset-password div div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div, #main-carousel .li-content-graph > .mobile-table-exit div div {
+        height: 220px !important; }
+        #main-carousel .li-content-graph > a div div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #main-carousel .li-content-graph > .mobile-table-exit div div svg {
+          height: 220px !important; }
+  #main-carousel .li-content-graph p {
+    font-size: smaller;
+    padding: 0 0 0 0;
+    margin-bottom: 22px; }
+  #main-carousel .li-content-graph p a, #main-carousel .li-content-graph p .pop-out__reset-password, #main-carousel .li-content-graph p .sortable-table__list-toggler, #main-carousel .li-content-graph p .mobile-table-exit {
+    color: #000; }
+  #main-carousel .hideinMob {
+    display: block; }
+    @media (max-width: 480px) {
+      #main-carousel .hideinMob {
+        display: none; } }
+  #main-carousel .showinMob {
+    display: none; }
+    @media (max-width: 480px) {
+      #main-carousel .showinMob {
+        display: block; } }
+  #main-carousel .owl-dots {
+    position: absolute;
+    top: 0;
+    margin-top: -28px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+  #main-carousel .owl-prev {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #main-carousel .owl-next {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #main-carousel .companies_heading {
+    display: block;
     width: 100%;
-    display: inline-block;
-    padding-left: 10px;
-    padding-top: 5px;
-    text-transform: uppercase;
-    color: #000;
-    background-color: #cccccc; }
+    position: relative; }
+    #main-carousel .companies_heading span {
+      width: 100%;
+      display: inline-block;
+      padding: 10px 0 10px 20px;
+      color: #fff;
+      background-color: #de4361; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -6346,9 +6371,7 @@ section: UI Elements
 
 .relatedlinks .allrelatedlinks {
   float: left;
-  width: 45%; }
-  .relatedlinks .allrelatedlinks.mrig {
-    margin-right: 10%; }
+  width: 100%; }
   @media (max-width: 800px) {
     .relatedlinks .allrelatedlinks {
       width: 98%; } }
@@ -6357,12 +6380,15 @@ section: UI Elements
     margin-bottom: 1.25rem;
     padding-bottom: 10px;
     padding-bottom: 0.625rem;
-    border-bottom: 1px solid #d1d3d4; }
-    .relatedlinks .allrelatedlinks ul:last-child {
-      border-bottom: none; }
-      @media (max-width: 800px) {
-        .relatedlinks .allrelatedlinks ul:last-child {
-          border-bottom: 1px solid #d1d3d4; } }
+    border-bottom: 1px solid #d1d3d4;
+    float: left;
+    width: 50%;
+    padding: 0 1%; }
+  .relatedlinks .allrelatedlinks:last-child ul {
+    border-bottom: none; }
+    @media (max-width: 800px) {
+      .relatedlinks .allrelatedlinks:last-child ul {
+        border-bottom: 1px solid #d1d3d4; } }
 
 .companyList ul {
   height: 464px;
@@ -7550,9 +7576,6 @@ div#feedbacklite.fbl_r {
   clear: both;
   height: auto; }
 
-.article-right-rail .article-preview {
-  float: left; }
-
 .contentRecommendations {
   clear: both; }
   .contentRecommendations .article-related-content {
@@ -8239,6 +8262,9 @@ div#feedbacklite.fbl_r {
     margin-bottom: 20px;
     float: left;
     width: 50%; }
+    @media (max-width: 480px) {
+      #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+        width: 100%; } }
     #market-data-tool .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2) {
       float: right;
       text-align: right; }
@@ -8247,6 +8273,10 @@ div#feedbacklite.fbl_r {
   #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
     float: right;
     text-align: right; }
+    @media (max-width: 480px) {
+      #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+        float: inherit;
+        text-align: left; } }
     #market-data-tool .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
       position: relative;
       top: -26px;

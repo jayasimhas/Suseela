@@ -40,10 +40,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE348589
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{1E22B878-107D-452C-91B6-F02F8C7796E6}"
 	ProjectSection(SolutionItems) = preProject
-		config\env\aws.properties = config\env\aws.properties
+
+
 		config\env\BetaCD.properties = config\env\BetaCD.properties
 		config\env\BetaCM.properties = config\env\BetaCM.properties
+
+		config\env\aws.properties = config\env\aws.properties
 		config\env\contentMigration.properties = config\env\contentMigration.properties
+
+
+		config\env\aws.properties = config\env\aws.properties
+		config\env\contentMigration.properties = config\env\contentMigration.properties
+
 		config\env\default.properties = config\env\default.properties
 		config\env\dev.properties = config\env\dev.properties
 		config\env\intCD.properties = config\env\intCD.properties
@@ -53,18 +61,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 		config\env\prodCD.properties = config\env\prodCD.properties
 		config\env\prodCD2.properties = config\env\prodCD2.properties
 		config\env\prodCM.properties = config\env\prodCM.properties
-		config\env\prodCM2.properties = config\env\prodCM2.properties
+
+
 		config\env\qaCD.properties = config\env\qaCD.properties
 		config\env\qaCD2.properties = config\env\qaCD2.properties
 		config\env\qaCM.properties = config\env\qaCM.properties
+
+
+		config\env\prodCM2.properties = config\env\prodCM2.properties
 		config\env\stageCD.properties = config\env\stageCD.properties
 		config\env\stageCM.properties = config\env\stageCM.properties
-		config\env\support-uat.properties = config\env\support-uat.properties
 		config\env\support.properties = config\env\support.properties
+		config\env\support-uat.properties = config\env\support-uat.properties
 		config\env\TS2-SalesforceTest.properties = config\env\TS2-SalesforceTest.properties
 		config\env\uat.properties = config\env\uat.properties
 		config\env\UATCD.properties = config\env\UATCD.properties
-		config\env\UATCD_IDE.properties = config\env\UATCD_IDE.properties
 		config\env\UATCM.properties = config\env\UATCM.properties
 		config\env\vagrant.properties = config\env\vagrant.properties
 	EndProjectSection

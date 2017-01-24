@@ -54,7 +54,7 @@
                 //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
                 return VerticalRootContext.Item.Auther_Search_Index_Name;
             }
-            return "informa_authors_" + VerticalRootContext?.Item?.Vertical_Name.ToLower();
+            return "sitecore_{0}_index";
         }
 
         public string GetVerticalRootFromQuerystring()
