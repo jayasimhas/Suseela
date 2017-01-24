@@ -107,6 +107,12 @@ But you can also use "patch:attribute" for clarity:
             <site name="pink">PinkSheet</site>
             <site name="rose">RoseSheet</site>
 			<site name="ScripIntelligence">ScripIntelligence</site>
+            <site name="Commodities">Commodities</site>
+            <site name="Agrow">Agrow</site>
+            <site name="AnimalPharm">AnimalPharm</site>
+            <site name="PolicyandLeg">PolicyandLeg</site>
+            <site name="InsuranceDay">InsuranceDay</site>
+            <site name="Lloydslist">Lloydslist</site>
           </sites>
         </handler>
       </event>
@@ -118,6 +124,12 @@ But you can also use "patch:attribute" for clarity:
             <site name="pink">PinkSheet</site>
             <site name="rose">RoseSheet</site>
 			<site name="ScripIntelligence">ScripIntelligence</site>
+            <site name="Commodities">Commodities</site>
+            <site name="Agrow">Agrow</site>
+            <site name="AnimalPharm">AnimalPharm</site>
+            <site name="PolicyandLeg">PolicyandLeg</site>
+            <site name="InsuranceDay">InsuranceDay</site>
+            <site name="Lloydslist">Lloydslist</site>
           </sites>
         </handler>
       </event>
