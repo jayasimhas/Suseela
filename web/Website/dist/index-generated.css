@@ -2138,79 +2138,104 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         padding: 16px;
         padding: 1rem; } }
 
-#main-carousel .owl-carousel .item {
-  background: #e7e7e7;
-  height: 140px; }
-
-#main-carousel .owl-theme .owl-nav [class*='owl-'] {
-  background: none; }
-
-#main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
-  background: #9E310D; }
-
-#main-carousel .li-content-company {
-  border: none;
-  background-color: #e7e7e7;
-  height: 100%;
-  padding: 8px; }
-
-#main-carousel .li-content-company img {
-  float: left;
-  margin: 0 10px 10px 0;
-  width: 100px; }
-
-#main-carousel .li-content-company p {
-  padding: 0 0 8px 0;
-  font-size: smaller; }
-
-#main-carousel .li-content-graph {
-  border: none;
-  background-color: #E7E7E7;
-  height: 100%;
-  padding: 8px;
-  border-left: 1px solid #ccc; }
-
-#main-carousel .li-content-graph p {
-  font-size: smaller;
-  padding: 0 0 0 0;
-  margin: 0; }
-
-#main-carousel .owl-dots {
-  position: absolute;
-  top: 0;
-  margin-top: -20px;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%; }
-
-#main-carousel .owl-prev {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  margin-left: -18px;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-#main-carousel .owl-next {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  margin-right: -18px;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-#main-carousel .companies_heading {
-  display: block;
-  width: 100%;
-  position: relative; }
-  #main-carousel .companies_heading span {
+#main-carousel {
+  font-family: "verdana";
+  /*.owl-item{
+			float: left;
+		}
+		.owl-item.active{
+			@include breakpoint('small') {
+				/*width: auto !important;
+				display: block;
+				float: none;
+			}
+		}*/ }
+  #main-carousel .owl-carousel .item {
+    height: 290px; }
+    @media (max-width: 480px) {
+      #main-carousel .owl-carousel .item {
+        height: auto; } }
+  #main-carousel .owl-theme .owl-nav [class*='owl-'] {
+    background: none; }
+  #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
+    background: #9E310D; }
+  #main-carousel .li-content-company {
+    border: none;
+    background-color: #fff;
+    height: 100%;
+    padding: 15px 18px;
+    margin-top: 10px; }
+  #main-carousel .li-content-company img {
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 100px; }
+  #main-carousel .li-content-company p {
+    padding: 0 0 8px 0;
+    font-size: smaller;
+    margin-bottom: 20px; }
+  #main-carousel .li-content-company a, #main-carousel .li-content-company .pop-out__reset-password, #main-carousel .li-content-company .sortable-table__list-toggler, #main-carousel .li-content-company .mobile-table-exit {
+    color: #000; }
+  #main-carousel .li-content-graph {
+    border: none;
+    background-color: #eeeeee;
+    height: 100%;
+    padding: 15px 18px;
+    margin: 10px 0 0 10px; }
+    #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
+      height: 224px;
+      display: block;
+      background: #fff; }
+      #main-carousel .li-content-graph > a div div, #main-carousel .li-content-graph > .pop-out__reset-password div div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div, #main-carousel .li-content-graph > .mobile-table-exit div div {
+        height: 220px !important; }
+        #main-carousel .li-content-graph > a div div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #main-carousel .li-content-graph > .mobile-table-exit div div svg {
+          height: 220px !important; }
+  #main-carousel .li-content-graph p {
+    font-size: smaller;
+    padding: 0 0 0 0;
+    margin-bottom: 22px; }
+  #main-carousel .li-content-graph p a, #main-carousel .li-content-graph p .pop-out__reset-password, #main-carousel .li-content-graph p .sortable-table__list-toggler, #main-carousel .li-content-graph p .mobile-table-exit {
+    color: #000; }
+  #main-carousel .hideinMob {
+    display: block; }
+    @media (max-width: 480px) {
+      #main-carousel .hideinMob {
+        display: none; } }
+  #main-carousel .showinMob {
+    display: none; }
+    @media (max-width: 480px) {
+      #main-carousel .showinMob {
+        display: block; } }
+  #main-carousel .owl-dots {
+    position: absolute;
+    top: 0;
+    margin-top: -28px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+  #main-carousel .owl-prev {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #main-carousel .owl-next {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #main-carousel .companies_heading {
+    display: block;
     width: 100%;
-    display: inline-block;
-    padding-left: 10px;
-    padding-top: 5px;
-    text-transform: uppercase;
-    color: #000;
-    background-color: #cccccc; }
+    position: relative; }
+    #main-carousel .companies_heading span {
+      width: 100%;
+      display: inline-block;
+      padding: 10px 0 10px 20px;
+      color: #fff;
+      background-color: #de4361; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3427,9 +3452,12 @@ body.lightboxed {
       padding: 10px; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
+  .ID-Responsive-Table .owl-wrapper {
+    width: 70%;
+    float: right; }
     @media (max-width: 480px) {
-      .ID-Responsive-Table .states_heading {
-        width: 40%; } }
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
   .ID-Responsive-Table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -3457,11 +3485,11 @@ body.lightboxed {
     margin-top: 20px; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
-  .ID-Responsive-Table .owl-item.active {
-    margin-right: 1px !important; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100% !important;
     display: block; }
+  .ID-Responsive-Table .owl-next.disabled, .ID-Responsive-Table .owl-prev.disabled {
+    pointer-events: none; }
   .ID-Responsive-Table .owl-controls {
     position: absolute;
     top: -51px;
@@ -3471,29 +3499,27 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
-#financialresults.ID-Responsive-Table .owl-item.active {
-  width: 5% !important; }
-
-#quarterlyresults .tableRow > .tableCell, #annualresults .tableRow > .tableCell {
+#quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
   text-align: center; }
 
-#quarterlyresults .tableRow > .tableCell:first-child, #annualresults .tableRow > .tableCell:first-child {
+#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 700;
   font-style: normal;
   text-align: left; }
 
-#annualresults .year_heading {
+#financialresults .year_heading {
   height: auto; }
 
-#annualresults .owl-item.active {
-  width: 7% !important; }
+#financialresults .owl-wrapper {
+  width: 60%;
+  float: right; }
 
-#annualresults .graybg, #quarterlyresults .graybg {
+#financialresults .graybg, #quarterlyresults .graybg {
   display: none; }
   @media (max-width: 480px) {
-    #annualresults .graybg, #quarterlyresults .graybg {
+    #financialresults .graybg, #quarterlyresults .graybg {
       display: block; } }
 
 .main-menu {
@@ -6345,9 +6371,7 @@ section: UI Elements
 
 .relatedlinks .allrelatedlinks {
   float: left;
-  width: 45%; }
-  .relatedlinks .allrelatedlinks.mrig {
-    margin-right: 10%; }
+  width: 100%; }
   @media (max-width: 800px) {
     .relatedlinks .allrelatedlinks {
       width: 98%; } }
@@ -6356,12 +6380,15 @@ section: UI Elements
     margin-bottom: 1.25rem;
     padding-bottom: 10px;
     padding-bottom: 0.625rem;
-    border-bottom: 1px solid #d1d3d4; }
-    .relatedlinks .allrelatedlinks ul:last-child {
-      border-bottom: none; }
-      @media (max-width: 800px) {
-        .relatedlinks .allrelatedlinks ul:last-child {
-          border-bottom: 1px solid #d1d3d4; } }
+    border-bottom: 1px solid #d1d3d4;
+    float: left;
+    width: 50%;
+    padding: 0 1%; }
+  .relatedlinks .allrelatedlinks:last-child ul {
+    border-bottom: none; }
+    @media (max-width: 800px) {
+      .relatedlinks .allrelatedlinks:last-child ul {
+        border-bottom: 1px solid #d1d3d4; } }
 
 .companyList ul {
   height: 464px;
@@ -6401,6 +6428,16 @@ section: UI Elements
 .swissgroup .swissImg {
   float: right;
   margin-left: 10px; }
+
+.article-related-content .article-related-content__date {
+  margin-bottom: 0px;
+  border-bottom: none !important; }
+
+.article-related-content h2.title, .article-related-content .title.article-topics__header {
+  margin-bottom: 24px; }
+
+.article-related-content h5, .article-related-content .alert-success p, .alert-success .article-related-content p, .article-related-content .alert-error p, .alert-error .article-related-content p, .article-related-content .article-call-to-action__subtitle {
+  margin-bottom: 20px !important; }
 
 .compareChart .eachChartData {
   margin-bottom: 10px;
@@ -7518,7 +7555,17 @@ div#feedbacklite.fbl_r {
   margin: 0 2em 0 0;
   clear: initial;
   height: 250px;
-  height: 15.625rem; }
+  height: 15.625rem;
+  margin-bottom: 2em; }
+
+.article-left-rail .article-related-content h5, .article-left-rail .article-related-content .alert-success p, .alert-success .article-left-rail .article-related-content p, .article-left-rail .article-related-content .alert-error p, .alert-error .article-left-rail .article-related-content p, .article-left-rail .article-related-content .article-call-to-action__subtitle {
+  height: 70px;
+  overflow: hidden; }
+
+.article-left-rail .ContentRecomm-ReadNext .section-article {
+  height: 245px;
+  height: 15.3125rem;
+  margin-bottom: 2em; }
 
 .article-right-rail .contentRecomm-article {
   width: 100%;
@@ -7612,6 +7659,7 @@ div#feedbacklite.fbl_r {
     margin-bottom: 24px;
     margin-bottom: 1.5rem; }
   .ContentRecomm-RelatedContent-vertical .section-article {
+    display: table;
     width: 100%;
     float: left;
     margin: 0 2em 0 0;
@@ -7619,14 +7667,14 @@ div#feedbacklite.fbl_r {
     padding-bottom: 5px;
     padding-top: 15px; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-img {
+      display: table;
       float: left;
       margin-right: 2em;
       width: 29%; }
       .ContentRecomm-RelatedContent-vertical .section-article .section-article-img img {
         width: 100%; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-text {
-      float: left;
-      width: 60%; }
+      display: table; }
     .ContentRecomm-RelatedContent-vertical .section-article:last-child {
       border-bottom: 0 !important; }
 
@@ -8126,54 +8174,164 @@ div#feedbacklite.fbl_r {
   top: 100% !important;
   left: auto !important; }
 
-.lli-brand-container {
+.casualtyPan h2, .casualtyPan .article-topics__header {
+  font-size: 46px;
+  font-weight: bold; }
+
+.casualtyPan.table-responsive .table .table_head {
+  background-color: #0f5487;
+  color: #ffffff; }
+  .casualtyPan.table-responsive .table .table_head th {
+    font-size: 14px; }
+    .casualtyPan.table-responsive .table .table_head th.pad-20 {
+      padding: 20px; }
+
+.casualtyPan.table-responsive .table tbody .R16 {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px; }
+
+.casualtyPan.table-responsive .table tbody .R16:nth-child(1) {
+  border-right: 1px solid #e0e0e0;
+  font-weight: bold; }
+
+.casualtyPan.table-responsive hr {
+  margin: 20px 0; }
+
+#market-data-tool.table-responsive .table, #tanker-fixtures.table-responsive .table {
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
+    display: none; }
+  #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
+    display: block; }
+  @media (max-width: 480px) {
+    #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
+      display: table; }
+    #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
+      display: none; } }
+  #market-data-tool.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head {
+    background-color: #0f5487;
+    color: #ffffff; }
+    #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+      font-size: 16px;
+      font-weight: normal; }
+    #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
+      background: #1191d1;
+      color: #fff;
+      font-weight: normal; }
+  #market-data-tool.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
+    border-bottom: 1px solid #d1d3d4; }
+  #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+    padding: 16px 10px; }
+  #market-data-tool.table-responsive .table .R21_GrayColor, #tanker-fixtures.table-responsive .table .R21_GrayColor {
+    font-size: 18px; }
+  #market-data-tool.table-responsive .table .R21_GrayColorVal, #tanker-fixtures.table-responsive .table .R21_GrayColorVal {
+    font-size: 16px; }
+    #market-data-tool.table-responsive .table .R21_GrayColorVal a, #market-data-tool.table-responsive .table .R21_GrayColorVal .pop-out__reset-password, #market-data-tool.table-responsive .table .R21_GrayColorVal .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R21_GrayColorVal .mobile-table-exit, #tanker-fixtures.table-responsive .table .R21_GrayColorVal a, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .mobile-table-exit {
+      color: #1191d1;
+      text-decoration: none; }
+  #market-data-tool.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18 {
+    color: #000; }
+    #market-data-tool.table-responsive .table .RB18 a, #market-data-tool.table-responsive .table .RB18 .pop-out__reset-password, #market-data-tool.table-responsive .table .RB18 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .RB18 .mobile-table-exit, #tanker-fixtures.table-responsive .table .RB18 a, #tanker-fixtures.table-responsive .table .RB18 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .RB18 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .RB18 .mobile-table-exit {
+      color: #58595b;
+      border-left: 1px solid #979797;
+      padding: 8px 0px 8px 20px; }
+      #market-data-tool.table-responsive .table .RB18 a:hover, #market-data-tool.table-responsive .table .RB18 .pop-out__reset-password:hover, #market-data-tool.table-responsive .table .RB18 .sortable-table__list-toggler:hover, #market-data-tool.table-responsive .table .RB18 .mobile-table-exit:hover, #tanker-fixtures.table-responsive .table .RB18 a:hover, #tanker-fixtures.table-responsive .table .RB18 .pop-out__reset-password:hover, #tanker-fixtures.table-responsive .table .RB18 .sortable-table__list-toggler:hover, #tanker-fixtures.table-responsive .table .RB18 .mobile-table-exit:hover {
+        text-decoration: none; }
+  #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+    font-size: 15px; }
+  @media (max-width: 480px) {
+    #market-data-tool.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
+      display: block; } }
+
+#market-data-tool .lli-brand-container, #tanker-fixtures .lli-brand-container {
   margin-bottom: 20px; }
-  .lli-brand-container h3, .lli-brand-container .article-call-to-action__title {
+  #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title {
     background-color: #414042;
     padding: 10px;
     color: #fff; }
-  .lli-brand-container .lli-brand-box {
-    padding: 10px;
-    background: #f7f7f7; }
-  .lli-brand-container fieldset {
-    border: 0; }
-  .lli-brand-container .selectivity-single-select {
+  #market-data-tool .lli-brand-container .lli-brand-box, #tanker-fixtures .lli-brand-container .lli-brand-box {
+    padding: 10px 0;
+    /*background: #f7f7f7;*/ }
+  #market-data-tool .lli-brand-container p, #tanker-fixtures .lli-brand-container p {
+    margin-bottom: 35px; }
+  #market-data-tool .lli-brand-container fieldset, #tanker-fixtures .lli-brand-container fieldset {
+    border: 0;
+    margin: 0px;
+    padding: 0px; }
+  #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+    margin-bottom: 20px;
+    float: left;
+    width: 50%; }
+    @media (max-width: 480px) {
+      #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+        width: 100%; } }
+    #market-data-tool .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2) {
+      float: right;
+      text-align: right; }
+      #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
+        text-align: left; }
+  #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+    float: right;
+    text-align: right; }
+    @media (max-width: 480px) {
+      #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+        float: inherit;
+        text-align: left; } }
+    #market-data-tool .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
+      position: relative;
+      top: -26px;
+      margin-right: 10px; }
+  #market-data-tool .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select {
     background: #ffffff; }
-  .lli-brand-container .select-field {
+  #market-data-tool .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field {
     position: relative;
     display: inline-block; }
-  .lli-brand-container .selectivity-input {
+  #market-data-tool .lli-brand-container .selectivity-input, #tanker-fixtures .lli-brand-container .selectivity-input {
     position: relative; }
-  .lli-brand-container .selectivity-dropdown {
+  #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+    width: 300px; }
+  #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input {
+    width: 200px; }
+  #market-data-tool .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown {
     right: 0;
     top: 100%; }
-  .lli-brand-container .form-control {
-    margin-bottom: 20px; }
-  .lli-brand-container .form-control label {
-    width: 200px;
+  #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
+    /*width: 200px;*/
+    margin-right: 20px;
     display: inline-block; }
     @media (max-width: 480px) {
-      .lli-brand-container .form-control label {
+      #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
         margin-bottom: 0.5em; } }
-  .lli-brand-container .submit {
+  #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
     border: 1px solid transparent;
     color: #ffffff;
-    padding: 12px;
-    background-color: #9E310D;
-    width: 146px;
+    padding: 12px 80px;
+    background-color: #1191d1;
     font-family: 'Roboto', Arial Narrow, sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 0.75em;
-    float: left;
-    margin-left: 205px;
-    text-transform: uppercase; }
+    font-size: 16px;
+    font-size: 1rem;
+    float: right; }
     @media (max-width: 480px) {
-      .lli-brand-container .submit {
+      #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
         margin-left: 0; } }
 
+#market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 40px; }
+
+#market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+  font-size: 26px;
+  font-weight: normal;
+  font-style: italic; }
+
+#market-data-tool hr, #tanker-fixtures hr {
+  margin: 25px 0 35px; }
+
 .graybg {
-  border-bottom: 1px solid #d1d3d4; }
+  border-bottom: 1px solid #d1d3d4;
+  border-top: 1px solid #d1d3d4; }
 
 .lloyd-related-links {
   margin-top: 20px;

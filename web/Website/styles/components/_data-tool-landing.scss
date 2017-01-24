@@ -344,6 +344,15 @@ div#feedbacklite.fbl_r{
     	margin: 0 2em 0 0;
     	clear: initial;
     	height: 15.625rem;
+    	margin-bottom: 2em;
+	}
+	.article-related-content h5 {
+		height: 70px;
+		overflow: hidden;
+	}
+	.ContentRecomm-ReadNext .section-article {
+		height: 15.3125rem;
+		margin-bottom: 2em;
 	}
 }
 .article-right-rail {
@@ -463,8 +472,10 @@ div#feedbacklite.fbl_r{
 		margin-bottom: 1.5rem;
 	}
 	.section-article{
+		display: table;
 		.section-article-img{
-			float: left;			
+			display: table;		
+			float: left;
 			margin-right: 2em;
 			width: 29%;
 			img{
@@ -472,8 +483,7 @@ div#feedbacklite.fbl_r{
 			}
 		}
 		.section-article-text{
-			float: left;
-			width: 60%;
+			display: table;
 		}
 		
 		width: 100%;

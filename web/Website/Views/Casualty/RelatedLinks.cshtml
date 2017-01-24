@@ -1,0 +1,35 @@
+﻿@model Informa.Web.ViewModels.Casualty.RelatedLinksViewModel
+@if (Model.IsUserAuthenticated)
+{
+    if (Model.marketDataFolders != null && Model.marketDataFolders.Any())
+    {
+        <div class="related-left-rail">
+            <div class="relatedlinks">
+                <div class="allrelatedlinks mrig">
+                    
+                        @foreach (var marketfolder in Model.marketDataFolders)
+                        {
+                            <ul>
+                                <li class="article-topics__section-header">@marketfolder.SectionName</li>
+
+                                @{
+                                    var marketDetailPageList = marketfolder._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData.IMarketData_Detail_Page>();
+                                    if (marketDetailPageList != null && marketDetailPageList.Any())
+                                    {
+
+                                        foreach (var marketdetail in marketDetailPageList)
+                                        {
+                                            <li><a href="@marketdetail._Url">@marketdetail.Title</a></li>
+                                        }
+
+                                    }
+                           }
+                            </ul>
+                                    }
+                    </div>
+                </div>
+            </div>
+      }
+   }
+
+                                    

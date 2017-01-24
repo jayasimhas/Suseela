@@ -1,2 +1,44 @@
-﻿@model Informa.Web.ViewModels.Casualty.MarketNewsViewModel
-<h1>@Model.Title</h1>
+﻿@inherits GlassView<LatestNewsViewModel>
+
+<div class="ll-market-details">
+    <div class="article-related-content">
+        @{var IsMarketNews = Html.Sitecore().CurrentRendering.Parameters["Is Market News"]; }
+
+        @if (!string.IsNullOrEmpty(IsMarketNews) && IsMarketNews == "1")
+        {
+            <h2 class="title">@Model.TextTranslator.Translate("Market.News.Component.Title")</h2>
+        }
+        else
+        {
+            <h2 class="title">@Model.TextTranslator.Translate("Market.Commentary.Component.Title")</h2>
+        }      
+        @if (Model.News != null && Model.News.Any())
+        {
+            for (int i = 0; i < Model.News.Count(); i++)
+            {
+                if (i < 2)
+                {
+                    <div class="contentRecomm-article">
+                        @if (!string.IsNullOrEmpty(Model.News.ElementAt(i).ListableImage))
+                        {
+                            <img src="@Model.News.ElementAt(i).ListableImage" width="100%">
+                        }
+                        
+                        <h5>
+                            <a class="click-utag" href="@Model.News.ElementAt(i).LinkableUrl">@Model.News.ElementAt(i).ListableTitle</a>
+                        </h5>
+                        <div class="article-related-content__date">@Html.Raw(Model.News.ElementAt(i).ListableSummary)</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="contentRecomm-article">
+                        <h5>
+                            <a class="click-utag" href="@Model.News.ElementAt(i).LinkableUrl">@Model.News.ElementAt(i).ListableTitle</a>
+                        </h5>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
