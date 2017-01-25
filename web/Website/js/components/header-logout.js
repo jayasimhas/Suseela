@@ -3,11 +3,9 @@
 
 	$(document).on('click', '.header_salesforce_sign-in-out', function(e) {
 		e.preventDefault();
-		debugger;
 		var IframeUrl = $(this).attr('data-logout-url');
 		var RelocateUrl = $(this).attr('data-redirect-url');
-		var popup = window.open(IframeUrl, "popup", "status=1,width=0,height=0");
-	     popup.close();
-	     window.location.href=RelocateUrl;
+		$(document.body).append('<iframe width="0" height="0" src="' + IframeUrl + '" frameborder="0"></iframe>');
+	    window.location.href=RelocateUrl;
 	});
 })();
