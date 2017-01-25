@@ -311,13 +311,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             ao.Add("MEDIA", "interactivedashboards");
                         }
-                        else if (!string.IsNullOrEmpty(imageTitleHtml))
+                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        {
+                            ao.Add("MEDIA", "image");
+                        }
+                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
                         {
                             ao.Add("MEDIA", "image");
                         }
                         else
                         {
-                            ao.Add("MEDIA", "Data");
+                            ao.Add("MEDIA", "");
                         }
 
 

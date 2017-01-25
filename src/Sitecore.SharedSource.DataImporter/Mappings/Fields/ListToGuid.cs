@@ -167,7 +167,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 if (!list.Any())
                     return;
                 Field f = newItem.Fields[NewItemField];
-
+                f.Reset();
                 
 
                 foreach (string auth in list)

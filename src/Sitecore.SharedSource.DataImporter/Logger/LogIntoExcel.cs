@@ -1,103 +1,65 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Configuration;
+using System.Web;
 
 namespace Sitecore.SharedSource.DataImporter.Logger
 {
     public static class LogIntoExcel
     {
-        public static void CMCReport(string articleId, Dictionary<string, string> logValues,string publication)
+        public static void CMCReport(string articleId, Dictionary<string, string> logValues, string publication)
         {
-            
-            string strfilepath = WebConfigurationManager.AppSettings["Logging_path"];
+            string strfilepath = string.Format(@"{0}\CMCLogs\Content Migration Checks_{1}.xlsx",
+                HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
 
-            using (var xlPackage = new ExcelPackage())
+            FileInfo fileInfo = new FileInfo(strfilepath);
+
+            using (var xlPackage = new ExcelPackage(fileInfo))
             {
-                using (var stream = new FileStream(strfilepath, FileMode.Open))
+                var ws = xlPackage.Workbook.Worksheets.SingleOrDefault(x => x.Name == publication);
+
+
+                bool isNewfile = false;
+                if (ws == null)
                 {
-                    xlPackage.Load(stream);
-
-                    var ws = xlPackage.Workbook.Worksheets.SingleOrDefault(x => x.Name == publication);
-
-                    
-
-                    DataTable dt = WorksheetToDataTable(ws);
-
-                    //var rowsToUpdate = dt.AsEnumerable().Where(r => r.Field<string>("ArticleId") == articleId);
-
-
-                    //if (rowsToUpdate.ToList().Count() > 0)
-                    //{
-                    //    foreach (DataRow dr in dt.Rows)
-                    //    {
-
-                    //        if (System.Convert.ToString(dr["ArticleId"]) == articleId)
-                    //        {
-
-                    //            //for (int i = 0; i < colNames.Length; i++)
-                    //            //{
-
-                    //            //    dr[colNames[i]] = colValues[i];
-                    //            //}
-
-                    //            foreach (KeyValuePair<string, string> l in logValues)
-                    //            {
-                    //                if (!String.IsNullOrEmpty(l.Value))
-
-                    //                    if (l.Value.EndsWith(","))
-                    //                        dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
-
-                    //                    else
-                    //                    {
-                    //                        dr[l.Key] = l.Value;
-                    //                    }
-                    //            }
-                    //        }
-                    //    }
-                    //}
-                    //else
-                    //{
-                        DataRow dr = dt.NewRow();
-
-                        dr["ArticleId"] = articleId;
-
-                        //for (int i = 0; i < colNames.Length; i++)
-                        //{
-
-                        //    dr[colNames[i]] = colValues[i];
-                        //}
-
-                        foreach (KeyValuePair<string, string> l in logValues)
-                        {
-
-                            if (!String.IsNullOrEmpty(l.Value))
-
-                                if (l.Value.EndsWith(","))
-                                    dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
-
-                                else
-                                {
-                                    dr[l.Key] = l.Value;
-                                }
-                        }
-
-                        dt.Rows.Add(dr);
-
-                   // }
-
-                    ws.Cells["A1"].LoadFromDataTable(dt, true);
+                    isNewfile = true;
+                    ws = xlPackage.Workbook.Worksheets.Add(publication);
                 }
 
-                //xlPackage.Save();
+                DataTable dt = new DataTable();
+                if (isNewfile)
+                    dt = GetDataTable(publication);
+                else
+                    dt = WorksheetToDataTable(ws);
 
-                Byte[] bin = xlPackage.GetAsByteArray();
-                File.WriteAllBytes(strfilepath, bin);
+                DataRow dr = dt.NewRow();
+
+                dr["ArticleId"] = articleId;
+
+                foreach (KeyValuePair<string, string> l in logValues)
+                {
+
+                    if (!String.IsNullOrEmpty(l.Value))
+
+                        if (l.Value.EndsWith(","))
+                            dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
+
+                        else
+                        {
+                            dr[l.Key] = l.Value;
+                        }
+                }
+
+                dt.Rows.Add(dr);
+
+                ws.Cells["A1"].LoadFromDataTable(dt, true);
+                xlPackage.Save();
             }
 
 
@@ -121,6 +83,71 @@ namespace Sitecore.SharedSource.DataImporter.Logger
                 }
             }
             return dt;
+        }
+
+        //private static void CreateExcel(string publication)
+        //{
+
+        //    string fileName = string.Format(@"{0}Content Migration Checks_{1}.xlsx",
+        //        HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H.mm") + ".xlsx");
+
+        //    //var outputDir = context.Server.MapPath("/media/generatedfiles/");
+        //    //string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
+        //    //                        HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
+        //    //                        DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
+        //    //                        kvp.Key);
+
+
+        //    //if (!Directory.Exists(fileName))
+        //    //{
+        //    var file = new FileInfo(fileName);
+
+        //    using (var stream = new MemoryStream())
+        //    {
+
+        //        using (var xlPackage = new ExcelPackage(file))
+        //        {
+
+        //            var ws = xlPackage.Workbook.Worksheets.Add(publication);
+
+        //            var colHeaders = GetColumnsNames(string.Format(publication, "ColHeaders"));
+
+        //            var colNames = colHeaders.Split(',');
+
+        //            for (int i = 0; i >= colNames.Length; i++)
+        //            {
+        //                int j = i + 1;
+        //                ws.Cells[1, j].Value = colNames[i];
+
+        //            }
+
+        //            xlPackage.Save();
+        //        }
+        //    }
+
+        //}
+
+        private static DataTable GetDataTable(string publication)
+        {
+
+            DataTable dt = new DataTable(publication);
+
+            string colHeaders = GetColumnsNames(publication + "ColHeaders");
+
+            var columns = colHeaders.Split(',');
+
+            foreach (var i in columns)
+            {
+                dt.Columns.Add(i, typeof(string));
+            }
+
+            return dt;
+        }
+
+        private static string GetColumnsNames(string colHeaders)
+        {
+            return System.Convert.ToString(ConfigurationManager.AppSettings[colHeaders]);
+
         }
     }
 }

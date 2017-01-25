@@ -472,6 +472,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //date info
             string newFilePath = (dt.Year != 1800) ? $"{dt.ToString("yyyy/MMMM")}/{fileName}" : fileName;
 
+
             // see if it exists in med lib
             Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
             IEnumerable<Item> matches = GetMediaItems(map)
@@ -520,8 +521,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map)
-        {
-            string cacheKey = "Images";
+        {            string cacheKey = "Images";
             IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
             if (o != null)
                 return o;
