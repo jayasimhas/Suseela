@@ -111,7 +111,12 @@
           <site>PinkSheet</site>
           <site>RoseSheet</site>
           <site>ScripIntelligence</site>
-          <site>Commodities</site> 
+          <site>Commodities</site>
+          <site>Agrow</site>
+          <site>AnimalPharm</site>
+          <site>PolicyandLeg</site>
+          <site>InsuranceDay</site>
+          <site>Lloydslist</site>
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
@@ -126,7 +131,12 @@
           <site>PinkSheet</site>
           <site>RoseSheet</site>
           <site>ScripIntelligence</site>
-          <site>Commodities</site> 
+          <site>Commodities</site>
+          <site>Agrow</site>
+          <site>AnimalPharm</site>
+          <site>PolicyandLeg</site>
+          <site>InsuranceDay</site>
+          <site>Lloydslist</site>
         </sites>
       </handler>
       <handler type="Sitecore.Publishing.RenderingParametersCacheClearer, Sitecore.Kernel" method="ClearCache" />
