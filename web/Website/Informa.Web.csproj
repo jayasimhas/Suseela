@@ -2257,7 +2257,6 @@
     <Content Include="Views\FinanceCompanies\AvailableGraphs.cshtml" />
     <Content Include="Views\FinanceCompanies\AMGraphsDetail.cshtml" />
     <Content Include="Views\FinanceCompanies\CompareGraphs.cshtml" />
-    <Content Include="Views\Casualty\CasualtyReport.cshtml" />
     <Content Include="Views\Casualty\LatestCasualties.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersDetails.cshtml" />
     <Content Include="Views\BuyersGuide\BuyersListing.cshtml" />
@@ -2270,6 +2269,11 @@
     <Content Include="Views\Article\CompanyLatestNews.cshtml" />
     <Content Include="Views\Casualty\BalticIndices.cshtml" />
     <Content Include="Views\Casualty\MarketNews.cshtml" />
+    <Content Include="Views\Casualty\AdobeChart.cshtml" />
+    <Content Include="Views\Casualty\CasualtyList.cshtml" />
+    <Content Include="Views\Casualty\MarketDataList.cshtml" />
+    <Content Include="Views\Casualty\MarketDate.json" />
+    <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
