@@ -5485,7 +5485,7 @@ $(window).on('scroll', function () {
 		debugger;
 		var IframeUrl = $(this).attr('data-logout-url');
 		var RelocateUrl = $(this).attr('data-redirect-url');
-		popup = window.open(IframeUrl, "popup", "status=1,width=0,height=0");
+		var popup = window.open(IframeUrl, "popup", "status=1,width=0,height=0");
 		popup.close();
 		window.location.href = RelocateUrl;
 	});
