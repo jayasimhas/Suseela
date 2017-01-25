@@ -96,26 +96,43 @@
                         </svg>
                         <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
                     </div>
+                    if (!Model.UseNewSalesForce)
+                    {
                     <div class="header-account-access__sign-in-out click-logout">
                         <svg class="header__icons icon-sign-out">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                         </svg>
                         <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
-                    </div>}
+                    </div>
+                    }
+                    else
+                    {
+                        <div class="header-account-access__sign-in-out click-logout pop-out__trigger">
+                            <svg class="header__icons icon-sign-out">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                            </svg>
+                            <span class="header-account-access__label header_salesforce_sign-in-out"
+                             data-redirect-url="@Url.Action("Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url })" 
+                             data-logout-url="@Model.LogoutUrl">
+                            @Model.SignOutLinkText</span>
+                        </div>
+                    }
+                }
                 else
                 {
-
-                    <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
-                         data-pop-out-id="header-register"
-                         data-pop-out-type="register">
-
-                        <svg class="header__icons icon-register">
-                            <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
-                        </svg>
-                        <span class="header-account-access__label">@Model.RegisterLinkText</span>
-                    </div>
                     if (Model.UseNewSalesForce)
                     {
+                        @*<div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"*@
+                        <div class="" style="position:relative; display:inline-block;"
+                             data-pop-out-id="header-register"
+                             data-pop-out-type="register">
+
+                            <svg class="header__icons icon-register">
+                                <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
+                            </svg>
+                            <span class="header-account-access__label">
+                            <a href="@Model.RegistrationUrl">@Model.RegisterLinkText</a></span>
+                        </div>
                         @*<div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"*@
                         <div class="" style="position:relative; display:inline-block;"
                              data-pop-out-id="header-signin"
@@ -134,6 +151,15 @@
                     }
                     else
                     {
+                        <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
+                             data-pop-out-id="header-register"
+                             data-pop-out-type="register">
+
+                            <svg class="header__icons icon-register">
+                                <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
+                            </svg>
+                            <span class="header-account-access__label">@Model.RegisterLinkText</span>
+                        </div>
                         <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
                              data-pop-out-id="header-signin"
                              data-pop-out-align="right"
