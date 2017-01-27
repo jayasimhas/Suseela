@@ -2278,6 +2278,7 @@
     <Content Include="Views\Casualty\MarketDate.json" />
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\AdobeChart.cshtml" />
+    <Content Include="Views\Casualty\MarketData.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

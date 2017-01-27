@@ -7162,7 +7162,7 @@ $(function () {
 			return mobileStr;
 		},
 		init: function init(dateObj, tableDataObj) {
-			this.renderDateData(dateObj);
+			//this.renderDateData(dateObj);
 			this.renderTable(tableDataObj);
 		}
 	};
