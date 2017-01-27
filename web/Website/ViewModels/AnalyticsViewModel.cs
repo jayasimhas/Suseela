@@ -112,8 +112,8 @@ namespace Informa.Web.ViewModels
             return "Unentitled Abstract View";
         }
         public string ArticleRegions => GetArticleTaxonomy(ItemReferences.RegionsTaxonomyFolder);
-        public string ArticleSubject => GetArticleTaxonomy(ItemReferences.PharmaSubjectsTaxonomyFolder);
-        public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.PharmaTherapyAreasTaxonomyFolder);
+        public string ArticleSubject => GetArticleTaxonomy(ItemReferences.SubjectsTaxonomyFolder);
+        public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
         public string SiteEnvrionment => SiteSettings.GetSetting("Env.Value", string.Empty);
         public bool IsUserLoggedIn => AuthenticatedUserContext.IsAuthenticated;
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;

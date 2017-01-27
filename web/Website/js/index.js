@@ -24,6 +24,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
+import './components/header-logout';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
@@ -44,6 +45,7 @@ import './components/ll-market-data-tool';
 import './components/ll-market-data';
 import './components/ll-tanker-fixtures';
 import './components/accordionStockChart';
+import './components/amGraphParam';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';

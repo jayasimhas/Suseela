@@ -28,15 +28,17 @@ namespace Informa.Web.ViewModels
             ArticleSearch = articleSearch;
             TextTranslator = textTranslator;
             SitecoreContext = sitecoreContext;
-            RootContext = rootContext;           
+            RootContext = rootContext;
+            ItemsToDisplay = 4;
 
         }    
 
         public IEnumerable<IArticle> News { get; set; }
 
         IEnumerable<string> publicationNames { get; set; }
-        IEnumerable<Guid> subjectId { get; set; } 
-      
+        IEnumerable<Guid> subjectId { get; set; }
+    
+        public int ItemsToDisplay { get; set; }
 
         public IEnumerable<IArticle> CompanyNews => GetLatestNewsForCompanies();
 
@@ -48,7 +50,6 @@ namespace Informa.Web.ViewModels
 
         public string CompanyNewsSummary => TrimCompanyNewsSummary();
 
-        public int NumberOfArticle => GlassModel?.TotalNumberOfCompanyNews??4;
         /// <summary>
         /// To Trim Company News Summary
         /// </summary>
@@ -72,13 +73,12 @@ namespace Informa.Web.ViewModels
         private IEnumerable<IArticle> GetLatestNewsForCompanies()
         {
             publicationNames = new List<string>() { RootContext.Item.Publication_Name };
-            subjectId = Taxonomies.Select(x => x._Id);
-           
+            subjectId = Taxonomies.Select(x => x._Id);        
 
             var filter = ArticleSearch.CreateFilter();
         
             filter.Page = 1;
-            filter.PageSize =  NumberOfArticle.Equals(0)?4:NumberOfArticle; 
+            filter.PageSize = ItemsToDisplay;
 
             if (subjectId != null) filter.TaxonomyIds.AddRange(subjectId);
             if (publicationNames != null) filter.PublicationNames.AddRange(publicationNames);

@@ -118,7 +118,7 @@ namespace Informa.Web.ViewModels
                                         if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && ((preference.IsFollowing && UserPreferences.Preferences.IsNewUser) || isTopicsFollowing))
                                         {
                                             var channel = channelPages.Where(p => p.Channel_Code == preference.ChannelCode).FirstOrDefault();
-                                            if (!string.IsNullOrEmpty(channel.Display_Text))
+                                            if (channel != null && !string.IsNullOrEmpty(channel.Display_Text))
                                             {
                                                 preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channel.Display_Text, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId) } });
                                             }
@@ -147,7 +147,7 @@ namespace Informa.Web.ViewModels
                                                     if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
                                                     {
                                                         var topicObj = topics.Where(p => p.Navigation_Code == topic.TopicCode).FirstOrDefault();
-                                                        if (!string.IsNullOrEmpty(topicObj.Title))
+                                                        if (topicObj != null && !string.IsNullOrEmpty(topicObj.Title))
                                                         {
                                                             preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicObj.Title, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
                                                         }

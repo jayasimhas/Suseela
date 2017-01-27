@@ -23,7 +23,9 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-        private string _authorizationRequestUrlFormat = "{0}/services/oauth2/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}";
+        private string _authorizationRequestEndPoint = "{0}/services/oauth2/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}";
+        private string _registrationEndpoint = "/registration";
+        private const string logoutUrl = "/secur/logout.jsp";
 
 
         public HeaderViewModel(
@@ -83,10 +85,17 @@ namespace Informa.Web.ViewModels
         public string CorporateName => CompanyNameContext.Name;
         public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
-        public string AuthorizationRequestUrl => String.Format(_authorizationRequestUrlFormat,
+        public string AuthorizationRequestUrl => string.Format(_authorizationRequestEndPoint,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username,
             GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url);
+
+        public string RegistrationUrl => string.Format("{0}{1}",
+            SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
+            _registrationEndpoint);
+
+        public string LogoutUrl => string.Format("{0}{1}",
+            SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url, logoutUrl);
 
 
         private string BuildLink(Link l)
