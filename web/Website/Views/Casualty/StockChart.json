@@ -1,0 +1,40 @@
+﻿[
+  {
+    "Data": [
+      {
+        "date": "UKE",
+        "value": "United Kingdom inc Eire"
+      },
+      {
+        "date": "SCN",
+        "value": "North European Atlantic coast"
+      },
+      {
+        "Value": "IBE",
+        "Text": "Spain / Portugal inc Atlantic Islands"
+      },
+      {
+        "Value": "SEU",
+        "Text": "European Mediterranean coast"
+      }
+    ],
+    "MovementTypes": [
+      {
+        "Value": "ALL",
+        "Text": "All"
+      },
+      {
+        "Value": "A",
+        "Text": "Arrivals"
+      },
+      {
+        "Value": "S",
+        "Text": "Sailings"
+      },
+      {
+        "Value": "P",
+        "Text": "Passings"
+      }
+    ]
+  }
+]

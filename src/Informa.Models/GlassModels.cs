@@ -1984,7 +1984,124 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData
+{
 
+    [SitecoreType(TemplateId = IMarketData_Detail_PageConstants.TemplateIdString)]
+    public partial interface IMarketData_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+
+    }
+    /// <summary>
+    /// ICompany_Graph_Detail_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Company/Company Graph Detail Page</para>	
+    /// <para>ID: 4364D7B9-2AC6-49E3-9123-C2AAE7CC3E0C</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IMarketData_Detail_PageConstants__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+
+    }
+
+    public static partial class IMarketData_Detail_PageConstants
+    {
+
+        public const string TemplateIdString = "024013C4-857F-48C3-AAB6-81E201E93A3B";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Detail Page";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+    }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData
+{
+
+    [SitecoreType(TemplateId = IMarketData_FolderConstants.TemplateIdString)]
+    public partial interface IMarketData_Folder : IGlassBase
+    {
+        /// <summary>
+        /// Section Name
+        /// </summary>
+        [SitecoreField(IMarketData_FolderConstants.SectionName_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string SectionName { get; set; }
+    }
+
+
+    public static partial class IMarketData_FolderConstants
+    {
+
+        public const string TemplateIdString = "6F2ED659-97D5-4DBB-BF58-0AA95E91F740";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Folder";
+
+        public static readonly ID SectionName_LinkFieldId = new ID("455A3E98-A627-4B40-8035-E683A0331AC7");
+        public const string SectionName_LinkFieldName = "Section Name";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.Publication_Specific
 {
 
