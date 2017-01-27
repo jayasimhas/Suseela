@@ -1231,6 +1231,7 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\AdobeChartViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
