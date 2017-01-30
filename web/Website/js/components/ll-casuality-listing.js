@@ -115,7 +115,6 @@
 	 			 });
 			});
 			$(document).on('change','#jumpTo', function(){
-				alert('hi');
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
 				var Top = $('#casualty-listing-table tr[data-jump='+Value+']').offset().top;
 
