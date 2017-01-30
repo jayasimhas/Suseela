@@ -1229,7 +1229,6 @@
     <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleRecommendationViewModel.cs" />
-    <Compile Include="ViewModels\LatestPublishedStoriesViewModel.cs" />
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
@@ -2280,7 +2279,6 @@
     <Content Include="Views\Casualty\MarketDate.json" />
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\CasualtyListing.json" />
-    <Content Include="Views\Article\LatestPublishedStories.cshtml" />
     <Content Include="Views\Casualty\StockChart.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
