@@ -4,11 +4,14 @@
 }
 
 .compareChart {
+	font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+	
 	.eachChartData {
 		margin-bottom: 10px;
 		width: 790px;
 		@include breakpoint('small') {
 			width: 100%;
+			margin-bottom: 0px;
 		}
 		
 		#GWP-CHART, #NWP-CHART, #UR-CHART, #NP-CHART, #SF-CHART, #NWPNR-CHART, #SFNR-CHART, #NPSFR-CHART {
@@ -32,6 +35,12 @@
 			background: #f9f9f9;
 			padding: 12px;
 			border: 1px solid #d9dadb;
+			@include breakpoint('small') {
+				border-top: none;
+			}
+			&.act{
+				background: #cacaca;
+			}
 			.title{
 				float: left;
 			}
@@ -40,10 +49,18 @@
 				background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
 				height: 20px;
 				width: 28px;
+				@include breakpoint('small') {
+					background: url(/dist/img/sprite-image.png) no-repeat -13px -615px;
+					height: 13px;
+					width: 12px;
+				}
 				display: inline-block;
 				cursor: pointer;
 				&.active{
 					background-position: 0 -77px;
+					@include breakpoint('small') {
+						background-position: 0px -615px;
+					}
 				}
 			}
 			&:after{
@@ -71,6 +88,29 @@
 	}
 	.showAll{
 		margin-bottom: 12px;
+		@include breakpoint('small') {
+			display: none;
+		}
+	}
+	.showinMob{
+		display: none;
+	}
+	@include breakpoint('small') {
+		.showinMob{
+			display: block;
+			background: #9e101d;
+			padding: 10px 0 10px 13px;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 18px;
+			font-weight: normal;
+		}
 	}
 }
+@include breakpoint('small') {
+	.hideinMob{
+		display: none;
+	}
+}
+
  

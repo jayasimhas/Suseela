@@ -22,6 +22,10 @@
 			float: left;
 			width: 50%;
 			padding: 0 1%;
+			@include breakpoint('small') {
+				float: none;
+				width: 100%;
+			}
 		}
 		&:last-child{
 			ul{
