@@ -1376,10 +1376,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
         /// </summary>
         [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsDateTimePageFieldName, Setting = SitecoreFieldSettings.InferType)]
         string CompanyNewsDateTime { get; set; }
-    /// <summary>
-    /// Company News Summary
-    /// </summary>
-    [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsSummaryPageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        /// <summary>
+        /// Company News Summary
+        /// </summary>
+        [SitecoreField(ICompany_Detail_PageConstants.CompanyNewsSummaryPageFieldName, Setting = SitecoreFieldSettings.InferType)]
         string CompanyNewsSummary { get; set; }
 
         /// <summary>
@@ -1555,7 +1555,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
 
         public static readonly ID CompanyNewsArticleUrlFieldNamePageFieldId = new ID("EC397B5A-45D7-4E45-9A35-0B400E333457");
         public const string CompanyNewsArticleUrlFieldName = "Company News Article";
-        
+
 
         public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
@@ -6212,6 +6212,102 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
 
 
+    }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+    /// <summary>
+    /// ILatest_Published_Stories_Options Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Latest Published Stories Options</para>	
+    /// <para>ID: 41DF0D57-B642-42D4-BF5B-583226B97CBF</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ILatest_Published_Stories_OptionsConstants.TemplateIdString)]
+    public partial interface ILatest_Published_Stories_Options : IGlassBase
+    {
+        /// <summary>
+        /// The Subjects field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: CA1E677B-1C61-4950-AB2D-B63ACA5A528E</para>
+        /// <para>Custom Data: generic=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<ITaxonomy_Item> Subjects { get; set; }
+        /// <summary>
+        /// The Authors field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 5D0DCEE2-E23E-42CA-8F42-55629C04CB5B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Authors { get; set; }
+        /// <summary>
+        /// Max Stories to Display field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: 98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133</para>
+        /// <para>Custom Data: type=INumber_Option</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Max_Stories_to_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Max_Stories_to_Display { get; set; }
+    }
+    /// <summary>
+    /// ILatest_Published_Stories_Options Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Latest Published Stories Options</para>	
+    /// <para>ID: 41DF0D57-B642-42D4-BF5B-583226B97CBF</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ILatest_Published_Stories_Options__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Subjects field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: CA1E677B-1C61-4950-AB2D-B63ACA5A528E</para>
+        /// <para>Custom Data: generic=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<ITaxonomy_Item> Subjects { get; set; }
+        /// <summary>
+        /// The Authors field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 5D0DCEE2-E23E-42CA-8F42-55629C04CB5B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Authors { get; set; }
+        /// <summary>
+        /// Max Stories to Display field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: 98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133</para>
+        /// <para>Custom Data: type=INumber_Option</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Max_Stories_to_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Max_Stories_to_Display { get; set; }
+    }
+
+    public static partial class ILatest_Published_Stories_OptionsConstants
+    {
+
+        public const string TemplateIdString = "41DF0D57-B642-42D4-BF5B-583226B97CBF";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Latest Published Stories Options";
+
+        public static readonly ID SubjectsFieldId = new ID("CA1E677B-1C61-4950-AB2D-B63ACA5A528E");
+        public const string SubjectsFieldName = "Subjects";
+
+        public static readonly ID AuthorsFieldId = new ID("5D0DCEE2-E23E-42CA-8F42-55629C04CB5B");
+        public const string AuthorsFieldName = "Authors";
+
+        public static readonly ID Max_Stories_to_DisplayFieldId = new ID("98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133");
+        public const string Max_Stories_to_DisplayFieldName = "Max Stories to Display";
     }
 
 }
