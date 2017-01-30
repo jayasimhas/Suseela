@@ -1233,6 +1233,7 @@
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\AdobeChartViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyListViewModel.cs" />
@@ -1241,6 +1242,7 @@
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
     <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
@@ -2279,6 +2281,7 @@
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\CasualtyListing.json" />
     <Content Include="Views\Article\LatestPublishedStories.cshtml" />
+    <Content Include="Views\Casualty\StockChart.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

@@ -7239,6 +7239,34 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualtyPan .table .R16 p {
   margin-bottom: 12px !important; }
 
+.casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
+  color: #1191d1; }
+
+.casualty-table-theme .table thead {
+  background-color: #0f5487 !important; }
+
+.casualty-table-theme .table .top {
+  color: #58595b;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-left: 1px solid #979797;
+  text-decoration: none;
+  font-size: 17px; }
+  .casualty-table-theme .table .top span {
+    background: url("img/sprite-image.png") no-repeat 0 -606px;
+    width: 11px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 8px; }
+
+.casualty-table-theme .table hr {
+  display: block !important;
+  margin: 0 !important; }
+
+.casualty-table-theme .border-right {
+  border-right: 1px solid #d1d3d4; }
+
 .data-tool-landing {
   width: 100%; }
   .data-tool-landing h1 {
