@@ -24,6 +24,7 @@ $(function(){
 		}
 		$('.chartData', '.compareChart').addClass('hide');
 		$('.chartexpand', '.compareChart').removeClass('active');
+		$('.dataTitle', '.compareChart').removeClass('act');
 	});
 	
 	$('.chartexpand', '.eachChartData').click(function () {

@@ -1241,6 +1241,7 @@
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketDataViewModel.cs" />
     <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
