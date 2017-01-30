@@ -13,10 +13,15 @@ using System.Linq;
 using System.Web.Mvc;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using System.IO;
+using System.Web;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Globalization;
 
 namespace Informa.Web.ViewModels.Casualty
 {
-    public class CasualtyReportViewModel : GlassViewModel<I___BasePage>
+    public class CasualtyListViewModel : GlassViewModel<I___BasePage>
     {
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiterootContext;
@@ -25,7 +30,7 @@ namespace Informa.Web.ViewModels.Casualty
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
 
-        public CasualtyReportViewModel(IGlobalSitecoreService globalService,
+        public CasualtyListViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
             ITextTranslator textTranslator,
             ICompaniesResultService companyResultService,
@@ -95,13 +100,35 @@ namespace Informa.Web.ViewModels.Casualty
         {
             get
             {
-                List<SelectListItem> datesList = new List<SelectListItem>();
-                for (int i = 1; i <= 7; i++)
+                string jsonDateDropdown = string.Empty;
+                if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL))
                 {
-                    SelectListItem date = new SelectListItem { Text = DateTime.Today.AddDays(-i).ToString("ddd, dd MMMM yyyy"), Value = DateTime.Today.AddDays(-i).ToString("dd-MM-yyyy") };
-                    datesList.Add(date);
+                    jsonDateDropdown = GetCasualtyData();
                 }
-                return new SelectList(datesList, "Value", "Text");
+                else
+                {
+                    jsonDateDropdown = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Views/Casualty/CasualtyListing.json"));
+                }
+
+                List<SelectListItem> selectItemList = new List<SelectListItem>();
+                if (jsonDateDropdown != null && !string.IsNullOrEmpty(jsonDateDropdown))
+                {
+                    JArray array = JArray.Parse(jsonDateDropdown);
+                    foreach (JObject content in array.Children<JObject>())
+                    {
+                        foreach (JProperty prop in content.Properties())
+                        {
+                            SelectListItem select = new SelectListItem { Text = DateTime.ParseExact(prop.Name, "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("ddd, dd MMMM yyyy"), Value = prop.Name.ToString() };
+                            selectItemList.Add(select);
+                        }
+                    }
+                    return new SelectList(selectItemList, "Value", "Text");
+                }
+                else
+                {
+                    return new SelectList(selectItemList, "Value", "Text");
+                }
+
             }
         }
         /// <summary>

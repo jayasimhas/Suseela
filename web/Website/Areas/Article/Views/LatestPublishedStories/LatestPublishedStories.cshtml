@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Informa.Web.ViewModels.IListableViewModel>
+
+<div class="latestPublishedStoriesSection">
+    <h5>Most recent published stories</h5>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var listable in Model)
+        {
+            <div class="contentRecomm-article">
+                @if (!string.IsNullOrEmpty(listable.ListableImage))
+                {
+                    <img src="@listable.ListableImage" width="100px" height="100px">
+                }
+                <h5>
+                    <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
+                </h5>
+                <div class="article-related-content__date">@Html.Raw(listable.ListableSummary)</div>
+            </div>
+        }
+    }
+    <span class="submit">show more</span>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        $('.submit').click(function () {
+            //var searchData = tableObj;
+            $.ajax({
+                url: '/Article/LatestPublishedStories/GetLatestNews/',
+                data: { 'subjectIds': null, 'publicationName': null, 'authorGuids': null, 'itemsToDisplay': 8 },
+                dataType: 'json',
+                type: 'POST',
+                success: function (searchData) {
+                    console.log(searchData);
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            });
+        });
+    </script>
+</div>
