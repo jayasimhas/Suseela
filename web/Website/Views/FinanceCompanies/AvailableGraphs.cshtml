@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompanyGraphViewModel
-<div class="article-related-content">
+<div class="article-related-content hideinMob">
 
-    <h2>@Model.AvailableGraphsText</h2>
+    <h2 class="showinMob">@Model.AvailableGraphsText</h2>
     <div class="availableGraphs">
         <ul>
             @foreach (var Graph in Model.AMGraphs)
