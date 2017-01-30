@@ -144,3 +144,37 @@
 		}
 	}
 }	 
+.casualty-table-theme {
+	a {
+		color: #1191d1;
+	}
+	.table {
+		thead {
+			background-color: $color-secondary-color !important;
+		}
+		.top {
+			color: $color-abbey-gray;
+			width: 40px;
+			height: 40px;
+			display: block;
+			border-left: 1px solid $color-dusty-gray;
+			text-decoration: none;
+			font-size: 17px;
+			span {
+				background: url('img/sprite-image.png') no-repeat 0 -606px;
+				width: 11px;
+				height: 8px;
+				display: inline-block;
+				margin-right: 8px;
+			}
+
+		}
+		hr {
+			display: block !important;
+			margin: 0 !important;
+		}
+	}
+	.border-right {
+		border-right: 1px solid #d1d3d4;
+	}
+}
