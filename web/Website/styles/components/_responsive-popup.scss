@@ -37,13 +37,13 @@
     width: 15px !important;
     &[type="ascending"] {
         position: absolute;
-        bottom: 15px;
+        top: 15px;
         right: 21px;
         transform: rotate(-180deg);
     }
     &[type="descending"] {
         position: absolute;
-        bottom: 5px;
+        top: 25px;
         right: 20px;
     }
     &.active {
@@ -68,8 +68,7 @@
         display: table;
         width: 100%;
         border-collapse: inherit;
-        border: 1px solid $color-light-gray;
-        width:100%;
+        border: none !important;
     }
     .tableRow { 
         display: table-row;
@@ -84,7 +83,7 @@
         font-family: "PT Serif", Georgia, serif;
         font-size: 16px;
         text-align: center;
-        background-color: $color-red;
+        background-color: #de4361;
         color:$color-white;
         position: relative;
         &:first-child {
@@ -99,6 +98,5 @@
     .tableCell, .tableHead { 
         display: table-cell;
         padding: 5px;
-        border-left: 1px solid $color-white;
     }
 }
