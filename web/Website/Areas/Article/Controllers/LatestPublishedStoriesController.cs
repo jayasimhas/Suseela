@@ -39,8 +39,8 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Parameters == null) return;
             Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
-            MediaType = Parameters.Media_Type._Id;
-            ContentType = Parameters.Content_Type._Id;
+            MediaType = Parameters.Media_Type!=null?Parameters.Media_Type._Id:Guid.Empty;
+            ContentType = Parameters.Content_Type!=null? Parameters.Content_Type._Id: Guid.Empty;
             ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             PublicationName = rootContext.Item.Publication_Name;
 
