@@ -223,16 +223,23 @@
 	.li-content-graph p a:hover {
 	}
 	.showin-desktop{
+		float: left;
+		
 		@include breakpoint('small') {
-			display: none;
-			float: left;
-		}
-	}
-	.showinMob{
-		@include breakpoint('wide') {
 			display: none;
 		}
 		
+		
+	}
+	.showinMob{
+		display: none;
+		
+		@include breakpoint('small') {
+			display: block;
+		}
+		.li-content-graph {
+			margin: 10px 0 0 0;
+		}	
 	}
 	
 }
