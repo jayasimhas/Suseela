@@ -1,149 +1,151 @@
 $(function() {
-	var GWPGraph = false;
-	$("#GWP").on('click', function() {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (GWPGraph == false) {
-			GWPcreateStockChart();
-			GWPGraph = true;
-		}
-	});
+	if($('#compareChartVal') && $('#compareChartVal').val() == 'true'){
+		var GWPGraph = false;
+		$("#GWP").on('click', function() {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (GWPGraph == false) {
+				GWPcreateStockChart();
+				GWPGraph = true;
+			}
+		});
 
-	var NWPGraph = false;
-	$("#NWP").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (NWPGraph == false) {
-			NWPcreateStockChart();
-			NWPGraph = true;
-		}
-	});
+		var NWPGraph = false;
+		$("#NWP").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (NWPGraph == false) {
+				NWPcreateStockChart();
+				NWPGraph = true;
+			}
+		});
 
-	var URGraph = false;
-	$("#UR").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (URGraph == false) {
-			URcreateStockChart();
-			URGraph = true;
-		}
-	});
+		var URGraph = false;
+		$("#UR").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (URGraph == false) {
+				URcreateStockChart();
+				URGraph = true;
+			}
+		});
 
-	var NPGraph = false;
-	$("#NP").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (NPGraph == false) {
-			NPcreateStockChart();
-			NPGraph = true;
-		}
-	});
+		var NPGraph = false;
+		$("#NP").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (NPGraph == false) {
+				NPcreateStockChart();
+				NPGraph = true;
+			}
+		});
 
-	var SFGraph = false;
-	$("#SF").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (SFGraph == false) {
-			SFcreateStockChart();
-			SFGraph = true;
-		}
-	});
+		var SFGraph = false;
+		$("#SF").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (SFGraph == false) {
+				SFcreateStockChart();
+				SFGraph = true;
+			}
+		});
 
-	var NWPNRGraph = false;
-	$("#NWPNR").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (NWPNRGraph == false) {
-			NWPNRcreateStockChart();
-			NWPNRGraph = true;
-		}
-	});
+		var NWPNRGraph = false;
+		$("#NWPNR").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (NWPNRGraph == false) {
+				NWPNRcreateStockChart();
+				NWPNRGraph = true;
+			}
+		});
 
-	var SFNRGraph = false;
-	$("#SFNR").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (SFNRGraph == false) {
-			SFNRcreateStockChart();
-			SFNRGraph = true;
-		}
-	});
+		var SFNRGraph = false;
+		$("#SFNR").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (SFNRGraph == false) {
+				SFNRcreateStockChart();
+				SFNRGraph = true;
+			}
+		});
 
-	var NPSFRGraph = false;
-	$("#NPSFR").on('click', function () {
-		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
-		if (chartData.is(':visible')) {
-			$this.removeClass('act');
-			chartData.addClass('hide');
-			arrow.removeClass('active');
-		} else {
-			$this.addClass('act');
-			chartData.removeClass('hide');
-			arrow.addClass('active');
-		}
-		if (NPSFRGraph == false) {
-			NPSFRcreateStockChart();
-			NPSFRGraph = true;
-		}
-	});
-
+		var NPSFRGraph = false;
+		$("#NPSFR").on('click', function () {
+			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
+			if (chartData.is(':visible')) {
+				$this.removeClass('act');
+				chartData.addClass('hide');
+				arrow.removeClass('active');
+			} else {
+				$this.addClass('act');
+				chartData.removeClass('hide');
+				arrow.addClass('active');
+			}
+			if (NPSFRGraph == false) {
+				NPSFRcreateStockChart();
+				NPSFRGraph = true;
+			}
+		});
+	}
 });
+
 
 // GWP STOCK CHART
 function GWPcreateStockChart() {
