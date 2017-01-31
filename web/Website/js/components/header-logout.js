@@ -5,7 +5,6 @@
 		e.preventDefault();
 		var IframeUrl = $(this).attr('data-logout-url');
 		var RelocateUrl = $(this).attr('data-redirect-url');
-		$(document.body).append('<iframe width="0" height="0" src="' + IframeUrl + '" frameborder="0"></iframe>');
-	    window.location.href=RelocateUrl;
+		$(document.body).append('<iframe width="1000" height="1000" onload="window.location.href=' + RelocateUrl +'" src="' + IframeUrl + '" frameborder="0"></iframe>');
 	});
 })();
