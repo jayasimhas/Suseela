@@ -1090,7 +1090,8 @@
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Article\Controllers\LatestPublishedStoriesController.cs" />
-    <Compile Include="Areas\Download\PdfDownloadController.cs" />
+    <Compile Include="Areas\Article\Models\Article\LatestPublishedStories\LatestPublishedStory.cs" />
+    <Compile Include="Areas\Download\Controllers\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
