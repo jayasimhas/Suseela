@@ -40,6 +40,8 @@ namespace Informa.Library.Search.Extensions
                     taxGuids = new List<Guid>()
                     {
                     refs.RegionsTaxonomyFolder,
+                    refs.ContentTypesFolder,
+                    refs.MediaTypeIconsFolder,
                     refs.PharmaSubjectsTaxonomyFolder,
                     refs.PharmaTherapyAreasTaxonomyFolder,
                     refs.PharmaDeviceAreasTaxonomyFolder,
@@ -52,6 +54,8 @@ namespace Informa.Library.Search.Extensions
                     taxGuids = new List<Guid>()
                     {
                     refs.RegionsTaxonomyFolder,
+                    refs.ContentTypesFolder,
+                    refs.MediaTypeIconsFolder,
                     refs.AgriTaxonomyRootFolder,
                     refs.AgriAgencyRegulatorTaxonomyFolder,
                     refs.AgriAnimalHealthTaxonomyFolder,
@@ -67,6 +71,8 @@ namespace Informa.Library.Search.Extensions
                     taxGuids = new List<Guid>()
                     {
                     refs.RegionsTaxonomyFolder,
+                    refs.ContentTypesFolder,
+                    refs.MediaTypeIconsFolder,
                     refs.MaritimeTaxonomyRootFolder,
                     refs.MaritimeCompaniesTaxonomyFolder,
                     refs.MaritimeHotTopicsTaxonomyFolder,

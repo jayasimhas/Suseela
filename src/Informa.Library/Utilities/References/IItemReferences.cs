@@ -23,6 +23,8 @@ namespace Informa.Library.Utilities.References
 
         //Global Taxonomy folder
         Guid RegionsTaxonomyFolder { get; }
+        Guid ContentTypesFolder { get; }
+        Guid MediaTypeIconsFolder { get; }
 
         // Pharma Taxonomy Folders
         Guid PharmaTaxonomyRootFolder { get; }

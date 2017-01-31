@@ -6363,6 +6363,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Authors { get; set; }
         /// <summary>
+        /// The Content Type field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: 925ABAB4-EE4D-4B8D-9027-A4BDFCE02B59</para>
+        /// <para>Custom Data: type=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item Content_Type { get; set; }
+        /// <summary>
+        /// The Media Type field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: {9F1A3FD6-EBEC-4161-8554-FC3F627A0954}</para>
+        /// <para>Custom Data: type=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item Media_Type { get; set; }
+        /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
         /// <para>Field Type: Droplink</para>		
@@ -6400,6 +6418,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Authors { get; set; }
         /// <summary>
+        /// The Content Type field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: 925ABAB4-EE4D-4B8D-9027-A4BDFCE02B59</para>
+        /// <para>Custom Data: type=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item Content_Type { get; set; }
+        /// <summary>
+        /// The Media Type field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// <para>Field ID: {9F1A3FD6-EBEC-4161-8554-FC3F627A0954}</para>
+        /// <para>Custom Data: type=ITaxonomy_Item</para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item Media_Type { get; set; }
+        /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
         /// <para>Field Type: Droplink</para>		
@@ -6423,6 +6459,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         public static readonly ID AuthorsFieldId = new ID("5D0DCEE2-E23E-42CA-8F42-55629C04CB5B");
         public const string AuthorsFieldName = "Authors";
 
+        public static readonly ID Content_TypeFieldId = new ID("925ABAB4-EE4D-4B8D-9027-A4BDFCE02B59");
+        public const string Content_TypeFieldName = "Content Type";
+
+        public static readonly ID Media_TypeFieldId = new ID("9F1A3FD6-EBEC-4161-8554-FC3F627A0954");
+        public const string Media_TypeFieldName = "Media Type";
+        
         public static readonly ID Max_Stories_to_DisplayFieldId = new ID("98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133");
         public const string Max_Stories_to_DisplayFieldName = "Max Stories to Display";
     }
