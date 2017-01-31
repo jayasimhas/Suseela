@@ -1,34 +1,33 @@
 ﻿@model Informa.Web.ViewModels.Articles.ArticleRecommendationViewModel
-
 <div class="contentRecommendations">
-@*Editor Picks*@
+    @*Editor Picks*@
     <div class="article-related-content">
         @if (Model.EditorsPicks != null && Model.EditorsPicks.Count > 0)
         {
-            <h2>@Model.EditorPicksText</h2>  
+            <h2>@Model.EditorPicksText</h2>
 
-             foreach (var article in Model.EditorsPicks)
-             {
-                 string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
-                    <div class="contentRecomm-article">
-                        <img class="article-related-content__img" src="@img" />
-                        <span class="article-related-content__category">@Model.PublicationName</span>
-                        <h5><a class="click-utag" href="@article._Url">@article.Title</a></h5>
-                        <time class="article-related-content__date">@article.Actual_Publish_Date.ToString("d MMM yyyy")</time>
-                    </div>
-             }
+            foreach (var article in Model.EditorsPicks)
+            {
+                string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
+                <div class="contentRecomm-article">
+                    <img class="article-related-content__img" src="@img" />
+                    <span class="article-related-content__category">@Model.PublicationName</span>
+                    <h5><a class="click-utag" href="@article._Url">@article.Title</a></h5>
+                    <time class="article-related-content__date">@article.Actual_Publish_Date.ToString("d MMM yyyy")</time>
+                </div>
+            }
         }
 
         @*What to read next*@
         @if (!Model.HideWhatToReadNext)
         {
-           <input type="hidden" id="hdnTaxonomyIds" value="@Html.Raw(Model.TaxonomyItems)" />
+            <input type="hidden" id="hdnTaxonomyIds" value="@Html.Raw(Model.TaxonomyItems)" />
             <div class="ContentRecomm-ReadNext">
                 <h2>@Model.WhatToReadNextText</h2>
             </div>
         }
 
-            @*Suggested For you*@
+        @*Suggested For you*@
         @if (!Model.HideSuggestedForYou)
         {
             if (Model.IsAuthenticated && Model.IsGlobalToggleEnabled)
@@ -43,8 +42,8 @@
                 }
                 <div class="suggested-article">
                     <h2>@Model.SuggestedForYouText</h2>
-                 </div>
+                </div>
             }
         }
-               </div>
     </div>
+</div>
