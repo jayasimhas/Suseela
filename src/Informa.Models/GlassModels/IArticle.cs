@@ -101,6 +101,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public string Referenced_Deals { get; set; }
         public IEnumerable<IGlassBase> Related_Articles { get; set; }
         public IEnumerable<IGlassBase> Editors_Picks { get; set; }
+        public bool Hide_WhatToReadNext { get; set; }
+        public bool Hide_SuggestedForYou { get; set; }
         public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
         public bool Scheduled_Publishing_Enabled { get; set; }
         public bool Include_In_Search { get; set; }
