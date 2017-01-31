@@ -354,3 +354,5 @@ target/
 *.iws
 *.ipr
  
+config/env/support-QACD.properties
+config/env/support-QACM.properties
