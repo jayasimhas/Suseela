@@ -129,3 +129,18 @@
 			}
 		}
 }
+.graph-container{
+	margin-top: 1rem;
+	margin-right: 0.3rem;
+	background-color: #eee;
+}
+.showin-desktop{
+	@include breakpoint('small') {
+		display: none;
+		float: none;
+	}
+}
+.showinMob{
+	
+	
+}
