@@ -2309,13 +2309,18 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-bottom: 22px; }
   #graph-carousel .li-content-graph p a, #graph-carousel .li-content-graph p .pop-out__reset-password, #graph-carousel .li-content-graph p .sortable-table__list-toggler, #graph-carousel .li-content-graph p .mobile-table-exit {
     color: #000; }
-  @media (max-width: 480px) {
-    #graph-carousel .showin-desktop {
-      display: none;
-      float: left; } }
-  @media (min-width: 801px) {
-    #graph-carousel .showinMob {
-      display: none; } }
+  #graph-carousel .showin-desktop {
+    float: left; }
+    @media (max-width: 480px) {
+      #graph-carousel .showin-desktop {
+        display: none; } }
+  #graph-carousel .showinMob {
+    display: none; }
+    @media (max-width: 480px) {
+      #graph-carousel .showinMob {
+        display: block; } }
+    #graph-carousel .showinMob .li-content-graph {
+      margin: 10px 0 0 0; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
