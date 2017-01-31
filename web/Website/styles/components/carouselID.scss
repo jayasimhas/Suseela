@@ -130,6 +130,22 @@
 		}
 }
 #graph-carousel{
+	.loadChart{
+		width: 25%;
+		float: left;
+		@include breakpoint('medium') {
+			width: 100%;
+			float: inherit;
+		}
+		a div{
+			> div{
+				height: 220px !important;
+				svg{
+					height: 220px !important;
+				}
+			}
+		}
+	}
 	.graph_heading {
 		display: block;
 		width: 100%;

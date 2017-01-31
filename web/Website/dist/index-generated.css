@@ -2239,6 +2239,17 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 
 #graph-carousel {
   font-family: "verdana"; }
+  #graph-carousel .loadChart {
+    width: 25%;
+    float: left; }
+    @media (max-width: 800px) {
+      #graph-carousel .loadChart {
+        width: 100%;
+        float: inherit; } }
+    #graph-carousel .loadChart a div > div, #graph-carousel .loadChart .pop-out__reset-password div > div, #graph-carousel .loadChart .sortable-table__list-toggler div > div, #graph-carousel .loadChart .mobile-table-exit div > div {
+      height: 220px !important; }
+      #graph-carousel .loadChart a div > div svg, #graph-carousel .loadChart .pop-out__reset-password div > div svg, #graph-carousel .loadChart .sortable-table__list-toggler div > div svg, #graph-carousel .loadChart .mobile-table-exit div > div svg {
+        height: 220px !important; }
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
