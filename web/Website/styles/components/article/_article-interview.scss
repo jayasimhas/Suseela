@@ -69,7 +69,7 @@ An interview (questions and answers) added via the Word plugin.
         font-size: 0.925rem;
         margin-left: 3.5rem;
         padding-left: 1.6125rem;
-        position: relative;
+        position: static;
         z-index: 4;
 
         &:before {
