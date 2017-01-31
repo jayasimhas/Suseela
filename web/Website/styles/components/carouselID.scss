@@ -129,3 +129,117 @@
 			}
 		}
 }
+#graph-carousel{
+	.graph_heading {
+		display: block;
+		width: 100%;
+		position: relative;
+		span{
+			width: 100%;
+			display: inline-block;
+			padding: 10px 0 10px 20px;
+			color: #fff;
+			background-color: #de4361;
+		}
+	}
+	.owl-theme .owl-dots{
+		text-align: right;
+	}
+	.owl-theme .owl-dots .owl-dot span{
+		margin: 5px; 
+	}
+	.graph-container{
+		margin-top: 1rem;
+		margin-right: 0.3rem;
+		background-color: #eee;
+	}
+	.owl-dots{
+		position: absolute;
+		top: 0;
+		margin-top: -28px;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	.owl-prev{
+		position: absolute;
+		top: 50px;
+		left: 0;
+		margin-left: -18px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.owl-next{
+		position: absolute;
+		top: 50px;
+		right: 0;
+		margin-right: -18px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	@include fontFamily("verdana");
+	.owl-carousel .item{
+		height: 290px;
+		@include breakpoint('small') {
+			height: auto;
+		}
+	}
+	.owl-theme .owl-nav [class*='owl-']{
+		background: none;
+	}
+	.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+		background: #9E310D;
+	}
+	
+	.li-content-graph {
+	  border: none;
+	  background-color: #eeeeee;
+	  height: 100%;
+	  padding: 15px 18px;
+	  margin: 10px 0 0 10px;
+	  
+	  > a{
+		  height: 224px;
+		  display: block;
+		  background: #fff;
+		  div{
+			  div{
+				  height: 220px !important;
+				  svg{
+					height: 220px !important;
+				  }
+			  }
+		  }
+	  }
+	}
+	.li-content-graph p {
+	  font-size: smaller;
+	  padding: 0 0 0 0;
+	  margin-bottom: 22px;
+	}
+	.li-content-graph p a {
+		color: #000;
+	}
+	.li-content-graph p a:hover {
+	}
+	.showin-desktop{
+		float: left;
+		
+		@include breakpoint('small') {
+			display: none;
+		}
+		
+		
+	}
+	.showinMob{
+		display: none;
+		
+		@include breakpoint('small') {
+			display: block;
+		}
+		.li-content-graph {
+			margin: 10px 0 0 0;
+		}	
+	}
+	
+}

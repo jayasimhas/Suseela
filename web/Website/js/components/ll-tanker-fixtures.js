@@ -19,6 +19,8 @@
 		},
 		renderTable: function(tableData){
 			var self = this;
+			self.sendHTTPRequest(tableData);
+			
 			$(document).on('change', '#selectDay', function(){
 				var searchData = tableData;
 				/*$.ajax({
@@ -111,7 +113,7 @@
 			return mobileStr;
 		},
 		init: function(dateObj, tableDataObj) {
-			//this.renderDateData(dateObj);
+			this.renderDateData(dateObj);
 			this.renderTable(tableDataObj);
 		}
 	}

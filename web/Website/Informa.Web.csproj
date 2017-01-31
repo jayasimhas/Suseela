@@ -1089,7 +1089,9 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Download\PdfDownloadController.cs" />
+    <Compile Include="Areas\Article\Controllers\LatestPublishedStoriesController.cs" />
+    <Compile Include="Areas\Article\Models\Article\LatestPublishedStories\LatestPublishedStory.cs" />
+    <Compile Include="Areas\Download\Controllers\PdfDownloadController.cs" />
     <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
@@ -1234,11 +1236,12 @@
     <Compile Include="ViewModels\Casualty\AdobeChartViewModel.cs" />
     <Compile Include="ViewModels\Casualty\BalticIndicesViewModel.cs" />
     <Compile Include="ViewModels\Casualty\CasualtyDetailViewModel.cs" />
-    <Compile Include="ViewModels\Casualty\CasualtyReportViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\CasualtyListViewModel.cs" />
     <Compile Include="ViewModels\Casualty\GoToPortViewModel.cs" />
     <Compile Include="ViewModels\Casualty\LatestCasualtiesViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersDetailsViewModel.cs" />
     <Compile Include="ViewModels\BuyersGuide\BuyersListingViewModel.cs" />
+    <Compile Include="ViewModels\Casualty\MarketDataViewModel.cs" />
     <Compile Include="ViewModels\Casualty\MarketNewsViewModel.cs" />
     <Compile Include="ViewModels\Casualty\RelatedLinksViewModel.cs" />
     <Compile Include="ViewModels\Casualty\ShippingMovementsViewModel.cs" />
@@ -2092,6 +2095,7 @@
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\Article\Views\LatestPublishedStories\LatestPublishedStories.cshtml" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2276,6 +2280,7 @@
     <Content Include="Views\Casualty\MarketDataList.cshtml" />
     <Content Include="Views\Casualty\MarketDate.json" />
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
+    <Content Include="Views\Casualty\CasualtyListing.json" />
     <Content Include="Views\Casualty\StockChart.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>

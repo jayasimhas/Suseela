@@ -3,6 +3,7 @@
 
 <div class="article-left-rail">
     <div class="compareChart">
+        <h4 class="showinMob">@Model.AvailableGraphsText</h4> 
         <div class="showAll">
             <a class="expandAll" href="javascript: void(0);">@Model.ExpandAll</a> / <a class="collapseAll" href="javascript: void(0);">@Model.CollapseAll</a>
         </div>
@@ -44,6 +45,7 @@
         }
     </div>
 </div>
+<input type="hidden" value="true" id="compareChartVal" />
 <script>
     @*var compareColors = '@Model.CompanyCompareColors';
     GraphcompareColors = compareColors.split(",");*@   

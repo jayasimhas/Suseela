@@ -23,7 +23,7 @@
 				//Appending Heading
 				$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
 				self.JumpToArray.push(data[key].casualtytitle);
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#" class="top"><span class="arrow"></span>Top</a></td></tr>');
 
 				//Appending Body
                 var CasualityData = data[key].casualtyData;
@@ -41,18 +41,29 @@
 
 			var Wrapper = Parent.find('tbody.visible-sm');
 			for(var key in data) {
-				Wrapper.append('<tr><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 pad-10"><a href="#">top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 pad-10"><a class="top" href="#"><span class="arrow"></span>Top</a></td></tr>');
 
 				var HeaderItems = this.HeaderLinks;
 				var CasualData = data[key].casualtyData;
 				
 				for(var key in CasualData) {
 					for(var i in HeaderItems) {
-						Wrapper.append('<tr>'+
-		                                 '<td class="pad-10 R21_GrayColor">'+HeaderItems[i]+'</td>'+
-		                                 '<td class="pad-10 R21_RedColor">'+CasualData[key][HeaderItems[i]]+'</td>'+
-	                              		'</tr>');
+						if(HeaderItems[i] == 'Title') {
+							Wrapper.append('<tr>'+
+			                                 '<td class="pad-10 R21_GrayColor border-right">'+HeaderItems[i]+'</td>'+
+			                                 '<td class="pad-10 R21_GrayColor"><a href="'+ $('#casualtyDetailUrl').val()+ '?incidentId='+ CasualData[key].incidentId +'">'+CasualData[key][HeaderItems[i]]+'</a></td>'+
+		                              		'</tr>');
+						} else {
+							Wrapper.append('<tr>'+
+			                                 '<td class="pad-10 R21_GrayColor border-right">'+HeaderItems[i]+'</td>'+
+			                                 '<td class="pad-10 R21_GrayColor">'+CasualData[key][HeaderItems[i]]+'</td>'+
+		                              		'</tr>');
 						}
+					}
+					Wrapper.append('<tr>'+
+		                                 '<td><hr /></td>'+
+		                                 '<td><hr /></td>'+
+	                              		'</tr>');
 				}
 			}
 		},

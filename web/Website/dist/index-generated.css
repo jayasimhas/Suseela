@@ -2237,6 +2237,91 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       color: #fff;
       background-color: #de4361; }
 
+#graph-carousel {
+  font-family: "verdana"; }
+  #graph-carousel .graph_heading {
+    display: block;
+    width: 100%;
+    position: relative; }
+    #graph-carousel .graph_heading span {
+      width: 100%;
+      display: inline-block;
+      padding: 10px 0 10px 20px;
+      color: #fff;
+      background-color: #de4361; }
+  #graph-carousel .owl-theme .owl-dots {
+    text-align: right; }
+  #graph-carousel .owl-theme .owl-dots .owl-dot span {
+    margin: 5px; }
+  #graph-carousel .graph-container {
+    margin-top: 16px;
+    margin-top: 1rem;
+    margin-right: 4px;
+    margin-right: 0.3rem;
+    background-color: #eee; }
+  #graph-carousel .owl-dots {
+    position: absolute;
+    top: 0;
+    margin-top: -28px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+  #graph-carousel .owl-prev {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #graph-carousel .owl-next {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #graph-carousel .owl-carousel .item {
+    height: 290px; }
+    @media (max-width: 480px) {
+      #graph-carousel .owl-carousel .item {
+        height: auto; } }
+  #graph-carousel .owl-theme .owl-nav [class*='owl-'] {
+    background: none; }
+  #graph-carousel .owl-theme .owl-dots .owl-dot.active span, #graph-carousel .owl-theme .owl-dots .owl-dot:hover span {
+    background: #9E310D; }
+  #graph-carousel .li-content-graph {
+    border: none;
+    background-color: #eeeeee;
+    height: 100%;
+    padding: 15px 18px;
+    margin: 10px 0 0 10px; }
+    #graph-carousel .li-content-graph > a, #graph-carousel .li-content-graph > .pop-out__reset-password, #graph-carousel .li-content-graph > .sortable-table__list-toggler, #graph-carousel .li-content-graph > .mobile-table-exit {
+      height: 224px;
+      display: block;
+      background: #fff; }
+      #graph-carousel .li-content-graph > a div div, #graph-carousel .li-content-graph > .pop-out__reset-password div div, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div, #graph-carousel .li-content-graph > .mobile-table-exit div div {
+        height: 220px !important; }
+        #graph-carousel .li-content-graph > a div div svg, #graph-carousel .li-content-graph > .pop-out__reset-password div div svg, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #graph-carousel .li-content-graph > .mobile-table-exit div div svg {
+          height: 220px !important; }
+  #graph-carousel .li-content-graph p {
+    font-size: smaller;
+    padding: 0 0 0 0;
+    margin-bottom: 22px; }
+  #graph-carousel .li-content-graph p a, #graph-carousel .li-content-graph p .pop-out__reset-password, #graph-carousel .li-content-graph p .sortable-table__list-toggler, #graph-carousel .li-content-graph p .mobile-table-exit {
+    color: #000; }
+  #graph-carousel .showin-desktop {
+    float: left; }
+    @media (max-width: 480px) {
+      #graph-carousel .showin-desktop {
+        display: none; } }
+  #graph-carousel .showinMob {
+    display: none; }
+    @media (max-width: 480px) {
+      #graph-carousel .showinMob {
+        display: block; } }
+    #graph-carousel .showinMob .li-content-graph {
+      margin: 10px 0 0 0; }
+
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -6384,6 +6469,10 @@ section: UI Elements
     float: left;
     width: 50%;
     padding: 0 1%; }
+    @media (max-width: 480px) {
+      .relatedlinks .allrelatedlinks ul {
+        float: none;
+        width: 100%; } }
   .relatedlinks .allrelatedlinks:last-child ul {
     border-bottom: none; }
     @media (max-width: 800px) {
@@ -6439,58 +6528,99 @@ section: UI Elements
 .article-related-content h5, .article-related-content .alert-success p, .alert-success .article-related-content p, .article-related-content .alert-error p, .alert-error .article-related-content p, .article-related-content .article-call-to-action__subtitle {
   margin-bottom: 20px !important; }
 
-.compareChart .eachChartData {
-  margin-bottom: 10px;
+.compareChart {
+  font-family: "Roboto Condensed", Arial Narrow, sans-serif;
   width: 790px; }
+  @media screen and (min-width: 800px) and (max-width: 1024px) {
+    .compareChart {
+      width: 620px; } }
   @media (max-width: 480px) {
-    .compareChart .eachChartData {
+    .compareChart {
       width: 100%; } }
-  .compareChart .eachChartData #GWP-CHART, .compareChart .eachChartData #NWP-CHART, .compareChart .eachChartData #UR-CHART, .compareChart .eachChartData #NP-CHART, .compareChart .eachChartData #SF-CHART, .compareChart .eachChartData #NWPNR-CHART, .compareChart .eachChartData #SFNR-CHART, .compareChart .eachChartData #NPSFR-CHART {
-    display: block;
-    min-height: 300px; }
+  .compareChart .eachChartData {
+    margin-bottom: 10px; }
     @media (max-width: 480px) {
-      .compareChart .eachChartData #GWP-CHART > div, .compareChart .eachChartData #NWP-CHART > div, .compareChart .eachChartData #UR-CHART > div, .compareChart .eachChartData #NP-CHART > div, .compareChart .eachChartData #SF-CHART > div, .compareChart .eachChartData #NWPNR-CHART > div, .compareChart .eachChartData #SFNR-CHART > div, .compareChart .eachChartData #NPSFR-CHART > div {
-        float: none !important;
-        width: 100%; } }
-  .compareChart .eachChartData .amChartsCompareList {
-    border: 1px solid #ccc; }
-    .compareChart .eachChartData .amChartsCompareList > div {
-      margin-bottom: 5px;
-      font-size: 12px; }
-  .compareChart .eachChartData .dataTitle {
-    background: #f9f9f9;
-    padding: 12px;
-    border: 1px solid #d9dadb; }
-    .compareChart .eachChartData .dataTitle .title {
-      float: left; }
-    .compareChart .eachChartData .dataTitle .chartexpand {
-      float: right;
-      background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
-      height: 20px;
-      width: 28px;
-      display: inline-block;
-      cursor: pointer; }
-      .compareChart .eachChartData .dataTitle .chartexpand.active {
-        background-position: 0 -77px; }
-    .compareChart .eachChartData .dataTitle:after {
-      clear: both;
-      content: '';
-      display: table; }
-  .compareChart .eachChartData .chartData {
-    padding: 12px;
-    border: 1px solid #d9dadb;
-    border-top: none; }
-    .compareChart .eachChartData .chartData.hide {
-      display: none; }
-  .compareChart .eachChartData .graph-container {
-    padding: 12px;
-    border: 1px solid #d9dadb;
-    border-top: none; }
-    .compareChart .eachChartData .graph-container.hide {
-      display: none; }
+      .compareChart .eachChartData {
+        width: 100%;
+        margin-bottom: 0px; } }
+    .compareChart .eachChartData #GWP-CHART, .compareChart .eachChartData #NWP-CHART, .compareChart .eachChartData #UR-CHART, .compareChart .eachChartData #NP-CHART, .compareChart .eachChartData #SF-CHART, .compareChart .eachChartData #NWPNR-CHART, .compareChart .eachChartData #SFNR-CHART, .compareChart .eachChartData #NPSFR-CHART {
+      display: block;
+      min-height: 300px; }
+      @media (max-width: 480px) {
+        .compareChart .eachChartData #GWP-CHART > div, .compareChart .eachChartData #NWP-CHART > div, .compareChart .eachChartData #UR-CHART > div, .compareChart .eachChartData #NP-CHART > div, .compareChart .eachChartData #SF-CHART > div, .compareChart .eachChartData #NWPNR-CHART > div, .compareChart .eachChartData #SFNR-CHART > div, .compareChart .eachChartData #NPSFR-CHART > div {
+          float: none !important;
+          width: 100%; } }
+    .compareChart .eachChartData .amChartsCompareList {
+      border: 1px solid #ccc; }
+      .compareChart .eachChartData .amChartsCompareList > div {
+        margin-bottom: 5px;
+        font-size: 12px; }
+    .compareChart .eachChartData .dataTitle {
+      background: #f9f9f9;
+      padding: 12px;
+      border: 1px solid #d9dadb; }
+      @media (max-width: 480px) {
+        .compareChart .eachChartData .dataTitle {
+          border-top: none; } }
+      .compareChart .eachChartData .dataTitle.act {
+        background: #cacaca; }
+      .compareChart .eachChartData .dataTitle .title {
+        float: left;
+        font-size: 18px;
+        font-size: 1.125rem; }
+      .compareChart .eachChartData .dataTitle .chartexpand {
+        float: right;
+        background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
+        height: 20px;
+        width: 28px;
+        display: inline-block;
+        cursor: pointer; }
+        @media (max-width: 480px) {
+          .compareChart .eachChartData .dataTitle .chartexpand {
+            background: url(/dist/img/sprite-image.png) no-repeat -13px -615px;
+            height: 13px;
+            width: 12px; } }
+        .compareChart .eachChartData .dataTitle .chartexpand.active {
+          background-position: 0 -77px; }
+          @media (max-width: 480px) {
+            .compareChart .eachChartData .dataTitle .chartexpand.active {
+              background-position: 0px -615px; } }
+      .compareChart .eachChartData .dataTitle:after {
+        clear: both;
+        content: '';
+        display: table; }
+    .compareChart .eachChartData .chartData {
+      padding: 12px;
+      border: 1px solid #d9dadb;
+      border-top: none; }
+      .compareChart .eachChartData .chartData.hide {
+        display: none; }
+    .compareChart .eachChartData .graph-container {
+      padding: 12px;
+      border: 1px solid #d9dadb;
+      border-top: none; }
+      .compareChart .eachChartData .graph-container.hide {
+        display: none; }
+  .compareChart .showAll {
+    margin-bottom: 12px; }
+    @media (max-width: 480px) {
+      .compareChart .showAll {
+        display: none; } }
+  .compareChart .showinMob {
+    display: none; }
+  @media (max-width: 480px) {
+    .compareChart .showinMob {
+      display: block;
+      background: #9e101d;
+      padding: 10px 0 10px 13px;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 18px;
+      font-weight: normal; } }
 
-.compareChart .showAll {
-  margin-bottom: 12px; }
+@media (max-width: 480px) {
+  .hideinMob {
+    display: none; } }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
@@ -7239,6 +7369,34 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualtyPan .table .R16 p {
   margin-bottom: 12px !important; }
 
+.casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
+  color: #1191d1; }
+
+.casualty-table-theme .table thead {
+  background-color: #0f5487 !important; }
+
+.casualty-table-theme .table .top {
+  color: #58595b;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-left: 1px solid #979797;
+  text-decoration: none;
+  font-size: 17px; }
+  .casualty-table-theme .table .top span {
+    background: url("img/sprite-image.png") no-repeat 0 -606px;
+    width: 11px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 8px; }
+
+.casualty-table-theme .table hr {
+  display: block !important;
+  margin: 0 !important; }
+
+.casualty-table-theme .border-right {
+  border-right: 1px solid #d1d3d4; }
+
 .data-tool-landing {
   width: 100%; }
   .data-tool-landing h1 {
@@ -7735,8 +7893,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -8220,25 +8378,45 @@ div#feedbacklite.fbl_r {
       font-weight: normal; }
   #market-data-tool.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
     border-bottom: 1px solid #d1d3d4; }
+  #market-data-tool.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
+    color: #1191d1; }
   #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
     padding: 16px 10px; }
-  #market-data-tool.table-responsive .table .R21_GrayColor, #tanker-fixtures.table-responsive .table .R21_GrayColor {
-    font-size: 18px; }
-  #market-data-tool.table-responsive .table .R21_GrayColorVal, #tanker-fixtures.table-responsive .table .R21_GrayColorVal {
+  #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
+    font-size: 18px;
+    border-right: 1px solid #e9e9e9; }
+  #market-data-tool.table-responsive .table .mobrigCol, #tanker-fixtures.table-responsive .table .mobrigCol {
     font-size: 16px; }
-    #market-data-tool.table-responsive .table .R21_GrayColorVal a, #market-data-tool.table-responsive .table .R21_GrayColorVal .pop-out__reset-password, #market-data-tool.table-responsive .table .R21_GrayColorVal .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R21_GrayColorVal .mobile-table-exit, #tanker-fixtures.table-responsive .table .R21_GrayColorVal a, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R21_GrayColorVal .mobile-table-exit {
+    #market-data-tool.table-responsive .table .mobrigCol a, #market-data-tool.table-responsive .table .mobrigCol .pop-out__reset-password, #market-data-tool.table-responsive .table .mobrigCol .sortable-table__list-toggler, #market-data-tool.table-responsive .table .mobrigCol .mobile-table-exit, #tanker-fixtures.table-responsive .table .mobrigCol a, #tanker-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #tanker-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .mobrigCol .mobile-table-exit {
       color: #1191d1;
       text-decoration: none; }
   #market-data-tool.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18 {
     color: #000; }
-    #market-data-tool.table-responsive .table .RB18 a, #market-data-tool.table-responsive .table .RB18 .pop-out__reset-password, #market-data-tool.table-responsive .table .RB18 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .RB18 .mobile-table-exit, #tanker-fixtures.table-responsive .table .RB18 a, #tanker-fixtures.table-responsive .table .RB18 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .RB18 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .RB18 .mobile-table-exit {
+    #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
       color: #58595b;
+      width: 40px;
+      height: 40px;
+      display: block;
       border-left: 1px solid #979797;
-      padding: 8px 0px 8px 20px; }
-      #market-data-tool.table-responsive .table .RB18 a:hover, #market-data-tool.table-responsive .table .RB18 .pop-out__reset-password:hover, #market-data-tool.table-responsive .table .RB18 .sortable-table__list-toggler:hover, #market-data-tool.table-responsive .table .RB18 .mobile-table-exit:hover, #tanker-fixtures.table-responsive .table .RB18 a:hover, #tanker-fixtures.table-responsive .table .RB18 .pop-out__reset-password:hover, #tanker-fixtures.table-responsive .table .RB18 .sortable-table__list-toggler:hover, #tanker-fixtures.table-responsive .table .RB18 .mobile-table-exit:hover {
+      text-decoration: none;
+      font-size: 17px; }
+      @media (max-width: 480px) {
+        #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
+          display: inline-block;
+          float: right;
+          text-align: right; } }
+      #market-data-tool.table-responsive .table .RB18 .top span, #tanker-fixtures.table-responsive .table .RB18 .top span {
+        background: url(img/sprite-image.png) no-repeat 0 -606px;
+        width: 11px;
+        height: 8px;
+        display: inline-block;
+        margin-right: 8px; }
+      #market-data-tool.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover {
         text-decoration: none; }
   #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
     font-size: 15px; }
+    #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
+      color: #1191d1; }
   @media (max-width: 480px) {
     #market-data-tool.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
       display: block; } }
@@ -8290,6 +8468,12 @@ div#feedbacklite.fbl_r {
     position: relative; }
   #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
     width: 300px; }
+    @media (max-width: 480px) {
+      #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+        width: 285px; } }
+    @media screen and (max-width: 320px) {
+      #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+        width: 230px; } }
   #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input {
     width: 200px; }
   #market-data-tool .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown {
@@ -8320,14 +8504,28 @@ div#feedbacklite.fbl_r {
   font-size: 46px;
   font-weight: bold;
   margin-bottom: 40px; }
+  @media (max-width: 480px) {
+    #market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+      font-size: 36px;
+      margin-bottom: 20px; } }
 
 #market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
   font-size: 26px;
   font-weight: normal;
   font-style: italic; }
+  @media (max-width: 480px) {
+    #market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+      font-size: 22px; } }
 
 #market-data-tool hr, #tanker-fixtures hr {
   margin: 25px 0 35px; }
+  @media (max-width: 480px) {
+    #market-data-tool hr, #tanker-fixtures hr {
+      margin: 30px 0 20px;
+      display: block; } }
+
+#market-data-tool .borTop, #tanker-fixtures .borTop {
+  border-top: 1px solid #d1d3d4; }
 
 .graybg {
   border-bottom: 1px solid #d1d3d4;
@@ -10513,7 +10711,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -13700,301 +13898,301 @@ main {
   .theme-insurance-day .quick-facts hr {
     background-color: rgba(193, 45, 59, 0.5); }
 
-.theme-lloyds-day a, .theme-lloyds-day .pop-out__reset-password, .theme-lloyds-day .sortable-table__list-toggler, .theme-lloyds-day .mobile-table-exit, .theme-lloyds-day a:hover, .theme-lloyds-day .pop-out__reset-password:hover, .theme-lloyds-day .sortable-table__list-toggler:hover, .theme-lloyds-day .mobile-table-exit:hover, .theme-lloyds-day a:active, .theme-lloyds-day .pop-out__reset-password:active, .theme-lloyds-day .sortable-table__list-toggler:active, .theme-lloyds-day .mobile-table-exit:active, .theme-lloyds-day a:focus, .theme-lloyds-day .pop-out__reset-password:focus, .theme-lloyds-day .sortable-table__list-toggler:focus, .theme-lloyds-day .mobile-table-exit:focus,
-.theme-lloyds-day .facets__button,
-.theme-lloyds-day .facets__button:hover,
-.theme-lloyds-day .facets__button:active,
-.theme-lloyds-day .facets__button:focus,
-.theme-lloyds-day .facets__button svg,
-.theme-lloyds-day .facets__button svg:hover,
-.theme-lloyds-day .facets__button svg:active,
-.theme-lloyds-day .facets__button svg:focus,
-.theme-lloyds-day .sorting-arrows__arrow.is-active,
-.theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up, .sortable-table .sorttable_sorted
-.theme-lloyds-day .sorting-arrows__arrow--up,
-.theme-lloyds-day
+.theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
+.theme-lloydslist .facets__button,
+.theme-lloydslist .facets__button:hover,
+.theme-lloydslist .facets__button:active,
+.theme-lloydslist .facets__button:focus,
+.theme-lloydslist .facets__button svg,
+.theme-lloydslist .facets__button svg:hover,
+.theme-lloydslist .facets__button svg:active,
+.theme-lloydslist .facets__button svg:focus,
+.theme-lloydslist .sorting-arrows__arrow.is-active,
+.theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up, .sortable-table .sorttable_sorted
+.theme-lloydslist .sorting-arrows__arrow--up,
+.theme-lloydslist
 .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down,
 .sortable-table .sorttable_sorted_reverse
-.theme-lloyds-day .sorting-arrows__arrow--down,
-.theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down, .search-sort__control-type.is-sorted-up
-.theme-lloyds-day .sorting-arrows__arrow--down,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--down,
+.theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down, .search-sort__control-type.is-sorted-up
+.theme-lloydslist .sorting-arrows__arrow--down,
+.theme-lloydslist
 .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up,
 .search-sort__control-type.is-sorted-down
-.theme-lloyds-day .sorting-arrows__arrow--up,
-.theme-lloyds-day .sorting-arrows__arrow.is-active:hover,
-.theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover, .sortable-table .sorttable_sorted
-.theme-lloyds-day .sorting-arrows__arrow--up:hover,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--up,
+.theme-lloydslist .sorting-arrows__arrow.is-active:hover,
+.theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover, .sortable-table .sorttable_sorted
+.theme-lloydslist .sorting-arrows__arrow--up:hover,
+.theme-lloydslist
 .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover,
 .sortable-table .sorttable_sorted_reverse
-.theme-lloyds-day .sorting-arrows__arrow--down:hover,
-.theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover, .search-sort__control-type.is-sorted-up
-.theme-lloyds-day .sorting-arrows__arrow--down:hover,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--down:hover,
+.theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover, .search-sort__control-type.is-sorted-up
+.theme-lloydslist .sorting-arrows__arrow--down:hover,
+.theme-lloydslist
 .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover,
 .search-sort__control-type.is-sorted-down
-.theme-lloyds-day .sorting-arrows__arrow--up:hover,
-.theme-lloyds-day .sorting-arrows__arrow.is-active:active,
-.theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active, .sortable-table .sorttable_sorted
-.theme-lloyds-day .sorting-arrows__arrow--up:active,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--up:hover,
+.theme-lloydslist .sorting-arrows__arrow.is-active:active,
+.theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active, .sortable-table .sorttable_sorted
+.theme-lloydslist .sorting-arrows__arrow--up:active,
+.theme-lloydslist
 .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active,
 .sortable-table .sorttable_sorted_reverse
-.theme-lloyds-day .sorting-arrows__arrow--down:active,
-.theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active, .search-sort__control-type.is-sorted-up
-.theme-lloyds-day .sorting-arrows__arrow--down:active,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--down:active,
+.theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active, .search-sort__control-type.is-sorted-up
+.theme-lloydslist .sorting-arrows__arrow--down:active,
+.theme-lloydslist
 .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active,
 .search-sort__control-type.is-sorted-down
-.theme-lloyds-day .sorting-arrows__arrow--up:active,
-.theme-lloyds-day .sorting-arrows__arrow.is-active:focus,
-.theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus, .sortable-table .sorttable_sorted
-.theme-lloyds-day .sorting-arrows__arrow--up:focus,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--up:active,
+.theme-lloydslist .sorting-arrows__arrow.is-active:focus,
+.theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus, .sortable-table .sorttable_sorted
+.theme-lloydslist .sorting-arrows__arrow--up:focus,
+.theme-lloydslist
 .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus,
 .sortable-table .sorttable_sorted_reverse
-.theme-lloyds-day .sorting-arrows__arrow--down:focus,
-.theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus, .search-sort__control-type.is-sorted-up
-.theme-lloyds-day .sorting-arrows__arrow--down:focus,
-.theme-lloyds-day
+.theme-lloydslist .sorting-arrows__arrow--down:focus,
+.theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus, .search-sort__control-type.is-sorted-up
+.theme-lloydslist .sorting-arrows__arrow--down:focus,
+.theme-lloydslist
 .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus,
 .search-sort__control-type.is-sorted-down
-.theme-lloyds-day .sorting-arrows__arrow--up:focus,
-.theme-lloyds-day .article-key-document__icon,
-.theme-lloyds-day .article-key-document__icon:hover,
-.theme-lloyds-day .article-key-document__icon:active,
-.theme-lloyds-day .article-key-document__icon:focus {
+.theme-lloydslist .sorting-arrows__arrow--up:focus,
+.theme-lloydslist .article-key-document__icon,
+.theme-lloydslist .article-key-document__icon:hover,
+.theme-lloydslist .article-key-document__icon:active,
+.theme-lloydslist .article-key-document__icon:focus {
   color: #1191D1;
   fill: #1191D1; }
-  .theme-lloyds-day a use > svg, .theme-lloyds-day .pop-out__reset-password use > svg, .theme-lloyds-day .sortable-table__list-toggler use > svg, .theme-lloyds-day .mobile-table-exit use > svg, .theme-lloyds-day a:hover use > svg, .theme-lloyds-day .pop-out__reset-password:hover use > svg, .theme-lloyds-day .sortable-table__list-toggler:hover use > svg, .theme-lloyds-day .mobile-table-exit:hover use > svg, .theme-lloyds-day a:active use > svg, .theme-lloyds-day .pop-out__reset-password:active use > svg, .theme-lloyds-day .sortable-table__list-toggler:active use > svg, .theme-lloyds-day .mobile-table-exit:active use > svg, .theme-lloyds-day a:focus use > svg, .theme-lloyds-day .pop-out__reset-password:focus use > svg, .theme-lloyds-day .sortable-table__list-toggler:focus use > svg, .theme-lloyds-day .mobile-table-exit:focus use > svg,
-  .theme-lloyds-day .facets__button use > svg,
-  .theme-lloyds-day .facets__button:hover use > svg,
-  .theme-lloyds-day .facets__button:active use > svg,
-  .theme-lloyds-day .facets__button:focus use > svg,
-  .theme-lloyds-day .facets__button svg use > svg,
-  .theme-lloyds-day .facets__button svg:hover use > svg,
-  .theme-lloyds-day .facets__button svg:active use > svg,
-  .theme-lloyds-day .facets__button svg:focus use > svg,
-  .theme-lloyds-day .sorting-arrows__arrow.is-active use > svg,
-  .theme-lloyds-day .sorting-arrows__arrow.pop-out__forgot-password.is-active use > svg,
-  .theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up use > svg, .sortable-table .sorttable_sorted
-  .theme-lloyds-day .sorting-arrows__arrow--up use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist a use > svg, .theme-lloydslist .pop-out__reset-password use > svg, .theme-lloydslist .sortable-table__list-toggler use > svg, .theme-lloydslist .mobile-table-exit use > svg, .theme-lloydslist a:hover use > svg, .theme-lloydslist .pop-out__reset-password:hover use > svg, .theme-lloydslist .sortable-table__list-toggler:hover use > svg, .theme-lloydslist .mobile-table-exit:hover use > svg, .theme-lloydslist a:active use > svg, .theme-lloydslist .pop-out__reset-password:active use > svg, .theme-lloydslist .sortable-table__list-toggler:active use > svg, .theme-lloydslist .mobile-table-exit:active use > svg, .theme-lloydslist a:focus use > svg, .theme-lloydslist .pop-out__reset-password:focus use > svg, .theme-lloydslist .sortable-table__list-toggler:focus use > svg, .theme-lloydslist .mobile-table-exit:focus use > svg,
+  .theme-lloydslist .facets__button use > svg,
+  .theme-lloydslist .facets__button:hover use > svg,
+  .theme-lloydslist .facets__button:active use > svg,
+  .theme-lloydslist .facets__button:focus use > svg,
+  .theme-lloydslist .facets__button svg use > svg,
+  .theme-lloydslist .facets__button svg:hover use > svg,
+  .theme-lloydslist .facets__button svg:active use > svg,
+  .theme-lloydslist .facets__button svg:focus use > svg,
+  .theme-lloydslist .sorting-arrows__arrow.is-active use > svg,
+  .theme-lloydslist .sorting-arrows__arrow.pop-out__forgot-password.is-active use > svg,
+  .theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up use > svg, .sortable-table .sorttable_sorted
+  .theme-lloydslist .sorting-arrows__arrow--up use > svg,
+  .theme-lloydslist
   .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down use > svg,
   .sortable-table .sorttable_sorted_reverse
-  .theme-lloyds-day .sorting-arrows__arrow--down use > svg,
-  .theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down use > svg, .search-sort__control-type.is-sorted-up
-  .theme-lloyds-day .sorting-arrows__arrow--down use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--down use > svg,
+  .theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down use > svg, .search-sort__control-type.is-sorted-up
+  .theme-lloydslist .sorting-arrows__arrow--down use > svg,
+  .theme-lloydslist
   .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up use > svg,
   .search-sort__control-type.is-sorted-down
-  .theme-lloyds-day .sorting-arrows__arrow--up use > svg,
-  .theme-lloyds-day .sorting-arrows__arrow.is-active:hover use > svg,
-  .theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover use > svg, .sortable-table .sorttable_sorted
-  .theme-lloyds-day .sorting-arrows__arrow--up:hover use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--up use > svg,
+  .theme-lloydslist .sorting-arrows__arrow.is-active:hover use > svg,
+  .theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:hover use > svg, .sortable-table .sorttable_sorted
+  .theme-lloydslist .sorting-arrows__arrow--up:hover use > svg,
+  .theme-lloydslist
   .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:hover use > svg,
   .sortable-table .sorttable_sorted_reverse
-  .theme-lloyds-day .sorting-arrows__arrow--down:hover use > svg,
-  .theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover use > svg, .search-sort__control-type.is-sorted-up
-  .theme-lloyds-day .sorting-arrows__arrow--down:hover use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--down:hover use > svg,
+  .theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:hover use > svg, .search-sort__control-type.is-sorted-up
+  .theme-lloydslist .sorting-arrows__arrow--down:hover use > svg,
+  .theme-lloydslist
   .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:hover use > svg,
   .search-sort__control-type.is-sorted-down
-  .theme-lloyds-day .sorting-arrows__arrow--up:hover use > svg,
-  .theme-lloyds-day .sorting-arrows__arrow.is-active:active use > svg,
-  .theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active use > svg, .sortable-table .sorttable_sorted
-  .theme-lloyds-day .sorting-arrows__arrow--up:active use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--up:hover use > svg,
+  .theme-lloydslist .sorting-arrows__arrow.is-active:active use > svg,
+  .theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:active use > svg, .sortable-table .sorttable_sorted
+  .theme-lloydslist .sorting-arrows__arrow--up:active use > svg,
+  .theme-lloydslist
   .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:active use > svg,
   .sortable-table .sorttable_sorted_reverse
-  .theme-lloyds-day .sorting-arrows__arrow--down:active use > svg,
-  .theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active use > svg, .search-sort__control-type.is-sorted-up
-  .theme-lloyds-day .sorting-arrows__arrow--down:active use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--down:active use > svg,
+  .theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:active use > svg, .search-sort__control-type.is-sorted-up
+  .theme-lloydslist .sorting-arrows__arrow--down:active use > svg,
+  .theme-lloydslist
   .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:active use > svg,
   .search-sort__control-type.is-sorted-down
-  .theme-lloyds-day .sorting-arrows__arrow--up:active use > svg,
-  .theme-lloyds-day .sorting-arrows__arrow.is-active:focus use > svg,
-  .theme-lloyds-day .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus use > svg, .sortable-table .sorttable_sorted
-  .theme-lloyds-day .sorting-arrows__arrow--up:focus use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--up:active use > svg,
+  .theme-lloydslist .sorting-arrows__arrow.is-active:focus use > svg,
+  .theme-lloydslist .sortable-table .sorttable_sorted .sorting-arrows__arrow--up:focus use > svg, .sortable-table .sorttable_sorted
+  .theme-lloydslist .sorting-arrows__arrow--up:focus use > svg,
+  .theme-lloydslist
   .sortable-table .sorttable_sorted_reverse .sorting-arrows__arrow--down:focus use > svg,
   .sortable-table .sorttable_sorted_reverse
-  .theme-lloyds-day .sorting-arrows__arrow--down:focus use > svg,
-  .theme-lloyds-day .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus use > svg, .search-sort__control-type.is-sorted-up
-  .theme-lloyds-day .sorting-arrows__arrow--down:focus use > svg,
-  .theme-lloyds-day
+  .theme-lloydslist .sorting-arrows__arrow--down:focus use > svg,
+  .theme-lloydslist .search-sort__control-type.is-sorted-up .sorting-arrows__arrow--down:focus use > svg, .search-sort__control-type.is-sorted-up
+  .theme-lloydslist .sorting-arrows__arrow--down:focus use > svg,
+  .theme-lloydslist
   .search-sort__control-type.is-sorted-down .sorting-arrows__arrow--up:focus use > svg,
   .search-sort__control-type.is-sorted-down
-  .theme-lloyds-day .sorting-arrows__arrow--up:focus use > svg,
-  .theme-lloyds-day .article-key-document__icon use > svg,
-  .theme-lloyds-day .article-key-document__icon:hover use > svg,
-  .theme-lloyds-day .article-key-document__icon:active use > svg,
-  .theme-lloyds-day .article-key-document__icon:focus use > svg {
+  .theme-lloydslist .sorting-arrows__arrow--up:focus use > svg,
+  .theme-lloydslist .article-key-document__icon use > svg,
+  .theme-lloydslist .article-key-document__icon:hover use > svg,
+  .theme-lloydslist .article-key-document__icon:active use > svg,
+  .theme-lloydslist .article-key-document__icon:focus use > svg {
     fill: #1191D1; }
 
-.theme-lloyds-day footer a, .theme-lloyds-day footer .pop-out__reset-password, .theme-lloyds-day footer .sortable-table__list-toggler, .theme-lloyds-day footer .mobile-table-exit,
-.theme-lloyds-day .general-header__navigation a,
-.theme-lloyds-day .general-header__navigation .pop-out__reset-password,
-.theme-lloyds-day .general-header__navigation .sortable-table__list-toggler,
-.theme-lloyds-day .general-header__navigation .mobile-table-exit,
-.theme-lloyds-day .sortable-table__col a,
-.theme-lloyds-day .sortable-table__col .pop-out__reset-password,
-.theme-lloyds-day .sortable-table__col .sortable-table__list-toggler,
-.theme-lloyds-day .sortable-table__col .mobile-table-exit {
+.theme-lloydslist footer a, .theme-lloydslist footer .pop-out__reset-password, .theme-lloydslist footer .sortable-table__list-toggler, .theme-lloydslist footer .mobile-table-exit,
+.theme-lloydslist .general-header__navigation a,
+.theme-lloydslist .general-header__navigation .pop-out__reset-password,
+.theme-lloydslist .general-header__navigation .sortable-table__list-toggler,
+.theme-lloydslist .general-header__navigation .mobile-table-exit,
+.theme-lloydslist .sortable-table__col a,
+.theme-lloydslist .sortable-table__col .pop-out__reset-password,
+.theme-lloydslist .sortable-table__col .sortable-table__list-toggler,
+.theme-lloydslist .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-lloyds-day .header-account-access__my-account, .theme-lloyds-day .header-account-access__sign-in-out {
+.theme-lloydslist .header-account-access__my-account, .theme-lloydslist .header-account-access__sign-in-out {
   color: #1191D1; }
 
-.theme-lloyds-day .article-preview__headline,
-.theme-lloyds-day .article-preview__headline a,
-.theme-lloyds-day .article-preview__headline .pop-out__reset-password,
-.theme-lloyds-day .article-preview__headline .sortable-table__list-toggler,
-.theme-lloyds-day .article-preview__headline .mobile-table-exit,
-.theme-lloyds-day .topic-featured-article__headline,
-.theme-lloyds-day .topic-featured-article__headline a,
-.theme-lloyds-day .topic-featured-article__headline .pop-out__reset-password,
-.theme-lloyds-day .topic-featured-article__headline .sortable-table__list-toggler,
-.theme-lloyds-day .topic-featured-article__headline .mobile-table-exit {
+.theme-lloydslist .article-preview__headline,
+.theme-lloydslist .article-preview__headline a,
+.theme-lloydslist .article-preview__headline .pop-out__reset-password,
+.theme-lloydslist .article-preview__headline .sortable-table__list-toggler,
+.theme-lloydslist .article-preview__headline .mobile-table-exit,
+.theme-lloydslist .topic-featured-article__headline,
+.theme-lloydslist .topic-featured-article__headline a,
+.theme-lloydslist .topic-featured-article__headline .pop-out__reset-password,
+.theme-lloydslist .topic-featured-article__headline .sortable-table__list-toggler,
+.theme-lloydslist .topic-featured-article__headline .mobile-table-exit {
   color: #231f20; }
-  .theme-lloyds-day .article-preview__headline:hover,
-  .theme-lloyds-day .article-preview__headline a:hover,
-  .theme-lloyds-day .article-preview__headline .pop-out__reset-password:hover,
-  .theme-lloyds-day .article-preview__headline .sortable-table__list-toggler:hover,
-  .theme-lloyds-day .article-preview__headline .mobile-table-exit:hover,
-  .theme-lloyds-day .topic-featured-article__headline:hover,
-  .theme-lloyds-day .topic-featured-article__headline a:hover,
-  .theme-lloyds-day .topic-featured-article__headline .pop-out__reset-password:hover,
-  .theme-lloyds-day .topic-featured-article__headline .sortable-table__list-toggler:hover,
-  .theme-lloyds-day .topic-featured-article__headline .mobile-table-exit:hover {
+  .theme-lloydslist .article-preview__headline:hover,
+  .theme-lloydslist .article-preview__headline a:hover,
+  .theme-lloydslist .article-preview__headline .pop-out__reset-password:hover,
+  .theme-lloydslist .article-preview__headline .sortable-table__list-toggler:hover,
+  .theme-lloydslist .article-preview__headline .mobile-table-exit:hover,
+  .theme-lloydslist .topic-featured-article__headline:hover,
+  .theme-lloydslist .topic-featured-article__headline a:hover,
+  .theme-lloydslist .topic-featured-article__headline .pop-out__reset-password:hover,
+  .theme-lloydslist .topic-featured-article__headline .sortable-table__list-toggler:hover,
+  .theme-lloydslist .topic-featured-article__headline .mobile-table-exit:hover {
     color: #1191D1; }
 
-.theme-lloyds-day .button--filled:not([disabled]), .theme-lloyds-day .pop-out__register-submit:not([disabled]), .theme-lloyds-day .pop-out__sign-in-submit:not([disabled]),
-.theme-lloyds-day .search-bar__submit,
-.theme-lloyds-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+.theme-lloydslist .button--filled:not([disabled]), .theme-lloydslist .pop-out__register-submit:not([disabled]), .theme-lloydslist .pop-out__sign-in-submit:not([disabled]),
+.theme-lloydslist .search-bar__submit,
+.theme-lloydslist .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   background: #1191D1;
   background-color: #1191D1;
   color: #ffffff; }
-  .theme-lloyds-day .button--filled:not([disabled]):hover, .theme-lloyds-day .pop-out__register-submit:not([disabled]):hover, .theme-lloyds-day .pop-out__sign-in-submit:not([disabled]):hover,
-  .theme-lloyds-day .search-bar__submit:hover,
-  .theme-lloyds-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
+  .theme-lloydslist .button--filled:not([disabled]):hover, .theme-lloydslist .pop-out__register-submit:not([disabled]):hover, .theme-lloydslist .pop-out__sign-in-submit:not([disabled]):hover,
+  .theme-lloydslist .search-bar__submit:hover,
+  .theme-lloydslist .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
     background: #0f5487;
     background-color: #0f5487; }
 
-.theme-lloyds-day .button--outline:not([disabled]) {
+.theme-lloydslist .button--outline:not([disabled]) {
   border-color: #1191D1; }
-  .theme-lloyds-day .button--outline:not([disabled]):hover {
+  .theme-lloydslist .button--outline:not([disabled]):hover {
     background-color: #0f5487;
     border-color: #0f5487;
     color: #ffffff; }
 
-.theme-lloyds-day .main-menu__hoverable:hover:before {
+.theme-lloydslist .main-menu__hoverable:hover:before {
   background-color: #0f5487; }
 
-.theme-lloyds-day .main-menu__section-title a, .theme-lloyds-day .main-menu__section-title .pop-out__reset-password, .theme-lloyds-day .main-menu__section-title .sortable-table__list-toggler, .theme-lloyds-day .main-menu__section-title .mobile-table-exit {
+.theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
-.theme-lloyds-day .main-menu__footer-link a, .theme-lloyds-day .main-menu__footer-link .pop-out__reset-password, .theme-lloyds-day .main-menu__footer-link .sortable-table__list-toggler, .theme-lloyds-day .main-menu__footer-link .mobile-table-exit {
+.theme-lloydslist .main-menu__footer-link a, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler, .theme-lloydslist .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
-  .theme-lloyds-day .main-menu__footer-link a:hover, .theme-lloyds-day .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloyds-day .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloyds-day .main-menu__footer-link .mobile-table-exit:hover, .theme-lloyds-day .main-menu__footer-link a:active, .theme-lloyds-day .main-menu__footer-link .pop-out__reset-password:active, .theme-lloyds-day .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloyds-day .main-menu__footer-link .mobile-table-exit:active, .theme-lloyds-day .main-menu__footer-link a:focus, .theme-lloyds-day .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloyds-day .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloyds-day .main-menu__footer-link .mobile-table-exit:focus {
+  .theme-lloydslist .main-menu__footer-link a:hover, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:hover, .theme-lloydslist .main-menu__footer-link a:active, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:active, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:active, .theme-lloydslist .main-menu__footer-link a:focus, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:focus {
     color: #0f5487; }
 
-.theme-lloyds-day .main-menu__section-link, .theme-lloyds-day .main-menu__section-link:hover, .theme-lloyds-day .main-menu__section-link:active, .theme-lloyds-day .main-menu__section-link:focus {
+.theme-lloydslist .main-menu__section-link, .theme-lloydslist .main-menu__section-link:hover, .theme-lloydslist .main-menu__section-link:active, .theme-lloydslist .main-menu__section-link:focus {
   color: #58595b; }
 
-.theme-lloyds-day .general-header__navigation a.is-active, .theme-lloyds-day .general-header__navigation .is-active.pop-out__reset-password, .theme-lloyds-day .general-header__navigation .is-active.sortable-table__list-toggler, .theme-lloyds-day .general-header__navigation .is-active.mobile-table-exit,
-.theme-lloyds-day .general-header__navigation a:hover,
-.theme-lloyds-day .general-header__navigation .pop-out__reset-password:hover,
-.theme-lloyds-day .general-header__navigation .sortable-table__list-toggler:hover,
-.theme-lloyds-day .general-header__navigation .mobile-table-exit:hover {
+.theme-lloydslist .general-header__navigation a.is-active, .theme-lloydslist .general-header__navigation .is-active.pop-out__reset-password, .theme-lloydslist .general-header__navigation .is-active.sortable-table__list-toggler, .theme-lloydslist .general-header__navigation .is-active.mobile-table-exit,
+.theme-lloydslist .general-header__navigation a:hover,
+.theme-lloydslist .general-header__navigation .pop-out__reset-password:hover,
+.theme-lloydslist .general-header__navigation .sortable-table__list-toggler:hover,
+.theme-lloydslist .general-header__navigation .mobile-table-exit:hover {
   border-bottom-color: #c12d3b; }
 
-.theme-lloyds-day .banner--register,
-.theme-lloyds-day .banner--alert {
+.theme-lloydslist .banner--register,
+.theme-lloydslist .banner--alert {
   background-color: #1191D1; }
-  .theme-lloyds-day .banner--register,
-  .theme-lloyds-day .banner--register span,
-  .theme-lloyds-day .banner--register svg,
-  .theme-lloyds-day .banner--alert,
-  .theme-lloyds-day .banner--alert span,
-  .theme-lloyds-day .banner--alert svg {
+  .theme-lloydslist .banner--register,
+  .theme-lloydslist .banner--register span,
+  .theme-lloydslist .banner--register svg,
+  .theme-lloydslist .banner--alert,
+  .theme-lloydslist .banner--alert span,
+  .theme-lloydslist .banner--alert svg {
     fill: #ffffff;
     color: #ffffff; }
-    .theme-lloyds-day .banner--register use > svg,
-    .theme-lloyds-day .banner--register span use > svg,
-    .theme-lloyds-day .banner--register svg use > svg,
-    .theme-lloyds-day .banner--alert use > svg,
-    .theme-lloyds-day .banner--alert span use > svg,
-    .theme-lloyds-day .banner--alert svg use > svg {
+    .theme-lloydslist .banner--register use > svg,
+    .theme-lloydslist .banner--register span use > svg,
+    .theme-lloydslist .banner--register svg use > svg,
+    .theme-lloydslist .banner--alert use > svg,
+    .theme-lloydslist .banner--alert span use > svg,
+    .theme-lloydslist .banner--alert svg use > svg {
       fill: #ffffff; }
-  .theme-lloyds-day .banner--register a, .theme-lloyds-day .banner--register .pop-out__reset-password, .theme-lloyds-day .banner--register .sortable-table__list-toggler, .theme-lloyds-day .banner--register .mobile-table-exit, .theme-lloyds-day .banner--register a:hover, .theme-lloyds-day .banner--register .pop-out__reset-password:hover, .theme-lloyds-day .banner--register .sortable-table__list-toggler:hover, .theme-lloyds-day .banner--register .mobile-table-exit:hover, .theme-lloyds-day .banner--register a:active, .theme-lloyds-day .banner--register .pop-out__reset-password:active, .theme-lloyds-day .banner--register .sortable-table__list-toggler:active, .theme-lloyds-day .banner--register .mobile-table-exit:active, .theme-lloyds-day .banner--register a:focus, .theme-lloyds-day .banner--register .pop-out__reset-password:focus, .theme-lloyds-day .banner--register .sortable-table__list-toggler:focus, .theme-lloyds-day .banner--register .mobile-table-exit:focus,
-  .theme-lloyds-day .banner--alert a,
-  .theme-lloyds-day .banner--alert .pop-out__reset-password,
-  .theme-lloyds-day .banner--alert .sortable-table__list-toggler,
-  .theme-lloyds-day .banner--alert .mobile-table-exit,
-  .theme-lloyds-day .banner--alert a:hover,
-  .theme-lloyds-day .banner--alert .pop-out__reset-password:hover,
-  .theme-lloyds-day .banner--alert .sortable-table__list-toggler:hover,
-  .theme-lloyds-day .banner--alert .mobile-table-exit:hover,
-  .theme-lloyds-day .banner--alert a:active,
-  .theme-lloyds-day .banner--alert .pop-out__reset-password:active,
-  .theme-lloyds-day .banner--alert .sortable-table__list-toggler:active,
-  .theme-lloyds-day .banner--alert .mobile-table-exit:active,
-  .theme-lloyds-day .banner--alert a:focus,
-  .theme-lloyds-day .banner--alert .pop-out__reset-password:focus,
-  .theme-lloyds-day .banner--alert .sortable-table__list-toggler:focus,
-  .theme-lloyds-day .banner--alert .mobile-table-exit:focus {
+  .theme-lloydslist .banner--register a, .theme-lloydslist .banner--register .pop-out__reset-password, .theme-lloydslist .banner--register .sortable-table__list-toggler, .theme-lloydslist .banner--register .mobile-table-exit, .theme-lloydslist .banner--register a:hover, .theme-lloydslist .banner--register .pop-out__reset-password:hover, .theme-lloydslist .banner--register .sortable-table__list-toggler:hover, .theme-lloydslist .banner--register .mobile-table-exit:hover, .theme-lloydslist .banner--register a:active, .theme-lloydslist .banner--register .pop-out__reset-password:active, .theme-lloydslist .banner--register .sortable-table__list-toggler:active, .theme-lloydslist .banner--register .mobile-table-exit:active, .theme-lloydslist .banner--register a:focus, .theme-lloydslist .banner--register .pop-out__reset-password:focus, .theme-lloydslist .banner--register .sortable-table__list-toggler:focus, .theme-lloydslist .banner--register .mobile-table-exit:focus,
+  .theme-lloydslist .banner--alert a,
+  .theme-lloydslist .banner--alert .pop-out__reset-password,
+  .theme-lloydslist .banner--alert .sortable-table__list-toggler,
+  .theme-lloydslist .banner--alert .mobile-table-exit,
+  .theme-lloydslist .banner--alert a:hover,
+  .theme-lloydslist .banner--alert .pop-out__reset-password:hover,
+  .theme-lloydslist .banner--alert .sortable-table__list-toggler:hover,
+  .theme-lloydslist .banner--alert .mobile-table-exit:hover,
+  .theme-lloydslist .banner--alert a:active,
+  .theme-lloydslist .banner--alert .pop-out__reset-password:active,
+  .theme-lloydslist .banner--alert .sortable-table__list-toggler:active,
+  .theme-lloydslist .banner--alert .mobile-table-exit:active,
+  .theme-lloydslist .banner--alert a:focus,
+  .theme-lloydslist .banner--alert .pop-out__reset-password:focus,
+  .theme-lloydslist .banner--alert .sortable-table__list-toggler:focus,
+  .theme-lloydslist .banner--alert .mobile-table-exit:focus {
     color: #ffffff; }
 
-.theme-lloyds-day .newsletter-signup,
-.theme-lloyds-day .quick-facts {
+.theme-lloydslist .newsletter-signup,
+.theme-lloydslist .quick-facts {
   background-color: #f1f2f2; }
 
-.theme-lloyds-day .newsletter-signup {
+.theme-lloydslist .newsletter-signup {
   border-top: 4px solid #c12d3b; }
 
-.theme-lloyds-day .article-pullquote,
-.theme-lloyds-day .quote,
-.theme-lloyds-day .article-sidebar,
-.theme-lloyds-day .topic-subtopic__header {
+.theme-lloydslist .article-pullquote,
+.theme-lloydslist .quote,
+.theme-lloydslist .article-sidebar,
+.theme-lloydslist .topic-subtopic__header {
   border-top-color: #c12d3b;
   border-bottom-color: #c12d3b;
   border-color: #c12d3b; }
 
-.theme-lloyds-day .latest-news__header:before {
+.theme-lloydslist .latest-news__header:before {
   background-color: #c12d3b; }
 
-.theme-lloyds-day .article-interview__question:before {
+.theme-lloydslist .article-interview__question:before {
   background-color: rgba(193, 45, 59, 0.3);
   border-color: rgba(193, 45, 59, 0.5); }
 
-.theme-lloyds-day .article-interview__answer, .theme-lloyds-day .article-interview__answer:before {
+.theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
 
-.theme-lloyds-day .article-interview__answer:before {
+.theme-lloydslist .article-interview__answer:before {
   background-color: rgba(17, 145, 209, 0.15); }
 
-.theme-lloyds-day .article-topics__li:before,
-.theme-lloyds-day .quickfactsbulleted li:before,
-.theme-lloyds-day .quick-facts__list--ul li:before {
+.theme-lloydslist .article-topics__li:before,
+.theme-lloydslist .quickfactsbulleted li:before,
+.theme-lloydslist .quick-facts__list--ul li:before {
   fill: #c12d3b;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
-  .theme-lloyds-day .article-topics__li:before use > svg,
-  .theme-lloyds-day .quickfactsbulleted li:before use > svg,
-  .theme-lloyds-day .quick-facts__list--ul li:before use > svg {
+  .theme-lloydslist .article-topics__li:before use > svg,
+  .theme-lloydslist .quickfactsbulleted li:before use > svg,
+  .theme-lloydslist .quick-facts__list--ul li:before use > svg {
     fill: #c12d3b; }
 
-.theme-lloyds-day .article-topics__li ul li:before,
-.theme-lloyds-day .quickfactsbulleted li ul li:before,
-.theme-lloyds-day .quick-facts__list--ul li ul li:before {
+.theme-lloydslist .article-topics__li ul li:before,
+.theme-lloydslist .quickfactsbulleted li ul li:before,
+.theme-lloydslist .quick-facts__list--ul li ul li:before {
   color: #c12d3b; }
 
-.theme-lloyds-day .quick-facts {
+.theme-lloydslist .quick-facts {
   background-color: rgba(17, 145, 209, 0.1); }
-  .theme-lloyds-day .quick-facts hr {
+  .theme-lloydslist .quick-facts hr {
     background-color: rgba(193, 45, 59, 0.5); }
 
 /* * * * PRINT STYLES * * * */

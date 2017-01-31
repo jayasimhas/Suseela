@@ -41,6 +41,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         //public List<string> companyList { get; set; }
         public string ExpandAll => TextTranslator.Translate("Company.ExpandAll");
         public string CollapseAll => TextTranslator.Translate("Company.CollapseAll");
+        public string AvailableGraphsText => TextTranslator.Translate("Company.AvailableGraphs");
 
         public List<PeerCompanyGraph> PeerCompaniesGraphList => GetPeerCompaniesGraphList();
 

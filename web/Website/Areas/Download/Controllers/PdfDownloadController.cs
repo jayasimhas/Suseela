@@ -42,6 +42,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IArticleSearch Searcher;
         protected readonly ITextTranslator TextTranslator;
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
+
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
                                         IGlobalSitecoreService globalService,
