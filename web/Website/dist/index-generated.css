@@ -2237,6 +2237,86 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       color: #fff;
       background-color: #de4361; }
 
+#graph-carousel {
+  font-family: "verdana"; }
+  #graph-carousel .graph_heading {
+    display: block;
+    width: 100%;
+    position: relative; }
+    #graph-carousel .graph_heading span {
+      width: 100%;
+      display: inline-block;
+      padding: 10px 0 10px 20px;
+      color: #fff;
+      background-color: #de4361; }
+  #graph-carousel .owl-theme .owl-dots {
+    text-align: right; }
+  #graph-carousel .owl-theme .owl-dots .owl-dot span {
+    margin: 5px; }
+  #graph-carousel .graph-container {
+    margin-top: 16px;
+    margin-top: 1rem;
+    margin-right: 4px;
+    margin-right: 0.3rem;
+    background-color: #eee; }
+  #graph-carousel .owl-dots {
+    position: absolute;
+    top: 0;
+    margin-top: -28px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+  #graph-carousel .owl-prev {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #graph-carousel .owl-next {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: -18px;
+    margin-top: 0;
+    margin-bottom: 0; }
+  #graph-carousel .owl-carousel .item {
+    height: 290px; }
+    @media (max-width: 480px) {
+      #graph-carousel .owl-carousel .item {
+        height: auto; } }
+  #graph-carousel .owl-theme .owl-nav [class*='owl-'] {
+    background: none; }
+  #graph-carousel .owl-theme .owl-dots .owl-dot.active span, #graph-carousel .owl-theme .owl-dots .owl-dot:hover span {
+    background: #9E310D; }
+  #graph-carousel .li-content-graph {
+    border: none;
+    background-color: #eeeeee;
+    height: 100%;
+    padding: 15px 18px;
+    margin: 10px 0 0 10px; }
+    #graph-carousel .li-content-graph > a, #graph-carousel .li-content-graph > .pop-out__reset-password, #graph-carousel .li-content-graph > .sortable-table__list-toggler, #graph-carousel .li-content-graph > .mobile-table-exit {
+      height: 224px;
+      display: block;
+      background: #fff; }
+      #graph-carousel .li-content-graph > a div div, #graph-carousel .li-content-graph > .pop-out__reset-password div div, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div, #graph-carousel .li-content-graph > .mobile-table-exit div div {
+        height: 220px !important; }
+        #graph-carousel .li-content-graph > a div div svg, #graph-carousel .li-content-graph > .pop-out__reset-password div div svg, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #graph-carousel .li-content-graph > .mobile-table-exit div div svg {
+          height: 220px !important; }
+  #graph-carousel .li-content-graph p {
+    font-size: smaller;
+    padding: 0 0 0 0;
+    margin-bottom: 22px; }
+  #graph-carousel .li-content-graph p a, #graph-carousel .li-content-graph p .pop-out__reset-password, #graph-carousel .li-content-graph p .sortable-table__list-toggler, #graph-carousel .li-content-graph p .mobile-table-exit {
+    color: #000; }
+  @media (max-width: 480px) {
+    #graph-carousel .showin-desktop {
+      display: none;
+      float: left; } }
+  @media (min-width: 801px) {
+    #graph-carousel .showinMob {
+      display: none; } }
+
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 12px;
