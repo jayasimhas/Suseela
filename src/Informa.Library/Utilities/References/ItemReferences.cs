@@ -36,6 +36,8 @@ namespace Informa.Library.Utilities.References
 
         //Global Taxonomy Folder
         public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid ContentTypesFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ContentTypesFolder")) ? ItemIdResolver.GetItemIdByKey("ContentTypesFolder") : Guid.Empty.ToString());
+        public Guid MediaTypeIconsFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder")) ? ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder") : Guid.Empty.ToString());
 
         // Pharma Taxonomy Folders
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"); //This Guid not found in CMS
