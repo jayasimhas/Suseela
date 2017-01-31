@@ -39,8 +39,14 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Parameters == null) return;
             Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
-            MediaType = Parameters.Media_Type!=null?Parameters.Media_Type._Id:Guid.Empty;
-            ContentType = Parameters.Content_Type!=null? Parameters.Content_Type._Id: Guid.Empty;
+            if (Parameters.Media_Type != null)
+            {
+                MediaType = Parameters.Media_Type._Id;
+            }
+            if (Parameters.Content_Type != null)
+            {
+                ContentType = Parameters.Content_Type._Id;
+            }
             ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             PublicationName = rootContext.Item.Publication_Name;
 
@@ -55,8 +61,8 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Topics != null) filter.TaxonomyIds.AddRange(Topics);
             if (PublicationName != null) filter.PublicationNames.Add(PublicationName);
             if (Authors != null) filter.AuthorGuids.AddRange(Authors);
-            if (MediaType != null) filter.TaxonomyIds.Add(MediaType);
-            if (ContentType != null) filter.TaxonomyIds.Add(ContentType);
+            if (MediaType != null && MediaType != Guid.Empty) filter.TaxonomyIds.Add(MediaType);
+            if (ContentType != null && ContentType != Guid.Empty) filter.TaxonomyIds.Add(ContentType);
 
             latest.MaxStoriesToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             if (latest.MaxStoriesToDisplay < 4)
@@ -92,8 +98,8 @@ namespace Informa.Web.Areas.Article.Controllers
             if (subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
             if (publicationName != null) filter.PublicationNames.Add(publicationName);
             if (authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
-            if (mediaType != null) filter.TaxonomyIds.Add(mediaType);
-            if (contentType != null) filter.TaxonomyIds.Add(contentType);
+            if (mediaType != null && mediaType != Guid.Empty) filter.TaxonomyIds.Add(mediaType);
+            if (contentType != null && contentType != Guid.Empty) filter.TaxonomyIds.Add(contentType);
 
             if (itemsToDisplay + 4 > MaxStoriesToDisplay)
             {
