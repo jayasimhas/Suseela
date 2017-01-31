@@ -3,9 +3,11 @@ $(function() {
 	$("#GWP").on('click', function() {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -19,9 +21,11 @@ $(function() {
 	$("#NWP").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -35,9 +39,11 @@ $(function() {
 	$("#UR").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -51,9 +57,11 @@ $(function() {
 	$("#NP").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -67,9 +75,11 @@ $(function() {
 	$("#SF").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -83,9 +93,11 @@ $(function() {
 	$("#NWPNR").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -99,9 +111,11 @@ $(function() {
 	$("#SFNR").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}
@@ -115,9 +129,11 @@ $(function() {
 	$("#NPSFR").on('click', function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 		if (chartData.is(':visible')) {
+			$this.removeClass('act');
 			chartData.addClass('hide');
 			arrow.removeClass('active');
 		} else {
+			$this.addClass('act');
 			chartData.removeClass('hide');
 			arrow.addClass('active');
 		}

@@ -23,19 +23,19 @@
 		renderTable: function(){
 			var self = this;
 			$('.submit').click(function(){
-				//var searchData = tableObj;
-				$.ajax({
+				var searchData = tableObj;
+				/*$.ajax({
 					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
 					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
 					dataType: 'json',
 					type: 'GET',
-					success: function (searchData) {
+					success: function (searchData) {*/
 						self.sendHTTPRequest(searchData);
-					},
+					/*},
 					error: function (err) {
 						console.log(err)  
 					}
-				});
+				});*/
 				
 				$('.shippingData').addClass('hide');
 				$('.hideMarketData').removeClass('hide');
@@ -95,7 +95,7 @@
 					dataIdx++;
 					desktopStr += '<tr data-name="focusData_'+dataIdx+'">';
 					desktopStr += '<td colspan="6" class="graybg RB18 pad-10">'+key+'</td>';
-					desktopStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);">top</a></td>';
+					desktopStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td>';
 					desktopStr += '</tr>';
 					
 					$.each(val, function(i, v){
@@ -120,14 +120,18 @@
 				if(typeof val === 'object'){
 					dataIdx++;
 					mobileStr += '<tr data-mname="focusData_'+dataIdx+'">';
-					mobileStr += '<td colspan="2" class="graybg RB18 pad-full-10">'+key+'</td>';
+					
+					mobileStr += '<td colspan="2" class="graybg RB18 pad-full-10">'+key+'<a href="javascript: void(0);" class="moveTop top"><span class="arrow"></span>Top</a></td>';
 					mobileStr += '</tr>';
 					
 					$.each(val, function(i, v){
+						var indx = 0;
 						$.each(v, function(idx, vl){
+							indx++;
+							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
 							mobileStr += '<tr>';
-							mobileStr += '<td class="pad-10 R21_GrayColor">'+idx+'</td>';
-							mobileStr += '<td class="pad-10 R21_RedColor">'+vl+'</td>';
+							mobileStr += '<td class="pad-10 mobleftCol '+borTop+'">'+ idx +'</td>';
+							mobileStr += '<td class="pad-10 mobrigCol '+borTop+'">'+vl+'</td>';
 							mobileStr += '</tr>';
 						});
 					});
@@ -137,7 +141,7 @@
 			return mobileStr;
 		},
 		init: function(data) {
-			//this.renderShippingData(data);
+			this.renderShippingData(data);
 			this.renderTable();
 		}
 	}

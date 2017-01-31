@@ -1,40 +1,78 @@
-﻿@model IEnumerable<Informa.Web.ViewModels.IListableViewModel>
+﻿@model Informa.Web.Areas.Article.Models.Article.LatestPublishedStories.LatestPublishedStory
 
-<div class="latestPublishedStoriesSection">
+<div class="latestPublishedStoriesSection" data-max="@Model.MaxStoriesToDisplay">
     <h5>Most recent published stories</h5>
-    @if (Model != null && Model.Any())
+    @if (Model.News != null && Model.News.Any())
     {
-        foreach (var listable in Model)
-        {
-            <div class="contentRecomm-article">
-                @if (!string.IsNullOrEmpty(listable.ListableImage))
-                {
-                    <img src="@listable.ListableImage" width="100px" height="100px">
-                }
-                <h5>
-                    <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
-                </h5>
-                <div class="article-related-content__date">@Html.Raw(listable.ListableSummary)</div>
-            </div>
-        }
+        <div class="contentRecomm-wrapper">
+            @foreach (var listable in Model.News)
+            {
+                <div class="contentRecomm-article">
+                    @if (!string.IsNullOrEmpty(listable.ListableImage))
+                    {
+                        <img src="@listable.ListableImage" width="100px">
+                    }
+                    <h5>
+                        <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
+                    </h5>
+                    <div class="article-related-content__date">@Html.Raw(listable.ListableSummary)</div>
+                </div>
+            }
+        </div>
     }
-    <span class="submit">show more</span>
+    @Html.Hidden("subjectIds", Model.Topics)
+    @Html.Hidden("publicationName", Model.PublicationName)
+    @Html.Hidden("authorGuids", Model.Authors)    
+
+    @if (Model.MaxStoriesToDisplay > 4)
+    {
+        <a href="#" class="submit">@Model.LoadMoreText</a>
+    }
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
     <script>
-        $('.submit').click(function () {
-            //var searchData = tableObj;
+        $('.submit').click(function (e) {
+            e.preventDefault();
             $.ajax({
                 url: '/Article/LatestPublishedStories/GetLatestNews/',
-                data: { 'subjectIds': null, 'publicationName': null, 'authorGuids': null, 'itemsToDisplay': 8 },
+                data: { 'subjectIds': $('#subjectIds').val(), 'publicationName': $('#publicationName').val(), 'authorGuids': $('#authorGuids').val(), 'itemsToDisplay': $('.latestPublishedStoriesSection .contentRecomm-article').length, 'MaxStoriesToDisplay': $('.latestPublishedStoriesSection').data('max') },
                 dataType: 'json',
                 type: 'POST',
                 success: function (searchData) {
-                    console.log(searchData);
+                    RenderTemplate(searchData);
                 },
                 error: function (err) {
                     console.log(err)
                 }
             });
         });
+
+        function RenderTemplate(data) {
+            var maxItems = $('.latestPublishedStoriesSection').attr('data-max'),
+               Html = "";
+
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].img == null) {
+                    Html += '<div class="contentRecomm-article">' +
+                           '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
+                           data[i].summary +
+                        '</div>';
+                } else {
+                    Html += '<div class="contentRecomm-article">' +
+                                '<img src="' + data[i].img + '"/>' +
+                                '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
+                                data[i].summary +
+                             '</div>';
+                }
+            }
+
+            $('.latestPublishedStoriesSection .contentRecomm-wrapper').append(Html);
+            debugger;
+            var ItemsDisplayed = $('.latestPublishedStoriesSection .contentRecomm-article').length;
+            if (maxItems == ItemsDisplayed) {
+                $('.submit').hide();
+            }
+        }
+
     </script>
 </div>
