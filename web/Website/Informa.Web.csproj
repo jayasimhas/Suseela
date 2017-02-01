@@ -2282,6 +2282,8 @@
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\CasualtyListing.json" />
     <Content Include="Views\Casualty\StockChart.json" />
+    <Content Include="Views\Casualty\MarketFixtureTable.json" />
+    <Content Include="Views\Casualty\MarketFixtureDummy.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
