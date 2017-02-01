@@ -107,8 +107,8 @@
 			Parent.find('.owl-carousel').owlCarousel({
                loop:false,
                merge:true,
-               margin:1,
-               nav:true,
+               margin:0,
+               nav:false,
                onDragged: function() {
                		var ActiveElements = Parent.find('.owl-item.active .year_heading'),
 						ActiveElementsTexts = [];
@@ -128,10 +128,6 @@
 						$('.owl-next').removeClass('disabled');
 					}
                },
-               navText: [
-               	  "<img src='/dist/img/lessthan.png'/>",
-               	  "<img src='/dist/img/greaterthan.png'/>"
-               	  ],
 			   slideBy: 1,  
                responsive:{
                0:{

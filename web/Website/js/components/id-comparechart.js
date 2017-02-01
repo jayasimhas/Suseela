@@ -30,10 +30,12 @@ $(function(){
 	$('.chartexpand', '.eachChartData').click(function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartexpand = eachChartData.find('.chartexpand'), graphCont = eachChartData.find('.graph-container');
 		if(chartexpand.hasClass('active')){
+			$this.removeClass('act');
 			graphCont.addClass('hide');
 			$this.removeClass('active');
 		}
 		else{
+			$this.addClass('act');
 			graphCont.removeClass('hide');
 			$this.addClass('active');
 		}

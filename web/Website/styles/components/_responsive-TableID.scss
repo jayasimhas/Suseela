@@ -3,13 +3,26 @@
 			width: 100%;
 			float: left;
 			margin-bottom: 2rem;
+			.table-sort {
+				background: url('img/Bitmap.png');
+				width: 7px !important;
+				height: 5px !important;
+				display: block;
+				@include breakpoint('small') {
+					display: none;
+				}
+			}
+			a.hidden-xs {
+				display: none; //popup removed
+			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
 			}
 			.table_head{
-				background-color: $color-ship-gray;
+				background-color: #9e101d;
 				color: $color-white;
 				padding: 10px;
+				padding-right: 95px !important;
 				.RB16{
 				   @include textMix('Roboto', 1.0625em, 700);
 				   font-style: normal;
@@ -20,15 +33,12 @@
 				}
 			}
 			.graybg {
-			    background-color: #f1f1f1;
-			    padding: 12px;
-			    min-height: 45px;
+			    display: none;
 			}
 			.states_heading{
 				position:relative;
 				float:left;
-				width:30%;
-				border-right:1px solid $color-light-gray; 
+				width:20%;
 				z-index: 9;
 				@include breakpoint('small') {
 					width: 40%;
@@ -45,7 +55,7 @@
 				}
 			}
 			.owl-wrapper {
-				width: 70%;
+				width: 80%;
 			    float: right;
 			    @include breakpoint('small') {
 			    	width: 60%;
@@ -70,17 +80,38 @@
 				
 			}
 			.year_heading{
-			  background-color: #bb1528 !important;
+			  background-color: #de4361 !important;
 				color: white;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				position:relative;
 				margin-right: 0;
-				height: 6em;
+				padding-right: 40px;
+				height: 5em;
 			}
 			.owl-dots{
 			  float: left;
 			  margin-top: 20px;
+			  .owl-dot {
+			  	span {
+			  		background: #de4361;
+			  	}
+			  	&.active {
+			  		span {
+			  			background: $color-white;
+			  		}
+			  		&:hover {
+				  		span {
+				  			background: $color-white;
+				  		}
+				  	}
+			  	}
+			  	&:hover {
+			  		span {
+			  			background: #de4361;
+			  		}
+			  	}
+			  }
 			}
 			.owl-nav {
 				float:right;
@@ -91,7 +122,7 @@
 					// margin-right: 1px !important;
 				}
 				.year_heading span{ 
-					width:100% !important;
+					width:100%;
 					display: block;
 				}
 			} 
@@ -130,10 +161,4 @@
 	width: 60%;
     float: right;
 
-}
-#financialresults .graybg, #quarterlyresults .graybg {
-	display: none;
-	@include breakpoint('small') {
-		display: block;
-	}
 }

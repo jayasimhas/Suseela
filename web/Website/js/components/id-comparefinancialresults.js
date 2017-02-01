@@ -50,17 +50,16 @@
 			
 			Parent.find('.owl-carousel').remove();
 			Parent.find('.states_heading').find('.RB16').remove();
-			Parent.find('.states_heading').after('<div class="owl-carousel"></div>');
+			Parent.find('.states_heading').after('<div class="owl-wrapper"><div class="owl-carousel"></div></div>');
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
 			for(var i = 0; i < data.length; i++) {
-				var Item = data[i], index = i,
-					CompanyLink = data[i].Company.toLowerCase().split(" ").join("-");
+				var Item = data[i], index = i;
 				Parent.find('.states_heading').append('<div class="RB16"><a href="' + data[i].CompanyPageUrl + '">' +data[i].Company+ '</a></div>');
 				for(var key in Item) {
 					if(Array.isArray(Item[key])) {
@@ -103,18 +102,14 @@
 
 			
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:true,
-               margin:10,
+               loop:false,
+               margin:0,
                merge:true,
-               nav:true,
-               navText: [
-               	  "<img src='/dist/img/lessthan.png'/>",
-               	  "<img src='/dist/img/greaterthan.png'/>"
-               	  ],
-			   slideBy: 3,  
+               nav:false,
+			   slideBy: 4,  
                responsive:{
                0:{
-               items:3
+               items:4
                },
                678:{
                items:3
@@ -126,7 +121,7 @@
                 items:2
                },
                1000:{
-               items:3
+               items:4
                }
                }
             });
@@ -335,7 +330,7 @@
 	}
 
 	if($('#comparefinancialresults').length > 0) {
-		ResponsiveTable.init(window.jsonFinancialResultForCompare, $('#comparefinancialresults'));	
+		ResponsiveTable.init(window.jsonResultAnnual, $('#comparefinancialresults'));	
 	}
 	
 
