@@ -18,11 +18,11 @@
 			return optionStr;
 		},
 		renderTable: function(tableData){
-			var self = this, loadDateVal = $('#selectDay').val();
+			var self = this, loadDateVal = $('#selectDay option').val();
 
 			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay').val();
+				var selectDateVal = $('#selectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
 		},
