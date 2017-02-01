@@ -31,19 +31,21 @@ namespace Informa.Web.Areas.Download.Controllers
         }
 
         //GET: Account/JsonDataFromFeed  
-        public string ReadJsonMarketFixture(string fixtureFeed, string tankerFixHiddenDate)
+        public string ReadJsonMarketFixture(string dateVal, string feedUrl)
         {
-            if (!string.IsNullOrEmpty(fixtureFeed) )
+            if (!string.IsNullOrEmpty(feedUrl) )
             {
-                string feedUrl = string.Format(fixtureFeed);
-                return CompanyResultService.GetCompanyFeeds(fixtureFeed).Result;
+                string fixturefeedUrl = string.Format(feedUrl);
+                return CompanyResultService.GetCompanyFeeds(fixturefeedUrl).Result;
             }
             else
             {
-                if(tankerFixHiddenDate == "13-Jan-17")
-                return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureTable.json"));
+                if(dateVal == "13-Jan-17")
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureTable.json"));
+                else if(dateVal == "31-Dec-16")
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/marketFixDummyData.json"));
                 else
-                return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureDummy.json"));
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureDummy.json"));
             }
         }
     }

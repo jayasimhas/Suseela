@@ -2284,6 +2284,7 @@
     <Content Include="Views\Casualty\StockChart.json" />
     <Content Include="Views\Casualty\MarketFixtureTable.json" />
     <Content Include="Views\Casualty\MarketFixtureDummy.json" />
+    <Content Include="Views\Casualty\marketFixDummyData.json" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
