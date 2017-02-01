@@ -15,7 +15,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger
     {
         public static void CMCReport(string articleId, Dictionary<string, string> logValues, string publication)
         {
-            string strfilepath = string.Format(@"{0}\CMCLogs\Content Migration Checks_{1}.xlsx",
+            string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
                 HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
 
             FileInfo fileInfo = new FileInfo(strfilepath);
