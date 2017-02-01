@@ -272,7 +272,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
                         else
                         {
-                            ao.Add("SECTION", "");
+                            ao.Add("SECTION", "News");
                         }
 
 
@@ -311,14 +311,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             ao.Add("MEDIA", "interactivedashboards");
                         }
-                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        else if (!string.IsNullOrEmpty(imageTitleHtml))
                         {
                             ao.Add("MEDIA", "image");
                         }
-                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
-                        {
-                            ao.Add("MEDIA", "image");
-                        }
+                        //else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        //{
+                        //    ao.Add("MEDIA", "image");
+                        //}
                         else
                         {
                             ao.Add("MEDIA", "");
@@ -654,7 +654,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/" };
             foreach (var cha in charsToRemove)
             {
                 if(cha == "\n")
@@ -1329,6 +1329,50 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                     }
+                    if (publication == "ID")
+                    {
+
+                        Taxonomy.Add("MARKET", "");
+                        Taxonomy.Add("TOPICS", "");
+                        Taxonomy.Add("COUNTRY", "");
+                        string AnimalPharma = string.Empty;
+                        string Commercial = string.Empty;
+                        string Country = string.Empty;
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null)
+                            {
+
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "markets", site))
+                                {
+
+                                    AnimalPharma += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["MARKET"] = AnimalPharma;
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "topics", site))
+                                {
+
+                                    Commercial += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["TOPICS"] = Commercial;
+
+
+                                }
+
+
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
+                                }
+                                //  countCommodityFactor++;
+
+                            }
+
+
+                        }
+                    }
+
                 }
             }
             return Taxonomy;

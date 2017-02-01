@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\sbaja2\Documents\My Received Files\EPPlus.dll</HintPath>
+      <HintPath>..\..\packages\EpPlus\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
