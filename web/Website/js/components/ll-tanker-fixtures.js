@@ -20,10 +20,10 @@
 		renderTable: function(tableData){
 			var self = this, loadDateVal = $('#selectDay option').val();
 
-			callAjaxFn(loadDateVal);
+			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#selectDay', function(){
 				var selectDateVal = $('#selectDay option').val();
-				callAjaxFn(selectDateVal);
+				self.callAjaxFn(selectDateVal);
 			});
 		},
 		callAjaxFn: function(seldateVal){
