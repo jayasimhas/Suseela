@@ -43,7 +43,7 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Table data feed URL
         /// </summary>
-        public string ResultTableFeedUrl => GlassModel?.Table_Result_Feed_URL;
+        public string TankerFixHiddenVal => GlassModel?.Table_Result_Feed_URL;
         /// <summary>
         /// Data Provider
         /// </summary>

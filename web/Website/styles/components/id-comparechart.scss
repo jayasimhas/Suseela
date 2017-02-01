@@ -7,10 +7,10 @@
 	font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 	width: 790px;
 	
-	@media screen and (min-width: 800px) and (max-width: 1024px) {
-		width: 620px;
+	@media screen and (min-width: 801px) and (max-width: 1024px) {
+		width: 594px;
 	}
-	@include breakpoint('small') {
+	@include breakpoint('medium') {
 		width: 100%;
 	}
 	.eachChartData {

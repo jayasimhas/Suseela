@@ -130,6 +130,22 @@
 		}
 }
 #graph-carousel{
+	.loadChart{
+		width: 24%;
+		float: left;
+		@include breakpoint('medium') {
+			width: 100%;
+			float: inherit;
+		}
+		a div{
+			> div{
+				height: 220px !important;
+				svg{
+					height: 220px !important;
+				}
+			}
+		}
+	}
 	.graph_heading {
 		display: block;
 		width: 100%;
@@ -150,7 +166,8 @@
 	}
 	.graph-container{
 		margin-top: 1rem;
-		margin-right: 0.3rem;
+		margin-left: 0.5%;
+		margin-right: 0.5%;
 		background-color: #eee;
 	}
 	.owl-dots{
