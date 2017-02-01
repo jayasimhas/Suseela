@@ -18,23 +18,26 @@
 			return optionStr;
 		},
 		renderTable: function(tableData){
-			var self = this;
-			self.sendHTTPRequest(tableData);
-			
+			var self = this, loadDateVal = $('#selectDay option').val();
+
+			callAjaxFn(loadDateVal);
 			$(document).on('change', '#selectDay', function(){
-				var searchData = tableData;
-				/*$.ajax({
-					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
-					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
-					dataType: 'json',
-					type: 'GET',
-					success: function (searchData) {*/
-						self.sendHTTPRequest(searchData);
-					/*},
-					error: function (err) {
-						console.log(err)  
-					}
-				});*/
+				var selectDateVal = $('#selectDay option').val();
+				callAjaxFn(selectDateVal);
+			});
+		},
+		callAjaxFn: function(seldateVal){
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function (err) {
+					console.log(err);
+				}
 			});
 		},
 		sendHTTPRequest: function(searchData){
@@ -113,8 +116,8 @@
 			return mobileStr;
 		},
 		init: function(dateObj, tableDataObj) {
-			this.renderDateData(dateObj);
-			this.renderTable(tableDataObj);
+			//this.renderDateData(dateObj);
+			this.renderTable();
 		}
 	}
 	
