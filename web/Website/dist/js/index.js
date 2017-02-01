@@ -7213,15 +7213,16 @@ $(function () {
 		},
 		renderTable: function renderTable(tableData) {
 			var self = this,
-			    loadDateVal = $('#selectDay option').val();
+			    loadDateVal = $('#selectDay').val();
 
 			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#selectDay', function () {
-				var selectDateVal = $('#selectDay option').val();
+				var selectDateVal = $('#selectDay').val();
 				self.callAjaxFn(selectDateVal);
 			});
 		},
 		callAjaxFn: function callAjaxFn(seldateVal) {
+			var self = this;
 			$.ajax({
 				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
 				data: { 'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val() },
@@ -8979,15 +8980,16 @@ $(function () {
 			$('.graphsPan').removeClass('owl-carousel');
 			$('.loadChart').removeClass('item');
 		}
+	
+		PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
+		PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
+		PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
+		PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
+		PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
+		PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
+		PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
+		PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
 	}
-	PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
-	PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
-	PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
-	PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
-	PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
-	PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
-	PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
-	PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
 });
 
 },{}],28:[function(require,module,exports){
