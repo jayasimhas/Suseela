@@ -116,7 +116,7 @@
 			});
 			return mobileStr;
 		},
-		init: function(dateObj, tableDataObj) {
+		init: function() {
 			//this.renderDateData(dateObj);
 			this.renderTable();
 		}
@@ -124,7 +124,7 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(window.dateOptions, window.tableObj);
+			tankerFixtures.init();
 		}
 	});
 })();
