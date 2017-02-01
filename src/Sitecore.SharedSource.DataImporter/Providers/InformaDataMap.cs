@@ -272,7 +272,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
                         else
                         {
-                            ao.Add("SECTION", "");
+                            ao.Add("SECTION", "News");
                         }
 
 
@@ -387,32 +387,65 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string Commodity = "";
                         string CommodityFactor = "";
 
-                        List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.Contains(" " + s + " "));
-                        List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+
+                        if (publication != "ID")
+                        {
+                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.Contains(" " + s + " "));
+                            List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                            List<string> commoditySearchResults = null;
+                            List<string> commodityfactorSearchResults = null;
+
+
+
+                            foreach (string region in regionSearchResults)
+                            {
+                                Country += region + ",";
+
+                            }
+                            if (publication == "Agrow")
+                            {
+                                commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+
+                            }
+                            if (publication == "commodities")
+                            {
+                                commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => summSearch.Contains(" " + s + " "));
+                            }
+
+                            if (publication == "commodities")
+                            {
+
+                                commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                            }
+                            foreach (string agency in agencySearchResults)
+                            {
+                                Agency += agency + ",";
+
+                            }
+                            if (commoditySearchResults != null)
+                            {
+                                foreach (string commodity in commoditySearchResults)
+                                {
+                                    Commodity += commodity + ",";
+
+                                }
+                            }
+                            if (commodityfactorSearchResults != null)
+                            {
+                                foreach (string commodityfactor in commodityfactorSearchResults)
+                                {
+                                    CommodityFactor += commodityfactor + ",";
+
+                                }
+                            }
+                        }
+
                         List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
-                        List<string> commoditySearchResults = null;
-                        List<string> commodityfactorSearchResults = null;
-                        if (publication=="Agrow")
-                        {
-                             commoditySearchResults = GetListFromXml(publication,"commodity",site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                       
+                      
 
-                        }
-
-                        if (publication == "commodities")
-                        {
-                            commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => summSearch.Contains(" " + s + " "));
-                        }
-
-                            if (publication=="commodities")
-                        {
-                            
-                             commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
-                        }
-                        foreach (string region in regionSearchResults)
-                        {
-                            Country += region + ",";
-
-                        }
+                     
+                      
 
                         foreach (string company in companySearchResults)
                         {
@@ -420,27 +453,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         }
 
-                        foreach (string agency in agencySearchResults)
-                        {
-                            Agency += agency + ",";
-
-                        }
-                        if (commoditySearchResults != null)
-                        {
-                            foreach (string commodity in commoditySearchResults)
-                            {
-                                Commodity += commodity + ",";
-
-                            }
-                        }
-                        if (commodityfactorSearchResults != null)
-                        {
-                            foreach (string commodityfactor in commodityfactorSearchResults)
-                            {
-                                CommodityFactor += commodityfactor + ",";
-
-                            }
-                        }
+                        
                         if (ao.ContainsKey("COUNTRY")) { 
                         if (Country != "")
                         
@@ -1192,7 +1205,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string CropProtection = string.Empty;
                         string Product = string.Empty;
                         string Commercial = string.Empty;
-                        string Country = string.Empty;
+                        string Country = string.Empty; 
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1329,8 +1342,50 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                     }
+
+
+                    if (publication == "ID")
+                    {
+
+                        Taxonomy.Add("MARKET", "");
+                        Taxonomy.Add("TOPICS", "");
+                        Taxonomy.Add("COUNTRY", "");
+                        string Market = string.Empty;
+                        string Topic = string.Empty;
+                        string Country = string.Empty;
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null) 
+                            {
+
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "market", site))
+                                {
+
+                                    Market += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["MARKET"] = Market;
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "topics", site))
+                                {
+
+                                    Topic += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["TOPICS"] = Topic;
+                                }
+
+
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "country", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
+                                }
+                                //  countCommodityFactor++;
+
+                            }
+                        }
+                    }
                 }
             }
+
             return Taxonomy;
         }
 
