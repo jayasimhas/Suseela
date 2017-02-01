@@ -51,13 +51,14 @@ $(function() {
 			$('.graphsPan').removeClass('owl-carousel');
 			$('.loadChart').removeClass('item');
 		}
+	
+		PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
+		PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
+		PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
+		PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
+		PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
+		PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
+		PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
+		PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
 	}
-	PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
-	PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
-    PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
-    PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
-    PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
-    PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
-    PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
-    PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
 });
