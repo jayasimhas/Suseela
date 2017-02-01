@@ -933,6 +933,9 @@ p {
   background: color(wireframe, 100, 0.75);
   border: 1px solid color(wireframe, 100); }
 
+.full-width-button {
+  width: 100% !important; }
+
 .l-full {
   width: 100%; }
 
@@ -2239,6 +2242,17 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 
 #graph-carousel {
   font-family: "verdana"; }
+  #graph-carousel .loadChart {
+    width: 25%;
+    float: left; }
+    @media (max-width: 800px) {
+      #graph-carousel .loadChart {
+        width: 100%;
+        float: inherit; } }
+    #graph-carousel .loadChart a div > div, #graph-carousel .loadChart .pop-out__reset-password div > div, #graph-carousel .loadChart .sortable-table__list-toggler div > div, #graph-carousel .loadChart .mobile-table-exit div > div {
+      height: 220px !important; }
+      #graph-carousel .loadChart a div > div svg, #graph-carousel .loadChart .pop-out__reset-password div > div svg, #graph-carousel .loadChart .sortable-table__list-toggler div > div svg, #graph-carousel .loadChart .mobile-table-exit div > div svg {
+        height: 220px !important; }
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
@@ -3438,13 +3452,13 @@ body.lightboxed {
   width: 15px !important; }
   .sort[type="ascending"] {
     position: absolute;
-    bottom: 15px;
+    top: 15px;
     right: 21px;
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
   .sort[type="descending"] {
     position: absolute;
-    bottom: 5px;
+    top: 25px;
     right: 20px; }
   .sort.active svg {
     fill: #ffffff; }
@@ -3465,8 +3479,7 @@ body.lightboxed {
     display: table;
     width: 100%;
     border-collapse: inherit;
-    border: 1px solid #d1d3d4;
-    width: 100%; }
+    border: none !important; }
   .table-wrapper .tableRow {
     display: table-row; }
     .table-wrapper .tableRow:nth-child(odd) {
@@ -3481,7 +3494,7 @@ body.lightboxed {
     font-family: "PT Serif", Georgia, serif;
     font-size: 16px;
     text-align: center;
-    background-color: #bb1528;
+    background-color: #de4361;
     color: #ffffff;
     position: relative; }
     .table-wrapper .tableHead:first-child {
@@ -3492,8 +3505,7 @@ body.lightboxed {
     display: table-footer-group; }
   .table-wrapper .tableCell, .table-wrapper .tableHead {
     display: table-cell;
-    padding: 5px;
-    border-left: 1px solid #ffffff; }
+    padding: 5px; }
 
 .ID-Responsive-Table {
   position: relative;
@@ -3501,12 +3513,23 @@ body.lightboxed {
   float: left;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  .ID-Responsive-Table .table-sort {
+    background: url("img/Bitmap.png");
+    width: 7px !important;
+    height: 5px !important;
+    display: block; }
+    @media (max-width: 480px) {
+      .ID-Responsive-Table .table-sort {
+        display: none; } }
+  .ID-Responsive-Table a.hidden-xs, .ID-Responsive-Table .hidden-xs.pop-out__reset-password, .ID-Responsive-Table .hidden-xs.sortable-table__list-toggler, .ID-Responsive-Table .hidden-xs.mobile-table-exit {
+    display: none; }
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
-    background-color: #414042;
+    background-color: #9e101d;
     color: #ffffff;
-    padding: 10px; }
+    padding: 10px;
+    padding-right: 95px !important; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3518,14 +3541,11 @@ body.lightboxed {
       font-weight: 400;
       font-style: normal; }
   .ID-Responsive-Table .graybg {
-    background-color: #f1f1f1;
-    padding: 12px;
-    min-height: 45px; }
+    display: none; }
   .ID-Responsive-Table .states_heading {
     position: relative;
     float: left;
-    width: 30%;
-    border-right: 1px solid #d1d3d4;
+    width: 20%;
     z-index: 9; }
     @media (max-width: 480px) {
       .ID-Responsive-Table .states_heading {
@@ -3538,7 +3558,7 @@ body.lightboxed {
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
   .ID-Responsive-Table .owl-wrapper {
-    width: 70%;
+    width: 80%;
     float: right; }
     @media (max-width: 480px) {
       .ID-Responsive-Table .owl-wrapper {
@@ -3558,20 +3578,29 @@ body.lightboxed {
       padding-top: 14px;
       margin-top: 10px; }
   .ID-Responsive-Table .year_heading {
-    background-color: #bb1528 !important;
+    background-color: #de4361 !important;
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
     margin-right: 0;
-    height: 6em; }
+    padding-right: 40px;
+    height: 5em; }
   .ID-Responsive-Table .owl-dots {
     float: left;
     margin-top: 20px; }
+    .ID-Responsive-Table .owl-dots .owl-dot span {
+      background: #de4361; }
+    .ID-Responsive-Table .owl-dots .owl-dot.active span {
+      background: #ffffff; }
+    .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
+      background: #ffffff; }
+    .ID-Responsive-Table .owl-dots .owl-dot:hover span {
+      background: #de4361; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
-    width: 100% !important;
+    width: 100%;
     display: block; }
   .ID-Responsive-Table .owl-next.disabled, .ID-Responsive-Table .owl-prev.disabled {
     pointer-events: none; }
@@ -3600,12 +3629,6 @@ body.lightboxed {
 #financialresults .owl-wrapper {
   width: 60%;
   float: right; }
-
-#financialresults .graybg, #quarterlyresults .graybg {
-  display: none; }
-  @media (max-width: 480px) {
-    #financialresults .graybg, #quarterlyresults .graybg {
-      display: block; } }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -7893,8 +7916,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10711,7 +10734,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

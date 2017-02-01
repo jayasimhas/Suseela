@@ -46,6 +46,7 @@ import './components/ll-market-data';
 import './components/ll-tanker-fixtures';
 import './components/accordionStockChart';
 import './components/amGraphParam';
+import './components/table_charts';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
