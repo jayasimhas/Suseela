@@ -27,6 +27,7 @@
 			});
 		},
 		callAjaxFn: function(seldateVal){
+			 var self = this;
 			$.ajax({
 				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
 				data: {'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val()},
