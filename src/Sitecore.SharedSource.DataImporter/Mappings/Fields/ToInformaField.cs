@@ -2233,11 +2233,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                tName = sourceItems.Where(c => c.Name.Equals(transformValue));
+                tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
 
                 if(!tName.Any())
                 {
-                     tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                     tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
                     if(!tDName.Any())
                     {
                         map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
@@ -2570,14 +2570,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
                 {
-                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
-                                    select c.Value;
+                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value.ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
 
                     if (elemValue.ElementAt(0) != null)
                     {
-                        return elemValue.ElementAt(0).ToString();
+                        return elemValue.ElementAt(0).ToString().ToLower();
                     }
 
                     else
@@ -3796,11 +3796,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                         }
                         string cleanedName = StringUtility.GetValidItemName(transformedValue, map.ItemNameMaxLength);
-                        tName = sourceItems.Where(c => c.Name.Equals(transformedValue));
+                        tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformedValue.ToLower()));
 
                         if (!tName.Any())
                         {
-                            tDName = sourceItems.Where(c => c.DisplayName.Equals(transformedValue));
+                            tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformedValue.ToLower()));
                             if (!tDName.Any())
                             {
                                 map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
@@ -3853,11 +3853,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                     }
                     string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                    tName = sourceItems.Where(c => c.Name.Equals(transformValue));
+                    tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
 
                     if (!tName.Any())
                     {
-                        tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                        tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
                         if (!tDName.Any())
                         {
                             map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
@@ -4289,14 +4289,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
                 {
-                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
-                                    select c.Value;
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Attribute("name").Value.ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
 
                     if (elemValue.ElementAt(0) != null)
                     {
-                        return elemValue.ElementAt(0).ToString();
+                        return elemValue.ElementAt(0).ToString().ToLower();
                     }
 
                     else
@@ -4369,11 +4369,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                tName = sourceItems.Where(c => c.Name.Equals(transformValue));
+                tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
 
                 if (!tName.Any())
                 {
-                    tDName = sourceItems.Where(c => c.DisplayName.Equals(transformValue));
+                    tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
                     if (!tDName.Any())
                     {
                         map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
@@ -4453,14 +4453,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
                 {
-                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name == contentName)
-                                    select c.Value;
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name.ToString().ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
 
                     if (elemValue.ElementAt(0) != null)
                     {
-                        return elemValue.ElementAt(0).ToString();
+                        return elemValue.ElementAt(0).ToString().ToLower();
                     }
 
                     else

@@ -118,11 +118,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                     //loop through children and look for anything that matches by name
                    // string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
-                    tName = i.Axes.GetDescendants().Where(c => c.Name.Equals(transformValue));
+                    tName = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
 
                     if (!tName.Any())
                     {
-                        tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(transformValue));
+                        tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
                         if (!tDName.Any())
                         {
                             map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
@@ -226,14 +226,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             if (contentName != "")
             {
-                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
                 {
-                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
-                                    select c.Value;
+                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value.ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
 
                     if (elemValue.ElementAt(0) != null)
                     {
-                        return elemValue.ElementAt(0).ToString();
+                        return elemValue.ElementAt(0).ToString().ToLower();
                     }
 
                     else

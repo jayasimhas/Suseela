@@ -311,9 +311,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             ao.Add("MEDIA", "interactivedashboards");
                         }
-                        else if (!string.IsNullOrEmpty(imageTitleHtml))
+                        else if (CheckTable(GetXMLData(d, bodyNode)))
                         {
-                            ao.Add("MEDIA", "image");
+                            ao.Add("MEDIA", "Chart/Table");
                         }
                         //else if (!string.IsNullOrEmpty(bodyTitleHtml))
                         //{
@@ -386,14 +386,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string Agency = "";
                         string Commodity = "";
                         string CommodityFactor = "";
+                        string AnimalHealth = "";
 
 
                         if (publication != "ID")
                         {
-                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.Contains(" " + s + " "));
-                            List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                            List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                             List<string> commoditySearchResults = null;
                             List<string> commodityfactorSearchResults = null;
+                            List<string> animalhealthSearchResults = null;
 
 
 
@@ -402,20 +404,26 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 Country += region + ",";
 
                             }
+                            if (publication == "AnimalPharma")
+                            {
+                                animalhealthSearchResults = GetListFromXml(publication, "animalhealth", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+
+                            }
                             if (publication == "Agrow")
                             {
-                                commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                                commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
-                            }
-                            if (publication == "commodities")
-                            {
-                                commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => summSearch.Contains(" " + s + " "));
                             }
 
                             if (publication == "commodities")
                             {
+                                commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => summSearch.ToLower().Contains(" " + s + " "));
+                            }
 
-                                commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                            if (publication == "commodities")
+                            {
+
+                                commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                             }
                             foreach (string agency in agencySearchResults)
                             {
@@ -438,6 +446,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 }
                             }
+                            if (animalhealthSearchResults != null)
+                            {
+                                foreach (string animalhealth in animalhealthSearchResults)
+                                {
+                                    AnimalHealth += animalhealth + ",";
+
+                                }
+                            }
                         }
 
                         List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
@@ -449,6 +465,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         foreach (string company in companySearchResults)
                         {
+                            if(!(publication =="AnimalPharma" && company == "Bayer CropScience")||!(publication == "Agrow" && company == "Bayer Animal Health") ||!(publication == "AnimalPharma" && company == "Bayer Animal Health"))
                             Companies += company + ",";
 
                         }
@@ -529,6 +546,24 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             ao.Add("COMMODITYFACTOR", CommodityFactor);
                         }
 
+                        if (ao.ContainsKey("ANIMALHEALTH"))
+                        {
+                            if (AnimalHealth != "")
+
+                            {
+
+                                AnimalHealth = ao["ANIMALHEALTH"].ToString() + AnimalHealth;
+                                ao.Remove("ANIMALHEALTH");
+                                ao.Add("ANIMALHEALTH", AnimalHealth);
+
+                            }
+                        }
+                        else
+                        {
+
+                            ao.Add("ANIMALHEALTH", AnimalHealth);
+                        }
+
 
                     }
                     else
@@ -581,6 +616,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 //XMLDataLogger.WriteLog("");
                 return l;
             
+        }
+
+       
+         private bool CheckTable(string searchtable)
+        {
+            
+            Regex regex = new Regex("<table>(.*)</table>");
+            var v = regex.Match(searchtable);
+            if (v != null)
+            {
+                return true;
+            }
+            else
+                return false;
+
         }
 
         public override IEnumerable<object> ImportImages(IDataMap map)
@@ -824,16 +874,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
            
             XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
 
-            if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName))
+            if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
             {
                 var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Attribute("name").Value == contentName)
-                                select c.Value;
+                                select c.Value.ToLower();
 
 
 
                 if (elemValue.ElementAt(0) != null)
                 {
-                    return elemValue.ElementAt(0).ToString();
+                    return elemValue.ElementAt(0).ToString().ToLower();
 
                 }
 
@@ -858,7 +908,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
             
 
-            var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value == contentName);
+            var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower());
                             
                 return elemValue;
            
@@ -2448,7 +2498,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 foreach (XElement elem in elemValue)
                 {
                    
-                        keyList.Add(elem.Attribute("name").Value);
+                        keyList.Add(elem.Attribute("name").Value.ToLower());
                    
                 }
 
