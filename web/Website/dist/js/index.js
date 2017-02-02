@@ -5909,7 +5909,7 @@ $(function () {
 	};
 
 	if ($('#comparefinancialresults').length > 0) {
-		ResponsiveTable.init(window.jsonResultAnnual, $('#comparefinancialresults'));
+		ResponsiveTable.init(window.jsonFinancialResultForCompare, $('#comparefinancialresults'));
 	}
 })();
 
