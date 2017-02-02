@@ -21,16 +21,19 @@ namespace Informa.Library.Globalization
 	        _dependencies = dependencies;
 	    }
 
-		public string Translate(string key)
-		{
+        public string Translate(string key)
+        {
             //Removed auto-generator for dictionary keys
             //return Sitecore.Globalization.Translate.TextByLanguage(key, Sitecore.Context.Language, null, new[] { "GenerateIfDictionaryKeyNotFound" });
 
             string value = Sitecore.Globalization.Translate.Text(key)
                 ?? string.Empty;
-
-		    return value
-                .Replace("$publicationname", _dependencies.SiteRootContext.Item.Publication_Name);
-		}
+            if (value.Contains("$publicationname"))
+            {
+                return value
+                    .Replace("$publicationname", _dependencies.SiteRootContext.Item.Publication_Name);
+            }
+            return value;
+        }
 	}
 }
