@@ -773,9 +773,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
     //                    }
 
-                      
-
-
     //                }
                     
     //            }
@@ -1400,9 +1397,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("MARKET", "");
                         Taxonomy.Add("TOPICS", "");
                         Taxonomy.Add("COUNTRY", "");
+                        Taxonomy.Add("SECTINREF", "");
                         string Market = string.Empty;
                         string Topic = string.Empty;
                         string Country = string.Empty;
+                        string SectionRef = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null) 
@@ -1428,7 +1427,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
                                 }
-                                //  countCommodityFactor++;
+                                else
+                                {
+                                    SectionRef += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTINREF"] = SectionRef;
+
+                                }
 
                             }
                         }

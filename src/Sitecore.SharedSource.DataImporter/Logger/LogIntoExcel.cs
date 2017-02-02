@@ -13,10 +13,20 @@ namespace Sitecore.SharedSource.DataImporter.Logger
 {
     public static class LogIntoExcel
     {
+        public static string LogFileDateTime;
         public static void CMCReport(string articleId, Dictionary<string, string> logValues, string publication)
         {
+            if (string.IsNullOrWhiteSpace(LogFileDateTime))
+            {
+                LogFileDateTime = DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
+            }
+
             string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
-                HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
+                HttpRuntime.AppDomainAppPath, LogFileDateTime);
+
+
+            //string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
+            //    HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
 
             FileInfo fileInfo = new FileInfo(strfilepath);
 

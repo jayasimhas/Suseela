@@ -738,6 +738,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             }
 
+
+                            if (d.NewItemField == "sectionref")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("SECTINREF", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("SECTINREF","" );
+                                }
+
+                            }
+
                             if (d.NewItemField == "Body")
                             {
                                 if (values.Count(val => val == "Y") > 0)

@@ -162,6 +162,7 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             string site = importItem.Parent.Parent.Parent.Name;
             string channel = importItem.Parent.Parent.Name;
             ImportProcessor p = new ImportProcessor(map, l);
+            LogIntoExcel.LogFileDateTime= DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
             p.Process(site, channel);
             txtMessage.Text = l.GetLog();
             
