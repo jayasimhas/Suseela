@@ -311,14 +311,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             ao.Add("MEDIA", "interactivedashboards");
                         }
-                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        else if (!string.IsNullOrEmpty(imageTitleHtml))
                         {
                             ao.Add("MEDIA", "image");
                         }
-                        else if (!string.IsNullOrEmpty(bodyTitleHtml))
-                        {
-                            ao.Add("MEDIA", "image");
-                        }
+                        //else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        //{
+                        //    ao.Add("MEDIA", "image");
+                        //}
                         else
                         {
                             ao.Add("MEDIA", "");
@@ -667,7 +667,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", "'", ",", "<", "/" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/" };
             foreach (var cha in charsToRemove)
             {
                 if(cha == "\n")
