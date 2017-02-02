@@ -1,51 +1,48 @@
 ﻿@model Informa.Web.ViewModels.Casualty.LatestCasualtiesViewModel
 
-@if (Model.IsUserAuthenticated)
+@if (!string.IsNullOrEmpty(Model.jsonLatestCasualties))
 {
-    if (!string.IsNullOrEmpty(Model.jsonLatestCasualties))
-    {
-        <script type="text/javascript">
-            var jsonLatestCasualties = @Model.jsonLatestCasualties;
-        </script>
-    }
-    else
-    {
-        <script type="text/javascript">
-            var jsonLatestCasualties = [{
-                "latestcasualties": [
-                  {
-                      "title": "Frem Nordica",
-                      "date": "06.01.2017",
-                      "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
-                  },
-                  {
-                      "title": "Frem Nordica",
-                      "date": "06.01.2017",
-                      "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
-                  },
-                  {
-                      "title": "Frem Nordica",
-                      "date": "06.01.2017",
-                      "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
-                  }
-                ]
-            }]
-        </script>
-    }
-    <div class="lloyd-related-links">
-        <div class="ll-logo-img">
-            @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
-            {
-                <a href="@Model.homePageUrl">
-                    <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
-                </a>
-            }
-        </div>
-        <div class="allrelatedlinks">
-            <ul>
-                <li class="article-topics__section-header">@Model.Title</li>
-            </ul>
-            @Html.Raw(Model.AdditionalInformation)
-        </div>
-    </div>
+    <script type="text/javascript">
+        var jsonLatestCasualties = @Model.jsonLatestCasualties;
+    </script>
 }
+else
+{
+    <script type="text/javascript">
+        var jsonLatestCasualties = [{
+            "latestcasualties": [
+              {
+                  "title": "Frem Nordica",
+                  "date": "06.01.2017",
+                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+              },
+              {
+                  "title": "Frem Nordica",
+                  "date": "06.01.2017",
+                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+              },
+              {
+                  "title": "Frem Nordica",
+                  "date": "06.01.2017",
+                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+              }
+            ]
+        }]
+    </script>
+}
+<div class="lloyd-related-links">
+    <div class="ll-logo-img">
+        @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))
+            {
+            <a href="@Model.homePageUrl">
+                <img src="@Model.Logo.Src" alt="Brand Heading" width="100%">
+            </a>
+        }
+    </div>
+    <div class="allrelatedlinks">
+        <ul>
+            <li class="article-topics__section-header">@Model.Title</li>
+        </ul>
+        @Html.Raw(Model.AdditionalInformation)
+    </div>
+</div>

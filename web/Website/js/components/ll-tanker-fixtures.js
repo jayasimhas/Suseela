@@ -97,16 +97,20 @@
 				$.each(value, function(key, val){
 					mobileStr += '<thead class="table_head">';
 					mobileStr += '<tr>';
-					mobileStr += '<th colspan="8" class="pad-full-10">'+key+'</th>';
+					mobileStr += '<th colspan="2" class="pad-full-10">'+key+'</th>';
 					mobileStr += '</tr>';
 					mobileStr += '</thead>';
 					
 					mobileStr += '<tbody class="visible-sm">';
 					$.each(val, function(i, v){
+						var indx = 0;
 						for(var prop in v){
+							indx++;
+							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
+							if(borTop !== '') mobileStr += '<tr class="borTop"><td></td></tr>';
 							mobileStr += '<tr>';
-							mobileStr += '<td class="pad-10 R21_GrayColor">'+prop+'</td>';
-							mobileStr += '<td class="pad-10 R21_GrayColorVal">'+v[prop]+'</td>';
+							mobileStr += '<td class="pad-10 mobleftCol">'+prop+'</td>';
+							mobileStr += '<td class="pad-10 mobrigCol">'+v[prop]+'</td>';
 							mobileStr += '</tr>';
 						}
 					});

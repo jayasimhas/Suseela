@@ -2244,15 +2244,19 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-family: "verdana"; }
   #graph-carousel .loadChart {
     width: 24%;
-    float: left; }
+    float: left;
+    /*a div{
+			> div{
+				height: 220px !important;
+				svg{
+					height: 220px !important;
+				}
+			}
+		}*/ }
     @media (max-width: 800px) {
       #graph-carousel .loadChart {
         width: 100%;
         float: inherit; } }
-    #graph-carousel .loadChart a div > div, #graph-carousel .loadChart .pop-out__reset-password div > div, #graph-carousel .loadChart .sortable-table__list-toggler div > div, #graph-carousel .loadChart .mobile-table-exit div > div {
-      height: 220px !important; }
-      #graph-carousel .loadChart a div > div svg, #graph-carousel .loadChart .pop-out__reset-password div > div svg, #graph-carousel .loadChart .sortable-table__list-toggler div > div svg, #graph-carousel .loadChart .mobile-table-exit div > div svg {
-        height: 220px !important; }
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
@@ -3450,6 +3454,9 @@ body.lightboxed {
   float: right;
   position: relative;
   width: 15px !important; }
+  @media (max-width: 480px) {
+    .sort {
+      display: none; } }
   .sort[type="ascending"] {
     position: absolute;
     top: 15px;
@@ -3484,6 +3491,8 @@ body.lightboxed {
     display: table-row; }
     .table-wrapper .tableRow:nth-child(odd) {
       background-color: #f1f1f1; }
+    .table-wrapper .tableRow:hover .tableCell {
+      background-color: #efd0d8; }
   .table-wrapper .tableHeading {
     display: table-header-group; }
   .table-wrapper .tableHead {
@@ -3526,7 +3535,7 @@ body.lightboxed {
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
-    background-color: #9e101d;
+    background-color: #91211E;
     color: #ffffff;
     padding: 10px;
     padding-right: 95px !important; }
@@ -3613,8 +3622,14 @@ body.lightboxed {
     padding: 0;
     margin: 0 3px; }
 
-#quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
+#quarterlyresults .tableRow > .tableCell {
   text-align: center; }
+
+#financialresults .tableRow > .tableCell, #financialresults .tableHead {
+  text-align: right; }
+
+#financialresults .tableHead:first-child {
+  text-align: left; }
 
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -6468,39 +6483,39 @@ section: UI Elements
         top: 13px;
         right: 30px; }
 
-.relatedlinks .related-left-rail {
-  float: left; }
+.relatedlinks {
+  /*.related-left-rail{*/
+  width: 100%;
+  /*}*/ }
   @media (max-width: 1080px) {
-    .relatedlinks .related-left-rail {
+    .relatedlinks {
       width: 66%; } }
   @media (max-width: 800px) {
-    .relatedlinks .related-left-rail {
+    .relatedlinks {
       width: 100%; } }
-
-.relatedlinks .allrelatedlinks {
-  float: left;
-  width: 100%; }
-  @media (max-width: 800px) {
-    .relatedlinks .allrelatedlinks {
-      width: 98%; } }
-  .relatedlinks .allrelatedlinks ul {
-    margin-bottom: 20px;
-    margin-bottom: 1.25rem;
-    padding-bottom: 10px;
-    padding-bottom: 0.625rem;
-    border-bottom: 1px solid #d1d3d4;
-    float: left;
-    width: 50%;
-    padding: 0 1%; }
-    @media (max-width: 480px) {
-      .relatedlinks .allrelatedlinks ul {
-        float: none;
-        width: 100%; } }
-  .relatedlinks .allrelatedlinks:last-child ul {
-    border-bottom: none; }
+  .relatedlinks .allrelatedlinks {
+    width: 100%; }
     @media (max-width: 800px) {
-      .relatedlinks .allrelatedlinks:last-child ul {
-        border-bottom: 1px solid #d1d3d4; } }
+      .relatedlinks .allrelatedlinks {
+        width: 98%; } }
+    .relatedlinks .allrelatedlinks ul {
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
+      padding-bottom: 10px;
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid #d1d3d4;
+      float: left;
+      width: 50%;
+      padding: 0 1%; }
+      @media (max-width: 480px) {
+        .relatedlinks .allrelatedlinks ul {
+          float: none;
+          width: 100%; } }
+    .relatedlinks .allrelatedlinks:last-child ul {
+      border-bottom: none; }
+      @media (max-width: 800px) {
+        .relatedlinks .allrelatedlinks:last-child ul {
+          border-bottom: 1px solid #d1d3d4; } }
 
 .companyList ul {
   height: 464px;
@@ -6636,7 +6651,7 @@ section: UI Elements
   @media (max-width: 480px) {
     .compareChart .showinMob {
       display: block;
-      background: #9e101d;
+      background: #DE4361;
       padding: 10px 0 10px 13px;
       text-transform: uppercase;
       color: #fff;
@@ -6646,6 +6661,15 @@ section: UI Elements
 @media (max-width: 480px) {
   .hideinMob {
     display: none; } }
+
+.article-related-content h2, .article-related-content .article-topics__header {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+.theme-insuranceday a, .theme-insuranceday .pop-out__reset-password, .theme-insuranceday .sortable-table__list-toggler, .theme-insuranceday .mobile-table-exit {
+  color: #DE4361 !important; }
+  .theme-insuranceday a:hover, .theme-insuranceday .pop-out__reset-password:hover, .theme-insuranceday .sortable-table__list-toggler:hover, .theme-insuranceday .mobile-table-exit:hover, .theme-insuranceday a:focus, .theme-insuranceday .pop-out__reset-password:focus, .theme-insuranceday .sortable-table__list-toggler:focus, .theme-insuranceday .mobile-table-exit:focus {
+    color: #91211E !important; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
@@ -8550,7 +8574,9 @@ div#feedbacklite.fbl_r {
       display: block; } }
 
 #market-data-tool .borTop, #tanker-fixtures .borTop {
-  border-top: 1px solid #d1d3d4; }
+  height: 1px;
+  border-top: 1px solid #d1d3d4;
+  display: block; }
 
 .graybg {
   border-bottom: 1px solid #d1d3d4;
@@ -8647,19 +8673,77 @@ div#feedbacklite.fbl_r {
   text-align: right;
   background-color: #fff; }
 
-#market-data #marketDataTable {
-  width: 760px; }
+#market-data h2, #market-data .article-topics__header {
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 40px; }
   @media (max-width: 480px) {
+    #market-data h2, #market-data .article-topics__header {
+      font-size: 36px;
+      margin-bottom: 20px; } }
+
+#market-data #marketDataTable {
+  width: 790px;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  @media screen and (min-width: 801px) and (max-width: 1024px) {
+    #market-data #marketDataTable {
+      width: 594px; } }
+  @media (max-width: 800px) {
     #market-data #marketDataTable {
       width: 100%; } }
+  #market-data #marketDataTable .pad-10 {
+    padding: 16px 10px; }
+  #market-data #marketDataTable .mobleftCol {
+    font-size: 18px;
+    border-right: 1px solid #e9e9e9; }
+  #market-data #marketDataTable .mobrigCol {
+    font-size: 16px; }
+    #market-data #marketDataTable .mobrigCol a, #market-data #marketDataTable .mobrigCol .pop-out__reset-password, #market-data #marketDataTable .mobrigCol .sortable-table__list-toggler, #market-data #marketDataTable .mobrigCol .mobile-table-exit {
+      color: #1191d1;
+      text-decoration: none; }
+  #market-data #marketDataTable .borTop {
+    border-top: 1px solid #d1d3d4; }
+  #market-data #marketDataTable .pad-20 {
+    padding: 10px 20px; }
+  #market-data #marketDataTable .table_head {
+    background-color: #0f5487;
+    color: #ffffff; }
+    #market-data #marketDataTable .table_head th {
+      font-size: 16px;
+      font-weight: normal; }
+    #market-data #marketDataTable .table_head .visible-lg {
+      background: #1191d1;
+      color: #fff;
+      font-weight: normal; }
+  #market-data #marketDataTable .oddCls {
+    background: #f1f1f1; }
+  #market-data #marketDataTable tbody.visible-lg td {
+    border-bottom: 1px solid #d1d3d4;
+    border-right: 1px solid #d1d3d4; }
+  #market-data #marketDataTable tbody.visible-lg tr td:last-child {
+    border-right: none; }
+  #market-data #marketDataTable tbody.visible-lg tr:last-child td {
+    border-bottom: none; }
+  #market-data #marketDataTable span.numData {
+    width: 40px;
+    display: inline-block; }
   #market-data #marketDataTable span.rise {
     color: #56c405;
-    font-weight: bold;
-    margin-left: 10px; }
+    width: 40px;
+    text-align: right;
+    display: inline-block; }
   #market-data #marketDataTable span.fall {
     color: #f40600;
-    font-weight: bold;
-    margin-left: 10px; }
+    text-align: right;
+    width: 40px;
+    display: inline-block; }
+
+.theme-lloydslist .article-related-content a, .theme-lloydslist .article-related-content .pop-out__reset-password, .theme-lloydslist .article-related-content .sortable-table__list-toggler, .theme-lloydslist .article-related-content .mobile-table-exit {
+  color: #1191D1 !important; }
+  .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
+    color: #002d4f !important; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

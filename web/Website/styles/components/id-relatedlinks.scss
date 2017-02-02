@@ -1,15 +1,14 @@
 .relatedlinks{
-	.related-left-rail{
-		float: left;
+	/*.related-left-rail{*/
+		width: 100%;
 		@include breakpoint('large') {
 			width: 66%;
 		}
 		@include breakpoint('medium') {
 			width: 100%;
 		}
-	}
+	/*}*/
 	.allrelatedlinks{
-		float: left;
 		width: 100%;
 		
 		@include breakpoint('medium') {

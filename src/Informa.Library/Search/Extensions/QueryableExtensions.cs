@@ -22,12 +22,16 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter, IItemReferences refs, IGlobalSitecoreService service, IVerticalRootContext verticalRootContext)
                         where T : ITaxonomySearchResults
         {
-            if (source == null || filter == null || !filter.TaxonomyIds.Any())
+            if (source == null || filter == null || (!filter.TaxonomyIds.Any() && !filter.ContentTypeTaxonomyIds.Any() && !filter.MediaTypeTaxonomyIds.Any()))
                 return source;
 
             var taxItems = filter.TaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
+            var contentTypeItems = filter.ContentTypeTaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
+            var mediaTypeItems = filter.MediaTypeTaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
             if (taxItems == null || !taxItems.Any())
-                return source;
+                if (contentTypeItems == null || !contentTypeItems.Any())
+                    if (mediaTypeItems == null || !mediaTypeItems.Any())
+                        return source;
 
             //breaking up the taxonomies by their respective folder to 'or' any within a folder and 'and' the folders together
             List<Guid> taxGuids = null;
@@ -90,7 +94,7 @@ namespace Informa.Library.Search.Extensions
 
             var predicate = PredicateBuilder.True<T>();
             taxGuids
-                .Select(g => GetPredicate<T>(service, taxItems, g))
+                .Select(g => GetPredicate<T>(service, taxItems, contentTypeItems, mediaTypeItems, g))
                 .Where(p => p != null)
                 .ToList()
                 .ForEach(i => predicate = predicate.And(i));
@@ -98,7 +102,7 @@ namespace Informa.Library.Search.Extensions
             return source.Filter(predicate);
         }
 
-        private static Expression<Func<T, bool>> GetPredicate<T>(IGlobalSitecoreService service, IEnumerable<ITaxonomy_Item> allItems, Guid folder) where T : ITaxonomySearchResults
+        private static Expression<Func<T, bool>> GetPredicate<T>(IGlobalSitecoreService service, IEnumerable<ITaxonomy_Item> allItems, IEnumerable<ITaxonomy_Item> contentTypeItems, IEnumerable<ITaxonomy_Item> mediaTypeItems, Guid folder) where T : ITaxonomySearchResults
         {
 
             var predicate = PredicateBuilder.False<T>();
@@ -106,25 +110,165 @@ namespace Informa.Library.Search.Extensions
             var folderItem = service.GetItem<IFolder>(folder);
             if (folderItem == null)
                 return null;
-
-            var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
-            if (list == null || !list.Any())
-                return null;
-
-            foreach (ITaxonomy_Item t in list)
+            if (folderItem._Path.Contains("Content Types"))
             {
-                var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
-                if (children != null && children.Any())
-                    list = list.Concat(children);
+                var list = contentTypeItems.Where(b => b._Path.StartsWith(folderItem._Path));
+                if (list == null || !list.Any())
+                    return null;
+
+                foreach (ITaxonomy_Item t in list)
+                {
+                    var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+                    if (children != null && children.Any())
+                        list = list.Concat(children);
+                }
+
+                foreach (var l in list)
+                {
+                    string id = l._Id.ToString();
+                    predicate = predicate.Or(p => p.ContentTypeTaxonomies.Contains(id));
+                }
+                return predicate;
+
+            }
+            else if (folderItem._Path.Contains("Media Type Icons"))
+            {
+                var list = mediaTypeItems.Where(b => b._Path.StartsWith(folderItem._Path));
+                if (list == null || !list.Any())
+                    return null;
+
+                foreach (ITaxonomy_Item t in list)
+                {
+                    var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+                    if (children != null && children.Any())
+                        list = list.Concat(children);
+                }
+
+                foreach (var l in list)
+                {
+                    string id = l._Id.ToString();
+                    predicate = predicate.Or(p => p.MediaTypeTaxonomies.Contains(id));
+                }
+                return predicate;
+            }
+            else
+            {
+
+                var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
+                if (list == null || !list.Any())
+                    return null;
+
+                foreach (ITaxonomy_Item t in list)
+                {
+                    var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+                    if (children != null && children.Any())
+                        list = list.Concat(children);
+                }
+
+                foreach (var l in list)
+                {
+                    predicate = predicate.Or(p => p.Taxonomies.Contains(l._Id));
+                }
+                return predicate;
             }
 
-            foreach (var l in list)
-            {
-                predicate = predicate.Or(p => p.Taxonomies.Contains(l._Id));
-            }
-
-            return predicate;
         }
+
+
+        //public static IQueryable<T> FilterContentTypeTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter, IItemReferences refs, IGlobalSitecoreService service, IVerticalRootContext verticalRootContext)
+        //        where T : ITaxonomySearchResults
+        //{
+        //    if (source == null || filter == null || !filter.ContentTypeTaxonomyIds.Any())
+        //        return source;
+
+        //    var taxItems = filter.ContentTypeTaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
+        //    if (taxItems == null || !taxItems.Any())
+        //        return source;
+
+        //    //breaking up the taxonomies by their respective folder to 'or' any within a folder and 'and' the folders together
+        //    Guid taxGuids = new Guid();
+        //    taxGuids = refs.ContentTypesFolder;
+
+        //    var predicate = PredicateBuilder.True<T>();
+        //    GetContentTypePredicate<T>(service, taxItems, taxGuids);
+
+        //    return source.Filter(predicate);
+        //}
+
+        //private static Expression<Func<T, bool>> GetContentTypePredicate<T>(IGlobalSitecoreService service, IEnumerable<ITaxonomy_Item> allItems, Guid folder) where T : ITaxonomySearchResults
+        //{
+
+        //    var predicate = PredicateBuilder.False<T>();
+
+        //    var folderItem = service.GetItem<IFolder>(folder);
+        //    if (folderItem == null)
+        //        return null;
+
+        //    var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
+        //    if (list == null || !list.Any())
+        //        return null;
+
+        //    foreach (ITaxonomy_Item t in list)
+        //    {
+        //        var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+        //        if (children != null && children.Any())
+        //            list = list.Concat(children);
+        //    }
+
+        //    foreach (var l in list)
+        //    {
+        //        predicate = predicate.Or(p => p.ContentTypeTaxonomies.Contains(l._Id));
+        //    }
+
+        //    return predicate;
+        //}
+
+        //public static IQueryable<T> FilterMediaTypeTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter, IItemReferences refs, IGlobalSitecoreService service, IVerticalRootContext verticalRootContext)
+        //        where T : ITaxonomySearchResults
+        //{
+        //    if (source == null || filter == null || !filter.MediaTypeTaxonomyIds.Any())
+        //        return source;
+
+        //    var taxItems = filter.MediaTypeTaxonomyIds.Select(a => service.GetItem<ITaxonomy_Item>(a));
+        //    if (taxItems == null || !taxItems.Any())
+        //        return source;
+
+        //    //breaking up the taxonomies by their respective folder to 'or' any within a folder and 'and' the folders together
+        //    Guid taxGuids = new Guid();
+        //    taxGuids = refs.MediaTypeIconsFolder;
+
+        //    var predicate = PredicateBuilder.True<T>();
+        //    GetMediaTypePredicate<T>(service, taxItems, taxGuids);
+        //    return source.Filter(predicate);
+        //}
+
+        //private static Expression<Func<T, bool>> GetMediaTypePredicate<T>(IGlobalSitecoreService service, IEnumerable<ITaxonomy_Item> allItems, Guid folder) where T : ITaxonomySearchResults
+        //{
+
+        //    var predicate = PredicateBuilder.False<T>();
+
+        //    var folderItem = service.GetItem<IFolder>(folder);
+        //    if (folderItem == null)
+        //        return null;
+
+        //    var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
+        //    if (list == null || !list.Any())
+        //        return null;
+
+        //    foreach (ITaxonomy_Item t in list)
+        //    {
+        //        var children = t._ChildrenWithInferType.OfType<ITaxonomy_Item>();
+        //        if (children != null && children.Any())
+        //            list = list.Concat(children);
+        //    }
+
+        //    foreach (var l in list)
+        //    {
+        //        predicate = predicate.Or(p => p.MediaTypeTaxonomies.Contains(l._Id));
+        //    }
+
+        //    return predicate;
+        //}
 
         public static IQueryable<T> FilterByPublications<T>(this IQueryable<T> source, IArticlePublicationFilter filter)
                         where T : IArticlePublicationResults

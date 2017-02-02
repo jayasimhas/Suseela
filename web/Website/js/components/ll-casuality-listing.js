@@ -23,7 +23,7 @@
 				//Appending Heading
 				$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
 				self.JumpToArray.push(data[key].casualtytitle);
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#" class="top"><span class="arrow"></span>Top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>');
 
 				//Appending Body
                 var CasualityData = data[key].casualtyData;
@@ -41,7 +41,7 @@
 
 			var Wrapper = Parent.find('tbody.visible-sm');
 			for(var key in data) {
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 pad-10"><a class="top" href="#"><span class="arrow"></span>Top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 pad-10"><a class="top" href="javascript: void(0);"><span class="arrow"></span>Top</a></td></tr>');
 
 				var HeaderItems = this.HeaderLinks;
 				var CasualData = data[key].casualtyData;
@@ -71,6 +71,15 @@
 			Parent.empty();
 			this.DesktopVersion(data, Parent);
 			this.MobileVersion(data, Parent);
+			$('table').on('click', 'a.top', function(){
+				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
+				if(window.matchMedia("(max-width: 400px)").matches){
+					$(window).scrollTop(tablePos - 40);
+				}
+				else{
+					$(window).scrollTop(tablePos);
+				}
+			});
 		},
 		FindHeaderLinks: function(data) {
 			for(var key in data) {

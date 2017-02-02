@@ -106,7 +106,7 @@
 	@include breakpoint('small') {
 		.showinMob{
 			display: block;
-			background: #9e101d;
+			background: #DE4361;
 			padding: 10px 0 10px 13px;
 			text-transform: uppercase;
 			color: #fff;
@@ -121,4 +121,17 @@
 	}
 }
 
- 
+.article-related-content{
+	h2{
+		margin-bottom: 1.5rem;
+	}
+}
+
+.theme-insuranceday{
+	a{
+		color: #DE4361 !important;
+		&:hover, &:focus{
+			color: #91211E !important;
+		}
+	}
+}

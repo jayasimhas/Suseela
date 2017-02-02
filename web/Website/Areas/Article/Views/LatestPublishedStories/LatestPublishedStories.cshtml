@@ -26,7 +26,7 @@
     @Html.Hidden("mediaType", Model.MediaType)
     @Html.Hidden("contentType", Model.ContentType)
 
-    @if (Model.MaxStoriesToDisplay > 4 && Model.News.Count() >= 4)
+    @if (Model.MaxStoriesToDisplay > 4 && Model.News.Count() >= 4 || Model.MaxStoriesToDisplay == 0 && Model.News.Count() >= 4)
     {
         <a href="#" class="submit">@Model.LoadMoreText</a>
     }

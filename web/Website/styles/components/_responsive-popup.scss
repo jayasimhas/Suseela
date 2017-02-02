@@ -35,6 +35,9 @@
     float: right;
     position: relative;
     width: 15px !important;
+    @include breakpoint('small') {
+        display: none;
+    }
     &[type="ascending"] {
         position: absolute;
         top: 15px;
@@ -73,6 +76,11 @@
     .tableRow { 
         display: table-row;
         &:nth-child(odd) {background-color: $color-concrete-table-gray;}
+        &:hover {
+            .tableCell {
+                background-color: #efd0d8;
+            }
+        }
     }
     .tableHeading { 
         display: table-header-group;

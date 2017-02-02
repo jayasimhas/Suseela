@@ -10,5 +10,11 @@ namespace Informa.Library.Search.Results
 		//[IndexField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
         [IndexField("taxonomylist_sm")]
 		List<Guid> Taxonomies { get; set; }
-	}
+
+        [IndexField("content_type_s")]
+        List<string> ContentTypeTaxonomies { get; set; }
+
+        [IndexField("media_type_s")]
+        List<string> MediaTypeTaxonomies { get; set; }
+    }
 }
