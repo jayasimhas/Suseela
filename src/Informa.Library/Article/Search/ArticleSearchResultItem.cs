@@ -13,6 +13,9 @@ namespace Informa.Library.Article.Search
         public bool IsLatestVersion { get; set; }
 
         public List<Guid> Taxonomies { get; set; }
+        public List<string> ContentTypeTaxonomies { get; set; }
+        public List<string> MediaTypeTaxonomies { get; set; }
+
         [IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
         public DateTime ActualPublishDate { get; set; }
         public string ArticleNumber { get; set; }

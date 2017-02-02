@@ -35,17 +35,18 @@ namespace Informa.Web.Areas.Article.Controllers
             AuthorService = authorService;
             ArticleListableFactory = articleListableFactory;
 
+            Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_Published_Stories_Options>();
             if (Parameters == null) return;
             Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
             if (Parameters.Media_Type != null)
             {
-                MediaType = Parameters.Media_Type._Id;
+                MediaType = Parameters.Media_Type;
             }
             if (Parameters.Content_Type != null)
             {
-                ContentType = Parameters.Content_Type._Id;
+                ContentType = Parameters.Content_Type;
             }
             ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             PublicationName = rootContext.Item.Publication_Name;
@@ -61,11 +62,12 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Topics != null) filter.TaxonomyIds.AddRange(Topics);
             if (PublicationName != null) filter.PublicationNames.Add(PublicationName);
             if (Authors != null) filter.AuthorGuids.AddRange(Authors);
-            if (MediaType != null && MediaType != Guid.Empty) filter.TaxonomyIds.Add(MediaType);
-            if (ContentType != null && ContentType != Guid.Empty) filter.TaxonomyIds.Add(ContentType);
+            if (!string.IsNullOrEmpty(MediaType)) filter.MediaTypeTaxonomyIds.Add(MediaType);
+            if (!string.IsNullOrEmpty(ContentType)) filter.ContentTypeTaxonomyIds.Add(ContentType);
 
             latest.MaxStoriesToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
-            if (latest.MaxStoriesToDisplay < 4)
+
+            if (latest.MaxStoriesToDisplay < 4 && latest.MaxStoriesToDisplay != 0)
             {
                 filter.PageSize = latest.MaxStoriesToDisplay;
             }
@@ -89,7 +91,7 @@ namespace Informa.Web.Areas.Article.Controllers
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
         [HttpPost]
-        public string GetLatestNews(IEnumerable<Guid> subjectIds, string publicationName, IList<string> authorGuids, int itemsToDisplay, int MaxStoriesToDisplay, Guid mediaType, Guid contentType)
+        public string GetLatestNews(IEnumerable<Guid> subjectIds, string publicationName, IList<string> authorGuids, int itemsToDisplay, int MaxStoriesToDisplay, string mediaType, string contentType)
         {
 
             var filter = ArticleSearch.CreateFilter();
@@ -98,10 +100,10 @@ namespace Informa.Web.Areas.Article.Controllers
             if (subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
             if (publicationName != null) filter.PublicationNames.Add(publicationName);
             if (authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
-            if (mediaType != null && mediaType != Guid.Empty) filter.TaxonomyIds.Add(mediaType);
-            if (contentType != null && contentType != Guid.Empty) filter.TaxonomyIds.Add(contentType);
+            if (!string.IsNullOrEmpty(mediaType)) filter.MediaTypeTaxonomyIds.Add(mediaType);
+            if (!string.IsNullOrEmpty(contentType)) filter.ContentTypeTaxonomyIds.Add(contentType);
 
-            if (itemsToDisplay + 4 > MaxStoriesToDisplay)
+            else if (itemsToDisplay + 4 > MaxStoriesToDisplay && MaxStoriesToDisplay != 0)
             {
                 filter.PageSize = MaxStoriesToDisplay - itemsToDisplay;
             }
@@ -130,8 +132,8 @@ namespace Informa.Web.Areas.Article.Controllers
         public IEnumerable<Guid> Topics { get; set; }
         public int ItemsToDisplay { get; set; }
         public string PublicationName { get; set; }
-        public Guid ContentType { get; set; }
-        public Guid MediaType { get; set; }
+        public string ContentType { get; set; }
+        public string MediaType { get; set; }
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();

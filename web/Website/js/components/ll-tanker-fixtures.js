@@ -18,23 +18,27 @@
 			return optionStr;
 		},
 		renderTable: function(tableData){
-			var self = this;
-			self.sendHTTPRequest(tableData);
-			
+			var self = this, loadDateVal = $('#selectDay option').val();
+
+			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#selectDay', function(){
-				var searchData = tableData;
-				/*$.ajax({
-					url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
-					data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
-					dataType: 'json',
-					type: 'GET',
-					success: function (searchData) {*/
-						self.sendHTTPRequest(searchData);
-					/*},
-					error: function (err) {
-						console.log(err)  
-					}
-				});*/
+				var selectDateVal = $('#selectDay option').val();
+				self.callAjaxFn(selectDateVal);
+			});
+		},
+		callAjaxFn: function(seldateVal){
+			 var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function (err) {
+					console.log(err);
+				}
 			});
 		},
 		sendHTTPRequest: function(searchData){
@@ -93,16 +97,20 @@
 				$.each(value, function(key, val){
 					mobileStr += '<thead class="table_head">';
 					mobileStr += '<tr>';
-					mobileStr += '<th colspan="8" class="pad-full-10">'+key+'</th>';
+					mobileStr += '<th colspan="2" class="pad-full-10">'+key+'</th>';
 					mobileStr += '</tr>';
 					mobileStr += '</thead>';
 					
 					mobileStr += '<tbody class="visible-sm">';
 					$.each(val, function(i, v){
+						var indx = 0;
 						for(var prop in v){
+							indx++;
+							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
+							if(borTop !== '') mobileStr += '<tr class="borTop"><td></td></tr>';
 							mobileStr += '<tr>';
-							mobileStr += '<td class="pad-10 R21_GrayColor">'+prop+'</td>';
-							mobileStr += '<td class="pad-10 R21_GrayColorVal">'+v[prop]+'</td>';
+							mobileStr += '<td class="pad-10 mobleftCol">'+prop+'</td>';
+							mobileStr += '<td class="pad-10 mobrigCol">'+v[prop]+'</td>';
 							mobileStr += '</tr>';
 						}
 					});
@@ -112,15 +120,15 @@
 			});
 			return mobileStr;
 		},
-		init: function(dateObj, tableDataObj) {
-			this.renderDateData(dateObj);
-			this.renderTable(tableDataObj);
+		init: function() {
+			//this.renderDateData(dateObj);
+			this.renderTable();
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(window.dateOptions, window.tableObj);
+			tankerFixtures.init();
 		}
 	});
 })();

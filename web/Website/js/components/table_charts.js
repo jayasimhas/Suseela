@@ -51,13 +51,35 @@ $(function() {
 			$('.graphsPan').removeClass('owl-carousel');
 			$('.loadChart').removeClass('item');
 		}
+	
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			autoPlay: false,
+			nav: true,
+			navContainer: '#customNav',
+			dotsContainer: '#customDots',
+			slideBy: 4,
+			 navText: [
+				  "<img src='/dist/img/prev-horizontal.png'/>",
+				  "<img src='/dist/img/next-horizontal.png'/>"
+				  ],
+			responsive:{
+				0:{
+				items:4
+				},
+				678:{
+				items:4
+				},
+				320:{
+				 items:1
+				},
+				480:{
+				 items:1
+				},
+				1000:{
+				items:4
+				}
+			}
+		});
 	}
-	PrintCompanyGraph(chartData_GWP, "chartdiv1", "line");
-	PrintCompanyGraph(chartData_NWP, "chartdiv2", "column");
-    PrintCompanyGraph(chartData_UR, "chartdiv3", "line");
-    PrintCompanyGraph(chartData_NP, "chartdiv4", "column");
-    PrintCompanyGraph(chartData_SF, "chartdiv5", "line");
-    PrintCompanyGraph(chartData_NWPNR, "chartdiv6", "column");
-    PrintCompanyGraph(chartData_SFNR, "chartdiv7", "line");
-    PrintCompanyGraph(chartData_NPSFR, "chartdiv8", "column");
 });

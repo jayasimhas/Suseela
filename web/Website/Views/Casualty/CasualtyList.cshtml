@@ -1,115 +1,105 @@
 ﻿@model Informa.Web.ViewModels.Casualty.CasualtyListViewModel
-@if (Model.IsUserAuthenticated)
+
+@if (!string.IsNullOrEmpty(Model.jsonCasualtyData))
 {
-    if (!string.IsNullOrEmpty(Model.jsonCasualtyData))
-    {
-        <script type="text/javascript">
-            var jsonCasualtyListing = Model.jsonCasualtyData;
-        </script>
-    }
-    else
-    {
-        <script type="text/javascript">
-            var jsonCasualtyListing = [{
-                "11-01-2017": {
-                    "casualtymarine": {
-                        "casualtytitle": "MARINE-1",
-                        "casualtyData": [
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "22",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          },
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "23",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          }
-                        ]
-                    },
-                    "casualtyseizures": {
-                        "casualtytitle": "SEIZURES-1",
-                        "casualtyData": [
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "24",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          },
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "25",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          }
-                        ]
-                    }
-                },
-                "10-01-2017": {
-                    "casualtymarine": {
-                        "casualtytitle": "MARINE-2",
-                        "casualtyData": [
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "22",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          },
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "23",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          }
-                        ]
-                    },
-                    "casualtyseizures": {
-                        "casualtytitle": "SEIZURES-2",
-                        "casualtyData": [
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "24",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          },
-                          {
-                              "Title": "APL DENVER (Gibraltar)",
-                              "incidentId": "25",
-                              "Date of Incident": "03.01.2017",
-                              "Area": "South China, Indo China, Indonesia and Philippines"
-                          }
-                        ]
-                    }
-                }
-            }]
-        </script>
-    }
-    <input type="hidden" id="casualtyDetailUrl" name="casualtyDetailUrl" value="@Model.CasualtyDetailPageUrl" />
-    <div class="small_table">
-        <div class="table-responsive casualty-table-theme">
-            <h5 class="secondary_heading">@Model.Title</h5>
-            <hr />
-            <div class="ll-casualty-form">
-                <div class="form-control">
-                    <label for="relDate" style="float: left;">@Model.FilterByDateDropdownTitle</label>
-                    @Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues, new { Id = "relDate", @class = "common-field inline" })
-                </div>
-                <div class="form-control jumpToSection">
-                    <label for="jumpTo">@Model.FilterBySectionDropdownTitle</label>
-                    <select name="jumpTo" id="jumpTo" class="common-field inline"></select>
-                </div>
-                <table class="table" id="casualty-listing-table"></table>
-            </div>
-        </div>
-    </div>
+    <script type="text/javascript">
+        var jsonCasualtyListing = Model.jsonCasualtyData;
+    </script>
 }
 else
 {
-    <div class="article-call-to-action">
-        @{
-            Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel);
-        }
-    </div>
+    <script type="text/javascript">
+        var jsonCasualtyListing = [{
+            "11-01-2017": {
+                "casualtymarine": {
+                    "casualtytitle": "MARINE-1",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "22",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "23",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                },
+                "casualtyseizures": {
+                    "casualtytitle": "SEIZURES-1",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "24",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "25",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                }
+            },
+            "10-01-2017": {
+                "casualtymarine": {
+                    "casualtytitle": "MARINE-2",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "22",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "23",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                },
+                "casualtyseizures": {
+                    "casualtytitle": "SEIZURES-2",
+                    "casualtyData": [
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "24",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      },
+                      {
+                          "Title": "APL DENVER (Gibraltar)",
+                          "incidentId": "25",
+                          "Date of Incident": "03.01.2017",
+                          "Area": "South China, Indo China, Indonesia and Philippines"
+                      }
+                    ]
+                }
             }
+        }]
+    </script>
+}
+<input type="hidden" id="casualtyDetailUrl" name="casualtyDetailUrl" value="@Model.CasualtyDetailPageUrl" />
+<div class="small_table">
+    <div class="table-responsive casualty-table-theme">
+        <h5 class="secondary_heading">@Model.Title</h5>
+        <hr />
+        <div class="ll-casualty-form">
+            <div class="form-control">
+                <label for="relDate" style="float: left;">@Model.FilterByDateDropdownTitle</label>
+                @Html.DropDownList("FilterByDateDropDown", Model.FilterByDateDropdownValues, new { Id = "relDate", @class = "common-field inline" })
+            </div>
+            <div class="form-control jumpToSection">
+                <label for="jumpTo">@Model.FilterBySectionDropdownTitle</label>
+                <select name="jumpTo" id="jumpTo" class="common-field inline"></select>
+            </div>
+            <table class="table" id="casualty-listing-table"></table>
+        </div>
+    </div>
+</div>

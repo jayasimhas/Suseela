@@ -1,6 +1,4 @@
-﻿@model Informa.Web.ViewModels.Casualty.MarketDataViewModel
-@*<script type="text/javascript">
-    var tableObj = [
+﻿[
 				  {
 				      "Clean Fixtures": [{
 				          "Voyage From": "Persian Gulf",
@@ -88,46 +86,3 @@
                             }]
 					}
     ]
-
-</script>*@
-
-<div class="small_table">
-    <div class="article-left-rail">
-        <div class="table-responsive" id="tanker-fixtures">
-            <h2>@Model.PageTitle</h2>
-            <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
-            <hr />
-
-            <div class="lli-brand-container shallow-bottom">
-                <div class="lli-brand-box">
-                    @Model.TableSubTitle
-                    <fieldset>
-                        <div class="form-control">
-                            <label for="selectDay">Select a day: </label>
-                            <div class="select-field">
-                               
-                                @Html.DropDownList("selectDay", Model.PopulateByAreaDropdown)
-                            </div>
-                        </div>
-                        <div class="dataProImg">
-                            <span>@Model.DataProvider</span>
-                            @if (!string.IsNullOrEmpty(Model.ProviderLogo?.Src))
-                            {
-                                <img src="@Model.ProviderLogo.Src" alt="marketLogo" />
-                            }
-                            
-                        </div>
-                        
-                         @Html.HiddenFor(m => m.TankerFixHiddenVal)
-                    </fieldset>
-                    
-                </div>
-                
-            </div>
-            <div id="tankerFixtures">
-
-            </div>
-        </div>
-    </div>
-</div>
-

@@ -29,5 +29,24 @@ namespace Informa.Web.Areas.Download.Controllers
                 return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/ShippingMovements.json"));
             }
         }
+
+        //GET: Account/JsonDataFromFeed  
+        public string ReadJsonMarketFixture(string dateVal, string feedUrl)
+        {
+            if (!string.IsNullOrEmpty(feedUrl) )
+            {
+                string fixturefeedUrl = string.Format(feedUrl);
+                return CompanyResultService.GetCompanyFeeds(fixturefeedUrl).Result;
+            }
+            else
+            {
+                if(dateVal == "13-Jan-17")
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureTable.json"));
+                else if(dateVal == "31-Dec-16")
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/marketFixDummyData.json"));
+                else
+                    return System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketFixtureDummy.json"));
+            }
+        }
     }
 }

@@ -15,16 +15,13 @@ namespace Informa.Web.ViewModels.Casualty
     {
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ICompaniesResultService CompanyResultService;
-        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
-        public LatestCasualtiesViewModel(ISiteRootContext siterootContext, 
+        public LatestCasualtiesViewModel(ISiteRootContext siterootContext,
             ICompaniesResultService companyResultService,
             IAuthenticatedUserContext authenticatedUserContext)
         {
             SiterootContext = siterootContext;
             CompanyResultService = companyResultService;
-            AuthenticatedUserContext = authenticatedUserContext;
         }
-        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         /// <summary>
         /// HomePage URL
         /// </summary>

@@ -7,10 +7,10 @@
 	font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 	width: 790px;
 	
-	@media screen and (min-width: 800px) and (max-width: 1024px) {
-		width: 620px;
+	@media screen and (min-width: 801px) and (max-width: 1024px) {
+		width: 594px;
 	}
-	@include breakpoint('small') {
+	@include breakpoint('medium') {
 		width: 100%;
 	}
 	.eachChartData {
@@ -31,10 +31,11 @@
 		}
 		.amChartsCompareList {
 			border: 1px solid #ccc;
-			
+			height: auto !important; 
 			> div{
-				margin-bottom: 5px;
+				/*margin-bottom: 5px;*/
 				font-size: 12px;
+				height: 22px !important;
 			}
 		}
 		.dataTitle{
@@ -105,7 +106,7 @@
 	@include breakpoint('small') {
 		.showinMob{
 			display: block;
-			background: #9e101d;
+			background: #DE4361;
 			padding: 10px 0 10px 13px;
 			text-transform: uppercase;
 			color: #fff;
@@ -120,4 +121,17 @@
 	}
 }
 
- 
+.article-related-content{
+	h2{
+		margin-bottom: 1.5rem;
+	}
+}
+
+.theme-insuranceday{
+	a{
+		color: #DE4361 !important;
+		&:hover, &:focus{
+			color: #91211E !important;
+		}
+	}
+}

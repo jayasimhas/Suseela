@@ -13,20 +13,17 @@ namespace Informa.Web.ViewModels.Casualty
 {
     public class CasualtyDetailViewModel : GlassViewModel<I___BasePage>
     {
-        protected readonly ICompaniesResultService CompanyResultService;
-        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly ICompaniesResultService CompanyResultService;       
         public readonly ICallToActionViewModel CallToActionViewModel;
         public CasualtyDetailViewModel(ICompaniesResultService companyResultService,
             IRenderingContextService renderingParametersService,
             IAuthenticatedUserContext authenticatedUserContext,
             ICallToActionViewModel callToActionViewModel)
         {
-            CompanyResultService = companyResultService;
-            AuthenticatedUserContext = authenticatedUserContext;
+            CompanyResultService = companyResultService;            
             CallToActionViewModel = callToActionViewModel;
             feedUrlConfigurationItem = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
-        }
-        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        }      
         /// <summary>
         /// External Fee URL
         /// </summary>
