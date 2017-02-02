@@ -17537,6 +17537,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.WorkflowFieldName, Setting = SitecoreFieldSettings.InferType)]
         Guid Workflow { get; set; }
+
+        /// <summary>
+        /// The Enrolment Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: ae2e4baa-b601-48df-9c09-d06c115bd7fe</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Enrolment_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Enrolment_Link { get; set; }
+
         /// <summary>
         /// The Register Link field.
         /// <para></para>
@@ -18732,6 +18743,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.WorkflowFieldName, Setting = SitecoreFieldSettings.InferType)]
         Guid Workflow { get; set; }
+
+        /// <summary>
+        /// The Enrolment Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: ae2e4baa-b601-48df-9c09-d06c115bd7fe</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Enrolment_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Enrolment_Link { get; set; }
+
+
         /// <summary>
         /// The Register Link field.
         /// <para></para>
@@ -19430,7 +19453,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID WorkflowFieldId = new ID("57389b93-9681-4e67-8fb0-4e04e532716c");
         public const string WorkflowFieldName = "Workflow";
 
-
+        public static readonly ID Enrolment_LinkFieldId = new ID("ae2e4baa-b601-48df-9c09-d06c115bd7fe");
+        public const string Enrolment_LinkFieldName = "Enrolment Link";
 
         public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
         public const string Register_LinkFieldName = "Register Link";
@@ -25998,7 +26022,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID WorkflowFieldId = new ID("57389b93-9681-4e67-8fb0-4e04e532716c");
         public const string WorkflowFieldName = "Workflow";
 
-
+        public static readonly ID Enrolment_LinkFieldId = new ID("ae2e4baa-b601-48df-9c09-d06c115bd7fe");
+        public const string Enrolment_LinkFieldName = "Enrolment Link";
 
         public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
         public const string Register_LinkFieldName = "Register Link";
