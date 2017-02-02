@@ -1223,6 +1223,7 @@
       <DependentUpon>ViewDCDXML.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AdViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePackageViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleBodyContentModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleEntitledViewModel.cs" />
@@ -2282,9 +2283,13 @@
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\CasualtyListing.json" />
     <Content Include="Views\Casualty\StockChart.json" />
+
     <Content Include="Views\Casualty\MarketFixtureTable.json" />
     <Content Include="Views\Casualty\MarketFixtureDummy.json" />
     <Content Include="Views\Casualty\marketFixDummyData.json" />
+
+    <Content Include="Views\Article\ArticlePackage.cshtml" />
+
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

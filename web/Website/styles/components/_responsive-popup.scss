@@ -35,6 +35,9 @@
     float: right;
     position: relative;
     width: 15px !important;
+    @include breakpoint('small') {
+        display: none;
+    }
     &[type="ascending"] {
         position: absolute;
         top: 15px;
