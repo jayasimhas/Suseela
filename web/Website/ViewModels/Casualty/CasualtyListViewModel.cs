@@ -27,26 +27,20 @@ namespace Informa.Web.ViewModels.Casualty
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ICompaniesResultService CompanyResultService;
-        private readonly IAuthenticatedUserContext AuthenticatedUserContext;
-        public readonly ICallToActionViewModel CallToActionViewModel;
+
 
         public CasualtyListViewModel(IGlobalSitecoreService globalService,
             ISiteRootContext siterootContext,
             ITextTranslator textTranslator,
             ICompaniesResultService companyResultService,
-            IRenderingContextService renderingParametersService,
-            IAuthenticatedUserContext authenticatedUserContext,
-            ICallToActionViewModel callToActionViewModel)
+            IRenderingContextService renderingParametersService)
         {
             GlobalService = globalService;
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
             CompanyResultService = companyResultService;
-            AuthenticatedUserContext = authenticatedUserContext;
-            CallToActionViewModel = callToActionViewModel;
             feedUrlConfigurationItem = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
         }
-        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         /// <summary>
         /// feed URL
         /// </summary>
