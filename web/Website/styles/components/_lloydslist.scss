@@ -285,7 +285,9 @@
 		}
 	}
 	.borTop{
+		height: 1px;
 		border-top: 1px solid #d1d3d4;
+		display: block;
 	}
 }
  
@@ -415,9 +417,7 @@
 		}
 		
 		.borTop{
-			height: 1px;
 			border-top: 1px solid #d1d3d4;
-			display: block;
 		}
 		.pad-20{
 			padding: 10px 20px;
