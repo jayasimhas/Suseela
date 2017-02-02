@@ -8681,7 +8681,9 @@ div#feedbacklite.fbl_r {
       color: #1191d1;
       text-decoration: none; }
   #market-data #marketDataTable .borTop {
-    border-top: 1px solid #d1d3d4; }
+    height: 1px;
+    border-top: 1px solid #d1d3d4;
+    display: block; }
   #market-data #marketDataTable .pad-20 {
     padding: 10px 20px; }
   #market-data #marketDataTable .table_head {
@@ -8716,6 +8718,11 @@ div#feedbacklite.fbl_r {
     text-align: right;
     width: 40px;
     display: inline-block; }
+
+.theme-lloydslist .article-related-content a, .theme-lloydslist .article-related-content .pop-out__reset-password, .theme-lloydslist .article-related-content .sortable-table__list-toggler, .theme-lloydslist .article-related-content .mobile-table-exit {
+  color: #1191D1 !important; }
+  .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
+    color: #002d4f !important; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

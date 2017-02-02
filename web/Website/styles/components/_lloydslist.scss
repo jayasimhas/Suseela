@@ -415,7 +415,9 @@
 		}
 		
 		.borTop{
+			height: 1px;
 			border-top: 1px solid #d1d3d4;
+			display: block;
 		}
 		.pad-20{
 			padding: 10px 20px;
@@ -461,6 +463,17 @@
 			text-align: right;
 			width: 40px;
 			display: inline-block;
+		}
+	}
+}
+
+.theme-lloydslist{
+	.article-related-content{
+		a{
+			color: #1191D1 !important;
+			&:hover{
+				color: #002d4f !important;
+			}
 		}
 	}
 }
