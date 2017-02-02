@@ -19,7 +19,7 @@
 				border: 1px solid #d1d3d4;
 			}
 			.table_head{
-				background-color: #9e101d;
+				background-color: #91211E;
 				color: $color-white;
 				padding: 10px;
 				padding-right: 95px !important;
@@ -144,8 +144,14 @@
 // #annualresults.ID-Responsive-Table .owl-item.active {
 // 	width: 5% !important;
 // }
-#quarterlyresults .tableRow > .tableCell, #financialresults .tableRow > .tableCell {
+#quarterlyresults .tableRow > .tableCell {
 	text-align: center;
+}
+#financialresults .tableRow > .tableCell, #financialresults .tableHead {
+	text-align: right;
+}
+#financialresults .tableHead:first-child {
+	text-align: left;
 }
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
