@@ -6359,6 +6359,80 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
+
+
+    /// <summary>
+    /// IPackage_Settings Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Package Settings</para>	
+    /// <para>ID: {568DAFE7-6794-43DB-B387-E161B451F6B1}</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IPackage_SettingsConstants.TemplateIdString)]
+    public partial interface IPackage_Settings : IGlassBase
+    {
+        /// <summary>
+        /// The Select_Package field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 4dd4c91f-13e2-4023-9204-69bfca0cf2be</para>
+        /// </summary>
+        [SitecoreField(IPackage_SettingsConstants.Select_PackageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Select_Package { get; set; }
+        /// <summary>
+        /// The Hide Image field.
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
+        /// </summary>
+        [SitecoreField(IPackage_SettingsConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_Image { get; set; }
+    }
+
+
+    /// <summary>
+    /// IPackage_Settings Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Package Settings</para>	
+    /// <para>ID: {568DAFE7-6794-43DB-B387-E161B451F6B1}</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IPackage_Settings__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Select_Package field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 4dd4c91f-13e2-4023-9204-69bfca0cf2be</para>
+        /// </summary>
+        [SitecoreField(IPackage_SettingsConstants.Select_PackageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Select_Package { get; set; }
+        /// <summary>
+        /// The Hide Image field.
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
+        /// </summary>
+        [SitecoreField(IPackage_SettingsConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Hide_Image { get; set; }
+    }
+
+    public static partial class IPackage_SettingsConstants
+    {
+
+        public const string TemplateIdString = "568DAFE7-6794-43DB-B387-E161B451F6B1";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Package Settings";
+
+
+        public static readonly ID Select_PackageFieldId = new ID("087ABDE3-C36B-454C-B07B-A66047738B82");
+        public const string Select_PackageFieldName = "Select Package";
+
+        public static readonly ID Hide_ImageFieldId = new ID("DF9F66E7-2CE8-457D-B9B6-D1B48F41CDE0");
+        public const string Hide_ImageFieldName = "Hide Image";
+    }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
     /// <para></para>
@@ -13804,6 +13878,84 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID DescriptionFieldId = new ID("7B94C0C4-3697-4E20-9D8A-CC2BFDF9500D");
         public const string DescriptionFieldName = "Description";
     }
+
+}
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+    /// <summary>
+    /// Article_Package Interface
+    /// <para>Path: /sitecore/templates/User Defined/Components/Article Package</para>	
+    /// <para>ID: {F980FD3F-C949-4289-901C-CC65BB6B1E5D}</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IArticle_PackageConstants.TemplateIdString)]
+    public partial interface IArticle_Package : IGlassBase
+    {
+        /// <summary>
+        /// Package Title field.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.Package_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PackageTitle { get; set; }
+
+        /// <summary>
+        /// Package Articles
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.Package_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Package_Articles { get; set; }
+
+        /// <summary>
+        /// InActive Field.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.InActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsInActive { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// Article_Package Interface
+    /// <para>Path: /sitecore/templates/User Defined/Components/Article Package</para>	
+    /// <para>ID: {F980FD3F-C949-4289-901C-CC65BB6B1E5D}</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IArticle_Package__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Package Title field.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.Package_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string PackageTitle { get; set; }
+
+        /// <summary>
+        /// Package Articles
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.Package_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Package_Articles { get; set; }
+
+        /// <summary>
+        /// InActive Field.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.InActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsInActive { get; set; }
+     }
+
+    public static partial class IArticle_PackageConstants
+    {
+
+        public const string TemplateIdString = "59B467D0-59FB-4730-9380-E63109F18874";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Article Package";
+
+        public static readonly ID Package_TitleFieldId = new ID("21E52E91-D4CD-44F5-B34B-5C4FA4D1BE13");
+        public const string Package_TitleFieldName = "Package Title";
+
+        public static readonly ID Package_ArticlesFieldId = new ID("4E91EE45-BD21-4FEA-8781-C0C959B24695");
+        public const string Package_ArticlesFieldName = "Package Articles";
+
+        public static readonly ID InActiveFieldId = new ID("14CD1BB4-875D-4E82-A64F-BD12721D6C98");
+        public const string InActiveFieldName = "InActive";
+
+     }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
