@@ -380,20 +380,87 @@
 }
  
 #market-data{
-	#marketDataTable{
-		width: 760px;
+	h2{
+		font-size: 46px;
+		font-weight: bold;
+		margin-bottom: 40px;
 		@include breakpoint('small') {
-    		width: 100%;
-    	}
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+	}
+	#marketDataTable{
+		width: 790px;
+		font-size: 0.9375rem;
+		font-family: "Roboto", Helvetica, Arial, sans-serif;
+		@media screen and (min-width: 801px) and (max-width: 1024px) {
+			width: 594px;
+		}
+		@include breakpoint('medium') {
+			width: 100%;
+		}
+		.pad-10 {
+			padding: 16px 10px;
+		}
+		.mobleftCol{
+			font-size: 18px;
+			border-right: 1px solid #e9e9e9;
+		}
+		.mobrigCol{
+			font-size: 16px;
+			a{
+				color: #1191d1;
+				text-decoration: none;
+			}
+		}
+		
+		.borTop{
+			border-top: 1px solid #d1d3d4;
+		}
+		.pad-20{
+			padding: 10px 20px;
+		}
+		.table_head{
+			background-color: #0f5487;
+			color: #ffffff;
+			th{
+				font-size: 16px;
+				font-weight: normal;
+			}
+			.visible-lg{
+				background: #1191d1;
+				color: #fff;
+				font-weight: normal;
+			}
+		}
+		.oddCls{
+			background: #f1f1f1;
+		}
+		tbody.visible-lg td{
+			border-bottom: 1px solid #d1d3d4;
+			border-right: 1px solid #d1d3d4;
+		}
+		tbody.visible-lg tr td:last-child{
+			border-right: none;
+		}
+		tbody.visible-lg tr:last-child td{
+			border-bottom: none;
+		}
+		span.numData{
+			width: 40px;
+			display: inline-block;
+		}
 		span.rise {
 			color: #56c405;
-			font-weight: bold;
-			margin-left: 10px;
+			width: 40px;
+			text-align: right;
+			display: inline-block;
 		}
 		span.fall {
 			color: #f40600;
-			font-weight: bold;
-			margin-left: 10px;
+			text-align: right;
+			width: 40px;
+			display: inline-block;
 		}
 	}
 }
