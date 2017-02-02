@@ -36,7 +36,7 @@ namespace Informa.Web.Areas.UserRequest
             string authorizationRequestUrl = string.Format(_authorizationRequestEndPoint,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
             SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username,
-            GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(!string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url : string.Empty));
+            GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(_siteRootItem?.Enrolment_Link != null && !string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url : string.Empty));
             return Redirect(authorizationRequestUrl);
         }
 
