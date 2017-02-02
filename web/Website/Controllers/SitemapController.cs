@@ -32,7 +32,7 @@ namespace Informa.Web.Controllers
                 SitemapQueryString = "?page=" + pageNo;
             }
             string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "") + SitemapQueryString;
-            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
+            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.SitemapQATesting";
             string xml = CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path));
 
             //provide default
