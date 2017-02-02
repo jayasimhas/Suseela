@@ -207,8 +207,7 @@
     </div>
 }
         @* * *  END ARTICLE - FEATURED IMAGE *@
-    @*@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))*@
-    <p>@Model.Body</p>
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
