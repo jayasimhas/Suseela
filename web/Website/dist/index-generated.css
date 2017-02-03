@@ -3427,7 +3427,8 @@ body.lightboxed {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #d1d3d4; }
   .ID-responsive-table-modal .container {
     background-color: #fff;
     margin: auto;
@@ -3436,7 +3437,7 @@ body.lightboxed {
     width: 80%; }
 
 .idi-table-heading {
-  background-color: #414042;
+  background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3459,16 +3460,25 @@ body.lightboxed {
       display: none; } }
   .sort[type="ascending"] {
     position: absolute;
-    top: 15px;
-    right: 21px;
+    top: 10px;
+    right: 15px;
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="ascending"] {
+        right: 10px; } }
   .sort[type="descending"] {
     position: absolute;
     top: 25px;
     right: 20px; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="descending"] {
+        right: 15px; } }
   .sort.active svg {
     fill: #ffffff; }
+  .sort svg {
+    height: 25px;
+    width: 20px; }
 
 .table_close {
   color: #231f20;
@@ -3481,11 +3491,13 @@ body.lightboxed {
   width: 100%; }
   @media (max-width: 800px) {
     .table-wrapper {
-      overflow-x: scroll; } }
+      overflow-x: scroll;
+      border: 1px solid #d1d3d4; } }
   .table-wrapper .table {
     display: table;
     width: 100%;
     border-collapse: inherit;
+    border: 1px solid #d1d3d4;
     border: none !important;
     font-family: "Roboto", Helvetica, Arial, sans-serif; }
   .table-wrapper .tableRow {
@@ -3494,8 +3506,6 @@ body.lightboxed {
       background-color: #f1f1f1; }
     .table-wrapper .tableRow:hover .tableCell {
       background-color: #efd0d8; }
-    .table-wrapper .tableRow .tableCell {
-      font-weight: 500; }
   .table-wrapper .tableHeading {
     display: table-header-group; }
   .table-wrapper .tableHead {
@@ -3524,7 +3534,8 @@ body.lightboxed {
   width: 100%;
   float: left;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table-sort {
     background: url("img/Bitmap.png");
     width: 7px !important;
@@ -3533,8 +3544,6 @@ body.lightboxed {
     @media (max-width: 480px) {
       .ID-Responsive-Table .table-sort {
         display: none; } }
-  .ID-Responsive-Table a.hidden-xs, .ID-Responsive-Table .hidden-xs.pop-out__reset-password, .ID-Responsive-Table .hidden-xs.sortable-table__list-toggler, .ID-Responsive-Table .hidden-xs.mobile-table-exit {
-    display: none; }
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
@@ -3542,11 +3551,17 @@ body.lightboxed {
     color: #ffffff;
     padding: 10px;
     padding-right: 95px !important; }
+    .ID-Responsive-Table .table_head:after {
+      clear: both; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
       font-weight: 700;
-      font-style: normal; }
+      font-style: normal;
+      float: left; }
+    .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
+      float: left;
+      margin: 5px 0 0 15px; }
     .ID-Responsive-Table .table_head .R16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3559,6 +3574,9 @@ body.lightboxed {
     float: left;
     width: 20%;
     z-index: 9; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .states_heading {
+        width: 40%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .states_heading {
         width: 40%; } }
@@ -3572,6 +3590,9 @@ body.lightboxed {
   .ID-Responsive-Table .owl-wrapper {
     width: 80%;
     float: right; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .owl-wrapper {
         width: 60%; } }
@@ -3598,13 +3619,16 @@ body.lightboxed {
     margin-right: 0;
     padding-right: 40px;
     height: 5em; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .year_heading {
+        padding-left: 10px; } }
   .ID-Responsive-Table .owl-dots {
     float: left;
     margin-top: 20px; }
     .ID-Responsive-Table .owl-dots .owl-dot span {
       background: #de4361; }
     .ID-Responsive-Table .owl-dots .owl-dot.active span {
-      background: #ffffff; }
+      background: #ffffff !important; }
     .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
       background: #ffffff; }
     .ID-Responsive-Table .owl-dots .owl-dot:hover span {
@@ -7307,20 +7331,24 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-style: normal;
       text-align: left; }
   .small_table .table-responsive .table .graybg {
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    color: #000; }
   .small_table .table-responsive .table .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
-    vertical-align: top; }
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    font-size: 15px;
+    font-size: 0.9375rem;
     color: #bb1528;
     font-style: normal;
-    font-weight: 700;
-    vertical-align: top; }
+    font-weight: 500;
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
@@ -7332,10 +7360,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         vertical-align: top; } }
   .small_table .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.3125em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
+    .small_table .table-responsive .table .R21_GrayColor.border-right {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.125em;
+      font-weight: 400; }
     @media (max-width: 480px) {
       .small_table .table-responsive .table .R21_GrayColor {
         vertical-align: top; } }
@@ -7378,11 +7410,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
 
-.small_table .table-responsive .pad-10 {
+.small_table .table-responsive .p-10 {
   padding: 10px; }
-  @media (max-width: 480px) {
-    .small_table .table-responsive .pad-10 {
-      padding: 10px 15px 10px; } }
+
+.small_table .table-responsive .pad-10 {
+  padding: 16px 10px; }
 
 .small_table .table-responsive .pad-full-10 {
   padding: 10px; }
@@ -7427,27 +7459,40 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
   color: #1191d1; }
 
-.casualty-table-theme .table thead {
-  background-color: #0f5487 !important; }
-
-.casualty-table-theme .table .top {
-  color: #58595b;
-  width: 40px;
-  height: 40px;
-  display: block;
-  border-left: 1px solid #979797;
-  text-decoration: none;
-  font-size: 17px; }
-  .casualty-table-theme .table .top span {
-    background: url("img/sprite-image.png") no-repeat 0 -606px;
-    width: 11px;
-    height: 8px;
-    display: inline-block;
-    margin-right: 8px; }
-
-.casualty-table-theme .table hr {
-  display: block !important;
-  margin: 0 !important; }
+.casualty-table-theme .table {
+  width: 790px !important; }
+  @media screen and (min-width: 801px) and (max-width: 1024px) {
+    .casualty-table-theme .table {
+      max-width: 594px !important; } }
+  @media (max-width: 800px) {
+    .casualty-table-theme .table {
+      width: 100% !important; } }
+  .casualty-table-theme .table .table_head {
+    color: #ffffff; }
+    .casualty-table-theme .table .table_head th {
+      font-size: 16px !important;
+      font-weight: normal !important; }
+    .casualty-table-theme .table .table_head .visible-lg {
+      background: #1191D1;
+      color: #fff;
+      font-weight: normal; }
+  .casualty-table-theme .table .top {
+    color: #58595b;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-left: 1px solid #979797;
+    text-decoration: none;
+    font-size: 17px; }
+    .casualty-table-theme .table .top span {
+      background: url("img/sprite-image.png") no-repeat 0 -606px;
+      width: 11px;
+      height: 8px;
+      display: inline-block;
+      margin-right: 8px; }
+  .casualty-table-theme .table hr {
+    display: block !important;
+    margin: 0 !important; }
 
 .casualty-table-theme .border-right {
   border-right: 1px solid #d1d3d4; }

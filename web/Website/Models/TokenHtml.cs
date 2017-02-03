@@ -132,7 +132,7 @@ namespace Informa.Web.Models
             tableauItem.ArticleTableauHostUrl = HostUrl;
             tableauItem.ArticleTableuLandingPageLinkLable = LandingPageLinkLable;
             //replace = HtmlHelper.Partial(partialName, tableauItem, new ViewDataDictionary { { "Index", i } });
-            var rep = MvcHelpers.GetRazorViewAsStringOver(tableauItem, partialName, new TempDataDictionary { { "Index", i } });
+            var rep = MvcHelpers.GetRazorViewAsString(tableauItem, partialName, new TempDataDictionary { { "Index", i } });
             return rep;
            // return replace.ToHtmlString();
         }

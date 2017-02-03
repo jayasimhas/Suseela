@@ -20,19 +20,22 @@
 				}
 				.graybg{
 				  background-color: $color-concrete-table-gray;
+				  color: #000;
 				}
 				.R16{
 				   @include textMix('Roboto', 1em, 400);
 				   font-style: normal;
 				   vertical-align: top;
+				   border-bottom: 1px solid #d1d3d4;
 				}
 				.RB16{
 				   font-family: "Roboto", Helvetica, Arial, sans-serif;
-				   font-size: 1em;
+				   font-size: 0.9375rem;
 				   color:$color-red;
 				   font-style: normal;
-				   font-weight: 700;
+				   font-weight: 500;
 				   vertical-align: top;
+				   border-bottom: 1px solid #d1d3d4;
 				}
 				.R21_RedColor{
 				   @include textMix('Roboto', 1.3125em, 400);
@@ -43,7 +46,10 @@
 				   }
 				}
 				.R21_GrayColor{
-				   @include textMix('Roboto', 1.3125em, 400);
+					&.border-right{
+						@include textMix('Roboto', 1.125em, 400);
+					}
+				   @include textMix('Roboto', 1em, 400);
 				   font-style: normal;
 				   color:$color-ship-gray;
 				   @include breakpoint('small'){
@@ -87,11 +93,11 @@
 					margin-bottom:30px;
 				}
 			}
-			.pad-10{
+			.p-10{
 				padding: 10px;
-				@include breakpoint('small'){
-					padding: 10px 15px 10px;
-				}
+			}
+			.pad-10{
+				padding: 16px 10px;
 			}
 			.pad-full-10{ padding: 10px;}
 			.pad-bottom-20{
@@ -149,8 +155,24 @@
 		color: #1191d1;
 	}
 	.table {
-		thead {
-			background-color: $color-secondary-color !important;
+		width: 790px !important;
+		@media screen and (min-width: 801px) and (max-width: 1024px) {
+			max-width: 594px !important;
+		}
+		@include breakpoint('medium') {
+			width: 100% !important;
+		}
+		.table_head{
+			color: #ffffff;
+			th{
+				font-size: 16px !important;
+				font-weight: normal !important;
+			}
+			.visible-lg{
+				background: #1191D1;
+				color: #fff;
+				font-weight: normal;
+			}
 		}
 		.top {
 			color: $color-abbey-gray;

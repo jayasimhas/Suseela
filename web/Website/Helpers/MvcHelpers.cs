@@ -28,7 +28,7 @@ namespace Informa.Web.Helpers
         /// <param name="filePath"></param>
         /// <param name="tempData"></param>
         /// <returns></returns>
-        public static string GetRazorViewAsStringOver(object model, string filePath, TempDataDictionary tempData)
+        public static string GetRazorViewAsString(object model, string filePath, TempDataDictionary tempData)
         {
             var st = new StringWriter();
             var context = new HttpContextWrapper(HttpContext.Current);
