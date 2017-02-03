@@ -72,6 +72,7 @@
         width: 100%;
         border-collapse: inherit;
         border: none !important;
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
     }
     .tableRow { 
         display: table-row;
@@ -80,6 +81,9 @@
             .tableCell {
                 background-color: #efd0d8;
             }
+        }
+        .tableCell {
+            font-weight: 500;
         }
     }
     .tableHeading { 
