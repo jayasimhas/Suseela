@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace Informa.Library.Search.Results
 {
-	public interface ITaxonomySearchResults
-	{
-		//[IndexField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
+    public interface ITaxonomySearchResults
+    {
+        //[IndexField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
         [IndexField("taxonomylist_sm")]
-		List<Guid> Taxonomies { get; set; }
+        List<Guid> Taxonomies { get; set; }
 
         [IndexField("content_type_s")]
-        List<string> ContentTypeTaxonomies { get; set; }
+        Guid ContentTypeTaxonomy { get; set; }
 
         [IndexField("media_type_s")]
-        List<string> MediaTypeTaxonomies { get; set; }
+        Guid MediaTypeTaxonomy { get; set; }
     }
 }

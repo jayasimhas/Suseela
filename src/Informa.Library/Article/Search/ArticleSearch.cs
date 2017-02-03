@@ -67,13 +67,11 @@ namespace Informa.Library.Article.Search
             {
                 ExcludeManuallyCuratedItems = new List<Guid>(),
                 TaxonomyIds = new List<Guid>(),
-                ContentTypeTaxonomyIds = new List<string>(),
-                MediaTypeTaxonomyIds = new List<string>(),
                 ArticleNumbers = new List<string>(),
                 PublicationNames = new List<string>(),
                 AuthorGuids = new List<string>(),
                 AuthorFullNames = new List<string>(),
-                CompanyRecordNumbers = new List<string>(),
+                CompanyRecordNumbers = new List<string>()
             };
         }
 
@@ -88,8 +86,8 @@ namespace Informa.Library.Article.Search
                     .FilterByAuthor(filter)
                     .FilterByCompany(filter)
                     .FilterTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
-                    //.FilterContentTypeTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
-                    //.FilterMediaTypeTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
+                    .FilterContentType(filter)
+                    .FilterByMediaType(filter)
                     .ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
                     .FilteryByLegacyArticleNumber(filter)

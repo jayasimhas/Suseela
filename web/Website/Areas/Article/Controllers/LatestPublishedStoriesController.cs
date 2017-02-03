@@ -40,14 +40,17 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Parameters == null) return;
             Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
-            if (Parameters.Media_Type != null)
-            {
-                MediaType = Parameters.Media_Type;
-            }
-            if (Parameters.Content_Type != null)
-            {
-                ContentType = Parameters.Content_Type;
-            }
+            MediaType = !string.IsNullOrEmpty(Parameters.Media_Type.ToString()) ? Parameters.Media_Type : Guid.Empty;
+            ContentType = !string.IsNullOrEmpty(Parameters.Content_Type.ToString()) ? Parameters.Content_Type : Guid.Empty;
+
+            //if (Parameters.Media_Type != null)
+            //{
+            //    MediaType = Parameters.Media_Type;
+            //}
+            //if (Parameters.Content_Type != null)
+            //{
+            //    ContentType = Parameters.Content_Type;
+            //}
             ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             PublicationName = rootContext.Item.Publication_Name;
 
@@ -62,8 +65,8 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Topics != null) filter.TaxonomyIds.AddRange(Topics);
             if (PublicationName != null) filter.PublicationNames.Add(PublicationName);
             if (Authors != null) filter.AuthorGuids.AddRange(Authors);
-            if (!string.IsNullOrEmpty(MediaType)) filter.MediaTypeTaxonomyIds.Add(MediaType);
-            if (!string.IsNullOrEmpty(ContentType)) filter.ContentTypeTaxonomyIds.Add(ContentType);
+            if (!string.IsNullOrEmpty(MediaType.ToString()) && MediaType != Guid.Empty) filter.MediaTypeTaxonomyId = MediaType;
+            if (!string.IsNullOrEmpty(ContentType.ToString()) && ContentType != Guid.Empty) filter.ContentTypeTaxonomyId = ContentType;
 
             latest.MaxStoriesToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
 
@@ -91,17 +94,47 @@ namespace Informa.Web.Areas.Article.Controllers
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
         [HttpPost]
-        public string GetLatestNews(IEnumerable<Guid> subjectIds, string publicationName, IList<string> authorGuids, int itemsToDisplay, int MaxStoriesToDisplay, string mediaType, string contentType)
+        public string GetLatestNews(string subjectIds, string publicationName, string authorGuids, int itemsToDisplay, int MaxStoriesToDisplay, Guid mediaType, Guid contentType)
         {
+            IList<Guid> subjectGuids = new List<Guid>();
+            if (!string.IsNullOrEmpty(subjectIds))
+            {
+                IList<string> subjectsArray = new List<string>();
+                if (subjectIds.Contains(","))
+                {
+                    subjectsArray = subjectIds.Split(',').ToList();
+                    foreach (var subject in subjectsArray)
+                    {
+                        subjectGuids.Add(new Guid(subject));
+                    }
+                }
+                else
+                {
+                    subjectGuids.Add(new Guid(subjectIds));
+                }
+            }
 
+            IList<string> authorIds = new List<string>();
+            if (!string.IsNullOrEmpty(authorGuids))
+            {
+
+                if (subjectIds.Contains(","))
+                {
+                    authorIds = authorGuids.Split(',').ToList();
+                }
+                else
+                {
+                    authorIds.Add(authorGuids);
+                }
+            }
             var filter = ArticleSearch.CreateFilter();
             filter.Page = itemsToDisplay;
 
-            if (subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
+            if (subjectGuids != null) filter.TaxonomyIds.AddRange(subjectGuids);
             if (publicationName != null) filter.PublicationNames.Add(publicationName);
-            if (authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
-            if (!string.IsNullOrEmpty(mediaType)) filter.MediaTypeTaxonomyIds.Add(mediaType);
-            if (!string.IsNullOrEmpty(contentType)) filter.ContentTypeTaxonomyIds.Add(contentType);
+            if (authorIds != null) filter.AuthorGuids.AddRange(authorIds);
+            if (!string.IsNullOrEmpty(mediaType.ToString()) && mediaType != Guid.Empty) filter.MediaTypeTaxonomyId = mediaType;
+            if (!string.IsNullOrEmpty(contentType.ToString()) && contentType != Guid.Empty) filter.ContentTypeTaxonomyId = contentType;
 
             else if (itemsToDisplay + 4 > MaxStoriesToDisplay && MaxStoriesToDisplay != 0)
             {
@@ -132,8 +165,8 @@ namespace Informa.Web.Areas.Article.Controllers
         public IEnumerable<Guid> Topics { get; set; }
         public int ItemsToDisplay { get; set; }
         public string PublicationName { get; set; }
-        public string ContentType { get; set; }
-        public string MediaType { get; set; }
+        public Guid ContentType { get; set; }
+        public Guid MediaType { get; set; }
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
