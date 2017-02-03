@@ -54,7 +54,7 @@
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
