@@ -3488,7 +3488,8 @@ body.lightboxed {
   width: 100%; }
   @media (max-width: 800px) {
     .table-wrapper {
-      overflow-x: scroll; } }
+      overflow-x: scroll;
+      border: 1px solid #d1d3d4; } }
   .table-wrapper .table {
     display: table;
     width: 100%;
@@ -7327,20 +7328,24 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-style: normal;
       text-align: left; }
   .small_table .table-responsive .table .graybg {
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    color: #000; }
   .small_table .table-responsive .table .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
-    vertical-align: top; }
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    font-size: 15px;
+    font-size: 0.9375rem;
     color: #bb1528;
     font-style: normal;
-    font-weight: 700;
-    vertical-align: top; }
+    font-weight: 500;
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
@@ -7352,10 +7357,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         vertical-align: top; } }
   .small_table .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.3125em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
+    .small_table .table-responsive .table .R21_GrayColor.border-right {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.125em;
+      font-weight: 400; }
     @media (max-width: 480px) {
       .small_table .table-responsive .table .R21_GrayColor {
         vertical-align: top; } }
@@ -7398,11 +7407,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
 
-.small_table .table-responsive .pad-10 {
+.small_table .table-responsive .p-10 {
   padding: 10px; }
-  @media (max-width: 480px) {
-    .small_table .table-responsive .pad-10 {
-      padding: 10px 15px 10px; } }
+
+.small_table .table-responsive .pad-10 {
+  padding: 16px 10px; }
 
 .small_table .table-responsive .pad-full-10 {
   padding: 10px; }
@@ -7447,27 +7456,40 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
   color: #1191d1; }
 
-.casualty-table-theme .table thead {
-  background-color: #0f5487 !important; }
-
-.casualty-table-theme .table .top {
-  color: #58595b;
-  width: 40px;
-  height: 40px;
-  display: block;
-  border-left: 1px solid #979797;
-  text-decoration: none;
-  font-size: 17px; }
-  .casualty-table-theme .table .top span {
-    background: url("img/sprite-image.png") no-repeat 0 -606px;
-    width: 11px;
-    height: 8px;
-    display: inline-block;
-    margin-right: 8px; }
-
-.casualty-table-theme .table hr {
-  display: block !important;
-  margin: 0 !important; }
+.casualty-table-theme .table {
+  width: 790px !important; }
+  @media screen and (min-width: 801px) and (max-width: 1024px) {
+    .casualty-table-theme .table {
+      max-width: 594px !important; } }
+  @media (max-width: 800px) {
+    .casualty-table-theme .table {
+      width: 100% !important; } }
+  .casualty-table-theme .table .table_head {
+    color: #ffffff; }
+    .casualty-table-theme .table .table_head th {
+      font-size: 16px !important;
+      font-weight: normal !important; }
+    .casualty-table-theme .table .table_head .visible-lg {
+      background: #1191D1;
+      color: #fff;
+      font-weight: normal; }
+  .casualty-table-theme .table .top {
+    color: #58595b;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-left: 1px solid #979797;
+    text-decoration: none;
+    font-size: 17px; }
+    .casualty-table-theme .table .top span {
+      background: url("img/sprite-image.png") no-repeat 0 -606px;
+      width: 11px;
+      height: 8px;
+      display: inline-block;
+      margin-right: 8px; }
+  .casualty-table-theme .table hr {
+    display: block !important;
+    margin: 0 !important; }
 
 .casualty-table-theme .border-right {
   border-right: 1px solid #d1d3d4; }
@@ -7968,8 +7990,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10846,7 +10868,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
