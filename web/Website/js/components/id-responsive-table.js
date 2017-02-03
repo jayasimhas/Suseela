@@ -112,7 +112,7 @@
                items:4
                },
                678:{
-               items:3
+               items:2
                },
                320:{
                 items:2

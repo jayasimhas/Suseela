@@ -11,6 +11,7 @@
     overflow: auto;
     background-color: black;
     background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #d1d3d4;
     .container {
         background-color: #fff;
         margin: auto;
@@ -43,11 +44,17 @@
         top: 15px;
         right: 21px;
         transform: rotate(-180deg);
+        @media only screen and (min-width: 767px) and (max-width: 1024px) {
+            right: 16px;
+        }
     }
     &[type="descending"] {
         position: absolute;
         top: 25px;
         right: 20px;
+        @media only screen and (min-width: 767px) and (max-width: 1024px) {
+            right: 15px;
+        }
     }
     &.active {
         svg {
@@ -71,6 +78,7 @@
         display: table;
         width: 100%;
         border-collapse: inherit;
+        border: 1px solid #d1d3d4;
         border: none !important;
         font-family: "Roboto", Helvetica, Arial, sans-serif;
     }
@@ -81,9 +89,6 @@
             .tableCell {
                 background-color: #efd0d8;
             }
-        }
-        .tableCell {
-            font-weight: 500;
         }
     }
     .tableHeading { 

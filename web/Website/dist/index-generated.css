@@ -3427,7 +3427,8 @@ body.lightboxed {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #d1d3d4; }
   .ID-responsive-table-modal .container {
     background-color: #fff;
     margin: auto;
@@ -3463,10 +3464,16 @@ body.lightboxed {
     right: 21px;
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="ascending"] {
+        right: 16px; } }
   .sort[type="descending"] {
     position: absolute;
     top: 25px;
     right: 20px; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="descending"] {
+        right: 16px; } }
   .sort.active svg {
     fill: #ffffff; }
 
@@ -3486,6 +3493,7 @@ body.lightboxed {
     display: table;
     width: 100%;
     border-collapse: inherit;
+    border: 1px solid #d1d3d4;
     border: none !important;
     font-family: "Roboto", Helvetica, Arial, sans-serif; }
   .table-wrapper .tableRow {
@@ -3494,8 +3502,6 @@ body.lightboxed {
       background-color: #f1f1f1; }
     .table-wrapper .tableRow:hover .tableCell {
       background-color: #efd0d8; }
-    .table-wrapper .tableRow .tableCell {
-      font-weight: 500; }
   .table-wrapper .tableHeading {
     display: table-header-group; }
   .table-wrapper .tableHead {
@@ -3524,7 +3530,8 @@ body.lightboxed {
   width: 100%;
   float: left;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table-sort {
     background: url("img/Bitmap.png");
     width: 7px !important;
@@ -3559,6 +3566,9 @@ body.lightboxed {
     float: left;
     width: 20%;
     z-index: 9; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .states_heading {
+        width: 40%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .states_heading {
         width: 40%; } }
@@ -3572,6 +3582,9 @@ body.lightboxed {
   .ID-Responsive-Table .owl-wrapper {
     width: 80%;
     float: right; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .owl-wrapper {
         width: 60%; } }
@@ -3598,6 +3611,9 @@ body.lightboxed {
     margin-right: 0;
     padding-right: 40px;
     height: 5em; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .year_heading {
+        padding-left: 10px; } }
   .ID-Responsive-Table .owl-dots {
     float: left;
     margin-top: 20px; }
