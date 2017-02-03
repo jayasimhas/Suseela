@@ -8455,6 +8455,11 @@ div#feedbacklite.fbl_r {
 .casualtyPan.table-responsive hr {
   margin: 20px 0; }
 
+#market-data-tool .borTop, #tanker-fixtures .borTop {
+  height: 1px;
+  border-top: 1px solid #d1d3d4;
+  display: block; }
+
 #market-data-tool.table-responsive .table, #tanker-fixtures.table-responsive .table {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
   #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
@@ -8482,6 +8487,15 @@ div#feedbacklite.fbl_r {
     color: #1191d1; }
   #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
     padding: 16px 10px; }
+    @media only screen and (max-width: 1024px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 16px 5px; } }
+    @media only screen and (max-width: 768px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 16px 2px; } }
+    @media only screen and (max-width: 767px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 16px 10px; } }
   #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
     font-size: 18px;
     border-right: 1px solid #e9e9e9; }
@@ -14268,7 +14282,7 @@ main {
 .theme-lloydslist .general-header__navigation .pop-out__reset-password:hover,
 .theme-lloydslist .general-header__navigation .sortable-table__list-toggler:hover,
 .theme-lloydslist .general-header__navigation .mobile-table-exit:hover {
-  border-bottom-color: #c12d3b; }
+  border-bottom-color: #0f5487; }
 
 .theme-lloydslist .banner--register,
 .theme-lloydslist .banner--alert {
@@ -14318,12 +14332,12 @@ main {
 .theme-lloydslist .quote,
 .theme-lloydslist .article-sidebar,
 .theme-lloydslist .topic-subtopic__header {
-  border-top-color: #c12d3b;
-  border-bottom-color: #c12d3b;
-  border-color: #c12d3b; }
+  border-top-color: #0f5487;
+  border-bottom-color: #0f5487;
+  border-color: #0f5487; }
 
 .theme-lloydslist .latest-news__header:before {
-  background-color: #c12d3b; }
+  background-color: #0f5487; }
 
 .theme-lloydslist .article-interview__question:before {
   background-color: rgba(193, 45, 59, 0.3);
@@ -14338,17 +14352,17 @@ main {
 .theme-lloydslist .article-topics__li:before,
 .theme-lloydslist .quickfactsbulleted li:before,
 .theme-lloydslist .quick-facts__list--ul li:before {
-  fill: #c12d3b;
+  fill: #0f5487;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-lloydslist .article-topics__li:before use > svg,
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
-    fill: #c12d3b; }
+    fill: #0f5487; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
 .theme-lloydslist .quick-facts__list--ul li ul li:before {
-  color: #c12d3b; }
+  color: #0f5487; }
 
 .theme-lloydslist .quick-facts {
   background-color: rgba(17, 145, 209, 0.1); }
