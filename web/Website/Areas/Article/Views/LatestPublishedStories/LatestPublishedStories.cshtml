@@ -1,25 +1,41 @@
 ﻿@model Informa.Web.Areas.Article.Models.Article.LatestPublishedStories.LatestPublishedStory
 
 <div class="latestPublishedStoriesSection" data-max="@Model.MaxStoriesToDisplay">
-    <h5>Most recent published stories</h5>
+    @*<h5>Most recent published stories</h5>*@
     @if (Model.News != null && Model.News.Any())
     {
         <div class="contentRecomm-wrapper">
             @foreach (var listable in Model.News)
             {
                 <div class="contentRecomm-article">
-                    @*@if (!string.IsNullOrEmpty(listable.ListableImage))
-                        {
-                            <img src="@listable.ListableImage" width="100px">
-                        }*@
                     <h5>
                         <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
                     </h5>
-                    <div class="article-related-content__date">@Html.Raw(listable.ListableSummary)</div>
+                    @{
+                        var dateDiff = DateTime.Now - listable.ListableDate;
+                    }
+                    @{
+                        if (dateDiff.TotalMinutes < 60)
+                        {
+                            var datelbl = dateDiff.Minutes + " min ago";
+                            <div class="article-related-content__date">@datelbl</div>
+                        }
+                        else if (dateDiff.TotalHours < 24)
+                        {
+                            var datelbl = dateDiff.Hours + " hours ago";
+                            <div class="article-related-content__date">@datelbl</div>
+                        }
+                        else
+                        {
+                            <div class="article-related-content__date">@listable.ListableDate.ToString("dd MMM yyyy")</div>
+                        }
+                    }
+
+
                 </div>
-            }
+                        }
         </div>
-    }
+                        }
 
     @Html.Hidden("publicationName", Model.PublicationName)
     @Html.Hidden("mediaType", Model.MediaType)
@@ -87,18 +103,10 @@
                Html = "";
 
             for (var i = 0; i < data.length; i++) {
-                if (data[i].img == null) {
-                    Html += '<div class="contentRecomm-article">' +
-                           '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
-                           data[i].summary +
-                        '</div>';
-                } else {
-                    Html += '<div class="contentRecomm-article">' +
-                                '<img src="' + data[i].img + '"/>' +
-                                '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
-                                data[i].summary +
-                             '</div>';
-                }
+                Html += '<div class="contentRecomm-article">' +
+                       '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
+                       '<div class="article-related-content__date">' + data[i].pubDate + '</div>' +
+                '</div>';
             }
 
             $('.latestPublishedStoriesSection .contentRecomm-wrapper').append(Html);

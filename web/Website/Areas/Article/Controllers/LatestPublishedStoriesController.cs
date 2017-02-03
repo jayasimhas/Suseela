@@ -152,7 +152,26 @@ namespace Informa.Web.Areas.Article.Controllers
             List<object> objs = new List<object>();
             foreach (var article in articles)
             {
-                var obj = new { img = article.ListableImage, title = article.ListableTitle, url = article.LinkableUrl, summary = article.ListableSummary };
+                var dateDiff = DateTime.Now - article.ListableDate;
+                string datelbl = "";
+                if (dateDiff.TotalMinutes < 60)
+                {
+                    datelbl = dateDiff.Minutes + " min ago";
+                }
+                else if (dateDiff.TotalHours < 24)
+                {
+                    datelbl = dateDiff.Hours + " hours ago";
+                }
+                else
+                {
+                    datelbl = article.ListableDate.ToString("dd MMM yyyy");
+                }
+                var obj = new
+                {
+                    title = article.ListableTitle,
+                    url = article.LinkableUrl,
+                    pubDate = datelbl
+                };
                 objs.Add(obj);
 
             }
