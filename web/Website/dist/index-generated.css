@@ -3437,7 +3437,7 @@ body.lightboxed {
     width: 80%; }
 
 .idi-table-heading {
-  background-color: #414042;
+  background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3473,7 +3473,7 @@ body.lightboxed {
     right: 20px; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
       .sort[type="descending"] {
-        right: 16px; } }
+        right: 15px; } }
   .sort.active svg {
     fill: #ffffff; }
 
@@ -3540,8 +3540,6 @@ body.lightboxed {
     @media (max-width: 480px) {
       .ID-Responsive-Table .table-sort {
         display: none; } }
-  .ID-Responsive-Table a.hidden-xs, .ID-Responsive-Table .hidden-xs.pop-out__reset-password, .ID-Responsive-Table .hidden-xs.sortable-table__list-toggler, .ID-Responsive-Table .hidden-xs.mobile-table-exit {
-    display: none; }
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
@@ -3549,11 +3547,17 @@ body.lightboxed {
     color: #ffffff;
     padding: 10px;
     padding-right: 95px !important; }
+    .ID-Responsive-Table .table_head:after {
+      clear: both; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
       font-weight: 700;
-      font-style: normal; }
+      font-style: normal;
+      float: left; }
+    .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
+      float: left;
+      margin: 5px 0 0 15px; }
     .ID-Responsive-Table .table_head .R16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3620,7 +3624,7 @@ body.lightboxed {
     .ID-Responsive-Table .owl-dots .owl-dot span {
       background: #de4361; }
     .ID-Responsive-Table .owl-dots .owl-dot.active span {
-      background: #ffffff; }
+      background: #ffffff !important; }
     .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
       background: #ffffff; }
     .ID-Responsive-Table .owl-dots .owl-dot:hover span {

@@ -21,7 +21,7 @@
     }
 }
 .idi-table-heading {
-    background-color: $color-ship-gray;
+    background-color: #91211E;
     color: $color-white;  
     font-style: normal;
     @include textMix('Roboto', 1.125em, 400);
@@ -73,6 +73,7 @@
     width: 100%;
     @include breakpoint('medium') {
         overflow-x: scroll;
+        border: 1px solid #d1d3d4;
     }
     .table { 
         display: table;

@@ -13,9 +13,6 @@
 					display: none;
 				}
 			}
-			a.hidden-xs {
-				display: none; //popup removed
-			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
 			}
@@ -24,9 +21,17 @@
 				color: $color-white;
 				padding: 10px;
 				padding-right: 95px !important;
+				&:after {
+					clear: both;
+				}
 				.RB16{
 				   @include textMix('Roboto', 1.0625em, 700);
 				   font-style: normal;
+				   float: left;
+				}
+				a[data-toggle] {
+					float: left;
+					margin: 5px 0 0 15px;
 				}
 				.R16{
 				   @include textMix('Roboto', 1.0625em, 400);
@@ -108,7 +113,7 @@
 			  	}
 			  	&.active {
 			  		span {
-			  			background: $color-white;
+			  			background: $color-white !important;
 			  		}
 			  		&:hover {
 				  		span {
