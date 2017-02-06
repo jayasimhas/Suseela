@@ -72,12 +72,17 @@
 					}
 				}
 				console.log(SortingArray);
-				
+				SortedElements = [];
 				var CurrentItem = self.CurrentArray;
 				for(var i in SortingArray) {
 					for(var j in CurrentItem) {
-						if(SortingArray[i] == CurrentItem[j][SortingType]) {
-							SortedElements.push(CurrentItem[j]);
+						if(CurrentItem[j] != undefined) {
+							if(SortingArray[i] == CurrentItem[j][SortingType]) {
+								SortedElements.push(CurrentItem[j]);
+								CurrentItem = CurrentItem.filter(function(item, index) { 
+								    return CurrentItem[index] !== CurrentItem[j];
+								});
+							}
 						}
 					}
 				}
@@ -90,7 +95,7 @@
 				// 		UniqueArray.push(SortedElements[k]);
 				// 	}
 				// }
-
+				self.CurrentArray = [];
 				self.CurrentArray = SortedElements;
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
