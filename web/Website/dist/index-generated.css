@@ -7717,7 +7717,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: 20px;
     clear: both; }
     .data-tool-placeholder-right-rail p a, .data-tool-placeholder-right-rail p .pop-out__reset-password, .data-tool-placeholder-right-rail p .sortable-table__list-toggler, .data-tool-placeholder-right-rail p .mobile-table-exit {
-      color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
@@ -7738,7 +7737,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   .articleText p {
     margin-top: 20px; }
     .articleText p a, .articleText p .pop-out__reset-password, .articleText p .sortable-table__list-toggler, .articleText p .mobile-table-exit {
-      color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
