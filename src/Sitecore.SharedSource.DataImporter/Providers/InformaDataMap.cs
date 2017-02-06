@@ -308,27 +308,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                         //reading mediaType according to agr mapping  adding to ao
-                        if (!ao.ContainsKey("MEDIA"))
+                        if (Tableau.Count > 0)
                         {
-                            if (Tableau.Count > 0)
-                            {
+                            ao.Add("MEDIA", "interactivedashboards");
+                        }
+                        else if (!string.IsNullOrEmpty(imageTitleHtml))
+                        {
+                            ao.Add("MEDIA", "Chart/Table");
+                        }
+                        else if (CheckTable(GetXMLData(d, bodyNode)))
+                        {
+                            ao.Add("MEDIA", "Chart/Table");
+                        }
+                        //else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                        //{
+                        //    ao.Add("MEDIA", "image");
+                        //}
+                        else
+                        {
+                            ao.Add("MEDIA", "");
+                        }
 
-                                ao.Add("MEDIA", "interactivedashboards");
-                            }
-                            else if (CheckTable(GetXMLData(d, bodyNode)))
-                            {
-                                ao.Add("MEDIA", "chartgraph");
-                            }
-                            //else if (!string.IsNullOrEmpty(bodyTitleHtml))
-                            //{
-                            //    ao.Add("MEDIA", "image");
-                            //}
-                            else
-                            {
-                                ao.Add("MEDIA", "");
-                            }
-                        }                     
-                       
 
 
 
@@ -412,6 +412,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                             if (publication == "Agrow")
                             {
+
                                 commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
                             }
@@ -428,14 +429,23 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                             foreach (string agency in agencySearchResults)
                             {
-                                Agency += agency + ",";
+                                if (publication == "commodities")
+                                {
+                                    if(!((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !((agency.ToLower() == "international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets"))
+                                        Agency += agency + ",";
+                                }
+                                else
+                                {
+                                    Agency += agency + ",";
+                                }
 
                             }
                             if (commoditySearchResults != null)
                             {
                                 foreach (string commodity in commoditySearchResults)
                                 {
-                                    Commodity += commodity + ",";
+                                    if (!(commodity.ToLower() == "palm" && commoditySearchResults.Contains("palm beach")))
+                                        Commodity += commodity + ",";
 
                                 }
                             }
@@ -443,6 +453,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             {
                                 foreach (string commodityfactor in commodityfactorSearchResults)
                                 {
+                                    if(!(commodityfactor.ToLower()== "energy" && commodityfactorSearchResults.Contains("energy drinks")))
                                     CommodityFactor += commodityfactor + ",";
 
                                 }
@@ -457,7 +468,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                         }
 
-                        List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.Contains(" " + s + " "));
+                        List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                        
                       
 
@@ -466,8 +477,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         foreach (string company in companySearchResults)
                         {
-                            if(!(publication =="AnimalPharma" && company == "Bayer CropScience")||!(publication == "Agrow" && company == "Bayer Animal Health") ||!(publication == "AnimalPharma" && company == "Bayer Animal Health"))
+                            if(!( publication =="AnimalPharma" && company == "bayer animal health") && !(publication == "Agrow" && company == "bayer cropscience") && !(publication == "commodities" && company == "bayer animal health"))
                             Companies += company + ",";
+
+                           
 
                         }
 
@@ -1321,8 +1334,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
                                 {
-
-                                    Commodity += node.Attributes["unique-name"].Value + ",";
+                                  
+                                        Commodity += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMODITY"] = Commodity;
 
                                 }
