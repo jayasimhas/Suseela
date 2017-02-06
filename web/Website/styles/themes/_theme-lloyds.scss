@@ -40,7 +40,7 @@
     }
 
 	@include theme-quick-facts(
-		transparentize($color-primary-default, 0.9),
+		transparentize($color-secondary-color, 0.9),
 		transparentize($color-secondary-color, 0.5));
 
 }

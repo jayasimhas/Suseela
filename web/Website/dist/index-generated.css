@@ -13896,8 +13896,8 @@ main {
 .theme-insurance-day .article-key-document__icon:hover,
 .theme-insurance-day .article-key-document__icon:active,
 .theme-insurance-day .article-key-document__icon:focus {
-  color: #1191D1;
-  fill: #1191D1; }
+  color: #DE4361;
+  fill: #DE4361; }
   .theme-insurance-day a use > svg, .theme-insurance-day .pop-out__reset-password use > svg, .theme-insurance-day .sortable-table__list-toggler use > svg, .theme-insurance-day .mobile-table-exit use > svg, .theme-insurance-day a:hover use > svg, .theme-insurance-day .pop-out__reset-password:hover use > svg, .theme-insurance-day .sortable-table__list-toggler:hover use > svg, .theme-insurance-day .mobile-table-exit:hover use > svg, .theme-insurance-day a:active use > svg, .theme-insurance-day .pop-out__reset-password:active use > svg, .theme-insurance-day .sortable-table__list-toggler:active use > svg, .theme-insurance-day .mobile-table-exit:active use > svg, .theme-insurance-day a:focus use > svg, .theme-insurance-day .pop-out__reset-password:focus use > svg, .theme-insurance-day .sortable-table__list-toggler:focus use > svg, .theme-insurance-day .mobile-table-exit:focus use > svg,
   .theme-insurance-day .facets__button use > svg,
   .theme-insurance-day .facets__button:hover use > svg,
@@ -13964,7 +13964,7 @@ main {
   .theme-insurance-day .article-key-document__icon:hover use > svg,
   .theme-insurance-day .article-key-document__icon:active use > svg,
   .theme-insurance-day .article-key-document__icon:focus use > svg {
-    fill: #1191D1; }
+    fill: #DE4361; }
 
 .theme-insurance-day footer a, .theme-insurance-day footer .pop-out__reset-password, .theme-insurance-day footer .sortable-table__list-toggler, .theme-insurance-day footer .mobile-table-exit,
 .theme-insurance-day .general-header__navigation a,
@@ -13978,7 +13978,7 @@ main {
   color: inherit; }
 
 .theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out {
-  color: #1191D1; }
+  color: #DE4361; }
 
 .theme-insurance-day .article-preview__headline,
 .theme-insurance-day .article-preview__headline a,
@@ -14001,29 +14001,29 @@ main {
   .theme-insurance-day .topic-featured-article__headline .pop-out__reset-password:hover,
   .theme-insurance-day .topic-featured-article__headline .sortable-table__list-toggler:hover,
   .theme-insurance-day .topic-featured-article__headline .mobile-table-exit:hover {
-    color: #1191D1; }
+    color: #DE4361; }
 
 .theme-insurance-day .button--filled:not([disabled]), .theme-insurance-day .pop-out__register-submit:not([disabled]), .theme-insurance-day .pop-out__sign-in-submit:not([disabled]),
 .theme-insurance-day .search-bar__submit,
 .theme-insurance-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  background: #1191D1;
-  background-color: #1191D1;
+  background: #DE4361;
+  background-color: #DE4361;
   color: #ffffff; }
   .theme-insurance-day .button--filled:not([disabled]):hover, .theme-insurance-day .pop-out__register-submit:not([disabled]):hover, .theme-insurance-day .pop-out__sign-in-submit:not([disabled]):hover,
   .theme-insurance-day .search-bar__submit:hover,
   .theme-insurance-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
-    background: #0f5487;
-    background-color: #0f5487; }
+    background: #b0173d;
+    background-color: #b0173d; }
 
 .theme-insurance-day .button--outline:not([disabled]) {
-  border-color: #1191D1; }
+  border-color: #DE4361; }
   .theme-insurance-day .button--outline:not([disabled]):hover {
-    background-color: #0f5487;
-    border-color: #0f5487;
+    background-color: #b0173d;
+    border-color: #b0173d;
     color: #ffffff; }
 
 .theme-insurance-day .main-menu__hoverable:hover:before {
-  background-color: #0f5487; }
+  background-color: #b0173d; }
 
 .theme-insurance-day .main-menu__section-title a, .theme-insurance-day .main-menu__section-title .pop-out__reset-password, .theme-insurance-day .main-menu__section-title .sortable-table__list-toggler, .theme-insurance-day .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -14031,7 +14031,7 @@ main {
 .theme-insurance-day .main-menu__footer-link a, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler, .theme-insurance-day .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-insurance-day .main-menu__footer-link a:hover, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:hover, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:hover, .theme-insurance-day .main-menu__footer-link a:active, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:active, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:active, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:active, .theme-insurance-day .main-menu__footer-link a:focus, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:focus, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:focus {
-    color: #0f5487; }
+    color: #b0173d; }
 
 .theme-insurance-day .main-menu__section-link, .theme-insurance-day .main-menu__section-link:hover, .theme-insurance-day .main-menu__section-link:active, .theme-insurance-day .main-menu__section-link:focus {
   color: #58595b; }
@@ -14041,11 +14041,11 @@ main {
 .theme-insurance-day .general-header__navigation .pop-out__reset-password:hover,
 .theme-insurance-day .general-header__navigation .sortable-table__list-toggler:hover,
 .theme-insurance-day .general-header__navigation .mobile-table-exit:hover {
-  border-bottom-color: #c12d3b; }
+  border-bottom-color: #b0173d; }
 
 .theme-insurance-day .banner--register,
 .theme-insurance-day .banner--alert {
-  background-color: #1191D1; }
+  background-color: #DE4361; }
   .theme-insurance-day .banner--register,
   .theme-insurance-day .banner--register span,
   .theme-insurance-day .banner--register svg,
@@ -14091,42 +14091,42 @@ main {
 .theme-insurance-day .quote,
 .theme-insurance-day .article-sidebar,
 .theme-insurance-day .topic-subtopic__header {
-  border-top-color: #c12d3b;
-  border-bottom-color: #c12d3b;
-  border-color: #c12d3b; }
+  border-top-color: #b0173d;
+  border-bottom-color: #b0173d;
+  border-color: #b0173d; }
 
 .theme-insurance-day .latest-news__header:before {
-  background-color: #c12d3b; }
+  background-color: #b0173d; }
 
 .theme-insurance-day .article-interview__question:before {
-  background-color: rgba(193, 45, 59, 0.3);
-  border-color: rgba(193, 45, 59, 0.5); }
+  background-color: rgba(176, 23, 61, 0.3);
+  border-color: rgba(176, 23, 61, 0.5); }
 
 .theme-insurance-day .article-interview__answer, .theme-insurance-day .article-interview__answer:before {
-  border-color: rgba(17, 145, 209, 0.5); }
+  border-color: rgba(222, 67, 97, 0.5); }
 
 .theme-insurance-day .article-interview__answer:before {
-  background-color: rgba(17, 145, 209, 0.15); }
+  background-color: rgba(222, 67, 97, 0.15); }
 
 .theme-insurance-day .article-topics__li:before,
 .theme-insurance-day .quickfactsbulleted li:before,
 .theme-insurance-day .quick-facts__list--ul li:before {
-  fill: #c12d3b;
+  fill: #b0173d;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-insurance-day .article-topics__li:before use > svg,
   .theme-insurance-day .quickfactsbulleted li:before use > svg,
   .theme-insurance-day .quick-facts__list--ul li:before use > svg {
-    fill: #c12d3b; }
+    fill: #b0173d; }
 
 .theme-insurance-day .article-topics__li ul li:before,
 .theme-insurance-day .quickfactsbulleted li ul li:before,
 .theme-insurance-day .quick-facts__list--ul li ul li:before {
-  color: #c12d3b; }
+  color: #b0173d; }
 
 .theme-insurance-day .quick-facts {
-  background-color: rgba(17, 145, 209, 0.1); }
+  background-color: rgba(176, 23, 61, 0.1); }
   .theme-insurance-day .quick-facts hr {
-    background-color: rgba(193, 45, 59, 0.5); }
+    background-color: rgba(176, 23, 61, 0.5); }
 
 .theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
 .theme-lloydslist .facets__button,
@@ -14421,7 +14421,7 @@ main {
   color: #0f5487; }
 
 .theme-lloydslist .quick-facts {
-  background-color: rgba(17, 145, 209, 0.1); }
+  background-color: rgba(15, 84, 135, 0.1); }
   .theme-lloydslist .quick-facts hr {
     background-color: rgba(15, 84, 135, 0.5); }
 
