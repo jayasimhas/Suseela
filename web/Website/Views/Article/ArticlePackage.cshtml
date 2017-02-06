@@ -20,7 +20,10 @@
                     @if (!Model.HideImage)
                     {
                         string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
-                        <img class="article-related-content__img" src="@img" />
+                        if (!string.IsNullOrEmpty(img))
+                        {
+                          <img class="preview__image" style="width:26%;height: 45%;" src="@img" />
+                        }
                     }
 
                     @*<span class="article-related-content__category">@Model.PublicationName</span>*@
@@ -52,7 +55,10 @@
                                 @if (!Model.HideImage)
                                 {
                                     string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
-                                    <img class="article-related-content__img" src="@img" />
+                                    if (!string.IsNullOrEmpty(img))
+                                    {
+                                        <img class="article-preview__image" src="@img" />
+                                    }
                                 }
 
                                 @*<span class="article-related-content__category">@Model.PublicationName</span>*@
