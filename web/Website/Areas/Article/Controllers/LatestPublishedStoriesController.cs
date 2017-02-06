@@ -42,19 +42,14 @@ namespace Informa.Web.Areas.Article.Controllers
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
             MediaType = !string.IsNullOrEmpty(Parameters.Media_Type.ToString()) ? Parameters.Media_Type : Guid.Empty;
             ContentType = !string.IsNullOrEmpty(Parameters.Content_Type.ToString()) ? Parameters.Content_Type : Guid.Empty;
-
-            //if (Parameters.Media_Type != null)
-            //{
-            //    MediaType = Parameters.Media_Type;
-            //}
-            //if (Parameters.Content_Type != null)
-            //{
-            //    ContentType = Parameters.Content_Type;
-            //}
             ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
             PublicationName = rootContext.Item.Publication_Name;
 
         }
+        /// <summary>
+        /// Get latest published strories in first call
+        /// </summary>
+        /// <returns>4 latest stories</returns>
         [HttpGet]
         public ActionResult GetLatestNews()
         {
@@ -93,6 +88,17 @@ namespace Informa.Web.Areas.Article.Controllers
 
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
+        /// <summary>
+        /// Method to get latest stories from second call onwards
+        /// </summary>
+        /// <param name="subjectIds">Taxonomies</param>
+        /// <param name="publicationName">Publication name</param>
+        /// <param name="authorGuids">Author Guids</param>
+        /// <param name="itemsToDisplay">Number of stories displayed</param>
+        /// <param name="MaxStoriesToDisplay">Max number of stroies to display</param>
+        /// <param name="mediaType">Media Type</param>
+        /// <param name="contentType">Content type</param>
+        /// <returns></returns>
         [HttpPost]
         public string GetLatestNews(string subjectIds, string publicationName, string authorGuids, int itemsToDisplay, int MaxStoriesToDisplay, Guid mediaType, Guid contentType)
         {

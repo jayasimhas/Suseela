@@ -119,6 +119,13 @@ namespace Informa.Library.Search.Extensions
             return predicate;
         }
 
+        /// <summary>
+        /// IPMP-1765 filter stories by content type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public static IQueryable<T> FilterContentType<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
                where T : ITaxonomySearchResults
         {
@@ -133,6 +140,13 @@ namespace Informa.Library.Search.Extensions
             return source.Filter(predicate);
         }
 
+        /// <summary>
+        /// IPMP-1765 filter stories by media type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public static IQueryable<T> FilterByMediaType<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
                    where T : ITaxonomySearchResults
         {
