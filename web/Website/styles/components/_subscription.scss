@@ -27,26 +27,12 @@
 				display: block !important;
 		    }
 		}
-		a.button.button--outline {
-			border: 1px solid $color-yellow-orange;
-			&:hover {
-				border-color: $color-tree-poppy-orange;
-				background-color: $color-tree-poppy-orange;
-				color: $color-white;
-			}
-		}
 		.button--outline{
 			&.subscribed{
-				cursor: text;
-				&:hover{
-					    border-color: $color-tree-poppy-orange;
-						background-color: inherit !important;
-						color: #58595b !important;
-						text-decoration: none;
-				}
-				&:focus{
-					text-decoration: none !important;
-				}
+				cursor: text;  
+			}
+			&:hover{
+				text-decoration: none;
 			}
 		} 
 

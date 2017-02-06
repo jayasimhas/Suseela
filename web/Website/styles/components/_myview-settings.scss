@@ -1,11 +1,9 @@
 @mixin folow-btn($w, $h){
-	border: 1px solid $color-tree-poppy-orange;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 0.75em;
 	font-family: "Roboto";
 	font-weight: 700;
-	width: $w;
 	text-align: center;
 	display: inline-block;
     line-height: $h;
@@ -50,8 +48,6 @@
 }
 @mixin unfollowBtnLbl(){
 	@include folow-btn(7.5rem, 2rem);
-	background-color: $color-tree-poppy-orange;
-	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
 	&.mtp{
 		margin-top: -6px;
@@ -62,9 +58,6 @@
 	@include folow-btn(7.5rem, 2rem);
 	padding: 0 1.5625rem;
 	margin-top: 0.5rem;
-	&:hover{
-		background-color: $color-tree-poppy-orange;
-	}
 	&.mtp{
 		margin-top: -6px;
 		margin-bottom: 25px;
@@ -170,9 +163,7 @@
 		.subscribe{
 			float: left;
 			width: 7.5rem;
-			height: 2rem;
-			background: $color-tree-poppy-orange;
-			color: $color-white;
+			height: 2rem; 
 			margin: -4px 0 0 1.25rem;
 			line-height: 2rem;
 			font-size: 0.75rem;
@@ -216,11 +207,8 @@
 						@include folow-btn(7.5rem, 2rem);
 						padding: 0 1.625rem;
 						&:hover{
-							background: $color-tree-poppy-orange;
-							color: $color-white;
 							@include breakpoint('large') {
 								background: inherit;
-								border: 1px solid #f7941e;
 								color: inherit;
 							}
 							@include breakpoint('small') {
@@ -241,8 +229,6 @@
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
 						padding: 0 2.25rem;
-						background: $color-tree-poppy-orange;
-						color: $color-white;
 						@include breakpoint('medium-small'){
 							background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 							height: 1.875rem;
@@ -453,7 +439,6 @@
 					@include unfollowBtnLbl();
 					padding: 0 1rem;
 					margin-left: 0.5rem;
-					min-width: 130px;
 					@include breakpoint('medium-small') {
 						min-width: initial;
 						min-width: auto;
@@ -535,12 +520,9 @@
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
 		  a{
-			color: $color-abbey-gray;
 			display: block;
 			padding: 0 25px;
 			&:hover{
-				background: $color-tree-poppy-orange;
-				color: $color-white;
 				text-decoration: none;
 			}
 			&:focus{
@@ -549,7 +531,6 @@
 		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
-			// margin: 0 0.625rem;
 			width: 50%;
 		    height: auto;
 		    float: left;
@@ -567,7 +548,6 @@
 		padding: 0 2rem;
 		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
-		  background: $color-tree-poppy-orange;
 		  color: $color-white;
 		  @include breakpoint('small') {
 			float: right;
@@ -641,8 +621,6 @@
 				margin: 0px auto;
 			}
 			.saveview{ 
-				border: 1px solid $color-tree-poppy-orange;
-				color: $color-zeus-black;
 				text-align: center;
 				float: left;
 				height: 1.5rem;
@@ -652,9 +630,6 @@
 				cursor: pointer;
 				line-height: 1.4375rem;
 				font-weight: bold;
-				&:hover{
-					background: $color-tree-poppy-orange;
-				}
 			}
 			.registrationBtn.validationChk{
                 border: 1px solid $color-tree-poppy-orange;
@@ -861,46 +836,46 @@
 }
 
 .followingrow.over{
-	background: $color-tree-poppy-orange;
+	background: #1191d1;
 }
  
 @-moz-keyframes drop {
 	0%, 100% {
-		background: $color-tree-poppy-orange;
+		background: #1191d1;
 		color: $color-white;
 	}
 	50% {
-		color: $color-tree-poppy-orange;
+		color: #1191d1;
 		background: $color-white;
 	}
 }
 @-webkit-keyframes "drop" {
 	0%, 100% {
-		background: $color-tree-poppy-orange;
+		background: #1191d1;
 		color: $color-white;
 	}
 	50% {
-		color: $color-tree-poppy-orange;
+		color: #1191d1;
 		background: $color-white;
 	}
 }
 @-ms-keyframes "drop" {
 	0%, 100% {
-		background: $color-tree-poppy-orange;
+		background: #1191d1;
 		color: $color-white;
 	}
 	50% {
-		color: $color-tree-poppy-orange;
+		color: #1191d1;
 		background: $color-white;
 	}
 }
 @-o-keyframes "drop" {
 	0%, 100% {
-		background: $color-tree-poppy-orange;
+		background: #1191d1;
 		color: $color-white;
 	}
 	50% {
-		color: $color-tree-poppy-orange;
+		color: #1191d1;
 		background: $color-white;
 	}
 }
@@ -919,5 +894,29 @@
 	}
 	#feedbacklite{
 		display: none !important;
+	}
+}
+
+.theme-lloydslist{
+	.myview-settings {
+		.table{
+			span{
+				color: #1191D1;
+				fill: #1191D1;
+				&.button--outline{
+					border: 1px solid #1191D1;
+					&:hover{
+						border: 1px solid #0f5487;
+					}
+				}
+				&.button--filled{
+					color: #fff;
+					&:hover{
+						border: 1px solid #0f5487;
+					}
+				}
+			}
+			
+		}
 	}
 }
