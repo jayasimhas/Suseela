@@ -84,6 +84,7 @@
         var pageNo = 2;
         $('.submit').click(function (e) {
             e.preventDefault();
+            debugger;
             $.ajax({
                 url: '/Article/LatestPublishedStories/GetLatestNews/',
                 data: { 'subjectIds': $('#subjectIds').val(), 'publicationName': $('#publicationName').val(), 'authorGuids': $('#authorGuids').val(), 'itemsToDisplay': pageNo++, 'MaxStoriesToDisplay': $('.latestPublishedStoriesSection').data('max'), 'mediaType': $('#mediaType').val(), 'contentType': $('#contentType').val() },
@@ -112,7 +113,7 @@
             $('.latestPublishedStoriesSection .contentRecomm-wrapper').append(Html);
             debugger;
             var ItemsDisplayed = $('.latestPublishedStoriesSection .contentRecomm-article').length;
-            if (maxItems == ItemsDisplayed) {
+            if (maxItems == ItemsDisplayed || data.length < 4) {
                 $('.submit').hide();
             }
         }

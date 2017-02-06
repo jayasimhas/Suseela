@@ -142,9 +142,9 @@ namespace Informa.Web.Areas.Article.Controllers
             if (!string.IsNullOrEmpty(mediaType.ToString()) && mediaType != Guid.Empty) filter.MediaTypeTaxonomyId = mediaType;
             if (!string.IsNullOrEmpty(contentType.ToString()) && contentType != Guid.Empty) filter.ContentTypeTaxonomyId = contentType;
 
-            else if (itemsToDisplay + 4 > MaxStoriesToDisplay && MaxStoriesToDisplay != 0)
+            if ((itemsToDisplay - 1) * 4 + 4 > MaxStoriesToDisplay && MaxStoriesToDisplay != 0)
             {
-                filter.PageSize = MaxStoriesToDisplay - itemsToDisplay;
+                filter.PageSize = MaxStoriesToDisplay - (itemsToDisplay - 1) * 4;
             }
             else
             {
