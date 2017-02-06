@@ -474,7 +474,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
             // see if it exists in med lib
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
+           
+            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
             IEnumerable<Item> matches = GetMediaItems(map)
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
@@ -549,7 +550,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 stream1.CopyTo(stream2);
                 // Create the options
                 MediaCreatorOptions options = new MediaCreatorOptions();
-                options.FileBased = false;
+                options.FileBased = true;
                 options.IncludeExtensionInItemName = false;
                 options.KeepExisting = false;
                 options.Versioned = false;
@@ -4512,6 +4513,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
+           
             if (string.IsNullOrEmpty(importValue))
                 return;
 
@@ -4520,6 +4522,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
             string mediaLog = String.Empty;
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> t = null;
+            IEnumerable<Item> tName;
             Dictionary<string, string> d = GetMapping();
 
             string lowerValue = importValue.ToLower();
@@ -4532,20 +4537,34 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //loop through children and look for anything that matches by name
             string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+             tName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
 
             //if you find one then store the id
-            if (!t.Any())
+            if (!tName.Any())
             {
-                map.Logger.Log(newItem.Paths.FullPath, "Media Type not matched", ProcessStatus.FieldError, NewItemField, importValue);
-                return;
+                tDName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+                if (!tDName.Any())
+                {
+                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
+                    
+                }
+                else
+                {
+                    t = tDName;
+
+                }
+            }
+
+            else
+            {
+                t = tName;
             }
 
             Field f = newItem.Fields[NewItemField];
             if (f == null)
                 return;
 
-            string ctID = t.First().ID.ToString();
+            string ctID = t.First().ToString();
             DataLogger.Add(NewItemField, t.First().Name);
              
             if (!f.Value.Contains(ctID))
@@ -4559,7 +4578,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("image", "Image");
             d.Add("audio", "Audio");
             d.Add("Video", "News");
-            d.Add("chartgraph", "Chart/Graph");
+            d.Add("chart/table", "Chart/Table");
             d.Add("timeline ", "Timeline");
             d.Add("dataTable", "Data Table");
             d.Add("webinars", "Webinars");
