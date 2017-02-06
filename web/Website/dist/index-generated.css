@@ -5306,6 +5306,18 @@ header .header-account-access {
     .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
       border: 1px solid #0f5487; }
 
+.theme-insurance-day .myview-settings .table span {
+  color: #DE4361;
+  fill: #DE4361; }
+  .theme-insurance-day .myview-settings .table span.button--outline {
+    border: 1px solid #DE4361; }
+    .theme-insurance-day .myview-settings .table span.button--outline:hover {
+      border: 1px solid #b0173d; }
+  .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
+    color: #fff; }
+    .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
+      border: 1px solid #b0173d; }
+
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
     font-size: 24px;
