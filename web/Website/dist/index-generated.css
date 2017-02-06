@@ -8469,6 +8469,9 @@ div#feedbacklite.fbl_r {
     #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
       font-size: 16px;
       font-weight: normal; }
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+          font-size: 12px; } }
     #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
       background: #1191d1;
       color: #fff;
@@ -8482,12 +8485,12 @@ div#feedbacklite.fbl_r {
     @media only screen and (max-width: 1024px) {
       #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
         padding: 16px 5px; } }
-    @media only screen and (max-width: 768px) {
-      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-        padding: 16px 2px; } }
     @media only screen and (max-width: 767px) {
       #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
         padding: 16px 10px; } }
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 10px 2px; } }
   #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
     font-size: 18px;
     border-right: 1px solid #e9e9e9; }
@@ -8521,6 +8524,9 @@ div#feedbacklite.fbl_r {
         text-decoration: none; }
   #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
     font-size: 15px; }
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+        font-size: 12px; } }
     #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
       color: #1191d1; }
   @media (max-width: 480px) {
