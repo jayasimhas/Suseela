@@ -132,7 +132,7 @@ namespace Informa.Web.Areas.Article.Controllers
 
             if (subjectGuids != null) filter.TaxonomyIds.AddRange(subjectGuids);
             if (publicationName != null) filter.PublicationNames.Add(publicationName);
-            if (authorIds != null) filter.AuthorGuids.AddRange(authorIds);
+            if (authorIds != null && authorIds.Any()) filter.AuthorGuids.AddRange(authorIds);
             if (!string.IsNullOrEmpty(mediaType.ToString()) && mediaType != Guid.Empty) filter.MediaTypeTaxonomyId = mediaType;
             if (!string.IsNullOrEmpty(contentType.ToString()) && contentType != Guid.Empty) filter.ContentTypeTaxonomyId = contentType;
 
