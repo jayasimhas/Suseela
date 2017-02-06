@@ -14383,7 +14383,7 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #c12d3b; }
+  border-top: 4px solid #0f5487; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
@@ -14397,8 +14397,8 @@ main {
   background-color: #0f5487; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(193, 45, 59, 0.3);
-  border-color: rgba(193, 45, 59, 0.5); }
+  background-color: rgba(15, 84, 135, 0.3);
+  border-color: rgba(15, 84, 135, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
@@ -14424,7 +14424,7 @@ main {
 .theme-lloydslist .quick-facts {
   background-color: rgba(17, 145, 209, 0.1); }
   .theme-lloydslist .quick-facts hr {
-    background-color: rgba(193, 45, 59, 0.5); }
+    background-color: rgba(15, 84, 135, 0.5); }
 
 /* * * * PRINT STYLES * * * */
 @media print {
