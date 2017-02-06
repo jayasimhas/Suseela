@@ -920,3 +920,26 @@
 		}
 	}
 }
+
+.theme-insurance-day{
+	.myview-settings {
+		.table{
+			span{
+				color: #DE4361;
+				fill: #DE4361;
+				&.button--outline{
+					border: 1px solid #DE4361;
+					&:hover{
+						border: 1px solid #b0173d;
+					}
+				}
+				&.button--filled{
+					color: #fff;
+					&:hover{
+						border: 1px solid #b0173d;
+					}
+				}
+			}
+		}
+	}
+}
