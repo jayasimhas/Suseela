@@ -6204,7 +6204,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -6279,7 +6279,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>

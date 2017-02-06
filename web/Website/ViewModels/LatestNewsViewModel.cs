@@ -41,7 +41,7 @@ namespace Informa.Web.ViewModels
             IItemManuallyCuratedContent itemManuallyCuratedContent,
             IArticleListItemModelFactory articleListableFactory,
             ISiteRootContext rootContext,
-            ITextTranslator textTranslator, 
+            ITextTranslator textTranslator,
             IAuthorService authorService,
             IDCDReader dcdReader)
         {
@@ -58,7 +58,7 @@ namespace Informa.Web.ViewModels
             if (Parameters == null) return;
 
             DisplayTitle = Parameters.Display_Title;
-            ItemsToDisplay = Parameters.Number_To_Display?.Value ?? 6;
+            ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Number_To_Display.ToString()) ? Parameters.Number_To_Display : 6;
             SeeAllLink = Parameters.Show_See_All ? new Link
             {
                 Text = TextTranslator.Translate("Article.LatestFrom.SeeAllLink")
@@ -71,7 +71,7 @@ namespace Informa.Web.ViewModels
             CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
                 ? (IList<string>)new List<string>()
                 : Parameters.CompanyID.Split(',');
-            
+
             if (IsAuthorPage)
             {
                 Author_Page();
@@ -96,14 +96,14 @@ namespace Informa.Web.ViewModels
         private bool IsCompanyPage => Datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString;
 
         private IStaff_Item CurrentAuthor => AuthorService.GetCurrentAuthor();
-        
+
         private string CurrentAuthorName => (CurrentAuthor != null) ? $"{CurrentAuthor.First_Name} {CurrentAuthor.Last_Name}" : string.Empty;
 
         public void Author_Page()
         {
             if (DisplayTitle)
                 TitleText = GetTitleText(CurrentAuthorName);
-            
+
             Authors = new List<string> { RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()) };
 
             if (SeeAllLink != null)
@@ -142,16 +142,17 @@ namespace Informa.Web.ViewModels
             if (SeeAllLink != null)
             {
                 string url = SearchTaxonomyUtil.GetSearchUrl(Parameters.Subjects.ToArray());
-                if (Authors.Count > 0) {
+                if (Authors.Count > 0)
+                {
                     var appender = (url.Contains("?")) ? "&" : string.Empty;
                     url = $"{url}{appender}author={string.Join(",", Authors)}";
                 }
-				if (Parameters.Publications?.Count() > 0)
-				{
-					var appender = (url.Contains("?")) ? "&" : string.Empty;
-					url = $"{url}{appender}publication={string.Join(";", Parameters.Publications.Select(s => s.Publication_Name))}";
-				}
-				SeeAllLink.Url = url;
+                if (Parameters.Publications?.Count() > 0)
+                {
+                    var appender = (url.Contains("?")) ? "&" : string.Empty;
+                    url = $"{url}{appender}publication={string.Join(";", Parameters.Publications.Select(s => s.Publication_Name))}";
+                }
+                SeeAllLink.Url = url;
             }
         }
 
@@ -173,15 +174,15 @@ namespace Informa.Web.ViewModels
             {
                 title = title + " &amp;" + Topics.Last();
             }
-            return title;            
+            return title;
         }
 
-        public string EventSourceValue => 
+        public string EventSourceValue =>
             IsAuthorPage ? CurrentAuthorName
                 : IsCompanyPage ? $"{AnalyticsName} articles"
                     : TitleText;
 
-        public string EventSource 
+        public string EventSource
             => IsAuthorPage ? "see_all_articles"
                 : IsCompanyPage ? "see_all_deals"
                     : "see_all_topic";
@@ -201,11 +202,11 @@ namespace Informa.Web.ViewModels
 
             filter.Page = 1;
             filter.PageSize = itemsToDisplay;
-            if(manuallyCuratedContent != null) filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
-            if(subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
-            if(publicationNames != null) filter.PublicationNames.AddRange(publicationNames);
-            if(authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
-            if(companyRecordNumbers != null) filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
+            if (manuallyCuratedContent != null) filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
+            if (subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
+            if (publicationNames != null) filter.PublicationNames.AddRange(publicationNames);
+            if (authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
+            if (companyRecordNumbers != null) filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
 
             var results = ArticleSearch.Search(filter);
             var articles =
