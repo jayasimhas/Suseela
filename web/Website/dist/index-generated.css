@@ -8801,8 +8801,7 @@ div#feedbacklite.fbl_r {
         background-color: #1191d1;
         color: #ffffff;
         padding: 8px;
-        font-size: 16px;
-        font-weight: normal; }
+        font-weight: 500; }
       #market-data .carousel-div .states_heading .R16 {
         padding: 12px 10px;
         border-bottom: 1px solid #e1e1e1;
@@ -8810,6 +8809,8 @@ div#feedbacklite.fbl_r {
         @media only screen and (min-width: 767px) and (max-width: 1024px) {
           #market-data .carousel-div .states_heading .R16 {
             padding: 12px 6px; } }
+        #market-data .carousel-div .states_heading .R16:hover {
+          background: #efd0d8 !important; }
       #market-data .carousel-div .states_heading .leftbord {
         border-left: 1px solid #e9e9e9; }
   #market-data h2, #market-data .article-topics__header {
@@ -8850,8 +8851,7 @@ div#feedbacklite.fbl_r {
     background-color: #1191d1;
     color: #ffffff;
     padding: 8px;
-    font-size: 16px;
-    font-weight: normal; }
+    font-weight: 500; }
   #market-data #marketDataTable span.numData {
     width: 40px;
     display: inline-block; }
