@@ -8029,8 +8029,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10921,7 +10921,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -14362,7 +14362,7 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #c12d3b; }
+  border-top: 4px solid #0f5487; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
@@ -14376,8 +14376,8 @@ main {
   background-color: #0f5487; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(193, 45, 59, 0.3);
-  border-color: rgba(193, 45, 59, 0.5); }
+  background-color: rgba(15, 84, 135, 0.3);
+  border-color: rgba(15, 84, 135, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
@@ -14403,7 +14403,7 @@ main {
 .theme-lloydslist .quick-facts {
   background-color: rgba(17, 145, 209, 0.1); }
   .theme-lloydslist .quick-facts hr {
-    background-color: rgba(193, 45, 59, 0.5); }
+    background-color: rgba(15, 84, 135, 0.5); }
 
 /* * * * PRINT STYLES * * * */
 @media print {
