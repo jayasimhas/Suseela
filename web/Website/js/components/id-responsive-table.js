@@ -24,7 +24,7 @@
 			Parent.find('.table').empty();
 			for(var key in HeaderData) {
 				if(key !== "ID") {
-					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort' category='" +category +"' type='ascending'></a><a href='#' class='sort' category='" +category +"' type='descending'></a></div>";
+					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
 				}
 			}
 			Parent.find('.table').append('<div class="tableRow">' + Header + '</div>');
@@ -54,7 +54,7 @@
 			var CreateList = window.jsonMappingData;
 
 			for(var key in CreateList) {
-				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></a></div></div>');
+				Parent.find('.owl-carousel').append('<div class="article" data-head="' +CreateList[key].Key+ '"><div class="year_heading"><span>' + CreateList[key].Value + '</span><a href="#" class="sort" type="ascending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg></a><a href="#" class="sort" type="descending"><svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg></a></div></div>');
 			}
 			var Items = Parent.find('.owl-carousel').find('.article');
 
@@ -146,7 +146,7 @@
         SortingModal: function(id) {
         	var self = this;
 
-        	$(document).on('click','#modal-table .sort', function(e) {
+        	$(document).on('click','.sort-modal', function(e) {
         		e.preventDefault();
         		var MainData = window.ResponsiveJSON,
         			Index = $(this).parents('.tableHead').index(),
@@ -157,7 +157,8 @@
         			UpdatedJson = [],
         			HeadingText = $(this).parents('.tableHead').find('strong').text();
 
-        		$('#modal-table .tableRow').each(function() {
+
+        		$('#modal-annualresults .tableRow').each(function() {
         			if($(this).find('.tableCell').length > 0) {
 	        			var Text = $($(this).find('.tableCell')[Index]).text();
 	        			if(HeadingText == 'Company') {
@@ -205,6 +206,8 @@
 				window.ResponsiveModalJSON = UpdatedJson;
 
 				self.RenderModal(window.ResponsiveModalJSON, id);
+				$('.sort-modal').removeClass('active');
+        		$($('#modal-annualresults .tableRow .tableHead')[Index]).find('.sort-modal[type='+ type +']').addClass('active');
         	});
         },
         SortingFunctionality: function(id) {
@@ -336,3 +339,15 @@
 
 	
 })();
+
+$(document).on('mouseenter', '.R16, .RB16', function() {
+	var Index = $(this).index();
+	$($('.states_heading .RB16')[Index -1]).addClass('activate-hover');
+	$('.owl-item').each(function() {
+		$($(this).find('.R16')[Index -1]).addClass('activate-hover');
+	})
+})
+
+$(document).on('mouseleave', '.R16, .RB16', function() {
+	$('.R16, .RB16').removeClass('activate-hover');
+})

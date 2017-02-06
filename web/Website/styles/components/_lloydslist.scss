@@ -22,7 +22,7 @@
 	    		margin-bottom: 1em;
 	    	}
         }
-        &:last-child {
+        &.jumpToSection {
         	float: right;
         }
      }
@@ -74,6 +74,11 @@
 }
 
 #market-data-tool, #tanker-fixtures{
+	.borTop{
+		height: 1px;
+		border-top: 1px solid #d1d3d4;
+		display: block;
+	}
 	&.table-responsive .table {
 		font-family: "Roboto", Helvetica, Arial, sans-serif;
 		&.mobView{
@@ -111,6 +116,15 @@
 		}
 		.pad-10 {
 			padding: 16px 10px;
+			@media only screen and (max-width: 1024px) {
+	    		padding: 16px 5px;
+	    	}
+			@media only screen and (max-width: 768px) {
+	    		padding: 16px 2px;
+	    	}
+			@media only screen and (max-width: 767px) {
+	    		padding: 16px 10px;
+	    	}
 		}
 		.mobleftCol{
 			font-size: 18px;
@@ -382,6 +396,45 @@
 }
  
 #market-data{
+	font-size: 0.9375rem; 
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	.carousel-div{
+		position:relative;
+		border-right: 1px solid #e9e9e9;
+		width: 100%;
+		.states_heading{
+			position:relative;
+			float:left;
+			width:20%;
+			z-index: 9;
+			@media only screen and (min-width: 767px) and (max-width: 1024px) {
+				width: 20%;
+			}
+			@include breakpoint('small') {
+				width: 50%;
+			}
+			.title{
+				background-color: #1191d1;
+				color: #ffffff;
+				padding: 8px;
+				font-weight: 500;
+			}
+			.R16{
+				padding: 12px 10px;
+				border-bottom: 1px solid #e1e1e1;
+				border-right: 1px solid #e9e9e9;
+				@media only screen and (min-width: 767px) and (max-width: 1024px) {
+					padding: 12px 6px;
+				}
+				&:hover{
+					background: #efd0d8 !important;
+				}
+			}
+			.leftbord{
+				border-left: 1px solid #e9e9e9;
+			} 
+		}
+	} 
 	h2{
 		font-size: 46px;
 		font-weight: bold;
@@ -391,63 +444,47 @@
 			margin-bottom: 20px;
 		}
 	}
-	#marketDataTable{
-		width: 790px;
-		font-size: 0.9375rem;
-		font-family: "Roboto", Helvetica, Arial, sans-serif;
-		@media screen and (min-width: 801px) and (max-width: 1024px) {
-			width: 594px;
-		}
-		@include breakpoint('medium') {
-			width: 100%;
-		}
-		.pad-10 {
-			padding: 16px 10px;
-		}
-		.mobleftCol{
-			font-size: 18px;
+	.oddCls{
+		background: #f1f1f1;
+	} 
+	#marketDataTable{ 
+		.R16{
+			padding: 12px 10px;
+			border-bottom: 1px solid #e1e1e1;
 			border-right: 1px solid #e9e9e9;
 		}
-		.mobrigCol{
-			font-size: 16px;
-			a{
-				color: #1191d1;
-				text-decoration: none;
+		.owl-controls{
+			display: none;
+		}
+		@media only screen and (max-width: 767px) {
+			.owl-controls{
+				display: block;
 			}
 		}
-		
-		.borTop{
-			border-top: 1px solid #d1d3d4;
+		.item{
+			height: auto !important;
+			&:first{
+				border-left: 1px solid red;
+			}
 		}
 		.pad-20{
 			padding: 10px 20px;
+			@media only screen and (max-width: 1024px) {
+	    		padding: 10px 5px;
+	    	}
+			@media only screen and (max-width: 768px) {
+	    		padding: 10px 2px;
+	    	}
+			@media only screen and (max-width: 767px) {
+	    		padding: 10px 10px;
+	    	}
 		}
-		.table_head{
-			background-color: #0f5487;
+		.title{
+			background-color: #1191d1;
 			color: #ffffff;
-			th{
-				font-size: 16px;
-				font-weight: normal;
-			}
-			.visible-lg{
-				background: #1191d1;
-				color: #fff;
-				font-weight: normal;
-			}
-		}
-		.oddCls{
-			background: #f1f1f1;
-		}
-		tbody.visible-lg td{
-			border-bottom: 1px solid #d1d3d4;
-			border-right: 1px solid #d1d3d4;
-		}
-		tbody.visible-lg tr td:last-child{
-			border-right: none;
-		}
-		tbody.visible-lg tr:last-child td{
-			border-bottom: none;
-		}
+			padding: 8px;
+			font-weight: 500;
+		} 
 		span.numData{
 			width: 40px;
 			display: inline-block;

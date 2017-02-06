@@ -28,6 +28,7 @@ namespace Informa.Library.Utilities.References
         public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
         public const string PublicationRootTemplateID = "{DD003F89-D57D-48CB-B428-FFB519AACA56}";
         public const string HomeRootTemplateID = "{88CACA5D-2AE1-4739-8145-399F3486C2DE}";
+        public const string PackageTemplateID = "{59B467D0-59FB-4730-9380-E63109F18874}";
 
         public static string StrategicTransactionsComponent = ItemIdResolver.GetItemIdByKey("StrategicTransactionsComponent");
         public static string DCDSubscribeComponent = ItemIdResolver.GetItemIdByKey("DCDSubscribeComponent");

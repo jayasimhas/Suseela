@@ -1,6 +1,8 @@
 ﻿@using Glass.Mapper.Sc.Mvc
 @model Informa.Web.ViewModels.Articles.ArticlePackageViewModel
-test package
+
+@if (!Model.IsArticlePage)
+{
 <div class="article-related-content">
 @{
     var selectedPackages = Model.SelectedPackages;
@@ -13,12 +15,15 @@ test package
             var packageArticles = Model.GetPackageArticles(package);
             foreach (var article in packageArticles)
             {
-                
+
                 <div class="contentRecomm-article">
                     @if (!Model.HideImage)
                     {
                         string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
-                        <img class="article-related-content__img" src="@img" />
+                        if (!string.IsNullOrEmpty(img))
+                        {
+                          <img class="preview__image" style="width:26%;height: 45%;" src="@img" />
+                        }
                     }
 
                     @*<span class="article-related-content__category">@Model.PublicationName</span>*@
@@ -31,3 +36,40 @@ test package
     }
 }
 </div>
+ }
+    else
+    {
+        <div class="article-related-content">
+            @{
+                var referredArticle = Model.GetPackageReferrersbyLoop();
+                if (referredArticle != null && referredArticle.Any())
+                {
+                    foreach (var package in referredArticle)
+                    {
+                        <h2>@package.PackageTitle</h2>
+                        var packageArticles = Model.GetPackageArticles(package);
+                        foreach (var article in packageArticles)
+                        {
+
+                            <div class="contentRecomm-article">
+                                @if (!Model.HideImage)
+                                {
+                                    string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
+                                    if (!string.IsNullOrEmpty(img))
+                                    {
+                                        <img class="article-preview__image" src="@img" />
+                                    }
+                                }
+
+                                @*<span class="article-related-content__category">@Model.PublicationName</span>*@
+                                <h5><a class="click-utag" href="@article._Url">@article.Title</a></h5>
+                                <time class="article-related-content__date">@article.Actual_Publish_Date.ToString("d MMM yyyy")</time>
+                            </div>
+                        }
+
+                    }
+                }
+            }
+        </div>
+   }
+   
