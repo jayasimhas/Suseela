@@ -14,6 +14,8 @@ namespace Informa.Library.SalesforceConfiguration
         protected readonly ISiteRootContext SiteRootContext;
         private const string MultipleSalesforceSupportConfigKey = "MultipleSalesforceSupportEnabled";
         private string _isMultipleSalesforceSupportEnabled = Settings.GetSetting(MultipleSalesforceSupportConfigKey);
+        private string _authorizationRequestEndPoint = "{0}/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
+
 
         public SalesforceConfigurationContext(
                         ISiteRootContext siteRootContext,
@@ -45,6 +47,14 @@ namespace Informa.Library.SalesforceConfiguration
         public ISalesforce_Configuration GetSalesforceConfiguration()
         {
             return _siteRootItem?.Salesforce_Version;
+        }
+
+        public string GetLoginEndPoints(string productCode, string callbackUrl, string state)
+        {
+            string url = string.Empty;
+            url = string.Format(_authorizationRequestEndPoint, SalesForceConfiguration?.Salesforce_Login_Url.Url,
+                productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
+            return url;
         }
     }
 }
