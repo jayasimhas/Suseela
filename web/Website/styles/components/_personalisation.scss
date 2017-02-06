@@ -5,12 +5,8 @@
 	font-family: "Roboto";
 	font-weight: 500;
 	width: 8.75rem;
-	height: 2.125rem;
 	text-align: center;
 	display: inline-block;
-	line-height: 2.125rem;
-	background: $color-tree-poppy-orange;
-	color: $color-white;
 }
 
 .personalisationhome{
@@ -126,7 +122,6 @@
 				z-index: 2;
 			}
 			&:before {
-				background-color: $color-cardinal-red;
 				content: "";
 				display: block;
 				height: 4px;
@@ -142,7 +137,6 @@
 				@include editView();
 				float: right;
 				margin: 0px;
-				padding: 0px;
 				position: relative;
 				top: 5px;
 			}
@@ -218,6 +212,7 @@
 		}
 		.article-preview_rheadline{
 			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 			border-bottom: 1px solid $color-light-gray;
 			margin-bottom: 1rem;
 			padding-bottom: 1rem;
@@ -237,13 +232,9 @@
 				}
 			}
 			a{
-				color: $color-zeus-black;
 				height: 100px;
 				overflow: hidden;
-				display: block;
-				&:hover{
-					color: $color-cardinal-red;
-				}
+				display: block; 
 			}
 			@include breakpoint('small') {
 				height: auto;
@@ -462,3 +453,38 @@
 		}
 	} 
 }
+
+.theme-lloydslist{
+	@media screen and (min-width: 768px){
+		.latestSubject{
+			&:before {
+				background-color: #1191D1;
+			}
+		}
+	}
+	@media screen and (max-width: 767px){
+		.latestSubject{
+			span.sub{
+				border-left: 0.625rem solid #1191D1;
+			}
+		}
+	}
+}
+
+.theme-insurance-day{
+	@media screen and (min-width: 768px){
+		.latestSubject{
+			&:before {
+				background-color: #DE4361;
+			}
+		}
+	}
+	@media screen and (max-width: 767px){
+		.latestSubject{
+			span.sub{
+				border-left: 0.625rem solid #DE4361;
+			}
+		}
+	}
+}
+
