@@ -106,8 +106,12 @@
 				margin-right: 0;
 				padding-right: 40px;
 				height: 5em;
+				word-wrap: break-word;
 				@media only screen and (min-width: 767px) and (max-width: 1024px) {
 				    padding-left: 10px;
+				}
+				@include breakpoint('small') {
+					padding-left: 5px;
 				}
 			}
 			.owl-dots{
