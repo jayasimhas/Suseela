@@ -1,7 +1,6 @@
 ﻿@model Informa.Web.ViewModels.Casualty.RelatedLinksViewModel
-@if (Model.IsUserAuthenticated)
-{
-    if (Model.marketDataFolders != null && Model.marketDataFolders.Any())
+
+    @if (Model.marketDataFolders != null && Model.marketDataFolders.Any())
     {
         <div class="related-left-rail">
             <div class="relatedlinks">
@@ -30,6 +29,6 @@
                 </div>
             </div>
       }
-   }
+   
 
                                     

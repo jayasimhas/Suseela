@@ -43,6 +43,10 @@ namespace Informa.Web.ViewModels.Articles
         public IEnumerable<IArticle_Package> SelectedPackages => GetSelectedPackages();
         public bool HideImage => (PackageSettings != null) ? PackageSettings.Hide_Image : false;
         Guid curItemID => GlassModel._Id;
+        /// <summary>
+        /// Get selected packages
+        /// </summary>
+        /// <returns></returns>
         private IEnumerable<IArticle_Package> GetSelectedPackages()
         {
             if(PackageSettings != null && PackageSettings.Select_Package.Any())
@@ -52,21 +56,36 @@ namespace Informa.Web.ViewModels.Articles
             }
             return Enumerable.Empty<IArticle_Package>();
         }
-
+        /// <summary>
+        /// Get selected articles
+        /// </summary>
+        /// <param name="Package"></param>
+        /// <returns></returns>
         public IEnumerable<IArticle> GetPackageArticles(IArticle_Package Package)
         {
-            if (Package != null && Package.Package_Articles.Any())
+            try
             {
-                var packageArticles = Package.Package_Articles.OfType<IArticle>()?.Where(p => p != null);
-                if (IsArticlePage && packageArticles != null && packageArticles.Any())
+                if (Package != null && Package.Package_Articles.Any())
                 {
-                    packageArticles = packageArticles.Where(i => !i._Id.ToString().Equals(curItemID.ToString(), StringComparison.InvariantCultureIgnoreCase));
+                    var packageArticles = Package.Package_Articles.OfType<IArticle>()?.Where(p => p != null);
+                    if (IsArticlePage && packageArticles != null && packageArticles.Any())
+                    {
+                        packageArticles = packageArticles.Where(i => !i._Id.ToString().Equals(curItemID.ToString(), StringComparison.InvariantCultureIgnoreCase));
+                    }
+                    return packageArticles;
                 }
-                return packageArticles;
+                return Enumerable.Empty<IArticle>();
             }
-            return Enumerable.Empty<IArticle>();
+            catch (Exception ex)
+            {
+                _logger.Error("Error Finding the package articles", ex);
+                return Enumerable.Empty<IArticle>();
+            }
         }
-
+        /// <summary>
+        /// Get package referrers by link database
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<IArticle_Package> GetPackageReferrers()
         {
            
@@ -86,7 +105,10 @@ namespace Informa.Web.ViewModels.Articles
             }
             return null;
         }
-
+        /// <summary>
+        /// Get package referrers by loop
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<IArticle_Package> GetPackageReferrersbyLoop()
         {
             try
