@@ -222,7 +222,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+          
+           
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {

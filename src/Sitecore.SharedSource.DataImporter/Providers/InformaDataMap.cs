@@ -19,6 +19,7 @@ using Sitecore.Resources.Media;
 using System.Net;
 using Sitecore.SecurityModel;
 using System.Xml.Linq;
+using System.Web;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -307,22 +308,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                         //reading mediaType according to agr mapping  adding to ao
-                        if (Tableau.Count > 0)
+                        if (!ao.ContainsKey("MEDIA"))
                         {
-                            ao.Add("MEDIA", "interactivedashboards");
-                        }
-                        else if (CheckTable(GetXMLData(d, bodyNode)))
-                        {
-                            ao.Add("MEDIA", "Chart/Table");
-                        }
-                        //else if (!string.IsNullOrEmpty(bodyTitleHtml))
-                        //{
-                        //    ao.Add("MEDIA", "image");
-                        //}
-                        else
-                        {
-                            ao.Add("MEDIA", "");
-                        }
+                            if (Tableau.Count > 0)
+                            {
+
+                                ao.Add("MEDIA", "interactivedashboards");
+                            }
+                            else if (CheckTable(GetXMLData(d, bodyNode)))
+                            {
+                                ao.Add("MEDIA", "chartgraph");
+                            }
+                            //else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                            //{
+                            //    ao.Add("MEDIA", "image");
+                            //}
+                            else
+                            {
+                                ao.Add("MEDIA", "");
+                            }
+                        }                     
+                       
 
 
 
@@ -389,21 +395,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string AnimalHealth = "";
 
 
-                        if (publication != "ID")
+                        if (publication != "ID" || publication != "LL")
                         {
-                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                           
                             List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                             List<string> commoditySearchResults = null;
                             List<string> commodityfactorSearchResults = null;
                             List<string> animalhealthSearchResults = null;
 
 
-
-                            foreach (string region in regionSearchResults)
-                            {
-                                Country += region + ",";
-
-                            }
+                           
                             if (publication == "AnimalPharma")
                             {
                                 animalhealthSearchResults = GetListFromXml(publication, "animalhealth", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
@@ -470,9 +471,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         }
 
-                        
-                        if (ao.ContainsKey("COUNTRY")) { 
-                        if (Country != "")
+
+                        List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                        foreach (string region in regionSearchResults)
+                        {
+                            Country += region + ",";
+
+                        }
+
+
+                        if (ao.ContainsKey("COUNTRY"))
+                        { 
+                          if (Country != "")
                         
                              { 
 
@@ -868,8 +878,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
 
 
-           
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
+            //  XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
             if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
             {
@@ -901,9 +912,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
 
 
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            
+            // XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
 
             var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower());
                             
@@ -1252,7 +1264,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string CropProtection = string.Empty;
                         string Product = string.Empty;
                         string Commercial = string.Empty;
-                        string Country = string.Empty; 
+                        string Country = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1280,21 +1292,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     Taxonomy["PRODUCT"] = Commercial;
 
                                 }     //countCommodityFactor++;
-                                    
-                               else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
-                                    {
-                                        Country += node.Attributes["unique-name"].Value + ",";
-                                        Taxonomy["COUNTRY"] = Country;
-                                    }
-                                    //  countCommodityFactor++;
 
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
                                 }
+                                //  countCommodityFactor++;
 
                             }
 
                         }
-                    
-                    if(publication == "commodities")
+
+                    }
+
+                    if (publication == "commodities")
                     {
                         Taxonomy.Add("COMMODITY", "");
                         Taxonomy.Add("COMMODITYFACTOR", "");
@@ -1347,7 +1359,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if(publication == "AnimalPharma")
+                    if (publication == "AnimalPharma")
                     {
                         Taxonomy.Add("ANIMALHEALTH", "");
                         Taxonomy.Add("COMMERCIAL", "");
@@ -1375,7 +1387,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                                 }
-                                    
+
 
                                 else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
                                 {
@@ -1404,12 +1416,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string SectionRef = string.Empty;
                         foreach (XmlNode node in xn)
                         {
-                            if (node.Attributes["unique-name"] != null) 
+                            if (node.Attributes["unique-name"] != null)
                             {
-
                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "market", site))
                                 {
-
                                     Market += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["MARKET"] = Market;
 
@@ -1426,6 +1436,86 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
+                                }
+                                else
+                                {
+                                    SectionRef += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTINREF"] = SectionRef;
+
+                                }
+
+                            }
+                        }
+                    }
+
+
+
+                    if (publication == "LL")
+                    {
+                       Taxonomy.Add("COUNTRY", "");
+                       Taxonomy.Add("HOTTOPICS", "");                     
+                       Taxonomy.Add("MARKET", "");
+                       Taxonomy.Add("REGULARS", "");
+                       Taxonomy.Add("SECTORS", "");
+                       Taxonomy.Add("TOPICS", "");
+                       Taxonomy.Add("SECTINREF", "");
+
+                       string Country = string.Empty;
+                       string HotTopics = string.Empty;
+                       string Media = string.Empty;
+                       string Market = string.Empty;
+                       string Regulars = string.Empty;
+                       string Sectors = string.Empty;
+                       string Topic = string.Empty;
+                       string SectionRef = string.Empty;
+
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null)
+                            {
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "market", site))
+                                {
+                                    Market += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["MARKET"] = Market;
+
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "topics", site))
+                                {
+
+                                    Topic += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["TOPICS"] = Topic;
+                                }
+
+
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "country", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
+                                {
+                                    Sectors += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTORS"] = Sectors;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "regulars", site))
+                                {
+                                    Regulars += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["REGULARS"] = Regulars;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "mediatype", site))
+                                {
+                                    Media = node.Attributes["unique-name"].Value;
+                                    if (!Taxonomy.ContainsKey("MEDIA"))
+                                    {
+                                        Taxonomy.Add("MEDIA", "");
+                                    }
+
+                                    Taxonomy["MEDIA"] = Media;
+                               }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
+                                {
+                                    HotTopics += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["HOTTOPICS"] = HotTopics;
                                 }
                                 else
                                 {
@@ -1457,8 +1547,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                     int count = 1;
-
-
                     foreach (XmlNode node in xn)
                     {
                         if (node.Attributes["unique-name"] != null)
@@ -2495,10 +2583,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             List<string> keyList = new List<string>();
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            
-           
-                 var elemValue = doc.Descendants(site).Descendants(type).Descendants();
+            //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+
+
+            var elemValue = doc.Descendants(site).Descendants(type).Descendants();
                 foreach (XElement elem in elemValue)
                 {
                    

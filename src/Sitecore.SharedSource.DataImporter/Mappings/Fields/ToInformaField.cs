@@ -2566,7 +2566,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+          
+             XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {
@@ -4559,7 +4560,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("image", "Image");
             d.Add("audio", "Audio");
             d.Add("Video", "News");
-            d.Add("chartgraph", "Chart/Graph");
+            d.Add("chartgraph", "Chart or Graph");
             d.Add("timeline ", "Timeline");
             d.Add("dataTable", "Data Table");
             d.Add("webinars", "Webinars");

@@ -21,7 +21,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger
                 LogFileDateTime = DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
             }
 
-            string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
+            string strfilepath = string.Format(@"{0}sitecore\CMCLogs\Content Migration Checks_{1}.xlsx",
                 HttpRuntime.AppDomainAppPath, LogFileDateTime);
 
 

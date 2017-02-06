@@ -745,10 +745,65 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     ListToGuid.DataLogger.Add("SECTINREF", importValue);
                                 else
                                 {
-                                    ListToGuid.DataLogger.Add("SECTINREF","" );
+                                    ListToGuid.DataLogger.Add("SECTINREF","");
                                 }
 
                             }
+
+                            if (d.NewItemField == "hotopics")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("HOTTOPICS", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("HOTTOPICS", "");
+                                }
+
+                            }
+
+
+                            if (d.NewItemField == "regulars")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("REGULARS", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("REGULARS", "");
+                                }
+
+                            }
+                            if (d.NewItemField == "sectors")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("SECTORS", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("SECTORS", "");
+                                }
+
+                            }
+                            if (d.NewItemField == "market")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("MARKET", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("MARKET", "");
+                                }
+
+                            }
+                            if (d.NewItemField == "topic")
+                            {
+                                if (values.Count(val => val != "") > 0)
+                                    ListToGuid.DataLogger.Add("TOPICS", importValue);
+                                else
+                                {
+                                    ListToGuid.DataLogger.Add("TOPICS", "");
+                                }
+
+                            }
+
+
 
                             if (d.NewItemField == "Body")
                             {
