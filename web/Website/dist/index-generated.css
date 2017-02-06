@@ -7143,21 +7143,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
-    .subscriptionPan #mySubscriptionTab a.button.button--outline, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit {
-      border: 1px solid #fbb040; }
-      .subscriptionPan #mySubscriptionTab a.button.button--outline:hover, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit:hover {
-        border-color: #f7941e;
-        background-color: #f7941e;
-        color: #ffffff; }
     .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
       cursor: text; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
-        border-color: #f7941e;
-        background-color: inherit !important;
-        color: #58595b !important;
-        text-decoration: none; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:focus {
-        text-decoration: none !important; }
+    .subscriptionPan #mySubscriptionTab .button--outline:hover {
+      text-decoration: none; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
