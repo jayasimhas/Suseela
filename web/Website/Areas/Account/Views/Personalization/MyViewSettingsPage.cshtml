@@ -81,8 +81,8 @@
                             <div class="mysettingsHead clearfix">
                                 <h1>@Model.Title</h1>
                                 <div class="saveoption mtop-10 hidden-xs">
-                                    <span class="saveview validationChk click-utag" data-info='{ "event_name": "myview_setting_save", "page_name":"@Model.Title","ga_eventCategory":"My View Settings Link","ga_eventAction":"Link Click","ga_eventLabel":"Save","click_through_destination":"Save"}'>@Model.SaveButtonText</span>
-                                    <span class="gotoview"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
+                                    <span class="saveview button--filled button--outline validationChk click-utag" data-info='{ "event_name": "myview_setting_save", "page_name":"@Model.Title","ga_eventCategory":"My View Settings Link","ga_eventAction":"Link Click","ga_eventLabel":"Save","click_through_destination":"Save"}'>@Model.SaveButtonText</span>
+                                    <span class="gotoview"><a class="button--outline" href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                                 </div>
                             </div>
 
