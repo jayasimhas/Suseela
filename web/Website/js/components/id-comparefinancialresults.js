@@ -332,6 +332,9 @@
 			self.ModalEvents();
 			self.SortingFunctionality(id);
 			self.SortingModal(id);
+			$(window).resize(function() {
+				self.HeightManagement(id);
+			})
 		}
 	}
 
