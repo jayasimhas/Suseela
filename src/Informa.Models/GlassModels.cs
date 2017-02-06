@@ -6204,7 +6204,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -6279,7 +6279,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -16949,6 +16949,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Salesforce_Service_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Login Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Login_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Entitlement Api Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Entitlement_Api_Url { get; set; }
     }
 
 
@@ -17009,6 +17027,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Salesforce_Service_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Login Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Login_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Entitlement Api Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Entitlement_Api_Url { get; set; }
     }
 
     public static partial class ISalesforce_ConfigurationConstants
@@ -17036,6 +17072,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Salesforce_Service_UrlFieldId = new ID("E88C8AE2-E7E1-4114-AC3C-E2FDC25BD46B");
         public const string Salesforce_Service_UrlFieldName = "Salesforce Service Url";
+
+        public static readonly ID Salesforce_Login_UrlFieldId = new ID("9048ECFD-AAE6-4510-B60F-B25154090291");
+        public const string Salesforce_Login_UrlFieldName = "Salesforce Login Url";
+
+        public static readonly ID Salesforce_Entitlement_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
+        public const string Salesforce_Entitlement_Api_UrlFieldName = "Salesforce Entitlement Api Url";
     }
 
 }

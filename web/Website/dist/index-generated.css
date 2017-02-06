@@ -4445,8 +4445,6 @@ header .header-account-access {
       width: 7.5rem;
       height: 32px;
       height: 2rem;
-      background: #f7941e;
-      color: #ffffff;
       margin: -4px 0 0 20px;
       margin: -4px 0 0 1.25rem;
       line-height: 32px;
@@ -4490,14 +4488,11 @@ header .header-account-access {
           border-top: 1px solid #ddd;
           vertical-align: middle; }
         .myview-settings .table-responsive .table tbody tr .followingBtn {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4505,17 +4500,13 @@ header .header-account-access {
           float: right;
           padding: 0 26px;
           padding: 0 1.625rem; }
-          .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-            background: #f7941e;
-            color: #ffffff; }
-            @media (max-width: 1080px) {
-              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-                background: inherit;
-                border: 1px solid #f7941e;
-                color: inherit; } }
-            @media (max-width: 480px) {
-              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-                background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+              background: inherit;
+              color: inherit; } }
+          @media (max-width: 480px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+              background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followingBtn {
               background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
@@ -4531,23 +4522,18 @@ header .header-account-access {
               margin-left: 0.625rem;
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr .followBtn {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
           line-height: 2rem;
           float: right;
           padding: 0 36px;
-          padding: 0 2.25rem;
-          background: #f7941e;
-          color: #ffffff; }
+          padding: 0 2.25rem; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followBtn {
               background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
@@ -4812,14 +4798,11 @@ header .header-account-access {
           padding-top: 0px;
           padding-top: 0rem; }
       .myview-settings .table-responsive .table thead .followAllBtn {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4830,8 +4813,6 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem;
         min-width: 130px; }
-        .myview-settings .table-responsive .table thead .followAllBtn:hover {
-          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4844,14 +4825,11 @@ header .header-account-access {
             min-width: initial;
             min-width: auto; } }
       .myview-settings .table-responsive .table thead .followinglbl {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4862,8 +4840,6 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem;
         cursor: text; }
-        .myview-settings .table-responsive .table thead .followinglbl:hover {
-          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followinglbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4872,28 +4848,22 @@ header .header-account-access {
             margin: 0px !important;
             float: left; } }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background-color: #f7941e;
-        color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 16px;
         padding: 0 1rem;
         margin-left: 8px;
-        margin-left: 0.5rem;
-        min-width: 130px; }
+        margin-left: 0.5rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4910,21 +4880,16 @@ header .header-account-access {
             padding: 0 20px;
             padding: 0 1.25rem; } }
       .myview-settings .table-responsive .table thead .followlbl {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background-color: #f7941e;
-        color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0;
@@ -4986,13 +4951,11 @@ header .header-account-access {
       .myview-settings .saveoption {
         width: 100%; } }
     .myview-settings .saveoption .gotoview {
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -5001,25 +4964,19 @@ header .header-account-access {
       margin-left: 20px;
       margin-left: 1.25rem; }
       .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
-        color: #58595b;
         display: block;
         padding: 0 25px; }
         .myview-settings .saveoption .gotoview a:hover, .myview-settings .saveoption .gotoview .pop-out__reset-password:hover, .myview-settings .saveoption .gotoview .sortable-table__list-toggler:hover, .myview-settings .saveoption .gotoview .mobile-table-exit:hover {
-          background: #f7941e;
-          color: #ffffff;
           text-decoration: none; }
         .myview-settings .saveoption .gotoview a:focus, .myview-settings .saveoption .gotoview .pop-out__reset-password:focus, .myview-settings .saveoption .gotoview .sortable-table__list-toggler:focus, .myview-settings .saveoption .gotoview .mobile-table-exit:focus {
           text-decoration: none; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .gotoview {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -5037,13 +4994,11 @@ header .header-account-access {
     .myview-settings .saveoption .saveview {
       padding: 0 32px;
       padding: 0 2rem;
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -5051,7 +5006,6 @@ header .header-account-access {
       float: right;
       margin-left: 20px;
       margin-left: 1.25rem;
-      background: #f7941e;
       color: #ffffff; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
@@ -5062,13 +5016,11 @@ header .header-account-access {
     .myview-settings .saveoption .registrationBtn {
       padding: 0 32px;
       padding: 0 2rem;
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -5140,8 +5092,6 @@ header .header-account-access {
       width: 10.125rem;
       margin: 0px auto; }
     .myview-settings .modal-view.preferences .saveview {
-      border: 1px solid #f7941e;
-      color: #231f20;
       text-align: center;
       float: left;
       height: 24px;
@@ -5155,8 +5105,6 @@ header .header-account-access {
       line-height: 23px;
       line-height: 1.4375rem;
       font-weight: bold; }
-      .myview-settings .modal-view.preferences .saveview:hover {
-        background: #f7941e; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
       color: #231f20;
@@ -5323,14 +5271,14 @@ header .header-account-access {
   animation: drop 1s ease; }
 
 .followingrow.over {
-  background: #f7941e; }
+  background: #1191d1; }
 
 @-webkit-keyframes "drop" {
   0%, 100% {
-    background: #f7941e;
+    background: #1191d1;
     color: #ffffff; }
   50% {
-    color: #f7941e;
+    color: #1191d1;
     background: #ffffff; } }
 
 @media (max-width: 800px) {
@@ -5345,6 +5293,30 @@ header .header-account-access {
     display: none !important; }
   #feedbacklite {
     display: none !important; } }
+
+.theme-lloydslist .myview-settings .table span {
+  color: #1191D1;
+  fill: #1191D1; }
+  .theme-lloydslist .myview-settings .table span.button--outline {
+    border: 1px solid #1191D1; }
+    .theme-lloydslist .myview-settings .table span.button--outline:hover {
+      border: 1px solid #0f5487; }
+  .theme-lloydslist .myview-settings .table span.button--filled, .theme-lloydslist .myview-settings .table span.pop-out__register-submit, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit {
+    color: #fff; }
+    .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
+      border: 1px solid #0f5487; }
+
+.theme-insurance-day .myview-settings .table span {
+  color: #DE4361;
+  fill: #DE4361; }
+  .theme-insurance-day .myview-settings .table span.button--outline {
+    border: 1px solid #DE4361; }
+    .theme-insurance-day .myview-settings .table span.button--outline:hover {
+      border: 1px solid #b0173d; }
+  .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
+    color: #fff; }
+    .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
+      border: 1px solid #b0173d; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
@@ -7183,21 +7155,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
-    .subscriptionPan #mySubscriptionTab a.button.button--outline, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit {
-      border: 1px solid #fbb040; }
-      .subscriptionPan #mySubscriptionTab a.button.button--outline:hover, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit:hover {
-        border-color: #f7941e;
-        background-color: #f7941e;
-        color: #ffffff; }
     .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
       cursor: text; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
-        border-color: #f7941e;
-        background-color: inherit !important;
-        color: #58595b !important;
-        text-decoration: none; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:focus {
-        text-decoration: none !important; }
+    .subscriptionPan #mySubscriptionTab .button--outline:hover {
+      text-decoration: none; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
