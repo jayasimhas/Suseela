@@ -23,8 +23,10 @@
 			
 			Parent.find('.table').empty();
 			for(var key in HeaderData) {
-				if(key !== "ID") {
-					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
+				if(key !== "ID" ) {
+					if(key !== "CompanyPageUrl") {
+						Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
+					}
 				}
 			}
 			Parent.find('.table').append('<div class="tableRow">' + Header + '</div>');
@@ -34,12 +36,14 @@
 				for(var val in Item) {
 					var content = "";
 					if(val !== "ID") {
-						if(Array.isArray(Item[val])) {
-							content = Item[val][0].value;
-						} else {
-							content = Item[val];
+						if(val !== "CompanyPageUrl") {
+							if(Array.isArray(Item[val])) {
+								content = Item[val][0].value;
+							} else {
+								content = Item[val];
+							}
+							Template += "<div class='tableCell'>" + content + "</div>";
 						}
-						Template += "<div class='tableCell'>" + content + "</div>";
 					}
 				}
 				Parent.find('.table').append('<div class="tableRow">' + Template + '</div>');
