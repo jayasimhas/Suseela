@@ -9,5 +9,7 @@ namespace Informa.Library.SalesforceConfiguration
         ISalesforce_Configuration SalesForceConfiguration { get; }
 
         string GetLoginEndPoints(string productCode, string callbackUrl, string state);
+
+        string GetUserEntitlementsEndPoints(string userName);
     }
 }

@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
                 client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-                HttpResponseMessage response = client.GetAsync("https://informabi--idande.cs84.my.salesforce.com/services/apexrest/UserEntitlements/" + user.Username).Result;
+                HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserEntitlementsEndPoints(user.Username)).Result;
                 var responseString = response.Content.ReadAsStringAsync().Result;
                 var userEntitlements = JsonConvert.DeserializeObject<List<UserEntitlement>>(responseString);
                 return userEntitlements?.Select(entitlement => EntitlementFactoryV2.Create(entitlement) as IEntitlement).ToList();
