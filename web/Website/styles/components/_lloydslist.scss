@@ -407,7 +407,10 @@
 	.carousel-div{
 		position:relative;
 		border-right: 1px solid #e9e9e9;
-		width: 100%;
+		width: 790px;
+		@include breakpoint('medium-small') {
+			width: 100%;
+		}
 		.states_heading{
 			position:relative;
 			float:left;
