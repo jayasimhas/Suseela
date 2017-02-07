@@ -25,17 +25,20 @@ $(function(){
 		$('.chartData', '.compareChart').addClass('hide');
 		$('.chartexpand', '.compareChart').removeClass('active');
 		$('.dataTitle', '.compareChart').removeClass('act');
+		$('.title', '.compareChart').removeClass('act');
 	});
 	
 	$('.chartexpand', '.eachChartData').click(function () {
 		var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartexpand = eachChartData.find('.chartexpand'), graphCont = eachChartData.find('.graph-container');
 		if(chartexpand.hasClass('active')){
 			$this.closest('.dataTitle').removeClass('act');
+			$this.closest('.dataTitle').find('.title').removeClass('act');
 			graphCont.addClass('hide');
 			$this.removeClass('active');
 		}
 		else{
 			$this.closest('.dataTitle').addClass('act');
+			$this.closest('.dataTitle').find('.title').addClass('act');
 			graphCont.removeClass('hide');
 			$this.addClass('active');
 		}

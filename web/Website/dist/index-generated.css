@@ -6588,7 +6588,7 @@ section: UI Elements
   margin-bottom: 20px !important; }
 
 .compareChart {
-  font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+  font-family: "Roboto", Arial Narrow, sans-serif;
   width: 790px; }
   @media screen and (min-width: 801px) and (max-width: 1024px) {
     .compareChart {
@@ -6627,8 +6627,10 @@ section: UI Elements
         background: #cacaca; }
       .compareChart .eachChartData .dataTitle .title {
         float: left;
-        font-size: 18px;
-        font-size: 1.125rem; }
+        font-size: 16px;
+        font-size: 1rem; }
+        .compareChart .eachChartData .dataTitle .title.act {
+          font-weight: 500; }
       .compareChart .eachChartData .dataTitle .chartexpand {
         float: right;
         background: url(/dist/img/sprite-image.png) no-repeat 0px -44px;
