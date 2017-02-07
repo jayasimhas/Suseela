@@ -53,8 +53,12 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetLoginEndPoints(string productCode, string callbackUrl, string state)
         {
             string url = string.Empty;
-            url = string.Format(_authorizationRequestEndPoint, SalesForceConfiguration?.Salesforce_Login_Url.Url,
-                productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
+            string loginUrl = (SalesForceConfiguration?.Salesforce_Login_Url != null
+                && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Login_Url.Url) ?
+                SalesForceConfiguration?.Salesforce_Login_Url.Url : string.Empty);
+
+            url = string.Format(_authorizationRequestEndPoint, loginUrl,
+                  productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
             return url;
         }
 
