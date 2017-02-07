@@ -32,8 +32,10 @@ namespace Informa.Library.User.Entitlement
 			}
 
 			var productCode = entitledProduct.ProductCode;
-			var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements.Where(e => string.Equals(e.ProductCode, productCode, StringComparison.InvariantCultureIgnoreCase)
-            || (string.Equals("IEGV", productCode, StringComparison.OrdinalIgnoreCase) && e.ProductCode.Contains(productCode))).Select(e => Create(e, ec.AccessLevel)));
+			var entitlements = EntitlementsContexts.
+                SelectMany(ec => ec.Entitlements.Where(e => 
+            string.Equals(e.ProductCode, productCode, StringComparison.InvariantCultureIgnoreCase)
+            || e.ProductCode.Contains(productCode)).Select(e => Create(e, ec.AccessLevel)));
 
 			foreach (var accessLevel in OrderedAccessLevels)
 			{
