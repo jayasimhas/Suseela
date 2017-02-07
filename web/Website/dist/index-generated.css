@@ -6519,15 +6519,11 @@ section: UI Elements
         right: 30px; }
 
 .related-left-rail {
-  width: 100%; }
+  width: 100%;
+  float: inherit;
+  clear: both; }
   .related-left-rail .relatedlinks {
     width: 100%; }
-    @media (max-width: 1080px) {
-      .related-left-rail .relatedlinks {
-        width: 66%; } }
-    @media (max-width: 800px) {
-      .related-left-rail .relatedlinks {
-        width: 100%; } }
   .related-left-rail .allrelatedlinks {
     width: 100%; }
     @media (max-width: 800px) {
@@ -6551,6 +6547,10 @@ section: UI Elements
       @media (max-width: 800px) {
         .related-left-rail .allrelatedlinks:last-child ul {
           border-bottom: 1px solid #d1d3d4; } }
+
+.article-right-rail .allrelatedlinks ul, .manually-curated-content__right-rail .allrelatedlinks ul {
+  float: inherit;
+  width: 100%; }
 
 .companyList ul {
   height: 464px;
@@ -7985,8 +7985,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10904,7 +10904,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
