@@ -3427,16 +3427,23 @@ body.lightboxed {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #d1d3d4;
+  font-family: 'Roboto'; }
   .ID-responsive-table-modal .container {
     background-color: #fff;
     margin: auto;
     padding: 20px;
     border: 1px solid #d1d3d4;
     width: 80%; }
+  .ID-responsive-table-modal .table-wrapper {
+    border: 1px solid #d1d3d4;
+    border-top: none; }
+    .ID-responsive-table-modal .table-wrapper .tableHead {
+      text-align: right; }
 
 .idi-table-heading {
-  background-color: #414042;
+  background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3454,21 +3461,27 @@ body.lightboxed {
   float: right;
   position: relative;
   width: 15px !important; }
-  @media (max-width: 480px) {
-    .sort {
-      display: none; } }
   .sort[type="ascending"] {
     position: absolute;
-    top: 15px;
-    right: 21px;
+    top: 10px;
+    right: 15px;
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="ascending"] {
+        right: 10px; } }
   .sort[type="descending"] {
     position: absolute;
     top: 25px;
     right: 20px; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .sort[type="descending"] {
+        right: 15px; } }
   .sort.active svg {
     fill: #ffffff; }
+  .sort svg {
+    height: 25px;
+    width: 20px; }
 
 .table_close {
   color: #231f20;
@@ -3478,15 +3491,19 @@ body.lightboxed {
   cursor: pointer; }
 
 .table-wrapper {
-  width: 100%; }
+  width: 100%;
+  border-top: none; }
   @media (max-width: 800px) {
     .table-wrapper {
-      overflow-x: scroll; } }
+      overflow-x: scroll;
+      border: 1px solid #d1d3d4; } }
   .table-wrapper .table {
     display: table;
     width: 100%;
     border-collapse: inherit;
-    border: none !important; }
+    border: 1px solid #d1d3d4;
+    border: none !important;
+    font-family: "Roboto", Helvetica, Arial, sans-serif; }
   .table-wrapper .tableRow {
     display: table-row; }
     .table-wrapper .tableRow:nth-child(odd) {
@@ -3515,13 +3532,37 @@ body.lightboxed {
   .table-wrapper .tableCell, .table-wrapper .tableHead {
     display: table-cell;
     padding: 5px; }
+  .table-wrapper .tableCell:first-child {
+    text-align: left; }
+  .table-wrapper .tableCell {
+    text-align: right; }
+
+#modal-annualresults .tableHead, #modal-comparefinancialresults .tableHead {
+  padding-right: 20px;
+  position: relative; }
+  #modal-annualresults .tableHead .sort-modal, #modal-comparefinancialresults .tableHead .sort-modal {
+    position: absolute;
+    right: 0; }
+    #modal-annualresults .tableHead .sort-modal[type="ascending"], #modal-comparefinancialresults .tableHead .sort-modal[type="ascending"] {
+      top: -5px;
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
+    #modal-annualresults .tableHead .sort-modal[type="descending"], #modal-comparefinancialresults .tableHead .sort-modal[type="descending"] {
+      top: 10px; }
+    #modal-annualresults .tableHead .sort-modal svg, #modal-comparefinancialresults .tableHead .sort-modal svg {
+      height: 25px;
+      width: 20px; }
+    #modal-annualresults .tableHead .sort-modal.active svg, #modal-comparefinancialresults .tableHead .sort-modal.active svg {
+      fill: #ffffff; }
 
 .ID-Responsive-Table {
   position: relative;
   width: 100%;
   float: left;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  border: 1px solid #d1d3d4;
+  font-family: 'Roboto'; }
   .ID-Responsive-Table .table-sort {
     background: url("img/Bitmap.png");
     width: 7px !important;
@@ -3530,8 +3571,6 @@ body.lightboxed {
     @media (max-width: 480px) {
       .ID-Responsive-Table .table-sort {
         display: none; } }
-  .ID-Responsive-Table a.hidden-xs, .ID-Responsive-Table .hidden-xs.pop-out__reset-password, .ID-Responsive-Table .hidden-xs.sortable-table__list-toggler, .ID-Responsive-Table .hidden-xs.mobile-table-exit {
-    display: none; }
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
   .ID-Responsive-Table .table_head {
@@ -3539,11 +3578,22 @@ body.lightboxed {
     color: #ffffff;
     padding: 10px;
     padding-right: 95px !important; }
+    .ID-Responsive-Table .table_head:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
       font-weight: 700;
-      font-style: normal; }
+      font-style: normal;
+      float: left; }
+    .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
+      float: left;
+      margin: 5px 0 0 15px; }
     .ID-Responsive-Table .table_head .R16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -3556,19 +3606,24 @@ body.lightboxed {
     float: left;
     width: 20%;
     z-index: 9; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .states_heading {
+        width: 40%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .states_heading {
         width: 40%; } }
     .ID-Responsive-Table .states_heading .redbg {
       background-color: #bb1528 !important; }
     .ID-Responsive-Table .states_heading div {
-      margin-bottom: 10px;
       padding: 10px; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
   .ID-Responsive-Table .owl-wrapper {
     width: 80%;
     float: right; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .ID-Responsive-Table .owl-wrapper {
+        width: 60%; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .owl-wrapper {
         width: 60%; } }
@@ -3584,8 +3639,7 @@ body.lightboxed {
       background-color: #f1f1f1; }
     .ID-Responsive-Table .article .R16 {
       height: 58px;
-      padding-top: 14px;
-      margin-top: 10px; }
+      padding-top: 14px; }
   .ID-Responsive-Table .year_heading {
     background-color: #de4361 !important;
     color: white;
@@ -3594,14 +3648,21 @@ body.lightboxed {
     position: relative;
     margin-right: 0;
     padding-right: 40px;
-    height: 5em; }
+    height: 5em;
+    word-wrap: break-word; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .ID-Responsive-Table .year_heading {
+        padding-left: 10px; } }
+    @media (max-width: 480px) {
+      .ID-Responsive-Table .year_heading {
+        padding-left: 5px; } }
   .ID-Responsive-Table .owl-dots {
     float: left;
     margin-top: 20px; }
     .ID-Responsive-Table .owl-dots .owl-dot span {
       background: #de4361; }
     .ID-Responsive-Table .owl-dots .owl-dot.active span {
-      background: #ffffff; }
+      background: #ffffff !important; }
     .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
       background: #ffffff; }
     .ID-Responsive-Table .owl-dots .owl-dot:hover span {
@@ -3621,6 +3682,9 @@ body.lightboxed {
     background: none;
     padding: 0;
     margin: 0 3px; }
+
+#quarterlyresults {
+  border: 1px solid #d1d3d4; }
 
 #quarterlyresults .tableRow > .tableCell {
   text-align: center; }
@@ -3644,6 +3708,9 @@ body.lightboxed {
 #financialresults .owl-wrapper {
   width: 60%;
   float: right; }
+
+.activate-hover {
+  background: #efd0d8 !important; }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -4378,8 +4445,6 @@ header .header-account-access {
       width: 7.5rem;
       height: 32px;
       height: 2rem;
-      background: #f7941e;
-      color: #ffffff;
       margin: -4px 0 0 20px;
       margin: -4px 0 0 1.25rem;
       line-height: 32px;
@@ -4423,14 +4488,11 @@ header .header-account-access {
           border-top: 1px solid #ddd;
           vertical-align: middle; }
         .myview-settings .table-responsive .table tbody tr .followingBtn {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4438,17 +4500,13 @@ header .header-account-access {
           float: right;
           padding: 0 26px;
           padding: 0 1.625rem; }
-          .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-            background: #f7941e;
-            color: #ffffff; }
-            @media (max-width: 1080px) {
-              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-                background: inherit;
-                border: 1px solid #f7941e;
-                color: inherit; } }
-            @media (max-width: 480px) {
-              .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
-                background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
+          @media (max-width: 1080px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+              background: inherit;
+              color: inherit; } }
+          @media (max-width: 480px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
+              background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followingBtn {
               background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
@@ -4464,23 +4522,18 @@ header .header-account-access {
               margin-left: 0.625rem;
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr .followBtn {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
           line-height: 2rem;
           float: right;
           padding: 0 36px;
-          padding: 0 2.25rem;
-          background: #f7941e;
-          color: #ffffff; }
+          padding: 0 2.25rem; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table tbody tr .followBtn {
               background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
@@ -4745,14 +4798,11 @@ header .header-account-access {
           padding-top: 0px;
           padding-top: 0rem; }
       .myview-settings .table-responsive .table thead .followAllBtn {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4763,8 +4813,6 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem;
         min-width: 130px; }
-        .myview-settings .table-responsive .table thead .followAllBtn:hover {
-          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4777,14 +4825,11 @@ header .header-account-access {
             min-width: initial;
             min-width: auto; } }
       .myview-settings .table-responsive .table thead .followinglbl {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
@@ -4795,8 +4840,6 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem;
         cursor: text; }
-        .myview-settings .table-responsive .table thead .followinglbl:hover {
-          background-color: #f7941e; }
         .myview-settings .table-responsive .table thead .followinglbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4805,28 +4848,22 @@ header .header-account-access {
             margin: 0px !important;
             float: left; } }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background-color: #f7941e;
-        color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 16px;
         padding: 0 1rem;
         margin-left: 8px;
-        margin-left: 0.5rem;
-        min-width: 130px; }
+        margin-left: 0.5rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4843,21 +4880,16 @@ header .header-account-access {
             padding: 0 20px;
             padding: 0 1.25rem; } }
       .myview-settings .table-responsive .table thead .followlbl {
-        border: 1px solid #f7941e;
         cursor: pointer;
         text-transform: uppercase;
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         text-align: center;
         display: inline-block;
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background-color: #f7941e;
-        color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0;
@@ -4919,13 +4951,11 @@ header .header-account-access {
       .myview-settings .saveoption {
         width: 100%; } }
     .myview-settings .saveoption .gotoview {
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4934,25 +4964,19 @@ header .header-account-access {
       margin-left: 20px;
       margin-left: 1.25rem; }
       .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
-        color: #58595b;
         display: block;
         padding: 0 25px; }
         .myview-settings .saveoption .gotoview a:hover, .myview-settings .saveoption .gotoview .pop-out__reset-password:hover, .myview-settings .saveoption .gotoview .sortable-table__list-toggler:hover, .myview-settings .saveoption .gotoview .mobile-table-exit:hover {
-          background: #f7941e;
-          color: #ffffff;
           text-decoration: none; }
         .myview-settings .saveoption .gotoview a:focus, .myview-settings .saveoption .gotoview .pop-out__reset-password:focus, .myview-settings .saveoption .gotoview .sortable-table__list-toggler:focus, .myview-settings .saveoption .gotoview .mobile-table-exit:focus {
           text-decoration: none; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .gotoview {
-          border: 1px solid #f7941e;
           cursor: pointer;
           text-transform: uppercase;
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
@@ -4970,13 +4994,11 @@ header .header-account-access {
     .myview-settings .saveoption .saveview {
       padding: 0 32px;
       padding: 0 2rem;
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -4984,7 +5006,6 @@ header .header-account-access {
       float: right;
       margin-left: 20px;
       margin-left: 1.25rem;
-      background: #f7941e;
       color: #ffffff; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
@@ -4995,13 +5016,11 @@ header .header-account-access {
     .myview-settings .saveoption .registrationBtn {
       padding: 0 32px;
       padding: 0 2rem;
-      border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: auto;
       text-align: center;
       display: inline-block;
       line-height: 32px;
@@ -5073,8 +5092,6 @@ header .header-account-access {
       width: 10.125rem;
       margin: 0px auto; }
     .myview-settings .modal-view.preferences .saveview {
-      border: 1px solid #f7941e;
-      color: #231f20;
       text-align: center;
       float: left;
       height: 24px;
@@ -5088,8 +5105,6 @@ header .header-account-access {
       line-height: 23px;
       line-height: 1.4375rem;
       font-weight: bold; }
-      .myview-settings .modal-view.preferences .saveview:hover {
-        background: #f7941e; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
       color: #231f20;
@@ -5256,14 +5271,14 @@ header .header-account-access {
   animation: drop 1s ease; }
 
 .followingrow.over {
-  background: #f7941e; }
+  background: #1191d1; }
 
 @-webkit-keyframes "drop" {
   0%, 100% {
-    background: #f7941e;
+    background: #1191d1;
     color: #ffffff; }
   50% {
-    color: #f7941e;
+    color: #1191d1;
     background: #ffffff; } }
 
 @media (max-width: 800px) {
@@ -5278,6 +5293,30 @@ header .header-account-access {
     display: none !important; }
   #feedbacklite {
     display: none !important; } }
+
+.theme-lloydslist .myview-settings .table span {
+  color: #1191D1;
+  fill: #1191D1; }
+  .theme-lloydslist .myview-settings .table span.button--outline {
+    border: 1px solid #1191D1; }
+    .theme-lloydslist .myview-settings .table span.button--outline:hover {
+      border: 1px solid #0f5487; }
+  .theme-lloydslist .myview-settings .table span.button--filled, .theme-lloydslist .myview-settings .table span.pop-out__register-submit, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit {
+    color: #fff; }
+    .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
+      border: 1px solid #0f5487; }
+
+.theme-insurance-day .myview-settings .table span {
+  color: #DE4361;
+  fill: #DE4361; }
+  .theme-insurance-day .myview-settings .table span.button--outline {
+    border: 1px solid #DE4361; }
+    .theme-insurance-day .myview-settings .table span.button--outline:hover {
+      border: 1px solid #b0173d; }
+  .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
+    color: #fff; }
+    .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
+      border: 1px solid #b0173d; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
@@ -5399,7 +5438,6 @@ header .header-account-access {
       font-weight: bold;
       z-index: 2; }
     .personalisationhome .latestSubject:before {
-      background-color: #be1e2d;
       content: "";
       display: block;
       height: 4px;
@@ -5420,17 +5458,10 @@ header .header-account-access {
       font-weight: 500;
       width: 140px;
       width: 8.75rem;
-      height: 34px;
-      height: 2.125rem;
       text-align: center;
       display: inline-block;
-      line-height: 34px;
-      line-height: 2.125rem;
-      background: #f7941e;
-      color: #ffffff;
       float: right;
       margin: 0px;
-      padding: 0px;
       position: relative;
       top: 5px; } }
 
@@ -5497,14 +5528,8 @@ header .header-account-access {
   font-weight: 500;
   width: 140px;
   width: 8.75rem;
-  height: 34px;
-  height: 2.125rem;
   text-align: center;
   display: inline-block;
-  line-height: 34px;
-  line-height: 2.125rem;
-  background: #f7941e;
-  color: #ffffff;
   float: left;
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
@@ -5522,6 +5547,7 @@ header .header-account-access {
       height: auto; } }
 
 .personalisationhome .article-preview--small .article-preview_rheadline {
+  font-family: "Roboto Condensed", Arial Narrow, sans-serif;
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
   border-bottom: 1px solid #d1d3d4;
   margin-bottom: 16px;
@@ -5546,12 +5572,9 @@ header .header-account-access {
         margin-bottom: -0.625rem;
         padding: 0px; } }
   .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
-    color: #231f20;
     height: 100px;
     overflow: hidden;
     display: block; }
-    .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
-      color: #be1e2d; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small .article-preview_rheadline {
       height: auto; } }
@@ -5735,14 +5758,8 @@ header .header-account-access {
       font-weight: 500;
       width: 140px;
       width: 8.75rem;
-      height: 34px;
-      height: 2.125rem;
       text-align: center;
-      display: inline-block;
-      line-height: 34px;
-      line-height: 2.125rem;
-      background: #f7941e;
-      color: #ffffff; }
+      display: inline-block; }
       .personalisationhome .latestSubject .editView.mobview {
         margin: 24px 20px 8px;
         margin: 1.5rem 1.25rem .5rem; } }
@@ -5765,6 +5782,14 @@ header .header-account-access {
     height: 25px;
     height: 1.5625rem;
     overflow: hidden; }
+
+@media screen and (min-width: 768px) {
+  .theme-lloydslist .latestSubject:before {
+    background-color: #1191D1; } }
+
+@media screen and (min-width: 768px) {
+  .theme-insurance-day .latestSubject:before {
+    background-color: #DE4361; } }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
@@ -6483,22 +6508,18 @@ section: UI Elements
         top: 13px;
         right: 30px; }
 
-.relatedlinks {
-  /*.related-left-rail{*/
+.related-left-rail {
   width: 100%;
-  /*}*/ }
-  @media (max-width: 1080px) {
-    .relatedlinks {
-      width: 66%; } }
-  @media (max-width: 800px) {
-    .relatedlinks {
-      width: 100%; } }
-  .relatedlinks .allrelatedlinks {
+  float: inherit;
+  clear: both; }
+  .related-left-rail .relatedlinks {
+    width: 100%; }
+  .related-left-rail .allrelatedlinks {
     width: 100%; }
     @media (max-width: 800px) {
-      .relatedlinks .allrelatedlinks {
+      .related-left-rail .allrelatedlinks {
         width: 98%; } }
-    .relatedlinks .allrelatedlinks ul {
+    .related-left-rail .allrelatedlinks ul {
       margin-bottom: 20px;
       margin-bottom: 1.25rem;
       padding-bottom: 10px;
@@ -6508,14 +6529,18 @@ section: UI Elements
       width: 50%;
       padding: 0 1%; }
       @media (max-width: 480px) {
-        .relatedlinks .allrelatedlinks ul {
+        .related-left-rail .allrelatedlinks ul {
           float: none;
           width: 100%; } }
-    .relatedlinks .allrelatedlinks:last-child ul {
+    .related-left-rail .allrelatedlinks:last-child ul {
       border-bottom: none; }
       @media (max-width: 800px) {
-        .relatedlinks .allrelatedlinks:last-child ul {
+        .related-left-rail .allrelatedlinks:last-child ul {
           border-bottom: 1px solid #d1d3d4; } }
+
+.article-right-rail .allrelatedlinks ul, .manually-curated-content__right-rail .allrelatedlinks ul {
+  float: inherit;
+  width: 100%; }
 
 .companyList ul {
   height: 464px;
@@ -7116,21 +7141,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
-    .subscriptionPan #mySubscriptionTab a.button.button--outline, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit {
-      border: 1px solid #fbb040; }
-      .subscriptionPan #mySubscriptionTab a.button.button--outline:hover, .subscriptionPan #mySubscriptionTab a.button--outline.full-diminished-button:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button--outline.full-diminished-button.mobile-table-exit:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.pop-out__reset-password:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.sortable-table__list-toggler:hover, .subscriptionPan #mySubscriptionTab .button.button--outline.mobile-table-exit:hover {
-        border-color: #f7941e;
-        background-color: #f7941e;
-        color: #ffffff; }
     .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
       cursor: text; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:hover {
-        border-color: #f7941e;
-        background-color: inherit !important;
-        color: #58595b !important;
-        text-decoration: none; }
-      .subscriptionPan #mySubscriptionTab .button--outline.subscribed:focus {
-        text-decoration: none !important; }
+    .subscriptionPan #mySubscriptionTab .button--outline:hover {
+      text-decoration: none; }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
@@ -7301,20 +7315,24 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-style: normal;
       text-align: left; }
   .small_table .table-responsive .table .graybg {
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    color: #000; }
   .small_table .table-responsive .table .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
-    vertical-align: top; }
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    font-size: 15px;
+    font-size: 0.9375rem;
     color: #bb1528;
     font-style: normal;
-    font-weight: 700;
-    vertical-align: top; }
+    font-weight: 500;
+    vertical-align: top;
+    border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
@@ -7326,10 +7344,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         vertical-align: top; } }
   .small_table .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.3125em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
+    .small_table .table-responsive .table .R21_GrayColor.border-right {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.125em;
+      font-weight: 400; }
     @media (max-width: 480px) {
       .small_table .table-responsive .table .R21_GrayColor {
         vertical-align: top; } }
@@ -7372,11 +7394,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
 
-.small_table .table-responsive .pad-10 {
+.small_table .table-responsive .p-10 {
   padding: 10px; }
-  @media (max-width: 480px) {
-    .small_table .table-responsive .pad-10 {
-      padding: 10px 15px 10px; } }
+
+.small_table .table-responsive .pad-10 {
+  padding: 16px 10px; }
 
 .small_table .table-responsive .pad-full-10 {
   padding: 10px; }
@@ -7421,27 +7443,40 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
   color: #1191d1; }
 
-.casualty-table-theme .table thead {
-  background-color: #0f5487 !important; }
-
-.casualty-table-theme .table .top {
-  color: #58595b;
-  width: 40px;
-  height: 40px;
-  display: block;
-  border-left: 1px solid #979797;
-  text-decoration: none;
-  font-size: 17px; }
-  .casualty-table-theme .table .top span {
-    background: url("img/sprite-image.png") no-repeat 0 -606px;
-    width: 11px;
-    height: 8px;
-    display: inline-block;
-    margin-right: 8px; }
-
-.casualty-table-theme .table hr {
-  display: block !important;
-  margin: 0 !important; }
+.casualty-table-theme .table {
+  width: 790px !important; }
+  @media screen and (min-width: 801px) and (max-width: 1024px) {
+    .casualty-table-theme .table {
+      max-width: 594px !important; } }
+  @media (max-width: 800px) {
+    .casualty-table-theme .table {
+      width: 100% !important; } }
+  .casualty-table-theme .table .table_head {
+    color: #ffffff; }
+    .casualty-table-theme .table .table_head th {
+      font-size: 16px !important;
+      font-weight: normal !important; }
+    .casualty-table-theme .table .table_head .visible-lg {
+      background: #1191D1;
+      color: #fff;
+      font-weight: normal; }
+  .casualty-table-theme .table .top {
+    color: #58595b;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-left: 1px solid #979797;
+    text-decoration: none;
+    font-size: 17px; }
+    .casualty-table-theme .table .top span {
+      background: url("img/sprite-image.png") no-repeat 0 -606px;
+      width: 11px;
+      height: 8px;
+      display: inline-block;
+      margin-right: 8px; }
+  .casualty-table-theme .table hr {
+    display: block !important;
+    margin: 0 !important; }
 
 .casualty-table-theme .border-right {
   border-right: 1px solid #d1d3d4; }
@@ -7629,7 +7664,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: 20px;
     clear: both; }
     .data-tool-placeholder-right-rail p a, .data-tool-placeholder-right-rail p .pop-out__reset-password, .data-tool-placeholder-right-rail p .sortable-table__list-toggler, .data-tool-placeholder-right-rail p .mobile-table-exit {
-      color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
@@ -7650,7 +7684,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   .articleText p {
     margin-top: 20px; }
     .articleText p a, .articleText p .pop-out__reset-password, .articleText p .sortable-table__list-toggler, .articleText p .mobile-table-exit {
-      color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
@@ -8367,7 +8400,7 @@ div#feedbacklite.fbl_r {
       .ll-casualty-form .form-control label {
         width: 100%;
         margin-bottom: 1em; } }
-  .ll-casualty-form .form-control:last-child {
+  .ll-casualty-form .form-control.jumpToSection {
     float: right; }
 
 .ll-casualty-form .selectivity-single-select-input {
@@ -8404,6 +8437,11 @@ div#feedbacklite.fbl_r {
 .casualtyPan.table-responsive hr {
   margin: 20px 0; }
 
+#market-data-tool .borTop, #tanker-fixtures .borTop {
+  height: 1px;
+  border-top: 1px solid #d1d3d4;
+  display: block; }
+
 #market-data-tool.table-responsive .table, #tanker-fixtures.table-responsive .table {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
   #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
@@ -8421,6 +8459,9 @@ div#feedbacklite.fbl_r {
     #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
       font-size: 16px;
       font-weight: normal; }
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+          font-size: 12px; } }
     #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
       background: #1191d1;
       color: #fff;
@@ -8431,6 +8472,15 @@ div#feedbacklite.fbl_r {
     color: #1191d1; }
   #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
     padding: 16px 10px; }
+    @media only screen and (max-width: 1024px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 16px 5px; } }
+    @media only screen and (max-width: 767px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 16px 10px; } }
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        padding: 10px 2px; } }
   #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
     font-size: 18px;
     border-right: 1px solid #e9e9e9; }
@@ -8464,6 +8514,9 @@ div#feedbacklite.fbl_r {
         text-decoration: none; }
   #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
     font-size: 15px; }
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+        font-size: 12px; } }
     #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
       color: #1191d1; }
   @media (max-width: 480px) {
@@ -8673,59 +8726,91 @@ div#feedbacklite.fbl_r {
   text-align: right;
   background-color: #fff; }
 
-#market-data h2, #market-data .article-topics__header {
-  font-size: 46px;
-  font-weight: bold;
-  margin-bottom: 40px; }
-  @media (max-width: 480px) {
-    #market-data h2, #market-data .article-topics__header {
-      font-size: 36px;
-      margin-bottom: 20px; } }
-
-#market-data #marketDataTable {
-  width: 790px;
+#market-data {
   font-size: 15px;
   font-size: 0.9375rem;
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
-  @media screen and (min-width: 801px) and (max-width: 1024px) {
-    #market-data #marketDataTable {
-      width: 594px; } }
-  @media (max-width: 800px) {
-    #market-data #marketDataTable {
-      width: 100%; } }
-  #market-data #marketDataTable .pad-10 {
-    padding: 16px 10px; }
-  #market-data #marketDataTable .mobleftCol {
-    font-size: 18px;
+  #market-data .carousel-div {
+    position: relative;
+    border-right: 1px solid #e9e9e9;
+    width: 100%; }
+    #market-data .carousel-div .states_heading {
+      position: relative;
+      float: left;
+      width: 20%;
+      z-index: 9; }
+      @media only screen and (min-width: 767px) and (max-width: 1024px) {
+        #market-data .carousel-div .states_heading {
+          width: 20%; } }
+      @media (max-width: 480px) {
+        #market-data .carousel-div .states_heading {
+          width: 35%; } }
+      #market-data .carousel-div .states_heading .title {
+        background-color: #1191d1;
+        color: #ffffff;
+        padding: 8px;
+        font-weight: 500; }
+      #market-data .carousel-div .states_heading .R16 {
+        padding: 12px 10px;
+        border-bottom: 1px solid #e1e1e1;
+        border-right: 1px solid #e9e9e9; }
+        @media only screen and (min-width: 767px) and (max-width: 1024px) {
+          #market-data .carousel-div .states_heading .R16 {
+            padding: 12px 6px; } }
+        #market-data .carousel-div .states_heading .R16:hover {
+          background: #efd0d8 !important; }
+      #market-data .carousel-div .states_heading .leftbord {
+        border-left: 1px solid #e9e9e9; }
+  #market-data h2, #market-data .article-topics__header {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 40px; }
+    @media (max-width: 480px) {
+      #market-data h2, #market-data .article-topics__header {
+        font-size: 36px;
+        margin-bottom: 20px; } }
+  #market-data .oddCls {
+    background: #f1f1f1; }
+  #market-data #marketDataTable .owl-dots {
+    background: #0f5487;
+    margin-top: -32px;
+    height: 32px;
+    text-align: right;
+    padding-right: 15px; }
+    #market-data #marketDataTable .owl-dots .owl-dot span {
+      margin: 10px 7px;
+      background: #1191d1; }
+    #market-data #marketDataTable .owl-dots .owl-dot.active span {
+      background: #fff; }
+  #market-data #marketDataTable .R16 {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e1e1e1;
     border-right: 1px solid #e9e9e9; }
-  #market-data #marketDataTable .mobrigCol {
-    font-size: 16px; }
-    #market-data #marketDataTable .mobrigCol a, #market-data #marketDataTable .mobrigCol .pop-out__reset-password, #market-data #marketDataTable .mobrigCol .sortable-table__list-toggler, #market-data #marketDataTable .mobrigCol .mobile-table-exit {
-      color: #1191d1;
-      text-decoration: none; }
-  #market-data #marketDataTable .borTop {
-    border-top: 1px solid #d1d3d4; }
+  #market-data #marketDataTable .owl-controls {
+    display: none; }
+  @media only screen and (max-width: 767px) {
+    #market-data #marketDataTable .owl-controls {
+      display: block; } }
+  #market-data #marketDataTable .item {
+    height: auto !important; }
+    #market-data #marketDataTable .item:first {
+      border-left: 1px solid red; }
   #market-data #marketDataTable .pad-20 {
     padding: 10px 20px; }
-  #market-data #marketDataTable .table_head {
-    background-color: #0f5487;
-    color: #ffffff; }
-    #market-data #marketDataTable .table_head th {
-      font-size: 16px;
-      font-weight: normal; }
-    #market-data #marketDataTable .table_head .visible-lg {
-      background: #1191d1;
-      color: #fff;
-      font-weight: normal; }
-  #market-data #marketDataTable .oddCls {
-    background: #f1f1f1; }
-  #market-data #marketDataTable tbody.visible-lg td {
-    border-bottom: 1px solid #d1d3d4;
-    border-right: 1px solid #d1d3d4; }
-  #market-data #marketDataTable tbody.visible-lg tr td:last-child {
-    border-right: none; }
-  #market-data #marketDataTable tbody.visible-lg tr:last-child td {
-    border-bottom: none; }
+    @media only screen and (max-width: 1024px) {
+      #market-data #marketDataTable .pad-20 {
+        padding: 10px 5px; } }
+    @media only screen and (max-width: 768px) {
+      #market-data #marketDataTable .pad-20 {
+        padding: 10px 2px; } }
+    @media only screen and (max-width: 767px) {
+      #market-data #marketDataTable .pad-20 {
+        padding: 10px 10px; } }
+  #market-data #marketDataTable .title {
+    background-color: #1191d1;
+    color: #ffffff;
+    padding: 8px;
+    font-weight: 500; }
   #market-data #marketDataTable span.numData {
     width: 40px;
     display: inline-block; }
@@ -8744,6 +8829,9 @@ div#feedbacklite.fbl_r {
   color: #1191D1 !important; }
   .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
     color: #002d4f !important; }
+
+.article-left-rail {
+  width: 100%; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
@@ -13775,8 +13863,8 @@ main {
 .theme-insurance-day .article-key-document__icon:hover,
 .theme-insurance-day .article-key-document__icon:active,
 .theme-insurance-day .article-key-document__icon:focus {
-  color: #1191D1;
-  fill: #1191D1; }
+  color: #DE4361;
+  fill: #DE4361; }
   .theme-insurance-day a use > svg, .theme-insurance-day .pop-out__reset-password use > svg, .theme-insurance-day .sortable-table__list-toggler use > svg, .theme-insurance-day .mobile-table-exit use > svg, .theme-insurance-day a:hover use > svg, .theme-insurance-day .pop-out__reset-password:hover use > svg, .theme-insurance-day .sortable-table__list-toggler:hover use > svg, .theme-insurance-day .mobile-table-exit:hover use > svg, .theme-insurance-day a:active use > svg, .theme-insurance-day .pop-out__reset-password:active use > svg, .theme-insurance-day .sortable-table__list-toggler:active use > svg, .theme-insurance-day .mobile-table-exit:active use > svg, .theme-insurance-day a:focus use > svg, .theme-insurance-day .pop-out__reset-password:focus use > svg, .theme-insurance-day .sortable-table__list-toggler:focus use > svg, .theme-insurance-day .mobile-table-exit:focus use > svg,
   .theme-insurance-day .facets__button use > svg,
   .theme-insurance-day .facets__button:hover use > svg,
@@ -13843,7 +13931,7 @@ main {
   .theme-insurance-day .article-key-document__icon:hover use > svg,
   .theme-insurance-day .article-key-document__icon:active use > svg,
   .theme-insurance-day .article-key-document__icon:focus use > svg {
-    fill: #1191D1; }
+    fill: #DE4361; }
 
 .theme-insurance-day footer a, .theme-insurance-day footer .pop-out__reset-password, .theme-insurance-day footer .sortable-table__list-toggler, .theme-insurance-day footer .mobile-table-exit,
 .theme-insurance-day .general-header__navigation a,
@@ -13857,7 +13945,7 @@ main {
   color: inherit; }
 
 .theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out {
-  color: #1191D1; }
+  color: #DE4361; }
 
 .theme-insurance-day .article-preview__headline,
 .theme-insurance-day .article-preview__headline a,
@@ -13880,29 +13968,29 @@ main {
   .theme-insurance-day .topic-featured-article__headline .pop-out__reset-password:hover,
   .theme-insurance-day .topic-featured-article__headline .sortable-table__list-toggler:hover,
   .theme-insurance-day .topic-featured-article__headline .mobile-table-exit:hover {
-    color: #1191D1; }
+    color: #DE4361; }
 
 .theme-insurance-day .button--filled:not([disabled]), .theme-insurance-day .pop-out__register-submit:not([disabled]), .theme-insurance-day .pop-out__sign-in-submit:not([disabled]),
 .theme-insurance-day .search-bar__submit,
 .theme-insurance-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  background: #1191D1;
-  background-color: #1191D1;
+  background: #DE4361;
+  background-color: #DE4361;
   color: #ffffff; }
   .theme-insurance-day .button--filled:not([disabled]):hover, .theme-insurance-day .pop-out__register-submit:not([disabled]):hover, .theme-insurance-day .pop-out__sign-in-submit:not([disabled]):hover,
   .theme-insurance-day .search-bar__submit:hover,
   .theme-insurance-day .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
-    background: #0f5487;
-    background-color: #0f5487; }
+    background: #b0173d;
+    background-color: #b0173d; }
 
 .theme-insurance-day .button--outline:not([disabled]) {
-  border-color: #1191D1; }
+  border-color: #DE4361; }
   .theme-insurance-day .button--outline:not([disabled]):hover {
-    background-color: #0f5487;
-    border-color: #0f5487;
+    background-color: #b0173d;
+    border-color: #b0173d;
     color: #ffffff; }
 
 .theme-insurance-day .main-menu__hoverable:hover:before {
-  background-color: #0f5487; }
+  background-color: #b0173d; }
 
 .theme-insurance-day .main-menu__section-title a, .theme-insurance-day .main-menu__section-title .pop-out__reset-password, .theme-insurance-day .main-menu__section-title .sortable-table__list-toggler, .theme-insurance-day .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -13910,7 +13998,7 @@ main {
 .theme-insurance-day .main-menu__footer-link a, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler, .theme-insurance-day .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-insurance-day .main-menu__footer-link a:hover, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:hover, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:hover, .theme-insurance-day .main-menu__footer-link a:active, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:active, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:active, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:active, .theme-insurance-day .main-menu__footer-link a:focus, .theme-insurance-day .main-menu__footer-link .pop-out__reset-password:focus, .theme-insurance-day .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-insurance-day .main-menu__footer-link .mobile-table-exit:focus {
-    color: #0f5487; }
+    color: #b0173d; }
 
 .theme-insurance-day .main-menu__section-link, .theme-insurance-day .main-menu__section-link:hover, .theme-insurance-day .main-menu__section-link:active, .theme-insurance-day .main-menu__section-link:focus {
   color: #58595b; }
@@ -13920,11 +14008,11 @@ main {
 .theme-insurance-day .general-header__navigation .pop-out__reset-password:hover,
 .theme-insurance-day .general-header__navigation .sortable-table__list-toggler:hover,
 .theme-insurance-day .general-header__navigation .mobile-table-exit:hover {
-  border-bottom-color: #c12d3b; }
+  border-bottom-color: #b0173d; }
 
 .theme-insurance-day .banner--register,
 .theme-insurance-day .banner--alert {
-  background-color: #1191D1; }
+  background-color: #DE4361; }
   .theme-insurance-day .banner--register,
   .theme-insurance-day .banner--register span,
   .theme-insurance-day .banner--register svg,
@@ -13970,42 +14058,42 @@ main {
 .theme-insurance-day .quote,
 .theme-insurance-day .article-sidebar,
 .theme-insurance-day .topic-subtopic__header {
-  border-top-color: #c12d3b;
-  border-bottom-color: #c12d3b;
-  border-color: #c12d3b; }
+  border-top-color: #b0173d;
+  border-bottom-color: #b0173d;
+  border-color: #b0173d; }
 
 .theme-insurance-day .latest-news__header:before {
-  background-color: #c12d3b; }
+  background-color: #b0173d; }
 
 .theme-insurance-day .article-interview__question:before {
-  background-color: rgba(193, 45, 59, 0.3);
-  border-color: rgba(193, 45, 59, 0.5); }
+  background-color: rgba(176, 23, 61, 0.3);
+  border-color: rgba(176, 23, 61, 0.5); }
 
 .theme-insurance-day .article-interview__answer, .theme-insurance-day .article-interview__answer:before {
-  border-color: rgba(17, 145, 209, 0.5); }
+  border-color: rgba(222, 67, 97, 0.5); }
 
 .theme-insurance-day .article-interview__answer:before {
-  background-color: rgba(17, 145, 209, 0.15); }
+  background-color: rgba(222, 67, 97, 0.15); }
 
 .theme-insurance-day .article-topics__li:before,
 .theme-insurance-day .quickfactsbulleted li:before,
 .theme-insurance-day .quick-facts__list--ul li:before {
-  fill: #c12d3b;
+  fill: #b0173d;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-insurance-day .article-topics__li:before use > svg,
   .theme-insurance-day .quickfactsbulleted li:before use > svg,
   .theme-insurance-day .quick-facts__list--ul li:before use > svg {
-    fill: #c12d3b; }
+    fill: #b0173d; }
 
 .theme-insurance-day .article-topics__li ul li:before,
 .theme-insurance-day .quickfactsbulleted li ul li:before,
 .theme-insurance-day .quick-facts__list--ul li ul li:before {
-  color: #c12d3b; }
+  color: #b0173d; }
 
 .theme-insurance-day .quick-facts {
-  background-color: rgba(17, 145, 209, 0.1); }
+  background-color: rgba(176, 23, 61, 0.1); }
   .theme-insurance-day .quick-facts hr {
-    background-color: rgba(193, 45, 59, 0.5); }
+    background-color: rgba(176, 23, 61, 0.5); }
 
 .theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
 .theme-lloydslist .facets__button,
@@ -14217,7 +14305,7 @@ main {
 .theme-lloydslist .general-header__navigation .pop-out__reset-password:hover,
 .theme-lloydslist .general-header__navigation .sortable-table__list-toggler:hover,
 .theme-lloydslist .general-header__navigation .mobile-table-exit:hover {
-  border-bottom-color: #c12d3b; }
+  border-bottom-color: #0f5487; }
 
 .theme-lloydslist .banner--register,
 .theme-lloydslist .banner--alert {
@@ -14261,22 +14349,22 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #c12d3b; }
+  border-top: 4px solid #0f5487; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
 .theme-lloydslist .article-sidebar,
 .theme-lloydslist .topic-subtopic__header {
-  border-top-color: #c12d3b;
-  border-bottom-color: #c12d3b;
-  border-color: #c12d3b; }
+  border-top-color: #0f5487;
+  border-bottom-color: #0f5487;
+  border-color: #0f5487; }
 
 .theme-lloydslist .latest-news__header:before {
-  background-color: #c12d3b; }
+  background-color: #0f5487; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(193, 45, 59, 0.3);
-  border-color: rgba(193, 45, 59, 0.5); }
+  background-color: rgba(15, 84, 135, 0.3);
+  border-color: rgba(15, 84, 135, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
@@ -14287,22 +14375,22 @@ main {
 .theme-lloydslist .article-topics__li:before,
 .theme-lloydslist .quickfactsbulleted li:before,
 .theme-lloydslist .quick-facts__list--ul li:before {
-  fill: #c12d3b;
+  fill: #0f5487;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-lloydslist .article-topics__li:before use > svg,
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
-    fill: #c12d3b; }
+    fill: #0f5487; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
 .theme-lloydslist .quick-facts__list--ul li ul li:before {
-  color: #c12d3b; }
+  color: #0f5487; }
 
 .theme-lloydslist .quick-facts {
-  background-color: rgba(17, 145, 209, 0.1); }
+  background-color: rgba(15, 84, 135, 0.1); }
   .theme-lloydslist .quick-facts hr {
-    background-color: rgba(193, 45, 59, 0.5); }
+    background-color: rgba(15, 84, 135, 0.5); }
 
 /* * * * PRINT STYLES * * * */
 @media print {

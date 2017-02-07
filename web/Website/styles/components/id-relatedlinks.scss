@@ -1,13 +1,10 @@
-.relatedlinks{
-	/*.related-left-rail{*/
+.related-left-rail{
+	width: 100%;
+	float: inherit;
+	clear: both;
+	.relatedlinks{
 		width: 100%;
-		@include breakpoint('large') {
-			width: 66%;
-		}
-		@include breakpoint('medium') {
-			width: 100%;
-		}
-	/*}*/
+	}
 	.allrelatedlinks{
 		width: 100%;
 		
@@ -33,6 +30,14 @@
 					border-bottom: 1px solid #d1d3d4;
 				}
 			}
+		}
+	}
+}
+.article-right-rail, .manually-curated-content__right-rail{
+	.allrelatedlinks{
+		ul{
+			float: inherit;
+			width: 100%;
 		}
 	}
 }

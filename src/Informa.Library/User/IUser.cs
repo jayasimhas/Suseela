@@ -3,5 +3,7 @@
 	public interface IUser
 	{
 		string Username { get; }
-	}
+
+        string AccessToken { get; }
+    }
 }

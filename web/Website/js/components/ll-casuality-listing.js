@@ -13,7 +13,7 @@
 			Header.append('<tr class="visible-lg"></tr>');
 
 			for(var headItem in HeaderItems) {
-				Header.find('tr').append('<th class="pad-10">'+HeaderItems[headItem]+'</th>');
+				Header.find('tr').append('<th class="p-10">'+HeaderItems[headItem]+'</th>');
 			}
 			//Body
 			Parent.append('<tbody class="visible-lg"></tbody>');

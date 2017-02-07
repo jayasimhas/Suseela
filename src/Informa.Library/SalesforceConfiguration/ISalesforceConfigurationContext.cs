@@ -7,5 +7,9 @@ namespace Informa.Library.SalesforceConfiguration
         bool IsNewSalesforceEnabled { get; }
 
         ISalesforce_Configuration SalesForceConfiguration { get; }
+
+        string GetLoginEndPoints(string productCode, string callbackUrl, string state);
+
+        string GetUserEntitlementsEndPoints(string userName);
     }
 }

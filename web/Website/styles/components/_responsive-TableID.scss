@@ -3,6 +3,8 @@
 			width: 100%;
 			float: left;
 			margin-bottom: 2rem;
+			border: 1px solid #d1d3d4;
+			    font-family: 'Roboto';
 			.table-sort {
 				background: url('img/Bitmap.png');
 				width: 7px !important;
@@ -12,9 +14,6 @@
 					display: none;
 				}
 			}
-			a.hidden-xs {
-				display: none; //popup removed
-			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
 			}
@@ -23,9 +22,22 @@
 				color: $color-white;
 				padding: 10px;
 				padding-right: 95px !important;
+				&:after {
+					visibility: hidden;
+				    display: block;
+				    font-size: 0;
+				    content: " ";
+				    clear: both;
+				    height: 0;
+				}
 				.RB16{
 				   @include textMix('Roboto', 1.0625em, 700);
 				   font-style: normal;
+				   float: left;
+				}
+				a[data-toggle] {
+					float: left;
+					margin: 5px 0 0 15px;
 				}
 				.R16{
 				   @include textMix('Roboto', 1.0625em, 400);
@@ -40,6 +52,9 @@
 				float:left;
 				width:20%;
 				z-index: 9;
+				@media only screen and (min-width: 767px) and (max-width: 1024px) {
+					width: 40%;
+				}
 				@include breakpoint('small') {
 					width: 40%;
 				}
@@ -47,7 +62,7 @@
 					background-color: $color-red !important;
 				}	
 				div{
-					margin-bottom:10px;
+					// margin-bottom:10px;
 					padding:10px;
 				}
 				div:nth-child(odd){
@@ -57,6 +72,9 @@
 			.owl-wrapper {
 				width: 80%;
 			    float: right;
+			    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+					width: 60%;
+				}
 			    @include breakpoint('small') {
 			    	width: 60%;
 			    }
@@ -75,7 +93,7 @@
 				.R16{
 				    height: 58px;
 					padding-top: 14px;
-					margin-top: 10px;
+					// margin-top: 10px;
 				}
 				
 			}
@@ -88,6 +106,13 @@
 				margin-right: 0;
 				padding-right: 40px;
 				height: 5em;
+				word-wrap: break-word;
+				@media only screen and (min-width: 767px) and (max-width: 1024px) {
+				    padding-left: 10px;
+				}
+				@include breakpoint('small') {
+					padding-left: 5px;
+				}
 			}
 			.owl-dots{
 			  float: left;
@@ -98,7 +123,7 @@
 			  	}
 			  	&.active {
 			  		span {
-			  			background: $color-white;
+			  			background: $color-white !important;
 			  		}
 			  		&:hover {
 				  		span {
@@ -144,6 +169,9 @@
 // #annualresults.ID-Responsive-Table .owl-item.active {
 // 	width: 5% !important;
 // }
+#quarterlyresults {
+	border: 1px solid #d1d3d4;
+}
 #quarterlyresults .tableRow > .tableCell {
 	text-align: center;
 }
@@ -168,3 +196,4 @@
     float: right;
 
 }
+.activate-hover {background: #efd0d8 !important} 

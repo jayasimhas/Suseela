@@ -1281,7 +1281,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICompany_Detail_PageConstants.TemplateIdString)]
-    public partial interface ICompany_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface ICompany_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access
     {
         /// <summary>
         /// Companyname Field
@@ -1397,7 +1397,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ICompany_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface ICompany_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access__Raw
     {
         /// <summary>
         /// Companyname Field
@@ -1627,7 +1627,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 1976D801-8BBE-40C1-93F8-B48F4122D61A</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICompany_Landing_PageConstants.TemplateIdString)]
-    public partial interface ICompany_Landing_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface ICompany_Landing_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access
     {
         /// <summary>
         /// Companies Field
@@ -1647,7 +1647,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 1976D801-8BBE-40C1-93F8-B48F4122D61A</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ICompany_Landing_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface ICompany_Landing_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access__Raw
     {
         /// <summary>
         /// Companies Field
@@ -1801,7 +1801,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 0E29056B-8151-446C-AF95-ABF579BF3C40</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICompany_Peer_Group_Detail_PageConstants.TemplateIdString)]
-    public partial interface ICompany_Peer_Group_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface ICompany_Peer_Group_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage,global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access
     {
 
     }
@@ -1812,7 +1812,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 0E29056B-8151-446C-AF95-ABF579BF3C40</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ICompany_Peer_Group_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface ICompany_Peer_Group_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access__Raw
     {
 
     }
@@ -1897,7 +1897,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 4364D7B9-2AC6-49E3-9123-C2AAE7CC3E0C</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICompany_Graph_Detail_PageConstants.TemplateIdString)]
-    public partial interface ICompany_Graph_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface ICompany_Graph_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access
     {
 
     }
@@ -1908,7 +1908,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Co
     /// <para>ID: 4364D7B9-2AC6-49E3-9123-C2AAE7CC3E0C</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ICompany_Graph_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface ICompany_Graph_Detail_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access__Raw
     {
 
     }
@@ -1988,7 +1988,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ma
 {
 
     [SitecoreType(TemplateId = IMarketData_Detail_PageConstants.TemplateIdString)]
-    public partial interface IMarketData_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface IMarketData_Detail_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access
     {
 
     }
@@ -1999,7 +1999,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ma
     /// <para>ID: 4364D7B9-2AC6-49E3-9123-C2AAE7CC3E0C</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface IMarketData_Detail_PageConstants__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface IMarketData_Detail_PageConstants__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Access__Raw
     {
 
     }
@@ -6204,7 +6204,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -6279,7 +6279,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        INumber_Option Number_To_Display { get; set; }
+        int Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -6468,7 +6468,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Content_Type { get; set; }
+        Guid Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6477,7 +6477,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Media_Type { get; set; }
+        Guid Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
@@ -6523,7 +6523,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Content_Type { get; set; }
+        Guid Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6532,7 +6532,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Media_Type { get; set; }
+        Guid Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
@@ -14795,6 +14795,109 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+     /// <summary>
+    /// I___Access Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Base Templates/__Access</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = I___AccessConstants.TemplateIdString)]
+    public partial interface I___Access : IGlassBase
+    {
+        /// <summary>
+        /// The Restrict Access field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Restrict_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Guid Restrict_Access { get; set; }
+        /// <summary>
+        /// The Section Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Section_Title { get; set; }
+        /// <summary>
+        /// The Show Summary When Entitled field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Show_Summary_When_EntitledFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Show_Summary_When_Entitled { get; set; }
+
+        /// <summary>
+        /// The Summary field.
+        /// <para></para>
+        /// <para>Field Type: Multi-Line Text</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Summary { get; set; }
+    }
+
+
+    /// <summary>
+    /// I___Access Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Base Templates/__Access</para>
+    /// </summary>
+    [SitecoreType]
+    public partial interface I___Access__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Restrict Access field.
+        /// <para></para>
+        /// <para>Field Type: Droplink</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Restrict_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Guid Restrict_Access { get; set; }
+        /// <summary>
+        /// The Section Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Section_Title { get; set; }
+        /// <summary>
+        /// The Show Summary When Entitled field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.Show_Summary_When_EntitledFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Show_Summary_When_Entitled { get; set; }
+        
+        /// <summary>
+        /// The Summary field.
+        /// <para></para>
+        /// <para>Field Type: Multi-Line Text</para>		
+        /// </summary>
+        [SitecoreField(I___AccessConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Summary { get; set; }
+
+    }
+
+    public static partial class I___AccessConstants
+    {
+
+        public const string TemplateIdString = "573FE419-05BA-4ADF-A18C-C69CEFBA505B";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "__Access";
+
+        public static readonly ID Restrict_AccessFieldId = new ID("0F0D0A36-C25F-4D5B-AF0D-9582EFFCC6E0");
+        public const string Restrict_AccessFieldName = "Restrict Access";
+
+        public static readonly ID Section_TitleFieldId = new ID("169D2E2D-C644-49D7-BEA7-6E4F2A60DD24");
+        public const string Section_TitleFieldName = "Section Title";
+
+        public static readonly ID Show_Summary_When_EntitledFieldId = new ID("CB1A2ABA-A66B-49C9-A08E-A6614D6D5D4D");
+        public const string Show_Summary_When_EntitledFieldName = "Show Summary When Entitled";
+
+        public static readonly ID SummaryFieldId = new ID("4B1ED380-DC28-43BB-B726-65603EA2A2B9");
+        public const string SummaryFieldName = "Summary";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
 {
 
@@ -15443,6 +15546,43 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
         public const string TemplateName = "Taxonomy Folder";
 
 
+
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
+{
+
+
+    /// <summary>
+    /// IPackage_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Package Folder</para>	
+    /// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IPackage_FolderConstants.TemplateIdString)]
+    public partial interface IPackage_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    {
+    }
+
+
+    /// <summary>
+    /// IPackage_Folder Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Folders/Package Folder</para>	
+    /// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IPackage_Folder__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+    {
+    }
+
+    public static partial class IPackage_FolderConstants
+    {
+
+        public const string TemplateIdString = "FE614851-415D-497F-B9D4-98D37F917124";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Package Folder";
 
     }
 
@@ -16809,6 +16949,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Salesforce_Service_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Login Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Login_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Entitlement Api Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Entitlement_Api_Url { get; set; }
     }
 
 
@@ -16869,6 +17027,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Service_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Salesforce_Service_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Login Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Login_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Salesforce Entitlement Api Url.
+        /// </summary>
+        /// <value>
+        /// The salesforce service URL.
+        /// </value>
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Entitlement_Api_Url { get; set; }
     }
 
     public static partial class ISalesforce_ConfigurationConstants
@@ -16896,6 +17072,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Salesforce_Service_UrlFieldId = new ID("E88C8AE2-E7E1-4114-AC3C-E2FDC25BD46B");
         public const string Salesforce_Service_UrlFieldName = "Salesforce Service Url";
+
+        public static readonly ID Salesforce_Login_UrlFieldId = new ID("9048ECFD-AAE6-4510-B60F-B25154090291");
+        public const string Salesforce_Login_UrlFieldName = "Salesforce Login Url";
+
+        public static readonly ID Salesforce_Entitlement_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
+        public const string Salesforce_Entitlement_Api_UrlFieldName = "Salesforce Entitlement Api Url";
     }
 
 }

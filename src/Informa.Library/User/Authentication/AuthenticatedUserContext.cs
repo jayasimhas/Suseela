@@ -33,7 +33,8 @@ namespace Informa.Library.User.Authentication
 				{
 					Email = sitecoreUser.LocalName,
 					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.LocalName
+					Username = sitecoreUser.LocalName,
+                    AccessToken = sitecoreUser.Profile.Comment
 				};
 			}
 		}

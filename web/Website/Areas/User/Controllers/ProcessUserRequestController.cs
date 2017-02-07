@@ -5,6 +5,7 @@ using Informa.Library.User.Authentication.Web;
 using Jabberwocky.Autofac.Attributes;
 using System.Web.Mvc;
 
+
 namespace Informa.Web.Areas.UserRequest
 {
     [AutowireService]
@@ -13,10 +14,9 @@ namespace Informa.Web.Areas.UserRequest
         protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-        private string _authorizationRequestEndPoint = "{0}/services/oauth2/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}";
 
         public ProcessUserRequestController(IWebAuthenticateUser authenticateWebUser,
-            ISalesforceConfigurationContext salesforceConfigurationContext, ISiteRootContext siteRootContext)
+        ISalesforceConfigurationContext salesforceConfigurationContext, ISiteRootContext siteRootContext)
         {
             AuthenticateWebUser = authenticateWebUser;
             SalesforceConfigurationContext = salesforceConfigurationContext;
@@ -33,10 +33,7 @@ namespace Informa.Web.Areas.UserRequest
 
         public ActionResult Register()
         {
-            string authorizationRequestUrl = string.Format(_authorizationRequestEndPoint,
-            SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
-            SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username,
-            GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(!string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url : string.Empty));
+            string authorizationRequestUrl = SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(_siteRootItem?.Enrolment_Link != null && !string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url : string.Empty));
             return Redirect(authorizationRequestUrl);
         }
 

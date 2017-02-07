@@ -20,6 +20,8 @@ using Jabberwocky.Autofac.Attributes;
 using Informa.Library.DataTools;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Library.Globalization;
+using Informa.Web.Helpers;
+
 namespace Informa.Web.Models
 {
     [AutowireService(true)]
@@ -129,8 +131,10 @@ namespace Informa.Web.Models
             tableauItem.ArticleTableauJSAPIUrl = JSAPIUrl;
             tableauItem.ArticleTableauHostUrl = HostUrl;
             tableauItem.ArticleTableuLandingPageLinkLable = LandingPageLinkLable;
-            replace = HtmlHelper.Partial(partialName, tableauItem, new ViewDataDictionary { { "Index", i } });
-            return replace.ToHtmlString();
+            //replace = HtmlHelper.Partial(partialName, tableauItem, new ViewDataDictionary { { "Index", i } });
+            var rep = MvcHelpers.GetRazorViewAsString(tableauItem, partialName, new TempDataDictionary { { "Index", i } });
+            return rep;
+           // return replace.ToHtmlString();
         }
 
 
@@ -184,7 +188,7 @@ namespace Informa.Web.Models
             var fieldValue = expression.Compile()(this.Model);
             fieldValue = ReplaceDeals(fieldValue);
             fieldValue = ReplaceSidebarArticles(fieldValue, partialName);
-            fieldValue = ReplaceTableauForArticles(fieldValue, "../Shared/Components/DataTools/TableauInArticle");
+            fieldValue = ReplaceTableauForArticles(fieldValue, "~/Views/Shared/Components/DataTools/TableauInArticle.cshtml");
             return HtmlHelper.Raw(fieldValue);
             //return new HtmlString(this.GlassHtml.RenderLink<T>(model, field, attributes, isEditable, contents));
         }

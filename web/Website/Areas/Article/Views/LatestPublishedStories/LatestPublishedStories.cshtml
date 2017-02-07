@@ -1,31 +1,79 @@
 ﻿@model Informa.Web.Areas.Article.Models.Article.LatestPublishedStories.LatestPublishedStory
 
 <div class="latestPublishedStoriesSection" data-max="@Model.MaxStoriesToDisplay">
-    <h5>Most recent published stories</h5>
+    @*<h5>Most recent published stories</h5>*@
     @if (Model.News != null && Model.News.Any())
     {
         <div class="contentRecomm-wrapper">
             @foreach (var listable in Model.News)
             {
                 <div class="contentRecomm-article">
-                    @if (!string.IsNullOrEmpty(listable.ListableImage))
-                    {
-                        <img src="@listable.ListableImage" width="100px">
-                    }
                     <h5>
                         <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
                     </h5>
-                    <div class="article-related-content__date">@Html.Raw(listable.ListableSummary)</div>
+                    @{
+                        var dateDiff = DateTime.Now - listable.ListableDate;
+                    }
+                    @{
+                        if (dateDiff.TotalMinutes < 60)
+                        {
+                            var datelbl = dateDiff.Minutes + " min ago";
+                            <div class="article-related-content__date">@datelbl</div>
+                        }
+                        else if (dateDiff.TotalHours < 24)
+                        {
+                            var datelbl = dateDiff.Hours + " hours ago";
+                            <div class="article-related-content__date">@datelbl</div>
+                        }
+                        else
+                        {
+                            <div class="article-related-content__date">@listable.ListableDate.ToString("dd MMM yyyy")</div>
+                        }
+                    }
+
+
                 </div>
-            }
+                        }
         </div>
-    }
-    @Html.Hidden("subjectIds", Model.Topics)
+                        }
+
     @Html.Hidden("publicationName", Model.PublicationName)
-    @Html.Hidden("authorGuids", Model.Authors)
     @Html.Hidden("mediaType", Model.MediaType)
     @Html.Hidden("contentType", Model.ContentType)
+    @if (Model.Topics != null && Model.Topics.Any())
+    {
+        string subjectIds = "";
+        foreach (var topic in Model.Topics)
+        {
+            if ((topic != Model.Topics.First() && topic != Model.Topics.Last()) || topic != Model.Topics.Last())
+            {
+                subjectIds += topic.ToString() + ",";
+            }
+            else
+            {
+                subjectIds += topic.ToString();
+            }
+        }
+        @Html.Hidden("subjectIds", subjectIds);
+    }
 
+    @if (Model.Authors != null && Model.Authors.Any())
+    {
+        string authorGuids = "";
+        foreach (var author in Model.Authors)
+        {
+            if ((author != Model.Authors.First() && author != Model.Authors.Last()) || author != Model.Authors.Last())
+            {
+                authorGuids += author.ToString() + ",";
+            }
+
+            else
+            {
+                authorGuids += author.ToString();
+            }
+        }
+        @Html.Hidden("authorGuids", authorGuids);
+    }
     @if (Model.MaxStoriesToDisplay > 4 && Model.News.Count() >= 4 || Model.MaxStoriesToDisplay == 0 && Model.News.Count() >= 4)
     {
         <a href="#" class="submit">@Model.LoadMoreText</a>
@@ -33,11 +81,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
     <script>
+        var pageNo = 2;
         $('.submit').click(function (e) {
             e.preventDefault();
+            debugger;
             $.ajax({
                 url: '/Article/LatestPublishedStories/GetLatestNews/',
-                data: { 'subjectIds': $('#subjectIds').val(), 'publicationName': $('#publicationName').val(), 'authorGuids': $('#authorGuids').val(), 'itemsToDisplay': $('.latestPublishedStoriesSection .contentRecomm-article').length, 'MaxStoriesToDisplay': $('.latestPublishedStoriesSection').data('max'), 'mediaType': $('#mediaType').val(), 'contentType': $('#contentType').val() },
+                data: { 'subjectIds': $('#subjectIds').val(), 'publicationName': $('#publicationName').val(), 'authorGuids': $('#authorGuids').val(), 'itemsToDisplay': pageNo++, 'MaxStoriesToDisplay': $('.latestPublishedStoriesSection').data('max'), 'mediaType': $('#mediaType').val(), 'contentType': $('#contentType').val() },
                 dataType: 'json',
                 type: 'POST',
                 success: function (searchData) {
@@ -54,24 +104,16 @@
                Html = "";
 
             for (var i = 0; i < data.length; i++) {
-                if (data[i].img == null) {
-                    Html += '<div class="contentRecomm-article">' +
-                           '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
-                           data[i].summary +
-                        '</div>';
-                } else {
-                    Html += '<div class="contentRecomm-article">' +
-                                '<img src="' + data[i].img + '"/>' +
-                                '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
-                                data[i].summary +
-                             '</div>';
-                }
+                Html += '<div class="contentRecomm-article">' +
+                       '<h5><a href="' + data[i].url + '">' + data[i].title + '</a></h5>' +
+                       '<div class="article-related-content__date">' + data[i].pubDate + '</div>' +
+                '</div>';
             }
 
             $('.latestPublishedStoriesSection .contentRecomm-wrapper').append(Html);
             debugger;
             var ItemsDisplayed = $('.latestPublishedStoriesSection .contentRecomm-article').length;
-            if (maxItems == ItemsDisplayed) {
+            if (maxItems == ItemsDisplayed || data.length < 4) {
                 $('.submit').hide();
             }
         }

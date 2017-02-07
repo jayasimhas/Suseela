@@ -107,7 +107,7 @@
 						for(var prop in v){
 							indx++;
 							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
-							if(borTop !== '') mobileStr += '<tr class="borTop"><td></td></tr>';
+							if(borTop !== '') mobileStr += '<tr class="borTop"><td colspan="2"></td></tr>';
 							mobileStr += '<tr>';
 							mobileStr += '<td class="pad-10 mobleftCol">'+prop+'</td>';
 							mobileStr += '<td class="pad-10 mobrigCol">'+v[prop]+'</td>';

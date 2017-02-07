@@ -52,31 +52,31 @@ namespace Informa.Library.Subscription.User
 
                 var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User?.Username);
 
-                if (subscriptions != null && subscriptions.Any())
-                {
+                ////if (subscriptions != null && subscriptions.Any())
+                ////{
 
-                    if (subscriptions.Any(n => n.ProductCode == SiterootContext.Item.Publication_Code && n.ExpirationDate > DateTime.Now))
-                    {
-                        var selectedSubscription = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).FirstOrDefault();
-                        List<ChannelSubscription> channelSubscription = new List<ChannelSubscription>();
-                        var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
-                    _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-                        var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
-                        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                        if (homeItem != null && channelsPageItem != null && channelPages != null)
-                        {
-                            foreach (var channel in channelPages)
-                            {
-                                channelSubscription.Add(new ChannelSubscription { ChannelId = channel.Channel_Code,
-                                    ExpirationDate = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).Select(p => p.ExpirationDate).FirstOrDefault(),
-                                    _ChannelId = channel._Id.ToString()
-                                });
+                ////    if (subscriptions.Any(n => n.ProductCode == SiterootContext.Item.Publication_Code && n.ExpirationDate > DateTime.Now))
+                ////    {
+                ////        var selectedSubscription = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).FirstOrDefault();
+                ////        List<ChannelSubscription> channelSubscription = new List<ChannelSubscription>();
+                ////        var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+                ////    _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+                ////        var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+                ////        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                ////        if (homeItem != null && channelsPageItem != null && channelPages != null)
+                ////        {
+                ////            foreach (var channel in channelPages)
+                ////            {
+                ////                channelSubscription.Add(new ChannelSubscription { ChannelId = channel.Channel_Code,
+                ////                    ExpirationDate = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).Select(p => p.ExpirationDate).FirstOrDefault(),
+                ////                    _ChannelId = channel._Id.ToString()
+                ////                });
 
-                            }
-                        }
-                        selectedSubscription.SubscribedChannels = channelSubscription;
-                    }
-                }
+                ////            }
+                ////        }
+                ////        selectedSubscription.SubscribedChannels = channelSubscription;
+                ////    }
+                ////}
                 return subscriptions;
             }
             set
