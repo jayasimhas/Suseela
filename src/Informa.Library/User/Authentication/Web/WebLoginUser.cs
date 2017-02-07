@@ -30,10 +30,10 @@ namespace Informa.Library.User.Authentication.Web
             {
                 sitecoreVirtualUser.Profile.Email = userProfile.Email;
                 sitecoreVirtualUser.Profile.Name = string.Format("{0} {1}", userProfile.FirstName, userProfile.LastName);
-                
+
             }
 
-            sitecoreVirtualUser.Profile.Comment = user.AccessToken;
+            sitecoreVirtualUser.Profile.Comment = string.IsNullOrWhiteSpace(user.AccessToken) ? string.Empty : user.AccessToken;
             sitecoreVirtualUser.Profile.Save();
             var success = AuthenticationManager.Login(sitecoreVirtualUser.Name, persist);
             if (success)
