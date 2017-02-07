@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Informa.Library.User.Authentication;
 using System.Linq;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -15,19 +16,25 @@ namespace Informa.Library.User.Entitlement
 		protected readonly IGetUserEntitlements GetUserEntitlements;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly IDefaultEntitlementsFactory DefaultEntitlementsFactory;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IGetUserEntitlementsV2 GetUserEntitlementsV2;
 
-		public AuthenticatedUserEntitlementsContext(
+        public AuthenticatedUserEntitlementsContext(
 			IAuthenticatedUserContext authenticatedUserContext,
 			IAuthenticatedUserSession userSession,
 			IGetUserEntitlements getUserEntitlements,
 			IUserIpAddressContext userIpAddressContext,
-			IDefaultEntitlementsFactory defaultEntitlementsFactory)
+			IDefaultEntitlementsFactory defaultEntitlementsFactory,
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IGetUserEntitlementsV2 getUserEntitlementsV2)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			UserSession = userSession;
 			GetUserEntitlements = getUserEntitlements;
 			UserIpAddressContext = userIpAddressContext;
 			DefaultEntitlementsFactory = defaultEntitlementsFactory;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+            GetUserEntitlementsV2 = getUserEntitlementsV2;
 		}
 
 		public IEnumerable<IEntitlement> Entitlements
@@ -46,7 +53,9 @@ namespace Informa.Library.User.Entitlement
 					return entitlementsSession.Value;
 				}
 
-				var entitlements = GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User?.Username, UserIpAddressContext.IpAddress.ToString());
+				var entitlements = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                    GetUserEntitlementsV2.GetEntitlements(AuthenticatedUserContext.User):
+                    GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User?.Username, UserIpAddressContext.IpAddress.ToString());
 
 				if (!entitlements.Any())
 				{

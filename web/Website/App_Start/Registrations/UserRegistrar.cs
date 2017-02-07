@@ -17,6 +17,8 @@ using Informa.Library.Salesforce.Subscription.User;
 using Informa.Library.Subscription.User;
 using Informa.Library.Salesforce.User.UserPreferences;
 using Informa.Library.User.UserPreference;
+using Informa.Library.Salesforce.V2.User.Entitlement;
+using Informa.Library.Salesforce.V2.User.Profile;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -61,6 +63,9 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
             builder.RegisterType<SalesforceFindUserPreferences>().As<IFindUserPreferences>();
             builder.RegisterType<SalesforceSetuserPreferences>().As<ISetUserPreferences>();
+            builder.RegisterType<SalesforceGetUserEntitlementsV2>().As<IGetUserEntitlementsV2>();
+            builder.RegisterType<SalesforceGetUserEntitlementsV2>().As<ISalesforceGetUserEntitlementsV2>();
+            builder.RegisterType<SalesforceFindUserInfo>().As<ISalesforceFindUserInfo>();
         }
 	}
 }

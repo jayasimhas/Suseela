@@ -6,6 +6,8 @@ using Informa.Library.User.Authentication;
 using System.Web;
 using Informa.Library.Salesforce.User.Authentication;
 using Informa.Library.SalesforceConfiguration;
+using Informa.Library.Salesforce.V2.User.Entitlement;
+using Informa.Library.Salesforce.V2.User.Profile;
 
 namespace Informa.Library.Salesforce.V2.User.Authentication
 {
@@ -13,14 +15,20 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
     {
         protected readonly IHttpClientHelper HttpClientHelper;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly ISalesforceGetUserEntitlementsV2 SalesforceGetUserEntitlementsV2;
+        protected readonly ISalesforceFindUserInfo SalesforceFindUserInfo;
         private string tokenUrl = "/services/oauth2/token";
-        private string userInforUrlFormat = "{0}/services/oauth2/userinfo";
 
         public SalesforceAuthenticateUserV2(
-            IHttpClientHelper httpClientHelper, ISalesforceConfigurationContext salesforceConfigurationContext)
+            IHttpClientHelper httpClientHelper, 
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            ISalesforceGetUserEntitlementsV2 salesforceGetUserEntitlementsV2,
+            ISalesforceFindUserInfo salesforceFindUserInfo)
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            SalesforceGetUserEntitlementsV2 = salesforceGetUserEntitlementsV2;
+            SalesforceFindUserInfo = salesforceFindUserInfo;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
@@ -50,23 +58,23 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                 return ErrorResult;
             }
 
-            var authenticatedUser = HttpClientHelper.GetDataResponse<UserInfoResult>(new Uri(string.Format(userInforUrlFormat,
-                SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url))
-                , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
-                new Dictionary<string, string>());
+            var authenticatedUser = SalesforceFindUserInfo.Find(accessToken);
 
             if (authenticatedUser == null)
             {
                 return ErrorResult;
             }
+
             return new SalesforceAuthenticateUserResult
             {
                 State = AuthenticateUserResultState.Success,
                 User = new SalesforceAuthenticatedUser
                 {
-                    Username = authenticatedUser.preferred_username,
-                    Email = authenticatedUser.email,
-                    Name = string.Format("{0} {1}", authenticatedUser.given_name, authenticatedUser.family_name),
+                    Username = authenticatedUser.UserName,
+                    Email = authenticatedUser.UserName,
+                    Name = authenticatedUser.Name,
+                    AccessToken = accessToken
+                    
                     ////AccountId = userAccount.accounts != null ? userAccount.accounts.Select(x => x.accountId).ToList() : null,
                     ////ContactId = loginResponse.contactId
                 }
