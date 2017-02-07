@@ -133,18 +133,26 @@
 	.loadChart{
 		width: 24%;
 		float: left;
-		@include breakpoint('medium') {
+		@media screen and (max-width: 767px) {
 			width: 100%;
 			float: inherit;
 		}
-		/*a div{
-			> div{
-				height: 220px !important;
-				svg{
-					height: 220px !important;
-				}
-			}
-		}*/
+	}
+	.owl-controls{
+		.owl-nav{
+			display: none !important;
+		}
+	}
+	#chartdiv_GWP, #chartdiv_NWP, #chartdiv_UR, #chartdiv_NP, #chartdiv_SF, #chartdiv_NWPNR, #chartdiv_SFNR, #chartdiv_NPSFR{
+		background: #fff;
+		margin: 0px auto;
+		
+		@include breakpoint('medium') {
+			height: 180px !important;
+		}
+		@media screen and (min-width: 768px) and (max-width: 1024px) {
+			width: 90% !important;
+		}
 	}
 	.graph_heading {
 		display: block;
@@ -169,6 +177,21 @@
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;
+		@include breakpoint('medium') {
+			height: 260px !important;
+		}
+		h5{
+			width: 287px;
+			margin: 0px auto;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 15px 0;
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 90%;
+				height: 60px;
+				display: block;
+			}
+		}
 	}
 	.owl-dots{
 		position: absolute;
@@ -197,9 +220,6 @@
 	@include fontFamily("verdana");
 	.owl-carousel .item{
 		height: 290px;
-		@include breakpoint('small') {
-			height: auto;
-		}
 	}
 	.owl-theme .owl-nav [class*='owl-']{
 		background: none;

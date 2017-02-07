@@ -2244,19 +2244,22 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-family: "verdana"; }
   #graph-carousel .loadChart {
     width: 24%;
-    float: left;
-    /*a div{
-			> div{
-				height: 220px !important;
-				svg{
-					height: 220px !important;
-				}
-			}
-		}*/ }
-    @media (max-width: 800px) {
+    float: left; }
+    @media screen and (max-width: 767px) {
       #graph-carousel .loadChart {
         width: 100%;
         float: inherit; } }
+  #graph-carousel .owl-controls .owl-nav {
+    display: none !important; }
+  #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
+    background: #fff;
+    margin: 0px auto; }
+    @media (max-width: 800px) {
+      #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
+        height: 180px !important; } }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
+        width: 90% !important; } }
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
@@ -2277,6 +2280,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-left: 0.5%;
     margin-right: 0.5%;
     background-color: #eee; }
+    @media (max-width: 800px) {
+      #graph-carousel .graph-container {
+        height: 260px !important; } }
+    #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
+      width: 287px;
+      margin: 0px auto;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 15px 0; }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
+          width: 90%;
+          height: 60px;
+          display: block; } }
   #graph-carousel .owl-dots {
     position: absolute;
     top: 0;
@@ -2300,9 +2317,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-bottom: 0; }
   #graph-carousel .owl-carousel .item {
     height: 290px; }
-    @media (max-width: 480px) {
-      #graph-carousel .owl-carousel .item {
-        height: auto; } }
   #graph-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #graph-carousel .owl-theme .owl-dots .owl-dot.active span, #graph-carousel .owl-theme .owl-dots .owl-dot:hover span {
@@ -8755,8 +8769,6 @@ div#feedbacklite.fbl_r {
         @media only screen and (min-width: 767px) and (max-width: 1024px) {
           #market-data .carousel-div .states_heading .R16 {
             padding: 12px 6px; } }
-        #market-data .carousel-div .states_heading .R16:hover {
-          background: #efd0d8 !important; }
       #market-data .carousel-div .states_heading .leftbord {
         border-left: 1px solid #e9e9e9; }
   #market-data h2, #market-data .article-topics__header {
@@ -8827,9 +8839,6 @@ div#feedbacklite.fbl_r {
   color: #1191D1 !important; }
   .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
     color: #002d4f !important; }
-
-.article-left-rail {
-  width: 100%; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

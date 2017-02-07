@@ -53,7 +53,7 @@ $(function() {
 		}
 	
 		$('.owl-carousel').owlCarousel({
-			loop:true,
+			loop:false,
 			autoPlay: false,
 			nav: true,
 			navContainer: '#customNav',
@@ -64,7 +64,7 @@ $(function() {
 				items:4
 				},
 				678:{
-				items:4
+				items:1
 				},
 				320:{
 				 items:1
@@ -73,7 +73,7 @@ $(function() {
 				 items:1
 				},
 				1000:{
-				items:4
+				items:8
 				}
 			}
 		});
