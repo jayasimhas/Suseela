@@ -59,10 +59,6 @@ $(function() {
 			navContainer: '#customNav',
 			dotsContainer: '#customDots',
 			slideBy: 4,
-			 navText: [
-				  "<img src='/dist/img/prev-horizontal.png'/>",
-				  "<img src='/dist/img/next-horizontal.png'/>"
-				  ],
 			responsive:{
 				0:{
 				items:4
