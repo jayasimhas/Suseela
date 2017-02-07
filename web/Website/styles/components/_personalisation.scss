@@ -462,13 +462,6 @@
 			}
 		}
 	}
-	@media screen and (max-width: 767px){
-		.latestSubject{
-			span.sub{
-				border-left: 0.625rem solid #1191D1;
-			}
-		}
-	}
 }
 
 .theme-insurance-day{
@@ -476,13 +469,6 @@
 		.latestSubject{
 			&:before {
 				background-color: #DE4361;
-			}
-		}
-	}
-	@media screen and (max-width: 767px){
-		.latestSubject{
-			span.sub{
-				border-left: 0.625rem solid #DE4361;
 			}
 		}
 	}

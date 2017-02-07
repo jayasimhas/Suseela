@@ -417,7 +417,7 @@
 				width: 20%;
 			}
 			@include breakpoint('small') {
-				width: 50%;
+				width: 35%;
 			}
 			.title{
 				background-color: #1191d1;
@@ -453,7 +453,23 @@
 	.oddCls{
 		background: #f1f1f1;
 	} 
-	#marketDataTable{ 
+	#marketDataTable{
+		.owl-dots{
+			background: #0f5487;
+			margin-top: -32px;
+			height: 32px;
+			text-align: right;
+			padding-right: 15px;
+			.owl-dot{
+				span{
+					margin: 10px 7px;
+					background: #1191d1;
+				}
+				&.active span{
+					background: #fff;
+				}
+			}
+		}
 		.R16{
 			padding: 12px 10px;
 			border-bottom: 1px solid #e1e1e1;
@@ -519,4 +535,8 @@
 			}
 		}
 	}
+}
+
+.article-left-rail{
+	width: 100%;
 }

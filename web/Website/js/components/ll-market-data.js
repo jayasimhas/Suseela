@@ -40,11 +40,7 @@
 				nav: true,
 				navContainer: '#customNav',
 				dotsContainer: '#customDots',
-				slideBy: 1,
-				 navText: [
-					  "<img src='/dist/img/prev-horizontal.png'/>",
-					  "<img src='/dist/img/next-horizontal.png'/>"
-					  ],
+				slideBy: 2,
 				responsive:{
 					0:{
 					items:4

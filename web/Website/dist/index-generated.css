@@ -5787,19 +5787,9 @@ header .header-account-access {
   .theme-lloydslist .latestSubject:before {
     background-color: #1191D1; } }
 
-@media screen and (max-width: 767px) {
-  .theme-lloydslist .latestSubject span.sub {
-    border-left: 10px solid #1191D1;
-    border-left: 0.625rem solid #1191D1; } }
-
 @media screen and (min-width: 768px) {
   .theme-insurance-day .latestSubject:before {
     background-color: #DE4361; } }
-
-@media screen and (max-width: 767px) {
-  .theme-insurance-day .latestSubject span.sub {
-    border-left: 10px solid #DE4361;
-    border-left: 0.625rem solid #DE4361; } }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
@@ -8754,7 +8744,7 @@ div#feedbacklite.fbl_r {
           width: 20%; } }
       @media (max-width: 480px) {
         #market-data .carousel-div .states_heading {
-          width: 50%; } }
+          width: 35%; } }
       #market-data .carousel-div .states_heading .title {
         background-color: #1191d1;
         color: #ffffff;
@@ -8781,6 +8771,17 @@ div#feedbacklite.fbl_r {
         margin-bottom: 20px; } }
   #market-data .oddCls {
     background: #f1f1f1; }
+  #market-data #marketDataTable .owl-dots {
+    background: #0f5487;
+    margin-top: -32px;
+    height: 32px;
+    text-align: right;
+    padding-right: 15px; }
+    #market-data #marketDataTable .owl-dots .owl-dot span {
+      margin: 10px 7px;
+      background: #1191d1; }
+    #market-data #marketDataTable .owl-dots .owl-dot.active span {
+      background: #fff; }
   #market-data #marketDataTable .R16 {
     padding: 12px 10px;
     border-bottom: 1px solid #e1e1e1;
@@ -8828,6 +8829,9 @@ div#feedbacklite.fbl_r {
   color: #1191D1 !important; }
   .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
     color: #002d4f !important; }
+
+.article-left-rail {
+  width: 100%; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {

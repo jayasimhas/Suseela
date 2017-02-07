@@ -344,7 +344,7 @@
 	
 })();
 
-$(document).on('mouseenter', '.R16, .RB16', function() {
+$(document).on('mouseenter', '.ID-Responsive-Table .R16, .ID-Responsive-Table .RB16', function() {
 	var Index = $(this).index();
 	$($('.states_heading .RB16')[Index -1]).addClass('activate-hover');
 	$('.owl-item').each(function() {
@@ -352,6 +352,6 @@ $(document).on('mouseenter', '.R16, .RB16', function() {
 	})
 })
 
-$(document).on('mouseleave', '.R16, .RB16', function() {
+$(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .RB16', function() {
 	$('.R16, .RB16').removeClass('activate-hover');
 })
