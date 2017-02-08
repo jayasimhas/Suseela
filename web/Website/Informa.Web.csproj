@@ -1907,6 +1907,7 @@
     <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
+    <Content Include="sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\ArticleMover.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
@@ -2283,13 +2284,10 @@
     <Content Include="Views\Casualty\RelatedLinks.cshtml" />
     <Content Include="Views\Casualty\CasualtyListing.json" />
     <Content Include="Views\Casualty\StockChart.json" />
-
     <Content Include="Views\Casualty\MarketFixtureTable.json" />
     <Content Include="Views\Casualty\MarketFixtureDummy.json" />
     <Content Include="Views\Casualty\marketFixDummyData.json" />
-
     <Content Include="Views\Article\ArticlePackage.cshtml" />
-
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

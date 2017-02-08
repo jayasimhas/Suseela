@@ -935,7 +935,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
 
 
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
             // XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
 

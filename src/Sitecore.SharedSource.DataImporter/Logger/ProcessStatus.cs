@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Web;
 using System.Web.Configuration;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
@@ -41,7 +42,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             FileStream fileStream = null;
             DirectoryInfo logDirInfo = null;
             FileInfo logFileInfo;
-            string logFilePath = (WebConfigurationManager.AppSettings["ArticleLoggingFolder"]);
+             string logFilePath = string.Format(@"{0}sitecore modules\Shell\Data Import\CMCTXTLogs\",
+             HttpRuntime.AppDomainAppPath);
+
             logFilePath = logFilePath + "Log-" + System.DateTime.Today.ToString("MM-dd-yyyy")+ fileName + "." + "txt";
             logFileInfo = new FileInfo(logFilePath);
             logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
