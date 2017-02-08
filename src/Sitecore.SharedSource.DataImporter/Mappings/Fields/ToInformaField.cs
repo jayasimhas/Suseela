@@ -18,6 +18,9 @@ using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SecurityModel;
+using System.Xml.Linq;
+using System.Web.Configuration;
+using Sitecore.SharedSource.DataImporter.Logger;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
@@ -74,6 +77,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
             if (f != null)
+             // LogIntoExcel.CMCReport()
                 f.Value = newImportValue;
         }
 
@@ -468,8 +472,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //date info
             string newFilePath = (dt.Year != 1800) ? $"{dt.ToString("yyyy/MMMM")}/{fileName}" : fileName;
 
+
             // see if it exists in med lib
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
+           
+            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
             IEnumerable<Item> matches = GetMediaItems(map)
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
@@ -516,8 +522,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map)
-        {
-            string cacheKey = "Images";
+        {            string cacheKey = "Images";
             IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
             if (o != null)
                 return o;
@@ -545,7 +550,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 stream1.CopyTo(stream2);
                 // Create the options
                 MediaCreatorOptions options = new MediaCreatorOptions();
-                options.FileBased = false;
+                options.FileBased = true;
                 options.IncludeExtensionInItemName = false;
                 options.KeepExisting = false;
                 options.Versioned = false;
@@ -1252,6 +1257,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (f == null)
                 return;
 
+            DataLogger.Add(NewItemField, t.First().Name);
             string ctID = t.First().ID.ToString();
             if (!f.Value.Contains(ctID))
                 //   f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
@@ -2199,7 +2205,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2209,14 +2215,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
+            string regionLog = string.Empty;
             Dictionary<string, string> d = GetMapping();
-
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 string upperValue = val.ToString();
-                string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+                IEnumerable<Item> tDName;
+                IEnumerable<Item> tName;
+                IEnumerable<Item> t;
+                string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 if (string.IsNullOrEmpty(transformValue))
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
@@ -2224,14 +2234,33 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 }
 
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
+                tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+
+                if(!tName.Any())
+                {
+                     tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                    if(!tDName.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    else
+                    {
+                        t = tDName;
+                    }
+                }
+
+                else
+                {
+                   t = tName;
+                }
 
                 //if you find one then store the id
-                if (!t.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
-                }
+                //if (!t.Any())
+                //{
+                //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                //    continue;
+                //}
 
                 Field f = newItem.Fields[NewItemField];
                 if (f == null)
@@ -2241,7 +2270,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 {
                     TaxonomyList.Add(t.First().ID.ToString());
                 }
+
+                if (!(regionLog.Contains(t.First().Name)))
+                    regionLog += t.First().Name + ",";
             }
+            DataLogger.Add(siteandpublication[2], regionLog);
         }
 
 
@@ -2528,6 +2561,47 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             return d;
         }
+
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+          
+             XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(type).Descendants().Where(x => x.Attribute("name").Value.ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString().ToLower();
+                    }
+
+                    else
+                    {
+
+                        return " ";
+                    }
+                }
+
+                else
+                {
+                    return " ";
+                }
+            }
+
+            else
+            {
+                return " ";
+            }
+
+        }
+
 
         #endregion Methods
 
@@ -3677,56 +3751,149 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
 
             //get parent item of list to search
             var sourceItems = GetSourceItems(newItem.Database);
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> tName;
+            IEnumerable<Item> t;
             if (sourceItems == null)
                 return;
 
             Dictionary<string, string> d = GetMapping();
-
+            string Taxonomylog = string.Empty;
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 //string upperValue = val.ToUpper();
                 // string upperValue = val.ToUpper();
-                string transformValue = (d.ContainsKey(val)) ? d[val] : string.Empty;
-                if (string.IsNullOrEmpty(transformValue))
+
+                if (val == "CBOT Review" || val == "ICE Canada Review" || val == "ICE US Review" || val == "Weekly Report")
                 {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
+                    string transValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
+
+                    var specialcharactervalues = transValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+                    foreach (var specialval in specialcharactervalues)
+                    {
+                        string transformedValue = specialval;
+
+                        if (string.IsNullOrEmpty(transformedValue))
+                        {
+                            map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
+                            continue;
+                        }
+                        if (transformedValue.Contains("&") || transformedValue.Contains("/") || transformedValue.Contains("-") || transformedValue.Contains("'"))
+                        {
+                            transformedValue = transformedValue.Replace("&", "and");
+                            transformedValue = transformedValue.Replace("/", "or");
+                            transformedValue = transformedValue.Replace("-", "");
+                            transformedValue = transformedValue.Replace("'", "");
+
+                        }
+                        string cleanedName = StringUtility.GetValidItemName(transformedValue, map.ItemNameMaxLength);
+                        tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformedValue.ToLower()));
+
+                        if (!tName.Any())
+                        {
+                            tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformedValue.ToLower()));
+                            if (!tDName.Any())
+                            {
+                                map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                                continue;
+                            }
+                            else
+                            {
+                                t = tDName;
+                            }
+                        }
+
+                        else
+                        {
+                            t = tName;
+                        }
+
+                        Field fe = newItem.Fields[NewItemField];
+                        if (fe == null)
+                            continue;
+
+                        // string ctID = t.First().ID.ToString();
+
+                        if (NewItemField == "Taxonomy")
+                        {
+                            TaxonomyList.Add(t.First().ID.ToString());
+                        }
+
+                        if (!(Taxonomylog.Contains(t.First().Name)))
+                            Taxonomylog += t.First().Name + ",";
+
+                    }
+
                 }
-                if (transformValue.Contains("&"))
+
+                else
                 {
-                    transformValue = transformValue.Replace("&", "and");
+                    string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
+
+                    if (string.IsNullOrEmpty(transformValue))
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("-") || transformValue.Contains("'"))
+                    {
+                        transformValue = transformValue.Replace("&", "and");
+                        transformValue = transformValue.Replace("/", "or");
+                        transformValue = transformValue.Replace("-", "");
+                        transformValue = transformValue.Replace("'", "");
+
+                    }
+                    string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
+                    tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+
+                    if (!tName.Any())
+                    {
+                        tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                        if (!tDName.Any())
+                        {
+                            map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                            continue;
+                        }
+                        else
+                        {
+                            t = tDName;
+                        }
+                    }
+
+                    else
+                    {
+                        t = tName;
+                    }
+
+                    Field f = newItem.Fields[NewItemField];
+                    if (f == null)
+                        continue;
+
+                    string ctID = t.First().ID.ToString();
+
+                    if (NewItemField == "Taxonomy")
+                    {
+                        TaxonomyList.Add(t.First().ID.ToString());
+                    }
+
+                    if (!(Taxonomylog.Contains(t.First().Name)))
+                        Taxonomylog += t.First().Name + ",";
+
                 }
-                string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.Name.Equals(cleanName));
-
-                //if you find one then store the id
-                if (!t.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
-                }
-
-                Field f = newItem.Fields[NewItemField];
-                if (f == null)
-                    continue;
-
-                string ctID = t.First().ID.ToString();
-
-                if (NewItemField == "Taxonomy")
-                {
-                    TaxonomyList.Add(t.First().ID.ToString());
-                }
-
             }
+
+            DataLogger.Add(siteandpublication[2], Taxonomylog);
         }
 
         public virtual Dictionary<string, string> GetMapping()
@@ -3737,7 +3904,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //d.Add("dairy_markets_features", "Dairy");
             //d.Add("dairy_markets_downloads", "Dairy");
             //d.Add("dairy_markets_filedownloads", "Dairy");
-            //d.Add("dairy_markets_subscribe_free_demo_mobile", "Dairy");
+            //d.Add("dairy_markets_subscribe_free_demo_mobile", "DairyToInformaMediatType
             //d.Add("dairy_markets_resources_dairy_ezine_mobile", "Dairy");
             d.Add("dairy_markets_markets", "Dairy");
             d.Add("dairy_markets_markets_butter", "Butter");
@@ -4115,6 +4282,46 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return d;
         }
 
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Attribute("name").Value.ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString().ToLower();
+                    }
+
+                    else
+                    {
+
+                        return "";
+                    }
+                }
+
+                else
+                {
+                    return "";
+                }
+            }
+
+            else
+            {
+                return "";
+            }
+
+        }
+
+
         #endregion Methods
 
     }
@@ -4136,32 +4343,61 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //get parent item of list to search
             var sourceItems = GetSourceItems(newItem.Database);
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> tName;
+            IEnumerable<Item> t;
             if (sourceItems == null)
                 return;
 
             Dictionary<string, string> d = GetMapping();
-
+            var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
             foreach (var val in values)
             {
                 string upperValue = val.ToUpper();
-                string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+                string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 if (string.IsNullOrEmpty(transformValue))
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
+                if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("-") || transformValue.Contains("'"))
+                {
+                    transformValue = transformValue.Replace("&", "and");
+                    transformValue = transformValue.Replace("/", "or");
+                    transformValue = transformValue.Replace("-", "");
+                    transformValue = transformValue.Replace("'", "");
 
+                }
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+                tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+
+                if (!tName.Any())
+                {
+                    tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                    if (!tDName.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        continue;
+                    }
+                    else
+                    {
+                        t = tDName;
+                    }
+                }
+
+                else
+                {
+                    t = tName;
+                }
 
                 //if you find one then store the id
-                if (!t.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                    continue;
-                }
+                //if (!t.Any())
+                //{
+                //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                //    continue;
+                //}
 
                 Field f = newItem.Fields[NewItemField];
                 if (f == null)
@@ -4210,6 +4446,47 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return d;
         }
 
+        public string GetusingXML(string contentName, string publication, string type, string site)
+        {
+
+
+
+            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+
+            if (contentName != "")
+            {
+                if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
+                {
+                    var elemValue = from c in doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Where(x => x.Name.ToString().ToLower() == contentName.ToLower())
+                                    select c.Value.ToLower();
+
+                    if (elemValue.ElementAt(0) != null)
+                    {
+                        return elemValue.ElementAt(0).ToString().ToLower();
+                    }
+
+                    else
+                    {
+
+                        return "";
+                    }
+                }
+
+                else
+                {
+                    return "";
+                }
+            }
+
+            else
+            {
+                return "";
+            }
+
+        }
+
+
+
         #endregion Methods
 
     }
@@ -4237,6 +4514,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
+           
             if (string.IsNullOrEmpty(importValue))
                 return;
 
@@ -4244,7 +4522,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             var sourceItems = GetSourceItems(newItem.Database);
             if (sourceItems == null)
                 return;
-
+            string mediaLog = String.Empty;
+            IEnumerable<Item> tDName;
+            IEnumerable<Item> t = null;
+            IEnumerable<Item> tName;
             Dictionary<string, string> d = GetMapping();
 
             string lowerValue = importValue.ToLower();
@@ -4257,20 +4538,36 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //loop through children and look for anything that matches by name
             string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+             tName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
 
             //if you find one then store the id
-            if (!t.Any())
+            if (!tName.Any())
             {
-                map.Logger.Log(newItem.Paths.FullPath, "Media Type not matched", ProcessStatus.FieldError, NewItemField, importValue);
-                return;
+                tDName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+                if (!tDName.Any())
+                {
+                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
+                    
+                }
+                else
+                {
+                    t = tDName;
+
+                }
+            }
+
+            else
+            {
+                t = tName;
             }
 
             Field f = newItem.Fields[NewItemField];
             if (f == null)
                 return;
 
-            string ctID = t.First().ID.ToString();
+            string ctID = t.First().ToString();
+            DataLogger.Add(NewItemField, t.First().Name);
+             
             if (!f.Value.Contains(ctID))
                 f.Value = ctID;
         }
@@ -4281,14 +4578,19 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("data", "Data");
             d.Add("image", "Image");
             d.Add("audio", "Audio");
-            d.Add("Video", "News");
-            d.Add("chartgraph", "Chart/Graph");
+            d.Add("video", "Video");
+            d.Add("chart/table", "Chart/Table");
             d.Add("timeline ", "Timeline");
             d.Add("dataTable", "Data Table");
             d.Add("webinars", "Webinars");
             d.Add("interactivedashboards", "Interactive Dashboards");
             d.Add("supportingdocument", "Supporting Document");
 
+            d.Add("news-tv", "Video");
+            d.Add("news-audio", "Audio");
+            d.Add("news-data", "Data Tables");
+            d.Add("ontheradar", "Video");
+            d.Add("lloyds-list-videos", "Video");
 
             return d;
         }

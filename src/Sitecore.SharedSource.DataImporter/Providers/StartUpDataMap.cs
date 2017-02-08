@@ -29,7 +29,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			//}
 		}
 
-		public override IEnumerable<object> GetImportData()
+		public override IEnumerable<object> GetImportData(string site, string channel)
 		{
 			var parent = ImportItem.Parent.Name == "Articles" ? ImportItem.Parent.Parent.Name : ImportItem.Parent.Name;
 			var startItem = FromDB.GetItem(StartPath);

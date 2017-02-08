@@ -109,7 +109,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
         /// uses the sitecore database and xpath query to retrieve data
         /// </summary>
         /// <returns></returns>
-        public override IEnumerable<object> GetImportData() {
+        public override IEnumerable<object> GetImportData(string site, string channel) {
             return FromDB.SelectItems(StringUtility.CleanXPath(Query));
         }
 
@@ -189,6 +189,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 
         #region Methods
 
+        public override IEnumerable<object> ImportImages(IDataMap map) { return null; }
         protected virtual void ProcessChildren(ref Item newParent, ref Item oldParent) {
             if (!oldParent.HasChildren)
                 return;
@@ -199,7 +200,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                 if (string.IsNullOrEmpty(newItemName))
                     continue;
 
-                CreateNewItem(newParent, importRow, newItemName);
+                CreateNewItem(newParent, importRow, newItemName,null,null);
             }
         }
 
