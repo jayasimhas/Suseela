@@ -14,5 +14,12 @@ namespace Informa.Library.User.Entitlement
 		public string ProductType { get; set; }
 	    public string OpportunityId { get; set; }
 	    public string OpportunityLineItemId { get; set; }
+        public string Type { get; set; }
+        public string StartDate { get; set; }
+        public string SalesEndDate { get; set; }
+        public string ProductName { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string AccessEndDate { get; set; }
     }
 }

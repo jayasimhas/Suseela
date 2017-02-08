@@ -4,8 +4,9 @@
 }
 
 .compareChart {
-	font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+	font-family: "Roboto", Arial Narrow, sans-serif;
 	width: 790px;
+	margin-bottom: 2rem;
 	
 	@media screen and (min-width: 801px) and (max-width: 1024px) {
 		width: 594px;
@@ -50,7 +51,10 @@
 			}
 			.title{
 				float: left;
-				font-size: 1.125rem;
+				font-size: 1rem;
+				&.act{
+					font-weight: 500;
+				}
 			}
 			.chartexpand{
 				float: right;

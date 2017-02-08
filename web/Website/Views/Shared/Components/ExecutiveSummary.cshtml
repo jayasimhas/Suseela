@@ -5,6 +5,6 @@
 
     <div class="article-executive-summary">
         <h4>@(Model.IsArticlePage ? Model.ExecutiveSummary : string.Empty)</h4>
-        @Html.Glass().Editable(Model.GlassModel, model => Model.summary);
+        @Html.Glass().Editable(Model.GlassModel, model => Model.summary)
     </div>
 }

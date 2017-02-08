@@ -9,27 +9,34 @@
 
     @foreach (var company in Model.CompanyCarouselPanels)
     {
-        <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" height="140px" width="235px" style="float:left" /></a><br />
-        <a href="@company.CompanyLandingPageUrl" style="float:left">@company.CompanyName</a><br />
-        <a href="@company.CompanyLandingPageUrl" style="float:left; width:100px">@Model.ViewMoreInfoText</a>
-        foreach (var Graph in company.Graphs)
-        {
-
-            <div class="graph-container lightgray-body" style="float:left;">
-                @{
-                    var chartDivId = company.CompanyId + "_" + Graph.GraphID;
-                }
-                <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
-                <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>                
-                <script>
-                    var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                    var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                    var chartData = data[0]["@Graph.GraphID"];                    
-                    PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
-                </script>
+        <div style="clear: both; margin-bottom: 20px; margin-left: 20px;">
+            <div style="float: left;">
+                <div style="float:left"><a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" height="140" width="200" /></a></div>
+                <div style="float:left; width: 200px;">
+                    <a href="@company.CompanyLandingPageUrl">@company.CompanyName</a><br />
+                    <a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a>
+                </div>
             </div>
-                        }
+            @foreach (var Graph in company.Graphs)
+            {
+
+                <div class="graph-container lightgray-body" style="float:left;">
+                    @{
+                        var chartDivId = company.CompanyId + "_" + Graph.GraphID;
                     }
+                    <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
+                    <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                    <script>
+                        var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
+                        var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                        var chartData = data[0]["@Graph.GraphID"];
+                        PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                    </script>
+                </div>
+
+                        }
+        </div>
+                        }
     <script type="text/javascript">
         setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
     </script>

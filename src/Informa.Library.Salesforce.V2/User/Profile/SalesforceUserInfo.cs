@@ -1,8 +1,8 @@
 ﻿using System.Xml.Serialization;
 
-namespace Informa.Library.Salesforce.V2.User.Authentication
+namespace Informa.Library.Salesforce.V2.User.Profile
 {
-    public class UserInfoResult
+    public class SalesforceUserInfo : ISalesforceUserInfo
     {
         [XmlElement(ElementName = "preferred_username")]
         public string UserName { get; set; }

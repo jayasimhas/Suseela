@@ -82,7 +82,7 @@ $(document).ready(function() {
             graph4.lineColor = '#'+FourthChartColor;
             chart4.addGraph(graph4);
             chart4.write('chartdiv-type');
-            var inputSet = $(".merge-acquistion th input");
+            var inputSet = $(".merge-acquistion th input, .merge-form-items input");
             inputSet.each(function() {
             	if(!$(this).hasClass('range-field')) {
         	        $(this).keyup(function() {
@@ -107,7 +107,7 @@ $(document).ready(function() {
             //     chart4.dataProvider = generateChartData();
             //     chart4.validateData();
             // });
-            $($(".range-field")[0]).keyup(function() {
+            $(".range-field.start").keyup(function() {
                 chart.dataProvider = generateChartDataSizeRange();
                 chart.validateData();
                 chart2.dataProvider = generateChartDataDealsByRegion();
@@ -117,7 +117,7 @@ $(document).ready(function() {
                 chart4.dataProvider = generateChartData();
                 chart4.validateData();
             });
-            $($(".range-field")[1]).keyup(function() {
+            $(".range-field.end").keyup(function() {
                 chart.dataProvider = generateChartDataSizeRange();
                 chart.validateData();
                 chart2.dataProvider = generateChartDataDealsByRegion();

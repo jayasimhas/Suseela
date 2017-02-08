@@ -14,7 +14,8 @@ namespace Informa.Library.SalesforceConfiguration
         protected readonly ISiteRootContext SiteRootContext;
         private const string MultipleSalesforceSupportConfigKey = "MultipleSalesforceSupportEnabled";
         private string _isMultipleSalesforceSupportEnabled = Settings.GetSetting(MultipleSalesforceSupportConfigKey);
-        private string _authorizationRequestEndPoint = "{0}/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
+        private string _authorizationRequestEndPoint = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
+        private string _userEntitlementsRequestEndPoint = "{0}/services/apexrest/UserEntitlements/{1}";
 
 
         public SalesforceConfigurationContext(
@@ -52,8 +53,20 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetLoginEndPoints(string productCode, string callbackUrl, string state)
         {
             string url = string.Empty;
-            url = string.Format(_authorizationRequestEndPoint, SalesForceConfiguration?.Salesforce_Login_Url.Url,
-                productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
+            string loginUrl = (SalesForceConfiguration?.Salesforce_Login_Url != null
+                && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Login_Url.Url) ?
+                SalesForceConfiguration?.Salesforce_Login_Url.Url : string.Empty);
+
+            url = string.Format(_authorizationRequestEndPoint, loginUrl,
+                  productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
+            return url;
+        }
+
+        public string GetUserEntitlementsEndPoints(string userName)
+        {
+            string url = string.Empty;
+            url = string.Format(_userEntitlementsRequestEndPoint,
+                SalesForceConfiguration?.Salesforce_Entitlement_Api_Url.Url, userName);
             return url;
         }
     }

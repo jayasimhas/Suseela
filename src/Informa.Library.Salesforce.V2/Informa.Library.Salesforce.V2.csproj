@@ -42,6 +42,10 @@
     <Reference Include="Jabberwocky.Glass">
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -71,6 +75,15 @@
     <Compile Include="User\Authentication\ISalesforceAuthenticateUserV2.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUserV2.cs" />
     <Compile Include="User\Authentication\UserInfoResult.cs" />
+    <Compile Include="User\Entitlement\ISalesforceEntitlmentFactoryV2.cs" />
+    <Compile Include="User\Entitlement\ISalesforceGetUserEntitlementsV2.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlmentFactoryV2.cs" />
+    <Compile Include="User\Entitlement\SalesforceGetUserEntitlementsV2.cs" />
+    <Compile Include="User\Entitlement\UserEntitlement.cs" />
+    <Compile Include="User\Profile\ISalesforceFindUserInfo.cs" />
+    <Compile Include="User\Profile\ISalesforceUserInfo.cs" />
+    <Compile Include="User\Profile\SalesforceFindUserInfo.cs" />
+    <Compile Include="User\Profile\SalesforceUserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
@@ -89,6 +102,7 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
