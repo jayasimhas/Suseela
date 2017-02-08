@@ -2,6 +2,7 @@
 	var MergeAcquistion = {
 		CurrentArray: [],
 		MonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+		HeadingNames: ['Month', 'Acquirer', 'Target', 'TargetSector', 'TargetLocation', 'Detail', 'Price'],
 		RenderDesktopVersion: function(data, Parent) {
 			Parent.find('tbody.visible-lg').remove();
 			Parent.append('<tbody class="visible-lg"></tbody>');
@@ -24,6 +25,49 @@
 				Wrapper.find('tr:last-child').append('<td align="right" deal="Price" type="number" class="R16 pad-10">'+Price+'</td>');
 			}
 
+		},
+		RenderMobileVersion: function(data, Parent) {
+			Parent.find('tbody.visible-xs').remove();
+			Parent.append('<tbody class="visible-xs"></tbody>');
+
+			var Wrapper = Parent.find('tbody.visible-xs'),
+				Headings = this.HeadingNames;
+
+
+			for(var key in data) {
+				Wrapper.append('<tr>'+
+										'<td width="50%" class="boder-none"><hr class="m-0"/></td>'+
+										'<td width="50%" class="boder-none"><hr class="m-0"/></td>'+
+									'</tr>');
+				for(var j in Headings) {
+					if(Headings[j] == 'Month') {
+						Wrapper.append('<tr>'+
+										'<td class="pad-10" width="50%">' + Headings[j] + '</td>'+
+										'<td class="pad-10" width="50%">' + this.MonthNames[data[key][Headings[j]] - 1]+ '</td>'+
+									'</tr>');
+					} else if (Headings[j] == 'Price') {
+						var Price = "";
+						if(data[key][Headings[j]].length > 0) {
+							Price = data[key][Headings[j]];
+						} else {
+							Price = '-';
+						}
+						Wrapper.append('<tr>'+
+										'<td class="pad-10" width="50%">' + Headings[j] + '</td>'+
+										'<td class="pad-10" width="50%">' + Price + '</td>'+
+									'</tr>');
+					} else {
+						Wrapper.append('<tr>'+
+										'<td class="pad-10" width="50%">' + Headings[j] + '</td>'+
+										'<td class="pad-10" width="50%">' + data[key][Headings[j]] + '</td>'+
+									'</tr>');
+					}
+				}
+				Wrapper.append('<tr>'+
+										'<td width="50%" class="boder-none"><hr/></td>'+
+										'<td width="50%" class="boder-none"><hr/></td>'+
+									'</tr>');
+			}
 		},
 		SortingEvent: function(data, Parent) {
 			var self = this;
@@ -98,15 +142,18 @@
 				self.CurrentArray = [];
 				self.CurrentArray = SortedElements;
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
+				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
 		},
 		FilterEvent: function(data, Parent) {
 			var InputValues = Parent.find('th').find('input'),
 				self = this;
-
+			if($(document).width() < 668) {
+				InputValues = $('.merge-form-items input');
+			}
 			InputValues.on('keyup', function() {
 				var textFieldValue = $(this).val(),
-					DealType = $(this).parents('th').find('.sorting-buttons').attr('deal'),
+					DealType = $(this).attr('deal'),
 					Index = $(this).parents('th').index(),
 					Body = Parent.find('tbody.visible-lg'),
 					regExp = new RegExp(textFieldValue, "i"),
@@ -116,29 +163,34 @@
 					StartField = Parent.find('.range-field')[0].value,
 					EndField = Parent.find('.range-field')[1].value;
 
-				Parent.find('th').each(function(key) {
-					var DealType = $(this).find('.sorting-buttons').attr('deal');
-					if(DealType != 'Price') {
-						if($(this).find('input').val().length > 0) {
-							Obj[DealType] = $(this).find('input').val();
-						}
-					} else {
-						var Start, End;
-						if($(this).find('input.start').val()) {
-							Start = parseFloat($(this).find('input.start').val());
+				if($(document).width() < 668) {
+					Index = $(this).parents('.forms').index();
+					StartField = $('.merge-form-items.range-field.start').val();
+					EndField = $('.merge-form-items.range-field.end').val();
+				}
+				InputValues.each(function(key) {
+					var DealType = $(this).attr('deal');
+					if($(this).val()) {
+						if(DealType != 'Price') {
+							Obj[DealType] = $(this).val();
 						} else {
-							Start = 0;
+							var Start, End;
+							if(StartField) {
+								Start = StartField;
+							} else {
+								Start = 0;
+							}
+							if(EndField) {
+								End = EndField;
+							} else {
+								End = 0;
+							}
+							Obj[DealType] = {
+								Start : Start,
+								End : End
+							}
+							// Obj[DealType]['End'] = 
 						}
-						if($(this).find('input.end').val()) {
-							End = parseFloat($(this).find('input.end').val());
-						} else {
-							End = 0;
-						}
-						Obj[DealType] = {
-							Start : Start,
-							End : End
-						}
-						// Obj[DealType]['End'] = 
 					}
 				});
 
@@ -209,6 +261,7 @@
 					FilteredArray = window.jsonMergeAcquistion;
 				}
 				self.RenderDesktopVersion(FilteredArray, $('.merge-acquistion'));
+				self.RenderMobileVersion(FilteredArray, $('.merge-acquistion'));
 
 			});
 		},
@@ -223,13 +276,20 @@
 
 			});
 		},
+		MobileEvent: function() {
+			$(document).on('click', '.merge-acordian', function(e) {
+				e.preventDefault();
+				$(this).parents('.merges-form').toggleClass('open');
+			});
+		},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
+			this.RenderMobileVersion(data, Parent);
 			this.SortingEvent(data, Parent);
 			this.FilterEvent(data, Parent);
 			this.YearChange();
-			//this.RenderMobileVersion(data, Parent);
+			this.MobileEvent();
 		}
 	}
 

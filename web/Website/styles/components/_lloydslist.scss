@@ -318,47 +318,6 @@
 .lloyd-related-links {
     margin-top: 1.25rem;
 }
-.merge-acquistion {
-	input[type="text"] {
-	    width: 100%;
-	    color: #000;
-	}
-	tr:nth-child(even) {
-		background-color: #eee;
-	}
-	.selectivity-input {
-	    width: 100%;
-	    color: #000;
-	 }
-	.range-wrapper {
-	    float: left;
-	    width: 100%;
-	 }
-	 input.range-field {
-	    width: 30px !important;
-	 }
-
-	 th span, .sorting-buttons {
-	    float: left;
-	    margin-right: 5px;
-	 }
-	 .selectivity-single-select {
-	    box-sizing: border-box;
-	 }
-	 .selectivity-single-select-input {
-	       padding: 2px !important;
-	       width: 100% !important;
-	 }
-	 .selectivity-single-result-container {
-	    top: 4px;
-	 }
-	 .form-control {
-	    margin-bottom: 20px;
-	 }
-	 .form-control input {
-	    width: 100%;
-	 }
- }
 
 .marketdata-links{
 	.hideMarketData{
@@ -371,34 +330,6 @@
 			display: none;
 		}
 	}
-}
-
-.graphs-container { background-color: #EEEEEE; margin: 0 6px 20px; overflow: auto; }
-.graphs-container h4 { text-transform: uppercase; padding: 10px; }
-.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
-.graphs-container .graph-container {
-    display: inline-block;
-    text-align: left;
-    padding: 0 8px;
-    padding-bottom: 10px;
-    background-color: #EEEEEE;
-    float: left;
-    border-left: 1px solid #C0C0C0;
-    border-bottom: 1px solid #C0C0C0;
-    width: 25%;
-    @include breakpoint('small') {
-    	width: 100%;
-    }
-    &:first-child {
-    	border-left: none;
-    }
-}
-.graphs-container .dealsOmitted {
-	float: right;
-    width: 100%;
-    padding: 10px 0;
-    text-align: right;
-    background-color: #fff;
 }
  
 #market-data{
