@@ -6,14 +6,14 @@
     {
         <div class="myView-placeholder">
             <img src="../dist/img/arrow.png" class="arrow" width="5" height="10">
-            <a href="@Model.MyViewLinkURL" class="btn btn-my-view">@Model.MyViewLinkText</a>
+            <a href="@Model.MyViewLinkURL" class="btn btn-my-view button--filled button--outline">@Model.MyViewLinkText</a>
         </div>
     }
     else
     {
         <div class="myView-placeholder pop-out__trigger js-pop-out-trigger" data-pop-out-id="myView-header-register" data-pop-out-align="right" data-pop-out-type="myViewregister">
             <img src="../dist/img/arrow.png" class="arrow" width="5" height="10">
-            <a href="@Model.MyViewLinkURL" class="btn btn-my-view">@Model.MyViewLinkText</a>        
+            <a href="@Model.MyViewLinkURL" class="btn btn-my-view button--filled button--outline">@Model.MyViewLinkText</a>        
         </div>
     }
     if (!Model.IsAuthenticated && Model.CallToActionViewModel != null)
