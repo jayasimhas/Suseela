@@ -5,10 +5,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -23,10 +25,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -41,10 +45,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -59,10 +65,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -77,10 +85,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -95,10 +105,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -113,10 +125,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}
@@ -131,10 +145,12 @@ $(function() {
 			var $this = $(this), eachChartData = $this.closest('.eachChartData'), chartData = eachChartData.find('.chartData'), arrow = eachChartData.find('.chartexpand');
 			if (chartData.is(':visible')) {
 				$this.removeClass('act');
+				$this.find('.title').removeClass('act');
 				chartData.addClass('hide');
 				arrow.removeClass('active');
 			} else {
 				$this.addClass('act');
+				$this.find('.title').addClass('act');
 				chartData.removeClass('hide');
 				arrow.addClass('active');
 			}

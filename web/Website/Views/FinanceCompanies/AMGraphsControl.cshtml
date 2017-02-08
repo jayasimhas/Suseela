@@ -16,7 +16,7 @@
             {
                 <div class="loadChart graph-container item">
                     <h5><a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID">@Graph.GraphTitle</a></h5>
-                    <a href="/"><div id="chartdiv_@Graph.GraphID" style="width:287px; height:220px;"></div></a>
+                    <a href="/"><div id="chartdiv_@Graph.GraphID"></div></a>
                     <script>
                         var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
                         var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);

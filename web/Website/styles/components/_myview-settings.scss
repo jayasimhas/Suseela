@@ -622,14 +622,14 @@
 			}
 			.saveview{ 
 				text-align: center;
-				float: left;
-				height: 1.5rem;
+				float: left; 
 				width: 4.375rem;
 				text-transform: uppercase;
 				font-size: 0.6875rem;
 				cursor: pointer;
-				line-height: 1.4375rem;
+				line-height: 2rem;
 				font-weight: bold;
+				padding: 0px;
 			}
 			.registrationBtn.validationChk{
                 border: 1px solid $color-tree-poppy-orange;
@@ -650,17 +650,15 @@
 
 			
 			.cancel{
-				background: $color-tree-poppy-orange;
-				color: $color-zeus-black;
 				text-align: center;
 				float: right;
-				height: 1.5rem;
 				width: 4.375rem;
 				text-transform: uppercase;
 				font-size: 0.6875rem;
 				cursor: pointer;
-				line-height: 1.4375rem;
+				line-height: 2rem;
 				font-weight: bold;
+				padding: 0px;
 			}
 		}
 	  .modal-inner {

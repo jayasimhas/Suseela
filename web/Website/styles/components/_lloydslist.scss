@@ -318,47 +318,6 @@
 .lloyd-related-links {
     margin-top: 1.25rem;
 }
-.merge-acquistion {
-	input[type="text"] {
-	    width: 100%;
-	    color: #000;
-	}
-	tr:nth-child(even) {
-		background-color: #eee;
-	}
-	.selectivity-input {
-	    width: 100%;
-	    color: #000;
-	 }
-	.range-wrapper {
-	    float: left;
-	    width: 100%;
-	 }
-	 input.range-field {
-	    width: 30px !important;
-	 }
-
-	 th span, .sorting-buttons {
-	    float: left;
-	    margin-right: 5px;
-	 }
-	 .selectivity-single-select {
-	    box-sizing: border-box;
-	 }
-	 .selectivity-single-select-input {
-	       padding: 2px !important;
-	       width: 100% !important;
-	 }
-	 .selectivity-single-result-container {
-	    top: 4px;
-	 }
-	 .form-control {
-	    margin-bottom: 20px;
-	 }
-	 .form-control input {
-	    width: 100%;
-	 }
- }
 
 .marketdata-links{
 	.hideMarketData{
@@ -372,42 +331,28 @@
 		}
 	}
 }
-
-.graphs-container { background-color: #EEEEEE; margin: 0 6px 20px; overflow: auto; }
-.graphs-container h4 { text-transform: uppercase; padding: 10px; }
-.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
-.graphs-container .graph-container {
-    display: inline-block;
-    text-align: left;
-    padding: 0 8px;
-    padding-bottom: 10px;
-    background-color: #EEEEEE;
-    float: left;
-    border-left: 1px solid #C0C0C0;
-    border-bottom: 1px solid #C0C0C0;
-    width: 25%;
-    @include breakpoint('small') {
-    	width: 100%;
-    }
-    &:first-child {
-    	border-left: none;
-    }
-}
-.graphs-container .dealsOmitted {
-	float: right;
-    width: 100%;
-    padding: 10px 0;
-    text-align: right;
-    background-color: #fff;
-}
  
 #market-data{
 	font-size: 0.9375rem; 
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	.showinMob{
+		display: none;
+		@include breakpoint('medium-small') {
+			display: block;
+		}
+	}
+	.hideinMob{
+		display: block;
+		@include breakpoint('medium-small') {
+			display: none;
+		}
+	}
 	.carousel-div{
 		position:relative;
 		border-right: 1px solid #e9e9e9;
-		width: 100%;
+		@include breakpoint('medium-small') {
+			width: 100%;
+		}
 		.states_heading{
 			position:relative;
 			float:left;
@@ -432,9 +377,6 @@
 				@media only screen and (min-width: 767px) and (max-width: 1024px) {
 					padding: 12px 6px;
 				}
-				&:hover{
-					background: #efd0d8 !important;
-				}
 			}
 			.leftbord{
 				border-left: 1px solid #e9e9e9;
@@ -453,7 +395,7 @@
 	.oddCls{
 		background: #f1f1f1;
 	} 
-	#marketDataTable{
+	.marketDataTable{
 		.owl-dots{
 			background: #0f5487;
 			margin-top: -32px;
@@ -474,6 +416,10 @@
 			padding: 12px 10px;
 			border-bottom: 1px solid #e1e1e1;
 			border-right: 1px solid #e9e9e9;
+			@media only screen and (min-width: 768px) {
+				width: 17%;
+				white-space: nowrap;
+			}
 		}
 		.owl-controls{
 			display: none;
@@ -506,6 +452,12 @@
 			color: #ffffff;
 			padding: 8px;
 			font-weight: 500;
+			@media only screen and (min-width: 767px) {
+				width: 16%;
+				&:first-child{
+					width: 20%;
+				}
+			}
 		} 
 		span.numData{
 			width: 40px;
@@ -535,8 +487,4 @@
 			}
 		}
 	}
-}
-
-.article-left-rail{
-	width: 100%;
 }

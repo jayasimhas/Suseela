@@ -53,22 +53,18 @@ $(function() {
 		}
 	
 		$('.owl-carousel').owlCarousel({
-			loop:true,
+			loop:false,
 			autoPlay: false,
 			nav: true,
 			navContainer: '#customNav',
 			dotsContainer: '#customDots',
 			slideBy: 4,
-			 navText: [
-				  "<img src='/dist/img/prev-horizontal.png'/>",
-				  "<img src='/dist/img/next-horizontal.png'/>"
-				  ],
 			responsive:{
 				0:{
 				items:4
 				},
 				678:{
-				items:4
+				items:1
 				},
 				320:{
 				 items:1
@@ -77,9 +73,10 @@ $(function() {
 				 items:1
 				},
 				1000:{
-				items:4
+				items:8
 				}
 			}
 		});
 	}
+	setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600); 
 });

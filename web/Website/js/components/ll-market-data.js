@@ -1,11 +1,12 @@
 (function () {
 	var marketData = {
 		renderTable: function(data, renderId){
-			this.loadTableView(data, renderId);
+			this.loadMobileView(data, renderId[0]);
+			this.loadDescView(data, renderId[1]);
 			this.initiateCarousel();
 			this.setColHeight(renderId);
 		},
-		loadTableView: function(tableData, id){
+		loadMobileView: function(tableData, id){
 			var headObj = tableData[0], indx = 0, titflag = true;
 				$.each(headObj, function(key, val){
 					if(titflag){
@@ -13,7 +14,7 @@
 						$('.states_heading').append('<div class="title" data-title="'+key+'"><span>'+ key + '</span></div>');
 					}
 					else{
-						id.append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
+						$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
 					}
 				});
 				
@@ -33,6 +34,35 @@
 					indx = 0; 
 				}); 
 		},
+		loadDescView: function(tableData, id){
+			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0;
+			descStr += "<tr>";
+			for(var prop in thead){
+				descStr += "<th class='title'>" + prop + "</th>";
+			}
+			descStr += "</tr>";
+			descStr += "</thead>";
+			
+						  
+			$.each(tableData, function(idx, val){
+				index++;
+				var oddCls = index % 2 == 0 ? 'oddCls' : '';
+				descStr += "<tr class='"+oddCls+"'>";
+				for(var prop in val){
+					var cls = (val[prop].split(' ')[1].indexOf('-') !== -1) ? 'fall' : 'rise';
+					if(indx >= 1){
+						descStr += "<td class='R16 pad-10'><span class='numData'>"+val[prop].split(' ')[0]+'</span><span class="'+cls+'">'+val[prop].split(' ')[1]+"</span></td>";
+					}
+					else{
+						descStr += "<td class='R16 pad-10'>"+val[prop]+"</td>";
+					}
+					indx++;
+				}
+				indx = 0;
+				descStr += "</tr>";
+			});
+			$(id).html(descStr);
+		},
 		initiateCarousel: function(){
 			$('.owl-carousel').owlCarousel({
 				loop:true,
@@ -40,7 +70,7 @@
 				nav: true,
 				navContainer: '#customNav',
 				dotsContainer: '#customDots',
-				slideBy: 2,
+				slideBy: 1,
 				responsive:{
 					0:{
 					items:4
@@ -79,7 +109,7 @@
 	
 	$(document).ready(function() {
 		if($('#market-data').length > 0) {
-			marketData.init(window.jsonBalticIndices, $('#marketDataTable'));
+			marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
 		}
 	});
 })();
