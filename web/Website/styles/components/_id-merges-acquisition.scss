@@ -44,6 +44,9 @@
 		    width: 100%;
 		    color: #000;
 		}
+		tr:hover {
+			background-color: #efd0d8 !important;
+		}
 		tbody.visible-lg tr:nth-child(even) {
 			background-color: #eee;
 		}
