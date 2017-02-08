@@ -53,7 +53,7 @@ $(function(){
 	
 	$('.section-article-img').each(function(idx){
 		var $this = $(this), sectionArt = $this.closest('.section-article'), sectionImg = sectionArt.find('.section-article-img'), sectionTxt = sectionArt.find('.section-article-text');
-		if($(sectionImg).html() !== ''){
+		if($.trim($(sectionImg).html()) !== '') {
 			sectionTxt.css('display', 'inline');
 		}
 	});
