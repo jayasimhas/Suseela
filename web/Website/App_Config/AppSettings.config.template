@@ -4,10 +4,17 @@
   <add key="DictionaryFolder" value="/sitecore/shell/controls/rich text editor/Dictionaries/" />
   <add key="Lucene.Net.FSDirectory.class" value="Sitecore.Search.FSDirectory, Sitecore.Kernel" />
   <add key="PageInspector:ServerCodeMappingSupport" value="Disabled" />
-    <add key="LegacyPublications_public_ledger" value="Public Ledger"/>
+  <add key="LegacyPublications_public_ledger" value="Public Ledger"/>
   <add key="LegacyPublications_dairy" value="Dairy Markets"/>
   <add key="LegacyPublications_foodnews" value="Foodnews"/>
   <add key="ArticleLoggingFolder" value="E:\LogsFolder\"/>
+  <add key ="Image_path" value ="{3974892E-969D-439E-9EC1-7F7A24F1760A}"/>
+  <add key ="Imagemap_path" value ="{15A65947-ECBC-4E84-A9C0-C2AC35E492D9}"/>
+  <add key="commoditiesColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,COMMODITYFACTOR,COMMERCIAL" />
+  <add key="AgrowColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,CROPPROTECTION,COMMERCIAL" />
+  <add key="AnimalPharmaColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
+  <add key="IDColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF" />
+  <add key="LLColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />
   <add key="PublishedYear" value="2"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />
