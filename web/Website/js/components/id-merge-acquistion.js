@@ -20,7 +20,7 @@
 				if(data[key].Price) {
 					var Price = data[key].Price;
 				} else {
-					Price = '--';
+					Price = '-';
 				}
 				Wrapper.find('tr:last-child').append('<td align="right" deal="Price" type="number" class="R16 pad-10">'+Price+'</td>');
 			}
@@ -165,8 +165,8 @@
 
 				if($(document).width() < 668) {
 					Index = $(this).parents('.forms').index();
-					StartField = $('.merge-form-items.range-field.start').val();
-					EndField = $('.merge-form-items.range-field.end').val();
+					StartField = $('.merge-form-items .range-field.start').val();
+					EndField = $('.merge-form-items .range-field.end').val();
 				}
 				InputValues.each(function(key) {
 					var DealType = $(this).attr('deal');
@@ -176,12 +176,12 @@
 						} else {
 							var Start, End;
 							if(StartField) {
-								Start = StartField;
+								Start = parseFloat(StartField);
 							} else {
 								Start = 0;
 							}
 							if(EndField) {
-								End = EndField;
+								End = parseFloat(EndField);
 							} else {
 								End = 0;
 							}
@@ -266,7 +266,7 @@
 			});
 		},
 		YearChange: function() {
-			$(document).on('change', '#idYearSelect', function() {
+			$(document).on('change', '.idYearSelect', function() {
 				var Href = $(this).attr('data-href'),
 					value= $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
 					newUrl = window.location.href.split('?')[0].concat("?year="+value);

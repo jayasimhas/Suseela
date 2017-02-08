@@ -7998,8 +7998,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -8806,9 +8806,16 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .id-merges-acquisition input.range-field {
         width: 41% !important; } }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .id-merges-acquisition .wrap-merge {
+      width: 100%;
+      overflow-x: scroll; } }
   @media (max-width: 480px) {
     .id-merges-acquisition .table.merge-acquistion {
       border: none; } }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .id-merges-acquisition .table.merge-acquistion {
+      width: 1160px !important; } }
   .id-merges-acquisition .table.merge-acquistion input[type="text"] {
     width: 100%;
     color: #000; }
@@ -9034,6 +9041,12 @@ div#feedbacklite.fbl_r {
         .id-merges-acquisition .merges-form .merge-form-items .forms input {
           width: 100%;
           padding: 3px; }
+      .id-merges-acquisition .merges-form .merge-form-items .controls {
+        float: left;
+        width: 100%; }
+        .id-merges-acquisition .merges-form .merge-form-items .controls .selectivity-input {
+          width: 100%;
+          overflow: hidden; }
     .id-merges-acquisition .merges-form.open .merge-heading .merge-acordian svg {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
@@ -11141,7 +11154,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

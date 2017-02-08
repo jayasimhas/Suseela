@@ -621,6 +621,20 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                   To
                   <input type="text" class="filter-box range-field end" deal="Price" name="">
                 </div>
+                <div class="controls">
+                  <div class="forms">
+                    <select class="idYearSelect">
+                      <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
+                      <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
+                      <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
+                      <option value="2014" data-href="/mergers_and_aquisition/?year=2014">2014</option>
+                      <option value="2013" data-href="/mergers_and_aquisition/?year=2013">2013</option>
+                      <option value="2012" data-href="/mergers_and_aquisition/?year=2012">2012</option>
+                      <option value="2011" data-href="/mergers_and_aquisition/?year=2011">2011</option>
+                      <option value="2010" data-href="/mergers_and_aquisition/?year=2010">2010</option>
+                    </select>
+                  </div>
+                </div>
             </div>
         </div>
       </div>
@@ -659,7 +673,7 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
               <div class="idi-table-heading hidden-xs clearfix">
                   <p class="heading">Title of the Table - Largest insurance industry acquisitions and flotationsShow largest deals </p>
                   <div class="dropdown-wrapper">
-                      <select id="idYearSelect">
+                      <select class="idYearSelect">
                                       <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
                                       <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
                                       <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
@@ -673,29 +687,46 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                       </select>
                   </div>
               </div>
-              <table class="table merge-acquistion">
-                  <thead class="table_head">
-                      <tr class="visible-lg">
-                          <th style="width: 10%;">
-                            <div class="label-wrap">
-                              <span>Month</span>
-                              <div class="sorting-buttons" deal="Month">
-                                  <a href="#" category="month" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="month" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                              </div>
-                            </div>
-                            <div class="field-wrap">
-                              <input type="text" name="" deal="Month" />
-                            </div>
-                          </th>
-                          <th style="width: 10%;">
+              <div class="wrap-merge">
+                <table class="table merge-acquistion">
+                    <thead class="table_head">
+                        <tr class="visible-lg">
+                            <th style="width: 10%;">
                               <div class="label-wrap">
-                                <span>Aquirer</span>
-                                <div class="sorting-buttons" deal="Acquirer">
+                                <span>Month</span>
+                                <div class="sorting-buttons" deal="Month">
+                                    <a href="#" category="month" type="ascending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                    <a href="#" category="month" type="descending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                </div>
+                              </div>
+                              <div class="field-wrap">
+                                <input type="text" name="" deal="Month" />
+                              </div>
+                            </th>
+                            <th style="width: 10%;">
+                                <div class="label-wrap">
+                                  <span>Aquirer</span>
+                                  <div class="sorting-buttons" deal="Acquirer">
+                                      <a href="#" category="text" type="ascending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                      </a>
+                                      <a href="#" category="text" type="descending">
+                                          <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="field-wrap">
+                                  <input type="text" name="" deal="Acquirer"/>
+                                </div>
+                            </th>
+                            <th style="width: 10%;">
+                              <div class="label-wrap">
+                                <span>Target</span>
+                                <div class="sorting-buttons" deal="Target">
                                     <a href="#" category="text" type="ascending">
                                         <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
                                     </a>
@@ -705,95 +736,80 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                                 </div>
                               </div>
                               <div class="field-wrap">
-                                <input type="text" name="" deal="Acquirer"/>
+                                <input type="text" name="" deal="Target"/>
                               </div>
-                          </th>
-                          <th style="width: 10%;">
-                            <div class="label-wrap">
-                              <span>Target</span>
-                              <div class="sorting-buttons" deal="Target">
-                                  <a href="#" category="text" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="text" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
+                              
+                            </th>
+                            <th style="width: 15%;">
+                              <div class="label-wrap">
+                                <span>Target Sector</span>
+                                <div class="sorting-buttons" deal="TargetSector">
+                                    <a href="#" category="text" type="ascending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                    <a href="#" category="text" type="descending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                </div>
                               </div>
-                            </div>
-                            <div class="field-wrap">
-                              <input type="text" name="" deal="Target"/>
-                            </div>
-                            
-                          </th>
-                          <th style="width: 15%;">
-                            <div class="label-wrap">
-                              <span>Target Sector</span>
-                              <div class="sorting-buttons" deal="TargetSector">
-                                  <a href="#" category="text" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="text" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
+                              <div class="field-wrap">
+                                <input type="text" name="" deal="TargetSector"/>
                               </div>
-                            </div>
-                            <div class="field-wrap">
-                              <input type="text" name="" deal="TargetSector"/>
-                            </div>
-                          </th>
-                          <th style="width: 15%;">
-                            <div class="label-wrap">
-                              <span>Target Location</span>
-                              <div class="sorting-buttons" deal="TargetLocation">
-                                  <a href="#" category="text" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="text" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
+                            </th>
+                            <th style="width: 15%;">
+                              <div class="label-wrap">
+                                <span>Target Location</span>
+                                <div class="sorting-buttons" deal="TargetLocation">
+                                    <a href="#" category="text" type="ascending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                    <a href="#" category="text" type="descending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                </div>
                               </div>
-                            </div>
-                            <div class="field-wrap">
-                              <input type="text" name="" deal="TargetLocation"/>
-                            </div>
-                          </th>
-                          <th>
-                            <div class="label-wrap">
-                              <span>By Details</span>
-                              <div class="sorting-buttons" deal="Detail">
-                                  <a href="#" category="text" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="text" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
+                              <div class="field-wrap">
+                                <input type="text" name="" deal="TargetLocation"/>
                               </div>
-                            </div>
-                            <div class="field-wrap">
-                              <input type="text" class="detail-text-field" name="" deal="Detail"/>
-                            </div>
-                          </th>
-                          <th style="width: 11%;">
-                            <div class="label-wrap">
-                              <span>Price</span>
-                              <div class="sorting-buttons" deal="Price">
-                                  <a href="#" category="number" type="ascending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
-                                  <a href="#" category="companies" type="descending">
-                                      <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
-                                  </a>
+                            </th>
+                            <th>
+                              <div class="label-wrap">
+                                <span>By Details</span>
+                                <div class="sorting-buttons" deal="Detail">
+                                    <a href="#" category="text" type="ascending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                    <a href="#" category="text" type="descending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                </div>
                               </div>
-                            </div>
-                            <div class="field-wrap">
-                              <div class="range-wrapper">
-                                  <input type="text" class="range-field start" name="" deal="Price" /> To <input type="text" class="range-field end" name="" deal="Price" />
+                              <div class="field-wrap">
+                                <input type="text" class="detail-text-field" name="" deal="Detail"/>
                               </div>
-                            </div>
-                          </th>
-                      </tr>
-                  </thead>
-              </table>
+                            </th>
+                            <th style="width: 11%;">
+                              <div class="label-wrap">
+                                <span>Price</span>
+                                <div class="sorting-buttons" deal="Price">
+                                    <a href="#" category="number" type="ascending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                    <a href="#" category="companies" type="descending">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sorting-arrow-table"></use></svg>
+                                    </a>
+                                </div>
+                              </div>
+                              <div class="field-wrap">
+                                <div class="range-wrapper">
+                                    <input type="text" class="range-field start" name="" deal="Price" /> To <input type="text" class="range-field end" name="" deal="Price" />
+                                </div>
+                              </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+              </div>
           </div>
       </div>
     </div>

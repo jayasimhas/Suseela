@@ -27,9 +27,18 @@
 	    	width: 41% !important;
 	    }
 	 }
+	 .wrap-merge {
+	 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+	 		width: 100%;
+	 		overflow-x: scroll;
+	 	}
+	 }
 	.table.merge-acquistion {
 		@include breakpoint('small') {
 			border: none;
+		}
+		@media only screen and (min-width: 767px) and (max-width: 1024px) {
+			width: 1160px !important;
 		}
 		input[type="text"] {
 		    width: 100%;
@@ -314,6 +323,14 @@
 				input {
 					width: 100%;
 					padding: 3px;
+				}
+			}
+			.controls {
+				float: left;
+				width: 100%;
+				.selectivity-input {
+					width: 100%;
+					overflow: hidden;
 				}
 			}
 
