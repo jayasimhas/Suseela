@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Xml;
 using Informa.Library.Globalization;
 using Jabberwocky.Core.Caching;
+using System.Text;
 
 namespace Informa.Web.Controllers
 {
@@ -51,8 +52,19 @@ namespace Informa.Web.Controllers
             string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
             using (WebClient client = new WebClient())
             {
-                client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
-                return client.DownloadString(url);
+                try
+                {
+                    client.UseDefaultCredentials = true;
+                    client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
+                    return client.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    client.UseDefaultCredentials = true;
+                    client.Headers.Add("User-Agent: Other");
+                    byte[] data = client.DownloadData(url);
+                    return Encoding.UTF8.GetString(data);
+                }
             }
         }
     }
