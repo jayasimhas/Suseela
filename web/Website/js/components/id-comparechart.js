@@ -50,5 +50,12 @@ $(function(){
 		$(window).scrollTop($('#' + getId).offset().top);
 		$('#'+getId).find('.chartexpand').trigger('click'); 
 	}
+	
+	$('.section-article-img').each(function(idx){
+		var $this = $(this), sectionArt = $this.closest('.section-article'), sectionImg = sectionArt.find('.section-article-img'), sectionTxt = sectionArt.find('.section-article-text');
+		if($(sectionImg).html() !== ''){
+			sectionTxt.css('display', 'inline');
+		}
+	});
 });
 
