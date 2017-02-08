@@ -8464,13 +8464,12 @@ div#feedbacklite.fbl_r {
 .casualtyPan.table-responsive hr {
   margin: 20px 0; }
 
-#market-data-tool .borTop, #tanker-fixtures .borTop {
-  height: 1px;
-  border-top: 1px solid #d1d3d4;
-  display: block; }
-
-#market-data-tool.table-responsive .table, #tanker-fixtures.table-responsive .table {
+#market-data-tool, #tanker-fixtures {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  #market-data-tool .borTop, #tanker-fixtures .borTop {
+    height: 1px;
+    border-top: 1px solid #d1d3d4;
+    display: block; }
   #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
     display: none; }
   #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
@@ -8485,20 +8484,21 @@ div#feedbacklite.fbl_r {
     color: #ffffff; }
     #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
       font-size: 16px;
-      font-weight: normal; }
+      font-weight: 500; }
       @media only screen and (min-width: 600px) and (max-width: 768px) {
         #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
           font-size: 12px; } }
     #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
       background: #1191d1;
-      color: #fff;
-      font-weight: normal; }
+      color: #fff; }
+      #market-data-tool.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
+        font-weight: bold; }
   #market-data-tool.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
     border-bottom: 1px solid #d1d3d4; }
   #market-data-tool.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
     color: #1191d1; }
   #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-    padding: 20px 10px; }
+    padding: 20px 16px; }
     @media only screen and (max-width: 1024px) {
       #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
         padding: 16px 5px; } }
@@ -8540,7 +8540,8 @@ div#feedbacklite.fbl_r {
       #market-data-tool.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover {
         text-decoration: none; }
   #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
-    font-size: 15px; }
+    font-size: 16px;
+    font-size: 1rem; }
     @media only screen and (min-width: 600px) and (max-width: 768px) {
       #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
         font-size: 12px; } }
@@ -8549,114 +8550,111 @@ div#feedbacklite.fbl_r {
   @media (max-width: 480px) {
     #market-data-tool.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
       display: block; } }
-
-#market-data-tool .lli-brand-container, #tanker-fixtures .lli-brand-container {
-  margin-bottom: 20px; }
-  #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title {
-    background-color: #414042;
-    padding: 10px;
-    color: #fff; }
-  #market-data-tool .lli-brand-container .lli-brand-box, #tanker-fixtures .lli-brand-container .lli-brand-box {
-    padding: 10px 0;
-    /*background: #f7f7f7;*/ }
-  #market-data-tool .lli-brand-container p, #tanker-fixtures .lli-brand-container p {
-    margin-bottom: 35px; }
-  #market-data-tool .lli-brand-container fieldset, #tanker-fixtures .lli-brand-container fieldset {
-    border: 0;
-    margin: 0px;
-    padding: 0px; }
-  #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
-    margin-bottom: 20px;
-    float: left;
-    width: 50%; }
-    @media (max-width: 480px) {
-      #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
-        width: 100%; } }
-    #market-data-tool .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2) {
+  #market-data-tool .lli-brand-container, #tanker-fixtures .lli-brand-container {
+    margin-bottom: 20px; }
+    #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title {
+      background-color: #414042;
+      padding: 10px;
+      color: #fff; }
+    #market-data-tool .lli-brand-container .lli-brand-box, #tanker-fixtures .lli-brand-container .lli-brand-box {
+      padding: 10px 0;
+      font-weight: 500; }
+      #market-data-tool .lli-brand-container .lli-brand-box p, #tanker-fixtures .lli-brand-container .lli-brand-box p {
+        font-weight: normal; }
+    #market-data-tool .lli-brand-container p, #tanker-fixtures .lli-brand-container p {
+      margin-bottom: 35px; }
+    #market-data-tool .lli-brand-container fieldset, #tanker-fixtures .lli-brand-container fieldset {
+      border: 0;
+      margin: 0px;
+      padding: 0px; }
+    #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+      margin-bottom: 20px;
+      float: left;
+      width: 50%; }
+      @media (max-width: 480px) {
+        #market-data-tool .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+          width: 100%; } }
+      #market-data-tool .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2) {
+        float: right;
+        text-align: right; }
+        #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
+          text-align: left; }
+    #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
       float: right;
       text-align: right; }
-      #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
-        text-align: left; }
-  #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
-    float: right;
-    text-align: right; }
-    @media (max-width: 480px) {
-      #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
-        float: inherit;
-        text-align: left; } }
-    #market-data-tool .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
+      @media (max-width: 480px) {
+        #market-data-tool .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+          float: inherit;
+          text-align: left; } }
+      #market-data-tool .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
+        position: relative;
+        top: -26px;
+        margin-right: 10px; }
+    #market-data-tool .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select {
+      background: #ffffff; }
+    #market-data-tool .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field {
       position: relative;
-      top: -26px;
-      margin-right: 10px; }
-  #market-data-tool .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select {
-    background: #ffffff; }
-  #market-data-tool .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field {
-    position: relative;
-    display: inline-block; }
-  #market-data-tool .lli-brand-container .selectivity-input, #tanker-fixtures .lli-brand-container .selectivity-input {
-    position: relative; }
-  #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
-    width: 300px; }
+      display: inline-block; }
+    #market-data-tool .lli-brand-container .selectivity-input, #tanker-fixtures .lli-brand-container .selectivity-input {
+      position: relative; }
+    #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+      width: 300px; }
+      @media (max-width: 480px) {
+        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+          width: 285px; } }
+      @media screen and (max-width: 320px) {
+        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+          width: 230px; } }
+    #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input {
+      width: 210px; }
+    #market-data-tool .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown {
+      right: 0;
+      top: 100%; }
+    #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
+      /*width: 200px;*/
+      margin-right: 20px;
+      display: inline-block; }
+      @media (max-width: 480px) {
+        #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
+          margin-bottom: 0.5em; } }
+    #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
+      border: 1px solid transparent;
+      color: #ffffff;
+      padding: 12px 80px;
+      background-color: #1191d1;
+      font-family: 'Roboto', Arial Narrow, sans-serif;
+      font-style: normal;
+      font-size: 16px;
+      font-size: 1rem;
+      float: right; }
+      @media (max-width: 480px) {
+        #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
+          margin-left: 0; } }
+  #market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 40px; }
     @media (max-width: 480px) {
-      #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
-        width: 285px; } }
-    @media screen and (max-width: 320px) {
-      #market-data-tool .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
-        width: 230px; } }
-  #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input {
-    width: 200px; }
-  #market-data-tool .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown {
-    right: 0;
-    top: 100%; }
-  #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
-    /*width: 200px;*/
-    margin-right: 20px;
-    display: inline-block; }
+      #market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+        font-size: 36px;
+        margin-bottom: 20px; } }
+  #market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+    font-size: 26px;
+    font-weight: normal;
+    font-style: italic; }
     @media (max-width: 480px) {
-      #market-data-tool .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
-        margin-bottom: 0.5em; } }
-  #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
-    border: 1px solid transparent;
-    color: #ffffff;
-    padding: 12px 80px;
-    background-color: #1191d1;
-    font-family: 'Roboto', Arial Narrow, sans-serif;
-    font-style: normal;
-    font-size: 16px;
-    font-size: 1rem;
-    float: right; }
+      #market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+        font-size: 22px; } }
+  #market-data-tool hr, #tanker-fixtures hr {
+    margin: 25px 0 35px; }
     @media (max-width: 480px) {
-      #market-data-tool .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
-        margin-left: 0; } }
-
-#market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
-  font-size: 46px;
-  font-weight: bold;
-  margin-bottom: 40px; }
-  @media (max-width: 480px) {
-    #market-data-tool h2, #market-data-tool .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
-      font-size: 36px;
-      margin-bottom: 20px; } }
-
-#market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
-  font-size: 26px;
-  font-weight: normal;
-  font-style: italic; }
-  @media (max-width: 480px) {
-    #market-data-tool h3, #market-data-tool .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
-      font-size: 22px; } }
-
-#market-data-tool hr, #tanker-fixtures hr {
-  margin: 25px 0 35px; }
-  @media (max-width: 480px) {
-    #market-data-tool hr, #tanker-fixtures hr {
-      margin: 30px 0 20px;
-      display: block; } }
-
-#market-data-tool .borTop, #tanker-fixtures .borTop {
-  height: 1px;
-  border-top: 1px solid #d1d3d4;
-  display: block; }
+      #market-data-tool hr, #tanker-fixtures hr {
+        margin: 30px 0 20px;
+        display: block; } }
+  #market-data-tool .borTop, #tanker-fixtures .borTop {
+    height: 1px;
+    border-top: 1px solid #d1d3d4;
+    display: block; }
 
 .graybg {
   border-bottom: 1px solid #d1d3d4;
