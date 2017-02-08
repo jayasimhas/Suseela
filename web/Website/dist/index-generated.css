@@ -8003,8 +8003,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -8471,86 +8471,89 @@ div#feedbacklite.fbl_r {
     height: 1px;
     border-top: 1px solid #d1d3d4;
     display: block; }
-  #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
-    display: none; }
-  #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
-    display: block; }
-  @media (max-width: 480px) {
+  #market-data-tool.table-responsive .table, #tanker-fixtures.table-responsive .table {
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
     #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
-      display: table; }
+      display: none; }
     #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
-      display: none; } }
-  #market-data-tool.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head {
-    background-color: #0f5487;
-    color: #ffffff; }
-    #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
-      font-size: 16px;
-      font-weight: 500; }
-      @media only screen and (min-width: 600px) and (max-width: 768px) {
-        #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
-          font-size: 12px; } }
-    #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
-      background: #1191d1;
-      color: #fff; }
-      #market-data-tool.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
-        font-weight: bold; }
-  #market-data-tool.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
-    border-bottom: 1px solid #d1d3d4; }
-  #market-data-tool.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
-    color: #1191d1; }
-  #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-    padding: 20px 16px; }
-    @media only screen and (max-width: 1024px) {
-      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-        padding: 16px 5px; } }
-    @media only screen and (max-width: 767px) {
-      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-        padding: 16px 10px; } }
-    @media only screen and (min-width: 600px) and (max-width: 768px) {
-      #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-        padding: 10px 2px; } }
-  #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
-    font-size: 18px;
-    border-right: 1px solid #e9e9e9; }
-  #market-data-tool.table-responsive .table .mobrigCol, #tanker-fixtures.table-responsive .table .mobrigCol {
-    font-size: 16px; }
-    #market-data-tool.table-responsive .table .mobrigCol a, #market-data-tool.table-responsive .table .mobrigCol .pop-out__reset-password, #market-data-tool.table-responsive .table .mobrigCol .sortable-table__list-toggler, #market-data-tool.table-responsive .table .mobrigCol .mobile-table-exit, #tanker-fixtures.table-responsive .table .mobrigCol a, #tanker-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #tanker-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .mobrigCol .mobile-table-exit {
-      color: #1191d1;
-      text-decoration: none; }
-  #market-data-tool.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18 {
-    color: #000; }
-    #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
-      color: #58595b;
-      width: 40px;
-      height: 40px;
-      display: block;
-      border-left: 1px solid #979797;
-      text-decoration: none;
-      font-size: 17px; }
-      @media (max-width: 480px) {
-        #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
-          display: inline-block;
-          float: right;
-          text-align: right; } }
-      #market-data-tool.table-responsive .table .RB18 .top span, #tanker-fixtures.table-responsive .table .RB18 .top span {
-        background: url(img/sprite-image.png) no-repeat 0 -606px;
-        width: 11px;
-        height: 8px;
-        display: inline-block;
-        margin-right: 8px; }
-      #market-data-tool.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover {
-        text-decoration: none; }
-  #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
-    font-size: 16px;
-    font-size: 1rem; }
-    @media only screen and (min-width: 600px) and (max-width: 768px) {
-      #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
-        font-size: 12px; } }
-    #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
+      display: block; }
+    @media (max-width: 480px) {
+      #market-data-tool.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
+        display: table; }
+      #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
+        display: none; } }
+    #market-data-tool.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head {
+      background-color: #0f5487;
+      color: #ffffff; }
+      #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+        font-size: 16px;
+        font-weight: 500; }
+        @media only screen and (min-width: 600px) and (max-width: 768px) {
+          #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+            font-size: 12px; } }
+      #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
+        background: #1191d1;
+        color: #fff; }
+        #market-data-tool.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
+          font-weight: bold; }
+    #market-data-tool.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
+      border-bottom: 1px solid #d1d3d4; }
+    #market-data-tool.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
       color: #1191d1; }
-  @media (max-width: 480px) {
-    #market-data-tool.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
-      display: block; } }
+    #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+      padding: 20px 16px; }
+      @media only screen and (max-width: 1024px) {
+        #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+          padding: 16px 5px; } }
+      @media only screen and (max-width: 767px) {
+        #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+          padding: 16px 10px; } }
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+          padding: 10px 2px; } }
+    #market-data-tool.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
+      font-size: 18px;
+      border-right: 1px solid #e9e9e9; }
+    #market-data-tool.table-responsive .table .mobrigCol, #tanker-fixtures.table-responsive .table .mobrigCol {
+      font-size: 16px; }
+      #market-data-tool.table-responsive .table .mobrigCol a, #market-data-tool.table-responsive .table .mobrigCol .pop-out__reset-password, #market-data-tool.table-responsive .table .mobrigCol .sortable-table__list-toggler, #market-data-tool.table-responsive .table .mobrigCol .mobile-table-exit, #tanker-fixtures.table-responsive .table .mobrigCol a, #tanker-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #tanker-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .mobrigCol .mobile-table-exit {
+        color: #1191d1;
+        text-decoration: none; }
+    #market-data-tool.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18 {
+      color: #000; }
+      #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
+        color: #58595b;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-left: 1px solid #979797;
+        text-decoration: none;
+        font-size: 17px; }
+        @media (max-width: 480px) {
+          #market-data-tool.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
+            display: inline-block;
+            float: right;
+            text-align: right; } }
+        #market-data-tool.table-responsive .table .RB18 .top span, #tanker-fixtures.table-responsive .table .RB18 .top span {
+          background: url(img/sprite-image.png) no-repeat 0 -606px;
+          width: 11px;
+          height: 8px;
+          display: inline-block;
+          margin-right: 8px; }
+        #market-data-tool.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover {
+          text-decoration: none; }
+    #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+      font-size: 16px;
+      font-size: 1rem; }
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        #market-data-tool.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+          font-size: 12px; } }
+      #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
+        color: #1191d1; }
+    @media (max-width: 480px) {
+      #market-data-tool.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
+        display: block; } }
   #market-data-tool .lli-brand-container, #tanker-fixtures .lli-brand-container {
     margin-bottom: 20px; }
     #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title {
@@ -11168,7 +11171,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
