@@ -2244,7 +2244,13 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       background-color: #de4361; }
 
 #graph-carousel {
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
   font-family: "verdana"; }
+  #graph-carousel:after {
+    clear: both;
+    content: '';
+    display: block; }
   #graph-carousel .loadChart {
     width: 24%;
     float: left; }
@@ -2256,7 +2262,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     display: none !important; }
   #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
     background: #fff;
-    margin: 0px auto; }
+    margin: 0px auto;
+    width: 80%;
+    height: 180px; }
     @media (max-width: 800px) {
       #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
         height: 180px !important; } }
@@ -2282,21 +2290,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-top: 1rem;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    background-color: #eee; }
-    @media (max-width: 800px) {
+    background-color: #eee;
+    height: 280px; }
+    @media (max-width: 640px) {
       #graph-carousel .graph-container {
-        height: 260px !important; } }
+        height: 260px; } }
     #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
-      width: 287px;
+      width: 80%;
       margin: 0px auto;
       font-size: 14px;
       font-weight: 500;
-      padding: 15px 0; }
-      @media screen and (min-width: 768px) and (max-width: 1024px) {
-        #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
-          width: 90%;
-          height: 60px;
-          display: block; } }
+      height: 70px;
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center; }
   #graph-carousel .owl-dots {
     position: absolute;
     top: 0;
@@ -7991,8 +7998,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11134,7 +11141,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

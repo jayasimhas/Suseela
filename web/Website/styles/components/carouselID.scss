@@ -130,6 +130,12 @@
 		}
 }
 #graph-carousel{
+	margin-bottom: 2rem;
+	&:after{
+		clear: both;
+		content: '';
+		display: block;
+	}
 	.loadChart{
 		width: 24%;
 		float: left;
@@ -146,7 +152,8 @@
 	#chartdiv_GWP, #chartdiv_NWP, #chartdiv_UR, #chartdiv_NP, #chartdiv_SF, #chartdiv_NWPNR, #chartdiv_SFNR, #chartdiv_NPSFR{
 		background: #fff;
 		margin: 0px auto;
-		
+		width: 80%;
+		height: 180px;
 		@include breakpoint('medium') {
 			height: 180px !important;
 		}
@@ -177,20 +184,20 @@
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;
-		@include breakpoint('medium') {
-			height: 260px !important;
+		height: 280px; 
+		@include breakpoint('medium-small') {
+			height: 260px;
 		}
 		h5{
-			width: 287px;
+			width: 80%;
 			margin: 0px auto;
 			font-size: 14px;
 			font-weight: 500;
-			padding: 15px 0;
-			@media screen and (min-width: 768px) and (max-width: 1024px) {
-				width: 90%;
-				height: 60px;
-				display: block;
-			}
+			height: 70px;
+			vertical-align: middle;
+			display: table-cell;
+			text-align: center;
+			 
 		}
 	}
 	.owl-dots{
