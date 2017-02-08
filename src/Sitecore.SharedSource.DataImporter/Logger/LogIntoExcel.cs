@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using Sitecore.SharedSource.DataImporter.Providers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,62 +17,71 @@ namespace Sitecore.SharedSource.DataImporter.Logger
         public static string LogFileDateTime;
         public static void CMCReport(string articleId, Dictionary<string, string> logValues, string publication)
         {
-            if (string.IsNullOrWhiteSpace(LogFileDateTime))
+
+            try
             {
-                LogFileDateTime = DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
-            }
 
-            string strfilepath = string.Format(@"{0}sitecore\CMCLogs\Content Migration Checks_{1}.xlsx",
-                HttpRuntime.AppDomainAppPath, LogFileDateTime);
-
-
-            //string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
-            //    HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
-
-            FileInfo fileInfo = new FileInfo(strfilepath);
-
-            using (var xlPackage = new ExcelPackage(fileInfo))
-            {
-                var ws = xlPackage.Workbook.Worksheets.SingleOrDefault(x => x.Name == publication);
-
-
-                bool isNewfile = false;
-                if (ws == null)
+                if (string.IsNullOrWhiteSpace(LogFileDateTime))
                 {
-                    isNewfile = true;
-                    ws = xlPackage.Workbook.Worksheets.Add(publication);
+                    LogFileDateTime = DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
                 }
 
-                DataTable dt = new DataTable();
-                if (isNewfile)
-                    dt = GetDataTable(publication);
-                else
-                    dt = WorksheetToDataTable(ws);
+                string strfilepath = string.Format(@"{0}sitecore\CMCLogs\Content Migration Checks_{1}.xlsx",
+                    HttpRuntime.AppDomainAppPath, LogFileDateTime);
 
-                DataRow dr = dt.NewRow();
 
-                dr["ArticleId"] = articleId;
+                //string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
+                //    HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
 
-                foreach (KeyValuePair<string, string> l in logValues)
+                FileInfo fileInfo = new FileInfo(strfilepath);
+
+                using (var xlPackage = new ExcelPackage(fileInfo))
                 {
+                    var ws = xlPackage.Workbook.Worksheets.SingleOrDefault(x => x.Name == publication);
 
-                    if (!String.IsNullOrEmpty(l.Value))
 
-                        if (l.Value.EndsWith(","))
-                            dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
+                    bool isNewfile = false;
+                    if (ws == null)
+                    {
+                        isNewfile = true;
+                        ws = xlPackage.Workbook.Worksheets.Add(publication);
+                    }
 
-                        else
-                        {
-                            dr[l.Key] = l.Value;
-                        }
+                    DataTable dt = new DataTable();
+                    if (isNewfile)
+                        dt = GetDataTable(publication);
+                    else
+                        dt = WorksheetToDataTable(ws);
+
+                    DataRow dr = dt.NewRow();
+
+                    dr["ArticleId"] = articleId;
+
+                    foreach (KeyValuePair<string, string> l in logValues)
+                    {
+
+                        if (!String.IsNullOrEmpty(l.Value))
+
+                            if (l.Value.EndsWith(","))
+                                dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
+
+                            else
+                            {
+                                dr[l.Key] = l.Value;
+                            }
+                    }
+
+                    dt.Rows.Add(dr);
+
+                    ws.Cells["A1"].LoadFromDataTable(dt, true);
+                    xlPackage.Save();
                 }
-
-                dt.Rows.Add(dr);
-
-                ws.Cells["A1"].LoadFromDataTable(dt, true);
-                xlPackage.Save();
             }
+            catch(Exception ex)
+            {
 
+                XMLDataLogger.WriteLog(articleId, "excelsheet");
+            }
 
         }
 

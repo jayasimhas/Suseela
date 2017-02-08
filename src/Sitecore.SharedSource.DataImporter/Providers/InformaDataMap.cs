@@ -308,27 +308,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                         //reading mediaType according to agr mapping  adding to ao
-                        if (Tableau.Count > 0)
-                        {
-                            ao.Add("MEDIA", "interactivedashboards");
-                        }
-                        else if (!string.IsNullOrEmpty(imageTitleHtml))
-                        {
-                            ao.Add("MEDIA", "Chart/Table");
-                        }
-                        else if (CheckTable(GetXMLData(d, bodyNode)))
-                        {
-                            ao.Add("MEDIA", "Chart/Table");
-                        }
-                        //else if (!string.IsNullOrEmpty(bodyTitleHtml))
-                        //{
-                        //    ao.Add("MEDIA", "image");
-                        //}
-                        else
-                        {
-                            ao.Add("MEDIA", "");
-                        }
 
+                        if (!ao.ContainsKey("MEDIA"))
+                        {
+                            if (Tableau.Count > 0)
+                            {
+                                ao.Add("MEDIA", "interactivedashboards");
+                            }
+                            else if (!string.IsNullOrEmpty(imageTitleHtml))
+                            {
+                                ao.Add("MEDIA", "Chart/Table");
+                            }
+                            else if (CheckTable(GetXMLData(d, bodyNode)))
+                            {
+                                ao.Add("MEDIA", "Chart/Table");
+                            }
+                            //else if (!string.IsNullOrEmpty(bodyTitleHtml))
+                            //{
+                            //    ao.Add("MEDIA", "image");
+                            //}
+                            else
+                            {
+                                ao.Add("MEDIA", "");
+                            }
+                        }
 
 
 
@@ -395,7 +398,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string AnimalHealth = "";
 
 
-                        if (publication != "ID" || publication != "LL")
+                        if (site!= "Maritime" )
                         {
                            
                             List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
@@ -591,7 +594,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
                     else
                     {
-                        ao.Add("COUNTRY", "");
+
+                        if (!ao.ContainsKey("COUNTRY"))
+                        {
+                            ao.Add("COUNTRY", "");
+                        }
                         ao.Add("COMPANIES", "");
                         ao.Add("AGENCY", "");
                         ao.Add("Commodity", "");
@@ -647,9 +654,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             
             Regex regex = new Regex("<table>(.*)</table>");
             var v = regex.Match(searchtable);
-            if (v != null)
+
+
+            if ((v != null) && (v.ToString().Contains("<tr>")))
             {
                 return true;
+
             }
             else
                 return false;

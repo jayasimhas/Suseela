@@ -4578,7 +4578,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("data", "Data");
             d.Add("image", "Image");
             d.Add("audio", "Audio");
-            d.Add("Video", "News");
+            d.Add("video", "Video");
             d.Add("chart/table", "Chart/Table");
             d.Add("timeline ", "Timeline");
             d.Add("dataTable", "Data Table");
@@ -4586,6 +4586,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("interactivedashboards", "Interactive Dashboards");
             d.Add("supportingdocument", "Supporting Document");
 
+            d.Add("news-tv", "Video");
+            d.Add("news-audio", "Audio");
+            d.Add("news-data", "Data Tables");
+            d.Add("ontheradar", "Video");
+            d.Add("lloyds-list-videos", "Video");
 
             return d;
         }
