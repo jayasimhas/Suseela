@@ -7349,8 +7349,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     border-bottom: 1px solid #d1d3d4; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-size: 0.9375rem;
+    font-size: 16px;
+    font-size: 1rem;
     color: #bb1528;
     font-style: normal;
     font-weight: 500;
@@ -7374,14 +7374,18 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .small_table .table-responsive .table .R21_GrayColor.border-right {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.125em;
-      font-weight: 400; }
+      font-weight: 500; }
     @media (max-width: 480px) {
       .small_table .table-responsive .table .R21_GrayColor {
         vertical-align: top; } }
+    .small_table .table-responsive .table .R21_GrayColor a, .small_table .table-responsive .table .R21_GrayColor .pop-out__reset-password, .small_table .table-responsive .table .R21_GrayColor .sortable-table__list-toggler, .small_table .table-responsive .table .R21_GrayColor .mobile-table-exit {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.125em;
+      font-weight: 500; }
   .small_table .table-responsive .table .RB18 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.125em;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal; }
   .small_table .table-responsive .table .visible-lg {
     margin-bottom: 20px; }
@@ -7418,13 +7422,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       margin-bottom: 30px; } }
 
 .small_table .table-responsive .p-10 {
-  padding: 10px; }
+  padding: 10px 16px; }
 
 .small_table .table-responsive .pad-10 {
-  padding: 16px 10px; }
+  padding: 20px 16px; }
 
 .small_table .table-responsive .pad-full-10 {
-  padding: 10px; }
+  padding: 10px 16px; }
 
 .small_table .table-responsive .pad-bottom-20 {
   padding-bottom: 20px; }
@@ -7478,14 +7482,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     color: #ffffff; }
     .casualty-table-theme .table .table_head th {
       font-size: 16px !important;
-      font-weight: normal !important; }
+      font-weight: bold !important; }
     .casualty-table-theme .table .table_head .visible-lg {
       background: #1191D1;
       color: #fff;
       font-weight: normal; }
   .casualty-table-theme .table .top {
     color: #58595b;
-    width: 40px;
+    width: 45px;
     height: 40px;
     display: block;
     border-left: 1px solid #979797;
@@ -8401,41 +8405,41 @@ div#feedbacklite.fbl_r {
     clear: both;
     display: block; }
 
-.ll-casualty-form .form-control {
-  float: left;
-  margin-bottom: 20px; }
-  @media (max-width: 480px) {
-    .ll-casualty-form .form-control {
-      width: 100%;
-      float: none; } }
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .ll-casualty-form .form-control {
-      width: 50%; } }
-  .ll-casualty-form .form-control label {
+.ll-casualty-form {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 500; }
+  .ll-casualty-form .form-control {
     float: left;
-    margin-top: 8px;
-    margin-right: 5px; }
+    margin-bottom: 20px; }
     @media (max-width: 480px) {
-      .ll-casualty-form .form-control label {
+      .ll-casualty-form .form-control {
         width: 100%;
-        margin-bottom: 1em; } }
+        float: none; } }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-      .ll-casualty-form .form-control label {
-        width: 100%;
-        margin-bottom: 1em; } }
-  .ll-casualty-form .form-control.jumpToSection {
-    float: right; }
-
-.ll-casualty-form .selectivity-single-select-input {
-  visibility: hidden; }
-
-.ll-casualty-form .selectivity-input {
-  position: relative; }
-
-.ll-casualty-form .selectivity-dropdown {
-  right: 0;
-  top: 100% !important;
-  left: auto !important; }
+      .ll-casualty-form .form-control {
+        width: 50%; } }
+    .ll-casualty-form .form-control label {
+      float: left;
+      margin-top: 8px;
+      margin-right: 5px; }
+      @media (max-width: 480px) {
+        .ll-casualty-form .form-control label {
+          width: 100%;
+          margin-bottom: 1em; } }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .ll-casualty-form .form-control label {
+          width: 100%;
+          margin-bottom: 1em; } }
+    .ll-casualty-form .form-control.jumpToSection {
+      float: right; }
+  .ll-casualty-form .selectivity-single-select-input {
+    visibility: hidden; }
+  .ll-casualty-form .selectivity-input {
+    position: relative; }
+  .ll-casualty-form .selectivity-dropdown {
+    right: 0;
+    top: 100% !important;
+    left: auto !important; }
 
 .casualtyPan h2, .casualtyPan .article-topics__header {
   font-size: 46px;
@@ -8494,7 +8498,7 @@ div#feedbacklite.fbl_r {
   #market-data-tool.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
     color: #1191d1; }
   #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
-    padding: 16px 10px; }
+    padding: 20px 10px; }
     @media only screen and (max-width: 1024px) {
       #market-data-tool.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
         padding: 16px 5px; } }
