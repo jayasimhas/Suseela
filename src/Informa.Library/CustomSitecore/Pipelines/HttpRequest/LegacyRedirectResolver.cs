@@ -52,21 +52,24 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             Logger.SitecoreDebug($"LegacyRedirectResolver started");
             Assert.ArgumentNotNull(args, "args");
 
-            if ((Context.Item != null)
-                || Context.Site.Name != "LegacyRedirect"
-                || excludePaths.Any(x => args.LocalPath.StartsWith(x)))
-                return;
+            //if ((Context.Item != null)
+            //    || Context.Site.Name != "LegacyRedirect"
+            //    || excludePaths.Any(x => args.LocalPath.StartsWith(x)))
+            //    return;
 
             try
             {
                 var resultsPmbi = GetResultsByPath(args.Url.FilePath);
+                
+
                 var article = resultsPmbi?.Articles?.FirstOrDefault();
 
                 if (article == null)
                 {
                     // Does the url end in a 3-8 digit number?
                     var r = new Regex(@"^.*-(\d{3,8})$");
-                    var match = r.Match(args.Url.ItemPath);
+                    //var match = r.Match(args.Url.ItemPath);
+                    var match = r.Match(args.Context.Request.RawUrl.Split(new[] { '.' })[0]);
 
                     if (match.Success && match.Groups.Count >= 2)
                     {

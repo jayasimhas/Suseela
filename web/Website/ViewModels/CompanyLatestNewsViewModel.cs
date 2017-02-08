@@ -50,6 +50,8 @@ namespace Informa.Web.ViewModels
 
         public string CompanyNewsSummary => TrimCompanyNewsSummary();
 
+        public string CompanyName => GlassModel?.Companyname;
+
         /// <summary>
         /// To Trim Company News Summary
         /// </summary>

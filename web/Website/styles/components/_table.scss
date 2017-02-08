@@ -30,7 +30,7 @@
 				}
 				.RB16{
 				   font-family: "Roboto", Helvetica, Arial, sans-serif;
-				   font-size: 0.9375rem;
+				   font-size: 1rem;
 				   color:$color-red;
 				   font-style: normal;
 				   font-weight: 500;
@@ -47,7 +47,7 @@
 				}
 				.R21_GrayColor{
 					&.border-right{
-						@include textMix('Roboto', 1.125em, 400);
+						@include textMix('Roboto', 1.125em, 500);
 					}
 				   @include textMix('Roboto', 1em, 400);
 				   font-style: normal;
@@ -55,9 +55,12 @@
 				   @include breakpoint('small'){
 					vertical-align: top; 
 				   }
+				   a{
+					   @include textMix('Roboto', 1.125em, 500);
+				   }
 				}
 				.RB18{
-					@include textMix('Roboto', 1.125em, 700);
+					@include textMix('Roboto', 1.125em, 500);
 					font-style: normal;
 				}
 				.visible-lg{
@@ -94,12 +97,12 @@
 				}
 			}
 			.p-10{
-				padding: 10px;
+				padding: 10px 16px;
 			}
 			.pad-10{
-				padding: 16px 10px;
+				padding: 20px 16px;
 			}
-			.pad-full-10{ padding: 10px;}
+			.pad-full-10{ padding: 10px 16px;}
 			.pad-bottom-20{
 				padding-bottom:20px;
 			}
@@ -166,7 +169,7 @@
 			color: #ffffff;
 			th{
 				font-size: 16px !important;
-				font-weight: normal !important;
+				font-weight: bold !important;
 			}
 			.visible-lg{
 				background: #1191D1;
@@ -176,7 +179,7 @@
 		}
 		.top {
 			color: $color-abbey-gray;
-			width: 40px;
+			width: 45px;
 			height: 40px;
 			display: block;
 			border-left: 1px solid $color-dusty-gray;

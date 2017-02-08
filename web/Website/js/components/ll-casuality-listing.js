@@ -23,7 +23,7 @@
 				//Appending Heading
 				$('#jumpTo').append('<option value="'+data[key].casualtytitle+'">'+data[key].casualtytitle+'</option>');
 				self.JumpToArray.push(data[key].casualtytitle);
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 pad-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 p-10"> '+data[key].casualtytitle+'</td><td colspan="1" align="right" class="graybg RB18 p-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>');
 
 				//Appending Body
                 var CasualityData = data[key].casualtyData;
@@ -41,7 +41,7 @@
 
 			var Wrapper = Parent.find('tbody.visible-sm');
 			for(var key in data) {
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 pad-10"><a class="top" href="javascript: void(0);"><span class="arrow"></span>Top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 p-10"><a class="top" href="javascript: void(0);"><span class="arrow"></span>Top</a></td></tr>');
 
 				var HeaderItems = this.HeaderLinks;
 				var CasualData = data[key].casualtyData;
