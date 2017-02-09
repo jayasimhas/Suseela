@@ -229,7 +229,7 @@ namespace Informa.Library.Services.Sitemap
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                    .Where(j => j.Path.StartsWith(startPath.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-90));
+                    .Where(j => j.Path.StartsWith(startPath.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-50));
 
                 query = query.OrderByDescending(i => i.ActualPublishDate);
                 var results = query.GetResults();
