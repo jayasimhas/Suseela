@@ -16,6 +16,7 @@
 			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
+				@include textMix('Roboto', 1em, 500);
 				.article {
 					text-align: right;
 					.year_heading, .R16 {
@@ -184,6 +185,7 @@
 	border: 1px solid #d1d3d4;
 	.table-wrapper .tableHead {
 		text-align: right;
+		@include textMix('Roboto', 1em, bold);
 		&:first-child {
 			text-align: left;
 		}
@@ -201,17 +203,19 @@
 		}
 	}
 }
-#financialresults .tableRow > .tableCell, #financialresults .tableHead {
+#financialresults .tableRow > .tableCell {
 	text-align: right;
+	@include textMix('Roboto', 1em, 400);
 }
 #financialresults .tableHead:first-child {
 	text-align: left;
 }
+#financialresults .tableHead {
+	@include textMix('Roboto', 1em, bold);
+}
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    font-style: normal;
+    @include textMix('Roboto', 1em, 500);
     text-align: left;
 }
 #financialresults .year_heading {

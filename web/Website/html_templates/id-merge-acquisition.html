@@ -591,6 +591,23 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
         </div>
         <div class="merge-form-items">
             <div class="clearfix">
+                <div class="controls">
+                  <div class="forms">
+                    <a href="#" class="show-largest-btn" data-large="1000">Show largest deals</a>
+                  </div>
+                  <div class="forms">
+                    <select class="idYearSelect">
+                      <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
+                      <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
+                      <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
+                      <option value="2014" data-href="/mergers_and_aquisition/?year=2014">2014</option>
+                      <option value="2013" data-href="/mergers_and_aquisition/?year=2013">2013</option>
+                      <option value="2012" data-href="/mergers_and_aquisition/?year=2012">2012</option>
+                      <option value="2011" data-href="/mergers_and_aquisition/?year=2011">2011</option>
+                      <option value="2010" data-href="/mergers_and_aquisition/?year=2010">2010</option>
+                    </select>
+                  </div>
+                </div>
                 <div class="forms">
                   <label>Month</label>
                   <input type="text" deal="Month" name="">
@@ -620,20 +637,6 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                   <input type="text" class="filter-box range-field start" deal="Price" name="">
                   To
                   <input type="text" class="filter-box range-field end" deal="Price" name="">
-                </div>
-                <div class="controls">
-                  <div class="forms">
-                    <select class="idYearSelect">
-                      <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
-                      <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
-                      <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
-                      <option value="2014" data-href="/mergers_and_aquisition/?year=2014">2014</option>
-                      <option value="2013" data-href="/mergers_and_aquisition/?year=2013">2013</option>
-                      <option value="2012" data-href="/mergers_and_aquisition/?year=2012">2012</option>
-                      <option value="2011" data-href="/mergers_and_aquisition/?year=2011">2011</option>
-                      <option value="2010" data-href="/mergers_and_aquisition/?year=2010">2010</option>
-                    </select>
-                  </div>
                 </div>
             </div>
         </div>
@@ -672,20 +675,23 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
           <div class="table-responsive">
               <div class="idi-table-heading hidden-xs clearfix">
                   <p class="heading">Title of the Table - Largest insurance industry acquisitions and flotationsShow largest deals </p>
-                  <div class="dropdown-wrapper">
-                      <select class="idYearSelect">
-                                      <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
-                                      <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
-                                      <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
-                                      <option value="2014" data-href="/mergers_and_aquisition/?year=2014">2014</option>
-                                      <option value="2013" data-href="/mergers_and_aquisition/?year=2013">2013</option>
-                                      <option value="2012" data-href="/mergers_and_aquisition/?year=2012">2012</option>
-                                      <option value="2011" data-href="/mergers_and_aquisition/?year=2011">2011</option>
-                                      <option value="2010" data-href="/mergers_and_aquisition/?year=2010">2010</option>
+                    <div class="desktop-controls">
+                      <a href="#" class="show-largest-btn" data-large="1000">Show largest deals</a>
+                      <div class="dropdown-wrapper">
+                          <select class="idYearSelect">
+                                          <option value="2017" data-href="/mergers_and_aquisition/?year=2017">Latest</option>
+                                          <option value="2016" data-href="/mergers_and_aquisition/?year=2016" selected>2016</option>
+                                          <option value="2015" data-href="/mergers_and_aquisition/?year=2015">2015</option>
+                                          <option value="2014" data-href="/mergers_and_aquisition/?year=2014">2014</option>
+                                          <option value="2013" data-href="/mergers_and_aquisition/?year=2013">2013</option>
+                                          <option value="2012" data-href="/mergers_and_aquisition/?year=2012">2012</option>
+                                          <option value="2011" data-href="/mergers_and_aquisition/?year=2011">2011</option>
+                                          <option value="2010" data-href="/mergers_and_aquisition/?year=2010">2010</option>
 
 
-                      </select>
-                  </div>
+                          </select>
+                      </div>
+                    </div>
               </div>
               <div class="wrap-merge">
                 <table class="table merge-acquistion">

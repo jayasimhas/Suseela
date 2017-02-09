@@ -20,6 +20,7 @@ using Sitecore.Data;
 using Sitecore.Configuration;
 using System.Web;
 using Informa.Library.Utilities.CMSHelpers;
+using Sitecore.Pipelines.GetLookupSourceItems;
 
 namespace Informa.Library.CustomSitecore.Fields
 {
@@ -37,7 +38,32 @@ namespace Informa.Library.CustomSitecore.Fields
             if (!Sitecore.Context.ClientPage.IsEvent)
             {
                 Item item = Sitecore.Context.ContentDatabase.GetItem(base.ItemID);
-                if (item != null && item.Name != "__Standard Values")
+                if (item != null && item.Name == "__Standard Values")
+                {
+                    if (args == null)
+
+                        throw new ArgumentNullException(nameof(args));
+
+                    //if (!args.Source.StartsWith("query:"))
+
+                    //    return;
+
+                    var url = WebUtil.GetQueryString();
+
+                    if (string.IsNullOrWhiteSpace(url) || !url.Contains("hdl")) return;
+
+                    var parameters = FieldEditorOptions.Parse(new UrlString(url)).Parameters;
+
+                    var currentItemId = parameters["contentitem"];
+
+                    if (string.IsNullOrEmpty(currentItemId)) return;
+
+                    var contentItemUri = new Sitecore.Data.ItemUri(currentItemId);
+
+                    item = Sitecore.Data.Database.GetItem(contentItemUri);
+                }
+
+                if (item != null && item.Name!= "__Standard Values")
                 {
                     // find the existing TreeviewEx that the base OnLoad added, get a ref to its parent, and remove it from controls
                     var existingTreeView = (TreeviewEx)WebUtil.FindControlOfType(this, typeof(TreeviewEx));
@@ -59,7 +85,7 @@ namespace Informa.Library.CustomSitecore.Fields
                     impostor.DisplayFieldName = existingTreeView.DisplayFieldName;
 
                     // parse the data source and create appropriate data contexts out of it
-                    var dataContexts = ParseDataContexts(dataContext);
+                    var dataContexts = ParseDataContexts(dataContext, item);
 
                     impostor.DataContext = string.Join("|", dataContexts.Select(x => x.ID));
                     foreach (var context in dataContexts) dataContextParent.Controls.Add(context);
@@ -75,15 +101,15 @@ namespace Informa.Library.CustomSitecore.Fields
         /// </summary>
         /// <param name="originalDataContext">The original data context the base control generated. We reuse some of its property values.</param>
         /// <returns></returns>
-        protected virtual DataContext[] ParseDataContexts(DataContext originalDataContext)
+        protected virtual DataContext[] ParseDataContexts(DataContext originalDataContext, Item item)
         {
-            return new ListString(DataSource).Select(x => CreateDataContext(originalDataContext, x)).ToArray();
+            return new ListString(DataSource).Select(x => CreateDataContext(originalDataContext, x, item)).ToArray();
         }
 
         /// <summary>
         /// Creates a DataContext control for a given Sitecore path data source
         /// </summary>
-        protected virtual DataContext CreateDataContext(DataContext baseDataContext, string dataSource)
+        protected virtual DataContext CreateDataContext(DataContext baseDataContext, string dataSource, Item item)
         {
             DataContext dataContext = new DataContext();
             dataContext.ID = GetUniqueID("D");
@@ -101,7 +127,7 @@ namespace Informa.Library.CustomSitecore.Fields
                 // On Select Item ID and trying to fetch Item based on ID
                 if (!string.IsNullOrEmpty(base.ItemID))
                 {
-                    Item item = Sitecore.Context.ContentDatabase.GetItem(base.ItemID);
+                   // Item item = Sitecore.Context.ContentDatabase.GetItem(base.ItemID);
                     //To detect the source item for the cloned item
                     if (item != null && item.IsClone)
                     {
@@ -112,9 +138,9 @@ namespace Informa.Library.CustomSitecore.Fields
                         //Feching Ancestor of Selected Item and replaceing with Token
                         //var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == ItemIdResolver.GetItemIdByKey("VerticalTemplate"));
                         var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
-                      
-                        if(rootItem!=null)
-                        dataContext.Root = dataContext.Root.Replace("$verticalnode", rootItem.Name);
+
+                        if (rootItem != null)
+                            dataContext.Root = dataContext.Root.Replace("$verticalnode", rootItem.Name);
                         //ToDo
                         return dataContext;
                     }
