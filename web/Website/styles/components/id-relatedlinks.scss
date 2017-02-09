@@ -110,8 +110,12 @@
 		margin-bottom: 20px !important;
 	}
 } 
-.balticChart{
+.balticChartsWrapper{
 	margin-bottom: 2rem;
+	@include breakpoint('small') {
+		margin-bottom: 5rem;
+	}
+.balticChart{	
 	width: 300px; 
 	height: 300px;
 	font-family:"Roboto",​Arial Narrow,​sans-serif;
@@ -159,4 +163,6 @@
 	.amcharts-scrollbar-chart-div{
 	
 	}
+	
+}
 }	
