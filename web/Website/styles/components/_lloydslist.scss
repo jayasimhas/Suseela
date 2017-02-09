@@ -52,7 +52,8 @@
 				background-color: #0f5487;
 				color: #ffffff;
 				th{
-					font-size: 14px;
+					font-size: 1rem;
+					font-weight: 500;
 					&.pad-20{
 						padding: 20px;
 					}
@@ -83,6 +84,7 @@
 		display: block;
 	}
 	&.table-responsive .table {
+		margin-bottom: 2rem;
 		&.mobView{
 			display: none;
 		}
@@ -113,7 +115,7 @@
 				th{
 					font-weight: bold;
 				}
-			}
+			} 
 		}
 		tbody.visible-lg td{
 			border-bottom: 1px solid #d1d3d4;
