@@ -148,7 +148,7 @@ namespace Sitecore.SharedSource.DataImporter.Editors
                                     Sitecore.Context.Site.Name,
                                     this,
                                     "HandleImport",
-                                    new object[] { map, l });
+                                    new object[] { map, l,importItem });
 
             Sitecore.Jobs.JobManager.Start(jobOptions);
 
@@ -156,10 +156,14 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
-        protected void HandleImport(IDataMap map, DefaultLogger l) {
+        protected void HandleImport(IDataMap map, DefaultLogger l, Item importItem) {
 
+
+            string site = importItem.Parent.Parent.Parent.Name;
+            string channel = importItem.Parent.Parent.Name;
             ImportProcessor p = new ImportProcessor(map, l);
-            p.Process();
+            LogIntoExcel.LogFileDateTime= DateTime.Now.ToString("yyyy.MM.dd.HH.mm");
+            p.Process(site, channel);
             txtMessage.Text = l.GetLog();
             
             WriteLogs(l);
@@ -246,11 +250,11 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 									Sitecore.Context.Site.Name,
 									this,
 									"HandleMediaImport",
-									new object[] { map, l });
+									new object[] {map,l});
 
-			//Sitecore.Jobs.JobManager.Start(jobOptions);
+			Sitecore.Jobs.JobManager.Start(jobOptions);
 
-            HandleMediaImport(map, l);
+            //HandleMediaImport(map, l);
 
 
             repJobs.DataSource = Jobs;
@@ -260,6 +264,12 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 	    protected void HandleMediaImport(IDataMap map, DefaultLogger l)
 	    {
 		    var handler = map as PmbiDataMap;
+
+            ImportProcessor p = new ImportProcessor(map, l);
+            p.ImagedownloadProcess(map);
+            txtMessage.Text = l.GetLog();
+
+            WriteLogs(l);
             //ImportProcessor p = new ImportProcessor(map, l);
             //PmbiDataMap ip=new PmbiDataMap()
             handler?.TransferMediaLibrary();

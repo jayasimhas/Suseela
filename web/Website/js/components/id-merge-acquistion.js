@@ -88,7 +88,15 @@
 					var Text = "";
 					if(Category === 'month') {
 						SortingArray.push(parseInt($($(this).find('td')[Index]).attr('month')));
-					} else {
+					} else if (Category === 'number') {
+						var Num = $($(this).find('td')[Index]).text();
+						if(Num != '-') {
+							SortingArray.push(parseFloat(Num));
+						} else {
+							AppendToEndElements.push(self.CurrentArray[key]);
+						}
+					} 
+					else {
 						if($($(this).find('td')[Index]).text().includes('<a href=')) {
 							Text = $($(this).find('td')[Index]).find('a').text();
 						} else {
@@ -98,7 +106,7 @@
 					}
 				});
 				console.log(SortingArray);
-				if(Category === 'month') {
+				if(Category === 'month' || Category === 'number') {
 					if(Type === 'ascending') {
 						SortingArray.sort(function(a, b){
 						  return a - b;
@@ -130,9 +138,9 @@
 						}
 					}
 				}
-				if(AppendToEndElements.length > 0) {
-					SortedElements.push(AppendToEndElements);
-				}
+				//if(AppendToEndElements.length > 0) {
+					var NewArray = SortedElements.concat(AppendToEndElements);
+				//}
 				// var UniqueArray = [];
 				// for(var k = 0; k < SortedElements.length; k++) {
 				// 	if(!SortedElements.contains(SortedElements[k])) {
@@ -140,7 +148,7 @@
 				// 	}
 				// }
 				self.CurrentArray = [];
-				self.CurrentArray = SortedElements;
+				self.CurrentArray = NewArray;
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
@@ -260,8 +268,9 @@
 				} else {
 					FilteredArray = window.jsonMergeAcquistion;
 				}
-				self.RenderDesktopVersion(FilteredArray, $('.merge-acquistion'));
-				self.RenderMobileVersion(FilteredArray, $('.merge-acquistion'));
+				self.CurrentArray = FilteredArray;
+				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
+				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 
 			});
 		},

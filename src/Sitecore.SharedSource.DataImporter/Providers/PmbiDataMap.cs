@@ -97,7 +97,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		/// Get Import items from specified start path, template id and year
 		/// </summary>
 		/// <returns></returns>
-		public override IEnumerable<object> GetImportData()
+		public override IEnumerable<object> GetImportData(string site, string channel)
 		{
 			var startItem = FromDB.GetItem(StartPath);
 			var articles = Enumerable.Empty<Item>();

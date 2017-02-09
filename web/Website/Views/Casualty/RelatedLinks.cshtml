@@ -1,13 +1,15 @@
 ﻿@model Informa.Web.ViewModels.Casualty.RelatedLinksViewModel
 
-    @if (Model.marketDataFolders != null && Model.marketDataFolders.Any())
-    {
+    @{ 
+        var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"] == "1";
+        var marketDataFolders = Model.GetRelatedFolders(showInRightRail);
+        if (marketDataFolders != null && marketDataFolders.Any())
+        {
         <div class="related-left-rail">
             <div class="relatedlinks">
-                <div class="allrelatedlinks mrig">
-                    
-                        @foreach (var marketfolder in Model.marketDataFolders)
-                        {
+             <div class="allrelatedlinks mrig">
+             @foreach (var marketfolder in marketDataFolders)
+             {
                             <ul>
                                 <li class="article-topics__section-header">@marketfolder.SectionName</li>
 
@@ -20,15 +22,16 @@
                                         {
                                             <li class="article-topics__li"><a href="@marketdetail._Url">@marketdetail.Title</a></li>
                                         }
+                                    }
 
                                     }
-                           }
                             </ul>
                                     }
-                    </div>
-                </div>
-            </div>
-      }
-   
+               </div>
+              </div>
+           </div>
+       }
+   }
 
-                                    
+
+

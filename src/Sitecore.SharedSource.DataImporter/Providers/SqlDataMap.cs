@@ -28,11 +28,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 
         #region IDataMap Methods
 
+        public override IEnumerable<object> ImportImages(IDataMap map) { return null; }
         /// <summary>
         /// uses a SqlConnection to get data
         /// </summary>
         /// <returns></returns>
-        public override IEnumerable<object> GetImportData() {
+        public override IEnumerable<object> GetImportData(string site, string channel) {
             DataSet ds = new DataSet();
             SqlConnection dbCon = new SqlConnection(this.DatabaseConnectionString);
             dbCon.Open();

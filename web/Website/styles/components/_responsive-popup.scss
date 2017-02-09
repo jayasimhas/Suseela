@@ -63,12 +63,13 @@
     }
     &.active {
         svg {
-            fill: $color-white;
+            fill: $color-white !important;
         }
     }
     svg {
         height: 25px;
         width: 20px;
+        fill: #979797 !important;
     }
 }
 .table_close {

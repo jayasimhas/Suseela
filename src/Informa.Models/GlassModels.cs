@@ -17080,6 +17080,71 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public const string Salesforce_Entitlement_Api_UrlFieldName = "Salesforce Entitlement Api Url";
     }
 
+
+    //Entitlement Type Setting
+    [SitecoreType(TemplateId = Entitlement_Type_ConfigurationConstants.TemplateIdString)]
+    public partial interface IEntitlement_Type : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the Entitlement Name.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 3C5A4D49-5E35-459C-ACC4-8E78553AF854</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(Entitlement_Type_ConfigurationConstants.Entitlement_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Entitlement Code.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: C5C93E98-8953-4D39-9B11-A7CD032AD7FE</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(Entitlement_Type_ConfigurationConstants.Entitlement_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Code { get; set; }
+    }
+
+    //Entitlement Type Setting
+    [SitecoreType(TemplateId = Entitlement_Type_ConfigurationConstants.TemplateIdString)]
+    public partial interface IEntitlement_Type_Raw : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the Entitlement Name.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 3C5A4D49-5E35-459C-ACC4-8E78553AF854</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(Entitlement_Type_ConfigurationConstants.Entitlement_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Entitlement Code.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: C5C93E98-8953-4D39-9B11-A7CD032AD7FE</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(Entitlement_Type_ConfigurationConstants.Entitlement_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Code { get; set; }
+    }
+
+    //Entitlement Type Setting
+    public static partial class Entitlement_Type_ConfigurationConstants
+    {        
+        public const string TemplateIdString = "82800A0E-0D66-43E8-93AC-94A2FA61A677";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Entitlement Type";
+
+        public static readonly ID Entitlement_NameFieldId = new ID("3C5A4D49-5E35-459C-ACC4-8E78553AF854");
+        public const string Entitlement_NameFieldName = "Name";
+
+        public static readonly ID Entitlement_CodeFieldId = new ID("C5C93E98-8953-4D39-9B11-A7CD032AD7FE");
+        public const string Entitlement_CodeFieldName = "Code";
+    }
+
 }
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
@@ -18181,6 +18246,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
         ISalesforce_Configuration Salesforce_Version { get; set; }
+
+        //Entitlement Type
+        /// <summary>
+        /// Gets or sets the Entitlement Type version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Entitlement_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEntitlement_Type Entitlement_Type { get; set; }
     }
 
 
@@ -19238,6 +19313,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISite_ConfigConstants.Salesforce_VersionFieldName, Setting = SitecoreFieldSettings.InferType)]
         ISalesforce_Configuration Salesforce_Version { get; set; }
+
+        //Entitlement Type
+        /// <summary>
+        /// Gets or sets the Entitlement Type version.
+        /// </summary>
+        /// <value>
+        /// The salesforce version.
+        /// </value>
+        [SitecoreField(ISite_ConfigConstants.Entitlement_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEntitlement_Type Entitlement_Type { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -19822,6 +19907,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         //IPMP-1438 Salesforce ID&E - Facade layer implementation.
         public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
         public const string Salesforce_VersionFieldName = "Salesforce Version";
+
+        public static readonly ID Entitlement_TypeFieldId = new ID("305D22CC-018D-4CCE-9BBC-C89431568828");
+        public const string Entitlement_TypeFieldName = "Entitlement Type";
     }
 
 }
@@ -26363,6 +26451,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         //IPMP-1438 Salesforce ID&E - Facade layer implementation.
         public static readonly ID Salesforce_VersionFieldId = new ID("15E60637-1DDB-4F2B-AFFB-3B2D8E8EB362");
         public const string Salesforce_VersionFieldName = "Salesforce Version";
+
+        public static readonly ID Entitlement_TypeFieldId = new ID("305D22CC-018D-4CCE-9BBC-C89431568828");
+        public const string Entitlement_TypeFieldName = "Entitlement Type";
     }
 
 
