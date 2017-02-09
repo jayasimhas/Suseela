@@ -3598,6 +3598,10 @@ body.lightboxed {
         display: none; } }
   .ID-Responsive-Table#financialresults {
     border: 1px solid #d1d3d4; }
+    .ID-Responsive-Table#financialresults .article {
+      text-align: right; }
+      .ID-Responsive-Table#financialresults .article .year_heading, .ID-Responsive-Table#financialresults .article .R16 {
+        padding-right: 10px; }
   .ID-Responsive-Table .table_head {
     background-color: #91211E;
     color: #ffffff;
@@ -3720,9 +3724,18 @@ body.lightboxed {
 
 #quarterlyresults {
   border: 1px solid #d1d3d4; }
+  #quarterlyresults .table-wrapper .tableHead {
+    text-align: right; }
+    #quarterlyresults .table-wrapper .tableHead:first-child {
+      text-align: left; }
 
-#quarterlyresults .tableRow > .tableCell {
-  text-align: center; }
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  #financialresults .table_head, #quarterlyresults .table_head {
+    position: relative; }
+    #financialresults .table_head a[data-toggle], #financialresults .table_head [data-toggle].pop-out__reset-password, #financialresults .table_head [data-toggle].sortable-table__list-toggler, #financialresults .table_head [data-toggle].mobile-table-exit, #quarterlyresults .table_head a[data-toggle], #quarterlyresults .table_head [data-toggle].pop-out__reset-password, #quarterlyresults .table_head [data-toggle].sortable-table__list-toggler, #quarterlyresults .table_head [data-toggle].mobile-table-exit {
+      position: absolute;
+      right: 15px;
+      top: 15px; } }
 
 #financialresults .tableRow > .tableCell, #financialresults .tableHead {
   text-align: right; }
@@ -8016,8 +8029,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11189,7 +11202,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

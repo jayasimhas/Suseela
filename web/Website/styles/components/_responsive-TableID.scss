@@ -16,6 +16,12 @@
 			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
+				.article {
+					text-align: right;
+					.year_heading, .R16 {
+						padding-right: 10px;
+					}
+				}
 			}
 			.table_head{
 				background-color: #91211E;
@@ -176,9 +182,24 @@
 // }
 #quarterlyresults {
 	border: 1px solid #d1d3d4;
+	.table-wrapper .tableHead {
+		text-align: right;
+		&:first-child {
+			text-align: left;
+		}
+	}
 }
-#quarterlyresults .tableRow > .tableCell {
-	text-align: center;
+#financialresults, #quarterlyresults {
+	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+		.table_head {
+			position: relative;
+			a[data-toggle] {
+				position: absolute;
+				right: 15px;
+				top: 15px;
+			}
+		}
+	}
 }
 #financialresults .tableRow > .tableCell, #financialresults .tableHead {
 	text-align: right;
