@@ -6165,6 +6165,7 @@ $(function () {
 (function (argument) {
 	var MergeAcquistion = {
 		CurrentArray: [],
+		LargeValue: [],
 		MonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 		HeadingNames: ['Month', 'Acquirer', 'Target', 'TargetSector', 'TargetLocation', 'Detail', 'Price'],
 		RenderDesktopVersion: function RenderDesktopVersion(data, Parent) {
@@ -6434,6 +6435,31 @@ $(function () {
 				$(this).parents('.merges-form').toggleClass('open');
 			});
 		},
+		showLargestEvent: function showLargestEvent() {
+			var self = this;
+			$(document).on('click', '.show-largest-btn', function (e) {
+				e.preventDefault();
+				var ThresholdValue = $(this).attr('data-large'),
+				    Items = [];
+
+				if ($(this).hasClass('active')) {
+					self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
+					self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
+				} else {
+					for (var i = 0; i < self.CurrentArray.length; i++) {
+						if (self.CurrentArray[i].Price != '-') {
+							if (parseFloat(self.CurrentArray[i].Price) > parseFloat(ThresholdValue)) {
+								Items.push(self.CurrentArray[i]);
+							}
+						}
+					}
+					self.RenderDesktopVersion(Items, $('.merge-acquistion'));
+					self.RenderMobileVersion(Items, $('.merge-acquistion'));
+				}
+
+				$(this).toggleClass('active');
+			});
+		},
 		init: function init(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
@@ -6442,6 +6468,7 @@ $(function () {
 			this.FilterEvent(data, Parent);
 			this.YearChange();
 			this.MobileEvent();
+			this.showLargestEvent();
 		}
 	};
 

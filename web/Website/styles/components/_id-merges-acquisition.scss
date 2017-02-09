@@ -6,6 +6,33 @@
 			display: block;
 		}
 	}
+	.desktop-controls {
+		float: right;
+	}
+	.show-largest-btn {
+		padding: 10px;
+	    background-color: #DE4361;
+	    color: $color-white !important;
+	    float: left;
+	    margin-right: 10px;
+	    font-size: 14px;
+	    &:hover, &:focus, &:active {
+	    	color: $color-white !important;
+	    	text-decoration: none !important;
+	    }
+	    &.active {
+	    	position: relative;
+	    	&:after {
+    		    content: '';
+			    height: 5px;
+			    background-color: rgb(0, 166, 83);
+			    bottom: 0;
+			    position: absolute;
+			    width: 100%;
+			    right: 0;
+	    	}
+	    }
+	}
 	.dealsOmitted {
 		float: right;
 	    width: 100%;
@@ -315,6 +342,13 @@
 		.merge-form-items {
 			display: none;
 			background-color: #DE4361;
+			.show-largest-btn {
+				margin: 0;
+			    font-size: 12px;
+			    padding: 12px 10px;
+			    width: 100%;
+			    text-align: center;
+			}
 			.forms {
 				width: 50%;
 				padding: 10px;
@@ -333,6 +367,7 @@
 			.controls {
 				float: left;
 				width: 100%;
+				background: #91211E;
 				.selectivity-input {
 					width: 100%;
 					overflow: hidden;
