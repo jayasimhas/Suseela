@@ -3729,6 +3729,9 @@ body.lightboxed {
 
 #financialresults .year_heading {
   height: auto; }
+  @media (max-width: 480px) {
+    #financialresults .year_heading {
+      padding-right: 0; } }
 
 #financialresults .owl-wrapper {
   width: 60%;

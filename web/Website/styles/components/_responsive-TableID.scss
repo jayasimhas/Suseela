@@ -190,6 +190,9 @@
 }
 #financialresults .year_heading {
 	height: auto;
+	@include breakpoint('small') {
+		padding-right: 0;
+	}
 }
 #financialresults .owl-wrapper {
 	width: 60%;
