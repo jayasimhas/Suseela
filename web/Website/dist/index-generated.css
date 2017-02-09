@@ -6662,6 +6662,22 @@ section: UI Elements
 
 #latest-value {
   float: right; }
+  #latest-value span.fall {
+    color: #f40600;
+    background: url("/dist/img/chart_down.gif");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 10px;
+    margin-right: 0; }
+  #latest-value span.rise {
+    color: #56c405;
+    background: url("/dist/img/chart_up.gif");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 10px;
+    margin-right: 0; }
+  #latest-value span {
+    padding-left: 10px; }
 
 .balticChart {
   margin-bottom: 32px;
