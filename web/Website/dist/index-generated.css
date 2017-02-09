@@ -6656,6 +6656,52 @@ section: UI Elements
 .article-related-content h5, .article-related-content .alert-success p, .alert-success .article-related-content p, .article-related-content .alert-error p, .alert-error .article-related-content p, .article-related-content .article-call-to-action__subtitle {
   margin-bottom: 20px !important; }
 
+#balticDryData {
+  text-transform: initial;
+  float: left; }
+
+#latest-value {
+  float: right; }
+
+.balticChart {
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  width: 300px;
+  height: 300px;
+  font-family: "Roboto",​Arial Narrow,​sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+  .balticChart .amChartsLegend.amcharts-legend-div {
+    margin-top: 32px;
+    margin-top: 2rem; }
+  .balticChart .amChartsButton {
+    border-radius: 3px;
+    border: 1px solid #d1d3d4;
+    font-size: 11px;
+    font-size: 0.7rem;
+    margin-left: 3px; }
+  .balticChart .amcharts-period-input-selected {
+    background: #be1e2d;
+    color: #FFF;
+    border-radius: 3px;
+    border: 1px solid #d1d3d4;
+    font-size: 11px;
+    font-size: 0.7rem;
+    margin-left: 3px; }
+  .balticChart .amChartsButton.amcharts-period-input {
+    background: none; }
+  .balticChart input.amChartsButton.amcharts-period-input:hover {
+    background: #be1e2d;
+    color: #FFF; }
+  .balticChart input.amChartsInputField {
+    border-radius: 3px;
+    border: 1px solid #d1d3d4;
+    font-size: 11px;
+    font-size: 0.7rem;
+    width: 70px !important; }
+  .balticChart .amChartsInputField.amcharts-end-date-input {
+    margin-left: 3px; }
+
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
   width: 790px;
