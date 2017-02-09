@@ -3452,8 +3452,7 @@ body.lightboxed {
   overflow: auto;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid #d1d3d4;
-  font-family: 'Roboto'; }
+  border: 1px solid #d1d3d4; }
   .ID-responsive-table-modal .container {
     background-color: #fff;
     margin: auto;
@@ -3464,20 +3463,23 @@ body.lightboxed {
     border: 1px solid #d1d3d4;
     border-top: none; }
     .ID-responsive-table-modal .table-wrapper .tableHead {
-      text-align: right; }
+      text-align: right;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold; }
 
 .idi-table-heading {
   background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 1.125em;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: 500;
   margin-top: 45px;
   padding: 5px; }
   .idi-table-heading span {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.125em;
+    font-size: 1em;
     font-weight: 700;
     padding-left: 10px; }
 
@@ -3539,7 +3541,7 @@ body.lightboxed {
     display: table-header-group; }
   .table-wrapper .tableHead {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.125em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     font-family: "PT Serif", Georgia, serif;
@@ -3558,7 +3560,10 @@ body.lightboxed {
     display: table-cell;
     padding: 5px; }
   .table-wrapper .tableCell:first-child {
-    text-align: left; }
+    text-align: left;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500; }
   .table-wrapper .tableCell {
     text-align: right; }
 
@@ -3597,7 +3602,10 @@ body.lightboxed {
       .ID-Responsive-Table .table-sort {
         display: none; } }
   .ID-Responsive-Table#financialresults {
-    border: 1px solid #d1d3d4; }
+    border: 1px solid #d1d3d4;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500; }
     .ID-Responsive-Table#financialresults .article {
       text-align: right; }
       .ID-Responsive-Table#financialresults .article .year_heading, .ID-Responsive-Table#financialresults .article .R16 {
@@ -3725,7 +3733,10 @@ body.lightboxed {
 #quarterlyresults {
   border: 1px solid #d1d3d4; }
   #quarterlyresults .table-wrapper .tableHead {
-    text-align: right; }
+    text-align: right;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
     #quarterlyresults .table-wrapper .tableHead:first-child {
       text-align: left; }
 
@@ -3737,17 +3748,25 @@ body.lightboxed {
       right: 15px;
       top: 15px; } }
 
-#financialresults .tableRow > .tableCell, #financialresults .tableHead {
-  text-align: right; }
+#financialresults .tableRow > .tableCell {
+  text-align: right;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400; }
 
 #financialresults .tableHead:first-child {
   text-align: left; }
 
-#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
+#financialresults .tableHead {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  font-weight: 700;
-  font-style: normal;
+  font-weight: bold; }
+
+#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
   text-align: left; }
 
 #financialresults .year_heading {

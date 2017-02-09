@@ -12,7 +12,7 @@
     background-color: black;
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid #d1d3d4;
-        font-family: 'Roboto';
+       
     .container {
         background-color: #fff;
         margin: auto;
@@ -25,6 +25,7 @@
         border-top: none;
         .tableHead {
             text-align: right;
+			@include textMix('Roboto', 1em, bold);
         }
     }
 }
@@ -32,11 +33,11 @@
     background-color: #91211E;
     color: $color-white;  
     font-style: normal;
-    @include textMix('Roboto', 1.125em, 400);
+    @include textMix('Roboto', 1em, 500);
     margin-top: 45px;
     padding: 5px;
     span{
-        @include textMix('Roboto', 1.125em, 700);
+        @include textMix('Roboto', 1em, 700);
         padding-left:10px;
     }
 }
@@ -107,7 +108,7 @@
         display: table-header-group;
     }
     .tableHead {
-         @include textMix('Roboto', 1.125em, 400);
+        @include textMix('Roboto', 1em, 400);
         font-style: normal;
         font-family: "PT Serif", Georgia, serif;
         font-size: 16px;
@@ -130,6 +131,7 @@
     }
     .tableCell:first-child {
         text-align: left;
+		@include textMix('Roboto', 1em, 500);
     }
     .tableCell {
         text-align: right;
