@@ -12714,12 +12714,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The Footer Logo field.
 					/// <para></para>
-					/// <para>Field Type: Image</para>		
+					/// <para>Field Type: Rich Text</para>		
 					/// <para>Field ID: ebe9a930-123d-4fd8-9a28-4662c389893b</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Footer_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Image Footer_Logo  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.Footer_Logo_With_CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Footer_Logo_With_Copyright  {get; set;}
 								/// <summary>
 					/// The Local Footer Links field.
 					/// <para></para>
@@ -13599,12 +13599,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The Footer Logo field.
 						/// <para></para>
-						/// <para>Field Type: Image</para>		
+						/// <para>Field Type: Rich Text</para>		
 						/// <para>Field ID: ebe9a930-123d-4fd8-9a28-4662c389893b</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Footer_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Image Footer_Logo  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.Footer_Logo_With_CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Footer_Logo_With_CopyrightFieldName { get; set;}
 										/// <summary>
 						/// The Local Footer Links field.
 						/// <para></para>
@@ -14306,22 +14306,22 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Register_SubTitle_For_Free_ArticlesFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
 			public const string Register_SubTitle_For_Free_ArticlesFieldName = "Register SubTitle for Free Articles";
 
-							public static readonly ID Register_SubTitle_For_Free_Articles__RawFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
-				public const string Register_SubTitle_For_Free_Articles__RawFieldName = "Register SubTitle for Free Articles";
+			public static readonly ID Register_SubTitle_For_Free_Articles__RawFieldId = new ID("e85272a3-70ae-4ffc-9609-5eac81bf5d30");
+			public const string Register_SubTitle_For_Free_Articles__RawFieldName = "Register SubTitle for Free Articles";
 						
 					
 			public static readonly ID Register_SubTitleFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
 			public const string Register_SubTitleFieldName = "Register SubTitle";
 
-							public static readonly ID Register_SubTitle__RawFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
-				public const string Register_SubTitle__RawFieldName = "Register SubTitle";
+			public static readonly ID Register_SubTitle__RawFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
+			public const string Register_SubTitle__RawFieldName = "Register SubTitle";
 						
 					
 			public static readonly ID SignIn_SubTitleFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
 			public const string SignIn_SubTitleFieldName = "SignIn SubTitle";
 
-							public static readonly ID SignIn_SubTitle__RawFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
-				public const string SignIn_SubTitle__RawFieldName = "SignIn SubTitle";
+			public static readonly ID SignIn_SubTitle__RawFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
+			public const string SignIn_SubTitle__RawFieldName = "SignIn SubTitle";
 						
 					
 			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
@@ -14332,8 +14332,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
-							public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-				public const string Email_Footer__RawFieldName = "Email Footer";
+			public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Email_Footer__RawFieldName = "Email Footer";
 						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
@@ -14366,8 +14366,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
-			public const string Footer_LogoFieldName = "Footer Logo";
+			public static readonly ID Footer_Logo_With_CopyrightFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
+			public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo With Copyright";
 
 						
 					
