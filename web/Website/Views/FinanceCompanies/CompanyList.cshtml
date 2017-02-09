@@ -1,14 +1,14 @@
-﻿@*@model  Informa.Web.ViewModels.FinanceCompanies.CompanyProfileViewModel*@
-@model  Informa.Web.ViewModels.FinanceCompanies.AllCompanyListModel
-
-<h2>COMPANIES</h2>
-<div class="companyList">   
-    <ul>
-        @foreach (var company in Model.FinanceCompanies)
-        {
-            <li class="article-topics__li">
-                <a href="/financecompanies/@company._Name">@company.Companyname</a>
-            </li>
-        }   
-    </ul>
+﻿@model  Informa.Web.ViewModels.FinanceCompanies.AllCompanyListModel
+<div class="messaging_webUsers article-sidebar">
+    <h2>COMPANIES</h2>
+    <div class="companyList">
+        <ul>
+            @foreach (var company in Model.FinanceCompanies)
+            {
+                <li class="article-topics__li">
+                    <a href="/financecompanies/@company._Name">@company.Companyname</a>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
