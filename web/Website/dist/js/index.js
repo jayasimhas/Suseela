@@ -6058,7 +6058,7 @@ $(function () {
 		},
 		InitateCarousel: function InitateCarousel(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
-				loop: false,
+				loop: true,
 				merge: true,
 				margin: 0,
 				nav: false,
