@@ -8003,8 +8003,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9051,19 +9051,22 @@ div#feedbacklite.fbl_r {
       .id-merges-acquisition .merges-form .merge-form-items .forms {
         width: 50%;
         padding: 10px;
-        float: left; }
+        float: left;
+        color: #ffffff; }
         .id-merges-acquisition .merges-form .merge-form-items .forms label {
           color: #ffffff;
           display: block; }
         .id-merges-acquisition .merges-form .merge-form-items .forms input {
           width: 100%;
-          padding: 3px; }
+          padding: 3px;
+          color: #58595b; }
       .id-merges-acquisition .merges-form .merge-form-items .controls {
         float: left;
         width: 100%; }
         .id-merges-acquisition .merges-form .merge-form-items .controls .selectivity-input {
           width: 100%;
-          overflow: hidden; }
+          overflow: hidden;
+          color: #58595b; }
     .id-merges-acquisition .merges-form.open .merge-heading .merge-acordian svg {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
@@ -11171,7 +11174,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

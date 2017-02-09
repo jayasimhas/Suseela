@@ -319,6 +319,7 @@
 				width: 50%;
 				padding: 10px;
 				float: left;
+				color: $color-white;
 				label {
 					color: $color-white;
 					display: block;
@@ -326,6 +327,7 @@
 				input {
 					width: 100%;
 					padding: 3px;
+					color: #58595b;
 				}
 			}
 			.controls {
@@ -334,6 +336,7 @@
 				.selectivity-input {
 					width: 100%;
 					overflow: hidden;
+					color: #58595b
 				}
 			}
 
