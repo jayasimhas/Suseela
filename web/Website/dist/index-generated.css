@@ -6612,7 +6612,7 @@ footer li {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
-.footer__logo-icon img {
+.footer__logo-icon img:first-child {
   display: block;
   height: 60px;
   width: auto; }
