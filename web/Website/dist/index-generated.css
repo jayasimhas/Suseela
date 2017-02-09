@@ -3612,8 +3612,8 @@ body.lightboxed {
       height: 0; }
     .ID-Responsive-Table .table_head .RB16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
-      font-size: 1.0625em;
-      font-weight: 700;
+      font-size: 1em;
+      font-weight: 500;
       font-style: normal;
       float: left; }
     .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
@@ -3640,7 +3640,14 @@ body.lightboxed {
     .ID-Responsive-Table .states_heading .redbg {
       background-color: #bb1528 !important; }
     .ID-Responsive-Table .states_heading div {
-      padding: 10px; }
+      padding: 10px;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      font-weight: 500; }
+    .ID-Responsive-Table .states_heading div:first-child {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold; }
     .ID-Responsive-Table .states_heading div:nth-child(odd) {
       background-color: #f1f1f1; }
   .ID-Responsive-Table .owl-wrapper {
@@ -3655,7 +3662,7 @@ body.lightboxed {
   .ID-Responsive-Table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal; }
   .ID-Responsive-Table .article {
     width: 100%;
@@ -3674,7 +3681,10 @@ body.lightboxed {
     margin-right: 0;
     padding-right: 40px;
     height: 5em;
-    word-wrap: break-word; }
+    word-wrap: break-word;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
       .ID-Responsive-Table .year_heading {
         padding-left: 10px; } }

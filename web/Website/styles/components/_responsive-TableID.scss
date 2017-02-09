@@ -31,7 +31,7 @@
 				    height: 0;
 				}
 				.RB16{
-				   @include textMix('Roboto', 1.0625em, 700);
+				   @include textMix('Roboto', 1em, 500);
 				   font-style: normal;
 				   float: left;
 				}
@@ -64,6 +64,10 @@
 				div{
 					// margin-bottom:10px;
 					padding:10px;
+					@include textMix('Roboto', 1em, 500);
+				}
+				div:first-child{ 
+					@include textMix('Roboto', 1em, bold);
 				}
 				div:nth-child(odd){
 					background-color: $color-concrete-table-gray;
@@ -80,7 +84,7 @@
 			    }
 			}
 			.RB16{
-				   @include textMix('Roboto', 1em, 700);
+				   @include textMix('Roboto', 1em, 500);
 				   font-style: normal;
 				}
 			.article{
@@ -107,6 +111,7 @@
 				padding-right: 40px;
 				height: 5em;
 				word-wrap: break-word;
+				@include textMix('Roboto', 1em, bold);
 				@media only screen and (min-width: 767px) and (max-width: 1024px) {
 				    padding-left: 10px;
 				}
