@@ -110,33 +110,6 @@
 		margin-bottom: 20px !important;
 	}
 } 
-
-#balticDryData{
-	text-transform: initial;
-	float: left;
-}
-#latest-value{
-	float: right;
-	span.fall{
-		color: #f40600;
-		background: url("/dist/img/chart_down.gif");
-		background-repeat: no-repeat;
-		background-position: right center;
-		padding-right: 10px;
-		margin-right: 0;
-	}
-	span.rise{
-		color: #56c405;
-		background: url("/dist/img/chart_up.gif");
-		background-repeat: no-repeat;
-		background-position: right center;
-		padding-right: 10px;
-		margin-right: 0;
-	}
-	span{
-		padding-left: 10px;
-	}
-}
 .balticChart{
 	margin-bottom: 2rem;
 	width: 300px; 
@@ -144,6 +117,9 @@
 	font-family:"Roboto",​Arial Narrow,​sans-serif;
 	font-style: normal;
 	font-weight: 400;
+	.amcharts-chart-div{
+		
+	}
 	.amChartsLegend.amcharts-legend-div{
 		margin-top: 2rem;
 	}
@@ -176,5 +152,11 @@
 	}
 	.amChartsInputField.amcharts-end-date-input{
 		margin-left: 3px;
+	}
+	.amChartsPeriodSelector.amcharts-period-selector-div{
+		margin-bottom: 2rem;
+	}
+	.amcharts-scrollbar-chart-div{
+	
 	}
 }	
