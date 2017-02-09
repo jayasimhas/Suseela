@@ -52,19 +52,9 @@ namespace Informa.Web.Controllers
             string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
             using (WebClient client = new WebClient())
             {
-                try
-                {
-                    client.UseDefaultCredentials = true;
-                    client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
-                    return client.DownloadString(url);
-                }
-                catch (Exception ex)
-                {
-                    client.UseDefaultCredentials = true;
-                    client.Headers.Add("User-Agent: Other");
-                    byte[] data = client.DownloadData(url);
-                    return Encoding.UTF8.GetString(data);
-                }
+                client.UseDefaultCredentials = true;
+                client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
+                return client.DownloadString(url);                                
             }
         }
     }
