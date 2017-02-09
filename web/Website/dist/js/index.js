@@ -4102,16 +4102,16 @@ $(document).ready(function () {
                 chart4.dataProvider = generateChartData();
                 chart4.validateData();
             });
-            // $("#largest-deals").click(function() {
-            //     chart.dataProvider = generateChartDataSizeRange();
-            //     chart.validateData();
-            //     chart2.dataProvider = generateChartDataDealsByRegion();
-            //     chart2.validateData();
-            //     chart3.dataProvider = generateChartDataByRegion();
-            //     chart3.validateData();
-            //     chart4.dataProvider = generateChartData();
-            //     chart4.validateData();
-            // });
+            $(".show-largest-btn").click(function () {
+                chart.dataProvider = generateChartDataSizeRange();
+                chart.validateData();
+                chart2.dataProvider = generateChartDataDealsByRegion();
+                chart2.validateData();
+                chart3.dataProvider = generateChartDataByRegion();
+                chart3.validateData();
+                chart4.dataProvider = generateChartData();
+                chart4.validateData();
+            });
             var defaultRegions = ["Africa", "Asia-Pacific", "Bermuda", "Europe", "Global", "Latin America", "London/UK", "North America"];
             var defaultTypes = ["non-life", "life", "international/reinsurance", "composite"];
 
@@ -7111,167 +7111,6 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 'use strict';
 
 (function () {
-	var marketDataTool = {
-		renderShippingData: function renderShippingData(data) {
-			if (data[0]['Areas'] !== undefined) {
-				$('#areaCode').html(this.loadDropdownData(data[0]['Areas']));
-			}
-			if (data[0]['MovementTypes'] !== undefined) {
-				$('#movementType').html(this.loadDropdownData(data[0]['MovementTypes']));
-			}
-		},
-		loadDropdownData: function loadDropdownData(options) {
-			var optionStr = '';
-			$.each(options, function (idx, val) {
-				if (idx == 0) {
-					optionStr += '<option value="' + val.Value + '" selected="selected">' + val.Text + '</option>';
-				} else {
-					optionStr += '<option value="' + val.Value + '">' + val.Text + '</option>';
-				}
-			});
-			return optionStr;
-		},
-		renderTable: function renderTable() {
-			var self = this;
-			$('.submit').click(function () {
-				var searchData = tableObj;
-				/*$.ajax({
-    	url: '/Download/JsonDataFromFeed/ReadJsonShippingMovements/ ',
-    	data: {'feed': $('#ResultTableFeedUrl').val(), 'areaCode': $('#areaCode option').val(), 'movementType': $('#movementType option').val()},
-    	dataType: 'json',
-    	type: 'GET',
-    	success: function (searchData) {*/
-				self.sendHTTPRequest(searchData);
-				/*},
-    error: function (err) {
-    	console.log(err)  
-    }
-    });*/
-
-				$('.shippingData').addClass('hide');
-				$('.hideMarketData').removeClass('hide');
-			});
-
-			$(document).on('click', '.moveTop', function () {
-				$(window).scrollTop(0);
-			});
-
-			$('.gotolinks').on('click', 'li a', function () {
-				var $this = $(this),
-				    redirectLink = $this.attr('data-link');
-				if (window.matchMedia("(max-width: 640px)").matches) {
-					$(window).scrollTop($('#marketDataTable tr[data-mname=' + redirectLink + ']').offset().top - 40);
-				} else {
-					$(window).scrollTop($('#marketDataTable tr[data-name=' + redirectLink + ']').offset().top);
-				}
-			});
-		},
-		sendHTTPRequest: function sendHTTPRequest(searchData) {
-			var self = this,
-			    loadHead = true,
-			    tableStr = '<thead class="table_head">';
-			tableStr += '<tr><th colspan="7" class="pad-full-10">' + searchData[0].areaname + '</th></tr>';
-			$.each(searchData[0], function (key, val) {
-				if (typeof val === 'object' && loadHead) {
-					loadHead = false;
-					tableStr += '<tr class="visible-lg">';
-					$.each(val[0], function (k, v) {
-						tableStr += '<td class="pad-10">' + k + '</td>';
-					});
-					tableStr += '</tr>';
-				}
-			});
-			tableStr += '</thead>';
-
-			tableStr += self.loadDesktopView(searchData[0]);
-			tableStr += self.loadMobileView(searchData[0]);
-
-			$('#marketDataTable').html(tableStr);
-
-			var marketLinks = '<ul>',
-			    linkIdx = 0;
-			$.each(searchData[0], function (key, val) {
-				if (typeof val === 'object') {
-					linkIdx++;
-					marketLinks += '<li class="article-topics__li"><a href="javascript: void(0);" data-link=focusData_' + linkIdx + '>' + key + '</a></li>';
-				}
-			});
-			marketLinks += '</ul>';
-
-			$('.gotolinks').html(marketLinks);
-		},
-
-		loadDesktopView: function loadDesktopView(tableData) {
-			var desktopStr = '<tbody class="visible-lg">',
-			    dataIdx = 0;
-			$.each(tableData, function (key, val) {
-				if (typeof val === 'object') {
-					dataIdx++;
-					desktopStr += '<tr data-name="focusData_' + dataIdx + '">';
-					desktopStr += '<td colspan="6" class="graybg RB18 pad-10">' + key + '</td>';
-					desktopStr += '<td colspan="1" align="right" class="graybg RB18 pad-10 moveTop"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td>';
-					desktopStr += '</tr>';
-
-					$.each(val, function (i, v) {
-						desktopStr += '<tr>';
-						desktopStr += '<td class="R16 pad-10">' + v["Move Date"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Vessel Name"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Flag"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Gross"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Origin"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Destination"] + '</td>';
-						desktopStr += '<td class="R16 pad-10">' + v["Vessel Type"] + '</td>';
-						desktopStr += '</tr>';
-					});
-				}
-			});
-			desktopStr += '</tbody>';
-			return desktopStr;
-		},
-		loadMobileView: function loadMobileView(tableData) {
-			var mobileStr = '<tbody class="visible-sm">',
-			    dataIdx = 0;
-			$.each(tableData, function (key, val) {
-				if (typeof val === 'object') {
-					dataIdx++;
-					mobileStr += '<tr data-mname="focusData_' + dataIdx + '">';
-
-					mobileStr += '<td colspan="2" class="graybg RB18 pad-full-10">' + key + '<a href="javascript: void(0);" class="moveTop top"><span class="arrow"></span>Top</a></td>';
-					mobileStr += '</tr>';
-
-					$.each(val, function (i, v) {
-						var indx = 0;
-						$.each(v, function (idx, vl) {
-							indx++;
-							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
-							mobileStr += '<tr>';
-							mobileStr += '<td class="pad-10 mobleftCol ' + borTop + '">' + idx + '</td>';
-							mobileStr += '<td class="pad-10 mobrigCol ' + borTop + '">' + vl + '</td>';
-							mobileStr += '</tr>';
-						});
-					});
-				}
-			});
-			mobileStr += '</tbody>';
-			return mobileStr;
-		},
-		init: function init(data) {
-			this.renderShippingData(data);
-			this.renderTable();
-		}
-	};
-
-	$(document).ready(function () {
-		if ($('#market-data-tool').length > 0) {
-			marketDataTool.init(window.shippingMovements);
-		}
-	});
-})();
-
-},{}],21:[function(require,module,exports){
-'use strict';
-
-(function () {
 	var marketData = {
 		renderTable: function renderTable(data, renderId) {
 			this.loadMobileView(data, renderId[0]);
@@ -7389,7 +7228,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7533,7 +7372,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 var _controllersAnalyticsController = require('../controllers/analytics-controller');
@@ -8108,7 +7947,7 @@ $(function () {
     });
 });
 
-},{"../controllers/analytics-controller":29}],24:[function(require,module,exports){
+},{"../controllers/analytics-controller":28}],23:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -8224,7 +8063,7 @@ $(function () {
 	});
 });
 
-},{}],25:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 function loadLayoutOneData(data, idx) {
@@ -8890,7 +8729,7 @@ $(function () {
 	});
 });
 
-},{}],26:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -9128,7 +8967,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":29,"../controllers/form-controller":31,"../jscookie":39}],27:[function(require,module,exports){
+},{"../controllers/analytics-controller":28,"../controllers/form-controller":30,"../jscookie":38}],26:[function(require,module,exports){
 'use strict';
 
 function PrintCompanyGraph(chartData, divId, graphType) {
@@ -9215,7 +9054,7 @@ $(function () {
 	}, 600);
 });
 
-},{}],28:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -9284,7 +9123,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],29:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -9303,7 +9142,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],30:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -9391,7 +9230,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":29}],31:[function(require,module,exports){
+},{"./analytics-controller":28}],30:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -9605,7 +9444,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],32:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -9673,7 +9512,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],33:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -9964,7 +9803,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],34:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10089,7 +9928,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":29}],35:[function(require,module,exports){
+},{"./analytics-controller":28}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10307,7 +10146,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":29}],36:[function(require,module,exports){
+},{"./analytics-controller":28}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10624,7 +10463,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],37:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -10815,7 +10654,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],38:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],37:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -10925,8 +10764,6 @@ require('./components/dynamic-content-recomendation');
 require('./components/ll-casuality-listing');
 
 require('./components/ll-casuality-detail');
-
-require('./components/ll-market-data-tool');
 
 require('./components/ll-market-data');
 
@@ -12116,7 +11953,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":21,"./components/ll-market-data-tool":20,"./components/ll-tanker-fixtures":22,"./components/myview-settings":23,"./components/pagination":24,"./components/personalisation":25,"./components/save-search-component":26,"./components/table_charts":27,"./components/video-mini":28,"./controllers/analytics-controller":29,"./controllers/bookmark-controller":30,"./controllers/form-controller":31,"./controllers/lightbox-modal-controller":32,"./controllers/pop-out-controller":33,"./controllers/register-controller":34,"./controllers/reset-password-controller":35,"./controllers/sortable-table-controller":36,"./controllers/tooltip-controller":37,"./jscookie":39,"./modal":40,"./newsletter-signup":41,"./search-page.js":42,"./selectivity-full":43,"./svg4everybody":44,"./toggle-icons":45,"./zepto.dragswap":46,"./zepto.min":47}],39:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":20,"./components/ll-tanker-fixtures":21,"./components/myview-settings":22,"./components/pagination":23,"./components/personalisation":24,"./components/save-search-component":25,"./components/table_charts":26,"./components/video-mini":27,"./controllers/analytics-controller":28,"./controllers/bookmark-controller":29,"./controllers/form-controller":30,"./controllers/lightbox-modal-controller":31,"./controllers/pop-out-controller":32,"./controllers/register-controller":33,"./controllers/reset-password-controller":34,"./controllers/sortable-table-controller":35,"./controllers/tooltip-controller":36,"./jscookie":38,"./modal":39,"./newsletter-signup":40,"./search-page.js":41,"./selectivity-full":42,"./svg4everybody":43,"./toggle-icons":44,"./zepto.dragswap":45,"./zepto.min":46}],38:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -12257,7 +12094,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],40:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -12565,7 +12402,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],41:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -12667,7 +12504,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":29}],42:[function(require,module,exports){
+},{"./controllers/analytics-controller":28}],41:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -12679,7 +12516,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],43:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -13705,7 +13542,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],44:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -13810,7 +13647,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],45:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -13827,7 +13664,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],46:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -14077,7 +13914,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
     };
 })(Zepto);
 
-},{"./controllers/analytics-controller":29}],47:[function(require,module,exports){
+},{"./controllers/analytics-controller":28}],46:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -14816,6 +14653,6 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[38])
+},{}]},{},[37])
 
 //# sourceMappingURL=index.js.map

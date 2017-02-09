@@ -3,7 +3,6 @@
 }
 
 #main-carousel {
-		@include fontFamily("verdana");
 		.owl-carousel .item{
 			height: 290px;
 			@include breakpoint('small') {
