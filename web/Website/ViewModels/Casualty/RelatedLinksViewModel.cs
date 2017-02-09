@@ -20,17 +20,18 @@ namespace Informa.Web.ViewModels.Casualty
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected bool showInRightRail = false;
         public RelatedLinksViewModel(ICompaniesResultService companyResultService,
            IAuthenticatedUserContext authenticatedUserContext, ISiteRootContext siteRootContext)
         {
             CompanyResultService = companyResultService;
             AuthenticatedUserContext = authenticatedUserContext;
             SiteRootContext = siteRootContext;
-        }
+         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        public List<IMarketData_Folder> marketDataFolders => GetRelatedFolders();
-
-        private List<IMarketData_Folder> GetRelatedFolders()
+        //public List<IMarketData_Folder> marketDataFolders => GetRelatedFolders();
+        
+        public List<IMarketData_Folder> GetRelatedFolders(bool showInRightRail)
         {
             List<IMarketData_Folder> marketDataFolders = new List<IMarketData_Folder>();
             marketDataFolders = GlassModel._ChildrenWithInferType.OfType<IMarketData_Folder>()?.ToList();
@@ -41,7 +42,10 @@ namespace Informa.Web.ViewModels.Casualty
                 if(GlassModel is IMarketData_Detail_Page)
                 {
                     marketDataFolders = new List<IMarketData_Folder>();
+                    if(showInRightRail)
                     marketDataFolders.Add(GlassModel._Parent._Parent._ChildrenWithInferType.OfType<IMarketData_Folder>().FirstOrDefault(p => p._Id.Equals(GlassModel._Parent._Id)));
+                    else
+                      marketDataFolders = GlassModel._Parent._Parent._ChildrenWithInferType.OfType<IMarketData_Folder>()?.Where(p => !p._Id.Equals(GlassModel._Parent._Id)).ToList();
                 }
                return marketDataFolders;
             }

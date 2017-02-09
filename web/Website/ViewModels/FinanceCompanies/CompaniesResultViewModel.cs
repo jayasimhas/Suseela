@@ -96,8 +96,8 @@
         {
             string jsonString = "External feed url is empty";
             string companyQueryId = Convert.ToString(HttpContext.Current.Request.QueryString["companyid"]);
-            if(RenderingParameters != null && RenderingParameters.TableType != null && (Sitecore.Context.Item.Fields["Company ID"] != null || !string.IsNullOrWhiteSpace(companyQueryId)) &&
-                (string.Equals(RenderingParameters.TableType.Value,Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+            if (RenderingParameters != null && RenderingParameters.TableType != null && (Sitecore.Context.Item.Fields["Company ID"] != null || !string.IsNullOrWhiteSpace(companyQueryId)) &&
+                (string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
                 string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
             {
                 string feedUrl = string.Format(GlassModel.ExternalFeedUrl, !string.IsNullOrWhiteSpace(companyQueryId) ? companyQueryId : Sitecore.Context.Item.Fields["Company ID"].Value);
@@ -107,7 +107,9 @@
 
             if (!string.IsNullOrWhiteSpace(jsonString))
             {
-                var companyLandingPage = sitecoreContext.GetItem<Item>(Settings.GetSetting("Company.Landing.Page"));
+                var financeCompaniesFolder = Sitecore.Context.Item;
+                var companyLandingPage = financeCompaniesFolder.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page") ? financeCompaniesFolder : financeCompaniesFolder.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page"));
+
                 List<ICompany_Detail_Page> companyDetailPages = new List<ICompany_Detail_Page>();
 
                 if (companyLandingPage != null && companyLandingPage.Children != null && companyLandingPage.Children.Any())

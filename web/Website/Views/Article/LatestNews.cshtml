@@ -14,7 +14,7 @@
 	}
 </div>
 
-@if (Model.News != null && Model.News.Any() &&  Model.SeeAllLink != null)
+@if (Model.News != null && Model.News.Any() &&  Model.SeeAllLink != null && !string.IsNullOrEmpty(Model.SeeAllLink.Url))
 {
     <a href="@Model.SeeAllLink.Url"
        class="full-diminished-button click-utag"

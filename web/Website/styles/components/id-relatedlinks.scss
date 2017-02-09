@@ -110,3 +110,53 @@
 		margin-bottom: 20px !important;
 	}
 } 
+.balticChart{
+	margin-bottom: 2rem;
+	width: 300px; 
+	height: 300px;
+	font-family:"Roboto",​Arial Narrow,​sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	.amcharts-chart-div{
+		
+	}
+	.amChartsLegend.amcharts-legend-div{
+		margin-top: 2rem;
+	}
+	.amChartsButton{
+		border-radius: 3px;
+		border: 1px solid $color-light-gray;
+		font-size: 0.7rem;
+		margin-left: 3px;
+	}
+	.amcharts-period-input-selected{
+		background: $color-cardinal-red;		
+		color: #FFF;
+		border-radius: 3px;
+		border: 1px solid $color-light-gray;
+		font-size: 0.7rem;
+		margin-left: 3px;
+	}
+	.amChartsButton.amcharts-period-input{
+		background: none;		
+	}
+	input.amChartsButton.amcharts-period-input:hover{
+		background: $color-cardinal-red;
+		color: #FFF;
+	}
+	input.amChartsInputField{
+		border-radius: 3px;
+		border: 1px solid $color-light-gray;
+		font-size: 0.7rem;
+		width: 70px !important;
+	}
+	.amChartsInputField.amcharts-end-date-input{
+		margin-left: 3px;
+	}
+	.amChartsPeriodSelector.amcharts-period-selector-div{
+		margin-bottom: 2rem;
+	}
+	.amcharts-scrollbar-chart-div{
+	
+	}
+}	

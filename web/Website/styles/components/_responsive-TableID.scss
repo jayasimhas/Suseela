@@ -16,6 +16,13 @@
 			}
 			&#financialresults {
 				border: 1px solid #d1d3d4;
+				@include textMix('Roboto', 1em, 500);
+				.article {
+					text-align: right;
+					.year_heading, .R16 {
+						padding-right: 10px;
+					}
+				}
 			}
 			.table_head{
 				background-color: #91211E;
@@ -31,7 +38,7 @@
 				    height: 0;
 				}
 				.RB16{
-				   @include textMix('Roboto', 1.0625em, 700);
+				   @include textMix('Roboto', 1em, 500);
 				   font-style: normal;
 				   float: left;
 				}
@@ -64,6 +71,10 @@
 				div{
 					// margin-bottom:10px;
 					padding:10px;
+					@include textMix('Roboto', 1em, 500);
+				}
+				div:first-child{ 
+					@include textMix('Roboto', 1em, bold);
 				}
 				div:nth-child(odd){
 					background-color: $color-concrete-table-gray;
@@ -80,7 +91,7 @@
 			    }
 			}
 			.RB16{
-				   @include textMix('Roboto', 1em, 700);
+				   @include textMix('Roboto', 1em, 500);
 				   font-style: normal;
 				}
 			.article{
@@ -107,6 +118,7 @@
 				padding-right: 40px;
 				height: 5em;
 				word-wrap: break-word;
+				@include textMix('Roboto', 1em, bold);
 				@media only screen and (min-width: 767px) and (max-width: 1024px) {
 				    padding-left: 10px;
 				}
@@ -171,21 +183,39 @@
 // }
 #quarterlyresults {
 	border: 1px solid #d1d3d4;
+	.table-wrapper .tableHead {
+		text-align: right;
+		@include textMix('Roboto', 1em, bold);
+		&:first-child {
+			text-align: left;
+		}
+	}
 }
-#quarterlyresults .tableRow > .tableCell {
-	text-align: center;
+#financialresults, #quarterlyresults {
+	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+		.table_head {
+			position: relative;
+			a[data-toggle] {
+				position: absolute;
+				right: 15px;
+				top: 15px;
+			}
+		}
+	}
 }
-#financialresults .tableRow > .tableCell, #financialresults .tableHead {
+#financialresults .tableRow > .tableCell {
 	text-align: right;
+	@include textMix('Roboto', 1em, 400);
 }
 #financialresults .tableHead:first-child {
 	text-align: left;
 }
+#financialresults .tableHead {
+	@include textMix('Roboto', 1em, bold);
+}
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    font-style: normal;
+    @include textMix('Roboto', 1em, 500);
     text-align: left;
 }
 #financialresults .year_heading {

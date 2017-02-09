@@ -77,7 +77,10 @@ namespace Informa.Web.ViewModels.BuyersGuide
                             IHTMLDocument2 htmldoc2 = (IHTMLDocument2)htmldoc;
                             htmldoc2.write(new object[] { buyersList.Body });
                             JobShortdesc = htmldoc2.body?.outerText;
-                            JobShortdesc = Regex.Replace(JobShortdesc, "\r\n", string.Empty);
+                            if (JobShortdesc != null)
+                            {
+                                JobShortdesc = Regex.Replace(JobShortdesc, "\r\n", string.Empty);
+                            }
 
                             if (JobShortdesc != null && JobShortdesc.Length > 150)
                             {
