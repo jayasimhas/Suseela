@@ -33,8 +33,13 @@ namespace Sitecore.SharedSource.DataImporter.Logger
                 //string strfilepath = string.Format(@"{0}CMCLogs\Content Migration Checks_{1}.xlsx",
                 //    HttpRuntime.AppDomainAppPath, DateTime.Now.ToString("yyyy.MM.dd.H"));
 
+               
+                DirectoryInfo logDirInfo = null;
                 FileInfo fileInfo = new FileInfo(strfilepath);
-
+                logDirInfo = new DirectoryInfo(fileInfo.DirectoryName);
+                if (!logDirInfo.Exists)
+                    logDirInfo.Create();
+                
                 using (var xlPackage = new ExcelPackage(fileInfo))
                 {
                     var ws = xlPackage.Workbook.Worksheets.SingleOrDefault(x => x.Name == publication);
