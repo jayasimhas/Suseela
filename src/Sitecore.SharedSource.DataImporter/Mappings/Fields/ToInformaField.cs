@@ -2567,8 +2567,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-          
-             XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
+
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {
@@ -3846,11 +3846,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                         continue;
                     }
-                    if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("-") || transformValue.Contains("'"))
+                    if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("'"))
                     {
                         transformValue = transformValue.Replace("&", "and");
                         transformValue = transformValue.Replace("/", "or");
-                        transformValue = transformValue.Replace("-", "");
                         transformValue = transformValue.Replace("'", "");
 
                     }
@@ -4287,7 +4286,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            //    XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {
@@ -4451,7 +4451,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            // XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {

@@ -903,7 +903,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
             //  XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
             if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
             {
@@ -2608,7 +2608,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             List<string> keyList = new List<string>();
 
             //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
 
             var elemValue = doc.Descendants(site).Descendants(type).Descendants();
