@@ -2,9 +2,11 @@
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Sitecore.Data.Items;
 
 namespace Informa.Web.ViewModels
 {
@@ -30,13 +32,32 @@ namespace Informa.Web.ViewModels
             {
                 RectangularAdZone = LeaderboardAdZone = FilmstripAdZone = 
                     SiteRootContext.Item?.Global_Article_Ad_Zone;
-
-                RectangularSlotId = articleModel.Article_Medium_Slot_ID.NullIfNoContent() ??
-                                    SiteRootContext.Item?.Company_Rectangular_Slot_ID;
-                LeaderboardSlotId = articleModel.Leaderboard_Slot_ID.NullIfNoContent() ??
-                                    SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
                 FilmstripSlotId = articleModel.Article_Filmstrip_Slot_ID.NullIfNoContent() ??
                                   SiteRootContext.Item?.Global_Article_Filmstrip_Slot_ID;
+
+                //ISW-338 Serving ads based on section taxonomy
+
+                if (articleModel.Taxonomies != null)
+                {
+                    int taxonomyItemCount = 0;
+                    foreach (ITaxonomy_Item item in articleModel.Taxonomies)
+                    {
+                        if (item != null && taxonomyItemCount <=3)
+                        {
+                            LeaderboardSlotId = string.IsNullOrEmpty(LeaderboardSlotId) && !string.IsNullOrEmpty(item.Leaderboard_Slot_ID) ? item.Leaderboard_Slot_ID : LeaderboardSlotId;
+                            RectangularSlotId = string.IsNullOrEmpty(RectangularSlotId) && !string.IsNullOrEmpty(item.Rectangular_Slot_ID) ? item.Rectangular_Slot_ID : RectangularSlotId;
+                            if (!string.IsNullOrEmpty(item.Leaderboard_Slot_ID) && !string.IsNullOrEmpty(item.Rectangular_Slot_ID))
+                                break;
+                            taxonomyItemCount++;                          
+                        }
+                    }
+                }
+                if (string.IsNullOrEmpty(LeaderboardSlotId))
+                    LeaderboardSlotId = articleModel.Leaderboard_Slot_ID.NullIfNoContent() ??
+                                        SiteRootContext.Item?.Global_Leaderboard_Slot_ID;
+                if (string.IsNullOrEmpty(RectangularSlotId))
+                    RectangularSlotId = articleModel.Article_Medium_Slot_ID.NullIfNoContent() ??
+                                      SiteRootContext.Item?.Company_Rectangular_Slot_ID;
             } else if (AdComponentModel != null)
             {
                 RectangularAdZone = LeaderboardAdZone = AdComponentModel.Zone;

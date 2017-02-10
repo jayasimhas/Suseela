@@ -7723,7 +7723,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Tooltip  {get; set;}
-				}
+                    /// <summary>
+                    /// The Tooltip field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 94352249-84A2-4DD1-888E-E6B3A1E880D3</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ITaxonomy_ItemConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    string Leaderboard_Slot_ID { get; set; }
+                    /// <summary>
+                    /// The Tooltip field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 36DDAFB0-B5E4-417F-A9FE-A1A80F81F766</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ITaxonomy_ItemConstants.Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    string Rectangular_Slot_ID { get; set; }
+    }
 
 	
 		/// <summary>
@@ -7762,7 +7780,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Tooltip  {get; set;}
-						}
+                        /// <summary>
+                        /// The Tooltip field.
+                        /// <para></para>
+                        /// <para>Field Type: Single-Line Text</para>		
+                        /// <para>Field ID: 94352249-84A2-4DD1-888E-E6B3A1E880D3</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ITaxonomy_ItemConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        string Leaderboard_Slot_ID { get; set; }
+                        /// <summary>
+                        /// The Tooltip field.
+                        /// <para></para>
+                        /// <para>Field Type: Single-Line Text</para>		
+                        /// <para>Field ID: 36DDAFB0-B5E4-417F-A9FE-A1A80F81F766</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ITaxonomy_ItemConstants.Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        string Rectangular_Slot_ID { get; set; }
+    }
 	
 	public static partial class ITaxonomy_ItemConstants{
 
@@ -7784,9 +7820,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
 			public const string TooltipFieldName = "Tooltip";
 
-						
-					
-			public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+            public static readonly ID Leaderboard_Slot_IDFieldId = new ID("94352249-84A2-4DD1-888E-E6B3A1E880D3");
+            public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+            public static readonly ID Rectangular_Slot_IDFieldId = new ID("36DDAFB0-B5E4-417F-A9FE-A1A80F81F766");
+            public const string Rectangular_Slot_IDFieldName = "Rectangular Slot ID";
+
+
+
+        public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
 			public const string FactoryLinkableTextsFieldName = "FactoryLinkableText";
 
 						
