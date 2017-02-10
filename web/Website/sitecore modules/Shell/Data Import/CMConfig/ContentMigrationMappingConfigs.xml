@@ -665,6 +665,7 @@
 			<Agen  name= "CFTC">CFTC</Agen>
 			<Agen  name= "Codex Alimentarius">Codex Alimentarius</Agen>
 			<Agen  name= "ComAgri">ComAgri</Agen>
+			<Agen  name= "(ComAgri)">ComAgri</Agen>
 			<Agen  name= "Coreper">Coreper</Agen>
 			<Agen  name= "Council of Ministers">Council of Ministers</Agen>
 			<Agen  name= "CRD">CRD</Agen>
@@ -710,9 +711,11 @@
 			<Agen  name= "PMRA">PMRA</Agen>
 			<Agen  name= "SCA">SCA</Agen>
 			<Agen  name= "SEC">SEC</Agen>
+			<Agen  name= "(SEC)">SEC</Agen>
 			<Agen  name= "Senate">Senate</Agen>
 			<Agen  name= "Supreme Court">Supreme Court</Agen>
 			<Agen  name= "UK FSA">UK FSA</Agen>
+			<Agen  name= "FSA">UK FSA</Agen>
 			<Agen  name= "UN">UN</Agen>
 			<Agen  name= "US FSA">US FSA</Agen>
 			<Agen  name= "USDA">USDA</Agen>
@@ -1503,7 +1506,7 @@
 				<comm name="public_ledger_analysis">Commercial</comm>
 				<comm name="foodnews_analysis_company">Commercial</comm>
 				<comm name="foodnews_analysis_company_operations">Operations</comm>
-				<comm name="foodnews_analysis_company_investment">Investment</comm>
+				<comm name="foodnews_analysis_company_investment">Investments</comm>
 				<comm name="foodnews_analysis_company_personnel">People</comm>
 				<comm name="foodnews_analysis_company_results">Financial Results</comm>
 				<comm name="foodnews_analysis_company_manda"><![CDATA[M&A]]></comm>
@@ -1842,6 +1845,7 @@
 				<comm name="public_ledger_commodities_grains_corn">Corn</comm>
 				<comm name="public_ledger_commodities_grains_rice">Rice</comm>
 				<comm name="public_ledger_commodities_grains_wheat">Wheat</comm>
+        <comm name="public_ledger_commodities_grains"><![CDATA[Grains & Feed]]></comm>        
 				<comm name="public_ledger_commodities_oils_oilseeds">
 					<![CDATA[Oils & Oilseeds]]>
 				</comm>
@@ -1972,6 +1976,7 @@
 				<commsearch name="soya">Soy</commsearch>
 				<commsearch name="Soy Oil">Soy Oil</commsearch>
 				<commsearch name="Soya Oil">Soy Oil</commsearch>
+        <commsearch name="soybean oil">Soy Oil</commsearch>        
 				<commsearch name="Sunflowerseed">Sunflowerseed</commsearch>
 				<commsearch name="sunflower">Sunflowerseed</commsearch>
 				<commsearch name="sunflowers">Sunflowerseed</commsearch>
