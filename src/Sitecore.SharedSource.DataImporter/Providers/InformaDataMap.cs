@@ -374,7 +374,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     ao.Add("STORYBODY", bodyTitleHtml);
 
-                    string summarySearch = "";
+                    string summarySearch = " ";
                     if (GetXMLData(d, "SUMMARY") != null)
                     {
                         summarySearch = GetXMLData(d, "SUMMARY");
@@ -390,6 +390,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string summSearch = RemovespecialcharactersfromString(summarySearch);
                         string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
                         string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
+                        string specialcommoditysearch = " " + cleanTitle + " " + summarySearch;
                         string Country = "";
                         string Companies = "";
                         string Agency = "";
@@ -422,7 +423,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             if (publication == "commodities")
                             {
-                                commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => summSearch.ToLower().Contains(" " + s + " "));
+                                commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
                             }
 
                             if (publication == "commodities")
@@ -456,7 +457,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             {
                                 foreach (string commodityfactor in commodityfactorSearchResults)
                                 {
-                                    if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks")))
+                                    if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks"))|| !(commodityfactor.ToLower() == "energy drinks" && commodityfactorSearchResults.Contains("energy drinks")))
                                         CommodityFactor += commodityfactor + ",";
 
                                 }
@@ -480,7 +481,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         foreach (string company in companySearchResults)
                         {
-                            if (!(publication == "AnimalPharma" && company == "bayer animal health") && !(publication == "Agrow" && company == "bayer cropscience") && !(publication == "commodities" && company == "bayer animal health"))
+                            if (!(publication == "AnimalPharma" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "commodities" && company == "bayer animal health"))
                                 Companies += company + ",";
 
 
@@ -750,7 +751,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/",":" };
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")
@@ -903,7 +904,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
             //  XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
             if (doc.Descendants(site).Descendants(publication).Descendants(type).Descendants().Any(x => x.Attribute("name").Value.ToLower() == contentName.ToLower()))
             {
@@ -2608,7 +2609,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             List<string> keyList = new List<string>();
 
             //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
 
 
             var elemValue = doc.Descendants(site).Descendants(type).Descendants();

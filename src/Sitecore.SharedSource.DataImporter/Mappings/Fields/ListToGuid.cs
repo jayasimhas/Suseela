@@ -180,8 +180,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     }
                     //loop through children and look for anything that matches by name
                     string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
-                    IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
-                    if (tauthor.Any() && !f.Value.Contains(tauthor.First().ID.ToString()))
+
+                    IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(cleanName.ToLower()));
+                    if (!tauthor.Any())
+                    {
+                        tauthor = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(cleanName.ToLower()));
+                    }
+                        //  IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+                        if (tauthor.Any() && !f.Value.Contains(tauthor.First().ID.ToString()))
                     {
                         f.Value = f.Value + "|" + tauthor.First().ID.ToString();
                         autlog += tauthor.First().Name + ",";
@@ -223,9 +229,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
             //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-          
-           
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore\CMConfig\ContentMigrationMappingConfigs.xml", System.Web.HttpRuntime.AppDomainAppPath));
+
+
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {

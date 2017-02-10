@@ -3452,8 +3452,7 @@ body.lightboxed {
   overflow: auto;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid #d1d3d4;
-  font-family: 'Roboto'; }
+  border: 1px solid #d1d3d4; }
   .ID-responsive-table-modal .container {
     background-color: #fff;
     margin: auto;
@@ -3464,20 +3463,23 @@ body.lightboxed {
     border: 1px solid #d1d3d4;
     border-top: none; }
     .ID-responsive-table-modal .table-wrapper .tableHead {
-      text-align: right; }
+      text-align: right;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold; }
 
 .idi-table-heading {
   background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 1.125em;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: 500;
   margin-top: 45px;
   padding: 5px; }
   .idi-table-heading span {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.125em;
+    font-size: 1em;
     font-weight: 700;
     padding-left: 10px; }
 
@@ -3539,7 +3541,7 @@ body.lightboxed {
     display: table-header-group; }
   .table-wrapper .tableHead {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.125em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     font-family: "PT Serif", Georgia, serif;
@@ -3558,7 +3560,10 @@ body.lightboxed {
     display: table-cell;
     padding: 5px; }
   .table-wrapper .tableCell:first-child {
-    text-align: left; }
+    text-align: left;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500; }
   .table-wrapper .tableCell {
     text-align: right; }
 
@@ -3597,7 +3602,10 @@ body.lightboxed {
       .ID-Responsive-Table .table-sort {
         display: none; } }
   .ID-Responsive-Table#financialresults {
-    border: 1px solid #d1d3d4; }
+    border: 1px solid #d1d3d4;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500; }
     .ID-Responsive-Table#financialresults .article {
       text-align: right; }
       .ID-Responsive-Table#financialresults .article .year_heading, .ID-Responsive-Table#financialresults .article .R16 {
@@ -3725,7 +3733,10 @@ body.lightboxed {
 #quarterlyresults {
   border: 1px solid #d1d3d4; }
   #quarterlyresults .table-wrapper .tableHead {
-    text-align: right; }
+    text-align: right;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
     #quarterlyresults .table-wrapper .tableHead:first-child {
       text-align: left; }
 
@@ -3737,17 +3748,25 @@ body.lightboxed {
       right: 15px;
       top: 15px; } }
 
-#financialresults .tableRow > .tableCell, #financialresults .tableHead {
-  text-align: right; }
+#financialresults .tableRow > .tableCell {
+  text-align: right;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400; }
 
 #financialresults .tableHead:first-child {
   text-align: left; }
 
-#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
+#financialresults .tableHead {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  font-weight: 700;
-  font-style: normal;
+  font-weight: bold; }
+
+#quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
   text-align: left; }
 
 #financialresults .year_heading {
@@ -6637,6 +6656,53 @@ section: UI Elements
 .article-related-content h5, .article-related-content .alert-success p, .alert-success .article-related-content p, .article-related-content .alert-error p, .alert-error .article-related-content p, .article-related-content .article-call-to-action__subtitle {
   margin-bottom: 20px !important; }
 
+.balticChartsWrapper {
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
+  @media (max-width: 480px) {
+    .balticChartsWrapper {
+      margin-bottom: 80px;
+      margin-bottom: 5rem; } }
+  .balticChartsWrapper .balticChart {
+    width: 300px;
+    height: 300px;
+    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-style: normal;
+    font-weight: 400; }
+    .balticChartsWrapper .balticChart .amChartsLegend.amcharts-legend-div {
+      margin-top: 32px;
+      margin-top: 2rem; }
+    .balticChartsWrapper .balticChart .amChartsButton {
+      border-radius: 3px;
+      border: 1px solid #d1d3d4;
+      font-size: 11px;
+      font-size: 0.7rem;
+      margin-left: 3px; }
+    .balticChartsWrapper .balticChart .amcharts-period-input-selected {
+      background: #be1e2d;
+      color: #FFF;
+      border-radius: 3px;
+      border: 1px solid #d1d3d4;
+      font-size: 11px;
+      font-size: 0.7rem;
+      margin-left: 3px; }
+    .balticChartsWrapper .balticChart .amChartsButton.amcharts-period-input {
+      background: none; }
+    .balticChartsWrapper .balticChart input.amChartsButton.amcharts-period-input:hover {
+      background: #be1e2d;
+      color: #FFF; }
+    .balticChartsWrapper .balticChart input.amChartsInputField {
+      border-radius: 3px;
+      border: 1px solid #d1d3d4;
+      font-size: 11px;
+      font-size: 0.7rem;
+      width: 70px !important; }
+    .balticChartsWrapper .balticChart .amChartsInputField.amcharts-end-date-input {
+      margin-left: 3px; }
+    .balticChartsWrapper .balticChart .amChartsPeriodSelector.amcharts-period-selector-div {
+      margin-bottom: 32px;
+      margin-bottom: 2rem; }
+
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
   width: 790px;
@@ -8832,6 +8898,28 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .id-merges-acquisition .merges-form, .id-merges-acquisition .visible-xs {
         display: block; } }
+  .id-merges-acquisition .desktop-controls {
+    float: right; }
+  .id-merges-acquisition .show-largest-btn {
+    padding: 10px;
+    background-color: #DE4361;
+    color: #ffffff !important;
+    float: left;
+    margin-right: 10px;
+    font-size: 14px; }
+    .id-merges-acquisition .show-largest-btn:hover, .id-merges-acquisition .show-largest-btn:focus, .id-merges-acquisition .show-largest-btn:active {
+      color: #ffffff !important;
+      text-decoration: none !important; }
+    .id-merges-acquisition .show-largest-btn.active {
+      position: relative; }
+      .id-merges-acquisition .show-largest-btn.active:after {
+        content: '';
+        height: 5px;
+        background-color: #00a653;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        right: 0; }
   .id-merges-acquisition .dealsOmitted {
     float: right;
     width: 100%;
@@ -9076,6 +9164,12 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .merges-form .merge-form-items {
       display: none;
       background-color: #DE4361; }
+      .id-merges-acquisition .merges-form .merge-form-items .show-largest-btn {
+        margin: 0;
+        font-size: 12px;
+        padding: 12px 10px;
+        width: 100%;
+        text-align: center; }
       .id-merges-acquisition .merges-form .merge-form-items .forms {
         width: 50%;
         padding: 10px;
@@ -9090,7 +9184,8 @@ div#feedbacklite.fbl_r {
           color: #58595b; }
       .id-merges-acquisition .merges-form .merge-form-items .controls {
         float: left;
-        width: 100%; }
+        width: 100%;
+        background: #91211E; }
         .id-merges-acquisition .merges-form .merge-form-items .controls .selectivity-input {
           width: 100%;
           overflow: hidden;
