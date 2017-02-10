@@ -1,8 +1,8 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.AMGraphsViewModel
 
 <script src="~/js/components/AMchartsGroup.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="/dist/js/amcharts.js"></script>
+<script type="text/javascript" src="/dist/js/serial.js"></script>
 <div class="carousel-div-graph" id="graph-carousel">
     <div>
         <h1 >@Model.CompanyName</h1>
@@ -16,7 +16,7 @@
             {
                 <div class="loadChart graph-container item">
                     <h5><a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID">@Graph.GraphTitle</a></h5>
-                    <a href="/"><div id="chartdiv_@Graph.GraphID"></div></a>
+                    <a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID"><div id="chartdiv_@Graph.GraphID"></div></a>
                     <script>
                         var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
                         var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
@@ -25,8 +25,5 @@
                     </script>
                 </div>
             }
-            <script type="text/javascript">
-                setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
-            </script>
         </div> 
 </div>

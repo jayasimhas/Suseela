@@ -1,8 +1,8 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompaniesCarouselViewModel
 
 <script src="~/js/components/AMchartsGroup.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="/dist/js/amcharts.js"></script>
+<script type="text/javascript" src="/dist/js/serial.js"></script>
 
 <div class="carousel-div" id="main-carousel">
     <div class="companies_heading">
@@ -25,7 +25,7 @@
                     <li class="item">
                         <div class="li-content-graph">
                             <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
-                            <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                            <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
                         </div>
                         <script>
                             var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
