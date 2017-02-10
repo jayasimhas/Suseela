@@ -7,7 +7,7 @@
 <script src="//www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
 <script src="//www.amcharts.com/lib/3/amstock.js" type="text/javascript"></script>
 <div>
-    <b><span id="@AMGraph.GraphID">@AMGraph.GraphTitle</span></b>
+    <h6><span id="@AMGraph.GraphID">@AMGraph.GraphTitle</span></h6>
 </div>
 
 <script>
@@ -160,11 +160,11 @@
                 chart.write('chartdiv');
             }
 </script>
-<style>
+@*<style>
     .amcharts-period-input-selected{background: darkturquoise;
     font-weight: bold;}
-</style>
- <b><p id="latest-value"></p></b>
- <div id="chartdiv" style="height:350px;margin-bottom:30px;"></div>
+</style>*@
+ <h6><p id="latest-value"></p></h6>
+ <div id="chartdiv" class="balticChart"></div>
 
 
