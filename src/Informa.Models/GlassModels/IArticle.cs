@@ -120,6 +120,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public string Leaderboard_Slot_ID2 { get; set; }
         [SitecoreField("__updated")]
         public virtual DateTime Updated { get; set; }
+
+        public ITaxonomy_Item SponsoredBy { get; set; }        
     }
 
     public interface IPublicationChild

@@ -13,6 +13,10 @@ namespace Informa.Web.ViewModels.SponsoredContent
     {
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
+
+        public IListableViewModel ListableItems { get; set; }
+
+        public ArticleViewType ArticleViewType { get; set; }        
         public SponsoredContent(IArticleSearch articleSearch)
         {
             ArticleSearch = articleSearch;

@@ -3026,6 +3026,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// </summary>
         [SitecoreField(IArticleConstants.Notification_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Notification_Text { get; set; }
+
+        /// <summary>
+        /// The Sponsored By field.
+        /// <para></para>
+        /// <para>Field Type: DropLink</para>		
+        /// <para>Field ID: 11B52070-FC47-42FB-B25E-8DD316F76D61</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.SponsoredByFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item SponsoredBy { get; set; }
     }
 
 
@@ -3374,6 +3384,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// </summary>
         [SitecoreField(IArticleConstants.Notification_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Notification_Text { get; set; }
+
+        /// <summary>
+        /// The Sponsored By field.
+        /// <para></para>
+        /// <para>Field Type: DropLink</para>		
+        /// <para>Field ID: 11B52070-FC47-42FB-B25E-8DD316F76D61</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IArticleConstants.SponsoredByFieldName, Setting = SitecoreFieldSettings.InferType)]
+        ITaxonomy_Item SponsoredBy { get; set; }
     }
 
     public static partial class IArticleConstants
@@ -3564,11 +3584,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         public static readonly ID Notification_TextFieldId = new ID("99c8be36-4215-4c67-88e7-ee066c605bea");
         public const string Notification_TextFieldName = "Notification Text";
 
-
+        public static readonly ID SponsoredByFieldId = new ID("11B52070-FC47-42FB-B25E-8DD316F76D61");
+        public const string SponsoredByFieldName = "Sponsored By";
 
         public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
         public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
 
 
         public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
@@ -13880,7 +13900,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     }
 
 }
-
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
 {
     /// <summary>
@@ -14123,7 +14142,106 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
     }
+}
 
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+    /// <summary>
+    /// Sponsored Content Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Sponsored Content</para>	
+    /// <para>ID: 9B4D2C20-1501-434E-B154-544B09C6BBDE</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ISponsored_ContentConstants.TemplateIdString)]
+    public partial interface ISponsored_Content : IGlassBase
+    {
+        /// <summary>
+        /// Image field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 0EA511A7-E1B3-4731-B30B-C59A1162EC4E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISponsored_ContentConstants.Sponsor_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Sponsor_Logo { get; set; }
+
+        /// <summary>
+        /// Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title { get; set; }
+
+        /// <summary>
+        /// Meta Tag line field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Meta_Tag_line { get; set; }
+
+    }
+    /// <summary>
+    /// Sponsored Content Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Sponsored Content</para>	
+    /// <para>ID: 9B4D2C20-1501-434E-B154-544B09C6BBDE</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ISponsored_Content__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Image field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 0EA511A7-E1B3-4731-B30B-C59A1162EC4E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISponsored_ContentConstants.Sponsor_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Sponsor_Logo { get; set; }
+
+        /// <summary>
+        /// Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Title { get; set; }
+
+        /// <summary>
+        /// Meta Tag line field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Meta_Tag_line { get; set; }
+    }
+
+    public static partial class ISponsored_ContentConstants
+    {
+
+        public const string TemplateIdString = "9B4D2C20-1501-434E-B154-544B09C6BBDE";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Sponsored Content";
+
+        public static readonly ID Sponsor_LogoFieldId = new ID("0EA511A7-E1B3-4731-B30B-C59A1162EC4E");
+        public const string Sponsor_LogoFieldName = "Sponsor Logo";
+
+        public static readonly ID TitleFieldId = new ID("80685513-6061-41CD-B9AD-185B0A65914B");
+        public const string TitleFieldName = "Title";
+
+        public static readonly ID Meta_Tag_lineFieldId = new ID("AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA");
+        public const string Meta_Tag_lineFieldName = "Meta Tag line";
+    }
 }
 //Market Data Component Parameters
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components

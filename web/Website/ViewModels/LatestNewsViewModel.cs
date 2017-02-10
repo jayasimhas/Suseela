@@ -22,6 +22,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
 using Informa.Library.Search.ComputedFields.Facets;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
+using Informa.Web.ViewModels.SponsoredContent;
 
 namespace Informa.Web.ViewModels
 {
@@ -34,7 +35,7 @@ namespace Informa.Web.ViewModels
         protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
         protected IGlassBase Datasource;
-
+        public readonly ISponsoredContent SponsoredContent;
         public LatestNewsViewModel(IGlassBase datasource,
             IRenderingContextService renderingParametersService,
             IArticleSearch articleSearch,
@@ -43,7 +44,8 @@ namespace Informa.Web.ViewModels
             ISiteRootContext rootContext,
             ITextTranslator textTranslator,
             IAuthorService authorService,
-            IDCDReader dcdReader)
+            IDCDReader dcdReader,
+            ISponsoredContent sponsoredContent)
         {
             Datasource = datasource;
             ArticleSearch = articleSearch;
@@ -52,6 +54,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             AuthorService = authorService;
             DcdReader = dcdReader;
+            SponsoredContent = sponsoredContent;
 
             Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
