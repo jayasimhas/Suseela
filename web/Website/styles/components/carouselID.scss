@@ -164,6 +164,12 @@
 		display: block;
 		width: 100%;
 		position: relative;
+		border-top: 1px solid #d1d3d4;
+		padding-top: 20px;
+		@media screen and (max-width: 767px) {
+			border-top: none;
+			padding-top: 0px;
+		}
 		span{
 			width: 100%;
 			display: inline-block;
