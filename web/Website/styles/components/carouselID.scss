@@ -83,14 +83,14 @@
 		}
 		/*.owl-item{
 			float: left;
-		}
-		.owl-item.active{
-			@include breakpoint('small') {
-				/*width: auto !important;
-				display: block;
-				float: none;
-			}
 		}*/
+		.marketDataTable{
+			.owl-item.active{
+				@include breakpoint('small') {
+					width: auto !important;
+				}
+			}
+		}
 		.owl-dots{
 			position: absolute;
 			top: 0;

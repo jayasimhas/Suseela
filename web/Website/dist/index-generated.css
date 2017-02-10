@@ -2147,13 +2147,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 #main-carousel {
   /*.owl-item{
 			float: left;
-		}
-		.owl-item.active{
-			@include breakpoint('small') {
-				/*width: auto !important;
-				display: block;
-				float: none;
-			}
 		}*/ }
   #main-carousel .owl-carousel .item {
     height: 290px; }
@@ -2210,6 +2203,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     @media (max-width: 480px) {
       #main-carousel .showinMob {
         display: block; } }
+  @media (max-width: 480px) {
+    #main-carousel .marketDataTable .owl-item.active {
+      width: auto !important; } }
   #main-carousel .owl-dots {
     position: absolute;
     top: 0;
