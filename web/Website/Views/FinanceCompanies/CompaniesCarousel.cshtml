@@ -4,40 +4,39 @@
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
 
-<div style="background-color: #eeeeee;overflow: hidden;">
-    <div class="carousel-heading">@Model.CarouselHeading</div>
-
-    @foreach (var company in Model.CompanyCarouselPanels)
-    {
-        <div style="clear: both; margin-bottom: 20px; margin-left: 20px;">
-            <div style="float: left;">
-                <div style="float:left"><a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" height="140" width="200" /></a></div>
-                <div style="float:left; width: 200px;">
-                    <a href="@company.CompanyLandingPageUrl">@company.CompanyName</a><br />
-                    <a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a>
-                </div>
-            </div>
-            @foreach (var Graph in company.Graphs)
+<div class="carousel-div" id="main-carousel">
+    <div class="companies_heading">
+        <span>@Model.CarouselHeading</span>
+    </div>
+    <div>
+        <ul id="mycarousel" class="owl-carousel owl-theme owl-loaded owl-responsive-1000">
+            @foreach (var company in Model.CompanyCarouselPanels)
             {
-
-                <div class="graph-container lightgray-body" style="float:left;">
-                    @{
-                        var chartDivId = company.CompanyId + "_" + Graph.GraphID;
-                    }
-                    <h5 style="font-size: 14px;"><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID" style="color: #333333;margin-left: 6px;">@Graph.GraphTitle</a></h5>
-                    <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
-                    <script>
-                        var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                        var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                        var chartData = data[0]["@Graph.GraphID"];
-                        PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
-                    </script>
-                </div>
-
-                        }
-        </div>
-                        }
-    <script type="text/javascript">
-        setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
-    </script>
+                <li class="item">
+                    <div class="li-content-company">
+                        <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
+                        <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
+                        <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
+                    </div>
+                </li>
+                foreach (var Graph in company.Graphs)
+                {
+                    var chartDivId = company.CompanyId + "_" + Graph.GraphID;
+                    <li class="item">
+                        <div class="li-content-graph">
+                            <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
+                            <a href="/"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                        </div>
+                        <script>
+                            var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
+                            var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                            var chartData = data[0]["@Graph.GraphID"];
+                            PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                        </script>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
 </div>
+
