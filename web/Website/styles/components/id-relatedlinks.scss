@@ -115,6 +115,30 @@
 	@include breakpoint('small') {
 		margin-bottom: 5rem;
 	}
+#balticDryData{
+	text-transform: initial;
+	float: left;
+}
+#latest-value{
+		float: right;
+	span.fall{
+         color: #f40600;
+         background: url("/dist/img/chart_down.gif");
+         background-repeat: no-repeat;
+         background-position: right center;
+         padding-right: 10px;
+        margin-right: 0;
+   }
+   span.rise{
+		color: #56c405;
+		background: url("/dist/img/chart_up.gif");
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding-right: 10px;
+         margin-right: 0;
+     }
+
+}	
 .balticChart{	
 	width: 300px; 
 	height: 300px;
