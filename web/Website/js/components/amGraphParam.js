@@ -104,3 +104,37 @@ window.PrintGraph = function(chartData, divId, skinUrl){
         //}
     }
 }
+
+$(function(){
+	if($('#mycarousel') && $('#mycarousel').length){
+		$('#mycarousel.owl-carousel').owlCarousel({
+			loop:true,
+			autoPlay: false,
+			nav: true,
+			navContainer: '#customNav',
+			dotsContainer: '#customDots',
+			slideBy: 4,
+			 navText: [
+				  "<img src='/dist/img/prev-horizontal.png'/>",
+				  "<img src='/dist/img/next-horizontal.png'/>"
+				  ],
+			responsive:{
+				0:{
+				items:4
+				},
+				678:{
+				items:4
+				},
+				320:{
+				 items:1
+				},
+				480:{
+				 items:1
+				},
+				1000:{
+				items:4
+				}
+			}
+		});
+	}
+});
