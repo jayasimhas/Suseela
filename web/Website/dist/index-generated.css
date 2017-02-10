@@ -6659,7 +6659,8 @@ section: UI Elements
 
 .balticChartsWrapper {
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  width: 100%; }
   @media (max-width: 480px) {
     .balticChartsWrapper {
       margin-bottom: 80px;

@@ -112,6 +112,7 @@
 } 
 .balticChartsWrapper{
 	margin-bottom: 2rem;
+	width: 100%;
 	@include breakpoint('small') {
 		margin-bottom: 5rem;
 	}
