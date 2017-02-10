@@ -85,7 +85,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger
             catch(Exception ex)
             {
 
-                XMLDataLogger.WriteLog(articleId, "excelsheet");
+                XMLDataLogger.WriteLog(articleId, "ArticleWithErrors");
             }
 
         }
