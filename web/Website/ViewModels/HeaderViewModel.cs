@@ -9,6 +9,8 @@ using System.Web;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Web.ViewModels
 {
@@ -90,12 +92,37 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                string local = string.Copy(GlassModel?.Leaderboard_Slot_ID ?? string.Empty);
-                return string.IsNullOrEmpty(local)
-                    ? SiteRootContext.Item?.Global_Leaderboard_Slot_ID ?? string.Empty
-                    : local;
-            }
-        }
+                //ISW-338 Serving ads based on section taxonomy
+                string LeaderboardSlotId = string.Empty;
+                var articleModel = GlassModel as IArticle;
+                if (articleModel != null)
+                {
+                    if (articleModel.Taxonomies != null)
+                    {
+                        int taxonomyItemCount = 0;
+                        foreach (ITaxonomy_Item item in articleModel.Taxonomies)
+                        {
+                            if (item != null && taxonomyItemCount <= 3)
+                            {
+                                LeaderboardSlotId = string.IsNullOrEmpty(LeaderboardSlotId) && !string.IsNullOrEmpty(item.Leaderboard_Slot_ID) ? item.Leaderboard_Slot_ID : LeaderboardSlotId;
+
+                                if (!string.IsNullOrEmpty(item.Leaderboard_Slot_ID))
+                                    break;
+                                taxonomyItemCount++;
+                            }
+                        }
+                    }
+                }
+                    if (string.IsNullOrEmpty(LeaderboardSlotId))
+                    {
+                        string local = string.Copy(GlassModel?.Leaderboard_Slot_ID ?? string.Empty);
+                        return string.IsNullOrEmpty(local)
+                            ? SiteRootContext.Item?.Global_Leaderboard_Slot_ID ?? string.Empty
+                            : local;
+                    }
+                    return LeaderboardSlotId;
+                }
+            }        
 
         public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
     }
