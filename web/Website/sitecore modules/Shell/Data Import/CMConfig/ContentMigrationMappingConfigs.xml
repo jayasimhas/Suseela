@@ -711,7 +711,7 @@
 			<Agen  name= "PMRA">PMRA</Agen>
 			<Agen  name= "SCA">SCA</Agen>
 			<Agen  name= "SEC">SEC</Agen>
-			<Agen  name= "(SEC)">SEC</Agen>
+			
 			<Agen  name= "Senate">Senate</Agen>
 			<Agen  name= "Supreme Court">Supreme Court</Agen>
 			<Agen  name= "UK FSA">UK FSA</Agen>
@@ -845,7 +845,7 @@
 			<comp name="Barry Callebaut">Barry Callebaut</comp>
 			<comp name="BASF">BASF</comp>
 			<comp name="BASF's">BASF</comp>
-			<comp name="BASF’s">BASF</comp>
+			
 			<comp name="Bata Food">Bata Food</comp>
 			<comp name="Bayas del Sur">Bayas del Sur</comp>
 			<comp name="Bayer Animal Health">Bayer Animal Health</comp>
