@@ -34,8 +34,7 @@ namespace Informa.Web.ViewModels
         public readonly ITextTranslator TextTranslator;
         protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
-        protected IGlassBase Datasource;
-        public readonly ISponsoredContent SponsoredContent;
+        protected IGlassBase Datasource;        
         public LatestNewsViewModel(IGlassBase datasource,
             IRenderingContextService renderingParametersService,
             IArticleSearch articleSearch,
@@ -44,8 +43,7 @@ namespace Informa.Web.ViewModels
             ISiteRootContext rootContext,
             ITextTranslator textTranslator,
             IAuthorService authorService,
-            IDCDReader dcdReader,
-            ISponsoredContent sponsoredContent)
+            IDCDReader dcdReader)
         {
             Datasource = datasource;
             ArticleSearch = articleSearch;
@@ -53,8 +51,7 @@ namespace Informa.Web.ViewModels
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             AuthorService = authorService;
-            DcdReader = dcdReader;
-            SponsoredContent = sponsoredContent;
+            DcdReader = dcdReader;           
 
             Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
