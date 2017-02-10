@@ -128,14 +128,16 @@ $(document).ready(function() {
                 chart4.validateData();
             });
             $(".show-largest-btn").click(function() {
-                chart.dataProvider = generateChartDataSizeRange();
-                chart.validateData();
-                chart2.dataProvider = generateChartDataDealsByRegion();
-                chart2.validateData();
-                chart3.dataProvider = generateChartDataByRegion();
-                chart3.validateData();
-                chart4.dataProvider = generateChartData();
-                chart4.validateData();
+                setTimeout(function () {
+                    chart.dataProvider = generateChartDataSizeRange();
+                    chart.validateData();
+                    chart2.dataProvider = generateChartDataDealsByRegion();
+                    chart2.validateData();
+                    chart3.dataProvider = generateChartDataByRegion();
+                    chart3.validateData();
+                    chart4.dataProvider = generateChartData();
+                    chart4.validateData();
+                }, 1000);
             });
             var defaultRegions = ["Africa", "Asia-Pacific", "Bermuda", "Europe", "Global", "Latin America", "London/UK", "North America"];
             var defaultTypes = ["non-life", "life", "international/reinsurance", "composite"];

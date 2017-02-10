@@ -15,6 +15,9 @@
                 <div class="clearfix">
                     <div class="controls">
                         <div class="forms">
+                            <a href="#" class="show-largest-btn" data-large="1000">@Model.ShowLargest</a>
+                        </div>
+                        <div class="forms">
                             <select class="idYearSelect">
                                 @{
                                     int mob_curYear = DateTime.Now.Year;
@@ -93,30 +96,33 @@
             <div class="table-responsive">
                 <div class="idi-table-heading hidden-xs clearfix">
                     <p class="heading">@Model.TableTitle</p>
-                    <div class="dropdown-wrapper">
-                        <select class="idYearSelect">
-                            @{
-                                int curYear = DateTime.Now.Year;
-                                string curUrl = @HttpContext.Current.Request.RawUrl.Split('?')[0] + "?year=";
-                                string selectedYear = @HttpContext.Current.Request.QueryString["year"];
-                                <option value="@curYear" data-href="@curUrl@curYear">Latest</option>
-                                for (int i = 0; i <= 6; i++)
-                                {
-                                    curYear--;
-                                    if (curYear.ToString() == selectedYear)
+                    <div class="desktop-controls">
+                        <a href="#" class="show-largest-btn" data-large="1000">@Model.ShowLargest</a>
+                        <div class="dropdown-wrapper">
+                            <select class="idYearSelect">
+                                @{
+                                    int curYear = DateTime.Now.Year;
+                                    string curUrl = @HttpContext.Current.Request.RawUrl.Split('?')[0] + "?year=";
+                                    string selectedYear = @HttpContext.Current.Request.QueryString["year"];
+                                    <option value="@curYear" data-href="@curUrl@curYear">Latest</option>
+                                    for (int i = 0; i <= 6; i++)
                                     {
-                                        <option value="@curYear" data-href="@curUrl@curYear" selected>@curYear</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
-                                    }
+                                        curYear--;
+                                        if (curYear.ToString() == selectedYear)
+                                        {
+                                            <option value="@curYear" data-href="@curUrl@curYear" selected>@curYear</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@curYear" data-href="@curUrl@curYear">@curYear</option>
+                                        }
 
+                                    }
                                 }
-                            }
-                        </select>
-                    </div>
-                </div>
+                            </select>
+                        </div>
+                  </div>
+                 </div>
                 <div class="wrap-merge">
                     <table class="table merge-acquistion">
                         <thead class="table_head">

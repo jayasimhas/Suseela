@@ -10,11 +10,11 @@
                 <div class="saveoption mtop-10 hidden-xs">
                     @if (Model.EnableSavePreferencesCheck)
                     {
-                        <a class="registrationBtn validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
+                        <a class="registrationBtn button--filled button--outline validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
                     }
                     else
                     {
-                        <a class="registrationBtn validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
+                        <a class="registrationBtn button--filled button--outline validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                     }
                 </div>
             </div>
@@ -45,11 +45,11 @@
             <div class="complete-settings">
                 @if (Model.EnableSavePreferencesCheck)
                 {
-                    <a class="registrationBtn validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
+                    <a class="registrationBtn button--filled button--outline validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
                 }
                 else
                 {
-                    <a class="registrationBtn validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
+                    <a class="registrationBtn button--filled button--outline validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                 }
             </div>
         </div>
@@ -61,11 +61,11 @@
             <div class="buttonsPan">
                 @if (Model.EnableSavePreferencesCheck)
                 {
-                    <a href="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupYesButtonText</a>
+                    <a href="@Model.MyViewPageUrl" class="registrationBtn button--filled button--outline validationChk">@Model.PopupYesButtonText</a>
                 }
                 else
                 {
-                    <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn validationChk">@Model.PopupYesButtonText</a>
+                    <a href="/" name="@Model.MyViewPageUrl" class="registrationBtn button--filled button--outline validationChk">@Model.PopupYesButtonText</a>
                 }
                 <span class="cancel cancel-modal">@Model.PopupNoButtonText</span>
             </div>
@@ -104,8 +104,8 @@
                                 <p class="page-account-contact__error"></p>
                             </div>
                             <div class="saveoption mb-10 hidden-large">
-                                <span class="saveview">@Model.SaveButtonText</span>
-                                <span class="gotoview"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
+                                <span class="saveview button--filled button--outline">@Model.SaveButtonText</span>
+                                <span class="gotoview"><a class="button--outline" href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                             </div>
                             <div class="modal-overlay"></div>
                             <div class="modal-view preferences">
@@ -126,8 +126,8 @@
                         </div>
 
                         <div class="saveoption">
-                            <span class="saveview validationChk">@Model.SaveButtonText</span>
-                            <span class="gotoview"><a href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
+                            <span class="saveview button--filled button--outline validationChk">@Model.SaveButtonText</span>
+                            <span class="gotoview"><a class="button--outline" href="@Model.MyViewPageUrl">@Model.GoToMyViewButtonText</a></span>
                         </div>
                     </div>
                     <input type="hidden" value="false" id="validateMyViewPriority" />

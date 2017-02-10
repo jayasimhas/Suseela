@@ -78,5 +78,5 @@ $(function() {
 			}
 		});
 	}
-	setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600); 
+	setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 3000); 
 });
