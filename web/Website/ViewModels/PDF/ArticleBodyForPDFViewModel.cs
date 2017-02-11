@@ -55,7 +55,7 @@ namespace Informa.Web.ViewModels.PDF
             Searcher = searcher;
             GlobalService = globalService;
             RelatedArticles = GetRelatedArticles(model);
-            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
+            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
         }
 
         /// <summary>
@@ -145,5 +145,6 @@ namespace Informa.Web.ViewModels.PDF
         /// Article Landing Page URL
         /// </summary>
         public string ArticleLandingPageUrl => Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
+        public IArticle ArticleItem => GlassModel;
     }
 }

@@ -446,6 +446,11 @@
     <Compile Include="Subscription\ITopicSubscription.cs" />
     <Compile Include="Subscription\TopicSubscription.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserV2.cs" />
+    <Compile Include="User\Entitlement\EntitledProductItemChannelCodesFactory.cs" />
+    <Compile Include="User\Entitlement\EntitledProductItemEntitlementLevelFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementLevel.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductItemChannelCodesFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductItemEntitlementLevelFactory.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlementsV2.cs" />
     <Compile Include="User\Profile\IUserInfo.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />

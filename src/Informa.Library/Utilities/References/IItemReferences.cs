@@ -82,5 +82,8 @@ namespace Informa.Library.Utilities.References
         Guid FreeWithRegistration { get; }
 
         Guid CustomPublishingConfig { get; }
+
+        Guid SiteLevelEntitlementType { get; }
+        Guid ChannelLevelEntitlementType { get; }
     }
 }

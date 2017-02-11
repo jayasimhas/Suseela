@@ -14,8 +14,12 @@ namespace Informa.Library.SalesforceConfiguration
         protected readonly ISiteRootContext SiteRootContext;
         private const string MultipleSalesforceSupportConfigKey = "MultipleSalesforceSupportEnabled";
         private string _isMultipleSalesforceSupportEnabled = Settings.GetSetting(MultipleSalesforceSupportConfigKey);
-        private string _authorizationRequestEndPoint = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
-        private string _userEntitlementsRequestEndPoint = "{0}/services/apexrest/UserEntitlements/{1}";
+        private string _tokenEndPoints = "/services/oauth2/token";
+        private string _userInforEndPoints = "{0}/services/oauth2/userinfo";
+        private string _authorizationRequestEndPoints = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
+        private string _userEntitlementsRequestEndPoints = "/services/apexrest/UserEntitlements/{0}";
+        private string _registrationEndpoints = "{0}/registration?referralurl={1}&referralid={2}";
+        private const string _logoutEndpoints = "{0}/secur/logout.jsp";
 
 
         public SalesforceConfigurationContext(
@@ -57,7 +61,7 @@ namespace Informa.Library.SalesforceConfiguration
                 && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Login_Url.Url) ?
                 SalesForceConfiguration?.Salesforce_Login_Url.Url : string.Empty);
 
-            url = string.Format(_authorizationRequestEndPoint, loginUrl,
+            url = string.Format(_authorizationRequestEndPoints, loginUrl,
                   productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
             return url;
         }
@@ -65,9 +69,30 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetUserEntitlementsEndPoints(string userName)
         {
             string url = string.Empty;
-            url = string.Format(_userEntitlementsRequestEndPoint,
-                SalesForceConfiguration?.Salesforce_Entitlement_Api_Url.Url, userName);
+            url = string.Format(_userEntitlementsRequestEndPoints, userName);
             return url;
+        }
+
+        public string GetUserAccessTokenEndPoints()
+        {
+            return _tokenEndPoints;
+        }
+
+        public string GetUserInfoEndPoints()
+        {
+            return string.Format(_userInforEndPoints,
+                SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+        }
+
+        public string GetLogoutEndPoints()
+        {
+            return string.Format(_logoutEndpoints, SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+        }
+
+        public string GetRegistrationEndPoints(string referralurl, string referralid)
+        {
+            return string.Format(_registrationEndpoints,
+            SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralurl);
         }
     }
 }

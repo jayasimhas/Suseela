@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -9,5 +10,7 @@ namespace Informa.Library.User.Entitlement
         public bool IsFreeWithRegistration { get; set; }
 		public string ProductCode { get; set; }
 		public DateTime PublishedOn { get; set; }
-	}
+        public IList<string> Channels { get; set; }
+        public EntitlementLevel EntitlementLevel { get; set; }
+    }
 }

@@ -104,6 +104,8 @@ namespace Informa.Library.Utilities.References
         public Guid AccountNameSuffixes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountNameSuffixes")) ? ItemIdResolver.GetItemIdByKey("AccountNameSuffixes") : Guid.Empty.ToString());
         public Guid AccountPhoneTypes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountPhoneTypes")) ? ItemIdResolver.GetItemIdByKey("AccountPhoneTypes") : Guid.Empty.ToString());
         public Guid AccountSalutations => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountSalutations")) ? ItemIdResolver.GetItemIdByKey("AccountSalutations") : Guid.Empty.ToString());
+        public Guid SiteLevelEntitlementType => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Site")) ? ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Site") : Guid.Empty.ToString());
+        public Guid ChannelLevelEntitlementType => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Channel")) ? ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Channel") : Guid.Empty.ToString());
 
         #endregion Account Contact Info Drop Downs
 

@@ -3,6 +3,7 @@ using Informa.Library.User;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels
 {
@@ -25,12 +26,12 @@ namespace Informa.Web.ViewModels
         public virtual bool IsFree => GlassModel.Free;
         public virtual bool IsFreeWithRegistration => GlassModel.Free_With_Registration;
 
-        public bool IsEntitled()
+        public bool IsEntitled(IArticle articleItem)
         {
             return SitecoreUserContext.User.Domain.Name == "sitecore"
               || IsFree
               || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated)
-              || IsEntitledProductItemContext.IsEntitled(GlassModel);
+              || IsEntitledProductItemContext.IsEntitled(articleItem);
         }
     }
 }
