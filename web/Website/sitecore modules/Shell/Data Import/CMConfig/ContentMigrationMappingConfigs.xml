@@ -1634,6 +1634,8 @@
 				<commodityFactor name="Weekly Review"><![CDATA[Market Fundamentals,Price]]></commodityFactor>
 			</commodityfactor>
 			<commodity>
+				<comm name="foodnews"></comm>
+				<comm name="public_ledger"></comm>
 				<comm name="dairy_markets">Dairy</comm>
 				<comm name="dairy_markets_markets">Dairy</comm>
 				<comm name="dairy_markets_markets_butter">Butter</comm>
