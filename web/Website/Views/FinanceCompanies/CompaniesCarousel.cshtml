@@ -25,7 +25,7 @@
                     <li class="item">
                         <div class="li-content-graph">
                             <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
-                            <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                            <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
                         </div>
                         <script>
                             var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
@@ -54,7 +54,7 @@
                             var chartDivId = company.CompanyId + "_M" + Graph.GraphID;
                             <div class="li-content-graph">
                                 <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
-                                <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId" style="width:235px; height:140px; background-color: #FFFFFF;border: 1px solid grey;margin:5px;"></div></a>
+                                <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
                             </div>
                             <script>
                                 var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
