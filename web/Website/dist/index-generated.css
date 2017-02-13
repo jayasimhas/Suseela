@@ -13151,10 +13151,15 @@ main {
   background-color: #BC608C; }
 
 .theme-pink-sheet .rolling-stream h2, .theme-pink-sheet .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #BC608C; }
-
-.theme-pink-sheet .rolling-stream h2, .theme-pink-sheet .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #BC608C; }
+  position: relative; }
+  .theme-pink-sheet .rolling-stream h2:after, .theme-pink-sheet .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #BC608C;
+    left: 0; }
 
 .theme-pink-sheet .rolling-stream h5 a, .theme-pink-sheet .rolling-stream .alert-success p a, .alert-success .theme-pink-sheet .rolling-stream p a, .theme-pink-sheet .rolling-stream .alert-error p a, .alert-error .theme-pink-sheet .rolling-stream p a, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -13463,10 +13468,15 @@ main {
   background-color: #DD3580; }
 
 .theme-rose-sheet .rolling-stream h2, .theme-rose-sheet .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #DD3580; }
-
-.theme-rose-sheet .rolling-stream h2, .theme-rose-sheet .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #DD3580; }
+  position: relative; }
+  .theme-rose-sheet .rolling-stream h2:after, .theme-rose-sheet .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #DD3580;
+    left: 0; }
 
 .theme-rose-sheet .rolling-stream h5 a, .theme-rose-sheet .rolling-stream .alert-success p a, .alert-success .theme-rose-sheet .rolling-stream p a, .theme-rose-sheet .rolling-stream .alert-error p a, .alert-error .theme-rose-sheet .rolling-stream p a, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -13775,10 +13785,15 @@ main {
   background-color: #034a7c; }
 
 .theme-medtech .rolling-stream h2, .theme-medtech .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #034a7c; }
-
-.theme-medtech .rolling-stream h2, .theme-medtech .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #034a7c; }
+  position: relative; }
+  .theme-medtech .rolling-stream h2:after, .theme-medtech .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #034a7c;
+    left: 0; }
 
 .theme-medtech .rolling-stream h5 a, .theme-medtech .rolling-stream .alert-success p a, .alert-success .theme-medtech .rolling-stream p a, .theme-medtech .rolling-stream .alert-error p a, .alert-error .theme-medtech .rolling-stream p a, .theme-medtech .rolling-stream .article-call-to-action__subtitle a, .theme-medtech .rolling-stream h5 .pop-out__reset-password, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-medtech .rolling-stream h5 .mobile-table-exit, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -14087,10 +14102,15 @@ main {
   background-color: #7e2718; }
 
 .theme-invivo .rolling-stream h2, .theme-invivo .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #7e2718; }
-
-.theme-invivo .rolling-stream h2, .theme-invivo .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #7e2718; }
+  position: relative; }
+  .theme-invivo .rolling-stream h2:after, .theme-invivo .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #7e2718;
+    left: 0; }
 
 .theme-invivo .rolling-stream h5 a, .theme-invivo .rolling-stream .alert-success p a, .alert-success .theme-invivo .rolling-stream p a, .theme-invivo .rolling-stream .alert-error p a, .alert-error .theme-invivo .rolling-stream p a, .theme-invivo .rolling-stream .article-call-to-action__subtitle a, .theme-invivo .rolling-stream h5 .pop-out__reset-password, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-invivo .rolling-stream h5 .mobile-table-exit, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -14399,10 +14419,15 @@ main {
   background-color: #c12d3b; }
 
 .theme-commodities .rolling-stream h2, .theme-commodities .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #c12d3b; }
-
-.theme-commodities .rolling-stream h2, .theme-commodities .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #c12d3b; }
+  position: relative; }
+  .theme-commodities .rolling-stream h2:after, .theme-commodities .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #c12d3b;
+    left: 0; }
 
 .theme-commodities .rolling-stream h5 a, .theme-commodities .rolling-stream .alert-success p a, .alert-success .theme-commodities .rolling-stream p a, .theme-commodities .rolling-stream .alert-error p a, .alert-error .theme-commodities .rolling-stream p a, .theme-commodities .rolling-stream .article-call-to-action__subtitle a, .theme-commodities .rolling-stream h5 .pop-out__reset-password, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-commodities .rolling-stream h5 .mobile-table-exit, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -14707,10 +14732,15 @@ main {
   background-color: #b0173d; }
 
 .theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #b0173d; }
-
-.theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #b0173d; }
+  position: relative; }
+  .theme-insurance-day .rolling-stream h2:after, .theme-insurance-day .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #b0173d;
+    left: 0; }
 
 .theme-insurance-day .rolling-stream h5 a, .theme-insurance-day .rolling-stream .alert-success p a, .alert-success .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .alert-error p a, .alert-error .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-insurance-day .rolling-stream h5 .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
@@ -15015,10 +15045,15 @@ main {
   background-color: #0f5487; }
 
 .theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #0f5487; }
-
-.theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
-  border-bottom: 4px solid #0f5487; }
+  position: relative; }
+  .theme-lloydslist .rolling-stream h2:after, .theme-lloydslist .rolling-stream .article-topics__header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: calc( 100% - 15px);
+    background: #0f5487;
+    left: 0; }
 
 .theme-lloydslist .rolling-stream h5 a, .theme-lloydslist .rolling-stream .alert-success p a, .alert-success .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .alert-error p a, .alert-error .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-lloydslist .rolling-stream h5 .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
