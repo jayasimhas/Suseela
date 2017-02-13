@@ -30583,6 +30583,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
             /// </summary>
             [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
             string ExternalFeedUrl { get; set; }
+
+            /// <summary>
+            /// The Foot Note field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 0EBCAA33-000E-462E-8351-EF3EB226FD9F</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.FootNoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string FootNote { get; set; }
         }
 
 
@@ -30634,6 +30644,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
             /// </summary>
             [SitecoreField(ICompany_Table_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
             string ExternalFeedUrl { get; set; }
+
+            /// <summary>
+            /// The Foot Note field.
+            /// <para></para>
+            /// <para>Field Type: Single-Line text</para>		
+            /// <para>Field ID: 0EBCAA33-000E-462E-8351-EF3EB226FD9F</para>
+            /// <para>Custom Data: </para>
+            /// </summary>
+            [SitecoreField(ICompany_Table_ComponentConstants.FootNoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+            string FootNote { get; set; }
         }
 
         public static partial class ICompany_Table_ComponentConstants
@@ -30655,6 +30675,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
             public static readonly ID External_Feed_UrlFieldId = new ID("1649579a-1b99-4c6f-b6ef-046cc912492b");
             public const string External_Feed_UrlFieldName = "External Feed Url";
+
+            public static readonly ID FootNoteFieldId = new ID("0EBCAA33-000E-462E-8351-EF3EB226FD9F");
+            public const string FootNoteFieldName = "Foot Note";
 
         }
 
