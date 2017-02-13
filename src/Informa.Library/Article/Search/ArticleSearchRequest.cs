@@ -7,5 +7,6 @@
         public int PageNo { get; set; }
         public int PageSize { get; set; }
         public IList<string> TaxonomyIds { get; set; }
+        public string ChannelId { get; }
     }
 }
