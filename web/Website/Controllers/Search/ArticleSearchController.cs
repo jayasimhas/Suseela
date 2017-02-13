@@ -59,7 +59,7 @@
                     PageSize = articleRequest.PageSize,
                     TaxonomyIds = articleRequest.TaxonomyIds,
                     SeeAllText = TextTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                    SeeAllLink = "",
+                    SeeAllLink = "/search#?channel=",
                     CurrentlyViewingText = GetCurrentlyViewingText(articleRequest.TaxonomyIds, articleRequest.ChannelId)
                 };
                 return new { Articles = articles, LoadMore = loadMore };
@@ -68,7 +68,7 @@
             return new { Articles = "No articles found" };
         }
 
-        private string GetCurrentlyViewingText(IList<string> selectedTopicsCount,string ChannelId)
+        private string GetCurrentlyViewingText(IList<string> selectedTopicsCount, string ChannelId)
         {
             var currentlyViewingText = TextTranslator.Translate("Currently.Viewing.Out.of.Available");
             if (!string.IsNullOrEmpty(currentlyViewingText))
@@ -76,7 +76,7 @@
                 var replacements = new Dictionary<string, string>
                 {
                     ["#selectedtopics#"] = selectedTopicsCount?.Count().ToString(),
-                    ["#totaltopics#"] = SitecoreContext.GetItem<IChannel_Page>(new Guid(ChannelId))._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>().Count().ToString()
+                    ["#totaltopics#"] = !string.IsNullOrEmpty(ChannelId) ? SitecoreContext.GetItem<IChannel_Page>(new Guid(ChannelId))._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>().Count().ToString() : string.Empty
                 };
                 return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
             }
