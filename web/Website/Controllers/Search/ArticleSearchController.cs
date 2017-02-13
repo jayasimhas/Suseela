@@ -2,6 +2,7 @@
 {
     using Glass.Mapper.Sc;
     using Informa.Library.Article.Search;
+    using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Informa.Web.ViewModels.Articles;
     using Library.Globalization;
@@ -59,7 +60,7 @@
                     PageSize = articleRequest.PageSize,
                     TaxonomyIds = articleRequest.TaxonomyIds,
                     SeeAllText = TextTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                    SeeAllLink = "/search#?channel=",
+                    SeeAllLink = "/search#?q=",
                     CurrentlyViewingText = GetCurrentlyViewingText(articleRequest.TaxonomyIds, articleRequest.ChannelId)
                 };
                 return new { Articles = articles, LoadMore = loadMore };
@@ -76,7 +77,7 @@
                 var replacements = new Dictionary<string, string>
                 {
                     ["#selectedtopics#"] = selectedTopicsCount?.Count().ToString(),
-                    ["#totaltopics#"] = !string.IsNullOrEmpty(ChannelId) ? SitecoreContext.GetItem<IChannel_Page>(new Guid(ChannelId))._ChildrenWithInferType.OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>().Count().ToString() : string.Empty
+                    ["#totaltopics#"] = GetAllTopics(ChannelId)
                 };
                 return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
             }
@@ -84,6 +85,25 @@
             {
                 return string.Empty;
             }
+        }
+
+        private string GetAllTopics(string channelId)
+        {
+            if (!string.IsNullOrEmpty(channelId))
+            {
+                var channel = SitecoreContext.GetItem<IChannel_Page>(new Guid(channelId));
+                if (channel != null)
+                {
+                    var pageAssets = channel._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                    if (pageAssets != null)
+                    {
+                        var topics = pageAssets._ChildrenWithInferType.
+                                OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                        return topics?.Count().ToString();
+                    }
+                }
+            }
+            return string.Empty;
         }
     }
 }
