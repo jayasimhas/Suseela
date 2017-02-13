@@ -10,6 +10,17 @@
 		overflow: hidden;
 		position: relative;
 		&:after {
+		  	content: '';
+		  	width: calc(100% - 15px);
+		  	background: #f1f2f2;
+		  	position: absolute;
+		  	height: 85px;
+		  	left: 0;
+		  	bottom: 0;
+		  	opacity: 0.5;
+		  	z-index: 10;
+		  }
+		&:after {
 			// content: "";
 		 //    position: absolute;
 		 //    width: 100%;
@@ -29,6 +40,8 @@
     		}
     		&:last-child {
     			border-bottom: none;
+    			z-index: 12;
+    			position: relative;
     		}
 		}
 		#content {
@@ -37,6 +50,7 @@
 		  overflow-y: scroll;
 		  margin: 0;
 		  padding: 0;
+		  position: relative;
 			.article-related-content__date {
 				float: right;
 				width: auto;
@@ -45,9 +59,7 @@
 				margin-top: 5px;
 				font-family: 'Roboto Condensed';
 			}
-		  .content-wrap {
-		  	margin-top: 20px;
-		  }
+
 		}
 		#scrollbar-container {
 		    position: absolute;
@@ -56,6 +68,7 @@
 		    top: 0;
 		    width: 15px;
 		    background-color: #f1f2f2;
+		    z-index: 9;
 		    &:after {
 		    	content: '';
 		    	position: absolute;
