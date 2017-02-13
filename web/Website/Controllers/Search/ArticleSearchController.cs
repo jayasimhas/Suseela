@@ -55,7 +55,7 @@
                     DisplayLoadMore = (results.TotalResults - (articleRequest.PageNo * articleRequest.PageSize)) >= articleRequest.PageSize,
                     LoadMoreLinkText = TextTranslator.Translate("Article.LoadMoreFrom"),
                     LoadMoreLinkUrl = "/api/articlesearch/",
-                    LatestFromText = TextTranslator.Translate("Article.LatestFrom"),
+                    LatestFromText = TextTranslator.Translate("Channel.Prefix.Text"),
                     PageNo = articleRequest.PageNo + 1,
                     PageSize = articleRequest.PageSize,
                     TaxonomyIds = articleRequest.TaxonomyIds,
