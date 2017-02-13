@@ -1319,8 +1319,8 @@ section: Alerts
   font-style: italic;
   font-weight: 400;
   color: #231f20;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
   font-size: 1.5em;
   line-height: 30px; }
 
@@ -1347,7 +1347,7 @@ section: Alerts
         width: 360px;
         height: 200px;
         text-align: center;
-        vertical-align: middle;
+        vertical-align: top;
         display: table-cell; }
         @media (max-width: 480px) {
           .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
@@ -1490,8 +1490,8 @@ section: Alerts
         display: block; }
 
 .agroBuyers hr {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
 
 .agroBuyers .contact_terms {
   margin-bottom: 24px;
@@ -8129,8 +8129,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11344,7 +11344,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
