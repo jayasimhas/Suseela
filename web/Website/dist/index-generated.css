@@ -1319,8 +1319,8 @@ section: Alerts
   font-style: italic;
   font-weight: 400;
   color: #231f20;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
   font-size: 1.5em;
   line-height: 30px; }
 
@@ -1347,7 +1347,7 @@ section: Alerts
         width: 360px;
         height: 200px;
         text-align: center;
-        vertical-align: middle;
+        vertical-align: top;
         display: table-cell; }
         @media (max-width: 480px) {
           .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
@@ -1490,8 +1490,8 @@ section: Alerts
         display: block; }
 
 .agroBuyers hr {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
 
 .agroBuyers .contact_terms {
   margin-bottom: 24px;
@@ -2980,6 +2980,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-left: auto;
     margin-right: auto;
     max-height: 100%; }
+    @media (max-width: 480px) {
+      .job_detail .job_logo img {
+        width: 100%; } }
 
 .job_detail .job_description {
   font-family: "PT Serif", Georgia, serif;

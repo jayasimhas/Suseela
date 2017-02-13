@@ -28,6 +28,7 @@
         }
 
         public ICompany_Results_Table_Type_Options RenderingParameters { get; set; }
+        public string FootNote => GlassModel?.FootNote;
         public string ResultsData => GetResultsData();
         public string CompareFinancialResults => !string.IsNullOrWhiteSpace(GlassModel.ExternalFeedUrl) ?
                                     GetFinancialResultsForCompare(companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result) :

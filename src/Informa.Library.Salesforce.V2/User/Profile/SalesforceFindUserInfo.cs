@@ -9,7 +9,6 @@ namespace Informa.Library.Salesforce.V2.User.Profile
     {
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IHttpClientHelper HttpClientHelper;
-        private string userInforUrlFormat = "{0}/services/oauth2/userinfo";
 
         public SalesforceFindUserInfo(
             IHttpClientHelper httpClientHelper,
@@ -26,8 +25,7 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 return null;
             }
 
-            var userInfoResponse = HttpClientHelper.GetDataResponse<SalesforceUserInfo>(new Uri(string.Format(userInforUrlFormat,
-                SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url))
+            var userInfoResponse = HttpClientHelper.GetDataResponse<SalesforceUserInfo>(new Uri(SalesforceConfigurationContext?.GetUserInfoEndPoints())
                 , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
                 new Dictionary<string, string>());
 

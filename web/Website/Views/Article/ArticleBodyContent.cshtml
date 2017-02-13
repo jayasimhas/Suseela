@@ -128,7 +128,7 @@
         @* End Executive Summary  *@
     }
 
-    @if (!Model.IsEntitled() && Model.CallToActionViewModel != null)
+    @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
     {
         //This will show context for subscribe, login, register
         <div class="article-call-to-action">

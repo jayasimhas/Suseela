@@ -11,5 +11,13 @@ namespace Informa.Library.SalesforceConfiguration
         string GetLoginEndPoints(string productCode, string callbackUrl, string state);
 
         string GetUserEntitlementsEndPoints(string userName);
+
+        string GetUserAccessTokenEndPoints();
+
+        string GetUserInfoEndPoints();
+
+        string GetLogoutEndPoints();
+
+        string GetRegistrationEndPoints(string referralurl, string referralid);
     }
 }
