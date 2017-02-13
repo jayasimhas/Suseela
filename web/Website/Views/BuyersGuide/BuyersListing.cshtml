@@ -16,27 +16,39 @@
                     if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
                     {
                         <section class="buyers-guide-listing" >
-                            <div class="buyers-guide-row">
-                                @foreach (var agrow in Model.AgrowTiles)
-                                {
-                                    <div class="buyers-guide">
-                                        <div class="image">
-                                            <a class="link" href="@agrow.AgrowDetailUrl">
-                                                @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
-                                                {
-                                                    <img src="@agrow.AgrowBanner.Src" alt="banner" />
-                                                }
-                                                else if (!string.IsNullOrEmpty(agrow.AgrowLogo?.Src))
-                                                {
-                                                    <img src="@agrow.AgrowLogo.Src" alt="logo" />
-                                                }
-                                            </a>
+
+                            @{int flag = 0; }
+                            @{int tilesCount = Model.AgrowTiles.Count(); }
+
+                            @for (int i = 0; i < tilesCount;)
+                            {
+                                flag++;
+                                <div class="buyers-guide-row">
+                                    @for (int j = i; j < 3* flag; j++ )
+                                    {
+                                        if (j < tilesCount)
+                                        {
+                                        <div class="buyers-guide">
+                                            <div class="image">
+                                                <a class="link" href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">
+                                                    @if (!string.IsNullOrEmpty(@Model.AgrowTiles.ElementAt(j).AgrowBanner?.Src))
+                                                    {
+                                                        <img src="@Model.AgrowTiles.ElementAt(j).AgrowBanner.Src" alt="banner" />
+                                                    }
+                                                    else if (!string.IsNullOrEmpty(@Model.AgrowTiles.ElementAt(j).AgrowLogo?.Src))
+                                                    {
+                                                        <img src="@Model.AgrowTiles.ElementAt(j).AgrowLogo.Src" alt="logo" />
+                                                    }
+                                                </a>
+                                            </div>
+                                            <h4><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
                                         </div>
-                                        <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
-                                    </div>
+                                        }
+                                        i++;
+                                    }
+                                </div>
                                 }
-                            </div>
-                        </section>
+                           </section>
                     }
                 }
                 else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleDescriptionAndLink)
