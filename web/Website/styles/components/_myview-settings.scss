@@ -941,3 +941,27 @@
 		}
 	}
 }
+
+
+.theme-commodities{
+	.myview-settings {
+		.table{
+			span{
+				color: #9E310D;
+				fill: #9E310D;
+				&.button--outline{
+					border: 1px solid #9E310D;
+					&:hover{
+						border: 1px solid #F5821F;
+					}
+				}
+				&.button--filled{
+					color: #fff;
+					&:hover{
+						border: 1px solid #F5821F;
+					}
+				}
+			}
+		}
+	}
+}

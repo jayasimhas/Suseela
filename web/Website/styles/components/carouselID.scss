@@ -21,6 +21,13 @@
 		  height: 100%;
 		  padding: 15px 18px;
 		  margin-top: 10px;
+			@include breakpoint('medium') {
+				&:after{
+					display: block;
+					clear: both;
+					content: '';
+				}
+			}
 		}
 		.li-content-company img {
 		  float: left;
@@ -71,13 +78,13 @@
 		}
 		.hideinMob{
 			display: block;
-			@include breakpoint('small') {
+			@include breakpoint('medium') {
 				display: none;
 			}
 		}
 		.showinMob{
 			display: none;
-			@include breakpoint('small') {
+			@include breakpoint('medium') {
 				display: block;
 			}
 		}
@@ -101,19 +108,21 @@
 		}
 		.owl-prev{
 			position: absolute;
-			top: 50px;
-			left: 0;
-			margin-left: -18px;
+			top: 140px;
+			left: -34px;
 			margin-top: 0;
 			margin-bottom: 0;
+			opacity: 0.7;
+			filter: alpha(opacity=70);
 		}
 		.owl-next{
 			position: absolute;
-			top: 50px;
-			right: 0;
-			margin-right: -18px;
+			top: 140px;
+			right: -44px;
 			margin-top: 0;
 			margin-bottom: 0;
+			opacity: 0.7;
+			filter: alpha(opacity=70);
 		}
 		.companies_heading {
 			display: block;
@@ -291,4 +300,26 @@
 		}	
 	}
 	
+}
+
+#mycarousel, #mycarousel2{
+	@include textMix('Roboto', 1em, 400);
+	.companylogo{
+		float: left;
+		width: 43%;
+		margin-top: 20px;
+		img{
+			max-width: 100px;
+			max-height: 60px;
+		}
+	}
+	.companyLinks{
+		float: left;
+		width: 57%;
+		margin-top: 20px;
+		@include textMix('Roboto', 1.15em, 400);
+	}
+	.li-content-graph{
+		@include textMix('Roboto', 0.875em, 500);
+	}
 }
