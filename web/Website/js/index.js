@@ -46,7 +46,7 @@ import './components/ll-tanker-fixtures';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';
-
+import './components/scrollbar.js';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

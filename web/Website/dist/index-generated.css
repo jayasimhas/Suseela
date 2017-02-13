@@ -8218,8 +8218,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9354,6 +9354,67 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .sorting-buttons a svg, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg {
     height: 15px;
     fill: #ffffff; }
+
+.rolling-stream {
+  background-color: #f1f2f2;
+  padding: 20px; }
+  .rolling-stream h2, .rolling-stream .article-topics__header {
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+  .rolling-stream .rolling-stream-wrapper {
+    height: 600px;
+    overflow: hidden;
+    position: relative; }
+    .rolling-stream .rolling-stream-wrapper .rolling-stream-article {
+      padding: 20px 0;
+      border-bottom: 1px solid #d1d3d4; }
+      .rolling-stream .rolling-stream-wrapper .rolling-stream-article:first-child {
+        padding-top: 0; }
+      .rolling-stream .rolling-stream-wrapper .rolling-stream-article:last-child {
+        border-bottom: none; }
+    .rolling-stream .rolling-stream-wrapper #content {
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+      margin: 0;
+      padding: 0; }
+      .rolling-stream .rolling-stream-wrapper #content .article-related-content__date {
+        float: right;
+        width: auto;
+        padding: 0;
+        color: #231f20;
+        margin-top: 5px;
+        font-family: 'Roboto Condensed'; }
+      .rolling-stream .rolling-stream-wrapper #content .content-wrap {
+        margin-top: 20px; }
+    .rolling-stream .rolling-stream-wrapper #scrollbar-container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      width: 15px;
+      background-color: #f1f2f2; }
+      .rolling-stream .rolling-stream-wrapper #scrollbar-container:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 3px;
+        width: 1px;
+        height: 100%;
+        background: #d1d3d4;
+        z-index: 1; }
+    .rolling-stream .rolling-stream-wrapper h5 a, .rolling-stream .rolling-stream-wrapper .alert-success p a, .alert-success .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .alert-error p a, .alert-error .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle a, .rolling-stream .rolling-stream-wrapper h5 .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-success p .pop-out__reset-password, .alert-success .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-error p .pop-out__reset-password, .alert-error .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper h5 .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper h5 .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-success p .mobile-table-exit, .alert-success .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-error p .mobile-table-exit, .alert-error .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .mobile-table-exit {
+      font-family: 'Roboto';
+      font-size: 20px; }
+    .rolling-stream .rolling-stream-wrapper h5 span, .rolling-stream .rolling-stream-wrapper .alert-success p span, .alert-success .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .alert-error p span, .alert-error .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle span {
+      font-size: 16px; }
+    .rolling-stream .rolling-stream-wrapper #scrollbar {
+      position: absolute;
+      right: 0;
+      height: 30px;
+      width: 7px;
+      background: #777777;
+      z-index: 2; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
@@ -11433,7 +11494,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -13089,6 +13150,17 @@ main {
 .theme-pink-sheet .latest-news__header:before {
   background-color: #BC608C; }
 
+.theme-pink-sheet .rolling-stream h2, .theme-pink-sheet .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #BC608C; }
+
+.theme-pink-sheet .rolling-stream h2, .theme-pink-sheet .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #BC608C; }
+
+.theme-pink-sheet .rolling-stream h5 a, .theme-pink-sheet .rolling-stream .alert-success p a, .alert-success .theme-pink-sheet .rolling-stream p a, .theme-pink-sheet .rolling-stream .alert-error p a, .alert-error .theme-pink-sheet .rolling-stream p a, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-pink-sheet .rolling-stream h5 a:hover, .theme-pink-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #BC608C; }
+
 .theme-pink-sheet .article-interview__question:before {
   background-color: rgba(188, 96, 140, 0.3);
   border-color: rgba(188, 96, 140, 0.7); }
@@ -13389,6 +13461,17 @@ main {
 
 .theme-rose-sheet .latest-news__header:before {
   background-color: #DD3580; }
+
+.theme-rose-sheet .rolling-stream h2, .theme-rose-sheet .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #DD3580; }
+
+.theme-rose-sheet .rolling-stream h2, .theme-rose-sheet .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #DD3580; }
+
+.theme-rose-sheet .rolling-stream h5 a, .theme-rose-sheet .rolling-stream .alert-success p a, .alert-success .theme-rose-sheet .rolling-stream p a, .theme-rose-sheet .rolling-stream .alert-error p a, .alert-error .theme-rose-sheet .rolling-stream p a, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-rose-sheet .rolling-stream h5 a:hover, .theme-rose-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #DD3580; }
 
 .theme-rose-sheet .article-interview__question:before {
   background-color: rgba(200, 32, 110, 0.2);
@@ -13691,6 +13774,17 @@ main {
 .theme-medtech .latest-news__header:before {
   background-color: #034a7c; }
 
+.theme-medtech .rolling-stream h2, .theme-medtech .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #034a7c; }
+
+.theme-medtech .rolling-stream h2, .theme-medtech .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #034a7c; }
+
+.theme-medtech .rolling-stream h5 a, .theme-medtech .rolling-stream .alert-success p a, .alert-success .theme-medtech .rolling-stream p a, .theme-medtech .rolling-stream .alert-error p a, .alert-error .theme-medtech .rolling-stream p a, .theme-medtech .rolling-stream .article-call-to-action__subtitle a, .theme-medtech .rolling-stream h5 .pop-out__reset-password, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-medtech .rolling-stream h5 .mobile-table-exit, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-medtech .rolling-stream h5 a:hover, .theme-medtech .rolling-stream .alert-success p a:hover, .alert-success .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .alert-error p a:hover, .alert-error .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle a:hover, .theme-medtech .rolling-stream h5 .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream h5 .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #034a7c; }
+
 .theme-medtech .article-interview__question:before {
   background-color: rgba(3, 74, 124, 0.2);
   border-color: rgba(3, 74, 124, 0.5); }
@@ -13991,6 +14085,17 @@ main {
 
 .theme-invivo .latest-news__header:before {
   background-color: #7e2718; }
+
+.theme-invivo .rolling-stream h2, .theme-invivo .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #7e2718; }
+
+.theme-invivo .rolling-stream h2, .theme-invivo .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #7e2718; }
+
+.theme-invivo .rolling-stream h5 a, .theme-invivo .rolling-stream .alert-success p a, .alert-success .theme-invivo .rolling-stream p a, .theme-invivo .rolling-stream .alert-error p a, .alert-error .theme-invivo .rolling-stream p a, .theme-invivo .rolling-stream .article-call-to-action__subtitle a, .theme-invivo .rolling-stream h5 .pop-out__reset-password, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-invivo .rolling-stream h5 .mobile-table-exit, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-invivo .rolling-stream h5 a:hover, .theme-invivo .rolling-stream .alert-success p a:hover, .alert-success .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .alert-error p a:hover, .alert-error .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle a:hover, .theme-invivo .rolling-stream h5 .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream h5 .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #7e2718; }
 
 .theme-invivo .article-interview__question:before {
   background-color: rgba(126, 39, 24, 0.3);
@@ -14293,6 +14398,17 @@ main {
 .theme-commodities .latest-news__header:before {
   background-color: #c12d3b; }
 
+.theme-commodities .rolling-stream h2, .theme-commodities .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #c12d3b; }
+
+.theme-commodities .rolling-stream h2, .theme-commodities .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #c12d3b; }
+
+.theme-commodities .rolling-stream h5 a, .theme-commodities .rolling-stream .alert-success p a, .alert-success .theme-commodities .rolling-stream p a, .theme-commodities .rolling-stream .alert-error p a, .alert-error .theme-commodities .rolling-stream p a, .theme-commodities .rolling-stream .article-call-to-action__subtitle a, .theme-commodities .rolling-stream h5 .pop-out__reset-password, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-commodities .rolling-stream h5 .mobile-table-exit, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-commodities .rolling-stream h5 a:hover, .theme-commodities .rolling-stream .alert-success p a:hover, .alert-success .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .alert-error p a:hover, .alert-error .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle a:hover, .theme-commodities .rolling-stream h5 .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream h5 .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #c12d3b; }
+
 .theme-commodities .article-interview__question:before {
   background-color: rgba(193, 45, 59, 0.3);
   border-color: rgba(193, 45, 59, 0.5); }
@@ -14590,6 +14706,17 @@ main {
 .theme-insurance-day .latest-news__header:before {
   background-color: #b0173d; }
 
+.theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #b0173d; }
+
+.theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #b0173d; }
+
+.theme-insurance-day .rolling-stream h5 a, .theme-insurance-day .rolling-stream .alert-success p a, .alert-success .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .alert-error p a, .alert-error .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-insurance-day .rolling-stream h5 .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-insurance-day .rolling-stream h5 a:hover, .theme-insurance-day .rolling-stream .alert-success p a:hover, .alert-success .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .alert-error p a:hover, .alert-error .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a:hover, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream h5 .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #b0173d; }
+
 .theme-insurance-day .article-interview__question:before {
   background-color: rgba(176, 23, 61, 0.3);
   border-color: rgba(176, 23, 61, 0.5); }
@@ -14886,6 +15013,17 @@ main {
 
 .theme-lloydslist .latest-news__header:before {
   background-color: #0f5487; }
+
+.theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #0f5487; }
+
+.theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
+  border-bottom: 4px solid #0f5487; }
+
+.theme-lloydslist .rolling-stream h5 a, .theme-lloydslist .rolling-stream .alert-success p a, .alert-success .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .alert-error p a, .alert-error .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-lloydslist .rolling-stream h5 .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+  color: #231f20; }
+  .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+    color: #0f5487; }
 
 .theme-lloydslist .article-interview__question:before {
   background-color: rgba(15, 84, 135, 0.3);
