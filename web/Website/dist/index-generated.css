@@ -2165,6 +2165,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     height: 100%;
     padding: 15px 18px;
     margin-top: 10px; }
+    @media (max-width: 800px) {
+      #main-carousel .li-content-company:after {
+        display: block;
+        clear: both;
+        content: ''; } }
   #main-carousel .li-content-company img {
     float: left;
     margin: 0 10px 10px 0;
@@ -2197,12 +2202,12 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     color: #000; }
   #main-carousel .hideinMob {
     display: block; }
-    @media (max-width: 480px) {
+    @media (max-width: 800px) {
       #main-carousel .hideinMob {
         display: none; } }
   #main-carousel .showinMob {
     display: none; }
-    @media (max-width: 480px) {
+    @media (max-width: 800px) {
       #main-carousel .showinMob {
         display: block; } }
   @media (max-width: 480px) {
@@ -2217,18 +2222,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     width: 100%; }
   #main-carousel .owl-prev {
     position: absolute;
-    top: 50px;
-    left: 0;
-    margin-left: -18px;
+    top: 140px;
+    left: -34px;
     margin-top: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70); }
   #main-carousel .owl-next {
     position: absolute;
-    top: 50px;
-    right: 0;
-    margin-right: -18px;
+    top: 140px;
+    right: -44px;
     margin-top: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70); }
   #main-carousel .companies_heading {
     display: block;
     width: 100%;
@@ -2366,6 +2373,29 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         display: block; } }
     #graph-carousel .showinMob .li-content-graph {
       margin: 10px 0 0 0; }
+
+#mycarousel, #mycarousel2 {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400; }
+  #mycarousel .companylogo, #mycarousel2 .companylogo {
+    float: left;
+    width: 43%;
+    margin-top: 20px; }
+    #mycarousel .companylogo img, #mycarousel2 .companylogo img {
+      max-width: 100px;
+      max-height: 60px; }
+  #mycarousel .companyLinks, #mycarousel2 .companyLinks {
+    float: left;
+    width: 57%;
+    margin-top: 20px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1.15em;
+    font-weight: 400; }
+  #mycarousel .li-content-graph, #mycarousel2 .li-content-graph {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: 500; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
