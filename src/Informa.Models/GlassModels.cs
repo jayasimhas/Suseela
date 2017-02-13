@@ -6503,10 +6503,19 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para></para>
         /// <para>Field Type: Droplink</para>		
         /// <para>Field ID: 98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133</para>
-        /// <para>Custom Data: type=INumber_Option</para>
+        /// <para>Custom Data: integer</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Max_Stories_to_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Max_Stories_to_Display { get; set; }
+        /// <summary>
+        /// Display Published Date field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: A5454101-4AD6-4B1C-BE1B-CD11C7928154</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Published_Date { get; set; }
     }
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
@@ -6562,6 +6571,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Max_Stories_to_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Max_Stories_to_Display { get; set; }
+        /// <summary>
+        /// Display Published Date field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: A5454101-4AD6-4B1C-BE1B-CD11C7928154</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Published_Date { get; set; }
     }
 
     public static partial class ILatest_Published_Stories_OptionsConstants
@@ -6585,6 +6603,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         
         public static readonly ID Max_Stories_to_DisplayFieldId = new ID("98DC68FC-6B7E-4EF6-A3C7-3D57DCB84133");
         public const string Max_Stories_to_DisplayFieldName = "Max Stories to Display";
+
+        public static readonly ID Display_Published_DateFieldId = new ID("A5454101-4AD6-4B1C-BE1B-CD11C7928154");
+        public const string Display_Published_DateFieldName = "Display Published Date";
     }
 
 }
