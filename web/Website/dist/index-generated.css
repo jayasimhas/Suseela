@@ -936,8 +936,10 @@ p {
 .main__wrapper a.full-width-button, .main__wrapper .full-width-button.pop-out__reset-password, .main__wrapper .full-width-button.sortable-table__list-toggler, .main__wrapper .full-width-button.mobile-table-exit {
   width: 100% !important;
   display: block;
-  text-align: center;
-  color: #231f20 !important; }
+  text-align: center; }
+
+.mb-20 {
+  margin-bottom: 20px; }
 
 .l-full {
   width: 100%; }
@@ -2147,13 +2149,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 #main-carousel {
   /*.owl-item{
 			float: left;
-		}
-		.owl-item.active{
-			@include breakpoint('small') {
-				/*width: auto !important;
-				display: block;
-				float: none;
-			}
 		}*/ }
   #main-carousel .owl-carousel .item {
     height: 290px; }
@@ -2210,6 +2205,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     @media (max-width: 480px) {
       #main-carousel .showinMob {
         display: block; } }
+  @media (max-width: 480px) {
+    #main-carousel .marketDataTable .owl-item.active {
+      width: auto !important; } }
   #main-carousel .owl-dots {
     position: absolute;
     top: 0;
@@ -2273,7 +2271,13 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
-    position: relative; }
+    position: relative;
+    border-top: 1px solid #d1d3d4;
+    padding-top: 20px; }
+    @media screen and (max-width: 767px) {
+      #graph-carousel .graph_heading {
+        border-top: none;
+        padding-top: 0px; } }
     #graph-carousel .graph_heading span {
       width: 100%;
       display: inline-block;
@@ -2976,6 +2980,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-left: auto;
     margin-right: auto;
     max-height: 100%; }
+    @media (max-width: 480px) {
+      .job_detail .job_logo img {
+        width: 100%; } }
 
 .job_detail .job_description {
   font-family: "PT Serif", Georgia, serif;
@@ -3507,7 +3514,7 @@ body.lightboxed {
   .sort svg {
     height: 25px;
     width: 20px;
-    fill: #979797 !important; }
+    fill: #ffffff !important; }
 
 .table_close {
   color: #231f20;
@@ -3572,6 +3579,8 @@ body.lightboxed {
   #modal-annualresults .tableHead .sort-modal, #modal-comparefinancialresults .tableHead .sort-modal {
     position: absolute;
     right: 0; }
+    #modal-annualresults .tableHead .sort-modal svg, #modal-comparefinancialresults .tableHead .sort-modal svg {
+      fill: #ffffff !important; }
     #modal-annualresults .tableHead .sort-modal[type="ascending"], #modal-comparefinancialresults .tableHead .sort-modal[type="ascending"] {
       top: -5px;
       -webkit-transform: rotate(180deg);
@@ -3739,6 +3748,10 @@ body.lightboxed {
     #quarterlyresults .table-wrapper .tableHead:first-child {
       text-align: left; }
 
+#annualresults .R16 {
+  text-align: right;
+  padding-right: 15px; }
+
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
   #financialresults .table_head, #quarterlyresults .table_head {
     position: relative; }
@@ -3759,7 +3772,8 @@ body.lightboxed {
 #financialresults .tableHead {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  text-align: right; }
 
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -4266,6 +4280,7 @@ header .header-account-access {
   line-height: 20px;
   margin-bottom: 16px;
   margin-bottom: 1rem;
+  margin-top: 0 !important;
   color: #58595b; }
   .messaging_webUsers h3, .messaging_webUsers .article-call-to-action__title {
     font-family: "Roboto",​Arial Narrow,​sans-serif;
@@ -6657,7 +6672,8 @@ section: UI Elements
 
 .balticChartsWrapper {
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  width: 100%; }
   @media (max-width: 480px) {
     .balticChartsWrapper {
       margin-bottom: 80px;
@@ -8113,8 +8129,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -8912,6 +8928,9 @@ div#feedbacklite.fbl_r {
       width: 40px;
       display: inline-block; }
 
+.article-preview {
+  clear: both; }
+
 .theme-lloydslist .article-related-content a, .theme-lloydslist .article-related-content .pop-out__reset-password, .theme-lloydslist .article-related-content .sortable-table__list-toggler, .theme-lloydslist .article-related-content .mobile-table-exit {
   color: #1191D1 !important; }
   .theme-lloydslist .article-related-content a:hover, .theme-lloydslist .article-related-content .pop-out__reset-password:hover, .theme-lloydslist .article-related-content .sortable-table__list-toggler:hover, .theme-lloydslist .article-related-content .mobile-table-exit:hover {
@@ -9634,7 +9653,8 @@ Contains information about an article's author or authors.
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  font-weight: 400; }
+  font-weight: 400;
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
   .article-call-to-action--sign-in-up, .article-call-to-action--subscribe {
     background-color: #f1f2f2;
     border: 1px solid #d1d3d4;
@@ -9665,6 +9685,8 @@ Contains information about an article's author or authors.
     .article-call-to-action__column:last-child {
       border-right: none;
       margin-bottom: 0; }
+      .article-call-to-action__column:last-child .full-width-button {
+        margin-bottom: 20px; }
   .article-call-to-action__title {
     color: #231f20;
     display: block;
@@ -11322,7 +11344,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

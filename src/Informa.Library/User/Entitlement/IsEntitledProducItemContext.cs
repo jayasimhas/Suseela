@@ -1,4 +1,5 @@
 ﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Entitlement
@@ -28,5 +29,17 @@ namespace Informa.Library.User.Entitlement
 
 			return IsEntitledProductContext.IsEntitled(entitledProduct);
 		}
-	}
+
+        public bool IsEntitled(IArticle item)
+        {
+            if (item == null)
+            {
+                return false;
+            }
+
+            var entitledProduct = EntitledProductFactory.Create(item);
+
+            return IsEntitledProductContext.IsEntitled(entitledProduct);
+        }
+    }
 }

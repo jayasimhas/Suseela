@@ -191,6 +191,12 @@
 		}
 	}
 }
+#annualresults {
+	.R16 {
+		text-align: right;
+		padding-right: 15px;
+	}
+}
 #financialresults, #quarterlyresults {
 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 		.table_head {
@@ -212,6 +218,7 @@
 }
 #financialresults .tableHead {
 	@include textMix('Roboto', 1em, bold);
+	text-align: right;
 }
 #quarterlyresults .tableRow > .tableCell:first-child, #financialresults .tableRow > .tableCell:first-child {
     font-family: "Roboto", Helvetica, Arial, sans-serif;

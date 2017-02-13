@@ -5,6 +5,7 @@ using Informa.Library.User;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -28,7 +29,9 @@ namespace Informa.Web.ViewModels.Articles
 		public string KeyDocumentHeader => TextTranslator.Translate("Article.KeyDocs");
 		public IEnumerable<IFile> KeyDocuments => ArticleService.GetSupportingDocuments(GlassModel);
 
-		public string GetTitle(IFile f) => !string.IsNullOrEmpty(f?.Title)
+        public IArticle ArticleItem => GlassModel;
+
+        public string GetTitle(IFile f) => !string.IsNullOrEmpty(f?.Title)
             ? f.Title
 			: f._Name;
 

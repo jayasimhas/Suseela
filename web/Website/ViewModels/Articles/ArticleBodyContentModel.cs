@@ -41,7 +41,7 @@ namespace Informa.Web.ViewModels.Articles
 			ArticleService = articleService;
             // JIRA IPMP-56
             SiteRootContext = siteRootContext;
-            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
+            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
 		}
 
 		public string Title => GlassModel.Title;
@@ -82,5 +82,7 @@ namespace Informa.Web.ViewModels.Articles
         // JIRA IPMP-56
         public bool IsActiveLegacyBrand => SiteRootContext.Item.Legacy_Brand_Active;
         public List<string> LagacyBrandUrl => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active).ToList<string>();
+
+        public IArticle ArticleItem => GlassModel;
     }
 }

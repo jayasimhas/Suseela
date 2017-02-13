@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompanyGraphViewModel
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="/dist/js/amcharts.js"></script>
+<script type="text/javascript" src="/dist/js/serial.js"></script>
 <script type="text/javascript">
     function PrintCompanyGraph(chartData, divId, graphType, color) {
             AmCharts.makeChart(divId,
@@ -76,9 +76,7 @@
                 </script>
             </div>
         </div>
-        <script type="text/javascript">
-            setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 3000);
-        </script>
+        
     }
         </div>
     </div>

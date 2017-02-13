@@ -724,11 +724,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 }
 
-                                if (d.NewItemField == "Article Number" && values.Count(val => val != "") > 0)
-                                {
-                                    ListToGuid.DataLogger.Add("Article Number", importValue);
+                                //if (d.NewItemField == "Article Number" && values.Count(val => val != "") > 0)
+                                //{
+                                   // ListToGuid.DataLogger.Add("Article Number", importValue);
 
-                                }
+                             //   }
 
                                 if (d.NewItemField == "Featured Image 16 9")
                                 {

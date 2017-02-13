@@ -401,8 +401,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         if (site != "Maritime")
                         {
+                            string textForagency = AgencyCompanyTextSearch;
+                            textForagency = textForagency.Replace("(", "");
+                            textForagency = textForagency.Replace(")", "");
 
-                            List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                            List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
+                           // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+
                             List<string> commoditySearchResults = null;
                             List<string> commodityfactorSearchResults = null;
                             List<string> animalhealthSearchResults = null;
@@ -472,7 +477,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                         }
 
-                        List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                        // List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+
+                        string textForCompany = AgencyCompanyTextSearch;
+                        textForCompany = textForCompany.Replace("’", "'");
+                        //textForCompany = textForCompany.Replace("(", "'");
+                        List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
+                        //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
 
 

@@ -23,8 +23,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-        private string _registrationEndpoint = "{0}/registration?referralurl={1}&referralid={2}";
-        private const string logoutUrl = "/secur/logout.jsp";
+        
 
 
         public HeaderViewModel(
@@ -86,13 +85,9 @@ namespace Informa.Web.ViewModels
 
         public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString());
 
-        public string RegistrationUrl => string.Format(_registrationEndpoint,
-            SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url,
-            GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
-            
+        public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);   
 
-        public string LogoutUrl => string.Format("{0}{1}",
-            SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url, logoutUrl);
+        public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints();
 
 
         private string BuildLink(Link l)

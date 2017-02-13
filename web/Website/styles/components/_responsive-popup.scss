@@ -70,7 +70,7 @@
     svg {
         height: 25px;
         width: 20px;
-        fill: #979797 !important;
+        fill: $color-white !important;
     }
 }
 .table_close {
@@ -144,6 +144,9 @@
         .sort-modal {
             position: absolute;
             right: 0;
+            svg {
+                fill: $color-white !important;
+            }
             &[type="ascending"] {
                 top: -5px;
                 transform: rotate(180deg);

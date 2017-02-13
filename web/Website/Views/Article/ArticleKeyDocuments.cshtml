@@ -2,7 +2,7 @@
 
 @* * *  ARTICLE - KEY DOCUMENTS
         IIPP-158 *@
-@if (Model.KeyDocuments.Any() && Model.IsEntitled())
+@if (Model.KeyDocuments.Any() && Model.IsEntitled(Model.ArticleItem))
 {
     <div class="article-key-documents">
         <h2>@Model.KeyDocumentHeader</h2>

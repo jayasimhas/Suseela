@@ -1,6 +1,6 @@
 .article-call-to-action {
 	@include textMix('Roboto', 1rem, 400);
-
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	&--sign-in-up,
 	&--subscribe {
 		background-color: $color-concrete-gray;
@@ -30,6 +30,9 @@
 		&:last-child {
 			border-right: none;
 			margin-bottom: 0;
+			.full-width-button {
+				margin-bottom: 20px;
+			}
 		}
 	}
 
