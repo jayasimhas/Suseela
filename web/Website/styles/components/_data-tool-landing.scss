@@ -470,8 +470,10 @@ div#feedbacklite.fbl_r{
 		margin-bottom: 1.5rem;
 	}
 	&.right{
-		.section-article-img {
-				width: 100%;
+		.section-article{
+			.section-article-img {
+					width: 100%;
+			}
 		}
 	}
 	.section-article{
