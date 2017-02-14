@@ -28,3 +28,20 @@ Styles for a floated sidebar within an article body.
 	 */
 	@include callout('default');
 }
+.article-list-sidebar {
+	background-color: #f1f2f2;
+    float: right;
+    line-height: 24px;
+    line-height: 1.5rem;
+    margin: 0 0 2rem 2rem;
+    overflow: auto;
+    padding: 1rem;
+    width: 50%;
+    h3 {
+    	padding: 1rem 0.3125rem;
+    	border-bottom: 1px solid $color-light-gray;
+    	&:last-child {
+    		border-bottom: none;
+    	}
+    }
+}
