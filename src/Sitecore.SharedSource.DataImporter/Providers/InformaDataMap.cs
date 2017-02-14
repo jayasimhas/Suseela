@@ -318,6 +318,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     ao.Add("MEDIA", "interactivedashboards");
                                 }
+                                else if (CheckTableau(GetXMLData(d, bodyNode)))
+                                {
+                                    ao.Add("MEDIA", "interactivedashboards");
+                                }
                                 else if (!string.IsNullOrEmpty(imageTitleHtml))
                                 {
                                     ao.Add("MEDIA", "Chart/Table");
@@ -407,6 +411,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 string textForagency = AgencyCompanyTextSearch;
                                 textForagency = textForagency.Replace("(", "");
                                 textForagency = textForagency.Replace(")", "");
+                                textForagency = textForagency.Replace("’", "'");
 
                                 List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
@@ -484,12 +489,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             string textForCompany = AgencyCompanyTextSearch;
                             textForCompany = textForCompany.Replace("’", "'");
-                            //textForCompany = textForCompany.Replace("(", "'");
+                            textForCompany = textForCompany.Replace("(", "'");
+                            textForCompany = textForCompany.Replace(")", "");
                             List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
                             //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-
-
 
 
 
@@ -498,12 +501,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 if (!(publication == "AnimalPharma" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "commodities" && company == "bayer animal health"))
                                     Companies += company + ",";
 
-
-
                             }
 
-
-                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                            string textSearchForRegion =RegionTextSearch.Replace("’", "'");
+                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => textSearchForRegion.ToLower().Contains(" " + s + " "));
                             foreach (string region in regionSearchResults)
                             {
                                 Country += region + ",";
@@ -514,7 +515,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             if (ao.ContainsKey("COUNTRY"))
                             {
                                 if (Country != "")
-
                                 {
 
                                     Country = ao["COUNTRY"].ToString() + Country;
@@ -689,6 +689,34 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return false;
 
         }
+
+        private bool CheckTableau(string searchtableau)
+        {
+
+            string wordToFind = Regex.Match(searchtableau, @"<object \s*(.+?)\s*</object>").ToString();
+
+            if (!string.IsNullOrEmpty(wordToFind))
+            {
+                return true;
+
+            }
+            else
+                return false;
+        }
+        private bool CheckIframe(string searchIframe)
+        {
+
+            Regex regex = new Regex("<iframe frameborder=(.*)</iframe>");
+            var v = regex.Match(searchIframe);
+
+            if ((v != null) && v.Length > 0)
+            {
+               return true;
+
+            }
+            else { return false; }
+        }
+
 
         public override IEnumerable<object> ImportImages(IDataMap map)
         {
@@ -1457,6 +1485,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("TOPICS", "");
                         Taxonomy.Add("COUNTRY", "");
                         Taxonomy.Add("SECTINREF", "");
+                        Taxonomy.Add("SECTORS", "");
                         string Market = string.Empty;
                         string Topic = string.Empty;
                         string Country = string.Empty;
@@ -1483,6 +1512,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTORS"] = Country;
                                 }
                                 else
                                 {
@@ -1568,9 +1602,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     SectionRef += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["SECTINREF"] = SectionRef;
-
                                 }
-
                             }
                         }
                     }

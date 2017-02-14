@@ -370,7 +370,6 @@
 		<reg name="northamerica">North America</reg>
 		<reg name="southamerica">South America</reg>
 		<reg name="asia">Asia Pacific</reg>
-		<reg name="japan">Japan</reg>
 		<reg name="restofworld">International</reg>
 		<reg name="australasia">Asia Pacific</reg>
 		<reg name="india">India</reg>
@@ -797,7 +796,7 @@
 			<Agen  name= "International Trade Commission">USITC</Agen>
 			<Agen  name= "Senasa">Argentina Senasa</Agen>
 		</agency>
-	<companies>
+  	<companies>
 			<comp name="2 Sisters Food Group">2 Sisters Food Group</comp>
 			<comp name="A G Barr">A G Barr</comp>
 			<comp name="AG Barr">A G Barr</comp>
@@ -2355,52 +2354,52 @@
 				</health>
 				<health name="diagnostics">Diagnostics</health>
 				<health name="generics">Generics</health>
-<health name="African swine fever">African swine fever</health>
-<health name="Antimicrobial resistance">Antimicrobial resistance</health>
-<health name="Avian infectious bronchitis">Avian infectious bronchitis</health>
-<health name="Avian influenza">Avian influenza</health>
-<health name="Bird flu">Avian influenza</health>
-<health name="AI">Avian influenza</health>
-<health name="Bluetongue">Bluetongue</health>
-<health name="Bovine respiratory syndrome">Bovine respiratory syndrome</health>
-<health name="Bovine tuberculosis">Bovine tuberculosis</health>
-<health name="Brucellosis">Brucellosis</health>
-<health name="Cancer">Cancer</health>
-<health name="Classical swine fever">Classical swine fever</health>
-<health name="Dermatology">Dermatology</health>
-<health name="Early mortality syndrome">Early mortality syndrome</health>
-<health name="Flea and tick">Flea and tick</health>
-<health name="Foot-and-mouth disease">Foot-and-mouth disease</health>
-<health name="foot and mouth disease">Foot-and-mouth disease</health>
-<health name="Inappetance">Inappetance</health>
-<health name="Infectious salmon anemia">Infectious salmon anemia </health>
-<health name="Lumpy skin disease">Lumpy skin disease</health>
-<health name="Mastitis">Mastitis</health>
-<health name="Middle East Respiratory Syndrome">Middle East Respiratory Syndrome</health>
-<health name="Newcastle disease">Newcastle disease</health>
-<health name="Osteoarthritis">Osteoarthritis</health>
-<health name="Pain">Pain</health>
-<health name="Peste des petits ruminants">Peste des petits ruminants</health>
-<health name="Porcine epidemic diarrhea virus">Porcine epidemic diarrhea virus</health>
-<health name="Porcine reproductive and respiratory syndrome">Porcine reproductive and respiratory syndrome</health>
-<health name="Rift Valley fever">Rift Valley fever</health>
-<health name="Sea lice">Sea lice</health>
-<health name="ASF">African swine fever</health>
-<health name="Avian flu">Avian influenza</health>
-<health name="BTB">Bovine tuberculosis</health>
-<health name="CSF">Classical swine fever</health>
-<health name="EMS">Early mortality syndrome</health>
-<health name="FMD">Foot-and-mouth disease</health>
-<health name="ISA">Infectious salmon anemia</health>
-<health name="LSD">Lumpy skin disease</health>
-<health name="MERS">Middle East Respiratory Syndrome</health>
-<health name="ND">Newcastle disease</health>
-<health name="PPR">Peste des petits ruminants</health>
-<health name="PEDV">Porcine epidemic diarrhea virus</health>
-<health name="PRRS">Porcine reproductive and respiratory syndrome</health>
-<health name="RVF">Rift Valley fever</health>
-</animalhealth>
-			<commercial>
+					<health name="African swine fever">African swine fever</health>
+					<health name="Antimicrobial resistance">Antimicrobial resistance</health>
+					<health name="Avian infectious bronchitis">Avian infectious bronchitis</health>
+					<health name="Avian influenza">Avian influenza</health>
+					<health name="Bird flu">Avian influenza</health>
+					<health name="AI">Avian influenza</health>
+					<health name="Bluetongue">Bluetongue</health>
+					<health name="Bovine respiratory syndrome">Bovine respiratory syndrome</health>
+					<health name="Bovine tuberculosis">Bovine tuberculosis</health>
+					<health name="Brucellosis">Brucellosis</health>
+					<health name="Cancer">Cancer</health>
+					<health name="Classical swine fever">Classical swine fever</health>
+					<health name="Dermatology">Dermatology</health>
+					<health name="Early mortality syndrome">Early mortality syndrome</health>
+					<health name="Flea and tick">Flea and tick</health>
+					<health name="Foot-and-mouth disease">Foot-and-mouth disease</health>
+					<health name="foot and mouth disease">Foot-and-mouth disease</health>
+					<health name="Inappetance">Inappetance</health>
+					<health name="Infectious salmon anemia">Infectious salmon anemia </health>
+					<health name="Lumpy skin disease">Lumpy skin disease</health>
+					<health name="Mastitis">Mastitis</health>
+					<health name="Middle East Respiratory Syndrome">Middle East Respiratory Syndrome</health>
+					<health name="Newcastle disease">Newcastle disease</health>
+					<health name="Osteoarthritis">Osteoarthritis</health>
+					<health name="Pain">Pain</health>
+					<health name="Peste des petits ruminants">Peste des petits ruminants</health>
+					<health name="Porcine epidemic diarrhea virus">Porcine epidemic diarrhea virus</health>
+					<health name="Porcine reproductive and respiratory syndrome">Porcine reproductive and respiratory syndrome</health>
+					<health name="Rift Valley fever">Rift Valley fever</health>
+					<health name="Sea lice">Sea lice</health>
+					<health name="ASF">African swine fever</health>
+					<health name="Avian flu">Avian influenza</health>
+					<health name="BTB">Bovine tuberculosis</health>
+					<health name="CSF">Classical swine fever</health>
+					<health name="EMS">Early mortality syndrome</health>
+					<health name="FMD">Foot-and-mouth disease</health>
+					<health name="ISA">Infectious salmon anemia</health>
+					<health name="LSD">Lumpy skin disease</health>
+					<health name="MERS">Middle East Respiratory Syndrome</health>
+					<health name="ND">Newcastle disease</health>
+					<health name="PPR">Peste des petits ruminants</health>
+					<health name="PEDV">Porcine epidemic diarrhea virus</health>
+					<health name="PRRS">Porcine reproductive and respiratory syndrome</health>
+					<health name="RVF">Rift Valley fever</health>
+					</animalhealth>
+					<commercial>
 				<comm name="research">Research</comm>
 				<comm name="randd"><![CDATA[R&D]]></comm>
 					<![CDATA[R&D]]>
@@ -2435,6 +2434,8 @@
 	</Agri>
 	<Maritime>
 		<country>
+		
+	
 		<reg name="Middle East">Middle East and Africa</reg>
 		<reg name="brazil">Brazil</reg>
 		<reg name="Africa">Middle East and Africa</reg>
@@ -3301,26 +3302,37 @@
 			</contenttype>		
 			<market>
 				<mark name="casualty">Casualty</mark>
+				<mark name="liability">Casualty</mark>
 				<mark name="life_and_health">Specialty</mark>
+				<mark name="marine_and_energy">	Specialty</mark>
 				<mark name="lloyds">Lloyd's</mark>
 				<mark name="mat_energy">Specialty</mark>
 				<mark name="property">Property</mark>
 				<mark name="reinsurance">Reinsurance</mark>
 				<mark name="specialty">Specialty</mark>
 				<mark name="run_off">Legacy</mark>
+				<mark name="business_interruption">Property</mark>
+				 
+				
+				
 			</market>			
 			<country>
+				
 				<reg name="world">Global</reg>
 				<reg name="c_and_s_america">Americas</reg>
 				<reg name="europe">Europe</reg>
 				<reg name="london">London</reg>
-				<reg name="mea">Middle East/Africa</reg>
+				<reg name="mea">Middle East and Africa</reg>
 				<reg name="uk">Europe</reg>
 				<reg name="usa_and_canada">Americas</reg>
 				<reg name="rest_of_world">Global</reg>
 				<reg name="global">Global</reg>
-				<reg name="asia_pacific">Asia-Pacific</reg>
+				<reg name="asia_pacific">Asia Pacific</reg>
 				<reg name="bermuda">Bermuda</reg>
+				<reg name="emerging_markets">Global</reg>
+				<reg name="united_states">Americas</reg>
+				<reg name="Japan">Japan</reg>
+				
 			</country>			
 			<topics>					
 					<top name="mergers-and-acquisitions">Mergers and Acquisitions</top>
@@ -3339,8 +3351,22 @@
 					<top name="company_graphs">Companies House</top>
 					<top name="company_peer_group">Companies House</top>
 					<top name="id_top_50_index_page">Companies House</top>
-					<top name="events">ID Awards</top>			
+					<top name="events">ID Awards</top>	
+					<top name="legal_focus">Legal Focus</top>
+					<top name="distribution">Distribution</top>
+					<top name="divestments">Mergers and Acquisitions</top>
+					<top name="m_and_a">Mergers and Acquisitions</top>
+				
+
 			</topics>			
+			<sectors>
+				<sector name="regulation">Regulation</sector>
+				<sector name="marine">Marine</sector>
+				<sector name="capital_management">Insurance-Linked Securities</sector>
+				
+			</sectors>
+		
+		
 		</ID>
 		<LL>
 			<contenttype>
