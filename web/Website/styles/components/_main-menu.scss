@@ -136,7 +136,7 @@ $main-menu-handle-width: 70px;
 	.main-menu__section-link {
 		padding-left: 2.5rem;
 	}
-	&:hover:before {
+	&:hover:before , &.activate:before {
 		background-color: $color-tree-poppy-orange;
 		content: "";
 		display: block;
