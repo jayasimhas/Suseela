@@ -9,6 +9,10 @@
         string LatestFromText { get; }
         int PageNo { get; }
         int PageSize { get; }
-        IList<string> TaxonomyIds {get;}
+        IList<string> TaxonomyIds { get; }
+        string SeeAllText { get; }
+        string SeeAllLink { get; }
+        string CurrentlyViewingText { get; }
+
     }
 }

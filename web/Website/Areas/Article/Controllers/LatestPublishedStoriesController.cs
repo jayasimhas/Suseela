@@ -42,9 +42,9 @@ namespace Informa.Web.Areas.Article.Controllers
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
             MediaType = !string.IsNullOrEmpty(Parameters.Media_Type.ToString()) ? Parameters.Media_Type : Guid.Empty;
             ContentType = !string.IsNullOrEmpty(Parameters.Content_Type.ToString()) ? Parameters.Content_Type : Guid.Empty;
-            ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
+            ItemsToDisplay = Parameters.Max_Stories_to_Display != 0 ? Parameters.Max_Stories_to_Display : 100;
             PublicationName = rootContext.Item.Publication_Name;
-
+            IsDisplayDate = Parameters?.Display_Published_Date ?? false;
         }
         /// <summary>
         /// Get latest published strories in first call
@@ -56,6 +56,7 @@ namespace Informa.Web.Areas.Article.Controllers
             LatestPublishedStory latest = new LatestPublishedStory();
             var filter = ArticleSearch.CreateFilter();
             filter.Page = 1;
+            filter.PageSize = ItemsToDisplay;
 
             if (Topics != null) filter.TaxonomyIds.AddRange(Topics);
             if (PublicationName != null) filter.PublicationNames.Add(PublicationName);
@@ -63,16 +64,15 @@ namespace Informa.Web.Areas.Article.Controllers
             if (!string.IsNullOrEmpty(MediaType.ToString()) && MediaType != Guid.Empty) filter.MediaTypeTaxonomyId = MediaType;
             if (!string.IsNullOrEmpty(ContentType.ToString()) && ContentType != Guid.Empty) filter.ContentTypeTaxonomyId = ContentType;
 
-            latest.MaxStoriesToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
-
-            if (latest.MaxStoriesToDisplay < 4 && latest.MaxStoriesToDisplay != 0)
-            {
-                filter.PageSize = latest.MaxStoriesToDisplay;
-            }
-            else
-            {
-                filter.PageSize = 4;
-            }
+            //latest.MaxStoriesToDisplay = !string.IsNullOrEmpty(Parameters.Max_Stories_to_Display.ToString()) ? Parameters.Max_Stories_to_Display : 4;
+            //if (latest.MaxStoriesToDisplay < 4 && latest.MaxStoriesToDisplay != 0)
+            //{
+            //    filter.PageSize = latest.MaxStoriesToDisplay;
+            //}
+            //else
+            //{
+            //    filter.PageSize = 4;
+            //}
             var results = ArticleSearch.Search(filter);
             var articles =
                 results.Articles.Where(a => a != null)
@@ -84,8 +84,9 @@ namespace Informa.Web.Areas.Article.Controllers
             latest.Authors = Authors;
             latest.ContentType = ContentType;
             latest.MediaType = MediaType;
+            latest.IsDisplayDate = IsDisplayDate;
             latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");
-
+            latest.LatestStoriesComponentTitle = TextTranslator.Translate("Latest.Published.Stories.Component.Title");
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
         /// <summary>
@@ -192,6 +193,7 @@ namespace Informa.Web.Areas.Article.Controllers
         public string PublicationName { get; set; }
         public Guid ContentType { get; set; }
         public Guid MediaType { get; set; }
+        public bool IsDisplayDate { get; set; }
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();

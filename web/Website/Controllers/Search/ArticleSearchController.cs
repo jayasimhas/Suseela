@@ -1,10 +1,15 @@
 ﻿namespace Informa.Web.Controllers.Search
 {
+    using Glass.Mapper.Sc;
     using Informa.Library.Article.Search;
+    using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+    using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Informa.Web.ViewModels.Articles;
     using Library.Globalization;
+    using Library.User.UserPreference;
     using Library.Utilities.Extensions;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Http;
     using System.Web.Http.Results;
@@ -13,12 +18,15 @@
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly ISitecoreContext SitecoreContext;
         public ArticleSearchController(IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+            ISitecoreContext sitecoreContext)
         {
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
+            SitecoreContext = sitecoreContext;
         }
 
         /// <summary>
@@ -29,7 +37,7 @@
         [HttpPost]
         public object GetArticles([FromBody] ArticleSearchRequest articleRequest)
         {
-            if(articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
+            if (articleRequest == null || articleRequest.TaxonomyIds == null || articleRequest.TaxonomyIds.Count < 1)
                 return new { Articles = "No articles found" };
             var filter = ArticleSearch.CreateFilter();
             filter.Page = articleRequest.PageNo;
@@ -39,7 +47,7 @@
             if (results != null && results.Articles != null && results.Articles.Count() > articleRequest.PageSize - 1)
             {
                 var articles = results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.CreatePersonalizedArticle(a));
-                if(articles == null || articles.Count() < articleRequest.PageSize)
+                if (articles == null || articles.Count() < articleRequest.PageSize)
                     return new { Articles = "No articles found" };
 
                 var loadMore = new LoadMore
@@ -47,15 +55,55 @@
                     DisplayLoadMore = (results.TotalResults - (articleRequest.PageNo * articleRequest.PageSize)) >= articleRequest.PageSize,
                     LoadMoreLinkText = TextTranslator.Translate("Article.LoadMoreFrom"),
                     LoadMoreLinkUrl = "/api/articlesearch/",
-                    LatestFromText = TextTranslator.Translate("Article.LatestFrom"),
+                    LatestFromText = TextTranslator.Translate("Channel.Prefix.Text"),
                     PageNo = articleRequest.PageNo + 1,
                     PageSize = articleRequest.PageSize,
-                    TaxonomyIds = articleRequest.TaxonomyIds
+                    TaxonomyIds = articleRequest.TaxonomyIds,
+                    SeeAllText = TextTranslator.Translate("Article.LatestFrom.SeeAllLink"),
+                    SeeAllLink = "/search#?q=",
+                    CurrentlyViewingText = GetCurrentlyViewingText(articleRequest.TaxonomyIds, articleRequest.ChannelId)
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }
 
             return new { Articles = "No articles found" };
+        }
+
+        private string GetCurrentlyViewingText(IList<string> selectedTopicsCount, string ChannelId)
+        {
+            var currentlyViewingText = TextTranslator.Translate("Currently.Viewing.Out.of.Available");
+            if (!string.IsNullOrEmpty(currentlyViewingText))
+            {
+                var replacements = new Dictionary<string, string>
+                {
+                    ["#selectedtopics#"] = selectedTopicsCount?.Count().ToString(),
+                    ["#totaltopics#"] = GetAllTopics(ChannelId)
+                };
+                return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        private string GetAllTopics(string channelId)
+        {
+            if (!string.IsNullOrEmpty(channelId))
+            {
+                var channel = SitecoreContext.GetItem<IChannel_Page>(new Guid(channelId));
+                if (channel != null)
+                {
+                    var pageAssets = channel._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+                    if (pageAssets != null)
+                    {
+                        var topics = pageAssets._ChildrenWithInferType.
+                                OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                        return topics?.Count().ToString();
+                    }
+                }
+            }
+            return string.Empty;
         }
     }
 }

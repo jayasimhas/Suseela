@@ -63,92 +63,92 @@ namespace Informa.Library.Search.Utilities
                     string key = string.Empty;
                     string verticalName = (rootItem != null) ? rootItem.Name : string.Empty;
 
-                    if (string.Equals(rootItem.Name, "Agri", StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Agri"), StringComparison.OrdinalIgnoreCase))
                     {
-                        if (IsValidTaxonomy("RegionsTaxonomyFolder", parentPath))
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.RegionsTaxonomyFolder"), parentPath))
                         {
                             key = Regions;
                         }
-                        else if (IsValidTaxonomy("AgencyRegulatorTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.AgencyRegulatorTaxonomyFolder"), parentPath))
                         {
                             key = AgencyRegulator;
                         }
-                        else if (IsValidTaxonomy("AnimalHealthTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.AnimalHealthTaxonomyFolder"), parentPath))
                         {
                             key = AnimalHealth;
                         }
-                        else if (IsValidTaxonomy("CommercialTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CommercialTaxonomyFolder"), parentPath))
                         {
                             key = Commercial;
                         }
-                        else if (IsValidTaxonomy("CommodityTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CommodityTaxonomyFolder"), parentPath))
                         {
                             key = Commodities;
                         }
-                        else if (IsValidTaxonomy("CommodityFactorsTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CommodityFactorsTaxonomyFolder"), parentPath))
                         {
                             key = CommodityFactors;
                         }
-                        else if (IsValidTaxonomy("CompaniesTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
                         {
                             key = Companies;
                         }
-                        else if (IsValidTaxonomy("CropProtectionaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CropProtectionaxonomyFolder"), parentPath))
                         {
                             key = CropProtection;
                         }
-                        else if (IsValidTaxonomy("IndustriesTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.IndustriesTaxonomyFolder"), parentPath))
                         {
                             key = AgriIndustries;
                         }
                     }
-                    else if (string.Equals(rootItem.Name, "Maritime", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Maritime"), StringComparison.OrdinalIgnoreCase))
                     {
-                        if (IsValidTaxonomy("RegionsTaxonomyFolder", parentPath))
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.RegionsTaxonomyFolder"), parentPath))
                         {
                             key = Regions;
                         }
-                        else if (IsValidTaxonomy("CompaniesTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
                         {
                             key = MaritimeCompanies;
                         }
-                        else if (IsValidTaxonomy("HotTopicsTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.HotTopicsTaxonomyFolder"), parentPath))
                         {
                             key = HotPicks;
                         }
-                        else if (IsValidTaxonomy("MarketsTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.MarketsTaxonomyFolder"), parentPath))
                         {
                             key = Markets;
                         }
-                        else if (IsValidTaxonomy("RegularsTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.RegularsTaxonomyFolder"), parentPath))
                         {
                             key = Regulars;
                         }
-                        else if (IsValidTaxonomy("SectorsTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.SectorsTaxonomyFolder"), parentPath))
                         {
                             key = Sectors;
                         }
-                        else if (IsValidTaxonomy("TopicTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.TopicTaxonomyFolder"), parentPath))
                         {
                             key = Topic;
                         }
                     }
-                    else if (string.Equals(rootItem.Name, "Pharma", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Pharma"), StringComparison.OrdinalIgnoreCase))
                     {
 
-                        if (IsValidTaxonomy("SubjectsTaxonomyFolder", parentPath))
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.SubjectsTaxonomyFolder"), parentPath))
                         {
                             key = Subjects;
                         }
-                        else if (IsValidTaxonomy("TherapyAreasTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.TherapyAreasTaxonomyFolder"), parentPath))
                         {
                             key = TherapyAreas;
                         }
-                        else if (IsValidTaxonomy("DeviceAreasTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.DeviceAreasTaxonomyFolder"), parentPath))
                         {
                             key = DeviceAreas;
                         }
-                        else if (IsValidTaxonomy("IndustryTaxonomyFolder", parentPath))
+                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.IndustryTaxonomyFolder"), parentPath))
                         {
                             key = PharmaIndustries;
                         }

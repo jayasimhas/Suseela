@@ -1,4 +1,5 @@
-﻿using Jabberwocky.Autofac.Attributes;
+﻿using Informa.Library.SalesforceConfiguration;
+using Jabberwocky.Autofac.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,16 @@ namespace Informa.Library.User.Entitlement
     {
         protected readonly IEntitlementChecksEnabled EntitlementChecksEnabled;
         protected readonly IEntitlementsContexts EntitlementsContexts;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public EntitlementAccessContext(
             IEntitlementChecksEnabled entitlementChecksEnabled,
-            IEntitlementsContexts entitlementsContexts)
+            IEntitlementsContexts entitlementsContexts,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             EntitlementChecksEnabled = entitlementChecksEnabled;
             EntitlementsContexts = entitlementsContexts;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         public IEntitlementAccess Find(IEntitledProduct entitledProduct)
@@ -66,11 +70,16 @@ namespace Informa.Library.User.Entitlement
 
         private bool CheckEntitlement(IEntitledProduct entitledProduct, IEntitlement entitlement)
         {
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled &&
+                (string.IsNullOrWhiteSpace(entitlement.AccessEndDate) || 
+                Convert.ToDateTime(entitlement.AccessEndDate) < DateTime.Now))
+                return false;
+
             if (entitledProduct.EntitlementLevel == EntitlementLevel.Channel)
             {
                 return entitledProduct.Channels.Contains(entitlement.ProductCode);
             }
-            else if(entitledProduct.EntitlementLevel == EntitlementLevel.Site)
+            else if (entitledProduct.EntitlementLevel == EntitlementLevel.Site)
             {
                 return string.Equals(entitlement.ProductCode, entitledProduct.ProductCode, StringComparison.InvariantCultureIgnoreCase);
             }

@@ -1,8 +1,9 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Management.SubscriptionsViewModel
+﻿@using Informa.Library.User.Entitlement
+@model Informa.Web.Areas.Account.ViewModels.Management.SubscriptionsViewModel
 
 @if (Model.IsAuthenticated)
 {
-<div class="page-account subscriptionPan">
+    <div class="page-account subscriptionPan">
         @Html.Sitecore().Placeholder("page-account")
         <span class="page-account_text">
             @Html.Raw(Model.SubscriptionHeaderSubTitle)
@@ -60,8 +61,6 @@
                         </tr>
                     </thead>
                     <tbody class="hidden-xs" aria-live="polite" aria-relevant="all">
-
-
                         @{
                             int i = 1;
                             foreach (var item in Model.SubscriptionViewModels)
@@ -69,13 +68,123 @@
                                 string parentrow = "ptc" + i;
                                 string active = item.IsCurrentPublication ? "active" : string.Empty;
                                 string pubExpiryDate = item.Expiration.Equals(DateTime.MinValue) ? string.Empty : item.Expiration.ToString("d MMMM yyyy");
+                                string accordiancls = string.Empty;
+                                if (item.ChannelItems != null && item.ChannelItems.Count() > 0)
+                                {
+                                    accordiancls = "accordian";
+                                }
+                                else
+                                {
+                                    accordiancls = "accordian hideCol";
+                                }
 
                                 @*Desktop section Starts*@
                                 <tr class="parent @parentrow @active hidden-xs" role="row">
-                                    <td colspan="2" class="sortable-table__col"><span class="accordian"></span> @item.Publication</td>
+                                    <td colspan="2" class="sortable-table__col"><span class="@accordiancls"></span> @item.Publication</td>
                                     <td class="sortable-table__col">@pubExpiryDate</td>
-                                    <td class="sortable-table__col hidden-xs">
-                                      @{ 
+                                    <td class="sortable-table__col">
+                                        @if (!item.Entitlement_Type.Equals(EntitlementLevel.Channel))
+                                        {
+                                            if (item.Renewable)
+                                            {
+                                                <a class="button button--outline click-utag"
+                                                   data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@item.Publication"}'
+                                                   href="@Model.OffSiteRenewLink">
+                                                    @Model.Renew
+                                                </a>
+                                            }
+                                            else if (item.Subscribable)
+                                            {
+                                                <a class="button button--outline subscribed click-utag" onclick="return false;"
+                                                   data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@item.Publication"}'
+                                                   href="#">
+                                                    @Model.Subscribed
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a class="button button--outline click-utag"
+                                                   data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribe","subscribe_topic":"@item.Publication"}'
+                                                   href="@Model.OffSiteSubscriptionLink">
+                                                    @Model.Subscribe
+                                                </a>
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <a class="button button--outline subscribed"></a>
+                                        }
+                                        <span class="@accordiancls"></span>
+                                    </td>
+
+                                </tr>
+                                if (item.ChannelItems != null && item.ChannelItems.Any())
+                                {
+                                    string childrow = "tc" + i;
+                                    foreach (var channel in item.ChannelItems)
+                                    {
+                                        string ChannelExpiryDate = channel.ChannelExpirationdate.Equals(DateTime.MinValue) ? string.Empty : channel.ChannelExpirationdate.ToString("d MMMM yyyy");
+                                        <tr class="child @childrow hidden-xs" role="row">
+                                            <td></td>
+                                            <td class="hidden-lg" colspan="1">@channel.ChannelName</td>
+                                            <td class="hidden-xs sortable-table__col" colspan="1">@channel.ChannelName</td>
+                                            <td class="sortable-table__col">@ChannelExpiryDate</td>
+                                            <td class="sortable-table__col hidden-xs">
+                                                @{
+                                                    if (channel.Renewable)
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@channel.ChannelName"}'
+                                                           href="@Model.OffSiteRenewLink">
+                                                            @Model.Renew
+                                                        </a>
+                                                    }
+                                                    else if (channel.Subscribable)
+                                                    {
+                                                        <a class="button button--outline subscribed click-utag" onclick="return false;"
+                                                           data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@channel.ChannelName"}'
+                                                           href="#">
+                                                            @Model.Subscribed
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribe","subscribe_topic":"@channel.ChannelName"}'
+                                                           href="@Model.OffSiteSubscriptionLink">
+                                                            @Model.Subscribe
+                                                        </a>
+                                                    }
+                                                }
+                                            </td>
+                                        </tr>
+                                                        }
+                                                    }
+                                                    @*Desktop section Ends*@
+                            i++;
+                        }
+                        }
+                    </tbody>
+                </table>
+                @{
+                    @*Mobile section Starts*@
+                foreach (var item in Model.SubscriptionViewModels)
+                {
+                    string pubExpiryDate = item.Expiration.Equals(DateTime.MinValue) ? string.Empty : item.Expiration.ToString("d MMMM yyyy");
+                    string accordiancls = string.Empty;
+                    if (item.ChannelItems != null && item.ChannelItems.Count() > 0)
+                    {
+                        accordiancls = "maintitle";
+                    }
+                    <div class="hidden-lg">
+                        <div class="tableMrow">
+                            <div class="title @accordiancls active">@Model.PublicationText</div>
+                            <div class="pubName">@item.Publication</div>
+                            @if (!item.Entitlement_Type.Equals(EntitlementLevel.Channel))
+                            {
+                                <div class="pubSubscribe">
+                                    @{
                                         if (item.Renewable)
                                         {
                                             <a class="button button--outline click-utag"
@@ -101,30 +210,36 @@
                                             </a>
 
                                         }
-                                        <span class="accordian"></span>
-                                      }
-                                    </td>
-                                </tr>
-                                          if (item.ChannelItems != null && item.ChannelItems.Any())
-                                          {
-                                              string childrow = "tc" + i;
-                                              foreach (var channel in item.ChannelItems)
-                                              {
-                                        <tr class="child @childrow hidden-xs" role="row">
-                                            <td></td>
-                                            <td class="hidden-lg" colspan="2">@channel.ChannelName</td>
-                                            <td class="hidden-xs sortable-table__col" colspan="2">@channel.ChannelName</td>
-                                            <td class="sortable-table__col hidden-xs">
-                                                @{ 
+                                    }
+                                </div>
+                                        }
+                            @if (!string.IsNullOrEmpty(pubExpiryDate))
+                            {
+                                <div class="title">@Model.ExpirationDateText</div>
+                                            <div class="sortable-table__col">
+                                                @pubExpiryDate
+                                            </div>
+                            }
+                            @if (item.ChannelItems != null && item.ChannelItems.Any())
+                            {
+                                <div class="subjects">
+                                    <div class="hidden-lg title">Subjects</div>
+                                    @foreach (var channel in item.ChannelItems)
+                                    {
+                                        string ChannelExpiryDate = channel.ChannelExpirationdate.Equals(DateTime.MinValue) ? string.Empty : channel.ChannelExpirationdate.ToString("d MMMM yyyy");
+                                        <div class="tablerow clearfix">
+                                            <div class="pubName">@channel.ChannelName</div>
+                                            <div class="pubSubscribe">
+                                                @{
                                                     if (channel.Renewable)
                                                     {
-                                                    <a class="button button--outline click-utag"
-                                                       data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@channel.ChannelName"}'
-                                                       href="@Model.OffSiteRenewLink">
-                                                        @Model.Renew
-                                                    </a>
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@channel.ChannelName"}'
+                                                           href="@Model.OffSiteRenewLink">
+                                                            @Model.Renew
+                                                        </a>
                                                     }
-                                                    else if (channel.Subscribable)
+                                                    else if (channel.Subscribable && !channel.Renewable)
                                                     {
                                                         <a class="button button--outline subscribed click-utag" onclick="return false;"
                                                            data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@channel.ChannelName"}'
@@ -139,118 +254,33 @@
                                                            href="@Model.OffSiteSubscriptionLink">
                                                             @Model.Subscribe
                                                         </a>
+
                                                     }
-                                                   }
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                                @*Desktop section Ends*@
-                            i++;
-                        }
-                        }
-                    </tbody>
-                </table>
-                @{
-                    @*Mobile section Starts*@
-                foreach (var item in Model.SubscriptionViewModels)
-                {
-                    string pubExpiryDate = item.Expiration.Equals(DateTime.MinValue) ? string.Empty : item.Expiration.ToString("d MMMM yyyy");
-                        <div class="hidden-lg">
-                            <div class="tableMrow">
-                                <div class="title maintitle active">@Model.PublicationText</div>
-                                <div class="pubName">@item.Publication</div>
-                                <div class="pubSubscribe">
-                                @{
-                                    if (item.Renewable)
-                                    {
-                                        <a class="button button--outline click-utag"
-                                           data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@item.Publication"}'
-                                           href="@Model.OffSiteRenewLink">
-                                            @Model.Renew
-                                        </a>
-                                    }
-                                    else if (item.Subscribable)
-                                    {
-                                        <a class="button button--outline subscribed click-utag" onclick="return false;"
-                                           data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@item.Publication"}'
-                                           href="#">
-                                            @Model.Subscribed
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a class="button button--outline click-utag"
-                                           data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribe","subscribe_topic":"@item.Publication"}'
-                                           href="@Model.OffSiteSubscriptionLink">
-                                            @Model.Subscribe
-                                        </a>
-
-                                    }
-                                   }
-                                </div>
-                                <div class="title">@Model.ExpirationDateText</div>
-                                <div class="sortable-table__col">
-                                    @pubExpiryDate
-                                </div>
-                                @if (item.ChannelItems != null && item.ChannelItems.Any())
-                                {
-                                    <div class="subjects">
-                                        <div class="hidden-lg title">Subjects</div>
-                                        @foreach (var channel in item.ChannelItems)
-                                        {
-                                            <div class="tablerow clearfix">
-                                                <div class="pubName">@channel.ChannelName</div>
-                                                <div class="pubSubscribe">
-                                                    @{ 
-                                                        if (channel.Renewable)
-                                                        {
-                                                            <a class="button button--outline click-utag"
-                                                               data-info='{"event_name": "renew","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"renew","subscribe_topic":"@channel.ChannelName"}'
-                                                               href="@Model.OffSiteRenewLink">
-                                                                @Model.Renew
-                                                            </a>
-                                                        }
-                                                        else if (channel.Subscribable && !channel.Renewable)
-                                                        {
-                                                            <a class="button button--outline subscribed click-utag" onclick="return false;"
-                                                               data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@channel.ChannelName"}'
-                                                               href="#">
-                                                                @Model.Subscribed
-                                                            </a>
-                                                        }
-                                                        else
-                                                        {
-                                                            <a class="button button--outline click-utag"
-                                                               data-info='{"event_name": "subscribe","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribe","subscribe_topic":"@channel.ChannelName"}'
-                                                               href="@Model.OffSiteSubscriptionLink">
-                                                                @Model.Subscribe
-                                                            </a>
-
-                                                            }
-                                                        }
-                                                </div>
+                                                }
                                             </div>
-                                        }
+                                        </div>
 
-                                    </div>
-                                }
-                            </div>
+                                                    }
 
+
+                                </div>
+                                                    }
                         </div>
-                }
-                @*Mobile section Ends*@
+
+                    </div>
+                                                    }
+                                                    @*Mobile section Ends*@
                 }
             </div>
         </div>
     </div>
-<script src="/dist/js/jquery-3.1.1.js"></script>
-<script src="/dist/js/jquery.tablesorter.js"></script>
-<script src="/dist/js/table-childssorter.js"></script>
-}
-else
-{
-    <div class="page-account__sign-in-solo">
-        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
-    </div>
-}
+    <script src="/dist/js/jquery-3.1.1.js"></script>
+    <script src="/dist/js/jquery.tablesorter.js"></script>
+    <script src="/dist/js/table-childssorter.js"></script>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="page-account__sign-in-solo">
+                                                            @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+                                                        </div>
+                                                                }

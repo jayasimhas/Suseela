@@ -156,6 +156,28 @@
     .latest-news__header:before {
         background-color: $color;
     }
+    .rolling-stream {
+        h2 {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 4px;
+                width: calc( 100% - 15px);
+                background: $color;
+                left: 0;
+            }
+        }
+        h5 {
+            a {
+                color: $color-zeus-black;
+                &:hover {
+                    color: $color;
+                }
+            }
+        }
+    }
 }
 
 

@@ -1,4 +1,5 @@
 @mixin folow-btn($w, $h){
+	border: 1px solid $color-tree-poppy-orange;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 0.75em;
@@ -8,6 +9,7 @@
 	display: inline-block;
     line-height: $h;
 	float: right;
+	color: #58595b;
 }
 @mixin tableData($px){ 
 	padding: 0.75rem 1.25rem;
@@ -49,6 +51,8 @@
 @mixin unfollowBtnLbl(){
 	@include folow-btn(7.5rem, 2rem);
 	margin: 0.5rem 0 0 1.25rem;
+	background-color: $color-tree-poppy-orange;
+	color: $color-white;
 	&.mtp{
 		margin-top: -6px;
 		margin-bottom: 25px;
@@ -58,6 +62,10 @@
 	@include folow-btn(7.5rem, 2rem);
 	padding: 0 1.5625rem;
 	margin-top: 0.5rem;
+	&:hover{
+		background-color: $color-tree-poppy-orange;
+		color: $color-white;
+	}
 	&.mtp{
 		margin-top: -6px;
 		margin-bottom: 25px;
@@ -67,6 +75,97 @@
 .myview-settings {
 	padding-bottom: 50px !important;
 	margin-bottom: 3.125rem;
+	
+	.followAllBtn{
+		@include followBtnLbl();
+		min-width: 130px;
+		border: 1px solid #fab142;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+	}
+	.followinglbl{
+		@include followBtnLbl();
+		cursor: text;
+		@include breakpoint('medium-small') {
+			margin: 0px !important;
+			float: left;
+		}
+	}
+	.unfollowAllBtn{
+		@include unfollowBtnLbl();
+		padding: 0 1rem;
+		margin-left: 0.5rem;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@media screen and (min-width: 667px) and (max-width: 767px){
+			padding: 0 1.25rem;
+		}
+	}
+	.followlbl{
+		@include unfollowBtnLbl();
+		padding: 0;
+		cursor: text;
+		min-width: 130px;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('medium-small') {
+			margin: 0px !important;
+			float: left;
+		}
+	}
+	.followingBtn{
+		@include folow-btn(7.5rem, 2rem);
+		padding: 0 1.625rem;
+		&:hover{
+			background: $color-tree-poppy-orange;
+			color: $color-white;
+			@include breakpoint('small') {
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
+			}
+		} 
+		@include breakpoint('medium-small'){
+			background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
+			height: 1.875rem;
+			width: 1.875rem;
+			border: none;
+			padding: 0 1rem;
+			display: inline-block;
+			margin-left: 0.625rem;
+			text-indent: -9999px;
+		}
+	}
+	.followBtn{
+		@include folow-btn(7.5rem, 2rem);
+		padding: 0 2.25rem;
+		@include breakpoint('medium-small'){
+			background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+			height: 1.875rem;
+			width: 1.875rem;
+			display: inline-block;
+			margin-left: 0.625rem;
+			border: none;
+			padding: 0 1rem;
+			text-indent: -9999px;
+		}
+	}
 	&.myview-settings-registration {
 		.publicationPan h2 {
 			width: auto;
@@ -202,44 +301,7 @@
 					td{
 						@include tableData(1px);
 						vertical-align: middle;
-					}
-					.followingBtn{
-						@include folow-btn(7.5rem, 2rem);
-						padding: 0 1.625rem;
-						&:hover{
-							@include breakpoint('large') {
-								background: inherit;
-								color: inherit;
-							}
-							@include breakpoint('small') {
-								background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
-							}
-						}
-						@include breakpoint('medium-small'){
-							background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
-							height: 1.875rem;
-							width: 1.875rem;
-							border: none;
-							padding: 0 1rem;
-							display: inline-block;
-							margin-left: 0.625rem;
-							text-indent: -9999px;
-						}
-					}
-					.followBtn{
-						@include folow-btn(7.5rem, 2rem);
-						padding: 0 2.25rem;
-						@include breakpoint('medium-small'){
-							background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
-							height: 1.875rem;
-							width: 1.875rem;
-							display: inline-block;
-							margin-left: 0.625rem;
-							border: none;
-							padding: 0 1rem;
-							text-indent: -9999px;
-						}
-					}
+					} 
 					&.followingrow{
 						.rowlines{
 							@include getMove();
@@ -414,60 +476,6 @@
 						padding-bottom: 1.5rem;
 						padding-top: 0rem;
 					}
-				} 
-				.followAllBtn{
-					@include followBtnLbl();
-					min-width: 130px;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-				}
-				.followinglbl{
-					@include followBtnLbl();
-					cursor: text;
-					@include breakpoint('medium-small') {
-						margin: 0px !important;
-						float: left;
-					}
-				}
-				.unfollowAllBtn{
-					@include unfollowBtnLbl();
-					padding: 0 1rem;
-					margin-left: 0.5rem;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@media screen and (min-width: 667px) and (max-width: 767px){
-						padding: 0 1.25rem;
-					}
-				}
-				.followlbl{
-					@include unfollowBtnLbl();
-					padding: 0;
-					cursor: text;
-					min-width: 130px;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('medium-small') {
-						margin: 0px !important;
-						float: left;
-					}
 				}
 			}
 			.wd-55{
@@ -518,6 +526,7 @@
 	  }
 	  .gotoview{
 		 @include folow-btn(auto, 2rem);
+		 border: none;
 		  margin-left: 1.25rem;
 		  a{
 			display: block;
@@ -935,6 +944,30 @@
 					color: #fff;
 					&:hover{
 						border: 1px solid #b0173d;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.theme-commodities{
+	.myview-settings {
+		.table{
+			span{
+				color: #9E310D;
+				fill: #9E310D;
+				&.button--outline{
+					border: 1px solid #9E310D;
+					&:hover{
+						border: 1px solid #F5821F;
+					}
+				}
+				&.button--filled{
+					color: #fff;
+					&:hover{
+						border: 1px solid #F5821F;
 					}
 				}
 			}
