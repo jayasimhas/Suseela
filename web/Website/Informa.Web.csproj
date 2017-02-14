@@ -1200,6 +1200,8 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueATAViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueATAViewModel.cs" />
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
@@ -1814,6 +1816,7 @@
     <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueATA.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

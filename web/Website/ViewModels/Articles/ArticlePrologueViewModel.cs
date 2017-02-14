@@ -7,21 +7,25 @@ namespace Informa.Web.ViewModels.Articles
 	{
 		public ArticlePrologueViewModel(
 			IArticleProloguePrintViewModel articleProloguePrintViewModel,
-			IArticlePrologueEmailViewModel articlePrologueEmailViewModel,
+			IArticlePrologueATAViewModel articlePrologueEmailViewModel,
 			IArticlePrologueBookmarkViewModel articlePrologueBookmarkViewModel,
 			IArticlePrologueShareViewModel articlePrologueShareViewModel,
-			IArticleTagsViewModel articleTagsViewModel)
+			IArticleTagsViewModel articleTagsViewModel,
+            IArticlePrologueATAViewModel articleATAViewModel)
 		{
 			PrintViewModel = articleProloguePrintViewModel;
 			EmailViewModel = articlePrologueEmailViewModel;
 			BookmarkViewModel = articlePrologueBookmarkViewModel;
 			ShareViewModel = articlePrologueShareViewModel;
 			ArticleTagsViewModel = articleTagsViewModel;
+            ATAViewModel = articleATAViewModel;
 		}
 
 		public IArticleProloguePrintViewModel PrintViewModel;
 
-		public IArticlePrologueEmailViewModel EmailViewModel;
+        public IArticlePrologueATAViewModel ATAViewModel;
+
+		public IArticlePrologueATAViewModel EmailViewModel;
 
 		public IArticlePrologueBookmarkViewModel BookmarkViewModel;
 
