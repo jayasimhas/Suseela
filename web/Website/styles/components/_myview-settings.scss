@@ -9,6 +9,7 @@
 	display: inline-block;
     line-height: $h;
 	float: right;
+	color: #58595b;
 }
 @mixin tableData($px){ 
 	padding: 0.75rem 1.25rem;
@@ -130,7 +131,41 @@
 			float: left;
 		}
 	}
-	
+	.followingBtn{
+		@include folow-btn(7.5rem, 2rem);
+		padding: 0 1.625rem;
+		&:hover{
+			background: $color-tree-poppy-orange;
+			color: $color-white;
+			@include breakpoint('small') {
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
+			}
+		} 
+		@include breakpoint('medium-small'){
+			background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
+			height: 1.875rem;
+			width: 1.875rem;
+			border: none;
+			padding: 0 1rem;
+			display: inline-block;
+			margin-left: 0.625rem;
+			text-indent: -9999px;
+		}
+	}
+	.followBtn{
+		@include folow-btn(7.5rem, 2rem);
+		padding: 0 2.25rem;
+		@include breakpoint('medium-small'){
+			background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+			height: 1.875rem;
+			width: 1.875rem;
+			display: inline-block;
+			margin-left: 0.625rem;
+			border: none;
+			padding: 0 1rem;
+			text-indent: -9999px;
+		}
+	}
 	&.myview-settings-registration {
 		.publicationPan h2 {
 			width: auto;
@@ -266,44 +301,7 @@
 					td{
 						@include tableData(1px);
 						vertical-align: middle;
-					}
-					.followingBtn{
-						@include folow-btn(7.5rem, 2rem);
-						padding: 0 1.625rem;
-						&:hover{
-							@include breakpoint('large') {
-								background: inherit;
-								color: inherit;
-							}
-							@include breakpoint('small') {
-								background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
-							}
-						}
-						@include breakpoint('medium-small'){
-							background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
-							height: 1.875rem;
-							width: 1.875rem;
-							border: none;
-							padding: 0 1rem;
-							display: inline-block;
-							margin-left: 0.625rem;
-							text-indent: -9999px;
-						}
-					}
-					.followBtn{
-						@include folow-btn(7.5rem, 2rem);
-						padding: 0 2.25rem;
-						@include breakpoint('medium-small'){
-							background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
-							height: 1.875rem;
-							width: 1.875rem;
-							display: inline-block;
-							margin-left: 0.625rem;
-							border: none;
-							padding: 0 1rem;
-							text-indent: -9999px;
-						}
-					}
+					} 
 					&.followingrow{
 						.rowlines{
 							@include getMove();
