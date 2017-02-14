@@ -39,7 +39,7 @@ namespace Informa.Library.Search.Extensions
                 {
                     taxGuids = new List<Guid>()
                     {
-                    refs.RegionsTaxonomyFolder,                   
+                    refs.RegionsTaxonomyFolder,
                     refs.PharmaSubjectsTaxonomyFolder,
                     refs.PharmaTherapyAreasTaxonomyFolder,
                     refs.PharmaDeviceAreasTaxonomyFolder,
@@ -51,7 +51,7 @@ namespace Informa.Library.Search.Extensions
                 {
                     taxGuids = new List<Guid>()
                     {
-                    refs.RegionsTaxonomyFolder,                   
+                    refs.RegionsTaxonomyFolder,
                     refs.AgriTaxonomyRootFolder,
                     refs.AgriAgencyRegulatorTaxonomyFolder,
                     refs.AgriAnimalHealthTaxonomyFolder,
@@ -66,7 +66,7 @@ namespace Informa.Library.Search.Extensions
                 {
                     taxGuids = new List<Guid>()
                     {
-                    refs.RegionsTaxonomyFolder,                   
+                    refs.RegionsTaxonomyFolder,
                     refs.MaritimeTaxonomyRootFolder,
                     refs.MaritimeCompaniesTaxonomyFolder,
                     refs.MaritimeHotTopicsTaxonomyFolder,
@@ -99,7 +99,7 @@ namespace Informa.Library.Search.Extensions
 
             var folderItem = service.GetItem<IFolder>(folder);
             if (folderItem == null)
-                return null;            
+                return null;
 
             var list = allItems.Where(b => b._Path.StartsWith(folderItem._Path));
             if (list == null || !list.Any())
@@ -129,13 +129,18 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilterContentType<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
                where T : ITaxonomySearchResults
         {
-            if (source == null || filter == null || string.IsNullOrEmpty(filter.ContentTypeTaxonomyId.ToString()) || filter.ContentTypeTaxonomyId == Guid.Empty)
+            if (source == null || filter == null || filter.ContentTypeTaxonomyIds == null || !filter.ContentTypeTaxonomyIds.Any())
             {
                 return source;
             }
 
             var predicate = PredicateBuilder.True<T>();
-            predicate = predicate.Or(i => i.ContentTypeTaxonomy == filter.ContentTypeTaxonomyId);
+            string temp = string.Empty;
+
+            foreach (var ContentTypeTaxonomyId in filter.ContentTypeTaxonomyIds)
+            {
+                predicate = predicate.Or(i => i.ContentTypeTaxonomy == ContentTypeTaxonomyId);
+            }
 
             return source.Filter(predicate);
         }
@@ -150,13 +155,17 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilterByMediaType<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
                    where T : ITaxonomySearchResults
         {
-            if (source == null || filter == null || string.IsNullOrEmpty(filter.MediaTypeTaxonomyId.ToString()) || filter.MediaTypeTaxonomyId == Guid.Empty)
+            if (source == null || filter == null || filter.MediaTypeTaxonomyIds == null || !filter.MediaTypeTaxonomyIds.Any())
             {
                 return source;
             }
 
             var predicate = PredicateBuilder.True<T>();
-            predicate = predicate.Or(i => i.MediaTypeTaxonomy == filter.MediaTypeTaxonomyId);
+            
+            foreach (var MediaTypeTaxonomyId in filter.MediaTypeTaxonomyIds)
+            {
+                predicate = predicate.Or(i => i.MediaTypeTaxonomy == MediaTypeTaxonomyId);
+            }
 
             return source.Filter(predicate);
         }

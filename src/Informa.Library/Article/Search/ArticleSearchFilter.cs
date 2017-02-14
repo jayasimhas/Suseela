@@ -11,8 +11,8 @@ namespace Informa.Library.Article.Search
         public int PageSize { get; set; }
         public string PublicationTitle { get; set; }
         public IList<Guid> TaxonomyIds { get; set; }
-        public Guid ContentTypeTaxonomyId { get; set; }
-        public Guid MediaTypeTaxonomyId { get; set; }
+        public IList<Guid> ContentTypeTaxonomyIds { get; set; }
+        public IList<Guid> MediaTypeTaxonomyIds { get; set; }
         public IList<string> ArticleNumbers { get; set; }
         public string EScenicID { get; set; }
         public string LegacyArticleNumber { get; set; }

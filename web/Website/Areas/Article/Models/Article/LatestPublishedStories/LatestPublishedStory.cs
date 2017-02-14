@@ -13,8 +13,8 @@ namespace Informa.Web.Areas.Article.Models.Article.LatestPublishedStories
         public IEnumerable<Guid> Topics { get; set; }
         public int MaxStoriesToDisplay { get; set; }
         public string PublicationName { get; set; }
-        public Guid ContentType { get; set; }
-        public Guid MediaType { get; set; }
+        public IEnumerable<Guid> ContentType { get; set; }
+        public IEnumerable<Guid> MediaType { get; set; }
         public string LoadMoreText { get; set; }
         public bool IsDisplayDate { get; set; }
         public string LatestStoriesComponentTitle { get; set; }

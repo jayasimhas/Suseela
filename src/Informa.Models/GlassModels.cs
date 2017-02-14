@@ -6488,7 +6488,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Content_Type { get; set; }
+        IList<Guid> Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6497,7 +6497,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Media_Type { get; set; }
+        IList<Guid> Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
@@ -6552,7 +6552,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Content_Type { get; set; }
+        IList<Guid> Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6561,7 +6561,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Media_Type { get; set; }
+        IList<Guid> Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>

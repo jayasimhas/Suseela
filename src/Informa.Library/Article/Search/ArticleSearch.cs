@@ -71,7 +71,10 @@ namespace Informa.Library.Article.Search
                 PublicationNames = new List<string>(),
                 AuthorGuids = new List<string>(),
                 AuthorFullNames = new List<string>(),
-                CompanyRecordNumbers = new List<string>()
+                CompanyRecordNumbers = new List<string>(),
+                ContentTypeTaxonomyIds = new List<Guid>(),
+                MediaTypeTaxonomyIds = new List<Guid>()
+
             };
         }
 
@@ -92,7 +95,7 @@ namespace Informa.Library.Article.Search
                     .FilteryByArticleNumbers(filter)
                     .FilteryByLegacyArticleNumber(filter)
                     .FilteryByEScenicID(filter)
-                    .FilteryByRelatedId(filter)                   
+                    .FilteryByRelatedId(filter)
                     .ApplyDefaultFilters();
 
 
