@@ -464,11 +464,15 @@ div#feedbacklite.fbl_r{
 		}
 	}
 }
-
 .ContentRecomm-RelatedContent-vertical {
 	clear: both;
 	h2{
 		margin-bottom: 1.5rem;
+	}
+	&.right{
+		.section-article-img {
+				width: 100%;
+		}
 	}
 	.section-article{
 		display: table;
@@ -483,6 +487,9 @@ div#feedbacklite.fbl_r{
 		}
 		.section-article-text{
 			display: table;
+			div{
+				margin-bottom: 20px;
+			}
 		}
 		
 		width: 100%;
@@ -496,6 +503,7 @@ div#feedbacklite.fbl_r{
 		}
 	}
 }
+
 .suggested-article {
 	float: left;
 	width: 100%;
