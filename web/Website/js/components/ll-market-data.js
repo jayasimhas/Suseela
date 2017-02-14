@@ -76,10 +76,10 @@
 					items:4
 					},
 					678:{
-					items:6
+					items:3
 					},
 					320:{
-					 items:2
+					 items:1
 					},
 					480:{
 					 items:2

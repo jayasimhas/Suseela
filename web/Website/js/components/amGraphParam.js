@@ -113,6 +113,8 @@ $(function(){
 			nav: true,
 			navContainer: '#customNav',
 			dotsContainer: '#customDots',
+			touchDrag  : false,
+			mouseDrag  : false,
 			slideBy: 4,
 			 navText: [
 				  "<img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMwLjgzIDMyLjY3bC05LjE3LTkuMTcgOS4xNy05LjE3LTIuODMtMi44My0xMiAxMiAxMiAxMnoiLz48cGF0aCBkPSJNMC0uNWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+'/>",
@@ -135,7 +137,8 @@ $(function(){
 				items:4
 				}
 			}
-		});
+		}); 
+
 	}
 	if($('#mycarousel2') && $('#mycarousel').length){
 		$('#mycarousel2.owl-carousel').owlCarousel({
