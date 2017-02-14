@@ -8174,6 +8174,8 @@ div#feedbacklite.fbl_r {
   .ContentRecomm-RelatedContent-vertical h2, .ContentRecomm-RelatedContent-vertical .article-topics__header {
     margin-bottom: 24px;
     margin-bottom: 1.5rem; }
+  .ContentRecomm-RelatedContent-vertical.right .section-article-img {
+    width: 100%; }
   .ContentRecomm-RelatedContent-vertical .section-article {
     display: table;
     width: 100%;
@@ -8191,6 +8193,8 @@ div#feedbacklite.fbl_r {
         width: 100%; }
     .ContentRecomm-RelatedContent-vertical .section-article .section-article-text {
       display: table; }
+      .ContentRecomm-RelatedContent-vertical .section-article .section-article-text div {
+        margin-bottom: 20px; }
     .ContentRecomm-RelatedContent-vertical .section-article:last-child {
       border-bottom: 0 !important; }
 
