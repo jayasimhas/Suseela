@@ -444,6 +444,7 @@
     <Compile Include="Subscription\ChannelSubscription.cs" />
     <Compile Include="Subscription\IChannelSubscription.cs" />
     <Compile Include="Subscription\ITopicSubscription.cs" />
+    <Compile Include="Subscription\Subscription.cs" />
     <Compile Include="Subscription\TopicSubscription.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserV2.cs" />
     <Compile Include="User\Entitlement\EntitledProductItemChannelCodesFactory.cs" />
