@@ -334,10 +334,5 @@
 	}
 	.li-content-graph{
 		@include textMix('Roboto', 0.875em, 500);
-		svg {
-			text{
-				font-weight: 600px;
-			}
-		}
 	}
 }
