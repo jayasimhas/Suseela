@@ -200,7 +200,7 @@ $(function () {
         div.find('.unfollowAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-        $lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
+        $lgfollow.addClass('followingBtn').removeClass('followBtn  button--filled').html($('#followingButtonText').val());
         $('#validatePriority').val(true);
         $('#validateMyViewPriority').val(true);
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
@@ -224,7 +224,7 @@ $(function () {
         div.find('.followAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followlbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-        $lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
+        $lgfollowing.addClass('followBtn button--filled').removeClass('followingBtn').html($('#followButtonText').val());
         $('#validatePriority').val(false);
         $('#validateMyViewPriority').val(true);
 
@@ -266,7 +266,7 @@ $(function () {
 		followrow.attr('draggable', true);
 		$('#validatePreference').val(1);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
-		$this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
+		$this.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
 		setClsforFlw(table);
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
@@ -297,7 +297,7 @@ $(function () {
     $('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function (e) {
         var $this = $(this), table = $this.closest('table'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
         followingrow.addClass('followrow disabled').removeClass('followingrow');
-        $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
+        $this.addClass('followBtn button--filled').removeClass('followingBtn').html($('#followButtonText').val());
         followingrow.clone().appendTo($this.closest('tbody'));
         followingrow.remove();
         $('#validatePreference').val(1);
