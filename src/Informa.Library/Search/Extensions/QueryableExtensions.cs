@@ -13,6 +13,7 @@ using Informa.Models.Informa.Models.sitecore.templates.Common;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Informa.Library.Utilities.CMSHelpers;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Search.Extensions
 {
@@ -35,7 +36,7 @@ namespace Informa.Library.Search.Extensions
             {
 
 
-                if (string.Equals(verticalRootContext.Item.Vertical_Name, "Pharma", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(verticalRootContext.Item.Vertical_Name, Settings.GetSetting("Vertical.Pharma"), StringComparison.OrdinalIgnoreCase))
                 {
                     taxGuids = new List<Guid>()
                     {
@@ -47,7 +48,7 @@ namespace Informa.Library.Search.Extensions
                     refs.PharmaTaxonomyRootFolder
                     };
                 }
-                else if (string.Equals(verticalRootContext.Item.Vertical_Name, "Agri", StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals(verticalRootContext.Item.Vertical_Name, Settings.GetSetting("Vertical.Agri"), StringComparison.OrdinalIgnoreCase))
                 {
                     taxGuids = new List<Guid>()
                     {
@@ -62,7 +63,7 @@ namespace Informa.Library.Search.Extensions
                     refs.AgriIndustriesTaxonomyFolder
                     };
                 }
-                else if (string.Equals(verticalRootContext.Item.Vertical_Name, "Maritime", StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals(verticalRootContext.Item.Vertical_Name, Settings.GetSetting("Vertical.Maritime"), StringComparison.OrdinalIgnoreCase))
                 {
                     taxGuids = new List<Guid>()
                     {

@@ -338,6 +338,29 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.Companies" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
+      <!--Vertical names-->
+      <setting name="Vertical.Pharma" value="Pharma"></setting>
+      <setting name="Vertical.Agri" value="Agri"></setting>
+      <setting name="Vertical.Maritime" value="Maritime"></setting>
+      <!--Taxonomy Folders-->
+      <setting name="Taxonomy.RegionsTaxonomyFolder" value="RegionsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.AgencyRegulatorTaxonomyFolder" value="AgencyRegulatorTaxonomyFolder"></setting>
+      <setting name="Taxonomy.AnimalHealthTaxonomyFolder" value="AnimalHealthTaxonomyFolder"></setting>
+      <setting name="Taxonomy.CommercialTaxonomyFolder" value="CommercialTaxonomyFolder"></setting>
+      <setting name="Taxonomy.CommodityTaxonomyFolder" value="CommodityTaxonomyFolder"></setting>
+      <setting name="Taxonomy.CommodityFactorsTaxonomyFolder" value="CommodityFactorsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.CompaniesTaxonomyFolder" value="CompaniesTaxonomyFolder"></setting>
+      <setting name="Taxonomy.CropProtectionaxonomyFolder" value="CropProtectionaxonomyFolder"></setting>
+      <setting name="Taxonomy.IndustriesTaxonomyFolder" value="IndustriesTaxonomyFolder"></setting>
+      <setting name="Taxonomy.HotTopicsTaxonomyFolder" value="HotTopicsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.MarketsTaxonomyFolder" value="MarketsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.RegularsTaxonomyFolder" value="RegularsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.SectorsTaxonomyFolder" value="SectorsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.TopicTaxonomyFolder" value="TopicTaxonomyFolder"></setting>
+      <setting name="Taxonomy.SubjectsTaxonomyFolder" value="SubjectsTaxonomyFolder"></setting>
+      <setting name="Taxonomy.TherapyAreasTaxonomyFolder" value="TherapyAreasTaxonomyFolder"></setting>
+      <setting name="Taxonomy.DeviceAreasTaxonomyFolder" value="DeviceAreasTaxonomyFolder"></setting>
+      <setting name="Taxonomy.IndustryTaxonomyFolder" value="IndustryTaxonomyFolder"></setting>
     </settings>
   </sitecore>
 </configuration>
