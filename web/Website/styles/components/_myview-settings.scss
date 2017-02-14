@@ -1,4 +1,5 @@
 @mixin folow-btn($w, $h){
+	border: 1px solid $color-tree-poppy-orange;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 0.75em;
@@ -49,6 +50,8 @@
 @mixin unfollowBtnLbl(){
 	@include folow-btn(7.5rem, 2rem);
 	margin: 0.5rem 0 0 1.25rem;
+	background-color: $color-tree-poppy-orange;
+	color: $color-white;
 	&.mtp{
 		margin-top: -6px;
 		margin-bottom: 25px;
@@ -58,6 +61,10 @@
 	@include folow-btn(7.5rem, 2rem);
 	padding: 0 1.5625rem;
 	margin-top: 0.5rem;
+	&:hover{
+		background-color: $color-tree-poppy-orange;
+		color: $color-white;
+	}
 	&.mtp{
 		margin-top: -6px;
 		margin-bottom: 25px;
@@ -67,6 +74,63 @@
 .myview-settings {
 	padding-bottom: 50px !important;
 	margin-bottom: 3.125rem;
+	
+	.followAllBtn{
+		@include followBtnLbl();
+		min-width: 130px;
+		border: 1px solid #fab142;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+	}
+	.followinglbl{
+		@include followBtnLbl();
+		cursor: text;
+		@include breakpoint('medium-small') {
+			margin: 0px !important;
+			float: left;
+		}
+	}
+	.unfollowAllBtn{
+		@include unfollowBtnLbl();
+		padding: 0 1rem;
+		margin-left: 0.5rem;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@media screen and (min-width: 667px) and (max-width: 767px){
+			padding: 0 1.25rem;
+		}
+	}
+	.followlbl{
+		@include unfollowBtnLbl();
+		padding: 0;
+		cursor: text;
+		min-width: 130px;
+		@include breakpoint('medium-small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('small') {
+			min-width: initial;
+			min-width: auto;
+		}
+		@include breakpoint('medium-small') {
+			margin: 0px !important;
+			float: left;
+		}
+	}
+	
 	&.myview-settings-registration {
 		.publicationPan h2 {
 			width: auto;
@@ -413,60 +477,6 @@
 						text-align: left;
 						padding-bottom: 1.5rem;
 						padding-top: 0rem;
-					}
-				} 
-				.followAllBtn{
-					@include followBtnLbl();
-					min-width: 130px;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-				}
-				.followinglbl{
-					@include followBtnLbl();
-					cursor: text;
-					@include breakpoint('medium-small') {
-						margin: 0px !important;
-						float: left;
-					}
-				}
-				.unfollowAllBtn{
-					@include unfollowBtnLbl();
-					padding: 0 1rem;
-					margin-left: 0.5rem;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@media screen and (min-width: 667px) and (max-width: 767px){
-						padding: 0 1.25rem;
-					}
-				}
-				.followlbl{
-					@include unfollowBtnLbl();
-					padding: 0;
-					cursor: text;
-					min-width: 130px;
-					@include breakpoint('medium-small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('small') {
-						min-width: initial;
-						min-width: auto;
-					}
-					@include breakpoint('medium-small') {
-						margin: 0px !important;
-						float: left;
 					}
 				}
 			}
