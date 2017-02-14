@@ -9025,6 +9025,9 @@ div#feedbacklite.fbl_r {
           font-size: 14px;
           font-size: 0.9rem;
           padding: 12px 2px; } }
+      @media only screen and (min-width: 1025px) {
+        #market-data .marketDataTable .R16 {
+          padding: 12px 10px; } }
     #market-data .marketDataTable .owl-controls {
       display: none; }
     @media only screen and (max-width: 767px) {
