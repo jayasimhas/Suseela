@@ -1,5 +1,8 @@
 .subscriptionPan{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	.hideCol{
+		visibility: hidden;
+	}
 	@include breakpoint('small') {
 		font-size: 1em;
 		line-height: 20px;
@@ -76,7 +79,7 @@
 			cursor: pointer;
 			&.active{
 				background: url(/dist/img/sprite-image.png) no-repeat 0 -100px;
-			}
+			} 
 			@include breakpoint('small') {
 				display: none;
 			}

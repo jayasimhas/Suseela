@@ -48,7 +48,7 @@ namespace Informa.Library.User.Entitlement
                                     if (item.Taxonomies.Where(tax => tax._Id.Equals(taxonomy._Id)).Any())
                                     {
                                         channelCode = string.Format(channelCodeFormat, productCode, channelPage.Channel_Code);
-                                        continue;
+                                        break;
                                     }
                                 }
                             }
@@ -69,7 +69,7 @@ namespace Informa.Library.User.Entitlement
                                                     if (item.Taxonomies.Where(tax => tax._Id.Equals(taxonomy._Id)).Any())
                                                     {
                                                         channelCode = string.Format(channelCodeFormat, productCode, channelPage.Channel_Code);
-                                                        continue;
+                                                        break;
                                                     }
                                                 }
                                             }

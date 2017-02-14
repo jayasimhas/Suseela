@@ -14,10 +14,14 @@
             {
                 <li class="item">
                     <div class="li-content-company">
-                        <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
-                        <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
-                        <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
-                    </div>
+                        <div class="companylogo">
+                            <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
+                        </div>
+                        <div class="companyLinks">
+                            <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
+                            <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
+                        </div>
+                        </div>
                 </li>
                 foreach (var Graph in company.Graphs)
                 {
@@ -44,15 +48,18 @@
                 <li class="item">
                     <div>
                         <div class="li-content-company">
-                            <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
-                            <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
-                            <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
-                        </div>
+                            <div class="companylogo">
+                                <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
+                            </div>
+                            <div class="companyLinks">
+                                <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
+                                <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
+                            </div>
+                            </div>
 
                         @foreach (var Graph in company.Graphs)
                         {
-                            var chartDivId = company.CompanyId + "_M" + Graph.GraphID;
-                            <div class="li-content-graph">
+                            var chartDivId = company.CompanyId + "_M" + Graph.GraphID;<div class="li-content-graph">
                                 <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
                                 <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
                             </div>

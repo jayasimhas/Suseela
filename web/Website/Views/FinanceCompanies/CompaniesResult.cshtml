@@ -32,7 +32,7 @@
         </script>
     }
 
-    <div class="table ID-Responsive-Table" data-modal="modal-@Model.RenderingParameters.TableType.Value" data-footnote="@Model.FootNote" id="@Model.RenderingParameters.TableType.Value">
+    <div class="table ID-Responsive-Table" data-modal="modal-@Model.RenderingParameters.TableType.Value" id="@Model.RenderingParameters.TableType.Value">
         <div class="table_head pad-10">
             <span class="RB16">@Model.GlassModel.TableTitle</span>
             <a href="#" data-toggle="modal-@Model.RenderingParameters.TableType.Value" class="hidden-xs">
@@ -57,6 +57,7 @@
             </div>           
         </div>
     </div>
+    <div class="footnote">@Model.FootNote</div>
 
     <div class="ID-responsive-table-modal" id="modal-@Model.RenderingParameters.TableType.Value">
         <div class="container">

@@ -1,6 +1,8 @@
-﻿using Informa.Library.Services.Global;
+﻿using Informa.Library.SalesforceConfiguration;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
+using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System;
@@ -19,19 +21,25 @@ namespace Informa.Library.Subscription.User
         protected readonly IFindUserSubscriptions FindSubscriptions;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ISalesforceConfigurationContext SalesforceContext;
+        protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
 
         public UserSubscriptionsContext(
             IAuthenticatedUserContext userContext,
             IAuthenticatedUserSession userSession,
             IFindUserSubscriptions findSubscriptions,
             ISiteRootContext siterootContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            ISalesforceConfigurationContext salesforceContext,
+            IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext)
         {
             UserContext = userContext;
             UserSession = userSession;
             FindSubscriptions = findSubscriptions;
             SiterootContext = siterootContext;
             GlobalService = globalService;
+            SalesforceContext = salesforceContext;
+            AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
         }
 
         public IEnumerable<ISubscription> Subscriptions
@@ -43,46 +51,39 @@ namespace Informa.Library.Subscription.User
                     return Enumerable.Empty<ISubscription>();
                 }
                 //Commenting it for the time being for local verification.
-                var subscriptionSession = UserSession.Get<IEnumerable<ISubscription>>(subscriptionsSessionKey);
+                var subscriptionSession = UserSession.Get<IEnumerable<ISubscription>>
+                    (subscriptionsSessionKey);
 
                 if (subscriptionSession.HasValue)
                 {
                     return subscriptionSession.Value;
                 }
 
-                var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User?.Username);
+                var subscriptions = Subscriptions =
+                   SalesforceContext.IsNewSalesforceEnabled ?
+                   AuthenticatedUserEntitlementsContext?.Entitlements?.Select(entitlement => Create(entitlement)
+                   as ISubscription) : FindSubscriptions.Find(UserContext.User?.Username);
 
-                ////if (subscriptions != null && subscriptions.Any())
-                ////{
-
-                ////    if (subscriptions.Any(n => n.ProductCode == SiterootContext.Item.Publication_Code && n.ExpirationDate > DateTime.Now))
-                ////    {
-                ////        var selectedSubscription = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).FirstOrDefault();
-                ////        List<ChannelSubscription> channelSubscription = new List<ChannelSubscription>();
-                ////        var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
-                ////    _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-                ////        var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
-                ////        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                ////        if (homeItem != null && channelsPageItem != null && channelPages != null)
-                ////        {
-                ////            foreach (var channel in channelPages)
-                ////            {
-                ////                channelSubscription.Add(new ChannelSubscription { ChannelId = channel.Channel_Code,
-                ////                    ExpirationDate = subscriptions.Where(n => n.ProductCode == SiterootContext.Item.Publication_Code).Select(p => p.ExpirationDate).FirstOrDefault(),
-                ////                    _ChannelId = channel._Id.ToString()
-                ////                });
-
-                ////            }
-                ////        }
-                ////        selectedSubscription.SubscribedChannels = channelSubscription;
-                ////    }
-                ////}
                 return subscriptions;
             }
             set
             {
                 UserSession.Set(subscriptionsSessionKey, value);
             }
+        }
+
+        private Subscription Create(IEntitlement model)
+        {
+            return new Subscription
+            {
+                SubscriptionType = model.Type,
+                DocumentID = model.DocumentId,
+                ProductCode = model.ProductCode,
+                ProductGuid = model.ProductId,
+                ProductType = model.ProductType,
+                ExpirationDate = Convert.ToDateTime(model.SalesEndDate),
+                Publication = model.Name
+            };
         }
     }
 }
