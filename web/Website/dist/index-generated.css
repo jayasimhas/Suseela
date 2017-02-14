@@ -7379,6 +7379,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 .subscriptionPan {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  .subscriptionPan .hideCol {
+    visibility: hidden; }
   @media (max-width: 480px) {
     .subscriptionPan {
       font-size: 1em;
@@ -7442,8 +7444,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       cursor: pointer; }
       .subscriptionPan .sortable-table__col .accordian.active {
         background: url(/dist/img/sprite-image.png) no-repeat 0 -100px; }
-      .subscriptionPan .sortable-table__col .accordian.hide {
-        visibility: hidden; }
       @media (max-width: 480px) {
         .subscriptionPan .sortable-table__col .accordian {
           display: none; } }
