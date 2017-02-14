@@ -1,6 +1,6 @@
 function loadLayoutOneData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
-	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
+	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
 
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + seeAllTopics + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
@@ -209,7 +209,7 @@ function createLayoutInner1(data) {
 
 function loadLayoutTwoData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
-	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
+	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
 	
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + seeAllTopics + '</div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
