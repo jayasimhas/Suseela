@@ -52,7 +52,7 @@ $(function() {
 			$('.loadChart').removeClass('item');
 		}
 	
-		$('.owl-carousel').owlCarousel({
+		$('#graph-carousel').find('.owl-carousel').owlCarousel({
 			loop:false,
 			autoPlay: false,
 			nav: true,

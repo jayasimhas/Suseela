@@ -155,6 +155,7 @@
 	.followBtn{
 		@include folow-btn(7.5rem, 2rem);
 		padding: 0 2.25rem;
+		color: #fff;
 		@include breakpoint('medium-small'){
 			background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 			height: 1.875rem;
@@ -907,8 +908,7 @@
 .theme-lloydslist{
 	.myview-settings {
 		.table{
-			span{
-				color: #1191D1;
+			span{ 
 				fill: #1191D1;
 				&.button--outline{
 					border: 1px solid #1191D1;
@@ -931,8 +931,7 @@
 .theme-insurance-day{
 	.myview-settings {
 		.table{
-			span{
-				color: #DE4361;
+			span{ 
 				fill: #DE4361;
 				&.button--outline{
 					border: 1px solid #DE4361;
@@ -955,8 +954,7 @@
 .theme-commodities{
 	.myview-settings {
 		.table{
-			span{
-				color: #9E310D;
+			span{ 
 				fill: #9E310D;
 				&.button--outline{
 					border: 1px solid #9E310D;

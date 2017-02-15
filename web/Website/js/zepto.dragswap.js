@@ -113,7 +113,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
             }
 
             // Don't do anything if dropping the same column we're draggi.
-            if (dragSrcEl != this) {
+            if (dragSrcEl != this && dragSrcEl != undefined) {
                 // Set the source column's HTML to the HTML of the column dropped on.
                 var oldEl = {
                     html: this.innerHTML,
