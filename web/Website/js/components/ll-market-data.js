@@ -3,7 +3,7 @@
 		renderTable: function(data, renderId){
 			this.loadMobileView(data, renderId[0]);
 			this.loadDescView(data, renderId[1]);
-			this.initiateCarousel();
+			this.initiateCarousel(renderId[0]);
 			this.setColHeight(renderId);
 		},
 		loadMobileView: function(tableData, id){
@@ -63,8 +63,8 @@
 			});
 			$(id).html(descStr);
 		},
-		initiateCarousel: function(){
-			$('.owl-carousel').owlCarousel({
+		initiateCarousel: function(id){
+			$(id).owlCarousel({
 				loop:true,
 				autoPlay: false,
 				nav: true,
