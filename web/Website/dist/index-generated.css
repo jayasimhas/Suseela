@@ -5609,20 +5609,19 @@ header .header-account-access {
       font-family: "Roboto condensed";
       position: relative;
       font-weight: bold;
-      z-index: 2; }
-    .personalisationhome .latestSubject:before {
+      z-index: 2;
+      top: -20px; }
+    .personalisationhome .latestSubject .fllatestSub {
+      background-color: #be1e2d;
+      float: left;
       content: "";
       display: block;
       height: 4px;
       position: absolute;
       top: calc(60% - -8px);
-      width: 70%;
-      z-index: 1; } }
-    @media (min-width: 768px) and (max-width: 1080px) {
-      .personalisationhome .latestSubject:before {
-        width: 65%; } }
-
-@media (min-width: 768px) {
+      z-index: 1; }
+    .personalisationhome .latestSubject .frEditview {
+      float: right; }
     .personalisationhome .latestSubject .articleloadInfo {
       text-align: right;
       font-style: italic;
@@ -5637,6 +5636,8 @@ header .header-account-access {
       width: 8.75rem;
       text-align: center;
       display: inline-block;
+      background: #f7941e;
+      color: #ffffff;
       float: right;
       margin: 0px;
       position: relative;
@@ -5650,6 +5651,8 @@ header .header-account-access {
       width: auto;
       text-align: center;
       display: inline-block;
+      background: #f7941e;
+      color: #ffffff;
       float: right;
       margin: 0px;
       position: relative;
@@ -5721,6 +5724,8 @@ header .header-account-access {
   width: 8.75rem;
   text-align: center;
   display: inline-block;
+  background: #f7941e;
+  color: #ffffff;
   float: left;
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
@@ -5734,6 +5739,8 @@ header .header-account-access {
   width: auto;
   text-align: center;
   display: inline-block;
+  background: #f7941e;
+  color: #ffffff;
   float: left;
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
@@ -5963,7 +5970,9 @@ header .header-account-access {
       width: 140px;
       width: 8.75rem;
       text-align: center;
-      display: inline-block; }
+      display: inline-block;
+      background: #f7941e;
+      color: #ffffff; }
       .personalisationhome .latestSubject .editView.mobview {
         margin: 24px 16px 0px;
         margin: 1.5rem 1rem 0rem; }
@@ -5975,7 +5984,9 @@ header .header-account-access {
       font-weight: 500;
       width: auto;
       text-align: center;
-      display: inline-block; }
+      display: inline-block;
+      background: #f7941e;
+      color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
         margin: 24px 20px 8px;
         margin: 1.5rem 1.25rem .5rem; } }
@@ -6000,15 +6011,15 @@ header .header-account-access {
     overflow: hidden; }
 
 @media screen and (min-width: 768px) {
-  .theme-lloydslist .latestSubject:before {
+  .theme-lloydslist .latestSubject .fllatestSub {
     background-color: #1191D1; } }
 
 @media screen and (min-width: 768px) {
-  .theme-insurance-day .latestSubject:before {
+  .theme-insurance-day .latestSubject .fllatestSub {
     background-color: #DE4361; } }
 
 @media screen and (min-width: 768px) {
-  .theme-commodities .latestSubject:before {
+  .theme-commodities .latestSubject .fllatestSub {
     background-color: #9E310D; } }
 
 div.main-menu__section .titleMyView {

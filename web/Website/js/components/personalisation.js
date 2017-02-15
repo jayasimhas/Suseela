@@ -2,7 +2,7 @@ function loadLayoutOneData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
 
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + seeAllTopics + '</div>' : '',
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><div class="fllatestSub"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div><div class="frEditview">' + editMyView + seeAllTopics + '</div></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout1">' : '';
@@ -209,9 +209,9 @@ function createLayoutInner1(data) {
 
 function loadLayoutTwoData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
-	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
-	
-	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span>' + editMyView + seeAllTopics + '</div>' : '',
+	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';		
+						
+	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><div class="fllatestSub"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div><div class="frEditview">' + editMyView + seeAllTopics + '</div></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
 	loadData += '<div class="eachstoryMpan">';
 	loadData += loadPreferanceId["Sections"][idx].ChannelId ? '<div class="eachstory layout2">' : '';
@@ -663,4 +663,12 @@ $(function () {
 			}
 		}
 	});
+	
+	var latestSubject = $('.latestSubject');
+	for(var i = 0; i < latestSubject.length; i++){
+		var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
+		setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
+		$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
+		$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
+	}
 });
