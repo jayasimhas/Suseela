@@ -106,8 +106,8 @@ window.PrintGraph = function(chartData, divId, skinUrl){
 }
 
 $(function(){
-	if($('#mycarousel') && $('#mycarousel').length){
-		$('#mycarousel.owl-carousel').owlCarousel({
+	if($('#mycarousel1') && $('#mycarousel1').length){
+		$('#mycarousel1.owl-carousel').owlCarousel({
 			loop:true,
 			autoPlay: false,
 			nav: true,
@@ -140,7 +140,7 @@ $(function(){
 		}); 
 
 	}
-	if($('#mycarousel2') && $('#mycarousel').length){
+	if($('#mycarousel2') && $('#mycarousel2').length){
 		$('#mycarousel2.owl-carousel').owlCarousel({
 			loop:true,
 			autoPlay: false,
