@@ -126,39 +126,94 @@
 							 
 						</div>
 						<div>
-						 
-							<ul id="mycarousel1" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 hideinMob">
-								<li class="item">
-									<div class="li-content-company">
-										<div class="companylogo">
-											<a href="https://www.insuranceday.com/companies/american-international-group.htm"><img src="https://www.insuranceday.com/companies/article5058.ece/ALTERNATES/w100/American+International+Group" alt="" data-pagespeed-url-hash="2662530308"  /></a>
+						 <script type="text/javascript" src="../dist/js/amcharts.js"></script>
+<script type="text/javascript" src="../dist/js/serial.js"></script>
+<script type="text/javascript">
+var PrintCompanyGraph = function (chartData, divId, graphType, color) {
+
+    AmCharts.makeChart(divId,
+                    {
+                        "type": "serial",
+                        "categoryField": "year",
+                        "dataDateFormat": "YYYY",
+                        "handDrawScatter": 4,
+                        "theme": "default",
+                        "categoryAxis": {
+                            "minPeriod": "YYYY",
+                            "parseDates": true,
+                            "gridPosition": "start",
+                            "autoGridCount": true
+                        },
+                        "chartCursor": {
+                            "enabled": true,
+                            "animationDuration": 0,
+                            "categoryBalloonDateFormat": "YYYY"
+                        },
+                        "trendLines": [],
+                        "graphs": [
+                            {
+                                "fillAlphas": 0.7,
+                                "id": "AmGraph-1",
+                                "lineAlpha": 0,
+                                "title": "graph 1",
+                                "valueField": "value",
+                                "type": graphType,
+                                "lineColor": "#" + color,
+                                "fillColor": "#" + color,
+                                "startDuration": 0,
+                                "startRadius": "100%",
+                                "balloonText": "[[category]]: [[value]]"
+                            }
+                        ],
+                        "guides": [],
+                        "valueAxes": [
+                            {
+                                "id": "ValueAxis-1",
+                                "title": ""
+                            }
+                        ],
+                        "allLabels": [],
+                        "balloon": {},
+                        "dataProvider": chartData
+                    }
+                );
+}
+
+</script>
+			<div class="large-12 columns">
+          <ul class="owl-carousel owl-theme">
+            <li class="item">
+              <div class="li-content-company">
+											<div class="companylogo">
+												<a href="https://www.insuranceday.com/companies/american-international-group.htm"><img src="https://www.insuranceday.com/companies/article5058.ece/ALTERNATES/w100/American+International+Group" alt="" data-pagespeed-url-hash="2662530308"  /></a>
+											</div>
+											<div class="companyLinks">
+												<p><a href="#">American International Group</a></p>
+												<p class="view-more-info"><a href="#">View more company information</a></p>
+											</div>
 										</div>
-										<div class="companyLinks">
-											<p><a href="#">American International Group</a></p>
-											<p class="view-more-info"><a href="#">View more company information</a></p>
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
+											<p><a href="#">Net Written Premium (&#36;M)</a></p>
+											<a href="#"><div id="NWP_graph1" height="224px"></div></a>
 										</div>
-									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
-										<p><a href="#">Net Written Premium (&#36;M)</a></p>
-										<a href="#"><div id="NWP_graph1" height="224px"></div></a>
-									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
-										<p><a href="#">Underwriting Result (&#36;M)</a></p>
-										<a href="#"><div id="UR_graph1" height="75px"></div></a>
-									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
-										<p><a href="#">Net Result (&#36;M)</a></p>
-										<a href="#"><div id="NP_graph1" height="75px"></div></a>
-									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-company">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
+											<p><a href="#">Underwriting Result (&#36;M)</a></p>
+											<a href="#"><div id="UR_graph1" height="75px"></div></a>
+										</div>
+            </li>
+            <li class="item">
+             <div class="li-content-graph">
+											<p><a href="#">Net Result (&#36;M)</a></p>
+											<a href="#"><div id="NP_graph1" height="75px"></div></a>
+										</div>
+            </li>
+			<!--Validus-->
+            <li class="item">
+              <div class="li-content-company">
 										<div class="companylogo">
 											<a href="#"><img src="https://www.insuranceday.com/ece_incoming/validus-logojpg.htm/ALTERNATES/w100/Validus+logo.jpg" alt="" data-pagespeed-url-hash="3331533004" /></a>
 										</div>
@@ -167,27 +222,28 @@
 											<p class="view-more-info"><a href="#">View more company information</a></p>
 										</div>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 										<p><a href="#">Net Written Premium (&#36;M)</a></p>
 										<a href="#"><div id="NWP_graph2" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 										<p><a href="#">Underwriting Result (&#36;M)</a></p>
 										<a href="#"><div id="UR_graph2" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 										<p><a href="#">Net Result (&#36;M)</a></p>
 										<a href="#"><div id="NP_graph2" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-company">
+            </li>
+			<!--Hartford-->
+            <li class="item">
+              <div class="li-content-company">
 										<div class="companylogo">
 											<a href="#"><img src="https://www.insuranceday.com/companies/article5079.ece/ALTERNATES/w100/Hartford" alt="" data-pagespeed-url-hash="3125290440" /></a>
 										</div>
@@ -196,26 +252,27 @@
 											<p class="view-more-info"><a href="#">View more company information</a></p>
 										</div>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 										<p><a href="#">Net Written Premium (&#36;M)</a></p>
 										<a href="#"><div id="NWP_graph3" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 										<p><a href="#">Underwriting Result (&#36;M)</a></p>
 										<a href="#"><div id="UR_graph3" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
-									<div class="li-content-graph">
+            </li>
+            <li class="item">
+              <div class="li-content-graph">
 									<p><a href="#">Net Result (&#36;M)</a></p>
 									<a href="#"><div id="NP_graph3" height="75px"></div></a>
 									</div>
-								</li>
-								<li class="item">
+            </li>
+			<!--Allied-->
+			<li class="item">
 									<div class="li-content-company">
 										<div class="companylogo">
 											<a href="#"><img src="https://www.insuranceday.com/companies/article5056.ece/ALTERNATES/w100/Allied+World" alt="" data-pagespeed-url-hash="3182845269" /></a>
@@ -244,21 +301,22 @@
 									<a href="#"><div id="NP_graph4" height="75px"></div></a>
 									</div>
 								</li>
+								<!--Aspen-->
 								<li class="item">
 									<div class="li-content-company">
 										<div class="companylogo">
-											<a href="#"><img src="https://www.insuranceday.com/companies/article5062.ece/ALTERNATES/w100/Aspen+Insurance" alt="" data-pagespeed-url-hash="733576898" /></a>
+											<a href="#"><img src="https://www.insuranceday.com/companies/article5056.ece/ALTERNATES/w100/Allied+World" alt="" data-pagespeed-url-hash="3182845269" /></a>
 										</div>
 										<div class="companyLinks">
-											<p><a href="#">Aspen Insurance</a></p>
+											<p><a href="#">Apen World Assurance Co</a></p>
 											<p class="view-more-info"><a href="#">View more company information</a></p>
 										</div>
 									</div>
 								</li>
 								<li class="item">
 									<div class="li-content-graph">
-										<p><a href="#">Net Written Premium (&#36;M)</a></p>
-										<a href="#"><div id="NWP_graph5" height="75px"></div></a>
+									<p><a href="#">Net Written Premium (&#36;M)</a></p>
+									<a href="#"><div id="NWP_graph5" height="75px"></div></a>
 									</div>
 								</li>
 								<li class="item">
@@ -269,12 +327,12 @@
 								</li>
 								<li class="item">
 									<div class="li-content-graph">
-										<p><a href="#">Net Result (&#36;M)</a></p>
-										<a href="#"><div id="NP_graph5" height="75px"></div></a>
+									<p><a href="#">Net Result (&#36;M)</a></p>
+									<a href="#"><div id="NP_graph5" height="75px"></div></a>
 									</div>
 								</li>
-							</ul>
-							
+          </ul>
+</div>							
 							<ul id="mycarousel2" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 showinMob">
 								<li class="item">
 									<div>
@@ -289,15 +347,15 @@
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Written Premium (&#36;M)</a></p>
-											<a href="#"><div id="MNWP_graph2"></div></a>
+											<a href="#"><div id="NWP_graph1"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Underwriting Result (&#36;M)</a></p>
-											<a href="#"><div id="MUR_graph2"></div></a>
+											<a href="#"><div id="UR_graph1"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Result (&#36;M)</a></p>
-											<a href="#"><div id="MNP_graph2"></div></a>
+											<a href="#"><div id="NP_graph1"></div></a>
 										</div>
 									</div>
 								</li> 
@@ -314,15 +372,15 @@
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Written Premium (&#36;M)</a></p>
-											<a href="#"><div id="MNWP_graph2"></div></a>
+											<a href="#"><div id="NWP_graph2"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Underwriting Result (&#36;M)</a></p>
-											<a href="#"><div id="MUR_graph2"></div></a>
+											<a href="#"><div id="UR_graph2"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Result (&#36;M)</a></p>
-											<a href="#"><div id="MNP_graph2"></div></a>
+											<a href="#"><div id="NP_graph2"></div></a>
 										</div>
 									</div>
 								</li>
@@ -364,43 +422,19 @@
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Written Premium (&#36;M)</a></p>
-											<a href="#"><div id="MNWP_graph4"></div></a>
+											<a href="#"><div id="NWP_graph4"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Underwriting Result (&#36;M)</a></p>
-											<a href="#"><div id="MUR_graph4"></div></a>
+											<a href="#"><div id="UR_graph4"></div></a>
 										</div>
 										<div class="li-content-graph">
 											<p><a href="#">Net Result (&#36;M)</a></p>
-											<a href="#"><div id="MNP_graph4"></div></a>
+											<a href="#"><div id="NP_graph4"></div></a>
 										</div>
 									</div>
 								</li>
-								<li class="item">
-									<div>
-										<div class="li-content-company">
-											<div class="companylogo">	
-												<a href="#"><img src="https://www.insuranceday.com/companies/article5062.ece/ALTERNATES/w100/Aspen+Insurance" alt="" data-pagespeed-url-hash="733576898" /></a>
-											</div>
-											<div class="companyLinks">
-												<p><a href="#">Aspen Insurance</a></p>
-												<p class="view-more-info"><a href="#">View more company information</a></p>
-											</div>
-										</div>
-										<div class="li-content-graph">
-											<p><a href="#">Net Written Premium (&#36;M)</a></p>
-											<a href="#"><div id="MNWP_graph5"></div></a>
-										</div>
-										<div class="li-content-graph">
-											<p><a href="#">Underwriting Result (&#36;M)</a></p>
-											<a href="#"><div id="MUR_graph5"></div></a>
-										</div>
-										<div class="li-content-graph">
-											<p><a href="#">Net Result (&#36;M)</a></p>
-											<a href="#"><div id="MNP_graph5"></div></a>
-										</div>
-									</div>
-								</li>
+								
 							</ul>
 						
 						</div>
@@ -871,7 +905,7 @@
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
       <script src="/dist/js/index.js"></script>
-	  <script src="/dist/js/amstock.js" type="text/javascript"></script>
+
 	   <script type="text/javascript">var company_autoplayInterval=10;var skinUrl="https://www.insuranceday.com/skins/insurance-day/";var chartData_NP=[[{"colour":"f08000","value":10058.0,"year":2010},{"colour":"f08000","value":20622.0,"year":2011},{"colour":"f08000","value":3438.0,"year":2012},{"colour":"f08000","value":9085.0,"year":2013},{"colour":"f08000","value":2196.0,"year":2015}],[{"colour":"f08000","value":21.33,"year":2011},{"colour":"f08000","value":408.44,"year":2012},{"colour":"f08000","value":532.7,"year":2013},{"colour":"f08000","value":481.3,"year":2014},{"colour":"f08000","value":374.9,"year":2015}],[{"colour":"f08000","value":712.0,"year":2011},{"colour":"f08000","value":-38.0,"year":2012},{"colour":"f08000","value":176.0,"year":2013},{"colour":"f08000","value":798.0,"year":2014},{"colour":"f08000","value":1682.0,"year":2015}],[{"colour":"f08000","value":274.55,"year":2011},{"colour":"f08000","value":493.0,"year":2012},{"colour":"f08000","value":417.8,"year":2013},{"colour":"f08000","value":490.3,"year":2014},{"colour":"f08000","value":83.9,"year":2015}],[{"colour":"f08000","value":-110.0,"year":2011},{"colour":"f08000","value":280.6,"year":2012},{"colour":"f08000","value":329.8,"year":2013},{"colour":"f08000","value":355.0,"year":2014},{"colour":"f08000","value":322.3,"year":2015}]];var chartData_UR=[[{"colour":"c6c6c6","value":-5280.0,"year":2010},{"colour":"c6c6c6","value":-3334.0,"year":2011},{"colour":"c6c6c6","value":-3124.0,"year":2012},{"colour":"c6c6c6","value":-382.0,"year":2013},{"colour":"c6c6c6","value":-2644.0,"year":2015}],[{"colour":"c6c6c6","value":11.77,"year":2011},{"colour":"c6c6c6","value":248.71,"year":2012},{"colour":"c6c6c6","value":604.9,"year":2013},{"colour":"c6c6c6","value":526.9,"year":2014},{"colour":"c6c6c6","value":463.1,"year":2015}],[{"colour":"c6c6c6","value":-671.0,"year":2011},{"colour":"c6c6c6","value":-189.0,"year":2012},{"colour":"c6c6c6","value":53.0,"year":2013},{"colour":"c6c6c6","value":287.0,"year":2014},{"colour":"c6c6c6","value":354.0,"year":2015}],[{"colour":"c6c6c6","value":58.89,"year":2011},{"colour":"c6c6c6","value":96.6,"year":2012},{"colour":"c6c6c6","value":277.6,"year":2013},{"colour":"c6c6c6","value":322.7,"year":2014},{"colour":"c6c6c6","value":120.4,"year":2015}],[{"colour":"c6c6c6","value":-254.3,"year":2011},{"colour":"c6c6c6","value":171.7,"year":2012},{"colour":"c6c6c6","value":209.2,"year":2013},{"colour":"c6c6c6","value":294.7,"year":2014},{"colour":"c6c6c6","value":263.4,"year":2015}]];var chartData_NWP=[[{"colour":"a6d64f","value":46227.0,"year":2010},{"colour":"a6d64f","value":38201.0,"year":2011},{"colour":"a6d64f","value":37769.0,"year":2012},{"colour":"a6d64f","value":38041.0,"year":2013},{"colour":"a6d64f","value":37544.0,"year":2015}],[{"colour":"a6d64f","value":1835.45,"year":2011},{"colour":"a6d64f","value":1858.93,"year":2012},{"colour":"a6d64f","value":2028.5,"year":2013},{"colour":"a6d64f","value":2054.1,"year":2014},{"colour":"a6d64f","value":2228.8,"year":2015}],[{"colour":"a6d64f","value":18804.0,"year":2011},{"colour":"a6d64f","value":18006.0,"year":2012},{"colour":"a6d64f","value":16085.0,"year":2013},{"colour":"a6d64f","value":14746.0,"year":2014},{"colour":"a6d64f","value":14847.0,"year":2015}],[{"colour":"a6d64f","value":1533.7,"year":2011},{"colour":"a6d64f","value":1837.8,"year":2012},{"colour":"a6d64f","value":2120.5,"year":2013},{"colour":"a6d64f","value":2322.1,"year":2014},{"colour":"a6d64f","value":2448.0,"year":2015}],[{"colour":"a6d64f","value":1929.1,"year":2011},{"colour":"a6d64f","value":2246.9,"year":2012},{"colour":"a6d64f","value":2299.7,"year":2013},{"colour":"a6d64f","value":2515.2,"year":2014},{"colour":"a6d64f","value":2646.2,"year":2015}]];
 	   
 	   $(document).ready(function(){
