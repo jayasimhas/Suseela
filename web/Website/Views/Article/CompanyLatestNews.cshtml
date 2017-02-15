@@ -1,7 +1,7 @@
 ﻿@inherits GlassView<CompanyLatestNewsViewModel>
 
 @{
-    <div class="ContentRecomm-RelatedContent-vertical">
+    <div class="ContentRecomm-RelatedContent-vertical @Model.Parameters.CompanyNewsAlignment">
         <div class="article-related-content">
             
             @if (@Model.CompanyNewsSectionName != null)
