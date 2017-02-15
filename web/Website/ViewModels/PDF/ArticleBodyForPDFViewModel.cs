@@ -55,7 +55,8 @@ namespace Informa.Web.ViewModels.PDF
             Searcher = searcher;
             GlobalService = globalService;
             RelatedArticles = GetRelatedArticles(model);
-            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
+            //_lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
+            _lazyBody = new Lazy<string>(() => ArticleService.GetArticleBody(model));
         }
 
         /// <summary>
@@ -71,9 +72,9 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Article Summary
         /// </summary>
-        public string Summary=>
+        public string Summary =>
         _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
-           
+
 
         private IEnumerable<IPersonModel> _authors;
         /// <summary>
@@ -106,8 +107,8 @@ namespace Informa.Web.ViewModels.PDF
         private string GetPDFBody()
         {
             string body = string.Empty;
-            body= _lazyBody.Value.Contains("<table") ? _lazyBody.Value.Replace("<table", "<table id=\"tableFromArticle\"") : _lazyBody.Value;
-            body = body.StartsWith("<div")? body.Replace("<div", "<p") : body;
+            body = _lazyBody.Value.Contains("<table") ? _lazyBody.Value.Replace("<table", "<table id=\"tableFromArticle\"") : _lazyBody.Value;
+            body = body.StartsWith("<div") ? body.Replace("<div", "<p") : body;
             body = body.EndsWith("</div>") ? body.Replace("</div>", "<p>") : body;
             return body;
         }

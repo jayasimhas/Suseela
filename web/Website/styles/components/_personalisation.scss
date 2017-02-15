@@ -7,6 +7,8 @@
 	width: $w;
 	text-align: center;
 	display: inline-block;
+	background: $color-tree-poppy-orange;
+	color: $color-white;
 }
 
 .personalisationhome{
@@ -120,19 +122,22 @@
 				position: relative; 
 				font-weight: bold;
 				z-index: 2;
+				top: -20px;
 			}
-			&:before {
-				content: "";
+			.fllatestSub{
+				background-color: $color-cardinal-red;
+				float: left; 
+				content: ""; 
 				display: block;
 				height: 4px;
 				position: absolute;
 				top: calc(60% - -8px);
-				width: 70%;
-				@include breakpoint('large') {
-					width: 65%;
-				}
 				z-index: 1;
 			}
+			.frEditview{
+				float: right;
+			}
+			
 			.articleloadInfo{
 				text-align: right;
 				font-style: italic;
@@ -481,9 +486,9 @@
 .theme-lloydslist{
 	@media screen and (min-width: 768px){
 		.latestSubject{
-			&:before {
+			.fllatestSub{
 				background-color: #1191D1;
-			}
+			} 
 		}
 	}
 }
@@ -491,9 +496,9 @@
 .theme-insurance-day{
 	@media screen and (min-width: 768px){
 		.latestSubject{
-			&:before {
+			.fllatestSub{
 				background-color: #DE4361;
-			}
+			}  
 		}
 	}
 }
@@ -501,7 +506,7 @@
 .theme-commodities{
 	@media screen and (min-width: 768px){
 		.latestSubject{
-			&:before {
+			.fllatestSub{
 				background-color: #9E310D;
 			}
 		}

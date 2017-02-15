@@ -4660,7 +4660,8 @@ header .header-account-access {
     float: right;
     color: #58595b;
     padding: 0 36px;
-    padding: 0 2.25rem; }
+    padding: 0 2.25rem;
+    color: #fff; }
     @media (max-width: 640px) {
       .myview-settings .followBtn {
         background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
@@ -5458,7 +5459,6 @@ header .header-account-access {
     display: none !important; } }
 
 .theme-lloydslist .myview-settings .table span {
-  color: #1191D1;
   fill: #1191D1; }
   .theme-lloydslist .myview-settings .table span.button--outline {
     border: 1px solid #1191D1; }
@@ -5470,7 +5470,6 @@ header .header-account-access {
       border: 1px solid #0f5487; }
 
 .theme-insurance-day .myview-settings .table span {
-  color: #DE4361;
   fill: #DE4361; }
   .theme-insurance-day .myview-settings .table span.button--outline {
     border: 1px solid #DE4361; }
@@ -5482,7 +5481,6 @@ header .header-account-access {
       border: 1px solid #b0173d; }
 
 .theme-commodities .myview-settings .table span {
-  color: #9E310D;
   fill: #9E310D; }
   .theme-commodities .myview-settings .table span.button--outline {
     border: 1px solid #9E310D; }
@@ -5611,20 +5609,19 @@ header .header-account-access {
       font-family: "Roboto condensed";
       position: relative;
       font-weight: bold;
-      z-index: 2; }
-    .personalisationhome .latestSubject:before {
+      z-index: 2;
+      top: -20px; }
+    .personalisationhome .latestSubject .fllatestSub {
+      background-color: #be1e2d;
+      float: left;
       content: "";
       display: block;
       height: 4px;
       position: absolute;
       top: calc(60% - -8px);
-      width: 70%;
-      z-index: 1; } }
-    @media (min-width: 768px) and (max-width: 1080px) {
-      .personalisationhome .latestSubject:before {
-        width: 65%; } }
-
-@media (min-width: 768px) {
+      z-index: 1; }
+    .personalisationhome .latestSubject .frEditview {
+      float: right; }
     .personalisationhome .latestSubject .articleloadInfo {
       text-align: right;
       font-style: italic;
@@ -5639,6 +5636,8 @@ header .header-account-access {
       width: 8.75rem;
       text-align: center;
       display: inline-block;
+      background: #f7941e;
+      color: #ffffff;
       float: right;
       margin: 0px;
       position: relative;
@@ -5652,6 +5651,8 @@ header .header-account-access {
       width: auto;
       text-align: center;
       display: inline-block;
+      background: #f7941e;
+      color: #ffffff;
       float: right;
       margin: 0px;
       position: relative;
@@ -5723,6 +5724,8 @@ header .header-account-access {
   width: 8.75rem;
   text-align: center;
   display: inline-block;
+  background: #f7941e;
+  color: #ffffff;
   float: left;
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
@@ -5736,6 +5739,8 @@ header .header-account-access {
   width: auto;
   text-align: center;
   display: inline-block;
+  background: #f7941e;
+  color: #ffffff;
   float: left;
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
@@ -5965,7 +5970,9 @@ header .header-account-access {
       width: 140px;
       width: 8.75rem;
       text-align: center;
-      display: inline-block; }
+      display: inline-block;
+      background: #f7941e;
+      color: #ffffff; }
       .personalisationhome .latestSubject .editView.mobview {
         margin: 24px 16px 0px;
         margin: 1.5rem 1rem 0rem; }
@@ -5977,7 +5984,9 @@ header .header-account-access {
       font-weight: 500;
       width: auto;
       text-align: center;
-      display: inline-block; }
+      display: inline-block;
+      background: #f7941e;
+      color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
         margin: 24px 20px 8px;
         margin: 1.5rem 1.25rem .5rem; } }
@@ -6002,15 +6011,15 @@ header .header-account-access {
     overflow: hidden; }
 
 @media screen and (min-width: 768px) {
-  .theme-lloydslist .latestSubject:before {
+  .theme-lloydslist .latestSubject .fllatestSub {
     background-color: #1191D1; } }
 
 @media screen and (min-width: 768px) {
-  .theme-insurance-day .latestSubject:before {
+  .theme-insurance-day .latestSubject .fllatestSub {
     background-color: #DE4361; } }
 
 @media screen and (min-width: 768px) {
-  .theme-commodities .latestSubject:before {
+  .theme-commodities .latestSubject .fllatestSub {
     background-color: #9E310D; } }
 
 div.main-menu__section .titleMyView {
@@ -8278,8 +8287,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11754,7 +11763,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
