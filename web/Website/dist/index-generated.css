@@ -8305,8 +8305,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11082,25 +11082,6 @@ Styles for a floated sidebar within an article body.
       padding: 16px;
       padding: 1rem; } }
 
-.article-list-sidebar {
-  background-color: #f1f2f2;
-  float: right;
-  line-height: 24px;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin: 0 0 32px 32px;
-  margin: 0 0 2rem 2rem;
-  overflow: auto;
-  padding: 16px;
-  padding: 1rem;
-  width: 50%; }
-  .article-list-sidebar h3, .article-list-sidebar .article-call-to-action__title {
-    padding: 16px 5px;
-    padding: 1rem 0.3125rem;
-    border-bottom: 1px solid #d1d3d4; }
-    .article-list-sidebar h3:last-child, .article-list-sidebar .article-call-to-action__title:last-child {
-      border-bottom: none; }
-
 .article-table,
 .article-body-content table {
   width: 100%;
@@ -11862,7 +11843,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
