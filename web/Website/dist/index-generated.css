@@ -15399,7 +15399,7 @@ main {
   border-color: #1191D1; }
   .theme-lloydslist .button--outline:not([disabled]):hover {
     background-color: #0f5487;
-    border-color: #0f5487;
+    border-color: #002d4f;
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
@@ -15411,7 +15411,7 @@ main {
 .theme-lloydslist .main-menu__footer-link a, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler, .theme-lloydslist .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-lloydslist .main-menu__footer-link a:hover, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:hover, .theme-lloydslist .main-menu__footer-link a:active, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:active, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:active, .theme-lloydslist .main-menu__footer-link a:focus, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:focus {
-    color: #0f5487; }
+    color: #002d4f; }
 
 .theme-lloydslist .main-menu__section-link, .theme-lloydslist .main-menu__section-link:hover, .theme-lloydslist .main-menu__section-link:active, .theme-lloydslist .main-menu__section-link:focus {
   color: #58595b; }
@@ -15421,7 +15421,7 @@ main {
 .theme-lloydslist .general-header__navigation .pop-out__reset-password:hover,
 .theme-lloydslist .general-header__navigation .sortable-table__list-toggler:hover,
 .theme-lloydslist .general-header__navigation .mobile-table-exit:hover {
-  border-bottom-color: #0f5487; }
+  border-bottom-color: #002d4f; }
 
 .theme-lloydslist .banner--register,
 .theme-lloydslist .banner--alert {
@@ -15465,31 +15465,31 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #0f5487; }
+  border-top: 4px solid #002d4f; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
 .theme-lloydslist .article-sidebar,
 .theme-lloydslist .topic-subtopic__header {
-  border-top-color: #0f5487;
-  border-bottom-color: #0f5487;
-  border-color: #0f5487; }
+  border-top-color: #002d4f;
+  border-bottom-color: #002d4f;
+  border-color: #002d4f; }
 
 .theme-lloydslist .latest-news__header:before {
-  background-color: #0f5487; }
+  background-color: #002d4f; }
 
 .theme-lloydslist .theme-header__underline {
-  border-bottom: 4px solid #0f5487;
+  border-bottom: 4px solid #002d4f;
   padding: 24px 0;
   padding: 1.5rem 0; }
 
 .theme-lloydslist .article-list-sidebar__wrapper {
-  border-bottom: 4px solid #0f5487; }
+  border-bottom: 4px solid #002d4f; }
 
 .theme-lloydslist .theme-hover__header a, .theme-lloydslist .theme-hover__header .pop-out__reset-password, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler, .theme-lloydslist .theme-hover__header .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .theme-hover__header a:hover, .theme-lloydslist .theme-hover__header .pop-out__reset-password:hover, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler:hover, .theme-lloydslist .theme-hover__header .mobile-table-exit:hover {
-    color: #0f5487; }
+    color: #002d4f; }
 
 .theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
   position: relative; }
@@ -15499,13 +15499,13 @@ main {
     bottom: 0;
     height: 4px;
     width: calc( 100% - 15px);
-    background: #0f5487;
+    background: #002d4f;
     left: 0; }
 
 .theme-lloydslist .rolling-stream h5 a, .theme-lloydslist .rolling-stream .alert-success p a, .alert-success .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .alert-error p a, .alert-error .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-lloydslist .rolling-stream h5 .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
-    color: #0f5487; }
+    color: #002d4f; }
 
 .theme-lloydslist .article-interview__question:before {
   background-color: rgba(15, 84, 135, 0.3);
@@ -15530,12 +15530,12 @@ main {
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
 .theme-lloydslist .quick-facts__list--ul li ul li:before {
-  color: #0f5487; }
+  color: #002d4f; }
 
 .theme-lloydslist .quick-facts {
-  background-color: rgba(15, 84, 135, 0.1); }
+  background-color: rgba(0, 45, 79, 0.1); }
   .theme-lloydslist .quick-facts hr {
-    background-color: rgba(15, 84, 135, 0.5); }
+    background-color: rgba(0, 45, 79, 0.5); }
 
 /* * * * PRINT STYLES * * * */
 @media print {
@@ -15734,163 +15734,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */
