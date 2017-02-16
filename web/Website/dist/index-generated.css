@@ -9212,83 +9212,85 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .wrap-merge {
       width: 100%;
       overflow-x: scroll; } }
-  @media (max-width: 480px) {
-    .id-merges-acquisition .table.merge-acquistion {
-      border: none; } }
-  @media only screen and (min-width: 767px) and (max-width: 1024px) {
-    .id-merges-acquisition .table.merge-acquistion {
-      width: 1160px !important; } }
-  .id-merges-acquisition .table.merge-acquistion input[type="text"] {
-    width: 100%;
-    color: #000; }
-  .id-merges-acquisition .table.merge-acquistion tr:hover {
-    background-color: #efd0d8 !important; }
-  .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr:nth-child(even) {
-    background-color: #eee; }
-  .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr {
-    border-left: 1px solid #d1d3d4;
-    border-right: 1px solid #d1d3d4; }
-    .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:first-child {
-      border-right: 1px solid #d1d3d4;
+  .id-merges-acquisition .table.merge-acquistion {
+    border-top: none; }
+    @media (max-width: 480px) {
+      .id-merges-acquisition .table.merge-acquistion {
+        border: none; } }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .id-merges-acquisition .table.merge-acquistion {
+        width: 1160px !important; } }
+    .id-merges-acquisition .table.merge-acquistion input[type="text"] {
+      width: 100%;
+      color: #000; }
+    .id-merges-acquisition .table.merge-acquistion tr:hover {
+      background-color: #efd0d8 !important; }
+    .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr:nth-child(even) {
+      background-color: #eee; }
+    .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr {
       border-left: 1px solid #d1d3d4;
-      vertical-align: top;
-      font-weight: bold; }
-    .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td.boder-none {
-      border: none !important; }
-    .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:last-child {
       border-right: 1px solid #d1d3d4; }
-  .id-merges-acquisition .table.merge-acquistion .selectivity-input {
-    width: 100%;
-    color: #000; }
-  .id-merges-acquisition .table.merge-acquistion .range-wrapper {
-    float: left;
-    width: 100%; }
-  .id-merges-acquisition .table.merge-acquistion .selectivity-single-select {
-    box-sizing: border-box; }
-  .id-merges-acquisition .table.merge-acquistion .selectivity-single-select-input {
-    padding: 2px !important;
-    width: 100% !important; }
-  .id-merges-acquisition .table.merge-acquistion .selectivity-single-result-container {
-    top: 4px; }
-  .id-merges-acquisition .table.merge-acquistion .form-control {
-    margin-bottom: 20px; }
-  .id-merges-acquisition .table.merge-acquistion .form-control input {
-    width: 100%; }
-  .id-merges-acquisition .table.merge-acquistion.table .table_head th {
-    padding-top: 0;
-    padding-bottom: 0; }
-    .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap {
-      padding: 0 5px;
-      background-color: #DE4361; }
-      .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap:after {
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0; }
-      .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap span {
-        float: left;
-        width: calc(100% - 15px);
-        font-weight: normal;
-        margin-top: 5px;
-        font-size: 16px; }
-    .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap {
-      padding: 5px;
-      font-size: 16px;
-      background-color: #C0C0C0; }
-      .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap:after {
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0; }
-      .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap input {
-        border-radius: 5px;
-        font-weight: normal;
+      .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:first-child {
+        border-right: 1px solid #d1d3d4;
+        border-left: 1px solid #d1d3d4;
+        vertical-align: top;
+        font-weight: bold; }
+      .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td.boder-none {
+        border: none !important; }
+      .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:last-child {
+        border-right: 1px solid #d1d3d4; }
+    .id-merges-acquisition .table.merge-acquistion .selectivity-input {
+      width: 100%;
+      color: #000; }
+    .id-merges-acquisition .table.merge-acquistion .range-wrapper {
+      float: left;
+      width: 100%; }
+    .id-merges-acquisition .table.merge-acquistion .selectivity-single-select {
+      box-sizing: border-box; }
+    .id-merges-acquisition .table.merge-acquistion .selectivity-single-select-input {
+      padding: 2px !important;
+      width: 100% !important; }
+    .id-merges-acquisition .table.merge-acquistion .selectivity-single-result-container {
+      top: 4px; }
+    .id-merges-acquisition .table.merge-acquistion .form-control {
+      margin-bottom: 20px; }
+    .id-merges-acquisition .table.merge-acquistion .form-control input {
+      width: 100%; }
+    .id-merges-acquisition .table.merge-acquistion.table .table_head th {
+      padding-top: 0;
+      padding-bottom: 0; }
+      .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap {
+        padding: 0 5px;
+        background-color: #DE4361; }
+        .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap:after {
+          visibility: hidden;
+          display: block;
+          font-size: 0;
+          content: " ";
+          clear: both;
+          height: 0; }
+        .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap span {
+          float: left;
+          width: calc(100% - 15px);
+          font-weight: normal;
+          margin-top: 5px;
+          font-size: 16px; }
+      .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap {
+        padding: 5px;
         font-size: 16px;
-        padding: 2px; }
+        background-color: #C0C0C0; }
+        .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap:after {
+          visibility: hidden;
+          display: block;
+          font-size: 0;
+          content: " ";
+          clear: both;
+          height: 0; }
+        .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap input {
+          border-radius: 5px;
+          font-weight: normal;
+          font-size: 16px;
+          padding: 2px; }
   .id-merges-acquisition .idi-table-heading .heading {
     float: left; }
     @media only screen and (min-width: 1024px) {
@@ -9492,12 +9494,19 @@ div#feedbacklite.fbl_r {
           height: 25px;
           fill: #ffffff;
           margin: 7px 0 0 7px; }
-  .id-merges-acquisition .sorting-buttons a[type="ascending"] svg, .id-merges-acquisition .sorting-buttons [type="ascending"].pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons [type="ascending"].sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons [type="ascending"].mobile-table-exit svg {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); }
-  .id-merges-acquisition .sorting-buttons a svg, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg {
-    height: 15px;
-    fill: #ffffff; }
+  .id-merges-acquisition .sorting-buttons {
+    width: 15px;
+    float: left; }
+    .id-merges-acquisition .sorting-buttons a[type="ascending"] svg, .id-merges-acquisition .sorting-buttons [type="ascending"].pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons [type="ascending"].sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons [type="ascending"].mobile-table-exit svg {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+      margin-top: 3px; }
+    .id-merges-acquisition .sorting-buttons a[type="descending"] svg, .id-merges-acquisition .sorting-buttons [type="descending"].pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons [type="descending"].sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons [type="descending"].mobile-table-exit svg {
+      margin-bottom: 3px; }
+    .id-merges-acquisition .sorting-buttons a svg, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg {
+      height: 15px;
+      fill: #ffffff;
+      margin-top: -7px; }
 
 .rolling-stream {
   background-color: #f1f2f2;

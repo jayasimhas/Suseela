@@ -65,6 +65,7 @@
 	 	}
 	 }
 	.table.merge-acquistion {
+		border-top: none;
 		@include breakpoint('small') {
 			border: none;
 		}
@@ -420,15 +421,24 @@
 		}
 	}
 	.sorting-buttons {
+		width: 15px;
+		float: left;
 		a {
 			&[type="ascending"] {
 				svg {
 					transform: rotate(180deg);
+					margin-top: 3px;
+				}
+			}
+			&[type="descending"] {
+				svg {
+					margin-bottom: 3px;
 				}
 			}
 			svg {
 				height: 15px;
 				fill: $color-white;
+				margin-top:-7px;
 			}
 		}
 	}
