@@ -9633,6 +9633,14 @@ div#feedbacklite.fbl_r {
         height: 100%;
         background: #d1d3d4;
         z-index: 1; }
+    .rolling-stream .rolling-stream-wrapper h5 a, .rolling-stream .rolling-stream-wrapper .alert-success p a, .alert-success .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .alert-error p a, .alert-error .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle a, .rolling-stream .rolling-stream-wrapper h5 .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-success p .pop-out__reset-password, .alert-success .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-error p .pop-out__reset-password, .alert-error .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper h5 .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper h5 .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-success p .mobile-table-exit, .alert-success .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-error p .mobile-table-exit, .alert-error .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .mobile-table-exit {
+      font-family: 'Roboto';
+      font-size: 20px; }
+    .rolling-stream .rolling-stream-wrapper h5 span, .rolling-stream .rolling-stream-wrapper .alert-success p span, .alert-success .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .alert-error p span, .alert-error .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle span {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 18px;
+      line-height: 1.18rem; }
     .rolling-stream .rolling-stream-wrapper #scrollbar {
       position: absolute;
       right: 0;
