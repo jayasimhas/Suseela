@@ -9633,17 +9633,6 @@ div#feedbacklite.fbl_r {
         height: 100%;
         background: #d1d3d4;
         z-index: 1; }
-    .rolling-stream .rolling-stream-wrapper h3, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title {
-      line-height: 24px;
-      line-height: 1.5rem; }
-      .rolling-stream .rolling-stream-wrapper h3 a, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title a, .rolling-stream .rolling-stream-wrapper h3 .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper h3 .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper h3 .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title .mobile-table-exit {
-        font-family: 'Roboto';
-        font-size: 20px; }
-      .rolling-stream .rolling-stream-wrapper h3 span, .rolling-stream .rolling-stream-wrapper .article-call-to-action__title span {
-        font-size: 16px;
-        font-size: 1rem;
-        line-height: 18px;
-        line-height: 1.18rem; }
     .rolling-stream .rolling-stream-wrapper #scrollbar {
       position: absolute;
       right: 0;
