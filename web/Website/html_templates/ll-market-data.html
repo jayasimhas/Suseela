@@ -232,19 +232,19 @@
 
             function createStockChart() {
                 chart = new AmCharts.AmStockChart();
-
+				
 
                 // DATASETS //////////////////////////////////////////
                 var dataSet = new AmCharts.DataSet();
-                dataSet.color = "#"+"217bb7";
-                dataSet.title = "balticDryData";
+				dataSet.color = "#"+"217bb7";
+                dataSet.title = "BalticDryData";
                 dataSet.fieldMappings = [{
                     fromField: "value",
                     toField: "value"
                 }];
                 dataSet.dataProvider = chartData.reverse();
                 dataSet.categoryField = "date";
-                console.log(chartData);
+               // console.log(chartData);
                 // set data sets to the chart
                 chart.dataSets = [dataSet];
 
@@ -335,7 +335,7 @@
                 chart.write('chartdiv');
             }
 </script> <h6><p id="latest-value">702<span class="fall">(-12)</span> <span>2017-02-08</span></p></h6>
- <div id="chartdiv" class="balticChart"></div>
+ <div id="chartdiv" class="balticChart" ></div>
  </div>
 						 <!--End of AM Charts-->
 						 
