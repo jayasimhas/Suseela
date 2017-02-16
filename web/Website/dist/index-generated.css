@@ -2283,10 +2283,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     background: #fff;
     margin: 0px auto;
     width: 80%;
-    height: 180px; }
-    @media (max-width: 800px) {
-      #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
-        height: 180px !important; } }
+    height: 150px; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
         width: 90% !important; } }
@@ -2319,19 +2316,17 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-left: 0.5%;
     margin-right: 0.5%;
     background-color: #eee;
-    height: 280px; }
-    @media (max-width: 640px) {
-      #graph-carousel .graph-container {
-        height: 260px; } }
+    height: 234px; }
     #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
-      width: 80%;
-      margin: 0px auto;
       font-size: 14px;
       font-weight: 500;
-      height: 70px;
+      height: 40px;
       vertical-align: middle;
-      display: table-cell;
-      text-align: center; }
+      display: inline-block;
+      text-align: left;
+      margin: 20px 20px 0px 30px;
+      overflow: hidden;
+      line-height: 20px; }
   #graph-carousel .owl-dots {
     position: absolute;
     top: 0;
@@ -2354,7 +2349,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-top: 0;
     margin-bottom: 0; }
   #graph-carousel .owl-carousel .item {
-    height: 290px; }
+    height: 234px; }
   #graph-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #graph-carousel .owl-theme .owl-dots .owl-dot.active span, #graph-carousel .owl-theme .owl-dots .owl-dot:hover span {
