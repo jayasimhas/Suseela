@@ -414,11 +414,15 @@
 	.marketDataTable{
 		border: inherit;
 		border-left: 1px solid #d1d3d4;
+		@include breakpoint('small') {
+			border-left: none;
+		}
 		.owl-dots{
 			background: #0f5487;
-			margin-top: -32px;
+			margin-top: -29px;
 			height: 32px;
 			text-align: right;
+			right: 0px;
 			padding-right: 15px;
 			.owl-dot{
 				span{

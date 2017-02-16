@@ -2389,25 +2389,25 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     #graph-carousel .showinMob .li-content-graph {
       margin: 10px 0 0 0; }
 
-#mycarousel, #mycarousel2 {
+#mycarousel1, #mycarousel2 {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 400; }
-  #mycarousel .companylogo, #mycarousel2 .companylogo {
+  #mycarousel1 .companylogo, #mycarousel2 .companylogo {
     float: left;
     width: 43%;
     margin-top: 20px; }
-    #mycarousel .companylogo img, #mycarousel2 .companylogo img {
+    #mycarousel1 .companylogo img, #mycarousel2 .companylogo img {
       max-width: 100px;
       max-height: 60px; }
-  #mycarousel .companyLinks, #mycarousel2 .companyLinks {
+  #mycarousel1 .companyLinks, #mycarousel2 .companyLinks {
     float: left;
     width: 57%;
     margin-top: 20px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.15em;
     font-weight: 400; }
-  #mycarousel .li-content-graph, #mycarousel2 .li-content-graph {
+  #mycarousel1 .li-content-graph, #mycarousel2 .li-content-graph {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 0.875em;
     font-weight: 500; }
@@ -8305,8 +8305,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9047,11 +9047,15 @@ div#feedbacklite.fbl_r {
   #market-data .marketDataTable {
     border: inherit;
     border-left: 1px solid #d1d3d4; }
+    @media (max-width: 480px) {
+      #market-data .marketDataTable {
+        border-left: none; } }
     #market-data .marketDataTable .owl-dots {
       background: #0f5487;
-      margin-top: -32px;
+      margin-top: -29px;
       height: 32px;
       text-align: right;
+      right: 0px;
       padding-right: 15px; }
       #market-data .marketDataTable .owl-dots .owl-dot span {
         margin: 10px 7px;
@@ -9287,6 +9291,10 @@ div#feedbacklite.fbl_r {
         padding: 2px; }
   .id-merges-acquisition .idi-table-heading .heading {
     float: left; }
+    @media only screen and (max-width: 1024px) {
+      .id-merges-acquisition .idi-table-heading .heading {
+        margin-top: 6px;
+        margin-bottom: 0; } }
   .id-merges-acquisition .idi-table-heading .dropdown-wrapper {
     float: right;
     background: #fff;
@@ -11847,7 +11855,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
