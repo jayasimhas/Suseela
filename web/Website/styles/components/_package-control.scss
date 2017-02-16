@@ -1,4 +1,4 @@
-.package-control__articles {
+.package-control-articles__fullContent{
 	margin: 0;
 	background: #f1f2f2;
 	padding: 1.25rem;
@@ -9,7 +9,11 @@
 		@include breakpoint('small') {
 			display: block;
 		}
+		.package-control-preview{
+			
+		}
 	}
+	
 	.article-metadata{
 		ul {
 			display: block;
@@ -55,62 +59,114 @@
 			padding-right: 1.25rem;
 		}
 	}
-	.package-control-preview {
-		width: 25%;
-		margin: 0;
-		padding: 0 0.625rem;
-		float: left;
-		@include breakpoint('small') {
-			width: 100%;
-			margin-bottom: 2rem;
-		}
-		@media only screen and (min-width: 767px) and (max-width: 1024px) {
-			width: 50%;
-		}
-		&:first-child {
-			width: 50%;
+	
+}
+.package-wrapper{
+		.package-control-preview {
+			width: 25%;
+			margin: 0;
+			padding: 0 0.625rem;
+			float: left;
 			@include breakpoint('small') {
+				width: 100%;
+				margin-bottom: 2rem;
+			}
+			@media only screen and (min-width: 767px) and (max-width: 1024px) {
+				width: 50%;
+			}
+			&:first-child {
+				width: 50%;
+				@include breakpoint('small') {
+					width: 100%;
+				}
+				.article-preview__headline {
+					font-size: 2rem;
+					@include breakpoint('small') {
+						font-size: 1.5rem;
+					}
+				}
+				.article-preview__byline {
+					float: left;
+					margin-top: 10px;
+					@include breakpoint('small') {
+						float: none;
+					}
+				}
+				.article-metadata {
+					float: right;
+					@include breakpoint('small') {
+						float: none;
+					}
+				}
+			}
+			.article-preview--small {
+				margin: 0;
 				width: 100%;
 			}
 			.article-preview__headline {
-				font-size: 2rem;
-				@include breakpoint('small') {
-					font-size: 1.5rem;
+				font-size: 1.5rem;
+			}
+			.package-heading-wrapper {
+				margin-top: 1.25rem;
+				h3.article-preview__headline {
+					padding: 1rem 0;
+					font-family: Roboto;
+					font-size: 1.25rem;
+					font-weight: bold;
+					line-height: 24px;				
+					border-top: 1px solid $color-light-gray;
 				}
 			}
-			.article-preview__byline {
-				float: left;
-				margin-top: 10px;
-				@include breakpoint('small') {
-					float: none;
+			.article-preview__inner-wrapper{
+				h1.article-preview__headline{
+					font-family: Roboto;
+					font-size: 2rem;
+					font-weight: bold;
+					line-height: 38px;
 				}
-			}
-			.article-metadata {
-				float: right;
-				@include breakpoint('small') {
-					float: none;
+				
+				.article-summary{
+					p{
+						font-family: Roboto;
+						font-size: 1rem;
+						line-height: 19px;
+						color: #58595B;
+					}
 				}
 			}
 		}
-		.article-preview--small {
-			margin: 0;
+}
+.package-control-articles__half {
+	.header-line-control {
+		width: 100%;
+		position: relative;
+		margin: 0 0 1.25rem 0;
+		&:after {
+			content: '';
+			position: absolute;
 			width: 100%;
-		}
-		.article-preview__headline {
-			font-size: 1.5rem;
-		}
-		.package-heading-wrapper {
-			margin-top: 1.25rem;
-			h3 {
-				padding: 1rem 0;
-				border-top: 1px solid $color-light-gray;
+			height: 4px;
+			background: #000;
+			top: 50%;
+			margin-top: -2px;
+			left: 0;
+			@include breakpoint('small') {
+				display: none;
 			}
+		}
+		span {
+			background: #f1f2f2;
+			position: relative;
+			z-index: 9;
+			padding-right: 1.25rem;
 		}
 	}
-}
-.manually-curated-content__main-well {
-	.package-control__articles .package-control-preview {
+	background: #f1f2f2;
+	padding: 1.25rem;
+	margin-bottom: 2rem;
+	.package-control-preview {
 		width: 50%;
+		float: left;
 		@include breakpoint('small') {
 			width: 100%;
 		}
@@ -124,8 +180,52 @@
 				font-size: 1.5rem;
 			}
 		}
+		.package-heading-wrapper {
+			h3.article-preview__headline {
+				&:first-child {			
+					border-top: none;
+				}
+			}
+			h2.article-preview__headline{
+					font-family: Roboto;
+					font-size: 1.75rem;
+					font-weight: bold;
+					line-height: 33px;
+				}
+		}
 	}
 	.package-control-preview:first-child .article-metadata {
 		float: none;
+	}
+}
+.package-control-articles__quarter{
+	background: #f1f2f2;
+	padding: 20px;
+	h1{
+		font-family: Roboto;
+		font-size: 2.25rem;
+		font-weight: bold;
+		line-height: 42px;	
+	}
+	h3.article-preview__headline {
+		padding: 1rem 0 0 0;
+		font-family: Roboto;
+		font-size: 1.25rem;
+		font-weight: bold;
+		line-height: 24px;				
+		border-top: 1px solid $color-light-gray;
+	}
+	h3{
+		&:first-child {			
+			border-top: none;
+		}		
+	}
+	width: 55%;
+	.article-sidebar{
+		width: 100%;
+		float: left;
+		padding: 0;
+		margin: 0;
+		border-bottom: 4px solid ;
 	}
 }

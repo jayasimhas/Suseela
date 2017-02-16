@@ -12,6 +12,8 @@ using Glass.Mapper.Sc;
 using Informa.Library.Site;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Jabberwocky.Glass.Autofac.Mvc.Services;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
 namespace Informa.Web.ViewModels
 {
@@ -21,17 +23,22 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         public ISitecoreContext SitecoreContext;
         ISiteRootContext RootContext;
-
+        
         public CompanyLatestNewsViewModel(
-            IArticleSearch articleSearch, ITextTranslator textTranslator, ISitecoreContext sitecoreContext, ISiteRootContext rootContext)
+            IArticleSearch articleSearch, ITextTranslator textTranslator, ISitecoreContext sitecoreContext, ISiteRootContext rootContext, IRenderingContextService renderingParametersService)
         {
             ArticleSearch = articleSearch;
             TextTranslator = textTranslator;
             SitecoreContext = sitecoreContext;
             RootContext = rootContext;
             ItemsToDisplay = 4;
+            Parameters = renderingParametersService.GetCurrentRenderingParameters<ICompanyLatest_News_Options>();
+            if (Parameters == null) return;
+            CompanyNewsDisplayOptions = Parameters.CompanyNewsAlignment;
 
-        }    
+        }
+
+        public ICompanyLatest_News_Options Parameters { get; set; }
 
         public IEnumerable<IArticle> News { get; set; }
 
@@ -39,6 +46,8 @@ namespace Informa.Web.ViewModels
         IEnumerable<Guid> subjectId { get; set; }
     
         public int ItemsToDisplay { get; set; }
+
+        string CompanyNewsDisplayOptions { get; set; }
 
         public IEnumerable<IArticle> CompanyNews => GetLatestNewsForCompanies();
 

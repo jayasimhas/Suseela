@@ -38,7 +38,12 @@
 	.quick-facts__list--ul li ul li:before {
         color: $color-cardinal-color;
     }
-
+	.header-line-control:after{
+		border: 2px solid $color-cardinal-color;
+	}
+	.package-wrapper{
+		border-bottom: 4px solid $color-cardinal-color;
+	}
 	@include theme-quick-facts(
 		transparentize($color-cardinal-color, 0.9),
 		transparentize($color-cardinal-color, 0.5));

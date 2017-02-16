@@ -17,7 +17,7 @@
 				Wrapper.find('tr:last-child').append('<td align="left" deal="Target" type="text" class="R16 pad-10">'+data[key].Target+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetSector" type="text" class="R16 pad-10">'+data[key].TargetSector+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetLocation" type="text" class="R16 pad-10">'+data[key].TargetLocation+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="right" deal="Detail" type="number" class="R16 pad-10">'+data[key].Detail+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Detail" type="text" class="R16 pad-10">'+data[key].Detail+'</td>');
 				if(data[key].Price) {
 					var Price = data[key].Price;
 				} else {
@@ -157,7 +157,7 @@
 		FilterEvent: function(data, Parent) {
 			var InputValues = Parent.find('th').find('input'),
 				self = this;
-			if($(document).width() < 668) {
+			if($(window).width() < 668) {
 				InputValues = $('.merge-form-items input');
 			}
 			InputValues.on('keyup', function() {
@@ -172,7 +172,7 @@
 					StartField = Parent.find('.range-field')[0].value,
 					EndField = Parent.find('.range-field')[1].value;
 
-				if($(document).width() < 668) {
+				if($(window).width() < 668) {
 					Index = $(this).parents('.forms').index();
 					StartField = $('.merge-form-items .range-field.start').val();
 					EndField = $('.merge-form-items .range-field.end').val();
@@ -192,7 +192,7 @@
 							if(EndField) {
 								End = parseFloat(EndField);
 							} else {
-								End = 0;
+								End = null;
 							}
 							Obj[DealType] = {
 								Start : Start,
@@ -223,25 +223,13 @@
 							var text = "";
 							if(j == 'Price') {
 								var Price = parseFloat(window.jsonMergeAcquistion[i][j]);
-								// if(StartField.length > 0 && EndField.length > 0) {
-								// 	if((Price > parseFloat(StartField)) && (Price < parseFloat(EndField))) {
-								// 		count++;
-								// 	}
-								// } else if(StartField.length > 0 && EndField.length == 0) {
-								// 	if((Price > parseFloat(StartField))) {
-								// 		count++;
-								// 	}
-								// } else {
-								// 	if((Price < parseFloat(EndField))) {
-								// 		count++;
-								// 	}
-								// }
-								if(Obj[j]['End'] != 0) {
-									if((Price > Obj[j]['Start']) && (Price < Obj[j]['End'])) {
+								
+								if(Obj[j]['End'] != null) {
+									if((Price >= Obj[j]['Start']) && (Price <= Obj[j]['End'])) {
 										count++;
 									}
 								} else {
-									if(Price > Obj[j]['Start']) {
+									if(Price >= Obj[j]['Start']) {
 										count++;
 									}
 								}
@@ -297,7 +285,8 @@
 			$(document).on('click', '.show-largest-btn', function(e) {
 				e.preventDefault();
 				var ThresholdValue = $(this).attr('data-large'),
-					Items = [];
+					Items = [],
+					PriceItem = [];
 
 				if($(this).hasClass('active')) {
 					self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
@@ -306,7 +295,17 @@
 					for(var i= 0; i < self.CurrentArray.length; i++) {
 						if(self.CurrentArray[i].Price != '-') {
 							if(parseFloat(self.CurrentArray[i].Price) > parseFloat(ThresholdValue)) {
-								Items.push(self.CurrentArray[i]);
+								PriceItem.push(parseFloat(self.CurrentArray[i].Price));
+							}
+						}
+					}
+					PriceItem.sort(function(a, b){
+					  return b - a;
+					});
+					for(var i = 0; i < PriceItem.length; i++) {
+						for(var j= 0; j < self.CurrentArray.length; j++) {
+							if(self.CurrentArray[j].Price == PriceItem[i]) {
+								Items.push(self.CurrentArray[j]);
 							}
 						}
 					}
