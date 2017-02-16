@@ -544,10 +544,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     // Check if item exists, flag article number field as not to update
                     if (newItem != null)
                     {
-                        if (newItem.Fields["Legacy Sitecore ID"]?.Value == (importRow as Item)?.ID.ToString())
+                        try
                         {
-                            dict.Add("Article Number", false);
+                            if (newItem.Fields["Legacy Sitecore ID"]?.Value == (importRow as Item)?.ID.ToString())
+                            {
+                                dict.Add("Article Number", false);
+                            }
                         }
+                        catch
+                        {
+
+                        }
+
                     }
 
                     //if not found then create one
