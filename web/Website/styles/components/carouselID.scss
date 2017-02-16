@@ -173,10 +173,7 @@
 		background: #fff;
 		margin: 0px auto;
 		width: 80%;
-		height: 180px;
-		@include breakpoint('medium') {
-			height: 180px !important;
-		}
+		height: 150px;
 		@media screen and (min-width: 768px) and (max-width: 1024px) {
 			width: 90% !important;
 		}
@@ -218,21 +215,18 @@
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;
-		height: 280px; 
-		@include breakpoint('medium-small') {
-			height: 260px;
-		}
-		h5{
-			width: 80%;
-			margin: 0px auto;
+		height: 234px;  
+		h5{ 
 			font-size: 14px;
 			font-weight: 500;
-			height: 70px;
+			height: 40px;
 			vertical-align: middle;
-			display: table-cell;
-			text-align: center;
-			 
-		}
+			display: inline-block;
+			text-align: left;
+			margin: 20px 20px 0px 30px;
+			overflow: hidden;
+			line-height: 20px; 
+		 }
 	}
 	.owl-dots{
 		position: absolute;
@@ -260,7 +254,7 @@
 	}
 	@include fontFamily("verdana");
 	.owl-carousel .item{
-		height: 290px;
+		height: 234px;
 	}
 	.owl-theme .owl-nav [class*='owl-']{
 		background: none;
