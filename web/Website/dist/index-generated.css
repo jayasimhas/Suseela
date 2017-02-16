@@ -13620,6 +13620,12 @@ main {
   .theme-pink-sheet .rolling-stream h5 a:hover, .theme-pink-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #BC608C; }
 
+.theme-pink-sheet .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-pink-sheet .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
+
 .theme-pink-sheet .article-interview__question:before {
   background-color: rgba(188, 96, 140, 0.3);
   border-color: rgba(188, 96, 140, 0.7); }
@@ -13949,6 +13955,12 @@ main {
   color: #231f20; }
   .theme-rose-sheet .rolling-stream h5 a:hover, .theme-rose-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #DD3580; }
+
+.theme-rose-sheet .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-rose-sheet .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
 
 .theme-rose-sheet .article-interview__question:before {
   background-color: rgba(200, 32, 110, 0.2);
@@ -14280,6 +14292,12 @@ main {
   .theme-medtech .rolling-stream h5 a:hover, .theme-medtech .rolling-stream .alert-success p a:hover, .alert-success .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .alert-error p a:hover, .alert-error .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle a:hover, .theme-medtech .rolling-stream h5 .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream h5 .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #034a7c; }
 
+.theme-medtech .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-medtech .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
+
 .theme-medtech .article-interview__question:before {
   background-color: rgba(3, 74, 124, 0.2);
   border-color: rgba(3, 74, 124, 0.5); }
@@ -14609,6 +14627,12 @@ main {
   color: #231f20; }
   .theme-invivo .rolling-stream h5 a:hover, .theme-invivo .rolling-stream .alert-success p a:hover, .alert-success .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .alert-error p a:hover, .alert-error .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle a:hover, .theme-invivo .rolling-stream h5 .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream h5 .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #7e2718; }
+
+.theme-invivo .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-invivo .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
 
 .theme-invivo .article-interview__question:before {
   background-color: rgba(126, 39, 24, 0.3);
@@ -14940,6 +14964,12 @@ main {
   .theme-commodities .rolling-stream h5 a:hover, .theme-commodities .rolling-stream .alert-success p a:hover, .alert-success .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .alert-error p a:hover, .alert-error .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle a:hover, .theme-commodities .rolling-stream h5 .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream h5 .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #c12d3b; }
 
+.theme-commodities .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-commodities .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
+
 .theme-commodities .article-interview__question:before {
   background-color: rgba(193, 45, 59, 0.3);
   border-color: rgba(193, 45, 59, 0.5); }
@@ -15230,25 +15260,25 @@ main {
 .theme-insurance-day .quote,
 .theme-insurance-day .article-sidebar,
 .theme-insurance-day .topic-subtopic__header {
-  border-top-color: #b0173d;
-  border-bottom-color: #b0173d;
-  border-color: #b0173d; }
+  border-top-color: #DE4361;
+  border-bottom-color: #DE4361;
+  border-color: #DE4361; }
 
 .theme-insurance-day .latest-news__header:before {
-  background-color: #b0173d; }
+  background-color: #DE4361; }
 
 .theme-insurance-day .theme-header__underline {
-  border-bottom: 4px solid #b0173d;
+  border-bottom: 4px solid #DE4361;
   padding: 24px 0;
   padding: 1.5rem 0; }
 
 .theme-insurance-day .article-list-sidebar__wrapper {
-  border-bottom: 4px solid #b0173d; }
+  border-bottom: 4px solid #DE4361; }
 
 .theme-insurance-day .theme-hover__header a, .theme-insurance-day .theme-hover__header .pop-out__reset-password, .theme-insurance-day .theme-hover__header .sortable-table__list-toggler, .theme-insurance-day .theme-hover__header .mobile-table-exit {
   color: #231f20; }
   .theme-insurance-day .theme-hover__header a:hover, .theme-insurance-day .theme-hover__header .pop-out__reset-password:hover, .theme-insurance-day .theme-hover__header .sortable-table__list-toggler:hover, .theme-insurance-day .theme-hover__header .mobile-table-exit:hover {
-    color: #b0173d; }
+    color: #DE4361; }
 
 .theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
   position: relative; }
@@ -15258,13 +15288,19 @@ main {
     bottom: 0;
     height: 4px;
     width: calc( 100% - 15px);
-    background: #b0173d;
+    background: #DE4361;
     left: 0; }
 
 .theme-insurance-day .rolling-stream h5 a, .theme-insurance-day .rolling-stream .alert-success p a, .alert-success .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .alert-error p a, .alert-error .theme-insurance-day .rolling-stream p a, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-insurance-day .rolling-stream h5 .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
   .theme-insurance-day .rolling-stream h5 a:hover, .theme-insurance-day .rolling-stream .alert-success p a:hover, .alert-success .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .alert-error p a:hover, .alert-error .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a:hover, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream h5 .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
-    color: #b0173d; }
+    color: #DE4361; }
+
+.theme-insurance-day .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-insurance-day .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
 
 .theme-insurance-day .article-interview__question:before {
   background-color: rgba(176, 23, 61, 0.3);
@@ -15290,12 +15326,6 @@ main {
 .theme-insurance-day .quickfactsbulleted li ul li:before,
 .theme-insurance-day .quick-facts__list--ul li ul li:before {
   color: #b0173d; }
-
-.theme-insurance-day .header-line-control:after {
-  border: 2px solid #b0173d; }
-
-.theme-insurance-day .package-wrapper {
-  border-bottom: 4px solid #b0173d; }
 
 .theme-insurance-day .quick-facts {
   background-color: rgba(176, 23, 61, 0.1); }
@@ -15597,6 +15627,12 @@ main {
   color: #231f20; }
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #002d4f; }
+
+.theme-lloydslist .header-line-control:after {
+  border: 2px solid #DE4361; }
+
+.theme-lloydslist .package-wrapper {
+  border-bottom: 4px solid #DE4361; }
 
 .theme-lloydslist .article-interview__question:before {
   background-color: rgba(15, 84, 135, 0.3);

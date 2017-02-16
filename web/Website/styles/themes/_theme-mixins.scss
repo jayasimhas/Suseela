@@ -191,6 +191,13 @@
             }
         }
     }
+	
+	.header-line-control:after{
+		border: 2px solid $color-primary-crimson;
+	}
+	.package-wrapper{
+		border-bottom: 4px solid $color-primary-crimson;
+	}
 }
 
 
