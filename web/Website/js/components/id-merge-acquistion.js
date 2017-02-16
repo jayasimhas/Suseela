@@ -17,7 +17,7 @@
 				Wrapper.find('tr:last-child').append('<td align="left" deal="Target" type="text" class="R16 pad-10">'+data[key].Target+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetSector" type="text" class="R16 pad-10">'+data[key].TargetSector+'</td>');
 				Wrapper.find('tr:last-child').append('<td align="left" deal="TargetLocation" type="text" class="R16 pad-10">'+data[key].TargetLocation+'</td>');
-				Wrapper.find('tr:last-child').append('<td align="right" deal="Detail" type="number" class="R16 pad-10">'+data[key].Detail+'</td>');
+				Wrapper.find('tr:last-child').append('<td align="left" deal="Detail" type="text" class="R16 pad-10">'+data[key].Detail+'</td>');
 				if(data[key].Price) {
 					var Price = data[key].Price;
 				} else {

@@ -9166,6 +9166,8 @@ div#feedbacklite.fbl_r {
         display: block; } }
   .id-merges-acquisition .desktop-controls {
     float: right; }
+  .id-merges-acquisition tbody.visible-xs td.pad-10 {
+    padding: 10px; }
   .id-merges-acquisition .show-largest-btn {
     padding: 10px;
     background-color: #DE4361;
@@ -9224,7 +9226,9 @@ div#feedbacklite.fbl_r {
     border-right: 1px solid #d1d3d4; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:first-child {
       border-right: 1px solid #d1d3d4;
-      border-left: 1px solid #d1d3d4; }
+      border-left: 1px solid #d1d3d4;
+      vertical-align: top;
+      font-weight: bold; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td.boder-none {
       border: none !important; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr td:last-child {
