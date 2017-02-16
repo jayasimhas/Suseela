@@ -13,7 +13,7 @@
 			background: none;
 		}
 		.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
-			background: #9E310D;
+			background: #fff;
 		}
 		.li-content-company {
 		  border: none;
@@ -202,8 +202,16 @@
 	.owl-theme .owl-dots{
 		text-align: right;
 	}
-	.owl-theme .owl-dots .owl-dot span{
-		margin: 5px; 
+	.owl-theme .owl-dots .owl-dot{
+		span{
+			margin: 5px;
+			background: #ad001b !important; 
+		}
+		&.active{
+			span{
+				background: #fff !important;
+			}
+		}
 	}
 	.graph-container{
 		margin-top: 1rem;
@@ -258,7 +266,7 @@
 		background: none;
 	}
 	.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
-		background: #9E310D;
+		background: #fff;
 	}
 	
 	.li-content-graph {
@@ -334,5 +342,21 @@
 	}
 	.li-content-graph{
 		@include textMix('Roboto', 0.875em, 500);
+		a{
+			cursor: pointer;
+		}
+	}
+	.owl-dots .owl-dot{
+		span{
+			background: #ad001b !important;
+			&:hover{
+				background: #fff !important;
+			}
+		}
+		&.active{
+			span{
+				background: #fff !important;
+			}
+		}
 	}
 }

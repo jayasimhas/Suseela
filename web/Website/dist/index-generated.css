@@ -2158,7 +2158,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #main-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
-    background: #9E310D; }
+    background: #fff; }
   #main-carousel .li-content-company {
     border: none;
     background-color: #fff;
@@ -2309,7 +2309,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel .owl-theme .owl-dots {
     text-align: right; }
   #graph-carousel .owl-theme .owl-dots .owl-dot span {
-    margin: 5px; }
+    margin: 5px;
+    background: #ad001b !important; }
+  #graph-carousel .owl-theme .owl-dots .owl-dot.active span {
+    background: #fff !important; }
   #graph-carousel .graph-container {
     margin-top: 16px;
     margin-top: 1rem;
@@ -2355,7 +2358,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #graph-carousel .owl-theme .owl-dots .owl-dot.active span, #graph-carousel .owl-theme .owl-dots .owl-dot:hover span {
-    background: #9E310D; }
+    background: #fff; }
   #graph-carousel .li-content-graph {
     border: none;
     background-color: #eeeeee;
@@ -2411,6 +2414,14 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 0.875em;
     font-weight: 500; }
+    #mycarousel1 .li-content-graph a, #mycarousel1 .li-content-graph .pop-out__reset-password, #mycarousel1 .li-content-graph .sortable-table__list-toggler, #mycarousel1 .li-content-graph .mobile-table-exit, #mycarousel2 .li-content-graph a, #mycarousel2 .li-content-graph .pop-out__reset-password, #mycarousel2 .li-content-graph .sortable-table__list-toggler, #mycarousel2 .li-content-graph .mobile-table-exit {
+      cursor: pointer; }
+  #mycarousel1 .owl-dots .owl-dot span, #mycarousel2 .owl-dots .owl-dot span {
+    background: #ad001b !important; }
+    #mycarousel1 .owl-dots .owl-dot span:hover, #mycarousel2 .owl-dots .owl-dot span:hover {
+      background: #fff !important; }
+  #mycarousel1 .owl-dots .owl-dot.active span, #mycarousel2 .owl-dots .owl-dot.active span {
+    background: #fff !important; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
