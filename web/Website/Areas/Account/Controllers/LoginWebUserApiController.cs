@@ -5,6 +5,7 @@ using Informa.Web.Areas.Account.Models.User.Authentication;
 using Informa.Library.User.ResetPassword;
 using Informa.Library.User.ResetPassword.Web;
 using Informa.Library.User.UserPreference;
+using System.Web;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -41,8 +42,9 @@ namespace Informa.Web.Areas.Account.Controllers
 					success = false
 				});
 			}
+            string curVertical = HttpContext.Current.Request.QueryString["vid"]?? HttpContext.Current.Request.QueryString["vid"];
 
-			var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist);
+            var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist, curVertical);
 			var redirectUrl = string.Empty;
 
             if(request.IsSignInFromMyView)

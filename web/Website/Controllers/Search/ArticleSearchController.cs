@@ -19,14 +19,17 @@
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISitecoreContext SitecoreContext;
+        protected readonly IUserPreferenceContext UserPreferences;
         public ArticleSearchController(IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator,
-            ISitecoreContext sitecoreContext)
+            ISitecoreContext sitecoreContext,
+            IUserPreferenceContext userPreferences)
         {
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             SitecoreContext = sitecoreContext;
+            UserPreferences = userPreferences;
         }
 
         /// <summary>
@@ -76,7 +79,7 @@
             {
                 var replacements = new Dictionary<string, string>
                 {
-                    ["#selectedtopics#"] = selectedTopicsCount?.Count().ToString(),
+                    ["#selectedtopics#"] = GetPreferredTopics(ChannelId),
                     ["#totaltopics#"] = GetAllTopics(ChannelId)
                 };
                 return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
@@ -85,6 +88,24 @@
             {
                 return string.Empty;
             }
+        }
+
+        private string GetPreferredTopics(string channelId)
+        {
+            if (UserPreferences != null && UserPreferences.Preferences != null &&
+                             UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
+            {
+                var channel = UserPreferences.Preferences.PreferredChannels.Where(c => c.ChannelId == channelId).FirstOrDefault();
+                if (channel != null && channel.IsFollowing && UserPreferences.Preferences.IsNewUser)
+                {
+                    return GetAllTopics(channelId);
+                }
+                else
+                {
+                    return channel.Topics.Where(n => n.IsFollowing)?.Count().ToString();
+                }
+            }
+            return string.Empty;
         }
 
         private string GetAllTopics(string channelId)

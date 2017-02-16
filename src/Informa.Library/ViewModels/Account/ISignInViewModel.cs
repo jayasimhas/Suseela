@@ -18,5 +18,6 @@ namespace Informa.Library.ViewModels.Account
 		string ResetPasswordSubmitText { get; }
 		IHtmlString ResetPasswordContactText { get; }
         bool IsSignInFromMyView { get; set; }
+        string CurVerticalName { get;}
     }
 }

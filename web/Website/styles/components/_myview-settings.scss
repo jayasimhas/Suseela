@@ -1,5 +1,5 @@
-@mixin folow-btn($w, $h){
-	border: 1px solid $color-tree-poppy-orange;
+@mixin folow-btn($w, $h, $c, $bc){
+	border: 1px solid $bc;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 0.75em;
@@ -9,7 +9,9 @@
 	display: inline-block;
     line-height: $h;
 	float: right;
-	color: #58595b;
+	color: $c;
+	width: $w;
+	min-height: $h;
 }
 @mixin tableData($px){ 
 	padding: 0.75rem 1.25rem;
@@ -17,7 +19,7 @@
 	vertical-align: top;
 	border-top: $px solid #ddd;
 }
-@mixin getMove(){
+@mixin getMove($bg){
 	float: right;
 	margin-top: 0.4375rem;
 	.pull-left{
@@ -31,25 +33,13 @@
 	span{
 		height: 0.125rem;
 		width: 1.3125rem;
-		background: #d1d3d5;
+		background: $bg;
 		display: block;
 		margin-bottom: 3px;
-	}
-	.move{
-		float: left;
-		margin-right: 0.625rem;
-		position: relative;
-		top: -4px;
-		text-transform: uppercase;
-		font-size: 0.75em;
-		display: none;
-		@include breakpoint('small') {
-			z-index: -1;
-		}
-	}
+	} 
 }
 @mixin unfollowBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
+	@include folow-btn(9.375rem, 1.875rem, #58595b, $color-tree-poppy-orange);
 	margin: 0.5rem 0 0 1.25rem;
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
@@ -59,8 +49,8 @@
 	}
 }
 @mixin followBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
-	padding: 0 1.5625rem;
+	@include folow-btn(9.375rem, 1.875rem, #58595b, $color-tree-poppy-orange);
+	padding: 0 1rem;
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
@@ -132,11 +122,13 @@
 		}
 	}
 	.followingBtn{
-		@include folow-btn(7.5rem, 2rem);
-		padding: 0 1.625rem;
+		@include folow-btn(9.375rem, 1.875rem, #58595b, $color-tree-poppy-orange);
+		padding: 0 1rem;
+		background: $color-tree-poppy-orange;
+		color: $color-white;
 		&:hover{
-			background: $color-tree-poppy-orange;
-			color: $color-white;
+			background: #a7a7a7;
+			border: 1px solid #a7a7a7;
 			@include breakpoint('small') {
 				background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 			}
@@ -153,8 +145,8 @@
 		}
 	}
 	.followBtn{
-		@include folow-btn(7.5rem, 2rem);
-		padding: 0 2.25rem;
+		@include folow-btn(9.375rem, 1.875rem, #58595b, #ADADAD);
+		padding: 0 1rem;
 		@include breakpoint('medium-small'){
 			background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
 			height: 1.875rem;
@@ -164,6 +156,11 @@
 			border: none;
 			padding: 0 1rem;
 			text-indent: -9999px;
+		}
+		&:hover{
+			background: #ff8f18;
+			color: #fff;
+			border: 1px solid $color-tree-poppy-orange;
 		}
 	}
 	&.myview-settings-registration {
@@ -304,40 +301,55 @@
 					} 
 					&.followingrow{
 						.rowlines{
-							@include getMove();
-						}
+							@include getMove(#ff8f18);
+							position: relative;
+						} 
 						&:hover{
-							background: #f5f5f5;
+							background: #FFF5ED;
 							@include breakpoint('large') {
 								background: #fff;
 							}
-							cursor: move;
-							& .rowlines{
+							cursor: move; 
+							& .rowlines{ 
 								span{
-									background: #acacad;
 									@include breakpoint('large'){
 										background: #d1d3d5;
 									}
-								}
+								}  
+							} 
+						}
+						.rowlines{ 
+							.move{
+								float: left;
+								margin-right: 0.625rem;
+								position: absolute;
+								top: -4px; 
+								right: 21px;
+								color: #ff8f18;
+								text-transform: uppercase;
+								font-size: 0.875em;
+								display: none;
+								@include breakpoint('small') {
+									z-index: -1;
+								} 
 							}
-							& .move{
-								@include breakpoint('large') {
-									display: none;
+							&:hover{
+								.move{
+									display: block;
 								}
-								display: block;
 							}
 						}
 					}
 					&.followrow{
-						background: #f9f9f9;
+						background: #F6F6F6;
 						@include breakpoint('small') {
 							background: $color-white;
 						}
 						.rowlines{
-							@include getMove();
+							@include getMove(#979797);
 						}
 						&.frow{
-							border-top: 2px solid #d1d3d4;
+							border-top: 1px solid #D9D9D9;
 							@include breakpoint('small') {
 								border-top: none;
 							}
@@ -345,8 +357,11 @@
 						& .move{
 							display: none;
 						}
+						&:hover{
+							background: #EDEDED;
+						}
 					}
-				 }
+				 } 
 			}
 			thead{
 				tr{
@@ -397,7 +412,7 @@
 						padding: 0rem 1rem 1.25rem 27px;
 					}
 					& .rowlines{
-						@include getMove();
+						@include getMove(#979797);
 						margin-top: -1.5rem;
 						.mv{						
 							background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
@@ -525,21 +540,22 @@
 	  	width: 100%;
 	  }
 	  .gotoview{
-		 @include folow-btn(auto, 2rem);
 		 border: none;
-		  margin-left: 1.25rem;
+		 margin-left: 1.25rem;
 		  a{
 			display: block;
 			padding: 0 25px;
+			@include folow-btn(auto, 2rem, #FF8723, $color-tree-poppy-orange);
 			&:hover{
 				text-decoration: none;
+				color: #fff;
 			}
 			&:focus{
 				text-decoration: none;
 			}
 		  }
 		@include breakpoint('small') {
-			@include folow-btn(7.5rem, 2rem);
+			@include folow-btn(7.5rem, 2rem, #58595b, $color-tree-poppy-orange);
 			width: 50%;
 		    height: auto;
 		    float: left;
@@ -555,9 +571,8 @@
 		}
 	  .saveview{
 		padding: 0 2rem;
-		 @include folow-btn(auto, 2rem);
+		 @include folow-btn(auto, 2rem, $color-white, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
-		  color: $color-white;
 		  @include breakpoint('small') {
 			float: right;
 			margin: 0px;
@@ -566,7 +581,7 @@
 	  }
 	  .registrationBtn{
 		padding: 0 2rem;
-		 @include folow-btn(auto, 2rem);
+		 @include folow-btn(auto, 2rem, #58595b, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
@@ -907,8 +922,7 @@
 .theme-lloydslist{
 	.myview-settings {
 		.table{
-			span{
-				color: #1191D1;
+			span{ 
 				fill: #1191D1;
 				&.button--outline{
 					border: 1px solid #1191D1;
@@ -931,8 +945,7 @@
 .theme-insurance-day{
 	.myview-settings {
 		.table{
-			span{
-				color: #DE4361;
+			span{ 
 				fill: #DE4361;
 				&.button--outline{
 					border: 1px solid #DE4361;
@@ -955,8 +968,7 @@
 .theme-commodities{
 	.myview-settings {
 		.table{
-			span{
-				color: #9E310D;
+			span{ 
 				fill: #9E310D;
 				&.button--outline{
 					border: 1px solid #9E310D;

@@ -9,6 +9,11 @@
 	.desktop-controls {
 		float: right;
 	}
+	tbody.visible-xs {
+		td.pad-10 {
+			padding: 10px;
+		}
+	}
 	.show-largest-btn {
 		padding: 10px;
 	    background-color: #DE4361;
@@ -60,6 +65,7 @@
 	 	}
 	 }
 	.table.merge-acquistion {
+		border-top: none;
 		@include breakpoint('small') {
 			border: none;
 		}
@@ -83,6 +89,8 @@
 				td:first-child {
 					border-right: 1px solid #d1d3d4;
 					border-left: 1px solid #d1d3d4;
+					vertical-align: top;
+					font-weight: bold;
 				}
 				td.boder-none {
 					border: none !important;
@@ -166,6 +174,10 @@
 	.idi-table-heading {
 		.heading {
 			float: left;
+			@media only screen and (min-width: 1024px) {
+				margin-top: 6px;
+				margin-bottom: 0;
+			}
 		}
 		.dropdown-wrapper {
 			float: right;
@@ -409,15 +421,24 @@
 		}
 	}
 	.sorting-buttons {
+		width: 15px;
+		float: left;
 		a {
 			&[type="ascending"] {
 				svg {
 					transform: rotate(180deg);
+					margin-top: 3px;
+				}
+			}
+			&[type="descending"] {
+				svg {
+					margin-bottom: 3px;
 				}
 			}
 			svg {
 				height: 15px;
 				fill: $color-white;
+				margin-top:-7px;
 			}
 		}
 	}

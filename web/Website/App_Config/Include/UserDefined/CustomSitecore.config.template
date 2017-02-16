@@ -269,6 +269,10 @@ But you can also use "patch:attribute" for clarity:
       <setting name="MasterId" value="${MasterId}"/>
       <setting name="MasterPassword" value="${MasterPassword}" />
 
+      <!-- SuperAdmin ID and Password Settings -->
+      <setting name="SuperAdminId" value="pmbi_admin@informa.com"/>
+      <setting name="SuperAdminPassword" value="Informa@2017" />
+      
       <!-- Multiple Salesforce Support Settings -->
       <setting name="MultipleSalesforceSupportEnabled" value="${CRMManager.MultipleSalesforceSupportEnabled}" />
 

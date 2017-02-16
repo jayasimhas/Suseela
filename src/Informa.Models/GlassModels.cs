@@ -6179,14 +6179,34 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
 
-
     /// <summary>
     /// ILatest_News_Options Interface
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/View Templates/Latest News Options</para>	
     /// <para>ID: 4616c89c-3e95-4064-ae28-bee2e6e18a59</para>	
     /// </summary>
-    [SitecoreType(TemplateId = ILatest_News_OptionsConstants.TemplateIdString)]
+    [SitecoreType(TemplateId = ICompanyLatest_News_OptionsConstants.TemplateIdString)]
+    public partial interface ICompanyLatest_News_Options : IGlassBase
+    {
+        /// <summary>
+        /// The Authors field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 4dd4c91f-13e2-4023-9204-69bfca0cf2be</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ICompanyLatest_News_OptionsConstants.AlignmentFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CompanyNewsAlignment { get; set; }
+    }
+
+
+        /// <summary>
+        /// ILatest_News_Options Interface
+        /// <para></para>
+        /// <para>Path: /sitecore/templates/User Defined/View Templates/Latest News Options</para>	
+        /// <para>ID: 4616c89c-3e95-4064-ae28-bee2e6e18a59</para>	
+        /// </summary>
+        [SitecoreType(TemplateId = ILatest_News_OptionsConstants.TemplateIdString)]
     public partial interface ILatest_News_Options : IGlassBase
     {
         /// <summary>
@@ -6327,6 +6347,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<ITaxonomy_Item> Subjects { get; set; }
+    }
+
+    public static partial class ICompanyLatest_News_OptionsConstants
+    {
+        public const string TemplateIdString = "127F5A74-21C3-449B-B0ED-8F9AE287B2BA";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company News Options";
+
+        public static readonly ID AlignmentFieldId = new ID("CC67CF70-E01C-4554-AE00-F6AFC037C01B");
+        public const string AlignmentFieldName = "Alignment";
     }
 
     public static partial class ILatest_News_OptionsConstants
@@ -6488,7 +6518,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Content_Type { get; set; }
+        IList<Guid> Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6497,7 +6527,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Media_Type { get; set; }
+        IList<Guid> Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>
@@ -6552,7 +6582,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Content_Type { get; set; }
+        IList<Guid> Content_Type { get; set; }
         /// <summary>
         /// The Media Type field.
         /// <para></para>
@@ -6561,7 +6591,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=ITaxonomy_Item</para>
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Guid Media_Type { get; set; }
+        IList<Guid> Media_Type { get; set; }
         /// <summary>
         /// Max Stories to Display field.
         /// <para></para>

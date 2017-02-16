@@ -6,7 +6,7 @@ namespace Informa.Library.Search.Filter
 	public interface ITaxonomySearchFilter
 	{
 		IList<Guid> TaxonomyIds { get; }
-        Guid ContentTypeTaxonomyId { get; set; }
-        Guid MediaTypeTaxonomyId { get; set; }
+        IList<Guid> ContentTypeTaxonomyIds { get; set; }
+        IList<Guid> MediaTypeTaxonomyIds { get; set; }
     }
 }

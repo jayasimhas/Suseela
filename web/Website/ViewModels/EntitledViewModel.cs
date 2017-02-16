@@ -4,6 +4,8 @@ using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Configuration;
+using System;
 
 namespace Informa.Web.ViewModels
 {
@@ -29,6 +31,7 @@ namespace Informa.Web.ViewModels
         public bool IsEntitled(IArticle articleItem)
         {
             return SitecoreUserContext.User.Domain.Name == "sitecore"
+              || string.Equals(SitecoreUserContext.User.GetLocalName(), Settings.GetSetting("SuperAdminId"), StringComparison.OrdinalIgnoreCase)
               || IsFree
               || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated)
               || IsEntitledProductItemContext.IsEntitled(articleItem);

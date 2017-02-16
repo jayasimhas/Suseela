@@ -4,6 +4,7 @@ using System.Web;
 using Informa.Library.ViewModels.Account;
 using Jabberwocky.Autofac.Attributes;
 using System;
+using Informa.Library.Services.Global;
 
 namespace Informa.Web.ViewModels
 {
@@ -12,18 +13,21 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly ITextTranslator TextTranslator;
+        protected readonly IGlobalSitecoreService GlobalService;
+        
 
-		public SignInViewModel()
+        public SignInViewModel()
 		{
 		}
 
 		public SignInViewModel(
 				ISiteRootContext siteRootContext,
-				ITextTranslator textTranslator)
+				ITextTranslator textTranslator, IGlobalSitecoreService globalService)
 		{
 			SiteRootContext = siteRootContext;
 			TextTranslator = textTranslator;
-		}
+            GlobalService = globalService;
+        }
 
 		public string SignInButtonText => TextTranslator.Translate("Authentication.SignIn.Submit");
 		public string SignInInvalidText => TextTranslator.Translate("Authentication.SignIn.ErrorInvalid");
@@ -61,6 +65,8 @@ namespace Informa.Web.ViewModels
 				=> new HtmlString(SiteRootContext.Item?.Customer_Support_Text ?? string.Empty);
 
         public bool IsSignInFromMyView { get; set; }
+
+        public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
         
     }
 

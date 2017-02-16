@@ -156,6 +156,19 @@
     .latest-news__header:before {
         background-color: $color;
     }
+    .theme-header__underline {
+        border-bottom: 4px solid $color;
+        padding: 1.5rem 0;
+    }
+    .article-list-sidebar__wrapper {
+        border-bottom: 4px solid $color;
+    }
+    .theme-hover__header a {
+        color: $color-zeus-black;
+        &:hover {
+            color: $color;
+        }
+    }
     .rolling-stream {
         h2 {
             position: relative;
@@ -178,6 +191,13 @@
             }
         }
     }
+	
+	.header-line-control:after{
+		border: 2px solid $color-primary-crimson;
+	}
+	.package-wrapper{
+		border-bottom: 4px solid $color-primary-crimson;
+	}
 }
 
 
