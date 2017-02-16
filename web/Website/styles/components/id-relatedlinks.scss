@@ -188,6 +188,27 @@
 	input.amChartsInputField.amcharts-start-date-input{
 		margin-left: 6px;
 	}
+	@include breakpoint('small') {
+		.amChartsPeriodSelector.amcharts-period-selector-div div{
+			display: block !important;
+			float: left !important;
+			margin-bottom: 0.5rem;
+		}
+	}
+	@include breakpoint('medium') {
+		.amChartsPeriodSelector.amcharts-period-selector-div div{
+			display: block !important;
+			float: left !important;
+			margin-bottom: 0.5rem;
+		}
+	}
+	@include breakpoint('medium-small') {
+		.amChartsPeriodSelector.amcharts-period-selector-div div{
+			display: block !important;
+			float: left !important;
+			margin-bottom: 0.5rem;
+		}
+	}
 }
 }
 

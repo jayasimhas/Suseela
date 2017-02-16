@@ -6908,6 +6908,24 @@ section: UI Elements
       margin-bottom: 2rem; }
     .balticChartsWrapper .balticChart input.amChartsInputField.amcharts-start-date-input {
       margin-left: 6px; }
+    @media (max-width: 480px) {
+      .balticChartsWrapper .balticChart .amChartsPeriodSelector.amcharts-period-selector-div div {
+        display: block !important;
+        float: left !important;
+        margin-bottom: 8px;
+        margin-bottom: 0.5rem; } }
+    @media (max-width: 800px) {
+      .balticChartsWrapper .balticChart .amChartsPeriodSelector.amcharts-period-selector-div div {
+        display: block !important;
+        float: left !important;
+        margin-bottom: 8px;
+        margin-bottom: 0.5rem; } }
+    @media (max-width: 640px) {
+      .balticChartsWrapper .balticChart .amChartsPeriodSelector.amcharts-period-selector-div div {
+        display: block !important;
+        float: left !important;
+        margin-bottom: 8px;
+        margin-bottom: 0.5rem; } }
 
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
