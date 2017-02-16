@@ -2202,12 +2202,12 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     color: #000; }
   #main-carousel .hideinMob {
     display: block; }
-    @media (max-width: 800px) {
+    @media (max-width: 640px) {
       #main-carousel .hideinMob {
         display: none; } }
   #main-carousel .showinMob {
     display: none; }
-    @media (max-width: 800px) {
+    @media (max-width: 640px) {
       #main-carousel .showinMob {
         display: block; } }
   @media (max-width: 480px) {
