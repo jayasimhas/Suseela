@@ -42,7 +42,7 @@ namespace Informa.Web.Areas.Article.Controllers
             Topics = Parameters.Subjects.Select(s => s._Id).ToArray();
             MediaType = Parameters?.Media_Type;
             ContentType = Parameters?.Content_Type;
-            ItemsToDisplay = Parameters.Max_Stories_to_Display != 0 ? Parameters.Max_Stories_to_Display : 100;
+            ItemsToDisplay = Parameters.Max_Stories_to_Display != 0 ? Parameters.Max_Stories_to_Display : 25;
             PublicationName = rootContext.Item.Publication_Name;
             IsDisplayDate = Parameters?.Display_Published_Date ?? false;
         }
