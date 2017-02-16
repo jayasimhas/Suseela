@@ -1,4 +1,11 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Informa.Library.Services.Global;
+using Informa.Library.Site;
+using Jabberwocky.Glass.Autofac.Attributes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Web;
+using System.Web.Security;
 
 namespace Informa.Library.User.Authentication
 {
@@ -6,11 +13,17 @@ namespace Informa.Library.User.Authentication
 	public class AuthenticatedUserContext : IAuthenticatedUserContext
 	{
 		protected readonly ISitecoreUserContext SitecoreUserContext;
+        protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IUserSession UserSession;
 
-		public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext)
+        public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext, IGlobalSitecoreService globalService, ISiteRootContext siteRootContext, IUserSession userSession)
 		{
 			SitecoreUserContext = sitecoreUserContext;
-		}
+            GlobalService = globalService;
+            SiteRootContext = siteRootContext;
+            UserSession = userSession;
+        }
 
 		public IAuthenticatedUser User
 		{
@@ -27,7 +40,10 @@ namespace Informa.Library.User.Authentication
                 {
                     sitecoreUser.RuntimeSettings.IsVirtual = true;
                     sitecoreUser.Profile.Email = sitecoreUser.LocalName;
+                    
                 }
+
+                
 
                 return new AuthenticatedUser
 				{
@@ -39,6 +55,33 @@ namespace Informa.Library.User.Authentication
 			}
 		}
 
-		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;             
+		public bool IsAuthenticated => AuthenticatedUserCheck();
+
+        private bool AuthenticatedUserCheck()
+        {
+            if (!SitecoreUserContext.User.IsAuthenticated) return false;
+            var sitecoreUser = SitecoreUserContext.User;
+            string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
+            //The below code tries to read the user session to find the vertical. 
+            if (string.IsNullOrEmpty(loggedInVertical))
+            {
+                var vertical_Session = UserSession.Get<string>("user_vertical");
+                if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
+                {
+                    loggedInVertical = vertical_Session.Value;
+                    sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
+                    if(sitecoreUser.Domain.Name == "extranet")
+                        sitecoreUser.Profile.Save();
+                }
+            }
+            if (!string.IsNullOrEmpty(loggedInVertical))
+            {
+                var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+                if (curVertical != loggedInVertical)
+                    return false;
+            }
+            return true;
+        }
+                  
 	}                                      
 }
