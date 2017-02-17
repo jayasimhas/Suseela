@@ -9,6 +9,14 @@
 		height: 600px;
 		overflow: hidden;
 		position: relative;
+		&.hide-scroll {
+			.content {
+				overflow: hidden;
+			}
+			.scrollbar-container {
+				display: none;
+			}
+		}
 		&:after {
 		  	content: '';
 		  	width: calc(100% - 15px);
@@ -20,9 +28,6 @@
 		  	opacity: 0.5;
 		  	z-index: 10;
 		  }
-		&:after {
-			
-		}
 		.rolling-stream-article {
 			padding: 20px 0;
     		border-bottom: 1px solid #d1d3d4;
@@ -35,7 +40,7 @@
     			position: relative;
     		}
 		}
-		#content {
+		.content {
 		  height:100%;
 		  width: 100%;
 		  overflow-y: scroll;
@@ -52,7 +57,7 @@
 			}
 
 		}
-		#scrollbar-container {
+		.scrollbar-container {
 		    position: absolute;
 		    right: 0;
 		    bottom: 0;
@@ -83,7 +88,7 @@
 			}
 			
 		}
-		#scrollbar {
+		.scrollbar {
 		  position: absolute;
 		  right: 0;
 		  height: 30px;
