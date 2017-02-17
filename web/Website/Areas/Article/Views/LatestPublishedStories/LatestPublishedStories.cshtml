@@ -4,9 +4,9 @@
     <h2>@Model.LatestStoriesComponentTitle</h2>
     @{
         var hideScroll = Model.News.Count() < 7 ? "hide-scroll" : "";
-        var componentHeight = Model.News.Count() > 7 || Model.ComponentHeight > 625 ? 625 : Model.ComponentHeight;
-     }
-    <div class="rolling-stream-wrapper @hideScroll" style="height:@componentHeight+px">
+        var componentHeight = Model.News.Count() < 7  ? "auto" : "625px";
+    }
+    <div class="rolling-stream-wrapper @hideScroll" style="height:@componentHeight">
         <div class="scrollbar-container">
             <div class="scrollbar"></div>
         </div>

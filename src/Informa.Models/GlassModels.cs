@@ -6546,17 +6546,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
-        /// <summary>
-        /// Component Height field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 62A56657-6C3B-4668-A4FB-EE5DC1E1D259</para> 
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Component_Height { get; set; }
-
-
     }
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
@@ -6621,15 +6610,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
-        /// <summary>
-        /// Component Height field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID: 62A56657-6C3B-4668-A4FB-EE5DC1E1D259</para> 
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Component_Height { get; set; }
     }
 
     public static partial class ILatest_Published_Stories_OptionsConstants
@@ -6656,9 +6636,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
         public static readonly ID Display_Published_DateFieldId = new ID("A5454101-4AD6-4B1C-BE1B-CD11C7928154");
         public const string Display_Published_DateFieldName = "Display Published Date";
-
-        public static readonly ID Component_HeightFieldId = new ID("62A56657-6C3B-4668-A4FB-EE5DC1E1D259");
-        public const string Component_HeightFieldName = "Component Height";
     }
 
 }

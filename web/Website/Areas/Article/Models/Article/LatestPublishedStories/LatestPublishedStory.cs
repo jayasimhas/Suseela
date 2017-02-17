@@ -17,7 +17,6 @@ namespace Informa.Web.Areas.Article.Models.Article.LatestPublishedStories
         public IEnumerable<Guid> MediaType { get; set; }
         public string LoadMoreText { get; set; }
         public bool IsDisplayDate { get; set; }
-        public string LatestStoriesComponentTitle { get; set; }
-        public int ComponentHeight { get; set; }
+        public string LatestStoriesComponentTitle { get; set; }       
     }
 }
