@@ -681,11 +681,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         private bool CheckTable(string searchtable)
         {
 
-            Regex regex = new Regex("<table>(.*)</table>");
+            Regex regex = new Regex("<table (.*)</table>");
             var v = regex.Match(searchtable);
 
 
-            if ((v != null) && (v.ToString().Contains("<tr>")))
+            if ((v != null) && (v.Length>0))
             {
                 return true;
 
