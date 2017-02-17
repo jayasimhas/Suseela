@@ -94,5 +94,10 @@ namespace Informa.Library.SalesforceConfiguration
             return string.Format(_registrationEndpoints,
             SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralurl);
         }
+
+        public string GetUpdatePasswordEndPoints(string userName)
+        {
+            return string.Empty;
+        }
     }
 }

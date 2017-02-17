@@ -18,31 +18,50 @@
             <span class="article-call-to-action__title">
                 @Model.RegisterTitle
             </span>
-            <span class="article-call-to-action__subtitle">
-                @Html.Raw(Model.RegisterSubtitle)
-            </span>
-            <form class="pop-out__register form-pre-registration user-calltoaction"
-                  data-on-submit="/Account/api/RegistrationApi/PreRegister/"
-                  data-forwarding-url="@(Model.RegisterPopOutViewModel.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
-                <input name="username"
-                       class="pop-out__register-input header__hover-input js-register-username"
-                       type="text"
-                       placeholder="@Model.RegisterPopOutViewModel.UsernamePlaceholderText">
+            @if (Model.IsNewSalesforceEnabled)
+            {
+                <span class="article-call-to-action__subtitle">
+                    @Html.Raw(Model.RegisterPopOutViewModel.RegisterFreeTrialTitle)
+                </span>
+                <div class="js-login-container mb-20">
+                    <a href="#" class="button--filled full-width-button">@Html.Raw(Model.RegisterPopOutViewModel.RegisterFreeTrialButton)</a>
+                </div>
+                <span class="article-call-to-action__subtitle">
+                    @Html.Raw(Model.RegisterSubtitle)
+                </span>
+                <div class="js-login-container">
+                    <a href="@Model.RegistrationUrl" class="button--filled full-width-button">@Model.RegisterPopOutViewModel.RegisterButtonText</a>
+                </div>
+            }
+            else
+            {
+                <span class="article-call-to-action__subtitle">
+                    @Html.Raw(Model.RegisterSubtitle)
+                </span>
+                <form class="pop-out__register form-pre-registration user-calltoaction"
+                      data-on-submit="/Account/api/RegistrationApi/PreRegister/"
+                      data-forwarding-url="@(Model.RegisterPopOutViewModel.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
+                    <input name="username"
+                           class="pop-out__register-input header__hover-input js-register-username"
+                           type="text"
+                           placeholder="@Model.RegisterPopOutViewModel.UsernamePlaceholderText">
 
-                <p class="pop-out__form-error js-form-error js-form-error-UsernameRequirements">
-                    @Model.RegisterPopOutViewModel.UsernameRequirementsErrorText
-                </p>
-                <p class="pop-out__form-error js-form-error js-form-error-UsernameExists">
-                    @Model.RegisterPopOutViewModel.UsernameExistsErrorText
-                </p>
-                <p class="pop-out__form-error js-form-error js-form-error-error-general">
-                    @Model.RegisterPopOutViewModel.GeneralErrorText
-                </p>
+                    <p class="pop-out__form-error js-form-error js-form-error-UsernameRequirements">
+                        @Model.RegisterPopOutViewModel.UsernameRequirementsErrorText
+                    </p>
+                    <p class="pop-out__form-error js-form-error js-form-error-UsernameExists">
+                        @Model.RegisterPopOutViewModel.UsernameExistsErrorText
+                    </p>
+                    <p class="pop-out__form-error js-form-error js-form-error-error-general">
+                        @Model.RegisterPopOutViewModel.GeneralErrorText
+                    </p>
 
-                <button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
-                    @Model.RegisterPopOutViewModel.RegisterButtonText
-                </button>
-            </form>
+                    <button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
+                        @Model.RegisterPopOutViewModel.RegisterButtonText
+                    </button>
+                </form>
+            }
+           
         </div>
     </div>
                 }

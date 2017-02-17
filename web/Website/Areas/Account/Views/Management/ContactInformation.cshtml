@@ -19,95 +19,107 @@
 
             </div>
 
-            <div class="page-account-contact__column">
-
-                <form class="form-update-account-pass"
-                      data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
-
-                <div class="alert-success page-account-contact__update-pass-success js-form-success">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-                    </svg>
-                    <p>@Model.PasswordUpdatedText</p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordUpdateFailed">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordUpdateFailed
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordRequirements">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordRequirements
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-PasswordMismatch">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.PasswordMismatch
-                    </p>
-                </div>
-
-                <div class="alert-error js-form-error js-form-error-InvalidPasswordValues">
-                    <svg class="alert__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                    </svg>
-
-                    <p class="page-account-contact__error">
-                        @Model.InvalidPasswordValues
-                    </p>
-                </div>
-
-                <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
-
-                    <p>
-                        <label for="CurrentPassword" class="page-account__text-label">
-                            @Model.CurrentPasswordLabelText
-                        </label>
-                        <input type="password"
-                               name="CurrentPassword"
-                               placeholder="@Model.CurrentPasswordPlaceholderText">
-                    </p>
-
-                    <p>
-                        <label for="NewPassword" class="page-account__text-label">
-                            @Model.NewPasswordLabelText
-							<span class="page-account__text-label-hint">@Model.NewPasswordRequirementsText</span>
-                        </label>
-                        <input type="password"
-                               name="NewPassword"
-                               placeholder="@Model.NewPasswordPlaceholderText">
-                    </p>
-
-                    <p>
-                        <label for="NewPasswordConfirm" class="page-account__text-label">
-                            @Model.NewPasswordConfirmLabelText
-                        </label>
-                        <input type="password"
-                               name="NewPasswordConfirm"
-                               placeholder="@Model.NewPasswordConfirmPlaceholderText">
-                    </p>
-
+            @if (Model.IsNewSalesforceEnabled)
+            {
+                <div class="page-account-contact__column">
+                    <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
+                    <p>@Model.UpdateSubTitleText</p>
                     <div class="page-preferences__submit-wrapper">
                         <button type="submit" class="button--filled button--fly-right click-utag" data-info='{"event_name":"update-password"}'>@Model.UpdatePasswordText</button>
                     </div>
+                </div>
+            }
+            else
+            {
+                <div class="page-account-contact__column">
+                    <form class="form-update-account-pass"
+                          data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
 
-                </form>
+                        <div class="alert-success page-account-contact__update-pass-success js-form-success">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                            </svg>
+                            <p>@Model.PasswordUpdatedText</p>
+                        </div>
 
-            </div>
+                        <div class="alert-error js-form-error js-form-error-PasswordUpdateFailed">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                            </svg>
+
+                            <p class="page-account-contact__error">
+                                @Model.PasswordUpdateFailed
+                            </p>
+                        </div>
+
+                        <div class="alert-error js-form-error js-form-error-PasswordRequirements">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                            </svg>
+
+                            <p class="page-account-contact__error">
+                                @Model.PasswordRequirements
+                            </p>
+                        </div>
+
+                        <div class="alert-error js-form-error js-form-error-PasswordMismatch">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                            </svg>
+
+                            <p class="page-account-contact__error">
+                                @Model.PasswordMismatch
+                            </p>
+                        </div>
+
+                        <div class="alert-error js-form-error js-form-error-InvalidPasswordValues">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                            </svg>
+
+                            <p class="page-account-contact__error">
+                                @Model.InvalidPasswordValues
+                            </p>
+                        </div>
+
+                        <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
+
+                        <p>
+                            <label for="CurrentPassword" class="page-account__text-label">
+                                @Model.CurrentPasswordLabelText
+                            </label>
+                            <input type="password"
+                                   name="CurrentPassword"
+                                   placeholder="@Model.CurrentPasswordPlaceholderText">
+                        </p>
+
+                        <p>
+                            <label for="NewPassword" class="page-account__text-label">
+                                @Model.NewPasswordLabelText
+                                <span class="page-account__text-label-hint">@Model.NewPasswordRequirementsText</span>
+                            </label>
+                            <input type="password"
+                                   name="NewPassword"
+                                   placeholder="@Model.NewPasswordPlaceholderText">
+                        </p>
+
+                        <p>
+                            <label for="NewPasswordConfirm" class="page-account__text-label">
+                                @Model.NewPasswordConfirmLabelText
+                            </label>
+                            <input type="password"
+                                   name="NewPasswordConfirm"
+                                   placeholder="@Model.NewPasswordConfirmPlaceholderText">
+                        </p>
+
+                        <div class="page-preferences__submit-wrapper">
+                            <button type="submit" class="button--filled button--fly-right click-utag" data-info='{"event_name":"update-password"}'>@Model.UpdatePasswordText</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            }
 
             <hr>
 
@@ -158,7 +170,7 @@
                                 <select name="Salutation">
                                     @foreach (var o in Model.Salutations)
                                     {
-                                        <option @(@Model.Profile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.Salutation != null ? (@Model.Profile.Salutation.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -200,7 +212,7 @@
                                 <select name="NameSuffix">
                                     @foreach (var o in Model.Suffixes)
                                     {
-                                        <option @(@Model.Profile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.NameSuffix != null ? (@Model.Profile.NameSuffix.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -220,15 +232,16 @@
                                        placeholder="@Model.CompanyPlaceholderText" class="required">
                             </p>
 
-                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) {
-                            <p>
-                                <label for="Company" class="page-account__text-label">
-                                    @Model.AssociatedCompanyLabelText
-                                </label>
+                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany))
+                            {
+                                <p>
+                                    <label for="Company" class="page-account__text-label">
+                                        @Model.AssociatedCompanyLabelText
+                                    </label>
 
-                                @Model.AssociatedCompany
+                                    @Model.AssociatedCompany
 
-                            </p>
+                                </p>
                             }
                             <p>
                                 <label for="JobTitle" class="page-account__text-label">
@@ -247,7 +260,7 @@
                                 <select name="JobFunction">
                                     @foreach (var o in Model.JobFunctions)
                                     {
-                                        <option @(@Model.Profile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.JobFunction != null ? (@Model.Profile.JobFunction.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -259,7 +272,7 @@
                                 <select name="JobIndustry" class="required">
                                     @foreach (var o in Model.JobIndustries)
                                     {
-                                        <option @(@Model.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.JobIndustry != null ? (@Model.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </div>
@@ -276,7 +289,7 @@
                                 <select name="PhoneType" class="required">
                                     @foreach (var o in Model.PhoneTypes)
                                     {
-                                        <option @(@Model.Profile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.PhoneType != null ? (@Model.Profile.PhoneType.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -337,7 +350,7 @@
                                 <select name="BillCountry" id="ddlBillingCountry" class="required">
                                     @foreach (var o in Model.Countries)
                                     {
-                                        <option @(@Model.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.BillCountry != null ? (@Model.Profile.BillCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -401,7 +414,7 @@
                             <p>
                                 <input name="SameAsBilling"
                                        type="checkbox"
-                                       data-checkbox-type="boolean"l id="chkASBilling">
+                                       data-checkbox-type="boolean" l id="chkASBilling">
                                 <label for="SameAsBilling" class="checkbox-label">@Model.SameAsBillingLabel</label>
                             </p>
 
@@ -412,7 +425,7 @@
                                 <select name="ShipCountry" id="ddlShippingCountry" class="required">
                                     @foreach (var o in Model.Countries)
                                     {
-                                        <option @(@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(Model.Profile.ShipCountry != null ? (@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -493,7 +506,7 @@ else
     <div class="page-account__sign-in-solo">
         @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
     </div>
-}
+            }
 
 
 <div id="errorMessage" style="display:none;">
