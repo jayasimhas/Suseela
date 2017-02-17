@@ -2209,13 +2209,24 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     display: none; }
     @media (max-width: 640px) {
       #main-carousel .showinMob {
-        display: block; } }
-  @media (max-width: 480px) {
-    #main-carousel .marketDataTable .owl-item.active {
-      width: auto !important; } }
+        display: block;
+        width: 100%;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        animation: none !important; } }
+  #main-carousel .marketDataTable {
+    width: 100%; }
+    @media (max-width: 480px) {
+      #main-carousel .marketDataTable .owl-item.active {
+        width: auto !important; } }
   #main-carousel .owl-dots {
     position: absolute;
-    top: -3px;
+    top: -1px;
     margin-top: -28px;
     margin-left: 0;
     margin-right: 0;
@@ -2329,7 +2340,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       line-height: 20px; }
   #graph-carousel .owl-dots {
     position: absolute;
-    top: 0;
+    top: -1px;
     margin-top: -28px;
     margin-left: 0;
     margin-right: 0;
