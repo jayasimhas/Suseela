@@ -13356,7 +13356,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string From_Email_Address  {get; set;}
-				}
+                    /// <summary>
+                    /// The Analyst Email Address field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 1238c26e-a5d4-46d6-a716-0c2551442d42</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Analyst_Email_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    string Analyst_Email_ID { get; set; }
+                    /// <summary>
+                    /// The From Email Address field.
+                    /// <para></para>
+                    /// <para>Field Type: Rich Text</para>		
+                    /// <para>Field ID: 611bf106-6d21-4574-a0bf-e3c27df71c9d</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+                    string Ask_The_Analyst { get; set; }
+    }
 
 	
 		/// <summary>
@@ -14241,7 +14259,25 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string From_Email_Address  {get; set;}
-						}
+                        /// <summary>
+                        /// The Analyst Email Address field.
+                        /// <para></para>
+                        /// <para>Field Type: Single-Line Text</para>		
+                        /// <para>Field ID: 1238c26e-a5d4-46d6-a716-0c2551442d42</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ISite_ConfigConstants.Analyst_Email_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        string Analyst_Email_ID { get; set; }
+                        /// <summary>
+                        /// The From Email Address field.
+                        /// <para></para>
+                        /// <para>Field Type: Rich Text</para>		
+                        /// <para>Field ID: 611bf106-6d21-4574-a0bf-e3c27df71c9d</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+                        string Ask_The_Analyst { get; set; }
+    }
 	
 	public static partial class ISite_ConfigConstants{
 
@@ -14765,10 +14801,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
 			public const string From_Email_AddressFieldName = "From Email Address";
 
-						
-			
+            public static readonly ID Analyst_Email_IDFieldId = new ID("1238c26e-a5d4-46d6-a716-0c2551442d42");
+            public const string Analyst_Email_IDFieldName = "Analyst Email ID";
 
-	}
+            public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
+            public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
+
+    }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
