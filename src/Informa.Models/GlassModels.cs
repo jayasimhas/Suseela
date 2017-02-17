@@ -6546,6 +6546,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
+        /// <summary>
+        /// Component Height field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 62A56657-6C3B-4668-A4FB-EE5DC1E1D259</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Component_Height { get; set; }
+
+
     }
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
@@ -6610,6 +6621,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
+        /// <summary>
+        /// Component Height field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 62A56657-6C3B-4668-A4FB-EE5DC1E1D259</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Component_Height { get; set; }
     }
 
     public static partial class ILatest_Published_Stories_OptionsConstants
@@ -6636,6 +6656,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
         public static readonly ID Display_Published_DateFieldId = new ID("A5454101-4AD6-4B1C-BE1B-CD11C7928154");
         public const string Display_Published_DateFieldName = "Display Published Date";
+
+        public static readonly ID Component_HeightFieldId = new ID("62A56657-6C3B-4668-A4FB-EE5DC1E1D259");
+        public const string Component_HeightFieldName = "Component Height";
     }
 
 }
@@ -13748,6 +13771,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         string External_Feed_Url { get; set; }
 
+        /// <summary>
+        /// Casualty Detail Page Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3A93093B-3FF6-4447-838C-7CB7B25FFBB0</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Casualty_Detail_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Casualty_Detail_Page_Link { get; set; }
+
     }
 
 
@@ -13800,6 +13833,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         string External_Feed_Url { get; set; }
 
+        /// <summary>
+        /// Casualty Detail Page Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3A93093B-3FF6-4447-838C-7CB7B25FFBB0</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Casualty_Detail_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Casualty_Detail_Page_Link { get; set; }
+
     }
 
     public static partial class ILatest_Casualties_ComponentConstants
@@ -13821,6 +13864,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID External_Feed_UrlFieldId = new ID("EE55D306-C9C3-4E1C-89F5-69B41BA273A8");
         public const string External_Feed_UrlFieldName = "External Feed Url";
+
+        public static readonly ID Casualty_Detail_Page_LinkFieldId = new ID("3A93093B-3FF6-4447-838C-7CB7B25FFBB0");
+        public const string Casualty_Detail_Page_LinkFieldName = "Casualty Detail Page Link";
     }
 
 }

@@ -45,6 +45,7 @@ namespace Informa.Web.Areas.Article.Controllers
             ItemsToDisplay = Parameters.Max_Stories_to_Display != 0 ? Parameters.Max_Stories_to_Display : 25;
             PublicationName = rootContext.Item.Publication_Name;
             IsDisplayDate = Parameters?.Display_Published_Date ?? false;
+            ComponentHeight = Parameters?.Component_Height != 0 ? Parameters.Component_Height : 625;
         }
         /// <summary>
         /// Get latest published strories in first call
@@ -63,7 +64,7 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Authors != null) filter.AuthorGuids.AddRange(Authors);
             if (MediaType != null) filter.MediaTypeTaxonomyIds.AddRange(MediaType);
             if (ContentType != null) filter.ContentTypeTaxonomyIds.AddRange(ContentType);
-            
+
             var results = ArticleSearch.Search(filter);
             var articles =
                 results.Articles.Where(a => a != null)
@@ -76,10 +77,11 @@ namespace Informa.Web.Areas.Article.Controllers
             latest.ContentType = ContentType;
             latest.MediaType = MediaType;
             latest.IsDisplayDate = IsDisplayDate;
+            latest.ComponentHeight = ComponentHeight;
             latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");
             latest.LatestStoriesComponentTitle = TextTranslator.Translate("Latest.Published.Stories.Component.Title");
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
-        }        
+        }
 
         public IEnumerable<IListableViewModel> News { get; set; }
         public ILatest_Published_Stories_Options Parameters { get; set; }
@@ -90,6 +92,7 @@ namespace Informa.Web.Areas.Article.Controllers
         public IList<Guid> ContentType { get; set; }
         public IList<Guid> MediaType { get; set; }
         public bool IsDisplayDate { get; set; }
+        public int ComponentHeight { get; set; }
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
