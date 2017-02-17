@@ -8343,8 +8343,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11941,7 +11941,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -15674,12 +15674,12 @@ main {
 .theme-lloydslist .article-topics__li:before,
 .theme-lloydslist .quickfactsbulleted li:before,
 .theme-lloydslist .quick-facts__list--ul li:before {
-  fill: #0f5487;
+  fill: #002d4f;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-lloydslist .article-topics__li:before use > svg,
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
-    fill: #0f5487; }
+    fill: #002d4f; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
