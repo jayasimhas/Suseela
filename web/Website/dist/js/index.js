@@ -930,6 +930,9 @@ function popOutController(triggerElm) {
 			case 'save-search':
 				popOut = $('.js-pop-out__save-search');
 				break;
+			case 'ask-the-analyst':
+				popOut = $('.js-pop-out__ask-the-analyst');
+				break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;
@@ -2348,6 +2351,21 @@ $(document).ready(function () {
 		(0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, { event_name: "logout" }));
 	});
 
+	var askTheAnalystController = new _controllersFormController2['default']({
+		observe: '.form-ask-the-analyst',
+		successCallback: function successCallback(form) {
+			$('.js-ask-the-analyst-form-wrapper').hide();
+			$('.js-ask-the-analyst-recip-success').html('asktheanalyst@pharmamedtechbi.com');
+			$('.js-ask-the-analyst-success').show();
+
+			// Reset the Ask The Analyst pop-out to its default state when closed
+			$('.js-dismiss-ask-the-analyst').one('click', function () {
+				$('.js-ask-the-analyst-form-wrapper').show();
+				$('.js-ask-the-analyst-success').hide();
+			});
+		}
+	});
+
 	var emailArticleController = new _controllersFormController2['default']({
 		observe: '.form-email-article',
 		successCallback: function successCallback(form) {
@@ -2751,12 +2769,13 @@ $(document).ready(function () {
 					smoothScroll(200, 'left');
 				}
 			});
+
 			if ($(window).width() >= 1024) {
-			    $('.main-menu').addClass('is-active');
-			    $('.menu-toggler').addClass('is-active');
-			    $('.header__wrapper .menu-toggler').addClass('is-sticky');
-			    $('body').addClass('is-frozen');
-			}			
+				$('.main-menu').addClass('is-active');
+				$('.menu-toggler').addClass('is-active');
+				$('.header__wrapper .menu-toggler').addClass('is-sticky');
+				$('body').addClass('is-frozen');
+			}
 		};
 
 		var scrollToTimerCache;
