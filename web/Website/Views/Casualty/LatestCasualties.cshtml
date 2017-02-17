@@ -14,22 +14,26 @@ else
               {
                   "title": "Frem Nordica",
                   "date": "06.01.2017",
-                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+                  "CasulatyId":"266571",
+                  "IncidentId":"450740"
               },
               {
                   "title": "Frem Nordica",
                   "date": "06.01.2017",
-                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+                  "CasulatyId":"266571",
+                  "IncidentId":"450740"
               },
               {
                   "title": "Frem Nordica",
                   "date": "06.01.2017",
-                  "url": "http://www.lloydslistintelligence.com/llint/home-casualties/casualties-details.htm?casualtyID=265829"
+                  "CasulatyId":"266571",
+                  "IncidentId":"450740"
               }
             ]
         }]
     </script>
 }
+@Html.HiddenFor(m => m.CasualtyDetailPageUrl)
 <div class="lloyd-related-links">
     <div class="ll-logo-img">
         @if (Model.Logo != null && !string.IsNullOrEmpty(Model.Logo.Src))

@@ -5,8 +5,22 @@
 #main-carousel {
 		.owl-carousel .item{
 			height: 290px;
+			@media only screen and (min-width: 767px) and (max-width: 1024px) {
+				height: auto;
+			}
 			@include breakpoint('small') {
 				height: auto;
+			}
+		}
+		.sorting-arrows__arrow {
+			width: 35px;
+			height: 35px;
+			fill: black;
+			&.left-arrow {
+				transform: rotate(-90deg);
+			}
+			&.right-arrow {
+				transform: rotate(90deg);
 			}
 		}
 		.owl-theme .owl-nav [class*='owl-']{
@@ -21,12 +35,25 @@
 		  height: 100%;
 		  padding: 15px 18px;
 		  margin-top: 10px;
+		  &:after{
+				display: block;
+				clear: both;
+				content: '';
+			}
 			@include breakpoint('medium') {
 				&:after{
 					display: block;
 					clear: both;
 					content: '';
 				}
+			}
+		}
+		@media only screen and (min-width: 767px) and (max-width: 1024px) {
+			.hideinTab {
+				display: none !important;
+			}
+			.showinTab {
+				display: block !important;
 			}
 		}
 		.li-content-company img {
@@ -78,20 +105,39 @@
 		}
 		.hideinMob{
 			display: block;
-			@include breakpoint('medium') {
+			@include breakpoint('medium-small') {
 				display: none;
 			}
 		}
 		.showinMob{
 			display: none;
-			@include breakpoint('medium') {
+			@include breakpoint('medium-small') {
 				display: block;
+				width: 100%;
+				-o-transition-property: none !important;
+				-moz-transition-property: none !important;
+				-ms-transition-property: none !important;
+				-webkit-transition-property: none !important;
+				transition-property: none !important;
+				/*CSS transforms*/
+				-o-transform: none !important;
+				-moz-transform: none !important;
+				-ms-transform: none !important;
+				-webkit-transform: none !important;
+				transform: none !important;
+				 /*CSS animations*/
+				-webkit-animation: none !important;
+				-moz-animation: none !important;
+				-o-animation: none !important;
+				-ms-animation: none !important;
+				animation: none !important;
 			}
 		}
 		/*.owl-item{
 			float: left;
 		}*/
 		.marketDataTable{
+			width: 100%;
 			.owl-item.active{
 				@include breakpoint('small') {
 					width: auto !important;
@@ -100,7 +146,7 @@
 		}
 		.owl-dots{
 			position: absolute;
-			top: -3px;
+			top: -1px;
 			margin-top: -28px;
 			margin-left: 0;
 			margin-right: 0;
@@ -127,6 +173,12 @@
 			position: absolute;
 			top: 140px;
 			right: -44px;
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				right: -32px;
+			}
+			@include breakpoint('small') {
+				right: -31px;
+			}
 			margin-top: 0;
 			margin-bottom: 0;
 			opacity: 0.7;
@@ -230,7 +282,7 @@
 	}
 	.owl-dots{
 		position: absolute;
-		top: 0;
+		top: -1px;
 		margin-top: -28px;
 		margin-left: 0;
 		margin-right: 0;
@@ -331,7 +383,7 @@
 		float: left;
 		width: 57%;
 		margin-top: 20px;
-		@include textMix('Roboto', 1.15em, 400);
+		@include textMix('Roboto', 1.25em, 400);
 		
 	}
 	.li-content-graph{

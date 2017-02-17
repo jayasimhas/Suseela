@@ -2152,9 +2152,22 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 		}*/ }
   #main-carousel .owl-carousel .item {
     height: 290px; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      #main-carousel .owl-carousel .item {
+        height: auto; } }
     @media (max-width: 480px) {
       #main-carousel .owl-carousel .item {
         height: auto; } }
+  #main-carousel .sorting-arrows__arrow {
+    width: 35px;
+    height: 35px;
+    fill: black; }
+    #main-carousel .sorting-arrows__arrow.left-arrow {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
+    #main-carousel .sorting-arrows__arrow.right-arrow {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
   #main-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
@@ -2165,11 +2178,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     height: 100%;
     padding: 15px 18px;
     margin-top: 10px; }
+    #main-carousel .li-content-company:after {
+      display: block;
+      clear: both;
+      content: ''; }
     @media (max-width: 800px) {
       #main-carousel .li-content-company:after {
         display: block;
         clear: both;
         content: ''; } }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    #main-carousel .hideinTab {
+      display: none !important; }
+    #main-carousel .showinTab {
+      display: block !important; } }
   #main-carousel .li-content-company img {
     float: left;
     margin: 0 10px 10px 0;
@@ -2202,20 +2224,31 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     color: #000; }
   #main-carousel .hideinMob {
     display: block; }
-    @media (max-width: 800px) {
+    @media (max-width: 640px) {
       #main-carousel .hideinMob {
         display: none; } }
   #main-carousel .showinMob {
     display: none; }
-    @media (max-width: 800px) {
+    @media (max-width: 640px) {
       #main-carousel .showinMob {
-        display: block; } }
-  @media (max-width: 480px) {
-    #main-carousel .marketDataTable .owl-item.active {
-      width: auto !important; } }
+        display: block;
+        width: 100%;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        animation: none !important; } }
+  #main-carousel .marketDataTable {
+    width: 100%; }
+    @media (max-width: 480px) {
+      #main-carousel .marketDataTable .owl-item.active {
+        width: auto !important; } }
   #main-carousel .owl-dots {
     position: absolute;
-    top: -3px;
+    top: -1px;
     margin-top: -28px;
     margin-left: 0;
     margin-right: 0;
@@ -2244,6 +2277,12 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-bottom: 0;
     opacity: 0.7;
     filter: alpha(opacity=70); }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #main-carousel .owl-next {
+        right: -32px; } }
+    @media (max-width: 480px) {
+      #main-carousel .owl-next {
+        right: -31px; } }
     @media (max-width: 800px) {
       #main-carousel .owl-next {
         top: 40px; } }
@@ -2329,7 +2368,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       line-height: 20px; }
   #graph-carousel .owl-dots {
     position: absolute;
-    top: 0;
+    top: -1px;
     margin-top: -28px;
     margin-left: 0;
     margin-right: 0;
@@ -2403,7 +2442,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     width: 57%;
     margin-top: 20px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.15em;
+    font-size: 1.25em;
     font-weight: 400; }
   #mycarousel1 .li-content-graph, #mycarousel2 .li-content-graph {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -8332,8 +8371,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9084,7 +9123,7 @@ div#feedbacklite.fbl_r {
     #market-data .marketDataTable .owl-dots {
       background: #0f5487;
       margin-top: -29px;
-      height: 32px;
+      height: 30px;
       text-align: right;
       right: 0px;
       padding-right: 15px; }
@@ -9578,6 +9617,10 @@ div#feedbacklite.fbl_r {
     height: 600px;
     overflow: hidden;
     position: relative; }
+    .rolling-stream .rolling-stream-wrapper.hide-scroll .content {
+      overflow: hidden; }
+    .rolling-stream .rolling-stream-wrapper.hide-scroll .scrollbar-container {
+      display: none; }
     .rolling-stream .rolling-stream-wrapper:after {
       content: '';
       width: calc(100% - 15px);
@@ -9597,21 +9640,20 @@ div#feedbacklite.fbl_r {
         border-bottom: none;
         z-index: 12;
         position: relative; }
-    .rolling-stream .rolling-stream-wrapper #content {
+    .rolling-stream .rolling-stream-wrapper .content {
       height: 100%;
       width: 100%;
       overflow-y: scroll;
       margin: 0;
       padding: 0;
       position: relative; }
-      .rolling-stream .rolling-stream-wrapper #content .article-related-content__date {
+      .rolling-stream .rolling-stream-wrapper .content .article-related-content__date {
         float: right;
         width: auto;
         padding: 0;
-        color: #DE4361;
         margin-top: 5px;
         font-family: 'Roboto', Arial Narrow, sans-serif; }
-    .rolling-stream .rolling-stream-wrapper #scrollbar-container {
+    .rolling-stream .rolling-stream-wrapper .scrollbar-container {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -9619,7 +9661,7 @@ div#feedbacklite.fbl_r {
       width: 15px;
       background-color: #f1f2f2;
       z-index: 9; }
-      .rolling-stream .rolling-stream-wrapper #scrollbar-container:after {
+      .rolling-stream .rolling-stream-wrapper .scrollbar-container:after {
         content: '';
         position: absolute;
         top: 0;
@@ -9636,7 +9678,7 @@ div#feedbacklite.fbl_r {
       font-size: 1rem;
       line-height: 18px;
       line-height: 1.18rem; }
-    .rolling-stream .rolling-stream-wrapper #scrollbar {
+    .rolling-stream .rolling-stream-wrapper .scrollbar {
       position: absolute;
       right: 0;
       height: 30px;
@@ -11927,7 +11969,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -13612,6 +13654,9 @@ main {
   .theme-pink-sheet .rolling-stream h5 a:hover, .theme-pink-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #BC608C; }
 
+.theme-pink-sheet .rolling-stream .article-related-content__date {
+  color: #BC608C; }
+
 .theme-pink-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -13947,6 +13992,9 @@ main {
   color: #231f20; }
   .theme-rose-sheet .rolling-stream h5 a:hover, .theme-rose-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #DD3580; }
+
+.theme-rose-sheet .rolling-stream .article-related-content__date {
+  color: #DD3580; }
 
 .theme-rose-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -14284,6 +14332,9 @@ main {
   .theme-medtech .rolling-stream h5 a:hover, .theme-medtech .rolling-stream .alert-success p a:hover, .alert-success .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .alert-error p a:hover, .alert-error .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle a:hover, .theme-medtech .rolling-stream h5 .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream h5 .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #034a7c; }
 
+.theme-medtech .rolling-stream .article-related-content__date {
+  color: #034a7c; }
+
 .theme-medtech .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -14619,6 +14670,9 @@ main {
   color: #231f20; }
   .theme-invivo .rolling-stream h5 a:hover, .theme-invivo .rolling-stream .alert-success p a:hover, .alert-success .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .alert-error p a:hover, .alert-error .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle a:hover, .theme-invivo .rolling-stream h5 .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream h5 .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #7e2718; }
+
+.theme-invivo .rolling-stream .article-related-content__date {
+  color: #7e2718; }
 
 .theme-invivo .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -14956,6 +15010,9 @@ main {
   .theme-commodities .rolling-stream h5 a:hover, .theme-commodities .rolling-stream .alert-success p a:hover, .alert-success .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .alert-error p a:hover, .alert-error .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle a:hover, .theme-commodities .rolling-stream h5 .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream h5 .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #c12d3b; }
 
+.theme-commodities .rolling-stream .article-related-content__date {
+  color: #c12d3b; }
+
 .theme-commodities .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -15287,6 +15344,9 @@ main {
   color: #231f20; }
   .theme-insurance-day .rolling-stream h5 a:hover, .theme-insurance-day .rolling-stream .alert-success p a:hover, .alert-success .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .alert-error p a:hover, .alert-error .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a:hover, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream h5 .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #DE4361; }
+
+.theme-insurance-day .rolling-stream .article-related-content__date {
+  color: #DE4361; }
 
 .theme-insurance-day .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -15620,6 +15680,9 @@ main {
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #002d4f; }
 
+.theme-lloydslist .rolling-stream .article-related-content__date {
+  color: #002d4f; }
+
 .theme-lloydslist .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -15639,12 +15702,12 @@ main {
 .theme-lloydslist .article-topics__li:before,
 .theme-lloydslist .quickfactsbulleted li:before,
 .theme-lloydslist .quick-facts__list--ul li:before {
-  fill: #0f5487;
+  fill: #002d4f;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-lloydslist .article-topics__li:before use > svg,
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
-    fill: #0f5487; }
+    fill: #002d4f; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,

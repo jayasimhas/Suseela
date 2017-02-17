@@ -5,7 +5,7 @@
 				Html = "";
 
 			for(var key in latestcasualties) {
-				Html += '<li class="article-topics__li"><a href="'+ latestcasualties[key].url +'"><strong>' +latestcasualties[key].title+ '</strong> - '+ latestcasualties[key].date +' </a></li>';
+				Html += '<li class="article-topics__li"><a href="'+ $('#CasualtyDetailPageUrl').val() + '?incidentId=' + latestcasualties[key].IncidentId +'"><strong>' +latestcasualties[key].title+ '</strong> - '+ latestcasualties[key].date +' </a></li>';
 			}
 			Parent.find('ul').append(Html);
 			//<li class="article-topics__li"><a href="#"><strong>MCC Shanghai</strong> - 01.01.2017</a></li>

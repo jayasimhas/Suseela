@@ -97,8 +97,9 @@ But you can also use "patch:attribute" for clarity:
     <events>
       <event name="item:added">
         <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />
+        <handler type="Informa.Library.CustomSitecore.Events.AddArticleFromCMS, Informa.Library" method="OnArticleAddedFromCMS" />
       </event>
-
+      
       <event name="publish:end">
         <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
           <sites hint="list">
@@ -364,7 +365,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.SubjectsTaxonomyFolder" value="SubjectsTaxonomyFolder"></setting>
       <setting name="Taxonomy.TherapyAreasTaxonomyFolder" value="TherapyAreasTaxonomyFolder"></setting>
       <setting name="Taxonomy.DeviceAreasTaxonomyFolder" value="DeviceAreasTaxonomyFolder"></setting>
-      <setting name="Taxonomy.IndustryTaxonomyFolder" value="IndustryTaxonomyFolder"></setting>
+      <setting name="Taxonomy.IndustryTaxonomyFolder" value="IndustryTaxonomyFolder"></setting>     
     </settings>
   </sitecore>
 </configuration>

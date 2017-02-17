@@ -13748,6 +13748,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         string External_Feed_Url { get; set; }
 
+        /// <summary>
+        /// Casualty Detail Page Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3A93093B-3FF6-4447-838C-7CB7B25FFBB0</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Casualty_Detail_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Casualty_Detail_Page_Link { get; set; }
+
     }
 
 
@@ -13800,6 +13810,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ILatest_Casualties_ComponentConstants.External_Feed_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         string External_Feed_Url { get; set; }
 
+        /// <summary>
+        /// Casualty Detail Page Link field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3A93093B-3FF6-4447-838C-7CB7B25FFBB0</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Casualty_Detail_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Casualty_Detail_Page_Link { get; set; }
+
     }
 
     public static partial class ILatest_Casualties_ComponentConstants
@@ -13821,6 +13841,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID External_Feed_UrlFieldId = new ID("EE55D306-C9C3-4E1C-89F5-69B41BA273A8");
         public const string External_Feed_UrlFieldName = "External Feed Url";
+
+        public static readonly ID Casualty_Detail_Page_LinkFieldId = new ID("3A93093B-3FF6-4447-838C-7CB7B25FFBB0");
+        public const string Casualty_Detail_Page_LinkFieldName = "Casualty Detail Page Link";
     }
 
 }

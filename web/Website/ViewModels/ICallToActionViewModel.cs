@@ -17,5 +17,8 @@ namespace Informa.Web.ViewModels
         string SubscribeLinkUrl { get; }
         string SubscribeLinkText { get; }
         bool IsAuthenticated { get; }
+        bool IsNewSalesforceEnabled { get; }
+        string RegistrationUrl { get; }
+        string AuthorizationRequestUrl { get; }
     }
 }
