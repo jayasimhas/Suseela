@@ -318,6 +318,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     ao.Add("MEDIA", "interactivedashboards");
                                 }
+                                else if (CheckTableau(GetXMLData(d, bodyNode)))
+                                {
+                                    ao.Add("MEDIA", "interactivedashboards");
+                                }
                                 else if (!string.IsNullOrEmpty(imageTitleHtml))
                                 {
                                     ao.Add("MEDIA", "Chart/Table");
@@ -326,6 +330,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     ao.Add("MEDIA", "Chart/Table");
                                 }
+                                else if (CheckIframe(GetXMLData(d, bodyNode)))
+                                {
+                                    ao.Add("MEDIA", "video");
+                                }
+                                
                                 //else if (!string.IsNullOrEmpty(bodyTitleHtml))
                                 //{
                                 //    ao.Add("MEDIA", "image");
@@ -407,6 +416,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 string textForagency = AgencyCompanyTextSearch;
                                 textForagency = textForagency.Replace("(", "");
                                 textForagency = textForagency.Replace(")", "");
+                                textForagency = textForagency.Replace("’", "'");
 
                                 List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
@@ -484,12 +494,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             string textForCompany = AgencyCompanyTextSearch;
                             textForCompany = textForCompany.Replace("’", "'");
-                            //textForCompany = textForCompany.Replace("(", "'");
+                            textForCompany = textForCompany.Replace("(", "'");
+                            textForCompany = textForCompany.Replace(")", "");
                             List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
                             //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-
-
 
 
 
@@ -498,12 +506,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 if (!(publication == "AnimalPharma" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "commodities" && company == "bayer animal health"))
                                     Companies += company + ",";
 
-
-
                             }
 
-
-                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                            string textSearchForRegion =RegionTextSearch.Replace("’", "'");
+                            List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => textSearchForRegion.ToLower().Contains(" " + s + " "));
                             foreach (string region in regionSearchResults)
                             {
                                 Country += region + ",";
@@ -514,7 +520,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             if (ao.ContainsKey("COUNTRY"))
                             {
                                 if (Country != "")
-
                                 {
 
                                     Country = ao["COUNTRY"].ToString() + Country;
@@ -689,6 +694,34 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 return false;
 
         }
+
+        private bool CheckTableau(string searchtableau)
+        {
+
+            string wordToFind = Regex.Match(searchtableau, @"<object \s*(.+?)\s*</object>").ToString();
+
+            if (!string.IsNullOrEmpty(wordToFind))
+            {
+                return true;
+
+            }
+            else
+                return false;
+        }
+        private bool CheckIframe(string searchIframe)
+        {
+
+            Regex regex = new Regex("<iframe frameborder=(.*)</iframe>");
+            var v = regex.Match(searchIframe);
+
+            if ((v != null) && v.Length > 0)
+            {
+               return true;
+
+            }
+            else { return false; }
+        }
+
 
         public override IEnumerable<object> ImportImages(IDataMap map)
         {
@@ -1457,6 +1490,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("TOPICS", "");
                         Taxonomy.Add("COUNTRY", "");
                         Taxonomy.Add("SECTINREF", "");
+                        Taxonomy.Add("SECTORS", "");
                         string Market = string.Empty;
                         string Topic = string.Empty;
                         string Country = string.Empty;
@@ -1483,6 +1517,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTORS"] = Country;
                                 }
                                 else
                                 {
@@ -1568,9 +1607,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     SectionRef += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["SECTINREF"] = SectionRef;
-
                                 }
-
                             }
                         }
                     }
@@ -3227,6 +3264,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 Encoding et = Encoding.GetEncoding("utf-8");
                 byte[] bytes = GetFileBytes(f);
                 string data = et.GetString(bytes);
+                List<string> AuthorList = new List<string>();
+
 
                 XmlDocument d = new XmlDocument();
                 try
@@ -3239,35 +3278,73 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     continue;
                 }
 
-                XmlNode nameNode = d.SelectSingleNode("//STORYAUTHORNAME");
-                string name = (nameNode != null) ? nameNode.InnerText : string.Empty;
-                string[] nameArr = AuthorHelper.Authors(name).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                //XmlNode nameNode = d.SelectSingleNode("//STORYAUTHORNAME");
+                //string name = (nameNode != null) ? nameNode.InnerText : string.Empty;
+                //string[] nameArr = AuthorHelper.Authors(name).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
-                XmlNode emailNode = d.SelectSingleNode("//STORYAUTHOREMAIL");
-                string email = (emailNode != null) ? emailNode.InnerText : string.Empty;
-                string[] emailArr = email.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                //XmlNode emailNode = d.SelectSingleNode("//STORYAUTHOREMAIL");
+                //    string email = (emailNode != null) ? emailNode.InnerText : string.Empty;
+                //    string[] emailArr = email.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
-                for (int i = 0; i < nameArr.Length; i++)
+                //   for (int i = 0; i < nameArr.Length; i++)
+                // {
+                //   string n = nameArr[i];
+
+                // List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                //  if (nameParts.Count < 2)
+                //  {
+                //      Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
+                //      continue;
+                //  }
+                // Dictionary<string, string> ao = new Dictionary<string, string>();
+                //   ao.Add("STORYAUTHORNAME", n.Trim());
+                //   ao.Add("FIRSTNAME", nameParts[0].Trim());
+                //   ao.Add("LASTNAME", string.Join(" ", nameParts.Skip(1).ToArray()).Trim());
+                //  string curEmail = (i < emailArr.Length) ? emailArr[i] : string.Empty;
+                //  ao.Add("EMAIL", curEmail);
+                // if (!string.IsNullOrEmpty(curEmail))
+                //    Logger.Log("N/A", string.Format("Matching {0} with {1}", n.Trim(), curEmail));
+
+                //   l.Add(ao);
+                //   }
+
+                var result = d.SelectNodes($"//STORYAUTHORNAME");
+
+                AuthorList = result.Cast<XmlNode>().Select(node => node.InnerText).ToList();
+
+                foreach (string authorName in AuthorList)
                 {
-                    string n = nameArr[i];
+                    string name = (authorName != null) ? authorName : string.Empty;
 
-                    List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    if (nameParts.Count < 2)
+
+                    string[] nameArr = AuthorHelper.Authors(authorName).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 0; i < nameArr.Length; i++)
                     {
-                        Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
-                        continue;
-                    }
-                    Dictionary<string, string> ao = new Dictionary<string, string>();
-                    ao.Add("STORYAUTHORNAME", n.Trim());
-                    ao.Add("FIRSTNAME", nameParts[0].Trim());
-                    ao.Add("LASTNAME", string.Join(" ", nameParts.Skip(1).ToArray()).Trim());
-                    string curEmail = (i < emailArr.Length) ? emailArr[i] : string.Empty;
-                    ao.Add("EMAIL", curEmail);
-                    if (!string.IsNullOrEmpty(curEmail))
-                        Logger.Log("N/A", string.Format("Matching {0} with {1}", n.Trim(), curEmail));
+                        string n = nameArr[i];
 
-                    l.Add(ao);
+                        List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                        if (nameParts.Count < 2)
+                        {
+                            Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
+                            continue;
+                        }
+                        Dictionary<string, string> ao = new Dictionary<string, string>();
+                        ao.Add("STORYAUTHORNAME", n.Trim());
+                        ao.Add("FIRSTNAME", nameParts[0].Trim());
+                        ao.Add("LASTNAME", string.Join(" ", nameParts.Skip(1).ToArray()).Trim());
+                        //   string curEmail = (i < emailArr.Length) ? emailArr[i] : string.Empty;
+                        string curEmail = "";
+                        ao.Add("EMAIL", curEmail);
+                        if (!string.IsNullOrEmpty(curEmail))
+                            Logger.Log("N/A", string.Format("Matching {0} with {1}", n.Trim(), curEmail));
+
+                        l.Add(ao);
+                    }
                 }
+
+               // Dictionary<string, string> ao = new Dictionary<string, string>();
+               // l.Add(ao);
             }
 
             return l;
@@ -3277,3 +3354,4 @@ namespace Sitecore.SharedSource.DataImporter.Providers
     }
 
 }
+

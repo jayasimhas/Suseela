@@ -38,7 +38,7 @@
 			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0;
 			descStr += "<tr>";
 			for(var prop in thead){
-				descStr += "<th class='title'>" + prop + "</th>";
+				descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
 			}
 			descStr += "</tr>";
 			descStr += "</thead>";
@@ -51,10 +51,10 @@
 				for(var prop in val){
 					var cls = (val[prop].split(' ')[1].indexOf('-') !== -1) ? 'fall' : 'rise';
 					if(indx >= 1){
-						descStr += "<td class='R16 pad-10'><span class='numData'>"+val[prop].split(' ')[0]+'</span><span class="'+cls+'">'+val[prop].split(' ')[1]+"</span></td>";
+						descStr += "<td class='R16 pad-10'><div class='pad'><span class='numData'>"+val[prop].split(' ')[0]+'</span><span class="'+cls+'">'+val[prop].split(' ')[1]+"</span></div></td>";
 					}
 					else{
-						descStr += "<td class='R16 pad-10'>"+val[prop]+"</td>";
+						descStr += "<td class='R16 pad-10'><div class='pad'>"+val[prop]+"</div></td>";
 					}
 					indx++;
 				}

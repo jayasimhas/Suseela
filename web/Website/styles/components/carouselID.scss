@@ -13,7 +13,7 @@
 			background: none;
 		}
 		.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
-			background: #9E310D;
+			background: #fff;
 		}
 		.li-content-company {
 		  border: none;
@@ -78,20 +78,39 @@
 		}
 		.hideinMob{
 			display: block;
-			@include breakpoint('medium') {
+			@include breakpoint('medium-small') {
 				display: none;
 			}
 		}
 		.showinMob{
 			display: none;
-			@include breakpoint('medium') {
+			@include breakpoint('medium-small') {
 				display: block;
+				width: 100%;
+				-o-transition-property: none !important;
+				-moz-transition-property: none !important;
+				-ms-transition-property: none !important;
+				-webkit-transition-property: none !important;
+				transition-property: none !important;
+				/*CSS transforms*/
+				-o-transform: none !important;
+				-moz-transform: none !important;
+				-ms-transform: none !important;
+				-webkit-transform: none !important;
+				transform: none !important;
+				 /*CSS animations*/
+				-webkit-animation: none !important;
+				-moz-animation: none !important;
+				-o-animation: none !important;
+				-ms-animation: none !important;
+				animation: none !important;
 			}
 		}
 		/*.owl-item{
 			float: left;
 		}*/
 		.marketDataTable{
+			width: 100%;
 			.owl-item.active{
 				@include breakpoint('small') {
 					width: auto !important;
@@ -100,7 +119,7 @@
 		}
 		.owl-dots{
 			position: absolute;
-			top: -3px;
+			top: -1px;
 			margin-top: -28px;
 			margin-left: 0;
 			margin-right: 0;
@@ -173,10 +192,7 @@
 		background: #fff;
 		margin: 0px auto;
 		width: 80%;
-		height: 180px;
-		@include breakpoint('medium') {
-			height: 180px !important;
-		}
+		height: 150px;
 		@media screen and (min-width: 768px) and (max-width: 1024px) {
 			width: 90% !important;
 		}
@@ -202,33 +218,38 @@
 	.owl-theme .owl-dots{
 		text-align: right;
 	}
-	.owl-theme .owl-dots .owl-dot span{
-		margin: 5px; 
+	.owl-theme .owl-dots .owl-dot{
+		span{
+			margin: 5px;
+			background: #ad001b !important; 
+		}
+		&.active{
+			span{
+				background: #fff !important;
+			}
+		}
 	}
 	.graph-container{
 		margin-top: 1rem;
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;
-		height: 280px; 
-		@include breakpoint('medium-small') {
-			height: 260px;
-		}
-		h5{
-			width: 80%;
-			margin: 0px auto;
+		height: 234px;  
+		h5{ 
 			font-size: 14px;
 			font-weight: 500;
-			height: 70px;
+			height: 40px;
 			vertical-align: middle;
-			display: table-cell;
-			text-align: center;
-			 
-		}
+			display: inline-block;
+			text-align: left;
+			margin: 20px 20px 0px 30px;
+			overflow: hidden;
+			line-height: 20px; 
+		 }
 	}
 	.owl-dots{
 		position: absolute;
-		top: 0;
+		top: -1px;
 		margin-top: -28px;
 		margin-left: 0;
 		margin-right: 0;
@@ -252,13 +273,13 @@
 	}
 	@include fontFamily("verdana");
 	.owl-carousel .item{
-		height: 290px;
+		height: 234px;
 	}
 	.owl-theme .owl-nav [class*='owl-']{
 		background: none;
 	}
 	.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
-		background: #9E310D;
+		background: #fff;
 	}
 	
 	.li-content-graph {
@@ -329,10 +350,26 @@
 		float: left;
 		width: 57%;
 		margin-top: 20px;
-		@include textMix('Roboto', 1.15em, 400);
+		@include textMix('Roboto', 1.25em, 400);
 		
 	}
 	.li-content-graph{
 		@include textMix('Roboto', 0.875em, 500);
+		a{
+			cursor: pointer;
+		}
+	}
+	.owl-dots .owl-dot{
+		span{
+			background: #ad001b !important;
+			&:hover{
+				background: #fff !important;
+			}
+		}
+		&.active{
+			span{
+				background: #fff !important;
+			}
+		}
 	}
 }

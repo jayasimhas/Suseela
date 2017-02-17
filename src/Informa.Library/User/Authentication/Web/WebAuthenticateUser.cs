@@ -66,6 +66,29 @@ namespace Informa.Library.User.Authentication.Web
 			};
 		}
 
+        public IWebAuthenticateUserResult Authenticate(string username, string password, bool persist, string vertical)
+        {
+            var authenticateResult = AuthenticateUser.Authenticate(username, password);
+            var state = authenticateResult.State;
+
+            var authenticatedUser = authenticateResult.User;
+            var success = state == AuthenticateUserResultState.Success;
+
+            if (success)
+            {
+                var loginResult = LoginWebUser.Login(authenticatedUser, persist, vertical);
+                success = loginResult.Success;
+                AuthenticatedUser = authenticatedUser;
+            }
+
+            return new WebAuthenticateUserResult
+            {
+                State = state,
+                Success = success,
+                User = authenticatedUser
+            };
+        }
+
         public IWebAuthenticateUserResult Authenticate(string code, string redirectUrl)
         {
             var authenticateResult = AuthenticateUserV2.Authenticate(code, "authorization_code", 

@@ -125,7 +125,7 @@ $(function(){
 				items:4
 				},
 				678:{
-				items:1
+				items:4
 				},
 				320:{
 				 items:1
