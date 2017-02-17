@@ -390,6 +390,20 @@ $(document).ready(function() {
 		analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
 	});
 
+	var askTheAnalystController = new FormController({
+		observe: '.form-ask-the-analyst',
+		successCallback: function(form) {
+			$('.js-ask-the-analyst-form-wrapper').hide();
+			$('.js-ask-the-analyst-recip-success').html('asktheanalyst@pharmamedtechbi.com');
+			$('.js-ask-the-analyst-success').show();
+
+			// Reset the Ask The Analyst pop-out to its default state when closed
+			$('.js-dismiss-ask-the-analyst').one('click', function() {
+				$('.js-ask-the-analyst-form-wrapper').show();
+				$('.js-ask-the-analyst-success').hide();
+			});
+		}
+	});
 
 	var emailArticleController = new FormController({
 		observe: '.form-email-article',
