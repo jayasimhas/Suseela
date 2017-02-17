@@ -5426,11 +5426,10 @@ window.PrintGraph = function (chartData, divId, skinUrl) {
 $(function () {
     if ($('#mycarousel1') && $('#mycarousel1').length) {
         $('#mycarousel1.owl-carousel').owlCarousel({
-            loop: true,
-            autoPlay: false,
+            loop: false,
+            margin: 0,
+            merge: true,
             nav: true,
-            navContainer: '#customNav',
-            dotsContainer: '#customDots',
             touchDrag: false,
             mouseDrag: false,
             slideBy: 4,
@@ -5440,13 +5439,13 @@ $(function () {
                     items: 4
                 },
                 678: {
-                    items: 4
+                    items: 2
                 },
                 320: {
-                    items: 1
+                    items: 2
                 },
                 480: {
-                    items: 1
+                    items: 2
                 },
                 1000: {
                     items: 4
