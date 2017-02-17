@@ -9623,7 +9623,6 @@ div#feedbacklite.fbl_r {
         float: right;
         width: auto;
         padding: 0;
-        color: #DE4361;
         margin-top: 5px;
         font-family: 'Roboto', Arial Narrow, sans-serif; }
     .rolling-stream .rolling-stream-wrapper .scrollbar-container {
@@ -13627,6 +13626,9 @@ main {
   .theme-pink-sheet .rolling-stream h5 a:hover, .theme-pink-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-pink-sheet .rolling-stream p a:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-pink-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-pink-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-pink-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-pink-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-pink-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-pink-sheet .rolling-stream p .mobile-table-exit:hover, .theme-pink-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #BC608C; }
 
+.theme-pink-sheet .rolling-stream .article-related-content__date {
+  color: #BC608C; }
+
 .theme-pink-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -13962,6 +13964,9 @@ main {
   color: #231f20; }
   .theme-rose-sheet .rolling-stream h5 a:hover, .theme-rose-sheet .rolling-stream .alert-success p a:hover, .alert-success .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .alert-error p a:hover, .alert-error .theme-rose-sheet .rolling-stream p a:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle a:hover, .theme-rose-sheet .rolling-stream h5 .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-rose-sheet .rolling-stream p .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-rose-sheet .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-rose-sheet .rolling-stream p .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-rose-sheet .rolling-stream h5 .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-rose-sheet .rolling-stream p .mobile-table-exit:hover, .theme-rose-sheet .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #DD3580; }
+
+.theme-rose-sheet .rolling-stream .article-related-content__date {
+  color: #DD3580; }
 
 .theme-rose-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -14299,6 +14304,9 @@ main {
   .theme-medtech .rolling-stream h5 a:hover, .theme-medtech .rolling-stream .alert-success p a:hover, .alert-success .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .alert-error p a:hover, .alert-error .theme-medtech .rolling-stream p a:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle a:hover, .theme-medtech .rolling-stream h5 .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-medtech .rolling-stream p .pop-out__reset-password:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-medtech .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-medtech .rolling-stream p .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-medtech .rolling-stream h5 .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-medtech .rolling-stream p .mobile-table-exit:hover, .theme-medtech .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #034a7c; }
 
+.theme-medtech .rolling-stream .article-related-content__date {
+  color: #034a7c; }
+
 .theme-medtech .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -14634,6 +14642,9 @@ main {
   color: #231f20; }
   .theme-invivo .rolling-stream h5 a:hover, .theme-invivo .rolling-stream .alert-success p a:hover, .alert-success .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .alert-error p a:hover, .alert-error .theme-invivo .rolling-stream p a:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle a:hover, .theme-invivo .rolling-stream h5 .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-invivo .rolling-stream p .pop-out__reset-password:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-invivo .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-invivo .rolling-stream p .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-invivo .rolling-stream h5 .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-invivo .rolling-stream p .mobile-table-exit:hover, .theme-invivo .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #7e2718; }
+
+.theme-invivo .rolling-stream .article-related-content__date {
+  color: #7e2718; }
 
 .theme-invivo .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -14971,6 +14982,9 @@ main {
   .theme-commodities .rolling-stream h5 a:hover, .theme-commodities .rolling-stream .alert-success p a:hover, .alert-success .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .alert-error p a:hover, .alert-error .theme-commodities .rolling-stream p a:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle a:hover, .theme-commodities .rolling-stream h5 .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-commodities .rolling-stream p .pop-out__reset-password:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-commodities .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-commodities .rolling-stream p .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-commodities .rolling-stream h5 .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-commodities .rolling-stream p .mobile-table-exit:hover, .theme-commodities .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #c12d3b; }
 
+.theme-commodities .rolling-stream .article-related-content__date {
+  color: #c12d3b; }
+
 .theme-commodities .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -15303,6 +15317,9 @@ main {
   .theme-insurance-day .rolling-stream h5 a:hover, .theme-insurance-day .rolling-stream .alert-success p a:hover, .alert-success .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .alert-error p a:hover, .alert-error .theme-insurance-day .rolling-stream p a:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle a:hover, .theme-insurance-day .rolling-stream h5 .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-insurance-day .rolling-stream p .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-insurance-day .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-insurance-day .rolling-stream p .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-insurance-day .rolling-stream h5 .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-insurance-day .rolling-stream p .mobile-table-exit:hover, .theme-insurance-day .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #DE4361; }
 
+.theme-insurance-day .rolling-stream .article-related-content__date {
+  color: #DE4361; }
+
 .theme-insurance-day .header-line-control:after {
   border: 2px solid #DE4361; }
 
@@ -15634,6 +15651,9 @@ main {
   color: #231f20; }
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
     color: #002d4f; }
+
+.theme-lloydslist .rolling-stream .article-related-content__date {
+  color: #002d4f; }
 
 .theme-lloydslist .header-line-control:after {
   border: 2px solid #DE4361; }
