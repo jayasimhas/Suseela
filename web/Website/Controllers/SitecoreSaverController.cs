@@ -43,7 +43,7 @@ namespace Informa.Web.Controllers
 
                 //Hack to start the workflow
                 var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(ItemIdResolver.GetItemIdByKey("ScripWorkflow"));
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(ItemIdResolver.GetItemIdByKey("ArticleWorkflow"));
                 intialWorkflow.Start(articleItem);
 
                 var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
