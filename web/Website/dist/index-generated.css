@@ -2152,9 +2152,22 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 		}*/ }
   #main-carousel .owl-carousel .item {
     height: 290px; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      #main-carousel .owl-carousel .item {
+        height: auto; } }
     @media (max-width: 480px) {
       #main-carousel .owl-carousel .item {
         height: auto; } }
+  #main-carousel .sorting-arrows__arrow {
+    width: 35px;
+    height: 35px;
+    fill: black; }
+    #main-carousel .sorting-arrows__arrow.left-arrow {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
+    #main-carousel .sorting-arrows__arrow.right-arrow {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
   #main-carousel .owl-theme .owl-nav [class*='owl-'] {
     background: none; }
   #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
@@ -2165,11 +2178,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     height: 100%;
     padding: 15px 18px;
     margin-top: 10px; }
+    #main-carousel .li-content-company:after {
+      display: block;
+      clear: both;
+      content: ''; }
     @media (max-width: 800px) {
       #main-carousel .li-content-company:after {
         display: block;
         clear: both;
         content: ''; } }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    #main-carousel .hideinTab {
+      display: none !important; }
+    #main-carousel .showinTab {
+      display: block !important; } }
   #main-carousel .li-content-company img {
     float: left;
     margin: 0 10px 10px 0;
@@ -2255,6 +2277,12 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-bottom: 0;
     opacity: 0.7;
     filter: alpha(opacity=70); }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #main-carousel .owl-next {
+        right: -32px; } }
+    @media (max-width: 480px) {
+      #main-carousel .owl-next {
+        right: -31px; } }
     @media (max-width: 800px) {
       #main-carousel .owl-next {
         top: 40px; } }
