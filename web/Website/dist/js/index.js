@@ -5455,11 +5455,12 @@ $(function () {
     }
     if ($('#mycarousel2') && $('#mycarousel2').length) {
         $('#mycarousel2.owl-carousel').owlCarousel({
-            loop: true,
-            autoPlay: false,
+            margin: 0,
+            merge: true,
             nav: true,
-            navContainer: '#customNav',
-            dotsContainer: '#customDots',
+            touchDrag: true,
+            mouseDrag: false,
+            merge: true,
             slideBy: 4,
             navText: ["<svg class='sorting-arrows__arrow sorting-arrows__arrow--down right-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>", "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down left-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>"],
             responsive: {

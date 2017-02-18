@@ -146,6 +146,7 @@ $(function(){
                nav:true,
          touchDrag  : true,
       mouseDrag  : false,
+      merge: true,
          slideBy: 4, 
 			 navText: [
 				  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down right-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>",
