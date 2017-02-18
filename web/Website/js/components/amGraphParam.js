@@ -141,12 +141,12 @@ $(function(){
 	}
 	if($('#mycarousel2') && $('#mycarousel2').length){
 		$('#mycarousel2.owl-carousel').owlCarousel({
-			loop:true,
-			autoPlay: false,
-			nav: true,
-			navContainer: '#customNav',
-			dotsContainer: '#customDots',
-			slideBy: 4,
+			margin:0,
+               merge:true,
+               nav:true,
+         touchDrag  : true,
+      mouseDrag  : false,
+         slideBy: 4, 
 			 navText: [
 				  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down right-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>",
 				  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down left-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>"

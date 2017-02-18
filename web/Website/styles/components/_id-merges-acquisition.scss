@@ -16,7 +16,6 @@
 	}
 	.show-largest-btn {
 		padding: 10px;
-	    background-color: #DE4361;
 	    color: $color-white !important;
 	    float: left;
 	    margin-right: 10px;
@@ -76,9 +75,6 @@
 		    width: 100%;
 		    color: #000;
 		}
-		tr:hover {
-			background-color: #efd0d8 !important;
-		}
 		tbody.visible-lg tr:nth-child(even) {
 			background-color: #eee;
 		}
@@ -131,7 +127,6 @@
 			 	padding-bottom: 0;
 			 	.label-wrap {
 			 		padding: 0 5px;
-			 		background-color: #DE4361;
 			 		&:after {
 						visibility: hidden;
 					     display: block;
@@ -352,7 +347,6 @@
 		font-family: 'Roboto';
 		.merge-form-items {
 			display: none;
-			background-color: #DE4361;
 			.show-largest-btn {
 				margin: 0;
 			    font-size: 12px;
@@ -378,7 +372,6 @@
 			.controls {
 				float: left;
 				width: 100%;
-				background: #91211E;
 				.selectivity-input {
 					width: 100%;
 					overflow: hidden;
@@ -397,7 +390,6 @@
 		}
 		.merge-heading {
 			padding: 10px;
-			background-color: #91211E;
 			p {
 				float: left;
 				width: calc(100% - 40px);

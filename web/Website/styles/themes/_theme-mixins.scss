@@ -221,3 +221,55 @@
         }
     }
 }
+
+@mixin theme-table($primary-color, $seconday-color, $tertiary-color, $table-hover-color) {
+    .idi-table-heading, .controls, .merge-heading,
+    .ID-Responsive-Table .table_head,
+    .table-responsive .table .table_head {
+        background-color: $primary-color;
+    }
+    .label-wrap, .show-largest-btn, .merge-form-items,
+    .table-wrapper .tableHead {
+        background-color: $seconday-color;
+    }
+    #tanker-fixtures.table-responsive .table .table_head {
+        background-color: $tertiary-color;
+    }
+    .ID-Responsive-Table {
+        .owl-dots{
+          float: left;
+          margin-top: 20px;
+          .owl-dot {
+            span {
+                background: $seconday-color;
+            }
+            &.active {
+                span {
+                    background: $color-white !important;
+                }
+                &:hover {
+                    span {
+                        background: $color-white;
+                    }
+                }
+            }
+            &:hover {
+                span {
+                    background: $seconday-color;
+                }
+            }
+          }
+        }
+    }
+    .year_heading {
+        background-color: $seconday-color !important;
+    }
+    .merge-acquistion tr:hover,
+    .activate-hover,
+    .tableRow:hover .tableCell {
+        background-color: $table-hover-color !important;
+    }
+    .table .table_head tr.visible-lg {
+        background-color: $seconday-color;
+    }
+}

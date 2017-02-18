@@ -63,7 +63,7 @@
 		}
 		.li-content-company p {
 		  padding: 0 0 8px 0;
-		  font-size: smaller;
+		  font-size: 1rem;
 		  margin-bottom: 20px;
 		}
 		.li-content-company a {
@@ -84,7 +84,7 @@
 			  display: block;
 			  background: #fff;
 			  div{
-				  div{
+				  div.amcharts-chart-div{
 					  height: 220px !important;
 					  svg{
 						height: 220px !important;
@@ -327,7 +327,7 @@
 		  display: block;
 		  background: #fff;
 		  div{
-			  div{
+			  div.amcharts-chart-div{
 				  height: 220px !important;
 				  svg{
 					height: 220px !important;

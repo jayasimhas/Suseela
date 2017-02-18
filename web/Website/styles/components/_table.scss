@@ -154,9 +154,6 @@
 	}
 }	 
 .casualty-table-theme {
-	a {
-		color: #1191d1;
-	}
 	.table {
 		width: 790px !important;
 		@media screen and (min-width: 801px) and (max-width: 1024px) {
@@ -172,13 +169,12 @@
 				font-weight: bold !important;
 			}
 			.visible-lg{
-				background: #1191D1;
 				color: #fff;
 				font-weight: normal;
 			}
 		}
 		.top {
-			color: $color-abbey-gray;
+			color: $color-abbey-gray !important;
 			width: 45px;
 			height: 40px;
 			display: block;
