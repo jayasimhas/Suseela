@@ -933,10 +933,20 @@ p {
   background: color(wireframe, 100, 0.75);
   border: 1px solid color(wireframe, 100); }
 
-.main__wrapper a.full-width-button, .main__wrapper .full-width-button.pop-out__reset-password, .main__wrapper .full-width-button.sortable-table__list-toggler, .main__wrapper .full-width-button.mobile-table-exit, .full-width-button {
+.main__wrapper a.full-width-button, .main__wrapper .full-width-button.pop-out__reset-password, .main__wrapper .full-width-button.sortable-table__list-toggler, .main__wrapper .full-width-button.mobile-table-exit {
   width: 100% !important;
   display: block;
   text-align: center; }
+
+.full-width-button {
+  width: 100% !important;
+  display: block;
+  text-align: center; }
+
+.login-form {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-family: 'Roboto'; }
 
 .mb-20 {
   margin-bottom: 20px; }
