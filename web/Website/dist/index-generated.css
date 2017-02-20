@@ -4244,9 +4244,6 @@ header .advertising--leaderboard.visible-mobile {
     header .advertising--leaderboard.visible-mobile {
       display: block; } }
 
-header .header__wrapper {
-  height: 100px; }
-
 header .header-publication-links {
   top: 50px; }
   @media (max-width: 640px) {
@@ -9953,9 +9950,7 @@ div#feedbacklite.fbl_r {
     float: right;
     width: 100%;
     text-align: right;
-    font-style: italic;
-    margin-top: -35px;
-    padding-right: 20px; }
+    font-style: italic; }
     @media (max-width: 480px) {
       .header-account-access__error-msg {
         margin-top: 0; } }

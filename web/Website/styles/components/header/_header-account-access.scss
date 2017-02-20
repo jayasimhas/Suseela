@@ -55,8 +55,6 @@
         width: 100%;
         text-align: right;
         font-style: italic;
-        margin-top: -35px;
-        padding-right: 20px;
         @include breakpoint('small') {
             margin-top: 0;
         }

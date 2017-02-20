@@ -5,9 +5,9 @@ header{
 			display: block;
 		}
 	}
-	.header__wrapper{
-		height: 100px;
-	}
+	// .header__wrapper{
+	// 	height: 100px;
+	// }
 	.header-publication-links{
 		top: 50px;
 		@include breakpoint('medium-small') {
