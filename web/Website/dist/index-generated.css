@@ -4541,7 +4541,7 @@ main .advertising--leaderboard.visible-desktop {
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
   .myview-settings .followAllBtn {
-    border: 1px solid #f7941e;
+    border: 1px solid none;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.75em;
@@ -4552,7 +4552,7 @@ main .advertising--leaderboard.visible-desktop {
     line-height: 30px;
     line-height: 1.875rem;
     float: right;
-    color: #58595b;
+    color: #FF8F18;
     width: 150px;
     width: 9.375rem;
     min-height: 30px;
@@ -4563,12 +4563,8 @@ main .advertising--leaderboard.visible-desktop {
     margin-top: 0.5rem;
     min-width: 130px;
     border: 1px solid #fab142; }
-    .myview-settings .followAllBtn:hover {
-      background-color: #f7941e;
-      color: #ffffff; }
     .myview-settings .followAllBtn.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+      margin-top: 0px; }
     @media (max-width: 640px) {
       .myview-settings .followAllBtn {
         min-width: initial;
@@ -4578,39 +4574,21 @@ main .advertising--leaderboard.visible-desktop {
         min-width: initial;
         min-width: auto; } }
   .myview-settings .followinglbl {
-    border: 1px solid #f7941e;
-    cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.75em;
-    font-family: "Roboto";
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
-    text-align: center;
     display: inline-block;
-    line-height: 30px;
-    line-height: 1.875rem;
     float: right;
-    color: #58595b;
-    width: 150px;
-    width: 9.375rem;
-    min-height: 30px;
-    min-height: 1.875rem;
-    padding: 0 16px;
-    padding: 0 1rem;
-    margin-top: 8px;
-    margin-top: 0.5rem;
-    cursor: text; }
-    .myview-settings .followinglbl:hover {
-      background-color: #f7941e;
-      color: #ffffff; }
-    .myview-settings .followinglbl.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+    text-align: right;
+    color: #f7941e; }
     @media (max-width: 640px) {
       .myview-settings .followinglbl {
         margin: 0px !important;
         float: left; } }
   .myview-settings .unfollowAllBtn {
-    border: 1px solid #f7941e;
+    border: 1px solid none;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.75em;
@@ -4621,22 +4599,19 @@ main .advertising--leaderboard.visible-desktop {
     line-height: 30px;
     line-height: 1.875rem;
     float: right;
-    color: #58595b;
+    color: #fff;
     width: 150px;
     width: 9.375rem;
     min-height: 30px;
     min-height: 1.875rem;
     margin: 8px 0 0 20px;
     margin: 0.5rem 0 0 1.25rem;
-    background-color: #f7941e;
-    color: #ffffff;
     padding: 0 16px;
     padding: 0 1rem;
     margin-left: 8px;
     margin-left: 0.5rem; }
     .myview-settings .unfollowAllBtn.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+      margin-top: 0px; }
     @media (max-width: 640px) {
       .myview-settings .unfollowAllBtn {
         min-width: initial;
@@ -4650,32 +4625,18 @@ main .advertising--leaderboard.visible-desktop {
         padding: 0 20px;
         padding: 0 1.25rem; } }
   .myview-settings .followlbl {
-    border: 1px solid #f7941e;
-    cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.75em;
-    font-family: "Roboto";
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
-    text-align: center;
     display: inline-block;
-    line-height: 30px;
-    line-height: 1.875rem;
     float: right;
-    color: #58595b;
-    width: 150px;
-    width: 9.375rem;
-    min-height: 30px;
-    min-height: 1.875rem;
-    margin: 8px 0 0 20px;
-    margin: 0.5rem 0 0 1.25rem;
-    background-color: #f7941e;
-    color: #ffffff;
+    text-align: right;
+    color: #58595B;
     padding: 0;
     cursor: text;
     min-width: 130px; }
-    .myview-settings .followlbl.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
     @media (max-width: 640px) {
       .myview-settings .followlbl {
         min-width: initial;
@@ -4819,17 +4780,15 @@ main .advertising--leaderboard.visible-desktop {
           line-height: 22px;
           line-height: 1.375rem; } }
   .myview-settings .publicationPan {
-    margin-bottom: 50px;
-    margin-bottom: 3.125rem;
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     border: 1px solid #d9dadb; }
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 464px;
-      width: 29rem;
-      margin-top: -5px;
-      line-height: 40px;
-      line-height: 2.5rem; }
+      width: 320px;
+      width: 20rem;
+      color: #58595B; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
           font-size: 1.25em;
@@ -4846,10 +4805,12 @@ main .advertising--leaderboard.visible-desktop {
       cursor: pointer;
       padding-left: 20px;
       padding-left: 1.25rem;
-      margin: 3px 20px;
-      vertical-align: top;
-      line-height: 30px;
-      position: relative; }
+      vertical-align: middle;
+      position: relative;
+      font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 700; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan .subscribed {
           font-size: 0.875em;
@@ -4872,12 +4833,13 @@ main .advertising--leaderboard.visible-desktop {
       margin: -4px 0 0 1.25rem;
       line-height: 32px;
       line-height: 2rem;
-      font-size: 12px;
-      font-size: 0.75rem;
       cursor: pointer;
       padding-left: 0px;
       padding-left: 0rem;
-      font-family: "Roboto"; }
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 700; }
       @media (max-width: 480px) {
         .myview-settings .publicationPan .subscribe {
           font-size: 0.875em;
@@ -4992,19 +4954,24 @@ main .advertising--leaderboard.visible-desktop {
             display: none; }
           .myview-settings .table-responsive .table tbody tr.followrow:hover {
             background: #EDEDED; }
+      .myview-settings .table-responsive .table thead.followbg {
+        background: #f9f9f9; }
+      .myview-settings .table-responsive .table thead.followingbg {
+        background: #fff; }
       @media (max-width: 480px) {
         .myview-settings .table-responsive .table thead tr.expandHide {
           display: none; }
           .myview-settings .table-responsive .table thead tr.expandHide.collapseshow {
             display: block !important; } }
+      .myview-settings .table-responsive .table thead.followinglbl-txt .collapsed .active {
+        background: #fff5ed; }
       .myview-settings .table-responsive .table thead th {
         padding: 12px 20px;
         padding: 0.75rem 1.25rem;
         line-height: 24px;
         line-height: 1.5rem;
         vertical-align: top;
-        border-top: 0px solid #ddd;
-        background: #f9f9f9; }
+        border-top: 0px solid #ddd; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px;
@@ -5024,12 +4991,20 @@ main .advertising--leaderboard.visible-desktop {
             margin: -40px 0 0;
             font-weight: normal; }
         .myview-settings .table-responsive .table thead th.firstrow {
-          padding: 40px 20px 0;
-          padding: 2.5rem 1.25rem 0; }
+          padding: 20px;
+          padding: 1.25rem; }
+          .myview-settings .table-responsive .table thead th.firstrow h2, .myview-settings .table-responsive .table thead th.firstrow .article-topics__header {
+            font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+            font-size: 20px;
+            font-size: 1.25rem;
+            font-weight: 700; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th.firstrow {
               padding: 20px 10px 10px;
               padding: 1.25rem 0.625rem 0.625rem; } }
+          .myview-settings .table-responsive .table thead th.firstrow .frTxt {
+            text-align: right;
+            width: 200px; }
         .myview-settings .table-responsive .table thead th.nopad {
           padding: 0px 20px;
           padding: 0rem 1.25rem; }
@@ -5040,12 +5015,19 @@ main .advertising--leaderboard.visible-desktop {
         .myview-settings .table-responsive .table thead th.pbot {
           padding: 0px 16px 20px 27px;
           padding: 0rem 1rem 1.25rem 27px; }
+        .myview-settings .table-responsive .table thead th .mvTxt {
+          float: left;
+          width: 60px;
+          text-align: right;
+          font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+          font-size: 14px;
+          font-size: 0.875rem;
+          font-weight: 400; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
-          margin-top: 7px;
-          margin-top: 0.4375rem;
-          margin-top: -24px;
-          margin-top: -1.5rem; }
+          margin-top: 0px;
+          margin-top: 0rem;
+          float: right; }
           .myview-settings .table-responsive .table thead th .rowlines .pull-left {
             float: left; }
             @media (max-width: 640px) {
@@ -5063,20 +5045,28 @@ main .advertising--leaderboard.visible-desktop {
             background: #979797;
             display: block;
             margin-bottom: 3px; }
-          .myview-settings .table-responsive .table thead th .rowlines .mv {
-            background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
-            height: 50px;
-            width: 21px;
-            display: block;
-            margin-top: -15px; }
-            @media (max-width: 640px) {
-              .myview-settings .table-responsive .table thead th .rowlines .mv {
-                background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
-                height: 40px;
-                width: 40px;
-                position: relative;
-                left: -15px;
-                display: block; } }
+          .myview-settings .table-responsive .table thead th .rowlines.hideinDesk {
+            display: none; }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              .myview-settings .table-responsive .table thead th .rowlines.hideinDesk {
+                background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+                height: 50px;
+                width: 21px;
+                display: block;
+                margin-top: -15px; } }
+          .myview-settings .table-responsive .table thead th .rowlines.hideinTab {
+            display: none; }
+            @media screen and (min-width: 1025px) {
+              .myview-settings .table-responsive .table thead th .rowlines.hideinTab {
+                display: block;
+                margin-top: 3px; } }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table thead th .rowlines .mv {
+              background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
+              height: 40px;
+              width: 40px;
+              position: relative;
+              left: -15px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px;
@@ -5085,50 +5075,45 @@ main .advertising--leaderboard.visible-desktop {
             .myview-settings .table-responsive .table thead th .rowlines {
               height: 30px;
               width: 30px; } }
-          .myview-settings .table-responsive .table thead th .rowlines .vline {
-            border: 1px solid #dadada;
-            height: 40px;
-            width: 1px;
-            float: left;
-            position: relative;
-            top: -13px;
-            right: 22px; }
+        .myview-settings .table-responsive .table thead th .accordionImg {
+          width: 120px;
+          float: left;
+          text-align: right; }
+          .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
+            font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+            font-size: 14px;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #58595B;
+            text-transform: uppercase;
+            padding-right: 14px; }
+          .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+            background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
+            height: 10px;
+            width: 12px;
+            cursor: pointer;
+            display: inline-block; }
             @media (max-width: 640px) {
-              .myview-settings .table-responsive .table thead th .rowlines .vline {
-                display: none; } }
-            @media (max-width: 800px) {
-              .myview-settings .table-responsive .table thead th .rowlines .vline {
-                right: 12px; } }
-        .myview-settings .table-responsive .table thead th .accordionImg span {
-          background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
-          height: 17px;
-          height: 1.0625rem;
-          width: 32px;
-          width: 2rem;
-          cursor: pointer;
-          display: inline-block;
-          margin-right: 10%; }
-          @media (max-width: 640px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              /*background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
-								height: 0.75rem;
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
+                /*height: 0.75rem;
 								width: 1.4375rem;*/
-              position: relative;
-              left: -10px; }
-              .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 position: relative;
-                left: 0;
-                /*background-position: 0 -48px !important;*/
-                background-position: 0 0 !important; } }
-          @media screen and (min-width: 667px) and (max-width: 767px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              margin-right: 50px;
-              margin-right: 3.125rem; } }
-          .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
-            background-position: 0 0; }
-          @media screen and (min-width: 801px) and (max-width: 1130px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              margin-right: 50%; } }
+                left: -10px; }
+                .myview-settings .table-responsive .table thead th .accordionImg span.accImg.expanded {
+                  position: relative;
+                  left: 0;
+                  /*background-position: 0 -48px !important;*/
+                  background-position: 0 0 !important; } }
+            @media screen and (min-width: 667px) and (max-width: 767px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-right: 50px;
+                margin-right: 3.125rem; } }
+            .myview-settings .table-responsive .table thead th .accordionImg span.accImg.expanded {
+              background-position: 0 -159px; }
+            @media screen and (min-width: 801px) and (max-width: 1130px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-right: 50%; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;
           padding-bottom: 24px;
@@ -5144,7 +5129,7 @@ main .advertising--leaderboard.visible-desktop {
           .myview-settings .table-responsive .table .wd-55 {
             width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
-        width: 25%; }
+        width: 20%; }
         .myview-settings .table-responsive .table .wd-25.pbot {
           padding-left: 0px;
           padding-left: 0rem; }
@@ -5158,7 +5143,7 @@ main .advertising--leaderboard.visible-desktop {
           .myview-settings .table-responsive .table .wd-25 {
             width: 25%; } }
       .myview-settings .table-responsive .table .wd-15 {
-        width: 15%; }
+        width: 20%; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-15 {
             width: 10%; } }
@@ -5295,62 +5280,70 @@ main .advertising--leaderboard.visible-desktop {
     background: #f9f9f9; }
   .myview-settings .modal-view {
     position: fixed;
-    width: 300px;
-    width: 18.75rem;
-    height: 200px;
-    height: 12.5rem;
+    width: 432px;
+    width: 27rem;
+    height: 280px;
+    height: 17.5rem;
     top: 50%;
     left: 50%;
     z-index: 9999;
-    margin-left: -150px;
-    margin-left: -9.375rem;
-    margin-top: -100px;
-    margin-top: -6.25rem;
+    margin-left: -216px;
+    margin-left: -13.5rem;
+    margin-top: -140px;
+    margin-top: -8.75rem;
     background: #ffffff;
-    padding: 35px 40px 40px;
-    padding: 2.1875rem 2.5rem 2.5rem;
+    padding: 70px 40px 40px;
+    padding: 4.375rem 2.5rem 2.5rem;
     display: none;
     font-family: "Roboto"; }
     .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
-      background-image: url(/dist/img/sprite-image.png);
-      background-position: left 46px top -574px;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 16px;
       font-size: 1rem;
-      font-weight: bold;
-      padding-left: 72px;
-      padding-left: 4.5rem;
+      font-weight: 700;
+      text-align: center;
       margin: 10px 0 20px;
-      background-repeat: no-repeat; }
+      color: #231F20; }
     .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
     .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
     .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
     .article-inline-image__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-right__title {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 400;
       margin-bottom: 32px;
       margin-bottom: 2rem;
-      font-size: 12px;
-      font-size: .75rem;
       color: #626262;
       font-weight: normal;
       text-align: center; }
     .myview-settings .modal-view.preferences .buttonsPan {
-      width: 162px;
-      width: 10.125rem;
+      width: 280px;
+      width: 17.5rem;
       margin: 0px auto; }
     .myview-settings .modal-view.preferences .saveview {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      font-weight: 700;
       text-align: center;
       float: left;
       width: 70px;
       width: 4.375rem;
       text-transform: uppercase;
-      font-size: 11px;
-      font-size: 0.6875rem;
       cursor: pointer;
       line-height: 32px;
       line-height: 2rem;
-      font-weight: bold;
-      padding: 0px; }
+      padding: 0px;
+      float: left;
+      width: 130px;
+      width: 8.125rem;
+      height: 32px;
+      height: 2rem;
+      color: #fff;
+      margin-right: 20px; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
       color: #231f20;
@@ -5370,18 +5363,23 @@ main .advertising--leaderboard.visible-desktop {
       .myview-settings .modal-view.preferences .registrationBtn.validationChk:hover {
         background: #f7941e; }
     .myview-settings .modal-view.preferences .cancel {
-      text-align: center;
-      float: right;
-      width: 70px;
-      width: 4.375rem;
-      text-transform: uppercase;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 11px;
       font-size: 0.6875rem;
+      font-weight: 700;
+      text-align: center;
+      float: left;
+      width: 130px;
+      width: 8.125rem;
+      height: 32px;
+      height: 2rem;
+      text-transform: uppercase;
       cursor: pointer;
       line-height: 32px;
       line-height: 2rem;
-      font-weight: bold;
-      padding: 0px; }
+      padding: 0px;
+      color: #747474;
+      border: 1px solid #adadad; }
     .myview-settings .modal-view .modal-inner {
       display: inline-block;
       text-align: left;
@@ -5408,7 +5406,9 @@ main .advertising--leaderboard.visible-desktop {
       font-size: 10px;
       font-size: 0.625rem;
       padding-right: 16px;
-      padding-right: 1rem; }
+      padding-right: 1rem;
+      height: 14px;
+      width: 14px; }
   .myview-settings .modal-overlay.in {
     background: #000;
     height: 100%;
@@ -8383,8 +8383,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11978,7 +11978,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

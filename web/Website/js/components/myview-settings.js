@@ -1,4 +1,4 @@
-import { analyticsEvent } from '../controllers/analytics-controller'; 
+//import { analyticsEvent } from '../controllers/analytics-controller'; 
 
 function setClsforFlw(t) {
     for (var i = 0; i < t.length; i++) {
@@ -7,7 +7,7 @@ function setClsforFlw(t) {
     }
 }
 
-function createJSONData(alltables, UserPreferences) {
+function createJSONData(alltables, UserPreferences, url) {
     for (var i = 0; i < alltables.length; i++) {
         var currenttabtrs = $(alltables[i]).find('tbody tr'),
 			pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
@@ -30,7 +30,7 @@ function createJSONData(alltables, UserPreferences) {
         }
         UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
     }
-    sendHttpRequest(UserPreferences);
+    sendHttpRequest(UserPreferences, null, url);
 }
 
 function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
@@ -52,8 +52,14 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 else if (setFlag == 'register' && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
+				if(redirectUrl != 'href' && redirectUrl != 'name'){
+					window.location.href = redirectUrl;
+				}
             }
             else {
+				if(redirectUrl != 'href' && redirectUrl != 'name'){
+					window.location.href = redirectUrl;
+				}
                 if (setFlag == 'register') {
                     $('.alert-error.register-error p').html(data.reason);
                     $('.alert-error.register-error').show();
@@ -194,7 +200,7 @@ $(function () {
     });
 
     $('#allPublicationsPan').on('click', '.followAllBtn', function () {
-        var $this = $(this), curpublicPan = $this.closest('.publicationPan'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollow = curpublicPan.find('.followBtn'), table = $('.table');
+        var $this = $(this), curpublicPan = $this.closest('.publicationPan'), thead = curpublicPan.find('thead.hidden-xs'), firstRow = thead.find('tr:first-child'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollow = curpublicPan.find('.followBtn'), table = $('.table'), lableStatus = '';
         $this.addClass('hideBtn');
         $('#validatePreference').val(1);
         div.find('.unfollowAllBtn').removeClass('hideBtn');
@@ -203,6 +209,11 @@ $(function () {
         $lgfollow.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
         $('#validatePriority').val(true);
         $('#validateMyViewPriority').val(true);
+		
+		lableStatus = thead.find('.lableStatus').val();
+		thead.find('.mtp').addClass('hideBtn');
+		thead.find('.mtp.'+ lableStatus).removeClass('hideBtn');
+		
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
             $(tbody.find('.followrow')[i]).attr('draggable', true);
         }
@@ -217,7 +228,7 @@ $(function () {
 
 
     $('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
-        var $this = $(this), curpublicPan = $this.closest('.publicationPan'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollowing = curpublicPan.find('.followingBtn');
+        var $this = $(this), curpublicPan = $this.closest('.publicationPan'), thead = curpublicPan.find('thead.hidden-xs'), firstRow = thead.find('tr:first-child'), tbody = curpublicPan.find('tbody'), div = $this.closest('div'), $lgfollowing = curpublicPan.find('.followingBtn'), lableStatus = '';
         $this.addClass('hideBtn');
         $this.closest('.smfollowingBtn').find('.followAllBtn').addClass('fr');
         $('#validatePreference').val(1);
@@ -227,7 +238,11 @@ $(function () {
         $lgfollowing.addClass('followBtn button--outline').removeClass('followingBtn button--filled').html($('#followButtonText').val());
         $('#validatePriority').val(false);
         $('#validateMyViewPriority').val(true);
-
+		
+		lableStatus = thead.find('.lableStatus').val();
+		thead.find('.mtp').addClass('hideBtn');
+		thead.find('.mtp.' + lableStatus).removeClass('hideBtn'); 
+		
         curpublicPan.find('tbody .frow').removeClass('frow');
         for (var i = 0; i < $lgfollowing.length; i++) {
             $($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
@@ -238,12 +253,12 @@ $(function () {
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function (e) {
 		var $this = $(this), currenttr = $this.closest('tr'), currentTopic = $.trim(currenttr.find('.wd-55').html().split('<input')[0]), currentChannel = currenttr.closest('.table').find('thead h2').html(), eventDetails;
 		if($('.registrationBtn') && $('.registrationBtn').length){
-			eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
+			//eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
 		}
 		else{
-			eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+			//eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
 		}
-		analyticsEvent( eventDetails );
+		//analyticsEvent( eventDetails );
 		
 		eventDetails = {};
 	});
@@ -251,18 +266,18 @@ $(function () {
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function (e) {
 		var $this = $(this), currenttr = $this.closest('tr'), currentTopic = $.trim(currenttr.find('.wd-55').html().split('<input')[0]), currentChannel = currenttr.closest('.table').find('thead h2').html(), eventDetails;
 		if($('.registrationBtn') && $('.registrationBtn').length){
-			eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+			//eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
 		}
 		else{
-			eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
+			//eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
 		}
-		analyticsEvent( eventDetails );
+		//analyticsEvent( eventDetails );
 		
 		eventDetails = {};
 	});
 	
     $('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function (e) {
-		var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow');;
+		var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), thead = table.find('thead.hidden-xs'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow'), lableStatus = '';
 		followrow.attr('draggable', true);
 		$('#validatePreference').val(1);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
@@ -271,7 +286,11 @@ $(function () {
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
 		$('#validateMyViewPriority').val(true);
-
+		
+		lableStatus = thead.find('.lableStatus').val();
+		thead.find('.mtp').addClass('hideBtn');
+		thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
+		
 		if (trs.hasClass('followingrow')) {
 			$('#validatePriority').val(true);
 			//unfollowAllBtn.addClass('hideBtn');
@@ -301,15 +320,15 @@ $(function () {
 	}); 
 
     $('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function (e) {
-        var $this = $(this), table = $this.closest('table'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow');
+        var $this = $(this), table = $this.closest('table'), followAllBtn = $this.closest('table').find('.followAllBtn'), thead = table.find('thead.hidden-xs'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), followingrow = $this.closest('.followingrow'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), disabledtrs = $this.closest('tbody').find('.followrow.disabled'), trsfollow = $this.closest('tbody').find('tr.followrow'), lableStatus = '';
         followingrow.addClass('followrow disabled').removeClass('followingrow');
         $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
         followingrow.clone().appendTo($this.closest('tbody'));
         followingrow.remove();
         $('#validatePreference').val(1);
         sort_table(tbody, 0, 1, 'followingBtn');
-        $('#validateMyViewPriority').val(true);
-
+        $('#validateMyViewPriority').val(true); 
+		
         if (trs.length === disabledtrs.length + 1) {
             table.find('.firstrow .lableStatus').val('followlbl');
             table.find('.accordionStatus .lableStatus').val('followlbl');
@@ -323,7 +342,10 @@ $(function () {
         else {
             followAllBtn.removeClass('hideBtn');
             unfollowAllBtn.removeClass('hideBtn');
-        } 
+        }
+		lableStatus = thead.find('.lableStatus').val();
+		thead.find('.mtp').addClass('hideBtn');
+		thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
     });
 	
 	$('#allPublicationsPan .donesubscribe').on('mouseenter', '.followingBtn', function (e) {
@@ -389,11 +411,11 @@ $(function () {
         }
     });
 
-    $('.publicationPan').on('click', '.accordionImg .desktopMode', function () {
-        var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan');
+    $('#allPublicationsPan .publicationPan').on('click', 'thead.hidden-xs tr:first-child', function () {
+        var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan'), allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'), lableStatus = allthead.find('.lableStatus').val();
 
         if ($this.hasClass('expanded')) {
-            $this.removeClass('expanded');
+            $this.removeClass('expanded').addClass('collapsed');
             tbody.addClass('tbodyhidden');
             thead.find('.mtp').addClass('hideBtn');
             accCont.addClass('tbodyhidden');
@@ -405,6 +427,11 @@ $(function () {
                 followinglbl.removeClass('hideBtn');
                 thead.find('.firstrow .lableStatus').val('followinglbl');
             }
+			for(var i = 0; i < allthead.length; i++){
+				var curthead = $(allthead[i]), getlableStatus = curthead.find('.lableStatus').val();
+				curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
+			}
+			
             var position = $this.closest('.publicationPan').position();
             $(window).scrollTop(position.top);
         }
@@ -414,48 +441,67 @@ $(function () {
             allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
             allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
             thead.find('tr').removeClass('hidden');
-            $this.addClass('expanded');
+            $this.addClass('expanded').removeClass('collapsed');
             accCont.removeClass('tbodyhidden');
             tbody.removeClass('tbodyhidden');
             flwBtn.addClass('hideRow');
             flwlbl.removeClass('hideRow');
 
-            for (var i = 0; i < allpubpans.length; i++) {
+            /*for (var i = 0; i < allpubpans.length; i++) {
                 var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
                 $('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
             }
-            thead.find('.mtp').addClass('hideBtn');
+            thead.find('.mtp').addClass('hideBtn');*/
 
             var position = $this.closest('.publicationPan').position();
             $(window).scrollTop(position.top);
         }
-    });
+    }).on('mouseenter', 'thead.hidden-xs tr:first-child', function () {
+		var $this = $(this), firstTrtds = $this.find('th'), thead = $this.closest('thead.hidden-xs'), lableStatus = $this.find('.lableStatus').val();
+		firstTrtds.addClass('active');
+		if($this.hasClass('collapsed') && lableStatus == 'followinglbl'){
+			thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
+		}
+		else if($this.hasClass('collapsed') && lableStatus == 'followlbl'){
+			//thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
+		}
+	}).on('mouseleave', 'thead.hidden-xs tr:first-child', function() {
+		var $this = $(this), firstTrtds = $this.find('th'), thead = $this.closest('thead.hidden-xs');
+		firstTrtds.removeClass('active');
+		if($this.hasClass('collapsed')){
+			thead.removeClass('followinglbl-txt followlbl-txt');
+		}
+	}); 
 
     var tables = $('.publicationPan table');
     setClsforFlw(tables);
 
     $('.saveview').click(function (e) {
-        if ($('.modal-overlay').hasClass('in')) {
+        /*if ($('.modal-overlay').hasClass('in')) {
             window.location.href = clickedUrl;
-        }
-        else {
-            var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
-                isChannelLevel = $('#isChannelBasedRegistration').val(),
-            UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
-            UserPreferences.PreferredChannels = [];
-            $('#validateMyViewPriority').val(false);
-            e.preventDefault();
-            setDataRow(allpublications);
-            allpublicationsEles.removeAttr('data-row');
-            for (var i = 0; i < allpublicationsEles.length; i++) {
-                var j = i + 1;
-                $(allpublicationsEles[i]).attr('data-row', j);
-            }
-            createJSONData(alltables, UserPreferences);
-
-            $('#validatePreference').val(0);
-
-        }
+        }*/
+        //else {
+		 var alltables = $('.table'), allpublicationsEles = $('.publicationPan'),
+			isChannelLevel = $('#isChannelBasedRegistration').val(),
+		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
+		UserPreferences.PreferredChannels = [];
+		$('#validateMyViewPriority').val(false);
+		e.preventDefault();
+		setDataRow(allpublications);
+		allpublicationsEles.removeAttr('data-row');
+		for (var i = 0; i < allpublicationsEles.length; i++) {
+			var j = i + 1;
+			$(allpublicationsEles[i]).attr('data-row', j);
+		}
+		
+		if($(this).hasClass('validationChk')){
+			createJSONData(alltables, UserPreferences, clickedUrl);
+		}
+		else{
+			createJSONData(alltables, UserPreferences);
+           $('#validatePreference').val(0);
+		}
+        //}
     });
 
     $('.registrationBtn').click(function (e) {
@@ -502,9 +548,13 @@ $(function () {
         }
     });
 
-    $('.close-modal, .cancel-modal').click(function () {
+    $('.close-modal').click(function () {
         $('.modal-overlay').removeClass('in');
         $('.modal-view').hide();
+    });
+	
+	$('.cancel-modal').click(function () {
+        window.location.href = clickedUrl;
     });
 
     if ($('.publicationPan') && $('.publicationPan').length) {
@@ -521,7 +571,7 @@ $(function () {
 	
 	$(document).on('click', '.editView', function(){
 		var eventDetails = {"event_name":"myview_edit_my_view","page_name": analytics_data["page_name"], "ga_eventCategory":"My View Page Link", "ga_eventAction":"Link Click", "ga_eventLabel":"EDIT MY VIEW"};
-		analyticsEvent( $.extend(analytics_data, eventDetails) );
+		//analyticsEvent( $.extend(analytics_data, eventDetails) );
 		eventDetails = {};
 	});
 	
@@ -535,7 +585,7 @@ $(function () {
 		}
 		var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
 		
-		analyticsEvent( $.extend(analytics_data, eventDetails) );
+		//analyticsEvent( $.extend(analytics_data, eventDetails) );
 		eventDetails = {};
 	});
 });
