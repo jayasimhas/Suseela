@@ -69,19 +69,23 @@
   <ItemGroup>
     <Compile Include="HttpClientHelper.cs" />
     <Compile Include="IHttpClientHelper.cs" />
+    <Compile Include="ProductPreferences\Attributes.cs" />
+    <Compile Include="ProductPreferences\ProductPreferencesResult.cs" />
+    <Compile Include="ProductPreferences\Record.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUserV2.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUserV2.cs" />
-    <Compile Include="User\Authentication\UserInfoResult.cs" />
     <Compile Include="User\Entitlement\ISalesforceEntitlmentFactoryV2.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlementsV2.cs" />
     <Compile Include="User\Entitlement\SalesforceEntitlmentFactoryV2.cs" />
     <Compile Include="User\Entitlement\SalesforceGetUserEntitlementsV2.cs" />
     <Compile Include="User\Entitlement\UserEntitlement.cs" />
-    <Compile Include="User\Profile\ISalesforceFindUserInfo.cs" />
-    <Compile Include="User\Profile\ISalesforceUserInfo.cs" />
-    <Compile Include="User\Profile\SalesforceFindUserInfo.cs" />
+    <Compile Include="User\Profile\ISalesforceFindUserProfileV2.cs" />
+    <Compile Include="User\Profile\SalesforceField.cs" />
+    <Compile Include="User\Profile\SalesforceFindUserProfileV2.cs" />
+    <Compile Include="User\Profile\SalesforceManageAccountInfoV2.cs" />
     <Compile Include="User\Profile\SalesforceUserInfo.cs" />
+    <Compile Include="User\Profile\UpdateUserDeatilsRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

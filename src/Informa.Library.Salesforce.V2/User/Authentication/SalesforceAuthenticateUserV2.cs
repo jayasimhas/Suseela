@@ -16,29 +16,30 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         protected readonly IHttpClientHelper HttpClientHelper;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceGetUserEntitlementsV2 SalesforceGetUserEntitlementsV2;
-        protected readonly ISalesforceFindUserInfo SalesforceFindUserInfo;
+        protected readonly ISalesforceFindUserProfileV2 FindUserProfile;
 
         public SalesforceAuthenticateUserV2(
             IHttpClientHelper httpClientHelper,
             ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserEntitlementsV2 salesforceGetUserEntitlementsV2,
-            ISalesforceFindUserInfo salesforceFindUserInfo)
+            ISalesforceFindUserProfileV2 findUserProfile)
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserEntitlementsV2 = salesforceGetUserEntitlementsV2;
-            SalesforceFindUserInfo = salesforceFindUserInfo;
+            FindUserProfile = findUserProfile;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
             string client_id, string client_secret, string redirect_uri)
         {
-            HttpClient client = new HttpClient();
-            string accessToken = string.Empty;
-            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-            var pairs = new Dictionary<string, string>
+            using (var client = new HttpClient())
+            {
+                string accessToken = string.Empty;
+                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+                var pairs = new Dictionary<string, string>
             {
                         { "code", code },
                         { "grant_type", "authorization_code" },
@@ -46,41 +47,43 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
-            HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
-                SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
-                new FormUrlEncodedContent(pairs)).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseString = response.Content.ReadAsStringAsync().Result;
-                if (!string.IsNullOrWhiteSpace(responseString))
+                HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
+                    SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
+                    new FormUrlEncodedContent(pairs)).Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    var values = HttpUtility.ParseQueryString(responseString);
-                    accessToken = values["access_token"];
+                    var responseString = response.Content.ReadAsStringAsync().Result;
+                    if (!string.IsNullOrWhiteSpace(responseString))
+                    {
+                        var values = HttpUtility.ParseQueryString(responseString);
+                        accessToken = values["access_token"];
+                    }
                 }
-            }
-            if (string.IsNullOrWhiteSpace(accessToken))
-            {
-                return ErrorResult;
-            }
-
-            var authenticatedUser = SalesforceFindUserInfo.Find(accessToken);
-
-            if (authenticatedUser == null)
-            {
-                return ErrorResult;
-            }
-
-            return new SalesforceAuthenticateUserResult
-            {
-                State = AuthenticateUserResultState.Success,
-                User = new SalesforceAuthenticatedUser
+                if (string.IsNullOrWhiteSpace(accessToken))
                 {
-                    Username = authenticatedUser.UserName,
-                    Email = authenticatedUser.UserName,
-                    Name = authenticatedUser.Name,
-                    AccessToken = accessToken
+                    return ErrorResult;
                 }
-            };
+
+                var profile = FindUserProfile.Find(accessToken);
+
+                if (profile == null)
+                {
+                    return ErrorResult;
+                }
+
+                return new SalesforceAuthenticateUserResult
+                {
+                    State = AuthenticateUserResultState.Success,
+                    User = new SalesforceAuthenticatedUser
+                    {
+                        Username = profile.UserName,
+                        Email = profile.Email,
+                        Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
+                        AccessToken = accessToken
+                    }
+                };
+            }
+
         }
 
         public SalesforceAuthenticateUserResult ErrorResult => new SalesforceAuthenticateUserResult

@@ -44,8 +44,9 @@ namespace Informa.Web.App_Start.Registrations
 
             builder.RegisterType<SalesforceFindUserProfile>().As<IUserProfileFactory>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
+            builder.RegisterType<SalesforceFindUserProfileV2>().As<IFindUserProfileByUsernameV2>();
 
-			builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
+            builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
 			builder.RegisterType<SalesforceUpdateNewsletterUserOptIns>().As<IUpdateNewsletterUserOptIns>();
 
 			builder.RegisterType<SalesforceFindNewsletterUserOptIns>().As<IFindNewsletterUserOptIns>();
@@ -59,13 +60,14 @@ namespace Informa.Web.App_Start.Registrations
 				.As<IRemoveDocument>();
             builder.RegisterType<SalesforceFindUserSubscriptions>().As<IFindUserSubscriptions>();
             builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
+            builder.RegisterType<SalesforceManageAccountInfoV2>().As<IManageAccountInfoV2>();
             builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
             builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
+            builder.RegisterType<SalesforceFindUserProfileV2>().As<ISalesforceFindUserProfileV2>();
             builder.RegisterType<SalesforceFindUserPreferences>().As<IFindUserPreferences>();
             builder.RegisterType<SalesforceSetuserPreferences>().As<ISetUserPreferences>();
             builder.RegisterType<SalesforceGetUserEntitlementsV2>().As<IGetUserEntitlementsV2>();
             builder.RegisterType<SalesforceGetUserEntitlementsV2>().As<ISalesforceGetUserEntitlementsV2>();
-            builder.RegisterType<SalesforceFindUserInfo>().As<ISalesforceFindUserInfo>();
-        }
+    }
 	}
 }

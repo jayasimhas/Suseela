@@ -29,18 +29,20 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
         {
             if (!string.IsNullOrWhiteSpace(user.AccessToken) && !string.IsNullOrWhiteSpace(user.Username))
             {
-                HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-                HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserEntitlementsEndPoints(user.Username)).Result;
-                if (response.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    var responseString = response.Content.ReadAsStringAsync().Result;
-                    if (!string.IsNullOrWhiteSpace(responseString))
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
+                    HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserEntitlementsEndPoints(user.Username)).Result;
+                    if (response.IsSuccessStatusCode)
                     {
-                        var userEntitlements = JsonConvert.DeserializeObject<List<UserEntitlement>>(responseString);
-                        return userEntitlements?.Select(entitlement => EntitlementFactoryV2.Create(entitlement) as IEntitlement).ToList();
+                        var responseString = response.Content.ReadAsStringAsync().Result;
+                        if (!string.IsNullOrWhiteSpace(responseString))
+                        {
+                            var userEntitlements = JsonConvert.DeserializeObject<List<UserEntitlement>>(responseString);
+                            return userEntitlements?.Select(entitlement => EntitlementFactoryV2.Create(entitlement) as IEntitlement).ToList();
+                        }
                     }
                 }
             }
