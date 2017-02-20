@@ -359,6 +359,8 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="CustomSitecore\Events\AddArticleFromCMS.cs" />
+    <Compile Include="CustomSitecore\Pipelines\Article\SaveTitle.cs" />
     <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
     <Compile Include="DCD\CompanyService.cs" />

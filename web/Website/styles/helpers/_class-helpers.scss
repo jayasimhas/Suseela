@@ -69,6 +69,19 @@
     display: block;
     text-align: center;
 }
+.full-width-button {
+    width: 100% !important;
+    display: block;
+    text-align: center;
+    &.update-password-btn {
+        max-width:350px;
+        float:left; 
+    }
+}
+.update-password-text {
+    margin-bottom: 1.25rem;
+    font-family: 'Roboto';
+}
 .mb-20 {
     margin-bottom: 20px;
 }

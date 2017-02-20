@@ -11,6 +11,7 @@ using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.SalesforceConfiguration;
 using System;
+using Informa.Library.ViewModels.Account;
 
 namespace Informa.Web.ViewModels
 {
@@ -24,8 +25,6 @@ namespace Informa.Web.ViewModels
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         
-
-
         public HeaderViewModel(
             IAuthenticatedUserContext authenticatedUserContext,
             IUserCompanyNameContext companyNameContext,
@@ -33,7 +32,8 @@ namespace Informa.Web.ViewModels
             ISiteRootContext siteRootContext,
             IUserProfileContext profileContext,
             IGlobalSitecoreService globalService,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            ISignInViewModel signInViewModel)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             CompanyNameContext = companyNameContext;
@@ -42,6 +42,7 @@ namespace Informa.Web.ViewModels
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            SignInViewModel = signInViewModel;
         }
 
         public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
@@ -89,7 +90,6 @@ namespace Informa.Web.ViewModels
 
         public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints();
 
-
         private string BuildLink(Link l)
         {
             if (l == null)
@@ -108,12 +108,14 @@ namespace Informa.Web.ViewModels
                     : local;
             }
         }
-
+        public bool IsErrorMessage => !string.IsNullOrWhiteSpace(HttpContext.Current.Request.QueryString["ErrorStatus"]) && string.Equals(HttpContext.Current.Request.QueryString["ErrorStatus"].ToString(), "true", StringComparison.OrdinalIgnoreCase);
+        public ISignInViewModel SignInViewModel { get; }
         public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
 
         private string GetCallbackUrl(string url)
         {
             return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
         }
+       
     }
 }

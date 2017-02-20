@@ -63,7 +63,7 @@ namespace Informa.Web.Areas.Article.Controllers
             if (Authors != null) filter.AuthorGuids.AddRange(Authors);
             if (MediaType != null) filter.MediaTypeTaxonomyIds.AddRange(MediaType);
             if (ContentType != null) filter.ContentTypeTaxonomyIds.AddRange(ContentType);
-            
+
             var results = ArticleSearch.Search(filter);
             var articles =
                 results.Articles.Where(a => a != null)
@@ -79,7 +79,7 @@ namespace Informa.Web.Areas.Article.Controllers
             latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");
             latest.LatestStoriesComponentTitle = TextTranslator.Translate("Latest.Published.Stories.Component.Title");
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
-        }        
+        }
 
         public IEnumerable<IListableViewModel> News { get; set; }
         public ILatest_Published_Stories_Options Parameters { get; set; }

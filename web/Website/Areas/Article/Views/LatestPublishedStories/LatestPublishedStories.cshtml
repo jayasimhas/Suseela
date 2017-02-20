@@ -2,11 +2,15 @@
 
 <div class="latestPublishedStoriesSection rolling-stream">
     <h2>@Model.LatestStoriesComponentTitle</h2>
-    <div class="rolling-stream-wrapper">
-        <div id="scrollbar-container">
-            <div id="scrollbar"></div>
+    @{
+        var hideScroll = Model.News.Count() < 7 ? "hide-scroll" : "";
+        var componentHeight = Model.News.Count() < 7  ? "auto" : "625px";
+    }
+    <div class="rolling-stream-wrapper @hideScroll" style="height:@componentHeight">
+        <div class="scrollbar-container">
+            <div class="scrollbar"></div>
         </div>
-        <div id="content">
+        <div class="content">
             @if (Model.News != null && Model.News.Any())
             {
 

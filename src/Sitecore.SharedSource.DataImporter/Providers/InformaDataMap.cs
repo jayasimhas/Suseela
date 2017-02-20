@@ -324,11 +324,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 else if (!string.IsNullOrEmpty(imageTitleHtml))
                                 {
-                                    ao.Add("MEDIA", "Chart/Table");
+                                    ao.Add("MEDIA", "chart/table");
                                 }
                                 else if (CheckTable(GetXMLData(d, bodyNode)))
                                 {
-                                    ao.Add("MEDIA", "Chart/Table");
+                                    ao.Add("MEDIA", "chart/table");
                                 }
                                 else if (CheckIframe(GetXMLData(d, bodyNode)))
                                 {
@@ -475,7 +475,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodityfactor in commodityfactorSearchResults)
                                     {
-                                        if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks")) || !(commodityfactor.ToLower() == "energy drinks" && commodityfactorSearchResults.Contains("energy drinks")))
+                                        if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks")))
                                             CommodityFactor += commodityfactor + ",";
 
                                     }
@@ -681,11 +681,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         private bool CheckTable(string searchtable)
         {
 
-            Regex regex = new Regex("<table>(.*)</table>");
+            Regex regex = new Regex("<table (.*)</table>");
             var v = regex.Match(searchtable);
 
 
-            if ((v != null) && (v.ToString().Contains("<tr>")))
+            if ((v != null) && (v.Length>0))
             {
                 return true;
 
@@ -807,7 +807,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/",":" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/",":",")","(" };
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")

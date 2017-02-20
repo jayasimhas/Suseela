@@ -2086,6 +2086,7 @@
     <Content Include="App_Config\Include\Informa.Products.Insights.Global.ItemIds.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\UserDefined\CmsCustomiztion.config" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />

@@ -5,8 +5,22 @@
 #main-carousel {
 		.owl-carousel .item{
 			height: 290px;
+			@media only screen and (min-width: 767px) and (max-width: 1024px) {
+				height: auto;
+			}
 			@include breakpoint('small') {
 				height: auto;
+			}
+		}
+		.sorting-arrows__arrow {
+			width: 35px;
+			height: 35px;
+			fill: black;
+			&.left-arrow {
+				transform: rotate(-90deg);
+			}
+			&.right-arrow {
+				transform: rotate(90deg);
 			}
 		}
 		.owl-theme .owl-nav [class*='owl-']{
@@ -21,12 +35,25 @@
 		  height: 100%;
 		  padding: 15px 18px;
 		  margin-top: 10px;
+		  &:after{
+				display: block;
+				clear: both;
+				content: '';
+			}
 			@include breakpoint('medium') {
 				&:after{
 					display: block;
 					clear: both;
 					content: '';
 				}
+			}
+		}
+		@media only screen and (min-width: 767px) and (max-width: 1024px) {
+			.hideinTab {
+				display: none !important;
+			}
+			.showinTab {
+				display: block !important;
 			}
 		}
 		.li-content-company img {
@@ -36,12 +63,12 @@
 		}
 		.li-content-company p {
 		  padding: 0 0 8px 0;
-		  font-size: smaller;
+		  font-size: 1rem;
 		  margin-bottom: 20px;
 		}
-		.li-content-company a {
-			color: #000;
-		}
+		// .li-content-company a {
+		// 	color: #000;
+		// }
 		.li-content-company a:hover {
 		  
 		}
@@ -57,7 +84,7 @@
 			  display: block;
 			  background: #fff;
 			  div{
-				  div{
+				  div.amcharts-chart-div{
 					  height: 220px !important;
 					  svg{
 						height: 220px !important;
@@ -71,9 +98,9 @@
 		  padding: 0 0 0 0;
 		  margin-bottom: 22px;
 		}
-		.li-content-graph p a {
-			color: #000;
-		}
+		// .li-content-graph p a {
+		// 	color: #000;
+		// }
 		.li-content-graph p a:hover {
 		}
 		.hideinMob{
@@ -146,6 +173,12 @@
 			position: absolute;
 			top: 140px;
 			right: -44px;
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				right: -32px;
+			}
+			@include breakpoint('small') {
+				right: -31px;
+			}
 			margin-top: 0;
 			margin-bottom: 0;
 			opacity: 0.7;
@@ -294,7 +327,7 @@
 		  display: block;
 		  background: #fff;
 		  div{
-			  div{
+			  div.amcharts-chart-div{
 				  height: 220px !important;
 				  svg{
 					height: 220px !important;
