@@ -1263,3 +1263,11 @@ $(document).ready(function(){
 
 
 
+//IPMP-1759 
+ $(document).ready(function() {
+        var Ads= $('.advertising--leaderboard');
+         if ($(window).width() > 480 ) {
+            $('.main__wrapper').prepend(Ads);
+            $('.header__wrapper .advertising--leaderboard').remove();
+         }
+ }); 
