@@ -7,7 +7,7 @@
         $color-primary-default,
         $color-white,
         $color-primary-hover,
-        $color-secondary-color,
+        $color-primary-hover,
         $color-white);
 
     @include theme-main-menu($color-secondary-color, $color-primary-hover);
