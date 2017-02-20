@@ -9,7 +9,7 @@
         <span>@Model.CarouselHeading</span>
     </div>
     <div>
-        <ul id="mycarousel1" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 hideinMob">
+        <ul id="mycarousel1" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 hideinMob hideinTab">
             @foreach (var company in Model.CompanyCarouselPanels)
             {
                 <li class="item">
@@ -42,7 +42,7 @@
             }
         </ul>
 
-        <ul id="mycarousel2" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 showinMob">
+        <ul id="mycarousel2" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 showinMob showinTab">
             @foreach (var company in Model.CompanyCarouselPanels)
             {
                 <li class="item">

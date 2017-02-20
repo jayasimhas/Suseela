@@ -943,7 +943,7 @@ p {
   display: block;
   text-align: center; }
 
-.login-form {
+.update-password-text {
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
   font-family: 'Roboto'; }
@@ -3808,7 +3808,8 @@ body.lightboxed {
         padding-left: 10px; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .year_heading {
-        padding-left: 5px; } }
+        padding-left: 5px;
+        height: 7em; } }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
