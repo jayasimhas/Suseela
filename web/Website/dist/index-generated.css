@@ -942,6 +942,9 @@ p {
   width: 100% !important;
   display: block;
   text-align: center; }
+  .full-width-button.update-password-btn {
+    max-width: 350px;
+    float: left; }
 
 .update-password-text {
   margin-bottom: 20px;
@@ -2211,8 +2214,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     font-size: 16px;
     font-size: 1rem;
     margin-bottom: 20px; }
-  #main-carousel .li-content-company a, #main-carousel .li-content-company .pop-out__reset-password, #main-carousel .li-content-company .sortable-table__list-toggler, #main-carousel .li-content-company .mobile-table-exit {
-    color: #000; }
   #main-carousel .li-content-graph {
     border: none;
     background-color: #eeeeee;
@@ -2231,8 +2232,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     font-size: smaller;
     padding: 0 0 0 0;
     margin-bottom: 22px; }
-  #main-carousel .li-content-graph p a, #main-carousel .li-content-graph p .pop-out__reset-password, #main-carousel .li-content-graph p .sortable-table__list-toggler, #main-carousel .li-content-graph p .mobile-table-exit {
-    color: #000; }
   #main-carousel .hideinMob {
     display: block; }
     @media (max-width: 640px) {
