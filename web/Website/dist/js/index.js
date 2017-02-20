@@ -12154,15 +12154,6 @@ $(document).ready(function () {
     });
 });
 
-//IPMP-1759
-$(document).ready(function () {
-    var Ads = $('.advertising--leaderboard');
-    if ($(window).width() > 480) {
-        $('.main__wrapper').prepend(Ads);
-        $('.header__wrapper .advertising--leaderboard').remove();
-    }
-});
-
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":20,"./components/ll-tanker-fixtures":21,"./components/myview-settings":22,"./components/pagination":23,"./components/personalisation":24,"./components/save-search-component":25,"./components/scrollbar.js":26,"./components/table_charts":27,"./components/video-mini":28,"./controllers/analytics-controller":29,"./controllers/bookmark-controller":30,"./controllers/form-controller":31,"./controllers/lightbox-modal-controller":32,"./controllers/pop-out-controller":33,"./controllers/register-controller":34,"./controllers/reset-password-controller":35,"./controllers/sortable-table-controller":36,"./controllers/tooltip-controller":37,"./jscookie":39,"./modal":40,"./newsletter-signup":41,"./search-page.js":42,"./selectivity-full":43,"./svg4everybody":44,"./toggle-icons":45,"./zepto.dragswap":46,"./zepto.min":47}],39:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
