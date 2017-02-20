@@ -4239,11 +4239,30 @@ body.lightboxed {
     -webkit-transition-delay: 0s, 0.3s;
             transition-delay: 0s, 0.3s; }
 
+header .advertising--leaderboard.visible-mobile {
+  display: none; }
+  @media (max-width: 480px) {
+    header .advertising--leaderboard.visible-mobile {
+      display: block; } }
+
+header .header__wrapper {
+  height: 100px; }
+
+header .header-publication-links {
+  top: 50px; }
+  @media (max-width: 640px) {
+    header .header-publication-links {
+      top: 50px; } }
+  @media (max-width: 800px) {
+    header .header-publication-links {
+      top: 50px; } }
+
 header .header-account-access {
   -webkit-box-flex: 2 !important;
       -ms-flex: 2 0 auto !important;
           flex: 2 0 auto !important;
-  padding: 0 !important; }
+  padding: 0 !important;
+  position: relative; }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     header .header-account-access {
       margin-top: -25px; } }
@@ -4358,6 +4377,13 @@ header .header-account-access {
 @media only screen and (max-width: 1024px) {
   div.header__logo {
     width: auto !important; } }
+
+main .advertising--leaderboard.visible-desktop {
+  padding: 30px 0 0 0; }
+  @media (max-width: 480px) {
+    main .advertising--leaderboard.visible-desktop {
+      display: none;
+      padding: 30px 0; } }
 
 .messaging_webUsers {
   width: 100% !important;
