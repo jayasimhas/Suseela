@@ -4260,8 +4260,7 @@ header .header-account-access {
   -webkit-box-flex: 2 !important;
       -ms-flex: 2 0 auto !important;
           flex: 2 0 auto !important;
-  padding: 0 !important;
-  position: relative; }
+  padding: 0 !important; }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     header .header-account-access {
       margin-top: -25px; } }
