@@ -7,6 +7,7 @@ using Jabberwocky.Glass.Autofac.Util;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
+using Sitecore.SecurityModel;
 using System;
 using System.Linq;
 namespace Informa.Library.CustomSitecore.Events
@@ -26,11 +27,14 @@ namespace Informa.Library.CustomSitecore.Events
                     {
                         _articleSearch = scope.Resolve<IArticleSearch>();
                         var publication = newarticleItem.Axes.GetAncestors().FirstOrDefault(ancestor => string.Equals(ancestor.TemplateID.ToString(), ISite_RootConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase));
-                        newarticleItem.Editing.BeginEdit();
-                        newarticleItem["Created Date"] = Sitecore.DateUtil.ToIsoDate(DateTime.Now);
-                        var articleNum = _articleSearch.GetNextArticleNumber(new Guid(publication?.ID.ToString()));
-                        newarticleItem["Article Number"] = GetNextArticleNumber(articleNum, new Guid(publication?.ID.ToString()), _articleSearch.GetPublicationPrefix(publication?.ID.ToString()));
-                        newarticleItem.Editing.EndEdit();
+                        using (new SecurityDisabler())
+                        {
+                            newarticleItem.Editing.BeginEdit();
+                            newarticleItem["Created Date"] = Sitecore.DateUtil.ToIsoDate(DateTime.Now);
+                            var articleNum = _articleSearch.GetNextArticleNumber(new Guid(publication?.ID.ToString()));
+                            newarticleItem["Article Number"] = GetNextArticleNumber(articleNum, new Guid(publication?.ID.ToString()), _articleSearch.GetPublicationPrefix(publication?.ID.ToString()));
+                            newarticleItem.Editing.EndEdit();
+                        }
                     }
                 }
                 catch (Exception ex)

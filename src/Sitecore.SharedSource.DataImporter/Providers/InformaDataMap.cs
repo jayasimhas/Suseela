@@ -475,7 +475,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodityfactor in commodityfactorSearchResults)
                                     {
-                                        if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks"))
+                                        if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks")))
                                             CommodityFactor += commodityfactor + ",";
 
                                     }
