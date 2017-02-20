@@ -9953,7 +9953,12 @@ div#feedbacklite.fbl_r {
     float: right;
     width: 100%;
     text-align: right;
-    font-style: italic; }
+    font-style: italic;
+    margin-top: -35px;
+    padding-right: 20px; }
+    @media (max-width: 480px) {
+      .header-account-access__error-msg {
+        margin-top: 0; } }
   @media (max-width: 480px) {
     .header-account-access__friendly-greeting {
       display: none; } }
