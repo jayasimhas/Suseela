@@ -3774,7 +3774,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 //string upperValue = val.ToUpper();
                 // string upperValue = val.ToUpper();
 
-                if (val == "cbot review" || val == "ice canada review" || val == "ice us review" || val == "weekly report")
+                if (val == "cbot review" || val == "ice canada review" || val == "ice us review" || val == "weekly review")
                 {
                     string transValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
 

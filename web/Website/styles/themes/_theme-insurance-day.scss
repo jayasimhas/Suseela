@@ -43,4 +43,6 @@
 		transparentize($color-cardinal-color, 0.9),
 		transparentize($color-cardinal-color, 0.5));
 
+    @include theme-table($color-primary-insurance-hover, $color-primary-crimson,$color-cardinal-color, transparentize($color-cardinal-color, 0.8));
+
 }

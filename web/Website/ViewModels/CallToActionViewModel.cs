@@ -7,55 +7,40 @@ using Informa.Library.ViewModels.Account;
 using Informa.Web.ViewModels.PopOuts;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.SalesforceConfiguration;
+using System.Web;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService]
-	public class CallToActionViewModel : ICallToActionViewModel
-	{
-		protected readonly ITextTranslator TextTranslator;
-		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IArticle CurrentItem;
+    [AutowireService]
+    public class CallToActionViewModel : ICallToActionViewModel
+    {
+        protected readonly ITextTranslator TextTranslator;
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly IArticle CurrentItem;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
-		public CallToActionViewModel(
-			ITextTranslator textTranslator,
-			ISignInViewModel signInViewModel,
-			IRegisterPopOutViewModel registerPopOutViewModel,
-			ISiteRootContext siteRootContext,
-			IAuthenticatedUserContext authenticatedUserContext,
-			ISitecoreContext sitecoreContext)
-		{
-			TextTranslator = textTranslator;
-			SignInViewModel = signInViewModel;
-			RegisterPopOutViewModel = registerPopOutViewModel;
-			SiteRootContext = siteRootContext;
-			AuthenticatedUserContext = authenticatedUserContext;
-			CurrentItem = sitecoreContext.GetCurrentItem<IArticle>();
-		}
+        public CallToActionViewModel(
+            ITextTranslator textTranslator,
+            ISignInViewModel signInViewModel,
+            IRegisterPopOutViewModel registerPopOutViewModel,
+            ISiteRootContext siteRootContext,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ISitecoreContext sitecoreContext,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
+        {
+            TextTranslator = textTranslator;
+            SignInViewModel = signInViewModel;
+            RegisterPopOutViewModel = registerPopOutViewModel;
+            SiteRootContext = siteRootContext;
+            AuthenticatedUserContext = authenticatedUserContext;
+            CurrentItem = sitecoreContext.GetCurrentItem<IArticle>();
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+
+        }
 
         #region Implementation of ICallToActionViewModel
-
-        //public ISignInViewModel SignInViewModel { get; }
-        //public IRegisterPopOutViewModel RegisterPopOutViewModel { get; }
-        //public string SigninTitle => TextTranslator.Translate("CallToAction.SignIn.Title");
-        //public string SigninSubtitle => string.IsNullOrEmpty(SiteRootContext?.Item?.SignIn_SubTitle) ? TextTranslator.Translate("CallToAction.SignIn.SubTitle") : SiteRootContext?.Item?.SignIn_SubTitle;
-        //public string RegisterTitle => CurrentItem.Free_With_Registration ? TextTranslator.Translate("CallToAction.Register.TitleForFreeArticles") : TextTranslator.Translate("CallToAction.Register.Title");
-        //public string RegisterSubtitle
-        //{
-        //	get
-        //	{
-        //		if (CurrentItem.Free_With_Registration)
-        //			return string.IsNullOrEmpty(SiteRootContext?.Item?.Register_SubTitle_For_Free_Articles) ? TextTranslator.Translate("CallToAction.Register.SubTitleForFreeArticles") : SiteRootContext?.Item?.Register_SubTitle_For_Free_Articles;
-        //		else
-        //			return string.IsNullOrEmpty(SiteRootContext?.Item?.Register_SubTitle) ? TextTranslator.Translate("CallToAction.Register.SubTitle") : SiteRootContext?.Item?.Register_SubTitle;
-        //	}
-        //}
-        //public string SubscribeTitle => TextTranslator.Translate("CallToAction.Subscribe.Title");
-        //public string SubscribeLinkUrl => SiteRootContext?.Item?.Subscribe_Link?.Url ?? string.Empty;
-        //public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link?.Text ?? string.Empty;
-        //public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
-        //public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public ISignInViewModel SignInViewModel { get; }
         public IRegisterPopOutViewModel RegisterPopOutViewModel { get; }
         public string SigninTitle => TextTranslator.Translate("CallToAction.SignIn.Title");
@@ -67,7 +52,14 @@ namespace Informa.Web.ViewModels
         public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link?.Text ?? string.Empty;
         public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public bool IsNewSalesforceEnabled => SalesforceConfigurationContext.IsNewSalesforceEnabled;
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString());
+        public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
+        private string GetCallbackUrl(string url)
+        {
+            return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
 
+        }
         #endregion
     }
 }

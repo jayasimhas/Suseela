@@ -938,6 +938,16 @@ p {
   display: block;
   text-align: center; }
 
+.full-width-button {
+  width: 100% !important;
+  display: block;
+  text-align: center; }
+
+.login-form {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-family: 'Roboto'; }
+
 .mb-20 {
   margin-bottom: 20px; }
 
@@ -2198,7 +2208,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     width: 100px; }
   #main-carousel .li-content-company p {
     padding: 0 0 8px 0;
-    font-size: smaller;
+    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 20px; }
   #main-carousel .li-content-company a, #main-carousel .li-content-company .pop-out__reset-password, #main-carousel .li-content-company .sortable-table__list-toggler, #main-carousel .li-content-company .mobile-table-exit {
     color: #000; }
@@ -2212,9 +2223,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       height: 224px;
       display: block;
       background: #fff; }
-      #main-carousel .li-content-graph > a div div, #main-carousel .li-content-graph > .pop-out__reset-password div div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div, #main-carousel .li-content-graph > .mobile-table-exit div div {
+      #main-carousel .li-content-graph > a div div.amcharts-chart-div, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div {
         height: 220px !important; }
-        #main-carousel .li-content-graph > a div div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #main-carousel .li-content-graph > .mobile-table-exit div div svg {
+        #main-carousel .li-content-graph > a div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
           height: 220px !important; }
   #main-carousel .li-content-graph p {
     font-size: smaller;
@@ -2403,9 +2414,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       height: 224px;
       display: block;
       background: #fff; }
-      #graph-carousel .li-content-graph > a div div, #graph-carousel .li-content-graph > .pop-out__reset-password div div, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div, #graph-carousel .li-content-graph > .mobile-table-exit div div {
+      #graph-carousel .li-content-graph > a div div.amcharts-chart-div, #graph-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div, #graph-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div {
         height: 220px !important; }
-        #graph-carousel .li-content-graph > a div div svg, #graph-carousel .li-content-graph > .pop-out__reset-password div div svg, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div svg, #graph-carousel .li-content-graph > .mobile-table-exit div div svg {
+        #graph-carousel .li-content-graph > a div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
           height: 220px !important; }
   #graph-carousel .li-content-graph p {
     font-size: smaller;
@@ -3568,7 +3579,6 @@ body.lightboxed {
       font-weight: bold; }
 
 .idi-table-heading {
-  background-color: #91211E;
   color: #ffffff;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3634,8 +3644,6 @@ body.lightboxed {
     display: table-row; }
     .table-wrapper .tableRow:nth-child(odd) {
       background-color: #f1f1f1; }
-    .table-wrapper .tableRow:hover .tableCell {
-      background-color: #efd0d8; }
   .table-wrapper .tableHeading {
     display: table-header-group; }
   .table-wrapper .tableHead {
@@ -3646,7 +3654,6 @@ body.lightboxed {
     font-family: "PT Serif", Georgia, serif;
     font-size: 16px;
     text-align: center;
-    background-color: #de4361;
     color: #ffffff;
     position: relative; }
     .table-wrapper .tableHead:first-child {
@@ -3712,7 +3719,6 @@ body.lightboxed {
       .ID-Responsive-Table#financialresults .article .year_heading, .ID-Responsive-Table#financialresults .article .R16 {
         padding-right: 10px; }
   .ID-Responsive-Table .table_head {
-    background-color: #91211E;
     color: #ffffff;
     padding: 10px;
     padding-right: 95px !important; }
@@ -3786,7 +3792,6 @@ body.lightboxed {
       height: 58px;
       padding-top: 14px; }
   .ID-Responsive-Table .year_heading {
-    background-color: #de4361 !important;
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -3804,17 +3809,6 @@ body.lightboxed {
     @media (max-width: 480px) {
       .ID-Responsive-Table .year_heading {
         padding-left: 5px; } }
-  .ID-Responsive-Table .owl-dots {
-    float: left;
-    margin-top: 20px; }
-    .ID-Responsive-Table .owl-dots .owl-dot span {
-      background: #de4361; }
-    .ID-Responsive-Table .owl-dots .owl-dot.active span {
-      background: #ffffff !important; }
-    .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
-      background: #ffffff; }
-    .ID-Responsive-Table .owl-dots .owl-dot:hover span {
-      background: #de4361; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
@@ -3889,9 +3883,6 @@ body.lightboxed {
 #financialresults .owl-wrapper {
   width: 60%;
   float: right; }
-
-.activate-hover {
-  background: #efd0d8 !important; }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -6051,8 +6042,8 @@ header .header-account-access {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
-        margin: 24px 20px 8px;
-        margin: 1.5rem 1.25rem .5rem; } }
+        margin: 24px 20px 8px 16px;
+        margin: 1.5rem 1.25rem .5rem 1rem; } }
 
 .personalisationhome .article-preview__inner-wrapper.showarticle {
   height: 100px;
@@ -7832,9 +7823,6 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .casualtyPan .table .R16 p {
   margin-bottom: 12px !important; }
 
-.casualty-table-theme a, .casualty-table-theme .pop-out__reset-password, .casualty-table-theme .sortable-table__list-toggler, .casualty-table-theme .mobile-table-exit {
-  color: #1191d1; }
-
 .casualty-table-theme .table {
   width: 790px !important; }
   @media screen and (min-width: 801px) and (max-width: 1024px) {
@@ -7849,11 +7837,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-size: 16px !important;
       font-weight: bold !important; }
     .casualty-table-theme .table .table_head .visible-lg {
-      background: #1191D1;
       color: #fff;
       font-weight: normal; }
   .casualty-table-theme .table .top {
-    color: #58595b;
+    color: #58595b !important;
     width: 45px;
     height: 40px;
     display: block;
@@ -8854,7 +8841,6 @@ div#feedbacklite.fbl_r {
       #market-data-tool.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
         display: none; } }
     #market-data-tool.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head {
-      background-color: #0f5487;
       color: #ffffff; }
       #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
         font-size: 16px;
@@ -8863,7 +8849,6 @@ div#feedbacklite.fbl_r {
           #market-data-tool.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
             font-size: 12px; } }
       #market-data-tool.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
-        background: #1191d1;
         color: #fff; }
         #market-data-tool.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
           font-weight: bold; }
@@ -9273,7 +9258,6 @@ div#feedbacklite.fbl_r {
     padding: 10px; }
   .id-merges-acquisition .show-largest-btn {
     padding: 10px;
-    background-color: #DE4361;
     color: #ffffff !important;
     float: left;
     margin-right: 10px;
@@ -9322,8 +9306,6 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .table.merge-acquistion input[type="text"] {
       width: 100%;
       color: #000; }
-    .id-merges-acquisition .table.merge-acquistion tr:hover {
-      background-color: #efd0d8 !important; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr:nth-child(even) {
       background-color: #eee; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr {
@@ -9359,8 +9341,7 @@ div#feedbacklite.fbl_r {
       padding-top: 0;
       padding-bottom: 0; }
       .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap {
-        padding: 0 5px;
-        background-color: #DE4361; }
+        padding: 0 5px; }
         .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap:after {
           visibility: hidden;
           display: block;
@@ -9540,8 +9521,7 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .merges-form {
     font-family: 'Roboto'; }
     .id-merges-acquisition .merges-form .merge-form-items {
-      display: none;
-      background-color: #DE4361; }
+      display: none; }
       .id-merges-acquisition .merges-form .merge-form-items .show-largest-btn {
         margin: 0;
         font-size: 12px;
@@ -9562,8 +9542,7 @@ div#feedbacklite.fbl_r {
           color: #58595b; }
       .id-merges-acquisition .merges-form .merge-form-items .controls {
         float: left;
-        width: 100%;
-        background: #91211E; }
+        width: 100%; }
         .id-merges-acquisition .merges-form .merge-form-items .controls .selectivity-input {
           width: 100%;
           overflow: hidden;
@@ -9574,8 +9553,7 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .merges-form.open .merge-form-items {
       display: block; }
     .id-merges-acquisition .merges-form .merge-heading {
-      padding: 10px;
-      background-color: #91211E; }
+      padding: 10px; }
       .id-merges-acquisition .merges-form .merge-heading p {
         float: left;
         width: calc(100% - 40px);
@@ -9946,6 +9924,11 @@ div#feedbacklite.fbl_r {
       .header-account-access__friendly-greeting, .header-account-access__my-account, .header-account-access__sign-in-out {
         margin-right: 28px;
         margin-right: 1.75rem; } }
+  .header-account-access__error-msg {
+    float: right;
+    width: 100%;
+    text-align: right;
+    font-style: italic; }
   @media (max-width: 480px) {
     .header-account-access__friendly-greeting {
       display: none; } }
@@ -10290,7 +10273,8 @@ Contains information about an article's author or authors.
     margin-bottom: 1.5rem;
     overflow: auto;
     padding: 24px 0;
-    padding: 1.5rem 0; }
+    padding: 1.5rem 0;
+    font-family: 'Roboto'; }
     @media (max-width: 640px) {
       .article-call-to-action--sign-in-up, .article-call-to-action--subscribe {
         display: block; } }
@@ -13504,7 +13488,7 @@ main {
 .theme-pink-sheet .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-pink-sheet .header-account-access__my-account, .theme-pink-sheet .header-account-access__sign-in-out {
+.theme-pink-sheet .header-account-access__my-account, .theme-pink-sheet .header-account-access__sign-in-out, .theme-pink-sheet .header-account-access__error-msg {
   color: #d82b6a; }
 
 .theme-pink-sheet .article-preview__headline,
@@ -13843,7 +13827,7 @@ main {
 .theme-rose-sheet .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-rose-sheet .header-account-access__my-account, .theme-rose-sheet .header-account-access__sign-in-out {
+.theme-rose-sheet .header-account-access__my-account, .theme-rose-sheet .header-account-access__sign-in-out, .theme-rose-sheet .header-account-access__error-msg {
   color: #c8206e; }
 
 .theme-rose-sheet .article-preview__headline,
@@ -14182,7 +14166,7 @@ main {
 .theme-medtech .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-medtech .header-account-access__my-account, .theme-medtech .header-account-access__sign-in-out {
+.theme-medtech .header-account-access__my-account, .theme-medtech .header-account-access__sign-in-out, .theme-medtech .header-account-access__error-msg {
   color: #007cc3; }
 
 .theme-medtech .article-preview__headline,
@@ -14521,7 +14505,7 @@ main {
 .theme-invivo .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-invivo .header-account-access__my-account, .theme-invivo .header-account-access__sign-in-out {
+.theme-invivo .header-account-access__my-account, .theme-invivo .header-account-access__sign-in-out, .theme-invivo .header-account-access__error-msg {
   color: #ca4d2c; }
 
 .theme-invivo .article-preview__headline,
@@ -14860,7 +14844,7 @@ main {
 .theme-commodities .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-commodities .header-account-access__my-account, .theme-commodities .header-account-access__sign-in-out {
+.theme-commodities .header-account-access__my-account, .theme-commodities .header-account-access__sign-in-out, .theme-commodities .header-account-access__error-msg {
   color: #9E310D; }
 
 .theme-commodities .article-preview__headline,
@@ -15195,7 +15179,7 @@ main {
 .theme-insurance-day .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out {
+.theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out, .theme-insurance-day .header-account-access__error-msg {
   color: #DE4361; }
 
 .theme-insurance-day .article-preview__headline,
@@ -15384,6 +15368,41 @@ main {
   .theme-insurance-day .quick-facts hr {
     background-color: rgba(176, 23, 61, 0.5); }
 
+.theme-insurance-day .idi-table-heading, .theme-insurance-day .controls, .theme-insurance-day .merge-heading,
+.theme-insurance-day .ID-Responsive-Table .table_head,
+.theme-insurance-day .table-responsive .table .table_head {
+  background-color: #91211E; }
+
+.theme-insurance-day .label-wrap, .theme-insurance-day .show-largest-btn, .theme-insurance-day .merge-form-items,
+.theme-insurance-day .table-wrapper .tableHead {
+  background-color: #DE4361; }
+
+.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head {
+  background-color: #b0173d; }
+
+.theme-insurance-day .ID-Responsive-Table .owl-dots {
+  float: left;
+  margin-top: 20px; }
+  .theme-insurance-day .ID-Responsive-Table .owl-dots .owl-dot span {
+    background: #DE4361; }
+  .theme-insurance-day .ID-Responsive-Table .owl-dots .owl-dot.active span {
+    background: #ffffff !important; }
+  .theme-insurance-day .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
+    background: #ffffff; }
+  .theme-insurance-day .ID-Responsive-Table .owl-dots .owl-dot:hover span {
+    background: #DE4361; }
+
+.theme-insurance-day .year_heading {
+  background-color: #DE4361 !important; }
+
+.theme-insurance-day .merge-acquistion tr:hover,
+.theme-insurance-day .activate-hover,
+.theme-insurance-day .tableRow:hover .tableCell {
+  background-color: rgba(176, 23, 61, 0.2) !important; }
+
+.theme-insurance-day .table .table_head tr.visible-lg {
+  background-color: #DE4361; }
+
 .theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
 .theme-lloydslist .facets__button,
 .theme-lloydslist .facets__button:hover,
@@ -15530,7 +15549,7 @@ main {
 .theme-lloydslist .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-lloydslist .header-account-access__my-account, .theme-lloydslist .header-account-access__sign-in-out {
+.theme-lloydslist .header-account-access__my-account, .theme-lloydslist .header-account-access__sign-in-out, .theme-lloydslist .header-account-access__error-msg {
   color: #1191D1; }
 
 .theme-lloydslist .article-preview__headline,
@@ -15718,6 +15737,41 @@ main {
   background-color: rgba(0, 45, 79, 0.1); }
   .theme-lloydslist .quick-facts hr {
     background-color: rgba(0, 45, 79, 0.5); }
+
+.theme-lloydslist .idi-table-heading, .theme-lloydslist .controls, .theme-lloydslist .merge-heading,
+.theme-lloydslist .ID-Responsive-Table .table_head,
+.theme-lloydslist .table-responsive .table .table_head {
+  background-color: #002d4f; }
+
+.theme-lloydslist .label-wrap, .theme-lloydslist .show-largest-btn, .theme-lloydslist .merge-form-items,
+.theme-lloydslist .table-wrapper .tableHead {
+  background-color: #1191D1; }
+
+.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
+  background-color: #0f5487; }
+
+.theme-lloydslist .ID-Responsive-Table .owl-dots {
+  float: left;
+  margin-top: 20px; }
+  .theme-lloydslist .ID-Responsive-Table .owl-dots .owl-dot span {
+    background: #1191D1; }
+  .theme-lloydslist .ID-Responsive-Table .owl-dots .owl-dot.active span {
+    background: #ffffff !important; }
+  .theme-lloydslist .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
+    background: #ffffff; }
+  .theme-lloydslist .ID-Responsive-Table .owl-dots .owl-dot:hover span {
+    background: #1191D1; }
+
+.theme-lloydslist .year_heading {
+  background-color: #1191D1 !important; }
+
+.theme-lloydslist .merge-acquistion tr:hover,
+.theme-lloydslist .activate-hover,
+.theme-lloydslist .tableRow:hover .tableCell {
+  background-color: rgba(15, 84, 135, 0.2) !important; }
+
+.theme-lloydslist .table .table_head tr.visible-lg {
+  background-color: #1191D1; }
 
 /* * * * PRINT STYLES * * * */
 @media print {

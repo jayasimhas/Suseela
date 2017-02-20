@@ -25,7 +25,6 @@
 				}
 			}
 			.table_head{
-				background-color: #91211E;
 				color: $color-white;
 				padding: 10px;
 				padding-right: 95px !important;
@@ -109,7 +108,6 @@
 				
 			}
 			.year_heading{
-			  background-color: #de4361 !important;
 				color: white;
 				padding-top: 10px;
 				padding-bottom: 10px;
@@ -126,30 +124,7 @@
 					padding-left: 5px;
 				}
 			}
-			.owl-dots{
-			  float: left;
-			  margin-top: 20px;
-			  .owl-dot {
-			  	span {
-			  		background: #de4361;
-			  	}
-			  	&.active {
-			  		span {
-			  			background: $color-white !important;
-			  		}
-			  		&:hover {
-				  		span {
-				  			background: $color-white;
-				  		}
-				  	}
-			  	}
-			  	&:hover {
-			  		span {
-			  			background: #de4361;
-			  		}
-			  	}
-			  }
-			}
+			
 			.owl-nav {
 				float:right;
 			}
@@ -241,4 +216,3 @@
     float: right;
 
 }
-.activate-hover {background: #efd0d8 !important} 

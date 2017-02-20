@@ -322,7 +322,7 @@
 		<reg name="S America">South America</reg>
 		<reg name="South American">South America</reg>
 		<reg name="Argentinean">Argentina</reg>
-		<reg name="Argentinie">Argentina</reg>
+		<reg name="Argentine">Argentina</reg>
 		<reg name="Argentina's">Argentina</reg>
 		<reg name="Argentinian">Argentina</reg>
 		<reg name="Bolivian">Bolivia</reg>
@@ -1554,7 +1554,7 @@
 				<commodityFactor name="biofuel">Energy</commodityFactor>
 				<commodityFactor name="ethanol">Energy</commodityFactor>
 				<commodityFactor name="biodiesel">Energy</commodityFactor>
-				<commodityFactor name="energy drinks">Energy</commodityFactor>
+				<commodityFactor name="energy drinks"></commodityFactor>
 				<commodityFactor name="Freight">Freight</commodityFactor>
 				<commodityFactor name="Transport">Freight</commodityFactor>
 				<commodityFactor name="Port">Freight</commodityFactor>
@@ -1828,9 +1828,6 @@
 				<comm name="public_ledger_world_grain_market_report">
 					<![CDATA[Grains & Feed]]>
 				</comm>
-				<comm name="public_ledger_daily_futures_reviews">
-					<![CDATA[Grains & Feed]]>
-				</comm>
 				<comm name="public_ledger_daily_futures_reviews_cbot_corn">Corn</comm>
 				<comm name="public_ledger_daily_futures_reviews_cbot_rice">Rice</comm>
 				<comm name="public_ledger_daily_futures_reviews_cbot_soy_oil">Soy Oil</comm>
@@ -1926,9 +1923,9 @@
 				<comm name="public_ledger_commodities_nuts_pistachios">Pistachios</comm>
 				<comm name="public_ledger_commodities_nuts_walnuts">Walnuts</comm>
 				<comm name="public_ledger_commodities_nuts_other_nuts"><![CDATA[Dried Fruit & Nuts]]></comm>
-			    <comm name="CBOT Review"><![CDATA[Oils & Oilseeds,Soy,Soy oil,Grains & Feed,Soymeal,Corn,Wheat,Market Fundamental,Futures]]></comm>
-				<comm name="ICE Canada Review"><![CDATA[Oils & Oilseeds,Market Fundamental,Futures,Rapeseed]]></comm>
-				<comm name="ICE US Review"><![CDATA[Sugar,Coffee,Cocoa,Market Fundamental,Futures]]></comm>
+			    <comm name="CBOT Review"><![CDATA[Oils & Oilseeds,Soy,Soy oil,Grains & Feed,Soymeal,Corn,Wheat,Market Fundamentals,Futures]]></comm>
+				<comm name="ICE Canada Review"><![CDATA[Oils & Oilseeds,Market Fundamentals,Futures,Rapeseed]]></comm>
+				<comm name="ICE US Review"><![CDATA[Sugar,Coffee,Cocoa,Market Fundamentals,Futures]]></comm>
 				<comm name="Weekly Review"><![CDATA[Sugar,Coffee,Cocoa,Oils & Oilseeds,Grains & Feed]]></comm>
 			</commodity>
 			<commoditysearch>
@@ -2372,7 +2369,7 @@
 					<health name="Foot-and-mouth disease">Foot-and-mouth disease</health>
 					<health name="foot and mouth disease">Foot-and-mouth disease</health>
 					<health name="Inappetance">Inappetance</health>
-					<health name="Infectious salmon anemia">Infectious salmon anemia </health>
+					<health name="Infectious salmon anemia">Infectious salmon anemia</health>
 					<health name="Lumpy skin disease">Lumpy skin disease</health>
 					<health name="Mastitis">Mastitis</health>
 					<health name="Middle East Respiratory Syndrome">Middle East Respiratory Syndrome</health>
@@ -2757,7 +2754,7 @@
 		<reg name="S America">South America</reg>
 		<reg name="South American">South America</reg>
 		<reg name="Argentinean">Argentina</reg>
-		<reg name="Argentinie">Argentina</reg>
+		<reg name="Argentine">Argentina</reg>
 		<reg name="Argentina's">Argentina</reg>
 		<reg name="Argentinian">Argentina</reg>
 		<reg name="Bolivian">Bolivia</reg>

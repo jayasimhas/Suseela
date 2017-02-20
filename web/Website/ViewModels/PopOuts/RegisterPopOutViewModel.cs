@@ -38,5 +38,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string Username { get; set; }
 		public string RegisterReturnUrl => HttpContextProvider.RequestUri.AbsolutePath;
 		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
-	}
+        public string RegisterFreeTrialTitle => TextTranslator.Translate("CallToAction.Register.FreeTrialTitle");
+        public string RegisterFreeTrialButton => TextTranslator.Translate("CallToAction.Register.FreeTrialButton");
+    }
 }
