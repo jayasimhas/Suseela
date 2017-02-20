@@ -933,7 +933,7 @@ p {
   background: color(wireframe, 100, 0.75);
   border: 1px solid color(wireframe, 100); }
 
-.main__wrapper a.full-width-button, .main__wrapper .full-width-button.pop-out__reset-password, .main__wrapper .full-width-button.sortable-table__list-toggler, .main__wrapper .full-width-button.mobile-table-exit {
+.main__wrapper a.full-width-button, .main__wrapper .full-width-button.pop-out__reset-password, .main__wrapper .full-width-button.sortable-table__list-toggler, .main__wrapper .full-width-button.mobile-table-exit, .full-width-button {
   width: 100% !important;
   display: block;
   text-align: center; }
@@ -10263,7 +10263,8 @@ Contains information about an article's author or authors.
     margin-bottom: 1.5rem;
     overflow: auto;
     padding: 24px 0;
-    padding: 1.5rem 0; }
+    padding: 1.5rem 0;
+    font-family: 'Roboto'; }
     @media (max-width: 640px) {
       .article-call-to-action--sign-in-up, .article-call-to-action--subscribe {
         display: block; } }
