@@ -50,6 +50,12 @@
             margin-right: 1.75rem;
         }
     }
+    &__error-msg {
+        float: right;
+        width: 100%;
+        text-align: right;
+        font-style: italic;
+    }
     // Don't show the friendly welcome at smartphone widths
     @include breakpoint('small') {
         &__friendly-greeting {

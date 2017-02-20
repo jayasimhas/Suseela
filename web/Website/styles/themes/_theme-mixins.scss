@@ -19,7 +19,8 @@
 
     .header-account-access {
         &__my-account,
-        &__sign-in-out {
+        &__sign-in-out,
+        &__error-msg {
             color: $color;
         }
     }

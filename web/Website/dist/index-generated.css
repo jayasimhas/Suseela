@@ -9914,6 +9914,11 @@ div#feedbacklite.fbl_r {
       .header-account-access__friendly-greeting, .header-account-access__my-account, .header-account-access__sign-in-out {
         margin-right: 28px;
         margin-right: 1.75rem; } }
+  .header-account-access__error-msg {
+    float: right;
+    width: 100%;
+    text-align: right;
+    font-style: italic; }
   @media (max-width: 480px) {
     .header-account-access__friendly-greeting {
       display: none; } }
@@ -13472,7 +13477,7 @@ main {
 .theme-pink-sheet .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-pink-sheet .header-account-access__my-account, .theme-pink-sheet .header-account-access__sign-in-out {
+.theme-pink-sheet .header-account-access__my-account, .theme-pink-sheet .header-account-access__sign-in-out, .theme-pink-sheet .header-account-access__error-msg {
   color: #d82b6a; }
 
 .theme-pink-sheet .article-preview__headline,
@@ -13811,7 +13816,7 @@ main {
 .theme-rose-sheet .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-rose-sheet .header-account-access__my-account, .theme-rose-sheet .header-account-access__sign-in-out {
+.theme-rose-sheet .header-account-access__my-account, .theme-rose-sheet .header-account-access__sign-in-out, .theme-rose-sheet .header-account-access__error-msg {
   color: #c8206e; }
 
 .theme-rose-sheet .article-preview__headline,
@@ -14150,7 +14155,7 @@ main {
 .theme-medtech .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-medtech .header-account-access__my-account, .theme-medtech .header-account-access__sign-in-out {
+.theme-medtech .header-account-access__my-account, .theme-medtech .header-account-access__sign-in-out, .theme-medtech .header-account-access__error-msg {
   color: #007cc3; }
 
 .theme-medtech .article-preview__headline,
@@ -14489,7 +14494,7 @@ main {
 .theme-invivo .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-invivo .header-account-access__my-account, .theme-invivo .header-account-access__sign-in-out {
+.theme-invivo .header-account-access__my-account, .theme-invivo .header-account-access__sign-in-out, .theme-invivo .header-account-access__error-msg {
   color: #ca4d2c; }
 
 .theme-invivo .article-preview__headline,
@@ -14828,7 +14833,7 @@ main {
 .theme-commodities .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-commodities .header-account-access__my-account, .theme-commodities .header-account-access__sign-in-out {
+.theme-commodities .header-account-access__my-account, .theme-commodities .header-account-access__sign-in-out, .theme-commodities .header-account-access__error-msg {
   color: #9E310D; }
 
 .theme-commodities .article-preview__headline,
@@ -15163,7 +15168,7 @@ main {
 .theme-insurance-day .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out {
+.theme-insurance-day .header-account-access__my-account, .theme-insurance-day .header-account-access__sign-in-out, .theme-insurance-day .header-account-access__error-msg {
   color: #DE4361; }
 
 .theme-insurance-day .article-preview__headline,
@@ -15533,7 +15538,7 @@ main {
 .theme-lloydslist .sortable-table__col .mobile-table-exit {
   color: inherit; }
 
-.theme-lloydslist .header-account-access__my-account, .theme-lloydslist .header-account-access__sign-in-out {
+.theme-lloydslist .header-account-access__my-account, .theme-lloydslist .header-account-access__sign-in-out, .theme-lloydslist .header-account-access__error-msg {
   color: #1191D1; }
 
 .theme-lloydslist .article-preview__headline,
