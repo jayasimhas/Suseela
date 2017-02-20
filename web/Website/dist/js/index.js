@@ -12154,12 +12154,18 @@ $(document).ready(function () {
     });
 });
 
-//IPMP-1759
+//Advertisement Adjustment
+
 $(document).ready(function () {
-    var Ads = $('.advertising--leaderboard');
-    if ($(window).width() > 480) {
-        $('.main__wrapper').prepend(Ads);
-        $('.header__wrapper .advertising--leaderboard').remove();
+    var WindowWidth = $(window).width();
+    if (WindowWidth > 667) {
+        var AdHeight = $('.advertising--leaderboard').height();
+
+        $('.advertising--leaderboard').css({
+            'position': 'absolute',
+            'top': OffsetTop + 'px'
+        });
+        $('.advertisement-placeholder').height(AdHeight);
     }
 });
 

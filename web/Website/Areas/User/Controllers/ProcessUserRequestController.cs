@@ -4,7 +4,7 @@ using Informa.Library.Site;
 using Informa.Library.User.Authentication.Web;
 using Jabberwocky.Autofac.Attributes;
 using System.Web.Mvc;
-
+using Informa.Library.User.Authentication;
 
 namespace Informa.Web.Areas.UserRequest
 {
@@ -28,7 +28,10 @@ namespace Informa.Web.Areas.UserRequest
         public ActionResult Index(string code, string state)
         {
             var result = AuthenticateWebUser.Authenticate(code, GetCallbackUrl("/User/ProcessUserRequest"));
-            return Redirect(state);
+            if (!result.Success && result.State.Equals(AuthenticateUserResultState.Failure))
+                return Redirect(state + "?ErrorStatus=" +"true");
+            else
+                return Redirect(state);
         }
 
         public ActionResult Register()
