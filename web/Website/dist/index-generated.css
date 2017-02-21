@@ -15622,7 +15622,7 @@ main {
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
-  background-color: #0f5487; }
+  background-color: #1191D1; }
 
 .theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -15684,31 +15684,31 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #002d4f; }
+  border-top: 4px solid #1191D1; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
 .theme-lloydslist .article-sidebar,
 .theme-lloydslist .topic-subtopic__header {
-  border-top-color: #002d4f;
-  border-bottom-color: #002d4f;
-  border-color: #002d4f; }
+  border-top-color: #1191D1;
+  border-bottom-color: #1191D1;
+  border-color: #1191D1; }
 
 .theme-lloydslist .latest-news__header:before {
-  background-color: #002d4f; }
+  background-color: #1191D1; }
 
 .theme-lloydslist .theme-header__underline {
-  border-bottom: 4px solid #002d4f;
+  border-bottom: 4px solid #1191D1;
   padding: 24px 0;
   padding: 1.5rem 0; }
 
 .theme-lloydslist .article-list-sidebar__wrapper {
-  border-bottom: 4px solid #002d4f; }
+  border-bottom: 4px solid #1191D1; }
 
 .theme-lloydslist .theme-hover__header a, .theme-lloydslist .theme-hover__header .pop-out__reset-password, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler, .theme-lloydslist .theme-hover__header .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .theme-hover__header a:hover, .theme-lloydslist .theme-hover__header .pop-out__reset-password:hover, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler:hover, .theme-lloydslist .theme-hover__header .mobile-table-exit:hover {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
   position: relative; }
@@ -15718,16 +15718,16 @@ main {
     bottom: 0;
     height: 4px;
     width: calc( 100% - 15px);
-    background: #002d4f;
+    background: #1191D1;
     left: 0; }
 
 .theme-lloydslist .rolling-stream h5 a, .theme-lloydslist .rolling-stream .alert-success p a, .alert-success .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .alert-error p a, .alert-error .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-lloydslist .rolling-stream h5 .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .rolling-stream .article-related-content__date {
-  color: #002d4f; }
+  color: #1191D1; }
 
 .theme-lloydslist .header-line-control:after {
   border: 2px solid #DE4361; }

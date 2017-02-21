@@ -10,15 +10,15 @@
         $color-primary-hover,
         $color-white);
 
-    @include theme-main-menu($color-secondary-color, $color-primary-hover);
+    @include theme-main-menu( $color-primary-default, $color-primary-hover);
 
     @include theme-subnav($color-primary-hover);
 
     @include theme-banners($color-primary-default, $color-white);
 
-    @include theme-call-out-boxes($color-concrete-gray, $color-primary-hover);
+    @include theme-call-out-boxes($color-concrete-gray, $color-primary-default);
 
-    @include theme-bordered-elements($color-primary-hover);
+    @include theme-bordered-elements($color-primary-default);
 
     @include theme-interviews(
         transparentize($color-secondary-color, 0.7),
