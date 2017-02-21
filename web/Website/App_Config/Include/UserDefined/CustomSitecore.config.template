@@ -276,6 +276,8 @@ But you can also use "patch:attribute" for clarity:
       
       <!-- Multiple Salesforce Support Settings -->
       <setting name="MultipleSalesforceSupportEnabled" value="${CRMManager.MultipleSalesforceSupportEnabled}" />
+      <setting name="UserDetailsSeparator" value="~#~" />
+      
 
 
       <!-- ExactTarget Settings -->

@@ -19,8 +19,9 @@ namespace Informa.Library.SalesforceConfiguration
         private string _authorizationRequestEndPoints = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
         private string _userEntitlementsRequestEndPoints = "/services/apexrest/UserEntitlements/{0}";
         private string _registrationEndpoints = "{0}/registration?referralurl={1}&referralid={2}";
-        private const string _logoutEndpoints = "{0}/secur/logout.jsp";
-        private const string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
+        private string _logoutEndpoints = "{0}/secur/logout.jsp";
+        private string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
+        private string _changePasswordEndpoints = "{0}/changepassword?referralurl={1}&referralid={2}";
 
 
         public SalesforceConfigurationContext(
@@ -93,7 +94,11 @@ namespace Informa.Library.SalesforceConfiguration
             return string.Format(_registrationEndpoints,
             SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralid);
         }
-
+        public string GetChangePasswordEndpoint(string referralurl, string referralid)
+        {
+            return string.Format(_changePasswordEndpoints,
+                        SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralid);
+        }
         public string GetUpdateUserDetailsEndPoints(string userName)
         {
            return string.Format(_userDetailsEndPoints, userName);

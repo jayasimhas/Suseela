@@ -86,6 +86,7 @@
     <Compile Include="User\Profile\SalesforceManageAccountInfoV2.cs" />
     <Compile Include="User\Profile\SalesforceUserInfo.cs" />
     <Compile Include="User\Profile\UpdateUserDeatilsRequest.cs" />
+    <Compile Include="User\Profile\UserInfoCustomAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
