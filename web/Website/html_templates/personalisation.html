@@ -110,10 +110,20 @@
          <div class="main__wrapper" data-request-verification-token="WeShyS9vDy3l5rBrFnq2K6Fu1jC0xiiFun6mBbE62mH4A_n1MawPiLTF9pXLMY-dEsmgC7GQCUwShq7rf6JJZN7xfWcEmOwt9ZCLev_S0K01:zhx2Rr_STiS7L78rvrOXurIcBxOQgTgU0uupB73ZMSRVMAxpwLxGeXHMAJ5Rme6JqWVGSNYK3SYGZVj1fODHLMZfGWTA91dYvw8wJihwA4Rv2QtJxcVZNgtaZ3WBN4ua0">
             <div class="general-header">
             </div>          
-            <div class="main__content personalisationhome">
+            <div class="main__content personalisationhome listView">
 				<input type="hidden" value="false" id="setbrowVal" />
 				<input type="hidden" value="true" id="hdnMyViewPage" />
 				<div class="action-flags-bar article-prologue"></div>
+				<ul class="view-mode hidden-xs">
+					<li data-view="tileView" class="selected">
+						<a href="#" class="icon-tile-view" title="Tile View">tile View</a>
+					</li>
+
+					<li data-view="listView" class="">
+						<a href="#" class="icon-list-view" title="List view">List View</a>
+					</li>
+
+				</ul>
 				<div class="tableau-landing clearfix">
 					<div class="personalHead clearfix">
 						<h1>My View</h1>
@@ -140,7 +150,48 @@
 				<div class="personalisationPan">
 					<div class="eachstoryMpan">
 						<div class="eachstory layout1">
-							<section class="article-preview topic-featured-article">
+							<section class="article-preview list-featured-article listViewCont">
+								<img class="topic-featured-article__image" src="/dist/img/article-img1.jpg">
+								<h3 class="topic-featured-article__headline">
+									<a href="#" class="click-utag">1st U.S. Biosimilar Arrives: Zarxio Launches</a>
+								</h3>
+								<div class="topic-featured-article__inner-wrapper">
+									<div class="article-metadata">
+										<div class="article-preview__byline">
+											<div class="authorTitle">By <a href="#">Ian Haydock</a></div>
+											<ul>
+												<li><time class="article-metadata__date">26 Sep 2015</time></li>
+												<li><h6>News</h6></li>
+												<li>
+													<span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+													<svg class="article-metadata__media-type">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+													</svg>
+													</span>
+												</li>
+												<li>
+													<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+													</svg>
+													<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+													</svg>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="article-summary">
+										<p>The US SEC has accepted a $20m payment from GSK to settle charges that it violated US legislation on foreign corrupt practices.</p> 
+									</div>
+								</div>
+								<div class="article-preview__tags bar-separated-link-list">
+									<a href="#">USA</a>
+									<a href="#">Sandoz</a>
+									<a href="#">Biosimilars</a>
+								</div> 
+							</section>
+							
+							<section class="article-preview topic-featured-article gridViewCont">
 								<img class="topic-featured-article__image" src="/dist/img/article-img1.jpg">
 
 								<div class="article-metadata">
@@ -183,7 +234,7 @@
 							</section>  
 							
 							<div class="latest-news__articles">
-								<section class="article-preview article-preview--small mobview">
+								<section class="article-preview article-preview--small mobview gridViewCont">
 									<div class="article-metadata">
 										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
 											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
@@ -222,7 +273,7 @@
 									</div>
 								</section>
 								
-								<section class="article-preview article-preview--small mobview">
+								<section class="article-preview article-preview--small mobview gridViewCont">
 									<div class="article-metadata">
 										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
 											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
@@ -261,7 +312,7 @@
 									</div>
 								</section>
 								
-								<section class="article-preview article-preview--small topics">
+								<section class="article-preview article-preview--small topics gridViewCont">
 									<h6>Topic</h6>
 									<h1 class="article-preview_rheadline">
 										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
@@ -276,7 +327,7 @@
 							</div>
 							
 							<div class="latest-news__articles">
-								<section class="article-preview article-small-preview mobview">
+								<section class="article-preview article-small-preview mobview gridViewCont">
 									<div class="article-metadata">
 										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
 											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
@@ -304,7 +355,7 @@
 									</div>
 								</section>
 								
-								<section class="article-preview article-small-preview mobview">
+								<section class="article-preview article-small-preview mobview gridViewCont">
 									<div class="article-metadata">
 										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
 											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
@@ -332,7 +383,7 @@
 									</div>
 								</section>
 								
-								<section class="article-preview article-small-preview mobview">
+								<section class="article-preview article-small-preview mobview gridViewCont">
 									<div class="article-metadata">
 										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
 											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
