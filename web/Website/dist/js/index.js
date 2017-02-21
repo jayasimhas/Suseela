@@ -12166,7 +12166,8 @@ $(document).ready(function () {
         });
         var OffsetTop = $('.advertisement-placeholder').offset().top;
         $('.advertising--leaderboard').css({
-            'top': OffsetTop + 'px'
+            'top': OffsetTop + 'px',
+            'left': '0'
         });
         $('.advertisement-placeholder').height(AdHeight);
     }
