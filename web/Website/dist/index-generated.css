@@ -9843,11 +9843,7 @@ div#feedbacklite.fbl_r {
     font-weight: bold;
     line-height: 38px; }
   .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
-    font-family: Roboto;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 19px;
-    color: #58595B; }
+    line-height: 30px; }
 
 .package-control-articles__half {
   background: #f1f2f2;
