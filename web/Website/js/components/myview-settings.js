@@ -417,7 +417,9 @@ $(function () {
 
     $('#allPublicationsPan .publicationPan').on('click', 'thead.hidden-xs tr:first-child', function () {
         var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan'), allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'), lableStatus = allthead.find('.lableStatus').val();
-
+		
+		allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
+		
         if ($this.hasClass('expanded')) {
             $this.removeClass('expanded').addClass('collapsed');
             tbody.addClass('tbodyhidden');
