@@ -1,4 +1,5 @@
-﻿using Informa.Library.User.Authentication;
+﻿using Informa.Library.SalesforceConfiguration;
+using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Profile
@@ -9,18 +10,25 @@ namespace Informa.Library.User.Profile
 		private const string sessionKey = "Profile";
 
 		protected readonly IFindUserProfileByUsername FindUserProfile;
-		protected readonly IAuthenticatedUserContext UserContext;
+        protected readonly IFindUserProfileByUsernameV2 FindUserProfileV2;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
 
 		public UserProfileContext(
 			IFindUserProfileByUsername findUserProfile,
 			IAuthenticatedUserContext userContext,
-			IAuthenticatedUserSession userSession)
+			IAuthenticatedUserSession userSession,
+            IFindUserProfileByUsernameV2 findUserProfileV2,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
 		{
 			FindUserProfile = findUserProfile;
 			UserContext = userContext;
 			UserSession = userSession;
-		}
+            FindUserProfileV2 = findUserProfileV2;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+
+        }
 
 		public IUserProfile Profile
 		{
@@ -38,7 +46,9 @@ namespace Informa.Library.User.Profile
 					return profileSession.Value;
 				}
 
-				var profile = FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);
+				var profile = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                    FindUserProfileV2.Find(UserContext.User?.AccessToken ?? string.Empty):
+                FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);
 
 				Profile = profile;
 

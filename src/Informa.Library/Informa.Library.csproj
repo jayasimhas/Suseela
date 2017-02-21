@@ -457,7 +457,8 @@
     <Compile Include="User\Entitlement\IEntitledProductItemChannelCodesFactory.cs" />
     <Compile Include="User\Entitlement\IEntitledProductItemEntitlementLevelFactory.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlementsV2.cs" />
-    <Compile Include="User\Profile\IUserInfo.cs" />
+    <Compile Include="User\Profile\IFindUserProfileByUsernameV2.cs" />
+    <Compile Include="User\Profile\IManageAccountInfoV2.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
     <Compile Include="User\UserPreference\IChannel.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />

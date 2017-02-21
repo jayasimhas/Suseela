@@ -19,6 +19,9 @@ namespace Informa.Library.SalesforceConfiguration
         string GetLogoutEndPoints();
 
         string GetRegistrationEndPoints(string referralurl, string referralid);
-        string GetUpdatePasswordEndPoints(string userName);
+
+        string GetChangePasswordEndpoint(string referralurl, string referralid);
+
+        string GetUpdateUserDetailsEndPoints(string userName);
     }
 }

@@ -7435,9 +7435,9 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 })();
 
 },{}],22:[function(require,module,exports){
-'use strict';
+//import { analyticsEvent } from '../controllers/analytics-controller';
 
-var _controllersAnalyticsController = require('../controllers/analytics-controller');
+'use strict';
 
 function setClsforFlw(t) {
     for (var i = 0; i < t.length; i++) {
@@ -7446,7 +7446,7 @@ function setClsforFlw(t) {
     }
 }
 
-function createJSONData(alltables, UserPreferences) {
+function createJSONData(alltables, UserPreferences, url) {
     for (var i = 0; i < alltables.length; i++) {
         var currenttabtrs = $(alltables[i]).find('tbody tr'),
             pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
@@ -7469,7 +7469,7 @@ function createJSONData(alltables, UserPreferences) {
         }
         UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
     }
-    sendHttpRequest(UserPreferences);
+    sendHttpRequest(UserPreferences, null, url);
 }
 
 function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
@@ -7490,7 +7490,13 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 } else if (setFlag == 'register' && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
+                if (redirectUrl != 'href' && redirectUrl != 'name') {
+                    window.location.href = redirectUrl;
+                }
             } else {
+                if (redirectUrl != 'href' && redirectUrl != 'name') {
+                    window.location.href = redirectUrl;
+                }
                 if (setFlag == 'register') {
                     $('.alert-error.register-error p').html(data.reason);
                     $('.alert-error.register-error').show();
@@ -7631,10 +7637,13 @@ $(function () {
     $('#allPublicationsPan').on('click', '.followAllBtn', function () {
         var $this = $(this),
             curpublicPan = $this.closest('.publicationPan'),
+            thead = curpublicPan.find('thead.hidden-xs'),
+            firstRow = thead.find('tr:first-child'),
             tbody = curpublicPan.find('tbody'),
             div = $this.closest('div'),
             $lgfollow = curpublicPan.find('.followBtn'),
-            table = $('.table');
+            table = $('.table'),
+            lableStatus = '';
         $this.addClass('hideBtn');
         $('#validatePreference').val(1);
         div.find('.unfollowAllBtn').removeClass('hideBtn');
@@ -7643,6 +7652,11 @@ $(function () {
         $lgfollow.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
         $('#validatePriority').val(true);
         $('#validateMyViewPriority').val(true);
+
+        lableStatus = thead.find('.lableStatus').val();
+        thead.find('.mtp').addClass('hideBtn');
+        thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
+
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
             $(tbody.find('.followrow')[i]).attr('draggable', true);
         }
@@ -7658,9 +7672,12 @@ $(function () {
     $('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
         var $this = $(this),
             curpublicPan = $this.closest('.publicationPan'),
+            thead = curpublicPan.find('thead.hidden-xs'),
+            firstRow = thead.find('tr:first-child'),
             tbody = curpublicPan.find('tbody'),
             div = $this.closest('div'),
-            $lgfollowing = curpublicPan.find('.followingBtn');
+            $lgfollowing = curpublicPan.find('.followingBtn'),
+            lableStatus = '';
         $this.addClass('hideBtn');
         $this.closest('.smfollowingBtn').find('.followAllBtn').addClass('fr');
         $('#validatePreference').val(1);
@@ -7670,6 +7687,10 @@ $(function () {
         $lgfollowing.addClass('followBtn button--outline').removeClass('followingBtn button--filled').html($('#followButtonText').val());
         $('#validatePriority').val(false);
         $('#validateMyViewPriority').val(true);
+
+        lableStatus = thead.find('.lableStatus').val();
+        thead.find('.mtp').addClass('hideBtn');
+        thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
 
         curpublicPan.find('tbody .frow').removeClass('frow');
         for (var i = 0; i < $lgfollowing.length; i++) {
@@ -7685,11 +7706,11 @@ $(function () {
             currentChannel = currenttr.closest('.table').find('thead h2').html(),
             eventDetails;
         if ($('.registrationBtn') && $('.registrationBtn').length) {
-            eventDetails = { "event_name": "channel_follow", "page_name": "Registration", "ga_eventCategory": "Channel Follow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
-        } else {
-            eventDetails = { "event_name": "topic_follow", "page_name": "My view settings", "ga_eventCategory": "Topic Follow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
-        }
-        (0, _controllersAnalyticsController.analyticsEvent)(eventDetails);
+            //eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
+        } else {}
+            //eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+
+            //analyticsEvent( eventDetails );
 
         eventDetails = {};
     });
@@ -7701,11 +7722,11 @@ $(function () {
             currentChannel = currenttr.closest('.table').find('thead h2').html(),
             eventDetails;
         if ($('.registrationBtn') && $('.registrationBtn').length) {
-            eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory": "Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
-        } else {
-            eventDetails = { "event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
-        }
-        (0, _controllersAnalyticsController.analyticsEvent)(eventDetails);
+            //eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+        } else {}
+            //eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
+
+            //analyticsEvent( eventDetails );
 
         eventDetails = {};
     });
@@ -7714,10 +7735,12 @@ $(function () {
         var $this = $(this),
             followrow = $this.closest('.followrow'),
             table = $this.closest('.table'),
+            thead = table.find('thead.hidden-xs'),
             followAllBtn = table.find('.followAllBtn'),
             unfollowAllBtn = table.find('.unfollowAllBtn'),
             trs = $this.closest('tbody').find('tr'),
-            trsfollowing = $this.closest('tbody').find('tr.followingrow');;
+            trsfollowing = $this.closest('tbody').find('tr.followingrow'),
+            lableStatus = '';
         followrow.attr('draggable', true);
         $('#validatePreference').val(1);
         followrow.addClass('followingrow').removeClass('followrow disabled frow');
@@ -7726,6 +7749,10 @@ $(function () {
         table.find('.firstrow .lableStatus').val('followinglbl');
         table.find('.accordionStatus .lableStatus').val('followinglbl');
         $('#validateMyViewPriority').val(true);
+
+        lableStatus = thead.find('.lableStatus').val();
+        thead.find('.mtp').addClass('hideBtn');
+        thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
 
         if (trs.hasClass('followingrow')) {
             $('#validatePriority').val(true);
@@ -7757,12 +7784,14 @@ $(function () {
         var $this = $(this),
             table = $this.closest('table'),
             followAllBtn = $this.closest('table').find('.followAllBtn'),
+            thead = table.find('thead.hidden-xs'),
             unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'),
             followingrow = $this.closest('.followingrow'),
             tbody = $this.closest('tbody'),
             trs = $this.closest('tbody').find('tr'),
             disabledtrs = $this.closest('tbody').find('.followrow.disabled'),
-            trsfollow = $this.closest('tbody').find('tr.followrow');
+            trsfollow = $this.closest('tbody').find('tr.followrow'),
+            lableStatus = '';
         followingrow.addClass('followrow disabled').removeClass('followingrow');
         $this.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
         followingrow.clone().appendTo($this.closest('tbody'));
@@ -7784,6 +7813,9 @@ $(function () {
             followAllBtn.removeClass('hideBtn');
             unfollowAllBtn.removeClass('hideBtn');
         }
+        lableStatus = thead.find('.lableStatus').val();
+        thead.find('.mtp').addClass('hideBtn');
+        thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
     });
 
     $('#allPublicationsPan .donesubscribe').on('mouseenter', '.followingBtn', function (e) {
@@ -7860,7 +7892,7 @@ $(function () {
         }
     });
 
-    $('.publicationPan').on('click', '.accordionImg .desktopMode', function () {
+    $('#allPublicationsPan .publicationPan').on('click', 'thead.hidden-xs tr:first-child', function () {
         var $this = $(this),
             allPublications = $('#allPublicationsPan'),
             pPan = $this.closest('.publicationPan'),
@@ -7873,10 +7905,12 @@ $(function () {
             flwBtn = thead.find('.flwBtn'),
             followlbl = thead.find('.followlbl'),
             followinglbl = thead.find('.followinglbl'),
-            allpubpans = allPublications.find('.publicationPan');
+            allpubpans = allPublications.find('.publicationPan'),
+            allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'),
+            lableStatus = allthead.find('.lableStatus').val();
 
         if ($this.hasClass('expanded')) {
-            $this.removeClass('expanded');
+            $this.removeClass('expanded').addClass('collapsed');
             tbody.addClass('tbodyhidden');
             thead.find('.mtp').addClass('hideBtn');
             accCont.addClass('tbodyhidden');
@@ -7887,6 +7921,12 @@ $(function () {
                 followinglbl.removeClass('hideBtn');
                 thead.find('.firstrow .lableStatus').val('followinglbl');
             }
+            for (var i = 0; i < allthead.length; i++) {
+                var curthead = $(allthead[i]),
+                    getlableStatus = curthead.find('.lableStatus').val();
+                curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
+            }
+
             var position = $this.closest('.publicationPan').position();
             $(window).scrollTop(position.top);
         } else {
@@ -7895,20 +7935,39 @@ $(function () {
             allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
             allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
             thead.find('tr').removeClass('hidden');
-            $this.addClass('expanded');
+            $this.addClass('expanded').removeClass('collapsed');
             accCont.removeClass('tbodyhidden');
             tbody.removeClass('tbodyhidden');
             flwBtn.addClass('hideRow');
             flwlbl.removeClass('hideRow');
 
-            for (var i = 0; i < allpubpans.length; i++) {
+            /*for (var i = 0; i < allpubpans.length; i++) {
                 var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
                 $('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
             }
-            thead.find('.mtp').addClass('hideBtn');
+            thead.find('.mtp').addClass('hideBtn');*/
 
             var position = $this.closest('.publicationPan').position();
             $(window).scrollTop(position.top);
+        }
+    }).on('mouseenter', 'thead.hidden-xs tr:first-child', function () {
+        var $this = $(this),
+            firstTrtds = $this.find('th'),
+            thead = $this.closest('thead.hidden-xs'),
+            lableStatus = $this.find('.lableStatus').val();
+        firstTrtds.addClass('active');
+        if ($this.hasClass('collapsed') && lableStatus == 'followinglbl') {
+            thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
+        } else if ($this.hasClass('collapsed') && lableStatus == 'followlbl') {
+            //thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
+        }
+    }).on('mouseleave', 'thead.hidden-xs tr:first-child', function () {
+        var $this = $(this),
+            firstTrtds = $this.find('th'),
+            thead = $this.closest('thead.hidden-xs');
+        firstTrtds.removeClass('active');
+        if ($this.hasClass('collapsed')) {
+            thead.removeClass('followinglbl-txt followlbl-txt');
         }
     });
 
@@ -7916,27 +7975,32 @@ $(function () {
     setClsforFlw(tables);
 
     $('.saveview').click(function (e) {
-        if ($('.modal-overlay').hasClass('in')) {
+        /*if ($('.modal-overlay').hasClass('in')) {
             window.location.href = clickedUrl;
-        } else {
-            var alltables = $('.table'),
-                allpublicationsEles = $('.publicationPan'),
-                isChannelLevel = $('#isChannelBasedRegistration').val(),
-                UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel },
-                allpublications = $('.publicationPan', '#allPublicationsPan');
-            UserPreferences.PreferredChannels = [];
-            $('#validateMyViewPriority').val(false);
-            e.preventDefault();
-            setDataRow(allpublications);
-            allpublicationsEles.removeAttr('data-row');
-            for (var i = 0; i < allpublicationsEles.length; i++) {
-                var j = i + 1;
-                $(allpublicationsEles[i]).attr('data-row', j);
-            }
-            createJSONData(alltables, UserPreferences);
+        }*/
+        //else {
+        var alltables = $('.table'),
+            allpublicationsEles = $('.publicationPan'),
+            isChannelLevel = $('#isChannelBasedRegistration').val(),
+            UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel },
+            allpublications = $('.publicationPan', '#allPublicationsPan');
+        UserPreferences.PreferredChannels = [];
+        $('#validateMyViewPriority').val(false);
+        e.preventDefault();
+        setDataRow(allpublications);
+        allpublicationsEles.removeAttr('data-row');
+        for (var i = 0; i < allpublicationsEles.length; i++) {
+            var j = i + 1;
+            $(allpublicationsEles[i]).attr('data-row', j);
+        }
 
+        if ($(this).hasClass('validationChk')) {
+            createJSONData(alltables, UserPreferences, clickedUrl);
+        } else {
+            createJSONData(alltables, UserPreferences);
             $('#validatePreference').val(0);
         }
+        //}
     });
 
     $('.registrationBtn').click(function (e) {
@@ -7982,9 +8046,13 @@ $(function () {
         }
     });
 
-    $('.close-modal, .cancel-modal').click(function () {
+    $('.close-modal').click(function () {
         $('.modal-overlay').removeClass('in');
         $('.modal-view').hide();
+    });
+
+    $('.cancel-modal').click(function () {
+        window.location.href = clickedUrl;
     });
 
     if ($('.publicationPan') && $('.publicationPan').length) {
@@ -8001,7 +8069,7 @@ $(function () {
 
     $(document).on('click', '.editView', function () {
         var eventDetails = { "event_name": "myview_edit_my_view", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Link", "ga_eventAction": "Link Click", "ga_eventLabel": "EDIT MY VIEW" };
-        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+        //analyticsEvent( $.extend(analytics_data, eventDetails) );
         eventDetails = {};
     });
 
@@ -8016,12 +8084,12 @@ $(function () {
         }
         var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
 
-        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
+        //analyticsEvent( $.extend(analytics_data, eventDetails) );
         eventDetails = {};
     });
 });
 
-},{"../controllers/analytics-controller":29}],23:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -12084,6 +12152,27 @@ $(document).ready(function () {
     $(".selectivity-input .selectivity-single-select").each(function () {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
+});
+
+//Advertisement Adjustment
+
+$(document).ready(function () {
+    if ($('.advertisement-placeholder').length > 0) {
+        var WindowWidth = $(window).width();
+        if (WindowWidth > 667) {
+            var AdHeight = $('.advertising--leaderboard').height();
+
+            $('.advertising--leaderboard').css({
+                'position': 'absolute'
+            });
+            var OffsetTop = $('.advertisement-placeholder').offset().top;
+            $('.advertising--leaderboard').css({
+                'top': OffsetTop + 'px',
+                'left': '0'
+            });
+            $('.advertisement-placeholder').height(AdHeight);
+        }
+    }
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":20,"./components/ll-tanker-fixtures":21,"./components/myview-settings":22,"./components/pagination":23,"./components/personalisation":24,"./components/save-search-component":25,"./components/scrollbar.js":26,"./components/table_charts":27,"./components/video-mini":28,"./controllers/analytics-controller":29,"./controllers/bookmark-controller":30,"./controllers/form-controller":31,"./controllers/lightbox-modal-controller":32,"./controllers/pop-out-controller":33,"./controllers/register-controller":34,"./controllers/reset-password-controller":35,"./controllers/sortable-table-controller":36,"./controllers/tooltip-controller":37,"./jscookie":39,"./modal":40,"./newsletter-signup":41,"./search-page.js":42,"./selectivity-full":43,"./svg4everybody":44,"./toggle-icons":45,"./zepto.dragswap":46,"./zepto.min":47}],39:[function(require,module,exports){

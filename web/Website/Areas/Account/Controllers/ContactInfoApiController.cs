@@ -9,6 +9,7 @@ using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Web.Areas.Account.Models.User.Management;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -16,19 +17,25 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly IAuthenticatedUserContext UserContext;
         protected readonly IManageAccountInfo AccountInfo;
+        protected readonly IManageAccountInfoV2 AccountInfoV2;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IUserProfileContext ProfileContext;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public ContactInfoApiController(
             IAuthenticatedUserContext userContext,
             IManageAccountInfo accountInfo,
             ITextTranslator textTranslator,
-            IUserProfileContext profileContext)
+            IUserProfileContext profileContext,
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IManageAccountInfoV2 accountInfoV2)
         {
             UserContext = userContext;
             AccountInfo = accountInfo;
             TextTranslator = textTranslator;
             ProfileContext = profileContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+            AccountInfoV2 = accountInfoV2;
         }
 
         [HttpPost]
@@ -45,7 +52,16 @@ namespace Informa.Web.Areas.Account.Controllers
                 });
             }
 
-            var result = AccountInfo.UpdateContactInfo(
+            var result = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                AccountInfoV2.UpdateContactInfo(
+                UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
+                form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
+                form.BillState,
+                form.ShipCountry, form.ShipAddress1, form.ShipAddress2, form.ShipCity, form.ShipPostalCode,
+                form.ShipState,
+                form.Fax, form.CountryCode, form.PhoneExtension, form.Phone, form.PhoneType, form.Company,
+                form.JobFunction, form.JobIndustry, form.JobTitle) :
+                AccountInfo.UpdateContactInfo(
                 UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
                 form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
                 form.BillState,
@@ -89,7 +105,7 @@ namespace Informa.Web.Areas.Account.Controllers
             }
 
             var result = AccountInfo.UpdatePassword(UserContext.User, request.CurrentPassword, request.NewPassword, false);
-            
+
             return Ok(new
             {
                 success = result.Success,

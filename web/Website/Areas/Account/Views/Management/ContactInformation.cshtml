@@ -25,7 +25,7 @@
                     <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
                     <p class="update-password-text">@Model.UpdateSubTitleText</p>
                     <div class="page-preferences__submit-wrapper">
-                        <button type="submit" class="button--filled button--fly-right click-utag full-width-button" data-info='{"event_name":"update-password"}'>@Model.UpdatePasswordText</button>
+                        <a href="@Model.ChangePasswordUrl" class="button--filled button--fly-right click-utag full-width-button update-password-btn" >@Model.UpdatePasswordText</a>
                     </div>
                 </div>
             }

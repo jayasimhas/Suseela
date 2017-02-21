@@ -19,7 +19,9 @@ namespace Informa.Library.SalesforceConfiguration
         private string _authorizationRequestEndPoints = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
         private string _userEntitlementsRequestEndPoints = "/services/apexrest/UserEntitlements/{0}";
         private string _registrationEndpoints = "{0}/registration?referralurl={1}&referralid={2}";
-        private const string _logoutEndpoints = "{0}/secur/logout.jsp";
+        private string _logoutEndpoints = "{0}/secur/logout.jsp";
+        private string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
+        private string _changePasswordEndpoints = "{0}/changepassword?referralurl={1}&referralid={2}";
 
 
         public SalesforceConfigurationContext(
@@ -68,9 +70,7 @@ namespace Informa.Library.SalesforceConfiguration
 
         public string GetUserEntitlementsEndPoints(string userName)
         {
-            string url = string.Empty;
-            url = string.Format(_userEntitlementsRequestEndPoints, userName);
-            return url;
+            return string.Format(_userEntitlementsRequestEndPoints, userName);
         }
 
         public string GetUserAccessTokenEndPoints()
@@ -92,12 +92,16 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetRegistrationEndPoints(string referralurl, string referralid)
         {
             return string.Format(_registrationEndpoints,
-            SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralurl);
+            SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralid);
         }
-
-        public string GetUpdatePasswordEndPoints(string userName)
+        public string GetChangePasswordEndpoint(string referralurl, string referralid)
         {
-            return string.Empty;
+            return string.Format(_changePasswordEndpoints,
+                        SalesForceConfiguration?.Salesforce_Service_Url?.Url, referralurl, referralid);
+        }
+        public string GetUpdateUserDetailsEndPoints(string userName)
+        {
+           return string.Format(_userDetailsEndPoints, userName);
         }
     }
 }

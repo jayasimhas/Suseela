@@ -10,6 +10,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Accoun
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.SalesforceConfiguration;
+using System.Web;
+using Informa.Library.Site;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -19,6 +21,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ISignInViewModel SignInViewModel;
         public readonly IUserProfile Profile;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly ISiteRootContext SiteRootContext;
 
         public ContactInformationViewModel(
                 ITextTranslator translator,
@@ -27,7 +30,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 IUserCompanyContext userCompanyContext,
                 IUserProfileContext profileContext,
                 IGlobalSitecoreService globalService,
-                ISalesforceConfigurationContext salesforceConfigurationContext)
+                ISalesforceConfigurationContext salesforceConfigurationContext,
+                ISiteRootContext siteRootContext )
         {
             TextTranslator = translator;
             SignInViewModel = signInViewModel;
@@ -43,6 +47,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             PhoneTypes = globalService.GetPhoneTypes();
             Countries = globalService.GetCountries();
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            SiteRootContext = siteRootContext;
 
         }
 
@@ -147,5 +152,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public IEnumerable<ListItem> Countries { get; set; }
 
         #endregion Drop Down Lists
+
+
+        public string ChangePasswordUrl => SalesforceConfigurationContext?.GetChangePasswordEndpoint(HttpContext.Current.Request.Url.ToString(), SiteRootContext?.Item?.Publication_Code);
+
+        private string GetCallbackUrl(string url)
+        {
+            return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
+        }
     }
 }

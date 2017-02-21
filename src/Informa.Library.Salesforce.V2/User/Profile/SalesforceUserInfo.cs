@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
-    public class SalesforceUserInfo : ISalesforceUserInfo
+    public class SalesforceUserInfo
     {
         [XmlElement(ElementName = "preferred_username")]
         public string UserName { get; set; }
@@ -16,5 +16,7 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         public string FirstName { get; set; }
         [XmlElement(ElementName = "nickname")]
         public string NickName { get; set; }
+        [XmlElement(ElementName = "custom_attributes")]
+        public UserInfoCustomAttributes CustomAttributes { get; set; }
     }
 }

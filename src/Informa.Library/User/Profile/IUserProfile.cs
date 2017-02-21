@@ -2,7 +2,8 @@
 {
 	public interface IUserProfile
 	{
-		string FirstName { get; }
+        string UserName { get; }
+        string FirstName { get; }
 		string LastName { get; }
 		string Email { get; }
 		string MiddleInitial { get; set; }

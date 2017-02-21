@@ -55,6 +55,9 @@
         width: 100%;
         text-align: right;
         font-style: italic;
+        @include breakpoint('small') {
+            margin-top: 0;
+        }
     }
     // Don't show the friendly welcome at smartphone widths
     @include breakpoint('small') {

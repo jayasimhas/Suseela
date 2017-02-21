@@ -1,4 +1,23 @@
 header{
+	.advertising--leaderboard.visible-mobile{
+		display: none;
+		@include breakpoint('small') {
+			display: block;
+		}
+	}
+	// .header__wrapper{
+	// 	height: 100px;
+	// }
+	.header-publication-links{
+		top: 50px;
+		@include breakpoint('medium-small') {
+			top: 50px;
+		}
+		@include breakpoint('medium') {
+			top: 50px;
+		}
+		
+	}
 	.header-account-access{
 		flex: 2 0 auto !important;
 		padding: 0 !important;
@@ -92,6 +111,9 @@ header{
 		.header-account-right-access{
 			float: right;
 			padding: 1rem 0;
+			.header-publication-links{
+				
+			}
 			@media (max-width: 1024px) {
 				float: right;
 				margin-right: 20px;
@@ -126,4 +148,14 @@ header{
 	div.header__logo {
 		width:auto !important;
 	}
+}
+main{
+	.advertising--leaderboard.visible-desktop{
+		padding: 30px 0 0 0;
+		@include breakpoint('small') {
+			display: none;
+			padding: 30px 0;
+		}
+	}
+	
 }

@@ -942,8 +942,11 @@ p {
   width: 100% !important;
   display: block;
   text-align: center; }
+  .full-width-button.update-password-btn {
+    max-width: 350px;
+    float: left; }
 
-.login-form {
+.update-password-text {
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
   font-family: 'Roboto'; }
@@ -2211,8 +2214,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     font-size: 16px;
     font-size: 1rem;
     margin-bottom: 20px; }
-  #main-carousel .li-content-company a, #main-carousel .li-content-company .pop-out__reset-password, #main-carousel .li-content-company .sortable-table__list-toggler, #main-carousel .li-content-company .mobile-table-exit {
-    color: #000; }
   #main-carousel .li-content-graph {
     border: none;
     background-color: #eeeeee;
@@ -2231,8 +2232,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     font-size: smaller;
     padding: 0 0 0 0;
     margin-bottom: 22px; }
-  #main-carousel .li-content-graph p a, #main-carousel .li-content-graph p .pop-out__reset-password, #main-carousel .li-content-graph p .sortable-table__list-toggler, #main-carousel .li-content-graph p .mobile-table-exit {
-    color: #000; }
   #main-carousel .hideinMob {
     display: block; }
     @media (max-width: 640px) {
@@ -3808,7 +3807,8 @@ body.lightboxed {
         padding-left: 10px; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .year_heading {
-        padding-left: 5px; } }
+        padding-left: 5px;
+        height: 7em; } }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
@@ -3828,10 +3828,12 @@ body.lightboxed {
 .footnote {
   float: left;
   width: 100%;
-  margin-top: -35px; }
+  font-size: 14px;
+  margin: 10px; }
 
 #quarterlyresults {
-  border: 1px solid #d1d3d4; }
+  border: 1px solid #d1d3d4;
+  margin-bottom: 0; }
   #quarterlyresults .table-wrapper .tableHead {
     text-align: right;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -4238,6 +4240,21 @@ body.lightboxed {
     -webkit-transition-delay: 0s, 0.3s;
             transition-delay: 0s, 0.3s; }
 
+header .advertising--leaderboard.visible-mobile {
+  display: none; }
+  @media (max-width: 480px) {
+    header .advertising--leaderboard.visible-mobile {
+      display: block; } }
+
+header .header-publication-links {
+  top: 50px; }
+  @media (max-width: 640px) {
+    header .header-publication-links {
+      top: 50px; } }
+  @media (max-width: 800px) {
+    header .header-publication-links {
+      top: 50px; } }
+
 header .header-account-access {
   -webkit-box-flex: 2 !important;
       -ms-flex: 2 0 auto !important;
@@ -4357,6 +4374,13 @@ header .header-account-access {
 @media only screen and (max-width: 1024px) {
   div.header__logo {
     width: auto !important; } }
+
+main .advertising--leaderboard.visible-desktop {
+  padding: 30px 0 0 0; }
+  @media (max-width: 480px) {
+    main .advertising--leaderboard.visible-desktop {
+      display: none;
+      padding: 30px 0; } }
 
 .messaging_webUsers {
   width: 100% !important;
@@ -4516,7 +4540,7 @@ header .header-account-access {
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
   .myview-settings .followAllBtn {
-    border: 1px solid #f7941e;
+    border: 1px solid none;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.75em;
@@ -4527,7 +4551,7 @@ header .header-account-access {
     line-height: 30px;
     line-height: 1.875rem;
     float: right;
-    color: #58595b;
+    color: #FF8F18;
     width: 150px;
     width: 9.375rem;
     min-height: 30px;
@@ -4538,12 +4562,8 @@ header .header-account-access {
     margin-top: 0.5rem;
     min-width: 130px;
     border: 1px solid #fab142; }
-    .myview-settings .followAllBtn:hover {
-      background-color: #f7941e;
-      color: #ffffff; }
     .myview-settings .followAllBtn.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+      margin-top: 0px; }
     @media (max-width: 640px) {
       .myview-settings .followAllBtn {
         min-width: initial;
@@ -4553,39 +4573,21 @@ header .header-account-access {
         min-width: initial;
         min-width: auto; } }
   .myview-settings .followinglbl {
-    border: 1px solid #f7941e;
-    cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.75em;
-    font-family: "Roboto";
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
-    text-align: center;
     display: inline-block;
-    line-height: 30px;
-    line-height: 1.875rem;
     float: right;
-    color: #58595b;
-    width: 150px;
-    width: 9.375rem;
-    min-height: 30px;
-    min-height: 1.875rem;
-    padding: 0 16px;
-    padding: 0 1rem;
-    margin-top: 8px;
-    margin-top: 0.5rem;
-    cursor: text; }
-    .myview-settings .followinglbl:hover {
-      background-color: #f7941e;
-      color: #ffffff; }
-    .myview-settings .followinglbl.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+    text-align: right;
+    color: #f7941e; }
     @media (max-width: 640px) {
       .myview-settings .followinglbl {
         margin: 0px !important;
         float: left; } }
   .myview-settings .unfollowAllBtn {
-    border: 1px solid #f7941e;
+    border: 1px solid none;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.75em;
@@ -4596,22 +4598,19 @@ header .header-account-access {
     line-height: 30px;
     line-height: 1.875rem;
     float: right;
-    color: #58595b;
+    color: #fff;
     width: 150px;
     width: 9.375rem;
     min-height: 30px;
     min-height: 1.875rem;
     margin: 8px 0 0 20px;
     margin: 0.5rem 0 0 1.25rem;
-    background-color: #f7941e;
-    color: #ffffff;
     padding: 0 16px;
     padding: 0 1rem;
     margin-left: 8px;
     margin-left: 0.5rem; }
     .myview-settings .unfollowAllBtn.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
+      margin-top: 0px; }
     @media (max-width: 640px) {
       .myview-settings .unfollowAllBtn {
         min-width: initial;
@@ -4625,32 +4624,18 @@ header .header-account-access {
         padding: 0 20px;
         padding: 0 1.25rem; } }
   .myview-settings .followlbl {
-    border: 1px solid #f7941e;
-    cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.75em;
-    font-family: "Roboto";
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
-    text-align: center;
     display: inline-block;
-    line-height: 30px;
-    line-height: 1.875rem;
     float: right;
-    color: #58595b;
-    width: 150px;
-    width: 9.375rem;
-    min-height: 30px;
-    min-height: 1.875rem;
-    margin: 8px 0 0 20px;
-    margin: 0.5rem 0 0 1.25rem;
-    background-color: #f7941e;
-    color: #ffffff;
+    text-align: right;
+    color: #58595B;
     padding: 0;
     cursor: text;
     min-width: 130px; }
-    .myview-settings .followlbl.mtp {
-      margin-top: -6px;
-      margin-bottom: 25px; }
     @media (max-width: 640px) {
       .myview-settings .followlbl {
         min-width: initial;
@@ -4794,17 +4779,15 @@ header .header-account-access {
           line-height: 22px;
           line-height: 1.375rem; } }
   .myview-settings .publicationPan {
-    margin-bottom: 50px;
-    margin-bottom: 3.125rem;
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     border: 1px solid #d9dadb; }
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 464px;
-      width: 29rem;
-      margin-top: -5px;
-      line-height: 40px;
-      line-height: 2.5rem; }
+      width: 320px;
+      width: 20rem;
+      color: #58595B; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
           font-size: 1.25em;
@@ -4821,10 +4804,12 @@ header .header-account-access {
       cursor: pointer;
       padding-left: 20px;
       padding-left: 1.25rem;
-      margin: 3px 20px;
-      vertical-align: top;
-      line-height: 30px;
-      position: relative; }
+      vertical-align: middle;
+      position: relative;
+      font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 700; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan .subscribed {
           font-size: 0.875em;
@@ -4847,12 +4832,13 @@ header .header-account-access {
       margin: -4px 0 0 1.25rem;
       line-height: 32px;
       line-height: 2rem;
-      font-size: 12px;
-      font-size: 0.75rem;
       cursor: pointer;
       padding-left: 0px;
       padding-left: 0rem;
-      font-family: "Roboto"; }
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 700; }
       @media (max-width: 480px) {
         .myview-settings .publicationPan .subscribe {
           font-size: 0.875em;
@@ -4967,19 +4953,24 @@ header .header-account-access {
             display: none; }
           .myview-settings .table-responsive .table tbody tr.followrow:hover {
             background: #EDEDED; }
+      .myview-settings .table-responsive .table thead.followbg {
+        background: #f9f9f9; }
+      .myview-settings .table-responsive .table thead.followingbg {
+        background: #fff; }
       @media (max-width: 480px) {
         .myview-settings .table-responsive .table thead tr.expandHide {
           display: none; }
           .myview-settings .table-responsive .table thead tr.expandHide.collapseshow {
             display: block !important; } }
+      .myview-settings .table-responsive .table thead.followinglbl-txt .collapsed .active {
+        background: #fff5ed; }
       .myview-settings .table-responsive .table thead th {
         padding: 12px 20px;
         padding: 0.75rem 1.25rem;
         line-height: 24px;
         line-height: 1.5rem;
         vertical-align: top;
-        border-top: 0px solid #ddd;
-        background: #f9f9f9; }
+        border-top: 0px solid #ddd; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px;
@@ -4999,12 +4990,20 @@ header .header-account-access {
             margin: -40px 0 0;
             font-weight: normal; }
         .myview-settings .table-responsive .table thead th.firstrow {
-          padding: 40px 20px 0;
-          padding: 2.5rem 1.25rem 0; }
+          padding: 20px;
+          padding: 1.25rem; }
+          .myview-settings .table-responsive .table thead th.firstrow h2, .myview-settings .table-responsive .table thead th.firstrow .article-topics__header {
+            font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+            font-size: 20px;
+            font-size: 1.25rem;
+            font-weight: 700; }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th.firstrow {
               padding: 20px 10px 10px;
               padding: 1.25rem 0.625rem 0.625rem; } }
+          .myview-settings .table-responsive .table thead th.firstrow .frTxt {
+            text-align: right;
+            width: 200px; }
         .myview-settings .table-responsive .table thead th.nopad {
           padding: 0px 20px;
           padding: 0rem 1.25rem; }
@@ -5015,12 +5014,19 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead th.pbot {
           padding: 0px 16px 20px 27px;
           padding: 0rem 1rem 1.25rem 27px; }
+        .myview-settings .table-responsive .table thead th .mvTxt {
+          float: left;
+          width: 60px;
+          text-align: right;
+          font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+          font-size: 14px;
+          font-size: 0.875rem;
+          font-weight: 400; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
-          margin-top: 7px;
-          margin-top: 0.4375rem;
-          margin-top: -24px;
-          margin-top: -1.5rem; }
+          margin-top: 0px;
+          margin-top: 0rem;
+          float: right; }
           .myview-settings .table-responsive .table thead th .rowlines .pull-left {
             float: left; }
             @media (max-width: 640px) {
@@ -5038,20 +5044,28 @@ header .header-account-access {
             background: #979797;
             display: block;
             margin-bottom: 3px; }
-          .myview-settings .table-responsive .table thead th .rowlines .mv {
-            background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
-            height: 50px;
-            width: 21px;
-            display: block;
-            margin-top: -15px; }
-            @media (max-width: 640px) {
-              .myview-settings .table-responsive .table thead th .rowlines .mv {
-                background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
-                height: 40px;
-                width: 40px;
-                position: relative;
-                left: -15px;
-                display: block; } }
+          .myview-settings .table-responsive .table thead th .rowlines.hideinDesk {
+            display: none; }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              .myview-settings .table-responsive .table thead th .rowlines.hideinDesk {
+                background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+                height: 50px;
+                width: 21px;
+                display: block;
+                margin-top: -15px; } }
+          .myview-settings .table-responsive .table thead th .rowlines.hideinTab {
+            display: none; }
+            @media screen and (min-width: 1025px) {
+              .myview-settings .table-responsive .table thead th .rowlines.hideinTab {
+                display: block;
+                margin-top: 3px; } }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table thead th .rowlines .mv {
+              background: url(/dist/img/drag-icon2.jpg) no-repeat 0 0;
+              height: 40px;
+              width: 40px;
+              position: relative;
+              left: -15px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px;
@@ -5060,50 +5074,45 @@ header .header-account-access {
             .myview-settings .table-responsive .table thead th .rowlines {
               height: 30px;
               width: 30px; } }
-          .myview-settings .table-responsive .table thead th .rowlines .vline {
-            border: 1px solid #dadada;
-            height: 40px;
-            width: 1px;
-            float: left;
-            position: relative;
-            top: -13px;
-            right: 22px; }
+        .myview-settings .table-responsive .table thead th .accordionImg {
+          width: 120px;
+          float: left;
+          text-align: right; }
+          .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
+            font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+            font-size: 14px;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #58595B;
+            text-transform: uppercase;
+            padding-right: 14px; }
+          .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+            background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
+            height: 10px;
+            width: 12px;
+            cursor: pointer;
+            display: inline-block; }
             @media (max-width: 640px) {
-              .myview-settings .table-responsive .table thead th .rowlines .vline {
-                display: none; } }
-            @media (max-width: 800px) {
-              .myview-settings .table-responsive .table thead th .rowlines .vline {
-                right: 12px; } }
-        .myview-settings .table-responsive .table thead th .accordionImg span {
-          background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
-          height: 17px;
-          height: 1.0625rem;
-          width: 32px;
-          width: 2rem;
-          cursor: pointer;
-          display: inline-block;
-          margin-right: 10%; }
-          @media (max-width: 640px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              /*background: url(/dist/img/sprite-image.png) no-repeat 0 -81px;
-								height: 0.75rem;
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
+                /*height: 0.75rem;
 								width: 1.4375rem;*/
-              position: relative;
-              left: -10px; }
-              .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 position: relative;
-                left: 0;
-                /*background-position: 0 -48px !important;*/
-                background-position: 0 0 !important; } }
-          @media screen and (min-width: 667px) and (max-width: 767px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              margin-right: 50px;
-              margin-right: 3.125rem; } }
-          .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
-            background-position: 0 0; }
-          @media screen and (min-width: 801px) and (max-width: 1130px) {
-            .myview-settings .table-responsive .table thead th .accordionImg span {
-              margin-right: 50%; } }
+                left: -10px; }
+                .myview-settings .table-responsive .table thead th .accordionImg span.accImg.expanded {
+                  position: relative;
+                  left: 0;
+                  /*background-position: 0 -48px !important;*/
+                  background-position: 0 0 !important; } }
+            @media screen and (min-width: 667px) and (max-width: 767px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-right: 50px;
+                margin-right: 3.125rem; } }
+            .myview-settings .table-responsive .table thead th .accordionImg span.accImg.expanded {
+              background-position: 0 -159px; }
+            @media screen and (min-width: 801px) and (max-width: 1130px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-right: 50%; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;
           padding-bottom: 24px;
@@ -5119,7 +5128,7 @@ header .header-account-access {
           .myview-settings .table-responsive .table .wd-55 {
             width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
-        width: 25%; }
+        width: 20%; }
         .myview-settings .table-responsive .table .wd-25.pbot {
           padding-left: 0px;
           padding-left: 0rem; }
@@ -5133,7 +5142,7 @@ header .header-account-access {
           .myview-settings .table-responsive .table .wd-25 {
             width: 25%; } }
       .myview-settings .table-responsive .table .wd-15 {
-        width: 15%; }
+        width: 20%; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-15 {
             width: 10%; } }
@@ -5270,62 +5279,70 @@ header .header-account-access {
     background: #f9f9f9; }
   .myview-settings .modal-view {
     position: fixed;
-    width: 300px;
-    width: 18.75rem;
-    height: 200px;
-    height: 12.5rem;
+    width: 432px;
+    width: 27rem;
+    height: 280px;
+    height: 17.5rem;
     top: 50%;
     left: 50%;
     z-index: 9999;
-    margin-left: -150px;
-    margin-left: -9.375rem;
-    margin-top: -100px;
-    margin-top: -6.25rem;
+    margin-left: -216px;
+    margin-left: -13.5rem;
+    margin-top: -140px;
+    margin-top: -8.75rem;
     background: #ffffff;
-    padding: 35px 40px 40px;
-    padding: 2.1875rem 2.5rem 2.5rem;
+    padding: 70px 40px 40px;
+    padding: 4.375rem 2.5rem 2.5rem;
     display: none;
     font-family: "Roboto"; }
     .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
-      background-image: url(/dist/img/sprite-image.png);
-      background-position: left 46px top -574px;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 16px;
       font-size: 1rem;
-      font-weight: bold;
-      padding-left: 72px;
-      padding-left: 4.5rem;
+      font-weight: 700;
+      text-align: center;
       margin: 10px 0 20px;
-      background-repeat: no-repeat; }
+      color: #231F20; }
     .myview-settings .modal-view.preferences h4, .myview-settings .modal-view.preferences .lightbox-modal__title, .myview-settings .modal-view.preferences .exhibit-title, .myview-settings .modal-view.preferences .article-exhibit__title, .myview-settings .modal-view.preferences
     .article-exhibit--pull-left__title, .myview-settings .modal-view.preferences
     .article-exhibit--pull-right__title, .myview-settings .modal-view.preferences
     .article-inline-image__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-left__title, .myview-settings .modal-view.preferences
     .article-inline-image--pull-right__title {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 400;
       margin-bottom: 32px;
       margin-bottom: 2rem;
-      font-size: 12px;
-      font-size: .75rem;
       color: #626262;
       font-weight: normal;
       text-align: center; }
     .myview-settings .modal-view.preferences .buttonsPan {
-      width: 162px;
-      width: 10.125rem;
+      width: 280px;
+      width: 17.5rem;
       margin: 0px auto; }
     .myview-settings .modal-view.preferences .saveview {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      font-weight: 700;
       text-align: center;
       float: left;
       width: 70px;
       width: 4.375rem;
       text-transform: uppercase;
-      font-size: 11px;
-      font-size: 0.6875rem;
       cursor: pointer;
       line-height: 32px;
       line-height: 2rem;
-      font-weight: bold;
-      padding: 0px; }
+      padding: 0px;
+      float: left;
+      width: 130px;
+      width: 8.125rem;
+      height: 32px;
+      height: 2rem;
+      color: #fff;
+      margin-right: 20px; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
       color: #231f20;
@@ -5345,18 +5362,23 @@ header .header-account-access {
       .myview-settings .modal-view.preferences .registrationBtn.validationChk:hover {
         background: #f7941e; }
     .myview-settings .modal-view.preferences .cancel {
-      text-align: center;
-      float: right;
-      width: 70px;
-      width: 4.375rem;
-      text-transform: uppercase;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 11px;
       font-size: 0.6875rem;
+      font-weight: 700;
+      text-align: center;
+      float: left;
+      width: 130px;
+      width: 8.125rem;
+      height: 32px;
+      height: 2rem;
+      text-transform: uppercase;
       cursor: pointer;
       line-height: 32px;
       line-height: 2rem;
-      font-weight: bold;
-      padding: 0px; }
+      padding: 0px;
+      color: #747474;
+      border: 1px solid #adadad; }
     .myview-settings .modal-view .modal-inner {
       display: inline-block;
       text-align: left;
@@ -5383,7 +5405,9 @@ header .header-account-access {
       font-size: 10px;
       font-size: 0.625rem;
       padding-right: 16px;
-      padding-right: 1rem; }
+      padding-right: 1rem;
+      height: 14px;
+      width: 14px; }
   .myview-settings .modal-overlay.in {
     background: #000;
     height: 100%;
@@ -9929,6 +9953,9 @@ div#feedbacklite.fbl_r {
     width: 100%;
     text-align: right;
     font-style: italic; }
+    @media (max-width: 480px) {
+      .header-account-access__error-msg {
+        margin-top: 0; } }
   @media (max-width: 480px) {
     .header-account-access__friendly-greeting {
       display: none; } }
@@ -15584,18 +15611,18 @@ main {
   .theme-lloydslist .button--filled:not([disabled]):hover, .theme-lloydslist .pop-out__register-submit:not([disabled]):hover, .theme-lloydslist .pop-out__sign-in-submit:not([disabled]):hover,
   .theme-lloydslist .search-bar__submit:hover,
   .theme-lloydslist .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch:hover {
-    background: #0f5487;
-    background-color: #0f5487; }
+    background: #002d4f;
+    background-color: #002d4f; }
 
 .theme-lloydslist .button--outline:not([disabled]) {
   border-color: #1191D1; }
   .theme-lloydslist .button--outline:not([disabled]):hover {
-    background-color: #0f5487;
+    background-color: #002d4f;
     border-color: #002d4f;
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
-  background-color: #0f5487; }
+  background-color: #1191D1; }
 
 .theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -15657,31 +15684,31 @@ main {
   background-color: #f1f2f2; }
 
 .theme-lloydslist .newsletter-signup {
-  border-top: 4px solid #002d4f; }
+  border-top: 4px solid #1191D1; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
 .theme-lloydslist .article-sidebar,
 .theme-lloydslist .topic-subtopic__header {
-  border-top-color: #002d4f;
-  border-bottom-color: #002d4f;
-  border-color: #002d4f; }
+  border-top-color: #1191D1;
+  border-bottom-color: #1191D1;
+  border-color: #1191D1; }
 
 .theme-lloydslist .latest-news__header:before {
-  background-color: #002d4f; }
+  background-color: #1191D1; }
 
 .theme-lloydslist .theme-header__underline {
-  border-bottom: 4px solid #002d4f;
+  border-bottom: 4px solid #1191D1;
   padding: 24px 0;
   padding: 1.5rem 0; }
 
 .theme-lloydslist .article-list-sidebar__wrapper {
-  border-bottom: 4px solid #002d4f; }
+  border-bottom: 4px solid #1191D1; }
 
 .theme-lloydslist .theme-hover__header a, .theme-lloydslist .theme-hover__header .pop-out__reset-password, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler, .theme-lloydslist .theme-hover__header .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .theme-hover__header a:hover, .theme-lloydslist .theme-hover__header .pop-out__reset-password:hover, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler:hover, .theme-lloydslist .theme-hover__header .mobile-table-exit:hover {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
   position: relative; }
@@ -15691,16 +15718,16 @@ main {
     bottom: 0;
     height: 4px;
     width: calc( 100% - 15px);
-    background: #002d4f;
+    background: #1191D1;
     left: 0; }
 
 .theme-lloydslist .rolling-stream h5 a, .theme-lloydslist .rolling-stream .alert-success p a, .alert-success .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .alert-error p a, .alert-error .theme-lloydslist .rolling-stream p a, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .theme-lloydslist .rolling-stream h5 .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
   color: #231f20; }
   .theme-lloydslist .rolling-stream h5 a:hover, .theme-lloydslist .rolling-stream .alert-success p a:hover, .alert-success .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .alert-error p a:hover, .alert-error .theme-lloydslist .rolling-stream p a:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle a:hover, .theme-lloydslist .rolling-stream h5 .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .theme-lloydslist .rolling-stream p .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .theme-lloydslist .rolling-stream h5 .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .theme-lloydslist .rolling-stream p .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .theme-lloydslist .rolling-stream h5 .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .theme-lloydslist .rolling-stream p .mobile-table-exit:hover, .theme-lloydslist .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .rolling-stream .article-related-content__date {
-  color: #002d4f; }
+  color: #1191D1; }
 
 .theme-lloydslist .header-line-control:after {
   border: 2px solid #DE4361; }
@@ -15721,22 +15748,22 @@ main {
 .theme-lloydslist .article-topics__li:before,
 .theme-lloydslist .quickfactsbulleted li:before,
 .theme-lloydslist .quick-facts__list--ul li:before {
-  fill: #002d4f;
+  fill: #1191D1;
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Cpath%20fill%3D%22%237e2718%22%20d%3D%22M18.18%2060c-.8%200-1.6-.3-2.2-.94-1.2-1.26-1.2-3.3%200-4.57l22.9-23.75L14.52%205.5c-1.2-1.26-1.2-3.3%200-4.56%201.22-1.26%203.2-1.26%204.4%200l26.56%2027.54c1.2%201.26%201.2%203.3%200%204.56l-25.1%2026.02c-.6.63-1.4.94-2.2.94z%22/%3E%3C/svg%3E%0A); }
   .theme-lloydslist .article-topics__li:before use > svg,
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
-    fill: #002d4f; }
+    fill: #1191D1; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
 .theme-lloydslist .quick-facts__list--ul li ul li:before {
-  color: #002d4f; }
+  color: #1191D1; }
 
 .theme-lloydslist .quick-facts {
-  background-color: rgba(0, 45, 79, 0.1); }
+  background-color: rgba(17, 145, 209, 0.1); }
   .theme-lloydslist .quick-facts hr {
-    background-color: rgba(0, 45, 79, 0.5); }
+    background-color: rgba(17, 145, 209, 0.5); }
 
 .theme-lloydslist .idi-table-heading, .theme-lloydslist .controls, .theme-lloydslist .merge-heading,
 .theme-lloydslist .ID-Responsive-Table .table_head,
