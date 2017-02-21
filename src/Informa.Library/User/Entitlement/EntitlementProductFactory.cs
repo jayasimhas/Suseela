@@ -76,19 +76,5 @@ namespace Informa.Library.User.Entitlement
             }
             return new EntitledProduct();            
         }
-
-        //public IEntitledProduct Create(IGeneral_Content_Page gPage)
-        //{
-        //    var productCode = ProductCodeFactory.Create(gPage);
-        //    var entitlementLevel = ProductItemEntitlementLevelFactory.Create(gPage);
-        //    return new EntitledProduct
-        //    {
-        //        DocumentId = gPage.Article_Number,
-        //        IsFree = gPage.Free,
-        //        IsFreeWithRegistration = gPage.Free_With_Registration,
-        //        ProductCode = productCode,
-        //        PublishedOn = gPage.Actual_Publish_Date
-        //    };
-        //}
     }
 }

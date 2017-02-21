@@ -102,7 +102,7 @@
                 }
                 else
                 {
-                    return channel.Topics.Where(n => n.IsFollowing)?.Count().ToString();
+                    return channel?.Topics.Where(n => n.IsFollowing)?.Count().ToString();
                 }
             }
             return string.Empty;
