@@ -131,10 +131,13 @@ footer li {
 	margin-bottom: 1rem;
 }
 .footer__logo-icon {
-	img:first-child{
+	a img{
 		display: block;
-		height: 60px;
-		width: auto;
+		height: 60px !important;
+		width: auto !important;
+	}
+	p{
+		margin-bottom: 0;
 	}
 }
 
