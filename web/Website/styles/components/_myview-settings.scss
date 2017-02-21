@@ -89,9 +89,10 @@
 		}
 	}
 	.unfollowAllBtn{
-		@include unfollowBtnLbl(#fff);
+		@include unfollowBtnLbl(#58595b);
 		padding: 0 1rem;
 		margin-left: 0.5rem;
+		border: 1px solid #ADADAD;
 		float: none;
 		@include breakpoint('medium-small') {
 			min-width: initial;
