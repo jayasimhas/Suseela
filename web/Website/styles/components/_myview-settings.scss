@@ -251,7 +251,15 @@
 				margin: 0rem;
 			}
 			a{
-				color: #fff;
+				border-left: 1px solid #d9dadb;
+				float: left;
+				cursor: pointer;
+				padding-left: 1.25rem;
+				vertical-align: middle; 
+				position: relative; 
+				color: #58595b;
+				text-transform: uppercase;
+				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
 					text-decoration: none;
 				}
