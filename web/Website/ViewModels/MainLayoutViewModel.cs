@@ -31,10 +31,12 @@ namespace Informa.Web.ViewModels
             IAccountManagementService AccountManagementService { get; }
         }
 
-	    public MainLayoutViewModel(IDependencies dependencies)
+        protected readonly ISiteRootContext SiteRootContext;
+        public MainLayoutViewModel(IDependencies dependencies, ISiteRootContext siteRootContext)
 	    {
 	        _dependencies = dependencies;
-	    }
+            SiteRootContext = siteRootContext;
+        }
         
 	    public bool IsSiteDebuggingAllowed => _dependencies.SiteDebuggingAllowedContext.IsAllowed;
         public string PrintedByText => _dependencies.TextTranslator.Translate("Header.PrintedBy");
@@ -49,6 +51,16 @@ namespace Informa.Web.ViewModels
 	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
         public string CustomTagsHeader => _dependencies.HeadMetaDataGenerator.GetCustomTags(0);
         public string CustomTagsFooter => _dependencies.HeadMetaDataGenerator.GetCustomTags(1);
-
+        public string LeaderboardSlotID
+        {
+            get
+            {
+                string local = string.Copy(GlassModel?.Leaderboard_Slot_ID ?? string.Empty);
+                return string.IsNullOrEmpty(local)
+                    ? SiteRootContext.Item?.Global_Leaderboard_Slot_ID ?? string.Empty
+                    : local;
+            }
+        }
+        public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
     }
 }

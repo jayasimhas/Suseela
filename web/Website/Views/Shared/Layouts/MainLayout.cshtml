@@ -45,7 +45,15 @@
 
         <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
-            <div class="advertisement-placeholder"></div>
+            @if (!string.IsNullOrEmpty(Model.LeaderboardSlotID) && !string.IsNullOrEmpty(Model.LeaderboardAdZone))
+            {
+                <div class="advertising--leaderboard visible-desktop">
+                    <script>
+                if(window.outerWidth > 667)
+                OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');
+                    </script>
+                </div>
+            }
             <div class="general-header">
                 @Html.Sitecore().Placeholder("general-header")
             </div>

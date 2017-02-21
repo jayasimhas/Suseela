@@ -46,8 +46,11 @@
 
     @if (!string.IsNullOrEmpty(Model.LeaderboardSlotID) && !string.IsNullOrEmpty(Model.LeaderboardAdZone))
     {
-        <div class="advertising--leaderboard">
-            <script>OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
+        <div class="advertising--leaderboard visible-mobile">
+            <script>
+                if(window.outerWidth < 667)
+                OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');
+            </script>
         </div>
     }
     <div class="header__wrapper clearfix">

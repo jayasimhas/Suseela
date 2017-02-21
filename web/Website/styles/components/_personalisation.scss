@@ -457,7 +457,7 @@
 			.seeAllChannels{
 				@include editView(auto);
 				&.mobview{
-					margin: 1.5rem 1.25rem .5rem 1rem;
+					margin: 1.5rem 1.25rem .5rem;
 				}
 			}
 		}
@@ -482,6 +482,50 @@
 		}
 	} 
 }
+
+.listViewCont{
+	display: none;
+}
+.gridViewCont{
+	display: none;
+}
+.listView{
+	.listViewCont{
+		display: block;
+	}
+	.list-featured-article { 
+		border-bottom: 1px solid #e7e7e7;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		width: 100%;
+		.article-preview__byline{
+			.authorTitle{
+				width: 50%;
+				float: left;
+			} 
+			ul{
+				display: inline-block;
+				float: right;
+				width: 50%; 
+				text-align: right;
+			}
+			&:after{
+				clear: both;
+				content: '';
+				display: block;
+			}
+		 }
+	}
+	.topic-featured-article__inner-wrapper:after{
+		background: none;
+	}
+}
+.gridView{
+	.gridViewCont{
+		display: block;
+	}
+}
+
 
 .theme-lloydslist{
 	@media screen and (min-width: 768px){

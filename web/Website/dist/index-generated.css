@@ -6066,8 +6066,8 @@ main .advertising--leaderboard.visible-desktop {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
-        margin: 24px 20px 8px 16px;
-        margin: 1.5rem 1.25rem .5rem 1rem; } }
+        margin: 24px 20px 8px;
+        margin: 1.5rem 1.25rem .5rem; } }
 
 .personalisationhome .article-preview__inner-wrapper.showarticle {
   height: 100px;
@@ -6087,6 +6087,41 @@ main .advertising--leaderboard.visible-desktop {
     height: 25px;
     height: 1.5625rem;
     overflow: hidden; }
+
+.listViewCont {
+  display: none; }
+
+.gridViewCont {
+  display: none; }
+
+.listView .listViewCont {
+  display: block; }
+
+.listView .list-featured-article {
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  width: 100%; }
+  .listView .list-featured-article .article-preview__byline .authorTitle {
+    width: 50%;
+    float: left; }
+  .listView .list-featured-article .article-preview__byline ul {
+    display: inline-block;
+    float: right;
+    width: 50%;
+    text-align: right; }
+  .listView .list-featured-article .article-preview__byline:after {
+    clear: both;
+    content: '';
+    display: block; }
+
+.listView .topic-featured-article__inner-wrapper:after {
+  background: none; }
+
+.gridView .gridViewCont {
+  display: block; }
 
 @media screen and (min-width: 768px) {
   .theme-lloydslist .latestSubject .fllatestSub {
