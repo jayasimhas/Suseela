@@ -70,6 +70,9 @@
                 <span class="cancel cancel-modal">@Model.PopupNoButtonText</span>
             </div>
         </div>
+
+   
+
     </div>
     <input type="hidden" value="false" id="validatePriority" />
                 }
@@ -109,17 +112,16 @@
                             </div>
                             <div class="modal-overlay"></div>
                             <div class="modal-view preferences">
-                                <p class="close-modal">@Model.PopupCancelButtonText</p>
+                                <p class="close-modal"></p>
                                 <h3>@Model.SaveSettingsAlertHeaderText</h3>
                                 <h4>@Model.SaveSettingsAlertMessageText</h4>
 
                                 <div class="buttonsPan">
-                                    <span class="saveview validationChk button--outline">@Model.PopupYesButtonText</span>
-                                    <span class="cancel cancel-modal button--filled button--outline">@Model.PopupNoButtonText</span>
+                                    <span class="saveview validationChk button--filled button--outline">@Model.PopupYesButtonText</span>
+                                    <span class="cancel cancel-modal  button--outline">@Model.PopupNoButtonText</span>
                                 </div>
                             </div>
                             <input type="hidden" value="0" id="validatePreference" />
-
                         </div>
                         <div id="allPublicationsPan">
                             @{ Html.RenderPartial("/Areas/Account/Views/Personalization/Publications.cshtml", Model.ChannelsViewModel); }
@@ -139,3 +141,7 @@
                                     </div>
                                             }
 
+
+<input type="hidden" name="followText" id="followText" value="FOLLOW" />
+<input type="hidden" name="unfollowText" id="unfollowText" value="UNFOLLOW" />
+<input type="hidden" name="followingButtonText" id="followingButtonText" value="FOLLOWING" />
