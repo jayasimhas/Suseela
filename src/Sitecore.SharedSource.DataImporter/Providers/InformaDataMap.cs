@@ -65,10 +65,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             foreach (string f in files)
             {
                 string articleNumber = string.Empty;
-                try {
+                try
+                {
 
                     string errorLog = "XML read with Error ArticleId: ";
-                   
+
                     string successLog = null;
                     string successwithmissingLog = null;
                     Dictionary<string, string> ao = new Dictionary<string, string>();
@@ -92,7 +93,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     //reading Legacy Publications from Web.config
                     //string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications"];
-                  //  ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
+                    //  ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
 
                     //reading summary and replace with body it its empty
                     string summaryTitleHtml = GetXMLData(d, "SUMMARY");
@@ -334,7 +335,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     ao.Add("MEDIA", "video");
                                 }
-                                
+
                                 //else if (!string.IsNullOrEmpty(bodyTitleHtml))
                                 //{
                                 //    ao.Add("MEDIA", "image");
@@ -508,7 +509,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             }
 
-                            string textSearchForRegion =RegionTextSearch.Replace("’", "'");
+                            string textSearchForRegion = RegionTextSearch.Replace("’", "'");
                             List<string> regionSearchResults = GetListFromXml(publication, "country", site).FindAll(s => textSearchForRegion.ToLower().Contains(" " + s + " "));
                             foreach (string region in regionSearchResults)
                             {
@@ -663,7 +664,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             ao.Add(n, GetXMLData(d2, n));
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
 
                     XMLDataLogger.WriteLog(articleNumber, "ErrorReading");
@@ -671,7 +672,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             }
 
-           
+
             //XMLDataLogger.WriteLog("");
             return l;
 
@@ -685,7 +686,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             var v = regex.Match(searchtable);
 
 
-            if ((v != null) && (v.Length>0))
+            if ((v != null) && (v.Length > 0))
             {
                 return true;
 
@@ -716,12 +717,31 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             if ((v != null) && v.Length > 0)
             {
-               return true;
+                return true;
 
             }
             else { return false; }
         }
 
+
+        public override IEnumerable<object> RemoveArticles(IDataMap map)
+        {
+            Database MasterDB = Sitecore.Configuration.Factory.GetDatabase("master");
+
+            Item[] itemstoRemove = MasterDB.SelectItems(this.Query);
+            if (itemstoRemove != null && itemstoRemove.Any())
+            {
+                foreach (var item in itemstoRemove)
+                {                    
+                    if(item.ParentID.Guid.ToString().Equals("ef2014a1-819c-46e7-a841-ee0bd952a0e2") && item.TemplateName.Equals("Article"))
+                    item.Delete();
+                }
+            }
+
+            //        Item department1 = MasterDB.GetItem(this.Query);
+            //department1.DeleteChildren().Equals(depar;
+            return Enumerable.Empty<object>();
+        }
 
         public override IEnumerable<object> ImportImages(IDataMap map)
         {
@@ -807,7 +827,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/",":",")","(" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" };
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")
@@ -823,57 +843,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             return RTEInput;
         }
-
-
-
-        //public static string ReplaceRelationwithImage(string RTEInput, XmlNodeList imglist)
-        //    {
-        //        //  bool _isListAvailable = false;
-        //        String result = string.Empty;
-        //        var document = new HtmlDocument();
-        //        document.LoadHtml(RTEInput);
-        //        var tryGetNodes = document.DocumentNode.DescendantNodesAndSelf().ToList();
-
-
-        //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-        //        doc.LoadHtml(RTEInput);
-
-        //        var nodes = doc.DocumentNode.DescendantsAndSelf().ToList();
-        //        var testnodes = new Queue<HtmlNode>(tryGetNodes);
-        //      //  var testnodes = document.
-
-        //        foreach (HtmlNode node in tryGetNodes)
-        //        {
-        //            if ((node.Name.Equals("relation", StringComparison.OrdinalIgnoreCase)))
-        //            {
-        //                foreach(XmlNode img in imglist)
-        //                {
-        //                    // if(node.Attributes["sourceid"].Value == img.)
-        //                    if (node.Attributes["sourceid"].Value == img.Attributes["sourceid"].Value)
-
-        //                    {
-        //                        nodes.Remove(node);
-        //                        //HtmlNode imgnode = doc.CreateElement("Image");
-        //                        HtmlAgilityPack.HtmlNode imgnew = doc.CreateElement("Image");
-        //                        imgnew.Attributes["sourceid"].Value = img.Attributes["sourceid"].Value;
-        //                       // HtmlAgilityPack.HtmlControls.Image imgnode = new Web.UI.HtmlControls.Image();
-        //                        //imgnode.Attributes["sourceid"] = img.Attributes["sourceid"].Value;
-
-        //                        nodes.Add(imgnew);
-
-        //                    }
-
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                result += node.InnerHtml;
-        //            }
-        //        }
-
-        //        return result.Trim();
-        //    }
 
         public string CleanTitleHtml(string html)
         {
@@ -3343,8 +3312,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
                 }
 
-               // Dictionary<string, string> ao = new Dictionary<string, string>();
-               // l.Add(ao);
+                // Dictionary<string, string> ao = new Dictionary<string, string>();
+                // l.Add(ao);
             }
 
             return l;
