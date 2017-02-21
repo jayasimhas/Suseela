@@ -905,6 +905,16 @@ function createLayoutInner2(data) {
 }
 
 $(function () {
+	$('.view-mode').on('click', '.icon-tile-view', function(){
+		if($('.personalisationhome') && $('.personalisationhome').length){
+			$('.personalisationhome').removeClass('listView').addClass('gridView');
+		}
+	});
+	$('.view-mode').on('click', '.icon-list-view', function(){
+		if($('.personalisationhome') && $('.personalisationhome').length){
+			$('.personalisationhome').removeClass('gridView').addClass('listView');
+		}
+	});
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
 	    loadLayoutData = '',
