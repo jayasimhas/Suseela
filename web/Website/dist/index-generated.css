@@ -9803,13 +9803,10 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .package-wrapper .package-control-preview:first-child {
         width: 100%; } }
-    .package-wrapper .package-control-preview:first-child .article-preview__headline {
-      font-size: 32px;
-      font-size: 2rem; }
-      @media (max-width: 480px) {
-        .package-wrapper .package-control-preview:first-child .article-preview__headline {
-          font-size: 24px;
-          font-size: 1.5rem; } }
+    @media (max-width: 480px) {
+      .package-wrapper .package-control-preview:first-child .article-preview__headline {
+        font-size: 24px;
+        font-size: 1.5rem; } }
     .package-wrapper .package-control-preview:first-child .article-preview__byline {
       float: left;
       margin-top: 10px; }
@@ -9824,9 +9821,6 @@ div#feedbacklite.fbl_r {
   .package-wrapper .package-control-preview .article-preview--small {
     margin: 0;
     width: 100%; }
-  .package-wrapper .package-control-preview .article-preview__headline {
-    font-size: 24px;
-    font-size: 1.5rem; }
   .package-wrapper .package-control-preview .package-heading-wrapper {
     margin-top: 20px;
     margin-top: 1.25rem; }
@@ -9839,12 +9833,12 @@ div#feedbacklite.fbl_r {
       font-weight: bold;
       line-height: 24px;
       border-top: 1px solid #d1d3d4; }
-  .package-wrapper .package-control-preview .article-preview__inner-wrapper h1.article-preview__headline {
+  .package-wrapper .package-control-preview .article-preview__inner-wrapper h3.article-preview__headline, .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-preview__headline.article-call-to-action__title {
     font-family: Roboto;
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 38px; }
+    line-height: 24px; }
   .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
     line-height: 30px; }
 
@@ -9885,30 +9879,21 @@ div#feedbacklite.fbl_r {
         width: 100%; } }
   .package-control-articles__half .package-control-preview:first-child .article-preview__byline {
     float: none; }
-  .package-control-articles__half .package-control-preview:first-child .article-preview__headline {
-    font-size: 24px;
-    font-size: 1.5rem; }
-  .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline:first-child, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title:first-child {
-    border-top: none; }
-  .package-control-articles__half .package-control-preview .package-heading-wrapper h2.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-topics__header {
+  .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title {
     font-family: Roboto;
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 33px; }
+    line-height: 24px; }
+    .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline:first-child, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title:first-child {
+      border-top: none; }
   .package-control-articles__half .package-control-preview:first-child .article-metadata {
     float: none; }
 
 .package-control-articles__quarter {
   background: #f1f2f2;
   padding: 20px;
-  width: 55%; }
-  .package-control-articles__quarter h1 {
-    font-family: Roboto;
-    font-size: 36px;
-    font-size: 2.25rem;
-    font-weight: bold;
-    line-height: 42px; }
+  width: 45%; }
   .package-control-articles__quarter h3.article-preview__headline, .package-control-articles__quarter .article-preview__headline.article-call-to-action__title {
     padding: 16px 0 0 0;
     padding: 1rem 0 0 0;
