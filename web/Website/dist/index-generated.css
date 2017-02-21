@@ -9890,10 +9890,15 @@ div#feedbacklite.fbl_r {
 .package-control-articles__quarter {
   background: #f1f2f2;
   padding: 20px;
-  width: 55%; }
+  width: 45%; }
   .package-control-articles__quarter h3.article-preview__headline, .package-control-articles__quarter .article-preview__headline.article-call-to-action__title {
     padding: 16px 0 0 0;
     padding: 1rem 0 0 0;
+    font-family: Roboto;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 24px;
     border-top: 1px solid #d1d3d4; }
   .package-control-articles__quarter h3:first-child, .package-control-articles__quarter .article-call-to-action__title:first-child {
     border-top: none; }
