@@ -1264,17 +1264,20 @@ $(document).ready(function(){
 //Advertisement Adjustment
 
 $(document).ready(function() {
-    var WindowWidth = $(window).width();
-    if(WindowWidth > 667) {
-        var AdHeight = $('.advertising--leaderboard').height();
-        
-        $('.advertising--leaderboard').css({
-            'position': 'absolute'
-        })
-        var OffsetTop = $('.advertisement-placeholder').offset().top;
-        $('.advertising--leaderboard').css({
-            'top': OffsetTop+'px'
-        })
-        $('.advertisement-placeholder').height(AdHeight);
+    if($('.advertisement-placeholder').length > 0) {
+        var WindowWidth = $(window).width();
+        if(WindowWidth > 667) {
+            var AdHeight = $('.advertising--leaderboard').height();
+            
+            $('.advertising--leaderboard').css({
+                'position': 'absolute'
+            })
+            var OffsetTop = $('.advertisement-placeholder').offset().top;
+            $('.advertising--leaderboard').css({
+                'top': OffsetTop+'px',
+                'left': '0'
+            })
+            $('.advertisement-placeholder').height(AdHeight);
+        }
     }
 });
