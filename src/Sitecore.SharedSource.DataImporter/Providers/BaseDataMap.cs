@@ -460,6 +460,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         public abstract IEnumerable<object> ImportImages(IDataMap map);
 
+        public abstract IEnumerable<object> RemoveArticles(IDataMap map);
+
         /// <summary>
         /// this is used to process custom fields or fields
         /// </summary>

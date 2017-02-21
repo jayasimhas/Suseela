@@ -147,6 +147,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\SystemExtensions.cs" />
     <Compile Include="Extensions\TemplateExtensions.cs" />
+    <Compile Include="ArticleRemovalProcessor.cs" />
     <Compile Include="ImportProcessor.cs" />
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\DefaultLogger.cs" />
