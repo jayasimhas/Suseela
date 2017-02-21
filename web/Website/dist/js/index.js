@@ -12162,7 +12162,10 @@ $(document).ready(function () {
         var AdHeight = $('.advertising--leaderboard').height();
 
         $('.advertising--leaderboard').css({
-            'position': 'absolute',
+            'position': 'absolute'
+        });
+        var OffsetTop = $('.advertisement-placeholder').offset().top;
+        $('.advertising--leaderboard').css({
             'top': OffsetTop + 'px'
         });
         $('.advertisement-placeholder').height(AdHeight);
