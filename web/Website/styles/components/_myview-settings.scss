@@ -69,6 +69,8 @@
 	.followAllBtn{
 		@include followBtnLbl();
 		min-width: 130px;
+		margin-left: 12px;
+		float: none;
 		border: 1px solid #fab142;
 		@include breakpoint('medium-small') {
 			min-width: initial;
@@ -90,6 +92,7 @@
 		@include unfollowBtnLbl(#fff);
 		padding: 0 1rem;
 		margin-left: 0.5rem;
+		float: none;
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
