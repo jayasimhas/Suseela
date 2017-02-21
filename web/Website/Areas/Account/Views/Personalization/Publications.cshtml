@@ -52,7 +52,7 @@
             isFirst = false;
 
 
-            <div class="publicationPan donesubscribe" data-row="@channelOrder">
+            <div class="publicationPan donesubscribe" data-row="@channelOrder" style="border:1px solid #EE9500">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
                         <thead class="hidden-large">
@@ -178,7 +178,7 @@
 
                         </thead>
                         <thead class="hidden-xs">
-                            <tr>
+                            <tr class="expanded">
                                 <th class="wd-54 firstrow">
                                     <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
@@ -258,21 +258,21 @@
                             </tr>
                             <tr class="accCont @pickAndChooseSectionClass">
                                 <th class="wd-55 pbot"><p>@Model.PickAndChooseLableText</p></th>
-                                <th class="wd-25 pbot">
+                                <th class="wd-25 pbot" colspan="2" align="left">
                                     <div>
                                     @if (!Model.isFromRegistration)
                                     {
-                                        <span class="click-utag  button--filled button--outline unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                     }
                                     else
                                     {
-                                        <span class="click-utag  button--filled button--outline unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         <span class="click-utag button--outline followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                     }
                                     </div>
                                 </th>
-                                <th class="wd-15"></th>
+                                <!--<th class="wd-15"></th>-->
                             </tr>
                         </thead>
                         <tbody class="@tboadyClass">
