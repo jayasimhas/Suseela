@@ -154,7 +154,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         #endregion Drop Down Lists
 
 
-        public string ChangePasswordUrl => SalesforceConfigurationContext?.GetChangePasswordEndpoint(GetCallbackUrl("/User/ProcessUserRequest"), SiteRootContext?.Item?.Publication_Code);
+        public string ChangePasswordUrl => SalesforceConfigurationContext?.GetChangePasswordEndpoint(HttpContext.Current.Request.Url.ToString(), SiteRootContext?.Item?.Publication_Code);
 
         private string GetCallbackUrl(string url)
         {
