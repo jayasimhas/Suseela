@@ -11,15 +11,18 @@ namespace Informa.Library.User.Entitlement
         protected readonly IEntitledProductItemCodeFactory ProductCodeFactory;
         protected readonly IEntitledProductItemChannelCodesFactory ProductItemChannelCodesFactory;
         protected readonly IEntitledProductItemEntitlementLevelFactory ProductItemEntitlementLevelFactory;
+        protected readonly IEntitledProductItemAccesslCodesFactory ProductItemAccesslCodesFactory;
 
         public EntitlementProductFactory(
             IEntitledProductItemCodeFactory productCodeFactory,
             IEntitledProductItemChannelCodesFactory productItemChannelCodesFactory,
-            IEntitledProductItemEntitlementLevelFactory productItemEntitlementLevelFactory)
+            IEntitledProductItemEntitlementLevelFactory productItemEntitlementLevelFactory,
+            IEntitledProductItemAccesslCodesFactory productItemAccesslCodesFactory)
         {
             ProductCodeFactory = productCodeFactory;
             ProductItemChannelCodesFactory = productItemChannelCodesFactory;
             ProductItemEntitlementLevelFactory = productItemEntitlementLevelFactory;
+            ProductItemAccesslCodesFactory = productItemAccesslCodesFactory;
         }
 
         public IEntitledProduct Create(IEntitled_Product item)
@@ -36,22 +39,56 @@ namespace Informa.Library.User.Entitlement
         }
 
         public IEntitledProduct Create(IArticle item)
-        {
+        {           
             var productCode = ProductCodeFactory.Create(item);
             var entitlementLevel = ProductItemEntitlementLevelFactory.Create(item);
-            var channelCodes = entitlementLevel == EntitlementLevel.Channel ?
+            if(string.Equals(entitlementLevel.ToString(), EntitlementLevel.Channel.ToString(),System.StringComparison.OrdinalIgnoreCase))
+            {
+                var channelCodes = entitlementLevel == EntitlementLevel.Channel ?
                 ProductItemChannelCodesFactory.Create(item) : new List<string>();
 
-            return new EntitledProduct
+                return new EntitledProduct
+                {
+                    DocumentId = item.Article_Number,
+                    IsFree = item.Free,
+                    IsFreeWithRegistration = item.Free_With_Registration,
+                    ProductCode = productCode,
+                    PublishedOn = item.Actual_Publish_Date,
+                    EntitlementLevel = entitlementLevel,
+                    Channels = channelCodes
+                };
+            }
+            if (string.Equals(entitlementLevel.ToString(), EntitlementLevel.Item.ToString(), System.StringComparison.OrdinalIgnoreCase))
             {
-                DocumentId = item.Article_Number,
-                IsFree = item.Free,
-                IsFreeWithRegistration = item.Free_With_Registration,
-                ProductCode = productCode,
-                PublishedOn = item.Actual_Publish_Date,
-                EntitlementLevel = entitlementLevel,
-                Channels = channelCodes
-            };
+                 var itemlCodes = entitlementLevel == EntitlementLevel.Item ?
+                ProductItemAccesslCodesFactory.Create(item) : new List<string>();
+
+                return new EntitledProduct
+                {
+                    DocumentId = item.Article_Number,
+                    IsFree = item.Free,
+                    IsFreeWithRegistration = item.Free_With_Registration,
+                    ProductCode = productCode,
+                    PublishedOn = item.Actual_Publish_Date,
+                    EntitlementLevel = entitlementLevel,
+                    Channels = itemlCodes
+                };
+            }
+            return new EntitledProduct();            
         }
+
+        //public IEntitledProduct Create(IGeneral_Content_Page gPage)
+        //{
+        //    var productCode = ProductCodeFactory.Create(gPage);
+        //    var entitlementLevel = ProductItemEntitlementLevelFactory.Create(gPage);
+        //    return new EntitledProduct
+        //    {
+        //        DocumentId = gPage.Article_Number,
+        //        IsFree = gPage.Free,
+        //        IsFreeWithRegistration = gPage.Free_With_Registration,
+        //        ProductCode = productCode,
+        //        PublishedOn = gPage.Actual_Publish_Date
+        //    };
+        //}
     }
 }

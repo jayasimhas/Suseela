@@ -8,5 +8,7 @@ namespace Informa.Library.User.Entitlement
 		IEntitledProduct Create(IEntitled_Product item);
 
         IEntitledProduct Create(IArticle item);
+        //IEntitledProduct Create(IGeneral_Content_Page gPage);
+
     }
 }

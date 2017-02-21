@@ -1002,7 +1002,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType(TemplateId = IGeneral_Content_PageConstants.TemplateIdString)]
-    public partial interface IGeneral_Content_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    public partial interface IGeneral_Content_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, I___BaseEntitlement
     {
         /// <summary>
         /// The CSS field.
@@ -1086,7 +1086,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface IGeneral_Content_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    public partial interface IGeneral_Content_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, I___BaseEntitlement__Raw
     {
         /// <summary>
         /// The CSS field.
@@ -9106,7 +9106,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
     /// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITaxonomy_ItemConstants.TemplateIdString)]
-    public partial interface ITaxonomy_Item : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable
+    public partial interface ITaxonomy_Item : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable, I___BaseEntitlement
     {
         /// <summary>
         /// The Item Name field.
@@ -9156,7 +9156,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
     /// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ITaxonomy_Item__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw
+    public partial interface ITaxonomy_Item__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw, I___BaseEntitlement__Raw
     {
         /// <summary>
         /// The Item Name field.
@@ -14984,6 +14984,86 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 
 
 
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+    /// <summary>
+    /// I___BaseEntitlement Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Base Templates/__BaseEntitlement</para>	
+    /// <para>ID: 5BD32218-C007-4333-9955-D9ABA2795A56</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = I___BaseEntitlementConstants.TemplateIdString)]
+    public partial interface I___BaseEntitlement : IGlassBase
+    {
+        /// <summary>
+        /// The Enable Entitlement field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 8F14A20C-7DB2-455B-8DD4-89CDD6B8310B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BaseEntitlementConstants.Enable_EntitlementFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement { get; set; }
+
+        /// <summary>
+        /// Entitlement Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: E04118D4-7CFC-4D11-B6A2-4B3EC1B1E3BD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BaseEntitlementConstants.Entitlement_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Code { get; set; }        
+    }
+
+
+    /// <summary>
+    /// I___BaseEntitlement Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Base Templates/__BaseEntitlement</para>	
+    /// <para>ID: 5BD32218-C007-4333-9955-D9ABA2795A56</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface I___BaseEntitlement__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Enable Entitlement field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 8F14A20C-7DB2-455B-8DD4-89CDD6B8310B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BaseEntitlementConstants.Enable_EntitlementFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement { get; set; }
+
+        /// <summary>
+        /// Entitlement Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: E04118D4-7CFC-4D11-B6A2-4B3EC1B1E3BD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(I___BaseEntitlementConstants.Entitlement_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Code { get; set; }
+    }
+
+    public static partial class I___BaseEntitlementConstants
+    {
+
+        public const string TemplateIdString = "5BD32218-C007-4333-9955-D9ABA2795A56";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "__BaseEntitlement";
+
+        public static readonly ID Enable_EntitlementFieldId = new ID("8F14A20C-7DB2-455B-8DD4-89CDD6B8310B");
+        public const string Enable_EntitlementFieldName = "Enable Entitlement";
+
+        public static readonly ID Entitlement_CodeFieldId = new ID("E04118D4-7CFC-4D11-B6A2-4B3EC1B1E3BD");
+        public const string Entitlement_CodeFieldName = "Entitlement Code";
     }
 
 }
