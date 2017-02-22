@@ -11,15 +11,18 @@ namespace Informa.Library.User.Entitlement
         protected readonly IEntitledProductItemCodeFactory ProductCodeFactory;
         protected readonly IEntitledProductItemChannelCodesFactory ProductItemChannelCodesFactory;
         protected readonly IEntitledProductItemEntitlementLevelFactory ProductItemEntitlementLevelFactory;
+        protected readonly IEntitledProductItemAccesslCodesFactory ProductItemAccesslCodesFactory;
 
         public EntitlementProductFactory(
             IEntitledProductItemCodeFactory productCodeFactory,
             IEntitledProductItemChannelCodesFactory productItemChannelCodesFactory,
-            IEntitledProductItemEntitlementLevelFactory productItemEntitlementLevelFactory)
+            IEntitledProductItemEntitlementLevelFactory productItemEntitlementLevelFactory,
+            IEntitledProductItemAccesslCodesFactory productItemAccesslCodesFactory)
         {
             ProductCodeFactory = productCodeFactory;
             ProductItemChannelCodesFactory = productItemChannelCodesFactory;
             ProductItemEntitlementLevelFactory = productItemEntitlementLevelFactory;
+            ProductItemAccesslCodesFactory = productItemAccesslCodesFactory;
         }
 
         public IEntitledProduct Create(IEntitled_Product item)
@@ -39,8 +42,10 @@ namespace Informa.Library.User.Entitlement
         {
             var productCode = ProductCodeFactory.Create(item);
             var entitlementLevel = ProductItemEntitlementLevelFactory.Create(item);
-            var channelCodes = entitlementLevel == EntitlementLevel.Channel ?
-                ProductItemChannelCodesFactory.Create(item) : new List<string>();
+
+            var channelCodes =
+                entitlementLevel == EntitlementLevel.Channel ? ProductItemChannelCodesFactory.Create(item) :
+                entitlementLevel == EntitlementLevel.Item ? ProductItemAccesslCodesFactory.Create(item) : new List<string>();
 
             return new EntitledProduct
             {

@@ -231,6 +231,16 @@ namespace Informa.Web.Areas.Account.Controllers
                         tableNode.SetAttributeValue("style", "color:#58595b");
                     }
                 }
+                var CommonHeaderHtml = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-header']");
+                var HeaderImage = CommonHeaderHtml.SelectSingleNode(".//img/@src");
+                if (HeaderImage != null)
+                {
+                    if (HeaderImage.Attributes.Contains("src"))
+                    {
+                        HeaderImage.SetAttributeValue("width", "150");
+                        HeaderImage.SetAttributeValue("height", "60");
+                    }
+                }
 
                 HtmlNode CommonFooterNode = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-footer']");
                 if (CommonFooterNode != null)

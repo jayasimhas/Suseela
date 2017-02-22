@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System;
 using Sitecore.Configuration;
+using Newtonsoft.Json;
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
@@ -13,15 +14,18 @@ namespace Informa.Library.Salesforce.V2.User.Profile
     {
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IHttpClientHelper HttpClientHelper;
+        protected readonly ISalesforceInfoLogger InfoLogger;
         private const string UserDetailsSeparatorKey = "UserDetailsSeparator";
         private string _userDetailsSeparator = Settings.GetSetting(UserDetailsSeparatorKey);
 
         public SalesforceFindUserProfileV2(
             IHttpClientHelper httpClientHelper,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            ISalesforceInfoLogger infoLogger)
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            InfoLogger = infoLogger;
         }
         public IUserProfile Create(IUser user)
         {
@@ -34,10 +38,13 @@ namespace Informa.Library.Salesforce.V2.User.Profile
             {
                 return null;
             }
-
             var userInfoResponse = HttpClientHelper.GetDataResponse<SalesforceUserInfo>(new Uri(SalesforceConfigurationContext?.GetUserInfoEndPoints())
                 , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
                 new Dictionary<string, string>());
+
+            InfoLogger.Log(SalesforceConfigurationContext?.GetUserInfoEndPoints(), this.GetType().Name);
+            InfoLogger.Log(JsonConvert.SerializeObject(userInfoResponse), this.GetType().Name);
+
             var addresses = userInfoResponse?.CustomAttributes?.MailingCountry?.
                 Split(new string[] { _userDetailsSeparator }, StringSplitOptions.None);
             var contactNumerDeatils = userInfoResponse?.CustomAttributes?.Phone?.

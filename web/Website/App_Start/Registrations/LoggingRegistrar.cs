@@ -9,6 +9,7 @@ namespace Informa.Web.App_Start.Registrations
 		{
 			builder.RegisterType<SitecoreErrorLogger>().As<IErrorLogger>();
             builder.RegisterType<SitecoreDebugLogger>().As<IDebugLogger>();
+            builder.RegisterType<SitecoreInfoLogger>().As<IInfoLogger>();
         }
 	}
 }

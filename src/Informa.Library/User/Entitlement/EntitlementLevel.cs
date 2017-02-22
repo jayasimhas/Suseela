@@ -3,6 +3,8 @@
     public enum EntitlementLevel
     {
 		Site,
-		Channel
+		Channel,
+        Item,
+        GeneralContentPage
     }
 }

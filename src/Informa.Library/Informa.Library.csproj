@@ -369,9 +369,11 @@
     <Compile Include="JobsAndClassifieds\JobTile.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
+    <Compile Include="Logging\IInfoLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Logging\SitecoreInfoLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
     <Compile Include="User\ProductPreferences\IGetUserProductPreferences.cs" />
     <Compile Include="SalesforceConfiguration\ISalesforceConfigurationContext.cs" />
@@ -450,9 +452,11 @@
     <Compile Include="Subscription\Subscription.cs" />
     <Compile Include="Subscription\TopicSubscription.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserV2.cs" />
+    <Compile Include="User\Entitlement\EntitledProductItemAccesslCodesFactory.cs" />
     <Compile Include="User\Entitlement\EntitledProductItemChannelCodesFactory.cs" />
     <Compile Include="User\Entitlement\EntitledProductItemEntitlementLevelFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementLevel.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductItemAccesslCodesFactory.cs" />
     <Compile Include="User\Entitlement\IEntitledProductItemChannelCodesFactory.cs" />
     <Compile Include="User\Entitlement\IEntitledProductItemEntitlementLevelFactory.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlementsV2.cs" />

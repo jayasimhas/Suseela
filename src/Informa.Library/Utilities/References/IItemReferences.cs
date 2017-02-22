@@ -85,5 +85,6 @@ namespace Informa.Library.Utilities.References
 
         Guid SiteLevelEntitlementType { get; }
         Guid ChannelLevelEntitlementType { get; }
+        Guid ItemLevelEntitlementType { get; }
     }
 }

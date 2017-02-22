@@ -17,17 +17,20 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceGetUserEntitlementsV2 SalesforceGetUserEntitlementsV2;
         protected readonly ISalesforceFindUserProfileV2 FindUserProfile;
+        protected readonly ISalesforceInfoLogger InfoLogger;
 
         public SalesforceAuthenticateUserV2(
             IHttpClientHelper httpClientHelper,
             ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserEntitlementsV2 salesforceGetUserEntitlementsV2,
-            ISalesforceFindUserProfileV2 findUserProfile)
+            ISalesforceFindUserProfileV2 findUserProfile,
+            ISalesforceInfoLogger infoLogger)
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserEntitlementsV2 = salesforceGetUserEntitlementsV2;
             FindUserProfile = findUserProfile;
+            InfoLogger = infoLogger;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
@@ -50,11 +53,14 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                 HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
                     SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
                     new FormUrlEncodedContent(pairs)).Result;
+                InfoLogger.Log(CreateRequestUri(client.BaseAddress.AbsolutePath,
+                    SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()), this.GetType().Name);
                 if (response.IsSuccessStatusCode)
                 {
                     var responseString = response.Content.ReadAsStringAsync().Result;
                     if (!string.IsNullOrWhiteSpace(responseString))
                     {
+                        InfoLogger.Log(responseString, this.GetType().Name);
                         var values = HttpUtility.ParseQueryString(responseString);
                         accessToken = values["access_token"];
                     }

@@ -91,6 +91,7 @@
     <Compile Include="EBIWebServices\IN_ProfilePreferencesQueryResponse.cs" />
     <Compile Include="ISalesforceDebugLogger.cs" />
     <Compile Include="ISalesforceErrorLogger.cs" />
+    <Compile Include="ISalesforceInfoLogger.cs" />
     <Compile Include="ISalesforceServiceContextEnabled.cs" />
     <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
     <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
