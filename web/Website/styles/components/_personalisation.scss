@@ -122,6 +122,16 @@
                         }
                     }
                 }
+                li[data-view="listView"] {
+                    a {
+                        &:before {
+                            content: '';
+                            height: 24px;
+                            width: 22px;
+                            background: url(/dist/img/list-view.png) no-repeat;
+                        }
+                    }
+                }
                 li[data-view="tileView"] {
                     a {
                         &:before {
