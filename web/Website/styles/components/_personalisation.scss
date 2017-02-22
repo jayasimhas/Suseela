@@ -95,6 +95,9 @@
 		.view-mode {
                 padding: 0;
                 float: right;
+                @include breakpoint('small') {
+                	display: none;
+                }
                 li {
                     list-style-type: none;
                     float: left;

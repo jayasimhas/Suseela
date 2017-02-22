@@ -5684,6 +5684,9 @@ main .advertising--leaderboard.visible-desktop {
   .personalisationhome .personalHead .view-mode {
     padding: 0;
     float: right; }
+    @media (max-width: 480px) {
+      .personalisationhome .personalHead .view-mode {
+        display: none; } }
     .personalisationhome .personalHead .view-mode li {
       list-style-type: none;
       float: left; }
