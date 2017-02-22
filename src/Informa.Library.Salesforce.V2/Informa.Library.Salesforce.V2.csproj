@@ -70,8 +70,12 @@
     <Compile Include="HttpClientHelper.cs" />
     <Compile Include="IHttpClientHelper.cs" />
     <Compile Include="ProductPreferences\Attributes.cs" />
+    <Compile Include="ProductPreferences\ISalesforceGetUserProductPreferences.cs" />
+    <Compile Include="ProductPreferences\ISalesforceUpdateUserProductPreference.cs" />
     <Compile Include="ProductPreferences\ProductPreferencesResult.cs" />
     <Compile Include="ProductPreferences\Record.cs" />
+    <Compile Include="ProductPreferences\SalesforceGetUserProductPreferences.cs" />
+    <Compile Include="ProductPreferences\SalesforceUpdateUserProductPreference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUserV2.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUserV2.cs" />
