@@ -33,6 +33,10 @@ namespace Informa.Library.User.Entitlement
                 {
                     return EntitlementLevel.Channel;
                 }
+                if (siteRoot.Entitlement_Type._Id.Equals(ItemReferences.ItemLevelEntitlementType))
+                {
+                    return EntitlementLevel.Item;
+                }
             }
             return EntitlementLevel.Site;
         }

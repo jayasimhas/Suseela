@@ -905,12 +905,18 @@ function createLayoutInner2(data) {
 }
 
 $(function () {
-	$('.view-mode').on('click', '.icon-tile-view', function(){
+	$('.view-mode').on('click', '.icon-tile-view', function(e){
+		e.preventDefault();
+		$('.view-mode li').removeClass('selected');
+		$(this).parents('li').addClass('selected');
 		if($('.personalisationhome') && $('.personalisationhome').length){
 			$('.personalisationhome').removeClass('listView').addClass('gridView');
 		}
 	});
-	$('.view-mode').on('click', '.icon-list-view', function(){
+	$('.view-mode').on('click', '.icon-list-view', function(e){
+		e.preventDefault();
+		$('.view-mode li').removeClass('selected');
+		$(this).parents('li').addClass('selected');
 		if($('.personalisationhome') && $('.personalisationhome').length){
 			$('.personalisationhome').removeClass('gridView').addClass('listView');
 		}

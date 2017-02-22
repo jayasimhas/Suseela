@@ -3284,7 +3284,6 @@
 			</companies>		
 		<ID>
       <mediatype>
-        <media name="video">Interviews</media>
         <media name="insurance_day_video">Video</media>
         <media name="multimedia">Video</media>
       </mediatype>
@@ -3297,9 +3296,10 @@
 				<cont name="special_reports">Special Report</cont>
 				<cont name="supplements">Supplements and Whitepapers</cont>
 				<cont name="white_papers">Supplements and Whitepapers</cont>
-				<cont name="company_graphs">Chart/Graph</cont>
-				<cont name="company_peer_group">Chart/Graph</cont>
-				<cont name="id_top_50_index_page">Chart/Graph</cont>
+				<cont name="company_graphs">Chart/Table</cont>
+				<cont name="company_peer_group">Chart/Table</cont>
+				<cont name="id_top_50_index_page">Chart/Table</cont>
+        <cont name="video">Interviews</cont>
 			</contenttype>		
 			<market>
 				<mark name="casualty">Casualty</mark>
