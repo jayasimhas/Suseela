@@ -116,7 +116,9 @@ OAS_publication = '@Model.AdDomain' + '/';
 OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
 OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
 OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
-OAS_query = '';
+    //ISW 338 Serving ads based on section taxonomy
+OAS_query = '@Html.Raw(Model.TaxonomyName)';
+    alert(OAS_query);
 OAS_target = 'ad';
 //end of configuration
 OAS_version = 11;
