@@ -43,38 +43,6 @@
                     }
                 </li>
             }
-        </ul>
-        @*<ul id="mycarousel2" class="owl-carousel owl-theme owl-loaded owl-responsive-1000 showinMob showinTab">
-                @foreach (var company in Model.CompanyCarouselPanels)
-                {
-                    <li class="item">
-                        <div>
-                            <div class="li-content-company">
-                                <div class="companylogo">
-                                    <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
-                                </div>
-                                <div class="companyLinks">
-                                    <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
-                                    <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
-                                </div>
-                            </div>
-
-                            @foreach (var Graph in company.Graphs)
-                            {
-                                var chartDivId = company.CompanyId + "_M" + Graph.GraphID;<div class="li-content-graph">
-                                <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
-                                <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
-                            </div>
-                            <script>
-                                var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                                var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                                var chartData = data[0]["@Graph.GraphID"];
-                                PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
-                            </script>
-                            }
-                        </div>
-                    </li>
-                }
-            </ul>*@
+        </ul>       
     </div>
 </div>
