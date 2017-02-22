@@ -79,8 +79,8 @@
             {
                 var replacements = new Dictionary<string, string>
                 {
-                    ["#selectedtopics#"] = GetPreferredTopics(ChannelId),
-                    ["#totaltopics#"] = GetAllTopics(ChannelId)
+                    ["#selectedtopics#"] = GetPreferredTopics(ChannelId) ?? "",
+                    ["#totaltopics#"] = GetAllTopics(ChannelId) ?? ""
                 };
                 return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
             }
@@ -92,7 +92,7 @@
 
         private string GetPreferredTopics(string channelId)
         {
-            if (UserPreferences != null && UserPreferences.Preferences != null &&
+            if (!string.IsNullOrEmpty(channelId) && UserPreferences != null && UserPreferences.Preferences != null &&
                              UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
             {
                 var channel = UserPreferences.Preferences.PreferredChannels.Where(c => c.ChannelId == channelId).FirstOrDefault();

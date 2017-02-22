@@ -10,6 +10,14 @@
             <div class="personalHead clearfix">
                 <h1>@Model.PageHeading</h1>
                 <a class="editView button--filled button--outline hidden-xs" href="@Model.MyViewSettingsPageUrl">@Model.EditMyViewButtonLableText</a>
+                <ul class="view-mode hidden-xs">
+                    <li data-view="tileView" class="selected">
+                        <a href="#" class="icon-tile-view" title="Tile View">tile View</a>
+                    </li>
+                    <li data-view="listView" class="">
+                        <a href="#" class="icon-list-view" title="List view">List View</a>
+                    </li>
+                </ul>
             </div>
             <div class="sub-heading-text">
                 @Html.Raw(@Model.PageDescription)
