@@ -32,7 +32,6 @@ namespace Informa.Library.Services.Global {
             string cacheKey = CreateCacheKey($"HeirarchyChildLinks-{taxItem._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildHeirarchyChildLinks(taxItem));
         }
-
         public IEnumerable<HierarchyLinks> BuildHeirarchyChildLinks(I___BaseTaxonomy taxItem)
         {
             var children = new List<HierarchyLinks>();
@@ -83,7 +82,31 @@ namespace Informa.Library.Services.Global {
 
             return children;
         }
-        
+        //ISW 338 Serving ads based on section taxonomy
+        public string GetTaxonomyParentFromItem(ITaxonomy_Item taxonomy)
+        {
+            List<ITaxonomy_Item> taxonomyItems = new List<ITaxonomy_Item>();
+
+            taxonomyItems.Add(taxonomy);
+            var parent = taxonomy._Parent;
+
+            while (parent is ITaxonomy_Item)
+            {
+                var item = parent as ITaxonomy_Item;
+
+                taxonomyItems.Add(item);
+                parent = item._Parent;
+            }
+
+            if ((parent is IFolder))    //Will add Or conditions after merged with R2,R3 Release (parent is IIndustries_Folder)
+            {
+                return parent._Name;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
         private Tuple<IFolder, Guid, IEnumerable<ITaxonomy_Item>> GetTaxonomyHierarchy(ITaxonomy_Item taxonomy) {
             List<ITaxonomy_Item> taxonomyItems = new List<ITaxonomy_Item>();
 
