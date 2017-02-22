@@ -3282,8 +3282,13 @@
 					<comp name="YZJ">YZJ</comp>
 					<comp name="Zurich">Zurich</comp>			
 			</companies>		
-		<ID>		
-			<contenttype>
+		<ID>
+      <mediatype>
+        <media name="video">Interviews</media>
+        <media name="insurance_day_video">Video</media>
+        <media name="multimedia">Video</media>
+      </mediatype>
+      <contenttype>
 				<cont name="ece_incoming">News</cont>
 				<cont name="comment">Opinion</cont>
 				<cont name="news_analysis">Analysis</cont>
@@ -3292,10 +3297,9 @@
 				<cont name="special_reports">Special Report</cont>
 				<cont name="supplements">Supplements and Whitepapers</cont>
 				<cont name="white_papers">Supplements and Whitepapers</cont>
-				<cont name="company_graphs">Chart / Graph</cont>
-				<cont name="company_peer_group">Chart / Graph</cont>
-				<cont name="id_top_50_index_page">Chart / Graph</cont>
-				<cont name="video">Interviews</cont>
+				<cont name="company_graphs">Chart/Graph</cont>
+				<cont name="company_peer_group">Chart/Graph</cont>
+				<cont name="id_top_50_index_page">Chart/Graph</cont>
 			</contenttype>		
 			<market>
 				<mark name="casualty">Casualty</mark>
@@ -3309,12 +3313,9 @@
 				<mark name="specialty">Specialty</mark>
 				<mark name="run_off">Legacy</mark>
 				<mark name="business_interruption">Property</mark>
-				 
-				
-				
+        <mark name="motor">Specialty</mark>	
 			</market>			
 			<country>
-				
 				<reg name="world">Global</reg>
 				<reg name="c_and_s_america">Americas</reg>
 				<reg name="europe">Europe</reg>
@@ -3329,7 +3330,6 @@
 				<reg name="emerging_markets">Global</reg>
 				<reg name="united_states">Americas</reg>
 				<reg name="Japan">Japan</reg>
-				
 			</country>			
 			<topics>					
 					<top name="mergers-and-acquisitions">Mergers and Acquisitions</top>
@@ -3353,18 +3353,16 @@
 					<top name="distribution">Distribution</top>
 					<top name="divestments">Mergers and Acquisitions</top>
 					<top name="m_and_a">Mergers and Acquisitions</top>
-				
-
+					<top name="people_profiles">Big Interview</top>
+          <top name="it">Technology</top>
 			</topics>			
 			<sectors>
 				<sector name="regulation">Regulation</sector>
 				<sector name="marine">Marine</sector>
 				<sector name="capital_management">Insurance-Linked Securities</sector>
-				
+        <sector name="aviation">Aviation</sector>
 			</sectors>
-		
-		
-		</ID>
+			</ID>
 		<LL>
 			<contenttype>
 				<cont name="news">News</cont>
@@ -3413,6 +3411,7 @@
 			</hottopics>		
 			<market>
 				<mark name="drybulk">Dry Bulk</mark>
+        <mark name="gaslngandlpg">Tankers and Gas</mark>
 				<mark name="tankers">Tankers and Gas</mark>
 				<mark name="shipper_sentiment_survey">Analysis</mark>
 				<mark name="features_and_interviews">Analysis</mark>
@@ -3481,7 +3480,8 @@
 				<regular name="annual-review">Annual Outlook</regular>
 				<regular name="yard_talk">Shipbuilding</regular>
 			</regulars>			
-			<sectors>			
+			<sectors>
+          
 					<sector name="news-profiles">People</sector>
 					<sector name="casualty">Casualty</sector>
 					<sector name="shiptechnology"><![CDATA[Technology & Innovation]]></sector>
@@ -3543,7 +3543,8 @@
 					<sector name="lloyds-list-digital-finance">Finance</sector>			
 			</sectors>		
 			<topics>
-				<top name="events">Events</top>
+				
+        <top name="events">Events</top>
 				<top name="posidonia">Posidonia</top>
 				<top name="singapore-maritime-week">Singapore Maritime Week</top>	
 				<top name="smm">SMM</top>

@@ -315,6 +315,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             if (!ao.ContainsKey("MEDIA"))
                             {
+                                string type;
                                 if (Tableau.Count > 0)
                                 {
                                     ao.Add("MEDIA", "interactivedashboards");
@@ -331,9 +332,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     ao.Add("MEDIA", "chart/table");
                                 }
-                                else if (CheckIframe(GetXMLData(d, bodyNode)))
+                                else if (CheckIframe(GetXMLData(d, bodyNode),out type))
                                 {
-                                    ao.Add("MEDIA", "video");
+                                    ao.Add("MEDIA", type);
                                 }
 
                                 //else if (!string.IsNullOrEmpty(bodyTitleHtml))
@@ -342,11 +343,32 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 //}
                                 else
                                 {
-                                    ao.Add("MEDIA", "");
+                                    if (site == "Maritime")
+                                    {
+                                        XmlNode xn = d.SelectSingleNode($"//{"TAXONOMY"}");
+
+                                        foreach (XmlNode node in xn)
+                                        {
+                                            if (node.Attributes["unique-name"] != null)
+                                            {
+
+                                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "mediatype", site))
+                                                {
+
+                                                    ao.Add("MEDIA", node.Attributes["unique-name"].Value);
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                            else
+                                            {
+                                                ao.Add("MEDIA", "");
+                                            }
                                 }
                             }
 
-
+                                  
 
 
                             ao.Add("INDUSTRIES", "");
@@ -709,18 +731,32 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             else
                 return false;
         }
-        private bool CheckIframe(string searchIframe)
+        private bool CheckIframe(string searchIframe,out string mediatype)
         {
-
-            Regex regex = new Regex("<iframe frameborder=(.*)</iframe>");
-            var v = regex.Match(searchIframe);
-
-            if ((v != null) && v.Length > 0)
+            Regex regexgeneral = new Regex("<iframe");
+            Regex regexinfogr = new Regex("e.infogr.am");
+            var v = regexgeneral.Match(searchIframe);
+            if(v.Length>0)
             {
+               var infogrm = regexinfogr.Match(searchIframe);
+                if(infogrm.Length>0)
+                {
+                    mediatype = "chart/table";
+                }
+                else
+                {
+                    mediatype = "video";
+                }
                 return true;
-
             }
-            else { return false; }
+            else
+            {
+                mediatype = "";
+                return false;
+            }
+            
+
+            
         }
 
 
@@ -1557,16 +1593,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     Regulars += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["REGULARS"] = Regulars;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "mediatype", site))
-                                {
-                                    Media = node.Attributes["unique-name"].Value;
-                                    if (!Taxonomy.ContainsKey("MEDIA"))
-                                    {
-                                        Taxonomy.Add("MEDIA", "");
-                                    }
+                                //else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "mediatype", site))
+                                //{
+                                //    Media = node.Attributes["unique-name"].Value;
+                                //    if (!Taxonomy.ContainsKey("MEDIA"))
+                                //    {
+                                //        Taxonomy.Add("MEDIA", "");
+                                //    }
 
-                                    Taxonomy["MEDIA"] = Media;
-                                }
+                                //    Taxonomy["MEDIA"] = Media;
+                                //}
                                 else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
                                 {
                                     HotTopics += node.Attributes["unique-name"].Value + ",";
