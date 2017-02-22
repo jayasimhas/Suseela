@@ -19,6 +19,7 @@ namespace Informa.Library.Salesforce.V2.User.Profile
     {
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly ISalesforceInfoLogger InfoLogger;
         protected string RequestFailedKey => TextTranslator.Translate("ContactInfo.RequestFailed");
 
         private const string UserDetailsSeparatorKey = "UserDetailsSeparator";
@@ -41,10 +42,12 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         private string ContactReferenceName => TextTranslator.Translate("ContactInfo.Reference.Contact");
         public SalesforceManageAccountInfoV2(
     ITextTranslator textTranslator,
-    ISalesforceConfigurationContext salesforceConfigurationContext)
+    ISalesforceConfigurationContext salesforceConfigurationContext,
+    ISalesforceInfoLogger infoLogger)
         {
             TextTranslator = textTranslator;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            InfoLogger = infoLogger;
         }
 
         public IAccountInfoWriteResult UpdateContactInfo(
@@ -165,6 +168,9 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
                 var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
                 var result = client.PostAsync(SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username), content).Result;
+
+                InfoLogger.Log(SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username), this.GetType().Name);
+                InfoLogger.Log(result.Content.ReadAsStringAsync().Result, this.GetType().Name);
                 if (!result.IsSuccessStatusCode)
                 {
                     return WriteErrorResult(RequestFailedKey);

@@ -38,4 +38,22 @@ namespace Informa.Library.Salesforce
             DebugLogger.Log(string.Concat(LogMessagePrefix, message));
         }
     }
+
+    public class SalesforceInfoLogger : ISalesforceInfoLogger
+    {
+        private const string LogMessagePrefix = "Salesforce V2 Information Logging: ";
+
+        protected readonly IInfoLogger InfoLogger;
+
+        public SalesforceInfoLogger(
+            IInfoLogger infoLogger)
+        {
+            InfoLogger = infoLogger;
+        }
+
+        public void Log(string message, string owner)
+        {
+            InfoLogger.Log(string.Concat(LogMessagePrefix, message), owner);
+        }
+    }
 }

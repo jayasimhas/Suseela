@@ -369,9 +369,11 @@
     <Compile Include="JobsAndClassifieds\JobTile.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
+    <Compile Include="Logging\IInfoLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Logging\SitecoreInfoLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
     <Compile Include="SalesforceConfiguration\ISalesforceConfigurationContext.cs" />
     <Compile Include="SalesforceConfiguration\SalesforceConfigurationContext.cs" />
