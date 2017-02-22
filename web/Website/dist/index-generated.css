@@ -4690,7 +4690,7 @@ main .advertising--leaderboard.visible-desktop {
         height: 1.875rem;
         width: 30px;
         width: 1.875rem;
-        border: none;
+        border: none !important;
         padding: 0 16px;
         padding: 0 1rem;
         display: inline-block;
@@ -4726,7 +4726,7 @@ main .advertising--leaderboard.visible-desktop {
         display: inline-block;
         margin-left: 10px;
         margin-left: 0.625rem;
-        border: none;
+        border: none !important;
         padding: 0 16px;
         padding: 0 1rem;
         text-indent: -9999px; } }
@@ -6117,8 +6117,8 @@ main .advertising--leaderboard.visible-desktop {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
-        margin: 24px 20px 8px;
-        margin: 1.5rem 1.25rem .5rem; } }
+        margin: 24px 20px 8px 16px;
+        margin: 1.5rem 1.25rem .5rem 1rem; } }
 
 .personalisationhome .article-preview__inner-wrapper.showarticle {
   height: 100px;
@@ -9128,10 +9128,10 @@ div#feedbacklite.fbl_r {
     border-top: 1px solid #d1d3d4;
     display: block; }
 
-.graybg {
-  border-bottom: 1px solid #d1d3d4;
-  border-top: 1px solid #d1d3d4; }
-
+/*.graybg {
+	border-bottom: 1px solid #d1d3d4;
+	border-top: 1px solid #d1d3d4;
+}*/
 .lloyd-related-links {
   margin-top: 20px;
   margin-top: 1.25rem; }

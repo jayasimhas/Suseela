@@ -498,7 +498,7 @@
 			.seeAllChannels{
 				@include editView(auto);
 				&.mobview{
-					margin: 1.5rem 1.25rem .5rem;
+					margin: 1.5rem 1.25rem .5rem 1rem;
 				}
 			}
 		}

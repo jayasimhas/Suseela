@@ -1162,10 +1162,12 @@ $(function () {
 	});
 	
 	var latestSubject = $('.latestSubject');
-	for(var i = 0; i < latestSubject.length; i++){
-		var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
-		setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
-		$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
-		$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
+	if (window.matchMedia("(min-width: 768px)").matches) {
+		for(var i = 0; i < latestSubject.length; i++){
+			var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
+			setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
+			$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
+			$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
+		}
 	}
 });

@@ -140,7 +140,7 @@
 			background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 			height: 1.875rem;
 			width: 1.875rem;
-			border: none;
+			border: none !important;
 			padding: 0 1rem;
 			display: inline-block;
 			margin-left: 0.625rem;
@@ -156,7 +156,7 @@
 			width: 1.875rem;
 			display: inline-block;
 			margin-left: 0.625rem;
-			border: none;
+			border: none !important;
 			padding: 0 1rem;
 			text-indent: -9999px;
 		}
