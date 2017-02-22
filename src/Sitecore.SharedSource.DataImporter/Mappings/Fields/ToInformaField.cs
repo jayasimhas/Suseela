@@ -4592,7 +4592,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("news-data", "Data Table");
             d.Add("ontheradar", "Video");
             d.Add("lloyds-list-videos", "Video");
-            d.Add("video", "Interviews");
+            
             d.Add("insurance_day_video", "Video");
             d.Add("multimedia", "Video");
 

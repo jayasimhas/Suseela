@@ -261,7 +261,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     //ao.Add("SECTION", contentTypeHtml);
                                     // break;
                                 }
-                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews")
+                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews" || contentTypeHtml == "special report" || contentTypeHtml == "supplements and whitepapers")
                                 {
                                     contentTypeSetHtml = contentTypeHtml;
                                     // ao.Add("SECTION", contentTypeHtml);
@@ -375,9 +375,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                             // Siddharth
-                            if (ao["MEDIA"] == "")
+                            if (!ao.ContainsKey("MEDIA"))
                             {
-
+                                ao.Add("Media", "");
                                 successwithmissingLog += "||" + "Media is missing";
                                 XMLDataLogger.WriteLog(articleNumber, "MediaMissingLog");
                             }
