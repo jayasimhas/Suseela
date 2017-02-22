@@ -2166,6 +2166,17 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #main-carousel {
       padding-right: 12px; } }
+  #main-carousel a[title="JavaScript charts"], #main-carousel [title="JavaScript charts"].pop-out__reset-password, #main-carousel [title="JavaScript charts"].sortable-table__list-toggler, #main-carousel [title="JavaScript charts"].mobile-table-exit {
+    display: none !important; }
+  #main-carousel .item-wrapper {
+    width: 25%;
+    float: left; }
+    @media only screen and (min-width: 668px) and (max-width: 1024px) {
+      #main-carousel .item-wrapper {
+        width: 50%; } }
+    @media (max-width: 480px) {
+      #main-carousel .item-wrapper {
+        width: 100%; } }
   #main-carousel .owl-carousel .item {
     height: 290px; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
@@ -2204,8 +2215,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         clear: both;
         content: ''; } }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
-    #main-carousel .hideinTab {
-      display: none !important; }
     #main-carousel .showinTab {
       display: block !important; } }
   #main-carousel .li-content-company img {
