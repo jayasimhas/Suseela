@@ -85,7 +85,8 @@ namespace Informa.Web.Areas.Article.Controllers
                     || string.IsNullOrWhiteSpace(request.SenderName)
                     || string.IsNullOrWhiteSpace(request.ArticleNumber)
                     || string.IsNullOrWhiteSpace(request.CompanyName)
-                    || string.IsNullOrWhiteSpace(request.PhoneNumber))
+                    || string.IsNullOrWhiteSpace(request.PhoneNumber)
+                    || string.IsNullOrWhiteSpace(request.PublicationName))
             {
                 _logger.Warn($"Field is null");
                 return Ok(new
@@ -100,7 +101,8 @@ namespace Informa.Web.Areas.Article.Controllers
                             request.ArticleNumber, request.PersonalQuestion);
             string specificEmailBody = emailBody
                         .ReplacePatternCaseInsensitive("#friend_name#",AskAnalystEmail)
-                        .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", AskAnalystEmail);            
+                        .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", AskAnalystEmail)
+                        .ReplacePatternCaseInsensitive("#publication name#",request.PublicationName);            
 				var analystEmail = new Email
 				{
 					To = AskAnalystEmail,

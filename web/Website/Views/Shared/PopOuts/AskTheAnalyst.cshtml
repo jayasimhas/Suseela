@@ -16,6 +16,9 @@
         <h3 class="pop-out__header">
             @Model.AskTheAnalystText
         </h3>
+        <p class="pop-out__details u-italic">
+            @Html.Raw(Model.AskTheAnalystLink)
+        </p>  
         <div class="alert-success js-email-article-success">
             <svg class="alert__icon">
                 <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
@@ -77,7 +80,7 @@
                        type="text"
                        placeholder="@Model.SenderPlaceHolderPhoneNumber">
                 <p>
-                    <span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.PublicationName)
+                    <input type="hidden" name="PublicationName" value="@Model.PublicationName">
                     <input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
                 </p>
 
@@ -100,10 +103,7 @@
                     </div>
                 </div>
                 @Html.AuthToken()
-                </form>
-            <p class="pop-out__details u-italic">
-                @Html.Raw(Model.AskTheAnalystLink)
-            </p>           
+                </form>                   
         </div>
     </div>
 </div>
