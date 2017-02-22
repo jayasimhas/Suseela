@@ -990,6 +990,7 @@ $(function () {
 		    eachstory = eachstoryMpan.find('.eachstory'),
 		    eachstoryId = eachstory.attr('id'),
 		    layoutCls = eachstory.attr('class'),
+			channelId = $this.closest('.eachstoryMpan').prev('.latestSubject').attr('id'),
 		    loadLayoutData;
 
 		var layout = layoutCls.indexOf('layout1') !== -1 ? 'layout1' : 'layout2';
@@ -1000,7 +1001,7 @@ $(function () {
 			url: $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-loadurl'),
 			dataType: 'json',
 			type: 'POST',
-			data: JSON.stringify({ 'TaxonomyIds': sendtaxonomyIdsArr, 'PageNo': $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-pageNo'), 'PageSize': $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-pageSize') }),
+			data: JSON.stringify({ 'TaxonomyIds': sendtaxonomyIdsArr, 'ChannelId': channelId, 'PageNo': $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-pageNo'), 'PageSize': $this.closest('.eachstoryMpan').find('.getPaginationNum').attr('data-pageSize') }),
 			contentType: "application/json",
 			success: function success(data) {
 				if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
