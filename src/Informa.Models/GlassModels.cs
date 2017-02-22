@@ -1002,7 +1002,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType(TemplateId = IGeneral_Content_PageConstants.TemplateIdString)]
-    public partial interface IGeneral_Content_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, I___BaseEntitlement
+    public partial interface IGeneral_Content_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseEntitlement
     {
         /// <summary>
         /// The CSS field.
@@ -1086,7 +1086,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     /// <para>ID: 0933b8e2-67c4-4d83-a43d-a4c67b863f4d</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface IGeneral_Content_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, I___BaseEntitlement__Raw
+    public partial interface IGeneral_Content_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseEntitlement__Raw
     {
         /// <summary>
         /// The CSS field.
@@ -9106,7 +9106,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
     /// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITaxonomy_ItemConstants.TemplateIdString)]
-    public partial interface ITaxonomy_Item : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable, I___BaseEntitlement
+    public partial interface ITaxonomy_Item : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseEntitlement
     {
         /// <summary>
         /// The Item Name field.
@@ -9156,7 +9156,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
     /// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface ITaxonomy_Item__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw, I___BaseEntitlement__Raw
+    public partial interface ITaxonomy_Item__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseEntitlement__Raw
     {
         /// <summary>
         /// The Item Name field.
@@ -17864,7 +17864,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IEnumerable<IGlassBase> Taxonomy_Listings { get; set; }
+        IEnumerable<ITaxonomy_Item> Taxonomy_Listings { get; set; }
         /// <summary>
         /// The Footer Menu 1 Navigation field.
         /// <para></para>
@@ -19091,7 +19091,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
-        IEnumerable<IGlassBase> Taxonomy_Listings { get; set; }
+        IEnumerable<ITaxonomy_Item> Taxonomy_Listings { get; set; }
         /// <summary>
         /// The Footer Menu 1 Navigation field.
         /// <para></para>

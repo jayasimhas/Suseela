@@ -11,7 +11,7 @@ namespace Informa.Library.Services.AccountManagement {
         bool IsUserRestricted(I___BasePage page);
         bool IsPageRestrictionSet(I___BasePage page);
         bool IsUserRestrictedByRegistration(Guid page);
-        bool IsUserRestrictedByEntitlement(Guid page, string path);
-        bool IsUserEntitled(string path);
+        bool IsUserRestrictedByEntitlement(Guid page, string path, string entitlementCode = null);
+        bool IsUserEntitled(string path, string entitlementCode = null);
     }
 }

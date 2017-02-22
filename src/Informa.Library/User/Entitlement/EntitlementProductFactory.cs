@@ -39,42 +39,24 @@ namespace Informa.Library.User.Entitlement
         }
 
         public IEntitledProduct Create(IArticle item)
-        {           
+        {
             var productCode = ProductCodeFactory.Create(item);
             var entitlementLevel = ProductItemEntitlementLevelFactory.Create(item);
-            if(string.Equals(entitlementLevel.ToString(), EntitlementLevel.Channel.ToString(),System.StringComparison.OrdinalIgnoreCase))
-            {
-                var channelCodes = entitlementLevel == EntitlementLevel.Channel ?
-                ProductItemChannelCodesFactory.Create(item) : new List<string>();
 
-                return new EntitledProduct
-                {
-                    DocumentId = item.Article_Number,
-                    IsFree = item.Free,
-                    IsFreeWithRegistration = item.Free_With_Registration,
-                    ProductCode = productCode,
-                    PublishedOn = item.Actual_Publish_Date,
-                    EntitlementLevel = entitlementLevel,
-                    Channels = channelCodes
-                };
-            }
-            if (string.Equals(entitlementLevel.ToString(), EntitlementLevel.Item.ToString(), System.StringComparison.OrdinalIgnoreCase))
-            {
-                 var itemlCodes = entitlementLevel == EntitlementLevel.Item ?
-                ProductItemAccesslCodesFactory.Create(item) : new List<string>();
+            var channelCodes =
+                entitlementLevel == EntitlementLevel.Channel ? ProductItemChannelCodesFactory.Create(item) :
+                entitlementLevel == EntitlementLevel.Item ? ProductItemAccesslCodesFactory.Create(item) : new List<string>();
 
-                return new EntitledProduct
-                {
-                    DocumentId = item.Article_Number,
-                    IsFree = item.Free,
-                    IsFreeWithRegistration = item.Free_With_Registration,
-                    ProductCode = productCode,
-                    PublishedOn = item.Actual_Publish_Date,
-                    EntitlementLevel = entitlementLevel,
-                    Channels = itemlCodes
-                };
-            }
-            return new EntitledProduct();            
+            return new EntitledProduct
+            {
+                DocumentId = item.Article_Number,
+                IsFree = item.Free,
+                IsFreeWithRegistration = item.Free_With_Registration,
+                ProductCode = productCode,
+                PublishedOn = item.Actual_Publish_Date,
+                EntitlementLevel = entitlementLevel,
+                Channels = channelCodes
+            };
         }
     }
 }

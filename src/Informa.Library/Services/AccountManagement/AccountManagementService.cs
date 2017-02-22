@@ -13,8 +13,9 @@ using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.MarketData;
 
-namespace Informa.Library.Services.AccountManagement {
-    
+namespace Informa.Library.Services.AccountManagement
+{
+
     [AutowireService(LifetimeScope.SingleInstance)]
     public class AccountManagementService : IAccountManagementService
     {
@@ -23,26 +24,29 @@ namespace Informa.Library.Services.AccountManagement {
         private readonly IItemReferences ItemReferences;
         private readonly IUserEntitlementsContext UserEntitlementsContext;
         private readonly ISiteRootsContext SiteRootsContext;
+       
 
         public AccountManagementService(
             IAuthenticatedUserContext authenticatedUserContext,
             IItemReferences itemReferences,
             IUserEntitlementsContext userEntitlementsContext,
-            ISiteRootsContext siteRootsContext)
+            ISiteRootsContext siteRootsContext
+            )
         {
             AuthenticatedUserContext = authenticatedUserContext;
             ItemReferences = itemReferences;
             UserEntitlementsContext = userEntitlementsContext;
             SiteRootsContext = siteRootsContext;
+           
         }
 
         public bool IsUserRestricted(I___BasePage page)
         {
             bool isCompanyLandingPage = page is ICompany_Landing_Page;
-            if(isCompanyLandingPage)
+            if (isCompanyLandingPage)
             {
                 ICompany_Landing_Page CompanyLandingPage = (ICompany_Landing_Page)page;
-                return (IsUserRestrictedByRegistration(CompanyLandingPage.Restrict_Access) || IsUserRestrictedByEntitlement(CompanyLandingPage.Restrict_Access, CompanyLandingPage._Path)) ? true: false;
+                return (IsUserRestrictedByRegistration(CompanyLandingPage.Restrict_Access) || IsUserRestrictedByEntitlement(CompanyLandingPage.Restrict_Access, CompanyLandingPage._Path)) ? true : false;
             }
             bool isCompanyDetailPage = page is ICompany_Detail_Page;
             if (isCompanyDetailPage)
@@ -71,9 +75,17 @@ namespace Informa.Library.Services.AccountManagement {
             bool isGeneralContentPage = page is IGeneral_Content_Page;
             if (!isGeneralContentPage)
                 return false;
-        
+
             IGeneral_Content_Page gPage = (IGeneral_Content_Page)page;
-            return (IsUserRestrictedByRegistration(gPage.Restrict_Access) || IsUserRestrictedByEntitlement(gPage.Restrict_Access,gPage._Path))? true : false;
+            if (gPage != null && gPage.Enable_Entitlement && !string.IsNullOrEmpty(gPage.Entitlement_Code))
+            {
+                return (IsUserRestrictedByRegistration(gPage.Restrict_Access) || IsUserRestrictedByEntitlement(gPage.Restrict_Access, gPage._Path, gPage.Entitlement_Code)) ? true : false;
+            }
+            else
+            {
+                return (IsUserRestrictedByRegistration(gPage.Restrict_Access) || IsUserRestrictedByEntitlement(gPage.Restrict_Access, gPage._Path)) ? true : false;
+            }
+
         }
 
 
@@ -117,22 +129,34 @@ namespace Informa.Library.Services.AccountManagement {
 
         }
 
-        public bool IsUserRestrictedByRegistration(Guid Restrict_Access) {
+        public bool IsUserRestrictedByRegistration(Guid Restrict_Access)
+        {
             bool isRestricted = Restrict_Access.Equals(ItemReferences.FreeWithRegistration);
             return (isRestricted && !AuthenticatedUserContext.IsAuthenticated);
         }
 
-        public bool IsUserRestrictedByEntitlement(Guid Restrict_Access , string path) {
-            bool isRestricted = Restrict_Access.Equals(ItemReferences.FreeWithEntitlement);            
-            return (isRestricted && !IsUserEntitled(path));
+        public bool IsUserRestrictedByEntitlement(Guid Restrict_Access, string path, string entitlementCode = null)
+        {
+            if (!string.IsNullOrEmpty(entitlementCode))
+            {
+                return (!IsUserEntitled(path, entitlementCode));
+            }
+            else
+            {
+                bool isRestricted = Restrict_Access.Equals(ItemReferences.FreeWithEntitlement);
+                return (isRestricted && !IsUserEntitled(path));
+            }
         }
 
-        public bool IsUserEntitled(string _path) {
+        public bool IsUserEntitled(string _path, string entitlementCode = null)
+        {
             var siteRoot = SiteRootsContext.SiteRoots.FirstOrDefault(sr => _path.StartsWith(sr._Path));
             if (siteRoot == null)
                 return false;
 
-            return UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code, StringComparison.CurrentCultureIgnoreCase));
+            return !string.IsNullOrEmpty(entitlementCode) ?
+                UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code + "." + entitlementCode, StringComparison.CurrentCultureIgnoreCase)) :
+                UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code, StringComparison.CurrentCultureIgnoreCase));
         }
 
     }
