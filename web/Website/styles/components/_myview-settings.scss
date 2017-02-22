@@ -375,9 +375,20 @@
 			thead{				
 				&.followbg{
 					background: #f9f9f9;
+					.expandTxt{
+						color: #58595B;
+					}
 				}
 				&.followingbg{
 					background: #fff;
+					.expandTxt{
+						color: #f7941e;
+					}
+					.rowlines{
+						.mv{
+							background: #f7941e;
+						}
+					}
 				}
 				tr{
 					@include breakpoint('small') {
@@ -441,10 +452,12 @@
 						padding: 0rem 1rem 1.25rem 27px;
 					}
 					.mvTxt{
+						@include textMix('Roboto Condensed', 0.875rem, 400);
+						visibility: hidden;
 						float: left;
 						width: 60px; 
 						text-align: right;
-						@include textMix('Roboto Condensed', 0.875rem, 400);
+						color: #f7941e;
 					}
 					& .rowlines{
 						@include getMove(#979797, 0rem); 
@@ -483,14 +496,14 @@
 							height: 30px;
 							width: 30px;
 						} 
-					}
+					} 
 					& .accordionImg{
 						width: 120px;
 						float: left;
 						text-align: right;
 						.expandTxt{
+							visibility: hidden;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
-							color: #58595B;
 							text-transform: uppercase;
 							padding-right: 14px;
 						}
