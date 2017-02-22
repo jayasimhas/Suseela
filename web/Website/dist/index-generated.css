@@ -5707,6 +5707,11 @@ main .advertising--leaderboard.visible-desktop {
           font-size: 26px; }
         .personalisationhome .personalHead .view-mode li a.active, .personalisationhome .personalHead .view-mode li .active.pop-out__reset-password, .personalisationhome .personalHead .view-mode li .active.sortable-table__list-toggler, .personalisationhome .personalHead .view-mode li .active.mobile-table-exit {
           background-color: #f0f1f3; }
+    .personalisationhome .personalHead .view-mode li[data-view="listView"] a:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .pop-out__reset-password:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .sortable-table__list-toggler:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .mobile-table-exit:before {
+      content: '';
+      height: 24px;
+      width: 22px;
+      background: url(/dist/img/list-view.png) no-repeat; }
     .personalisationhome .personalHead .view-mode li[data-view="tileView"] a:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .pop-out__reset-password:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .sortable-table__list-toggler:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .mobile-table-exit:before {
       content: '';
       height: 26px;
@@ -8479,8 +8484,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12058,7 +12063,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
