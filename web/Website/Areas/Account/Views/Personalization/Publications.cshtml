@@ -43,8 +43,8 @@
             tboadyClass = isFirst ? "" : "tbodyhidden";
             collapsedClss = isFirst ? "expanded" : "";
             pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
-            publicationFollowButtonClass = IsFollowingAnyTopics || isFirst ? "hideBtn" : "";
-            publicationFollowingButtonClass = IsFollowingAnyTopics && !isFirst ? "" : "hideBtn";
+            publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
+            publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
             publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
             mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
             pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
