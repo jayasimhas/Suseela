@@ -922,13 +922,32 @@ function createLayoutInner2(data) {
 	return articleData;
 }
 
+function getMyviewCookie(cookie){
+	var getAllcookies = cookie.split(';');
+	for(var i=0; i<getAllcookies.length; i++){
+		if(getAllcookies[i].indexOf('myViewCookieName=') == 0){
+			var myViewCookie = getAllcookies[i],
+				selectedCookie = myViewCookie.split('=')[1];
+				if(selectedCookie == 'listView'){
+					$('.personalisationhome').removeClass('gridView').addClass('listView');
+				}
+				else{
+					$('.personalisationhome').removeClass('listView').addClass('gridView');
+				}
+		}
+	}
+}
 $(function () {
+	if($('.personalisationhome') && $('.personalisationhome').length){
+		getMyviewCookie(document.cookie);
+	}
 	$('.view-mode').on('click', '.icon-tile-view', function(e){
 		e.preventDefault();
 		$('.view-mode li').removeClass('selected');
 		$(this).parents('li').addClass('selected');
 		if($('.personalisationhome') && $('.personalisationhome').length){
 			$('.personalisationhome').removeClass('listView').addClass('gridView');
+			document.cookie = "myViewCookieName=gridView;"
 		}
 	});
 	$('.view-mode').on('click', '.icon-list-view', function(e){
@@ -937,6 +956,7 @@ $(function () {
 		$(this).parents('li').addClass('selected');
 		if($('.personalisationhome') && $('.personalisationhome').length){
 			$('.personalisationhome').removeClass('gridView').addClass('listView');
+			document.cookie = "myViewCookieName=listView;"
 		}
 	});
 	var getLayoutInfo = $('#getLayoutInfo').val(),
