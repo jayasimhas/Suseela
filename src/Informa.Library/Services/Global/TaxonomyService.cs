@@ -98,7 +98,7 @@ namespace Informa.Library.Services.Global {
                 parent = item._Parent;
             }
 
-            if ((parent is IFolder))
+            if ((parent is IFolder))    //Will add Or conditions after merged with R2,R3 Release (parent is IIndustries_Folder)
             {
                 return parent._Name;
             }
