@@ -69,6 +69,8 @@
 	.followAllBtn{
 		@include followBtnLbl();
 		min-width: 130px;
+		margin-left: 12px;
+		float: none;
 		border: 1px solid #fab142;
 		@include breakpoint('medium-small') {
 			min-width: initial;
@@ -87,9 +89,11 @@
 		}
 	}
 	.unfollowAllBtn{
-		@include unfollowBtnLbl(#fff);
+		@include unfollowBtnLbl(#58595b);
 		padding: 0 1rem;
 		margin-left: 0.5rem;
+		border: 1px solid #ADADAD;
+		float: none;
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
@@ -136,7 +140,7 @@
 			background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 			height: 1.875rem;
 			width: 1.875rem;
-			border: none;
+			border: none !important;
 			padding: 0 1rem;
 			display: inline-block;
 			margin-left: 0.625rem;
@@ -152,7 +156,7 @@
 			width: 1.875rem;
 			display: inline-block;
 			margin-left: 0.625rem;
-			border: none;
+			border: none !important;
 			padding: 0 1rem;
 			text-indent: -9999px;
 		}
@@ -248,7 +252,15 @@
 				margin: 0rem;
 			}
 			a{
-				color: #fff;
+				border-left: 1px solid #d9dadb;
+				float: left;
+				cursor: pointer;
+				padding-left: 1.25rem;
+				vertical-align: middle; 
+				position: relative; 
+				color: #58595b;
+				text-transform: uppercase;
+				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
 					text-decoration: none;
 				}
@@ -363,9 +375,20 @@
 			thead{				
 				&.followbg{
 					background: #f9f9f9;
+					.expandTxt{
+						color: #58595B;
+					}
 				}
 				&.followingbg{
 					background: #fff;
+					.expandTxt{
+						color: #f7941e;
+					}
+					.rowlines{
+						.mv{
+							background: #f7941e;
+						}
+					}
 				}
 				tr{
 					@include breakpoint('small') {
@@ -429,10 +452,12 @@
 						padding: 0rem 1rem 1.25rem 27px;
 					}
 					.mvTxt{
+						@include textMix('Roboto Condensed', 0.875rem, 400);
+						visibility: hidden;
 						float: left;
 						width: 60px; 
 						text-align: right;
-						@include textMix('Roboto Condensed', 0.875rem, 400);
+						color: #f7941e;
 					}
 					& .rowlines{
 						@include getMove(#979797, 0rem); 
@@ -471,14 +496,14 @@
 							height: 30px;
 							width: 30px;
 						} 
-					}
+					} 
 					& .accordionImg{
 						width: 120px;
 						float: left;
 						text-align: right;
 						.expandTxt{
+							visibility: hidden;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
-							color: #58595B;
 							text-transform: uppercase;
 							padding-right: 14px;
 						}

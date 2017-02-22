@@ -2163,6 +2163,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   /*.owl-item{
 			float: left;
 		}*/ }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    #main-carousel {
+      padding-right: 12px; } }
   #main-carousel .owl-carousel .item {
     height: 290px; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
@@ -2219,7 +2222,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     background-color: #eeeeee;
     height: 100%;
     padding: 15px 18px;
-    margin: 10px 0 0 10px; }
+    margin: 10px 10px 0 10px; }
     #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
       height: 224px;
       display: block;
@@ -2289,7 +2292,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     filter: alpha(opacity=70); }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       #main-carousel .owl-next {
-        right: -32px; } }
+        right: -32px;
+        margin-left: 0;
+        margin-right: 0; } }
     @media (max-width: 480px) {
       #main-carousel .owl-next {
         right: -31px; } }
@@ -3696,8 +3701,6 @@ body.lightboxed {
   position: relative;
   width: 100%;
   float: left;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
   border: 1px solid #d1d3d4;
   font-family: 'Roboto'; }
   .ID-Responsive-Table .table-sort {
@@ -3804,11 +3807,12 @@ body.lightboxed {
     font-weight: bold; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
       .ID-Responsive-Table .year_heading {
-        padding-left: 10px; } }
+        padding-left: 10px;
+        height: 7em; } }
     @media (max-width: 480px) {
       .ID-Responsive-Table .year_heading {
         padding-left: 5px;
-        height: 7em; } }
+        height: 8em; } }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
@@ -4561,6 +4565,8 @@ main .advertising--leaderboard.visible-desktop {
     margin-top: 8px;
     margin-top: 0.5rem;
     min-width: 130px;
+    margin-left: 12px;
+    float: none;
     border: 1px solid #fab142; }
     .myview-settings .followAllBtn.mtp {
       margin-top: 0px; }
@@ -4598,7 +4604,7 @@ main .advertising--leaderboard.visible-desktop {
     line-height: 30px;
     line-height: 1.875rem;
     float: right;
-    color: #fff;
+    color: #58595b;
     width: 150px;
     width: 9.375rem;
     min-height: 30px;
@@ -4608,7 +4614,9 @@ main .advertising--leaderboard.visible-desktop {
     padding: 0 16px;
     padding: 0 1rem;
     margin-left: 8px;
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+    border: 1px solid #ADADAD;
+    float: none; }
     .myview-settings .unfollowAllBtn.mtp {
       margin-top: 0px; }
     @media (max-width: 640px) {
@@ -4682,7 +4690,7 @@ main .advertising--leaderboard.visible-desktop {
         height: 1.875rem;
         width: 30px;
         width: 1.875rem;
-        border: none;
+        border: none !important;
         padding: 0 16px;
         padding: 0 1rem;
         display: inline-block;
@@ -4718,7 +4726,7 @@ main .advertising--leaderboard.visible-desktop {
         display: inline-block;
         margin-left: 10px;
         margin-left: 0.625rem;
-        border: none;
+        border: none !important;
         padding: 0 16px;
         padding: 0 1rem;
         text-indent: -9999px; } }
@@ -4819,7 +4827,19 @@ main .advertising--leaderboard.visible-desktop {
           margin: 0px;
           margin: 0rem; } }
       .myview-settings .publicationPan .subscribed a, .myview-settings .publicationPan .subscribed .pop-out__reset-password, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler, .myview-settings .publicationPan .subscribed .mobile-table-exit {
-        color: #fff; }
+        border-left: 1px solid #d9dadb;
+        float: left;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-left: 1.25rem;
+        vertical-align: middle;
+        position: relative;
+        color: #58595b;
+        text-transform: uppercase;
+        font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-weight: 700; }
         .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
           text-decoration: none; }
     .myview-settings .publicationPan .subscribe {
@@ -4955,8 +4975,14 @@ main .advertising--leaderboard.visible-desktop {
             background: #EDEDED; }
       .myview-settings .table-responsive .table thead.followbg {
         background: #f9f9f9; }
+        .myview-settings .table-responsive .table thead.followbg .expandTxt {
+          color: #58595B; }
       .myview-settings .table-responsive .table thead.followingbg {
         background: #fff; }
+        .myview-settings .table-responsive .table thead.followingbg .expandTxt {
+          color: #f7941e; }
+        .myview-settings .table-responsive .table thead.followingbg .rowlines .mv {
+          background: #f7941e; }
       @media (max-width: 480px) {
         .myview-settings .table-responsive .table thead tr.expandHide {
           display: none; }
@@ -5015,13 +5041,15 @@ main .advertising--leaderboard.visible-desktop {
           padding: 0px 16px 20px 27px;
           padding: 0rem 1rem 1.25rem 27px; }
         .myview-settings .table-responsive .table thead th .mvTxt {
-          float: left;
-          width: 60px;
-          text-align: right;
           font-family: "Roboto Condensed", Arial Narrow, sans-serif;
           font-size: 14px;
           font-size: 0.875rem;
-          font-weight: 400; }
+          font-weight: 400;
+          visibility: hidden;
+          float: left;
+          width: 60px;
+          text-align: right;
+          color: #f7941e; }
         .myview-settings .table-responsive .table thead th .rowlines {
           float: right;
           margin-top: 0px;
@@ -5079,11 +5107,11 @@ main .advertising--leaderboard.visible-desktop {
           float: left;
           text-align: right; }
           .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
+            visibility: hidden;
             font-family: "Roboto Condensed", Arial Narrow, sans-serif;
             font-size: 14px;
             font-size: 0.875rem;
             font-weight: 400;
-            color: #58595B;
             text-transform: uppercase;
             padding-right: 14px; }
           .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
@@ -5653,6 +5681,42 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 0.875rem;
       padding-bottom: 0px;
       padding-bottom: 0rem; } }
+  .personalisationhome .personalHead .view-mode {
+    padding: 0;
+    float: right; }
+    .personalisationhome .personalHead .view-mode li {
+      list-style-type: none;
+      float: left; }
+      .personalisationhome .personalHead .view-mode li.selected {
+        background: #f0f1f3; }
+      .personalisationhome .personalHead .view-mode li a, .personalisationhome .personalHead .view-mode li .pop-out__reset-password, .personalisationhome .personalHead .view-mode li .sortable-table__list-toggler, .personalisationhome .personalHead .view-mode li .mobile-table-exit {
+        width: 50px;
+        height: 50px;
+        float: left;
+        border: 1px solid #f0f1f3;
+        color: #f0f1f3;
+        position: relative;
+        text-decoration: none;
+        font-size: 0; }
+        .personalisationhome .personalHead .view-mode li a:before, .personalisationhome .personalHead .view-mode li .pop-out__reset-password:before, .personalisationhome .personalHead .view-mode li .sortable-table__list-toggler:before, .personalisationhome .personalHead .view-mode li .mobile-table-exit:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          font-size: 26px; }
+        .personalisationhome .personalHead .view-mode li a.active, .personalisationhome .personalHead .view-mode li .active.pop-out__reset-password, .personalisationhome .personalHead .view-mode li .active.sortable-table__list-toggler, .personalisationhome .personalHead .view-mode li .active.mobile-table-exit {
+          background-color: #f0f1f3; }
+    .personalisationhome .personalHead .view-mode li[data-view="listView"] a:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .pop-out__reset-password:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .sortable-table__list-toggler:before, .personalisationhome .personalHead .view-mode li[data-view="listView"] .mobile-table-exit:before {
+      content: '';
+      height: 24px;
+      width: 22px;
+      background: url(/dist/img/list-view.png) no-repeat; }
+    .personalisationhome .personalHead .view-mode li[data-view="tileView"] a:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .pop-out__reset-password:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .sortable-table__list-toggler:before, .personalisationhome .personalHead .view-mode li[data-view="tileView"] .mobile-table-exit:before {
+      content: '';
+      height: 26px;
+      width: 22px;
+      background: url(/dist/img/dashboard.png) no-repeat; }
 
 .personalisationhome .sub-heading-text {
   margin-bottom: 20px;
@@ -6066,8 +6130,8 @@ main .advertising--leaderboard.visible-desktop {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
-        margin: 24px 20px 8px;
-        margin: 1.5rem 1.25rem .5rem; } }
+        margin: 24px 20px 8px 16px;
+        margin: 1.5rem 1.25rem .5rem 1rem; } }
 
 .personalisationhome .article-preview__inner-wrapper.showarticle {
   height: 100px;
@@ -6096,6 +6160,9 @@ main .advertising--leaderboard.visible-desktop {
 
 .listView .listViewCont {
   display: block; }
+
+.listView .article-preview__tags {
+  width: auto; }
 
 .listView .list-featured-article {
   border-bottom: 1px solid #e7e7e7;
@@ -9074,10 +9141,10 @@ div#feedbacklite.fbl_r {
     border-top: 1px solid #d1d3d4;
     display: block; }
 
-.graybg {
-  border-bottom: 1px solid #d1d3d4;
-  border-top: 1px solid #d1d3d4; }
-
+/*.graybg {
+	border-bottom: 1px solid #d1d3d4;
+	border-top: 1px solid #d1d3d4;
+}*/
 .lloyd-related-links {
   margin-top: 20px;
   margin-top: 1.25rem; }
@@ -9800,13 +9867,10 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .package-wrapper .package-control-preview:first-child {
         width: 100%; } }
-    .package-wrapper .package-control-preview:first-child .article-preview__headline {
-      font-size: 32px;
-      font-size: 2rem; }
-      @media (max-width: 480px) {
-        .package-wrapper .package-control-preview:first-child .article-preview__headline {
-          font-size: 24px;
-          font-size: 1.5rem; } }
+    @media (max-width: 480px) {
+      .package-wrapper .package-control-preview:first-child .article-preview__headline {
+        font-size: 24px;
+        font-size: 1.5rem; } }
     .package-wrapper .package-control-preview:first-child .article-preview__byline {
       float: left;
       margin-top: 10px; }
@@ -9821,9 +9885,6 @@ div#feedbacklite.fbl_r {
   .package-wrapper .package-control-preview .article-preview--small {
     margin: 0;
     width: 100%; }
-  .package-wrapper .package-control-preview .article-preview__headline {
-    font-size: 24px;
-    font-size: 1.5rem; }
   .package-wrapper .package-control-preview .package-heading-wrapper {
     margin-top: 20px;
     margin-top: 1.25rem; }
@@ -9836,18 +9897,14 @@ div#feedbacklite.fbl_r {
       font-weight: bold;
       line-height: 24px;
       border-top: 1px solid #d1d3d4; }
-  .package-wrapper .package-control-preview .article-preview__inner-wrapper h1.article-preview__headline {
+  .package-wrapper .package-control-preview .article-preview__inner-wrapper h3.article-preview__headline, .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-preview__headline.article-call-to-action__title {
     font-family: Roboto;
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 38px; }
+    line-height: 24px; }
   .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
-    font-family: Roboto;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 19px;
-    color: #58595B; }
+    line-height: 30px; }
 
 .package-control-articles__half {
   background: #f1f2f2;
@@ -9886,30 +9943,21 @@ div#feedbacklite.fbl_r {
         width: 100%; } }
   .package-control-articles__half .package-control-preview:first-child .article-preview__byline {
     float: none; }
-  .package-control-articles__half .package-control-preview:first-child .article-preview__headline {
-    font-size: 24px;
-    font-size: 1.5rem; }
-  .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline:first-child, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title:first-child {
-    border-top: none; }
-  .package-control-articles__half .package-control-preview .package-heading-wrapper h2.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-topics__header {
+  .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title {
     font-family: Roboto;
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 33px; }
+    line-height: 24px; }
+    .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline:first-child, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title:first-child {
+      border-top: none; }
   .package-control-articles__half .package-control-preview:first-child .article-metadata {
     float: none; }
 
 .package-control-articles__quarter {
   background: #f1f2f2;
   padding: 20px;
-  width: 55%; }
-  .package-control-articles__quarter h1 {
-    font-family: Roboto;
-    font-size: 36px;
-    font-size: 2.25rem;
-    font-weight: bold;
-    line-height: 42px; }
+  width: 45%; }
   .package-control-articles__quarter h3.article-preview__headline, .package-control-articles__quarter .article-preview__headline.article-call-to-action__title {
     padding: 16px 0 0 0;
     padding: 1rem 0 0 0;

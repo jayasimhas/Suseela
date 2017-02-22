@@ -905,6 +905,22 @@ function createLayoutInner2(data) {
 }
 
 $(function () {
+	$('.view-mode').on('click', '.icon-tile-view', function(e){
+		e.preventDefault();
+		$('.view-mode li').removeClass('selected');
+		$(this).parents('li').addClass('selected');
+		if($('.personalisationhome') && $('.personalisationhome').length){
+			$('.personalisationhome').removeClass('listView').addClass('gridView');
+		}
+	});
+	$('.view-mode').on('click', '.icon-list-view', function(e){
+		e.preventDefault();
+		$('.view-mode li').removeClass('selected');
+		$(this).parents('li').addClass('selected');
+		if($('.personalisationhome') && $('.personalisationhome').length){
+			$('.personalisationhome').removeClass('gridView').addClass('listView');
+		}
+	});
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
 	    loadLayoutData = '',
@@ -1152,10 +1168,12 @@ $(function () {
 	});
 	
 	var latestSubject = $('.latestSubject');
-	for(var i = 0; i < latestSubject.length; i++){
-		var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
-		setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
-		$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
-		$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
+	if (window.matchMedia("(min-width: 768px)").matches) {
+		for(var i = 0; i < latestSubject.length; i++){
+			var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
+			setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
+			$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
+			$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
+		}
 	}
 });
