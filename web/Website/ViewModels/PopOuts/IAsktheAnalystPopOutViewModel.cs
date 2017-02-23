@@ -2,7 +2,7 @@
 {
     public interface IAsktheAnalystPopOutViewModel
     {
-
+        string AskTheAnalystEmailID { get; }
         string SenderPlaceHolderName { get; }
         string SenderPlaceHolderCompanyName { get; }
         string SenderPlaceHolderPhoneNumber { get; }
@@ -22,7 +22,6 @@
         string SendText { get; }
         string EmptyFieldText { get; }
         string CaptchaSiteKey { get; }
-        string AskTheAnalystLink { get; }
-        string AskTheAnalystEmail { get; }
+        string AskTheAnalystLink { get; }        
     }
 }

@@ -63,7 +63,6 @@ namespace Informa.Web.Areas.Article.Controllers
 			ArticleService = articleService;
 			RecaptchaService = recaptchaService;
 		}
-
         [HttpPost]
         public IHttpActionResult EmailToAnalyst(EmailAnalyst request)
         {
