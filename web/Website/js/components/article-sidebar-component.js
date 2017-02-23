@@ -2,12 +2,14 @@ var articleSidebarAd,
     articleSidebarAdParent,
     lastActionFlagsBar,
     stickyFloor,
-    sidebarIsTaller;
+    sidebarIsTaller,
+    rightRail;
 $(document).ready(function () {
     articleSidebarAdParent = $('.article-right-rail section:last-child');
     articleSidebarAd = articleSidebarAdParent.find('.advertising');
     lastActionFlagsBar = $('.action-flags-bar:last-of-type');
     sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
+    rightRail = $('.article-right-rail').offset().left;
 });
 $(window).on('scroll', function () {
     if (articleSidebarAdParent && articleSidebarAdParent.length && !sidebarIsTaller) {
@@ -15,6 +17,7 @@ $(window).on('scroll', function () {
         stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
         if (articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
             articleSidebarAdParent.addClass('advertising--sticky');
+            articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
         } else {
             articleSidebarAdParent.removeClass('advertising--sticky');
         }

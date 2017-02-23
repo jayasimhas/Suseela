@@ -22,6 +22,7 @@ namespace Informa.Library.SalesforceConfiguration
         private string _logoutEndpoints = "{0}/secur/logout.jsp";
         private string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
         private string _changePasswordEndpoints = "{0}/changepassword?referralurl={1}&referralid={2}";
+        private string _getUserProductPreferencesEndpoints = "/services/data/v20.0/query/?q={0}";
 
 
         public SalesforceConfigurationContext(
@@ -102,6 +103,11 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetUpdateUserDetailsEndPoints(string userName)
         {
            return string.Format(_userDetailsEndPoints, userName);
+        }
+
+        public string GetUserProductPreferencesEndPoints(string query)
+        {
+            return string.Format(_getUserProductPreferencesEndpoints, query);
         }
     }
 }

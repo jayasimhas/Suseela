@@ -375,6 +375,9 @@
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Logging\SitecoreInfoLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
+    <Compile Include="User\ProductPreferences\IAddUserProductPreference.cs" />
+    <Compile Include="User\ProductPreferences\IDeleteUserProductPreferences.cs" />
+    <Compile Include="User\ProductPreferences\IGetUserProductPreferences.cs" />
     <Compile Include="SalesforceConfiguration\ISalesforceConfigurationContext.cs" />
     <Compile Include="SalesforceConfiguration\SalesforceConfigurationContext.cs" />
     <Compile Include="Search\ComputedFields\Facets\AgencyRegulatorField.cs" />
@@ -459,6 +462,8 @@
     <Compile Include="User\Entitlement\IEntitledProductItemChannelCodesFactory.cs" />
     <Compile Include="User\Entitlement\IEntitledProductItemEntitlementLevelFactory.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlementsV2.cs" />
+    <Compile Include="User\ProductPreferences\IUpdateUserProductPreference.cs" />
+    <Compile Include="User\ProductPreferences\ProductPreferenceType.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsernameV2.cs" />
     <Compile Include="User\Profile\IManageAccountInfoV2.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
