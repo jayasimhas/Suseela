@@ -18,14 +18,14 @@
         </h3>
         <p class="pop-out__details u-italic">
             @Html.Raw(Model.AskTheAnalystLink)
-        </p>
-        <div class="alert-success js-ask-the-analyst-success">
+        </p>  
+        <div class="alert-success js-email-article-success">
             <svg class="alert__icon">
                 <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
             </svg>
-            <p>@Model.ATASentSuccessMessage <b class="js-ask-the-analyst-recip-success">@Model.AskTheAnalystEmail</b>.</p>
+            <p>@Model.ATASentSuccessMessage <b class="js-email-article-recip-success">my&#64;email.address</b>.</p>
         </div>
-        <div class="js-ask-the-analyst-form-wrapper">
+        <div class="js-email-article-form-wrapper">
             <p class="pop-out__details u-italic">
                 @Model.ATAFormInstructionsText
             </p>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 @Html.AuthToken()
-            </form>
+                </form>                   
         </div>
     </div>
 </div>
