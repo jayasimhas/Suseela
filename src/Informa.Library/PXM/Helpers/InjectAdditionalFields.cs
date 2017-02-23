@@ -58,15 +58,18 @@ namespace Informa.Library.PXM.Helpers
         public string GetTitlesHtml(IArticle article)
         {
             var html = string.Empty;
-            if (article.Title.HasContent())
+            if (article == null) { return html; }
+            else
             {
-                html += $"<h1 class=\"title\">{article.Title}</h1>";
+                if (article.Title.HasContent())
+                {
+                    html += $"<h1 class=\"title\">{article.Title}</h1>";
+                }
+                if (article.Sub_Title.HasContent())
+                {
+                    html += $"<h2 class=\"subtitle\">{article.Sub_Title}</h2>";
+                }
             }
-            if (article.Sub_Title.HasContent())
-            {
-                html += $"<h2 class=\"subtitle\">{article.Sub_Title}</h2>";
-            }
-
             return html;
         }
 
