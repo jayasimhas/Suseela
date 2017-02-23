@@ -23,5 +23,6 @@
         string EmptyFieldText { get; }
         string CaptchaSiteKey { get; }
         string AskTheAnalystLink { get; }
+        string AskTheAnalystEmail { get; }
     }
 }
