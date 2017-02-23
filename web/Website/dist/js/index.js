@@ -2355,7 +2355,7 @@ $(document).ready(function () {
 		observe: '.form-ask-the-analyst',
 		successCallback: function successCallback(form) {
 			$('.js-ask-the-analyst-form-wrapper').hide();
-			$('.js-ask-the-analyst-recip-success').html('asktheanalyst@pharmamedtechbi.com');
+			$('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
 			$('.js-ask-the-analyst-success').show();
 
 			// Reset the Ask The Analyst pop-out to its default state when closed
