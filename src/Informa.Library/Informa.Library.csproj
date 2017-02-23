@@ -375,6 +375,8 @@
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Logging\SitecoreInfoLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
+    <Compile Include="User\ProductPreferences\IAddUserProductPreference.cs" />
+    <Compile Include="User\ProductPreferences\IDeleteUserProductPreferences.cs" />
     <Compile Include="User\ProductPreferences\IGetUserProductPreferences.cs" />
     <Compile Include="SalesforceConfiguration\ISalesforceConfigurationContext.cs" />
     <Compile Include="SalesforceConfiguration\SalesforceConfigurationContext.cs" />
