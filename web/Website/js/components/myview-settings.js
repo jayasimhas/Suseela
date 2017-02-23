@@ -416,13 +416,14 @@ $(function () {
     });
 
     $('#allPublicationsPan .publicationPan').on('click', 'thead.hidden-xs tr:first-child', function (e) {
-        var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan'), allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'), lableStatus = allthead.find('.lableStatus').val();
+        var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), accCont = pPan.find('.accCont'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), flwlbl = thead.find('.flwLbl'), flwBtn = thead.find('.flwBtn'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'), allpubpans = allPublications.find('.publicationPan'), allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'), lableStatus = allthead.find('.lableStatus').val(), arrowIcon = pPan.find('.accordionImg .desktopMode');
 		
 		allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
 		
 		if(e.target.className !== 'subscribed'){
-			if ($this.hasClass('expanded')) {
+			if ($this.hasClass('expanded')) {  
 				$this.removeClass('expanded').addClass('collapsed');
+				arrowIcon.removeClass('expanded').addClass('collapsed');
 				tbody.addClass('tbodyhidden');
 				thead.find('.mtp').addClass('hideBtn');
 				accCont.addClass('tbodyhidden');
@@ -444,11 +445,12 @@ $(function () {
 			}
 			else {
 				allPublications.find('tbody').addClass('tbodyhidden');
-				allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
+				allPublications.find('.publicationPan .accordionImg span.desktopMode').removeClass('expanded');
 				allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 				allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 				thead.find('tr').removeClass('hidden');
 				$this.addClass('expanded').removeClass('collapsed');
+				arrowIcon.addClass('expanded').removeClass('collapsed');
 				accCont.removeClass('tbodyhidden');
 				tbody.removeClass('tbodyhidden');
 				flwBtn.addClass('hideRow');
@@ -461,6 +463,10 @@ $(function () {
 				else{
 					pPan.css('border', '1px solid #EE9500');
 				}
+				
+				pPan.find('.firstrow .expandTxt').removeAttr('style');
+				pPan.find('.firstrow .mvTxt').removeAttr('style');
+				
 				/*for (var i = 0; i < allpubpans.length; i++) {
 					var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
 					$('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
@@ -480,7 +486,7 @@ $(function () {
 			thead.find('.expandTxt').css('visibility', 'visible');
 		}
 		else if($this.hasClass('collapsed') && lableStatus == 'followlbl'){
-			//thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
+			thead.find('.expandTxt').css('visibility', 'visible');
 		}
 	}).on('mouseleave', 'thead.hidden-xs tr:first-child', function() {
 		var $this = $(this), firstTrtds = $this.find('th'), thead = $this.closest('thead.hidden-xs');
