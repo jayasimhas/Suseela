@@ -18,12 +18,12 @@
         </h3>
         <p class="pop-out__details u-italic">
             @Html.Raw(Model.AskTheAnalystLink)
-        </p>
+        </p>  
         <div class="alert-success js-ask-the-analyst-success">
             <svg class="alert__icon">
                 <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
             </svg>
-            <p>@Model.ATASentSuccessMessage <b class="js-ask-the-analyst-recip-success">@Model.AskTheAnalystEmail</b>.</p>
+            <p>@Model.ATASentSuccessMessage <b class="js-ask-the-analyst-recip-success">my&#64;email.address</b>.</p>
         </div>
         <div class="js-ask-the-analyst-form-wrapper">
             <p class="pop-out__details u-italic">
@@ -82,6 +82,7 @@
                 <p>
                     <input type="hidden" name="PublicationName" value="@Model.PublicationName">
                     <input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+                    <input type="hidden" class="pop-out__input js-ask-the-analyst-recip-addr" name="AskTheAnalystEmail" value="@Model.AskTheAnalystEmail">
                 </p>
 
                 <p>
@@ -103,7 +104,7 @@
                     </div>
                 </div>
                 @Html.AuthToken()
-            </form>
+                </form>                   
         </div>
     </div>
 </div>

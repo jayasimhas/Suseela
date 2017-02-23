@@ -64,8 +64,6 @@ namespace Informa.Web.Areas.Article.Controllers
 			RecaptchaService = recaptchaService;
 		}
 
-        public string AskAnalystEmail => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Analyst_Email_ID;
-
         [HttpPost]
         public IHttpActionResult EmailToAnalyst(EmailAnalyst request)
         {
@@ -80,7 +78,7 @@ namespace Informa.Web.Areas.Article.Controllers
                 });
             }
 
-            if (string.IsNullOrWhiteSpace(AskAnalystEmail)
+            if (string.IsNullOrWhiteSpace(request.AskTheAnalystEmail)
                     || string.IsNullOrWhiteSpace(request.SenderEmail)
                     || string.IsNullOrWhiteSpace(request.SenderName)
                     || string.IsNullOrWhiteSpace(request.ArticleNumber)
@@ -95,17 +93,17 @@ namespace Informa.Web.Areas.Article.Controllers
                 });
             }
 
-            var allEmails = AskAnalystEmail;// request.RecipientEmail.Split(';');
+            var allEmails = request.AskTheAnalystEmail;// request.RecipientEmail.Split(';');
             var result = true;
             var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
                             request.ArticleNumber, request.PersonalQuestion);
             string specificEmailBody = emailBody
-                        .ReplacePatternCaseInsensitive("#friend_name#",AskAnalystEmail)
-                        .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", AskAnalystEmail)
+                        .ReplacePatternCaseInsensitive("#friend_name#", request.AskTheAnalystEmail)
+                        .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", request.AskTheAnalystEmail)
                         .ReplacePatternCaseInsensitive("#publication name#",request.PublicationName);            
 				var analystEmail = new Email
 				{
-					To = AskAnalystEmail,
+					To = request.AskTheAnalystEmail,
 					Subject = request.ArticleTitle,
 					From = request.SenderEmail,
 					Body = specificEmailBody,                    

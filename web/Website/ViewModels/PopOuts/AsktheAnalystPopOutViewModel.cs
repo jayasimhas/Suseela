@@ -72,7 +72,6 @@ namespace Informa.Web.ViewModels.PopOuts
         public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
 
         public string AskTheAnalystLink => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Ask_The_Analyst;
-
         public string AskTheAnalystEmail => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Analyst_Email_ID;
 
     }
