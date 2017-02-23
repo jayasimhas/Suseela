@@ -6433,8 +6433,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
         /// </summary>
-        [SitecoreField(IPackage_SettingsConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Hide_Image { get; set; }
+        [SitecoreField(IPackage_SettingsConstants.IsFullWidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsFullWidth { get; set; }
     }
 
 
@@ -6460,7 +6460,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
         /// </summary>
-        [SitecoreField(IPackage_SettingsConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(IPackage_SettingsConstants.IsFullWidthFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Hide_Image { get; set; }
     }
 
@@ -6475,8 +6475,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         public static readonly ID Select_PackageFieldId = new ID("087ABDE3-C36B-454C-B07B-A66047738B82");
         public const string Select_PackageFieldName = "Select Package";
 
-        public static readonly ID Hide_ImageFieldId = new ID("DF9F66E7-2CE8-457D-B9B6-D1B48F41CDE0");
-        public const string Hide_ImageFieldName = "Hide Image";
+        public static readonly ID IsFullWidthFieldId = new ID("DF9F66E7-2CE8-457D-B9B6-D1B48F41CDE0");
+        public const string IsFullWidthFieldName = "IsFullWidth";
     }
 
 }
