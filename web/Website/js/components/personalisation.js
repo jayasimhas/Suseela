@@ -57,248 +57,15 @@ function createLayoutInner1(data) {
 	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible';
 
 	var articleData = ''; 
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[0].listableImage + '">' : '';
-	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[0].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[0].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[0].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
-	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[0].id + '" data-analytics="{"bookmark": "' + bookmarkInfo0 + '", "bookmark_title": "' + data.articles[0].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[0].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[0].bookmarkText + '" data-label-bookmarked="' + data.articles[0].bookmarkedText + '">' + bookmarkInfo0 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[0].listableTopics) {
-		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[1].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[1].listableImage + '">' : '';
-	articleData += data.articles[1].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[1].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[1].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[1].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[1].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
-	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[1].id + '" data-analytics="{"bookmark": "' + bookmarkInfo1 + '", "bookmark_title": "' + data.articles[1].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[1].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[1].bookmarkText + '" data-label-bookmarked="' + data.articles[1].bookmarkedText + '">' + bookmarkInfo1 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[1].listableTopics) {
-		for (var i = 0; i < data.articles[1].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[1].listableTopics[i].linkableUrl ? data.articles[1].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[1].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[2].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[2].listableImage + '">' : '';
-	articleData += data.articles[2].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[2].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[2].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[2].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[2].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
-	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
-	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[2].id + '" data-analytics="{"bookmark": "' + bookmarkInfo2 + '", "bookmark_title": "' + data.articles[2].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[2].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[2].bookmarkText + '" data-label-bookmarked="' + data.articles[2].bookmarkedText + '">' + bookmarkInfo2 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[2].listableSummary ? data.articles[2].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[2].listableTopics) {
-		for (var i = 0; i < data.articles[2].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[2].listableTopics[i].linkableUrl ? data.articles[2].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[2].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[3].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[3].listableImage + '">' : '';
-	articleData += data.articles[3].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[3].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[3].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[3].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[3].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[3].listableDate ? '<li><time class="article-metadata__date">' + data.articles[3].listableDate + '</time></li>' : '';
-	articleData += data.articles[3].linkableText ? '<li><h6>' + data.articles[3].linkableText + '</h6></li>' : '';
-	articleData += data.articles[3].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[3].id + '" data-analytics="{"bookmark": "' + bookmarkInfo3 + '", "bookmark_title": "' + data.articles[3].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[3].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[3].bookmarkText + '" data-label-bookmarked="' + data.articles[3].bookmarkedText + '">' + bookmarkInfo3 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon3 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon3 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[3].listableSummary ? data.articles[3].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[3].listableTopics) {
-		for (var i = 0; i < data.articles[3].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[3].listableTopics[i].linkableUrl ? data.articles[3].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[3].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[4].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[4].listableImage + '">' : '';
-	articleData += data.articles[4].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[4].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[4].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[4].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[4].listableDate ? '<li><time class="article-metadata__date">' + data.articles[4].listableDate + '</time></li>' : '';
-	articleData += data.articles[4].linkableText ? '<li><h6>' + data.articles[4].linkableText + '</h6></li>' : '';
-	articleData += data.articles[4].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[4].id + '" data-analytics="{"bookmark": "' + bookmarkInfo4 + '", "bookmark_title": "' + data.articles[4].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[4].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[4].bookmarkText + '" data-label-bookmarked="' + data.articles[4].bookmarkedText + '">' + bookmarkInfo4 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon4 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon4 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[4].listableSummary ? data.articles[4].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[4].listableTopics) {
-		for (var i = 0; i < data.articles[4].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[4].listableTopics[i].linkableUrl ? data.articles[4].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[4].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[5].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[5].listableImage + '">' : '';
-	articleData += data.articles[5].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[5].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[5].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[5].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[5].listableDate ? '<li><time class="article-metadata__date">' + data.articles[5].listableDate + '</time></li>' : '';
-	articleData += data.articles[5].linkableText ? '<li><h6>' + data.articles[5].linkableText + '</h6></li>' : '';
-	articleData += data.articles[5].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[5].id + '" data-analytics="{"bookmark": "' + bookmarkInfo5 + '", "bookmark_title": "' + data.articles[5].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[5].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[5].bookmarkText + '" data-label-bookmarked="' + data.articles[5].bookmarkedText + '">' + bookmarkInfo5 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon5 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon5 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[5].listableSummary ? data.articles[5].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[5].listableTopics) {
-		for (var i = 0; i < data.articles[5].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[5].listableTopics[i].linkableUrl ? data.articles[5].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[5].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[6].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[6].listableImage + '">' : '';
-	articleData += data.articles[6].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[6].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[6].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[6].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[6].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[6].listableDate ? '<li><time class="article-metadata__date">' + data.articles[6].listableDate + '</time></li>' : '';
-	articleData += data.articles[6].linkableText ? '<li><h6>' + data.articles[6].linkableText + '</h6></li>' : '';
-	articleData += data.articles[6].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[6].id + '" data-analytics="{"bookmark": "' + bookmarkInfo6 + '", "bookmark_title": "' + data.articles[6].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[6].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[6].bookmarkText + '" data-label-bookmarked="' + data.articles[6].bookmarkedText + '">' + bookmarkInfo6 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon6 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon6 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[6].listableSummary ? data.articles[6].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[6].listableTopics) {
-		for (var i = 0; i < data.articles[6].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[6].listableTopics[i].linkableUrl ? data.articles[6].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[6].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[7].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[7].listableImage + '">' : '';
-	articleData += data.articles[7].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[7].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[7].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[7].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[7].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[7].listableDate ? '<li><time class="article-metadata__date">' + data.articles[7].listableDate + '</time></li>' : '';
-	articleData += data.articles[7].linkableText ? '<li><h6>' + data.articles[7].linkableText + '</h6></li>' : '';
-	articleData += data.articles[7].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[7].id + '" data-analytics="{"bookmark": "' + bookmarkInfo7 + '", "bookmark_title": "' + data.articles[7].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[7].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[7].bookmarkText + '" data-label-bookmarked="' + data.articles[7].bookmarkedText + '">' + bookmarkInfo7 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon7 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon7 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[7].listableSummary ? data.articles[7].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[7].listableTopics) {
-		for (var i = 0; i < data.articles[7].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[7].listableTopics[i].linkableUrl ? data.articles[7].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[7].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[8].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[8].listableImage + '">' : '';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[8].id + '" data-analytics="{"bookmark": "' + bookmarkInfo8 + '", "bookmark_title": "' + data.articles[8].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[8].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[8].bookmarkText + '" data-label-bookmarked="' + data.articles[8].bookmarkedText + '">' + bookmarkInfo8 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon8 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon8 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
-	articleData += '<ul>';
-	articleData += data.articles[8].listableDate ? '<li><time class="article-metadata__date">' + data.articles[8].listableDate + '</time></li>' : '';
-	articleData += data.articles[8].linkableText ? '<li><h6>' + data.articles[8].linkableText + '</h6></li>' : '';
-	articleData += data.articles[8].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '</ul>';
-	articleData += '</div>';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += data.articles[8].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[8].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[8].listableTitle + '</a></h3>' : '';
-	articleData += data.articles[8].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[8].listableAuthorByLine + '</span>' : '';
-	articleData += '<div class="article-summary">' + data.articles[8].listableSummary ? data.articles[8].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[8].listableTopics) {
-		for (var i = 0; i < data.articles[8].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[8].listableTopics[i].linkableUrl ? data.articles[8].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[8].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
+	articleData += getListViewData(0, data, linkableUrl0, bookmarkInfo0, fbookmarkIcon0, sbookmarkIcon0);
+	articleData += getListViewData(1, data, linkableUrl1, bookmarkInfo1, fbookmarkIcon1, sbookmarkIcon1);
+	articleData += getListViewData(2, data, linkableUrl2, bookmarkInfo2, fbookmarkIcon2, sbookmarkIcon2);
+	articleData += getListViewData(3, data, linkableUrl3, bookmarkInfo3, fbookmarkIcon3, sbookmarkIcon3);
+	articleData += getListViewData(4, data, linkableUrl4, bookmarkInfo4, fbookmarkIcon4, sbookmarkIcon4);
+	articleData += getListViewData(5, data, linkableUrl5, bookmarkInfo5, fbookmarkIcon5, sbookmarkIcon5);
+	articleData += getListViewData(6, data, linkableUrl6, bookmarkInfo6, fbookmarkIcon6, sbookmarkIcon6);
+	articleData += getListViewData(7, data, linkableUrl7, bookmarkInfo7, fbookmarkIcon7, sbookmarkIcon7);
+	articleData += getListViewData(8, data, linkableUrl8, bookmarkInfo8, fbookmarkIcon8, sbookmarkIcon8);
 	
 	articleData += '<section class="article-preview topic-featured-article gridViewCont">';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[0].listableImage + '">' : '';
@@ -459,6 +226,38 @@ function createLayoutInner1(data) {
 	return articleData;
 }
 
+function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
+	var sectionData = '';
+	sectionData += '<section class="article-preview list-featured-article listViewCont">';
+	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
+	sectionData += data.articles[idx].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : '';
+	sectionData += '<div class="topic-featured-article__inner-wrapper">';
+	sectionData += '<div class="article-metadata">';
+	sectionData += '<div class="article-preview__byline">';
+	sectionData += data.articles[idx].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[idx].listableAuthorByLine + '</div>' : '';
+	sectionData += '<ul>'; 
+	sectionData += data.articles[idx].listableDate ? '<li><time class="article-metadata__date">' + data.articles[idx].listableDate + '</time></li>' : '';
+	sectionData += data.articles[idx].linkableText ? '<li><h6>' + data.articles[idx].linkableText + '</h6></li>' : '';
+	sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
+	sectionData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[idx].id + '" data-analytics="{"bookmark": "' + bookmarkInfo + '", "bookmark_title": "' + data.articles[idx].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[idx].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[idx].bookmarkText + '" data-label-bookmarked="' + data.articles[idx].bookmarkedText + '">' + bookmarkInfo + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
+	sectionData += '</ul>'; 
+	sectionData += '</div>'; 
+	sectionData += '</div>'; 
+	sectionData += '<div class="article-summary">' + data.articles[idx].listableSummary ? data.articles[idx].listableSummary : '' + '</div>';
+	sectionData += '</div>';
+	sectionData += '<div class="article-preview__tags bar-separated-link-list">';
+	if (data.articles[idx].listableTopics) {
+		for (var i = 0; i < data.articles[idx].listableTopics.length; i++) {
+			var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
+			sectionData += '<a href="' + getlistLink1 + '">' + data.articles[idx].listableTopics[i].linkableText + '</a>';
+		}
+	}
+	sectionData += '</div>';
+	sectionData += '</section>';
+	
+	return sectionData;
+}
+
 function loadLayoutTwoData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
 	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';		
@@ -519,247 +318,15 @@ function createLayoutInner2(data) {
 
 	var articleData = '';
 	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[0].listableImage + '">' : '';
-	articleData += data.articles[0].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[0].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[0].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[0].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
-	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[0].id + '" data-analytics="{"bookmark": "' + bookmarkInfo0 + '", "bookmark_title": "' + data.articles[0].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[0].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[0].bookmarkText + '" data-label-bookmarked="' + data.articles[0].bookmarkedText + '">' + bookmarkInfo0 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon0 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[0].listableSummary ? data.articles[0].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[0].listableTopics) {
-		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[1].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[1].listableImage + '">' : '';
-	articleData += data.articles[1].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[1].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[1].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[1].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[1].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[1].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
-	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[1].id + '" data-analytics="{"bookmark": "' + bookmarkInfo1 + '", "bookmark_title": "' + data.articles[1].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[1].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[1].bookmarkText + '" data-label-bookmarked="' + data.articles[1].bookmarkedText + '">' + bookmarkInfo1 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon1 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>'; 
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[1].listableSummary ? data.articles[1].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[1].listableTopics) {
-		for (var i = 0; i < data.articles[1].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[1].listableTopics[i].linkableUrl ? data.articles[1].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[1].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[2].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[2].listableImage + '">' : '';
-	articleData += data.articles[2].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[2].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[2].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[2].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[2].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[2].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
-	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
-	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[2].id + '" data-analytics="{"bookmark": "' + bookmarkInfo2 + '", "bookmark_title": "' + data.articles[2].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[2].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[2].bookmarkText + '" data-label-bookmarked="' + data.articles[2].bookmarkedText + '">' + bookmarkInfo2 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon2 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[2].listableSummary ? data.articles[2].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[2].listableTopics) {
-		for (var i = 0; i < data.articles[2].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[2].listableTopics[i].linkableUrl ? data.articles[2].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[2].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[3].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[3].listableImage + '">' : '';
-	articleData += data.articles[3].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[3].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[3].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[3].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[3].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[3].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[3].listableDate ? '<li><time class="article-metadata__date">' + data.articles[3].listableDate + '</time></li>' : '';
-	articleData += data.articles[3].linkableText ? '<li><h6>' + data.articles[3].linkableText + '</h6></li>' : '';
-	articleData += data.articles[3].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[3].id + '" data-analytics="{"bookmark": "' + bookmarkInfo3 + '", "bookmark_title": "' + data.articles[3].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[3].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[3].bookmarkText + '" data-label-bookmarked="' + data.articles[3].bookmarkedText + '">' + bookmarkInfo3 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon3 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon3 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[3].listableSummary ? data.articles[3].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[3].listableTopics) {
-		for (var i = 0; i < data.articles[3].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[3].listableTopics[i].linkableUrl ? data.articles[3].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[3].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[4].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[4].listableImage + '">' : '';
-	articleData += data.articles[4].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[4].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[4].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[4].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[4].listableDate ? '<li><time class="article-metadata__date">' + data.articles[4].listableDate + '</time></li>' : '';
-	articleData += data.articles[4].linkableText ? '<li><h6>' + data.articles[4].linkableText + '</h6></li>' : '';
-	articleData += data.articles[4].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[4].id + '" data-analytics="{"bookmark": "' + bookmarkInfo4 + '", "bookmark_title": "' + data.articles[4].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[4].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[4].bookmarkText + '" data-label-bookmarked="' + data.articles[4].bookmarkedText + '">' + bookmarkInfo4 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon4 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon4 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[4].listableSummary ? data.articles[4].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[4].listableTopics) {
-		for (var i = 0; i < data.articles[4].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[4].listableTopics[i].linkableUrl ? data.articles[4].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[4].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[5].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[5].listableImage + '">' : '';
-	articleData += data.articles[5].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[5].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[5].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[5].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[5].listableDate ? '<li><time class="article-metadata__date">' + data.articles[5].listableDate + '</time></li>' : '';
-	articleData += data.articles[5].linkableText ? '<li><h6>' + data.articles[5].linkableText + '</h6></li>' : '';
-	articleData += data.articles[5].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[5].id + '" data-analytics="{"bookmark": "' + bookmarkInfo5 + '", "bookmark_title": "' + data.articles[5].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[5].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[5].bookmarkText + '" data-label-bookmarked="' + data.articles[5].bookmarkedText + '">' + bookmarkInfo5 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon5 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon5 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[5].listableSummary ? data.articles[5].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[5].listableTopics) {
-		for (var i = 0; i < data.articles[5].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[5].listableTopics[i].linkableUrl ? data.articles[5].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[5].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[6].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[6].listableImage + '">' : '';
-	articleData += data.articles[6].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[6].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[6].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[6].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[6].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[6].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[6].listableDate ? '<li><time class="article-metadata__date">' + data.articles[6].listableDate + '</time></li>' : '';
-	articleData += data.articles[6].linkableText ? '<li><h6>' + data.articles[6].linkableText + '</h6></li>' : '';
-	articleData += data.articles[6].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[6].id + '" data-analytics="{"bookmark": "' + bookmarkInfo6 + '", "bookmark_title": "' + data.articles[6].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[6].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[6].bookmarkText + '" data-label-bookmarked="' + data.articles[6].bookmarkedText + '">' + bookmarkInfo6 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon6 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon6 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>'; 
-	articleData += '<div class="article-summary">' + data.articles[6].listableSummary ? data.articles[6].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[6].listableTopics) {
-		for (var i = 0; i < data.articles[6].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[6].listableTopics[i].linkableUrl ? data.articles[6].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[6].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[7].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[7].listableImage + '">' : '';
-	articleData += data.articles[7].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[7].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[7].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[7].listableTitle + '</a></h3>' : '';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="article-preview__byline">';
-	articleData += data.articles[7].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[7].listableAuthorByLine + '</div>' : '';
-	articleData += '<ul>'; 
-	articleData += data.articles[7].listableDate ? '<li><time class="article-metadata__date">' + data.articles[7].listableDate + '</time></li>' : '';
-	articleData += data.articles[7].linkableText ? '<li><h6>' + data.articles[7].linkableText + '</h6></li>' : '';
-	articleData += data.articles[7].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[7].id + '" data-analytics="{"bookmark": "' + bookmarkInfo7 + '", "bookmark_title": "' + data.articles[7].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[7].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[7].bookmarkText + '" data-label-bookmarked="' + data.articles[7].bookmarkedText + '">' + bookmarkInfo7 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon7 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon7 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
-	articleData += '</ul>'; 
-	articleData += '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-summary">' + data.articles[7].listableSummary ? data.articles[7].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[7].listableTopics) {
-		for (var i = 0; i < data.articles[7].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[7].listableTopics[i].linkableUrl ? data.articles[7].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[7].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
-	articleData += '<section class="article-preview list-featured-article listViewCont">';
-	articleData += data.articles[8].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[8].listableImage + '">' : '';
-	articleData += '<div class="article-metadata">';
-	articleData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[8].id + '" data-analytics="{"bookmark": "' + bookmarkInfo8 + '", "bookmark_title": "' + data.articles[8].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[8].isArticleBookmarked + '"><span class="action-flag__label js-bookmark-label" data-label-bookmark="' + data.articles[8].bookmarkText + '" data-label-bookmarked="' + data.articles[8].bookmarkedText + '">' + bookmarkInfo8 + '</span><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon8 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon8 + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div>';
-	articleData += '<ul>';
-	articleData += data.articles[8].listableDate ? '<li><time class="article-metadata__date">' + data.articles[8].listableDate + '</time></li>' : '';
-	articleData += data.articles[8].linkableText ? '<li><h6>' + data.articles[8].linkableText + '</h6></li>' : '';
-	articleData += data.articles[8].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use></svg></span></li>' : '';
-	articleData += '</ul>';
-	articleData += '</div>';
-	articleData += '<div class="topic-featured-article__inner-wrapper">';
-	articleData += data.articles[8].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl0 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[8].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[8].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[8].listableTitle + '</a></h3>' : '';
-	articleData += data.articles[8].listableAuthorByLine ? '<span class="article-preview__byline">' + data.articles[8].listableAuthorByLine + '</span>' : '';
-	articleData += '<div class="article-summary">' + data.articles[8].listableSummary ? data.articles[8].listableSummary : '' + '</div>';
-	articleData += '</div>';
-	articleData += '<div class="article-preview__tags bar-separated-link-list">';
-	if (data.articles[8].listableTopics) {
-		for (var i = 0; i < data.articles[8].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[8].listableTopics[i].linkableUrl ? data.articles[8].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getlistLink1 + '">' + data.articles[8].listableTopics[i].linkableText + '</a>';
-		}
-	}
-	articleData += '</div>';
-	articleData += '</section>';
-	
+	articleData += getListViewData(0, data, linkableUrl0, bookmarkInfo0, fbookmarkIcon0, sbookmarkIcon0);
+	articleData += getListViewData(1, data, linkableUrl1, bookmarkInfo1, fbookmarkIcon1, sbookmarkIcon1);
+	articleData += getListViewData(2, data, linkableUrl2, bookmarkInfo2, fbookmarkIcon2, sbookmarkIcon2);
+	articleData += getListViewData(3, data, linkableUrl3, bookmarkInfo3, fbookmarkIcon3, sbookmarkIcon3);
+	articleData += getListViewData(4, data, linkableUrl4, bookmarkInfo4, fbookmarkIcon4, sbookmarkIcon4);
+	articleData += getListViewData(5, data, linkableUrl5, bookmarkInfo5, fbookmarkIcon5, sbookmarkIcon5);
+	articleData += getListViewData(6, data, linkableUrl6, bookmarkInfo6, fbookmarkIcon6, sbookmarkIcon6);
+	articleData += getListViewData(7, data, linkableUrl7, bookmarkInfo7, fbookmarkIcon7, sbookmarkIcon7);
+	articleData += getListViewData(8, data, linkableUrl8, bookmarkInfo8, fbookmarkIcon8, sbookmarkIcon8);
 	
 	articleData += '<div class="latest-news__articles">';
 	articleData += '<section class="article-preview article-preview--small preview2 gridViewCont">';
