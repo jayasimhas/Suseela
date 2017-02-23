@@ -234,7 +234,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Mail.MailServerEnableSsl" value="${Mail.MailServerEnableSsl}" />
 
       <setting name="MailServer">
-        <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
+        <patch:attribute name="value">inrelaymail.sapient.com</patch:attribute>
       </setting>
 
       <setting name="MailServerUserName">
@@ -246,7 +246,7 @@ But you can also use "patch:attribute" for clarity:
       </setting>
 
       <setting name="MailServerPort">
-        <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
+        <patch:attribute name="value">25</patch:attribute>
       </setting>
 
       <!-- ExactTarget Settings -->
