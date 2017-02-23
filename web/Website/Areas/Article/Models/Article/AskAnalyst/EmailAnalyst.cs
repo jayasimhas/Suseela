@@ -10,7 +10,6 @@
         public string RecaptchaResponse { get; set; }
         public string CompanyName { get; set; }
         public string PhoneNumber { get; set; }
-        public string PublicationName { get; set; }
-        public string AskTheAnalystEmail { get; set; }
+        public string PublicationName { get; set; }        
     }
 }
