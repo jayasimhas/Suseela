@@ -80,8 +80,8 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceUpdateUserProductPreference>().As<IUpdateUserProductPreference>();
             builder.RegisterType<SalesforceGetUserProductPreferences>().As<ISalesforceGetUserProductPreferences>();
             builder.RegisterType<SalesforceGetUserProductPreferences>().As<IGetUserProductPreferences>();
-            builder.RegisterType<ISalesforceDeleteUserProductPreferences>().As<ISalesforceDeleteUserProductPreferences>();
-            builder.RegisterType<ISalesforceDeleteUserProductPreferences>().As<IDeleteUserProductPreferences>();
+            builder.RegisterType<SalesforceDeleteUserProductPreferences>().As<ISalesforceDeleteUserProductPreferences>();
+            builder.RegisterType<SalesforceDeleteUserProductPreferences>().As<IDeleteUserProductPreferences>();
         }
     }
 }
