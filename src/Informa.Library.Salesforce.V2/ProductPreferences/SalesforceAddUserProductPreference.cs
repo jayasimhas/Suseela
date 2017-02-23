@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         {
 
             if (entity != null ||
-              !new[] { entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken }
+              !new[] { entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken, entity.PublicationCode }
               .Any(string.IsNullOrEmpty))
             {
                 var request = SalesforceSavedSearchRequestFactory.Create(entity);

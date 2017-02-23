@@ -1,9 +1,10 @@
-﻿using Informa.Library.User.Authentication;
+﻿using Informa.Library.User.Content;
+using Informa.Library.User.Search;
 
 namespace Informa.Library.User.ProductPreferences
 {
     public interface IUpdateUserProductPreference
     {
-       bool UpdateUserProductPreference<T>(IAuthenticatedUser user, T value, ProductPreferenceType type);
+        IContentResponse UpdateUserSavedSearch(string accessToken, ISavedSearchEntity entity);
     }
 }
