@@ -1,6 +1,15 @@
 .rolling-stream {
 	background-color: #f1f2f2;
 	padding: 20px;
+	&.white-bg {
+		background-color: #ffffff;
+		.rolling-stream-wrapper:after {
+			display: none;
+		}
+		.scrollbar-container {
+			background-color: #ffffff !important;
+		}
+	}
 	h2 {
 		padding-bottom: 20px;
 		margin-bottom: 20px;
@@ -61,7 +70,7 @@
 		    right: 0;
 		    bottom: 0;
 		    top: 0;
-		    width: 15px;
+		    width: 16px;
 		    background-color: #f1f2f2;
 		    z-index: 9;
 		    &:after {
