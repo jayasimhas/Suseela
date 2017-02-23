@@ -303,6 +303,11 @@ namespace Informa.Library.Search.Utilities
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.AgencyRegulator").ToLower());
         }
 
+        public static bool IsCropProtectionTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CropProtection").ToLower());
+        }
+
         public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
         {
             List<string> fullTaxonomyList = new List<string>();
