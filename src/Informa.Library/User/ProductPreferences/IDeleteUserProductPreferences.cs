@@ -1,9 +1,10 @@
 ﻿using Informa.Library.User.Authentication;
+using Informa.Library.User.Content;
 
 namespace Informa.Library.User.ProductPreferences
 {
     public interface IDeleteUserProductPreferences
     {
-        bool DeleteUserProductPreference<T>(IAuthenticatedUser user, T value, ProductPreferenceType type);
+        IContentResponse DeleteUserProductPreference(string accessToken, string itemId);
     }
 }

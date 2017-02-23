@@ -23,6 +23,8 @@ namespace Informa.Library.SalesforceConfiguration
         private string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
         private string _changePasswordEndpoints = "{0}/changepassword?referralurl={1}&referralid={2}";
         private string _getUserProductPreferencesEndpoints = "/services/data/v20.0/query/?q={0}";
+        private string _addUserProductPreferencesEndpoints = "/services/data/v34.0/composite/tree/Product_Preference__c";
+        private string _deleteUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
 
 
         public SalesforceConfigurationContext(
@@ -108,6 +110,16 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetUserProductPreferencesEndPoints(string query)
         {
             return string.Format(_getUserProductPreferencesEndpoints, query);
+        }
+
+        public string AddUserProductPreferencesEndPoints()
+        {
+            return _addUserProductPreferencesEndpoints;
+        }
+
+        public string DeleteUserProductPreferenceEndPoints(string itemId)
+        {
+            return string.Format(_deleteUserProductPreferenceEndpoints, itemId);
         }
     }
 }
