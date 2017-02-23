@@ -5,5 +5,6 @@ namespace Informa.Library.User.Search
 		string Title { get; set; }
 		string Url { get; set; }
 		bool AlertEnabled { get; set; }
-	}
+        string Id { get; set; }
+    }
 }

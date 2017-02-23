@@ -93,7 +93,8 @@ namespace Informa.Library.User.Search
                 Title = doc.Name,
                 Url = ConstructUrl(doc.SearchString),
                 DateSaved = doc.DateCreated,
-                AlertEnabled = doc.HasAlert
+                AlertEnabled = doc.HasAlert,
+                Id = doc.Id
             }).OrderByDescending(r => r.DateSaved);
         }
 
