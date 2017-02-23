@@ -492,15 +492,20 @@ function createLayoutInner2(data) {
 function getMyviewCookie(cookie){
 	var getAllcookies = cookie.split(';');
 	for(var i=0; i<getAllcookies.length; i++){
-		if(getAllcookies[i].indexOf('myViewCookieName=') == 0){
+		if($.trim(getAllcookies[i]).indexOf('myViewCookieName=') == 0){
 			var myViewCookie = getAllcookies[i],
 				selectedCookie = myViewCookie.split('=')[1];
 				if(selectedCookie == 'listView'){
-					$('.personalisationhome').removeClass('gridView').addClass('listView');
+					setTimeout(function(){
+						$('.view-mode .icon-list-view').trigger('click');
+					}, 5);
 				}
 				else{
-					$('.personalisationhome').removeClass('listView').addClass('gridView');
+					setTimeout(function(){
+						$('.view-mode .icon-tile-view').trigger('click');
+					}, 5); 
 				}
+			break;
 		}
 	}
 }
