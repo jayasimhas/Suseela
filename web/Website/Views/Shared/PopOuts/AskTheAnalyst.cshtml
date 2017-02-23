@@ -19,9 +19,6 @@
         <p class="pop-out__details u-italic">
             @Html.Raw(Model.AskTheAnalystLink)
         </p>
-
-        <input type="hidden" class="js-ask-the-analyst-recip-addr" value="@Model.AskTheAnalystEmail">
-
         <div class="alert-success js-ask-the-analyst-success">
             <svg class="alert__icon">
                 <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
@@ -84,7 +81,8 @@
                        placeholder="@Model.SenderPlaceHolderPhoneNumber">
                 <p>
                     <input type="hidden" name="PublicationName" value="@Model.PublicationName">
-                    <input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">                    
+                    <input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+                    <input type="hidden" name="AskTheAnalystEmail" class="js-ask-the-analyst-recip-addr" value="@Model.AskTheAnalystEmailID">                    
                 </p>
 
                 <p>

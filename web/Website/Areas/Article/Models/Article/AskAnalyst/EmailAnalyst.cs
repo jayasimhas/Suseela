@@ -1,7 +1,8 @@
 ﻿namespace Informa.Web.Areas.Article.Models.Article.AskAnalyst
 {
     public class EmailAnalyst
-    {        
+    {     
+        public string AskTheAnalystEmail { get; set; }
         public string SenderName { get; set; }
         public string SenderEmail { get; set; }
         public string PersonalQuestion { get; set; }
