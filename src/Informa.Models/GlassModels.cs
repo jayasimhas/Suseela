@@ -14445,7 +14445,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						
 					
 			public static readonly ID Footer_Logo_With_CopyrightFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
-			public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo With Copyright";
+			public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo";
 
 						
 					
