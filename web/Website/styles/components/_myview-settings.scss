@@ -222,6 +222,9 @@
 	.publicationPan{
 		margin-bottom: 0.625rem;
 		border: 1px solid #d9dadb;
+		&.active{
+			border: 1px solid #EE9500;
+		}
 		h2{
 			text-align: left;
 			float: left;
@@ -975,6 +978,11 @@
 
 .theme-lloydslist{
 	.myview-settings {
+		.publicationPan{
+			&.active{
+				border: 1px solid #1191D1;
+			}
+		}
 		.table{
 			span{ 
 				fill: #1191D1;
@@ -998,6 +1006,11 @@
 
 .theme-insurance-day{
 	.myview-settings {
+		.publicationPan{
+			&.active{
+				border: 1px solid #DE4361;
+			}
+		}
 		.table{
 			span{ 
 				fill: #DE4361;
@@ -1021,6 +1034,11 @@
 
 .theme-commodities{
 	.myview-settings {
+		.publicationPan{
+			&.active{
+				border: 1px solid #9E310D;
+			}
+		}
 		.table{
 			span{ 
 				fill: #9E310D;

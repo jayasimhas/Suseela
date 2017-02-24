@@ -27,9 +27,10 @@ namespace Informa.Web.ViewModels.Articles
         private readonly ILog _logger;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISitecoreContext SitecoreContext;
+        protected readonly IArticleListItemModelFactory ArticleListableFactory;
 
         public ArticlePackageViewModel(IGlassBase datasource,
-            IRenderingContextService renderingParametersService, ISiteRootContext siteRootContext,ITextTranslator textTranslator, ILog logger, IGlobalSitecoreService globalService, ISitecoreContext sitecoreContext)
+            IRenderingContextService renderingParametersService, ISiteRootContext siteRootContext,ITextTranslator textTranslator, ILog logger, IGlobalSitecoreService globalService, ISitecoreContext sitecoreContext, IArticleListItemModelFactory articleListableFactory)
         {
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -37,11 +38,12 @@ namespace Informa.Web.ViewModels.Articles
             _logger = logger;
             GlobalService = globalService;
             SitecoreContext = sitecoreContext;
+            ArticleListableFactory = articleListableFactory;
         }
 
         public bool IsArticlePage => GlassModel is IArticle;
         public IEnumerable<IArticle_Package> SelectedPackages => GetSelectedPackages();
-        public bool HideImage => (PackageSettings != null) ? PackageSettings.Hide_Image : false;
+        public bool IsFullWidth => (PackageSettings != null) ? PackageSettings.IsFullWidth : false;
         Guid curItemID => GlassModel._Id;
         /// <summary>
         /// Get selected packages
@@ -61,10 +63,11 @@ namespace Informa.Web.ViewModels.Articles
         /// </summary>
         /// <param name="Package"></param>
         /// <returns></returns>
-        public IEnumerable<IArticle> GetPackageArticles(IArticle_Package Package)
+        public IEnumerable<IListableViewModel> GetPackageArticles(IArticle_Package Package)
         {
             try
             {
+                IEnumerable<IListableViewModel> listablePackageArticles;
                 if (Package != null && Package.Package_Articles.Any())
                 {
                     var packageArticles = Package.Package_Articles.OfType<IArticle>()?.Where(p => p != null);
@@ -72,14 +75,19 @@ namespace Informa.Web.ViewModels.Articles
                     {
                         packageArticles = packageArticles.Where(i => !i._Id.ToString().Equals(curItemID.ToString(), StringComparison.InvariantCultureIgnoreCase));
                     }
-                    return packageArticles;
+                    if(packageArticles != null && packageArticles.Any())
+                    {
+                         listablePackageArticles = packageArticles.Select(a => ArticleListableFactory.Create(a));
+                        return listablePackageArticles;
+                    }
+                    
                 }
-                return Enumerable.Empty<IArticle>();
+                return Enumerable.Empty<IListableViewModel>();
             }
             catch (Exception ex)
             {
                 _logger.Error("Error Finding the package articles", ex);
-                return Enumerable.Empty<IArticle>();
+                return Enumerable.Empty<IListableViewModel>();
             }
         }
         /// <summary>

@@ -21,7 +21,7 @@ namespace Informa.Library.PXM
     public class SpecialCharacterMapper : ISpecialCharacterMapper
     {
         private readonly IDependencies _dependencies;
-        private readonly Guid _specialCharactersFolderId = new Guid(ItemIdResolver.GetItemIdByKey("SpecialCharacterFolder"));
+        private readonly Guid _specialCharactersFolderId = new Guid(ItemIdResolver.GetItemIdByKey("SpecialCharacterFolder.global"));
 
         [AutowireService(true)]
         public interface IDependencies

@@ -23,5 +23,13 @@ namespace Informa.Library.SalesforceConfiguration
         string GetChangePasswordEndpoint(string referralurl, string referralid);
 
         string GetUpdateUserDetailsEndPoints(string userName);
+
+        string GetUserProductPreferencesEndPoints(string query);
+
+        string AddUserProductPreferencesEndPoints();
+
+        string DeleteUserProductPreferenceEndPoints(string itemId);
+
+        string UpdateUserProductPreferenceEndPoints(string itemId);
     }
 }

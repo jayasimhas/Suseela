@@ -4799,6 +4799,8 @@ main .advertising--leaderboard.visible-desktop {
     margin-bottom: 10px;
     margin-bottom: 0.625rem;
     border: 1px solid #d9dadb; }
+    .myview-settings .publicationPan.active {
+      border: 1px solid #EE9500; }
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
@@ -5573,6 +5575,9 @@ main .advertising--leaderboard.visible-desktop {
   #feedbacklite {
     display: none !important; } }
 
+.theme-lloydslist .myview-settings .publicationPan.active {
+  border: 1px solid #1191D1; }
+
 .theme-lloydslist .myview-settings .table span {
   fill: #1191D1; }
   .theme-lloydslist .myview-settings .table span.button--outline {
@@ -5584,6 +5589,9 @@ main .advertising--leaderboard.visible-desktop {
     .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
       border: 1px solid #0f5487; }
 
+.theme-insurance-day .myview-settings .publicationPan.active {
+  border: 1px solid #DE4361; }
+
 .theme-insurance-day .myview-settings .table span {
   fill: #DE4361; }
   .theme-insurance-day .myview-settings .table span.button--outline {
@@ -5594,6 +5602,9 @@ main .advertising--leaderboard.visible-desktop {
     color: #fff; }
     .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
       border: 1px solid #b0173d; }
+
+.theme-commodities .myview-settings .publicationPan.active {
+  border: 1px solid #9E310D; }
 
 .theme-commodities .myview-settings .table span {
   fill: #9E310D; }
@@ -9726,6 +9737,12 @@ div#feedbacklite.fbl_r {
 .rolling-stream {
   background-color: #f1f2f2;
   padding: 20px; }
+  .rolling-stream.white-bg {
+    background-color: #ffffff; }
+    .rolling-stream.white-bg .rolling-stream-wrapper:after {
+      display: none; }
+    .rolling-stream.white-bg .scrollbar-container {
+      background-color: #ffffff !important; }
   .rolling-stream h2, .rolling-stream .article-topics__header {
     padding-bottom: 20px;
     margin-bottom: 20px; }
@@ -9774,7 +9791,7 @@ div#feedbacklite.fbl_r {
       right: 0;
       bottom: 0;
       top: 0;
-      width: 15px;
+      width: 16px;
       background-color: #f1f2f2;
       z-index: 9; }
       .rolling-stream .rolling-stream-wrapper .scrollbar-container:after {
