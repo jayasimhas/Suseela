@@ -8,7 +8,7 @@
 				
 					$.each(date, function(key, value) {
 						//console.log(key);
-						self.table += '<table class="descView">'
+						self.table += '<table class="table descView">'
 						self.table += '<thead class="table_head">';
 						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>'									
 						self.table += '<tr class="visible-lg">';
@@ -42,7 +42,7 @@
 				
 					$.each(date, function(key, value) {
 						//console.log(key);
-						self.table += '<table class="mobView">'
+						self.table += '<table class="table mobView">'
 						self.table += '<thead class="table_head">';
 						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
 						self.table += '</thead>';
