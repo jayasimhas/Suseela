@@ -1,0 +1,110 @@
+﻿@model Informa.Web.ViewModels.PopOuts.IAsktheAnalystPopOutViewModel
+<div class="pop-out js-pop-out__ask-the-analyst">
+    <div class="pop-out__form-error">
+        <!--TODO Add error message-->
+        @Model.ArticleNumber
+    </div>
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+
+        <div class="dismiss-button js-dismiss-ask-the-analyst" data-target-element=".js-pop-out__ask-the-analyst">
+            <svg class="dismiss-button__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
+        </div>
+
+        <h3 class="pop-out__header">
+            @Model.AskTheAnalystText
+        </h3>
+        <p class="pop-out__details u-italic">
+            @Html.Raw(Model.AskTheAnalystLink)
+        </p>
+        <div class="alert-success js-ask-the-analyst-success">
+            <svg class="alert__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+            </svg>
+            <p>@Model.ATASentSuccessMessage <b class="js-ask-the-analyst-recip-success">my&#64;email.address</b>.</p>
+        </div>
+        <div class="js-ask-the-analyst-form-wrapper">
+            <p class="pop-out__details u-italic">
+                @Model.ATAFormInstructionsText
+            </p>
+
+            <form class="form-ask-the-analyst"
+                  data-on-submit="/Account/api/AskTheAnalyst/EmailToAnalyst/">
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-general">
+                    @Model.GeneralError
+                </p>
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.EmptyFieldText
+                </p>
+                <input name="SenderName"
+                       class="pop-out__input js-ask-the-address-name"
+                       type="text"
+                       placeholder="@Model.SenderPlaceHolderName">
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.EmptyFieldText
+                </p>
+                <input name="CompanyName"
+                       class="pop-out__input"
+                       type="text"
+                       placeholder="@Model.SenderPlaceHolderCompanyName">
+
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.Invalidemailaddress
+                </p>
+                <input name="SenderEmail"
+                       class="pop-out__input"
+                       type="text"
+                       placeholder="@Model.SenderPlaceHolderEmail">
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.Invalidphonenumber
+                </p>
+                <input name="PhoneNumber"
+                       class="pop-out__input"
+                       type="text"
+                       placeholder="@Model.SenderPlaceHolderPhoneNumber">
+                <p>
+                    <input type="hidden" name="PublicationName" value="@Model.PublicationName">
+                    <input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+                    <input type="hidden" name="AskTheAnalystEmail" class="js-ask-the-analyst-recip-addr" value="@Model.AskTheAnalystEmailID">                    
+                </p>
+
+                <p>
+                    <span class="pop-out__run-in">@Model.Askyourquestion</span>
+                </p>
+
+                <textarea name="PersonalQuestion" class="pop-out__input pop-out__textarea"></textarea>
+
+                <input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+
+                <div class="g-recaptcha" data-sitekey="@Model.CaptchaSiteKey"></div>
+
+                <div class="pop-out__form-actions-wrapper">
+                    <div class="dismiss-button" data-target-element=".js-pop-out__ask-the-analyst">
+                        <span class="highlight-link">@Model.CancelText</span>
+                    </div>
+                    <div class="sign-in__submit-wrapper">
+                        <button type="submit" class="button--filled click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool" : "asktheanalyst" }'>@Model.SendText</button>
+                    </div>
+                </div>
+                @Html.AuthToken()
+                </form>                   
+        </div>
+    </div>
+</div>
