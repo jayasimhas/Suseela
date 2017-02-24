@@ -2324,6 +2324,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-size: 16px;
       font-size: 1rem;
       font-weight: 500; }
+      @media (max-width: 480px) {
+        #main-carousel .companies_heading span {
+          padding-right: 75px; } }
 
 #graph-carousel {
   margin-bottom: 32px;
@@ -5119,18 +5122,44 @@ main .advertising--leaderboard.visible-desktop {
           text-align: right; }
           .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
             visibility: hidden;
+            float: left;
+            padding-left: 35px;
+            text-align: right;
             font-family: "Roboto Condensed", Arial Narrow, sans-serif;
             font-size: 14px;
             font-size: 0.875rem;
             font-weight: 400;
-            text-transform: uppercase;
-            padding-right: 14px; }
+            text-transform: uppercase; }
           .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
-            background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
-            height: 10px;
-            width: 12px;
+            float: left;
+            margin-top: -15px;
+            position: relative;
+            top: 8px;
+            /*background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
+							height: 10px;
+							width: 12px;*/
             cursor: pointer;
             display: inline-block; }
+            .myview-settings .table-responsive .table thead th .accordionImg span.accImg .sorting_arrow--up {
+              height: 32px;
+              width: 32px;
+              fill: #ababab;
+              webkit-transform: rotate(-180deg);
+              -webkit-transform: rotate(-180deg);
+                      transform: rotate(-180deg); }
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg .sorting_arrow--up.hide {
+                display: none; }
+            .myview-settings .table-responsive .table thead th .accordionImg span.accImg .sorting_arrow--down {
+              height: 32px;
+              width: 32px;
+              fill: #ababab;
+              webkit-transform: rotate(0deg);
+              -webkit-transform: rotate(0deg);
+                      transform: rotate(0deg); }
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg .sorting_arrow--down.act {
+                fill: #ff8f18; }
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg .sorting_arrow--down.hide {
+                display: none; }
             @media (max-width: 640px) {
               .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
                 background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
@@ -5595,6 +5624,8 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-lloydslist .myview-settings .followingrow:hover {
     background: #cedce6 !important; }
+  .theme-lloydslist .myview-settings .followingbg .sorting_arrow--up {
+    fill: #0f5487 !important; }
   .theme-lloydslist .myview-settings .followingbg .expandTxt {
     color: #0f5487 !important; }
   .theme-lloydslist .myview-settings .followingbg .rowlines .mv {
@@ -5610,6 +5641,8 @@ main .advertising--leaderboard.visible-desktop {
       color: #fff !important; }
   .theme-lloydslist .myview-settings .followinglbl-txt .collapsed .active {
     background: #cedce6 !important; }
+  .theme-lloydslist .myview-settings .sorting_arrow--down.act {
+    fill: #0f5487 !important; }
   .theme-lloydslist .myview-settings .table span {
     fill: #1191D1; }
     .theme-lloydslist .myview-settings .table span.button--outline {
@@ -5670,6 +5703,8 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-insurance-day .myview-settings .followingrow:hover {
     background: #efd0d8 !important; }
+  .theme-insurance-day .myview-settings .followingbg .sorting_arrow--up {
+    fill: #b0173d !important; }
   .theme-insurance-day .myview-settings .followingbg .expandTxt {
     color: #b0173d !important; }
   .theme-insurance-day .myview-settings .followingbg .rowlines .mv {
@@ -5685,6 +5720,8 @@ main .advertising--leaderboard.visible-desktop {
       color: #fff !important; }
   .theme-insurance-day .myview-settings .followinglbl-txt .collapsed .active {
     background: #efd0d8 !important; }
+  .theme-insurance-day .myview-settings .sorting_arrow--down.act {
+    fill: #b0173d !important; }
   .theme-insurance-day .myview-settings .table span {
     fill: #DE4361; }
     .theme-insurance-day .myview-settings .table span.button--outline {
@@ -5745,6 +5782,8 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-commodities .myview-settings .followingrow:hover {
     background: #FFF5ED !important; }
+  .theme-commodities .myview-settings .followingbg .sorting_arrow--up {
+    fill: #F5821F !important; }
   .theme-commodities .myview-settings .followingbg .expandTxt {
     color: #F5821F !important; }
   .theme-commodities .myview-settings .followingbg .rowlines .mv {
@@ -5760,6 +5799,8 @@ main .advertising--leaderboard.visible-desktop {
       color: #fff !important; }
   .theme-commodities .myview-settings .followinglbl-txt .collapsed .active {
     background: #FFF5ED !important; }
+  .theme-commodities .myview-settings .sorting_arrow--down.act {
+    fill: #F5821F !important; }
   .theme-commodities .myview-settings .table span {
     fill: #9E310D; }
     .theme-commodities .myview-settings .table span.button--outline {

@@ -506,14 +506,43 @@
 						text-align: right;
 						.expandTxt{
 							visibility: hidden;
+							float: left;
+							padding-left: 35px;
+							text-align: right;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
 							text-transform: uppercase;
-							padding-right: 14px;
 						}
 						span.accImg{
-							background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
+							float: left;
+							margin-top: -15px;
+							position: relative;
+							top: 8px;
+							.sorting_arrow--up{
+								height: 32px;
+								width: 32px;
+								fill: #ababab; 
+								webkit-transform: rotate(-180deg);
+								transform: rotate(-180deg);
+								&.hide{
+									display: none;
+								}
+							}
+							.sorting_arrow--down{
+								height: 32px;
+								width: 32px; 
+								fill: #ababab; 
+								webkit-transform: rotate(0deg);
+								transform: rotate(0deg);
+								&.act{
+									fill: #ff8f18;
+								}
+								&.hide{
+									display: none;
+								}
+							}
+							/*background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
 							height: 10px;
-							width: 12px;
+							width: 12px;*/
 							cursor: pointer;
 							display: inline-block; 
 							@include breakpoint('medium-small') {
@@ -952,7 +981,10 @@
 				background: $mobg !important;
 			}
 		}
-		.followingbg{ 
+		.followingbg{
+			.sorting_arrow--up{
+				fill: $tc !important;
+			}
 			.expandTxt{
 				color: $tc !important;
 			}
@@ -982,6 +1014,11 @@
 				.active{
 					background: $mobg !important;
 				}
+			}
+		}
+		.sorting_arrow--down{ 
+			&.act{
+				fill: $tc !important;
 			}
 		}
 		.table{
