@@ -1,5 +1,5 @@
 (function () {
-	var dryCargo = {
+	var dryCargoIcap = {
 		table: '',
 		renderTable: function(){
 		var self = this;
@@ -19,7 +19,7 @@
 							}
 							self.table += '</tr>';
 							self.table += '</thead>';
-							self.table += '<tbody class="visible-lg">';
+							self.table += '<tbody class="visible-lg">'; 
 							self.table += '<tr>';
 							$.each(value, function(objData, objVal) {
 								//console.log(objVal);						
@@ -30,49 +30,20 @@
 							});					
 						self.table += '</tbody>';
 						self.table += '</table>';	
-						 $('#dryCargo').html(self.table);
+						 $('#dryCargoIcap').html(self.table);
 					});
 					
 			 });
 		
-		},
-		renderMobile: function() {
-			var self = this;
-			 $.each(tableObj, function(datekey, date){ 
-				
-					$.each(date, function(key, value) {
-						self.table += '<table class="table mobView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
-						self.table += '</thead>';
-						self.table += '<tbody class="visible-sm">';
-						
-						$.each(value, function(objData, objVal) {
-							//console.log(objVal);						
-							$.each(objVal, function(responseKey, responseVal) { 
-								self.table += '<tr>';
-								self.table += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
-								self.table += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
-								self.table += '</tr>';		
-							});	
-							
-						});					
-						self.table += '</tbody>';
-						self.table += '</table>';
-						 $('#dryCargo').html(self.table);
-					});
-					
-			 });
-		},
+		},		
 		init: function() {
 			this.renderTable();
-			this.renderMobile();
 		}
 	}
 	
 	$(document).ready(function() {
-		if($('#dryCargo').length > 0) {
-			dryCargo.init();
+		if($('#dryCargoIcap').length > 0) {
+			dryCargoIcap.init();
 		}
 	});
 })();
