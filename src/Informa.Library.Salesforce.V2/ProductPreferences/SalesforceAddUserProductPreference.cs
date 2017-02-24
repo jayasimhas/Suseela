@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Library.User.Content;
+using Informa.Library.User.Document;
 using Informa.Library.User.ProductPreferences;
 using Informa.Library.User.Search;
 using Newtonsoft.Json;
@@ -14,7 +15,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
     public class SalesforceAddUserProductPreference : ISalesforceAddUserProductPreference
     {
-        private readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
+        protected readonly ISalesforceSaveDocumentFactory SalesforceSaveDocumentFactory;
+        protected readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
         private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
@@ -22,14 +24,16 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceDeleteUserProductPreferences SalesforceDeleteUserProductPreferences;
 
         public SalesforceAddUserProductPreference(
-            ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
+            ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
             ITextTranslator textTranslator,
     ISalesforceConfigurationContext salesforceConfigurationContext,
     ISalesforceInfoLogger infoLogger,
     ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
-    ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences)
+    ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences,
+    ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
+            SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
             TextTranslator = textTranslator;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             InfoLogger = infoLogger;
@@ -114,6 +118,45 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             }
 
             return false;
+        }
+
+        public ISavedDocumentWriteResult AddSavedDocument(string verticalName, string publicationCode, string Username, string documentName, string documentDescription, string documentId, string accessToken)
+        {
+            if (!new[] { Username, documentId, documentDescription, documentName }.Any(string.IsNullOrEmpty))
+            {
+                var request = SalesforceSaveDocumentFactory.Create(verticalName, publicationCode, Username, documentName, documentDescription, documentId);
+
+                if (request != null)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
+                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
+                        if (result.IsSuccessStatusCode)
+                        {
+                            var responseString = result.Content.ReadAsStringAsync().Result;
+                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                            InfoLogger.Log(responseString, this.GetType().Name);
+                            if (!response.hasErrors)
+                            {
+                                return new SavedDocumentWriteResult
+                                {
+                                    Success = true,
+                                    Message = string.Empty
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            return new SavedDocumentWriteResult
+            {
+                Success = false,
+                Message = "Invalid input has been provided."
+            };
         }
     }
 }

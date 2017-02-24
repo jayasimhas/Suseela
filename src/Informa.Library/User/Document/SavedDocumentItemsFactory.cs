@@ -56,7 +56,8 @@ namespace Informa.Library.User.Document
 					SavedOn = savedDocument.SaveDate,
 					Title = item.Title ?? savedDocument.Name,
 					Url = url,
-					IsExternalUrl = isExternalUrl
+					IsExternalUrl = isExternalUrl,
+                    SalesforceId = savedDocument.SalesforceId
 				});
 			}
 

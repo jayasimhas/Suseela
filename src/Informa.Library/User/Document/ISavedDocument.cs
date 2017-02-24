@@ -8,5 +8,6 @@ namespace Informa.Library.User.Document
         string DocumentId { get; set; }
         string Name { get; set; }
         string Description { get; set; }
+        string SalesforceId { get; set; }
     }
 }

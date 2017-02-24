@@ -19,7 +19,7 @@ namespace Informa.Library.User.Document
 		{
 			var rawDocuementId = documentId.ToString("D").ToUpper();
 
-			return SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(rawDocuementId));
+			return SavedDocumentsContext.SavedDocuments != null ? SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(rawDocuementId)): false;
 		}
 	}
 }

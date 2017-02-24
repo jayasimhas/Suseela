@@ -12,5 +12,6 @@ namespace Informa.Library.User.Document
 		public DateTime SavedOn { get; set; }
 		public string Url { get; set; }
 		public bool IsExternalUrl { get; set; }
+        public string SalesforceId { get; set; }
 	}
 }

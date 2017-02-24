@@ -44,6 +44,7 @@ namespace Informa.Library.Salesforce.User.Profile
 				DocumentId = sd.documentId,
 				Name = sd.name,
 				Description = sd.description
+               
 			});
 
 			return savedDocuments;
