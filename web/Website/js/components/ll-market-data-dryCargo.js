@@ -11,9 +11,8 @@
 					self.table += '<thead class="table_head">';
 					self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>'									
 					self.table += '<tr class="visible-lg">';
-					$.each(value, function(objData, objVal) {
-						//console.log(objVal);
-						var tableHead = objVal; 
+					console.log(value[0]);
+					var tableHead = value[0];
 						for(var key in tableHead){
 							self.table += '<th class="pad-10">'+key+'</th>'
 						}
@@ -21,6 +20,8 @@
 						self.table += '</thead>';
 						self.table += '<tbody class="visible-lg">';
 						self.table += '<tr>';
+					$.each(value, function(objData, objVal) {
+						//console.log(objVal);						
 						$.each(objVal, function(responseKey, responseVal) {
                             self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
 						});	
