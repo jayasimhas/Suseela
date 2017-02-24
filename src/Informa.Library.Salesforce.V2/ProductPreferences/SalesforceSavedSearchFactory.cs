@@ -20,7 +20,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             attributes = new AddProductPreferenceRequestAttributes()
                             {
                                     type = "Product_Preference__c",
-                                    referenceId = "ref1"
+                                    referenceId = DateTime.Now.ToString()
                             },
                             Product_Vertical__c = entity.VerticalName,
                             Type__c = "Search Criteria",
@@ -55,13 +55,33 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         Name = record.Value4__c,
                         Publication = record.Value3__c,
                         SearchString = record.Value2__c,
-                        Id = record.Id
+                        Id = record.Id,
+                        VerticalName = record.Product_Vertical__c,
+                        PublicationCode = record.Value1__c,
+                        Username = record.Username__c
 
                     });
                 }
             }
 
             return result;
+        }
+
+        public UpdateProductPreferenceRequest CreateUpdateRequest(ISavedSearchEntity entity)
+        {
+            if (entity != null)
+            {
+                return new UpdateProductPreferenceRequest()
+                {
+                    Value1__c = entity.PublicationCode,
+                    Value2__c = entity.SearchString,
+                    Value3__c = entity.Publication,
+                    Value4__c = entity.Name,
+                    Value5__c = entity.HasAlert.ToString(),
+                    Value6__c = entity.UnsubscribeToken,
+                };
+            }
+                return null;
         }
     }
 }

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RichText.InsertTableau>
+    <FormDialog Icon="People/32x32/movie_run.png" Header="Insert Tableau into Article" Text="Fill the Tableau details" OKButton="Insert">
+	 
+      <script Type="text/javascript" Language="javascript" Src="/sitecore/shell/controls/rich text editor/InsertTableau/InsertTableau.js">.</script>	 
+	
+      <CodeBeside Type="Informa.Library.CustomSitecore.RTECustomization.InsertTableau, Informa.Library"/>	  
+	  
+     <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+	  <Literal ID="tableauParameters" Text="Tableau Dashboard Input Parameters"  Width="40px" style="font-size:30px;"/>
+          <GridPanel Columns="2">
+		  <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litPageTitle" Text="Page Title"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptPageTitle" Width="300px"></Edit>              
+            </Border>
+		  <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litDashboardName" Text="Dashboard Name"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptDashboardName" Width="300px"></Edit>              
+            </Border>		  
+		   <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litMobileDashboardName" Text="Mobile Dashboard Name"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptMobileDashboardName" Width="300px"></Edit>              
+            </Border>		  
+		   <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litDisplayTabs" Text="Display Tabs"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Checkbox ID="chkDisplayTabs"></Checkbox>             
+            </Border>			
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="litAllowCustomViews" Text="Allow Custom Views"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Checkbox ID="chkAllowCustomViews"></Checkbox>            
+            </Border>		   
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="litDisplayToolbars" Text="Display Toolbars"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Checkbox ID="chkDisplayToolbars"></Checkbox>             
+            </Border>					
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="litFilter" Text="Filter"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptFilter" Width="300px"></Edit>              
+            </Border>
+            <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litHeight" Text="Height"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptHeight" Width="300px"></Edit>              
+            </Border>	
+            <Border Padding="0px 4px 0px 10px">
+              <Literal ID="litWidth" Text="Width"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="inptWidth" Width="300px"></Edit>              
+            </Border>				
+          </GridPanel>       
+      </GridPanel>
+    </FormDialog>
+  </RichText.InsertTableau>
+</control>

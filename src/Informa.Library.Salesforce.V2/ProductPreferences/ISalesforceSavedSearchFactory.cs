@@ -6,7 +6,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
     public interface ISalesforceSavedSearchFactory
     {
         AddProductPreferenceRequest Create(ISavedSearchEntity entity);
-
         IList<ISavedSearchEntity> Create(ProductPreferencesResult entity);
+        UpdateProductPreferenceRequest CreateUpdateRequest(ISavedSearchEntity entity);
     }
 }

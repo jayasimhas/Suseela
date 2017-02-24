@@ -33,18 +33,38 @@ namespace Informa.Library.User.Entitlement
         public IList<string> Create(IArticle item)
         {
             var itemCodes = new List<string>();
+            var siteRoot = SiteRootsContext.SiteRoots.FirstOrDefault(sr => item._Path.StartsWith(sr._Path));
+            var chargeableTax = siteRoot?.Taxonomy_Listings;
+            var productCode = siteRoot?.Publication_Code ?? string.Empty;
 
             if (item.Content_Type != null && item.Content_Type.Enable_Entitlement && !string.IsNullOrEmpty(item.Content_Type.Entitlement_Code))
             {
-                var siteRoot = SiteRootsContext.SiteRoots.FirstOrDefault(sr => item._Path.StartsWith(sr._Path));
-                var chargeableTax = siteRoot?.Taxonomy_Listings;
-                var productCode = siteRoot?.Publication_Code ?? string.Empty;
-
                 var itemCode = string.Empty;
                 itemCode = item.Content_Type.Enable_Entitlement && chargeableTax.Any(n => n.Entitlement_Code == item.Content_Type.Entitlement_Code) ? string.Format(itemCodeFormat, productCode, item.Content_Type.Entitlement_Code) : string.Empty;
                 if (!string.IsNullOrWhiteSpace(itemCode))
                 {
                     itemCodes.Add(itemCode);
+                }
+            }
+            if (item.Media_Type != null && item.Media_Type.Enable_Entitlement && !string.IsNullOrEmpty(item.Media_Type.Entitlement_Code))
+            {
+                var itemCode = string.Empty;
+                itemCode = item.Content_Type.Enable_Entitlement && chargeableTax.Any(n => n.Entitlement_Code == item.Content_Type.Entitlement_Code) ? string.Format(itemCodeFormat, productCode, item.Content_Type.Entitlement_Code) : string.Empty;
+                if (!string.IsNullOrWhiteSpace(itemCode))
+                {
+                    itemCodes.Add(itemCode);
+                }
+            }
+            if (item.Taxonomies != null & item.Taxonomies.Any())
+            {
+                foreach (var taxonomy in item.Taxonomies)
+                {
+                    var itemCode = string.Empty;
+                    itemCode = taxonomy.Enable_Entitlement && chargeableTax.Any(n => n.Entitlement_Code == taxonomy.Entitlement_Code) ? string.Format(itemCodeFormat, productCode, taxonomy.Entitlement_Code) : string.Empty;
+                    if (!string.IsNullOrWhiteSpace(itemCode))
+                    {
+                        itemCodes.Add(itemCode);
+                    }
                 }
             }
             return itemCodes;

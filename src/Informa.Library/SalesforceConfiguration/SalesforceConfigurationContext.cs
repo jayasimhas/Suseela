@@ -25,6 +25,7 @@ namespace Informa.Library.SalesforceConfiguration
         private string _getUserProductPreferencesEndpoints = "/services/data/v20.0/query/?q={0}";
         private string _addUserProductPreferencesEndpoints = "/services/data/v34.0/composite/tree/Product_Preference__c";
         private string _deleteUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
+        private string _updateUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
 
 
         public SalesforceConfigurationContext(
@@ -120,6 +121,11 @@ namespace Informa.Library.SalesforceConfiguration
         public string DeleteUserProductPreferenceEndPoints(string itemId)
         {
             return string.Format(_deleteUserProductPreferenceEndpoints, itemId);
+        }
+
+        public string UpdateUserProductPreferenceEndPoints(string itemId)
+        {
+            return string.Format(_updateUserProductPreferenceEndpoints, itemId);
         }
     }
 }

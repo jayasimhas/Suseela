@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpClientExtension.cs" />
     <Compile Include="HttpClientHelper.cs" />
     <Compile Include="IHttpClientHelper.cs" />
     <Compile Include="ProductPreferences\AddProductPreferenceRequest.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="ProductPreferences\SalesforceGetUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceSavedSearchFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceUpdateUserProductPreference.cs" />
+    <Compile Include="ProductPreferences\UpdateProductPreferenceRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUserV2.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUserV2.cs" />

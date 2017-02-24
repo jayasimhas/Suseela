@@ -31,6 +31,7 @@ namespace Informa.Library.User.Search
             IAddUserProductPreference AddUserProductPreference { get; }
             IGetUserProductPreferences GetUserProductPreferences { get; }
             IDeleteUserProductPreferences DeleteUserProductPreferences { get; }
+            IUpdateUserProductPreference UpdateUserProductPreference { get; }
             ISalesforceConfigurationContext SalesforceConfigurationContext { get; }
 
             ISitecoreContext SitecoreContext { get; }
@@ -115,12 +116,18 @@ namespace Informa.Library.User.Search
                 Name = input.Title
             };
 
-            var entity = _dependencies.Repository.GetById(id);
+            var entity = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                GetById(id) :
+                _dependencies.Repository.GetById(id);
             if (entity != null)
             {
                 entity.HasAlert = input.AlertEnabled;
                 entity.SearchString = ExtractQueryString(input.Url);
-                var updateResponse = _dependencies.Repository.Update(entity);
+
+                var updateResponse = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                    _dependencies.UpdateUserProductPreference.
+                    UpdateUserSavedSearch(_dependencies.UserContext.User.AccessToken, entity) :
+                    _dependencies.Repository.Update(entity);
                 Clear();
 
                 return updateResponse;
@@ -157,7 +164,8 @@ namespace Informa.Library.User.Search
             {
                 Username = _dependencies.UserContext.User.Username,
                 Name = input.Title,
-                SearchString = ExtractQueryString(input.Url)
+                SearchString = ExtractQueryString(input.Url),
+                Id = input.Id
             };
 
             IContentResponse response = null;
@@ -167,7 +175,7 @@ namespace Informa.Library.User.Search
                 var entities = results.Where(e => SavedSearchComparer.Equals(e, entity));
                 foreach (ISavedSearchEntity en in entities)
                 {
-                    response = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled?
+                    response = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                         _dependencies.DeleteUserProductPreferences.DeleteUserProductPreference(
                             _dependencies.UserContext.User.AccessToken, en.Id) :
                         _dependencies.Repository.Delete(en);
@@ -228,7 +236,7 @@ namespace Informa.Library.User.Search
             {
                 var results = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     _dependencies.GetUserProductPreferences.GetProductPreferences<IList<ISavedSearchEntity>>
-                    (_dependencies.UserContext.User, _dependencies.SiteRootContext?.Item?.Publication_Code, 
+                    (_dependencies.UserContext.User, _dependencies.SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.SavedSearches) :
                     _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();
 
@@ -238,6 +246,15 @@ namespace Informa.Library.User.Search
             }
 
             return savedSearches.Value;
+        }
+
+        protected virtual ISavedSearchEntity GetById(object item)
+        {
+            var itemId = item as ISavedSearchItemId;
+
+            if (string.IsNullOrEmpty(itemId?.Username) || string.IsNullOrEmpty(itemId.Name)) return default(ISavedSearchEntity);
+
+            return GetContentFromSessionOrRepo().Where(s => s.Name == itemId.Name && s.Username == itemId.Username).FirstOrDefault();
         }
     }
 }

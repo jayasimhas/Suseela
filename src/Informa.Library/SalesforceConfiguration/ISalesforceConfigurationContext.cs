@@ -29,5 +29,7 @@ namespace Informa.Library.SalesforceConfiguration
         string AddUserProductPreferencesEndPoints();
 
         string DeleteUserProductPreferenceEndPoints(string itemId);
+
+        string UpdateUserProductPreferenceEndPoints(string itemId);
     }
 }

@@ -6546,6 +6546,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
+        /// <summary>
+        /// Disable Background field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 384C0B79-F74C-4A15-A370-F9146452D681</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Disable_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Disable_Background { get; set; }
     }
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
@@ -6610,6 +6619,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Display_Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Display_Published_Date { get; set; }
+        /// <summary>
+        /// Disable Background field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 384C0B79-F74C-4A15-A370-F9146452D681</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Disable_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Disable_Background { get; set; }
     }
 
     public static partial class ILatest_Published_Stories_OptionsConstants
@@ -6636,6 +6654,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
         public static readonly ID Display_Published_DateFieldId = new ID("A5454101-4AD6-4B1C-BE1B-CD11C7928154");
         public const string Display_Published_DateFieldName = "Display Published Date";
+
+        public static readonly ID Disable_BackgroundFieldId = new ID("384C0B79-F74C-4A15-A370-F9146452D681");
+        public const string Disable_BackgroundFieldName = "Disable Background";
     }
 
 }
