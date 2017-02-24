@@ -27,8 +27,8 @@
     
     <add key="Development" value="http://informasupport/" />
     <add key="QA" value="http://cms.bausupport.informa.products.com/" />
-    <add key="Stage" value="http://scrip-auth.pharmamedtechbi.com/" />
-    <add key="Production" value="http://scrip-auth.pharmamedtechbi.com/" />
+    <add key="Stage" value="https://calypso-8yra6ecdjk6n.pharmamedtechbi.com/" />
+    <add key="Production" value="https://scrip-auth.pharmamedtechbi.com/" />
 
     <add key="DevelopmentForgotPasswordLink" value="http://informasupport/sitecore/login?passwordrecovery=1" />
     <add key="QAForgotPasswordLink" value="http://cms.bausupport.informa.products.com/sitecore/login?passwordrecovery=1" />
