@@ -5453,38 +5453,6 @@ $(function () {
             }
         });
     }
-    // if($('#mycarousel2') && $('#mycarousel2').length){
-    // 	$('#mycarousel2.owl-carousel').owlCarousel({
-    // 		margin:0,
-    //               merge:true,
-    //               nav:true,
-    //         touchDrag  : true,
-    //      mouseDrag  : false,
-    //      merge: true,
-    //         slideBy: 4,
-    // 		 navText: [
-    // 			  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down right-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>",
-    // 			  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down left-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>"
-    // 			  ],
-    // 		responsive:{
-    // 			0:{
-    // 			items:4
-    // 			},
-    // 			678:{
-    // 			items:1
-    // 			},
-    // 			320:{
-    // 			 items:1
-    // 			},
-    // 			480:{
-    // 			 items:1
-    // 			},
-    // 			1025:{
-    // 			items:4
-    // 			}
-    // 		}
-    // 	});
-    // }
 });
 
 },{}],8:[function(require,module,exports){
@@ -5496,7 +5464,9 @@ $(document).ready(function () {
     articleSidebarAd = articleSidebarAdParent.find('.advertising');
     lastActionFlagsBar = $('.action-flags-bar:last-of-type');
     sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
-    rightRail = $('.article-right-rail').offset().left;
+    if ($('.article-right-rail').length > 0) {
+        rightRail = $('.article-right-rail').offset().left;
+    }
 });
 $(window).on('scroll', function () {
     if (articleSidebarAdParent && articleSidebarAdParent.length && !sidebarIsTaller) {
@@ -5504,7 +5474,9 @@ $(window).on('scroll', function () {
         stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
         if (articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
             articleSidebarAdParent.addClass('advertising--sticky');
-            articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
+            if ($('.article-right-rail').length > 0) {
+                articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
+            }
         } else {
             articleSidebarAdParent.removeClass('advertising--sticky');
         }
@@ -15083,6 +15055,5 @@ var Zepto = (function () {
 })(Zepto);
 
 },{}]},{},[39])
-
 
 //# sourceMappingURL=index.js.map
