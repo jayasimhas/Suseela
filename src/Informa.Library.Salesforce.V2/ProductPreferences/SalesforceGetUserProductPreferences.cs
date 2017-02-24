@@ -13,37 +13,48 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceGetUserProductPreferencesQueryFactory SalesforceGetUserProductPreferencesQueryFactory;
         private readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
+        private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
 
         public SalesforceGetUserProductPreferences(ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserProductPreferencesQueryFactory salesforceGetUserProductPreferencesQueryFactory,
-            ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory)
+            ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
+            ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserProductPreferencesQueryFactory = salesforceGetUserProductPreferencesQueryFactory;
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
+            SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
         }
         public T GetProductPreferences<T>(IAuthenticatedUser user, string publicationCode, ProductPreferenceType type)
         {
             if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.AccessToken)
                 && !string.IsNullOrWhiteSpace(publicationCode) && type != ProductPreferenceType.None)
             {
-                using (var client = new HttpClient())
+                var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
+                      user.Username, publicationCode, type);
+                if (!string.IsNullOrWhiteSpace(query))
                 {
-                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-                    var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
-                        user.Username, publicationCode, type);
-                    HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserProductPreferencesEndPoints(query)).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = new HttpClient())
                     {
-                        var responseString = response.Content.ReadAsStringAsync().Result;
-                        if (!string.IsNullOrWhiteSpace(responseString))
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        client.DefaultRequestHeaders.Accept.Clear();
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
+
+                        HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserProductPreferencesEndPoints(query)).Result;
+                        if (response.IsSuccessStatusCode)
                         {
-                            var productPreferences = JsonConvert.DeserializeObject<ProductPreferencesResult>(responseString);
-                            if (type == ProductPreferenceType.SavedSearches)
+                            var responseString = response.Content.ReadAsStringAsync().Result;
+                            if (!string.IsNullOrWhiteSpace(responseString))
                             {
-                                return (T)SalesforceSavedSearchRequestFactory.Create(productPreferences);
+                                var productPreferences = JsonConvert.DeserializeObject<ProductPreferencesResult>(responseString);
+                                if (type == ProductPreferenceType.SavedSearches)
+                                {
+                                    return (T)SalesforceSavedSearchRequestFactory.Create(productPreferences);
+                                }
+                                else if (type == ProductPreferenceType.PersonalPreferences)
+                                {
+                                    return (T)SalesforceContentPreferencesFactory.Create(productPreferences);
+                                }
                             }
                         }
                     }
