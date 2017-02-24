@@ -345,6 +345,9 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.Companies" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
       <setting name="Taxonomy.CropProtection" value="/sitecore/content/Agri/Vertical Globals/Taxonomy/Crop Protection"></setting>
       <setting name="Taxonomy.AnimalHealth" value="/sitecore/content/Agri/Vertical Globals/Taxonomy/Animal Health"></setting>
+      <setting name="Taxonomy.Markets" value="/sitecore/content/Maritime/Vertical Globals/Taxonomy/Markets"></setting>
+      <setting name="Taxonomy.Topic" value="/sitecore/content/Maritime/Vertical Globals/Taxonomy/Topic"></setting>
+      <setting name="Taxonomy.Sectors" value="/sitecore/content/Maritime/Vertical Globals/Taxonomy/Sectors"></setting>
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
       <!--Vertical names-->
