@@ -6,11 +6,11 @@
 		 //console.log(tableObj);
 			 $.each(tableObj, function(datekey, date){ 
 				
-					$.each(date, function(key, value) {
+					$.each(date, function(key, value) { 
 						//console.log(key);
 						self.table += '<table class="table descView">'
 						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>'									
+						self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
 						self.table += '<tr class="visible-lg">';
 						//console.log(value[0]);
 						var tableHead = value[0];

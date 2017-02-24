@@ -89,7 +89,7 @@
 			display: none;
 		}
 		&.descView{
-			display: block;
+			display: table;
 		}
 		@include breakpoint('small') {
 			&.mobView{

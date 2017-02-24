@@ -9191,7 +9191,7 @@ div#feedbacklite.fbl_r {
     #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
       display: none; }
     #market-data-tool.table-responsive .table.descView, #dry-cargo.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
-      display: block; }
+      display: table; }
     @media (max-width: 480px) {
       #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
         display: table; }
