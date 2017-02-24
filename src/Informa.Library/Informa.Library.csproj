@@ -363,6 +363,8 @@
     <Compile Include="CustomSitecore\Pipelines\Article\SaveTitle.cs" />
     <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
+    <Compile Include="CustomSitecore\RTECustomization\InsertIframe.cs" />
+    <Compile Include="CustomSitecore\RTECustomization\InsertTableau.cs" />
     <Compile Include="DCD\CompanyService.cs" />
     <Compile Include="DCD\DealService.cs" />
     <Compile Include="JobsAndClassifieds\IJobTile.cs" />
