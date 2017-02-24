@@ -1,4 +1,4 @@
-/* This file is generated.  DO NOT EDIT. */ 
+﻿/* This file is generated.  DO NOT EDIT. */ 
 @charset "UTF-8";
 /* * * * UTILITIES / HELPERS * * * */
 .u-centered {
@@ -6611,6 +6611,11 @@ footer li {
   height: 60px;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
+
+.footer__logo-icon img:first-child {
+  display: block;
+  height: 60px;
+  width: auto; }
 
 .footer__section--social {
   width: 25%; }

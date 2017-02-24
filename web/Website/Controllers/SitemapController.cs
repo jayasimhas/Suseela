@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Xml;
 using Informa.Library.Globalization;
 using Jabberwocky.Core.Caching;
+using System.Text;
 
 namespace Informa.Web.Controllers
 {
@@ -32,7 +33,7 @@ namespace Informa.Web.Controllers
                 SitemapQueryString = "?page=" + pageNo;
             }
             string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "") + SitemapQueryString;
-            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
+            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.SitemapNews";
             string xml = CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path));
 
             //provide default
@@ -51,6 +52,7 @@ namespace Informa.Web.Controllers
             string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
             using (WebClient client = new WebClient())
             {
+                client.UseDefaultCredentials = true;
                 client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
                 return client.DownloadString(url);
             }
