@@ -6,6 +6,7 @@
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Informa.Web.ViewModels.Articles;
     using Library.Globalization;
+    using Library.Site;
     using Library.User.UserPreference;
     using Library.Utilities.Extensions;
     using System;
@@ -20,16 +21,19 @@
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IUserPreferenceContext UserPreferences;
+        protected readonly ISiteRootContext SiterootContext;
         public ArticleSearchController(IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator,
             ISitecoreContext sitecoreContext,
-            IUserPreferenceContext userPreferences)
+            IUserPreferenceContext userPreferences,
+            ISiteRootContext siterootContext)
         {
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             SitecoreContext = sitecoreContext;
             UserPreferences = userPreferences;
+            SiterootContext = siterootContext;
         }
 
         /// <summary>
@@ -63,7 +67,7 @@
                     PageSize = articleRequest.PageSize,
                     TaxonomyIds = articleRequest.TaxonomyIds,
                     SeeAllText = TextTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                    SeeAllLink = "/search#?q=",
+                    SeeAllLink = "/search#?" + SiterootContext.Item.Publication_Name.ToLower() + "=",
                     CurrentlyViewingText = GetCurrentlyViewingText(articleRequest.TaxonomyIds, articleRequest.ChannelId)
                 };
                 return new { Articles = articles, LoadMore = loadMore };

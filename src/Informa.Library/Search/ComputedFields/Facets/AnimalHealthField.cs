@@ -6,15 +6,15 @@ using Informa.Library.Search.Utilities;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
-    public class CropProtectionField : BaseGlassComputedField<I___BaseTaxonomy>
+    public class AnimalHealthField: BaseGlassComputedField<I___BaseTaxonomy>
     {
         public override object GetFieldValue(I___BaseTaxonomy indexItem)
         {
             if (indexItem?.Taxonomies != null)
             {
-                var cropProtectionTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsCropProtectionTaxonomy(x._Path));
+                var AnimalHealthTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAnimalHealthTaxonomy(x._Path));
 
-                return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(cropProtectionTaxonomyItems);
+                return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(AnimalHealthTaxonomyItems);
             }
             return new List<string>();
         }

@@ -6429,7 +6429,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         [SitecoreField(IPackage_SettingsConstants.Select_PackageFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Select_Package { get; set; }
         /// <summary>
-        /// The Hide Image field.
+        /// IsFullWidth field.
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
         /// </summary>
@@ -6456,12 +6456,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         [SitecoreField(IPackage_SettingsConstants.Select_PackageFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Select_Package { get; set; }
         /// <summary>
-        /// The Hide Image field.
+        /// IsFullWidth field.
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
         /// </summary>
         [SitecoreField(IPackage_SettingsConstants.IsFullWidthFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Hide_Image { get; set; }
+        bool IsFullWidth { get; set; }
     }
 
     public static partial class IPackage_SettingsConstants
