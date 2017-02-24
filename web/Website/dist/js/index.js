@@ -7210,8 +7210,34 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				});
 			});
 		},
+		renderMobile: function renderMobile() {
+			var self = this;
+			//console.log(tableObj);
+			$.each(tableObj, function (datekey, date) {
+
+				$.each(date, function (key, value) {
+					//console.log(key);
+					self.table += '<tbody class="visible-sm">';
+					self.table += '<tr>';
+					$.each(value, function (objData, objVal) {
+						//console.log(objVal);
+						var tableHead = objVal;
+						for (var key in tableHead) {
+							self.table += '<td class="pad-10 mobleftCol">' + key + '</th>';
+						}
+						$.each(objVal, function (responseKey, responseVal) {
+							self.table += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
+						});
+						self.table += '</tr>';
+						self.table += '</tbody>';
+					});
+					$('.table').html(self.table);
+				});
+			});
+		},
 		init: function init() {
 			this.renderTable();
+			//this.renderMobile();
 		}
 	};
 
@@ -12350,6 +12376,9 @@ $(document).ready(function () {
     $(".selectivity-input .selectivity-single-select").each(function () {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
+
+    //IPMP-1760
+    $('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":21,"./components/ll-market-data-dryCargo":20,"./components/ll-tanker-fixtures":22,"./components/myview-settings":23,"./components/pagination":24,"./components/personalisation":25,"./components/save-search-component":26,"./components/scrollbar.js":27,"./components/table_charts":28,"./components/video-mini":29,"./controllers/analytics-controller":30,"./controllers/bookmark-controller":31,"./controllers/form-controller":32,"./controllers/lightbox-modal-controller":33,"./controllers/pop-out-controller":34,"./controllers/register-controller":35,"./controllers/reset-password-controller":36,"./controllers/sortable-table-controller":37,"./controllers/tooltip-controller":38,"./jscookie":40,"./modal":41,"./newsletter-signup":42,"./search-page.js":43,"./selectivity-full":44,"./svg4everybody":45,"./toggle-icons":46,"./zepto.dragswap":47,"./zepto.min":48}],40:[function(require,module,exports){
