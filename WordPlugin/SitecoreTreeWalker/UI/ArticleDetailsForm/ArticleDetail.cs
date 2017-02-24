@@ -526,8 +526,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                      MessageBoxIcon.Exclamation);
                 return null;
             }
-
-            string webPublishDate = articleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+            //// Old Code (Ticket IIS-589) 
+            // string webPublishDate = articleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
             Guid pubGuid = articleDetails.Publication;
 
             if (string.IsNullOrEmpty(title))
@@ -544,7 +544,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
             SuspendLayout();
 
-            ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
+            ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, articleDetails.WebPublicationDate, pubGuid);
 
             if (string.IsNullOrEmpty(astruct.RemoteErrorMessage) == false)
             {

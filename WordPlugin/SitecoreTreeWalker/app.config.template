@@ -24,12 +24,27 @@
 		<add key="TitleMaxCharacters" value="500"/>
 		<add key="TempFileName" value="{path}\InformaWordPlugin\temp.docx"/>
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
-	    <add key ="Development"  value="${Development}"/>
-	    <add key ="Stage"  value="${Stage}"/>
+    
+    <add key="Development" value="http://informasupport/" />
+    <add key="QA" value="http://cms.bausupport.informa.products.com/" />
+    <add key="Stage" value="https://calypso-8yra6ecdjk6n.pharmamedtechbi.com/" />
+    <add key="Production" value="https://scrip-auth.pharmamedtechbi.com/" />
+
+    <add key="DevelopmentForgotPasswordLink" value="http://informasupport/sitecore/login?passwordrecovery=1" />
+    <add key="QAForgotPasswordLink" value="http://cms.bausupport.informa.products.com/sitecore/login?passwordrecovery=1" />
+    <add key="StageForgotPasswordLink" value="http://scrip-auth.pharmamedtechbi.com/sitecore/login?passwordrecovery=1" />
+    <add key="ProductionForgotPasswordLink" value="http://informa8.ashah.velir.com/sitecore/login?passwordrecovery=1" />
+
+    <add key ="Development"  value="${Development}"/>
+    <add key ="QA"  value="${QA}"/>
+	  <add key ="Stage"  value="${Stage}"/>
     <add key ="Production"  value="${Production}"/>
+    
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
+    <add key="QAForgotPasswordLink" value="${QAForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
-    	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
+    <add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
+    
     <add key="RemoteTimezoneToConvertTo" value="Eastern Standard Time"/>
 	</appSettings>
 	<applicationSettings>
