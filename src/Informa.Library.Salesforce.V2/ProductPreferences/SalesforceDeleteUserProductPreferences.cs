@@ -11,14 +11,17 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
     public class SalesforceDeleteUserProductPreferences : ISalesforceDeleteUserProductPreferences
     {
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly ISalesforceDeleteUserProductPreferencesQueryFactory SalesforceDeleteUserProductPreferencesQueryFactory;
         protected readonly ISalesforceInfoLogger InfoLogger;
 
         public SalesforceDeleteUserProductPreferences(
     ISalesforceConfigurationContext salesforceConfigurationContext,
-    ISalesforceInfoLogger infoLogger)
+    ISalesforceInfoLogger infoLogger,
+    ISalesforceDeleteUserProductPreferencesQueryFactory salesforceDeleteUserProductPreferencesQueryFactory)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             InfoLogger = infoLogger;
+            SalesforceDeleteUserProductPreferencesQueryFactory = salesforceDeleteUserProductPreferencesQueryFactory;
         }
         public IContentResponse DeleteUserProductPreference(string accessToken, string itemId)
         {
@@ -41,6 +44,16 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                     }
                 }
             }
+            return new ContentResponse
+            {
+                Success = false,
+                Message = "Invalid input has been provided."
+            };
+        }
+
+        public IContentResponse DeleteUserProductPreferences(string userName, string accessToken, string publicationCode, ProductPreferenceType type)
+        {
+
             return new ContentResponse
             {
                 Success = false,
