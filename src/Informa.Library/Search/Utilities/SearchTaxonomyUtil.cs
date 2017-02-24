@@ -303,9 +303,16 @@ namespace Informa.Library.Search.Utilities
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.AgencyRegulator").ToLower());
         }
 
+        //CropProtection
         public static bool IsCropProtectionTaxonomy(string itemPath)
         {
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CropProtection").ToLower());
+        }
+
+        //AnimalHealth
+        public static bool IsAnimalHealthTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.AnimalHealth").ToLower());
         }
 
         public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)

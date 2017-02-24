@@ -74,6 +74,7 @@
     <Compile Include="ProductPreferences\AddProductPreferenceRequestAttributes.cs" />
     <Compile Include="ProductPreferences\AddProductPreferenceResponse.cs" />
     <Compile Include="ProductPreferences\AddProductPreferenceResultItem.cs" />
+    <Compile Include="ProductPreferences\ISalesforceDeleteUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\ISalesforceGetUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\ProductPreferenceRequestRecord.cs" />
     <Compile Include="ProductPreferences\Attributes.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="ProductPreferences\Record.cs" />
     <Compile Include="ProductPreferences\SalesforceAddUserProductPreference.cs" />
     <Compile Include="ProductPreferences\SalesforceDeleteUserProductPreferences.cs" />
+    <Compile Include="ProductPreferences\SalesforceDeleteUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceGetUserProductPreferences.cs" />
     <Compile Include="ProductPreferences\SalesforceGetUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceSavedSearchFactory.cs" />

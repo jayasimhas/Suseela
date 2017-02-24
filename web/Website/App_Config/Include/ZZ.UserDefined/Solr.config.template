@@ -38,7 +38,8 @@
             <field fieldName="FacetCommodities" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.CommoditiesField, Informa.Library</field>
             <field fieldName="FacetAgencyRegulator" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.AgencyRegulatorField, Informa.Library</field>
             <field fieldName="FacetCommercial" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.CommercialField, Informa.Library</field>
-            <field fieldName="FacetCropProtection" returnType="bool">Informa.Library.Search.ComputedFields.Facets.CropProtectionField, Informa.Library</field>
+            <field fieldName="FacetCropProtection" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.CropProtectionField, Informa.Library</field>
+            <field fieldName="FacetAnimalHealth" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.AnimalHealthField, Informa.Library</field>
             <field fieldName="FacetCommodityFactors" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.CommodityFactorsField, Informa.Library</field>
           </fields>
 

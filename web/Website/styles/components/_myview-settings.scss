@@ -904,60 +904,7 @@
 		}		
 	} 
 }
- 
-/************ drag and drop styles ***********/
-.drop {
-	-webkit-animation: drop 1s ease;
-	-moz-animation: drop 1s ease;
-	-ms-animation: drop 1s ease;
-	-o-animation: drop 1s ease;
-	animation: drop 1s ease;
-}
-
-.followingrow.over{
-	background: #1191d1;
-}
- 
-@-moz-keyframes drop {
-	0%, 100% {
-		background: #1191d1;
-		color: $color-white;
-	}
-	50% {
-		color: #1191d1;
-		background: $color-white;
-	}
-}
-@-webkit-keyframes "drop" {
-	0%, 100% {
-		background: #1191d1;
-		color: $color-white;
-	}
-	50% {
-		color: #1191d1;
-		background: $color-white;
-	}
-}
-@-ms-keyframes "drop" {
-	0%, 100% {
-		background: #1191d1;
-		color: $color-white;
-	}
-	50% {
-		color: #1191d1;
-		background: $color-white;
-	}
-}
-@-o-keyframes "drop" {
-	0%, 100% {
-		background: #1191d1;
-		color: $color-white;
-	}
-	50% {
-		color: #1191d1;
-		background: $color-white;
-	}
-}
+  
 @include breakpoint('medium') {
 	.desktophide{
 		display: block !important;
@@ -976,85 +923,148 @@
 	}
 }
 
+@mixin apply-theme($tc, $b, $mobg){
+	.myview-settings {
+		.publicationPan{
+			&.active{
+				border: 1px solid $b;
+			}
+		}
+		.followingBtn{ 
+			background: $tc;
+			border: 1px solid $tc;
+			&:hover{
+				background: #a7a7a7;
+				border: 1px solid #a7a7a7
+			}
+		}
+		.followBtn{
+ 			&:hover{
+				background: $tc;
+				border: 1px solid $tc;
+			}
+		}
+		.followingrow{
+			.rowlines{
+				@include getMove($tc !important, 0.4375rem);
+			} 
+			&:hover{
+				background: $mobg !important;
+			}
+		}
+		.followingbg{ 
+			.expandTxt{
+				color: $tc !important;
+			}
+			.rowlines{
+				.mv{
+					background: $tc !important;
+				}
+			}
+		}
+		.followinglbl, .mvTxt{
+			color: $tc !important;
+		}
+		.followAllBtn{
+			color: $tc;
+		}
+		.gotoview{
+			a{
+				color: $tc !important;
+				border:  1px solid $tc !important;
+				&:hover{ 
+					color: #fff !important;
+				}
+			}
+		}
+		.followinglbl-txt{
+			.collapsed{
+				.active{
+					background: $mobg !important;
+				}
+			}
+		}
+		.table{
+			span{ 
+				fill: $b;
+				&.button--outline{
+					border: 1px solid $b;
+					&:hover{
+						border: 1px solid $tc;
+					}
+				}
+				&.button--filled{
+					color: #fff;
+					&:hover{
+						border: 1px solid $tc;
+					}
+				}
+			} 
+		}
+	}
+
+/************ drag and drop styles ***********/
+.drop {
+	-webkit-animation: drop 1s ease;
+	-moz-animation: drop 1s ease;
+	-ms-animation: drop 1s ease;
+	-o-animation: drop 1s ease;
+	animation: drop 1s ease;
+}
+
+.followingrow.over{
+	background: $tc;
+}
+ 
+@-moz-keyframes drop {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-webkit-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $tc;
+	}
+}
+@-ms-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-o-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+}
+
 .theme-lloydslist{
-	.myview-settings {
-		.publicationPan{
-			&.active{
-				border: 1px solid #1191D1;
-			}
-		}
-		.table{
-			span{ 
-				fill: #1191D1;
-				&.button--outline{
-					border: 1px solid #1191D1;
-					&:hover{
-						border: 1px solid #0f5487;
-					}
-				}
-				&.button--filled{
-					color: #fff;
-					&:hover{
-						border: 1px solid #0f5487;
-					}
-				}
-			}
-			
-		}
-	}
+	@include apply-theme(#0f5487, #1191D1, #cedce6);
+	
 }
-
 .theme-insurance-day{
-	.myview-settings {
-		.publicationPan{
-			&.active{
-				border: 1px solid #DE4361;
-			}
-		}
-		.table{
-			span{ 
-				fill: #DE4361;
-				&.button--outline{
-					border: 1px solid #DE4361;
-					&:hover{
-						border: 1px solid #b0173d;
-					}
-				}
-				&.button--filled{
-					color: #fff;
-					&:hover{
-						border: 1px solid #b0173d;
-					}
-				}
-			}
-		}
-	}
+	@include apply-theme(#b0173d, #DE4361, #efd0d8);
 }
-
-
 .theme-commodities{
-	.myview-settings {
-		.publicationPan{
-			&.active{
-				border: 1px solid #9E310D;
-			}
-		}
-		.table{
-			span{ 
-				fill: #9E310D;
-				&.button--outline{
-					border: 1px solid #9E310D;
-					&:hover{
-						border: 1px solid #F5821F;
-					}
-				}
-				&.button--filled{
-					color: #fff;
-					&:hover{
-						border: 1px solid #F5821F;
-					}
-				}
-			}
-		}
-	}
+	@include apply-theme(#F5821F, #9E310D, #FFF5ED);
 }

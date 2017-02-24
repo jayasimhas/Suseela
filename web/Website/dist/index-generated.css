@@ -5546,22 +5546,6 @@ main .advertising--leaderboard.visible-desktop {
         background-color: inherit !important;
         padding: 0 0 !important; } }
 
-/************ drag and drop styles ***********/
-.drop {
-  -webkit-animation: drop 1s ease;
-  animation: drop 1s ease; }
-
-.followingrow.over {
-  background: #1191d1; }
-
-@-webkit-keyframes "drop" {
-  0%, 100% {
-    background: #1191d1;
-    color: #ffffff; }
-  50% {
-    color: #1191d1;
-    background: #ffffff; } }
-
 @media (max-width: 800px) {
   .desktophide {
     display: block !important; } }
@@ -5575,47 +5559,230 @@ main .advertising--leaderboard.visible-desktop {
   #feedbacklite {
     display: none !important; } }
 
-.theme-lloydslist .myview-settings .publicationPan.active {
-  border: 1px solid #1191D1; }
-
-.theme-lloydslist .myview-settings .table span {
-  fill: #1191D1; }
-  .theme-lloydslist .myview-settings .table span.button--outline {
+.theme-lloydslist {
+  /************ drag and drop styles ***********/ }
+  .theme-lloydslist .myview-settings .publicationPan.active {
     border: 1px solid #1191D1; }
-    .theme-lloydslist .myview-settings .table span.button--outline:hover {
-      border: 1px solid #0f5487; }
-  .theme-lloydslist .myview-settings .table span.button--filled, .theme-lloydslist .myview-settings .table span.pop-out__register-submit, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit {
-    color: #fff; }
-    .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
-      border: 1px solid #0f5487; }
+  .theme-lloydslist .myview-settings .followingBtn {
+    background: #0f5487;
+    border: 1px solid #0f5487; }
+    .theme-lloydslist .myview-settings .followingBtn:hover {
+      background: #a7a7a7;
+      border: 1px solid #a7a7a7; }
+  .theme-lloydslist .myview-settings .followBtn:hover {
+    background: #0f5487;
+    border: 1px solid #0f5487; }
+  .theme-lloydslist .myview-settings .followingrow .rowlines {
+    float: right;
+    margin-top: 7px;
+    margin-top: 0.4375rem; }
+    .theme-lloydslist .myview-settings .followingrow .rowlines .pull-left {
+      float: left; }
+      @media (max-width: 640px) {
+        .theme-lloydslist .myview-settings .followingrow .rowlines .pull-left {
+          height: 24px;
+          height: 1.5rem;
+          width: 24px;
+          width: 1.5rem;
+          display: block; } }
+    .theme-lloydslist .myview-settings .followingrow .rowlines span {
+      height: 2px;
+      height: 0.125rem;
+      width: 21px;
+      width: 1.3125rem;
+      background: #0f5487 !important;
+      display: block;
+      margin-bottom: 3px; }
+  .theme-lloydslist .myview-settings .followingrow:hover {
+    background: #cedce6 !important; }
+  .theme-lloydslist .myview-settings .followingbg .expandTxt {
+    color: #0f5487 !important; }
+  .theme-lloydslist .myview-settings .followingbg .rowlines .mv {
+    background: #0f5487 !important; }
+  .theme-lloydslist .myview-settings .followinglbl, .theme-lloydslist .myview-settings .mvTxt {
+    color: #0f5487 !important; }
+  .theme-lloydslist .myview-settings .followAllBtn {
+    color: #0f5487; }
+  .theme-lloydslist .myview-settings .gotoview a, .theme-lloydslist .myview-settings .gotoview .pop-out__reset-password, .theme-lloydslist .myview-settings .gotoview .sortable-table__list-toggler, .theme-lloydslist .myview-settings .gotoview .mobile-table-exit {
+    color: #0f5487 !important;
+    border: 1px solid #0f5487 !important; }
+    .theme-lloydslist .myview-settings .gotoview a:hover, .theme-lloydslist .myview-settings .gotoview .pop-out__reset-password:hover, .theme-lloydslist .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-lloydslist .myview-settings .gotoview .mobile-table-exit:hover {
+      color: #fff !important; }
+  .theme-lloydslist .myview-settings .followinglbl-txt .collapsed .active {
+    background: #cedce6 !important; }
+  .theme-lloydslist .myview-settings .table span {
+    fill: #1191D1; }
+    .theme-lloydslist .myview-settings .table span.button--outline {
+      border: 1px solid #1191D1; }
+      .theme-lloydslist .myview-settings .table span.button--outline:hover {
+        border: 1px solid #0f5487; }
+    .theme-lloydslist .myview-settings .table span.button--filled, .theme-lloydslist .myview-settings .table span.pop-out__register-submit, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit {
+      color: #fff; }
+      .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
+        border: 1px solid #0f5487; }
+  .theme-lloydslist .drop {
+    -webkit-animation: drop 1s ease;
+    animation: drop 1s ease; }
+  .theme-lloydslist .followingrow.over {
+    background: #0f5487; }
 
-.theme-insurance-day .myview-settings .publicationPan.active {
-  border: 1px solid #DE4361; }
+@-webkit-keyframes "drop" {
+  0%, 100% {
+    background: #0f5487;
+    color: #ffffff; }
+  50% {
+    color: #0f5487;
+    background: #0f5487; } }
 
-.theme-insurance-day .myview-settings .table span {
-  fill: #DE4361; }
-  .theme-insurance-day .myview-settings .table span.button--outline {
+.theme-insurance-day {
+  /************ drag and drop styles ***********/ }
+  .theme-insurance-day .myview-settings .publicationPan.active {
     border: 1px solid #DE4361; }
-    .theme-insurance-day .myview-settings .table span.button--outline:hover {
-      border: 1px solid #b0173d; }
-  .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
-    color: #fff; }
-    .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
-      border: 1px solid #b0173d; }
+  .theme-insurance-day .myview-settings .followingBtn {
+    background: #b0173d;
+    border: 1px solid #b0173d; }
+    .theme-insurance-day .myview-settings .followingBtn:hover {
+      background: #a7a7a7;
+      border: 1px solid #a7a7a7; }
+  .theme-insurance-day .myview-settings .followBtn:hover {
+    background: #b0173d;
+    border: 1px solid #b0173d; }
+  .theme-insurance-day .myview-settings .followingrow .rowlines {
+    float: right;
+    margin-top: 7px;
+    margin-top: 0.4375rem; }
+    .theme-insurance-day .myview-settings .followingrow .rowlines .pull-left {
+      float: left; }
+      @media (max-width: 640px) {
+        .theme-insurance-day .myview-settings .followingrow .rowlines .pull-left {
+          height: 24px;
+          height: 1.5rem;
+          width: 24px;
+          width: 1.5rem;
+          display: block; } }
+    .theme-insurance-day .myview-settings .followingrow .rowlines span {
+      height: 2px;
+      height: 0.125rem;
+      width: 21px;
+      width: 1.3125rem;
+      background: #b0173d !important;
+      display: block;
+      margin-bottom: 3px; }
+  .theme-insurance-day .myview-settings .followingrow:hover {
+    background: #efd0d8 !important; }
+  .theme-insurance-day .myview-settings .followingbg .expandTxt {
+    color: #b0173d !important; }
+  .theme-insurance-day .myview-settings .followingbg .rowlines .mv {
+    background: #b0173d !important; }
+  .theme-insurance-day .myview-settings .followinglbl, .theme-insurance-day .myview-settings .mvTxt {
+    color: #b0173d !important; }
+  .theme-insurance-day .myview-settings .followAllBtn {
+    color: #b0173d; }
+  .theme-insurance-day .myview-settings .gotoview a, .theme-insurance-day .myview-settings .gotoview .pop-out__reset-password, .theme-insurance-day .myview-settings .gotoview .sortable-table__list-toggler, .theme-insurance-day .myview-settings .gotoview .mobile-table-exit {
+    color: #b0173d !important;
+    border: 1px solid #b0173d !important; }
+    .theme-insurance-day .myview-settings .gotoview a:hover, .theme-insurance-day .myview-settings .gotoview .pop-out__reset-password:hover, .theme-insurance-day .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-insurance-day .myview-settings .gotoview .mobile-table-exit:hover {
+      color: #fff !important; }
+  .theme-insurance-day .myview-settings .followinglbl-txt .collapsed .active {
+    background: #efd0d8 !important; }
+  .theme-insurance-day .myview-settings .table span {
+    fill: #DE4361; }
+    .theme-insurance-day .myview-settings .table span.button--outline {
+      border: 1px solid #DE4361; }
+      .theme-insurance-day .myview-settings .table span.button--outline:hover {
+        border: 1px solid #b0173d; }
+    .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
+      color: #fff; }
+      .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
+        border: 1px solid #b0173d; }
+  .theme-insurance-day .drop {
+    -webkit-animation: drop 1s ease;
+    animation: drop 1s ease; }
+  .theme-insurance-day .followingrow.over {
+    background: #b0173d; }
 
-.theme-commodities .myview-settings .publicationPan.active {
-  border: 1px solid #9E310D; }
+@-webkit-keyframes "drop" {
+  0%, 100% {
+    background: #b0173d;
+    color: #ffffff; }
+  50% {
+    color: #b0173d;
+    background: #b0173d; } }
 
-.theme-commodities .myview-settings .table span {
-  fill: #9E310D; }
-  .theme-commodities .myview-settings .table span.button--outline {
+.theme-commodities {
+  /************ drag and drop styles ***********/ }
+  .theme-commodities .myview-settings .publicationPan.active {
     border: 1px solid #9E310D; }
-    .theme-commodities .myview-settings .table span.button--outline:hover {
-      border: 1px solid #F5821F; }
-  .theme-commodities .myview-settings .table span.button--filled, .theme-commodities .myview-settings .table span.pop-out__register-submit, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit {
-    color: #fff; }
-    .theme-commodities .myview-settings .table span.button--filled:hover, .theme-commodities .myview-settings .table span.pop-out__register-submit:hover, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit:hover {
-      border: 1px solid #F5821F; }
+  .theme-commodities .myview-settings .followingBtn {
+    background: #F5821F;
+    border: 1px solid #F5821F; }
+    .theme-commodities .myview-settings .followingBtn:hover {
+      background: #a7a7a7;
+      border: 1px solid #a7a7a7; }
+  .theme-commodities .myview-settings .followBtn:hover {
+    background: #F5821F;
+    border: 1px solid #F5821F; }
+  .theme-commodities .myview-settings .followingrow .rowlines {
+    float: right;
+    margin-top: 7px;
+    margin-top: 0.4375rem; }
+    .theme-commodities .myview-settings .followingrow .rowlines .pull-left {
+      float: left; }
+      @media (max-width: 640px) {
+        .theme-commodities .myview-settings .followingrow .rowlines .pull-left {
+          height: 24px;
+          height: 1.5rem;
+          width: 24px;
+          width: 1.5rem;
+          display: block; } }
+    .theme-commodities .myview-settings .followingrow .rowlines span {
+      height: 2px;
+      height: 0.125rem;
+      width: 21px;
+      width: 1.3125rem;
+      background: #F5821F !important;
+      display: block;
+      margin-bottom: 3px; }
+  .theme-commodities .myview-settings .followingrow:hover {
+    background: #FFF5ED !important; }
+  .theme-commodities .myview-settings .followingbg .expandTxt {
+    color: #F5821F !important; }
+  .theme-commodities .myview-settings .followingbg .rowlines .mv {
+    background: #F5821F !important; }
+  .theme-commodities .myview-settings .followinglbl, .theme-commodities .myview-settings .mvTxt {
+    color: #F5821F !important; }
+  .theme-commodities .myview-settings .followAllBtn {
+    color: #F5821F; }
+  .theme-commodities .myview-settings .gotoview a, .theme-commodities .myview-settings .gotoview .pop-out__reset-password, .theme-commodities .myview-settings .gotoview .sortable-table__list-toggler, .theme-commodities .myview-settings .gotoview .mobile-table-exit {
+    color: #F5821F !important;
+    border: 1px solid #F5821F !important; }
+    .theme-commodities .myview-settings .gotoview a:hover, .theme-commodities .myview-settings .gotoview .pop-out__reset-password:hover, .theme-commodities .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-commodities .myview-settings .gotoview .mobile-table-exit:hover {
+      color: #fff !important; }
+  .theme-commodities .myview-settings .followinglbl-txt .collapsed .active {
+    background: #FFF5ED !important; }
+  .theme-commodities .myview-settings .table span {
+    fill: #9E310D; }
+    .theme-commodities .myview-settings .table span.button--outline {
+      border: 1px solid #9E310D; }
+      .theme-commodities .myview-settings .table span.button--outline:hover {
+        border: 1px solid #F5821F; }
+    .theme-commodities .myview-settings .table span.button--filled, .theme-commodities .myview-settings .table span.pop-out__register-submit, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit {
+      color: #fff; }
+      .theme-commodities .myview-settings .table span.button--filled:hover, .theme-commodities .myview-settings .table span.pop-out__register-submit:hover, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit:hover {
+        border: 1px solid #F5821F; }
+  .theme-commodities .drop {
+    -webkit-animation: drop 1s ease;
+    animation: drop 1s ease; }
+  .theme-commodities .followingrow.over {
+    background: #F5821F; }
+
+@-webkit-keyframes "drop" {
+  0%, 100% {
+    background: #F5821F;
+    color: #ffffff; }
+  50% {
+    color: #F5821F;
+    background: #F5821F; } }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
@@ -8507,8 +8674,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12092,7 +12259,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
