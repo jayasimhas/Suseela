@@ -12,6 +12,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
 using System;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -28,6 +29,7 @@ namespace Informa.Library.Services.Sitemap
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IGlobalSitecoreService GlobalService;
 
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
@@ -36,12 +38,14 @@ namespace Informa.Library.Services.Sitemap
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreContext context,
             IArticleSearch searcher,
-            ITextTranslator translator)
+            ITextTranslator translator,
+            IGlobalSitecoreService globalService)
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
+            GlobalService = globalService;
         }
 
         public string GetSitemapXML_Old()
@@ -85,7 +89,11 @@ namespace Informa.Library.Services.Sitemap
                 {
                     try
                     {
-                        url = itm._Url;
+                        var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                        if (articleItem != null)
+                            url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                        else
+                            url = itm._Url;
                     }
                     catch (Exception ex)
                     {
@@ -149,7 +157,7 @@ namespace Informa.Library.Services.Sitemap
                 lastNode.AppendChild(urlNode);
 
                 //create location
-                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}{itm._Url}"));
+                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}/{itm.Article_Number}/{itm._Name}"));
 
                 //create news
                 XmlNode newsNode = MakeNode(doc, "news:news");
@@ -166,7 +174,8 @@ namespace Informa.Library.Services.Sitemap
                 //create access, pub date, title and keywords
                 newsNode.AppendChild(MakeNode(doc, "news:access", "Subscription"));
                 newsNode.AppendChild(MakeNode(doc, "news:publication_date", itm.Actual_Publish_Date.ToString(DateFormat)));
-                newsNode.AppendChild(MakeNode(doc, "news:title", itm.Title));
+                var encodedItemTitle = HttpUtility.HtmlEncode(itm.Title);
+                newsNode.AppendChild(MakeNode(doc, "news:title", HttpUtility.HtmlDecode(encodedItemTitle)));
                 newsNode.AppendChild(MakeNode(doc, "news:keywords", (itm.Taxonomies != null && itm.Taxonomies.Any()) ? string.Join(",", itm.Taxonomies.Select(a => a.Item_Name)) : string.Empty));
             }
 
@@ -228,7 +237,7 @@ namespace Informa.Library.Services.Sitemap
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                    .Where(j => j.Path.StartsWith(startPath.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-3));
+                    .Where(j => j.Path.StartsWith(startPath.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-80));
 
                 query = query.OrderByDescending(i => i.ActualPublishDate);
                 var results = query.GetResults();
@@ -340,7 +349,11 @@ namespace Informa.Library.Services.Sitemap
                     {
                         try
                         {
-                            url = itm._Url;
+                            var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                            if (articleItem != null)
+                                url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                            else
+                                url = itm._Url;
                         }
                         catch (Exception ex)
                         {
