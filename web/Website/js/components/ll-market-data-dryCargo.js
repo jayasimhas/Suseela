@@ -20,14 +20,14 @@
 						self.table += '</thead>';
 						self.table += '<tbody class="visible-lg">';
 						self.table += '<tr>';
-					$.each(value, function(objData, objVal) {
-						//console.log(objVal);						
-						$.each(objVal, function(responseKey, responseVal) {
-                            self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
-						});	
-						self.table += '</tr>';
-						self.table += '</tbody>';	
-					});
+						$.each(value, function(objData, objVal) {
+							//console.log(objVal);						
+							$.each(objVal, function(responseKey, responseVal) {
+								self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
+							});	
+							self.table += '</tr>';	
+						});					
+					self.table += '</tbody>';		
 					 $('.table').html(self.table);
 				});
 				
