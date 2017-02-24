@@ -308,11 +308,25 @@ namespace Informa.Library.Search.Utilities
         {
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CropProtection").ToLower());
         }
-
         //AnimalHealth
         public static bool IsAnimalHealthTaxonomy(string itemPath)
         {
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.AnimalHealth").ToLower());
+        }
+
+        public static bool IsMarketsTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Markets").ToLower());
+        }
+
+        public static bool IsTopicTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Topic").ToLower());
+        }
+
+        public static bool IsSectorsTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Sectors").ToLower());
         }
 
         public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
