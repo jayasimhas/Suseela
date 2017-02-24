@@ -377,7 +377,6 @@
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Logging\SitecoreInfoLogger.cs" />
     <Compile Include="PDF\Pdf.cs" />
-    <Compile Include="Search\ComputedFields\Facets\CropProtectionField.cs" />
     <Compile Include="User\ProductPreferences\IAddUserProductPreference.cs" />
     <Compile Include="User\ProductPreferences\IDeleteUserProductPreferences.cs" />
     <Compile Include="User\ProductPreferences\IGetUserProductPreferences.cs" />

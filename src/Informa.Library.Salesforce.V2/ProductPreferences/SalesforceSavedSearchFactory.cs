@@ -21,7 +21,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             attributes = new AddProductPreferenceRequestAttributes()
                             {
                                     type = "Product_Preference__c",
-                                    referenceId = DateTime.Now.ToString()
+                                    referenceId = Guid.NewGuid().ToString()
                             },
                             Product_Vertical__c = entity.VerticalName,
                             Type__c = SearchCriteria,
@@ -31,7 +31,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             Value3__c = entity.Publication,
                             Value4__c = entity.Name,
                             Value5__c = entity.HasAlert.ToString(),
-                            Value6__c = entity.UnsubscribeToken
+                            Value6__c = entity.UnsubscribeToken,
+                            Value7__c = DateTime.Now.ToString()
 
                         }
                     }
@@ -59,8 +60,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         Id = record.Id,
                         VerticalName = record.Product_Vertical__c,
                         PublicationCode = record.Value1__c,
-                        Username = record.Username__c
-
+                        Username = record.Username__c,
+                        DateCreated = string.IsNullOrWhiteSpace(record.Value7__c) ? DateTime.MinValue : Convert.ToDateTime(record.Value7__c)
                     });
                 }
             }
@@ -82,7 +83,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                     Value6__c = entity.UnsubscribeToken,
                 };
             }
-                return null;
+            return null;
         }
     }
 }

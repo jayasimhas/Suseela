@@ -2,7 +2,11 @@
 {
     using Authentication;
     using Jabberwocky.Autofac.Attributes;
+    using ProductPreferences;
+    using SalesforceConfiguration;
+    using Site;
     using System;
+    using Utilities.CMSHelpers;
 
     [AutowireService(LifetimeScope.PerScope)]
     public class UserPreferenceContext : IUserPreferenceContext
@@ -13,15 +17,30 @@
         protected readonly IAuthenticatedUserSession UserSession;
         protected readonly IFindUserPreferences FindUserPreferences;
         protected readonly ISetUserPreferences SetUserPreferences;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IAddUserProductPreference AddUserProductPreference;
+        protected readonly IGetUserProductPreferences GetUserProductPreferences;
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IVerticalRootContext VerticalRootContext;
         public UserPreferenceContext(IAuthenticatedUserContext userContext,
             IAuthenticatedUserSession userSession,
             IFindUserPreferences findUserPreferences,
-          ISetUserPreferences setUserPreferences)
+          ISetUserPreferences setUserPreferences,
+          ISalesforceConfigurationContext salesforceConfigurationContext,
+          IAddUserProductPreference addUserProductPreference,
+          ISiteRootContext siteRootContext,
+          IVerticalRootContext verticalRootContext,
+          IGetUserProductPreferences getUserProductPreferences)
         {
             UserContext = userContext;
             UserSession = userSession;
             FindUserPreferences = findUserPreferences;
             SetUserPreferences = setUserPreferences;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+            AddUserProductPreference = addUserProductPreference;
+            SiteRootContext = siteRootContext;
+            VerticalRootContext = verticalRootContext;
+            GetUserProductPreferences = getUserProductPreferences;
         }
         public IUserPreferences Preferences
         {
@@ -39,7 +58,10 @@
                     return proferencesSession.Value;
                 }
 
-                IUserPreferences preferences = FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
+                IUserPreferences preferences = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                    GetUserProductPreferences.GetProductPreferences<UserPreferences>(UserContext.User,
+                    SiteRootContext?.Item?.Publication_Code ?? string.Empty, ProductPreferenceType.PersonalPreferences) :
+                    FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
 
                 Preferences = preferences;
 
@@ -61,7 +83,11 @@
         {
             if (string.IsNullOrWhiteSpace(channelPreferences))
                 return false;
-            var status = SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
+            var status = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                AddUserProductPreference.AddUserContentPreferences(UserContext.User?.Username ?? string.Empty,
+                UserContext.User?.AccessToken ?? string.Empty, VerticalRootContext?.Item?.Vertical_Name ?? string.Empty,
+                SiteRootContext?.Item?.Publication_Code ?? string.Empty, channelPreferences) :
+                SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
             if (status)
                 clear();
             return status;
