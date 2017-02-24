@@ -43,6 +43,7 @@ import './components/ll-casuality-listing';
 import './components/ll-casuality-detail';
 import './components/ll-market-data';
 import './components/ll-tanker-fixtures';
+import './components/ll-market-data-dryCargo';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';
@@ -1258,5 +1259,9 @@ $(document).ready(function(){
     $(".selectivity-input .selectivity-single-select").each(function() {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
+	
+	//IPMP-1760
+	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
+    
    
 });
