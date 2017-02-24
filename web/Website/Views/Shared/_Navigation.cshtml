@@ -1,5 +1,11 @@
 @inherits CustomGlassView<SideNavigationMenuViewModel>
 
+@if(Model.MenuOpenFirstTime)
+{
+    <input type="hidden" class="menu-open-first-time-checked" value="@Model.MenuOpenFirstTime" />
+    HttpCookie menuNavigationCookie = HttpContext.Current.Request.Cookies["menunavigationcookie"]?? new HttpCookie("menunavigationcookie");
+}
+
 <div class="main-menu js-full-menu-toggle">
     <div class="menu-toggler js-menu-toggle-button">
         <button class="menu-toggler__button">

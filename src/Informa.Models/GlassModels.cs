@@ -12909,14 +12909,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
-								/// <summary>
-					/// The Newsletter Breaking Type field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    /// <summary>
+                    /// The Is Open First Time field.
+                    /// <para></para>
+                    /// <para>Field Type: CheckBox</para>		
+                    /// <para>Field ID: f7b11647-9168-4da2-a2c3-07e863eed9f3</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    bool Is_Open_First_Time { get; set; }
+                    /// <summary>
+                    /// The Newsletter Breaking Type field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Newsletter_Breaking_Type  {get; set;}
 								/// <summary>
 					/// The Newsletter Daily Type field.
@@ -13794,14 +13803,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
-										/// <summary>
-						/// The Newsletter Breaking Type field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        /// <summary>
+                        /// The Is Open First Time field.
+                        /// <para></para>
+                        /// <para>Field Type: CheckBox</para>		
+                        /// <para>Field ID: f7b11647-9168-4da2-a2c3-07e863eed9f3</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        bool Is_Open_First_Time { get; set; }
+                        /// <summary>
+                        /// The Newsletter Breaking Type field.
+                        /// <para></para>
+                        /// <para>Field Type: Single-Line Text</para>		
+                        /// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Newsletter_Breaking_Type  {get; set;}
 										/// <summary>
 						/// The Newsletter Daily Type field.
@@ -14482,9 +14500,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
-						
-					
-			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+            public static readonly ID Is_Open_First_TimeFieldId = new ID("f7b11647-9168-4da2-a2c3-07e863eed9f3");
+            public const string Is_Open_First_TimeFieldName = "Is Open First Time";
+
+
+
+        public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
 			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
 
 						
@@ -20499,9 +20520,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
-						
-					
-			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+            public static readonly ID Is_Open_First_TimeFieldId = new ID("f7b11647-9168-4da2-a2c3-07e863eed9f3");
+            public const string Is_Open_First_TimeFieldName = "Is Open First Time";
+
+        public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
 			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
 
 						

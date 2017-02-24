@@ -11,12 +11,15 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ISiteMainNavigationContext SiteMainNavigationContext;
 		protected readonly ITextTranslator TextTranslator;
+        protected readonly ISiteRootContext SiteRootContext;
 
-		public SideNavigationMenuViewModel(
-			ISiteMainNavigationContext siteMainNavigationContext,
+        public SideNavigationMenuViewModel(
+            ISiteRootContext siteRootContext,
+            ISiteMainNavigationContext siteMainNavigationContext,
 			ITextTranslator textTranslator)
 		{
-			SiteMainNavigationContext = siteMainNavigationContext;
+            SiteRootContext = siteRootContext;
+            SiteMainNavigationContext = siteMainNavigationContext;
 			TextTranslator = textTranslator;
 		}
 
@@ -25,5 +28,8 @@ namespace Informa.Web.ViewModels
 		public string MenuText => TextTranslator.Translate("MainNavigation.Menu");
 
 		public string MenuButtonText => TextTranslator.Translate("MainNavigation.ToggleMenu");
-	}
+
+        public bool MenuOpenFirstTime => SiteRootContext.Item.Is_Open_First_Time;
+
+    }
 }
