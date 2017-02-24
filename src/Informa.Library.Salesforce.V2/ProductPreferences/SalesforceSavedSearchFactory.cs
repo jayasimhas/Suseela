@@ -7,6 +7,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
     public class SalesforceSavedSearchFactory : ISalesforceSavedSearchFactory
     {
+        private const string SearchCriteria = "Search Criteria";
         public AddProductPreferenceRequest Create(ISavedSearchEntity entity)
         {
             if (entity != null)
@@ -23,7 +24,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                     referenceId = DateTime.Now.ToString()
                             },
                             Product_Vertical__c = entity.VerticalName,
-                            Type__c = "Search Criteria",
+                            Type__c = SearchCriteria,
                             Username__c = entity.Username,
                             Value1__c = entity.PublicationCode,
                             Value2__c = entity.SearchString,
