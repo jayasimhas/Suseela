@@ -47,7 +47,8 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceEntitlmentFactoryV2>().As<ISalesforceEntitlmentFactoryV2>();
             builder.RegisterType<SalesforceSavedSearchFactory>().As<ISalesforceSavedSearchFactory>();
             builder.RegisterType<SalesforceGetUserProductPreferencesQueryFactory>().As<ISalesforceGetUserProductPreferencesQueryFactory>();
-            builder.RegisterType<SalesforceDeleteUserProductPreferencesQueryFactory>().As<ISalesforceDeleteUserProductPreferencesQueryFactory>();           
+            builder.RegisterType<SalesforceDeleteUserProductPreferencesQueryFactory>().As<ISalesforceDeleteUserProductPreferencesQueryFactory>();
+            builder.RegisterType<SalesforceContentPreferencesFactory>().As<ISalesforceContentPreferencesFactory>();       
             builder.RegisterType<SalesforceSavedSearchRepository>().As<IUserContentRepository<ISavedSearchEntity>>();
             builder.RegisterType<SalesforceUserOrder>().As<IUserOrder>();
             builder.RegisterType<HttpClientHelper>().As<IHttpClientHelper>();

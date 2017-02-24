@@ -44,6 +44,7 @@ import './components/ll-casuality-detail';
 import './components/ll-market-data';
 import './components/ll-tanker-fixtures';
 import './components/ll-market-data-dryCargo';
+import './components/ll-market-data-dryCargo-icap';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';

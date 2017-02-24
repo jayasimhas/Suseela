@@ -5453,38 +5453,6 @@ $(function () {
             }
         });
     }
-    // if($('#mycarousel2') && $('#mycarousel2').length){
-    // 	$('#mycarousel2.owl-carousel').owlCarousel({
-    // 		margin:0,
-    //               merge:true,
-    //               nav:true,
-    //         touchDrag  : true,
-    //      mouseDrag  : false,
-    //      merge: true,
-    //         slideBy: 4,
-    // 		 navText: [
-    // 			  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down right-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>",
-    // 			  "<svg class='sorting-arrows__arrow sorting-arrows__arrow--down left-arrow'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg>"
-    // 			  ],
-    // 		responsive:{
-    // 			0:{
-    // 			items:4
-    // 			},
-    // 			678:{
-    // 			items:1
-    // 			},
-    // 			320:{
-    // 			 items:1
-    // 			},
-    // 			480:{
-    // 			 items:1
-    // 			},
-    // 			1025:{
-    // 			items:4
-    // 			}
-    // 		}
-    // 	});
-    // }
 });
 
 },{}],8:[function(require,module,exports){
@@ -5496,7 +5464,9 @@ $(document).ready(function () {
     articleSidebarAd = articleSidebarAdParent.find('.advertising');
     lastActionFlagsBar = $('.action-flags-bar:last-of-type');
     sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
-    rightRail = $('.article-right-rail').offset().left;
+    if ($('.article-right-rail').length > 0) {
+        rightRail = $('.article-right-rail').offset().left;
+    }
 });
 $(window).on('scroll', function () {
     if (articleSidebarAdParent && articleSidebarAdParent.length && !sidebarIsTaller) {
@@ -5504,7 +5474,9 @@ $(window).on('scroll', function () {
         stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
         if (articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
             articleSidebarAdParent.addClass('advertising--sticky');
-            articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
+            if ($('.article-right-rail').length > 0) {
+                articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
+            }
         } else {
             articleSidebarAdParent.removeClass('advertising--sticky');
         }
@@ -7178,7 +7150,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 'use strict';
 
 (function () {
-	var dryCargo = {
+	var dryCargoIcap = {
 		table: '',
 		renderTable: function renderTable() {
 			var self = this;
@@ -7187,10 +7159,11 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 				$.each(date, function (key, value) {
 					//console.log(key);
+					self.table += '<table class="table descView">';
 					self.table += '<thead class="table_head">';
-					self.table += '<tr><th colspan="8" class="pad-full-10">' + key + '</th></tr>';
+					self.table += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
 					self.table += '<tr class="visible-lg">';
-					console.log(value[0]);
+					//console.log(value[0]);
 					var tableHead = value[0];
 					for (var key in tableHead) {
 						self.table += '<th class="pad-10">' + key + '</th>';
@@ -7200,46 +7173,99 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					self.table += '<tbody class="visible-lg">';
 					self.table += '<tr>';
 					$.each(value, function (objData, objVal) {
-						//console.log(objVal);
-
+						//console.log(objVal);						
 						$.each(objVal, function (responseKey, responseVal) {
 							self.table += '<td class="R16 pad-10">' + responseVal + '</td>';
 						});
 						self.table += '</tr>';
-						self.table += '</tbody>';
 					});
-					$('.table').html(self.table);
+					self.table += '</tbody>';
+					self.table += '</table>';
+					$('#dryCargoIcap').html(self.table);
 				});
 			});
 		},
-		renderMobile: function renderMobile() {
+		init: function init() {
+			this.renderTable();
+		}
+	};
+
+	$(document).ready(function () {
+		if ($('#dryCargoIcap').length > 0) {
+			dryCargoIcap.init();
+		}
+	});
+})();
+
+},{}],21:[function(require,module,exports){
+'use strict';
+
+(function () {
+	var dryCargo = {
+		table: '',
+		renderTable: function renderTable() {
 			var self = this;
 			//console.log(tableObj);
 			$.each(tableObj, function (datekey, date) {
 
 				$.each(date, function (key, value) {
 					//console.log(key);
-					self.table += '<tbody class="visible-sm">';
+					self.table += '<table class="table descView">';
+					self.table += '<thead class="table_head">';
+					self.table += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
+					self.table += '<tr class="visible-lg">';
+					//console.log(value[0]);
+					var tableHead = value[0];
+					for (var key in tableHead) {
+						self.table += '<th class="pad-10">' + key + '</th>';
+					}
+					self.table += '</tr>';
+					self.table += '</thead>';
+					self.table += '<tbody class="visible-lg">';
 					self.table += '<tr>';
 					$.each(value, function (objData, objVal) {
-						//console.log(objVal);
-						var tableHead = objVal;
-						for (var key in tableHead) {
-							self.table += '<td class="pad-10 mobleftCol">' + key + '</th>';
-						}
+						//console.log(objVal);						
 						$.each(objVal, function (responseKey, responseVal) {
-							self.table += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
+							self.table += '<td class="R16 pad-10">' + responseVal + '</td>';
 						});
 						self.table += '</tr>';
-						self.table += '</tbody>';
 					});
-					$('.table').html(self.table);
+					self.table += '</tbody>';
+					self.table += '</table>';
+					$('#dryCargo').html(self.table);
+				});
+			});
+		},
+		renderMobile: function renderMobile() {
+			var self = this;
+			$.each(tableObj, function (datekey, date) {
+
+				$.each(date, function (key, value) {
+					//console.log(key);
+					self.table += '<table class="table mobView">';
+					self.table += '<thead class="table_head">';
+					self.table += '<tr><th colspan="8" class="pad-full-10">' + key + '</th></tr>';
+					self.table += '</thead>';
+					self.table += '<tbody class="visible-sm">';
+
+					$.each(value, function (objData, objVal) {
+						//console.log(objVal);						
+						$.each(objVal, function (responseKey, responseVal) {
+							self.table += '<tr>';
+							self.table += '<td class="pad-10 mobleftCol">' + responseKey + '</td>';
+							self.table += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
+							self.table += '</tr>';
+						});
+					});
+					self.table += '</tbody>';
+					self.table += '</table>';
+					$('#dryCargo').html(self.table);
 				});
 			});
 		},
 		init: function init() {
 			this.renderTable();
-			//this.renderMobile();
+			this.renderMobile();
 		}
 	};
 
@@ -7250,7 +7276,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7371,7 +7397,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7515,7 +7541,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 //import { analyticsEvent } from '../controllers/analytics-controller';
 
 'use strict';
@@ -7741,7 +7767,7 @@ $(function () {
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
             $(tbody.find('.followrow')[i]).attr('draggable', true);
         }
-        curpublicPan.addClass('active');
+        curpublicPan.css('border', '1px solid #EE9500');
         curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
         for (var i = 0; i < $lgfollow.length; i++) {
             $($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
@@ -7773,7 +7799,7 @@ $(function () {
         thead.find('.mtp').addClass('hideBtn');
         thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
 
-        curpublicPan.removeClass('active');
+        curpublicPan.removeAttr('style');
         curpublicPan.find('tbody .frow').removeClass('frow');
         for (var i = 0; i < $lgfollowing.length; i++) {
             $($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
@@ -7837,7 +7863,7 @@ $(function () {
         thead.find('.mtp').addClass('hideBtn');
         thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
 
-        curpublicPan.addClass('active');
+        curpublicPan.css('border', '1px solid #EE9500');
 
         if (trs.hasClass('followingrow')) {
             $('#validatePriority').val(true);
@@ -7889,7 +7915,7 @@ $(function () {
         if (trs.length === disabledtrs.length + 1) {
             table.find('.firstrow .lableStatus').val('followlbl');
             table.find('.accordionStatus .lableStatus').val('followlbl');
-            curpublicPan.removeClass('active');
+            curpublicPan.removeAttr('style');
         }
         if (trs.length === trsfollow.length + 1) {
             unfollowAllBtn.addClass('hideBtn');
@@ -7994,16 +8020,13 @@ $(function () {
             followinglbl = thead.find('.followinglbl'),
             allpubpans = allPublications.find('.publicationPan'),
             allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'),
-            lableStatus = allthead.find('.lableStatus').val(),
-            arrowIcon = pPan.find('.accordionImg .desktopMode');
+            lableStatus = allthead.find('.lableStatus').val();
 
         allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
-        allPublications.find('.publicationPan').removeClass('active');
 
         if (e.target.className !== 'subscribed') {
             if ($this.hasClass('expanded')) {
                 $this.removeClass('expanded').addClass('collapsed');
-                arrowIcon.removeClass('expanded').addClass('collapsed');
                 tbody.addClass('tbodyhidden');
                 thead.find('.mtp').addClass('hideBtn');
                 accCont.addClass('tbodyhidden');
@@ -8019,32 +8042,34 @@ $(function () {
                         getlableStatus = curthead.find('.lableStatus').val();
                     curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
                 }
-                pPan.removeClass('active');
+                pPan.find('.sorting_arrow--up').addClass('hide');
+                pPan.find('.sorting_arrow--down').removeClass('hide');
+                pPan.removeAttr('style');
                 var position = $this.closest('.publicationPan').position();
                 $(window).scrollTop(position.top);
             } else {
                 allPublications.find('tbody').addClass('tbodyhidden');
-                allPublications.find('.publicationPan .accordionImg span.desktopMode').removeClass('expanded');
+                allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
                 allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
                 allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
                 thead.find('tr').removeClass('hidden');
                 $this.addClass('expanded').removeClass('collapsed');
-                arrowIcon.addClass('expanded').removeClass('collapsed');
                 accCont.removeClass('tbodyhidden');
                 tbody.removeClass('tbodyhidden');
                 flwBtn.addClass('hideRow');
                 flwlbl.removeClass('hideRow');
 
+                pPan.find('.sorting_arrow--up').removeClass('hide');
+                pPan.find('.sorting_arrow--down').addClass('hide');
+                pPan.find('.expandTxt').removeAttr('style');
+                pPan.find('.mvTxt').removeAttr('style');
+
                 allPublications.find('.publicationPan').removeAttr('style');
                 if (trs.length == disabledtrs.length) {
-                    pPan.removeClass('active');
+                    pPan.removeAttr('style');
                 } else {
                     pPan.addClass('active');
                 }
-
-                pPan.find('.firstrow .expandTxt').removeAttr('style');
-                pPan.find('.firstrow .mvTxt').removeAttr('style');
-
                 /*for (var i = 0; i < allpubpans.length; i++) {
                 	var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
                 	$('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
@@ -8065,7 +8090,9 @@ $(function () {
             thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
             thead.find('.mvTxt').css('visibility', 'visible');
             thead.find('.expandTxt').css('visibility', 'visible');
+            thead.find('.accImg .sorting_arrow--down').addClass('act');
         } else if ($this.hasClass('collapsed') && lableStatus == 'followlbl') {
+            //thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
             thead.find('.expandTxt').css('visibility', 'visible');
         }
     }).on('mouseleave', 'thead.hidden-xs tr:first-child', function () {
@@ -8077,6 +8104,7 @@ $(function () {
             thead.removeClass('followinglbl-txt followlbl-txt');
             thead.find('.mvTxt').removeAttr('style');
             thead.find('.expandTxt').removeAttr('style');
+            thead.find('.accImg .sorting_arrow--down').removeClass('act');
         }
     });
 
@@ -8198,7 +8226,7 @@ $(function () {
     });
 });
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -8314,7 +8342,7 @@ $(function () {
 	});
 });
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 function loadLayoutOneData(data, idx) {
@@ -9109,7 +9137,7 @@ $(function () {
 	}
 });
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -9347,7 +9375,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":30,"../controllers/form-controller":32,"../jscookie":40}],27:[function(require,module,exports){
+},{"../controllers/analytics-controller":31,"../controllers/form-controller":33,"../jscookie":41}],28:[function(require,module,exports){
 'use strict';
 
 if ($('.scrollbar') && $('.scrollbar').length) {
@@ -9390,7 +9418,7 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 // 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
 // });
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 function PrintCompanyGraph(chartData, divId, graphType) {
@@ -9477,7 +9505,7 @@ $(function () {
 	}, 3000);
 });
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -9546,7 +9574,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -9565,7 +9593,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -9653,7 +9681,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":30}],32:[function(require,module,exports){
+},{"./analytics-controller":31}],33:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -9867,7 +9895,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -9935,7 +9963,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10226,7 +10254,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10351,7 +10379,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":30}],36:[function(require,module,exports){
+},{"./analytics-controller":31}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10569,7 +10597,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":30}],37:[function(require,module,exports){
+},{"./analytics-controller":31}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10886,7 +10914,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -11077,7 +11105,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],39:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],40:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -11193,6 +11221,8 @@ require('./components/ll-market-data');
 require('./components/ll-tanker-fixtures');
 
 require('./components/ll-market-data-dryCargo');
+
+require('./components/ll-market-data-dryCargo-icap');
 
 require('./components/accordionStockChart');
 
@@ -12383,7 +12413,7 @@ $(document).ready(function () {
     $('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":21,"./components/ll-market-data-dryCargo":20,"./components/ll-tanker-fixtures":22,"./components/myview-settings":23,"./components/pagination":24,"./components/personalisation":25,"./components/save-search-component":26,"./components/scrollbar.js":27,"./components/table_charts":28,"./components/video-mini":29,"./controllers/analytics-controller":30,"./controllers/bookmark-controller":31,"./controllers/form-controller":32,"./controllers/lightbox-modal-controller":33,"./controllers/pop-out-controller":34,"./controllers/register-controller":35,"./controllers/reset-password-controller":36,"./controllers/sortable-table-controller":37,"./controllers/tooltip-controller":38,"./jscookie":40,"./modal":41,"./newsletter-signup":42,"./search-page.js":43,"./selectivity-full":44,"./svg4everybody":45,"./toggle-icons":46,"./zepto.dragswap":47,"./zepto.min":48}],40:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":22,"./components/ll-market-data-dryCargo":21,"./components/ll-market-data-dryCargo-icap":20,"./components/ll-tanker-fixtures":23,"./components/myview-settings":24,"./components/pagination":25,"./components/personalisation":26,"./components/save-search-component":27,"./components/scrollbar.js":28,"./components/table_charts":29,"./components/video-mini":30,"./controllers/analytics-controller":31,"./controllers/bookmark-controller":32,"./controllers/form-controller":33,"./controllers/lightbox-modal-controller":34,"./controllers/pop-out-controller":35,"./controllers/register-controller":36,"./controllers/reset-password-controller":37,"./controllers/sortable-table-controller":38,"./controllers/tooltip-controller":39,"./jscookie":41,"./modal":42,"./newsletter-signup":43,"./search-page.js":44,"./selectivity-full":45,"./svg4everybody":46,"./toggle-icons":47,"./zepto.dragswap":48,"./zepto.min":49}],41:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -12524,7 +12554,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -12832,7 +12862,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -12934,7 +12964,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":30}],43:[function(require,module,exports){
+},{"./controllers/analytics-controller":31}],44:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -12946,7 +12976,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -13972,7 +14002,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],45:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -14077,7 +14107,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -14094,7 +14124,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -14344,7 +14374,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
     };
 })(Zepto);
 
-},{"./controllers/analytics-controller":30}],48:[function(require,module,exports){
+},{"./controllers/analytics-controller":31}],49:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -15083,7 +15113,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[39])
+},{}]},{},[40])
 
 
 //# sourceMappingURL=index.js.map
