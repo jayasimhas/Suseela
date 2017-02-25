@@ -145,7 +145,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 return new SavedDocumentWriteResult
                                 {
                                     Success = true,
-                                    Message = string.Empty
+                                    Message = string.Empty,
+                                    SalesforceId = response.results != null ?
+                                    !string.IsNullOrEmpty(response.results.FirstOrDefault().id) ?
+                                    response.results.FirstOrDefault().id : string.Empty : string.Empty
                                 };
                             }
                         }
@@ -155,7 +158,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             return new SavedDocumentWriteResult
             {
                 Success = false,
-                Message = "Invalid input has been provided."
+                Message = "Invalid input has been provided.",
+                SalesforceId = string.Empty;
             };
         }
     }
