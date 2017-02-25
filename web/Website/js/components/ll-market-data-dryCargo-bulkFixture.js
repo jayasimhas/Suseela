@@ -2,76 +2,56 @@
 	var dryCargoBulkFixtures = {
 		table: '',
 		renderTable: function(){
-		var self = this;
-		 //console.log(tableObj);
-			 $.each(tableObj, function(datekey, date){ 
-				
-					$.each(date, function(key, value) { 
-						self.table += '<table class="table descView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-						self.table += '<tr class="visible-lg">';
-						//console.log(value[0]);
-						var tableHead = value[0];
-							for(var key in tableHead){
-								self.table += '<th class="pad-10">'+key+'</th>';
-							}
-							self.table += '</tr>';
-							self.table += '</thead>';
-							self.table += '<tbody class="visible-lg">'; 
-							self.table += '<tr>';
-							$.each(value, function(objData, objVal) {
-								//console.log(objVal);									
-								$.each(objVal, function(responseKey, responseVal) {
-								
-								/*var fixtureType = responseVal[0];
-								for(var key in fixtureType){
-									self.table += '<td class="pad-10">'+key+'</td>'
-								}*/
-									self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
-								});	
-								self.table += '</tr>';	
-							});					
-						self.table += '</tbody>';
-						self.table += '</table>';	
-						 $('#dryCargoBulkFixtures').html(self.table);
-					});
-					
-			 });
+		var self = this, getArr, newObj = {};
 		
-		},
-		renderMobile: function() {
-			var self = this;
-			 $.each(tableObj, function(datekey, date){ 
-				
-					$.each(date, function(key, value) {
-						//console.log(key);
-						self.table += '<table class="table mobView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
+			$.each(tableObj[0], function(key, val){ 
+					self.table += '<table class="table descView">'
+					self.table += '<thead class="table_head">';
+					self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
+					self.table += '<tr class="visible-lg">';
+					var tableHead = val[0];
+						for(var prop in tableHead){
+							self.table += '<th class="pad-10">'+prop+'</th>';
+						}
+						self.table += '</tr>';
 						self.table += '</thead>';
-						self.table += '<tbody class="visible-sm">';
-						
-						$.each(value, function(objData, objVal) {
-							//console.log(objVal);						
-							$.each(objVal, function(responseKey, responseVal) { 
-								self.table += '<tr>';
-								self.table += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
-								self.table += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
-								self.table += '</tr>';		
-							});	
-							
-						});					
-						self.table += '</tbody>';
-						self.table += '</table>';
-						 $('#dryCargoBulkFixtures').html(self.table); 
-					});
-					
+					self.table += '</table>';	
+					$('#dryCargoBulkFixtures').html(self.table);
+				 
 			 });
-		},
+			 
+			$.each(tableObj[0], function(idx, val){
+				getArr = val; 
+			});
+			for(var i=0; i<getArr.length; i++){
+			  if(newObj[getArr[i]['fixtureType']] == undefined){ 
+				newObj[getArr[i]['fixtureType']] = [];
+			  }
+			}
+			for(var prop in newObj){
+				for(var i=0; i<getArr.length; i++){
+					if(prop == getArr[i]['fixtureType']){
+						newObj[prop].push(getArr[i]);
+					}
+				}
+			}
+			var tbody = '<tbody>';
+			$.each(newObj, function(key, val){
+				tbody += '<tr><td colspan="3">'+key+'</td></tr>';
+				$.each(val, function(idx, value){
+					tbody += '<tr>';
+					$.each(value, function(k, v){
+						tbody += '<td>'+v+'</td>';
+					});
+					tbody += '</tr>';
+				});
+			});
+			tbody += '</tbody>';
+			
+			$('#dryCargoBulkFixtures table').append(tbody);
+		},		
 		init: function() {
 			this.renderTable();
-			this.renderMobile();
 		}
 	}
 	

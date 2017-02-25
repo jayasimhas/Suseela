@@ -265,7 +265,7 @@
 				text-transform: uppercase;
 				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
-					text-decoration: none;
+					//text-decoration: none;
 				}
 			} 
 		}
@@ -458,7 +458,8 @@
 						@include textMix('Roboto Condensed', 0.875rem, 400);
 						visibility: hidden;
 						float: left;
-						width: 60px; 
+						width: 60px;
+						text-transform: uppercase;
 						text-align: right;
 						color: #f7941e;
 					}
@@ -983,7 +984,9 @@
 		}
 		.followingbg{
 			.sorting_arrow--up{
-				fill: $tc !important;
+				&.act{
+					fill: $tc !important;
+				}
 			}
 			.expandTxt{
 				color: $tc !important;

@@ -4854,8 +4854,6 @@ main .advertising--leaderboard.visible-desktop {
         font-size: 14px;
         font-size: 0.875rem;
         font-weight: 700; }
-        .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
-          text-decoration: none; }
     .myview-settings .publicationPan .subscribe {
       float: left;
       width: 120px;
@@ -5062,6 +5060,7 @@ main .advertising--leaderboard.visible-desktop {
           visibility: hidden;
           float: left;
           width: 60px;
+          text-transform: uppercase;
           text-align: right;
           color: #f7941e; }
         .myview-settings .table-responsive .table thead th .rowlines {
@@ -5624,7 +5623,7 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-lloydslist .myview-settings .followingrow:hover {
     background: #cedce6 !important; }
-  .theme-lloydslist .myview-settings .followingbg .sorting_arrow--up {
+  .theme-lloydslist .myview-settings .followingbg .sorting_arrow--up.act {
     fill: #0f5487 !important; }
   .theme-lloydslist .myview-settings .followingbg .expandTxt {
     color: #0f5487 !important; }
@@ -5703,7 +5702,7 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-insurance-day .myview-settings .followingrow:hover {
     background: #efd0d8 !important; }
-  .theme-insurance-day .myview-settings .followingbg .sorting_arrow--up {
+  .theme-insurance-day .myview-settings .followingbg .sorting_arrow--up.act {
     fill: #b0173d !important; }
   .theme-insurance-day .myview-settings .followingbg .expandTxt {
     color: #b0173d !important; }
@@ -5782,7 +5781,7 @@ main .advertising--leaderboard.visible-desktop {
       margin-bottom: 3px; }
   .theme-commodities .myview-settings .followingrow:hover {
     background: #FFF5ED !important; }
-  .theme-commodities .myview-settings .followingbg .sorting_arrow--up {
+  .theme-commodities .myview-settings .followingbg .sorting_arrow--up.act {
     fill: #F5821F !important; }
   .theme-commodities .myview-settings .followingbg .expandTxt {
     color: #F5821F !important; }
@@ -8715,8 +8714,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12306,7 +12305,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
