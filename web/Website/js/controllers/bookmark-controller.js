@@ -16,7 +16,8 @@ function bookmarkController() {
         bookmark.id = bookmark.elm.closest('.js-bookmark-article').data('bookmark-id');
 		
 		//passing SalesforceID;
-		bookmark.salesforceId = bookmark.elm.closest('.js-bookmark-article').data('salesforce-id'); 
+		//bookmark.salesforceId = bookmark.elm.closest('.js-bookmark-article').data('salesforce-id'); 
+		bookmark.salesforceId = (bookmark.elm.closest('.js-bookmark-article').data('salesforce-id') !== undefined) ? bookmark.elm.closest('.js-bookmark-article').data('salesforce-id') : ''; 
 		
         // Stash the bookmark label data now, swap label text later
         bookmark.label = {
