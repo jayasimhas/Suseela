@@ -9713,7 +9713,7 @@ function bookmarkController() {
                 type: 'POST',
                 data: {
                     DocumentID: bookmark.id,
-                    SalesforceID: salesforceId
+                    SalesforceID: bookmark.salesforceId
                 },
                 context: this,
                 success: function success(response) {
@@ -15194,6 +15194,5 @@ var Zepto = (function () {
 })(Zepto);
 
 },{}]},{},[41])
-
 
 //# sourceMappingURL=index.js.map

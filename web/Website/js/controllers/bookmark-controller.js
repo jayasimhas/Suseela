@@ -40,7 +40,7 @@ function bookmarkController() {
                 type: 'POST',
                 data: {
                     DocumentID: bookmark.id,
-					SalesforceID: salesforceId 
+					SalesforceID: bookmark.salesforceId 
                 },
                 context: this,
                 success: function (response) {
