@@ -39,9 +39,39 @@
 					
 			 });
 		
-		},		
+		},
+		renderMobile: function() {
+			var self = this;
+			 $.each(tableObj, function(datekey, date){ 
+				
+					$.each(date, function(key, value) {
+						//console.log(key);
+						self.table += '<table class="table mobView">'
+						self.table += '<thead class="table_head">';
+						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
+						self.table += '</thead>';
+						self.table += '<tbody class="visible-sm">';
+						
+						$.each(value, function(objData, objVal) {
+							//console.log(objVal);						
+							$.each(objVal, function(responseKey, responseVal) { 
+								self.table += '<tr>';
+								self.table += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
+								self.table += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
+								self.table += '</tr>';		
+							});	
+							
+						});					
+						self.table += '</tbody>';
+						self.table += '</table>';
+						 $('#dryCargoBulkFixtures').html(self.table); 
+					});
+					
+			 });
+		},
 		init: function() {
 			this.renderTable();
+			this.renderMobile();
 		}
 	}
 	
