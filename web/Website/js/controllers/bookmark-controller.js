@@ -45,7 +45,7 @@ function bookmarkController() {
                 context: this,
                 success: function (response) {
                     if (response.success) {
-
+                        bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id', response.salesforceid);
 						if(bookmark.isBookmarking) {
 							analyticsEvent( $.extend(analytics_data, $(bookmark.elm).data('analytics')) );
 						}

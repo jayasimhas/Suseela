@@ -9718,7 +9718,7 @@ function bookmarkController() {
                 context: this,
                 success: function success(response) {
                     if (response.success) {
-
+                        bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id', response.salesforceid);
                         if (bookmark.isBookmarking) {
                             (0, _analyticsController.analyticsEvent)($.extend(analytics_data, $(bookmark.elm).data('analytics')));
                         }
