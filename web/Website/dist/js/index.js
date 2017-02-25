@@ -9692,7 +9692,6 @@ function bookmarkController() {
 
         //passing SalesforceID;
         bookmark.salesforceId = bookmark.elm.closest('.js-bookmark-article').data('salesforce-id');
-        SalesforceID: salesforceId;
 
         // Stash the bookmark label data now, swap label text later
         bookmark.label = {
@@ -9712,7 +9711,8 @@ function bookmarkController() {
                 url: apiEndpoint,
                 type: 'POST',
                 data: {
-                    DocumentID: bookmark.id
+                    DocumentID: bookmark.id,
+                    SalesforceID: salesforceId
                 },
                 context: this,
                 success: function success(response) {
