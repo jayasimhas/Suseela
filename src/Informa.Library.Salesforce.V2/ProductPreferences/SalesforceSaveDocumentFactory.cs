@@ -30,6 +30,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             Value2__c = documentName,
                             Value3__c = documentDescription,
                             Value4__c = documentId,
+                            Value5__c = DateTime.Now.ToString(),
 
                         }
                     }
@@ -49,7 +50,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                       DocumentId = record.Value4__c,
                       Description = record.Value3__c,
                       Name = record.Value2__c,
-                      SalesforceId = record.Id
+                      SalesforceId = record.Id,
+                      SaveDate= string.IsNullOrWhiteSpace(record.Value5__c) ? DateTime.MinValue : Convert.ToDateTime(record.Value5__c)
                     });
                 }
             }
