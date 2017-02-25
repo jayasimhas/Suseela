@@ -159,7 +159,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 Success = false,
                 Message = "Invalid input has been provided.",
-                SalesforceId = string.Empty;
+                SalesforceId = string.Empty
             };
         }
     }
