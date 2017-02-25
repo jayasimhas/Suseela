@@ -37,11 +37,11 @@
 			}
 			var tbody = '<tbody>';
 			$.each(newObj, function(key, val){
-				tbody += '<tr><td colspan="3">'+key+'</td></tr>';
+				tbody += '<tr><td colspan="3" class="graybg RB18 p-10">'+key+'</td></tr>';
 				$.each(val, function(idx, value){
 					tbody += '<tr>';
 					$.each(value, function(k, v){
-						tbody += '<td>'+v+'</td>';
+						tbody += '<td class="R16 pad-10">'+v+'</td>';
 					});
 					tbody += '</tr>';
 				});
