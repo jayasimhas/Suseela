@@ -43,7 +43,7 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult RemoveItem(SavedDocumentRemoveRequest request)
         {
-            var result = RemoveDocumentContext.Remove(request.DocumentID);
+            var result = RemoveDocumentContext.Remove(request.DocumentID, request.SalesforceId);
 
             return Ok(new
             {
