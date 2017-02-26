@@ -8776,8 +8776,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9273,6 +9273,8 @@ div#feedbacklite.fbl_r {
         @media only screen and (min-width: 600px) and (max-width: 768px) {
           #market-data-tool.table-responsive .table .table_head th, #dry-cargo.table-responsive .table .table_head th, #dry-cargo-cap.table-responsive .table .table_head th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
             font-size: 12px; } }
+      #market-data-tool.table-responsive .table .table_head .blueBg, #dry-cargo.table-responsive .table .table_head .blueBg, #dry-cargo-cap.table-responsive .table .table_head .blueBg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .blueBg, #tanker-fixtures.table-responsive .table .table_head .blueBg {
+        background: #1191d1; }
       #market-data-tool.table-responsive .table .table_head .visible-lg, #dry-cargo.table-responsive .table .table_head .visible-lg, #dry-cargo-cap.table-responsive .table .table_head .visible-lg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
         color: #fff; }
         #market-data-tool.table-responsive .table .table_head .visible-lg th, #dry-cargo.table-responsive .table .table_head .visible-lg th, #dry-cargo-cap.table-responsive .table .table_head .visible-lg th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
@@ -12368,7 +12370,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

@@ -46,6 +46,7 @@ import './components/ll-tanker-fixtures';
 import './components/ll-market-data-dryCargo';
 import './components/ll-market-data-dryCargo-icap';
 import './components/ll-market-data-dryCargo-bulkFixture';
+import './components/ll-market-imarex';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';

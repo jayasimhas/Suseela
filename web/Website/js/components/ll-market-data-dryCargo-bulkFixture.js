@@ -43,8 +43,8 @@
 					self.table += '</tr>';
 					self.table += '</thead>';
 				self.table += '</table>';	
-				$('#dryCargoBulkFixtures').html(self.table);
 			 });
+			 $('#dryCargoBulkFixtures').html(self.table);
 			 
 			$.each(tableObj[0], function(idx, val){
 				getArr = val; 
