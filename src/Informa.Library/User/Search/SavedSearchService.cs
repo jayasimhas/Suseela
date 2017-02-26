@@ -242,7 +242,8 @@ namespace Informa.Library.User.Search
             {
                 var results = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     _dependencies.GetUserProductPreferences.GetProductPreferences<IList<ISavedSearchEntity>>
-                    (_dependencies.UserContext.User, _dependencies.SiteRootContext?.Item?.Publication_Code,
+                    (_dependencies.UserContext.User,_dependencies?.VerticalRootContext?.Item?.Vertical_Name,
+                    _dependencies.SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.SavedSearches) :
                     _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();
 

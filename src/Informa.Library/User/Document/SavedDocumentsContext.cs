@@ -2,6 +2,7 @@
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.ProductPreferences;
+using Informa.Library.Utilities.CMSHelpers;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Informa.Library.User.Document
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IGetUserProductPreferences GetUserProductPreferences;
         protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IVerticalRootContext VerticalRootContext;
 
         public SavedDocumentsContext(
             IAuthenticatedUserContext userContext,
@@ -26,7 +28,8 @@ namespace Informa.Library.User.Document
             IFindSavedDocuments findSavedDocuments,
             IGetUserProductPreferences getUserProductPreferences,
             ISiteRootContext siteRootContext,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IVerticalRootContext verticalRootContext)
         {
             UserContext = userContext;
             UserSession = userSession;
@@ -34,6 +37,7 @@ namespace Informa.Library.User.Document
             GetUserProductPreferences = getUserProductPreferences;
             SiteRootContext = siteRootContext;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            VerticalRootContext = verticalRootContext;
         }
 
         public IEnumerable<ISavedDocument> SavedDocuments
@@ -53,7 +57,10 @@ namespace Informa.Library.User.Document
                 }
 
                 var savedDocuments = SavedDocuments = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
-                    GetUserProductPreferences.GetProductPreferences<IList<ISavedDocument>>(UserContext.User, SiteRootContext?.Item?.Publication_Code, ProductPreferenceType.SavedDocuments) :
+                    GetUserProductPreferences.GetProductPreferences<IList<ISavedDocument>>(UserContext.User, 
+                    VerticalRootContext?.Item?.Vertical_Name,
+                    SiteRootContext?.Item?.Publication_Code,
+                    ProductPreferenceType.SavedDocuments) :
                     FindSavedDocuments.Find(UserContext.User?.Username);
 
                 return savedDocuments;
