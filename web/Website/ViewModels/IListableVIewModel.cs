@@ -15,6 +15,7 @@ namespace Informa.Web.ViewModels
         bool IsArticleBookmarked { get; }
         string BookmarkText { get; }
         string BookmarkedText { get; }
-				Guid ID { get; }
+		Guid ID { get; }
+        string SalesforceId { get; }
     }
 }

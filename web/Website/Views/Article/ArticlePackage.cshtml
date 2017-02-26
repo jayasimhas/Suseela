@@ -52,6 +52,7 @@
                                                     <div class="action-flag article-preview__bookmarker pop-out__trigger @( firstArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
                                                          data-pop-out-type="sign-in"
                                                          data-bookmark-id="@firstArticle.ID"
+                                                         data-salesforce-id="@firstArticle.SalesforceId"
                                                          @( firstArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
 			                                                    "bookmark": "true",
  			                                                    "bookmark_title": "@firstArticle.ListableTitle",
@@ -128,6 +129,7 @@
                                                                 <div class="action-flag article-preview__bookmarker pop-out__trigger @( article.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
                                                                      data-pop-out-type="sign-in"
                                                                      data-bookmark-id="@article.ID"
+                                                                     data-salesforce-id="@article.SalesforceId"
                                                                      @(article.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
 			                                                    "bookmark": "true",
  			                                                    "bookmark_title": "@article.ListableTitle",
@@ -209,6 +211,7 @@
                                                         <div class="action-flag article-preview__bookmarker pop-out__trigger @( fifthArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
                                                              data-pop-out-type="sign-in"
                                                              data-bookmark-id="@fifthArticle.ID"
+                                                             data-salesforce-id="@fifthArticle.SalesforceId"
                                                              @( fifthArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
 			                                                    "bookmark": "true",
  			                                                    "bookmark_title": "@fifthArticle.ListableTitle",
