@@ -156,10 +156,10 @@
 				}
 			}
 
-			var Carousel = '<div class="table_head pad-10 clearfix" style="margin-bottom: 1rem;">'+
+			var Carousel = '<div class="table_head pad-10 clearfix">'+
 								'<span class="RB16">' + Name + '</span>'+
 							'</div>'+
-							'<div class="clearfix">'+
+							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">'+
 								'<div class="states_heading">'+
 									FixedPart+
 								'</div>'+
