@@ -229,7 +229,7 @@ function createLayoutInner1(data) {
 function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
 	var sectionData = '';
 	sectionData += '<section class="article-preview list-featured-article listViewCont">';
-	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '"></div>' : '';
+	sectionData += data.articles[idx].listableImage ? '<div class="topic-article-image_pan"><img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '"></div>' : '';
 	sectionData += data.articles[idx].listableTitle ? '<div class="topic-article-rig_pan"><h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : '';
 	sectionData += '<div class="topic-featured-article__inner-wrapper">';
 	sectionData += '<div class="article-metadata">';
@@ -251,7 +251,8 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 			var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
 			sectionData += '<a href="' + getlistLink1 + '">' + data.articles[idx].listableTopics[i].linkableText + '</a>';
 		}
-	} 
+	}
+	sectionData += '</div>';
 	sectionData += '</div>';
 	sectionData += '</section>';
 	
