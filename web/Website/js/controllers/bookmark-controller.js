@@ -17,7 +17,7 @@ function bookmarkController() {
 		
 		//passing SalesforceID;
 		//bookmark.salesforceId = bookmark.elm.closest('.js-bookmark-article').data('salesforce-id'); 
-		bookmark.salesforceId = (bookmark.elm.closest('.js-bookmark-article').data('salesforce-id') !== undefined) ? bookmark.elm.closest('.js-bookmark-article').data('salesforce-id') : ''; 
+		bookmark.salesforceId = (bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id') !== undefined) ? bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id') : ''; 
 		
         // Stash the bookmark label data now, swap label text later
         bookmark.label = {
@@ -45,10 +45,13 @@ function bookmarkController() {
                 context: this,
                 success: function (response) {
                     if (response.success) {
-                        bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id', response.salesforceid);
+                        
 						if(bookmark.isBookmarking) {
 							analyticsEvent( $.extend(analytics_data, $(bookmark.elm).data('analytics')) );
-						}
+                            bookmark.elm.closest('.js-bookmark-article').attr('data-salesforce-id', response.salesforceid);
+						} else {
+                            bookmark.elm.closest('.js-bookmark-article').removeAttr('data-salesforce-id');
+                        }
 
                         this.flipIcon(bookmark);
                         return true;
