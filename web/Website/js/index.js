@@ -50,6 +50,8 @@ import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';
 import './components/scrollbar.js';
+import './components/ll-ship-coal-export.js';
+import './components/ll-tanker-pure-chem-page.js';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

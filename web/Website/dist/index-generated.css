@@ -3902,6 +3902,33 @@ body.lightboxed {
   width: 60%;
   float: right; }
 
+#tankerPureChemPage {
+  border: none; }
+  #tankerPureChemPage .R16 {
+    height: 40px;
+    height: 2.5rem; }
+  #tankerPureChemPage .year_heading {
+    height: 5em !important; }
+    #tankerPureChemPage .year_heading div {
+      background: transparent; }
+    #tankerPureChemPage .year_heading .sub-item {
+      margin-top: 8px;
+      margin-top: 0.5rem; }
+  #tankerPureChemPage .sub-item {
+    width: 50%;
+    float: left; }
+
+.theme-table {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  .theme-table .pad-10 {
+    padding: 10px !important; }
+  .theme-table thead tr:first-child th {
+    text-align: left !important;
+    border-bottom: 1px solid #ffffff; }
+  .theme-table thead tr th {
+    border-bottom: 1px solid #ffffff; }
+
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -8749,8 +8776,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12340,7 +12367,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -15757,11 +15784,13 @@ main {
 
 .theme-insurance-day .idi-table-heading, .theme-insurance-day .controls, .theme-insurance-day .merge-heading,
 .theme-insurance-day .ID-Responsive-Table .table_head,
-.theme-insurance-day .table-responsive .table .table_head {
+.theme-insurance-day .table-responsive .table .table_head,
+.theme-insurance-day .table.theme-table thead tr:first-child th {
   background-color: #91211E; }
 
 .theme-insurance-day .label-wrap, .theme-insurance-day .show-largest-btn, .theme-insurance-day .merge-form-items,
-.theme-insurance-day .table-wrapper .tableHead {
+.theme-insurance-day .table-wrapper .tableHead,
+.theme-insurance-day .table.theme-table thead tr th {
   background-color: #DE4361; }
 
 .theme-insurance-day #tanker-fixtures.table-responsive .table .table_head {
@@ -16127,11 +16156,13 @@ main {
 
 .theme-lloydslist .idi-table-heading, .theme-lloydslist .controls, .theme-lloydslist .merge-heading,
 .theme-lloydslist .ID-Responsive-Table .table_head,
-.theme-lloydslist .table-responsive .table .table_head {
+.theme-lloydslist .table-responsive .table .table_head,
+.theme-lloydslist .table.theme-table thead tr:first-child th {
   background-color: #002d4f; }
 
 .theme-lloydslist .label-wrap, .theme-lloydslist .show-largest-btn, .theme-lloydslist .merge-form-items,
-.theme-lloydslist .table-wrapper .tableHead {
+.theme-lloydslist .table-wrapper .tableHead,
+.theme-lloydslist .table.theme-table thead tr th {
   background-color: #1191D1; }
 
 .theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
