@@ -6392,7 +6392,13 @@ main .advertising--leaderboard.visible-desktop {
   display: block; }
 
 .listView .article-preview__tags {
-  width: auto; }
+  width: auto;
+  z-index: 999; }
+  .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
+    max-width: inherit; }
+
+.listView .article-metadata ul li:nth-child(2) {
+  max-width: inherit; }
 
 .listView .list-featured-article {
   border-bottom: 1px solid #e7e7e7;
@@ -6402,12 +6408,12 @@ main .advertising--leaderboard.visible-desktop {
   padding-bottom: 1rem;
   width: 100%; }
   .listView .list-featured-article .article-preview__byline .authorTitle {
-    width: 50%;
+    width: 35%;
     float: left; }
   .listView .list-featured-article .article-preview__byline ul {
     display: inline-block;
     float: right;
-    width: 50%;
+    width: 65%;
     text-align: right; }
   .listView .list-featured-article .article-preview__byline:after {
     clear: both;

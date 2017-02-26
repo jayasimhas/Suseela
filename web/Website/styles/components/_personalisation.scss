@@ -547,7 +547,21 @@
 	.listViewCont{
 		display: block;
 	}
-	.article-preview__tags{width: auto;}
+	.article-preview__tags{
+		width: auto;
+		z-index: 999;
+		a{
+			max-width: inherit;
+		}
+	}
+	.article-metadata{
+		ul  li { 
+				&:nth-child(2){
+					max-width: inherit;
+				}
+		}
+	}
+				
 	.list-featured-article { 
 		border-bottom: 1px solid #e7e7e7;
 		margin-bottom: 1rem;
@@ -555,13 +569,13 @@
 		width: 100%;
 		.article-preview__byline{
 			.authorTitle{
-				width: 50%;
+				width: 35%;
 				float: left;
 			} 
 			ul{
 				display: inline-block;
 				float: right;
-				width: 50%; 
+				width: 65%; 
 				text-align: right;
 			}
 			&:after{
