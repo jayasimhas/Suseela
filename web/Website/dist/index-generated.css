@@ -1691,7 +1691,7 @@ section: Alerts
     margin-bottom: 0; }
   .banner--highlights {
     color: #231f20;
-    margin: 0 0 32px;
+    margin: 32px 0;
     padding: 18px 0;
     border: 2px solid #d1d3d4;
     border-left: 0;
@@ -4424,6 +4424,9 @@ main .advertising--leaderboard.visible-desktop {
     main .advertising--leaderboard.visible-desktop {
       display: none;
       padding: 30px 0; } }
+
+main .action-flags-bar, main .banner--highlights {
+  margin-top: 0 !important; }
 
 .messaging_webUsers {
   width: 100% !important;
