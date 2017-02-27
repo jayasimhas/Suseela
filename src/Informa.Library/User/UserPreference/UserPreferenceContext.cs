@@ -60,7 +60,9 @@
 
                 IUserPreferences preferences = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     GetUserProductPreferences.GetProductPreferences<UserPreferences>(UserContext.User,
-                    SiteRootContext?.Item?.Publication_Code ?? string.Empty, ProductPreferenceType.PersonalPreferences) :
+                    VerticalRootContext?.Item?.Vertical_Name,
+                    SiteRootContext?.Item?.Publication_Code ?? string.Empty, 
+                    ProductPreferenceType.PersonalPreferences) :
                     FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
 
                 Preferences = preferences;

@@ -4,6 +4,6 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
     public interface ISalesforceGetUserProductPreferencesQueryFactory
     {
-        string Create(string userName, string publicationCode, ProductPreferenceType type);
+        string Create(string userName, string verticle,string publicationCode, ProductPreferenceType type);
     }
 }
