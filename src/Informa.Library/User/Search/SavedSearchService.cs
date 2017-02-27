@@ -74,7 +74,7 @@ namespace Informa.Library.User.Search
 
             var results = GetContentFromSessionOrRepo();
 
-            var entities = results.Where(s => SavedSearchComparer.Equals(s, entity));
+            var entities = results != null ? results.Where(s => SavedSearchComparer.Equals(s, entity)) : null;
 
             return entities != null && entities.Any() && entity.HasAlert ? entities.Any(a => a.HasAlert) : entities != null && entities.Any();
         }
@@ -87,16 +87,19 @@ namespace Informa.Library.User.Search
             }
 
             var results = GetContentFromSessionOrRepo();
-
-            return results.Select(doc => new SavedSearchDisplayModel
+            if (results != null)
             {
-                Sources = ExtractSources(doc.SearchString),
-                Title = doc.Name,
-                Url = ConstructUrl(doc.SearchString),
-                DateSaved = doc.DateCreated,
-                AlertEnabled = doc.HasAlert,
-                Id = doc.Id
-            }).OrderByDescending(r => r.DateSaved);
+                return results.Select(doc => new SavedSearchDisplayModel
+                {
+                    Sources = ExtractSources(doc.SearchString),
+                    Title = doc.Name,
+                    Url = ConstructUrl(doc.SearchString),
+                    DateSaved = doc.DateCreated,
+                    AlertEnabled = doc.HasAlert,
+                    Id = doc.Id
+                }).OrderByDescending(r => r.DateSaved);
+            }
+            return Enumerable.Empty<ISavedSearchDisplayable>();
         }
 
         public virtual IContentResponse SaveContent(ISavedSearchSaveable input)
@@ -172,13 +175,16 @@ namespace Informa.Library.User.Search
             if (string.IsNullOrWhiteSpace(entity.Name))
             {
                 var results = GetContentFromSessionOrRepo();
-                var entities = results.Where(e => SavedSearchComparer.Equals(e, entity));
-                foreach (ISavedSearchEntity en in entities)
+                if (results != null)
                 {
-                    response = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
-                        _dependencies.DeleteUserProductPreferences.DeleteUserProductPreference(
-                            _dependencies.UserContext.User.AccessToken, en.Id) :
-                        _dependencies.Repository.Delete(en);
+                    var entities = results.Where(e => SavedSearchComparer.Equals(e, entity));
+                    foreach (ISavedSearchEntity en in entities)
+                    {
+                        response = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                            _dependencies.DeleteUserProductPreferences.DeleteUserProductPreference(
+                                _dependencies.UserContext.User.AccessToken, en.Id) :
+                            _dependencies.Repository.Delete(en);
+                    }
                 }
             }
             else
@@ -236,7 +242,8 @@ namespace Informa.Library.User.Search
             {
                 var results = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     _dependencies.GetUserProductPreferences.GetProductPreferences<IList<ISavedSearchEntity>>
-                    (_dependencies.UserContext.User, _dependencies.SiteRootContext?.Item?.Publication_Code,
+                    (_dependencies.UserContext.User,_dependencies?.VerticalRootContext?.Item?.Vertical_Name,
+                    _dependencies.SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.SavedSearches) :
                     _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();
 
@@ -253,8 +260,9 @@ namespace Informa.Library.User.Search
             var itemId = item as ISavedSearchItemId;
 
             if (string.IsNullOrEmpty(itemId?.Username) || string.IsNullOrEmpty(itemId.Name)) return default(ISavedSearchEntity);
-
-            return GetContentFromSessionOrRepo().Where(s => s.Name == itemId.Name && s.Username == itemId.Username).FirstOrDefault();
+            var results = GetContentFromSessionOrRepo();
+            return results != null ?
+                results.Where(s => s.Name == itemId.Name && s.Username == itemId.Username).FirstOrDefault() : null;
         }
     }
 }

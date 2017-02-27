@@ -4,5 +4,6 @@
     {
         bool Success { get; set; }
         string Message { get; set; }
+        string SalesforceId { get; set; }
     }
 }

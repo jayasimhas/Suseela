@@ -31,5 +31,7 @@ namespace Informa.Web.ViewModels.Articles
         public string BookmarkedText { get; set; }
 		public Guid ID { get; set; }
 		public string PageTitle { get; set; }
+
+        public string SalesforceId { get; set; }
 	}
 }

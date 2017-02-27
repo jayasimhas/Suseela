@@ -85,5 +85,7 @@ namespace Informa.Web.ViewModels
 		public string BookmarkPublication => _dependencies.ArticleService.GetArticlePublicationName(GlassModel);
 		public string BookmarkTitle => GlassModel.ListableTitle;
 		public string PageTitle => _dependencies.PageItemContext.Get<I___BasePage>()?.Title;
+
+        public string SalesforceId => _dependencies.IsSavedDocumentContext.GetSalesforceId(GlassModel._Id);
 	}
 }

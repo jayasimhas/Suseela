@@ -2,6 +2,6 @@
 {
 	public interface IRemoveDocumentContext
 	{
-		ISavedDocumentWriteResult Remove(string documentId);
+		ISavedDocumentWriteResult Remove(string documentId, string salesforceId);
 	}
 }

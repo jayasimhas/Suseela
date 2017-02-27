@@ -1916,7 +1916,9 @@
     <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
-    <Content Include="sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml" />
+    <Content Include="sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\ArticleMover.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />

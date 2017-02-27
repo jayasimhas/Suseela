@@ -8,5 +8,7 @@ namespace Informa.Web.Areas.Account.Models.User.Management
     public class SavedDocumentRemoveRequest
     {
         public string DocumentID { get; set; }
+
+        public string SalesforceID { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace Informa.Library.Salesforce.User.Profile
 		public string DocumentId { get; set; }
 		public string Name { get; set; }
 		public DateTime SaveDate { get; set; }
-	}
+        public string SalesforceId { get; set; }
+    }
 }

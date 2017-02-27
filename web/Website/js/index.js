@@ -43,10 +43,16 @@ import './components/ll-casuality-listing';
 import './components/ll-casuality-detail';
 import './components/ll-market-data';
 import './components/ll-tanker-fixtures';
+import './components/ll-market-data-dryCargo';
+import './components/ll-market-data-dryCargo-icap';
+import './components/ll-market-data-dryCargo-bulkFixture';
+import './components/ll-market-imarex';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';
 import './components/scrollbar.js';
+import './components/ll-ship-coal-export.js';
+import './components/ll-tanker-pure-chem-page.js';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -1258,5 +1264,12 @@ $(document).ready(function(){
     $(".selectivity-input .selectivity-single-select").each(function() {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
+	
+	//IPMP-1760
+	if($( ".article-body-content aside:first" ).hasClass('article-inline-image')){
+	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
+    }else{
+	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
+	}
    
 });

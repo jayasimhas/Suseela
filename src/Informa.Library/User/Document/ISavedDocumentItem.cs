@@ -12,5 +12,6 @@ namespace Informa.Library.User.Document
 		string Title { get; }
 		string Url { get; }
 		bool IsExternalUrl { get; }
-	}
+        string SalesforceId { get; set; }
+    }
 }

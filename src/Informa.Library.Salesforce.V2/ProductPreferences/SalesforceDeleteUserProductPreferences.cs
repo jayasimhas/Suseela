@@ -1,6 +1,7 @@
 ﻿using Informa.Library.SalesforceConfiguration;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
+using Informa.Library.User.Document;
 using Informa.Library.User.ProductPreferences;
 using System;
 using System.Net.Http;
@@ -50,15 +51,67 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 Message = "Invalid input has been provided."
             };
         }
-
-        public IContentResponse DeleteUserProductPreferences(string userName, string accessToken, string publicationCode, ProductPreferenceType type)
+        public ISavedDocumentWriteResult DeleteSavedocument(string accessToken, string itemId)
         {
-
-            return new ContentResponse
+            if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(itemId))
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                    InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId), this.GetType().Name);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                    var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId)).Result;
+                    InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return new SavedDocumentWriteResult
+                        {
+                            Success = true,
+                            Message = string.Empty
+                        };
+                    }
+                }
+            }
+            return new SavedDocumentWriteResult
             {
                 Success = false,
                 Message = "Invalid input has been provided."
             };
         }
+        public IContentResponse DeleteUserProductPreferences(string userName, string accessToken, string publicationCode, ProductPreferenceType type)
+        {
+            if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(accessToken)
+               && !string.IsNullOrWhiteSpace(publicationCode) && type != ProductPreferenceType.None)
+            {
+                var query = SalesforceDeleteUserProductPreferencesQueryFactory.Create(
+                        userName, publicationCode, type);
+                if (!string.IsNullOrWhiteSpace(query))
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query), this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query)).Result;
+                        InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+                        if (result.IsSuccessStatusCode)
+                        {
+                            return new ContentResponse
+                            {
+                                Success = true,
+                                Message = string.Empty
+                            };
+                        }
+                    }
+                }
+            }
+            return new ContentResponse
+            {
+                Success = false,
+                Message = "Invalid input has been provided."
+            };
+
+        }
+
     }
 }

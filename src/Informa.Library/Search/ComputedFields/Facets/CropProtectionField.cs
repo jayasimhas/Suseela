@@ -1,10 +1,8 @@
 ﻿using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Search.Utilities;
-using System.Threading.Tasks;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
