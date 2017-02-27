@@ -10299,6 +10299,9 @@ div#feedbacklite.fbl_r {
     margin: 0;
     border-bottom: 4px solid; }
 
+.article-left-rail .article-body-content .article-call-to-action {
+  clear: both; }
+
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
   float: right;
