@@ -2775,7 +2775,7 @@ $(document).ready(function () {
 			//	$('.menu-toggler').addClass('is-active');
 			//	$('.header__wrapper .menu-toggler').addClass('is-sticky');
 			//	$('body').addClass('is-frozen');
-			}
+			//}
 		};
 
 		var scrollToTimerCache;
