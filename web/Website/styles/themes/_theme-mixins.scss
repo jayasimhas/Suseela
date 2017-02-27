@@ -226,11 +226,13 @@
 @mixin theme-table($primary-color, $seconday-color, $tertiary-color, $table-hover-color) {
     .idi-table-heading, .controls, .merge-heading,
     .ID-Responsive-Table .table_head,
-    .table-responsive .table .table_head {
+    .table-responsive .table .table_head,
+    .table.theme-table thead tr:first-child th {
         background-color: $primary-color;
     }
     .label-wrap, .show-largest-btn, .merge-form-items,
-    .table-wrapper .tableHead {
+    .table-wrapper .tableHead,
+    .table.theme-table thead tr th {
         background-color: $seconday-color;
     }
     #tanker-fixtures.table-responsive .table .table_head {

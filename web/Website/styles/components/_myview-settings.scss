@@ -265,7 +265,7 @@
 				text-transform: uppercase;
 				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
-					text-decoration: none;
+					//text-decoration: none;
 				}
 			} 
 		}
@@ -381,6 +381,9 @@
 					.expandTxt{
 						color: #58595B;
 					}
+					.hideinDesk{ 
+						background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+					}
 				}
 				&.followingbg{
 					background: #fff;
@@ -391,6 +394,9 @@
 						.mv{
 							background: #f7941e;
 						}
+					}
+					.hideinDesk{ 
+						background: url(/dist/img/drag-icon.jpg) no-repeat 0 -51px;
 					}
 				}
 				tr{
@@ -458,21 +464,30 @@
 						@include textMix('Roboto Condensed', 0.875rem, 400);
 						visibility: hidden;
 						float: left;
-						width: 60px; 
+						width: 60px;
+						text-transform: uppercase;
 						text-align: right;
 						color: #f7941e;
+						@media screen and (min-width: 768px) and (max-width: 1024px){
+							display: none;
+						}
 					}
 					& .rowlines{
 						@include getMove(#979797, 0rem); 
 						float: right;
 						&.hideinDesk{
 							display: none;
-							@media screen and (min-width: 768px) and (max-width: 1024px){
-								background: url(/dist/img/drag-icon.jpg) no-repeat 0 0;
+							@media screen and (min-width: 768px) and (max-width: 1024px){ 
 								height: 50px;
 								width: 21px;
 								display: block;
-								margin-top: -15px; 
+								margin-top: -20px; 
+							}
+							@media screen and (max-width: 768px){
+								margin-top: -40px; 
+							}
+							.mv{
+								background: none !important;
 							}
 						}
 						&.hideinTab{
@@ -511,12 +526,18 @@
 							text-align: right;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
 							text-transform: uppercase;
+							@media screen and (min-width: 768px) and (max-width: 1024px){
+								display: none;
+							}
 						}
 						span.accImg{
 							float: left;
 							margin-top: -15px;
 							position: relative;
 							top: 8px;
+							@media screen and (min-width: 768px) and (max-width: 1024px){
+								margin-left: 10px;
+							}
 							.sorting_arrow--up{
 								height: 32px;
 								width: 32px;
@@ -960,11 +981,13 @@
 			}
 		}
 		.followingBtn{ 
-			background: $tc;
-			border: 1px solid $tc;
-			&:hover{
-				background: #a7a7a7;
-				border: 1px solid #a7a7a7
+			@media screen and (min-width: 480px){
+				background: $tc;
+				border: 1px solid $tc;
+				&:hover{
+					background: #a7a7a7;
+					border: 1px solid #a7a7a7
+				}
 			}
 		}
 		.followBtn{
@@ -983,7 +1006,9 @@
 		}
 		.followingbg{
 			.sorting_arrow--up{
-				fill: $tc !important;
+				&.act{
+					fill: $tc !important;
+				}
 			}
 			.expandTxt{
 				color: $tc !important;

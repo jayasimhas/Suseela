@@ -52,6 +52,7 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceSavedSearchRepository>().As<IUserContentRepository<ISavedSearchEntity>>();
             builder.RegisterType<SalesforceUserOrder>().As<IUserOrder>();
             builder.RegisterType<HttpClientHelper>().As<IHttpClientHelper>();
+            builder.RegisterType<SalesforceSaveDocumentFactory>().As<ISalesforceSaveDocumentFactory>();
         }
     }
 }

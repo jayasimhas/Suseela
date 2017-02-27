@@ -89,7 +89,7 @@
 		}
 	}
 }
-#market-data-tool, #dry-cargo, #dry-cargo-cap, #tanker-fixtures{
+#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -115,11 +115,15 @@
 		.table_head{
 			color: #ffffff;
 			th{
+				text-transform: capitalize;
 				font-size: 16px;
 				font-weight: 500;
 				@media only screen and (min-width: 600px) and (max-width: 768px) {
 					font-size: 12px;
 				}
+			}
+			.blueBg{
+				background: #1191d1;
 			}
 			.visible-lg{
 				color: #fff;

@@ -43,7 +43,7 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult RemoveItem(SavedDocumentRemoveRequest request)
         {
-            var result = RemoveDocumentContext.Remove(request.DocumentID);
+            var result = RemoveDocumentContext.Remove(request.DocumentID, request.SalesforceID);
 
             return Ok(new
             {
@@ -62,7 +62,8 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new
                 {
                     success = false,
-                    message = BadIDKey
+                    message = BadIDKey,
+                    salesforceid = string.Empty
                 });
             }
 
@@ -74,7 +75,8 @@ namespace Informa.Web.Areas.Account.Controllers
             return Ok(new
             {
                 success = result.Success,
-                message = result.Message
+                message = result.Message,
+                salesforceid = result.SalesforceId
             });
         }
     }

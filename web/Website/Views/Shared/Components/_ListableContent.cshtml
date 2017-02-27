@@ -11,6 +11,7 @@
 	 	class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
         data-pop-out-type="sign-in"
         data-bookmark-id="@Model.ID"
+        data-salesforce-id="@Model.SalesforceId"
         @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
 		data-analytics='{
 			"bookmark": "true",

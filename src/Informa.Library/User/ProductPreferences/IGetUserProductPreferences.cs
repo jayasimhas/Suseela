@@ -4,6 +4,6 @@ namespace Informa.Library.User.ProductPreferences
 {
     public interface IGetUserProductPreferences
     {
-        T GetProductPreferences<T>(IAuthenticatedUser user, string publicationCode, ProductPreferenceType type);
+        T GetProductPreferences<T>(IAuthenticatedUser user, string verticle, string publicationCode, ProductPreferenceType type);
     }
 }

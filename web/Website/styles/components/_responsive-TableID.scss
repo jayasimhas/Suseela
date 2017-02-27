@@ -219,3 +219,38 @@
     float: right;
 
 }
+#tankerPureChemPage {
+	border: none;
+	.R16 {
+		height: 2.5rem;
+	}
+	.year_heading {
+		height: 5em !important;
+		div {
+			background: transparent;
+		}
+		.sub-item {
+			margin-top: 0.5rem;
+		}
+	}
+	.sub-item {
+		width: 50%;
+		float: left;
+	}
+}
+.theme-table {
+	margin-bottom: 1rem;	
+	.pad-10 {
+		padding: 10px !important;
+	}
+	thead {
+		tr:first-child th {
+			text-align: left !important;
+			border-bottom: 1px solid $color-white;
+		}
+		tr th {
+			border-bottom: 1px solid $color-white;
+		}
+	}
+
+}

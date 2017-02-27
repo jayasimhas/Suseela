@@ -213,11 +213,12 @@ $(function () {
 		lableStatus = thead.find('.lableStatus').val();
 		thead.find('.mtp').addClass('hideBtn');
 		thead.find('.mtp.'+ lableStatus).removeClass('hideBtn');
+		thead.removeClass('followbg').addClass('followingbg');
 		
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
             $(tbody.find('.followrow')[i]).attr('draggable', true);
         }
-		curpublicPan.css('border', '1px solid #EE9500');
+		curpublicPan.addClass('active');
         curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
         for (var i = 0; i < $lgfollow.length; i++) {
             $($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
@@ -242,8 +243,9 @@ $(function () {
 		lableStatus = thead.find('.lableStatus').val();
 		thead.find('.mtp').addClass('hideBtn');
 		thead.find('.mtp.' + lableStatus).removeClass('hideBtn'); 
+		thead.removeClass('followingbg').addClass('followbg');
 		
-		curpublicPan.removeAttr('style');
+		curpublicPan.removeClass('active');
         curpublicPan.find('tbody .frow').removeClass('frow');
         for (var i = 0; i < $lgfollowing.length; i++) {
             $($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled');
@@ -291,8 +293,8 @@ $(function () {
 		lableStatus = thead.find('.lableStatus').val();
 		thead.find('.mtp').addClass('hideBtn');
 		thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
-		
-		curpublicPan.css('border', '1px solid #EE9500');
+		thead.removeClass('followbg').addClass('followingbg');
+		curpublicPan.addClass('active');
 		
 		if (trs.hasClass('followingrow')) {
 			$('#validatePriority').val(true);
@@ -335,7 +337,8 @@ $(function () {
         if (trs.length === disabledtrs.length + 1) {
             table.find('.firstrow .lableStatus').val('followlbl');
             table.find('.accordionStatus .lableStatus').val('followlbl');
-			curpublicPan.removeAttr('style');
+			curpublicPan.removeClass('active');
+			thead.removeClass('followingbg').addClass('followbg');
         }
         if (trs.length === trsfollow.length + 1) {
             unfollowAllBtn.addClass('hideBtn');
@@ -438,15 +441,16 @@ $(function () {
 					var curthead = $(allthead[i]), getlableStatus = curthead.find('.lableStatus').val();
 					curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
 				}
-				pPan.find('.sorting_arrow--up').addClass('hide');
-				pPan.find('.sorting_arrow--down').removeClass('hide');
-				pPan.removeAttr('style');
+				allPublications.find('.sorting_arrow--up').removeClass('act').addClass('hide');
+				allPublications.find('.sorting_arrow--down').removeClass('hide');
+				pPan.removeClass('active');
 				var position = $this.closest('.publicationPan').position();
 				$(window).scrollTop(position.top); 
 			}
 			else {
 				allPublications.find('tbody').addClass('tbodyhidden');
-				allPublications.find('.publicationPan .accordionImg span').removeClass('expanded');
+				allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--up').removeClass('act').addClass('hide');
+				allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--down').removeClass('hide');
 				allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
 				allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 				thead.find('tr').removeClass('hidden');
@@ -456,24 +460,23 @@ $(function () {
 				flwBtn.addClass('hideRow');
 				flwlbl.removeClass('hideRow');
 				
-				pPan.find('.sorting_arrow--up').removeClass('hide');
+				pPan.find('.sorting_arrow--up').addClass('act').removeClass('hide');
 				pPan.find('.sorting_arrow--down').addClass('hide');
 				pPan.find('.expandTxt').removeAttr('style');
 				pPan.find('.mvTxt').removeAttr('style');
 				
-				allPublications.find('.publicationPan').removeAttr('style');
+				allPublications.find('.publicationPan').removeClass('active');
 				if(trs.length == disabledtrs.length){
-					pPan.removeAttr('style');
+					pPan.removeClass('active');
 				}
 				else{
 					pPan.addClass('active');
 				}
-				/*for (var i = 0; i < allpubpans.length; i++) {
-					var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val();
-					$('.' + labelVal, allpubpans[i]).removeClass('hideBtn');
+				for(var i = 0; i < allthead.length; i++){
+					var curthead = $(allthead[i]), getlableStatus = curthead.find('.lableStatus').val();
+					curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
 				}
-				thead.find('.mtp').addClass('hideBtn');*/
-
+				
 				var position = $this.closest('.publicationPan').position();
 				$(window).scrollTop(position.top);
 			}

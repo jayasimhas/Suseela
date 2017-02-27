@@ -14,24 +14,28 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceGetUserProductPreferencesQueryFactory SalesforceGetUserProductPreferencesQueryFactory;
         private readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
         private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
+        private readonly ISalesforceSaveDocumentFactory SalesforceSaveDocumentFactory;
 
         public SalesforceGetUserProductPreferences(ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserProductPreferencesQueryFactory salesforceGetUserProductPreferencesQueryFactory,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
-            ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory)
+            ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
+            ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserProductPreferencesQueryFactory = salesforceGetUserProductPreferencesQueryFactory;
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
+            SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
         }
-        public T GetProductPreferences<T>(IAuthenticatedUser user, string publicationCode, ProductPreferenceType type)
+        public T GetProductPreferences<T>(IAuthenticatedUser user, string verticle, string publicationCode, ProductPreferenceType type)
         {
             if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.AccessToken)
-                && !string.IsNullOrWhiteSpace(publicationCode) && type != ProductPreferenceType.None)
+                && !string.IsNullOrWhiteSpace(publicationCode) && !string.IsNullOrWhiteSpace(verticle) &&
+                type != ProductPreferenceType.None)
             {
                 var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
-                      user.Username, publicationCode, type);
+                      user.Username, verticle, publicationCode, type);
                 if (!string.IsNullOrWhiteSpace(query))
                 {
                     using (var client = new HttpClient())
@@ -54,6 +58,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 else if (type == ProductPreferenceType.PersonalPreferences)
                                 {
                                     return (T)SalesforceContentPreferencesFactory.Create(productPreferences);
+                                }
+                                if(type == ProductPreferenceType.SavedDocuments)
+                                {
+                                    return (T)SalesforceSaveDocumentFactory.Create(productPreferences);
                                 }
                             }
                         }

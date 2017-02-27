@@ -160,5 +160,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             }
             return userPreferences;
         }
+
+
+        public AddProductPreferenceRequest Create(string Username, string accessToken, string verticalname, string documentId, string documentDescription, string documentName)
+        {         
+            return null;
+        }
     }
 }

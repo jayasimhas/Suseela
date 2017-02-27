@@ -90,6 +90,7 @@ namespace Informa.Web.ViewModels.Articles
                 model.PageTitle = company.Title;
             }
 
+            model.SalesforceId = IsSavedDocumentContext.GetSalesforceId(article._Id);
             return model;
         }
 
