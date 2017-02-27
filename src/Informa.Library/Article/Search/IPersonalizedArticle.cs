@@ -27,6 +27,7 @@ namespace Informa.Library.Article.Search
         string BookmarkText { get; }
         string BookmarkedText { get; }
         Guid ID { get; }
+        string SalesforceId { get; }
     }
 
     public class Linkable : ILinkable
