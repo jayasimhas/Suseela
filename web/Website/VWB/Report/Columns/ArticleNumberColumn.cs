@@ -1,99 +1,138 @@
-﻿using System.Web.UI.WebControls;
+﻿using System;
+using System.Web.UI.WebControls;
+using Elsevier.Library.CustomItems.Publication.General;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
+using Sitecore.Links;
+using System.Web;
 
 namespace Elsevier.Web.VWB.Report.Columns
 {
     public class ArticleNumberColumn : IVwbColumn
-	{
-		#region IVwbColumn Members
+    {
+        #region IVwbColumn Members
 
-		public int Compare(ArticleItemWrapper x, ArticleItemWrapper y)
-		{
-			return x.ArticleNumber.CompareTo(y.ArticleNumber);
-		}
+        public int Compare(ArticleItemWrapper x, ArticleItemWrapper y)
+        {
+            return x.ArticleNumber.CompareTo(y.ArticleNumber);
+        }
 
-		public string GetHeader()
-		{
-			return "Article Number";
-		}
+        public string GetHeader()
+        {
+            return "Article Number";
+        }
 
-		string IVwbColumn.Key()
-		{
-			return Key();
-		}
+        string IVwbColumn.Key()
+        {
+            return Key();
+        }
 
-		public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
-		{
-			var tc = new TableCell();
-			string url = GetDownloadLink(articleItemWrapper.InnerItem);
-			if (url != "")
-			{
-				url += "?sc_mode=preview" + string.Format("&ts={0}", System.DateTime.Now.ToString("yyyyMMddHHmmss"));
-				var hlink = new HyperLink();
-                //if (HttpContext.Current.Request.IsSecureConnection)
-                //{
-                //    //url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http", "https");
-                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url.Replace("http", "https");
-                //}
-                //else
-                //{
-                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url;
-                //}
-                hlink.Attributes.Add("href", url);
-				hlink.Attributes.Add("target", "_blank");
-				hlink.Text = articleItemWrapper.ArticleNumber;
+        public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
+        {
+            var tc = new TableCell();
+            if (!string.IsNullOrEmpty(articleItemWrapper.ArticleNumber))
+            {
+                var label = new Label { Text = articleItemWrapper.ArticleNumber };
+                tc.Controls.Add(label);
 
-				var img = new Image {ImageUrl = "/VWB/images/vwb/wordicon.png"};
-				img.Attributes.Add("align", "absmiddle");
-				img.Attributes.Add("width", "16");
-				img.Attributes.Add("height", "16");
-				img.Attributes.Add("alt", "Hyperlink");
+                var CMShlink = new HyperLink();
+                CMShlink = GetArticleItemLink(articleItemWrapper);
+                if (CMShlink != null)
+                {
+                    //CMShlink.Attributes.Add("href", CMShlink.);
+                    //CMShlink.Attributes.Add("target", "_blank");
+                    var imgCMS = new Image { ImageUrl = "/VWB/images/vwb/cmsicon.png" };
+                    imgCMS.Attributes.Add("align", "absmiddle");
+                    imgCMS.Attributes.Add("width", "16");
+                    imgCMS.Attributes.Add("height", "16");
+                    imgCMS.Attributes.Add("alt", "CmsItem");
 
-				var label = new Label {Text = articleItemWrapper.ArticleNumber};
+                    CMShlink.Controls.Add(imgCMS);
+                    tc.Controls.Add(CMShlink);
+                }
 
-				hlink.Controls.Add(img);
-				hlink.Controls.Add(label);
-				tc.Controls.Add(hlink);
-			}
-			else
-			{
-				tc.Text = articleItemWrapper.ArticleNumber;
-			}			
-	
-			return tc;
-		}
+                string Wordurl = GetDownloadLink(articleItemWrapper.InnerItem);
+                if (Wordurl != "")
+                {
+                    Wordurl += "?sc_mode=preview" + string.Format("&ts={0}", System.DateTime.Now.ToString("yyyyMMddHHmmss"));
+                    var hlink = new HyperLink();
+                    //if (HttpContext.Current.Request.IsSecureConnection)
+                    //{
+                    //    //url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http", "https");
+                    //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url.Replace("http", "https");
+                    //}
+                    //else
+                    //{
+                    //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url;
+                    //}
+                    hlink.Attributes.Add("href", Wordurl);
+                    hlink.Attributes.Add("target", "_blank");                 
 
-		public static string Key()
-		{
-			return "an";
-		}
+                    var imgWord = new Image { ImageUrl = "/VWB/images/vwb/wordicon.png" };
+                    imgWord.Attributes.Add("align", "absmiddle");
+                    imgWord.Attributes.Add("width", "16");
+                    imgWord.Attributes.Add("height", "16");
+                    imgWord.Attributes.Add("alt", "Hyperlink");
 
-		protected string GetDownloadLink(Item articleBaseItem)
-		{
-		    Database masterDb = Factory.GetDatabase("master");
+                    hlink.Controls.Add(imgWord);
+                    tc.Controls.Add(hlink);
+                }
+            }
+            return tc;
+        }
+
+        private HyperLink GetArticleItemLink(ArticleItemWrapper articleItemWrapper, bool isMobile = false)
+        {
+            // return articleBaseItem != null ? LinkManager.GetItemUrl(articleBaseItem) : string.Empty;
+            var link = new HyperLink {/*Text = articleItemWrapper.Title*/};
+            string mobileQueryParam = String.Empty;
+            if (isMobile)
+            {
+                mobileQueryParam = "&mobile=1";
+            }
+            if (HttpContext.Current.Request.IsSecureConnection)
+            {
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToCMS.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
+            }
+            else
+            {
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToCMS.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
+            }
+            link.Attributes.Add("target", "_blank");
+            return link;
+        }
+
+
+        public static string Key()
+        {
+            return "an";
+        }
+
+        protected string GetDownloadLink(Item articleBaseItem)
+        {
+            Database masterDb = Factory.GetDatabase("master");
             IArticle article = articleBaseItem.GlassCast<IArticle>(inferType: true);
 
-		    if (article.Word_Document == null)
-		    {
-		        return string.Empty;
-		    }
+            if (article.Word_Document == null)
+            {
+                return string.Empty;
+            }
 
             Item wordDoc = masterDb.GetItem(article.Word_Document.TargetId.ToString());
-		    if (wordDoc == null)
-		    {
-		        return string.Empty;
-		    }
+            if (wordDoc == null)
+            {
+                return string.Empty;
+            }
 
             string url = MediaManager.GetMediaUrl(wordDoc);
             url = url.Replace("/-/", "/~/");
             return url.Replace("-", " ");
         }
 
-		#endregion
-	}
+        #endregion
+    }
 }

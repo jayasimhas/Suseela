@@ -32,6 +32,7 @@ namespace Elsevier.Web.VWB.Report
         public string IssueDateValue;
         public int WordCount;
         public string PreviewUrl;
+        public string CmsItemUrl;
         public DateTime SAPDateTime;
         public DateTime WebPublicationDateTime;
         public string HomePageCategory;
@@ -77,6 +78,12 @@ namespace Elsevier.Web.VWB.Report
         {
             return HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
         }
+        public string GetCmsItemUrl(string itemId)
+        {
+            Item item = Database.GetDatabase("master").GetItem(itemId);
+            string load = String.Concat(new object[] { "item:load(id=", item.ID, ",language=", item.Language, ",version=", item.Version, ")" });
+            return load;
+        }
 
         public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
         {
@@ -99,6 +106,7 @@ namespace Elsevier.Web.VWB.Report
 
             //TODO
             PreviewUrl = GetPreviewUrl(article._Id.ToString());
+            CmsItemUrl = GetCmsItemUrl(article._Id.ToString());
             ArticleNumber = article.Article_Number;
             if (ArticleNumber == null)
             {
@@ -147,13 +155,13 @@ namespace Elsevier.Web.VWB.Report
 
             if (ra.Any())
                 SidebarArticleNumbers.AddRange(ra);
-            
+
             SidebarArticleNumbers.Sort();
 
             TaxonomyString = (article.Taxonomies != null)
                 ? string.Join(",", article.Taxonomies.Select(t => t.Item_Name))
                 : string.Empty;
-		    
+
             ContentType = "";
 
             if (article.Content_Type != null)

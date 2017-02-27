@@ -28,14 +28,14 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
 
                     item.Fields.ReadAll();
                     var field = item.Fields[IArticleConstants.TitleFieldId];
-                    if (field != null)
+                    if (field != null && !string.IsNullOrEmpty(field.Value))
                     {
                         if (!string.Equals(item.Name, field.Value, StringComparison.OrdinalIgnoreCase))
                         {
                             using (new SecurityDisabler())
                             {
                                 item.Editing.BeginEdit();
-                                item.Name = ItemUtil.ProposeValidItemName(field.Value);
+                                item.Name = ItemUtil.ProposeValidItemName(field.Value.Length > 100 ? new string(field.Value.Take(100).ToArray()) : field.Value);
                                 item.Editing.EndEdit();
                             }
                         }
