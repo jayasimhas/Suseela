@@ -11,5 +11,6 @@ namespace Informa.Web.ViewModels.Articles
 		string BookmarkText { get; }
 		string BookmarkTitle { get; }
 		string BookmarkPublication { get; }
-	}
+        string SalesforceId { get; set; }
+    }
 }
