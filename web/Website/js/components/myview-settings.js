@@ -472,13 +472,11 @@ $(function () {
 				else{
 					pPan.addClass('active');
 				}
-				for (var i = 0; i < allpubpans.length; i++) {
-					var labelVal = $(allpubpans[i]).find('.firstrow .lableStatus').val(),
-					getLabelStatus = (labelVal == 'followingbg') ? 'followingbg' : 'followbg';
-					$(allpubpans[i]).find('thead.hidden-xs').removeClass('followingbg followbg').addClass(getLabelStatus);
+				for(var i = 0; i < allthead.length; i++){
+					var curthead = $(allthead[i]), getlableStatus = curthead.find('.lableStatus').val();
+					curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
 				}
-				//thead.find('.mtp').addClass('hideBtn');
-
+				
 				var position = $this.closest('.publicationPan').position();
 				$(window).scrollTop(position.top);
 			}
