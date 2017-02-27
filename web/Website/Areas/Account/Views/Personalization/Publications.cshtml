@@ -13,6 +13,7 @@
     string unfollowAllButtonClass = string.Empty;
     string tboadyClass = string.Empty;
     bool isFirst = true;
+    string borderClass = string.Empty;
     string collapsedClss = string.Empty;
     string pickAndChooseSectionClass = string.Empty;
     bool IsFollowingAllTopics;
@@ -26,6 +27,8 @@
     string mobileChannelSactionsStatus = string.Empty;
     string pickAndChooseSectionClassMobile = string.Empty;
     string publicationHiddenClass = string.Empty;
+    string bgFollowing = string.Empty;
+    string expanCollap = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
     <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.TopicFollowButtonText" />
@@ -42,6 +45,7 @@
             unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
             tboadyClass = isFirst ? "" : "tbodyhidden";
             collapsedClss = isFirst ? "expanded" : "";
+            borderClass = isFirst && (collapsedClss == "expanded") ? "active" : "";
             pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
             publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
             publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
@@ -49,10 +53,12 @@
             mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
             pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
             publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
+            expanCollap = isFirst ? "expanded" : "collapsed";
             isFirst = false;
+            bgFollowing = IsFollowingAnyTopics ? "followingbg" : NotFollowingAnyTopic ? "followbg" : "";
 
 
-            <div class="publicationPan donesubscribe active" data-row="@channelOrder">
+            <div class="publicationPan donesubscribe @borderClass" data-row="@channelOrder">
                 <div class="table-responsive">
                     <table class="table" id="@channel.ChannelCode">
                         <thead class="hidden-large">
@@ -124,7 +130,7 @@
                             </tr>
 
 
-                            <tr class="graybg">
+                            <tr>
                                 <th colspan="3" class="nopad">
                                     <hr />
                                 </th>
@@ -161,13 +167,13 @@
                                     <div class="smfollowingBtn">
                                         @if (!Model.isFromRegistration)
                                         {
-                                        <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
-                                        <span class="click-utag unfollowAllBtn button--filled button--outline @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn  @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         }
                                         else
                                         {
-                                            <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
-                                            <span class="click-utag unfollowAllBtn button--filled button--outline @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                            <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                            <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         }
                                     </div>
                                 </th>
@@ -177,8 +183,8 @@
                             </tr>
 
                         </thead>
-                        <thead class="hidden-xs">
-                            <tr class="expanded">
+                        <thead class="hidden-xs @bgFollowing">
+                            <tr class="@expanCollap"> 
                                 <th class="wd-55 firstrow">
                                     <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
                                     @if (!channel.IsSubscribed)
@@ -214,7 +220,27 @@
                                     {
                                         <div class="accordionImg">
                                             <span class="expandTxt">Expand</span>
-                                            <span class="desktopMode accImg @collapsedClss" href="javascript: void(0);"></span>
+                                            <span class="desktopMode accImg @collapsedClss" href="javascript: void(0);">
+                                                @if (collapsedClss == "expanded")
+                                                {
+                                                    <svg class="sorting_arrow--up">
+                                                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use>
+                                                    </svg>
+                                                    <svg class="sorting_arrow--down hide">
+                                                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use>
+                                                    </svg>
+                                                }
+                                                else
+                                                {
+                                                    <svg class="sorting_arrow--up hide">
+                                                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use>
+                                                    </svg>
+                                                    <svg class="sorting_arrow--down">
+                                                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use>
+                                                    </svg>
+                                                }
+
+                                            </span>
                                         </div>
                                         <div class="mvTxt">Move</div>
 
