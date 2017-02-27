@@ -561,7 +561,7 @@
 		.topic-featured-article__image{  
 			width: 17.5rem !important;
 			height: 10rem !important;
-			@include breakpoint('medium-small') {
+			@include breakpoint('medium') {
 				margin: 0px;
 			}
 		}

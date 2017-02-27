@@ -6439,7 +6439,7 @@ main .advertising--leaderboard.visible-desktop {
     width: 17.5rem !important;
     height: 160px !important;
     height: 10rem !important; }
-    @media (max-width: 640px) {
+    @media (max-width: 800px) {
       .listView .topic-article-image_pan .topic-featured-article__image {
         margin: 0px; } }
 
