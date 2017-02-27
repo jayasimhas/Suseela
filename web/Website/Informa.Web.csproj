@@ -1423,13 +1423,6 @@
       <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VWB\Util\LoginRedirectToCMS.aspx.cs">
-      <DependentUpon>LoginRedirectToCMS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VWB\Util\LoginRedirectToCMS.aspx.designer.cs">
-      <DependentUpon>LoginRedirectToCMS.aspx</DependentUpon>
-    </Compile>
     <Compile Include="VWB\Util\LoginRedirectToPreview.aspx.cs">
       <DependentUpon>LoginRedirectToPreview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1984,7 +1977,6 @@
     <Content Include="VWB\Scripts\selected-articles.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
-    <Content Include="VWB\Util\LoginRedirectToCMS.aspx" />
     <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />

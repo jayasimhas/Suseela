@@ -37,7 +37,6 @@ namespace Elsevier.Web.VWB.Report.Columns
             if (!string.IsNullOrEmpty(articleItemWrapper.ArticleNumber))
             {
                 var label = new Label { Text = articleItemWrapper.ArticleNumber };
-                tc.Controls.Add(label);
 
                 var CMShlink = new HyperLink();
                 CMShlink = GetArticleItemLink(articleItemWrapper);
@@ -70,7 +69,7 @@ namespace Elsevier.Web.VWB.Report.Columns
                     //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url;
                     //}
                     hlink.Attributes.Add("href", Wordurl);
-                    hlink.Attributes.Add("target", "_blank");                 
+                    hlink.Attributes.Add("target", "_blank");
 
                     var imgWord = new Image { ImageUrl = "/VWB/images/vwb/wordicon.png" };
                     imgWord.Attributes.Add("align", "absmiddle");
@@ -81,6 +80,7 @@ namespace Elsevier.Web.VWB.Report.Columns
                     hlink.Controls.Add(imgWord);
                     tc.Controls.Add(hlink);
                 }
+                tc.Controls.Add(label);
             }
             return tc;
         }
@@ -96,11 +96,11 @@ namespace Elsevier.Web.VWB.Report.Columns
             }
             if (HttpContext.Current.Request.IsSecureConnection)
             {
-                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToCMS.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
             }
             else
             {
-                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToCMS.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.CmsItemUrl + mobileQueryParam));
             }
             link.Attributes.Add("target", "_blank");
             return link;

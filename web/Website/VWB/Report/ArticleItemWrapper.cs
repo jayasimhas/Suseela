@@ -80,8 +80,7 @@ namespace Elsevier.Web.VWB.Report
         }
         public string GetCmsItemUrl(string itemId)
         {
-            Item item = Database.GetDatabase("master").GetItem(itemId);
-            string load = String.Concat(new object[] { "item:load(id=", item.ID, ",language=", item.Language, ",version=", item.Version, ")" });
+            string load = "/sitecore/shell/Applications/Content%20Manager/Default.aspx?fo=" + itemId + "&sc_lang=en";
             return load;
         }
 
