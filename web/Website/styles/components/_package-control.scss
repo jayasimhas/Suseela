@@ -27,6 +27,12 @@
 					max-width: 85px;
 					text-overflow: ellipsis;
 				}
+				&:last-child{
+					right: 0;
+					float: right;
+					position: absolute;
+					margin-right: 0;
+				}
 			}
 		}
 		@include breakpoint('large') {
@@ -67,6 +73,7 @@
 		margin-bottom: 2rem;
 	}
 		.package-control-preview {
+			position: relative;
 			width: 25%;
 			margin: 0;
 			padding: 0 0.625rem;
@@ -91,13 +98,13 @@
 				}
 				.article-preview__byline {
 					float: left;
-					margin-top: 10px;
 					@include breakpoint('small') {
 						float: none;
 					}
 				}
 				.article-metadata {
-					float: right;
+					margin-top:0;
+					margin-bottom: 1rem;
 					@include breakpoint('small') {
 						float: none;
 					}
@@ -139,7 +146,6 @@
 		}
 }
 .package-control-articles__half {
-	
 
 		.header-line-control {
 			width: 100%;
@@ -180,7 +186,7 @@
 				.article-preview__byline {
 					float: none;
 				}
-						}
+			}
 			.article-preview__inner-wrapper{
 				position: relative;
 				.article-metadata li{
