@@ -10118,6 +10118,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 32px;
   margin-bottom: 2rem; }
   .package-control-articles__fullContent .package-wrapper {
+    padding-bottom: 32px;
+    padding-bottom: 2rem;
     margin: 0 -10px;
     margin: 0 -0.625rem;
     display: -webkit-box;
@@ -10167,6 +10169,10 @@ div#feedbacklite.fbl_r {
       z-index: 9;
       padding-right: 20px;
       padding-right: 1.25rem; }
+
+.package-wrapper:after {
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
 
 .package-wrapper .package-control-preview {
   width: 25%;
@@ -10309,6 +10315,16 @@ div#feedbacklite.fbl_r {
 
 .article-left-rail .article-body-content .article-call-to-action {
   clear: both; }
+
+.moreText {
+  text-align: right;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  font-family: Roboto;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 19px; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
@@ -14088,7 +14104,7 @@ main {
 .theme-pink-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-pink-sheet .package-wrapper {
+.theme-pink-sheet .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-pink-sheet .article-interview__question:before {
@@ -14427,7 +14443,7 @@ main {
 .theme-rose-sheet .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-rose-sheet .package-wrapper {
+.theme-rose-sheet .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-rose-sheet .article-interview__question:before {
@@ -14766,7 +14782,7 @@ main {
 .theme-medtech .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-medtech .package-wrapper {
+.theme-medtech .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-medtech .article-interview__question:before {
@@ -15105,7 +15121,7 @@ main {
 .theme-invivo .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-invivo .package-wrapper {
+.theme-invivo .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-invivo .article-interview__question:before {
@@ -15444,7 +15460,7 @@ main {
 .theme-commodities .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-commodities .package-wrapper {
+.theme-commodities .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-commodities .article-interview__question:before {
@@ -15779,7 +15795,7 @@ main {
 .theme-insurance-day .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-insurance-day .package-wrapper {
+.theme-insurance-day .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-insurance-day .article-interview__question:before {
@@ -16151,7 +16167,7 @@ main {
 .theme-lloydslist .header-line-control:after {
   border: 2px solid #DE4361; }
 
-.theme-lloydslist .package-wrapper {
+.theme-lloydslist .package-control-articles__wrapper {
   border-bottom: 4px solid #DE4361; }
 
 .theme-lloydslist .article-interview__question:before {
