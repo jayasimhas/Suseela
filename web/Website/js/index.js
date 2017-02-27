@@ -1266,7 +1266,10 @@ $(document).ready(function(){
     });
 	
 	//IPMP-1760
+	if($( ".article-body-content aside:first" ).hasClass('article-inline-image')){
 	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
-    
+    }else{
+	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
+	}
    
 });
