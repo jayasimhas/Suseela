@@ -10263,6 +10263,10 @@ div#feedbacklite.fbl_r {
         width: 100%; } }
   .package-control-articles__half .package-control-preview:first-child .article-preview__byline {
     float: none; }
+  .package-control-articles__half .package-control-preview .article-preview__inner-wrapper .article-metadata li:last-child {
+    right: 0;
+    float: right;
+    position: absolute; }
   .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title {
     font-family: Roboto;
     font-size: 20px;

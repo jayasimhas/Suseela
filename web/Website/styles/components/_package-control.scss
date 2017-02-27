@@ -175,6 +175,16 @@
 				float: none;
 			}
 					}
+		.article-preview__inner-wrapper{
+			position: relative;
+			.article-metadata li{
+				&:last-child {
+					right:0;
+					float: right;
+					position: absolute;
+				}
+			}
+		}	
 		.package-heading-wrapper {
 			h3.article-preview__headline {
 				&:first-child {			
