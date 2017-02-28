@@ -93,7 +93,9 @@
 		padding: 0 1rem;
 		margin-left: 0.5rem;
 		border: 1px solid #ADADAD;
-		float: none;
+		@media screen and (min-width: 600px){
+			float: none;
+		}
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
@@ -228,7 +230,7 @@
 		h2{
 			text-align: left;
 			float: left;
-			width: 20rem; 
+			width: 26.25rem; 
 			color: #58595B;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
@@ -255,17 +257,17 @@
 				margin: 0rem;
 			}
 			a{
-				border-left: 1px solid #d9dadb;
+				//border-left: 1px solid #d9dadb;
 				float: left;
 				cursor: pointer;
-				padding-left: 1.25rem;
+				//padding-left: 1.25rem;
 				vertical-align: middle; 
 				position: relative; 
-				color: #58595b;
+				color: #58595B;
 				text-transform: uppercase;
 				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
-					//text-decoration: none;
+					color: #58595B;
 				}
 			} 
 		}
@@ -375,7 +377,7 @@
 					}
 				 } 
 			}
-			thead{				
+			thead{ 
 				&.followbg{
 					background: #f9f9f9;
 					.expandTxt{
@@ -400,6 +402,17 @@
 					}
 				}
 				tr{
+					&.expanded{
+						@media screen and (min-width: 800px){
+							h2{
+								font-size: 30px !important;
+								color: #000;
+							}
+							.subscribed a{
+								font-size: 17px !important;
+							} 
+						}
+					} 
 					@include breakpoint('small') {
 						&.expandHide{
 							display: none;
@@ -413,11 +426,16 @@
 				&.followinglbl-txt{
 					.collapsed{
 						.active{
-							background: #fff5ed;
+							@media screen and (min-width: 1025px){
+								background: #fff5ed;
+							}
 						}
 					}
 				}
 				th{
+					@media screen and (max-width: 600px){
+						background: #f9f9f9;
+					}
 					@include tableData(0px);
 					@include breakpoint('small') {
 						padding: 0.5rem 0rem 0.625rem 0.625rem;
@@ -464,9 +482,9 @@
 						@include textMix('Roboto Condensed', 0.875rem, 400);
 						visibility: hidden;
 						float: left;
-						width: 60px;
+						width: 50px;
 						text-transform: uppercase;
-						text-align: right;
+						text-align: right; 
 						color: #f7941e;
 						@media screen and (min-width: 768px) and (max-width: 1024px){
 							display: none;
@@ -515,10 +533,16 @@
 							width: 30px;
 						} 
 					} 
-					& .accordionImg{
-						width: 120px;
+					 .accordionImg{
+						@media screen and (min-width: 600px){
+							width: 120px;
+						}
 						float: left;
 						text-align: right;
+						.mobileMode { 
+							height: 1.0625rem;
+							width: 2rem;
+						}
 						.expandTxt{
 							visibility: hidden;
 							float: left;
@@ -532,7 +556,9 @@
 						}
 						span.accImg{
 							float: left;
-							margin-top: -15px;
+							@media screen and (min-width: 600px){
+								margin-top: -15px;
+							}
 							position: relative;
 							top: 8px;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
@@ -664,6 +690,7 @@
 		    height: auto;
 		    float: left;
 		    margin: 0;
+			padding: 0px;
 		    a {
 		    	padding: 0;
 		    }
@@ -726,7 +753,10 @@
 		padding: 4.375rem 2.5rem 2.5rem;
 		display: none;
 		font-family: "Roboto";
-
+		@media screen and (max-width: 480px){
+			width: 21.875rem;
+			margin-left: -10.9375rem;
+		}
 		&.preferences{
 			h3{ 
 				@include textMix('Roboto', 1rem, 700);
@@ -757,7 +787,7 @@
 				float: left;
 				width: 8.125rem;
 				height: 2rem;
-				color: #fff;
+				color: #f8;
 				margin-right: 20px;
 			}
 			.registrationBtn.validationChk{
@@ -866,10 +896,17 @@
 		}
 	}
 }
-@media screen and (min-width: 768px) and (max-width: 1024px){
+@media screen and (min-width: 800px) and (max-width: 1024px){
 	.myview-settings{
 		.firstrow h2{
-			width: 13rem;
+			width: 20.625rem;
+		}
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 768px){
+	.myview-settings{
+		.firstrow h2{
+			width: 10rem;
 		}
 	}
 }
@@ -901,7 +938,7 @@
 	.myview-settings{ 
 		.smfollowingBtn{
 			margin-top: -0.5rem;
-			
+
 			.unfollowAllBtn{
 				background-position: -3px -236px;
 				text-indent: -8.75rem;
@@ -1037,13 +1074,20 @@
 		.followinglbl-txt{
 			.collapsed{
 				.active{
-					background: $mobg !important;
+					@media screen and (min-width: 1025px){
+						background: $mobg !important;
+					}
 				}
 			}
 		}
 		.sorting_arrow--down{ 
 			&.act{
 				fill: $tc !important;
+			}
+		}
+		.subscribed{
+			a:hover{
+				color: $tc;
 			}
 		}
 		.table{
@@ -1121,12 +1165,11 @@
 }
 
 .theme-lloydslist{
-	@include apply-theme(#0f5487, #1191D1, #cedce6);
-	
+	@include apply-theme(#1191D1, #1191D1, #e7f4fa);
 }
 .theme-insurance-day{
-	@include apply-theme(#b0173d, #DE4361, #efd0d8);
+	@include apply-theme(#DE4361, #DE4361, #fcecef);
 }
 .theme-commodities{
-	@include apply-theme(#F5821F, #9E310D, #FFF5ED);
+	@include apply-theme(#F5821F, #F5821F, #FFF5ED);
 }

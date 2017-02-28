@@ -4657,10 +4657,12 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 1rem;
     margin-left: 8px;
     margin-left: 0.5rem;
-    border: 1px solid #ADADAD;
-    float: none; }
+    border: 1px solid #ADADAD; }
     .myview-settings .unfollowAllBtn.mtp {
       margin-top: 0px; }
+    @media screen and (min-width: 600px) {
+      .myview-settings .unfollowAllBtn {
+        float: none; } }
     @media (max-width: 640px) {
       .myview-settings .unfollowAllBtn {
         min-width: initial;
@@ -4837,8 +4839,8 @@ main .action-flags-bar, main .banner--highlights {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 320px;
-      width: 20rem;
+      width: 420px;
+      width: 26.25rem;
       color: #58595B; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
@@ -4871,19 +4873,18 @@ main .action-flags-bar, main .banner--highlights {
           margin: 0px;
           margin: 0rem; } }
       .myview-settings .publicationPan .subscribed a, .myview-settings .publicationPan .subscribed .pop-out__reset-password, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler, .myview-settings .publicationPan .subscribed .mobile-table-exit {
-        border-left: 1px solid #d9dadb;
         float: left;
         cursor: pointer;
-        padding-left: 20px;
-        padding-left: 1.25rem;
         vertical-align: middle;
         position: relative;
-        color: #58595b;
+        color: #58595B;
         text-transform: uppercase;
         font-family: "Roboto Condensed", Arial Narrow, sans-serif;
         font-size: 14px;
         font-size: 0.875rem;
         font-weight: 700; }
+        .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
+          color: #58595B; }
     .myview-settings .publicationPan .subscribe {
       float: left;
       width: 120px;
@@ -5029,13 +5030,20 @@ main .action-flags-bar, main .banner--highlights {
           background: #f7941e; }
         .myview-settings .table-responsive .table thead.followingbg .hideinDesk {
           background: url(/dist/img/drag-icon.jpg) no-repeat 0 -51px; }
+      @media screen and (min-width: 800px) {
+        .myview-settings .table-responsive .table thead tr.expanded h2, .myview-settings .table-responsive .table thead tr.expanded .article-topics__header {
+          font-size: 30px !important;
+          color: #000; }
+        .myview-settings .table-responsive .table thead tr.expanded .subscribed a, .myview-settings .table-responsive .table thead tr.expanded .subscribed .pop-out__reset-password, .myview-settings .table-responsive .table thead tr.expanded .subscribed .sortable-table__list-toggler, .myview-settings .table-responsive .table thead tr.expanded .subscribed .mobile-table-exit {
+          font-size: 17px !important; } }
       @media (max-width: 480px) {
         .myview-settings .table-responsive .table thead tr.expandHide {
           display: none; }
           .myview-settings .table-responsive .table thead tr.expandHide.collapseshow {
             display: block !important; } }
-      .myview-settings .table-responsive .table thead.followinglbl-txt .collapsed .active {
-        background: #fff5ed; }
+      @media screen and (min-width: 1025px) {
+        .myview-settings .table-responsive .table thead.followinglbl-txt .collapsed .active {
+          background: #fff5ed; } }
       .myview-settings .table-responsive .table thead th {
         padding: 12px 20px;
         padding: 0.75rem 1.25rem;
@@ -5043,6 +5051,9 @@ main .action-flags-bar, main .banner--highlights {
         line-height: 1.5rem;
         vertical-align: top;
         border-top: 0px solid #ddd; }
+        @media screen and (max-width: 600px) {
+          .myview-settings .table-responsive .table thead th {
+            background: #f9f9f9; } }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px;
@@ -5093,7 +5104,7 @@ main .action-flags-bar, main .banner--highlights {
           font-weight: 400;
           visibility: hidden;
           float: left;
-          width: 60px;
+          width: 50px;
           text-transform: uppercase;
           text-align: right;
           color: #f7941e; }
@@ -5157,9 +5168,16 @@ main .action-flags-bar, main .banner--highlights {
               height: 30px;
               width: 30px; } }
         .myview-settings .table-responsive .table thead th .accordionImg {
-          width: 120px;
           float: left;
           text-align: right; }
+          @media screen and (min-width: 600px) {
+            .myview-settings .table-responsive .table thead th .accordionImg {
+              width: 120px; } }
+          .myview-settings .table-responsive .table thead th .accordionImg .mobileMode {
+            height: 17px;
+            height: 1.0625rem;
+            width: 32px;
+            width: 2rem; }
           .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
             visibility: hidden;
             float: left;
@@ -5175,7 +5193,6 @@ main .action-flags-bar, main .banner--highlights {
                 display: none; } }
           .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
             float: left;
-            margin-top: -15px;
             position: relative;
             top: 8px;
             /*background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
@@ -5183,6 +5200,9 @@ main .action-flags-bar, main .banner--highlights {
 							width: 12px;*/
             cursor: pointer;
             display: inline-block; }
+            @media screen and (min-width: 600px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-top: -15px; } }
             @media screen and (min-width: 768px) and (max-width: 1024px) {
               .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
                 margin-left: 10px; } }
@@ -5321,7 +5341,8 @@ main .action-flags-bar, main .banner--highlights {
           width: 50%;
           height: auto;
           float: left;
-          margin: 0; }
+          margin: 0;
+          padding: 0px; }
           .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
             padding: 0; } }
     .myview-settings .saveoption .complete-settings {
@@ -5409,6 +5430,12 @@ main .action-flags-bar, main .banner--highlights {
     padding: 4.375rem 2.5rem 2.5rem;
     display: none;
     font-family: "Roboto"; }
+    @media screen and (max-width: 480px) {
+      .myview-settings .modal-view {
+        width: 350px;
+        width: 21.875rem;
+        margin-left: -175px;
+        margin-left: -10.9375rem; } }
     .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 16px;
@@ -5455,7 +5482,7 @@ main .action-flags-bar, main .banner--highlights {
       width: 8.125rem;
       height: 32px;
       height: 2rem;
-      color: #fff;
+      color: #f8;
       margin-right: 20px; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
       border: 1px solid #f7941e;
@@ -5554,10 +5581,15 @@ main .action-flags-bar, main .banner--highlights {
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
     width: auto; } }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 800px) and (max-width: 1024px) {
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
-    width: 208px;
-    width: 13rem; } }
+    width: 330px;
+    width: 20.625rem; } }
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+  .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
+    width: 160px;
+    width: 10rem; } }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
   .myview-settings .desktopMode {
@@ -5640,14 +5672,14 @@ main .action-flags-bar, main .banner--highlights {
     border: 1px solid #1191D1; }
   @media screen and (min-width: 480px) {
     .theme-lloydslist .myview-settings .followingBtn {
-      background: #0f5487;
-      border: 1px solid #0f5487; }
+      background: #1191D1;
+      border: 1px solid #1191D1; }
       .theme-lloydslist .myview-settings .followingBtn:hover {
         background: #a7a7a7;
         border: 1px solid #a7a7a7; } }
   .theme-lloydslist .myview-settings .followBtn:hover {
-    background: #0f5487;
-    border: 1px solid #0f5487; }
+    background: #1191D1;
+    border: 1px solid #1191D1; }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5666,53 +5698,56 @@ main .action-flags-bar, main .banner--highlights {
       height: 0.125rem;
       width: 21px;
       width: 1.3125rem;
-      background: #0f5487 !important;
+      background: #1191D1 !important;
       display: block;
       margin-bottom: 3px; }
   .theme-lloydslist .myview-settings .followingrow:hover {
-    background: #cedce6 !important; }
+    background: #e7f4fa !important; }
   .theme-lloydslist .myview-settings .followingbg .sorting_arrow--up.act {
-    fill: #0f5487 !important; }
+    fill: #1191D1 !important; }
   .theme-lloydslist .myview-settings .followingbg .expandTxt {
-    color: #0f5487 !important; }
+    color: #1191D1 !important; }
   .theme-lloydslist .myview-settings .followingbg .rowlines .mv {
-    background: #0f5487 !important; }
+    background: #1191D1 !important; }
   .theme-lloydslist .myview-settings .followinglbl, .theme-lloydslist .myview-settings .mvTxt {
-    color: #0f5487 !important; }
+    color: #1191D1 !important; }
   .theme-lloydslist .myview-settings .followAllBtn {
-    color: #0f5487; }
+    color: #1191D1; }
   .theme-lloydslist .myview-settings .gotoview a, .theme-lloydslist .myview-settings .gotoview .pop-out__reset-password, .theme-lloydslist .myview-settings .gotoview .sortable-table__list-toggler, .theme-lloydslist .myview-settings .gotoview .mobile-table-exit {
-    color: #0f5487 !important;
-    border: 1px solid #0f5487 !important; }
+    color: #1191D1 !important;
+    border: 1px solid #1191D1 !important; }
     .theme-lloydslist .myview-settings .gotoview a:hover, .theme-lloydslist .myview-settings .gotoview .pop-out__reset-password:hover, .theme-lloydslist .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-lloydslist .myview-settings .gotoview .mobile-table-exit:hover {
       color: #fff !important; }
-  .theme-lloydslist .myview-settings .followinglbl-txt .collapsed .active {
-    background: #cedce6 !important; }
+  @media screen and (min-width: 1025px) {
+    .theme-lloydslist .myview-settings .followinglbl-txt .collapsed .active {
+      background: #e7f4fa !important; } }
   .theme-lloydslist .myview-settings .sorting_arrow--down.act {
-    fill: #0f5487 !important; }
+    fill: #1191D1 !important; }
+  .theme-lloydslist .myview-settings .subscribed a:hover, .theme-lloydslist .myview-settings .subscribed .pop-out__reset-password:hover, .theme-lloydslist .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-lloydslist .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #1191D1; }
   .theme-lloydslist .myview-settings .table span {
     fill: #1191D1; }
     .theme-lloydslist .myview-settings .table span.button--outline {
       border: 1px solid #1191D1; }
       .theme-lloydslist .myview-settings .table span.button--outline:hover {
-        border: 1px solid #0f5487; }
+        border: 1px solid #1191D1; }
     .theme-lloydslist .myview-settings .table span.button--filled, .theme-lloydslist .myview-settings .table span.pop-out__register-submit, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit {
       color: #fff; }
       .theme-lloydslist .myview-settings .table span.button--filled:hover, .theme-lloydslist .myview-settings .table span.pop-out__register-submit:hover, .theme-lloydslist .myview-settings .table span.pop-out__sign-in-submit:hover {
-        border: 1px solid #0f5487; }
+        border: 1px solid #1191D1; }
   .theme-lloydslist .drop {
     -webkit-animation: drop 1s ease;
     animation: drop 1s ease; }
   .theme-lloydslist .followingrow.over {
-    background: #0f5487; }
+    background: #1191D1; }
 
 @-webkit-keyframes "drop" {
   0%, 100% {
-    background: #0f5487;
+    background: #1191D1;
     color: #ffffff; }
   50% {
-    color: #0f5487;
-    background: #0f5487; } }
+    color: #1191D1;
+    background: #1191D1; } }
 
 .theme-insurance-day {
   /************ drag and drop styles ***********/ }
@@ -5720,14 +5755,14 @@ main .action-flags-bar, main .banner--highlights {
     border: 1px solid #DE4361; }
   @media screen and (min-width: 480px) {
     .theme-insurance-day .myview-settings .followingBtn {
-      background: #b0173d;
-      border: 1px solid #b0173d; }
+      background: #DE4361;
+      border: 1px solid #DE4361; }
       .theme-insurance-day .myview-settings .followingBtn:hover {
         background: #a7a7a7;
         border: 1px solid #a7a7a7; } }
   .theme-insurance-day .myview-settings .followBtn:hover {
-    background: #b0173d;
-    border: 1px solid #b0173d; }
+    background: #DE4361;
+    border: 1px solid #DE4361; }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5746,58 +5781,61 @@ main .action-flags-bar, main .banner--highlights {
       height: 0.125rem;
       width: 21px;
       width: 1.3125rem;
-      background: #b0173d !important;
+      background: #DE4361 !important;
       display: block;
       margin-bottom: 3px; }
   .theme-insurance-day .myview-settings .followingrow:hover {
-    background: #efd0d8 !important; }
+    background: #fcecef !important; }
   .theme-insurance-day .myview-settings .followingbg .sorting_arrow--up.act {
-    fill: #b0173d !important; }
+    fill: #DE4361 !important; }
   .theme-insurance-day .myview-settings .followingbg .expandTxt {
-    color: #b0173d !important; }
+    color: #DE4361 !important; }
   .theme-insurance-day .myview-settings .followingbg .rowlines .mv {
-    background: #b0173d !important; }
+    background: #DE4361 !important; }
   .theme-insurance-day .myview-settings .followinglbl, .theme-insurance-day .myview-settings .mvTxt {
-    color: #b0173d !important; }
+    color: #DE4361 !important; }
   .theme-insurance-day .myview-settings .followAllBtn {
-    color: #b0173d; }
+    color: #DE4361; }
   .theme-insurance-day .myview-settings .gotoview a, .theme-insurance-day .myview-settings .gotoview .pop-out__reset-password, .theme-insurance-day .myview-settings .gotoview .sortable-table__list-toggler, .theme-insurance-day .myview-settings .gotoview .mobile-table-exit {
-    color: #b0173d !important;
-    border: 1px solid #b0173d !important; }
+    color: #DE4361 !important;
+    border: 1px solid #DE4361 !important; }
     .theme-insurance-day .myview-settings .gotoview a:hover, .theme-insurance-day .myview-settings .gotoview .pop-out__reset-password:hover, .theme-insurance-day .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-insurance-day .myview-settings .gotoview .mobile-table-exit:hover {
       color: #fff !important; }
-  .theme-insurance-day .myview-settings .followinglbl-txt .collapsed .active {
-    background: #efd0d8 !important; }
+  @media screen and (min-width: 1025px) {
+    .theme-insurance-day .myview-settings .followinglbl-txt .collapsed .active {
+      background: #fcecef !important; } }
   .theme-insurance-day .myview-settings .sorting_arrow--down.act {
-    fill: #b0173d !important; }
+    fill: #DE4361 !important; }
+  .theme-insurance-day .myview-settings .subscribed a:hover, .theme-insurance-day .myview-settings .subscribed .pop-out__reset-password:hover, .theme-insurance-day .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-insurance-day .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #DE4361; }
   .theme-insurance-day .myview-settings .table span {
     fill: #DE4361; }
     .theme-insurance-day .myview-settings .table span.button--outline {
       border: 1px solid #DE4361; }
       .theme-insurance-day .myview-settings .table span.button--outline:hover {
-        border: 1px solid #b0173d; }
+        border: 1px solid #DE4361; }
     .theme-insurance-day .myview-settings .table span.button--filled, .theme-insurance-day .myview-settings .table span.pop-out__register-submit, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit {
       color: #fff; }
       .theme-insurance-day .myview-settings .table span.button--filled:hover, .theme-insurance-day .myview-settings .table span.pop-out__register-submit:hover, .theme-insurance-day .myview-settings .table span.pop-out__sign-in-submit:hover {
-        border: 1px solid #b0173d; }
+        border: 1px solid #DE4361; }
   .theme-insurance-day .drop {
     -webkit-animation: drop 1s ease;
     animation: drop 1s ease; }
   .theme-insurance-day .followingrow.over {
-    background: #b0173d; }
+    background: #DE4361; }
 
 @-webkit-keyframes "drop" {
   0%, 100% {
-    background: #b0173d;
+    background: #DE4361;
     color: #ffffff; }
   50% {
-    color: #b0173d;
-    background: #b0173d; } }
+    color: #DE4361;
+    background: #DE4361; } }
 
 .theme-commodities {
   /************ drag and drop styles ***********/ }
   .theme-commodities .myview-settings .publicationPan.active {
-    border: 1px solid #9E310D; }
+    border: 1px solid #F5821F; }
   @media screen and (min-width: 480px) {
     .theme-commodities .myview-settings .followingBtn {
       background: #F5821F;
@@ -5846,14 +5884,17 @@ main .action-flags-bar, main .banner--highlights {
     border: 1px solid #F5821F !important; }
     .theme-commodities .myview-settings .gotoview a:hover, .theme-commodities .myview-settings .gotoview .pop-out__reset-password:hover, .theme-commodities .myview-settings .gotoview .sortable-table__list-toggler:hover, .theme-commodities .myview-settings .gotoview .mobile-table-exit:hover {
       color: #fff !important; }
-  .theme-commodities .myview-settings .followinglbl-txt .collapsed .active {
-    background: #FFF5ED !important; }
+  @media screen and (min-width: 1025px) {
+    .theme-commodities .myview-settings .followinglbl-txt .collapsed .active {
+      background: #FFF5ED !important; } }
   .theme-commodities .myview-settings .sorting_arrow--down.act {
     fill: #F5821F !important; }
+  .theme-commodities .myview-settings .subscribed a:hover, .theme-commodities .myview-settings .subscribed .pop-out__reset-password:hover, .theme-commodities .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-commodities .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #F5821F; }
   .theme-commodities .myview-settings .table span {
-    fill: #9E310D; }
+    fill: #F5821F; }
     .theme-commodities .myview-settings .table span.button--outline {
-      border: 1px solid #9E310D; }
+      border: 1px solid #F5821F; }
       .theme-commodities .myview-settings .table span.button--outline:hover {
         border: 1px solid #F5821F; }
     .theme-commodities .myview-settings .table span.button--filled, .theme-commodities .myview-settings .table span.pop-out__register-submit, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit {
@@ -8812,8 +8853,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12457,7 +12498,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

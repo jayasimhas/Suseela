@@ -14022,6 +14022,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(IArticle_PackageConstants.InActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool IsInActive { get; set; }
+        /// <summary>
+        /// MoreFrom_Text.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.MoreFrom_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MoreFrom_Text { get; set; }
+        /// <summary>
+        /// MoreFrom_link.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.MoreFrom_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MoreFrom_Link { get; set; }
 
     }
 
@@ -14051,7 +14061,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(IArticle_PackageConstants.InActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool IsInActive { get; set; }
-     }
+        /// <summary>
+        /// MoreFrom_Text.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.MoreFrom_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MoreFrom_Text { get; set; }
+        /// <summary>
+        /// MoreFrom_link.
+        /// </summary>
+        [SitecoreField(IArticle_PackageConstants.MoreFrom_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link MoreFrom_Link { get; set; }
+    }
 
     public static partial class IArticle_PackageConstants
     {
@@ -14069,7 +14089,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID InActiveFieldId = new ID("14CD1BB4-875D-4E82-A64F-BD12721D6C98");
         public const string InActiveFieldName = "InActive";
 
-     }
+        public static readonly ID MoreFrom_TextFieldId = new ID("66E6D097-325F-40E7-8160-243AA3D6DA47");
+        public const string MoreFrom_TextFieldName = "More From Text";
+
+        public static readonly ID MoreFrom_LinkFieldId = new ID("94AC942D-1A42-4481-8D6B-2F6AE1407A51");
+        public const string MoreFrom_LinkFieldName = "More From Link";
+
+    }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components

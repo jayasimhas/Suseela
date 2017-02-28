@@ -23,7 +23,7 @@
                             //1st Article
                             var firstArticle = packageArticles.FirstOrDefault();
                             <section class="package-control-preview">
-                                <div class="package-img-wrapper">
+                                <div class="package-img-wrapper first">
                                     <img src="@firstArticle.ListableImage" width="100%">
                                 </div>
                                 <div class="article-preview__inner-wrapper">
@@ -98,7 +98,7 @@
                                         if (index == 2)
                                         {
 
-                                            <div class="package-img-wrapper">
+                                            <div class="package-img-wrapper second">
                                                 <img src="@article.ListableImage" width="100%">
                                             </div>
                                             <div class="article-preview__inner-wrapper">
@@ -161,20 +161,36 @@
                                                 }
                                             </div>
                                         }
-                                        if (index == 3 || index == 4)
-                                        {
-                                            <div class="package-heading-wrapper">
-                                                <h3 class="article-preview__headline">
-                                                    <a href = "@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
-                                                </h3>
-                                            </div>
-                                        }
+
                                         index++;
                                     }
+                                    int sectionCount = 1;
+                                    <div class="package-heading-wrapper">
+                                        @foreach (var article in packageArticles)
+                                        {
+
+                                            if (sectionCount == 3 || sectionCount == 4)
+                                            {
+
+                                            <h3 class="article-preview__headline">
+                                                <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                            </h3>
+                                            }
+                                            if (!Model.IsFullWidth && sectionCount == 5)
+                                            {
+                                                <h3 class="article-preview__headline">
+                                                    <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                </h3>
+                                            }
+                                            sectionCount++;
+                                        }
+                                    </div>
                                 }
+                                    
+
                             </section>
 
-                                    if (packageArticles.Count() >= 5)
+                                    if (packageArticles.Count() >= 5 && Model.IsFullWidth)
                                     {
                                         var fifthArticle = packageArticles.ElementAt(4);
                             <section class="package-control-preview">
@@ -251,34 +267,40 @@
 
                     }
                 </div>
+                <p class="moreText"><a href="@package.MoreFrom_Link">@package.MoreFrom_Text</a></p>
             </div>
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <section class="package-control-articles__quarter">
-                                            <h1 class="article-preview__headline">
-                                                <a href="#" class="click-utag">Healthcare Conference</a>
-                                            </h1>
-                                            <aside class="article-sidebar">
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    var referredArticle = Model.GetPackageReferrersbyLoop();
+                                                             if (referredArticle != null && referredArticle.Any())
+                                                                 {
+                                                                   foreach (var package in referredArticle.Take(1))
+                                                                         {
+                                                           <section class="package-control-articles__quarter">
+                                                                    <h1 class="article-preview__headline">
+                                                                        <span>@package.PackageTitle</span>
+                                                                    </h1>
+                                                                    <aside class="article-sidebar">
+                                                                        <div class="package-heading-wrapper">
+                                                                            @{
+                                                                                var packageArticles = Model.GetPackageArticles(package);
+                                                                                foreach (var article in packageArticles)
+                                                                                {
+                                                                                    <h3 class="article-preview__headline">
+                                                                                        <a href = "@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                                                    </h3>
+                                                                                }
+                                                                            }
+                                                                            </div>
+                                                                    </aside>
+                                                         </section>
+            }
+        }
+    }
 
-                                                <div class="package-heading-wrapper">
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                </div>
-                                            </aside>
-                                        </section>
                                        
                                     }
 }
