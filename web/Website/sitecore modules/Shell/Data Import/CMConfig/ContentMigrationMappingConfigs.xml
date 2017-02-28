@@ -1208,7 +1208,7 @@
 			<comp name="Zoetis">Zoetis</comp>
 			<comp name="Zydus">Zydus Animal Health</comp>
 		</companies>
-		<commodities>
+		<Commodities>
 			<contenttype>
 				<cont name="dairy_markets_subscribe_free_demo">News</cont>
 				<cont name="dairy_markets">News</cont>
@@ -1934,7 +1934,7 @@
 				<commsearch name="ICE US Review"><![CDATA[Sugar,Coffee,Cocoa]]></commsearch>
 				<commsearch name="Weekly Review"><![CDATA[Sugar,Coffee,Cocoa,Oils & Oilseeds,Grains & Feed]]></commsearch>
 			</commoditysearch>
-		</commodities>
+		</Commodities>
 		<Agrow> 
 			<commodity>
 				<commsearch name="Grain"><![CDATA[Grains & Feed]]></commsearch>
@@ -2265,7 +2265,7 @@
 				<comm name="agrow_companies_business_other">Commercial</comm>
 			</commercial>
 		</Agrow>
-		<AnimalPharma>
+		<AnimalPharm>
 			<contenttype>
 				<cont name="animalpharm">News</cont>
 				<cont name="research">News</cont>
@@ -2426,7 +2426,7 @@
 					<![CDATA[Middle East & Africa]]>
 				</reg>
 			</region>
-		</AnimalPharma>
+		</AnimalPharm>
 		<PolicyandLeg></PolicyandLeg>
 	</Agri>
 	<Maritime>
@@ -3282,7 +3282,7 @@
 					<comp name="YZJ">YZJ</comp>
 					<comp name="Zurich">Zurich</comp>			
 			</companies>		
-		<ID>
+		<InsuranceDay>
       <mediatype>
         <media name="insurance_day_video">Video</media>
         <media name="multimedia">Video</media>
@@ -3377,8 +3377,8 @@
 				<sector name="capital_management">Insurance-Linked Securities</sector>
         <sector name="aviation">Aviation</sector>
 			</sectors>
-			</ID>
-		<LL>
+			</InsuranceDay>
+    <Lloydslist>
 			<contenttype>
 				<cont name="news">News</cont>
 				<cont name="news-specialreports">Analysis</cont>
@@ -3592,6 +3592,6 @@
 				<top name="singapore-maritime-week">Singapore Maritime Week</top>	
 				<top name="smm">SMM</top>
 			</topics>
-		</LL>
+		</Lloydslist>
 	</Maritime>
 </Verticals>
