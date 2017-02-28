@@ -265,7 +265,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     //ao.Add("SECTION", contentTypeHtml);
                                     // break;
                                 }
-                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews" || contentTypeHtml == "special report" || contentTypeHtml == "supplements and whitepapers")
+                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews" || contentTypeHtml == "supplements and whitepapers")
                                 {
                                     contentTypeSetHtml = contentTypeHtml;
                                     // ao.Add("SECTION", contentTypeHtml);
