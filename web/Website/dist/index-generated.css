@@ -5146,7 +5146,7 @@ main .action-flags-bar, main .banner--highlights {
         .myview-settings .table-responsive .table thead th .accordionImg {
           float: left;
           text-align: right; }
-          @media screen and (min-width: 600px) {
+          @media screen and (min-width: 800px) {
             .myview-settings .table-responsive .table thead th .accordionImg {
               width: 120px; } }
           .myview-settings .table-responsive .table thead th .accordionImg .mobileMode {
