@@ -134,6 +134,10 @@
 		&:hover{
 			background: #a7a7a7;
 			border: 1px solid #a7a7a7;
+			@media screen and (min-width: 768px) and (max-width: 1024px){
+				background: $color-tree-poppy-orange;
+				border: 1px solid $color-tree-poppy-orange;
+			}
 			@include breakpoint('small') {
 				background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 			}
@@ -166,6 +170,10 @@
 			background: #ff8f18;
 			color: #fff;
 			border: 1px solid $color-tree-poppy-orange;
+			@media screen and (min-width: 768px) and (max-width: 1024px){
+				border: 1px solid #ADADAD;
+				color: #58595b;
+			}
 		}
 	}
 	&.myview-settings-registration {
@@ -305,7 +313,7 @@
 						&:hover{
 							background: #FFF5ED;
 							@include breakpoint('large') {
-								background: #fff;
+								background: #fff !important;
 							}
 							cursor: move; 
 							& .rowlines{ 
@@ -1035,6 +1043,10 @@
 				&:hover{
 					background: #a7a7a7;
 					border: 1px solid #a7a7a7
+					@media screen and (min-width: 768px) and (max-width: 1024px){
+						background: $tc;
+						border: 1px solid $tc;
+					}
 				}
 			}
 		}
@@ -1042,6 +1054,10 @@
  			&:hover{
 				background: $tc;
 				border: 1px solid $tc;
+				@media screen and (min-width: 768px) and (max-width: 1024px){
+					border: 1px solid #ADADAD;
+					color: #58595b;
+				}
 			}
 		}
 		.followingrow{
@@ -1099,6 +1115,11 @@
 		.subscribed{
 			a:hover{
 				color: $tc;
+			}
+		}
+		.rowlines{ 
+			.move{ 
+				color: $tc !important;
 			}
 		}
 		.table{
