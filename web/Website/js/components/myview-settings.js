@@ -1,4 +1,4 @@
-//import { analyticsEvent } from '../controllers/analytics-controller'; 
+import { analyticsEvent } from '../controllers/analytics-controller'; 
 
 function setClsforFlw(t) {
     for (var i = 0; i < t.length; i++) {
@@ -256,12 +256,12 @@ $(function () {
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function (e) {
 		var $this = $(this), currenttr = $this.closest('tr'), currentTopic = $.trim(currenttr.find('.wd-55').html().split('<input')[0]), currentChannel = currenttr.closest('.table').find('thead h2').html(), eventDetails;
 		if($('.registrationBtn') && $('.registrationBtn').length){
-			//eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
+			eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
 		}
 		else{
-			//eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+			eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
 		}
-		//analyticsEvent( eventDetails );
+		analyticsEvent( eventDetails );
 		
 		eventDetails = {};
 	});
@@ -269,12 +269,12 @@ $(function () {
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function (e) {
 		var $this = $(this), currenttr = $this.closest('tr'), currentTopic = $.trim(currenttr.find('.wd-55').html().split('<input')[0]), currentChannel = currenttr.closest('.table').find('thead h2').html(), eventDetails;
 		if($('.registrationBtn') && $('.registrationBtn').length){
-			//eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+			eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
 		}
 		else{
-			//eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
+			eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
 		}
-		//analyticsEvent( eventDetails );
+		analyticsEvent( eventDetails );
 		
 		eventDetails = {};
 	});
@@ -603,7 +603,7 @@ $(function () {
 	
 	$(document).on('click', '.editView', function(){
 		var eventDetails = {"event_name":"myview_edit_my_view","page_name": analytics_data["page_name"], "ga_eventCategory":"My View Page Link", "ga_eventAction":"Link Click", "ga_eventLabel":"EDIT MY VIEW"};
-		//analyticsEvent( $.extend(analytics_data, eventDetails) );
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
 		eventDetails = {};
 	});
 	
@@ -617,7 +617,7 @@ $(function () {
 		}
 		var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
 		
-		//analyticsEvent( $.extend(analytics_data, eventDetails) );
+		analyticsEvent( $.extend(analytics_data, eventDetails) );
 		eventDetails = {};
 	});
 });
