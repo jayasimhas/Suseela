@@ -14026,7 +14026,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// MoreFrom_Text.
         /// </summary>
         [SitecoreField(IArticle_PackageConstants.MoreFrom_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link MoreFrom_Text { get; set; }
+        string MoreFrom_Text { get; set; }
         /// <summary>
         /// MoreFrom_link.
         /// </summary>
@@ -14065,7 +14065,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// MoreFrom_Text.
         /// </summary>
         [SitecoreField(IArticle_PackageConstants.MoreFrom_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link MoreFrom_Text { get; set; }
+        string MoreFrom_Text { get; set; }
         /// <summary>
         /// MoreFrom_link.
         /// </summary>
