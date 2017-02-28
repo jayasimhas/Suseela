@@ -688,6 +688,7 @@
 		    height: auto;
 		    float: left;
 		    margin: 0;
+			padding: 0;
 		    a {
 		    	padding: 0;
 		    }
@@ -1163,5 +1164,5 @@
 	@include apply-theme(#b0173d, #DE4361, #efd0d8);
 }
 .theme-commodities{
-	@include apply-theme(#F5821F, #9E310D, #FFF5ED);
+	@include apply-theme(#F5821F, #F5821F, #FFF5ED);
 }

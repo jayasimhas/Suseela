@@ -5343,7 +5343,8 @@ main .action-flags-bar, main .banner--highlights {
           width: 50%;
           height: auto;
           float: left;
-          margin: 0; }
+          margin: 0;
+          padding: 0; }
           .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
             padding: 0; } }
     .myview-settings .saveoption .complete-settings {
@@ -5830,7 +5831,7 @@ main .action-flags-bar, main .banner--highlights {
 .theme-commodities {
   /************ drag and drop styles ***********/ }
   .theme-commodities .myview-settings .publicationPan.active {
-    border: 1px solid #9E310D; }
+    border: 1px solid #F5821F; }
   @media screen and (min-width: 480px) {
     .theme-commodities .myview-settings .followingBtn {
       background: #F5821F;
@@ -5884,9 +5885,9 @@ main .action-flags-bar, main .banner--highlights {
   .theme-commodities .myview-settings .sorting_arrow--down.act {
     fill: #F5821F !important; }
   .theme-commodities .myview-settings .table span {
-    fill: #9E310D; }
+    fill: #F5821F; }
     .theme-commodities .myview-settings .table span.button--outline {
-      border: 1px solid #9E310D; }
+      border: 1px solid #F5821F; }
       .theme-commodities .myview-settings .table span.button--outline:hover {
         border: 1px solid #F5821F; }
     .theme-commodities .myview-settings .table span.button--filled, .theme-commodities .myview-settings .table span.pop-out__register-submit, .theme-commodities .myview-settings .table span.pop-out__sign-in-submit {
