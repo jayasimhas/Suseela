@@ -675,8 +675,13 @@
 	  @include breakpoint('small') {
 	  	width: 100%;
 	  }
-	  .gotoview{
-		 border: none;
+	  .gotoview{ 
+		float: left;
+		line-height: 2rem;
+		a{
+			padding: 9px 16px;
+		}
+		 /*border: none;
 		 margin-left: 1.25rem;
 		  a{
 			display: block;
@@ -700,7 +705,7 @@
 		    a {
 		    	padding: 0;
 		    }
-		}		
+		}*/		
 	  }
 	  .complete-settings{
 			display: inline-block;
@@ -723,7 +728,7 @@
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
 		  @include breakpoint('small') {
-			width: 7.5rem;
+			width: 46%;
 		  }
 	  }
   }
