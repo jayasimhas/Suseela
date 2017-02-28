@@ -4785,8 +4785,6 @@ main .action-flags-bar, main .banner--highlights {
         .myview-settings .followBtn:hover {
           border: 1px solid #ADADAD;
           color: #58595b; } }
-  .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
-    width: auto; }
   .myview-settings.myview-settings-registration .saveoption {
     width: 100%; }
   .myview-settings h1 {

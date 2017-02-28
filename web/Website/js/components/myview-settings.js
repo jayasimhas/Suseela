@@ -428,7 +428,7 @@ $(function () {
 		if($('.myview-settings-registration').length == 0){
 			allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
 			
-			if(e.target.className !== 'subscribed' && e.target.className !== 'rowlines' && e.target.className !== 'pull-left' && e.target.className !== 'mv'){
+			if(e.target.className !== 'subscribed' && e.target.className !== 'rowlines' && e.target.className !== 'pull-left' && e.target.className !== 'mv' && e.target.className !== 'subscr'){
 				if ($this.hasClass('expanded')) {
 					$this.removeClass('expanded').addClass('collapsed');
 					tbody.addClass('tbodyhidden');
