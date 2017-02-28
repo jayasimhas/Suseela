@@ -536,6 +536,28 @@
 							text-transform: uppercase;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
 								display: none;
+							} 
+						}
+						@media screen and (max-width: 600px){
+							span{
+								background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
+								height: 1.0625rem;
+								width: 2rem;
+								cursor: pointer;
+								display: inline-block;
+								margin-right: 10%;
+								@include breakpoint('medium-small') {
+									position: relative;
+									left: -10px;
+									&.expanded{
+										position: relative;
+										left: 0; 
+										background-position: 0 0 !important;
+									}
+								} 
+								&.expanded{
+									background-position: 0 0;
+								} 
 							}
 						}
 						span.accImg{
