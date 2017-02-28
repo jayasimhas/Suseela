@@ -3,14 +3,15 @@
 
 
 @{
-                if (!Model.IsArticlePage)
-                {
-                    var selectedPackages = Model.SelectedPackages;
-                    if (selectedPackages != null && selectedPackages.Any())
-                    {
-                        string className = Model.IsFullWidth ? "fullContent" : "half";
-                        foreach (var package in selectedPackages)
-                        {
+    if (Sitecore.Context.PageMode.IsExperienceEditorEditing) { <div>Select Package properties settings</div> }
+    if (!Model.IsArticlePage)
+    {
+        var selectedPackages = Model.SelectedPackages;
+        if (selectedPackages != null && selectedPackages.Any())
+        {
+            string className = Model.IsFullWidth ? "fullContent" : "half";
+            foreach (var package in selectedPackages)
+            {
             <div class="package-control-articles__@className">
                 <div class="package-control-articles__wrapper">
                     <h1 class="header-line-control">
@@ -318,7 +319,7 @@
 
                                        
                                     }
-}
+
 
 
 
