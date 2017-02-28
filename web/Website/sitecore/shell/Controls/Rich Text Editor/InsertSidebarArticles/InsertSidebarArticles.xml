@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RichText.InsertSidebarArticles>
+    <FormDialog Icon="Network/32x32/link.png" Header="Insert Articles"
+      Text="Navigate to or search for the item that you want to insert a link to." OKButton="Insert">
+<style>
+.loadingItems
+{
+    background-image: url('/sitecore/shell/Applications/Buckets/images/load.gif');
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+</style>
+      <script Type="text/javascript" Language="javascript" Src="/sitecore/shell/controls/Rich Text Editor/InsertSidebarArticles/InsertSidebarArticles.js">.</script>
+		<script type="text/javascript" src="/sitecore/shell/controls/lib/jquery/jquery-1.10.2.min.js"></script>		
+	 <script>
+	 jQuery.noConflict();
+	  jQuery(document).ready(function () {	 
+	  });
+	  </script>
+<script>
+ jQuery.noConflict();
+jQuery(document).ready(function ($) {
+	var self = {};
+	self.currentPage=1;	
+	self.doneTypingInterval = 2000;	
+	self.moveToCurrentPage = function () { 
+	var searchText=jQuery('#searchText').val();	
+	if(searchText == '')
+	{
+	 jQuery('#SearchCombo').html('');
+	}
+	else
+	{
+	jQuery('#SearchCombo').addClass('loadingItems');
+	self.searchHandlerUrl="/api/SearchArticlesInRTE";	
+	}
+jQuery.ajax({
+      type: "GET",
+      url: self.searchHandlerUrl, 
+	  data: {articleNumber : searchText },
+      contentType: "application/json; charset=utf-8",
+      dataType: 'json',
+       success: function(a){													 
+				   jQuery('#SearchCombo').html('');
+				   jQuery('#SearchCombo').removeClass('loadingItems');
+				   jQuery(a).each(function(i,val){				  
+				  		 jQuery('#SearchCombo')
+         .append($("<option></option>")
+                    .attr("value",val._Id)					
+                   .text(val._Name));					
+				  });	
+	$('#SearchCombo').change(function() {
+    var id=jQuery( "#SearchCombo option:selected" ).val();
+				$('#Filename').val(id);
+				var result=$('#Filename').val();				
+		});										
+				},
+				error:function(a){				
+				}
+	  });
+		
+    };
+	
+	 jQuery("#searchText").keyup(function() {	 
+    setTimeout(function () { self.currentPage = 1; self.moveToCurrentPage(); }, self.doneTypingInterval);
+    }).keyup();		
+		});
+</script> 
+		<!-- <CodeBeside Type="Informa.Web.Helpers.InsertSidebarArticles, Informa.Web"/> -->
+      <CodeBeside Type="Informa.Library.CustomSitecore.RTECustomization.InsertSidebarArticles, Informa.Library"/> 
+      <DataContext ID="InternalLinkDataContext"/>
+      <DataContext ID="DataContext" Root="{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"/>
+	   
+      <Tabstrip ID="Tabs" Width="100%" Height="100%">	
+        <Tab ID="ArticlesSearchTab" Header="Search Articles">
+           <table>
+			<tr>	
+			<td>
+			<Literal ID="SearchMessage" Text="Enter the article number or published date or title to search for articles"/>
+			<Edit ID="searchText" Width="300px" Placeholder="Type here to search" autocomplete="off"/>
+			<select ID="SearchCombo" size="10" style="width: 300px;"></select>			
+			</td>	        	  
+			</tr>
+			</table>
+        </Tab>            
+      </Tabstrip>
+	   <Border class="scInsertImageFileName">
+          <GridPanel class="scFormTable" Columns="2">            
+            <Edit ID="Filename"  Hidden="true"/>			
+          </GridPanel>
+        </Border>
+    </FormDialog>
+  </RichText.InsertSidebarArticles>
+</control>

@@ -1158,6 +1158,7 @@
     <Compile Include="Controllers\EmailUtil.cs" />
     <Compile Include="Controllers\PersonalizedEmailController.cs" />
     <Compile Include="Areas\User\Controllers\ProcessUserRequestController.cs" />
+    <Compile Include="Controllers\SearchArticlesInRTEController.cs" />
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
