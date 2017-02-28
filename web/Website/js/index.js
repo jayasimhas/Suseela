@@ -677,7 +677,7 @@ $(document).ready(function(){
     $('.vertical__sign-out').on('click', function(e){
         e.preventDefault();
         $("#hiddenforms_logout form").each(function() {
-            $(this).submit();
+            $(this)[0].submit();
         });
         var Url = $(this).attr("href");
         window.location.href = Url;
