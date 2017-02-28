@@ -673,6 +673,16 @@ $(document).ready(function(){
         analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
     });
 
+    //Specific to Sign Out Vertical Login
+    $('.vertical__sign-out').on('click', function(e){
+        e.preventDefault();
+        $("#hiddenforms_logout form").each(function() {
+            $(this).submit();
+        });
+        var Url = $(this).attr("href");
+        window.location.href = Url;
+        
+    });
 
     var emailArticleController = new FormController({
         observe: '.form-email-article',
