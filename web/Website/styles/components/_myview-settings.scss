@@ -93,7 +93,9 @@
 		padding: 0 1rem;
 		margin-left: 0.5rem;
 		border: 1px solid #ADADAD;
-		float: none;
+		@media screen and (min-width: 600px){
+			float: none;
+		}
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
@@ -408,6 +410,17 @@
 							}
 						}
 					}
+					&.expanded{
+						@media screen  and (min-width: 800px){
+							h2{
+								font-size: 1.875rem !important;
+								color: #000;
+							}
+							.subscribed a{
+								font-size: 1.0625rem !important;
+							}
+						}
+					}
 					
 				}
 				&.followinglbl-txt{
@@ -419,6 +432,9 @@
 				}
 				th{
 					@include tableData(0px);
+					@media screen and (max-width: 600px){
+						background: #f9f9f9;
+					}
 					@include breakpoint('small') {
 						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
@@ -515,10 +531,16 @@
 							width: 30px;
 						} 
 					} 
-					& .accordionImg{
-						width: 120px;
+					.accordionImg{
+						@media screen and (min-width: 600px){
+							width: 120px;
+						}
 						float: left;
 						text-align: right;
+						.mobileMode{
+							height: 1.0625rem;
+							width: 2rem;
+						}
 						.expandTxt{
 							visibility: hidden;
 							float: left;
@@ -532,7 +554,9 @@
 						}
 						span.accImg{
 							float: left;
-							margin-top: -15px;
+							@media screen and (min-width: 600px){
+								margin-top: -15px;
+							}							
 							position: relative;
 							top: 8px;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
@@ -726,6 +750,10 @@
 		padding: 4.375rem 2.5rem 2.5rem;
 		display: none;
 		font-family: "Roboto";
+		@media screen and (max-width: 480px){
+			width: 21.875rem;
+			margin-left: -10.9375rem;
+		}
 
 		&.preferences{
 			h3{ 
@@ -863,6 +891,13 @@
 			h2{
 				width: auto;
 			}
+		}
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 768px){
+	.myview-settings{
+		.firstrow h2{
+			width: 15rem;
 		}
 	}
 }
