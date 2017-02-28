@@ -90,9 +90,16 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             {
                 using (new SecurityDisabler())
                 {
-                    
-                    Item PageAssets = currentArticleItem.Add("PageAssets", pageAssetsTemplate);
-                    Item tableau = PageAssets.Add("tableau", tableuDashboardtemplate);
+                    Item PageAssets;
+                    if (currentArticleItem.Axes.GetDescendants().Where(x => x.TemplateID == pageAssetsTemplate.ID).Any())
+                    {
+                        PageAssets = currentArticleItem.Axes.GetDescendants().Where(x => x.TemplateID == pageAssetsTemplate.ID).FirstOrDefault();
+                    }
+                    else
+                    {
+                        PageAssets = currentArticleItem.Add("PageAssets", pageAssetsTemplate);
+                    }
+                    Item tableau = PageAssets.Add(ItemUtil.ProposeValidItemName(PageTitle), tableuDashboardtemplate);
                     tableau.Editing.BeginEdit();
                     tableau["Page Title"] = PageTitle;
                     tableau["Dashboard Name"] = DashboardName;
@@ -106,9 +113,9 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                     tableau.Editing.EndEdit();
 
                     string tableauToken = getTokenForTableau(tableau.ID.ToString(), currentArticleItem[DashboardName + "-sourceid"]);
-                    
+
                     SheerResponse.Eval("scClose(" + StringUtil.EscapeJavascriptString(tableauToken) + ")");
-                    
+
                 }
             }
         }

@@ -5,6 +5,7 @@
 		IWebAuthenticateUserResult Authenticate(string username, string password, bool persist);
         IWebAuthenticateUserResult Authenticate(string username, string password, bool persist, string verticalName);
         IWebAuthenticateUserResult Authenticate(string code, string redirectUrl);
+        IWebAuthenticateUserResult Authenticate(IAuthenticatedUser user);
         IAuthenticatedUser AuthenticatedUser { get; set; }
 	}
 }

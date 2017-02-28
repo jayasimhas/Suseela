@@ -20,7 +20,6 @@ using System.Net;
 using Sitecore.SecurityModel;
 using System.Xml.Linq;
 using System.Web;
-using Informa.Library.Utilities.CMSHelpers;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -80,10 +79,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     //reading article no
                     string curFileName = new FileInfo(f).Name;
-                   
-                    ao["ARTICLE NUMBER"] = $"{ItemIdResolver.GetArticlePrefixByKey(site, publication)}{artNumber:D6}";
-
-
+                    ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
@@ -454,7 +450,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
 
-                                if (publication == "AnimalPharm")
+                                if (publication == "AnimalPharma")
                                 {
                                     animalhealthSearchResults = GetListFromXml(publication, "animalhealth", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
@@ -466,19 +462,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 }
 
-                                if (publication == "Commodities")
+                                if (publication == "commodities")
                                 {
                                     commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
                                 }
 
-                                if (publication == "Commodities")
+                                if (publication == "commodities")
                                 {
 
                                     commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 foreach (string agency in agencySearchResults)
                                 {
-                                    if (publication == "Commodities")
+                                    if (publication == "commodities")
                                     {
                                         if (!((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !((agency.ToLower() == "international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets"))
                                             Agency += agency + ",";
@@ -1395,7 +1391,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if (publication == "Commodities")
+                    if (publication == "commodities")
                     {
                         Taxonomy.Add("COMMODITY", "");
                         Taxonomy.Add("COMMODITYFACTOR", "");
@@ -1448,7 +1444,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if (publication == "AnimalPharm")
+                    if (publication == "AnimalPharma")
                     {
                         Taxonomy.Add("ANIMALHEALTH", "");
                         Taxonomy.Add("COMMERCIAL", "");
@@ -1492,7 +1488,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
 
 
-                    if (publication == "InsuranceDay")
+                    if (publication == "ID")
                     {
 
                         Taxonomy.Add("MARKET", "");
@@ -1545,7 +1541,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
 
-                    if (publication == "Lloydslist")
+                    if (publication == "LL")
                     {
                         Taxonomy.Add("COUNTRY", "");
                         Taxonomy.Add("HOTTOPICS", "");

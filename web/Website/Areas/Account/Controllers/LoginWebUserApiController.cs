@@ -6,60 +6,63 @@ using Informa.Library.User.ResetPassword;
 using Informa.Library.User.ResetPassword.Web;
 using Informa.Library.User.UserPreference;
 using System.Web;
+using Informa.Library.Salesforce.User.Authentication;
+using Informa.Library.User;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
     public class LoginWebUserApiController : ApiController
     {
-		protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
-		protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
-		protected readonly IWebAuthenticateUser AuthenticateWebUser;
+        protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
+        protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
+        protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly IMyViewToggleRedirectUrlFactory MyViewRedirectUrlFactory;
+        protected readonly ISitecoreUserContext SitecoreUserContext;
 
         public LoginWebUserApiController(
-			IGenerateUserResetPassword generateUserResetPassword,
-			IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
-			IWebAuthenticateUser authenticateWebUser,
-            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory)
-		{
-			GenerateUserResetPassword = generateUserResetPassword;
-			UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
-			AuthenticateWebUser = authenticateWebUser;
+            IGenerateUserResetPassword generateUserResetPassword,
+            IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
+            IWebAuthenticateUser authenticateWebUser,
+            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory, ISitecoreUserContext sitecoreUserContext)
+        {
+            GenerateUserResetPassword = generateUserResetPassword;
+            UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
+            AuthenticateWebUser = authenticateWebUser;
             MyViewRedirectUrlFactory = myViewRedirectUrlFactory;
-
+            SitecoreUserContext = sitecoreUserContext;
         }
 
-		[HttpPost]
-		public IHttpActionResult Login(AuthenticateRequest request)
-		{
-			var username = request?.Username;
-			var password = request?.Password;
+        [HttpPost]
+        public IHttpActionResult Login(AuthenticateRequest request)
+        {
+            var username = request?.Username;
+            var password = request?.Password;
 
-			if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
-			{
-				return Ok(new
-				{
-					success = false
-				});
-			}
-            string curVertical = HttpContext.Current.Request.QueryString["vid"]?? HttpContext.Current.Request.QueryString["vid"];
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                return Ok(new
+                {
+                    success = false
+                });
+            }
+            string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
 
             var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist, curVertical);
-			var redirectUrl = string.Empty;
+            var redirectUrl = string.Empty;
 
-            if(request.IsSignInFromMyView)
+            if (request.IsSignInFromMyView)
             {
                 redirectUrl = MyViewRedirectUrlFactory.create();
             }
-			if (result.State == AuthenticateUserResultState.TemporaryPassword)
-			{
-				var userResetPassword = GenerateUserResetPassword.Generate(result.User);
+            if (result.State == AuthenticateUserResultState.TemporaryPassword)
+            {
+                var userResetPassword = GenerateUserResetPassword.Generate(result.User);
 
-				if (userResetPassword != null)
-				{
-					redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
-				}
-			}
+                if (userResetPassword != null)
+                {
+                    redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
+                }
+            }
 
             return Ok(new
             {
@@ -67,6 +70,25 @@ namespace Informa.Web.Areas.Account.Controllers
                 redirectUrl = redirectUrl,
                 RedirectRequired = (request.IsSignInFromMyView && !string.IsNullOrWhiteSpace(redirectUrl)) ? true : false
             });
-		}
-	}
+        }
+       
+        [HttpPost]
+        public IHttpActionResult VerticalLogin(AuthenticateRequest request)
+        {
+            var userContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IAuthenticatedUserContext)) as IAuthenticatedUserContext;
+            if (!string.IsNullOrEmpty(request.Username))
+            {
+                IAuthenticatedUser authenticatedUser = new AuthenticatedUser() { Username = request.Username };
+                var result = AuthenticateWebUser.Authenticate(authenticatedUser);
+                return Ok(new
+                {
+                    success = result.Success,
+                });
+            }
+            return Ok(new
+            {
+                success = "false",
+            });
+        }
+    }
 }
