@@ -4885,30 +4885,6 @@ main .action-flags-bar, main .banner--highlights {
         font-weight: 700; }
         .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
           color: #58595B; }
-    .myview-settings .publicationPan .subscribe {
-      float: left;
-      width: 120px;
-      width: 7.5rem;
-      height: 32px;
-      height: 2rem;
-      margin: -4px 0 0 20px;
-      margin: -4px 0 0 1.25rem;
-      line-height: 32px;
-      line-height: 2rem;
-      cursor: pointer;
-      padding-left: 0px;
-      padding-left: 0rem;
-      font-family: "Roboto", Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      font-size: 0.875rem;
-      font-weight: 700; }
-      @media (max-width: 480px) {
-        .myview-settings .publicationPan .subscribe {
-          font-size: 0.875em;
-          border-left: none;
-          padding-left: 0px;
-          padding-left: 0rem;
-          margin: 0 !important; } }
   .myview-settings .table-responsive {
     width: 100%;
     overflow-y: hidden;
