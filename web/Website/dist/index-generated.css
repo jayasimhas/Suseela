@@ -4419,11 +4419,10 @@ header .header-account-access {
     width: auto !important; } }
 
 main .advertising--leaderboard.visible-desktop {
-  padding: 30px 0 30px 0; }
+  padding: 13px 0 13px 0; }
   @media (max-width: 480px) {
     main .advertising--leaderboard.visible-desktop {
-      display: none;
-      padding: 30px 0; } }
+      display: none; } }
 
 main .action-flags-bar, main .banner--highlights {
   margin-top: 0 !important; }
@@ -4724,6 +4723,10 @@ main .action-flags-bar, main .banner--highlights {
     .myview-settings .followingBtn:hover {
       background: #a7a7a7;
       border: 1px solid #a7a7a7; }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .myview-settings .followingBtn:hover {
+          background: #f7941e;
+          border: 1px solid #f7941e; } }
       @media (max-width: 480px) {
         .myview-settings .followingBtn:hover {
           background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4778,6 +4781,10 @@ main .action-flags-bar, main .banner--highlights {
       background: #ff8f18;
       color: #fff;
       border: 1px solid #f7941e; }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .myview-settings .followBtn:hover {
+          border: 1px solid #ADADAD;
+          color: #58595b; } }
   .myview-settings.myview-settings-registration .publicationPan h2, .myview-settings.myview-settings-registration .publicationPan .article-topics__header {
     width: auto; }
   .myview-settings.myview-settings-registration .saveoption {
@@ -5652,9 +5659,17 @@ main .action-flags-bar, main .banner--highlights {
       .theme-lloydslist .myview-settings .followingBtn:hover {
         background: #a7a7a7;
         border: 1px solid #a7a7a7; } }
+    @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
+      .theme-lloydslist .myview-settings .followingBtn:hover {
+        background: #1191D1;
+        border: 1px solid #1191D1; } }
   .theme-lloydslist .myview-settings .followBtn:hover {
     background: #1191D1;
     border: 1px solid #1191D1; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .theme-lloydslist .myview-settings .followBtn:hover {
+        border: 1px solid #ADADAD;
+        color: #58595b; } }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5737,9 +5752,17 @@ main .action-flags-bar, main .banner--highlights {
       .theme-insurance-day .myview-settings .followingBtn:hover {
         background: #a7a7a7;
         border: 1px solid #a7a7a7; } }
+    @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
+      .theme-insurance-day .myview-settings .followingBtn:hover {
+        background: #DE4361;
+        border: 1px solid #DE4361; } }
   .theme-insurance-day .myview-settings .followBtn:hover {
     background: #DE4361;
     border: 1px solid #DE4361; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .theme-insurance-day .myview-settings .followBtn:hover {
+        border: 1px solid #ADADAD;
+        color: #58595b; } }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5822,9 +5845,17 @@ main .action-flags-bar, main .banner--highlights {
       .theme-commodities .myview-settings .followingBtn:hover {
         background: #a7a7a7;
         border: 1px solid #a7a7a7; } }
+    @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
+      .theme-commodities .myview-settings .followingBtn:hover {
+        background: #F5821F;
+        border: 1px solid #F5821F; } }
   .theme-commodities .myview-settings .followBtn:hover {
     background: #F5821F;
     border: 1px solid #F5821F; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .theme-commodities .myview-settings .followBtn:hover {
+        border: 1px solid #ADADAD;
+        color: #58595b; } }
   .theme-commodities .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -8834,8 +8865,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12479,7 +12510,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
