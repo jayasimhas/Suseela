@@ -3,201 +3,45 @@
 
 
 @{
-                if (!Model.IsArticlePage)
-                {
-                    var selectedPackages = Model.SelectedPackages;
-                    if (selectedPackages != null && selectedPackages.Any())
-                    {
-                        string className = Model.IsFullWidth ? "fullContent" : "half";
-                        foreach (var package in selectedPackages)
-                        {
+    if (Sitecore.Context.PageMode.IsExperienceEditorEditing) { <div>Select Package properties settings</div> }
+    if (!Model.IsArticlePage)
+    {
+        var selectedPackages = Model.SelectedPackages;
+        if (selectedPackages != null && selectedPackages.Any())
+        {
+            string className = Model.IsFullWidth ? "fullContent" : "half";
+            foreach (var package in selectedPackages)
+            {
             <div class="package-control-articles__@className">
-                <h1 class="header-line-control">
-                    <span>@package.PackageTitle</span>
-                </h1>
-                <div class="package-wrapper clearfix">
-                    @{
-                        var packageArticles = Model.GetPackageArticles(package);
-                        if (packageArticles != null && packageArticles.Any())
-                        {
-                            //1st Article
-                            var firstArticle = packageArticles.FirstOrDefault();
-                            <section class="package-control-preview">
-                                <div class="package-img-wrapper">
-                                    <img src="@firstArticle.ListableImage" width="100%">
-                                </div>
-                                <div class="article-preview__inner-wrapper">
-                                    <h1 class="article-preview__headline">
-                                        <a href="@firstArticle.LinkableUrl" class="click-utag">@firstArticle.ListableTitle</a>
-                                    </h1>
-                                    <div class="clearfix">
-                                        <span class="article-preview__byline">@Html.Raw(firstArticle.ListableAuthorByLine)</span>
-                                        <div class="article-metadata">
-                                            <ul>
-                                                <li><time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time></li>
-                                                @if (!string.IsNullOrEmpty(firstArticle.LinkableText))
-                                                {
-                                                    <li>
-                                                        <h6>@firstArticle.LinkableText</h6>
-                                                    </li>
-                                                }
-                                                <li>
-                                                    <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                                        <svg class="article-metadata__media-type">
-                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
-                                                        </svg>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <div class="action-flag article-preview__bookmarker pop-out__trigger @( firstArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
-                                                         data-pop-out-type="sign-in"
-                                                         data-bookmark-id="@firstArticle.ID"
-                                                         data-salesforce-id="@firstArticle.SalesforceId"
-                                                         @( firstArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
-			                                                    "bookmark": "true",
- 			                                                    "bookmark_title": "@firstArticle.ListableTitle",
- 			                                                    "bookmark_publication": "@firstArticle.ListablePublication"
-		                                                    }'>
-                                                      
-                                                       <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(firstArticle.IsArticleBookmarked ? "is-visible" : null)">
-                                                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                                                        </svg>
-
-                                                        <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(firstArticle.IsArticleBookmarked ? null : "is-visible")">
-                                                            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                                                        </svg>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                <div class="package-control-articles__wrapper">
+                    <h1 class="header-line-control">
+                        <span>@package.PackageTitle</span>
+                    </h1>
+                    <div class="package-wrapper clearfix">
+                        @{
+                            var packageArticles = Model.GetPackageArticles(package);
+                            if (packageArticles != null && packageArticles.Any())
+                            {
+                                string firstarticleImgClass = Model.IsFullWidth ? "first" : "third";
+                                //1st Article
+                                var firstArticle = packageArticles.FirstOrDefault();
+                                <section class="package-control-preview">
+                                    <div class="package-img-wrapper @firstarticleImgClass">
+                                        <img src="@firstArticle.ListableImage" width="100%">
                                     </div>
-                                    <div class="article-summary">
-                                        <p>@Html.Raw(firstArticle.ListableSummary) </p>
-
-                                    </div>
-
-                                </div>
-                                <div class="article-preview__tags bar-separated-link-list">
-                                    @foreach (var tag in firstArticle.ListableTopics.Take(2))
-                                    {
-                                        if (tag.LinkableUrl != null)
-                                        {
-                                            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
-                                        }
-                                    }
-                                </div>
-                            </section>
-
-                            <section class="package-control-preview">
-                                @{
-
-                                    int index = 1;
-                                    foreach (var article in packageArticles)
-                                    {
-                                        if (index == 2)
-                                        {
-
-                                            <div class="package-img-wrapper">
-                                                <img src="@article.ListableImage" width="100%">
-                                            </div>
-                                            <div class="article-preview__inner-wrapper">
-                                                <h3 class="article-preview__headline">
-                                                    <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
-                                                </h3>
-                                                @if (Model.IsFullWidth)
-                                                {
-                                                <div class="clearfix">
-                                                    <span class="article-preview__byline">@Html.Raw(article.ListableAuthorByLine)</span >
-                                                    <div class="article-metadata">
-                                                        <ul>
-                                                            <li><time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time></li>
-                                                            @if (!string.IsNullOrEmpty(article.LinkableText))
-                                                            {
-                                                                <li>
-                                                                    <h6>@article.LinkableText</h6>
-                                                                </li>
-                                                            }
-                                                            <li>
-                                                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                                                    <svg class="article-metadata__media-type">
-                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
-                                                                    </svg>
-                                                                </span>
-                                                            </li>
-                                                            <li>
-                                                                <div class="action-flag article-preview__bookmarker pop-out__trigger @( article.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
-                                                                     data-pop-out-type="sign-in"
-                                                                     data-bookmark-id="@article.ID"
-                                                                     data-salesforce-id="@article.SalesforceId"
-                                                                     @(article.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
-			                                                    "bookmark": "true",
- 			                                                    "bookmark_title": "@article.ListableTitle",
- 			                                                    "bookmark_publication": "@article.ListablePublication"
-		                                                    }'>
-
-                                                                    <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(article.IsArticleBookmarked ? "is-visible" : null)">
-                                                                        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                                                                    </svg>
-
-                                                                    <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(article.IsArticleBookmarked ? null : "is-visible")">
-                                                                        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                                                                    </svg>
-
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="article-preview__tags bar-separated-link-list">
-                                                    @foreach (var tag in article.ListableTopics.Take(2))
-                                                    {
-                                                        if (tag.LinkableUrl != null)
-                                                        {
-                                                            <a href = "@tag.LinkableUrl" > @tag.LinkableText </a >
-                                                        }
-                                                    }
-                                                </div>
-                                                }
-                                            </div>
-                                        }
-                                        if (index == 3 || index == 4)
-                                        {
-                                            <div class="package-heading-wrapper">
-                                                <h3 class="article-preview__headline">
-                                                    <a href = "@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
-                                                </h3>
-                                            </div>
-                                        }
-                                        index++;
-                                    }
-                                }
-                            </section>
-
-                                    if (packageArticles.Count() >= 5)
-                                    {
-                                        var fifthArticle = packageArticles.ElementAt(4);
-                            <section class="package-control-preview">
-                                @if (Model.IsFullWidth) {
-                                <div class="package-img-wrapper">
-                                    <img src = "@fifthArticle.ListableImage" width="100%">
-                                </div>
-                                }
-                                <div class="article-preview__inner-wrapper">
-                                    <h3 class="article-preview__headline">
-                                        <a href = "@fifthArticle.LinkableUrl" class="click-utag">@fifthArticle.ListableTitle</a>
-                                    </h3>
-                                    @if (Model.IsFullWidth)
-                                    {
+                                    <div class="article-preview__inner-wrapper">
+                                        <h1 class="article-preview__headline">
+                                            <a href="@firstArticle.LinkableUrl" class="click-utag">@firstArticle.ListableTitle</a>
+                                        </h1>
                                         <div class="clearfix">
-                                            <span class="article-preview__byline">@Html.Raw(fifthArticle.ListableAuthorByLine) </span>
+                                            <span class="article-preview__byline">@Html.Raw(firstArticle.ListableAuthorByLine)</span>
                                             <div class="article-metadata">
                                                 <ul>
-                                                    <li><time class="article-metadata__date">@fifthArticle.ListableDate.ToString("d MMM yyyy")</time></li>
-                                                    @if (!string.IsNullOrEmpty(fifthArticle.LinkableText))
+                                                    <li><time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                    @if (!string.IsNullOrEmpty(firstArticle.LinkableText))
                                                     {
                                                         <li>
-                                                            <h6>@fifthArticle.LinkableText</h6>
+                                                            <h6>@firstArticle.LinkableText</h6>
                                                         </li>
                                                     }
                                                     <li>
@@ -208,21 +52,21 @@
                                                         </span>
                                                     </li>
                                                     <li>
-                                                        <div class="action-flag article-preview__bookmarker pop-out__trigger @( fifthArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+                                                        <div class="action-flag article-preview__bookmarker pop-out__trigger @( firstArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
                                                              data-pop-out-type="sign-in"
-                                                             data-bookmark-id="@fifthArticle.ID"
-                                                             data-salesforce-id="@fifthArticle.SalesforceId"
-                                                             @( fifthArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
+                                                             data-bookmark-id="@firstArticle.ID"
+                                                             data-salesforce-id="@firstArticle.SalesforceId"
+                                                             @( firstArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
 			                                                    "bookmark": "true",
- 			                                                    "bookmark_title": "@fifthArticle.ListableTitle",
- 			                                                    "bookmark_publication": "@fifthArticle.ListablePublication"
+ 			                                                    "bookmark_title": "@firstArticle.ListableTitle",
+ 			                                                    "bookmark_publication": "@firstArticle.ListablePublication"
 		                                                    }'>
 
-                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(fifthArticle.IsArticleBookmarked ? "is-visible" : null)">
+                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(firstArticle.IsArticleBookmarked ? "is-visible" : null)">
                                                                 <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                                                             </svg>
 
-                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(fifthArticle.IsArticleBookmarked ? null : "is-visible")">
+                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(firstArticle.IsArticleBookmarked ? null : "is-visible")">
                                                                 <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                                                             </svg>
 
@@ -230,58 +74,252 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="article-summary">
-                                                <p>@Html.Raw(fifthArticle.ListableSummary)</p>
-                                            </div>
                                         </div>
-                                <div class="article-preview__tags bar-separated-link-list">
-                                    @foreach (var tag in fifthArticle.ListableTopics.Take(2))
+                                        <div class="article-summary">
+                                            <p>@Html.Raw(firstArticle.ListableSummary) </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="article-preview__tags bar-separated-link-list">
+                                        @foreach (var tag in firstArticle.ListableTopics.Take(2))
+                                        {
+                                            if (tag.LinkableUrl != null)
+                                            {
+                                                <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+                                            }
+                                        }
+                                    </div>
+                                </section>
+
+                                <section class="package-control-preview">
+                                    @{
+
+                                        int index = 1;
+                                        foreach (var article in packageArticles)
+                                        {
+                                            if (index == 2)
+                                            {
+                                                string secondarticleImgClass = Model.IsFullWidth ? "second" : "third";
+                                                <div class="package-img-wrapper @secondarticleImgClass">
+                                                    <img src="@article.ListableImage" width="100%">
+                                                </div>
+                                                <div class="article-preview__inner-wrapper">
+                                                    
+                                                    @if (Model.IsFullWidth)
+                                                    {
+                                                        <h3 class="article-preview__headline">
+                                                            <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                        </h3>
+                                                        <div class="clearfix">
+                                                            <span class="article-preview__byline">@Html.Raw(article.ListableAuthorByLine)</span>
+                                                            <div class="article-metadata">
+                                                                <ul>
+                                                                    <li><time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                                    @if (!string.IsNullOrEmpty(article.LinkableText))
+                                                                    {
+                                                                        <li>
+                                                                            <h6>@article.LinkableText</h6>
+                                                                        </li>
+                                                                    }
+                                                                    <li>
+                                                                        <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                            <svg class="article-metadata__media-type">
+                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+                                                                            </svg>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="action-flag article-preview__bookmarker pop-out__trigger @( article.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+                                                                             data-pop-out-type="sign-in"
+                                                                             data-bookmark-id="@article.ID"
+                                                                             data-salesforce-id="@article.SalesforceId"
+                                                                             @(article.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
+			                                                    "bookmark": "true",
+ 			                                                    "bookmark_title": "@article.ListableTitle",
+ 			                                                    "bookmark_publication": "@article.ListablePublication"
+		                                                    }'>
+
+                                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(article.IsArticleBookmarked ? "is-visible" : null)">
+                                                                                <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                                                                            </svg>
+
+                                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(article.IsArticleBookmarked ? null : "is-visible")">
+                                                                                <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                                                                            </svg>
+
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="article-preview__tags bar-separated-link-list">
+                                                            @foreach (var tag in article.ListableTopics.Take(2))
+                                                            {
+                                                                if (tag.LinkableUrl != null)
+                                                                {
+                                                                    <a href="@tag.LinkableUrl"> @tag.LinkableText </a>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            }
+
+                                            index++;
+                                        }
+                                        int sectionCount = 1;
+                                        <div class="package-heading-wrapper">
+                                            @foreach (var article in packageArticles)
+                                            {
+                                                if (sectionCount == 2 && !Model.IsFullWidth)
+                                                {
+
+                                                    <h3 class="article-preview__headline">
+                                                        <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                    </h3>
+                                                }
+
+                                                if (sectionCount == 3 || sectionCount == 4)
+                                                {
+
+                                                    <h3 class="article-preview__headline">
+                                                        <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                    </h3>
+                                                }
+                                                if (!Model.IsFullWidth && sectionCount == 5)
+                                                {
+                                                    <h3 class="article-preview__headline">
+                                                        <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                    </h3>
+                                                }
+                                                sectionCount++;
+                                            }
+                                        </div>
+                                    }
+
+
+                                </section>
+
+                                        if (packageArticles.Count() >= 5 && Model.IsFullWidth)
+                                        {
+                                            var fifthArticle = packageArticles.ElementAt(4);
+                                            <section class="package-control-preview">
+                                                @if (Model.IsFullWidth)
+                                                {
+                                                    <div class="package-img-wrapper second">
+                                                        <img src="@fifthArticle.ListableImage" width="100%">
+                                                    </div>
+                                                }
+                                                <div class="article-preview__inner-wrapper">
+                                                    <h3 class="article-preview__headline">
+                                                        <a href="@fifthArticle.LinkableUrl" class="click-utag">@fifthArticle.ListableTitle</a>
+                                                    </h3>
+                                                    @if (Model.IsFullWidth)
+                                                    {
+                                                        <div class="clearfix">
+                                                            <span class="article-preview__byline">@Html.Raw(fifthArticle.ListableAuthorByLine) </span>
+                                                            <div class="article-metadata">
+                                                                <ul>
+                                                                    <li><time class="article-metadata__date">@fifthArticle.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                                    @if (!string.IsNullOrEmpty(fifthArticle.LinkableText))
+                                                                    {
+                                                                        <li>
+                                                                            <h6>@fifthArticle.LinkableText</h6>
+                                                                        </li>
+                                                                    }
+                                                                    <li>
+                                                                        <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                            <svg class="article-metadata__media-type">
+                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+                                                                            </svg>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="action-flag article-preview__bookmarker pop-out__trigger @( fifthArticle.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+                                                                             data-pop-out-type="sign-in"
+                                                                             data-bookmark-id="@fifthArticle.ID"
+                                                                             data-salesforce-id="@fifthArticle.SalesforceId"
+                                                                             @( fifthArticle.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
+			                                                    "bookmark": "true",
+ 			                                                    "bookmark_title": "@fifthArticle.ListableTitle",
+ 			                                                    "bookmark_publication": "@fifthArticle.ListablePublication"
+		                                                    }'>
+
+                                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(fifthArticle.IsArticleBookmarked ? "is-visible" : null)">
+                                                                                <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                                                                            </svg>
+
+                                                                            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(fifthArticle.IsArticleBookmarked ? null : "is-visible")">
+                                                                                <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                                                                            </svg>
+
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="article-summary">
+                                                                <p>@Html.Raw(fifthArticle.ListableSummary)</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="article-preview__tags bar-separated-link-list">
+                                                            @foreach (var tag in fifthArticle.ListableTopics.Take(2))
                                     {
                                         if (tag.LinkableUrl != null)
                                         {
-                                        <a href = "@tag.LinkableUrl" > @tag.LinkableText </a>
-                                        }
-                                    }
-                                </div>
-                                    }
-                                    </div>
-                            </section>
-                                        }
-                                    }
-
-                    }
-                </div>
-            </div>
+                                                                    <a href="@tag.LinkableUrl"> @tag.LinkableText </a>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </section>
                                             }
                                         }
-                                    }
-                                    else
-                                    {
-                                        <section class="package-control-articles__quarter">
-                                            <h1 class="article-preview__headline">
-                                                <a href="#" class="click-utag">Healthcare Conference</a>
-                                            </h1>
-                                            <aside class="article-sidebar">
 
-                                                <div class="package-heading-wrapper">
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                    <h3 class="article-preview__headline">
-                                                        <a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-                                                    </h3>
-                                                </div>
-                                            </aside>
-                                        </section>
+                        }
+                    </div>
+                    @{ 
+                        string moreLink = package.MoreFrom_Link != null ? package.MoreFrom_Link.Url : "/";
+                    }
+                    <p class="moreText"><a href="@moreLink">@package.MoreFrom_Text</a></p>
+                </div>
+                </div>
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    var referredArticle = Model.GetPackageReferrersbyLoop();
+                                                             if (referredArticle != null && referredArticle.Any())
+                                                                 {
+                                                                   foreach (var package in referredArticle.Take(1))
+                                                                         {
+                                                           <section class="package-control-articles__quarter">
+                                                                    <h1 class="article-preview__headline">
+                                                                        <span>@package.PackageTitle</span>
+                                                                    </h1>
+                                                                    <aside class="article-sidebar">
+                                                                        <div class="package-heading-wrapper">
+                                                                            @{
+                                                                                var packageArticles = Model.GetPackageArticles(package);
+                                                                                foreach (var article in packageArticles)
+                                                                                {
+                                                                                    <h3 class="article-preview__headline">
+                                                                                        <a href = "@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                                                    </h3>
+                                                                                }
+                                                                            }
+                                                                            </div>
+                                                                    </aside>
+                                                         </section>
+            }
+        }
+    }
+
                                        
                                     }
-}
+
 
 
 

@@ -33,6 +33,8 @@ namespace Informa.Web.ViewModels.Articles
 			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
 			BookmarkPublication = ArticleService.GetArticlePublicationName(Article);
             BookmarkTitle = Article?.Title;
+            SalesforceId = IsUserAuthenticated ? isSavedDocuementContext.GetSalesforceId(Article._Id) : string.Empty;
+
 		}
 
 		public IArticle Article { get; set; }
@@ -42,5 +44,7 @@ namespace Informa.Web.ViewModels.Articles
 		public string BookmarkTitle { get; }
 		public string BookmarkPublication { get; }
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
-	}
+        public string SalesforceId { get; set; }
+
+    }
 }

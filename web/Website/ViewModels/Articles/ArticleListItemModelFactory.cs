@@ -123,7 +123,7 @@ namespace Informa.Web.ViewModels.Articles
             model.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id);
             model.BookmarkText = TextTranslator.Translate("Bookmark");
             model.BookmarkedText = TextTranslator.Translate("Bookmarked");
-
+            model.SalesforceId = IsSavedDocumentContext.GetSalesforceId(article._Id);
             if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
             {
                 var recordNumber = HttpContext.Current.Request.Url.Segments.Last();

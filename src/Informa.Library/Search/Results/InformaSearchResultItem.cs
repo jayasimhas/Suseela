@@ -105,7 +105,9 @@ namespace Informa.Library.Search.Results
         public string ReferencedCompany { get; set; }
         [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
-		
+        [DataMember]
+        public string SalesforceId => DocumentContext.GetSalesforceId(ItemId.Guid);
+
 		[DataMember]
 		public new string Url
 		{
