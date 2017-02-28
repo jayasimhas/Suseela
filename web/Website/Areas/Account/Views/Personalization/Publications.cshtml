@@ -4,6 +4,7 @@
 @if (Model.Channels != null && Model.Channels.Any())
 {
     var Channels = Model.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
+    int flag = Channels.Count;
     IList<Topic> Topics = null;
     string topicTRClass = string.Empty;
     string topicSpanClass = string.Empty;
@@ -45,7 +46,7 @@
             unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
             tboadyClass = isFirst ? "" : "tbodyhidden";
             collapsedClss = isFirst ? "expanded" : "";
-            borderClass = isFirst && (collapsedClss == "expanded") ? "active" : "";
+            borderClass = isFirst && (collapsedClss == "expanded") && (flag != 1) ? "active" : "";
             pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
             publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
             publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
