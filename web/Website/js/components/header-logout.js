@@ -1,7 +1,7 @@
 (function (argument) {
 	// body...
 
-	$(document).on('click', '.header_salesforce_sign-in-out', function (e) {
+	$('.header_salesforce_sign-in-out').on('click', function (e) {
 		e.preventDefault();
 		var IframeUrl = $(this).attr('data-logout-url');
 		var RelocateUrl = $(this).attr('data-redirect-url');
