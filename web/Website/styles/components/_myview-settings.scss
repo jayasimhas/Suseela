@@ -271,22 +271,6 @@
 				}
 			} 
 		}
-		.subscribe{
-			float: left;
-			width: 7.5rem;
-			height: 2rem; 
-			margin: -4px 0 0 1.25rem;
-			line-height: 2rem;
-			cursor: pointer;
-			padding-left: 0rem;
-			@include textMix('Roboto', 0.875rem, 700);
-			@include breakpoint('small') {
-				font-size: 0.875em;
-				border-left: none;				
-				padding-left: 0rem;
-				margin: 0 !important;
-			}
-		}
 	}
 	.table-responsive {
 		width: 100%;
