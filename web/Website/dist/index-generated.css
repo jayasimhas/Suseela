@@ -4877,11 +4877,14 @@ main .action-flags-bar, main .banner--highlights {
         cursor: pointer;
         vertical-align: middle;
         position: relative;
+        color: #58595B;
         text-transform: uppercase;
         font-family: "Roboto Condensed", Arial Narrow, sans-serif;
         font-size: 14px;
         font-size: 0.875rem;
         font-weight: 700; }
+        .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
+          color: #58595B; }
     .myview-settings .publicationPan .subscribe {
       float: left;
       width: 120px;
@@ -5720,6 +5723,8 @@ main .action-flags-bar, main .banner--highlights {
       background: #e7f4fa !important; } }
   .theme-lloydslist .myview-settings .sorting_arrow--down.act {
     fill: #1191D1 !important; }
+  .theme-lloydslist .myview-settings .subscribed a:hover, .theme-lloydslist .myview-settings .subscribed .pop-out__reset-password:hover, .theme-lloydslist .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-lloydslist .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #1191D1; }
   .theme-lloydslist .myview-settings .table span {
     fill: #1191D1; }
     .theme-lloydslist .myview-settings .table span.button--outline {
@@ -5801,6 +5806,8 @@ main .action-flags-bar, main .banner--highlights {
       background: #fcecef !important; } }
   .theme-insurance-day .myview-settings .sorting_arrow--down.act {
     fill: #DE4361 !important; }
+  .theme-insurance-day .myview-settings .subscribed a:hover, .theme-insurance-day .myview-settings .subscribed .pop-out__reset-password:hover, .theme-insurance-day .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-insurance-day .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #DE4361; }
   .theme-insurance-day .myview-settings .table span {
     fill: #DE4361; }
     .theme-insurance-day .myview-settings .table span.button--outline {
@@ -5882,6 +5889,8 @@ main .action-flags-bar, main .banner--highlights {
       background: #FFF5ED !important; } }
   .theme-commodities .myview-settings .sorting_arrow--down.act {
     fill: #F5821F !important; }
+  .theme-commodities .myview-settings .subscribed a:hover, .theme-commodities .myview-settings .subscribed .pop-out__reset-password:hover, .theme-commodities .myview-settings .subscribed .sortable-table__list-toggler:hover, .theme-commodities .myview-settings .subscribed .mobile-table-exit:hover {
+    color: #F5821F; }
   .theme-commodities .myview-settings .table span {
     fill: #F5821F; }
     .theme-commodities .myview-settings .table span.button--outline {

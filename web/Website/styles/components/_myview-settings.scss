@@ -263,11 +263,11 @@
 				//padding-left: 1.25rem;
 				vertical-align: middle; 
 				position: relative; 
-				//color: #58595b;
+				color: #58595B;
 				text-transform: uppercase;
 				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
-					//text-decoration: none;
+					color: #58595B;
 				}
 			} 
 		}
@@ -1083,6 +1083,11 @@
 		.sorting_arrow--down{ 
 			&.act{
 				fill: $tc !important;
+			}
+		}
+		.subscribed{
+			a:hover{
+				color: $tc;
 			}
 		}
 		.table{
