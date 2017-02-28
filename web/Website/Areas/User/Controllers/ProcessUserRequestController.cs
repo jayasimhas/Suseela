@@ -31,7 +31,7 @@ namespace Informa.Web.Areas.UserRequest
             if (!result.Success && result.State.Equals(AuthenticateUserResultState.Failure))
                 return Redirect(state + "?ErrorStatus=" +"true");
             else
-                return Redirect(state);
+                return Redirect(state + "?login=success");
         }
 
         public ActionResult Register()

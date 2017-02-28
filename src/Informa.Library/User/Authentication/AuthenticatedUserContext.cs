@@ -59,28 +59,29 @@ namespace Informa.Library.User.Authentication
 
         private bool AuthenticatedUserCheck()
         {
-            if (!SitecoreUserContext.User.IsAuthenticated) return false;
-            var sitecoreUser = SitecoreUserContext.User;
-            string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
-            //The below code tries to read the user session to find the vertical. 
-            if (string.IsNullOrEmpty(loggedInVertical))
-            {
-                var vertical_Session = UserSession.Get<string>("user_vertical");
-                if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
-                {
-                    loggedInVertical = vertical_Session.Value;
-                    sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
-                    if(sitecoreUser.Domain.Name == "extranet")
-                        sitecoreUser.Profile.Save();
-                }
-            }
-            if (!string.IsNullOrEmpty(loggedInVertical))
-            {
-                var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
-                if (curVertical != loggedInVertical)
-                    return false;
-            }
-            return true;
+            return SitecoreUserContext.User.IsAuthenticated;
+            //if (!SitecoreUserContext.User.IsAuthenticated) return false;
+            //var sitecoreUser = SitecoreUserContext.User;
+            //string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
+            ////The below code tries to read the user session to find the vertical. 
+            //if (string.IsNullOrEmpty(loggedInVertical))
+            //{
+            //    var vertical_Session = UserSession.Get<string>("user_vertical");
+            //    if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
+            //    {
+            //        loggedInVertical = vertical_Session.Value;
+            //        sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
+            //        if(sitecoreUser.Domain.Name == "extranet")
+            //            sitecoreUser.Profile.Save();
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(loggedInVertical))
+            //{
+            //    var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+            //    if (!loggedInVertical.Contains(curVertical))
+            //        return false;
+            //}
+            //return true;
         }
                   
 	}                                      
