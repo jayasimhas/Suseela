@@ -4657,10 +4657,12 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 1rem;
     margin-left: 8px;
     margin-left: 0.5rem;
-    border: 1px solid #ADADAD;
-    float: none; }
+    border: 1px solid #ADADAD; }
     .myview-settings .unfollowAllBtn.mtp {
       margin-top: 0px; }
+    @media screen and (min-width: 600px) {
+      .myview-settings .unfollowAllBtn {
+        float: none; } }
     @media (max-width: 640px) {
       .myview-settings .unfollowAllBtn {
         min-width: initial;
@@ -5034,6 +5036,14 @@ main .action-flags-bar, main .banner--highlights {
           display: none; }
           .myview-settings .table-responsive .table thead tr.expandHide.collapseshow {
             display: block !important; } }
+      @media screen and (min-width: 800px) {
+        .myview-settings .table-responsive .table thead tr.expanded h2, .myview-settings .table-responsive .table thead tr.expanded .article-topics__header {
+          font-size: 30px !important;
+          font-size: 1.875rem !important;
+          color: #000; }
+        .myview-settings .table-responsive .table thead tr.expanded .subscribed a, .myview-settings .table-responsive .table thead tr.expanded .subscribed .pop-out__reset-password, .myview-settings .table-responsive .table thead tr.expanded .subscribed .sortable-table__list-toggler, .myview-settings .table-responsive .table thead tr.expanded .subscribed .mobile-table-exit {
+          font-size: 17px !important;
+          font-size: 1.0625rem !important; } }
       .myview-settings .table-responsive .table thead.followinglbl-txt .collapsed .active {
         background: #fff5ed; }
       .myview-settings .table-responsive .table thead th {
@@ -5043,6 +5053,9 @@ main .action-flags-bar, main .banner--highlights {
         line-height: 1.5rem;
         vertical-align: top;
         border-top: 0px solid #ddd; }
+        @media screen and (max-width: 600px) {
+          .myview-settings .table-responsive .table thead th {
+            background: #f9f9f9; } }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px;
@@ -5157,9 +5170,16 @@ main .action-flags-bar, main .banner--highlights {
               height: 30px;
               width: 30px; } }
         .myview-settings .table-responsive .table thead th .accordionImg {
-          width: 120px;
           float: left;
           text-align: right; }
+          @media screen and (min-width: 600px) {
+            .myview-settings .table-responsive .table thead th .accordionImg {
+              width: 120px; } }
+          .myview-settings .table-responsive .table thead th .accordionImg .mobileMode {
+            height: 17px;
+            height: 1.0625rem;
+            width: 32px;
+            width: 2rem; }
           .myview-settings .table-responsive .table thead th .accordionImg .expandTxt {
             visibility: hidden;
             float: left;
@@ -5175,7 +5195,6 @@ main .action-flags-bar, main .banner--highlights {
                 display: none; } }
           .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
             float: left;
-            margin-top: -15px;
             position: relative;
             top: 8px;
             /*background: url(/dist/img/sprite-image.png) no-repeat -16px -142px;
@@ -5183,6 +5202,9 @@ main .action-flags-bar, main .banner--highlights {
 							width: 12px;*/
             cursor: pointer;
             display: inline-block; }
+            @media screen and (min-width: 600px) {
+              .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
+                margin-top: -15px; } }
             @media screen and (min-width: 768px) and (max-width: 1024px) {
               .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
                 margin-left: 10px; } }
@@ -5409,6 +5431,12 @@ main .action-flags-bar, main .banner--highlights {
     padding: 4.375rem 2.5rem 2.5rem;
     display: none;
     font-family: "Roboto"; }
+    @media screen and (max-width: 480px) {
+      .myview-settings .modal-view {
+        width: 350px;
+        width: 21.875rem;
+        margin-left: -175px;
+        margin-left: -10.9375rem; } }
     .myview-settings .modal-view.preferences h3, .myview-settings .modal-view.preferences .article-call-to-action__title {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 16px;
@@ -5553,6 +5581,11 @@ main .action-flags-bar, main .banner--highlights {
     margin-left: -1.875rem; }
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
     width: auto; } }
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+  .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
+    width: 240px;
+    width: 15rem; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
