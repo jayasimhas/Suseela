@@ -93,7 +93,9 @@
 		padding: 0 1rem;
 		margin-left: 0.5rem;
 		border: 1px solid #ADADAD;
-		float: none;
+		@media screen and (min-width: 600px){
+			float: none;
+		}
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
@@ -228,7 +230,7 @@
 		h2{
 			text-align: left;
 			float: left;
-			width: 26.25rem; 
+			width: 20rem; 
 			color: #58595B;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
@@ -255,13 +257,13 @@
 				margin: 0rem;
 			}
 			a{
-				//border-left: 1px solid #d9dadb;
+				border-left: 1px solid #d9dadb;
 				float: left;
 				cursor: pointer;
-				//padding-left: 1.25rem;
+				padding-left: 1.25rem;
 				vertical-align: middle; 
 				position: relative; 
-				//color: #58595b;
+				color: #58595b;
 				text-transform: uppercase;
 				@include textMix('Roboto Condensed', 0.875rem, 700);
 				&:hover{
@@ -408,6 +410,17 @@
 							}
 						}
 					}
+					&.expanded{
+						@media screen  and (min-width: 800px){
+							h2{
+								font-size: 1.875rem !important;
+								color: #000;
+							}
+							.subscribed a{
+								font-size: 1.0625rem !important;
+							}
+						}
+					}
 					
 				}
 				&.followinglbl-txt{
@@ -419,6 +432,9 @@
 				}
 				th{
 					@include tableData(0px);
+					@media screen and (max-width: 600px){
+						background: #f9f9f9;
+					}
 					@include breakpoint('small') {
 						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
@@ -444,7 +460,7 @@
 							@include textMix('Roboto Condensed', 1.25rem, 700);
 						}
 						@include breakpoint('medium-small') {
-							padding: 1.25rem 0.625rem 0.625rem;
+							padding: 1.25rem 0.625rem 0.625rem; 
 						}
 						.frTxt{
 							text-align: right;
@@ -464,9 +480,9 @@
 						@include textMix('Roboto Condensed', 0.875rem, 400);
 						visibility: hidden;
 						float: left;
-						width: 50px;
+						width: 60px;
 						text-transform: uppercase;
-						text-align: right; 
+						text-align: right;
 						color: #f7941e;
 						@media screen and (min-width: 768px) and (max-width: 1024px){
 							display: none;
@@ -515,10 +531,16 @@
 							width: 30px;
 						} 
 					} 
-					& .accordionImg{
-						width: 120px;
+					.accordionImg{
+						@media screen and (min-width: 600px){
+							width: 120px;
+						}
 						float: left;
 						text-align: right;
+						.mobileMode{
+							height: 1.0625rem;
+							width: 2rem;
+						}
 						.expandTxt{
 							visibility: hidden;
 							float: left;
@@ -532,7 +554,9 @@
 						}
 						span.accImg{
 							float: left;
-							margin-top: -15px;
+							@media screen and (min-width: 600px){
+								margin-top: -15px;
+							}							
 							position: relative;
 							top: 8px;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
@@ -664,6 +688,7 @@
 		    height: auto;
 		    float: left;
 		    margin: 0;
+			padding: 0;
 		    a {
 		    	padding: 0;
 		    }
@@ -726,6 +751,10 @@
 		padding: 4.375rem 2.5rem 2.5rem;
 		display: none;
 		font-family: "Roboto";
+		@media screen and (max-width: 480px){
+			width: 21.875rem;
+			margin-left: -10.9375rem;
+		}
 
 		&.preferences{
 			h3{ 
@@ -866,17 +895,17 @@
 		}
 	}
 }
-@media screen and (min-width: 800px) and (max-width: 1024px){
+@media screen and (min-width: 767px) and (max-width: 768px){
 	.myview-settings{
 		.firstrow h2{
-			width: 20.625rem;
+			width: 10rem !important;
 		}
 	}
 }
-@media screen and (max-width: 768px){
+@media screen and (min-width: 768px) and (max-width: 1024px){
 	.myview-settings{
 		.firstrow h2{
-			width: 15rem;
+			width: 13rem;
 		}
 	}
 }
@@ -908,7 +937,7 @@
 	.myview-settings{ 
 		.smfollowingBtn{
 			margin-top: -0.5rem;
-			margin-right: 30px;
+			
 			.unfollowAllBtn{
 				background-position: -3px -236px;
 				text-indent: -8.75rem;
@@ -1128,11 +1157,12 @@
 }
 
 .theme-lloydslist{
-	@include apply-theme(#1191D1, #1191D1, #e7f4fa);
+	@include apply-theme(#0f5487, #1191D1, #cedce6);
+	
 }
 .theme-insurance-day{
-	@include apply-theme(#DE4361, #DE4361, #fcecef);
+	@include apply-theme(#b0173d, #DE4361, #efd0d8);
 }
 .theme-commodities{
-	@include apply-theme(#9E310D, #9E310D, #FFF5ED);
+	@include apply-theme(#F5821F, #F5821F, #FFF5ED);
 }
