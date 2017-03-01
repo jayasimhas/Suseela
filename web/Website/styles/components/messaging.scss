@@ -79,12 +79,11 @@
 		padding-right: 15px;
 		display: inline-block;
 		position: relative;
-			&:after {
+			.dismiss-button__icon {
 				content: '';
 				position: absolute;
 				top: 5px;
-				right: 0;
-				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+				right: 0;				
 				width: 9px;
 				height: 9px;
 			}
@@ -114,12 +113,11 @@
 		padding-right: 15px;
 		display: inline-block;
 		position: relative;
-			&:after {
+			.dismiss-button__icon {
 				content: '';
 				position: absolute;
 				top: 5px;
 				right: 0;
-				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
 				width: 9px;
 				height: 9px;
 			}

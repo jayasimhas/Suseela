@@ -4512,12 +4512,11 @@ main .action-flags-bar, main .banner--highlights {
       padding-right: 15px;
       display: inline-block;
       position: relative; }
-      .messaging_webUsers .msg_dismiss a:after, .messaging_webUsers .msg_dismiss .pop-out__reset-password:after, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler:after, .messaging_webUsers .msg_dismiss .mobile-table-exit:after {
+      .messaging_webUsers .msg_dismiss a .dismiss-button__icon, .messaging_webUsers .msg_dismiss .pop-out__reset-password .dismiss-button__icon, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler .dismiss-button__icon, .messaging_webUsers .msg_dismiss .mobile-table-exit .dismiss-button__icon {
         content: '';
         position: absolute;
         top: 5px;
         right: 0;
-        background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
         width: 9px;
         height: 9px; }
 
@@ -4547,12 +4546,11 @@ main .action-flags-bar, main .banner--highlights {
       padding-right: 15px;
       display: inline-block;
       position: relative; }
-      .messaging_webUsers_white .msg_dismiss a:after, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password:after, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler:after, .messaging_webUsers_white .msg_dismiss .mobile-table-exit:after {
+      .messaging_webUsers_white .msg_dismiss a .dismiss-button__icon, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password .dismiss-button__icon, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler .dismiss-button__icon, .messaging_webUsers_white .msg_dismiss .mobile-table-exit .dismiss-button__icon {
         content: '';
         position: absolute;
         top: 5px;
         right: 0;
-        background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
         width: 9px;
         height: 9px; }
   .messaging_webUsers_white .msg-text {
@@ -13927,6 +13925,10 @@ main {
 .theme-pink-sheet .red:hover,
 .theme-pink-sheet .red:active,
 .theme-pink-sheet .red:focus,
+.theme-pink-sheet .dismiss .dismiss-button__icon,
+.theme-pink-sheet .dismiss .dismiss-button__icon:hover,
+.theme-pink-sheet .dismiss .dismiss-button__icon:active,
+.theme-pink-sheet .dismiss .dismiss-button__icon:focus,
 .theme-pink-sheet .facets__button,
 .theme-pink-sheet .facets__button:hover,
 .theme-pink-sheet .facets__button:active,
@@ -14006,6 +14008,10 @@ main {
   .theme-pink-sheet .red:hover use > svg,
   .theme-pink-sheet .red:active use > svg,
   .theme-pink-sheet .red:focus use > svg,
+  .theme-pink-sheet .dismiss .dismiss-button__icon use > svg,
+  .theme-pink-sheet .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-pink-sheet .dismiss .dismiss-button__icon:active use > svg,
+  .theme-pink-sheet .dismiss .dismiss-button__icon:focus use > svg,
   .theme-pink-sheet .facets__button use > svg,
   .theme-pink-sheet .facets__button:hover use > svg,
   .theme-pink-sheet .facets__button:active use > svg,
@@ -14307,6 +14313,10 @@ main {
 .theme-rose-sheet .red:hover,
 .theme-rose-sheet .red:active,
 .theme-rose-sheet .red:focus,
+.theme-rose-sheet .dismiss .dismiss-button__icon,
+.theme-rose-sheet .dismiss .dismiss-button__icon:hover,
+.theme-rose-sheet .dismiss .dismiss-button__icon:active,
+.theme-rose-sheet .dismiss .dismiss-button__icon:focus,
 .theme-rose-sheet .facets__button,
 .theme-rose-sheet .facets__button:hover,
 .theme-rose-sheet .facets__button:active,
@@ -14386,6 +14396,10 @@ main {
   .theme-rose-sheet .red:hover use > svg,
   .theme-rose-sheet .red:active use > svg,
   .theme-rose-sheet .red:focus use > svg,
+  .theme-rose-sheet .dismiss .dismiss-button__icon use > svg,
+  .theme-rose-sheet .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-rose-sheet .dismiss .dismiss-button__icon:active use > svg,
+  .theme-rose-sheet .dismiss .dismiss-button__icon:focus use > svg,
   .theme-rose-sheet .facets__button use > svg,
   .theme-rose-sheet .facets__button:hover use > svg,
   .theme-rose-sheet .facets__button:active use > svg,
@@ -14687,6 +14701,10 @@ main {
 .theme-medtech .red:hover,
 .theme-medtech .red:active,
 .theme-medtech .red:focus,
+.theme-medtech .dismiss .dismiss-button__icon,
+.theme-medtech .dismiss .dismiss-button__icon:hover,
+.theme-medtech .dismiss .dismiss-button__icon:active,
+.theme-medtech .dismiss .dismiss-button__icon:focus,
 .theme-medtech .facets__button,
 .theme-medtech .facets__button:hover,
 .theme-medtech .facets__button:active,
@@ -14766,6 +14784,10 @@ main {
   .theme-medtech .red:hover use > svg,
   .theme-medtech .red:active use > svg,
   .theme-medtech .red:focus use > svg,
+  .theme-medtech .dismiss .dismiss-button__icon use > svg,
+  .theme-medtech .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-medtech .dismiss .dismiss-button__icon:active use > svg,
+  .theme-medtech .dismiss .dismiss-button__icon:focus use > svg,
   .theme-medtech .facets__button use > svg,
   .theme-medtech .facets__button:hover use > svg,
   .theme-medtech .facets__button:active use > svg,
@@ -15067,6 +15089,10 @@ main {
 .theme-invivo .red:hover,
 .theme-invivo .red:active,
 .theme-invivo .red:focus,
+.theme-invivo .dismiss .dismiss-button__icon,
+.theme-invivo .dismiss .dismiss-button__icon:hover,
+.theme-invivo .dismiss .dismiss-button__icon:active,
+.theme-invivo .dismiss .dismiss-button__icon:focus,
 .theme-invivo .facets__button,
 .theme-invivo .facets__button:hover,
 .theme-invivo .facets__button:active,
@@ -15146,6 +15172,10 @@ main {
   .theme-invivo .red:hover use > svg,
   .theme-invivo .red:active use > svg,
   .theme-invivo .red:focus use > svg,
+  .theme-invivo .dismiss .dismiss-button__icon use > svg,
+  .theme-invivo .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-invivo .dismiss .dismiss-button__icon:active use > svg,
+  .theme-invivo .dismiss .dismiss-button__icon:focus use > svg,
   .theme-invivo .facets__button use > svg,
   .theme-invivo .facets__button:hover use > svg,
   .theme-invivo .facets__button:active use > svg,
@@ -15447,6 +15477,10 @@ main {
 .theme-commodities .red:hover,
 .theme-commodities .red:active,
 .theme-commodities .red:focus,
+.theme-commodities .dismiss .dismiss-button__icon,
+.theme-commodities .dismiss .dismiss-button__icon:hover,
+.theme-commodities .dismiss .dismiss-button__icon:active,
+.theme-commodities .dismiss .dismiss-button__icon:focus,
 .theme-commodities .facets__button,
 .theme-commodities .facets__button:hover,
 .theme-commodities .facets__button:active,
@@ -15526,6 +15560,10 @@ main {
   .theme-commodities .red:hover use > svg,
   .theme-commodities .red:active use > svg,
   .theme-commodities .red:focus use > svg,
+  .theme-commodities .dismiss .dismiss-button__icon use > svg,
+  .theme-commodities .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-commodities .dismiss .dismiss-button__icon:active use > svg,
+  .theme-commodities .dismiss .dismiss-button__icon:focus use > svg,
   .theme-commodities .facets__button use > svg,
   .theme-commodities .facets__button:hover use > svg,
   .theme-commodities .facets__button:active use > svg,
@@ -15823,6 +15861,10 @@ main {
 .theme-insurance-day .red:hover,
 .theme-insurance-day .red:active,
 .theme-insurance-day .red:focus,
+.theme-insurance-day .dismiss .dismiss-button__icon,
+.theme-insurance-day .dismiss .dismiss-button__icon:hover,
+.theme-insurance-day .dismiss .dismiss-button__icon:active,
+.theme-insurance-day .dismiss .dismiss-button__icon:focus,
 .theme-insurance-day .facets__button,
 .theme-insurance-day .facets__button:hover,
 .theme-insurance-day .facets__button:active,
@@ -15902,6 +15944,10 @@ main {
   .theme-insurance-day .red:hover use > svg,
   .theme-insurance-day .red:active use > svg,
   .theme-insurance-day .red:focus use > svg,
+  .theme-insurance-day .dismiss .dismiss-button__icon use > svg,
+  .theme-insurance-day .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-insurance-day .dismiss .dismiss-button__icon:active use > svg,
+  .theme-insurance-day .dismiss .dismiss-button__icon:focus use > svg,
   .theme-insurance-day .facets__button use > svg,
   .theme-insurance-day .facets__button:hover use > svg,
   .theme-insurance-day .facets__button:active use > svg,
@@ -16236,6 +16282,10 @@ main {
 .theme-lloydslist .red:hover,
 .theme-lloydslist .red:active,
 .theme-lloydslist .red:focus,
+.theme-lloydslist .dismiss .dismiss-button__icon,
+.theme-lloydslist .dismiss .dismiss-button__icon:hover,
+.theme-lloydslist .dismiss .dismiss-button__icon:active,
+.theme-lloydslist .dismiss .dismiss-button__icon:focus,
 .theme-lloydslist .facets__button,
 .theme-lloydslist .facets__button:hover,
 .theme-lloydslist .facets__button:active,
@@ -16315,6 +16365,10 @@ main {
   .theme-lloydslist .red:hover use > svg,
   .theme-lloydslist .red:active use > svg,
   .theme-lloydslist .red:focus use > svg,
+  .theme-lloydslist .dismiss .dismiss-button__icon use > svg,
+  .theme-lloydslist .dismiss .dismiss-button__icon:hover use > svg,
+  .theme-lloydslist .dismiss .dismiss-button__icon:active use > svg,
+  .theme-lloydslist .dismiss .dismiss-button__icon:focus use > svg,
   .theme-lloydslist .facets__button use > svg,
   .theme-lloydslist .facets__button:hover use > svg,
   .theme-lloydslist .facets__button:active use > svg,
