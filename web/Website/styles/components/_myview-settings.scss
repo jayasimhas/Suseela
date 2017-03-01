@@ -112,7 +112,7 @@
 		@include folow-btn-lbl(#58595B);
 		padding: 0;
 		cursor: text;
-		min-width: 130px;
+		//min-width: 130px;
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
