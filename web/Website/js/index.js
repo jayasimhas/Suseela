@@ -1292,10 +1292,5 @@ $(document).ready(function(){
                 $(this)[0].submit();
             });
         }
-        if(!$('.header-account-access__label').hasClass('header_salesforce_sign-in-out')) {
-            $('#hiddenforms_logout form').each(function() {
-                $(this)[0].submit();
-            });
-        }
    })
 });
