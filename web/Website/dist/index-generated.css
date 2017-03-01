@@ -2232,6 +2232,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     height: 100%;
     padding: 15px 18px;
     margin: 10px 10px 0 10px; }
+    @media (min-width: 1025px) {
+      #main-carousel .li-content-graph {
+        margin-top: 25px; } }
     #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
       height: 224px;
       display: block;
@@ -9594,7 +9597,7 @@ div#feedbacklite.fbl_r {
       #market-data .carousel-div .states_heading .title {
         background-color: #1191d1;
         color: #ffffff;
-        padding: 8px 10px 8px 12px;
+        padding: 8px 5px 8px 12px;
         font-family: "Roboto", Helvetica, Arial, sans-serif;
         font-size: 1em;
         font-weight: bold; }

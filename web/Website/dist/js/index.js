@@ -12868,6 +12868,23 @@ $(document).ready(function () {
     } else {
         $('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
     }
+
+    //IDE Login to Different Sales Force
+    $(document).ready(function () {
+        var LoginUrl = window.location.href;
+        if (LoginUrl.indexOf('login=success') != -1 && $('.header-account-access__label').hasClass('header_salesforce_sign-in-out')) {
+            var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
+            $('#hiddenforms_login form').each(function () {
+                $(this).find('input[type="text"]').val(UserId);
+                $(this)[0].submit();
+            });
+        }
+        if (!$('.header-account-access__label').hasClass('header_salesforce_sign-in-out')) {
+            $('#hiddenforms_logout form').each(function () {
+                $(this)[0].submit();
+            });
+        }
+    });
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":23,"./components/ll-market-data-dryCargo":22,"./components/ll-market-data-dryCargo-bulkFixture":20,"./components/ll-market-data-dryCargo-icap":21,"./components/ll-market-imarex":24,"./components/ll-ship-coal-export.js":25,"./components/ll-tanker-fixtures":26,"./components/ll-tanker-pure-chem-page.js":27,"./components/myview-settings":28,"./components/pagination":29,"./components/personalisation":30,"./components/save-search-component":31,"./components/scrollbar.js":32,"./components/table_charts":33,"./components/video-mini":34,"./controllers/analytics-controller":35,"./controllers/bookmark-controller":36,"./controllers/form-controller":37,"./controllers/lightbox-modal-controller":38,"./controllers/pop-out-controller":39,"./controllers/register-controller":40,"./controllers/reset-password-controller":41,"./controllers/sortable-table-controller":42,"./controllers/tooltip-controller":43,"./jscookie":45,"./modal":46,"./newsletter-signup":47,"./search-page.js":48,"./selectivity-full":49,"./svg4everybody":50,"./toggle-icons":51,"./zepto.dragswap":52,"./zepto.min":53}],45:[function(require,module,exports){

@@ -91,7 +91,9 @@
 		  height: 100%;
 		  padding: 15px 18px;
 		  margin: 10px 10px 0 10px;
-		  
+		  @media (min-width: 1025px){
+		      margin-top: 25px;
+		  }
 		  > a{
 			  height: 224px;
 			  display: block;

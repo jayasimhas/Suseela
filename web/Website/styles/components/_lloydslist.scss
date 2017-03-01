@@ -397,7 +397,7 @@
 			.title{
 				background-color: #1191d1;
 				color: #ffffff;
-				padding: 8px 10px 8px 12px;
+				padding: 8px 5px 8px 12px;
 				@include textMix('Roboto', 1em, bold);
 				@media only screen and (min-width: 768px) and (max-width: 1024px) {
 					font-size: 0.9rem;

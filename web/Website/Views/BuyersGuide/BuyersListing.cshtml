@@ -41,7 +41,7 @@
                                                     }
                                                 </a>
                                             </div>
-                                            <h4><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
+                                            <h4 class="article-preview__headline"><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
                                         </div>
                                         }
                                         i++;
@@ -60,7 +60,7 @@
                                 @foreach (var agrow in Model.AgrowTiles)
                                 {
                                     <div class="buyers-guide">
-                                            <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                            <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
                                        
                                         <div class="text">
                                             <p>
@@ -83,7 +83,7 @@
                                 @foreach (var agrow in Model.AgrowTiles)
                                 {
                                     <div class="buyers-guide">
-                                        <h4><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                        <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
                                         <div class="image">
                                             <a href="@agrow.AgrowDetailUrl">
                                                 @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
