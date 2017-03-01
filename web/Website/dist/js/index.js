@@ -5569,6 +5569,9 @@ $(window).on('scroll', function () {
 		// var openedWindow = window.open('https://ideqa-informabi.cs82.force.com/agribusiness/secur/logout.jsp', 'popup', 'width=0,height=0,scrollbars=no');
 		// openedWindow.close();
 		// localStorage.setItem('RelocateUrl', RelocateUrl);
+		$('#hiddenforms_logout form').each(function () {
+			$(this)[0].submit();
+		});
 		window.location.href = RelocateUrl;
 		// window.location.href = RelocateUrl;
 	});
@@ -10247,7 +10250,7 @@ function formController(opts) {
 								this.response = response;
 
 								//Specific to Sign In Form - Vertical Login
-								if ($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass('form-registration')) {
+								if ($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
 									$('#hiddenforms_login form').each(function () {
 										$(this).find('input[type="text"]').val(inputData["username"]);
 										$(this)[0].submit();
@@ -12876,11 +12879,6 @@ $(document).ready(function () {
             var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
             $('#hiddenforms_login form').each(function () {
                 $(this).find('input[type="text"]').val(UserId);
-                $(this)[0].submit();
-            });
-        }
-        if (!$('.header-account-access__label').hasClass('header_salesforce_sign-in-out')) {
-            $('#hiddenforms_logout form').each(function () {
                 $(this)[0].submit();
             });
         }
