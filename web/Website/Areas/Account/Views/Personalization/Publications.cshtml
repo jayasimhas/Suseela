@@ -70,7 +70,7 @@
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                            <a  href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
                                         </div>
                                     }
                                     else
@@ -191,7 +191,7 @@
                                     @if (!channel.IsSubscribed)
                                     {
                                     <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                        <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                        <a class="subscr" href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
                                     </div>
                                     }
                                     else
