@@ -135,9 +135,9 @@ function formController(opts) {
 								// Passes the form response through with the "context"
 								// successCallback is ripe for refactoring, improving parameters
 								this.response = response;
-								
+
 								//Specific to Sign In Form - Vertical Login
-								if($(currentForm).hasClass('js-sign-in-submit')) {
+								if($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
 									$('#hiddenforms_login form').each(function() {
 										$(this).find('input[type="text"]').val(inputData["username"]);
 										$(this)[0].submit();
