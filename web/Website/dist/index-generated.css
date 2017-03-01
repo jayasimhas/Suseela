@@ -3831,11 +3831,16 @@ body.lightboxed {
       .ID-Responsive-Table .year_heading {
         padding-left: 5px;
         height: 8em; } }
+    .ID-Responsive-Table .year_heading div {
+      background: transparent; }
   .ID-Responsive-Table .owl-nav {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100%;
     display: block; }
+    .ID-Responsive-Table .owl-item .year_heading span.sub-item {
+      width: 50%;
+      float: left; }
   .ID-Responsive-Table .owl-next.disabled, .ID-Responsive-Table .owl-prev.disabled {
     pointer-events: none; }
   .ID-Responsive-Table .owl-controls {
@@ -3908,19 +3913,19 @@ body.lightboxed {
   width: 60%;
   float: right; }
 
-#tankerPureChemPage {
+#tankerPureChemPage, #shipVehicle {
   border: none; }
-  #tankerPureChemPage .R16 {
+  #tankerPureChemPage .R16, #shipVehicle .R16 {
     height: 40px;
     height: 2.5rem; }
-  #tankerPureChemPage .year_heading {
+  #tankerPureChemPage .year_heading, #shipVehicle .year_heading {
     height: 5em !important; }
-    #tankerPureChemPage .year_heading div {
+    #tankerPureChemPage .year_heading div, #shipVehicle .year_heading div {
       background: transparent; }
-    #tankerPureChemPage .year_heading .sub-item {
+    #tankerPureChemPage .year_heading .sub-item, #shipVehicle .year_heading .sub-item {
       margin-top: 8px;
       margin-top: 0.5rem; }
-  #tankerPureChemPage .sub-item {
+  #tankerPureChemPage .sub-item, #shipVehicle .sub-item {
     width: 50%;
     float: left; }
 
@@ -3934,6 +3939,17 @@ body.lightboxed {
     border-bottom: 1px solid #ffffff; }
   .theme-table thead tr th {
     border-bottom: 1px solid #ffffff; }
+
+#cockettBunker, #shipRoro {
+  border: none; }
+  #cockettBunker th, #cockettBunker td, #shipRoro th, #shipRoro td {
+    border: none; }
+  #cockettBunker .text-center, #shipRoro .text-center {
+    text-align: left;
+    padding: 0 10px; }
+
+#shipContainerShip {
+  border: none; }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -8873,8 +8889,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10142,6 +10158,9 @@ div#feedbacklite.fbl_r {
     .rolling-stream .rolling-stream-wrapper .rolling-stream-article {
       padding: 20px 0;
       border-bottom: 1px solid #d1d3d4; }
+      @media only screen and (min-width: 767px) and (max-width: 1024px) {
+        .rolling-stream .rolling-stream-wrapper .rolling-stream-article {
+          padding-right: 10px; } }
       .rolling-stream .rolling-stream-wrapper .rolling-stream-article:first-child {
         padding-top: 0; }
       .rolling-stream .rolling-stream-wrapper .rolling-stream-article:last-child {
@@ -12522,7 +12541,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
