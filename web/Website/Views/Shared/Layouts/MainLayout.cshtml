@@ -115,28 +115,33 @@
 }
 
     <iframe name="iframe-vertical" style="display:none;"></iframe>
+    
     @{
         var sitelist = Model.GetVerticalDomains();
         if (sitelist != null && sitelist.Any())
         {
-            foreach (string site in sitelist)
-            {
+            <div id="hiddenforms_login">
+                @foreach (string site in sitelist)
+                {
                 string sitename = site.Split('|')[0];
                 string url = Request.Url.Scheme + "://" + @site.Split('|')[1];
                 <form id="@sitename-login" target="iframe-vertical" action="@url/Account/api/LoginWebUserApi/VerticalLogin" method="POST" style="display:none;">
-                    <input name="username" type="text" style="display:none;" />
+                    <input name="username" type="text" style="display:none;" value="" />
                 </form>
-                <form id="@sitename-logout" target="iframe-vertical" action="@url/Account/LogoutWebUser/VerticalLogout" method="POST" style="display:none;"></form>
-            }
-            <script type="text/javascript">
-                var DomainArray = new Array();
+                
+                }
+             </div>
+            <div id="hiddenforms_logout">
                 @foreach (string site in sitelist)
                 {
-                    @:DomainArray.push("@site.Split('|')[0]");
-                 }
-           </script>
-        }
-    }
-     
+                    string sitename = site.Split('|')[0];
+                    string url = Request.Url.Scheme + "://" + @site.Split('|')[1];
+                   <form id="@sitename-logout" target="iframe-vertical" action="@url/Account/LogoutWebUser/VerticalLogout" method="POST" style="display:none;"></form>
+                }
+             </div>
+                }
+                }
+            
+
 </body>
 </html>

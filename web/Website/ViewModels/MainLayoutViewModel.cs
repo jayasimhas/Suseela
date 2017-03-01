@@ -71,12 +71,14 @@ namespace Informa.Web.ViewModels
         public List<string> GetVerticalDomains()
         {
             List<string> verticalDomains = new List<string>();
-            if(VerticalRoot != null)
+            var rootTemplate_ID = siteRootTemplateID;
+            var currentRoot_ID = _dependencies.SiteRootContext.Item._Id;
+            if (VerticalRoot != null)
             {
                 var siteRoots = VerticalRoot._ChildrenWithInferType;
                 foreach(var root in siteRoots)
                 {
-                    if(root._Id != GlassModel._Id && root._TemplateId.Equals(siteRootTemplateID))
+                    if(root._Id != currentRoot_ID && root._TemplateId.Equals(rootTemplate_ID))
                     {
                         var siteSettings = Sitecore.Sites.SiteManager.GetSite(root._Name);
                         if (siteSettings != null)

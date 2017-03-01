@@ -99,63 +99,65 @@
                                                     <div class="package-img-wrapper @secondarticleImgClass">
                                                         <img src="@article.ListableImage" width="100%">
                                                     </div>
-                                                    <div class="article-preview__inner-wrapper">
+                                                    
 
                                                         @if (Model.IsFullWidth)
                                                         {
-                                                            <h3 class="article-preview__headline">
-                                                                <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
-                                                            </h3>
-                                                            <div class="clearfix">
-                                                                <span class="article-preview__byline">@Html.Raw(article.ListableAuthorByLine)</span>
-                                                                <div class="article-metadata">
-                                                                    <ul>
-                                                                        <li><time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time></li>
-                                                                        @if (!string.IsNullOrEmpty(article.LinkableText))
-                                                                        {
+                                                            <div class="article-preview__inner-wrapper">
+                                                                <h3 class="article-preview__headline">
+                                                                    <a href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                                                </h3>
+                                                                <div class="clearfix">
+                                                                    <span class="article-preview__byline">@Html.Raw(article.ListableAuthorByLine)</span>
+                                                                    <div class="article-metadata">
+                                                                        <ul>
+                                                                            <li><time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                                            @if (!string.IsNullOrEmpty(article.LinkableText))
+                                                                            {
+                                                                                <li>
+                                                                                    <h6>@article.LinkableText</h6>
+                                                                                </li>
+                                                                            }
                                                                             <li>
-                                                                                <h6>@article.LinkableText</h6>
+                                                                                <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+                                                                                    <svg class="article-metadata__media-type">
+                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+                                                                                    </svg>
+                                                                                </span>
                                                                             </li>
-                                                                        }
-                                                                        <li>
-                                                                            <span class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
-                                                                                <svg class="article-metadata__media-type">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#chart"></use>
-                                                                                </svg>
-                                                                            </span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="action-flag article-preview__bookmarker pop-out__trigger @( article.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
-                                                                                 data-pop-out-type="sign-in"
-                                                                                 data-bookmark-id="@article.ID"
-                                                                                 data-salesforce-id="@article.SalesforceId"
-                                                                                 @(article.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
+                                                                            <li>
+                                                                                <div class="action-flag article-preview__bookmarker pop-out__trigger @( article.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+                                                                                     data-pop-out-type="sign-in"
+                                                                                     data-bookmark-id="@article.ID"
+                                                                                     data-salesforce-id="@article.SalesforceId"
+                                                                                     @(article.IsArticleBookmarked ? "data-is-bookmarked=true" : null) data-analytics='{
 			                                                    "bookmark": "true",
  			                                                    "bookmark_title": "@article.ListableTitle",
  			                                                    "bookmark_publication": "@article.ListablePublication"
 		                                                    }'>
-                                                                                <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(article.IsArticleBookmarked ? "is-visible" : null)">
-                                                                                    <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                                                                                </svg>
-                                                                                <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(article.IsArticleBookmarked ? null : "is-visible")">
-                                                                                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
+                                                                                    <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @(article.IsArticleBookmarked ? "is-visible" : null)">
+                                                                                        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                                                                                    </svg>
+                                                                                    <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @(article.IsArticleBookmarked ? null : "is-visible")">
+                                                                                        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                                                                                    </svg>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="article-preview__tags bar-separated-link-list">
+                                                                    @foreach (var tag in article.ListableTopics.Take(2))
+                                                                    {
+                                                                        if (tag.LinkableUrl != null)
+                                                                        {
+                                                                            <a href="@tag.LinkableUrl"> @tag.LinkableText </a>
+                                                                        }
+                                                                    }
                                                                 </div>
                                                             </div>
-                                                            <div class="article-preview__tags bar-separated-link-list">
-                                                                @foreach (var tag in article.ListableTopics.Take(2))
-                                                                {
-                                                                    if (tag.LinkableUrl != null)
-                                                                    {
-                                                                        <a href="@tag.LinkableUrl"> @tag.LinkableText </a>
-                                                                    }
-                                                                }
-                                                            </div>
                                                         }
-                                                    </div>
+
                                                 }
 
                                                 index++;
