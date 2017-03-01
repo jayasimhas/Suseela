@@ -5296,7 +5296,17 @@ main .action-flags-bar, main .banner--highlights {
     display: none !important;
     visibility: hidden; }
   .myview-settings .saveoption {
-    float: right; }
+    float: right;
+    /*.registrationBtn{
+		padding: 0 2rem;
+		 @include folow-btn(auto, 2rem, #58595b, $color-tree-poppy-orange);
+		  margin-left: 1.25rem;
+		  background: $color-tree-poppy-orange;
+		  color: $color-white;
+		  @include breakpoint('small') {
+			width: 46%;
+		  }
+	  }*/ }
     @media (max-width: 480px) {
       .myview-settings .saveoption {
         width: 100%; } }
@@ -5334,7 +5344,7 @@ main .action-flags-bar, main .banner--highlights {
     .myview-settings .saveoption .complete-settings {
       display: inline-block;
       float: right; }
-    .myview-settings .saveoption .saveview {
+    .myview-settings .saveoption .saveview, .myview-settings .saveoption .registrationBtn {
       padding: 0 32px;
       padding: 0 2rem;
       border: 1px solid #f7941e;
@@ -5355,36 +5365,11 @@ main .action-flags-bar, main .banner--highlights {
       margin-left: 20px;
       margin-left: 1.25rem; }
       @media (max-width: 480px) {
-        .myview-settings .saveoption .saveview {
+        .myview-settings .saveoption .saveview, .myview-settings .saveoption .registrationBtn {
           float: right;
           margin: 0px;
           padding: 0 40px;
           padding: 0 2.5rem; } }
-    .myview-settings .saveoption .registrationBtn {
-      padding: 0 32px;
-      padding: 0 2rem;
-      border: 1px solid #f7941e;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-size: 0.75em;
-      font-family: "Roboto";
-      font-weight: 700;
-      text-align: center;
-      display: inline-block;
-      line-height: 32px;
-      line-height: 2rem;
-      float: right;
-      color: #58595b;
-      width: auto;
-      min-height: 32px;
-      min-height: 2rem;
-      margin-left: 20px;
-      margin-left: 1.25rem;
-      background: #f7941e;
-      color: #ffffff; }
-      @media (max-width: 480px) {
-        .myview-settings .saveoption .registrationBtn {
-          width: 46%; } }
   .myview-settings .dosubscribe .followrow {
     background: #f9f9f9; }
     @media (max-width: 480px) {
@@ -5470,23 +5455,40 @@ main .action-flags-bar, main .banner--highlights {
       color: #f8;
       margin-right: 20px; }
     .myview-settings .modal-view.preferences .registrationBtn.validationChk {
-      border: 1px solid #f7941e;
-      color: #231f20;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-size: 0.6875rem;
+      font-weight: 700;
       text-align: center;
       float: left;
-      height: 24px;
-      height: 1.5rem;
       width: 70px;
       width: 4.375rem;
       text-transform: uppercase;
-      font-size: 11px;
-      font-size: 0.6875rem;
       cursor: pointer;
-      line-height: 23px;
-      line-height: 1.4375rem;
-      font-weight: bold; }
-      .myview-settings .modal-view.preferences .registrationBtn.validationChk:hover {
-        background: #f7941e; }
+      line-height: 32px;
+      line-height: 2rem;
+      padding: 0px;
+      float: left;
+      width: 130px;
+      width: 8.125rem;
+      height: 32px;
+      height: 2rem;
+      color: #f8;
+      margin-right: 20px;
+      /*border: 1px solid $color-tree-poppy-orange;
+                color: $color-zeus-black;
+                text-align: center;
+                float: left;
+                height: 1.5rem;
+                width: 4.375rem;
+                text-transform: uppercase;
+                font-size: 0.6875rem;
+                cursor: pointer;
+                line-height: 1.4375rem;
+                font-weight: bold;
+                &:hover{
+                    background: $color-tree-poppy-orange;
+                }*/ }
     .myview-settings .modal-view.preferences .cancel {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 11px;
@@ -8875,8 +8877,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12524,7 +12526,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
