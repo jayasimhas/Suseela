@@ -52,8 +52,10 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 else if (setFlag == 'register' && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
-				if(redirectUrl != 'href' && redirectUrl != 'name'){
-					window.location.href = redirectUrl;
+				if ($('.modal-overlay').hasClass('in')) {
+					if(redirectUrl != 'href' && redirectUrl != 'name'){
+						window.location.href = redirectUrl;
+					}
 				}
             }
             else {
@@ -206,7 +208,7 @@ $(function () {
         div.find('.unfollowAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-        $lgfollow.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
+        $lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
         $('#validatePriority').val(true);
         $('#validateMyViewPriority').val(true);
 		
@@ -238,7 +240,7 @@ $(function () {
         div.find('.followAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followlbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-        $lgfollowing.addClass('followBtn button--outline').removeClass('followingBtn button--filled').html($('#followButtonText').val());
+        $lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
         $('#validatePriority').val(false);
         $('#validateMyViewPriority').val(true);
 		
@@ -286,7 +288,7 @@ $(function () {
 		followrow.attr('draggable', true);
 		$('#validatePreference').val(1);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
-		$this.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
+		$this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
 		setClsforFlw(table);
 		table.find('.firstrow .lableStatus').val('followinglbl');
 		table.find('.accordionStatus .lableStatus').val('followinglbl');
