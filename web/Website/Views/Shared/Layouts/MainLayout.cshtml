@@ -114,7 +114,7 @@
     @Html.Raw(@Model.CustomTagsFooter)
 }
 
-    <iframe name="iframe-vertical" style="display:none;"></iframe>
+    @*<iframe name="iframe-vertical" style="display:none;"></iframe>*@
     
     @{
         var sitelist = Model.GetVerticalDomains();
@@ -123,9 +123,10 @@
             <div id="hiddenforms_login">
                 @foreach (string site in sitelist)
                 {
-                string sitename = site.Split('|')[0];
-                string url = Request.Url.Scheme + "://" + @site.Split('|')[1];
-                <form id="@sitename-login" target="iframe-vertical" action="@url/Account/api/LoginWebUserApi/VerticalLogin" method="POST" style="display:none;">
+                    string sitename = site.Split('|')[0];
+                    string url = Request.Url.Scheme + "://" + @site.Split('|')[1];
+                <iframe name="loginiframe-@sitename" style="display:none;"></iframe>
+                <form id="@sitename-login" target="loginiframe-@sitename" action="@url/Account/api/LoginWebUserApi/VerticalLogin" method="POST" style="display:none;">
                     <input name="username" type="text" style="display:none;" value="" />
                 </form>
                 
@@ -136,7 +137,8 @@
                 {
                     string sitename = site.Split('|')[0];
                     string url = Request.Url.Scheme + "://" + @site.Split('|')[1];
-                   <form id="@sitename-logout" target="iframe-vertical" action="@url/Account/LogoutWebUser/VerticalLogout" method="POST" style="display:none;"></form>
+                    <iframe name="logoutiframe-@sitename" style="display:none;"></iframe>
+                   <form id="@sitename-logout" target="logoutiframe-@sitename" action="@url/Account/LogoutWebUser/VerticalLogout" method="POST" style="display:none;"></form>
                 }
              </div>
                 }
