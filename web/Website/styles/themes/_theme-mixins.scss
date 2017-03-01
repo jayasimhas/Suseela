@@ -1,6 +1,8 @@
 @mixin theme-links($color) {
 
     a,
+	.msg-text h3,
+	.red,
     .facets__button,
     .facets__button svg,
     .sorting-arrows__arrow.is-active,
@@ -12,7 +14,7 @@
     }
 
     footer a,
-    .general-header__navigation a,
+	.general-header__navigation a,
     .sortable-table__col a {
         color: inherit;
     }

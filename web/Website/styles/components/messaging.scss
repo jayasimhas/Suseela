@@ -142,9 +142,9 @@
 		  margin: 0 auto;
 		  text-align: center;
 		  line-height: 30px;
-		  .red{
+		  /*.red{
 			color: $color-cardinal-red;
-		  }
+		  }*/
 	}
 	@include breakpoint('small'){
 		width: 100%;
