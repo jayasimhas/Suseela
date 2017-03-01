@@ -132,6 +132,13 @@
 	.newsletter-signup {
 		border-top: 4px solid $border;
 	}
+	.messaging_webUsers {
+		border-top: 4px solid $border;
+	}
+	.messaging_webUsers_white{
+		border-top: 4px solid $border;
+		border-bottom: 1px solid $border;
+	}
 }
 
 @mixin theme-quick-facts($background, $divider) {

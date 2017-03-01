@@ -74,9 +74,9 @@
 		  margin: 0 10px 10px 0;
 		  width:100px;
 		}
-		.li-content-company p {
+		.li-content-company p.li-content-company__headline {
 		  padding: 0 0 8px 0;
-		  font-size: 1rem;
+		  font-size: 1.25rem;
 		  margin-bottom: 20px;
 		}
 		
@@ -104,15 +104,11 @@
 		  }
 		}
 		.li-content-graph p {
-		  font-size: smaller;
+		  font-size: 0.875rem;
 		  padding: 0 0 0 0;
 		  margin-bottom: 22px;
 		}
-		// .li-content-graph p a {
-		// 	color: #000;
-		// }
-		.li-content-graph p a:hover {
-		}
+		
 		.hideinMob{
 			display: block;
 			@include breakpoint('medium-small') {

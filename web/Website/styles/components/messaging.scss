@@ -2,7 +2,6 @@
 	width: 100% !important; 
 	background: $color-concrete-gray;
 	clear: both;
-	border-top: 4px solid $color-cardinal-red;
 	padding: 1.5625rem 2rem;
 	position: relative;
 	line-height: 20px;
@@ -97,9 +96,7 @@
 	position: relative;
 	line-height: 20px;
 	width: 80%;
-	clear: both;
-	border-top: 4px solid $color-cardinal-red;
-	border-bottom: 1px solid $color-cardinal-red;
+	clear: both;	
 	padding: 1.25rem 2rem 1.5625rem;
 	margin-bottom: 1em;
 	.msg_dismiss{

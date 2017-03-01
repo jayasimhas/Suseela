@@ -16,7 +16,7 @@
 
     @include theme-banners($color-primary-crimson, $color-white);
 
-    @include theme-call-out-boxes($color-concrete-gray, $color-persian-red);
+    @include theme-call-out-boxes($color-concrete-gray, $color-primary-crimson);
 
     @include theme-bordered-elements($color-primary-crimson);
 

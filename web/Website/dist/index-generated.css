@@ -2221,10 +2221,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     float: left;
     margin: 0 10px 10px 0;
     width: 100px; }
-  #main-carousel .li-content-company p {
+  #main-carousel .li-content-company p.li-content-company__headline {
     padding: 0 0 8px 0;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 20px; }
   #main-carousel .li-content-graph {
     border: none;
@@ -2244,7 +2244,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         #main-carousel .li-content-graph > a div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
           height: 220px !important; }
   #main-carousel .li-content-graph p {
-    font-size: smaller;
+    font-size: 14px;
+    font-size: 0.875rem;
     padding: 0 0 0 0;
     margin-bottom: 22px; }
   #main-carousel .hideinMob {
@@ -4436,7 +4437,6 @@ main .action-flags-bar, main .banner--highlights {
   width: 100% !important;
   background: #f1f2f2;
   clear: both;
-  border-top: 4px solid #be1e2d;
   padding: 25px 32px;
   padding: 1.5625rem 2rem;
   position: relative;
@@ -4527,8 +4527,6 @@ main .action-flags-bar, main .banner--highlights {
   line-height: 20px;
   width: 80%;
   clear: both;
-  border-top: 4px solid #be1e2d;
-  border-bottom: 1px solid #be1e2d;
   padding: 20px 32px 25px;
   padding: 1.25rem 2rem 1.5625rem;
   margin-bottom: 1em; }
@@ -14179,6 +14177,13 @@ main {
 .theme-pink-sheet .newsletter-signup {
   border-top: 4px solid #BC608C; }
 
+.theme-pink-sheet .messaging_webUsers {
+  border-top: 4px solid #BC608C; }
+
+.theme-pink-sheet .messaging_webUsers_white {
+  border-top: 4px solid #BC608C;
+  border-bottom: 1px solid #BC608C; }
+
 .theme-pink-sheet .article-pullquote,
 .theme-pink-sheet .quote,
 .theme-pink-sheet .article-sidebar,
@@ -14527,6 +14532,13 @@ main {
 
 .theme-rose-sheet .newsletter-signup {
   border-top: 4px solid #DD3580; }
+
+.theme-rose-sheet .messaging_webUsers {
+  border-top: 4px solid #DD3580; }
+
+.theme-rose-sheet .messaging_webUsers_white {
+  border-top: 4px solid #DD3580;
+  border-bottom: 1px solid #DD3580; }
 
 .theme-rose-sheet .article-pullquote,
 .theme-rose-sheet .quote,
@@ -14877,6 +14889,13 @@ main {
 .theme-medtech .newsletter-signup {
   border-top: 4px solid #034a7c; }
 
+.theme-medtech .messaging_webUsers {
+  border-top: 4px solid #034a7c; }
+
+.theme-medtech .messaging_webUsers_white {
+  border-top: 4px solid #034a7c;
+  border-bottom: 1px solid #034a7c; }
+
 .theme-medtech .article-pullquote,
 .theme-medtech .quote,
 .theme-medtech .article-sidebar,
@@ -15225,6 +15244,13 @@ main {
 
 .theme-invivo .newsletter-signup {
   border-top: 4px solid #7e2718; }
+
+.theme-invivo .messaging_webUsers {
+  border-top: 4px solid #7e2718; }
+
+.theme-invivo .messaging_webUsers_white {
+  border-top: 4px solid #7e2718;
+  border-bottom: 1px solid #7e2718; }
 
 .theme-invivo .article-pullquote,
 .theme-invivo .quote,
@@ -15575,6 +15601,13 @@ main {
 .theme-commodities .newsletter-signup {
   border-top: 4px solid #c12d3b; }
 
+.theme-commodities .messaging_webUsers {
+  border-top: 4px solid #c12d3b; }
+
+.theme-commodities .messaging_webUsers_white {
+  border-top: 4px solid #c12d3b;
+  border-bottom: 1px solid #c12d3b; }
+
 .theme-commodities .article-pullquote,
 .theme-commodities .quote,
 .theme-commodities .article-sidebar,
@@ -15918,7 +15951,14 @@ main {
   background-color: #f1f2f2; }
 
 .theme-insurance-day .newsletter-signup {
-  border-top: 4px solid #c12d3b; }
+  border-top: 4px solid #DE4361; }
+
+.theme-insurance-day .messaging_webUsers {
+  border-top: 4px solid #DE4361; }
+
+.theme-insurance-day .messaging_webUsers_white {
+  border-top: 4px solid #DE4361;
+  border-bottom: 1px solid #DE4361; }
 
 .theme-insurance-day .article-pullquote,
 .theme-insurance-day .quote,
@@ -16301,6 +16341,13 @@ main {
 
 .theme-lloydslist .newsletter-signup {
   border-top: 4px solid #1191D1; }
+
+.theme-lloydslist .messaging_webUsers {
+  border-top: 4px solid #1191D1; }
+
+.theme-lloydslist .messaging_webUsers_white {
+  border-top: 4px solid #1191D1;
+  border-bottom: 1px solid #1191D1; }
 
 .theme-lloydslist .article-pullquote,
 .theme-lloydslist .quote,
