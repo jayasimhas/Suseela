@@ -91,7 +91,7 @@ namespace Informa.Web.Areas.Article.Controllers
                     success = false
                 });
             }
-
+            var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
             var allEmails = request.AskTheAnalystEmail;// request.RecipientEmail.Split(';');
             var result = true;
             var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
@@ -104,7 +104,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				{
 					To = request.AskTheAnalystEmail,
 					Subject = request.ArticleTitle,
-					From = request.SenderEmail,
+					From = emailFrom,
 					Body = specificEmailBody,                    
 					IsBodyHtml = true
 				};
