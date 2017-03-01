@@ -719,7 +719,7 @@
 			display: inline-block;
 			float: right;
 		}
-	  .saveview{
+	  .saveview, .registrationBtn{
 		padding: 0 2rem;
 		 @include folow-btn(auto, 2rem, $color-white, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
@@ -729,7 +729,7 @@
 			padding: 0 2.5rem;
 		  }
 	  }
-	  .registrationBtn{
+	  /*.registrationBtn{
 		padding: 0 2rem;
 		 @include folow-btn(auto, 2rem, #58595b, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
@@ -738,7 +738,7 @@
 		  @include breakpoint('small') {
 			width: 46%;
 		  }
-	  }
+	  }*/
   }
   
   .dosubscribe{
@@ -810,7 +810,20 @@
 				margin-right: 20px;
 			}
 			.registrationBtn.validationChk{
-                border: 1px solid $color-tree-poppy-orange;
+				@include textMix('Roboto', 0.6875rem, 700);
+				text-align: center;
+				float: left; 
+				width: 4.375rem;
+				text-transform: uppercase; 
+				cursor: pointer;
+				line-height: 2rem; 
+				padding: 0px;
+				float: left;
+				width: 8.125rem;
+				height: 2rem;
+				color: #f8;
+				margin-right: 20px;
+                /*border: 1px solid $color-tree-poppy-orange;
                 color: $color-zeus-black;
                 text-align: center;
                 float: left;
@@ -823,7 +836,7 @@
                 font-weight: bold;
                 &:hover{
                     background: $color-tree-poppy-orange;
-                }
+                }*/
 			}
 			.cancel{
 				@include textMix('Roboto', 0.6875rem, 700);
