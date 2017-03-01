@@ -1282,4 +1282,20 @@ $(document).ready(function(){
 	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
 	}
    
+   //IDE Login to Different Sales Force
+   $(document).ready(function() {
+        var LoginUrl = window.location.href;
+        if( (LoginUrl.indexOf('login=success') != -1) && $('.header-account-access__label').hasClass('header_salesforce_sign-in-out') ) {
+            var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
+            $('#hiddenforms_login form').each(function() {
+                $(this).find('input[type="text"]').val(UserId);
+                $(this)[0].submit();
+            });
+        }
+        if(!$('.header-account-access__label').hasClass('header_salesforce_sign-in-out')) {
+            $('#hiddenforms_logout form').each(function() {
+                $(this)[0].submit();
+            });
+        }
+   })
 });
