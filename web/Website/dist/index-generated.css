@@ -3929,16 +3929,15 @@ body.lightboxed {
     width: 50%;
     float: left; }
 
-.theme-table {
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
-  .theme-table .pad-10 {
-    padding: 10px !important; }
-  .theme-table thead tr:first-child th {
-    text-align: left !important;
-    border-bottom: 1px solid #ffffff; }
-  .theme-table thead tr th {
-    border-bottom: 1px solid #ffffff; }
+.theme-table .pad-10 {
+  padding: 10px !important; }
+
+.theme-table thead tr:first-child th {
+  text-align: left !important;
+  border-bottom: 1px solid #ffffff; }
+
+.theme-table thead tr th {
+  border-bottom: 1px solid #ffffff; }
 
 #cockettBunker, #shipRoro {
   border: none; }
