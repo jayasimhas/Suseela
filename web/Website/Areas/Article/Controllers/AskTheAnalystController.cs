@@ -103,7 +103,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				var analystEmail = new Email
 				{
 					To = request.AskTheAnalystEmail,
-					Subject = TextTranslator.Translate("Article.ATA.SubjectText") +" - "+ "[" + request.ArticleTitle +"]",
+					Subject = TextTranslator.Translate("Article.ATA.SubjectText") +" - "+ request.ArticleTitle,
 					From = emailFrom,
 					Body = specificEmailBody,                    
 					IsBodyHtml = true
