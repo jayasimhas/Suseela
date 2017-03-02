@@ -2335,7 +2335,7 @@
 				<health name="sheepandgoats"><![CDATA[Sheep & Goats]]></health>
 				<health name="aquaculture">Aquaculture</health>
 				<health name="interviews">Animal Health</health>
-				<health name="people">People</health>
+				<!--<health name="people">People</health>-->
 				<health name="productsectors">Product</health>
 				<health name="antiparasitics">Antiparasitics</health>
 				<health name="vaccines">Vaccines</health>
