@@ -4311,6 +4311,9 @@ header .advertising--leaderboard.visible-mobile {
     header .advertising--leaderboard.visible-mobile {
       display: block; } }
 
+header .header__wrapper {
+  position: relative; }
+
 header .header-publication-links {
   top: 50px; }
   @media (max-width: 640px) {
@@ -5094,8 +5097,8 @@ main .action-flags-bar, main .banner--highlights {
               padding: 0px 10px;
               padding: 0rem 0.625rem; } }
         .myview-settings .table-responsive .table thead th.pbot {
-          padding: 0px 16px 20px 27px;
-          padding: 0rem 1rem 1.25rem 27px; }
+          padding: 0px 16px 20px 20px;
+          padding: 0rem 1rem 1.25rem 1.25rem; }
         .myview-settings .table-responsive .table thead th .mvTxt {
           font-family: "Roboto Condensed", Arial Narrow, sans-serif;
           font-size: 14px;
@@ -5280,7 +5283,8 @@ main .action-flags-bar, main .banner--highlights {
             width: 65%; } }
         @media (max-width: 640px) {
           .myview-settings .table-responsive .table .wd-55 {
-            width: 45%; } }
+            width: 45%;
+            padding: 12px 20px 12px 10px; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 20%; }
         .myview-settings .table-responsive .table .wd-25.pbot {
@@ -8893,8 +8897,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10220,8 +10224,8 @@ div#feedbacklite.fbl_r {
 .package-control-articles__fullContent {
   margin: 0;
   background: #f1f2f2;
-  padding: 20px;
-  padding: 1.25rem;
+  padding: 25px;
+  padding: 1.5625rem;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
   .package-control-articles__fullContent .package-wrapper {
@@ -10262,7 +10266,9 @@ div#feedbacklite.fbl_r {
     width: 100%;
     position: relative;
     margin: 0 0 20px 0;
-    margin: 0 0 1.25rem 0; }
+    margin: 0 0 1.25rem 0;
+    font-size: 30px;
+    font-size: 1.875rem; }
     .package-control-articles__fullContent .header-line-control:after {
       content: '';
       position: absolute;
@@ -10313,21 +10319,24 @@ div#feedbacklite.fbl_r {
   .package-wrapper .package-control-preview .article-metadata {
     clear: both;
     margin-top: 0;
-    margin-bottom: 8px;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem; }
     @media (max-width: 480px) {
       .package-wrapper .package-control-preview .article-metadata {
         float: none; } }
   .package-wrapper .package-control-preview .article-preview__byline {
     float: left;
-    margin-bottom: 8px;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 11px;
+    margin-bottom: 0.6875rem; }
     @media (max-width: 480px) {
       .package-wrapper .package-control-preview .article-preview__byline {
         float: none; } }
   .package-wrapper .package-control-preview .article-preview--small {
     margin: 0;
     width: 100%; }
+  .package-wrapper .package-control-preview .article-preview__inner-wrapper {
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem; }
   .package-wrapper .package-control-preview .package-heading-wrapper {
     margin-top: 20px;
     margin-top: 1.25rem; }
@@ -10347,6 +10356,8 @@ div#feedbacklite.fbl_r {
     font-weight: bold;
     line-height: 24px; }
   .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
+    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 30px; }
 
 .package-control-articles__half {
@@ -10442,7 +10453,10 @@ div#feedbacklite.fbl_r {
   .package-img-wrapper img {
     width: 100%; }
   .package-img-wrapper.first {
-    height: 220px; }
+    height: 220px;
+    width: 545px;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem; }
   .package-img-wrapper.second {
     height: 165.56px; }
   .package-img-wrapper.third {
@@ -12545,7 +12559,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
