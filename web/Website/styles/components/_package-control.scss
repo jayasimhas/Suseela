@@ -4,7 +4,7 @@
 	padding: 1.5625rem;
 	margin-bottom: 2rem;
 	.package-wrapper {
-		padding-bottom: 2rem;
+		padding-bottom: 1rem;
 		margin: 0 -0.625rem;
 		display: flex;
 		@include breakpoint('small') {
@@ -16,6 +16,7 @@
 	}
 	
 	.article-metadata{
+		position: relative;
 		ul {
 			display: block;
 			li {
@@ -73,12 +74,19 @@
 	&:after{
 		margin-bottom: 2rem;
 	}
+	
 		.package-control-preview {
 			position: relative;
 			width: 25%;
 			margin: 0;
-			padding: 0 0.625rem;
+			padding: 0 0.9375rem;
 			float: left;
+			.article-preview__inner-wrapper {
+				margin-bottom: 0.5rem !important;
+			}
+			.bar-separated-link-list a {
+				font-size: 1rem;
+			}
 			@include breakpoint('small') {
 				width: 100%;
 				margin-bottom: 2rem;
@@ -102,14 +110,14 @@
 			.article-metadata {
 				clear: both;
 				margin-top:0;
-				margin-bottom: 0.625rem;
+				margin-bottom: 0.25rem;
 				@include breakpoint('small') {
 					float: none;
 				}
 			}
 			.article-preview__byline {
 				float: left;
-				margin-bottom:0.6875rem;
+				margin-bottom:0.1875rem;
 				@include breakpoint('small') {
 					float: none;
 				}
@@ -137,7 +145,8 @@
 					font-family: Roboto;
 					font-size: 1.25rem;
 					font-weight: bold;
-					line-height: 24px;		
+					line-height: 24px;	
+					margin-bottom: 5px;	
 				}
 				
 				.article-summary{
@@ -281,7 +290,7 @@
 }
 .moreText{
 	text-align: right;
-	padding-bottom: 2rem;
+	padding-bottom: 1rem;
 	font-family: Roboto;
 	font-size: 1rem;
 	font-weight: bold;
