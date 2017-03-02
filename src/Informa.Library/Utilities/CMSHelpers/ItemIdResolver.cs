@@ -43,6 +43,27 @@ namespace Informa.Library.Utilities.CMSHelpers
             }
             return itemId;
         }
+
+        public static string GetArticlePrefixByKey(string site, string publication)
+        {
+            string itemId = string.Empty;
+            string vertical = string.Empty;
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var reader = scope.Resolve<IVerticalRootContext>();
+                vertical = reader.Item.Vertical_Name;
+            }
+            if (!string.IsNullOrEmpty(vertical))
+            {
+                itemId = Sitecore.Configuration.Settings.GetSetting("Content." + site + "." + publication + "." + "Prefix");
+                
+            }
+            else
+            {
+                itemId = Sitecore.Configuration.Settings.GetSetting("Content." + site + "." + publication + "." + "Prefix");
+            }
+            return itemId;
+        }
     }
 
     public sealed class SitecoreSettingResolver
