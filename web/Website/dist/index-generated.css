@@ -9367,65 +9367,65 @@ div#feedbacklite.fbl_r {
     #dryCargoIcap .table.descView.descView tbody.visible-lg, #dryCargoIcap .table.descView.descView tr.visible-lg, #dryCargoIcap .table.descView thead tbody.visible-lg, #dryCargoIcap .table.descView thead tr.visible-lg {
       display: block !important; } }
 
-#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures {
+#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
-  #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop {
+  #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop {
     height: 1px;
     border-top: 1px solid #d1d3d4;
     display: block; }
-  #market-data-tool.table-responsive .table, #dry-cargo.table-responsive .table, #dry-cargo-cap.table-responsive .table, #dry-cargo-bulk-fixtures.table-responsive .table, #tanker-fixtures.table-responsive .table {
+  #market-data-tool.table-responsive .table, #dry-cargo.table-responsive .table, #dry-cargo-cap.table-responsive .table, #dry-cargo-bulk-fixtures.table-responsive .table, #tanker-fixtures.table-responsive .table, #ship-Container-ShipFixtures.table-responsive .table {
     margin-bottom: 32px;
     margin-bottom: 2rem; }
-    #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #dry-cargo-cap.table-responsive .table.mobView, #dry-cargo-bulk-fixtures.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
+    #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #dry-cargo-cap.table-responsive .table.mobView, #dry-cargo-bulk-fixtures.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView, #ship-Container-ShipFixtures.table-responsive .table.mobView {
       display: none; }
-    #market-data-tool.table-responsive .table.descView, #dry-cargo.table-responsive .table.descView, #dry-cargo-cap.table-responsive .table.descView, #dry-cargo-bulk-fixtures.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
+    #market-data-tool.table-responsive .table.descView, #dry-cargo.table-responsive .table.descView, #dry-cargo-cap.table-responsive .table.descView, #dry-cargo-bulk-fixtures.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView, #ship-Container-ShipFixtures.table-responsive .table.descView {
       display: table; }
     @media (max-width: 480px) {
-      #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #dry-cargo-cap.table-responsive .table.mobView, #dry-cargo-bulk-fixtures.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView {
+      #market-data-tool.table-responsive .table.mobView, #dry-cargo.table-responsive .table.mobView, #dry-cargo-cap.table-responsive .table.mobView, #dry-cargo-bulk-fixtures.table-responsive .table.mobView, #tanker-fixtures.table-responsive .table.mobView, #ship-Container-ShipFixtures.table-responsive .table.mobView {
         display: table; }
-      #market-data-tool.table-responsive .table.descView, #dry-cargo.table-responsive .table.descView, #dry-cargo-cap.table-responsive .table.descView, #dry-cargo-bulk-fixtures.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView {
+      #market-data-tool.table-responsive .table.descView, #dry-cargo.table-responsive .table.descView, #dry-cargo-cap.table-responsive .table.descView, #dry-cargo-bulk-fixtures.table-responsive .table.descView, #tanker-fixtures.table-responsive .table.descView, #ship-Container-ShipFixtures.table-responsive .table.descView {
         display: none; } }
-    #market-data-tool.table-responsive .table .table_head, #dry-cargo.table-responsive .table .table_head, #dry-cargo-cap.table-responsive .table .table_head, #dry-cargo-bulk-fixtures.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head {
+    #market-data-tool.table-responsive .table .table_head, #dry-cargo.table-responsive .table .table_head, #dry-cargo-cap.table-responsive .table .table_head, #dry-cargo-bulk-fixtures.table-responsive .table .table_head, #tanker-fixtures.table-responsive .table .table_head, #ship-Container-ShipFixtures.table-responsive .table .table_head {
       color: #ffffff; }
-      #market-data-tool.table-responsive .table .table_head th, #dry-cargo.table-responsive .table .table_head th, #dry-cargo-cap.table-responsive .table .table_head th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+      #market-data-tool.table-responsive .table .table_head th, #dry-cargo.table-responsive .table .table_head th, #dry-cargo-cap.table-responsive .table .table_head th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th, #ship-Container-ShipFixtures.table-responsive .table .table_head th {
         text-transform: capitalize;
         font-size: 16px;
         font-weight: 500; }
         @media only screen and (min-width: 600px) and (max-width: 768px) {
-          #market-data-tool.table-responsive .table .table_head th, #dry-cargo.table-responsive .table .table_head th, #dry-cargo-cap.table-responsive .table .table_head th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th {
+          #market-data-tool.table-responsive .table .table_head th, #dry-cargo.table-responsive .table .table_head th, #dry-cargo-cap.table-responsive .table .table_head th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head th, #tanker-fixtures.table-responsive .table .table_head th, #ship-Container-ShipFixtures.table-responsive .table .table_head th {
             font-size: 12px; } }
-      #market-data-tool.table-responsive .table .table_head .blueBg, #dry-cargo.table-responsive .table .table_head .blueBg, #dry-cargo-cap.table-responsive .table .table_head .blueBg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .blueBg, #tanker-fixtures.table-responsive .table .table_head .blueBg {
+      #market-data-tool.table-responsive .table .table_head .blueBg, #dry-cargo.table-responsive .table .table_head .blueBg, #dry-cargo-cap.table-responsive .table .table_head .blueBg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .blueBg, #tanker-fixtures.table-responsive .table .table_head .blueBg, #ship-Container-ShipFixtures.table-responsive .table .table_head .blueBg {
         background: #1191d1; }
-      #market-data-tool.table-responsive .table .table_head .visible-lg, #dry-cargo.table-responsive .table .table_head .visible-lg, #dry-cargo-cap.table-responsive .table .table_head .visible-lg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg {
+      #market-data-tool.table-responsive .table .table_head .visible-lg, #dry-cargo.table-responsive .table .table_head .visible-lg, #dry-cargo-cap.table-responsive .table .table_head .visible-lg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg, #ship-Container-ShipFixtures.table-responsive .table .table_head .visible-lg {
         color: #fff; }
-        #market-data-tool.table-responsive .table .table_head .visible-lg th, #dry-cargo.table-responsive .table .table_head .visible-lg th, #dry-cargo-cap.table-responsive .table .table_head .visible-lg th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th {
+        #market-data-tool.table-responsive .table .table_head .visible-lg th, #dry-cargo.table-responsive .table .table_head .visible-lg th, #dry-cargo-cap.table-responsive .table .table_head .visible-lg th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th, #ship-Container-ShipFixtures.table-responsive .table .table_head .visible-lg th {
           font-weight: bold; }
-    #market-data-tool.table-responsive .table tbody.visible-lg td, #dry-cargo.table-responsive .table tbody.visible-lg td, #dry-cargo-cap.table-responsive .table tbody.visible-lg td, #dry-cargo-bulk-fixtures.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td {
+    #market-data-tool.table-responsive .table tbody.visible-lg td, #dry-cargo.table-responsive .table tbody.visible-lg td, #dry-cargo-cap.table-responsive .table tbody.visible-lg td, #dry-cargo-bulk-fixtures.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td, #ship-Container-ShipFixtures.table-responsive .table tbody.visible-lg td {
       border-bottom: 1px solid #d1d3d4; }
-    #market-data-tool.table-responsive .table .R21_BlueColor, #dry-cargo.table-responsive .table .R21_BlueColor, #dry-cargo-cap.table-responsive .table .R21_BlueColor, #dry-cargo-bulk-fixtures.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor {
+    #market-data-tool.table-responsive .table .R21_BlueColor, #dry-cargo.table-responsive .table .R21_BlueColor, #dry-cargo-cap.table-responsive .table .R21_BlueColor, #dry-cargo-bulk-fixtures.table-responsive .table .R21_BlueColor, #tanker-fixtures.table-responsive .table .R21_BlueColor, #ship-Container-ShipFixtures.table-responsive .table .R21_BlueColor {
       color: #1191d1; }
-    #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+    #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10, #ship-Container-ShipFixtures.table-responsive .table .pad-10 {
       padding: 20px 16px; }
       @media only screen and (max-width: 1024px) {
-        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10, #ship-Container-ShipFixtures.table-responsive .table .pad-10 {
           padding: 16px 5px; } }
       @media only screen and (max-width: 767px) {
-        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10, #ship-Container-ShipFixtures.table-responsive .table .pad-10 {
           padding: 16px 10px; } }
       @media only screen and (min-width: 600px) and (max-width: 768px) {
-        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10 {
+        #market-data-tool.table-responsive .table .pad-10, #dry-cargo.table-responsive .table .pad-10, #dry-cargo-cap.table-responsive .table .pad-10, #dry-cargo-bulk-fixtures.table-responsive .table .pad-10, #tanker-fixtures.table-responsive .table .pad-10, #ship-Container-ShipFixtures.table-responsive .table .pad-10 {
           padding: 10px 2px; } }
-    #market-data-tool.table-responsive .table .mobleftCol, #dry-cargo.table-responsive .table .mobleftCol, #dry-cargo-cap.table-responsive .table .mobleftCol, #dry-cargo-bulk-fixtures.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol {
+    #market-data-tool.table-responsive .table .mobleftCol, #dry-cargo.table-responsive .table .mobleftCol, #dry-cargo-cap.table-responsive .table .mobleftCol, #dry-cargo-bulk-fixtures.table-responsive .table .mobleftCol, #tanker-fixtures.table-responsive .table .mobleftCol, #ship-Container-ShipFixtures.table-responsive .table .mobleftCol {
       font-size: 18px;
       border-right: 1px solid #e9e9e9; }
-    #market-data-tool.table-responsive .table .mobrigCol, #dry-cargo.table-responsive .table .mobrigCol, #dry-cargo-cap.table-responsive .table .mobrigCol, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol, #tanker-fixtures.table-responsive .table .mobrigCol {
+    #market-data-tool.table-responsive .table .mobrigCol, #dry-cargo.table-responsive .table .mobrigCol, #dry-cargo-cap.table-responsive .table .mobrigCol, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol, #tanker-fixtures.table-responsive .table .mobrigCol, #ship-Container-ShipFixtures.table-responsive .table .mobrigCol {
       font-size: 16px; }
-      #market-data-tool.table-responsive .table .mobrigCol a, #market-data-tool.table-responsive .table .mobrigCol .pop-out__reset-password, #market-data-tool.table-responsive .table .mobrigCol .sortable-table__list-toggler, #market-data-tool.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo.table-responsive .table .mobrigCol a, #dry-cargo.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo-cap.table-responsive .table .mobrigCol a, #dry-cargo-cap.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo-cap.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo-cap.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol a, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .mobile-table-exit, #tanker-fixtures.table-responsive .table .mobrigCol a, #tanker-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #tanker-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .mobrigCol .mobile-table-exit {
+      #market-data-tool.table-responsive .table .mobrigCol a, #market-data-tool.table-responsive .table .mobrigCol .pop-out__reset-password, #market-data-tool.table-responsive .table .mobrigCol .sortable-table__list-toggler, #market-data-tool.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo.table-responsive .table .mobrigCol a, #dry-cargo.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo-cap.table-responsive .table .mobrigCol a, #dry-cargo-cap.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo-cap.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo-cap.table-responsive .table .mobrigCol .mobile-table-exit, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol a, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #dry-cargo-bulk-fixtures.table-responsive .table .mobrigCol .mobile-table-exit, #tanker-fixtures.table-responsive .table .mobrigCol a, #tanker-fixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #tanker-fixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .mobrigCol .mobile-table-exit, #ship-Container-ShipFixtures.table-responsive .table .mobrigCol a, #ship-Container-ShipFixtures.table-responsive .table .mobrigCol .pop-out__reset-password, #ship-Container-ShipFixtures.table-responsive .table .mobrigCol .sortable-table__list-toggler, #ship-Container-ShipFixtures.table-responsive .table .mobrigCol .mobile-table-exit {
         color: #1191d1;
         text-decoration: none; }
-    #market-data-tool.table-responsive .table .RB18, #dry-cargo.table-responsive .table .RB18, #dry-cargo-cap.table-responsive .table .RB18, #dry-cargo-bulk-fixtures.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18 {
+    #market-data-tool.table-responsive .table .RB18, #dry-cargo.table-responsive .table .RB18, #dry-cargo-cap.table-responsive .table .RB18, #dry-cargo-bulk-fixtures.table-responsive .table .RB18, #tanker-fixtures.table-responsive .table .RB18, #ship-Container-ShipFixtures.table-responsive .table .RB18 {
       color: #000; }
-      #market-data-tool.table-responsive .table .RB18 .top, #dry-cargo.table-responsive .table .RB18 .top, #dry-cargo-cap.table-responsive .table .RB18 .top, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
+      #market-data-tool.table-responsive .table .RB18 .top, #dry-cargo.table-responsive .table .RB18 .top, #dry-cargo-cap.table-responsive .table .RB18 .top, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top, #ship-Container-ShipFixtures.table-responsive .table .RB18 .top {
         color: #58595b;
         width: 40px;
         height: 40px;
@@ -9434,97 +9434,97 @@ div#feedbacklite.fbl_r {
         text-decoration: none;
         font-size: 17px; }
         @media (max-width: 480px) {
-          #market-data-tool.table-responsive .table .RB18 .top, #dry-cargo.table-responsive .table .RB18 .top, #dry-cargo-cap.table-responsive .table .RB18 .top, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top {
+          #market-data-tool.table-responsive .table .RB18 .top, #dry-cargo.table-responsive .table .RB18 .top, #dry-cargo-cap.table-responsive .table .RB18 .top, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top, #tanker-fixtures.table-responsive .table .RB18 .top, #ship-Container-ShipFixtures.table-responsive .table .RB18 .top {
             display: inline-block;
             float: right;
             text-align: right; } }
-        #market-data-tool.table-responsive .table .RB18 .top span, #dry-cargo.table-responsive .table .RB18 .top span, #dry-cargo-cap.table-responsive .table .RB18 .top span, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top span, #tanker-fixtures.table-responsive .table .RB18 .top span {
+        #market-data-tool.table-responsive .table .RB18 .top span, #dry-cargo.table-responsive .table .RB18 .top span, #dry-cargo-cap.table-responsive .table .RB18 .top span, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top span, #tanker-fixtures.table-responsive .table .RB18 .top span, #ship-Container-ShipFixtures.table-responsive .table .RB18 .top span {
           background: url(img/sprite-image.png) no-repeat 0 -606px;
           width: 11px;
           height: 8px;
           display: inline-block;
           margin-right: 8px; }
-        #market-data-tool.table-responsive .table .RB18 .top:hover, #dry-cargo.table-responsive .table .RB18 .top:hover, #dry-cargo-cap.table-responsive .table .RB18 .top:hover, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover {
+        #market-data-tool.table-responsive .table .RB18 .top:hover, #dry-cargo.table-responsive .table .RB18 .top:hover, #dry-cargo-cap.table-responsive .table .RB18 .top:hover, #dry-cargo-bulk-fixtures.table-responsive .table .RB18 .top:hover, #tanker-fixtures.table-responsive .table .RB18 .top:hover, #ship-Container-ShipFixtures.table-responsive .table .RB18 .top:hover {
           text-decoration: none; }
-    #market-data-tool.table-responsive .table .R16, #dry-cargo.table-responsive .table .R16, #dry-cargo-cap.table-responsive .table .R16, #dry-cargo-bulk-fixtures.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+    #market-data-tool.table-responsive .table .R16, #dry-cargo.table-responsive .table .R16, #dry-cargo-cap.table-responsive .table .R16, #dry-cargo-bulk-fixtures.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16, #ship-Container-ShipFixtures.table-responsive .table .R16 {
       font-size: 16px;
       font-size: 1rem; }
       @media only screen and (min-width: 600px) and (max-width: 768px) {
-        #market-data-tool.table-responsive .table .R16, #dry-cargo.table-responsive .table .R16, #dry-cargo-cap.table-responsive .table .R16, #dry-cargo-bulk-fixtures.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16 {
+        #market-data-tool.table-responsive .table .R16, #dry-cargo.table-responsive .table .R16, #dry-cargo-cap.table-responsive .table .R16, #dry-cargo-bulk-fixtures.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16, #ship-Container-ShipFixtures.table-responsive .table .R16 {
           font-size: 12px; } }
-      #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #dry-cargo.table-responsive .table .R16 a, #dry-cargo.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-cap.table-responsive .table .R16 a, #dry-cargo-cap.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-cap.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-cap.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-bulk-fixtures.table-responsive .table .R16 a, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit {
+      #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #dry-cargo.table-responsive .table .R16 a, #dry-cargo.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-cap.table-responsive .table .R16 a, #dry-cargo-cap.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-cap.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-cap.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-bulk-fixtures.table-responsive .table .R16 a, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit, #ship-Container-ShipFixtures.table-responsive .table .R16 a, #ship-Container-ShipFixtures.table-responsive .table .R16 .pop-out__reset-password, #ship-Container-ShipFixtures.table-responsive .table .R16 .sortable-table__list-toggler, #ship-Container-ShipFixtures.table-responsive .table .R16 .mobile-table-exit {
         color: #1191d1; }
     @media (max-width: 480px) {
-      #market-data-tool.table-responsive .table .visible-sm, #dry-cargo.table-responsive .table .visible-sm, #dry-cargo-cap.table-responsive .table .visible-sm, #dry-cargo-bulk-fixtures.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm {
+      #market-data-tool.table-responsive .table .visible-sm, #dry-cargo.table-responsive .table .visible-sm, #dry-cargo-cap.table-responsive .table .visible-sm, #dry-cargo-bulk-fixtures.table-responsive .table .visible-sm, #tanker-fixtures.table-responsive .table .visible-sm, #ship-Container-ShipFixtures.table-responsive .table .visible-sm {
         display: block; } }
-  #market-data-tool .lli-brand-container, #dry-cargo .lli-brand-container, #dry-cargo-cap .lli-brand-container, #dry-cargo-bulk-fixtures .lli-brand-container, #tanker-fixtures .lli-brand-container {
+  #market-data-tool .lli-brand-container, #dry-cargo .lli-brand-container, #dry-cargo-cap .lli-brand-container, #dry-cargo-bulk-fixtures .lli-brand-container, #tanker-fixtures .lli-brand-container, #ship-Container-ShipFixtures .lli-brand-container {
     margin-bottom: 20px; }
-    #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #dry-cargo .lli-brand-container h3, #dry-cargo .lli-brand-container .article-call-to-action__title, #dry-cargo-cap .lli-brand-container h3, #dry-cargo-cap .lli-brand-container .article-call-to-action__title, #dry-cargo-bulk-fixtures .lli-brand-container h3, #dry-cargo-bulk-fixtures .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title {
+    #market-data-tool .lli-brand-container h3, #market-data-tool .lli-brand-container .article-call-to-action__title, #dry-cargo .lli-brand-container h3, #dry-cargo .lli-brand-container .article-call-to-action__title, #dry-cargo-cap .lli-brand-container h3, #dry-cargo-cap .lli-brand-container .article-call-to-action__title, #dry-cargo-bulk-fixtures .lli-brand-container h3, #dry-cargo-bulk-fixtures .lli-brand-container .article-call-to-action__title, #tanker-fixtures .lli-brand-container h3, #tanker-fixtures .lli-brand-container .article-call-to-action__title, #ship-Container-ShipFixtures .lli-brand-container h3, #ship-Container-ShipFixtures .lli-brand-container .article-call-to-action__title {
       background-color: #414042;
       padding: 10px;
       color: #fff; }
-    #market-data-tool .lli-brand-container .lli-brand-box, #dry-cargo .lli-brand-container .lli-brand-box, #dry-cargo-cap .lli-brand-container .lli-brand-box, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box, #tanker-fixtures .lli-brand-container .lli-brand-box {
+    #market-data-tool .lli-brand-container .lli-brand-box, #dry-cargo .lli-brand-container .lli-brand-box, #dry-cargo-cap .lli-brand-container .lli-brand-box, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box, #tanker-fixtures .lli-brand-container .lli-brand-box, #ship-Container-ShipFixtures .lli-brand-container .lli-brand-box {
       padding: 10px 0;
       font-weight: 500; }
-      #market-data-tool .lli-brand-container .lli-brand-box p, #dry-cargo .lli-brand-container .lli-brand-box p, #dry-cargo-cap .lli-brand-container .lli-brand-box p, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box p, #tanker-fixtures .lli-brand-container .lli-brand-box p {
+      #market-data-tool .lli-brand-container .lli-brand-box p, #dry-cargo .lli-brand-container .lli-brand-box p, #dry-cargo-cap .lli-brand-container .lli-brand-box p, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box p, #tanker-fixtures .lli-brand-container .lli-brand-box p, #ship-Container-ShipFixtures .lli-brand-container .lli-brand-box p {
         font-weight: normal; }
-    #market-data-tool .lli-brand-container p, #dry-cargo .lli-brand-container p, #dry-cargo-cap .lli-brand-container p, #dry-cargo-bulk-fixtures .lli-brand-container p, #tanker-fixtures .lli-brand-container p {
+    #market-data-tool .lli-brand-container p, #dry-cargo .lli-brand-container p, #dry-cargo-cap .lli-brand-container p, #dry-cargo-bulk-fixtures .lli-brand-container p, #tanker-fixtures .lli-brand-container p, #ship-Container-ShipFixtures .lli-brand-container p {
       margin-bottom: 35px; }
-    #market-data-tool .lli-brand-container fieldset, #dry-cargo .lli-brand-container fieldset, #dry-cargo-cap .lli-brand-container fieldset, #dry-cargo-bulk-fixtures .lli-brand-container fieldset, #tanker-fixtures .lli-brand-container fieldset {
+    #market-data-tool .lli-brand-container fieldset, #dry-cargo .lli-brand-container fieldset, #dry-cargo-cap .lli-brand-container fieldset, #dry-cargo-bulk-fixtures .lli-brand-container fieldset, #tanker-fixtures .lli-brand-container fieldset, #ship-Container-ShipFixtures .lli-brand-container fieldset {
       border: 0;
       margin: 0px;
       padding: 0px; }
-    #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+    #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control, #ship-Container-ShipFixtures .lli-brand-container .form-control {
       margin-bottom: 20px;
       float: left;
       width: 50%; }
       @media (max-width: 480px) {
-        #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control {
+        #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control, #ship-Container-ShipFixtures .lli-brand-container .form-control {
           width: 100%; } }
-      #market-data-tool .lli-brand-container .form-control:nth-child(2), #dry-cargo .lli-brand-container .form-control:nth-child(2), #dry-cargo-cap .lli-brand-container .form-control:nth-child(2), #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2) {
+      #market-data-tool .lli-brand-container .form-control:nth-child(2), #dry-cargo .lli-brand-container .form-control:nth-child(2), #dry-cargo-cap .lli-brand-container .form-control:nth-child(2), #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2), #ship-Container-ShipFixtures .lli-brand-container .form-control:nth-child(2) {
         float: right;
         text-align: right; }
-        #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo-cap .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
+        #market-data-tool .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo-cap .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #tanker-fixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container, #ship-Container-ShipFixtures .lli-brand-container .form-control:nth-child(2) .selectivity-single-result-container {
           text-align: left; }
-    #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+    #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg {
       float: right;
       text-align: right; }
       @media (max-width: 480px) {
-        #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg {
+        #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg {
           float: inherit;
           text-align: left; } }
-      #market-data-tool .lli-brand-container .dataProImg span, #dry-cargo .lli-brand-container .dataProImg span, #dry-cargo-cap .lli-brand-container .dataProImg span, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span {
+      #market-data-tool .lli-brand-container .dataProImg span, #dry-cargo .lli-brand-container .dataProImg span, #dry-cargo-cap .lli-brand-container .dataProImg span, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span, #ship-Container-ShipFixtures .lli-brand-container .dataProImg span {
         position: relative;
         top: -26px;
         margin-right: 10px; }
-    #market-data-tool .lli-brand-container .selectivity-single-select, #dry-cargo .lli-brand-container .selectivity-single-select, #dry-cargo-cap .lli-brand-container .selectivity-single-select, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select {
+    #market-data-tool .lli-brand-container .selectivity-single-select, #dry-cargo .lli-brand-container .selectivity-single-select, #dry-cargo-cap .lli-brand-container .selectivity-single-select, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-single-select, #tanker-fixtures .lli-brand-container .selectivity-single-select, #ship-Container-ShipFixtures .lli-brand-container .selectivity-single-select {
       background: #ffffff; }
-    #market-data-tool .lli-brand-container .select-field, #dry-cargo .lli-brand-container .select-field, #dry-cargo-cap .lli-brand-container .select-field, #dry-cargo-bulk-fixtures .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field {
+    #market-data-tool .lli-brand-container .select-field, #dry-cargo .lli-brand-container .select-field, #dry-cargo-cap .lli-brand-container .select-field, #dry-cargo-bulk-fixtures .lli-brand-container .select-field, #tanker-fixtures .lli-brand-container .select-field, #ship-Container-ShipFixtures .lli-brand-container .select-field {
       position: relative;
       display: inline-block; }
-    #market-data-tool .lli-brand-container .selectivity-input, #dry-cargo .lli-brand-container .selectivity-input, #dry-cargo-cap .lli-brand-container .selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-input, #tanker-fixtures .lli-brand-container .selectivity-input {
+    #market-data-tool .lli-brand-container .selectivity-input, #dry-cargo .lli-brand-container .selectivity-input, #dry-cargo-cap .lli-brand-container .selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-input, #tanker-fixtures .lli-brand-container .selectivity-input, #ship-Container-ShipFixtures .lli-brand-container .selectivity-input {
       position: relative; }
-    #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+    #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input, #ship-Container-ShipFixtures .lli-brand-container #areaCode.selectivity-input {
       width: 300px; }
       @media (max-width: 480px) {
-        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input, #ship-Container-ShipFixtures .lli-brand-container #areaCode.selectivity-input {
           width: 285px; } }
       @media screen and (max-width: 320px) {
-        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input {
+        #market-data-tool .lli-brand-container #areaCode.selectivity-input, #dry-cargo .lli-brand-container #areaCode.selectivity-input, #dry-cargo-cap .lli-brand-container #areaCode.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #areaCode.selectivity-input, #tanker-fixtures .lli-brand-container #areaCode.selectivity-input, #ship-Container-ShipFixtures .lli-brand-container #areaCode.selectivity-input {
           width: 230px; } }
-    #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #dry-cargo .lli-brand-container #movementType.selectivity-input, #dry-cargo .lli-brand-container #selectDay.selectivity-input, #dry-cargo-cap .lli-brand-container #movementType.selectivity-input, #dry-cargo-cap .lli-brand-container #selectDay.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #movementType.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input {
+    #market-data-tool .lli-brand-container #movementType.selectivity-input, #market-data-tool .lli-brand-container #selectDay.selectivity-input, #dry-cargo .lli-brand-container #movementType.selectivity-input, #dry-cargo .lli-brand-container #selectDay.selectivity-input, #dry-cargo-cap .lli-brand-container #movementType.selectivity-input, #dry-cargo-cap .lli-brand-container #selectDay.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #movementType.selectivity-input, #dry-cargo-bulk-fixtures .lli-brand-container #selectDay.selectivity-input, #tanker-fixtures .lli-brand-container #movementType.selectivity-input, #tanker-fixtures .lli-brand-container #selectDay.selectivity-input, #ship-Container-ShipFixtures .lli-brand-container #movementType.selectivity-input, #ship-Container-ShipFixtures .lli-brand-container #selectDay.selectivity-input {
       width: 210px; }
-    #market-data-tool .lli-brand-container .selectivity-dropdown, #dry-cargo .lli-brand-container .selectivity-dropdown, #dry-cargo-cap .lli-brand-container .selectivity-dropdown, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown {
+    #market-data-tool .lli-brand-container .selectivity-dropdown, #dry-cargo .lli-brand-container .selectivity-dropdown, #dry-cargo-cap .lli-brand-container .selectivity-dropdown, #dry-cargo-bulk-fixtures .lli-brand-container .selectivity-dropdown, #tanker-fixtures .lli-brand-container .selectivity-dropdown, #ship-Container-ShipFixtures .lli-brand-container .selectivity-dropdown {
       right: 0;
       top: 100%; }
-    #market-data-tool .lli-brand-container .form-control label, #dry-cargo .lli-brand-container .form-control label, #dry-cargo-cap .lli-brand-container .form-control label, #dry-cargo-bulk-fixtures .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
+    #market-data-tool .lli-brand-container .form-control label, #dry-cargo .lli-brand-container .form-control label, #dry-cargo-cap .lli-brand-container .form-control label, #dry-cargo-bulk-fixtures .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label, #ship-Container-ShipFixtures .lli-brand-container .form-control label {
       /*width: 200px;*/
       margin-right: 20px;
       display: inline-block; }
       @media (max-width: 480px) {
-        #market-data-tool .lli-brand-container .form-control label, #dry-cargo .lli-brand-container .form-control label, #dry-cargo-cap .lli-brand-container .form-control label, #dry-cargo-bulk-fixtures .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label {
+        #market-data-tool .lli-brand-container .form-control label, #dry-cargo .lli-brand-container .form-control label, #dry-cargo-cap .lli-brand-container .form-control label, #dry-cargo-bulk-fixtures .lli-brand-container .form-control label, #tanker-fixtures .lli-brand-container .form-control label, #ship-Container-ShipFixtures .lli-brand-container .form-control label {
           margin-bottom: 0.5em; } }
-    #market-data-tool .lli-brand-container .submit, #dry-cargo .lli-brand-container .submit, #dry-cargo-cap .lli-brand-container .submit, #dry-cargo-bulk-fixtures .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
+    #market-data-tool .lli-brand-container .submit, #dry-cargo .lli-brand-container .submit, #dry-cargo-cap .lli-brand-container .submit, #dry-cargo-bulk-fixtures .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit, #ship-Container-ShipFixtures .lli-brand-container .submit {
       border: 1px solid transparent;
       color: #ffffff;
       padding: 12px 80px;
@@ -9535,30 +9535,30 @@ div#feedbacklite.fbl_r {
       font-size: 1rem;
       float: right; }
       @media (max-width: 480px) {
-        #market-data-tool .lli-brand-container .submit, #dry-cargo .lli-brand-container .submit, #dry-cargo-cap .lli-brand-container .submit, #dry-cargo-bulk-fixtures .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit {
+        #market-data-tool .lli-brand-container .submit, #dry-cargo .lli-brand-container .submit, #dry-cargo-cap .lli-brand-container .submit, #dry-cargo-bulk-fixtures .lli-brand-container .submit, #tanker-fixtures .lli-brand-container .submit, #ship-Container-ShipFixtures .lli-brand-container .submit {
           margin-left: 0; } }
-  #market-data-tool h2, #market-data-tool .article-topics__header, #dry-cargo h2, #dry-cargo .article-topics__header, #dry-cargo-cap h2, #dry-cargo-cap .article-topics__header, #dry-cargo-bulk-fixtures h2, #dry-cargo-bulk-fixtures .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+  #market-data-tool h2, #market-data-tool .article-topics__header, #dry-cargo h2, #dry-cargo .article-topics__header, #dry-cargo-cap h2, #dry-cargo-cap .article-topics__header, #dry-cargo-bulk-fixtures h2, #dry-cargo-bulk-fixtures .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header, #ship-Container-ShipFixtures h2, #ship-Container-ShipFixtures .article-topics__header {
     font-size: 46px;
     font-weight: bold;
     margin-bottom: 40px; }
     @media (max-width: 480px) {
-      #market-data-tool h2, #market-data-tool .article-topics__header, #dry-cargo h2, #dry-cargo .article-topics__header, #dry-cargo-cap h2, #dry-cargo-cap .article-topics__header, #dry-cargo-bulk-fixtures h2, #dry-cargo-bulk-fixtures .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header {
+      #market-data-tool h2, #market-data-tool .article-topics__header, #dry-cargo h2, #dry-cargo .article-topics__header, #dry-cargo-cap h2, #dry-cargo-cap .article-topics__header, #dry-cargo-bulk-fixtures h2, #dry-cargo-bulk-fixtures .article-topics__header, #tanker-fixtures h2, #tanker-fixtures .article-topics__header, #ship-Container-ShipFixtures h2, #ship-Container-ShipFixtures .article-topics__header {
         font-size: 36px;
         margin-bottom: 20px; } }
-  #market-data-tool h3, #market-data-tool .article-call-to-action__title, #dry-cargo h3, #dry-cargo .article-call-to-action__title, #dry-cargo-cap h3, #dry-cargo-cap .article-call-to-action__title, #dry-cargo-bulk-fixtures h3, #dry-cargo-bulk-fixtures .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+  #market-data-tool h3, #market-data-tool .article-call-to-action__title, #dry-cargo h3, #dry-cargo .article-call-to-action__title, #dry-cargo-cap h3, #dry-cargo-cap .article-call-to-action__title, #dry-cargo-bulk-fixtures h3, #dry-cargo-bulk-fixtures .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title, #ship-Container-ShipFixtures h3, #ship-Container-ShipFixtures .article-call-to-action__title {
     font-size: 26px;
     font-weight: normal;
     font-style: italic; }
     @media (max-width: 480px) {
-      #market-data-tool h3, #market-data-tool .article-call-to-action__title, #dry-cargo h3, #dry-cargo .article-call-to-action__title, #dry-cargo-cap h3, #dry-cargo-cap .article-call-to-action__title, #dry-cargo-bulk-fixtures h3, #dry-cargo-bulk-fixtures .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title {
+      #market-data-tool h3, #market-data-tool .article-call-to-action__title, #dry-cargo h3, #dry-cargo .article-call-to-action__title, #dry-cargo-cap h3, #dry-cargo-cap .article-call-to-action__title, #dry-cargo-bulk-fixtures h3, #dry-cargo-bulk-fixtures .article-call-to-action__title, #tanker-fixtures h3, #tanker-fixtures .article-call-to-action__title, #ship-Container-ShipFixtures h3, #ship-Container-ShipFixtures .article-call-to-action__title {
         font-size: 22px; } }
-  #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr {
+  #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr, #ship-Container-ShipFixtures hr {
     margin: 25px 0 35px; }
     @media (max-width: 480px) {
-      #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr {
+      #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr, #ship-Container-ShipFixtures hr {
         margin: 30px 0 20px;
         display: block; } }
-  #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop {
+  #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop {
     height: 1px;
     border-top: 1px solid #d1d3d4;
     display: block; }
