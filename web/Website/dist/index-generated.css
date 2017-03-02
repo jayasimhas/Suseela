@@ -2330,7 +2330,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-weight: 500; }
       @media (max-width: 480px) {
         #main-carousel .companies_heading span {
-          padding-right: 75px; } }
+          padding-right: 110px; } }
 
 #graph-carousel {
   margin-bottom: 32px;

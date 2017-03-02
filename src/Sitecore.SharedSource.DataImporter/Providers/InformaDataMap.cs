@@ -222,7 +222,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (Taxonomy.Count > 0)
                     {
                         // GetRegion().FirstOrDefault(w => w == word);
-                        if (publication == "commodities")
+                        if (publication == "Commodities")
                         {
                             if (Taxonomy.Values.Any(k => k.Contains("dairy")))
                             {
@@ -469,11 +469,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 if (publication == "Commodities")
                                 {
                                     commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
-                                }
-
-                                if (publication == "Commodities")
-                                {
-
+                                    
                                     commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 foreach (string agency in agencySearchResults)
@@ -530,7 +526,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                             foreach (string company in companySearchResults)
                             {
-                                if (!(publication == "AnimalPharma" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "commodities" && company == "bayer animal health"))
+                                if (!(publication == "AnimalPharm" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "Commodities" && company == "bayer animal health"))
                                     Companies += company + ",";
 
                             }
