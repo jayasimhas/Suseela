@@ -5171,7 +5171,7 @@ main .action-flags-bar, main .banner--highlights {
         .myview-settings .table-responsive .table thead th .accordionImg {
           float: left;
           text-align: right; }
-          @media screen and (min-width: 800px) {
+          @media screen and (min-width: 1025px) {
             .myview-settings .table-responsive .table thead th .accordionImg {
               width: 120px; } }
           .myview-settings .table-responsive .table thead th .accordionImg .mobileMode {
@@ -5286,6 +5286,9 @@ main .action-flags-bar, main .banner--highlights {
             padding: 12px 20px 12px 10px; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 20%; }
+        @media screen and (min-width: 767px) and (max-width: 768px) {
+          .myview-settings .table-responsive .table .wd-25 {
+            width: auto; } }
         .myview-settings .table-responsive .table .wd-25.pbot {
           padding-left: 0px;
           padding-left: 0rem; }
@@ -8896,8 +8899,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12567,7 +12570,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
