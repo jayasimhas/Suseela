@@ -4311,6 +4311,9 @@ header .advertising--leaderboard.visible-mobile {
     header .advertising--leaderboard.visible-mobile {
       display: block; } }
 
+header .header__wrapper {
+  position: relative; }
+
 header .header-publication-links {
   top: 50px; }
   @media (max-width: 640px) {
