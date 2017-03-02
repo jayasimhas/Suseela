@@ -9,7 +9,7 @@ header{
 	 	position: relative;
 	}
 	.header-publication-links{
-		top: 50px;
+		top: 30px;
 		@include breakpoint('medium-small') {
 			top: 50px;
 		}

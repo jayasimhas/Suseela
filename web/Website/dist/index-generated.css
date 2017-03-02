@@ -4315,7 +4315,7 @@ header .header__wrapper {
   position: relative; }
 
 header .header-publication-links {
-  top: 50px; }
+  top: 30px; }
   @media (max-width: 640px) {
     header .header-publication-links {
       top: 50px; } }
