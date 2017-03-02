@@ -95,7 +95,7 @@ namespace Informa.Web.Areas.Article.Controllers
             var allEmails = request.AskTheAnalystEmail;// request.RecipientEmail.Split(';');
             var result = true;
             var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
-                            request.ArticleNumber, request.PersonalQuestion);
+                            request.ArticleNumber, request.PersonalQuestion, request.CompanyName, request.PhoneNumber);
             string specificEmailBody = emailBody
                         .ReplacePatternCaseInsensitive("#friend_name#", request.AskTheAnalystEmail)
                         .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", request.AskTheAnalystEmail)
@@ -103,7 +103,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				var analystEmail = new Email
 				{
 					To = request.AskTheAnalystEmail,
-					Subject = request.ArticleTitle,
+					Subject = TextTranslator.Translate("Article.ATA.SubjectText") +"-"+ request.ArticleTitle,
 					From = emailFrom,
 					Body = specificEmailBody,                    
 					IsBodyHtml = true
@@ -121,7 +121,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			});
 		}
 
-		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string message)
+		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string message,string companyName,string phoneNumber)
 		{
 			string emailHtml = string.Empty;
 			try
@@ -145,7 +145,9 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
 					["#sender_email#"] = senderEmail,
-					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
+                    ["#company_name#"] = companyName,
+                    ["#phone_number#"] = phoneNumber,
+                    ["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 								? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
 								: string.Empty,
 					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
