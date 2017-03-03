@@ -583,11 +583,30 @@ $(document).ready(function() {
 			return $('.header__wrapper').offset().top + $('.header__wrapper').height();
 		};
 
+		var addFixedMenu = function(){
+			if($(window).width() >= 1024){
+				$('.main-menu').addClass('fixed');
+				$('.main__wrapper').css('margin-left','330px');
+			}
+		};
+
+		var removeFixedMenu = function(){
+			if($(window).width() >= 1024){
+				$('.main-menu').removeClass('fixed');
+				$('.main__wrapper').css('margin-left','0');
+				if($(window).scrollTop() > getHeaderEdge()) {
+					$('.main-menu').addClass('fixed');
+					$('.main__wrapper').css('margin-left','330px');
+				}
+			}
+		};
+
 		var showMenu = function() {
 			$('.main-menu').addClass('is-active');
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 			$('body').addClass('is-frozen');
+			addFixedMenu();
 		};
 
 		var hideMenu = function() {
@@ -597,6 +616,7 @@ $(document).ready(function() {
 			if($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
+			removeFixedMenu();
 		};
 
 		/* Toggle menu visibility */
@@ -618,8 +638,10 @@ $(document).ready(function() {
 			// Only stick if the header (including toggler) isn't visible
 			if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
 				$('.header__wrapper .menu-toggler').addClass('is-sticky');
+				addFixedMenu();
 			} else {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
+				removeFixedMenu();
 			}
 		});
 
@@ -825,10 +847,12 @@ $(document).ready(function() {
 			});
 
 			if($(window).width() >= 1024){
-				$('.main-menu').addClass('is-active');
-				$('.menu-toggler').addClass('is-active');
-				$('.header__wrapper .menu-toggler').addClass('is-sticky');
-				$('body').addClass('is-frozen');
+				var mainMenuListItems = $('ul.main-menu__section, dl.main-menu__footer');
+				mainMenuListItems.remove();
+				$('.main-menu').append("<div class='main-menu-list'></div>");
+				mainMenuListItems.each(function(){
+					$('.main-menu-list').append($(this));
+				});
 			}
 		};
 
