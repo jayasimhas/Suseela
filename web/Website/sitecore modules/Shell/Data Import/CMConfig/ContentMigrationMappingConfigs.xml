@@ -797,6 +797,11 @@
 			<Agen  name= "Senasa">Argentina Senasa</Agen>
 		</agency>
   	<companies>
+      <comp name="Valent">Sumitomo Chemicals</comp>
+      <comp name="Sumitomo">Sumitomo Chemicals</comp>
+     
+      <comp name="MBI">Marrone Bio Innovations</comp>
+      <comp name="Marrone Bio Innovations">Marrone Bio Innovations</comp>
 			<comp name="2 Sisters Food Group">2 Sisters Food Group</comp>
 			<comp name="A G Barr">A G Barr</comp>
 			<comp name="AG Barr">A G Barr</comp>
@@ -1006,6 +1011,7 @@
 			<comp name="Kernel">Kernel</comp>
 			<comp name="Keurig Green Mountain">Keurig Green Mountain</comp>
 			<comp name="Kindred Biosciences">Kindred Biosciences</comp>
+      <comp name="Kindred">Kindred Biosciences</comp>
 			<comp name="KMG Robust">KMG Robust</comp>
 			<comp name="Kolmar">Kolmar</comp>
 			<comp name="Kraft">Kraft</comp>
@@ -1065,6 +1071,7 @@
 			<comp name="Nippon Soda">Nippon Soda</comp>
 			<comp name="Nippon Zenyaku Kogyo">Nippon Zenyaku Kogyo</comp>
 			<comp name="Nissan Chemical">Nissan Chemical</comp>
+      <comp name="Nissan">Nissan Chemical</comp>
 			<comp name="Noble">Noble</comp>
 			<comp name="Norbrook">Norbrook Laboratories</comp>
 			<comp name="North Andre">North Andre</comp>
