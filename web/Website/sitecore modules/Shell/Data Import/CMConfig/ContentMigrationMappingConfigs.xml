@@ -495,7 +495,6 @@
 <reg name="Italy">Italy</reg>
 <reg name="Jamaica">Jamaica</reg>
 <reg name="Japan">Japan</reg>
-<reg name="Jersey">Jersey</reg>
 <reg name="Jordan">Jordan</reg>
 <reg name="Kazakhstan">Kazakhstan</reg>
 <reg name="Kenya">Kenya</reg>
@@ -2275,6 +2274,7 @@
 		<AnimalPharm>
 			<contenttype>
 				<cont name="animalpharm">News</cont>
+        <cont name="conferencereports">Analysis</cont>
 				<cont name="research">News</cont>
 				<cont name="blog">Opinion</cont>
 				<cont name="business">News</cont>
@@ -2932,7 +2932,6 @@
 <reg name="Italy">Italy</reg>
 <reg name="Jamaica">Jamaica</reg>
 <reg name="Japan">Japan</reg>
-<reg name="Jersey">Jersey</reg>
 <reg name="Jordan">Jordan</reg>
 <reg name="Kazakhstan">Kazakhstan</reg>
 <reg name="Kenya">Kenya</reg>
