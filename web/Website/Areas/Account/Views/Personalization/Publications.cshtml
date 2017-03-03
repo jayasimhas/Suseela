@@ -4,6 +4,9 @@
 @if (Model.Channels != null && Model.Channels.Any())
 {
     var Channels = Model.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
+
+    var sortedChannels = Channels.OrderBy(y => y.Topics.Where(z => z.IsFollowing).Any() == false).ToList();
+
     int flag = Channels.Count;
     IList<Topic> Topics = null;
     string topicTRClass = string.Empty;
@@ -35,7 +38,7 @@
     <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.TopicFollowButtonText" />
     <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.TopicFollowingButtonText" />
     <div id="allPublicationsPan">
-        @foreach (Channel channel in Channels)
+        @foreach (Channel channel in sortedChannels)
         {
             channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
             IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();

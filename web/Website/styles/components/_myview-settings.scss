@@ -527,7 +527,7 @@
 						} 
 					} 
 					 .accordionImg{
-						@media screen and (min-width: 800px){
+						@media screen and (min-width: 1025px){
 							width: 120px;
 						}
 						float: left;
@@ -650,6 +650,9 @@
 			}
 			.wd-25{
 				width: 20%;
+				@media screen and (min-width: 767px) and (max-width: 768px){
+					width: auto;
+				}
 				&.pbot{
 					padding-left: 0rem;
 				}

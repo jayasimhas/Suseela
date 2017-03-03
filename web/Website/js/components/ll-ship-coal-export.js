@@ -22,13 +22,13 @@
 
 			for(var key in Heading) {
 				if(Array.isArray(Heading[key])) {
-					HeadingStr += '<th align="left" colspan="2" class="pad-10 main-heading">' + key + '</th>';
+					HeadingStr += '<th  colspan="2" class="pad-full-10">' + key + '</th>';
 					var SubHeading = Heading[key][0];
 					for(var k in SubHeading) {
-						SubHeadingStr += '<th colspan="1">' + k+ '</th>';
+						SubHeadingStr += '<th colspan="1" class="pad-full-10">' + k+ '</th>';
 					}
 				} else {
-					HeadingStr += '<th align="left" colspan="1" class="pad-10 main-heading">' + key + '</th>';
+					HeadingStr += '<th  colspan="1" class="pad-full-10">' + key + '</th>';
 					SubHeadingStr += '<th colspan="1"></th>';
 				}
 			}
@@ -40,26 +40,26 @@
 					if(Array.isArray(EachValue[key])) {
 						var Values = EachValue[key][0];
 						for(var k in Values) {
-							Td += '<td colspan="1" class="pad-10" align="right">' + Values[k] + '</td>';
+							Td += '<td colspan="1" class="pad-full-10" align="right">' + Values[k] + '</td>';
 						}
 					} else {
-						Td += '<td colspan="1" class="pad-10">' + EachValue[key] + '</td>';
+						Td += '<td colspan="1" class="pad-full-10">' + EachValue[key] + '</td>';
 					}
 				}
 				TbodyStr += '<tr>' +Td + '</tr>';
 			}
 			
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									HeadingStr+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubHeadingStr+
 								'</tr>'+
 							'</thead>'+
-							'<tbody>'+
+							'<tbody class="visible-lg">'+
 								TbodyStr+
 							'</tbody>'+
 						'</table>';
