@@ -923,7 +923,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" , "\"","[","]","'"};
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")
