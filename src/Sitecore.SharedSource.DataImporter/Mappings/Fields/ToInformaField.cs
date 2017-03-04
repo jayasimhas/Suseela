@@ -488,16 +488,16 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         if (match.Paths.FullPath.Contains(newFilePath))
                         {
-                            XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
-                            //return new MediaItem(matches.First());
+                            //XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
+                            return new MediaItem(matches.First());
                             //return match;
-                            mediaitem = match;
+                            //mediaitem = match;
                         }
                     }
 
                 }
 
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
+                //map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
             }
 
             MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
