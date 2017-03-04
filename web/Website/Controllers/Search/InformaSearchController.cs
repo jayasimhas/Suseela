@@ -44,7 +44,7 @@ namespace Informa.Web.Controllers.Search
 
 		public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
 		{
-            char[] specialChar = { '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '_', '{', '}', ']', '[', '\'', '\"', ',', '.', '/', '<', '>', '?', '|', '€', '™', '®', '©', '£', '¥' };
+            char[] specialChar = { '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '_', '{', '}', ']', '[', '\'', ',', '.', '/', '<', '>', '?', '|', '€', '™', '®', '©', '£', '¥' };
             if (request != null && request.QueryParameters != null && request.QueryParameters.ContainsKey("q"))
             {
                 request.QueryParameters["q"] = request.QueryParameters["q"].TrimStart(specialChar).TrimEnd(specialChar).Trim();
