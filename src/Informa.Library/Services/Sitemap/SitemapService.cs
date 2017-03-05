@@ -12,6 +12,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
 using System;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -28,6 +29,7 @@ namespace Informa.Library.Services.Sitemap
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IGlobalSitecoreService GlobalService;
 
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
@@ -36,12 +38,14 @@ namespace Informa.Library.Services.Sitemap
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreContext context,
             IArticleSearch searcher,
-            ITextTranslator translator)
+            ITextTranslator translator,
+            IGlobalSitecoreService globalService)
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
+            GlobalService = globalService;
         }
 
         public string GetSitemapXML_Old()
@@ -85,7 +89,11 @@ namespace Informa.Library.Services.Sitemap
                 {
                     try
                     {
-                        url = itm._Url;
+                        var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                        if (articleItem != null)
+                            url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                        else
+                            url = itm._Url;
                     }
                     catch (Exception ex)
                     {
@@ -341,7 +349,11 @@ namespace Informa.Library.Services.Sitemap
                     {
                         try
                         {
-                            url = itm._Url;
+                            var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                            if (articleItem != null)
+                                url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                            else
+                                url = itm._Url;
                         }
                         catch (Exception ex)
                         {
