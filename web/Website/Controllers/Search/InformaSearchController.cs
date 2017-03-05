@@ -19,144 +19,139 @@ using Velir.Search.WebApi.Models;
 
 namespace Informa.Web.Controllers.Search
 {
-	public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
-	{
-		private readonly ISearchPageParser _parser;
-		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
-		private readonly IQueryFormatter _queryFormatter;
-		private readonly IGlassInterfaceFactory _interfaceFactory;
-		private readonly ICacheProvider _cacheProvider;
-		
-		public InformaSearchController(
-			ISearchManager<InformaSearchResultItem> searchManager,
-			ISearchPageParser parser,
-			IQueryFormatter queryFormatter,
-		IGlassInterfaceFactory interfaceFactory,
-		ICacheProvider cacheProvider)
-						: base(searchManager, parser)
-		{
-			_searchManager = searchManager;
-			_parser = parser;
-			_queryFormatter = queryFormatter;
-			_interfaceFactory = interfaceFactory;
-			_cacheProvider = cacheProvider;
-		}
+    public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
+    {
+        private readonly ISearchPageParser _parser;
+        private readonly ISearchManager<InformaSearchResultItem> _searchManager;
+        private readonly IQueryFormatter _queryFormatter;
+        private readonly IGlassInterfaceFactory _interfaceFactory;
+        private readonly ICacheProvider _cacheProvider;
 
-		public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
-		{
-            char[] specialChar = { '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '_', '{', '}', ']', '[', '\'', ',', '.', '/', '<', '>', '?', '|', '€', '™', '®', '©', '£', '¥' };
-            if (request != null && request.QueryParameters != null && request.QueryParameters.ContainsKey("q"))
-            {
-                request.QueryParameters["q"] = request.QueryParameters["q"].TrimStart(specialChar).TrimEnd(specialChar).Trim();
-            }
+        public InformaSearchController(
+            ISearchManager<InformaSearchResultItem> searchManager,
+            ISearchPageParser parser,
+            IQueryFormatter queryFormatter,
+        IGlassInterfaceFactory interfaceFactory,
+        ICacheProvider cacheProvider)
+                        : base(searchManager, parser)
+        {
+            _searchManager = searchManager;
+            _parser = parser;
+            _queryFormatter = queryFormatter;
+            _interfaceFactory = interfaceFactory;
+            _cacheProvider = cacheProvider;
+        }
+
+        public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
+        {
             //If an improper request is passed in return nothing
             if (string.IsNullOrEmpty(request?.PageId))
-			{
-				return null;
-			}
+            {
+                return null;
+            }
 
-			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
-			q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);
-			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request);
+            var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
+            q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);
+            q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request);
 
-			var results = _searchManager.GetItems(q);
+            var results = _searchManager.GetItems(q);
 
-			var multiSelectFacetResults = GetMultiSelectFacetResults(request);
+            var multiSelectFacetResults = GetMultiSelectFacetResults(request);
 
-			return new QueryResults
-			{
-				Request = request,
-				Results = results.Results,
-				TotalResults = results.TotalResults,
-				Facets = MergeFacets(results.Facets, multiSelectFacetResults)
-			};
-		}
+            return new QueryResults
+            {
+                Request = request,
+                Results = results.Results,
+                TotalResults = results.TotalResults,
+                Facets = MergeFacets(results.Facets, multiSelectFacetResults)
+            };
+        }
 
-		private IEnumerable<FacetGroup> MergeFacets(IEnumerable<FacetGroup> allFacets,
-			IEnumerable<FacetGroup> multiSelectFacets)
-		{
-			return allFacets.Select(f => multiSelectFacets.FirstOrDefault(m => f.Id == m.Id) ?? f);
-		}
+        private IEnumerable<FacetGroup> MergeFacets(IEnumerable<FacetGroup> allFacets,
+            IEnumerable<FacetGroup> multiSelectFacets)
+        {
+            return allFacets.Select(f => multiSelectFacets.FirstOrDefault(m => f.Id == m.Id) ?? f);
+        }
 
-		private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
-		{
-			var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{request.PageId}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
+        private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
+        {
+            var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{request.PageId}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
 
-			if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
+            if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
 
-			var newRequest = new ApiSearchRequest(_parser, _interfaceFactory)
-			{
-				PageId = request.PageId,
-				Page = 1,
-				PerPage = 0,
-				QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value)
-			};
+            var newRequest = new ApiSearchRequest(_parser, _interfaceFactory)
+            {
+                PageId = request.PageId,
+                Page = 1,
+                PerPage = 0,
+                QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value)
+            };
 
-			//For each facet group get facets count without including the selections from this group to enforce ORing between the same groups
-			IEnumerable<FacetGroup> facetsGroups = Enumerable.Empty<FacetGroup>();
-			foreach (var facet in request.QueryParameters.Where(r => facets.Contains(r.Key)))
-			{
-				//reset the queryParameters to all selections
-				newRequest.QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value);
-				//remove the current facet group for the parameters of the new request
-				newRequest.QueryParameters.Remove(facet);
+            //For each facet group get facets count without including the selections from this group to enforce ORing between the same groups
+            IEnumerable<FacetGroup> facetsGroups = Enumerable.Empty<FacetGroup>();
+            foreach (var facet in request.QueryParameters.Where(r => facets.Contains(r.Key)))
+            {
+                //reset the queryParameters to all selections
+                newRequest.QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value);
+                //remove the current facet group for the parameters of the new request
+                newRequest.QueryParameters.Remove(facet);
 
-				if (request.QueryParameters.Count == newRequest.QueryParameters.Count) continue;
+                if (request.QueryParameters.Count == newRequest.QueryParameters.Count) continue;
 
-				//Do the search to get the results
-				var qForCurrentGroup = new SearchQuery<InformaSearchResultItem>(request, _parser)
-				{
-					FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest),
-					QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest),
-					FacetBuilder =
-						new SearchFacetBuilder<InformaSearchResultItem>(
-							request.GetRefinements().Where(r => facets.Contains(r.RefinementKey))),
-					SortBuilder = null
-				};
+                //Do the search to get the results
+                var qForCurrentGroup = new SearchQuery<InformaSearchResultItem>(request, _parser)
+                {
+                    FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest),
+                    QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest),
+                    FacetBuilder =
+                        new SearchFacetBuilder<InformaSearchResultItem>(
+                            request.GetRefinements().Where(r => facets.Contains(r.RefinementKey))),
+                    SortBuilder = null
+                };
 
-				var resultsForCurrentGroup = _searchManager.GetItems(qForCurrentGroup);
+                var resultsForCurrentGroup = _searchManager.GetItems(qForCurrentGroup);
 
-				//include only the current facets group's count into the facetsGroups list
-				facetsGroups = facetsGroups.Concat(resultsForCurrentGroup.Facets.Where(w => w.Id == facet.Key));
-			}
+                //include only the current facets group's count into the facetsGroups list
+                facetsGroups = facetsGroups.Concat(resultsForCurrentGroup.Facets.Where(w => w.Id == facet.Key));
+            }
 
-			return facetsGroups;
-		}
+            return facetsGroups;
+        }
 
-		//private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
-		//{
-		//	var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{request.PageId}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
+        //private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
+        //{
+        //	var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{request.PageId}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
 
-		//	if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
+        //	if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
 
-		//	var newRequest = new ApiSearchRequest(_parser, _interfaceFactory)
-		//	{
-		//		PageId = request.PageId,
-		//		Page = 1,
-		//		PerPage = 0,
-		//		QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value)
-		//	};
+        //	var newRequest = new ApiSearchRequest(_parser, _interfaceFactory)
+        //	{
+        //		PageId = request.PageId,
+        //		Page = 1,
+        //		PerPage = 0,
+        //		QueryParameters = request.QueryParameters.ToDictionary(entry => entry.Key, entry => entry.Value)
+        //	};
 
-		//	foreach (var facet in facets)
-		//	{
-		//		newRequest.QueryParameters.Remove(facet);
-		//	}
+        //	foreach (var facet in facets)
+        //	{
+        //		newRequest.QueryParameters.Remove(facet);
+        //	}
 
-		//	if (request.QueryParameters.Count == newRequest.QueryParameters.Count) return Enumerable.Empty<FacetGroup>();
+        //	if (request.QueryParameters.Count == newRequest.QueryParameters.Count) return Enumerable.Empty<FacetGroup>();
 
-		//	var q = new SearchQuery<InformaSearchResultItem>(request, _parser)
-		//	{
-		//		FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest),
-		//		QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest),
-		//		FacetBuilder =
-		//			new SearchFacetBuilder<InformaSearchResultItem>(
-		//				request.GetRefinements().Where(r => facets.Contains(r.RefinementKey))),
-		//		SortBuilder = null
-		//	};
+        //	var q = new SearchQuery<InformaSearchResultItem>(request, _parser)
+        //	{
+        //		FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest),
+        //		QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest),
+        //		FacetBuilder =
+        //			new SearchFacetBuilder<InformaSearchResultItem>(
+        //				request.GetRefinements().Where(r => facets.Contains(r.RefinementKey))),
+        //		SortBuilder = null
+        //	};
 
-		//	var results = _searchManager.GetItems(q);
+        //	var results = _searchManager.GetItems(q);
 
-		//	return results.Facets;
-		//}
-	}
+        //	return results.Facets;
+        //}
+    }
 }
