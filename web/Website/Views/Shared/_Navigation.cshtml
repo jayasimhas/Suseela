@@ -29,8 +29,13 @@
                 </dl>  }
             else
             {
+                string activeClass = string.Empty;
+                if (!string.IsNullOrEmpty(navigation.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigation.Link.TargetId.ToString()))
+                {
+                    activeClass = "activate";
+                }
                 <ul class="main-menu__section">
-                    <li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active">
+                    <li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active @activeClass">
                         @if (navigation.Children.Any())
                         {
                             <svg class="main-menu__arrow-icon  js-hoist-menu-click">
@@ -47,12 +52,17 @@
                         }
                     </li>
                     @if (navigation.Children.Any())
-                    {
+                    {                        
                         <li class="main-menu__section-wrapper">
                             <ul>
                                 @foreach (var navigationChild in navigation.Children)
                                 {
-                                    <li class="main-menu__hoverable">
+                                    string activeClassChild = string.Empty;
+                                    if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                    {
+                                        activeClassChild = "activate";
+                                    }
+                                    <li class="main-menu__hoverable @activeClassChild">
                                         <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
                                     </li>
                                 }

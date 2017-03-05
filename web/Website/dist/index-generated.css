@@ -2460,7 +2460,7 @@ body.lightboxed {
   .main-menu__hoverable .main-menu__section-link {
     padding-left: 40px;
     padding-left: 2.5rem; }
-  .main-menu__hoverable:hover:before {
+  .main-menu__hoverable:hover:before, .main-menu__hoverable.activate:before {
     background-color: #f7941e;
     content: "";
     display: block;
@@ -6611,6 +6611,11 @@ footer li {
   height: 60px;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
+
+.footer__logo-icon img:first-child {
+  display: block;
+  height: 60px;
+  width: auto; }
 
 .footer__section--social {
   width: 25%; }
