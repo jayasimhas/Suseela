@@ -149,7 +149,7 @@ namespace Informa.Library.Services.Sitemap
                 lastNode.AppendChild(urlNode);
 
                 //create location
-                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}{itm._Url}"));
+                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}/{itm.Article_Number}/{itm._Name}"));
 
                 //create news
                 XmlNode newsNode = MakeNode(doc, "news:news");
@@ -166,7 +166,8 @@ namespace Informa.Library.Services.Sitemap
                 //create access, pub date, title and keywords
                 newsNode.AppendChild(MakeNode(doc, "news:access", "Subscription"));
                 newsNode.AppendChild(MakeNode(doc, "news:publication_date", itm.Actual_Publish_Date.ToString(DateFormat)));
-                newsNode.AppendChild(MakeNode(doc, "news:title", itm.Title));
+                var encodedItemTitle = HttpUtility.HtmlEncode(itm.Title);
+                newsNode.AppendChild(MakeNode(doc, "news:title", HttpUtility.HtmlDecode(encodedItemTitle)));
                 newsNode.AppendChild(MakeNode(doc, "news:keywords", (itm.Taxonomies != null && itm.Taxonomies.Any()) ? string.Join(",", itm.Taxonomies.Select(a => a.Item_Name)) : string.Empty));
             }
 
