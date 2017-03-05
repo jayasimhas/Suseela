@@ -102,7 +102,7 @@ namespace Informa.Web.ViewModels
                         int taxonomyItemCount = 0;
                         foreach (ITaxonomy_Item item in articleModel.Taxonomies)
                         {
-                            if (item != null && taxonomyItemCount <= 3)
+                            if (item != null && taxonomyItemCount < 3)
                             {
                                 LeaderboardSlotId = string.IsNullOrEmpty(LeaderboardSlotId) && !string.IsNullOrEmpty(item.Leaderboard_Slot_ID) ? item.Leaderboard_Slot_ID : LeaderboardSlotId;
 
