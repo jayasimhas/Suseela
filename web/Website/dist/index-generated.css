@@ -2336,6 +2336,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 32px;
   margin-bottom: 2rem;
   font-family: "verdana"; }
+  #graph-carousel .company_title {
+    padding-bottom: 6px; }
   #graph-carousel:after {
     clear: both;
     content: '';
