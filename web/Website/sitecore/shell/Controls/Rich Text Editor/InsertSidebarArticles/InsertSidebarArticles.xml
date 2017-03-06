@@ -43,7 +43,13 @@ jQuery.ajax({
       dataType: 'json',
        success: function(a){													 
 				   jQuery('#SearchCombo').html('');
-				   jQuery('#SearchCombo').removeClass('loadingItems');
+				   jQuery('#SearchCombo').removeClass('loadingItems');				  
+				   if(a==null)
+				   {
+						 jQuery('#SearchCombo')
+         .append($("<option></option>")                    				
+                   .text('No results found'));
+				   }
 				   jQuery(a).each(function(i,val){				  
 				  		 jQuery('#SearchCombo')
          .append($("<option></option>")
@@ -62,9 +68,9 @@ jQuery.ajax({
 		
     };
 	
-	 jQuery("#searchText").keyup(function() {	 
-    setTimeout(function () { self.currentPage = 1; self.moveToCurrentPage(); }, self.doneTypingInterval);
-    }).keyup();		
+	 jQuery("#SearchButton").click(function() {	 
+   self.moveToCurrentPage(); 
+   });		
 		});
 </script> 
 		<!-- <CodeBeside Type="Informa.Web.Helpers.InsertSidebarArticles, Informa.Web"/> -->
@@ -77,10 +83,11 @@ jQuery.ajax({
            <table>
 			<tr>	
 			<td>
-			<Literal ID="SearchMessage" Text="Enter the article number or published date or title to search for articles"/>
+			<Literal ID="SearchMessage" Text="Enter the article number to search for articles"/>
 			<Edit ID="searchText" Width="300px" Placeholder="Type here to search" autocomplete="off"/>
 			<select ID="SearchCombo" size="10" style="width: 300px;"></select>			
 			</td>	        	  
+			<td><Button ID="SearchButton" style="position: relative;left:25px;top:-77px;" Header="Search"/></td>
 			</tr>
 			</table>
         </Tab>            
