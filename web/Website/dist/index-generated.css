@@ -8918,8 +8918,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9914,8 +9914,35 @@ div#feedbacklite.fbl_r {
 #shipCoalExport .pad-full-10 {
   padding: 8px !important; }
 
+#latest-value .rise {
+  padding-left: 5px; }
+
+#latest-value .fall {
+  padding-left: 5px; }
+
 .id-merges-acquisition {
   font-family: 'Roboto'; }
+  .id-merges-acquisition .idi-table-heading {
+    margin-top: 0; }
+  .id-merges-acquisition #scrollbar-horizantal {
+    height: 10px;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden; }
+    .id-merges-acquisition #scrollbar-horizantal:after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: #777777;
+      position: absolute;
+      top: 50%; }
+    .id-merges-acquisition #scrollbar-horizantal #scrollbar {
+      height: 8px;
+      background-color: #777777;
+      width: 20px;
+      position: absolute;
+      top: 1px;
+      left: 0; }
   .id-merges-acquisition .merges-form, .id-merges-acquisition .visible-xs {
     display: none; }
     @media (max-width: 480px) {
@@ -9944,11 +9971,15 @@ div#feedbacklite.fbl_r {
         position: absolute;
         width: 100%;
         right: 0; }
+  .id-merges-acquisition .small_table .table-responsive .pad-10 {
+    padding: 16px;
+    padding: 1rem; }
   .id-merges-acquisition .dealsOmitted {
     width: 100%;
-    padding: 10px 0;
+    padding: 16px 0 18px 0;
     text-align: right;
-    background-color: #fff; }
+    background-color: #fff;
+    margin: 0; }
   .id-merges-acquisition hr {
     display: block !important;
     padding: 0;
@@ -12689,7 +12720,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
