@@ -103,7 +103,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string summaryTitleHtml = GetXMLData(d, "SUMMARY");
                     if (string.IsNullOrEmpty(summaryTitleHtml))
                     {
-                        summaryTitleHtml = bodyTitleHtml;
+                        summaryTitleHtml = GetFirstParagraph(bodyTitleHtml);
+                        bodyTitleHtml = Regex.Replace(bodyTitleHtml, summaryTitleHtml, "", RegexOptions.IgnoreCase);
                     }
 
 
@@ -484,7 +485,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                         if (!(((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !(AgencyCompanyTextSearch.ToLower().Contains("international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets")))
                                         {
-                                            if (agency.ToLower() == "who")
+                                            if (agency.ToLower().Equals("who"))
                                             {
                                                 if (AgencyCompanyTextSearch.Contains("WHO"))
                                                     Agency += agency + ",";
@@ -498,7 +499,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                     else
                                     {
-                                        Agency += agency + ",";
+                                        if (agency.ToLower().Equals("who"))
+                                        {
+                                            if (AgencyCompanyTextSearch.Contains("WHO"))
+                                                Agency += agency + ",";
+                                        }
+                                        else
+                                        {
+                                            Agency += agency + ",";
+                                        }
                                     }
 
                                 }
@@ -506,7 +515,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodity in commoditySearchResults)
                                     {
-                                        if (!(commodity.ToLower() == "palm" && commoditySearchResults.Contains("palm beach")))
+                                        if (!(commodity.ToLower().Equals("palm") && commoditySearchResults.Contains("palm beach")))
                                             Commodity += commodity + ",";
 
                                     }
@@ -534,7 +543,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodityfactor in commodityfactorSearchResults)
                                     {
-                                        if (!(commodityfactor.ToLower() == "energy" && (commodityfactorSearchResults.Contains("energy drinks") || commodityfactorSearchResults.Contains("energy drink"))))
+                                        if (!(commodityfactor.ToLower().Equals("energy") && (commodityfactorSearchResults.Contains("energy drinks") || commodityfactorSearchResults.Contains("energy drink"))))
                                             CommodityFactor += commodityfactor + ",";
 
                                     }
@@ -564,16 +573,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             textForCompany = textForCompany.Replace("’", "'");
                             textForCompany = textForCompany.Replace("(", "'");
                             textForCompany = textForCompany.Replace(")", "");
-                            List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
+                            List<string> companySearchResults = null;
+
+                            if (!(publication == "InsuranceDay")){
+
+                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
+                            }
+                            else
+                            {
+                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                            }
                             //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
 
-
-                            foreach (string company in companySearchResults)
+                            if (companySearchResults != null)
                             {
-                                if (!(publication == "AnimalPharm" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "Commodities" && company == "bayer animal health"))
-                                    Companies += company + ",";
+                                foreach (string company in companySearchResults)
+                                {
+                                    if (!(publication == "AnimalPharm" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "Commodities" && company == "bayer animal health"))
+                                        Companies += company + ",";
 
+                                }
                             }
 
                             string textSearchForRegion = RegionTextSearch.Replace("’", "'");
@@ -776,6 +796,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             }
 
+        }
+
+        private string GetFirstParagraph(string htmltext)
+        {
+            Match m = Regex.Match(htmltext, @"<p \s*(.+?)\s*</p>");
+            if (m.Success)
+            {
+                return m.Groups[0].Value;
+            }
+            else
+            {
+                return htmltext;
+            }
         }
 
         private bool CheckTableau(string searchtableau)
