@@ -53,15 +53,15 @@
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									'<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>'+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubHeadingStr+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubSubHeadingStr+
 								'</tr>'+
 							'</thead>'+
@@ -157,7 +157,7 @@
 			}
 
 			var Carousel = '<div class="table_head pad-10 clearfix">'+
-								'<span class="RB16">' + Name + '</span>'+
+								'<span>' + Name + '</span>'+
 							'</div>'+
 							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">'+
 								'<div class="states_heading">'+

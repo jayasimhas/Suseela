@@ -53,15 +53,15 @@
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									'<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>'+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubHeadingStr+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubSubHeadingStr+
 								'</tr>'+
 							'</thead>'+

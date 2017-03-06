@@ -28,10 +28,10 @@
 				if(Array.isArray(SubHeading[key])) {
 					var SubHeadingArray = SubHeading[key][0];
 					for(var sub in SubHeadingArray) {
-						SubSubHeadingStr += '<th class="pad-10" colspan="1">' +sub+ '</th>';
+						SubSubHeadingStr += '<th class="pad-full-10" colspan="1">' +sub+ '</th>';
 					}
 				} else {
-					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
+					SubSubHeadingStr += '<th class="pad-full-10" colspan="2"></th>';
 				}
 			}
 
@@ -43,25 +43,25 @@
 					if(Array.isArray(Values[key])) {
 						var items = Values[key][0];
 						for(var k in items) {
-							Body += '<td class="pad-10" align="right">' +items[k]+ '</td>';
+							Body += '<td class="pad-full-10" align="right">' +items[k]+ '</td>';
 						}
 					} else {
-						Body += '<td class="pad-10" align="left" colspan="2">' +Values[key]+ '</td>';
+						Body += '<td class="pad-full-10" align="left" colspan="2">' +Values[key]+ '</td>';
 					}
 				}
 
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									'<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>'+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubHeadingStr+
 								'</tr>'+
-								'<tr>'+
+								'<tr class="visible-lg">'+
 								SubSubHeadingStr+
 								'</tr>'+
 							'</thead>'+

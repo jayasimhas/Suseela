@@ -249,7 +249,7 @@
 	}
 	
 }
-.theme-table {
+#tankerPureChemPage {
 	margin-bottom: 1rem;	
 	.pad-10 {
 		padding: 10px !important;
@@ -262,9 +262,21 @@
 		}
 		tr th {
 			border-bottom: 1px solid $color-white;
+			border-right: 1px solid $color-white;
+			&:last-child {
+				border-right: none;
+			}
 		}
 	}
-
+	.states_heading {
+		border-right: 1px solid $color-white;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.owl-wrapper .states_heading { 
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 #cockettBunker, #shipRoro {
 	border: none;
