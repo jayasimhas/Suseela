@@ -9,6 +9,7 @@ using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.SalesforceConfiguration;
 using System.Web;
+using Informa.Library.Services.Global;
 
 namespace Informa.Web.ViewModels
 {
@@ -20,6 +21,7 @@ namespace Informa.Web.ViewModels
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IArticle CurrentItem;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IGlobalSitecoreService GlobalService;
 
         public CallToActionViewModel(
             ITextTranslator textTranslator,
@@ -28,7 +30,7 @@ namespace Informa.Web.ViewModels
             ISiteRootContext siteRootContext,
             IAuthenticatedUserContext authenticatedUserContext,
             ISitecoreContext sitecoreContext,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext, IGlobalSitecoreService globalService)
         {
             TextTranslator = textTranslator;
             SignInViewModel = signInViewModel;
@@ -37,7 +39,7 @@ namespace Informa.Web.ViewModels
             AuthenticatedUserContext = authenticatedUserContext;
             CurrentItem = sitecoreContext.GetCurrentItem<IArticle>();
             SalesforceConfigurationContext = salesforceConfigurationContext;
-
+            GlobalService = globalService;
         }
 
         #region Implementation of ICallToActionViewModel
@@ -53,13 +55,14 @@ namespace Informa.Web.ViewModels
         public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public bool IsNewSalesforceEnabled => SalesforceConfigurationContext.IsNewSalesforceEnabled;
-        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString());
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
         public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
         private string GetCallbackUrl(string url)
         {
             return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
 
         }
+        public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
         #endregion
     }
 }

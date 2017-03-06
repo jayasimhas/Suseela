@@ -1,5 +1,7 @@
 ﻿using Informa.Library.SalesforceConfiguration;
 using Jabberwocky.Glass.Autofac.Attributes;
+using System.Configuration;
+using System.Web;
 
 namespace Informa.Library.User.Authentication.Web
 {
@@ -89,7 +91,7 @@ namespace Informa.Library.User.Authentication.Web
             };
         }
 
-        public IWebAuthenticateUserResult Authenticate(string code, string redirectUrl)
+        public IWebAuthenticateUserResult Authenticate(string code, string redirectUrl, string vertical)
         {
             var authenticateResult = AuthenticateUserV2.Authenticate(code, "authorization_code",
                 SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username,
@@ -106,6 +108,16 @@ namespace Informa.Library.User.Authentication.Web
                 success = loginResult.Success;
                 AuthenticatedUser = authenticatedUser;
             }
+            //Current vertical cookiename
+            string cookieName = vertical + "_LoggedInUser";
+            //Current Vertical subdomain
+            string domain = ConfigurationManager.AppSettings[vertical];
+
+            HttpCookie LoggedinKeyCookie = new HttpCookie(vertical + "_LoggedInUser");
+            LoggedinKeyCookie.Value = authenticatedUser.Username+"|"+ authenticatedUser.AccessToken;
+            LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+            LoggedinKeyCookie.Domain = domain;
+            HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
 
             return new WebAuthenticateUserResult
             {
