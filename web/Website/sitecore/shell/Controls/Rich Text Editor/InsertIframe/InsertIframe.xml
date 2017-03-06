@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RichText.InsertIframe>
+    <FormDialog Icon="People/32x32/movie_run.png" Header="Insert Iframe" Text="Fill the Iframe details" OKButton="Insert">
+	 
+      <script Type="text/javascript" Language="javascript" Src="/sitecore/shell/controls/rich text editor/InsertIframe/InsertIframe.js">.</script>	 
+	<script type="text/javascript">
+jQuery(function($) {
+    $('#Header').live('keyup', function(e) {
+        $('#previewNote div.body').text($(this).val());
+    });
+});​
+	</script>  
+      <CodeBeside Type="Informa.Library.CustomSitecore.RTECustomization.InsertIframe, Informa.Library"/>
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+	  <Literal ID="Multimedia" Text="Multimedia"  Width="40px" style="font-size:30px;"/>
+          <GridPanel Columns="2">	              
+          
+		  <Border Padding="0px 4px 0px 10px">
+              <Literal ID="DesktopIframe" Text="Desktop Embed"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Memo ID="memIframeDesktop" Width="300px"></Memo>              
+            </Border>
+		  
+		   <Border Padding="0px 4px 0px 10px">
+              <Literal ID="MobileIframe" Text="Mobile Embed"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Memo ID="memIframeMobile" Width="300px"></Memo>              
+            </Border>
+		  
+		   <Border Padding="0px 4px 0px 10px">
+              <Literal ID="Header" Text="Header"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="memIframeHeader" Width="300px"></Edit>             
+            </Border>
+			
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="Title" Text="Title"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="memIframeTitle" Width="300px"></Edit>            
+            </Border>
+		   
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="MobileIframeCaption" Text="Caption"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="memIframeCaption" Width="300px"></Edit>             
+            </Border>
+			
+			<Border Padding="0px 4px 0px 10px">
+              <Literal ID="MobileIframeSource" Text="Source"  Width="40px" style="font-size:15px;"/>
+            </Border>
+            <Border Padding="10px 4px 10px 10px">
+			<Edit ID="memIframeSource" Width="300px"></Edit>              
+            </Border>			
+          </GridPanel>       
+      </GridPanel>
+    </FormDialog>
+  </RichText.InsertIframe>
+</control>
