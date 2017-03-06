@@ -4332,7 +4332,7 @@ header .header__wrapper {
   position: relative; }
 
 header .header-publication-links {
-  top: 30px; }
+  top: 15px; }
   @media (max-width: 640px) {
     header .header-publication-links {
       top: 50px; } }
@@ -4762,9 +4762,9 @@ main .action-flags-bar, main .banner--highlights {
       border: 1px solid #a7a7a7; }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followingBtn:hover {
-          border: 1px solid #ADADAD;
-          color: #58595b;
-          background: none; } }
+          border: 1px solid #f7941e;
+          color: #ffffff;
+          background: #f7941e; } }
       @media (max-width: 480px) {
         .myview-settings .followingBtn:hover {
           background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4822,7 +4822,8 @@ main .action-flags-bar, main .banner--highlights {
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followBtn:hover {
           border: 1px solid #ADADAD;
-          color: #58595b; } }
+          color: #58595b;
+          background: none; } }
   .myview-settings.myview-settings-registration .saveoption {
     width: 100%; }
   .myview-settings h1 {
@@ -5700,16 +5701,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-lloydslist .myview-settings .followBtn:hover {
     background: #1191D1;
     border: 1px solid #1191D1; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5794,16 +5796,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-insurance-day .myview-settings .followBtn:hover {
     background: #DE4361;
     border: 1px solid #DE4361; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5888,16 +5891,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-commodities .myview-settings .followBtn:hover {
     background: #F5821F;
     border: 1px solid #F5821F; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-commodities .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -8914,8 +8918,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12685,7 +12689,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
