@@ -24,12 +24,12 @@
 
 			for(var key in Heading) {
 				if(key.split("|").length === 1) {
-					HeadingStr += "<th colspan='1'>"+
+					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
 										"<div class='text-center'>&nbsp;</div>"+
 										"<div class='text-center'>"+ key.split("|")[0] +"</div>"+
 									"</th>";
 				} else {
-					HeadingStr += "<th colspan='1'>"+
+					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
 										"<div class='text-center'>"+ key.split("|")[0] +"</div>"+
 										"<div class='text-center'>"+ key.split("|")[1] +"</div>"+
 									"</th>";
@@ -44,13 +44,13 @@
 					if(key == "Route") {
 						align = "left";
 					}
-					Td += '<td colspan="1" class="pad-10" align="' + align + '">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
 				}
 				TbodyStr += '<tr>' +Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									HeadingStr+
 								'</tr>'+

@@ -24,7 +24,7 @@
 
 			for(var key in Heading) {
 					HeadingStr += "<th colspan='1'>"+
-										'<div class="pad-10">'+ key +'</div>'+
+										'<div class="pad-full-10">'+ key +'</div>'+
 									"</th>";
 			}
 
@@ -33,13 +33,13 @@
 					Td = "",
 					align = "right";
 				for(var key in EachValue) {
-					Td += '<td colspan="1" class="pad-10" align="left">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="pad-full-10" align="left">' + EachValue[key] + '</td>';
 				}
 				TbodyStr += '<tr>' +Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									HeadingStr+
 								'</tr>'+

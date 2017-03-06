@@ -7180,9 +7180,9 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			for (var key in Heading) {
 				if (key.split("|").length === 1) {
-					HeadingStr += "<th colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'></div>" + "</th>";
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'></div>" + "</th>";
 				} else {
-					HeadingStr += "<th colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
 				}
 			}
 
@@ -7194,12 +7194,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					if (key == "Header") {
 						align = "left";
 					}
-					Td += '<td colspan="1" class="pad-10" align="' + align + '">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
 				}
 				TbodyStr += '<tr>' + Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -7680,9 +7680,9 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			for (var key in Heading) {
 				if (key.split("|").length === 1) {
-					HeadingStr += "<th colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "</th>";
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "</th>";
 				} else {
-					HeadingStr += "<th colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
 				}
 			}
 
@@ -7694,12 +7694,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					if (key == "Route") {
 						align = "left";
 					}
-					Td += '<td colspan="1" class="pad-10" align="' + align + '">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
 				}
 				TbodyStr += '<tr>' + Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -7814,10 +7814,10 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				if (Array.isArray(SubHeading[key])) {
 					var SubHeadingArray = SubHeading[key][0];
 					for (var sub in SubHeadingArray) {
-						SubSubHeadingStr += '<th class="pad-10" colspan="1">' + sub + '</th>';
+						SubSubHeadingStr += '<th class="pad-full-10" colspan="1">' + sub + '</th>';
 					}
 				} else {
-					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
+					SubSubHeadingStr += '<th class="pad-full-10" colspan="2"></th>';
 				}
 			}
 
@@ -7829,17 +7829,17 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					if (Array.isArray(Values[key])) {
 						var items = Values[key][0];
 						for (var k in items) {
-							Body += '<td class="pad-10" align="right">' + items[k] + '</td>';
+							Body += '<td class="pad-full-10" align="right">' + items[k] + '</td>';
 						}
 					} else {
-						Body += '<td class="pad-10" align="left" colspan="2">' + Values[key] + '</td>';
+						Body += '<td class="pad-full-10" align="left" colspan="2">' + Values[key] + '</td>';
 					}
 				}
 
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '<tr>' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -7961,7 +7961,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			    Heading = Data[0];
 
 			for (var key in Heading) {
-				HeadingStr += "<th colspan='1'>" + '<div class="pad-10">' + key + '</div>' + "</th>";
+				HeadingStr += "<th colspan='1'>" + '<div class="pad-full-10">' + key + '</div>' + "</th>";
 			}
 
 			for (var i = 0; i < Data.length; i++) {
@@ -7969,12 +7969,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				    Td = "",
 				    align = "right";
 				for (var key in EachValue) {
-					Td += '<td colspan="1" class="pad-10" align="left">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="pad-full-10" align="left">' + EachValue[key] + '</td>';
 				}
 				TbodyStr += '<tr>' + Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -8046,7 +8046,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '<tr>' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -8342,7 +8342,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '<tr>' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -8422,7 +8422,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				}
 			}
 
-			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span class="RB16">' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span>' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
 
 			return Carousel;
 		},
@@ -10297,6 +10297,7 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 
 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+
 		content.addEventListener('scroll', function (e) {
 			scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 			scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
@@ -10332,7 +10333,6 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 
 // 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 // 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
-// });
 // });
 
 },{}],38:[function(require,module,exports){
