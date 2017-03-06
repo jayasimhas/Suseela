@@ -2336,6 +2336,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 32px;
   margin-bottom: 2rem;
   font-family: "verdana"; }
+  #graph-carousel .company_title {
+    padding-bottom: 6px; }
   #graph-carousel:after {
     clear: both;
     content: '';
@@ -2372,7 +2374,12 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       display: inline-block;
       padding: 10px 0 10px 20px;
       color: #fff;
-      background-color: #de4361; }
+      background-color: #de4361;
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 19px;
+      font-weight: 500;
+      font-family: "Roboto", Arial; }
   #graph-carousel .owl-theme .owl-dots {
     text-align: right; }
   #graph-carousel .owl-theme .owl-dots .owl-dot span {
@@ -2381,8 +2388,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel .owl-theme .owl-dots .owl-dot.active span {
     background: #fff !important; }
   #graph-carousel .graph-container {
-    margin-top: 16px;
-    margin-top: 1rem;
+    margin-top: 10px;
+    margin-top: 0.625rem;
     margin-left: 0.5%;
     margin-right: 0.5%;
     background-color: #eee;
@@ -4325,7 +4332,7 @@ header .header__wrapper {
   position: relative; }
 
 header .header-publication-links {
-  top: 30px; }
+  top: 15px; }
   @media (max-width: 640px) {
     header .header-publication-links {
       top: 50px; } }
@@ -4755,9 +4762,9 @@ main .action-flags-bar, main .banner--highlights {
       border: 1px solid #a7a7a7; }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followingBtn:hover {
-          border: 1px solid #ADADAD;
-          color: #58595b;
-          background: none; } }
+          border: 1px solid #f7941e;
+          color: #ffffff;
+          background: #f7941e; } }
       @media (max-width: 480px) {
         .myview-settings .followingBtn:hover {
           background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4815,7 +4822,8 @@ main .action-flags-bar, main .banner--highlights {
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followBtn:hover {
           border: 1px solid #ADADAD;
-          color: #58595b; } }
+          color: #58595b;
+          background: none; } }
   .myview-settings.myview-settings-registration .saveoption {
     width: 100%; }
   .myview-settings h1 {
@@ -5693,16 +5701,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-lloydslist .myview-settings .followBtn:hover {
     background: #1191D1;
     border: 1px solid #1191D1; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5787,16 +5796,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-insurance-day .myview-settings .followBtn:hover {
     background: #DE4361;
     border: 1px solid #DE4361; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5881,16 +5891,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-commodities .myview-settings .followBtn:hover {
     background: #F5821F;
     border: 1px solid #F5821F; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-commodities .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;

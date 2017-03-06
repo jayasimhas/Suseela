@@ -67,6 +67,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger
 
                         if (!String.IsNullOrEmpty(l.Value))
 
+                        {
                             if (l.Value.EndsWith(","))
                                 dr[l.Key] = l.Value.Remove(l.Value.Length - 1);
 
@@ -74,8 +75,9 @@ namespace Sitecore.SharedSource.DataImporter.Logger
                             {
                                 dr[l.Key] = l.Value;
                             }
+                        }
                     }
-
+                   
                     dt.Rows.Add(dr);
 
                     ws.Cells["A1"].LoadFromDataTable(dt, true);

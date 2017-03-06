@@ -4566,7 +4566,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (f == null)
                 return;
 
-            string ctID = t.First().ToString();
+            string ctID = t.First().ID.ToString();
             DataLogger.Add(NewItemField, t.First().Name);
              
             if (!f.Value.Contains(ctID))

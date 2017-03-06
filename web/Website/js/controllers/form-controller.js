@@ -136,14 +136,14 @@ function formController(opts) {
 								// successCallback is ripe for refactoring, improving parameters
 								this.response = response;
 
-								//Specific to Sign In Form - Vertical Login
-								if($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
-									$('#hiddenforms_login form').each(function() {
-										$(this).find('input[type="text"]').val(inputData["username"]);
-										$(this)[0].submit();
-									});
-								}
-								//Specific to Sign In Form - Vertical Login
+								// //Specific to Sign In Form - Vertical Login
+								// if($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
+								// 	$('#hiddenforms_login form').each(function() {
+								// 		$(this).find('input[type="text"]').val(inputData["username"]);
+								// 		$(this)[0].submit();
+								// 	});
+								// }
+								// //Specific to Sign In Form - Vertical Login
 								if (opts.successCallback) {
 									opts.successCallback(currentForm, this, event);
 								}
