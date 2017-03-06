@@ -7,6 +7,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         private const string SearchCriteria = "Search Criteria";
         private const string Bookmark = "Bookmark";
         private const string ContentPersonalization = "Content Filter";
+        private const string EmailSignUp = "Email SignUp";
+        private const string EmailPreference = "Email Preference";
+
+
+
         public string Create(string userName, string verticle, string publicationCode, ProductPreferenceType type)
         {
             var query = string.Empty;
@@ -30,7 +35,15 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + ContentPersonalization + "' and Value1__c='" + publicationCode + "'";
             }
-            
+            else if(type == ProductPreferenceType.EmailPreference)
+            {
+                query = query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailPreference + "' and Product_Vertical__c='" + verticle + "'";
+            }
+            else if (type == ProductPreferenceType.EmailSignUp)
+            {
+                query = query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailSignUp + "' and Product_Vertical__c='" + verticle + "'";
+            }
+
             return query;
         }
     }

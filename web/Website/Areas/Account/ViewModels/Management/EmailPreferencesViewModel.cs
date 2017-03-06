@@ -33,7 +33,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
 		public readonly ISignInViewModel SignInViewModel;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
-		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
+		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn.OptIn;
 		public string NewsletterTitle => TextTranslator.Translate("Preferences.NewsletterTitle");
 		public string NewsletterOptInTitleHeading => TextTranslator.Translate("Preferences.NewsletterOptInTitleHeading");
 		public string NewsletterOptInReceiveEmailHeading => TextTranslator.Translate("Preferences.NewsletterOptInReceiveEmailHeading");
