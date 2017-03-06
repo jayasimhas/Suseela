@@ -4,14 +4,20 @@ if($('.scrollbar') && $('.scrollbar').length){
 			content = $(this).parents('.rolling-stream').find('.content')[0],
 			scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
 
+		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+		  	scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+		  	
 		content.addEventListener('scroll', function(e) {
 		  scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 		  scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
 		});
-		var event = new Event('scroll');
+		// var event = new Event('scroll');
 
-		window.addEventListener('resize', content.dispatchEvent.bind(content, event));
-		content.dispatchEvent(event);
+		window.addEventListener('resize', function(e){
+			scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+		  	scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+		});
+		// content.dispatchEvent(event);
 
 		scroll.addEventListener('mousedown', function(start){
 		  start.preventDefault();

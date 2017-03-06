@@ -89,7 +89,19 @@
 		}
 	}
 }
-#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures{
+#tanker-Pure-ChemPage{ 
+	@include breakpoint('small') {
+		float: left;
+		width: 100%;
+	}
+	.ID-Responsive-Table .year_heading {
+		@include breakpoint('small') {
+			padding-left: 24px;
+		}
+	}
+}
+#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -596,5 +608,25 @@
 				color: #002d4f !important;
 			}
 		}
+	}
+}
+#shipCoalExport {
+	.visible-lg {
+		display: table-row;
+	}
+	tbody.visible-lg {
+		display: table-row-group;
+		tr:nth-child(even) {
+  			background-color: #eee;
+ 		}
+	}
+	tr th, tr td {
+		border-right: 1px solid $color-white;
+		&:last-child {
+			border-right: none;
+		}
+	}
+	.pad-full-10 {
+		padding: 8px !important;
 	}
 }
