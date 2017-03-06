@@ -41,33 +41,36 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         });
                     foreach (Channel channel in userPreferences.PreferredChannels)
                     {
-                        if (channel.Topics != null && channel.Topics.Any())
+                        if (channel.Topics != null && channel.Topics.Any() && (channel.IsFollowing || channel.Topics.Any(topic => topic.IsFollowing)))
                         {
                             foreach (Topic topic in channel.Topics)
                             {
-                                request.records.Add(
-                             new ProductPreferenceRequestRecord()
-                             {
-                                 attributes = new AddProductPreferenceRequestAttributes()
+                                if (topic.IsFollowing)
+                                {
+                                    request.records.Add(
+                                 new ProductPreferenceRequestRecord()
                                  {
-                                     type = "Product_Preference__c",
-                                     referenceId = Guid.NewGuid().ToString()
-                                 },
-                                 Product_Vertical__c = verticaleName,
-                                 Type__c = ContentPersonalization,
-                                 Username__c = userName,
-                                 Value1__c = publicationCode,
-                                 Value2__c = channel.ChannelCode,
-                                 Value3__c = channel.ChannelId,
-                                 Value4__c = channel.IsFollowing.ToString(),
-                                 Value5__c = topic.TopicCode.ToString(),
-                                 Value6__c = topic.TopicId.ToString(),
-                                 Value7__c = topic.IsFollowing.ToString(),
-                                 Value8__c = string.Format(OrderFieldFormat, channel.ChannelOrder, topic.TopicOrder)
-                             });
+                                     attributes = new AddProductPreferenceRequestAttributes()
+                                     {
+                                         type = "Product_Preference__c",
+                                         referenceId = Guid.NewGuid().ToString()
+                                     },
+                                     Product_Vertical__c = verticaleName,
+                                     Type__c = ContentPersonalization,
+                                     Username__c = userName,
+                                     Value1__c = publicationCode,
+                                     Value2__c = channel.ChannelCode,
+                                     Value3__c = channel.ChannelId,
+                                     Value4__c = channel.IsFollowing.ToString(),
+                                     Value5__c = topic.TopicCode.ToString(),
+                                     Value6__c = topic.TopicId.ToString(),
+                                     Value7__c = topic.IsFollowing.ToString(),
+                                     Value8__c = string.Format(OrderFieldFormat, channel.ChannelOrder, topic.TopicOrder)
+                                 });
+                                }
                             }
                         }
-                        else
+                        else if (channel != null && !string.IsNullOrWhiteSpace(channel.ChannelCode) && channel.IsFollowing)
                         {
                             request.records.Add(
                          new ProductPreferenceRequestRecord()
@@ -116,6 +119,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 .Equals(ContentPersonalizationParent, StringComparison.OrdinalIgnoreCase)).OrderBy(record => record.Value2__c).ToList();
                 var channelCode = string.Empty;
                 Channel ch = null;
+                var lastRecord = preferenceRecords.Last();
                 foreach (Record record in preferenceRecords)
                 {
                     var orders = !string.IsNullOrWhiteSpace(record.Value8__c) ?
@@ -155,6 +159,13 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
                             });
                     }
+                    if(lastRecord.Equals(record))
+                    {
+                        if (ch != null & !string.IsNullOrWhiteSpace(ch.ChannelCode))
+                        {
+                            userPreferences.PreferredChannels.Add(ch);
+                        }
+                    }
 
                 }
             }
@@ -163,7 +174,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
 
         public AddProductPreferenceRequest Create(string Username, string accessToken, string verticalname, string documentId, string documentDescription, string documentName)
-        {         
+        {
             return null;
         }
     }

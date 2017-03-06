@@ -17,6 +17,7 @@
     [AutowireService]
     public class ChannelsViewModel : IChannelsViewModel
     {
+        private string channelCodeFormat = "{0}.{1}";
         protected readonly ITextTranslator TextTranslator;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IUserPreferenceContext UserPreferences;
@@ -185,19 +186,30 @@
         /// </value>
         public bool IsNewUser => UserPreferences.Preferences == null || UserPreferences.Preferences.IsNewUser;
 
+        /////// <summary>
+        /////// Gets the current subscriptions.
+        /////// </summary>
+        /////// <value>
+        /////// The current subscriptions.
+        /////// </value>
+        ////public ISubscription currentSubscriptions
+        ////{
+        ////    get
+        ////    {
+        ////        return _subcriptions.Where(n => n.ProductCode == SiterootContext?.Item.Publication_Code).FirstOrDefault();
+        ////    }
+        ////}
+
         /// <summary>
-        /// Gets the current subscriptions.
+        /// Gets the product code.
         /// </summary>
-        /// <value>
-        /// The current subscriptions.
-        /// </value>
-        public ISubscription currentSubscriptions
+        /// <param name="subCode">The sub code</param>
+        /// <returns> The product code</returns>
+        public string GetProductCode(string subCode)
         {
-            get
-            {
-                return _subcriptions.Where(n => n.ProductCode == SiterootContext?.Item.Publication_Code).FirstOrDefault();
-            }
+            return string.Format(channelCodeFormat, SiterootContext?.Item.Publication_Code, subCode);
         }
+
 
         /// <summary>
         /// Gets the channels.
@@ -238,7 +250,9 @@
                 channel.ChannelCode = SiterootContext.Item.Publication_Code;
                 channel.ChannelLink = homeItem._Url;
                 channel.ChannelOrder = 1;
-                channel.IsSubscribed = currentSubscriptions?.ProductCode == channel.ChannelCode && currentSubscriptions.ExpirationDate > DateTime.Now;
+                channel.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
+                 .ProductCode.Equals(GetProductCode(channel.ChannelCode), StringComparison.OrdinalIgnoreCase) &&
+                 subcription.ExpirationDate > DateTime.Now);
                 GetTopicsForRegistration(channel);
                 channels.Add(channel);
             }
@@ -276,7 +290,9 @@
                                 topic.TopicId = channelPage._Id.ToString();
                                 topic.TopicName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
                                 topic.TopicCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                                topic.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(ch => ch.ChannelId == channelPage.Channel_Code && ch.ExpirationDate > DateTime.Now) ?? false;
+                                topic.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
+                                                    .ProductCode.Equals(GetProductCode(topic.TopicCode), StringComparison.OrdinalIgnoreCase) &&
+                                                     subcription.ExpirationDate > DateTime.Now);
                                 channel.Topics.Add(topic);
                             }
                         }
@@ -301,7 +317,9 @@
                                     topic.TopicId = topicItem._Id.ToString();
                                     topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
                                     topic.TopicCode = topicItem.Navigation_Code;
-                                    topic.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(tp=>tp.SubscribedTopics.Any(sub=>sub.TopicId==channelPage.Channel_Code && sub.ExpirationDate>DateTime.Now))?? false;
+                                    topic.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
+                                                   .ProductCode.Equals(GetProductCode(topic.TopicCode), StringComparison.OrdinalIgnoreCase) &&
+                                                    subcription.ExpirationDate > DateTime.Now);
                                     topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                                     channel.Topics.Add(topic);
                                 }
@@ -343,7 +361,9 @@
                             channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
                             channel.ChannelLink = channelPage.LinkableUrl;
                             SetChannelOrderAndStatus(channelPage, channel);
-                            channel.IsSubscribed = currentSubscriptions?.SubscribedChannels?.Any(ch => ch.ChannelId == channelPage.Channel_Code && ch.ExpirationDate > DateTime.Now) ?? false;
+                            channel.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
+                                                   .ProductCode.Equals(GetProductCode(channel.ChannelCode), StringComparison.OrdinalIgnoreCase) &&
+                                                    subcription.ExpirationDate > DateTime.Now);
                             GetTopics(channel, channelPage);
                             channels.Add(channel);
                         }
@@ -397,7 +417,7 @@
                         topic = new Topic();
                         topic.TopicId = topicItem._Id.ToString();
                         topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
-                        topic.TopicCode = topicItem.Navigation_Code;                        
+                        topic.TopicCode = topicItem.Navigation_Code;
                         GetTopicOrderAndStatus(channel, topicItem, topic);
                         channel.Topics.Add(topic);
                     }
