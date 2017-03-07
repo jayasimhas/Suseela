@@ -21,6 +21,7 @@ namespace Informa.Library.User.Newsletter
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IVerticalRootContext VerticalRootContext;
         protected readonly IAuthenticatedUserSession UserSession;
+        protected readonly INewsletterUserOptInsContext NewsletterUserOptInsContext;
 
         public AddNewsletterUserOptInsContext(
             INewsletterUserOptInsContext optInsContext,
@@ -28,7 +29,8 @@ namespace Informa.Library.User.Newsletter
             IAddUserProductPreference addUserOptIns,
             ISiteRootContext siteRootContext,
             IVerticalRootContext verticalRootContext,
-            IAuthenticatedUserSession userSession
+            IAuthenticatedUserSession userSession,
+            INewsletterUserOptInsContext newsletterUserOptInsContext
             )
         {
             OptInsContext = optInsContext;
@@ -37,6 +39,7 @@ namespace Informa.Library.User.Newsletter
             SiteRootContext = siteRootContext;
             VerticalRootContext = verticalRootContext;
             UserSession = userSession;
+            NewsletterUserOptInsContext = newsletterUserOptInsContext;
         }
 
         public bool Add(IEnumerable<INewsletterUserOptIn> optIns)
@@ -60,6 +63,7 @@ namespace Informa.Library.User.Newsletter
         public void clear()
         {
             UserSession.Clear(sessionKey);
+            NewsletterUserOptInsContext.Clear();
         }
     }
 }
