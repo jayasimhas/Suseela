@@ -36,12 +36,12 @@ if($('.scrollbar') && $('.scrollbar').length){
 }
 
 //Horizontal Scroll Bar
-if($('#scrollbar-horizantal')) {
+if($('#scrollbar-horizantal').length > 0) {
 	var container = $('#scrollbar-horizantal')[0],
 		content = $('.wrap-merge')[0],
 		scroll = $('#scrollbar')[0];
 
-	//scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
+	scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
 
 	$(window).on('resize', function() {
 		scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';

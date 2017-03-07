@@ -28,4 +28,5 @@
   <add key="Pharma" value="${Vertical.Pharma}"/>
   <add key="Maritime" value="${Vertical.Maritime}"/>
   <add key="Agri" value="${Vertical.Agri}"/>
+  <add key="EnableVerticalLogin" value="${VerticalLoginSwitch}"/>
 </appSettings>

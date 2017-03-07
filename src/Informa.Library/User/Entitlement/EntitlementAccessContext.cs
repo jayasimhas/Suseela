@@ -71,13 +71,13 @@ namespace Informa.Library.User.Entitlement
         private bool CheckEntitlement(IEntitledProduct entitledProduct, IEntitlement entitlement)
         {
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled &&
-                (string.IsNullOrWhiteSpace(entitlement.AccessEndDate) || 
+                (string.IsNullOrWhiteSpace(entitlement.AccessEndDate) ||
                 Convert.ToDateTime(entitlement.AccessEndDate) < DateTime.Now))
                 return false;
 
             if (entitledProduct.EntitlementLevel == EntitlementLevel.Channel)
             {
-                return entitledProduct.Channels.Contains(entitlement.ProductCode);
+                return entitledProduct.Channels.Contains(entitlement.ProductCode) || (!entitledProduct.Channels.Any() && !entitledProduct.IsFree && !string.IsNullOrEmpty(entitlement.ProductCode));
             }
             else if (entitledProduct.EntitlementLevel == EntitlementLevel.Site)
             {
