@@ -824,12 +824,12 @@ $(document).ready(function() {
 				}
 			});
 
-			if($(window).width() >= 1024){
-				$('.main-menu').addClass('is-active');
-				$('.menu-toggler').addClass('is-active');
-				$('.header__wrapper .menu-toggler').addClass('is-sticky');
-				$('body').addClass('is-frozen');
-			}
+			//if($(window).width() >= 1024){
+			//	$('.main-menu').addClass('is-active');
+			//	$('.menu-toggler').addClass('is-active');
+			//	$('.header__wrapper .menu-toggler').addClass('is-sticky');
+			//	$('body').addClass('is-frozen');
+			//}
 		};
 
 		var scrollToTimerCache;

@@ -13374,6 +13374,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                     /// </summary>
                     [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
                     string Ask_The_Analyst { get; set; }
+                    /// <summary>
+                    /// The Active Checkbox field.
+                    /// <para></para>
+                    /// <para>Field Type: Check Box</para>		
+                    /// <para>Field ID: A024DEDB-227E-4F6B-92F7-CC35C3330791</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+                    bool Is_Active_Ask_The_Analyst { get; set; }
     }
 
 	
@@ -14277,6 +14286,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                         /// </summary>
                         [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
                         string Ask_The_Analyst { get; set; }
+                        /// <summary>
+                        /// The Active Checkbox field.
+                        /// <para></para>
+                        /// <para>Field Type: Check Box</para>		
+                        /// <para>Field ID: A024DEDB-227E-4F6B-92F7-CC35C3330791</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+                        bool Is_Active_Ask_The_Analyst { get; set; }
     }
 	
 	public static partial class ISite_ConfigConstants{
@@ -14445,7 +14463,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						
 					
 			public static readonly ID Footer_Logo_With_CopyrightFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
-			public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo With Copyright";
+			public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo";
 
 						
 					
@@ -14806,6 +14824,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
             public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
             public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
+
+            public static readonly ID Is_Active_Ask_The_Analyst_FieldId = new ID("A024DEDB-227E-4F6B-92F7-CC35C3330791");
+            public const string Is_Active_Ask_The_Analyst_FieldName = "Is Active Ask Analyst";
 
     }
 
