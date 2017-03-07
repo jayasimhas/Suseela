@@ -1930,6 +1930,11 @@
 				<comm name="ICE Canada Review"><![CDATA[Oils & Oilseeds,Market Fundamentals,Futures,Rapeseed]]></comm>
 				<comm name="ICE US Review"><![CDATA[Sugar,Coffee,Cocoa,Market Fundamentals,Futures]]></comm>
 				<comm name="Weekly Review"><![CDATA[Sugar,Coffee,Cocoa,Oils & Oilseeds,Grains & Feed]]></comm>
+        <comm name="Paprika">Paprika</comm>
+        <comm name="Turmeric">Turmeric</comm>
+        <comm name="Sesame">Sesame Seed</comm>
+        <comm name="Poppy">Poppy Seed</comm>
+        <comm name="Poppyseed">Poppy Seed</comm>
 			</commodity>
 			<commoditysearch>
 				<commsearch name="CBOT Review"><![CDATA[Oils & Oilseeds,Soy,Soy oil,Grains & Feed,Soymeal,Corn,Wheat]]></commsearch>
@@ -1937,6 +1942,14 @@
 				<commsearch name="ICE US Review"><![CDATA[Sugar,Coffee,Cocoa]]></commsearch>
 				<commsearch name="Weekly Review"><![CDATA[Sugar,Coffee,Cocoa,Oils & Oilseeds,Grains & Feed]]></commsearch>
 			</commoditysearch>
+      <commoditynewsearch>
+        <commnewsearch name="Paprika">Paprika</commnewsearch>
+        <commnewsearch name="Turmeric">Turmeric</commnewsearch>
+        <commnewsearch name="Sesame">Sesame Seed</commnewsearch>
+        <commnewsearch name="Poppy">Poppy Seed</commnewsearch>
+        <commnewsearch name="Poppyseed">Poppy Seed</commnewsearch>
+      </commoditynewsearch>
+      
 		</Commodities>
 		<Agrow> 
 			<commodity>
@@ -2244,7 +2257,38 @@
 				<CropPro name="agrow_research_agrochemicals">Product</CropPro>
 				<CropPro name="agrow_research_gm_crops">Product</CropPro>
 				<CropPro name="agrow_research_other">Product</CropPro>
-			</cropprotection>
+        <CropPro name="Fungicide">Fungicides</CropPro>
+        <CropPro name="Fungicides">Fungicides</CropPro>
+        <CropPro name="Fumigants">Fungicides</CropPro>
+        <CropPro name="Fumigant">Fungicides</CropPro>
+        <CropPro name="Insecticide">Insecticides</CropPro>
+        <CropPro name="Insecticides">Insecticides</CropPro>
+        <CropPro name="Nematicides">Insecticides</CropPro>
+        <CropPro name="Nematicide">Insecticides</CropPro>
+        <CropPro name="Herbicides"><![CDATA[Herbicides & PGRs]]></CropPro>
+        <CropPro name="Herbicide"><![CDATA[Herbicides & PGRs]]></CropPro>
+        <CropPro name="PGR"><![CDATA[Herbicides & PGRs]]></CropPro>
+        <CropPro name="PGRs"><![CDATA[Herbicides & PGRs]]></CropPro>
+        <CropPro name="plant growth regulator"><![CDATA[Herbicides & PGRs]]></CropPro>
+        <CropPro name="Seed treatments">Seed treatments</CropPro>
+        <CropPro name="Seed treatment">Seed treatments</CropPro>
+        <CropPro name="Biologicals">Biologicals</CropPro>
+        <CropPro name="Biopesticide">Biopesticides</CropPro>
+        <CropPro name="Biopesticides">Biopesticides</CropPro>
+        <CropPro name="Biostimulants">Biostimulants</CropPro>
+        <CropPro name="Biostimulant">Biostimulants</CropPro>
+        <CropPro name="Input traits">Input Traits</CropPro>
+        <CropPro name="Input trait">Input Traits</CropPro>
+        <CropPro name="Insecticide resistance">Insecticide Resistance</CropPro>
+        <CropPro name="Herbicide resistance">Herbicide Resistance</CropPro>
+        <CropPro name="Other Pathogen Resistance">Other Pathogen Resistance</CropPro>
+        <CropPro name="Output Traits">Output Traits</CropPro>
+        <CropPro name="Output Trait">Output Traits</CropPro>
+        <CropPro name="Altered Content">Altered Content</CropPro>
+        <CropPro name="Yield"><![CDATA[Stress Tolerance & Yield]]></CropPro>
+        <CropPro name="Stress Tolerance"><![CDATA[Stress Tolerance & Yield]]></CropPro>
+
+      </cropprotection>
 			<region>
 				<reg name="agrow_pesticide_and_chemical_policy">United States</reg>
 				<reg name="agrow_markets_regulatory_europe">Europe</reg>

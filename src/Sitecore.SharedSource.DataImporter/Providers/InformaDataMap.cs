@@ -104,7 +104,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (string.IsNullOrEmpty(summaryTitleHtml))
                     {
                         summaryTitleHtml = GetFirstParagraph(bodyTitleHtml);
-                        bodyTitleHtml = Regex.Replace(bodyTitleHtml, summaryTitleHtml, "", RegexOptions.IgnoreCase);
+                        bodyTitleHtml = bodyTitleHtml.Replace(summaryTitleHtml, "");
                     }
 
 
@@ -437,6 +437,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string Commodity = "";
                             string CommodityFactor = "";
                             string AnimalHealth = "";
+                            string AnimalHealthNew = "";
 
 
                             if (site != "Maritime")
@@ -532,7 +533,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (commoditynewSearchResults != null)
                                 {
-                                    foreach (string commoditynew in commoditySearchResults)
+                                    foreach (string commoditynew in commoditynewSearchResults)
                                     {
                                         
                                             Commodity += commoditynew + ",";
@@ -559,9 +560,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (animalhealthnewSearchResults != null)
                                 {
-                                    foreach (string animalhealthnew in animalhealthSearchResults)
+                                    foreach (string animalhealthnew in animalhealthnewSearchResults)
                                     {
-                                        AnimalHealth += animalhealthnew + ",";
+                                        AnimalHealthNew += animalhealthnew + ",";
 
                                     }
                                 }
@@ -698,6 +699,24 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 ao.Add("ANIMALHEALTH", AnimalHealth);
                             }
 
+                            if (ao.ContainsKey("ANIMALHEALTHNEW"))
+                            {
+                                if (AnimalHealthNew != "")
+
+                                {
+
+                                    AnimalHealthNew = ao["ANIMALHEALTHNEW"].ToString() + AnimalHealthNew;
+                                    ao.Remove("ANIMALHEALTHNEW");
+                                    ao.Add("ANIMALHEALTHNEW", AnimalHealthNew);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("ANIMALHEALTHNEW", AnimalHealthNew);
+                            }
+
 
                         }
                         else
@@ -800,14 +819,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         private string GetFirstParagraph(string htmltext)
         {
-            Match m = Regex.Match(htmltext, @"<p \s*(.+?)\s*</p>");
+            Match m = Regex.Match(htmltext, @"<p \s*(.+?)\s*</p>", RegexOptions.Singleline);
             if (m.Success)
             {
                 return m.Groups[0].Value;
             }
             else
             {
-                return htmltext;
+                return "";
             }
         }
 
@@ -1540,11 +1559,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (publication == "AnimalPharm")
                     {
                         Taxonomy.Add("ANIMALHEALTH", "");
+                        Taxonomy.Add("ANIMALHEALTHNEW", "");
                         Taxonomy.Add("COMMERCIAL", "");
                         Taxonomy.Add("COUNTRY", "");
                         string AnimalPharma = string.Empty;
                         string Commercial = string.Empty;
                         string Country = string.Empty;
+                        string AnimalPharmNew = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1571,6 +1592,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
+                                }
+
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "animalhealthnew", site))
+                                {
+                                    AnimalPharmNew += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["ANIMALHEALTHNEW"] = AnimalPharmNew;
                                 }
                                 //  countCommodityFactor++;
 
@@ -3291,7 +3318,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string Authors(string value)
         {
             return value
-                    .Replace("kelly@informa.com", ",")
+                     .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+                     .Replace("kelly@informa.com", ",")
                     .Replace("brizmohun@informa.com", ",")
                     .Replace("cathy.kelly@informa.com", ",")
                     .Replace("neena.brizmohun@informa.com", ",")
