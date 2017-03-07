@@ -630,3 +630,39 @@
 		padding: 8px !important;
 	}
 }
+
+#latest-value{
+	.rise{
+		padding-left: 5px;
+	}
+	.fall{
+		padding-left: 5px;
+	}
+}
+#market-Data-Dry-Cargo {
+	float: left;
+	width: 100%;
+	border: none;
+	#marketDataDryCargo {
+		border: none;
+	}
+	.year_heading {
+		height: 4em;
+	}
+	.article {
+		.year_heading {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	.states_heading {
+		border-right: 1px solid $color-white;
+	}
+	.R16 {
+		background-color: $color-white;
+		height: 60px;
+		&:nth-child(even) {
+			background-color: #eee;
+		}
+	}
+}

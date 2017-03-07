@@ -17,12 +17,14 @@ using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Web;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
+using Informa.Library.Search.Results;
 
 namespace Elsevier.Web.VWB.Report
 {
 
     public class ReportBuilder
     {
+        Table table;
         public List<IVwbColumn> Columns;
         static readonly ColumnFactory ColumnFactory = ColumnFactory.GetColumnFactory();
         private PublicationItem _publication;
@@ -30,6 +32,11 @@ namespace Elsevier.Web.VWB.Report
         private IVwbColumn _articleCheckboxes;
         private IVwbColumn _articleNumberColumn;
         private IVwbColumn _titleColumn;
+        private IVwbColumn _workflowStates;
+        private IVwbColumn _authors;
+        private IVwbColumn _contentType;
+        private IVwbColumn _mediaType;
+        private IVwbColumn _taxonomy;
         private IssueItem _iitem;
         private readonly VwbQuery _query;
         private readonly Page _page;
@@ -52,6 +59,7 @@ namespace Elsevier.Web.VWB.Report
 
         public void BuildTable(Table report)
         {
+            table = report;
             if (!_query.ShouldRun) return;
             //if (AlertNoPublicationSelected(report) || AlertInvalidDateRange(report))
             //{
@@ -95,7 +103,7 @@ namespace Elsevier.Web.VWB.Report
             DateTime? endDate = _query.EndDate;
 
 
-            if (String.IsNullOrEmpty(_query.IssueIdValue))
+            if (string.IsNullOrEmpty(_query.IssueIdValue))
             {
                 if ((startDate == null || endDate == null))
                 {
@@ -161,34 +169,28 @@ namespace Elsevier.Web.VWB.Report
                 report.Rows.Add(resultRow);
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="query"></param>
-        /// <returns>Sorted list of ArticleItemProxies based on query</returns>
-        public List<ArticleItemWrapper> RunSearch(VwbQuery query)
+        public List<IArticle> RunSearchForTaxonomyDropdown(VwbQuery query)
         {
-            // var param = new ArticleSearchParam();
-            //param.IncludeSidebarArticles();
-            List<ArticleItemWrapper> articles;
-
+            List<ArticleItemWrapper> articles = null;
+            DateTime startDate = DateTime.MinValue;
+            DateTime endDate = DateTime.MaxValue;
+            string url;
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                 string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
+                url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
 
                 if (query.InProgressValue)
                 {
                     url += "&inprogress=1";
                 }
 
-                DateTime startDate = (query.StartDate != null)
+                startDate = (query.StartDate != null)
                                         ? query.StartDate.Value
                                         : DateTime.MinValue;
 
-                DateTime endDate = (query.EndDate != null)
+                endDate = (query.EndDate != null)
                         ? query.EndDate.Value
                         : DateTime.MaxValue;
 
@@ -199,39 +201,114 @@ namespace Elsevier.Web.VWB.Report
                     url += "&SearchPublicationTitle=" + query.PublicationCodes;
                 if (string.IsNullOrEmpty(query.VerticalRoot) == false)
                     url += "&verticalroot=" + query.VerticalRoot;
+            }
+            var client = new WebClient();
+            var content = client.DownloadString(url);
 
+            var results = JsonConvert.DeserializeObject<SearchResults>(content);
+            Database masterDb = Factory.GetDatabase("master");
+            var resultItems = new List<IArticle>();            
+            foreach (var searchResult in results.results)
+            {
+                var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
 
-                var client = new WebClient();
-                var content = client.DownloadString(url);
-
-                var results = JsonConvert.DeserializeObject<SearchResults>(content);
-
-                var resultItems = new List<ArticleItem>();
-
-                Database masterDb = Factory.GetDatabase("master");
-
-                foreach (var searchResult in results.results)
+                if (theItem == null)
                 {
-                    var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
+                    continue;
+                }
+                //Manually filtering for time
+                IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
+                resultItems.Add(article);
+            }
+            return resultItems;
+        }
 
-                    if (theItem == null)
-                    {
-                        continue;
-                    }
-
-                    //Manually filtering for time
-                    IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
-
-                    if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
-                                    article.Planned_Publish_Date.Ticks <= endDate.Ticks)
-                    {
-                        resultItems.Add(theItem);
-                    }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>Sorted list of ArticleItemProxies based on query</returns>
+        public List<ArticleItemWrapper> RunSearch(VwbQuery query)
+        {
+            // var param = new ArticleSearchParam();
+            //param.IncludeSidebarArticles();
+            List<ArticleItemWrapper> articles = null;
+            DateTime startDate = DateTime.MinValue;
+            DateTime endDate = DateTime.MaxValue;
+            string url;
+            if (!string.IsNullOrEmpty(query.ArticleNumber))
+            {
+                using (new Sitecore.SecurityModel.SecurityDisabler())
+                {
+                    string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&q={3}", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId, query.ArticleNumber);
+                    url += "&verticalroot=" + query.VerticalRoot;
                 }
 
-                articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();
             }
+            else
+            {
+                using (new Sitecore.SecurityModel.SecurityDisabler())
+                {
+                    string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
+
+                    if (query.InProgressValue)
+                    {
+                        url += "&inprogress=1";
+                    }
+
+                    startDate = (query.StartDate != null)
+                                            ? query.StartDate.Value
+                                            : DateTime.MinValue;
+
+                    endDate = (query.EndDate != null)
+                            ? query.EndDate.Value
+                            : DateTime.MaxValue;
+
+
+                    url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
+                    url += ";" + endDate.ToString("MM/dd/yyyy");
+                    if (string.IsNullOrEmpty(query.PublicationCodes) == false)
+                        url += "&SearchPublicationTitle=" + query.PublicationCodes;
+                    if (string.IsNullOrEmpty(query.VerticalRoot) == false)
+                        url += "&verticalroot=" + query.VerticalRoot;
+                }
+            }
+
+            var client = new WebClient();
+            var content = client.DownloadString(url);
+
+            var results = JsonConvert.DeserializeObject<SearchResults>(content);
+
+            var resultItems = new List<ArticleItem>();
+
+            Database masterDb = Factory.GetDatabase("master");
+
+            foreach (var searchResult in results.results)
+            {
+                var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
+
+                if (theItem == null)
+                {
+                    continue;
+                }
+
+                //Manually filtering for time
+                IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
+
+                if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
+                                article.Planned_Publish_Date.Ticks <= endDate.Ticks)
+                {
+                    resultItems.Add(theItem);
+                }
+
+            }
+
+            articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();
+
 
             if (query.SortColumnKey != null && ColumnFactory.GetColumn(query.SortColumnKey) != null)
             {
@@ -269,6 +346,11 @@ namespace Elsevier.Web.VWB.Report
             _articleCheckboxes = ColumnFactory.GetArticleCheckboxes();
             _articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
             _titleColumn = ColumnFactory.GetTitleColumn();
+            _authors = ColumnFactory.GetAuhtors();
+            _workflowStates = ColumnFactory.GetWorkflowStates();
+            _contentType = ColumnFactory.GetContentType();
+            _mediaType = ColumnFactory.GetMediaType();
+            _taxonomy = ColumnFactory.GetTaxonomies();
             Columns.InsertRange(0, new[] { _articleCheckboxes, _articleNumberColumn, _titleColumn });
         }
 
@@ -383,10 +465,49 @@ namespace Elsevier.Web.VWB.Report
             {
                 Text = col.GetHeader()
             };
-            tableCell.Controls.Add(new Label
+            if (col.ToString() == _workflowStates.ToString() || col.ToString() == _authors.ToString() || col.ToString() == _contentType.ToString() || col.ToString() == _mediaType.ToString()|| col.ToString() == _taxonomy.ToString())
             {
-                Text = col.GetHeader()
-            });
+                tableCell.Controls.Add(new Label
+                {
+                    Text = col.GetHeader()
+                });
+                DropDownList ddlValues = new DropDownList();
+                if(col.ToString() == _workflowStates.ToString())
+                {
+                    ddlValues.ID = "selWorkflow";
+                }
+
+                if (col.ToString() == _authors.ToString())
+                {
+                    ddlValues.ID = "selAuthor";
+                }
+                if (col.ToString() == _contentType.ToString())
+                {
+                    ddlValues.ID = "selContType";
+                }
+                if (col.ToString() == _mediaType.ToString())
+                {
+                    ddlValues.ID = "selMediaType";
+                }
+                if (col.ToString() == _taxonomy.ToString())
+                {
+                    ddlValues.ID = "selTaxonomy";
+                }
+                ddlValues.DataSource = col.GetDropDownValues(_results);
+                ddlValues.DataValueField = "Key";
+                ddlValues.DataTextField = "Value";
+                ddlValues.DataBind();
+                ddlValues.AutoPostBack = false;
+                tableCell.Controls.Add(ddlValues);
+            }            
+            else
+            {
+                tableCell.Controls.Add(new Label
+                {
+                    Text = col.GetHeader()
+                });
+            }
+
             if (col != _articleCheckboxes && col != _articleNumberColumn && col != _titleColumn)
             {
                 var linkButton = new HyperLink { CssClass = "right space" };
@@ -398,5 +519,4 @@ namespace Elsevier.Web.VWB.Report
             return tableCell;
         }
     }
-
 }

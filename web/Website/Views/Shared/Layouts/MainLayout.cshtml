@@ -49,7 +49,7 @@
             {
                 <div class="advertising--leaderboard visible-desktop">
                     <script>
-                if(window.outerWidth > 667)
+                if(screen.width > 667)
                 OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');
                     </script>
                 </div>
@@ -116,7 +116,7 @@
 
     @*<iframe name="iframe-vertical" style="display:none;"></iframe>*@
     
-    @{
+    @*@{
         var sitelist = Model.GetVerticalDomains();
         if (sitelist != null && sitelist.Any())
         {
@@ -142,7 +142,7 @@
                 }
              </div>
                 }
-                }
+                }*@
             
 
 </body>

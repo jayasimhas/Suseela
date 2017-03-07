@@ -28,5 +28,10 @@ namespace Elsevier.Web.VWB.Report.Columns
 			string value = string.Join("<br />", articleItemWrapper.SidebarArticleNumbers.ToArray());
 			return new TableCell { Text = value };
 		}
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

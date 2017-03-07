@@ -48,7 +48,7 @@
     {
         <div class="advertising--leaderboard visible-mobile">
             <script>
-                if(window.outerWidth < 667)
+                if(screen.width < 667)
                 OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');
             </script>
         </div>
@@ -104,7 +104,7 @@
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { @class = "vertical__sign-out" })</span>
+                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url, vid = Model.CurVerticalName }, new { @class = "vertical__sign-out" })</span>
                 </div>
                     }
                     else
@@ -114,7 +114,7 @@
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
                     <span class="header-account-access__label header_salesforce_sign-in-out"
-                          data-redirect-url="@Url.Action("Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url })"
+                          data-redirect-url="@Url.Action("Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url, vid = Model.CurVerticalName  })"
                           data-logout-url="@Model.LogoutUrl">
                         @Model.SignOutLinkText
                     </span>

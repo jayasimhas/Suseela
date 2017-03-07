@@ -37,7 +37,26 @@
                                                 <span class="article-preview__byline">@Html.Raw(firstArticle.ListableAuthorByLine)</span>
                                                 <div class="article-metadata">
                                                     <ul>
-                                                        <li><time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                        <li>
+
+                                                            @{
+                                                                var dateDiff = DateTime.Now - firstArticle.ListableDate;
+                                                                if (dateDiff.TotalMinutes < 60)
+                                                                {
+                                                                    var datelbl = dateDiff.Minutes + " min ago";
+                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                }
+                                                                else if (dateDiff.TotalHours < 24)
+                                                                {
+                                                                    var datelbl = dateDiff.Hours + " hours ago";
+                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                }
+                                                            }
+                                                        </li>
                                                         @if (!string.IsNullOrEmpty(firstArticle.LinkableText))
                                                         {
                                                             <li>
@@ -111,7 +130,26 @@
                                                                     <span class="article-preview__byline">@Html.Raw(article.ListableAuthorByLine)</span>
                                                                     <div class="article-metadata">
                                                                         <ul>
-                                                                            <li><time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                                            <li>
+
+                                                                                @{
+                                                                                    dateDiff = DateTime.Now - firstArticle.ListableDate;
+                                                                                    if (dateDiff.TotalMinutes < 60)
+                                                                                    {
+                                                                                        var datelbl = dateDiff.Minutes + " min ago";
+                                                                                        <time class="article-metadata__date">@datelbl</time>
+                                                                                    }
+                                                                                    else if (dateDiff.TotalHours < 24)
+                                                                                    {
+                                                                                        var datelbl = dateDiff.Hours + " hours ago";
+                                                                                        <time class="article-metadata__date">@datelbl</time>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                    }
+                                                                                }
+                                                                            </li>
                                                                             @if (!string.IsNullOrEmpty(article.LinkableText))
                                                                             {
                                                                                 <li>
@@ -214,7 +252,26 @@
                                                                 <span class="article-preview__byline">@Html.Raw(fifthArticle.ListableAuthorByLine) </span>
                                                                 <div class="article-metadata">
                                                                     <ul>
-                                                                        <li><time class="article-metadata__date">@fifthArticle.ListableDate.ToString("d MMM yyyy")</time></li>
+                                                                        <li>
+
+                                                                            @{
+                                                                                dateDiff = DateTime.Now - firstArticle.ListableDate;
+                                                                                if (dateDiff.TotalMinutes < 60)
+                                                                                {
+                                                                                    var datelbl = dateDiff.Minutes + " min ago";
+                                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                                }
+                                                                                else if (dateDiff.TotalHours < 24)
+                                                                                {
+                                                                                    var datelbl = dateDiff.Hours + " hours ago";
+                                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                }
+                                                                            }
+                                                                        </li>
                                                                         @if (!string.IsNullOrEmpty(fifthArticle.LinkableText))
                                                                         {
                                                                             <li>

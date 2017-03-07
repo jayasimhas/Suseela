@@ -19,7 +19,7 @@ using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
 using System.Web.Mvc;
 using System.Data;
-using System.Linq;
+using Sitecore.Data.Items;
 
 namespace Elsevier.Web.VWB
 {
@@ -61,7 +61,6 @@ namespace Elsevier.Web.VWB
             //FillPublicationsList();
             FillVerticals();
 
-
             if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
             {
                 RunQuery(true);
@@ -73,10 +72,10 @@ namespace Elsevier.Web.VWB
 
             UpdateFields();
             BuildOptionalColumnDropdown();
-            if(ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
+            if (ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
                 BuildExistingIssuesList();
         }
-
+        
         protected void Page_Init(object sender, EventArgs e)
         {
             _vwbQuery = new VwbQuery(Request);
@@ -161,11 +160,12 @@ namespace Elsevier.Web.VWB
                     ddlVerticals.DataValueField = "SiteId";
                     ddlVerticals.DataTextField = "Sitename";
                     ddlVerticals.DataBind();
-                    ddlVerticals.Items.Insert(0, new ListItem("Select Verticals", "NA"));
                 }
             }
 
-
+            FillPublicationsList(ddlVerticals.SelectedItem.Value);
+            hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
+            BuildExistingIssuesList();
         }
 
         private static int? GetMaxNumResults()
@@ -242,20 +242,83 @@ namespace Elsevier.Web.VWB
 
         protected void RunReport(object sender, EventArgs e)
         {
-            var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
-            if (pubCount == 0)
+            if (!string.IsNullOrEmpty(txtArticleNumber.Text))
             {
-                lblMsg.Text = "You must select at least one publication";
-                lblMsg.ForeColor = System.Drawing.Color.Red;
-                return;
+                List<string> PubPrefixes = GetPublicationsPrefixes();
+                if (_vwbQuery.ShouldRun && PubPrefixes.Any(n => txtArticleNumber.Text.StartsWith(n)))
+                {
+                    string VerticalRoot = GetVerticalRootByPubPrefix(new string(txtArticleNumber.Text.Take(2).ToArray()));
+                    _vwbQuery.ArticleNumber = txtArticleNumber.Text;
+                    _vwbQuery.VerticalRoot = VerticalRoot;
+                    BuildReport();
+                }
+                else
+                {
+                    lblArticleNumberError.Text = "Invalid Article Number";
+                    lblArticleNumberError.ForeColor = System.Drawing.Color.Red;
+                    return;
+                }
             }
-            else if (pubCount > 1 && rbNoDate.Checked)
+            else
             {
-                lblMsg.Text = "You must specify a date range when selecting more than one publication";
-                lblMsg.ForeColor = System.Drawing.Color.Red;
-                return;
+                var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+                //if (pubCount == 0)
+                //{
+                //    lblMsg.Text = "You must select at least one publication";
+                //    lblMsg.ForeColor = System.Drawing.Color.Red;
+                //    return;
+                //}
+                //else if (pubCount > 1 && rbNoDate.Checked)
+                //{
+                //    lblMsg.Text = "You must specify a date range when selecting more than one publication";
+                //    lblMsg.ForeColor = System.Drawing.Color.Red;
+                //    return;
+                //}
+                if (pubCount > 1 && rbNoDate.Checked)
+                {
+                    lblMsg.Text = "You must specify a date range when selecting more than one publication";
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
+                    return;
+                }
+                RunQuery(true);
             }
-            RunQuery(true);
+        }
+
+        private string GetVerticalRootByPubPrefix(string prefix)
+        {
+            Item[] allVerticalRoots = Factory.GetDatabase("master").SelectItems("/sitecore/content/*[@@templateid='{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}']");
+            foreach (var VerticalRoot in allVerticalRoots)
+            {
+                Item[] allSiteRoots = Factory.GetDatabase("master").SelectItems("/sitecore/content/" + VerticalRoot.Name + "/*[@@templateid='{DD003F89-D57D-48CB-B428-FFB519AACA56}']");
+                foreach (var siteRoot in allSiteRoots)
+                {
+                    if (siteRoot != null && !string.IsNullOrEmpty(siteRoot.Fields["Publication Prefix"].Value))
+                    {
+                        if (string.Equals(prefix, siteRoot.Fields["Publication Prefix"].Value, StringComparison.OrdinalIgnoreCase))
+                        {
+                            return siteRoot.ParentID.ToGuid().ToString();
+                        }
+                    }
+                }
+            }
+            return string.Empty;
+        }
+
+        private List<string> GetPublicationsPrefixes()
+        {
+            List<string> pubPrefixes = new List<string>();
+            //Pharma
+            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.ScripIntelligence.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.InVivo.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.PinkSheet.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.MedtechInsight.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.RoseSheet.Prefix"));
+            //Agri
+            pubPrefixes.Add(Settings.GetSetting("Content.Agri.Commodities.Prefix"));
+            //Maritime
+            pubPrefixes.Add(Settings.GetSetting("Content.Maritime.Lloydslist.Prefix"));
+
+            return pubPrefixes;
         }
 
         private void RunQuery(bool execute)
@@ -384,7 +447,7 @@ namespace Elsevier.Web.VWB
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
             string selectedVertical = ddlVerticals.SelectedItem.Text;
-            if(selectedVertical == "" && selectedVertical == "Select Verticals")
+            if (selectedVertical == "" && selectedVertical == "Select Verticals")
             {
                 lblMsg.Text = "You must select a vertical";
                 lblMsg.ForeColor = System.Drawing.Color.Red;

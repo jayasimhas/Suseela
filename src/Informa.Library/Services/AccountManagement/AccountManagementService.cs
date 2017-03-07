@@ -24,7 +24,7 @@ namespace Informa.Library.Services.AccountManagement
         private readonly IItemReferences ItemReferences;
         private readonly IUserEntitlementsContext UserEntitlementsContext;
         private readonly ISiteRootsContext SiteRootsContext;
-       
+
 
         public AccountManagementService(
             IAuthenticatedUserContext authenticatedUserContext,
@@ -37,7 +37,7 @@ namespace Informa.Library.Services.AccountManagement
             ItemReferences = itemReferences;
             UserEntitlementsContext = userEntitlementsContext;
             SiteRootsContext = siteRootsContext;
-           
+
         }
 
         public bool IsUserRestricted(I___BasePage page)
@@ -156,7 +156,7 @@ namespace Informa.Library.Services.AccountManagement
 
             return !string.IsNullOrEmpty(entitlementCode) ?
                 UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code + "." + entitlementCode, StringComparison.CurrentCultureIgnoreCase)) :
-                UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code, StringComparison.CurrentCultureIgnoreCase));
+                UserEntitlementsContext.Entitlements.Any(e => string.Equals(e.ProductCode, siteRoot.Publication_Code, StringComparison.CurrentCultureIgnoreCase)) || UserEntitlementsContext.Entitlements.Any();
         }
 
     }

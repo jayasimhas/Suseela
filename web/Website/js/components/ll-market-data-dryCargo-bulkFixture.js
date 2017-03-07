@@ -34,13 +34,13 @@
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
 				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-				self.table += '<tr class="visible-lg">';
+				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>'									
+				/*self.table += '<tr class="visible-lg">';
 				var tableHead = val[0];
 					for(var prop in tableHead){
 						self.table += '<th class="pad-10">'+prop+'</th>';
 					}
-					self.table += '</tr>';
+					self.table += '</tr>';*/
 					self.table += '</thead>';
 				self.table += '</table>';	
 			 });

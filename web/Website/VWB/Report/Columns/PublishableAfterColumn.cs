@@ -58,5 +58,10 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 			return tc;
 		}
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

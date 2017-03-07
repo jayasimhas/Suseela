@@ -27,5 +27,10 @@ namespace Elsevier.Web.VWB.Report.Columns
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

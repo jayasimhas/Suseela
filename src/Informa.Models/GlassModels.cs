@@ -18095,6 +18095,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Publication_ThemeFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Publication_Theme { get; set; }
         /// <summary>
+        /// The Publication Prefix field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: C37FAF32-C951-40BA-8D7F-77FDFA8904C2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Publication_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Publication_Prefix { get; set; }
+        /// <summary>
         /// The Workflow field.
         /// <para></para>
         /// <para>Field Type: Droplink</para>		
@@ -19321,6 +19330,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Publication_ThemeFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Publication_Theme { get; set; }
         /// <summary>
+        /// The Publication Prefix field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: C37FAF32-C951-40BA-8D7F-77FDFA8904C2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Publication_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Publication_Prefix { get; set; }
+        /// <summary>
         /// The Workflow field.
         /// <para></para>
         /// <para>Field Type: Droplink</para>		
@@ -20050,6 +20068,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
         public const string Publication_ThemeFieldName = "Publication Theme";
+
+
+        public static readonly ID Publication_PrefixFieldId = new ID("C37FAF32-C951-40BA-8D7F-77FDFA8904C2");
+        public const string Publication_PrefixFieldName = "Publication Prefix";
 
         //JIRA IPMP-56
         public static readonly ID Legacy_Brand_ActiveFieldId = new ID("FA9CC7FF-C51B-40F1-B688-5AB739BEEEF7");
@@ -26631,7 +26653,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
         public const string Publication_ThemeFieldName = "Publication Theme";
 
-
+        public static readonly ID Publication_PrefixFieldId = new ID("C37FAF32-C951-40BA-8D7F-77FDFA8904C2");
+        public const string Publication_PrefixFieldName = "Publication Prefix";
 
         public static readonly ID WorkflowFieldId = new ID("57389b93-9681-4e67-8fb0-4e04e532716c");
         public const string WorkflowFieldName = "Workflow";

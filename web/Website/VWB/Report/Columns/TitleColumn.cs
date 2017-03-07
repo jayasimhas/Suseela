@@ -105,6 +105,11 @@ namespace Elsevier.Web.VWB.Report.Columns
 			return link;
 		}
 
-		protected readonly string _siteRoot = ConfigurationManager.AppSettings["Redirect.EBIHostName"];
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected readonly string _siteRoot = ConfigurationManager.AppSettings["Redirect.EBIHostName"];
 	}
 }

@@ -27,5 +27,10 @@ namespace Elsevier.Web.VWB.Report.Columns
 		{
             return new TableCell { Text = articleItemWrapper.WordCount.ToString() };
         }
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

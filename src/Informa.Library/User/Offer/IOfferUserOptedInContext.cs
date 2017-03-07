@@ -1,8 +1,10 @@
-﻿namespace Informa.Library.User.Offer
+﻿using Informa.Library.User.Newsletter;
+
+namespace Informa.Library.User.Offer
 {
 	public interface IOfferUserOptedInContext
 	{
-		bool OptedIn { get; }
+        OffersOptIn OptedIn { get; }
 		void Clear();
 	}
 }

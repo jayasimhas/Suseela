@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
@@ -44,6 +45,11 @@ namespace Informa.Web.VWB.Report.Columns
 			return "cb";
 		}
 
-		#endregion
-	}
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+    }
 }

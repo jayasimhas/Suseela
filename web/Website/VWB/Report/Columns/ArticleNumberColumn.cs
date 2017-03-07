@@ -9,6 +9,7 @@ using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Links;
 using System.Web;
+using System.Collections.Generic;
 
 namespace Elsevier.Web.VWB.Report.Columns
 {
@@ -131,6 +132,11 @@ namespace Elsevier.Web.VWB.Report.Columns
             string url = MediaManager.GetMediaUrl(wordDoc);
             url = url.Replace("/-/", "/~/");
             return url.Replace("-", " ");
+        }
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

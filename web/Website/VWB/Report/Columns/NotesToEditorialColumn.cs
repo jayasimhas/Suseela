@@ -1,4 +1,6 @@
-﻿using System.Web.UI.WebControls;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using Elsevier.Library.CustomItems.Publication.General;
 using Sitecore.Data.Items;
 using Velir.Utilities;
@@ -47,5 +49,10 @@ namespace Elsevier.Web.VWB.Report.Columns
 			cell.Controls.Add(refresh);
 			return cell;
 		}
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

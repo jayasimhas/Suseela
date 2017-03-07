@@ -2336,6 +2336,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 32px;
   margin-bottom: 2rem;
   font-family: "verdana"; }
+  #graph-carousel .company_title {
+    padding-bottom: 6px; }
   #graph-carousel:after {
     clear: both;
     content: '';
@@ -4330,7 +4332,7 @@ header .header__wrapper {
   position: relative; }
 
 header .header-publication-links {
-  top: 30px; }
+  top: 15px; }
   @media (max-width: 640px) {
     header .header-publication-links {
       top: 50px; } }
@@ -4760,9 +4762,9 @@ main .action-flags-bar, main .banner--highlights {
       border: 1px solid #a7a7a7; }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followingBtn:hover {
-          border: 1px solid #ADADAD;
-          color: #58595b;
-          background: none; } }
+          border: 1px solid #f7941e;
+          color: #ffffff;
+          background: #f7941e; } }
       @media (max-width: 480px) {
         .myview-settings .followingBtn:hover {
           background: url(/dist/img/sprite-image.png) no-repeat -3px -235px; } }
@@ -4820,7 +4822,8 @@ main .action-flags-bar, main .banner--highlights {
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         .myview-settings .followBtn:hover {
           border: 1px solid #ADADAD;
-          color: #58595b; } }
+          color: #58595b;
+          background: none; } }
   .myview-settings.myview-settings-registration .saveoption {
     width: 100%; }
   .myview-settings h1 {
@@ -5698,16 +5701,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-lloydslist .myview-settings .followBtn:hover {
     background: #1191D1;
     border: 1px solid #1191D1; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-lloydslist .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5792,16 +5796,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-insurance-day .myview-settings .followBtn:hover {
     background: #DE4361;
     border: 1px solid #DE4361; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-insurance-day .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -5886,16 +5891,17 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #a7a7a7; } }
     @media screen and (min-width: 480px) and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followingBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+        border: 1px solid #f7941e;
+        color: #ffffff;
+        background: #f7941e; } }
   .theme-commodities .myview-settings .followBtn:hover {
     background: #F5821F;
     border: 1px solid #F5821F; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .theme-commodities .myview-settings .followBtn:hover {
         border: 1px solid #ADADAD;
-        color: #58595b; } }
+        color: #58595b;
+        background: none; } }
   .theme-commodities .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -6095,8 +6101,6 @@ main .action-flags-bar, main .banner--highlights {
   margin-bottom: 20px;
   margin-bottom: 1.25rem; }
   .personalisationhome .sub-heading-text p {
-    line-height: 16px;
-    line-height: 1rem;
     font-style: normal;
     font-weight: 400;
     font-size: 1.125em; }
@@ -6545,6 +6549,12 @@ main .action-flags-bar, main .banner--highlights {
   font-size: 1.5rem;
   margin-bottom: 8px;
   margin-bottom: 0.5rem; }
+  @media screen and (min-width: 600px) {
+    .listView .topic-featured-article__headline {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      overflow: hidden; } }
 
 .listView .article-metadata__date {
   font-size: 15px;
@@ -6552,8 +6562,8 @@ main .action-flags-bar, main .banner--highlights {
   font-weight: normal; }
 
 .listView .topic-article-image_pan {
-  width: 304px;
-  width: 19rem;
+  width: 312px;
+  width: 19.5rem;
   height: 190px;
   height: 11.875rem;
   float: left; }
@@ -6562,9 +6572,13 @@ main .action-flags-bar, main .banner--highlights {
     width: 17.5rem !important;
     height: 160px !important;
     height: 10rem !important; }
-    @media (max-width: 640px) {
+    @media (max-width: 800px) {
       .listView .topic-article-image_pan .topic-featured-article__image {
         margin: 0px; } }
+
+.listView .bar-separated-link-list a, .listView .search-result__tags a, .listView .bar-separated-link-list .pop-out__reset-password, .listView .search-result__tags .pop-out__reset-password, .listView .bar-separated-link-list .sortable-table__list-toggler, .listView .search-result__tags .sortable-table__list-toggler, .listView .bar-separated-link-list .mobile-table-exit, .listView .search-result__tags .mobile-table-exit {
+  padding: 0 17px 0 0;
+  margin-right: 17px; }
 
 .listView .article-preview__tags {
   width: auto;
@@ -6583,8 +6597,8 @@ main .action-flags-bar, main .banner--highlights {
   border-bottom: 1px solid #e7e7e7;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem;
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
   width: 100%; }
   .listView .list-featured-article .article-preview__byline {
     margin-bottom: 5px;
@@ -9908,8 +9922,54 @@ div#feedbacklite.fbl_r {
 #shipCoalExport .pad-full-10 {
   padding: 8px !important; }
 
+#latest-value .rise {
+  padding-left: 5px; }
+
+#latest-value .fall {
+  padding-left: 5px; }
+
+#market-Data-Dry-Cargo {
+  float: left;
+  width: 100%;
+  border: none; }
+  #market-Data-Dry-Cargo #marketDataDryCargo {
+    border: none; }
+  #market-Data-Dry-Cargo .year_heading {
+    height: 4em; }
+  #market-Data-Dry-Cargo .article .year_heading {
+    padding-right: 0;
+    padding-left: 0; }
+  #market-Data-Dry-Cargo .states_heading {
+    border-right: 1px solid #ffffff; }
+  #market-Data-Dry-Cargo .R16 {
+    background-color: #ffffff;
+    height: 60px; }
+    #market-Data-Dry-Cargo .R16:nth-child(even) {
+      background-color: #eee; }
+
 .id-merges-acquisition {
   font-family: 'Roboto'; }
+  .id-merges-acquisition .idi-table-heading {
+    margin-top: 0; }
+  .id-merges-acquisition #scrollbar-horizantal {
+    height: 10px;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden; }
+    .id-merges-acquisition #scrollbar-horizantal:after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: #777777;
+      position: absolute;
+      top: 50%; }
+    .id-merges-acquisition #scrollbar-horizantal #scrollbar {
+      height: 8px;
+      background-color: #777777;
+      width: 20px;
+      position: absolute;
+      top: 1px;
+      left: 0; }
   .id-merges-acquisition .merges-form, .id-merges-acquisition .visible-xs {
     display: none; }
     @media (max-width: 480px) {
@@ -9938,11 +9998,15 @@ div#feedbacklite.fbl_r {
         position: absolute;
         width: 100%;
         right: 0; }
+  .id-merges-acquisition .small_table .table-responsive .pad-10 {
+    padding: 16px;
+    padding: 1rem; }
   .id-merges-acquisition .dealsOmitted {
     width: 100%;
-    padding: 10px 0;
+    padding: 16px 0 18px 0;
     text-align: right;
-    background-color: #fff; }
+    background-color: #fff;
+    margin: 0; }
   .id-merges-acquisition hr {
     display: block !important;
     padding: 0;
@@ -10250,7 +10314,7 @@ div#feedbacklite.fbl_r {
 
 .rolling-stream {
   background-color: #f1f2f2;
-  padding: 20px; }
+  padding: 20px 25px; }
   .rolling-stream.white-bg {
     background-color: #ffffff; }
     .rolling-stream.white-bg .rolling-stream-wrapper:after {
@@ -10258,7 +10322,7 @@ div#feedbacklite.fbl_r {
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
   .rolling-stream h2, .rolling-stream .article-topics__header {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     margin-bottom: 20px; }
   .rolling-stream .rolling-stream-wrapper {
     height: 600px;
@@ -10270,7 +10334,7 @@ div#feedbacklite.fbl_r {
       display: none; }
     .rolling-stream .rolling-stream-wrapper:after {
       content: '';
-      width: calc(100% - 15px);
+      width: calc(100% - 20px);
       background: #f1f2f2;
       position: absolute;
       height: 85px;
@@ -10296,7 +10360,8 @@ div#feedbacklite.fbl_r {
       overflow-y: scroll;
       margin: 0;
       padding: 0;
-      position: relative; }
+      position: relative;
+      padding-right: 5px; }
       .rolling-stream .rolling-stream-wrapper .content .article-related-content__date {
         float: right;
         width: auto;
@@ -10354,6 +10419,40 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       .package-control-articles__fullContent .package-wrapper {
         display: block; } }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:first-child .article-preview__headline {
+      margin-bottom: 1px; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:first-child .article-metadata {
+      margin-bottom: 0; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:first-child .article-preview__tags {
+      bottom: 20px;
+      clear: both; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:first-child .article-summary p:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 48px;
+      height: 3rem;
+      bottom: 103px;
+      left: 0;
+      background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+      background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+      z-index: 227; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:last-child .article-preview__tags {
+      bottom: 20px;
+      clear: both; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:last-child .article-preview__inner-wrapper .article-summary p {
+      max-height: 246px; }
+    .package-control-articles__fullContent .package-wrapper .package-control-preview:last-child .article-preview__inner-wrapper .article-summary p:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 48px;
+      height: 3rem;
+      bottom: 45px;
+      left: 0;
+      background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+      background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+      z-index: 227; }
   .package-control-articles__fullContent .article-metadata {
     position: relative; }
     .package-control-articles__fullContent .article-metadata ul {
@@ -10382,8 +10481,8 @@ div#feedbacklite.fbl_r {
   .package-control-articles__fullContent .header-line-control {
     width: 100%;
     position: relative;
-    margin: 0 0 20px 0;
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
     font-size: 30px;
     font-size: 1.875rem; }
     .package-control-articles__fullContent .header-line-control:after {
@@ -10431,7 +10530,7 @@ div#feedbacklite.fbl_r {
     .package-wrapper .package-control-preview {
       width: 50%; } }
   .package-wrapper .package-control-preview:first-child {
-    width: 50%; }
+    width: calc(50% - 10px); }
     @media (max-width: 480px) {
       .package-wrapper .package-control-preview:first-child {
         width: 100%; } }
@@ -10458,8 +10557,8 @@ div#feedbacklite.fbl_r {
     margin: 0;
     width: 100%; }
   .package-wrapper .package-control-preview .article-preview__inner-wrapper {
-    margin-bottom: 20px;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; }
   .package-wrapper .package-control-preview .package-heading-wrapper {
     margin-top: 20px;
     margin-top: 1.25rem; }
@@ -10478,11 +10577,15 @@ div#feedbacklite.fbl_r {
     font-size: 1.25rem;
     font-weight: bold;
     line-height: 24px;
-    margin-bottom: 5px; }
-  .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
-    font-size: 18px;
-    font-size: 1.125rem;
-    line-height: 30px; }
+    margin-bottom: 3px; }
+  .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary {
+    clear: both; }
+    .package-wrapper .package-control-preview .article-preview__inner-wrapper .article-summary p {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 30px;
+      max-height: 135px;
+      overflow: hidden; }
 
 .package-control-articles__half {
   background: #f1f2f2;
@@ -10521,6 +10624,20 @@ div#feedbacklite.fbl_r {
         width: 100%; } }
   .package-control-articles__half .package-control-preview:first-child .article-preview__byline {
     float: none; }
+  .package-control-articles__half .package-control-preview .article-preview__tags {
+    bottom: 20px;
+    clear: both; }
+  .package-control-articles__half .package-control-preview .article-summary p:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    height: 3rem;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+    background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
+    z-index: 227; }
   .package-control-articles__half .package-control-preview .article-preview__inner-wrapper {
     position: relative; }
     .package-control-articles__half .package-control-preview .article-preview__inner-wrapper .article-metadata li:last-child {
@@ -10579,8 +10696,8 @@ div#feedbacklite.fbl_r {
   .package-img-wrapper.first {
     height: 220px;
     width: 545px;
-    margin-bottom: 20px;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; }
   .package-img-wrapper.second {
     height: 165.56px; }
   .package-img-wrapper.third {
@@ -16429,6 +16546,11 @@ main {
 .theme-insurance-day .table .table_head tr.visible-lg {
   background-color: #DE4361; }
 
+.theme-insurance-day #cockett-Bunker .table_head {
+  background-color: #DE4361 !important; }
+  .theme-insurance-day #cockett-Bunker .table_head tr:first-child {
+    background-color: #91211E !important; }
+
 .theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
 .theme-lloydslist .msg-text h3,
 .theme-lloydslist .msg-text .article-call-to-action__title,
@@ -16817,7 +16939,7 @@ main {
 .theme-lloydslist .ID-Responsive-Table .table_head,
 .theme-lloydslist .table-responsive .table .table_head,
 .theme-lloydslist .table.theme-table thead tr:first-child th {
-  background-color: #002d4f; }
+  background-color: #0f5487; }
 
 .theme-lloydslist .label-wrap, .theme-lloydslist .show-largest-btn, .theme-lloydslist .merge-form-items,
 .theme-lloydslist .table-wrapper .tableHead,
@@ -16849,6 +16971,11 @@ main {
 
 .theme-lloydslist .table .table_head tr.visible-lg {
   background-color: #1191D1; }
+
+.theme-lloydslist #cockett-Bunker .table_head {
+  background-color: #1191D1 !important; }
+  .theme-lloydslist #cockett-Bunker .table_head tr:first-child {
+    background-color: #0f5487 !important; }
 
 /* * * * PRINT STYLES * * * */
 @media print {

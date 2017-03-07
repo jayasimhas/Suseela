@@ -73,7 +73,7 @@ namespace Informa.Web.ViewModels
         public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
 
         public bool IsNewSalesforceEnabled => SalesforceConfigurationContext.IsNewSalesforceEnabled;
-        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString());
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?")? HttpContext.Current.Request.Url.ToString()+ "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString()+ "?vid="+CurVerticalName);
         public string SignInMessage => TextTranslator.Translate("Authentication.SignIn.SignInMessage");
 
         private string GetCallbackUrl(string url)

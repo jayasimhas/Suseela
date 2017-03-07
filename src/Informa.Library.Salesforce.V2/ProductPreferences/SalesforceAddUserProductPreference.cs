@@ -2,10 +2,12 @@
 using Informa.Library.SalesforceConfiguration;
 using Informa.Library.User.Content;
 using Informa.Library.User.Document;
+using Informa.Library.User.Newsletter;
 using Informa.Library.User.ProductPreferences;
 using Informa.Library.User.Search;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -22,15 +24,16 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
         protected readonly ISalesforceDeleteUserProductPreferences SalesforceDeleteUserProductPreferences;
-
+        protected readonly ISalesforceContentNewsletterFactory SalesforceContentNewsletterFactory;
         public SalesforceAddUserProductPreference(
             ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
             ITextTranslator textTranslator,
-    ISalesforceConfigurationContext salesforceConfigurationContext,
-    ISalesforceInfoLogger infoLogger,
-    ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
-    ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences,
-    ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            ISalesforceInfoLogger infoLogger,
+            ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
+            ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences,
+            ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
+            ISalesforceContentNewsletterFactory salesforceContentNewsletterFactory)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
@@ -39,6 +42,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             InfoLogger = infoLogger;
             SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
             SalesforceDeleteUserProductPreferences = salesforceDeleteUserProductPreferences;
+            SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
         }
         public IContentResponse AddUserSavedSearch(string accessToken, ISavedSearchEntity entity)
         {
@@ -161,6 +165,71 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 Message = "Invalid input has been provided.",
                 SalesforceId = string.Empty
             };
+        }
+
+        public bool AddNewsletterUserOptIns(string verticalName, string publicationCode, string username, string accessToken,IEnumerable<INewsletterUserOptIn> optIns)
+        {
+            if ((!new[] { verticalName, publicationCode, username }.Any(string.IsNullOrEmpty)) && optIns != null)
+            {
+                var request = SalesforceContentNewsletterFactory.Create(username, verticalName, publicationCode, optIns);
+                if (request != null)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
+                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
+                        if (result.IsSuccessStatusCode)
+                        {
+                            var responseString = result.Content.ReadAsStringAsync().Result;
+                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                            InfoLogger.Log(responseString, this.GetType().Name);
+                            if (!response.hasErrors)
+                            {
+                                return true;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
+        public bool AddOffersOptIns(string verticalName, string publicationCode, string username, string accessToken, bool optIn)
+        {
+            if ((!new[] { verticalName, publicationCode, username }.Any(string.IsNullOrEmpty)))
+            {
+                var request = SalesforceContentNewsletterFactory.Create(username, verticalName, publicationCode, !optIn);
+                if (request != null)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
+                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
+                        if (result.IsSuccessStatusCode)
+                        {
+                            var responseString = result.Content.ReadAsStringAsync().Result;
+                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                            InfoLogger.Log(responseString, this.GetType().Name);
+                            if (!response.hasErrors)
+                            {
+                                return true;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

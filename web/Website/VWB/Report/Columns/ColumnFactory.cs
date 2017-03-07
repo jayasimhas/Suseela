@@ -33,12 +33,17 @@ namespace Elsevier.Web.VWB.Report.Columns
 			_articleCheckboxes = new ArticleCheckboxes();
 			_articleNumberColumn = new ArticleNumberColumn();
 			_titleColumn = new TitleColumn();
-			ImmutableColumns = new List<IVwbColumn>
+            _workflowStates = new WorkflowStateColumn();
+            _authors = new AuthorsColumn();
+            _contentType = new ContentTypeColumn();
+            _mediaType = new MediaTypeColumn();
+            _taxonomy = new TaxonomyColumn();
+            ImmutableColumns = new List<IVwbColumn>
 													{
 														_articleCheckboxes,
 														_articleNumberColumn,
-														_titleColumn
-													};
+														_titleColumn                                                       
+                                                    };
 
 		}
 
@@ -47,8 +52,12 @@ namespace Elsevier.Web.VWB.Report.Columns
 		private static ArticleCheckboxes _articleCheckboxes;
 		private static ArticleNumberColumn _articleNumberColumn;
 		private static TitleColumn _titleColumn;
-
-		public List<IVwbColumn> ImmutableColumns;
+        private static WorkflowStateColumn _workflowStates;
+        private static AuthorsColumn _authors;
+        private static ContentTypeColumn _contentType;
+        private static MediaTypeColumn _mediaType;
+        private static TaxonomyColumn _taxonomy;
+        public List<IVwbColumn> ImmutableColumns;
 
 		public static IVwbColumn GetArticleCheckboxes()
 		{
@@ -64,8 +73,28 @@ namespace Elsevier.Web.VWB.Report.Columns
 		{
 			return _titleColumn;
 		}
+        public static IVwbColumn GetAuhtors()
+        {
+            return _authors;
+        }
+        public static IVwbColumn GetWorkflowStates()
+        {
+            return _workflowStates;
+        }
+        public static IVwbColumn GetContentType()
+        {
+            return _contentType;
+        }
+        public static IVwbColumn GetMediaType()
+        {
+            return _mediaType;
+        }
 
-		public static ColumnFactory GetColumnFactory()
+        public static IVwbColumn GetTaxonomies()
+        {
+            return _taxonomy;
+        }
+        public static ColumnFactory GetColumnFactory()
 		{
 			return _columnFactory;
 		}

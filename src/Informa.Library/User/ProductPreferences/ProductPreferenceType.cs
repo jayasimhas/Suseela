@@ -5,7 +5,8 @@
         None,
         SavedSearches,
         SavedDocuments,
-        EmailNewsletters,
-        PersonalPreferences
+        EmailSignUp,
+        PersonalPreferences,
+        EmailPreference
     }
 }
