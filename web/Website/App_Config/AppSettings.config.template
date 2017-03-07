@@ -13,7 +13,7 @@
  
   <add key="commoditiesColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,COMMODITYFACTOR,COMMERCIAL" />
   <add key="AgrowColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,CROPPROTECTION,COMMERCIAL" />
-  <add key="AnimalPharmaColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
+  <add key="AnimalPharmaColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,ANIMALHEALTHNEW,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
   <add key="IDColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF" />
   <add key="LLColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />
 
