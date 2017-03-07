@@ -63,9 +63,99 @@
 
 			return Table;
 		},
+		RenderCarousel: function(data, Parent) {
+			var self = this, CarouselStr = "";
+			Parent.empty();
+			
+
+			//Heading
+			for(var key in data[0]) {
+				CarouselStr += self.RenderSingleCarousel(key, data[0][key]);
+			}
+
+			Parent.append(CarouselStr);
+			self.InitCarousel(Parent);
+		},
+		getFixedData: function(key, Data) {
+			var FixedStr = "";
+			for(var i = 0; i < Data.length; i++) {
+				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return FixedStr;
+		},
+		getData: function(key, Data) {
+			var ArticleStr = "";
+			for(var i = 0; i < Data.length; i++) {
+				// ArticleStr += Data[i][]
+				ArticleStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return ArticleStr;
+		},
+		InitCarousel: function(Parent) {
+			Parent.find('.owl-carousel').owlCarousel({
+               loop:false,
+               margin:0,
+               merge:true,
+               nav:false,
+			   slideBy: 1,  
+               responsive:{
+               0:{
+               items:1
+               },
+               678:{
+               items:1
+               },
+               320:{
+                items:1
+               },
+               480:{
+                items:1
+               }
+               }
+            });
+		},
+		RenderSingleCarousel: function(Name, Data) {
+			var FixedPart = "",
+				CarouselPart = "",
+				Heading = Data[0],
+				self = this,
+				i = 0;
+			for(var key in Heading) {
+				if(key != 'Route') {
+					CarouselPart += '<div class="article">'+
+										'<div class="year_heading">'+
+											key +
+										'</div>'+
+										self.getData(key, Data)+
+									'</div>';
+				} else {
+					FixedPart += '<div class="year_heading">'+ key +'</div>'+
+									self.getFixedData(key, Data);
+				}
+			}
+
+			var Carousel = '<div class="table_head pad-10 clearfix">'+
+								'<span>&nbsp;</span>'+
+							'</div>'+
+							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4;">'+
+								'<div class="states_heading">'+
+									FixedPart+
+								'</div>'+
+								'<div class="owl-wrapper">'+
+									'<div class="owl-carousel">'+
+										CarouselPart+
+									'</div>'+
+								'</div>'+
+							'</div>';
+
+			return Carousel;
+		},
 		init: function(data, id) {
 			var self = this;
-			self.RenderTable(data, id);
+			if($(window).width() > 668)
+				self.RenderTable(data, id);
+			else
+				self.RenderCarousel(data, id);
 		}
 	}
 	
