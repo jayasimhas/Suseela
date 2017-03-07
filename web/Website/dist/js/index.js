@@ -6719,7 +6719,10 @@ $(function () {
 					480: {
 						items: 2
 					},
-					1000: {
+					1024: {
+						items: 3
+					},
+					1025: {
 						items: 4
 					}
 				}
@@ -10400,12 +10403,12 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 }
 
 //Horizontal Scroll Bar
-if ($('#scrollbar-horizantal')) {
+if ($('#scrollbar-horizantal').length > 0) {
 	var container = $('#scrollbar-horizantal')[0],
 	    content = $('.wrap-merge')[0],
 	    scroll = $('#scrollbar')[0];
 
-	//scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
+	scroll.style.width = $('.merge-acquistion').width() - $('.wrap-merge').width() + 'px';
 
 	$(window).on('resize', function () {
 		scroll.style.width = $('.merge-acquistion').width() - $('.wrap-merge').width() + 'px';
@@ -12635,7 +12638,7 @@ $(document).ready(function () {
     * * */
     window.indexBookmarks = function () {
         // Toggle bookmark icon
-        $(document).off().on('click', '.js-bookmark-article', function bookmarkArticle(e) {
+        $(document).on('click', '.js-bookmark-article', function bookmarkArticle(e) {
 
             e.preventDefault();
             window.bookmark.toggle(this);

@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Sitecore.Security.Authentication;
 using System;
+using System.Configuration;
 using System.Web;
 using System.Web.Security;
 
@@ -66,6 +67,11 @@ namespace Informa.Library.User.Authentication
 
         private bool AuthenticatedUserCheck()
         {
+            string domain = ConfigurationManager.AppSettings["EnableVerticalLogin"];
+            if(domain != "true")
+            {
+                return SitecoreUserContext.User.IsAuthenticated;
+            }
             var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
             //Current vertical cookiename
             string cookieName = curVertical + "_LoggedInUser";
