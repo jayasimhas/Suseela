@@ -19,8 +19,8 @@
                                 <a href="@company.CompanyLandingPageUrl"><img src="@company.CompanyLogo" alt="companyLogo" /></a>
                             </div>
                             <div class="companyLinks">
-                                <p><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
-                                <p class="view-more-info"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
+                                <p class="li-content-company__headline"><a href="@company.CompanyLandingPageUrl">@company.CompanyName</a></p>
+                                <p class="view-more-info li-content-company__headline"><a href="@company.CompanyLandingPageUrl">@Model.ViewMoreInfoText</a></p>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         var chartDivId = company.CompanyId + "_" + Graph.GraphID;
                         <div class="item-wrapper">
                             <div class="li-content-graph">
-                                <p><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
+                                <p class="li-content-company__headline"><a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID">@Graph.GraphTitle</a></p>
                                 <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
                             </div>
 

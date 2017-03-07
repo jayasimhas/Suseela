@@ -29,5 +29,10 @@ namespace Informa.Web.VWB.Report.Columns
         {
             return new TableCell { Text = articleItemWrapper.EmailPriority };
         }
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

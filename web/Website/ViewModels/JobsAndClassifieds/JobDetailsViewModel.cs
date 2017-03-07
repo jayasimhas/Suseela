@@ -11,7 +11,7 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
 {
     public class JobDetailsViewModel:GlassViewModel<IJob_Detail_Page>
     {
-        protected readonly ITextTranslator TextTranslator;
+        public readonly ITextTranslator TextTranslator;
         public JobDetailsViewModel(ITextTranslator textTranslator)
         {
             TextTranslator = textTranslator;

@@ -103,6 +103,33 @@ namespace Elsevier.Web.VWB {
         protected global::Saplin.Controls.DropDownCheckBoxes ddlPublications;
         
         /// <summary>
+        /// lblAricleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAricleNumber;
+        
+        /// <summary>
+        /// txtArticleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArticleNumber;
+        
+        /// <summary>
+        /// lblArticleNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArticleNumberError;
+        
+        /// <summary>
         /// rbNoDate control.
         /// </summary>
         /// <remarks>

@@ -29,5 +29,27 @@ namespace Informa.Web.VWB.Report.Columns
         {
             return new TableCell { Text = articleItemWrapper.TaxonomyString };
         }
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            Dictionary<string, string> dictTaxonomies = new Dictionary<string, string>();
+            if (results != null)
+            {
+                dictTaxonomies.Add("0", "Select");
+                foreach (var result in results)
+                {
+                    if (result != null && !string.IsNullOrEmpty(result.TaxonomyString))
+                    {
+                        var taxonomies = result.TaxonomyString.Split(',').ToArray();
+                        foreach (var tax in taxonomies)
+                        {
+                            if (!dictTaxonomies.ContainsValue(tax))
+                                dictTaxonomies.Add(tax, tax);
+                        }
+                    }
+                }
+            }
+            return dictTaxonomies;
+        }
     }
 }

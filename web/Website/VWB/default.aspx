@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default" %>
+
 <%@ Register TagPrefix="asp" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -29,10 +30,15 @@
             <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server" />
             <div class="top">
                 <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled"></asp:DropDownList>
+                
                 <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true" AddJQueryReference="false">
-                    <style selectboxwidth="195" dropdownboxboxwidth="160" dropdownboxboxheight="250" />
-                    <texts selectboxcaption="Select Publication(s)" />
-                 </asp:DropDownCheckBoxes>
+                    <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                    <Texts SelectBoxCaption="Select Publication(s)" />
+                </asp:DropDownCheckBoxes>
+
+                <asp:Label ID="lblAricleNumber" runat="server" Text="Enter Article Number"></asp:Label>
+                <asp:TextBox ID="txtArticleNumber" runat="server"></asp:TextBox>
+                <asp:Label ID="lblArticleNumberError" runat="server"></asp:Label>                             
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
@@ -61,16 +67,14 @@
                         &nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout" />
                     </div>
                 </div>
-               
+
             </div>
             <br />
             <br />
             <br />
             <div class="report">
-
                 <asp:Table ID="tblResults" runat="server" border="1">
                 </asp:Table>
-
                 <div class="vwb-report-options">
 
                     <asp:DropDownList ID="ddColumns" runat="server"
@@ -172,7 +176,7 @@
         //			alert(data.Message + "\n" + data.StackTrace);
         //		}
 
-        
+
     </script>
 </body>
 </html>

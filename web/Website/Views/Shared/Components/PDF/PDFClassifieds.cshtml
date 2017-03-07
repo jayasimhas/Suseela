@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobDetailsViewModel
 <div class="pdf-classified" style="text-align:justify">    
     <div>
-        <h3 style="text-align:center">Classified</h3>
+        <h3 style="text-align:center">@Model.TextTranslator.Translate("PDF.Classified.Heading")</h3>
         <div class="job_logo">            
                 <img src="@Model.JobLogo.Src" alt="@Model.JobLogo.Alt" align="center">            
         </div>
@@ -14,7 +14,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    @*<div style="page-break-before:always">&nbsp;</div>
-    <newpage />*@
+    </div>   
 </div>

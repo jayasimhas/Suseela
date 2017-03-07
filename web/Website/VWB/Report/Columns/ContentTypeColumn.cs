@@ -30,5 +30,20 @@ namespace Informa.Web.VWB.Report.Columns
         {
             return new TableCell { Text = articleItemWrapper.ContentType };
         }
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            Dictionary<string, string> dictContentTypes = new Dictionary<string, string>();
+            if (results != null)
+            {
+                dictContentTypes.Add("0", "Select");
+                foreach (var result in results)
+                {
+                    if (!string.IsNullOrEmpty(result.ContentType) && !dictContentTypes.ContainsValue(result.ContentType))
+                        dictContentTypes.Add(result.ContentType, result.ContentType);
+                }
+            }
+            return dictContentTypes;
+        }
     }
 }

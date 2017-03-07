@@ -15,11 +15,15 @@ namespace Informa.Library.Search.Results
 {
 	public class InformaSearchResultItem : SearchResultItem
 	{
-		/// <summary>
-		/// This property is used for boosting newer articles
-		/// See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html
-		/// </summary>
-		[IndexField("_val_")]
+        /// <summary>
+        /// This property is used for boosting newer articles
+        /// See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html
+        /// </summary>
+
+        [IndexField("article_number_t")]
+        public string articleNumber { get; set; }
+
+        [IndexField("_val_")]
 		public string Val { get; set; }
 
 		[IndexField("issearchable_b")]

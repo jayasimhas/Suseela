@@ -20,6 +20,11 @@ namespace Informa.Web.VWB.Report.Columns
             return new TableCell { Text = articleItemWrapper.PublicationName };
         }
 
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetHeader()
         {
             return "Publication Name";

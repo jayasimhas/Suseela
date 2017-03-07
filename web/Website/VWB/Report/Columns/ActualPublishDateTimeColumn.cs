@@ -37,6 +37,11 @@ namespace Elsevier.Web.VWB.Report.Columns
 		{
 			return x.WebPublicationDateTime.CompareTo(y.WebPublicationDateTime);
 		}
-	}
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }

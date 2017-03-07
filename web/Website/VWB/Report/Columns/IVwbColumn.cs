@@ -8,5 +8,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 		string GetHeader();
 		string Key();
 		TableCell GetCell(ArticleItemWrapper articleItemWrapper);
-	}
+        Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results);
+
+    }
 }

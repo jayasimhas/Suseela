@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI.WebControls;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
@@ -33,6 +31,21 @@ namespace Informa.Web.VWB.Report.Columns
         public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
         {
             return new TableCell { Text = articleItemWrapper.MediaType };
+        }
+
+        public Dictionary<string, string> GetDropDownValues(List<ArticleItemWrapper> results)
+        {
+            Dictionary<string, string> dictMediaTypes = new Dictionary<string, string>();
+            if (results != null)
+            {
+                dictMediaTypes.Add("0", "Select");
+                foreach (var result in results)
+                {
+                    if (!string.IsNullOrEmpty(result.MediaType) && !dictMediaTypes.ContainsValue(result.MediaType))
+                        dictMediaTypes.Add(result.MediaType, result.MediaType);
+                }
+            }
+            return dictMediaTypes;
         }
     }
 }
