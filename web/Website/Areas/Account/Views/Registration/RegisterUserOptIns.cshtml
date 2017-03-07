@@ -54,7 +54,12 @@
                         <div class="mobile">
                             <hr>
                             <div class="@checkBobClassname">
-                                <input name="offers" id="offers" type="checkbox" @(item.OptIn ? "checked='checked'" : string.Empty) data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                                <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
+                                <input name="Newsletters[@i].NewsletterChecked" 
+                                       id="newsletters" type="checkbox" 
+                                       @(item.OptIn ? "checked='checked'" : string.Empty) 
+                                       data-checkbox-type="boolean" />
+                                       
                                 <span class="chk_box"></span>
                                 <span>@Model.NewslettersLabelText</span>
                             </div>
@@ -64,7 +69,9 @@
                 <br />
                 <div class="registrationSubmit_div">
                     <div class="page-registration__labeled-checkbox label-check">
-                        <input name="Offers" id="Offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                        <input name="Offers" id="Offers" type="checkbox" 
+                               data-checkbox-type="boolean" />
+                              
                         <span class="chk_box"></span>
                         <label class="checkbox-label" for="Offers">@Model.OffersLabelText.Replace("#PubName#", CurrentPublication)</label>
                     </div>
