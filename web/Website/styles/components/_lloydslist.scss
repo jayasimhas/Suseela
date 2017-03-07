@@ -89,7 +89,19 @@
 		}
 	}
 }
-#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures{
+#tanker-Pure-ChemPage{ 
+	@include breakpoint('small') {
+		float: left;
+		width: 100%;
+	}
+	.ID-Responsive-Table .year_heading {
+		@include breakpoint('small') {
+			padding-left: 24px;
+		}
+	}
+}
+#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -397,7 +409,7 @@
 			.title{
 				background-color: #1191d1;
 				color: #ffffff;
-				padding: 8px 10px 8px 12px;
+				padding: 8px 5px 8px 12px;
 				@include textMix('Roboto', 1em, bold);
 				@media only screen and (min-width: 768px) and (max-width: 1024px) {
 					font-size: 0.9rem;
@@ -595,6 +607,62 @@
 			&:hover{
 				color: #002d4f !important;
 			}
+		}
+	}
+}
+#shipCoalExport {
+	.visible-lg {
+		display: table-row;
+	}
+	tbody.visible-lg {
+		display: table-row-group;
+		tr:nth-child(even) {
+  			background-color: #eee;
+ 		}
+	}
+	tr th, tr td {
+		border-right: 1px solid $color-white;
+		&:last-child {
+			border-right: none;
+		}
+	}
+	.pad-full-10 {
+		padding: 8px !important;
+	}
+}
+
+#latest-value{
+	.rise{
+		padding-left: 5px;
+	}
+	.fall{
+		padding-left: 5px;
+	}
+}
+#market-Data-Dry-Cargo {
+	float: left;
+	width: 100%;
+	border: none;
+	#marketDataDryCargo {
+		border: none;
+	}
+	.year_heading {
+		height: 4em;
+	}
+	.article {
+		.year_heading {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	.states_heading {
+		border-right: 1px solid $color-white;
+	}
+	.R16 {
+		background-color: $color-white;
+		height: 60px;
+		&:nth-child(even) {
+			background-color: #eee;
 		}
 	}
 }

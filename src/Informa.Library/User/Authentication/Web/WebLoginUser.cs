@@ -10,18 +10,20 @@ namespace Informa.Library.User.Authentication.Web
     {
         protected readonly IUserProfileFactory UserProfileFactory;
         protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
+        protected readonly ISitecoreUserContext SitecoreUserContext;
         protected readonly IWebLoginUserActions LoginActions;
         protected readonly IUserSession UserSession;
 
         public WebLoginUser(
             IUserProfileFactory userProfileFactory,
             ISitecoreVirtualUsernameFactory virtualUsernameFactory,
-            IWebLoginUserActions loginActions, IUserSession userSession)
+            IWebLoginUserActions loginActions, IUserSession userSession, ISitecoreUserContext sitecoreUserContext)
         {
             UserProfileFactory = userProfileFactory;
             VirtualUsernameFactory = virtualUsernameFactory;
             LoginActions = loginActions;
             UserSession = userSession;
+            SitecoreUserContext = sitecoreUserContext;
         }
 
         public IWebLoginUserResult Login(IUser user, bool persist)
@@ -51,6 +53,15 @@ namespace Informa.Library.User.Authentication.Web
         }
         public IWebLoginUserResult Login(IUser user, bool persist, string verticalName)
         {
+           
+            string loggedInVertical = string.Empty;
+            //if (SitecoreUserContext.User.IsAuthenticated)
+            //{
+            //    var sitecoreUser = SitecoreUserContext.User;
+            //    loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
+            //    if (string.IsNullOrEmpty(loggedInVertical))
+            //        verticalName = verticalName + "|" + loggedInVertical;
+            //}
             var sitecoreUsername = VirtualUsernameFactory.Create(user);
             var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
             
@@ -60,9 +71,9 @@ namespace Informa.Library.User.Authentication.Web
                 sitecoreVirtualUser.Profile.Email = userProfile.Email;
                 sitecoreVirtualUser.Profile.Name = string.Format("{0} {1}", userProfile.FirstName, userProfile.LastName);
                 //Setting the vertical name as part of the user profile object
-                sitecoreVirtualUser.Profile.SetCustomProperty("vertical", verticalName);
+                //sitecoreVirtualUser.Profile.SetCustomProperty("vertical", verticalName);
                 // Setting the in user session for double check in the authenticated user context.
-                UserSession.Set("user_vertical", verticalName);
+                //UserSession.Set("user_vertical", verticalName);
             }
             sitecoreVirtualUser.Profile.Comment = string.IsNullOrWhiteSpace(user.AccessToken) ? string.Empty : user.AccessToken;
             sitecoreVirtualUser.Profile.Save();

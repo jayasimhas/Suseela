@@ -27,7 +27,9 @@
                 {
 
                     var item = Model.PublicationNewsletterOptIns[i];
-                    var checkBobClassname = item.OptIn ? "newsletter_checkbox label-check wcs-c-on" : "newsletter_checkbox label-check";
+                    var checkBobClassname = item.OptIn ?
+                        "newsletter_checkbox label-check wcs-c-on" :
+                        "newsletter_checkbox label-check";
                     if (item.OptIn)
                     {
                         CurrentPublication = item.Publication.Name;
@@ -36,7 +38,13 @@
                         <div class="site_div">
                             <h1 class="article-preview__headline">@item.Publication.Name</h1>
                             <div class="@checkBobClassname">
-                                <input name="offers" id="offers" type="checkbox" @(item.OptIn ? "checked='checked'" : string.Empty) data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+
+                                <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
+                                <input name="Newsletters[@i].NewsletterChecked"
+                                       id="newsletters"
+                                       type="checkbox"
+                                       @(item.OptIn ? "checked='checked'" : string.Empty)
+                                       data-checkbox-type="boolean" />
                                 <span class="chk_box"></span>
                                 <span>@Model.NewslettersLabelText</span>
                             </div>

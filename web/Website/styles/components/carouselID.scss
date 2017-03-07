@@ -74,24 +74,21 @@
 		  margin: 0 10px 10px 0;
 		  width:100px;
 		}
-		.li-content-company p {
+		.li-content-company p.li-content-company__headline {
 		  padding: 0 0 8px 0;
-		  font-size: 1rem;
+		  font-size: 1.25rem;
 		  margin-bottom: 20px;
 		}
-		// .li-content-company a {
-		// 	color: #000;
-		// }
-		.li-content-company a:hover {
-		  
-		}
+		
 		.li-content-graph {
 		  border: none;
 		  background-color: #eeeeee;
 		  height: 100%;
 		  padding: 15px 18px;
 		  margin: 10px 10px 0 10px;
-		  
+		  @media (min-width: 1025px){
+		      margin-top: 25px;
+		  }
 		  > a{
 			  height: 224px;
 			  display: block;
@@ -107,15 +104,11 @@
 		  }
 		}
 		.li-content-graph p {
-		  font-size: smaller;
+		  font-size: 0.875rem;
 		  padding: 0 0 0 0;
 		  margin-bottom: 22px;
 		}
-		// .li-content-graph p a {
-		// 	color: #000;
-		// }
-		.li-content-graph p a:hover {
-		}
+		
 		.hideinMob{
 			display: block;
 			@include breakpoint('medium-small') {
@@ -214,12 +207,15 @@
 				background-color: #de4361;
 				@include textMix('Roboto', 1rem, 500);
 				@include breakpoint('small') {
-					padding-right: 75px;
+					padding-right: 110px;
 				}
 			}
 		}
 }
 #graph-carousel{
+	.company_title{
+		padding-bottom: 6px;
+	}
 	margin-bottom: 2rem;
 	&:after{
 		clear: both;
@@ -264,6 +260,10 @@
 			padding: 10px 0 10px 20px;
 			color: #fff;
 			background-color: #de4361;
+			font-size: 1rem;
+			line-height: 19px;
+			font-weight: 500;
+			font-family:"Roboto", Arial;
 		}
 	}
 	.owl-theme .owl-dots{
@@ -281,7 +281,7 @@
 		}
 	}
 	.graph-container{
-		margin-top: 1rem;
+		margin-top: 0.625rem;
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;

@@ -101,6 +101,8 @@ function formController(opts) {
 							}
 						}
 					});
+
+
 				    //// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
 					var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse();
@@ -134,6 +136,14 @@ function formController(opts) {
 								// successCallback is ripe for refactoring, improving parameters
 								this.response = response;
 
+								// //Specific to Sign In Form - Vertical Login
+								// if($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
+								// 	$('#hiddenforms_login form').each(function() {
+								// 		$(this).find('input[type="text"]').val(inputData["username"]);
+								// 		$(this)[0].submit();
+								// 	});
+								// }
+								// //Specific to Sign In Form - Vertical Login
 								if (opts.successCallback) {
 									opts.successCallback(currentForm, this, event);
 								}

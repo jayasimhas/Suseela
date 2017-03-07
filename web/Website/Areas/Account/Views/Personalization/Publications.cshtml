@@ -4,6 +4,7 @@
 @if (Model.Channels != null && Model.Channels.Any())
 {
     var Channels = Model.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
+    int flag = Channels.Count;
     IList<Topic> Topics = null;
     string topicTRClass = string.Empty;
     string topicSpanClass = string.Empty;
@@ -45,7 +46,7 @@
             unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
             tboadyClass = isFirst ? "" : "tbodyhidden";
             collapsedClss = isFirst ? "expanded" : "";
-            borderClass = isFirst && (collapsedClss == "expanded") ? "active" : "";
+            borderClass = isFirst && (collapsedClss == "expanded" && IsFollowingAnyTopics) && (flag != 1) ? "active" : "";
             pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
             publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
             publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
@@ -69,7 +70,7 @@
                                     @if (!channel.IsSubscribed)
                                     {
                                         <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                            <a  href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
                                         </div>
                                     }
                                     else
@@ -190,7 +191,7 @@
                                     @if (!channel.IsSubscribed)
                                     {
                                     <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                        <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                        <a class="subscr" href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
                                     </div>
                                     }
                                     else
@@ -244,12 +245,12 @@
                                         </div>
                                         <div class="mvTxt">Move</div>
 
-                                        <div class="rowlines hideinDesk">
+                                        <!--<div class="rowlines hideinDesk">
                                             <div class="pull-left">
                                                 <span class="mv"></span>
                                             </div>
-                                        </div>
-                                        <div class="rowlines hideinTab">
+                                        </div>-->
+                                        <div class="rowlines">
                                             <div class="pull-left">
                                                 <span class="mv"></span>
                                                 <span class="mv"></span>
@@ -288,12 +289,12 @@
                                     <div>
                                     @if (!Model.isFromRegistration)
                                     {
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
                                         <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                     }
                                     else
                                     {
-                                        <span class="click-utag followAllBtn @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                        <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
                                         <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                     }
                                     </div>

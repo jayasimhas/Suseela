@@ -191,12 +191,6 @@
 			.frEditview{
 				float: right;
 			}
-			
-			.articleloadInfo{
-				text-align: right;
-				font-style: italic;
-				margin-bottom: 5px;
-			}
 			.editView{	
 				@include editView(8.75rem);
 				float: right;
@@ -533,7 +527,17 @@
 				overflow: hidden;
 			}
 		}
-	} 
+	}
+	.articleloadInfo{
+		text-align: right;
+		font-style: italic;
+		margin-bottom: 5px;
+		font-family: "Roboto";
+		@media screen and (max-width: 767px){
+			text-align: left;
+			margin-bottom: 1.25rem;
+		}
+	}
 }
 
 .listViewCont{
@@ -620,7 +624,7 @@
 			background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);
 			height: 5rem;
 		}
-	}
+	} 
 }
 .gridView{
 	.gridViewCont{

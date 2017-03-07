@@ -1,6 +1,9 @@
 @mixin theme-links($color) {
 
     a,
+	.msg-text h3,
+	.red,
+	.dismiss .dismiss-button__icon,
     .facets__button,
     .facets__button svg,
     .sorting-arrows__arrow.is-active,
@@ -12,7 +15,7 @@
     }
 
     footer a,
-    .general-header__navigation a,
+	.general-header__navigation a,
     .sortable-table__col a {
         color: inherit;
     }
@@ -26,6 +29,7 @@
     }
 
     .article-preview__headline,
+	.li-content-company__headline,
     .topic-featured-article__headline {
         &,
         & a {
@@ -130,6 +134,13 @@
     }
 	.newsletter-signup {
 		border-top: 4px solid $border;
+	}
+	.messaging_webUsers {
+		border-top: 4px solid $border;
+	}
+	.messaging_webUsers_white{
+		border-top: 4px solid $border;
+		border-bottom: 1px solid $border;
 	}
 }
 
@@ -274,5 +285,8 @@
     }
     .table .table_head tr.visible-lg {
         background-color: $seconday-color;
+    }
+    #cockett-Bunker .table_head {
+        background-color: $seconday-color !important;
     }
 }

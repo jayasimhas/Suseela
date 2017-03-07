@@ -18,11 +18,14 @@
   <add key="LLColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />
 
 
-  <add key="PublishedYear" value="2"/>
+  <add key="PublishedYear" value="90"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />
   <add key="Recaptcha.SiteKey" value="${Recaptcha.SiteKey}" />
   <add key="Recaptcha.SecretKey" value="${Recaptcha.SecretKey}" />
   <add key="EnableCaptcha" value="${Recaptcha.EnableCaptcha}"/>
   <add key="UnitTest" value="1"/>
+  <add key="Pharma" value="${Vertical.Pharma}"/>
+  <add key="Maritime" value="${Vertical.Maritime}"/>
+  <add key="Agri" value="${Vertical.Agri}"/>
 </appSettings>

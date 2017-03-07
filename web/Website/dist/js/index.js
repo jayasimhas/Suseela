@@ -5565,10 +5565,16 @@ $(window).on('scroll', function () {
 		e.preventDefault();
 		var IframeUrl = $(this).attr('data-logout-url');
 		var RelocateUrl = $(this).attr('data-redirect-url');
+
+		// $('#hiddenforms_logout form').each(function() {
+		//           $(this)[0].submit();
+		//       });
+
 		$(document.body).append('<iframe width="1000" height="1000" src="' + IframeUrl + '" frameborder="0"></iframe>');
 		// var openedWindow = window.open('https://ideqa-informabi.cs82.force.com/agribusiness/secur/logout.jsp', 'popup', 'width=0,height=0,scrollbars=no');
 		// openedWindow.close();
 		// localStorage.setItem('RelocateUrl', RelocateUrl);
+
 		window.location.href = RelocateUrl;
 		// window.location.href = RelocateUrl;
 	});
@@ -7147,6 +7153,68 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 })();
 
 },{}],20:[function(require,module,exports){
+"use strict";
+
+(function () {
+	// body...
+	'use strict';
+
+	var cockettBunker = {
+		RenderTable: function RenderTable(data, Parent) {
+			var self = this,
+			    TableStr = "";
+			Parent.empty();
+
+			for (var key in data[0]) {
+				TableStr += self.RenderSingleTable(data[0][key]);
+			}
+
+			Parent.append(TableStr);
+		},
+		RenderSingleTable: function RenderSingleTable(Data) {
+			console.log(Data);
+			var HeadingStr = "",
+			    SubHeadingStr = "",
+			    TbodyStr = "",
+			    Heading = Data[0];
+
+			for (var key in Heading) {
+				if (key.split("|").length === 1) {
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'></div>" + "</th>";
+				} else {
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
+				}
+			}
+
+			for (var i = 0; i < Data.length; i++) {
+				var EachValue = Data[i],
+				    Td = "",
+				    align = "right";
+				for (var key in EachValue) {
+					if (key == "Header") {
+						align = "left";
+					}
+					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
+				}
+				TbodyStr += '<tr>' + Td + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		init: function init(data, id) {
+			var self = this;
+			self.RenderTable(data, id);
+		}
+	};
+
+	if ($('#cockettBunker').length > 0) {
+		cockettBunker.init(window.jsonCockettBunker, $('#cockettBunker'));
+	}
+})();
+
+},{}],21:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7257,7 +7325,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7308,7 +7376,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7387,7 +7455,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7508,7 +7576,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7537,7 +7605,11 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				self.table += '<tr class="blueBg">';
 				var tableHead = val[0];
 				for (var prop in tableHead) {
-					self.table += '<th class="pad-10">' + prop + '</th>';
+					if (prop != "Header") {
+						self.table += '<th class="pad-10">' + prop + '</th>';
+					} else {
+						self.table += '<th class="pad-10"></th>';
+					}
 				}
 				self.table += '</tr>';
 				self.table += '</thead>';
@@ -7584,7 +7656,138 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
+"use strict";
+
+(function () {
+	// body...
+	'use strict';
+
+	var marketDataDryCargoSsyAtl = {
+		RenderTable: function RenderTable(data, Parent) {
+			var self = this,
+			    TableStr = "";
+			Parent.empty();
+
+			for (var key in data[0]) {
+				TableStr += self.RenderSingleTable(data[0][key]);
+			}
+
+			Parent.append(TableStr);
+		},
+		RenderSingleTable: function RenderSingleTable(Data) {
+			console.log(Data);
+			var HeadingStr = "",
+			    SubHeadingStr = "",
+			    TbodyStr = "",
+			    Heading = Data[0];
+
+			for (var key in Heading) {
+				if (key.split("|").length === 1) {
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>&nbsp;</div>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "</th>";
+				} else {
+					HeadingStr += "<th class='pad-full-10' colspan='1'>" + "<div class='text-center'>" + key.split("|")[0] + "</div>" + "<div class='text-center'>" + key.split("|")[1] + "</div>" + "</th>";
+				}
+			}
+
+			for (var i = 0; i < Data.length; i++) {
+				var EachValue = Data[i],
+				    Td = "",
+				    align = "right";
+				for (var key in EachValue) {
+					if (key == "Route") {
+						align = "left";
+					}
+					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
+				}
+				TbodyStr += '<tr>' + Td + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		RenderCarousel: function RenderCarousel(data, Parent) {
+			var self = this,
+			    CarouselStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data[0]) {
+				CarouselStr += self.RenderSingleCarousel(key, data[0][key]);
+			}
+
+			Parent.append(CarouselStr);
+			self.InitCarousel(Parent);
+		},
+		getFixedData: function getFixedData(key, Data) {
+			var FixedStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return FixedStr;
+		},
+		getData: function getData(key, Data) {
+			var ArticleStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				// ArticleStr += Data[i][]
+				ArticleStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return ArticleStr;
+		},
+		InitCarousel: function InitCarousel(Parent) {
+			Parent.find('.owl-carousel').owlCarousel({
+				loop: false,
+				margin: 0,
+				merge: true,
+				nav: false,
+				slideBy: 1,
+				responsive: {
+					0: {
+						items: 1
+					},
+					678: {
+						items: 1
+					},
+					320: {
+						items: 1
+					},
+					480: {
+						items: 1
+					}
+				}
+			});
+		},
+		RenderSingleCarousel: function RenderSingleCarousel(Name, Data) {
+			var FixedPart = "",
+			    CarouselPart = "",
+			    Heading = Data[0],
+			    self = this,
+			    i = 0;
+			for (var key in Heading) {
+				if (key != 'Route') {
+					CarouselPart += '<div class="article">' + '<div class="year_heading">' + key + '</div>' + self.getData(key, Data) + '</div>';
+				} else {
+					FixedPart += '<div class="year_heading">' + key + '</div>' + self.getFixedData(key, Data);
+				}
+			}
+
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span>&nbsp;</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4;">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+
+			return Carousel;
+		},
+		init: function init(data, id) {
+			var self = this;
+			if ($(window).width() > 668) self.RenderTable(data, id);else self.RenderCarousel(data, id);
+		}
+	};
+
+	if ($('#marketDataDryCargo').length > 0) {
+		marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));
+	}
+})();
+
+},{}],27:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -7652,7 +7855,366 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],26:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
+"use strict";
+
+(function () {
+	// body...
+	'use strict';
+
+	var shipContainerShip = {
+		RenderTable: function RenderTable(data, Parent) {
+			var self = this,
+			    TableStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data) {
+				TableStr += self.RenderSingleTable(key, data[key]);
+			}
+
+			Parent.append(TableStr);
+		},
+		RenderSingleTable: function RenderSingleTable(heading, Data) {
+			console.log(Data);
+			var SubHeadingStr = "",
+			    SubSubHeadingStr = "",
+			    TbodyStr = "",
+			    SubHeading = Data[0];
+
+			for (var key in SubHeading) {
+				SubHeadingStr += '<th class="pad-10" colspan="2">' + key + '</th>';
+				if (Array.isArray(SubHeading[key])) {
+					var SubHeadingArray = SubHeading[key][0];
+					for (var sub in SubHeadingArray) {
+						SubSubHeadingStr += '<th class="pad-full-10" colspan="1">' + sub + '</th>';
+					}
+				} else {
+					SubSubHeadingStr += '<th class="pad-full-10" colspan="2"></th>';
+				}
+			}
+
+			for (var i = 0; i < Data.length; i++) {
+				var Body = "",
+				    Values = Data[i];
+
+				for (var key in Values) {
+					if (Array.isArray(Values[key])) {
+						var items = Values[key][0];
+						for (var k in items) {
+							Body += '<td class="pad-full-10" align="right">' + items[k] + '</td>';
+						}
+					} else {
+						Body += '<td class="pad-full-10" align="left" colspan="2">' + Values[key] + '</td>';
+					}
+				}
+
+				TbodyStr += '<tr>' + Body + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		RenderCarousel: function RenderCarousel(data, Parent) {
+			var self = this,
+			    CarouselStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data) {
+				CarouselStr += self.RenderSingleCarousel(key, data[key]);
+			}
+
+			Parent.append(CarouselStr);
+			self.InitCarousel(Parent);
+		},
+		InitCarousel: function InitCarousel(Parent) {
+			Parent.find('.owl-carousel').owlCarousel({
+				loop: false,
+				margin: 0,
+				merge: true,
+				nav: false,
+				slideBy: 1,
+				responsive: {
+					0: {
+						items: 1
+					},
+					678: {
+						items: 1
+					},
+					320: {
+						items: 1
+					},
+					480: {
+						items: 1
+					}
+				}
+			});
+		},
+		getData: function getData(key, Data) {
+			var ArticleStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				// ArticleStr += Data[i][]
+				var ArticleContent = Data[i][key][0];
+				var Str = "";
+				for (var k in ArticleContent) {
+					Str += '<span class="sub-item">' + ArticleContent[k] + '</span>';
+				}
+				ArticleStr += '<div class="R16">' + Str + '</div>';
+			}
+			return ArticleStr;
+		},
+		getKeyChild: function getKeyChild(key, Object) {
+			var ChildStr = "";
+			for (var i in Object[0]) {
+				ChildStr += "<span class='sub-item'>" + i + "</span>";
+			}
+			return ChildStr;
+		},
+		getFixedData: function getFixedData(key, Data) {
+			var FixedStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return FixedStr;
+		},
+		RenderSingleCarousel: function RenderSingleCarousel(Name, Data) {
+			var FixedPart = "",
+			    CarouselPart = "",
+			    Heading = Data[0],
+			    self = this;
+			for (var key in Heading) {
+				if (Array.isArray(Heading[key])) {
+					CarouselPart += '<div class="article">' + '<div class="year_heading">' + '<div>' + key + '</div>' + self.getKeyChild(key, Heading[key]) + '</div>' + self.getData(key, Data) + '</div>';
+				} else {
+					FixedPart += '<div class="year_heading">' + key + '</div>' + self.getFixedData(key, Data);
+				}
+			}
+
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span class="RB16">' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+
+			return Carousel;
+		},
+		init: function init(data, id) {
+			var self = this;
+			self.RenderTable(data[0], id);
+		}
+	};
+
+	if ($('#shipContainerShip').length > 0) {
+		shipContainerShip.init(window.jsonShipContainerShip, $('#shipContainerShip'));
+	}
+})();
+
+},{}],29:[function(require,module,exports){
+"use strict";
+
+(function () {
+	// body...
+	'use strict';
+
+	var shipRoro = {
+		RenderTable: function RenderTable(data, Parent) {
+			var self = this,
+			    TableStr = "";
+			Parent.empty();
+
+			for (var key in data[0]) {
+				TableStr += self.RenderSingleTable(data[0][key]);
+			}
+
+			Parent.append(TableStr);
+		},
+		RenderSingleTable: function RenderSingleTable(Data) {
+			console.log(Data);
+			var HeadingStr = "",
+			    SubHeadingStr = "",
+			    TbodyStr = "",
+			    Heading = Data[0];
+
+			for (var key in Heading) {
+				HeadingStr += "<th colspan='1'>" + '<div class="pad-full-10">' + key + '</div>' + "</th>";
+			}
+
+			for (var i = 0; i < Data.length; i++) {
+				var EachValue = Data[i],
+				    Td = "",
+				    align = "right";
+				for (var key in EachValue) {
+					Td += '<td colspan="1" class="pad-full-10" align="left">' + EachValue[key] + '</td>';
+				}
+				TbodyStr += '<tr>' + Td + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		init: function init(data, id) {
+			var self = this;
+			self.RenderTable(data, id);
+		}
+	};
+
+	if ($('#shipRoro').length > 0) {
+		shipRoro.init(window.jsonshipRoro, $('#shipRoro'));
+	}
+})();
+
+},{}],30:[function(require,module,exports){
+"use strict";
+
+(function () {
+	// body...
+	'use strict';
+
+	var shipVehicle = {
+		RenderTable: function RenderTable(data, Parent) {
+			var self = this,
+			    TableStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data) {
+				TableStr += self.RenderSingleTable(key, data[key]);
+			}
+
+			Parent.append(TableStr);
+		},
+		RenderSingleTable: function RenderSingleTable(heading, Data) {
+			console.log(Data);
+			var SubHeadingStr = "",
+			    SubSubHeadingStr = "",
+			    TbodyStr = "",
+			    SubHeading = Data[0];
+
+			for (var key in SubHeading) {
+				SubHeadingStr += '<th class="pad-10" colspan="2">' + key + '</th>';
+				if (Array.isArray(SubHeading[key])) {
+					var SubHeadingArray = SubHeading[key][0];
+					for (var sub in SubHeadingArray) {
+						SubSubHeadingStr += '<th class="pad-10" colspan="1">' + sub + '</th>';
+					}
+				} else {
+					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
+				}
+			}
+
+			for (var i = 0; i < Data.length; i++) {
+				var Body = "",
+				    Values = Data[i];
+
+				for (var key in Values) {
+					if (Array.isArray(Values[key])) {
+						var items = Values[key][0];
+						for (var k in items) {
+							Body += '<td class="pad-10" align="right">' + items[k] + '</td>';
+						}
+					} else {
+						Body += '<td class="pad-10" align="right" colspan="2">' + Values[key] + '</td>';
+					}
+				}
+
+				TbodyStr += '<tr>' + Body + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		RenderCarousel: function RenderCarousel(data, Parent) {
+			var self = this,
+			    CarouselStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data) {
+				CarouselStr += self.RenderSingleCarousel(key, data[key]);
+			}
+
+			Parent.append(CarouselStr);
+			self.InitCarousel(Parent);
+		},
+		InitCarousel: function InitCarousel(Parent) {
+			Parent.find('.owl-carousel').owlCarousel({
+				loop: false,
+				margin: 0,
+				merge: true,
+				nav: false,
+				slideBy: 1,
+				responsive: {
+					0: {
+						items: 1
+					},
+					678: {
+						items: 1
+					},
+					320: {
+						items: 1
+					},
+					480: {
+						items: 1
+					}
+				}
+			});
+		},
+		getData: function getData(key, Data) {
+			var ArticleStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				// ArticleStr += Data[i][]
+				var ArticleContent = Data[i][key][0];
+				var Str = "";
+				for (var k in ArticleContent) {
+					Str += '<span class="sub-item">' + ArticleContent[k] + '</span>';
+				}
+				ArticleStr += '<div class="R16">' + Str + '</div>';
+			}
+			return ArticleStr;
+		},
+		getKeyChild: function getKeyChild(key, Object) {
+			var ChildStr = "";
+			for (var i in Object[0]) {
+				ChildStr += "<span class='sub-item'>" + i + "</span>";
+			}
+			return ChildStr;
+		},
+		getFixedData: function getFixedData(key, Data) {
+			var FixedStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return FixedStr;
+		},
+		RenderSingleCarousel: function RenderSingleCarousel(Name, Data) {
+			var FixedPart = "",
+			    CarouselPart = "",
+			    Heading = Data[0],
+			    self = this;
+			for (var key in Heading) {
+				if (Array.isArray(Heading[key])) {
+					CarouselPart += '<div class="article">' + '<div class="year_heading">' + '<div>' + key + '</div>' + self.getKeyChild(key, Heading[key]) + '</div>' + self.getData(key, Data) + '</div>';
+				} else {
+					FixedPart += '<div class="year_heading">' + key + '</div>' + self.getFixedData(key, Data);
+				}
+			}
+
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span class="RB16">' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+
+			return Carousel;
+		},
+		init: function init(data, id) {
+			var self = this;
+			if ($(window).width() > 667) self.RenderTable(data[0], id);else self.RenderCarousel(data[0], id);
+		}
+	};
+
+	if ($('#shipVehicle').length > 0) {
+		shipVehicle.init(window.jsonShipVehicle, $('#shipVehicle'));
+	}
+})();
+
+},{}],31:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7796,7 +8358,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],27:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -7853,7 +8415,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				TbodyStr += '<tr>' + Body + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '<tr>' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -7933,7 +8495,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				}
 			}
 
-			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span class="RB16">' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span>' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
 
 			return Carousel;
 		},
@@ -7948,10 +8510,10 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],28:[function(require,module,exports){
-//import { analyticsEvent } from '../controllers/analytics-controller';
-
+},{}],33:[function(require,module,exports){
 'use strict';
+
+var _controllersAnalyticsController = require('../controllers/analytics-controller');
 
 function setClsforFlw(t) {
     for (var i = 0; i < t.length; i++) {
@@ -7963,12 +8525,14 @@ function setClsforFlw(t) {
 function createJSONData(alltables, UserPreferences, url) {
     for (var i = 0; i < alltables.length; i++) {
         var currenttabtrs = $(alltables[i]).find('tbody tr'),
+            getlableStatus = $(alltables[i]).find('thead .lableStatus').val(),
             pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
             tableId = $(alltables[i]).attr('id'),
             publicationName = $(alltables[i]).find('h2').attr('data-publication'),
             subscribeStatus = $(alltables[i]).find('.subscribed').html(),
             channelId = $(alltables[i]).find('h2').attr('data-item-id'),
-            channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
+            channelStatus = $(alltables[i]).find('h2').attr('data-item-status'),
+            channellblStatus = getlableStatus == 'followinglbl' ? $('#followingButtonText').val() : $('#followButtonText').val();
         var alltdata = [];
         for (var j = 0; j < currenttabtrs.length; j++) {
             var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
@@ -7981,7 +8545,7 @@ function createJSONData(alltables, UserPreferences, url) {
 
             alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
         }
-        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, 'ChannelLblStatus': channellblStatus, Topics: alltdata });
     }
     sendHttpRequest(UserPreferences, null, url);
 }
@@ -8004,8 +8568,10 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 } else if (setFlag == 'register' && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
-                if (redirectUrl != 'href' && redirectUrl != 'name') {
-                    window.location.href = redirectUrl;
+                if ($('.modal-overlay').hasClass('in')) {
+                    if (redirectUrl != 'href' && redirectUrl != 'name') {
+                        window.location.href = redirectUrl;
+                    }
                 }
             } else {
                 if (redirectUrl != 'href' && redirectUrl != 'name') {
@@ -8163,7 +8729,7 @@ $(function () {
         div.find('.unfollowAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followinglbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followinglbl');
-        $lgfollow.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
+        $lgfollow.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
         $('#validatePriority').val(true);
         $('#validateMyViewPriority').val(true);
 
@@ -8175,7 +8741,9 @@ $(function () {
         for (var i = 0; i < tbody.find('.followingBtn').length; i++) {
             $(tbody.find('.followrow')[i]).attr('draggable', true);
         }
-        curpublicPan.addClass('active');
+        if ($('.myview-settings-registration').length == 0) {
+            curpublicPan.addClass('active');
+        }
         curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
         for (var i = 0; i < $lgfollow.length; i++) {
             $($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
@@ -8199,7 +8767,7 @@ $(function () {
         div.find('.followAllBtn').removeClass('hideBtn');
         curpublicPan.find('.firstrow .lableStatus').val('followlbl');
         curpublicPan.find('.accordionStatus .lableStatus').val('followlbl');
-        $lgfollowing.addClass('followBtn button--outline').removeClass('followingBtn button--filled').html($('#followButtonText').val());
+        $lgfollowing.addClass('followBtn').removeClass('followingBtn').html($('#followButtonText').val());
         $('#validatePriority').val(false);
         $('#validateMyViewPriority').val(true);
 
@@ -8223,11 +8791,11 @@ $(function () {
             currentChannel = currenttr.closest('.table').find('thead h2').html(),
             eventDetails;
         if ($('.registrationBtn') && $('.registrationBtn').length) {
-            //eventDetails = { "event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication":analytics_data["publication"], "follow_channel": currentTopic };
-        } else {}
-            //eventDetails = { "event_name":"topic_follow", "page_name":"My view settings", "ga_eventCategory":"Topic Follow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
-
-            //analyticsEvent( eventDetails );
+            eventDetails = { "event_name": "channel_follow", "page_name": "Registration", "ga_eventCategory": "Channel Follow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+        } else {
+            eventDetails = { "event_name": "topic_follow", "page_name": "My view settings", "ga_eventCategory": "Topic Follow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+        }
+        (0, _controllersAnalyticsController.analyticsEvent)(eventDetails);
 
         eventDetails = {};
     });
@@ -8239,11 +8807,11 @@ $(function () {
             currentChannel = currenttr.closest('.table').find('thead h2').html(),
             eventDetails;
         if ($('.registrationBtn') && $('.registrationBtn').length) {
-            //eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory":"Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
-        } else {}
-            //eventDetails = {"event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow","ga_eventAction": analytics_data["publication"] +':'+ currentChannel, "ga_eventLabel": currentTopic,"follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel":currentChannel };
-
-            //analyticsEvent( eventDetails );
+            eventDetails = { "event_name": "channel_unfollow", "page_name": "Registration", "ga_eventCategory": "Channel Unfollow", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_channel": currentTopic };
+        } else {
+            eventDetails = { "event_name": "topic_unfollow", "page_name": "My view settings", "ga_eventCategory": "Topic Unfollow", "ga_eventAction": analytics_data["publication"] + ':' + currentChannel, "ga_eventLabel": currentTopic, "follow_publication": analytics_data["publication"], "follow_topic": currentTopic, "follow_channel": currentChannel };
+        }
+        (0, _controllersAnalyticsController.analyticsEvent)(eventDetails);
 
         eventDetails = {};
     });
@@ -8262,7 +8830,7 @@ $(function () {
         followrow.attr('draggable', true);
         $('#validatePreference').val(1);
         followrow.addClass('followingrow').removeClass('followrow disabled frow');
-        $this.addClass('followingBtn').removeClass('followBtn button--filled').html($('#followingButtonText').val());
+        $this.addClass('followingBtn').removeClass('followBtn').html($('#followingButtonText').val());
         setClsforFlw(table);
         table.find('.firstrow .lableStatus').val('followinglbl');
         table.find('.accordionStatus .lableStatus').val('followinglbl');
@@ -8272,7 +8840,9 @@ $(function () {
         thead.find('.mtp').addClass('hideBtn');
         thead.find('.mtp.' + lableStatus).removeClass('hideBtn');
         thead.removeClass('followbg').addClass('followingbg');
-        curpublicPan.addClass('active');
+        if ($('.myview-settings-registration').length == 0) {
+            curpublicPan.addClass('active');
+        }
 
         if (trs.hasClass('followingrow')) {
             $('#validatePriority').val(true);
@@ -8432,63 +9002,65 @@ $(function () {
             allthead = $this.closest('#allPublicationsPan').find('.publicationPan thead.hidden-xs'),
             lableStatus = allthead.find('.lableStatus').val();
 
-        allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
+        if ($('.myview-settings-registration').length == 0) {
+            allPublications.find('.publicationPan thead.hidden-xs tr:first-child').not($(this)).removeClass('expanded').addClass('collapsed');
 
-        if (e.target.className !== 'subscribed') {
-            if ($this.hasClass('expanded')) {
-                $this.removeClass('expanded').addClass('collapsed');
-                tbody.addClass('tbodyhidden');
-                thead.find('.mtp').addClass('hideBtn');
-                accCont.addClass('tbodyhidden');
-                if (trs.length === disabledtrs.length) {
-                    followlbl.removeClass('hideBtn');
-                    thead.find('.firstrow .lableStatus').val('followlbl');
-                } else {
-                    followinglbl.removeClass('hideBtn');
-                    thead.find('.firstrow .lableStatus').val('followinglbl');
-                }
-                for (var i = 0; i < allthead.length; i++) {
-                    var curthead = $(allthead[i]),
-                        getlableStatus = curthead.find('.lableStatus').val();
-                    curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
-                }
-                allPublications.find('.sorting_arrow--up').removeClass('act').addClass('hide');
-                allPublications.find('.sorting_arrow--down').removeClass('hide');
-                pPan.removeClass('active');
-                var position = $this.closest('.publicationPan').position();
-                $(window).scrollTop(position.top);
-            } else {
-                allPublications.find('tbody').addClass('tbodyhidden');
-                allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--up').removeClass('act').addClass('hide');
-                allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--down').removeClass('hide');
-                allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
-                allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
-                thead.find('tr').removeClass('hidden');
-                $this.addClass('expanded').removeClass('collapsed');
-                accCont.removeClass('tbodyhidden');
-                tbody.removeClass('tbodyhidden');
-                flwBtn.addClass('hideRow');
-                flwlbl.removeClass('hideRow');
-
-                pPan.find('.sorting_arrow--up').addClass('act').removeClass('hide');
-                pPan.find('.sorting_arrow--down').addClass('hide');
-                pPan.find('.expandTxt').removeAttr('style');
-                pPan.find('.mvTxt').removeAttr('style');
-
-                allPublications.find('.publicationPan').removeClass('active');
-                if (trs.length == disabledtrs.length) {
+            if (e.target.className !== 'subscribed' && e.target.className !== 'rowlines' && e.target.className !== 'pull-left' && e.target.className !== 'mv' && e.target.className !== 'subscr') {
+                if ($this.hasClass('expanded')) {
+                    $this.removeClass('expanded').addClass('collapsed');
+                    tbody.addClass('tbodyhidden');
+                    thead.find('.mtp').addClass('hideBtn');
+                    accCont.addClass('tbodyhidden');
+                    if (trs.length === disabledtrs.length) {
+                        followlbl.removeClass('hideBtn');
+                        thead.find('.firstrow .lableStatus').val('followlbl');
+                    } else {
+                        followinglbl.removeClass('hideBtn');
+                        thead.find('.firstrow .lableStatus').val('followinglbl');
+                    }
+                    for (var i = 0; i < allthead.length; i++) {
+                        var curthead = $(allthead[i]),
+                            getlableStatus = curthead.find('.lableStatus').val();
+                        curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
+                    }
+                    allPublications.find('.sorting_arrow--up').removeClass('act').addClass('hide');
+                    allPublications.find('.sorting_arrow--down').removeClass('hide');
                     pPan.removeClass('active');
+                    var position = $this.closest('.publicationPan').position();
+                    $(window).scrollTop(position.top);
                 } else {
-                    pPan.addClass('active');
-                }
-                for (var i = 0; i < allthead.length; i++) {
-                    var curthead = $(allthead[i]),
-                        getlableStatus = curthead.find('.lableStatus').val();
-                    curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
-                }
+                    allPublications.find('tbody').addClass('tbodyhidden');
+                    allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--up').removeClass('act').addClass('hide');
+                    allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--down').removeClass('hide');
+                    allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
+                    allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
+                    thead.find('tr').removeClass('hidden');
+                    $this.addClass('expanded').removeClass('collapsed');
+                    accCont.removeClass('tbodyhidden');
+                    tbody.removeClass('tbodyhidden');
+                    flwBtn.addClass('hideRow');
+                    flwlbl.removeClass('hideRow');
 
-                var position = $this.closest('.publicationPan').position();
-                $(window).scrollTop(position.top);
+                    pPan.find('.sorting_arrow--up').addClass('act').removeClass('hide');
+                    pPan.find('.sorting_arrow--down').addClass('hide');
+                    pPan.find('.expandTxt').removeAttr('style');
+                    pPan.find('.mvTxt').removeAttr('style');
+
+                    allPublications.find('.publicationPan').removeClass('active');
+                    if (trs.length == disabledtrs.length) {
+                        pPan.removeClass('active');
+                    } else {
+                        pPan.addClass('active');
+                    }
+                    for (var i = 0; i < allthead.length; i++) {
+                        var curthead = $(allthead[i]),
+                            getlableStatus = curthead.find('.lableStatus').val();
+                        curthead.removeClass('followingbg followbg').addClass(getlableStatus == 'followinglbl' ? 'followingbg' : 'followbg');
+                    }
+
+                    var position = $this.closest('.publicationPan').position();
+                    $(window).scrollTop(position.top);
+                }
             }
         }
     }).on('mouseenter', 'thead.hidden-xs tr:first-child', function () {
@@ -8617,7 +9189,7 @@ $(function () {
 
     $(document).on('click', '.editView', function () {
         var eventDetails = { "event_name": "myview_edit_my_view", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Link", "ga_eventAction": "Link Click", "ga_eventLabel": "EDIT MY VIEW" };
-        //analyticsEvent( $.extend(analytics_data, eventDetails) );
+        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
         eventDetails = {};
     });
 
@@ -8632,12 +9204,12 @@ $(function () {
         }
         var eventDetails = { "event_name": "myview_load_more", "page_name": analytics_data["page_name"], "ga_eventCategory": "My View Page Publications", "ga_eventAction": analytics_data["publication"], "ga_eventLabel": loadPreferanceId["Sections"][getIdx]["ChannelName"], "publication_click": analytics_data["publication"] };
 
-        //analyticsEvent( $.extend(analytics_data, eventDetails) );
+        (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, eventDetails));
         eventDetails = {};
     });
 });
 
-},{}],29:[function(require,module,exports){
+},{"../controllers/analytics-controller":40}],34:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -8753,7 +9325,7 @@ $(function () {
 	});
 });
 
-},{}],30:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 function loadLayoutOneData(data, idx) {
@@ -8832,7 +9404,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[0].listableType + '"></use></svg></span></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + data.articles[0].listableType + '"></use></svg><img src="' + data.articles[0].listableType + '" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
@@ -8857,7 +9429,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[1].listableType + '"></use></svg></span></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[1].listableType + '"></use></svg><img src="' + data.articles[1].listableType + '" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -8883,7 +9455,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
 	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
-	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[2].listableType + '"></use></svg></span></li>' : '';
+	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[2].listableType + '"></use></svg><img src="' + data.articles[2].listableType + '" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -8996,7 +9568,7 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '<ul>';
 	sectionData += data.articles[idx].listableDate ? '<li><time class="article-metadata__date">' + data.articles[idx].listableDate + '</time></li>' : '';
 	sectionData += data.articles[idx].linkableText ? '<li><h6>' + data.articles[idx].linkableText + '</h6></li>' : '';
-	sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[idx].listableType + '"></use></svg></span></li>' : '';
+	sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[idx].listableType + '"></use></svg><img src="' + data.articles[idx].listableType + '" width="25" /></span></li>' : '';
 	sectionData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[idx].id + '" data-analytics="{"bookmark": "' + bookmarkInfo + '", "bookmark_title": "' + data.articles[idx].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[idx].isArticleBookmarked + '"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
 	sectionData += '</ul>';
 	sectionData += '</div>';
@@ -9095,7 +9667,7 @@ function createLayoutInner2(data) {
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[0].listableType + '"></use></svg></span></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[0].listableType + '"></use></svg><img src="' + data.articles[0].listableType + '" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
@@ -9120,7 +9692,7 @@ function createLayoutInner2(data) {
 	articleData += '<ul>';
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[1].listableType + '"></use></svg></span></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#' + data.articles[1].listableType + '"></use></svg><img src="' + data.articles[1].listableType + '" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -9549,7 +10121,7 @@ $(function () {
 	}
 });
 
-},{}],31:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -9787,7 +10359,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":35,"../controllers/form-controller":37,"../jscookie":45}],32:[function(require,module,exports){
+},{"../controllers/analytics-controller":40,"../controllers/form-controller":42,"../jscookie":50}],37:[function(require,module,exports){
 'use strict';
 
 if ($('.scrollbar') && $('.scrollbar').length) {
@@ -9796,14 +10368,20 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 		    content = $(this).parents('.rolling-stream').find('.content')[0],
 		    scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
 
+		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+
 		content.addEventListener('scroll', function (e) {
 			scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 			scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
 		});
-		var event = new Event('scroll');
+		// var event = new Event('scroll');
 
-		window.addEventListener('resize', content.dispatchEvent.bind(content, event));
-		content.dispatchEvent(event);
+		window.addEventListener('resize', function (e) {
+			scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+			scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+		});
+		// content.dispatchEvent(event);
 
 		scroll.addEventListener('mousedown', function (start) {
 			start.preventDefault();
@@ -9821,16 +10399,23 @@ if ($('.scrollbar') && $('.scrollbar').length) {
 	});
 }
 
-// $(document).on('scroll', '.rolling-stream .content', function() {
-// 		var container = $(this).parents('.rolling-stream').find('.scrollbar-container')[0],
-// 			content = $(this).parents('.rolling-stream').find('.content')[0],
-// 			scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
+//Horizontal Scroll Bar
+if ($('#scrollbar-horizantal')) {
+	var container = $('#scrollbar-horizantal')[0],
+	    content = $('.wrap-merge')[0],
+	    scroll = $('#scrollbar')[0];
 
-// 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
-// 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
-// });
+	//scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
 
-},{}],33:[function(require,module,exports){
+	$(window).on('resize', function () {
+		scroll.style.width = $('.merge-acquistion').width() - $('.wrap-merge').width() + 'px';
+	});
+	$('.wrap-merge').on('scroll', function () {
+		scroll.style.left = $(this).find('.table').offset().left * -1 + 14 + 'px';
+	});
+}
+
+},{}],38:[function(require,module,exports){
 'use strict';
 
 function PrintCompanyGraph(chartData, divId, graphType) {
@@ -9917,7 +10502,7 @@ $(function () {
 	}, 3000);
 });
 
-},{}],34:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -9986,7 +10571,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],35:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -10005,7 +10590,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],36:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -10101,7 +10686,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":35}],37:[function(require,module,exports){
+},{"./analytics-controller":40}],42:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -10207,6 +10792,7 @@ function formController(opts) {
 							}
 						}
 					});
+
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
 					var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse();
@@ -10239,6 +10825,14 @@ function formController(opts) {
 								// successCallback is ripe for refactoring, improving parameters
 								this.response = response;
 
+								// //Specific to Sign In Form - Vertical Login
+								// if($(currentForm).hasClass('js-sign-in-submit') || $(currentForm).hasClass("form-registration")) {
+								// 	$('#hiddenforms_login form').each(function() {
+								// 		$(this).find('input[type="text"]').val(inputData["username"]);
+								// 		$(this)[0].submit();
+								// 	});
+								// }
+								// //Specific to Sign In Form - Vertical Login
 								if (opts.successCallback) {
 									opts.successCallback(currentForm, this, event);
 								}
@@ -10315,7 +10909,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],38:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -10383,7 +10977,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],39:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10674,7 +11268,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],40:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -10799,7 +11393,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":35}],41:[function(require,module,exports){
+},{"./analytics-controller":40}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -11017,7 +11611,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":35}],42:[function(require,module,exports){
+},{"./analytics-controller":40}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -11334,7 +11928,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],43:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -11525,7 +12119,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],44:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],49:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -11659,6 +12253,16 @@ require('./components/scrollbar.js');
 require('./components/ll-ship-coal-export.js');
 
 require('./components/ll-tanker-pure-chem-page.js');
+
+require('./components/ll-marketdata-drycargo-ssyal.js');
+
+require('./components/ll-cockett-bunker.js');
+
+require('./components/ll-ship-vehicle.js');
+
+require('./components/ll-ship-roro.js');
+
+require('./components/ll-ship-container-ship.js');
 
 // OTHER CODE
 
@@ -12270,6 +12874,16 @@ $(document).ready(function () {
         (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, { event_name: "logout" }));
     });
 
+    //Specific to Sign Out Vertical Login
+    $('.vertical__sign-out').on('click', function (e) {
+        e.preventDefault();
+        $("#hiddenforms_logout form").each(function () {
+            $(this)[0].submit();
+        });
+        var Url = $(this).attr("href");
+        window.location.href = Url;
+    });
+
     var emailArticleController = new _controllersFormController2['default']({
         observe: '.form-email-article',
         successCallback: function successCallback(form) {
@@ -12843,9 +13457,21 @@ $(document).ready(function () {
     } else {
         $('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
     }
+
+    // //IDE Login to Different Sales Force
+    // $(document).ready(function() {
+    //      var LoginUrl = window.location.href;
+    //      if( (LoginUrl.indexOf('login=success') != -1) && $('.header-account-access__label').hasClass('header_salesforce_sign-in-out') ) {
+    //          var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
+    //          $('#hiddenforms_login form').each(function() {
+    //              $(this).find('input[type="text"]').val(UserId);
+    //              $(this)[0].submit();
+    //          });
+    //      }
+    // })
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-market-data":23,"./components/ll-market-data-dryCargo":22,"./components/ll-market-data-dryCargo-bulkFixture":20,"./components/ll-market-data-dryCargo-icap":21,"./components/ll-market-imarex":24,"./components/ll-ship-coal-export.js":25,"./components/ll-tanker-fixtures":26,"./components/ll-tanker-pure-chem-page.js":27,"./components/myview-settings":28,"./components/pagination":29,"./components/personalisation":30,"./components/save-search-component":31,"./components/scrollbar.js":32,"./components/table_charts":33,"./components/video-mini":34,"./controllers/analytics-controller":35,"./controllers/bookmark-controller":36,"./controllers/form-controller":37,"./controllers/lightbox-modal-controller":38,"./controllers/pop-out-controller":39,"./controllers/register-controller":40,"./controllers/reset-password-controller":41,"./controllers/sortable-table-controller":42,"./controllers/tooltip-controller":43,"./jscookie":45,"./modal":46,"./newsletter-signup":47,"./search-page.js":48,"./selectivity-full":49,"./svg4everybody":50,"./toggle-icons":51,"./zepto.dragswap":52,"./zepto.min":53}],45:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/header-logout":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-cockett-bunker.js":20,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-market-data-dryCargo-icap":22,"./components/ll-market-imarex":25,"./components/ll-marketdata-drycargo-ssyal.js":26,"./components/ll-ship-coal-export.js":27,"./components/ll-ship-container-ship.js":28,"./components/ll-ship-roro.js":29,"./components/ll-ship-vehicle.js":30,"./components/ll-tanker-fixtures":31,"./components/ll-tanker-pure-chem-page.js":32,"./components/myview-settings":33,"./components/pagination":34,"./components/personalisation":35,"./components/save-search-component":36,"./components/scrollbar.js":37,"./components/table_charts":38,"./components/video-mini":39,"./controllers/analytics-controller":40,"./controllers/bookmark-controller":41,"./controllers/form-controller":42,"./controllers/lightbox-modal-controller":43,"./controllers/pop-out-controller":44,"./controllers/register-controller":45,"./controllers/reset-password-controller":46,"./controllers/sortable-table-controller":47,"./controllers/tooltip-controller":48,"./jscookie":50,"./modal":51,"./newsletter-signup":52,"./search-page.js":53,"./selectivity-full":54,"./svg4everybody":55,"./toggle-icons":56,"./zepto.dragswap":57,"./zepto.min":58}],50:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -12986,7 +13612,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],46:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -13294,7 +13920,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],47:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -13396,7 +14022,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":35}],48:[function(require,module,exports){
+},{"./controllers/analytics-controller":40}],53:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -13408,7 +14034,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],49:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -14434,7 +15060,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],50:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -14539,7 +15165,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],51:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -14556,7 +15182,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],52:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -14806,7 +15432,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
     };
 })(Zepto);
 
-},{"./controllers/analytics-controller":35}],53:[function(require,module,exports){
+},{"./controllers/analytics-controller":40}],58:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -15545,6 +16171,6 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[44])
+},{}]},{},[49])
 
 //# sourceMappingURL=index.js.map

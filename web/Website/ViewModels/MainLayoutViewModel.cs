@@ -10,6 +10,9 @@ using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
 using Informa.Library.Services.AccountManagement;
+using System.Collections.Generic;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using System;
 
 namespace Informa.Web.ViewModels
 {
@@ -51,6 +54,8 @@ namespace Informa.Web.ViewModels
 	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
         public string CustomTagsHeader => _dependencies.HeadMetaDataGenerator.GetCustomTags(0);
         public string CustomTagsFooter => _dependencies.HeadMetaDataGenerator.GetCustomTags(1);
+        private IVertical_Root VerticalRoot => _dependencies.GlobalSitecoreService.GetVerticalRootAncestor(GlassModel._Id);
+        private Guid siteRootTemplateID => _dependencies.SiteRootContext.Item._TemplateId;
         public string LeaderboardSlotID
         {
             get
@@ -62,5 +67,26 @@ namespace Informa.Web.ViewModels
             }
         }
         public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
+
+        public List<string> GetVerticalDomains()
+        {
+            List<string> verticalDomains = new List<string>();
+            var rootTemplate_ID = siteRootTemplateID;
+            var currentRoot_ID = _dependencies.SiteRootContext.Item._Id;
+            if (VerticalRoot != null)
+            {
+                var siteRoots = VerticalRoot._ChildrenWithInferType;
+                foreach(var root in siteRoots)
+                {
+                    if(root._Id != currentRoot_ID && root._TemplateId.Equals(rootTemplate_ID))
+                    {
+                        var siteSettings = Sitecore.Sites.SiteManager.GetSite(root._Name);
+                        if (siteSettings != null)
+                            verticalDomains.Add(root._Name+"|"+siteSettings.Properties["hostName"]);
+                    }
+                }
+            }
+            return verticalDomains;
+        }
     }
 }

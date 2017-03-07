@@ -5,11 +5,11 @@ header{
 			display: block;
 		}
 	}
-	// .header__wrapper{
-	// 	height: 100px;
-	// }
+	.header__wrapper{
+	 	position: relative;
+	}
 	.header-publication-links{
-		top: 50px;
+		top: 15px;
 		@include breakpoint('medium-small') {
 			top: 50px;
 		}
@@ -151,10 +151,9 @@ header{
 }
 main{
 	.advertising--leaderboard.visible-desktop{
-		padding: 30px 0 30px 0;
+		padding: 13px 0 13px 0;
 		@include breakpoint('small') {
 			display: none;
-			padding: 30px 0;
 		}
 	}
 	.action-flags-bar, .banner--highlights{

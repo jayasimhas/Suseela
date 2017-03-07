@@ -119,7 +119,7 @@ namespace Informa.Library.User.EmailOptIns
             {
                 if (responseModel.IsAuthenticated)
                 {
-                    _dependencies.UpdateOfferUserOptInContext.Update(false);
+                    _dependencies.UpdateOfferUserOptInContext.Update(false, NewsletterPreference.Update);
                 }
                 else if (!string.IsNullOrWhiteSpace(userName))
                 {

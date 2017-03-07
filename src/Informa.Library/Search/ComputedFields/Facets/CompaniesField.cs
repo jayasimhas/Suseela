@@ -19,7 +19,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
 
             if (item != null)
                 rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
-            if (rootItem != null && rootItem.Name.Contains("Agri"))
+            if (rootItem != null && rootItem.Name.Contains("Agri") || rootItem.Name.Contains("Maritime"))
             {
                 if (indexItem?.Taxonomies != null)
                 {

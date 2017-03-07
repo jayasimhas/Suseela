@@ -488,16 +488,16 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         if (match.Paths.FullPath.Contains(newFilePath))
                         {
-                            XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
-                            //return new MediaItem(matches.First());
+                            //XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
+                            return new MediaItem(matches.First());
                             //return match;
-                            mediaitem = match;
+                            //mediaitem = match;
                         }
                     }
 
                 }
 
-                map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
+                //map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
             }
 
             MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
@@ -4566,7 +4566,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (f == null)
                 return;
 
-            string ctID = t.First().ToString();
+            string ctID = t.First().ID.ToString();
             DataLogger.Add(NewItemField, t.First().Name);
              
             if (!f.Value.Contains(ctID))

@@ -53,6 +53,11 @@ import './components/table_charts';
 import './components/scrollbar.js';
 import './components/ll-ship-coal-export.js';
 import './components/ll-tanker-pure-chem-page.js';
+import './components/ll-marketdata-drycargo-ssyal.js';
+import './components/ll-cockett-bunker.js';
+import './components/ll-ship-vehicle.js';
+import './components/ll-ship-roro.js';
+import './components/ll-ship-container-ship.js';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -673,6 +678,16 @@ $(document).ready(function(){
         analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
     });
 
+    //Specific to Sign Out Vertical Login
+    $('.vertical__sign-out').on('click', function(e){
+        e.preventDefault();
+        $("#hiddenforms_logout form").each(function() {
+            $(this)[0].submit();
+        });
+        var Url = $(this).attr("href");
+        window.location.href = Url;
+        
+    });
 
     var emailArticleController = new FormController({
         observe: '.form-email-article',
@@ -1272,4 +1287,15 @@ $(document).ready(function(){
 	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
 	}
    
+   // //IDE Login to Different Sales Force
+   // $(document).ready(function() {
+   //      var LoginUrl = window.location.href;
+   //      if( (LoginUrl.indexOf('login=success') != -1) && $('.header-account-access__label').hasClass('header_salesforce_sign-in-out') ) {
+   //          var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
+   //          $('#hiddenforms_login form').each(function() {
+   //              $(this).find('input[type="text"]').val(UserId);
+   //              $(this)[0].submit();
+   //          });
+   //      }
+   // })
 });

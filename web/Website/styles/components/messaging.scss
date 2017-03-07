@@ -2,7 +2,6 @@
 	width: 100% !important; 
 	background: $color-concrete-gray;
 	clear: both;
-	border-top: 4px solid $color-cardinal-red;
 	padding: 1.5625rem 2rem;
 	position: relative;
 	line-height: 20px;
@@ -80,12 +79,11 @@
 		padding-right: 15px;
 		display: inline-block;
 		position: relative;
-			&:after {
+			.dismiss-button__icon {
 				content: '';
 				position: absolute;
 				top: 5px;
-				right: 0;
-				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
+				right: 0;				
 				width: 9px;
 				height: 9px;
 			}
@@ -97,9 +95,7 @@
 	position: relative;
 	line-height: 20px;
 	width: 80%;
-	clear: both;
-	border-top: 4px solid $color-cardinal-red;
-	border-bottom: 1px solid $color-cardinal-red;
+	clear: both;	
 	padding: 1.25rem 2rem 1.5625rem;
 	margin-bottom: 1em;
 	.msg_dismiss{
@@ -117,12 +113,11 @@
 		padding-right: 15px;
 		display: inline-block;
 		position: relative;
-			&:after {
+			.dismiss-button__icon {
 				content: '';
 				position: absolute;
 				top: 5px;
 				right: 0;
-				background: url("/dist/img/sprite-image.png") no-repeat -4px -220px;
 				width: 9px;
 				height: 9px;
 			}
@@ -145,9 +140,9 @@
 		  margin: 0 auto;
 		  text-align: center;
 		  line-height: 30px;
-		  .red{
+		  /*.red{
 			color: $color-cardinal-red;
-		  }
+		  }*/
 	}
 	@include breakpoint('small'){
 		width: 100%;

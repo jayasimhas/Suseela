@@ -79,12 +79,13 @@ namespace Informa.Web.ViewModels
 
         public string PrintPageHeaderLogoSrc => SiteRootContext.Item?.Print_Logo?.Src ?? string.Empty;
         public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item?.Print_Message);
+        public HtmlString RightSubMenuContent => new HtmlString(SiteRootContext.Item?.Right_SubMenu_Content);
         public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
         public string CorporateName => CompanyNameContext.Name;
         public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
-        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString());
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
 
         public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);   
 
@@ -116,6 +117,7 @@ namespace Informa.Web.ViewModels
         {
             return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
         }
-       
+        public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+
     }
 }

@@ -112,7 +112,7 @@
 		@include folow-btn-lbl(#58595B);
 		padding: 0;
 		cursor: text;
-		min-width: 130px;
+		//min-width: 130px;
 		@include breakpoint('medium-small') {
 			min-width: initial;
 			min-width: auto;
@@ -134,6 +134,11 @@
 		&:hover{
 			background: #a7a7a7;
 			border: 1px solid #a7a7a7;
+			@media screen and (min-width: 768px) and (max-width: 1024px){
+				border: 1px solid $color-tree-poppy-orange;
+				color: $color-white;
+				background: $color-tree-poppy-orange;
+			}
 			@include breakpoint('small') {
 				background: url(/dist/img/sprite-image.png) no-repeat -3px -235px;
 			}
@@ -166,11 +171,16 @@
 			background: #ff8f18;
 			color: #fff;
 			border: 1px solid $color-tree-poppy-orange;
+			@media screen and (min-width: 768px) and (max-width: 1024px){
+				border: 1px solid #ADADAD;
+				color: #58595b;
+				background: none;
+			}
 		}
 	}
 	&.myview-settings-registration {
 		.publicationPan h2 {
-			width: auto;
+			//width: auto;
 		}
 		.saveoption {
 			width: 100%;
@@ -305,7 +315,7 @@
 						&:hover{
 							background: #FFF5ED;
 							@include breakpoint('large') {
-								background: #fff;
+								background: #fff !important;
 							}
 							cursor: move; 
 							& .rowlines{ 
@@ -460,7 +470,7 @@
 						}
 					}
 					&.pbot{
-						padding: 0rem 1rem 1.25rem 27px;
+						padding: 0rem 1rem 1.25rem 1.25rem;
 					}
 					.mvTxt{
 						@include textMix('Roboto Condensed', 0.875rem, 400);
@@ -471,7 +481,7 @@
 						text-align: right; 
 						color: #f7941e;
 						@media screen and (min-width: 768px) and (max-width: 1024px){
-							display: none;
+                            display: none;
 						}
 					}
 					& .rowlines{
@@ -518,7 +528,7 @@
 						} 
 					} 
 					 .accordionImg{
-						@media screen and (min-width: 600px){
+						@media screen and (min-width: 800px){
 							width: 120px;
 						}
 						float: left;
@@ -536,6 +546,28 @@
 							text-transform: uppercase;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
 								display: none;
+							} 
+						}
+						@media screen and (max-width: 600px){
+							span{
+								background: url(/dist/img/sprite-image.png) no-repeat 0 -21px;
+								height: 1.0625rem;
+								width: 2rem;
+								cursor: pointer;
+								display: inline-block;
+								margin-right: 10%;
+								@include breakpoint('medium-small') {
+									position: relative;
+									left: -10px;
+									&.expanded{
+										position: relative;
+										left: 0; 
+										background-position: 0 0 !important;
+									}
+								} 
+								&.expanded{
+									background-position: 0 0;
+								} 
 							}
 						}
 						span.accImg{
@@ -614,6 +646,7 @@
 				}
 				@include breakpoint('medium-small') {
 					width: 45%;
+					padding: 12px 20px 12px 10px;
 				}
 			}
 			.wd-25{
@@ -653,8 +686,13 @@
 	  @include breakpoint('small') {
 	  	width: 100%;
 	  }
-	  .gotoview{
-		 border: none;
+	  .gotoview{ 
+		float: left;
+		line-height: 2rem;
+		a{
+			padding: 9px 16px;
+		}
+		 /*border: none;
 		 margin-left: 1.25rem;
 		  a{
 			display: block;
@@ -678,13 +716,13 @@
 		    a {
 		    	padding: 0;
 		    }
-		}		
+		}*/		
 	  }
 	  .complete-settings{
 			display: inline-block;
 			float: right;
 		}
-	  .saveview{
+	  .saveview, .registrationBtn{
 		padding: 0 2rem;
 		 @include folow-btn(auto, 2rem, $color-white, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
@@ -694,16 +732,16 @@
 			padding: 0 2.5rem;
 		  }
 	  }
-	  .registrationBtn{
+	  /*.registrationBtn{
 		padding: 0 2rem;
 		 @include folow-btn(auto, 2rem, #58595b, $color-tree-poppy-orange);
 		  margin-left: 1.25rem;
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
 		  @include breakpoint('small') {
-			width: 7.5rem;
+			width: 46%;
 		  }
-	  }
+	  }*/
   }
   
   .dosubscribe{
@@ -775,7 +813,20 @@
 				margin-right: 20px;
 			}
 			.registrationBtn.validationChk{
-                border: 1px solid $color-tree-poppy-orange;
+				@include textMix('Roboto', 0.6875rem, 700);
+				text-align: center;
+				float: left; 
+				width: 4.375rem;
+				text-transform: uppercase; 
+				cursor: pointer;
+				line-height: 2rem; 
+				padding: 0px;
+				float: left;
+				width: 8.125rem;
+				height: 2rem;
+				color: #f8;
+				margin-right: 20px;
+                /*border: 1px solid $color-tree-poppy-orange;
                 color: $color-zeus-black;
                 text-align: center;
                 float: left;
@@ -788,7 +839,7 @@
                 font-weight: bold;
                 &:hover{
                     background: $color-tree-poppy-orange;
-                }
+                }*/
 			}
 			.cancel{
 				@include textMix('Roboto', 0.6875rem, 700);
@@ -1007,7 +1058,12 @@
 				border: 1px solid $tc;
 				&:hover{
 					background: #a7a7a7;
-					border: 1px solid #a7a7a7
+					border: 1px solid #a7a7a7;
+					@media screen and (min-width: 768px) and (max-width: 1024px){
+						border: 1px solid $color-tree-poppy-orange;
+						color: $color-white;
+						background: $color-tree-poppy-orange;
+					}
 				}
 			}
 		}
@@ -1015,6 +1071,11 @@
  			&:hover{
 				background: $tc;
 				border: 1px solid $tc;
+				@media screen and (min-width: 768px) and (max-width: 1024px){
+					border: 1px solid #ADADAD;
+					color: #58595b;
+					background: none;
+				}
 			}
 		}
 		.followingrow{
@@ -1072,6 +1133,11 @@
 		.subscribed{
 			a:hover{
 				color: $tc;
+			}
+		}
+		.rowlines{ 
+			.move{ 
+				color: $tc !important;
 			}
 		}
 		.table{

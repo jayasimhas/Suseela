@@ -1927,6 +1927,10 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\ExperienceEditor.js" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertIframe\InsertIframe.js" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertIframe\InsertIframe.xml" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertSidebarArticles\InsertSidebarArticles.js" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertSidebarArticles\InsertSidebarArticles.xml" />
     <Content Include="sitecore\shell\Override\Application\Dialogs\Publish\Publish.xml" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />

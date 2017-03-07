@@ -20,6 +20,7 @@ using System.Net;
 using Sitecore.SecurityModel;
 using System.Xml.Linq;
 using System.Web;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
@@ -79,7 +80,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     //reading article no
                     string curFileName = new FileInfo(f).Name;
-                    ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
+                   
+                    ao["ARTICLE NUMBER"] = $"{ItemIdResolver.GetArticlePrefixByKey(site, publication)}{artNumber:D6}";
+
+
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
@@ -99,7 +103,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string summaryTitleHtml = GetXMLData(d, "SUMMARY");
                     if (string.IsNullOrEmpty(summaryTitleHtml))
                     {
-                        summaryTitleHtml = bodyTitleHtml;
+                        summaryTitleHtml = GetFirstParagraph(bodyTitleHtml);
+                        bodyTitleHtml = Regex.Replace(bodyTitleHtml, summaryTitleHtml, "", RegexOptions.IgnoreCase);
                     }
 
 
@@ -218,7 +223,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (Taxonomy.Count > 0)
                     {
                         // GetRegion().FirstOrDefault(w => w == word);
-                        if (publication == "commodities")
+                        if (publication == "Commodities")
                         {
                             if (Taxonomy.Values.Any(k => k.Contains("dairy")))
                             {
@@ -261,7 +266,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     //ao.Add("SECTION", contentTypeHtml);
                                     // break;
                                 }
-                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews" || contentTypeHtml == "special report" || contentTypeHtml == "supplements and whitepapers")
+                                else if (contentTypeHtml == "analysis" || contentTypeHtml == "opinion" || contentTypeHtml == "interviews" || contentTypeHtml == "supplements and whitepapers")
                                 {
                                     contentTypeSetHtml = contentTypeHtml;
                                     // ao.Add("SECTION", contentTypeHtml);
@@ -445,43 +450,64 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
                                 List<string> commoditySearchResults = null;
+                                List<string> commoditynewSearchResults = null;
                                 List<string> commodityfactorSearchResults = null;
                                 List<string> animalhealthSearchResults = null;
+                                List<string> animalhealthnewSearchResults = null;
+                                List<string> cropprotectionSearchResults = null;
 
 
 
-                                if (publication == "AnimalPharma")
+                                if (publication == "AnimalPharm")
                                 {
                                     animalhealthSearchResults = GetListFromXml(publication, "animalhealth", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
+                                    animalhealthnewSearchResults = GetListFromXml(publication, "animalhealthnew", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 if (publication == "Agrow")
                                 {
 
-                                    commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
+                                    commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    cropprotectionSearchResults = GetListFromXml(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
-                                if (publication == "commodities")
+                                if (publication == "Commodities")
                                 {
                                     commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
-                                }
-
-                                if (publication == "commodities")
-                                {
-
+                                    commoditynewSearchResults = GetListFromXml(publication, "commoditynewsearch", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                     commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 foreach (string agency in agencySearchResults)
                                 {
-                                    if (publication == "commodities")
+                                    if (publication == "Commodities")
                                     {
-                                        if (!((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !((agency.ToLower() == "international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets"))
-                                            Agency += agency + ",";
+                                        //if (!((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !((agency.ToLower() == "international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets"))
+                                        //    Agency += agency + ",";
+
+                                        if (!(((agency.ToLower() == "imf") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets") && !(AgencyCompanyTextSearch.ToLower().Contains("international monetary fund") && ao["PUBLICATIONNAME"].ToString() == "Dairy Markets")))
+                                        {
+                                            if (agency.ToLower().Equals("who"))
+                                            {
+                                                if (AgencyCompanyTextSearch.Contains("WHO"))
+                                                    Agency += agency + ",";
+                                            }
+                                            else
+                                            {
+                                                Agency += agency + ",";
+                                            }
+                                        }
+                                            
                                     }
                                     else
                                     {
-                                        Agency += agency + ",";
+                                        if (agency.ToLower().Equals("who"))
+                                        {
+                                            if (AgencyCompanyTextSearch.Contains("WHO"))
+                                                Agency += agency + ",";
+                                        }
+                                        else
+                                        {
+                                            Agency += agency + ",";
+                                        }
                                     }
 
                                 }
@@ -489,8 +515,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodity in commoditySearchResults)
                                     {
-                                        if (!(commodity.ToLower() == "palm" && commoditySearchResults.Contains("palm beach")))
+                                        if (!(commodity.ToLower().Equals("palm") && commoditySearchResults.Contains("palm beach")))
                                             Commodity += commodity + ",";
+
+                                    }
+                                }
+
+                                if (cropprotectionSearchResults != null)
+                                {
+                                    foreach (string cropprotection in cropprotectionSearchResults)
+                                    {
+                                            Commodity += cropprotection + ",";
+                                    }
+                                }
+
+
+                                if (commoditynewSearchResults != null)
+                                {
+                                    foreach (string commoditynew in commoditySearchResults)
+                                    {
+                                        
+                                            Commodity += commoditynew + ",";
 
                                     }
                                 }
@@ -498,7 +543,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string commodityfactor in commodityfactorSearchResults)
                                     {
-                                        if (!(commodityfactor.ToLower() == "energy" && commodityfactorSearchResults.Contains("energy drinks")))
+                                        if (!(commodityfactor.ToLower().Equals("energy") && (commodityfactorSearchResults.Contains("energy drinks") || commodityfactorSearchResults.Contains("energy drink"))))
                                             CommodityFactor += commodityfactor + ",";
 
                                     }
@@ -511,6 +556,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                     }
                                 }
+
+                                if (animalhealthnewSearchResults != null)
+                                {
+                                    foreach (string animalhealthnew in animalhealthSearchResults)
+                                    {
+                                        AnimalHealth += animalhealthnew + ",";
+
+                                    }
+                                }
                             }
 
                             // List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
@@ -519,16 +573,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             textForCompany = textForCompany.Replace("’", "'");
                             textForCompany = textForCompany.Replace("(", "'");
                             textForCompany = textForCompany.Replace(")", "");
-                            List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
+                            List<string> companySearchResults = null;
+
+                            if (!(publication == "InsuranceDay")){
+
+                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
+                            }
+                            else
+                            {
+                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                            }
                             //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
 
-
-                            foreach (string company in companySearchResults)
+                            if (companySearchResults != null)
                             {
-                                if (!(publication == "AnimalPharma" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "commodities" && company == "bayer animal health"))
-                                    Companies += company + ",";
+                                foreach (string company in companySearchResults)
+                                {
+                                    if (!(publication == "AnimalPharm" && company == "bayer cropscience") && !(publication == "Agrow" && company == "bayer animal health") && !(publication == "Commodities" && company == "bayer animal health"))
+                                        Companies += company + ",";
 
+                                }
                             }
 
                             string textSearchForRegion = RegionTextSearch.Replace("’", "'");
@@ -704,18 +769,46 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         private bool CheckTable(string searchtable)
         {
 
-            Regex regex = new Regex("<table (.*)</table>");
-            var v = regex.Match(searchtable);
+            Regex regextblopening = new Regex("<table");
+            Regex regextblclosing = new Regex("</table>");
+            var vopening = regextblopening.Match(searchtable);
 
+           
 
-            if ((v != null) && (v.Length > 0))
+            if ((vopening != null) && (vopening.Length > 0))
             {
-                return true;
+                var vclosing = regextblclosing.Match(searchtable);
+
+                if ((vclosing != null) && (vclosing.Length > 0))
+                {
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
 
             }
             else
+            { 
                 return false;
 
+            }
+
+        }
+
+        private string GetFirstParagraph(string htmltext)
+        {
+            Match m = Regex.Match(htmltext, @"<p \s*(.+?)\s*</p>");
+            if (m.Success)
+            {
+                return m.Groups[0].Value;
+            }
+            else
+            {
+                return htmltext;
+            }
         }
 
         private bool CheckTableau(string searchtableau)
@@ -863,7 +956,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" };
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" , "\"","[","]","'"};
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")
@@ -1391,7 +1484,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if (publication == "commodities")
+                    if (publication == "Commodities")
                     {
                         Taxonomy.Add("COMMODITY", "");
                         Taxonomy.Add("COMMODITYFACTOR", "");
@@ -1444,7 +1537,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if (publication == "AnimalPharma")
+                    if (publication == "AnimalPharm")
                     {
                         Taxonomy.Add("ANIMALHEALTH", "");
                         Taxonomy.Add("COMMERCIAL", "");
@@ -1488,7 +1581,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
 
 
-                    if (publication == "ID")
+                    if (publication == "InsuranceDay")
                     {
 
                         Taxonomy.Add("MARKET", "");
@@ -1541,7 +1634,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
 
-                    if (publication == "LL")
+                    if (publication == "Lloydslist")
                     {
                         Taxonomy.Add("COUNTRY", "");
                         Taxonomy.Add("HOTTOPICS", "");

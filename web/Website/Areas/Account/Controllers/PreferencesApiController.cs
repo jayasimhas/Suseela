@@ -33,9 +33,9 @@ namespace Informa.Web.Areas.Account.Controllers
 		[HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
-		{
-			var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>());
-			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn);
+		{         
+            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>(), NewsletterPreference.Update);
+			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn, NewsletterPreference.Update);
 
 			return Ok(new
 			{

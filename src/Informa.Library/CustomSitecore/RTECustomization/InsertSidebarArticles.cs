@@ -43,8 +43,6 @@ namespace Informa.Library.CustomSitecore.RTECustomization
         protected Edit Filename;
         protected Edit searchText;       
         protected Combobox VerticalCombo;
-
-
         protected string articleType;
         protected string itemID;
         //private readonly ILog _logger;
@@ -93,8 +91,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLoad(System.EventArgs e)
-        {
-            //_logger.Error("On load of multisearchRTE");
+        {           
             Assert.ArgumentNotNull((object)e, "e");
             base.OnLoad(e);
             if (Context.ClientPage.IsEvent)
@@ -115,7 +112,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             articleType = WebUtil.GetQueryString("articletype");
             itemID = WebUtil.GetQueryString("itemid");
           
-            if (Filename != null)
+            if (!string.IsNullOrEmpty(Filename.Value))
             {
                 var returnText = SetReturnText(itemID, articleType, Filename.Value);
                 if (articleType == "sidebar")

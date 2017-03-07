@@ -1,4 +1,6 @@
-﻿using Jabberwocky.Autofac.Attributes;
+﻿using Informa.Library.SalesforceConfiguration;
+using Informa.Library.User.Authentication;
+using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,29 +11,70 @@ namespace Informa.Library.User.Newsletter
 	{
 		protected readonly ISetByTypeNewsletterUserOptInsContext SetNewsletterOptIns;
 		protected readonly ISitesNewsletterTypes SitesNewsletterTypes;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
-		public SetPublicationsNewsletterUserOptIns(
+        public SetPublicationsNewsletterUserOptIns(
 			ISetByTypeNewsletterUserOptInsContext setNewsletterOptIns,
-			ISitesNewsletterTypes sitesNewsletterTypes)
+			ISitesNewsletterTypes sitesNewsletterTypes,
+            ISalesforceConfigurationContext salesforceConfigurationContext
+            )
 		{
 			SetNewsletterOptIns = setNewsletterOptIns;
 			SitesNewsletterTypes = sitesNewsletterTypes;
-		}
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+        }
 
-		public bool Set(IEnumerable<string> publications)
+		public bool Set(IEnumerable<string> publications, NewsletterPreference method)
 		{
 			var newsletterTypes = new List<string>();
+            var OptIns = new List<INewsletterUserOptIn>();
 
-			foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => publications.Any(p => string.Equals(p, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
-			{
-				AddType(siteTypes.Breaking, ref newsletterTypes);
-				AddType(siteTypes.Daily, ref newsletterTypes);
-				AddType(siteTypes.Weekly, ref newsletterTypes);
-			}
+            foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => publications.Any(p => string.Equals(p, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
+            {
+                AddType(siteTypes.Breaking, ref newsletterTypes);
+                AddType(siteTypes.Daily, ref newsletterTypes);
+                AddType(siteTypes.Weekly, ref newsletterTypes);
+            }
 
-			return SetNewsletterOptIns.Set(newsletterTypes);
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            {
+                if (method.Equals(NewsletterPreference.Add))
+                {
+                    foreach (var siteTypes in SitesNewsletterTypes.SiteTypes)
+                    {
+                        if (publications.Contains(siteTypes.Publication.Code))
+                        {
+                            OptIns.Add(new NewsletterUserOptIn
+                            {
+                                NewsletterType = siteTypes.Publication.Code,
+                                OptIn = true,
+                            });
+                        }
+                        else
+                        {
+                            OptIns.Add(new NewsletterUserOptIn
+                            {
+                                NewsletterType = siteTypes.Publication.Code,
+                                OptIn = false,
+                            });
+                        }
+                    }
+                    OptIns.ForEach(noi => noi.OptIn = newsletterTypes.Contains(noi.NewsletterType));
+                    return SetNewsletterOptIns.Add(OptIns);
+                    
+                }
+                else
+                {
+                    return SetNewsletterOptIns.Set(newsletterTypes);
+                }
+            }
+            else
+            {       
+                return SetNewsletterOptIns.Set(newsletterTypes);
+            }
+           	
 		}
-
+        
 		public void AddType(string newsletterType, ref List<string> newsletterTypes)
 		{
 			if (!string.IsNullOrEmpty(newsletterType))
@@ -39,5 +82,5 @@ namespace Informa.Library.User.Newsletter
 				newsletterTypes.Add(newsletterType);
 			}
 		}
-	}
+    }
 }

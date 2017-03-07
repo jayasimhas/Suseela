@@ -172,28 +172,30 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 foreach (string auth in list)
                 {
-                    string result1 = auth.Replace("By", " ");
-                    string result2 = result1.Replace("-", " ");
-                    if (result2.Contains('.'))
+                    if (!string.IsNullOrEmpty(auth))
                     {
-                        result2 = result2.Substring(0, result2.IndexOf(".") + 1);
-                    }
-                    //loop through children and look for anything that matches by name
-                    string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
+                        string result1 = auth.Replace("By", " ");
+                        string result2 = result1.Replace("-", " ");
+                        if (result2.Contains('.'))
+                        {
+                            result2 = result2.Substring(0, result2.IndexOf(".") + 1);
+                        }
+                        //loop through children and look for anything that matches by name
+                        string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
 
-                    IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(cleanName.ToLower()));
-                    if (!tauthor.Any())
-                    {
-                        tauthor = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(cleanName.ToLower()));
-                    }
+                        IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(cleanName.ToLower()));
+                        if (!tauthor.Any())
+                        {
+                            tauthor = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(cleanName.ToLower()));
+                        }
                         //  IEnumerable<Item> tauthor = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
                         if (tauthor.Any() && !f.Value.Contains(tauthor.First().ID.ToString()))
-                    {
-                        f.Value = f.Value + "|" + tauthor.First().ID.ToString();
-                        autlog += tauthor.First().Name + ",";
-                    }
-                        
+                        {
+                            f.Value = f.Value + "|" + tauthor.First().ID.ToString();
+                            autlog += tauthor.First().Name + ",";
+                        }
 
+                    }
                 }
                 //if you find one then store the id
 

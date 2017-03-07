@@ -24,7 +24,11 @@
 				self.table += '<tr class="blueBg">';
 				var tableHead = val[0];
 					for(var prop in tableHead){
+						if(prop != "Header"){
 						self.table += '<th class="pad-10">'+prop+'</th>';
+						}else{
+						self.table += '<th class="pad-10"></th>';
+						}
 					}
 					self.table += '</tr>';
 					self.table += '</thead>';

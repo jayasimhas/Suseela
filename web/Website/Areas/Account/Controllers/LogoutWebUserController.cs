@@ -25,5 +25,12 @@ namespace Informa.Web.Areas.Account.Controllers
 
 			return Redirect("/");
 		}
+
+        [HttpPost]
+        public ActionResult VerticalLogout()
+        {
+            LogoutWebUser.Logout();
+            return new EmptyResult();
+        }
     }
 }

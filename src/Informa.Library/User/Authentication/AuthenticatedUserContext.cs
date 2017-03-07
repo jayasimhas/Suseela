@@ -1,8 +1,10 @@
 ﻿using Informa.Library.Services.Global;
 using Informa.Library.Site;
+using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Sitecore.Security.Authentication;
 using System;
 using System.Web;
 using System.Web.Security;
@@ -16,16 +18,21 @@ namespace Informa.Library.User.Authentication
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IUserSession UserSession;
+        protected readonly IUserProfileFactory UserProfileFactory;
+        protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
 
-        public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext, IGlobalSitecoreService globalService, ISiteRootContext siteRootContext, IUserSession userSession)
+        public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext, IGlobalSitecoreService globalService, ISiteRootContext siteRootContext, IUserSession userSession, IUserProfileFactory userProfileFactory,
+            ISitecoreVirtualUsernameFactory virtualUsernameFactory)
 		{
 			SitecoreUserContext = sitecoreUserContext;
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
             UserSession = userSession;
+            UserProfileFactory = userProfileFactory;
+            VirtualUsernameFactory = virtualUsernameFactory;
         }
 
-		public IAuthenticatedUser User
+        public IAuthenticatedUser User
 		{
 			get
 			{
@@ -59,29 +66,62 @@ namespace Informa.Library.User.Authentication
 
         private bool AuthenticatedUserCheck()
         {
-            if (!SitecoreUserContext.User.IsAuthenticated) return false;
-            var sitecoreUser = SitecoreUserContext.User;
-            string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
-            //The below code tries to read the user session to find the vertical. 
-            if (string.IsNullOrEmpty(loggedInVertical))
-            {
-                var vertical_Session = UserSession.Get<string>("user_vertical");
-                if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
-                {
-                    loggedInVertical = vertical_Session.Value;
-                    sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
-                    if(sitecoreUser.Domain.Name == "extranet")
-                        sitecoreUser.Profile.Save();
-                }
-            }
-            if (!string.IsNullOrEmpty(loggedInVertical))
-            {
-                var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
-                if (curVertical != loggedInVertical)
-                    return false;
-            }
+            var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+            //Current vertical cookiename
+            string cookieName = curVertical + "_LoggedInUser";
+            if (SitecoreUserContext.User.IsAuthenticated && HttpContext.Current.Request.Cookies[cookieName] != null)
             return true;
+          
+            if (HttpContext.Current.Request.Cookies[cookieName] != null)
+            {
+                string username = HttpContext.Current.Request.Cookies[cookieName].Value;
+                if (!string.IsNullOrEmpty(username))
+                {
+                    string uToken = username.Contains("|") ? username.Split('|')[1] : string.Empty;
+                    IAuthenticatedUser user = new AuthenticatedUser() { Username = username ,AccessToken = uToken };
+                    var sitecoreUsername = VirtualUsernameFactory.Create(user);
+                    var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
+                    var userProfile = UserProfileFactory.Create(user);
+                    if (userProfile != null)
+                    {
+                        sitecoreVirtualUser.Profile.Email = userProfile.Email;
+                        sitecoreVirtualUser.Profile.Name = string.Format("{0} {1}", userProfile.FirstName, userProfile.LastName);
+                    }
+
+                    sitecoreVirtualUser.Profile.Comment = string.IsNullOrWhiteSpace(user.AccessToken) ? string.Empty : user.AccessToken;
+                    sitecoreVirtualUser.Profile.Save();
+                    var success = AuthenticationManager.Login(sitecoreVirtualUser.Name, true);
+                    return true;
+                }
+                //if (success)
+                //{
+                //    LoginActions.Process(user);
+                //}
+            }
+            return false;
+            //if (!SitecoreUserContext.User.IsAuthenticated) return false;
+            //var sitecoreUser = SitecoreUserContext.User;
+            //string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
+            ////The below code tries to read the user session to find the vertical. 
+            //if (string.IsNullOrEmpty(loggedInVertical))
+            //{
+            //    var vertical_Session = UserSession.Get<string>("user_vertical");
+            //    if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
+            //    {
+            //        loggedInVertical = vertical_Session.Value;
+            //        sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
+            //        if(sitecoreUser.Domain.Name == "extranet")
+            //            sitecoreUser.Profile.Save();
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(loggedInVertical))
+            //{
+            //    var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+            //    if (!loggedInVertical.Contains(curVertical))
+            //        return false;
+            //}
+            //return true;
         }
-                  
-	}                                      
+
+    }                                      
 }

@@ -74,7 +74,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[0].listableType+'"></use></svg></span></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+ data.articles[0].listableType + '"></use></svg><img src="'+data.articles[0].listableType+'" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="topic-featured-article__inner-wrapper">';
@@ -99,7 +99,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[1].listableType+'"></use></svg></span></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[1].listableType+'"></use></svg><img src="'+data.articles[1].listableType+'" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -125,7 +125,7 @@ function createLayoutInner1(data) {
 	articleData += '<ul>';
 	articleData += data.articles[2].listableDate ? '<li><time class="article-metadata__date">' + data.articles[2].listableDate + '</time></li>' : '';
 	articleData += data.articles[2].linkableText ? '<li><h6>' + data.articles[2].linkableText + '</h6></li>' : '';
-	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[2].listableType+'"></use></svg></span></li>' : '';
+	articleData += data.articles[2].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[2].listableType+'"></use></svg><img src="'+data.articles[2].listableType+'" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';
@@ -238,7 +238,7 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '<ul>'; 
 	sectionData += data.articles[idx].listableDate ? '<li><time class="article-metadata__date">' + data.articles[idx].listableDate + '</time></li>' : '';
 	sectionData += data.articles[idx].linkableText ? '<li><h6>' + data.articles[idx].linkableText + '</h6></li>' : '';
-	sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[idx].listableType+'"></use></svg></span></li>' : '';
+	sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[idx].listableType+'"></use></svg><img src="'+data.articles[idx].listableType+'" width="25" /></span></li>' : '';
 	sectionData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[idx].id + '" data-analytics="{"bookmark": "' + bookmarkInfo + '", "bookmark_title": "' + data.articles[idx].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[idx].isArticleBookmarked + '"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
 	sectionData += '</ul>'; 
 	sectionData += '</div>'; 
@@ -337,7 +337,7 @@ function createLayoutInner2(data) {
 	articleData += '<ul>';
 	articleData += data.articles[0].listableDate ? '<li><time class="article-metadata__date">' + data.articles[0].listableDate + '</time></li>' : '';
 	articleData += data.articles[0].linkableText ? '<li><h6>' + data.articles[0].linkableText + '</h6></li>' : '';
-	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[0].listableType+'"></use></svg></span></li>' : '';
+	articleData += data.articles[0].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[0].listableType+'"></use></svg><img src="'+data.articles[0].listableType+'" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += data.articles[0].listableImage ? '<img class="topic-featured-article__image2 hidden-xs" src="' + data.articles[0].listableImage + '">' : '';
@@ -362,7 +362,7 @@ function createLayoutInner2(data) {
 	articleData += '<ul>';
 	articleData += data.articles[1].listableDate ? '<li><time class="article-metadata__date">' + data.articles[1].listableDate + '</time></li>' : '';
 	articleData += data.articles[1].linkableText ? '<li><h6>' + data.articles[1].linkableText + '</h6></li>' : '';
-	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[1].listableType+'"></use></svg></span></li>' : '';
+	articleData += data.articles[1].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[1].listableType+'"></use></svg><img src="'+data.articles[1].listableType+'" width="25" /></span></li>' : '';
 	articleData += '</ul>';
 	articleData += '</div>';
 	articleData += '<div class="article-preview__inner-wrapper">';

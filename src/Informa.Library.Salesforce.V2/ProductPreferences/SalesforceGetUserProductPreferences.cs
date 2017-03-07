@@ -15,18 +15,21 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         private readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
         private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
         private readonly ISalesforceSaveDocumentFactory SalesforceSaveDocumentFactory;
+        private readonly ISalesforceContentNewsletterFactory SalesforceContentNewsletterFactory;
 
         public SalesforceGetUserProductPreferences(ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserProductPreferencesQueryFactory salesforceGetUserProductPreferencesQueryFactory,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
             ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
-            ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory)
+            ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
+            ISalesforceContentNewsletterFactory salesforceContentNewsletterFactory)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserProductPreferencesQueryFactory = salesforceGetUserProductPreferencesQueryFactory;
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
+            SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
         }
         public T GetProductPreferences<T>(IAuthenticatedUser user, string verticle, string publicationCode, ProductPreferenceType type)
         {
@@ -62,6 +65,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 if(type == ProductPreferenceType.SavedDocuments)
                                 {
                                     return (T)SalesforceSaveDocumentFactory.Create(productPreferences);
+                                }
+                                if(type == ProductPreferenceType.EmailPreference)
+                                {
+                                    return (T)SalesforceContentNewsletterFactory.Create(productPreferences);
+                                }
+                                if (type == ProductPreferenceType.EmailSignUp)
+                                {
+                                    return (T)SalesforceContentNewsletterFactory.CreateOfferOptinGetRequest(productPreferences);
                                 }
                             }
                         }

@@ -1,5 +1,30 @@
 .id-merges-acquisition {
 	font-family: 'Roboto';
+	.idi-table-heading {
+		margin-top: 0;
+	}
+	#scrollbar-horizantal {
+	    height: 10px;
+    	background-color: #eee;
+    	position: relative;
+    	overflow: hidden;
+    	&:after {
+    		content: '';
+    		height: 1px;
+    		width: 100%;
+    		background-color: #777777;
+    		position: absolute;
+    		top: 50%;
+    	}
+    	#scrollbar {
+    		height: 8px;
+    		background-color: #777777;
+    		width: 20px;
+    		position: absolute;
+    		top: 1px;
+    		left: 0;
+    	}
+	}
 	.merges-form, .visible-xs {
 		display: none;
 		@include breakpoint('small') {
@@ -37,11 +62,15 @@
 	    	}
 	    }
 	}
+	.small_table .table-responsive .pad-10 {
+		padding: 1rem;
+	}
 	.dealsOmitted {
 	    width: 100%;
-	    padding: 10px 0;
+	    padding: 16px 0 18px 0;
 	    text-align: right;
 	    background-color: #fff;
+	    margin: 0;
 	}
 	hr {
 		display: block !important;

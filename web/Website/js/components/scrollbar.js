@@ -4,14 +4,20 @@ if($('.scrollbar') && $('.scrollbar').length){
 			content = $(this).parents('.rolling-stream').find('.content')[0],
 			scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
 
+		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+		  	scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+		  	
 		content.addEventListener('scroll', function(e) {
 		  scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 		  scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
 		});
-		var event = new Event('scroll');
+		// var event = new Event('scroll');
 
-		window.addEventListener('resize', content.dispatchEvent.bind(content, event));
-		content.dispatchEvent(event);
+		window.addEventListener('resize', function(e){
+			scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+		  	scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
+		});
+		// content.dispatchEvent(event);
 
 		scroll.addEventListener('mousedown', function(start){
 		  start.preventDefault();
@@ -29,11 +35,18 @@ if($('.scrollbar') && $('.scrollbar').length){
 	});
 }
 
-// $(document).on('scroll', '.rolling-stream .content', function() {
-// 		var container = $(this).parents('.rolling-stream').find('.scrollbar-container')[0],
-// 			content = $(this).parents('.rolling-stream').find('.content')[0],
-// 			scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
+//Horizontal Scroll Bar
+if($('#scrollbar-horizantal')) {
+	var container = $('#scrollbar-horizantal')[0],
+		content = $('.wrap-merge')[0],
+		scroll = $('#scrollbar')[0];
 
-// 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
-// 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
-// });
+	//scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
+
+	$(window).on('resize', function() {
+		scroll.style.width = ( $('.merge-acquistion').width() - $('.wrap-merge').width() ) + 'px';
+	})
+	$('.wrap-merge').on('scroll', function() {
+		scroll.style.left = (($(this).find('.table').offset().left * -1) + 14) + 'px';
+	});
+}

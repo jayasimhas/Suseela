@@ -4,5 +4,6 @@
 	{
 		public bool OptIn { get; set; }
 		public string NewsletterType { get; set; }
+        public string SalesforceId { get; set; }
 	}
 }
