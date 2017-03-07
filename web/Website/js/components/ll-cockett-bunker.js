@@ -8,13 +8,13 @@
 			Parent.empty();
 			
 			for(var key in data[0]) {
-				TableStr += self.RenderSingleTable(data[0][key]);
+				TableStr += self.RenderSingleTable(key, data[0][key]);
 			}
 
 			Parent.append(TableStr);
 
 		},
-		RenderSingleTable: function(Data) {
+		RenderSingleTable: function(item, Data) {
 			console.log(Data);
 			var HeadingStr = "",
 				SubHeadingStr = "",
@@ -51,6 +51,11 @@
 
 			var Table = '<table class="table">'+
 							'<thead class="table_head">'+
+								'<tr>'+
+									'<th class="pad-full-10" colspan="3">'+
+										item+
+									'</th>'+
+								'</tr>'+
 								'<tr>'+
 									HeadingStr+
 								'</tr>'+

@@ -7169,12 +7169,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			Parent.empty();
 
 			for (var key in data[0]) {
-				TableStr += self.RenderSingleTable(data[0][key]);
+				TableStr += self.RenderSingleTable(key, data[0][key]);
 			}
 
 			Parent.append(TableStr);
 		},
-		RenderSingleTable: function RenderSingleTable(Data) {
+		RenderSingleTable: function RenderSingleTable(item, Data) {
 			console.log(Data);
 			var HeadingStr = "",
 			    SubHeadingStr = "",
@@ -7202,7 +7202,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				TbodyStr += '<tr>' + Td + '</tr>';
 			}
 
-			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th class="pad-full-10" colspan="3">' + item + '</th>' + '</tr>' + '<tr>' + HeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 
 			return Table;
 		},
@@ -7258,13 +7258,13 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			$.each(tableObj[0], function (key, val) {
 				self.table += '<table class="table">';
 				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
-				self.table += '<tr class="visible-lg">';
-				var tableHead = val[0];
-				for (var prop in tableHead) {
-					self.table += '<th class="pad-10">' + prop + '</th>';
-				}
-				self.table += '</tr>';
+				self.table += '<tr><th colspan="3" class="pad-full-10">' + key + '</th></tr>';
+				/*self.table += '<tr class="visible-lg">';
+    var tableHead = val[0];
+    	for(var prop in tableHead){
+    		self.table += '<th class="pad-10">'+prop+'</th>';
+    	}
+    	self.table += '</tr>';*/
 				self.table += '</thead>';
 				self.table += '</table>';
 			});
