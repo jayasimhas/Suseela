@@ -13331,7 +13331,7 @@ $(document).ready(function () {
              }
          } else {*/
         for (var i = 0; i < $('.newsletter_checkbox.wcs-c-on').length; i++) {
-            pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            pub_newsletter += $($('.newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
         }
         // }
         var eventDetails = {
