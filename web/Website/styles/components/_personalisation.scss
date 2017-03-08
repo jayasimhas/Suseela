@@ -542,10 +542,17 @@
 
 .listViewCont{
 	display: none;
+	@media screen and (max-width: 767px){
+		display: none !important;
+	}
 }
 .gridViewCont{
 	display: none;
+	@media screen and (max-width: 767px){
+		display: block !important;
+	}
 }
+@media screen and (min-width: 768px){
 .listView{
 	.listViewCont{
 		display: block;
@@ -565,15 +572,25 @@
 		font-weight: normal;
 	}
 	.topic-article-image_pan{
-		width: 19.5rem;
-		height: 11.875rem;
-		float: left;
-		.topic-featured-article__image{  
-			width: 17.5rem !important;
-			height: 10rem !important;
-			@include breakpoint('medium') {
-				margin: 0px;
+		//width: 19.5rem;
+		@media screen and (min-width: 480px){
+			height: 11.875rem;
+			float: left;
+		}
+		.topic-featured-article__image{
+			@media screen and (min-width: 480px){
+				width: 17.5rem !important;
+				height: 10rem !important;
+				margin-right: 32px;
 			}
+			@include breakpoint('medium') {
+				margin-top: 0px;
+			}
+		}
+	}
+	.topic-featured-article__headline{
+		@include breakpoint('medium') {
+			margin-top: 0px;
 		}
 	}
 	.bar-separated-link-list a{
@@ -584,8 +601,11 @@
 		//float: left;
 	}
 	.article-preview__tags{
-		width: auto;
+		@media screen and (min-width: 480px){
+			width: auto;
+		}
 		z-index: 999;
+		bottom: 1.25rem;
 		a{
 			max-width: inherit;
 			font-size: 1rem;
@@ -599,23 +619,35 @@
 				}
 		}
 	}
-				
+	.article-preview__tags {
+		@media screen and (max-width: 480px){
+			position: relative;
+			top: -18px;
+		}
+	}			
 	.list-featured-article { 
 		border-bottom: 1px solid #e7e7e7;
 		margin-bottom: 1rem;
-		padding-bottom: 0.75rem;
+		padding-bottom: 2px;
 		width: 100%;
 		.article-preview__byline{
 			margin-bottom: 0.3125rem;
 			.authorTitle{
-				width: 35%;
-				float: left;
+				@media screen and (min-width: 480px){
+					width: 35%;
+					float: left;
+				}
+				@media screen and (max-width: 480px){
+					margin-bottom: 5px;
+				}
 			} 
 			ul{
 				display: inline-block;
-				float: right;
-				width: 65%; 
-				text-align: right;
+				@media screen and (min-width: 480px){
+					float: right;
+					width: 65%; 
+					text-align: right;
+				}
 				margin-top: 1px;
 			}
 			&:after{
@@ -629,12 +661,16 @@
 		font-size: 18px;
 		color: #231F20;
 		height: 8.125rem;
+		@media screen and (max-width: 480px){
+			height: 9.375rem;
+		}
 		line-height: 24px;
 		&:after{
 			background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);
 			height: 5rem;
 		}
 	} 
+}
 }
 .gridView{
 	.gridViewCont{
