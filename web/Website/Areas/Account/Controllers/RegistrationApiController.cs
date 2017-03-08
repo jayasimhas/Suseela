@@ -17,6 +17,8 @@ using Informa.Library.User.Orders;
 using Informa.Library.User.Profile;
 using System;
 using log4net;
+using System.Web;
+using System.Configuration;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -106,6 +108,21 @@ namespace Informa.Web.Areas.Account.Controllers
                 reasons.AddRange(registerResult.Errors.Select(e => GetRegisterValidationReason(e)));
             }
 
+            if(success)
+            {
+                string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
+                //Current vertical cookiename
+                string cookieName = curVertical + "_LoggedInUser";
+                //Current Vertical subdomain
+                string domain = ConfigurationManager.AppSettings[curVertical];
+
+                HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
+                LoggedinKeyCookie.Value = request.Username;
+                LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+                LoggedinKeyCookie.Domain = domain;
+                HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            }
+
             var registrationType = GetRegistrationType(UserCompanyContext);
 
             return Ok(new
@@ -166,6 +183,21 @@ namespace Informa.Web.Areas.Account.Controllers
                     success = false,
                     reasons = "CreateOrderFailed"
                 });
+
+            if (orderResult.Success)
+            {
+                string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
+                //Current vertical cookiename
+                string cookieName = curVertical + "_LoggedInUser";
+                //Current Vertical subdomain
+                string domain = ConfigurationManager.AppSettings[curVertical];
+
+                HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
+                LoggedinKeyCookie.Value = form.Username;
+                LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+                LoggedinKeyCookie.Domain = domain;
+                HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            }
 
             return Ok(new
             {
