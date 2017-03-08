@@ -4,6 +4,6 @@ namespace Informa.Library.User.Newsletter
 {
 	public interface ISetPublicationsNewsletterUserOptIns
 	{
-		bool Set(IEnumerable<string> publications, NewsletterPreference method);
+		bool Set(IEnumerable<string> publications, bool isUpdate);
 	}
 }

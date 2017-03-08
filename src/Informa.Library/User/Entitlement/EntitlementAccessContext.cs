@@ -79,6 +79,10 @@ namespace Informa.Library.User.Entitlement
             {
                 return entitledProduct.Channels.Contains(entitlement.ProductCode) || (!entitledProduct.Channels.Any() && !entitledProduct.IsFree && !string.IsNullOrEmpty(entitlement.ProductCode));
             }
+            else if(entitledProduct.EntitlementLevel == EntitlementLevel.Item)
+            {
+                return entitledProduct.Channels.Contains(entitlement.ProductCode);
+            }
             else if (entitledProduct.EntitlementLevel == EntitlementLevel.Site)
             {
                 return string.Equals(entitlement.ProductCode, entitledProduct.ProductCode, StringComparison.InvariantCultureIgnoreCase);

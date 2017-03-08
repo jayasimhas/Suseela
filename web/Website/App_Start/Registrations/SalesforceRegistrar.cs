@@ -53,7 +53,7 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceUserOrder>().As<IUserOrder>();
             builder.RegisterType<HttpClientHelper>().As<IHttpClientHelper>();
             builder.RegisterType<SalesforceSaveDocumentFactory>().As<ISalesforceSaveDocumentFactory>();
-            builder.RegisterType<SalesforceContentNewsletterFactory>().As<ISalesforceContentNewsletterFactory>();
+            builder.RegisterType<SalesforceNewsletterFactory>().As<ISalesforceNewsletterFactory>();
         }
     }
 }

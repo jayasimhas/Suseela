@@ -15,14 +15,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         private readonly ISalesforceSavedSearchFactory SalesforceSavedSearchRequestFactory;
         private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
         private readonly ISalesforceSaveDocumentFactory SalesforceSaveDocumentFactory;
-        private readonly ISalesforceContentNewsletterFactory SalesforceContentNewsletterFactory;
+        private readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
 
         public SalesforceGetUserProductPreferences(ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserProductPreferencesQueryFactory salesforceGetUserProductPreferencesQueryFactory,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
             ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
             ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
-            ISalesforceContentNewsletterFactory salesforceContentNewsletterFactory)
+            ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserProductPreferencesQueryFactory = salesforceGetUserProductPreferencesQueryFactory;

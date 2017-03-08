@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
-    public class SalesforceContentNewsletterFactory : ISalesforceContentNewsletterFactory
+    public class SalesforceNewsletterFactory : ISalesforceNewsletterFactory
     {
         private const string EmailPreference = "Email Preference";
         private const string EmailSignUp = "Email Signup";
