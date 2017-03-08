@@ -288,5 +288,8 @@
     }
     #cockett-Bunker .table_head {
         background-color: $seconday-color !important;
+        tr:first-child {
+            background-color: $primary-color !important;
+        }
     }
 }
