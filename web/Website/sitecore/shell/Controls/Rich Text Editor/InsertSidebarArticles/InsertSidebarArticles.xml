@@ -84,10 +84,10 @@ jQuery.ajax({
 			<tr>	
 			<td>
 			<Literal ID="SearchMessage" Text="Enter the article number to search for articles"/>
-			<Edit ID="searchText" Width="300px" Placeholder="Type here to search" autocomplete="off"/>
-			<select ID="SearchCombo" size="10" style="width: 300px;"></select>			
+			<Edit ID="searchText" Width="490px" Placeholder="Type here to search" autocomplete="off"/>
+			<select ID="SearchCombo" size="10" style="width: 490px;height:100px"></select>			
 			</td>	        	  
-			<td><Button ID="SearchButton" style="position: relative;left:25px;top:-77px;" Header="Search"/></td>
+			<td><Button ID="SearchButton" style="position: relative;left:25px;top:-42px;" Header="Search"/></td>
 			</tr>
 			</table>
         </Tab>            
