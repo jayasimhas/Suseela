@@ -8965,8 +8965,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10605,11 +10605,11 @@ div#feedbacklite.fbl_r {
     margin-bottom: 15px;
     margin-bottom: 0.9375rem; }
   .package-wrapper .package-control-preview .package-heading-wrapper {
-    margin-top: 20px;
-    margin-top: 1.25rem; }
+    margin-top: 16px;
+    margin-top: 1rem; }
     .package-wrapper .package-control-preview .package-heading-wrapper h3.article-preview__headline, .package-wrapper .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title {
-      padding: 16px 0;
-      padding: 1rem 0;
+      padding: 16px 0 8px 0;
+      padding: 1rem 0 0.5rem 0;
       font-family: Roboto;
       font-size: 20px;
       font-size: 1.25rem;
@@ -10641,8 +10641,10 @@ div#feedbacklite.fbl_r {
   .package-control-articles__half .header-line-control {
     width: 100%;
     position: relative;
-    margin: 0 0 20px 0;
-    margin: 0 0 1.25rem 0; }
+    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
+    font-size: 30px;
+    font-size: 1.875rem; }
     .package-control-articles__half .header-line-control:after {
       content: '';
       position: absolute;
@@ -10661,9 +10663,21 @@ div#feedbacklite.fbl_r {
       z-index: 9;
       padding-right: 20px;
       padding-right: 1.25rem; }
+  .package-control-articles__half .article-metadata li:nth-child(2) {
+    border-left: none; }
+  .package-control-articles__half .package-img-wrapper {
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; }
+  .package-control-articles__half .package-wrapper {
+    margin: 0 -13px;
+    margin: 0 -0.8125rem; }
   .package-control-articles__half .package-control-preview {
     width: 50%;
     float: left; }
+    .package-control-articles__half .package-control-preview:first-child {
+      width: 50%; }
+      .package-control-articles__half .package-control-preview:first-child .article-preview__headline, .package-control-articles__half .package-control-preview:first-child .article-preview__byline, .package-control-articles__half .package-control-preview:first-child .article-metadata {
+        margin-bottom: 0; }
     @media (max-width: 480px) {
       .package-control-articles__half .package-control-preview {
         width: 100%; } }
@@ -10686,7 +10700,8 @@ div#feedbacklite.fbl_r {
     background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
     z-index: 227; }
   .package-control-articles__half .package-control-preview .article-preview__inner-wrapper {
-    position: relative; }
+    position: relative;
+    margin-bottom: 0.3125px !important; }
     .package-control-articles__half .package-control-preview .article-preview__inner-wrapper .article-metadata li:last-child {
       right: 0;
       float: right;
@@ -10696,8 +10711,10 @@ div#feedbacklite.fbl_r {
   .package-control-articles__half .package-control-preview .package-heading-wrapper {
     margin-top: 0; }
     .package-control-articles__half .package-control-preview .package-heading-wrapper h3.article-preview__headline, .package-control-articles__half .package-control-preview .package-heading-wrapper .article-preview__headline.article-call-to-action__title {
-      padding-bottom: 8px;
-      padding-bottom: 0.5rem;
+      padding-top: 15px;
+      padding-bottom: 9px;
+      padding-bottom: 0.5625rem;
+      margin-bottom: 5px;
       font-family: Roboto;
       font-size: 20px;
       font-size: 1.25rem;
@@ -12851,7 +12868,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
