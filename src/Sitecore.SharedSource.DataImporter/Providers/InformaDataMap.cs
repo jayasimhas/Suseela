@@ -424,7 +424,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         {
 
-                            string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
+                            string BodyTextremovehtml = FindingTextFromHTML(GetXMLData(d, "BODY"));
                             string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
                             string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
                             string summSearch = RemovespecialcharactersfromString(summarySearch);
@@ -461,7 +461,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (publication == "AnimalPharm")
                                 {
-                                    animalhealthSearchResults = GetListFromXml(publication, "animalhealth", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                                    animalhealthSearchResults = GetListFromXml(publication, "animalhealthDiseases", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                     animalhealthnewSearchResults = GetListFromXml(publication, "animalhealthnew", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 if (publication == "Agrow")
