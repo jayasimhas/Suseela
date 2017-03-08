@@ -42,7 +42,7 @@ namespace Informa.Library.User.Offer
             VerticalRootContext = verticalRootContext;
         }
 
-        public bool Update(bool optIn, NewsletterPreference method)
+        public bool Update(bool optIn, bool isUpdate)
         {
             if (!UserContext.IsAuthenticated)
             {
@@ -51,7 +51,7 @@ namespace Informa.Library.User.Offer
             bool success = false;
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
-                if (method.Equals(NewsletterPreference.Add))
+                if (!isUpdate)
                 {
                     success = AddUserProductPreference.AddOffersOptIns(VerticalRootContext?.Item?.Vertical_Name ?? string.Empty,
                 SiteRootContext?.Item?.Publication_Code ?? string.Empty,

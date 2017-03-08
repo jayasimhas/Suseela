@@ -15,27 +15,34 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 		protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
 		protected readonly IFindUserProfileByUsername FindUserProfile;
+        protected readonly INewsletterUserOptInsContext NewsletterUserOptInsContext;
+        protected readonly IOfferUserOptedInContext OfferUserOptedInContext;
 
-		public PreferencesApiController(
+        public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
 			ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
-			IFindUserProfileByUsername findUserProfile)
+			IFindUserProfileByUsername findUserProfile,
+            INewsletterUserOptInsContext newsletterUserOptInsContext,
+            IOfferUserOptedInContext offerUserOptedInContext
+            )
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
 			NewsletterOptedInContext = newsletterOptedInContext;
 			SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
 			FindUserProfile = findUserProfile;
-		}
+            NewsletterUserOptInsContext = newsletterUserOptInsContext;
+            OfferUserOptedInContext = offerUserOptedInContext;
+        }
 
 		[HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
 		{         
-            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>(), NewsletterPreference.Update);
-			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn, NewsletterPreference.Update);
+            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>(), NewsletterUserOptInsContext.OptIns.Count() > 0);
+			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn,!string.IsNullOrEmpty(OfferUserOptedInContext.OptedIn.SalesforceId));
 
 			return Ok(new
 			{

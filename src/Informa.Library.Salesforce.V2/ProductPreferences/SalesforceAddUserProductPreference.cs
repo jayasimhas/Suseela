@@ -24,7 +24,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
         protected readonly ISalesforceDeleteUserProductPreferences SalesforceDeleteUserProductPreferences;
-        protected readonly ISalesforceContentNewsletterFactory SalesforceContentNewsletterFactory;
+        protected readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
         public SalesforceAddUserProductPreference(
             ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
             ITextTranslator textTranslator,
@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
             ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
-            ISalesforceContentNewsletterFactory salesforceContentNewsletterFactory)
+            ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;

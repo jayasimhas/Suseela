@@ -59,7 +59,6 @@
       <HintPath>..\..\lib\Microsoft\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,7 +74,7 @@
     <Compile Include="ProductPreferences\AddProductPreferenceRequestAttributes.cs" />
     <Compile Include="ProductPreferences\AddProductPreferenceResponse.cs" />
     <Compile Include="ProductPreferences\AddProductPreferenceResultItem.cs" />
-    <Compile Include="ProductPreferences\ISalesforceContentNewsletterFactory.cs" />
+    <Compile Include="ProductPreferences\ISalesforceNewsletterFactory.cs" />
     <Compile Include="ProductPreferences\ISalesforceContentPreferencesFactory.cs" />
     <Compile Include="ProductPreferences\ISalesforceDeleteUserProductPreferencesQueryFactory.cs" />
     <Compile Include="ProductPreferences\ISalesforceGetUserProductPreferencesQueryFactory.cs" />
@@ -90,7 +89,7 @@
     <Compile Include="ProductPreferences\ProductPreferencesResult.cs" />
     <Compile Include="ProductPreferences\Record.cs" />
     <Compile Include="ProductPreferences\SalesforceAddUserProductPreference.cs" />
-    <Compile Include="ProductPreferences\SalesforceContentNewsletterFactory.cs" />
+    <Compile Include="ProductPreferences\SalesforceNewsletterFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceContentPreferencesFactory.cs" />
     <Compile Include="ProductPreferences\SalesforceDeleteUserProductPreferences.cs" />
     <Compile Include="ProductPreferences\SalesforceDeleteUserProductPreferencesQueryFactory.cs" />

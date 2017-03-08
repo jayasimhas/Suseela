@@ -20,14 +20,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
-        private readonly ISalesforceContentNewsletterFactory SalesforceContentNewsletterFactory;
+        private readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
 
         public SalesforceUpdateUserProductPreference(
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
             ITextTranslator textTranslator,
     ISalesforceConfigurationContext salesforceConfigurationContext,
     ISalesforceInfoLogger infoLogger,
-    ISalesforceContentNewsletterFactory salesforceContentNewsletterFactory)
+    ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             TextTranslator = textTranslator;
