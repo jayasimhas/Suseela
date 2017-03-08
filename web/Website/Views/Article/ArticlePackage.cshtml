@@ -133,7 +133,7 @@
                                                                             <li>
 
                                                                                 @{
-                                                                                    dateDiff = DateTime.Now - firstArticle.ListableDate;
+                                                                                    dateDiff = DateTime.Now - article.ListableDate;
                                                                                     if (dateDiff.TotalMinutes < 60)
                                                                                     {
                                                                                         var datelbl = dateDiff.Minutes + " min ago";
@@ -146,7 +146,7 @@
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                        <time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time>
                                                                                     }
                                                                                 }
                                                                             </li>
@@ -255,7 +255,7 @@
                                                                         <li>
 
                                                                             @{
-                                                                                dateDiff = DateTime.Now - firstArticle.ListableDate;
+                                                                                dateDiff = DateTime.Now - fifthArticle.ListableDate;
                                                                                 if (dateDiff.TotalMinutes < 60)
                                                                                 {
                                                                                     var datelbl = dateDiff.Minutes + " min ago";
@@ -268,7 +268,7 @@
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                    <time class="article-metadata__date">@fifthArticle.ListableDate.ToString("d MMM yyyy")</time>
                                                                                 }
                                                                             }
                                                                         </li>
