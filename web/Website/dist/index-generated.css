@@ -7201,19 +7201,24 @@ section: UI Elements
     line-height: 30px; }
     .register .register_newsletter .newsletter_box p .latest_newsletter {
       color: #c12d3b; }
-  .register .register_newsletter .newsletter_box .site_div h1 {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex; }
-  @media (max-width: 480px) {
-    .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
-      display: none; }
-      .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox input {
-        width: 1px;
-        height: 1px; } }
-  @media (max-width: 640px) {
-    .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
-      display: none; } }
+  .register .register_newsletter .newsletter_box .site_div {
+    padding-right: 117px; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .newsletter_box .site_div {
+        padding-right: 0; } }
+    .register .register_newsletter .newsletter_box .site_div h1 {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
+        display: none; }
+        .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox input {
+          width: 1px;
+          height: 1px; } }
+    @media (max-width: 640px) {
+      .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
+        display: none; } }
   .register .register_newsletter .newsletter_box .newsletter_checkbox {
     display: inline;
     float: right;
@@ -7245,20 +7250,29 @@ section: UI Elements
       .register .register_newsletter .newsletter_box .newsletter_checkbox.wcs-c-on .chk_box {
         background-position: -7px -529px;
         background-color: #F5821F; }
-  .register .register_newsletter .newsletter_box .mobile {
-    display: none;
-    clear: both; }
+  .register .register_newsletter .newsletter_box .checkbox-wrapper {
+    clear: both;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    right: 1rem; }
+    .register .register_newsletter .newsletter_box .checkbox-wrapper hr {
+      display: none; }
+      @media (max-width: 480px) {
+        .register .register_newsletter .newsletter_box .checkbox-wrapper hr {
+          display: block; } }
     @media (max-width: 480px) {
-      .register .register_newsletter .newsletter_box .mobile {
-        display: block; }
-        .register .register_newsletter .newsletter_box .mobile .newsletter_checkbox {
+      .register .register_newsletter .newsletter_box .checkbox-wrapper {
+        display: block;
+        position: static; }
+        .register .register_newsletter .newsletter_box .checkbox-wrapper .newsletter_checkbox {
           float: left;
           margin-top: 10px;
           margin-bottom: 5px; } }
     @media (max-width: 640px) {
-      .register .register_newsletter .newsletter_box .mobile {
+      .register .register_newsletter .newsletter_box .checkbox-wrapper {
         display: block; }
-        .register .register_newsletter .newsletter_box .mobile .newsletter_checkbox {
+        .register .register_newsletter .newsletter_box .checkbox-wrapper .newsletter_checkbox {
           float: left;
           margin-top: 10px;
           margin-bottom: 5px; } }
@@ -8931,8 +8945,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12839,7 +12853,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
