@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
-    public interface ISalesforceContentNewsletterFactory
+    public interface ISalesforceNewsletterFactory
     {
         AddProductPreferenceRequest Create(string username, string verticalName, string publicationCode, IEnumerable<INewsletterUserOptIn> optIns);
         IList<INewsletterUserOptIn> Create(ProductPreferencesResult entity);

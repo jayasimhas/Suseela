@@ -24,7 +24,7 @@ namespace Informa.Library.User.Newsletter
             SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
-		public bool Set(IEnumerable<string> publications, NewsletterPreference method)
+		public bool Set(IEnumerable<string> publications, bool isUpdate)
 		{
 			var newsletterTypes = new List<string>();
             var OptIns = new List<INewsletterUserOptIn>();
@@ -38,7 +38,7 @@ namespace Informa.Library.User.Newsletter
 
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
-                if (method.Equals(NewsletterPreference.Add))
+                if (!isUpdate)
                 {
                     foreach (var siteTypes in SitesNewsletterTypes.SiteTypes)
                     {
@@ -62,18 +62,11 @@ namespace Informa.Library.User.Newsletter
                     OptIns.ForEach(noi => noi.OptIn = newsletterTypes.Contains(noi.NewsletterType));
                     return SetNewsletterOptIns.Add(OptIns);
                     
-                }
-                else
-                {
-                    return SetNewsletterOptIns.Set(newsletterTypes);
-                }
+                }               
             }
-            else
-            {       
-                return SetNewsletterOptIns.Set(newsletterTypes);
-            }
-           	
-		}
+            return SetNewsletterOptIns.Set(newsletterTypes);
+
+        }
         
 		public void AddType(string newsletterType, ref List<string> newsletterTypes)
 		{

@@ -13,7 +13,7 @@
         </div>
 
         <form class="form-registration"
-              data-on-submit="/Account/api/RegistrationApi/Register/"
+              data-on-submit="/Account/api/RegistrationApi/Register/?vid=@Model.CurVerticalName"
               data-on-success="@( Model.NextStepUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
 
             <p class=" page-registration__error

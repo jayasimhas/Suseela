@@ -633,94 +633,11 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
             </div>
 
                 <div class="page-account-contact__column">
-                    <form class="form-update-account-pass"
-                          data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
-
-                        <div class="alert-success page-account-contact__update-pass-success js-form-success">
-                            <svg class="alert__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-                            </svg>
-                            <p>Password Updated </p>
-                        </div>
-
-                        <div class="alert-error js-form-error js-form-error-PasswordUpdateFailed">
-                            <svg class="alert__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                            </svg>
-
-                            <p class="page-account-contact__error">
-                                The password update failed
-                            </p>
-                        </div>
-
-                        <div class="alert-error js-form-error js-form-error-PasswordRequirements">
-                            <svg class="alert__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                            </svg>
-
-                            <p class="page-account-contact__error">
-                                The password you entered didn&#39;t meet all the requirements.
-(minimum 7 characters - must include at least 1 number and 1 symbol; case-sensitive)
-                            </p>
-                        </div>
-
-                        <div class="alert-error js-form-error js-form-error-PasswordMismatch">
-                            <svg class="alert__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                            </svg>
-
-                            <p class="page-account-contact__error">
-                                The new passwords you provided didn&#39;t match
-                            </p>
-                        </div>
-
-                        <div class="alert-error js-form-error js-form-error-InvalidPasswordValues">
-                            <svg class="alert__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                            </svg>
-
-                            <p class="page-account-contact__error">
-                                The password values you provided were invalid
-                            </p>
-                        </div>
-
-                        <h2 class="page-account__subheader">Update Your Password</h2>
-
-                        <p>
-                            <label for="CurrentPassword" class="page-account__text-label">
-                                Current Password
-                            </label>
-                            <input type="password"
-                                   name="CurrentPassword"
-                                   placeholder="Current Password">
-                        </p>
-
-                        <p>
-                            <label for="NewPassword" class="page-account__text-label">
-                                New Password
-                                <span class="page-account__text-label-hint">(minimum 7 characters - must include at least 1 number and 1 symbol; case-sensitive)
-</span>
-                            </label>
-                            <input type="password"
-                                   name="NewPassword"
-                                   placeholder="New Password">
-                        </p>
-
-                        <p>
-                            <label for="NewPasswordConfirm" class="page-account__text-label">
-                                Re-Type New Password
-                            </label>
-                            <input type="password"
-                                   name="NewPasswordConfirm"
-                                   placeholder="New Password Confirm">
-                        </p>
-
-                        <div class="page-preferences__submit-wrapper">
-                            <button type="submit" class="button--filled button--fly-right click-utag" data-info='{"event_name":"update-password"}'>Update Password</button>
-                        </div>
-
-                    </form>
-
+                    <h2 class="page-account__subheader">Update Your Password</h2>
+                    <p class="update-password-text">Click here to update password</p>
+                    <div class="page-preferences__submit-wrapper">
+                        <a href="https://ideqa-informabi.cs82.force.com/agribusiness/changepassword?referralurl=https://uat-6l532e41q7j8-iegvu-ide-agribusinessintelligence.informa.com/my-account/contact-information&amp;referralid=IEGV" class="button--filled button--fly-right click-utag full-width-button update-password-btn">Update Password</a>
+                    </div>
                 </div>
 
             <hr>
@@ -929,6 +846,9 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                             </div>
                         </div>
 
+                    </div>
+
+                    <div class="page-account-contact__column">
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
                             <h2 class="page-account__subheader">Phone &amp; Fax</h2>
@@ -945,7 +865,7 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
 
                             <p>
                                 <label for="Mobile" class="page-account__text-label">
-                                    Phone <span class="asterisk-required"></span>
+                                    Mobile <span class="asterisk-required"></span>
                                 </label>
                                 <input type="text"
                                        name="Mobile"
@@ -954,10 +874,6 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                             </p>
 
                         </div>
-                    </div>
-
-                    <div class="page-account-contact__column">
-
                         <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
                             <h2 class="page-account__subheader">Shipping Address</h2>
@@ -1232,10 +1148,25 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
                                 <label for="ShipState" class="page-account__text-label">
                                     State/Province (US/Canada)
                                 </label>
-                                <input type="text"
-                                       name="ShipState"
-                                       value=""
-                                       placeholder="State or Province" id="txtShippingState">
+                                <select name="ShipState" class="required">
+                                        <option  value="">- Select One -</option>
+                                        <option  value="AgriIndustry">AgriIndustry</option>
+                                        <option  value="Biotechnology">Biotechnology</option>
+                                        <option  value="Biotechnology Agri Vertical">Biotechnology Agri Vertical</option>
+                                        <option  value="Communications, Advertising, PR">Communications, Advertising, PR</option>
+                                        <option  value="Consulting">Consulting</option>
+                                        <option  value="Consumer/OTC">Consumer/OTC</option>
+                                        <option  value="Device">Device</option>
+                                        <option  value="Diagnostics">Diagnostics</option>
+                                        <option  value="Education">Education</option>
+                                        <option  value="Financial Services/Investment">Financial Services/Investment</option>
+                                        <option  value="Government">Government</option>
+                                        <option  value="Health Care Services">Health Care Services</option>
+                                        <option  value="Law">Law</option>
+                                        <option  value="Not For Profit">Not For Profit</option>
+                                        <option  value="Other">Other</option>
+                                        <option  value="Pharmaceutical">Pharmaceutical</option>
+                                </select>
                             </p>
 
                             <p>

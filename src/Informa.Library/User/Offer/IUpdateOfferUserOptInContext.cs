@@ -4,6 +4,6 @@ namespace Informa.Library.User.Offer
 {
 	public interface IUpdateOfferUserOptInContext
 	{
-		bool Update(bool optIn, NewsletterPreference method);
+		bool Update(bool optIn,bool isUpdate);
 	}
 }

@@ -1143,11 +1143,11 @@ $(document).ready(function(){
         var pub_newsletter = '';
         if (window.matchMedia("(max-width: 600px)").matches) {
             for(var i=0; i<$('.mobile .newsletter_checkbox.wcs-c-on').length; i++){
-                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+                pub_newsletter += $($('.mobile .newsletter_checkbox.wcs-c-on')[i]).parents('.newsletter_box').find('.article-preview__headline').html() + ', ';
             }
         } else {
-            for(var i=0; i<$('.site_div .newsletter_checkbox.wcs-c-on').length; i++){
-                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+            for(var i=0; i<$('.newsletter_checkbox.wcs-c-on').length; i++){
+                pub_newsletter += $($('.newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
             }
         } 
         var eventDetails = {

@@ -149,7 +149,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
 
             if (!string.IsNullOrEmpty(memIframeTitle.Value))
             {
-                var paraTitleElement = ParagraphStyles("Title", iframeGroupId, memIframeTitle.Value);
+                var paraTitleElement = ParagraphStyles("title", iframeGroupId, memIframeTitle.Value);
                 xData.Add(paraTitleElement);
             }
 
@@ -181,13 +181,13 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             xData.Add(iframeGroupElement);
             if (!string.IsNullOrEmpty(memIframeCaption.Value))
             {
-                var paraCaptionElement = ParagraphStyles("Caption", iframeGroupId, memIframeCaption.Value);
+                var paraCaptionElement = ParagraphStyles("caption", iframeGroupId, memIframeCaption.Value);
                 xData.Add(paraCaptionElement);
             }
 
             if (!string.IsNullOrEmpty(memIframeSource.Value))
             {
-                var paraSourceElement = ParagraphStyles("Source", iframeGroupId, memIframeSource.Value);
+                var paraSourceElement = ParagraphStyles("source", iframeGroupId, memIframeSource.Value);
                 xData.Add(paraSourceElement);
             }
 

@@ -11,7 +11,7 @@ if (urlparam[0] == 'itemid') {
 // alert(urlparam[1]);
 }
 }
-	//UpdateReferencedArticles(selectedID,urlparam[1]);
+	UpdateReferencedArticles(selectedID,urlparam[1]);
 }
 
 function scClose(text) {
@@ -139,10 +139,7 @@ function UpdateReferencedArticles(selectedArticleID, currentItemId) {
       dataType: 'json',
       success: function (a) { 
 		  
-	/*  var returnValue = {
-         Text: a.d
-     }; */
-     // getRadWindow().close(returnValue);
+	alert('success');
 	  },
 	  error:function(a){
 	  alert('error calling function');

@@ -49,8 +49,8 @@ var html = editor.getSelectionHtml();
     editor.showExternalDialog(
   "/sitecore/shell/default.aspx?xmlcontrol=RichText.InsertSidebarArticles&la=" + scLanguage + "&selectedText=" + escape(html)+ "&articletype=sidebar&itemid="+scItemID,
   null, //argument
-  500, //width
-  600, //height
+  700, //width
+  400, //height
   scRTEManager, //callback
   null, // callback args
   "Insert Youtube IFrame",
@@ -66,8 +66,8 @@ var html = editor.getSelectionHtml();
     editor.showExternalDialog(                         
   "/sitecore/shell/default.aspx?xmlcontrol=RichText.InsertSidebarArticles&la=" + scLanguage + "&selectedText=" + escape(html)+"&articletype=referenced&itemid="+scItemID,
   null, //argument
-  800, //width
-  600, //height
+  700, //width
+  400, //height
   scRTEManager, //callback
   null, // callback args
   "Insert Youtube IFrame",
@@ -76,24 +76,26 @@ var html = editor.getSelectionHtml();
   false, //showStatusBar
   false //showTitleBar
 );
-}
-                
- if(val=="Iframe")
-{
-    editor.showExternalDialog(
-  "/sitecore/shell/default.aspx?xmlcontrol=RichText.InsertIframe&la=" + scLanguage + "&selectedText=" + escape(html),
-  null, //argument
-  600, //width
-  600, //height
-  scRTEManager, //callback
-  null, // callback args
-  "Insert Youtube IFrame",
-  true, //modal
-  Telerik.Web.UI.WindowBehaviors.Close, // behaviors
-  false, //showStatusBar
-  false //showTitleBar
-);
-}
+}                
+
+};
+
+Telerik.Web.UI.Editor.CommandList["ApplyStyles"] = function (commandName, editor, args) {
+	var html = editor.getSelectionHtml();
+	var val=args.value;
+	scEditor = editor;
+	if(val=='')
+	{
+		ApplyStyleWithoutClass(val);
+	}
+	else
+	StoryTitle(editor,val,html);
+		   /* var tool = editor.getToolByName("FormatBlock");
+			if (tool) {
+				editor.pasteHtml("<div class="">"+html+"</div>");
+				 // args.set_cancel(true);
+			} */
+	
 };
 
 function scRTEManager(sender, returnValue) {

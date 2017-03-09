@@ -41,7 +41,12 @@
 
                                                             @{
                                                                 var dateDiff = DateTime.Now - firstArticle.ListableDate;
-                                                                if (dateDiff.TotalMinutes < 60)
+                                                                if (dateDiff.TotalSeconds < 60)
+                                                                {
+                                                                    var datelbl = dateDiff.Seconds + " seconds ago";
+                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                }
+                                                                else if (dateDiff.TotalMinutes < 60)
                                                                 {
                                                                     var datelbl = dateDiff.Minutes + " min ago";
                                                                     <time class="article-metadata__date">@datelbl</time>
@@ -92,8 +97,15 @@
                                                 </div>
                                             </div>
                                             <div class="article-summary">
-                                                <p>@Html.Raw(firstArticle.ListableSummary) </p>
-                                            </div>
+                                                @if (firstArticle.ListableSummary.StartsWith("<p>"))
+                                                {
+                                                    @Html.Raw(firstArticle.ListableSummary);
+                                                }
+                                                else
+                                                {
+                                                    <p>@Html.Raw(firstArticle.ListableSummary)</p>
+                                                }
+                                             </div>
                                         </div>
                                         <div class="article-preview__tags bar-separated-link-list">
                                             @foreach (var tag in firstArticle.ListableTopics.Take(2))
@@ -133,8 +145,13 @@
                                                                             <li>
 
                                                                                 @{
-                                                                                    dateDiff = DateTime.Now - firstArticle.ListableDate;
-                                                                                    if (dateDiff.TotalMinutes < 60)
+                                                                                    dateDiff = DateTime.Now - article.ListableDate;
+                                                                                    if (dateDiff.TotalSeconds < 60)
+                                                                                    {
+                                                                                        var datelbl = dateDiff.Seconds + " seconds ago";
+                                                                                        <time class="article-metadata__date">@datelbl</time>
+                                                                                    }
+                                                                                    else if (dateDiff.TotalMinutes < 60)
                                                                                     {
                                                                                         var datelbl = dateDiff.Minutes + " min ago";
                                                                                         <time class="article-metadata__date">@datelbl</time>
@@ -146,7 +163,7 @@
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                        <time class="article-metadata__date">@article.ListableDate.ToString("d MMM yyyy")</time>
                                                                                     }
                                                                                 }
                                                                             </li>
@@ -255,8 +272,13 @@
                                                                         <li>
 
                                                                             @{
-                                                                                dateDiff = DateTime.Now - firstArticle.ListableDate;
-                                                                                if (dateDiff.TotalMinutes < 60)
+                                                                                dateDiff = DateTime.Now - fifthArticle.ListableDate;
+                                                                                if (dateDiff.TotalSeconds < 60)
+                                                                                {
+                                                                                    var datelbl = dateDiff.Seconds + " seconds ago";
+                                                                                    <time class="article-metadata__date">@datelbl</time>
+                                                                                }
+                                                                                else if (dateDiff.TotalMinutes < 60)
                                                                                 {
                                                                                     var datelbl = dateDiff.Minutes + " min ago";
                                                                                     <time class="article-metadata__date">@datelbl</time>
@@ -268,7 +290,7 @@
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    <time class="article-metadata__date">@firstArticle.ListableDate.ToString("d MMM yyyy")</time>
+                                                                                    <time class="article-metadata__date">@fifthArticle.ListableDate.ToString("d MMM yyyy")</time>
                                                                                 }
                                                                             }
                                                                         </li>
@@ -306,7 +328,14 @@
                                                                     </ul>
                                                                 </div>
                                                                 <div class="article-summary">
-                                                                    <p>@Html.Raw(fifthArticle.ListableSummary)</p>
+                                                                    @if (fifthArticle.ListableSummary.StartsWith("<p>"))
+                                                                    {
+                                                                        @Html.Raw(fifthArticle.ListableSummary);
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <p>@Html.Raw(fifthArticle.ListableSummary)</p>
+                                                                    }
                                                                 </div>
                                                             </div>
                                                             <div class="article-preview__tags bar-separated-link-list">

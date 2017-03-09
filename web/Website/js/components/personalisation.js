@@ -229,7 +229,9 @@ function createLayoutInner1(data) {
 function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
 	var sectionData = '';
 	sectionData += '<section class="article-preview list-featured-article listViewCont">';
-	sectionData += data.articles[idx].listableImage ? '<div class="topic-article-image_pan"><img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '"></div>' : '';
+	sectionData += '<div class="topic-article-image_pan">';
+	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
+	sectionData += '</div>';
 	sectionData += data.articles[idx].listableTitle ? '<div class="topic-article-rig_pan"><h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : '';
 	sectionData += '<div class="topic-featured-article__inner-wrapper">';
 	sectionData += '<div class="article-metadata">';
@@ -243,7 +245,7 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '</ul>'; 
 	sectionData += '</div>'; 
 	sectionData += '</div>'; 
-	sectionData += '<div class="article-summary">' + data.articles[idx].listableSummary ? data.articles[idx].listableSummary : '' + '</div>';
+	sectionData += data.articles[idx].listableSummary ? '<div class="article-summary">' +  data.articles[idx].listableSummary + '</div>' : '';
 	sectionData += '</div>';
 	sectionData += '<div class="article-preview__tags bar-separated-link-list">';
 	if (data.articles[idx].listableTopics) {
@@ -510,6 +512,18 @@ function getMyviewCookie(cookie){
 		}
 	}
 }
+
+function setImgHeightListview(){
+	if($('.personalisationhome').hasClass('listView')){
+		var lpan = $('.topic-article-image_pan'), rpan = $('.topic-article-rig_pan');
+		for(var i=0; i<lpan.length; i++){
+			if($(rpan[i]).height() > 190){
+				$(lpan[i]).css('height', '220px');
+			}
+		}
+	}
+}
+
 $(function () {
 	if($('.personalisationhome') && $('.personalisationhome').length){
 		getMyviewCookie(document.cookie);
@@ -531,6 +545,7 @@ $(function () {
 			$('.personalisationhome').removeClass('gridView').addClass('listView');
 			document.cookie = "myViewCookieName=listView;"
 		}
+		setImgHeightListview();
 	});
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
@@ -620,6 +635,7 @@ $(function () {
 					if (layout == 'layout1') {
 						loadLayoutData = createLayoutInner1(data);
 						$(eachstory).append(loadLayoutData);
+						setImgHeightListview();
 						window.findTooltips();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
@@ -627,6 +643,7 @@ $(function () {
 					} else {
 						loadLayoutData = createLayoutInner2(data);
 						$(eachstory).append(loadLayoutData);
+						setImgHeightListview();
 						window.findTooltips();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
@@ -684,11 +701,13 @@ $(function () {
 							getscrollData = loadLayoutOneData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							setImgHeightListview();
 							window.findTooltips();
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							setImgHeightListview();
 							window.findTooltips();
 						}
 					}
@@ -787,5 +806,9 @@ $(function () {
 			$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
 			$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
 		}
+	}
+	
+	if($('.personalisationhome').hasClass('listView')){
+		setImgHeightListview();
 	}
 });

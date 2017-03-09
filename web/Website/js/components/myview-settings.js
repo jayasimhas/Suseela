@@ -528,6 +528,7 @@ $(function () {
 		UserPreferences = { "IsNewUser": false, "IsChannelLevel": isChannelLevel }, allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
 		$('#validateMyViewPriority').val(false);
+		$('#validatePreference').val(0);
 		e.preventDefault();
 		setDataRow(allpublications);
 		allpublicationsEles.removeAttr('data-row');

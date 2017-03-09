@@ -71,6 +71,48 @@ namespace Informa.Web.Controllers
                 return string.Empty;
         }
 
+
+        //POST api/<controller>
+        public void Post([FromBody]ArticleRequestInRTE data)
+        {
+            if (data != null)
+            {
+                //var url = System.Web.HttpContext.Current.Request.Url;
+                //var siteContext = Sitecore.Sites.SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
+                var selectedID = "{" + data.ItemId.ToUpper() + "}";
+                var article = master.GetItem(new ID(data.CurrentItemId));
+                if (article != null)
+                {
+                    var referencedValues = article.Fields["Referenced articles"];
+                    using (new SecurityDisabler())
+                    {
+                        //CacheManager.Enabled = false;
+                        article.Editing.BeginEdit();
+                        if (referencedValues != null)                        
+                            //referencedValues.Value = "{5A3D67DF-3917-4AC2-BDAF-69CDA1204C2A}";
+                            referencedValues.Value += "|" + selectedID.ToUpper();
+                        else
+                        referencedValues.Value = selectedID.ToUpper();
+                        
+                        article.Editing.EndEdit();
+                        //CacheManager.Enabled = true;
+                    }
+                    //Sitecore.Data.Fields.MultilistField multiselectField = article.Fields[IArticleConstants.Referenced_ArticlesFieldName];
+
+                    //if (multiselectField.Contains(selectedID))
+                    //{
+                    //    CacheManager.Enabled = false;
+                    //    article.Editing.BeginEdit();
+                    //    if (!multiselectField.Contains(selectedID))
+                    //    {
+                    //        multiselectField.Add(selectedID);
+                    //    }
+                    //    article.Editing.EndEdit();
+                    //    CacheManager.Enabled = true;
+                    //}
+                }
+            }
+        }
     }
 
     public class ArticleRequestInRTE
