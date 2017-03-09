@@ -69,26 +69,49 @@ function bookmarkController() {
     };
 
     this.flipIcon = function(bookmark) {
+		
+		if($('.personalisationhome') && $('.personalisationhome').length){
+			if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+				$('[data-bookmark-id="'+bookmark.id+'"]').find('.article-bookmark').removeClass('is-visible');
+			}
 
-		if(!bookmark.elm.hasClass('js-angular-bookmark')) {
-			$(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
+			if(bookmark.isBookmarking) {
+				if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+					$('[data-bookmark-id="'+bookmark.id+'"]').find('.article-bookmark__bookmarked').addClass('is-visible');
+					$('[data-bookmark-id="'+bookmark.id+'"]').data('is-bookmarked', true);
+				}
+				$('[data-bookmark-id="'+bookmark.id+'"]').find('.js-bookmark-label').html(bookmark.label.bookmarked);
+
+			} else {
+				if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+					$('[data-bookmark-id="'+bookmark.id+'"]').find('.article-bookmark').not('.article-bookmark__bookmarked').addClass('is-visible');
+					$('[data-bookmark-id="'+bookmark.id+'"]').data('is-bookmarked', null);
+				}
+				$('[data-bookmark-id="'+bookmark.id+'"]').find('.js-bookmark-label').html(bookmark.label.bookmark);
+
+			}
 		}
+		else{
+			if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+				$(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
+			}
 
-        if(bookmark.isBookmarking) {
-            if(!bookmark.elm.hasClass('js-angular-bookmark')) {
-                $(bookmark.elm).find('.article-bookmark__bookmarked').addClass('is-visible');
-                bookmark.elm.data('is-bookmarked', true);
-            }
-            bookmark.label.elm.html(bookmark.label.bookmarked);
+			if(bookmark.isBookmarking) {
+				if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+					$(bookmark.elm).find('.article-bookmark__bookmarked').addClass('is-visible');
+					bookmark.elm.data('is-bookmarked', true);
+				}
+				bookmark.label.elm.html(bookmark.label.bookmarked);
 
-        } else {
-            if(!bookmark.elm.hasClass('js-angular-bookmark')) {
-                $(bookmark.elm).find('.article-bookmark').not('.article-bookmark__bookmarked').addClass('is-visible');
-                bookmark.elm.data('is-bookmarked', null);
-            }
-            bookmark.label.elm.html(bookmark.label.bookmark);
+			} else {
+				if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+					$(bookmark.elm).find('.article-bookmark').not('.article-bookmark__bookmarked').addClass('is-visible');
+					bookmark.elm.data('is-bookmarked', null);
+				}
+				bookmark.label.elm.html(bookmark.label.bookmark);
 
-        }
+			}
+		}
     };
 }
 
