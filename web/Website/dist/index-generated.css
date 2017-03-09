@@ -4334,14 +4334,21 @@ header .advertising--leaderboard.visible-mobile {
 header .header__wrapper {
   position: relative; }
 
-header .header-publication-links {
-  top: 15px; }
-  @media (max-width: 640px) {
-    header .header-publication-links {
-      top: 50px; } }
-  @media (max-width: 800px) {
-    header .header-publication-links {
-      top: 50px; } }
+@media (max-width: 640px) {
+  header .header-publication-links {
+    top: 50px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  header .header-publication-links {
+    top: 50px !important;
+    margin-right: 0 !important; } }
+
+@media only screen and (max-width: 1024px) {
+  header .header-publication-links {
+    top: 54px;
+    font-size: 11px;
+    font-size: 0.6875rem;
+    margin-right: 20px; } }
 
 header .header-account-access {
   -webkit-box-flex: 2 !important;
