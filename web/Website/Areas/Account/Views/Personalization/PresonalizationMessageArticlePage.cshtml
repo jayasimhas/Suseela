@@ -4,11 +4,12 @@
 {
     <div class="messaging_webUsers_white">
         <div class="msg_dismiss">
-            <a href="javascript:void(0)" class="dismiss">@Model.DismissText</a>
-            <svg class="dismiss-button__icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
-            </svg>
-        </div>
+            <a href="javascript:void(0)" class="dismiss">@Model.DismissText
+                <svg class="dismiss-button__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </a>
+          </div>
         <div class="msg-text">
             <h3>@Model.ArticlePageMyViewText</h3>
             <div>@Model.ArticlePageMessage<span class="red"> <a href="@Model.MyViewLinkUrl" class="click-utag" data-info='{"event_name":"message_link_click","page_name":"@Model.PageName","ga_eventCategory":"Messaging Frame","ga_eventAction":"Link Click","ga_eventLabel":"@Model.WelcomeMessageArticlePageLinkText",
