@@ -89,7 +89,7 @@ namespace Informa.Web.ViewModels
 
         public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);   
 
-        public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest/Logout"));
+        public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest/Logout")+ "?vid=" + CurVerticalName);
 
         private string BuildLink(Link l)
         {
