@@ -2272,6 +2272,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     @media (max-width: 480px) {
       #main-carousel .marketDataTable .owl-item.active {
         width: auto !important; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      #main-carousel .marketDataTable .owl-item.active {
+        width: 122px !important; } }
   #main-carousel .owl-dots {
     position: absolute;
     top: -1px;
@@ -8928,8 +8931,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9699,16 +9702,18 @@ div#feedbacklite.fbl_r {
   margin-bottom: 32px;
   margin-bottom: 2rem;
   width: 100%; }
+  #market-data .owl-wrapper {
+    width: 100%; }
   #market-data .showinMob {
     display: none; }
-    @media (max-width: 640px) {
+    @media screen and (max-width: 767px) {
       #market-data .showinMob {
         display: block; } }
   #market-data .hideinMob {
-    display: block; }
-    @media (max-width: 640px) {
+    display: none; }
+    @media screen and (min-width: 768px) {
       #market-data .hideinMob {
-        display: none; } }
+        display: block; } }
   #market-data .carousel-div {
     position: relative; }
     @media (max-width: 640px) {
@@ -9731,6 +9736,9 @@ div#feedbacklite.fbl_r {
       @media only screen and (max-width: 320px) {
         #market-data .carousel-div .states_heading {
           width: 62%; } }
+      @media only screen and (min-width: 481px) and (max-width: 680px) {
+        #market-data .carousel-div .states_heading {
+          width: 40%; } }
       #market-data .carousel-div .states_heading .title {
         background-color: #1191d1;
         color: #ffffff;
@@ -9800,7 +9808,7 @@ div#feedbacklite.fbl_r {
             padding: 12px 6px;
             font-size: 16px;
             font-size: 1rem; } }
-      @media only screen and (max-width: 375px) {
+      @media only screen and (max-width: 767px) {
         #market-data .marketDataTable .R16 {
           padding: 12px 0px; } }
       @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -12831,7 +12839,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
