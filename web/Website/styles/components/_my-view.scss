@@ -9,14 +9,18 @@ header{
 	 	position: relative;
 	}
 	.header-publication-links{
-		top: 15px;
 		@include breakpoint('medium-small') {
 			top: 50px;
 		}
-		@include breakpoint('medium') {
-			top: 50px;
+		@media only screen and (min-width: 768px) and (max-width: 1000px){
+			top: 50px !important;
+			margin-right: 0 !important;
 		}
-		
+		@media only screen and (max-width: 1024px) {
+			top: 54px;
+			font-size: 0.6875rem;
+			margin-right: 20px;
+		}	
 	}
 	.header-account-access{
 		flex: 2 0 auto !important;
@@ -111,9 +115,6 @@ header{
 		.header-account-right-access{
 			float: right;
 			padding: 1rem 0;
-			.header-publication-links{
-				
-			}
 			@media (max-width: 1024px) {
 				float: right;
 				margin-right: 20px;
