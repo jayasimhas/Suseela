@@ -7,6 +7,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 
 namespace Informa.Web.ViewModels.Casualty
@@ -46,7 +47,9 @@ namespace Informa.Web.ViewModels.Casualty
             string incidentId = HttpContext.Current.Request.QueryString["incidentId"];
             if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL) && !string.IsNullOrEmpty(incidentId))
             {
-                return CompanyResultService.GetCompanyFeeds(feedUrlConfigurationItem.External_Feed_URL + "?incidentId=" + incidentId).Result;
+                var client = new WebClient();
+                return client.DownloadString(string.Format(feedUrlConfigurationItem.External_Feed_URL, incidentId));
+                //return CompanyResultService.GetCompanyFeeds(string.Format(feedUrlConfigurationItem.External_Feed_URL,incidentId)).Result;
             }
             else
             {

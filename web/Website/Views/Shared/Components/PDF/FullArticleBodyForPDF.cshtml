@@ -3,7 +3,7 @@
 @using Sitecore.Resources.Media
 @inherits CustomGlassView<Informa.Web.ViewModels.PDF.ArticleBodyForPDFViewModel>
 
-<div class="article-body-content" style="text-align:justify">
+<div class="article-body-content">
     <div class="article-metadata">
         <table>
             <tr>
@@ -24,7 +24,7 @@
                         }
 
                     </td>
-                            }
+                }
 
                 @foreach (var tag in Model.ArticleTagsViewModel.Tags)
                 {
@@ -40,7 +40,7 @@
                             {
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
-                            
+
                         </td>
                     }
                     else
@@ -56,7 +56,7 @@
                             {
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
-                          
+
                         </td>
                     }
 
@@ -76,7 +76,7 @@
         var author = authors.FirstOrDefault();
         @* SINGLE AUTHOR*@
         <div class="article-author article-author--solo">
-            <table>
+            <table cellpadding="0" cellspacing="0" border="0">
                 <tr class="article-author__list">
 
                     <td class="article-author__solo-wrapper" style="color:#58595b; text-decoration:none; padding: 0 0 20px 0; white-space: nowrap;">
@@ -125,10 +125,10 @@
                 </tr>
             </table>
         </div>
-        <table>
-            <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
-            <tr><td height="10"></td></tr>
-        </table>
+        @*<table>
+                <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+                <tr><td height="10"></td></tr>
+            </table>*@
 
         @* END SINGLE AUTHOR *@
 
@@ -188,18 +188,17 @@
                             </table>
                         </td>
                     </tr>
-                    <tr><td height="20"></td></tr>
+                    <tr><td height="10"></td></tr>
                 }
 
             </table>
-            <table>
-                <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
-                <tr><td height="10"></td></tr>
-            </table>
+            @*<table>
+                    <tr><td>  <img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+                    <tr><td height="10"></td></tr>
+                </table>*@
         </div>
         @* END MULTIPLE AUTHORs *@
     }
-
     @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
     @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
     {
@@ -207,17 +206,20 @@
 
         @*<div class="article-executive-summary">*@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tr><td></td></tr>
+            @if (authors != null && authors.Any())
+            {
+                <tr><td height="15"></td></tr>
+            }
             <tr>
                 <td>
-                    <h4 style="font-size:21px; font-weight:700; margin-bottom:0; padding:0;">@Model.ExecutiveSummary</h4>
+                    <h4 style="font-size:21px; font-weight:700; margin:0px; padding:0px;">@Model.ExecutiveSummary</h4>
 
                 </td>
             </tr>
-            <tr><td>&nbsp;</td></tr>
+            <tr><td height="10"></td></tr>
             <tr>
                 <td>
-                    <span class="article-executive-summary-body" style="font-size:15px; line-height:20px; color:#58595b; text-align:justify;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
+                    <span class="article-executive-summary-body" style="font-size:13px; line-height:20px; color:#58595b;">@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))</span>
                 </td>
             </tr>
         </table>
@@ -228,45 +230,58 @@
     {
         @* * *  ARTICLE - FEATURED IMAGE
             IIPP-117 *@
-        <div class="article-inline-image" style="float: left; padding-right: 40px; width:500px;">
+        <div class="article-inline-image" style="float: left; padding-right: 10px; width:500px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr><td>&nbsp;</td></tr>
-                <tr><td>&nbsp;</td></tr>
+                <tr><td height="10"></td></tr>
                 <tr>
                     <td colspan="2"><img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText"></td>
                 </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td align="left">
-                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:18px; line-height:20px;">@Model.Image.ImageCaption</span>
-                    </td>
-                    <td align="right">
-                        @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                @if (!string.IsNullOrEmpty(Model.Image.ImageCaption) || !string.IsNullOrEmpty(Model.Image.ImageSource))
                 {
+                    <tr><td height="10"></td></tr>
+                }
+                <tr>
+                    <td align="left" valign="top">
+                        <span class="article-inline-image__caption" style="text-align:left; color:#58595b; font-size:14px; line-height:20px;">@Model.Image.ImageCaption</span>
+                    </td>
+                    <td align="right" valign="top">
+                        @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                        {
 
-                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:18px; line-height:20px;">
+                            <span class="article-inline-image__source" style="text-align:right; font-style:italic; color:#58595b; font-size:12px; line-height:20px;">
                                 @Model.FeaturedImageSource @Model.Image.ImageSource
-                            </span>}
+                            </span>
+                        }
                     </td>
                 </tr>
+                @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                {
+                    <tr><td height="15"></td></tr>
+                }
+                else
+                {
+                    <tr><td height="10"></td></tr>
+                }
             </table>
-
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
-    }
-    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-
-
+    }   
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr><td height="10"></td></tr>
+        <tr>
+            <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))</td>
+        </tr>
+    </table>
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
     <table>
-        <tr><td>&nbsp;</td></tr>
+        <tr><td height="10"></td></tr>
         <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
         <tr><td>&nbsp;</td></tr>
     </table>
     <div class="article-related-content">
-        <h2>Related Content</h2>
+        <h3>Related Content</h3>
         <table width="100%">
             @foreach (var article in Model.RelatedArticles)
             {

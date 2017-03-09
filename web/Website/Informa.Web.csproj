@@ -1956,6 +1956,7 @@
     <Content Include="Util\DCD\styles\style.css" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
+    <Content Include="Views\Shared\Components\PDF\PDFStyleSheet.css" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
     <Content Include="VWB\Scripts\addissue.js" />
