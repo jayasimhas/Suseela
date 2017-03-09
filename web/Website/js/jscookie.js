@@ -161,22 +161,54 @@ $(document).ready(function(){
 			$('body').addClass('is-frozen');
         }
 
-        function CheckCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
+        // Create cookie
+		function createCookie(name, value, days) {
+		    var expires;
+		    if (days) {
+		        var date = new Date();
+		        date.setTime(date.getTime()+(days*24*60*60*1000));
+		        expires = "; expires="+date.toGMTString();
+		    }
+		    else {
+		        expires = "";
+		    }
+		    document.cookie = name+"="+value+expires+"; path=/";
+		}
+
+		// Read cookie
+		function readCookie(name) {
+		    var nameEQ = name + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i=0;i < ca.length;i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) === ' ') {
+		            c = c.substring(1,c.length);
+		        }
+		        if (c.indexOf(nameEQ) === 0) {
+		            return c.substring(nameEQ.length,c.length);
+		        }
+		    }
+		    return null;
+		}
+
+		// Erase cookie
+		function eraseCookie(name) {
+		    createCookie(name,"",-1);
+		}
+
 
         if($(window).width() >= 1024){
-			if(CheckCookie("menunavigationcookie") !== cookieValue){
-				OpenNavigationMenu();
-			}else{
-				CloseNavigationMenu();
+			if($('input.menu-open-first-time-checked').val() == 'True'){
+				if(readCookie("menunavigationcookie") !== cookieValue && window.location.pathname === '/'){
+					OpenNavigationMenu();
+				}else{
+					CloseNavigationMenu();
+				}
+				createCookie("menunavigationcookie", "yes", 365);
 			}
+			else{
+				eraseCookie("menunavigationcookie");
+			}
+			
 		}      
 })
