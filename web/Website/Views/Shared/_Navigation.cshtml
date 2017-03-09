@@ -2,20 +2,7 @@
 
 @if(Model.MenuOpenFirstTime)
 {
-    <input type="hidden" class="menu-open-first-time-checked" value="@Model.MenuOpenFirstTime" />
-    if (HttpContext.Current.Request.Cookies["menunavigationcookie"] == null && HttpContext.Current.Request.Url.LocalPath.Equals("/"))
-    {
-        var cookiePolicy = new HttpCookie("menunavigationcookie")
-        {
-            Value = "yes",
-            //Expires = DateTime.Now.AddMonths(expiryMonth),
-            //Expires = DateTime.Now.AddDays(expiryMonth),
-            HttpOnly = true
-        };
-        HttpContext.Current.Response.SetCookie(cookiePolicy);
-    }
-    // HttpCookie menuNavigationCookie = HttpContext.Current.Request.Cookies["menunavigationcookie"]?? new HttpCookie("menunavigationcookie");
-    //menuNavigationCookie.Value = "yes";
+    <input type="hidden" class="menu-open-first-time-checked" value="@Model.MenuOpenFirstTime.ToString()" />    
 }
 
 <div class="main-menu js-full-menu-toggle">
