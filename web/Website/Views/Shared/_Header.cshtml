@@ -113,10 +113,8 @@
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-                    <span class="header-account-access__label header_salesforce_sign-in-out"
-                          data-redirect-url="@Url.Action("Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url, vid = Model.CurVerticalName  })"
-                          data-logout-url="@Model.LogoutUrl">
-                        @Model.SignOutLinkText
+                    <span class="header-account-access__label">
+                         <a href="@Model.LogoutUrl">@Model.SignOutLinkText</a>                        
                     </span>
                 </div>
                     }

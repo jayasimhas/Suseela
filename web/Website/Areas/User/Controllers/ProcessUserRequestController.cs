@@ -16,13 +16,15 @@ namespace Informa.Web.Areas.UserRequest
         protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IWebLogoutUser LogoutWebUser;
 
         public ProcessUserRequestController(IWebAuthenticateUser authenticateWebUser,
-        ISalesforceConfigurationContext salesforceConfigurationContext, ISiteRootContext siteRootContext)
+        ISalesforceConfigurationContext salesforceConfigurationContext, ISiteRootContext siteRootContext, IWebLogoutUser logoutWebUser)
         {
             AuthenticateWebUser = authenticateWebUser;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SiteRootContext = siteRootContext;
+            LogoutWebUser = logoutWebUser;
         }
 
         private ISite_Root _siteRootItem => SiteRootContext?.Item;
@@ -41,6 +43,12 @@ namespace Informa.Web.Areas.UserRequest
         {
             string authorizationRequestUrl = SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(_siteRootItem?.Enrolment_Link != null && !string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url+"?"+ _siteRootItem?.Enrolment_Link.Query : string.Empty));
             return Redirect(authorizationRequestUrl);
+        }
+
+        public ActionResult Logout()
+        {
+            LogoutWebUser.Logout();
+            return Redirect(GetCallbackUrl("/"));
         }
 
         private string GetCallbackUrl(string url)

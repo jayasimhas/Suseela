@@ -19,7 +19,7 @@ namespace Informa.Library.SalesforceConfiguration
         private string _authorizationRequestEndPoints = "{0}/services/apexrest/identity/{1}/services/oauth2/authorize?response_type=code&client_id={2}&redirect_uri={3}&state={4}";
         private string _userEntitlementsRequestEndPoints = "/services/apexrest/UserEntitlements/{0}";
         private string _registrationEndpoints = "{0}/registration?referralurl={1}&referralid={2}";
-        private string _logoutEndpoints = "{0}/secur/logout.jsp";
+        private string _logoutEndpoints = "{0}/services/apexrest/identity/{1}/logout?referralurl={2}";
         private string _userDetailsEndPoints = "/services/apexrest/UserPreferences/{0}";
         private string _changePasswordEndpoints = "{0}/changepassword?referralurl={1}&referralid={2}";
         private string _getUserProductPreferencesEndpoints = "/services/data/v20.0/query/?q={0}";
@@ -89,9 +89,9 @@ namespace Informa.Library.SalesforceConfiguration
                 SalesForceConfiguration?.Salesforce_Service_Url?.Url);
         }
 
-        public string GetLogoutEndPoints()
+        public string GetLogoutEndPoints(string referralid, string referralurl)
         {
-            return string.Format(_logoutEndpoints, SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+            return string.Format(_logoutEndpoints, SalesForceConfiguration?.Salesforce_Service_Url?.Url,referralid,referralurl);
         }
 
         public string GetRegistrationEndPoints(string referralurl, string referralid)
