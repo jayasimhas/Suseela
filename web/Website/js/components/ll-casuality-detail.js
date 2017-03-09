@@ -5,7 +5,7 @@
 
 			Parent.append('<thead class="table_head">'+
 									'<tr>'+
-									  '<th colspan="2" class="p-10">'+Data.Heading+'</th>'+
+									  '<th colspan="2" class="p-10">'+((Data.Heading) ? Data.Heading : '&nbsp;')+'</th>'+
 									'</tr>'+
 								'</thead>');
 			Parent.append('<tbody></tbody>');
