@@ -2331,7 +2331,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-size: 16px;
       font-size: 1rem;
       font-weight: 500; }
-      @media (max-width: 480px) {
+      @media (max-width: 667px) {
         #main-carousel .companies_heading span {
           padding-right: 110px; } }
 
