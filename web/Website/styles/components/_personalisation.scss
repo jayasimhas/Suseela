@@ -560,10 +560,9 @@
 	.topic-featured-article__headline{
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
+		line-height: 2.125rem;
 		@media screen and (min-width: 600px){
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			display: block;
+			max-height: 65px;
 			overflow: hidden;
 		}
 	}
@@ -572,26 +571,19 @@
 		font-weight: normal;
 	}
 	.topic-article-image_pan{
-		//width: 19.5rem;
-		@media screen and (min-width: 480px){
-			height: 11.875rem;
-			float: left;
-		}
+		margin-top: 0px;
+		min-height: 11.875rem;
+		float: left;
 		.topic-featured-article__image{
-			@media screen and (min-width: 480px){
-				width: 17.5rem !important;
-				height: 10rem !important;
-				margin-right: 32px;
-			}
-			@include breakpoint('medium') {
-				margin-top: 0px;
-			}
-		}
-	}
-	.topic-featured-article__headline{
-		@include breakpoint('medium') {
+			width: 17.5rem !important;
+			height: 10rem !important;
+			margin-right: 32px;
 			margin-top: 0px;
 		}
+		 
+	}
+	.topic-featured-article__headline{
+		margin-top: 0px;
 	}
 	.bar-separated-link-list a{
 		padding: 0 17px 0 0;
@@ -601,9 +593,7 @@
 		//float: left;
 	}
 	.article-preview__tags{
-		@media screen and (min-width: 480px){
-			width: auto;
-		}
+		width: auto;
 		z-index: 999;
 		bottom: 1.25rem;
 		a{
@@ -618,12 +608,6 @@
 					max-width: inherit;
 				}
 		}
-	}
-	.article-preview__tags {
-		@media screen and (max-width: 480px){
-			position: relative;
-			top: -18px;
-		}
 	}			
 	.list-featured-article { 
 		border-bottom: 1px solid #e7e7e7;
@@ -633,21 +617,14 @@
 		.article-preview__byline{
 			margin-bottom: 0.3125rem;
 			.authorTitle{
-				@media screen and (min-width: 480px){
-					width: 35%;
-					float: left;
-				}
-				@media screen and (max-width: 480px){
-					margin-bottom: 5px;
-				}
+				width: 35%;
+				float: left;
 			} 
 			ul{
 				display: inline-block;
-				@media screen and (min-width: 480px){
-					float: right;
-					width: 65%; 
-					text-align: right;
-				}
+				float: right;
+				width: 65%; 
+				text-align: right;
 				margin-top: 1px;
 			}
 			&:after{
@@ -661,9 +638,6 @@
 		font-size: 18px;
 		color: #231F20;
 		height: 8.125rem;
-		@media screen and (max-width: 480px){
-			height: 9.375rem;
-		}
 		line-height: 24px;
 		&:after{
 			background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);

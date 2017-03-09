@@ -126,5 +126,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         public IEnumerable<ListItem> Countries { get; set; }
 
         #endregion Drop Down Lists
+
+        public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
     }
 }

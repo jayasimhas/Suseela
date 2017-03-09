@@ -1558,7 +1558,8 @@
 				<commodityFactor name="ethanol">Energy</commodityFactor>
 				<commodityFactor name="biodiesel">Energy</commodityFactor>
 				<commodityFactor name="energy drinks"></commodityFactor>
-				<commodityFactor name="Freight">Freight</commodityFactor>
+        <commodityFactor name="energy drink"></commodityFactor>
+        <commodityFactor name="Freight">Freight</commodityFactor>
 				<commodityFactor name="Transport">Freight</commodityFactor>
 				<commodityFactor name="Port">Freight</commodityFactor>
 				<commodityFactor name="BioTechnology">GM</commodityFactor>
@@ -2403,51 +2404,6 @@
 
       </animalhealth>
 				<animalhealthnew>
-        <healthnew name="African swine fever">African swine fever</healthnew>
-        <healthnew name="ASF">African swine fever</healthnew>
-        <healthnew name="Antimicrobial resistance">Antimicrobial resistance</healthnew>
-        <healthnew name="Avian infectious bronchitis">Avian infectious bronchitis</healthnew>
-        <healthnew name="Avian influenza">Avian influenza</healthnew>
-        <healthnew name="Bird flu">Avian influenza</healthnew>
-        <healthnew name="AI">Avian influenza</healthnew>
-        <healthnew name="Avian flu">Avian influenza</healthnew>
-        <healthnew name="Bluetongue">Bluetongue</healthnew>
-        <healthnew name="Bovine respiratory syndrome">Bovine respiratory syndrome</healthnew>
-        <healthnew name="Bovine tuberculosis">Bovine tuberculosis</healthnew>
-        <healthnew name="BTB">Bovine tuberculosis</healthnew>
-        <healthnew name="Brucellosis">Brucellosis</healthnew>
-        <healthnew name="Cancer">Cancer</healthnew>
-        <healthnew name="Classical swine fever">Classical swine fever</healthnew>
-        <healthnew name="CSF">Classical swine fever</healthnew>
-        <healthnew name="Dermatology">Dermatology</healthnew>
-        <healthnew name="EMS">Early mortality syndrome</healthnew>
-        <healthnew name="Early mortality syndrome">Early mortality syndrome</healthnew>
-        <healthnew name="Flea and tick">Flea and tick</healthnew>
-        <healthnew name="Foot-and-mouth disease">Foot-and-mouth disease</healthnew>
-        <healthnew name="foot and mouth disease">Foot-and-mouth disease</healthnew>
-        <healthnew name="FMD">Foot-and-mouth disease</healthnew>
-        <healthnew name="Inappetance">Inappetance</healthnew>
-        <healthnew name="ISA">Infectious salmon anemia</healthnew>
-        <healthnew name="Infectious salmon anemia">Infectious salmon anemia</healthnew>
-        <healthnew name="LSD">Lumpy skin disease</healthnew>
-        <healthnew name="Lumpy skin disease">Lumpy skin disease</healthnew>
-        <healthnew name="Mastitis">Mastitis</healthnew>
-        <healthnew name="MERS">Middle East Respiratory Syndrome</healthnew>
-        <healthnew name="Middle East Respiratory Syndrome">Middle East Respiratory Syndrome</healthnew>
-        <healthnew name="ND">Newcastle disease</healthnew>
-        <healthnew name="Newcastle disease">Newcastle disease</healthnew>
-        <healthnew name="Osteoarthritis">Osteoarthritis</healthnew>
-        <healthnew name="Pain">Pain</healthnew>
-        <healthnew name="PPR">Peste des petits ruminants</healthnew>
-        <healthnew name="Peste des petits ruminants">Peste des petits ruminants</healthnew>
-        <healthnew name="PEDV">Porcine epidemic diarrhea virus</healthnew>
-        <healthnew name="Porcine epidemic diarrhea virus">Porcine epidemic diarrhea virus</healthnew>
-        <healthnew name="PRRS">Porcine reproductive and respiratory syndrome</healthnew>
-        <healthnew name="Porcine reproductive and respiratory syndrome">Porcine reproductive and respiratory syndrome</healthnew>
-        <healthnew name="RVF">Rift Valley fever</healthnew>
-        <healthnew name="Rift Valley fever">Rift Valley fever</healthnew>
-        <healthnew name="Sea lice">Sea lice</healthnew>
-
         <healthnew name="Antiparasitics">Antiparasitics</healthnew>
         <healthnew name="Antiparasitic">Antiparasitics</healthnew>
         <healthnew name="Parasiticides">Antiparasitics</healthnew>
@@ -2484,6 +2440,52 @@
         <healthnew name="Diagnostic">Diagnostics</healthnew>
         <healthnew name="Analytics"><![CDATA[Equipment & Technology]]></healthnew> 
       </animalhealthnew>
+      <animalhealthDiseases>
+        <disease name="African swine fever">African swine fever</disease>
+        <disease name="ASF">African swine fever</disease>
+        <disease name="Antimicrobial resistance">Antimicrobial resistance</disease>
+        <disease name="Avian infectious bronchitis">Avian infectious bronchitis</disease>
+        <disease name="Avian influenza">Avian influenza</disease>
+        <disease name="Bird flu">Avian influenza</disease>
+        <disease name="AI">Avian influenza</disease>
+        <disease name="Avian flu">Avian influenza</disease>
+        <disease name="Bluetongue">Bluetongue</disease>
+        <disease name="Bovine respiratory syndrome">Bovine respiratory syndrome</disease>
+        <disease name="Bovine tuberculosis">Bovine tuberculosis</disease>
+        <disease name="BTB">Bovine tuberculosis</disease>
+        <disease name="Brucellosis">Brucellosis</disease>
+        <disease name="Cancer">Cancer</disease>
+        <disease name="Classical swine fever">Classical swine fever</disease>
+        <disease name="CSF">Classical swine fever</disease>
+        <disease name="Dermatology">Dermatology</disease>
+        <disease name="EMS">Early mortality syndrome</disease>
+          <disease name="Early mortality syndrome">Early mortality syndrome</disease>
+          <disease name="Flea and tick">Flea and tick</disease>
+          <disease name="Foot-and-mouth disease">Foot-and-mouth disease</disease>
+          <disease name="foot and mouth disease">Foot-and-mouth disease</disease>
+          <disease name="FMD">Foot-and-mouth disease</disease>
+          <disease name="Inappetance">Inappetance</disease>
+          <disease name="ISA">Infectious salmon anemia</disease>
+          <disease name="Infectious salmon anemia">Infectious salmon anemia</disease>
+          <disease name="LSD">Lumpy skin disease</disease>
+          <disease name="Lumpy skin disease">Lumpy skin disease</disease>
+          <disease name="Mastitis">Mastitis</disease>
+          <disease name="MERS">Middle East Respiratory Syndrome</disease>
+          <disease name="Middle East Respiratory Syndrome">Middle East Respiratory Syndrome</disease>
+          <disease name="ND">Newcastle disease</disease>
+          <disease name="Newcastle disease">Newcastle disease</disease>
+          <disease name="Osteoarthritis">Osteoarthritis</disease>
+          <disease name="Pain">Pain</disease>
+          <disease name="PPR">Peste des petits ruminants</disease>
+          <disease name="Peste des petits ruminants">Peste des petits ruminants</disease>
+          <disease name="PEDV">Porcine epidemic diarrhea virus</disease>
+          <disease name="Porcine epidemic diarrhea virus">Porcine epidemic diarrhea virus</disease>
+          <disease name="PRRS">Porcine reproductive and respiratory syndrome</disease>
+          <disease name="Porcine reproductive and respiratory syndrome">Porcine reproductive and respiratory syndrome</disease>
+          <disease name="RVF">Rift Valley fever</disease>
+          <disease name="Rift Valley fever">Rift Valley fever</disease>
+          <disease name="Sea lice">Sea lice</disease>
+      </animalhealthDiseases>
       <commercial>
         <comm name="research">Research</comm>
         <comm name="randd"><![CDATA[R&D]]></comm>

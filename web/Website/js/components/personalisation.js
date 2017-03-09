@@ -512,6 +512,18 @@ function getMyviewCookie(cookie){
 		}
 	}
 }
+
+function setImgHeightListview(){
+	if($('.personalisationhome').hasClass('listView')){
+		var lpan = $('.topic-article-image_pan'), rpan = $('.topic-article-rig_pan');
+		for(var i=0; i<lpan.length; i++){
+			if($(rpan[i]).height() > 190){
+				$(lpan[i]).css('height', '220px');
+			}
+		}
+	}
+}
+
 $(function () {
 	if($('.personalisationhome') && $('.personalisationhome').length){
 		getMyviewCookie(document.cookie);
@@ -533,6 +545,7 @@ $(function () {
 			$('.personalisationhome').removeClass('gridView').addClass('listView');
 			document.cookie = "myViewCookieName=listView;"
 		}
+		setImgHeightListview();
 	});
 	var getLayoutInfo = $('#getLayoutInfo').val(),
 	    layout1 = true,
@@ -622,6 +635,7 @@ $(function () {
 					if (layout == 'layout1') {
 						loadLayoutData = createLayoutInner1(data);
 						$(eachstory).append(loadLayoutData);
+						setImgHeightListview();
 						window.findTooltips();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
@@ -629,6 +643,7 @@ $(function () {
 					} else {
 						loadLayoutData = createLayoutInner2(data);
 						$(eachstory).append(loadLayoutData);
+						setImgHeightListview();
 						window.findTooltips();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
@@ -686,11 +701,13 @@ $(function () {
 							getscrollData = loadLayoutOneData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							setImgHeightListview();
 							window.findTooltips();
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
+							setImgHeightListview();
 							window.findTooltips();
 						}
 					}
@@ -789,5 +806,9 @@ $(function () {
 			$(latestSubject[i]).find('.frEditview').css('width', setEditViewWidth +'%');
 			$(latestSubject[i]).find('.fllatestSub').css('width', setLatestSubWid - 2 + '%');
 		}
+	}
+	
+	if($('.personalisationhome').hasClass('listView')){
+		setImgHeightListview();
 	}
 });

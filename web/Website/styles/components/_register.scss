@@ -68,6 +68,10 @@
 				}
 			}
 			.site_div{
+				padding-right: 117px;
+				@include breakpoint('small') {
+					padding-right: 0;
+				}
 				h1{ display: inline-flex;}
 				.newsletter_checkbox{
 				    @include breakpoint('small'){
@@ -116,11 +120,20 @@
 					
 				}
 			
-			.mobile{
-				display: none;
+			.checkbox-wrapper{
 				clear: both;
-				@include breakpoint('small'){
+			    position: absolute;
+			    top: 40px;
+			    right: 1rem;
+			    hr {
+			    	display: none;
+			    	@include breakpoint('small') {
+			    		display: block;
+			    	}
+			    }
+				@include breakpoint('small') {
 					display: block;
+					position: static;
 					.newsletter_checkbox{
 						float: left;
 						margin-top:10px;

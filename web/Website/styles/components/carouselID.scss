@@ -148,6 +148,9 @@
 				@include breakpoint('small') {
 					width: auto !important;
 				}
+				@media only screen and (min-width: 480px) and (max-width: 767px) {
+					width: 122px !important;
+				}
 			}
 		}
 		.owl-dots{
