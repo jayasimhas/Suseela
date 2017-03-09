@@ -18594,6 +18594,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISite_ConfigConstants.Entitlement_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEntitlement_Type Entitlement_Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Content Recommendation switch
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Render_Content_Recommendation_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Render_Content_recommendation { get; set; }
     }
 
 
@@ -19680,6 +19686,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISite_ConfigConstants.Entitlement_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEntitlement_Type Entitlement_Type { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the Content Recommendation switch
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Render_Content_Recommendation_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Render_Content_recommendation { get; set; }
     }
 
     public static partial class ISite_ConfigConstants
@@ -20276,6 +20288,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Entitlement_TypeFieldId = new ID("305D22CC-018D-4CCE-9BBC-C89431568828");
         public const string Entitlement_TypeFieldName = "Entitlement Type";
+        public static readonly ID Render_Content_Recommendation_TypeFieldId = new ID("B6E68FDC-A8F1-4958-8F9C-EA3F348C248A");
+        public const string Render_Content_Recommendation_TypeFieldName = "Render Content Recommendation";
+
     }
 
 }

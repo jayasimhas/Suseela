@@ -50,6 +50,7 @@ namespace Informa.Web.ViewModels.Articles
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
+        public bool IsThisComponentEnabled => SiteRootContext.Item.Render_Content_recommendation;
         public bool HideWhatToReadNext => GlassModel.Hide_WhatToReadNext;
         public bool HideSuggestedForYou => GlassModel.Hide_SuggestedForYou;
         public List<IArticle> EditorsPicks => GetEditorsPicks();
