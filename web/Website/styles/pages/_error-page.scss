@@ -1,0 +1,19 @@
+.error-page-main{
+	margin-left: 0;
+	width: 100%;
+	.container{
+		padding: 30px;
+		img{
+			padding: 10px 0px;
+			border: 0;
+			height: 50px;
+		}
+		.footer__separator {
+			margin: 10px 0;
+		}
+	}
+}
+.error-page-footer{
+	padding: 30px;
+    overflow: hidden;
+}
