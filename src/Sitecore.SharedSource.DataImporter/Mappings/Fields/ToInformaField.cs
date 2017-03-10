@@ -45,12 +45,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
+
+            if (f != null)
+            {
+                XMLDataLogger.WriteLog("Article Name:" + newItem.Name + "Field Name:" + f.Name + "Field Value:" + f.Value + "Article Number Generated:" + importValue, "ArticleNoOnSitecoreFileldBeforeAssigning");
+            }
+
             if (f == null)
                 return;
 
             //don't overwrite the number if the item was already created. this occurs on second runs
             if (string.IsNullOrEmpty(f.Value))
                 f.Value = importValue;
+
+            XMLDataLogger.WriteLog("Article Name:"+ newItem.Name +"Field Name:"+f.Name +"Field Value:"+ f.Value + "Article Number Generated:" + importValue, "ArticleNoOnSitecoreFileld");
         }
 
         #endregion Methods
