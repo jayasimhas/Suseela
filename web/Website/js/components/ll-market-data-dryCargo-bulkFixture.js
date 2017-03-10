@@ -44,6 +44,8 @@
 			 
 			$('#dryCargoBulkFixtures table').html(tableStr);
 			
+			self.recreateObj = {};
+			
 			$('table').on('click', 'a.top', function(){
 				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
 				if(window.matchMedia("(max-width: 400px)").matches){
