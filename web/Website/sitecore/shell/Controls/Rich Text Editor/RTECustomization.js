@@ -82,14 +82,16 @@ var html = editor.getSelectionHtml();
 
 Telerik.Web.UI.Editor.CommandList["ApplyStyles"] = function (commandName, editor, args) {
 	var html = editor.getSelectionHtml();
+	var selectedtag=editor.getSelectedElement(); 
 	var val=args.value;
 	scEditor = editor;
 	if(val=='')
 	{
 		ApplyStyleWithoutClass(val);
-	}
+	}	
 	else
-	StoryTitle(editor,val,html);
+	StoryTitle(editor,val,html,selectedtag);
+    
 		   /* var tool = editor.getToolByName("FormatBlock");
 			if (tool) {
 				editor.pasteHtml("<div class="">"+html+"</div>");
