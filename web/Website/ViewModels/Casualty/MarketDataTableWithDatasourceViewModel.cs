@@ -50,7 +50,7 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Table data feed URL
         /// </summary>
-        public string TankerFixHiddenVal => GlassModel?.Table_Result_Feed_URL;
+        public string TableFeedUrl => GlassModel?.Table_Result_Feed_URL;
         /// <summary>
         /// Data Provider
         /// </summary>
@@ -60,20 +60,6 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         public Image ProviderLogo => GlassModel?.ProviderLogo;
         public string jsonDropdownData => GetjsonDropdownData();
-        public string jsonTableData => GetjsonTableData();
-
-        private string GetjsonTableData()
-        {
-            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
-            {
-                var client = new WebClient();
-                return client.DownloadString(GlassModel.Table_Result_Feed_URL);
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
         private string GetjsonDropdownData()
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
