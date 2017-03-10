@@ -20,16 +20,6 @@
 				var selectDateVal = $('#drybulkselectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
-			
-			$('table').on('click', 'a.top', function(){
-				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
-				if(window.matchMedia("(max-width: 400px)").matches){
-					$(window).scrollTop(tablePos - 40);
-				}
-				else{
-					$(window).scrollTop(tablePos);
-				}
-			});
 		},
 		callAjaxFn: function(seldateVal){
 			 var self = this;
@@ -53,6 +43,16 @@
 			tableStr += self.loadMobileView(searchData);
 			 
 			$('#dryCargoBulkFixtures table').html(tableStr);
+			
+			$('table').on('click', 'a.top', function(){
+				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
+				if(window.matchMedia("(max-width: 400px)").matches){
+					$(window).scrollTop(tablePos - 40);
+				}
+				else{
+					$(window).scrollTop(tablePos);
+				}
+			});
 		},
 		loadDescView: function(tableObj){
 			var self = this, getArr;
