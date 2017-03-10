@@ -88,7 +88,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     string test = ao["ARTICLE NUMBER"].ToString();
                     string testLog = "ArticleNumber:" + artNumber.ToString() + "Article Number With Prefix:";
 
-                    XMLDataLogger.WriteLog(testLog + test,"ArticleNoLog");
+                    XMLDataLogger.WriteLog(testLog + test + " File Name " + f, "ArticleNoLog");
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
@@ -429,10 +429,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         {
 
-                            string BodyTextremovehtml = FindingTextFromHTML(GetXMLData(d, "BODY"));
+                            string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
                             string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
                             string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
-                            string summSearch = RemovespecialcharactersfromString(summarySearch);
+                            string summSearch = RemovespecialcharactersfromString(summaryTitleHtml);
                             string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
                             string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
                             string specialcommoditysearch = " " + cleanTitle + " " + summarySearch;
