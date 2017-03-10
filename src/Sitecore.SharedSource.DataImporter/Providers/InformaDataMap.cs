@@ -68,6 +68,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 string articleNumber = string.Empty;
                 try
                 {
+                
 
                     string errorLog = "XML read with Error ArticleId: ";
 
@@ -81,9 +82,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     //reading article no
                     string curFileName = new FileInfo(f).Name;
                    
-                    ao["ARTICLE NUMBER"] = $"{ItemIdResolver.GetArticlePrefixByKey(site, publication)}{artNumber:D6}";
+                    //ao["ARTICLE NUMBER"] = $"{ItemIdResolver.GetArticlePrefixByKey(site, publication)}{artNumber:D6}";
+                    ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
 
+                    string test = ao["ARTICLE NUMBER"].ToString();
+                    string testLog = "ArticleNumber:" + artNumber.ToString() + "Article Number With Prefix:";
 
+                    XMLDataLogger.WriteLog(testLog + test + " File Name " + f, "ArticleNoLog");
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
@@ -424,10 +429,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                         {
 
-                            string BodyTextremovehtml = FindingTextFromHTML(GetXMLData(d, "BODY"));
+                            string BodyTextremovehtml = FindingTextFromHTML(bodyTitleHtml);
                             string BodyText = RemovespecialcharactersfromString(BodyTextremovehtml);
                             string cleanTitle = RemovespecialcharactersfromString(cleanTitleHtml);
-                            string summSearch = RemovespecialcharactersfromString(summarySearch);
+                            string summSearch = RemovespecialcharactersfromString(summaryTitleHtml);
                             string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
                             string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
                             string specialcommoditysearch = " " + cleanTitle + " " + summarySearch;
@@ -1047,12 +1052,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                    .Select(b => b.Fields["Article Number"].Value)
                    .OrderByDescending(c => c);
 
-            var articles3 = ImportToWhere.Axes.GetDescendants();
+            //var articles3 = ImportToWhere.Axes.GetDescendants();
 
-            var articles1 = ImportToWhere.Axes.GetDescendants().Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName));
+            //var articles1 = ImportToWhere.Axes.GetDescendants().Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName));
 
-            var articles2 = ImportToWhere.Axes.GetDescendants().Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
-                             .Select(b => b.Fields["Article Number"].Value);
+            //var articles2 = ImportToWhere.Axes.GetDescendants().Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
+            //                 .Select(b => b.Fields["Article Number"].Value);
 
 
             if (articles == null || !articles.Any())
@@ -3442,6 +3447,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 {
                     string name = (authorName != null) ? authorName : string.Empty;
 
+                    bool xx=  ItemUtil.IsItemNameValid(authorName);
+                    if (xx==false)
+                    {
+                        XMLDataLogger.WriteLog(name, "AuthorWithspecialchar");
+                    }
+                    else
+                    {
+                        XMLDataLogger.WriteLog(name, "AuthorCorrect");
+                    }
 
                     string[] nameArr = AuthorHelper.Authors(authorName).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -3452,8 +3466,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
                         if (nameParts.Count < 2)
                         {
+                            XMLDataLogger.WriteLog(name, "Authortooshort");
                             Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
                             continue;
+
+
+
                         }
                         Dictionary<string, string> ao = new Dictionary<string, string>();
                         ao.Add("STORYAUTHORNAME", n.Trim());

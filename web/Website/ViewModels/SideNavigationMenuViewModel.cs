@@ -111,7 +111,7 @@ namespace Informa.Web.ViewModels
                             {
                                 if (UserPreferences.Preferences.PreferredChannels.FirstOrDefault().ChannelCode != SiterootContext.Item.Publication_Code)
                                 {
-                                    foreach (var preference in UserPreferences.Preferences.PreferredChannels)
+                                    foreach (var preference in UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList())
                                     {
                                         bool isTopicsFollowing = preference.Topics != null ? preference.Topics.Any(tp => tp.IsFollowing) : false;
 
@@ -142,7 +142,7 @@ namespace Informa.Web.ViewModels
                                         && UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).Count() > 0)
                                             {
                                                 string navigationLink = string.Empty;
-                                                foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics))
+                                                foreach (var topic in UserPreferences.Preferences.PreferredChannels.SelectMany(n => n.Topics).OrderBy(topic => topic.TopicOrder).ToList())
                                                 {
                                                     if (!string.IsNullOrWhiteSpace(topic.TopicCode) && topic.IsFollowing)
                                                     {

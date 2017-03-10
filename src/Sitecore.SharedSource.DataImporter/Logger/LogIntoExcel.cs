@@ -59,9 +59,11 @@ namespace Sitecore.SharedSource.DataImporter.Logger
                         dt = WorksheetToDataTable(ws);
 
                     DataRow dr = dt.NewRow();
-
-                    dr["ArticleId"] = articleId;
-
+                    try
+                    {
+                        dr["ArticleId"] = articleId;
+                    }
+                    catch { }
                     foreach (KeyValuePair<string, string> l in logValues)
                     {
 

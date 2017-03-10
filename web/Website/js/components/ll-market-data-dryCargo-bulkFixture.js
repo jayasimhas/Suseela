@@ -13,11 +13,13 @@
 			$('#selectDay').html(options);
 		},
 		renderTable: function(){
-			var tableStr = '';
-			tableStr += this.loadDescView();
-			tableStr += this.loadMobileView(); 
-			
-			$('#dryCargoBulkFixtures table').append(tableStr);
+			var self = this, loadDateVal = $('#selectDay option').val();
+
+			self.callAjaxFn(loadDateVal);
+			$(document).on('change', '#selectDay', function(){
+				var selectDateVal = $('#selectDay option').val();
+				self.callAjaxFn(selectDateVal);
+			});
 			
 			$('table').on('click', 'a.top', function(){
 				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
@@ -28,6 +30,29 @@
 					$(window).scrollTop(tablePos);
 				}
 			});
+		},
+		callAjaxFn: function(seldateVal){
+			 var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('#drycargoHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function (err) {
+					console.log(err);
+				}
+			});
+		},
+		sendHTTPRequest: function(searchData){
+			var self = this, loadHead = true, tableStr = '';
+			
+			tableStr += self.loadDescView(searchData);
+			tableStr += self.loadMobileView(searchData);
+			 
+			$('#dryCargoBulkFixtures table').html(tableStr);
 		},
 		loadDescView: function(){
 			var self = this, getArr;

@@ -24,8 +24,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
-import './components/header-logout';
-import './components/article-sidebar-component';
+//import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
@@ -424,7 +423,7 @@ $(document).ready(function(){
 		articles. Bound explicitly to `window` for easier access by Angular.
 	* * */
     window.indexBookmarks = function() { // Toggle bookmark icon
-        $(document).on('click', '.js-bookmark-article', function bookmarkArticle(e) {
+        $('.js-bookmark-article').off('click').on('click', function bookmarkArticle(e) {
 
             e.preventDefault();
             window.bookmark.toggle(this);

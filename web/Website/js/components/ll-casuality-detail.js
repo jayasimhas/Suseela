@@ -1,8 +1,10 @@
 (function () {
 	var CasualityDetail = {
 		RenderTable: function(data, Parent) {
-			var Data = data[0].casualtydetails;
-
+			var Data;
+			$.each(data[0], function(key, val){
+				Data = val;
+			});
 			Parent.append('<thead class="table_head">'+
 									'<tr>'+
 									  '<th colspan="2" class="p-10">'+((Data.Heading) ? Data.Heading : '&nbsp;')+'</th>'+
