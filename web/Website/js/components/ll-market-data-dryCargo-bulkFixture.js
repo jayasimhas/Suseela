@@ -10,14 +10,14 @@
 				});
 			});
 			
-			$('#selectDay').html(options);
+			$('#drybulkselectDay').html(options);
 		},
 		renderTable: function(){
-			var self = this, loadDateVal = $('#selectDay option').val();
+			var self = this, loadDateVal = $('#drybulkselectDay option').val();
 
 			self.callAjaxFn(loadDateVal);
-			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay option').val();
+			$(document).on('change', '#drybulkselectDay', function(){
+				var selectDateVal = $('#drybulkselectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
 			
