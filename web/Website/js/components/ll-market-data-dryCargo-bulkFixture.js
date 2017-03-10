@@ -59,20 +59,13 @@
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
 				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>'									
-				/*self.table += '<tr class="visible-lg">';
-				var tableHead = val[0];
-					for(var prop in tableHead){
-						self.table += '<th class="pad-10">'+prop+'</th>';
-					}
-					self.table += '</tr>';*/
-					self.table += '</thead>';
+				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>';
+				self.table += '</thead>';
 				self.table += '</table>';	
 			 });
-			 $('#dryCargoBulkFixtures').html(self.table);
 			 
 			$.each(tableObj[0], function(idx, val){
-				getArr = val; 
+				getArr = val;
 			});
 			for(var i=0; i<getArr.length; i++){
 			  if(self.recreateObj[getArr[i]['fixtureType']] == undefined){ 
