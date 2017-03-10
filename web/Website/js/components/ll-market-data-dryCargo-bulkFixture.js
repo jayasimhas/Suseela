@@ -2,7 +2,7 @@
 	var dryCargoBulkFixtures = {
 		table: '',
 		recreateObj: {},
-		renderDate: function(){ 
+		renderDate: function(dateObj){ 
 			var options = '';
 			$.each(dateObj[0], function(key, val){ 
 				$.each(val, function(idx, value){ 
@@ -10,14 +10,14 @@
 				});
 			});
 			
-			$('#selectDay').html(options);
+			$('#drybulkselectDay').html(options);
 		},
 		renderTable: function(){
-			var self = this, loadDateVal = $('#selectDay option').val();
+			var self = this, loadDateVal = $('#drybulkselectDay option').val();
 
 			self.callAjaxFn(loadDateVal);
-			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay option').val();
+			$(document).on('change', '#drybulkselectDay', function(){
+				var selectDateVal = $('#drybulkselectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
 			
@@ -42,7 +42,7 @@
 					self.sendHTTPRequest(searchData);
 				},
 				error: function (err) {
-					console.log(err);
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
@@ -117,14 +117,14 @@
 			return tbody;
 		},
 		init: function() {
-			this.renderDate();
+			this.renderDate(dateOptions);
 			this.renderTable();
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#dryCargoBulkFixtures').length > 0) {
-			dryCargoBulkFixtures.init();
+			dryCargoBulkFixtures.init(BalticDryIndexDateOptions);
 		}
 	});
 })();
