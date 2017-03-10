@@ -423,7 +423,7 @@ $(document).ready(function(){
 		articles. Bound explicitly to `window` for easier access by Angular.
 	* * */
     window.indexBookmarks = function() { // Toggle bookmark icon
-        $(document).on('click', '.js-bookmark-article', function bookmarkArticle(e) {
+        $('.js-bookmark-article').off('click').on('click', function bookmarkArticle(e) {
 
             e.preventDefault();
             window.bookmark.toggle(this);
