@@ -1,75 +1,21 @@
 .package-control-articles__fullContent{
 	margin: 0;
 	background: #f1f2f2;
-	padding: 1.5625rem;
+	padding: 1.25rem;
 	margin-bottom: 2rem;
 	.package-wrapper {
-		padding-bottom: 0.5rem;
+		padding-bottom: 2rem;
 		margin: 0 -0.625rem;
 		display: flex;
 		@include breakpoint('small') {
 			display: block;
 		}
 		.package-control-preview{
-			&:first-child{
-				.article-preview__headline {
-					margin-bottom: 1px;
-				}
-				.article-metadata {
-					margin-bottom: 0;
-				}
-				.article-preview__tags {
-					bottom: 20px;
-					clear: both;
-				}
-				.article-summary {
-					p:after{
-							display: none;
-							content: "";
-							position: absolute;
-							width: 100%;
-							height: 3rem;
-							bottom: 103px;
-							left: 0;
-							background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-							background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-							z-index: 227;
-					}
-				}
-			}
-			&:last-child{
-				.article-preview__tags {
-					bottom: 20px;
-					clear: both;
-				}
-				.article-metadata {
-					margin-bottom: 0;
-				}
-				.article-preview__inner-wrapper {
-					.article-summary {
-						position: relative;
-						p{
-							max-height: 190px;
-						}
-						p:after{
-								content: "";
-								position: absolute;
-								width: 100%;
-								height: 3rem;
-								bottom: 0;
-								left: 0;
-								background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-								background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-								z-index: 227;
-						}
-					}
-				}
-			}
+			
 		}
 	}
 	
 	.article-metadata{
-		position: relative;
 		ul {
 			display: block;
 			li {
@@ -80,9 +26,6 @@
 				&:nth-child(2){
 					max-width: 85px;
 					text-overflow: ellipsis;
-				}
-				&:nth-child(3){
-					border-right: none;
 				}
 				&:last-child{
 					right: 0;
@@ -102,8 +45,7 @@
 	.header-line-control {
 		width: 100%;
 		position: relative;
-		margin: 0 0 0.625rem 0; 
-		font-size: 1.875rem;
+		margin: 0 0 1.25rem 0;
 		&:after {
 			content: '';
 			position: absolute;
@@ -124,25 +66,18 @@
 			padding-right: 1.25rem;
 		}
 	}
-		
+	
 }
 .package-wrapper{
 	&:after{
 		margin-bottom: 2rem;
 	}
-	
 		.package-control-preview {
 			position: relative;
 			width: 25%;
 			margin: 0;
-			padding: 0 0.9375rem;
+			padding: 0 0.625rem;
 			float: left;
-			.article-preview__inner-wrapper {
-				margin-bottom: 0.5rem !important;
-			}
-			.bar-separated-link-list a {
-				font-size: 1rem;
-			}
 			@include breakpoint('small') {
 				width: 100%;
 				margin-bottom: 2rem;
@@ -151,7 +86,7 @@
 				width: 50%;
 			}
 			&:first-child {
-				width: calc(50% - 10px);
+				width: 50%;
 				@include breakpoint('small') {
 					width: 100%;
 				}
@@ -160,21 +95,25 @@
 					@include breakpoint('small') {
 						font-size: 1.5rem;
 					}
-				}
+				}				
 				
 			}
-			
+			&:last-child {
+				.article-summary p {
+					margin-bottom: 0.9375px;
+				}
+			}
 			.article-metadata {
 				clear: both;
 				margin-top:0;
-				margin-bottom: 0.25rem;
+				margin-bottom: 0.5rem;
 				@include breakpoint('small') {
 					float: none;
 				}
 			}
 			.article-preview__byline {
 				float: left;
-				margin-bottom:0;
+				margin-bottom:0.5rem;
 				@include breakpoint('small') {
 					float: none;
 				}
@@ -183,13 +122,13 @@
 				margin: 0;
 				width: 100%;
 			}
-			.article-preview__inner-wrapper {
-				margin-bottom: 0.9375rem;
+			.article-preview__headline {
+				
 			}
 			.package-heading-wrapper {
-				margin-top: 1rem;
+				margin-top: 1.25rem;
 				h3.article-preview__headline {
-					padding: 1rem 0 0.5rem 0;
+					padding: 1rem 0;
 					font-family: Roboto;
 					font-size: 1.25rem;
 					font-weight: bold;
@@ -202,19 +141,14 @@
 					font-family: Roboto;
 					font-size: 1.25rem;
 					font-weight: bold;
-					line-height: 24px;	
-					margin-bottom: 3px;	
+					line-height: 24px;		
 				}
 				
 				.article-summary{
-					clear: both;
 					p{
-						font-size: 1.125rem;
+						
 						line-height: 30px;
-						max-height: 135px;
-						overflow: hidden;
 					}
-					
 				}
 			}
 		}
@@ -223,8 +157,7 @@
 		.header-line-control {
 			width: 100%;
 			position: relative;
-			margin: 0 0 0.625rem 0;
-			font-size: 1.875rem;
+			margin: 0 0 1.25rem 0;
 			&:after {
 				content: '';
 				position: absolute;
@@ -248,26 +181,9 @@
 		background: #f1f2f2;
 		padding: 1.25rem;
 		margin-bottom: 2rem;
-		.article-metadata {
-			li:nth-child(2) {
-				border-left: none;
-			}
-		}
-		.package-img-wrapper {
-			margin-bottom: 0.9375rem;
-		}
-		.package-wrapper {
-			margin: 0 -0.8125rem;
-		}
 		.package-control-preview {
 			width: 50%;
 			float: left;
-			&:first-child {
-				width: 50%;
-				.article-preview__headline, .article-preview__byline, .article-metadata {
-					margin-bottom: 0;
-				}
-			}
 			@include breakpoint('small') {
 				width: 100%;
 			}
@@ -276,29 +192,10 @@
 			&:first-child {
 				.article-preview__byline {
 					float: none;
-					margin-bottom:0.1875rem;
-				}
-			}
-			.article-preview__tags{
-				bottom: 20px;
-				clear: both;
-			}
-			.article-summary {
-				p:after{
-						content: "";
-						position: absolute;
-						width: 100%;
-						height: 3rem;
-						bottom: 0;
-						left: 0;
-						background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-						background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #f1f2f2 65%, #f1f2f2 100%);
-						z-index: 227;
 				}
 			}
 			.article-preview__inner-wrapper{
 				position: relative;
-				margin-bottom: 0.3125px !important;
 				.article-metadata li{
 					&:last-child {
 						right:0;
@@ -312,9 +209,6 @@
 			.package-heading-wrapper {
 				margin-top:0;
 				h3.article-preview__headline {
-					padding-top: 15px;
-					padding-bottom: 0.5625rem;
-					margin-bottom: 5px;
 					&:first-child {			
 						border-top: none;
 						padding-top:0;
@@ -374,17 +268,15 @@
 }
 .package-img-wrapper{
 	overflow: hidden;
+	margin-bottom: 1.25rem;
 	img{
 		width: 100%;
 	}
 	&.first{
 		height: 220px;
-		width: 545px;
-		margin-bottom: 0.9375rem;
 	}
 	&.second{
 		height: 165.56px;
-		margin-bottom: 1rem;
 	}
 	&.third{
 		height: 200px;
@@ -392,7 +284,7 @@
 }
 .moreText{
 	text-align: right;
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 	font-family: Roboto;
 	font-size: 1rem;
 	font-weight: bold;
