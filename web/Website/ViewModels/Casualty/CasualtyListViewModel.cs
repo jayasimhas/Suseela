@@ -18,6 +18,7 @@ using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Globalization;
+using System.Net;
 
 namespace Informa.Web.ViewModels.Casualty
 {
@@ -112,7 +113,7 @@ namespace Informa.Web.ViewModels.Casualty
                     {
                         foreach (JProperty prop in content.Properties())
                         {
-                            SelectListItem select = new SelectListItem { Text = DateTime.ParseExact(prop.Name, "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("ddd, dd MMMM yyyy"), Value = prop.Name.ToString() };
+                            SelectListItem select = new SelectListItem { Text = DateTime.ParseExact(prop.Name, "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString("ddd, dd MMMM yyyy"), Value = prop.Name.ToString() };
                             selectItemList.Add(select);
                         }
                     }
@@ -134,7 +135,8 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL))
             {
-                return CompanyResultService.GetCompanyFeeds(feedUrlConfigurationItem.External_Feed_URL).Result;
+                var client = new WebClient();
+                return  client.DownloadString(feedUrlConfigurationItem.External_Feed_URL);
             }
             else
             {

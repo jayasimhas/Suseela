@@ -1,5 +1,5 @@
 ﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobDetailsViewModel
-<div class="pdf-classified" style="text-align:justify">    
+<div class="pdf-classified">    
     <div>
         <h3 style="text-align:center">@Model.TextTranslator.Translate("PDF.Classified.Heading")</h3>
         <div class="job_logo">            
@@ -9,7 +9,7 @@
             <h1>@Model.JobTitle</h1>
             <div class="sub-heading-text">
                 <h3>@Model.JobSubTitle</h3>
-                <div class="job_description" style="color:#58595b; font-size:15px; line-height:20px; text-align:justify">
+                <div class="job_description" style="color:#58595b; font-size:13px; line-height:20px;">
                     @Html.Raw(Model.JobDescription)
                 </div>
             </div>

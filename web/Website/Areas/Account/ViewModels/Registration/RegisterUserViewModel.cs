@@ -86,5 +86,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         //Master ID/Password settings
         public string MasterId => Sitecore.Configuration.Settings.GetSetting("MasterId");
         public string MasterPassword => Sitecore.Configuration.Settings.GetSetting("MasterPassword");
+        public string CurVerticalName => GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
     }
 }

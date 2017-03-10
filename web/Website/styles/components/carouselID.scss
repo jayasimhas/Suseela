@@ -148,6 +148,9 @@
 				@include breakpoint('small') {
 					width: auto !important;
 				}
+				@media only screen and (min-width: 480px) and (max-width: 767px) {
+					width: 122px !important;
+				}
 			}
 		}
 		.owl-dots{
@@ -206,7 +209,7 @@
 				color: #fff;
 				background-color: #de4361;
 				@include textMix('Roboto', 1rem, 500);
-				@include breakpoint('small') {
+				@media (max-width: 667px){
 					padding-right: 110px;
 				}
 			}

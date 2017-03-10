@@ -28,7 +28,7 @@
 				//Appending Body
                 var CasualityData = data[key].casualtyData;
                 for(var item in CasualityData) {
-                	Wrapper.append('<tr><td class="RB16 pad-10"><a href="'+ $('#casualtyDetailUrl').val()+ '?incidentId='+ CasualityData[item].incidentId +'">'+CasualityData[item].Title+'</a></td><td class="R16 pad-10">'+CasualityData[item]["Date of Incident"]+'</td><td class="R16 pad-10">'+CasualityData[item]["Area"]+'</td></tr>');
+                	Wrapper.append('<tr><td class="RB16 pad-10"><a href="'+ $('#casualtyDetailUrl').val()+ '?incidentId='+ CasualityData[item].incidentId +'">'+CasualityData[item].Title+'</a></td><td class="R16 pad-10">'+CasualityData[item]["Date Of Incident"].split(' ')[0].split('-').reverse().join('.')+'</td><td class="R16 pad-10">'+CasualityData[item]["Area"]+'</td></tr>');
                 }
 			}
 
@@ -83,7 +83,7 @@
 		},
 		FindHeaderLinks: function(data) {
 			for(var key in data) {
-				var CasualityData = data[key].casualtyData;
+				if(Array.isArray(data[key])) var CasualityData = data[key];
                 for(var item in CasualityData) {
                 	var List = CasualityData[item];
                 	for(var list in List) {
@@ -125,7 +125,7 @@
 			});
 			$(document).on('change','#jumpTo', function(){
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
-				var Top = $('#casualty-listing-table tr[data-jump='+Value+']').offset().top;
+				var Top = $('#casualty-listing-table tr[data-jump="'+Value+'"]').offset().top;
 
 				window.scrollTo(0, Top);
 			});

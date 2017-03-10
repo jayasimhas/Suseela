@@ -583,9 +583,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         //    if (!string.IsNullOrEmpty(newItem.Fields["Escenic ID"].Value))
                         //        ArticleId =  newItem.Fields["Escenic ID"].Value;
 
+                        try
+                        {
+                            ArticleId = ArticleData["ARTICLEID"];
+                        }
+                        catch
+                        {
 
-                        ArticleId = ArticleData["ARTICLEID"];
 
+                        }
                         //add in the field mappings
                         List<IBaseField> fieldDefs = GetFieldDefinitionsByRow(importRow);
                         SetFieldUpdateFlags(fieldDefs, dict);

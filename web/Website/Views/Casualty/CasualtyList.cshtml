@@ -3,7 +3,7 @@
 @if (!string.IsNullOrEmpty(Model.jsonCasualtyData))
 {
     <script type="text/javascript">
-        var jsonCasualtyListing = Model.jsonCasualtyData;
+        var jsonCasualtyListing = @Html.Raw(Model.jsonCasualtyData);
     </script>
 }
 else

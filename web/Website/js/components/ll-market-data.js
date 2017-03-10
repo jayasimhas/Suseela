@@ -7,14 +7,17 @@
 			this.setColHeight(renderId);
 		},
 		loadMobileView: function(tableData, id){
-			var headObj = tableData[0], indx = 0, titflag = true;
+			var headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
 				$.each(headObj, function(key, val){
-					if(titflag){
-						titflag = false;
-						$('.states_heading').append('<div class="title" data-title="'+key+'"><span>'+ key + '</span></div>');
-					}
-					else{
-						$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
+					colInd++;
+					if(colInd <= 6){
+						if(titflag){
+							titflag = false;
+							$('.states_heading').append('<div class="title" data-title="'+key+'"><span>'+ key + '</span></div>');
+						}
+						else{
+							$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
+						}
 					}
 				});
 				
@@ -35,10 +38,14 @@
 				}); 
 		},
 		loadDescView: function(tableData, id){
-			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0;
+			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0, colHeadInd = 0, colInd = 0;
 			descStr += "<tr>";
 			for(var prop in thead){
-				descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+				colHeadInd++;
+				if(colHeadInd <= 6){
+					descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+				}
+				else break;
 			}
 			descStr += "</tr>";
 			descStr += "</thead>";
@@ -46,18 +53,22 @@
 						  
 			$.each(tableData, function(idx, val){
 				index++;
-				var oddCls = index % 2 == 0 ? 'oddCls' : '';
+				var oddCls = index % 2 == 0 ? 'oddCls' : ''; 
 				descStr += "<tr class='"+oddCls+"'>";
 				for(var prop in val){
 					var cls = (val[prop].split(' ')[1].indexOf('-') !== -1) ? 'fall' : 'rise';
-					if(indx >= 1){
-						descStr += "<td class='R16 pad-10'><div class='pad'><span class='numData'>"+val[prop].split(' ')[0]+'</span><span class="'+cls+'">'+val[prop].split(' ')[1]+"</span></div></td>";
+					colInd++;
+					if(colInd <= 6){
+						if(indx >= 1){
+							descStr += "<td class='R16 pad-10'><div class='pad'><span class='numData'>"+val[prop].split(' ')[0]+'</span><span class="'+cls+'">'+val[prop].split(' ')[1]+"</span></div></td>";
+						}
+						else{
+							descStr += "<td class='R16 pad-10'><div class='pad'>"+val[prop]+"</div></td>";
+						}
+						indx++;
 					}
-					else{
-						descStr += "<td class='R16 pad-10'><div class='pad'>"+val[prop]+"</div></td>";
-					}
-					indx++;
 				}
+				colInd = 0;
 				indx = 0;
 				descStr += "</tr>";
 			});
@@ -76,7 +87,7 @@
 					items:4
 					},
 					678:{
-					items:3
+					items:2
 					},
 					320:{
 					 items:1

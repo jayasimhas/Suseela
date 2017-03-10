@@ -24,7 +24,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-        
+
         public HeaderViewModel(
             IAuthenticatedUserContext authenticatedUserContext,
             IUserCompanyNameContext companyNameContext,
@@ -54,7 +54,7 @@ namespace Informa.Web.ViewModels
                 var user = AuthenticatedUserContext.IsAuthenticated
                          ? ProfileContext.Profile
                          : null;
-                var accountName = AuthenticatedUserContext.IsAuthenticated ? !SalesforceConfigurationContext.IsNewSalesforceEnabled ? user?.FirstName : AuthenticatedUserContext.User?.Username : CompanyNameContext.Name;
+                var accountName = AuthenticatedUserContext.IsAuthenticated ? user?.FirstName : !SalesforceConfigurationContext.IsNewSalesforceEnabled ? CompanyNameContext.Name : string.Empty;
 
                 return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
             }
@@ -87,9 +87,9 @@ namespace Informa.Web.ViewModels
 
         public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
 
-        public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);   
+        public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
 
-        public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints();
+        public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest/Logout") + "?vid=" + CurVerticalName);
 
         private string BuildLink(Link l)
         {

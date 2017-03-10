@@ -120,15 +120,15 @@
 			});
 			return mobileStr;
 		},
-		init: function() {
-			//this.renderDateData(dateObj);
+		init: function(dateObj) {
+			this.renderDateData(dateObj);
 			this.renderTable();
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init();
+			tankerFixtures.init(dateOptions);
 		}
 	});
 })();

@@ -1,7 +1,8 @@
 ﻿@model Informa.Web.ViewModels.PDF.ManuallyCuratedPDFViewModel
+
 <div class="main-content-pdf" id="mainContentPdf">
     <div class="pdf-header">
-       @Html.Raw(Model.PDFHeader)
+        @Html.Raw(Model.PDFHeader)
     </div>
     <div class="pdf-title" style="clear:both; line-height:50px">
         <h1>@Model.PDFTitle</h1>
@@ -22,7 +23,7 @@
         <tr><td>&nbsp;</td></tr>
     </table>
     <div class="pdf-body">
-    @Html.Sitecore().Placeholder("manually-curated-pdf")
+        @Html.Sitecore().Placeholder("manually-curated-pdf")
     </div>
     <div class="pdf-footer"><h4>@Html.Raw(Model.PDFFooter)</h4></div>
 </div>

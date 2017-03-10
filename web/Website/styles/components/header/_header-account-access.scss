@@ -12,7 +12,6 @@
         font-size: 11px;
         padding-right: 1rem;
     }
-
     @include breakpoint('small') {
         display: none;
     }

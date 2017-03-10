@@ -372,16 +372,19 @@
 	@include textMix('Roboto', 1em, 400);
 	margin-bottom: 2rem;
 	width: 100%;
+	.owl-wrapper{
+		width: 100%;
+	}
 	.showinMob{
 		display: none;
-		@include breakpoint('medium-small') {
+		@media screen and (max-width: 767px) {
 			display: block;
 		}
 	}
 	.hideinMob{
-		display: block;
-		@include breakpoint('medium-small') {
-			display: none;
+		display: none;
+		@media screen and (min-width: 768px) {
+			display: block;
 		}
 	}
 	.carousel-div{
@@ -405,6 +408,9 @@
 			}
 			@media only screen and (max-width: 320px) {
 				width: 62%;
+			}
+			@media only screen and (min-width: 481px) and (max-width: 680px) {
+				width: 40%;
 			}
 			.title{
 				background-color: #1191d1;
@@ -481,7 +487,7 @@
 					font-size: 1rem;
 				}
 			}
-			@media only screen and (max-width: 375px) {
+			@media only screen and (max-width: 767px) {
 				padding: 12px 0px;
 			}
 			border-bottom: 1px solid #e1e1e1;

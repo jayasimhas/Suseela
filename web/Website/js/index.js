@@ -24,8 +24,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
-import './components/header-logout';
-import './components/article-sidebar-component';
+//import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
@@ -424,7 +423,7 @@ $(document).ready(function(){
 		articles. Bound explicitly to `window` for easier access by Angular.
 	* * */
     window.indexBookmarks = function() { // Toggle bookmark icon
-        $(document).on('click', '.js-bookmark-article', function bookmarkArticle(e) {
+        $('.js-bookmark-article').off('click').on('click', function bookmarkArticle(e) {
 
             e.preventDefault();
             window.bookmark.toggle(this);
@@ -1141,15 +1140,15 @@ $(document).ready(function(){
 
     $('.js-register-final').on('click',function(e){
         var pub_newsletter = '';
-       /* if (window.matchMedia("(max-width: 600px)").matches) {
+        if (window.matchMedia("(max-width: 600px)").matches) {
             for(var i=0; i<$('.mobile .newsletter_checkbox.wcs-c-on').length; i++){
-                pub_newsletter += $($('.site_div .newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
+                pub_newsletter += $($('.mobile .newsletter_checkbox.wcs-c-on')[i]).parents('.newsletter_box').find('.article-preview__headline').html() + ', ';
             }
-        } else {*/
+        } else {
             for(var i=0; i<$('.newsletter_checkbox.wcs-c-on').length; i++){
                 pub_newsletter += $($('.newsletter_checkbox.wcs-c-on')[i]).prev().html() + ', ';
             }
-       // } 
+        } 
         var eventDetails = {
             event_name:"newsletter-signup",
             page_name:"Newsletter",

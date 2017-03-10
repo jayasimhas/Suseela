@@ -126,7 +126,9 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         record.Value8__c.Split(OrderSeparator) : null;
                     if (channelCode.Equals(record.Value2__c, StringComparison.OrdinalIgnoreCase))
                     {
-                        ch.Topics.Add(
+                        if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
+                        {
+                            ch.Topics.Add(
                            new Topic()
                            {
                                TopicCode = record.Value5__c,
@@ -134,6 +136,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                IsFollowing = Convert.ToBoolean(record.Value7__c),
                                TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
                            });
+                        }
                     }
                     else
                     {
@@ -150,7 +153,9 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             ChannelOrder = orders != null && orders.Count() > 0 ? Convert.ToInt16(orders[0]) : 0
                         };
                         ch.Topics = new List<Topic>();
-                        ch.Topics.Add(
+                        if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
+                        {
+                            ch.Topics.Add(
                             new Topic()
                             {
                                 TopicCode = record.Value5__c,
@@ -158,6 +163,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 IsFollowing = Convert.ToBoolean(record.Value7__c),
                                 TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
                             });
+                        }
                     }
                     if(lastRecord.Equals(record))
                     {

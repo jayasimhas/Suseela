@@ -37,29 +37,18 @@
                     <div class="newsletter_box">
                         <div class="site_div">
                             <h1 class="article-preview__headline">@item.Publication.Name</h1>
-                            <div class="@checkBobClassname">
-
-                                <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
-                                <input name="Newsletters[@i].NewsletterChecked"
-                                       id="newsletters"
-                                       type="checkbox"
-                                       @(item.OptIn ? "checked='checked'" : string.Empty)
-                                       data-checkbox-type="boolean" />
-                                <span class="chk_box"></span>
-                                <span>@Model.NewslettersLabelText</span>
-                            </div>
                         </div>
                         <hr>
                         <p>@Html.Raw(Model.Body)</p>
-                        <div class="mobile">
+                        <div class="checkbox-wrapper">
                             <hr>
                             <div class="@checkBobClassname">
                                 <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
-                                <input name="Newsletters[@i].NewsletterChecked" 
-                                       id="newsletters" type="checkbox" 
-                                       @(item.OptIn ? "checked='checked'" : string.Empty) 
+                                <input name="Newsletters[@i].NewsletterChecked"
+                                       id="newsletters" type="checkbox"
+                                       @(item.OptIn ? "checked='checked'" : string.Empty)
                                        data-checkbox-type="boolean" />
-                                       
+
                                 <span class="chk_box"></span>
                                 <span>@Model.NewslettersLabelText</span>
                             </div>
@@ -69,9 +58,9 @@
                 <br />
                 <div class="registrationSubmit_div">
                     <div class="page-registration__labeled-checkbox label-check">
-                        <input name="Offers" id="Offers" type="checkbox" 
+                        <input name="Offers" id="Offers" type="checkbox"
                                data-checkbox-type="boolean" />
-                              
+
                         <span class="chk_box"></span>
                         <label class="checkbox-label" for="Offers">@Model.OffersLabelText.Replace("#PubName#", CurrentPublication)</label>
                     </div>
