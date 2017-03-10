@@ -54,7 +54,7 @@
 			 
 			$('#dryCargoBulkFixtures table').html(tableStr);
 		},
-		loadDescView: function(){
+		loadDescView: function(tableObj){
 			var self = this, getArr;
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
@@ -116,7 +116,7 @@
 			
 			return tbody;
 		},
-		init: function() {
+		init: function(dateOptions) {
 			this.renderDate(dateOptions);
 			this.renderTable();
 		}
