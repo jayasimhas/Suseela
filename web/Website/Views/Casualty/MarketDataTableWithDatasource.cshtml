@@ -5,6 +5,11 @@
 {
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation1)
     {
+        <script type="text/javascript">
+            var dateOptions=@Html.Raw(Model.jsonDropdownData);
+            var jsonTableData=@Html.Raw(Model.jsonTableData);
+        </script>
+
         <div class="small_table">
             <div class="table-responsive" id="tanker-fixtures">
                 <h2>@Model.PageTitle</h2>
@@ -19,7 +24,7 @@
                                 <label for="selectDay">Select a day: </label>
                                 <div class="select-field">
                                     @*@Html.DropDownList("selectDay", Model.PopulateByAreaDropdown)*@
-                                    <select id="selectDay"></select> 
+                                    <select id="selectDay"></select>
                                 </div>
                             </div>
                             <div class="dataProImg">

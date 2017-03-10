@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -58,36 +59,32 @@ namespace Informa.Web.ViewModels.Casualty
         /// Data Provider Logo
         /// </summary>
         public Image ProviderLogo => GlassModel?.ProviderLogo;
-        /// <summary>
-        /// Populate Area dropdown
-        /// </summary>
-        public List<SelectListItem> PopulateByAreaDropdown => PopulateDropdown();
+        public string jsonDropdownData => GetjsonDropdownData();
+        public string jsonTableData => GetjsonTableData();
 
-        /// <summary>
-        /// Method to populate dropdowns
-        /// </summary>
-        /// <param name="dropdownType"></param>
-        /// <returns></returns>
-        public List<SelectListItem> PopulateDropdown()
+        private string GetjsonTableData()
         {
-            var jsonAreaDropdown = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketDate.json"));
-            List<SelectListItem> selectItemList = new List<SelectListItem>();
-            if (!string.IsNullOrEmpty(jsonAreaDropdown))
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
             {
-                var res = JsonConvert.DeserializeObject<JToken>(jsonAreaDropdown);
-                foreach (JObject obj in res[0]["SelectDate"].Children())
-                {
-                    SelectListItem select = new SelectListItem { Text = obj["Text"].ToString(), Value = obj["Value"].ToString() };
-                    selectItemList.Add(select);
-                }
-                return selectItemList;
+                var client = new WebClient();
+                return client.DownloadString(GlassModel.Table_Result_Feed_URL);
             }
-
             else
             {
-                return selectItemList;
+                return string.Empty;
             }
-            //}
+        }
+        private string GetjsonDropdownData()
+        {
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
+            {
+                var client = new WebClient();
+                return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
     }
 }
