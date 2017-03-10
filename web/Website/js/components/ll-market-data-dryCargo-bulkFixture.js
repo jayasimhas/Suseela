@@ -124,7 +124,7 @@
 	
 	$(document).ready(function() {
 		if($('#dryCargoBulkFixtures').length > 0) {
-			dryCargoBulkFixtures.init(BalticDryIndexDateOptions);
+			dryCargoBulkFixtures.init(DryBulkFixturesDateOptions);
 		}
 	});
 })();
