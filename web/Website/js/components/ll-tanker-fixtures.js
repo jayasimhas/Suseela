@@ -128,7 +128,7 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(dateOptions);
+			tankerFixtures.init(TankerFixturesDateOptions);
 		}
 	});
 })();
