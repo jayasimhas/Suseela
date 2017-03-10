@@ -1,8 +1,21 @@
 (function () {
 	var marketData = {
-		renderTable: function(data, renderId){
-			this.loadMobileView(data, renderId[0]);
-			this.loadDescView(data, renderId[1]);
+		recreateArr: [],
+		renderTable: function(dataObj, renderId){
+			
+			for(var i=0; i<dataObj.length; i++){
+				var filterObj = Object.keys(dataObj[i]), filterKeys = filterObj.sort().reverse(), createObj = {};
+				for(var j=0; j<filterKeys.length; j++){
+					for(var prop in dataObj[i]){
+						if(prop == filterKeys[j]){
+							createObj[prop] = dataObj[i][prop]; 
+						}
+					}
+				}
+				this.recreateArr.push(createObj);
+			}
+			this.loadMobileView(this.recreateArr, renderId[0]);
+			this.loadDescView(this.recreateArr, renderId[1]);
 			this.initiateCarousel(renderId[0]);
 			this.setColHeight(renderId);
 		},
@@ -109,9 +122,9 @@
 				});
 			});
 		},
-		init: function(data, renderId) {
+		init: function(dataObj, renderId) {
 			var self = this;
-			self.renderTable(data, renderId);
+			self.renderTable(dataObj, renderId);
 			$(window).resize(function() {
 				self.setColHeight(renderId);
 			})
