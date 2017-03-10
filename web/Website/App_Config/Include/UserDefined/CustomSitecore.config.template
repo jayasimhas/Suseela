@@ -96,8 +96,7 @@ But you can also use "patch:attribute" for clarity:
 
     <events>
       <event name="item:added">
-        <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />
-        <handler type="Informa.Library.CustomSitecore.Events.AddArticleFromCMS, Informa.Library" method="OnArticleAddedFromCMS" />
+        <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />        
       </event>
       
       <event name="publish:end">

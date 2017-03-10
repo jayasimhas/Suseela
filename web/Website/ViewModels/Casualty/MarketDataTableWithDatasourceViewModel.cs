@@ -3,7 +3,9 @@ using Informa.Library.Services.Global;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -13,16 +15,20 @@ using System.Web.Mvc;
 
 namespace Informa.Web.ViewModels.Casualty
 {
-    public class MarketDataViewModel : GlassViewModel<IMarket_Data_Component_Parameters>
+    public class MarketDataTableWithDatasourceViewModel : GlassViewModel<IMarket_Data_Component_Parameters>
     {
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IGlobalSitecoreService GlobalService;
 
-        public MarketDataViewModel(IAuthenticatedUserContext authenticatedUserContext, IGlobalSitecoreService globalService)
+        public MarketDataTableWithDatasourceViewModel(IAuthenticatedUserContext authenticatedUserContext, 
+            IGlobalSitecoreService globalService,
+            IRenderingContextService renderingParametersService)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             GlobalService = globalService;
+            RenderingParameters = renderingParametersService.GetCurrentRenderingParameters<IMarket_Data_Table_Types>();
         }
+        public IMarket_Data_Table_Types RenderingParameters { get; set; }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         /// <summary>
         /// Page Title
@@ -64,29 +70,6 @@ namespace Informa.Web.ViewModels.Casualty
         /// <returns></returns>
         public List<SelectListItem> PopulateDropdown()
         {
-            //if (!string.IsNullOrEmpty(DropdownsFeedUrl))
-            //{
-            //    List<SelectListItem> selectItemList = new List<SelectListItem>();
-            //    var jsonAreaDropdown = CompanyResultService.GetCompanyFeeds(DropdownsFeedUrl).Result;
-
-            //    if (!string.IsNullOrEmpty(jsonAreaDropdown) && string.Equals(dropdownType, "AreaDropdown", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        var res = JsonConvert.DeserializeObject<JToken>(jsonAreaDropdown);
-            //        foreach (JObject obj in res[0]["Areas"].Children())
-            //        {
-            //            SelectListItem select = new SelectListItem { Text = obj["Text"].ToString(), Value = obj["Value"].ToString() };
-            //            selectItemList.Add(select);
-            //        }
-            //        return selectItemList;
-            //    }
-
-            //    else
-            //    {
-            //        return new List<SelectListItem>();
-            //    }
-            //}
-            //else
-            //{
             var jsonAreaDropdown = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Views/Casualty/MarketDate.json"));
             List<SelectListItem> selectItemList = new List<SelectListItem>();
             if (!string.IsNullOrEmpty(jsonAreaDropdown))
