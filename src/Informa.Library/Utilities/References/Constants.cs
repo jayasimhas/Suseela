@@ -124,6 +124,14 @@ namespace Informa.Library.Utilities.References
             public const string QuarterlyResults = "quarterlyresults";
             public const string CompareFinancialResults = "comparefinancialresults";
         }
+        public static class MarketDataTableTypes
+        {
+            public const string Variation1 = "Variation1";
+            public const string Variation2 = "Variation2";
+            public const string Variation3 = "Variation3";
+            public const string Variation4 = "Variation4";
+            public const string Variation5 = "Variation5";
+        }
 
         /// <summary>
         /// Dropdown list for agrow buyers constant
@@ -132,7 +140,7 @@ namespace Informa.Library.Utilities.References
         {
             public const string ImageAndTitle = "imageandtitle";
             public const string TitleDescriptionAndLink = "titledescriptionandlink";
-            public const string TitleImageAndLink= "titleimageandlink";
+            public const string TitleImageAndLink = "titleimageandlink";
         }
 
     }
