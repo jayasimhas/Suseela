@@ -12,22 +12,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Fields;
 using Jabberwocky.Glass.Models;
-using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
-using Velir.Search.Models;
-
-
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
 {
@@ -6098,10 +6090,128 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+    /// <summary>
+    /// IMarket_Data_Table_Types Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Market Data Table Types</para>	
+    /// <para>ID: 46BD1CDA-EEDD-41C8-BD7F-760E8642434C</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IMarket_Data_Table_TypesConstants.TemplateIdString)]
+    public partial interface IMarket_Data_Table_Types : IGlassBase
+    {
+        /// <summary>
+        /// The Table Type field.
+        /// <para></para>
+        /// <para>Field Type: DropLink</para>		
+        /// <para>Field ID: E4380EFF-9196-4884-AF71-3002EE6A6D30</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMarket_Data_Table_TypesConstants.Table_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IMarket_data_Table_Type_Option TableType { get; set; }
+    }
+
+
+    /// <summary>
+    /// IMarket_Data_Table_Types Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Market Data Table Types</para>	
+    /// <para>ID: 46BD1CDA-EEDD-41C8-BD7F-760E8642434C</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IMarket_Data_Table_Types__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Table Type field.
+        /// <para></para>
+        /// <para>Field Type: DropLink</para>		
+        /// <para>Field ID: E4380EFF-9196-4884-AF71-3002EE6A6D30</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMarket_Data_Table_TypesConstants.Table_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IMarket_data_Table_Type_Option TableType { get; set; }
+    }
+
+    public static partial class IMarket_Data_Table_TypesConstants
+    {
+
+        public const string TemplateIdString = "46BD1CDA-EEDD-41C8-BD7F-760E8642434C";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Table Types";
+
+        public static readonly ID Table_TypeFieldId = new ID("E4380EFF-9196-4884-AF71-3002EE6A6D30");
+        public const string Table_TypeFieldName = "Table Type";
+    }
+
+    // <summary>
+    /// ICompany_Results_Table_Type_Option Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Company Results Table Type Option</para>	
+    /// <para>ID: 2f0348bd-e79d-4372-9aa4-13a9df43ffc2</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IMarket_data_Table_Type_OptionConstants.TemplateIdString)]
+    public partial interface IMarket_data_Table_Type_Option : IGlassBase
+    {
+        /// <summary>
+        /// The Value field.
+        /// <para></para>
+        /// <para>Field Type: Integer</para>		
+        /// <para>Field ID: b58e3a4f-60c4-4a8c-880d-b80dccfcd126</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMarket_data_Table_Type_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Value { get; set; }
+    }
+    public static partial class IMarket_data_Table_Type_OptionConstants
+    {
+
+        public const string TemplateIdString = "2f0348bd-e79d-4372-9aa4-13a9df43ffc2";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Company Results Table Type Option";
+
+
+        public static readonly ID ValueFieldId = new ID("b58e3a4f-60c4-4a8c-880d-b80dccfcd126");
+        public const string ValueFieldName = "Value";
+    }
+
+    /// <summary>
+    /// IMarket_Data_Table_Types_With_FeedLink Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Market Data Table Types With Feed Link</para>	
+    /// <para>ID: 5A1E1735-E76B-48F6-8879-17882B8222B4</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IMarket_Data_Table_Types_With_FeedLinkConstants.TemplateIdString)]
+    public partial interface IMarket_Data_Table_Types_With_FeedLink : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IExternal_Feed_Url_Configuration, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IMarket_Data_Table_Types
+    {
+    }
+    /// <summary>
+    /// IMarket_Data_Table_Types_With_FeedLink Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/View Templates/Market Data Table Types With Feed Link</para>	
+    /// <para>ID: 5A1E1735-E76B-48F6-8879-17882B8222B4</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IMarket_Data_Table_Types_With_FeedLink__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IExternal_Feed_Url_Configuration__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IMarket_Data_Table_Types__Raw
+    {
+    }
+    public static partial class IMarket_Data_Table_Types_With_FeedLinkConstants
+    {
+
+        public const string TemplateIdString = "5A1E1735-E76B-48F6-8879-17882B8222B4";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Market Data Table Types With Feed Link";
+
+        public static readonly ID Table_TypeFieldId = new ID("E4380EFF-9196-4884-AF71-3002EE6A6D30");
+        public const string Table_TypeFieldName = "Table Type";
+
+        public static readonly ID External_Feed_URLFieldId = new ID("CBBA3299-32AD-4F99-BE89-79AEFD57C662");
+        public const string External_Feed_URLFieldName = "External Feed URL";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
-
-
     /// <summary>
     /// IParagraph_Style_Folder Interface
     /// <para></para>
@@ -19686,7 +19796,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </value>
         [SitecoreField(ISite_ConfigConstants.Entitlement_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEntitlement_Type Entitlement_Type { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the Content Recommendation switch
         /// </summary>
