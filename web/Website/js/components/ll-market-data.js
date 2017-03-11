@@ -2,7 +2,7 @@
 	var marketData = {
 		recreateArr: [],
 		renderTable: function(dataObj, renderId){
-			
+			console.log('Length of object is: ' + dataObj.length);
 			for(var i=0; i<dataObj.length; i++){
 				var filterObj = Object.keys(dataObj[i]), filterKeys = filterObj.sort().reverse(), createObj = {};
 				for(var j=0; j<filterKeys.length; j++){
@@ -20,7 +20,7 @@
 			this.setColHeight(renderId);
 		},
 		loadMobileView: function(tableData, id){
-			var headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
+			var self = this, headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
 				$.each(headObj, function(key, val){
 					colInd++;
 					if(colInd <= 6){
@@ -29,7 +29,7 @@
 							$('.states_heading').append('<div class="title" data-title="'+key+'"><span>'+ key + '</span></div>');
 						}
 						else{
-							$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
+							$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+self.genarateDate(key)+'</div></div>');
 						}
 					}
 				});
@@ -51,12 +51,18 @@
 				}); 
 		},
 		loadDescView: function(tableData, id){
-			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0, colHeadInd = 0, colInd = 0;
+			var self = this, thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0, colHeadInd = 0, colInd = 0, titflag = true;
 			descStr += "<tr>";
 			for(var prop in thead){
 				colHeadInd++;
 				if(colHeadInd <= 6){
-					descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+					if(titflag){
+						titflag = false;
+						descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+					}
+					else{
+						descStr += "<th class='title'><div class='pad'>" + self.genarateDate(prop) + "</div></th>";
+					}
 				}
 				else break;
 			}
@@ -86,6 +92,18 @@
 				descStr += "</tr>";
 			});
 			$(id).html(descStr);
+		},
+		genarateDate(date){
+			if(date.split(' ').length === 2){
+				var getDate = date.split(' ')[0], 
+					splDate = getDate.split('-'),
+					getObjDate = new Date(splDate[0], splDate[1]-1, splDate[2]),
+					getObjDateSpl = getObjDate.toString().split(' ');
+					return getObjDateSpl[2] + ' ' + getObjDateSpl[1] + ' ' + getObjDateSpl[3];
+			}
+			else{
+				return date.split('-').reverse().join(' ');
+			}
 		},
 		initiateCarousel: function(id){
 			$(id).owlCarousel({
