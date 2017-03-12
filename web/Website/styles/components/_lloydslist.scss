@@ -749,3 +749,32 @@
 		display: none;
 	}
 }
+
+#fisDryBulkContainer{
+	.tableTitle{
+		background-color: #0f5487;
+		color: #fff;
+	}
+	.tableheader{
+		background-color: #f1f1f1;
+	}
+	.lli-brand-container .form-control{
+		width: 100%;
+	}
+	.boedTop{
+		border: 1px solid #e9e9e9;
+	}
+	.showinMob{
+		display: none;
+	}
+	 
+	@media only screen and (max-width: 480px) {
+		.showinMob{
+			display: block;
+		}
+		.showinDesk{
+			display: none;
+		}
+	}
+}
+    

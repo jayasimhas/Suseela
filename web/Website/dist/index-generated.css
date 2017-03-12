@@ -10053,6 +10053,28 @@ div#feedbacklite.fbl_r {
 #howeRobinsonContainer .owl-nav {
   display: none; }
 
+#fisDryBulkContainer .tableTitle {
+  background-color: #0f5487;
+  color: #fff; }
+
+#fisDryBulkContainer .tableheader {
+  background-color: #f1f1f1; }
+
+#fisDryBulkContainer .lli-brand-container .form-control {
+  width: 100%; }
+
+#fisDryBulkContainer .boedTop {
+  border: 1px solid #e9e9e9; }
+
+#fisDryBulkContainer .showinMob {
+  display: none; }
+
+@media only screen and (max-width: 480px) {
+  #fisDryBulkContainer .showinMob {
+    display: block; }
+  #fisDryBulkContainer .showinDesk {
+    display: none; } }
+
 .id-merges-acquisition {
   font-family: 'Roboto'; }
   .id-merges-acquisition .idi-table-heading {
