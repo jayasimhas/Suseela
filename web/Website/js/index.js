@@ -57,6 +57,9 @@ import './components/ll-cockett-bunker.js';
 import './components/ll-ship-vehicle.js';
 import './components/ll-ship-roro.js';
 import './components/ll-ship-container-ship.js';
+import './components/ll-shipContainerShipFixtures';
+import './components/ll-fisDryBulk';
+import './components/ll-howeRobinson';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';

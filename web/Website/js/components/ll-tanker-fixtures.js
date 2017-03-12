@@ -37,7 +37,7 @@
 					self.sendHTTPRequest(searchData);
 				},
 				error: function (err) {
-					console.log(err);
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
