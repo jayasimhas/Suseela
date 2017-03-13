@@ -85,7 +85,7 @@
 	
 	$(document).ready(function() {
 		if($('#howeRobinsonContainer').length > 0) {
-			tankerFixtures.init(tableObj, '.howeRobinsonTable');
+			tankerFixtures.init(jsonHoweRobinson, '.howeRobinsonTable');
 		}
 	});
 })();
