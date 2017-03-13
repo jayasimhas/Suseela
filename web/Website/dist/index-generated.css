@@ -10004,77 +10004,70 @@ div#feedbacklite.fbl_r {
     #market-Data-Dry-Cargo .R16:nth-child(even) {
       background-color: #eee; }
 
-#howeRobinsonContainer .states_heading {
-  position: relative;
-  float: left;
-  width: 40%;
-  z-index: 9; }
-  @media only screen and (max-width: 600px) {
-    #howeRobinsonContainer .states_heading {
-      width: 50%; } }
-
-#howeRobinsonContainer .carousel-div {
-  position: relative;
+#howeRobinsonContainer {
   width: 100%; }
-
-#howeRobinsonContainer .owl-wrapper {
-  width: 60%;
-  float: left; }
-  @media only screen and (max-width: 600px) {
-    #howeRobinsonContainer .owl-wrapper {
-      width: 50%; } }
-
-#howeRobinsonContainer .title {
-  background-color: #1191d1;
-  color: #ffffff;
-  padding: 8px 5px 8px 12px;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  font-weight: bold; }
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    #howeRobinsonContainer .title {
-      font-size: 14px;
-      font-size: 0.9rem;
-      padding: 12px 2px; } }
-  @media only screen and (max-width: 600px) {
-    #howeRobinsonContainer .title {
-      height: 55px; } }
-
-#howeRobinsonContainer .R16 {
-  padding: 12px 10px;
-  border-bottom: 1px solid #e1e1e1;
-  border-right: 1px solid #e9e9e9; }
-  @media only screen and (min-width: 767px) and (max-width: 1024px) {
-    #howeRobinsonContainer .R16 {
-      padding: 12px 6px; } }
-
-#howeRobinsonContainer .titleHead {
-  width: 100%; }
-
-#howeRobinsonContainer .leftbord {
-  border-left: 1px solid #e9e9e9; }
-
-#howeRobinsonContainer .owl-dotsNav {
-  background: #0f5487;
-  height: 30px; }
-
-#howeRobinsonContainer .owl-dots {
-  background: #0f5487;
-  margin-top: -29px;
-  height: 30px;
-  text-align: right;
-  padding-right: 15px;
-  position: absolute;
-  top: -1px;
-  width: 100%; }
-  #howeRobinsonContainer .owl-dots .owl-dot span {
-    margin: 10px 7px;
-    background: #1191d1; }
-  #howeRobinsonContainer .owl-dots .owl-dot.active span {
-    background: #fff; }
-
-#howeRobinsonContainer .owl-nav {
-  display: none; }
+  #howeRobinsonContainer .states_heading {
+    position: relative;
+    float: left;
+    width: 40%;
+    z-index: 9; }
+    @media only screen and (max-width: 600px) {
+      #howeRobinsonContainer .states_heading {
+        width: 50%; } }
+  #howeRobinsonContainer .carousel-div {
+    position: relative;
+    width: 100%; }
+  #howeRobinsonContainer .owl-wrapper {
+    width: 60%;
+    float: left; }
+    @media only screen and (max-width: 600px) {
+      #howeRobinsonContainer .owl-wrapper {
+        width: 50%; } }
+  #howeRobinsonContainer .title {
+    background-color: #1191d1;
+    color: #ffffff;
+    padding: 8px 5px 8px 12px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      #howeRobinsonContainer .title {
+        font-size: 14px;
+        font-size: 0.9rem;
+        padding: 12px 2px; } }
+    @media only screen and (max-width: 600px) {
+      #howeRobinsonContainer .title {
+        height: 55px; } }
+  #howeRobinsonContainer .R16 {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e1e1e1;
+    border-right: 1px solid #e9e9e9; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      #howeRobinsonContainer .R16 {
+        padding: 12px 6px; } }
+  #howeRobinsonContainer .titleHead {
+    width: 100%; }
+  #howeRobinsonContainer .leftbord {
+    border-left: 1px solid #e9e9e9; }
+  #howeRobinsonContainer .owl-dotsNav {
+    background: #0f5487;
+    height: 30px; }
+  #howeRobinsonContainer .owl-dots {
+    background: #0f5487;
+    margin-top: -29px;
+    height: 30px;
+    text-align: right;
+    padding-right: 15px;
+    position: absolute;
+    top: -1px;
+    width: 100%; }
+    #howeRobinsonContainer .owl-dots .owl-dot span {
+      margin: 10px 7px;
+      background: #1191d1; }
+    #howeRobinsonContainer .owl-dots .owl-dot.active span {
+      background: #fff; }
+  #howeRobinsonContainer .owl-nav {
+    display: none; }
 
 #fisDryBulkContainer .tableTitle {
   background-color: #0f5487;
