@@ -90,6 +90,7 @@
 	}
 }
 #tanker-Pure-ChemPage{ 
+	width: 100%;
 	@include breakpoint('small') {
 		float: left;
 		width: 100%;
