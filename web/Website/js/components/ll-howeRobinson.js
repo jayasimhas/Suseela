@@ -1,5 +1,5 @@
 (function () {
-	var tankerFixtures = {
+	var howeRobinson = {
 		renderTable: function(tableObj, renderEle){
 			var tableStr = '';
 			tableStr += this.loadDesktopView(tableObj, renderEle);
@@ -85,7 +85,7 @@
 	
 	$(document).ready(function() {
 		if($('#howeRobinsonContainer').length > 0) {
-			tankerFixtures.init(jsonHoweRobinson, '.howeRobinsonTable');
+			howeRobinson.init(jsonHoweRobinson, '.howeRobinsonTable');
 		}
 	});
 })();

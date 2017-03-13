@@ -1,5 +1,5 @@
 (function () {
-	var tankerFixtures = {
+	var fisDryBulk = {
 		renderDateData: function(data){
 			if(data[0]['SelectDate'] !== undefined){
 				$('#fisDryBulkselectDay').html(this.loadDropdownData(data[0]['SelectDate']));
@@ -130,7 +130,7 @@
 	
 	$(document).ready(function() {
 		if($('#fisDryBulkContainer').length > 0) {
-			tankerFixtures.init(fisDryBulkDateOptions, '.fisDryBulkTable');
+			fisDryBulk.init(fisDryBulkDateOptions, '.fisDryBulkTable');
 		}
 	});
 })();

@@ -1,5 +1,5 @@
 (function () {
-	var tankerFixtures = {
+	var shipContainerFixtures = {
 		renderDateData: function(data){
 			if(data[0]['SelectDate'] !== undefined){
 				$('#shipfixselectDay').html(this.loadDropdownData(data[0]['SelectDate']));
@@ -61,7 +61,7 @@
 	
 	$(document).ready(function() {
 		if($('#shipContainerFixtures').length > 0) {
-			tankerFixtures.init(shipContShipFixDateOptions);
+			shipContainerFixtures.init(shipContShipFixDateOptions);
 		}
 	});
 })();
