@@ -2171,7 +2171,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #main-carousel .item-wrapper {
     width: 25%;
     float: left; }
-    @media only screen and (min-width: 668px) and (max-width: 1024px) {
+    @media only screen and (min-width: 360px) and (max-width: 1024px) {
       #main-carousel .item-wrapper {
         width: 50%; } }
     @media (max-width: 480px) {
@@ -10152,9 +10152,7 @@ div#feedbacklite.fbl_r {
     padding: 16px 0 18px 0;
     text-align: right;
     background-color: #fff;
-    margin: 0;
-    font-size: 30px;
-    font-size: 1.875rem; }
+    margin: 0; }
   .id-merges-acquisition hr {
     display: block !important;
     padding: 0;
@@ -10596,7 +10594,9 @@ div#feedbacklite.fbl_r {
     width: 100%;
     position: relative;
     margin: 0 0 20px 0;
-    margin: 0 0 1.25rem 0; }
+    margin: 0 0 1.25rem 0;
+    font-size: 30px;
+    font-size: 1.875rem; }
     .package-control-articles__fullContent .header-line-control:after {
       content: '';
       position: absolute;
