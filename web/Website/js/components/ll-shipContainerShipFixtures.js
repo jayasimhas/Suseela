@@ -41,7 +41,7 @@
 			});
 		},
 		sendHTTPRequest: function(searchData){
-			$('#fisDryBulk').html(this.loadDataView(tableObj[0]));
+			$('#shipFixtures').html(this.loadDataView(tableObj[0]));
 		},
 		loadDataView: function(tableData){
 			var tableStr = '<table class="table">', idx = 0;
