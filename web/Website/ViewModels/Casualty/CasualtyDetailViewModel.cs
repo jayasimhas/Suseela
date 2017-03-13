@@ -48,8 +48,7 @@ namespace Informa.Web.ViewModels.Casualty
             if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL) && !string.IsNullOrEmpty(incidentId))
             {
                 var client = new WebClient();
-                return client.DownloadString(string.Format(feedUrlConfigurationItem.External_Feed_URL, incidentId));
-                //return CompanyResultService.GetCompanyFeeds(string.Format(feedUrlConfigurationItem.External_Feed_URL,incidentId)).Result;
+                return client.DownloadString(string.Format(feedUrlConfigurationItem.External_Feed_URL, incidentId));                
             }
             else
             {

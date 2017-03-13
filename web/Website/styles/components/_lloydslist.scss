@@ -101,13 +101,16 @@
 	}
 }
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
-#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage{
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
 		border-top: 1px solid #d1d3d4;
 		display: block;
 	}
+	.oddCls{
+		background: #f1f1f1;
+	} 
 	&.table-responsive .table {
 		margin-bottom: 2rem;
 		&.mobView{
@@ -672,3 +675,107 @@
 		}
 	}
 }
+
+#howeRobinsonContainer{
+	width:100%;
+	.states_heading{
+		position:relative;
+		float:left;
+		width:40%;
+		z-index: 9;
+		@media only screen and (max-width: 600px) {
+			width:50%;
+		}
+	}
+	.carousel-div{
+		position:relative;
+		width: 100%;
+	}
+	.owl-wrapper{
+		width: 60%;
+		float: left;
+		@media only screen and (max-width: 600px) {
+			width:50%;
+		}
+	}
+	.title{
+		background-color: #1191d1;
+		color: #ffffff;
+		padding: 8px 5px 8px 12px;
+		@include textMix('Roboto', 1em, bold);
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			font-size: 0.9rem;
+			padding: 12px 2px;
+		}
+		@media only screen and (max-width: 600px) {
+			height: 55px;
+		}
+	}
+	.R16{
+		padding: 12px 10px;
+		border-bottom: 1px solid #e1e1e1;
+		border-right: 1px solid #e9e9e9; 
+		@media only screen and (min-width: 767px) and (max-width: 1024px) {
+			padding: 12px 6px;
+		} 
+	}
+	.titleHead{
+		width: 100%;
+	}
+	.leftbord{
+		border-left: 1px solid #e9e9e9;
+	}
+	.owl-dotsNav{background: #0f5487; height: 30px;}
+	.owl-dots{
+		background: #0f5487;
+		margin-top: -29px;
+		height: 30px;
+		text-align: right; 
+		padding-right: 15px; 
+		position: absolute;
+		top: -1px;
+		width: 100%;
+		 
+		.owl-dot{
+			span{
+				margin: 10px 7px;
+				background: #1191d1;
+			}
+			&.active span{
+				background: #fff;
+			}
+		}
+	}
+	.owl-nav{
+		display: none;
+	}
+}
+
+#fisDryBulkContainer{
+	.tableTitle{
+		background-color: #0f5487;
+		color: #fff;
+	}
+	.tableheader{
+		background-color: #f1f1f1;
+	}
+	.lli-brand-container .form-control{
+		width: 100%;
+	}
+	.boedTop{
+		border: 1px solid #e9e9e9;
+	}
+	.showinMob{
+		display: none;
+	}
+	 
+	@media only screen and (max-width: 480px) {
+		.showinMob{
+			display: block;
+		}
+		.showinDesk{
+			display: none;
+		}
+	}
+}
+    

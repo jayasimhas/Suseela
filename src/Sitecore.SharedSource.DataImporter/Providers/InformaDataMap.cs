@@ -443,7 +443,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string CommodityFactor = "";
                             string AnimalHealth = "";
                             string AnimalHealthNew = "";
-
+                            string CropProtection = "";
 
                             if (site != "Maritime")
                             {
@@ -531,7 +531,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string cropprotection in cropprotectionSearchResults)
                                     {
-                                            Commodity += cropprotection + ",";
+                                        CropProtection  += cropprotection + ",";
                                     }
                                 }
 
@@ -684,6 +684,24 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             {
 
                                 ao.Add("COMMODITYFACTOR", CommodityFactor);
+                            }
+
+                            if (ao.ContainsKey("CROPPROTECTION"))
+                            {
+                                if (CropProtection != "")
+
+                                {
+
+                                    CropProtection = ao["CROPPROTECTION"].ToString() + CropProtection;
+                                    ao.Remove("CROPPROTECTION");
+                                    ao.Add("CROPPROTECTION", CropProtection);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("CROPPROTECTION", CropProtection);
                             }
 
                             if (ao.ContainsKey("ANIMALHEALTH"))

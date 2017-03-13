@@ -3837,7 +3837,7 @@
             The file pointed to by WebStylesheet setting is automatically included in Html and Rich Text fields.
             By using it, you can make the content of HTML fields look the same as the actual Web Site
       -->
-    <setting name="WebStylesheet" value="/default.css" />
+    <setting name="WebStylesheet" value="/RTEStyles.css" />
     <!--  LOGIN MESSAGES
             These are the messages that are shown on the login page of the Sitecore
             client
