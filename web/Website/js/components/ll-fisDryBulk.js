@@ -20,21 +20,17 @@
 		renderTable: function(renderEle){
 			var self = this, loadDateVal = $('#fisDryBulkselectDay option').val();
 			 
-			//self.callAjaxFn(loadDateVal, renderEle);
+			self.callAjaxFn(loadDateVal, renderEle);
 			$(document).on('change', '#fisDryBulkselectDay', function(){
 				var selectDateVal = $('#fisDryBulkselectDay option').val();
 				self.callAjaxFn(selectDateVal, renderEle);
-			}); 
-			
-			self.loadDesktopView(tableObj[0], renderEle);
-			self.loadMobileView(tableObj[0], renderEle);
-			 
+			});
 		},
 		callAjaxFn: function(seldateVal, renderEle){
 			 var self = this;
 			$.ajax({
 				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
-				data: {'dateVal': seldateVal, 'feedUrl': $('#fisDryBulkselectDay').val()},
+				data: {'dateVal': seldateVal, 'feedUrl': $('#fisDryBulkHiddenVal').val()},
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
