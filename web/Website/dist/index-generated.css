@@ -4350,6 +4350,20 @@ header .header__wrapper {
     font-size: 0.6875rem;
     margin-right: 20px; } }
 
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  header .header-publication-links.nomyView {
+    top: 10px !important;
+    margin-right: 0 !important;
+    font-size: 11px !important;
+    font-size: 0.6875rem !important; } }
+
+@media only screen and (max-width: 1024px) {
+  header .header-publication-links.nomyView {
+    top: 10px;
+    font-size: 14px;
+    font-size: 0.875rem;
+    margin-right: 0px; } }
+
 header .header-account-access {
   -webkit-box-flex: 2 !important;
       -ms-flex: 2 0 auto !important;
@@ -4451,6 +4465,15 @@ header .header-account-access {
       header .header-account-access .header-account-right-access {
         float: left;
         padding: 9px 0; } }
+    @media (max-width: 1024px) {
+      header .header-account-access .header-account-right-access.nomyView {
+        padding: 40px 0;
+        padding: 2.5rem 0;
+        margin-right: 0px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1000px) {
+      header .header-account-access .header-account-right-access.nomyView {
+        margin-right: 16px;
+        margin-right: 1rem; } }
 
 @media (max-width: 480px) {
   header .header__logo {
@@ -8952,8 +8975,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12861,7 +12884,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

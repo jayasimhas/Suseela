@@ -13824,6 +13824,7 @@ $(document).ready(function () {
         $('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
     }
 
+    //IPMP-2220
     if ($(".myView-placeholder").length == 0) {
         $('.header-account-right-access').addClass('nomyView');
         $('.header-publication-links').addClass('nomyView');
