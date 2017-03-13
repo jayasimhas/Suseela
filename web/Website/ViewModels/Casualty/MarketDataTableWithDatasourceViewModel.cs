@@ -59,13 +59,47 @@ namespace Informa.Web.ViewModels.Casualty
         /// Data Provider Logo
         /// </summary>
         public Image ProviderLogo => GlassModel?.ProviderLogo;
+        /// <summary>
+        /// Additional Feed Url
+        /// </summary>
+        public string AdditionalFeedUrl => GlassModel?.Additional_Feed_URL;
+        /// <summary>
+        /// Additional info text
+        /// </summary>
+        public string AdditionalInfo => GlassModel?.Additional_Info;
         public string jsonDropdownData => GetjsonDropdownData();
+        public string jsonTableData => GetjsonTableData();
+        public string jsonAdditionalTableData => GetjsonAdditionalTableData();
         private string GetjsonDropdownData()
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
             {
                 var client = new WebClient();
                 return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+        private string GetjsonTableData()
+        {
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
+            {
+                var client = new WebClient();
+                return client.DownloadString(GlassModel.Table_Result_Feed_URL);
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+        private string GetjsonAdditionalTableData()
+        {
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Additional_Feed_URL))
+            {
+                var client = new WebClient();
+                return client.DownloadString(GlassModel.Additional_Feed_URL);
             }
             else
             {
