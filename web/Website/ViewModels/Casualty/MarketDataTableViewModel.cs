@@ -31,12 +31,12 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Baltic indices data in json format
         /// </summary>
-        public string jsonBalticIndices => GetBalticIndicesData();
+        public string jsonTableData => GetTablesData();
         /// <summary>
         /// Method to get Baltic Indices data from external url
         /// </summary>
         /// <returns></returns>
-        private string GetBalticIndicesData()
+        private string GetTablesData()
         {
             if (RenderingParameters != null && !string.IsNullOrEmpty(RenderingParameters.External_Feed_URL))
             {
