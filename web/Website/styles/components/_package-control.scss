@@ -4,7 +4,7 @@
 	padding: 1.25rem;
 	margin-bottom: 2rem;
 	.package-wrapper {
-		padding-bottom: 2rem;
+		padding-bottom: 0.3125rem;
 		margin: 0 -0.625rem;
 		display: flex;
 		@include breakpoint('small') {
@@ -56,9 +56,6 @@
 			top: 50%;
 			margin-top: -2px;
 			left: 0;
-			@include breakpoint('small') {
-				display: none;
-			}
 		}
 		span {
 			background: #f1f2f2;
@@ -100,8 +97,8 @@
 				
 			}
 			&:last-child {
-				.article-summary p {
-					margin-bottom: 0.9375px;
+				.article-preview__tags {
+					margin-top: 0.9375px;
 				}
 			}
 			.article-metadata {
@@ -297,7 +294,7 @@
 }
 .moreText{
 	text-align: right;
-	padding-bottom: 2rem;
+	padding-bottom: 1.5625rem;
 	font-family: Roboto;
 	font-size: 1rem;
 	font-weight: bold;
