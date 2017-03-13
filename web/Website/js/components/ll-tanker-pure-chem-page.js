@@ -182,9 +182,11 @@
 	}
 
 	if($('#tankerPureChemPage').length > 0) {
-		tankerPureChem.init(window.tankerPureChemPage, $('#tankerPureChemPage'));	
+		tankerPureChem.init(window.currentFleetTableData, $('#tankerPureChemPage'));	
 	}
-	
+	if($('#onOrderTable').length > 0) {
+		tankerPureChem.init(window.onOrderTableData, $('#onOrderTable'));	
+	}
 
 	
 })();

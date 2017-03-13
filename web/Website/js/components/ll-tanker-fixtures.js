@@ -2,7 +2,7 @@
 	var tankerFixtures = {
 		renderDateData: function(data){
 			if(data[0]['SelectDate'] !== undefined){
-				$('#selectDay').html(this.loadDropdownData(data[0]['SelectDate']));
+				$('#tankerselectDay').html(this.loadDropdownData(data[0]['SelectDate']));
 			}
 		},
 		loadDropdownData: function(options){
@@ -18,11 +18,11 @@
 			return optionStr;
 		},
 		renderTable: function(tableData){
-			var self = this, loadDateVal = $('#selectDay option').val();
+			var self = this, loadDateVal = $('#tankerselectDay option').val();
 
 			self.callAjaxFn(loadDateVal);
-			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay option').val();
+			$(document).on('change', '#tankerselectDay', function(){
+				var selectDateVal = $('#tankerselectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
 		},
@@ -37,7 +37,7 @@
 					self.sendHTTPRequest(searchData);
 				},
 				error: function (err) {
-					console.log(err);
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
@@ -128,7 +128,7 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(dateOptions);
+			tankerFixtures.init(TankerFixturesDateOptions);
 		}
 	});
 })();

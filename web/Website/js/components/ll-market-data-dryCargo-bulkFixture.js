@@ -2,7 +2,7 @@
 	var dryCargoBulkFixtures = {
 		table: '',
 		recreateObj: {},
-		renderDate: function(){ 
+		renderDate: function(dateObj){ 
 			var options = '';
 			$.each(dateObj[0], function(key, val){ 
 				$.each(val, function(idx, value){ 
@@ -10,25 +10,15 @@
 				});
 			});
 			
-			$('#selectDay').html(options);
+			$('#drybulkselectDay').html(options);
 		},
 		renderTable: function(){
-			var self = this, loadDateVal = $('#selectDay option').val();
+			var self = this, loadDateVal = $('#drybulkselectDay option').val();
 
 			self.callAjaxFn(loadDateVal);
-			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay option').val();
+			$(document).on('change', '#drybulkselectDay', function(){
+				var selectDateVal = $('#drybulkselectDay option').val();
 				self.callAjaxFn(selectDateVal);
-			});
-			
-			$('table').on('click', 'a.top', function(){
-				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
-				if(window.matchMedia("(max-width: 400px)").matches){
-					$(window).scrollTop(tablePos - 40);
-				}
-				else{
-					$(window).scrollTop(tablePos);
-				}
 			});
 		},
 		callAjaxFn: function(seldateVal){
@@ -42,7 +32,7 @@
 					self.sendHTTPRequest(searchData);
 				},
 				error: function (err) {
-					console.log(err);
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
@@ -53,26 +43,31 @@
 			tableStr += self.loadMobileView(searchData);
 			 
 			$('#dryCargoBulkFixtures table').html(tableStr);
+			
+			self.recreateObj = {};
+			
+			$('table').on('click', 'a.top', function(){
+				var $this = $(this), table = $this.closest('table'), tablePos = table.offset().top;
+				if(window.matchMedia("(max-width: 400px)").matches){
+					$(window).scrollTop(tablePos - 40);
+				}
+				else{
+					$(window).scrollTop(tablePos);
+				}
+			});
 		},
-		loadDescView: function(){
+		loadDescView: function(tableObj){
 			var self = this, getArr;
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
 				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>'									
-				/*self.table += '<tr class="visible-lg">';
-				var tableHead = val[0];
-					for(var prop in tableHead){
-						self.table += '<th class="pad-10">'+prop+'</th>';
-					}
-					self.table += '</tr>';*/
-					self.table += '</thead>';
+				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>';
+				self.table += '</thead>';
 				self.table += '</table>';	
 			 });
-			 $('#dryCargoBulkFixtures').html(self.table);
 			 
 			$.each(tableObj[0], function(idx, val){
-				getArr = val; 
+				getArr = val;
 			});
 			for(var i=0; i<getArr.length; i++){
 			  if(self.recreateObj[getArr[i]['fixtureType']] == undefined){ 
@@ -116,15 +111,15 @@
 			
 			return tbody;
 		},
-		init: function() {
-			this.renderDate();
+		init: function(dateOptions) {
+			this.renderDate(dateOptions);
 			this.renderTable();
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#dryCargoBulkFixtures').length > 0) {
-			dryCargoBulkFixtures.init();
+			dryCargoBulkFixtures.init(DryBulkFixturesDateOptions);
 		}
 	});
 })();

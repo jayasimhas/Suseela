@@ -6,10 +6,8 @@
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation1)
     {
         <script type="text/javascript">
-            var dateOptions=@Html.Raw(Model.jsonDropdownData);
-            var jsonTableData=@Html.Raw(Model.jsonTableData);
+            var TankerFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
         </script>
-
         <div class="small_table">
             <div class="table-responsive" id="tanker-fixtures">
                 <h2>@Model.PageTitle</h2>
@@ -23,8 +21,7 @@
                             <div class="form-control">
                                 <label for="selectDay">Select a day: </label>
                                 <div class="select-field">
-                                    @*@Html.DropDownList("selectDay", Model.PopulateByAreaDropdown)*@
-                                    <select id="selectDay"></select>
+                                    <select id="tankerselectDay" name="tankerselectDay"></select>
                                 </div>
                             </div>
                             <div class="dataProImg">
@@ -35,12 +32,9 @@
                                 }
 
                             </div>
-
-                            @Html.HiddenFor(m => m.TankerFixHiddenVal)
+                            @Html.Hidden("TankerFixHiddenVal", Model.TableFeedUrl)
                         </fieldset>
-
                     </div>
-
                 </div>
                 <div id="tankerFixtures">
                 </div>
@@ -48,3 +42,88 @@
         </div>
     }
 }
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
+{
+    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
+    {
+        <script type="text/javascript">
+            var DryBulkFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
+        </script>
+        <div class="small_table">
+            <div class="table-responsive casualty-table-theme" id="dry-cargo-bulk-fixtures">
+                <h2>@Model.PageTitle</h2>
+                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                <hr />
+                <div class="lli-brand-container shallow-bottom">
+                    <div class="lli-brand-box">
+                        @Model.TableSubTitle
+                        <fieldset>
+                            <div class="form-control">
+                                <label for="selectDay">Select a day:</label>
+                                <div class="select-field">
+                                    <select id="drybulkselectDay" name="drybulkselectDay"></select>
+                                </div>
+                            </div>
+                            <div class="dataProImg">
+                                <span>@Model.DataProvider</span>
+                                @if (!string.IsNullOrEmpty(Model.ProviderLogo?.Src))
+                                {
+                                    <img src="@Model.ProviderLogo.Src" alt="marketLogo" />
+                                }
+                            </div>
+                            @Html.Hidden("drycargoHiddenVal", Model.TableFeedUrl)
+                        </fieldset>
+                        <!-- .lli-brand-box -->
+                    </div>
+                    <!-- .lli-brand-container -->
+                </div>
+                <div id="dryCargoBulkFixtures">
+                    <table cellpadding="0" cellspacing="0" width="100%" class="table"></table>
+                    <!-- tables rendered -->
+                </div>
+            </div>
+        </div>
+    }
+}
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
+{
+    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+    {
+        <script type="text/javascript">
+            var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
+        </script>
+
+        <div class="small_table">
+            <div class="table-responsive" id="shipContainerFixtures">
+                <h2>@Model.PageTitle</h2>
+                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                <hr />
+                <div class="lli-brand-container shallow-bottom">
+                    <div class="lli-brand-box">
+                        <fieldset>
+                            <div class="form-control">
+                                <label for="shipfixselectDay">Select a day:</label>
+                                <div class="select-field">
+                                    <select id="shipfixselectDay" name="shipfixselectDay"></select>
+                                </div>
+                            </div>
+                            <div class="dataProImg">
+                                <span>@Model.DataProvider</span>
+                                @if (!string.IsNullOrEmpty(Model.ProviderLogo?.Src))
+                                {
+                                    <img src="@Model.ProviderLogo.Src" alt="marketLogo" />
+                                }
+                            </div>
+                            @Html.Hidden("shipfixHiddenVal", Model.TableFeedUrl)
+                        </fieldset>
+                        <!-- .lli-brand-box -->
+                    </div>
+                    <!-- .lli-brand-container -->
+                </div>
+                <div id="shipFixtures">
+                </div>
+            </div>
+        </div>
+    }
+}
+

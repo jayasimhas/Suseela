@@ -230,6 +230,10 @@
 						
 					</div>
 					
+					 <div class="table ID-Responsive-Table" data-modal="modal-annualresults" id="onOrderTable">
+					 
+					 </div>
+					
                <!--<div class="table ID-Responsive-Table" data-modal="modal-table" id="ID-Financial-Responsive-Table">
                         
                   <div class="table_head pad-10">
@@ -626,7 +630,7 @@
       </div>
       
       <script type="text/javascript">
-         var tankerPureChemPage = [{
+         var currentFleetTableData = [{
 
 "Current Fleet":[
 {
@@ -685,6 +689,40 @@
 "Age":"2016", "10-24,999 dwt (sub-handy)":[{"No":"19","m dwt":"326000" }], "25-39,999 dwt (handysize)":[{"No":"13","m dwt":"399974" }], "40,000dwt+ (handymax)":[{"No":"4","m dwt":"200500" }], "Total":[{"No":"36","m dwt":"926474" }] }
 ,{
 "Age":"2017", "10-24,999 dwt (sub-handy)":[{"No":"41","m dwt":"779650" }], "25-39,999 dwt (handysize)":[{"No":"40","m dwt":"1285600" }], "40,000dwt+ (handymax)":[{"No":"11","m dwt":"547000" }], "Total":[{"No":"92","m dwt":"2612250" }] }
+
+]
+
+}]
+
+var onOrderTableData = [{
+
+"On Order":[
+{
+"Age":"2010", "10-39,999 dwt (Handysize)":[{"No":"164","m dwt":"4975405" }], "40-59,999 dwt (Handymax)":[{"No":"152","m dwt":"8519359" }], "60-79,999 dwt (Panamax)":[{"No":"31","m dwt":"2294491" }], "80-120,999 dwt (CapeSize)":[{"No":"68","m dwt":"6118082" }], "120,000 dwt+ (Capesize)":[{"No":"77","m dwt":"14053479" }], "Total":[{"No":"492","m dwt":"35960816" }] }
+,{
+"Age":"2011", "10-39,999 dwt (Handysize)":[{"No":"120","m dwt":"3803135" }], "40-59,999 dwt (Handymax)":[{"No":"126","m dwt":"6868345" }], "60-79,999 dwt (Panamax)":[{"No":"29","m dwt":"2179700" }], "80-120,999 dwt (CapeSize)":[{"No":"72","m dwt":"6675121" }], "120,000 dwt+ (Capesize)":[{"No":"46","m dwt":"8817786" }], "Total":[{"No":"393","m dwt":"28344087" }] }
+,{
+"Age":"2012", "10-39,999 dwt (Handysize)":[{"No":"122","m dwt":"3589526" }], "40-59,999 dwt (Handymax)":[{"No":"146","m dwt":"7791451" }], "60-79,999 dwt (Panamax)":[{"No":"96","m dwt":"6883467" }], "80-120,999 dwt (CapeSize)":[{"No":"135","m dwt":"11697878" }], "120,000 dwt+ (Capesize)":[{"No":"53","m dwt":"11941922" }], "Total":[{"No":"552","m dwt":"41904244" }] }
+,{
+"Age":"2013", "10-39,999 dwt (Handysize)":[{"No":"53","m dwt":"1718461" }], "40-59,999 dwt (Handymax)":[{"No":"47","m dwt":"2403808" }], "60-79,999 dwt (Panamax)":[{"No":"29","m dwt":"2050544" }], "80-120,999 dwt (CapeSize)":[{"No":"29","m dwt":"2538707" }], "120,000 dwt+ (Capesize)":[{"No":"26","m dwt":"5472747" }], "Total":[{"No":"184","m dwt":"14184267" }] }
+,{
+"Age":"2014", "10-39,999 dwt (Handysize)":[{"No":"31","m dwt":"1033942" }], "40-59,999 dwt (Handymax)":[{"No":"20","m dwt":"1014680" }], "60-79,999 dwt (Panamax)":[{"No":"31","m dwt":"2083304" }], "80-120,999 dwt (CapeSize)":[{"No":"15","m dwt":"1275091" }], "120,000 dwt+ (Capesize)":[{"No":"11","m dwt":"2593939" }], "Total":[{"No":"108","m dwt":"8000956" }] }
+,{
+"Age":"2015", "10-39,999 dwt (Handysize)":[{"No":"58","m dwt":"1984265" }], "40-59,999 dwt (Handymax)":[{"No":"8","m dwt":"434657" }], "60-79,999 dwt (Panamax)":[{"No":"43","m dwt":"2762715" }], "80-120,999 dwt (CapeSize)":[{"No":"22","m dwt":"1851046" }], "120,000 dwt+ (Capesize)":[{"No":"39","m dwt":"7424570" }], "Total":[{"No":"170","m dwt":"14457253" }] }
+,{
+"Age":"2016", "10-39,999 dwt (Handysize)":[{"No":"50","m dwt":"1862594" }], "40-59,999 dwt (Handymax)":[{"No":"21","m dwt":"1052831" }], "60-79,999 dwt (Panamax)":[{"No":"95","m dwt":"6146162" }], "80-120,999 dwt (CapeSize)":[{"No":"53","m dwt":"4385613" }], "120,000 dwt+ (Capesize)":[{"No":"41","m dwt":"8201100" }], "Total":[{"No":"260","m dwt":"21648300" }] }
+,{
+"Age":"2017", "10-39,999 dwt (Handysize)":[{"No":"143","m dwt":"5153244" }], "40-59,999 dwt (Handymax)":[{"No":"35","m dwt":"1764850" }], "60-79,999 dwt (Panamax)":[{"No":"164","m dwt":"10464929" }], "80-120,999 dwt (CapeSize)":[{"No":"118","m dwt":"9832973" }], "120,000 dwt+ (Capesize)":[{"No":"75","m dwt":"16234138" }], "Total":[{"No":"535","m dwt":"43450134" }] }
+,{
+"Age":"2018", "10-39,999 dwt (Handysize)":[{"No":"45","m dwt":"1577600" }], "40-59,999 dwt (Handymax)":[{"No":"10","m dwt":"562059" }], "60-79,999 dwt (Panamax)":[{"No":"40","m dwt":"2502939" }], "80-120,999 dwt (CapeSize)":[{"No":"30","m dwt":"2534052" }], "120,000 dwt+ (Capesize)":[{"No":"34","m dwt":"10484770" }], "Total":[{"No":"159","m dwt":"17661420" }] }
+,{
+"Age":"2019", "10-39,999 dwt (Handysize)":[{"No":"8","m dwt":"272900" }], "40-59,999 dwt (Handymax)":[{"No":"0","m dwt":"0" }], "60-79,999 dwt (Panamax)":[{"No":"9","m dwt":"562197" }], "80-120,999 dwt (CapeSize)":[{"No":"3","m dwt":"247941" }], "120,000 dwt+ (Capesize)":[{"No":"24","m dwt":"8810189" }], "Total":[{"No":"44","m dwt":"9893227" }] }
+,{
+"Age":"2020", "10-39,999 dwt (Handysize)":[{"No":"3","m dwt":"111000" }], "40-59,999 dwt (Handymax)":[{"No":"0","m dwt":"0" }], "60-79,999 dwt (Panamax)":[{"No":"3","m dwt":"183000" }], "80-120,999 dwt (CapeSize)":[{"No":"2","m dwt":"165750" }], "120,000 dwt+ (Capesize)":[{"No":"4","m dwt":"1116050" }], "Total":[{"No":"12","m dwt":"1575800" }] }
+,{
+"Age":"2021", "10-39,999 dwt (Handysize)":[{"No":"","m dwt":"null" }], "40-59,999 dwt (Handymax)":[{"No":"","m dwt":"null" }], "60-79,999 dwt (Panamax)":[{"No":"","m dwt":"null" }], "80-120,999 dwt (CapeSize)":[{"No":"","m dwt":"null" }], "120,000 dwt+ (Capesize)":[{"No":"","m dwt":"null" }], "Total":[{"No":"","m dwt":"null" }] }
+,{
+"Age":"Total", "10-39,999 dwt (Handysize)":[{"No":"199","m dwt":"7114744" }], "40-59,999 dwt (Handymax)":[{"No":"45","m dwt":"2326909" }], "60-79,999 dwt (Panamax)":[{"No":"216","m dwt":"13713065" }], "80-120,999 dwt (CapeSize)":[{"No":"153","m dwt":"12780716" }], "120,000 dwt+ (Capesize)":[{"No":"137","m dwt":"36645147" }], "Total":[{"No":"750","m dwt":"72580581" }] }
 
 ]
 

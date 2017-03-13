@@ -12,10 +12,7 @@ header{
 		@include breakpoint('medium-small') {
 			top: 50px;
 		}
-		@media only screen and (min-device-width: 480px) 
-                   and (max-device-width: 667px) 
-                   and (orientation: landscape) {
-		}
+		
 		@media only screen and (min-width: 768px) and (max-width: 1000px){
 			top: 50px !important;
 			margin-right: 0 !important;
@@ -24,11 +21,24 @@ header{
 			top: 54px;
 			font-size: 0.6875rem;
 			margin-right: 20px;
-		}	
+		}
+		&.nomyView{
+			@media only screen and (min-width: 768px) and (max-width: 1000px){
+				top: 10px !important;
+				margin-right: 0 !important;
+				font-size: 0.6875rem !important;
+			}
+			@media only screen and (max-width: 1024px) {
+				top: 10px;
+				font-size: 0.875rem;
+				margin-right: 0px;
+			}
+		}
 	}
 	.header-account-access{
 		flex: 2 0 auto !important;
 		padding: 0 !important;
+		
 		@media only screen and (min-width: 769px) and (max-width: 1024px) { 
 			margin-top: -25px;
 		}
@@ -129,7 +139,15 @@ header{
 				float: left;
 				padding: 9px 0;
 			}
-			
+			&.nomyView{
+				@media (max-width: 1024px) {
+				padding: 2.5rem 0;
+				margin-right: 0px;
+				}
+				@media only screen and (min-width: 768px) and (max-width: 1000px){
+					margin-right: 1rem;
+				}
+			}
 		}
 	}
 	.header__logo{
