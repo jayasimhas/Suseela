@@ -19,7 +19,7 @@
     		width: 100%;
     	}
 		.amcharts-chart-div{
-			width: 234px !important;
+			width: auto !important;
 			@media only screen and (min-width: 668px) and (max-width: 1024px) {
 				width: auto !important;
 			}
@@ -102,6 +102,7 @@
 					  height: 150px !important;
 					  svg{
 						height: 150px !important;
+						
 					  }
 				  }
 			  }

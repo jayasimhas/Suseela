@@ -2176,7 +2176,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     #main-carousel .item-wrapper {
       width: 100%; } }
   #main-carousel .item-wrapper .amcharts-chart-div {
-    width: 234px !important; }
+    width: auto !important; }
     @media only screen and (min-width: 668px) and (max-width: 1024px) {
       #main-carousel .item-wrapper .amcharts-chart-div {
         width: auto !important; } }
