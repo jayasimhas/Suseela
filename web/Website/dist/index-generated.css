@@ -10767,10 +10767,20 @@ div#feedbacklite.fbl_r {
     border-bottom: 4px solid; }
   @media (max-width: 480px) {
     .package-control-articles__quarter {
-      width: 100%; } }
+      width: 100%;
+      float: none;
+      margin: 16px 0;
+      margin: 1rem 0;
+      padding: 16px;
+      padding: 1rem; } }
   @media (max-width: 640px) {
     .package-control-articles__quarter {
-      width: 100%; } }
+      width: 100%;
+      float: none;
+      margin: 16px 0;
+      margin: 1rem 0;
+      padding: 16px;
+      padding: 1rem; } }
 
 .article-left-rail .article-body-content .article-call-to-action {
   clear: both; }
