@@ -229,7 +229,7 @@
     float: right;
 
 }
-#tankerPureChemPage, #shipVehicle {
+#tankerPureChemPage, #shipVehicle, #onOrderTable{
 	border: none;
 	.R16 {
 		height: 2.5rem;
@@ -249,7 +249,7 @@
 	}
 	
 }
-#tankerPureChemPage {
+#tankerPureChemPage, #onOrderTable {
 	margin-bottom: 1rem;	
 	.pad-10 {
 		padding: 10px !important;
