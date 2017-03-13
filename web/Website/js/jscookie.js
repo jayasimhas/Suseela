@@ -152,6 +152,7 @@ $(document).ready(function(){
 			$('.menu-toggler').removeClass('is-active');
 			$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			$('body').removeClass('is-frozen');
+			$('.main__wrapper').removeClass('shift-main-content');
 	     }
 
 	    function OpenNavigationMenu(){
@@ -159,6 +160,7 @@ $(document).ready(function(){
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 			$('body').addClass('is-frozen');
+			$('.main__wrapper').addClass('shift-main-content');
         }
 
         // Create cookie

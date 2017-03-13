@@ -24,6 +24,10 @@ main {
 		margin-left: 330px; // RH added on 2/26 to fix IIPP-572
 	}
 
+	&.shift-main-content{
+		margin-left: 600px !important;
+	}
+
 	@include breakpoint('small') {
 		width: 100%;
 		margin-left: 330px;

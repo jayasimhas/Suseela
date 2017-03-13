@@ -7072,6 +7072,8 @@ main {
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
       margin-left: 330px; } }
+  .main__wrapper.shift-main-content {
+    margin-left: 600px !important; }
   @media (max-width: 480px) {
     .main__wrapper {
       width: 100%;
