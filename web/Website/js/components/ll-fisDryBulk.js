@@ -43,8 +43,8 @@
 		},
 		sendHTTPRequest: function(searchData, renderEle){
 			var self = this;
-			self.loadDesktopView(tableObj[0], renderEle);
-			self.loadMobileView(tableObj[0], renderEle);
+			self.loadDesktopView(searchData[0], renderEle);
+			self.loadMobileView(searchData[0], renderEle);
 		},
 		loadDesktopView: function(tableData, renderEle){
 			var tableStr = '<table class="table">';
