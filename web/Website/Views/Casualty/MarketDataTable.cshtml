@@ -5,10 +5,10 @@
 {
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation1)
     {
-        if (!string.IsNullOrEmpty(Model.jsonBalticIndices))
+        if (!string.IsNullOrEmpty(Model.jsonTableData))
         {
             <script type="text/javascript">
-                var jsonBalticIndices = @Html.Raw(Model.jsonBalticIndices);
+                var jsonBalticIndices = @Html.Raw(Model.jsonTableData);
             </script>
         }
         else
@@ -60,7 +60,23 @@
     }
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
     {
-        
+        <script type="text/javascript">
+            var jsonHoweRobinson = @Html.Raw(Model.jsonTableData);
+        </script>
+
+        <div class="small_table">
+            <div class="table-responsive" id="howeRobinsonContainer">
+                <div class="owl-dotsNav">&nbsp;</div>
+                <div id="howeRobinson" class="carousel-div">
+                    <div class="states_heading">
+                    </div>
+                    <div class="owl-wrapper">
+                        <div class="owl-carousel owl-theme owl-loaded howeRobinsonTable">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 }
 
