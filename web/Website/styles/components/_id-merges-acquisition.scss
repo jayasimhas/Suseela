@@ -8,6 +8,10 @@
     	background-color: #eee;
     	position: relative;
     	overflow: hidden;
+    	display: none;
+    	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
     	&:after {
     		content: '';
     		height: 1px;
@@ -94,6 +98,9 @@
 	 }
 	.table.merge-acquistion {
 		border-top: none;
+		.suggest-more{
+			display: none !important;
+		}
 		@include breakpoint('small') {
 			border: none;
 		}
