@@ -258,6 +258,12 @@
 		margin: 0;
 		border-bottom: 4px solid ;
 	}
+	@include breakpoint('small'){
+		width: 100%;
+	}
+	@include breakpoint('medium-small'){
+		width: 100%;
+	}
 }
 .article-left-rail{
 	.article-body-content{
