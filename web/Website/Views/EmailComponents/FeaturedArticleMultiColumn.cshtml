@@ -121,7 +121,20 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                 @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
                                                                 {
                                                                     <span style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Georgia, serif; font-size: 14px; line-height: 150%; color: #777777; text-transform: none !important; text-align: left;">
-                                                                        @((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0])) ? new HtmlString(Model.ShortDescrpitons[0].Length > 220 ? Model.ShortDescrpitons[0].Substring(0, 220) : Model.ShortDescrpitons[0]) : Editable(Model, m => m.Articles[0].Summary.Length > 220 ? m.Articles[0].Summary.Substring(0, 220) : m.Articles[0].Summary))
+                                                                        @{
+                                                                            if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0]))
+                                                                            {
+                                                                                if (IsInEditingMode)
+                                                                                {
+                                                                                    @Editable(Model, m => m.Articles[0].Summary.Length > 220 ? m.Articles[0].Summary.Substring(0, 220) : m.Articles[0].Summary);
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    var summary = Model.ShortDescrpitons[0].Length > 220 ? Model.ShortDescrpitons[0].Substring(0, 220) : Model.ShortDescrpitons[0];
+                                                                                    new HtmlString(summary);
+                                                                                }
+                                                                            }
+                                                                        }
                                                                     </span>
                                                                 }
                                                             </div>
@@ -510,7 +523,24 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                                                             
 																																		<tr>
 																																			<td valign="top" height="120">
-																																				<span style="color:#040400 !important; font-family: Georgia, serif; font-size: 14px; line-height: 150%; margin-top: 0; padding-top: 0;">@((Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index])) ? new HtmlString(Model.ShortDescrpitons[index].Length > 220 ? Model.ShortDescrpitons[index].Substring(0, 220) : Model.ShortDescrpitons[index]) : Editable(article, m => m.Summary.Length > 220 ? m.Summary.Substring(0, 220) : m.Summary))</span>
+																																				<span style="color:#040400 !important; font-family: Georgia, serif; font-size: 14px; line-height: 150%; margin-top: 0; padding-top: 0;">
+                                                                                                                                               
+                                                                                                                                                    @{
+                                                                                                                                                        if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
+                                                                                                                                                        {
+                                                                                                                                                            if (IsInEditingMode)
+                                                                                                                                                            {
+                                                                                                                                                                @Editable(article, m => m.Summary.Length > 220 ? m.Summary.Substring(0, 220) : m.Summary);
+                                                                                                                                                            }
+                                                                                                                                                            else
+                                                                                                                                                            {
+                                                                                                                                                                var summary = Model.ShortDescrpitons[index].Length > 220 ? Model.ShortDescrpitons[index].Substring(0, 220) : Model.ShortDescrpitons[index];
+                                                                                                                                                                @Html.Raw(summary);
+                                                                                                                                                            }
+
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                </span>
 																																			</td>
 																																		</tr>
                                                                                                                     }
