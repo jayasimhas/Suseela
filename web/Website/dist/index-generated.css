@@ -10746,7 +10746,10 @@ div#feedbacklite.fbl_r {
   float: right;
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
-  width: 50%; }
+  width: 50.4%; }
+  .package-control-articles__quarter h2, .package-control-articles__quarter .article-topics__header {
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
   .package-control-articles__quarter h3.article-preview__headline, .package-control-articles__quarter .article-preview__headline.article-call-to-action__title {
     padding: 16px 0 0 0;
     padding: 1rem 0 0 0;
