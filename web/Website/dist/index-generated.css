@@ -6643,12 +6643,11 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 17px 0 0;
     margin-right: 17px; }
   .listView .article-preview__tags {
-    width: auto;
     z-index: 999;
     bottom: 20px;
     bottom: 1.25rem; }
     .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
-      max-width: inherit;
+      max-width: 22%;
       font-size: 16px;
       font-size: 1rem; }
   .listView .article-metadata {
@@ -9000,8 +8999,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12920,7 +12919,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
