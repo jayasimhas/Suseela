@@ -222,7 +222,7 @@
 		}
 	}
 
-	.graphs-container h4 { text-transform: uppercase;}
+	.graphs-container h4 { text-transform: uppercase; padding-top: 10px;}
 	.graph-container h5 {
 		font-size: 14px;
 		font-weight: 500;
@@ -261,7 +261,7 @@
 		}
 		.graphs {
 			@include breakpoint('small') {
-				width: 1000px;
+				width: 1200px;
 			}
 			.graph-wrapper {
 				margin: 0.625rem 0.5rem 0;

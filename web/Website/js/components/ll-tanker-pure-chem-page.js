@@ -14,7 +14,9 @@
 			}
 
 			Parent.append(TableStr);
-
+			Parent.find('.R16').mouseover(function(){
+				alert('Enter..!');
+			});
 		},
 		RenderSingleTable: function(heading, Data) {
 			console.log(Data);
@@ -34,10 +36,12 @@
 					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
 				}
 			}
-
+			var rowIdx = 0;
 			for(var i = 0; i< Data.length; i++) {
+				rowIdx++;
 				var Body = "",
-					Values = Data[i];
+					Values = Data[i],
+					rowcls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 
 				for(var key in Values) {
 					if(Array.isArray(Values[key])) {
@@ -50,7 +54,7 @@
 					}
 				}
 
-				TbodyStr += '<tr>' + Body + '</tr>';
+				TbodyStr += '<tr class="'+rowcls+'">' + Body + '</tr>';
 			}
 
 			var Table = '<table class="table">'+

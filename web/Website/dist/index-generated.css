@@ -8990,8 +8990,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10252,7 +10252,8 @@ div#feedbacklite.fbl_r {
   .article-inline-image__title, .id-merges-acquisition .graphs-container
   .article-inline-image--pull-left__title, .id-merges-acquisition .graphs-container
   .article-inline-image--pull-right__title {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding-top: 10px; }
   .id-merges-acquisition .graph-container h5, .id-merges-acquisition .graph-container .alert-success p, .alert-success .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .alert-error p, .alert-error .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .article-call-to-action__subtitle {
     font-size: 14px;
     font-weight: 500;
@@ -10285,7 +10286,7 @@ div#feedbacklite.fbl_r {
       overflow-x: scroll; } }
   @media (max-width: 480px) {
     .id-merges-acquisition .graphs-container .graphs {
-      width: 1000px; } }
+      width: 1200px; } }
   .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
     margin: 10px 8px 0;
     margin: 0.625rem 0.5rem 0;
@@ -12896,7 +12897,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -16635,7 +16636,6 @@ main {
   background-color: #DE4361 !important; }
 
 .theme-insurance-day .merge-acquistion tr:hover,
-.theme-insurance-day .activate-hover,
 .theme-insurance-day .tableRow:hover .tableCell {
   background-color: rgba(176, 23, 61, 0.2) !important; }
 
@@ -17061,7 +17061,6 @@ main {
   background-color: #1191D1 !important; }
 
 .theme-lloydslist .merge-acquistion tr:hover,
-.theme-lloydslist .activate-hover,
 .theme-lloydslist .tableRow:hover .tableCell {
   background-color: rgba(15, 84, 135, 0.2) !important; }
 
