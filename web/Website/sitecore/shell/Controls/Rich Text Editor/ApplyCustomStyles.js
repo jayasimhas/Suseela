@@ -43,15 +43,6 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 				}
 				selectedtag.remove();
 			} 
-			else if (selectedtag.tagName == "LI") {
-				var ParentNode = selectedtag.parentNode;
-				var children = ParentNode.childNodes;
-				
-				for(var i = 0; i < children.length; i++) {
-					Elem += '<p>' + children[i].innerText + '</p>'
-				}
-				selectedtag.remove();
-			}
 			else{
 				Elem = '<p>' + selectedtext + '</p>';
 			}

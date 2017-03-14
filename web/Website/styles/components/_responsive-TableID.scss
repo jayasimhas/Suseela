@@ -235,22 +235,12 @@
 		height: 2.5rem;
 	}
 	.year_heading {
-		height: 6em !important;
-		border-right: 1px solid #fff;
-		@media only screen and (max-width: 600px) {
-			height: 5em !important;
-		}
+		height: 5em !important;
 		div {
 			background: transparent;
 		}
 		.sub-item {
 			margin-top: 0.5rem;
-			@media only screen and (min-width: 768px) {
-				padding: 10px 0;
-				&:nth-child(even){
-					border-right: 1px solid #fff;
-				}
-			}
 		}
 	}
 	.sub-item {
@@ -260,7 +250,6 @@
 	
 }
 #tankerPureChemPage, #onOrderTable {
-	width: 100%;
 	margin-bottom: 1rem;	
 	.pad-10 {
 		padding: 10px !important;
@@ -280,28 +269,13 @@
 		}
 	}
 	.states_heading {
-		@media only screen and (max-width: 600px) {
-			border-right: 1px solid $color-white;
-		}
+		border-right: 1px solid $color-white;
 		padding-left: 0;
 		padding-right: 0;
 	}
 	.owl-wrapper .states_heading { 
 		padding-left: 0;
 		padding-right: 0;
-	}
-	@media only screen and (min-width: 768px) {
-		.carouselBord{
-			height: 1px;
-			background: #fff;
-			width: 100%;
-			position: absolute;
-			top: 55px;
-			z-index: 999;
-		}
-		.titleItem{
-			height: 38px;
-		}
 	}
 }
 #cockettBunker, #shipRoro {

@@ -44,7 +44,10 @@
             </div>
         </div>
     }
-    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
+}
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
+{
+    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
     {
         <script type="text/javascript">
             var DryBulkFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
@@ -87,7 +90,10 @@
             </div>
         </div>
     }
-    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+}
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
+{
+    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
     {
         <script type="text/javascript">
             var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
