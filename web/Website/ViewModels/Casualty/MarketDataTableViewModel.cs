@@ -47,9 +47,6 @@ namespace Informa.Web.ViewModels.Casualty
             {
                 return string.Empty;
             }
-        }
-
-        //Table Variation-2
-        
+        }        
     }
 }

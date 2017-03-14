@@ -81,13 +81,13 @@
                     <table cellpadding="0" cellspacing="0" width="100%" class="table"></table>
                     <!-- tables rendered -->
                 </div>
+                <div class="additional-info">
+                    @Html.Raw(Model.AdditionalInfo)
+                </div>
             </div>
         </div>
     }
-}
-@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
-{
-    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
     {
         <script type="text/javascript">
             var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
@@ -236,69 +236,7 @@
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation7)
     {
         <script type="text/javascript">
-            @*var imarextabledate=@Html.Raw(Model.jsonDropdownData);*@
-            var imarextabledate = [{
-                "selectdate": [{
-                    "value": "13-jan-17",
-                    "text": "13-jan-17"
-                }, {
-                    "value": "12-jan-17",
-                    "text": "12-jan-17"
-                }, {
-                    "value": "11-jan-17",
-                    "text": "11-jan-17"
-                }]
-            }];
-            @*var imarexTable=@Html.Raw(Model.jsonTableData);*@
-            var imarexTable = [{
-                "Monday 02 March 15": [{
-                    "Header": "VL RT-CHIBA",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                },{
-                    "Header": "VL RT-CHIBA",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }],
-                "Tuesday 03 March 15": [{
-                    "Header": "VL RT-CHIBA",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }, {
-                    "Header": "SM BNY-PHIL",
-                    "Q215": "49.17",
-                    "Q315": "41",
-                    "CAL16": "67.95"
-                }]
-            }];
+            var imarexTabledate=@Html.Raw(Model.jsonDropdownData);
         </script>
         <div class="table-responsive casualty-table-theme" id="market-imarex">
             <h2>@Model.PageTitle</h2>
@@ -372,18 +310,51 @@
                 }]
             </script>
         }
-        <div class="small_table">
-            <div class="table-responsive" id="ship-Coal-Export">
-                <h2>@Model.PageTitle</h2>
-                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
-                <hr />
-                <div class="lli-brand-container shallow-bottom">
-                    <div class="lli-brand-box">
-                        @Model.TableSubTitle
+        <div class="large_table">
+            <div class="large-table-responsive">
+                <div class="table ID-Responsive-Table" id="ship-Coal-Export" style="border: none;">
+                    <h2>@Model.PageTitle</h2>
+                    <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                    <hr />
+                    <div class="lli-brand-container shallow-bottom">
+                        <div class="lli-brand-box">
+                            @Model.TableSubTitle
+                        </div>
                     </div>
                 </div>
+                <div class="table ID-Responsive-Table" id="shipCoalExport">
+                </div>
             </div>
-            <div class="table ID-Responsive-Table" id="shipCoalExport">                
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation9)
+    {
+        <script type="text/javascript">
+            var marketdryCargodate=@Html.Raw(Model.jsonDropdownData);
+        </script>
+        <div class="table-responsive" id="dry-cargo">
+            <h2>@Model.PageTitle</h2>
+            <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+            <hr />
+            <div class="lli-brand-container shallow-bottom">
+                <div class="lli-brand-box">
+                    @Model.TableSubTitle
+                    <fieldset>
+                        <div class="form-control">
+                            <label for="selectDay">Select a day:</label>
+                            <div class="select-field">
+                                <select id="selectDay" name="selectDay">                                    
+                                </select>
+                            </div>
+                        </div>
+                        @Html.Hidden("drycargoHiddenVal", Model.TableFeedUrl)
+                    </fieldset>
+                    <!-- .lli-brand-box -->
+                </div>
+                <!-- .lli-brand-container -->
+            </div>
+            <div id="dryCargo">
+                <!-- tables rendered -->
             </div>
         </div>
     }
