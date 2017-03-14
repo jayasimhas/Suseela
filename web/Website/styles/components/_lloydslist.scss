@@ -102,7 +102,7 @@
 	}
 }
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
-#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer{
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -387,7 +387,11 @@
 			width: 50%;
 		} 
 	}
-	.owl-dotsNav{background: #0f5487; height: 30px;}
+	.owl-dotsNav{
+		@media only screen and (max-width: 1024px) { 
+			background: #0f5487; height: 30px;
+		}
+	}
 	.owl-theme .owl-nav{display: none !important;}
 	.showinMob{
 		display: none;
@@ -695,7 +699,9 @@
 	.leftbord{
 		border-left: 1px solid #e9e9e9;
 	}
-	.owl-dotsNav{background: #0f5487; height: 30px;}
+	.owl-dotsNav{
+		background: #0f5487; height: 30px;
+	}
 	.owl-dots{
 		background: #0f5487;
 		margin-top: -29px;
@@ -749,4 +755,8 @@
 		}
 	}
 }
-    
+ #market-imarex {
+	 .lli-brand-container .form-control{
+		width: 100%;
+	}
+ }
