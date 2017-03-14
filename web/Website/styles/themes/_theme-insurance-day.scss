@@ -44,5 +44,6 @@
 		transparentize($color-cardinal-color, 0.5));
 
     @include theme-table($color-primary-insurance-hover, $color-primary-crimson,$color-cardinal-color, transparentize($color-cardinal-color, 0.8));
-
+	
+	@include sponsoredContent(transparentize($color-cardinal-color, 0.9), $color-cardinal-ten);
 }
