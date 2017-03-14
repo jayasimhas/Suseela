@@ -155,7 +155,7 @@
 				if(Array.isArray(Heading[key])) {
 					CarouselPart += '<div class="article">'+
 										'<div class="year_heading">'+
-											'<div>'+ key +'</div>'+
+											'<div class="titleItem">'+ key +'</div>'+
 											self.getKeyChild(key, Heading[key])+
 										'</div>'+
 										self.getData(key, Data)+
@@ -169,7 +169,7 @@
 			var Carousel = '<div class="table_head pad-10 clearfix">'+
 								'<span>' + Name + '</span>'+
 							'</div>'+
-							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">'+
+							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4; position: relative;"><div class="carouselBord"></div>'+
 								'<div class="states_heading">'+
 									FixedPart+
 								'</div>'+

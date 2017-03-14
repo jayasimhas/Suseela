@@ -3945,17 +3945,27 @@ body.lightboxed {
     height: 40px;
     height: 2.5rem; }
   #tankerPureChemPage .year_heading, #shipVehicle .year_heading, #onOrderTable .year_heading {
-    height: 5em !important; }
+    height: 6em !important;
+    border-right: 1px solid #fff; }
+    @media only screen and (max-width: 600px) {
+      #tankerPureChemPage .year_heading, #shipVehicle .year_heading, #onOrderTable .year_heading {
+        height: 5em !important; } }
     #tankerPureChemPage .year_heading div, #shipVehicle .year_heading div, #onOrderTable .year_heading div {
       background: transparent; }
     #tankerPureChemPage .year_heading .sub-item, #shipVehicle .year_heading .sub-item, #onOrderTable .year_heading .sub-item {
       margin-top: 8px;
       margin-top: 0.5rem; }
+      @media only screen and (min-width: 768px) {
+        #tankerPureChemPage .year_heading .sub-item, #shipVehicle .year_heading .sub-item, #onOrderTable .year_heading .sub-item {
+          padding: 10px 0; }
+          #tankerPureChemPage .year_heading .sub-item:nth-child(even), #shipVehicle .year_heading .sub-item:nth-child(even), #onOrderTable .year_heading .sub-item:nth-child(even) {
+            border-right: 1px solid #fff; } }
   #tankerPureChemPage .sub-item, #shipVehicle .sub-item, #onOrderTable .sub-item {
     width: 50%;
     float: left; }
 
 #tankerPureChemPage, #onOrderTable {
+  width: 100%;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
   #tankerPureChemPage .pad-10, #onOrderTable .pad-10 {
@@ -3969,12 +3979,24 @@ body.lightboxed {
     #tankerPureChemPage thead tr th:last-child, #onOrderTable thead tr th:last-child {
       border-right: none; }
   #tankerPureChemPage .states_heading, #onOrderTable .states_heading {
-    border-right: 1px solid #ffffff;
     padding-left: 0;
     padding-right: 0; }
+    @media only screen and (max-width: 600px) {
+      #tankerPureChemPage .states_heading, #onOrderTable .states_heading {
+        border-right: 1px solid #ffffff; } }
   #tankerPureChemPage .owl-wrapper .states_heading, #onOrderTable .owl-wrapper .states_heading {
     padding-left: 0;
     padding-right: 0; }
+  @media only screen and (min-width: 768px) {
+    #tankerPureChemPage .carouselBord, #onOrderTable .carouselBord {
+      height: 1px;
+      background: #fff;
+      width: 100%;
+      position: absolute;
+      top: 55px;
+      z-index: 999; }
+    #tankerPureChemPage .titleItem, #onOrderTable .titleItem {
+      height: 38px; } }
 
 #cockettBunker, #shipRoro {
   border: none; }
@@ -8990,8 +9012,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9586,10 +9608,6 @@ div#feedbacklite.fbl_r {
     #cockett-Bunker.table-responsive .table .R16, #ship-Roro.table-responsive .table .R16, #ship-Container-Ship.table-responsive .table .R16, #ship-Vehicle.table-responsive .table .R16, #tanker-Pure-ChemPage.table-responsive .table .R16, #shipContainerFixtures.table-responsive .table .R16, #fisDryBulkContainer.table-responsive .table .R16, #howeRobinsonContainer.table-responsive .table .R16, #market-imarex.table-responsive .table .R16 {
       font-size: 16px;
       font-size: 1rem; }
-      @media only screen and (min-width: 600px) and (max-width: 768px) {
-        #market-data-tool.table-responsive .table .R16, #dry-cargo.table-responsive .table .R16, #dry-cargo-cap.table-responsive .table .R16, #dry-cargo-bulk-fixtures.table-responsive .table .R16, #tanker-fixtures.table-responsive .table .R16, #ship-Container-ShipFixtures.table-responsive .table .R16, #ship-Coal-Export.table-responsive .table .R16, #market-Data-Dry-Cargo.table-responsive .table .R16,
-        #cockett-Bunker.table-responsive .table .R16, #ship-Roro.table-responsive .table .R16, #ship-Container-Ship.table-responsive .table .R16, #ship-Vehicle.table-responsive .table .R16, #tanker-Pure-ChemPage.table-responsive .table .R16, #shipContainerFixtures.table-responsive .table .R16, #fisDryBulkContainer.table-responsive .table .R16, #howeRobinsonContainer.table-responsive .table .R16, #market-imarex.table-responsive .table .R16 {
-          font-size: 12px; } }
       #market-data-tool.table-responsive .table .R16 a, #market-data-tool.table-responsive .table .R16 .pop-out__reset-password, #market-data-tool.table-responsive .table .R16 .sortable-table__list-toggler, #market-data-tool.table-responsive .table .R16 .mobile-table-exit, #dry-cargo.table-responsive .table .R16 a, #dry-cargo.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-cap.table-responsive .table .R16 a, #dry-cargo-cap.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-cap.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-cap.table-responsive .table .R16 .mobile-table-exit, #dry-cargo-bulk-fixtures.table-responsive .table .R16 a, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .pop-out__reset-password, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #dry-cargo-bulk-fixtures.table-responsive .table .R16 .mobile-table-exit, #tanker-fixtures.table-responsive .table .R16 a, #tanker-fixtures.table-responsive .table .R16 .pop-out__reset-password, #tanker-fixtures.table-responsive .table .R16 .sortable-table__list-toggler, #tanker-fixtures.table-responsive .table .R16 .mobile-table-exit, #ship-Container-ShipFixtures.table-responsive .table .R16 a, #ship-Container-ShipFixtures.table-responsive .table .R16 .pop-out__reset-password, #ship-Container-ShipFixtures.table-responsive .table .R16 .sortable-table__list-toggler, #ship-Container-ShipFixtures.table-responsive .table .R16 .mobile-table-exit, #ship-Coal-Export.table-responsive .table .R16 a, #ship-Coal-Export.table-responsive .table .R16 .pop-out__reset-password, #ship-Coal-Export.table-responsive .table .R16 .sortable-table__list-toggler, #ship-Coal-Export.table-responsive .table .R16 .mobile-table-exit, #market-Data-Dry-Cargo.table-responsive .table .R16 a, #market-Data-Dry-Cargo.table-responsive .table .R16 .pop-out__reset-password, #market-Data-Dry-Cargo.table-responsive .table .R16 .sortable-table__list-toggler, #market-Data-Dry-Cargo.table-responsive .table .R16 .mobile-table-exit,
       #cockett-Bunker.table-responsive .table .R16 a,
       #cockett-Bunker.table-responsive .table .R16 .pop-out__reset-password,
@@ -12897,7 +12915,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
