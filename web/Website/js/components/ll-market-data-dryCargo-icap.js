@@ -1,11 +1,9 @@
 (function () {
 	var dryCargoIcap = {
 		table: '',
-		renderTable: function(){
+		renderTable: function(tableData){
 		var self = this;
-		 //console.log(tableObj);
-			 $.each(tableObj, function(datekey, date){ 
-				
+			 $.each(tableData, function(datekey, date){ 
 					$.each(date, function(key, value) { 
 						//console.log(key);
 						self.table += '<table class="table descView">'
@@ -36,14 +34,14 @@
 			 });
 		
 		},		
-		init: function() {
-			this.renderTable();
+		init: function(tableData) {
+			this.renderTable(tableData);
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#dryCargoIcap').length > 0) {
-			dryCargoIcap.init();
+			dryCargoIcap.init(dracragoicapTable);
 		}
 	});
 })();
