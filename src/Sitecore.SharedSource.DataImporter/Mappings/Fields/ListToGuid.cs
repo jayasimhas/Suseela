@@ -176,6 +176,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     {
                         string result1 = auth.Replace("By", " ");
                         string result2 = result1.Replace("-", " ");
+                        if (result2.Contains(" in "))
+                        {
+                           
+                            result2 = result2.Substring(0, result2.IndexOf(" in ") + 0);
+                        }
                         if (result2.Contains('.'))
                         {
                             result2 = result2.Substring(0, result2.IndexOf(".") + 1);

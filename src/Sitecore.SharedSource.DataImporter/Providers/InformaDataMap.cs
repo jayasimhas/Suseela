@@ -109,7 +109,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (string.IsNullOrEmpty(summaryTitleHtml))
                     {
                         summaryTitleHtml = GetFirstParagraph(bodyTitleHtml);
-                        bodyTitleHtml = bodyTitleHtml.Replace(summaryTitleHtml, "");
+                        if(!string.IsNullOrEmpty(summaryTitleHtml))
+                           bodyTitleHtml = bodyTitleHtml.Replace(summaryTitleHtml, "");
                     }
 
 
@@ -3340,8 +3341,29 @@ namespace Sitecore.SharedSource.DataImporter.Providers
     {
         public static string Authors(string value)
         {
+
+ 
             return value
-                     .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+
+                 .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+                    .Replace("ll Administrator", "Lloyd's List")
+                    .Replace("Lloyd's List Editorial", "Lloyd's List")
+                    .Replace("Lloyd’s List Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List editorial", "Lloyd's List")
+                    .Replace("Lloyd's List Reporter", "Lloyd's List")
+                     .Replace("Lloyd's List reporter", "Lloyd's List")
+                    .Replace("Last Word", "Lloyd's List")
+                    .Replace("Containerisation International", "Lloyd's List")
+                    .Replace("CI editorial", "Lloyd's List")
+                     .Replace("CI Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List staff", "Lloyd's List")
+                    .Replace("Lloyd's List Australia", "Lloyd's List")
+                    .Replace("Lloyd's List Containers", "Lloyd's List")
+                    .Replace("Lloyd’s List Containers", "Lloyd's List")
+                    .Replace("Informa i-Law", "Lloyd's List")
+                     .Replace("Lloyd's List team", "Lloyd's List")
+                    
+                    .Replace("Lloyd's List editorial team", "Lloyd's List")
                      .Replace("kelly@informa.com", ",")
                     .Replace("brizmohun@informa.com", ",")
                     .Replace("cathy.kelly@informa.com", ",")
