@@ -41,10 +41,7 @@
             </div>
         </div>
     }
-}
-@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
-{
-    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
     {
         <script type="text/javascript">
             var DryBulkFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
@@ -84,10 +81,7 @@
             </div>
         </div>
     }
-}
-@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
-{
-    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
     {
         <script type="text/javascript">
             var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
@@ -121,6 +115,106 @@
                     <!-- .lli-brand-container -->
                 </div>
                 <div id="shipFixtures">
+                </div>
+            </div>
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation4)
+    {
+        <script type="text/javascript">
+            var currentFleetTableData=@Html.Raw(Model.jsonTableData);
+        </script>
+        if (!string.IsNullOrEmpty(Model.jsonAdditionalTableData))
+        {
+            <script type="text/javascript">
+                var onOrderTableData=@Html.Raw(Model.jsonAdditionalTableData);
+            </script>
+        }
+
+        <div class="table-responsive" id="tanker-Pure-ChemPage">
+            <h2>@Model.PageTitle</h2>
+            <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+            <hr />
+            <div class="lli-brand-container shallow-bottom">
+                <div class="lli-brand-box">
+                    @Model.TableSubTitle
+                    <!-- .lli-brand-box -->
+                </div>
+                <!-- .lli-brand-container -->
+            </div>
+            <div class="table ID-Responsive-Table" data-modal="modal-annualresults" id="tankerPureChemPage">
+            </div>
+            @if (!string.IsNullOrEmpty(Model.jsonAdditionalTableData))
+            {
+                <div class="table ID-Responsive-Table" data-modal="modal-annualresults" id="onOrderTable">
+                </div>
+            }
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation5)
+    {
+        <script type="text/javascript">
+            var fisDryBulkDateOptions=@Html.Raw(Model.jsonDropdownData);
+        </script>
+
+        <div class="small_table">
+            <div class="table-responsive" id="fisDryBulkContainer">
+                <h2>@Model.PageTitle</h2>
+                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                <hr />
+                <div class="lli-brand-container shallow-bottom">
+                    <div class="lli-brand-box">
+                        @Model.TableSubTitle
+                        <fieldset>
+                            <div class="form-control">
+                                <label for="fisDryBulkselectDay">Select week beginning Monday:</label>
+                                <div class="select-field">
+                                    <select id="fisDryBulkselectDay" name="fisDryBulkselectDay"></select>
+                                </div>
+                            </div>
+                            <div class="dataProImg">
+                                <span>@Model.DataProvider</span>
+                                @if (!string.IsNullOrEmpty(Model.ProviderLogo?.Src))
+                                {
+                                    <img src="@Model.ProviderLogo.Src" alt="marketLogo" />
+                                }
+                            </div>
+                            @Html.Hidden("fisDryBulkHiddenVal", Model.TableFeedUrl)
+                        </fieldset>
+                        <!-- .lli-brand-box -->
+                    </div>
+                    <!-- .lli-brand-container -->
+                </div>
+                <div class="fisDryBulkTable showinDesk">
+                </div>
+                <div class="fisDryBulkTable showinMob">
+                </div>
+                <div class="additional-info">
+                    @Html.Raw(Model.AdditionalInfo)
+                </div>
+            </div>
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation6)
+    {
+        <script type="text/javascript">
+            var jsonCockettBunker=@Html.Raw(Model.jsonTableData);
+        </script>
+
+        <div class="small_table">
+            <div class="table-responsive" id="cockett-Bunker">
+                <h2>@Model.PageTitle</h2>
+                <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+                <hr />
+                <div class="lli-brand-container shallow-bottom">
+                    <div class="lli-brand-box">
+                        @Model.TableSubTitle
+                        <!-- .lli-brand-box -->
+                    </div>
+                    <!-- .lli-brand-container -->
+                </div>
+                <div class="table ID-Responsive-Table" data-modal="modal-annualresults" id="cockettBunker">
+
                 </div>
             </div>
         </div>
