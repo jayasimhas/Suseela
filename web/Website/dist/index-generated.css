@@ -10810,6 +10810,9 @@ div#feedbacklite.fbl_r {
   font-weight: bold;
   line-height: 19px; }
 
+.sponsored_cont .sponsored_title {
+  text-transform: uppercase; }
+
 .headercolored_new {
   background: #c15b07;
   color: #FFF;
