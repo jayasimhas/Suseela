@@ -1,5 +1,8 @@
 .id-merges-acquisition {
 	font-family: 'Roboto';
+	.table-responsive {
+		position: relative;
+	}
 	.idi-table-heading {
 		margin-top: 0;
 	}
@@ -8,6 +11,10 @@
     	background-color: #eee;
     	position: relative;
     	overflow: hidden;
+    	display: none;
+    	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
     	&:after {
     		content: '';
     		height: 1px;
@@ -90,10 +97,16 @@
 	 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 	 		width: 100%;
 	 		overflow-x: scroll;
+	 		overflow-y: scroll;
+	 		height: 500px;
+	 		position: relative;
 	 	}
 	 }
 	.table.merge-acquistion {
 		border-top: none;
+		.suggest-more{
+			display: none !important;
+		}
 		@include breakpoint('small') {
 			border: none;
 		}
@@ -222,31 +235,21 @@
 		}
 	}
 
-	.graphs-container h4 { text-transform: uppercase; padding-top: 10px;}
-	.graph-container h5 {
-		font-size: 14px;
-		font-weight: 500;
-		vertical-align: middle;
-		display: inline-block;
-		text-align: left;
-		margin: 20px 20px 0 0;
-		overflow: hidden;
-		line-height: 20px;
-		height: 40px;
-	}
+	.graphs-container h4 { text-transform: uppercase; padding: 10px; }
+	.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
 	.graphs-container .graph-container {
 	    text-align: left;
-	    padding: 0 30px 25px;
+	    padding: 0 8px;
+	    padding-bottom: 10px;
 	    background-color: #EEEEEE;
+	    border-left: 1px solid #C0C0C0;
+	    border-bottom: 1px solid #C0C0C0;
 	    @include breakpoint('small') {
 	    	width: 100%;
 	    }
 	    &:first-child {
 	    	border-left: none;
 	    }
-		#chartdiv-deals, #chartdiv-type, #chartdiv-region, #chartdiv-region2{
-			height: 150px !important;
-		} 
 	}
 	.graphs-container .dealsOmitted {
 		float: right;
@@ -260,25 +263,16 @@
 			overflow-x: scroll;
 		}
 		.graphs {
+			margin: 0 -5px;
 			@include breakpoint('small') {
-				width: 1200px;
+				width: 1000px;
 			}
 			.graph-wrapper {
-				margin: 0.625rem 0.5rem 0;
+				padding: 0 5px;
 				float: left;
-				width: 24%;
-				height: 234px;
+				width: 25%;
 				@include breakpoint('small') {
 					width: 250px;
-				}
-				&:first-child{
-					margin-left: 0 !important;
-				}
-				&:last-child{
-					margin-right: 0 !important;
-				}
-				.graph-container {
-					height: 234px;
 				}
 			}
 		}
@@ -482,4 +476,31 @@
 			}
 		}
 	}
+	.scrollbar-container {
+	    position: absolute;
+	    right: -1rem;
+	    bottom: 0;
+	    height: 500px;
+	    width: 16px;
+	    background-color: #f1f2f2;
+	    z-index: 9;
+	    &:after {
+	    	content: '';
+	    	position: absolute;
+	    	top: 0;
+	    	right: 7px;
+	    	width: 1px;
+	    	height: 100%;
+	    	background:#d1d3d4;
+	    	z-index:1;
+	    }
+	}
+	.scrollbar {
+		  position: absolute;
+		  right: 4px;
+		  height: 30px;
+		  width: 7px;
+		  background: #777777;
+		  z-index:2;
+		}
 }

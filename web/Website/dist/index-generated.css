@@ -8990,8 +8990,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10083,13 +10083,19 @@ div#feedbacklite.fbl_r {
 
 .id-merges-acquisition {
   font-family: 'Roboto'; }
+  .id-merges-acquisition .table-responsive {
+    position: relative; }
   .id-merges-acquisition .idi-table-heading {
     margin-top: 0; }
   .id-merges-acquisition #scrollbar-horizantal {
     height: 10px;
     background-color: #eee;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    display: none; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .id-merges-acquisition #scrollbar-horizantal {
+        display: block; } }
     .id-merges-acquisition #scrollbar-horizantal:after {
       content: '';
       height: 1px;
@@ -10155,9 +10161,14 @@ div#feedbacklite.fbl_r {
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .id-merges-acquisition .wrap-merge {
       width: 100%;
-      overflow-x: scroll; } }
+      overflow-x: scroll;
+      overflow-y: scroll;
+      height: 500px;
+      position: relative; } }
   .id-merges-acquisition .table.merge-acquistion {
     border-top: none; }
+    .id-merges-acquisition .table.merge-acquistion .suggest-more {
+      display: none !important; }
     @media (max-width: 480px) {
       .id-merges-acquisition .table.merge-acquistion {
         border: none; } }
@@ -10253,28 +10264,24 @@ div#feedbacklite.fbl_r {
   .article-inline-image--pull-left__title, .id-merges-acquisition .graphs-container
   .article-inline-image--pull-right__title {
     text-transform: uppercase;
-    padding-top: 10px; }
+    padding: 10px; }
   .id-merges-acquisition .graph-container h5, .id-merges-acquisition .graph-container .alert-success p, .alert-success .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .alert-error p, .alert-error .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .article-call-to-action__subtitle {
-    font-size: 14px;
-    font-weight: 500;
-    vertical-align: middle;
-    display: inline-block;
-    text-align: left;
-    margin: 20px 20px 0 0;
-    overflow: hidden;
-    line-height: 20px;
-    height: 40px; }
+    font-weight: bold;
+    font-size: 11px;
+    color: #333333;
+    padding: 5px; }
   .id-merges-acquisition .graphs-container .graph-container {
     text-align: left;
-    padding: 0 30px 25px;
-    background-color: #EEEEEE; }
+    padding: 0 8px;
+    padding-bottom: 10px;
+    background-color: #EEEEEE;
+    border-left: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0; }
     @media (max-width: 480px) {
       .id-merges-acquisition .graphs-container .graph-container {
         width: 100%; } }
     .id-merges-acquisition .graphs-container .graph-container:first-child {
       border-left: none; }
-    .id-merges-acquisition .graphs-container .graph-container #chartdiv-deals, .id-merges-acquisition .graphs-container .graph-container #chartdiv-type, .id-merges-acquisition .graphs-container .graph-container #chartdiv-region, .id-merges-acquisition .graphs-container .graph-container #chartdiv-region2 {
-      height: 150px !important; }
   .id-merges-acquisition .graphs-container .dealsOmitted {
     float: right;
     width: 100%;
@@ -10284,24 +10291,18 @@ div#feedbacklite.fbl_r {
   @media (max-width: 480px) {
     .id-merges-acquisition .graphs-container {
       overflow-x: scroll; } }
-  @media (max-width: 480px) {
-    .id-merges-acquisition .graphs-container .graphs {
-      width: 1200px; } }
-  .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
-    margin: 10px 8px 0;
-    margin: 0.625rem 0.5rem 0;
-    float: left;
-    width: 24%;
-    height: 234px; }
+  .id-merges-acquisition .graphs-container .graphs {
+    margin: 0 -5px; }
     @media (max-width: 480px) {
-      .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
-        width: 250px; } }
-    .id-merges-acquisition .graphs-container .graphs .graph-wrapper:first-child {
-      margin-left: 0 !important; }
-    .id-merges-acquisition .graphs-container .graphs .graph-wrapper:last-child {
-      margin-right: 0 !important; }
-    .id-merges-acquisition .graphs-container .graphs .graph-wrapper .graph-container {
-      height: 234px; }
+      .id-merges-acquisition .graphs-container .graphs {
+        width: 1000px; } }
+    .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
+      padding: 0 5px;
+      float: left;
+      width: 25%; }
+      @media (max-width: 480px) {
+        .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
+          width: 250px; } }
   .id-merges-acquisition #market-data {
     font-size: 15px;
     font-size: 0.9375rem;
@@ -10455,6 +10456,31 @@ div#feedbacklite.fbl_r {
       height: 15px;
       fill: #ffffff;
       margin-top: -7px; }
+  .id-merges-acquisition .scrollbar-container {
+    position: absolute;
+    right: -16px;
+    right: -1rem;
+    bottom: 0;
+    height: 500px;
+    width: 16px;
+    background-color: #f1f2f2;
+    z-index: 9; }
+    .id-merges-acquisition .scrollbar-container:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 7px;
+      width: 1px;
+      height: 100%;
+      background: #d1d3d4;
+      z-index: 1; }
+  .id-merges-acquisition .scrollbar {
+    position: absolute;
+    right: 4px;
+    height: 30px;
+    width: 7px;
+    background: #777777;
+    z-index: 2; }
 
 .rolling-stream {
   background-color: #f1f2f2;
@@ -13053,7 +13079,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
