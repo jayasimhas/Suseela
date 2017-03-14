@@ -1,21 +1,44 @@
 (function () {
 	var marketImarex = {
 		table: '', 
-		renderDate: function(){ 
+		renderDate: function(dateData){ 
 			var options = '';
-			$.each(dateObj[0], function(key, val){ 
+			$.each(dateData[0], function(key, val){ 
 				$.each(val, function(idx, value){ 
 					options += '<option value="'+value.Value+'">'+value.Text+'</option>'
 				});
 			});
 			
-			$('#selectWeek').html(options);
+			$('#imarexselect').html(options);
 		},
 		renderTable: function(){
-			this.loadDescView();
-			//this.loadMobileView();
+			var self = this, loadDateVal = $('#imarexselect option').val();
+			
+			self.callAjaxFn(loadDateVal);
+			$(document).on('change', '#imarexselect', function(){
+				var selectDateVal = $('#imarexselect option').val();
+				self.callAjaxFn(selectDateVal);
+			});
 		},
-		loadDescView: function(){
+		callAjaxFn: function(seldateVal){
+			 var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function (err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
+			});
+		},
+		sendHTTPRequest: function(searchData){
+			$('#marketImarex').html(this.loadDataView(searchData));
+		},
+		loadDataView: function(tableObj){
 			var self = this;
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
@@ -34,9 +57,11 @@
 					self.table += '</thead>';
 					
 					self.table += '<tbody>';
-					
-					$.each(val, function(idx, value){ 
-						self.table += '<tr>';
+					var bgIdx = 0;
+					$.each(val, function(idx, value){
+						bgIdx++;
+						var cls = (bgIdx % 2 === 0) ? 'oddCls' : '';
+						self.table += '<tr class="'+cls+'">';
 						$.each(value, function(k, v){
 							self.table += '<td class="R16 pad-10">'+v+'</td>';
 						});
@@ -47,31 +72,16 @@
 				
 			});
 			$('#marketImarex').html(self.table); 
-		},
-		loadMobileView: function(){
-			var tbody = '<tbody class="visible-sm">';
-			$.each(this.recreateObj, function(key, val){
-				tbody += '<tr><td class="graybg RB18 p-10">'+key+'</td><td colspan="1" align="right" class="graybg RB18 p-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>';
-				$.each(val, function(idx, value){
-					$.each(value, function(k, v){
-						tbody += '<tr><td class="pad-10 R21_GrayColor border-right">'+k+'</td><td class="pad-10 R21_GrayColor">'+v+'</td></tr>';
-					});
-					tbody += '<tr><td><hr /></td><td><hr /></td></tr>';
-				});
-			});
-			tbody += '</tbody>';
-			
-			$('#marketImarex table').append(tbody);
-		},
-		init: function() {
-			this.renderDate();
-			this.renderTable();
+		}, 
+		init: function(dateData, id) {
+			this.renderDate(dateData);
+			this.renderTable(id);
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#marketImarex').length > 0) {
-			marketImarex.init();
+			marketImarex.init(imarexTabledate, $('#marketImarex'));
 		}
 	});
 })();
