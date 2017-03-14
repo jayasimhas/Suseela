@@ -8990,8 +8990,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10809,6 +10809,159 @@ div#feedbacklite.fbl_r {
   font-size: 1rem;
   font-weight: bold;
   line-height: 19px; }
+
+.headercolored_new {
+  background: #c15b07;
+  color: #FFF;
+  font-size: 11.5pt; }
+
+p.article-paragraph_new {
+  font-family: Arial;
+  font-size: 11pt;
+  line-height: 20pt;
+  padding: 6pt 0;
+  text-align: left; }
+
+p.nomargin_new {
+  padding: 0;
+  margin: 0; }
+
+div.article-interview__question_new {
+  font-size: 10pt;
+  line-height: 20pt;
+  padding: 3pt 0 0 3pt; }
+
+div.article-interview__answer_new {
+  font-size: 10pt;
+  line-height: 20pt;
+  padding: 3pt 0 0 3pt; }
+
+.article-pullquote_new {
+  font-family: Arial;
+  font-size: 12.5pt;
+  text-align: center;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 4px #000;
+  background: #ccc; }
+
+.article-list--ul_new li {
+  list-style-type: disc;
+  padding: 0.5pt; }
+
+.article-list--ol_new li {
+  list-style-type: decimal;
+  padding: 0.5pt; }
+
+.quick-facts__header_new {
+  font-family: Arial;
+  font-size: 12pt;
+  color: #000;
+  text-align: justify;
+  padding: 3px;
+  margin: 0;
+  line-height: 15px;
+  font-weight: normal; }
+
+ul.quick-facts__list--ul_new, ol.quick-facts__list--ol_new {
+  margin: 6pt 0;
+  padding: 0 16px;
+  padding: 0 1rem; }
+
+ul.quick-facts__list--ul_new li {
+  font-family: Arial;
+  font-size: 8pt;
+  list-style-type: disc;
+  padding: 0 6pt; }
+
+ol.quick-facts__list--ol_new li {
+  font-family: Arial;
+  font-size: 8pt;
+  list-style-type: decimal;
+  padding: 0 6pt; }
+
+p.quick-facts__source_new {
+  font-size: 8pt;
+  font-style: italic; }
+
+p.article-exhibit__header_new {
+  font-family: Arial;
+  font-size: 10.5pt;
+  text-align: left;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  margin-bottom: 8pt; }
+
+p.article-exhibit__title_new {
+  font-family: Arial;
+  font-size: 10pt;
+  color: #000;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  margin-bottom: 8pt;
+  font-weight: bold; }
+
+p.article-exhibit__caption_new {
+  font-family: Arial;
+  font-size: 10.5pt;
+  text-align: left;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  margin-bottom: 8pt; }
+
+p.article-exhibit__source_new {
+  font-family: Arial;
+  font-size: 10.5pt;
+  text-align: left;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  margin-bottom: 8pt; }
+
+.companyname_new {
+  font-family: Arial;
+  font-size: 11pt;
+  line-height: 20pt;
+  padding: 6pt 0;
+  text-align: left;
+  font-weight: bold;
+  color: #669900; }
+
+.storytitle_new {
+  text-align: center;
+  font-size: 11pt;
+  font-style: bold !important; }
+
+.quick-facts_new {
+  background-color: #CCC;
+  border: 2px solid #000;
+  font-weight: normal;
+  margin: 0;
+  padding: 0; }
+
+.quick-facts_new p {
+  padding: 0 6pt;
+  font-size: 10pt; }
+
+p.executivesummary {
+  border-top-style: double;
+  border-bottom-style: double;
+  border-left-style: none;
+  border-right-style: none;
+  background: #E6E6FF; }
+
+.tablesubhead {
+  color: #c15b07;
+  font-size: 11.5pt;
+  font-weight: bold; }
+
+.subheadalternate {
+  background: #FFF0F7;
+  color: #c15b07;
+  font-size: 11.5pt;
+  font-weight: bold; }
+
+.tablestorytextalternate {
+  background: #FFF0F7;
+  font-size: 11.5pt; }
 
 /* * * * COMPONENTS — HEADER * * * */
 .header-publication-links {
@@ -12897,7 +13050,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
