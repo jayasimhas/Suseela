@@ -19,7 +19,7 @@
 		},
 		renderTable: function(tableData){
 			var self = this, loadDateVal = $('#tankerselectDay option').val();
-			
+
 			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#tankerselectDay', function(){
 				var selectDateVal = $('#tankerselectDay option').val();
@@ -52,14 +52,14 @@
 		loadDesktopView: function(tableData){
 			var tableStr = '';
 			for(var i = 0; i < tableData.length; i++){
-				var theadFlag = true, tbodyFlag = true, tbodyFlagend = false, idx = 0, rowIdx = 0;
+				var theadFlag = true, tbodyFlag = true, tbodyFlagend = false, idx = 0;
 					tableStr += '<table class="table descView"><thead class="table_head">';
 				for(var prop in tableData[i]){
 					tableStr += '<tr>';
 					tableStr += '<th colspan="8" class="pad-full-10">'+prop+'</th>';
 					tableStr += '</tr>';
 					for(var j = 0; j < tableData[i][prop].length; j++){
-						rowIdx++;
+						idx++;
 						if(tableData[i][prop].length == idx - 1) tbodyFlagend = true;
 						var eachObj = tableData[i][prop];
 						
@@ -75,8 +75,7 @@
 							tbodyFlag = false;
 							tableStr += '<tbody class="visible-lg">';
 						}
-						var rowCls = (rowIdx % 2 === 0) ? 'oddCls' : '';
-						tableStr += '<tr class="'+rowCls+'">';
+						tableStr += '<tr>';
 						for(var p in eachObj[j]){
 							tableStr += '<td class="R16 pad-10">'+eachObj[j][p]+'</td>';
 						}

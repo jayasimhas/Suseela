@@ -81,13 +81,13 @@
                     <table cellpadding="0" cellspacing="0" width="100%" class="table"></table>
                     <!-- tables rendered -->
                 </div>
-                <div class="additional-info">
-                    @Html.Raw(Model.AdditionalInfo)
-                </div>
             </div>
         </div>
     }
-    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+}
+@if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.TableType != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.TableType.Value))
+{
+    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
     {
         <script type="text/javascript">
             var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
@@ -236,7 +236,69 @@
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation7)
     {
         <script type="text/javascript">
-            var imarexTabledate=@Html.Raw(Model.jsonDropdownData);
+            @*var imarextabledate=@Html.Raw(Model.jsonDropdownData);*@
+            var imarextabledate = [{
+                "selectdate": [{
+                    "value": "13-jan-17",
+                    "text": "13-jan-17"
+                }, {
+                    "value": "12-jan-17",
+                    "text": "12-jan-17"
+                }, {
+                    "value": "11-jan-17",
+                    "text": "11-jan-17"
+                }]
+            }];
+            @*var imarexTable=@Html.Raw(Model.jsonTableData);*@
+            var imarexTable = [{
+                "Monday 02 March 15": [{
+                    "Header": "VL RT-CHIBA",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                },{
+                    "Header": "VL RT-CHIBA",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }],
+                "Tuesday 03 March 15": [{
+                    "Header": "VL RT-CHIBA",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }, {
+                    "Header": "SM BNY-PHIL",
+                    "Q215": "49.17",
+                    "Q315": "41",
+                    "CAL16": "67.95"
+                }]
+            }];
         </script>
         <div class="table-responsive casualty-table-theme" id="market-imarex">
             <h2>@Model.PageTitle</h2>

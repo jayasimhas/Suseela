@@ -3,6 +3,10 @@
 	.hideCol{
 		visibility: hidden;
 	}
+	.subscribed{
+		background: #fff !important;
+		color: #58595b !important;
+	}
 	@include breakpoint('small') {
 		font-size: 1em;
 		line-height: 20px;
@@ -238,4 +242,24 @@
 		} 
 	}
 }
+}
+
+@mixin theme-subscr($bc){
+	border: 1px solid $bc !important;
+}
+
+.theme-lloydslist{
+	.subscribed{
+		@include theme-subscr(#1191D1);
+	}
+}
+.theme-insurance-day{
+	.subscribed{
+		@include theme-subscr(#DE4361);
+	}
+}
+.theme-commodities{
+	.subscribed{
+		@include theme-subscr(#9E310D);
+	}
 }

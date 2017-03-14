@@ -101,8 +101,8 @@
 		}
 	}
 }
-#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
-#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex{
+#market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo, #market-Data-Dry-Cargo-ssyatl,
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipCoalExport{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -605,6 +605,7 @@
 	}
 	tr th, tr td {
 		border-right: 1px solid $color-white;
+		text-align: center;
 		&:last-child {
 			border-right: none;
 		}

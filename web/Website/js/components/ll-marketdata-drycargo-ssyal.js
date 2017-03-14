@@ -15,7 +15,7 @@
 
 		},
 		RenderSingleTable: function(Data) {
-			console.log(Data);
+			console.log(Data); 
 			var HeadingStr = "",
 				SubHeadingStr = "",
 				TbodyStr = "",
@@ -159,8 +159,8 @@
 		}
 	}
 	
-	if($('#marketDataDryCargo').length > 0) {
-		marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));	
+	if($('#marketDataDryCargossyatl').length > 0) {
+		marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargossyatl, $('#marketDataDryCargossyatl'));	
 	}
 
 	
