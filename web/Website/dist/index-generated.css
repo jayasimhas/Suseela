@@ -10253,7 +10253,6 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .graph-container h5, .id-merges-acquisition .graph-container .alert-success p, .alert-success .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .alert-error p, .alert-error .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .article-call-to-action__subtitle {
     font-size: 14px;
     font-weight: 500;
-    height: 40px;
     vertical-align: middle;
     display: inline-block;
     text-align: left;
