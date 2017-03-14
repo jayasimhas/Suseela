@@ -2159,181 +2159,192 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         padding: 16px;
         padding: 1rem; } }
 
-#main-carousel {
-  /*.owl-item{
-			float: left;
-		}*/ }
-  @media only screen and (min-width: 767px) and (max-width: 1024px) {
-    #main-carousel {
-      padding-right: 12px; } }
-  #main-carousel a[title="JavaScript charts"], #main-carousel [title="JavaScript charts"].pop-out__reset-password, #main-carousel [title="JavaScript charts"].sortable-table__list-toggler, #main-carousel [title="JavaScript charts"].mobile-table-exit {
-    display: none !important; }
-  #main-carousel .item-wrapper {
-    width: 25%;
-    float: left; }
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  #main-carousel {
+    padding-right: 12px; } }
+
+#main-carousel a[title="JavaScript charts"], #main-carousel [title="JavaScript charts"].pop-out__reset-password, #main-carousel [title="JavaScript charts"].sortable-table__list-toggler, #main-carousel [title="JavaScript charts"].mobile-table-exit {
+  display: none !important; }
+
+#main-carousel .item-wrapper {
+  width: 25%;
+  float: left; }
+  @media only screen and (min-width: 668px) and (max-width: 1024px) {
+    #main-carousel .item-wrapper {
+      width: 50%; } }
+  @media (max-width: 480px) {
+    #main-carousel .item-wrapper {
+      width: 100%; } }
+  #main-carousel .item-wrapper .amcharts-chart-div {
+    width: auto !important; }
     @media only screen and (min-width: 668px) and (max-width: 1024px) {
-      #main-carousel .item-wrapper {
-        width: 50%; } }
-    @media (max-width: 480px) {
-      #main-carousel .item-wrapper {
-        width: 100%; } }
-  #main-carousel .owl-carousel .item {
-    height: 290px; }
-    @media only screen and (min-width: 767px) and (max-width: 1024px) {
-      #main-carousel .owl-carousel .item {
-        height: auto; } }
-    @media (max-width: 480px) {
-      #main-carousel .owl-carousel .item {
-        height: auto; } }
-  #main-carousel .sorting-arrows__arrow {
-    width: 35px;
-    height: 35px;
-    fill: black; }
-    #main-carousel .sorting-arrows__arrow.left-arrow {
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg); }
-    #main-carousel .sorting-arrows__arrow.right-arrow {
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg); }
-  #main-carousel .owl-theme .owl-nav [class*='owl-'] {
-    background: none; }
-  #main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
-    background: #fff; }
-  #main-carousel .li-content-company {
-    border: none;
-    background-color: #fff;
-    height: 100%;
-    padding: 15px 18px;
-    margin-top: 10px; }
+      #main-carousel .item-wrapper .amcharts-chart-div {
+        width: auto !important; } }
+
+#main-carousel .owl-carousel .item {
+  height: 290px; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    #main-carousel .owl-carousel .item {
+      height: auto; } }
+  @media (max-width: 480px) {
+    #main-carousel .owl-carousel .item {
+      height: auto; } }
+
+#main-carousel .sorting-arrows__arrow {
+  width: 35px;
+  height: 35px;
+  fill: black; }
+  #main-carousel .sorting-arrows__arrow.left-arrow {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+  #main-carousel .sorting-arrows__arrow.right-arrow {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+
+#main-carousel .owl-theme .owl-nav [class*='owl-'] {
+  background: none; }
+
+#main-carousel .owl-theme .owl-dots .owl-dot.active span, #main-carousel .owl-theme .owl-dots .owl-dot:hover span {
+  background: #fff; }
+
+#main-carousel .li-content-company {
+  border: none;
+  background-color: #fff;
+  height: 234px;
+  padding: 15px 18px;
+  margin-top: 10px; }
+  #main-carousel .li-content-company:after {
+    display: block;
+    clear: both;
+    content: ''; }
+  @media (max-width: 800px) {
     #main-carousel .li-content-company:after {
       display: block;
       clear: both;
-      content: ''; }
-    @media (max-width: 800px) {
-      #main-carousel .li-content-company:after {
-        display: block;
-        clear: both;
-        content: ''; } }
-  @media only screen and (min-width: 767px) and (max-width: 1024px) {
-    #main-carousel .showinTab {
-      display: block !important; } }
-  #main-carousel .li-content-company img {
-    float: left;
-    margin: 0 10px 10px 0;
-    width: 100px; }
-  #main-carousel .li-content-company p.li-content-company__headline {
-    padding: 0 0 8px 0;
-    font-size: 20px;
-    font-size: 1.25rem;
-    margin-bottom: 20px; }
-  #main-carousel .li-content-graph {
-    border: none;
-    background-color: #eeeeee;
-    height: 100%;
-    padding: 15px 18px;
-    margin: 10px 10px 0 10px; }
-    @media (min-width: 1025px) {
-      #main-carousel .li-content-graph {
-        margin-top: 25px; } }
-    #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
-      height: 224px;
-      display: block;
-      background: #fff; }
-      #main-carousel .li-content-graph > a div div.amcharts-chart-div, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div {
-        height: 220px !important; }
-        #main-carousel .li-content-graph > a div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
-          height: 220px !important; }
-  #main-carousel .li-content-graph p {
-    font-size: 14px;
-    font-size: 0.875rem;
-    padding: 0 0 0 0;
-    margin-bottom: 22px; }
-  #main-carousel .hideinMob {
-    display: block; }
-    @media (max-width: 640px) {
-      #main-carousel .hideinMob {
-        display: none; } }
-  #main-carousel .showinMob {
-    display: none; }
-    @media (max-width: 640px) {
-      #main-carousel .showinMob {
-        display: block;
-        width: 100%;
-        -webkit-transition-property: none !important;
-        transition-property: none !important;
-        /*CSS transforms*/
-        -webkit-transform: none !important;
-        transform: none !important;
-        /*CSS animations*/
-        -webkit-animation: none !important;
-        animation: none !important; } }
-  #main-carousel .marketDataTable {
-    width: 100%; }
-    @media (max-width: 480px) {
-      #main-carousel .marketDataTable .owl-item.active {
-        width: auto !important; } }
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
-      #main-carousel .marketDataTable .owl-item.active {
-        width: 122px !important; } }
-  #main-carousel .owl-dots {
-    position: absolute;
-    top: -1px;
-    margin-top: -28px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    right: 15px;
-    text-align: right; }
-    @media (max-width: 480px) {
-      #main-carousel .owl-dots {
-        right: 10px; } }
-  #main-carousel .owl-prev {
-    position: absolute;
-    top: 140px;
-    left: -34px;
-    margin-top: 0;
-    margin-bottom: 0;
-    opacity: 0.7;
-    filter: alpha(opacity=70); }
-    @media (max-width: 800px) {
-      #main-carousel .owl-prev {
-        top: 40px; } }
-  #main-carousel .owl-next {
-    position: absolute;
-    top: 140px;
-    right: -44px;
-    margin-top: 0;
-    margin-bottom: 0;
-    opacity: 0.7;
-    filter: alpha(opacity=70); }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      #main-carousel .owl-next {
-        right: -32px;
-        margin-left: 0;
-        margin-right: 0; } }
-    @media (max-width: 480px) {
-      #main-carousel .owl-next {
-        right: -31px; } }
-    @media (max-width: 800px) {
-      #main-carousel .owl-next {
-        top: 40px; } }
-  #main-carousel .companies_heading {
+      content: ''; } }
+
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  #main-carousel .showinTab {
+    display: block !important; } }
+
+#main-carousel .li-content-company img {
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 100px; }
+
+#main-carousel .li-content-company p.li-content-company__headline {
+  padding: 0 0 8px 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 20px; }
+
+#main-carousel .li-content-graph {
+  border: none;
+  background-color: #eeeeee;
+  padding: 20px 30px 25px;
+  margin: 10px 6px 0 6px;
+  margin: 0.625rem 0.375rem 0 0.375rem; }
+  @media (min-width: 1025px) {
+    #main-carousel .li-content-graph {
+      margin-top: 10px;
+      margin-top: 0.625rem; } }
+  #main-carousel .li-content-graph > a, #main-carousel .li-content-graph > .pop-out__reset-password, #main-carousel .li-content-graph > .sortable-table__list-toggler, #main-carousel .li-content-graph > .mobile-table-exit {
     display: block;
-    width: 100%;
-    position: relative; }
-    #main-carousel .companies_heading span {
+    background: #fff; }
+    #main-carousel .li-content-graph > a div div.amcharts-chart-div, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div {
+      height: 150px !important; }
+      #main-carousel .li-content-graph > a div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #main-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
+        height: 150px !important; }
+
+#main-carousel .li-content-graph p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 0 0 0 0;
+  margin-bottom: 22px; }
+
+#main-carousel .hideinMob {
+  display: block; }
+  @media (max-width: 640px) {
+    #main-carousel .hideinMob {
+      display: none; } }
+
+#main-carousel .showinMob {
+  display: none; }
+  @media (max-width: 640px) {
+    #main-carousel .showinMob {
+      display: block;
       width: 100%;
-      display: inline-block;
-      padding: 10px 0 10px 20px;
-      color: #fff;
-      background-color: #de4361;
-      font-family: "Roboto", Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-size: 1rem;
-      font-weight: 500; }
-      @media (max-width: 667px) {
-        #main-carousel .companies_heading span {
-          padding-right: 110px; } }
+      -webkit-transition-property: none !important;
+      transition-property: none !important;
+      /*CSS transforms*/
+      -webkit-transform: none !important;
+      transform: none !important;
+      /*CSS animations*/
+      -webkit-animation: none !important;
+      animation: none !important; } }
+
+#main-carousel .owl-dots {
+  position: absolute;
+  top: -1px;
+  margin-top: -28px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  right: 15px;
+  text-align: right; }
+  @media (max-width: 480px) {
+    #main-carousel .owl-dots {
+      right: 10px; } }
+
+#main-carousel .owl-prev {
+  position: absolute;
+  top: 140px;
+  left: -34px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.7;
+  filter: alpha(opacity=70); }
+  @media (max-width: 800px) {
+    #main-carousel .owl-prev {
+      top: 40px; } }
+
+#main-carousel .owl-next {
+  position: absolute;
+  top: 140px;
+  right: -44px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.7;
+  filter: alpha(opacity=70); }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    #main-carousel .owl-next {
+      right: -32px;
+      margin-left: 0;
+      margin-right: 0; } }
+  @media (max-width: 480px) {
+    #main-carousel .owl-next {
+      right: -31px; } }
+  @media (max-width: 800px) {
+    #main-carousel .owl-next {
+      top: 40px; } }
+
+#main-carousel .companies_heading {
+  display: block;
+  width: 100%;
+  position: relative; }
+  #main-carousel .companies_heading span {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 0 10px 20px;
+    color: #fff;
+    background-color: #de4361;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 500; }
+    @media (max-width: 667px) {
+      #main-carousel .companies_heading span {
+        padding-right: 110px; } }
 
 #graph-carousel {
   margin-bottom: 32px;
@@ -2438,16 +2449,16 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     border: none;
     background-color: #eeeeee;
     height: 100%;
-    padding: 15px 18px;
-    margin: 10px 0 0 10px; }
+    padding: 20px 30px 25px;
+    margin: 10px 0 0 10px;
+    margin: 0.625rem 0 0 10px; }
     #graph-carousel .li-content-graph > a, #graph-carousel .li-content-graph > .pop-out__reset-password, #graph-carousel .li-content-graph > .sortable-table__list-toggler, #graph-carousel .li-content-graph > .mobile-table-exit {
-      height: 224px;
       display: block;
       background: #fff; }
       #graph-carousel .li-content-graph > a div div.amcharts-chart-div, #graph-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div, #graph-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div {
-        height: 220px !important; }
+        height: 150px !important; }
         #graph-carousel .li-content-graph > a div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .pop-out__reset-password div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .sortable-table__list-toggler div div.amcharts-chart-div svg, #graph-carousel .li-content-graph > .mobile-table-exit div div.amcharts-chart-div svg {
-          height: 220px !important; }
+          height: 150px !important; }
   #graph-carousel .li-content-graph p {
     font-size: smaller;
     padding: 0 0 0 0;
@@ -2465,7 +2476,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       #graph-carousel .showinMob {
         display: block; } }
     #graph-carousel .showinMob .li-content-graph {
-      margin: 10px 0 0 0; }
+      margin: 10px 0 0 0;
+      margin: 0.625rem 0 0 0; }
 
 #mycarousel1, #mycarousel2 {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -2481,7 +2493,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #mycarousel1 .companyLinks, #mycarousel2 .companyLinks {
     float: left;
     width: 57%;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-top: 0.625rem;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.25em;
     font-weight: 400; }
@@ -2497,6 +2510,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       background: #fff !important; }
   #mycarousel1 .owl-dots .owl-dot.active span, #mycarousel2 .owl-dots .owl-dot.active span {
     background: #fff !important; }
+
+#mycarousel1 .owl-item.active .item-wrapper:last-child .li-content-graph {
+  margin-right: 0 !important; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -6618,12 +6634,11 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 17px 0 0;
     margin-right: 17px; }
   .listView .article-preview__tags {
-    width: auto;
     z-index: 999;
     bottom: 20px;
     bottom: 1.25rem; }
     .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
-      max-width: inherit;
+      max-width: 22%;
       font-size: 16px;
       font-size: 1rem; }
   .listView .article-metadata {
@@ -9751,15 +9766,28 @@ div#feedbacklite.fbl_r {
   margin-bottom: 2rem;
   width: 100%; }
   #market-data .owl-wrapper {
-    width: 100%; }
+    width: 80%;
+    float: left; }
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+      #market-data .owl-wrapper {
+        width: 60%;
+        border-right: 1px solid #e9e9e9; } }
+    @media (max-width: 480px) {
+      #market-data .owl-wrapper {
+        width: 50%; } }
+  #market-data .owl-dotsNav {
+    background: #0f5487;
+    height: 30px; }
+  #market-data .owl-theme .owl-nav {
+    display: none !important; }
   #market-data .showinMob {
     display: none; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1024px) {
       #market-data .showinMob {
         display: block; } }
   #market-data .hideinMob {
     display: none; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1025px) {
       #market-data .hideinMob {
         display: block; } }
   #market-data .carousel-div {
@@ -9777,10 +9805,10 @@ div#feedbacklite.fbl_r {
       z-index: 9; }
       @media only screen and (min-width: 767px) and (max-width: 1024px) {
         #market-data .carousel-div .states_heading {
-          width: 20%; } }
+          width: 40%; } }
       @media (max-width: 480px) {
         #market-data .carousel-div .states_heading {
-          width: 35%; } }
+          width: 50%; } }
       @media only screen and (max-width: 320px) {
         #market-data .carousel-div .states_heading {
           width: 62%; } }
@@ -9794,18 +9822,10 @@ div#feedbacklite.fbl_r {
         font-family: "Roboto", Helvetica, Arial, sans-serif;
         font-size: 1em;
         font-weight: bold; }
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-          #market-data .carousel-div .states_heading .title {
-            font-size: 14px;
-            font-size: 0.9rem;
-            padding: 12px 2px; } }
       #market-data .carousel-div .states_heading .R16 {
         padding: 12px 10px;
         border-bottom: 1px solid #e1e1e1;
         border-right: 1px solid #e9e9e9; }
-        @media only screen and (min-width: 767px) and (max-width: 1024px) {
-          #market-data .carousel-div .states_heading .R16 {
-            padding: 12px 6px; } }
       #market-data .carousel-div .states_heading .leftbord {
         border-left: 1px solid #e9e9e9; }
   #market-data h2, #market-data .article-topics__header {
@@ -9819,9 +9839,10 @@ div#feedbacklite.fbl_r {
   #market-data .oddCls {
     background: #f1f1f1; }
   #market-data .marketDataTable {
+    width: 100%;
     border: inherit;
     border-left: 1px solid #d1d3d4; }
-    @media (max-width: 480px) {
+    @media only screen and (max-width: 1024px) {
       #market-data .marketDataTable {
         border-left: none; } }
     #market-data .marketDataTable .owl-dots {
@@ -9842,40 +9863,19 @@ div#feedbacklite.fbl_r {
       #market-data .marketDataTable .R16 .pad {
         padding: 12px 16px;
         white-space: nowrap; }
-        @media only screen and (min-width: 768px) and (max-width: 1023px) {
-          #market-data .marketDataTable .R16 .pad {
-            font-size: 14px;
-            font-size: 0.9rem;
-            padding: 12px 2px; } }
         @media only screen and (min-width: 376px) and (max-width: 667px) {
           #market-data .marketDataTable .R16 .pad {
             padding: 0px;
             white-space: normal; } }
-        @media only screen and (min-width: 769px) and (max-width: 1024px) {
-          #market-data .marketDataTable .R16 .pad {
-            padding: 12px 6px;
-            font-size: 16px;
-            font-size: 1rem; } }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 1024px) {
         #market-data .marketDataTable .R16 {
           padding: 12px 0px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        #market-data .marketDataTable .R16 {
-          width: 16%; }
-          #market-data .marketDataTable .R16:not(:nth-child(1)) {
-            white-space: nowrap; } }
-      @media only screen and (min-width: 1025px) {
-        #market-data .marketDataTable .R16 {
-          width: 15%; } }
     #market-data .marketDataTable tr .R16:first-child .pad {
       white-space: normal;
       padding: 12px 12px 12px 20px; }
       @media only screen and (min-width: 769px) and (max-width: 1024px) {
         #market-data .marketDataTable tr .R16:first-child .pad {
           padding: 12px 6px; } }
-    @media only screen and (min-width: 1025px) {
-      #market-data .marketDataTable tr .R16:first-child {
-        width: 22%; } }
     @media only screen and (min-width: 769px) and (max-width: 1024px) {
       #market-data .marketDataTable tr .R16:first-child {
         padding: 0px 6px;
@@ -9883,13 +9883,9 @@ div#feedbacklite.fbl_r {
         font-size: 1rem; } }
     #market-data .marketDataTable .owl-controls {
       display: none; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1024px) {
       #market-data .marketDataTable .owl-controls {
         display: block; } }
-    #market-data .marketDataTable .item {
-      height: auto !important; }
-      #market-data .marketDataTable .item:first {
-        border-left: 1px solid red; }
     #market-data .marketDataTable .pad-20 {
       padding: 10px 20px; }
       @media only screen and (max-width: 1024px) {
@@ -9909,23 +9905,18 @@ div#feedbacklite.fbl_r {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: bold; }
-      @media only screen and (min-width: 767px) {
-        #market-data .marketDataTable .title {
-          width: 16%; }
-          #market-data .marketDataTable .title:first-child {
-            width: 20%; } }
     #market-data .marketDataTable span.numData {
       width: 40px;
       text-align: right;
       display: inline-block; }
       @media (max-width: 480px) {
         #market-data .marketDataTable span.numData {
-          width: 40px;
-          margin-right: 16px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          width: 50px;
+          margin-right: 6px; } }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #market-data .marketDataTable span.numData {
-          width: 30px;
-          margin-right: 3px; } }
+          width: 40%;
+          margin-right: 10%; } }
     #market-data .marketDataTable span.rise {
       color: #56c405;
       width: 50px;
@@ -9935,13 +9926,10 @@ div#feedbacklite.fbl_r {
         #market-data .marketDataTable span.rise {
           width: 40px;
           margin-right: 16px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #market-data .marketDataTable span.rise {
-          width: 30px;
-          margin-right: 3px; } }
-      @media only screen and (min-width: 769px) and (max-width: 1024px) {
-        #market-data .marketDataTable span.rise {
-          width: 40px; } }
+          width: 40%;
+          margin-right: 10%; } }
     #market-data .marketDataTable span.fall {
       color: #f40600;
       text-align: right;
@@ -10097,11 +10085,7 @@ div#feedbacklite.fbl_r {
     height: 10px;
     background-color: #eee;
     position: relative;
-    overflow: hidden;
-    display: none; }
-    @media only screen and (min-width: 767px) and (max-width: 1024px) {
-      .id-merges-acquisition #scrollbar-horizantal {
-        display: block; } }
+    overflow: hidden; }
     .id-merges-acquisition #scrollbar-horizantal:after {
       content: '';
       height: 1px;
@@ -10152,9 +10136,7 @@ div#feedbacklite.fbl_r {
     padding: 16px 0 18px 0;
     text-align: right;
     background-color: #fff;
-    margin: 0;
-    font-size: 30px;
-    font-size: 1.875rem; }
+    margin: 0; }
   .id-merges-acquisition hr {
     display: block !important;
     padding: 0;
@@ -10172,8 +10154,6 @@ div#feedbacklite.fbl_r {
       overflow-x: scroll; } }
   .id-merges-acquisition .table.merge-acquistion {
     border-top: none; }
-    .id-merges-acquisition .table.merge-acquistion .suggest-more {
-      display: none !important; }
     @media (max-width: 480px) {
       .id-merges-acquisition .table.merge-acquistion {
         border: none; } }
@@ -10271,17 +10251,19 @@ div#feedbacklite.fbl_r {
     text-transform: uppercase;
     padding: 10px; }
   .id-merges-acquisition .graph-container h5, .id-merges-acquisition .graph-container .alert-success p, .alert-success .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .alert-error p, .alert-error .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .article-call-to-action__subtitle {
-    font-weight: bold;
-    font-size: 11px;
-    color: #333333;
-    padding: 5px; }
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    margin: 20px 20px 20px 0;
+    overflow: hidden;
+    line-height: 20px; }
   .id-merges-acquisition .graphs-container .graph-container {
     text-align: left;
-    padding: 0 8px;
-    padding-bottom: 10px;
+    padding: 0 30px 25px;
     background-color: #EEEEEE;
-    border-left: 1px solid #C0C0C0;
-    border-bottom: 1px solid #C0C0C0; }
+    border-left: 1px solid #C0C0C0; }
     @media (max-width: 480px) {
       .id-merges-acquisition .graphs-container .graph-container {
         width: 100%; } }

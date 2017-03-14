@@ -105,7 +105,13 @@
                },
                480:{
                 items:1
-               }
+               },
+			   768:{
+				items:2
+			   },
+			   1025:{
+				items:3
+			   }
                }
             });
 		},
@@ -173,11 +179,18 @@
 			return Carousel;
 		},
 		init: function(data, id) {
-			var self = this;
-			if($(window).width() > 667)
-				self.RenderTable(data[0], id);
+			var self = this, dataObj = data[0], idx = 0;
+			
+			for(var prop in dataObj){
+				for(var key in dataObj[prop][0]){
+					idx++;
+				}
+				break;
+			}
+			if($(window).width() < 668 || idx > 5)
+				self.RenderCarousel(dataObj, id);
 			else
-				self.RenderCarousel(data[0], id);
+				self.RenderTable(dataObj, id);
 		}
 	}
 

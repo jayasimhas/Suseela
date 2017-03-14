@@ -4,7 +4,13 @@
 		renderTable: function(dataObj, renderId){
 			console.log('Length of object is: ' + dataObj.length);
 			for(var i=0; i<dataObj.length; i++){
-				var filterObj = Object.keys(dataObj[i]), filterKeys = filterObj.sort().reverse(), createObj = {};
+				var filterObj = Object.keys(dataObj[i]), createObj = {}, filterKeys;
+				if(filterObj[1].split('-').length == 2){
+					filterKeys = this.sortDateOptions(filterObj);
+				}
+				else{
+					filterKeys = filterObj.sort().reverse();
+				}
 				for(var j=0; j<filterKeys.length; j++){
 					for(var prop in dataObj[i]){
 						if(prop == filterKeys[j]){
@@ -105,6 +111,40 @@
 				return date.split('-').reverse().join(' ');
 			}
 		},
+		sortDateOptions: function(filterObj){
+			var generateDate = [], sortArray, createFinalArr = [];
+			for(var i=0; i<filterObj.length; i++){
+				if(filterObj[i].indexOf('-') !== -1){
+					var dateSpl = filterObj[i].split('-');
+					generateDate.push(dateSpl[0]+'/'+this.convertMonthNameToNumber(dateSpl[1])+'/'+new Date().getFullYear());
+				}
+				else{
+					generateDate.push(filterObj[i]);
+				}
+			}
+			sortArray = generateDate.sort(function(a,b) {
+						  a = a.split('/').reverse().join('');
+						  b = b.split('/').reverse().join('');
+						  return a > b ? 1 : a < b ? -1 : 0;
+						}).reverse();
+			
+			for(var i=0; i<sortArray.length; i++){
+				if(sortArray[i].indexOf('/') !== -1){
+					var splArr = sortArray[i].split('/'),
+					dateStr = new Date(+splArr[1]+1 +'/'+splArr[0]+'/'+splArr[2]).toDateString();
+					createFinalArr.push(dateStr.split(' ')[2] + '-' + dateStr.split(' ')[1].toUpperCase());
+				} 
+				else{
+					createFinalArr.push(sortArray[i]);
+				}
+			}
+			return createFinalArr;
+		},
+		convertMonthNameToNumber: function(monthName){
+			var myDate = new Date(monthName + " 1");
+				var monthDigit = myDate.getMonth();
+				return isNaN(monthDigit) ? 0 : (monthDigit);
+		},
 		initiateCarousel: function(id){
 			$(id).owlCarousel({
 				loop:true,
@@ -126,8 +166,8 @@
 					480:{
 					 items:2
 					},
-					1000:{
-					items: 6
+					1024:{
+					 items:2
 					}
 				}
 			});
