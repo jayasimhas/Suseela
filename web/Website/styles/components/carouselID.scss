@@ -144,19 +144,6 @@
 				animation: none !important;
 			}
 		}
-		
-		.marketDataTable{
-			width: 100%;
-			.owl-item.active{
-				@include breakpoint('small') {
-					width: auto !important;
-				}
-				@media only screen and (min-width: 480px) and (max-width: 767px) {
-					width: 122px !important;
-				}
-				
-			}
-		}
 		.owl-dots{
 			position: absolute;
 			top: -1px;
