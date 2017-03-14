@@ -244,16 +244,6 @@
 }
 }
 
-.theme-insurance-day .subscribed {
-	.button--outline:not([disabled]):hover {
-		background-color: #b0173d;
-		border-color: #b0173d;
-		color: #ffffff;
-	}
-}
-
-
-
 @mixin theme-subscr($bc){
 	border: 1px solid $bc !important;
 }

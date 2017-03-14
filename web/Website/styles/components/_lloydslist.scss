@@ -605,6 +605,7 @@
 	}
 	tr th, tr td {
 		border-right: 1px solid $color-white;
+		text-align: center;
 		&:last-child {
 			border-right: none;
 		}
