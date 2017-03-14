@@ -41,7 +41,7 @@
 	
 	$(document).ready(function() {
 		if($('#dryCargoIcap').length > 0) {
-			dryCargoIcap.init(dracragoicapTable);
+			dryCargoIcap.init(drycragoicapTable);
 		}
 	});
 })();
