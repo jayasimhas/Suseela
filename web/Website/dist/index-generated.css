@@ -8990,8 +8990,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10251,17 +10251,20 @@ div#feedbacklite.fbl_r {
     text-transform: uppercase;
     padding: 10px; }
   .id-merges-acquisition .graph-container h5, .id-merges-acquisition .graph-container .alert-success p, .alert-success .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .alert-error p, .alert-error .id-merges-acquisition .graph-container p, .id-merges-acquisition .graph-container .article-call-to-action__subtitle {
-    font-weight: bold;
-    font-size: 11px;
-    color: #333333;
-    padding: 5px; }
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    margin: 20px 20px 0px 0;
+    overflow: hidden;
+    line-height: 20px; }
   .id-merges-acquisition .graphs-container .graph-container {
     text-align: left;
-    padding: 0 8px;
-    padding-bottom: 10px;
+    padding: 0 30px 25px;
     background-color: #EEEEEE;
-    border-left: 1px solid #C0C0C0;
-    border-bottom: 1px solid #C0C0C0; }
+    border-left: 1px solid #C0C0C0; }
     @media (max-width: 480px) {
       .id-merges-acquisition .graphs-container .graph-container {
         width: 100%; } }
@@ -12883,7 +12886,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

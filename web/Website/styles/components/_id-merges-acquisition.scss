@@ -223,14 +223,22 @@
 	}
 
 	.graphs-container h4 { text-transform: uppercase; padding: 10px; }
-	.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
+	.graph-container h5 {
+		font-size: 14px;
+		font-weight: 500;
+		height: 40px;
+		vertical-align: middle;
+		display: inline-block;
+		text-align: left;
+		margin: 20px 20px 0px 0;
+		overflow: hidden;
+		line-height: 20px;
+	}
 	.graphs-container .graph-container {
 	    text-align: left;
-	    padding: 0 8px;
-	    padding-bottom: 10px;
+	    padding: 0 30px 25px;
 	    background-color: #EEEEEE;
 	    border-left: 1px solid #C0C0C0;
-	    border-bottom: 1px solid #C0C0C0;
 	    @include breakpoint('small') {
 	    	width: 100%;
 	    }
