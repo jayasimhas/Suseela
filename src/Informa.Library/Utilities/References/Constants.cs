@@ -132,6 +132,7 @@ namespace Informa.Library.Utilities.References
             public const string Variation4 = "Variation4";
             public const string Variation5 = "Variation5";
             public const string Variation6 = "Variation6";
+            public const string Variation7 = "Variation7";
         }
 
         /// <summary>
