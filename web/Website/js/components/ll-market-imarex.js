@@ -13,7 +13,7 @@
 		},
 		renderTable: function(){
 			var self = this, loadDateVal = $('#imarexselect option').val();
-
+			
 			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#imarexselect', function(){
 				var selectDateVal = $('#imarexselect option').val();
@@ -38,7 +38,7 @@
 		sendHTTPRequest: function(searchData){
 			$('#marketImarex').html(this.loadDataView(searchData));
 		},
-		loadDataView: function(){
+		loadDataView: function(tableObj){
 			var self = this;
 			$.each(tableObj[0], function(key, val){ 
 				self.table += '<table class="table">'
