@@ -7708,8 +7708,13 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			console.log('Length of object is: ' + dataObj.length);
 			for (var i = 0; i < dataObj.length; i++) {
 				var filterObj = Object.keys(dataObj[i]),
-				    filterKeys = filterObj.sort().reverse(),
-				    createObj = {};
+				    createObj = {},
+				    filterKeys;
+				if (filterObj[1].split('-').length == 2) {
+					filterKeys = this.sortDateOptions(filterObj);
+				} else {
+					filterKeys = filterObj.sort().reverse();
+				}
 				for (var j = 0; j < filterKeys.length; j++) {
 					for (var prop in dataObj[i]) {
 						if (prop == filterKeys[j]) {
@@ -7814,6 +7819,40 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				return date.split('-').reverse().join(' ');
 			}
 		},
+		sortDateOptions: function sortDateOptions(filterObj) {
+			var generateDate = [],
+			    sortArray,
+			    createFinalArr = [];
+			for (var i = 0; i < filterObj.length; i++) {
+				if (filterObj[i].indexOf('-') !== -1) {
+					var dateSpl = filterObj[i].split('-');
+					generateDate.push(dateSpl[0] + '/' + this.convertMonthNameToNumber(dateSpl[1]) + '/' + new Date().getFullYear());
+				} else {
+					generateDate.push(filterObj[i]);
+				}
+			}
+			sortArray = generateDate.sort(function (a, b) {
+				a = a.split('/').reverse().join('');
+				b = b.split('/').reverse().join('');
+				return a > b ? 1 : a < b ? -1 : 0;
+			}).reverse();
+
+			for (var i = 0; i < sortArray.length; i++) {
+				if (sortArray[i].indexOf('/') !== -1) {
+					var splArr = sortArray[i].split('/'),
+					    dateStr = new Date(+splArr[1] + 1 + '/' + splArr[0] + '/' + splArr[2]).toDateString();
+					createFinalArr.push(dateStr.split(' ')[2] + '-' + dateStr.split(' ')[1].toUpperCase());
+				} else {
+					createFinalArr.push(sortArray[i]);
+				}
+			}
+			return createFinalArr;
+		},
+		convertMonthNameToNumber: function convertMonthNameToNumber(monthName) {
+			var myDate = new Date(monthName + " 1");
+			var monthDigit = myDate.getMonth();
+			return isNaN(monthDigit) ? 0 : monthDigit;
+		},
 		initiateCarousel: function initiateCarousel(id) {
 			$(id).owlCarousel({
 				loop: true,
@@ -7835,8 +7874,8 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					480: {
 						items: 2
 					},
-					1000: {
-						items: 6
+					1024: {
+						items: 2
 					}
 				}
 			});
@@ -7872,21 +7911,45 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 (function () {
 	var marketImarex = {
 		table: '',
-		renderDate: function renderDate() {
+		renderDate: function renderDate(dateData) {
 			var options = '';
-			$.each(dateObj[0], function (key, val) {
+			$.each(dateData[0], function (key, val) {
 				$.each(val, function (idx, value) {
 					options += '<option value="' + value.Value + '">' + value.Text + '</option>';
 				});
 			});
 
-			$('#selectWeek').html(options);
+			$('#imarexselect').html(options);
 		},
 		renderTable: function renderTable() {
-			this.loadDescView();
-			//this.loadMobileView();
+			var self = this,
+			    loadDateVal = $('#imarexselect option').val();
+
+			self.callAjaxFn(loadDateVal);
+			$(document).on('change', '#imarexselect', function () {
+				var selectDateVal = $('#imarexselect option').val();
+				self.callAjaxFn(selectDateVal);
+			});
 		},
-		loadDescView: function loadDescView() {
+		callAjaxFn: function callAjaxFn(seldateVal) {
+			var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: { 'dateVal': seldateVal, 'feedUrl': $('#imarexHiddenVal').val() },
+				dataType: 'json',
+				type: 'GET',
+				success: function success(searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function error(err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
+			});
+		},
+		sendHTTPRequest: function sendHTTPRequest(searchData) {
+			$('#marketImarex').html(this.loadDataView(searchData));
+		},
+		loadDataView: function loadDataView(tableObj) {
 			var self = this;
 			$.each(tableObj[0], function (key, val) {
 				self.table += '<table class="table">';
@@ -7905,9 +7968,11 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				self.table += '</thead>';
 
 				self.table += '<tbody>';
-
+				var bgIdx = 0;
 				$.each(val, function (idx, value) {
-					self.table += '<tr>';
+					bgIdx++;
+					var cls = bgIdx % 2 === 0 ? 'oddCls' : '';
+					self.table += '<tr class="' + cls + '">';
 					$.each(value, function (k, v) {
 						self.table += '<td class="R16 pad-10">' + v + '</td>';
 					});
@@ -7918,30 +7983,15 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			});
 			$('#marketImarex').html(self.table);
 		},
-		loadMobileView: function loadMobileView() {
-			var tbody = '<tbody class="visible-sm">';
-			$.each(this.recreateObj, function (key, val) {
-				tbody += '<tr><td class="graybg RB18 p-10">' + key + '</td><td colspan="1" align="right" class="graybg RB18 p-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>';
-				$.each(val, function (idx, value) {
-					$.each(value, function (k, v) {
-						tbody += '<tr><td class="pad-10 R21_GrayColor border-right">' + k + '</td><td class="pad-10 R21_GrayColor">' + v + '</td></tr>';
-					});
-					tbody += '<tr><td><hr /></td><td><hr /></td></tr>';
-				});
-			});
-			tbody += '</tbody>';
-
-			$('#marketImarex table').append(tbody);
-		},
-		init: function init() {
-			this.renderDate();
-			this.renderTable();
+		init: function init(dateData, id) {
+			this.renderDate(dateData);
+			this.renderTable(id);
 		}
 	};
 
 	$(document).ready(function () {
 		if ($('#marketImarex').length > 0) {
-			marketImarex.init();
+			marketImarex.init(imarexTabledate, $('#marketImarex'));
 		}
 	});
 })();
@@ -8638,14 +8688,15 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				var theadFlag = true,
 				    tbodyFlag = true,
 				    tbodyFlagend = false,
-				    idx = 0;
+				    idx = 0,
+				    rowIdx = 0;
 				tableStr += '<table class="table descView"><thead class="table_head">';
 				for (var prop in tableData[i]) {
 					tableStr += '<tr>';
 					tableStr += '<th colspan="8" class="pad-full-10">' + prop + '</th>';
 					tableStr += '</tr>';
 					for (var j = 0; j < tableData[i][prop].length; j++) {
-						idx++;
+						rowIdx++;
 						if (tableData[i][prop].length == idx - 1) tbodyFlagend = true;
 						var eachObj = tableData[i][prop];
 
@@ -8661,7 +8712,8 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 							tbodyFlag = false;
 							tableStr += '<tbody class="visible-lg">';
 						}
-						tableStr += '<tr>';
+						var rowCls = rowIdx % 2 === 0 ? 'oddCls' : '';
+						tableStr += '<tr class="' + rowCls + '">';
 						for (var p in eachObj[j]) {
 							tableStr += '<td class="R16 pad-10">' + eachObj[j][p] + '</td>';
 						}
@@ -8721,7 +8773,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 })();
 
 },{}],33:[function(require,module,exports){
-"use strict";
+'use strict';
 
 (function () {
 	// body...
@@ -8739,6 +8791,9 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			}
 
 			Parent.append(TableStr);
+			Parent.find('.R16').mouseover(function () {
+				alert('Enter..!');
+			});
 		},
 		RenderSingleTable: function RenderSingleTable(heading, Data) {
 			console.log(Data);
@@ -8758,10 +8813,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
 				}
 			}
-
+			var rowIdx = 0;
 			for (var i = 0; i < Data.length; i++) {
+				rowIdx++;
 				var Body = "",
-				    Values = Data[i];
+				    Values = Data[i],
+				    rowcls = rowIdx % 2 === 0 ? 'oddCls' : '';
 
 				for (var key in Values) {
 					if (Array.isArray(Values[key])) {
@@ -8774,7 +8831,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					}
 				}
 
-				TbodyStr += '<tr>' + Body + '</tr>';
+				TbodyStr += '<tr class="' + rowcls + '">' + Body + '</tr>';
 			}
 
 			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
@@ -8813,6 +8870,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					},
 					480: {
 						items: 1
+					},
+					768: {
+						items: 2
+					},
+					1025: {
+						items: 3
 					}
 				}
 			});
@@ -8862,8 +8925,17 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			return Carousel;
 		},
 		init: function init(data, id) {
-			var self = this;
-			if ($(window).width() > 667) self.RenderTable(data[0], id);else self.RenderCarousel(data[0], id);
+			var self = this,
+			    dataObj = data[0],
+			    idx = 0;
+
+			for (var prop in dataObj) {
+				for (var key in dataObj[prop][0]) {
+					idx++;
+				}
+				break;
+			}
+			if ($(window).width() < 668 || idx > 5) self.RenderCarousel(dataObj, id);else self.RenderTable(dataObj, id);
 		}
 	};
 
@@ -10754,9 +10826,9 @@ $(document).ready(function () {
 
 if ($('.scrollbar') && $('.scrollbar').length) {
 	$('.scrollbar').each(function () {
-		var container = $(this).parents('.rolling-stream').find('.scrollbar-container')[0],
-		    content = $(this).parents('.rolling-stream').find('.content')[0],
-		    scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
+		var container = $(this).parents('.rolling-stream, .table-responsive').find('.scrollbar-container')[0],
+		    content = $(this).parents('.rolling-stream, .table-responsive').find('.content, .wrap-merge')[0],
+		    scroll = $(this).parents('.rolling-stream, .table-responsive').find('.scrollbar')[0];
 
 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 		scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";
@@ -12568,8 +12640,6 @@ var _carouselZeptoData2 = _interopRequireDefault(_carouselZeptoData);
 
 require('./carousel/owl.carousel');
 
-require('./zepto.suggest');
-
 // CONTROLLERS
 
 var _controllersFormController = require('./controllers/form-controller');
@@ -13880,7 +13950,7 @@ $(document).ready(function () {
     }
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker.js":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-market-data-dryCargo-icap":22,"./components/ll-market-imarex":25,"./components/ll-marketdata-drycargo-ssyal.js":26,"./components/ll-ship-coal-export.js":27,"./components/ll-ship-container-ship.js":28,"./components/ll-ship-roro.js":29,"./components/ll-ship-vehicle.js":30,"./components/ll-shipContainerShipFixtures":31,"./components/ll-tanker-fixtures":32,"./components/ll-tanker-pure-chem-page.js":33,"./components/myview-settings":34,"./components/pagination":35,"./components/personalisation":36,"./components/save-search-component":37,"./components/scrollbar.js":38,"./components/table_charts":39,"./components/video-mini":40,"./controllers/analytics-controller":41,"./controllers/bookmark-controller":42,"./controllers/form-controller":43,"./controllers/lightbox-modal-controller":44,"./controllers/pop-out-controller":45,"./controllers/register-controller":46,"./controllers/reset-password-controller":47,"./controllers/sortable-table-controller":48,"./controllers/tooltip-controller":49,"./jscookie":51,"./modal":52,"./newsletter-signup":53,"./search-page.js":54,"./selectivity-full":55,"./svg4everybody":56,"./toggle-icons":57,"./zepto.dragswap":58,"./zepto.min":59,"./zepto.suggest":60}],51:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker.js":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-market-data-dryCargo-icap":22,"./components/ll-market-imarex":25,"./components/ll-marketdata-drycargo-ssyal.js":26,"./components/ll-ship-coal-export.js":27,"./components/ll-ship-container-ship.js":28,"./components/ll-ship-roro.js":29,"./components/ll-ship-vehicle.js":30,"./components/ll-shipContainerShipFixtures":31,"./components/ll-tanker-fixtures":32,"./components/ll-tanker-pure-chem-page.js":33,"./components/myview-settings":34,"./components/pagination":35,"./components/personalisation":36,"./components/save-search-component":37,"./components/scrollbar.js":38,"./components/table_charts":39,"./components/video-mini":40,"./controllers/analytics-controller":41,"./controllers/bookmark-controller":42,"./controllers/form-controller":43,"./controllers/lightbox-modal-controller":44,"./controllers/pop-out-controller":45,"./controllers/register-controller":46,"./controllers/reset-password-controller":47,"./controllers/sortable-table-controller":48,"./controllers/tooltip-controller":49,"./jscookie":51,"./modal":52,"./newsletter-signup":53,"./search-page.js":54,"./selectivity-full":55,"./svg4everybody":56,"./toggle-icons":57,"./zepto.dragswap":58,"./zepto.min":59}],51:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -16577,234 +16647,6 @@ var Zepto = (function () {
     return e(n, function (n, e, i) {
       return (!n || o(t, n)) && (!e || e.call(t, null, i) === t);
     });
-  };
-})(Zepto);
-
-},{}],60:[function(require,module,exports){
-/*!
- * Suggest jQuery plugin
- *
- * Copyright (c) 2015 Florian Plank (http://www.polarblau.com/)
- * Dual licensed under the MIT (MIT-LICENSE.txt)
- * and GPL (GPL-LICENSE.txt) licenses.
- *
- * USAGE:
- *
- * $('#container').suggest(haystack, {
- *   suggestionColor   : '#cccccc',
- *   moreIndicatorClass: 'suggest-more',
- *   moreIndicatorText : '&hellip;'
- * });
- *
- */
-
-'use strict';
-
-(function ($) {
-
-  $.fn.suggest = function (source, options) {
-
-    var settings = $.extend({
-      suggestionColor: '#ccc',
-      moreIndicatorClass: 'suggest-more',
-      moreIndicatorText: '&hellip;'
-    }, options);
-
-    return this.each(function () {
-
-      var $this = $(this);
-
-      // this helper will show possible suggestions
-      // and needs to match the input field in style
-      var $suggest = $('<div/>', {
-        'css': {
-          'position': 'absolute',
-          'height': $this.height(),
-          'width': $this.width(),
-          'top': $this.css('borderTopWidth'),
-          'left': $this.css('borderLeftWidth'),
-          'padding': $this.cssShortForAllSides('padding'),
-          'margin': $this.cssShortForAllSides('margin'),
-          'fontFamily': $this.css('fontFamily'),
-          'fontSize': $this.css('fontSize'),
-          'fontStyle': $this.css('fontStyle'),
-          'lineHeight': $this.css('lineHeight'),
-          'fontWeight': 'normal',
-          'letterSpacing': $this.css('letterSpacing'),
-          'backgroundColor': 'rgb(255, 255, 255)',
-          'color': settings.suggestionColor,
-          'fontKerning': $this.css('fontKerning'),
-          'top': '0',
-          'left': '0',
-          'padding': '4.3px 5px',
-          'borderRadius': '5px'
-        }
-      });
-
-      var $more = $('<span/>', {
-        'css': {
-          'position': 'absolute',
-          'top': $suggest.height() + parseInt($this.css('fontSize'), 10) / 2,
-          'left': $suggest.width(),
-          'display': 'none',
-          'fontSize': $this.css('fontSize'),
-          'fontFamily': $this.css('fontFamily'),
-          'color': settings.suggestionColor
-        },
-        'class': settings.moreIndicatorClass
-      }).html(settings.moreIndicatorText).hide();
-
-      $this.attr({
-        'autocomplete': "off",
-        'spellcheck': "false",
-        'dir': "ltr"
-      })
-      // by setting the background to transparent, we will
-      // be able to "see through" to the suggestion helper
-      .css({
-        'background': 'transparent',
-        'position': 'relative',
-        'z-index': '9'
-      }).wrap($('<div/>', {
-        'css': {
-          'position': 'relative',
-          'paddingBottom': '1em',
-          'overflow': 'hidden',
-          'padding': '0',
-          'margin': '0'
-        }
-      })).bind('keydown.suggest', function (e) {
-        var code = e.keyCode ? e.keyCode : e.which;
-
-        // the tab key will force the focus to the next input
-        // already on keydown, let's prevent that
-        // unless the alt key is pressed for convenience
-        if (code == 9 && !e.altKey) {
-          e.preventDefault();
-
-          // let's prevent default enter behavior while a suggestion
-          // is being accepted (e.g. while submitting a form)
-        } else if (code == 13) {
-            if (!$suggest.is(':empty')) {
-              e.preventDefault();
-            }
-
-            // use arrow keys to cycle through suggestions
-          } else if (code == 38 || code == 40) {
-              e.preventDefault();
-              var suggestions = $(this).data('suggestions');
-
-              if (suggestions.all.length > 1) {
-                // arrow down:
-                if (code == 40 && suggestions.index < suggestions.all.length - 1) {
-                  suggestions.suggest.html(suggestions.all[++suggestions.index]);
-                  // arrow up:
-                } else if (code == 38 && suggestions.index > 0) {
-                    suggestions.suggest.html(suggestions.all[--suggestions.index]);
-                  }
-                $(this).data('suggestions').index = suggestions.index;
-              }
-            }
-      }).bind('keyup.suggest', function (e) {
-        var code = e.keyCode ? e.keyCode : e.which;
-
-        // Have the arrow keys been pressed?
-        if (code == 38 || code == 40) {
-          return false;
-        }
-
-        // be default we hide the "more suggestions" indicator
-        $more.hide();
-
-        // what has been input?
-        var needle = $(this).val();
-
-        // convert spaces to make them visible
-        var needleWithWhiteSpace = needle.replace(' ', '&nbsp;');
-
-        // accept suggestion with 'enter' or 'tab'
-        // if the suggestion hasn't been accepted yet
-        if (code == 9 || code == 13) {
-          // only accept if there's anything suggested
-          if ($suggest.text().length > 0) {
-            e.preventDefault();
-            var suggestions = $(this).data('suggestions');
-            $(this).val(suggestions.terms[suggestions.index]);
-            // clean the suggestion for the looks
-            $suggest.empty();
-            return false;
-          }
-        }
-
-        // make sure the helper is empty
-        $suggest.empty();
-
-        // if nothing has been input, leave it with that
-        if (!$.trim(needle).length) {
-          return false;
-        }
-
-        // see if anything in source matches the input
-        // by escaping the input' string for use with regex
-        // we allow to search for terms containing specials chars as well
-        var regex = new RegExp('^' + needle.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"), 'i');
-        var suggestions = [],
-            terms = [];
-        for (var i = 0, l = source; i < l.length; i++) {
-          if (regex.test(l[i])) {
-            terms.push(l[i]);
-            suggestions.push(needleWithWhiteSpace + l[i].slice(needle.length));
-          }
-        }
-        if (suggestions.length > 0) {
-          // if there's any suggestions found, use the first
-          // don't show the suggestion if it's identical with the current input
-          if (suggestions[0] !== needle) {
-            $suggest.html(suggestions[0]);
-          }
-          // store found suggestions in data for use with arrow keys
-          $(this).data('suggestions', {
-            'all': suggestions,
-            'terms': terms,
-            'index': 0,
-            'suggest': $suggest
-          });
-
-          // show the indicator that there's more suggestions available
-          // only for more than one suggestion
-          if (suggestions.length > 1) {
-            $more.show();
-          }
-        }
-      })
-
-      // clear suggestion on blur
-      .bind('blur.suggest', function () {
-        $suggest.empty();
-      });
-
-      // insert the suggestion helpers within the wrapper
-      $suggest.insertAfter($this);
-      $more.insertAfter($suggest);
-    });
-  };
-
-  /* A little helper to calculate the sum of different
-   * CSS properties around all four sides
-   *
-   * EXAMPLE:
-   * $('#my-div').cssSum('padding');
-   */
-  $.fn.cssShortForAllSides = function (property) {
-    var $self = $(this),
-        sum = [];
-    var properties = $.map(['Top', 'Right', 'Bottom', 'Left'], function (side) {
-      return property + side;
-    });
-    $.each(properties, function (i, e) {
-      sum.push($self.css(e) || "0");
-    });
-    return sum.join(' ');
   };
 })(Zepto);
 

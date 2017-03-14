@@ -46,7 +46,6 @@
 		width: 100%;
 		position: relative;
 		margin: 0 0 1.25rem 0;
-		font-size: 1.875rem;
 		&:after {
 			content: '';
 			position: absolute;
@@ -302,4 +301,11 @@
 	font-size: 1rem;
 	font-weight: bold;
 	line-height: 19px;	
+}
+
+
+.sponsored_cont{
+	.sponsored_title{
+		text-transform: uppercase;
+	}
 }

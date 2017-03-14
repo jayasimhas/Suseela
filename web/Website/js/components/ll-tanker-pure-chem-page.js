@@ -14,7 +14,9 @@
 			}
 
 			Parent.append(TableStr);
-
+			Parent.find('.R16').mouseover(function(){
+				alert('Enter..!');
+			});
 		},
 		RenderSingleTable: function(heading, Data) {
 			console.log(Data);
@@ -34,10 +36,12 @@
 					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
 				}
 			}
-
+			var rowIdx = 0;
 			for(var i = 0; i< Data.length; i++) {
+				rowIdx++;
 				var Body = "",
-					Values = Data[i];
+					Values = Data[i],
+					rowcls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 
 				for(var key in Values) {
 					if(Array.isArray(Values[key])) {
@@ -50,7 +54,7 @@
 					}
 				}
 
-				TbodyStr += '<tr>' + Body + '</tr>';
+				TbodyStr += '<tr class="'+rowcls+'">' + Body + '</tr>';
 			}
 
 			var Table = '<table class="table">'+
@@ -105,7 +109,13 @@
                },
                480:{
                 items:1
-               }
+               },
+			   768:{
+				items:2
+			   },
+			   1025:{
+				items:3
+			   }
                }
             });
 		},
@@ -173,11 +183,18 @@
 			return Carousel;
 		},
 		init: function(data, id) {
-			var self = this;
-			if($(window).width() > 667)
-				self.RenderTable(data[0], id);
+			var self = this, dataObj = data[0], idx = 0;
+			
+			for(var prop in dataObj){
+				for(var key in dataObj[prop][0]){
+					idx++;
+				}
+				break;
+			}
+			if($(window).width() < 668 || idx > 5)
+				self.RenderCarousel(dataObj, id);
 			else
-				self.RenderCarousel(data[0], id);
+				self.RenderTable(dataObj, id);
 		}
 	}
 
