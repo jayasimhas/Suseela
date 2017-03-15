@@ -484,7 +484,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             // see if it exists in med lib
            
             Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
-            IEnumerable<Item> matches = GetMediaItems(map)
+            IEnumerable<Item> matches = GetMediaItems(map,ArticleId)
                 .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
             MediaItem mediaitem = null;
@@ -529,15 +529,19 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return new string(temp);
         }
 
-        public IEnumerable<Item> GetMediaItems(IDataMap map)
-        {            string cacheKey = "Images";
+        public IEnumerable<Item> GetMediaItems(IDataMap map,string ArticleId)
+        {            string cacheKey = "Images-dataimport";
             IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
             if (o != null)
+            {
+                XMLDataLogger.WriteLog("Returning Cache:" + ArticleId, "ImageCheckinCache");
                 return o;
+            }
 
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse("{CDC0468D-CFAE-4E65-9CE7-BF47848A8A81}"));
+            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
             IEnumerable<Item> images = rootItem.Axes.GetDescendants();
             Context.Items.Add(cacheKey, images);
+            XMLDataLogger.WriteLog("Returning Legacy article Media Library:" + ArticleId, "ImageCheckinSitecore");
 
             return images;
         }
