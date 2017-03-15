@@ -3859,7 +3859,7 @@ body.lightboxed {
   .ID-Responsive-Table .owl-controls {
     position: absolute;
     top: -51px;
-    right: 0px; }
+    right: 15px; }
   .ID-Responsive-Table .owl-theme .owl-controls .owl-nav div {
     background: none;
     padding: 0;
