@@ -2572,6 +2572,7 @@ $(document).ready(function () {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
 			removeFixedMenu();
+			$('.main__wrapper').removeClass('shift-main-content');
 		};
 
 		/* Toggle menu visibility */
