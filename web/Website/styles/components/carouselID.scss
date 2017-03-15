@@ -18,6 +18,9 @@
     	@include breakpoint('small') {
     		width: 100%;
     	}
+		@include breakpoint('medium-small') {
+					width:100%;
+		}
 		.amcharts-chart-div{
 			width: auto !important;
 			@media only screen and (min-width: 668px) and (max-width: 1024px) {
