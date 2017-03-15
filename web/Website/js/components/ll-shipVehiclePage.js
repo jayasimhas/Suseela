@@ -3,6 +3,15 @@
 	'use strict';
 
 	var shipVehicle = {
+		renderDate: function(dateObj){ 
+			var options = '';
+			$.each(dateObj[0], function(key, val){ 
+				$.each(val, function(idx, value){ 
+					options += '<option value="'+value.Value+'">'+value.Text+'</option>'
+				});
+			});
+			$('#shipVehicleselDay').html(options);
+		},
 		RenderTable: function(data, Parent) {
 			var self = this, TableStr = "";
 			Parent.empty();
@@ -182,8 +191,9 @@
 
 			return Carousel;
 		},
-		init: function(data, id) {
-			var self = this, dataObj = data[0];
+		init: function(dateData, tabledata, id) {
+			var self = this, dataObj = tabledata[0];
+			this.renderDate(dateData);
 			if($(window).width() < 668)
 				self.RenderCarousel(dataObj, id);
 			else
@@ -192,6 +202,6 @@
 	}
 
 	if($('#shipVehiclePage').length > 0) {
-		shipVehicle.init(window.shipVehicleTableData, $('#shipVehiclePage'));	
+		shipVehicle.init(window.shipVehicleDateOptions, window.shipVehicleTableData, $('#shipVehiclePage'));	
 	}	
 })();
