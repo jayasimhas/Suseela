@@ -89,7 +89,7 @@
 		}
 	}
 }
-#tanker-Pure-ChemPage{ 
+#tanker-Pure-ChemPage, #shipVehicle-Page{ 
 	width: 100%;
 	@include breakpoint('small') {
 		float: left;
