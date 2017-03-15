@@ -1315,7 +1315,7 @@ $(document).ready(function(){
             type: 'POST',
             success: function success(Data) {
                 $('#ddlShippingState').remove();
-                $('label[for="ShipState"]').parent().append('<select id="ddlShippingState"></select>');
+                $('label[for="ShipState"]').parent().append('<select name="ShipState" id="ddlShippingState"></select>');
                 
                 var stateValue = $('#hiddenState').val();
                 

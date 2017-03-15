@@ -14234,12 +14234,16 @@ $(document).ready(function () {
             type: 'POST',
             success: function success(Data) {
                 $('#ddlShippingState').remove();
-                $('label[for="ShipState"]').parent().append('<select id="ddlShippingState"></select>');
+                $('label[for="ShipState"]').parent().append('<select name="" id="ddlShippingState"></select>');
 
                 var stateValue = $('#hiddenState').val();
 
                 for (var key in Data) {
-                    if (stateValue === Data[key].ID) $('#ddlShippingState').append('<option value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    if (stateValue === Data[key].ID) {
+                        $('#ddlShippingState').append('<option selected value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    } else {
+                        $('#ddlShippingState').append('<option value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    }
                 }
                 $('#ddlShippingState').selectivity({
                     showSearchInputInDropdown: false
