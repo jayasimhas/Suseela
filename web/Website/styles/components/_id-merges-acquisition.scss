@@ -44,7 +44,7 @@
 	}
 	tbody.visible-xs {
 		td.pad-10 {
-			padding: 10px;
+			padding: 0.5rem 1rem !important;
 		}
 	}
 	.show-largest-btn {
@@ -194,7 +194,7 @@
 				 	}
 			 	}
 			 	.label-wrap {
-			 		padding: 0 5px;
+			 		padding: 5px;
 			 		&:after {
 						visibility: hidden;
 					     display: block;
@@ -208,7 +208,7 @@
 				 		width: calc(100% - 15px);
 				 	    font-weight: normal;
 		    			margin-top: 5px;
-		    			font-size: 16px;
+		    			font-size: 1rem;
 				 	}
 				}
 				.field-wrap {
@@ -300,7 +300,7 @@
 		}
 		.graphs {
 			@include breakpoint('small') {
-				width: 1200px;
+				width: 1053px;
 			}
 			.graph-wrapper {
 				margin: 0.625rem 0.5rem 0;
@@ -529,6 +529,10 @@
 	    width: 16px;
 	    background-color: #f1f2f2;
 	    z-index: 9;
+	    display: none;
+	    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
 	    &:after {
 	    	content: '';
 	    	position: absolute;

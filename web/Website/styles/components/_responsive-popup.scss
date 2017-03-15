@@ -117,6 +117,8 @@
         text-align: center;
         color:$color-white;
         position: relative;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
         &:first-child {
             text-align: left;
         }

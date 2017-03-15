@@ -3684,7 +3684,9 @@ body.lightboxed {
     font-size: 16px;
     text-align: center;
     color: #ffffff;
-    position: relative; }
+    position: relative;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; }
     .table-wrapper .tableHead:first-child {
       text-align: left; }
   .table-wrapper .tableBody {
@@ -10097,7 +10099,8 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .desktop-controls {
     float: right; }
   .id-merges-acquisition tbody.visible-xs td.pad-10 {
-    padding: 10px; }
+    padding: 8px 16px !important;
+    padding: 0.5rem 1rem !important; }
   .id-merges-acquisition .show-largest-btn {
     padding: 10px;
     color: #ffffff !important;
@@ -10203,7 +10206,7 @@ div#feedbacklite.fbl_r {
       .id-merges-acquisition .table.merge-acquistion.table .table_head th:last-child .label-wrap, .id-merges-acquisition .table.merge-acquistion.table .table_head th:last-child .field-wrap {
         padding-right: 20px; }
       .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap {
-        padding: 0 5px; }
+        padding: 5px; }
         .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap:after {
           visibility: hidden;
           display: block;
@@ -10216,7 +10219,8 @@ div#feedbacklite.fbl_r {
           width: calc(100% - 15px);
           font-weight: normal;
           margin-top: 5px;
-          font-size: 16px; }
+          font-size: 16px;
+          font-size: 1rem; }
       .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap {
         padding: 5px;
         font-size: 16px;
@@ -10287,7 +10291,7 @@ div#feedbacklite.fbl_r {
       overflow-x: scroll; } }
   @media (max-width: 480px) {
     .id-merges-acquisition .graphs-container .graphs {
-      width: 1200px; } }
+      width: 1053px; } }
   .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
     margin: 10px 8px 0;
     margin: 0.625rem 0.5rem 0;
@@ -10464,7 +10468,11 @@ div#feedbacklite.fbl_r {
     height: 500px;
     width: 16px;
     background-color: #f1f2f2;
-    z-index: 9; }
+    z-index: 9;
+    display: none; }
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+      .id-merges-acquisition .scrollbar-container {
+        display: block; } }
     .id-merges-acquisition .scrollbar-container:after {
       content: '';
       position: absolute;
