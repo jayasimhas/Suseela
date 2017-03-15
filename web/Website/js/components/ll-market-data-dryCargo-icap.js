@@ -1,49 +1,78 @@
 (function () {
 	var dryCargoIcap = {
-		table: '',
-		renderTable: function(){
-		var self = this;
-		 //console.log(tableObj);
+		renderTable: function(tableData, id){
+			var self = this, tableStr = '';
+			
+			if($(window).width() <= 667){
+				tableStr += self.renderMobile(tableData);
+			}
+			else{
+				tableStr += self.renderDesktop(tableData);
+			}
+			id.html(tableStr);
+		},
+		renderDesktop: function(tableObj){
+			var self = this, deskStr = '';
+			 $.each(tableObj, function(datekey, date){ 
+				$.each(date, function(key, value) { 
+					deskStr += '<table class="table">'
+					deskStr += '<thead class="table_head">';
+					deskStr += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
+					deskStr += '<tr class="blueBg">';
+					var tableHead = value[0];
+						for(var key in tableHead){
+							deskStr += '<th class="pad-10">'+key+'</th>'
+						}
+						deskStr += '</tr>';
+						deskStr += '</thead>';
+						deskStr += '<tbody class="visible-lg">';
+						deskStr += '<tr>';
+						$.each(value, function(objData, objVal) {
+							$.each(objVal, function(responseKey, responseVal) {
+								deskStr += '<td class="R16 pad-10">'+responseVal+'</td>';                           
+							});	
+							deskStr += '</tr>';	
+						});					
+					deskStr += '</tbody>';
+					deskStr += '</table>';	
+				});
+			 });
+			 return deskStr;
+		},
+		renderMobile: function(tableObj) {
+			var self = this, mobStr = '';
 			 $.each(tableObj, function(datekey, date){ 
 				
 					$.each(date, function(key, value) { 
-						//console.log(key);
-						self.table += '<table class="table descView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-						self.table += '<tr class="visible-lg">';
-						//console.log(value[0]);
-						var tableHead = value[0];
-							for(var key in tableHead){
-								self.table += '<th class="pad-10">'+key+'</th>'
-							}
-							self.table += '</tr>';
-							self.table += '</thead>';
-							self.table += '<tbody class="visible-lg">'; 
-							self.table += '<tr>';
-							$.each(value, function(objData, objVal) {
-								//console.log(objVal);						
-								$.each(objVal, function(responseKey, responseVal) {
-									self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
-								});	
-								self.table += '</tr>';	
-							});					
-						self.table += '</tbody>';
-						self.table += '</table>';	
-						 $('#dryCargoIcap').html(self.table);
-					});
-					
+						mobStr += '<table class="table">';
+						mobStr += '<thead class="table_head">';
+						mobStr += '<tr><th colspan="2" class="pad-full-10">'+key+'</th></tr>';
+						mobStr += '</thead>';
+						mobStr += '<tbody>';
+						
+						$.each(value, function(objData, objVal) {					
+							$.each(objVal, function(responseKey, responseVal) { 
+								mobStr += '<tr>';
+								mobStr += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
+								mobStr += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
+								mobStr += '</tr>';		
+							});	
+							
+						});					
+						mobStr += '</tbody>';
+						mobStr += '</table>';
+					}); 
 			 });
-		
+			 return mobStr;
 		},		
-		init: function() {
-			this.renderTable();
+		init: function(tableData, id) {
+			this.renderTable(tableData, id);
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#dryCargoIcap').length > 0) {
-			dryCargoIcap.init();
+			dryCargoIcap.init(drycragoicapTable, $('#dryCargoIcap'));
 		}
 	});
 })();

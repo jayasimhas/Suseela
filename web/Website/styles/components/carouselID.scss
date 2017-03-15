@@ -3,6 +3,7 @@
 }
 
 #main-carousel {
+	margin-top: 1rem;
 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 		padding-right: 12px;
 	}
@@ -12,7 +13,7 @@
 	.item-wrapper {
 	    width: 25%;
     	float: left;
-    	@media only screen and (min-width: 668px) and (max-width: 1024px) {
+    	@media only screen and (min-width: 420px) and (max-width: 1024px) {
     		width: 50%;
     	}
     	@include breakpoint('small') {
@@ -26,7 +27,6 @@
 		}
 	}
 		.owl-carousel .item{
-			height: 290px;
 			@media only screen and (min-width: 767px) and (max-width: 1024px) {
 				height: auto;
 			}
@@ -208,7 +208,7 @@
 }
 #graph-carousel{
 	.company_title{
-		padding-bottom: 6px;
+		padding-bottom: 20px;
 	}
 	margin-bottom: 2rem;
 	&:after{

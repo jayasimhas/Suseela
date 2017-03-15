@@ -729,7 +729,7 @@
       <Agen  name= "Advertising Standards Agen">ASA</Agen>
       <Agen  name= "German federal institute for risk assessment">BfR</Agen>
       <Agen  name= "Brazilian health surveillance Agen, the Anvisa">Brazil Anvisa</Agen>
-      <Agen  name= "Brazil agricultural research corporation (Embrapa) ">Brazil Embrapa</Agen>
+      <Agen  name= "Brazil agricultural research corporation (Embrapa)">Brazil Embrapa</Agen>
       <Agen  name= "Brazil environmental Agen">Brazil Ibama</Agen>
       <Agen  name= "Brazilian Ministry of Agriculture">Brazil Mapa</Agen>
       <Agen  name= "Congressional Budget Office">CBO</Agen>
@@ -774,18 +774,18 @@
       <Agen  name= "US EPA Office of Pesticide Programs">OPP</Agen>
       <Agen  name= "US EPA Office of Transportation and Air Quality">OTAQ</Agen>
       <Agen  name= "Canadian Pest Management Agenulatory Agen">PMRA</Agen>
-      <Agen  name= "Special Agenmittee for Agriculture ">SCA</Agen>
+      <Agen  name= "Special Agenmittee for Agriculture">SCA</Agen>
       <Agen  name= "US Securities and Exchange Agenmission">SEC</Agen>
       <Agen  name= "US Senate">Senate</Agen>
       <Agen  name= "US Supreme Court">Supreme Court</Agen>
       <Agen  name= "Food Standards Agency">UK FSA</Agen>
       <Agen  name= "United Nations">UN</Agen>
       <Agen  name= "USDA Farm Service Agency">US FSA</Agen>
-      <Agen  name= "US Department of Agriculture ">USDA</Agen>
+      <Agen  name= "US Department of Agriculture">USDA</Agen>
       <Agen  name= "US International Trade Agenmission">USITC</Agen>
       <Agen  name= "Office of the US Trade Representative">USTR</Agen>
       <Agen  name= "World Health Organisation">WHO</Agen>
-      <Agen  name= "USDA World Agricultural Outlook Board ">WOAB</Agen>
+      <Agen  name= "USDA World Agricultural Outlook Board">WOAB</Agen>
       <Agen  name= "World Bank">World Bank</Agen>
       <Agen  name= "World Trade Organisation">WTO</Agen>
       <Agen  name= "ITC">USITC</Agen>
@@ -870,7 +870,7 @@
 			<comp name="Bunge">Bunge</comp>
 			<comp name="Campofrio">Campofrio</comp>
 			<comp name="Camposol">Camposol</comp>
-			<comp name="Caplenco ">Caplenco </comp>
+			<comp name="Caplenco">Caplenco</comp>
 			<comp name="Cargill ">Cargill </comp>
 			<comp name="Carozzi">Carozzi</comp>
 			<comp name="Cassia Co-op">Cassia Co-op</comp>
@@ -1024,7 +1024,7 @@
 			<comp name="Lindt">Lindt</comp>
 			<comp name="Louis Dreyfus">Louis Dreyfus</comp>
 			<comp name="Maple Leaf Foods">Maple Leaf Foods</comp>
-			<comp name="Marfrig  ">Marfrig</comp>
+			<comp name="Marfrig">Marfrig</comp>
 			<comp name="Mariani">Mariani</comp>
 			<comp name="Marrone Bio Innovations">Marrone Bio Innovations</comp>
 			<comp name="Marubeni">Marubeni Corp</comp>
@@ -1039,7 +1039,7 @@
 			<comp name="MHP">MHP</comp>
 			<comp name="Minerva ">Minerva </comp>
 			<comp name="Miratorg">Miratorg</comp>
-			<comp name="Mitr Phol ">Mitr Phol </comp>
+			<comp name="Mitr Phol">Mitr Phol</comp>
 			<comp name="Mitsubishi">Mitsubishi</comp>
 			<comp name="Mitsui Chemicals Agro">Mitsui Chemicals Agro</comp>
 			<comp name="Miyoshi Oils">
@@ -1154,14 +1154,14 @@
 			<comp name="Sugal">Sugal</comp>
 			<comp name="Sumitomo Chemical">Sumitomo Chemical</comp>
 			<comp name="Sun Valley Raisins">Sun Valley Raisins</comp>
-			<comp name="Sun-Maid">Sun-Maid Growers </comp>
+			<comp name="Sun-Maid">Sun-Maid Growers</comp>
 			<comp name="SunProd">SunProd</comp>
 			<comp name="Sunripe Europe">Sunripe Europe</comp>
 			<comp name="Sunrose">Sunrose</comp>
 			<comp name="Sunsweet Ingredients">Sunsweet Ingredients</comp>
 			<comp name="Surfrut">Surfrut</comp>
 			<comp name="Syngenta">Syngenta</comp>
-			<comp name="Tata ">Tata </comp>
+			<comp name="Tata">Tata</comp>
 			<comp name="Tate &amp; Lyle">
 				<![CDATA[Tate & Lyle]]>
 			</comp>
@@ -2274,21 +2274,46 @@
         <CropPro name="Seed treatments">Seed treatments</CropPro>
         <CropPro name="Seed treatment">Seed treatments</CropPro>
         <CropPro name="Biologicals">Biologicals</CropPro>
+        <CropPro name="Biological">Biologicals</CropPro>
         <CropPro name="Biopesticide">Biopesticides</CropPro>
         <CropPro name="Biopesticides">Biopesticides</CropPro>
+        <CropPro name="biofungicide">Biopesticides</CropPro>
+        <CropPro name="bioinsecticides">Biopesticides</CropPro>
+        <CropPro name="bioherbicides">Biopesticides</CropPro>
+        <CropPro name="bionematicide">Biopesticides</CropPro>
         <CropPro name="Biostimulants">Biostimulants</CropPro>
         <CropPro name="Biostimulant">Biostimulants</CropPro>
         <CropPro name="Input traits">Input Traits</CropPro>
         <CropPro name="Input trait">Input Traits</CropPro>
-        <CropPro name="Insecticide resistance">Insecticide Resistance</CropPro>
-        <CropPro name="Herbicide resistance">Herbicide Resistance</CropPro>
+        <CropPro name="GM">Input Traits</CropPro>
+        <CropPro name="GMOs">Input Traits</CropPro>
+        <CropPro name="GMO">Input Traits</CropPro>
+        <CropPro name="biotechnology">Input Traits</CropPro>
+        <CropPro name="biotech">Input Traits</CropPro>
+        <CropPro name="genetically modified">Input Traits</CropPro>
+        <CropPro name="Agchem">Product</CropPro>
+        <CropPro name="Agchems">Product</CropPro>
+        <CropPro name="Agrochemical">Product</CropPro>
+        <CropPro name="Agrochemicals">Product</CropPro>
+        <CropPro name="pesticide">Product</CropPro>
+        <CropPro name="pesticides">Product</CropPro>
+        <CropPro name="biocide">Product</CropPro>
+        <CropPro name="biocides">Product</CropPro>
+        <CropPro name="insecticide resistance">Insecticide Resistance</CropPro>
+        <CropPro name="insect resistant">Insecticide Resistance</CropPro>
+        <CropPro name="insect-resistant">Insecticide Resistance</CropPro>
+        <CropPro name="herbicide resistance">Herbicide Tolerance</CropPro>
+        <CropPro name="herbicide-resistance">Herbicide Tolerance</CropPro>
+        <CropPro name="herbicide tolerant">Herbicide Tolerance</CropPro>
+        <CropPro name="herbicide-tolerant">Herbicide Tolerance</CropPro>
+        <CropPro name="herbicide tolerance">Herbicide Tolerance</CropPro>
+        <CropPro name="herbicide-tolerance">Herbicide Tolerance</CropPro>
         <CropPro name="Other Pathogen Resistance">Other Pathogen Resistance</CropPro>
         <CropPro name="Output Traits">Output Traits</CropPro>
         <CropPro name="Output Trait">Output Traits</CropPro>
         <CropPro name="Altered Content">Altered Content</CropPro>
         <CropPro name="Yield"><![CDATA[Stress Tolerance & Yield]]></CropPro>
         <CropPro name="Stress Tolerance"><![CDATA[Stress Tolerance & Yield]]></CropPro>
-
       </cropprotection>
 			<region>
 				<reg name="agrow_pesticide_and_chemical_policy">United States</reg>
@@ -2400,8 +2425,6 @@
         </health>
         <health name="diagnostics">Diagnostics</health>
         <health name="generics">Generics</health>
-
-
       </animalhealth>
 				<animalhealthnew>
         <healthnew name="Antiparasitics">Antiparasitics</healthnew>
@@ -3174,13 +3197,13 @@
       <comp name="AIG">AIG</comp>
       <comp name="Alfa leval">Alfa leval</comp>
       <comp name="Alleghany">Alleghany</comp>
-      <comp name="Allianz ">Allianz </comp>
+      <comp name="Allianz">Allianz</comp>
       <comp name="Allied World">Allied World</comp>
       <comp name="Allstate">Allstate</comp>
       <comp name="American International Assurance">American International Assurance</comp>
       <comp name="AmTrust">AmTrust</comp>
       <comp name="Angelicousis">Angelicousis</comp>
-      <comp name="Aon Benfield ">Aon Benfield </comp>
+      <comp name="Aon Benfield">Aon Benfield</comp>
       <comp name="APB">APB</comp>
       <comp name="APM Terminals">APM Terminals</comp>
       <comp name="Arab Insurance Group">Arab Insurance Group</comp>
@@ -3192,10 +3215,10 @@
       <comp name="Atrium">Atrium</comp>
       <comp name="Aviva">Aviva</comp>
       <comp name="Axa">Axa</comp>
-      <comp name="Axis Capital ">Axis Capital </comp>
+      <comp name="Axis Capital">Axis Capital</comp>
       <comp name="Bahri">Bahri</comp>
       <comp name="Barbican">Barbican</comp>
-      <comp name="Beazley ">Beazley</comp>
+      <comp name="Beazley">Beazley</comp>
       <comp name="Berkshire Hathaway">Berkshire Hathaway</comp>
       <comp name="BIMCO">BIMCO</comp>
       <comp name="BNP Paribas">BNP Paribas</comp>
@@ -3206,7 +3229,7 @@
       <comp name="CCR">CCR</comp>
       <comp name="CDC">CDC</comp>
       <comp name="Central Re">Central Re</comp>
-      <comp name="Charles Taylor  ">Charles Taylor</comp>
+      <comp name="Charles Taylor">Charles Taylor</comp>
       <comp name="Chaucer">Chaucer</comp>
       <comp name="China Classification Society">China Classification Society</comp>
       <comp name="China Exim Bank">China Exim Bank</comp>
@@ -3240,12 +3263,12 @@
       <comp name="DSME">DSME</comp>
       <comp name="DVB">DVB</comp>
       <comp name="Dynagas Lng">Dynagas Lng</comp>
-      <comp name="Endurance ">Endurance </comp>
+      <comp name="Endurance">Endurance</comp>
       <comp name="Enstar">Enstar</comp>
       <comp name="EU">EU</comp>
       <comp name="Euronav">Euronav</comp>
       <comp name="Europort">Europort</comp>
-      <comp name="Everest Re ">Everest Re </comp>
+      <comp name="Everest Re">Everest Re</comp>
       <comp name="Evergreen">Evergreen</comp>
       <comp name="Frontline">Frontline</comp>
       <comp name="Gard">Gard</comp>
@@ -3261,7 +3284,7 @@
       <comp name="Hamburg Sud">Hamburg Sud</comp>
       <comp name="Hamilton">Hamilton</comp>
       <comp name="Hanjin">Hanjin</comp>
-      <comp name="Hannover Re ">Hannover Re </comp>
+      <comp name="Hannover Re">Hannover Re</comp>
       <comp name="Hapag-Lloyd">Hapag-Lloyd</comp>
       <comp name="Hartford Financial">Hartford Financial</comp>
       <comp name="HFW">HFW</comp>
@@ -3293,7 +3316,7 @@
       <comp name="Korean Register">Korean Register</comp>
       <comp name="KVH">KVH</comp>
       <comp name="Lancashire">Lancashire</comp>
-      <comp name="Liberty ">Liberty </comp>
+      <comp name="Liberty">Liberty</comp>
       <comp name="Lloyd's of London">Lloyd's of London</comp>
       <comp name="Lloyd’s Register">Lloyd’s Register</comp>
       <comp name="Maersk Group">Maersk Group</comp>
@@ -3305,8 +3328,8 @@
       <comp name="MISC">MISC</comp>
       <comp name="MOL">MOL</comp>
       <comp name="Morgan Stanley">Morgan Stanley</comp>
-      <comp name="MS Amlin ">MS Amlin </comp>
-      <comp name="Munich Re ">Munich Re </comp>
+      <comp name="MS Amlin">MS Amlin</comp>
+      <comp name="Munich Re">Munich Re</comp>
       <comp name="Navios Group">Navios Group</comp>
       <comp name="Neon">Neon</comp>
       <comp name="NIOC">NIOC</comp>
@@ -3330,20 +3353,20 @@
       <comp name="Quadrant Chambers">Quadrant Chambers</comp>
       <comp name="Randall and Quilter"><![CDATA[Randall & Quilter]]></comp>
       <comp name="RBS">RBS</comp>
-      <comp name="RenaissanceRe ">RenaissanceRe </comp>
+      <comp name="RenaissanceRe">RenaissanceRe</comp>
       <comp name="RINA">RINA</comp>
       <comp name="Rolls-Royce">Rolls-Royce</comp>
       <comp name="RSA">RSA</comp>
       <comp name="Russian Maritime Register">Russian Maritime Register</comp>
       <comp name="Safe Bulkers">Safe Bulkers</comp>
-      <comp name="Scor ">Scor </comp>
+      <comp name="Scor">Scor</comp>
       <comp name="Scorpio Bulkers">Scorpio Bulkers</comp>
       <comp name="Scorpio Tankers">Scorpio Tankers</comp>
       <comp name="Seaspan">Seaspan</comp>
       <comp name="Shanghai International Port Group">Shanghai International Port Group</comp>
       <comp name="SHI">SHI</comp>
       <comp name="SMBC">SMBC</comp>
-      <comp name="Sompo Canopius ">Sompo Canopius </comp>
+      <comp name="Sompo Canopius">Sompo Canopius</comp>
       <comp name="Sovcomflot">Sovcomflot</comp>
       <comp name="Star Bulk">Star Bulk</comp>
       <comp name="Star Bulkers">Star Bulkers</comp>
@@ -3354,7 +3377,7 @@
       <comp name="Teekay Tankers">Teekay Tankers</comp>
       <comp name="Thomas Miller">Thomas Miller</comp>
       <comp name="Toa Re">Toa Re</comp>
-      <comp name="Tokio Marine Kiln ">Tokio Marine Kiln </comp>
+      <comp name="Tokio Marine Kiln">Tokio Marine Kiln</comp>
       <comp name="Trans-as">Trans-as</comp>
       <comp name="Travelers">Travelers</comp>
       <comp name="TT Club">TT Club</comp>

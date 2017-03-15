@@ -123,7 +123,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (string.IsNullOrEmpty(summaryTitleHtml))
                     {
                         summaryTitleHtml = GetFirstParagraph(bodyTitleHtml);
-                        bodyTitleHtml = bodyTitleHtml.Replace(summaryTitleHtml, "");
+                        if (!string.IsNullOrEmpty(summaryTitleHtml))
+                            bodyTitleHtml = bodyTitleHtml.Replace(summaryTitleHtml, "");
+                       
                     }
 
 
@@ -449,6 +451,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string summSearch = RemovespecialcharactersfromString(summaryTitleHtml);
                             string AgencyCompanyTextSearch = " " + cleanTitle + " " + BodyText + " " + summSearch;
                             string RegionTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 200)) + " " + summSearch;
+                            string IDCompanyTextSearch = " " + cleanTitle + " " + BodyText.Substring(0, Math.Min(BodyText.Length, 1000)) + " " + summSearch;
                             string specialcommoditysearch = " " + cleanTitle + " " + summarySearch;
                             string Country = "";
                             string Companies = "";
@@ -595,13 +598,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             textForCompany = textForCompany.Replace(")", "");
                             List<string> companySearchResults = null;
 
-                            if (!(publication == "InsuranceDay")){
+                            if (!(site == "Maritime")){
 
                                  companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => textForCompany.ToLower().Contains(" " + s + " "));
                             }
                             else
                             {
-                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                 companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => IDCompanyTextSearch.ToLower().Contains(" " + s + " "));
                             }
                             //List<string> companySearchResults = GetListFromXml(publication, "companies", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
 
@@ -1012,7 +1015,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string RemovespecialcharactersfromString(string RTEInput)
         {
 
-            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" , "\"","[","]","'"};
+            var charsToRemove = new string[] { "\n", ">", ".", ";", ",", "<", "/", ":", ")", "(" , "\"","[","]","'","’" };
             foreach (var cha in charsToRemove)
             {
                 if (cha == "\n")
@@ -1657,6 +1660,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         string Topic = string.Empty;
                         string Country = string.Empty;
                         string SectionRef = string.Empty;
+                        string Sectors = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1682,8 +1686,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
                                 {
-                                    Country += node.Attributes["unique-name"].Value + ",";
-                                    Taxonomy["SECTORS"] = Country;
+                                    Sectors += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["SECTORS"] = Sectors;
                                 }
                                 else
                                 {

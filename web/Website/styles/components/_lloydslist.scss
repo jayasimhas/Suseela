@@ -88,8 +88,11 @@
 				}
 		}
 	}
+	.blueBg{
+		background: #1191D1;
+	}
 }
-#tanker-Pure-ChemPage{ 
+#tanker-Pure-ChemPage, #shipVehicle-Page{ 
 	width: 100%;
 	@include breakpoint('small') {
 		float: left;
@@ -102,7 +105,7 @@
 	}
 }
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
-#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex{
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipVehicle-Page{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
@@ -135,7 +138,7 @@
 				font-size: 16px;
 				font-weight: 500;
 				@media only screen and (min-width: 600px) and (max-width: 768px) {
-					font-size: 12px;
+					//font-size: 12px;
 				}
 			}
 			.blueBg{
@@ -157,13 +160,13 @@
 		.pad-10 {
 			padding: 20px 16px;
 			@media only screen and (max-width: 1024px) {
-	    		padding: 16px 5px;
+	    		//padding: 16px 5px;
 	    	}
 			@media only screen and (max-width: 767px) {
 	    		padding: 16px 10px;
 	    	}
 			@media only screen and (min-width: 600px) and (max-width: 768px) {
-	    		padding: 10px 2px;
+	    		//padding: 10px 2px;
 	    	}
 		}
 		.mobleftCol{
@@ -207,7 +210,7 @@
 		.R16{
 			font-size: 1rem;
 			@media only screen and (min-width: 600px) and (max-width: 768px) {
-				font-size: 12px;
+				//font-size: 12px;
 			}
 			a{
 				color: #1191d1;
@@ -760,3 +763,7 @@
 		width: 100%;
 	}
  }
+ 
+ .rowbordinMob{
+	border: 1px solid #e9e9e9; 
+}

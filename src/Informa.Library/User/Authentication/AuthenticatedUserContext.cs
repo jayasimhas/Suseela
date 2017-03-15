@@ -68,7 +68,7 @@ namespace Informa.Library.User.Authentication
         private bool AuthenticatedUserCheck()
         {
             string domain = ConfigurationManager.AppSettings["EnableVerticalLogin"];
-            if(domain != "true")
+            if (domain != "true" || SitecoreUserContext.User.Domain.Name.Equals("sitecore", StringComparison.InvariantCultureIgnoreCase))
             {
                 return SitecoreUserContext.User.IsAuthenticated;
             }

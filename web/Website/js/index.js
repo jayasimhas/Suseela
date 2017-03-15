@@ -61,6 +61,7 @@ import './components/ll-ship-container-ship.js';
 import './components/ll-shipContainerShipFixtures';
 import './components/ll-fisDryBulk';
 import './components/ll-howeRobinson';
+import './components/ll-shipVehiclePage';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -1295,5 +1296,24 @@ $(document).ready(function(){
 		$('.header-account-right-access').addClass('nomyView');
 		$('.header-publication-links').addClass('nomyView');
 	}
+    //Update state Field on Contact Page
+    $(document).on('change', '#ddlShippingCountry', function() {
 
+        var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
+
+       $.ajax({
+            url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+            data: {'Country': Value},
+            dataType: 'json',
+            type: 'POST',
+            success: function (Data) {
+                for(var key in Data) {
+                    $('#jumpTo').append('<option value="'+searchData[key]+'">'+searchData[key]+'</option>');
+                }
+            },
+            error: function (err) {
+                console.log('Data is not there: ' + JSON.stringify(err));
+            }
+        });
+    });
 });
