@@ -1,79 +1,106 @@
 (function () {
 	var dryCargo = {
-		table: '',
+		renderDate: function(dateObj){ 
+			var options = '';
+			$.each(dateObj[0], function(key, val){ 
+				$.each(val, function(idx, value){ 
+					options += '<option value="'+value.Value+'">'+value.Text+'</option>'
+				});
+			});
+			$('#dryCargodateselect').html(options);
+		},
 		renderTable: function(){
-		var self = this;
-		 //console.log(tableObj);
+			var self = this, loadDateVal = $('#dryCargodateselect option').val();
+			self.callAjaxFn(loadDateVal);
+			$(document).on('change', '#dryCargodateselect', function(){
+				var selectDateVal = $('#dryCargodateselect option').val();
+				self.callAjaxFn(selectDateVal);
+			});
+		},
+		callAjaxFn: function(seldateVal){
+			 var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('#drycargoHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function (err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
+			});
+		},
+		sendHTTPRequest: function(searchData){
+			var self = this, tableStr = '';
+			tableStr += this.renderDesktop(searchData);
+			tableStr += this.renderMobile(searchData);
+			$('#dryCargo').html(tableStr);			 
+		},
+		renderDesktop: function(tableObj){
+			var self = this, deskStr = ''; 
+			 $.each(tableObj, function(datekey, date){ 
+				$.each(date, function(key, value) { 
+					deskStr += '<table class="table descView">'
+					deskStr += '<thead class="table_head">';
+					deskStr += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
+					deskStr += '<tr class="visible-lg">';
+					var tableHead = value[0];
+						for(var key in tableHead){
+							deskStr += '<th class="pad-10">'+key+'</th>'
+						}
+						deskStr += '</tr>';
+						deskStr += '</thead>';
+						deskStr += '<tbody class="visible-lg">';
+						deskStr += '<tr>';
+						$.each(value, function(objData, objVal) {
+							$.each(objVal, function(responseKey, responseVal) {
+								deskStr += '<td class="R16 pad-10">'+responseVal+'</td>';                           
+							});	
+							deskStr += '</tr>';	
+						});					
+					deskStr += '</tbody>';
+					deskStr += '</table>';	
+				});
+			 });
+			 return deskStr;
+		},
+		renderMobile: function(tableObj) {
+			var self = this, mobStr = '';
 			 $.each(tableObj, function(datekey, date){ 
 				
 					$.each(date, function(key, value) { 
-						//console.log(key);
-						self.table += '<table class="table descView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-						self.table += '<tr class="visible-lg">';
-						//console.log(value[0]);
-						var tableHead = value[0];
-							for(var key in tableHead){
-								self.table += '<th class="pad-10">'+key+'</th>'
-							}
-							self.table += '</tr>';
-							self.table += '</thead>';
-							self.table += '<tbody class="visible-lg">';
-							self.table += '<tr>';
-							$.each(value, function(objData, objVal) {
-								//console.log(objVal);						
-								$.each(objVal, function(responseKey, responseVal) {
-									self.table += '<td class="R16 pad-10">'+responseVal+'</td>';                           
-								});	
-								self.table += '</tr>';	
-							});					
-						self.table += '</tbody>';
-						self.table += '</table>';	
-						 $('#dryCargo').html(self.table);
-					});
-					
-			 });
-		
-		},
-		renderMobile: function() {
-			var self = this;
-			 $.each(tableObj, function(datekey, date){ 
-				
-					$.each(date, function(key, value) {
-						//console.log(key);
-						self.table += '<table class="table mobView">'
-						self.table += '<thead class="table_head">';
-						self.table += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
-						self.table += '</thead>';
-						self.table += '<tbody class="visible-sm">';
+						mobStr += '<table class="table mobView" width="100%">'
+						mobStr += '<thead class="table_head">';
+						mobStr += '<tr><th colspan="2" class="pad-full-10">'+key+'</th></tr>';
+						mobStr += '</thead>';
+						mobStr += '<tbody class="visible-sm">';
 						
-						$.each(value, function(objData, objVal) {
-							//console.log(objVal);						
+						$.each(value, function(objData, objVal) {					
 							$.each(objVal, function(responseKey, responseVal) { 
-								self.table += '<tr>';
-								self.table += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
-								self.table += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
-								self.table += '</tr>';		
+								mobStr += '<tr>';
+								mobStr += '<td class="pad-10 mobleftCol">'+responseKey+'</td>';   
+								mobStr += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
+								mobStr += '</tr>';		
 							});	
-							
+							mobStr += '<tr><td class="rowbordinMob" colspan="2"></td></tr>';
 						});					
-						self.table += '</tbody>';
-						self.table += '</table>';
-						 $('#dryCargo').html(self.table);
-					});
-					
+						mobStr += '</tbody>';
+						mobStr += '</table>';
+					}); 
 			 });
+			 return mobStr;
 		},
-		init: function() {
+		init: function(dateData) {
+			this.renderDate(dateData);
 			this.renderTable();
-			this.renderMobile();
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#dryCargo').length > 0) {
-			dryCargo.init();
+			dryCargo.init(marketdryCargodate);
 		}
 	});
 })();
