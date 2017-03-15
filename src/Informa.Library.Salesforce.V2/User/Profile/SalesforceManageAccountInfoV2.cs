@@ -39,8 +39,9 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         private string MailingStateFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingState");
         private string MailingCountryFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingCountry");
         private string MailingPostalCodeFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingPostalCode");
-        private string ContactReferenceName => TextTranslator.Translate("ContactInfo.Reference.Contact");
-        public SalesforceManageAccountInfoV2(
+        private string ContactReferenceName => TextTranslator.Translate("ContactInfo.Reference.Contact"); 
+        private string MobileFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.Mobile");
+                public SalesforceManageAccountInfoV2(
     ITextTranslator textTranslator,
     ISalesforceConfigurationContext salesforceConfigurationContext,
     ISalesforceInfoLogger infoLogger)
@@ -77,7 +78,8 @@ namespace Informa.Library.Salesforce.V2.User.Profile
             string Company,
             string JobFunction,
             string JobIndustry,
-            string JobTitle
+            string JobTitle,
+            string Mobile
             )
         {
             if (string.IsNullOrEmpty(user?.Username))
@@ -151,6 +153,13 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = MailingPostalCodeFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
 
+            if (!string.IsNullOrWhiteSpace(MobileFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                request.Preferences.Add(new SalesforceField()
+                {
+                    FieldName = MobileFieldName,
+                    FieldValue = Mobile,
+                    Reference = ContactReferenceName
+                });
             ////var EBIBillAddress = new EBI_Address()
             ////{
             ////    addressLine1 = BillAddress1,

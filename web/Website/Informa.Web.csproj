@@ -1089,6 +1089,8 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ContactInformationUpdateRequestV2.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\StateRequest.cs" />
     <Compile Include="Areas\Article\Controllers\LatestPublishedStoriesController.cs" />
     <Compile Include="Areas\Article\Models\Article\LatestPublishedStories\LatestPublishedStory.cs" />
     <Compile Include="Areas\Download\Controllers\PdfDownloadController.cs" />

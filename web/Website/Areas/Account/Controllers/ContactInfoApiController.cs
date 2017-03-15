@@ -10,6 +10,12 @@ using Informa.Library.User.Profile;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.SalesforceConfiguration;
+using System.Web.Http.Results;
+using System.Web.UI.WebControls;
+using Jabberwocky.Glass.Models;
+using System.Web.Http;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using PluginModels;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -21,6 +27,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ITextTranslator TextTranslator;
         protected readonly IUserProfileContext ProfileContext;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly ISitecoreService SitecoreService;
 
         public ContactInfoApiController(
             IAuthenticatedUserContext userContext,
@@ -28,7 +35,8 @@ namespace Informa.Web.Areas.Account.Controllers
             ITextTranslator textTranslator,
             IUserProfileContext profileContext,
             ISalesforceConfigurationContext salesforceConfigurationContext,
-            IManageAccountInfoV2 accountInfoV2)
+            IManageAccountInfoV2 accountInfoV2,
+            ISitecoreService sitecoreService)
         {
             UserContext = userContext;
             AccountInfo = accountInfo;
@@ -36,7 +44,43 @@ namespace Informa.Web.Areas.Account.Controllers
             ProfileContext = profileContext;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             AccountInfoV2 = accountInfoV2;
+            SitecoreService = sitecoreService;
         }
+
+        [HttpPost]
+        [ValidateReasons]
+        [ArgumentsRequired]
+        public IHttpActionResult UpdateContactInfoV2(ContactInformationUpdateRequestV2 form)
+        {
+            if (string.IsNullOrEmpty(UserContext.User?.Username))
+            {
+                return Ok(new
+                {
+                    success = false,
+                    reasons = new string[] { NullUserKey }
+                });
+            }
+
+            var result =
+                AccountInfoV2.UpdateContactInfo(
+                UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
+                form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
+                form.BillState,
+                form.ShipCountry, form.ShipAddress1, form.ShipAddress2, form.ShipCity, form.ShipPostalCode,
+                form.ShipState,
+                form.Fax, form.CountryCode, form.PhoneExtension, form.Phone, form.PhoneType, form.Company,
+                form.JobFunction, form.JobIndustry, form.JobTitle, form.Mobile);
+
+            if (result.Success)
+                ProfileContext.Clear();
+
+            return Ok(new
+            {
+                success = result.Success,
+                reasons = new string[] { GetContactResultKey(result) }
+            });
+        }
+
 
         [HttpPost]
         [ValidateReasons]
@@ -52,15 +96,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 });
             }
 
-            var result = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
-                AccountInfoV2.UpdateContactInfo(
-                UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
-                form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
-                form.BillState,
-                form.ShipCountry, form.ShipAddress1, form.ShipAddress2, form.ShipCity, form.ShipPostalCode,
-                form.ShipState,
-                form.Fax, form.CountryCode, form.PhoneExtension, form.Phone, form.PhoneType, form.Company,
-                form.JobFunction, form.JobIndustry, form.JobTitle) :
+            var result = 
                 AccountInfo.UpdateContactInfo(
                 UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
                 form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
@@ -79,7 +115,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 reasons = new string[] { GetContactResultKey(result) }
             });
         }
-
         protected string GetContactResultKey(IAccountInfoWriteResult result)
         {
             if (result.Success)
@@ -122,6 +157,20 @@ namespace Informa.Web.Areas.Account.Controllers
             else
                 return "PasswordUpdateFailed";
         }
+
+
+        [HttpPost]
+        [ArgumentsRequired]
+        public IHttpActionResult GetStates(StateRequest request)
+        {
+            List<TaxonomyStruct> result = new List<TaxonomyStruct>();
+            var baseFolder = SitecoreService.GetItem<IGlassBase>(request.Country);
+            result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
+                .Select(eachChild => new TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
+            return Json(result);
+
+        }
+
 
         protected string NullUserKey => TextTranslator.Translate("ContactInfo.NullUser");
     }
