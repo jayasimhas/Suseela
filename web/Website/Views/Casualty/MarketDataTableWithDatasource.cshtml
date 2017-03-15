@@ -343,8 +343,7 @@
                         <div class="form-control">
                             <label for="selectDay">Select a day:</label>
                             <div class="select-field">
-                                <select id="selectDay" name="selectDay">                                    
-                                </select>
+                                <select id="selectDay" name="selectDay"></select>
                             </div>
                         </div>
                         @Html.Hidden("drycargoHiddenVal", Model.TableFeedUrl)
@@ -355,6 +354,35 @@
             </div>
             <div id="dryCargo">
                 <!-- tables rendered -->
+            </div>
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation10)
+    {
+        <script type="text/javascript">
+            var shipVehicleDateOptions=@Html.Raw(Model.jsonDropdownData);            
+        </script>
+        <div class="table-responsive" id="shipVehicle-Page">
+            <h2>@Model.PageTitle</h2>
+            <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
+            <hr />
+            <div class="lli-brand-container shallow-bottom">
+                <div class="lli-brand-box">
+                    @Model.TableSubTitle
+                    <fieldset>
+                        <div class="form-control">
+                            <label for="shipVehicleselDay">Select a day:</label>
+                            <div class="select-field">
+                                <select id="shipVehicleselDay" name="shipVehicleselDay"></select>
+                            </div>
+                        </div>
+                        @Html.Hidden("shipVehicleHiddenVal", Model.TableFeedUrl)
+                    </fieldset>
+                    <!-- .lli-brand-box -->
+                </div>
+                <!-- .lli-brand-container -->
+            </div>
+            <div class="table ID-Responsive-Table" id="shipVehiclePage">
             </div>
         </div>
     }
