@@ -5,45 +5,12 @@
 {
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation1)
     {
-        if (!string.IsNullOrEmpty(Model.jsonTableData))
-        {
-            <script type="text/javascript">
-                var jsonBalticIndices = @Html.Raw(Model.jsonTableData);
-            </script>
-        }
-        else
-        {
-            <script type="text/javascript">
-                var jsonBalticIndices = [
-                  {
-                      "Baltic Indices": "Baltic Dry Index",
-                      "Jan 13": "910 +18",
-                      "Jan 12": "892 -2",
-                      "Jan 11": "894 -32",
-                      "Jan 10": "926 -23",
-                      "Jan 09": "949 -14"
-                  },
-                  {
-                      "Baltic Indices": "Baltic Capesize Index",
-                      "Jan 13": "1383 +89",
-                      "Jan 12": "1294 -32",
-                      "Jan 11": "1326 -144",
-                      "Jan 10": "1470 -128",
-                      "Jan 09": "1598 -60"
-                  },
-                 {
-                     "Baltic Indices": "Baltic Panamax Index",
-                     "Jan 13": "910 +18",
-                     "Jan 12": "892 -2",
-                     "Jan 11": "894 -32",
-                     "Jan 10": "926 -23",
-                     "Jan 09": "949 -14"
-                 }
-                ]
-            </script>
-        }
+        <script type="text/javascript">
+            var jsonBalticIndices = @Html.Raw(Model.jsonTableData);
+        </script>
         <div class="table-responsive" id="market-data">
             <div class="carousel-div" id="main-carousel">
+                <div class="owl-dotsNav">&nbsp;</div>
                 <div class="showinMob">
                     <div class="states_heading">
                     </div>
@@ -58,25 +25,90 @@
             </div>
         </div>
     }
-    if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
     {
         <script type="text/javascript">
             var jsonHoweRobinson = @Html.Raw(Model.jsonTableData);
         </script>
-
-        <div class="small_table">
-            <div class="table-responsive" id="howeRobinsonContainer">
-                <div class="owl-dotsNav">&nbsp;</div>
-                <div id="howeRobinson" class="carousel-div">
-                    <div class="states_heading">
-                    </div>
-                    <div class="owl-wrapper">
-                        <div class="owl-carousel owl-theme owl-loaded howeRobinsonTable">
-                        </div>
+        <div class="table-responsive" id="howeRobinsonContainer">
+            <div class="owl-dotsNav">&nbsp;</div>
+            <div id="howeRobinson" class="carousel-div">
+                <div class="states_heading">
+                </div>
+                <div class="owl-wrapper">
+                    <div class="owl-carousel owl-theme owl-loaded howeRobinsonTable">
                     </div>
                 </div>
             </div>
         </div>
     }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
+    {
+        <script type="text/javascript">
+            var jsonMarketdataDryCargo = @Html.Raw(Model.jsonTableData);
+        </script>
+        <div class="small_table">
+            <div class="table-responsive" id="market-Data-Dry-Cargo">
+                <div class="table ID-Responsive-Table" data-modal="modal-annualresults" id="marketDataDryCargo">
+                </div>
+            </div>
+        </div>
+    }
+    else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation4)
+    {
+        if (!string.IsNullOrEmpty(Model.jsonTableData))
+        {
+            <script type="text/javascript">
+                var drycragoicapTable = @Html.Raw(Model.jsonTableData);
+            </script>
+        }
+        else
+        {
+            <script type="text/javascript">
+                var drycragoicapTable=[{
+                    "Section1": [
+                      {
+                          "Route": "Antwerp - Skaw Trip Far East",
+                          "21Jan 2015|$": "7650",
+                          "20Jan 2015|$": "7750"
+                      },
+                      {
+                          "Route": "Canakkale Trip Far East",
+                          "21Jan 2015|$": "7650",
+                          "20Jan 2015|$": "7750"
+                      },
+                      {
+                          "Route": "Antwerp - Skaw Trip US Gulf",
+                          "21Jan 2015|$": "7650",
+                          "20Jan 2015|$": "7750"
+                      }
+                    ],
+                    "Section2": [
+                      {
+                          "Route": "Antwerp - Skaw Trip Far East",
+                          "20Jan 2015|$": "7650",
+                          "19Jan 2015|$": "7750"
+                      },
+                      {
+                          "Route": "Canakkale Trip Far East",
+                          "20Jan 2015|$": "7650",
+                          "19Jan 2015|$": "7750"
+                      },
+                      {
+                          "Route": "Antwerp - Skaw Trip US Gulf",
+                          "20Jan 2015|$": "7650",
+                          "19Jan 2015|$": "7750"
+                      }
+                    ]
+                }]
+            </script>
+        }
+        <div class="small_table">
+            <div class="table-responsive" id="dry-cargo-cap">
+                <div id="dryCargoIcap">
+                    <!-- tables rendered -->
+                </div>
+            </div>
+        </div>
+    }
 }
-

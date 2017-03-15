@@ -89,7 +89,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger
             catch(Exception ex)
             {
 
-                XMLDataLogger.WriteLog(articleId, "ArticleWithErrors");
+                XMLDataLogger.WriteLog(articleId + ex.Message, "ArticleWhileArtingExcelErrors");
             }
 
         }

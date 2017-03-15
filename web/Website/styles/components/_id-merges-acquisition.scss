@@ -1,13 +1,21 @@
 .id-merges-acquisition {
 	font-family: 'Roboto';
+	.table-responsive {
+		position: relative;
+	}
 	.idi-table-heading {
 		margin-top: 0;
+		padding: 10px 20px;
 	}
 	#scrollbar-horizantal {
 	    height: 10px;
     	background-color: #eee;
     	position: relative;
     	overflow: hidden;
+    	display: none;
+    	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
     	&:after {
     		content: '';
     		height: 1px;
@@ -81,7 +89,10 @@
 		}
 	}
 	input.range-field {
-	    width: 45px !important;
+	    width: 40px !important;
+	    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+	    	width: 35px !important;
+	    }
 	    @include breakpoint('small') {
 	    	width: 41% !important;
 	    }
@@ -90,10 +101,16 @@
 	 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 	 		width: 100%;
 	 		overflow-x: scroll;
+	 		overflow-y: scroll;
+	 		height: 500px;
+	 		position: relative;
 	 	}
 	 }
 	.table.merge-acquistion {
 		border-top: none;
+		.suggest-more{
+			display: none !important;
+		}
 		@include breakpoint('small') {
 			border: none;
 		}
@@ -106,6 +123,18 @@
 		}
 		tbody.visible-lg tr:nth-child(even) {
 			background-color: #eee;
+		}
+		tbody.visible-lg {
+			tr {
+				td {
+					&:first-child {
+						padding-left: 20px;
+					}
+					&:last-child {
+						padding-right: 20px;
+					}
+				}
+			}
 		}
 		tbody.visible-xs {
 			tr {
@@ -154,6 +183,16 @@
 			 .table_head th {
 			 	padding-top: 0;
 			 	padding-bottom: 0;
+			 	&:first-child {
+			 		.label-wrap, .field-wrap {
+				 		padding-left: 20px;
+				 	}
+			 	}
+			 	&:last-child {
+			 		.label-wrap, .field-wrap {
+				 		padding-right: 20px;
+				 	}
+			 	}
 			 	.label-wrap {
 			 		padding: 0 5px;
 			 		&:after {
@@ -482,4 +521,31 @@
 			}
 		}
 	}
+	.scrollbar-container {
+	    position: absolute;
+	    right: -1rem;
+	    bottom: 0;
+	    height: 500px;
+	    width: 16px;
+	    background-color: #f1f2f2;
+	    z-index: 9;
+	    &:after {
+	    	content: '';
+	    	position: absolute;
+	    	top: 0;
+	    	right: 7px;
+	    	width: 1px;
+	    	height: 100%;
+	    	background:#d1d3d4;
+	    	z-index:1;
+	    }
+	}
+	.scrollbar {
+		  position: absolute;
+		  right: 4px;
+		  height: 30px;
+		  width: 7px;
+		  background: #777777;
+		  z-index:2;
+		}
 }

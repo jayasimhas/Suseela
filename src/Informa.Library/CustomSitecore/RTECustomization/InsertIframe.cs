@@ -45,13 +45,13 @@ namespace Informa.Library.CustomSitecore.RTECustomization
 
         //setup page
         protected override void OnLoad(EventArgs e)
-        {           
+        {
             Assert.ArgumentNotNull(e, "e");
             base.OnLoad(e);
             if (!Context.ClientPage.IsEvent)
             {
                 this.Mode = WebUtil.GetQueryString("mo");
-                string text = WebUtil.GetQueryString("selectedText");               
+                string text = WebUtil.GetQueryString("selectedText");
             }
         }
 
@@ -69,9 +69,9 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             string desktopIframeCode = memIframeDesktop.Value;
             string mobileIframeCode = memIframeMobile.Value;
             if (!string.IsNullOrEmpty(desktopIframeCode))
-            {
-                var newNode = HtmlNode.CreateNode(desktopIframeCode);
-                if (IsSecure(newNode))
+            {               
+                var desktopNode = HtmlNode.CreateNode(desktopIframeCode);
+                if (IsSecure(desktopNode) && IsValidInput(desktopNode))
                 {
                     string html = BuildHtml().ToString();
                     //encode it and send it back to the rich text editor
@@ -91,7 +91,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             }
             else
             {
-                SheerResponse.Alert("Multimedia content is either missing, invalid or not secure", new string[0]);
+                SheerResponse.Alert("Desktop code is required", new string[0]);
             }
 
         }
@@ -108,6 +108,14 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                 return true;
             else
                 return false;
+        }
+
+        private bool IsValidInput(HtmlNode node)
+        {
+            if (node.Name.ToLower() == "script" || node.Name.ToLower() == "link" || node.Name.ToLower() == "form" || node.Name.ToLower() == "style")
+                return false;
+            else
+                return true;
         }
 
         /// <summary>
@@ -166,10 +174,14 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             }
 
             if (!string.IsNullOrEmpty(memIframeMobile.Value))
-            {
-                var iframeMobileElement = MobileOrDesktopEmbed(iframeGroupId, true);               
-                iframeMobileElement.SetAttributeValue("data-embed-link", "enabled");
-                iframeGroupElement.Add(iframeMobileElement);                
+            {               
+                var mobileEmbedNode =HtmlNode.CreateNode(memIframeMobile.Value);
+                if (IsSecure(mobileEmbedNode) && IsValidInput(mobileEmbedNode))
+                {
+                    var iframeMobileElement = MobileOrDesktopEmbed(iframeGroupId, true);
+                    iframeMobileElement.SetAttributeValue("data-embed-link", "enabled");
+                    iframeGroupElement.Add(iframeMobileElement);
+                }
             }
             else
             {
@@ -227,7 +239,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             var iframeElement = new XElement("div");
             string cssStyle = String.Format("ewf-mobile-iframe_{0}", iframeGroupId);
             iframeElement.SetAttributeValue("class", $"iframe-component__mobile {cssStyle}");
-           
+
             var link = new XElement("a");
             link.SetAttributeValue("href", "");
             link.SetAttributeValue("class", "iframe-component__desktop-showcase-link");
