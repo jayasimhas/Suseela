@@ -90,6 +90,9 @@
 	}
 	input.range-field {
 	    width: 40px !important;
+	    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+	    	width: 35px !important;
+	    }
 	    @include breakpoint('small') {
 	    	width: 41% !important;
 	    }
