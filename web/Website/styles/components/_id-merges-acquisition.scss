@@ -5,6 +5,7 @@
 	}
 	.idi-table-heading {
 		margin-top: 0;
+		padding: 10px 20px;
 	}
 	#scrollbar-horizantal {
 	    height: 10px;
@@ -88,7 +89,7 @@
 		}
 	}
 	input.range-field {
-	    width: 45px !important;
+	    width: 40px !important;
 	    @include breakpoint('small') {
 	    	width: 41% !important;
 	    }
@@ -119,6 +120,18 @@
 		}
 		tbody.visible-lg tr:nth-child(even) {
 			background-color: #eee;
+		}
+		tbody.visible-lg {
+			tr {
+				td {
+					&:first-child {
+						padding-left: 20px;
+					}
+					&:last-child {
+						padding-right: 20px;
+					}
+				}
+			}
 		}
 		tbody.visible-xs {
 			tr {
@@ -167,6 +180,16 @@
 			 .table_head th {
 			 	padding-top: 0;
 			 	padding-bottom: 0;
+			 	&:first-child {
+			 		.label-wrap, .field-wrap {
+				 		padding-left: 20px;
+				 	}
+			 	}
+			 	&:last-child {
+			 		.label-wrap, .field-wrap {
+				 		padding-right: 20px;
+				 	}
+			 	}
 			 	.label-wrap {
 			 		padding: 0 5px;
 			 		&:after {
