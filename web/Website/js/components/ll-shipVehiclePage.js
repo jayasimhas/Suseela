@@ -16,8 +16,8 @@
 			var self = this, TableStr = "", loadDateVal = $('#shipVehicleselDay option').val();
 			Parent.empty();
 			
-			//self.sendHTTPRequest(shipVehicleTableData[0], Parent);
-			self.callAjaxFn(loadDateVal, Parent);
+			self.sendHTTPRequest(shipVehicleTableData[0], Parent);
+			//self.callAjaxFn(loadDateVal, Parent);
 			$(document).on('change', '#shipVehicleselDay', function(){
 				var selectDateVal = $('#shipVehicleselDay option').val();
 				self.callAjaxFn(selectDateVal, Parent);
@@ -40,8 +40,13 @@
 		},
 		sendHTTPRequest: function(searchData, Parent){
 			var self = this, TableStr = '';
-			for(var key in searchData) {
-				TableStr += self.RenderSingleTable(key, searchData[key]);
+			
+			if($(window).width() < 668)
+				self.RenderCarousel(searchData, Parent);
+			else{
+				for(var key in searchData) {
+					TableStr += self.RenderSingleTable(key, searchData[key]);
+				}
 			} 
 			Parent.append(TableStr);	 
 		}, 
@@ -212,10 +217,7 @@
 		init: function(dateData, id) {
 			var self = this;
 			this.renderDate(dateData);
-			if($(window).width() < 668)
-				self.RenderCarousel(id);
-			else
-				self.RenderTable(id);
+			this.RenderTable(id);
 		} 
 	}
 
