@@ -5,11 +5,36 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script type='text/javascript'>if(console){console.error('Failed to load page metadata.')}</script>
       <title>Merck Is Finding PD-L1 Testing Is Helping Keytruda</title>
       <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
       <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="/dist/index-generated.css">
+	  
+	  <script type="text/javascript">
+		var shipContShipFixDateOptions = [{
+				"SelectDate":[
+					{
+					"Value":"10-MAR-17","Text":"10-MAR-17"
+					}
+					,
+					{
+					"Value":"03-MAR-17","Text":"03-MAR-17"
+					}
+					,
+					{
+					"Value":"24-FEB-17","Text":"24-FEB-17"
+					}
+					,
+					{
+					"Value":"17-FEB-17","Text":"17-FEB-17"
+					}
+					,
+					{
+					"Value":"10-FEB-17","Text":"10-FEB-17"
+					}
+				]
+			}]
+	  </script>
    </head>
    <body class="theme-lloydslist">
       <header>
@@ -118,180 +143,37 @@
             <div class="main__content">
                <div class="small_table">
                   <div class="article-left-rail">
-                     <div class="table-responsive casualty-table-theme">
-                        <h5 class="secondary_heading">Casualties</h5>
+                     <div class="table-responsive" id="shipContainerFixtures">
+                        <h2>Market Data</h2>
+						<h3 class="lli-brand-head-wide-trans">Shipping Movements</h3>
                         <hr/>
-                        <div class="ll-casualty-form">
-                           <div class="form-control">
-                              <label for="relDate">View casualty reports for:</label>
-                              <select name="relDate" id="relDate" class="common-field inline">
-                                 <option value="12-02-2016">Tue, 12 January 2016</option>
-                                 <option value="12-12-2016">Mon, 12 December 2016</option>
-                              </select>
+                        <div class="lli-brand-container shallow-bottom">
+                           <div class="lli-brand-box">
+                                 <fieldset>
+                                    <div class="form-control">
+									  <label for="shipfixselectDay">Select a day:</label>
+									  <div class="select-field">
+										 <select id="shipfixselectDay" name="shipfixselectDay">
+											
+										 </select>
+									  </div>
+                                    </div>
+                                    <div class="dataProImg">
+										<span>Data provided by</span> <img src="dist/img/clarksons_logo.gif" />
+                                    </div>
+                                 </fieldset>
+                              <!-- .lli-brand-box -->
                            </div>
-                           <div class="form-control jumpToSection">
-                              <label for="jumpTo">Jump to:</label>
-                              <select name="jumpTo" id="jumpTo" class="common-field inline">
-                              </select>
-                           </div>
+                           <!-- .lli-brand-container -->
                         </div>
-                        <table class="table" id="casualty-listing-table">
-                           <!-- <thead class="table_head">
-                              <tr class="visible-lg">
-                                 <th class="pad-10">Title</th>
-                                 <th class="pad-10">Date of Incident</th>
-                                 <th class="pad-10">Area</th>
-                              </tr>
-                              <tr class="visible-sm" >
-                                 <th colspan="6" class="pad-full-10">Table Header</th>
-                              </tr>
-                           </thead> -->
-                           <!-- <tbody class="visible-lg">
-                              <tr>
-                                 <td colspan="2" class="graybg RB18 pad-10"> MARINE</td>
-                                 <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">ASKO (Liberia)</a></td>
-                                 <td class="R16 pad-10">09.12.2016</td>
-                                 <td class="R16 pad-10">Baltic</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">CONTAINERSHIPS VIII (Germany)</a></td>
-                                 <td class="R16 pad-10">07.12.2016</td>
-                                 <td class="R16 pad-10">British Isles, North Sea, English Channel, Bay of Biscay</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">IBRAHIM KONAN (Panama)</a></td>
-                                 <td class="R16 pad-10">06.12.2016</td>
-                                 <td class="R16 pad-10">East Mediterranean & Black Sea</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">KONG HARALD (Norway)</a></td>
-                                 <td class="R16 pad-10">08.12.2016</td>
-                                 <td class="R16 pad-10">Russian Arctic and Bering Sea</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">MINA 1 (Turkey)</a></td>
-                                 <td class="R16 pad-10">10.11.2016</td>
-                                 <td class="R16 pad-10">East Mediterranean & Black Sea</td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">RONJA VIKING (Norway)</a></td>
-                                 <td class="R16 pad-10">11.12.2016</td>
-                                 <td class="R16 pad-10">British Isles, North Sea, English Channel, Bay of Biscay</td>
-                              </tr>
-                              <tr>
-                                 <td colspan="2" class="graybg RB18 pad-10"> SEIZURES & ARRESTS</td>
-                                 <td colspan="1" align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">ASKO (Liberia)</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">CONTAINERSHIPS VIII (Germany)</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">IBRAHIM KONAN (Panama)</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">KONG HARALD (Norway)</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">MINA 1 (Turkey)</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="RB16 pad-10"><a href="#">RONJA VIKING (Norway)</a></td>
-                              </tr>
-                           </tbody> -->
-                           <!-- <tbody class="visible-sm">
-                              <tr>
-                                 <td class="graybg RB18 pad-full-10"> MARINE</td>
-                                 <td align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Date of Incident</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Date of Incident</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Date of Incident</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Date of Incident</td>
-                                 <td class="pad-10 R21_RedColor">09.12.2016</td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Area</td>
-                                 <td class="pad-10 R21_RedColor">Baltic</td>
-                              </tr>
-                              <tr>
-                                 <td class="graybg RB18 pad-full-10"> SEIZURES & ARRESTS</td>
-                                 <td align="right" class="graybg RB18 pad-10"><a href="#">top</a></td>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                              <tr>
-                                 <td class="pad-10 R21_GrayColor">Title</td>
-                                 <td class="pad-10 R21_RedColor"><a href="#">ASKO (Liberia)</td>
-                                 </a>
-                              </tr>
-                           </tbody> -->
-                        </table>
-                     </div>
+						<div id="shipFixtures">
+                         
+						</div>
                   </div>
+				  </div>
                   <div class="article-right-rail">
                      <!-- I'm an edit -->
-                     <section class="article-preview article-preview--small">
+                     <!-- <section class="article-preview article-preview--small">
                         <div class="advertising advertising">
                            <span class="advertising__label">Advertisement</span>
                            <script>
@@ -301,7 +183,26 @@
                            <noscript class="MOAT-informaoas952337543472?moatClientLevel1=Covance&amp;moatClientLevel2=Informa/Covance-Scrip-Microsite-MPU&amp;moatClientLevel3=11233753&amp;moatClientSlicer1=www.scripnews.com/home/L22&amp;moatClientSlicer2=www.scripnews.com/home&amp;moatClientSlicer3=Position2"></noscript>
                            <script src="https://z.moatads.com/informaoas952337543472/moatad.js#moatClientLevel1=Covance&amp;moatClientLevel2=Informa/Covance-Scrip-Microsite-MPU&amp;moatClientLevel3=11233753&amp;moatClientSlicer1=www.scripnews.com/home/L22&amp;moatClientSlicer2=www.scripnews.com/home&amp;moatClientSlicer3=Position2" type="text/javascript"></script>
                         </div>
-                     </section>
+                     </section> -->
+					 
+					 
+                    <div class="marketdata-links">
+						<div class="shippingData">
+							<h2>About Shipping Movements</h2>
+							<div class="shippingDesc">
+								<p>Lloyd's List Shipping Movements are provided by Lloyd's List Intelligence, the leading provider of online shipping intelligence, data and analysis to the global maritime and trade communities.</p>
+								<p>With channels dedicated to key areas: The shipping markets, insurance and law & regulation, Lloyd’s List Intelligence combines the expertise of a global staff of maritime analysts with the most extensive system of shore based and satellite intelligence to create the complete decision support service for the maritime industry.</p>
+							</div>
+						</div>
+						
+						<div class="hideMarketData hide">
+							<h2>Go To Port</h2>
+							<div class="gotolinks">
+							
+							</div>
+						</div>
+					</div>
+					
                   </div>
                </div>
             </div>
@@ -473,7 +374,7 @@
                         <p>
                            <span class="pop-out__run-in">Add a personalized message to your email</span>
                         </p>
-                        <textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+                        <textFlag name="PersonalMessage" class="pop-out__input pop-out__textFlag"></textFlag>
                         <input type="hidden" name="ArticleNumber" value="SC065123">
                         <div class="pop-out__form-actions-wrapper">
                            <div class="dismiss-button" data-target-element=".js-pop-out__email-article">
@@ -646,67 +547,6 @@
          <p></p>
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
-      <script type="text/javascript">
-         var jsonCasualtyListing = [
-              {
-                "12-02-2016": {
-				"casualtyMarine":{	
-					"casualtytitle":"Marine","casualtyData":[{	
-					"Title":"CALEDONIA (Malta) ","incidentId":"451081","Date Of Incident":"2017-03-05 00:00:00.0","Area":"East Mediterranean & Black Sea East Mediterranean & Black Sea"},{
-					"Title":"CARNIVAL PRIDE (Panama) ","incidentId":"417262","Date Of Incident":"2016-05-08 00:00:00.0","Area":"United States eastern seaboard"},{
-					"Title":"SEWOL (Republic of Korea) ","incidentId":"405731","Date Of Incident":"2014-04-16 00:00:00.0","Area":"Japan, Korea and North China"},{
-					"Title":"SILVER LION (Antigua & Barbuda) ","incidentId":"451127","Date Of Incident":"2017-03-08 00:00:00.0","Area":"East Mediterranean & Black Sea"},{
-					"Title":"ST. BRAQUIEL (Philippines) ","incidentId":"450813","Date Of Incident":"2017-02-18 00:00:00.0","Area":"South China, Indo China, Indonesia and Philippines"
-					}
-					]
-					},
-                  "casualtyseizures": {	
-					"casualtytitle":"Seizures & Arrests","casualtyData":[{	
-					"Title":"HANJIN ASIA (Isle of Man) ","incidentId":"420502","Date Of Incident":"","Area":""
-					}
-					]
-					}
-                },
-                "12-12-2016": {
-                  "casualtymarine": {
-                    "casualtytitle": "MARINE2",
-                    "casualtyData": [
-                      {
-                        "Title": "APL DENVER (Gibraltar)",
-                        "incidentId": "22",
-                        "Date of Incident": "03.01.2017",
-                        "Area": "South China, Indo China, Indonesia and Philippines"
-                      },
-                      {
-                        "Title": "APL DENVER (Gibraltar)",
-                        "incidentId": "23",
-                        "Date of Incident": "03.01.2017",
-                        "Area": "South China, Indo China, Indonesia and Philippines"
-                      }
-                    ]
-                  },
-                  "casualtyseizures": {
-                    "casualtytitle": "SEIZURES2",
-                    "casualtyData": [
-                      {
-                        "Title": "APL DENVER (Gibraltar)",
-                        "incidentId": "24",
-                        "Date of Incident": "03.01.2017",
-                        "Area": "South China, Indo China, Indonesia and Philippines"
-                      },
-                      {
-                        "Title": "APL DENVER (Gibraltar)",
-                        "incidentId": "25",
-                        "Date of Incident": "03.01.2017",
-                        "Area": "South China, Indo China, Indonesia and Philippines"
-                      }
-                    ]
-                  }
-                }
-              }
-            ]
-
-      </script>
       <script src="/dist/js/index.js"></script> 
    </body>
 </html>

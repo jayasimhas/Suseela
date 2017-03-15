@@ -1,13 +1,32 @@
 (function () {
 	var marketData = {
-		renderTable: function(data, renderId){
-			this.loadMobileView(data, renderId[0]);
-			this.loadDescView(data, renderId[1]);
+		recreateArr: [],
+		renderTable: function(dataObj, renderId){
+			console.log('Length of object is: ' + dataObj.length);
+			for(var i=0; i<dataObj.length; i++){
+				var filterObj = Object.keys(dataObj[i]), createObj = {}, filterKeys;
+				if(filterObj[1].split('-').length == 2){
+					filterKeys = this.sortDateOptions(filterObj);
+				}
+				else{
+					filterKeys = filterObj.sort().reverse();
+				}
+				for(var j=0; j<filterKeys.length; j++){
+					for(var prop in dataObj[i]){
+						if(prop == filterKeys[j]){
+							createObj[prop] = dataObj[i][prop]; 
+						}
+					}
+				}
+				this.recreateArr.push(createObj);
+			}
+			this.loadMobileView(this.recreateArr, renderId[0]);
+			this.loadDescView(this.recreateArr, renderId[1]);
 			this.initiateCarousel(renderId[0]);
 			this.setColHeight(renderId);
 		},
 		loadMobileView: function(tableData, id){
-			var headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
+			var self = this, headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
 				$.each(headObj, function(key, val){
 					colInd++;
 					if(colInd <= 6){
@@ -16,7 +35,7 @@
 							$('.states_heading').append('<div class="title" data-title="'+key+'"><span>'+ key + '</span></div>');
 						}
 						else{
-							$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+key+'</div></div>');
+							$(id).append('<div class="item titleHead" data-title="'+key+'"><div class="title">'+self.genarateDate(key)+'</div></div>');
 						}
 					}
 				});
@@ -38,12 +57,18 @@
 				}); 
 		},
 		loadDescView: function(tableData, id){
-			var thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0, colHeadInd = 0, colInd = 0;
+			var self = this, thead = tableData[0], descStr = '<thead class="table_head">', index = 0, indx = 0, colHeadInd = 0, colInd = 0, titflag = true;
 			descStr += "<tr>";
 			for(var prop in thead){
 				colHeadInd++;
 				if(colHeadInd <= 6){
-					descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+					if(titflag){
+						titflag = false;
+						descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+					}
+					else{
+						descStr += "<th class='title'><div class='pad'>" + self.genarateDate(prop) + "</div></th>";
+					}
 				}
 				else break;
 			}
@@ -74,6 +99,52 @@
 			});
 			$(id).html(descStr);
 		},
+		genarateDate(date){
+			if(date.split(' ').length === 2){
+				var getDate = date.split(' ')[0], 
+					splDate = getDate.split('-'),
+					getObjDate = new Date(splDate[0], splDate[1]-1, splDate[2]),
+					getObjDateSpl = getObjDate.toString().split(' ');
+					return getObjDateSpl[2] + ' ' + getObjDateSpl[1] + ' ' + getObjDateSpl[3];
+			}
+			else{
+				return date.split('-').reverse().join(' ');
+			}
+		},
+		sortDateOptions: function(filterObj){
+			var generateDate = [], sortArray, createFinalArr = [];
+			for(var i=0; i<filterObj.length; i++){
+				if(filterObj[i].indexOf('-') !== -1){
+					var dateSpl = filterObj[i].split('-');
+					generateDate.push(dateSpl[0]+'/'+this.convertMonthNameToNumber(dateSpl[1])+'/'+new Date().getFullYear());
+				}
+				else{
+					generateDate.push(filterObj[i]);
+				}
+			}
+			sortArray = generateDate.sort(function(a,b) {
+						  a = a.split('/').reverse().join('');
+						  b = b.split('/').reverse().join('');
+						  return a > b ? 1 : a < b ? -1 : 0;
+						}).reverse();
+			
+			for(var i=0; i<sortArray.length; i++){
+				if(sortArray[i].indexOf('/') !== -1){
+					var splArr = sortArray[i].split('/'),
+					dateStr = new Date(+splArr[1]+1 +'/'+splArr[0]+'/'+splArr[2]).toDateString();
+					createFinalArr.push(dateStr.split(' ')[2] + '-' + dateStr.split(' ')[1].toUpperCase());
+				} 
+				else{
+					createFinalArr.push(sortArray[i]);
+				}
+			}
+			return createFinalArr;
+		},
+		convertMonthNameToNumber: function(monthName){
+			var myDate = new Date(monthName + " 1");
+				var monthDigit = myDate.getMonth();
+				return isNaN(monthDigit) ? 0 : (monthDigit);
+		},
 		initiateCarousel: function(id){
 			$(id).owlCarousel({
 				loop:true,
@@ -95,8 +166,8 @@
 					480:{
 					 items:2
 					},
-					1000:{
-					items: 6
+					1024:{
+					 items:2
 					}
 				}
 			});
@@ -109,9 +180,9 @@
 				});
 			});
 		},
-		init: function(data, renderId) {
+		init: function(dataObj, renderId) {
 			var self = this;
-			self.renderTable(data, renderId);
+			self.renderTable(dataObj, renderId);
 			$(window).resize(function() {
 				self.setColHeight(renderId);
 			})

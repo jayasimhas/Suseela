@@ -260,7 +260,6 @@
 				self.CurrentArray = FilteredArray;
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
-
 			});
 		},
 		YearChange: function() {
@@ -316,6 +315,45 @@
 				$(this).toggleClass('active');
 			})
 		},
+		autoSuggest: function(data) {
+			var haystackMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+				$('input[deal="Month"]').suggest(this.MonthNames);
+
+				var haystackAcquirer = [], haystackTarget = [], haystackTargetSector = [], haystackTargetLocation = [];
+				for(var i = 0; i < data.length; i++) {
+					var item = data[i];
+					
+					for(var key in item) {
+						var Text = "";
+						if(item[key].indexOf('<a href') != -1) {
+
+							Text = $(item[key]).text();
+						} else {
+							Text = item[key];
+						}
+
+						if(key == 'Acquirer') {
+							haystackAcquirer.push(Text);
+						}
+						if(key == 'Target') {
+							haystackTarget.push(Text);
+						}
+						if(key == 'TargetSector') {
+							haystackTargetSector.push(Text);
+						}
+						if(key == 'TargetLocation') {
+							haystackTargetLocation.push(Text);
+						}
+					}
+				}
+				
+				$('input[deal="Acquirer"]').suggest(haystackAcquirer);
+				$('input[deal="Target"]').suggest(haystackTarget);
+				$('input[deal="TargetSector"]').suggest(haystackTargetSector);
+				$('input[deal="TargetLocation"]').suggest(haystackTargetLocation);
+		},
+		scrollbarSticky: function() {},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
@@ -325,6 +363,11 @@
 			this.YearChange();
 			this.MobileEvent();
 			this.showLargestEvent();
+			
+			if($(window).width() > 667) {
+				this.autoSuggest(data);
+			}
+			this.scrollbarSticky();
 		}
 	}
 

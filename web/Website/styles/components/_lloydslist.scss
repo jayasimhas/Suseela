@@ -90,6 +90,7 @@
 	}
 }
 #tanker-Pure-ChemPage{ 
+	width: 100%;
 	@include breakpoint('small') {
 		float: left;
 		width: 100%;
@@ -101,13 +102,16 @@
 	}
 }
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
-#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage{
+#cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	.borTop{
 		height: 1px;
 		border-top: 1px solid #d1d3d4;
 		display: block;
 	}
+	.oddCls{
+		background: #f1f1f1;
+	} 
 	&.table-responsive .table {
 		margin-bottom: 2rem;
 		&.mobView{
@@ -373,17 +377,31 @@
 	margin-bottom: 2rem;
 	width: 100%;
 	.owl-wrapper{
-		width: 100%;
+		width: 80%;
+		float: left;
+		@media only screen and (min-width: 600px) and (max-width: 1024px) {
+			width: 60%;
+			border-right: 1px solid #e9e9e9;
+		}
+		@include breakpoint('small') {
+			width: 50%;
+		} 
 	}
+	.owl-dotsNav{
+		@media only screen and (max-width: 1024px) { 
+			background: #0f5487; height: 30px;
+		}
+	}
+	.owl-theme .owl-nav{display: none !important;}
 	.showinMob{
 		display: none;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 1024px) {
 			display: block;
 		}
 	}
 	.hideinMob{
 		display: none;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: 1025px) {
 			display: block;
 		}
 	}
@@ -401,10 +419,10 @@
 			width:20%;
 			z-index: 9;
 			@media only screen and (min-width: 767px) and (max-width: 1024px) {
-				width: 20%;
+				width: 40%;
 			}
 			@include breakpoint('small') {
-				width: 35%;
+				width: 50%;
 			}
 			@media only screen and (max-width: 320px) {
 				width: 62%;
@@ -416,19 +434,12 @@
 				background-color: #1191d1;
 				color: #ffffff;
 				padding: 8px 5px 8px 12px;
-				@include textMix('Roboto', 1em, bold);
-				@media only screen and (min-width: 768px) and (max-width: 1024px) {
-					font-size: 0.9rem;
-					padding: 12px 2px;
-				}
+				@include textMix('Roboto', 1em, bold); 
 			}
 			.R16{
 				padding: 12px 10px;
 				border-bottom: 1px solid #e1e1e1;
-				border-right: 1px solid #e9e9e9; 
-				@media only screen and (min-width: 767px) and (max-width: 1024px) {
-					padding: 12px 6px;
-				} 
+				border-right: 1px solid #e9e9e9;
 			}
 			.leftbord{
 				border-left: 1px solid #e9e9e9;
@@ -448,9 +459,10 @@
 		background: #f1f1f1;
 	} 
 	.marketDataTable{
+		width: 100%;
 		border: inherit;
 		border-left: 1px solid #d1d3d4;
-		@include breakpoint('small') {
+		@media only screen and (max-width: 1024px) {
 			border-left: none;
 		}
 		.owl-dots{
@@ -473,34 +485,17 @@
 		.R16{
 			.pad{
 				padding: 12px 16px;
-				white-space: nowrap;
-				@media only screen and (min-width: 768px) and (max-width: 1023px) {
-					font-size: 0.9rem;
-					padding: 12px 2px;
-				}
+				white-space: nowrap; 
 				@media only screen and (min-width: 376px) and (max-width: 667px) {
 					padding: 0px;
 					white-space: normal;
 				} 
-				@media only screen and (min-width: 769px) and (max-width: 1024px) {
-					padding: 12px 6px;
-					font-size: 1rem;
-				}
 			}
-			@media only screen and (max-width: 767px) {
+			@media only screen and (max-width: 1024px) {
 				padding: 12px 0px;
 			}
 			border-bottom: 1px solid #e1e1e1;
-			border-right: 1px solid #e9e9e9; 
-			@media only screen and (min-width: 768px) and (max-width: 1024px) {
-				width: 16%;
-				&:not(:nth-child(1)){
-					white-space: nowrap;
-				}
-			} 
-			@media only screen and (min-width: 1025px) {
-				width: 15%; 
-			}
+			border-right: 1px solid #e9e9e9;  
 		}
 		tr{
 			.R16:first-child{
@@ -510,10 +505,7 @@
 					@media only screen and (min-width: 769px) and (max-width: 1024px) {
 						padding: 12px 6px;
 					}
-				}
-				@media only screen and (min-width: 1025px) {
-					width: 22%; 
-				}
+				} 
 				@media only screen and (min-width: 769px) and (max-width: 1024px) {
 					padding: 0px 6px;
 					font-size: 1rem;
@@ -523,15 +515,9 @@
 		.owl-controls{
 			display: none;
 		}
-		@media only screen and (max-width: 767px) {
+		@media only screen and (max-width: 1024px) {
 			.owl-controls{
 				display: block;
-			}
-		}
-		.item{
-			height: auto !important;
-			&:first{
-				border-left: 1px solid red;
 			}
 		}
 		.pad-20{
@@ -552,24 +538,18 @@
 			padding: 8px 12px 8px 20px;
 			text-align: left;
 			@include textMix('Roboto', 1em, bold);
-			@media only screen and (min-width: 767px) {
-				width: 16%;
-				&:first-child{
-					width: 20%;
-				}
-			}
 		} 
 		span.numData{
 			width: 40px;
 			text-align: right;
 			display: inline-block;
 			@include breakpoint('small') {
-				width: 40px; 
-				margin-right: 16px;
+				width: 50px; 
+				margin-right: 6px;
 			}
-			@media only screen and (min-width: 768px) and (max-width: 1023px) {
-				width: 30px; 
-				margin-right: 3px;
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 40%; 
+				margin-right: 10%
 			}
 		}
 		span.rise {
@@ -580,13 +560,10 @@
 			@include breakpoint('small') {
 				width: 40px; 
 				margin-right: 16px;
-			}
-			@media only screen and (min-width: 768px) and (max-width: 1023px) {
-				width: 30px; 
-				margin-right: 3px;
-			}
-			@media only screen and (min-width: 769px) and (max-width: 1024px) {
-				width: 40px; 
+			} 
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 40%; 
+				margin-right: 10%
 			}
 		}
 		span.fall {
@@ -672,3 +649,114 @@
 		}
 	}
 }
+
+#howeRobinsonContainer{
+	width:100%;
+	.states_heading{
+		position:relative;
+		float:left;
+		width:40%;
+		z-index: 9;
+		@media only screen and (max-width: 600px) {
+			width:50%;
+		}
+	}
+	.carousel-div{
+		position:relative;
+		width: 100%;
+	}
+	.owl-wrapper{
+		width: 60%;
+		float: left;
+		@media only screen and (max-width: 600px) {
+			width:50%;
+		}
+	}
+	.title{
+		background-color: #1191d1;
+		color: #ffffff;
+		padding: 8px 5px 8px 12px;
+		@include textMix('Roboto', 1em, bold);
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			font-size: 0.9rem;
+			padding: 12px 2px;
+		}
+		@media only screen and (max-width: 600px) {
+			height: 55px;
+		}
+	}
+	.R16{
+		padding: 12px 10px;
+		border-bottom: 1px solid #e1e1e1;
+		border-right: 1px solid #e9e9e9; 
+		@media only screen and (min-width: 767px) and (max-width: 1024px) {
+			padding: 12px 6px;
+		} 
+	}
+	.titleHead{
+		width: 100%;
+	}
+	.leftbord{
+		border-left: 1px solid #e9e9e9;
+	}
+	.owl-dotsNav{
+		background: #0f5487; height: 30px;
+	}
+	.owl-dots{
+		background: #0f5487;
+		margin-top: -29px;
+		height: 30px;
+		text-align: right; 
+		padding-right: 15px; 
+		position: absolute;
+		top: -1px;
+		width: 100%;
+		 
+		.owl-dot{
+			span{
+				margin: 10px 7px;
+				background: #1191d1;
+			}
+			&.active span{
+				background: #fff;
+			}
+		}
+	}
+	.owl-nav{
+		display: none;
+	}
+}
+
+#fisDryBulkContainer{
+	width: 100%;
+	.tableTitle{
+		background-color: #0f5487;
+		color: #fff;
+	}
+	.tableheader{
+		background-color: #f1f1f1;
+	}
+	.lli-brand-container .form-control{
+		width: 100%;
+	}
+	.boedTop{
+		border: 1px solid #e9e9e9;
+	}
+	.showinMob{
+		display: none;
+	}
+	 
+	@media only screen and (max-width: 480px) {
+		.showinMob{
+			display: block;
+		}
+		.showinDesk{
+			display: none;
+		}
+	}
+}
+ #market-imarex {
+	 .lli-brand-container .form-control{
+		width: 100%;
+	}
+ }

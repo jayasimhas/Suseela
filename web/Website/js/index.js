@@ -12,6 +12,7 @@ import DropBox from './DragDropTouch';
 import zeptoData from './carousel/zepto.data';
 //import app from './carousel/app';
 import './carousel/owl.carousel';
+import './zepto.suggest';
 // CONTROLLERS
 import FormController from './controllers/form-controller';
 import PopOutController from './controllers/pop-out-controller';
@@ -57,6 +58,9 @@ import './components/ll-cockett-bunker.js';
 import './components/ll-ship-vehicle.js';
 import './components/ll-ship-roro.js';
 import './components/ll-ship-container-ship.js';
+import './components/ll-shipContainerShipFixtures';
+import './components/ll-fisDryBulk';
+import './components/ll-howeRobinson';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -1286,15 +1290,10 @@ $(document).ready(function(){
 	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
 	}
    
-   // //IDE Login to Different Sales Force
-   // $(document).ready(function() {
-   //      var LoginUrl = window.location.href;
-   //      if( (LoginUrl.indexOf('login=success') != -1) && $('.header-account-access__label').hasClass('header_salesforce_sign-in-out') ) {
-   //          var UserId = $('.header-account-access__friendly-greeting').text().split('Hi, ')[1];
-   //          $('#hiddenforms_login form').each(function() {
-   //              $(this).find('input[type="text"]').val(UserId);
-   //              $(this)[0].submit();
-   //          });
-   //      }
-   // })
+    //IPMP-2220
+	if($(".myView-placeholder").length == 0) {
+		$('.header-account-right-access').addClass('nomyView');
+		$('.header-publication-links').addClass('nomyView');
+	}
+
 });

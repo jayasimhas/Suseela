@@ -1,10 +1,6 @@
-﻿using System;
-using Glass.Mapper.Sc.Fields;
-using Informa.Library.Services.ExternalFeeds;
+﻿using Informa.Library.Services.ExternalFeeds;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Authentication;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
@@ -31,12 +27,12 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Baltic indices data in json format
         /// </summary>
-        public string jsonBalticIndices => GetBalticIndicesData();
+        public string jsonTableData => GetTablesData();
         /// <summary>
         /// Method to get Baltic Indices data from external url
         /// </summary>
         /// <returns></returns>
-        private string GetBalticIndicesData()
+        private string GetTablesData()
         {
             if (RenderingParameters != null && !string.IsNullOrEmpty(RenderingParameters.External_Feed_URL))
             {
@@ -48,8 +44,5 @@ namespace Informa.Web.ViewModels.Casualty
                 return string.Empty;
             }
         }
-
-        //Table Variation-2
-        
     }
 }

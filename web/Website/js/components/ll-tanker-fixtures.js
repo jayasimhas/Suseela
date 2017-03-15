@@ -2,7 +2,7 @@
 	var tankerFixtures = {
 		renderDateData: function(data){
 			if(data[0]['SelectDate'] !== undefined){
-				$('#selectDay').html(this.loadDropdownData(data[0]['SelectDate']));
+				$('#tankerselectDay').html(this.loadDropdownData(data[0]['SelectDate']));
 			}
 		},
 		loadDropdownData: function(options){
@@ -18,11 +18,11 @@
 			return optionStr;
 		},
 		renderTable: function(tableData){
-			var self = this, loadDateVal = $('#selectDay option').val();
-
+			var self = this, loadDateVal = $('#tankerselectDay option').val();
+			
 			self.callAjaxFn(loadDateVal);
-			$(document).on('change', '#selectDay', function(){
-				var selectDateVal = $('#selectDay option').val();
+			$(document).on('change', '#tankerselectDay', function(){
+				var selectDateVal = $('#tankerselectDay option').val();
 				self.callAjaxFn(selectDateVal);
 			});
 		},
@@ -37,7 +37,7 @@
 					self.sendHTTPRequest(searchData);
 				},
 				error: function (err) {
-					console.log(err);
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
@@ -52,14 +52,14 @@
 		loadDesktopView: function(tableData){
 			var tableStr = '';
 			for(var i = 0; i < tableData.length; i++){
-				var theadFlag = true, tbodyFlag = true, tbodyFlagend = false, idx = 0;
+				var theadFlag = true, tbodyFlag = true, tbodyFlagend = false, idx = 0, rowIdx = 0;
 					tableStr += '<table class="table descView"><thead class="table_head">';
 				for(var prop in tableData[i]){
 					tableStr += '<tr>';
 					tableStr += '<th colspan="8" class="pad-full-10">'+prop+'</th>';
 					tableStr += '</tr>';
 					for(var j = 0; j < tableData[i][prop].length; j++){
-						idx++;
+						rowIdx++;
 						if(tableData[i][prop].length == idx - 1) tbodyFlagend = true;
 						var eachObj = tableData[i][prop];
 						
@@ -75,7 +75,8 @@
 							tbodyFlag = false;
 							tableStr += '<tbody class="visible-lg">';
 						}
-						tableStr += '<tr>';
+						var rowCls = (rowIdx % 2 === 0) ? 'oddCls' : '';
+						tableStr += '<tr class="'+rowCls+'">';
 						for(var p in eachObj[j]){
 							tableStr += '<td class="R16 pad-10">'+eachObj[j][p]+'</td>';
 						}
@@ -128,7 +129,7 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(dateOptions);
+			tankerFixtures.init(TankerFixturesDateOptions);
 		}
 	});
 })();
