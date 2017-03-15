@@ -2320,7 +2320,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     background-color: #de4361;
     height: auto; }
     #main-carousel .companies_heading span {
-      width: 100%;
+      width: 90%;
       display: inline-block;
       padding: 10px 0 10px 20px;
       color: #fff;
@@ -2330,9 +2330,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-weight: 500; }
       @media (max-width: 667px) {
         #main-carousel .companies_heading span {
-          padding-right: 110px;
-          margin-bottom: 16px;
-          margin-bottom: 1rem; } }
+          padding-right: 110px; } }
 
 #graph-carousel {
   margin-bottom: 32px;
