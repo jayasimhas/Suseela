@@ -21,10 +21,6 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
         protected string RequestFailedKey => TextTranslator.Translate("ContactInfo.RequestFailed");
-
-        private const string UserDetailsSeparatorKey = "UserDetailsSeparator";
-
-        private string _userDetailsSeparator = Settings.GetSetting(UserDetailsSeparatorKey);
         private string SalutationFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.Salutation");
         private string FirstNameFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.FirstName");
         private string MiddleNameFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MiddleName");
@@ -39,12 +35,12 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         private string MailingStateFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingState");
         private string MailingCountryFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingCountry");
         private string MailingPostalCodeFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.MailingPostalCode");
-        private string ContactReferenceName => TextTranslator.Translate("ContactInfo.Reference.Contact"); 
+        private string ContactReferenceName => TextTranslator.Translate("ContactInfo.Reference.Contact");
         private string MobileFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.Mobile");
-                public SalesforceManageAccountInfoV2(
-    ITextTranslator textTranslator,
-    ISalesforceConfigurationContext salesforceConfigurationContext,
-    ISalesforceInfoLogger infoLogger)
+        public SalesforceManageAccountInfoV2(
+ITextTranslator textTranslator,
+ISalesforceConfigurationContext salesforceConfigurationContext,
+ISalesforceInfoLogger infoLogger)
         {
             TextTranslator = textTranslator;
             SalesforceConfigurationContext = salesforceConfigurationContext;
@@ -56,30 +52,18 @@ namespace Informa.Library.Salesforce.V2.User.Profile
             string FirstName,
             string LastName,
             string MiddleInitial,
-            string NameSuffix,
             string Salutation,
-            string BillCountry,
-            string BillAddress1,
-            string BillAddress2,
-            string BillCity,
-            string BillPostalCode,
-            string BillState,
             string ShipCountry,
             string ShipAddress1,
-            string ShipAddress2,
             string ShipCity,
             string ShipPostalCode,
             string ShipState,
-            string Fax,
-            string CountryCode,
-            string PhoneExtension,
             string Phone,
-            string PhoneType,
+                string Mobile,
             string Company,
             string JobFunction,
             string JobIndustry,
-            string JobTitle,
-            string Mobile
+            string JobTitle
             )
         {
             if (string.IsNullOrEmpty(user?.Username))
@@ -104,10 +88,7 @@ namespace Informa.Library.Salesforce.V2.User.Profile
             if (!string.IsNullOrWhiteSpace(MiddleNameFieldName))
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = MiddleNameFieldName, FieldValue = MiddleInitial, Reference = "" });
-            ////request.Preferences.Add(new SalesforceField()
-            ////{ FieldName = "Title", FieldValue = NameSuffix, Reference = ContactReferenceName });
 
-            //Job
             if (!string.IsNullOrWhiteSpace(CompanyNameFieldName))
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = CompanyNameFieldName, FieldValue = Company, Reference = "" });
@@ -124,22 +105,35 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = Industry__cFieldName, FieldValue = JobIndustry, Reference = ContactReferenceName });
 
-            //Phone
-            ////request.Preferences.Add(new SalesforceField()
-            ////{ FieldName = "PhoneType", FieldValue = PhoneType, Reference = ContactReferenceName });
 
             if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
                 {
                     FieldName = PhoneFieldName,
-                    FieldValue = string.Format("{0}" + _userDetailsSeparator + "{1}" + _userDetailsSeparator + "{2}", CountryCode, Phone, PhoneExtension),
+                    FieldValue = Phone,
+                    Reference = ContactReferenceName
+                });
+
+            if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                request.Preferences.Add(new SalesforceField()
+                {
+                    FieldName = PhoneFieldName,
+                    FieldValue = Phone,
+                    Reference = ContactReferenceName
+                });
+
+            if (!string.IsNullOrWhiteSpace(MobileFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                request.Preferences.Add(new SalesforceField()
+                {
+                    FieldName = MobileFieldName,
+                    FieldValue = Mobile,
                     Reference = ContactReferenceName
                 });
 
             // Address
             if (!string.IsNullOrWhiteSpace(MailingStreetFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingStreetFieldName, FieldValue = string.Format("{0}" + _userDetailsSeparator + "{1}", ShipAddress1, ShipAddress2), Reference = ContactReferenceName });
+                { FieldName = MailingStreetFieldName, FieldValue = ShipAddress1, Reference = ContactReferenceName });
             if (!string.IsNullOrWhiteSpace(MailingCityFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = MailingCityFieldName, FieldValue = ShipCity, Reference = ContactReferenceName });
@@ -153,23 +147,6 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = MailingPostalCodeFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
 
-            if (!string.IsNullOrWhiteSpace(MobileFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                {
-                    FieldName = MobileFieldName,
-                    FieldValue = Mobile,
-                    Reference = ContactReferenceName
-                });
-            ////var EBIBillAddress = new EBI_Address()
-            ////{
-            ////    addressLine1 = BillAddress1,
-            ////    addressLine2 = BillAddress2,'
-            ////    city = BillCity,
-            ////    company = Company,
-            ////    country = BillCountry,
-            ////    postalCode = BillPostalCode,
-            ////    stateProvince = BillState
-            ////};
 
             using (var client = new HttpClient())
             {

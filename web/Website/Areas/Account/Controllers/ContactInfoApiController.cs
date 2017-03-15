@@ -63,13 +63,10 @@ namespace Informa.Web.Areas.Account.Controllers
 
             var result =
                 AccountInfoV2.UpdateContactInfo(
-                UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
-                form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,
-                form.BillState,
-                form.ShipCountry, form.ShipAddress1, form.ShipAddress2, form.ShipCity, form.ShipPostalCode,
-                form.ShipState,
-                form.Fax, form.CountryCode, form.PhoneExtension, form.Phone, form.PhoneType, form.Company,
-                form.JobFunction, form.JobIndustry, form.JobTitle, form.Mobile);
+                UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.Salutation,
+                form.ShipCountry, form.ShipAddress1, form.ShipCity, form.ShipPostalCode, form.ShipState,
+                form.Phone, form.Mobile,
+                form.Company, form.JobFunction, form.JobIndustry, form.JobTitle);
 
             if (result.Success)
                 ProfileContext.Clear();
@@ -96,7 +93,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 });
             }
 
-            var result = 
+            var result =
                 AccountInfo.UpdateContactInfo(
                 UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.NameSuffix, form.Salutation,
                 form.BillCountry, form.BillAddress1, form.BillAddress2, form.BillCity, form.BillPostalCode,

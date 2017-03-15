@@ -1,6 +1,6 @@
 ﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel>
 @{ 
-    string salesforce = string.Empty;
+    string salesforceAPI = string.Empty;
 }
 @if (Model.IsAuthenticated || IsInEditingMode)
 {
@@ -127,15 +127,15 @@
             <hr>
             @if(Model.IsNewSalesforceEnabled)
             {
-                salesforce = "/Account/api/ContactInfoApi/UpdateContactInfoV2/";
+                salesforceAPI = "/Account/api/ContactInfoApi/UpdateContactInfoV2/";
             }
             else
             {
-                salesforce = "/Account/api/ContactInfoApi/UpdateContactInfo/";
+                salesforceAPI = "/Account/api/ContactInfoApi/UpdateContactInfo/";
             }
 
             <form class="form-update-account-contact"
-                  data-on-submit="@salesforce" method="POST">
+                  data-on-submit="@salesforceAPI" method="POST">
 
                 <div class="alert-error js-form-error js-form-error-Required">
                     <svg class="alert__icon">
