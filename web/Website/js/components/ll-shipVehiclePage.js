@@ -16,8 +16,8 @@
 			var self = this, TableStr = "", loadDateVal = $('#shipVehicleselDay option').val();
 			Parent.empty();
 			
-			//self.sendHTTPRequest(shipVehicleTableData[0], Parent);
-			self.callAjaxFn(loadDateVal, Parent);
+			self.sendHTTPRequest(shipVehicleTableData[0], Parent);
+			//self.callAjaxFn(loadDateVal, Parent);
 			$(document).on('change', '#shipVehicleselDay', function(){
 				var selectDateVal = $('#shipVehicleselDay option').val();
 				self.callAjaxFn(selectDateVal, Parent);
@@ -47,8 +47,8 @@
 				for(var key in searchData) {
 					TableStr += self.RenderSingleTable(key, searchData[key]);
 				}
-				Parent.append(TableStr);	
-			}
+			} 
+			Parent.append(TableStr);	 
 		}, 
 		RenderSingleTable: function(heading, Data) {
 			console.log(Data);
