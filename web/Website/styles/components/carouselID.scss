@@ -194,15 +194,17 @@
 			display: block;
 			width: 100%;
 			position: relative;
+			background-color: #de4361;
+			height: auto;
 			span{
 				width: 100%;
 				display: inline-block;
 				padding: 10px 0 10px 20px;
 				color: #fff;
-				background-color: #de4361;
 				@include textMix('Roboto', 1rem, 500);
 				@media (max-width: 667px){
 					padding-right: 110px;
+					margin-bottom: 1rem;
 				}
 			}
 		}
