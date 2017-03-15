@@ -235,21 +235,31 @@
 		}
 	}
 
-	.graphs-container h4 { text-transform: uppercase; padding: 10px; }
-	.graph-container h5 { font-weight: bold; font-size: 11px; color: #333333; padding: 5px; }
+	.graphs-container h4 { text-transform: uppercase; padding-top: 10px;}
+	.graph-container h5 {
+		font-size: 14px;
+		font-weight: 500;
+		vertical-align: middle;
+		display: inline-block;
+		text-align: left;
+		margin: 20px 20px 0 0;
+		overflow: hidden;
+		line-height: 20px;
+		height: 40px;
+	}
 	.graphs-container .graph-container {
 	    text-align: left;
-	    padding: 0 8px;
-	    padding-bottom: 10px;
+	    padding: 0 30px 25px;
 	    background-color: #EEEEEE;
-	    border-left: 1px solid #C0C0C0;
-	    border-bottom: 1px solid #C0C0C0;
 	    @include breakpoint('small') {
 	    	width: 100%;
 	    }
 	    &:first-child {
 	    	border-left: none;
 	    }
+		#chartdiv-deals, #chartdiv-type, #chartdiv-region, #chartdiv-region2{
+			height: 150px !important;
+		} 
 	}
 	.graphs-container .dealsOmitted {
 		float: right;
@@ -263,16 +273,25 @@
 			overflow-x: scroll;
 		}
 		.graphs {
-			margin: 0 -5px;
 			@include breakpoint('small') {
-				width: 1000px;
+				width: 1200px;
 			}
 			.graph-wrapper {
-				padding: 0 5px;
+				margin: 0.625rem 0.5rem 0;
 				float: left;
-				width: 25%;
+				width: 24%;
+				height: 234px;
 				@include breakpoint('small') {
 					width: 250px;
+				}
+				&:first-child{
+					margin-left: 0 !important;
+				}
+				&:last-child{
+					margin-right: 0 !important;
+				}
+				.graph-container {
+					height: 234px;
 				}
 			}
 		}
