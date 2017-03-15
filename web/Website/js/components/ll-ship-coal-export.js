@@ -10,7 +10,6 @@
 			TableStr = self.RenderSingleTable(data);
 
 			Parent.append(TableStr);
-
 		},
 		RenderSingleTable: function(Data) {
 			console.log(Data);
@@ -50,8 +49,8 @@
 			}
 			
 
-			var Table = '<table class="table theme-table">'+
-							'<thead>'+
+			var Table = '<table class="table">'+
+							'<thead class="table_head">'+
 								'<tr>'+
 									HeadingStr+
 								'</tr>'+
@@ -63,20 +62,20 @@
 								TbodyStr+
 							'</tbody>'+
 						'</table>';
-
-
 			return Table;
 		},
-		init: function(data, id) {
+		init: function(data, renderid) {
 			var self = this;
-			self.RenderTable(data, id);
+			
+			if($(window).width() < 668){
+				self.RenderCarousel(data, renderid);
+			}
+			else{
+				self.RenderTable(data, renderid);
+			}
 		}
 	}
-
 	if($('#shipCoalExport').length > 0) {
 		shipCoalExport.init(window.jsonShipCoalExport, $('#shipCoalExport'));	
 	}
-	
-
-	
 })();
