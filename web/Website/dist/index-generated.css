@@ -3766,7 +3766,7 @@ body.lightboxed {
         padding-right: 10px; }
   .ID-Responsive-Table .table_head {
     color: #ffffff;
-    padding: 10px;
+    padding: 20px !important;
     padding-right: 95px !important; }
     .ID-Responsive-Table .table_head:after {
       visibility: hidden;
@@ -3796,6 +3796,8 @@ body.lightboxed {
     float: left;
     width: 20%;
     z-index: 9; }
+    .ID-Responsive-Table .states_heading .year_heading, .ID-Responsive-Table .states_heading .RB16 {
+      padding-left: 20px; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
       .ID-Responsive-Table .states_heading {
         width: 40%; } }
@@ -3893,11 +3895,12 @@ body.lightboxed {
     font-size: 1em;
     font-weight: bold; }
     #quarterlyresults .table-wrapper .tableHead:first-child {
-      text-align: left; }
+      text-align: left;
+      padding-left: 20px; }
 
 #annualresults .R16 {
   text-align: right;
-  padding-right: 15px; }
+  padding-right: 20px; }
 
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
   #financialresults .table_head, #quarterlyresults .table_head {
@@ -3914,7 +3917,11 @@ body.lightboxed {
   font-weight: 400; }
 
 #financialresults .tableHead:first-child {
-  text-align: left; }
+  text-align: left;
+  padding-left: 20px; }
+
+#financialresults .tableHead:last-child, #quarterlyresults .tableHead:last-child {
+  padding-right: 20px; }
 
 #financialresults .tableHead {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3927,13 +3934,11 @@ body.lightboxed {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 500;
-  text-align: left; }
+  text-align: left;
+  padding-left: 20px; }
 
-#financialresults .year_heading {
-  height: auto; }
-  @media (max-width: 480px) {
-    #financialresults .year_heading {
-      padding-right: 0; } }
+#quarterlyresults .tableRow > .tableCell:last-child, #financialresults .tableRow > .tableCell:last-child {
+  padding-right: 20px; }
 
 #financialresults .owl-wrapper {
   width: 60%;
@@ -8990,8 +8995,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10089,7 +10094,8 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .table-responsive {
     position: relative; }
   .id-merges-acquisition .idi-table-heading {
-    margin-top: 0; }
+    margin-top: 0;
+    padding: 10px 20px; }
   .id-merges-acquisition #scrollbar-horizantal {
     height: 10px;
     background-color: #eee;
@@ -10157,7 +10163,7 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition hr.m-0 {
       margin: 0 !important; }
   .id-merges-acquisition input.range-field {
-    width: 45px !important; }
+    width: 40px !important; }
     @media (max-width: 480px) {
       .id-merges-acquisition input.range-field {
         width: 41% !important; } }
@@ -10183,6 +10189,10 @@ div#feedbacklite.fbl_r {
       color: #000; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr:nth-child(even) {
       background-color: #eee; }
+    .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr td:first-child {
+      padding-left: 20px; }
+    .id-merges-acquisition .table.merge-acquistion tbody.visible-lg tr td:last-child {
+      padding-right: 20px; }
     .id-merges-acquisition .table.merge-acquistion tbody.visible-xs tr {
       border-left: 1px solid #d1d3d4;
       border-right: 1px solid #d1d3d4; }
@@ -10215,6 +10225,10 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .table.merge-acquistion.table .table_head th {
       padding-top: 0;
       padding-bottom: 0; }
+      .id-merges-acquisition .table.merge-acquistion.table .table_head th:first-child .label-wrap, .id-merges-acquisition .table.merge-acquistion.table .table_head th:first-child .field-wrap {
+        padding-left: 20px; }
+      .id-merges-acquisition .table.merge-acquistion.table .table_head th:last-child .label-wrap, .id-merges-acquisition .table.merge-acquistion.table .table_head th:last-child .field-wrap {
+        padding-right: 20px; }
       .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap {
         padding: 0 5px; }
         .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap:after {
@@ -13092,7 +13106,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

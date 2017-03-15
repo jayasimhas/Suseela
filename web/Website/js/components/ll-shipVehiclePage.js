@@ -12,21 +12,44 @@
 			});
 			$('#shipVehicleselDay').html(options);
 		},
-		RenderTable: function(data, Parent) {
-			var self = this, TableStr = "";
+		RenderTable: function(Parent){
+			var self = this, TableStr = "", loadDateVal = $('#shipVehicleselDay option').val();
 			Parent.empty();
 			
-
-			//Heading
-			for(var key in data) {
-				TableStr += self.RenderSingleTable(key, data[key]);
-			}
-
-			Parent.append(TableStr);
-			Parent.find('.R16').mouseover(function(){
-				alert('Enter..!');
+			self.sendHTTPRequest(shipVehicleTableData[0], Parent);
+			//self.callAjaxFn(loadDateVal, Parent);
+			$(document).on('change', '#shipVehicleselDay', function(){
+				var selectDateVal = $('#shipVehicleselDay option').val();
+				self.callAjaxFn(selectDateVal, Parent);
+			}); 
+		},
+		callAjaxFn: function(seldateVal, Parent){
+			 var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: {'dateVal': seldateVal, 'feedUrl': $('shipVehicleHiddenVal').val()},
+				dataType: 'json',
+				type: 'GET',
+				success: function (searchData) {
+					self.sendHTTPRequest(searchData[0], Parent);
+				},
+				error: function (err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
 			});
 		},
+		sendHTTPRequest: function(searchData, Parent){
+			var self = this, TableStr = '';
+			
+			if($(window).width() < 668)
+				self.RenderCarousel(searchData, Parent);
+			else{
+				for(var key in searchData) {
+					TableStr += self.RenderSingleTable(key, searchData[key]);
+				}
+			} 
+			Parent.append(TableStr);	 
+		}, 
 		RenderSingleTable: function(heading, Data) {
 			console.log(Data);
 			var SubHeadingStr = "",
@@ -191,17 +214,14 @@
 
 			return Carousel;
 		},
-		init: function(dateData, tabledata, id) {
-			var self = this, dataObj = tabledata[0];
+		init: function(dateData, id) {
+			var self = this;
 			this.renderDate(dateData);
-			if($(window).width() < 668)
-				self.RenderCarousel(dataObj, id);
-			else
-				self.RenderTable(dataObj, id);
-		}
+			this.RenderTable(id);
+		} 
 	}
 
 	if($('#shipVehiclePage').length > 0) {
-		shipVehicle.init(window.shipVehicleDateOptions, window.shipVehicleTableData, $('#shipVehiclePage'));	
+		shipVehicle.init(window.shipVehicleDateOptions, $('#shipVehiclePage'));	
 	}	
 })();
