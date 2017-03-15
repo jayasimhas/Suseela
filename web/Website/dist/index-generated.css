@@ -10217,10 +10217,11 @@ div#feedbacklite.fbl_r {
         .id-merges-acquisition .table.merge-acquistion.table .table_head th .label-wrap span {
           float: left;
           width: calc(100% - 15px);
-          font-weight: normal;
+          font-weight: 500;
           margin-top: 5px;
           font-size: 16px;
-          font-size: 1rem; }
+          font-size: 1rem;
+          font-style: normal; }
       .id-merges-acquisition .table.merge-acquistion.table .table_head th .field-wrap {
         padding: 5px;
         font-size: 16px;
