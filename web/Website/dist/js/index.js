@@ -2534,6 +2534,7 @@ $(document).ready(function () {
 			if ($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
+			$('.main__wrapper').removeClass('shift-main-content');
 		};
 
 		/* Toggle menu visibility */

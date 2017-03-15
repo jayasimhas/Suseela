@@ -25,7 +25,7 @@ main {
 	}
 
 	&.shift-main-content{
-		margin-left: 600px !important;
+		margin-left: 300px;
 	}
 
 	@include breakpoint('small') {
