@@ -1,5 +1,8 @@
 .id-merges-acquisition {
 	font-family: 'Roboto';
+	.table-responsive {
+		position: relative;
+	}
 	.idi-table-heading {
 		margin-top: 0;
 	}
@@ -8,6 +11,10 @@
     	background-color: #eee;
     	position: relative;
     	overflow: hidden;
+    	display: none;
+    	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
     	&:after {
     		content: '';
     		height: 1px;
@@ -90,10 +97,16 @@
 	 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 	 		width: 100%;
 	 		overflow-x: scroll;
+	 		overflow-y: scroll;
+	 		height: 500px;
+	 		position: relative;
 	 	}
 	 }
 	.table.merge-acquistion {
 		border-top: none;
+		.suggest-more{
+			display: none !important;
+		}
 		@include breakpoint('small') {
 			border: none;
 		}
@@ -482,4 +495,31 @@
 			}
 		}
 	}
+	.scrollbar-container {
+	    position: absolute;
+	    right: -1rem;
+	    bottom: 0;
+	    height: 500px;
+	    width: 16px;
+	    background-color: #f1f2f2;
+	    z-index: 9;
+	    &:after {
+	    	content: '';
+	    	position: absolute;
+	    	top: 0;
+	    	right: 7px;
+	    	width: 1px;
+	    	height: 100%;
+	    	background:#d1d3d4;
+	    	z-index:1;
+	    }
+	}
+	.scrollbar {
+		  position: absolute;
+		  right: 4px;
+		  height: 30px;
+		  width: 7px;
+		  background: #777777;
+		  z-index:2;
+		}
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using Glass.Mapper.Sc.Fields;
-using Informa.Library.Services.ExternalFeeds;
+﻿using Informa.Library.Services.ExternalFeeds;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Authentication;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
@@ -47,6 +43,6 @@ namespace Informa.Web.ViewModels.Casualty
             {
                 return string.Empty;
             }
-        }        
+        }
     }
 }

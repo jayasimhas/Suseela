@@ -44,7 +44,5 @@
 		transparentize($color-primary-default, 0.5));
 
     @include theme-table($color-secondary-color, $color-primary-default, $color-secondary-color, transparentize($color-secondary-color, 0.8));
-	
-	@include sponsoredContent(transparentize($color-secondary-color, 0.9), $color-secondary-ten);
-	
+
 }

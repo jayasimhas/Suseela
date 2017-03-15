@@ -24,7 +24,7 @@
 			 var self = this;
 			$.ajax({
 				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
-				data: {'dateVal': seldateVal, 'feedUrl': $('#TankerFixHiddenVal').val()},
+				data: {'dateVal': seldateVal, 'feedUrl': $('#imarexHiddenVal').val()},
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {

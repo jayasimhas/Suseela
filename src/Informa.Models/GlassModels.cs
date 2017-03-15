@@ -14668,6 +14668,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID Additional_Info_FieldId = new ID("8DF5488F-2928-4988-8C1B-39E37FF66AEA");
         public const string Additional_Info_FieldName = "Additional Info";
+
+
     }
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping

@@ -1,6 +1,5 @@
 (function () {
 	var dryCargo = {
-		table: '',
 		renderDate: function(dateObj){ 
 			var options = '';
 			$.each(dateObj[0], function(key, val){ 
@@ -37,7 +36,6 @@
 			var self = this, tableStr = '';
 			tableStr += this.renderDesktop(searchData);
 			tableStr += this.renderMobile(searchData);
-			
 			$('#dryCargo').html(tableStr);			 
 		},
 		renderDesktop: function(tableObj){
@@ -73,9 +71,9 @@
 			 $.each(tableObj, function(datekey, date){ 
 				
 					$.each(date, function(key, value) { 
-						mobStr += '<table class="table mobView">'
+						mobStr += '<table class="table mobView" width="100%">'
 						mobStr += '<thead class="table_head">';
-						mobStr += '<tr><th colspan="8" class="pad-full-10">'+key+'</th></tr>';
+						mobStr += '<tr><th colspan="2" class="pad-full-10">'+key+'</th></tr>';
 						mobStr += '</thead>';
 						mobStr += '<tbody class="visible-sm">';
 						
@@ -86,11 +84,10 @@
 								mobStr += '<td class="pad-10 mobrigCol">'+responseVal+'</td>'; 
 								mobStr += '</tr>';		
 							});	
-							
+							mobStr += '<tr><td class="rowbordinMob" colspan="2"></td></tr>';
 						});					
 						mobStr += '</tbody>';
 						mobStr += '</table>';
-						 $('#dryCargo').html(mobStr);
 					}); 
 			 });
 			 return mobStr;

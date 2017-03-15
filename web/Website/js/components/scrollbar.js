@@ -1,8 +1,8 @@
 if($('.scrollbar') && $('.scrollbar').length){
 	$('.scrollbar').each(function() {
-		var container = $(this).parents('.rolling-stream').find('.scrollbar-container')[0],
-			content = $(this).parents('.rolling-stream').find('.content')[0],
-			scroll = $(this).parents('.rolling-stream').find('.scrollbar')[0];
+		var container = $(this).parents('.rolling-stream, .table-responsive').find('.scrollbar-container')[0],
+			content = $(this).parents('.rolling-stream, .table-responsive').find('.content, .wrap-merge')[0],
+			scroll = $(this).parents('.rolling-stream, .table-responsive').find('.scrollbar')[0];
 
 		scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
 		  	scroll.style.top = container.clientHeight * content.scrollTop / content.scrollHeight + "px";

@@ -71,7 +71,7 @@
                         To
                         <input type="text" class="filter-box range-field end" deal="Price" name="">
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                         </div>
                     }
                 }
-          </div>              
+            </div>
         </div>
         <p class="dealsOmitted">@Model.DealsOmitted</p>
         <div class="small_table">
@@ -121,8 +121,14 @@
                                 }
                             </select>
                         </div>
-                  </div>
-                 </div>
+                    </div>
+                </div>
+                <div id="scrollbar-horizantal">
+                    <div id="scrollbar"></div>
+                </div>
+                <div class="scrollbar-container">
+                    <div class="scrollbar"></div>
+                </div>
                 <div class="wrap-merge">
                     <table class="table merge-acquistion">
                         <thead class="table_head">
@@ -270,7 +276,7 @@
 
 
 
-        @*<div class="graphs-container">
+    @*<div class="graphs-container">
             <h4>@Model.Dashboard</h4>
             @{
                 foreach (var Graph in Model.AMGraphs)
@@ -406,8 +412,8 @@
                 </table>
             </div>
         </div>*@
-        <script type="text/javascript">
-            //mergersAndAquisitionsData
-            var jsonMergeAcquistion = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
-        </script>
-    </div>
+    <script type="text/javascript">
+        //mergersAndAquisitionsData
+        var jsonMergeAcquistion = JSON.parse(JSON.stringify(@Html.Raw(Model.MergersAquitions)));
+    </script>
+</div>
