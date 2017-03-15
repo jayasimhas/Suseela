@@ -497,8 +497,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         if (match.Paths.FullPath.Contains(newFilePath))
                         {
                             //XMLDataLogger.WriteLog("Image exist in Meidia Library:" + match.Paths.FullPath, "ImageLog");
-                            return new MediaItem(matches.First());
-                            //return match;
+                            //return new MediaItem(matches.First());
+                            return match;
                             //mediaitem = match;
                         }
                     }
