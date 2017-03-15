@@ -1310,7 +1310,7 @@ $(document).ready(function(){
         var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
 
         $.ajax({
-            url: '/Account/api/ContactInfoApi/StatesforCountry/',
+            url: '/Account/api/ContactInfoApi/GetStates/',
             data: { 'Country': Value },
             type: 'POST',
             success: function success(Data) {
