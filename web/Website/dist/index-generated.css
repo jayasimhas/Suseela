@@ -2169,7 +2169,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 #main-carousel .item-wrapper {
   width: 25%;
   float: left; }
-  @media only screen and (min-width: 667px) and (max-width: 1024px) {
+  @media only screen and (min-width: 420px) and (max-width: 1024px) {
     #main-carousel .item-wrapper {
       width: 50%; } }
   @media (max-width: 480px) {
