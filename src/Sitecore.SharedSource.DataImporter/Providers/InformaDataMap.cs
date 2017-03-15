@@ -3344,8 +3344,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
  
             return value
-
-                 .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+                
+                    .Replace("Anne - Christin Gröger", "Anne Christin Groger")
+                     .Replace("Insurance Day staff", "Insurance Day")
+                     .Replace("Michał Czub", "Michal Czub")
+                     .Replace("id Administrator", "Insurance Day")
+                     .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
                     .Replace("ll Administrator", "Lloyd's List")
                     .Replace("Lloyd's List Editorial", "Lloyd's List")
                     .Replace("Lloyd’s List Editorial", "Lloyd's List")

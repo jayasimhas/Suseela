@@ -181,6 +181,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                            
                             result2 = result2.Substring(0, result2.IndexOf(" in ") + 0);
                         }
+                        if (result2.Contains(" is a "))
+                        {
+
+                            result2 = result2.Substring(0, result2.IndexOf(" is a ") + 0);
+                        }
+
                         if (result2.Contains('.'))
                         {
                             result2 = result2.Substring(0, result2.IndexOf(".") + 1);
