@@ -1,14 +1,11 @@
 (function () {
 	// body...
 	'use strict';
-
 	var shipCoalExport = {
 		RenderTable: function(data, Parent) {
 			var self = this, TableStr = "";
 			Parent.empty();
-			
 			TableStr = self.RenderSingleTable(data);
-
 			Parent.append(TableStr);
 		},
 		RenderSingleTable: function(Data) {
@@ -24,11 +21,11 @@
 					HeadingStr += '<th align="left" colspan="2" class="pad-10 main-heading">' + key + '</th>';
 					var SubHeading = Heading[key][0];
 					for(var k in SubHeading) {
-						SubHeadingStr += '<th colspan="1">' + k+ '</th>';
+						SubHeadingStr += '<th  class="pad-10">' + k+ '</th>';
 					}
 				} else {
-					HeadingStr += '<th align="left" colspan="1" class="pad-10 main-heading">' + key + '</th>';
-					SubHeadingStr += '<th colspan="1"></th>';
+					HeadingStr += '<th align="left" class="pad-10 main-heading">' + key + '</th>';
+					SubHeadingStr += '<th></th>';
 				}
 			}
 
@@ -39,10 +36,10 @@
 					if(Array.isArray(EachValue[key])) {
 						var Values = EachValue[key][0];
 						for(var k in Values) {
-							Td += '<td colspan="1" class="pad-10" align="right">' + Values[k] + '</td>';
+							Td += '<td class="pad-10" align="right">' + Values[k] + '</td>';
 						}
 					} else {
-						Td += '<td colspan="1" class="pad-10">' + EachValue[key] + '</td>';
+						Td += '<td class="pad-10">' + EachValue[key] + '</td>';
 					}
 				}
 				TbodyStr += '<tr>' +Td + '</tr>';
@@ -63,16 +60,9 @@
 							'</tbody>'+
 						'</table>';
 			return Table;
-		},
+		}, 
 		init: function(data, renderid) {
-			var self = this;
-			
-			if($(window).width() < 668){
-				self.RenderCarousel(data, renderid);
-			}
-			else{
-				self.RenderTable(data, renderid);
-			}
+			this.RenderTable(data, renderid);
 		}
 	}
 	if($('#shipCoalExport').length > 0) {

@@ -55,7 +55,6 @@ import './components/ll-ship-coal-export.js';
 import './components/ll-tanker-pure-chem-page.js';
 import './components/ll-marketdata-drycargo-ssyal.js';
 import './components/ll-cockett-bunker.js';
-import './components/ll-ship-vehicle.js';
 import './components/ll-ship-roro.js';
 import './components/ll-ship-container-ship.js';
 import './components/ll-shipContainerShipFixtures';

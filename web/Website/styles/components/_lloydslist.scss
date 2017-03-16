@@ -149,7 +149,12 @@
 				th{
 					font-weight: bold;
 				}
-			} 
+			}
+		}
+		tbody{
+			tr:nth-child(even){
+				background: #f1f1f1;
+			}
 		}
 		tbody.visible-lg td{
 			border-bottom: 1px solid #d1d3d4;
