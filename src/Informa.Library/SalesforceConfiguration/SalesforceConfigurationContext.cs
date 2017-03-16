@@ -27,6 +27,7 @@ namespace Informa.Library.SalesforceConfiguration
         private string _deleteUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
         private string _updateUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
         private string _deleteUserProductPreferencesEndpoints = "/services/apexrest/ProductPreferences/?q={0}";
+        private string _sessionSynchronisationEndPoints= "{0}/servlet/servlet.FileDownload?file=0155E00000099aQ";
 
 
         public SalesforceConfigurationContext(
@@ -132,6 +133,12 @@ namespace Informa.Library.SalesforceConfiguration
         public string DeleteUserProductPreferencesEndPoints(string query)
         {
             return string.Format(_deleteUserProductPreferencesEndpoints, query);
+        }
+
+        public string GetSessionSynchronisationEndPoints()
+        {
+            return string.Format(_sessionSynchronisationEndPoints,
+            SalesForceConfiguration?.Salesforce_Service_Url?.Url);
         }
     }
 }

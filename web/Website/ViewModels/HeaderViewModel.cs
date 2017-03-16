@@ -91,6 +91,8 @@ namespace Informa.Web.ViewModels
 
         public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest/Logout") + "?vid=" + CurVerticalName);
 
+        public string SessionSynchronisationImageUrl => SalesforceConfigurationContext?.GetSessionSynchronisationEndPoints();
+
         private string BuildLink(Link l)
         {
             if (l == null)

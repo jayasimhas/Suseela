@@ -6669,6 +6669,7 @@ if (!String.prototype.includes) {
 			var HeadingItems = Parent.find('.year_heading'),
 			    MaxHeadingHeight = 0;
 
+			Parent.find('.R16').height('auto');
 			Parent.find('.states_heading .RB16').each(function (key) {
 				var Height = $(this).height(),
 				    Item = [];
@@ -6821,6 +6822,10 @@ if (!String.prototype.includes) {
 				    ClonedItems = [],
 				    ActiveItems = [];
 
+				var stylesArray = CarouselStyles.split(';');
+				stylesArray.splice(1, 1);
+				CarouselStyles = stylesArray.join(';');
+
 				OwlItems.each(function () {
 					if ($(this).hasClass('cloned')) {
 						ClonedItems.push($(this).index());
@@ -6923,6 +6928,9 @@ if (!String.prototype.includes) {
 			self.ModalEvents();
 			self.SortingFunctionality(id);
 			self.SortingModal(id);
+			$(window).resize(function () {
+				self.HeightManagement(id);
+			});
 		}
 	};
 
@@ -8143,6 +8151,8 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			Parent.append(CarouselStr);
 			self.InitCarousel(Parent);
+
+			self.setColHeight(Parent);
 		},
 		getFixedData: function getFixedData(key, Data) {
 			var FixedStr = "";
@@ -8200,9 +8210,26 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			return Carousel;
 		},
+		setColHeight: function setColHeight(parentId) {
+			parentId.find('.states_heading .R16').each(function (idx) {
+				var $this = $(this),
+				    colHeight = $this.height();
+				$('.article').each(function () {
+					$($(this).find('.R16')[idx]).css('height', colHeight);
+				});
+			});
+		},
 		init: function init(data, id) {
 			var self = this;
-			if ($(window).width() > 668) self.RenderTable(data, id);else self.RenderCarousel(data, id);
+			if ($(window).width() > 668) {
+				self.RenderTable(data, id);
+			} else {
+				self.RenderCarousel(data, id);
+			}
+
+			$(window).resize(function () {
+				self.setColHeight(id);
+			});
 		}
 	};
 
@@ -10690,7 +10717,7 @@ $(function () {
 	});
 
 	var latestSubject = $('.latestSubject');
-	if (window.matchMedia("(min-width: 768px)").matches) {
+	if (window.matchMedia("(min-width: 1025px)").matches) {
 		for (var i = 0; i < latestSubject.length; i++) {
 			var getFullwidth = $(latestSubject[i]).width(),
 			    frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
@@ -11067,8 +11094,9 @@ $(function () {
 				0: {
 					items: 4
 				},
-				678: {
-					items: 1
+				667: {
+					items: 2,
+					margin: 20
 				},
 				320: {
 					items: 1

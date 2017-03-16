@@ -41,31 +41,34 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 if (string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
                     var id = GetReferencedArticleFromBody(item);
-                    var updatedBody = UpdateBody(item);
-                    string updatedValue = string.Empty;
-                    var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
-                    if (referencedArticles != null)
+                    if (!string.IsNullOrEmpty(id))
                     {
-                        using (new SecurityDisabler())
+                        var updatedBody = UpdateBody(item);
+                        string updatedValue = string.Empty;
+                        var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
+                        if (referencedArticles != null)
                         {
-                            item.Editing.BeginEdit();
-                            if (!referencedArticles.Value.Contains(id))
+                            using (new SecurityDisabler())
                             {
-                                if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                item.Editing.BeginEdit();
+                                if (!referencedArticles.Value.Contains(id))
                                 {
-                                    updatedValue = referencedArticles.Value;
-                                    updatedValue += "|" + id;
+                                    if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                    {
+                                        updatedValue = referencedArticles.Value;
+                                        updatedValue += "|" + id;
+                                    }
+                                    else
+                                        updatedValue = id;
+                                    if (!string.IsNullOrEmpty(updatedValue))
+                                    {
+                                        item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
+                                    }
                                 }
-                                else
-                                    updatedValue = id;
-                                if (!string.IsNullOrEmpty(updatedValue))
-                                {
-                                    item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
-                                }
+
+                                item.Fields[IArticleConstants.BodyFieldName].Value = updatedBody;
+                                item.Editing.EndEdit();
                             }
-                            
-                            item.Fields[IArticleConstants.BodyFieldName].Value = updatedBody;
-                            item.Editing.EndEdit();
                         }
                     }
 
@@ -79,7 +82,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                             {
                                 item.Editing.BeginEdit();
                                 item.Name = ItemUtil.ProposeValidItemName(field.Value.Length > 100 ? new string(field.Value.Take(100).ToArray()) : field.Value);
-                                item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
                                 item.Editing.EndEdit();
                             }
                         }
@@ -102,19 +104,24 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 {
                     //string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                    url = string.Format("{0}://{1}/api/informasearch?pId=e5a0919f-9fa6-4b80-90c4-84b48b139369&q={2}", HttpContext.Current.Request.Url.Scheme, hostName, articleNumber);
+                    url = string.Format("{0}://{1}/api/SearchArticlesInRTE?articleNumber={2}", HttpContext.Current.Request.Url.Scheme, hostName, articleNumber);
                 }
                 using (var client = new HttpClient())
                 {
                     var response = client.GetStringAsync(url).Result;
                     if (!string.IsNullOrEmpty(response))
                     {
-                        var resultarticles = JsonConvert.DeserializeObject<SearchResults>(response);
-                        if (resultarticles.results.Any())
+                        var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                        if (resultarticles != null)
                         {
-                            var id = resultarticles.results.FirstOrDefault().ItemId;
-                            return id.ToString().ToUpper();
+                            return resultarticles._Id.ToString().ToUpper();
                         }
+                        //var resultarticles = JsonConvert.DeserializeObject<SearchResults>(response);
+                        //if (resultarticles.results.Any())
+                        //{
+                        //    var id = resultarticles.results.FirstOrDefault().ItemId;
+                        //    return id.ToString().ToUpper();
+                        //}
                     }
                     //return response.IsSuccessStatusCode;
                 }
