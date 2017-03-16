@@ -3984,6 +3984,15 @@ body.lightboxed {
   #shipCoalExport .pad-10 {
     padding: 10px 8px !important; } }
 
+@media (max-width: 800px) {
+  #marketDataDryCargo.ID-Responsive-Table .states_heading {
+    width: 50%; }
+  #marketDataDryCargo.ID-Responsive-Table .owl-wrapper {
+    width: 50%; } }
+
+#marketDataDryCargo.ID-Responsive-Table .article {
+  border-right: 1px solid #eee; }
+
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -6631,9 +6640,15 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 17px 0 0;
     margin-right: 17px; }
   .listView .article-preview__tags {
+    width: 75%;
     z-index: 999;
     bottom: 20px;
-    bottom: 1.25rem; }
+    bottom: 1.25rem; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .listView .article-preview__tags {
+      width: auto; } }
+
+@media screen and (min-width: 768px) {
     .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
       max-width: 22%;
       font-size: 16px;
@@ -8319,32 +8334,32 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .theme-commodities .subscribed {
   border: 1px solid #9E310D !important; }
 
-.small_table .table-responsive .table {
+.small_table .table-responsive .table, .table_variations .table-responsive .table {
   border-collapse: inherit;
   border: 1px solid #d1d3d4;
   width: 100%;
   margin-bottom: 48px;
   margin-bottom: 3rem; }
-  .small_table .table-responsive .table .table_head {
+  .small_table .table-responsive .table .table_head, .table_variations .table-responsive .table .table_head {
     background-color: #414042;
     color: #ffffff; }
-    .small_table .table-responsive .table .table_head th {
+    .small_table .table-responsive .table .table_head th, .table_variations .table-responsive .table .table_head th {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.125em;
       font-weight: 700;
       font-style: normal;
       text-align: left; }
-  .small_table .table-responsive .table .graybg {
+  .small_table .table-responsive .table .graybg, .table_variations .table-responsive .table .graybg {
     background-color: #f1f1f1;
     color: #000; }
-  .small_table .table-responsive .table .R16 {
+  .small_table .table-responsive .table .R16, .table_variations .table-responsive .table .R16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
     vertical-align: top;
     border-bottom: 1px solid #d1d3d4; }
-  .small_table .table-responsive .table .RB16 {
+  .small_table .table-responsive .table .RB16, .table_variations .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-size: 1rem;
@@ -8353,47 +8368,47 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-weight: 500;
     vertical-align: top;
     border-bottom: 1px solid #d1d3d4; }
-  .small_table .table-responsive .table .R21_RedColor {
+  .small_table .table-responsive .table .R21_RedColor, .table_variations .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
     font-weight: 400;
     font-style: normal;
     color: #bb1528; }
     @media (max-width: 480px) {
-      .small_table .table-responsive .table .R21_RedColor {
+      .small_table .table-responsive .table .R21_RedColor, .table_variations .table-responsive .table .R21_RedColor {
         vertical-align: top; } }
-  .small_table .table-responsive .table .R21_GrayColor {
+  .small_table .table-responsive .table .R21_GrayColor, .table_variations .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
-    .small_table .table-responsive .table .R21_GrayColor.border-right {
+    .small_table .table-responsive .table .R21_GrayColor.border-right, .table_variations .table-responsive .table .R21_GrayColor.border-right {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.125em;
       font-weight: 500; }
     @media (max-width: 480px) {
-      .small_table .table-responsive .table .R21_GrayColor {
+      .small_table .table-responsive .table .R21_GrayColor, .table_variations .table-responsive .table .R21_GrayColor {
         vertical-align: top; } }
-    .small_table .table-responsive .table .R21_GrayColor a, .small_table .table-responsive .table .R21_GrayColor .pop-out__reset-password, .small_table .table-responsive .table .R21_GrayColor .sortable-table__list-toggler, .small_table .table-responsive .table .R21_GrayColor .mobile-table-exit {
+    .small_table .table-responsive .table .R21_GrayColor a, .small_table .table-responsive .table .R21_GrayColor .pop-out__reset-password, .small_table .table-responsive .table .R21_GrayColor .sortable-table__list-toggler, .small_table .table-responsive .table .R21_GrayColor .mobile-table-exit, .table_variations .table-responsive .table .R21_GrayColor a, .table_variations .table-responsive .table .R21_GrayColor .pop-out__reset-password, .table_variations .table-responsive .table .R21_GrayColor .sortable-table__list-toggler, .table_variations .table-responsive .table .R21_GrayColor .mobile-table-exit {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.125em;
       font-weight: 500; }
-  .small_table .table-responsive .table .RB18 {
+  .small_table .table-responsive .table .RB18, .table_variations .table-responsive .table .RB18 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.125em;
     font-weight: 500;
     font-style: normal; }
-  .small_table .table-responsive .table .visible-lg {
+  .small_table .table-responsive .table .visible-lg, .table_variations .table-responsive .table .visible-lg {
     margin-bottom: 20px; }
     @media (max-width: 480px) {
-      .small_table .table-responsive .table .visible-lg {
+      .small_table .table-responsive .table .visible-lg, .table_variations .table-responsive .table .visible-lg {
         display: none; } }
     @media (max-width: 640px) {
-      .small_table .table-responsive .table .visible-lg {
+      .small_table .table-responsive .table .visible-lg, .table_variations .table-responsive .table .visible-lg {
         display: none; } }
 
-.small_table .table-responsive h1.primary_heading {
+.small_table .table-responsive h1.primary_heading, .table_variations .table-responsive h1.primary_heading {
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
   font-size: 2.9em;
   font-weight: 400;
@@ -8401,7 +8416,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   color: #231f20;
   margin-top: 45px; }
 
-.small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
+.small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle, .table_variations .table-responsive h5.secondary_heading, .table_variations .table-responsive .alert-success p.secondary_heading, .alert-success .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .alert-error p.secondary_heading, .alert-error .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .secondary_heading.article-call-to-action__subtitle {
   font-family: "PT Serif", Georgia, serif;
   font-size: 1.68em;
   font-weight: 400;
@@ -8409,53 +8424,53 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   color: #231f20;
   margin-top: 30px; }
   @media (max-width: 480px) {
-    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
+    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle, .table_variations .table-responsive h5.secondary_heading, .table_variations .table-responsive .alert-success p.secondary_heading, .alert-success .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .alert-error p.secondary_heading, .alert-error .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
   @media (max-width: 800px) {
-    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
+    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle, .table_variations .table-responsive h5.secondary_heading, .table_variations .table-responsive .alert-success p.secondary_heading, .alert-success .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .alert-error p.secondary_heading, .alert-error .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
   @media (max-width: 1080px) {
-    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle {
+    .small_table .table-responsive h5.secondary_heading, .small_table .table-responsive .alert-success p.secondary_heading, .alert-success .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .alert-error p.secondary_heading, .alert-error .small_table .table-responsive p.secondary_heading, .small_table .table-responsive .secondary_heading.article-call-to-action__subtitle, .table_variations .table-responsive h5.secondary_heading, .table_variations .table-responsive .alert-success p.secondary_heading, .alert-success .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .alert-error p.secondary_heading, .alert-error .table_variations .table-responsive p.secondary_heading, .table_variations .table-responsive .secondary_heading.article-call-to-action__subtitle {
       margin-bottom: 30px; } }
 
-.small_table .table-responsive .p-10 {
+.small_table .table-responsive .p-10, .table_variations .table-responsive .p-10 {
   padding: 10px 16px; }
 
-.small_table .table-responsive .pad-10 {
+.small_table .table-responsive .pad-10, .table_variations .table-responsive .pad-10 {
   padding: 20px 16px; }
 
-.small_table .table-responsive .pad-full-10 {
+.small_table .table-responsive .pad-full-10, .table_variations .table-responsive .pad-full-10 {
   padding: 10px 16px; }
 
-.small_table .table-responsive .pad-bottom-20 {
+.small_table .table-responsive .pad-bottom-20, .table_variations .table-responsive .pad-bottom-20 {
   padding-bottom: 20px; }
 
-.small_table .table-responsive .pad-top-10 {
+.small_table .table-responsive .pad-top-10, .table_variations .table-responsive .pad-top-10 {
   padding-top: 10px; }
 
-.small_table .table-responsive hr {
+.small_table .table-responsive hr, .table_variations .table-responsive hr {
   margin: 35px 0 35px 0; }
   @media (max-width: 480px) {
-    .small_table .table-responsive hr {
+    .small_table .table-responsive hr, .table_variations .table-responsive hr {
       display: none; } }
   @media (max-width: 800px) {
-    .small_table .table-responsive hr {
+    .small_table .table-responsive hr, .table_variations .table-responsive hr {
       display: none; } }
   @media (max-width: 1080px) {
-    .small_table .table-responsive hr {
+    .small_table .table-responsive hr, .table_variations .table-responsive hr {
       display: none; } }
 
-.small_table .visible-sm {
+.small_table .visible-sm, .table_variations .visible-sm {
   display: none; }
   @media (max-width: 480px) {
-    .small_table .visible-sm {
+    .small_table .visible-sm, .table_variations .visible-sm {
       display: block; }
-      .small_table .visible-sm .border {
+      .small_table .visible-sm .border, .table_variations .visible-sm .border {
         border-top: 1px solid #d1d3d4; } }
   @media (max-width: 640px) {
-    .small_table .visible-sm {
+    .small_table .visible-sm, .table_variations .visible-sm {
       display: block; }
-      .small_table .visible-sm .border {
+      .small_table .visible-sm .border, .table_variations .visible-sm .border {
         border-top: 1px solid #d1d3d4; } }
 
 .casualtyPan .table .R16 strong {
@@ -8999,8 +9014,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9976,7 +9991,7 @@ div#feedbacklite.fbl_r {
     border-right: 1px solid #ffffff; }
   #market-Data-Dry-Cargo .R16 {
     background-color: #ffffff;
-    height: 60px; }
+    min-height: 50px; }
     #market-Data-Dry-Cargo .R16:nth-child(even) {
       background-color: #eee; }
 
@@ -10854,8 +10869,34 @@ div#feedbacklite.fbl_r {
   font-weight: bold;
   line-height: 19px; }
 
-.sponsored_cont .sponsored_title {
-  text-transform: uppercase; }
+.sponsored_cont {
+  background: rgba(245, 130, 31, 0.1); }
+  .sponsored_cont .sponsored_title {
+    text-transform: uppercase; }
+  .sponsored_cont.article-executive-summary {
+    padding: 16px;
+    padding: 1rem; }
+    .sponsored_cont.article-executive-summary .sponsored_title {
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.article-executive-summary-bottom {
+    padding: 32px;
+    padding: 2rem;
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+    .sponsored_cont.article-executive-summary-bottom .sponsored_title {
+      font-size: 18px;
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont ul {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem; }
+    .sponsored_cont ul li {
+      display: inline; }
 
 .headercolored_new {
   background: #c15b07;
@@ -13097,7 +13138,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

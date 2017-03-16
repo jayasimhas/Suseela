@@ -636,7 +636,7 @@
 	}
 	.R16 {
 		background-color: $color-white;
-		height: 60px;
+		min-height: 50px;
 		&:nth-child(even) {
 			background-color: #eee;
 		}
