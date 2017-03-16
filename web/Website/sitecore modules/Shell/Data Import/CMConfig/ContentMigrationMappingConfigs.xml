@@ -3896,7 +3896,7 @@
         <sector name="offshore">Offshore</sector>
         <sector name="piracyandsecurity"><![CDATA[Piracy & Security]]></sector>
         <sector name="people">People</sector>
-        <sector name="portsandlogistics">P<![CDATA[Ports & Logistics]]></sector>
+        <sector name="portsandlogistics"><![CDATA[Ports & Logistics]]></sector>
         <sector name="reefers">Reefers</sector>
         <sector name="roro">Ro Ro</sector>    
         <sector name="finance">Finance</sector>
