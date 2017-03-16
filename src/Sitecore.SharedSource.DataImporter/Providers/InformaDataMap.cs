@@ -1914,14 +1914,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem = null)
         {
-
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            if (request == null)
-                return null;
+           /* MemoryStream ms = new MemoryStream();
+            using (FileStream fs = File.OpenRead(file))
+            {
+                fs.CopyTo(ms);
+            }*/          
 
             try
             {
                 // download data 
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                if (request == null)
+                    return null;
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
                 Stream stream1 = response.GetResponseStream();
                 MemoryStream stream2 = new MemoryStream();
@@ -1940,7 +1944,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
                 {
                     mediaItem = creator.CreateFromStream(stream2, fileName, options);
-
                     response.Close();
                     XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
                     return mediaItem;
