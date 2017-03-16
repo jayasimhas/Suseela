@@ -34,13 +34,31 @@
                     if (counter < Model.Texonomies.Count())
                     {
                         <td style="float: left; font-size: 16px; line-height: 25px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                           
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
                         </td>
                     }
                     else
                     {
                         <td style="float: left; font-size: 16px; line-height: 25px; padding:0 10px 0 10px; font-weight: 700;">
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
                         </td>
                     }
                 }

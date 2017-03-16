@@ -18,6 +18,8 @@ using Informa.Library.Services.Global;
 using Sitecore.Data.Items;
 using Sitecore.Web;
 using System.Web;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
+using System;
 
 namespace Informa.Library.Services.Article
 {
@@ -57,7 +59,7 @@ namespace Informa.Library.Services.Article
         }
 
 
-        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article,bool isLegacyBarndSelected)
+        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article, bool isLegacyBarndSelected)
         {
             #region PharmaUsed
 
@@ -135,7 +137,7 @@ namespace Informa.Library.Services.Article
                     LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
                 }).ToList();
 
-            return (taxItems != null && taxItems.Count > 3) ? taxItems.Take(3) : taxItems ;
+            return (taxItems != null && taxItems.Count > 3) ? taxItems.Take(3) : taxItems;
         }
 
         public MediaTypeIconData GetMediaTypeIconData(IArticle article)
@@ -169,7 +171,7 @@ namespace Informa.Library.Services.Article
         }
 
 
-        public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false,string legacyArticleNumber=null,string escenicID = null)
+        public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false, string legacyArticleNumber = null, string escenicID = null)
         {
             // JIRA IPMP-56
 
@@ -189,7 +191,7 @@ namespace Informa.Library.Services.Article
                     legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
                     return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
                 }
-           }
+            }
             else
             {
                 if (isLegacyBrandSelected)
@@ -204,7 +206,7 @@ namespace Informa.Library.Services.Article
                     legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
                     return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
                 }
-                
+
             }
 
             #region PharamaUsed
@@ -277,6 +279,24 @@ namespace Informa.Library.Services.Article
             string fullLink = $"/VWB/Util/LoginRedirectToPreview.aspx?redirect={HttpUtility.UrlEncode(previewUrl)}";
 
             return fullLink;
-        }        
+        }
+
+        public ISponsored_Content GetSponsoredContent(IArticle article)
+        {
+            string cacheKey = CreateCacheKey($"Sponsored-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildSponsoredContent(article));
+        }
+
+        private ISponsored_Content BuildSponsoredContent(IArticle article)
+        {
+            if (article != null && article.Taxonomies.Any())
+            {
+                if (article.Taxonomies.Any(n => n.Item_Name == "Sponsored"))
+                {
+                    return article.SponsoredBy;
+                }
+            }
+            return null;
+        }
     }
 }
