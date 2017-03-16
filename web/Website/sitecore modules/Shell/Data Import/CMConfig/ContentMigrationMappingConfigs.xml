@@ -2224,6 +2224,7 @@
 			</contenttype>
 			<cropprotection>
 				<CropPro name="agrow">Crop Protection</CropPro>
+        <CropPro name="policyandregulation"><![CDATA[Policy & Regulation]]></CropPro>
 				<CropPro name="agrow_agrochemicals">Product</CropPro>
 				<CropPro name="agrow_agrochemicals_fungicides">Fungicides</CropPro>
 				<CropPro name="agrow_agrochemicals_insecticides">Insecticides</CropPro>
@@ -2299,9 +2300,10 @@
         <CropPro name="pesticides">Product</CropPro>
         <CropPro name="biocide">Product</CropPro>
         <CropPro name="biocides">Product</CropPro>
-        <CropPro name="insecticide resistance">Insecticide Resistance</CropPro>
-        <CropPro name="insect resistant">Insecticide Resistance</CropPro>
-        <CropPro name="insect-resistant">Insecticide Resistance</CropPro>
+        <CropPro name="insecticide resistance">Insect Resistance</CropPro>
+        <CropPro name="insecticide-resistance">Insect Resistance</CropPro>
+        <CropPro name="insect resistant">Insect Resistance</CropPro>
+        <CropPro name="insect-resistant">Insect Resistance</CropPro>
         <CropPro name="herbicide resistance">Herbicide Tolerance</CropPro>
         <CropPro name="herbicide-resistance">Herbicide Tolerance</CropPro>
         <CropPro name="herbicide tolerant">Herbicide Tolerance</CropPro>
@@ -2336,6 +2338,15 @@
 				</comm>
 				<comm name="agrow_companies_business_expansion">Operations</comm>
 				<comm name="agrow_companies_business_other">Commercial</comm>
+       <comm name="sales">Financial Results</comm>
+        <comm name="revenue">Financial Results</comm>
+        <comm name="revenues">Financial Results</comm>
+        <comm name="profit">Financial Results</comm>
+        <comm name="profits">Financial Results</comm>
+       <comm name="merger"><![CDATA[M&A]]></comm>
+       <comm name="acquisition"><![CDATA[M&A]]></comm>
+     <comm name="Acquisitions"><![CDATA[M&A]]></comm>
+    <comm name="mergers"><![CDATA[M&A]]></comm>
 			</commercial>
 		</Agrow>
 		<AnimalPharm>
