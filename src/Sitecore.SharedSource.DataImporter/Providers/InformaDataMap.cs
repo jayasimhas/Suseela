@@ -422,7 +422,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         ao.Add("STORYBODY", bodyTitleHtml);
 
                         string summarySearch = " ";
-                        if (GetXMLData(d, "SUMMARY") != null)
+                        if (!string.IsNullOrEmpty(GetXMLData(d, "SUMMARY")))
                         {
                             summarySearch = GetXMLData(d, "SUMMARY");
                         }
@@ -447,6 +447,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string AnimalHealth = "";
                             string AnimalHealthNew = "";
                             string CropProtection = "";
+                            string Commercial = "";
 
                             if (site != "Maritime")
                             {
@@ -457,13 +458,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-                                List<string> commoditySearchResults = null;
+                                if (agencySearchResults != null)
+                                {
+                                    if (publication == "Agrow" && agencySearchResults.Count >0)
+                                    {
+                                        CropProtection += "policyandregulation" + ",";
+                                    }
+                                }
+                                    List<string> commoditySearchResults = null;
                                 List<string> commoditynewSearchResults = null;
                                 List<string> commodityfactorSearchResults = null;
                                 List<string> animalhealthSearchResults = null;
                                 List<string> animalhealthnewSearchResults = null;
                                 List<string> cropprotectionSearchResults = null;
+                                List<string> agrowcommercialSearchResults = null;
 
 
 
@@ -477,6 +485,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                     commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                     cropprotectionSearchResults = GetListFromXml(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    agrowcommercialSearchResults = GetListFromXml(publication, "commercial", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
                                 if (publication == "Commodities")
@@ -530,6 +539,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+
+
                                 if (cropprotectionSearchResults != null)
                                 {
                                     foreach (string cropprotection in cropprotectionSearchResults)
@@ -538,6 +549,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+                                if (agrowcommercialSearchResults != null)
+                                {
+                                    foreach (string commercial in agrowcommercialSearchResults)
+                                    {
+                                        Commercial += commercial + ",";
+                                    }
+                                }
+                                
 
                                 if (commoditynewSearchResults != null)
                                 {
@@ -631,7 +650,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 ao.Add("COUNTRY", Country);
                             }
 
+                            if (ao.ContainsKey("COMMERCIAL"))
+                            {
+                                if (Commercial != "")
+                                {
 
+                                    Commercial = ao["COMMERCIAL"].ToString() + Commercial;
+                                    ao.Remove("COMMERCIAL");
+                                    ao.Add("COMMERCIAL", Commercial);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("COMMERCIAL", Commercial);
+                            }
 
 
 
