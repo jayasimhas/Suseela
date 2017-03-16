@@ -799,7 +799,7 @@ $(function () {
 	});
 	
 	var latestSubject = $('.latestSubject');
-	if (window.matchMedia("(min-width: 768px)").matches) {
+	if (window.matchMedia("(min-width: 1025px)").matches) {
 		for(var i = 0; i < latestSubject.length; i++){
 			var getFullwidth = $(latestSubject[i]).width(), frEditviewWid = $(latestSubject[i]).find('.frEditview').width(),
 			setEditViewWidth = Math.ceil(frEditviewWid / getFullwidth * 100), setLatestSubWid = 100 - setEditViewWidth;
@@ -811,4 +811,4 @@ $(function () {
 	if($('.personalisationhome').hasClass('listView')){
 		setImgHeightListview();
 	}
-});
+}); 

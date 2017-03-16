@@ -104,6 +104,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string CountryCodeLabelText => TextTranslator.Translate("ContactInfo.CountryCodeLabel");
         public string CountryCodePlaceholderText => TextTranslator.Translate("ContactInfo.CountryCodePlaceholder");
         public string PhoneLabelText => TextTranslator.Translate("ContactInfo.PhoneLabel");
+        public string MobileLabelText => TextTranslator.Translate("ContactInfo.MobileLabel");
+        public string MobilePlaceholderText => TextTranslator.Translate("ContactInfo.MobilePlaceholderText");
         public string PhonePlaceholderText => TextTranslator.Translate("ContactInfo.PhonePlaceholder");
         public string PhoneExtensionLabelText => TextTranslator.Translate("ContactInfo.PhoneExtensionLabel");
         public string PhoneExtensionPlaceholderText => TextTranslator.Translate("ContactInfo.PhoneExtensionPlaceholder");

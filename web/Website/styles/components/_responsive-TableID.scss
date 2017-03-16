@@ -235,7 +235,7 @@
     float: right;
 
 }
-#tankerPureChemPage, #shipVehicle, #onOrderTable, #shipVehiclePage{
+#tankerPureChemPage, #shipVehicle, #onOrderTable, #shipVehiclePage, #shipCoalExport{
 	border: none;
 	.R16 {
 		height: 2.5rem;
@@ -255,7 +255,7 @@
 	}
 	
 }
-#tankerPureChemPage, #onOrderTable, #shipVehiclePage {
+#tankerPureChemPage, #onOrderTable, #shipVehiclePage, #shipCoalExport{
 	margin-bottom: 1rem;	
 	.pad-10 {
 		padding: 10px !important;
@@ -296,4 +296,27 @@
 }
 #shipContainerShip {
 	border: none;
+}
+#shipCoalExport{
+	@include breakpoint('small') {
+		.pad-10 {
+			padding: 10px 8px !important;
+		}
+	}
+}
+
+#marketDataDryCargo{
+	&.ID-Responsive-Table{
+		@include breakpoint('medium') {
+			.states_heading{
+				width: 50%;
+			}
+			.owl-wrapper{
+				width: 50%;
+			}
+		}
+		.article{
+			border-right: 1px solid #eee;
+		}
+	}
 }

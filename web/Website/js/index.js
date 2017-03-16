@@ -55,7 +55,6 @@ import './components/ll-ship-coal-export.js';
 import './components/ll-tanker-pure-chem-page.js';
 import './components/ll-marketdata-drycargo-ssyal.js';
 import './components/ll-cockett-bunker.js';
-import './components/ll-ship-vehicle.js';
 import './components/ll-ship-roro.js';
 import './components/ll-ship-container-ship.js';
 import './components/ll-shipContainerShipFixtures';
@@ -1310,12 +1309,12 @@ $(document).ready(function(){
         var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
 
         $.ajax({
-            url: '/Account/api/ContactInfoApi/StatesforCountry/',
+            url: '/Account/api/ContactInfoApi/GetStates/',
             data: { 'Country': Value },
             type: 'POST',
             success: function success(Data) {
                 $('#ddlShippingState').remove();
-                $('label[for="ShipState"]').parent().append('<select id="ddlShippingState"></select>');
+                $('label[for="ShipState"]').parent().append('<select name="ShipState" id="ddlShippingState"></select>');
                 
                 var stateValue = $('#hiddenState').val();
                 

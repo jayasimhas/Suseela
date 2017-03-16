@@ -11,7 +11,8 @@ if (urlparam[0] == 'itemid') {
 // alert(urlparam[1]);
 }
 }
-	UpdateReferencedArticles(selectedID,urlparam[1]);
+
+	//UpdateReferencedArticles(selectedID,urlparam[1]);
 }
 
 function scClose(text) {

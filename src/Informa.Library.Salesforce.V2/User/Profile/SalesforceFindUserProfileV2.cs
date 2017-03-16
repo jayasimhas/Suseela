@@ -45,10 +45,6 @@ namespace Informa.Library.Salesforce.V2.User.Profile
             InfoLogger.Log(SalesforceConfigurationContext?.GetUserInfoEndPoints(), this.GetType().Name);
             InfoLogger.Log(JsonConvert.SerializeObject(userInfoResponse), this.GetType().Name);
 
-            var addresses = userInfoResponse?.CustomAttributes?.MailingCountry?.
-                Split(new string[] { _userDetailsSeparator }, StringSplitOptions.None);
-            var contactNumerDeatils = userInfoResponse?.CustomAttributes?.Phone?.
-                Split(new string[] { _userDetailsSeparator }, StringSplitOptions.None);
             return new SalesforceUserProfile
             {
                 UserName = userInfoResponse?.UserName ?? string.Empty,
@@ -56,25 +52,14 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                 LastName = userInfoResponse?.LastName ?? string.Empty,
                 Email = userInfoResponse?.Email,
                 MiddleInitial = userInfoResponse?.CustomAttributes?.MiddleName ?? string.Empty,
-                NameSuffix = string.Empty,
                 Salutation = userInfoResponse?.CustomAttributes?.Salutation ?? string.Empty,
-                BillCountry = userInfoResponse?.CustomAttributes?.MailingCountry ?? string.Empty,
-                BillAddress1 = addresses != null && addresses.Length >= 1 ? addresses[0] : string.Empty,
-                BillAddress2 = addresses != null && addresses.Length >= 2 ? addresses[1] : string.Empty,
-                BillCity = userInfoResponse?.CustomAttributes?.MailingCity ?? string.Empty,
-                BillPostalCode = userInfoResponse?.CustomAttributes?.MailingPostalCode ?? string.Empty,
-                BillState = userInfoResponse?.CustomAttributes?.MailingState ?? string.Empty,
                 ShipCountry = userInfoResponse?.CustomAttributes?.MailingCountry ?? string.Empty,
-                ShipAddress1 = addresses != null && addresses.Length >= 1 ? addresses[0] : string.Empty,
-                ShipAddress2 = addresses != null && addresses.Length >= 2 ? addresses[1] : string.Empty,
+                ShipAddress1 = userInfoResponse?.CustomAttributes?.MailingStreet ?? string.Empty,
                 ShipCity = userInfoResponse?.CustomAttributes?.MailingCity ?? string.Empty,
                 ShipPostalCode = userInfoResponse?.CustomAttributes?.MailingPostalCode ?? string.Empty,
                 ShipState = userInfoResponse?.CustomAttributes?.MailingState ?? string.Empty,
-                PhoneType = string.Empty,
-                CountryCode = contactNumerDeatils != null && contactNumerDeatils.Length >= 1 ? contactNumerDeatils[0] : string.Empty,
-                Phone = contactNumerDeatils != null && contactNumerDeatils.Length >= 2 ? contactNumerDeatils[1] : string.Empty,
-                PhoneExtension = contactNumerDeatils != null && contactNumerDeatils.Length >= 3 ? contactNumerDeatils[2] : string.Empty,
-                Fax = string.Empty,
+                Phone = userInfoResponse?.CustomAttributes?.Phone ?? string.Empty,
+                Mobile = userInfoResponse?.CustomAttributes?.Mobile ?? string.Empty,
                 Company = userInfoResponse?.CustomAttributes?.CompanyName ?? string.Empty,
                 JobFunction = userInfoResponse?.CustomAttributes?.JobFunction ?? string.Empty,
                 JobIndustry = userInfoResponse?.CustomAttributes?.JobIndustry ?? string.Empty,

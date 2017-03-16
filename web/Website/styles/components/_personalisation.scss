@@ -593,7 +593,10 @@
 		//float: left;
 	}
 	.article-preview__tags{
-		//width: auto;
+		width: 75%;
+		@media screen and (max-width: 1024px){
+			width: auto;
+		}
 		z-index: 999;
 		bottom: 1.25rem;
 		a{
@@ -680,5 +683,5 @@
 				background-color: #9E310D;
 			}
 		}
-	}
+	} 
 }
