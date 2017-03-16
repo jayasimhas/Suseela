@@ -10863,9 +10863,20 @@ div#feedbacklite.fbl_r {
     padding: 1rem; }
     .sponsored_cont.article-executive-summary .sponsored_title {
       font-style: italic;
-      text-transform: capitalize;
       margin-right: 8px;
-      margin-right: 0.5rem; }
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.article-executive-summary-bottom {
+    padding: 32px;
+    padding: 2rem;
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+    .sponsored_cont.article-executive-summary-bottom .sponsored_title {
+      font-size: 18px;
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
   .sponsored_cont ul {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
