@@ -1,11 +1,11 @@
 ﻿namespace Informa.Library.Salesforce.User.Profile
 {
-	public class SalesforceUserProfile : ISalesforceUserProfile
-	{
+    public class SalesforceUserProfile : ISalesforceUserProfile
+    {
         public string UserName { get; set; }
         public string FirstName { get; set; }
-		public string LastName { get; set; }
-		public string Email { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
         public string MiddleInitial { get; set; }
         public string NameSuffix { get; set; }
         public string Salutation { get; set; }
@@ -30,5 +30,6 @@
         public string JobFunction { get; set; }
         public string JobIndustry { get; set; }
         public string JobTitle { get; set; }
+        public string Mobile { get; set; }
     }
 }

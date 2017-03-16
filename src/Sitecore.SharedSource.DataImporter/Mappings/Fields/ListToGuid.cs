@@ -180,6 +180,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         {
                             result2 = result2.Substring(0, result2.IndexOf(".") + 1);
                         }
+
+                        if (result2.Contains(" in "))
+                        {
+
+                            result2 = result2.Substring(0, result2.IndexOf(" in ") + 0);
+                        }
+
+                        if (result2.Contains(" is a "))
+                        {
+
+                            result2 = result2.Substring(0, result2.IndexOf(" is a ") + 0);
+                        }
+
+
                         //loop through children and look for anything that matches by name
                         string cleanName = StringUtility.GetValidItemName(result2, map.ItemNameMaxLength);
 

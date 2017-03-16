@@ -14,6 +14,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Library.Services.Global
 {
@@ -25,18 +26,21 @@ namespace Informa.Library.Services.Global
         protected readonly ICacheProvider CacheProvider;
         protected readonly IItemReferences ItemReferences;
         protected readonly ISiteRootContext SiteRootContext;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public GlobalService(
             ISitecoreService sitecoreService,
             ICacheProvider cacheProvider,
             IItemReferences itemReferences,
-            ISiteRootContext siteRootContext
+            ISiteRootContext siteRootContext,
+            ISalesforceConfigurationContext salesforceConfigurationContext
             )
         {
             SitecoreService = sitecoreService;
             CacheProvider = cacheProvider;
             ItemReferences = itemReferences;
             SiteRootContext = siteRootContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         private string CreateCacheKey(string suffix)
@@ -82,7 +86,26 @@ namespace Informa.Library.Services.Global
 
         public IEnumerable<ListItem> GetCountries()
         {
-            return GetListing(ItemReferences.AccountCountries);
+            return SalesforceConfigurationContext.IsNewSalesforceEnabled ? GetListingV2(ItemReferences.AccountCountries) : GetListing(ItemReferences.AccountCountries);
+        }
+
+        private IEnumerable<ListItem> GetListingV2(Guid g)
+        {
+            string cacheKey = CreateCacheKey(g.ToString());
+            return CacheProvider.GetFromCache(cacheKey, () => BuildListingV2(g));
+        }
+
+        private IEnumerable<ListItem> BuildListingV2(Guid g)
+        {
+            var item = SitecoreService.GetItem<Item>(g);
+            if (item == null)
+                return Enumerable.Empty<ListItem>();
+
+            return item.GetChildren()
+                .Select(a => SitecoreService.GetItem<ITaxonomy_Item>(a.ID.Guid))
+                .Select(b => new ListItem(b.Item_Name, (b.Item_Name.ToLower().Contains("select one"))
+                ? "" :
+                b._Id.ToString()));
         }
 
         private IEnumerable<ListItem> GetListing(Guid g)
@@ -123,7 +146,7 @@ namespace Informa.Library.Services.Global
         }
 
         public Item GetTableauItemByPath(string templateId)
-        {         
+        {
             return SitecoreService.GetItem<Item>(SiteRootContext.Item._Path + "/Globals/Tableau Configuration");
         }
 

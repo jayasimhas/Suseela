@@ -3779,24 +3779,18 @@
         <reg name="countries-democraticrepubliccongo">Congo, The Democratic Republic of the</reg>
         <reg name="countries-congo">Congo</reg>
       </country>
-      <hottopics>
-        <hotpicic name="cma">CMA</hotpicic>
-        <hotpicic name="norshipping">Norshipping</hotpicic>
-        <hotpicic name="iumi">IUMI</hotpicic>
-        <hotpicic name="lloyds-list-global-awards">Lloyd's List Awards</hotpicic>
-        <hotpicic name="LISW">LISW</hotpicic>
-      </hottopics>
+      
       <market>
         <mark name="drybulk">Dry Bulk</mark>
-        <mark name="gaslngandlpg">Tankers and Gas</mark>
         <mark name="tankers">Tankers and Gas</mark>
         <mark name="shipper_sentiment_survey">Containers</mark>
         <mark name="features_and_interviews">Containers</mark>
         <mark name="reefers">Containers</mark>
         <mark name="drycargo">Dry Bulk</mark>
+        <mark name="gaslngandlpg">Tankers and Gas</mark>
         <mark name="vlccs">Tankers and Gas</mark>
         <mark name="dry-bulk-handies-supras">Dry Bulk</mark>
-        <mark name="oil_gas_news">Tankers</mark>
+        <mark name="oil_gas_news">Tankers and Gas</mark>
         <mark name="charter-rate-weekly">Containers</mark>
         <mark name="freight-rate-monthly">Containers</mark>
         <mark name="iron_ore">Dry Bulk</mark>
@@ -3813,12 +3807,13 @@
         <mark name="Global-Liner-Shipping-Singapore">Containers</mark>
         <mark name="gas">Tankers and Gas</mark>
         <mark name="ultramaxessupramaxes">Tankers and Gas</mark>
-        <mark name="tanker_news">News</mark>
-        <mark name="tankers_">Tankers</mark>
+        <mark name="tanker_news">Tankers and Gas</mark>
+        <mark name="tankers_">Tankers and Gas</mark>
         <mark name="lng">Tankers and Gas</mark>
         <mark name="vale">Dry Bulk</mark>
-        <mark name="container_news">News</mark>
+        <mark name="container_news">Containers</mark>
         <mark name="containers_">Containers</mark>
+        <mark name="containers">Containers</mark>
         <mark name="lpg">Tankers and Gas</mark>
         <mark name="msc">Containers</mark>
         <mark name="container-line-consolidation">Containers</mark>
@@ -3847,34 +3842,43 @@
         <regular name="news-top100-classification">Top 100 People</regular>
         <regular name="news-top100-insurance">Top 100 People</regular>
         <regular name="news-top100-regulation">Top 100 People</regular>
+        <regular name="gaslngandlpg">LNG</regular>
+        <regular name="charter-rate-weekly">Charter Rates</regular>
         <regular name="outlook2015">Annual Outlook</regular>
         <regular name="a-week-on-wall-street">A Week On Wallstreet</regular>
         <regular name="the-intelligence">The Intelligence</regular>
         <regular name="what-to-watch">What to Watch</regular>
         <regular name="between-the-lines">Between the Lines</regular>
         <regular name="aronnax-blog">Arronax</regular>
-        <regular name="the-long-read">The Long Read</regular>
-        <regular name="the-week-in-review">The Week In Review</regular>
-        <regular name="annual-review">Annual Outlook</regular>
-        <regular name="yard_talk">Yard Talk</regular>
-        <regular name="gaslngandlpg">LNG</regular>
-        <regular name="vlccs">VLCC</regular>
-        <regular name="charter-rate-weekly">Charter Rates</regular>
-        <regular name="freight-rate-monthly">Freight Rates</regular>
         <regular name="capesize">Capes</regular>
         <regular name="handies">Handies</regular>
+        <regular name="the-long-read">The Long Read</regular>
+        <regular name="the-week-in-review">The Week In Review</regular>
         <regular name="gas">LNG</regular>
-        <regular name="ultramaxessupramaxes">Ultra and Supra</regular>
         <regular name="lng">LNG</regular>
-        <regular name="lpg">LPG</regular>
+        <regular name="annual-review">Annual Outlook</regular>
+        <regular name="yard_talk">Yard Talk</regular>
         <regular name="aframaxes">Suez and Aframax</regular>
         <regular name="products">Products</regular>
         <regular name="suezmaxes">Suez and Aframax</regular>
         <regular name="suezmaxesaframaxes">Suez and Aframax</regular>
+        <regular name="vlccs">VLCC</regular>
+        <regular name="freight-rate-monthly">Freight Rates</regular>
+        <regular name="ultramaxessupramaxes">Ultra and Supra</regular>
+        <regular name="lpg">LPG</regular>
+
       </regulars>
       <sectors>
-        <sector name="vlccs">VLCCs</sector>
+
         <sector name="news-profiles">People</sector>
+        <sector name="news-top100-law">Law</sector>
+        <sector name="news-top100-finance">Finance</sector>
+        <sector name="news-top100-brokers">Brokers</sector>
+        <sector name="news-top100-portsandlogistics"><![CDATA[Ports & Logistics]]></sector>
+        <sector name="news-top100-offshore">Offshore</sector>
+        <sector name="news-top100-classification">Classification</sector>
+        <sector name="news-top100-insurance">Insurance</sector>
+        <sector name="news-top100-regulation">Regulation</sector>
         <sector name="casualty">Casualty</sector>
         <sector name="shiptechnology"><![CDATA[Technology & Innovation]]></sector>
         <sector name="classification">Classification</sector>
@@ -3893,15 +3897,16 @@
         <sector name="piracyandsecurity"><![CDATA[Piracy & Security]]></sector>
         <sector name="people">People</sector>
         <sector name="portsandlogistics">P<![CDATA[Ports & Logistics]]></sector>
-        <sector name="roro">Ro Ro</sector>
+        <sector name="reefers">Reefers</sector>
+        <sector name="roro">Ro Ro</sector>    
         <sector name="finance">Finance</sector>
         <sector name="safety">Safety</sector>
-
         <sector name="salesandpurchase">Sale and Purchase</sector>
         <sector name="shipoperations">Ship operations</sector>
         <sector name="shipbuildingandrepair">Shipbuilding</sector>
         <sector name="bunkering_news">Bunkers</sector>
         <sector name="costa-concordia">Safety</sector>
+        <sector name="vlccs">VLCCs</sector>        
         <sector name="classification_news">Classification</sector>
         <sector name="maritime_law">Law</sector>
         <sector name="consolidation">Consolidation</sector>
@@ -3911,7 +3916,8 @@
         <sector name="blueprint-for-recovery"><![CDATA[Technology & Innovation]]></sector>
         <sector name="lloyds-list-digital-innovation"><![CDATA[Technology & Innovation]]></sector>
         <sector name="demolition">Ship Recycling</sector>
-        <sector name="lloyds_shipping_economist">Shipbuilding</sector>
+        <sector name="lloyds_shipping_economist">Finance</sector>
+        <sector name="ship_building_news">Shipbuilding</sector>
         <sector name="lloyds-list-digital-insurance">Insurance</sector>
         <sector name="towage_news">Towage and Salvage</sector>
         <sector name="environment_news">Environment</sector>
@@ -3921,6 +3927,7 @@
         <sector name="road-to-mlc">Regulation</sector>
         <sector name="maib">Safety</sector>
         <sector name="ship_ops">Ship operations</sector>
+        <sector name="yard_talk">Shipbuilding</sector>
         <sector name="ports_logistics">Ports and Logistics</sector>
         <sector name="inmarsat"><![CDATA[Technology & Innovation]]></sector>
         <sector name="shiprecycling">Ship Recycling</sector>
@@ -3933,24 +3940,19 @@
         <sector name="emissions">Environment</sector>
         <sector name="focus-on-finance">Finance</sector>
         <sector name="lloyds-list-digital-finance">Finance</sector>
-        <sector name="news-top100-law">Law</sector>
-        <sector name="news-top100-finance">Finance</sector>
-        <sector name="news-top100-brokers">Brokers</sector>
-        <sector name="news-top100-portsandlogistics"><![CDATA[Ports & Logistics]]></sector>
-        <sector name="news-top100-offshore">Offshore</sector>
-        <sector name="news-top100-classification">Classification</sector>
-        <sector name="news-top100-insurance">Insurance</sector>
-        <sector name="news-top100-regulation">Regulation</sector>
-        <sector name="reefers">Reefers</sector>
-        <sector name="yard_talk">Shipbuilding</sector>
-
-      </sectors>
+      </sectors> 
       <topics>
-        <top name="events">Events</top>
+        <top name="cma">CMA</top>
+        <top name="norshipping">Norshipping</top>
+        <top name="iumi">IUMI</top>
+        <top name="lloyds-list-global-awards">Lloyd's List Awards</top>
+        <top name="LISW">LISW</top>
+        <!--<top name="events">Events</top>-->
         <top name="posidonia">Posidonia</top>
         <top name="singapore-maritime-week">Singapore Maritime Week</top>
         <top name="smm">SMM</top>
       </topics>
+      
     </Lloydslist>
   </Maritime>
 </Verticals>

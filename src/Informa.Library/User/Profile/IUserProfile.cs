@@ -30,5 +30,6 @@
         string JobFunction { get; set; }
         string JobIndustry { get; set; }
         string JobTitle { get; set; }
+        string Mobile { get; set; }
     }
 }
