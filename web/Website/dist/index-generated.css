@@ -2314,13 +2314,13 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #main-carousel .companies_heading {
     display: block;
     width: 100%;
-    position: relative; }
+    position: relative;
+    background-color: #de4361; }
     #main-carousel .companies_heading span {
       width: 100%;
       display: inline-block;
       padding: 10px 0 10px 20px;
       color: #fff;
-      background-color: #de4361;
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 16px;
       font-size: 1rem;
@@ -2328,6 +2328,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       @media (max-width: 667px) {
         #main-carousel .companies_heading span {
           padding-right: 110px; } }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        #main-carousel .companies_heading span {
+          width: 70%; } }
 
 #graph-carousel {
   margin-bottom: 32px;
@@ -8996,8 +8999,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -13094,7 +13097,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
