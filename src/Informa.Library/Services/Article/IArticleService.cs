@@ -3,6 +3,7 @@ using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIco
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Library.Services.Article
 {
@@ -19,5 +20,6 @@ namespace Informa.Library.Services.Article
         string GetDownloadUrl(IArticle article);
         string GetPreviewUrl(IArticle article);
         IEnumerable<Informa.Library.Article.Search.ILinkable> GetPersonalizedLinkableTaxonomies(IArticle article);
+        ISponsored_Content GetSponsoredContent(IArticle article);
     }
 }

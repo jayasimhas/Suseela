@@ -64,7 +64,7 @@ namespace Informa.Web.Areas.Account.Controllers
             var result =
                 AccountInfoV2.UpdateContactInfo(
                 UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.Salutation,
-                form.ShipCountry, form.ShipAddress1, form.ShipCity, form.ShipPostalCode, form.ShipState,
+                form.ShipCountry.Split('|')[0] ?? string.Empty, form.ShipAddress1, form.ShipCity, form.ShipPostalCode, form.ShipState,
                 form.Phone, form.Mobile,
                 form.Company, form.JobFunction, form.JobIndustry, form.JobTitle);
 
@@ -160,10 +160,11 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult GetStates(StateRequest request)
         {
-            List<TaxonomyStruct> result = new List<TaxonomyStruct>();
+            request.Country = request.Country.Split('|')[1] ?? string.Empty;
+            List<ListItemTaxonomy> result = new List<ListItemTaxonomy>();
             var baseFolder = SitecoreService.GetItem<IGlassBase>(request.Country);
             result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
-                .Select(eachChild => new TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
+                .Select(eachChild => new ListItemTaxonomy() { Name = eachChild.Item_Name, ID = eachChild.Item_Name }).ToList();
             return Json(result);
 
         }

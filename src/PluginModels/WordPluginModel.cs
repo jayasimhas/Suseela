@@ -43,6 +43,19 @@ namespace PluginModels
         string Section { get; set; }
     }
 
+    public class ListItemTaxonomy : IListItemTaxonomy
+    {
+        public string Name { get; set; }
+        /// <remarks/>
+        public string ID { get; set; }
+    }
+
+    public interface IListItemTaxonomy
+    {
+        string Name { get; set; }
+        string ID { get; set; }
+    }
+
     public class HDirectoryStruct
     {
 
@@ -452,4 +465,5 @@ namespace PluginModels
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public System.Nullable<int> Parent { get; set; }
     }
+
 }
