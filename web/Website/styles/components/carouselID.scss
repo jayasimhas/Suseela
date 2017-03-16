@@ -222,6 +222,9 @@
 	.loadChart{
 		width: 24%;
 		float: left;
+		@media screen and (min-width: 768px) and (max-width: 1024px)  {
+			width: 49%;
+		}
 		@media screen and (max-width: 767px) {
 			width: 100%;
 			float: inherit;
@@ -235,11 +238,9 @@
 	#chartdiv_GWP, #chartdiv_NWP, #chartdiv_UR, #chartdiv_NP, #chartdiv_SF, #chartdiv_NWPNR, #chartdiv_SFNR, #chartdiv_NPSFR{
 		background: #fff;
 		margin: 0px auto;
-		width: 80%;
+		width: 100%;
 		height: 150px;
-		@media screen and (min-width: 768px) and (max-width: 1024px) {
-			width: 90% !important;
-		}
+
 	}
 	.graph_heading {
 		display: block;
@@ -282,7 +283,8 @@
 		margin-left: 0.5%;
 		margin-right: 0.5%;
 		background-color: #eee;
-		height: 234px;  
+		height: 237px;  
+		padding: 20px 30px;
 		h5{ 
 			font-size: 14px;
 			font-weight: 500;
@@ -290,7 +292,7 @@
 			vertical-align: middle;
 			display: inline-block;
 			text-align: left;
-			margin: 20px 20px 0px 30px;
+			// margin: 20px 20px 0px 30px;
 			overflow: hidden;
 			line-height: 20px; 
 		 }
