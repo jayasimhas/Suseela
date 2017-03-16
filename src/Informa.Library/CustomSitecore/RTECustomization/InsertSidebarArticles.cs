@@ -33,6 +33,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.SecurityModel;
 using Informa.Library.Services.Global;
 using Sitecore.Sites;
+using System.Xml.Linq;
 
 namespace Informa.Library.CustomSitecore.RTECustomization
 {
@@ -114,11 +115,14 @@ namespace Informa.Library.CustomSitecore.RTECustomization
           
             if (!string.IsNullOrEmpty(Filename.Value))
             {
+                //var selectedId = "{" + Filename.Value + "}";
                 var returnText = SetReturnText(itemID, articleType, Filename.Value);
                 if (articleType == "sidebar")
                     SheerResponse.Eval("scClose(" + StringUtil.EscapeJavascriptString(returnText) + ")");
                 else if (articleType == "referenced")
-                    SheerResponse.Eval("scCloseAndUpdateReferencedArticles(" + StringUtil.EscapeJavascriptString(returnText) + ")");
+                {
+                    SheerResponse.Eval("scCloseAndUpdateReferencedArticles(" + StringUtil.EscapeJavascriptString(returnText) + ")");                 
+                }
             }
             else
                 SheerResponse.Alert("Please select atleast one article");         
@@ -142,7 +146,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                 }
                 else if (articleType == "referenced")
                 {
-                    placeholder = "[A#";
+                    placeholder = "L[A#";
                     placeholder += articleNumber + "]";
                     return placeholder;
                 }
