@@ -206,9 +206,10 @@
 				 	span {
 				 		float: left;
 				 		width: calc(100% - 15px);
-				 	    font-weight: normal;
+				 	    font-weight: 500;
 		    			margin-top: 5px;
 		    			font-size: 1rem;
+		    			font-style: normal;
 				 	}
 				}
 				.field-wrap {
@@ -302,8 +303,9 @@
 			@include breakpoint('small') {
 				width: 1053px;
 			}
+			
 			.graph-wrapper {
-				margin: 0.625rem 0.5rem 0;
+				margin: 0.625rem 0.5rem 0 0;
 				float: left;
 				width: 24%;
 				height: 234px;

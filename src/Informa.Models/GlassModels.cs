@@ -20,6 +20,7 @@ using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
 {
@@ -3027,7 +3028,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IArticleConstants.SponsoredByFieldName, Setting = SitecoreFieldSettings.InferType)]
-        ITaxonomy_Item SponsoredBy { get; set; }
+        ISponsored_Content SponsoredBy { get; set; }
     }
 
 
@@ -3385,7 +3386,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IArticleConstants.SponsoredByFieldName, Setting = SitecoreFieldSettings.InferType)]
-        ITaxonomy_Item SponsoredBy { get; set; }
+        ISponsored_Content SponsoredBy { get; set; }
     }
 
     public static partial class IArticleConstants
@@ -6354,7 +6355,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Number_To_Display { get; set; }
+        INumber_Option Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -6429,7 +6430,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// <para>Custom Data: type=INumber_Option</para>
         /// </summary>
         [SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-        int Number_To_Display { get; set; }
+        INumber_Option Number_To_Display { get; set; }
         /// <summary>
         /// The Publications field.
         /// <para></para>
@@ -14394,7 +14395,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ISponsored_ContentConstants.Sponsor_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Sponsor_Logo { get; set; }
+        Image Sponsor_Logo { get; set; }
 
         /// <summary>
         /// Title field.
@@ -14434,7 +14435,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ISponsored_ContentConstants.Sponsor_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Sponsor_Logo { get; set; }
+        Image Sponsor_Logo { get; set; }
 
         /// <summary>
         /// Title field.

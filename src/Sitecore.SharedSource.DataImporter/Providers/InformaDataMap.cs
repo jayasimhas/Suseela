@@ -92,7 +92,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
-                    ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
+
+                    string AuthorName = AuthorHelper.Authors(GetXMLData(d, authorNode));
+                    if (string.IsNullOrEmpty(AuthorName))
+                    {
+                        if (publication == "InsuranceDay")
+                        {
+                            AuthorName = "Insurance Day";
+                        }
+                        if (publication == "Lloydslist")
+                        {
+                            AuthorName = "Lloyds List";
+                        }
+
+                    }
+                    ao.Add(authorNode, AuthorName);
 
                     string bodyNode = "BODY";
                     string bodyTitleHtml = GetXMLData(d, bodyNode);
@@ -422,7 +436,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         ao.Add("STORYBODY", bodyTitleHtml);
 
                         string summarySearch = " ";
-                        if (GetXMLData(d, "SUMMARY") != null)
+                        if (!string.IsNullOrEmpty(GetXMLData(d, "SUMMARY")))
                         {
                             summarySearch = GetXMLData(d, "SUMMARY");
                         }
@@ -447,6 +461,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string AnimalHealth = "";
                             string AnimalHealthNew = "";
                             string CropProtection = "";
+                            string Commercial = "";
 
                             if (site != "Maritime")
                             {
@@ -457,13 +472,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-                                List<string> commoditySearchResults = null;
+                                if (agencySearchResults != null)
+                                {
+                                    if (publication == "Agrow" && agencySearchResults.Count >0)
+                                    {
+                                        CropProtection += "policyandregulation" + ",";
+                                    }
+                                }
+                                    List<string> commoditySearchResults = null;
                                 List<string> commoditynewSearchResults = null;
                                 List<string> commodityfactorSearchResults = null;
                                 List<string> animalhealthSearchResults = null;
                                 List<string> animalhealthnewSearchResults = null;
                                 List<string> cropprotectionSearchResults = null;
+                                List<string> agrowcommercialSearchResults = null;
 
 
 
@@ -477,6 +499,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                     commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                     cropprotectionSearchResults = GetListFromXml(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    agrowcommercialSearchResults = GetListFromXml(publication, "commercial", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
                                 if (publication == "Commodities")
@@ -530,6 +553,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+
+
                                 if (cropprotectionSearchResults != null)
                                 {
                                     foreach (string cropprotection in cropprotectionSearchResults)
@@ -538,6 +563,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+                                if (agrowcommercialSearchResults != null)
+                                {
+                                    foreach (string commercial in agrowcommercialSearchResults)
+                                    {
+                                        Commercial += commercial + ",";
+                                    }
+                                }
+                                
 
                                 if (commoditynewSearchResults != null)
                                 {
@@ -631,7 +664,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 ao.Add("COUNTRY", Country);
                             }
 
+                            if (ao.ContainsKey("COMMERCIAL"))
+                            {
+                                if (Commercial != "")
+                                {
 
+                                    Commercial = ao["COMMERCIAL"].ToString() + Commercial;
+                                    ao.Remove("COMMERCIAL");
+                                    ao.Add("COMMERCIAL", Commercial);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("COMMERCIAL", Commercial);
+                            }
 
 
 
@@ -1691,7 +1739,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (publication == "Lloydslist")
                     {
                         Taxonomy.Add("COUNTRY", "");
-                        Taxonomy.Add("HOTTOPICS", "");
+                       // Taxonomy.Add("HOTTOPICS", "");
                         Taxonomy.Add("MARKET", "");
                         Taxonomy.Add("REGULARS", "");
                         Taxonomy.Add("SECTORS", "");
@@ -1750,11 +1798,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 //    Taxonomy["MEDIA"] = Media;
                                 //}
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
-                                {
-                                    HotTopics += node.Attributes["unique-name"].Value + ",";
-                                    Taxonomy["HOTTOPICS"] = HotTopics;
-                                }
+                                //else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
+                                //{
+                                //    HotTopics += node.Attributes["unique-name"].Value + ",";
+                                //    Taxonomy["HOTTOPICS"] = HotTopics;
+                                //}
                                 else
                                 {
                                     SectionRef += node.Attributes["unique-name"].Value + ",";
@@ -3348,7 +3396,33 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string Authors(string value)
         {
             return value
+
+                .Replace("Anne - Christin Gröger", "Anne Christin Groger")
+                     .Replace("Insurance Day staff", "Insurance Day")
+                     .Replace("Michał Czub", "Michal Czub")
+            .Replace("Anne - Christin Gröger", "Anne Christin Groger")
+                     .Replace("Insurance Day staff", "Insurance Day")
+                     .Replace("Michał Czub", "Michal Czub")
+                     .Replace("id Administrator", "Insurance Day")
                      .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+                    .Replace("ll Administrator", "Lloyd's List")
+                    .Replace("Lloyd's List Editorial", "Lloyd's List")
+                    .Replace("Lloyd’s List Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List editorial", "Lloyd's List")
+                    .Replace("Lloyd's List Reporter", "Lloyd's List")
+                     .Replace("Lloyd's List reporter", "Lloyd's List")
+                    .Replace("Last Word", "Lloyd's List")
+                    .Replace("Containerisation International", "Lloyd's List")
+                    .Replace("CI editorial", "Lloyd's List")
+                     .Replace("CI Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List staff", "Lloyd's List")
+                    .Replace("Lloyd's List Australia", "Lloyd's List")
+                    .Replace("Lloyd's List Containers", "Lloyd's List")
+                    .Replace("Lloyd’s List Containers", "Lloyd's List")
+                    .Replace("Informa i-Law", "Lloyd's List")
+                     .Replace("Lloyd's List team", "Lloyd's List")
+
+                    .Replace("Lloyd's List editorial team", "Lloyd's List")
                      .Replace("kelly@informa.com", ",")
                     .Replace("brizmohun@informa.com", ",")
                     .Replace("cathy.kelly@informa.com", ",")
