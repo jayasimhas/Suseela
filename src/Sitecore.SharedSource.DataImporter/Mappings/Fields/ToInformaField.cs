@@ -457,8 +457,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 imagePath = WebConfigurationManager.AppSettings["Imagemap_path_Maritime"];
 
             Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse(imagePath));
-            IEnumerable<Item> matches = GetMediaItems(map, ArticleId)
-                .Where(a => a.Paths.FullPath.EndsWith(fileName) || a.Paths.FullPath.EndsWith( fileParts[0] + "_" + ArticleId));
+            IEnumerable<Item> matches = GetMediaItems(map, ArticleId, imagePath)
+                .Where(a => a.Paths.FullPath.EndsWith(fileName));
 
             MediaItem mediaitem = null;
             if (matches != null && matches.Any())
@@ -512,7 +512,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return new string(temp);
         }
 
-        public IEnumerable<Item> GetMediaItems(IDataMap map, string ArticleId)
+        public IEnumerable<Item> GetMediaItems(IDataMap map, string ArticleId,string ImagePath)
         {
             string cacheKey = "Images-dataimport";
             IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
@@ -521,7 +521,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 XMLDataLogger.WriteLog("Returning Cache:" + ArticleId, "ImageCheckinCache");
                 return o;
             }
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
+            Item rootItem = map.ToDB.GetItem(ImagePath);
             IEnumerable<Item> images = rootItem.Axes.GetDescendants();
             Context.Items.Add(cacheKey, images);
             XMLDataLogger.WriteLog("Returning Legacy article Media Library:" + ArticleId, "ImageCheckinSitecore");
