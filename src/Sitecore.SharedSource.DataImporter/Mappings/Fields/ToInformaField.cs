@@ -36,7 +36,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             // connect to the company database and get the ID to store
             if (importValue.Equals(string.Empty))
@@ -58,7 +58,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (string.IsNullOrEmpty(f.Value))
                 f.Value = importValue;
 
-            XMLDataLogger.WriteLog("Article Name:"+ newItem.Name +"Field Name:"+f.Name +"Field Value:"+ f.Value + "Article Number Generated:" + importValue, "ArticleNoOnSitecoreFileld");
+            XMLDataLogger.WriteLog("Article Name:" + newItem.Name + "Field Name:" + f.Name + "Field Value:" + f.Value + "Article Number Generated:" + importValue, "ArticleNoOnSitecoreFileld");
         }
 
         #endregion Methods
@@ -74,7 +74,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -85,7 +85,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
             if (f != null)
-             // LogIntoExcel.CMCReport()
+                // LogIntoExcel.CMCReport()
                 f.Value = newImportValue;
         }
 
@@ -152,7 +152,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             //replace <h1> with <h2>
             importValue = importValue.Replace("h1", "h2");
@@ -164,7 +164,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             DateField df = newItem.Fields["Created Date"];
             if (df != null && !string.IsNullOrEmpty(df.Value))
                 dt = df.DateTime;
-            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs, id);
+            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs, id,publication);
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
@@ -174,7 +174,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
         }
 
-        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs, string ArticleId)
+        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, List<string> unwantedTags, List<string> unwantedAttrs, string ArticleId,string publication)
         {
             if (String.IsNullOrEmpty(html))
                 return html;
@@ -284,7 +284,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                         string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
                         AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
-                        MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
+                        MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId, publication);
                         if (newImg != null)
                         {
                             string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
@@ -314,34 +314,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 i++;
             }
 
-            // HtmlNodeCollection tryGetallNodes = document.DocumentNode.ChildNodes;
-            //// HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
-            // if (tryGetNodes == null || !tryGetNodes.Any())
-            //     return html;
-
-            // var nodeslatest = new Queue<HtmlNode>(tryGetallNodes);
-
-            // while (nodeslatest.Count > 0)
-            // {
-            //     var imgnode = nodeslatest.Dequeue();
-            //     var parentNode = imgnode.ParentNode;
-            //     // var nodeName = node.Name;
-
-
-            //     //replace images
-            //     if (imgnode.Name.Equals("image"))
-            //     {
-            //        if((imageId.Contains(imgnode.Attributes["sourceid"].Value)))
-            //             {
-
-            //             parentNode.RemoveChild(imgnode);
-
-            //             }
-            //     }
-
-
-            // }
-
 
             return document.DocumentNode.InnerHtml;
         }
@@ -359,14 +331,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
 
             DateTime dt = new DateTime(1800, 1, 1);
             DateField df = newItem.Fields["Created Date"];
             if (df != null && !string.IsNullOrEmpty(df.Value))
                 dt = df.DateTime;
-            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, id);
+            string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, id, publication);
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
@@ -378,7 +350,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
         }
 
-        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, string ArticleId)
+        public string CleanHtml(IDataMap map, string articlePath, DateTime articleDate, string html, string ArticleId, string publication)
         {
             if (String.IsNullOrEmpty(html))
                 return html;
@@ -406,7 +378,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
                     string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
                     AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
-                    MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId);
+                    MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, imgSrc, ArticleId, publication);
                     if (newImg != null)
                     {
                         // string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
@@ -446,19 +418,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
     public class AricleImportImageHandler
     {
 
-        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId)
+        public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId, string publication)
         {
-            url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
-                .Replace("62.73.128.229", "www.scripintelligence.com");
-            if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
-                url = $"http://www.scripintelligence.com{url}";
-            else if (url.Contains("scripnews.com"))
-                url = url.Replace("scripnews.com", "scripintelligence.com");
-
-            //if (url.Contains(" "))
-            //{
-            //    url = url.Replace(" ", "+");
-            //}
+            //url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
+            //    .Replace("62.73.128.229", "www.scripintelligence.com");
+            //if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
+            //    url = $"http://www.scripintelligence.com{url}";
+            //else if (url.Contains("scripnews.com"))
+            //    url = url.Replace("scripnews.com", "scripintelligence.com");
 
             url = new Regex("/[^/]*$").Replace(url, "/" + UpperCaseUrlEncode(url.Split('/').Last()));
 
@@ -480,12 +447,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             //date info
             string newFilePath = (dt.Year != 1800) ? $"{dt.ToString("yyyy/MMMM")}/{fileName}" : fileName;
 
-
             // see if it exists in med lib
-           
-            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
-            IEnumerable<Item> matches = GetMediaItems(map,ArticleId)
-                .Where(a => a.Paths.FullPath.EndsWith(fileName));
+
+            //Publication
+            string imagePath = string.Empty;
+            if (publication.Equals("Agrow") || publication.Equals("AnimalPharm") || publication.Equals("Commodities"))
+                imagePath = WebConfigurationManager.AppSettings["Imagemap_path"];
+            else if (publication.Equals("InsuranceDay") || publication.Equals("Lloydslist"))
+                imagePath = WebConfigurationManager.AppSettings["Imagemap_path_Maritime"];
+
+            Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse(imagePath));
+            IEnumerable<Item> matches = GetMediaItems(map, ArticleId)
+                .Where(a => a.Paths.FullPath.EndsWith(fileName) || a.Paths.FullPath.EndsWith( fileParts[0] + "_" + ArticleId));
 
             MediaItem mediaitem = null;
             if (matches != null && matches.Any())
@@ -508,7 +481,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 //map.Logger.Log(articlePath, $"Sitecore image matched {matches.Count()} images", ProcessStatus.FieldError, filePath);
             }
 
-            MediaItem m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
+            MediaItem m = null;
+            if (WebConfigurationManager.AppSettings["LoadImageForImportFrom"].Equals("URL"))
+            {
+                m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
+            }
+            else if (WebConfigurationManager.AppSettings["LoadImageForImportFrom"].Equals("FS"))
+            {
+
+                m = LoadImageFromFileSystem(ArticleId, url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
+            }
+
             if (m == null)
                 map.Logger.Log(articlePath, "Image not found", ProcessStatus.FieldError, url);
 
@@ -529,15 +512,15 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return new string(temp);
         }
 
-        public IEnumerable<Item> GetMediaItems(IDataMap map,string ArticleId)
-        {            string cacheKey = "Images-dataimport";
+        public IEnumerable<Item> GetMediaItems(IDataMap map, string ArticleId)
+        {
+            string cacheKey = "Images-dataimport";
             IEnumerable<Item> o = Context.Items[cacheKey] as IEnumerable<Item>;
             if (o != null)
             {
                 XMLDataLogger.WriteLog("Returning Cache:" + ArticleId, "ImageCheckinCache");
                 return o;
             }
-
             Item rootItem = map.ToDB.GetItem(Sitecore.Data.ID.Parse((WebConfigurationManager.AppSettings["Imagemap_path"])));
             IEnumerable<Item> images = rootItem.Axes.GetDescendants();
             Context.Items.Add(cacheKey, images);
@@ -546,15 +529,81 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             return images;
         }
 
-        public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem=null)
+        public MemoryStream CreateMemoryStreamOfLocalImage(string ArticleNumber, string fileName)
         {
 
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            if (request == null)
-                return null;
+            string cacheKey = "downloaded-legacy-Images";
+            string[] di = Context.Items[cacheKey] as string[];
+            if (di == null)
+            {
+                di = Directory.GetFiles(WebConfigurationManager.AppSettings["LegacyImageDownloadPath"]);
+            }
 
+            MemoryStream ms = new MemoryStream();
+            foreach (string file in di)
+            {
+                string ArticleNumberCheck = file.Split('_').Last().Split('.').First();
+
+                string ImagefileName = Path.GetFileName(file);                
+
+                if (ArticleNumberCheck.Equals(ArticleNumber) && ImagefileName.Substring(0, ImagefileName.Length - (ImagefileName.Split('_').Last().Length + 1)).Equals(fileName.Split('.').First()))
+                {
+                    using (FileStream fs = File.OpenRead(file))
+                    {
+                        fs.CopyTo(ms);
+                    }
+
+                    return ms;
+                }
+            }
+
+            return ms;
+        }
+
+        public MediaItem LoadImageFromFileSystem(string ArticleNumber, string url, string fileName, string newPath, MediaItem mediaItem = null)
+        {
             try
             {
+                MemoryStream stream2 = new MemoryStream();
+                stream2 = CreateMemoryStreamOfLocalImage(ArticleNumber, fileName);
+
+                if (stream2 != null)
+                {
+                    // Create the options
+                    MediaCreatorOptions options = new MediaCreatorOptions();
+                    options.FileBased = true;
+                    options.IncludeExtensionInItemName = false;
+                    options.KeepExisting = false;
+                    options.Versioned = false;
+                    options.Destination = newPath;
+                    options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
+
+                    // upload to sitecore
+                    MediaCreator creator = new MediaCreator();
+                    using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
+                    {
+                        mediaItem = creator.CreateFromStream(stream2, fileName, options);
+                        XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
+                        return mediaItem;
+                    }
+                }
+                return null;
+            }
+            catch (WebException ex)
+            {
+                XMLDataLogger.WriteLog("Image create error in  media library:" + ex.Message, "ImageLog");
+                return null;
+            }
+        }
+
+        public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem = null)
+        {
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                if (request == null)
+                    return null;
+
                 // download data 
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
                 Stream stream1 = response.GetResponseStream();
@@ -574,7 +623,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
                 {
                     mediaItem = creator.CreateFromStream(stream2, fileName, options);
-                    
+
                     response.Close();
                     XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
                     return mediaItem;
@@ -599,7 +648,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             // connect to the company database and get the ID to store
             if (importValue.Equals(string.Empty))
@@ -1234,7 +1283,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -1320,7 +1369,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2217,7 +2266,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2248,10 +2297,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
                 tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
 
-                if(!tName.Any())
+                if (!tName.Any())
                 {
-                     tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
-                    if(!tDName.Any())
+                    tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                    if (!tDName.Any())
                     {
                         map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
                         continue;
@@ -2264,7 +2313,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 else
                 {
-                   t = tName;
+                    t = tName;
                 }
 
                 //if you find one then store the id
@@ -2580,7 +2629,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
 
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {
@@ -2625,7 +2674,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             if (string.IsNullOrWhiteSpace(importValue))
                 return;
@@ -2882,7 +2931,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
     {
         public ToLegacySitecoreId(Item i) : base(i) { }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             Field f = newItem.Fields[NewItemField];
             f.Value = id;
@@ -2895,7 +2944,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             Field f = newItem.Fields[NewItemField];
             var item = Database.GetDatabase("pmbiContent").GetItem(new ID(id));
@@ -2909,7 +2958,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var pmbiDatamap = map as PmbiDataMap;
             if (pmbiDatamap != null)
@@ -2927,7 +2976,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var mapping = TaxonomyMapping.RegionMapping;
             FillTaxonomyField(map, ref newItem, importValue, mapping);
@@ -2940,7 +2989,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var mapping = new Dictionary<string, string>();
             // Article to import
@@ -2979,7 +3028,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var pmbiItem = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(new ID(id));
             var templateName = pmbiItem.TemplateName;
@@ -2999,7 +3048,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var mapping = TaxonomyMapping.SubjectMapping;
             FillTaxonomyField(map, ref newItem, importValue, mapping);
@@ -3012,7 +3061,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var mapping = TaxonomyMapping.IndustryMapping;
             FillTaxonomyField(map, ref newItem, importValue, mapping);
@@ -3025,7 +3074,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var pmbiItem = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(new ID(id));
             var field = newItem.Fields[NewItemField];
@@ -3055,7 +3104,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         {
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             var field = newItem.Fields[NewItemField];
             if (!string.IsNullOrWhiteSpace(importValue) && field != null)
@@ -3763,7 +3812,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -3943,7 +3992,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
             // Found
-             d.Add("foodnews_beverages", "Beverages");
+            d.Add("foodnews_beverages", "Beverages");
             d.Add("foodnews_beverages_fruit_juices", "Beverages");
             d.Add("foodnews_beverages_fruit_juices_passion_fruit", "Passion Fruit Juice");
             d.Add("foodnews_beverages_fruit_juices_cranberry", "Cranberry Juice");
@@ -4348,7 +4397,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -4464,7 +4513,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 
             // XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
-            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml",System.Web.HttpRuntime.AppDomainAppPath));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", System.Web.HttpRuntime.AppDomainAppPath));
 
             if (contentName != "")
             {
@@ -4525,9 +4574,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
-           
+
             if (string.IsNullOrEmpty(importValue))
                 return;
 
@@ -4551,7 +4600,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //loop through children and look for anything that matches by name
             string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-             tName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+            tName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
 
             //if you find one then store the id
             if (!tName.Any())
@@ -4560,7 +4609,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 if (!tDName.Any())
                 {
                     map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
-                    
+
                 }
                 else
                 {
@@ -4580,7 +4629,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string ctID = t.First().ID.ToString();
             DataLogger.Add(NewItemField, t.First().Name);
-             
+
             if (!f.Value.Contains(ctID))
                 f.Value = ctID;
         }
@@ -4604,7 +4653,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("news-data", "Data Table");
             d.Add("ontheradar", "Video");
             d.Add("lloyds-list-videos", "Video");
-            
+
             d.Add("insurance_day_video", "Video");
             d.Add("multimedia", "Video");
 

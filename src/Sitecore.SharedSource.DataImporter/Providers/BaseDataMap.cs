@@ -951,7 +951,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 else
                                 {
-                                    d.FillField(this, ref newItem, importValue, ArticleId);
+                                    d.FillField(this, ref newItem, importValue, ArticleId,publication);
                                 }
 
 

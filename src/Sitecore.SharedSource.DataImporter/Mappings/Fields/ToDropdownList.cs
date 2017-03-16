@@ -24,7 +24,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region private methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
             string selectedValue = string.Empty;
 

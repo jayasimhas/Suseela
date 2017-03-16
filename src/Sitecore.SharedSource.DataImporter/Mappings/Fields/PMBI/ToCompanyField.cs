@@ -16,7 +16,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.PMBI
 		{
 		}
 
-		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
 		{
 			// connect to the company database and get the ID to store
 			if (importValue.Equals(string.Empty))

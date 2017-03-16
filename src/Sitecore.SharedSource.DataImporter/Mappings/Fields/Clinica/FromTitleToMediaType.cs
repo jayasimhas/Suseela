@@ -10,7 +10,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 		{
 		}
 
-		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
 		{
 			var field = newItem.Fields[NewItemField];
 			var item = newItem.Database.GetItem(SourceList);
