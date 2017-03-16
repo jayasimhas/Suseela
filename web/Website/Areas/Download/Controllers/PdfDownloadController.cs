@@ -141,7 +141,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         ImageCaption = selectArticle.Featured_Image_Caption,
                         ImageSource = selectArticle.Featured_Image_Source,
                         abslouteUrl = selectArticle._AbsoluteUrl,
-                        ContentType = selectArticle.Content_Type.Item_Name,
+                        ContentType = selectArticle.Content_Type?.Item_Name,
                         Sub_Title = selectArticle.Sub_Title,
                         Author = selectArticle.Authors.Select(x => new PersonModel(x)),
                         RelatedArticles = GetRelatedArticles(selectArticle),
@@ -229,7 +229,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         tableNode.SetAttributeValue("width", "688px");
                         tableNode.SetAttributeValue("style", "color:#58595b");
-                        tableNode.SetAttributeValue("border", "1px solid #e2e4e4");
+                        //tableNode.SetAttributeValue("border", "1px solid #e2e4e4");
                     }
                 }
                 var CommonHeaderHtml = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-header']");
