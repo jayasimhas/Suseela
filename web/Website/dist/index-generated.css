@@ -10854,8 +10854,23 @@ div#feedbacklite.fbl_r {
   font-weight: bold;
   line-height: 19px; }
 
-.sponsored_cont .sponsored_title {
-  text-transform: uppercase; }
+.sponsored_cont {
+  background: rgba(245, 130, 31, 0.1); }
+  .sponsored_cont .sponsored_title {
+    text-transform: uppercase; }
+  .sponsored_cont.article-executive-summary {
+    padding: 16px;
+    padding: 1rem; }
+    .sponsored_cont.article-executive-summary .sponsored_title {
+      font-style: italic;
+      text-transform: capitalize;
+      margin-right: 8px;
+      margin-right: 0.5rem; }
+  .sponsored_cont ul {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem; }
+    .sponsored_cont ul li {
+      display: inline; }
 
 .headercolored_new {
   background: #c15b07;
