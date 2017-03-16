@@ -10303,8 +10303,8 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition .graphs-container .graphs {
       width: 1053px; } }
   .id-merges-acquisition .graphs-container .graphs .graph-wrapper {
-    margin: 10px 8px 0;
-    margin: 0.625rem 0.5rem 0;
+    margin: 10px 8px 0 0;
+    margin: 0.625rem 0.5rem 0 0;
     float: left;
     width: 24%;
     height: 234px; }

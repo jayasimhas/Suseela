@@ -303,8 +303,9 @@
 			@include breakpoint('small') {
 				width: 1053px;
 			}
+			
 			.graph-wrapper {
-				margin: 0.625rem 0.5rem 0;
+				margin: 0.625rem 0.5rem 0 0;
 				float: left;
 				width: 24%;
 				height: 234px;
