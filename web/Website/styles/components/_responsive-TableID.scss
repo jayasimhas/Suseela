@@ -158,7 +158,7 @@
 			.owl-controls{
 				position:absolute;
 				top:-51px;
-				right: 0px;
+				right: 15px;
 			}	
 			.owl-theme .owl-controls .owl-nav div{
 				background: none;
@@ -235,7 +235,7 @@
     float: right;
 
 }
-#tankerPureChemPage, #shipVehicle, #onOrderTable{
+#tankerPureChemPage, #shipVehicle, #onOrderTable, #shipVehiclePage, #shipCoalExport{
 	border: none;
 	.R16 {
 		height: 2.5rem;
@@ -255,7 +255,7 @@
 	}
 	
 }
-#tankerPureChemPage, #onOrderTable {
+#tankerPureChemPage, #onOrderTable, #shipVehiclePage, #shipCoalExport{
 	margin-bottom: 1rem;	
 	.pad-10 {
 		padding: 10px !important;
@@ -296,4 +296,11 @@
 }
 #shipContainerShip {
 	border: none;
+}
+#shipCoalExport{
+	@include breakpoint('small') {
+		.pad-10 {
+			padding: 10px 8px !important;
+		}
+	}
 }

@@ -44,7 +44,7 @@
 	}
 	tbody.visible-xs {
 		td.pad-10 {
-			padding: 10px;
+			padding: 0.5rem 1rem !important;
 		}
 	}
 	.show-largest-btn {
@@ -90,6 +90,9 @@
 	}
 	input.range-field {
 	    width: 40px !important;
+	    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+	    	width: 35px !important;
+	    }
 	    @include breakpoint('small') {
 	    	width: 41% !important;
 	    }
@@ -191,7 +194,7 @@
 				 	}
 			 	}
 			 	.label-wrap {
-			 		padding: 0 5px;
+			 		padding: 5px;
 			 		&:after {
 						visibility: hidden;
 					     display: block;
@@ -203,9 +206,10 @@
 				 	span {
 				 		float: left;
 				 		width: calc(100% - 15px);
-				 	    font-weight: normal;
+				 	    font-weight: 500;
 		    			margin-top: 5px;
-		    			font-size: 16px;
+		    			font-size: 1rem;
+		    			font-style: normal;
 				 	}
 				}
 				.field-wrap {
@@ -297,10 +301,11 @@
 		}
 		.graphs {
 			@include breakpoint('small') {
-				width: 1200px;
+				width: 1053px;
 			}
+			
 			.graph-wrapper {
-				margin: 0.625rem 0.5rem 0;
+				margin: 0.625rem 0.5rem 0 0;
 				float: left;
 				width: 24%;
 				height: 234px;
@@ -526,6 +531,10 @@
 	    width: 16px;
 	    background-color: #f1f2f2;
 	    z-index: 9;
+	    display: none;
+	    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    		display: block;
+    	}
 	    &:after {
 	    	content: '';
 	    	position: absolute;

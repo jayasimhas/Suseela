@@ -2,18 +2,23 @@
 	var dryCargoIcap = {
 		renderTable: function(tableData, id){
 			var self = this, tableStr = '';
-			tableStr += self.renderDesktop(tableData);
-			tableStr += self.renderMobile(tableData);
+			
+			if($(window).width() <= 667){
+				tableStr += self.renderMobile(tableData);
+			}
+			else{
+				tableStr += self.renderDesktop(tableData);
+			}
 			id.html(tableStr);
 		},
 		renderDesktop: function(tableObj){
-			var self = this, deskStr = ''; 
+			var self = this, deskStr = '';
 			 $.each(tableObj, function(datekey, date){ 
 				$.each(date, function(key, value) { 
-					deskStr += '<table class="table descView">'
+					deskStr += '<table class="table">'
 					deskStr += '<thead class="table_head">';
 					deskStr += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-					deskStr += '<tr class="visible-lg">';
+					deskStr += '<tr class="blueBg">';
 					var tableHead = value[0];
 						for(var key in tableHead){
 							deskStr += '<th class="pad-10">'+key+'</th>'
@@ -39,11 +44,11 @@
 			 $.each(tableObj, function(datekey, date){ 
 				
 					$.each(date, function(key, value) { 
-						mobStr += '<table class="table mobView">'
+						mobStr += '<table class="table">';
 						mobStr += '<thead class="table_head">';
 						mobStr += '<tr><th colspan="2" class="pad-full-10">'+key+'</th></tr>';
 						mobStr += '</thead>';
-						mobStr += '<tbody class="visible-sm">';
+						mobStr += '<tbody>';
 						
 						$.each(value, function(objData, objVal) {					
 							$.each(objVal, function(responseKey, responseVal) { 
@@ -56,7 +61,6 @@
 						});					
 						mobStr += '</tbody>';
 						mobStr += '</table>';
-						 $('#dryCargo').html(mobStr);
 					}); 
 			 });
 			 return mobStr;
