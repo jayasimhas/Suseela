@@ -55,12 +55,12 @@ import './components/ll-ship-coal-export.js';
 import './components/ll-tanker-pure-chem-page.js';
 import './components/ll-marketdata-drycargo-ssyal.js';
 import './components/ll-cockett-bunker.js';
-import './components/ll-ship-vehicle.js';
 import './components/ll-ship-roro.js';
 import './components/ll-ship-container-ship.js';
 import './components/ll-shipContainerShipFixtures';
 import './components/ll-fisDryBulk';
 import './components/ll-howeRobinson';
+import './components/ll-shipVehiclePage';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -1295,5 +1295,47 @@ $(document).ready(function(){
 		$('.header-account-right-access').addClass('nomyView');
 		$('.header-publication-links').addClass('nomyView');
 	}
+
+
+    //Update state Field on Contact Page
+    if($('.page-account-contact').length > 0) {
+        var stateValue = $('#hiddenState').val();
+        if(stateValue.length > 0) {
+            $('#ddlShippingCountry').trigger('change');
+        }
+    }
+    $(document).on('change', '#ddlShippingCountry', function () {
+
+        var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
+
+        $.ajax({
+            url: '/Account/api/ContactInfoApi/GetStates/',
+            data: { 'Country': Value },
+            type: 'POST',
+            success: function success(Data) {
+                $('#ddlShippingState').remove();
+                $('label[for="ShipState"]').parent().append('<select name="ShipState" id="ddlShippingState"></select>');
+                
+                var stateValue = $('#hiddenState').val();
+                
+                for (var key in Data) {
+                    if(stateValue === Data[key].ID) {
+                        $('#ddlShippingState').append('<option selected value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    } else {
+                        $('#ddlShippingState').append('<option value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    }
+                }
+                $('#ddlShippingState').selectivity({
+                    showSearchInputInDropdown: false
+                });
+                $(".selectivity-input .selectivity-single-select").each(function () {
+                    $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+                });
+            },
+            error: function error(err) {
+                console.log('Data is not there: ' + JSON.stringify(err));
+            }
+        });
+    });
 
 });

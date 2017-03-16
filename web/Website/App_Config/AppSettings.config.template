@@ -14,8 +14,13 @@
   <add key="commoditiesColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,COMMODITYFACTOR,COMMERCIAL" />
   <add key="AgrowColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,CROPPROTECTION,COMMERCIAL" />
   <add key="AnimalPharmColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,ANIMALHEALTHNEW,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
-  <add key="InsuranceDayColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,SECTORS" />
-  <add key="LloydslistColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />
+  <!--<add key="InsuranceDayColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,SECTORS" />
+  <add key="LloydslistColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />-->
+
+  <add key="InsuranceDayColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTORS,SECTINREF" />
+  <add key="LloydslistColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,REGULARS,SECTORS,SECTINREF" />
+
+
 
   <add key="PublishedYear" value="90"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />

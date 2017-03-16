@@ -34,7 +34,7 @@ namespace Informa.Web.ViewModels
         public readonly ITextTranslator TextTranslator;
         protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
-        protected IGlassBase Datasource;        
+        protected IGlassBase Datasource;
         public LatestNewsViewModel(IGlassBase datasource,
             IRenderingContextService renderingParametersService,
             IArticleSearch articleSearch,
@@ -51,14 +51,14 @@ namespace Informa.Web.ViewModels
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             AuthorService = authorService;
-            DcdReader = dcdReader;           
+            DcdReader = dcdReader;
 
             Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
             if (Parameters == null) return;
 
             DisplayTitle = Parameters.Display_Title;
-            ItemsToDisplay = !string.IsNullOrEmpty(Parameters.Number_To_Display.ToString()) ? Parameters.Number_To_Display : 6;
+            ItemsToDisplay = Parameters.Number_To_Display != null && Parameters.Number_To_Display?.Value != null ? Convert.ToInt32(Parameters.Number_To_Display?.Value) : 6;
             SeeAllLink = Parameters.Show_See_All ? new Link
             {
                 Text = TextTranslator.Translate("Article.LatestFrom.SeeAllLink")

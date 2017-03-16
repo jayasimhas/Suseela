@@ -117,62 +117,67 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 }
                 var preferenceRecords = entity.records.Where(record => !string.IsNullOrWhiteSpace(record.Value2__c) && !record.Value2__c
                 .Equals(ContentPersonalizationParent, StringComparison.OrdinalIgnoreCase)).OrderBy(record => record.Value2__c).ToList();
-                var channelCode = string.Empty;
-                Channel ch = null;
-                var lastRecord = preferenceRecords.Last();
-                foreach (Record record in preferenceRecords)
-                {
-                    var orders = !string.IsNullOrWhiteSpace(record.Value8__c) ?
-                        record.Value8__c.Split(OrderSeparator) : null;
-                    if (channelCode.Equals(record.Value2__c, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
-                        {
-                            ch.Topics.Add(
-                           new Topic()
-                           {
-                               TopicCode = record.Value5__c,
-                               TopicId = record.Value6__c,
-                               IsFollowing = Convert.ToBoolean(record.Value7__c),
-                               TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
-                           });
-                        }
-                    }
-                    else
-                    {
-                        channelCode = record.Value2__c;
-                        if (ch != null)
-                        {
-                            userPreferences.PreferredChannels.Add(ch);
-                        }
-                        ch = new Channel()
-                        {
-                            ChannelCode = record.Value2__c,
-                            ChannelId = record.Value3__c,
-                            IsFollowing = Convert.ToBoolean(record.Value4__c),
-                            ChannelOrder = orders != null && orders.Count() > 0 ? Convert.ToInt16(orders[0]) : 0
-                        };
-                        ch.Topics = new List<Topic>();
-                        if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
-                        {
-                            ch.Topics.Add(
-                            new Topic()
-                            {
-                                TopicCode = record.Value5__c,
-                                TopicId = record.Value6__c,
-                                IsFollowing = Convert.ToBoolean(record.Value7__c),
-                                TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
-                            });
-                        }
-                    }
-                    if(lastRecord.Equals(record))
-                    {
-                        if (ch != null & !string.IsNullOrWhiteSpace(ch.ChannelCode))
-                        {
-                            userPreferences.PreferredChannels.Add(ch);
-                        }
-                    }
 
+                if (preferenceRecords != null && preferenceRecords.Any())
+                {
+
+                    var channelCode = string.Empty;
+                    Channel ch = null;
+                    var lastRecord = preferenceRecords.Last();
+                    foreach (Record record in preferenceRecords)
+                    {
+                        var orders = !string.IsNullOrWhiteSpace(record.Value8__c) ?
+                            record.Value8__c.Split(OrderSeparator) : null;
+                        if (channelCode.Equals(record.Value2__c, StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
+                            {
+                                ch.Topics.Add(
+                               new Topic()
+                               {
+                                   TopicCode = record.Value5__c,
+                                   TopicId = record.Value6__c,
+                                   IsFollowing = Convert.ToBoolean(record.Value7__c),
+                                   TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
+                               });
+                            }
+                        }
+                        else
+                        {
+                            channelCode = record.Value2__c;
+                            if (ch != null)
+                            {
+                                userPreferences.PreferredChannels.Add(ch);
+                            }
+                            ch = new Channel()
+                            {
+                                ChannelCode = record.Value2__c,
+                                ChannelId = record.Value3__c,
+                                IsFollowing = Convert.ToBoolean(record.Value4__c),
+                                ChannelOrder = orders != null && orders.Count() > 0 ? Convert.ToInt16(orders[0]) : 0
+                            };
+                            ch.Topics = new List<Topic>();
+                            if (!string.IsNullOrWhiteSpace(record.Value5__c) && !string.IsNullOrWhiteSpace(record.Value6__c))
+                            {
+                                ch.Topics.Add(
+                                new Topic()
+                                {
+                                    TopicCode = record.Value5__c,
+                                    TopicId = record.Value6__c,
+                                    IsFollowing = Convert.ToBoolean(record.Value7__c),
+                                    TopicOrder = orders != null && orders.Count() > 1 ? Convert.ToInt16(orders[1]) : 0
+                                });
+                            }
+                        }
+                        if (lastRecord.Equals(record))
+                        {
+                            if (ch != null & !string.IsNullOrWhiteSpace(ch.ChannelCode))
+                            {
+                                userPreferences.PreferredChannels.Add(ch);
+                            }
+                        }
+
+                    }
                 }
             }
             return userPreferences;

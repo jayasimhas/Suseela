@@ -33,29 +33,29 @@ jQuery(document).ready(function ($) {
 	else
 	{
 	jQuery('#SearchCombo').addClass('loadingItems');
-	self.searchHandlerUrl="/api/SearchArticlesInRTE";	
+	self.searchHandlerUrl="/api/informasearch";	
 	}
 jQuery.ajax({
       type: "GET",
       url: self.searchHandlerUrl, 
-	  data: {articleNumber : searchText },
+	  data: {pid:'e5a0919f-9fa6-4b80-90c4-84b48b139369', q:searchText },
       contentType: "application/json; charset=utf-8",
       dataType: 'json',
-       success: function(a){													 
+       success: function(a){													 				   	 
 				   jQuery('#SearchCombo').html('');
 				   jQuery('#SearchCombo').removeClass('loadingItems');				  
-				   if(a==null)
+				   if(a.totalResults==0)
 				   {
 						 jQuery('#SearchCombo')
          .append($("<option></option>")                    				
                    .text('No results found'));
-				   }
-				   jQuery(a).each(function(i,val){				  
+				   }				  						   
+				  jQuery(a.results).each(function(i,val){				  
 				  		 jQuery('#SearchCombo')
          .append($("<option></option>")
-                    .attr("value",val._Id)					
-                   .text(val._Name));					
-				  });	
+                    .attr("value",val.itemId)					
+                   .text(val.title));					
+				  });		
 	$('#SearchCombo').change(function() {
     var id=jQuery( "#SearchCombo option:selected" ).val();
 				$('#Filename').val(id);

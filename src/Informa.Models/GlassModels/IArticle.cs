@@ -7,6 +7,7 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
@@ -121,7 +122,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField("__updated")]
         public virtual DateTime Updated { get; set; }
 
-        public ITaxonomy_Item SponsoredBy { get; set; }        
+        public ISponsored_Content SponsoredBy { get; set; }        
     }
 
     public interface IPublicationChild

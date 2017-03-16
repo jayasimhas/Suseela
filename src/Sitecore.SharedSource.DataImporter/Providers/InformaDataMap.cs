@@ -92,7 +92,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     //reading article author name
                     string authorNode = "STORYAUTHORNAME";
-                    ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
+
+                    string AuthorName = AuthorHelper.Authors(GetXMLData(d, authorNode));
+                    if (string.IsNullOrEmpty(AuthorName))
+                    {
+                        if (publication == "InsuranceDay")
+                        {
+                            AuthorName = "Insurance Day";
+                        }
+                        if (publication == "Lloydslist")
+                        {
+                            AuthorName = "Lloyds List";
+                        }
+
+                    }
+                    ao.Add(authorNode, AuthorName);
 
                     string bodyNode = "BODY";
                     string bodyTitleHtml = GetXMLData(d, bodyNode);
@@ -1725,7 +1739,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     if (publication == "Lloydslist")
                     {
                         Taxonomy.Add("COUNTRY", "");
-                        Taxonomy.Add("HOTTOPICS", "");
+                       // Taxonomy.Add("HOTTOPICS", "");
                         Taxonomy.Add("MARKET", "");
                         Taxonomy.Add("REGULARS", "");
                         Taxonomy.Add("SECTORS", "");
@@ -1784,11 +1798,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 //    Taxonomy["MEDIA"] = Media;
                                 //}
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
-                                {
-                                    HotTopics += node.Attributes["unique-name"].Value + ",";
-                                    Taxonomy["HOTTOPICS"] = HotTopics;
-                                }
+                                //else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
+                                //{
+                                //    HotTopics += node.Attributes["unique-name"].Value + ",";
+                                //    Taxonomy["HOTTOPICS"] = HotTopics;
+                                //}
                                 else
                                 {
                                     SectionRef += node.Attributes["unique-name"].Value + ",";
@@ -3379,7 +3393,33 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         public static string Authors(string value)
         {
             return value
+
+                .Replace("Anne - Christin Gröger", "Anne Christin Groger")
+                     .Replace("Insurance Day staff", "Insurance Day")
+                     .Replace("Michał Czub", "Michal Czub")
+            .Replace("Anne - Christin Gröger", "Anne Christin Groger")
+                     .Replace("Insurance Day staff", "Insurance Day")
+                     .Replace("Michał Czub", "Michal Czub")
+                     .Replace("id Administrator", "Insurance Day")
                      .Replace("Pesticide & Chemical Policy editor", "Pesticide Chemical Policy editor")
+                    .Replace("ll Administrator", "Lloyd's List")
+                    .Replace("Lloyd's List Editorial", "Lloyd's List")
+                    .Replace("Lloyd’s List Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List editorial", "Lloyd's List")
+                    .Replace("Lloyd's List Reporter", "Lloyd's List")
+                     .Replace("Lloyd's List reporter", "Lloyd's List")
+                    .Replace("Last Word", "Lloyd's List")
+                    .Replace("Containerisation International", "Lloyd's List")
+                    .Replace("CI editorial", "Lloyd's List")
+                     .Replace("CI Editorial", "Lloyd's List")
+                    .Replace("Lloyd's List staff", "Lloyd's List")
+                    .Replace("Lloyd's List Australia", "Lloyd's List")
+                    .Replace("Lloyd's List Containers", "Lloyd's List")
+                    .Replace("Lloyd’s List Containers", "Lloyd's List")
+                    .Replace("Informa i-Law", "Lloyd's List")
+                     .Replace("Lloyd's List team", "Lloyd's List")
+
+                    .Replace("Lloyd's List editorial team", "Lloyd's List")
                      .Replace("kelly@informa.com", ",")
                     .Replace("brizmohun@informa.com", ",")
                     .Replace("cathy.kelly@informa.com", ",")

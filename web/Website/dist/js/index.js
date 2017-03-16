@@ -6508,6 +6508,12 @@ $(function () {
 		MergeAcquistion.init(window.jsonMergeAcquistion, $('.merge-acquistion'));
 	}
 })();
+if (!String.prototype.includes) {
+	String.prototype.includes = function () {
+		'use strict';
+		return String.prototype.indexOf.apply(this, arguments) !== -1;
+	};
+}
 
 },{}],13:[function(require,module,exports){
 'use strict';
@@ -6972,12 +6978,23 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			$.each(data[0], function (key, val) {
 				Data = val;
 			});
-			Parent.append('<thead class="table_head">' + '<tr>' + '<th colspan="2" class="p-10">' + (Data.Heading ? Data.Heading : '&nbsp;') + '</th>' + '</tr>' + '</thead>');
+			Parent.append('<thead class="table_head">' + '<tr>' + '<th colspan="2" class="p-10">' + (Data.Heading ? Data.Heading : Data.Title) + '</th>' + '</tr>' + '</thead>');
 			Parent.append('<tbody></tbody>');
 			var Body = Parent.find('tbody');
-			for (var key in Data[0]) {
+			for (var key in Data) {
 				if (key != 'Heading') {
-					Body.append('<tr>' + '<td class="R16">' + key + '</td>' + '<td class="R16">' + Data[0][key] + '</td>' + '</tr>');
+					if (Array.isArray(Data[key])) {
+						if (key == 'Messages') {
+							var StrMsg = "",
+							    Messages = Data[key];
+							for (var i in Messages) {
+								StrMsg += "<p><strong>" + Messages[i].Date + "</strong>" + Messages[i].Message + "</p>";
+							}
+							Body.append('<tr>' + '<td class="R16">' + key + '</td>' + '<td class="R16">' + StrMsg + '</td>' + '</tr>');
+						}
+					} else {
+						Body.append('<tr>' + '<td class="R16">' + key + '</td>' + '<td class="R16">' + Data[key] + '</td>' + '</tr>');
+					}
 				}
 			}
 		},
@@ -7573,48 +7590,80 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 (function () {
 	var dryCargoIcap = {
-		table: '',
-		renderTable: function renderTable() {
-			var self = this;
-			//console.log(tableObj);
+		renderTable: function renderTable(tableData, id) {
+			var self = this,
+			    tableStr = '';
+
+			if ($(window).width() <= 667) {
+				tableStr += self.renderMobile(tableData);
+			} else {
+				tableStr += self.renderDesktop(tableData);
+			}
+			id.html(tableStr);
+		},
+		renderDesktop: function renderDesktop(tableObj) {
+			var self = this,
+			    deskStr = '';
+			$.each(tableObj, function (datekey, date) {
+				$.each(date, function (key, value) {
+					deskStr += '<table class="table">';
+					deskStr += '<thead class="table_head">';
+					deskStr += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
+					deskStr += '<tr class="blueBg">';
+					var tableHead = value[0];
+					for (var key in tableHead) {
+						deskStr += '<th class="pad-10">' + key + '</th>';
+					}
+					deskStr += '</tr>';
+					deskStr += '</thead>';
+					deskStr += '<tbody class="visible-lg">';
+					deskStr += '<tr>';
+					$.each(value, function (objData, objVal) {
+						$.each(objVal, function (responseKey, responseVal) {
+							deskStr += '<td class="R16 pad-10">' + responseVal + '</td>';
+						});
+						deskStr += '</tr>';
+					});
+					deskStr += '</tbody>';
+					deskStr += '</table>';
+				});
+			});
+			return deskStr;
+		},
+		renderMobile: function renderMobile(tableObj) {
+			var self = this,
+			    mobStr = '';
 			$.each(tableObj, function (datekey, date) {
 
 				$.each(date, function (key, value) {
-					//console.log(key);
-					self.table += '<table class="table descView">';
-					self.table += '<thead class="table_head">';
-					self.table += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
-					self.table += '<tr class="visible-lg">';
-					//console.log(value[0]);
-					var tableHead = value[0];
-					for (var key in tableHead) {
-						self.table += '<th class="pad-10">' + key + '</th>';
-					}
-					self.table += '</tr>';
-					self.table += '</thead>';
-					self.table += '<tbody class="visible-lg">';
-					self.table += '<tr>';
+					mobStr += '<table class="table">';
+					mobStr += '<thead class="table_head">';
+					mobStr += '<tr><th colspan="2" class="pad-full-10">' + key + '</th></tr>';
+					mobStr += '</thead>';
+					mobStr += '<tbody>';
+
 					$.each(value, function (objData, objVal) {
-						//console.log(objVal);						
 						$.each(objVal, function (responseKey, responseVal) {
-							self.table += '<td class="R16 pad-10">' + responseVal + '</td>';
+							mobStr += '<tr>';
+							mobStr += '<td class="pad-10 mobleftCol">' + responseKey + '</td>';
+							mobStr += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
+							mobStr += '</tr>';
 						});
-						self.table += '</tr>';
 					});
-					self.table += '</tbody>';
-					self.table += '</table>';
-					$('#dryCargoIcap').html(self.table);
+					mobStr += '</tbody>';
+					mobStr += '</table>';
 				});
 			});
+			return mobStr;
 		},
-		init: function init() {
-			this.renderTable();
+		init: function init(tableData, id) {
+			this.renderTable(tableData, id);
 		}
 	};
 
 	$(document).ready(function () {
 		if ($('#dryCargoIcap').length > 0) {
-			dryCargoIcap.init();
+			dryCargoIcap.init(drycragoicapTable, $('#dryCargoIcap'));
 		}
 	});
 })();
@@ -7624,76 +7673,111 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 (function () {
 	var dryCargo = {
-		table: '',
+		renderDate: function renderDate(dateObj) {
+			var options = '';
+			$.each(dateObj[0], function (key, val) {
+				$.each(val, function (idx, value) {
+					options += '<option value="' + value.Value + '">' + value.Text + '</option>';
+				});
+			});
+			$('#dryCargodateselect').html(options);
+		},
 		renderTable: function renderTable() {
+			var self = this,
+			    loadDateVal = $('#dryCargodateselect option').val();
+			self.callAjaxFn(loadDateVal);
+			$(document).on('change', '#dryCargodateselect', function () {
+				var selectDateVal = $('#dryCargodateselect option').val();
+				self.callAjaxFn(selectDateVal);
+			});
+		},
+		callAjaxFn: function callAjaxFn(seldateVal) {
 			var self = this;
-			//console.log(tableObj);
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: { 'dateVal': seldateVal, 'feedUrl': $('#drycargoHiddenVal').val() },
+				dataType: 'json',
+				type: 'GET',
+				success: function success(searchData) {
+					self.sendHTTPRequest(searchData);
+				},
+				error: function error(err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
+			});
+		},
+		sendHTTPRequest: function sendHTTPRequest(searchData) {
+			var self = this,
+			    tableStr = '';
+			tableStr += this.renderDesktop(searchData);
+			tableStr += this.renderMobile(searchData);
+			$('#dryCargo').html(tableStr);
+		},
+		renderDesktop: function renderDesktop(tableObj) {
+			var self = this,
+			    deskStr = '';
 			$.each(tableObj, function (datekey, date) {
-
 				$.each(date, function (key, value) {
-					//console.log(key);
-					self.table += '<table class="table descView">';
-					self.table += '<thead class="table_head">';
-					self.table += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
-					self.table += '<tr class="visible-lg">';
-					//console.log(value[0]);
+					deskStr += '<table class="table descView">';
+					deskStr += '<thead class="table_head">';
+					deskStr += '<tr><th colspan="6" class="pad-full-10">' + key + '</th></tr>';
+					deskStr += '<tr class="visible-lg">';
 					var tableHead = value[0];
 					for (var key in tableHead) {
-						self.table += '<th class="pad-10">' + key + '</th>';
+						deskStr += '<th class="pad-10">' + key + '</th>';
 					}
-					self.table += '</tr>';
-					self.table += '</thead>';
-					self.table += '<tbody class="visible-lg">';
-					self.table += '<tr>';
+					deskStr += '</tr>';
+					deskStr += '</thead>';
+					deskStr += '<tbody class="visible-lg">';
+					deskStr += '<tr>';
 					$.each(value, function (objData, objVal) {
-						//console.log(objVal);						
 						$.each(objVal, function (responseKey, responseVal) {
-							self.table += '<td class="R16 pad-10">' + responseVal + '</td>';
+							deskStr += '<td class="R16 pad-10">' + responseVal + '</td>';
 						});
-						self.table += '</tr>';
+						deskStr += '</tr>';
 					});
-					self.table += '</tbody>';
-					self.table += '</table>';
-					$('#dryCargo').html(self.table);
+					deskStr += '</tbody>';
+					deskStr += '</table>';
 				});
 			});
+			return deskStr;
 		},
-		renderMobile: function renderMobile() {
-			var self = this;
+		renderMobile: function renderMobile(tableObj) {
+			var self = this,
+			    mobStr = '';
 			$.each(tableObj, function (datekey, date) {
 
 				$.each(date, function (key, value) {
-					//console.log(key);
-					self.table += '<table class="table mobView">';
-					self.table += '<thead class="table_head">';
-					self.table += '<tr><th colspan="8" class="pad-full-10">' + key + '</th></tr>';
-					self.table += '</thead>';
-					self.table += '<tbody class="visible-sm">';
+					mobStr += '<table class="table mobView" width="100%">';
+					mobStr += '<thead class="table_head">';
+					mobStr += '<tr><th colspan="2" class="pad-full-10">' + key + '</th></tr>';
+					mobStr += '</thead>';
+					mobStr += '<tbody class="visible-sm">';
 
 					$.each(value, function (objData, objVal) {
-						//console.log(objVal);						
 						$.each(objVal, function (responseKey, responseVal) {
-							self.table += '<tr>';
-							self.table += '<td class="pad-10 mobleftCol">' + responseKey + '</td>';
-							self.table += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
-							self.table += '</tr>';
+							mobStr += '<tr>';
+							mobStr += '<td class="pad-10 mobleftCol">' + responseKey + '</td>';
+							mobStr += '<td class="pad-10 mobrigCol">' + responseVal + '</td>';
+							mobStr += '</tr>';
 						});
+						mobStr += '<tr><td class="rowbordinMob" colspan="2"></td></tr>';
 					});
-					self.table += '</tbody>';
-					self.table += '</table>';
-					$('#dryCargo').html(self.table);
+					mobStr += '</tbody>';
+					mobStr += '</table>';
 				});
 			});
+			return mobStr;
 		},
-		init: function init() {
+		init: function init(dateData) {
+			this.renderDate(dateData);
 			this.renderTable();
-			this.renderMobile();
 		}
 	};
 
 	$(document).ready(function () {
 		if ($('#dryCargo').length > 0) {
-			dryCargo.init();
+			dryCargo.init(marketdryCargodate);
 		}
 	});
 })();
@@ -8133,15 +8217,12 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 (function () {
 	// body...
 	'use strict';
-
 	var shipCoalExport = {
 		RenderTable: function RenderTable(data, Parent) {
 			var self = this,
 			    TableStr = "";
 			Parent.empty();
-
 			TableStr = self.RenderSingleTable(data);
-
 			Parent.append(TableStr);
 		},
 		RenderSingleTable: function RenderSingleTable(Data) {
@@ -8156,11 +8237,11 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					HeadingStr += '<th align="left" colspan="2" class="pad-10 main-heading">' + key + '</th>';
 					var SubHeading = Heading[key][0];
 					for (var k in SubHeading) {
-						SubHeadingStr += '<th colspan="1">' + k + '</th>';
+						SubHeadingStr += '<th  class="pad-10">' + k + '</th>';
 					}
 				} else {
-					HeadingStr += '<th align="left" colspan="1" class="pad-10 main-heading">' + key + '</th>';
-					SubHeadingStr += '<th colspan="1"></th>';
+					HeadingStr += '<th align="left" class="pad-10 main-heading">' + key + '</th>';
+					SubHeadingStr += '<th></th>';
 				}
 			}
 
@@ -8171,25 +8252,22 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 					if (Array.isArray(EachValue[key])) {
 						var Values = EachValue[key][0];
 						for (var k in Values) {
-							Td += '<td colspan="1" class="pad-10" align="right">' + Values[k] + '</td>';
+							Td += '<td class="pad-10" align="right">' + Values[k] + '</td>';
 						}
 					} else {
-						Td += '<td colspan="1" class="pad-10">' + EachValue[key] + '</td>';
+						Td += '<td class="pad-10">' + EachValue[key] + '</td>';
 					}
 				}
 				TbodyStr += '<tr>' + Td + '</tr>';
 			}
 
-			var Table = '<table class="table theme-table">' + '<thead>' + '<tr>' + HeadingStr + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
-
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + HeadingStr + '</tr>' + '<tr>' + SubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
 			return Table;
 		},
-		init: function init(data, id) {
-			var self = this;
-			self.RenderTable(data, id);
+		init: function init(data, renderid) {
+			this.RenderTable(data, renderid);
 		}
 	};
-
 	if ($('#shipCoalExport').length > 0) {
 		shipCoalExport.init(window.jsonShipCoalExport, $('#shipCoalExport'));
 	}
@@ -8403,158 +8481,6 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 })();
 
 },{}],30:[function(require,module,exports){
-"use strict";
-
-(function () {
-	// body...
-	'use strict';
-
-	var shipVehicle = {
-		RenderTable: function RenderTable(data, Parent) {
-			var self = this,
-			    TableStr = "";
-			Parent.empty();
-
-			//Heading
-			for (var key in data) {
-				TableStr += self.RenderSingleTable(key, data[key]);
-			}
-
-			Parent.append(TableStr);
-		},
-		RenderSingleTable: function RenderSingleTable(heading, Data) {
-			console.log(Data);
-			var SubHeadingStr = "",
-			    SubSubHeadingStr = "",
-			    TbodyStr = "",
-			    SubHeading = Data[0];
-
-			for (var key in SubHeading) {
-				SubHeadingStr += '<th class="pad-10" colspan="2">' + key + '</th>';
-				if (Array.isArray(SubHeading[key])) {
-					var SubHeadingArray = SubHeading[key][0];
-					for (var sub in SubHeadingArray) {
-						SubSubHeadingStr += '<th class="pad-10" colspan="1">' + sub + '</th>';
-					}
-				} else {
-					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
-				}
-			}
-
-			for (var i = 0; i < Data.length; i++) {
-				var Body = "",
-				    Values = Data[i];
-
-				for (var key in Values) {
-					if (Array.isArray(Values[key])) {
-						var items = Values[key][0];
-						for (var k in items) {
-							Body += '<td class="pad-10" align="right">' + items[k] + '</td>';
-						}
-					} else {
-						Body += '<td class="pad-10" align="right" colspan="2">' + Values[key] + '</td>';
-					}
-				}
-
-				TbodyStr += '<tr>' + Body + '</tr>';
-			}
-
-			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
-
-			return Table;
-		},
-		RenderCarousel: function RenderCarousel(data, Parent) {
-			var self = this,
-			    CarouselStr = "";
-			Parent.empty();
-
-			//Heading
-			for (var key in data) {
-				CarouselStr += self.RenderSingleCarousel(key, data[key]);
-			}
-
-			Parent.append(CarouselStr);
-			self.InitCarousel(Parent);
-		},
-		InitCarousel: function InitCarousel(Parent) {
-			Parent.find('.owl-carousel').owlCarousel({
-				loop: false,
-				margin: 0,
-				merge: true,
-				nav: false,
-				slideBy: 1,
-				responsive: {
-					0: {
-						items: 1
-					},
-					678: {
-						items: 1
-					},
-					320: {
-						items: 1
-					},
-					480: {
-						items: 1
-					}
-				}
-			});
-		},
-		getData: function getData(key, Data) {
-			var ArticleStr = "";
-			for (var i = 0; i < Data.length; i++) {
-				// ArticleStr += Data[i][]
-				var ArticleContent = Data[i][key][0];
-				var Str = "";
-				for (var k in ArticleContent) {
-					Str += '<span class="sub-item">' + ArticleContent[k] + '</span>';
-				}
-				ArticleStr += '<div class="R16">' + Str + '</div>';
-			}
-			return ArticleStr;
-		},
-		getKeyChild: function getKeyChild(key, Object) {
-			var ChildStr = "";
-			for (var i in Object[0]) {
-				ChildStr += "<span class='sub-item'>" + i + "</span>";
-			}
-			return ChildStr;
-		},
-		getFixedData: function getFixedData(key, Data) {
-			var FixedStr = "";
-			for (var i = 0; i < Data.length; i++) {
-				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
-			}
-			return FixedStr;
-		},
-		RenderSingleCarousel: function RenderSingleCarousel(Name, Data) {
-			var FixedPart = "",
-			    CarouselPart = "",
-			    Heading = Data[0],
-			    self = this;
-			for (var key in Heading) {
-				if (Array.isArray(Heading[key])) {
-					CarouselPart += '<div class="article">' + '<div class="year_heading">' + '<div>' + key + '</div>' + self.getKeyChild(key, Heading[key]) + '</div>' + self.getData(key, Data) + '</div>';
-				} else {
-					FixedPart += '<div class="year_heading">' + key + '</div>' + self.getFixedData(key, Data);
-				}
-			}
-
-			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span class="RB16">' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
-
-			return Carousel;
-		},
-		init: function init(data, id) {
-			var self = this;
-			if ($(window).width() > 667) self.RenderTable(data[0], id);else self.RenderCarousel(data[0], id);
-		}
-	};
-
-	if ($('#shipVehicle').length > 0) {
-		shipVehicle.init(window.jsonShipVehicle, $('#shipVehicle'));
-	}
-})();
-
-},{}],31:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -8624,6 +8550,203 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			shipContainerFixtures.init(shipContShipFixDateOptions);
 		}
 	});
+})();
+
+},{}],31:[function(require,module,exports){
+'use strict';
+
+(function () {
+	// body...
+	'use strict';
+
+	var shipVehicle = {
+		renderDate: function renderDate(dateObj) {
+			var options = '';
+			$.each(dateObj[0], function (key, val) {
+				$.each(val, function (idx, value) {
+					options += '<option value="' + value.Value + '">' + value.Text + '</option>';
+				});
+			});
+			$('#shipVehicleselDay').html(options);
+		},
+		RenderTable: function RenderTable(Parent) {
+			var self = this,
+			    TableStr = "",
+			    loadDateVal = $('#shipVehicleselDay option').val();
+			Parent.empty();
+
+			//self.sendHTTPRequest(shipVehicleTableData[0], Parent);
+			self.callAjaxFn(loadDateVal, Parent);
+			$(document).on('change', '#shipVehicleselDay', function () {
+				var selectDateVal = $('#shipVehicleselDay option').val();
+				self.callAjaxFn(selectDateVal, Parent);
+			});
+		},
+		callAjaxFn: function callAjaxFn(seldateVal, Parent) {
+			var self = this;
+			$.ajax({
+				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
+				data: { 'dateVal': seldateVal, 'feedUrl': $('shipVehicleHiddenVal').val() },
+				dataType: 'json',
+				type: 'GET',
+				success: function success(searchData) {
+					self.sendHTTPRequest(searchData[0], Parent);
+				},
+				error: function error(err) {
+					console.log('Feed url is getting error: ' + JSON.stringify(err));
+				}
+			});
+		},
+		sendHTTPRequest: function sendHTTPRequest(searchData, Parent) {
+			var self = this,
+			    TableStr = '';
+
+			if ($(window).width() < 668) self.RenderCarousel(searchData, Parent);else {
+				for (var key in searchData) {
+					TableStr += self.RenderSingleTable(key, searchData[key]);
+				}
+				Parent.append(TableStr);
+			}
+		},
+		RenderSingleTable: function RenderSingleTable(heading, Data) {
+			console.log(Data);
+			var SubHeadingStr = "",
+			    SubSubHeadingStr = "",
+			    TbodyStr = "",
+			    SubHeading = Data[0];
+
+			for (var key in SubHeading) {
+				SubHeadingStr += '<th class="pad-10" colspan="2">' + key + '</th>';
+				if (Array.isArray(SubHeading[key])) {
+					var SubHeadingArray = SubHeading[key][0];
+					for (var sub in SubHeadingArray) {
+						SubSubHeadingStr += '<th class="pad-10" colspan="1">' + sub + '</th>';
+					}
+				} else {
+					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
+				}
+			}
+			var rowIdx = 0;
+			for (var i = 0; i < Data.length; i++) {
+				rowIdx++;
+				var Body = "",
+				    Values = Data[i],
+				    rowcls = rowIdx % 2 === 0 ? 'oddCls' : '';
+
+				for (var key in Values) {
+					if (Array.isArray(Values[key])) {
+						var items = Values[key][0];
+						for (var k in items) {
+							Body += '<td class="pad-10" align="right">' + items[k] + '</td>';
+						}
+					} else {
+						Body += '<td class="pad-10" align="right" colspan="2">' + Values[key] + '</td>';
+					}
+				}
+
+				TbodyStr += '<tr class="' + rowcls + '">' + Body + '</tr>';
+			}
+
+			var Table = '<table class="table">' + '<thead class="table_head">' + '<tr>' + '<th align="left" colspan="14" class="pad-10 main-heading">' + heading + '</th>' + '</tr>' + '<tr class="visible-lg">' + SubHeadingStr + '</tr>' + '<tr class="visible-lg">' + SubSubHeadingStr + '</tr>' + '</thead>' + '<tbody>' + TbodyStr + '</tbody>' + '</table>';
+
+			return Table;
+		},
+		RenderCarousel: function RenderCarousel(data, Parent) {
+			var self = this,
+			    CarouselStr = "";
+			Parent.empty();
+
+			//Heading
+			for (var key in data) {
+				CarouselStr += self.RenderSingleCarousel(key, data[key]);
+			}
+
+			Parent.append(CarouselStr);
+			self.InitCarousel(Parent);
+		},
+		InitCarousel: function InitCarousel(Parent) {
+			Parent.find('.owl-carousel').owlCarousel({
+				loop: false,
+				margin: 0,
+				merge: true,
+				nav: false,
+				slideBy: 1,
+				responsive: {
+					0: {
+						items: 1
+					},
+					678: {
+						items: 1
+					},
+					320: {
+						items: 1
+					},
+					480: {
+						items: 1
+					},
+					768: {
+						items: 2
+					},
+					1025: {
+						items: 3
+					}
+				}
+			});
+		},
+		getData: function getData(key, Data) {
+			var ArticleStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				// ArticleStr += Data[i][]
+				var ArticleContent = Data[i][key][0];
+				var Str = "";
+				for (var k in ArticleContent) {
+					Str += '<span class="sub-item">' + ArticleContent[k] + '</span>';
+				}
+				ArticleStr += '<div class="R16">' + Str + '</div>';
+			}
+			return ArticleStr;
+		},
+		getKeyChild: function getKeyChild(key, Object) {
+			var ChildStr = "";
+			for (var i in Object[0]) {
+				ChildStr += "<span class='sub-item'>" + i + "</span>";
+			}
+			return ChildStr;
+		},
+		getFixedData: function getFixedData(key, Data) {
+			var FixedStr = "";
+			for (var i = 0; i < Data.length; i++) {
+				FixedStr += '<div class="R16">' + Data[i][key] + '</div>';
+			}
+			return FixedStr;
+		},
+		RenderSingleCarousel: function RenderSingleCarousel(Name, Data) {
+			var FixedPart = "",
+			    CarouselPart = "",
+			    Heading = Data[0],
+			    self = this;
+			for (var key in Heading) {
+				if (Array.isArray(Heading[key])) {
+					CarouselPart += '<div class="article">' + '<div class="year_heading">' + '<div>' + key + '</div>' + self.getKeyChild(key, Heading[key]) + '</div>' + self.getData(key, Data) + '</div>';
+				} else {
+					FixedPart += '<div class="year_heading">' + key + '</div>' + self.getFixedData(key, Data);
+				}
+			}
+
+			var Carousel = '<div class="table_head pad-10 clearfix">' + '<span>' + Name + '</span>' + '</div>' + '<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">' + '<div class="states_heading">' + FixedPart + '</div>' + '<div class="owl-wrapper">' + '<div class="owl-carousel">' + CarouselPart + '</div>' + '</div>' + '</div>';
+
+			return Carousel;
+		},
+		init: function init(dateData, id) {
+			var self = this;
+			this.renderDate(dateData);
+			this.RenderTable(id);
+		}
+	};
+
+	if ($('#shipVehiclePage').length > 0) {
+		shipVehicle.init(window.shipVehicleDateOptions, $('#shipVehiclePage'));
+	}
 })();
 
 },{}],32:[function(require,module,exports){
@@ -12739,8 +12862,6 @@ require('./components/ll-marketdata-drycargo-ssyal.js');
 
 require('./components/ll-cockett-bunker.js');
 
-require('./components/ll-ship-vehicle.js');
-
 require('./components/ll-ship-roro.js');
 
 require('./components/ll-ship-container-ship.js');
@@ -12750,6 +12871,8 @@ require('./components/ll-shipContainerShipFixtures');
 require('./components/ll-fisDryBulk');
 
 require('./components/ll-howeRobinson');
+
+require('./components/ll-shipVehiclePage');
 
 // OTHER CODE
 
@@ -13950,9 +14073,50 @@ $(document).ready(function () {
         $('.header-account-right-access').addClass('nomyView');
         $('.header-publication-links').addClass('nomyView');
     }
+
+    //Update state Field on Contact Page
+    if ($('.page-account-contact').length > 0) {
+        var stateValue = $('#hiddenState').val();
+        if (stateValue.length > 0) {
+            $('#ddlShippingCountry').trigger('change');
+        }
+    }
+    $(document).on('change', '#ddlShippingCountry', function () {
+
+        var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
+
+        $.ajax({
+            url: '/Account/api/ContactInfoApi/GetStates/',
+            data: { 'Country': Value },
+            type: 'POST',
+            success: function success(Data) {
+                $('#ddlShippingState').remove();
+                $('label[for="ShipState"]').parent().append('<select name="ShipState" id="ddlShippingState"></select>');
+
+                var stateValue = $('#hiddenState').val();
+
+                for (var key in Data) {
+                    if (stateValue === Data[key].ID) {
+                        $('#ddlShippingState').append('<option selected value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    } else {
+                        $('#ddlShippingState').append('<option value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                    }
+                }
+                $('#ddlShippingState').selectivity({
+                    showSearchInputInDropdown: false
+                });
+                $(".selectivity-input .selectivity-single-select").each(function () {
+                    $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+                });
+            },
+            error: function error(err) {
+                console.log('Data is not there: ' + JSON.stringify(err));
+            }
+        });
+    });
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker.js":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-market-data-dryCargo-icap":22,"./components/ll-market-imarex":25,"./components/ll-marketdata-drycargo-ssyal.js":26,"./components/ll-ship-coal-export.js":27,"./components/ll-ship-container-ship.js":28,"./components/ll-ship-roro.js":29,"./components/ll-ship-vehicle.js":30,"./components/ll-shipContainerShipFixtures":31,"./components/ll-tanker-fixtures":32,"./components/ll-tanker-pure-chem-page.js":33,"./components/myview-settings":34,"./components/pagination":35,"./components/personalisation":36,"./components/save-search-component":37,"./components/scrollbar.js":38,"./components/table_charts":39,"./components/video-mini":40,"./controllers/analytics-controller":41,"./controllers/bookmark-controller":42,"./controllers/form-controller":43,"./controllers/lightbox-modal-controller":44,"./controllers/pop-out-controller":45,"./controllers/register-controller":46,"./controllers/reset-password-controller":47,"./controllers/sortable-table-controller":48,"./controllers/tooltip-controller":49,"./jscookie":51,"./modal":52,"./newsletter-signup":53,"./search-page.js":54,"./selectivity-full":55,"./svg4everybody":56,"./toggle-icons":57,"./zepto.dragswap":58,"./zepto.min":59,"./zepto.suggest":60}],51:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker.js":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-market-data-dryCargo-icap":22,"./components/ll-market-imarex":25,"./components/ll-marketdata-drycargo-ssyal.js":26,"./components/ll-ship-coal-export.js":27,"./components/ll-ship-container-ship.js":28,"./components/ll-ship-roro.js":29,"./components/ll-shipContainerShipFixtures":30,"./components/ll-shipVehiclePage":31,"./components/ll-tanker-fixtures":32,"./components/ll-tanker-pure-chem-page.js":33,"./components/myview-settings":34,"./components/pagination":35,"./components/personalisation":36,"./components/save-search-component":37,"./components/scrollbar.js":38,"./components/table_charts":39,"./components/video-mini":40,"./controllers/analytics-controller":41,"./controllers/bookmark-controller":42,"./controllers/form-controller":43,"./controllers/lightbox-modal-controller":44,"./controllers/pop-out-controller":45,"./controllers/register-controller":46,"./controllers/reset-password-controller":47,"./controllers/sortable-table-controller":48,"./controllers/tooltip-controller":49,"./jscookie":51,"./modal":52,"./newsletter-signup":53,"./search-page.js":54,"./selectivity-full":55,"./svg4everybody":56,"./toggle-icons":57,"./zepto.dragswap":58,"./zepto.min":59,"./zepto.suggest":60}],51:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -16693,9 +16857,6 @@ var Zepto = (function () {
           'position': 'absolute',
           'height': $this.height(),
           'width': $this.width(),
-          'top': $this.css('borderTopWidth'),
-          'left': $this.css('borderLeftWidth'),
-          'padding': $this.cssShortForAllSides('padding'),
           'margin': $this.cssShortForAllSides('margin'),
           'fontFamily': $this.css('fontFamily'),
           'fontSize': $this.css('fontSize'),
