@@ -1,12 +1,31 @@
 ﻿@using Informa.Library.Utilities.References
 @model FeaturedArticleViewModel
-<section class="article-preview @(Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;) ">
-    @if (Model.DisplayImage)
+@{
+    var sponsoredclass = Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;
+}
+<section class="article-preview @sponsoredclass">
+    @if (Model.sponsoredContent != null)
     {
+        <div class="article-metadata">
+            <ul>
+                <li>
+                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
+                </li>
+                <li>
+                    @if (Model.sponsoredContent.Sponsor_Logo != null)
+                    {
+                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                    }
+                </li>
+            </ul>
+        </div>
+    }
+    @if (Model.DisplayImage)
+            {
         <img class="article-preview__image" src="@Model.Image.GetScaledImage(784)">
     }
     @if (Model != null && Model.GlassModel != null)
-    {
+            {
         <div class="article-metadata">
             <div class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
                  data-pop-out-type="sign-in"
@@ -54,31 +73,31 @@
             </ul>
         </div>
 
-        <div class="article-preview__inner-wrapper">
-            <h1 class="article-preview__headline">
-                <a href="@Model.GlassModel._Url"
-                   class="click-utag"
-                   data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.Title" }'>
-                    @Html.Raw(Model.Title)
-                </a>
-            </h1>
+                <div class="article-preview__inner-wrapper">
+                    <h1 class="article-preview__headline">
+                        <a href="@Model.GlassModel._Url"
+                           class="click-utag"
+                           data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.Title" }'>
+                            @Html.Raw(Model.Title)
+                        </a>
+                    </h1>
 
-            <span class="article-preview__byline">
-                @Html.Raw(Model.ArticleByLine)
-            </span>
+                    <span class="article-preview__byline">
+                        @Html.Raw(Model.ArticleByLine)
+                    </span>
 
-            <div class="article-summary">
-                @Html.Raw(Model.Summary)
-            </div>
-        </div>
+                    <div class="article-summary">
+                        @Html.Raw(Model.Summary)
+                    </div>
+                </div>
 
-        <div class="article-preview__tags bar-separated-link-list">
-            @foreach (var tag in Model.ListableTopics)
-                {
-                    if (tag.LinkableUrl != null)
+                <div class="article-preview__tags bar-separated-link-list">
+                    @foreach (var tag in Model.ListableTopics)
                     {
-                    <a href="@tag.LinkableUrl">@tag.LinkableText</a>}
-                }
-        </div>
+                        if (tag.LinkableUrl != null)
+                        {
+                            <a href="@tag.LinkableUrl">@tag.LinkableText</a>}
+                    }
+                </div>
     }
 </section>
