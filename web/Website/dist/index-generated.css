@@ -2466,6 +2466,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       margin: 0.625rem 0 0 0; }
 
 #mycarousel1, #mycarousel2 {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 400; }

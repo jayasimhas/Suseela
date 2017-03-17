@@ -385,6 +385,7 @@
 }
 
 #mycarousel1, #mycarousel2{
+	margin-bottom: 1rem;
 	@include textMix('Roboto', 1em, 400);
 	.companylogo{
 		float: left;
