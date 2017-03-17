@@ -322,10 +322,11 @@
 		margin-bottom: 1rem;
         .sponsored_title {
             font-size: 18px;
-             font-style: italic;
-              margin-right: 0.5rem;
+             font-style: normal;
+             margin-right: 0.5rem;
              text-transform: capitalize;
         }
+		
     }
     &.article-executive-summary-bottom {
         padding: 2rem;
@@ -341,6 +342,8 @@
        margin-bottom: 0.75rem;
         li {
             display: inline;
+			border-right: 0;
         }
     }
+	
 }	

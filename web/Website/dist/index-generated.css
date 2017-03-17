@@ -10895,7 +10895,7 @@ div#feedbacklite.fbl_r {
     margin-bottom: 1rem; }
     .sponsored_cont.article-preview .sponsored_title {
       font-size: 18px;
-      font-style: italic;
+      font-style: normal;
       margin-right: 8px;
       margin-right: 0.5rem;
       text-transform: capitalize; }
@@ -10914,7 +10914,8 @@ div#feedbacklite.fbl_r {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
     .sponsored_cont ul li {
-      display: inline; }
+      display: inline;
+      border-right: 0; }
 
 .headercolored_new {
   background: #c15b07;
