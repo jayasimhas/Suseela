@@ -105,15 +105,6 @@ ISalesforceInfoLogger infoLogger)
                 request.Preferences.Add(new SalesforceField()
                 { FieldName = Industry__cFieldName, FieldValue = JobIndustry, Reference = ContactReferenceName });
 
-
-            if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                {
-                    FieldName = PhoneFieldName,
-                    FieldValue = Phone,
-                    Reference = ContactReferenceName
-                });
-
             if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
                 {
@@ -145,7 +136,7 @@ ISalesforceInfoLogger infoLogger)
                 { FieldName = MailingCountryFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
             if (!string.IsNullOrWhiteSpace(MailingPostalCodeFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingPostalCodeFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
+                { FieldName = MailingPostalCodeFieldName, FieldValue = ShipPostalCode, Reference = ContactReferenceName });
 
 
             using (var client = new HttpClient())

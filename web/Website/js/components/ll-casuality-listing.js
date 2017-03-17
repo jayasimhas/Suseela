@@ -83,7 +83,7 @@
 		},
 		FindHeaderLinks: function(data) {
 			for(var key in data) {
-				if(Array.isArray(data[key])) var CasualityData = data[key];
+				var CasualityData = data[key].casualtyData;
                 for(var item in CasualityData) {
                 	var List = CasualityData[item];
                 	for(var list in List) {

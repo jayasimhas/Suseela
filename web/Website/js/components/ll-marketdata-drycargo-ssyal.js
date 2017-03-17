@@ -12,7 +12,6 @@
 			}
 
 			Parent.append(TableStr);
-
 		},
 		RenderSingleTable: function(Data) {
 			console.log(Data);
@@ -75,6 +74,8 @@
 
 			Parent.append(CarouselStr);
 			self.InitCarousel(Parent);
+			
+			self.setColHeight(Parent);
 		},
 		getFixedData: function(key, Data) {
 			var FixedStr = "";
@@ -150,12 +151,26 @@
 
 			return Carousel;
 		},
+		setColHeight: function(parentId){
+			parentId.find('.states_heading .R16').each(function(idx){
+				var $this = $(this), colHeight = $this.height();
+				$('.article').each(function() {
+					$($(this).find('.R16')[idx]).css('height', colHeight);
+				});
+			});
+		},
 		init: function(data, id) {
 			var self = this;
-			if($(window).width() > 668)
+			if($(window).width() > 668){
 				self.RenderTable(data, id);
-			else
+			}
+			else{
 				self.RenderCarousel(data, id);
+			}
+			
+			$(window).resize(function() {
+				self.setColHeight(id);
+			});
 		}
 	}
 	

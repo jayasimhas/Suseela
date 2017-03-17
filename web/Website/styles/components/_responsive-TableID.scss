@@ -46,6 +46,11 @@
 				a[data-toggle] {
 					float: left;
 					margin: 5px 0 0 15px;
+					@media only screen and (min-width: 767px) and (max-width: 1024px) {
+						position: absolute;
+						top: 15px;
+						right: 20px;
+					}
 				}
 				.R16{
 				   @include textMix('Roboto', 1.0625em, 400);
@@ -301,6 +306,22 @@
 	@include breakpoint('small') {
 		.pad-10 {
 			padding: 10px 8px !important;
+		}
+	}
+}
+
+#marketDataDryCargo{
+	&.ID-Responsive-Table{
+		@include breakpoint('medium') {
+			.states_heading{
+				width: 50%;
+			}
+			.owl-wrapper{
+				width: 50%;
+			}
+		}
+		.article{
+			border-right: 1px solid #eee;
 		}
 	}
 }

@@ -41,7 +41,7 @@ jQuery.ajax({
 	  data: {articleNumber : searchText },
       contentType: "application/json; charset=utf-8",
       dataType: 'json',
-       success: function(a){													 
+       success: function(a){													 				   	 
 				   jQuery('#SearchCombo').html('');
 				   jQuery('#SearchCombo').removeClass('loadingItems');				  
 				   if(a==null)

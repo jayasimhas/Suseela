@@ -832,8 +832,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     {
                                         ListToGuid.DataLogger.Add("Body Image (Y/N)", "N");
                                     }
-
                                 }
+
+
+
+
 
                                 string id = string.Empty;
                                 if (importRow is Item)
@@ -951,7 +954,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 else
                                 {
-                                    d.FillField(this, ref newItem, importValue, ArticleId);
+                                    d.FillField(this, ref newItem, importValue, ArticleId,publication);
                                 }
 
 

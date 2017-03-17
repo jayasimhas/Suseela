@@ -18,7 +18,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             ImportCulture = (string.IsNullOrEmpty(iCulture)) ? CultureInfo.CurrentCulture : new CultureInfo(iCulture);
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null) {
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null) {
 
             if (string.IsNullOrEmpty(importValue))
                 return;

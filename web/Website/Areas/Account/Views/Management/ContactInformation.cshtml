@@ -268,7 +268,7 @@
                                     </select>
                                 </p>
 
-                                <div>
+                                <div class="is-hidden">
                                     <label for="JobIndustry" class="page-account__text-label">
                                         @Model.JobIndustryLabelText
                                     </label>
@@ -315,7 +315,7 @@
                                     <select name="ShipCountry" id="ddlShippingCountry">
                                         @foreach (var o in Model.Countries)
                                         {
-                                            <option @(Model.Profile.ShipCountry != null ? (@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
+                                            <option @(Model.Profile.ShipCountry != null ? (@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Text|@o.Value" >@o.Text</option>
                                         }
                                     </select>
                                 </p>
@@ -645,7 +645,7 @@
                                     <select name="ShipCountry" id="ddlShippingCountry" class="required">
                                         @foreach (var o in Model.Countries)
                                         {
-                                            <option @(Model.Profile.ShipCountry != null ? (@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Value">@o.Text</option>
+                                            <option @(Model.Profile.ShipCountry != null ? (@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") : "") value="@o.Text">@o.Text</option>
                                         }
                                     </select>
                                 </p>

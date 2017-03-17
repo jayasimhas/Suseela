@@ -304,8 +304,42 @@
 }
 
 
-.sponsored_cont{
-	.sponsored_title{
-		text-transform: uppercase;
-	}
-}
+.sponsored_cont {
+    background: transparentize(#F5821F, 0.9);
+    .sponsored_title {
+        text-transform: uppercase;
+    }
+    &.article-executive-summary {
+        padding: 1rem;
+        .sponsored_title {
+            font-style: italic;
+            margin-right: 0.5rem;
+            text-transform: capitalize;
+        }
+    }
+	&.article-preview {
+        padding: 1rem;
+        .sponsored_title {
+            font-size: 18px;
+             font-style: italic;
+              margin-right: 0.5rem;
+             text-transform: capitalize;
+        }
+    }
+    &.article-executive-summary-bottom {
+        padding: 2rem;
+        margin-bottom: 2rem;
+         .sponsored_title {
+             font-size: 18px;
+             font-style: italic;
+              margin-right: 0.5rem;
+             text-transform: capitalize;
+         }
+    }
+    ul {
+       margin-bottom: 0.75rem;
+        li {
+            display: inline;
+        }
+    }
+}	

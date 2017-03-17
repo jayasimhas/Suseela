@@ -26,6 +26,7 @@
     .table-wrapper {
         border: 1px solid #d1d3d4;
         border-top: none;
+        overflow-x: scroll;
         .tableHead {
             text-align: right;
 			@include textMix('Roboto', 1em, bold);

@@ -190,15 +190,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             bodyTitleHtml = bodyTitleHtml + imageTitleHtml;
                         }
-
-
                     }
-
                     else
                     {
                         ao.Add("BODYIMAGE", "N");
                     }
 
+                    if (publication == "Lloydslist")
+                    {
+                        string pdfTitleHtml = GetXMLData(d, "PDF");
+                        if (!string.IsNullOrEmpty(pdfTitleHtml))
+                        {
+                          
+                            string wordToFind = Regex.Match(bodyTitleHtml, @"<PICTUREREL\s*(.+?)\s*</PICTUREREL>").ToString();
+                            if (!string.IsNullOrEmpty(wordToFind))
+                            {
+                                bodyTitleHtml = Regex.Replace(bodyTitleHtml, wordToFind, pdfTitleHtml, RegexOptions.IgnoreCase);
+                            }
+                            else
+                            {
+                                bodyTitleHtml = bodyTitleHtml + pdfTitleHtml;
+                            }
+                        }
+                        
+                    }
                     ao.Add("SUMMARY", summaryTitleHtml);
                     ao.Add("STORYTITLE", cleanTitleHtml);
                     ao.Add("FILENAME", cleanTitleHtml);
@@ -436,7 +451,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         ao.Add("STORYBODY", bodyTitleHtml);
 
                         string summarySearch = " ";
-                        if (GetXMLData(d, "SUMMARY") != null)
+                        if (!string.IsNullOrEmpty(GetXMLData(d, "SUMMARY")))
                         {
                             summarySearch = GetXMLData(d, "SUMMARY");
                         }
@@ -461,6 +476,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string AnimalHealth = "";
                             string AnimalHealthNew = "";
                             string CropProtection = "";
+                            string Commercial = "";
 
                             if (site != "Maritime")
                             {
@@ -471,13 +487,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => textForagency.ToLower().Contains(" " + s + " "));
                                 // List<string> agencySearchResults = GetListFromXml(publication, "agency", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-                                List<string> commoditySearchResults = null;
+                                if (agencySearchResults != null)
+                                {
+                                    if (publication == "Agrow" && agencySearchResults.Count >0)
+                                    {
+                                        CropProtection += "policyandregulation" + ",";
+                                    }
+                                }
+                                    List<string> commoditySearchResults = null;
                                 List<string> commoditynewSearchResults = null;
                                 List<string> commodityfactorSearchResults = null;
                                 List<string> animalhealthSearchResults = null;
                                 List<string> animalhealthnewSearchResults = null;
                                 List<string> cropprotectionSearchResults = null;
+                                List<string> agrowcommercialSearchResults = null;
 
 
 
@@ -491,6 +514,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                     commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                     cropprotectionSearchResults = GetListFromXml(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    agrowcommercialSearchResults = GetListFromXml(publication, "commercial", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
                                 if (publication == "Commodities")
@@ -544,6 +568,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+
+
                                 if (cropprotectionSearchResults != null)
                                 {
                                     foreach (string cropprotection in cropprotectionSearchResults)
@@ -552,6 +578,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     }
                                 }
 
+                                if (agrowcommercialSearchResults != null)
+                                {
+                                    foreach (string commercial in agrowcommercialSearchResults)
+                                    {
+                                        Commercial += commercial + ",";
+                                    }
+                                }
+                                
 
                                 if (commoditynewSearchResults != null)
                                 {
@@ -645,7 +679,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 ao.Add("COUNTRY", Country);
                             }
 
+                            if (ao.ContainsKey("COMMERCIAL"))
+                            {
+                                if (Commercial != "")
+                                {
 
+                                    Commercial = ao["COMMERCIAL"].ToString() + Commercial;
+                                    ao.Remove("COMMERCIAL");
+                                    ao.Add("COMMERCIAL", Commercial);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("COMMERCIAL", Commercial);
+                            }
 
 
 
@@ -1725,51 +1774,40 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             if (node.Attributes["unique-name"] != null)
                             {
+                                int check = 0;
+
                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "market", site))
                                 {
                                     Market += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["MARKET"] = Market;
-
+                                    check = 1;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "topics", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "topics", site))
                                 {
 
                                     Topic += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["TOPICS"] = Topic;
+                                    check = 1;
                                 }
-
-
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "country", site))
+                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "country", site))
                                 {
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COUNTRY"] = Country;
+                                    check = 1;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "sectors", site))
                                 {
                                     Sectors += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["SECTORS"] = Sectors;
+                                    check = 1;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "regulars", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "regulars", site))
                                 {
                                     Regulars += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["REGULARS"] = Regulars;
+                                    check = 1;
                                 }
-                                //else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "mediatype", site))
-                                //{
-                                //    Media = node.Attributes["unique-name"].Value;
-                                //    if (!Taxonomy.ContainsKey("MEDIA"))
-                                //    {
-                                //        Taxonomy.Add("MEDIA", "");
-                                //    }
-
-                                //    Taxonomy["MEDIA"] = Media;
-                                //}
-                                //else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "hottopics", site))
-                                //{
-                                //    HotTopics += node.Attributes["unique-name"].Value + ",";
-                                //    Taxonomy["HOTTOPICS"] = HotTopics;
-                                //}
-                                else
+                                if(check == 0)
                                 {
                                     SectionRef += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["SECTINREF"] = SectionRef;
@@ -1839,6 +1877,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     }
                     return imgStrb.ToString();
                 }
+
+                if (nodeName == "PDF")
+                {
+                    XmlNodeList imgList = xd.SelectNodes($"//{nodeName}");
+                    StringBuilder imgStrb = new StringBuilder();
+                    foreach (XmlNode node in imgList)
+                    {           //<  href = "acrobat_file.pdf" > pdf file </ a >
+                             string nodeValue = "<a href='" + node["SRC"].InnerText + "' sourceid ='" + node.Attributes["sourceid"].Value + "'/> ";
+                        if (imgStrb.Length > 0)
+                            imgStrb.Append("");
+                        imgStrb.Append(nodeValue);
+                    }
+                    return imgStrb.ToString();
+                }
+
                 // adding image an video tag  
                 if (nodeName.Equals("LEADIMAGE"))
                 {
@@ -1928,14 +1981,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem = null)
         {
-
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            if (request == null)
-                return null;
+           /* MemoryStream ms = new MemoryStream();
+            using (FileStream fs = File.OpenRead(file))
+            {
+                fs.CopyTo(ms);
+            }*/          
 
             try
             {
                 // download data 
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                if (request == null)
+                    return null;
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
                 Stream stream1 = response.GetResponseStream();
                 MemoryStream stream2 = new MemoryStream();
@@ -1954,7 +2011,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
                 {
                     mediaItem = creator.CreateFromStream(stream2, fileName, options);
-
                     response.Close();
                     XMLDataLogger.WriteLog("Image create in media library:" + mediaItem.Path, "ImageLog");
                     return mediaItem;

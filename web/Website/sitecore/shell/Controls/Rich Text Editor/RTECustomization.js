@@ -26,8 +26,8 @@ Telerik.Web.UI.Editor.CommandList["InsertMultimedia"] = function (commandName, e
 		editor.showExternalDialog(		
   "/sitecore/shell/default.aspx?xmlcontrol=RichText.InsertTableau&la=" + scLanguage + "&contextItem=" + scItemID,
   null, //argument
-  800, //width
-  600, //height
+  600, //width
+  650, //height
   scRTEManager, //callback
   null, // callback args
   "Insert Youtube IFrame",

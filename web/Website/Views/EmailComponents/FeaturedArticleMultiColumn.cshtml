@@ -126,7 +126,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                             {
                                                                                 if (IsInEditingMode)
                                                                                 {
-                                                                                    @Editable(Model, m => m.Articles[0].Summary.Length > 220 ? m.Articles[0].Summary.Substring(0, 220) : m.Articles[0].Summary);
+                                                                                    @Editable(Model, m => m.Articles[0].Summary);
                                                                                 }
                                                                                 else
                                                                                 {
@@ -530,7 +530,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                                                                                                         {
                                                                                                                                                             if (IsInEditingMode)
                                                                                                                                                             {
-                                                                                                                                                                @Editable(article, m => m.Summary.Length > 220 ? m.Summary.Substring(0, 220) : m.Summary);
+                                                                                                                                                                @Editable(article, m => m.Summary);
                                                                                                                                                             }
                                                                                                                                                             else
                                                                                                                                                             {

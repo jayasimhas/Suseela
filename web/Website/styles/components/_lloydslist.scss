@@ -150,12 +150,7 @@
 					font-weight: bold;
 				}
 			}
-		}
-		tbody{
-			tr:nth-child(even){
-				background: #f1f1f1;
-			}
-		}
+		} 
 		tbody.visible-lg td{
 			border-bottom: 1px solid #d1d3d4;
 		}
@@ -268,6 +263,9 @@
 		 .dataProImg{
 			float: right;
 			text-align: right;
+			@media screen and (min-width: 768px) {
+				margin-top: -11px;
+			}
 			@include breakpoint('small') {
 				float: inherit;
 				text-align: left;
@@ -636,7 +634,7 @@
 	}
 	.R16 {
 		background-color: $color-white;
-		height: 60px;
+		min-height: 50px;
 		&:nth-child(even) {
 			background-color: #eee;
 		}
