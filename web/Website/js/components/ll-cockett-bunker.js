@@ -31,21 +31,23 @@
 				} else {
 					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
 				"<div class='text-center'>"+ key.split("|")[0] + " (" + key.split("|")[1] + ")</div>"+
-									"</th>";
+									"</th>"; 
 				}
 			}
-
+			var rowIdx = 0;
 			for(var i = 0; i < Data.length; i++) {
+				rowIdx++;
+				var cls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 				var EachValue = Data[i],
 					Td = "",
 					align = "right";
 				for(var key in EachValue) {
 					if(key == "Header") {
-						align = "left";
+						align = "left"; 
 					}
 					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
 				}
-				TbodyStr += '<tr>' +Td + '</tr>';
+				TbodyStr += '<tr class="'+cls+'">' +Td + '</tr>';
 			}
 
 			var Table = '<table class="table">'+
@@ -70,6 +72,7 @@
 		init: function(data, id) {
 			var self = this;
 			self.RenderTable(data, id);
+			id.closest('.small_table').css('width', '100%');
 		}
 	}
 	

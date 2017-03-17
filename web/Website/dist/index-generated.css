@@ -8462,6 +8462,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .small_table .table-responsive .pad-full-10, .table_variations .table-responsive .pad-full-10 {
   padding: 10px 16px; }
 
+.small_table .table-responsive .pad-full-0, .table_variations .table-responsive .pad-full-0 {
+  padding: 0px 16px; }
+
 .small_table .table-responsive .pad-bottom-20, .table_variations .table-responsive .pad-bottom-20 {
   padding-bottom: 20px; }
 
@@ -9034,8 +9037,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10192,7 +10195,7 @@ div#feedbacklite.fbl_r {
 #fisDryBulkContainer {
   width: 100%; }
   #fisDryBulkContainer .tableTitle {
-    background-color: #0f5487;
+    background-color: #1191d1;
     color: #fff; }
   #fisDryBulkContainer .tableheader {
     background-color: #f1f1f1; }
@@ -13289,7 +13292,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
