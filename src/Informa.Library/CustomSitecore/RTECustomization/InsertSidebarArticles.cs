@@ -146,7 +146,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                 }
                 else if (articleType == "referenced")
                 {
-                    placeholder = "L[A#";
+                    placeholder = "[A#";
                     placeholder += articleNumber + "]";
                     return placeholder;
                 }

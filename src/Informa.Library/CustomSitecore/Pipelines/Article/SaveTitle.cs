@@ -40,10 +40,10 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                     continue;
                 if (string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
-                    var id = GetReferencedArticleFromBody(item);
-                    if (!string.IsNullOrEmpty(id))
+                    var allreferencedArticlesIds = GetReferencedArticleFromBody(item);
+                    if (allreferencedArticlesIds.Count() > 0)
                     {
-                        var updatedBody = UpdateBody(item);
+                        //var updatedBody = UpdateBody(item);
                         string updatedValue = string.Empty;
                         var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
                         if (referencedArticles != null)
@@ -51,22 +51,24 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                             using (new SecurityDisabler())
                             {
                                 item.Editing.BeginEdit();
-                                if (!referencedArticles.Value.Contains(id))
+                                foreach (var id in allreferencedArticlesIds)
                                 {
-                                    if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                    if (!referencedArticles.Value.Contains(id))
                                     {
-                                        updatedValue = referencedArticles.Value;
-                                        updatedValue += "|" + id;
-                                    }
-                                    else
-                                        updatedValue = id;
-                                    if (!string.IsNullOrEmpty(updatedValue))
-                                    {
-                                        item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
+                                        if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                        {
+                                            updatedValue = referencedArticles.Value;
+                                            updatedValue += "|" + id;
+                                        }
+                                        else
+                                            updatedValue = id;
+                                        if (!string.IsNullOrEmpty(updatedValue))
+                                        {
+                                            item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
+                                        }
                                     }
                                 }
-
-                                item.Fields[IArticleConstants.BodyFieldName].Value = updatedBody;
+                                //item.Fields[IArticleConstants.BodyFieldName].Value = updatedBody;
                                 item.Editing.EndEdit();
                             }
                         }
@@ -90,11 +92,12 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
             }
         }
 
-        public string GetReferencedArticleFromBody(Item item)
+        public List<string> GetReferencedArticleFromBody(Item item)
         {
             List<string> referencedPlaceholder = new List<string>();
             var body = item.Fields[IArticleConstants.BodyFieldName].Value;
-            var referenceArticleTokenRegex = new Regex(@"L\[A#(.*?)\]");
+            var referenceArticleTokenRegex = new Regex(@"\[A#(.*?)\]");
+            List<string> referencedArticlesInBody = new List<string>();
 
             foreach (Match match in referenceArticleTokenRegex.Matches(body))
             {
@@ -114,7 +117,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                         var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
                         if (resultarticles != null)
                         {
-                            return resultarticles._Id.ToString().ToUpper();
+                            referencedArticlesInBody.Add(resultarticles._Id.ToString().ToUpper());
                         }
                         //var resultarticles = JsonConvert.DeserializeObject<SearchResults>(response);
                         //if (resultarticles.results.Any())
@@ -126,7 +129,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                     //return response.IsSuccessStatusCode;
                 }
             }
-            return string.Empty;
+            return referencedArticlesInBody;
         }
 
         public string UpdateBody(Item item)
