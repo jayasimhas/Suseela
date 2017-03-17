@@ -19,10 +19,10 @@
 		},
 		renderTable: function(tableData){
 			var self = this, loadDateVal = $('#tankerselectDay option').val();
-			for(var prop in tableObj[0]){
+			/*for(var prop in tableObj[0]){
 				self.sendHTTPRequest(tableObj[0][prop], prop);
-			}		
-			//self.callAjaxFn(loadDateVal);
+			}*/		
+			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#tankerselectDay', function(){
 				var selectDateVal = $('#tankerselectDay option').val();
 				self.callAjaxFn(selectDateVal);
