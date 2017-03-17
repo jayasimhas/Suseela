@@ -114,9 +114,6 @@
 	margin-bottom: 2rem;
 	width: 100%;
 	margin-top: 10px;
-	@include breakpoint('small') {
-		margin-bottom: 5rem;
-	}
 #balticDryData{
 	text-transform: initial;
 	float: left;
