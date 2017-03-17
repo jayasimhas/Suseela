@@ -34,10 +34,8 @@
 									"</th>";
 				}
 			}
-			var rowIdx = 0;
+
 			for(var i = 0; i < Data.length; i++) {
-				rowIdx++;
-				var cls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 				var EachValue = Data[i],
 					Td = "",
 					align = "right";
@@ -47,7 +45,7 @@
 					}
 					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
 				}
-				TbodyStr += '<tr class="'+cls+'">' +Td + '</tr>';
+				TbodyStr += '<tr>' +Td + '</tr>';
 			}
 
 			var Table = '<table class="table">'+
@@ -72,7 +70,6 @@
 		init: function(data, id) {
 			var self = this;
 			self.RenderTable(data, id);
-			id.closest('.small_table').css('width', '100%');
 		}
 	}
 	
