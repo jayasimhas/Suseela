@@ -305,7 +305,8 @@
 
 .sponsored_cont {
     background: transparentize(#F5821F, 0.9);
-	.topic-featured-article__inner-wrapper:after {
+	.topic-featured-article__inner-wrapper:after, .latest-news__articles .article-preview--small:after 
+	{
 		background: linear-gradient(to bottom, #FEF3E9  0%, #FEF3E9  65%, #FEF3E9  100%);
 		background: -webkit-linear-gradient(top, #FEF3E9  0%, #FEF3E9  65%, #FEF3E9  100%); 
 		background: -moz-linear-gradient(top, #FEF3E9  0%, #FEF3E9  65%, #FEF3E9  100%); 
