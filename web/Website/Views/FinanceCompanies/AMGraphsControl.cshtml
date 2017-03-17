@@ -15,7 +15,7 @@
             @foreach (var Graph in Model.AMGraphModels)
             {
                 <div class="loadChart graph-container item">
-                    <h5><a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID">@Graph.GraphTitle</a></h5>
+                    <h5 class="li-content-company__headline"><a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID">@Graph.GraphTitle</a></h5>
                     <a href="@Model.CompanyGraphPageUrl?Id=@Model.GlassModel._Id&companyid=@Model.CompanyID&graphid=@Graph.GraphID"><div id="chartdiv_@Graph.GraphID"></div></a>
                     <script>
                         var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));

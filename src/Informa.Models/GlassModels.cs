@@ -13017,6 +13017,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Height { get; set; }
 
+        /// <summary>
+        /// The Enable Entitlement Check field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:  0CD32048-50D6-42E3-9CD3-E1AE0E64D473</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Enable_Entitlement_CheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement_Check { get; set; }
 
     }
 
@@ -13112,6 +13121,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Height { get; set; }
+        /// <summary>
+        /// The Enable Entitlement Check field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:  0CD32048-50D6-42E3-9CD3-E1AE0E64D473</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Enable_Entitlement_CheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement_Check { get; set; }
     }
 
     public static partial class ITableau_DashboardConstants
@@ -13144,6 +13162,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID HeightFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
         public const string HeightFieldName = "Height";
+
+        public static readonly ID Enable_Entitlement_CheckFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
+        public const string Enable_Entitlement_CheckFieldName = "Enable Entitlement Check";
     }
 
     public partial interface ITableauForArticle
@@ -14404,7 +14425,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
         /// <summary>
@@ -14414,7 +14435,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
 
     }
@@ -14444,7 +14465,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
         /// <summary>
@@ -14454,7 +14475,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
     }
 

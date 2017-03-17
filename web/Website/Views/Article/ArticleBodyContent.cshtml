@@ -11,8 +11,8 @@
         if (Model.DisplayLegacyPublication)
         {
             if (Model.LagacyBrandUrl.Count == 1)
-            { 
-            <p class="article-legacy-publication">@Model.LegacyPublicationText @Model.LagacyBrandUrl[0]</p>
+            {
+                <p class="article-legacy-publication">@Model.LegacyPublicationText @Model.LagacyBrandUrl[0]</p>
             }
             else
             {
@@ -121,11 +121,34 @@
     @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
     {
         @* * * Executive Summary *@
+    if (Model.sponsoredContent != null)
+    {
+        <div class="article-executive-summary sponsored_cont">
+
+            <h4>@Model.ExecutiveSummary</h4>
+            <ul>
+                <li>
+                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
+                </li>
+                <li>
+                    @if (Model.sponsoredContent.Sponsor_Logo != null)
+                    {
+                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                    }
+                </li>
+            </ul>
+            @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
+        </div>
+    }
+    else
+    {
         <div class="article-executive-summary">
             <h4>@Model.ExecutiveSummary</h4>
             @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
         </div>
-        @* End Executive Summary  *@
+    }
+
+    @* End Executive Summary  *@
     }
 
     @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
@@ -139,7 +162,7 @@
 
 
     @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
-    {
+            {
         @* * *  ARTICLE - FEATURED IMAGE
             IIPP-117 *@
         <aside class="article-inline-image">
@@ -155,34 +178,47 @@
     }
     <div class="root">
         @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
-        </div>
     </div>
-
-@*
-    This element is a template for viewing tables on narrow screens
-    On document ready, each article table gets one of these appended to it
-    On narrow screens, the elements are visible so users can click/tap to view
-*@
-<div class="hidden-mobile-table-template js-mobile-table-template">
-    <table class="article-table article-table--mobile-link" data-table-id="TABLEIDHERE">
-        <thead>
-            <tr>
-                <th>Table</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="cell">
-                    <p class="small">
-                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">
-                            <svg class="article-table__expand-table">
-                                <use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
-                            </svg>
-                        </a>
-                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">View full table</a>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+@if (Model.sponsoredContent != null)
+{
+    <div class="article-executive-summary-bottom sponsored_cont">
+        <ul>
+            <li>
+                <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Meta_Tag_line</time>
+            </li>
+            <li>
+                <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+            </li>
+        </ul>
+    </div>
+}
+
+    @*
+        This element is a template for viewing tables on narrow screens
+        On document ready, each article table gets one of these appended to it
+        On narrow screens, the elements are visible so users can click/tap to view
+    *@
+    <div class="hidden-mobile-table-template js-mobile-table-template">
+        <table class="article-table article-table--mobile-link" data-table-id="TABLEIDHERE">
+            <thead>
+                <tr>
+                    <th>Table</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell">
+                        <p class="small">
+                            <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">
+                                <svg class="article-table__expand-table">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
+                                </svg>
+                            </a>
+                            <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">View full table</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

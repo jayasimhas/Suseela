@@ -16,6 +16,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.Page;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels.Articles;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Web.ViewModels
 {
@@ -50,7 +51,8 @@ namespace Informa.Web.ViewModels
 		public string Title => GlassModel.Title;
 		private string _summary;
 		public string Summary => _summary ?? (_summary = _dependencies.ArticleService.GetArticleSummary(GlassModel));
-		public string Url => GlassModel._Url;
+        public ISponsored_Content sponsoredContent => _dependencies.ArticleService.GetSponsoredContent(GlassModel);
+        public string Url => GlassModel._Url;
 		public IEnumerable<ILinkable> ListableTopics => _dependencies.ArticleService.GetLinkableTaxonomies(GlassModel).Take(3);
 		public bool DisplayImage => Options.Show_Image && !string.IsNullOrEmpty(Image?.ImageUrl);
 		public IFeatured_Article_Options Options => _dependencies.RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
