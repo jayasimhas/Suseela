@@ -2327,7 +2327,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-weight: 500; }
       @media (max-width: 667px) {
         #main-carousel .companies_heading span {
-          padding-right: 110px; } }
+          padding-bottom: 30px; } }
       @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #main-carousel .companies_heading span {
           width: 70%; } }
@@ -2345,6 +2345,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel .loadChart {
     width: 24%;
     float: left; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #graph-carousel .loadChart {
+        width: 49%; } }
     @media screen and (max-width: 767px) {
       #graph-carousel .loadChart {
         width: 100%;
@@ -2354,11 +2357,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
     background: #fff;
     margin: 0px auto;
-    width: 80%;
+    width: 100%;
     height: 150px; }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      #graph-carousel #chartdiv_GWP, #graph-carousel #chartdiv_NWP, #graph-carousel #chartdiv_UR, #graph-carousel #chartdiv_NP, #graph-carousel #chartdiv_SF, #graph-carousel #chartdiv_NWPNR, #graph-carousel #chartdiv_SFNR, #graph-carousel #chartdiv_NPSFR {
-        width: 90% !important; } }
   #graph-carousel .graph_heading {
     display: block;
     width: 100%;
@@ -2393,7 +2393,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-left: 0.5%;
     margin-right: 0.5%;
     background-color: #eee;
-    height: 234px; }
+    height: 237px;
+    padding: 20px 30px; }
     #graph-carousel .graph-container h5, #graph-carousel .graph-container .alert-success p, .alert-success #graph-carousel .graph-container p, #graph-carousel .graph-container .alert-error p, .alert-error #graph-carousel .graph-container p, #graph-carousel .graph-container .article-call-to-action__subtitle {
       font-size: 14px;
       font-weight: 500;
@@ -2401,7 +2402,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       vertical-align: middle;
       display: inline-block;
       text-align: left;
-      margin: 20px 20px 0px 30px;
       overflow: hidden;
       line-height: 20px; }
   #graph-carousel .owl-dots {
@@ -3603,7 +3603,8 @@ body.lightboxed {
     width: 80%; }
   .ID-responsive-table-modal .table-wrapper {
     border: 1px solid #d1d3d4;
-    border-top: none; }
+    border-top: none;
+    overflow-x: scroll; }
     .ID-responsive-table-modal .table-wrapper .tableHead {
       text-align: right;
       font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -3772,6 +3773,11 @@ body.lightboxed {
     .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
       float: left;
       margin: 5px 0 0 15px; }
+      @media only screen and (min-width: 767px) and (max-width: 1024px) {
+        .ID-Responsive-Table .table_head a[data-toggle], .ID-Responsive-Table .table_head [data-toggle].pop-out__reset-password, .ID-Responsive-Table .table_head [data-toggle].sortable-table__list-toggler, .ID-Responsive-Table .table_head [data-toggle].mobile-table-exit {
+          position: absolute;
+          top: 15px;
+          right: 20px; } }
     .ID-Responsive-Table .table_head .R16 {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1.0625em;
@@ -9542,9 +9548,6 @@ div#feedbacklite.fbl_r {
         #market-data-tool.table-responsive .table .table_head .visible-lg th, #dry-cargo.table-responsive .table .table_head .visible-lg th, #dry-cargo-cap.table-responsive .table .table_head .visible-lg th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th, #ship-Container-ShipFixtures.table-responsive .table .table_head .visible-lg th, #ship-Coal-Export.table-responsive .table .table_head .visible-lg th, #market-Data-Dry-Cargo.table-responsive .table .table_head .visible-lg th,
         #cockett-Bunker.table-responsive .table .table_head .visible-lg th, #ship-Roro.table-responsive .table .table_head .visible-lg th, #ship-Container-Ship.table-responsive .table .table_head .visible-lg th, #ship-Vehicle.table-responsive .table .table_head .visible-lg th, #tanker-Pure-ChemPage.table-responsive .table .table_head .visible-lg th, #shipContainerFixtures.table-responsive .table .table_head .visible-lg th, #fisDryBulkContainer.table-responsive .table .table_head .visible-lg th, #howeRobinsonContainer.table-responsive .table .table_head .visible-lg th, #market-imarex.table-responsive .table .table_head .visible-lg th, #shipVehicle-Page.table-responsive .table .table_head .visible-lg th, #shipCoalExport-page.table-responsive .table .table_head .visible-lg th {
           font-weight: bold; }
-    #market-data-tool.table-responsive .table tbody tr:nth-child(even), #dry-cargo.table-responsive .table tbody tr:nth-child(even), #dry-cargo-cap.table-responsive .table tbody tr:nth-child(even), #dry-cargo-bulk-fixtures.table-responsive .table tbody tr:nth-child(even), #tanker-fixtures.table-responsive .table tbody tr:nth-child(even), #ship-Container-ShipFixtures.table-responsive .table tbody tr:nth-child(even), #ship-Coal-Export.table-responsive .table tbody tr:nth-child(even), #market-Data-Dry-Cargo.table-responsive .table tbody tr:nth-child(even),
-    #cockett-Bunker.table-responsive .table tbody tr:nth-child(even), #ship-Roro.table-responsive .table tbody tr:nth-child(even), #ship-Container-Ship.table-responsive .table tbody tr:nth-child(even), #ship-Vehicle.table-responsive .table tbody tr:nth-child(even), #tanker-Pure-ChemPage.table-responsive .table tbody tr:nth-child(even), #shipContainerFixtures.table-responsive .table tbody tr:nth-child(even), #fisDryBulkContainer.table-responsive .table tbody tr:nth-child(even), #howeRobinsonContainer.table-responsive .table tbody tr:nth-child(even), #market-imarex.table-responsive .table tbody tr:nth-child(even), #shipVehicle-Page.table-responsive .table tbody tr:nth-child(even), #shipCoalExport-page.table-responsive .table tbody tr:nth-child(even) {
-      background: #f1f1f1; }
     #market-data-tool.table-responsive .table tbody.visible-lg td, #dry-cargo.table-responsive .table tbody.visible-lg td, #dry-cargo-cap.table-responsive .table tbody.visible-lg td, #dry-cargo-bulk-fixtures.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td, #ship-Container-ShipFixtures.table-responsive .table tbody.visible-lg td, #ship-Coal-Export.table-responsive .table tbody.visible-lg td, #market-Data-Dry-Cargo.table-responsive .table tbody.visible-lg td,
     #cockett-Bunker.table-responsive .table tbody.visible-lg td, #ship-Roro.table-responsive .table tbody.visible-lg td, #ship-Container-Ship.table-responsive .table tbody.visible-lg td, #ship-Vehicle.table-responsive .table tbody.visible-lg td, #tanker-Pure-ChemPage.table-responsive .table tbody.visible-lg td, #shipContainerFixtures.table-responsive .table tbody.visible-lg td, #fisDryBulkContainer.table-responsive .table tbody.visible-lg td, #howeRobinsonContainer.table-responsive .table tbody.visible-lg td, #market-imarex.table-responsive .table tbody.visible-lg td, #shipVehicle-Page.table-responsive .table tbody.visible-lg td, #shipCoalExport-page.table-responsive .table tbody.visible-lg td {
       border-bottom: 1px solid #d1d3d4; }

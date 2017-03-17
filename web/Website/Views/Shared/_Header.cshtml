@@ -106,6 +106,7 @@
                     </svg>
                     <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url, vid = Model.CurVerticalName }, new { @class = "vertical__sign-out" })</span>
                 </div>
+
                     }
                     else
                     {
@@ -117,12 +118,13 @@
                          <a href="@Model.LogoutUrl">@Model.SignOutLinkText</a>                        
                     </span>
                 </div>
+                <img src="@Model.SessionSynchronisationImageUrl" alt="SalesforceImage" />
+                        }
                     }
-                }
-                else
-                {
-                    if (Model.UseNewSalesForce)
+                    else
                     {
+                        if (Model.UseNewSalesForce)
+                        {
                 @*<div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"*@
                 <div class="" style="position:relative; display:inline-block;"
                      data-pop-out-id="header-register"

@@ -19,8 +19,10 @@
 		},
 		renderTable: function(tableData){
 			var self = this, loadDateVal = $('#tankerselectDay option').val();
-			
-			self.callAjaxFn(loadDateVal);
+			for(var prop in tableObj[0]){
+				self.sendHTTPRequest(tableObj[0][prop], prop);
+			}		
+			//self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#tankerselectDay', function(){
 				var selectDateVal = $('#tankerselectDay option').val();
 				self.callAjaxFn(selectDateVal);
@@ -34,91 +36,73 @@
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
-					self.sendHTTPRequest(searchData);
+					$('#tankerFixtures').empty();
+					for(var prop in searchData[0]){
+						self.sendHTTPRequest(searchData[0][prop], prop);
+					}
+					
 				},
 				error: function (err) {
 					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
-		sendHTTPRequest: function(searchData){
-			var self = this, loadHead = true, tableStr = '';
-			
-			tableStr += self.loadDesktopView(searchData);
-			tableStr += self.loadMobileView(searchData);
+		sendHTTPRequest: function(searchData, prop){
+			var self = this, tableStr = '';
+
+			tableStr += self.loadDesktopView(searchData, prop);
+			tableStr += self.loadMobileView(searchData, prop);
 			 
-			$('#tankerFixtures').html(tableStr);
+			$('#tankerFixtures').append(tableStr);
 		},
-		loadDesktopView: function(tableData){
-			var tableStr = '';
-			for(var i = 0; i < tableData.length; i++){
-				var theadFlag = true, tbodyFlag = true, tbodyFlagend = false, idx = 0, rowIdx = 0;
-					tableStr += '<table class="table descView"><thead class="table_head">';
-				for(var prop in tableData[i]){
-					tableStr += '<tr>';
-					tableStr += '<th colspan="8" class="pad-full-10">'+prop+'</th>';
-					tableStr += '</tr>';
-					for(var j = 0; j < tableData[i][prop].length; j++){
-						rowIdx++;
-						if(tableData[i][prop].length == idx - 1) tbodyFlagend = true;
-						var eachObj = tableData[i][prop];
-						
-						if(theadFlag){
-							theadFlag = false;
-							tableStr += '<tr class="visible-lg">';
-							for(var p in eachObj[j]){
-								tableStr += '<th class="pad-10">'+p+'</th>';
-							}
-							tableStr += '</thead>';
-						}
-						if(tbodyFlag){
-							tbodyFlag = false;
-							tableStr += '<tbody class="visible-lg">';
-						}
-						var rowCls = (rowIdx % 2 === 0) ? 'oddCls' : '';
-						tableStr += '<tr class="'+rowCls+'">';
-						for(var p in eachObj[j]){
-							tableStr += '<td class="R16 pad-10">'+eachObj[j][p]+'</td>';
-						}
-						tableStr += '</tr>';
-						if(tbodyFlagend){
-							tbodyFlagend = false;
-							tableStr += '</tbody>';
-						}
-					}
+		loadDesktopView: function(tableData, prop){
+			var tableStr = '', tableHead = tableData[0], rowIdx = 0;
+				tableStr += '<table class="table descView"><thead class="table_head">';
+				tableStr += '<tr>';
+				tableStr += '<th colspan="8" class="pad-full-10">'+prop+'</th>';
+				tableStr += '</tr>';
+				tableStr += '<tr class="visible-lg">';
+				for(var prop in tableHead){
+					tableStr += '<th class="pad-10">'+prop+'</th>';
 				}
+				tableStr += '</tr>';
+				tableStr += '</thead>';
+				
+				tableStr += '<tbody class="visible-lg">';		
+				for(var i=0; i<tableData.length; i++){
+					rowIdx++; 
+					var rowCls = (rowIdx % 2 === 0) ? 'oddCls' : '';
+					tableStr += '<tr class="'+rowCls+'">';
+					for(var prop in tableData[i]){
+						tableStr += '<td class="R16 pad-10">'+tableData[i][prop]+'</td>';
+					}
+					tableStr += '</tr>';
+				}
+				tableStr += '</tbody>';
 				tableStr += '</table>';
-			}
+					 
 			return tableStr;
 		},
-		loadMobileView: function(tableData){
-			var mobileStr = '', dataIdx = 0;
-			$.each(tableData, function(index, value){
+		loadMobileView: function(tableData, prop){
+			var mobileStr = '';
 				mobileStr += '<table class="table mobView">';
-				$.each(value, function(key, val){
-					mobileStr += '<thead class="table_head">';
-					mobileStr += '<tr>';
-					mobileStr += '<th colspan="2" class="pad-full-10">'+key+'</th>';
-					mobileStr += '</tr>';
-					mobileStr += '</thead>';
-					
+				mobileStr += '<thead class="table_head">';
+				mobileStr += '<tr>';
+				mobileStr += '<th colspan="2" class="pad-full-10">'+prop+'</th>';
+				mobileStr += '</tr>';
+				mobileStr += '</thead>';
+				$.each(tableData, function(p, v){
 					mobileStr += '<tbody class="visible-sm">';
-					$.each(val, function(i, v){
-						var indx = 0;
-						for(var prop in v){
-							indx++;
-							var borTop = i !== 0 && indx == 1 ? 'borTop' : '';
-							if(borTop !== '') mobileStr += '<tr class="borTop"><td colspan="2"></td></tr>';
-							mobileStr += '<tr>';
-							mobileStr += '<td class="pad-10 mobleftCol">'+prop+'</td>';
-							mobileStr += '<td class="pad-10 mobrigCol">'+v[prop]+'</td>';
-							mobileStr += '</tr>';
-						}
-					});
+					for(var prop in v){
+						mobileStr += '<tr>';
+						mobileStr += '<td class="pad-10 mobleftCol">'+prop+'</td>';
+						mobileStr += '<td class="pad-10 mobrigCol">'+v[prop]+'</td>';
+						mobileStr += '</tr>';
+					}
+					mobileStr += '<tr class="borTop"><td colspan="2"></td></tr>';
 					mobileStr += '</tbody>';
 				});
-				mobileStr += '</table>';
-			});
+				mobileStr += '</table>'; 
 			return mobileStr;
 		},
 		init: function(dateObj) {

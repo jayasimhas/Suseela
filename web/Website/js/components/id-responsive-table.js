@@ -79,6 +79,7 @@
 			var HeadingItems = Parent.find('.year_heading'),
 				MaxHeadingHeight = 0;
 
+			Parent.find('.R16').height('auto');
 			Parent.find('.states_heading .RB16').each(function(key){
 				var Height = $(this).height(),
 					Item = [];
@@ -235,6 +236,10 @@
 					ClonedItems = [],
 					ActiveItems = [];
 
+					var stylesArray = CarouselStyles.split(';');
+					stylesArray.splice(1, 1);
+					CarouselStyles = stylesArray.join(';');
+
 				OwlItems.each(function() {
 					if($(this).hasClass('cloned')) {
 						ClonedItems.push($(this).index());
@@ -336,6 +341,9 @@
 			self.ModalEvents();
 			self.SortingFunctionality(id);
 			self.SortingModal(id);
+			$(window).resize(function() {
+				self.HeightManagement(id);
+			});
 		}
 	}
 

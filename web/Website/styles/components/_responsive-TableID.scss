@@ -46,6 +46,11 @@
 				a[data-toggle] {
 					float: left;
 					margin: 5px 0 0 15px;
+					@media only screen and (min-width: 767px) and (max-width: 1024px) {
+						position: absolute;
+						top: 15px;
+						right: 20px;
+					}
 				}
 				.R16{
 				   @include textMix('Roboto', 1.0625em, 400);

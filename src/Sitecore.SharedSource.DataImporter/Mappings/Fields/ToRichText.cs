@@ -44,7 +44,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
 
         #region IBaseField
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null, string publication = null)
         {
 
             Field f = newItem.Fields[NewItemField];

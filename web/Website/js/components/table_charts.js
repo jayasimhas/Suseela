@@ -63,8 +63,9 @@ $(function() {
 				0:{
 				items:4
 				},
-				678:{
-				items:1
+				667:{
+				items:2,
+				margin:20,
 				},
 				320:{
 				 items:1

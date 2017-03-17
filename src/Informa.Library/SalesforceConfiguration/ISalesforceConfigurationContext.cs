@@ -33,5 +33,7 @@ namespace Informa.Library.SalesforceConfiguration
         string UpdateUserProductPreferenceEndPoints(string itemId);
 
         string DeleteUserProductPreferencesEndPoints(string query);
+
+        string GetSessionSynchronisationEndPoints();
     }
 }
