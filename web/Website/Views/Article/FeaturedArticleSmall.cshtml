@@ -1,6 +1,25 @@
 ﻿@using Informa.Library.Utilities.References
 @model FeaturedArticleViewModel
-<section class="article-preview article-preview--small">
+@{
+    var sponsoredclass = Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;
+}
+<section class="article-preview article-preview--small @sponsoredclass">
+    @if (Model.sponsoredContent != null)
+    {
+        <div class="article-metadata">
+            <ul>
+                <li>
+                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
+                </li>
+                <li>
+                    @if (Model.sponsoredContent.Sponsor_Logo != null)
+                    {
+                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                    }
+                </li>
+            </ul>
+        </div>
+    }
     @if (Model != null && Model.GlassModel != null)
     {
         if (Model.DisplayImage)
