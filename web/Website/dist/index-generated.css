@@ -11004,9 +11004,10 @@ div#feedbacklite.fbl_r {
 
 .sponsored_cont {
   background: rgba(245, 130, 31, 0.1); }
-  .sponsored_cont.topic-featured-article__inner-wrapper:after {
+  .sponsored_cont .topic-featured-article__inner-wrapper:after {
     background: linear-gradient(to bottom, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%);
-    background: -webkit-linear-gradient(top, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%); }
+    background: -webkit-linear-gradient(top, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%);
+    background: -moz-linear-gradient(top, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%); }
   .sponsored_cont .sponsored_title {
     text-transform: uppercase; }
   .sponsored_cont.article-executive-summary {
