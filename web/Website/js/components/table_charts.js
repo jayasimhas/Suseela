@@ -71,7 +71,8 @@ $(function() {
 				 items:1
 				},
 				480:{
-				 items:1
+				 items:1,
+				 margin:20,
 				},
 				1000:{
 				items:8
