@@ -10890,7 +10890,9 @@ div#feedbacklite.fbl_r {
       text-transform: capitalize; }
   .sponsored_cont.article-preview {
     padding: 16px;
-    padding: 1rem; }
+    padding: 1rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
     .sponsored_cont.article-preview .sponsored_title {
       font-size: 18px;
       font-style: italic;
