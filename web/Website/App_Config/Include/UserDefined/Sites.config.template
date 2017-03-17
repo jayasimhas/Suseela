@@ -55,7 +55,7 @@
          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
          dictionaryDomain="CommoditiesDictionary"
          hostName="${Site.Domain.Commodities}" targetHostName="${Site.Domain.CommoditiesTargetHostName}"
-         rootPath="/sitecore/content/Agri/commodities" startItem="/home"
+         rootPath="/sitecore/content/Agri/IEG Vu" startItem="/home"
          cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
          enableTracking="true" allowDebug="true"
          enablePreview="true" enableWebEdit="true"
