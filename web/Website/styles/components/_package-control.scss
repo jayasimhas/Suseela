@@ -305,9 +305,9 @@
 
 .sponsored_cont {
     background: transparentize(#F5821F, 0.9);
-	.topic-featured-article__inner-wrapper:after {
-		background: linear-gradient(to bottom, rgba(245, 130, 31, 0.1) ) 0%, rgba(245, 130, 31, 0.1)  65%, rgba(245, 130, 31, 0.1)  100%); 
-		background: -webkit-linear-gradient(top, rgba(245, 130, 31, 0.1)  0%, rgba(245, 130, 31, 0.1)  65%, rgba(245, 130, 31, 0.1)  100%); 
+	&.topic-featured-article__inner-wrapper:after {
+		background: linear-gradient(to bottom, #FEF3E9  0%, #FEF3E9  65%, #FEF3E9  100%);
+		background: -webkit-linear-gradient(top, #FEF3E9  0%, #FEF3E9  65%, #FEF3E9  100%); 
 	}
     .sponsored_title {
         text-transform: uppercase;
