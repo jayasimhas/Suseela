@@ -3,7 +3,7 @@
 	.hideCol{
 		visibility: hidden;
 	}
-	.subscribed{
+	.mySubscribe{
 		background: #fff !important;
 		color: #58595b !important;
 	}
@@ -34,9 +34,9 @@
 			.hidden-lg{
 				display: block !important;
 		    }
-		}
+		} 
 		.button--outline{
-			&.subscribed{
+			&.mySubscribe{
 				cursor: text;  
 			}
 			&:hover{
@@ -250,17 +250,17 @@
 }
 
 .theme-lloydslist{
-    .subscribed{
+    .mySubscribe{
         @include theme-subscr(#1191D1);
     }
 }
 .theme-insurance-day{
-    .subscribed{
+    .mySubscribe{
         @include theme-subscr(#DE4361);
     }
 }
 .theme-commodities{
-    .subscribed{
+    .mySubscribe{
         @include theme-subscr(#9E310D);
     }
 }

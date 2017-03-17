@@ -30,8 +30,7 @@
 									"</th>";
 				} else {
 					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
-										"<div class='text-center'>"+ key.split("|")[0] +"</div>"+
-										"<div class='text-center'>"+ key.split("|")[1] +"</div>"+
+				"<div class='text-center'>"+ key.split("|")[0] + " (" + key.split("|")[1] + ")</div>"+
 									"</th>";
 				}
 			}

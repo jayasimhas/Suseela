@@ -8150,7 +8150,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
   .subscriptionPan .hideCol {
     visibility: hidden; }
-  .subscriptionPan .subscribed {
+  .subscriptionPan .mySubscribe {
     background: #fff !important;
     color: #58595b !important; }
   @media (max-width: 480px) {
@@ -8175,7 +8175,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
       .subscriptionPan #mySubscriptionTab .hidden-lg {
         display: block !important; } }
-    .subscriptionPan #mySubscriptionTab .button--outline.subscribed {
+    .subscriptionPan #mySubscriptionTab .button--outline.mySubscribe {
       cursor: text; }
     .subscriptionPan #mySubscriptionTab .button--outline:hover {
       text-decoration: none; }
@@ -8333,13 +8333,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .subscriptionPan .purchases .sortable-table__col.tdata {
       width: 20%; } }
 
-.theme-lloydslist .subscribed {
+.theme-lloydslist .mySubscribe {
   border: 1px solid #1191D1 !important; }
 
-.theme-insurance-day .subscribed {
+.theme-insurance-day .mySubscribe {
   border: 1px solid #DE4361 !important; }
 
-.theme-commodities .subscribed {
+.theme-commodities .mySubscribe {
   border: 1px solid #9E310D !important; }
 
 .small_table .table-responsive .table, .table_variations .table-responsive .table {
@@ -9022,8 +9022,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9513,6 +9513,112 @@ div#feedbacklite.fbl_r {
     height: 1px;
     border-top: 1px solid #d1d3d4;
     display: block; }
+  #market-data-tool h4, #market-data-tool .lightbox-modal__title, #market-data-tool .exhibit-title, #market-data-tool .article-exhibit__title, #market-data-tool
+  .article-exhibit--pull-left__title, #market-data-tool
+  .article-exhibit--pull-right__title, #market-data-tool
+  .article-inline-image__title, #market-data-tool
+  .article-inline-image--pull-left__title, #market-data-tool
+  .article-inline-image--pull-right__title, #dry-cargo h4, #dry-cargo .lightbox-modal__title, #dry-cargo .exhibit-title, #dry-cargo .article-exhibit__title, #dry-cargo
+  .article-exhibit--pull-left__title, #dry-cargo
+  .article-exhibit--pull-right__title, #dry-cargo
+  .article-inline-image__title, #dry-cargo
+  .article-inline-image--pull-left__title, #dry-cargo
+  .article-inline-image--pull-right__title, #dry-cargo-cap h4, #dry-cargo-cap .lightbox-modal__title, #dry-cargo-cap .exhibit-title, #dry-cargo-cap .article-exhibit__title, #dry-cargo-cap
+  .article-exhibit--pull-left__title, #dry-cargo-cap
+  .article-exhibit--pull-right__title, #dry-cargo-cap
+  .article-inline-image__title, #dry-cargo-cap
+  .article-inline-image--pull-left__title, #dry-cargo-cap
+  .article-inline-image--pull-right__title, #dry-cargo-bulk-fixtures h4, #dry-cargo-bulk-fixtures .lightbox-modal__title, #dry-cargo-bulk-fixtures .exhibit-title, #dry-cargo-bulk-fixtures .article-exhibit__title, #dry-cargo-bulk-fixtures
+  .article-exhibit--pull-left__title, #dry-cargo-bulk-fixtures
+  .article-exhibit--pull-right__title, #dry-cargo-bulk-fixtures
+  .article-inline-image__title, #dry-cargo-bulk-fixtures
+  .article-inline-image--pull-left__title, #dry-cargo-bulk-fixtures
+  .article-inline-image--pull-right__title, #tanker-fixtures h4, #tanker-fixtures .lightbox-modal__title, #tanker-fixtures .exhibit-title, #tanker-fixtures .article-exhibit__title, #tanker-fixtures
+  .article-exhibit--pull-left__title, #tanker-fixtures
+  .article-exhibit--pull-right__title, #tanker-fixtures
+  .article-inline-image__title, #tanker-fixtures
+  .article-inline-image--pull-left__title, #tanker-fixtures
+  .article-inline-image--pull-right__title, #ship-Container-ShipFixtures h4, #ship-Container-ShipFixtures .lightbox-modal__title, #ship-Container-ShipFixtures .exhibit-title, #ship-Container-ShipFixtures .article-exhibit__title, #ship-Container-ShipFixtures
+  .article-exhibit--pull-left__title, #ship-Container-ShipFixtures
+  .article-exhibit--pull-right__title, #ship-Container-ShipFixtures
+  .article-inline-image__title, #ship-Container-ShipFixtures
+  .article-inline-image--pull-left__title, #ship-Container-ShipFixtures
+  .article-inline-image--pull-right__title, #ship-Coal-Export h4, #ship-Coal-Export .lightbox-modal__title, #ship-Coal-Export .exhibit-title, #ship-Coal-Export .article-exhibit__title, #ship-Coal-Export
+  .article-exhibit--pull-left__title, #ship-Coal-Export
+  .article-exhibit--pull-right__title, #ship-Coal-Export
+  .article-inline-image__title, #ship-Coal-Export
+  .article-inline-image--pull-left__title, #ship-Coal-Export
+  .article-inline-image--pull-right__title, #market-Data-Dry-Cargo h4, #market-Data-Dry-Cargo .lightbox-modal__title, #market-Data-Dry-Cargo .exhibit-title, #market-Data-Dry-Cargo .article-exhibit__title, #market-Data-Dry-Cargo
+  .article-exhibit--pull-left__title, #market-Data-Dry-Cargo
+  .article-exhibit--pull-right__title, #market-Data-Dry-Cargo
+  .article-inline-image__title, #market-Data-Dry-Cargo
+  .article-inline-image--pull-left__title, #market-Data-Dry-Cargo
+  .article-inline-image--pull-right__title,
+  #cockett-Bunker h4,
+  #cockett-Bunker .lightbox-modal__title,
+  #cockett-Bunker .exhibit-title,
+  #cockett-Bunker .article-exhibit__title,
+  #cockett-Bunker
+  .article-exhibit--pull-left__title,
+  #cockett-Bunker
+  .article-exhibit--pull-right__title,
+  #cockett-Bunker
+  .article-inline-image__title,
+  #cockett-Bunker
+  .article-inline-image--pull-left__title,
+  #cockett-Bunker
+  .article-inline-image--pull-right__title, #ship-Roro h4, #ship-Roro .lightbox-modal__title, #ship-Roro .exhibit-title, #ship-Roro .article-exhibit__title, #ship-Roro
+  .article-exhibit--pull-left__title, #ship-Roro
+  .article-exhibit--pull-right__title, #ship-Roro
+  .article-inline-image__title, #ship-Roro
+  .article-inline-image--pull-left__title, #ship-Roro
+  .article-inline-image--pull-right__title, #ship-Container-Ship h4, #ship-Container-Ship .lightbox-modal__title, #ship-Container-Ship .exhibit-title, #ship-Container-Ship .article-exhibit__title, #ship-Container-Ship
+  .article-exhibit--pull-left__title, #ship-Container-Ship
+  .article-exhibit--pull-right__title, #ship-Container-Ship
+  .article-inline-image__title, #ship-Container-Ship
+  .article-inline-image--pull-left__title, #ship-Container-Ship
+  .article-inline-image--pull-right__title, #ship-Vehicle h4, #ship-Vehicle .lightbox-modal__title, #ship-Vehicle .exhibit-title, #ship-Vehicle .article-exhibit__title, #ship-Vehicle
+  .article-exhibit--pull-left__title, #ship-Vehicle
+  .article-exhibit--pull-right__title, #ship-Vehicle
+  .article-inline-image__title, #ship-Vehicle
+  .article-inline-image--pull-left__title, #ship-Vehicle
+  .article-inline-image--pull-right__title, #tanker-Pure-ChemPage h4, #tanker-Pure-ChemPage .lightbox-modal__title, #tanker-Pure-ChemPage .exhibit-title, #tanker-Pure-ChemPage .article-exhibit__title, #tanker-Pure-ChemPage
+  .article-exhibit--pull-left__title, #tanker-Pure-ChemPage
+  .article-exhibit--pull-right__title, #tanker-Pure-ChemPage
+  .article-inline-image__title, #tanker-Pure-ChemPage
+  .article-inline-image--pull-left__title, #tanker-Pure-ChemPage
+  .article-inline-image--pull-right__title, #shipContainerFixtures h4, #shipContainerFixtures .lightbox-modal__title, #shipContainerFixtures .exhibit-title, #shipContainerFixtures .article-exhibit__title, #shipContainerFixtures
+  .article-exhibit--pull-left__title, #shipContainerFixtures
+  .article-exhibit--pull-right__title, #shipContainerFixtures
+  .article-inline-image__title, #shipContainerFixtures
+  .article-inline-image--pull-left__title, #shipContainerFixtures
+  .article-inline-image--pull-right__title, #fisDryBulkContainer h4, #fisDryBulkContainer .lightbox-modal__title, #fisDryBulkContainer .exhibit-title, #fisDryBulkContainer .article-exhibit__title, #fisDryBulkContainer
+  .article-exhibit--pull-left__title, #fisDryBulkContainer
+  .article-exhibit--pull-right__title, #fisDryBulkContainer
+  .article-inline-image__title, #fisDryBulkContainer
+  .article-inline-image--pull-left__title, #fisDryBulkContainer
+  .article-inline-image--pull-right__title, #howeRobinsonContainer h4, #howeRobinsonContainer .lightbox-modal__title, #howeRobinsonContainer .exhibit-title, #howeRobinsonContainer .article-exhibit__title, #howeRobinsonContainer
+  .article-exhibit--pull-left__title, #howeRobinsonContainer
+  .article-exhibit--pull-right__title, #howeRobinsonContainer
+  .article-inline-image__title, #howeRobinsonContainer
+  .article-inline-image--pull-left__title, #howeRobinsonContainer
+  .article-inline-image--pull-right__title, #market-imarex h4, #market-imarex .lightbox-modal__title, #market-imarex .exhibit-title, #market-imarex .article-exhibit__title, #market-imarex
+  .article-exhibit--pull-left__title, #market-imarex
+  .article-exhibit--pull-right__title, #market-imarex
+  .article-inline-image__title, #market-imarex
+  .article-inline-image--pull-left__title, #market-imarex
+  .article-inline-image--pull-right__title, #shipVehicle-Page h4, #shipVehicle-Page .lightbox-modal__title, #shipVehicle-Page .exhibit-title, #shipVehicle-Page .article-exhibit__title, #shipVehicle-Page
+  .article-exhibit--pull-left__title, #shipVehicle-Page
+  .article-exhibit--pull-right__title, #shipVehicle-Page
+  .article-inline-image__title, #shipVehicle-Page
+  .article-inline-image--pull-left__title, #shipVehicle-Page
+  .article-inline-image--pull-right__title, #shipCoalExport-page h4, #shipCoalExport-page .lightbox-modal__title, #shipCoalExport-page .exhibit-title, #shipCoalExport-page .article-exhibit__title, #shipCoalExport-page
+  .article-exhibit--pull-left__title, #shipCoalExport-page
+  .article-exhibit--pull-right__title, #shipCoalExport-page
+  .article-inline-image__title, #shipCoalExport-page
+  .article-inline-image--pull-left__title, #shipCoalExport-page
+  .article-inline-image--pull-right__title {
+    margin-bottom: 18px; }
   #market-data-tool .oddCls, #dry-cargo .oddCls, #dry-cargo-cap .oddCls, #dry-cargo-bulk-fixtures .oddCls, #tanker-fixtures .oddCls, #ship-Container-ShipFixtures .oddCls, #ship-Coal-Export .oddCls, #market-Data-Dry-Cargo .oddCls,
   #cockett-Bunker .oddCls, #ship-Roro .oddCls, #ship-Container-Ship .oddCls, #ship-Vehicle .oddCls, #tanker-Pure-ChemPage .oddCls, #shipContainerFixtures .oddCls, #fisDryBulkContainer .oddCls, #howeRobinsonContainer .oddCls, #market-imarex .oddCls, #shipVehicle-Page .oddCls, #shipCoalExport-page .oddCls {
     background: #f1f1f1; }
@@ -9755,11 +9861,11 @@ div#feedbacklite.fbl_r {
         font-size: 22px; } }
   #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr, #ship-Container-ShipFixtures hr, #ship-Coal-Export hr, #market-Data-Dry-Cargo hr,
   #cockett-Bunker hr, #ship-Roro hr, #ship-Container-Ship hr, #ship-Vehicle hr, #tanker-Pure-ChemPage hr, #shipContainerFixtures hr, #fisDryBulkContainer hr, #howeRobinsonContainer hr, #market-imarex hr, #shipVehicle-Page hr, #shipCoalExport-page hr {
-    margin: 25px 0 35px; }
+    margin: 20px 0; }
     @media (max-width: 480px) {
       #market-data-tool hr, #dry-cargo hr, #dry-cargo-cap hr, #dry-cargo-bulk-fixtures hr, #tanker-fixtures hr, #ship-Container-ShipFixtures hr, #ship-Coal-Export hr, #market-Data-Dry-Cargo hr,
       #cockett-Bunker hr, #ship-Roro hr, #ship-Container-Ship hr, #ship-Vehicle hr, #tanker-Pure-ChemPage hr, #shipContainerFixtures hr, #fisDryBulkContainer hr, #howeRobinsonContainer hr, #market-imarex hr, #shipVehicle-Page hr, #shipCoalExport-page hr {
-        margin: 30px 0 20px;
+        margin: 25px 0 15px;
         display: block; } }
   #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop, #ship-Coal-Export .borTop, #market-Data-Dry-Cargo .borTop,
   #cockett-Bunker .borTop, #ship-Roro .borTop, #ship-Container-Ship .borTop, #ship-Vehicle .borTop, #tanker-Pure-ChemPage .borTop, #shipContainerFixtures .borTop, #fisDryBulkContainer .borTop, #howeRobinsonContainer .borTop, #market-imarex .borTop, #shipVehicle-Page .borTop, #shipCoalExport-page .borTop {
@@ -10093,6 +10199,10 @@ div#feedbacklite.fbl_r {
 
 .rowbordinMob {
   border: 1px solid #e9e9e9; }
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .selectivity-input {
+    width: 230px; } }
 
 .id-merges-acquisition {
   font-family: 'Roboto'; }
@@ -13159,7 +13269,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
