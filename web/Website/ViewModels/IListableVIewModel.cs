@@ -1,5 +1,6 @@
 ﻿using System;
 using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Web.ViewModels
 {
@@ -7,6 +8,7 @@ namespace Informa.Web.ViewModels
 	{
 		bool DisplayImage { get; set; }
 		string PageTitle { get; set; }
+        ISponsored_Content SponsoredContent { get; set; }
 	}
 
     public interface IArticleBookmarker

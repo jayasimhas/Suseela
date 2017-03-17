@@ -91,6 +91,7 @@ namespace Informa.Web.ViewModels.Articles
             }
 
             model.SalesforceId = IsSavedDocumentContext.GetSalesforceId(article._Id);
+            model.SponsoredContent = ArticleService.GetSponsoredContent(article);
             return model;
         }
 
