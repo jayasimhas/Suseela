@@ -9020,8 +9020,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9548,9 +9548,6 @@ div#feedbacklite.fbl_r {
         #market-data-tool.table-responsive .table .table_head .visible-lg th, #dry-cargo.table-responsive .table .table_head .visible-lg th, #dry-cargo-cap.table-responsive .table .table_head .visible-lg th, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg th, #tanker-fixtures.table-responsive .table .table_head .visible-lg th, #ship-Container-ShipFixtures.table-responsive .table .table_head .visible-lg th, #ship-Coal-Export.table-responsive .table .table_head .visible-lg th, #market-Data-Dry-Cargo.table-responsive .table .table_head .visible-lg th,
         #cockett-Bunker.table-responsive .table .table_head .visible-lg th, #ship-Roro.table-responsive .table .table_head .visible-lg th, #ship-Container-Ship.table-responsive .table .table_head .visible-lg th, #ship-Vehicle.table-responsive .table .table_head .visible-lg th, #tanker-Pure-ChemPage.table-responsive .table .table_head .visible-lg th, #shipContainerFixtures.table-responsive .table .table_head .visible-lg th, #fisDryBulkContainer.table-responsive .table .table_head .visible-lg th, #howeRobinsonContainer.table-responsive .table .table_head .visible-lg th, #market-imarex.table-responsive .table .table_head .visible-lg th, #shipVehicle-Page.table-responsive .table .table_head .visible-lg th, #shipCoalExport-page.table-responsive .table .table_head .visible-lg th {
           font-weight: bold; }
-    #market-data-tool.table-responsive .table tbody tr:nth-child(even), #dry-cargo.table-responsive .table tbody tr:nth-child(even), #dry-cargo-cap.table-responsive .table tbody tr:nth-child(even), #dry-cargo-bulk-fixtures.table-responsive .table tbody tr:nth-child(even), #tanker-fixtures.table-responsive .table tbody tr:nth-child(even), #ship-Container-ShipFixtures.table-responsive .table tbody tr:nth-child(even), #ship-Coal-Export.table-responsive .table tbody tr:nth-child(even), #market-Data-Dry-Cargo.table-responsive .table tbody tr:nth-child(even),
-    #cockett-Bunker.table-responsive .table tbody tr:nth-child(even), #ship-Roro.table-responsive .table tbody tr:nth-child(even), #ship-Container-Ship.table-responsive .table tbody tr:nth-child(even), #ship-Vehicle.table-responsive .table tbody tr:nth-child(even), #tanker-Pure-ChemPage.table-responsive .table tbody tr:nth-child(even), #shipContainerFixtures.table-responsive .table tbody tr:nth-child(even), #fisDryBulkContainer.table-responsive .table tbody tr:nth-child(even), #howeRobinsonContainer.table-responsive .table tbody tr:nth-child(even), #market-imarex.table-responsive .table tbody tr:nth-child(even), #shipVehicle-Page.table-responsive .table tbody tr:nth-child(even), #shipCoalExport-page.table-responsive .table tbody tr:nth-child(even) {
-      background: #f1f1f1; }
     #market-data-tool.table-responsive .table tbody.visible-lg td, #dry-cargo.table-responsive .table tbody.visible-lg td, #dry-cargo-cap.table-responsive .table tbody.visible-lg td, #dry-cargo-bulk-fixtures.table-responsive .table tbody.visible-lg td, #tanker-fixtures.table-responsive .table tbody.visible-lg td, #ship-Container-ShipFixtures.table-responsive .table tbody.visible-lg td, #ship-Coal-Export.table-responsive .table tbody.visible-lg td, #market-Data-Dry-Cargo.table-responsive .table tbody.visible-lg td,
     #cockett-Bunker.table-responsive .table tbody.visible-lg td, #ship-Roro.table-responsive .table tbody.visible-lg td, #ship-Container-Ship.table-responsive .table tbody.visible-lg td, #ship-Vehicle.table-responsive .table tbody.visible-lg td, #tanker-Pure-ChemPage.table-responsive .table tbody.visible-lg td, #shipContainerFixtures.table-responsive .table tbody.visible-lg td, #fisDryBulkContainer.table-responsive .table tbody.visible-lg td, #howeRobinsonContainer.table-responsive .table tbody.visible-lg td, #market-imarex.table-responsive .table tbody.visible-lg td, #shipVehicle-Page.table-responsive .table tbody.visible-lg td, #shipCoalExport-page.table-responsive .table tbody.visible-lg td {
       border-bottom: 1px solid #d1d3d4; }
@@ -13144,7 +13141,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
