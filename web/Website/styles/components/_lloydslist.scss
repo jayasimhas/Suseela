@@ -648,7 +648,7 @@
 		width:40%;
 		z-index: 9;
 		@media only screen and (max-width: 600px) {
-			width:50%;
+			width:48%;
 		}
 	}
 	.carousel-div{
@@ -659,29 +659,28 @@
 		width: 60%;
 		float: left;
 		@media only screen and (max-width: 600px) {
-			width:50%;
+			width:52%;
 		}
 	}
 	.title{
 		background-color: #1191d1;
 		color: #ffffff;
-		padding: 8px 5px 8px 12px;
+		padding: 8px 10px 8px 12px;
 		@include textMix('Roboto', 1em, bold);
 		@media only screen and (min-width: 768px) and (max-width: 1024px) {
-			font-size: 0.9rem;
-			padding: 12px 2px;
+			padding: 8px 10px 8px 0px;
 		}
 		@media only screen and (max-width: 680px) {
 			height: 55px;
+		}
+		@media only screen and (min-width:680px) and (max-width: 1024px) {
+			font-size: 14px;
 		}
 	}
 	.R16{
 		padding: 12px 10px;
 		border-bottom: 1px solid #e1e1e1;
 		border-right: 1px solid #e9e9e9; 
-		@media only screen and (min-width: 767px) and (max-width: 1024px) {
-			padding: 12px 6px;
-		} 
 	}
 	.titleHead{
 		width: 100%;

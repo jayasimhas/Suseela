@@ -10145,7 +10145,7 @@ div#feedbacklite.fbl_r {
     z-index: 9; }
     @media only screen and (max-width: 600px) {
       #howeRobinsonContainer .states_heading {
-        width: 50%; } }
+        width: 48%; } }
   #howeRobinsonContainer .carousel-div {
     position: relative;
     width: 100%; }
@@ -10154,29 +10154,27 @@ div#feedbacklite.fbl_r {
     float: left; }
     @media only screen and (max-width: 600px) {
       #howeRobinsonContainer .owl-wrapper {
-        width: 50%; } }
+        width: 52%; } }
   #howeRobinsonContainer .title {
     background-color: #1191d1;
     color: #ffffff;
-    padding: 8px 5px 8px 12px;
+    padding: 8px 10px 8px 12px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: bold; }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
       #howeRobinsonContainer .title {
-        font-size: 14px;
-        font-size: 0.9rem;
-        padding: 12px 2px; } }
+        padding: 8px 10px 8px 0px; } }
     @media only screen and (max-width: 680px) {
       #howeRobinsonContainer .title {
         height: 55px; } }
+    @media only screen and (min-width: 680px) and (max-width: 1024px) {
+      #howeRobinsonContainer .title {
+        font-size: 14px; } }
   #howeRobinsonContainer .R16 {
     padding: 12px 10px;
     border-bottom: 1px solid #e1e1e1;
     border-right: 1px solid #e9e9e9; }
-    @media only screen and (min-width: 767px) and (max-width: 1024px) {
-      #howeRobinsonContainer .R16 {
-        padding: 12px 6px; } }
   #howeRobinsonContainer .titleHead {
     width: 100%; }
   #howeRobinsonContainer .leftbord {
