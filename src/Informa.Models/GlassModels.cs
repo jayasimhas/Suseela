@@ -17420,8 +17420,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Entitlement_Api_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Custom_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Custom_Api_Url { get; set; }
     }
 
 
@@ -17498,8 +17498,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Entitlement_Api_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Custom_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Custom_Api_Url { get; set; }
     }
 
     public static partial class ISalesforce_ConfigurationConstants
@@ -17531,8 +17531,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Session_Synchronization_Item_IdFieldId = new ID("F9935753-4B8C-45E0-BA00-156E81A6520A");
         public const string Session_Synchronization_Item_IdFieldName = "Session Synchronization Item Id";
 
-        public static readonly ID Salesforce_Entitlement_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
-        public const string Salesforce_Entitlement_Api_UrlFieldName = "Salesforce Entitlement Api Url";
+        public static readonly ID Salesforce_Custom_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
+        public const string Salesforce_Custom_Api_UrlFieldName = "Salesforce Custom Api Url";
     }
 
 

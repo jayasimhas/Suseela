@@ -46,7 +46,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 {
                     using (var client = new HttpClient())
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                         InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(entity.Id), this.GetType().Name);
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                         var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
@@ -86,7 +86,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                     {
                         using (var client = new HttpClient())
                         {
-                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                             InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(item.SalesforceId), this.GetType().Name);
                             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                             var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
@@ -116,7 +116,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 {
                     using (var client = new HttpClient())
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                         InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(optIn.SalesforceId), this.GetType().Name);
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                         var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
