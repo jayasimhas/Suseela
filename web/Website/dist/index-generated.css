@@ -10120,23 +10120,19 @@ div#feedbacklite.fbl_r {
   padding-left: 5px; }
 
 #market-Data-Dry-Cargo {
-  float: left;
   width: 100%;
   border: none; }
   #market-Data-Dry-Cargo #marketDataDryCargo {
     border: none; }
-  #market-Data-Dry-Cargo .year_heading {
-    height: 4em; }
-  #market-Data-Dry-Cargo .article .year_heading {
-    padding-right: 0;
-    padding-left: 0; }
-  #market-Data-Dry-Cargo .states_heading {
-    border-right: 1px solid #ffffff; }
-  #market-Data-Dry-Cargo .R16 {
-    background-color: #ffffff;
-    min-height: 50px; }
-    #market-Data-Dry-Cargo .R16:nth-child(even) {
-      background-color: #eee; }
+  #market-Data-Dry-Cargo .title {
+    background-color: #1191d1;
+    color: #ffffff;
+    padding: 8px 5px 8px 12px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; }
+  #market-Data-Dry-Cargo .headerPad {
+    font-weight: bold !important; }
 
 #howeRobinsonContainer {
   width: 100%; }

@@ -620,30 +620,19 @@
 	}
 }
 #market-Data-Dry-Cargo {
-	float: left;
 	width: 100%;
 	border: none;
 	#marketDataDryCargo {
 		border: none;
+	} 
+	.title{
+		background-color: #1191d1;
+		color: #ffffff;
+		padding: 8px 5px 8px 12px;
+		@include textMix('Roboto', 1em, bold); 
 	}
-	.year_heading {
-		height: 4em;
-	}
-	.article {
-		.year_heading {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	}
-	.states_heading {
-		border-right: 1px solid $color-white;
-	}
-	.R16 {
-		background-color: $color-white;
-		min-height: 50px;
-		&:nth-child(even) {
-			background-color: #eee;
-		}
+	.headerPad{
+		font-weight: bold !important;
 	}
 }
 
