@@ -64,10 +64,10 @@
 				if(colHeadInd <= 6){
 					if(titflag){
 						titflag = false;
-						descStr += "<th class='title'><div class='pad'>" + prop + "</div></th>";
+						descStr += "<th class='title'>" + prop + "</th>";
 					}
 					else{
-						descStr += "<th class='title'><div class='pad'>" + self.genarateDate(prop) + "</div></th>";
+						descStr += "<th class='title'>" + self.genarateDate(prop) + "</th>";
 					}
 				}
 				else break;

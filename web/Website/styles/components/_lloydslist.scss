@@ -620,8 +620,7 @@
 	}
 }
 #market-Data-Dry-Cargo {
-	width: 100%;
-	border: none;
+	width: 100%; 
 	#marketDataDryCargo {
 		border: none;
 	} 
@@ -633,6 +632,11 @@
 	}
 	.headerPad{
 		font-weight: bold !important;
+	}
+	@media only screen and (max-width: 600px) {
+		.R16{
+			border-right: 1px solid #e9e9e9;
+		}
 	}
 }
 

@@ -146,7 +146,7 @@
 			}
 
 			var Carousel = '<div class="table_head pad-10 clearfix"></div>'+
-							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4;">'+
+							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4; border-top: none;">'+
 								'<div class="states_heading">'+
 									FixedPart+
 								'</div>'+
