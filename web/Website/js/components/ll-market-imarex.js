@@ -1,6 +1,5 @@
 (function () {
 	var marketImarex = {
-		table: '', 
 		renderDate: function(dateData){ 
 			var options = '';
 			$.each(dateData[0], function(key, val){ 
@@ -11,16 +10,16 @@
 			
 			$('#imarexselect').html(options);
 		},
-		renderTable: function(){
+		renderTable: function(Parent){
 			var self = this, loadDateVal = $('#imarexselect option').val();
-			
-			self.callAjaxFn(loadDateVal);
+			//self.sendHTTPRequest(imarexTable, Parent);
+			self.callAjaxFn(loadDateVal, Parent);
 			$(document).on('change', '#imarexselect', function(){
 				var selectDateVal = $('#imarexselect option').val();
-				self.callAjaxFn(selectDateVal);
+				self.callAjaxFn(selectDateVal, Parent);
 			});
 		},
-		callAjaxFn: function(seldateVal){
+		callAjaxFn: function(seldateVal, Parent){
 			 var self = this;
 			$.ajax({
 				url: '/Download/JsonDataFromFeed/ReadJsonMarketFixture/',
@@ -28,50 +27,56 @@
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
-					self.sendHTTPRequest(searchData);
+					self.sendHTTPRequest(searchData, Parent);
 				},
 				error: function (err) {
 					console.log('Feed url is getting error: ' + JSON.stringify(err));
 				}
 			});
 		},
-		sendHTTPRequest: function(searchData){
-			$('#marketImarex').html(this.loadDataView(searchData));
+		sendHTTPRequest: function(searchData, Parent){
+			this.loadDataView(searchData, Parent);
 		},
-		loadDataView: function(tableObj){
-			var self = this;
+		loadDataView: function(tableObj, Parent){
+			var tableStr = '';
 			$.each(tableObj[0], function(key, val){ 
-				self.table += '<table class="table">'
-				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
-				self.table += '<tr class="blueBg">';
+				tableStr += '<table class="table">'
+				tableStr += '<thead class="table_head">';
+				tableStr += '<tr><th colspan="6" class="pad-full-10">'+key+'</th></tr>'									
+				tableStr += '<tr class="blueBg">';
 				var tableHead = val[0];
 					for(var prop in tableHead){
 						if(prop != "Header"){
-						self.table += '<th class="pad-10">'+prop+'</th>';
+						tableStr += '<th class="headerPad rigalign">'+prop+'</th>';
 						}else{
-						self.table += '<th class="pad-10"></th>';
+						tableStr += '<th class="headerPad"></th>';
 						}
 					}
-					self.table += '</tr>';
-					self.table += '</thead>';
+					tableStr += '</tr>';
+					tableStr += '</thead>';
 					
-					self.table += '<tbody>';
+					tableStr += '<tbody>';
 					var bgIdx = 0;
 					$.each(val, function(idx, value){
 						bgIdx++;
-						var cls = (bgIdx % 2 === 0) ? 'oddCls' : '';
-						self.table += '<tr class="'+cls+'">';
+						var cls = (bgIdx % 2 === 0) ? 'oddCls' : '', tdIdx = 0;
+						tableStr += '<tr class="'+cls+'">';
 						$.each(value, function(k, v){
-							self.table += '<td class="R16 pad-10">'+v+'</td>';
+							if(tdIdx){
+								tableStr += '<td class="borderpad rigalign">'+v+'</td>';
+							}
+							else{
+								tableStr += '<td class="borderpad">'+v+'</td>';
+							} 
+							tdIdx++;
 						});
-						self.table += '</tr>';
+						tableStr += '</tr>';
 					});
-					self.table += '</tbody>';
-				self.table += '</table>';
+					tableStr += '</tbody>';
+				tableStr += '</table>';
 				
 			});
-			$('#marketImarex').html(self.table); 
+			Parent.html(tableStr); 
 		}, 
 		init: function(dateData, id) {
 			this.renderDate(dateData);

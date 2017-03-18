@@ -1,6 +1,5 @@
 (function () {
 	var dryCargoBulkFixtures = {
-		table: '',
 		recreateObj: {},
 		renderDate: function(dateObj){ 
 			var options = '';
@@ -14,7 +13,7 @@
 		},
 		renderTable: function(){
 			var self = this, loadDateVal = $('#drybulkselectDay option').val();
-
+			//self.sendHTTPRequest(tableObj);
 			self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#drybulkselectDay', function(){
 				var selectDateVal = $('#drybulkselectDay option').val();
@@ -57,13 +56,11 @@
 			});
 		},
 		loadDescView: function(tableObj){
-			var self = this, getArr;
-			$.each(tableObj[0], function(key, val){ 
-				self.table += '<table class="table">'
-				self.table += '<thead class="table_head">';
-				self.table += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>';
-				self.table += '</thead>';
-				self.table += '</table>';	
+			var self = this, tableStr = '', getArr;
+			$.each(tableObj[0], function(key, val){
+				tableStr += '<thead class="table_head">';
+				tableStr += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>';
+				tableStr += '</thead>'; 
 			 });
 			 
 			$.each(tableObj[0], function(idx, val){
@@ -81,20 +78,21 @@
 					}
 				}
 			}
-			var tbody = '<tbody class="visible-lg">';
+			 
+			tableStr += '<tbody class="visible-lg">';
 			$.each(self.recreateObj, function(key, val){
-				tbody += '<tr><td colspan="2" class="graybg RB18 p-10">'+key+'</td><td align="right" class="graybg RB18 p-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>';
+				tableStr += '<tr><td colspan="2" class="graybg RB18 p-10">'+key+'</td><td align="right" class="graybg RB18 p-10"><a href="javascript: void(0);" class="top"><span class="arrow"></span>Top</a></td></tr>';
 				$.each(val, function(idx, value){
-					tbody += '<tr>';
+					tableStr += '<tr>';
 					$.each(value, function(k, v){
-						tbody += '<td class="R16 pad-10">'+v+'</td>';
+						tableStr += '<td class="R16 pad-10">'+v+'</td>';
 					});
-					tbody += '</tr>';
+					tableStr += '</tr>';
 				});
 			});
-			tbody += '</tbody>';
+			tableStr += '</tbody>';
 			
-			return tbody;
+			return tableStr;
 		},
 		loadMobileView: function(){
 			var tbody = '<tbody class="visible-sm">';
