@@ -27,7 +27,7 @@ namespace Informa.Library.SalesforceConfiguration
         private string _deleteUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
         private string _updateUserProductPreferenceEndpoints = "/services/data/v20.0/sobjects/Product_Preference__c/{0}";
         private string _deleteUserProductPreferencesEndpoints = "/services/apexrest/ProductPreferences/?q={0}";
-        private string _sessionSynchronisationEndPoints= "{0}/servlet/servlet.FileDownload?file=0155E00000099aQ";
+        private string _sessionSynchronisationEndPoints= "{0}/servlet/servlet.FileDownload?file={1}";
 
 
         public SalesforceConfigurationContext(
@@ -65,9 +65,9 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetLoginEndPoints(string productCode, string callbackUrl, string state)
         {
             string url = string.Empty;
-            string loginUrl = (SalesForceConfiguration?.Salesforce_Login_Url != null
-                && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Login_Url.Url) ?
-                SalesForceConfiguration?.Salesforce_Login_Url.Url : string.Empty);
+            string loginUrl = (SalesForceConfiguration?.Salesforce_Service_Url != null
+                && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Service_Url.Url) ?
+                SalesForceConfiguration?.Salesforce_Service_Url.Url : string.Empty);
 
             url = string.Format(_authorizationRequestEndPoints, loginUrl,
                   productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
@@ -138,7 +138,7 @@ namespace Informa.Library.SalesforceConfiguration
         public string GetSessionSynchronisationEndPoints()
         {
             return string.Format(_sessionSynchronisationEndPoints,
-            SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+            SalesForceConfiguration?.Salesforce_Service_Url?.Url, SalesForceConfiguration?.Session_Synchronization_Item_Id);
         }
     }
 }
