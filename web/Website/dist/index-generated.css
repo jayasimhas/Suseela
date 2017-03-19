@@ -10262,6 +10262,29 @@ div#feedbacklite.fbl_r {
   #tanker-fixtures .table_head .pad-full-10 {
     padding: 10px; } }
 
+#tanker-fixtures.table-responsive .table {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  @media only screen and (min-width: 1025px) {
+    #tanker-fixtures.table-responsive .table tr .pad-10 {
+      padding: 12px 0 12px 16px; }
+      #tanker-fixtures.table-responsive .table tr .pad-10:nth-child(8) {
+        padding-right: 16px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1020px) {
+    #tanker-fixtures.table-responsive .table.descView {
+      width: 475px;
+      overflow-x: auto;
+      display: block !important; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1025px) {
+    #tanker-fixtures.table-responsive .table.descView {
+      width: 570px;
+      overflow-x: auto;
+      display: block !important; } }
+  #tanker-fixtures.table-responsive .table.mobView .mobleftCol {
+    width: 40%; }
+  #tanker-fixtures.table-responsive .table.mobView .mobrigCol {
+    width: 60%; }
+
 #tanker-Pure-ChemPage.table-responsive .table {
   margin-bottom: 16px !important;
   margin-bottom: 1rem !important; }
