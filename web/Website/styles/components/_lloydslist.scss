@@ -769,4 +769,45 @@
 			}
 		}
 	}
+	&.table-responsive .table{
+		margin-bottom: 1rem;
+		@media only screen and (min-width: 1025px) {
+			tr .pad-10{
+				padding: 12px 0 12px 16px;
+				&:nth-child(8){
+					padding-right: 16px;
+				}
+			}
+		}
+		&.descView{
+			@media only screen and (min-width: 768px) and (max-width: 1020px) {
+				width: 475px;
+				overflow-x: auto;
+				display: block !important;
+			}
+			@media only screen and (min-width: 1024px) and (max-width: 1025px) {
+				width: 570px;
+				overflow-x: auto;
+				display: block !important;
+			}
+		}
+		&.mobView{
+			.mobleftCol{
+				width: 40%;
+			}
+			.mobrigCol{
+				width: 60%;
+			}
+		}
+	}
 }
+
+#tanker-Pure-ChemPage{
+	&.table-responsive{
+		.table{
+			margin-bottom: 1rem !important;
+		}
+	}
+}
+
+ 

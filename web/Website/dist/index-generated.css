@@ -3977,16 +3977,17 @@ body.lightboxed {
   margin-bottom: 1rem; }
   #tankerPureChemPage .pad-10, #onOrderTable .pad-10, #shipVehiclePage .pad-10, #shipCoalExport .pad-10 {
     padding: 10px !important; }
-  #tankerPureChemPage thead tr:first-child th, #onOrderTable thead tr:first-child th, #shipVehiclePage thead tr:first-child th, #shipCoalExport thead tr:first-child th {
-    text-align: left !important;
-    border-bottom: 1px solid #ffffff; }
-  #tankerPureChemPage thead tr th, #onOrderTable thead tr th, #shipVehiclePage thead tr th, #shipCoalExport thead tr th {
-    border-bottom: 1px solid #ffffff;
-    border-right: 1px solid #ffffff; }
-    #tankerPureChemPage thead tr th:last-child, #onOrderTable thead tr th:last-child, #shipVehiclePage thead tr th:last-child, #shipCoalExport thead tr th:last-child {
-      border-right: none; }
+  #tankerPureChemPage thead, #onOrderTable thead, #shipVehiclePage thead, #shipCoalExport thead {
+    /*tr th {
+			border-bottom: 1px solid $color-white;
+			border-right: 1px solid $color-white;
+			&:last-child {
+				border-right: none;
+			}
+		}*/ }
+    #tankerPureChemPage thead tr:first-child th, #onOrderTable thead tr:first-child th, #shipVehiclePage thead tr:first-child th, #shipCoalExport thead tr:first-child th {
+      text-align: left !important; }
   #tankerPureChemPage .states_heading, #onOrderTable .states_heading, #shipVehiclePage .states_heading, #shipCoalExport .states_heading {
-    border-right: 1px solid #ffffff;
     padding-left: 0;
     padding-right: 0; }
   #tankerPureChemPage .owl-wrapper .states_heading, #onOrderTable .owl-wrapper .states_heading, #shipVehiclePage .owl-wrapper .states_heading, #shipCoalExport .owl-wrapper .states_heading {
@@ -4016,6 +4017,35 @@ body.lightboxed {
 
 #marketDataDryCargo.ID-Responsive-Table .article {
   border-right: 1px solid #eee; }
+
+#tankerPureChemPage {
+  margin-bottom: 0px; }
+
+#tankerPureChemPage .states_heading .year_heading, #onOrderTable .states_heading .year_heading {
+  text-align: left; }
+
+#tankerPureChemPage .year_heading, #onOrderTable .year_heading {
+  text-align: center;
+  padding: 10px !important; }
+  #tankerPureChemPage .year_heading .sub-item, #onOrderTable .year_heading .sub-item {
+    width: 52%;
+    text-align: right; }
+    #tankerPureChemPage .year_heading .sub-item:nth-child(even), #onOrderTable .year_heading .sub-item:nth-child(even) {
+      width: 32%; }
+  #tankerPureChemPage .year_heading .topTitle, #onOrderTable .year_heading .topTitle {
+    min-height: 35px; }
+
+#tankerPureChemPage .R16 .sub-item, #onOrderTable .R16 .sub-item {
+  width: 32%;
+  text-align: right; }
+  #tankerPureChemPage .R16 .sub-item:nth-child(even), #onOrderTable .R16 .sub-item:nth-child(even) {
+    width: 50%; }
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  #tankerPureChemPage .states_heading, #onOrderTable .states_heading {
+    width: 30%; }
+  #tankerPureChemPage .owl-wrapper, #onOrderTable .owl-wrapper {
+    width: 70%; } }
 
 .main-menu {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -10231,6 +10261,33 @@ div#feedbacklite.fbl_r {
 @media only screen and (max-width: 767px) {
   #tanker-fixtures .table_head .pad-full-10 {
     padding: 10px; } }
+
+#tanker-fixtures.table-responsive .table {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  @media only screen and (min-width: 1025px) {
+    #tanker-fixtures.table-responsive .table tr .pad-10 {
+      padding: 12px 0 12px 16px; }
+      #tanker-fixtures.table-responsive .table tr .pad-10:nth-child(8) {
+        padding-right: 16px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1020px) {
+    #tanker-fixtures.table-responsive .table.descView {
+      width: 475px;
+      overflow-x: auto;
+      display: block !important; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1025px) {
+    #tanker-fixtures.table-responsive .table.descView {
+      width: 570px;
+      overflow-x: auto;
+      display: block !important; } }
+  #tanker-fixtures.table-responsive .table.mobView .mobleftCol {
+    width: 40%; }
+  #tanker-fixtures.table-responsive .table.mobView .mobrigCol {
+    width: 60%; }
+
+#tanker-Pure-ChemPage.table-responsive .table {
+  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important; }
 
 .id-merges-acquisition {
   font-family: 'Roboto'; }
