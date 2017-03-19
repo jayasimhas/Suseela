@@ -98,7 +98,7 @@
 			var ArticleStr = "";
 			for(var i = 0; i < Data.length; i++) {
 				// ArticleStr += Data[i][]
-				ArticleStr += '<div class="R16">' + Data[i][key] + '</div>';
+				ArticleStr += '<div class="R16 borderpad rigalign">' + Data[i][key] + '</div>';
 			}
 			return ArticleStr;
 		},
@@ -121,6 +121,9 @@
                },
                480:{
                 items:1
+               },
+               1024:{
+                items:2
                }
                }
             });
@@ -134,7 +137,7 @@
 			for(var key in Heading) {
 				if(key != 'Route') {
 					CarouselPart += '<div class="article">'+
-										'<div class="title">'+
+										'<div class="title headerPad rigalign">'+
 											key +
 										'</div>'+
 										self.getData(key, Data)+
@@ -169,7 +172,7 @@
 		},
 		init: function(data, id) {
 			var self = this;
-			if($(window).width() > 668){
+			if($(window).width() > 1024){
 				self.RenderTable(data, id);
 			}
 			else{
