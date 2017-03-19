@@ -286,6 +286,9 @@
     .table .table_head tr.visible-lg {
         background-color: $seconday-color;
     }
+	.table .table_head tr.blueBg {
+        background-color: $seconday-color;
+    }
     #cockett-Bunker .table_head {
         background-color: $seconday-color !important;
         tr:first-child {

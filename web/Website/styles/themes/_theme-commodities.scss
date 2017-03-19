@@ -42,5 +42,7 @@
 	@include theme-quick-facts(
 		transparentize($color-primary-orange, 0.9),
 		transparentize($color-persian-red, 0.5));
-
+	
+	@include theme-table($color-primary-orange, #c44c0a, $color-pumpkin-orange, transparentize($color-primary-orange, 0.8));
 }
+ 

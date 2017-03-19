@@ -9537,9 +9537,6 @@ div#feedbacklite.fbl_r {
     #dryCargoIcap .table.descView.descView tbody.visible-lg, #dryCargoIcap .table.descView.descView tr.visible-lg, #dryCargoIcap .table.descView thead tbody.visible-lg, #dryCargoIcap .table.descView thead tr.visible-lg {
       display: block !important; } }
 
-#dryCargoIcap .blueBg {
-  background: #1191D1; }
-
 #tanker-Pure-ChemPage, #shipVehicle-Page, #shipCoalExport-page {
   width: 100%; }
   @media (max-width: 480px) {
@@ -9706,9 +9703,6 @@ div#feedbacklite.fbl_r {
         text-transform: capitalize;
         font-size: 16px;
         font-weight: 500; }
-      #market-data-tool.table-responsive .table .table_head .blueBg, #dry-cargo.table-responsive .table .table_head .blueBg, #dry-cargo-cap.table-responsive .table .table_head .blueBg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .blueBg, #tanker-fixtures.table-responsive .table .table_head .blueBg, #ship-Container-ShipFixtures.table-responsive .table .table_head .blueBg, #ship-Coal-Export.table-responsive .table .table_head .blueBg, #market-Data-Dry-Cargo.table-responsive .table .table_head .blueBg,
-      #cockett-Bunker.table-responsive .table .table_head .blueBg, #ship-Roro.table-responsive .table .table_head .blueBg, #ship-Container-Ship.table-responsive .table .table_head .blueBg, #ship-Vehicle.table-responsive .table .table_head .blueBg, #tanker-Pure-ChemPage.table-responsive .table .table_head .blueBg, #shipContainerFixtures.table-responsive .table .table_head .blueBg, #fisDryBulkContainer.table-responsive .table .table_head .blueBg, #howeRobinsonContainer.table-responsive .table .table_head .blueBg, #market-imarex.table-responsive .table .table_head .blueBg, #shipVehicle-Page.table-responsive .table .table_head .blueBg, #shipCoalExport-page.table-responsive .table .table_head .blueBg {
-        background: #1191d1; }
       #market-data-tool.table-responsive .table .table_head .visible-lg, #dry-cargo.table-responsive .table .table_head .visible-lg, #dry-cargo-cap.table-responsive .table .table_head .visible-lg, #dry-cargo-bulk-fixtures.table-responsive .table .table_head .visible-lg, #tanker-fixtures.table-responsive .table .table_head .visible-lg, #ship-Container-ShipFixtures.table-responsive .table .table_head .visible-lg, #ship-Coal-Export.table-responsive .table .table_head .visible-lg, #market-Data-Dry-Cargo.table-responsive .table .table_head .visible-lg,
       #cockett-Bunker.table-responsive .table .table_head .visible-lg, #ship-Roro.table-responsive .table .table_head .visible-lg, #ship-Container-Ship.table-responsive .table .table_head .visible-lg, #ship-Vehicle.table-responsive .table .table_head .visible-lg, #tanker-Pure-ChemPage.table-responsive .table .table_head .visible-lg, #shipContainerFixtures.table-responsive .table .table_head .visible-lg, #fisDryBulkContainer.table-responsive .table .table_head .visible-lg, #howeRobinsonContainer.table-responsive .table .table_head .visible-lg, #market-imarex.table-responsive .table .table_head .visible-lg, #shipVehicle-Page.table-responsive .table .table_head .visible-lg, #shipCoalExport-page.table-responsive .table .table_head .visible-lg {
         color: #fff; }
@@ -16685,6 +16679,50 @@ main {
   .theme-commodities .quick-facts hr {
     background-color: rgba(193, 45, 59, 0.5); }
 
+.theme-commodities .idi-table-heading, .theme-commodities .controls, .theme-commodities .merge-heading,
+.theme-commodities .ID-Responsive-Table .table_head,
+.theme-commodities .table-responsive .table .table_head,
+.theme-commodities .table.theme-table thead tr:first-child th {
+  background-color: #9E310D; }
+
+.theme-commodities .label-wrap, .theme-commodities .show-largest-btn, .theme-commodities .merge-form-items,
+.theme-commodities .table-wrapper .tableHead,
+.theme-commodities .table.theme-table thead tr th {
+  background-color: #c44c0a; }
+
+.theme-commodities #tanker-fixtures.table-responsive .table .table_head {
+  background-color: #F5821F; }
+
+.theme-commodities .ID-Responsive-Table .owl-dots {
+  float: left;
+  margin-top: 20px; }
+  .theme-commodities .ID-Responsive-Table .owl-dots .owl-dot span {
+    background: #c44c0a; }
+  .theme-commodities .ID-Responsive-Table .owl-dots .owl-dot.active span {
+    background: #ffffff !important; }
+  .theme-commodities .ID-Responsive-Table .owl-dots .owl-dot.active:hover span {
+    background: #ffffff; }
+  .theme-commodities .ID-Responsive-Table .owl-dots .owl-dot:hover span {
+    background: #c44c0a; }
+
+.theme-commodities .year_heading {
+  background-color: #c44c0a !important; }
+
+.theme-commodities .merge-acquistion tr:hover,
+.theme-commodities .tableRow:hover .tableCell {
+  background-color: rgba(158, 49, 13, 0.2) !important; }
+
+.theme-commodities .table .table_head tr.visible-lg {
+  background-color: #c44c0a; }
+
+.theme-commodities .table .table_head tr.blueBg {
+  background-color: #c44c0a; }
+
+.theme-commodities #cockett-Bunker .table_head {
+  background-color: #c44c0a !important; }
+  .theme-commodities #cockett-Bunker .table_head tr:first-child {
+    background-color: #9E310D !important; }
+
 .theme-insurance-day a, .theme-insurance-day .pop-out__reset-password, .theme-insurance-day .sortable-table__list-toggler, .theme-insurance-day .mobile-table-exit, .theme-insurance-day a:hover, .theme-insurance-day .pop-out__reset-password:hover, .theme-insurance-day .sortable-table__list-toggler:hover, .theme-insurance-day .mobile-table-exit:hover, .theme-insurance-day a:active, .theme-insurance-day .pop-out__reset-password:active, .theme-insurance-day .sortable-table__list-toggler:active, .theme-insurance-day .mobile-table-exit:active, .theme-insurance-day a:focus, .theme-insurance-day .pop-out__reset-password:focus, .theme-insurance-day .sortable-table__list-toggler:focus, .theme-insurance-day .mobile-table-exit:focus,
 .theme-insurance-day .msg-text h3,
 .theme-insurance-day .msg-text .article-call-to-action__title,
@@ -17105,6 +17143,9 @@ main {
 .theme-insurance-day .table .table_head tr.visible-lg {
   background-color: #DE4361; }
 
+.theme-insurance-day .table .table_head tr.blueBg {
+  background-color: #DE4361; }
+
 .theme-insurance-day #cockett-Bunker .table_head {
   background-color: #DE4361 !important; }
   .theme-insurance-day #cockett-Bunker .table_head tr:first-child {
@@ -17506,7 +17547,7 @@ main {
   background-color: #1191D1; }
 
 .theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
-  background-color: #0f5487; }
+  background-color: #1191D1; }
 
 .theme-lloydslist .ID-Responsive-Table .owl-dots {
   float: left;
@@ -17528,6 +17569,9 @@ main {
   background-color: rgba(15, 84, 135, 0.2) !important; }
 
 .theme-lloydslist .table .table_head tr.visible-lg {
+  background-color: #1191D1; }
+
+.theme-lloydslist .table .table_head tr.blueBg {
   background-color: #1191D1; }
 
 .theme-lloydslist #cockett-Bunker .table_head {
