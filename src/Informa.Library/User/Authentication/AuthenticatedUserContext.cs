@@ -21,9 +21,10 @@ namespace Informa.Library.User.Authentication
         protected readonly IUserSession UserSession;
         protected readonly IUserProfileFactory UserProfileFactory;
         protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
+        protected readonly IverticalLogin VerticalLogin;
 
         public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext, IGlobalSitecoreService globalService, ISiteRootContext siteRootContext, IUserSession userSession, IUserProfileFactory userProfileFactory,
-            ISitecoreVirtualUsernameFactory virtualUsernameFactory)
+            ISitecoreVirtualUsernameFactory virtualUsernameFactory, IverticalLogin verticalLogin)
 		{
 			SitecoreUserContext = sitecoreUserContext;
             GlobalService = globalService;
@@ -31,6 +32,7 @@ namespace Informa.Library.User.Authentication
             UserSession = userSession;
             UserProfileFactory = userProfileFactory;
             VirtualUsernameFactory = virtualUsernameFactory;
+            VerticalLogin = verticalLogin;
         }
 
         public IAuthenticatedUser User
@@ -73,8 +75,8 @@ namespace Informa.Library.User.Authentication
                 return SitecoreUserContext.User.IsAuthenticated;
             }
             var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
-            //Current vertical cookiename
-            string cookieName = curVertical + "_LoggedInUser";
+            VerticalLogin.curVertical = curVertical;
+            string cookieName = VerticalLogin.GetVerticalCookieName();
             if (SitecoreUserContext.User.IsAuthenticated && HttpContext.Current.Request.Cookies[cookieName] != null)
             return true;
           

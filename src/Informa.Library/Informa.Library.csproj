@@ -383,6 +383,8 @@
     <Compile Include="Search\ComputedFields\Facets\MarketField.cs" />
     <Compile Include="Search\ComputedFields\Facets\SectorsField.cs" />
     <Compile Include="Search\ComputedFields\Facets\TopicField.cs" />
+    <Compile Include="User\Authentication\IverticalLogin.cs" />
+    <Compile Include="User\Authentication\VerticalLogin.cs" />
     <Compile Include="User\Newsletter\AddNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IAddNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IOffersOptIn.cs" />
