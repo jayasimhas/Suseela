@@ -8,6 +8,8 @@ namespace Informa.Library.Article.Search
 	{
 		IArticleSearchResults Search(IArticleSearchFilter filter);
 		IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database, Guid publicationGuid = default(Guid));
+        IArticleSearchResults SearchArticleByAuthorName(IArticleSearchFilter filter);        
+        IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database);
         IArticleSearchResults FreeWithRegistrationArticles(string database);
         IArticleSearchFilter CreateFilter();
 		long GetNextArticleNumber(Guid publicationGuid);

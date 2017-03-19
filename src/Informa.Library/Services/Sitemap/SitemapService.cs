@@ -13,6 +13,8 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
 using System;
 using Informa.Library.Search.SearchIndex;
+using Informa.Library.Services.Global;
+
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -30,6 +32,8 @@ namespace Informa.Library.Services.Sitemap
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISearchIndexNameService IndexNameService;
+        protected readonly IGlobalSitecoreService GlobalService;
+
 
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
@@ -39,13 +43,16 @@ namespace Informa.Library.Services.Sitemap
             ISitecoreContext context,
             IArticleSearch searcher,
             ITextTranslator translator,
-            ISearchIndexNameService indexNameService)
+            ISearchIndexNameService indexNameService,
+            IGlobalSitecoreService globalService)
+
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
             IndexNameService = indexNameService;
+            GlobalService = globalService;
         }
 
         public string GetSitemapXML_Old()
@@ -89,7 +96,11 @@ namespace Informa.Library.Services.Sitemap
                 {
                     try
                     {
-                        url = itm._Url;
+                        var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                        if (articleItem != null)
+                            url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                        else
+                            url = itm._Url;
                     }
                     catch (Exception ex)
                     {
@@ -153,7 +164,7 @@ namespace Informa.Library.Services.Sitemap
                 lastNode.AppendChild(urlNode);
 
                 //create location
-                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}{itm._Url}"));
+                urlNode.AppendChild(MakeNode(doc, "loc", $"{domain}/{itm.Article_Number}/{itm._Name}"));
 
                 //create news
                 XmlNode newsNode = MakeNode(doc, "news:news");
@@ -170,7 +181,8 @@ namespace Informa.Library.Services.Sitemap
                 //create access, pub date, title and keywords
                 newsNode.AppendChild(MakeNode(doc, "news:access", "Subscription"));
                 newsNode.AppendChild(MakeNode(doc, "news:publication_date", itm.Actual_Publish_Date.ToString(DateFormat)));
-                newsNode.AppendChild(MakeNode(doc, "news:title", itm.Title));
+                var encodedItemTitle = HttpUtility.HtmlEncode(itm.Title);
+                newsNode.AppendChild(MakeNode(doc, "news:title", HttpUtility.HtmlDecode(encodedItemTitle)));
                 newsNode.AppendChild(MakeNode(doc, "news:keywords", (itm.Taxonomies != null && itm.Taxonomies.Any()) ? string.Join(",", itm.Taxonomies.Select(a => a.Item_Name)) : string.Empty));
             }
 
@@ -344,7 +356,11 @@ namespace Informa.Library.Services.Sitemap
                     {
                         try
                         {
-                            url = itm._Url;
+                            var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                            if (articleItem != null)
+                                url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                            else
+                                url = itm._Url;
                         }
                         catch (Exception ex)
                         {

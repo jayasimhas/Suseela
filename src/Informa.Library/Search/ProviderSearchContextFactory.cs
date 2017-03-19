@@ -8,10 +8,10 @@ namespace Informa.Library.Search
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ProviderSearchContextFactory : IProviderSearchContextFactory
 	{
-        //public IProviderSearchContext Create()
-        //{
-        //    return Create(Context.Database.Name);
-        //}
+        public IProviderSearchContext Create()
+        {
+            return Create(Context.Database.Name);
+        }
 
         //public IProviderSearchContext Create(string database)
         //{

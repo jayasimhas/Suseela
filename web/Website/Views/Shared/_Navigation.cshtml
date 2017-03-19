@@ -63,6 +63,7 @@
             }
             else if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase) && Model.IsGlobalToggleEnabled)
             {
+               
                 <div class="main-menu__section">
                     <div class="titleMyView">@navigation.Text</div>
                     <ul>
@@ -85,7 +86,12 @@
                         {
                             foreach (var navigationChild in Nav.Children)
                             {
-                                <li class="main-menu__hoverable">
+                                string activeClass = string.Empty;
+                                if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                {
+                                    activeClass = "activate";
+                                }
+                                <li class="main-menu__hoverable @activeClass">
                                     <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link myviewLink click-utag" name="@navigationChild.Link.TargetId.ToString()" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
                                 </li>
                             }
@@ -93,14 +99,19 @@
                     </ul>
 
                 </div>
-                            }
-                            else
-                            {
+            }
+            else
+            {
                                 if (!string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase))
                                 {
+                                    string activeClass = string.Empty;
+                                    if (!string.IsNullOrEmpty(navigation.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigation.Link.TargetId.ToString()))
+                                    {
+                                        activeClass = "activate";
+                                    }
                                 <ul class="main-menu__section">
 
-                                    <li class="@mainSubjectSectionClassName">
+                                    <li class="@mainSubjectSectionClassName @activeClass">
                                         @if (Model.Preferencelst!=null?Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)).Any(): Nav.Children.Any())
                                         {
                                             <svg class="main-menu__arrow-icon  js-hoist-menu-click">
@@ -123,7 +134,12 @@
                                             <ul>
                                                 @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
                                                 {
-                                                    <li class="main-menu__hoverable">
+                                                    string activeClassChild = string.Empty;
+                                                    if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                                    {
+                                                        activeClassChild = "activate";
+                                                    }
+                                                    <li class="main-menu__hoverable @activeClassChild">
                                                         <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link click-utag" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
                                                     </li>
                                                 }

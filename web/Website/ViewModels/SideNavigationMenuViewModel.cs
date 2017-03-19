@@ -227,5 +227,8 @@ namespace Informa.Web.ViewModels
             }
             #endregion
         }
-    }
+    
+        public string CurrentItemId => GlassModel?._Id.ToString();
+	}
+
 }
