@@ -397,6 +397,9 @@
 		@include breakpoint('small') {
 			width: 50%;
 		} 
+		@media only screen and (max-width: 680px) {
+			width: 45%;
+		}
 	}
 	.owl-dotsNav{
 		height: 0px;
@@ -441,6 +444,9 @@
 			}
 			@media only screen and (min-width: 481px) and (max-width: 680px) {
 				width: 40%;
+			}
+			@media only screen and (max-width: 680px) {
+				width: 55%;
 			}
 			.title{
 				background-color: #1191d1;

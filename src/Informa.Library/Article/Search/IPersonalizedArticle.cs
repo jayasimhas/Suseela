@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
+using System;
 using System.Collections.Generic;
 
 namespace Informa.Library.Article.Search
@@ -13,6 +14,9 @@ namespace Informa.Library.Article.Search
         string ListablePublication { get; }
         IEnumerable<ILinkable> ListableTopics { get; }
         string ListableType { get; }
+        bool isSonsoredBy { get; }
+        string SponsoredByTitle { get; }
+        string SponsoredByLogo { get; }
     }
 
     public interface ILinkable

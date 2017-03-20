@@ -3099,11 +3099,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     .job_listing .pagination span a:hover, .job_listing .pagination span .pop-out__reset-password:hover, .job_listing .pagination span .sortable-table__list-toggler:hover, .job_listing .pagination span .mobile-table-exit:hover {
       text-decoration: none; }
     .job_listing .pagination span a.active, .job_listing .pagination span .active.pop-out__reset-password, .job_listing .pagination span .active.sortable-table__list-toggler, .job_listing .pagination span .active.mobile-table-exit {
-      background: #c6c2c2; }
+      background: #c6c2c2;
+      cursor: text; }
   .job_listing .pagination a.prev, .job_listing .pagination .prev.pop-out__reset-password, .job_listing .pagination .prev.sortable-table__list-toggler, .job_listing .pagination .prev.mobile-table-exit {
     background-position: 0 0; }
+    .job_listing .pagination a.prev.active, .job_listing .pagination .prev.active.pop-out__reset-password, .job_listing .pagination .prev.active.sortable-table__list-toggler, .job_listing .pagination .prev.active.mobile-table-exit {
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      cursor: text; }
   .job_listing .pagination a.next, .job_listing .pagination .next.pop-out__reset-password, .job_listing .pagination .next.sortable-table__list-toggler, .job_listing .pagination .next.mobile-table-exit {
     background-position: -41px 0; }
+    .job_listing .pagination a.next.active, .job_listing .pagination .next.active.pop-out__reset-password, .job_listing .pagination .next.active.sortable-table__list-toggler, .job_listing .pagination .next.active.mobile-table-exit {
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      cursor: text; }
   .job_listing .pagination .nums {
     text-align: center; }
     .job_listing .pagination .nums li {
@@ -9067,8 +9076,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9954,6 +9963,9 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       #market-data .owl-wrapper {
         width: 50%; } }
+    @media only screen and (max-width: 680px) {
+      #market-data .owl-wrapper {
+        width: 45%; } }
   #market-data .owl-dotsNav {
     height: 0px; }
     @media only screen and (max-width: 1024px) {
@@ -9997,6 +10009,9 @@ div#feedbacklite.fbl_r {
       @media only screen and (min-width: 481px) and (max-width: 680px) {
         #market-data .carousel-div .states_heading {
           width: 40%; } }
+      @media only screen and (max-width: 680px) {
+        #market-data .carousel-div .states_heading {
+          width: 55%; } }
       #market-data .carousel-div .states_heading .title {
         background-color: #1191d1;
         color: #ffffff;
@@ -11097,6 +11112,11 @@ div#feedbacklite.fbl_r {
   .sponsored_cont.contentRecomm-article {
     padding: 16px;
     padding: 1rem; }
+  .sponsored_cont.section-article {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 24px !important;
+    margin-bottom: 1.5rem !important; }
   .sponsored_cont.topic-featured-article {
     border-top: none; }
   .sponsored_cont.article-executive-summary-bottom {
@@ -13357,7 +13377,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
