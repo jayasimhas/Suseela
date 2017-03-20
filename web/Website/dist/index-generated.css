@@ -6107,14 +6107,20 @@ main .action-flags-bar, main .banner--highlights {
 
 .personalisationhome .article-preview--small.topics {
   padding: 0px; }
-  .personalisationhome .article-preview--small.topics .sponsored_cont {
-    border-bottom: 1px solid #d1d3d4;
-    padding: 12px 20px;
-    height: 153px; }
-  .personalisationhome .article-preview--small.topics .nosponsored_cont {
-    border-bottom: 1px solid #d1d3d4;
-    padding: 12px 20px;
-    height: 153px; }
+  .personalisationhome .article-preview--small.topics .article-metadata {
+    margin: 0px; }
+    .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont {
+      border-bottom: 1px solid #d1d3d4;
+      padding: 10px 20px;
+      height: 150px; }
+      .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont:last-child {
+        border-bottom: none; }
+    .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont {
+      border-bottom: 1px solid #d1d3d4;
+      padding: 10px 20px;
+      height: 150px; }
+      .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont:last-child {
+        border-bottom: none; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {

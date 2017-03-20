@@ -14,16 +14,26 @@
 .personalisationhome{
 	.article-preview--small.topics{
 		padding: 0px; 
-		.sponsored_cont{
-			border-bottom: 1px solid #d1d3d4;
-			padding: 12px 20px;
-			height: 153px;
+		.article-metadata{
+			margin: 0px;
+			&.sponsored_cont{
+				border-bottom: 1px solid #d1d3d4;
+				padding: 10px 20px;
+				height: 150px;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+			&.nosponsored_cont{
+				border-bottom: 1px solid #d1d3d4;
+				padding: 10px 20px;
+				height: 150px;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
 		}
-		.nosponsored_cont{
-			border-bottom: 1px solid #d1d3d4;
-			padding: 12px 20px;
-			height: 153px;
-		}
+		
 	}
 	@include breakpoint('large') {
 		.topic-featured-article__headline{

@@ -54,15 +54,15 @@ function createLayoutInner1(data) {
 	    fbookmarkIcon7 = data.articles[7].isArticleBookmarked ? 'is-visible' : '',
 	    sbookmarkIcon7 = data.articles[7].isArticleBookmarked ? '' : 'is-visible',
 	    fbookmarkIcon8 = data.articles[8].isArticleBookmarked ? 'is-visible' : '',
-	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible';
-		sponsored_cont0 = data.articles[0].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont1 = data.articles[1].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont2 = data.articles[2].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont3 = data.articles[3].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont4 = data.articles[4].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '';
+	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible',
+		sponsored_cont0 = data.articles[0].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont1 = data.articles[1].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont2 = data.articles[2].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont3 = data.articles[3].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont4 = data.articles[4].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '',
 		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '';
 
 	var articleData = ''; 
@@ -312,8 +312,8 @@ function createLayoutInner1(data) {
 }
 
 function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
-	var sectionData = '';
-	sectionData += '<section class="article-preview list-featured-article listViewCont">';
+	var sectionData = '', sponsoredCls = (data.articles[idx].isSonsoredBy) ? 'sponsored_cont' : '';
+	sectionData += '<section class="article-preview list-featured-article listViewCont '+sponsoredCls+'">';
 	sectionData += '<div class="topic-article-image_pan">';
 	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
 	sectionData += '</div>';
@@ -409,15 +409,15 @@ function createLayoutInner2(data) {
 	    fbookmarkIcon7 = data.articles[7].isArticleBookmarked ? 'is-visible' : '',
 	    sbookmarkIcon7 = data.articles[7].isArticleBookmarked ? '' : 'is-visible',
 	    fbookmarkIcon8 = data.articles[8].isArticleBookmarked ? 'is-visible' : '',
-	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible';
-		sponsored_cont0 = data.articles[0].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont1 = data.articles[1].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont2 = data.articles[2].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont3 = data.articles[3].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont4 = data.articles[4].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '';
-		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '';
+	    sbookmarkIcon8 = data.articles[8].isArticleBookmarked ? '' : 'is-visible',
+		sponsored_cont0 = data.articles[0].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont1 = data.articles[1].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont2 = data.articles[2].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont3 = data.articles[3].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont4 = data.articles[4].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '',
+		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '', 
 		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '';
 		
 	var articleData = '';
