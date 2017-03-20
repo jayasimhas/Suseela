@@ -123,15 +123,26 @@
 			}
 			&.active{
 				background: #c6c2c2;
+				cursor: text;
 			}
 		}
 		a.prev{ 
 			background-position: 0 0;
+			&.active{ 
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				cursor: text;
+			}
 		}
 		a.next{
 			background-position: -41px 0;
+			&.active{ 
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				cursor: text;
+			}
 		}
-		 
+		
 			
 		.nums{
 			text-align: center;
