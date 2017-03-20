@@ -1,5 +1,6 @@
 ﻿namespace Informa.Library.Article.Search
 {
+    using Models.Informa.Models.sitecore.templates.User_Defined.Components;
     using System;
     using System.Collections.Generic;
     public class PersonalizedArticleListItem : IPersonalizedArticle
@@ -20,5 +21,8 @@
         public IEnumerable<ILinkable> ListableTopics { get; set; }
         public string ListableType { get; set; }
         public string SalesforceId { get; set; }
+        public string SponsoredByTitle { get; set; }
+        public string SponsoredByLogo { get; set; }
+        public bool isSonsoredBy { get; set; }
     }
 }
