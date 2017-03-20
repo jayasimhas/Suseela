@@ -7333,6 +7333,22 @@ main {
 .page-registration__error {
   display: none; }
 
+.error-page-main {
+  margin-left: 0;
+  width: 100%; }
+  .error-page-main .container {
+    padding: 30px; }
+    .error-page-main .container img {
+      padding: 10px 0px;
+      border: 0;
+      height: 50px; }
+    .error-page-main .container .footer__separator {
+      margin: 10px 0; }
+
+.error-page-footer {
+  padding: 30px;
+  overflow: hidden; }
+
 /* * * * THEME STYLES * * * */
 .theme-pink-sheet a, .theme-pink-sheet .pop-out__reset-password, .theme-pink-sheet .sortable-table__list-toggler, .theme-pink-sheet .mobile-table-exit, .theme-pink-sheet a:hover, .theme-pink-sheet .pop-out__reset-password:hover, .theme-pink-sheet .sortable-table__list-toggler:hover, .theme-pink-sheet .mobile-table-exit:hover, .theme-pink-sheet a:active, .theme-pink-sheet .pop-out__reset-password:active, .theme-pink-sheet .sortable-table__list-toggler:active, .theme-pink-sheet .mobile-table-exit:active, .theme-pink-sheet a:focus, .theme-pink-sheet .pop-out__reset-password:focus, .theme-pink-sheet .sortable-table__list-toggler:focus, .theme-pink-sheet .mobile-table-exit:focus,
 .theme-pink-sheet .facets__button,

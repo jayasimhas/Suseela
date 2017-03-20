@@ -3057,7 +3057,7 @@
     <!--  LAYOUT NOT FOUND HANDLER
             Url of page handling 'Layout not found' errors
       -->
-    <setting name="LayoutNotFoundUrl" value="/sitecore/service/nolayout.aspx" />
+    <setting name="LayoutNotFoundUrl" value="~/ItemWithoutLayout.aspx" />
     <!--  REMEMBER LAST LOGGED IN USER NAME
             Specifies whether Sitecore will remember the last logged in user name on the login page (stored encrypted in a cookie).
             If you set this to false, the user name field on the login page will always be blank.
