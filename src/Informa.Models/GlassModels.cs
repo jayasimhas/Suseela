@@ -13378,7 +13378,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                     /// The Active Checkbox field.
                     /// <para></para>
                     /// <para>Field Type: Check Box</para>		
-                    /// <para>Field ID: A024DEDB-227E-4F6B-92F7-CC35C3330791</para>
+                    /// <para>Field ID: B84EB872-DDB8-4840-94FB-C472008C6445</para>
                     /// <para>Custom Data: </para>
                     /// </summary>
                     [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -14290,7 +14290,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                         /// The Active Checkbox field.
                         /// <para></para>
                         /// <para>Field Type: Check Box</para>		
-                        /// <para>Field ID: A024DEDB-227E-4F6B-92F7-CC35C3330791</para>
+                        /// <para>Field ID: B84EB872-DDB8-4840-94FB-C472008C6445</para>
                         /// <para>Custom Data: </para>
                         /// </summary>
                         [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -14825,7 +14825,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
             public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
             public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
 
-            public static readonly ID Is_Active_Ask_The_Analyst_FieldId = new ID("A024DEDB-227E-4F6B-92F7-CC35C3330791");
+            public static readonly ID Is_Active_Ask_The_Analyst_FieldId = new ID("B84EB872-DDB8-4840-94FB-C472008C6445");
             public const string Is_Active_Ask_The_Analyst_FieldName = "Is Active Ask Analyst";
 
     }
