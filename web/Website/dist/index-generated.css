@@ -6105,6 +6105,17 @@ main .action-flags-bar, main .banner--highlights {
     color: #F5821F;
     background: #F5821F; } }
 
+.personalisationhome .article-preview--small.topics {
+  padding: 0px; }
+  .personalisationhome .article-preview--small.topics .sponsored_cont {
+    border-bottom: 1px solid #d1d3d4;
+    padding: 12px 20px;
+    height: 153px; }
+  .personalisationhome .article-preview--small.topics .nosponsored_cont {
+    border-bottom: 1px solid #d1d3d4;
+    padding: 12px 20px;
+    height: 153px; }
+
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
     font-size: 24px;
@@ -6421,6 +6432,11 @@ main .action-flags-bar, main .banner--highlights {
   overflow: hidden; }
   .personalisationhome .article-preview--small .article-preview_rheadline:last-child {
     border-bottom: none; }
+  .personalisationhome .article-preview--small .article-preview_rheadline.sponsored_cont {
+    padding-left: 20px;
+    padding-left: 1.25rem;
+    padding-right: 20px;
+    padding-right: 1.25rem; }
   .personalisationhome .article-preview--small .article-preview_rheadline.nobord {
     border-bottom: none; }
     @media (max-width: 480px) {
@@ -9090,8 +9106,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -13391,7 +13407,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
