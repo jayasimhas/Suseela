@@ -3065,6 +3065,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
           font-weight: 700;
           font-size: 1.875em;
           margin-bottom: 0.3em; }
+          @media (max-width: 480px) {
+            .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+              font-size: 24px;
+              font-size: 1.5rem; } }
           .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .mobile-table-exit, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .mobile-table-exit {
             color: #231f20; }
       .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
@@ -3074,6 +3078,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         font-size: 1.125em;
         line-height: 30px;
         color: #58595b; }
+        @media (max-width: 480px) {
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 25px; } }
 
 .job_listing .pagination {
   padding: 1.75em 0;
@@ -3150,6 +3159,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-weight: 400;
   line-height: 30px;
   font-size: 1.125em; }
+  @media (max-width: 480px) {
+    .job_detail .job_description {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 25px; } }
   .job_detail .job_description ul {
     padding-left: 20px; }
     .job_detail .job_description ul li {
@@ -9076,8 +9090,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -13377,7 +13391,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
