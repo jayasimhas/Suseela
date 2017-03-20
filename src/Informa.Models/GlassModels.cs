@@ -12913,7 +12913,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                     /// The Is Open First Time field.
                     /// <para></para>
                     /// <para>Field Type: CheckBox</para>		
-                    /// <para>Field ID: f7b11647-9168-4da2-a2c3-07e863eed9f3</para>
+                    /// <para>Field ID: 00EB448A-71EF-422B-9587-55ACFC102250</para>
                     /// <para>Custom Data: </para>
                     /// </summary>
                     [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -13807,7 +13807,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
                         /// The Is Open First Time field.
                         /// <para></para>
                         /// <para>Field Type: CheckBox</para>		
-                        /// <para>Field ID: f7b11647-9168-4da2-a2c3-07e863eed9f3</para>
+                        /// <para>Field ID: 00EB448A-71EF-422B-9587-55ACFC102250</para>
                         /// <para>Custom Data: </para>
                         /// </summary>
                         [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -14500,7 +14500,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
-            public static readonly ID Is_Open_First_TimeFieldId = new ID("f7b11647-9168-4da2-a2c3-07e863eed9f3");
+            public static readonly ID Is_Open_First_TimeFieldId = new ID("00EB448A-71EF-422B-9587-55ACFC102250");
             public const string Is_Open_First_TimeFieldName = "Is Open First Time";
 
 
@@ -20520,7 +20520,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
-            public static readonly ID Is_Open_First_TimeFieldId = new ID("f7b11647-9168-4da2-a2c3-07e863eed9f3");
+            public static readonly ID Is_Open_First_TimeFieldId = new ID("00EB448A-71EF-422B-9587-55ACFC102250");
             public const string Is_Open_First_TimeFieldName = "Is Open First Time";
 
         public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
