@@ -8996,6 +8996,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			Parent.append(CarouselStr);
 			self.InitCarousel(Parent);
+			self.setColHeight(Parent);
 		},
 		InitCarousel: function InitCarousel(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
@@ -9070,6 +9071,14 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 
 			return Carousel;
 		},
+		setColHeight: function(parentId){
+			parentId.find('.states_heading .R16').each(function(idx){
+				var $this = $(this), colHeight = $this.height();
+				$('.article').each(function() {
+					$($(this).find('.R16')[idx]).css('height', colHeight);
+				});
+			});
+		},
 		init: function init(data, id) {
 			var self = this,
 			    dataObj = data[0],
@@ -9082,6 +9091,10 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 				break;
 			}
 			if ($(window).width() < 668 || idx > 5) self.RenderCarousel(dataObj, id);else self.RenderTable(dataObj, id);
+			
+			$(window).resize(function() {
+				self.setColHeight(id);
+			});
 		}
 	};
 

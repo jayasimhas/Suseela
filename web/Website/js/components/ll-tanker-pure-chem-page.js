@@ -94,6 +94,7 @@
 
 			Parent.append(CarouselStr);
 			self.InitCarousel(Parent);
+			self.setColHeight(Parent);
 		},
 		InitCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
@@ -187,6 +188,14 @@
 
 			return Carousel;
 		},
+		setColHeight: function(parentId){
+			parentId.find('.states_heading .R16').each(function(idx){
+				var $this = $(this), colHeight = $this.height();
+				$('.article').each(function() {
+					$($(this).find('.R16')[idx]).css('height', colHeight);
+				});
+			});
+		},
 		init: function(data, id) {
 			var self = this, dataObj = data[0], idx = 0;
 			
@@ -200,6 +209,10 @@
 				self.RenderCarousel(dataObj, id);
 			else
 				self.RenderTable(dataObj, id);
+			
+			$(window).resize(function() {
+				self.setColHeight(id);
+			});
 		}
 	}
 
