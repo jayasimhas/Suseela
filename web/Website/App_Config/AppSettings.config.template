@@ -29,8 +29,10 @@
   <add key="Recaptcha.SecretKey" value="${Recaptcha.SecretKey}" />
   <add key="EnableCaptcha" value="${Recaptcha.EnableCaptcha}"/>
   <add key="UnitTest" value="1"/>
-  <add key="Pharma" value="${Vertical.Pharma}"/>
-  <add key="Maritime" value="${Vertical.Maritime}"/>
-  <add key="Agri" value="${Vertical.Agri}"/>
+  <add key="PharmaSubDomain" value="${Vertical.PharmaSubDomain}"/>
+  <add key="PharmaTimeout" value="${Vertical.PharmaTimeout}"/>
+  <add key="SSOVerticals" value="${Vertical.SSOVerticals}"/>
+  <add key="SSOTimeout" value="${Vertical.SSOTimeout}"/>
+  <add key="SSOSubdomain" value="${Vertical.SSOSubdomain}"/>
   <add key="EnableVerticalLogin" value="${VerticalLoginSwitch}"/>
 </appSettings>

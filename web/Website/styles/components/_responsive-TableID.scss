@@ -243,7 +243,7 @@
 #tankerPureChemPage, #shipVehicle, #onOrderTable, #shipVehiclePage, #shipCoalExport{
 	border: none;
 	.R16 {
-		height: 2.5rem;
+		min-height: 2.5rem;
 	}
 	.year_heading {
 		height: 5em !important;
@@ -269,18 +269,18 @@
 	thead {
 		tr:first-child th {
 			text-align: left !important;
-			border-bottom: 1px solid $color-white;
+			//border-bottom: 1px solid $color-white;
 		}
-		tr th {
+		/*tr th {
 			border-bottom: 1px solid $color-white;
 			border-right: 1px solid $color-white;
 			&:last-child {
 				border-right: none;
 			}
-		}
+		}*/
 	}
 	.states_heading {
-		border-right: 1px solid $color-white;
+		//border-right: 1px solid $color-white;
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -322,6 +322,47 @@
 		}
 		.article{
 			border-right: 1px solid #eee;
+		}
+	}
+}
+#tankerPureChemPage{
+	margin-bottom: 0px;
+}
+#tankerPureChemPage, #onOrderTable{
+	.states_heading{
+		.year_heading{
+			text-align: left;
+		}
+	}
+	.year_heading{
+		text-align: center;
+		padding: 10px !important;
+		.sub-item{
+			width: 52%;
+			text-align: right;
+			&:nth-child(even){
+				width: 32%;
+			}
+		}
+		.topTitle{
+			min-height: 35px;
+		}
+	}
+	.R16{
+		.sub-item{
+			width: 32%;
+			text-align: right;
+			&:nth-child(even){
+				width: 50%;
+			}
+		}
+	}
+	@media only screen and (min-width: 600px) and (max-width: 768px){
+		.states_heading{
+			width: 30%;
+		}
+		.owl-wrapper{
+			width: 70%;
 		}
 	}
 }

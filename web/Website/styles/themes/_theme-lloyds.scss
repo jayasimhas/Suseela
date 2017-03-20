@@ -43,6 +43,6 @@
 		transparentize($color-primary-default, 0.9),
 		transparentize($color-primary-default, 0.5));
 
-    @include theme-table($color-secondary-color, $color-primary-default, $color-secondary-color, transparentize($color-secondary-color, 0.8));
+    @include theme-table($color-secondary-color, $color-primary-default, $color-primary-default, transparentize($color-secondary-color, 0.8));
 
 }

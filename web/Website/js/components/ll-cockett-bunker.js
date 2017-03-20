@@ -24,28 +24,28 @@
 
 			for(var key in Heading) {
 				if(key.split("|").length === 1) {
-					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
-										"<div class='text-center'>&nbsp;</div>"+
-										"<div class='text-center'></div>"+
+					HeadingStr += "<th class='headerPad'>"+
+										"<div>&nbsp;</div>"+
 									"</th>";
 				} else {
-					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
-				"<div class='text-center'>"+ key.split("|")[0] + " (" + key.split("|")[1] + ")</div>"+
-									"</th>";
+					HeadingStr += "<th class='headerPad rigalign'>"+
+				"<div class=''>"+ key.split("|")[0] + " (" + key.split("|")[1] + ")</div>"+
+									"</th>"; 
 				}
 			}
-
+			var rowIdx = 0;
 			for(var i = 0; i < Data.length; i++) {
+				rowIdx++;
+				var cls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 				var EachValue = Data[i],
-					Td = "",
-					align = "right";
+					Td = "", align = "";
 				for(var key in EachValue) {
-					if(key == "Header") {
-						align = "left";
+					if(key !== "Header") {
+						align = "rigalign"; 
 					}
-					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
+					Td += '<td class="borderpad '+align+'">' + EachValue[key] + '</td>';
 				}
-				TbodyStr += '<tr>' +Td + '</tr>';
+				TbodyStr += '<tr class="'+cls+'">' +Td + '</tr>';
 			}
 
 			var Table = '<table class="table">'+
@@ -70,6 +70,7 @@
 		init: function(data, id) {
 			var self = this;
 			self.RenderTable(data, id);
+			id.closest('.small_table').css('width', '100%');
 		}
 	}
 	

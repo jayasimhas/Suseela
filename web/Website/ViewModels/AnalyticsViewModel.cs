@@ -20,6 +20,14 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Social.Infrastructure.Utils;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using System.Collections.Generic;
+using Informa.Library.Services.Global;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Models;
+using Jabberwocky.Glass.Autofac.Util;
+using Autofac;
+using System.Compat.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -42,6 +50,10 @@ namespace Informa.Web.ViewModels
         protected readonly IHttpContextProvider HttpContextProvider;
         protected readonly IDCDReader DcdReader;
 
+        protected readonly ITaxonomyService TaxonomyService;
+        protected readonly IGlobalSitecoreService GlobalService;
+
+
         public AnalyticsViewModel(
             IItemReferences itemReferences,
             IIsEntitledProducItemContext isEntitledProductItemContext,
@@ -56,9 +68,9 @@ namespace Informa.Web.ViewModels
             IUserIpAddressContext userIpAddressContext,
             ISiteRootContext siteRootContext,
             IHttpContextProvider httpContextProvider,
-            IDCDReader dcdReader)
+            IDCDReader dcdReader,
+            ITaxonomyService taxonomyService, IGlobalSitecoreService globalService)
         {
-
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
             ArticleSearch = articleSearch;
@@ -78,7 +90,10 @@ namespace Informa.Web.ViewModels
             SubscribedProducts = GetSubscribedProducts();
             OpportunityLineItemIds = GetOpportunityLineItemIds();
             OpportunityIds = GetOpportunityIds();
-        }
+            TaxonomyService = taxonomyService;
+            GlobalService = globalService;
+			}
+
 
         public IArticle Article => GlassModel as IArticle;
 
@@ -155,6 +170,8 @@ namespace Informa.Web.ViewModels
         public string PageDescription => GlassModel?.Meta_Description ?? string.Empty;
         public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
         public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
+        //ISW 338 Serving ads based on section taxonomy
+        public string TaxonomyName=> GetTaxonomyDetails();
         public string ArticleEntitlements
         {
             get
@@ -233,11 +250,12 @@ namespace Informa.Web.ViewModels
             return "Corporate";
         }
 
-        private string GetUserEntitlements()
-        {
+	    private string GetUserEntitlements()
+	    {            
             string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{a.ProductCode}'"));
-            return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
-        }
+			return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+		}
+
 
         private string GetSubscribedProducts()
         {
@@ -254,10 +272,40 @@ namespace Informa.Web.ViewModels
             return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
         }
 
-        private string GetOpportunityLineItemIds()
+	    private string GetOpportunityLineItemIds()
+	    {
+			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
+			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+		}
+        //ISW 338 Serving ads based on section taxonomy
+        private string GetTaxonomyDetails()
         {
-            var ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
-            return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+            string taxonaomyParentName=string.Empty;
+            if (Article != null)
+            {
+                if (Article.Taxonomies != null)
+                {
+                    int taxonomyItemCount = 0;
+                    foreach (ITaxonomy_Item item in Article.Taxonomies)
+                    {
+                        if (item != null && taxonomyItemCount < 3)
+                        {
+                            if (string.IsNullOrEmpty(taxonaomyParentName))
+                            {
+                                taxonaomyParentName += TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ",string.Empty) + ":" + item.Item_Name.ToLower();
+                                taxonomyItemCount++;
+                            }
+                            else
+                            {
+                                taxonaomyParentName += "|" + TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower();
+                                taxonomyItemCount++;
+                            }
+                           
+                        }
+                    }
+                }
+            }
+            return  taxonaomyParentName;
         }
     }
 }

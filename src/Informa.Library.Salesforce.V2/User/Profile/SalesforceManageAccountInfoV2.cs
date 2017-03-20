@@ -141,7 +141,7 @@ ISalesforceInfoLogger infoLogger)
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
                 var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
                 var result = client.PostAsync(SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username), content).Result;

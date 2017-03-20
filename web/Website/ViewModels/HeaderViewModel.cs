@@ -12,6 +12,9 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.SalesforceConfiguration;
 using System;
 using Informa.Library.ViewModels.Account;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+
 
 namespace Informa.Web.ViewModels
 {
@@ -46,6 +49,8 @@ namespace Informa.Web.ViewModels
         }
 
         public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
+        public string SessionSynchronisationImageUrl => SalesforceConfigurationContext?.GetSessionSynchronisationEndPoints();
+
         public string LogoUrl => "/";
         public string WelcomeText
         {
@@ -91,8 +96,6 @@ namespace Informa.Web.ViewModels
 
         public string LogoutUrl => SalesforceConfigurationContext?.GetLogoutEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest/Logout") + "?vid=" + CurVerticalName);
 
-        public string SessionSynchronisationImageUrl => SalesforceConfigurationContext?.GetSessionSynchronisationEndPoints();
-
         private string BuildLink(Link l)
         {
             if (l == null)
@@ -105,15 +108,41 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                string local = string.Copy(GlassModel?.Leaderboard_Slot_ID ?? string.Empty);
-                return string.IsNullOrEmpty(local)
-                    ? SiteRootContext.Item?.Global_Leaderboard_Slot_ID ?? string.Empty
-                    : local;
+                //ISW-338 Serving ads based on section taxonomy
+                string LeaderboardSlotId = string.Empty;
+                var articleModel = GlassModel as IArticle;
+                if (articleModel != null)
+                {
+                    if (articleModel.Taxonomies != null)
+                    {
+                        int taxonomyItemCount = 0;
+                        foreach (ITaxonomy_Item item in articleModel.Taxonomies)
+                        {
+                            if (item != null && taxonomyItemCount < 3)
+                            {
+                                LeaderboardSlotId = string.IsNullOrEmpty(LeaderboardSlotId) && !string.IsNullOrEmpty(item.Leaderboard_Slot_ID) ? item.Leaderboard_Slot_ID : LeaderboardSlotId;
+
+                                if (!string.IsNullOrEmpty(item.Leaderboard_Slot_ID))
+                                    break;
+                                taxonomyItemCount++;
+                            }
+                        }
+                    }
+                }
+                if (string.IsNullOrEmpty(LeaderboardSlotId))
+                {
+                    string local = string.Copy(GlassModel?.Leaderboard_Slot_ID ?? string.Empty);
+                    return string.IsNullOrEmpty(local)
+                        ? SiteRootContext.Item?.Global_Leaderboard_Slot_ID ?? string.Empty
+                        : local;
+                }
+                return LeaderboardSlotId;
             }
         }
+
+        public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
         public bool IsErrorMessage => !string.IsNullOrWhiteSpace(HttpContext.Current.Request.QueryString["ErrorStatus"]) && string.Equals(HttpContext.Current.Request.QueryString["ErrorStatus"].ToString(), "true", StringComparison.OrdinalIgnoreCase);
         public ISignInViewModel SignInViewModel { get; }
-        public string LeaderboardAdZone => SiteRootContext?.Item?.Global_Leaderboard_Ad_Zone ?? string.Empty;
 
         private string GetCallbackUrl(string url)
         {
@@ -123,3 +152,7 @@ namespace Informa.Web.ViewModels
 
     }
 }
+       
+              
+
+ 

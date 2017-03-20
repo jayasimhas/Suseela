@@ -164,7 +164,7 @@ namespace Informa.Web.Areas.Account.Controllers
             List<ListItemTaxonomy> result = new List<ListItemTaxonomy>();
             var baseFolder = SitecoreService.GetItem<IGlassBase>(request.Country);
             result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
-                .Select(eachChild => new ListItemTaxonomy() { Name = eachChild.Item_Name, ID = eachChild.Item_Name }).ToList();
+                .Select(eachChild => new ListItemTaxonomy() { Name = eachChild.Item_Name, ID = eachChild.Item_Name.ToLower().Contains("select one") ? "" : eachChild.Item_Name }).ToList();
             return Json(result);
 
         }

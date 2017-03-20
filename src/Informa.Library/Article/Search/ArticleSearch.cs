@@ -78,6 +78,30 @@ namespace Informa.Library.Article.Search
             };
         }
 
+        public IArticleSearchResults SearchArticleByAuthorName(IArticleSearchFilter filter)
+        {
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)                    
+                    .FilterByAuthor(filter)                   
+                    .ApplyDefaultFilters();
+                if (filter.PageSize > 0)
+                {
+                    query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
+                }
+
+                query = query.OrderByDescending(i => i.ActualPublishDate);
+
+                var results = query.GetResults();
+
+                return new ArticleSearchResults
+                {
+                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
+                };
+            }
+        }
+
         public IArticleSearchResults Search(IArticleSearchFilter filter)
         {
             using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
@@ -111,6 +135,39 @@ namespace Informa.Library.Article.Search
                 return new ArticleSearchResults
                 {
                     Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
+                };
+            }
+        }
+
+        /// <summary>
+        /// This is a search implementatation where you want to pass the database name along with the filter.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="database"></param>
+        /// <returns></returns>
+        public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database)
+        {
+            using (var context = SearchContextFactory.Create(database))
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .FilterTaxonomies(filter, ItemReferences, GlobalService, VerticalRootContext)
+                    .ExcludeManuallyCurated(filter)
+                    .FilteryByArticleNumbers(filter)
+                    .FilteryByEScenicID(filter)
+                    .ApplyDefaultFilters();
+
+                if (filter.PageSize > 0)
+                {
+                    query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
+                }
+
+                query = query.OrderByDescending(i => i.ActualPublishDate);
+                ISitecoreService localSearchContext = SitecoreFactory(database);
+                var results = query.GetResults();
+                return new ArticleSearchResults
+                {
+                    Articles = results.Hits.Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
                 };
             }
         }

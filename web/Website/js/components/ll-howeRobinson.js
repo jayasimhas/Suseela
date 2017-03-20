@@ -20,7 +20,7 @@
 					$('.states_heading').append('<div class="title">&nbsp;</div>');
 				}
 				else{
-					$(renderEle).append('<div class="item titleHead" data-title="'+getTitles[i]+'"><div class="title">'+getTitles[i]+'</div></div>');
+					$(renderEle).append('<div class="item titleHead" data-title="'+getTitles[i]+'"><div class="title headerPad rigalign">'+getTitles[i]+'</div></div>');
 				} 
 			}
 			
@@ -30,7 +30,7 @@
 						clsIdx++;
 						var oddCls = clsIdx % 2 === 0 ? 'oddCls' : '';
 						if(indx >= 1){
-							$('div[data-title="'+key+'"]').append('<div class="R16 leftbord '+oddCls+'">'+((arr[i]) ? arr[i] : '&nbsp;')+'</div>');
+							$('div[data-title="'+key+'"]').append('<div class="R16 borderpad rigalign '+oddCls+'">'+((arr[i]) ? arr[i] : '&nbsp;')+'</div>');
 						}
 						else{
 							$('.states_heading').append('<div class="R16 leftbord '+oddCls+'">'+((arr[i]) ? arr[i] : '&nbsp;')+'</div>');

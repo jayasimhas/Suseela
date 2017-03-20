@@ -24,6 +24,7 @@
 		<add key="TitleMaxCharacters" value="500"/>
 		<add key="TempFileName" value="{path}\InformaWordPlugin\temp.docx"/>
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
+
 	    <add key ="Development"  value="${Development}"/>
 	    <add key ="Stage"  value="${Stage}"/>
 		  <add key ="beta"  value="${beta}"/>
@@ -36,6 +37,7 @@
       <add name="QAForgotPasswordLink" value="${QAForgotPasswordLink}" />
       <add name="BetaForgotPasswordLink" value="${BetaForgotPasswordLink}" />
       <add name="UatForgotPasswordLink" value="${UatForgotPasswordLink}" />
+
     <add key="RemoteTimezoneToConvertTo" value="Eastern Standard Time"/>
 	</appSettings>
 	<applicationSettings>
@@ -44,7 +46,7 @@
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
         <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-7.0.0.0" newVersion="7.0.0.0" />
+        <bindingRedirect oldVersion="0.0.0.0-9.0.0.0" newVersion="9.0.0.0" />
       </dependentAssembly>
       <dependentAssembly>
         <assemblyIdentity name="HtmlAgilityPack" publicKeyToken="bd319b19eaf3b43a" culture="neutral" />
@@ -116,4 +118,16 @@
       </dependentAssembly>  
     </assemblyBinding>
   </runtime>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
 </configuration>
