@@ -11103,6 +11103,11 @@ div#feedbacklite.fbl_r {
   .sponsored_cont.contentRecomm-article {
     padding: 16px;
     padding: 1rem; }
+  .sponsored_cont.section-article {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 24px !important;
+    margin-bottom: 1.5rem !important; }
   .sponsored_cont.topic-featured-article {
     border-top: none; }
   .sponsored_cont.article-executive-summary-bottom {
