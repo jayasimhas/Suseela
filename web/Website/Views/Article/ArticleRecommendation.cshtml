@@ -6,7 +6,7 @@
         <div class="contentRecommendations">
             @*Editor Picks*@
             <div class="article-related-content">
-                @*@if (Model.EditorsPicks != null && Model.EditorsPicks.Count > 0)
+                @if (Model.EditorsPicks != null && Model.EditorsPicks.Count > 0)
                 {
                     <h2>@Model.EditorPicksText</h2>
 
@@ -39,7 +39,7 @@
                             <time class="article-related-content__date">@article.Actual_Publish_Date.ToString("d MMM yyyy")</time>
                         </div>
                     }
-                }*@
+                }
 
                 @*What to read next*@
                 @if (!Model.HideWhatToReadNext)

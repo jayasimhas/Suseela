@@ -2983,10 +2983,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
         [SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Related_Articles { get; set; }
         /// <summary>
-        /// The Editors_Picks field.
+        /// The Related Articles field.
         /// <para></para>
         /// <para>Field Type: Treelist</para>		
-        /// <para>Field ID: 7B4B31ED-BCE5-41AD-AC69-0B15977B0E16</para>
+        /// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IArticleConstants.Editors_picksFieldName, Setting = SitecoreFieldSettings.InferType)]

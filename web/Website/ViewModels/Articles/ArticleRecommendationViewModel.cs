@@ -43,24 +43,24 @@ namespace Informa.Web.ViewModels.Articles
             UserEntitlementsContext = userEntitlementsContext;
 
         }
-        //public string PublicationName => SiteRootContext.Item.Publication_Name;
+        public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
 
-        //public string EditorPicksText => TextTranslator.Translate("Article.EditorsPicks");
+        public string EditorPicksText => TextTranslator.Translate("Article.EditorsPicks");
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
         public bool IsThisComponentEnabled => SiteRootContext.Item.Render_Content_recommendation;
         public bool HideWhatToReadNext => GlassModel.Hide_WhatToReadNext;
         public bool HideSuggestedForYou => GlassModel.Hide_SuggestedForYou;
-        //public List<IArticle> EditorsPicks => GetEditorsPicks();
-        //private List<IArticle> GetEditorsPicks()
-        //{
-        //    List<IArticle> editorsPickList = new List<IArticle>();
-        //    if (GlassModel.Editors_Picks != null && GlassModel.Editors_Picks.Any())
-        //        editorsPickList = GlassModel.Editors_Picks.Select(x => (IArticle)x).ToList();
-        //    return editorsPickList;
-        //}
+        public List<IArticle> EditorsPicks => GetEditorsPicks();
+        private List<IArticle> GetEditorsPicks()
+        {
+            List<IArticle> editorsPickList = new List<IArticle>();
+            if (GlassModel.Editors_Picks != null && GlassModel.Editors_Picks.Any())
+                editorsPickList = GlassModel.Editors_Picks.Select(x => (IArticle)x).ToList();
+            return editorsPickList;
+        }
         public string TaxonomyItems
         {
             get
