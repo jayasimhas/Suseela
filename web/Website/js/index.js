@@ -583,7 +583,9 @@ $(document).ready(function() {
 			if($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
-			$('.main__wrapper').removeClass('shift-main-content');
+			removeFixedMenu();
+			$('.main-menu').removeClass('shift-main-content');
+			$('body').removeClass('shift-content');
 		};
 
 		/* Toggle menu visibility */
