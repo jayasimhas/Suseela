@@ -6,63 +6,63 @@
     <img class="article-preview__image" src="@Model.ListableImage">
 }
 
-<div class="article-metadata">
-     <div
-	 	class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
-        data-pop-out-type="sign-in"
-        data-bookmark-id="@Model.ID"
-        data-salesforce-id="@Model.SalesforceId"
-        @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
-		data-analytics='{
+@if (Model.SponsoredContent == null)
+{
+    <div class="article-metadata">
+        <div class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+             data-pop-out-type="sign-in"
+             data-bookmark-id="@Model.ID"
+             data-salesforce-id="@Model.SalesforceId"
+             @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
+             data-analytics='{
 			"bookmark": "true",
  			"bookmark_title": "@Model.ListableTitle",
  			"bookmark_publication": "@Model.ListablePublication"
 		}'>
-        @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
-        can use text provided by Sitecore when toggling state post-load. *@
-        <span   class="action-flag__label js-bookmark-label"
-                data-label-bookmark="@Model.BookmarkText"
-                data-label-bookmarked="@Model.BookmarkedText">
-            @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
-        </span>
+            @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
+                can use text provided by Sitecore when toggling state post-load. *@
+            <span class="action-flag__label js-bookmark-label"
+                  data-label-bookmark="@Model.BookmarkText"
+                  data-label-bookmarked="@Model.BookmarkedText">
+                @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
+            </span>
 
-        
-		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
-	        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-	    </svg>
 
-		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @( Model.IsArticleBookmarked ? null : "is-visible")">
-	        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-	    </svg>
+            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
+                <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+            </svg>
 
+            <svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @( Model.IsArticleBookmarked ? null : "is-visible")">
+                <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+            </svg>
+
+        </div>
+        <ul>
+            <li>
+                <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
+            </li>
+            @if (!string.IsNullOrEmpty(Model.LinkableText))
+            {
+                <li>
+                    <h6>@string.Join(", ", Model.LinkableText)</h6>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(Model.ListableType))
+            {
+                <li>
+                    @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
+                </li>
+            }
+        </ul>
     </div>
-    <ul>
-        <li>
-            <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
-        </li>
-        @if (!string.IsNullOrEmpty(Model.LinkableText))
-        {
-            <li>
-                <h6>@string.Join(", ", Model.LinkableText)</h6>
-            </li>
-        }
-        @if (!string.IsNullOrEmpty(Model.ListableType))
-        {
-            <li>
-                @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
-            </li>
-        }
-    </ul>
-</div>
-
+}
 <div class="article-preview__inner-wrapper">
     <h1 class="article-preview__headline">
-        <a
-			href="@Model.LinkableUrl"
-			class="click-utag"
-			data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.ListableTitle" }'>
-			@Html.Raw(Model.ListableTitle)
-		</a>
+        <a href="@Model.LinkableUrl"
+           class="click-utag"
+           data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.ListableTitle" }'>
+            @Html.Raw(Model.ListableTitle)
+        </a>
     </h1>
 
     <span class="article-preview__byline">

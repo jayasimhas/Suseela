@@ -67,7 +67,7 @@ namespace Informa.Web.ViewModels.DataTools
 
         public bool AllowCustomViews => GlassModel.Allow_Custom_Views;
 
-        public string Filter => GlassModel?.Filter;
+        public string Filter => GlassModel.Filter;
 
         private string GetTableauFilters()
         {
@@ -79,7 +79,7 @@ namespace Informa.Web.ViewModels.DataTools
                     GlassModel.Filter = GlassModel.Filter + "&" + "Parameters.EntitlementCode=";
                     foreach (var entitlement in entitlements)
                     {
-                        GlassModel.Filter = GlassModel.Filter + entitlement;
+                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
                     }
                     return GlassModel.Filter;
                 }
@@ -88,7 +88,7 @@ namespace Informa.Web.ViewModels.DataTools
                     GlassModel.Filter = "Parameters.EntitlementCode=";
                     foreach (var entitlement in entitlements)
                     {
-                        GlassModel.Filter = GlassModel.Filter + entitlement;
+                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
                     }
                     return GlassModel.Filter;
                 }
