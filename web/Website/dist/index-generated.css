@@ -6111,14 +6111,15 @@ main .action-flags-bar, main .banner--highlights {
     margin: 0px; }
     .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont {
       border-bottom: 1px solid #d1d3d4;
-      padding: 10px 20px;
+      padding: 20px;
       height: 150px; }
       .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont:last-child {
         border-bottom: none; }
     .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont {
       border-bottom: 1px solid #d1d3d4;
       padding: 10px 20px;
-      height: 150px; }
+      height: 150px;
+      background: #f1f2f2; }
       .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont:last-child {
         border-bottom: none; }
 
@@ -6409,17 +6410,17 @@ main .action-flags-bar, main .banner--highlights {
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
 
-.personalisationhome .article-preview--small.topics {
-  background: #f1f2f2; }
-  .personalisationhome .article-preview--small.topics:after {
-    height: 0px;
-    height: 0rem; }
-  .personalisationhome .article-preview--small.topics h6, .personalisationhome .article-preview--small.topics .article-tags-bar__label, .personalisationhome .article-preview--small.topics .article-topics__section-header {
-    margin-bottom: 10px;
-    margin-bottom: 0.625rem; }
-  @media (max-width: 480px) {
-    .personalisationhome .article-preview--small.topics {
-      height: auto; } }
+.personalisationhome .article-preview--small.topics:after {
+  height: 0px;
+  height: 0rem; }
+
+.personalisationhome .article-preview--small.topics h6, .personalisationhome .article-preview--small.topics .article-tags-bar__label, .personalisationhome .article-preview--small.topics .article-topics__section-header {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+
+@media (max-width: 480px) {
+  .personalisationhome .article-preview--small.topics {
+    height: auto; } }
 
 .personalisationhome .article-preview--small .article-preview_rheadline {
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -6431,6 +6432,7 @@ main .action-flags-bar, main .banner--highlights {
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-top: 10px;
   line-height: 34px;
   line-height: 2.125rem;
   height: 120px;
@@ -6451,9 +6453,12 @@ main .action-flags-bar, main .banner--highlights {
         margin-bottom: -0.625rem;
         padding: 0px; } }
   .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
-    height: 100px;
+    height: 70px;
     overflow: hidden;
-    display: block; }
+    display: block;
+    color: #000; }
+    .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+      color: #be1e2d; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small .article-preview_rheadline {
       height: auto; } }
@@ -6793,17 +6798,32 @@ main .action-flags-bar, main .banner--highlights {
 .gridView .gridViewCont {
   display: block; }
 
+.personalisationhome .layout2 .article-preview--small.topics .article-metadata.sponsored_cont {
+  height: 153px; }
+
+.personalisationhome .layout2 .article-preview--small.topics .article-metadata.nosponsored_cont {
+  height: 153px; }
+
 @media screen and (min-width: 768px) {
   .theme-lloydslist .latestSubject .fllatestSub {
     background-color: #1191D1; } }
+
+.theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #1191D1; }
 
 @media screen and (min-width: 768px) {
   .theme-insurance-day .latestSubject .fllatestSub {
     background-color: #DE4361; } }
 
+.theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #DE4361; }
+
 @media screen and (min-width: 768px) {
   .theme-commodities .latestSubject .fllatestSub {
     background-color: #9E310D; } }
+
+.theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #9E310D; }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
