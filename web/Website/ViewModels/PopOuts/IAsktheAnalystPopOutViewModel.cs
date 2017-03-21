@@ -21,7 +21,6 @@
         string CancelText { get; }
         string SendText { get; }
         string EmptyFieldText { get; }
-        string CaptchaSiteKey { get; }
         string AskTheAnalystLink { get; }        
     }
 }
