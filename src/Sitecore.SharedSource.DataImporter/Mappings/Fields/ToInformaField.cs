@@ -509,7 +509,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     temp[i + 2] = char.ToUpper(temp[i + 2]);
                 }
             }
-            return new string(temp);
+            // return new string(temp);
+            string imageurl = new string(temp);
+            imageurl = imageurl.Replace("(", "%28").Replace(")", "%29");
+            return imageurl;
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map, string ArticleId,string ImagePath)
