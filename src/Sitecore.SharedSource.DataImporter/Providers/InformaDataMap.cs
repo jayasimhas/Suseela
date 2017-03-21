@@ -493,6 +493,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     {
                                         CropProtection += "policyandregulation" + ",";
                                     }
+
+                                    if (publication == "AnimalPharm" && agencySearchResults.Count > 0)
+                                    {
+                                        AnimalHealth += "policyandregulation" + ",";
+                                    }
+
                                 }
                                     List<string> commoditySearchResults = null;
                                 List<string> commoditynewSearchResults = null;
@@ -506,22 +512,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (publication == "AnimalPharm")
                                 {
-                                    animalhealthSearchResults = GetListFromXml(publication, "animalhealthDiseases", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-                                    animalhealthnewSearchResults = GetListFromXml(publication, "animalhealthnew", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    animalhealthSearchResults = GetListFromXmlusingPublication(publication, "animalhealthDiseases", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                                    animalhealthnewSearchResults = GetListFromXmlusingPublication(publication, "animalhealthnew", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 if (publication == "Agrow")
                                 {
 
-                                    commoditySearchResults = GetListFromXml(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
-                                    cropprotectionSearchResults = GetListFromXml(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
-                                    agrowcommercialSearchResults = GetListFromXml(publication, "commercial", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    commoditySearchResults = GetListFromXmlusingPublication(publication, "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    cropprotectionSearchResults = GetListFromXmlusingPublication(publication, "cropprotection", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    agrowcommercialSearchResults = GetListFromXmlusingPublication(publication, "commercial", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
                                 if (publication == "Commodities")
                                 {
-                                    commoditySearchResults = GetListFromXml(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
-                                    commoditynewSearchResults = GetListFromXml(publication, "commoditynewsearch", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-                                    commodityfactorSearchResults = GetListFromXml(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                                    commoditySearchResults = GetListFromXmlusingPublication(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
+                                    commoditynewSearchResults = GetListFromXmlusingPublication(publication, "commoditynewsearch", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+                                    commodityfactorSearchResults = GetListFromXmlusingPublication(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 foreach (string agency in agencySearchResults)
                                 {
@@ -618,7 +624,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string animalhealthnew in animalhealthnewSearchResults)
                                     {
-                                        AnimalHealthNew += animalhealthnew + ",";
+                                        AnimalHealth += animalhealthnew + ",";
 
                                     }
                                 }
@@ -2909,6 +2915,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         }
 
+        public List<string> GetListFromXmlusingPublication(string publication, string type, string site)
+
+        {
+
+            List<string> keyList = new List<string>();
+
+            //XElement doc = XElement.Load((WebConfigurationManager.AppSettings["xmlContentImport"]));
+            XElement doc = XElement.Load(string.Format(@"{0}sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml", HttpRuntime.AppDomainAppPath));
+
+
+            var elemValue = doc.Descendants(site).Descendants(publication).Descendants(type).Descendants();
+            foreach (XElement elem in elemValue)
+            {
+
+                keyList.Add(elem.Attribute("name").Value.ToLower());
+
+            }
+
+            return keyList;
+
+
+
+
+        }
 
         public List<string> GetCompanies()
         {

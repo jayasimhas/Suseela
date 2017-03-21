@@ -50,8 +50,11 @@ namespace Informa.Web.Controllers
                 article.Title = content.Name;
                 article.Planned_Publish_Date = publicationDate;
                 article.Created_Date = DateTime.Now;
-                var articleNum = _articleSearch.GetNextArticleNumber(content.PublicationID);
-                article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID, _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
+                if (articleItem != null && string.IsNullOrEmpty(articleItem["Article Number"]))
+                {
+                    var articleNum = _articleSearch.GetNextArticleNumber(content.PublicationID);
+                    article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID, _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
+                }
                 //article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID);
                 _sitecoreMasterService.Save(article);
                 var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
@@ -96,7 +99,7 @@ namespace Informa.Web.Controllers
             publicationGuid = new Guid(tableauInfo.PublicationGuid);
             ArticleItem articleItem = _articleUtil.GetArticleByNumber(tableauInfo.ArticleNumber, Constants.MasterDb, publicationGuid);
             tableauGuid = _sitecoreSaver.SaveTableauItem(articleItem, tableauInfo);
-            
+
             return tableauGuid;
         }
 
