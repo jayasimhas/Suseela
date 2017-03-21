@@ -1,7 +1,8 @@
 ﻿@model Informa.Web.ViewModels.Articles.ArticleRecommendationViewModel
-   @{
-       if (Model.IsThisComponentEnabled)
-       {
+@{
+    if (Model.IsThisComponentEnabled)
+    {
+
         <div class="contentRecommendations">
             @*Editor Picks*@
             <div class="article-related-content">
@@ -11,8 +12,27 @@
 
                     foreach (var article in Model.EditorsPicks)
                     {
-                        string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
-                        <div class="contentRecomm-article">
+                        var sponsoredclass = article.SponsoredBy != null ? "sponsored_cont" : string.Empty;
+                        <div class="contentRecomm-article @sponsoredclass">
+                            @if (article.SponsoredBy != null)
+                            {
+                                <div class="article-metadata">
+                                    <ul>
+                                        <li>
+                                            <time class="article-metadata__date sponsored_title">@article.SponsoredBy.Title</time>
+                                        </li>
+                                        <li>
+                                            @if (article.SponsoredBy.Sponsor_Logo != null)
+                                            {
+                                                <img src=@article.SponsoredBy.Sponsor_Logo.Src />
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                            @{ 
+                                string img = article.Featured_Image_16_9 != null ? article.Featured_Image_16_9.Src : "";
+                            }
                             <img class="article-related-content__img" src="@img" />
                             <span class="article-related-content__category">@Model.PublicationName</span>
                             <h5><a class="click-utag" href="@article._Url">@article.Title</a></h5>
@@ -50,6 +70,6 @@
                 }
             </div>
         </div>
-       }
+    }
 }
 

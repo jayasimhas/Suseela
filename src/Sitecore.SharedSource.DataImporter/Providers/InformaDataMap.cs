@@ -261,18 +261,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         // GetRegion().FirstOrDefault(w => w == word);
                         if (publication == "Commodities")
                         {
-                            if (Taxonomy.Values.Any(k => k.Contains("dairy")))
+                            if (Taxonomy.Values.Any(k => k.Contains("dairy")) || TaxonomyList.Values.Any(k => k.Contains("dairy")))
                             {
                                 string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_dairy"];
                                 ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
                             }
-                            else if (Taxonomy.Values.Any(k => k.Contains("public")))
+                            else if (Taxonomy.Values.Any(k => k.Contains("public"))|| TaxonomyList.Values.Any(k => k.Contains("public")))
                             {
                                 string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_public_ledger"];
                                 ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
                             }
 
-                            else if (Taxonomy.Values.Any(k => k.Contains("foodnews")))
+                            else if (Taxonomy.Values.Any(k => k.Contains("foodnews")) || TaxonomyList.Values.Any(k => k.Contains("foodnews")))
                             {
                                 string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_foodnews"];
                                 ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);

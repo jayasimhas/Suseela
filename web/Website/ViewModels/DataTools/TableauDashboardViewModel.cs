@@ -14,6 +14,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.User.Authentication;
 using Sitecore.Data.Fields;
 using System;
+using Informa.Library.User.Entitlement;
 
 namespace Informa.Web.ViewModels.DataTools
 {
@@ -27,7 +28,7 @@ namespace Informa.Web.ViewModels.DataTools
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         private readonly IAuthenticatedUserContext _authenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
-
+        protected readonly IEntitlementsContexts EntitlementsContexts;
         public TableauDashboardViewModel(
             ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
@@ -37,7 +38,8 @@ namespace Informa.Web.ViewModels.DataTools
             IArticleListItemModelFactory articleListableFactory,
             IArticleSearch searcher,
             ICallToActionViewModel callToActionViewModel,
-             IAuthenticatedUserContext authenticatedUserContext)
+             IAuthenticatedUserContext authenticatedUserContext,
+             IEntitlementsContexts entitlementsContexts)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
@@ -48,6 +50,7 @@ namespace Informa.Web.ViewModels.DataTools
             Searcher = searcher;
             CallToActionViewModel = callToActionViewModel;
             _authenticatedUserContext = authenticatedUserContext;
+            EntitlementsContexts = entitlementsContexts;
         }
 
         #region Tableau Dashboard Parameters/details
@@ -64,19 +67,30 @@ namespace Informa.Web.ViewModels.DataTools
 
         public bool AllowCustomViews => GlassModel.Allow_Custom_Views;
 
-        public string Filter => GlassModel?.Filter;
+        public string Filter => GlassModel.Filter;
 
         private string GetTableauFilters()
         {
-            if (GlassModel.Enable_Entitlement_Check)
+            var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements);
+            if (GlassModel.Enable_Entitlement_Check && entitlements != null && entitlements.Any())
             {
-                if (!string.IsNullOrEmpty(GlassModel?.Filter))
+                if (GlassModel != null && !string.IsNullOrEmpty(GlassModel?.Filter))
                 {
-                    return GlassModel?.Filter + "&" + "Parameters.EntitlementCode=IEGV.DAI";
+                    GlassModel.Filter = GlassModel.Filter + "&" + "Parameters.EntitlementCode=";
+                    foreach (var entitlement in entitlements)
+                    {
+                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
+                    }
+                    return GlassModel.Filter;
                 }
                 else
                 {
-                    return "Parameters.EntitlementCode=IEGV.DAI";
+                    GlassModel.Filter = "Parameters.EntitlementCode=";
+                    foreach (var entitlement in entitlements)
+                    {
+                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
+                    }
+                    return GlassModel.Filter;
                 }
             }
             return GlassModel?.Filter;

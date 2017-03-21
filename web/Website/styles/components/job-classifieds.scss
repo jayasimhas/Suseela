@@ -1,7 +1,9 @@
 .job_listing{
 	h1{
 		margin-bottom: 0.75rem;
-		
+		@include breakpoint('small') {
+			font-size: 2.25rem;
+		}
 	}
 	#page_navigation{
 		a{
@@ -17,6 +19,9 @@
 			margin-bottom: 0.75rem;
 			font-size: 1.5em;
 			line-height:30px;
+			@include breakpoint('small') {
+				font-size: 1rem;
+			}
 		}
 		padding-bottom: 0.75rem;
 		border-bottom: 1px solid $color-light-gray;
@@ -74,8 +79,8 @@
 					  font-weight: 700;
 					  font-size: 1.875em;
 					  margin-bottom: 0.3em;
-					  a{
-						color: $color-zeus-black;
+					  @include breakpoint('small') {
+					  	font-size: 1.5rem;
 					  }
 					 }
 					clear: both;
@@ -89,6 +94,10 @@
 					font-size: 1.125em;
 					line-height: 30px;
 					color: $color-abbey-gray;
+					@include breakpoint('small') {
+							font-size: 0.875rem;
+							line-height: 25px;
+						}
 					}
 				}
 			}
@@ -123,15 +132,26 @@
 			}
 			&.active{
 				background: #c6c2c2;
+				cursor: text;
 			}
 		}
 		a.prev{ 
 			background-position: 0 0;
+			&.active{ 
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				cursor: text;
+			}
 		}
 		a.next{
 			background-position: -41px 0;
+			&.active{ 
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				cursor: text;
+			}
 		}
-		 
+		
 			
 		.nums{
 			text-align: center;
@@ -176,6 +196,10 @@
 		font-weight: 400;
 		line-height: 30px;
 		font-size: 1.125em;
+		@include breakpoint('small') {
+			font-size: 0.875rem;
+			line-height: 25px;
+		}
 		ul {
 			padding-left: 20px;
 			li {

@@ -420,6 +420,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url, string ArticleId, string publication)
         {
+            string orginal_url = url;
             //url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
             //    .Replace("62.73.128.229", "www.scripintelligence.com");
             //if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
@@ -484,7 +485,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             MediaItem m = null;
             if (WebConfigurationManager.AppSettings["LoadImageForImportFrom"].Equals("URL"))
             {
-                m = ImportImage(url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
+                m = ImportImage(orginal_url,url, filePath, $"{rootItem.Paths.FullPath}/{newFilePath}", mediaitem);
             }
             else if (WebConfigurationManager.AppSettings["LoadImageForImportFrom"].Equals("FS"))
             {
@@ -596,16 +597,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
         }
 
-        public MediaItem ImportImage(string url, string fileName, string newPath, MediaItem mediaItem = null)
+        public MediaItem ImportImage(string orginal_url,string url, string fileName, string newPath, MediaItem mediaItem = null)
         {
             try
             {
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                HttpWebResponse response = null;
                 if (request == null)
                     return null;
 
                 // download data 
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                try
+                {
+                    response = request.GetResponse() as HttpWebResponse;
+                }
+                catch (Exception ex)
+                {
+                    request = WebRequest.Create(orginal_url) as HttpWebRequest;
+                    response = request.GetResponse() as HttpWebResponse;
+                }
+
                 Stream stream1 = response.GetResponseStream();
                 MemoryStream stream2 = new MemoryStream();
                 stream1.CopyTo(stream2);

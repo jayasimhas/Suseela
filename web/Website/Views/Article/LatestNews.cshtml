@@ -1,20 +1,20 @@
 ﻿@inherits GlassView<LatestNewsViewModel>
 
-@if (Model.News!= null && Model.News.Any() && Model.DisplayTitle && !string.IsNullOrEmpty(Model.TitleText))
-{
-	<h4 class="latest-news__header">
-		<span>@Html.Raw(Model.TitleText)</span>
-	</h4>
+@if (Model.News != null && Model.News.Any() && Model.DisplayTitle && !string.IsNullOrEmpty(Model.TitleText))
+{    
+    <h4 class="latest-news__header">
+        <span>@Html.Raw(Model.TitleText)</span>
+    </h4>
 }
 
 <div class="latest-news__articles">
-	@foreach (var listable in Model.News)
-	{
-		Html.RenderPartial("Components/ListableContentSmall", listable);
-	}
+    @foreach (var listable in Model.News)
+    {
+        Html.RenderPartial("Components/ListableContentSmall", listable);
+    }
 </div>
 
-@if (Model.News != null && Model.News.Any() &&  Model.SeeAllLink != null && !string.IsNullOrEmpty(Model.SeeAllLink.Url))
+@if (Model.News != null && Model.News.Any() && Model.SeeAllLink != null && !string.IsNullOrEmpty(Model.SeeAllLink.Url))
 {
     <a href="@Model.SeeAllLink.Url"
        class="full-diminished-button click-utag"

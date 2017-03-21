@@ -15,7 +15,8 @@ namespace Informa.Library.Article.Search
         public List<Guid> Taxonomies { get; set; }
         public Guid ContentTypeTaxonomy { get; set; }
         public Guid MediaTypeTaxonomy { get; set; }
-
+        [IndexField("sponsored_by_s")]
+        public Guid SponsoreContent { get; set; }
         [IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
         public DateTime ActualPublishDate { get; set; }
         public string ArticleNumber { get; set; }

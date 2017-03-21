@@ -16,6 +16,7 @@ using Jabberwocky.Glass.Factory;
 using Jabberwocky.Glass.Models;
 using Sitecore.ContentSearch.Linq.Extensions;
 using Sitecore.Mvc.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Web.TestData
 {
@@ -362,5 +363,6 @@ namespace Informa.Web.TestData
 		public Guid ID { get; set; }
 		public string PageTitle { get; set; }
         public string SalesforceId { get; set; }
-	}
+        public ISponsored_Content SponsoredContent { get; set; }
+    }
 }
