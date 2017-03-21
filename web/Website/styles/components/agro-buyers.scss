@@ -121,9 +121,13 @@
 			.buyers-guide-row{
 				width: 100%;
 				.buyers-guide{
-					width: 45%;
+					width: 48%;
 					@include breakpoint('small'){
 					width: 100%;
+					margin-bottom: 0;
+					}
+					&:nth-child(even) {
+						margin-right: 0;
 					}
 					float: left;
 					margin-top: 0.75rem;	
