@@ -10812,7 +10812,7 @@ div#feedbacklite.fbl_r {
       display: none; }
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
-  .rolling-stream h2, .rolling-stream .article-topics__header {
+  .rolling-stream h3, .rolling-stream .article-call-to-action__title {
     padding-bottom: 15px;
     margin-bottom: 20px; }
   .rolling-stream .rolling-stream-wrapper {
@@ -10878,13 +10878,14 @@ div#feedbacklite.fbl_r {
         z-index: 1; }
     .rolling-stream .rolling-stream-wrapper h5 a, .rolling-stream .rolling-stream-wrapper .alert-success p a, .alert-success .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .alert-error p a, .alert-error .rolling-stream .rolling-stream-wrapper p a, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle a, .rolling-stream .rolling-stream-wrapper h5 .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-success p .pop-out__reset-password, .alert-success .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .alert-error p .pop-out__reset-password, .alert-error .rolling-stream .rolling-stream-wrapper p .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream .rolling-stream-wrapper h5 .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream .rolling-stream-wrapper p .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream .rolling-stream-wrapper h5 .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-success p .mobile-table-exit, .alert-success .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .alert-error p .mobile-table-exit, .alert-error .rolling-stream .rolling-stream-wrapper p .mobile-table-exit, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle .mobile-table-exit {
       font-family: 'Roboto', Arial Narrow, sans-serif;
-      font-size: 20px; }
+      font-size: 18px;
+      font-size: 1.125rem; }
     @media (max-width: 480px) {
       .rolling-stream .rolling-stream-wrapper h5, .rolling-stream .rolling-stream-wrapper .alert-success p, .alert-success .rolling-stream .rolling-stream-wrapper p, .rolling-stream .rolling-stream-wrapper .alert-error p, .alert-error .rolling-stream .rolling-stream-wrapper p, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle {
         padding-right: 12px; } }
     .rolling-stream .rolling-stream-wrapper h5 span, .rolling-stream .rolling-stream-wrapper .alert-success p span, .alert-success .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .alert-error p span, .alert-error .rolling-stream .rolling-stream-wrapper p span, .rolling-stream .rolling-stream-wrapper .article-call-to-action__subtitle span {
-      font-size: 16px;
-      font-size: 1rem;
+      font-size: 14px;
+      font-size: 0.875rem;
       line-height: 18px;
       line-height: 1.18rem; }
     .rolling-stream .rolling-stream-wrapper .scrollbar {
@@ -15184,9 +15185,9 @@ main {
   .theme-pink-sheet .theme-hover__header a:hover, .theme-pink-sheet .theme-hover__header .pop-out__reset-password:hover, .theme-pink-sheet .theme-hover__header .sortable-table__list-toggler:hover, .theme-pink-sheet .theme-hover__header .mobile-table-exit:hover {
     color: #BC608C; }
 
-.theme-pink-sheet .rolling-stream h2, .theme-pink-sheet .rolling-stream .article-topics__header {
+.theme-pink-sheet .rolling-stream h3, .theme-pink-sheet .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-pink-sheet .rolling-stream h2:after, .theme-pink-sheet .rolling-stream .article-topics__header:after {
+  .theme-pink-sheet .rolling-stream h3:after, .theme-pink-sheet .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -15572,9 +15573,9 @@ main {
   .theme-rose-sheet .theme-hover__header a:hover, .theme-rose-sheet .theme-hover__header .pop-out__reset-password:hover, .theme-rose-sheet .theme-hover__header .sortable-table__list-toggler:hover, .theme-rose-sheet .theme-hover__header .mobile-table-exit:hover {
     color: #DD3580; }
 
-.theme-rose-sheet .rolling-stream h2, .theme-rose-sheet .rolling-stream .article-topics__header {
+.theme-rose-sheet .rolling-stream h3, .theme-rose-sheet .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-rose-sheet .rolling-stream h2:after, .theme-rose-sheet .rolling-stream .article-topics__header:after {
+  .theme-rose-sheet .rolling-stream h3:after, .theme-rose-sheet .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -15960,9 +15961,9 @@ main {
   .theme-medtech .theme-hover__header a:hover, .theme-medtech .theme-hover__header .pop-out__reset-password:hover, .theme-medtech .theme-hover__header .sortable-table__list-toggler:hover, .theme-medtech .theme-hover__header .mobile-table-exit:hover {
     color: #034a7c; }
 
-.theme-medtech .rolling-stream h2, .theme-medtech .rolling-stream .article-topics__header {
+.theme-medtech .rolling-stream h3, .theme-medtech .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-medtech .rolling-stream h2:after, .theme-medtech .rolling-stream .article-topics__header:after {
+  .theme-medtech .rolling-stream h3:after, .theme-medtech .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -16348,9 +16349,9 @@ main {
   .theme-invivo .theme-hover__header a:hover, .theme-invivo .theme-hover__header .pop-out__reset-password:hover, .theme-invivo .theme-hover__header .sortable-table__list-toggler:hover, .theme-invivo .theme-hover__header .mobile-table-exit:hover {
     color: #7e2718; }
 
-.theme-invivo .rolling-stream h2, .theme-invivo .rolling-stream .article-topics__header {
+.theme-invivo .rolling-stream h3, .theme-invivo .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-invivo .rolling-stream h2:after, .theme-invivo .rolling-stream .article-topics__header:after {
+  .theme-invivo .rolling-stream h3:after, .theme-invivo .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -16736,9 +16737,9 @@ main {
   .theme-commodities .theme-hover__header a:hover, .theme-commodities .theme-hover__header .pop-out__reset-password:hover, .theme-commodities .theme-hover__header .sortable-table__list-toggler:hover, .theme-commodities .theme-hover__header .mobile-table-exit:hover {
     color: #c12d3b; }
 
-.theme-commodities .rolling-stream h2, .theme-commodities .rolling-stream .article-topics__header {
+.theme-commodities .rolling-stream h3, .theme-commodities .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-commodities .rolling-stream h2:after, .theme-commodities .rolling-stream .article-topics__header:after {
+  .theme-commodities .rolling-stream h3:after, .theme-commodities .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -17164,9 +17165,9 @@ main {
   .theme-insurance-day .theme-hover__header a:hover, .theme-insurance-day .theme-hover__header .pop-out__reset-password:hover, .theme-insurance-day .theme-hover__header .sortable-table__list-toggler:hover, .theme-insurance-day .theme-hover__header .mobile-table-exit:hover {
     color: #DE4361; }
 
-.theme-insurance-day .rolling-stream h2, .theme-insurance-day .rolling-stream .article-topics__header {
+.theme-insurance-day .rolling-stream h3, .theme-insurance-day .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-insurance-day .rolling-stream h2:after, .theme-insurance-day .rolling-stream .article-topics__header:after {
+  .theme-insurance-day .rolling-stream h3:after, .theme-insurance-day .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -17592,9 +17593,9 @@ main {
   .theme-lloydslist .theme-hover__header a:hover, .theme-lloydslist .theme-hover__header .pop-out__reset-password:hover, .theme-lloydslist .theme-hover__header .sortable-table__list-toggler:hover, .theme-lloydslist .theme-hover__header .mobile-table-exit:hover {
     color: #1191D1; }
 
-.theme-lloydslist .rolling-stream h2, .theme-lloydslist .rolling-stream .article-topics__header {
+.theme-lloydslist .rolling-stream h3, .theme-lloydslist .rolling-stream .article-call-to-action__title {
   position: relative; }
-  .theme-lloydslist .rolling-stream h2:after, .theme-lloydslist .rolling-stream .article-topics__header:after {
+  .theme-lloydslist .rolling-stream h3:after, .theme-lloydslist .rolling-stream .article-call-to-action__title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -17888,163 +17889,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */
