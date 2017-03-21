@@ -27,7 +27,7 @@
         &.jumpToSection {
         	float: right;
         }
-     }
+     } 
      .selectivity-single-select-input {
      	visibility: hidden;
      }
@@ -89,7 +89,7 @@
 		}
 	}
 	.blueBg{
-		background: #1191D1;
+		//background: #1191D1;
 	}
 }
 #tanker-Pure-ChemPage, #shipVehicle-Page, #shipCoalExport-page{ 
@@ -111,6 +111,23 @@
 		height: 1px;
 		border-top: 1px solid #d1d3d4;
 		display: block;
+	}
+	h4{
+		margin-bottom: 18px;
+	}
+	.borderpad {
+		padding: 12px 12px 12px 20px;
+		border-bottom: 1px solid #e1e1e1;
+		border-right: 1px solid #e9e9e9;
+		&.rigalign{
+			text-align: right;
+		}
+	}
+	.headerPad{
+		padding: 8px 12px 8px 20px;
+		&.rigalign{
+			text-align: right;
+		}
 	}
 	.oddCls{
 		background: #f1f1f1;
@@ -136,13 +153,10 @@
 			th{
 				text-transform: capitalize;
 				font-size: 16px;
-				font-weight: 500;
-				@media only screen and (min-width: 600px) and (max-width: 768px) {
-					//font-size: 12px;
-				}
+				font-weight: 500; 
 			}
 			.blueBg{
-				background: #1191d1;
+				//background: #1191d1;
 			}
 			.visible-lg{
 				color: #fff;
@@ -150,12 +164,7 @@
 					font-weight: bold;
 				}
 			}
-		}
-		tbody{
-			tr:nth-child(even){
-				background: #f1f1f1;
-			}
-		}
+		} 
 		tbody.visible-lg td{
 			border-bottom: 1px solid #d1d3d4;
 		}
@@ -163,16 +172,10 @@
 			color: #1191d1;
 		}
 		.pad-10 {
-			padding: 20px 16px;
-			@media only screen and (max-width: 1024px) {
-	    		//padding: 16px 5px;
-	    	}
+			padding: 20px 16px; 
 			@media only screen and (max-width: 767px) {
 	    		padding: 16px 10px;
-	    	}
-			@media only screen and (min-width: 600px) and (max-width: 768px) {
-	    		//padding: 10px 2px;
-	    	}
+	    	} 
 		}
 		.mobleftCol{
 			font-size: 18px;
@@ -213,10 +216,7 @@
 			}
 		}
 		.R16{
-			font-size: 1rem;
-			@media only screen and (min-width: 600px) and (max-width: 768px) {
-				//font-size: 12px;
-			}
+			font-size: 1rem; 
 			a{
 				color: #1191d1;
 			}
@@ -229,7 +229,7 @@
 	}
 
 	.lli-brand-container {
-		margin-bottom: 20px;
+		//margin-bottom: 20px;
 		h3 {
 			background-color: #414042;
 			padding: 10px;
@@ -268,6 +268,9 @@
 		 .dataProImg{
 			float: right;
 			text-align: right;
+			@media screen and (min-width: 768px) {
+				margin-top: -11px;
+			}
 			@include breakpoint('small') {
 				float: inherit;
 				text-align: left;
@@ -346,9 +349,9 @@
 		}
 	}
 	hr{
-		margin: 25px 0 35px;
+		margin: 20px 0;
 		@include breakpoint('small') {
-			margin: 30px 0 20px;
+			margin: 25px 0 15px;
 			display: block;
 		}
 	}
@@ -394,8 +397,12 @@
 		@include breakpoint('small') {
 			width: 50%;
 		} 
+		@media only screen and (max-width: 680px) {
+			width: 45%;
+		}
 	}
 	.owl-dotsNav{
+		height: 0px;
 		@media only screen and (max-width: 1024px) { 
 			background: #0f5487; height: 30px;
 		}
@@ -437,6 +444,9 @@
 			}
 			@media only screen and (min-width: 481px) and (max-width: 680px) {
 				width: 40%;
+			}
+			@media only screen and (max-width: 680px) {
+				width: 55%;
 			}
 			.title{
 				background-color: #1191d1;
@@ -616,29 +626,22 @@
 	}
 }
 #market-Data-Dry-Cargo {
-	float: left;
-	width: 100%;
-	border: none;
+	width: 100%; 
 	#marketDataDryCargo {
 		border: none;
+	} 
+	.title{
+		background-color: #1191d1;
+		color: #ffffff;
+		padding: 8px 12px;
+		@include textMix('Roboto', 1em, bold); 
 	}
-	.year_heading {
-		height: 4em;
+	.headerPad{
+		font-weight: bold !important;
 	}
-	.article {
-		.year_heading {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	}
-	.states_heading {
-		border-right: 1px solid $color-white;
-	}
-	.R16 {
-		background-color: $color-white;
-		min-height: 50px;
-		&:nth-child(even) {
-			background-color: #eee;
+	@media only screen and (max-width: 1024px) {
+		.R16{
+			border-right: 1px solid #e9e9e9;
 		}
 	}
 }
@@ -651,7 +654,7 @@
 		width:40%;
 		z-index: 9;
 		@media only screen and (max-width: 600px) {
-			width:50%;
+			width:48%;
 		}
 	}
 	.carousel-div{
@@ -662,29 +665,28 @@
 		width: 60%;
 		float: left;
 		@media only screen and (max-width: 600px) {
-			width:50%;
+			width:52%;
 		}
 	}
 	.title{
 		background-color: #1191d1;
 		color: #ffffff;
-		padding: 8px 5px 8px 12px;
+		padding: 8px 10px 8px 12px;
 		@include textMix('Roboto', 1em, bold);
 		@media only screen and (min-width: 768px) and (max-width: 1024px) {
-			font-size: 0.9rem;
-			padding: 12px 2px;
+			padding: 8px 10px 8px 0px;
 		}
-		@media only screen and (max-width: 600px) {
+		@media only screen and (max-width: 680px) {
 			height: 55px;
+		}
+		@media only screen and (min-width:680px) and (max-width: 1024px) {
+			font-size: 14px;
 		}
 	}
 	.R16{
 		padding: 12px 10px;
 		border-bottom: 1px solid #e1e1e1;
 		border-right: 1px solid #e9e9e9; 
-		@media only screen and (min-width: 767px) and (max-width: 1024px) {
-			padding: 12px 6px;
-		} 
 	}
 	.titleHead{
 		width: 100%;
@@ -723,7 +725,7 @@
 #fisDryBulkContainer{
 	width: 100%;
 	.tableTitle{
-		background-color: #0f5487;
+		background-color: #1191d1;
 		color: #fff;
 	}
 	.tableheader{
@@ -757,3 +759,61 @@
  .rowbordinMob{
 	border: 1px solid #e9e9e9; 
 }
+
+.selectivity-input{
+	@media only screen and (min-width: 600px) and (max-width: 768px) {
+		width: 230px;
+	}
+}
+
+#tanker-fixtures{
+	.table_head
+	{
+		.pad-full-10{
+			@media only screen and (max-width: 767px) {
+				padding: 10px;
+			}
+		}
+	}
+	&.table-responsive .table{
+		margin-bottom: 1rem;
+		@media only screen and (min-width: 1025px) {
+			tr .pad-10{
+				padding: 12px 0 12px 16px;
+				&:nth-child(8){
+					padding-right: 16px;
+				}
+			}
+		}
+		&.descView{
+			@media only screen and (min-width: 768px) and (max-width: 1020px) {
+				width: 475px;
+				overflow-x: auto;
+				display: block !important;
+			}
+			@media only screen and (min-width: 1024px) and (max-width: 1025px) {
+				width: 570px;
+				overflow-x: auto;
+				display: block !important;
+			}
+		}
+		&.mobView{
+			.mobleftCol{
+				width: 40%;
+			}
+			.mobrigCol{
+				width: 60%;
+			}
+		}
+	}
+}
+
+#tanker-Pure-ChemPage{
+	&.table-responsive{
+		.table{
+			margin-bottom: 1rem !important;
+		}
+	}
+}
+
+ 

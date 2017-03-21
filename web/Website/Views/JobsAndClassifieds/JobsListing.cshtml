@@ -1,64 +1,56 @@
 ﻿@model Informa.Web.ViewModels.JobsAndClassifieds.JobsListingViewModel
 
 @*Jobs Listing Page*@
-<div class="main__content">
-    <div>
-        @*<div class="action-flags-bar article-prologue"></div>*@
-        <div class="job_listing">
-            <h1>@Model.Title</h1>
-            <div class="sub-heading-text">
-                <span>@Model.SubTitle</span>
-            </div>
-            @if (Model.JobTiles != null && Model.JobTiles.Count() > 0)
+<div class="job_listing">
+    <h1>@Model.Title</h1>
+    <div class="sub-heading-text">
+        <span>@Model.SubTitle</span>
+    </div>
+    @if (Model.JobTiles != null && Model.JobTiles.Count() > 0)
+    {
+        <div class="stacked_job_view" id="content">
+            @foreach (var job in Model.JobTiles)
             {
-                <div class="stacked_job_view" id="content">
-                    @foreach (var job in Model.JobTiles)
-                    {
-                        <div class="job_list_individual eachCategory">
-                            <div class="job_description">
-                                <div class="job_heading">
-                                    <h3><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
-                                </div>
-                                <div class="job_logo">
-                                    <a href="@job.JobDetailUrl">
-                                        @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
-                                        {
-                                            <img src="@job.JobLogo.Src" alt="logo" />
-                                        }
-                                    </a>
-                                </div>
-                                <div class="job_description_detail">
-                                    <p>
-                                        @Html.Raw(job.JobShortDescription)
-                                    </p>
-                                </div>
-                            </div>
+                <div class="job_list_individual eachCategory">
+                    <div class="job_description">
+                        <div class="job_heading">
+                            <h3 class="article-preview__headline"><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
                         </div>
-                    }
+                        <div class="job_logo">
+                            <a href="@job.JobDetailUrl">
+                                @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
+                                {
+                                    <img src="@job.JobLogo.Src" alt="logo" />
+                                }
+                            </a>
+                        </div>
+                        <div class="job_description_detail">
+                            <p>
+                                @Html.Raw(job.JobShortDescription)
+                            </p>
+                        </div>
+                    </div>
                 </div>
             }
-
-            <input type="hidden" id="jobTilesCount" value="@Model.JobTiles.Count()" />
-            <input type="hidden" id="noofJobsPerPage" value="@Model.JobsListingSettings.No_of_Jobs_Per_Page" />
-            <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
-
-            @*Pagination for Jobs*@
-            @if (Model != null && Model.JobsListingSettings != null && Model.JobsListingSettings.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.JobsListingSettings.No_of_Jobs_Per_Page))
-            {
-               //int totalJobsCount;
-                //bool IsJobsCountValidNo = int.TryParse(Model.JobsListingSettings.No_of_Jobs_Per_Page, out totalJobsCount);
-                if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.JobsListingSettings.No_of_Jobs_Per_Page) < Model.JobTiles.Count())
-                {
-                    <div class="pagination clearfix">
-                        <ul class="nums">
-                            <li><a href="javascript:void(0);" class="prev">@Model.PrevPageText</a></li>
-                            <li><span></span></li>
-                            <li><a href="javascript:void(0);" class="next">@Model.NextPageText</a></li>
-                        </ul>
-                    </div>
-                }
-            }
-           
         </div>
-    </div>
+    }
+    <input type="hidden" id="jobTilesCount" value="@Model.JobTiles.Count()" />
+    <input type="hidden" id="noofJobsPerPage" value="@Model.JobsListingSettings.No_of_Jobs_Per_Page" />
+    <div id="jobsListingPage" class="jobsAndClassifiedsListingPage"></div>
+
+    @*Pagination for Jobs*@
+    @if (Model != null && Model.JobsListingSettings != null && Model.JobsListingSettings.No_of_Jobs_Per_Page != null && !string.IsNullOrEmpty(Model.JobsListingSettings.No_of_Jobs_Per_Page))
+    {
+        if (Model.JobTiles.Count() > 0 && Convert.ToInt32(Model.JobsListingSettings.No_of_Jobs_Per_Page) < Model.JobTiles.Count())
+        {
+            <div class="pagination clearfix">
+                <ul class="nums">
+                    <li><a href="#" class="prev">@Model.PrevPageText</a></li>
+                    <li><span></span></li>
+                    <li><a href="#" class="next">@Model.NextPageText</a></li>
+                </ul>
+            </div>
+        }
+    }
 </div>
+

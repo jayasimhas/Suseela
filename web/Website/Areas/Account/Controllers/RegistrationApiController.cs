@@ -34,6 +34,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
         protected readonly IUpdateOfferUserOptInContext OffersOptIn;
         private readonly ILog Logger;
+        protected readonly IverticalLogin VerticalLogin;
 
         public RegistrationApiController(
             IFindUserByEmail findUser,
@@ -45,7 +46,7 @@ namespace Informa.Web.Areas.Account.Controllers
             IUserCompanyContext userCompanyContext,
             ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
             IUpdateOfferUserOptInContext offersOptIn,
-            ILog logger)
+            ILog logger, IverticalLogin verticalLogin)
         {
             FindUser = findUser;
             NewUserFactory = newUserFactory;
@@ -57,7 +58,7 @@ namespace Informa.Web.Areas.Account.Controllers
             SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
             OffersOptIn = offersOptIn;
             Logger = logger;
-
+            VerticalLogin = verticalLogin;
         }
 
         [HttpPost]
@@ -110,17 +111,18 @@ namespace Informa.Web.Areas.Account.Controllers
 
             if(success)
             {
-                string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
-                //Current vertical cookiename
-                string cookieName = curVertical + "_LoggedInUser";
-                //Current Vertical subdomain
-                string domain = ConfigurationManager.AppSettings[curVertical];
+                //string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
+                ////Current vertical cookiename
+                //string cookieName = curVertical + "_LoggedInUser";
+                ////Current Vertical subdomain
+                //string domain = ConfigurationManager.AppSettings[curVertical];
 
-                HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
-                LoggedinKeyCookie.Value = request.Username;
-                LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-                LoggedinKeyCookie.Domain = domain;
-                HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+                //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
+                //LoggedinKeyCookie.Value = request.Username;
+                //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+                //LoggedinKeyCookie.Domain = domain;
+                //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+                VerticalLogin.CreateLoginCookie(request.Username, null);
             }
 
             var registrationType = GetRegistrationType(UserCompanyContext);
@@ -186,17 +188,18 @@ namespace Informa.Web.Areas.Account.Controllers
 
             if (orderResult.Success)
             {
-                string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
-                //Current vertical cookiename
-                string cookieName = curVertical + "_LoggedInUser";
-                //Current Vertical subdomain
-                string domain = ConfigurationManager.AppSettings[curVertical];
+                //string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
+                ////Current vertical cookiename
+                //string cookieName = curVertical + "_LoggedInUser";
+                ////Current Vertical subdomain
+                //string domain = ConfigurationManager.AppSettings[curVertical];
 
-                HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
-                LoggedinKeyCookie.Value = form.Username;
-                LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-                LoggedinKeyCookie.Domain = domain;
-                HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+                //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
+                //LoggedinKeyCookie.Value = form.Username;
+                //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+                //LoggedinKeyCookie.Domain = domain;
+                //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+                VerticalLogin.CreateLoginCookie(form.Username, null);
             }
 
             return Ok(new

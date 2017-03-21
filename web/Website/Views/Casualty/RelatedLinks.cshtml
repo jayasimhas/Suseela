@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.ViewModels.Casualty.RelatedLinksViewModel
 
     @{ 
-        var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"] == "1";
+        var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["ShowInRightRail"] == "1";
         var marketDataFolders = Model.GetRelatedFolders(showInRightRail);
         if (marketDataFolders != null && marketDataFolders.Any())
         {

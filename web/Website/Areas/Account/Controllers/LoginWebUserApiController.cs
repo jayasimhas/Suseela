@@ -19,18 +19,20 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly IMyViewToggleRedirectUrlFactory MyViewRedirectUrlFactory;
         protected readonly ISitecoreUserContext SitecoreUserContext;
+        protected readonly IverticalLogin VerticalLogin;
 
         public LoginWebUserApiController(
             IGenerateUserResetPassword generateUserResetPassword,
             IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
             IWebAuthenticateUser authenticateWebUser,
-            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory, ISitecoreUserContext sitecoreUserContext)
+            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory, ISitecoreUserContext sitecoreUserContext, IverticalLogin verticalLogin)
         {
             GenerateUserResetPassword = generateUserResetPassword;
             UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
             AuthenticateWebUser = authenticateWebUser;
             MyViewRedirectUrlFactory = myViewRedirectUrlFactory;
             SitecoreUserContext = sitecoreUserContext;
+            VerticalLogin = verticalLogin;
         }
 
         [HttpPost]
@@ -64,18 +66,19 @@ namespace Informa.Web.Areas.Account.Controllers
                     redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
                 }
             }
-            //Current vertical cookiename
-            string cookieName = curVertical + "_LoggedInUser";
-            //Current Vertical subdomain
-            string domain = ConfigurationManager.AppSettings[curVertical];
+            ////Current vertical cookiename
+            //string cookieName = curVertical + "_LoggedInUser";
+            ////Current Vertical subdomain
+            //string domain = ConfigurationManager.AppSettings[curVertical];
 
-            HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical+"_LoggedInUser");
-            LoggedinKeyCookie.Value = username;
-            LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-            LoggedinKeyCookie.Domain = domain;
-            HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical+"_LoggedInUser");
+            //LoggedinKeyCookie.Value = username;
+            //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+            //LoggedinKeyCookie.Domain = domain;
+            //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            VerticalLogin.CreateLoginCookie(username, null);
 
-            
+
             return Ok(new
             {
                 success = result.Success,
@@ -84,23 +87,23 @@ namespace Informa.Web.Areas.Account.Controllers
             });
         }
        
-        [HttpPost]
-        public IHttpActionResult VerticalLogin(AuthenticateRequest request)
-        {
-            var userContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IAuthenticatedUserContext)) as IAuthenticatedUserContext;
-            if (!string.IsNullOrEmpty(request.Username))
-            {
-                IAuthenticatedUser authenticatedUser = new AuthenticatedUser() { Username = request.Username };
-                var result = AuthenticateWebUser.Authenticate(authenticatedUser);
-                return Ok(new
-                {
-                    success = result.Success,
-                });
-            }
-            return Ok(new
-            {
-                success = "false",
-            });
-        }
+        //[HttpPost]
+        //public IHttpActionResult VerticalLogin(AuthenticateRequest request)
+        //{
+        //    var userContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IAuthenticatedUserContext)) as IAuthenticatedUserContext;
+        //    if (!string.IsNullOrEmpty(request.Username))
+        //    {
+        //        IAuthenticatedUser authenticatedUser = new AuthenticatedUser() { Username = request.Username };
+        //        var result = AuthenticateWebUser.Authenticate(authenticatedUser);
+        //        return Ok(new
+        //        {
+        //            success = result.Success,
+        //        });
+        //    }
+        //    return Ok(new
+        //    {
+        //        success = "false",
+        //    });
+        //}
     }
 }

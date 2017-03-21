@@ -37,10 +37,17 @@ key: __masters
 content-length: 77
 
 {E269FBB5-3750-427A-9149-7AA950B49301}|{6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 307
+
+au|default\Anonymous|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|^*|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|^*|au|sitecore\Admin|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|^*|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|^*|
 ----version----
 language: en
 version: 1
-revision: 2e07ebf4-762d-47ad-a7aa-d9b3eac0785b
+revision: 4b658316-3470-45c9-9936-370ff4bd91f8
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2e07ebf4-762d-47ad-a7aa-d9b3eac0785b
+4b658316-3470-45c9-9936-370ff4bd91f8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160411T105308Z
+20161006T110015Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

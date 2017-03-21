@@ -832,8 +832,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     {
                                         ListToGuid.DataLogger.Add("Body Image (Y/N)", "N");
                                     }
-
                                 }
+
+
+
+
 
                                 string id = string.Empty;
                                 if (importRow is Item)
@@ -966,19 +969,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                         TaxonomyStr = TaxonomyStr + taxonomy + "|";
                                     }
 
-                                    f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
-                                    ListToGuid.TaxonomyList.Clear();
+                                    if (!string.IsNullOrEmpty(TaxonomyStr))
+                                    {
+
+                                        f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
+                                        ListToGuid.TaxonomyList.Clear();
+                                    }
                                 }
 
                             }
                             catch (Exception ex)
                             {
-                                if (d.NewItemField == "Featured Image 16 9")
-                                {
+                                
+                                    continue;
 
-                                    ListToGuid.DataLogger.Add("Featured Image (Y/N)", "N");
-
-                                }
+                                
                                 Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);
                             }
                         }

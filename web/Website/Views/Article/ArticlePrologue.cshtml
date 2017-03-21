@@ -3,6 +3,7 @@
 <div class="action-flags-bar article-prologue">
         <div class="action-flags article-prologue__share-bar">
             <ul>
+                @{ Html.RenderPartial("/Views/Article/ArticlePrologueATA.cshtml", Model.ATAViewModel); }
 				@{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
                 @{ Html.RenderPartial("/Views/Article/ArticleProloguePrint.cshtml", Model.PrintViewModel); }
 				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.BookmarkViewModel); }

@@ -41,7 +41,7 @@
 
 			var Wrapper = Parent.find('tbody.visible-sm');
 			for(var key in data) {
-				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td class="graybg RB18 pad-full-10">'+data[key].casualtytitle+'</td><td align="right" class="graybg RB18 p-10"><a class="top" href="javascript: void(0);"><span class="arrow"></span>Top</a></td></tr>');
+				Wrapper.append('<tr data-jump="'+data[key].casualtytitle+'"><td colspan="2" class="graybg RB18 pad-full-0"><div style="float: left; margin-top: 18px;">'+data[key].casualtytitle+'</div><div style="text-align: right; float: right;" class="graybg RB18 p-10"><a class="top" href="javascript: void(0);"><span class="arrow"></span>Top</a></div></td></tr>');
 
 				var HeaderItems = this.HeaderLinks;
 				var CasualData = data[key].casualtyData;
@@ -83,7 +83,7 @@
 		},
 		FindHeaderLinks: function(data) {
 			for(var key in data) {
-				if(Array.isArray(data[key])) var CasualityData = data[key];
+				var CasualityData = data[key].casualtyData;
                 for(var item in CasualityData) {
                 	var List = CasualityData[item];
                 	for(var list in List) {

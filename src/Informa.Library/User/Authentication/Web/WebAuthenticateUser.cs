@@ -13,19 +13,21 @@ namespace Informa.Library.User.Authentication.Web
         protected readonly IAuthenticateUserV2 AuthenticateUserV2;
         protected readonly IWebLoginUser LoginWebUser;
         protected readonly IUserSession UserSession;
+        protected readonly IverticalLogin VerticalLogin;
         private const string sessionKey = nameof(WebAuthenticateUser);
         public WebAuthenticateUser(
             IAuthenticateUser authenticateUser,
             IWebLoginUser loginWebUser,
             IUserSession userSession,
             IAuthenticateUserV2 authenticateUserV2,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext, IverticalLogin verticalLogin)
         {
             AuthenticateUser = authenticateUser;
             LoginWebUser = loginWebUser;
             UserSession = userSession;
             AuthenticateUserV2 = authenticateUserV2;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            VerticalLogin = verticalLogin;
         }
 
         public IAuthenticatedUser AuthenticatedUser
@@ -108,16 +110,18 @@ namespace Informa.Library.User.Authentication.Web
                 success = loginResult.Success;
                 AuthenticatedUser = authenticatedUser;
             }
-            //Current vertical cookiename
-            string cookieName = vertical + "_LoggedInUser";
-            //Current Vertical subdomain
-            string domain = ConfigurationManager.AppSettings[vertical];
+            ////Current vertical cookiename
+            //string cookieName = vertical + "_LoggedInUser";
+            ////Current Vertical subdomain
+            //string domain = ConfigurationManager.AppSettings[vertical];
 
-            HttpCookie LoggedinKeyCookie = new HttpCookie(vertical + "_LoggedInUser");
-            LoggedinKeyCookie.Value = authenticatedUser.Username+"|"+ authenticatedUser.AccessToken;
-            LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-            LoggedinKeyCookie.Domain = domain;
-            HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            //HttpCookie LoggedinKeyCookie = new HttpCookie(vertical + "_LoggedInUser");
+            //LoggedinKeyCookie.Value = authenticatedUser.Username+"|"+ authenticatedUser.AccessToken;
+            //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
+            //LoggedinKeyCookie.Domain = domain;
+            //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            VerticalLogin.curVertical = vertical;
+            VerticalLogin.CreateLoginCookie(authenticatedUser.Username, authenticatedUser.AccessToken);
 
             return new WebAuthenticateUserResult
             {

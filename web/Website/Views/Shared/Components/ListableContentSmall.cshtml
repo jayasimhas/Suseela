@@ -1,4 +1,7 @@
 ﻿@model Informa.Web.ViewModels.IListableViewModel
-<section class="article-preview article-preview--small">
+@{
+    var sponsoredclass = Model.SponsoredContent != null ? "sponsored_cont" : string.Empty;
+}
+<section class="article-preview article-preview--small @sponsoredclass">
    @Html.Partial("Components/_ListableContent", Model)
 </section>

@@ -10,16 +10,20 @@ namespace Informa.Web.ViewModels.Articles
 			IArticlePrologueEmailViewModel articlePrologueEmailViewModel,
 			IArticlePrologueBookmarkViewModel articlePrologueBookmarkViewModel,
 			IArticlePrologueShareViewModel articlePrologueShareViewModel,
-			IArticleTagsViewModel articleTagsViewModel)
+			IArticleTagsViewModel articleTagsViewModel,
+            IArticlePrologueATAViewModel articleATAViewModel)
 		{
 			PrintViewModel = articleProloguePrintViewModel;
 			EmailViewModel = articlePrologueEmailViewModel;
 			BookmarkViewModel = articlePrologueBookmarkViewModel;
 			ShareViewModel = articlePrologueShareViewModel;
 			ArticleTagsViewModel = articleTagsViewModel;
+            ATAViewModel = articleATAViewModel;
 		}
 
 		public IArticleProloguePrintViewModel PrintViewModel;
+
+        public IArticlePrologueATAViewModel ATAViewModel;
 
 		public IArticlePrologueEmailViewModel EmailViewModel;
 

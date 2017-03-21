@@ -3,7 +3,6 @@
 }
 
 #main-carousel {
-	margin-top: 1rem;
 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
 		padding-right: 12px;
 	}
@@ -385,6 +384,7 @@
 }
 
 #mycarousel1, #mycarousel2{
+	margin-bottom: 1rem;
 	@include textMix('Roboto', 1em, 400);
 	.companylogo{
 		float: left;

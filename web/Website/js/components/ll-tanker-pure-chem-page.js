@@ -26,11 +26,16 @@
 				SubHeading = Data[0];
 
 			for(var key in SubHeading) {
-				SubHeadingStr += '<th class="pad-10" colspan="2">'+ key +'</th>';
+				if(key !== 'Age'){
+					SubHeadingStr += '<th class="pad-10" colspan="2" style="text-align: center;">'+ key +'</th>';
+				}
+				else{
+					SubHeadingStr += '<th class="pad-10" colspan="2" style="text-align: left;">'+ key +'</th>';
+				}
 				if(Array.isArray(SubHeading[key])) {
 					var SubHeadingArray = SubHeading[key][0];
 					for(var sub in SubHeadingArray) {
-						SubSubHeadingStr += '<th class="pad-10" colspan="1">' +sub+ '</th>';
+						SubSubHeadingStr += '<th class="pad-10" style="text-align: right;">' +sub+ '</th>';
 					}
 				} else {
 					SubSubHeadingStr += '<th class="pad-10" colspan="2"></th>';
@@ -50,7 +55,7 @@
 							Body += '<td class="pad-10" align="right">' +items[k]+ '</td>';
 						}
 					} else {
-						Body += '<td class="pad-10" align="right" colspan="2">' +Values[key]+ '</td>';
+						Body += '<td class="pad-10" align="left" colspan="2">' +Values[key]+ '</td>';
 					}
 				}
 
@@ -89,6 +94,7 @@
 
 			Parent.append(CarouselStr);
 			self.InitCarousel(Parent);
+			self.setColHeight(Parent);
 		},
 		InitCarousel: function(Parent) {
 			Parent.find('.owl-carousel').owlCarousel({
@@ -155,7 +161,7 @@
 				if(Array.isArray(Heading[key])) {
 					CarouselPart += '<div class="article">'+
 										'<div class="year_heading">'+
-											'<div>'+ key +'</div>'+
+											'<div class="topTitle">'+ key +'</div>'+
 											self.getKeyChild(key, Heading[key])+
 										'</div>'+
 										self.getData(key, Data)+
@@ -169,7 +175,7 @@
 			var Carousel = '<div class="table_head pad-10 clearfix">'+
 								'<span>' + Name + '</span>'+
 							'</div>'+
-							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4">'+
+							'<div class="clearfix" style="border:1px solid #d1d3d4; border-top: none; margin-bottom: 1rem;">'+
 								'<div class="states_heading">'+
 									FixedPart+
 								'</div>'+
@@ -182,6 +188,18 @@
 
 			return Carousel;
 		},
+		setColHeight: function(parentId){
+			for (var i = 0; i < parentId.find('.states_heading').length; i++) {
+				var stateObj = parentId.find('.states_heading')[i];
+				$('.R16', stateObj).each(function (idx) {
+					var $this = $(this),
+						colHeight = $this.height();
+					$('.owl-stage-outer:eq(' + i + ')', parentId).find('.article').each(function () {
+						$($(this).find('.R16')[idx]).css('height', colHeight);
+					});
+				});
+			}
+		},
 		init: function(data, id) {
 			var self = this, dataObj = data[0], idx = 0;
 			
@@ -191,10 +209,14 @@
 				}
 				break;
 			}
-			if($(window).width() < 668 || idx > 5)
+			if($(window).width() < 780 || idx > 5)
 				self.RenderCarousel(dataObj, id);
 			else
 				self.RenderTable(dataObj, id);
+			
+			$(window).resize(function() {
+				self.setColHeight(id);
+			});
 		}
 	}
 

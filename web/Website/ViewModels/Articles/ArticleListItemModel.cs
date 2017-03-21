@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Glass.Mapper.Sc.Fields;
 using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -33,5 +34,6 @@ namespace Informa.Web.ViewModels.Articles
 		public string PageTitle { get; set; }
 
         public string SalesforceId { get; set; }
-	}
+        public ISponsored_Content SponsoredContent { get; set; }
+    }
 }

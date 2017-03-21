@@ -9278,6 +9278,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link URL { get; set; }
         // JIRA IPMP-56
+        /// <summary>
+        /// The Tooltip field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 94352249-84A2-4DD1-888E-E6B3A1E880D3</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITaxonomy_ItemConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Leaderboard_Slot_ID { get; set; }
+        /// <summary>
+        /// The Tooltip field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 36DDAFB0-B5E4-417F-A9FE-A1A80F81F766</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITaxonomy_ItemConstants.Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Rectangular_Slot_ID { get; set; }
     }
 
 
@@ -9317,6 +9335,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         /// </summary>
         [SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Tooltip { get; set; }
+        /// <summary>
+        /// The Tooltip field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 94352249-84A2-4DD1-888E-E6B3A1E880D3</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITaxonomy_ItemConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Leaderboard_Slot_ID { get; set; }
+        /// <summary>
+        /// The Tooltip field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 36DDAFB0-B5E4-417F-A9FE-A1A80F81F766</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITaxonomy_ItemConstants.Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Rectangular_Slot_ID { get; set; }
     }
 
     public static partial class ITaxonomy_ItemConstants
@@ -9340,7 +9376,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
         public const string TooltipFieldName = "Tooltip";
 
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("94352249-84A2-4DD1-888E-E6B3A1E880D3");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
+        public static readonly ID Rectangular_Slot_IDFieldId = new ID("36DDAFB0-B5E4-417F-A9FE-A1A80F81F766");
+        public const string Rectangular_Slot_IDFieldName = "Rectangular Slot ID";
 
         public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
         public const string FactoryLinkableTextsFieldName = "FactoryLinkableText";
@@ -13017,6 +13057,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Height { get; set; }
 
+        /// <summary>
+        /// The Enable Entitlement Check field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:  0CD32048-50D6-42E3-9CD3-E1AE0E64D473</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Enable_Entitlement_CheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement_Check { get; set; }
 
     }
 
@@ -13112,6 +13161,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Height { get; set; }
+        /// <summary>
+        /// The Enable Entitlement Check field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:  0CD32048-50D6-42E3-9CD3-E1AE0E64D473</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Enable_Entitlement_CheckFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_Entitlement_Check { get; set; }
     }
 
     public static partial class ITableau_DashboardConstants
@@ -13144,6 +13202,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID HeightFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
         public const string HeightFieldName = "Height";
+
+        public static readonly ID Enable_Entitlement_CheckFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
+        public const string Enable_Entitlement_CheckFieldName = "Enable Entitlement Check";
     }
 
     public partial interface ITableauForArticle
@@ -14404,7 +14465,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
         /// <summary>
@@ -14414,7 +14475,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
 
     }
@@ -14444,7 +14505,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: 80685513-6061-41CD-B9AD-185B0A65914B</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Title { get; set; }
 
         /// <summary>
@@ -14454,7 +14515,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Field ID: AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA</para>
         /// <para>Custom Data: </para>
         /// </summary>
-        [SitecoreField(IShipping_Result_Component_ParametersConstants.Meta_Title_OverrideFieldName, Setting = SitecoreFieldSettings.InferType)]
+        [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
     }
 
@@ -17390,8 +17451,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Login_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Session_Synchronization_Item_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Session_Synchronization_Item_Id { get; set; }
 
         /// <summary>
         /// Gets or sets the Salesforce Entitlement Api Url.
@@ -17399,8 +17460,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Entitlement_Api_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Custom_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Custom_Api_Url { get; set; }
     }
 
 
@@ -17468,8 +17529,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Login_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Login_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Session_Synchronization_Item_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Session_Synchronization_Item_Id { get; set; }
 
         /// <summary>
         /// Gets or sets the Salesforce Entitlement Api Url.
@@ -17477,8 +17538,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The salesforce service URL.
         /// </value>
-        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Entitlement_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Salesforce_Entitlement_Api_Url { get; set; }
+        [SitecoreField(ISalesforce_ConfigurationConstants.Salesforce_Custom_Api_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Salesforce_Custom_Api_Url { get; set; }
     }
 
     public static partial class ISalesforce_ConfigurationConstants
@@ -17507,11 +17568,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Salesforce_Service_UrlFieldId = new ID("E88C8AE2-E7E1-4114-AC3C-E2FDC25BD46B");
         public const string Salesforce_Service_UrlFieldName = "Salesforce Service Url";
 
-        public static readonly ID Salesforce_Login_UrlFieldId = new ID("9048ECFD-AAE6-4510-B60F-B25154090291");
-        public const string Salesforce_Login_UrlFieldName = "Salesforce Login Url";
+        public static readonly ID Session_Synchronization_Item_IdFieldId = new ID("F9935753-4B8C-45E0-BA00-156E81A6520A");
+        public const string Session_Synchronization_Item_IdFieldName = "Session Synchronization Item Id";
 
-        public static readonly ID Salesforce_Entitlement_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
-        public const string Salesforce_Entitlement_Api_UrlFieldName = "Salesforce Entitlement Api Url";
+        public static readonly ID Salesforce_Custom_Api_UrlFieldId = new ID("CC18BCE6-D719-45C2-A60B-804E291849DB");
+        public const string Salesforce_Custom_Api_UrlFieldName = "Salesforce Custom Api Url";
     }
 
 
@@ -17856,6 +17917,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Facebook_Link { get; set; }
+        /// <summary>
+        /// The Footer Logo field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: ebe9a930-123d-4fd8-9a28-4662c389893b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Footer_Logo_With_CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Footer_Logo_With_Copyright { get; set; }
         /// <summary>
         /// The Footer Logo field.
         /// <para></para>
@@ -18491,6 +18561,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
         string From_Email_Address { get; set; }
+        /// <summary>
+        /// The Analyst Email Address field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1238c26e-a5d4-46d6-a716-0c2551442d42</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Analyst_Email_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Analyst_Email_ID { get; set; }
+        /// <summary>
+        /// The From Email Address field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 611bf106-6d21-4574-a0bf-e3c27df71c9d</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Ask_The_Analyst { get; set; }
         [SitecoreField(ISite_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Search_Index_Name { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_MyView_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -19108,6 +19196,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link Facebook_Link { get; set; }
+        /// <summary>
+        /// The Footer Logo field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: ebe9a930-123d-4fd8-9a28-4662c389893b</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Footer_Logo_With_CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Footer_Logo_With_Copyright { get; set; }
         /// <summary>
         /// The Footer Logo field.
         /// <para></para>
@@ -19733,6 +19830,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
         string From_Email_Address { get; set; }
+        /// <summary>
+        /// The Analyst Email Address field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1238c26e-a5d4-46d6-a716-0c2551442d42</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Analyst_Email_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Analyst_Email_ID { get; set; }
+        /// <summary>
+        /// The From Email Address field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 611bf106-6d21-4574-a0bf-e3c27df71c9d</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Ask_The_Analyst { get; set; }
 
         //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
 
@@ -19996,7 +20111,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Facebook_LinkFieldId = new ID("cf68ed35-f96d-4924-850c-e96f0a7f1e34");
         public const string Facebook_LinkFieldName = "Facebook Link";
 
-
+        public static readonly ID Footer_Logo_With_CopyrightFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
+        public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo";
 
         public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
         public const string Footer_LogoFieldName = "Footer Logo";
@@ -20360,6 +20476,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
         public const string From_Email_AddressFieldName = "From Email Address";
+        public static readonly ID Analyst_Email_IDFieldId = new ID("1238c26e-a5d4-46d6-a716-0c2551442d42");
+        public const string Analyst_Email_IDFieldName = "Analyst Email ID";
+
+        public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
+        public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
 
         public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
         public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
@@ -26583,7 +26704,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Facebook_LinkFieldId = new ID("cf68ed35-f96d-4924-850c-e96f0a7f1e34");
         public const string Facebook_LinkFieldName = "Facebook Link";
 
-
+        public static readonly ID Footer_Logo_With_CopyrightFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
+        public const string Footer_Logo_With_CopyrightFieldName = "Footer Logo";
 
         public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
         public const string Footer_LogoFieldName = "Footer Logo";
@@ -26936,6 +27058,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
         public const string From_Email_AddressFieldName = "From Email Address";
+
+        public static readonly ID Analyst_Email_IDFieldId = new ID("1238c26e-a5d4-46d6-a716-0c2551442d42");
+        public const string Analyst_Email_IDFieldName = "Analyst Email ID";
+
+        public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
+        public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
 
         //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
 

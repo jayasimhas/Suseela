@@ -24,7 +24,7 @@ var EmailRssController = function ($scope, $location) {
             }
         }
 				// strip leading &
-        if (nUrl.startsWith('&')) {
+        if (nUrl.charAt(0) === '&') {
 	        nUrl = nUrl.substr(1);
         }
         $scope.currentLocation = "?" + nUrl;

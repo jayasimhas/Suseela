@@ -23,34 +23,44 @@
 
 			for(var key in Heading) {
 				if(key.split("|").length === 1) {
-					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
-										"<div class='text-center'>&nbsp;</div>"+
-										"<div class='text-center'>"+ key.split("|")[0] +"</div>"+
+					if(key !== 'Route'){
+					HeadingStr += "<th class='headerPad rigalign'>"+
+										"<div>&nbsp;</div>"+
+										"<div>"+ key.split("|")[0] +"</div>"+
 									"</th>";
+					}
+					else{
+						HeadingStr += "<th class='headerPad'>"+
+										"<div>&nbsp;</div>"+
+										"<div>"+ key.split("|")[0] +"</div>"+
+									"</th>";
+					}
 				} else {
-					HeadingStr += "<th class='pad-full-10' colspan='1'>"+
-										"<div class='text-center'>"+ key.split("|")[0] +"</div>"+
-										"<div class='text-center'>"+ key.split("|")[1] +"</div>"+
+					HeadingStr += "<th class='headerPad rigalign'>"+
+										"<div>"+ key.split("|")[0] +"</div>"+
+										"<div>"+ key.split("|")[1] +"</div>"+
 									"</th>";
 				}
 			}
-
+			var rowIdx = 0, cls = '';
 			for(var i = 0; i < Data.length; i++) {
+				rowIdx++;
+				cls = (rowIdx % 2 === 0) ? 'oddCls' : '';
 				var EachValue = Data[i],
 					Td = "",
-					align = "right";
-				for(var key in EachValue) {
-					if(key == "Route") {
-						align = "left";
+					align = "";
+				for(var key in EachValue) { 
+					if(key !== "Route") {
+						align = "rigalign";
 					}
-					Td += '<td colspan="1" class="pad-full-10" align="' + align + '">' + EachValue[key] + '</td>';
+					Td += '<td colspan="1" class="borderpad '+align+'">' + EachValue[key] + '</td>';
 				}
-				TbodyStr += '<tr>' +Td + '</tr>';
+				TbodyStr += '<tr class="'+cls+'">' +Td + '</tr>';
 			}
 
 			var Table = '<table class="table">'+
 							'<thead class="table_head">'+
-								'<tr>'+
+								'<tr class="blueBg">'+
 									HeadingStr+
 								'</tr>'+
 							'</thead>'+
@@ -88,7 +98,7 @@
 			var ArticleStr = "";
 			for(var i = 0; i < Data.length; i++) {
 				// ArticleStr += Data[i][]
-				ArticleStr += '<div class="R16">' + Data[i][key] + '</div>';
+				ArticleStr += '<div class="R16 borderpad rigalign">' + Data[i][key] + '</div>';
 			}
 			return ArticleStr;
 		},
@@ -111,6 +121,9 @@
                },
                480:{
                 items:1
+               },
+               1024:{
+                items:2
                }
                }
             });
@@ -124,21 +137,19 @@
 			for(var key in Heading) {
 				if(key != 'Route') {
 					CarouselPart += '<div class="article">'+
-										'<div class="year_heading">'+
+										'<div class="title headerPad rigalign">'+
 											key +
 										'</div>'+
 										self.getData(key, Data)+
 									'</div>';
 				} else {
-					FixedPart += '<div class="year_heading">'+ key +'</div>'+
+					FixedPart += '<div class="title">'+ key +'</div>'+
 									self.getFixedData(key, Data);
 				}
 			}
 
-			var Carousel = '<div class="table_head pad-10 clearfix">'+
-								'<span>&nbsp;</span>'+
-							'</div>'+
-							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4;">'+
+			var Carousel = '<div class="table_head pad-10 clearfix"></div>'+
+							'<div class="clearfix" style="margin-bottom: 1rem; border:1px solid #d1d3d4; border-top: none;">'+
 								'<div class="states_heading">'+
 									FixedPart+
 								'</div>'+
@@ -161,7 +172,7 @@
 		},
 		init: function(data, id) {
 			var self = this;
-			if($(window).width() > 668){
+			if($(window).width() > 1024){
 				self.RenderTable(data, id);
 			}
 			else{

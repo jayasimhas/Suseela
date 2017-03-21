@@ -30,7 +30,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                     InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId), this.GetType().Name);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                     var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId)).Result;
@@ -57,7 +57,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                     InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId), this.GetType().Name);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                     var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId)).Result;
@@ -89,7 +89,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 {
                     using (var client = new HttpClient())
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Entitlement_Api_Url?.Url);
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                         InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query), this.GetType().Name);
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                         var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query)).Result;

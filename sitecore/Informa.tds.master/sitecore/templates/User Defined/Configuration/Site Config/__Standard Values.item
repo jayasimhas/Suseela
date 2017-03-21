@@ -12,7 +12,7 @@ templatekey: Site Config
 ----version----
 language: en
 version: 1
-revision: df43824d-64c0-4bef-b65c-f6020935499b
+revision: af9d83e8-6158-402d-b9cd-1eb59aa7322a
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -21,6 +21,13 @@ key: supporting documents folder
 content-length: 38
 
 {65E202D4-4C81-4BC8-910C-7E6CBD253B95}
+----field----
+field: {EBE9A930-123D-4FD8-9A28-4662C389893B}
+name: Footer Logo
+key: footer logo
+content-length: 176
+
+<a href="https://www.facebook.com/" target="_blank"><img height="240" alt="Pharma Intelligence | Informa" width="600" src="-/media/66f2e52b17884a58b4ed40664e41590f.ashx" /></a>
 ----field----
 field: {A9AEEF7B-7865-48A8-A024-D79EBC7C2C79}
 name: Copyright Text
@@ -35,6 +42,21 @@ key: workflow
 content-length: 38
 
 {926E6200-EB76-4AD4-8614-691D002573AC}
+----field----
+field: {1238C26E-A5D4-46D6-A716-0C2551442D42}
+name: Analyst Email ID
+key: analyst email id
+content-length: 33
+
+asktheanalyst@pharmamedtechbi.com
+----field----
+field: {611BF106-6D21-4574-A0BF-E3C27DF71C9D}
+name: Ask The Analyst
+key: ask the analyst
+content-length: 173
+
+<strong>Please Note:</strong> You can also Click below Link for Ask the Analyst<br />
+<a href="~/link.aspx?_id=41DC3D7371BC47EDA34E1512B9FE255A&amp;_z=z">Ask The Analyst</a>
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -62,14 +84,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-df43824d-64c0-4bef-b65c-f6020935499b
+af9d83e8-6158-402d-b9cd-1eb59aa7322a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160816T083524Z
+20170224T192744Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

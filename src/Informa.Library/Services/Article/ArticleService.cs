@@ -289,12 +289,9 @@ namespace Informa.Library.Services.Article
 
         private ISponsored_Content BuildSponsoredContent(IArticle article)
         {
-            if (article != null && article.Taxonomies.Any())
+            if (article != null)
             {
-                if (article.Taxonomies.Any(n => n.Item_Name == "Sponsored"))
-                {
-                    return article.SponsoredBy;
-                }
+                return article.SponsoredBy;
             }
             return null;
         }

@@ -1,4 +1,23 @@
 ﻿@model FeaturedArticleViewModel
-<section class="article-preview topic-featured-article">
+@{
+    var sponsoredclass = Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;
+}
+<section class="article-preview topic-featured-article @sponsoredclass">
+    @if (Model.sponsoredContent != null)
+    {
+        <div class="article-metadata">
+            <ul>
+                <li>
+                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
+                </li>
+                <li>
+                    @if (Model.sponsoredContent.Sponsor_Logo != null)
+                {
+                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                    }
+                </li>
+            </ul>
+        </div>
+    }
     @{ Html.RenderPartial("Components/_ArticleListContent", Model); }
 </section>

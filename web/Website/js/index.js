@@ -145,7 +145,7 @@ var renderIframeComponents = function() {
             if (mobileEmbed.html() == '')
                 mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
-            desktopEmbed.hide();
+            mobileEmbed.hide();
         }
 
         if (showDesktop) {
@@ -153,7 +153,7 @@ var renderIframeComponents = function() {
             if (desktopEmbed.html() == '')
                 desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
         } else {
-            mobileEmbed.hide();
+            desktopEmbed.hide();
         }
 
         var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
@@ -667,9 +667,26 @@ $(document).ready(function(){
             var sep = forwardingURL.indexOf('?') < 0 ? '?' : '&';
             var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
+
             var loginRegisterMethod = "global_registration";
             if($(form).hasClass("user-calltoaction"))
                 loginRegisterMethod = "login_register_component";
+
+	var askTheAnalystController = new FormController({
+		observe: '.form-ask-the-analyst',
+		successCallback: function(form) {
+			$('.js-ask-the-analyst-form-wrapper').hide();
+			$('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
+			$('.js-ask-the-analyst-success').show();
+
+			// Reset the Ask The Analyst pop-out to its default state when closed
+			$('.js-dismiss-ask-the-analyst').one('click', function() {
+				$('.js-ask-the-analyst-form-wrapper').show();
+				$('.js-ask-the-analyst-success').hide();
+			});
+		}
+	});
+
 
             analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
 
@@ -1012,23 +1029,31 @@ $(document).ready(function(){
             });
         }
     });
-
-    // Adds analytics for article page clicks
+	
+	 // Adds analytics for article page clicks
     $('.root').find('a').each(function(index, item) {
 
         $(this).addClass('click-utag');
 
         var linkString;
 
+
         if(this.href.indexOf(location.hostname) == -1) {
             linkString = 'External:' + this.href;
         } else {
             linkString = this.href;
         }
-
-        if ($(this).data('info') == undefined) {
-            $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
-        }
+		
+		//if($(window).width() >= 1024){
+		//	$('.main-menu').addClass('is-active');
+		//	$('.menu-toggler').addClass('is-active');
+		//	$('.header__wrapper .menu-toggler').addClass('is-sticky');
+		//	$('body').addClass('is-frozen');
+		//}
+		
+		if ($(this).data('info') == undefined) {
+			$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+		} 
     });
 
     $('.general-header__navigation').each(function() {
@@ -1301,7 +1326,36 @@ $(document).ready(function(){
     if($('.page-account-contact').length > 0) {
         var stateValue = $('#hiddenState').val();
         if(stateValue.length > 0) {
-            $('#ddlShippingCountry').trigger('change');
+            var Value = $('#ddlShippingCountry').find('.selectivity-single-selected-item').attr('data-item-id');
+
+            $.ajax({
+                url: '/Account/api/ContactInfoApi/GetStates/',
+                data: { 'Country': Value },
+                type: 'POST',
+                success: function success(Data) {
+                    $('#ddlShippingState').remove();
+                    $('label[for="ShipState"]').parent().append('<select name="ShipState" id="ddlShippingState"></select>');
+
+                    var stateValue = $('#hiddenState').val();
+
+                    for (var key in Data) {
+                        if (stateValue === Data[key].ID) {
+                            $('#ddlShippingState').append('<option selected value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                        } else {
+                            $('#ddlShippingState').append('<option value="' + Data[key].ID + '">' + Data[key].Name + '</option>');
+                        }
+                    }
+                    $('#ddlShippingState').selectivity({
+                        showSearchInputInDropdown: false
+                    });
+                    $(".selectivity-input .selectivity-single-select").each(function () {
+                        $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+                    });
+                },
+                error: function error(err) {
+                    console.log('Data is not there: ' + JSON.stringify(err));
+                }
+            });
         }
     }
     $(document).on('change', '#ddlShippingCountry', function () {

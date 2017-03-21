@@ -60,7 +60,7 @@ namespace Informa.Web.ViewModels
             LocalLinks = lstLocalLinks;
         }
 
-        public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
+        public string FooterLogoWithCopyright => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo_With_Copyright;
 
         public string FooterRssLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.RSS_Logo?.Src;
         public Link FooterRssLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.RSS_Link;
