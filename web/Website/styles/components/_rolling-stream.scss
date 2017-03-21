@@ -94,6 +94,9 @@
 				font-size: 20px;
 				
 			}
+			@include breakpoint('small') {
+				padding-right: 12px;
+			}
 			span {
 				font-size: 1rem;
 				line-height: 1.18rem;
