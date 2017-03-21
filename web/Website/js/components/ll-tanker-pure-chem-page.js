@@ -189,12 +189,16 @@
 			return Carousel;
 		},
 		setColHeight: function(parentId){
-			parentId.find('.states_heading .R16').each(function(idx){
-				var $this = $(this), colHeight = $this.height();
-				$('.article').each(function() {
-					$($(this).find('.R16')[idx]).css('height', colHeight);
+			for (var i = 0; i < parentId.find('.states_heading').length; i++) {
+				var stateObj = parentId.find('.states_heading')[i];
+				$('.R16', stateObj).each(function (idx) {
+					var $this = $(this),
+						colHeight = $this.height();
+					$('.owl-stage-outer:eq(' + i + ')', parentId).find('.article').each(function () {
+						$($(this).find('.R16')[idx]).css('height', colHeight);
+					});
 				});
-			});
+			}
 		},
 		init: function(data, id) {
 			var self = this, dataObj = data[0], idx = 0;

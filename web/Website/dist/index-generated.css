@@ -3065,6 +3065,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
           font-weight: 700;
           font-size: 1.875em;
           margin-bottom: 0.3em; }
+          @media (max-width: 480px) {
+            .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+              font-size: 24px;
+              font-size: 1.5rem; } }
           .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .mobile-table-exit, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .mobile-table-exit {
             color: #231f20; }
       .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
@@ -3074,6 +3078,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         font-size: 1.125em;
         line-height: 30px;
         color: #58595b; }
+        @media (max-width: 480px) {
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 25px; } }
 
 .job_listing .pagination {
   padding: 1.75em 0;
@@ -3099,11 +3108,20 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     .job_listing .pagination span a:hover, .job_listing .pagination span .pop-out__reset-password:hover, .job_listing .pagination span .sortable-table__list-toggler:hover, .job_listing .pagination span .mobile-table-exit:hover {
       text-decoration: none; }
     .job_listing .pagination span a.active, .job_listing .pagination span .active.pop-out__reset-password, .job_listing .pagination span .active.sortable-table__list-toggler, .job_listing .pagination span .active.mobile-table-exit {
-      background: #c6c2c2; }
+      background: #c6c2c2;
+      cursor: text; }
   .job_listing .pagination a.prev, .job_listing .pagination .prev.pop-out__reset-password, .job_listing .pagination .prev.sortable-table__list-toggler, .job_listing .pagination .prev.mobile-table-exit {
     background-position: 0 0; }
+    .job_listing .pagination a.prev.active, .job_listing .pagination .prev.active.pop-out__reset-password, .job_listing .pagination .prev.active.sortable-table__list-toggler, .job_listing .pagination .prev.active.mobile-table-exit {
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      cursor: text; }
   .job_listing .pagination a.next, .job_listing .pagination .next.pop-out__reset-password, .job_listing .pagination .next.sortable-table__list-toggler, .job_listing .pagination .next.mobile-table-exit {
     background-position: -41px 0; }
+    .job_listing .pagination a.next.active, .job_listing .pagination .next.active.pop-out__reset-password, .job_listing .pagination .next.active.sortable-table__list-toggler, .job_listing .pagination .next.active.mobile-table-exit {
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      cursor: text; }
   .job_listing .pagination .nums {
     text-align: center; }
     .job_listing .pagination .nums li {
@@ -3141,6 +3159,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-weight: 400;
   line-height: 30px;
   font-size: 1.125em; }
+  @media (max-width: 480px) {
+    .job_detail .job_description {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 25px; } }
   .job_detail .job_description ul {
     padding-left: 20px; }
     .job_detail .job_description ul li {
@@ -6082,6 +6105,23 @@ main .action-flags-bar, main .banner--highlights {
     color: #F5821F;
     background: #F5821F; } }
 
+.personalisationhome .article-preview--small.topics {
+  padding: 0px; }
+  .personalisationhome .article-preview--small.topics .article-metadata {
+    margin: 0px; }
+    .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont {
+      border-bottom: 1px solid #d1d3d4;
+      padding: 10px 20px;
+      height: 150px; }
+      .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont:last-child {
+        border-bottom: none; }
+    .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont {
+      border-bottom: 1px solid #d1d3d4;
+      padding: 10px 20px;
+      height: 150px; }
+      .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont:last-child {
+        border-bottom: none; }
+
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
     font-size: 24px;
@@ -6398,6 +6438,11 @@ main .action-flags-bar, main .banner--highlights {
   overflow: hidden; }
   .personalisationhome .article-preview--small .article-preview_rheadline:last-child {
     border-bottom: none; }
+  .personalisationhome .article-preview--small .article-preview_rheadline.sponsored_cont {
+    padding-left: 20px;
+    padding-left: 1.25rem;
+    padding-right: 20px;
+    padding-right: 1.25rem; }
   .personalisationhome .article-preview--small .article-preview_rheadline.nobord {
     border-bottom: none; }
     @media (max-width: 480px) {
@@ -9067,8 +9112,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9954,6 +9999,9 @@ div#feedbacklite.fbl_r {
     @media (max-width: 480px) {
       #market-data .owl-wrapper {
         width: 50%; } }
+    @media only screen and (max-width: 680px) {
+      #market-data .owl-wrapper {
+        width: 45%; } }
   #market-data .owl-dotsNav {
     height: 0px; }
     @media only screen and (max-width: 1024px) {
@@ -9997,6 +10045,9 @@ div#feedbacklite.fbl_r {
       @media only screen and (min-width: 481px) and (max-width: 680px) {
         #market-data .carousel-div .states_heading {
           width: 40%; } }
+      @media only screen and (max-width: 680px) {
+        #market-data .carousel-div .states_heading {
+          width: 55%; } }
       #market-data .carousel-div .states_heading .title {
         background-color: #1191d1;
         color: #ffffff;
@@ -11097,6 +11148,11 @@ div#feedbacklite.fbl_r {
   .sponsored_cont.contentRecomm-article {
     padding: 16px;
     padding: 1rem; }
+  .sponsored_cont.section-article {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 24px !important;
+    margin-bottom: 1.5rem !important; }
   .sponsored_cont.topic-featured-article {
     border-top: none; }
   .sponsored_cont.article-executive-summary-bottom {
@@ -13357,7 +13413,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

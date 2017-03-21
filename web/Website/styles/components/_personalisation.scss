@@ -12,6 +12,29 @@
 }
 
 .personalisationhome{
+	.article-preview--small.topics{
+		padding: 0px; 
+		.article-metadata{
+			margin: 0px;
+			&.sponsored_cont{
+				border-bottom: 1px solid #d1d3d4;
+				padding: 10px 20px;
+				height: 150px;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+			&.nosponsored_cont{
+				border-bottom: 1px solid #d1d3d4;
+				padding: 10px 20px;
+				height: 150px;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+		}
+		
+	}
 	@include breakpoint('large') {
 		.topic-featured-article__headline{
 			font-size: 1.5rem;
@@ -293,6 +316,10 @@
 			overflow: hidden;
 			&:last-child {
 				border-bottom: none;
+			}
+			&.sponsored_cont{
+				padding-left: 1.25rem;
+				padding-right: 1.25rem;
 			}
 			&.nobord{
 				border-bottom: none;

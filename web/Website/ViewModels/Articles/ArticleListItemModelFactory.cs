@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc;
@@ -14,7 +13,6 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.StringUtils;
 using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -116,6 +114,13 @@ namespace Informa.Web.ViewModels.Articles
             model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
             model.ListablePublication = ArticleService.GetArticlePublicationName(article);
             model.ListableTopics = ArticleService.GetPersonalizedLinkableTaxonomies(article);
+            var sponsoreContent = ArticleService.GetSponsoredContent(article);
+            if (sponsoreContent != null)
+            {
+                model.isSonsoredBy = sponsoreContent != null ? true : false;
+                model.SponsoredByTitle = sponsoreContent.Title;
+                model.SponsoredByLogo = sponsoreContent.Sponsor_Logo?.Src;
+            }
             model.ListableType = article.Media_Type?.Media_Type_Icon?.Src;//ArticleService.GetMediaTypeIconData(article)?.MediaType;
             model.LinkableText = article.Content_Type?.Item_Name;
             model.LinkableUrl = article._Url;

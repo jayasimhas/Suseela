@@ -30,7 +30,7 @@ window.loadPaginationNums = function(){
 	var showPageLinks = Math.ceil(window.paginationdefaults.totalCategories / window.paginationdefaults.categoryLimit),
 		linkStr = '';
 		for(var i=1; i<=showPageLinks; i++){
-			linkStr += '<a href="javascript:void(0);">'+i+'</a>';
+			linkStr += '<a href="#">'+i+'</a>';
 		} 
 		if(showPageLinks > 1){
 			$('.pagination span').html(linkStr);
@@ -44,51 +44,65 @@ window.loadPaginationNums = function(){
 }
 
 $(function(){
-	$('.pagination').on('click', 'a', function(){
+	$('.pagination').on('click', 'a', function(e){
 		var $this = $(this), $val = $this.html();
 		if($val.toLowerCase().indexOf('prev') >= 0){
 			var idx = +$('.pagination span a.active').html() - 1, toVal = idx * window.paginationdefaults.categoryLimit, fromVal = toVal - window.paginationdefaults.categoryLimit;
 			
-			if($('.pagination span a:first').hasClass('active')) return;
+			if($('.pagination span a:first').hasClass('active')) return false;
 			paginationCur(fromVal, toVal);
 			
 			var curidx = $('.pagination span a.active').index(), pagesLen = $('.pagination li > span a').length-1;
 			$('.pagination span a').eq(curidx).removeClass('active');
 			$('.pagination span a').eq(curidx).prev('a').addClass('active');
-			$('.pagination a:last').attr('href','javascript:void(0);');
-			if(curidx == 0){
-				$('.pagination a:eq(0)').removeAttr('href');
+			$('.pagination a:last').attr('href','#');
+			
+			$('.pagination .next').removeClass('active');
+			
+			if($('.pagination span a:first').hasClass('active')){
+				$('.pagination .prev').addClass('active');
 			}
 		}
 		else if($val.toLowerCase().indexOf('next') >= 0){
 			var idx = +$('.pagination span a.active').html() + 1, toVal = idx * window.paginationdefaults.categoryLimit, fromVal = toVal - window.paginationdefaults.categoryLimit;
 			
-			if($('.pagination span a:last').hasClass('active')) return;
+			if($('.pagination span a:last').hasClass('active')) return false;
 			paginationCur(fromVal, toVal);
 			
 			var curidx = $('.pagination span a.active').index(), pagesLen = $('.pagination li > span a').length-1;
 			$('.pagination span a').eq(curidx).removeClass('active');
 			$('.pagination span a').eq(curidx).next('a').addClass('active');
-			$('.pagination a:first').attr('href','javascript:void(0);');
-			if(curidx == pagesLen){
-				$('.pagination a:last').removeAttr('href');
-			} 
+			$('.pagination a:first').attr('href','#');  
+			
+			$('.pagination .prev').removeClass('active');
+			
+			if($('.pagination span a:last').hasClass('active')){
+				$('.pagination .next').addClass('active');
+			}
 		}
 		else{
 			if(!$this.hasClass('active')){
-			$('.pagination span a').removeClass('active').attr('href','javascript:void(0);');
-			$this.addClass('active').removeAttr('href');
-			toVal = window.paginationdefaults.categoryLimit * $val;
-			fromVal = toVal - window.paginationdefaults.categoryLimit;
-			paginationCur(fromVal, toVal);
-			$('.pagination a:last').attr('href','javascript:void(0);');
-			$('.pagination a:first').attr('href','javascript:void(0);');
-			if($('.pagination span a.active').next('a').length == 0){
-				$('.pagination a:last').removeAttr('href');
-			} 
-			if($('.pagination span a.active').prev('a').length == 0){
-				$('.pagination a:first').removeAttr('href');
+				$('.pagination span a').removeClass('active').attr('href','#');
+				$this.addClass('active');
+				toVal = window.paginationdefaults.categoryLimit * $val;
+				fromVal = toVal - window.paginationdefaults.categoryLimit;
+				paginationCur(fromVal, toVal);
+				$('.pagination a:last').attr('href','#');
+				$('.pagination a:first').attr('href','#');
+				
+				if ($('.pagination span a:first').hasClass('active')) {
+					$('.pagination .prev').addClass('active');
+					$('.pagination .next').removeClass('active');
+				} else if ($('.pagination span a:last').hasClass('active')) {
+					$('.pagination .prev').removeClass('active');
+					$('.pagination .next').addClass('active');
+				} else {
+					$('.pagination .prev').removeClass('active');
+					$('.pagination .next').removeClass('active');
+				}
 			}
+			else{
+				e.preventDefault();
 			}
 		}
 	}); 

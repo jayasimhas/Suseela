@@ -1,24 +1,24 @@
 function StoryTitle(editor,value,selectedtext,selectedtag)
 {
 	 var defaultBlockSets = [
-              ["article-interview__question_new", "div"],
+              ["article-interview__question", "div"],
               ["bold", "strong"],
-              ["article-paragraph_new", "p"],
-              ["nomargin_new", "p"],
-              ["article-interview__answer_new", "div"],
-              ["article-pullquote_new", "blockquote"],
-              ["article-list--ul_new", "ul"],
-              ["article-list--ol_new", "ol"],
-              ["quick-facts__header_new", "h3"],
-			  ["quick-facts__list--ul_new", "ul"],
-			  ["quick-facts__list--ol_new", "ol"],
-			  ["quick-facts__source_new", "p"],
+              ["article-paragraph", "p"],
+              ["nomargin", "p"],
+              ["article-interview__answer", "div"],
+              ["article-pullquote", "blockquote"],
+              ["article-list--ul", "ul"],
+              ["article-list--ol", "ol"],
+              ["quick-facts__header", "h3"],
+			  ["quick-facts__list--ul", "ul"],
+			  ["quick-facts__list--ol", "ol"],
+			  ["quick-facts__source", "p"],
 			  ["quick-facts", "p"],
-			  ["article-exhibit__header_new", "p"],
-			  ["article-exhibit__title_new", "p"],
-			  ["article-exhibit__caption_new", "p"],  
-			  ["article-exhibit__source_new", "p"],
-			  ["companyname_new","p"],
+			  ["article-exhibit__header", "p"],
+			  ["article-exhibit__title", "p"],
+			  ["article-exhibit__caption", "p"],  
+			  ["article-exhibit__source", "p"],
+			  ["companyname","p"],
 			  ["header colored","td"],
 			  ["tablesubhead","td"],
 			  ["subheadalt","td"],
@@ -70,7 +70,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		  contentElement.innerHTML = selectedtext;
 		  editor.pasteHtml(contentElement.outerHTML);
 	  }
-	  else if(value=="article-list--ul_new" || value=="article-list--ol_new")
+	  else if(value=="article-list--ul" || value=="article-list--ol")
 	  {
 		  contentElement.setAttribute('class',block[0]);
 		  var liTag=document.createElement("li");
@@ -78,12 +78,12 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		  contentElement.append(liTag);
 		  editor.pasteHtml(contentElement.outerHTML);
 	  }	
-	else if(value=="quick-facts__header_new" || value=="quick-facts__source_new")
+	else if(value=="quick-facts__header" || value=="quick-facts__source")
 	{	
 		contentElement.setAttribute('class',block[0]);
 		contentElement.innerHTML=selectedtext;
 		 var qfdiv=document.createElement("div");
-		 qfdiv.setAttribute('class','quick-facts_new');
+		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
 		  editor.pasteHtml(qfdiv.outerHTML);
 	}
@@ -91,14 +91,14 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		{
 			contentElement.innerHTML=selectedtext;
 		 var qfdiv=document.createElement("div");
-		 qfdiv.setAttribute('class','quick-facts_new');
+		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
 		  editor.pasteHtml(qfdiv.outerHTML);
 		}
-		else if(value=="quick-facts__list--ul_new" || value=="quick-facts__list--ol_new")
+		else if(value=="quick-facts__list--ul" || value=="quick-facts__list--ol")
 		{
 			 var qfdiv=document.createElement("div");
-		 qfdiv.setAttribute('class','quick-facts_new');
+		 qfdiv.setAttribute('class','quick-facts');
 			 contentElement.setAttribute('class',block[0]);
 		  var liTag=document.createElement("li");
 		  liTag.innerHTML=selectedtext;
@@ -106,7 +106,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		  qfdiv.append(contentElement);
 		  editor.pasteHtml(qfdiv.outerHTML);
 		}		
-		else if(value=="article-exhibit__header_new" || value=="article-exhibit__title_new" || value=="article-exhibit__caption_new"|| value=="article-exhibit__source_new")
+		else if(value=="article-exhibit__header" || value=="article-exhibit__title" || value=="article-exhibit__caption"|| value=="article-exhibit__source")
 		{
 			var sec=document.createElement("section");
 			sec.setAttribute('class','article-exhibit');
@@ -119,22 +119,22 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		{
 			if(selectedtag.localName=="td"|| selectedtag.localName=="tr")
 			{
-		       selectedtag.setAttribute('class','headercolored_new');		      
+		       selectedtag.setAttribute('class','header colored');		      
 			}
 			else
 				alert('Please select only table cell');
 		}
 		else if(value=="tablesubhead")
 		{
-			selectedtag.setAttribute('class','tablesubhead');					
+			selectedtag.setAttribute('class','highlight');					
 		}
 		else if(value=="subheadalt")
 		{
-			selectedtag.setAttribute('class','subheadalternate');			
+			selectedtag.setAttribute('class','cell colored');			
 		}
 		else if(value=="tablestorytextalt")
 		{
-			selectedtag.setAttribute('class','tablestorytextalternate');			
+			selectedtag.setAttribute('class','cell coloredAlt');			
 		}
 	  else
 	  {

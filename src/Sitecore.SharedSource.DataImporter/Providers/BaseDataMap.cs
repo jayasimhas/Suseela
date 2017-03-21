@@ -969,8 +969,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                         TaxonomyStr = TaxonomyStr + taxonomy + "|";
                                     }
 
-                                    f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
-                                    ListToGuid.TaxonomyList.Clear();
+                                    if (!string.IsNullOrEmpty(TaxonomyStr))
+                                    {
+
+                                        f.Value = TaxonomyStr.Substring(0, TaxonomyStr.Length - 1);
+                                        ListToGuid.TaxonomyList.Clear();
+                                    }
                                 }
 
                             }
