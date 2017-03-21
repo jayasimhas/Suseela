@@ -2277,7 +2277,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             string regionLog = string.Empty;
-            Dictionary<string, string> d = GetMapping();
+//            Dictionary<string, string> d = GetMapping();
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
@@ -3825,7 +3825,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
-            Dictionary<string, string> d = GetMapping();
+         //   Dictionary<string, string> d = GetMapping();
             string Taxonomylog = string.Empty;
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
@@ -4410,7 +4410,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
-            Dictionary<string, string> d = GetMapping();
+         //   Dictionary<string, string> d = GetMapping();
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
