@@ -20,6 +20,5 @@
         string NoticeText { get; }
         string ArticleTitle { get; }
 				string ArticleNumber { get; }
-				string CaptchaSiteKey { get; }
 	}
 }
