@@ -12,11 +12,14 @@
         align-self: center;
         border-right: 1px solid #ccc;
         flex: 0 0 auto;
-        margin-right: 0.75rem;
+        margin-right: 0.625rem;
         margin-left: 0;
-        padding-right: 0.75rem;
+        padding-right: 0.625rem;
 		position: relative;
-
+		&:nth-child(2){
+			max-width: 75px;
+			text-overflow: ellipsis;
+		}
         @include breakpoint('small') {
             max-width: 150px;
         }

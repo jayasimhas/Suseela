@@ -1326,6 +1326,10 @@ section: Alerts
 .agroBuyers h1 {
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
+  @media (max-width: 480px) {
+    .agroBuyers h1 {
+      font-size: 36px;
+      font-size: 2.25rem; } }
 
 .agroBuyers .sub-heading-text {
   font-family: "PT Serif", Georgia, serif;
@@ -1336,6 +1340,10 @@ section: Alerts
   margin-bottom: 1.625rem;
   font-size: 1.5em;
   line-height: 30px; }
+  @media (max-width: 480px) {
+    .agroBuyers .sub-heading-text {
+      font-size: 16px;
+      font-size: 1rem; } }
 
 .agroBuyers .buyers-guide-listing {
   width: 100%;
@@ -1367,7 +1375,7 @@ section: Alerts
             width: 100%;
             height: auto; } }
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
-          max-width: 360px;
+          max-width: 100%;
           max-height: 200px; }
           @media (max-width: 480px) {
             .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
@@ -1391,7 +1399,7 @@ section: Alerts
   .agroBuyers .buyers-guide-listing-link .buyers-guide-row {
     width: 100%; }
     .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
-      width: 45%;
+      width: 48%;
       float: left;
       margin-top: 12px;
       margin-top: 0.75rem;
@@ -1399,8 +1407,10 @@ section: Alerts
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide {
           width: 100%; } }
+      .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide:nth-child(even) {
+        margin-right: 0; }
       .agroBuyers .buyers-guide-listing-link .buyers-guide-row .buyers-guide .image {
-        width: 540px;
+        width: 100%;
         height: 300px;
         text-align: center;
         vertical-align: middle;
@@ -1448,7 +1458,7 @@ section: Alerts
   .agroBuyers .buyers-guide-listing-text .buyers-guide-row {
     width: 100%; }
     .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
-      width: 45%;
+      width: 48%;
       float: left;
       margin-top: 12px;
       margin-top: 0.75rem;
@@ -1461,7 +1471,10 @@ section: Alerts
       padding: 1.5rem 1.5rem 1rem; }
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide {
-          width: 100%; } }
+          width: 100%;
+          margin-bottom: 0; } }
+      .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide:nth-child(even) {
+        margin-right: 0; }
       .agroBuyers .buyers-guide-listing-text .buyers-guide-row .buyers-guide .text p {
         -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
@@ -2994,6 +3007,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 .job_listing h1 {
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
+  @media (max-width: 480px) {
+    .job_listing h1 {
+      font-size: 36px;
+      font-size: 2.25rem; } }
 
 .job_listing #page_navigation a, .job_listing #page_navigation .pop-out__reset-password, .job_listing #page_navigation .sortable-table__list-toggler, .job_listing #page_navigation .mobile-table-exit {
   margin: 0 10px; }
@@ -3011,6 +3028,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     margin-bottom: 0.75rem;
     font-size: 1.5em;
     line-height: 30px; }
+    @media (max-width: 480px) {
+      .job_listing .sub-heading-text span {
+        font-size: 16px;
+        font-size: 1rem; } }
 
 .job_listing .stacked_job_view {
   clear: both;
@@ -3069,8 +3090,6 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
             .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
               font-size: 24px;
               font-size: 1.5rem; } }
-          .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .mobile-table-exit, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .mobile-table-exit {
-            color: #231f20; }
       .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
         font-family: 'PT Serif';
         font-style: normal;
@@ -6111,14 +6130,15 @@ main .action-flags-bar, main .banner--highlights {
     margin: 0px; }
     .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont {
       border-bottom: 1px solid #d1d3d4;
-      padding: 10px 20px;
+      padding: 20px;
       height: 150px; }
       .personalisationhome .article-preview--small.topics .article-metadata.sponsored_cont:last-child {
         border-bottom: none; }
     .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont {
       border-bottom: 1px solid #d1d3d4;
       padding: 10px 20px;
-      height: 150px; }
+      height: 150px;
+      background: #f1f2f2; }
       .personalisationhome .article-preview--small.topics .article-metadata.nosponsored_cont:last-child {
         border-bottom: none; }
 
@@ -6409,17 +6429,17 @@ main .action-flags-bar, main .banner--highlights {
   margin: 18px 0 0;
   margin: 1.125rem 0 0; }
 
-.personalisationhome .article-preview--small.topics {
-  background: #f1f2f2; }
-  .personalisationhome .article-preview--small.topics:after {
-    height: 0px;
-    height: 0rem; }
-  .personalisationhome .article-preview--small.topics h6, .personalisationhome .article-preview--small.topics .article-tags-bar__label, .personalisationhome .article-preview--small.topics .article-topics__section-header {
-    margin-bottom: 10px;
-    margin-bottom: 0.625rem; }
-  @media (max-width: 480px) {
-    .personalisationhome .article-preview--small.topics {
-      height: auto; } }
+.personalisationhome .article-preview--small.topics:after {
+  height: 0px;
+  height: 0rem; }
+
+.personalisationhome .article-preview--small.topics h6, .personalisationhome .article-preview--small.topics .article-tags-bar__label, .personalisationhome .article-preview--small.topics .article-topics__section-header {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+
+@media (max-width: 480px) {
+  .personalisationhome .article-preview--small.topics {
+    height: auto; } }
 
 .personalisationhome .article-preview--small .article-preview_rheadline {
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -6431,6 +6451,7 @@ main .action-flags-bar, main .banner--highlights {
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-top: 10px;
   line-height: 34px;
   line-height: 2.125rem;
   height: 120px;
@@ -6451,9 +6472,12 @@ main .action-flags-bar, main .banner--highlights {
         margin-bottom: -0.625rem;
         padding: 0px; } }
   .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
-    height: 100px;
+    height: 70px;
     overflow: hidden;
-    display: block; }
+    display: block;
+    color: #000; }
+    .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+      color: #be1e2d; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small .article-preview_rheadline {
       height: auto; } }
@@ -6793,17 +6817,32 @@ main .action-flags-bar, main .banner--highlights {
 .gridView .gridViewCont {
   display: block; }
 
+.personalisationhome .layout2 .article-preview--small.topics .article-metadata.sponsored_cont {
+  height: 153px; }
+
+.personalisationhome .layout2 .article-preview--small.topics .article-metadata.nosponsored_cont {
+  height: 153px; }
+
 @media screen and (min-width: 768px) {
   .theme-lloydslist .latestSubject .fllatestSub {
     background-color: #1191D1; } }
+
+.theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-lloydslist .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #1191D1; }
 
 @media screen and (min-width: 768px) {
   .theme-insurance-day .latestSubject .fllatestSub {
     background-color: #DE4361; } }
 
+.theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-insurance-day .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #DE4361; }
+
 @media screen and (min-width: 768px) {
   .theme-commodities .latestSubject .fllatestSub {
     background-color: #9E310D; } }
+
+.theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .theme-commodities .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+  color: #9E310D; }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
@@ -9112,8 +9151,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -12186,12 +12225,15 @@ An interview (questions and answers) added via the Word plugin.
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
-    margin-right: 12px;
-    margin-right: 0.75rem;
+    margin-right: 10px;
+    margin-right: 0.625rem;
     margin-left: 0;
-    padding-right: 12px;
-    padding-right: 0.75rem;
+    padding-right: 10px;
+    padding-right: 0.625rem;
     position: relative; }
+    .article-metadata li:nth-child(2) {
+      max-width: 75px;
+      text-overflow: ellipsis; }
     @media (max-width: 480px) {
       .article-metadata li {
         max-width: 150px; } }
@@ -13413,7 +13455,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

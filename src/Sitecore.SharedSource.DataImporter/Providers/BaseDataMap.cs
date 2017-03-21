@@ -980,12 +980,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             }
                             catch (Exception ex)
                             {
-                                if (d.NewItemField == "Featured Image 16 9")
-                                {
+                                
+                                    continue;
 
-                                    ListToGuid.DataLogger.Add("Featured Image (Y/N)", "N");
-
-                                }
+                                
                                 Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);
                             }
                         }
