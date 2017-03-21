@@ -67,7 +67,7 @@ namespace Informa.Web.ViewModels.DataTools
 
         public bool AllowCustomViews => GlassModel.Allow_Custom_Views;
 
-        public string Filter => GlassModel.Filter;
+        public string Filter => GetTableauFilters();
 
         private string GetTableauFilters()
         {
