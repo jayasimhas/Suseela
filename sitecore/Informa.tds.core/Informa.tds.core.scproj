@@ -20,7 +20,7 @@
     <AssemblyName>Informa.tds.core</AssemblyName>
     <Name>Informa.tds.core</Name>
     <RootNamespace>Informa.tds.core</RootNamespace>
-    <EnableCodeGeneration>True</EnableCodeGeneration>
+    <EnableCodeGeneration>False</EnableCodeGeneration>
     <ManageRoles>True</ManageRoles>
     <SitecoreDatabase>core</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
@@ -494,15 +494,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-  </ItemGroup>
-  <ItemGroup>
-    <CodeGenTemplate Include="Code Generation Templates\generalextensions.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\glassv3item.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\inflector.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\itempaths.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\stringextensions.tt" />
   </ItemGroup>
   <ItemGroup>
     <BundledProject Include="..\Informa.tds.master\Informa.tds.master.scproj">

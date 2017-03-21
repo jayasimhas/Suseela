@@ -16,43 +16,43 @@ revision: 80f79388-50b6-4d6e-8029-bbca6742d207
 
 ----field----
 field: {7BF369B7-DB08-4279-AAFD-2B0CEFFBF595}
-name: Purchase Headline
-key: purchase headline
+name: Subscriber Headline
+key: subscriber headline
 content-length: 44
 
 Already a Strategic Transactions subscriber?
 ----field----
 field: {07DF7919-FEA4-41DC-8DDA-EAB30C7FB298}
-name: Purchase Subheading
-key: purchase subheading
+name: Subscriber Subheading
+key: subscriber subheading
 content-length: 65
 
 You have access to the full deal record through your subscription
 ----field----
 field: {60DD1F28-CABC-49A7-AC32-D1C97CCD4690}
-name: Purchase Button Text
-key: purchase button text
+name: Subscriber Button Text
+key: subscriber button text
 content-length: 34
 
 Purchase on strategic transactions
 ----field----
 field: {737D357D-5302-443F-9900-046CFD3E044D}
-name: Subscriber Headline
-key: subscriber headline
+name: Promotional Headline
+key: promotional headline
 content-length: 28
 
 Want to become a subscriber?
 ----field----
 field: {47DF5975-6551-45AE-A2A0-2128EA20931A}
-name: Subscriber SubHeadline
-key: subscriber subheadline
+name: Promotional Subheadline
+key: promotional subheadline
 content-length: 77
 
 Subscribers get more deal details, updates, deal financials and deal products
 ----field----
 field: {FF4FFBF3-E6EB-4D94-B7FF-B649B5F9D6AE}
-name: Subscribe Button Text
-key: subscribe button text
+name: Promotional Button Text
+key: promotional button text
 content-length: 10
 
 Learn more

@@ -19,15 +19,8 @@ content-length: 2291
 ----version----
 language: en
 version: 1
-revision: e332d07c-49a4-44ab-800a-3f4dda7f00ef
+revision: 61061da0-91eb-4324-8d21-6ef80fc87756
 
-----field----
-field: {DDD7DEEC-D65F-460E-8B7B-7D2C044259E3}
-name: Bottom Notation
-key: bottom notation
-content-length: 86
-
-For complete subscription history or further questions, please contact Client Services
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -41,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e332d07c-49a4-44ab-800a-3f4dda7f00ef
+61061da0-91eb-4324-8d21-6ef80fc87756
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160808T152108Z
+20160603T165729Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
