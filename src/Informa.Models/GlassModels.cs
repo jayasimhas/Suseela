@@ -30855,8 +30855,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         /// <para>Field Type: Checkbox</para>		
         /// <para>Field ID: 6c1eca87-8aaf-4ed1-81d1-40d8becffb68</para>
         /// </summary>
-        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Hide_Summary_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool HideSummaryText { get; set; }
+        [SitecoreField(IFeatured_Article_MultiColumn_Constants.Show_Short_DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool ShowShortDescription { get; set; }
 
     }
 
@@ -30901,8 +30901,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
         public static readonly ID Show_Pink_BackgroundFieldId = new ID("b5b10e37-01f8-47ed-9626-9059641a2042");
         public const string Show_Pink_BackgroundFieldName = "Show Pink Background";
 
-        public static readonly ID Hide_Summary_TextFieldId = new ID("6c1eca87-8aaf-4ed1-81d1-40d8becffb68");
-        public const string Hide_Summary_TextFieldName = "Hide Summary Text";
+        public static readonly ID Show_Short_DescriptionFieldId = new ID("5794823C-D347-4F07-A51E-AB6FD5F81E92");
+        public const string Show_Short_DescriptionFieldName = "Show Short Description";
 
     }
 
