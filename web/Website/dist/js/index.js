@@ -2587,6 +2587,8 @@ $(document).ready(function () {
 			}
 			removeFixedMenu();
 			$('.main__wrapper').removeClass('shift-main-content');
+			$('.main-menu').removeClass('shift-main-content');
+			$('body').removeClass('shift-content');
 		};
 
 		/* Toggle menu visibility */
@@ -3187,20 +3189,28 @@ $(document).ready(function () {
 	    // Name of our cookie
 	cookieValue = 'yes'; // Value of cookie
 
+	//Close navigation menu when cookie is set
 	function CloseNavigationMenu() {
 		$('.main-menu').removeClass('is-active');
+		$('.main-menu').removeClass('fixed');
 		$('.menu-toggler').removeClass('is-active');
 		$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 		$('body').removeClass('is-frozen');
-		$('.main__wrapper').removeClass('shift-main-content');
+		$('.main-menu').removeClass('shift-main-content');
+		$('.main__wrapper').css('margin-left', '0');
+		$('body').removeClass('shift-content');
 	}
 
+	//open navigation menu when no cookie is set
 	function OpenNavigationMenu() {
 		$('.main-menu').addClass('is-active');
+		$('.main-menu').addClass('fixed');
 		$('.menu-toggler').addClass('is-active');
 		$('.header__wrapper .menu-toggler').addClass('is-sticky');
 		$('body').addClass('is-frozen');
-		$('.main__wrapper').addClass('shift-main-content');
+		$('.main-menu.is-active').addClass('shift-main-content');
+		$('.main__wrapper').css('margin-left', '330px');
+		$('body').addClass('shift-content');
 	}
 
 	// Create cookie

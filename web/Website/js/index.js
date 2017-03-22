@@ -618,6 +618,8 @@ $(document).ready(function() {
 			}
 			removeFixedMenu();
 			$('.main__wrapper').removeClass('shift-main-content');
+			$('.main-menu').removeClass('shift-main-content');
+			$('body').removeClass('shift-content');
 		};
 
 		/* Toggle menu visibility */
