@@ -58,7 +58,6 @@ namespace Elsevier.Web.VWB
                 return;
             }
 
-            //FillPublicationsList();
             FillVerticals();
 
             if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
@@ -75,7 +74,7 @@ namespace Elsevier.Web.VWB
             if (ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
                 BuildExistingIssuesList();
         }
-        
+
         protected void Page_Init(object sender, EventArgs e)
         {
             _vwbQuery = new VwbQuery(Request);
@@ -162,7 +161,11 @@ namespace Elsevier.Web.VWB
                     ddlVerticals.DataBind();
                 }
             }
-
+            if (Session["VerticalValue"] != null && Session["VerticalName"] != null && !string.IsNullOrEmpty(Session["VerticalValue"].ToString()) && !string.IsNullOrEmpty(Session["VerticalName"].ToString()))
+            {
+                ddlVerticals.SelectedItem.Value = Session["VerticalValue"].ToString();
+                ddlVerticals.SelectedItem.Text = Session["VerticalName"].ToString();
+            }
             FillPublicationsList(ddlVerticals.SelectedItem.Value);
             hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
             BuildExistingIssuesList();
@@ -170,7 +173,7 @@ namespace Elsevier.Web.VWB
 
         private static int? GetMaxNumResults()
         {
-            int count = 250;
+            int count = 1000;
             try
             {
                 count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
@@ -242,6 +245,8 @@ namespace Elsevier.Web.VWB
 
         protected void RunReport(object sender, EventArgs e)
         {
+            Session["VerticalValue"] = ddlVerticals.SelectedItem.Value;
+            Session["VerticalName"] = ddlVerticals.SelectedItem.Text;
             if (!string.IsNullOrEmpty(txtArticleNumber.Text))
             {
                 List<string> PubPrefixes = GetPublicationsPrefixes();
@@ -251,6 +256,7 @@ namespace Elsevier.Web.VWB
                     _vwbQuery.ArticleNumber = txtArticleNumber.Text;
                     _vwbQuery.VerticalRoot = VerticalRoot;
                     BuildReport();
+                    lblArticleNumberError.Text = string.Empty;
                 }
                 else
                 {
@@ -307,17 +313,18 @@ namespace Elsevier.Web.VWB
         private List<string> GetPublicationsPrefixes()
         {
             List<string> pubPrefixes = new List<string>();
-            //Pharma
-            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.ScripIntelligence.Prefix"));
-            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.InVivo.Prefix"));
-            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.PinkSheet.Prefix"));
-            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.MedtechInsight.Prefix"));
-            pubPrefixes.Add(Settings.GetSetting("Content.Pharma.RoseSheet.Prefix"));
-            //Agri
-            pubPrefixes.Add(Settings.GetSetting("Content.Agri.Commodities.Prefix"));
-            //Maritime
-            pubPrefixes.Add(Settings.GetSetting("Content.Maritime.Lloydslist.Prefix"));
-
+            Item[] allVerticalRoots = Factory.GetDatabase("master").SelectItems("/sitecore/content/*[@@templateid='{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}']");
+            foreach (var VerticalRoot in allVerticalRoots)
+            {
+                Item[] allSiteRoots = Factory.GetDatabase("master").SelectItems("/sitecore/content/" + VerticalRoot.Name + "/*[@@templateid='{DD003F89-D57D-48CB-B428-FFB519AACA56}']");
+                foreach (var siteRoot in allSiteRoots)
+                {
+                    if (!string.IsNullOrEmpty(siteRoot.Fields["Publication Prefix"].Value))
+                    {
+                        pubPrefixes.Add(siteRoot.Fields["Publication Prefix"].Value);
+                    }
+                }
+            }
             return pubPrefixes;
         }
 

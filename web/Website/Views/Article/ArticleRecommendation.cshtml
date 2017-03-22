@@ -24,7 +24,7 @@
                                         <li>
                                             @if (article.SponsoredBy.Sponsor_Logo != null)
                                             {
-                                                <img src=@article.SponsoredBy.Sponsor_Logo.Src />
+                                                <a href="@article.SponsoredBy.Sponsor_Link"><img src=@article.SponsoredBy.Sponsor_Logo.Src /></a>
                                             }
                                         </li>
                                     </ul>

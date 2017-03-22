@@ -1,7 +1,7 @@
 ﻿@model Informa.Web.Areas.Article.Models.Article.LatestPublishedStories.LatestPublishedStory
 
 <div class="latestPublishedStoriesSection rolling-stream @(Model.IsDisableBackground?"white-bg":"")">
-    <h2>@Model.LatestStoriesComponentTitle</h2>
+    <h3>@Model.LatestStoriesComponentTitle</h3>
     @{
         var hideScroll = Model.News.Count() < 7 ? "hide-scroll" : "";
         var componentHeight = Model.News.Count() < 7 ? "auto" : "625px";

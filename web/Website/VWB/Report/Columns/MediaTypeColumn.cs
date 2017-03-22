@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
+using System.Linq;
 
 namespace Informa.Web.VWB.Report.Columns
 {
@@ -45,7 +46,7 @@ namespace Informa.Web.VWB.Report.Columns
                         dictMediaTypes.Add(result.MediaType, result.MediaType);
                 }
             }
-            return dictMediaTypes;
+            return dictMediaTypes.OrderBy(k => k.Key).ToDictionary(m => m.Key, n => n.Value);
         }
     }
 }

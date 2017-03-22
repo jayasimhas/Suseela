@@ -120,6 +120,7 @@ namespace Informa.Web.ViewModels.Articles
                 model.isSonsoredBy = sponsoreContent != null ? true : false;
                 model.SponsoredByTitle = sponsoreContent.Title;
                 model.SponsoredByLogo = sponsoreContent.Sponsor_Logo?.Src;
+                model.SponsoredLink = sponsoreContent.Sponsor_Link;
             }
             model.ListableType = article.Media_Type?.Media_Type_Icon?.Src;//ArticleService.GetMediaTypeIconData(article)?.MediaType;
             model.LinkableText = article.Content_Type?.Item_Name;
