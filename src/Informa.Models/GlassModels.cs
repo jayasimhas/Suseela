@@ -18601,6 +18601,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
         string Ask_The_Analyst { get; set; }
+        /// <summary>
+        /// The Active Checkbox field.
+        /// <para></para>
+        /// <para>Field Type: Check Box</para>		
+        /// <para>Field ID: B84EB872-DDB8-4840-94FB-C472008C6445</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Active_Ask_The_Analyst { get; set; }
         [SitecoreField(ISite_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Search_Index_Name { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_MyView_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -19871,6 +19880,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
         string Ask_The_Analyst { get; set; }
 
+        /// <summary>
+        /// The Active Checkbox field.
+        /// <para></para>
+        /// <para>Field Type: Check Box</para>		
+        /// <para>Field ID: B84EB872-DDB8-4840-94FB-C472008C6445</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Is_Active_Ask_The_Analyst_FieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Active_Ask_The_Analyst { get; set; }
+
         //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
 
         /// <summary>
@@ -20503,6 +20522,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
         public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
+
+        public static readonly ID Is_Active_Ask_The_Analyst_FieldId = new ID("B84EB872-DDB8-4840-94FB-C472008C6445");
+        public const string Is_Active_Ask_The_Analyst_FieldName = "Is Active Ask Analyst";
 
         public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
         public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
@@ -27086,6 +27108,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Ask_The_Analyst_FieldId = new ID("611bf106-6d21-4574-a0bf-e3c27df71c9d");
         public const string Ask_The_Analyst_FieldName = "Ask The Analyst";
+
+        public static readonly ID Is_Active_Ask_The_Analyst_FieldId = new ID("B84EB872-DDB8-4840-94FB-C472008C6445");
+        public const string Is_Active_Ask_The_Analyst_FieldName = "Is Active Ask Analyst";
 
         //// IPMP-310 BIWEB-821 - CMS Configuration - My View Page
 

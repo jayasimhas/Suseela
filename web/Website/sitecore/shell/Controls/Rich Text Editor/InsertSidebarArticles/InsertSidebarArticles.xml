@@ -49,12 +49,19 @@ jQuery.ajax({
 						 jQuery('#SearchCombo')
          .append($("<option></option>")                    				
                    .text('No results found'));
+				   }				   
+				   jQuery(a).each(function(i,val){
+				if(val._Name=='Invalid article number'){
+				jQuery('#SearchCombo')
+				.append($("<option></option>")                    				
+				.text('Invalid article number'));
 				   }
-				   jQuery(a).each(function(i,val){				  
+					else{
 				  		 jQuery('#SearchCombo')
          .append($("<option></option>")
                     .attr("value",val._Id)					
-                   .text(val._Name));					
+                   .text(val._Name));	
+					}				   
 				  });	
 	$('#SearchCombo').change(function() {
     var id=jQuery( "#SearchCombo option:selected" ).val();
