@@ -12,7 +12,7 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: 0fe81bc7-1260-4fa0-b5b3-5d4b7d84289b
+revision: 0fef8403-142f-43a3-a6e1-948b99a1404f
 
 ----field----
 field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
@@ -21,6 +21,20 @@ key: item name
 content-length: 5
 
 $name
+----field----
+field: {94352249-84A2-4DD1-888E-E6B3A1E880D3}
+name: Leaderboard Slot ID
+key: leaderboard slot id
+content-length: 3
+
+Top
+----field----
+field: {36DDAFB0-B5E4-417F-A9FE-A1A80F81F766}
+name: Rectangular Slot ID
+key: rectangular slot id
+content-length: 6
+
+Right1
 ----field----
 field: {529C867F-2816-43A9-964A-3F16C014A4F7}
 name: FactoryLinkableText
@@ -55,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0fe81bc7-1260-4fa0-b5b3-5d4b7d84289b
+0fef8403-142f-43a3-a6e1-948b99a1404f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160102T191901Z
+20170224T192915Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

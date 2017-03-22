@@ -17,6 +17,7 @@ namespace Informa.Library.Article.Search
         bool isSonsoredBy { get; }
         string SponsoredByTitle { get; }
         string SponsoredByLogo { get; }
+        string SponsoredLink { get; }
     }
 
     public interface ILinkable

@@ -510,7 +510,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     temp[i + 2] = char.ToUpper(temp[i + 2]);
                 }
             }
-            return new string(temp);
+            // return new string(temp);
+            string imageurl = new string(temp);
+            imageurl = imageurl.Replace("(", "%28").Replace(")", "%29");
+            return imageurl;
         }
 
         public IEnumerable<Item> GetMediaItems(IDataMap map, string ArticleId,string ImagePath)
@@ -2288,7 +2291,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 return;
 
             string regionLog = string.Empty;
-            Dictionary<string, string> d = GetMapping();
+//            Dictionary<string, string> d = GetMapping();
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
@@ -3836,7 +3839,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
-            Dictionary<string, string> d = GetMapping();
+         //   Dictionary<string, string> d = GetMapping();
             string Taxonomylog = string.Empty;
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
@@ -4421,7 +4424,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (sourceItems == null)
                 return;
 
-            Dictionary<string, string> d = GetMapping();
+         //   Dictionary<string, string> d = GetMapping();
             var siteandpublication = id.Split(GetFieldValueDelimiter()?[0] ?? ',');
             var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 

@@ -14478,6 +14478,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
 
+        /// <summary>
+        /// Sponsor Link field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 00A257FB-4457-424A-8984-C38E2EB86C05</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISponsored_ContentConstants.Sponsor_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Sponsor_Link { get; set; }
+
     }
     /// <summary>
     /// Sponsored Content Interface
@@ -14517,6 +14527,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(ISponsored_ContentConstants.Meta_Tag_lineFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Meta_Tag_line { get; set; }
+        /// <summary>
+        /// Sponsor Link field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line-Text</para>		
+        /// <para>Field ID: 00A257FB-4457-424A-8984-C38E2EB86C05</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISponsored_ContentConstants.Sponsor_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Sponsor_Link { get; set; }
     }
 
     public static partial class ISponsored_ContentConstants
@@ -14534,6 +14553,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID Meta_Tag_lineFieldId = new ID("AD4D72C2-11AA-4A0E-89C8-D6F9FC1E82CA");
         public const string Meta_Tag_lineFieldName = "Meta Tag line";
+
+        public static readonly ID Sponsor_LinkFieldId = new ID("00A257FB-4457-424A-8984-C38E2EB86C05");
+        public const string Sponsor_LinkFieldName = "Sponsor Link";
     }
 }
 //Market Data Component Parameters

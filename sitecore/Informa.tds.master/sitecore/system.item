@@ -55,13 +55,13 @@ content-length: 194
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 929
+content-length: 741
 
-ar|sitecore\Editor|pe|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|pd|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|au|sitecore\ServicesAPI|p*|-item:read|ar|sitecore\Managing Editor|pe|-item:rename|-item:delete|+item:read|-item:admin|-item:write|-item:create|!*|pd|-item:rename|-item:delete|+item:read|-item:admin|-item:write|-item:create|!*|ar|sitecore\Operations Access|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|ar|sitecore\Globals Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Production|pe|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|pd|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|
+ar|sitecore\Operations Access|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|au|sitecore\ServicesAPI|p*|-item:read|ar|sitecore\Globals Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Production|pe|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|pd|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|ar|sitecore\Editor|pe|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|pd|-item:rename|-item:delete|-item:create|-item:admin|-item:write|+item:read|!*|
 ----version----
 language: en
 version: 1
-revision: f657fdbb-31e7-4763-a376-0f56fe008aa7
+revision: 990abc9c-8a85-47b9-a198-3b1537e4f2f3
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -111,14 +111,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f657fdbb-31e7-4763-a376-0f56fe008aa7
+990abc9c-8a85-47b9-a198-3b1537e4f2f3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20161115T142841Z
+20160413T150713Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

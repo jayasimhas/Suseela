@@ -243,10 +243,8 @@
     <Reference Include="Netbiscuits.OnPremise">
       <HintPath>..\..\lib\Sitecore\Netbiscuits.OnPremise.dll</HintPath>
     </Reference>
-
     <!-- <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"> -->
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -1186,9 +1184,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-
     <Compile Include="Helpers\MvcHelpers.cs" />
-
     <Compile Include="ItemLockBasedOnUser.aspx.cs">
       <DependentUpon>ItemLockBasedOnUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1196,7 +1192,6 @@
     <Compile Include="ItemLockBasedOnUser.aspx.designer.cs">
       <DependentUpon>ItemLockBasedOnUser.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="Models\IPageLink.cs" />
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\ISection.cs" />
@@ -1248,12 +1243,9 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
-
     <Compile Include="ViewModels\Articles\ArticleRecommendationViewModel.cs" />
-
     <Compile Include="ViewModels\Articles\ArticlePrologueATAViewModel.cs" />
     <Compile Include="ViewModels\Articles\IArticlePrologueATAViewModel.cs" />
-
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorShareViewModel.cs" />
@@ -1831,11 +1823,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
-
     <Content Include="js\components\AMchartsGroup.js" />
-
     <Content Include="ItemLockBasedOnUser.aspx" />
-
     <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\myview-settings.js" />
     <Content Include="js\components\pagination.js" />
@@ -1927,7 +1916,6 @@
     <Content Include="amcharts\plugins\export\README.md" />
     <Content Include="amcharts\plugins\responsive\readme.md" />
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
-    <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
@@ -1936,8 +1924,6 @@
     <Content Include="App_Config\Prefetch\Core.config" />
     <Content Include="App_Config\Prefetch\Master.config" />
     <Content Include="App_Config\Prefetch\Webdb.config" />
-    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewSettingsPage.cshtml" />
     <Content Include="RTEStyles.css" />
     <Content Include="sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml">
@@ -1990,11 +1976,8 @@
     <Content Include="Util\DCD\styles\style.css" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
-
     <Content Include="Views\Shared\Components\PDF\PDFStyleSheet.css" />
-
     <Content Include="Views\Shared\PopOuts\AskTheAnalyst.cshtml" />
-
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
     <Content Include="VWB\Scripts\addissue.js" />
@@ -2075,6 +2058,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
@@ -2084,7 +2068,6 @@
     <Folder Include="GlassMaps\" />
     <Folder Include="js\datatools\" />
     <Folder Include="js\search\services\" />
-    <Folder Include="NWebsecConfig\" />
     <Folder Include="packages\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\InformaBaseSearch\" />
@@ -2142,12 +2125,10 @@
     <None Include="App_Config\Prefetch\Webdb.config.template" />
     <Content Include="Areas\VWB\Views\web.config" />
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
-
     <Content Include="App_Config\Sitecore.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
-
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <Content Include="App_Config\Sitecore.config.template" />
@@ -2288,7 +2269,6 @@
     <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
     <Content Include="Views\Authors\AuthorPrologueShare.cshtml" />
-
     <Content Include="Views\MyView\MyViewPage.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\TableauInArticle.cshtml" />
@@ -2345,9 +2325,7 @@
     <Content Include="Views\Casualty\marketFixDummyData.json" />
     <Content Include="Views\Article\ArticlePackage.cshtml" />
     <Content Include="Views\Shared\Components\SponsoredContent.cshtml" />
-
     <Content Include="Views\Article\ArticlePrologueATA.cshtml" />
-
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

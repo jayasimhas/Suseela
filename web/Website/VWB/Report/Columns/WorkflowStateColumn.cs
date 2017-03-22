@@ -148,7 +148,7 @@ namespace Elsevier.Web.VWB.Report.Columns
                         dictWorkflowStates.Add(workflowState.DisplayName, workflowState.DisplayName);
                 }
             }
-            return dictWorkflowStates;
+            return dictWorkflowStates.OrderBy(k => k.Key).ToDictionary(m => m.Key, n => n.Value);
         }
     }
 }

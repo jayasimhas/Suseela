@@ -1,6 +1,22 @@
 ﻿@using Informa.Library.Utilities.References
 @model Informa.Web.ViewModels.IListableViewModel
 
+@if (Model.SponsoredContent != null)
+{
+    <div class="article-metadata">
+        <ul>
+            <li>
+                <time class="article-metadata__date sponsored_title">@Model.SponsoredContent.Title</time>
+            </li>
+            <li>
+                @if (Model.SponsoredContent.Sponsor_Logo != null)
+                {
+                    <a href="@Model.SponsoredContent.Sponsor_Link"><img src=@Model.SponsoredContent.Sponsor_Logo.Src /></a>
+                }
+            </li>
+        </ul>
+    </div>
+}
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
     <img class="article-preview__image" src="@Model.ListableImage">

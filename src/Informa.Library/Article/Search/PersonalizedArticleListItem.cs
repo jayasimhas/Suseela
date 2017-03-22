@@ -24,5 +24,6 @@
         public string SponsoredByTitle { get; set; }
         public string SponsoredByLogo { get; set; }
         public bool isSonsoredBy { get; set; }
+        public string SponsoredLink { get; set; }
     }
 }

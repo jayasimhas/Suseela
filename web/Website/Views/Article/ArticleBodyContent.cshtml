@@ -133,7 +133,7 @@
                 <li>
                     @if (Model.sponsoredContent.Sponsor_Logo != null)
                     {
-                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                        <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
                     }
                 </li>
             </ul>
@@ -188,7 +188,10 @@
                 <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Meta_Tag_line</time>
             </li>
             <li>
-                <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                @if (Model.sponsoredContent.Sponsor_Logo != null)
+                {
+                    <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
+                }
             </li>
         </ul>
     </div>
