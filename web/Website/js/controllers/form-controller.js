@@ -37,6 +37,20 @@ function formController(opts) {
 			// Default to true (confirmed), set to false later if confirmation is
 			// required and user cancels action
 		    var actionConfirmed = true, captchaId  = $('.g-recaptcha:visible').attr('id'), sendRecaptcha = (captchaId === 'recaptchaAskTheAnalyst') ? recaptchaAskTheAnalyst : recaptchaEmail;
+		    
+		    // If In Future More Captcha will come in same page
+		    /*
+                var sendRecaptcha;
+                if(captchaId === 'recaptchaAskTheAnalyst'){
+                    sendRecaptcha = recaptchaAskTheAnalyst;
+                }
+                else if(captchaId === 'recaptchaEmail'){   
+                     sendRecaptcha recaptchaEmail;
+                }
+                else{
+                     sendRecaptcha otherIdval; 
+                }
+            */
 
 			var currentForm;
 			if(event.target.form) {
