@@ -64,7 +64,9 @@ namespace Informa.Web.Areas.Account.Controllers
             var result =
                 AccountInfoV2.UpdateContactInfo(
                 UserContext.User, form.FirstName, form.LastName, form.MiddleInitial, form.Salutation,
-                form.ShipCountry.Split('|')[0] ?? string.Empty, form.ShipAddress1, form.ShipCity, form.ShipPostalCode, form.ShipState,
+                !string.IsNullOrEmpty(form.ShipCountry.Split('|')[1].ToString()) ?
+                form.ShipCountry.Split('|')[0] ?? string.Empty : string.Empty
+                , form.ShipAddress1, form.ShipCity, form.ShipPostalCode, form.ShipState,
                 form.Phone, form.Mobile,
                 form.Company, form.JobFunction, form.JobIndustry, form.JobTitle);
 
