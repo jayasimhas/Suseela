@@ -626,15 +626,33 @@
 		//float: left;
 	}
 	.article-preview__tags{
-		width: 75%;
-		@media screen and (max-width: 1024px){
+		@media screen and (min-width: 1025px){
+			width: 75%;
+		}
+		@media screen and (min-width: 767px) and (max-width: 768px){
+			width: 56%; 
+		}
+		@media screen and (min-width: 1023px) and (max-width: 1024px){
+			width: 65%; 
+		}
+		@media screen and (max-width: 680px){
 			width: auto;
+		}
+		@media screen and (min-width: 768px){
+			&.wid{
+				width: 100%;
+			}
 		}
 		z-index: 999;
 		bottom: 1.25rem;
 		a{
-			max-width: 22%;
-			font-size: 1rem;
+			@media screen and (min-width: 1025px){
+				max-width: inherit;
+			}
+			@media screen and (min-width: 768px) and (max-width: 1024px){
+				max-width: 32%;
+				font-size: 1rem;
+			}
 		}
 	}
 	.article-metadata{
