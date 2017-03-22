@@ -7,9 +7,12 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1ad20906-6db6-4fe5-872e-ea79ecfb3491</ProjectGuid>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <SourceWebPhysicalPath>..\..\web\Website</SourceWebPhysicalPath>
-    <SourceWebProject>{efe15f11-b900-4515-a45e-5b817c483a36}|web\Website\Informa.Web.csproj</SourceWebProject>
-    <SourceWebVirtualPath>/Informa.Web.csproj</SourceWebVirtualPath>
+    <SourceWebPhysicalPath>
+    </SourceWebPhysicalPath>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebVirtualPath>
+    </SourceWebVirtualPath>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
@@ -27,12 +30,14 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
-    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
-    <DisableFileDeployment>False</DisableFileDeployment>
-    <SitecoreAccessGuid>e979f87e-c806-44f3-a59e-50c5fc4837be</SitecoreAccessGuid>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <SitecoreAccessGuid>b4408a95-4df4-46b8-bd99-6af887f5a16f</SitecoreAccessGuid>
     <EnableValidations>False</EnableValidations>
     <ValidationSettingsFilePath>.\Informa.tds.master.content_Debug.xml</ValidationSettingsFilePath>
+    <SitecoreWebUrl>http://products/</SitecoreWebUrl>
+    <SitecoreDeployFolder>D:\INFORMA\TS3\web\Website</SitecoreDeployFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -59,12 +64,6 @@
     <AssemblyAttributes Include="AssemblyVersion">
       <Value>$(AssemblyVersion)</Value>
     </AssemblyAttributes>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\web\Website\Informa.Web.csproj">
-      <Project>{efe15f11-b900-4515-a45e-5b817c483a36}</Project>
-      <Name>Informa.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SitecoreItem Include="sitecore\content.item">
@@ -2757,7 +2756,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-
     <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Privacy Policy Notification.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -6241,10 +6239,7 @@
     </SitecoreItem>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\web\Website\Informa.Web.csproj">
-      <Project>{efe15f11-b900-4515-a45e-5b817c483a36}</Project>
-      <Name>Informa.Web</Name>
-    </ProjectReference>
+    <ExcludedAssemblies Include="Sitecore.%2a.dll, Lucene.Net.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>
