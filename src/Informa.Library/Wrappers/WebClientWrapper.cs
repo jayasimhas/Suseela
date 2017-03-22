@@ -1,5 +1,7 @@
 ﻿using System.Net;
 using Jabberwocky.Autofac.Attributes;
+using System.Configuration;
+using System;
 
 namespace Informa.Library.Wrappers
 {
@@ -15,6 +17,11 @@ namespace Informa.Library.Wrappers
         {
             using (var client = new WebClient())
             {
+                string disableSSLCertificateValidation = ConfigurationManager.AppSettings["DisableSSLCertificateValidation"];
+                if (!string.IsNullOrWhiteSpace(disableSSLCertificateValidation) && Convert.ToBoolean(disableSSLCertificateValidation))
+                {
+                    ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                }
                 return client.DownloadString(url);
             }
         }

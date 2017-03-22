@@ -75,7 +75,7 @@ namespace Informa.Library.User.Authentication
             else
             {
                 string ssoVerticals = ConfigurationManager.AppSettings["SSOVerticals"];
-                if (ssoVerticals.Contains(curVertical))
+                if (ssoVerticals.ToLower().Contains(curVertical.ToLower()))
                     return "SSO_LoggedInUser";
                 else
                     return curVertical + "_LoggedInUser";
@@ -91,7 +91,7 @@ namespace Informa.Library.User.Authentication
             {
                 int timeout = 480;
                 string ssoVerticals = ConfigurationManager.AppSettings["SSOVerticals"];
-                if(ssoVerticals.Contains(curVertical))
+                if(ssoVerticals.ToLower().Contains(curVertical.ToLower()))
                 {
                   string timeoutInstr = ConfigurationManager.AppSettings["SSOTimeout"];
                     if (int.TryParse(timeoutInstr, out timeout))
@@ -117,7 +117,7 @@ namespace Informa.Library.User.Authentication
             else
             {
                 string ssoVerticals = ConfigurationManager.AppSettings["SSOVerticals"];
-                if (ssoVerticals.Contains(curVertical))
+                if (ssoVerticals.ToLower().Contains(curVertical.ToLower()))
                 {
                     string subDomain = ConfigurationManager.AppSettings["SSOSubdomain"];
                     return subDomain;
