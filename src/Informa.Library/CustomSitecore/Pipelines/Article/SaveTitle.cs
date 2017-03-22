@@ -42,8 +42,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 {
                     var allreferencedArticlesIds = GetReferencedArticleFromBody(item);
                     if (allreferencedArticlesIds.Count() > 0)
-                    {
-                        //var updatedBody = UpdateBody(item);
+                    {                       
                         string updatedValue = string.Empty;
                         var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
                         if (referencedArticles != null)
@@ -105,7 +104,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 string url;
                 using (new Sitecore.SecurityModel.SecurityDisabler())
                 {
-                    //string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
                     url = string.Format("{0}://{1}/api/SearchArticlesInRTE?articleNumber={2}", HttpContext.Current.Request.Url.Scheme, hostName, articleNumber);
                 }
@@ -131,17 +129,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
             }
             return referencedArticlesInBody;
         }
-
-        public string UpdateBody(Item item)
-        {
-            var body = item.Fields[IArticleConstants.BodyFieldName].Value;
-            var referenceArticleTokenRegex = new Regex(@"L\[A#");
-
-            foreach (Match match in referenceArticleTokenRegex.Matches(body))
-            {
-                body = body.Replace(match.ToString(), "[A#");
-            }
-            return body;
-        }
+        
     }
 }

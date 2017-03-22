@@ -15,6 +15,8 @@ using log4net;
 using System.Net.Http.Formatting;
 using Sitecore.Web;
 using Sitecore.Caching;
+using Sitecore.Configuration;
+using System.Web;
 
 namespace Informa.Web.Controllers
 {
@@ -42,83 +44,19 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public object Get(string articleNumber)
         {
-            Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticlesByNumberWithinRTE(articleNumber, "master");
+            //Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
             if (article != null)
             {
                 var result = new ArticleItem
                 {
-                    _Id = article.ID.ToGuid(),
-                    _Name = article.DisplayName,
-                    _Path = article.Paths.Path
+                    _Id = article._Id,
+                    _Name = article._Name,
+                    _Path = article._Path
                 };
                 return result;
             }
             return null;
-        }
-
-
-        /// <summary>
-        /// Gets the article number using the item id.
-        /// </summary>
-        /// <param name="id">Item id</param>
-        /// <returns></returns>
-        protected string GetArticleNumber(string id)
-        {
-            var article = GlobalService.GetItem<IArticle>(id);
-            if (!string.IsNullOrEmpty(article.Article_Number))
-                return article.Article_Number;
-            else
-                return string.Empty;
-        }
-
-
-        //POST api/<controller>
-        public void Post([FromBody]ArticleRequestInRTE data)
-        {
-            if (data != null)
-            {
-                //var url = System.Web.HttpContext.Current.Request.Url;
-                //var siteContext = Sitecore.Sites.SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
-                var selectedID = "{" + data.ItemId.ToUpper() + "}";
-                var article = master.GetItem(new ID(data.CurrentItemId));
-                if (article != null)
-                {
-                    var referencedValues = article.Fields["Referenced articles"];
-                    using (new SecurityDisabler())
-                    {
-                        //CacheManager.Enabled = false;
-                        article.Editing.BeginEdit();
-                        if (referencedValues != null)                        
-                            //referencedValues.Value = "{5A3D67DF-3917-4AC2-BDAF-69CDA1204C2A}";
-                            referencedValues.Value += "|" + selectedID.ToUpper();
-                        else
-                        referencedValues.Value = selectedID.ToUpper();
-                        
-                        article.Editing.EndEdit();
-                        //CacheManager.Enabled = true;
-                    }
-                    //Sitecore.Data.Fields.MultilistField multiselectField = article.Fields[IArticleConstants.Referenced_ArticlesFieldName];
-
-                    //if (multiselectField.Contains(selectedID))
-                    //{
-                    //    CacheManager.Enabled = false;
-                    //    article.Editing.BeginEdit();
-                    //    if (!multiselectField.Contains(selectedID))
-                    //    {
-                    //        multiselectField.Add(selectedID);
-                    //    }
-                    //    article.Editing.EndEdit();
-                    //    CacheManager.Enabled = true;
-                    //}
-                }
-            }
-        }
-    }
-
-    public class ArticleRequestInRTE
-    {
-        public string CurrentItemId { get; set; }
-        public string ArticleType { get; set; }
-        public string ItemId { get; set; }
+        }          
     }
 }
