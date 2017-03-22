@@ -38,18 +38,14 @@ namespace Informa.Web.VWB.Report.Columns
                 dictTaxonomies.Add("0", "Select");
                 foreach (var result in results)
                 {
-                    if (result != null && !string.IsNullOrEmpty(result.TaxonomyString))
-                    {
-                        var taxonomies = result.TaxonomyString.Split(',').ToArray();
-                        foreach (var tax in taxonomies)
+                        foreach (var tax in result.TaxonomyPath)
                         {
-                            if (!dictTaxonomies.ContainsValue(tax))
-                                dictTaxonomies.Add(tax, tax);
+                            if (!dictTaxonomies.ContainsKey(tax.Key))
+                                dictTaxonomies.Add(tax.Key, tax.Value);
                         }
                     }
                 }
-            }
-            return dictTaxonomies;
-        }
+            return dictTaxonomies.OrderBy(k=>k.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
+        } 
     }
 }

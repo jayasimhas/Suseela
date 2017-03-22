@@ -40,7 +40,7 @@ namespace Elsevier.Web.VWB.Report.Columns
                     }
                 }
             }
-            return dictAuthorNames;
+            return dictAuthorNames.OrderBy(k=>k.Key).ToDictionary(m=>m.Key,n=>n.Value);
         }
 
         private void AddAuthorNameToList(Dictionary<string, string> dictAuthorNames, IEnumerable<string> authors)

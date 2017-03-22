@@ -57,6 +57,7 @@ namespace Elsevier.Web.VWB.Report
         public string ContentType;
 
         public string TaxonomyString;
+        public Dictionary<string, string> TaxonomyPath = new Dictionary<string, string>();
 
         public List<string> SidebarArticleNumbers = new List<string>();
         public string NotesToEditorial;
@@ -160,7 +161,10 @@ namespace Elsevier.Web.VWB.Report
             TaxonomyString = (article.Taxonomies != null)
                 ? string.Join(",", article.Taxonomies.Select(t => t.Item_Name))
                 : string.Empty;
-
+            if (article.Taxonomies != null && article.Taxonomies.Any())
+            {
+                article.Taxonomies.ForEach(t => TaxonomyPath.Add(t.Item_Name??string.Empty, t._Path?.Replace("/sitecore/content/", "")));
+            }
             ContentType = "";
 
             if (article.Content_Type != null)

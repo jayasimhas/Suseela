@@ -34,9 +34,14 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
-    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <RecursiveDeployAction>SitecoreRecycle</RecursiveDeployAction>
     <EnableValidations>False</EnableValidations>
     <ValidationSettingsFilePath>.\Informa.tds.core_Debug.xml</ValidationSettingsFilePath>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <SitecoreAccessGuid>07924b2a-9d0d-4160-b5df-f82d8a0dfaf5</SitecoreAccessGuid>
+    <SitecoreWebUrl>http://products/</SitecoreWebUrl>
+    <SitecoreDeployFolder>D:\INFORMA\TS3\web\Website</SitecoreDeployFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -347,6 +352,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Chunks\Publish\Publish.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

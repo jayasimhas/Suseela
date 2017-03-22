@@ -16,10 +16,17 @@ key: path
 content-length: 43
 
 /Views/CompaniesAndDeals/CompanyInfo.cshtml
+----field----
+field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
+name: Page Editor Buttons
+key: page editor buttons
+content-length: 38
+
+{028DFE18-F0FE-431B-B5D2-9D944FD8B3C6}
 ----version----
 language: en
 version: 1
-revision: 1d772142-55e7-4825-93f9-2aaef125431c
+revision: 0580303c-e1a5-4fa2-ac52-39b867fdd7b3
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1d772142-55e7-4825-93f9-2aaef125431c
+0580303c-e1a5-4fa2-ac52-39b867fdd7b3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160713T142754Z
+20161215T140422Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -14,7 +14,7 @@
                 <li>
                     @if (Model.sponsoredContent.Sponsor_Logo != null)
                     {
-                        <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                        <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
                     }
                 </li>
             </ul>

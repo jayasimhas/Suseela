@@ -43,7 +43,7 @@ namespace Informa.Web.VWB.Report.Columns
                         dictContentTypes.Add(result.ContentType, result.ContentType);
                 }
             }
-            return dictContentTypes;
+            return dictContentTypes.OrderBy(k => k.Key).ToDictionary(m => m.Key, n => n.Value);
         }
     }
 }

@@ -10,6 +10,11 @@
 
     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleFullRow)
     {
+        int index = 0;
+        foreach (var article in Model.Articles)
+        {
+            if (article != null)
+            {
 
         <!--100% Width full tile with grey background-->
         <tr>
@@ -37,32 +42,37 @@
                                                 <tbody>
                                                     <tr>
                                                         <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-bottom: 10px; width: 100%" class="article-metadata">
-                                                            @if (Model.Articles[0].Actual_Publish_Date != null)
+                                                            @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                                             {
-                                                                <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@Model.Articles[0].Actual_Publish_Date.ToString("dd MMM yyyy")</span>
-                                                                <span>&nbsp;&nbsp;</span>
-                                                                <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
-                                                                <span>&nbsp;&nbsp;</span>
+                                                                    if (article.Actual_Publish_Date != null)
+                                                                    {
+                                                                        <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
+                                                                        <span>&nbsp;&nbsp;</span>
+                                                                        <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                        <span>&nbsp;&nbsp;</span>
+                                                                    }
+                                                                    if (article.Content_Type != null)
+                                                                    {
+                                                                        <span class="article-category" style="font-weight: bold;text-transform: uppercase;vertical-align: middle">@article.Content_Type.Item_Name</span>
+                                                                        <span>&nbsp;&nbsp;</span>
+                                                                    }
+                                                                    if (article.Media_Type != null &&
+                article.Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
+                                                                    {
+                                                                        <span><img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" /></span>
+                                                                        <span>&nbsp;&nbsp;</span>
+                                                                        <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                        <span>&nbsp;&nbsp;</span>
+                                                                    }
                                                             }
-                                                            @if (Model.Articles[0].Content_Type != null)
-                                                            {
-                                                                <span class="article-category" style="font-weight: bold;text-transform: uppercase;vertical-align: middle">@Model.Articles[0].Content_Type.Item_Name</span>
-                                                                <span>&nbsp;&nbsp;</span>
-                                                            }
-                                                            @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Media_Type != null &&
-Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(Model.Articles[0].Media_Type.Media_Type_Icon.Src))
-                                                            {
-                                                                <span><img class="" src="@Model.Articles[0].Media_Type.Media_Type_Icon.Src" width="25" /></span>
-                                                                <span>&nbsp;&nbsp;</span>
-                                                                <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
-                                                                <span>&nbsp;&nbsp;</span>
-                                                            }
-                                                            @if (Model.Articles[0] != null && Model.Articles[0].Taxonomies != null && Model.Articles[0].Taxonomies.Any())
+                                                        @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
+                                                        {
+                                                            if (article.Taxonomies != null && article.Taxonomies.Any())
                                                             {
                                                                 int count = 0;
-                                                                if (Model.Articles[0].Taxonomies.ToList().Count >= 2)
+                                                                if (article.Taxonomies.ToList().Count >= 2)
                                                                 {
-                                                                    foreach (var taxonomyItem in Model.Articles[0].Taxonomies.Take(2))
+                                                                    foreach (var taxonomyItem in article.Taxonomies.Take(2))
                                                                     {
                                                                         <span align="center" class="visible-desk">
                                                                             <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; color: #be1e2d !important; text-decoration: none !important;">@taxonomyItem.Item_Name</a>
@@ -79,7 +89,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                             {
                                                                                 count++;
                                                                                 <span>&nbsp;&nbsp;</span>
-                                                                                            <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                             <span>&nbsp;&nbsp;</span>
                                                                             }
                                                                         </span>
@@ -87,7 +97,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                 }
                                                                 else
                                                                 {
-                                                                    foreach (var taxonomyItem in Model.Articles[0].Taxonomies)
+                                                                    foreach (var taxonomyItem in article.Taxonomies)
                                                                     {
                                                                         <span align="center" class="visible-desk">
                                                                             <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important">@taxonomyItem.Item_Name</a>
@@ -95,21 +105,22 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                     }
                                                                 }
                                                             }
+                                                        }
                                                         </td>
                                                     </tr>
                                                     @if (Model != null && Model.Articles != null && Model.Articles.Any())
                                                     {
                                                         <tr>
                                                             <td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; line-height: 150%; text-align: left;">
-                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@Model.Articles[0]._Url"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@Model.Articles[0].Title</span></a>
+                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@article.Title</span></a>
                                                             </td>
                                                         </tr>
                                                     }
                                                     <tr>
                                                         <td>
-                                                            @if (Model.Articles != null && Model.Articles.Any() && Model.Articles[0].Featured_Image_16_9 != null)
+                                                            @if (article.Featured_Image_16_9 != null)
                                                             {
-                                                                <img src="@Model.Articles[0].Featured_Image_16_9.Src" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
+                                                                <img src="@article.Featured_Image_16_9.Src" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
                                                             }
                                                             <div>
                                                                 @if ((Model.GlassModel != null && Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
@@ -118,25 +129,89 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                         <strong style="color: #be1e2d;">@Html.Raw(Model.Byline)</strong>
                                                                     </p>
                                                                 }
-                                                                @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
-                                                                {
+                                                                @if (Model.GlassModel != null && !Model.GlassModel.ShowShortDescription)
+                                                           {
                                                                     <span style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Georgia, serif; font-size: 14px; line-height: 150%; color: #777777; text-transform: none !important; text-align: left;">
                                                                         @{
-                                                                            if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[0]))
+                                                                            if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
                                                                             {
-                                                                                if (IsInEditingMode)
+                                                                                if (Model.ShortDescrpitons[index].Length > 220)
                                                                                 {
-                                                                                    @Editable(Model, m => m.Articles[0].Summary);
+                                                                                    if (IsInEditingMode)
+                                                                                    {
+                                                                                        if (index == 0)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
+                                                                                        }
+                                                                                        if (index == 1)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                                                                        }
+                                                                                        if (index == 2)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (index == 0)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne.Substring(0, 220));
+                                                                                        }
+                                                                                        if (index == 1)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo.Substring(0, 220));
+                                                                                        }
+                                                                                        if (index == 2)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree.Substring(0, 220));
+                                                                                        }
+                                                                                    }
+
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    var summary = Model.ShortDescrpitons[0].Length > 220 ? Model.ShortDescrpitons[0].Substring(0, 220) : Model.ShortDescrpitons[0];
-                                                                                    new HtmlString(summary);
+                                                                                    if (IsInEditingMode)
+                                                                                    {
+                                                                                        if (index == 0)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
+                                                                                        }
+                                                                                        if (index == 1)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                                                                        }
+                                                                                        if (index == 2)
+                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (index == 0)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne);
+                                                                                        }
+                                                                                        if (index == 1)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo);
+                                                                                        }
+                                                                                        if (index == 2)
+                                                                                        {
+                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree);
+                                                                                        }
+                                                                                    }
                                                                                 }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (IsInEditingMode)
+                                                                                {
+                                                                                    @Editable(Model, m => m.Articles[index].Summary);
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    @Html.Raw(Model.Articles[index].Summary);
+                                                                                }
+
                                                                             }
                                                                         }
                                                                     </span>
-                                                                }
+                                                                            }
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -163,15 +238,19 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                 <![endif]-->
             </td>
         </tr>
-		<tr><td height="15"></td></tr>
-    }
 
-    if (Model.Articles != null && Model.Articles.Any() &&
-       (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow ||
-       Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows))
+    }
+    index++;
+}
+<tr><td height="15"></td></tr>
+}
+
+if (Model.Articles != null && Model.Articles.Any() &&
+    (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow ||
+    Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleThreeRows))
+{
+    if (Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
     {
-        if (Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
-        {
             @Html.Raw(GetStartTag())
         }
         if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleHalfRow)
@@ -204,10 +283,10 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                             <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                 <tbody>
                                                     @foreach (var article in Model.Articles)
+                                                    {
+                                                        if (article != null && index < 2)
                                                         {
-                                                            if (article != null && index < 2)
-                                                            {
-                                                                index++;
+                                                            index++;
                                                             <tr>
                                                                 <td style="height: 160px; border-bottom: 1px solid #cccccc;@GetPaddingForSecondRow(index)" valign="top">
                                                                     <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -228,7 +307,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                                                     <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                                                         <tbody>
                                                                                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
-                                                            {
+                                                                                                            {
 
                                                                                                                 <tr>
                                                                                                                     <td valign="middle" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;vertical-align: bottom;padding-bottom: 0;">
@@ -242,10 +321,10 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                                                                                                                 <span>&nbsp;&nbsp;</span>
                                                                                                                             }
                                                                                                                             @if (Model.Articles[0].Content_Type != null)
-                                                        {
+                                                                                                                            {
 
                                                                                                                                 <span class="article-category" valign="middle" style="font-weight: bold;text-transform: uppercase;vertical-align: middle">@Model.Articles[0].Content_Type.Item_Name</span>
-                                                    }
+                                                                                                                            }
 
                                                                                                                         </div>
                                                                                                                     </td>
@@ -254,30 +333,30 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
 
                                                                                                             <tr>
                                                                                                                 <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
-                                                                                                                    <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url">
+                                                                                                                    <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
                                                                                                                         <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #be1e2d !important;text-decoration: none;padding: 0px" class="featured__title">@article.Title</span>
                                                                                                                     </a>
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                             @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
-                                                    {
+                                                                                                            {
 
                                                                                                                 <tr>
                                                                                                                     <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                                                                         @if (article.Taxonomies != null)
                                                                                                                         {
-                                                            int count = 0;
-                                                            if (article.Taxonomies.ToList().Count >= 2)
-                                                            {
-                                                                foreach (var taxonomyItem in article.Taxonomies.Take(2))
-                                                                {
+                                                                                                                            int count = 0;
+                                                                                                                            if (article.Taxonomies.ToList().Count >= 2)
+                                                                                                                            {
+                                                                                                                                foreach (var taxonomyItem in article.Taxonomies.Take(2))
+                                                                                                                                {
 
                                                                                                                                     <span>
                                                                                                                                         <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
                                                                                                                                     </span>
                                                                                                                                     if (count == 0)
-                                                                    {
-                                                                        count++;
+                                                                                                                                    {
+                                                                                                                                        count++;
 
                                                                                                                                         <span>&nbsp;&nbsp;</span>
                                                                                                                                         <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
@@ -334,12 +413,12 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
                                             <![endif]-->
                                         </td>
                                     </tr>
-									<tr><td class="mobHeight">dsa</td></tr>
+                                    <tr><td class="mobHeight">dsa</td></tr>
                                 </tbody>
                             </table>
                         </td>
                     </tr>
-					
+
                 </tbody>
             </table>
         }
@@ -374,7 +453,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
 
                                                         <tr>
                                                             <td height="110" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="pad">
-                                                                <a href="@article._Url" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #be1e2d !important; text-decoration: none !important">
+                                                                <a href="@article.LinkableUrl" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #be1e2d !important; text-decoration: none !important">
                                                                     <span style="font-size: 20px; line-height: 28px; color: #be1e2d !important; text-decoration: none !important; font-weight: bold;">
                                                                         @article.Title
                                                                     </span>
@@ -420,238 +499,298 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
 
     if (Model.RenderingParameters.Display_Option.Value == Constants.ArticleDisplayModeTypes.FeaturedArticleTwoColumn && Model.Articles != null && Model.Articles.Any())
     {
-        int index = 0;	
-	<tr>
-	<td align="center" valign="top" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 15px;">
-		<table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
-			<tr>
-				<td valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-					<!--[if gte mso 9]>
-					<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
-						<tr>
-							<td align="center" valign="top" width="300" style="width:300px;">
-								<![endif]-->
+        int index = 0;
+        <tr>
+            <td align="center" valign="top" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 15px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                    <tr>
+                        <td valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <!--[if gte mso 9]>
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                <tr>
+                                    <td align="center" valign="top" width="300" style="width:300px;">
+                                        <![endif]-->
                             @foreach (var article in Model.Articles)
                             {
                                 if (article != null && index < 2)
                                 {
-                                    
-								<table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-									<tr>
-										<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-											<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-												<tbody class="mcnTextBlockOuter">
-													<tr>
-														<td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-															<!--[if mso]>
-															<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-																<tr>
-																	<![endif]-->
-																	<!--[if mso]>
-																	<td valign="top" width="285" style="width:285px;">
-																		<![endif]-->
-																		<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																			<tbody>
-																				<tr>
-																					<td valign="top">
-																						<table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																							<tr>
-																								<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																									<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																										<tbody class="mcnTextBlockOuter">
-																											<tr>
-																												<td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-left: 15px;">
-																													<!--[if mso]>
-																													<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-																														<tr>
-																															<![endif]-->
-																															<!--[if mso]>
-																															<td valign="top" width="285" style="width:285px;">
-																																<![endif]-->
-																																<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																																	<tbody>
+
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                        <tr>
+                                            <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                    <tbody class="mcnTextBlockOuter">
+                                                        <tr>
+                                                            <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                <!--[if mso]>
+                                                                <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                                    <tr>
+                                                                        <![endif]-->
+                                                                <!--[if mso]>
+                                                                <td valign="top" width="285" style="width:285px;">
+                                                                    <![endif]-->
+                                                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                    <tr>
+                                                                                        <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                <tbody class="mcnTextBlockOuter">
+                                                                                                    <tr>
+                                                                                                        <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-left: 15px;">
+                                                                                                            <!--[if mso]>
+                                                                                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                                                                                <tr>
+                                                                                                                    <![endif]-->
+                                                                                                            <!--[if mso]>
+                                                                                                            <td valign="top" width="285" style="width:285px;">
+                                                                                                                <![endif]-->
+                                                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                                <tbody>
                                                                                                                     @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
                                                                                                                     {
 
-                                                                                                            
-																																		<tr>
-																																			<td valign="middle" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;vertical-align: bottom;padding-bottom: 0;">
-																																				<div>
-                                                                                                                        @if (article.Actual_Publish_Date != null)
-                                                                                                                        {
 
-                                                                                                            
-																																					<span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
-																																					<span>&nbsp;&nbsp;</span>
-                                                                                                                        }
-                                                                                                                        @if (article.Content_Type != null)
-                                                                                                                        {
+                                                                                                                        <tr>
+                                                                                                                            <td valign="middle" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;vertical-align: bottom;padding-bottom: 0;">
+                                                                                                                                <div>
+                                                                                                                                    @if (article.Actual_Publish_Date != null)
+                                                                                                                                    {
 
-                                                                                                            
-																																					<span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
-																																					<span>&nbsp;&nbsp;</span>
-																																					<span class="article-category" valign="middle" style="font-weight: bold;text-transform: uppercase;vertical-align: middle"> @article.Content_Type.Item_Name</span>
-                                                                                                                        }
-                                                                                                                        @if (article.Media_Type != null && article.Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
-                                                                                                                        {
 
-                                                                                                            
-																																					<span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
-																																					<span>&nbsp;&nbsp;</span>
-																																					<span class="article-content-type">
-																																						<img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" />
-																																					</span>
-                                                                                                                        }
+                                                                                                                                        <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
+                                                                                                                                                    <span>&nbsp;&nbsp;</span>
+                                                                                                                                    }
+                                                                                                                                    @if (article.Content_Type != null)
+                                                                                                                                    {
 
-                                                                                                                    
-																																				</div>
-																																			</td>
-																																		</tr>
+
+                                                                                                                                        <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                                    <span>&nbsp;&nbsp;</span>
+                                                                                                                                                    <span class="article-category" valign="middle" style="font-weight: bold;text-transform: uppercase;vertical-align: middle"> @article.Content_Type.Item_Name</span>
+                                                                                                                                    }
+                                                                                                                                    @if (article.Media_Type != null && article.Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
+                                                                                                                                    {
+
+
+                                                                                                                                        <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                                    <span>&nbsp;&nbsp;</span>
+                                                                                                                                                    <span class="article-content-type">
+                                                                                                                                                        <img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" />
+                                                                                                                                                    </span>
+                                                                                                                                    }
+
+
+                                                                                                                                </div>
+                                                                                                                            </td>
+                                                                                                                        </tr>
                                                                                                                     }
 
-                                                                                                                    
-																																		<tr>
-																																			<td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
-																																				<a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url">
-																																					<span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #be1e2d !important;text-decoration: none;padding: 0px" class="featured__title">@article.Title</span>
-																																				</a>
-																																			</td>
-																																		</tr>
-                                                                                                                    @if (Model.GlassModel != null && !Model.GlassModel.HideSummaryText)
-                                                                                                                    {
 
-                                                                                                            
-																																		<tr>
-																																			<td valign="top" height="120">
-																																				<span style="color:#040400 !important; font-family: Georgia, serif; font-size: 14px; line-height: 150%; margin-top: 0; padding-top: 0;">
-                                                                                                                                               
-                                                                                                                                                    @{
-                                                                                                                                                        if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
-                                                                                                                                                        {
-                                                                                                                                                            if (IsInEditingMode)
-                                                                                                                                                            {
-                                                                                                                                                                @Editable(article, m => m.Summary);
-                                                                                                                                                            }
-                                                                                                                                                            else
-                                                                                                                                                            {
-                                                                                                                                                                var summary = Model.ShortDescrpitons[index].Length > 220 ? Model.ShortDescrpitons[index].Substring(0, 220) : Model.ShortDescrpitons[index];
-                                                                                                                                                                @Html.Raw(summary);
-                                                                                                                                                            }
-
-                                                                                                                                                        }
+                                                                                                                    <tr>
+                                                                                                                        <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
+                                                                                                                            <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
+                                                                                                                                <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #be1e2d !important;text-decoration: none;padding: 0px" class="featured__title">@article.Title</span>
+                                                                                                                            </a>
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                    @if (Model.GlassModel != null && !Model.GlassModel.ShowShortDescription)
+                                                                                                                  {
+                                                                                                                        <tr>
+                                                                                                                            <td valign="top" height="120">
+                                                                                                                                <span style="color:#040400 !important; font-family: Georgia, serif; font-size: 14px; line-height: 150%; margin-top: 0; padding-top: 0;">
+                                                                                                                                    @{
+                                                                                                                                        if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
+                                                                                                                                        {
+                                                                                                                                            if (Model.ShortDescrpitons[index].Length > 220)
+                                                                                                                                            {
+                                                                                                                                                if (IsInEditingMode)
+                                                                                                                                                {
+                                                                                                                                                    if (index == 0)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
                                                                                                                                                     }
-                                                                                                                                                </span>
-																																			</td>
-																																		</tr>
+                                                                                                                                                    if (index == 1)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 2)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                                else
+                                                                                                                                                {
+                                                                                                                                                    if (index == 0)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleOne.Substring(0, 220));
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 1)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleTwo.Substring(0, 220));
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 2)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleThree.Substring(0, 220));
+                                                                                                                                                    }
+                                                                                                                                                }
+
+                                                                                                                                            }
+                                                                                                                                            else
+                                                                                                                                            {
+                                                                                                                                                if (IsInEditingMode)
+                                                                                                                                                {
+                                                                                                                                                    if (index == 0)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 1)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 2)
+                                                                                                                                                    { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                                else
+                                                                                                                                                {
+                                                                                                                                                    if (index == 0)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleOne);
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 1)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleTwo);
+                                                                                                                                                    }
+                                                                                                                                                    if (index == 2)
+                                                                                                                                                    {
+                                                                                                                                                        @Html.Raw(Model.GlassModel.DescriptionArticleThree);
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                        else
+                                                                                                                                        {
+                                                                                                                                            if (IsInEditingMode)
+                                                                                                                                            {
+                                                                                                                                                @Editable(article, m => m.Summary);
+                                                                                                                                            }
+                                                                                                                                            else
+                                                                                                                                            {
+                                                                                                                                                @Html.Raw(article.Summary);
+                                                                                                                                            }
+
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                </span>
+                                                                                                                            </td>
+                                                                                                                        </tr>
                                                                                                                     }
                                                                                                                     @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
                                                                                                                     {
 
-                                                                                                            
-																																		<tr>
-																																			<td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                                                    @if (article.Taxonomies != null)
-                                                                                                                    {
-                                                                                                                        int count = 0;
-                                                                                                                        if (article.Taxonomies.ToList().Count >= 2)
-                                                                                                                        {
-                                                                                                                            foreach (var taxonomyItem in article.Taxonomies.Take(2))
-                                                                                                                            {
 
-                                                                                                        
-																																				<span>
-																																					<a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
-																																				</span>
-                                                                                                                                if (count == 0)
+                                                                                                                        <tr>
+                                                                                                                            <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                                                @if (article.Taxonomies != null)
                                                                                                                                 {
-                                                                                                                                    count++;
+                                                                                                                                    int count = 0;
+                                                                                                                                    if (article.Taxonomies.ToList().Count >= 2)
+                                                                                                                                    {
+                                                                                                                                        foreach (var taxonomyItem in article.Taxonomies.Take(2))
+                                                                                                                                        {
 
-                                                                                                        
-																																				<span>&nbsp;&nbsp;</span>
-																																				<span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
-																																				<span>&nbsp;&nbsp;</span>
+
+                                                                                                                                            <span>
+                                                                                                                                                <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                                                                                            </span>
+                                                                                                                                            if (count == 0)
+                                                                                                                                            {
+                                                                                                                                                count++;
+
+
+                                                                                                                                                <span>&nbsp;&nbsp;</span>
+                                                                                                                                                <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                                <span>&nbsp;&nbsp;</span>
+                                                                                                                                            }
+
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    else
+                                                                                                                                    {
+                                                                                                                                        foreach (var taxonomyItem in article.Taxonomies)
+                                                                                                                                        {
+
+
+                                                                                                                                            <span>
+                                                                                                                                                <a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
+                                                                                                                                            </span>
+                                                                                                                                        }
+                                                                                                                                    }
                                                                                                                                 }
 
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            foreach (var taxonomyItem in article.Taxonomies)
-                                                                                                                            {
 
-                                                                                                        
-																																				<span>
-																																					<a style="color: #be1e2d !important; text-decoration: none !important;" href="@GetTaxonomyUrl(taxonomyItem)">@taxonomyItem.Item_Name</a>
-																																				</span>
-                                                                                                                            }
-                                                                                                                        }
+
+
+                                                                                                                            </td>
+                                                                                                                        </tr>
                                                                                                                     }
 
 
-
-                                                                                                                
-																																			</td>
-																																		</tr>
-                                                                                                                    }
-
-                                                                                                                
-																																	</tbody>
-																																</table>
-																																<!--[if mso]>
-																															</td>
-																															<![endif]-->
-																															<!--[if mso]>
-																														</tr>
-																													</table>
-																													<![endif]-->
-																												</td>
-																											</tr>
-																										</tbody>
-																									</table>
-																								</td>
-																							</tr>
-																						</table>
-																					</td>
-																				</tr>
-																			</tbody>
-																		</table>
-																		<!--[if mso]>
-																	</td>
-																	<![endif]-->
-																	<!--[if mso]>
-																</tr>
-															</table>
-															<![endif]-->
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</table>
-								if (index == 0)
-								{
-									<!--[if gte mso 9]>
-									</td>
-									<td align="center" valign="top" width="285" style="width:285px;">
-										<![endif]-->
-								}
-								index++;
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                            <!--[if mso]>
+                                                                                                            </td>
+                                                                                                            <![endif]-->
+                                                                                                            <!--[if mso]>
+                                                                                                                </tr>
+                                                                                                            </table>
+                                                                                                            <![endif]-->
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <!--[if mso]>
+                                                                </td>
+                                                                <![endif]-->
+                                                                <!--[if mso]>
+                                                                    </tr>
+                                                                </table>
+                                                                <![endif]-->
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    if (index == 0)
+                                    {
+                                        <!--[if gte mso 9]>
+                                        </td>
+                                        <td align="center" valign="top" width="285" style="width:285px;">
+                                            <![endif]-->
+                                    }
+                                    index++;
                                 }
                             }
-                            
-								<!--[if gte mso 9]>
-							</td>
-						</tr>
-					</table>
-					<![endif]-->
-				</td>
-			</tr>
-		</table>
-	</td>
-</tr>
-		 
-		<tr>
+
+                            <!--[if gte mso 9]>
+                                    </td>
+                                </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
             <td align="center" style="padding:15px 0 0;">
                 <table width="94%">
                     <tr>
@@ -663,7 +802,7 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
     }
 }
 
-    @functions
+@functions
 {
         public string GetBackgroundColor(FeaturedArticleMultiColumnViewModel model)
         {
@@ -694,4 +833,4 @@ Model.Articles[0].Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpa
         {
             return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)}";
         }
-    }
+}
