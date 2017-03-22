@@ -85,14 +85,16 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
+		 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
 		  editor.pasteHtml(qfdiv.outerHTML);
 	}
 	  else if(value=="quick-facts")
-		{
+		{			
 			contentElement.innerHTML=selectedtext;
 		 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
+		 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
 		  editor.pasteHtml(qfdiv.outerHTML);
 		}
 		else if(value=="quick-facts__list--ul" || value=="quick-facts__list--ol")
@@ -113,6 +115,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 			 contentElement.setAttribute('class',block[0]);	
 			 contentElement.innerHTML=selectedtext;
 			 sec.append(contentElement);
+			 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
 			 editor.pasteHtml(sec.outerHTML);
 		}	
 		else if(value=='header colored')
