@@ -161,12 +161,10 @@
     var recaptchaEmail;
     var myCallBack = function() {        
         recaptchaAskTheAnalyst = grecaptcha.render('recaptchaAskTheAnalyst', {
-            'sitekey': '@Model.CaptchaSiteKey',
-            'theme' : 'light'
+            'sitekey': '@Model.CaptchaSiteKey' 
         });                
         recaptchaEmail = grecaptcha.render('recaptchaEmail', {
-            'sitekey': '@Model.CaptchaSiteKey',
-            'theme' : 'light'
+            'sitekey': '@Model.CaptchaSiteKey' 
         });
     };
 </script>
