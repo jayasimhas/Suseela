@@ -312,7 +312,7 @@ function createLayoutInner1(data) {
 }
 
 function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
-	var sectionData = '', sponsoredCls = (data.articles[idx].isSonsoredBy) ? 'sponsored_cont' : '';
+	var sectionData = '', sponsoredCls = (data.articles[idx].isSonsoredBy) ? 'sponsored_cont' : '', fullWidForTab = data.articles[idx].listableImage ? '' : 'wid';
 	sectionData += '<section class="article-preview list-featured-article listViewCont '+sponsoredCls+'">';
 	sectionData += '<div class="topic-article-image_pan">';
 	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
@@ -339,7 +339,7 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '</div>'; 
 	sectionData += data.articles[idx].listableSummary ? '<div class="article-summary">' +  data.articles[idx].listableSummary + '</div>' : '';
 	sectionData += '</div>';
-	sectionData += '<div class="article-preview__tags bar-separated-link-list">';
+	sectionData += '<div class="article-preview__tags bar-separated-link-list '+fullWidForTab+'">';
 	if (data.articles[idx].listableTopics) {
 		for (var i = 0; i < data.articles[idx].listableTopics.length; i++) {
 			var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
