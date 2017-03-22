@@ -22,12 +22,15 @@
                             <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd MMM yyyy")</td>
                             @if (!string.IsNullOrEmpty(@pdf.PdfPageUrl))
                             {
-                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank">@pdf.IssueNumber</a>&nbsp;</td>
-                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank">@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
+                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
+                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;</td> 
+                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
+                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
                             }
                             else
                             {
-                                <td align="left"><a href="@pdf.PdfPageUrl" onclick="return false">@pdf.IssueNumber</a>&nbsp;</td>
+                                <td align="left"><a href="@pdf.PdfPageUrl" onclick="return false" class="click-utag"
+                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;</td>
                                 <td align="left"><a href="@pdf.PdfPageUrl" onclick="return false">@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
                             }
 
