@@ -36,7 +36,7 @@ function formController(opts) {
 			// Some forms will require user confirmation before action is taken
 			// Default to true (confirmed), set to false later if confirmation is
 			// required and user cancels action
-			var actionConfirmed = true;
+		    var actionConfirmed = true;		    
 
 			var currentForm;
 			if(event.target.form) {
@@ -44,7 +44,21 @@ function formController(opts) {
 			} else {
 				currentForm = $(event.target).closest('form');
 			}
-
+            var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id'),
+                sendRecaptcha = (captchaId === 'recaptchaAskTheAnalyst') ? recaptchaAskTheAnalyst : recaptchaEmail;
+		    // If In Future More Captcha will come in same page
+		    /*
+                var sendRecaptcha;
+                if(captchaId === 'recaptchaAskTheAnalyst'){
+                    sendRecaptcha = recaptchaAskTheAnalyst;
+                }
+                else if(captchaId === 'recaptchaEmail'){   
+                     sendRecaptcha recaptchaEmail;
+                }
+                else{
+                     sendRecaptcha otherIdval; 
+                }
+            */
 			if($(currentForm).data('force-confirm')) {
 				actionConfirmed = window.confirm($(currentForm).data('force-confirm'));
 			}
@@ -102,8 +116,10 @@ function formController(opts) {
 						}
 					});
 
-					// add recaptcha if it exists in the form
-					var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse();
+				    // add recaptcha if it exists in the form
+                    if (sendRecaptcha !== undefined)
+                        var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse(sendRecaptcha);
+
 					if (captchaResponse !== undefined)
 						inputData['RecaptchaResponse'] = captchaResponse;
 
