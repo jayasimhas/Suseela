@@ -156,11 +156,13 @@ section: Colors
 @color: #9E310D @name: primary
 @color: #F5821F @name: Pumpkin
 @color: #c12d3b @name: Persian Red
+@color: #FEF2E8 @name: secondary color ten percent
 ```
 */
-$color-primary-orange:      #9E310D;
-$color-pumpkin-orange:      #F5821F;
+$color-primary-orange: #9E310D;
+$color-pumpkin-orange: #F5821F;
 $color-persian-red: #c12d3b;
+$color-sec-agri: #FEF2E8;
 
 
 /*---
@@ -171,11 +173,13 @@ section: Colors
 @color: #DE4361 @name: primary Default State
 @color: #b0173d @name: secondary color 
 @color: #91211E @name: primary Hover State
+@color: #F7E7EB @name: secondary color ten percent
 ```
 */
 $color-primary-crimson: #DE4361;
 $color-cardinal-color: #b0173d; 
 $color-primary-insurance-hover: #91211E;
+$color-sec-ID: #F7E7EB;
 
 
 /*---
@@ -186,9 +190,10 @@ section: Colors
 @color: #1191D1 @name: primary Default State
 @color: #0f5487 @name: secondary color 
 @color: #002d4f @name: primary Hover State
+@color: #E7EEF3 @name: secondary color ten percent
 ```
 */
 $color-primary-default: #1191D1;
 $color-secondary-color: #0f5487; 
 $color-primary-hover: #002d4f;
-
+$color-sec-ll: #E7EEF3;
