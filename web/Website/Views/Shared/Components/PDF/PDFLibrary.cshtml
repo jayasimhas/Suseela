@@ -53,7 +53,8 @@
                             <td align="left">
                                 @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText}, new { target="_blank"})
                                 &nbsp;
-                                <a href="@Url.Action("GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank">
+                                <a href="@Url.Action("GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank" class="click-utag"
+                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.PdfTitle", "download_file_category": "PDF Download", "download_file_name": "@pdf.PdfTitle", "download_file_url": "@pdf.PdfPageUrl"}'>
                                     <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
                                 </a>
 
@@ -84,7 +85,8 @@
                                     <td align="left">
                                         @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })
                                         &nbsp;
-                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank">
+                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank" class="click-utag"
+                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.PdfTitle", "download_file_category": "PDF Download", "download_file_name": "@pdf.PdfTitle", "download_file_url": "@pdf.PdfPageUrl"}'>
                                             <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
                                         </a>
                                     </td>
