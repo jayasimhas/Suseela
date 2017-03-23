@@ -9,13 +9,23 @@
     <script src="//www.amcharts.com/lib/3/amstock.js" type="text/javascript"></script>
 
     <div>
-        <h6><span id="@AMGraph.GraphID">@AMGraph.GraphTitle</span></h6>
+        <h6><span>@AMGraph.GraphTitle</span></h6>
     </div>
 
     <script>
         var graphcolor = '@AMGraph.GraphColor';
-        var graphType = '@AMGraph.GraphType'
+        var graphType = '@AMGraph.GraphType';
+        var graphId = "@AMGraph.GraphID";
+        if (graphId.indexOf('|') > 0) {
+            var graphArray = graphId.split('|');
+            var title = graphArray[0];
+            var title1 = graphArray[1];
+        } else {
+            var title = graphId;
+            var title1 = graphId;
+        }
         var chartData = [];
+        var chartData1 = [];
         AmCharts.ready(function () {
             generateChartData();
             createStockChart();
@@ -36,23 +46,64 @@
             }
             $('#latest-value').html(LatestItem + '<span class="' + status + '">(' + Difference + ')</span> <span>' + LatestDate + '</span>');
 
-        }
+            if (chartData1.length > 0) {
+                
+                var LatestItem1 = chartData1[chartData1.length - 1].value,
+                SecondLastItem1 = chartData1[chartData1.length - 2].value,
+                Difference1 = LatestItem1 - SecondLastItem1;
+                LatestDate1 = chartData1[chartData1.length - 1].date;
 
-        function generateChartData() {
-            var testdata = '@AMGraph.FinanceResult';
-            var graphdata = testdata.split("|");
-            for (var i = 0; i <= graphdata.length; i++) {
-                if (graphdata[i] != undefined && graphdata[i].indexOf(",") > 0) {
-                    var year = graphdata[i].split(",")[0];
-                    var val = graphdata[i].split(",")[1];
-                    chartData.push({
-                        date: year,
-                        value: val,
-                    });
+                var status1 = "";
+                if (Difference1 > 0) {
+                    status1 = "rise";
+                } else {
+                    status1 = "fall";
                 }
+                $('#latest-value').html(title + LatestItem + '<span class="' + status + '">(' + Difference + ')</span>' + " " + title1 + " " + LatestItem1 + '<span class="' + status1 + '">(' + Difference1 + ')</span>');
             }
 
         }
+
+        function generateChartData() {
+            var feedata = '@AMGraph.FinanceResult';
+            if (feedata.indexOf("-$-") > 0)
+            {
+                var feedataSrcOne = feedata.split("-$-")[0];
+                var feedataSrcTwo = feedata.split("-$-")[1];
+            } else {
+                var feedataSrcOne = feedata;
+            }
+
+            if (feedataSrcOne.length > 0) {
+                var graphdata = feedataSrcOne.split("|");
+                for (var i = 0; i <= graphdata.length; i++) {
+                    if (graphdata[i] != undefined && graphdata[i].indexOf(",") > 0) {
+                        var year = graphdata[i].split(",")[0];
+                        var val = graphdata[i].split(",")[1];
+                        chartData.push({
+                            date: year,
+                            value: val,
+                        });
+                    }
+                }
+            }
+
+            if (feedataSrcTwo) {
+                var graphdata1 = feedataSrcTwo.split("|");
+                for (var i = 0; i <= graphdata.length; i++) {
+                    if (graphdata1[i] != undefined && graphdata1[i].indexOf(",") > 0) {
+                        var year = graphdata1[i].split(",")[0];
+                        var val = graphdata1[i].split(",")[1];
+                        chartData1.push({
+                            date: year,
+                            value: val,
+                        });
+                    }
+                }
+            }
+        }
+
+
 
 
         var chart;
@@ -64,23 +115,41 @@
             // DATASETS //////////////////////////////////////////
             var dataSet = new AmCharts.DataSet();
             dataSet.color = "#" + "@AMGraph.GraphColor";
-            dataSet.title = "@AMGraph.GraphID";
+            dataSet.title = title;
             dataSet.fieldMappings = [{
                 fromField: "value",
                 toField: "value"
             }];
             dataSet.dataProvider = chartData.reverse();
             dataSet.categoryField = "date";
-            console.log(chartData);
+
+
+            if (chartData1.length > 0) {
+                //dataSet.compared = true;
+                var dataSet1 = new AmCharts.DataSet();
+                dataSet1.color = "#a6d64f";
+                dataSet1.title = title1;
+                dataSet1.fieldMappings = [{
+                    fromField: "value",
+                    toField: "value"
+                }];
+                dataSet1.dataProvider = chartData1.reverse();
+                dataSet1.categoryField = "date";
+                dataSet1.compared = true;
+
+                chart.dataSets = [dataSet, dataSet1];
+            } else {
+                chart.dataSets = [dataSet];
+            }
             // set data sets to the chart
-            chart.dataSets = [dataSet];
+
 
             // PANELS ///////////////////////////////////////////
             // first stock panel
             var stockPanel1 = new AmCharts.StockPanel();
             stockPanel1.showCategoryAxis = true;
             stockPanel1.title = "Value";
-            stockPanel1.percentHeight = 70;
+            //stockPanel1.percentHeight = 70;
 
             // graph of first stock panel
             var graph1 = new AmCharts.StockGraph();

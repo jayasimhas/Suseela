@@ -317,15 +317,32 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '<div class="topic-article-image_pan">';
 	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
 	sectionData += '</div>';
-	sectionData += data.articles[idx].listableTitle ? '<div class="topic-article-rig_pan"><h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : '';
-	sectionData += '<div class="topic-featured-article__inner-wrapper">';
-	sectionData += '<div class="article-metadata">';
 	
-	if(data.articles[idx].isSonsoredBy){
+	sectionData += '<div class="topic-article-rig_pan">';
+	
+	if(data.articles[idx].isSonsoredBy){ 
+		sectionData += '<div class="article-metadata">';
 		sectionData += '<ul><li><time class="article-metadata__date sponsored_title">'+data.articles[idx].sponsoredByTitle+'</time></li>';
 		sectionData += '<li><a href="'+data.articles[idx].SponsoredLink+'"><img src="'+data.articles[idx].sponsoredByLogo+'" style="max-height: 16px; margin-top: 4px;"></a></li></ul>';
+		sectionData += '</div>'; 
+		sectionData += '<div class="topic-featured-article__inner-wrapper">';
+		sectionData += data.articles[idx].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : ''; 
+		sectionData += data.articles[idx].listableSummary ? '<div class="article-summary">' +  data.articles[idx].listableSummary + '</div>' : '';
+		sectionData += '</div>';
+		sectionData += '<div class="article-preview__tags bar-separated-link-list '+fullWidForTab+'">';
+		if (data.articles[idx].listableTopics) {
+			for (var i = 0; i < data.articles[idx].listableTopics.length; i++) {
+				var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
+				sectionData += '<a href="' + getlistLink1 + '">' + data.articles[idx].listableTopics[i].linkableText + '</a>';
+			}
+		}
+		sectionData += '</div>'; 
 	}
 	else{
+		sectionData += data.articles[idx].listableTitle ? '<h3 class="topic-featured-article__headline"><a href="' + linkableUrl + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[idx].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[idx].listableTitle + '</a></h3>' : ''; 
+		sectionData += '<div class="topic-featured-article__inner-wrapper">';
+		sectionData += '<div class="article-metadata">';
+		
 		sectionData += '<div class="article-preview__byline">';
 		sectionData += data.articles[idx].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[idx].listableAuthorByLine + '</div>' : '';
 		sectionData += '<ul>'; 
@@ -334,19 +351,21 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 		sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[idx].listableType+'"></use></svg><img src="'+data.articles[idx].listableType+'" width="25" /></span></li>' : '';
 		sectionData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[idx].id + '" data-analytics="{"bookmark": "' + bookmarkInfo + '", "bookmark_title": "' + data.articles[idx].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[idx].isArticleBookmarked + '"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
 		sectionData += '</ul>'; 
-		sectionData += '</div>'; 
-	}
-	sectionData += '</div>'; 
-	sectionData += data.articles[idx].listableSummary ? '<div class="article-summary">' +  data.articles[idx].listableSummary + '</div>' : '';
-	sectionData += '</div>';
-	sectionData += '<div class="article-preview__tags bar-separated-link-list '+fullWidForTab+'">';
-	if (data.articles[idx].listableTopics) {
-		for (var i = 0; i < data.articles[idx].listableTopics.length; i++) {
-			var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
-			sectionData += '<a href="' + getlistLink1 + '">' + data.articles[idx].listableTopics[i].linkableText + '</a>';
+		sectionData += '</div>';
+		
+		sectionData += '</div>';
+	
+		sectionData += data.articles[idx].listableSummary ? '<div class="article-summary">' +  data.articles[idx].listableSummary + '</div>' : '';
+		sectionData += '</div>';
+		sectionData += '<div class="article-preview__tags bar-separated-link-list '+fullWidForTab+'">';
+		if (data.articles[idx].listableTopics) {
+			for (var i = 0; i < data.articles[idx].listableTopics.length; i++) {
+				var getlistLink1 = data.articles[idx].listableTopics[i].linkableUrl ? data.articles[idx].listableTopics[i].linkableUrl : '#';
+				sectionData += '<a href="' + getlistLink1 + '">' + data.articles[idx].listableTopics[i].linkableText + '</a>';
+			}
 		}
+		sectionData += '</div>';
 	}
-	sectionData += '</div>';
 	sectionData += '</div>';
 	sectionData += '</section>';
 	
