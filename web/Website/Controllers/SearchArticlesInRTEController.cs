@@ -44,19 +44,25 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public object Get(string articleNumber)
         {
-            ArticleItem article = _articleUtil.GetArticlesByNumberWithinRTE(articleNumber, "master");
-            //Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
-            if (article != null)
+            var pubPrefixes = _articleUtil.GetPublicationsPrefixes();
+            if (pubPrefixes.Any(n => articleNumber.StartsWith(n)))
             {
-                var result = new ArticleItem
+                var publicationId = _articleUtil.GetVerticalRootByPubPrefix(new string(articleNumber.Take(2).ToArray()));
+                Item article = _articleUtil.GetArticleItemByNumber(articleNumber, publicationId.ToGuid());
+                if (article != null)
                 {
-                    _Id = article._Id,
-                    _Name = article._Name,
-                    _Path = article._Path
-                };
-                return result;
+                    var result = new ArticleItem
+                    {
+                        _Id = article.ID.ToGuid(),
+                        _Name = article.Name,
+                        _Path = article.Paths.Path
+                    };
+                    return result;
+                }
             }
+            //ArticleItem article = _articleUtil.GetArticlesByNumberWithinRTE(articleNumber, "master");
+
             return null;
-        }          
+        }
     }
 }
