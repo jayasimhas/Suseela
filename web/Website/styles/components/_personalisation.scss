@@ -659,7 +659,7 @@
 				font-size: 1rem;
 			}
 		}
-	}
+	} 
 	.article-metadata{
 		margin-bottom: 0px;
 		ul  li { 
@@ -667,7 +667,12 @@
 					max-width: inherit;
 				}
 		}
-	}			
+	}	
+	.sponsored_cont{
+		.article-metadata{
+			margin-bottom: 10px;
+		}
+	}
 	.list-featured-article { 
 		border-bottom: 1px solid #e7e7e7;
 		margin-bottom: 1rem;
@@ -702,7 +707,15 @@
 			background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);
 			height: 5rem;
 		}
-	} 
+	}
+	.sponsored_cont{
+		.topic-featured-article__inner-wrapper{
+			&:after{
+				background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fef3e9 65%, #fef3e9 100%);
+				height: 60px;  
+			}
+		}
+	}
 }
 }
 .gridView{
