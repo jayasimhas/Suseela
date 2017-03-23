@@ -214,6 +214,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
                         
                     }
+
+
+                    if ((summaryTitleHtml.IndexOf("<p>") != 0) && (summaryTitleHtml.LastIndexOf("</p>") != summaryTitleHtml.Length - 4))
+                    {
+
+                        summaryTitleHtml = "<p>" + summaryTitleHtml + "</p>";
+                    }
+
+                 
+
                     ao.Add("SUMMARY", summaryTitleHtml);
                     ao.Add("STORYTITLE", cleanTitleHtml);
                     ao.Add("FILENAME", cleanTitleHtml);
@@ -1890,7 +1900,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     StringBuilder imgStrb = new StringBuilder();
                     foreach (XmlNode node in imgList)
                     {           //<  href = "acrobat_file.pdf" > pdf file </ a >
-                             string nodeValue = "<a href='" + node["SRC"].InnerText + "' sourceid ='" + node.Attributes["sourceid"].Value + "'/> ";
+                             string nodeValue = "<a href='" + node["SRC"].InnerText + "' sourceid ='" + node.Attributes["sourceid"].Value + "'>Click here for a larger version of this table in PDF format</a> ";
                         if (imgStrb.Length > 0)
                             imgStrb.Append("");
                         imgStrb.Append(nodeValue);
