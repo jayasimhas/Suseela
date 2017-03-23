@@ -149,16 +149,17 @@ namespace Informa.Web.Controllers
             IArticleSearchFilter filter = _articleSearcher.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
             List<string> PubPrefixes = GetPublicationsPrefixes();
-            string VerticalRoot = GetVerticalRootByPubPrefix(new string(articleNumber.Take(2).ToArray()));
 
             if (PubPrefixes.Any(n => articleNumber.StartsWith(n)))
             {
                 string url;
+                var VerticalRoot = GetVerticalRootByPubPrefix(new string(articleNumber.Take(2).ToArray()));
+                var publicationAndvertical = VerticalRoot.Split('+');
                 using (new Sitecore.SecurityModel.SecurityDisabler())
                 {
                     //string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&q={3}&verticalroot={2}", HttpContext.Current.Request.Url.Scheme, hostName, VerticalRoot, articleNumber);
+                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&q={3}&verticalroot={4}", HttpContext.Current.Request.Url.Scheme, hostName, publicationAndvertical[0], articleNumber, publicationAndvertical[1]);
                 }
                 using (var client = new HttpClient())
                 {
@@ -172,11 +173,16 @@ namespace Informa.Web.Controllers
                             var service = SitecoreFactory(databaseName);
                             if (foundArticle != null)
                                 return service.GetItem<ArticleItem>(foundArticle.ItemId.ToString());
-                        }                       
-                    }                    
+                        }
+                    }
+                    else return null;
                 }
-            }            
-
+            }
+            else
+            {
+                ArticleItem item = new ArticleItem() { _Name = "Invalid article number" };
+                return item;
+            }
             return null;
         }
 
@@ -191,8 +197,12 @@ namespace Informa.Web.Controllers
             pubPrefixes.Add(Settings.GetSetting("Content.Pharma.RoseSheet.Prefix"));
             //Agri
             pubPrefixes.Add(Settings.GetSetting("Content.Agri.Commodities.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Agri.AnimalPharm.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Agri.Agrow.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Agri.PolicyandLeg.Prefix"));
             //Maritime
             pubPrefixes.Add(Settings.GetSetting("Content.Maritime.Lloydslist.Prefix"));
+            pubPrefixes.Add(Settings.GetSetting("Content.Maritime.InsuranceDay.Prefix"));
 
             return pubPrefixes;
         }
@@ -209,7 +219,7 @@ namespace Informa.Web.Controllers
                     {
                         if (string.Equals(prefix, siteRoot.Fields["Publication Prefix"].Value, StringComparison.OrdinalIgnoreCase))
                         {
-                            return siteRoot.ParentID.ToGuid().ToString();
+                            return siteRoot.ID.ToString() + "+" + VerticalRoot.ID.ToString();
                         }
                     }
                 }

@@ -1,6 +1,8 @@
 ﻿@model Informa.Web.ViewModels.BuyersGuide.BuyersListingViewModel
 @using Informa.Library.Utilities.References
-
+@{ 
+    var linkType = string.Empty;
+}
 @*Agrow Listing Page*@
 <div class="main__content">
     <div>
@@ -28,9 +30,11 @@
                                     {
                                         if (j < tilesCount)
                                         {
+                                            linkType = Model.AgrowTiles.ElementAt(j).IsDetailPageExternalLink ? "External" : "Internal";
                                         <div class="buyers-guide">
                                             <div class="image">
-                                                <a class="link" href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">
+                                                <a class="link click-utag" href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl"
+                                                    data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>
                                                     @if (!string.IsNullOrEmpty(@Model.AgrowTiles.ElementAt(j).AgrowBanner?.Src))
                                                     {
                                                         <img src="@Model.AgrowTiles.ElementAt(j).AgrowBanner.Src" alt="banner" />
@@ -41,7 +45,8 @@
                                                     }
                                                 </a>
                                             </div>
-                                            <h4 class="article-preview__headline"><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl">@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
+                                            <h4 class="article-preview__headline"><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl" class="click-utag"
+                                                    data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
                                         </div>
                                         }
                                         i++;
@@ -59,15 +64,18 @@
                             <div class="buyers-guide-row">
                                 @foreach (var agrow in Model.AgrowTiles)
                                 {
+                                    linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
                                     <div class="buyers-guide">
-                                            <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                            <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl" class="click-utag"
+                                            data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowTitle</a></h4>
                                        
                                         <div class="text">
                                             <p>
                                                 @Html.Raw(agrow.AgrowShortDescription)
                                             </p>
                                         </div>
-                                        <a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailText</a>
+                                        <a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
+                                            data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a>
                                     </div>
                                 }
                             </div>
@@ -82,10 +90,12 @@
                             <div class="buyers-guide-row">
                                 @foreach (var agrow in Model.AgrowTiles)
                                 {
+                                    linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
                                     <div class="buyers-guide">
                                         <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
                                         <div class="image">
-                                            <a href="@agrow.AgrowDetailUrl">
+                                            <a href="@agrow.AgrowDetailUrl" class="click-utag"
+                                               data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>
                                                 @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
                                                 {
                                                     <img src="@agrow.AgrowBanner.Src" alt="banner" />
@@ -97,7 +107,8 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <h4><a href="@agrow.AgrowDetailUrl" class="link" target="_blank">@agrow.AgrowDetailText</a></h4>
+                                            <h4><a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
+                                                     data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a></h4>
                                         </div>
                                     </div>
                                 }

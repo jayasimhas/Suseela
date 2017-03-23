@@ -76,7 +76,7 @@ namespace Informa.Web.ViewModels.Casualty
                 try
                 {
                     string stockResult = CompanyResultService.GetCompanyFeeds(Graph.GraphFeedUrl).Result;
-                    stockResult = stockResult.Replace(System.Environment.NewLine, "|");
+                    stockResult = stockResult.Replace("\n", "|").Replace("|\r|", string.Empty);
                     return stockResult;
                 }
                 catch (Exception ex)
