@@ -1,9 +1,29 @@
 ﻿@model Informa.Web.ViewModels.Articles.IArticlePrologueATAViewModel
-<li class="action-flag pop-out__trigger js-pop-out-trigger"
-    data-pop-out-type="ask-the-analyst" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"asktheanalyst"}'>
-    <span class="action-flag__label">ASK THE ANALYST</span>
-    <svg class="action-flag__icon">
-        <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-    </svg>
-</li>
+<style>
+    .clickable {
+        cursor: pointer;
+    }
+</style>
+
+    @if (Model.IsUserAuthenticated)
+    {
+        <li class="action-flag pop-out__trigger js-pop-out-trigger"
+        data-pop-out-type="ask-the-analyst" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"asktheanalyst"}'>
+        <span class="action-flag__label">ASK THE ANALYST</span>
+        <svg class="action-flag__icon">
+            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+        </svg>
+        </li>
+    }
+    else
+    {
+        <li class="action-flag pop-out__trigger js-pop-out-trigger"
+         data-pop-out-type="sign-in"
+            data-pop-out-align="center" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"asktheanalyst"}'>
+             <span class="action-flag__label">ASK THE ANALYST</span>
+                <svg class="action-flag__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                </svg>
+                </li>
+    }
 

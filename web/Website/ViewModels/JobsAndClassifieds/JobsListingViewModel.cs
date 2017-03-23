@@ -58,6 +58,15 @@ namespace Informa.Web.ViewModels.JobsAndClassifieds
         /// No of Jobs to be displayed Per Page
         /// </summary>
         public IJobs_Listing_No_of_Jobs_Per_Page JobsListingSettings { get; set; }
+
+        /// <summary>
+        /// Gets the name of the page.
+        /// </summary>
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName => Sitecore.Context.Item?.Name;
+
         /// <summary>
         /// Method to get All published Job Tiles
         /// </summary>

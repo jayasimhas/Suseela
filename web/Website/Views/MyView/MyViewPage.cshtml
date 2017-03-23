@@ -12,10 +12,12 @@
                 <a class="editView button--filled button--outline hidden-xs" href="@Model.MyViewSettingsPageUrl">@Model.EditMyViewButtonLableText</a>
                 <ul class="view-mode hidden-xs">
                     <li data-view="tileView" class="selected">
-                        <a href="#" class="icon-tile-view" title="Tile View">tile View</a>
+                        <a href="#" class="icon-tile-view click-utag" title="Tile View"
+                           data-info='{"page_name": "@Model.PageName", "page_structure_view": "Grid View", "ga_eventCategory": "@Model.PageName", "ga_eventAction":"Page View Structure", "ga_eventLabel": "Grid View"}'>tile View</a>
                     </li>
                     <li data-view="listView" class="">
-                        <a href="#" class="icon-list-view" title="List view">List View</a>
+                        <a href="#" class="icon-list-view click-utag" title="List view" 
+                           data-info='{"page_name": "@Model.PageName", "page_structure_view": "List View", "ga_eventCategory": "@Model.PageName", "ga_eventAction":"Page View Structure", "ga_eventLabel": "List View"}'>List View</a>
                     </li>
                 </ul>
             </div>

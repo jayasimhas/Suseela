@@ -11,6 +11,7 @@ using Informa.Library.AgrowBuyers;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
+using Glass.Mapper.Sc.Fields;
 
 namespace Informa.Web.ViewModels.BuyersGuide
 {
@@ -52,6 +53,14 @@ namespace Informa.Web.ViewModels.BuyersGuide
         public string Body => GlassModel?.Body;
 
         /// <summary>
+        /// Gets the name of the page.
+        /// </summary>
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName => Sitecore.Context.Item?.Name;
+
+        /// <summary>
         /// Get agrow buyer's details
         /// </summary>
         /// <returns>AgrowTile</returns>
@@ -87,6 +96,7 @@ namespace Informa.Web.ViewModels.BuyersGuide
                                 agrowTiles.Add(new AgrowTile { AgrowTitle = buyersList.Title, AgrowBanner = buyersList.Banner,
                                     AgrowLogo = buyersList.AgrowLogo, AgrowShortDescription = new string(JobShortdesc.Take(150).ToArray()) + "...",
                                     AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl,
+                                    IsDetailPageExternalLink = buyersList != null && buyersList.PageURL != null && buyersList.PageURL.Type.Equals(LinkType.External),
                                     AgrowDetailText = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Text : buyersList?.Title
                                 });
                             }
@@ -94,6 +104,7 @@ namespace Informa.Web.ViewModels.BuyersGuide
                             {
                                 agrowTiles.Add(new AgrowTile { AgrowTitle = buyersList.Title, AgrowBanner = buyersList.Banner,AgrowLogo = buyersList.AgrowLogo,
                                     AgrowShortDescription = JobShortdesc,AgrowDetailUrl = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Url : buyersList?._AbsoluteUrl,
+                                    IsDetailPageExternalLink = buyersList != null && buyersList.PageURL != null && buyersList.PageURL.Type.Equals(LinkType.External),
                                     AgrowDetailText = !string.IsNullOrEmpty(buyersList?.PageURL?.Url) ? buyersList?.PageURL?.Text : buyersList?.Title
                                 });
                             }

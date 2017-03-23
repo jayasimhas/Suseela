@@ -14,10 +14,12 @@
                 <div class="job_list_individual eachCategory">
                     <div class="job_description">
                         <div class="job_heading">
-                            <h3 class="article-preview__headline"><a href="@job.JobDetailUrl">@job.JobTitle</a></h3>
+                            <h3 class="article-preview__headline"><a href="@job.JobDetailUrl" class="click-utag"
+                                      data-info='{"event_name": "job_link_click", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "Job Link Click", "ga_eventLabel": "@job.JobTitle", "click_through_destination": "@job.JobTitle"}'>@job.JobTitle</a></h3>
                         </div>
                         <div class="job_logo">
-                            <a href="@job.JobDetailUrl">
+                            <a href="@job.JobDetailUrl" class="click-utag"
+                               data-info='{"event_name": "job_link_click", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "Job Link Click", "ga_eventLabel": "@job.JobTitle", "click_through_destination": "@job.JobTitle"}'>
                                 @if (!string.IsNullOrEmpty(job.JobLogo?.Src))
                                 {
                                     <img src="@job.JobLogo.Src" alt="logo" />
