@@ -78,14 +78,20 @@ namespace Informa.Web.ViewModels.Casualty
                     if(Graph.GraphFeedUrl.Contains("|"))
                     {
                         string stockResultSouceOne = CompanyResultService.GetCompanyFeeds(Graph.GraphFeedUrl.Split('|')[0]).Result;
+                        if (stockResultSouceOne.Contains(Environment.NewLine))
+                            stockResultSouceOne = stockResultSouceOne.Replace(Environment.NewLine, "|");
                         stockResultSouceOne = stockResultSouceOne.Replace("\n", "|").Replace("|\r|", string.Empty);
                         string stockResultSoucetwo = CompanyResultService.GetCompanyFeeds(Graph.GraphFeedUrl.Split('|')[1]).Result;
+                        if (stockResultSoucetwo.Contains(Environment.NewLine))
+                            stockResultSoucetwo = stockResultSoucetwo.Replace(Environment.NewLine, "|");
                         stockResultSoucetwo = stockResultSoucetwo.Replace("\n", "|").Replace("|\r|", string.Empty);
                         return stockResultSouceOne+"-$-"+stockResultSoucetwo;
                     }
                     else
                     {
                         string stockResult = CompanyResultService.GetCompanyFeeds(Graph.GraphFeedUrl).Result;
+                        if (stockResult.Contains(Environment.NewLine))
+                            stockResult = stockResult.Replace(Environment.NewLine, "|");
                         stockResult = stockResult.Replace("\n", "|").Replace("|\r|", string.Empty);
                         return stockResult;
                     }
