@@ -1257,7 +1257,7 @@ $(document).ready(function(){
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
-    $('.search-results').on('click', '.click-utag', function (e) {
+    $('.search-results, .ContentRecomm-ReadNext, .suggested-article').on('click', '.click-utag', function (e) {
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
