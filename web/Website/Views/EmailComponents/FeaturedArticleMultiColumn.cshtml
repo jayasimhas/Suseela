@@ -129,7 +129,7 @@
                                                                         <strong style="color: #@Model.GetBrandingFontColor()">@Html.Raw(Model.GetAuthorByLine(index))</strong>
                                                                     </p>
                                                                 }
-                                                                @if (Model.GlassModel != null && !Model.GlassModel.ShowShortDescription)
+                                                                @if (Model.GlassModel != null && Model.GlassModel.ShowShortDescription)
                                                            {
                                                                     <span style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Georgia, serif; font-size: 14px; line-height: 150%; color: #777777; text-transform: none !important; text-align: left;">
                                                                         @{
@@ -596,7 +596,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
                                                                                                                             </a>
                                                                                                                         </td>
                                                                                                                     </tr>
-                                                                                                                    @if (Model.GlassModel != null && !Model.GlassModel.ShowShortDescription)
+                                                                                                                    @if (Model.GlassModel != null && Model.GlassModel.ShowShortDescription)
                                                                                                                   {
                                                                                                                         <tr>
                                                                                                                             <td valign="top" height="120">
