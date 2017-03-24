@@ -186,3 +186,34 @@
         }
     }
 }
+.form-email-preferences {
+    .email-preference-mobile {
+        display: none;
+        margin-bottom: 5px;
+        @include breakpoint('small') {
+            display: block;
+            float: left;
+            width: calc(100% - 46px);
+        }
+    }
+    .sortable-table__col {
+        text-align: center;
+        @include breakpoint('small') {
+            text-align: left;
+        }
+        &:first-child {
+            text-align: left;
+            font-weight: bold;
+        }
+        .labeled-checkbox {
+            @include breakpoint('small') {
+                float: right;
+            }
+        }
+        &:after {
+            content: "";
+          display: table;
+          clear: both;
+        }
+    }
+}
