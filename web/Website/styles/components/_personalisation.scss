@@ -216,6 +216,9 @@
 				@media screen and (min-width: 768px) and (min-width: 1024px){
 					margin-bottom: 10px;
 				}
+				@media screen and (min-width: 767px) and (min-width: 768px){
+					margin: 20px 0 10px;
+				}
 			}
 			.frEditview{
 				float: right;
@@ -661,12 +664,17 @@
 		}
 	} 
 	.article-metadata{
-		margin-bottom: 0px;
+		margin-bottom: 0px; 
 		ul  li { 
 				&:nth-child(2){
-					max-width: inherit;
+					max-width: inherit; 
 				}
-		}
+				@media screen and (min-width: 767px) and (max-width: 768px){
+					&.wid{
+						max-width: 85px !important;
+					}
+				}
+		} 
 	}	
 	.sponsored_cont{
 		.article-metadata{

@@ -6319,6 +6319,9 @@ main .action-flags-bar, main .banner--highlights {
     @media screen and (min-width: 768px) and (min-width: 768px) and (min-width: 1024px) {
       .personalisationhome .latestSubject .fllatestSub {
         margin-bottom: 10px; } }
+    @media screen and (min-width: 768px) and (min-width: 767px) and (min-width: 768px) {
+      .personalisationhome .latestSubject .fllatestSub {
+        margin: 20px 0 10px; } }
 
 @media screen and (min-width: 768px) {
     .personalisationhome .latestSubject .frEditview {
@@ -6807,7 +6810,12 @@ main .action-flags-bar, main .banner--highlights {
   .listView .article-metadata {
     margin-bottom: 0px; }
     .listView .article-metadata ul li:nth-child(2) {
-      max-width: inherit; }
+      max-width: inherit; } }
+  @media screen and (min-width: 768px) and (min-width: 767px) and (max-width: 768px) {
+    .listView .article-metadata ul li.wid {
+      max-width: 85px !important; } }
+
+@media screen and (min-width: 768px) {
   .listView .sponsored_cont .article-metadata {
     margin-bottom: 10px; }
   .listView .list-featured-article {
@@ -9185,8 +9193,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -13494,7 +13502,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

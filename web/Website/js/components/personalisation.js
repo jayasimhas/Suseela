@@ -312,7 +312,7 @@ function createLayoutInner1(data) {
 }
 
 function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sbookmarkIcon){
-	var sectionData = '', sponsoredCls = (data.articles[idx].isSonsoredBy) ? 'sponsored_cont' : '', fullWidForTab = data.articles[idx].listableImage ? '' : 'wid';
+	var sectionData = '', sponsoredCls = (data.articles[idx].isSonsoredBy) ? 'sponsored_cont' : '', fullWidForTab = data.articles[idx].listableImage ? '' : 'wid', ellisisForTab = data.articles[idx].listableImage ? 'wid' : '';
 	sectionData += '<section class="article-preview list-featured-article listViewCont '+sponsoredCls+'">';
 	sectionData += '<div class="topic-article-image_pan">';
 	sectionData += data.articles[idx].listableImage ? '<img class="topic-featured-article__image" src="' + data.articles[idx].listableImage + '">' : '';
@@ -347,7 +347,7 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 		sectionData += data.articles[idx].listableAuthorByLine ? '<div class="authorTitle">' + data.articles[idx].listableAuthorByLine + '</div>' : '';
 		sectionData += '<ul>'; 
 		sectionData += data.articles[idx].listableDate ? '<li><time class="article-metadata__date">' + data.articles[idx].listableDate + '</time></li>' : '';
-		sectionData += data.articles[idx].linkableText ? '<li><h6>' + data.articles[idx].linkableText + '</h6></li>' : '';
+		sectionData += data.articles[idx].linkableText ? '<li class="'+ellisisForTab+'"><h6>' + data.articles[idx].linkableText + '</h6></li>' : '';
 		sectionData += data.articles[idx].listableType ? '<li><span class="js-toggle-tooltip" data-tooltip-text="This article includes data."><svg class="article-metadata__media-type" style="width: 0px; height: 0px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#'+data.articles[idx].listableType+'"></use></svg><img src="'+data.articles[idx].listableType+'" width="25" /></span></li>' : '';
 		sectionData += '<li><div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article" data-pop-out-type="sign-in" data-pop-out-align="right" data-bookmark-id="' + data.articles[idx].id + '" data-analytics="{"bookmark": "' + bookmarkInfo + '", "bookmark_title": "' + data.articles[idx].listableTitle + '", "bookmark_publication": "Commodities"}" data-is-bookmarked="' + data.articles[idx].isArticleBookmarked + '"><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked ' + fbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg><svg class="action-flag__icon action-flag__icon--bookmark article-bookmark ' + sbookmarkIcon + '"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg></div></li>';
 		sectionData += '</ul>'; 
