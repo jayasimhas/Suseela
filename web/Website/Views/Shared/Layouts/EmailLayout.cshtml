@@ -1,4 +1,4 @@
-@using Sitecore.FXM.Providers
+﻿@using Sitecore.FXM.Providers
 @using Sitecore.FXM.Switchers
 @using Sitecore.Links
 @using Sitecore.Resources.Media
@@ -88,7 +88,7 @@
                 max-width:600px !important;
             }
             a{
-                color: #be1e2d !important;
+                color: #be1e2d;
                 text-decoration: none !important;
             }
             .download-link a{
@@ -315,7 +315,7 @@
                                         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
                                             <tr>
                                                 <td align="center" style="padding-bottom: 12px;">
-                                                    @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
+                                                    @Model.ViewOnlineVersionPreLink <a style="color:#@GetBrandingFontColor();" href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -370,7 +370,7 @@
                                                                                 {
                                                                                     foreach (var nav in Model.HeaderNavigation)
                                                                                     {
-                                                                                                                    <a href="@nav.LinkUrl">@nav.Text</a>
+                                                                                                                    <a style="color:#@GetBrandingFontColor();" href="@nav.LinkUrl">@nav.Text</a>
                                                                                         if (!nav.IsLast)
                                                                                         {
                                                                                                                         <span>&nbsp;</span>
@@ -588,7 +588,7 @@
                                                                                                                 <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
                                                                                                                     @foreach (var nav in Model.FooterNavigation)
                                                                                                                     {
-                                                                                                                        <a href="@nav.LinkUrl" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #be1e2d;text-decoration: none">@nav.Text</a>
+                                                                                                                        <a href="@nav.LinkUrl" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@GetBrandingFontColor();text-decoration: none">@nav.Text</a>
                                                                                                                         if (!nav.IsLast)
                                                                                                                         {
                                                                                                                             <span class="vertical-separator">|</span>
@@ -650,3 +650,28 @@
     }
 }
 </html>
+
+@functions
+{
+   
+    public string GetBrandingFontColor()
+    {
+
+        switch (Model.SiteRoot.Publication_Code)
+        {
+            case "AGRO": return "D34729";
+            case "ANIM": return "632C20";
+            case "IEGV": return "2D9E22";
+            case "AGRI": return "c44c0a";
+            case "INSD": return "DE4361";
+            case "LOLS": return "1191D1";
+            case "INV": return "ca4d2c";
+            case "MTI": return "007cc3";
+            case "PINK": return "d82b6a";
+            case "ROSE": return "c8206e";
+            case "SCRIP": return "be1e2d";
+            default: return "3919A5";
+        }
+
+    }
+}
