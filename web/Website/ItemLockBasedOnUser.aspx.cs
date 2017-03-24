@@ -54,7 +54,7 @@ namespace Informa.Web
         {
             string inputAuthorName = txtUserName.Text;
             string authorItemID = string.Empty;
-            Sitecore.Data.Items.Item[] allAuthorItems = sitecoreDb.SelectItems("fast:/sitecore/content/Environment Globals/Staff/*[@@templateid='{DAF954E3-BCC7-4353-996F-1CAF9D35B44C}']");
+            Sitecore.Data.Items.Item[] allAuthorItems = sitecoreDb.SelectItems("fast:/sitecore/content/Pharma/Vertical Globals/Staff/*[@@templateid='{DAF954E3-BCC7-4353-996F-1CAF9D35B44C}']");
             foreach (var authorItem in allAuthorItems)
             {
                 if (authorItem.Name == txtUserName.Text || authorItem.Name.Contains(txtUserName.Text))
