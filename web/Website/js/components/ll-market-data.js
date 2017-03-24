@@ -141,7 +141,7 @@
 			return createFinalArr;
 		},
 		convertMonthNameToNumber: function(monthName){
-			var myDate = new Date(monthName + " 1");
+			var myDate = new Date(monthName + " 1 " + new Date().getFullYear());
 				var monthDigit = myDate.getMonth();
 				return isNaN(monthDigit) ? 0 : (monthDigit);
 		},
