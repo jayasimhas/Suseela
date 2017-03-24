@@ -296,3 +296,15 @@
         }
     }
 }
+
+@mixin sponsored_content($seconday-color, $secondary-color-ten){
+	.sponsored_cont {
+		 background: transparentize($seconday-color, 0.9);
+			.topic-featured-article__inner-wrapper:after, &.article-preview--small:after 
+		{
+			background: linear-gradient(to bottom, $secondary-color-ten  0%, $secondary-color-ten 65%, $secondary-color-ten  100%);
+			background: -webkit-linear-gradient(top, $secondary-color-ten  0%, $secondary-color-ten 65%, $secondary-color-ten  100%); 
+			background: -moz-linear-gradient(top, $secondary-color-ten  0%, $secondary-color-ten  65%, $secondary-color-ten 100%); 
+		}
+	}
+}
