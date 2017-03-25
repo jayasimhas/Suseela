@@ -9193,8 +9193,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9930,10 +9930,11 @@ div#feedbacklite.fbl_r {
     margin-bottom: 20px;
     float: left;
     width: 50%; }
-    @media (max-width: 480px) {
+    @media screen and (max-width: 767px) {
       #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control, #ship-Container-ShipFixtures .lli-brand-container .form-control, #ship-Coal-Export .lli-brand-container .form-control, #market-Data-Dry-Cargo .lli-brand-container .form-control,
       #cockett-Bunker .lli-brand-container .form-control, #ship-Roro .lli-brand-container .form-control, #ship-Container-Ship .lli-brand-container .form-control, #ship-Vehicle .lli-brand-container .form-control, #tanker-Pure-ChemPage .lli-brand-container .form-control, #shipContainerFixtures .lli-brand-container .form-control, #fisDryBulkContainer .lli-brand-container .form-control, #howeRobinsonContainer .lli-brand-container .form-control, #market-imarex .lli-brand-container .form-control, #shipVehicle-Page .lli-brand-container .form-control, #shipCoalExport-page .lli-brand-container .form-control {
-        width: 100%; } }
+        width: 100%;
+        float: inherit; } }
     #market-data-tool .lli-brand-container .form-control:nth-child(2), #dry-cargo .lli-brand-container .form-control:nth-child(2), #dry-cargo-cap .lli-brand-container .form-control:nth-child(2), #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2), #ship-Container-ShipFixtures .lli-brand-container .form-control:nth-child(2), #ship-Coal-Export .lli-brand-container .form-control:nth-child(2), #market-Data-Dry-Cargo .lli-brand-container .form-control:nth-child(2),
     #cockett-Bunker .lli-brand-container .form-control:nth-child(2), #ship-Roro .lli-brand-container .form-control:nth-child(2), #ship-Container-Ship .lli-brand-container .form-control:nth-child(2), #ship-Vehicle .lli-brand-container .form-control:nth-child(2), #tanker-Pure-ChemPage .lli-brand-container .form-control:nth-child(2), #shipContainerFixtures .lli-brand-container .form-control:nth-child(2), #fisDryBulkContainer .lli-brand-container .form-control:nth-child(2), #howeRobinsonContainer .lli-brand-container .form-control:nth-child(2), #market-imarex .lli-brand-container .form-control:nth-child(2), #shipVehicle-Page .lli-brand-container .form-control:nth-child(2), #shipCoalExport-page .lli-brand-container .form-control:nth-child(2) {
       float: right;
@@ -9949,11 +9950,12 @@ div#feedbacklite.fbl_r {
       #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg, #ship-Coal-Export .lli-brand-container .dataProImg, #market-Data-Dry-Cargo .lli-brand-container .dataProImg,
       #cockett-Bunker .lli-brand-container .dataProImg, #ship-Roro .lli-brand-container .dataProImg, #ship-Container-Ship .lli-brand-container .dataProImg, #ship-Vehicle .lli-brand-container .dataProImg, #tanker-Pure-ChemPage .lli-brand-container .dataProImg, #shipContainerFixtures .lli-brand-container .dataProImg, #fisDryBulkContainer .lli-brand-container .dataProImg, #howeRobinsonContainer .lli-brand-container .dataProImg, #market-imarex .lli-brand-container .dataProImg, #shipVehicle-Page .lli-brand-container .dataProImg, #shipCoalExport-page .lli-brand-container .dataProImg {
         margin-top: -11px; } }
-    @media (max-width: 480px) {
+    @media screen and (max-width: 767px) {
       #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg, #ship-Coal-Export .lli-brand-container .dataProImg, #market-Data-Dry-Cargo .lli-brand-container .dataProImg,
       #cockett-Bunker .lli-brand-container .dataProImg, #ship-Roro .lli-brand-container .dataProImg, #ship-Container-Ship .lli-brand-container .dataProImg, #ship-Vehicle .lli-brand-container .dataProImg, #tanker-Pure-ChemPage .lli-brand-container .dataProImg, #shipContainerFixtures .lli-brand-container .dataProImg, #fisDryBulkContainer .lli-brand-container .dataProImg, #howeRobinsonContainer .lli-brand-container .dataProImg, #market-imarex .lli-brand-container .dataProImg, #shipVehicle-Page .lli-brand-container .dataProImg, #shipCoalExport-page .lli-brand-container .dataProImg {
         float: inherit;
-        text-align: left; } }
+        text-align: left;
+        width: 100%; } }
     #market-data-tool .lli-brand-container .dataProImg span, #dry-cargo .lli-brand-container .dataProImg span, #dry-cargo-cap .lli-brand-container .dataProImg span, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span, #ship-Container-ShipFixtures .lli-brand-container .dataProImg span, #ship-Coal-Export .lli-brand-container .dataProImg span, #market-Data-Dry-Cargo .lli-brand-container .dataProImg span,
     #cockett-Bunker .lli-brand-container .dataProImg span, #ship-Roro .lli-brand-container .dataProImg span, #ship-Container-Ship .lli-brand-container .dataProImg span, #ship-Vehicle .lli-brand-container .dataProImg span, #tanker-Pure-ChemPage .lli-brand-container .dataProImg span, #shipContainerFixtures .lli-brand-container .dataProImg span, #fisDryBulkContainer .lli-brand-container .dataProImg span, #howeRobinsonContainer .lli-brand-container .dataProImg span, #market-imarex .lli-brand-container .dataProImg span, #shipVehicle-Page .lli-brand-container .dataProImg span, #shipCoalExport-page .lli-brand-container .dataProImg span {
       position: relative;
@@ -10406,6 +10408,13 @@ div#feedbacklite.fbl_r {
       width: 570px;
       overflow-x: auto;
       display: block !important; } }
+  @media only screen and (max-width: 767px) {
+    #tanker-fixtures.table-responsive .table.mobView {
+      display: table; }
+    #tanker-fixtures.table-responsive .table.descView {
+      display: none; }
+    #tanker-fixtures.table-responsive .table .visible-sm {
+      display: block; } }
   #tanker-fixtures.table-responsive .table.mobView .mobleftCol {
     width: 40%; }
   #tanker-fixtures.table-responsive .table.mobView .mobrigCol {
@@ -13502,7 +13511,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

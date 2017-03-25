@@ -254,8 +254,9 @@
 			margin-bottom: 20px;
 			float: left;
 			width: 50%;
-			@include breakpoint('small') {
+			@media screen and (max-width: 767px) {
 				width: 100%;
+				float: inherit;
 			}
 			&:nth-child(2){
 				float: right;
@@ -271,9 +272,10 @@
 			@media screen and (min-width: 768px) {
 				margin-top: -11px;
 			}
-			@include breakpoint('small') {
+			@media screen and (max-width: 767px) {
 				float: inherit;
 				text-align: left;
+				width: 100%;
 			}
 			span{
 				position: relative;
@@ -774,7 +776,7 @@
 				padding: 10px;
 			}
 		}
-	}
+	} 
 	&.table-responsive .table{
 		margin-bottom: 1rem;
 		@media only screen and (min-width: 1025px) {
@@ -797,6 +799,18 @@
 				display: block !important;
 			}
 		}
+		@media only screen and (max-width: 767px) { 
+			&.mobView{
+				display: table;
+			}
+			&.descView{
+				display: none;
+			} 
+			.visible-sm {
+				display: block;
+			}
+		}
+		
 		&.mobView{
 			.mobleftCol{
 				width: 40%;

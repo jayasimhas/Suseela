@@ -37,6 +37,55 @@ var serializeSelectedArticles = function () {
 
 };
 
+function loadDropdownVals(data) {
+    for (var key in data) {
+        if (key == 'taxonomies') {
+            var taxonomiesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                taxonomiesDrop += '<div>';
+                taxonomiesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                taxonomiesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                taxonomiesDrop += '</div>';
+            }
+            taxonomiesDrop += '</div>';
+            $('#ddlTaxonomies_dv').html(taxonomiesDrop);
+        }
+        else if (key == 'authors') {
+            var authorsDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                authorsDrop += '<div>';
+                authorsDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                authorsDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                authorsDrop += '</div>';
+            }
+            authorsDrop += '</div>';
+            $('#ddlAuthors_dv').html(authorsDrop);
+        }
+        else if (key == 'contentTypes') {
+            var contentTypesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                contentTypesDrop += '<div>';
+                contentTypesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                contentTypesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                contentTypesDrop += '</div>';
+            }
+            contentTypesDrop += '</div>';
+            $('#ddlContentType_dv').html(contentTypesDrop);
+        }
+        else if (key == 'mediaTypes') {
+            var mediaTypesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                mediaTypesDrop += '<div>';
+                mediaTypesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                mediaTypesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                mediaTypesDrop += '</div>';
+            }
+            mediaTypesDrop += '</div>';
+            $('#ddlMediaType_dv').html(mediaTypesDrop);
+        }
+    };
+}
+
 $(document)
     .ready(function () {
 
@@ -116,7 +165,7 @@ $(document)
 
 
         // results filters
-       $('#tblResults select').bind('change', function () {
+        $('#tblResults select').bind('change', function () {
             var selectedVal = $(this).val(),
                 idx = $(this).closest('td').index(),
                 getallTrs = $('#tblResults tr').not('.tableheader');
@@ -141,6 +190,27 @@ $(document)
                     $(getallTrs[i]).hide();
                 }
             }
+        });
+
+        $('#ddlPublications').on('click', 'input[type=checkbox]', function () {
+            var ddlVerticals = $('#ddlVerticals').val(), ddlPublications = $('#ddlPublications_sl input[type=checkbox]:checked'), getSelectedVal = '';
+			
+            for (var i = 0; i < ddlPublications.length; i++) {
+				var coma = (i+1 == ddlPublications.length) ? '' : ',';
+                getSelectedVal += ddlPublications[i].value + coma;
+            } 
+			$.ajax({
+				url: 'api/InformaVWBSearch',
+				data: { 'vertCode': ddlVerticals, 'pubCode': getSelectedVal },
+				dataType: 'json',
+				type: 'GET',
+				success: function (data) {
+					loadDropdownVals(data);
+				},
+				error: function (err) {
+					console.log(err);
+				}
+			}); 
         });
     });
 
