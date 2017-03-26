@@ -555,7 +555,7 @@ function formController(opts) {
 			// Some forms will require user confirmation before action is taken
 			// Default to true (confirmed), set to false later if confirmation is
 			// required and user cancels action
-			var actionConfirmed = true;
+		    var actionConfirmed = true; 
 
 			var currentForm;
 			if (event.target.form) {
@@ -563,6 +563,21 @@ function formController(opts) {
 			} else {
 				currentForm = $(event.target).closest('form');
 			}
+			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id'),
+                sendRecaptcha = (captchaId === 'recaptchaAskTheAnalyst') ? recaptchaAskTheAnalyst : recaptchaEmail;
+                // If In Future More Captcha will come in same page
+		    /*
+                var sendRecaptcha;
+                if(captchaId === 'recaptchaAskTheAnalyst'){
+                    sendRecaptcha = recaptchaAskTheAnalyst;
+                }
+                else if(captchaId === 'recaptchaEmail'){   
+                     sendRecaptcha recaptchaEmail;
+                }
+                else{
+                     sendRecaptcha otherIdval; 
+                }
+            */
 
 			if ($(currentForm).data('force-confirm')) {
 				actionConfirmed = window.confirm($(currentForm).data('force-confirm'));
@@ -618,8 +633,10 @@ function formController(opts) {
 						}
 					});
 
-					// add recaptcha if it exists in the form
-					var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse();
+				    // add recaptcha if it exists in the form
+					if (sendRecaptcha !== undefined)
+					    var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse(sendRecaptcha);
+
 					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
@@ -2538,11 +2555,30 @@ $(document).ready(function () {
 			return $('.header__wrapper').offset().top + $('.header__wrapper').height();
 		};
 
+		var addFixedMenu = function addFixedMenu() {
+			if ($(window).width() >= 1024) {
+				$('.main-menu').addClass('fixed');
+				$('.main__wrapper').css('margin-left', '330px');
+			}
+		};
+
+		var removeFixedMenu = function removeFixedMenu() {
+			if ($(window).width() >= 1024) {
+				$('.main-menu').removeClass('fixed');
+				$('.main__wrapper').css('margin-left', '0');
+				if ($(window).scrollTop() > getHeaderEdge()) {
+					$('.main-menu').addClass('fixed');
+					$('.main__wrapper').css('margin-left', '330px');
+				}
+			}
+		};
+
 		var showMenu = function showMenu() {
 			$('.main-menu').addClass('is-active');
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 			$('body').addClass('is-frozen');
+			addFixedMenu();
 		};
 
 		var hideMenu = function hideMenu() {
@@ -2552,6 +2588,10 @@ $(document).ready(function () {
 			if ($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
+			removeFixedMenu();
+			$('.main__wrapper').removeClass('shift-main-content');
+			$('.main-menu').removeClass('shift-main-content');
+			$('body').removeClass('shift-content');
 		};
 
 		/* Toggle menu visibility */
@@ -2573,8 +2613,10 @@ $(document).ready(function () {
 			// Only stick if the header (including toggler) isn't visible
 			if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
 				$('.header__wrapper .menu-toggler').addClass('is-sticky');
+				addFixedMenu();
 			} else {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
+				removeFixedMenu();
 			}
 		});
 
@@ -2769,6 +2811,15 @@ $(document).ready(function () {
 					smoothScroll(200, 'left');
 				}
 			});
+
+			if ($(window).width() >= 1024) {
+				var mainMenuListItems = $('ul.main-menu__section, dl.main-menu__footer');
+				mainMenuListItems.remove();
+				$('.main-menu').append("<div class='main-menu-list'></div>");
+				mainMenuListItems.each(function () {
+					$('.main-menu-list').append($(this));
+				});
+			}
 		};
 
 		var scrollToTimerCache;
@@ -3135,6 +3186,82 @@ $(document).ready(function () {
 	}
 
 	return init(function () {});
+});
+$(document).ready(function () {
+	var cookieName = 'menunavigationcookie',
+	    // Name of our cookie
+	cookieValue = 'yes'; // Value of cookie
+
+	//Close navigation menu when cookie is set
+	function CloseNavigationMenu() {
+		$('.main-menu').removeClass('is-active');
+		$('.main-menu').removeClass('fixed');
+		$('.menu-toggler').removeClass('is-active');
+		$('.header__wrapper .menu-toggler').removeClass('is-sticky');
+		$('body').removeClass('is-frozen');
+		$('.main-menu').removeClass('shift-main-content');
+		$('.main__wrapper').css('margin-left', '0');
+		$('body').removeClass('shift-content');
+	}
+
+	//open navigation menu when no cookie is set
+	function OpenNavigationMenu() {
+		$('.main-menu').addClass('is-active');
+		$('.main-menu').addClass('fixed');
+		$('.menu-toggler').addClass('is-active');
+		$('.header__wrapper .menu-toggler').addClass('is-sticky');
+		$('body').addClass('is-frozen');
+		$('.main-menu.is-active').addClass('shift-main-content');
+		$('.main__wrapper').css('margin-left', '330px');
+		$('body').addClass('shift-content');
+	}
+
+	// Create cookie
+	function createCookie(name, value, days) {
+		var expires;
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+			expires = "; expires=" + date.toGMTString();
+		} else {
+			expires = "";
+		}
+		document.cookie = name + "=" + value + expires + "; path=/";
+	}
+
+	// Read cookie
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) === ' ') {
+				c = c.substring(1, c.length);
+			}
+			if (c.indexOf(nameEQ) === 0) {
+				return c.substring(nameEQ.length, c.length);
+			}
+		}
+		return null;
+	}
+
+	// Erase cookie
+	function eraseCookie(name) {
+		createCookie(name, "", -1);
+	}
+
+	if ($(window).width() >= 1024) {
+		if ($('input.menu-open-first-time-checked').val() == 'True') {
+			if (readCookie("menunavigationcookie") !== cookieValue && window.location.pathname === '/') {
+				OpenNavigationMenu();
+			} else {
+				CloseNavigationMenu();
+			}
+			createCookie("menunavigationcookie", "yes", 365);
+		} else {
+			eraseCookie("menunavigationcookie");
+		}
+	}
 });
 
 },{}],15:[function(require,module,exports){

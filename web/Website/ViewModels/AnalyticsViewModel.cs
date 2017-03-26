@@ -28,6 +28,7 @@ using Jabberwocky.Glass.Models;
 using Jabberwocky.Glass.Autofac.Util;
 using Autofac;
 using System.Compat.Web;
+using Informa.Library.Services.Captcha;
 
 namespace Informa.Web.ViewModels
 {
@@ -50,6 +51,7 @@ namespace Informa.Web.ViewModels
         protected readonly IDCDReader DcdReader;
         protected readonly ITaxonomyService TaxonomyService;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly IRecaptchaService RecaptchaSettings;
 
         public AnalyticsViewModel(
 			IItemReferences itemReferences,
@@ -66,7 +68,7 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
             IHttpContextProvider httpContextProvider,
             IDCDReader dcdReader,
-            ITaxonomyService taxonomyService, IGlobalSitecoreService globalService) {
+            ITaxonomyService taxonomyService, IGlobalSitecoreService globalService, IRecaptchaService recaptchaSettings) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -89,7 +91,8 @@ namespace Informa.Web.ViewModels
 	        OpportunityIds = GetOpportunityIds();
             TaxonomyService = taxonomyService;
             GlobalService = globalService;
-			}
+            RecaptchaSettings = recaptchaSettings;
+        }
 
         public IArticle Article => GlassModel as IArticle;
 
@@ -131,6 +134,8 @@ namespace Informa.Web.ViewModels
         public bool IsUserLoggedIn => AuthenticatedUserContext.IsAuthenticated;
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 
+        //ISW-1102 (No longer able to Email Article to friend + ReCaptcha now missing)
+        public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
         public string UserCompany => UserCompanyContext?.Company?.Name;
         public string CorporateName => UserCompanyContext?.Company?.Name;
         public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
