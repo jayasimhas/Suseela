@@ -2589,7 +2589,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 {
 
 
-<<<<<<< HEAD
     /// <summary>
     /// IUrlToReference Interface
     /// <para></para>
@@ -2609,7 +2608,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
         [SitecoreField(IUrlToReferenceConstants.SiteHomeItemFieldName, Setting = SitecoreFieldSettings.InferType)]
         Guid SiteHomeItem { get; set; }
     }
-=======
  	/// <summary>
 	/// ISite_Config Interface
 	/// <para></para>
@@ -4926,7 +4924,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 			
 
 	}
->>>>>>> ISW-335
 
 
     /// <summary>
@@ -20466,6 +20463,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
         Guid Main_Navigation { get; set; }
         /// <summary>
+        /// The Is Open First Time field.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 00EB448A-71EF-422B-9587-55ACFC102250</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Open_First_Time { get; set; }
+        /// <summary>
         /// The Newsletter Breaking Type field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -21754,6 +21760,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
         Guid Main_Navigation { get; set; }
         /// <summary>
+        /// The Is Open First Time field.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 00EB448A-71EF-422B-9587-55ACFC102250</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Is_Open_First_TimeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Open_First_Time { get; set; }
+        /// <summary>
         /// The Newsletter Breaking Type field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -22590,6 +22605,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
         public const string Main_NavigationFieldName = "Main Navigation";
 
+        public static readonly ID Is_Open_First_TimeFieldId = new ID("00EB448A-71EF-422B-9587-55ACFC102250");
+        public const string Is_Open_First_TimeFieldName = "Is Open First Time";
 
 
         public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
@@ -29187,6 +29204,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public const string Main_NavigationFieldName = "Main Navigation";
 
 
+        public static readonly ID Is_Open_First_TimeFieldId = new ID("00EB448A-71EF-422B-9587-55ACFC102250");
+        public const string Is_Open_First_TimeFieldName = "Is Open First Time";
+
+
 
         public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
         public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
@@ -31754,7 +31775,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 {
 
 
-<<<<<<< HEAD
     /// <summary>
     /// I_Base_Rss_Feed Interface
     /// <para></para>
@@ -31961,7 +31981,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
         public static readonly ID LanguageFieldId = new ID("57a6a774-fed8-41a8-baa1-a9b0397e1059");
         public const string LanguageFieldName = "Language";
 
-=======
  	/// <summary>
 	/// ISite_Root Interface
 	/// <para></para>
@@ -32512,7 +32531,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 			
 
 	}
->>>>>>> ISW-335
 
 
         public static readonly ID LinkFieldId = new ID("a83d0c7c-6c27-429a-8641-d9b059d7d5dd");
