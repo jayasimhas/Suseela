@@ -48,6 +48,21 @@ namespace Informa.Web.ViewModels
             SiterootContext = siterootContext;
             GlobalService = globalService;
         }
+	public class SideNavigationMenuViewModel : GlassViewModel<I___BasePage>
+	{
+		protected readonly ISiteMainNavigationContext SiteMainNavigationContext;
+		protected readonly ITextTranslator TextTranslator;
+        protected readonly ISiteRootContext SiteRootContext;
+
+        public SideNavigationMenuViewModel(
+            ISiteRootContext siteRootContext,
+            ISiteMainNavigationContext siteMainNavigationContext,
+			ITextTranslator textTranslator)
+		{
+            SiteRootContext = siteRootContext;
+            SiteMainNavigationContext = siteMainNavigationContext;
+			TextTranslator = textTranslator;
+		}
 
         #region Side Navigation Menu Items  
         public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
@@ -231,4 +246,10 @@ namespace Informa.Web.ViewModels
         public string CurrentItemId => GlassModel?._Id.ToString();
 	}
 
+}
+		public string MenuButtonText => TextTranslator.Translate("MainNavigation.ToggleMenu");
+
+        public bool MenuOpenFirstTime => SiteRootContext.Item.Is_Open_First_Time;
+
+    }
 }

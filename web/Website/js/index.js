@@ -902,6 +902,8 @@ $(document).ready(function(){
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
 			removeFixedMenu();
+			$('.main-menu').removeClass('shift-main-content');
+			$('body').removeClass('shift-content');
 		};
 
 		/* Toggle menu visibility */
