@@ -186,6 +186,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
             HtmlNodeCollection imgNodes = document.DocumentNode.SelectNodes("image");
             HtmlNodeCollection tableauNodes = document.DocumentNode.SelectNodes("strong");
+            HtmlNodeCollection aNodes = document.DocumentNode.SelectNodes("a");
             if (tryGetNodes == null || !tryGetNodes.Any())
                 return html;
 
@@ -211,6 +212,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                     }
                 }
+
+
+                if (aNodes != null && node.Name.Equals("relation"))
+                {
+                    foreach (HtmlNode aNode in aNodes)
+                    {
+                        if (aNode.Attributes["sourceid"].Value == node.Attributes["sourceid"].Value)
+                        {
+                            parentNode.InsertBefore(aNode, node);
+
+                            parentNode.RemoveChild(node);
+
+                            document.DocumentNode.RemoveChild(aNode);
+                            // imageId = imageId + "|" + imgnode.Attributes["sourceid"].Value;
+                        }
+                    }
+
+
+                }
+
                 if ((imgNodes != null || tableauNodes != null) && node.Name.Equals("relation"))
                 {
                     if (imgNodes != null)
@@ -309,6 +330,46 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         if (imgWidth > 787)
                             map.Logger.Log(articlePath, $"image too wide: '{imgWidth}'", ProcessStatus.Warning, NewItemField, node.OuterHtml);
                     }
+
+
+
+                    if (nodeName.Equals("a"))
+                    {
+
+                        // see if it exists
+                        string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
+                        string pdfSrc = node.Attributes["href"]?.Value ?? string.Empty;
+
+                        string ext = Path.GetExtension(pdfSrc);
+                        if (ext == ".pdf" || ext == ".PDF")
+                        {
+                            AricleImportImageHandler objSitecoreMediaHandler = new AricleImportImageHandler();
+                            MediaItem newImg = objSitecoreMediaHandler.HandleImage(map, articlePath, articleDate, pdfSrc, ArticleId, publication);
+                            if (newImg != null)
+                            {
+                                string href = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
+
+                                // replace the node with sitecore tag
+                                node.SetAttributeValue("href", href);
+
+                                //If no width was found, use the sitecore width field on the med lib image 
+                                if (string.IsNullOrEmpty(imgWidthStr))
+                                {
+                                    Field f = newImg.InnerItem.Fields["Width"];
+                                    imgWidthStr = (f != null) ? f.Value : string.Empty;
+                                }
+                            }
+                            //if a 'width' attribute is available, that attribute will be read.
+                            int imgWidth = 0;
+                            if (!int.TryParse(imgWidthStr, out imgWidth))
+                                imgWidth = 0;
+
+                            //If the width read in either case is greater than 787, a warning will be logged.
+                            if (imgWidth > 787)
+                                map.Logger.Log(articlePath, $"image too wide: '{imgWidth}'", ProcessStatus.Warning, NewItemField, node.OuterHtml);
+                        }
+                    }
+
                 }
 
                 i++;

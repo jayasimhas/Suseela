@@ -124,7 +124,15 @@ namespace Informa.Web.ViewModels.MyView
         /// <value>
         /// The json data.
         /// </value>
-        public string JSONData => GetJSONData();       
+        public string JSONData => GetJSONData();
+
+        /// <summary>
+        /// Gets the name of the page.
+        /// </summary>
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName => Sitecore.Context.Item?.Name;
 
         /// <summary>
         /// Gets the json data.

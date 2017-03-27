@@ -21,7 +21,15 @@ $main-menu-handle-width: 70px;
 		cursor: auto;
 		transform: translate3d($main-menu-width, 0, 0);
 	}
-
+	&.fixed {
+		position: fixed;
+		top: 0;
+		height: 100%;
+	}
+	.main-menu-list{
+		height: 100%;
+		overflow-y: scroll;
+	}
 	// At smaller widths, we use the `--mini` toggler instead
 	// Remove the thick handle, don't show permatoggler on the left when closed
 	@include breakpoint('medium') {

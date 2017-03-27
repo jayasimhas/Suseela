@@ -87,6 +87,14 @@ namespace Informa.Web.ViewModels.Articles
 
 
         public string PreferedTaxonomies => GetPreferedTaxonomyIds();
+
+        /// <summary>
+        /// Gets the name of the page.
+        /// </summary>
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName => Sitecore.Context.Item?.Name;
         /// <summary>
         /// Gets the json data.
         /// </summary>

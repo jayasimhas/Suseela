@@ -37,6 +37,55 @@ var serializeSelectedArticles = function () {
 
 };
 
+function loadDropdownVals(data) {
+    for (var key in data) {
+        if (key == 'taxonomies') {
+            var taxonomiesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                taxonomiesDrop += '<div>';
+                taxonomiesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                taxonomiesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                taxonomiesDrop += '</div>';
+            }
+            taxonomiesDrop += '</div>';
+            $('#ddlTaxonomies_dv').html(taxonomiesDrop);
+        }
+        else if (key == 'authors') {
+            var authorsDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                authorsDrop += '<div>';
+                authorsDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                authorsDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                authorsDrop += '</div>';
+            }
+            authorsDrop += '</div>';
+            $('#ddlAuthors_dv').html(authorsDrop);
+        }
+        else if (key == 'contentTypes') {
+            var contentTypesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                contentTypesDrop += '<div>';
+                contentTypesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                contentTypesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                contentTypesDrop += '</div>';
+            }
+            contentTypesDrop += '</div>';
+            $('#ddlContentType_dv').html(contentTypesDrop);
+        }
+        else if (key == 'mediaTypes') {
+            var mediaTypesDrop = '<div id="checks">';
+            for (var prop in data[key]) {
+                mediaTypesDrop += '<div>';
+                mediaTypesDrop += '<input type="checkbox" value="' + prop + '" id="' + prop + '">';
+                mediaTypesDrop += '<label for="' + prop + '">' + data[key][prop] + '</label>';
+                mediaTypesDrop += '</div>';
+            }
+            mediaTypesDrop += '</div>';
+            $('#ddlMediaType_dv').html(mediaTypesDrop);
+        }
+    };
+}
+
 $(document)
     .ready(function () {
 
@@ -116,7 +165,7 @@ $(document)
 
 
         // results filters
-       $('#tblResults select').bind('change', function () {
+        $('#tblResults select').bind('change', function () {
             var selectedVal = $(this).val(),
                 idx = $(this).closest('td').index(),
                 getallTrs = $('#tblResults tr').not('.tableheader');
@@ -142,6 +191,117 @@ $(document)
                 }
             }
         });
+
+        $('#ddlPublications').on('click', 'input[type=checkbox]', function () {
+            var ddlVerticals = $('#ddlVerticals').val(), ddlPublications = $('#ddlPublications_sl input[type=checkbox]:checked'), getSelectedVal = '';
+			
+            for (var i = 0; i < ddlPublications.length; i++) {
+				var coma = (i+1 == ddlPublications.length) ? '' : ',';
+                getSelectedVal += ddlPublications[i].value + coma;
+            } 
+			$.ajax({
+				url: 'api/InformaVWBSearch',
+				data: { 'vertCode': ddlVerticals, 'pubCode': getSelectedVal },
+				dataType: 'json',
+				type: 'GET',
+				success: function (data) {
+					loadDropdownVals(data);
+				},
+				error: function (err) {
+					console.log(err);
+				}
+			}); 
+        });
+		var Taxonomies_dvStr = '', Authors_dvStr = '', ContentType_dvStr = '', MediaType_dvStr = '', TaxonomieFlag = true, AuthorsFlag = true, ContentTypeFlag = true, MediaTypeFlag = true;
+		$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').on('click', 'input[type=checkbox]', function(){
+			var $this = $(this);
+			if($this.is(':checked')){
+				$this.attr('checked', 'checked');
+				if($this.closest('#ddlTaxonomies_dv').attr('id') == 'ddlTaxonomies_dv'){
+					Taxonomies_dvStr += $this.val() + ',';
+					TaxonomieFlag = false;
+				}
+				else if($this.closest('#ddlAuthors_dv').attr('id') == 'ddlAuthors_dv'){
+					Authors_dvStr += $this.val() + ',';
+					AuthorsFlag = false;
+				}
+				else if($this.closest('#ddlContentType_dv').attr('id') == 'ddlContentType_dv'){
+					ContentType_dvStr += $this.val() + ','; 
+					ContentTypeFlag = false;
+				}
+				else if($this.closest('#ddlMediaType_dv').attr('id') == 'ddlMediaType_dv'){
+					MediaType_dvStr += $this.val() + ',';
+					MediaTypeFlag = false;
+				}
+			}
+			else{
+				$this.removeAttr('checked');
+				if(Taxonomies_dvStr.indexOf($this.val() !== -1)){
+					Taxonomies_dvStr = Taxonomies_dvStr.split($this.val()+',').join(',');
+					TaxonomieFlag = false;
+				}
+				else if(Authors_dvStr.indexOf($this.val() !== -1)){
+					Authors_dvStr = Authors_dvStr.split($this.val()+',').join(',');
+					AuthorsFlag = false;
+				}
+				else if(ContentType_dvStr.indexOf($this.val() !== -1)){
+					ContentType_dvStr = ContentType_dvStr.split($this.val()+',').join(',');
+					ContentTypeFlag = false;
+				}
+				else if(MediaType_dvStr.indexOf($this.val() !== -1)){
+					MediaType_dvStr = MediaType_dvStr.split($this.val()+',').join(',');
+					MediaTypeFlag = false;
+				}
+			}
+		});
+		
+		if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
+			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
+		}
+		$('#ddlPublications_dv').on('click', 'input[type=checkbox]', function(){
+			if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
+				$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
+			}
+		}); 
+		
+		$('#btnRunReport').on('click', function(){
+			if(TaxonomieFlag){
+				$('#ddlTaxonomies_dv input[type=checkbox]:checked').each(function(idx, val){
+					Taxonomies_dvStr += val.value +',';
+				});
+			}
+			if(AuthorsFlag){
+				$('#ddlAuthors_dv input[type=checkbox]:checked').each(function(idx, val){
+					Authors_dvStr += val.value +',';
+				});
+			}
+			if(ContentTypeFlag){
+				$('#ddlContentType_dv input[type=checkbox]:checked').each(function(idx, val){
+					ContentType_dvStr += val.value +',';
+				});
+			}
+			if(MediaTypeFlag){
+				$('#ddlMediaType_dv input[type=checkbox]:checked').each(function(idx, val){
+					MediaType_dvStr += val.value +',';
+				});
+			}
+			sessionStorage.clear();
+			
+			$('#hdnSelectedTaxs').val(Taxonomies_dvStr);
+			$('#hdnSelectedAuths').val(Authors_dvStr);
+			$('#hdnSelectedContTypes').val(ContentType_dvStr);
+			$('#hdnSelectedMedTypes').val(MediaType_dvStr);
+			
+			sessionStorage.setItem('getDropdownDetails', JSON.stringify({taxonomies: $('#ddlTaxonomies_dv').html(), authors: $('#ddlAuthors_dv').html(), contentTypes:$('#ddlContentType_dv').html(), mediaTypes:  $('#ddlMediaType_dv').html()}));
+		});
+		
+		if(!!sessionStorage.getItem('getDropdownDetails')){
+			var getDropdownData = JSON.parse(sessionStorage.getItem('getDropdownDetails'));
+			$('#ddlTaxonomies_dv').html(getDropdownData.taxonomies);
+			$('#ddlAuthors_dv').html(getDropdownData.authors);
+			$('#ddlContentType_dv').html(getDropdownData.contentTypes);
+			$('#ddlMediaType_dv').html(getDropdownData.mediaTypes)
+		} 
     });
 
 $('.js-article-checkbox input, .js-existing-issue').on('change', function (e) {

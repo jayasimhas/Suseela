@@ -73,6 +73,15 @@ namespace Informa.Web.ViewModels.PDF
         /// User email Id
         /// </summary>
         public string userEmail => _authenticatedUserContext.User?.Email;
+
+        /// <summary>
+        /// Gets the name of the page.
+        /// </summary>
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName => Sitecore.Context.Item?.Name;
+
         /// <summary>
         /// Method to get all published PDFs
         /// </summary>

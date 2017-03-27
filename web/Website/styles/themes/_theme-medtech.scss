@@ -47,4 +47,5 @@
 		transparentize($color-jonquil-yellow, 0.7),
 		transparentize($color-jonquil-yellow, 0.2));
 		
+	@include sponsored_content($color-jonquil-yellow, $color-jonquil-yellow-med);
 }

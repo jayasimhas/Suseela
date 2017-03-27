@@ -95,7 +95,7 @@
                                             }
                                             else if (item.Subscribable)
                                             {
-                                                <a class="button button--outline subscribed click-utag" onclick="return false;"
+                                                <a class="button button--outline mySubscribe click-utag" onclick="return false;"
                                                    data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@item.Publication"}'
                                                    href="#">
                                                     @Model.Subscribed
@@ -195,7 +195,7 @@
                                         }
                                         else if (item.Subscribable)
                                         {
-                                            <a class="button button--outline subscribed click-utag" onclick="return false;"
+                                            <a class="button button--outline mySubscribe click-utag" onclick="return false;"
                                                data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@item.Publication"}'
                                                href="#">
                                                 @Model.Subscribed
@@ -241,7 +241,7 @@
                                                     }
                                                     else if (channel.Subscribable && !channel.Renewable)
                                                     {
-                                                        <a class="button button--outline subscribed click-utag" onclick="return false;"
+                                                        <a class="button button--outline mySubscribe click-utag" onclick="return false;"
                                                            data-info='{"event_name": "subscribed","subscribe_publication":"@item.Publication","ga_eventCategory":"Subscribe & Purchase","ga_eventAction":"@item.Publication","ga_eventLabel":"subscribed","subscribe_topic":"@channel.ChannelName"}'
                                                            href="#">
                                                             @Model.Subscribed

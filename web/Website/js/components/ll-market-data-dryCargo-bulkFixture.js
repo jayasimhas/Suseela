@@ -59,7 +59,7 @@
 			var self = this, tableStr = '', getArr;
 			$.each(tableObj[0], function(key, val){
 				tableStr += '<thead class="table_head">';
-				tableStr += '<tr><th colspan="3" class="pad-full-10">'+key+'</th></tr>';
+				tableStr += '<tr><th colspan="3" class="pad-full-10">&nbsp;</th></tr>';
 				tableStr += '</thead>'; 
 			 });
 			 

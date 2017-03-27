@@ -12,11 +12,12 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
                 ProductType = entitlement.ProductType,
                 Type = entitlement.Type,
                 StartDate = entitlement.StartDate,
-                SalesEndDate = entitlement.SalesEndDate,
+                SalesEndDate = entitlement.EndDate,
                 AccessEndDate = entitlement.AccessEndDate,
                 ProductName = entitlement.ProductName,
                 Description = entitlement.Description,
-                Name = entitlement.Name
+                Name = entitlement.Name,
+                IsActive = entitlement.Active
             };
         }
     }

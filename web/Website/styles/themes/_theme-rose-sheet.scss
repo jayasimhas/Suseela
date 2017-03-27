@@ -45,5 +45,6 @@
 	@include theme-quick-facts(
 		transparentize($color-rubine-red, 0.88),
 		transparentize($color-rubine-red, 0.5));
-
+		
+	@include sponsored_content($color-valerian-red, $color-valerian-red-rose);
 }

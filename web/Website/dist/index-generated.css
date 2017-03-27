@@ -574,6 +574,7 @@ section: Colors
 @color: #FEE2E7 @name: Piggy Pink
 @color: #FFF2F4 @name: Wisp Pink
 @color: #fbf2f4 @name: Soft Peach
+@color: #f8EFF3 @name: mystic marroon Ten
 ```
 */
 /*---
@@ -585,6 +586,7 @@ section: Colors
 @color: #DD3580 @name: Rubine Red
 @color: #c8206e @name: Valerian Red
 @color: #f8d7e6 @name: Cherub Pink
+@color: #F9F8F0 @name: Valerian Red Ten
 ```
 */
 /*---
@@ -597,6 +599,7 @@ section: Colors
 @color: #FDD95F @name: Jonquil Yellow
 @color: #F1CE54 @name: Maize Yellow
 @color: #edefef @name: Porcelain White
+@color: #FFFBEF @name: Jonquil Yellow Ten
 ```
 */
 /*---
@@ -608,7 +611,7 @@ section: Colors
 @color: #7e2718 @name: Copper Red
 @color: #b03718 @name: Rusty Red
 @color: #ca4d2c @name: Dark Coral
-
+@color: #ca4d2c @name: Dark Coral Ten
 ```
 */
 /*---
@@ -619,6 +622,7 @@ section: Colors
 @color: #9E310D @name: primary
 @color: #F5821F @name: Pumpkin
 @color: #c12d3b @name: Persian Red
+@color: #FEF2E8 @name: secondary color ten percent
 ```
 */
 /*---
@@ -629,6 +633,7 @@ section: Colors
 @color: #DE4361 @name: primary Default State
 @color: #b0173d @name: secondary color 
 @color: #91211E @name: primary Hover State
+@color: #F7E7EB @name: secondary color ten percent
 ```
 */
 /*---
@@ -639,6 +644,7 @@ section: Colors
 @color: #1191D1 @name: primary Default State
 @color: #0f5487 @name: secondary color 
 @color: #002d4f @name: primary Hover State
+@color: #E7EEF3 @name: secondary color ten percent
 ```
 */
 /**
@@ -3514,6 +3520,61 @@ body.lightboxed {
     font-size: 2.9em;
     font-weight: 400;
     font-style: normal;
+.main-menu {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: #e2e4e4;
+  border-right: 70px solid #414042;
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  float: left;
+  width: 330px;
+  z-index: 9089;
+  -webkit-transform: translate3d(70px, 0, 0);
+          transform: translate3d(70px, 0, 0);
+  -webkit-transition: all 300ms cubic-bezier(0.45, 0.52, 0.22, 1.085);
+          transition: all 300ms cubic-bezier(0.45, 0.52, 0.22, 1.085); }
+  .main-menu.is-active {
+    cursor: auto;
+    -webkit-transform: translate3d(330px, 0, 0);
+            transform: translate3d(330px, 0, 0); }
+  .main-menu.fixed {
+    position: fixed;
+    top: 0;
+    height: 100%; }
+  .main-menu .main-menu-list {
+    height: 100%;
+    overflow-y: scroll; }
+  @media (max-width: 800px) {
+    .main-menu {
+      border-right: 1px solid #d1d3d4;
+      margin-right: 70px;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      width: 260px;
+      position: fixed;
+      top: 40px;
+      height: calc(100% - 28px);
+      overflow: scroll;
+      z-index: 998; } }
+  .main-menu__section {
+    border-bottom: 1px solid #d1d3d4;
+    margin: 0;
+    padding: 16px 0;
+    padding: 1rem 0;
+    background-color: #f1f2f2; }
+  .main-menu__section-title, .main-menu__section-link {
+    padding: 10px 0;
+    padding: 0.625rem 0;
+    display: inline-block; }
+  .main-menu__section-title {
     color: #231f20;
     margin-top: 45px; }
   .large_table .large-table-responsive h5.secondary_heading, .large_table .large-table-responsive .alert-success p.secondary_heading, .alert-success .large_table .large-table-responsive p.secondary_heading, .large_table .large-table-responsive .alert-error p.secondary_heading, .alert-error .large_table .large-table-responsive p.secondary_heading, .large_table .large-table-responsive .secondary_heading.article-call-to-action__subtitle {
@@ -6282,7 +6343,7 @@ main .action-flags-bar, main .banner--highlights {
         line-height: 21px;
         line-height: 1.3125rem; } }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .personalisationhome .latestSubject {
     color: #231f20;
     position: relative;
@@ -6301,13 +6362,23 @@ main .action-flags-bar, main .banner--highlights {
       top: -20px; }
     .personalisationhome .latestSubject .fllatestSub {
       background-color: #be1e2d;
-      float: left;
       content: "";
       display: block;
       height: 4px;
-      position: absolute;
       top: calc(60% - -8px);
-      z-index: 1; }
+      z-index: 1; } }
+    @media screen and (min-width: 768px) and (min-width: 1025px) {
+      .personalisationhome .latestSubject .fllatestSub {
+        position: absolute;
+        float: left; } }
+    @media screen and (min-width: 768px) and (min-width: 768px) and (min-width: 1024px) {
+      .personalisationhome .latestSubject .fllatestSub {
+        margin-bottom: 10px; } }
+    @media screen and (min-width: 768px) and (min-width: 767px) and (min-width: 768px) {
+      .personalisationhome .latestSubject .fllatestSub {
+        margin: 20px 0 10px; } }
+
+@media screen and (min-width: 768px) {
     .personalisationhome .latestSubject .frEditview {
       float: right; }
     .personalisationhome .latestSubject .editView {
@@ -6521,7 +6592,7 @@ main .action-flags-bar, main .banner--highlights {
   width: 21.0625rem;
   height: 190px;
   height: 11.875rem; }
-  @media (max-width: 1024px) and (min-width: 768px) {
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
     .personalisationhome .topic-featured-article__image2 {
       width: 100%;
       height: auto; } }
@@ -6763,23 +6834,45 @@ main .action-flags-bar, main .banner--highlights {
     padding: 0 17px 0 0;
     margin-right: 17px; }
   .listView .article-preview__tags {
-    width: 75%;
     z-index: 999;
     bottom: 20px;
     bottom: 1.25rem; } }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  @media screen and (min-width: 768px) and (min-width: 1025px) {
+    .listView .article-preview__tags {
+      width: 75%; } }
+  @media screen and (min-width: 768px) and (min-width: 767px) and (max-width: 768px) {
+    .listView .article-preview__tags {
+      width: 56%; } }
+  @media screen and (min-width: 768px) and (min-width: 1023px) and (max-width: 1024px) {
+    .listView .article-preview__tags {
+      width: 65%; } }
+  @media screen and (min-width: 768px) and (max-width: 680px) {
     .listView .article-preview__tags {
       width: auto; } }
+  @media screen and (min-width: 768px) and (min-width: 768px) {
+    .listView .article-preview__tags.wid {
+      width: 100%; } }
+  @media screen and (min-width: 768px) and (min-width: 1025px) {
+    .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
+      max-width: inherit; } }
+  @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
+    .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
+      max-width: 32%;
+      font-size: 16px;
+      font-size: 1rem; } }
 
 @media screen and (min-width: 768px) {
-    .listView .article-preview__tags a, .listView .article-preview__tags .pop-out__reset-password, .listView .article-preview__tags .sortable-table__list-toggler, .listView .article-preview__tags .mobile-table-exit {
-      max-width: 22%;
-      font-size: 16px;
-      font-size: 1rem; }
   .listView .article-metadata {
     margin-bottom: 0px; }
     .listView .article-metadata ul li:nth-child(2) {
-      max-width: inherit; }
+      max-width: inherit; } }
+  @media screen and (min-width: 768px) and (min-width: 767px) and (max-width: 768px) {
+    .listView .article-metadata ul li.wid {
+      max-width: 85px !important; } }
+
+@media screen and (min-width: 768px) {
+  .listView .sponsored_cont .article-metadata {
+    margin-bottom: 10px; }
   .listView .list-featured-article {
     border-bottom: 1px solid #e7e7e7;
     margin-bottom: 16px;
@@ -6812,7 +6905,11 @@ main .action-flags-bar, main .banner--highlights {
       background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);
       background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fff 65%, #fff 100%);
       height: 80px;
-      height: 5rem; } }
+      height: 5rem; }
+  .listView .sponsored_cont .topic-featured-article__inner-wrapper:after {
+    background: -webkit-linear-gradient(top, rgba(241, 242, 242, 0) 0%, #fef3e9 65%, #fef3e9 100%);
+    background: linear-gradient(to bottom, rgba(241, 242, 242, 0) 0%, #fef3e9 65%, #fef3e9 100%);
+    height: 60px; } }
 
 .gridView .gridViewCont {
   display: block; }
@@ -8975,8 +9072,8 @@ div#feedbacklite.fbl_r {
   overflow: hidden; }
 
 .article-left-rail .ContentRecomm-ReadNext .section-article {
-  height: 245px;
-  height: 15.3125rem;
+  height: 350px;
+  height: 21.875rem;
   margin-bottom: 2em; }
 
 .article-right-rail .contentRecomm-article {
@@ -9888,10 +9985,11 @@ div#feedbacklite.fbl_r {
     margin-bottom: 20px;
     float: left;
     width: 50%; }
-    @media (max-width: 480px) {
+    @media screen and (max-width: 767px) {
       #market-data-tool .lli-brand-container .form-control, #dry-cargo .lli-brand-container .form-control, #dry-cargo-cap .lli-brand-container .form-control, #dry-cargo-bulk-fixtures .lli-brand-container .form-control, #tanker-fixtures .lli-brand-container .form-control, #ship-Container-ShipFixtures .lli-brand-container .form-control, #ship-Coal-Export .lli-brand-container .form-control, #market-Data-Dry-Cargo .lli-brand-container .form-control,
       #cockett-Bunker .lli-brand-container .form-control, #ship-Roro .lli-brand-container .form-control, #ship-Container-Ship .lli-brand-container .form-control, #ship-Vehicle .lli-brand-container .form-control, #tanker-Pure-ChemPage .lli-brand-container .form-control, #shipContainerFixtures .lli-brand-container .form-control, #fisDryBulkContainer .lli-brand-container .form-control, #howeRobinsonContainer .lli-brand-container .form-control, #market-imarex .lli-brand-container .form-control, #shipVehicle-Page .lli-brand-container .form-control, #shipCoalExport-page .lli-brand-container .form-control {
-        width: 100%; } }
+        width: 100%;
+        float: inherit; } }
     #market-data-tool .lli-brand-container .form-control:nth-child(2), #dry-cargo .lli-brand-container .form-control:nth-child(2), #dry-cargo-cap .lli-brand-container .form-control:nth-child(2), #dry-cargo-bulk-fixtures .lli-brand-container .form-control:nth-child(2), #tanker-fixtures .lli-brand-container .form-control:nth-child(2), #ship-Container-ShipFixtures .lli-brand-container .form-control:nth-child(2), #ship-Coal-Export .lli-brand-container .form-control:nth-child(2), #market-Data-Dry-Cargo .lli-brand-container .form-control:nth-child(2),
     #cockett-Bunker .lli-brand-container .form-control:nth-child(2), #ship-Roro .lli-brand-container .form-control:nth-child(2), #ship-Container-Ship .lli-brand-container .form-control:nth-child(2), #ship-Vehicle .lli-brand-container .form-control:nth-child(2), #tanker-Pure-ChemPage .lli-brand-container .form-control:nth-child(2), #shipContainerFixtures .lli-brand-container .form-control:nth-child(2), #fisDryBulkContainer .lli-brand-container .form-control:nth-child(2), #howeRobinsonContainer .lli-brand-container .form-control:nth-child(2), #market-imarex .lli-brand-container .form-control:nth-child(2), #shipVehicle-Page .lli-brand-container .form-control:nth-child(2), #shipCoalExport-page .lli-brand-container .form-control:nth-child(2) {
       float: right;
@@ -9907,11 +10005,12 @@ div#feedbacklite.fbl_r {
       #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg, #ship-Coal-Export .lli-brand-container .dataProImg, #market-Data-Dry-Cargo .lli-brand-container .dataProImg,
       #cockett-Bunker .lli-brand-container .dataProImg, #ship-Roro .lli-brand-container .dataProImg, #ship-Container-Ship .lli-brand-container .dataProImg, #ship-Vehicle .lli-brand-container .dataProImg, #tanker-Pure-ChemPage .lli-brand-container .dataProImg, #shipContainerFixtures .lli-brand-container .dataProImg, #fisDryBulkContainer .lli-brand-container .dataProImg, #howeRobinsonContainer .lli-brand-container .dataProImg, #market-imarex .lli-brand-container .dataProImg, #shipVehicle-Page .lli-brand-container .dataProImg, #shipCoalExport-page .lli-brand-container .dataProImg {
         margin-top: -11px; } }
-    @media (max-width: 480px) {
+    @media screen and (max-width: 767px) {
       #market-data-tool .lli-brand-container .dataProImg, #dry-cargo .lli-brand-container .dataProImg, #dry-cargo-cap .lli-brand-container .dataProImg, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg, #tanker-fixtures .lli-brand-container .dataProImg, #ship-Container-ShipFixtures .lli-brand-container .dataProImg, #ship-Coal-Export .lli-brand-container .dataProImg, #market-Data-Dry-Cargo .lli-brand-container .dataProImg,
       #cockett-Bunker .lli-brand-container .dataProImg, #ship-Roro .lli-brand-container .dataProImg, #ship-Container-Ship .lli-brand-container .dataProImg, #ship-Vehicle .lli-brand-container .dataProImg, #tanker-Pure-ChemPage .lli-brand-container .dataProImg, #shipContainerFixtures .lli-brand-container .dataProImg, #fisDryBulkContainer .lli-brand-container .dataProImg, #howeRobinsonContainer .lli-brand-container .dataProImg, #market-imarex .lli-brand-container .dataProImg, #shipVehicle-Page .lli-brand-container .dataProImg, #shipCoalExport-page .lli-brand-container .dataProImg {
         float: inherit;
-        text-align: left; } }
+        text-align: left;
+        width: 100%; } }
     #market-data-tool .lli-brand-container .dataProImg span, #dry-cargo .lli-brand-container .dataProImg span, #dry-cargo-cap .lli-brand-container .dataProImg span, #dry-cargo-bulk-fixtures .lli-brand-container .dataProImg span, #tanker-fixtures .lli-brand-container .dataProImg span, #ship-Container-ShipFixtures .lli-brand-container .dataProImg span, #ship-Coal-Export .lli-brand-container .dataProImg span, #market-Data-Dry-Cargo .lli-brand-container .dataProImg span,
     #cockett-Bunker .lli-brand-container .dataProImg span, #ship-Roro .lli-brand-container .dataProImg span, #ship-Container-Ship .lli-brand-container .dataProImg span, #ship-Vehicle .lli-brand-container .dataProImg span, #tanker-Pure-ChemPage .lli-brand-container .dataProImg span, #shipContainerFixtures .lli-brand-container .dataProImg span, #fisDryBulkContainer .lli-brand-container .dataProImg span, #howeRobinsonContainer .lli-brand-container .dataProImg span, #market-imarex .lli-brand-container .dataProImg span, #shipVehicle-Page .lli-brand-container .dataProImg span, #shipCoalExport-page .lli-brand-container .dataProImg span {
       position: relative;
@@ -10364,6 +10463,13 @@ div#feedbacklite.fbl_r {
       width: 570px;
       overflow-x: auto;
       display: block !important; } }
+  @media only screen and (max-width: 767px) {
+    #tanker-fixtures.table-responsive .table.mobView {
+      display: table; }
+    #tanker-fixtures.table-responsive .table.descView {
+      display: none; }
+    #tanker-fixtures.table-responsive .table .visible-sm {
+      display: block; } }
   #tanker-fixtures.table-responsive .table.mobView .mobleftCol {
     width: 40%; }
   #tanker-fixtures.table-responsive .table.mobView .mobrigCol {
@@ -11098,6 +11204,10 @@ div#feedbacklite.fbl_r {
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
   width: 50.4%; }
+  .package-control-articles__quarter .moreText {
+    text-align: left;
+    padding-bottom: 0;
+    margin-bottom: 0; }
   .package-control-articles__quarter h2, .package-control-articles__quarter .article-topics__header {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
@@ -11162,11 +11272,11 @@ div#feedbacklite.fbl_r {
   line-height: 19px; }
 
 .sponsored_cont {
-  background: rgba(245, 130, 31, 0.1); }
-  .sponsored_cont .topic-featured-article__inner-wrapper:after, .sponsored_cont .latest-news__articles .article-preview--small:after {
-    background: linear-gradient(to bottom, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%);
-    background: -webkit-linear-gradient(top, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%);
-    background: -moz-linear-gradient(top, #FEF3E9 0%, #FEF3E9 65%, #FEF3E9 100%); }
+  background: rgba(247, 148, 30, 0.1); }
+  .sponsored_cont .topic-featured-article__inner-wrapper:after, .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -webkit-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -moz-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%); }
   .sponsored_cont .sponsored_title {
     text-transform: uppercase; }
   .sponsored_cont.article-executive-summary {
@@ -14611,6 +14721,8 @@ main {
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
       margin-left: 330px; } }
+  .main__wrapper.shift-main-content {
+    margin-left: 300px; }
   @media (max-width: 480px) {
     .main__wrapper {
       width: 100%;
@@ -14618,6 +14730,14 @@ main {
   .main__wrapper--solo {
     width: 100%;
     margin-left: 0; }
+
+.shift-content {
+  margin-left: 330px;
+  overflow-x: scroll;
+  width: 100%; }
+
+.shift-main-content {
+  margin-left: -330px; }
 
 .main__content {
   max-width: 1240px;
@@ -14819,6 +14939,31 @@ main {
       margin-bottom: 16px;
       margin-bottom: 1rem; }
 
+.form-email-preferences .email-preference-mobile {
+  display: none;
+  margin-bottom: 5px; }
+  @media (max-width: 480px) {
+    .form-email-preferences .email-preference-mobile {
+      display: block;
+      float: left;
+      width: calc(100% - 46px); } }
+
+.form-email-preferences .sortable-table__col {
+  text-align: center; }
+  @media (max-width: 480px) {
+    .form-email-preferences .sortable-table__col {
+      text-align: left; } }
+  .form-email-preferences .sortable-table__col:first-child {
+    text-align: left;
+    font-weight: bold; }
+  @media (max-width: 480px) {
+    .form-email-preferences .sortable-table__col .labeled-checkbox {
+      float: right; } }
+  .form-email-preferences .sortable-table__col:after {
+    content: "";
+    display: table;
+    clear: both; }
+
 .page-registration__subheader {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
@@ -14854,6 +14999,22 @@ main {
 
 .page-registration__error {
   display: none; }
+
+.error-page-main {
+  margin-left: 0;
+  width: 100%; }
+  .error-page-main .container {
+    padding: 30px; }
+    .error-page-main .container img {
+      padding: 10px 0px;
+      border: 0;
+      height: 50px; }
+    .error-page-main .container .footer__separator {
+      margin: 10px 0; }
+
+.error-page-footer {
+  padding: 30px;
+  overflow: hidden; }
 
 /* * * * THEME STYLES * * * */
 .theme-pink-sheet a, .theme-pink-sheet .pop-out__reset-password, .theme-pink-sheet .sortable-table__list-toggler, .theme-pink-sheet .mobile-table-exit, .theme-pink-sheet a:hover, .theme-pink-sheet .pop-out__reset-password:hover, .theme-pink-sheet .sortable-table__list-toggler:hover, .theme-pink-sheet .mobile-table-exit:hover, .theme-pink-sheet a:active, .theme-pink-sheet .pop-out__reset-password:active, .theme-pink-sheet .sortable-table__list-toggler:active, .theme-pink-sheet .mobile-table-exit:active, .theme-pink-sheet a:focus, .theme-pink-sheet .pop-out__reset-password:focus, .theme-pink-sheet .sortable-table__list-toggler:focus, .theme-pink-sheet .mobile-table-exit:focus,
@@ -15244,6 +15405,13 @@ main {
   .theme-pink-sheet .quick-facts hr {
     background-color: rgba(188, 96, 140, 0.5); }
 
+.theme-pink-sheet .sponsored_cont {
+  background: rgba(188, 96, 140, 0.1); }
+  .theme-pink-sheet .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-pink-sheet .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #f8EFF3 0%, #f8EFF3 65%, #f8EFF3 100%);
+    background: -webkit-linear-gradient(top, #f8EFF3 0%, #f8EFF3 65%, #f8EFF3 100%);
+    background: -moz-linear-gradient(top, #f8EFF3 0%, #f8EFF3 65%, #f8EFF3 100%); }
+
 .theme-rose-sheet a, .theme-rose-sheet .pop-out__reset-password, .theme-rose-sheet .sortable-table__list-toggler, .theme-rose-sheet .mobile-table-exit, .theme-rose-sheet a:hover, .theme-rose-sheet .pop-out__reset-password:hover, .theme-rose-sheet .sortable-table__list-toggler:hover, .theme-rose-sheet .mobile-table-exit:hover, .theme-rose-sheet a:active, .theme-rose-sheet .pop-out__reset-password:active, .theme-rose-sheet .sortable-table__list-toggler:active, .theme-rose-sheet .mobile-table-exit:active, .theme-rose-sheet a:focus, .theme-rose-sheet .pop-out__reset-password:focus, .theme-rose-sheet .sortable-table__list-toggler:focus, .theme-rose-sheet .mobile-table-exit:focus,
 .theme-rose-sheet .msg-text h3,
 .theme-rose-sheet .msg-text .article-call-to-action__title,
@@ -15631,6 +15799,13 @@ main {
   background-color: rgba(221, 53, 128, 0.12); }
   .theme-rose-sheet .quick-facts hr {
     background-color: rgba(221, 53, 128, 0.5); }
+
+.theme-rose-sheet .sponsored_cont {
+  background: rgba(200, 32, 110, 0.1); }
+  .theme-rose-sheet .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-rose-sheet .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #F9E8F0 0%, #F9E8F0 65%, #F9E8F0 100%);
+    background: -webkit-linear-gradient(top, #F9E8F0 0%, #F9E8F0 65%, #F9E8F0 100%);
+    background: -moz-linear-gradient(top, #F9E8F0 0%, #F9E8F0 65%, #F9E8F0 100%); }
 
 .theme-medtech a, .theme-medtech .pop-out__reset-password, .theme-medtech .sortable-table__list-toggler, .theme-medtech .mobile-table-exit, .theme-medtech a:hover, .theme-medtech .pop-out__reset-password:hover, .theme-medtech .sortable-table__list-toggler:hover, .theme-medtech .mobile-table-exit:hover, .theme-medtech a:active, .theme-medtech .pop-out__reset-password:active, .theme-medtech .sortable-table__list-toggler:active, .theme-medtech .mobile-table-exit:active, .theme-medtech a:focus, .theme-medtech .pop-out__reset-password:focus, .theme-medtech .sortable-table__list-toggler:focus, .theme-medtech .mobile-table-exit:focus,
 .theme-medtech .msg-text h3,
@@ -16020,6 +16195,13 @@ main {
   .theme-medtech .quick-facts hr {
     background-color: rgba(253, 217, 95, 0.8); }
 
+.theme-medtech .sponsored_cont {
+  background: rgba(253, 217, 95, 0.1); }
+  .theme-medtech .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-medtech .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #FFFBEF 0%, #FFFBEF 65%, #FFFBEF 100%);
+    background: -webkit-linear-gradient(top, #FFFBEF 0%, #FFFBEF 65%, #FFFBEF 100%);
+    background: -moz-linear-gradient(top, #FFFBEF 0%, #FFFBEF 65%, #FFFBEF 100%); }
+
 .theme-invivo a, .theme-invivo .pop-out__reset-password, .theme-invivo .sortable-table__list-toggler, .theme-invivo .mobile-table-exit, .theme-invivo a:hover, .theme-invivo .pop-out__reset-password:hover, .theme-invivo .sortable-table__list-toggler:hover, .theme-invivo .mobile-table-exit:hover, .theme-invivo a:active, .theme-invivo .pop-out__reset-password:active, .theme-invivo .sortable-table__list-toggler:active, .theme-invivo .mobile-table-exit:active, .theme-invivo a:focus, .theme-invivo .pop-out__reset-password:focus, .theme-invivo .sortable-table__list-toggler:focus, .theme-invivo .mobile-table-exit:focus,
 .theme-invivo .msg-text h3,
 .theme-invivo .msg-text .article-call-to-action__title,
@@ -16407,6 +16589,13 @@ main {
   background-color: rgba(202, 77, 44, 0.1); }
   .theme-invivo .quick-facts hr {
     background-color: rgba(126, 39, 24, 0.5); }
+
+.theme-invivo .sponsored_cont {
+  background: rgba(202, 77, 44, 0.1); }
+  .theme-invivo .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-invivo .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -webkit-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -moz-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%); }
 
 .theme-commodities a, .theme-commodities .pop-out__reset-password, .theme-commodities .sortable-table__list-toggler, .theme-commodities .mobile-table-exit, .theme-commodities a:hover, .theme-commodities .pop-out__reset-password:hover, .theme-commodities .sortable-table__list-toggler:hover, .theme-commodities .mobile-table-exit:hover, .theme-commodities a:active, .theme-commodities .pop-out__reset-password:active, .theme-commodities .sortable-table__list-toggler:active, .theme-commodities .mobile-table-exit:active, .theme-commodities a:focus, .theme-commodities .pop-out__reset-password:focus, .theme-commodities .sortable-table__list-toggler:focus, .theme-commodities .mobile-table-exit:focus,
 .theme-commodities .msg-text h3,
@@ -16836,6 +17025,13 @@ main {
   .theme-commodities #cockett-Bunker .table_head tr:first-child {
     background-color: #9E310D !important; }
 
+.theme-commodities .sponsored_cont {
+  background: rgba(245, 130, 31, 0.1); }
+  .theme-commodities .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-commodities .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #FEF2E8 0%, #FEF2E8 65%, #FEF2E8 100%);
+    background: -webkit-linear-gradient(top, #FEF2E8 0%, #FEF2E8 65%, #FEF2E8 100%);
+    background: -moz-linear-gradient(top, #FEF2E8 0%, #FEF2E8 65%, #FEF2E8 100%); }
+
 .theme-insurance-day a, .theme-insurance-day .pop-out__reset-password, .theme-insurance-day .sortable-table__list-toggler, .theme-insurance-day .mobile-table-exit, .theme-insurance-day a:hover, .theme-insurance-day .pop-out__reset-password:hover, .theme-insurance-day .sortable-table__list-toggler:hover, .theme-insurance-day .mobile-table-exit:hover, .theme-insurance-day a:active, .theme-insurance-day .pop-out__reset-password:active, .theme-insurance-day .sortable-table__list-toggler:active, .theme-insurance-day .mobile-table-exit:active, .theme-insurance-day a:focus, .theme-insurance-day .pop-out__reset-password:focus, .theme-insurance-day .sortable-table__list-toggler:focus, .theme-insurance-day .mobile-table-exit:focus,
 .theme-insurance-day .msg-text h3,
 .theme-insurance-day .msg-text .article-call-to-action__title,
@@ -17264,6 +17460,13 @@ main {
   .theme-insurance-day #cockett-Bunker .table_head tr:first-child {
     background-color: #91211E !important; }
 
+.theme-insurance-day .sponsored_cont {
+  background: rgba(176, 23, 61, 0.1); }
+  .theme-insurance-day .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-insurance-day .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #F7E7EB 0%, #F7E7EB 65%, #F7E7EB 100%);
+    background: -webkit-linear-gradient(top, #F7E7EB 0%, #F7E7EB 65%, #F7E7EB 100%);
+    background: -moz-linear-gradient(top, #F7E7EB 0%, #F7E7EB 65%, #F7E7EB 100%); }
+
 .theme-lloydslist a, .theme-lloydslist .pop-out__reset-password, .theme-lloydslist .sortable-table__list-toggler, .theme-lloydslist .mobile-table-exit, .theme-lloydslist a:hover, .theme-lloydslist .pop-out__reset-password:hover, .theme-lloydslist .sortable-table__list-toggler:hover, .theme-lloydslist .mobile-table-exit:hover, .theme-lloydslist a:active, .theme-lloydslist .pop-out__reset-password:active, .theme-lloydslist .sortable-table__list-toggler:active, .theme-lloydslist .mobile-table-exit:active, .theme-lloydslist a:focus, .theme-lloydslist .pop-out__reset-password:focus, .theme-lloydslist .sortable-table__list-toggler:focus, .theme-lloydslist .mobile-table-exit:focus,
 .theme-lloydslist .msg-text h3,
 .theme-lloydslist .msg-text .article-call-to-action__title,
@@ -17691,6 +17894,13 @@ main {
   background-color: #1191D1 !important; }
   .theme-lloydslist #cockett-Bunker .table_head tr:first-child {
     background-color: #0f5487 !important; }
+
+.theme-lloydslist .sponsored_cont {
+  background: rgba(15, 84, 135, 0.1); }
+  .theme-lloydslist .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-lloydslist .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #E7EEF3 0%, #E7EEF3 65%, #E7EEF3 100%);
+    background: -webkit-linear-gradient(top, #E7EEF3 0%, #E7EEF3 65%, #E7EEF3 100%);
+    background: -moz-linear-gradient(top, #E7EEF3 0%, #E7EEF3 65%, #E7EEF3 100%); }
 
 /* * * * PRINT STYLES * * * */
 @media print {

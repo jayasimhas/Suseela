@@ -292,12 +292,13 @@ namespace Informa.Web.ViewModels
                         {
                             if (string.IsNullOrEmpty(taxonaomyParentName))
                             {
-                                taxonaomyParentName += TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ",string.Empty) + ":" + item.Item_Name.ToLower();
+                               // taxonaomyParentName += TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ",string.Empty) + ":" + item.Item_Name.ToLower();
+                                taxonaomyParentName += (TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower().Trim()).Replace("\r\n", "").Replace("\r", "").Replace("\n", "");
                                 taxonomyItemCount++;
                             }
                             else
                             {
-                                taxonaomyParentName += "|" + TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower();
+                                taxonaomyParentName += "|" + (TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower().Trim()).Replace("\r\n","").Replace("\r","").Replace("\n","");
                                 taxonomyItemCount++;
                             }
                            
