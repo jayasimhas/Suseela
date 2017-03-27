@@ -16510,6 +16510,13 @@ main {
   .theme-invivo .quick-facts hr {
     background-color: rgba(126, 39, 24, 0.5); }
 
+.theme-invivo .sponsored_cont {
+  background: rgba(202, 77, 44, 0.1); }
+  .theme-invivo .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-invivo .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -webkit-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -moz-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%); }
+
 .theme-commodities a, .theme-commodities .pop-out__reset-password, .theme-commodities .sortable-table__list-toggler, .theme-commodities .mobile-table-exit, .theme-commodities a:hover, .theme-commodities .pop-out__reset-password:hover, .theme-commodities .sortable-table__list-toggler:hover, .theme-commodities .mobile-table-exit:hover, .theme-commodities a:active, .theme-commodities .pop-out__reset-password:active, .theme-commodities .sortable-table__list-toggler:active, .theme-commodities .mobile-table-exit:active, .theme-commodities a:focus, .theme-commodities .pop-out__reset-password:focus, .theme-commodities .sortable-table__list-toggler:focus, .theme-commodities .mobile-table-exit:focus,
 .theme-commodities .msg-text h3,
 .theme-commodities .msg-text .article-call-to-action__title,

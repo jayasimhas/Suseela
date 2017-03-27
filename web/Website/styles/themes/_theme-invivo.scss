@@ -45,5 +45,7 @@
 	@include theme-quick-facts(
 		transparentize($color-dark-coral, 0.9),
 		transparentize($color-copper-red, 0.5));
+		
+	@include sponsored_content($color-dark-coral,$color-dark-coral-ten);	
 
 }
