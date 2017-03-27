@@ -26,6 +26,7 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Globalization;
 using Informa.Library.Subscription;
+using Informa.Library.User.Entitlement;
 #endregion
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -42,6 +43,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IArticleSearch Searcher;
         protected readonly ITextTranslator TextTranslator;
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
+        protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -50,7 +52,8 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IArticleListItemModelFactory articleListableFactory,
                                         IArticleSearch searcher,
                                         ITextTranslator textTranslator,
-                                        SideNavigationMenuViewModel userSubscriptionsContext)
+                                        SideNavigationMenuViewModel userSubscriptionsContext,
+                                        IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -60,6 +63,7 @@ namespace Informa.Web.Areas.Account.Controllers
             Searcher = searcher;
             TextTranslator = textTranslator;
             UserSubcriptions = userSubscriptionsContext;
+            AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
         }
 
         /// <summary>
@@ -474,7 +478,10 @@ namespace Informa.Web.Areas.Account.Controllers
                 var channels = UserPreferences.Preferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList();
                 foreach (Channel channel in channels)
                 {
-                    CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);
+                    if (IsUserHaveValidEntitlements(channel))
+                    {
+                        CreateSections(channel, sections, UserPreferences.Preferences.IsChannelLevel, UserPreferences.Preferences.IsNewUser);
+                    }
                 }
             }
             if (sections.Count == 0)
@@ -520,6 +527,31 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 CreateSectionsFromChannels(channel, sections, isNewUser, ref topics);
             }
+        }
+
+        private bool IsUserHaveValidEntitlements(Channel channel)
+        {
+            if (SiterootContext.Item.Entitlement_Type != null &&
+                SiterootContext.Item.Entitlement_Type.Equals(EntitlementLevel.Site))
+            {
+                return AuthenticatedUserEntitlementsContext.Entitlements.Where(
+                    entitlement => !string.IsNullOrWhiteSpace(entitlement.ProductCode)
+                    && string.Equals(SiterootContext.Item.Publication_Code,
+                    entitlement.ProductCode, StringComparison.OrdinalIgnoreCase)
+                    && DateTime.Parse(entitlement.AccessEndDate) >= DateTime.Now
+                    && entitlement.IsActive).Any();
+            }
+            else if(SiterootContext.Item.Entitlement_Type != null &&
+                SiterootContext.Item.Entitlement_Type.Equals(EntitlementLevel.Channel))
+            {
+                return AuthenticatedUserEntitlementsContext.Entitlements.Where(
+                    entitlement => !string.IsNullOrWhiteSpace(entitlement.ProductCode)
+                    && entitlement.ProductCode.Contains(channel.ChannelCode)
+                    && DateTime.Parse(entitlement.AccessEndDate) >= DateTime.Now
+                    && entitlement.IsActive).Any();
+            }
+
+            return false;
         }
 
         /// <summary>

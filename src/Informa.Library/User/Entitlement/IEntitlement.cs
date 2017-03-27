@@ -18,5 +18,6 @@ namespace Informa.Library.User.Entitlement
         string Name { get; set; }
         string Description { get; set; }
         string AccessEndDate { get; set; }
+        bool IsActive { get; set; }
     }
 }
