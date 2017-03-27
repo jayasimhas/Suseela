@@ -13590,6 +13590,7 @@ $(document).ready(function () {
         }
     });
 
+<<<<<<< HEAD
     /* * *
     Generic banner dismiss
     * * */
@@ -13616,6 +13617,43 @@ $(document).ready(function () {
         $('.article-body-content table').not('.article-table--mobile-link').forEach(function (e) {
             var mediaId = $(e).data("mediaid");
             var tableLink = $('.js-mobile-table-template .article-table').clone();
+=======
+		var addFixedMenu = function addFixedMenu() {
+			if ($(window).width() >= 1024) {
+				$('.main-menu').addClass('fixed');
+				$('.main__wrapper').css('margin-left', '330px');
+			}
+		};
+
+		var removeFixedMenu = function removeFixedMenu() {
+			if ($(window).width() >= 1024) {
+				$('.main-menu').removeClass('fixed');
+				$('.main__wrapper').css('margin-left', '0');
+				if ($(window).scrollTop() > getHeaderEdge()) {
+					$('.main-menu').addClass('fixed');
+					$('.main__wrapper').css('margin-left', '330px');
+				}
+			}
+		};
+
+		var showMenu = function showMenu() {
+			$('.main-menu').addClass('is-active');
+			$('.menu-toggler').addClass('is-active');
+			$('.header__wrapper .menu-toggler').addClass('is-sticky');
+			$('body').addClass('is-frozen');
+			addFixedMenu();
+		};
+
+		var hideMenu = function hideMenu() {
+			$('.main-menu').removeClass('is-active');
+			$('.menu-toggler').removeClass('is-active');
+			$('body').removeClass('is-frozen');
+			if ($(window).scrollTop() <= getHeaderEdge()) {
+				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
+			}
+			removeFixedMenu();
+		};
+>>>>>>> ISW-336
 
             var url = window.location.href;
             url.replace("#", "");
@@ -13623,11 +13661,25 @@ $(document).ready(function () {
 
             url += "mobilemedia=true&selectedid=" + mediaId;
 
+<<<<<<< HEAD
             // $(tableLink).find('a').attr("href", url);
             $(tableLink).find('a').data("table-url", url).attr('href', null);
             $(e).after(tableLink);
         });
     }
+=======
+		/* Attach / detach sticky menu */
+		$(window).on('scroll', function windowScrolled() {
+			// Only stick if the header (including toggler) isn't visible
+			if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+				$('.header__wrapper .menu-toggler').addClass('is-sticky');
+				addFixedMenu();
+			} else {
+				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
+				removeFixedMenu();
+			}
+		});
+>>>>>>> ISW-336
 
     // Find duplicate embeds on article page
     // IITS2-312
@@ -13797,8 +13849,20 @@ $(document).ready(function () {
             // Store travel distance (container width) as totalTravel on first loop
             totalTravel = !totalTravel ? Container.width() : totalTravel;
 
+<<<<<<< HEAD
             // Finds percentage of elapsed time since start
             var travelPcent = 1 - duration / durationStart;
+=======
+			if ($(window).width() >= 1024) {
+				var mainMenuListItems = $('ul.main-menu__section, dl.main-menu__footer');
+				mainMenuListItems.remove();
+				$('.main-menu').append("<div class='main-menu-list'></div>");
+				mainMenuListItems.each(function () {
+					$('.main-menu-list').append($(this));
+				});
+			}
+		};
+>>>>>>> ISW-336
 
             // Finds travel change on this loop, adjusted for ease-out
             var travel = easing(travelPcent, totalTravel / durationStart * 10);
