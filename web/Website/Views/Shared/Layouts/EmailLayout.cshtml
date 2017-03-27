@@ -499,15 +499,21 @@
                                                         </tr>
 														
 														<tr><td height="15"></td></tr>
-														
-                                                        <!--Main body starts -->
-                                                       @Html.Sitecore().Placeholder("email-main")
+														<tr>
+                                                             <td>
+                                                            <table>
+                                                                <!--Main body starts -->
+                                                                @Html.Sitecore().Placeholder("email-main")
 
-                                                        @if (Model.AddPersonalizedContent)
-                                                        {
-                                                            @personalizeContentToken
+                                                                @if (Model.AddPersonalizedContent)
+                                                                {
+                                                                    @personalizeContentToken
 
-                                                        }
+                                                                }
+                                                            </table> 
+                                                           </td>
+                                                        </tr>
+                                                      
                                                         <!--Main body ends -->
                                                         <!-- Adv. starts -->
                                                         <tr>
