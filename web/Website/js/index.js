@@ -951,23 +951,25 @@ $(document).ready(function(){
     });
 
     // For each article table, clone and append "view full table" markup
-    $('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
-        var mediaId = $(e).data("mediaid");
-        var tableLink = $('.js-mobile-table-template .article-table').clone();
+	if($('.article-body-content table') && $('.article-body-content table').length){
+		$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+			var mediaId = $(e).data("mediaid");
+			var tableLink = $('.js-mobile-table-template .article-table').clone();
 
-        var url = window.location.href;
-        url.replace("#", "");
-        if (url.indexOf("?") < 0)
-            url += "?";
-        else
-            url += "&";
+			var url = window.location.href;
+			url.replace("#", "");
+			if (url.indexOf("?") < 0)
+				url += "?";
+			else
+				url += "&";
 
-        url+= "mobilemedia=true&selectedid=" + mediaId;
+			url+= "mobilemedia=true&selectedid=" + mediaId;
 
-        // $(tableLink).find('a').attr("href", url);
-        $(tableLink).find('a').data("table-url", url).attr('href', null);
-        $(e).after(tableLink);
-    });
+			// $(tableLink).find('a').attr("href", url);
+			$(tableLink).find('a').data("table-url", url).attr('href', null);
+			$(e).after(tableLink);
+		});
+	}
 
 
     // Find duplicate embeds on article page
@@ -990,16 +992,18 @@ $(document).ready(function(){
     // Topic links
     var topicAnchors = $('.js-topic-anchor');
 
-    $('.sub-topic-links').forEach(function(e) {
-        var linkList = $(e).find('.bar-separated-link-list');
+	if($('.sub-topic-links') && $('.sub-topic-links').length){
+		$('.sub-topic-links').forEach(function(e) {
+			var linkList = $(e).find('.bar-separated-link-list');
 
-        topicAnchors.forEach(function(tc) {
-            var id = tc.id;
-            var text = $(tc).data('topic-link-text');
-            var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
-            linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
-        });
-    });
+			topicAnchors.forEach(function(tc) {
+				var id = tc.id;
+				var text = $(tc).data('topic-link-text');
+				var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
+				linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
+			});
+		});
+	}
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {

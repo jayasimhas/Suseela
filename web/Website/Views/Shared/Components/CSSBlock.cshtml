@@ -1,10 +1,10 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IGeneral_Content_Page
 
-@if (Sitecore.Context.PageMode.IsExperienceEditor)
+@*@if (Sitecore.Context.PageMode.IsExperienceEditor)
 {
     @Html.Glass().Editable(x => x.CSS)
-}
+}*@
 <style type="text/css">
     @Html.Raw(Model.CSS)
 </style>
