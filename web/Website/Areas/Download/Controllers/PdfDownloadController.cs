@@ -27,6 +27,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Globalization;
 using Informa.Library.Subscription;
 using Informa.Library.User.Entitlement;
+using Informa.Library.Utilities.References;
+
 #endregion
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -44,6 +46,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ITextTranslator TextTranslator;
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
         protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
+        IItemReferences ItemReferences;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -53,7 +56,8 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IArticleSearch searcher,
                                         ITextTranslator textTranslator,
                                         SideNavigationMenuViewModel userSubscriptionsContext,
-                                        IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext)
+                                        IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
+                                        IItemReferences itemReferences)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -64,6 +68,7 @@ namespace Informa.Web.Areas.Account.Controllers
             TextTranslator = textTranslator;
             UserSubcriptions = userSubscriptionsContext;
             AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
+            ItemReferences = itemReferences;
         }
 
         /// <summary>
@@ -532,7 +537,7 @@ namespace Informa.Web.Areas.Account.Controllers
         private bool IsUserHaveValidEntitlements(Channel channel)
         {
             if (SiterootContext.Item.Entitlement_Type != null &&
-                SiterootContext.Item.Entitlement_Type.Equals(EntitlementLevel.Site))
+               SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.SiteLevelEntitlementType))
             {
                 return AuthenticatedUserEntitlementsContext.Entitlements.Where(
                     entitlement => !string.IsNullOrWhiteSpace(entitlement.ProductCode)
@@ -542,7 +547,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     && entitlement.IsActive).Any();
             }
             else if(SiterootContext.Item.Entitlement_Type != null &&
-                SiterootContext.Item.Entitlement_Type.Equals(EntitlementLevel.Channel))
+                SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
             {
                 return AuthenticatedUserEntitlementsContext.Entitlements.Where(
                     entitlement => !string.IsNullOrWhiteSpace(entitlement.ProductCode)
