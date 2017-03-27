@@ -235,6 +235,11 @@
 	float: right;
 	margin: 2rem 0 2rem 2rem;
 	width: 50.4%;
+	.moreText{
+		text-align: left;
+		padding-bottom:0;
+		margin-bottom: 0;
+	}
 	h2{
 		margin-bottom: 1rem;
 	}
@@ -305,7 +310,13 @@
 
 .sponsored_cont {
    
-
+	background: transparentize(#f7941e, 0.9);
+		.topic-featured-article__inner-wrapper:after, &.article-preview--small:after 
+		{
+			background: linear-gradient(to bottom, #FEF4E8  0%, #FEF4E8 65%, #FEF4E8 100%);
+			background: -webkit-linear-gradient(top, #FEF4E8  0%, #FEF4E8 65%, #FEF4E8 100%); 
+			background: -moz-linear-gradient(top, #FEF4E8  0%, #FEF4E8  65%, #FEF4E8 100%); 
+		}
     .sponsored_title {
         text-transform: uppercase;
     }

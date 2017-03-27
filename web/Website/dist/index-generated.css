@@ -9193,8 +9193,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11149,6 +11149,10 @@ div#feedbacklite.fbl_r {
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
   width: 50.4%; }
+  .package-control-articles__quarter .moreText {
+    text-align: left;
+    padding-bottom: 0;
+    margin-bottom: 0; }
   .package-control-articles__quarter h2, .package-control-articles__quarter .article-topics__header {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
@@ -11212,61 +11216,60 @@ div#feedbacklite.fbl_r {
   font-weight: bold;
   line-height: 19px; }
 
-.sponsored_cont .sponsored_title {
-  text-transform: uppercase; }
-
-.sponsored_cont.article-executive-summary {
-  padding: 16px;
-  padding: 1rem; }
-  .sponsored_cont.article-executive-summary .sponsored_title {
-    font-style: italic;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont.article-preview {
-  padding: 16px;
-  padding: 1rem;
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
-  .sponsored_cont.article-preview .sponsored_title {
-    font-size: 18px;
-    font-style: normal;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont.contentRecomm-article {
-  padding: 16px;
-  padding: 1rem; }
-
-.sponsored_cont.section-article {
-  padding: 16px;
-  padding: 1rem;
-  margin-bottom: 24px !important;
-  margin-bottom: 1.5rem !important; }
-
-.sponsored_cont.topic-featured-article {
-  border-top: none; }
-
-.sponsored_cont.article-executive-summary-bottom {
-  padding: 32px;
-  padding: 2rem;
-  margin-bottom: 32px;
-  margin-bottom: 2rem; }
-  .sponsored_cont.article-executive-summary-bottom .sponsored_title {
-    font-size: 18px;
-    font-style: italic;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont ul {
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem; }
-  .sponsored_cont ul li {
-    display: inline;
-    border-right: 0; }
+.sponsored_cont {
+  background: rgba(247, 148, 30, 0.1); }
+  .sponsored_cont .topic-featured-article__inner-wrapper:after, .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -webkit-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -moz-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%); }
+  .sponsored_cont .sponsored_title {
+    text-transform: uppercase; }
+  .sponsored_cont.article-executive-summary {
+    padding: 16px;
+    padding: 1rem; }
+    .sponsored_cont.article-executive-summary .sponsored_title {
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.article-preview {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+    .sponsored_cont.article-preview .sponsored_title {
+      font-size: 18px;
+      font-style: normal;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.contentRecomm-article {
+    padding: 16px;
+    padding: 1rem; }
+  .sponsored_cont.section-article {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 24px !important;
+    margin-bottom: 1.5rem !important; }
+  .sponsored_cont.topic-featured-article {
+    border-top: none; }
+  .sponsored_cont.article-executive-summary-bottom {
+    padding: 32px;
+    padding: 2rem;
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+    .sponsored_cont.article-executive-summary-bottom .sponsored_title {
+      font-size: 18px;
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont ul {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem; }
+    .sponsored_cont ul li {
+      display: inline;
+      border-right: 0; }
 
 .headercolored_new {
   background: #c15b07;
@@ -13511,7 +13514,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -16505,6 +16508,13 @@ main {
   background-color: rgba(202, 77, 44, 0.1); }
   .theme-invivo .quick-facts hr {
     background-color: rgba(126, 39, 24, 0.5); }
+
+.theme-invivo .sponsored_cont {
+  background: rgba(202, 77, 44, 0.1); }
+  .theme-invivo .sponsored_cont .topic-featured-article__inner-wrapper:after, .theme-invivo .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -webkit-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%);
+    background: -moz-linear-gradient(top, #faede9 0%, #faede9 65%, #faede9 100%); }
 
 .theme-commodities a, .theme-commodities .pop-out__reset-password, .theme-commodities .sortable-table__list-toggler, .theme-commodities .mobile-table-exit, .theme-commodities a:hover, .theme-commodities .pop-out__reset-password:hover, .theme-commodities .sortable-table__list-toggler:hover, .theme-commodities .mobile-table-exit:hover, .theme-commodities a:active, .theme-commodities .pop-out__reset-password:active, .theme-commodities .sortable-table__list-toggler:active, .theme-commodities .mobile-table-exit:active, .theme-commodities a:focus, .theme-commodities .pop-out__reset-password:focus, .theme-commodities .sortable-table__list-toggler:focus, .theme-commodities .mobile-table-exit:focus,
 .theme-commodities .msg-text h3,
