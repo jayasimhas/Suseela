@@ -22,23 +22,27 @@
         <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="hdnSelectedVertical"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="hdnSelectedPubs"></asp:HiddenField>
+         <asp:HiddenField runat="server" ID="hdnSelectedTaxs"></asp:HiddenField>
+         <asp:HiddenField runat="server" ID="hdnSelectedAuths"></asp:HiddenField>
+         <asp:HiddenField runat="server" ID="hdnSelectedContTypes"></asp:HiddenField>
+         <asp:HiddenField runat="server" ID="hdnSelectedMedTypes"></asp:HiddenField>
         <!-- pipe bar separated guids -->
         <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button" />
-
 
         <div class="wrapper">
             <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server" />
             <div class="top">
-                <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled"></asp:DropDownList>
-                
-                <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true" AddJQueryReference="false">
+                <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled">                    
+                </asp:DropDownList>
+
+                <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
                     <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
                     <Texts SelectBoxCaption="Select Publication(s)" />
                 </asp:DropDownCheckBoxes>
 
                 <asp:Label ID="lblAricleNumber" runat="server" Text="Enter Article Number"></asp:Label>
                 <asp:TextBox ID="txtArticleNumber" runat="server"></asp:TextBox>
-                <asp:Label ID="lblArticleNumberError" runat="server"></asp:Label>                             
+                <asp:Label ID="lblArticleNumberError" runat="server"></asp:Label>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
@@ -58,6 +62,28 @@
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
                     </div>
 
+                    <div class="mediatypes">
+                        <asp:DropDownCheckBoxes ID="ddlTaxonomies" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
+                        <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                        <Texts SelectBoxCaption="Select Taxonomy(s)" />
+                        </asp:DropDownCheckBoxes>
+
+                        <asp:DropDownCheckBoxes ID="ddlAuthors" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
+                            <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                            <Texts SelectBoxCaption="Select Author(s)" />
+                        </asp:DropDownCheckBoxes>
+
+                        <asp:DropDownCheckBoxes ID="ddlContentType" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
+                            <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                            <Texts SelectBoxCaption="Select ContentType(s)" />
+                        </asp:DropDownCheckBoxes>
+
+                        <asp:DropDownCheckBoxes ID="ddlMediaType" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
+                            <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                            <Texts SelectBoxCaption="Select MediaType(s)" />
+                        </asp:DropDownCheckBoxes>
+
+                    </div>
 
                     <div class="appbuttons">
                         <asp:Label runat="server" ID="lblMsg"></asp:Label>
@@ -120,7 +146,7 @@
 
     <script type="text/javascript" src="/VWB/Scripts/selected-articles.js"></script>
 
-    <script>
+    <script type="text/javascript">
         jQuery(function ($) {
             $('#txtStartTime, #txtEndTime').timepicker({
                 showPeriod: true,

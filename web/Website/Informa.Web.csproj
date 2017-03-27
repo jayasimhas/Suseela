@@ -1167,6 +1167,7 @@
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
+    <Compile Include="Controllers\Search\InformaVWBSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />
     <Compile Include="Controllers\Search\TypeAheadController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
@@ -2071,6 +2072,7 @@
     <Folder Include="packages\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\InformaBaseSearch\" />
+    <Folder Include="Views\InformaVWBSearch\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
   </ItemGroup>
@@ -2101,7 +2103,9 @@
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
-    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />

@@ -100,6 +100,10 @@ namespace Informa.Library.Utilities.References
             public const string AuthorFullName = "authorName";
             public const string Company = "companies";
             public const string Publication = "publication";
+            public const string Taxonomies = "Taxonomies";
+            public const string Authors = "Authors";
+            public const string ContentType = "ContentType";
+            public const string MediaType = "MediaType";
         }
 
         public static class SettingKeys

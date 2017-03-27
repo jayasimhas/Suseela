@@ -83,8 +83,8 @@ namespace Informa.Library.Article.Search
             using (var context = SearchContextFactory.Create())
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
-                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)                    
-                    .FilterByAuthor(filter)                   
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .FilterByAuthor(filter)
                     .ApplyDefaultFilters();
                 if (filter.PageSize > 0)
                 {
@@ -264,8 +264,8 @@ namespace Informa.Library.Article.Search
             var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
             var verticalItemName = publicationItem?._Parent._Name;// GlobalService.GetItem<IVertical_Root>((Guid)publicationItem?._Parent._Id)?._Name; //Vertical Folder//added,21Sep16
             //Example Content.Pharma.Scrip.Prefix
-            var publicationPrefix = SitecoreSettingResolver.Instance.ItemSetting[SitecoreSettingResolver.Instance.ContentRootname + "." + verticalItemName + "." + publicationItem._Name + ".Prefix"];
-
+            //var publicationPrefix = SitecoreSettingResolver.Instance.ItemSetting[SitecoreSettingResolver.Instance.ContentRootname + "." + verticalItemName + "." + publicationItem._Name + ".Prefix"];
+            var publicationPrefix = !string.IsNullOrEmpty(publicationItem?.Publication_Prefix) ? publicationItem?.Publication_Prefix : SitecoreSettingResolver.Instance.ItemSetting[SitecoreSettingResolver.Instance.ContentRootname + "." + verticalItemName + "." + publicationItem._Name + ".Prefix"];
             return publicationPrefix;
         }
 

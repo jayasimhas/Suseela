@@ -66,13 +66,15 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string Byline { get; set; }
 
-		[IndexField("facetcontenttype_s")]
-		[DataMember]
-		public string ContentType { get; set; }
+        //[IndexField("facetcontenttype_s")]
+        [IndexField("content_type_s")]
+        [DataMember]
+		public Guid ContentType { get; set; }
 
-		[IndexField("searchmediaicon_s")]
-		[DataMember]
-		public string MediaType { get; set; }
+        //[IndexField("searchmediaicon_s")]
+        [IndexField("media_type_s")]
+        [DataMember]
+		public Guid MediaType { get; set; }
 
         [IndexField("searchmediatooltip_s")]
         [DataMember]
@@ -102,7 +104,10 @@ namespace Informa.Library.Search.Results
 		[IndexField("authors_sm")]
 		public List<string> Authors { get; set; }
 
-		[IndexField("facetauthornames_sm")]
+        [IndexField("taxonomylist_sm")]
+        public List<string> Taxonomies { get; set; }
+
+        [IndexField("facetauthornames_sm")]
 		public List<string> AuthorFullNames { get; set; }
 
 		[IndexField("referenced_companies_t")]
@@ -139,5 +144,6 @@ namespace Informa.Library.Search.Results
 
         [IndexField("exactmatchtitle")]
         public string ExactMatchTitle { get; set; }
+
     }
 }
