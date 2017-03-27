@@ -212,6 +212,19 @@ $(document)
 				}
 			}); 
         });
+		
+		$('#btnRunReport').on('click', function(){
+			sessionStorage.clear();
+			sessionStorage.setItem('getDropdownDetails', JSON.stringify({taxonomies: $('#ddlTaxonomies_dv').html(), authors: $('#ddlAuthors_dv').html(), contentTypes: $('#ddlContentType_dv').html(), mediaTypes:  $('#ddlMediaType_dv').html()}));
+		});
+		
+		if(!!sessionStorage.getItem('getDropdownDetails')){
+			var getDropdownData = JSON.parse(sessionStorage.getItem('getDropdownDetails'));
+			$('#ddlTaxonomies_dv').html(getDropdownData.taxonomies);
+			$('#ddlAuthors_dv').html(getDropdownData.authors);
+			$('#ddlContentType_dv').html(getDropdownData.contentTypes);
+			$('#ddlMediaType_dv').html(getDropdownData.mediaTypes)
+		}
     });
 
 $('.js-article-checkbox input, .js-existing-issue').on('change', function (e) {
