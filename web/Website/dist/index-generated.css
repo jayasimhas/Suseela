@@ -11216,61 +11216,60 @@ div#feedbacklite.fbl_r {
   font-weight: bold;
   line-height: 19px; }
 
-.sponsored_cont .sponsored_title {
-  text-transform: uppercase; }
-
-.sponsored_cont.article-executive-summary {
-  padding: 16px;
-  padding: 1rem; }
-  .sponsored_cont.article-executive-summary .sponsored_title {
-    font-style: italic;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont.article-preview {
-  padding: 16px;
-  padding: 1rem;
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
-  .sponsored_cont.article-preview .sponsored_title {
-    font-size: 18px;
-    font-style: normal;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont.contentRecomm-article {
-  padding: 16px;
-  padding: 1rem; }
-
-.sponsored_cont.section-article {
-  padding: 16px;
-  padding: 1rem;
-  margin-bottom: 24px !important;
-  margin-bottom: 1.5rem !important; }
-
-.sponsored_cont.topic-featured-article {
-  border-top: none; }
-
-.sponsored_cont.article-executive-summary-bottom {
-  padding: 32px;
-  padding: 2rem;
-  margin-bottom: 32px;
-  margin-bottom: 2rem; }
-  .sponsored_cont.article-executive-summary-bottom .sponsored_title {
-    font-size: 18px;
-    font-style: italic;
-    margin-right: 8px;
-    margin-right: 0.5rem;
-    text-transform: capitalize; }
-
-.sponsored_cont ul {
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem; }
-  .sponsored_cont ul li {
-    display: inline;
-    border-right: 0; }
+.sponsored_cont {
+  background: rgba(247, 148, 30, 0.1); }
+  .sponsored_cont .topic-featured-article__inner-wrapper:after, .sponsored_cont.article-preview--small:after {
+    background: linear-gradient(to bottom, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -webkit-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%);
+    background: -moz-linear-gradient(top, #FEF4E8 0%, #FEF4E8 65%, #FEF4E8 100%); }
+  .sponsored_cont .sponsored_title {
+    text-transform: uppercase; }
+  .sponsored_cont.article-executive-summary {
+    padding: 16px;
+    padding: 1rem; }
+    .sponsored_cont.article-executive-summary .sponsored_title {
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.article-preview {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+    .sponsored_cont.article-preview .sponsored_title {
+      font-size: 18px;
+      font-style: normal;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont.contentRecomm-article {
+    padding: 16px;
+    padding: 1rem; }
+  .sponsored_cont.section-article {
+    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 24px !important;
+    margin-bottom: 1.5rem !important; }
+  .sponsored_cont.topic-featured-article {
+    border-top: none; }
+  .sponsored_cont.article-executive-summary-bottom {
+    padding: 32px;
+    padding: 2rem;
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+    .sponsored_cont.article-executive-summary-bottom .sponsored_title {
+      font-size: 18px;
+      font-style: italic;
+      margin-right: 8px;
+      margin-right: 0.5rem;
+      text-transform: capitalize; }
+  .sponsored_cont ul {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem; }
+    .sponsored_cont ul li {
+      display: inline;
+      border-right: 0; }
 
 .headercolored_new {
   background: #c15b07;
