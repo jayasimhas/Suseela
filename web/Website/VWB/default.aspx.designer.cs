@@ -67,6 +67,42 @@ namespace Elsevier.Web.VWB {
         protected global::System.Web.UI.WebControls.HiddenField hdnSelectedPubs;
         
         /// <summary>
+        /// hdnSelectedTaxs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedTaxs;
+        
+        /// <summary>
+        /// hdnSelectedAuths control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedAuths;
+        
+        /// <summary>
+        /// hdnSelectedContTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedContTypes;
+        
+        /// <summary>
+        /// hdnSelectedMedTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSelectedMedTypes;
+        
+        /// <summary>
         /// NewIssueSubmitButton control.
         /// </summary>
         /// <remarks>
@@ -191,6 +227,42 @@ namespace Elsevier.Web.VWB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkShowInProgressArticles;
+        
+        /// <summary>
+        /// ddlTaxonomies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Saplin.Controls.DropDownCheckBoxes ddlTaxonomies;
+        
+        /// <summary>
+        /// ddlAuthors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Saplin.Controls.DropDownCheckBoxes ddlAuthors;
+        
+        /// <summary>
+        /// ddlContentType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Saplin.Controls.DropDownCheckBoxes ddlContentType;
+        
+        /// <summary>
+        /// ddlMediaType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Saplin.Controls.DropDownCheckBoxes ddlMediaType;
         
         /// <summary>
         /// lblMsg control.

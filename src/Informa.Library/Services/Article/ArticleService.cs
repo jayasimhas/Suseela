@@ -283,8 +283,13 @@ namespace Informa.Library.Services.Article
 
         public ISponsored_Content GetSponsoredContent(IArticle article)
         {
-            string cacheKey = CreateCacheKey($"Sponsored-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildSponsoredContent(article));
+            if(article!=null)
+            {
+                string cacheKey = CreateCacheKey($"Sponsored-{article._Id}");
+                return CacheProvider.GetFromCache(cacheKey, () => BuildSponsoredContent(article));
+            }
+            return null;
+            
         }
 
         private ISponsored_Content BuildSponsoredContent(IArticle article)

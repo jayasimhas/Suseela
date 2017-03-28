@@ -6,6 +6,7 @@ using Sitecore.ContentSearch.Linq.Utilities;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.PredicateBuilders;
+using System.Linq;
 
 namespace Informa.Library.Search.PredicateBuilders
 {
@@ -42,7 +43,75 @@ namespace Informa.Library.Search.PredicateBuilders
 
                 predicate = predicate.And(codesPredicate);
             }
+            if (_request.QueryParameters.ContainsKey("PublicationCode") && string.IsNullOrEmpty(_request.QueryParameters["PublicationCode"]) == false)
+            {
+                var pubs = _request.QueryParameters["PublicationCode"].Split(',');
 
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var item in pubs)
+                {
+                    codesPredicate = codesPredicate.Or(x => x.PublicationCode == item);
+                }
+
+                predicate = predicate.And(codesPredicate);
+            }
+
+            if (_request.QueryParameters.ContainsKey("Taxonomies") && string.IsNullOrEmpty(_request.QueryParameters["Taxonomies"]) == false)
+            {
+                var taxs = _request.QueryParameters["Taxonomies"].Split(',');
+
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var tax in taxs)
+                {
+                    codesPredicate = codesPredicate.And(x => x.Taxonomies.Contains(tax));
+                }
+
+                predicate = predicate.And(codesPredicate);
+            }
+            if (_request.QueryParameters.ContainsKey("Authors") && string.IsNullOrEmpty(_request.QueryParameters["Authors"]) == false)
+            {
+                var auths = _request.QueryParameters["Authors"].Split(',');
+
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var auth in auths)
+                {
+                    codesPredicate = codesPredicate.And(x => x.Authors.Contains(auth));
+                }
+
+                predicate = predicate.And(codesPredicate);
+            }
+
+
+            if (_request.QueryParameters.ContainsKey("ContentType") && string.IsNullOrEmpty(_request.QueryParameters["ContentType"]) == false)
+            {
+                var contTypes = _request.QueryParameters["ContentType"].Split(',');
+
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var ct in contTypes)
+                {
+                    Guid ctGuid = new Guid(ct);
+                    codesPredicate = codesPredicate.Or(x => x.ContentType == ctGuid);
+                }
+
+                predicate = predicate.And(codesPredicate);
+            }
+            if (_request.QueryParameters.ContainsKey("MediaType") && string.IsNullOrEmpty(_request.QueryParameters["MediaType"]) == false)
+            {
+                var medTypes = _request.QueryParameters["MediaType"].Split(',');
+
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var mt in medTypes)
+                {
+                    Guid mtGuid = new Guid(mt);
+                    codesPredicate = codesPredicate.Or(x => x.MediaType == mtGuid);
+                }
+                predicate = predicate.And(codesPredicate);
+            }
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
             {
@@ -87,15 +156,15 @@ namespace Informa.Library.Search.PredicateBuilders
                 }
             }
 
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Author))
-			{
-				predicate = predicate.And(x => x.Authors.Contains(_request.QueryParameters[Constants.QueryString.Author]));
-			}
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.AuthorFullName))
-			{
-				predicate = predicate.And(x => x.AuthorFullNames.Contains(_request.QueryParameters[Constants.QueryString.AuthorFullName]));
-			}
-			return predicate;
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.Author))
+            {
+                predicate = predicate.And(x => x.Authors.Contains(_request.QueryParameters[Constants.QueryString.Author]));
+            }
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.AuthorFullName))
+            {
+                predicate = predicate.And(x => x.AuthorFullNames.Contains(_request.QueryParameters[Constants.QueryString.AuthorFullName]));
+            }
+            return predicate;
         }
     }
 }

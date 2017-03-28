@@ -28,8 +28,10 @@ namespace Informa.Web.ViewModels
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ISiteRootContext SiteRootContext;
 
         public SideNavigationMenuViewModel(
+            ISiteRootContext siteRootContext,
             ISiteMainNavigationContext siteMainNavigationContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
@@ -39,6 +41,7 @@ namespace Informa.Web.ViewModels
             ISiteRootContext siterootContext,
             IGlobalSitecoreService globalService)
         {
+            SiteRootContext = siteRootContext;
             SiteMainNavigationContext = siteMainNavigationContext;
             TextTranslator = textTranslator;
             AuthenticatedUserContext = authenticatedUserContext;
@@ -48,7 +51,6 @@ namespace Informa.Web.ViewModels
             SiterootContext = siterootContext;
             GlobalService = globalService;
         }
-
         #region Side Navigation Menu Items  
         public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
         public IEnumerable<ISubscription> ValidSubscriptions => GetValidSubscriptions();
@@ -229,6 +231,10 @@ namespace Informa.Web.ViewModels
         }
     
         public string CurrentItemId => GlassModel?._Id.ToString();
-	}
 
-}
+        public bool MenuOpenFirstTime => SiteRootContext.Item.Is_Open_First_Time;
+    }
+
+}	
+
+    

@@ -213,9 +213,50 @@ $(document)
 			}); 
         });
 		
+		$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').on('click', 'input[type=checkbox]', function(){
+			var $this = $(this);
+			if($this.is(':checked')){
+				$this.attr('checked', 'checked');
+			}
+			else{
+				$this.removeAttr('checked');
+			}
+		});
+		
+		if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
+			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
+		}
+		$('#ddlPublications_dv').on('click', 'input[type=checkbox]', function(){
+			if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
+				$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
+			}
+		}); 
+		
 		$('#btnRunReport').on('click', function(){
+			var Taxonomies_dvStr = '', Authors_dvStr = '', ContentType_dvStr = '', MediaType_dvStr = '';
+			$('#ddlTaxonomies_dv input[type=checkbox]:checked').each(function(idx, val){
+				Taxonomies_dvStr += val.value +',';
+			});
+		
+			$('#ddlAuthors_dv input[type=checkbox]:checked').each(function(idx, val){
+				Authors_dvStr += val.value +',';
+			});
+		
+			$('#ddlContentType_dv input[type=checkbox]:checked').each(function(idx, val){
+				ContentType_dvStr += val.value +',';
+			});
+		
+			$('#ddlMediaType_dv input[type=checkbox]:checked').each(function(idx, val){
+				MediaType_dvStr += val.value +',';
+			});
+			
+			$('#hdnSelectedTaxs').val(Taxonomies_dvStr);
+			$('#hdnSelectedAuths').val(Authors_dvStr);
+			$('#hdnSelectedContTypes').val(ContentType_dvStr);
+			$('#hdnSelectedMedTypes').val(MediaType_dvStr);
+			
 			sessionStorage.clear();
-			sessionStorage.setItem('getDropdownDetails', JSON.stringify({taxonomies: $('#ddlTaxonomies_dv').html(), authors: $('#ddlAuthors_dv').html(), contentTypes: $('#ddlContentType_dv').html(), mediaTypes:  $('#ddlMediaType_dv').html()}));
+			sessionStorage.setItem('getDropdownDetails', JSON.stringify({taxonomies: $('#ddlTaxonomies_dv').html(), authors: $('#ddlAuthors_dv').html(), contentTypes:$('#ddlContentType_dv').html(), mediaTypes:  $('#ddlMediaType_dv').html()}));
 		});
 		
 		if(!!sessionStorage.getItem('getDropdownDetails')){
@@ -223,8 +264,8 @@ $(document)
 			$('#ddlTaxonomies_dv').html(getDropdownData.taxonomies);
 			$('#ddlAuthors_dv').html(getDropdownData.authors);
 			$('#ddlContentType_dv').html(getDropdownData.contentTypes);
-			$('#ddlMediaType_dv').html(getDropdownData.mediaTypes)
-		}
+			$('#ddlMediaType_dv').html(getDropdownData.mediaTypes);
+		} 
     });
 
 $('.js-article-checkbox input, .js-existing-issue').on('change', function (e) {

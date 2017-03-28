@@ -1167,6 +1167,7 @@
     <Compile Include="Controllers\Search\ArticleSearchController.cs" />
     <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
+    <Compile Include="Controllers\Search\InformaVWBSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />
     <Compile Include="Controllers\Search\TypeAheadController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
@@ -1199,6 +1200,10 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\TokenHtml.cs" />
+    <Compile Include="ItemWithoutLayout.aspx.cs">
+      <DependentUpon>ItemWithoutLayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.cs">
       <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
@@ -1807,6 +1812,7 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\index-generated.css" />
     <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailAnalyst.html" />
@@ -1929,6 +1935,7 @@
     <Content Include="sitecore modules\Shell\Data Import\CMConfig\ContentMigrationMappingConfigs.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ItemWithoutLayout.aspx" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\ArticleMover.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
@@ -2071,6 +2078,7 @@
     <Folder Include="packages\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\InformaBaseSearch\" />
+    <Folder Include="Views\InformaVWBSearch\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
   </ItemGroup>
@@ -2101,7 +2109,9 @@
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
-    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
@@ -2115,7 +2125,7 @@
     <Content Include="App_Config\Include\Informa.Products.Insights.Global.ItemIds.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\UserDefined\CmsCustomiztion.config" />
+    <Content Include="App_Config\Include\UserDefined\CmsCustomization.config" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
@@ -2126,6 +2136,7 @@
     <Content Include="Areas\VWB\Views\web.config" />
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <Content Include="App_Config\Sitecore.config.template" />
+    <Content Include="dist\index-generated.css.map" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

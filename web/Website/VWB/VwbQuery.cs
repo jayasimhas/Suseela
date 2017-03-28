@@ -11,6 +11,10 @@ namespace Elsevier.Web.VWB
     {
         public string ArticleNumber;
         public string PublicationCodes;
+        public string TaxonomyCodes;
+        public string AuthorCodes;
+        public string ContentTypeCodes;
+        public string MediaTypeCodes;
         public bool ShouldRun;
         /// <summary>
         /// Guid representing "Next Issue" option
@@ -109,6 +113,38 @@ namespace Elsevier.Web.VWB
             {
                 PublicationCodes = string.Empty;
             }
+            if (request["taxCodes"] != null)
+            {
+                TaxonomyCodes = request["taxCodes"];
+            }
+            else
+            {
+                TaxonomyCodes = string.Empty;
+            }
+            if (request["authCodes"] != null)
+            {
+                AuthorCodes = request["authCodes"];
+            }
+            else
+            {
+                AuthorCodes = string.Empty;
+            }
+            if (request["contTypeCodes"] != null)
+            {
+                ContentTypeCodes = request["contTypeCodes"];
+            }
+            else
+            {
+                ContentTypeCodes = string.Empty;
+            }
+            if (request["medTypeCodes"] != null)
+            {
+                MediaTypeCodes = request["medTypeCodes"];
+            }
+            else
+            {
+                MediaTypeCodes = string.Empty;
+            }
             if (request["vertical"] != null)
             {
                 VerticalRoot = request["vertical"];
@@ -193,6 +229,22 @@ namespace Elsevier.Web.VWB
             {
                 query += "vertical=" + VerticalRoot + "&";
             }
+            if (string.IsNullOrEmpty(TaxonomyCodes) == false)
+            {
+                query += "taxCodes=" + TaxonomyCodes + "&";
+            }
+            if (string.IsNullOrEmpty(AuthorCodes) == false)
+            {
+                query += "authCodes=" + AuthorCodes + "&";
+            }
+            if (string.IsNullOrEmpty(ContentTypeCodes) == false)
+            {
+                query += "contTypeCodes=" + ContentTypeCodes + "&";
+            }
+            if (string.IsNullOrEmpty(MediaTypeCodes) == false)
+            {
+                query += "medTypeCodes=" + MediaTypeCodes + "&";
+            }
             query += "sc_mode=normal";
             return query;
         }
@@ -243,6 +295,10 @@ namespace Elsevier.Web.VWB
             clone.PublicationCodes = PublicationCodes;
             clone.VerticalRoot = VerticalRoot;
             clone.ArticleNumber = ArticleNumber;
+            clone.TaxonomyCodes = TaxonomyCodes;
+            clone.AuthorCodes = AuthorCodes;
+            clone.ContentTypeCodes = ContentTypeCodes;
+            clone.MediaTypeCodes = MediaTypeCodes;
             return clone;
         }
     }

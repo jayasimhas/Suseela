@@ -72,7 +72,9 @@ namespace Elsevier.Web.VWB
             UpdateFields();
             BuildOptionalColumnDropdown();
             if (ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
+            {
                 BuildExistingIssuesList();
+            }
         }
 
         protected void Page_Init(object sender, EventArgs e)
@@ -141,6 +143,28 @@ namespace Elsevier.Web.VWB
                 ddlPublications.DataValueField = "Code";
                 ddlPublications.DataTextField = "Name";
                 ddlPublications.DataBind();
+                if (!string.IsNullOrEmpty(Request.QueryString["pubCodes"]))
+                {
+                    if (Request.QueryString["pubCodes"].Contains(','))
+                    {
+                        var pubCodes = Request.QueryString["pubCodes"].Split(',');
+                        foreach (var pubCode in pubCodes)
+                        {
+                            if (ddlPublications.Items.FindByValue(pubCode) != null)
+                            {
+                                ddlPublications.Items.FindByValue(pubCode).Selected = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (ddlPublications.Items.FindByValue(Request.QueryString["pubCodes"]) != null)
+                        {
+                            ddlPublications.Items.FindByValue(Request.QueryString["pubCodes"]).Selected = true;
+
+                        }
+                    }
+                }
             }
         }
 
@@ -159,12 +183,13 @@ namespace Elsevier.Web.VWB
                     ddlVerticals.DataValueField = "SiteId";
                     ddlVerticals.DataTextField = "Sitename";
                     ddlVerticals.DataBind();
+                    ddlVerticals.Items.Insert(0, "Select Verticals");
                 }
             }
-            if (Session["VerticalValue"] != null && Session["VerticalName"] != null && !string.IsNullOrEmpty(Session["VerticalValue"].ToString()) && !string.IsNullOrEmpty(Session["VerticalName"].ToString()))
+            //var selectedVertical = Request.QueryString["vertical"];        
+            if (!string.IsNullOrEmpty(_vwbQuery.VerticalRoot))
             {
-                ddlVerticals.SelectedItem.Value = Session["VerticalValue"].ToString();
-                ddlVerticals.SelectedItem.Text = Session["VerticalName"].ToString();
+                ddlVerticals.Items.FindByValue(_vwbQuery.VerticalRoot).Selected = true;
             }
             FillPublicationsList(ddlVerticals.SelectedItem.Value);
             hdnSelectedVertical.Value = ddlVerticals.SelectedItem.Value;
@@ -173,7 +198,7 @@ namespace Elsevier.Web.VWB
 
         private static int? GetMaxNumResults()
         {
-            int count = 1000;
+            int count = 250;
             try
             {
                 count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
@@ -218,6 +243,7 @@ namespace Elsevier.Web.VWB
             if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false && _vwbQuery.VerticalRoot != null)
             {
                 FillPublicationsList(_vwbQuery.VerticalRoot);
+                ddlVerticals.ClearSelection();
                 ddlVerticals.Items.FindByValue(_vwbQuery.VerticalRoot).Selected = true;
                 List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
                 foreach (var item in codes)
@@ -245,8 +271,6 @@ namespace Elsevier.Web.VWB
 
         protected void RunReport(object sender, EventArgs e)
         {
-            Session["VerticalValue"] = ddlVerticals.SelectedItem.Value;
-            Session["VerticalName"] = ddlVerticals.SelectedItem.Text;
             if (!string.IsNullOrEmpty(txtArticleNumber.Text))
             {
                 List<string> PubPrefixes = GetPublicationsPrefixes();
@@ -267,20 +291,20 @@ namespace Elsevier.Web.VWB
             }
             else
             {
+                if (ddlVerticals.SelectedItem == null || ddlVerticals.SelectedItem.Text == "Select Verticals")
+                {
+                    lblMsg.Text = "You must select a vertical";
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
+                    return;
+                }
                 var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
-                //if (pubCount == 0)
-                //{
-                //    lblMsg.Text = "You must select at least one publication";
-                //    lblMsg.ForeColor = System.Drawing.Color.Red;
-                //    return;
-                //}
-                //else if (pubCount > 1 && rbNoDate.Checked)
-                //{
-                //    lblMsg.Text = "You must specify a date range when selecting more than one publication";
-                //    lblMsg.ForeColor = System.Drawing.Color.Red;
-                //    return;
-                //}
-                if (pubCount > 1 && rbNoDate.Checked)
+                if (pubCount == 0)
+                {
+                    lblMsg.Text = "You must select at least one publication";
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
+                    return;
+                }
+                else if (pubCount > 1 && rbNoDate.Checked)
                 {
                     lblMsg.Text = "You must specify a date range when selecting more than one publication";
                     lblMsg.ForeColor = System.Drawing.Color.Red;
@@ -337,11 +361,29 @@ namespace Elsevier.Web.VWB
 
             q.ShouldRun = execute;
 
-            List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
-            hdnSelectedPubs.Value = string.Join(",", selected.Select(s => s.Value));
+            //Selected Publications
+            List<ListItem> selectedPubs = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.PublicationCodes = string.Join(",", selectedPubs.Select(s => s.Value));
+            hdnSelectedPubs.Value = string.Join(",", selectedPubs.Select(s => s.Value));
+
+            //Selected Taxonomies
+            List<ListItem> selectedTaxs = ddlTaxonomies.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.TaxonomyCodes = !string.IsNullOrEmpty(hdnSelectedTaxs?.Value) ? hdnSelectedTaxs?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedTaxs?.Value;
+
+            //Selected Authors
+            List<ListItem> selectedAuths = ddlAuthors.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.AuthorCodes = !string.IsNullOrEmpty(hdnSelectedAuths?.Value) ? hdnSelectedAuths?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedAuths?.Value;
+
+            //Selected Content Types
+            List<ListItem> selectedContTypes = ddlContentType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.ContentTypeCodes = !string.IsNullOrEmpty(hdnSelectedContTypes?.Value) ? hdnSelectedContTypes?.Value.TrimEnd(',') : hdnSelectedContTypes.Value;
+
+            //Selected Media Types
+            List<ListItem> selectedMedTypes = ddlMediaType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.MediaTypeCodes = !string.IsNullOrEmpty(hdnSelectedMedTypes?.Value) ? hdnSelectedMedTypes?.Value.TrimEnd(',') : hdnSelectedMedTypes.Value;
+
             q.NumResultsValue = GetMaxNumResults();
-            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA")
+            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA" && ddlVerticals.SelectedValue != "Select Verticals")
                 q.VerticalRoot = ddlVerticals.SelectedValue;
             RedirectTo(q);
         }
@@ -449,15 +491,18 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
+            //if (!IsPostBack)
+            //    return;
+
             ExistingIssueSelector.Items.Clear();
             ExistingIssueSelector.CssClass = "js-existing-issue";
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
-            string selectedVertical = ddlVerticals.SelectedItem.Text;
-            if (selectedVertical == "" && selectedVertical == "Select Verticals")
+            string selectedVertical = !string.IsNullOrEmpty(ddlVerticals.SelectedItem.Text) ? ddlVerticals.SelectedItem.Text : _vwbQuery.VerticalRoot;
+            if (selectedVertical == "" || selectedVertical == "Select Verticals")
             {
-                lblMsg.Text = "You must select a vertical";
-                lblMsg.ForeColor = System.Drawing.Color.Red;
+                //lblMsg.Text = "You must select a vertical";
+                // lblMsg.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 

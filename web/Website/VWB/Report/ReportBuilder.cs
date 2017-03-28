@@ -18,6 +18,7 @@ using Sitecore.Data;
 using Sitecore.Web;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 using Informa.Library.Search.Results;
+using Saplin.Controls;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -65,6 +66,7 @@ namespace Elsevier.Web.VWB.Report
             //{
             //	return;
             //}
+            if (_query.VerticalRoot == null || _query.VerticalRoot == "Select Verticals") return;
             _results = RunSearch(_query).ToList();
             if (AlertTryingToGetNextIssueWhenNoneExists(report))
             {
@@ -147,7 +149,7 @@ namespace Elsevier.Web.VWB.Report
         /// <param name="report"></param>
         private void BuildResultRows(Table report)
         {
-            bool first = true; //first row in table
+            bool first = true; //first row in table           
             foreach (var result in _results)
             {
                 var resultRow = new TableRow();
@@ -163,66 +165,11 @@ namespace Elsevier.Web.VWB.Report
                     {
                         resultRow.Cells.Add(tableCell);
                     }
-
                 }
                 first = false;
                 report.Rows.Add(resultRow);
             }
         }
-        public List<IArticle> RunSearchForTaxonomyDropdown(VwbQuery query)
-        {
-            List<ArticleItemWrapper> articles = null;
-            DateTime startDate = DateTime.MinValue;
-            DateTime endDate = DateTime.MaxValue;
-            string url;
-            using (new Sitecore.SecurityModel.SecurityDisabler())
-            {
-                string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
-
-                if (query.InProgressValue)
-                {
-                    url += "&inprogress=1";
-                }
-
-                startDate = (query.StartDate != null)
-                                        ? query.StartDate.Value
-                                        : DateTime.MinValue;
-
-                endDate = (query.EndDate != null)
-                        ? query.EndDate.Value
-                        : DateTime.MaxValue;
-
-
-                url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
-                url += ";" + endDate.ToString("MM/dd/yyyy");
-                if (string.IsNullOrEmpty(query.PublicationCodes) == false)
-                    url += "&SearchPublicationTitle=" + query.PublicationCodes;
-                if (string.IsNullOrEmpty(query.VerticalRoot) == false)
-                    url += "&verticalroot=" + query.VerticalRoot;
-            }
-            var client = new WebClient();
-            var content = client.DownloadString(url);
-
-            var results = JsonConvert.DeserializeObject<SearchResults>(content);
-            Database masterDb = Factory.GetDatabase("master");
-            var resultItems = new List<IArticle>();            
-            foreach (var searchResult in results.results)
-            {
-                var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
-
-                if (theItem == null)
-                {
-                    continue;
-                }
-                //Manually filtering for time
-                IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
-                resultItems.Add(article);
-            }
-            return resultItems;
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -271,8 +218,22 @@ namespace Elsevier.Web.VWB.Report
 
                     url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
                     url += ";" + endDate.ToString("MM/dd/yyyy");
+
                     if (string.IsNullOrEmpty(query.PublicationCodes) == false)
-                        url += "&SearchPublicationTitle=" + query.PublicationCodes;
+                        url += "&PublicationCode=" + query.PublicationCodes;
+
+                    if (string.IsNullOrEmpty(query.TaxonomyCodes) == false)
+                        url += "&Taxonomies=" + query.TaxonomyCodes;
+
+                    if (string.IsNullOrEmpty(query.AuthorCodes) == false)
+                        url += "&Authors=" + query.AuthorCodes;
+
+                    if (string.IsNullOrEmpty(query.ContentTypeCodes) == false)
+                        url += "&ContentType=" + query.ContentTypeCodes;
+
+                    if (string.IsNullOrEmpty(query.MediaTypeCodes) == false)
+                        url += "&MediaType=" + query.MediaTypeCodes;
+
                     if (string.IsNullOrEmpty(query.VerticalRoot) == false)
                         url += "&verticalroot=" + query.VerticalRoot;
                 }
@@ -465,48 +426,54 @@ namespace Elsevier.Web.VWB.Report
             {
                 Text = col.GetHeader()
             };
-            if (col.ToString() == _workflowStates.ToString() || col.ToString() == _authors.ToString() || col.ToString() == _contentType.ToString() || col.ToString() == _mediaType.ToString()|| col.ToString() == _taxonomy.ToString())
-            {
-                tableCell.Controls.Add(new Label
-                {
-                    Text = col.GetHeader()
-                });
-                DropDownList ddlValues = new DropDownList();
-                if(col.ToString() == _workflowStates.ToString())
-                {
-                    ddlValues.ID = "selWorkflow";
-                }
+            //if (col.ToString() == _workflowStates.ToString() || col.ToString() == _authors.ToString() || col.ToString() == _contentType.ToString() || col.ToString() == _mediaType.ToString() || col.ToString() == _taxonomy.ToString())
+            //{
+            //    tableCell.Controls.Add(new Label
+            //    {
+            //        Text = col.GetHeader()
+            //    });
+            //    DropDownCheckBoxes ddlValues = new DropDownCheckBoxes();
+            //    ddlValues.UseSelectAllNode = true;
+            //    ddlValues.AddJQueryReference = false;
+            //    ddlValues.Style.SelectBoxWidth = 195;
+            //    ddlValues.Style.DropDownBoxBoxWidth = 160;
+            //    ddlValues.Style.DropDownBoxBoxHeight = 250;
+            //    //DropDownList ddlValues = new DropDownList();
+            //    if (col.ToString() == _workflowStates.ToString())
+            //    {
+            //        ddlValues.ID = "selWorkflow";
+            //    }
 
-                if (col.ToString() == _authors.ToString())
-                {
-                    ddlValues.ID = "selAuthor";
-                }
-                if (col.ToString() == _contentType.ToString())
-                {
-                    ddlValues.ID = "selContType";
-                }
-                if (col.ToString() == _mediaType.ToString())
-                {
-                    ddlValues.ID = "selMediaType";
-                }
-                if (col.ToString() == _taxonomy.ToString())
-                {
-                    ddlValues.ID = "selTaxonomy";
-                }
-                ddlValues.DataSource = col.GetDropDownValues(_results);
-                ddlValues.DataValueField = "Key";
-                ddlValues.DataTextField = "Value";
-                ddlValues.DataBind();
-                ddlValues.AutoPostBack = false;
-                tableCell.Controls.Add(ddlValues);
-            }            
-            else
+            //    if (col.ToString() == _authors.ToString())
+            //    {
+            //        ddlValues.ID = "selAuthor";
+            //    }
+            //    if (col.ToString() == _contentType.ToString())
+            //    {
+            //        ddlValues.ID = "selContType";
+            //    }
+            //    if (col.ToString() == _mediaType.ToString())
+            //    {
+            //        ddlValues.ID = "selMediaType";
+            //    }
+            //    if (col.ToString() == _taxonomy.ToString())
+            //    {
+            //        ddlValues.ID = "selTaxonomy";
+            //    }
+            //    ddlValues.DataSource = col.GetDropDownValues(_results);
+            //    ddlValues.DataValueField = "Key";
+            //    ddlValues.DataTextField = "Value";
+            //    ddlValues.DataBind();
+            //    ddlValues.AutoPostBack = false;
+            //    tableCell.Controls.Add(ddlValues);
+            //}
+            //else
+            //{
+            tableCell.Controls.Add(new Label
             {
-                tableCell.Controls.Add(new Label
-                {
-                    Text = col.GetHeader()
-                });
-            }
+                Text = col.GetHeader()
+            });
+            //}
 
             if (col != _articleCheckboxes && col != _articleNumberColumn && col != _titleColumn)
             {

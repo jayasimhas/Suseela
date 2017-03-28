@@ -78,51 +78,51 @@ import videomodal from './modal';
 var showForgotPassSuccess = function() {
     $('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
     $('.pop-out__sign-in-forgot-password')
-		.find('.alert-success')
-		.toggleClass('is-active');
+        .find('.alert-success')
+        .toggleClass('is-active');
 };
 
 window.findTooltips = function() {
-	$('.js-toggle-tooltip').each(function(index, item) {
-		var tooltip;
-		$(item).data("ttVisible", false);
-		$(item).data("ttTouchTriggered", false);
+    $('.js-toggle-tooltip').each(function(index, item) {
+        var tooltip;
+        $(item).data("ttVisible", false);
+        $(item).data("ttTouchTriggered", false);
 
-		$(item).on('mouseenter touchstart', function(e) {
-			e.preventDefault();
-			e.stopPropagation();
-			if (e.type === "touchstart") {
-				$(item).data("ttTouchTriggered", true);
-			}
+        $(item).on('mouseenter touchstart', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (e.type === "touchstart") {
+                $(item).data("ttTouchTriggered", true);
+            }
 
-			// Actual mouse events thrown can be any number of things...
-			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
-				// Do nothing
-			}
-			else if ($(item).data("ttVisible") && e.type === "touchstart") {
-				$(item).data("ttVisible", false);
-				$(item).data("ttTouchTriggered", false);
-				tooltip.hidePopup();
-			}
-			else {
-				$(item).data("ttVisible", true);
-				const offsets = $(item).offset();
-				tooltip = tooltipController({
-					isHidden: false,
-					html: $(item).data('tooltip-text'),
-					top: offsets.top,
-					left: offsets.left + $(this).width()/2,
-					triangle: 'bottom'
-				});
-			}
-		});
+            // Actual mouse events thrown can be any number of things...
+            if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
+                // Do nothing
+            }
+            else if ($(item).data("ttVisible") && e.type === "touchstart") {
+                $(item).data("ttVisible", false);
+                $(item).data("ttTouchTriggered", false);
+                tooltip.hidePopup();
+            }
+            else {
+                $(item).data("ttVisible", true);
+                const offsets = $(item).offset();
+                tooltip = tooltipController({
+                    isHidden: false,
+                    html: $(item).data('tooltip-text'),
+                    top: offsets.top,
+                    left: offsets.left + $(this).width()/2,
+                    triangle: 'bottom'
+                });
+            }
+        });
 
-		$(item).on('mouseleave', function() {
-			$(item).data("ttVisible", false);
-			tooltip.hidePopup();
-			$('.popup').remove();
-		});
-	});
+        $(item).on('mouseleave', function() {
+            $(item).data("ttVisible", false);
+            tooltip.hidePopup();
+            $('.popup').remove();
+        });
+    });
 };
 
 window.findTooltips();
@@ -169,11 +169,11 @@ var renderIframeComponents = function() {
 };
 
 var renderTableau = function() {
-	
+    
     var desktopEmbed = $('.tableau_component__desktop');
     var mobileEmbed = $('.tableau_component__mobile');
 
-		
+        
     var mobileHiddenValue = $('#IsMobileDashboardAvailable').val();
     var showMobile = ($(window).width() <= 480);
     var showDesktop = !showMobile;
@@ -192,7 +192,7 @@ var renderTableau = function() {
         mobileEmbed.hide();
     }
 
-		
+        
 };
 
 var renderAMchart=function() {
@@ -237,9 +237,9 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function(){
-	
+    
 
-	//AM Charts
+    //AM Charts
     if($('#amchartData') && $('#amchartData').length){
     var amchartVal = JSON.parse($('#amchartData').val()),
     createNewObj = {}, chart;
@@ -258,12 +258,12 @@ $(document).ready(function(){
             chart = AmCharts.makeChart( "chartdiv", amchartVal );
        }
     }
-	//messaging web users
-	window.dismiss=function(){
-		$('.dismiss').on('click', function(){
-			Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
-			$('.messaging_webUsers').remove(); 
-			$('.messaging_webUsers_white').remove();
+    //messaging web users
+    window.dismiss=function(){
+        $('.dismiss').on('click', function(){
+            Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
+            $('.messaging_webUsers').remove(); 
+            $('.messaging_webUsers_white').remove();
 
             var dismiss_data = {
                 event_name:"message_dismissal",
@@ -274,87 +274,87 @@ $(document).ready(function(){
             }
             
             analyticsEvent( $.extend(analytics_data, dismiss_data) );
-		});
-	}
-	window.dismiss();
+        });
+    }
+    window.dismiss();
 
-	//Job Listing Pagination
-	if($('#jobTilesCount') && $('#jobTilesCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
-		var totalCategories = $("#jobTilesCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
-	
-		window.setPagination({
-			totalCategories: parseInt(totalCategories),
-			categoryLimit: parseInt(categoryLimit),
-			currentPage: 1,
-			paginationEle: '.job_list_individual'
-		});
-		
-		window.loadPaginationNums();
-	}
-	
-	//Food news Pagination
-	if($('#foodNewsCount') && $('#foodNewsCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
-		var totalCategories = $("#foodNewsCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
-	
-		window.setPagination({
-			totalCategories: parseInt(totalCategories),
-			categoryLimit: parseInt(categoryLimit),
-			currentPage: 1
-		});
-		
-		window.loadPaginationNums();
-	}
-	
-	window.custom_label = function() {
-		$("body").off().on("click", '.label-check', function(e) {
-			if($(this).hasClass("label-check")) {
-				
-				var ele = $(this).find('input');
-				if(ele.is(':checked')){
-				  ele.prop('checked', false);
-				  ele.parent('div').removeClass('wcs-c-on');
-				}else{
-				  ele.prop('checked', true);
-				  ele.parent('div').addClass('wcs-c-on');
-				}
-			}
-		});
-		
-	}
-	window.custom_label();
-	
-	window.personalised_nav = function() {
-	//personalise pop up
-	var modal = document.getElementById('myModal');
+    //Job Listing Pagination
+    if($('#jobTilesCount') && $('#jobTilesCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
+        var totalCategories = $("#jobTilesCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
+    
+        window.setPagination({
+            totalCategories: parseInt(totalCategories),
+            categoryLimit: parseInt(categoryLimit),
+            currentPage: 1,
+            paginationEle: '.job_list_individual'
+        });
+        
+        window.loadPaginationNums();
+    }
+    
+    //Food news Pagination
+    if($('#foodNewsCount') && $('#foodNewsCount').length && $('#noofJobsPerPage') && $('#noofJobsPerPage').length){
+        var totalCategories = $("#foodNewsCount").val(), categoryLimit = $("#noofJobsPerPage").val(); 
+    
+        window.setPagination({
+            totalCategories: parseInt(totalCategories),
+            categoryLimit: parseInt(categoryLimit),
+            currentPage: 1
+        });
+        
+        window.loadPaginationNums();
+    }
+    
+    window.custom_label = function() {
+        $("body").off().on("click", '.label-check', function(e) {
+            if($(this).hasClass("label-check")) {
+                
+                var ele = $(this).find('input');
+                if(ele.is(':checked')){
+                  ele.prop('checked', false);
+                  ele.parent('div').removeClass('wcs-c-on');
+                }else{
+                  ele.prop('checked', true);
+                  ele.parent('div').addClass('wcs-c-on');
+                }
+            }
+        });
+        
+    }
+    window.custom_label();
+    
+    window.personalised_nav = function() {
+    //personalise pop up
+    var modal = document.getElementById('myModal');
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("personalise_close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("personalise_close")[0];
 
-	    // When the user clicks the button, open the modal
-	$(document).on('click','#myBtn',function() {
-			modal.style.display = "block";
-	});  
+        // When the user clicks the button, open the modal
+    $(document).on('click','#myBtn',function() {
+            modal.style.display = "block";
+    });  
 
-	// When the user clicks on <span> (x), close the modal
-	if(span !== undefined){
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-	}
+    // When the user clicks on <span> (x), close the modal
+    if(span !== undefined){
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-		
-	}
-	window.personalised_nav();
-	
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+        
+    }
+    window.personalised_nav();
+    
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
         $("table").each(function(){
@@ -371,30 +371,30 @@ $(document).ready(function(){
     window.lightboxController = new LightboxModalController();
 
     /* * *
-		Traverses the DOM and registers event listeners for any pop-out triggers.
-		Bound explicitly to `window` for easier access by Angular.
-	* * */
+        Traverses the DOM and registers event listeners for any pop-out triggers.
+        Bound explicitly to `window` for easier access by Angular.
+    * * */
     window.indexPopOuts = function() {
 
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-		window.controlPopOuts.customize({
-			id: 'header-register',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
-		
-		window.controlPopOuts.customize({
-			id: 'myView-header-register',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
+        window.controlPopOuts.customize({
+            id: 'header-register',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
+        
+        window.controlPopOuts.customize({
+            id: 'myView-header-register',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
         window.controlPopOuts.customize({
             id: 'header-register',
             tabStyles: {
@@ -420,9 +420,9 @@ $(document).ready(function(){
     window.bookmark = new BookmarkController();
 
     /* * *
-		Traverses the DOM and registers event listeners for any bookmarkable
-		articles. Bound explicitly to `window` for easier access by Angular.
-	* * */
+        Traverses the DOM and registers event listeners for any bookmarkable
+        articles. Bound explicitly to `window` for easier access by Angular.
+    * * */
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').off('click').on('click', function bookmarkArticle(e) {
 
@@ -433,37 +433,37 @@ $(document).ready(function(){
     };
 
     window.indexBookmarks();
-	
-	//Data tool Landing page
-	
-		window.addWidth = function() {
-		//landing page
-		if(($(".demoText").is(':visible')) && !($(".video-demo").is(':hidden')))  {
-			$('.demoText').addClass('add-width-100');
-		}
-		if(!($(".demoText").is(':hidden')) && ($(".video-demo").is(':visible')))  {
-			$('.video-demo').addClass('add-width-100');
-		}
-		if(($(".demoText").is(':visible')) && ($(".video-demo").is(':visible')))  {
-			$('.demoText').removeClass('add-width-100');
-			$('.video-demo').removeClass('add-width-100');
-		}
-	};
-	window.addWidth();
+    
+    //Data tool Landing page
+    
+        window.addWidth = function() {
+        //landing page
+        if(($(".demoText").is(':visible')) && !($(".video-demo").is(':hidden')))  {
+            $('.demoText').addClass('add-width-100');
+        }
+        if(!($(".demoText").is(':hidden')) && ($(".video-demo").is(':visible')))  {
+            $('.video-demo').addClass('add-width-100');
+        }
+        if(($(".demoText").is(':visible')) && ($(".video-demo").is(':visible')))  {
+            $('.demoText').removeClass('add-width-100');
+            $('.video-demo').removeClass('add-width-100');
+        }
+    };
+    window.addWidth();
 
 
     /* * *
-		If a user tries bookmarking an article while logged out, they'll be
-		prompted to sign in first. This checks for any articles that have been
-		passed along for post-sign-in bookmarking. Bound explicitly to `window`
-		for easier access by Angular.
-	* * */
+        If a user tries bookmarking an article while logged out, they'll be
+        prompted to sign in first. This checks for any articles that have been
+        passed along for post-sign-in bookmarking. Bound explicitly to `window`
+        for easier access by Angular.
+    * * */
     window.autoBookmark = function() {
 
         var bookmarkTheArticle = function(article) {
             $('.js-bookmark-article').each(function(indx, item) {
                 if($(item).data('bookmark-id') === article
-					&& !$(item).data('is-bookmarked')) {
+                    && !$(item).data('is-bookmarked')) {
 
                     $(item).click();
 
@@ -489,9 +489,9 @@ $(document).ready(function(){
 
 
     /* * *
-		Toggle global header search box
-		(toggles at tablet/smartphone sizes, always visible at desktop size)
-	* * */
+        Toggle global header search box
+        (toggles at tablet/smartphone sizes, always visible at desktop size)
+    * * */
     $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
         if($(window).width() <= 800) {
             $('.header-search__wrapper').toggleClass('is-active').focus();
@@ -509,8 +509,8 @@ $(document).ready(function(){
 
 
     /* * *
-		Handle user sign-in attempts.
-	* * */
+        Handle user sign-in attempts.
+    * * */
     var userSignIn = new FormController({
         observe: '.js-sign-in-submit',
         successCallback: function(form, context, event) {
@@ -526,13 +526,13 @@ $(document).ready(function(){
                 login_register_method: loginRegisterMethod
             };
 
-            analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+            analyticsEvent( $.extend(analytics_data, loginAnalytics) );
 
             /* * *
-				If `pass-article-id` is set, user is probably trying to sign in
-				after attempting to bookmark an article. Add the article ID to
-				the URL so `autoBookmark()` catches it.
-			* * */
+                If `pass-article-id` is set, user is probably trying to sign in
+                after attempting to bookmark an article. Add the article ID to
+                the URL so `autoBookmark()` catches it.
+            * * */
             var passArticleId = $(form).find('.sign-in__submit').data('pass-article-id');
             if(passArticleId) {
                 var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
@@ -669,20 +669,20 @@ $(document).ready(function(){
             if($(form).hasClass("user-calltoaction"))
                 loginRegisterMethod = "login_register_component";
 
-	var askTheAnalystController = new FormController({
-		observe: '.form-ask-the-analyst',
-		successCallback: function(form) {
-			$('.js-ask-the-analyst-form-wrapper').hide();
-			$('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
-			$('.js-ask-the-analyst-success').show();
+    var askTheAnalystController = new FormController({
+        observe: '.form-ask-the-analyst',
+        successCallback: function(form) {
+            $('.js-ask-the-analyst-form-wrapper').hide();
+            $('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
+            $('.js-ask-the-analyst-success').show();
 
-			// Reset the Ask The Analyst pop-out to its default state when closed
-			$('.js-dismiss-ask-the-analyst').one('click', function() {
-				$('.js-ask-the-analyst-form-wrapper').show();
-				$('.js-ask-the-analyst-success').hide();
-			});
-		}
-	});
+            // Reset the Ask The Analyst pop-out to its default state when closed
+            $('.js-dismiss-ask-the-analyst').one('click', function() {
+                $('.js-ask-the-analyst-form-wrapper').show();
+                $('.js-ask-the-analyst-success').hide();
+            });
+        }
+    });
 
 
             analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
@@ -832,8 +832,8 @@ $(document).ready(function(){
     svg4everybody();
 
     /* * *
-		MAIN SITE MENU
-	* * */
+        MAIN SITE MENU
+    * * */
     (function MenuController() {
 
         var getHeaderEdge = function() {
@@ -864,8 +864,8 @@ $(document).ready(function(){
         });
 
         /*  If the menu is closed, let any clicks on the menu element open
-			the menu. This includes the border—visible when the menu is closed—
-			so it's easier to open. */
+            the menu. This includes the border—visible when the menu is closed—
+            so it's easier to open. */
         $('.js-full-menu-toggle').on('click', function toggleMenu() {
             $('.main-menu').hasClass('is-active') ? null : showMenu();
         });
@@ -884,11 +884,11 @@ $(document).ready(function(){
         $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
             e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
         });
-		
-	$('.show-demo').click(function () {
+        
+    $('.show-demo').click(function () {
 
             $(this).closest('.js-toggle-demo').toggleClass('collapsed');
-            //IPMP-616	
+            //IPMP-616  
             if ($(this).parent().hasClass('collapsed')) {
                 sessionStorage.setItem("mykey", "false");
                 $('.sd').show();
@@ -907,7 +907,7 @@ $(document).ready(function(){
             $('.sd').show();
             $('.hd').hide();
             $('.toggle-demo').hide();
-			$('.js-toggle-demo').addClass('collapsed');
+            $('.js-toggle-demo').addClass('collapsed');
         } else {
             $('.hd').show();
             $('.sd').hide();
@@ -917,11 +917,11 @@ $(document).ready(function(){
 
 
     /* * *
-		When a banner is dismissed, the banner ID is stored in the
-		`dismissedBanners` cookie as a JSON object. Banners are invisible by default,
-		so on page load, this checks if a banner on the page is dismissed or not,
-		then makes the banner visible if not dismissed.
-	* * */
+        When a banner is dismissed, the banner ID is stored in the
+        `dismissedBanners` cookie as a JSON object. Banners are invisible by default,
+        so on page load, this checks if a banner on the page is dismissed or not,
+        then makes the banner visible if not dismissed.
+    * * */
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
     $('.banner').each(function() {
         if($(this).data('banner-id') in dismissedBanners === false) {
@@ -930,8 +930,8 @@ $(document).ready(function(){
     });
 
     /* * *
-		Generic banner dismiss
-	* * */
+        Generic banner dismiss
+    * * */
     $('.js-dismiss-banner').on('click', function dismissBanner(e) {
         var thisBanner = $(e.target).parents('.banner');
         thisBanner.removeClass('is-visible');
@@ -951,25 +951,25 @@ $(document).ready(function(){
     });
 
     // For each article table, clone and append "view full table" markup
-	if($('.article-body-content table') && $('.article-body-content table').length){
-		$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
-			var mediaId = $(e).data("mediaid");
-			var tableLink = $('.js-mobile-table-template .article-table').clone();
+    if($('.article-body-content table') && $('.article-body-content table').length){
+        $('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+            var mediaId = $(e).data("mediaid");
+            var tableLink = $('.js-mobile-table-template .article-table').clone();
 
-			var url = window.location.href;
-			url.replace("#", "");
-			if (url.indexOf("?") < 0)
-				url += "?";
-			else
-				url += "&";
+            var url = window.location.href;
+            url.replace("#", "");
+            if (url.indexOf("?") < 0)
+                url += "?";
+            else
+                url += "&";
 
-			url+= "mobilemedia=true&selectedid=" + mediaId;
+            url+= "mobilemedia=true&selectedid=" + mediaId;
 
-			// $(tableLink).find('a').attr("href", url);
-			$(tableLink).find('a').data("table-url", url).attr('href', null);
-			$(e).after(tableLink);
-		});
-	}
+            // $(tableLink).find('a').attr("href", url);
+            $(tableLink).find('a').data("table-url", url).attr('href', null);
+            $(e).after(tableLink);
+        });
+    }
 
 
     // Find duplicate embeds on article page
@@ -992,18 +992,18 @@ $(document).ready(function(){
     // Topic links
     var topicAnchors = $('.js-topic-anchor');
 
-	if($('.sub-topic-links') && $('.sub-topic-links').length){
-		$('.sub-topic-links').forEach(function(e) {
-			var linkList = $(e).find('.bar-separated-link-list');
+    if($('.sub-topic-links') && $('.sub-topic-links').length){
+        $('.sub-topic-links').forEach(function(e) {
+            var linkList = $(e).find('.bar-separated-link-list');
 
-			topicAnchors.forEach(function(tc) {
-				var id = tc.id;
-				var text = $(tc).data('topic-link-text');
-				var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
-				linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
-			});
-		});
-	}
+            topicAnchors.forEach(function(tc) {
+                var id = tc.id;
+                var text = $(tc).data('topic-link-text');
+                var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
+                linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
+            });
+        });
+    }
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
@@ -1030,8 +1030,8 @@ $(document).ready(function(){
             });
         }
     });
-	
-	 // Adds analytics for article page clicks
+    
+     // Adds analytics for article page clicks
     $('.root').find('a').each(function(index, item) {
 
         $(this).addClass('click-utag');
@@ -1044,17 +1044,17 @@ $(document).ready(function(){
         } else {
             linkString = this.href;
         }
-		
-		//if($(window).width() >= 1024){
-		//	$('.main-menu').addClass('is-active');
-		//	$('.menu-toggler').addClass('is-active');
-		//	$('.header__wrapper .menu-toggler').addClass('is-sticky');
-		//	$('body').addClass('is-frozen');
-		//}
-		
-		if ($(this).data('info') == undefined) {
-			$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
-		} 
+        
+        //if($(window).width() >= 1024){
+        //  $('.main-menu').addClass('is-active');
+        //  $('.menu-toggler').addClass('is-active');
+        //  $('.header__wrapper .menu-toggler').addClass('is-sticky');
+        //  $('body').addClass('is-frozen');
+        //}
+        
+        if ($(this).data('info') == undefined) {
+            $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+        } 
     });
 
     $('.general-header__navigation').each(function() {
@@ -1288,12 +1288,12 @@ $(document).ready(function(){
   
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
-		w=window.twttr||{};
+        w=window.twttr||{};
         return t.getElementById(r) ? w : (n=t.createElement(e),
-		n.id=r,n.src="https://platform.twitter.com/widgets.js",
-		i.parentNode.insertBefore(n,i),w._e=[],
-		w.ready=function(t) { w._e.push(t); },
-		w); } (document,"script","twitter-wjs");
+        n.id=r,n.src="https://platform.twitter.com/widgets.js",
+        i.parentNode.insertBefore(n,i),w._e=[],
+        w.ready=function(t) { w._e.push(t); },
+        w); } (document,"script","twitter-wjs");
 
 
 
@@ -1308,19 +1308,19 @@ $(document).ready(function(){
     $(".selectivity-input .selectivity-single-select").each(function() {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
-	
-	//IPMP-1760
-	if($( ".article-body-content aside:first" ).hasClass('article-inline-image')){
-	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
+    
+    //IPMP-1760
+    if($( ".article-body-content aside:first" ).hasClass('article-inline-image')){
+    $('.package-control-articles__quarter').insertAfter('.article-body-content .article-inline-image');
     }else{
-	$('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
-	}
+    $('.package-control-articles__quarter').insertAfter('.article-body-content .article-executive-summary');
+    }
    
     //IPMP-2220
-	if($(".myView-placeholder").length == 0) {
-		$('.header-account-right-access').addClass('nomyView');
-		$('.header-publication-links').addClass('nomyView');
-	}
+    if($(".myView-placeholder").length == 0) {
+        $('.header-account-right-access').addClass('nomyView');
+        $('.header-publication-links').addClass('nomyView');
+    }
 
 
     //Update state Field on Contact Page

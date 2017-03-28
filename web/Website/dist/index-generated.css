@@ -3152,12 +3152,21 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     .job_listing .pagination .nums li {
       display: inline-block; }
 
+@media (max-width: 480px) {
+  .job_detail h1 {
+    font-size: 36px;
+    font-size: 2.25rem; } }
+
 .job_detail .sub-heading-text {
   font-family: "PT Serif", Georgia, serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.5625em;
   margin: 1em 0; }
+  @media (max-width: 480px) {
+    .job_detail .sub-heading-text {
+      font-size: 16px;
+      font-size: 1rem; } }
   .job_detail .sub-heading-text p {
     margin-bottom: 0; }
 
@@ -4120,6 +4129,13 @@ body.lightboxed {
     cursor: auto;
     -webkit-transform: translate3d(330px, 0, 0);
             transform: translate3d(330px, 0, 0); }
+  .main-menu.fixed {
+    position: fixed;
+    top: 0;
+    height: 100%; }
+  .main-menu .main-menu-list {
+    height: 100%;
+    overflow-y: scroll; }
   @media (max-width: 800px) {
     .main-menu {
       border-right: 1px solid #d1d3d4;
@@ -9917,6 +9933,9 @@ div#feedbacklite.fbl_r {
     #market-data-tool .lli-brand-container .lli-brand-box p, #dry-cargo .lli-brand-container .lli-brand-box p, #dry-cargo-cap .lli-brand-container .lli-brand-box p, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box p, #tanker-fixtures .lli-brand-container .lli-brand-box p, #ship-Container-ShipFixtures .lli-brand-container .lli-brand-box p, #ship-Coal-Export .lli-brand-container .lli-brand-box p, #market-Data-Dry-Cargo .lli-brand-container .lli-brand-box p,
     #cockett-Bunker .lli-brand-container .lli-brand-box p, #ship-Roro .lli-brand-container .lli-brand-box p, #ship-Container-Ship .lli-brand-container .lli-brand-box p, #ship-Vehicle .lli-brand-container .lli-brand-box p, #tanker-Pure-ChemPage .lli-brand-container .lli-brand-box p, #shipContainerFixtures .lli-brand-container .lli-brand-box p, #fisDryBulkContainer .lli-brand-container .lli-brand-box p, #howeRobinsonContainer .lli-brand-container .lli-brand-box p, #market-imarex .lli-brand-container .lli-brand-box p, #shipVehicle-Page .lli-brand-container .lli-brand-box p, #shipCoalExport-page .lli-brand-container .lli-brand-box p {
       font-weight: normal; }
+    #market-data-tool .lli-brand-container .lli-brand-box .selectivity-single-select-input, #dry-cargo .lli-brand-container .lli-brand-box .selectivity-single-select-input, #dry-cargo-cap .lli-brand-container .lli-brand-box .selectivity-single-select-input, #dry-cargo-bulk-fixtures .lli-brand-container .lli-brand-box .selectivity-single-select-input, #tanker-fixtures .lli-brand-container .lli-brand-box .selectivity-single-select-input, #ship-Container-ShipFixtures .lli-brand-container .lli-brand-box .selectivity-single-select-input, #ship-Coal-Export .lli-brand-container .lli-brand-box .selectivity-single-select-input, #market-Data-Dry-Cargo .lli-brand-container .lli-brand-box .selectivity-single-select-input,
+    #cockett-Bunker .lli-brand-container .lli-brand-box .selectivity-single-select-input, #ship-Roro .lli-brand-container .lli-brand-box .selectivity-single-select-input, #ship-Container-Ship .lli-brand-container .lli-brand-box .selectivity-single-select-input, #ship-Vehicle .lli-brand-container .lli-brand-box .selectivity-single-select-input, #tanker-Pure-ChemPage .lli-brand-container .lli-brand-box .selectivity-single-select-input, #shipContainerFixtures .lli-brand-container .lli-brand-box .selectivity-single-select-input, #fisDryBulkContainer .lli-brand-container .lli-brand-box .selectivity-single-select-input, #howeRobinsonContainer .lli-brand-container .lli-brand-box .selectivity-single-select-input, #market-imarex .lli-brand-container .lli-brand-box .selectivity-single-select-input, #shipVehicle-Page .lli-brand-container .lli-brand-box .selectivity-single-select-input, #shipCoalExport-page .lli-brand-container .lli-brand-box .selectivity-single-select-input {
+      visibility: hidden; }
   #market-data-tool .lli-brand-container p, #dry-cargo .lli-brand-container p, #dry-cargo-cap .lli-brand-container p, #dry-cargo-bulk-fixtures .lli-brand-container p, #tanker-fixtures .lli-brand-container p, #ship-Container-ShipFixtures .lli-brand-container p, #ship-Coal-Export .lli-brand-container p, #market-Data-Dry-Cargo .lli-brand-container p,
   #cockett-Bunker .lli-brand-container p, #ship-Roro .lli-brand-container p, #ship-Container-Ship .lli-brand-container p, #ship-Vehicle .lli-brand-container p, #tanker-Pure-ChemPage .lli-brand-container p, #shipContainerFixtures .lli-brand-container p, #fisDryBulkContainer .lli-brand-container p, #howeRobinsonContainer .lli-brand-container p, #market-imarex .lli-brand-container p, #shipVehicle-Page .lli-brand-container p, #shipCoalExport-page .lli-brand-container p {
     margin-bottom: 35px; }
@@ -14666,6 +14685,8 @@ main {
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
       margin-left: 330px; } }
+  .main__wrapper.shift-main-content {
+    margin-left: 300px; }
   @media (max-width: 480px) {
     .main__wrapper {
       width: 100%;
@@ -14673,6 +14694,14 @@ main {
   .main__wrapper--solo {
     width: 100%;
     margin-left: 0; }
+
+.shift-content {
+  margin-left: 330px;
+  overflow-x: scroll;
+  width: 100%; }
+
+.shift-main-content {
+  margin-left: -330px; }
 
 .main__content {
   max-width: 1240px;
@@ -14934,6 +14963,22 @@ main {
 
 .page-registration__error {
   display: none; }
+
+.error-page-main {
+  margin-left: 0;
+  width: 100%; }
+  .error-page-main .container {
+    padding: 30px; }
+    .error-page-main .container img {
+      padding: 10px 0px;
+      border: 0;
+      height: 50px; }
+    .error-page-main .container .footer__separator {
+      margin: 10px 0; }
+
+.error-page-footer {
+  padding: 30px;
+  overflow: hidden; }
 
 /* * * * THEME STYLES * * * */
 .theme-pink-sheet a, .theme-pink-sheet .pop-out__reset-password, .theme-pink-sheet .sortable-table__list-toggler, .theme-pink-sheet .mobile-table-exit, .theme-pink-sheet a:hover, .theme-pink-sheet .pop-out__reset-password:hover, .theme-pink-sheet .sortable-table__list-toggler:hover, .theme-pink-sheet .mobile-table-exit:hover, .theme-pink-sheet a:active, .theme-pink-sheet .pop-out__reset-password:active, .theme-pink-sheet .sortable-table__list-toggler:active, .theme-pink-sheet .mobile-table-exit:active, .theme-pink-sheet a:focus, .theme-pink-sheet .pop-out__reset-password:focus, .theme-pink-sheet .sortable-table__list-toggler:focus, .theme-pink-sheet .mobile-table-exit:focus,
