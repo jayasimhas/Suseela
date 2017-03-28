@@ -605,6 +605,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             if (ArticleData["Nooftableau"] != null)
                             {
+                                ListToGuid.DataLogger.Clear();
                                 ListToGuid.DataLogger.Add("Tableau (Y/N)", "Y");
                                 int numberofTableaus = System.Convert.ToInt32(ArticleData["Nooftableau"]);
                                 string tableauname = string.Empty;
