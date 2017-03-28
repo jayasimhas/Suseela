@@ -352,7 +352,6 @@
     <Compile Include="Article\Search\PersonalizedArticleListItem.cs" />
     <Compile Include="Article\Search\ArticleForCompanySearchResults.cs" />
     <Compile Include="Article\Search\PersonalizedArticleSearchResults.cs" />
-    <Compile Include="Article\Search\VWBSearchRequest.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Authors\AuthorIndexClient.cs" />
@@ -385,7 +384,6 @@
     <Compile Include="Search\ComputedFields\Facets\MarketField.cs" />
     <Compile Include="Search\ComputedFields\Facets\SectorsField.cs" />
     <Compile Include="Search\ComputedFields\Facets\TopicField.cs" />
-    <Compile Include="Search\Results\VWBSearchQueryResults.cs" />
     <Compile Include="User\Authentication\IverticalLogin.cs" />
     <Compile Include="User\Authentication\VerticalLogin.cs" />
     <Compile Include="User\Newsletter\AddNewsletterUserOptInsContext.cs" />
