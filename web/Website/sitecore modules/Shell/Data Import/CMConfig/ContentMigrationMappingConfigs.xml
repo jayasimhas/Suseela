@@ -4052,19 +4052,19 @@
         <mark name="motor">Specialty</mark>
       </market>
       <country>
-        <reg name="world">Global</reg>
-        <reg name="c_and_s_america">Americas</reg>
+        <reg name="world">International</reg>
+        <reg name="c_and_s_america">South America,North America</reg>
         <reg name="europe">Europe</reg>
         <reg name="london">London</reg>
         <reg name="mea">Middle East and Africa</reg>
-        <reg name="uk">Europe</reg>
-        <reg name="usa_and_canada">Americas</reg>
-        <reg name="rest_of_world">Global</reg>
-        <reg name="global">Global</reg>
+        <reg name="uk">United Kingdom</reg>
+        <reg name="usa_and_canada">North America</reg>
+        <reg name="rest_of_world">International</reg>
+        <reg name="global">International</reg>
         <reg name="asia_pacific">Asia Pacific</reg>
         <reg name="bermuda">Bermuda</reg>
-        <reg name="emerging_markets">Global</reg>
-        <reg name="united_states">Americas</reg>
+        <reg name="emerging_markets">International</reg>
+        <reg name="united_states">North America</reg>
         <reg name="Japan">Japan</reg>
         <reg name="Brazil">Brazil</reg>
         <reg name="China">China</reg>
@@ -4149,10 +4149,10 @@
         <reg name="germany">Germany</reg>
         <reg name="spotlightonchina">China</reg>
         <reg name="greek-crisis">Greece</reg>
-        <reg name="world-middleeast">Middle East and Africa</reg>
+        <reg name="world-middleeast"><![CDATA[Middle East & Africa]]></reg>
         <reg name="world-northamerica">North America</reg>
         <reg name="world-europe">Europe</reg>
-        <reg name="world-africa">Africa</reg>
+        <reg name="world-africa"><![CDATA[Middle East & Africa]]></reg>
         <reg name="world-candsamerica">South America</reg>
         <reg name="world-asia">Asia</reg>
         <reg name="countries-afghanistan">Afghanistan</reg>
@@ -4181,7 +4181,7 @@
         <reg name="countries-benin">Benin</reg>
         <reg name="countries-bermuda">Bermuda</reg>
         <reg name="countries-bhutan">Bhutan</reg>
-        <reg name="countries-bolivia">Bolivia, Plurinational State of</reg>
+        <reg name="countries-bolivia">Bolivia</reg>
         <reg name="countries-bosniaandherzegovina">Bosnia and Herzegovina</reg>
         <reg name="countries-botswana">Botswana</reg>
         <reg name="countries-bouvetisland">Bouvet Island</reg>
@@ -4247,7 +4247,7 @@
         <reg name="countries-guineabissau">Guinea-Bissau</reg>
         <reg name="countries-guyana">Guyana</reg>
         <reg name="countries-haiti">Haiti</reg>
-        <reg name="countries-heardislandandmcdonaldislands">Heard Island and McDonald Islands</reg>
+        <reg name="countries-heardislandandmcdonaldislands"><![CDATA[Heard Island & McDonald Islands]]></reg>
         <reg name="countries-honduras">Honduras</reg>
         <reg name="countries-hongkong">Hong Kong</reg>
         <reg name="countries-hungary">Hungary</reg>
