@@ -6332,10 +6332,10 @@ main .action-flags-bar, main .banner--highlights {
       .personalisationhome .latestSubject .fllatestSub {
         position: absolute;
         float: left; } }
-    @media screen and (min-width: 768px) and (min-width: 768px) and (min-width: 1024px) {
+    @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
       .personalisationhome .latestSubject .fllatestSub {
         margin-bottom: 10px; } }
-    @media screen and (min-width: 768px) and (min-width: 767px) and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (min-width: 767px) and (max-width: 768px) {
       .personalisationhome .latestSubject .fllatestSub {
         margin: 20px 0 10px; } }
 
@@ -9209,8 +9209,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10267,17 +10267,17 @@ div#feedbacklite.fbl_r {
           margin-right: 10%; } }
     #market-data .marketDataTable span.fall {
       color: #f40600;
-      text-align: right;
       width: 50px;
+      text-align: right;
       display: inline-block; }
       @media (max-width: 480px) {
         #market-data .marketDataTable span.fall {
           width: 40px;
           margin-right: 16px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #market-data .marketDataTable span.fall {
-          width: 30px;
-          margin-right: 3px; } }
+          width: 40%;
+          margin-right: 10%; } }
 
 .article-preview {
   clear: both; }
@@ -13534,7 +13534,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

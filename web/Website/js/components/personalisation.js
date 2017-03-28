@@ -794,12 +794,14 @@ $(function () {
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
+										window.indexBookmarks();
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
+										window.indexBookmarks();
 									}
 								}
 							},
@@ -839,6 +841,7 @@ $(function () {
 						$(eachstory).append(loadLayoutData);
 						setImgHeightListview();
 						window.findTooltips();
+						window.indexBookmarks();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
 						}
@@ -847,6 +850,7 @@ $(function () {
 						$(eachstory).append(loadLayoutData);
 						setImgHeightListview();
 						window.findTooltips();
+						window.indexBookmarks();
 						if (data.loadMore && !data.loadMore.displayLoadMore) {
 							$this.closest('.eachstoryMpan').find('.loadmore').css('display', 'none');
 						}
@@ -905,12 +909,14 @@ $(function () {
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
+							window.indexBookmarks();
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
+							window.indexBookmarks();
 						}
 					}
 				},
@@ -963,10 +969,12 @@ $(function () {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
+											window.indexBookmarks();
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
+											window.indexBookmarks();
 										}
 									}
 								},

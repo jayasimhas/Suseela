@@ -591,16 +591,16 @@
 		}
 		span.fall {
 			color: #f40600;
-			text-align: right;
 			width: 50px;
+			text-align: right;
 			display: inline-block; 
 			@include breakpoint('small') {
 				width: 40px; 
 				margin-right: 16px;
 			}
-			@media only screen and (min-width: 768px) and (max-width: 1023px) {
-				width: 30px; 
-				margin-right: 3px;
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 40%; 
+				margin-right: 10%
 			}
 		}
 	}
