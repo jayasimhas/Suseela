@@ -1,40 +1,39 @@
 ﻿@model Informa.Web.ViewModels.BuyersGuide.BuyersListingViewModel
 @using Informa.Library.Utilities.References
-@{ 
+@{
     var linkType = string.Empty;
 }
 @*Agrow Listing Page*@
-<div class="main__content">
-    <div>
-        <div class="agroBuyers">
-            <h1>@Model.Title</h1>
-            <div class="sub-heading-text">
-                <span>@Model.SubTitle</span>
-            </div>
-            @if (Model.RenderingParameters != null && Model.RenderingParameters.DisplayStyle != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.DisplayStyle.Value))
+<div>
+    <div class="agroBuyers">
+        <h1>@Model.Title</h1>
+        <div class="sub-heading-text">
+            <span>@Model.SubTitle</span>
+        </div>
+        @if (Model.RenderingParameters != null && Model.RenderingParameters.DisplayStyle != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.DisplayStyle.Value))
             {
                 if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.ImageAndTitle)
                 {
                     if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
                     {
-                        <section class="buyers-guide-listing" >
+                    <section class="buyers-guide-listing">
 
-                            @{int flag = 0; }
-                            @{int tilesCount = Model.AgrowTiles.Count(); }
+                        @{int flag = 0; }
+                        @{int tilesCount = Model.AgrowTiles.Count(); }
 
-                            @for (int i = 0; i < tilesCount;)
-                            {
-                                flag++;
-                                <div class="buyers-guide-row">
-                                    @for (int j = i; j < 3* flag; j++ )
+                        @for (int i = 0; i < tilesCount;)
+                        {
+                            flag++;
+                            <div class="buyers-guide-row">
+                                @for (int j = i; j < 3 * flag; j++)
+                                {
+                                    if (j < tilesCount)
                                     {
-                                        if (j < tilesCount)
-                                        {
-                                            linkType = Model.AgrowTiles.ElementAt(j).IsDetailPageExternalLink ? "External" : "Internal";
+                                        linkType = Model.AgrowTiles.ElementAt(j).IsDetailPageExternalLink ? "External" : "Internal";
                                         <div class="buyers-guide">
                                             <div class="image">
                                                 <a class="link click-utag" href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl"
-                                                    data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>
+                                                   data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>
                                                     @if (!string.IsNullOrEmpty(@Model.AgrowTiles.ElementAt(j).AgrowBanner?.Src))
                                                     {
                                                         <img src="@Model.AgrowTiles.ElementAt(j).AgrowBanner.Src" alt="banner" />
@@ -45,79 +44,84 @@
                                                     }
                                                 </a>
                                             </div>
-                                            <h4 class="article-preview__headline"><a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl" class="click-utag"
-                                                    data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>@Model.AgrowTiles.ElementAt(j).AgrowTitle</a></h4>
+                                            <h4 class="article-preview__headline">
+                                                <a href="@Model.AgrowTiles.ElementAt(j).AgrowDetailUrl" class="click-utag"
+                                                   data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@Model.AgrowTiles.ElementAt(j).AgrowTitle", "click_through_destination": "@Model.AgrowTiles.ElementAt(j).AgrowTitle"}'>@Model.AgrowTiles.ElementAt(j).AgrowTitle</a>
+                                            </h4>
                                         </div>
-                                        }
-                                        i++;
                                     }
-                                </div>
-                                }
-                           </section>
-                    }
-                }
-                else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleDescriptionAndLink)
-                {
-                    if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
-                    {
-                        <section class="buyers-guide-listing-text" id="buyers-guide-listing-text">
-                            <div class="buyers-guide-row">
-                                @foreach (var agrow in Model.AgrowTiles)
-                                {
-                                    linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
-                                    <div class="buyers-guide">
-                                            <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl" class="click-utag"
-                                            data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowTitle</a></h4>
-                                       
-                                        <div class="text">
-                                            <p>
-                                                @Html.Raw(agrow.AgrowShortDescription)
-                                            </p>
-                                        </div>
-                                        <a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
-                                            data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a>
-                                    </div>
+                                    i++;
                                 }
                             </div>
-                        </section>
-                    }
-                }
-                else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleImageAndLink)
-                {
-                    if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
-                    {
-                        <section class="buyers-guide-listing-link" id="buyers-guide-listing-link">
-                            <div class="buyers-guide-row">
-                                @foreach (var agrow in Model.AgrowTiles)
-                                {
-                                    linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
-                                    <div class="buyers-guide">
-                                        <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
-                                        <div class="image">
-                                            <a href="@agrow.AgrowDetailUrl" class="click-utag"
-                                               data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>
-                                                @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
-                                                {
-                                                    <img src="@agrow.AgrowBanner.Src" alt="banner" />
-                                                }
-                                                else if (!string.IsNullOrEmpty(agrow.AgrowLogo?.Src))
-                                                {
-                                                    <img src="@agrow.AgrowLogo.Src" alt="logo" />
-                                                }
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <h4><a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
-                                                     data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a></h4>
-                                        </div>
-                                    </div>
+                        }
+                    </section>
                                 }
-                            </div>
-                        </section>
-                    }
-                }
-            }
-            <div class="contact_terms"><p>@Html.Raw(Model.Body)</p></div>
-        </div>
+                            }
+                            else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleDescriptionAndLink)
+                            {
+                                if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
+                                {
+                                    <section class="buyers-guide-listing-text" id="buyers-guide-listing-text">
+                                        <div class="buyers-guide-row">
+                                            @foreach (var agrow in Model.AgrowTiles)
+                                            {
+                                                linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
+                                                <div class="buyers-guide">
+                                                    <h4 class="article-preview__headline">
+                                                        <a href="@agrow.AgrowDetailUrl" class="click-utag"
+                                                           data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowTitle</a>
+                                                    </h4>
+
+                                                    <div class="text">
+                                                        <p>
+                                                            @Html.Raw(agrow.AgrowShortDescription)
+                                                        </p>
+                                                    </div>
+                                                    <a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
+                                                       data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a>
+                                                </div>
+                                            }
+                                        </div>
+                                    </section>
+                                }
+                            }
+                            else if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.TitleImageAndLink)
+                            {
+                                if (Model.AgrowTiles != null && Model.AgrowTiles.Count() > 0)
+                                {
+                                    <section class="buyers-guide-listing-link" id="buyers-guide-listing-link">
+                                        <div class="buyers-guide-row">
+                                            @foreach (var agrow in Model.AgrowTiles)
+                                            {
+                                                linkType = agrow.IsDetailPageExternalLink ? "External" : "Internal";
+                                                <div class="buyers-guide">
+                                                    <h4 class="article-preview__headline"><a href="@agrow.AgrowDetailUrl">@agrow.AgrowTitle</a></h4>
+                                                    <div class="image">
+                                                        <a href="@agrow.AgrowDetailUrl" class="click-utag"
+                                                           data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>
+                                                            @if (!string.IsNullOrEmpty(agrow.AgrowBanner?.Src))
+                                                            {
+                                                                <img src="@agrow.AgrowBanner.Src" alt="banner" />
+                                                            }
+                                                            else if (!string.IsNullOrEmpty(agrow.AgrowLogo?.Src))
+                                                            {
+                                                                <img src="@agrow.AgrowLogo.Src" alt="logo" />
+                                                            }
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <h4>
+                                                            <a href="@agrow.AgrowDetailUrl" class="link click-utag" target="_blank"
+                                                               data-info='{"event_name": "link_click", "page_name": "@Model.PageName", "link_type": "@linkType", "ga_eventCategory": "@Model.PageName", "ga_eventAction": "@linkType", "ga_eventLabel": "@agrow.AgrowTitle", "click_through_destination": "@agrow.AgrowTitle"}'>@agrow.AgrowDetailText</a>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </section>
+                                    }
+                                }
+                            }
+        <div class="contact_terms"><p>@Html.Raw(Model.Body)</p></div>
     </div>
 </div>

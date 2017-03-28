@@ -9,7 +9,7 @@ namespace Informa.Library.Search.Results
 {
     public class VWBSearchQueryResults
     {
-        public Dictionary<string,string> Taxonomies { get; set; }
+        public Dictionary<string, string> Taxonomies { get; set; }
         public Dictionary<string, string> Authors { get; set; }
         public Dictionary<string, string> ContentTypes { get; set; }
         public Dictionary<string, string> MediaTypes { get; set; }
