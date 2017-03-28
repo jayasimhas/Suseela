@@ -28,6 +28,8 @@ using Velir.Search.WebApi.Models;
 using httppost = System.Web.Http;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
+using Informa.Library.Utilities.CMSHelpers;
+
 namespace Informa.Web.Controllers.Search
 {
     public class InformaVWBSearchController : InformaBaseSearchController
@@ -57,10 +59,12 @@ namespace Informa.Web.Controllers.Search
             {
                 return null;
             }
-            ApiSearchRequest request = new ApiSearchRequest(1, 1000);
+            var defaultCount = "1000";
+            int PerPageCount = Convert.ToInt32(!string.IsNullOrEmpty(Settings.GetSetting("VwbDropdownCount")) ? Settings.GetSetting("VwbDropdownCount") : defaultCount);
+            ApiSearchRequest request = new ApiSearchRequest(1, PerPageCount);
             request.Page = 1;
-            request.PageId = "A0163A51-2FF8-4A9C-8FBA-6516546E5AE1";
-            request.PerPage = 1000;
+            request.PageId = ItemIdResolver.GetItemIdByKey("VwbSearchPage");
+            request.PerPage = PerPageCount;
             request.QueryParameters.Add("PublicationCode", pubCode);
 
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
