@@ -162,12 +162,20 @@
 	}
 }
 .job_detail{
+	h1{
+		@include breakpoint('small') {
+			font-size: 2.25rem;
+		}
+	}
 	.sub-heading-text{
 		font-family: "PT Serif", Georgia, serif;
 		font-style: italic;
 		font-weight: 400;
 		font-size: 1.5625em;
 		margin: 1em 0;
+		@include breakpoint('small') {
+			font-size: 1rem;
+		}
 		p{
 			margin-bottom:0;
 		}
