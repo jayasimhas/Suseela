@@ -10875,7 +10875,8 @@ div#feedbacklite.fbl_r {
 
 .rolling-stream {
   background-color: #f1f2f2;
-  padding: 20px 25px; }
+  padding: 20px 25px;
+  width: 100%; }
   .rolling-stream.white-bg {
     background-color: #ffffff; }
     .rolling-stream.white-bg .rolling-stream-wrapper:after {

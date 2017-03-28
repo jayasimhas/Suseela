@@ -14,19 +14,15 @@ namespace Informa.Web.ViewModels.PopOuts
 		protected readonly IRenderingItemContext ArticleRenderingContext;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IArticle Article;
-		protected readonly IRecaptchaService RecaptchaSettings;
 
 		public EmailArticlePopOutViewModel(
 				ITextTranslator textTranslator,
 				IRenderingItemContext articleRenderingContext,
-				IAuthenticatedUserContext userContext,
-				IRecaptchaService recaptchaSettings)
+				IAuthenticatedUserContext userContext)
 		{
 			TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			UserContext = userContext;
-			RecaptchaSettings = recaptchaSettings;
-
 			Article = ArticleRenderingContext.Get<IArticle>();
 		}
 
@@ -49,6 +45,5 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
 		public string ArticleTitle => Article.Title;
 		public string ArticleNumber => Article.Article_Number;
-		public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
 	}
 }
