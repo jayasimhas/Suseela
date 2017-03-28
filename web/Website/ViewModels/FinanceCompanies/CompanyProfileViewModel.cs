@@ -20,7 +20,7 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             TextTranslator = textTranslator;
         }
         string id = HttpContext.Current.Request.QueryString["Id"];        
-        public string ProfileTitle => !string.IsNullOrEmpty(id) ? Context.GetItem<ICompany_Detail_Page>(id)?.Profile_Title : GlassModel.Profile_Title;
+        public string ProfileTitle => TextTranslator.Translate("Comapny.ProfileTitle");
         public string ProfileText => !string.IsNullOrEmpty(id) ? Context.GetItem<ICompany_Detail_Page>(id)?.Profile_Text : GlassModel.Profile_Text;
       
     }

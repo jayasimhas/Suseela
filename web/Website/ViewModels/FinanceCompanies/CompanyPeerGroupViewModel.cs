@@ -27,11 +27,11 @@ namespace Informa.Web.ViewModels.FinanceCompanies
         /// <summary>
         /// Peer Group Title
         /// </summary>
-        public string PeerGroupTitle => GlassModel?.PeerGroup_Title;
+        public string PeerGroupTitle => TextTranslator.Translate("Company.PeerGroupTitle");
         /// <summary>
         /// Peer Group section description text
         /// </summary>
-        public string PeerGroupDescription => GlassModel?.PeerGroup_Text;
+        public string PeerGroupDescription => TextTranslator.Translate("Company.PeerGroupText");
         /// <summary>
         /// Dictionary Item for Go Button text
         /// </summary>
