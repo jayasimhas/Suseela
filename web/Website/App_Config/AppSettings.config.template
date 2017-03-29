@@ -13,14 +13,12 @@
   <add key ="Imagemap_path_Maritime" value ="{8ACB6094-7BB4-40D1-83C3-A5F43AB924A0}"/> 
   <add key ="LegacyImageDownloadPath" value=""/>
   <!-- FS OR URL -->
-  <add key ="LoadImageForImportFrom" value="FS"/> 
+  <add key ="LoadImageForImportFrom" value="URL"/>
   <add key="commoditiesColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,COMMODITYFACTOR,COMMERCIAL" />
   <add key="AgrowColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,CROPPROTECTION,COMMERCIAL" />
-  <add key="AnimalPharmaColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
-  <add key="IDColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF" />
-  <add key="LLColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTINREF,HOTTOPICS,REGULARS,SECTORS" />
-  
-
+  <add key="AnimalPharmColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,ANIMALHEALTH,ANIMALHEALTHNEW,COUNTRY,COMPANIES,AGENCY,COMMERCIAL" />
+  <add key="InsuranceDayColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTORS,SECTINREF" />
+  <add key="LloydslistColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,REGULARS,SECTORS,SECTINREF" />
 
   <add key="PublishedYear" value="90"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />

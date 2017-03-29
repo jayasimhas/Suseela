@@ -538,6 +538,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     commoditySearchResults = GetListFromXmlusingPublication(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
                                     commoditynewSearchResults = GetListFromXmlusingPublication(publication, "commoditynewsearch", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                     commodityfactorSearchResults = GetListFromXmlusingPublication(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
+
+                                  
+
                                 }
                                 foreach (string agency in agencySearchResults)
                                 {
@@ -605,6 +608,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (commoditynewSearchResults != null)
                                 {
+                                    if ((ao["PUBLICATIONNAME"] != "Public Ledger") && (commoditynewSearchResults.Contains("sugar")))
+                                    {
+                                        commoditynewSearchResults.Remove("sugar");
+                                    }
+
+
                                     foreach (string commoditynew in commoditynewSearchResults)
                                     {
                                         

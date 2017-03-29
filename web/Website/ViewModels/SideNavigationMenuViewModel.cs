@@ -229,12 +229,40 @@ namespace Informa.Web.ViewModels
             }
             #endregion
         }
-    
+
+        public IEnumerable<ISubscription> GetValidSubscriptionsV2()
+        {
+            #region reading actual subscriptions
+            var subscriptions = new List<ISubscription>();
+            var channelSubscriptions = new List<ChannelSubscription>();
+
+            var currentPublication = SiterootContext.Item.Publication_Code;
+            var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode.Contains(currentPublication) && n.ExpirationDate > DateTime.Now).ToList();
+            if (userSubscriptions != null && userSubscriptions.Count() > 0)
+            {
+                foreach (var subscription in userSubscriptions)
+                {
+                    if (subscription != null)
+                    {
+                        channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.ProductCode, ChannelName = subscription.Publication, ExpirationDate = subscription.ExpirationDate, _ChannelId = subscription.ProductCode });
+                    }
+                }
+                subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = false });
+            }
+            else
+            {
+                return Enumerable.Empty<ISubscription>();
+            }
+
+            return subscriptions;
+            #endregion
+        }
+
         public string CurrentItemId => GlassModel?._Id.ToString();
 
         public bool MenuOpenFirstTime => SiteRootContext.Item.Is_Open_First_Time;
     }
 
-}	
+}
 
-    
+

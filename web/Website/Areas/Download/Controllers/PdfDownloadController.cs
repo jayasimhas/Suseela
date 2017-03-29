@@ -28,6 +28,8 @@ using Informa.Library.Globalization;
 using Informa.Library.Subscription;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.References;
+using Informa.Library.SalesforceConfiguration;
+using Informa.Web.Areas.Account.ViewModels.Personalization;
 
 #endregion
 
@@ -47,6 +49,8 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
         protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
         IItemReferences ItemReferences;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IChannelsViewModel ChannelsViewModel;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -57,7 +61,9 @@ namespace Informa.Web.Areas.Account.Controllers
                                         ITextTranslator textTranslator,
                                         SideNavigationMenuViewModel userSubscriptionsContext,
                                         IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
-                                        IItemReferences itemReferences)
+                                        IItemReferences itemReferences,
+                                        ISalesforceConfigurationContext salesforceConfigurationContext,
+                                        IChannelsViewModel channelsViewModel)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -69,6 +75,8 @@ namespace Informa.Web.Areas.Account.Controllers
             UserSubcriptions = userSubscriptionsContext;
             AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
             ItemReferences = itemReferences;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+            ChannelsViewModel = channelsViewModel;
         }
 
         /// <summary>
@@ -489,17 +497,38 @@ namespace Informa.Web.Areas.Account.Controllers
                     }
                 }
             }
-            if (sections.Count == 0)
-            {
+            if (sections.Count == 0 && UserPreferences.Preferences.PreferredChannels.Count == 0)
+            {  
+                List<Channel> sortedChannels = new List<Channel>();
+                var channels = new Channel();
                 bool IsTopicSubscription = false;
-                IEnumerable<ISubscription> subscriptions = UserSubcriptions.GetValidSubscriptions();
+                IList<Topic> topics = new List<Topic>();
+
+                IEnumerable<ISubscription> subscriptions = SalesforceConfigurationContext.IsNewSalesforceEnabled ? UserSubcriptions.GetValidSubscriptionsV2() : UserSubcriptions.GetValidSubscriptions();
+
+                if (SalesforceConfigurationContext.IsNewSalesforceEnabled && ChannelsViewModel != null && ChannelsViewModel.Channels != null)
+                {
+                    var Channels = ChannelsViewModel.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
+                    sortedChannels = Channels.OrderBy(y => y.Topics.Where(z => z.IsFollowing).Any() == false).ToList();
+                }
+
                 //IsTopicSubscription = subscriptions.Select(a => a.IsTopicSubscription);
                 foreach (var sub in subscriptions)
-                {
+                {                                    
                     IsTopicSubscription = sub.IsTopicSubscription;
                     for (int i = 0; i < sub.SubscribedChannels.Count; i++)
                     {
-                        CreateSectionsFromChannels(sub.SubscribedChannels[i], sections, IsTopicSubscription);
+                        if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
+                        {
+                            sub.SubscribedChannels[i].ChannelId = sub.SubscribedChannels[i].ChannelId.Split('.')[1] ?? string.Empty;
+                            channels = sortedChannels.Where(y => y.ChannelCode.Contains(sub.SubscribedChannels[i].ChannelId)).FirstOrDefault();
+                            topics = channels.Topics.Where(topic => topic.IsFollowing).OrderBy(topic => topic.TopicOrder).ToList();
+                            CreateSectionsFromChannels(channels, sections, UserPreferences.Preferences.IsNewUser, ref topics);
+                        }
+                        else
+                        {
+                            CreateSectionsFromChannels(sub.SubscribedChannels[i], sections, IsTopicSubscription);
+                        }                                             
                     }
                 }
             }
@@ -546,7 +575,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     && DateTime.Parse(entitlement.AccessEndDate) >= DateTime.Now
                     && entitlement.IsActive).Any();
             }
-            else if(SiterootContext.Item.Entitlement_Type != null &&
+            else if (SiterootContext.Item.Entitlement_Type != null &&
                 SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
             {
                 return AuthenticatedUserEntitlementsContext.Entitlements.Where(
