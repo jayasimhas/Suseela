@@ -26,6 +26,7 @@ using Sitecore.Configuration;
 using Sitecore.Web;
 using Newtonsoft.Json;
 using Informa.Library.Rss;
+using System.Configuration;
 
 namespace Informa.Library.CustomSitecore.Pipelines.Article
 {
@@ -109,6 +110,11 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 }
                 using (var client = new HttpClient())
                 {
+                    string disableSSLCertificateValidation = ConfigurationManager.AppSettings["DisableSSLCertificateValidation"];
+                    if (!string.IsNullOrWhiteSpace(disableSSLCertificateValidation) && Convert.ToBoolean(disableSSLCertificateValidation))
+                    {
+                        ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                    }
                     var response = client.GetStringAsync(url).Result;
                     if (!string.IsNullOrEmpty(response))
                     {
