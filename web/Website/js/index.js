@@ -843,16 +843,16 @@ $(document).ready(function(){
         var addFixedMenu = function(){
             if($(window).width() >= 1024){
                 $('.main-menu').addClass('fixed');
-                //$('.main__wrapper').css('margin-left','330px'); IPMP-2404
+                $('.main__wrapper').css('margin-left','330px');
             }
         };
         var removeFixedMenu = function(){
             if($(window).width() >= 1024){
                 $('.main-menu').removeClass('fixed');
-                //$('.main__wrapper').css('margin-left','0'); IPMP-2404
+                $('.main__wrapper').css('margin-left','0');
                 if($(window).scrollTop() > getHeaderEdge()) {
                     $('.main-menu').addClass('fixed');
-                   // $('.main__wrapper').css('margin-left','330px'); IPMP-2404
+                   $('.main__wrapper').css('margin-left','330px');
 
                 }
             }
@@ -900,6 +900,12 @@ $(document).ready(function(){
             } else {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
                 removeFixedMenu();
+            }
+        });
+        $(window).on('resize', function() {
+            if($(window).width() < 1024){
+                $('.main-menu').removeClass('fixed');
+                $('.main__wrapper').removeAttr('style');
             }
         });
 

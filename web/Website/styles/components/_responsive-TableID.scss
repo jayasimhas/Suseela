@@ -352,6 +352,7 @@
 		.sub-item{
 			width: 32%;
 			text-align: right;
+			border: 1px solid transparent;
 			&:nth-child(even){
 				width: 50%;
 			}

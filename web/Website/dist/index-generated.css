@@ -3688,6 +3688,8 @@ body.lightboxed {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: bold; }
+  .ID-responsive-table-modal#modal-comparefinancialresults .table-wrapper {
+    overflow: hidden; }
 
 .idi-table-heading {
   color: #ffffff;
@@ -4097,7 +4099,8 @@ body.lightboxed {
 
 #tankerPureChemPage .R16 .sub-item, #onOrderTable .R16 .sub-item {
   width: 32%;
-  text-align: right; }
+  text-align: right;
+  border: 1px solid transparent; }
   #tankerPureChemPage .R16 .sub-item:nth-child(even), #onOrderTable .R16 .sub-item:nth-child(even) {
     width: 50%; }
 
@@ -11234,7 +11237,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 20px;
   margin-bottom: 1.25rem; }
   .package-img-wrapper img {
-    width: 100%; }
+    width: 100%;
+    height: 100%; }
   .package-img-wrapper.first {
     height: 220px; }
   .package-img-wrapper.second {
@@ -15372,6 +15376,12 @@ main {
   .theme-pink-sheet .quick-facts__list--ul li:before use > svg {
     fill: #BC608C; }
 
+.theme-pink-sheet .action-flag--red {
+  color: #d82b6a; }
+
+.theme-pink-sheet .topic-subtopic__title {
+  border-left: 12px solid #d82b6a; }
+
 .theme-pink-sheet .article-topics__li ul li:before,
 .theme-pink-sheet .quickfactsbulleted li ul li:before,
 .theme-pink-sheet .quick-facts__list--ul li ul li:before {
@@ -15766,6 +15776,12 @@ main {
   .theme-rose-sheet .quickfactsbulleted li:before use > svg,
   .theme-rose-sheet .quick-facts__list--ul li:before use > svg {
     fill: #DD3580; }
+
+.theme-rose-sheet .action-flag--red {
+  color: #c8206e; }
+
+.theme-rose-sheet .topic-subtopic__title {
+  border-left: 12px solid #c8206e; }
 
 .theme-rose-sheet .article-topics__li ul li:before,
 .theme-rose-sheet .quickfactsbulleted li ul li:before,
@@ -16162,6 +16178,12 @@ main {
   .theme-medtech .quick-facts__list--ul li:before use > svg {
     fill: #034a7c; }
 
+.theme-medtech .action-flag--red {
+  color: #007cc3; }
+
+.theme-medtech .topic-subtopic__title {
+  border-left: 12px solid #007cc3; }
+
 .theme-medtech .article-topics__li ul li:before,
 .theme-medtech .quickfactsbulleted li ul li:before,
 .theme-medtech .quick-facts__list--ul li ul li:before {
@@ -16557,6 +16579,12 @@ main {
   .theme-invivo .quick-facts__list--ul li:before use > svg {
     fill: #7e2718; }
 
+.theme-invivo .action-flag--red {
+  color: #ca4d2c; }
+
+.theme-invivo .topic-subtopic__title {
+  border-left: 12px solid #ca4d2c; }
+
 .theme-invivo .article-topics__li ul li:before,
 .theme-invivo .quickfactsbulleted li ul li:before,
 .theme-invivo .quick-facts__list--ul li ul li:before {
@@ -16951,6 +16979,12 @@ main {
   .theme-commodities .quickfactsbulleted li:before use > svg,
   .theme-commodities .quick-facts__list--ul li:before use > svg {
     fill: #c12d3b; }
+
+.theme-commodities .action-flag--red {
+  color: #9E310D; }
+
+.theme-commodities .topic-subtopic__title {
+  border-left: 12px solid #9E310D; }
 
 .theme-commodities .article-topics__li ul li:before,
 .theme-commodities .quickfactsbulleted li ul li:before,
@@ -17387,6 +17421,12 @@ main {
   .theme-insurance-day .quick-facts__list--ul li:before use > svg {
     fill: #b0173d; }
 
+.theme-insurance-day .action-flag--red {
+  color: #DE4361; }
+
+.theme-insurance-day .topic-subtopic__title {
+  border-left: 12px solid #DE4361; }
+
 .theme-insurance-day .article-topics__li ul li:before,
 .theme-insurance-day .quickfactsbulleted li ul li:before,
 .theme-insurance-day .quick-facts__list--ul li ul li:before {
@@ -17821,6 +17861,12 @@ main {
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
     fill: #1191D1; }
+
+.theme-lloydslist .action-flag--red {
+  color: #1191D1; }
+
+.theme-lloydslist .topic-subtopic__title {
+  border-left: 12px solid #1191D1; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
