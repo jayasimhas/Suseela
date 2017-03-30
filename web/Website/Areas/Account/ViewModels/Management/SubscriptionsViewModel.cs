@@ -16,17 +16,18 @@ using log4net;
 using Informa.Library.Utilities.References;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Site;
+using Sitecore.Data.Items;
+using Sitecore.Data.Fields;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
     public class SubscriptionsViewModel : GlassViewModel<ISubscriptions_Page>
     {
         public readonly ITextTranslator TextTranslator;
-        public readonly ISiteRootContext SiteRootContext;
+        public readonly ISiteRootContext SiterootContext;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
         private readonly ILog _logger;
-        protected readonly ISiteRootContext SiterootContext;
         protected readonly IFindSitePublicationByCode FindSitePublication;
         private string channelCodeFormat = "{0}.{1}";
         private readonly Dictionary<string, bool> RenewBtnSettings;
@@ -49,7 +50,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             SignInViewModel = signInViewModel;
             FindSitePublication = findSitePublication;
             _logger = logger;
-            SiterootContext = siteRootContext;
             RenewBtnSettings = new Dictionary<string, bool>();
             SubscriptionBtnSettings = new Dictionary<string, bool>();
             ItemReferences = itemReferences;
@@ -57,18 +57,19 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 Subscriptions.Where(w => !string.IsNullOrWhiteSpace(w.Publication)
                 && w.ExpirationDate >= DateTime.Now.AddMonths(-6))
                 .OrderByDescending(o => o.ExpirationDate);
-            SiteRootContext = siteRootContext;
+            SiterootContext = siteRootContext;
 
         }
 
-        public IEnumerable<ISite_Root> Sitecorepublications
+        public IEnumerable<Item> Sitecorepublications
         {
             get
             {
-                ////var verticalRootItem = GlassModel.GetAncestors<IVertical_Root>().FirstOrDefault();
-                ////return verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>();
+                var verticalItem = Sitecore.Context.Item.Axes.GetAncestors().
+                    Where(item => item.TemplateID.Equals(IVertical_RootConstants.TemplateId)).
+                    FirstOrDefault();
 
-                return SiteRootContext?.Item?._Parent?._ChildrenWithInferType.OfType<ISite_Root>();
+                return verticalItem.GetChildren().Where(item => item.TemplateID.Equals(ISite_RootConstants.TemplateId));
             }
         }
 
@@ -80,13 +81,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 {
                     var subscriptionsList = Sitecorepublications.Select(s => new SubscriptionViewModel
                     {
-                        Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s.Publication_Code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s.Publication_Code)).ExpirationDate : DateTime.MinValue,
-                        Publication = s.Publication_Name,
-                        Renewable = IsRenewable(s.Publication_Code),
-                        Subscribable = IsSubScribed(s.Publication_Code),
-                        ChannelItems = GetChannelItemsByProductCode(s.Publication_Code),
-                        IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s.Publication_Code),
-                        Entitlement_Type = GetEntitlementType(s.Publication_Code)
+                        Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s["Publication Code"])) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s["Publication Code"])).ExpirationDate : DateTime.MinValue,
+                        Publication = s["Publication Name"],
+                        Renewable = IsRenewable(s["Publication Code"]),
+                        Subscribable = IsSubScribed(s["Publication Code"]),
+                        ChannelItems = GetEntitlementType(s["Publication Code"]) == EntitlementLevel.Channel ?
+                        GetChannelItemsByProductCode(s["Publication Code"]) : new List<SubscriptionChannelViewModel>(),
+                        IsCurrentPublication = SiterootContext.Item.Publication_Code.Equals(s["Publication Code"]),
+                        Entitlement_Type = GetEntitlementType(s["Publication Code"])
                     });
                     var filteredsubscriptionsList = subscriptionsList.Where(p => p.Subscribable == true && p.Renewable == false).Concat(subscriptionsList.Where(q => q.Renewable == true)).Concat(subscriptionsList.Where(r => r.Subscribable == false));
                     return filteredsubscriptionsList;
@@ -122,6 +124,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 _logger.Error("Error in Entitlement Type", ex);
             }
             return EntitlementLevel.Site;
+
         }
 
 

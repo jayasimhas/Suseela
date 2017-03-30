@@ -79,15 +79,15 @@ ISalesforceInfoLogger infoLogger)
 
             if (!string.IsNullOrWhiteSpace(FirstNameFieldName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = FirstNameFieldName, FieldValue = FirstName, Reference = "" });
+                { FieldName = FirstNameFieldName, FieldValue = FirstName, Reference = ContactReferenceName });
 
             if (!string.IsNullOrWhiteSpace(LastNameFieldName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = LastNameFieldName, FieldValue = LastName, Reference = "" });
+                { FieldName = LastNameFieldName, FieldValue = LastName, Reference = ContactReferenceName });
 
             if (!string.IsNullOrWhiteSpace(MiddleNameFieldName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = MiddleNameFieldName, FieldValue = MiddleInitial, Reference = "" });
+                { FieldName = MiddleNameFieldName, FieldValue = MiddleInitial, Reference = ContactReferenceName });
 
             if (!string.IsNullOrWhiteSpace(CompanyNameFieldName))
                 request.Preferences.Add(new SalesforceField()

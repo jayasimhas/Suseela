@@ -3688,6 +3688,8 @@ body.lightboxed {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: bold; }
+  .ID-responsive-table-modal#modal-comparefinancialresults .table-wrapper {
+    overflow: hidden; }
 
 .idi-table-heading {
   color: #ffffff;
