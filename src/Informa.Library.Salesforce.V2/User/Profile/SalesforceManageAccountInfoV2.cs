@@ -91,7 +91,7 @@ ISalesforceInfoLogger infoLogger)
 
             if (!string.IsNullOrWhiteSpace(CompanyNameFieldName))
                 request.Preferences.Add(new SalesforceField()
-                { FieldName = CompanyNameFieldName, FieldValue = Company, Reference = "" });
+                { FieldName = CompanyNameFieldName, FieldValue = Company, Reference = ContactReferenceName });
 
             if (!string.IsNullOrWhiteSpace(JobTitleFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
                 request.Preferences.Add(new SalesforceField()
