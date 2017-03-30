@@ -22,6 +22,7 @@
 
 			
 			Parent.find('.table').empty();
+			debugger;
 			for(var key in HeaderData) {
 				if(key !== "ID") {
 					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
@@ -102,7 +103,7 @@
 
 			
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:false,
+               loop:true,
                margin:0,
                merge:true,
                nav:false,
