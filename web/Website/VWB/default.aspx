@@ -64,7 +64,7 @@
 
                     <div class="mediatypes">
                         <asp:DropDownCheckBoxes ID="ddlTaxonomies" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
-                        <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                        <Style SelectBoxWidth="260" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
                         <Texts SelectBoxCaption="Select Taxonomy(s)" />
                         </asp:DropDownCheckBoxes>
 

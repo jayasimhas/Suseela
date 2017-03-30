@@ -94,7 +94,7 @@ namespace Informa.Library.Search.PredicateBuilders
                 foreach (var ct in contTypes)
                 {
                     Guid ctGuid = new Guid(ct);
-                    codesPredicate = codesPredicate.Or(x => x.ContentType == ctGuid);
+                    codesPredicate = codesPredicate.Or(x => x.ContentTypeVWB == ctGuid);
                 }
 
                 predicate = predicate.And(codesPredicate);
@@ -108,7 +108,7 @@ namespace Informa.Library.Search.PredicateBuilders
                 foreach (var mt in medTypes)
                 {
                     Guid mtGuid = new Guid(mt);
-                    codesPredicate = codesPredicate.Or(x => x.MediaType == mtGuid);
+                    codesPredicate = codesPredicate.Or(x => x.MediaTypeVWB == mtGuid);
                 }
                 predicate = predicate.And(codesPredicate);
             }
