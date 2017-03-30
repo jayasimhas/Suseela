@@ -4097,7 +4097,8 @@ body.lightboxed {
 
 #tankerPureChemPage .R16 .sub-item, #onOrderTable .R16 .sub-item {
   width: 32%;
-  text-align: right; }
+  text-align: right;
+  border: 1px solid transparent; }
   #tankerPureChemPage .R16 .sub-item:nth-child(even), #onOrderTable .R16 .sub-item:nth-child(even) {
     width: 50%; }
 
