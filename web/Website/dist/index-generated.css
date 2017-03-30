@@ -7802,15 +7802,9 @@ section: UI Elements
 
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
-  width: 790px;
+  width: 100%;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
-  @media screen and (min-width: 801px) and (max-width: 1024px) {
-    .compareChart {
-      width: 594px; } }
-  @media (max-width: 800px) {
-    .compareChart {
-      width: 100%; } }
   .compareChart .eachChartData {
     margin-bottom: 10px; }
     @media (max-width: 480px) {
